@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-29
+Substantively revised: 2026-07-31
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -217,6 +217,7 @@ proceeds.
 | Existing-owner inference-cache packet — prose terminal; receipt and empirical work deferred | `P6.7-inference-cache-reuse-and-honest-pricing` | Reader-facing source integration was expressly commissioned and completed 2026-07-23; no new chapter or support movement | Maintain the three coordinated manuscript integrations and nine-source packet. Later implement the cache-reuse receipt and run separate exact-prefix and semantic-response campaigns under the ordinary post-gate entry condition. Preserve KV-versus-output, exact-versus-semantic, hit-versus-useful-outcome, and provider-contract-versus-local-evidence boundaries. |
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the nine-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
+| Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
 | Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters are locally validated and `ready_not_published`. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. All 588 exact scene-midpoint frames and 84 upload thumbnails passed bounded visual review; mux receipts bind source visual, narration, seven scene endpoints, and final digest. The 1,015,153,522 bytes of final media remain ignored and absent from Pages. The canonical private playlist contains twelve exact unlisted staging videos in positions 1–12, projected into their chapters as owner-authorized preview embeds with adjacent descriptive transcripts. Published-current videos, final platform receipts, and published-current embeds remain zero. | Continue at chapter 13 after the YouTube daily-upload window resets; apply reviewed local captions to videos 1–12 and custom thumbnails to videos 7–12; finish all 84 metadata/caption/thumbnail/order/processing checks; then publish and receipt the complete validated set. The preview projection must never be counted as completion. After public completion, use author feedback to exercise one real new-generation upload, supersession receipt, playlist reconciliation, and embed replacement. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
@@ -922,7 +923,7 @@ all section claims remain `Design rationale + argument`; no chapter-core
 support, release, legal conclusion, cryptographic guarantee, human outcome,
 military-policy result, SOTA, AGI, or ASI claim moves.
 
-The working manifest is now **84 chapters** and the source inventory is **462
+The working manifest is now **84 chapters** and the source inventory is **468
 records**. No meaning-bearing idea found by this audit remains deferred.
 Artificial moral patients, model collapse, causal inference, RAG, conformal
 uncertainty, optimizer families, and other reviewed candidates stay with their
@@ -960,7 +961,7 @@ The packet must:
 3. verify 84/84 Appendix E chapter coverage and a nonempty current changelog;
 4. create an exact 84-entry, one-role chapter map and reject missing,
    duplicated, or non-manifest owners;
-5. preserve the current 84-chapter/462-source/25-non-core-transition public
+5. preserve the current 84-chapter/468-source/25-non-core-transition public
    contract; and
 6. retain the stale counts and release language as rejecting regression
    fixtures rather than deleting the evidence that the incident occurred.
@@ -3253,7 +3254,7 @@ dependence, accountability and remedy, and succession or dissolution. Their
 sources retain exact conceptual, constructed, empirical, formal, framework,
 jurisdictional, and authorial ceilings. The contract therefore reports
 twenty-three concept-complete chapters, 184/184 passing concepts, twenty-three
-current semantic reviews, eighteen diagnostically thin chapters, and an empty
+current semantic reviews, sixteen diagnostically thin chapters, and an empty
 concept-completion queue. No support, release, safety, deployment, SOTA, AGI,
 or ASI conclusion moved.
 
@@ -3312,6 +3313,84 @@ activates no campaign and moves no support or release state. These receipts
 close P6.9; a word-threshold or atom-count change cannot substitute for them.
 Passing this editorial program still establishes no empirical, formal, safety,
 release, SOTA, AGI, or ASI result.
+
+### P6.10 — Complete Corben paper section-family closure
+
+**Status:** terminal for the currently accessible corpus; maintenance reopens
+per affected source family. The 2026-07-31 fidelity campaign closes all 46
+locally readable canonical Corben paper texts: thirty-seven cached Google Docs
+exports, seven supplied Markdown whitepapers, and two authenticated Drive
+Markdown papers recovered in the TreeLLM-successor search. Paired DOCX files,
+repeated tabs, pocket/summary editions, and copied paper blocks are variants,
+not independent evidence.
+
+The same campaign then closed seven authenticated connector records under a
+separate machine ledger: `moecot`, its non-independent `moecot_md` export,
+`coilmoecot`, `temporal_coil_research`, and the newly admitted
+`capability_ratchet_whitepaper`, `attd`, and `orcp_moecot`. Three new inventory
+records move the public-safe total from 465 to 468. The complete connector text
+was section-audited without publishing the private raw documents or promoting
+their source-reported implementation and empirical statements.
+
+The authoritative synthesis is `docs/source_mining_synthesis.md`; the local and
+connector ledgers are `sources/corben_paper_corpus_closure.json` and
+`sources/corben_connector_source_closure.json`; each source has a public-safe
+note under `sources/source_notes/`. Closure means that every
+substantive section, appendix, variant, formal object, algorithm, interface,
+state machine, implementation stage, threat, failure, limitation, baseline,
+falsifier, and cross-paper tension ends in exactly one disposition:
+
+1. integrated into its canonical existing chapter;
+2. retained in the source note because book prose would duplicate or overload
+   the owner;
+3. converted into a concrete implementation, research, or evaluation
+   obligation; or
+4. recorded as an explicit non-claim, superseded variant, or rejected
+   overreach.
+
+The local-corpus packet adds material manuscript repairs from the final
+legacy wave: bidirectional claim-to-surface release coverage; architecture-
+induced moral-risk review and copy-continuity boundaries; a non-compensating
+alignment vector; hardware-profile and maintenance-learning contracts; a
+temporal-access contract; per-bottleneck simulation feasibility; and layered
+instruction identity. Other recovered mechanisms already had stronger owners
+and were closed in their notes without branded duplication.
+
+The connector follow-up adds ATTD repository-health governance to Artifact
+Steward Agents, ORCP decoder symmetry and total-rate discipline to Compact
+Generative Systems, separate benchmark/procedural/structural ratchets to the
+benchmark and RSI path, exact inconclusive Temporal Coil outcomes to
+Mathematical and Search Substrates, and bounded negative-signal specialists to
+Routing Heads. No new chapter is warranted because each mechanism has a clear
+existing owner.
+
+The final four large legacy families are no longer a queue. TokenMana separates
+regenerative infrastructure hypotheses from human temporal-access effects and
+retains its mathematical and causal gaps. Simulation Scaling keeps contracts
+and typed physical bottlenecks while demoting its scalar equation from
+universal law. BugBrain's fifteen-tab paper history is reconciled to the
+stronger pinned implementation dossier, with machine evidence outranking
+narrative completeness. Software Magic Grimoire's full lexicon, pocket edition,
+stack addendum, and prompt pack are treated as vocabulary/templates, not
+performance evidence; only the durable instruction and workflow contracts are
+integrated.
+
+Completion does not imply exhaustive external literature coverage, truth of a
+Corben paper, independent corroboration, or support-state movement. Connector-
+only notes, inaccessible Drive variants, and local project repositories keep
+their own access and evidence classes. A readable member can keep a family
+usable, but cannot prove that an inaccessible sibling contains no distinct
+correction.
+
+**Maintenance trigger and order.** When a paper changes, an inaccessible
+variant is recovered, a new paper appears, or an owning chapter materially
+changes, reopen only the affected family. Read the new material completely,
+diff the intellectual system rather than filenames, refresh the note's version
+lineage and section-family table, inspect actual chapter prose, update inventory
+and exact mappings, reconcile claims/research residuals/public counts, run the
+registered source and book validators, render the 84-chapter edition, and
+commit/push clean `main`. A title, citation, source-note file, source count, or
+chapter assignment is never an acceptable substitute for this closure test.
 
 ## P7 — Reader remediation and owner-authorized publication
 
@@ -4039,7 +4118,7 @@ is not a debugging interface.
    twenty-three reviewed owners, 184/184 concepts, the exact 21-fingerprint
    raw-scaffold ownership audit, and the exact 23-chapter/184-concept
    proof/evidence handoff. Retain the separate
-   eighteen-chapter diagnostic-thin list. Preserve the twenty-three
+   sixteen-chapter diagnostic-thin list. Preserve the twenty-three
    concept-complete owners at their reviewed digests and measure throughput in
    concept-complete dispositions. Treat the 5,000-word threshold and raw atom
    counts as diagnostics only. Reopen the lane only after digest drift or an

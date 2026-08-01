@@ -153,6 +153,17 @@ managed block excluded. Consequently, inserting or replacing the generated
 player cannot make its own packet stale, while any material prose or source
 change outside the block still changes the bound digest.
 
+Not every digest change requires a new video. Source-assignment metadata,
+passage-review status, or added prose can change canonical chapter bytes while
+leaving the visual abstract's problem, mechanism, trace, failure boundary,
+evidence ceiling, non-claims, and handoff intact. In that case,
+`reconcile_visual_chapter_bindings.py` permits an identity-only rebind: all
+seven generated semantic fields must match byte for byte, or a hand-authored
+pilot must have an explicit reviewed rationale. The command preserves media,
+receipts, lifecycle, and support state and records every decision in
+`chapter_binding_revalidation.json`. Any semantic mismatch fails closed and
+requires regeneration.
+
 ## YouTube identity and chapter updates
 
 `youtube_channel.json` binds this edition to the verified **corben sorenson**

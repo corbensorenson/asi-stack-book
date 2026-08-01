@@ -3,9 +3,10 @@ title: "Governed Model Training, Distributed Optimization, and Scaling"
 chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.2 optimizer-landscape integration"
-last_updated: "2026-07-21"
+draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
+last_updated: "2026-07-31"
 primary_sources:
+  - "beastbrain"
   - "ext_llama3_herd_2024"
   - "ext_megatron_distributed_training_2021"
   - "ext_zero_optimizer_2019"
@@ -45,13 +46,13 @@ open_evidence_gaps:
 | Chapter ID | `governed-model-training-distributed-optimization-and-scaling` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.2 optimizer-landscape integration |
-| Last updated | 2026-07-21 |
-| Primary source records | Seven distributed-training/checkpoint records plus fifteen optimizer records spanning Adam/AdamW, failure variants, memory/layer scaling, tensor and curvature preconditioning, Lion, Sophia, SOAP, schedule-free methods, maximal-update and modular-norm transfer, and Muon. |
+| Manuscript maturity | integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated |
+| Last updated | 2026-07-31 |
+| Primary source records | BeastBrain maintenance-learning lineage, seven distributed-training/checkpoint records, and fifteen optimizer records spanning Adam/AdamW, failure variants, memory/layer scaling, tensor and curvature preconditioning, Lion, Sophia, SOAP, schedule-free methods, maximal-update and modular-norm transfer, and Muon. |
 | Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Twenty-two primary or official records now cover the distributed run lifecycle and a practical/theoretical optimizer landscape. All cited results remain source-reported. |
+| Source loading state | Twenty-two primary or official records cover the distributed run lifecycle and optimizer landscape; the passage-reviewed BeastBrain family adds author-lineage pressure for governed idle-time replay and candidate updates. All cited results remain source-reported or conceptual. |
 | Test state | One authored transaction fixture, a JSON Schema, an independent semantic validator, and 21 rejecting mutations are implemented. The natural five-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Two public targets are implemented in `AsiStackProofs.GovernedModelTraining` through thirteen theorem declarations. Their ceiling is finite record-route semantics. |
 
@@ -779,6 +780,44 @@ Proof-of-learning protocols add an audit surface by committing to intermediate t
 
 Test-time training moves optimization into inference [@ext_test_time_training_2020]. That does not exempt it from training governance. The active state now includes base model, per-input or per-cohort adaptation weights, optimizer, RNG, caches, update budget, reset rule, and descendant outputs. Shared adaptation can create poisoning and cross-user influence; incomplete resets can make nominally identical requests depend on hidden history. The default route isolates and expires test-time state, while durable updates require the same prospective objective, data-rights, evaluation, rollback, and admission gates as any other update.
 
+### Idle time is a schedule, not permission to learn
+
+BeastBrain's later Nocturne drafts propose using idle periods to replay failed
+interactions, search for alternate strategies, distill traces, cache repeated
+work, and update memory or policy weights. The useful insight is temporal:
+expensive consolidation and evaluation can be scheduled away from interactive
+work. The unsafe inference is that an idle machine has authorized itself to
+train, that a discovered successful replay is a valid preference pair, or that
+overnight weight change is automatically self-improvement.
+
+A governed `MaintenanceLearningWindow` therefore separates five operations:
+artifact compaction, deterministic replay, counterfactual search, candidate
+dataset construction, and state mutation. The first four may produce proposed
+artifacts under their own rights, privacy, compute, and retention contracts.
+Only the fifth changes a serving system, and it requires a prospectively
+authorized objective, eligible source cohort, contamination and secret scan,
+preference provenance, frozen base state, optimizer and RNG identity, resource
+ceiling, isolated candidate checkpoint, independent qualification, rollback,
+and explicit promotion decision. “User asleep,” “device idle,” and “failure in
+the log” are scheduling predicates, not data licenses or update authority.
+
+Failure replay also needs a denominator. The system retains which failures
+were sampled, which were excluded, how search effort was allocated, every
+candidate trajectory, reward or judge dependencies, negative and unchanged
+outcomes, and the cost of turning a trace into a training example. It compares
+no-update, cache/tool compilation, retrieval repair, prompt or policy repair,
+and weight-update routes under matched evaluation. A successful simulated
+trajectory is not evidence that the original task would have succeeded, that
+its preference label is correct, or that a weight update will transfer.
+
+The maintenance window closes with no mutation by default. Candidate weights,
+optimizer state, caches, data products, and descendants remain quarantined
+until the ordinary training and replacement gates accept them. Interruptions,
+foreground demand, power or thermal limits, rights changes, new contradictions,
+or unavailable rollback terminate or pause the window at a recorded boundary.
+This preserves the scheduling value of “night work” without creating a hidden
+self-modification channel.
+
 The common failure is provenance theater: recording a curriculum label, witness hash, or reset flag while leaving the operative order, hidden state, or update path unmeasured. The explicit nonclaim is that none of these mechanisms establishes optimizer superiority, faithful reproduction, model quality, safety, or readiness without the corresponding observed campaign.
 
 ## Mature Research Target
@@ -938,6 +977,7 @@ These rows keep Governed Model Training, Distributed Optimization, and Scaling's
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `beastbrain` | Passage-reviewed comparator: BeastBrain Cognitive Architecture. Passage-reviewed version-family lineage for separating idle scheduling from update authority: later Nocturne drafts propose replaying failed interactions, searching alternative strategies, constructing preference data, optimizing traces, caching repeated work, and mutating memory or policy state during low-contention windows. The book retains the temporal scheduling idea while splitting compaction, replay, search, dataset construction, and model mutation into separately governed operations. | No Nocturne implementation, eligible dataset, DPO run, replay-quality result, model update, rollback, independent qualification, useful improvement, safety result, or transfer exists. Idle time and failed logs confer neither data rights nor update authority; model-generated successful trajectories are not automatically valid preferences. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_proof_of_learning_2021` | Passage-reviewed comparator: Proof-of-Learning: Definitions and Practice. Provides a transcript-based comparator for auditing whether a claimed training process follows a committed sequence of states. | It does not prove dataset legitimacy, objective adequacy, hidden-compute absence, exact reproduction, model quality, or safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_test_time_training_2020` | Passage-reviewed comparator: Test-Time Training with Self-Supervision for Generalization under Distribution Shifts. Provides a distinct training-timescale comparator in which per-input self-supervised updates occur at test time. | The method does not establish safe online learning, distributed-state consistency, rollback, or general robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Provides the foundational curriculum-learning hypothesis that example order and difficulty schedules can change optimization outcomes. | Curriculum effects are task-, model-, metric-, and schedule-dependent; easier-first ordering is not a universal improvement rule. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |

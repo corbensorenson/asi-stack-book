@@ -1060,7 +1060,13 @@
       "16"
     ],
     "url": "https://docs.google.com/document/d/1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM",
-    "notes": "Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay."
+    "notes": "Full authenticated v1.1 architecture-whitepaper text passage-reviewed. Supports a compact explicit orchestrator, bounded specialist lanes, task state machines, leases/retries/dead-letter handling, fail-closed side-effect envelopes, run/task/control-plane ledgers, readiness distinct from routing, benchmark lanes, replay/handoff, provenance, architecture fingerprints, and governed improvement proposals. Source-reported runtime and benchmark artifacts were not imported or reproduced; the pinned MoECOT project dossier is the stronger implementation-reference record.",
+    "source_type": "author_architecture_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Authenticated connector text only; no runtime artifact, command, log, replay, benchmark, deployment, authority-enforcement, learned-routing, or production result was reproduced.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), MoECOT-Agent Architecture Whitepaper v1.1"
   },
   {
     "id": "moecot_md",
@@ -1073,7 +1079,14 @@
       "16"
     ],
     "url": "https://drive.google.com/file/d/1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0",
-    "notes": "Markdown export/source version."
+    "notes": "Full authenticated Markdown export reconciled with the primary MoECOT v1.1 Google Doc. It is a format and terminology variant, not independent corroboration or an additional empirical result.",
+    "source_type": "author_whitepaper_variant",
+    "variant_of": "moecot",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Same-lineage format variant; no independent architecture, runtime, benchmark, replay, or deployment evidence.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), MoECOT-Agent Architecture Whitepaper Markdown export"
   },
   {
     "id": "octopus_router",
@@ -1210,11 +1223,24 @@
     "priority": "must_use",
     "layer": "alignment_constitution",
     "chapter_targets": [
-      "04",
-      "governed-objective-formation-value-learning-and-goal-integrity"
+      "constitutional-alignment-substrate",
+      "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "moral-uncertainty-and-value-conflict",
+      "governed-objective-formation-value-learning-and-goal-integrity",
+      "security-kernel-and-digital-scifs",
+      "recursive-self-improvement-boundaries",
+      "resource-economics-and-token-budgets",
+      "integrated-reference-architecture",
+      "open-research-agenda-and-bibliography-plan"
     ],
     "url": "https://docs.google.com/document/d/1CCiBBlOEGB2huRDSwGm4P1JkVBkfmaUxJt9AwG23Kzw",
-    "notes": "Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code."
+    "notes": "Corben-authored long-form metaphysics, consciousness, ethics, AI-rights, and governance family. Its complete section-family audit preserves the five-factor consciousness heuristic only as theory-relative question decomposition; adds a prospective architecture-induced moral-risk review for self-preservation, persistent identity, valence-like state, and copy proliferation; separates copy, causal, memory, legal, authority, consent, and first-person continuity; and rejects the source's scalar moral ranking, collective-consciousness, inevitable ethical convergence, physics, clinical, Omega, and karma claims as technical evidence.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Metaphysical, consciousness, clinical, physics, moral-proof, collective-phenomenology, global-coherence, karma-score, and present-system status claims remain speculative or rejected as evidence; the source supports only bounded architecture and governance lineage.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Field of God / Alignment Field family"
   },
   {
     "id": "field_of_god",
@@ -1222,10 +1248,22 @@
     "priority": "must_use_variant",
     "layer": "alignment_constitution",
     "chapter_targets": [
-      "04"
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "governed-objective-formation-value-learning-and-goal-integrity",
+      "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "human-ai-organizations-delegation-and-accountability",
+      "recursive-self-improvement-boundaries",
+      "integrated-reference-architecture"
     ],
     "url": "https://docs.google.com/document/d/1BDVLQqIeDm-PFijrg6oKaCbRtUyY--_waw88tnU9tj0",
-    "notes": "Field of God source/outline/material."
+    "notes": "Corben-authored predecessor to the Alignment Field family, containing title exploration, outline, abbreviated and expanded eight-part drafts across informational-relational metaphysics, a five-factor consciousness heuristic, attractor ethics, AI, copy continuity, genealogy, and conclusion. The complete audit treats `alignment_field` as the controlling successor, preserves power-care divergence, nested optimization, dissent/feedback, and identity-continuity distinctions, and explicitly rejects double counting, scalar moral ranking, collective consciousness, metaphysical proof, clinical/physics claims, upload survival, and teleology as evidence.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Predecessor lineage only; `alignment_field` controls shared ideas. No metaphysical, consciousness, welfare, identity-continuity, collective-mind, moral-proof, clinical, physics, safety, deployment, or support-state result is established.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), The Field of God"
   },
   {
     "id": "field_of_god_ai_constitution",
@@ -1247,10 +1285,23 @@
     "priority": "must_use_variant",
     "layer": "alignment_constitution",
     "chapter_targets": [
-      "04"
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "governed-objective-formation-value-learning-and-goal-integrity",
+      "ai-deployment-transition-distribution-and-human-agency",
+      "privacy-data-rights-and-information-flow-governance",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "integrated-reference-architecture"
     ],
     "url": "https://docs.google.com/document/d/15cN9D6s2bvAPoitp6Imh7deE3gCebqG4RbaSRGRd5GA",
-    "notes": "Geometric-order philosophical/constitutional source."
+    "notes": "Corben-authored January 2026 philosophical and socio-technical treatise. Its complete audit retains the separation between bounded machine logistics and human normative authority, recursive feedback, dissent, governing-logic transparency versus personal privacy, distributional simulation as contestable evidence, and the requirement that exit/fork rights be materially exercisable under portability, network, compute, continuity, safety, privacy, and obligation constraints. Metaphysics, the consciousness equation, moral proofs, automatic veil legitimacy, unrestricted fork, and executable-protocol claims remain unsupported.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Philosophical and governance lineage only; no metaphysical, consciousness, moral-proof, legitimacy, fairness, privacy, fork-safety, interoperability, deployment, or support-state result is established.",
+    "published": "2026-01-30",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Ethica Mechanica"
   },
   {
     "id": "eternal_code",
@@ -1258,10 +1309,25 @@
     "priority": "must_use_variant",
     "layer": "alignment_constitution",
     "chapter_targets": [
-      "04"
+      "constitutional-alignment-substrate",
+      "evidence-states-and-claim-discipline",
+      "spinoza-verification-and-proof-carrying-claims",
+      "tribunal-adversarial-review-and-claim-conflict",
+      "governed-world-models-and-reality-grounding",
+      "intent-to-execution-contracts",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "moral-uncertainty-and-value-conflict",
+      "resource-economics-and-token-budgets"
     ],
     "url": "https://docs.google.com/document/d/1ZMqR7CMSnzignSbHdm38q9jSAXGMRsIoz3jOz3qmVrc",
-    "notes": "Computational metaphysics and alignment synthesis."
+    "notes": "Corben-authored multi-version computational-metaphysics and alignment family. Its complete audit traces the progression from an aggregate alignment score to Truth/Social/Task axes, a geometric product, heterarchical evaluator ownership, compute-aware exit, and a standing adversarial challenger. The book retains separate non-compensating epistemic, task, affected-party/constitutional, and authority/effect planes, evaluator lineage, and material exit costs while rejecting the consciousness and alignment formulas, oracle labels, consensus-as-truth, automatic energy throttling, fixed compute entitlement, theological/metaphysical claims, and moral proofs.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Architecture and governance lineage only; no metaphysical, consciousness, moral, metric-validity, evaluator-independence, consensus, safety, resource-entitlement, deployment, or support-state result is established.",
+    "published": "2026-01-31",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), The Eternal Code / Codex Recursiva family"
   },
   {
     "id": "coherence_exchange",
@@ -1284,13 +1350,25 @@
     "priority": "strong_support",
     "layer": "context_verification_theory",
     "chapter_targets": [
-      "07",
-      "09",
+      "verification-bandwidth-and-context-adequacy",
+      "virtual-context-abi",
+      "evidence-states-and-claim-discipline",
+      "spinoza-verification-and-proof-carrying-claims",
+      "compact-generative-systems-and-residual-honesty",
+      "fast-generation-architectures",
+      "policy-optimization-and-learning-from-feedback",
       "governed-deliberation-and-test-time-scaling",
-      "scalable-oversight-and-adversarial-ai-control"
+      "scalable-oversight-and-adversarial-ai-control",
+      "open-research-agenda-and-bibliography-plan"
     ],
     "url": "https://docs.google.com/document/d/1T34n1Ya6_joaAD8ZxygOpiEuNzEVj3G8_nf0xZuFL2U",
-    "notes": "Generation vs verification; long context is not automatically long-range reasoning."
+    "notes": "Corben-authored version 1.0 context-verification hypothesis. The complete audit preserves the generation-versus-verification distinction, claim-relative semantic units and effective workspace, dominant-component pressure, explicit interaction obligations, decomposition boundaries, a coherency-horizon escalation rule, and a stronger held-out contradiction protocol. It rejects the four named 'theorems' as proved laws: dense joint attention is neither necessary nor sufficient, lossy compression need not discard property-relevant information, DPI does not establish monotonic LLM contradiction growth, all-pair checking is not universally required, uniform half-window partitioning is not generally optimal, and RAG may retrieve exact text.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Research-hypothesis and architecture lineage only; no model run, effective-workspace estimator, cognition theorem, contradiction-rate result, RAG limitation, adequacy classifier, useful advantage, safety, transfer, deployment, or support-state result is established.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Verification Bandwidth in Bounded Contexts"
   },
   {
     "id": "beastbrain",
@@ -1298,12 +1376,25 @@
     "priority": "supporting_lineage",
     "layer": "whole_stack_lineage",
     "chapter_targets": [
-      "02",
-      "15",
-      "appendix"
+      "asi-is-a-stack-not-a-model",
+      "the-efficient-asi-hypothesis",
+      "routing-heads-and-specialist-cores",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "governed-model-training-distributed-optimization-and-scaling",
+      "fast-generation-architectures",
+      "security-kernel-and-digital-scifs",
+      "perception-sensor-fusion-and-observation-trust",
+      "prototype-roadmap",
+      "integrated-reference-architecture"
     ],
     "url": "https://docs.google.com/document/d/1PVLtICJVZm36c6M2y9JkuMZF9nfu_6pyR1SXqFzknME",
-    "notes": "Architecture lineage. Organism paradigm, SSD-native/geometrically verified intelligence."
+    "notes": "Corben-authored 70,000-word evolving architecture notebook spanning early blueprints through versions 1.0–6.1. The complete family audit preserves whole-system/homeostatic design, versioned hardware-profile qualification, physical memory-tier and residency accounting, distinct memory forms, governed consolidation and retention, substrate-neutral routing, contract-first planning and implementation, dependency-aware parallelism, opaque secret handles, multimodal perception, distributed service and artifact interfaces, and maintenance-learning windows. It rejects master-label maturity, repeated-version double counting, infinite-context/zero-copy/power/performance projections, geometric-truth and ignorance theorems, scalar routing/retention authority, unsafe forced self-evolution, test-suite sufficiency, tribunal consensus, software-SCIF guarantees, SSD-erasure assumptions, censorship-resistance, and autonomous update claims.",
+    "source_type": "author_architecture_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Architecture and version lineage only. No runtime, hardware qualification, paging, zero-copy, context, memory, model-training, routing, verification, security, perception, federation, self-improvement, performance, efficiency, safety, deployment, AGI, ASI, SOTA, or support-state result is established; incorporated component papers are not independent evidence through this source.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), BeastBrain Cognitive Architecture family"
   },
   {
     "id": "beastbrain_timeless",
@@ -1311,26 +1402,39 @@
     "priority": "supporting_lineage",
     "layer": "whole_stack_lineage",
     "chapter_targets": [
-      "02",
-      "15",
-      "appendix"
+      "the-efficient-asi-hypothesis",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "prototype-roadmap"
     ],
     "url": "https://docs.google.com/document/d/12g8s3R_v0mJ7GXaOoWeWkqHWBQWe_iGmcTmUwChZLwg",
-    "notes": "Definitive standalone master plan variant."
+    "notes": "Corben-authored standalone export of BeastBrain v3.3.4. The complete audit treats it as a near-duplicate Timeless branch already embedded in the main BeastBrain corpus, not independent support. It preserves evergreen whole-stack and Mimic hardware-adaptation framing while explicitly rejecting forced self-evolution, geometric truth, fixed entropy routing, infinite context, zero-copy, power, leak-resistance, constant-time verification, hardware-adaptation, and distributed-scaling projections as evidence.",
+    "source_type": "author_whitepaper_variant",
+    "canonical_source_id": "beastbrain",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Variant and de-duplication lineage only; no independent evidentiary weight and no implementation, hardware, model, memory, routing, verification, security, self-improvement, scaling, deployment, or support-state result.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), BeastBrain v3.3.4 Timeless Edition"
   },
   {
     "id": "aletheia",
-    "title": "Aletheia Foundry",
+    "title": "Aletheia / Proof-Carrying Workbench Lineage",
     "priority": "supporting_lineage",
     "layer": "safe_general_intelligence_lineage",
     "chapter_targets": [
-      "02",
-      "09",
-      "appendix",
+      "asi-is-a-stack-not-a-model",
+      "the-efficient-asi-hypothesis",
+      "claim-ledgers-and-belief-revision",
       "scientific-discovery-and-experimental-governance"
     ],
     "url": "https://docs.google.com/document/d/1H6M_IPbuu86FOQurv2rLQ97EYQVdThZ2U7njl0DBpIE",
-    "notes": "Safe general intelligence predecessor. Use ideas; avoid final branding if collision remains."
+    "notes": "Complete four-version correction-lineage audit from the original Aletheia epistemic-engine proposal through Aletheia Foundry and Proof-Carrying Workbench v1.1/v1.2. The later PCW design controls conflicts: semantic scope rather than contract-hash theater, claim-native release surfaces, separate assurance classes, least-privilege capabilities, bounded adversarial review, governed commitments, template decay, recertification, and incident response. The audit rejects immutable primitives, scalar truth/intervention scores, live-oracle and consensus truth, deterministic open-domain claim extraction, universal source allowlists, unvalidated risk thresholds, and safe-general-intelligence claims.",
+    "source_type": "author_architecture_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Architecture and correction lineage only; no implementation, natural claim-extraction corpus, verifier-independence result, semantic-escape measurement, useful-throughput comparison, security result, deployment, safe-general-intelligence result, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Aletheia / Proof-Carrying Workbench lineage"
   },
   {
     "id": "context_engineer",
@@ -1338,10 +1442,18 @@
     "priority": "supporting_lineage",
     "layer": "memory_context_lineage",
     "chapter_targets": [
-      "07"
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "security-kernel-and-digital-scifs"
     ],
     "url": "https://docs.google.com/document/d/1xXP364s9IZ4DFmRHTmBELviRQkJcQ55McIUokioRFdo",
-    "notes": "Context as supply chain; compartmentalized information logistics."
+    "notes": "Complete two-version audit of the Manhattan Protocol context-supply-chain paper. Preserves the context governor, layered representations, mission briefs, proposed MCP memory fields, need-to-know admission, and compartment lifecycle while separating sanitization, declassification, memory commit, zeroization, revocation, and residuals. Rejects Ring Attention as physical isolation, protocol fields as enforcement, regex/entropy scanning as semantic non-disclosure, permanent-wipe language, infinite storage, and all unreproduced benchmark figures.",
+    "source_type": "author_architecture_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Design lineage only; no benchmark harness, raw run, model/evaluator pin, protocol standard, runtime enforcement, leakage result, isolation result, physical-erasure result, deployment, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Manhattan Protocol / Context Engineer"
   },
   {
     "id": "black_hole_context_manager",
@@ -1349,10 +1461,16 @@
     "priority": "supporting_lineage",
     "layer": "memory_context_lineage",
     "chapter_targets": [
-      "07"
+      "context-transactions-snapshots-mounts-and-taint"
     ],
     "url": "https://docs.google.com/document/d/14KPQT5d86HaFZzQdUr_Sn5p7-8cscSqIZm5zxkijl-I",
-    "notes": "Earlier context management spec with lazy evaluation, batching, drift checks, security hardening."
+    "notes": "Complete v5.0/v4.1 pseudocode-lineage audit. Preserves versioned context units, tiered placement, lazy task-relative evaluation, explicit goal-drift decisions, reversible freeze/thaw with hysteresis, protected low-entropy constraints, and factual-retrieval versus generative-reconstruction separation. Treats character entropy, semantic mass, K-means thresholds, HMAC, repeated confirmation, keyword routing, and the Drifting Needle as fallible candidates or weak baselines; rejects production-ready and security claims.",
+    "source_type": "author_technical_spec_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Pseudocode and design lineage only; no importable package, dependency lock, test output, natural workload, cache/recall result, security result, deletion result, resource measurement, deployment, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Black Hole Context Collapse Protocol"
   },
   {
     "id": "ladon_manhattan",
@@ -1360,11 +1478,18 @@
     "priority": "supporting_lineage",
     "layer": "security_governance",
     "chapter_targets": [
-      "05",
-      "08"
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "system-boundaries-and-authority"
     ],
     "url": "https://docs.google.com/document/d/1uT9iQ7Jb2TsU9DletvtVeLEej63aIQl3WS3jTsMgtSM",
-    "notes": "Kernel-level security architecture for high-agency AI."
+    "notes": "Complete standalone security-paper audit. Preserves capability/credential separation, opaque caller-bound handles, trusted input paths, late substitution or remote use, per-use policy checks, and an explicit compartment lifecycle. The audit separates secret non-disclosure from authority misuse and harmful effects, treats returned artifacts as possible sensitive derivatives, and rejects platform equivalence, PROT_NONE/enclave conflation, portable trusted-UI claims, incomplete Rust pseudocode as implementation, and the paper's Ignorance and Ephemerality 'theorems'.",
+    "source_type": "author_security_architecture",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Architecture and pseudocode lineage only; no ladon-rs package, kernel implementation, trusted UI, hardware target, compartment, policy engine, threat-model test, side-channel measurement, audit, deployment, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Ladon & The Manhattan Protocol"
   },
   {
     "id": "uat",
@@ -1372,11 +1497,19 @@
     "priority": "supporting_lineage",
     "layer": "evaluation_refinement",
     "chapter_targets": [
-      "09",
-      "13"
+      "spinoza-verification-and-proof-carrying-claims",
+      "claim-ledgers-and-belief-revision",
+      "evidence-states-and-claim-discipline",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
     ],
     "url": "https://docs.google.com/document/d/1R7wKo2qg5waosEa-SwC-JKF77qoDiiEp1Df4Gbap0VE",
-    "notes": "Multi-AI collaborative refinement/evaluation protocol."
+    "notes": "Complete three-tab correction-lineage audit. The public human-in-the-loop architecture controls the original promotional multi-model tribunal: it preserves structural/retrieval/dialectical candidate views, an explicit dossier boundary and omitted frontier, probabilistic claim extraction, richer proposition states, bounded adversarial review, compression fidelity, and accountable human handoffs. It rejects brand-count diversity, consensus and stability as truth, delete-by-dossier-absence, SVO completeness, fixed thresholds, guard-model authority, all claimed performance/cost figures, and production or superiority labels.",
+    "source_type": "author_review_protocol_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Architecture and correction lineage only; no codebase, frozen dossier, task corpus, model output, claim annotation, source-quality evaluation, reviewer-dependence audit, human study, benchmark, cost trace, deployment, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Unified Adaptive Tribunal lineage"
   },
   {
     "id": "treellm",
@@ -1392,7 +1525,7 @@
   },
   {
     "id": "software_magic_grimoire",
-    "title": "Software Magic Grimoire",
+    "title": "The Grimoire of Software Magic Words: Operative Vocabulary, Prompt-Spells, and Stacked Workflows",
     "priority": "supporting_lineage",
     "layer": "command_contracts_promptcraft",
     "chapter_targets": [
@@ -1400,7 +1533,7 @@
       "08"
     ],
     "url": "https://docs.google.com/document/d/1UjGadqJ3ZiqfLgbac0APtV_OLnlSZAkIW0o0r37YdBo",
-    "notes": "Structured command contracts and semantic density of software words."
+    "notes": "Full composite-document audit completed 2026-07-31 across the public grimoire, 1,645-entry lexicon, pocket edition, stacked-spells addendum, and prompt pack. Retains bounded instruction fields, layered identity, typed handoffs, guards, evidence loops, scoped recursion, recovery, and workflow versioning; rejects vocabulary, role prompts, Gödel numbers, coil geometry, templates, and authored examples as evidence of meaning, authority, performance, or safety."
   },
   {
     "id": "road_to_agi",
@@ -1415,7 +1548,7 @@
   },
   {
     "id": "simulation_scaling",
-    "title": "Simulation Scaling Law",
+    "title": "The Simulation Scaling Law: Resource Constraints on Scope, Clockspeed, and Effective Fidelity in Nested Physical Simulations",
     "priority": "optional_support",
     "layer": "compute_fidelity_constraints",
     "chapter_targets": [
@@ -1426,7 +1559,7 @@
       "learning-theory-generalization-and-scaling-science"
     ],
     "url": "https://docs.google.com/document/d/1rt0lnpwZ9X6M_ejLC7PYHQSXsvajYICGo4ETS-ndUFA",
-    "notes": "Resource constraints on scope, clockspeed, and fidelity in simulations."
+    "notes": "Full six-tab lineage audit completed 2026-07-31. Retains the prospective simulation contract, typed bottleneck accounting, and logical-possibility/physical-feasibility split; treats D = scope*clockspeed/efficiency <= capacity as a conditional scalar heuristic rather than a proved universal law, rejects unsupported 1:1 and physical-limit overclaims, and routes simulator adequacy and transfer through Resource Economics."
   },
   {
     "id": "tokenmana",
@@ -1434,13 +1567,19 @@
     "priority": "optional_support",
     "layer": "resource_economics",
     "chapter_targets": [
-      "13",
-      "appendix",
-      "inter-stack-protocols-identity-and-economic-exchange",
+      "resource-economics-and-token-budgets",
+      "human-factors-and-meaningful-control-in-oversight",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
       "physical-compute-infrastructure-energy-and-environmental-constraints"
     ],
     "url": "https://docs.google.com/document/d/1dGOlGPZi6byTwRUbHQt40OSErBnQ4j6G_BZvA-oJRM8",
-    "notes": "Regenerative capacity mechanisms for load-stable token pricing."
+    "notes": "Complete five-tab/two-paper correction-lineage audit. Preserves regenerative capacity as one candidate budget mechanism and adds temporal-access contracts that expose renewal, accrual, expiry, burst, pricing, notification, fairness, and human-schedule effects. Separates renewal clustering, nocturnal work, sleep, and cognitive-friction proxies; strengthens privacy against employment/medical inference; and records mathematical gaps in stock units/boundaries, equilibrium, control continuity, strict variance, feedback stability, and profit claims. No theorem, simulation, load result, pricing result, human outcome, or welfare result is promoted.",
+    "source_type": "author_mechanism_and_human_outcomes_family",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Theory and research-design lineage only; no full proof, mechanization, simulation, billing trace, queue model, pricing experiment, human-subjects study, sleep/wearable data, productivity result, load-stability result, profit result, deployment, or support-state promotion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), TokenMana regenerative capacity and temporal elasticity papers"
   },
   {
     "id": "coilmoecot",
@@ -1451,7 +1590,13 @@
       "12"
     ],
     "url": "https://drive.google.com/file/d/1iwhhRGr7vj_Sr4UwwM_yX_ESSyisoWur",
-    "notes": "Prime-temporal coil networks as governed specialist cores in MoECOT runtime."
+    "notes": "Full composite connector text section-audited. Retains prime-temporal trace features, Graph/Trace-first placement, ledger-derived diagnostic tuples, removable shadow lanes, explicit pre-planner/post-plan/post-run insertion points, anti-experts as visible penalty signals, bounded update slices, and benchmark/canary/rollback promotion. Repeated MoECOT, packaging, and task-system appendices are treated as shared substrate rather than independent evidence.",
+    "source_type": "author_architecture_composite",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Design and implementation specification only; no local route, ablation, benchmark, canary, rollback, model-quality, safety, latency, or cost result.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), CoilMoECOT Whitepaper v2.0"
   },
   {
     "id": "temporal_coil_research",
@@ -1462,11 +1607,17 @@
       "12"
     ],
     "url": "https://drive.google.com/file/d/1PSQsAwMurlVRdsM6r_zRd2MPLZYv0qXH",
-    "notes": "Manifest-driven A/B process for temporal-coil integration in language model training."
+    "notes": "Full experiment note reviewed. Reports 11 variants, three seeds, six rounds per variant, split winner frequency, small mean deltas, flat pass/reward/holdout lanes, separation dominated by the collapse composite, and one narrow threshold-tuned seed. Preserved as an inconclusive source-reported result and placement-confounding lesson, not proof of benefit or general failure.",
+    "source_type": "author_experiment_note",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Source-reported live-endpoint runs only; no local reproduction, independent evaluator, causal component effect, transfer, or general coil conclusion.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Temporal Coil Research"
   },
   {
     "id": "bugbrain",
-    "title": "BugBrain",
+    "title": "BugBrain / Project Genesis: Neuro-Symbolic Bare-Metal Edge Intelligence Paper Lineage",
     "priority": "optional_support",
     "layer": "edge_efficiency_lineage",
     "chapter_targets": [
@@ -1475,7 +1626,7 @@
       "appendix"
     ],
     "url": "https://docs.google.com/document/d/1XR716XCo-WmvOpvGTGDmh9zbv44oiyjfcVDVQ1YibIc",
-    "notes": "Edge/resource-aware implementation context."
+    "notes": "Full 15-tab paper-lineage audit completed 2026-07-31 and reconciled against the pinned implementation dossier. Retains hardware-explicit ownership, state-qualified capacity, compact typed graphs, tiered context/paging/persistence, one-shot authority, artifact replay, readiness semantics, and objective-term effect tests; rejects consciousness, AGI, completeness, projected performance, named-module, source-presence, and skipped-green claims that outrun implementation evidence."
   },
   {
     "id": "cca_project",
@@ -5597,6 +5748,9 @@
     "url": "local-source:sources/raw/reflexive_router/the_reflexive_router_white_paper_v1_2.md@sha256:003a693741c40ca96ec3aece5b76ee90ec95a1d6c27ec81a970cff175f509068",
     "notes": "Corben-authored version 1.2 architecture proposal for a pre-deliberative command and routing plane, qualification-first dispatch, calibrated abstention, bounded execution DAGs, stable capability contracts, a non-bypassable effect commit kernel, typed result continuity, bitemporal Chronicle records, and governed trace-to-reflex compilation. It is assigned to existing chapter owners first; it adds no standalone chapter and supplies no implementation, benchmark, safety, deployment, transfer, novelty, AGI, ASI, or support-state result.",
     "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "",
     "published": "2026-07-16",
     "updated": "2026-07-16",
     "citation_label": "Sorenson (2026), The Reflexive Router, v1.2"
@@ -6218,6 +6372,9 @@
     "url": "local-source:sources/raw/corben_papers/deterministic_capability_compilation/deterministic_capability_compilation.md@sha256:8306d2bd40662245f8d3f044b4ca11a61c0fb18ab7cb799ccfe64f5e8c8a80c1",
     "notes": "Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred.",
     "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "",
     "published": "2026-07",
     "updated": "2026-07",
     "citation_label": "Sorenson (2026), Deterministic Capability Compilation"
@@ -7826,5 +7983,64 @@
     "source_type": "technical_whitepaper",
     "published": "2024-12-23",
     "citation_label": "Sorenson (2024), SpiderSynapse"
+  },
+  {
+    "id": "capability_ratchet_whitepaper",
+    "title": "The Capability Ratchet",
+    "priority": "supporting_lineage",
+    "layer": "capability_ratchet",
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "procedural-memory-and-cognitive-loop-closure",
+      "recursive-self-improvement-boundaries",
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://docs.google.com/document/d/1ZGLKgjNy2j1WxSJyEDsUIU032_jmyvtp1r4bzS7XykI",
+    "notes": "Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI.",
+    "source_type": "author_synthesis_whitepaper",
+    "published": "2026-05",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), The Capability Ratchet"
+  },
+  {
+    "id": "attd",
+    "title": "Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases",
+    "priority": "supporting",
+    "layer": "living_project_governance",
+    "chapter_targets": [
+      "artifact-steward-agents-and-living-project-governance",
+      "recursive-self-improvement-boundaries",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://docs.google.com/document/d/1mv69yelFkJ-deJ1BkVMZANqPQzzaERTpG108LhU1BKk",
+    "notes": "Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation.",
+    "source_type": "author_governance_whitepaper",
+    "published": "2026-03",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), Assembly-Theoretic Technical Debt"
+  },
+  {
+    "id": "orcp_moecot",
+    "title": "ORCP–MoECOT: A Governed Oscillating Rail Cascade Codec",
+    "priority": "supporting",
+    "layer": "deterministic_compression",
+    "chapter_targets": [
+      "compact-generative-systems-and-residual-honesty"
+    ],
+    "url": "https://drive.google.com/file/d/1J5sd32zKhp4pBjWTRyrpjNM-8_DpHpsY",
+    "notes": "Full authenticated technical specification section-audited. Adds decoder-boring lossless design, explicit container/header/block framing, reversible transforms, fixed-point range coding, local/match/structural prediction rails, bounded encoder planning, transmitted refinement packets, anti-experts as penalties, complete archive-rate accounting, and incompressible-input fallback.",
+    "source_type": "author_technical_specification",
+    "published": "2026-03-03",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "No inspected codec implementation, independent decoder, round-trip artifact, corpus result, runtime measurement, compression advantage, or production claim.",
+    "updated": "2026-07-31",
+    "citation_label": "Sorenson (2026), ORCP–MoECOT"
   }
 ]

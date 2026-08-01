@@ -25,6 +25,9 @@ primary_sources:
   - "ext_multilingual_evaluation_state_2026"
   - "portia_synapse"
   - "spider_synapse"
+  - "capability_ratchet_whitepaper"
+  - "attd"
+  - "temporal_coil_research"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -42,7 +45,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-07-31 |
 | Primary source records | `benchmaxxing`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -185,6 +188,18 @@ failure, or an active incident may justify an immediate stop or redesign. The
 record must state why lower-impact levels were inapplicable, unsafe, exhausted,
 or non-identifying. Otherwise architecture novelty can erase null results and
 manufacture necessity.
+
+The Capability Ratchet paper usefully separates three transitions that this
+book otherwise discusses in different chapters. A **benchmark ratchet** moves
+an instrument from frontier pressure toward diagnosis, regression, live, or
+retired duty. A **procedural ratchet** turns a recurrent successful trajectory
+into a versioned tool with preconditions, verification, monitoring, and
+retirement. A **structural ratchet** changes the underlying architecture only
+after the residual and lower-impact intervention record justify it. One event
+may touch all three, but the evidence ledger must record them separately; a
+new tool is not a new architecture, and a higher score is not automatically a
+durable procedure. This synthesis is same-author lineage, not independent
+confirmation of its component mechanisms.
 
 An intervention record freezes the residual cluster, current system,
 instrument, evaluator, data boundary, budget, baselines, predicted causal
@@ -887,7 +902,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `rgs` | Passage-reviewed comparator: Ratcheting Generative Systems. Supplies the precursor unified ratchet joining benchmark pressure, mastery and subgroup floors, critical-failure vetoes, stalled-effort threshold decay, frontier momentum, residual escrow, public calibration, loop closure, three execution modes, four ledgers, and a seven-level intervention ladder. | Conceptual precursor in the same author-side lineage as RMI, Benchmaxxing, CGS, and Cognitive Loop Closure; overlap is not independent corroboration. The 90/70 thresholds and portfolio percentages are illustrative, and no benchmark, intervention, tool, safety, transfer, or capability result exists. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `coherence_exchange` | Passage-reviewed comparator: The Coherence Exchange. Supports contestable evidence movement through structured claim/evidence units, verification supply chains, audit, fork/exit/contestability language, and governance/accounting frames for knowledge claims. | Reviewed source note only because authenticated connector text is not published here; epistemic-liquidity and exchange metaphors are not implemented economics, external corroboration, security evidence, governance evidence, or benchmark evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
@@ -901,6 +916,9 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds the RODIE evaluation program: minimum relational order, exact role binding, latent topology, interventions, dynamic identity, reversible contraction, object-field coupling, branch separation, compilation reuse, proposal recall, no-regret routing, transfer, and complete lifecycle cost. | RODIE is a proposed suite with no corpus, independent evaluator, benchmark run, result, construct-validity receipt, or evidence transition. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_cultural_alignment_llms_2024` | Metadata-first comparator: Investigating Cultural Alignment of Large Language Models. Empirical study of cultural alignment patterns in selected language models and measurements. It supports explicit population, language, and instrument scope; it does not establish stable national values or a universal measure of cultural alignment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_multilingual_evaluation_state_2026` | Metadata-first comparator: The State and Fate of Multilingual Contextual Evaluation in the NLP World. Research survey and analysis of multilingual contextual evaluation. It motivates language-by-task coverage and measurement reporting; it does not establish equivalent capability or safety across languages, dialects, or sociocultural settings. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `attd` | Passage-reviewed comparator: Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases. Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation. | Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `temporal_coil_research` | Passage-reviewed comparator: Temporal Coil Research. Full experiment note reviewed. Reports 11 variants, three seeds, six rounds per variant, split winner frequency, small mean deltas, flat pass/reward/holdout lanes, separation dominated by the collapse composite, and one narrow threshold-tuned seed. Preserved as an inconclusive source-reported result and placement-confounding lesson, not proof of benefit or general failure. | Source-reported live-endpoint runs only; no local reproduction, independent evaluator, causal component effect, transfer, or general coil conclusion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

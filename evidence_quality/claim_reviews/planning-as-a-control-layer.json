@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/planning-as-a-control-layer.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 42,
+    "prose_candidates_adjudicated": 43,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all nine assigned source notes and their limitations, both plan schemas, three deterministic planning harnesses, seven valid synthetic records, twenty-six rejecting controls, two accepted no-change transitions, all thirty-three theorem declarations grouped under seven manifest targets, every manifest atom, every prose candidate, lifecycle and interface boundaries, test plan, source crosswalk, summary, and handoff. The sweep made prospective obligation scheduling under uncertainty the distinct owner; separated semantic conformance, lowering, worker qualification, job creation, authority, effects, verification, evidence, release, rights, and cost owners; added candidate and attempt denominators, dependency falsifiers, observed feedback, effect-tested stop and recovery, causal ablations, reproduction, and transfer gates; and preserved zero chapter-core support effect."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; two no-change transitions; thirty-three finite Lean declarations; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
       "model": "A versioned consumer-relative plan policy over candidate decompositions, typed obligation graphs, assumptions and observations, dependency and feasibility predicates, route requests, lifecycle, scheduling, dispatch, merge, stop, recovery, replan, denominators, costs, and residuals; current implementations are trusted-field validators and finite routes, not a planner.",
       "authority": "Intent owns accepted semantics; Context and Memory own observations; Compilation owns lowering; Routing and Fields own worker qualification; Labor OS owns jobs; Runtime, Security, and Authority owners decide effects; Verification owns outcomes; Evidence and Readiness own support and release; Rights and Publication owners govern external use. Planning may order, block, request, replan, and residualize, but cannot grant authority or execute.",
-      "time": "Semantic review current through 2026-07-14; command, plan, source, state, observation, route, model, policy, authority, rights, resource, verifier, stop, horizon, environment, and evaluator versions expire after material change.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; nine reviewed source mappings; plan-graph and PlanForge-DAG fixtures; scheduler and replan traces; two no-change decisions; seven proof targets in two Lean modules; future natural tasks, plans, dependency labels, outcomes, costs, ablations, replications, and transfer bundles."
     },
     "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
@@ -45,13 +45,34 @@
     "strongest_counterclaim": "Mature workflow engines, HTN/PDDL planners, search methods, schedulers, routers, capability systems, and human planning already provide adequate decomposition and execution control; a separate planning control plane adds duplicated state, brittle schemas, latency, abstention, bureaucracy, false precision, and missed help without making dependencies true, models calibrated, or plans useful.",
     "falsifier": "A reachable ordinary or adversarial trace violates a frozen command, dependency, feasibility, authority, rights, resource, verifier, dispatch, merge, stop, replan, denominator, or residual rule; a required field has no exercised producer, consumer, owner, or consequence; or a strong simpler comparator dominates the preregistered joint usefulness, safety, latency, and cost frontier.",
     "required_lanes": [
-      {"lane": "source-synthesis", "necessity": "Freeze current workflow, HTN/PDDL, search, orchestration, scheduler, router, learned-world-model, and human-planning comparators without importing source-reported quality."},
-      {"lane": "normative", "necessity": "Justify consumer utility, decomposition obligations, affected-party scope, authority and rights ceilings, abstention, stops, recovery, acceptable residuals, and publication."},
-      {"lane": "formal", "necessity": "Specify typed obligation graphs, dependency semantics, feasibility, lifecycle, dispatch, merge, temporal replan, recovery, and trace refinement with countermodels beyond trusted Booleans and index order."},
-      {"lane": "executable", "necessity": "Run actual planners, observation producers, dependency and feasibility checks, route qualification, schedulers, effect gates, feedback-driven replanning, merge checks, stops, recovery, and residual custody end to end."},
-      {"lane": "empirical", "necessity": "Measure obligation coverage, dependency precision and recall, feasibility, calibration, route adequacy, useful completion, unsafe action, abstention, missed help, stability, recovery, latency, compute, coordination, human work, and governance cost jointly."},
-      {"lane": "causal", "necessity": "Ablate typed dependencies, observation handling, adequacy gates, route separation, denominator accounting, replan closure, merge checks, stop, and recovery under matched candidates and histories."},
-      {"lane": "transfer", "necessity": "Repeat across models, planner families, tasks, languages, modalities, tools, environments, organizations, jurisdictions, threat models, horizons, and time with independent implementations."}
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze current workflow, HTN/PDDL, search, orchestration, scheduler, router, learned-world-model, and human-planning comparators without importing source-reported quality."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify consumer utility, decomposition obligations, affected-party scope, authority and rights ceilings, abstention, stops, recovery, acceptable residuals, and publication."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify typed obligation graphs, dependency semantics, feasibility, lifecycle, dispatch, merge, temporal replan, recovery, and trace refinement with countermodels beyond trusted Booleans and index order."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run actual planners, observation producers, dependency and feasibility checks, route qualification, schedulers, effect gates, feedback-driven replanning, merge checks, stops, recovery, and residual custody end to end."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure obligation coverage, dependency precision and recall, feasibility, calibration, route adequacy, useful completion, unsafe action, abstention, missed help, stability, recovery, latency, compute, coordination, human work, and governance cost jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate typed dependencies, observation handling, adequacy gates, route separation, denominator accounting, replan closure, merge checks, stop, and recovery under matched candidates and histories."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Repeat across models, planner families, tasks, languages, modalities, tools, environments, organizations, jurisdictions, threat models, horizons, and time with independent implementations."
+      }
     ],
     "evidence_refs": {
       "chapter": "chapters/planning-as-a-control-layer.qmd",
@@ -102,7 +123,12 @@
       "Deprecate only when a more precise intent, compilation, routing, labor, runtime, security, verification, resource, evidence, rights, or release owner supersedes the atom and every consumer migrates with lineage."
     ],
     "promotion_ceiling": "argument_until_claim_specific_natural_multi_planner_multi_comparator_causal_campaign_and_accepted_evidence_transition",
-    "reproduction": {"command": null, "environment_lock": null, "artifact_digest": null, "evaluator_identity": null},
+    "reproduction": {
+      "command": null,
+      "environment_lock": null,
+      "artifact_digest": null,
+      "evaluator_identity": null
+    },
     "terminal_disposition": null,
     "residual": {
       "owner": "planning-as-a-control-layer",
@@ -120,14 +146,18 @@
       "current_disposition": "retain_argument_pending_natural_multi_planner_campaign",
       "strongest_counterclaim": "Existing planners, workflow engines, schedulers, routers, and human review provide adequate control at lower complexity and cost.",
       "falsifier": "Any accepted plan violates a frozen obligation or bound, wrong dependencies or feasibility pass, or a strong simpler comparator dominates the joint frontier.",
-      "acceptance_criteria": ["Meet every preregistered natural coverage, dependency, usefulness, safety, cost, causal, replication, and transfer gate against strong comparators."]
+      "acceptance_criteria": [
+        "Meet every preregistered natural coverage, dependency, usefulness, safety, cost, causal, replication, and transfer gate against strong comparators."
+      ]
     },
     "planning-as-a-control-layer.minimum.001": {
       "proposition_type": "executable",
       "current_disposition": "record_and_route_scaffold_only_next_minimum_not_met",
       "strongest_counterclaim": "The present validators and proofs already implement the planning control layer.",
       "falsifier": "Any current artifact is narrated as planner, scheduler, natural-outcome, or support evidence beyond its exact record or finite route.",
-      "acceptance_criteria": ["Run actual planners on natural held-out workloads with matched baselines, independent adjudication, observed effects and costs, causal ablations, reproduction, and transfer."]
+      "acceptance_criteria": [
+        "Run actual planners on natural held-out workloads with matched baselines, independent adjudication, observed effects and costs, causal ablations, reproduction, and transfer."
+      ]
     },
     "planning-as-a-control-layer.beyond_sota.001": {
       "proposition_type": "composite",
@@ -135,109 +165,145 @@
       "current_disposition": "research_target_not_current_result",
       "strongest_counterclaim": "The full control plane compounds correlated errors and governance cost while simpler systems remain more useful.",
       "falsifier": "Any joint gate fails, causal signatures disappear, a simpler baseline dominates, or independent replication and transfer fail.",
-      "acceptance_criteria": ["Complete the multi-comparator causal, adversarial, independently implemented, replicated, and transferred program and meet every joint gate."]
+      "acceptance_criteria": [
+        "Complete the multi-comparator causal, adversarial, independently implemented, replicated, and transferred program and meet every joint gate."
+      ]
     },
     "planning-as-a-control-layer.invariant.002": {
       "current_disposition": "retain_acyclicity_is_not_dependency_truth_boundary",
       "strongest_counterclaim": "Typed edge declarations and cycle checks are sufficient for bounded workflows.",
       "falsifier": "A dated natural audit finds declared dependency semantics and acyclicity predict every required ordering and omission without material error.",
-      "acceptance_criteria": ["Measure dependency precision, recall, provenance, falsifiers, and consequences against independent labels and counterexamples."]
+      "acceptance_criteria": [
+        "Measure dependency precision, recall, provenance, falsifiers, and consequences against independent labels and counterexamples."
+      ]
     },
     "planning-as-a-control-layer.invariant.004": {
       "current_disposition": "retain_dispatch_request_gate_pending_effect_bearing_enforcement",
       "strongest_counterclaim": "Downstream authority checks make planner-side dispatch gates redundant.",
       "falsifier": "Stale or missing dependency, context, route, authority, rights, resource, verifier, stop, or recovery state can request or cause a material effect.",
-      "acceptance_criteria": ["Inject every stale or missing predicate through real dispatch and observe denial before effect with measured false-denial cost."]
+      "acceptance_criteria": [
+        "Inject every stale or missing predicate through real dispatch and observe denial before effect with measured false-denial cost."
+      ]
     },
     "planning-as-a-control-layer.invariant.005": {
       "current_disposition": "retain_replan_preservation_invariant_pending_live_feedback",
       "strongest_counterclaim": "Ordinary workflow versioning and rerun semantics preserve enough state for practical replanning.",
       "falsifier": "A replan widens authority, erases stops or alternatives, reruns unaffected work, loses costs or residuals, or silently changes the contract.",
-      "acceptance_criteria": ["Exercise live perturbations with typed dependency closure, observed effects, preserved history, recovery, and independent outcome adjudication."]
+      "acceptance_criteria": [
+        "Exercise live perturbations with typed dependency closure, observed effects, preserved history, recovery, and independent outcome adjudication."
+      ]
     },
     "planning-as-a-control-layer.invariant.006": {
       "current_disposition": "retain_complete_denominator_invariant_pending_natural_campaign",
       "strongest_counterclaim": "Best-plan and completed-node reporting is enough when exclusions are documented.",
       "falsifier": "Any generated alternative, block, timeout, retry, replan, merge failure, denial, cost, or residual disappears without changing reported conclusions.",
-      "acceptance_criteria": ["Reconcile generator emissions, plan versions, node states, route and dispatch requests, effects, costs, and residuals exactly."]
+      "acceptance_criteria": [
+        "Reconcile generator emissions, plan versions, node states, route and dispatch requests, effects, costs, and residuals exactly."
+      ]
     },
     "planning-as-a-control-layer.invariant.007": {
       "current_disposition": "retain_non_dispatch_not_usefulness_boundary",
       "strongest_counterclaim": "Lower dispatch or shorter nominal critical path is a sufficient operational proxy for safer and cheaper planning.",
       "falsifier": "A prospectively matched study validly infers joint usefulness, safety, and cost from those proxies without outcome or opportunity measurements.",
-      "acceptance_criteria": ["Require nonzero useful and unsafe opportunity plus matched outcomes, missed help, latency, recovery, and total cost."]
+      "acceptance_criteria": [
+        "Require nonzero useful and unsafe opportunity plus matched outcomes, missed help, latency, recovery, and total cost."
+      ]
     },
     "planning-as-a-control-layer.failure_mode.004": {
       "current_disposition": "retain_acyclicity_laundering_failure_after_finite_index_proofs",
       "strongest_counterclaim": "Acyclicity plus declared edge types makes the graph operationally trustworthy.",
       "falsifier": "Natural counterexample search finds no false, missing, stale, or circular semantic dependency that passes the checker.",
-      "acceptance_criteria": ["Test independently labeled false and missing edges, semantic cycles, stale observations, and alternative valid decompositions."]
+      "acceptance_criteria": [
+        "Test independently labeled false and missing edges, semantic cycles, stale observations, and alternative valid decompositions."
+      ]
     },
     "planning-as-a-control-layer.failure_mode.009": {
       "current_disposition": "retain_arbitrage_laundering_failure_pending_route_outcomes",
       "strongest_counterclaim": "Capability scores and expected cost are adequate for planner route selection.",
       "falsifier": "Selected routes meet frozen adequacy, outcome, rights, latency, and total-cost gates across hidden tasks without independent qualification.",
-      "acceptance_criteria": ["Compare proposed and qualified routes under blinded natural outcomes and complete cost-quality ledgers."]
+      "acceptance_criteria": [
+        "Compare proposed and qualified routes under blinded natural outcomes and complete cost-quality ledgers."
+      ]
     },
     "planning-as-a-control-layer.failure_mode.012": {
       "current_disposition": "retain_replanning_erasure_failure_pending_live_trace",
       "strongest_counterclaim": "Keeping only the latest plan is sufficient because superseded states are operationally irrelevant.",
       "falsifier": "Deleting prior plans, alternatives, assumptions, costs, and failed attempts never changes audit, recovery, or outcome conclusions.",
-      "acceptance_criteria": ["Recompute repair and outcome claims from full and latest-only histories under adversarial perturbations."]
+      "acceptance_criteria": [
+        "Recompute repair and outcome claims from full and latest-only histories under adversarial perturbations."
+      ]
     },
     "planning-as-a-control-layer.failure_mode.016": {
       "current_disposition": "retain_plan_survivorship_failure_pending_complete_emission_replay",
       "strongest_counterclaim": "Planner-produced candidates rejected before scheduling add no useful information.",
       "falsifier": "A clean full-emission replay finds no material change in quality, cost, abstention, or failure estimates.",
-      "acceptance_criteria": ["Reconcile and rescore all generated, malformed, rejected, blocked, timed-out, replanned, and residualized plans."]
+      "acceptance_criteria": [
+        "Reconcile and rescore all generated, malformed, rejected, blocked, timed-out, replanned, and residualized plans."
+      ]
     },
     "planning-as-a-control-layer.failure_mode.017": {
       "current_disposition": "retain_fail_closed_planning_failure_after_zero_support_effect",
       "strongest_counterclaim": "Conservative blocking is intrinsically safer even if useful throughput is not measured.",
       "falsifier": "Matched nonzero-opportunity trials show blocking improves the joint safety-usefulness frontier without missed-help or cost regressions.",
-      "acceptance_criteria": ["Measure useful throughput, unsafe dispatch, abstention, missed help, latency, and total governance cost together."]
+      "acceptance_criteria": [
+        "Measure useful throughput, unsafe dispatch, abstention, missed help, latency, and total governance cost together."
+      ]
     },
     "planning-as-a-control-layer.formal.planning-control-layer-operational-invariant": {
       "current_disposition": "retain_as_assumption_restating_authority_scaffold",
       "strongest_counterclaim": "The declarations assume the modeled authority predicates and do not validate grants, inheritance, or enforcement.",
       "falsifier": "They are cited as proof that a real plan cannot widen authority or a forged or stale predicate passes.",
-      "acceptance_criteria": ["Refine against typed grants, command lineage, expiry, revocation, observed state, and executable effect gates."]
+      "acceptance_criteria": [
+        "Refine against typed grants, command lineage, expiry, revocation, observed state, and executable effect gates."
+      ]
     },
     "planning-as-a-control-layer.formal.planning-control-layer-failure-blocks-promotion": {
       "current_disposition": "retain_as_finite_dispatch_gate_scaffold",
       "strongest_counterclaim": "A Boolean conjunction proves only its own declared policy and not semantic feasibility or runtime blocking.",
       "falsifier": "A semantically invalid record reaches dispatch or the theorem is cited as planner safety evidence.",
-      "acceptance_criteria": ["Connect typed semantic and authority producers to observed effect-bearing dispatch with negative controls."]
+      "acceptance_criteria": [
+        "Connect typed semantic and authority producers to observed effect-bearing dispatch with negative controls."
+      ]
     },
     "planning-as-a-control-layer.formal.planning-control-layer-plan-graph-admission-route": {
       "current_disposition": "retain_finite_branch_coverage_pending_graph_semantics",
       "strongest_counterclaim": "Trusted Booleans and route priority do not establish graph completeness, dependency truth, or planner quality.",
       "falsifier": "A false or incomplete graph reaches admission or prose calls route coverage planning correctness.",
-      "acceptance_criteria": ["Bind typed graph objects, independent dependency labels, countermodels, executable producers, and runtime consequences."]
+      "acceptance_criteria": [
+        "Bind typed graph objects, independent dependency labels, countermodels, executable producers, and runtime consequences."
+      ]
     },
     "planning-as-a-control-layer.formal.planning-scheduler-state-probe-fixture-bridge": {
       "current_disposition": "retain_fixture_bridge_only_pending_live_scheduler",
       "strongest_counterclaim": "The theorem trusts fixture summary bits and proves no scheduler policy, optimality, or deployed behavior.",
       "falsifier": "A malformed trace can set the bits or the theorem is cited as scheduler evidence.",
-      "acceptance_criteria": ["Connect typed traces to an independently implemented scheduler, observed dispatch, costs, outcomes, and perturbations."]
+      "acceptance_criteria": [
+        "Connect typed traces to an independently implemented scheduler, observed dispatch, costs, outcomes, and perturbations."
+      ]
     },
     "planning-as-a-control-layer.formal.planning-runtime-replan-delta-audit-bridge": {
       "current_disposition": "retain_fixture_bridge_only_pending_live_feedback_replanning",
       "strongest_counterclaim": "The theorem restates synthetic delta fields and proves neither affected-subgraph correctness nor useful recovery.",
       "falsifier": "Incorrect repair scope or erased state satisfies the summary, or the theorem is cited as deployed replanning evidence.",
-      "acceptance_criteria": ["Connect typed dependency closure and observed feedback to live replans, effects, recovery, outcomes, and countermodels."]
+      "acceptance_criteria": [
+        "Connect typed dependency closure and observed feedback to live replans, effects, recovery, outcomes, and countermodels."
+      ]
     },
     "planning-as-a-control-layer.formal.planforge-dag-operational-invariant": {
       "current_disposition": "retain_index_order_scaffold_not_general_dag_or_dependency_proof",
       "strongest_counterclaim": "Increasing node indices encode only a chosen order and do not prove general acyclicity, dependency truth, or completeness.",
       "falsifier": "The theorem is cited as general DAG correctness or a false dependency graph satisfies the ordering predicate.",
-      "acceptance_criteria": ["Model typed finite graphs, reachability, cycles, semantic dependency validity, missing edges, and executable scheduling refinement."]
+      "acceptance_criteria": [
+        "Model typed finite graphs, reachability, cycles, semantic dependency validity, missing edges, and executable scheduling refinement."
+      ]
     },
     "planning-as-a-control-layer.formal.planforge-dag-failure-blocks-promotion": {
       "current_disposition": "retain_finite_outcome_policy_scaffold",
       "strongest_counterclaim": "The valid-outcome predicate assumes the desired escalation or residual policy and proves no verifier quality or runtime behavior.",
       "falsifier": "A failed quality predicate is silently completed in execution or the theorem is cited as verifier or recovery evidence.",
-      "acceptance_criteria": ["Bind independent quality evaluation to observed escalation, residual custody, retry cost, and terminal outcomes."]
+      "acceptance_criteria": [
+        "Bind independent quality evaluation to observed escalation, residual custody, retry cost, and terminal outcomes."
+      ]
     }
   },
   "prose_candidate_dispositions": {
@@ -246,49 +312,204 @@
       "rationale": "Restates the chapter core and authority-boundary rule that planning may consume model-relative state but cannot establish truth or authorize an effect.",
       "target_atom_id": "planning-as-a-control-layer.core"
     },
-    "planning-as-a-control-layer.prose.4ca05a9f4e28": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped merge requirement restates structured planning interface and invariant atoms."},
-    "planning-as-a-control-layer.prose.a38c0d6481f2": {"state": "nonmaterial_explanation", "rationale": "Line-wrapped graph-contract requirement is already owned by structured mechanism and interface atoms."},
-    "planning-as-a-control-layer.prose.48e0df478562": {"state": "nonmaterial_explanation", "rationale": "Forced-route failure sentence specializes the existing fail-closed planning invariant."},
-    "planning-as-a-control-layer.prose.77ef3a797a42": {"state": "nonmaterial_explanation", "rationale": "Evaluation-list fragment elaborates the already atomized argument-exit campaign."},
-    "planning-as-a-control-layer.prose.10736586eaee": {"state": "nonmaterial_explanation", "rationale": "Campaign 5 limitation fragment narrows the accepted non-core result and creates no independent claim."},
-    "planning-as-a-control-layer.prose.928295b48aad": {"state": "duplicate_of_atom", "rationale": "Restates the finite planning proof non-claim boundary.", "target_atom_id": "planning-as-a-control-layer.formal.planning-control-layer-plan-graph-admission-route"},
-    "planning-as-a-control-layer.prose.81637139c527": {"state": "duplicate_of_atom", "rationale": "Restates why accepted commands still require planning.", "target_atom_id": "planning-as-a-control-layer.problem.001"},
-    "planning-as-a-control-layer.prose.4224e1170326": {"state": "duplicate_of_atom", "rationale": "Restates the obligation-selection problem.", "target_atom_id": "planning-as-a-control-layer.problem.001"},
-    "planning-as-a-control-layer.prose.2c0832a54e55": {"state": "duplicate_of_atom", "rationale": "Restates the inspectable and dispatchable plan requirement.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.9f683a5ba683": {"state": "duplicate_of_atom", "rationale": "Restates plan-as-versioned-artifact design.", "target_atom_id": "planning-as-a-control-layer.mechanism.010"},
-    "planning-as-a-control-layer.prose.992d30c5437a": {"state": "duplicate_of_atom", "rationale": "Restates the plan record fields and negative space.", "target_atom_id": "planning-as-a-control-layer.mechanism.003"},
-    "planning-as-a-control-layer.prose.2a6689238dc8": {"state": "duplicate_of_atom", "rationale": "Restates the intended reduction in downstream surprise.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.94ad1ba75d8e": {"state": "duplicate_of_atom", "rationale": "Restates explicit lifecycle and refusal visibility.", "target_atom_id": "planning-as-a-control-layer.mechanism.010"},
-    "planning-as-a-control-layer.prose.f1974526dcac": {"state": "nonmaterial_explanation", "rationale": "Reader explanation of why negative space matters.", "target_atom_id": null},
-    "planning-as-a-control-layer.prose.7f815347c197": {"state": "duplicate_of_atom", "rationale": "Restates the post-contract planning owner.", "target_atom_id": "planning-as-a-control-layer.problem.001"},
-    "planning-as-a-control-layer.prose.7609b987eff2": {"state": "duplicate_of_atom", "rationale": "Restates planning eligibility and ordering.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.0508662e94b5": {"state": "duplicate_of_atom", "rationale": "Restates the insufficiency of partial comparator families.", "target_atom_id": "planning-as-a-control-layer.insufficiency.001"},
-    "planning-as-a-control-layer.prose.c373f26e86cc": {"state": "duplicate_of_atom", "rationale": "Exact core-claim opening.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.bd59da3cff9c": {"state": "duplicate_of_atom", "rationale": "Exact core dispatch and replan consequence.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.4340e5b6ce91": {"state": "duplicate_of_atom", "rationale": "Exact core non-authority boundary.", "target_atom_id": "planning-as-a-control-layer.core"},
-    "planning-as-a-control-layer.prose.878414f95350": {"state": "duplicate_of_atom", "rationale": "Restates acyclicity as necessary but insufficient.", "target_atom_id": "planning-as-a-control-layer.invariant.002"},
-    "planning-as-a-control-layer.prose.9d8b7e4e23c1": {"state": "duplicate_of_atom", "rationale": "Restates explicit plan-node lifecycle states.", "target_atom_id": "planning-as-a-control-layer.mechanism.010"},
-    "planning-as-a-control-layer.prose.55254098153c": {"state": "duplicate_of_atom", "rationale": "Restates required node fields.", "target_atom_id": "planning-as-a-control-layer.mechanism.003"},
-    "planning-as-a-control-layer.prose.526bc178e6d1": {"state": "duplicate_of_atom", "rationale": "Restates affected-subgraph repair semantics.", "target_atom_id": "planning-as-a-control-layer.mechanism.013"},
-    "planning-as-a-control-layer.prose.2a8ec81c78cd": {"state": "duplicate_of_atom", "rationale": "Restates the accepted-command interface boundary.", "target_atom_id": "planning-as-a-control-layer.interface.001"},
-    "planning-as-a-control-layer.prose.024add43d6f4": {"state": "duplicate_of_atom", "rationale": "Restates typed dependency falsifiers and acyclicity limit.", "target_atom_id": "planning-as-a-control-layer.invariant.002"},
-    "planning-as-a-control-layer.prose.8372926b5d0c": {"state": "duplicate_of_atom", "rationale": "Restates the routing and qualification boundary.", "target_atom_id": "planning-as-a-control-layer.interface.004"},
-    "planning-as-a-control-layer.prose.4a2ea47ffa18": {"state": "duplicate_of_atom", "rationale": "Restates residual ownership and observed consequences.", "target_atom_id": "planning-as-a-control-layer.mechanism.015"},
-    "planning-as-a-control-layer.prose.88dcd4e469e1": {"state": "duplicate_of_atom", "rationale": "Restates evidence-owner and proof-boundary separation.", "target_atom_id": "planning-as-a-control-layer.invariant.003"},
-    "planning-as-a-control-layer.prose.8232b3665fd0": {"state": "duplicate_of_atom", "rationale": "Example of route and verifier inadequacy laundering.", "target_atom_id": "planning-as-a-control-layer.failure_mode.009"},
-    "planning-as-a-control-layer.prose.c1fd69f2c87d": {"state": "duplicate_of_atom", "rationale": "Restates the causal, reproducible, transfer minimum.", "target_atom_id": "planning-as-a-control-layer.minimum.001"},
-    "planning-as-a-control-layer.prose.30c119f8b61c": {"state": "duplicate_of_atom", "rationale": "Restates beyond-SOTA promotion and transfer controls.", "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"},
-    "planning-as-a-control-layer.prose.77735b3c2279": {"state": "historical_or_source_report", "rationale": "Reports the remaining natural planner harness gaps.", "target_atom_id": "planning-as-a-control-layer.minimum.001"},
-    "planning-as-a-control-layer.prose.98689027e874": {"state": "duplicate_of_atom", "rationale": "Restates predictive plan-state fields.", "target_atom_id": "planning-as-a-control-layer.mechanism.006"},
-    "planning-as-a-control-layer.prose.1cd2d5670ba1": {"state": "duplicate_of_atom", "rationale": "Restates adoption and causal campaign requirements.", "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"},
-    "planning-as-a-control-layer.prose.4469d4dd41dc": {"state": "historical_or_source_report", "rationale": "Reports exact current fixture and finite-route evidence.", "target_atom_id": "planning-as-a-control-layer.minimum.001"},
-    "planning-as-a-control-layer.prose.b02f33cd62ae": {"state": "historical_or_source_report", "rationale": "States that current evidence does not show a good planner.", "target_atom_id": "planning-as-a-control-layer.minimum.001"},
-    "planning-as-a-control-layer.prose.7901923176e3": {"state": "duplicate_of_atom", "rationale": "Restates the required natural causal and transfer evidence.", "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"},
-    "planning-as-a-control-layer.prose.3722417a8956": {"state": "duplicate_of_atom", "rationale": "Restates complete cost attribution and hidden-repair prevention.", "target_atom_id": "planning-as-a-control-layer.invariant.009"}
-  ,
+    "planning-as-a-control-layer.prose.4ca05a9f4e28": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped merge requirement restates structured planning interface and invariant atoms."
+    },
+    "planning-as-a-control-layer.prose.a38c0d6481f2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped graph-contract requirement is already owned by structured mechanism and interface atoms."
+    },
+    "planning-as-a-control-layer.prose.48e0df478562": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Forced-route failure sentence specializes the existing fail-closed planning invariant."
+    },
+    "planning-as-a-control-layer.prose.77ef3a797a42": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Evaluation-list fragment elaborates the already atomized argument-exit campaign."
+    },
+    "planning-as-a-control-layer.prose.10736586eaee": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Campaign 5 limitation fragment narrows the accepted non-core result and creates no independent claim."
+    },
+    "planning-as-a-control-layer.prose.928295b48aad": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the finite planning proof non-claim boundary.",
+      "target_atom_id": "planning-as-a-control-layer.formal.planning-control-layer-plan-graph-admission-route"
+    },
+    "planning-as-a-control-layer.prose.81637139c527": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates why accepted commands still require planning.",
+      "target_atom_id": "planning-as-a-control-layer.problem.001"
+    },
+    "planning-as-a-control-layer.prose.4224e1170326": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the obligation-selection problem.",
+      "target_atom_id": "planning-as-a-control-layer.problem.001"
+    },
+    "planning-as-a-control-layer.prose.2c0832a54e55": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the inspectable and dispatchable plan requirement.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.9f683a5ba683": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates plan-as-versioned-artifact design.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.010"
+    },
+    "planning-as-a-control-layer.prose.992d30c5437a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the plan record fields and negative space.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.003"
+    },
+    "planning-as-a-control-layer.prose.2a6689238dc8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the intended reduction in downstream surprise.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.94ad1ba75d8e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates explicit lifecycle and refusal visibility.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.010"
+    },
+    "planning-as-a-control-layer.prose.f1974526dcac": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Reader explanation of why negative space matters.",
+      "target_atom_id": null
+    },
+    "planning-as-a-control-layer.prose.7f815347c197": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the post-contract planning owner.",
+      "target_atom_id": "planning-as-a-control-layer.problem.001"
+    },
+    "planning-as-a-control-layer.prose.7609b987eff2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates planning eligibility and ordering.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.0508662e94b5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the insufficiency of partial comparator families.",
+      "target_atom_id": "planning-as-a-control-layer.insufficiency.001"
+    },
+    "planning-as-a-control-layer.prose.c373f26e86cc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact core-claim opening.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.bd59da3cff9c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact core dispatch and replan consequence.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.4340e5b6ce91": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact core non-authority boundary.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.878414f95350": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates acyclicity as necessary but insufficient.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.002"
+    },
+    "planning-as-a-control-layer.prose.9d8b7e4e23c1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates explicit plan-node lifecycle states.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.010"
+    },
+    "planning-as-a-control-layer.prose.55254098153c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates required node fields.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.003"
+    },
+    "planning-as-a-control-layer.prose.526bc178e6d1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates affected-subgraph repair semantics.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.013"
+    },
+    "planning-as-a-control-layer.prose.2a8ec81c78cd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the accepted-command interface boundary.",
+      "target_atom_id": "planning-as-a-control-layer.interface.001"
+    },
+    "planning-as-a-control-layer.prose.024add43d6f4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates typed dependency falsifiers and acyclicity limit.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.002"
+    },
+    "planning-as-a-control-layer.prose.8372926b5d0c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the routing and qualification boundary.",
+      "target_atom_id": "planning-as-a-control-layer.interface.004"
+    },
+    "planning-as-a-control-layer.prose.4a2ea47ffa18": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates residual ownership and observed consequences.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.015"
+    },
+    "planning-as-a-control-layer.prose.88dcd4e469e1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates evidence-owner and proof-boundary separation.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.003"
+    },
+    "planning-as-a-control-layer.prose.8232b3665fd0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Example of route and verifier inadequacy laundering.",
+      "target_atom_id": "planning-as-a-control-layer.failure_mode.009"
+    },
+    "planning-as-a-control-layer.prose.c1fd69f2c87d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the causal, reproducible, transfer minimum.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.30c119f8b61c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates beyond-SOTA promotion and transfer controls.",
+      "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
+    },
+    "planning-as-a-control-layer.prose.77735b3c2279": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the remaining natural planner harness gaps.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.98689027e874": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates predictive plan-state fields.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.006"
+    },
+    "planning-as-a-control-layer.prose.1cd2d5670ba1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates adoption and causal campaign requirements.",
+      "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
+    },
+    "planning-as-a-control-layer.prose.4469d4dd41dc": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports exact current fixture and finite-route evidence.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.b02f33cd62ae": {
+      "state": "historical_or_source_report",
+      "rationale": "States that current evidence does not show a good planner.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.7901923176e3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the required natural causal and transfer evidence.",
+      "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
+    },
+    "planning-as-a-control-layer.prose.3722417a8956": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates complete cost attribution and hidden-repair prevention.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.009"
+    },
     "planning-as-a-control-layer.prose.218e1aaacbfc": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "planning-as-a-control-layer.prose.4493afa7092a": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `PlanForge compiler, scheduler, and Watchdog contract` to existing reviewed atom `planning-as-a-control-layer.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
     }
   },
   "non_claims": [

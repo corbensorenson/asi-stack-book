@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-27"
+last_updated: "2026-07-31"
 primary_sources:
   - "scf"
   - "rmi"
@@ -12,6 +12,7 @@ primary_sources:
   - "cognitive_loop_closure"
   - "talos"
   - "moecot"
+  - "capability_ratchet_whitepaper"
   - "ext_corrigibility_2015"
   - "ext_argo_rollouts_docs"
   - "ext_feature_toggles_fowler"
@@ -38,8 +39,8 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-27 |
-| Primary source records | `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`, `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018` |
+| Last updated | 2026-07-31 |
+| Primary source records | The manifest owns the exact source list, including `capability_ratchet_whitepaper` alongside the existing replacement, corrigibility, rollout, MLOps, and transaction comparators. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external variants: corrigibility, Argo Rollouts, feature toggles, Google Cloud MLOps, Kubernetes Deployments, TxFS; connector/recovery: `moecot` |
@@ -101,7 +102,7 @@ The core claim remains `argument`. The source set supplies design lineage and co
 
 ### Claim-source mapping status
 
-Appendix C maps all twelve assigned sources. Five project sources have reviewed raw passages, `moecot` remains source-note-bounded implementation context, and six external mappings establish corrigibility, rollout, controlled-exposure, MLOps, revision-history, and filesystem-transaction comparators. Mapping them makes their role auditable; it does not make them local evidence.
+Appendix C maps all assigned sources. Five project sources have reviewed raw passages, the complete authenticated `moecot` connector text is passage-reviewed implementation context, and the external mappings establish corrigibility, rollout, controlled-exposure, MLOps, revision-history, and filesystem-transaction comparators. Mapping them makes their role auditable; it does not make them local evidence.
 
 | Source | What it supports | Limit |
 |---|---|---|
@@ -387,7 +388,8 @@ These rows keep Capability Replacement and Rollback's manifest assignments visib
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 full-state rollback result

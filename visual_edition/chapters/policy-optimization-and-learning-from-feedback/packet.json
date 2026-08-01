@@ -3,8 +3,8 @@
   "video_id": "asi-video-policy-optimization-and-learning-from-feedback",
   "chapter_id": "policy-optimization-and-learning-from-feedback",
   "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-  "chapter_sha256": "3d7ff4266c43fab89f6b5c4bf10e3426f20333a848fab3b80085af9f57d46e44",
-  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "chapter_sha256": "db013d12b27c3af42f75dbb2bc62049c16abbf3375dd3fc3728824ec8a03e1d2",
+  "source_commit": "17c6ece80f771d3bce5f89c6b85c99ca9b6c2ea0",
   "pilot": false,
   "lifecycle_state": "ready_not_published",
   "claim_bindings": [
@@ -43,7 +43,9 @@
     "ext_longrlvr_2026",
     "ext_rlhf_limitations_2023",
     "ext_muse_unlearning_2025",
-    "ext_faithfulness_information_flow_2026"
+    "ext_faithfulness_information_flow_2026",
+    "portia_synapse",
+    "spider_synapse"
   ],
   "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
   "required_content": {
@@ -152,7 +154,7 @@
   },
   "staleness": {
     "state": "current",
-    "checked_chapter_sha256": "3d7ff4266c43fab89f6b5c4bf10e3426f20333a848fab3b80085af9f57d46e44",
+    "checked_chapter_sha256": "db013d12b27c3af42f75dbb2bc62049c16abbf3375dd3fc3728824ec8a03e1d2",
     "triggers": [
       "core_claim",
       "mechanism",

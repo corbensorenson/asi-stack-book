@@ -152,7 +152,7 @@ The proposal exposes a subtle specification contradiction. A fresh
 unforgeable `seal()` cannot be an ordinary pure deterministic primitive unless
 its name supply and initial state are explicit. Freshness requires mutable
 state, randomness, a deterministic state-passing schedule, or a host-issued
-token. The stack should therefore keep sealing/unsealing as a pure relation but
+token. Sealing and unsealing can remain a pure relation, but the system must
 treat token minting as an authority-bearing initialization or runtime effect.
 Its issuer, entropy or counter state, epoch, scope, exportability, persistence,
 revocation, and replay behavior belong in the formal artifact. A nominal

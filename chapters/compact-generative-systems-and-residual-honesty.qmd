@@ -23,6 +23,7 @@ primary_sources:
   - "coilra_multicoil_rope"
   - "ext_raptor_2024"
   - "qcsa_whitepaper"
+  - "orcp_moecot"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,8 +41,8 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
-| Primary source records | 17 exact mapped records: `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope`, `ext_raptor_2024`, and `qcsa_whitepaper` |
+| Last updated | 2026-07-31 |
+| Primary source records | Exact mapped records include `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope`, `ext_raptor_2024`, `qcsa_whitepaper`, and `orcp_moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm`; supporting: `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` |
@@ -363,6 +364,38 @@ research alive; repeated repair domination, interface explosion, mapping loss,
 proxy regret, or impractical search narrows or rejects broader codec claims.
 The repository has not run Prototype A, so this remains a detailed research
 contract rather than a compression result.
+
+### Make the decoder boring
+
+ORCP–MoECOT sharpens the exactness side of this contract with a useful design
+rule: the encoder may search, but the decoder should not have to guess. A
+lossless archive must transmit the chosen plan, reversible transform state,
+predictor and profile identity, update packets, framing, and compiler contract
+needed for a bounded independent decoder to reproduce the byte stream. Search
+that remains implicit in the encoder, a floating-point convention that is not
+bit-stable, or shared state that is absent from the archive is hidden codec
+state, not compression.
+
+The proposed codec combines explicit header and block framing, semantic and
+compiler-contract digests, CRC integrity checks, reversible transforms, a
+fixed-point range coder, and local, match, and structural prediction rails.
+Its bounded block planner and active-frontier pruning belong in the encoder.
+Optional prime-lag features and regime profiles are candidate predictors, not
+free shared knowledge. Anti-experts may contribute visible penalty signals,
+but negative mixture weights would break the probability contract. Likewise,
+an encoder-only refinement is useful only when its realized bit savings exceed
+the complete transmitted update-packet cost.
+
+This separates three claims that are often collapsed. **Universal input
+acceptance** means the codec can encode arbitrary bytes and fall back toward an
+uninformative probability on random or encrypted input. **Exact lossless
+correctness** means an independently implemented decoder reproduces the
+original under the frozen format. **Useful compression** means the complete
+archive and runtime burden beat strong codecs on preregistered corpora. The
+technical specification establishes none of those empirical outcomes by
+itself, but it improves the book's implementation obligation: random and
+encrypted controls, cross-implementation bit identity, all packet overhead,
+and decoder boundedness must be present before promotion.
 
 ### What the nine-version lineage teaches
 
@@ -891,10 +924,11 @@ These rows keep Compact Generative Systems: Generate, Verify, Repair, and Residu
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Extends Semantic Representation Leasing with plural address leases, path deltas, open-world expressions, semantic-first generation, round-trip structural checks, consumer adequacy, and explicit collision, verification, migration, repair, and fallback residuals; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No useful compression, model-quality, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `orcp_moecot` | Passage-reviewed comparator: ORCP–MoECOT: A Governed Oscillating Rail Cascade Codec. Full authenticated technical specification section-audited. Adds decoder-boring lossless design, explicit container/header/block framing, reversible transforms, fixed-point range coding, local/match/structural prediction rails, bounded encoder planning, transmitted refinement packets, anti-experts as penalties, complete archive-rate accounting, and incompressible-input fallback. | No inspected codec implementation, independent decoder, round-trip artifact, corpus result, runtime measurement, compression advantage, or production claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.3 residual-honesty protocol result

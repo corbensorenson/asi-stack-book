@@ -1,0 +1,79 @@
+{
+  "schema_version": "asi_stack.corben_connector_source_closure.v1",
+  "as_of": "2026-07-31",
+  "scope": "Authenticated Google Drive paper and architecture sources discovered or materially deepened after closure of the 46-item locally readable Corben paper corpus.",
+  "expected_record_count": 7,
+  "closure_rule": [
+    "chapter_integration",
+    "source_note_integration",
+    "research_obligation",
+    "explicit_boundary"
+  ],
+  "claim_boundary": "Connector discovery and section-family closure do not promote evidence; source-reported implementation or empirical statements require imported artifacts, independent evaluation, or local reproduction.",
+  "records": [
+    {
+      "source_id": "moecot",
+      "connector_url": "https://docs.google.com/document/d/1Lw5qjIFLK1gxGxqYw3_zLneFF5JT_Ihn5VI1CntjtvM",
+      "source_note": "sources/source_notes/moecot.md",
+      "audit_basis": "sources/source_notes/moecot.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "research_obligation", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "moecot_md",
+      "connector_url": "https://drive.google.com/file/d/1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0",
+      "source_note": "sources/source_notes/moecot_md.md",
+      "audit_basis": "sources/source_notes/moecot_md.md",
+      "variant_of": "moecot",
+      "closure_state": "section_family_complete",
+      "dispositions": ["source_note_integration", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "coilmoecot",
+      "connector_url": "https://drive.google.com/file/d/1iwhhRGr7vj_Sr4UwwM_yX_ESSyisoWur",
+      "source_note": "sources/source_notes/coilmoecot.md",
+      "audit_basis": "sources/source_notes/coilmoecot.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "research_obligation", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "temporal_coil_research",
+      "connector_url": "https://drive.google.com/file/d/1PSQsAwMurlVRdsM6r_zRd2MPLZYv0qXH",
+      "source_note": "sources/source_notes/temporal_coil_research.md",
+      "audit_basis": "sources/source_notes/temporal_coil_research.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "research_obligation", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "capability_ratchet_whitepaper",
+      "connector_url": "https://docs.google.com/document/d/1ZGLKgjNy2j1WxSJyEDsUIU032_jmyvtp1r4bzS7XykI",
+      "source_note": "sources/source_notes/capability_ratchet_whitepaper.md",
+      "audit_basis": "sources/source_notes/capability_ratchet_whitepaper.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "attd",
+      "connector_url": "https://docs.google.com/document/d/1mv69yelFkJ-deJ1BkVMZANqPQzzaERTpG108LhU1BKk",
+      "source_note": "sources/source_notes/attd.md",
+      "audit_basis": "sources/source_notes/attd.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "research_obligation", "explicit_boundary"],
+      "evidence_effect": "none"
+    },
+    {
+      "source_id": "orcp_moecot",
+      "connector_url": "https://drive.google.com/file/d/1J5sd32zKhp4pBjWTRyrpjNM-8_DpHpsY",
+      "source_note": "sources/source_notes/orcp_moecot.md",
+      "audit_basis": "sources/source_notes/orcp_moecot.md",
+      "closure_state": "section_family_complete",
+      "dispositions": ["chapter_integration", "source_note_integration", "research_obligation", "explicit_boundary"],
+      "evidence_effect": "none"
+    }
+  ]
+}

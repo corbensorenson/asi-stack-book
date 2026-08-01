@@ -4,45 +4,57 @@
 |---|---|
 | Source ID | `moecot_md` |
 | Source title | moecot_agent_whitepaper.md |
-| Ingestion date | 2026-06-24 |
-| Source version / URL | Markdown source/export; https://drive.google.com/file/d/1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0 |
-| Ingestion basis | Authenticated Google Drive connector fetch succeeded; local cache is an auth-gate placeholder and raw text is not published. |
+| Ingestion date | 2026-07-31 |
+| Source version / URL | Markdown export; https://drive.google.com/file/d/1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0 |
+| Ingestion basis | Full authenticated connector text compared with the primary v1.1 Google Doc; raw private text is not published. |
 
 ## Thesis
 
-The Markdown MoECOT file is a variant/source export of the MoECOT whitepaper. It should be used to normalize terminology, recover sections, and compare public-release wording against the editable document.
+This is a Markdown-format variant of `moecot`, useful for terminology and section recovery. It is not a second research result or independent corroboration.
 
 ## Mechanisms
 
-- Same core MoECOT mechanisms as the primary whitepaper: compact orchestrator, specialist lanes, control-plane ledgers, readiness gates, replay, and fail-closed promotion.
-- Markdown format may make it easier to extract stable section headings and public-safe citations.
+- Preserves the compact-orchestrator, specialist-lane, ledger, readiness, replay, handoff, and fail-closed policy structure of the primary whitepaper.
+- Makes headings and code-like record fields easier to compare during drafting.
+- Provides a variant check against accidental wording or section loss.
 
 ## Evidence
 
-- Connector access established that the file is readable.
-- It is a variant, not an independent evidence source.
-- Any benchmark or readiness statement remains source-reported unless supported by ingested artifacts.
+- The full connector text was reviewed and reconciled with the primary whitepaper.
+- No material independent mechanism or result was found that warrants double-counting.
+- Runtime artifacts and source-reported benchmark claims remain uninspected and unreproduced here.
 
 ## Failure Modes
 
-- Double-counting a Markdown variant as separate corroboration.
-- Losing version differences between the primary editable source and Markdown export.
-- Treating design/spec content as empirical performance evidence.
+- Counting an export as independent evidence.
+- Treating formatting differences as architecture changes.
+- Choosing whichever variant states a claim more strongly without reconciling provenance and version.
 
 ## Book Chapters Supported
 
-- `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
+- Routing Heads and Specialist Cores
 - Integrated Reference Architecture
 - Prototype Roadmap
 - Living Book Methodology
 
 ## Claims To Add Or Update
 
-- Use as a variant source when drafting MoECOT chapters.
-- Use as a terminology-normalization and release-wording check for living-book updates, not as independent evidence beyond the primary MoECOT source.
-- Prefer primary artifact/log evidence for any implemented or measured claims.
+- Use this source only as a same-lineage terminology and release-wording check.
+- Prefer `moecot` for design intent and `moecot_manifest_project` for inspected implementation-reference evidence.
 
 ## Open Questions
 
-- Which MoECOT text should be canonical when `moecot` and `moecot_md` differ?
-- Can the Markdown export be safely cached locally outside the public repo for repeat drafting?
+- Should a future public release designate one canonical textual edition and digest?
+- Which differences, if any, arose after export rather than from formatting?
+
+## Section-Family Closure Ledger
+
+| Family | Disposition | Book effect |
+|---|---|---|
+| Architecture and runtime sections | variant of `moecot` | No independent claim support. |
+| Markdown structure and terminology | source-management aid | Used for reconciliation only. |
+| Benchmark and implementation statements | research obligation | Require artifacts and reproduction. |
+
+## Non-Claims
+
+This source does not add an independent observation, implementation result, benchmark result, or corroborating author. It must never increase an evidence count merely because it has a different file format.

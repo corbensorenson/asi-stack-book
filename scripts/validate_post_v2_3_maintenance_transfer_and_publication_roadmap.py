@@ -436,7 +436,7 @@ def errors(data: dict) -> list[str]:
         "may not displace P2",
         "P6.9-R21-concept-complete-depth-and-atom-adequacy",
         "84/84 unified atom custody",
-        "separate eighteen-chapter diagnostic-thin list",
+        "separate sixteen-chapter diagnostic-thin list",
         "diagnostics only",
         "digest-bound semantic",
         "zero unjustified widest raw blocks",
@@ -472,24 +472,22 @@ def errors(data: dict) -> list[str]:
     substance_summary = substance.get("summary", {})
     round_20_atoms = data["round_20_four_chapter_atoms"]
     expected_round_20_diagnostic_thin = [
-        "scientific-discovery-and-experimental-governance",
-        "governed-objective-formation-value-learning-and-goal-integrity",
-        "durable-semantic-memory-and-knowledge-lattices",
-        "ai-deployment-transition-distribution-and-human-agency",
-        "autonomous-replication-proliferation-and-containment",
-        "human-ai-communication-persuasion-and-epistemic-security",
-        "adversarial-machine-learning-and-model-attack-surface",
-        "open-weight-release-and-post-release-control",
-        "physical-compute-infrastructure-energy-and-environmental-constraints",
-        "institutions-international-coordination-and-public-legitimacy",
-        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
         "military-ai-autonomous-weapons-and-strategic-stability",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "governed-objective-formation-value-learning-and-goal-integrity",
+        "institutions-international-coordination-and-public-legitimacy",
+        "adversarial-machine-learning-and-model-attack-surface",
+        "confidential-and-verifiable-ai-computation",
+        "open-weight-release-and-post-release-control",
+        "autonomous-replication-proliferation-and-containment",
         "perception-sensor-fusion-and-observation-trust",
         "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
-        "relational-dimension-compilation-and-polyadic-cognition",
+        "ai-deployment-transition-distribution-and-human-agency",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
         "learning-theory-generalization-and-scaling-science",
-        "confidential-and-verifiable-ai-computation",
-        "embodied-agency-real-time-control-and-physical-safety",
+        "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "content-authenticity-watermarking-and-synthetic-media-integrity",
+        "scientific-discovery-and-experimental-governance",
     ]
     expected_round_20_remaining = []
     if (
@@ -499,7 +497,7 @@ def errors(data: dict) -> list[str]:
         or round_20.get("word_trigger") != 5000
         or round_20.get("word_trigger_is_acceptance_or_evidence_gate") is not False
         or round_20.get("baseline_thin_chapter_count") != 23
-        or round_20.get("current_thin_chapter_count") != 18
+        or round_20.get("current_thin_chapter_count") != 16
         or round_20.get("priority_chapter_count") != 23
         or round_20.get("priority_concept_count") != 184
         or round_20.get("priority_concepts_passing") != 184
@@ -533,8 +531,8 @@ def errors(data: dict) -> list[str]:
         ]
         or round_20.get("atom_count_parity_is_acceptance_target") is not False
         or round_20.get("reader_facing_w3_repeated_12_grams") != 0
-        or round_20.get("raw_qmd_repeated_12_grams") != 925
-        or round_20.get("raw_qmd_maximum_chapter_spread") != 64
+        or round_20.get("raw_qmd_repeated_12_grams") != 934
+        or round_20.get("raw_qmd_maximum_chapter_spread") != 65
         or round_20.get("raw_scaffold_audit_required") is not True
         or round_20.get("raw_scaffold_exit") != "zero_unjustified_widest_spread_blocks"
         or round_20.get("raw_scaffold_audit_path")
@@ -593,7 +591,7 @@ def errors(data: dict) -> list[str]:
         out.append("P6.9 proof/evidence handoff terminal receipt drifted")
     if (
         substance.get("manifest_chapter_count_freeze") != 84
-        or substance_summary.get("thin_chapter_count") != 18
+        or substance_summary.get("thin_chapter_count") != 16
         or substance_summary.get("atom_covered_chapter_count") != 84
         or substance_summary.get("atom_uncovered_chapter_count") != 0
         or substance_summary.get("active_concept_count") != 184
@@ -1903,9 +1901,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3537
+        or template_guard.get("current_prose_candidate_count") != 3811
         or template_guard.get("retired_inherited_prose_candidate_count") != 247
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 340
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 614
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4058
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1934,7 +1932,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 247
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 340
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 614
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):

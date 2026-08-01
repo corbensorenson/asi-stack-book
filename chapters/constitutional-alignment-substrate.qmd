@@ -369,6 +369,44 @@ The mechanism is a constraint-contract pipeline with ten load-bearing moves:
     institutional, consciousness, embedded-agent, and deployed-safety claims in
     their separate evidence lanes.
 
+### Alignment is a non-compensating vector, not a score
+
+The Eternal Code lineage repeatedly revises an “alignment tensor” after
+noticing that one strong dimension can mask a catastrophic weakness in
+another. Its truth/social/task vocabulary is useful, but neither its weighted
+sum nor geometric mean is an adequate safety decision. A tiny nonzero rights
+score can still be compensated by task performance, and the proposed metrics
+do not measure truth, social legitimacy, or consciousness as claimed.
+
+The stack keeps four review planes separate:
+
+1. **epistemic fit:** whether claims and predictions match independently held
+   evidence and observed reality;
+2. **task fidelity:** whether the requested, authorized work was actually
+   completed under its specification;
+3. **normative and affected-party compatibility:** whether protected
+   predicates, consent, standing, dissent, and material rights remain intact;
+4. **authority and effect safety:** whether the actor was permitted to produce
+   the observed effect and whether containment, correction, rollback, and
+   remedy remain reachable.
+
+Each plane has a different owner and evidence path. The model cannot grade its
+own epistemic or constitutional compliance; the task evaluator cannot grant
+authority; a consensus signal cannot rewrite physical outcome truth; and an
+authorized effect can still fail its task or harm an affected party. Hard
+clauses fail closed without averaging, multiplication, or confidence-weighted
+compensation. Noncritical uncertainty may route to clarification, narrower
+scope, reversible testing, or explicit residual custody rather than an
+invented total-alignment number.
+
+This is **heterarchical verification** in the narrow operational sense: several
+independently governed consumers challenge different claims about the same
+action. It is not proof that the consumers are correct or independent. Their
+implementation lineage, access, competence, conflicts, shared dependencies,
+false-accept and false-reject rates, override authority, and failure behavior
+must be recorded and adversarially tested. An automated red-team process is one
+challenger, not an oracle and not a substitute for affected-party correction.
+
 ```{mermaid}
 flowchart LR
   src["Constitutional and rights sources"] -- "translate" --> trans["Translation record"]

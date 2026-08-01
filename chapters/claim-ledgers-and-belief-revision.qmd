@@ -3,8 +3,8 @@ title: "Claim Ledgers and Belief Revision"
 chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+draft_maturity: "v0.4 manuscript draft"
+last_updated: "2026-07-31"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -41,8 +41,8 @@ open_evidence_gaps:
 | Chapter ID | `claim-ledgers-and-belief-revision` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
+| Manuscript maturity | v0.4 manuscript draft |
+| Last updated | 2026-07-31 |
 | Primary source records | `spinoza`, `viea`, `coherence_exchange`, `aletheia`, `uat`, `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -342,6 +342,51 @@ classes for the routing campaign.
 The paper supplies this record separation and threat model as design rationale.
 It supplies no implemented Chronicle, temporal-accuracy result, or independent
 belief-revision evidence, so support remains `argument`.
+
+### A claim-native release is a two-way coverage contract
+
+A structured claim registry solves only half of the publication problem. It
+makes the declared claim set enumerable, but a generator can still place a
+material assertion in narrative, a table, a caption, a code comment, or an
+interface label without registering it. The reverse failure also matters: a
+machine-gated claim can affect a decision while remaining absent from the
+human-readable surface. A release is therefore **claim-native** only when it
+records both directions of the relation.
+
+Each registered claim names the exact artifact, span, cell, node, output, or
+effect surface that expresses it. Each material assertion on a release surface
+names its claim ID and current version. The release checker reports four
+states rather than one coverage percentage:
+
+| Surface state | Meaning | Required disposition |
+|---|---|---|
+| `bound` | The material assertion and registered claim point to each other under the same scope and version. | Continue to the owning evidence and release gates. |
+| `unregistered_assertion` | Material prose or another surface expression has no claim record. | Register, remove, narrow, or retain as a blocking residual. |
+| `hidden_claim` | A registered claim has no declared reader- or consumer-visible surface even though it can affect interpretation or action. | Render it, justify a protected machine-only surface, or block release. |
+| `mapping_disputed` | Reviewers disagree about identity, scope, materiality, or whether the surface entails the registered claim. | Preserve alternatives and disagreement; do not resolve by similarity score or recency. |
+
+This is not a promise of deterministic claim extraction from arbitrary natural
+language. A schema can make an authored `claims[]` array deterministic to
+enumerate; it cannot make materiality, implicit assertion detection,
+entailment, or semantic equivalence mechanical in the open world. Required
+claim categories, structure-aware parsers, perturbation tests, model-assisted
+candidates, and independent sampling can search for omissions, but every
+method keeps false-negative and false-positive denominators. The unchecked
+remainder is an explicit coverage residual, not rounded into completeness.
+
+Claim granularity is part of the contract. One broad claim can hide unsupported
+subclaims, while many tiny claims can inflate coverage and make review
+intractable. The release therefore pins a materiality policy, decomposition
+rules, examples and counterexamples, reviewer or evaluator lineage, sampled
+unregistered surfaces, and changes in the denominator. Coverage is reported
+with useful throughput, reviewer burden, disagreement, semantic escape, and
+unsafe release rather than optimized alone.
+
+Aletheia's later Proof-Carrying Workbench version motivates this release
+discipline, but its phrase “deterministic claim surface” is narrower than it
+sounds. No implementation or natural-corpus result is present here. The book
+adopts the auditable two-way interface while explicitly rejecting complete
+automatic extraction, proof by schema validity, or support promotion.
 
 ### Semantic continuity and the four epistemic objects
 

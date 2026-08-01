@@ -23,7 +23,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The core claim has exact source-note mappings for all assigned sources in Appendix C, and nine of ten mappings now carry local raw-cache passage review; `moecot` remains connector-only/source-note mapped."
+  - "The core claim has exact source-note mappings for all assigned sources in Appendix C; nine carry local raw-cache passage review and the complete authenticated `moecot` connector text is passage-reviewed, while runtime artifacts remain unimported."
   - "The costed_route_record fixture validates schema/example consistency only; the fixture now records route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims. `AsiStackProofs.Efficiency` adds finite negative cases for a lower-cost authorized quality-preserving candidate and open-obligation promotion without residual records, plus a finite efficiency-claim admission lifecycle route and route-search probe bridge. The synthetic route-search probe now checks two finite route traces and six expected-invalid controls for lower-cost eligible omission, hidden-cost class omission, erased residuals, compression-utility overclaim, authority bypass, and missing negative controls. Route-search completeness, cost-estimate accuracy, measured efficiency, benchmark performance, model quality, and downstream compression utility remain unimplemented."
   - "External grounding now includes source-noted comparators for sparse MoE systems, learned/query routing, prompt compression, speculative generation, and broad benchmarks; these are comparator records only, not reproduced efficiency evidence."
 ---
@@ -180,7 +180,7 @@ state-of-the-art, AGI, or ASI result.</p>
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `rmi`, `cgs`; supporting: `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; passage-reviewed local raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; connector-only/source-note mapped: `moecot` |
+| Source loading state | source notes: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `moecot`; passage-reviewed local raw cache: `viea`, `rmi`, `cgs`, `rankfold_neuralfold`, `bbvca_v9`, `simulation_scaling`, `beastbrain`, `beastbrain_timeless`, `aletheia`; authenticated connector text passage-reviewed: `moecot` |
 | Test state | `costed_route_record.valid.json` passes protocol fixture validation for route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims. `AsiStackProofs.Efficiency` retains two finite negative invariants: a listed cheaper eligible route defeats the minimum-viable predicate, and open-obligation promotion without a residual record is invalid. `AsiStackProofs.ResourceEconomicsRefinement` supplies the stronger nine-stage request-to-closure lifecycle, while `python3 scripts/validate_efficiency_route_search_probe.py` independently computes outcomes for 2 synthetic route traces and 6 expected-invalid controls. Route-search completeness, cost-estimate accuracy, measured efficiency, benchmark performance, model quality, and downstream compression utility remain open. |
 
 ## Drafting guardrail
@@ -236,7 +236,7 @@ The claim remains at `argument` support. RMI supports residual escrow and ratche
 
 ### Claim-source mapping status
 
-Appendix C now maps this core claim to every assigned source note. Nine mappings also carry reviewed local raw-cache passage references in the manifest. `moecot` remains connector-only/source-note mapped because usable local raw text is not committed. The mappings justify the design vocabulary, not measured efficiency.
+Appendix C now maps this core claim to every assigned source note. Nine mappings also carry reviewed local raw-cache passage references in the manifest. The complete authenticated `moecot` connector text has been passage-reviewed; its private text is not published and runtime artifacts remain unimported. The mappings justify the design vocabulary, not measured efficiency.
 
 | Source | What it supports | Limit |
 |---|---|---|

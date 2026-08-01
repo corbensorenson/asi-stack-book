@@ -3080,7 +3080,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing.",
       "status": "planned",
-      "outline_line": 7344,
+      "outline_line": 7346,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3090,7 +3090,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A finite steward lifecycle decision with requested treasury spend outside policy routes to approval.",
       "status": "implemented",
-      "outline_line": 7345,
+      "outline_line": 7347,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3100,7 +3100,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
       "status": "planned",
-      "outline_line": 7346,
+      "outline_line": 7348,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3110,7 +3110,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A finite steward lifecycle decision with sunset criteria met and no open review routes to sunset review.",
       "status": "implemented",
-      "outline_line": 7347,
+      "outline_line": 7349,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3120,7 +3120,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
       "status": "implemented",
-      "outline_line": 7348,
+      "outline_line": 7350,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3130,7 +3130,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
       "status": "implemented",
-      "outline_line": 7349,
+      "outline_line": 7351,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3140,7 +3140,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
       "status": "implemented",
-      "outline_line": 7350,
+      "outline_line": 7352,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3150,7 +3150,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority.",
       "status": "implemented",
-      "outline_line": 7492,
+      "outline_line": 7494,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3160,7 +3160,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "A cross-layer transition with a parent/state fork, missing governance gate, residual erasure, effect after revocation, unacknowledged terminal effect, missing receipt, or incomplete rollback is rejected or contained in quarantine.",
       "status": "implemented",
-      "outline_line": 7493,
+      "outline_line": 7495,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3170,7 +3170,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations.",
       "status": "implemented",
-      "outline_line": 7494,
+      "outline_line": 7496,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3180,7 +3180,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected.",
       "status": "implemented",
-      "outline_line": 7590,
+      "outline_line": 7592,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3190,7 +3190,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 7591,
+      "outline_line": 7593,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3200,7 +3200,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 7592,
+      "outline_line": 7594,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3210,7 +3210,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
       "status": "implemented",
-      "outline_line": 7652,
+      "outline_line": 7654,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3220,7 +3220,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
       "status": "implemented",
-      "outline_line": 7653,
+      "outline_line": 7655,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3230,7 +3230,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
       "status": "implemented",
-      "outline_line": 7654,
+      "outline_line": 7656,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3240,7 +3240,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
       "status": "implemented",
-      "outline_line": 7717,
+      "outline_line": 7719,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3250,7 +3250,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
       "status": "implemented",
-      "outline_line": 7718,
+      "outline_line": 7720,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3260,7 +3260,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 7719,
+      "outline_line": 7721,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3270,7 +3270,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain.",
       "status": "implemented",
-      "outline_line": 7720,
+      "outline_line": 7722,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3280,7 +3280,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
       "status": "implemented",
-      "outline_line": 7801,
+      "outline_line": 7803,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -3290,7 +3290,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
       "status": "implemented",
-      "outline_line": 7802,
+      "outline_line": 7804,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

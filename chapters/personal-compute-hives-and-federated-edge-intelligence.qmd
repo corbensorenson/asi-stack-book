@@ -3,9 +3,10 @@ title: "Personal Compute Hives and Federated Edge Intelligence"
 chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-23"
+draft_maturity: "v0.4 hardware-profile integration"
+last_updated: "2026-07-31"
 primary_sources:
+  - "beastbrain"
   - "field_of_god_ai_constitution"
   - "scf"
   - "talos"
@@ -53,16 +54,16 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-07-23 |
-| Primary source records | 31 assigned records: eleven local architecture sources, twelve network/cluster/federation and partition comparators, and eight heterogeneous-memory implementation or paper comparators |
+| Last updated | 2026-07-31 |
+| Primary source records | 32 assigned records: twelve local architecture sources, twelve network/cluster/federation and partition comparators, and eight heterogeneous-memory implementation or paper comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | The original 23 sources have exact reviewed mappings; eight heterogeneous-memory sources add metadata-first worker-admission context. None is implementation, performance, privacy, or safety evidence for this hive. |
+| Source loading state | Twenty-four local/architecture and network sources have exact reviewed mappings; eight heterogeneous-memory sources add metadata-first worker-admission context. None is implementation, performance, privacy, or safety evidence for this hive. |
 | Test state | Seven public record schemas validate. The exact 2/8 Hive-admission and 3/6 partitioned-authority suites remain passing. The new refinement covers seven stages, all 47 routes, and 53/53 rejecting mutations. Seventeen refinement declarations and 21 retained legacy consequences remain live; five projections/fixture declarations are retired. No live scheduler, registry, portal, authority service, network overlay, federation, partition run, runtime enforcement, rented-node sandbox, energy measurement, dropout recovery, security, privacy, availability, useful-work, or transfer result has been run. |
 
 ## Drafting guardrail
 
-This chapter uses source-note material for VCM, Talos, Octopus Router, RMI, TokenMana, Project Theseus, the Hive Operator OS, SCF, Field of God governance, PlanForge, and Ladon/Manhattan. It also uses source-note material for adjacent public systems: private overlay networking, orchestration, lightweight cluster operation, distributed execution, volunteer compute, file synchronization, content-addressed retrieval, rented compute, self-hosted CI, and CAP-style partition trade-offs. It does not claim that a complete personal compute hive exists, that those tools prove the ASI Stack design, or that any private device has been enrolled.
+This chapter uses source-note material for BeastBrain's Mimic hardware-profile lineage, VCM, Talos, Octopus Router, RMI, TokenMana, Project Theseus, the Hive Operator OS, SCF, Field of God governance, PlanForge, and Ladon/Manhattan. It also uses source-note material for adjacent public systems: private overlay networking, orchestration, lightweight cluster operation, distributed execution, volunteer compute, file synchronization, content-addressed retrieval, rented compute, self-hosted CI, and CAP-style partition trade-offs. It does not claim that a complete personal compute hive exists, that those tools prove the ASI Stack design, or that any private device has been enrolled.
 
 After routing and the folded MoECOT runtime crosswalk define the evidence packet a concrete orchestrator must emit, this chapter asks where that runtime can live. The answer is not "any reachable device." It is a policy-bounded hive where portals, workers, stores, rented nodes, and project machines participate only through explicit identity, data, tool, network, approval, and revocation records.
 
@@ -237,6 +238,46 @@ its `DeviceResourceCard`. It should describe more than nominal VRAM:
   background windows; and
 - the model, tensor layouts, runtimes, and memory-policy classes the worker can
   actually execute.
+
+### Hardware adaptation is a qualification transaction
+
+The BeastBrain lineage calls its hardware-adaptation layer the Mimic: inspect
+the host, measure its physical envelope, and select a suitable execution mode.
+The durable idea is not its biological name or four hard-coded device modes.
+It is that a runtime should negotiate with the machine it actually inhabits
+instead of inheriting a generic hardware profile. That negotiation belongs in
+the hive's qualification path, not in an unreviewed boot-time optimizer.
+
+A `HardwareProfileDecision` binds the attested device and firmware, kernel,
+driver and runtime versions, accelerator and memory topology, filesystem and
+storage path, available kernels and dtypes, foreground-use policy, battery and
+power mode, ambient and sustained thermal observations, calibration workload,
+measurement horizon, candidate execution profiles, selected profile, rejected
+profiles, safety floors, fallback, expiry, and decision receipt. Direct
+register or operating-system probes receive no special trust merely because
+they are low-level: unavailable, privileged, vendor-specific, virtualized, or
+spoofable measurements remain explicit unknowns.
+
+The profiler first uses passive inventory and bounded, cancellable probes. A
+short burst can discover an obvious incompatibility, but it cannot certify
+sustained thermal behavior, storage endurance, latency tails, or interactive
+quality. Qualification therefore separates `discovered`, `smoke_measured`,
+`sustained_measured`, and `workload_qualified` states. It retains the exact
+calibration artifact and compares a conservative generic profile, a smaller
+resident model, a heterogeneous-memory profile, and any optimized kernel path
+under the same useful-work contract. Hardware discovery may narrow a route; it
+cannot widen data rights, tool authority, or execution authority.
+
+Profile changes need hysteresis and safe transition points. Memory pressure,
+thermal rise, battery state, foreground use, device removal, bandwidth loss,
+or repeated page misses may trigger throttle, pause, unload, smaller-model
+fallback, checkpoint, or requalification. They must not trigger destructive
+“panic compression,” silent precision loss, cache eviction that destroys
+rollback, or a driver switch during an uncommitted effect. The receipt records
+the old and new profile, state transferred or discarded, quality and authority
+consequences, affected jobs, and recovery boundary. A machine that adapted
+once is not permanently adaptable; every material hardware, software, power,
+or workload change expires the claim.
 
 The policy then declares its largest indivisible objects and simultaneous
 working set. A layer-streaming runtime may need one full layer plus kernels,
@@ -540,6 +581,7 @@ These rows keep Personal Compute Hives and Federated Edge Intelligence's manifes
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `beastbrain` | Passage-reviewed comparator: BeastBrain Cognitive Architecture. Passage-reviewed Mimic lineage for adapting execution to the actual host: hardware and memory-topology discovery, device-specific runtime profiles, thermal and power pressure, memory-tier policy, background-work shedding, and conservative fallback. The book turns this into a versioned HardwareProfileDecision with staged measurement, explicit rejected profiles, expiry, hysteresis, and state-safe transitions. | The source does not implement or validate hardware probing, direct SSD-to-accelerator paths, Apple Neural Engine access, thermal protection, paging, profile switching, sub-five-second adaptation, device safety, useful performance, or transfer. Low-level probes cannot expand data rights, tool authority, or execution authority. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_deepspeed_inference_2022` | Metadata-first comparator: DeepSpeed Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale. Primary heterogeneous-inference systems source spanning GPU, CPU, and NVMe for dense and sparse Transformer inference. Reported latency, throughput, scale, and model-fit results remain source-scoped and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_flexgen_2023` | Metadata-first comparator: FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU. Primary planned-placement source for GPU/CPU/disk tensor storage and access, batching, and optional weight/cache compression under latency-insensitive workloads. Its throughput results are not interactive-latency or local evidence. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

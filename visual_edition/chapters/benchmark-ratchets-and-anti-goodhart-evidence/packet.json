@@ -3,8 +3,8 @@
   "video_id": "asi-video-benchmark-ratchets-and-anti-goodhart-evidence",
   "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
   "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-  "chapter_sha256": "25546aeac43b68808534d18d78e1487ec03edfbff39bf09138a144aa09757d26",
-  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "chapter_sha256": "afab6024cdd8fae959144ba124da9cb661f2ccbe7149ff76c0963c79b601528d",
+  "source_commit": "17c6ece80f771d3bce5f89c6b85c99ca9b6c2ea0",
   "pilot": false,
   "lifecycle_state": "ready_not_published",
   "claim_bindings": [
@@ -19,6 +19,7 @@
     "deterministic_capability_compilation",
     "platonic_world_model",
     "rmi",
+    "rgs",
     "cognitive_loop_closure",
     "uat",
     "coherence_exchange",
@@ -52,7 +53,12 @@
     "ext_mlperf_training_v6_2026",
     "relational_dimension_compiler",
     "ext_cultural_alignment_llms_2024",
-    "ext_multilingual_evaluation_state_2026"
+    "ext_multilingual_evaluation_state_2026",
+    "portia_synapse",
+    "spider_synapse",
+    "capability_ratchet_whitepaper",
+    "attd",
+    "temporal_coil_research"
   ],
   "maximum_inference": "At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.",
   "required_content": {
@@ -161,7 +167,7 @@
   },
   "staleness": {
     "state": "current",
-    "checked_chapter_sha256": "25546aeac43b68808534d18d78e1487ec03edfbff39bf09138a144aa09757d26",
+    "checked_chapter_sha256": "afab6024cdd8fae959144ba124da9cb661f2ccbe7149ff76c0963c79b601528d",
     "triggers": [
       "core_claim",
       "mechanism",

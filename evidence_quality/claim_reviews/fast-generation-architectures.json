@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/fast-generation-architectures.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 67,
+    "prose_candidates_adjudicated": 69,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all twenty-one exact source mappings, the generation-mode schema, Project Theseus import and replay artifacts, the deterministic four-task bundle, the selected support-lane aggregate, all five proof targets and thirty-eight Fast Generation declarations, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made request-specific accelerated-route admission and end-to-end speed-receipt custody the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified the formal surface as five direct predicate or projection checks, thirty-one derived finite route, negative, or fixture consequences, and two authored-summary bridges; specified strong matched baselines, joint useful-quality-safety-rights-latency-resource-fairness-recovery gates, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero chapter-core support effect."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Twenty-one exact source mappings; one not-run schema fixture; one 18-mode/13-comparison static import with five speed-lift warnings, zero task-passing or promotable comparisons, and six invalid controls; one two-command/ten-digest replay; one four-task deterministic accounting bundle; one four-command/sixteen-digest/68-task aggregate with fourteen rejected controls and two no-change decisions; and thirty-eight finite declarations. No live decoder or serving system is represented.",
       "model": "A consumer-, workload-, model-, hardware-, serving-policy-, and time-window-relative admission relation over immutable route identity, exact context and cache state, separate output states, complete queue-to-delivery timing and total-burden accounting, bounded verification, executable fallback, causal comparison, expiry, rollback, and residual custody.",
       "authority": "This chapter owns request-specific accelerated-generation admission and the complete end-to-end speed receipt only. Intent, Planning, Context, Routing, Readiness, Runtime, Resource, Security, Authority, Rights, Verification, Artifact, Labor, Benchmark, Claim, Human, Incident, and Release owners retain their boundaries.",
-      "time": "Semantic review current through 2026-07-14; model, tokenizer, draft, verifier, workload, prompt, context, cache, hardware, compiler, runtime, serving, load, policy, rights, threat, incident, or time changes expire affected qualifications.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; twenty-one mappings; schema fixture; Theseus import, replay, task-bundle, aggregate, transitions, and digests; five proof targets; thirty-eight declarations; and the future natural causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_static_import_deterministic_accounting_and_no_change_boundaries_pending_real_end_to_end_generation_campaign",
@@ -46,13 +46,34 @@
     "strongest_counterclaim": "Optimized autoregressive decoding and ordinary serving systems already provide the best quality-equivalent end-to-end tradeoff for the relevant workloads; a governed multi-mode controller adds selection, verification, metadata, fallback, and human cost without improving the joint frontier.",
     "falsifier": "Under matched natural workloads, models, hardware, serving conditions, load, cache, evaluators, resources, retries, and time, the full controller fails the preregistered joint useful-quality-safety-rights-latency-resource-fairness-recovery frontier; its causal signatures do not appear; or it hides failures, verifier dependence, repair, fallback, queueing, resource, rights, tail, or transfer burden.",
     "required_lanes": [
-      {"lane": "source-synthesis", "necessity": "Freeze the strongest current decoding, recurrent, diffusion, cache, and serving comparators without importing source-reported gains."},
-      {"lane": "normative", "necessity": "Justify consumer policy, quality and safety gates, rights, high-risk overrides, fairness, refusal, fallback, expiry, rollback, and residual ownership."},
-      {"lane": "formal", "necessity": "Specify output-state refinement, timing boundaries, route qualification, verifier dependence, fallback liveness, load fairness, expiry, and countermodels beyond trusted Booleans."},
-      {"lane": "executable", "necessity": "Run actual target and accelerated models, serving engines, clocks, verifiers, repair, fallback, load, failure, recovery, and rejecting controls."},
-      {"lane": "empirical", "necessity": "Measure useful accepted success, quality, safety, selective risk, latency distributions, throughput, full resources, fairness, rights, fallback, recovery, and total burden jointly."},
-      {"lane": "causal", "necessity": "Ablate mode selection, accepted-output accounting, verifier independence, cache matching, full timing, repair, fallback, resources, high-risk override, load isolation, and expiry."},
-      {"lane": "transfer", "necessity": "Reproduce independently and transfer across models, workloads, languages, contexts, hardware, runtimes, organizations, rights regimes, attacks, load states, failures, updates, and time."}
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze the strongest current decoding, recurrent, diffusion, cache, and serving comparators without importing source-reported gains."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify consumer policy, quality and safety gates, rights, high-risk overrides, fairness, refusal, fallback, expiry, rollback, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify output-state refinement, timing boundaries, route qualification, verifier dependence, fallback liveness, load fairness, expiry, and countermodels beyond trusted Booleans."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run actual target and accelerated models, serving engines, clocks, verifiers, repair, fallback, load, failure, recovery, and rejecting controls."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure useful accepted success, quality, safety, selective risk, latency distributions, throughput, full resources, fairness, rights, fallback, recovery, and total burden jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate mode selection, accepted-output accounting, verifier independence, cache matching, full timing, repair, fallback, resources, high-risk override, load isolation, and expiry."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across models, workloads, languages, contexts, hardware, runtimes, organizations, rights regimes, attacks, load states, failures, updates, and time."
+      }
     ],
     "evidence_refs": {
       "chapter": "chapters/fast-generation-architectures.qmd",
@@ -125,38 +146,153 @@
     }
   },
   "prose_candidate_dispositions": {
-    "fast-generation-architectures.prose.31b72f45d123": {"state": "duplicate_of_atom", "rationale": "Whole-route value is owned by the core admission claim.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.3dfd46f92e29": {"state": "duplicate_of_atom", "rationale": "Restates the manifest-owned problem boundary.", "target_atom_id": "fast-generation-architectures.problem.001"},
-    "fast-generation-architectures.prose.d6e859c6ef81": {"state": "duplicate_of_atom", "rationale": "Explains the mode and risk boundary already owned by the core.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.59cc151317e8": {"state": "duplicate_of_atom", "rationale": "Restates the complete-cost insufficiency atom.", "target_atom_id": "fast-generation-architectures.insufficiency.001"},
-    "fast-generation-architectures.prose.234bb44374d1": {"state": "duplicate_of_atom", "rationale": "Names the throughput-versus-latency failure already owned by the manifest.", "target_atom_id": "fast-generation-architectures.failure_mode.008"},
-    "fast-generation-architectures.prose.e72082993762": {"state": "duplicate_of_atom", "rationale": "Restates the core proxy-speed prohibition.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.53ce74321b7b": {"state": "historical_or_source_report", "rationale": "Line-wrapped continuation of the bounded source-status and non-claim report; no new material atom."},
-    "fast-generation-architectures.prose.d3d05b3790e3": {"state": "duplicate_of_atom", "rationale": "Lifecycle timing measurement is manifest-owned.", "target_atom_id": "fast-generation-architectures.mechanism.009"},
-    "fast-generation-architectures.prose.725a65c3da51": {"state": "nonmaterial_explanation", "rationale": "Diagram explanation of manifest-owned selection dimensions."},
-    "fast-generation-architectures.prose.a194817e88ef": {"state": "duplicate_of_atom", "rationale": "Restates complete accounting and no-bypass obligations.", "target_atom_id": "fast-generation-architectures.invariant.007"},
-    "fast-generation-architectures.prose.28078981c7b2": {"state": "duplicate_of_atom", "rationale": "Taxonomy separation is already owned by route identity and scope atoms.", "target_atom_id": "fast-generation-architectures.mechanism.002"},
-    "fast-generation-architectures.prose.192643fdba60": {"state": "duplicate_of_atom", "rationale": "Separate evidence records are owned by output-state and route-identity atoms.", "target_atom_id": "fast-generation-architectures.invariant.005"},
-    "fast-generation-architectures.prose.acbe651cd29a": {"state": "nonmaterial_explanation", "rationale": "Editorial explanation of why the typed record is useful."},
-    "fast-generation-architectures.prose.c4b3a79673ab": {"state": "duplicate_of_atom", "rationale": "Risk-tiered mode restriction is manifest-owned.", "target_atom_id": "fast-generation-architectures.invariant.013"},
-    "fast-generation-architectures.prose.7b28a47f4adb": {"state": "duplicate_of_atom", "rationale": "Exact end-to-end timing boundary is manifest-owned.", "target_atom_id": "fast-generation-architectures.invariant.006"},
-    "fast-generation-architectures.prose.f7ebffbe733d": {"state": "duplicate_of_atom", "rationale": "High-risk independent-verification boundary is manifest-owned.", "target_atom_id": "fast-generation-architectures.invariant.013"},
-    "fast-generation-architectures.prose.67f13c9b16c9": {"state": "duplicate_of_atom", "rationale": "Explicit transfer requirement is manifest-owned.", "target_atom_id": "fast-generation-architectures.invariant.016"},
-    "fast-generation-architectures.prose.53895ade2686": {"state": "nonmaterial_explanation", "rationale": "Explains the effect of the manifest-owned promotion invariants."},
-    "fast-generation-architectures.prose.2075d4a99cba": {"state": "duplicate_of_atom", "rationale": "Failure and repair retention is manifest-owned.", "target_atom_id": "fast-generation-architectures.invariant.011"},
-    "fast-generation-architectures.prose.badfa3edd5b0": {"state": "duplicate_of_atom", "rationale": "Scheduler starvation is the owned fairness failure.", "target_atom_id": "fast-generation-architectures.failure_mode.009"},
-    "fast-generation-architectures.prose.9db367af9a6c": {"state": "duplicate_of_atom", "rationale": "Unsupported generalization is the owned transfer failure.", "target_atom_id": "fast-generation-architectures.failure_mode.017"},
-    "fast-generation-architectures.prose.f722a77eb171": {"state": "duplicate_of_atom", "rationale": "Multi-seed utility and total burden are owned by the manifest failure boundary.", "target_atom_id": "fast-generation-architectures.failure_mode.012"},
-    "fast-generation-architectures.prose.3d9a4f1c761b": {"state": "editorial_or_question", "rationale": "Research-positioning sentence, not an independent empirical claim."},
-    "fast-generation-architectures.prose.cbd8ed64e18d": {"state": "duplicate_of_atom", "rationale": "Experimental unroutability is owned by qualification and evidence gates.", "target_atom_id": "fast-generation-architectures.invariant.018"},
-    "fast-generation-architectures.prose.8455044888f8": {"state": "duplicate_of_atom", "rationale": "Restates the causal-ablation acceptance criterion.", "target_atom_id": "fast-generation-architectures.beyond_sota.001"},
-    "fast-generation-architectures.prose.ac7b97ff219e": {"state": "duplicate_of_atom", "rationale": "Independent reproduction is manifest-owned by the mature campaign.", "target_atom_id": "fast-generation-architectures.beyond_sota.001"},
-    "fast-generation-architectures.prose.1aa338b23d15": {"state": "duplicate_of_atom", "rationale": "Heterogeneous transfer is manifest-owned by the mature campaign.", "target_atom_id": "fast-generation-architectures.beyond_sota.001"},
-    "fast-generation-architectures.prose.a06ca31c104e": {"state": "historical_or_source_report", "rationale": "Reports the incomplete external-literature inspection boundary."},
-    "fast-generation-architectures.prose.161ab1c7d7e3": {"state": "duplicate_of_atom", "rationale": "Summary restatement of the core joint-gate claim.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.bb213b8e67f2": {"state": "historical_or_source_report", "rationale": "Bounded Project Theseus import and non-claim report."},
-    "fast-generation-architectures.prose.a7258a16dc2e": {"state": "editorial_or_question", "rationale": "Cross-chapter handoff framing rather than a new material claim."}
-  ,
+    "fast-generation-architectures.prose.31b72f45d123": {
+      "state": "duplicate_of_atom",
+      "rationale": "Whole-route value is owned by the core admission claim.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.3dfd46f92e29": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the manifest-owned problem boundary.",
+      "target_atom_id": "fast-generation-architectures.problem.001"
+    },
+    "fast-generation-architectures.prose.d6e859c6ef81": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains the mode and risk boundary already owned by the core.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.59cc151317e8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the complete-cost insufficiency atom.",
+      "target_atom_id": "fast-generation-architectures.insufficiency.001"
+    },
+    "fast-generation-architectures.prose.234bb44374d1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Names the throughput-versus-latency failure already owned by the manifest.",
+      "target_atom_id": "fast-generation-architectures.failure_mode.008"
+    },
+    "fast-generation-architectures.prose.e72082993762": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the core proxy-speed prohibition.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.53ce74321b7b": {
+      "state": "historical_or_source_report",
+      "rationale": "Line-wrapped continuation of the bounded source-status and non-claim report; no new material atom."
+    },
+    "fast-generation-architectures.prose.d3d05b3790e3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Lifecycle timing measurement is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.mechanism.009"
+    },
+    "fast-generation-architectures.prose.725a65c3da51": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Diagram explanation of manifest-owned selection dimensions."
+    },
+    "fast-generation-architectures.prose.a194817e88ef": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates complete accounting and no-bypass obligations.",
+      "target_atom_id": "fast-generation-architectures.invariant.007"
+    },
+    "fast-generation-architectures.prose.28078981c7b2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Taxonomy separation is already owned by route identity and scope atoms.",
+      "target_atom_id": "fast-generation-architectures.mechanism.002"
+    },
+    "fast-generation-architectures.prose.192643fdba60": {
+      "state": "duplicate_of_atom",
+      "rationale": "Separate evidence records are owned by output-state and route-identity atoms.",
+      "target_atom_id": "fast-generation-architectures.invariant.005"
+    },
+    "fast-generation-architectures.prose.acbe651cd29a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Editorial explanation of why the typed record is useful."
+    },
+    "fast-generation-architectures.prose.c4b3a79673ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "Risk-tiered mode restriction is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.invariant.013"
+    },
+    "fast-generation-architectures.prose.7b28a47f4adb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact end-to-end timing boundary is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.invariant.006"
+    },
+    "fast-generation-architectures.prose.f7ebffbe733d": {
+      "state": "duplicate_of_atom",
+      "rationale": "High-risk independent-verification boundary is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.invariant.013"
+    },
+    "fast-generation-architectures.prose.67f13c9b16c9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explicit transfer requirement is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.invariant.016"
+    },
+    "fast-generation-architectures.prose.53895ade2686": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explains the effect of the manifest-owned promotion invariants."
+    },
+    "fast-generation-architectures.prose.2075d4a99cba": {
+      "state": "duplicate_of_atom",
+      "rationale": "Failure and repair retention is manifest-owned.",
+      "target_atom_id": "fast-generation-architectures.invariant.011"
+    },
+    "fast-generation-architectures.prose.badfa3edd5b0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Scheduler starvation is the owned fairness failure.",
+      "target_atom_id": "fast-generation-architectures.failure_mode.009"
+    },
+    "fast-generation-architectures.prose.9db367af9a6c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Unsupported generalization is the owned transfer failure.",
+      "target_atom_id": "fast-generation-architectures.failure_mode.017"
+    },
+    "fast-generation-architectures.prose.f722a77eb171": {
+      "state": "duplicate_of_atom",
+      "rationale": "Multi-seed utility and total burden are owned by the manifest failure boundary.",
+      "target_atom_id": "fast-generation-architectures.failure_mode.012"
+    },
+    "fast-generation-architectures.prose.3d9a4f1c761b": {
+      "state": "editorial_or_question",
+      "rationale": "Research-positioning sentence, not an independent empirical claim."
+    },
+    "fast-generation-architectures.prose.cbd8ed64e18d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Experimental unroutability is owned by qualification and evidence gates.",
+      "target_atom_id": "fast-generation-architectures.invariant.018"
+    },
+    "fast-generation-architectures.prose.8455044888f8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the causal-ablation acceptance criterion.",
+      "target_atom_id": "fast-generation-architectures.beyond_sota.001"
+    },
+    "fast-generation-architectures.prose.ac7b97ff219e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Independent reproduction is manifest-owned by the mature campaign.",
+      "target_atom_id": "fast-generation-architectures.beyond_sota.001"
+    },
+    "fast-generation-architectures.prose.1aa338b23d15": {
+      "state": "duplicate_of_atom",
+      "rationale": "Heterogeneous transfer is manifest-owned by the mature campaign.",
+      "target_atom_id": "fast-generation-architectures.beyond_sota.001"
+    },
+    "fast-generation-architectures.prose.a06ca31c104e": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the incomplete external-literature inspection boundary."
+    },
+    "fast-generation-architectures.prose.161ab1c7d7e3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Summary restatement of the core joint-gate claim.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.bb213b8e67f2": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded Project Theseus import and non-claim report."
+    },
+    "fast-generation-architectures.prose.a7258a16dc2e": {
+      "state": "editorial_or_question",
+      "rationale": "Cross-chapter handoff framing rather than a new material claim."
+    },
     "fast-generation-architectures.prose.0536d0e73a59": {
       "state": "historical_or_source_report",
       "rationale": "Explicit finite-model non-claim boundary; it does not promote the chapter core."
@@ -173,38 +309,170 @@
       "state": "historical_or_source_report",
       "rationale": "Correctly scopes compilation and route coverage to the finite authored lifecycle."
     },
-    "fast-generation-architectures.prose.5f090d1d4858": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.6b18673076ab": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.450ed18af029": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.6fbcad810eaa": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.e4274dac78e8": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.355a76e7b4ee": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.91c3a3e640e2": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.6dd1edcf6580": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.1407d7637f86": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.992aac9989da": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.f06aee56b146": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.370a9fa31e58": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.314f6d58bed6": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.a193da34e2df": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.1c3cf07583b1": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.31f2e60017fa": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "fast-generation-architectures.prose.4b18b80b461d": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "fast-generation-architectures.prose.53677f1e9c8f": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "fast-generation-architectures.prose.b6e172508aa8": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.3fb0092c2e5a": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.975e35eb0ec3": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.55fd4a14c438": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.da1c039126de": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.21b79d9dbc4d": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.10f9912529d7": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.1d384d06ff31": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.7c134617687f": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.25191716d5ad": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.b2ebccd91c87": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.ed66984e4d7b": {"state": "duplicate_of_atom", "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.", "target_atom_id": "fast-generation-architectures.core"},
-    "fast-generation-architectures.prose.90edfcf6d27b": {"state": "historical_or_source_report", "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."},
-    "fast-generation-architectures.prose.d15d0b735235": {"state": "duplicate_of_atom", "rationale": "Restates the chapter's leakage-free request-specific routing obligation for precision selection.", "target_atom_id": "fast-generation-architectures.core"}
+    "fast-generation-architectures.prose.5f090d1d4858": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.6b18673076ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.450ed18af029": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.6fbcad810eaa": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.e4274dac78e8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.355a76e7b4ee": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.91c3a3e640e2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.6dd1edcf6580": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.1407d7637f86": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.992aac9989da": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.f06aee56b146": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.370a9fa31e58": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.314f6d58bed6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.a193da34e2df": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.1c3cf07583b1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.31f2e60017fa": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "fast-generation-architectures.prose.4b18b80b461d": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "fast-generation-architectures.prose.53677f1e9c8f": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "fast-generation-architectures.prose.b6e172508aa8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.3fb0092c2e5a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.975e35eb0ec3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.55fd4a14c438": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.da1c039126de": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.21b79d9dbc4d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.10f9912529d7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.1d384d06ff31": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.7c134617687f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.25191716d5ad": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.b2ebccd91c87": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.ed66984e4d7b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Round 18 or infrastructure-expansion prose elaborates a manifest-owned chapter obligation; it adds no independent load-bearing atom.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.90edfcf6d27b": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source, measurement, or explicit non-claim report; it adds no independent load-bearing atom."
+    },
+    "fast-generation-architectures.prose.d15d0b735235": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the chapter's leakage-free request-specific routing obligation for precision selection.",
+      "target_atom_id": "fast-generation-architectures.core"
+    },
+    "fast-generation-architectures.prose.12223467f44a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Precision routing is an execution policy` and reviewed owner atoms `fast-generation-architectures.core`, `fast-generation-architectures.beyond_sota.001`, `fast-generation-architectures.insufficiency.001`."
+    },
+    "fast-generation-architectures.prose.7050480cf3c5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Dual-vocabulary generation separates reasoning from realization` and reviewed owner atoms `fast-generation-architectures.beyond_sota.001`, `fast-generation-architectures.core`, `fast-generation-architectures.minimum.001`."
+    }
   },
   "prose_review_lineage": [
     {

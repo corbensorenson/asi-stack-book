@@ -6,13 +6,14 @@ This report records the source-mining pass used to expand the book from a 16-cha
 
 ## Coverage
 
-- Current inventory: 465 Corben-side and external source records.
+- Current inventory: 468 Corben-side and external source records.
 - Locally readable Corben paper corpus: 46 canonical mining texts—37 cached
   Google Docs text exports, seven supplied Markdown whitepapers, and two
   authenticated Google Drive Markdown papers recovered through the
   TreeLLM-successor search. Paired DOCX files are presentation counterparts,
   not independent idea sources.
-- Full section-family closure audits now exist for twenty-nine papers:
+- Full section-family closure audits now exist for all forty-six locally
+  readable Corben papers:
   `deterministic_capability_compilation`, `platonic_world_model`, `scf`,
   `qcsa_whitepaper`, `reflexive_router_whitepaper`,
   `kernel_english_residual_compiler`, `relational_dimension_compiler`, and
@@ -21,16 +22,28 @@ This report records the source-mining pass used to expand the book from a 16-cha
   `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`,
   `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, and
   `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`,
-  `spider_synapse`, and `portia_synapse`.
-- The 2026-07-31 VIEA second pass is the first legacy-paper fidelity repair: it
+  `spider_synapse`, `portia_synapse`, `alignment_field`, `field_of_god`, and
+  `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`,
+  `beastbrain_timeless`, `aletheia`, `context_engineer`, and
+  `black_hole_context_manager`, `ladon_manhattan`, `uat`, `simulation_scaling`,
+  `tokenmana`, `bugbrain`, `software_magic_grimoire`, and `viea`.
+- The authenticated connector follow-up closes seven additional records at the
+  same section-family standard: the existing `moecot`, `moecot_md`,
+  `coilmoecot`, and `temporal_coil_research` records plus three newly admitted
+  paper families, `capability_ratchet_whitepaper`, `attd`, and `orcp_moecot`.
+  The local corpus therefore remains exactly 46 while the accessible
+  paper/architecture fidelity set is 53 records: 46 local and seven
+  connector-reviewed. `moecot_md` is explicitly a variant of `moecot`, so this
+  count describes reviewed records, not independent evidentiary sources.
+- The 2026-07-31 VIEA second pass began the legacy-paper fidelity repair: it
   expands the note from a routing summary into a 2,388-word system note and
   writes previously absent mechanisms into seven canonical chapters.
 - Every recent rich whitepaper in this audit now has an exact
   section-family-to-manuscript closure audit.
-- Sixteen readable legacy papers still have first-pass routing notes rather
-  than full-fidelity notes. Their ideas may be present in chapters, but note
-  existence or manifest assignment is no longer accepted as proof of complete
-  mining.
+- No locally readable Corben paper remains at first-pass routing-note fidelity.
+  A future source revision, recovered inaccessible variant, or new paper reopens
+  only its affected family; note existence or manifest assignment still does
+  not count as proof of complete mining.
 - Local project repositories remain separate implementation-lineage sources;
   this paper-fidelity pass does not convert project history into paper evidence.
 - Conversation packets remain author-intent and recovery context only.
@@ -67,10 +80,39 @@ source assignment alone does not count.
 
 | State | Sources | Required next operation |
 |---|---|---|
-| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `spider_synapse`, `portia_synapse` | Re-open only on paper or chapter drift. |
-| Legacy paper repaired in this pass | `viea` | Re-run chapter/source validation and retain its new section-family map. |
-| Compression, representation, and substrate; deep note required | `simulation_scaling`, `tokenmana`, `bugbrain` | Preserve equations, decoders, accounting, verification, failure surfaces, and rival representations—not only the compression slogan. |
-| Alignment, verification, context, and execution lineage; deep note required | `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `software_magic_grimoire` | Separate operational mechanisms from metaphysics, branding, repeated drafts, unsafe absolutes, and unsupported performance claims; integrate only the durable architecture. `coherence_exchange` remains a separately connector-mined source rather than one of the 44 local paper texts. |
+| Section-family audit complete | `deterministic_capability_compilation`, `platonic_world_model`, `scf`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `precision_contract`, `planforge`, `planforge_compiler_arch`, `cognitive_compilation`, `talos`, `vcm_public`, `spinoza`, `spinoza_composer`, `octopus_router`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `cgs`, `rgs`, `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `bbvca_main`, `genesiscode`, `treellm`, `spider_synapse`, `portia_synapse`, `alignment_field`, `field_of_god`, `ethica_mechanica`, `eternal_code`, `verification_bandwidth`, `beastbrain`, `beastbrain_timeless`, `aletheia`, `context_engineer`, `black_hole_context_manager`, `ladon_manhattan`, `uat`, `simulation_scaling`, `tokenmana`, `bugbrain`, `software_magic_grimoire`, `viea` | Re-open only on source or owning-chapter drift. |
+| Locally readable paper awaiting deep audit | none | New or recovered material enters through the same four-disposition closure standard. |
+| Authenticated connector section-family audit complete | `moecot`, `moecot_md`, `coilmoecot`, `temporal_coil_research`, `capability_ratchet_whitepaper`, `attd`, `orcp_moecot` | Re-open only on source or owning-chapter drift; preserve private-text and no-independent-corroboration boundaries. |
+| Other connector and project-lineage material | `coherence_exchange`, other authenticated source-note families, and public-safe project dossiers | Maintain their explicit access and evidence class; do not count a connector summary or project repository as one of the 46 locally readable paper texts or as independent corroboration of a related paper. |
+
+### Connector follow-up: newly recovered ideas
+
+The Drive discovery pass is recorded in
+`docs/drive_source_discovery_audit_2026_07_31.md` and machine-closed by
+`sources/corben_connector_source_closure.json`. It produced three material
+manuscript repairs rather than three new chapters:
+
+- ATTD gives Artifact Steward Agents a historical, vector-valued repository
+  health record with artifact-class separation, reuse failure, role entropy,
+  lineage, rolling residue, local caps, verified simplification credit,
+  deterministic maintenance packets, and a four-arm causal evaluation target.
+- ORCP–MoECOT gives Compact Generative Systems a decoder-boring exactness rule,
+  explicit plan/update signaling, complete archive-rate accounting,
+  cross-implementation obligations, and a sharp separation among universal
+  acceptance, exact round trip, and useful compression.
+- The Capability Ratchet makes benchmark, procedural, and structural ratchets
+  separately observable while retaining the lower-impact intervention ladder.
+  It is synthesis and does not independently corroborate its component papers.
+
+Temporal Coil Research is now recorded as an actual but inconclusive
+source-reported experiment: 11 variants, three seeds, six rounds, split winner
+frequency, small composite deltas, and flat task-relevant lanes. The book does
+not infer either benefit or failure; it requires a more discriminating
+trace-native workload and placement ablations. CoilMoECOT contributes
+Graph/Trace-first placement, removable shadow lanes, explicit insertion points,
+and anti-experts as bounded negative-signal evidence rather than hidden vetoes.
+MoECOT's complete authenticated v1.1 text now grounds the design vocabulary,
+while runtime artifacts and reported benchmarks remain unimported.
 
 The register is an honest queue, not a deferral license. When a paper yields a
 useful idea with a canonical owner, that idea moves into the book in the same
@@ -100,6 +142,163 @@ These concepts now live in Human Intent, Artifact Graphs, Claim Ledgers, Human
 Factors, Routing Heads, Procedural Memory, and Integrated Reference
 Architecture. They remain design arguments; the mining repair creates no
 implementation, benchmark, safety, or support-state result.
+
+## Aletheia / Proof-Carrying Workbench closure result
+
+The 11,080-word Aletheia cache is a four-stage correction lineage rather than
+one stable paper: the original autopoietic epistemic engine, Aletheia Foundry,
+red-team-hardened Proof-Carrying Workbench v1.1, and self-contained PCW v1.2.
+The complete audit lets the last version control conflicts and prevents
+repeated mechanisms from being counted as independent evidence.
+
+Most of the durable design already had stronger canonical owners. Human Intent
+owns semantic scope; compilation and runtime chapters own typed graphs,
+least-privilege slices, opaque capability handles, and response contracts;
+Spinoza owns separate formal, procedural, source-bound, heuristic, and
+metacognitive justification classes plus trusted-template decay; Claim Ledgers
+owns commitments and revision; and Human Factors owns approval fatigue. The
+audit therefore adds no monolithic Aletheia chapter.
+
+One material gap did remain. Claim Ledgers now defines a claim-native release
+as a bidirectional coverage contract: claims point to exact rendered surfaces,
+material surface assertions point back to versioned claim IDs, and
+`unregistered_assertion`, `hidden_claim`, and `mapping_disputed` remain typed
+release residuals. The text explicitly rejects the paper's implication that
+claim extraction from arbitrary natural language can be deterministic or
+complete. Required categories, parsers, model candidates, perturbations, and
+sampling are fallible omission searches with preserved denominators.
+
+The deep note also bounds immutable semantic primitives, scalar intervention
+scores, thermodynamic laws, mandatory retrieval, live oracles, consensus as
+truth, source allowlists, universal risk thresholds, and safe-general-
+intelligence claims. It retains threats, release bundles, incident response,
+recertification, and evaluation as design and research obligations. No
+implementation, semantic-escape measurement, security result, useful-
+throughput comparison, deployment, or support-state promotion is inferred.
+
+## Context Engineer and Black Hole Context Manager closure result
+
+The two small context papers are now closed as complementary predecessor
+families. Context Engineer's v1.0/v3.2 lineage supplies the context-supply-chain
+frame, task-relative mission briefs, proposed structured transport fields, and
+a request-through-commit compartment lifecycle. Black Hole Context Manager's
+v5.0/v4.1 pseudocode lineage supplies versioned chunks, task-relative cached
+features, tiered placement, goal-drift decisions, freeze/thaw hysteresis, and
+exact-retrieval versus generative-reconstruction pressure.
+
+The complete manuscript audit found no new prose gap. Virtual Context already
+owns representation, admission, omissions, and loss; Context Transactions owns
+snapshot, placement, freeze/thaw, commit, invalidation, taint, and deletion;
+and Security Kernel owns authority, isolation grade, egress, declassification,
+zeroization, revocation, and recovery. Adding source-branded sections would
+weaken those boundaries and duplicate stronger text.
+
+The new notes preserve every algorithm and example while rejecting the source
+overclaims: Ring Attention is not physical isolation; protocol fields are not
+enforcement; literal scanners are not semantic non-disclosure; a wipe receipt
+is not physical erasure; character entropy and embedding similarity are not
+semantic importance; HMAC and repeated confirmation are not truth; keyword
+routing is a weak baseline; the partial pseudocode is not production-ready;
+and the reported hallucination, leak, cost, latency, and complexity figures
+have no reproducible artifact here. The Drifting Needle is retained as a much
+broader future workload covering required and forbidden recall, contradiction,
+expiry, rights, privacy, deletion, and resource cost.
+
+## Ladon and Unified Adaptive Tribunal closure result
+
+Ladon's compact standalone security paper is now fully accounted for. Its
+useful contribution is capability separation: an agent may request a narrowly
+scoped operation without receiving the credential bytes or ambient authority
+behind it. Security Kernel already contains the stronger transaction, including
+caller, purpose, payload, destination, policy, use, egress, derivative,
+declassification, revocation, recovery, side-channel, availability, and cost
+boundaries. The audit rejects the source's platform-equivalence assumptions,
+incomplete Rust sketch as implementation, and its “Ignorance” and
+“Ephemerality” claims as theorems. Hiding a key does not prevent misuse of its
+authority or make a returned signature harmless.
+
+UAT's three-tab lineage is also closed with the later public human-in-the-loop
+architecture controlling the original promotional tribunal. The deep note
+preserves structural, retrieval, and dialectical candidate views; a bounded
+dossier and omitted frontier; probabilistic claim extraction; support states;
+logic/citation/omission attacks; compression checks; and SME handoffs. Spinoza
+and Claim Ledgers already own the corrected versions, including reviewer-
+dependence vectors, no delete-by-absence, explicit dissent, and the warning
+that edit stability and claim density are not truth. All brand-diversity,
+consensus, fixed-threshold, production, performance, cost, and superiority
+claims remain unsupported.
+
+## TokenMana and Simulation Scaling closure result
+
+TokenMana's five tabs resolve into two paper families: a regenerative-capacity
+mechanism and a temporal-access/human-outcomes hypothesis. The deep audit
+preserves bounded regeneration, stock, burst, debt, expiry, price feedback,
+load smoothing, renewal clustering, nocturnal work, and privacy-aware study
+design while correcting dimensional, equilibrium, variance, stability,
+profit, and causal-identification gaps. Resource Economics now contains a
+`TemporalAccessContract` that makes renewal cadence, prices, notifications,
+deadlines, protected floors, user time, fairness, and human burden part of the
+resource decision. It forbids employer/performance/medical impairment use and
+does not turn lower infrastructure variance into welfare or productivity.
+
+Simulation Scaling's six repeated drafts now close as a correction lineage.
+The book retains the prospective simulation contract, scope/time tradeoff,
+per-bottleneck accounting, physical-limit context, and logical-possibility
+versus engineering-feasibility split. Resource Economics now states the key
+correction explicitly: feasibility is a typed demand/capacity vector with
+coupling constraints before it is any scalar score. The proposed
+`scope * clockspeed / efficiency <= capacity` expression is a conditional
+mnemonic, not a proved universal law. Contract weakening is separated from
+fixed-contract implementation improvement; ideal physical ceilings are not
+attainable hardware; and the proper-subsystem 1:1 exclusion, Vazza
+calibration, and simulation-hypothesis discussion remain bounded research
+claims rather than ASI evidence.
+
+## BugBrain paper-lineage closure result
+
+BugBrain's 15 tabs trace Project Genesis from an evolutionary FSLO sketch
+through frozen semantic graphs, monolith and loader corrections, multimodal
+and fixed-core designs, A1-storage-aware paging, a spreading-activation Glow
+plus grammatical Weaver, public v23 whitepapers, and a v26 advanced-module
+inventory. The paper audit is reconciled against the stronger pinned project
+dossier rather than allowing paper language to outrank code and retained
+reports.
+
+The durable ideas—hardware-explicit ownership, addressable/formatted/resident/
+active/trained/useful capacity separation, hardware-budgeted ontology
+compilation, tiered context and persistence, one-shot action state machines,
+shared authority identity, artifact replay, readiness requiredness, and
+objective-term effect tests—already have canonical chapter owners. The deep
+note preserves every section family and the code-level negative findings: a
+random fixed forward path is not a trained world model; a candidate-invariant
+epistemic term is not action control; a simplified variable named phi is not
+IIT or consciousness evidence; heat should narrow capability rather than lower
+epistemic thresholds; skipped checks are not green; and host tests or status
+polls are not Pi cognition results. No duplicate BugBrain chapter is added.
+
+## Software Magic Grimoire closure result
+
+The 61,129-word composite Grimoire contains a public doctrine and 1,645-entry
+word-sense lexicon, a pocket edition, a stacked-workflow addendum, and a
+thirteen-family prompt pack at three cast levels. The audit distinguishes
+reference and template reuse from evidence. Operative vocabulary, the
+eight-field instruction artifact, consequence-scaled completeness, typed
+handoffs, guarded transitions, evidence-bounded loops, scope-reducing
+recursion, recovery, and workflow versioning remain useful. Role prompts,
+technical jargon, authored “proof by difference,” the lexicon's numbering,
+prime-exponent/Gödel encodings, coil geometry, and polished templates confer no
+expertise, authority, semantic equivalence, prompt-quality result, or workflow
+correctness.
+
+Intent-to-Execution now adds the previously missing layered Instruction
+Identity Record: human title, working handle, exact canonical record and
+digest, typed literals, normalizer/schema identity, sensitive-literal
+treatment, execution dependencies, and supersession history. A changed order,
+guard, default, exit, recovery route, loop budget, or recursive base case is a
+new choreography version. Planning already owns the stack topology, while
+Runtime, Artifact Graphs, Verification, Readiness, and Procedural Memory own
+effects, lineage, acceptance, qualification, and retirement. No standalone
+promptcraft chapter is warranted.
 
 ## Octopus Router section-family closure result
 

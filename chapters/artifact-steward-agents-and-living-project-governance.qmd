@@ -3,8 +3,8 @@ title: "Artifact Steward Agents and Living Project Governance"
 chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+draft_maturity: "v0.4 manuscript draft"
+last_updated: "2026-07-31"
 primary_sources:
   - "viea"
   - "talos"
@@ -20,6 +20,7 @@ primary_sources:
   - "theseus_operator_os"
   - "scf"
   - "field_of_god_ai_constitution"
+  - "attd"
   - "ext_akash_docs_2026"
   - "ext_golem_docs_2025"
   - "ext_github_webhooks_docs"
@@ -44,8 +45,8 @@ open_evidence_gaps:
 | Chapter ID | `artifact-steward-agents-and-living-project-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
+| Manuscript maturity | v0.4 manuscript draft |
+| Last updated | 2026-07-31 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -171,6 +172,54 @@ sunset triggers; and (18) expires the lease after any material change.
 The steward lifecycle has stages. Inception creates the charter: mission, non-goals, license, governance model, initial budget, compute policy, evidence policy, success criteria, and sunset criteria. Bootstrap creates the repository or artifact home, roadmap, issue templates, contribution rules, source matrix, release checklist, and first work contracts. Build decomposes milestones, assigns bounded work, runs allowed checks, requests review, and updates project memory. Release freezes candidates, runs gates, signs or records artifacts where relevant, writes release notes, publishes only through approved paths, and opens residuals. Maintenance triages bugs, monitors dependencies, recruits reviewers, updates docs, and preserves institutional memory. Governance proposes rule changes, records votes or maintainer approvals, audits capture risk, and preserves fork/exit/appeal paths. Decline or sunset reduces compute, stops nonessential spending, preserves critical artifacts, transfers maintainership if possible, and archives the project in a recoverable state.
 
 This lifecycle matters because the steward is not merely a bot that reacts to issues. It is a continuity layer that knows when to plan, when to verify, when to ask for governance, when to publish, and when to stop.
+
+### A project must govern its own structural debt
+
+Assembly-Theoretic Technical Debt adds a missing object to the stewardship
+loop: a `RepositoryHealthRecord` that remembers how the project was assembled,
+not just whether the current checkout passes. The name is intentionally
+analogical. Assembly theory inspires the idea that repeated construction
+history and reusable motifs matter; it does not make software debt a
+fundamental physical quantity.
+
+The record begins by separating active authored code from generated, vendored,
+deprecated, migrated, and inert material. It then preserves a vector rather
+than hiding everything in one cleanliness score:
+
+- approximate intrinsic assembly burden and reusable motif structure;
+- reuse failure and duplicated construction;
+- pattern entropy inside declared repository roles;
+- region lineage and repeated compensating patches;
+- rolling assembly residue and its age;
+- debt pressure and rate of growth; and
+- verified simplification credit for safe deletion, convergence, or
+  consolidation.
+
+The vector matters because the dimensions do not safely compensate for one
+another. A low global duplication rate cannot excuse one rapidly deteriorating
+security boundary. A clean present snapshot cannot erase a lineage of patches
+that repeatedly reopen the same failure. Conversely, deleting code or
+converging several implementations should not be punished merely because the
+construction history changed. Local caps, growth-rate guards, and
+simplification credit therefore remain visible beside any composite used for
+triage.
+
+The analyzer emits `GREEN`, `YELLOW`, or `RED`, but that state is not a verdict
+about code quality. `GREEN` means the declared checks permit ordinary work.
+`YELLOW` or `RED` emits a bounded maintenance packet naming the affected
+region, observed signal, classification confidence, proposed repair budget,
+owner, acceptance tests, expiry, and rollback. If role classification is
+uncertain, the analyzer abstains instead of laundering uncertainty into a
+growth stop. Patch generation may remain stochastic; admission back to
+`GREEN` is deterministic under a frozen policy and independent-enough checks.
+
+This mechanism is also a claim about evaluation design. A serious test needs
+long-horizon repositories and at least four matched arms: ungated changes, a
+scalar-only gate, the vector gate without simplification credit, and the full
+record. Ordinary complexity, churn, defect, review-time, and maintainer-burden
+baselines remain necessary. Until that campaign exists, the record is a
+governance proposal whose approximate motif, lineage, and role metrics can be
+wrong or gamed—not a proven predictor of future defects.
 
 ## Autonomy and treasury modes
 
@@ -470,6 +519,15 @@ into empirical governance proof.
 | `ext_akash_docs_2026` | Decentralized cloud leases, provider resources, GPUs, and rented-compute vocabulary. | Does not prove a steward should rent compute or that providers meet evidence obligations. |
 | `ext_golem_docs_2025` | Decentralized task execution, provider selection, data transfer, result handling, and resource sharing. | Does not prove sandbox safety, output validity, or payment fairness. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Artifact Steward Agents and Living Project Governance's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `attd` | Passage-reviewed comparator: Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases. Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation. | Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## External literature and tooling queue
 
 Initial source records and conservative source notes now exist for repository events, self-hosted CI runners, decentralized compute markets, on-chain governance machinery, fiscal hosting, GitHub-native sponsorships, agentic workflow-injection risk, and DAO delegation concentration risk. Remaining queue items include grants, bounty platforms, package-maintainer sustainability, software supply-chain security, and legal/tax treatment of stewarded treasuries. The book should later separate three questions: which tooling patterns already work, which governance patterns have known capture risks, and which pieces need new ASI Stack-specific schemas.

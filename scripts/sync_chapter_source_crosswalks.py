@@ -57,11 +57,24 @@ def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict
         title = qmd_escape(record.get("title", "Inventory record"))
         notes = qmd_escape(record.get("notes", "Metadata-first source intake; consult the public source note."))
         mapping = mappings.get(source_id, {})
-        if mapping.get("passage_review_state") == "reviewed":
+        mapping_reviewed = mapping.get("passage_review_state") == "reviewed"
+        inventory_reviewed = record.get("source_crosswalk_review_state") == "reviewed"
+        if mapping_reviewed or inventory_reviewed:
             support = qmd_escape(mapping.get("mapped_support", notes))
-            limits = qmd_escape(mapping.get("limits", "The mapping remains bounded to the reviewed passages."))
+            limits = qmd_escape(
+                mapping.get(
+                    "limits",
+                    record.get("passage_review_limits", "The mapping remains bounded to the reviewed passages."),
+                )
+            )
+            reviewed_label = (
+                "Passage-reviewed Corben architecture source"
+                if inventory_reviewed and record.get("source_type") == "author_whitepaper"
+                else "Passage-reviewed comparator"
+            )
+            boundary = (limits + " ") if limits else ""
             rows.append(
-                f"| `{source_id}` | Passage-reviewed comparator: {title}. {support} | {limits} "
+                f"| `{source_id}` | {reviewed_label}: {title}. {support} | {boundary}"
                 "No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |"
             )
         else:

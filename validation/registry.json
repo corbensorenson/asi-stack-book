@@ -3032,7 +3032,9 @@
     "scripts/validate_round22_concept_linked_claim_atom_addendum.py",
     "visual_edition/youtube_preview_bindings.json",
     "schemas/youtube_preview_bindings.schema.json",
-    "scripts/validate_youtube_preview_bindings.py"
+    "scripts/validate_youtube_preview_bindings.py",
+    "visual_edition/chapter_binding_revalidation.json",
+    "scripts/reconcile_visual_chapter_bindings.py"
   ],
   "units": [
     {
@@ -16014,6 +16016,7 @@
         "visual_edition/youtube_mutation_scope.json",
         "visual_edition/youtube_publication_preflight.json",
         "visual_edition/youtube_preview_bindings.json",
+        "visual_edition/chapter_binding_revalidation.json",
         "visual_edition/lib/__init__.py",
         "visual_edition/lib/asi_visuals.py",
         "visual_edition/lib/chapter_scene.py",
@@ -16038,6 +16041,7 @@
         "scripts/validate_visual_narration.py",
         "scripts/validate_visual_master.py",
         "scripts/generate_visual_chapter_packets.py",
+        "scripts/reconcile_visual_chapter_bindings.py",
         "scripts/produce_visual_chapter.py",
         "scripts/transcribe_visual_narrations.py",
         "scripts/render_visual_scenes.py",
@@ -16982,7 +16986,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 2988,
+    "required_artifact_count": 2990,
     "unit_count": 443
   },
   "non_claims": [

@@ -27,8 +27,7 @@ primary_sources:
   - "relational_dimension_compiler"
   - "portia_synapse"
   - "spider_synapse"
-  - "portia_synapse"
-  - "spider_synapse"
+  - "coilmoecot"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -234,7 +233,7 @@ of three versioned contracts:
 
 The registry records the maximum declared envelope. A route grants only its
 task-local intersection with principal, consumer, policy, rights, readiness,
-resource, and risk ceilings. The result is an **arm contract**, not a standing
+resource, and risk ceilings. Together these form an **arm contract**, not a standing
 appointment. This prevents a useful specialist from becoming an ambient agent
 and prevents a broad “coding” or “research” label from hiding incompatible
 subdomains, tools, and risks.
@@ -317,6 +316,15 @@ MoECOT is folded here as a runtime crosswalk over routing, not as a reproduced i
 The crosswalk separates source-reported, locally reproduced, externally corroborated, and blocked fields. A source can define the expected shape of a run packet, but only imported or reproduced artifacts can move a runtime statement beyond design rationale. That distinction lets MoECOT guide prototype work without laundering source-reported runtime or benchmark claims into evidence.
 
 A MoECOT-style packet also records failed and denied paths. A successful route without denied routes, failed gates, missing replay refs, unresolved handoffs, and residual branches is biased evidence. The runtime crosswalk therefore makes non-execution visible: refused authority, blocked routes, absent replay, and residual handoff are outcomes the router and readiness gate must preserve.
+
+CoilMoECOT adds a narrow pattern for negative-signal specialists. An
+“anti-expert” is not a negative mixture weight and not an invisible veto. It is
+a bounded evidence lane that identifies the candidate or plan it challenges,
+the trace features it observed, its confidence and calibration scope, the
+maximum penalty it may contribute, the authority that can override it, and the
+final route effect. It begins in shadow mode and must be compared with ordinary
+rules and small classifiers. If the lane cannot be removed without changing
+the control plane, it has already exceeded the specialist boundary.
 
 ### Semantic-to-physical route compilation
 
@@ -953,13 +961,14 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dont_hallucinate_abstain_2024` | Passage-reviewed comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence. | The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No learned-router, trained-specialist, production, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Extends routing to candidate topology, relational order, operator family, factorization, precision, scale, branch resolution, verification effort, and stopping or abstention under a complete proposal-through-repair cost ledger. | No learned order router, proposal-recall result, regret bound, useful polyadic route, or natural-task routing advantage is demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `portia_synapse` | Passage-reviewed comparator: PortiaSynapse: A Cognitive Spider Architecture for DKL Navigation. TreeLLM successor architecture for a replacement-compatible Scout, Focus, refinement, coordinate, edge, and confidence route with phased training, diagnostics, stable traits, registry selection, and fallback. | Conflicting source test counts, incomplete integration and comparative benchmarking, possible batch-coupled attention, mutable-memory isolation, and weak exact task metrics remain unresolved; no local route learning is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `spider_synapse` | Passage-reviewed comparator: SpiderSynapse: A Multi-Hypothesis Reasoning Architecture. Failed predecessor case for multi-hypothesis routing, repeated refinement, mutable working memory, selection, typed output heads, path diagnostics, and one-path recovery. | Its reported plateau does not identify branching, refinement, memory, selector credit, label smoothing, or supervision geometry as the cause and has not been locally reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `coilmoecot` | Passage-reviewed comparator: CoilMoECOT Whitepaper v2.0. Full composite connector text section-audited. Retains prime-temporal trace features, Graph/Trace-first placement, ledger-derived diagnostic tuples, removable shadow lanes, explicit pre-planner/post-plan/post-run insertion points, anti-experts as visible penalty signals, bounded update slices, and benchmark/canary/rollback promotion. Repeated MoECOT, packaging, and task-system appendices are treated as shared substrate rather than independent evidence. | Design and implementation specification only; no local route, ablation, benchmark, canary, rollback, model-quality, safety, latency, or cost result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

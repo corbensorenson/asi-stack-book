@@ -3,7 +3,7 @@ title: "Resource Economics and Token Budgets"
 chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.3 claim-proof program"
+draft_maturity: "v0.4 temporal-access integration"
 last_updated: "2026-07-31"
 primary_sources:
   - "tokenmana"
@@ -63,8 +63,8 @@ open_evidence_gaps:
 | Chapter ID | `resource-economics-and-token-budgets` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-26 |
+| Manuscript maturity | v0.4 temporal-access integration |
+| Last updated | 2026-07-31 |
 | Primary source records | 41 assigned records spanning local resource and simulation lineage, serving and heterogeneous-memory comparators, current provider cache contracts, exact and modular prefix reuse, disaggregated and non-prefix KV state, semantic response caching, and benchmark context |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -261,6 +261,59 @@ The security interface matters here. Secure handles, Digital SCIFs, human approv
 
 The budget record should also carry a displaced-cost section. If a route saves model calls by increasing future debugging, reviewer burden, hidden context reconstruction, private-data exposure, benchmark contamination, or rollback difficulty, the savings are not yet accepted. They become residual costs until a cost-quality test or evidence packet shows the displacement is harmless for the specific risk class.
 
+### Resource policy shapes human time
+
+An AI budget is also a temporal access contract. Renewal times, accrual rates,
+expiration, burst and concurrency limits, price updates, throttling, queue
+priority, and notifications change when people can do work—not only how many
+tokens they can consume. A deterministic reset can concentrate requests near a
+boundary; continuous regeneration can remove that one discontinuity while
+still creating peaks through shared deadlines, common price signals, outages,
+time zones, product releases, identical accrual rules, or strategic waiting.
+Load smoothing is therefore an empirical property of a policy and population,
+not a semantic property of the word “regenerative.”
+
+A `TemporalAccessContract` should bind:
+
+- account or workload class, covered resource, meter, and units;
+- regeneration, maximum stock, spill at the upper bound, permitted debt,
+  expiration, transfer, rollover, burst, concurrency, and service-rate rules;
+- renewal, pricing, observation, feedback, notification, and policy-change
+  cadence;
+- protected safety, verification, security, accessibility, and human-review
+  capacity that scarcity cannot consume;
+- expected deadline, time-zone, fairness, predictability, and availability
+  effects;
+- observed mean, variance, tails, queueing, deferred and abandoned work,
+  useful completion, quality, false blocking, price, and displaced costs; and
+- expiry, appeal, rollback, adverse-outcome, and residual owners.
+
+The human pathway needs its own claim boundaries. Renewal clustering is a
+timestamp pattern. Nocturnal usage is a schedule pattern. Sleep duration and
+regularity are sensitive human outcomes. Rework, correction loops, and test
+failures are noisy task-friction proxies. None establishes the next link in a
+causal chain by itself, and token volume is not productivity. Deadlines,
+caregiving, time zones, incidents, job type, plan selection, and shared
+infrastructure can affect several stages at once.
+
+Any study of these effects should minimize what the platform learns about the
+person. Sleep or wearable data is opt-in, purpose-limited, short-lived,
+deletable, exportable, separated from employer and performance-management
+access, and unavailable for medical or individualized impairment inference.
+Aggregate timing telemetry should be preferred when it answers the question.
+Shared load and load-responsive pricing also create interference between users,
+so a staggered rollout cannot assume that one person's treatment leaves the
+control group unchanged.
+
+TokenMana motivates this temporal-access lens, but its equilibrium, variance,
+profit, sleep, and productivity claims remain unproved or unmeasured here. Its
+regenerative policy is one candidate beside staggered quotas, ordinary token
+buckets, reservations, queue admission, pay-as-you-go, and static rate limits.
+The design succeeds only if it improves a joint frontier over useful work,
+load, cost, access, fairness, human burden, protected capacity, and failures;
+merely moving demand or surveillance cost outside the provider's dashboard is
+not a win.
+
 ### Simulation Fidelity and Claim Transport
 
 Simulation fidelity is folded here because the central object is not a standalone simulator. It is a resource-governed claim-transport rule. A simulated, synthetic, benchmark, or scenario result may travel only as far as its contract permits: declared scope, fidelity standard, temporal semantics, demand estimate, resource bill, capacity bottlenecks, omitted variables, approximation liberties, instrumentation effects, observed-result boundary, supported-claim boundary, transfer decision, residual risks, and non-claims.
@@ -268,6 +321,51 @@ Simulation fidelity is folded here because the central object is not a standalon
 The Resource Budget Record says what the stack can afford. The Simulation Contract Record says what a cheap or synthetic experiment is allowed to mean. Those records should be paired whenever a budget, benchmark, safety rehearsal, or synthetic environment is used as evidence. A cheap simulation can be excellent for a unit invariant and useless for a physical-deployment claim; a high-fidelity simulation can still fail if it omits the bottleneck that decides the question.
 
 Reluplex is useful as a comparison point because scoped verification gains authority from its property boundary. It can verify a specified property or return a counterexample inside its own model class; it does not verify all behavior. Simulation contracts should follow the same discipline. Name the preserved structure, omitted physics, resource cost, instrumentation effect, and transfer boundary before a result is allowed to support a broader claim.
+
+#### Feasibility is a vector before it is a score
+
+The useful intuition in Simulation Scaling is that scope, simulated-time rate,
+implementation efficiency, and available physical resources trade against one
+another. Its compact expression should not be treated as a universal physical
+law. Memory demand need not grow with clockspeed; communication and
+synchronization can grow faster than instantiated state; event-driven work can
+be sparse; sequential depth can bind despite spare operations; and
+compression, reversibility, or distribution can reduce one bill while
+increasing another.
+
+The operative check is therefore component-wise. For a fixed simulation
+contract (C), implementation (I), architecture and environment (A), and
+resource allocation (m), require
+
+\[
+d_j(C,I) \leq c_j(A,m) \quad \text{for every operative resource } j,
+\]
+
+plus the coupling constraints among resources. The vector should include, when
+relevant, state-transition rate, working and persistent memory, communication,
+synchronization, latency or sequential depth, energy, irreversible erasure,
+heat rejection, error correction, sensing and I/O, verification, and human
+review. A minimum normalized margin can summarize an already completed audit;
+it cannot replace one or make unlike units interchangeable.
+
+Efficiency also stays typed. Representational compression, conditional
+evaluation, algorithm choice, hardware, reversible computation, and
+communication changes can overlap or conflict. A lower resolution, smaller
+observable set, delayed answer, or observer-conditioned world is a new contract
+when the original required what was removed. It is not an implementation gain
+under the same task. Likewise, Margolus–Levitin/Lloyd, Bekenstein or
+holographic, and Landauer-style limits are assumption-bound physical ceilings,
+not achievable hardware specifications. Engineering feasibility needs a bridge
+from each ceiling to an actual architecture, reliability target, geometry,
+temperature, duration, and uncertainty interval.
+
+This separation also keeps evidence states distinct: logical definability,
+computability, consistency with an ideal upper bound, engineering feasibility,
+simulator adequacy, benchmark performance, and external transfer are different
+claims. A scalar frontier plot can be a useful conditional visualization, but
+it does not prove that real simulation frontiers are linear, that all resources
+share one efficiency multiplier, or that a proper subsystem cannot satisfy any
+particular simulation contract.
 
 ```{mermaid}
 flowchart LR

@@ -1875,7 +1875,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `capability_ratchet_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: live AI updates can preserve a name or artifact while changing checkpoint authority, hidden state, evaluators, monitors, authority, descendants, and irreversible effects.
@@ -2523,7 +2523,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `capability_ratchet_whitepaper`, `attd`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A system participating in its own proposal, implementation, or evaluation can shape the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which admission is judged.
@@ -4527,7 +4527,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `capability_ratchet_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -4615,7 +4615,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -4892,7 +4892,7 @@ Source loading queue:
 | Orthogonalized matrix updates | `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026` | Explain momentum plus approximate matrix orthogonalization, matrix eligibility, fallback optimizers, weight decay, update scaling, approximation precision, communication, and one theoretical spectral-norm interpretation. Do not collapse ideal and implemented Muon or infer universal superiority. |
 
 
-| Manifest assignment reconciliation | `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `beastbrain`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why code, data, weights, and loss do not fully identify a stateful
@@ -5146,7 +5146,7 @@ Source loading queue:
 | Remaining external queue | secret-management systems, sandbox runtimes, family safety/tutoring systems, local-first databases, privacy-preserving computation | Add source records and source notes before citation or support-state promotion. |
 
 
-| Manifest assignment reconciliation | `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `beastbrain`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: exact governed work must cross heterogeneous owned and external nodes under churn and partition while preserving principal, data, tool, locality, rights, resource, effect, evidence, revocation, recovery, and residual boundaries.
@@ -5239,7 +5239,7 @@ Source loading queue:
 | Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `qcsa_whitepaper`, `kernel_english_residual_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `qcsa_whitepaper`, `kernel_english_residual_compiler`, `orcp_moecot` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: visible size can fall while total reconstruction, semantic, verification, repair, fallback, source, rights, human, governance, recovery, and residual burden rises.
@@ -6234,7 +6234,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -7231,6 +7231,8 @@ Source loading queue:
 | Handoff or recovery notes | `sources/inbox/artifact_steward_agents_browser_note_2026-06-25/` | Local-only author-intent context. Do not quote verbatim or promote claims from this packet. |
 | Remaining external queue | grants, bounty platforms, package-maintainer sustainability, software supply-chain security, legal/tax treatment of stewarded treasuries | Add source records and source notes before citation or support-state promotion. |
 
+
+| Manifest assignment reconciliation | `attd` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Durable artifacts need continuity across planning, funding, work assignment, release, maintenance, governance, and eventual sunset without turning an AI manager into the owner of the project.

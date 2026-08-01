@@ -3,8 +3,8 @@
   "video_id": "asi-video-readiness-gates-residual-escrow-and-quarantine",
   "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
   "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-  "chapter_sha256": "5080ce0698bcb426766e8649f5325cbab16788184f202ab38685443a3f76bc3c",
-  "source_commit": "f10ef079ecfeb48503407d67832a0251f77c2c78",
+  "chapter_sha256": "8c9abf304368c85e4de9f3408a7a2e7c2c2bd4776a284a5b0790508bd8933490",
+  "source_commit": "17c6ece80f771d3bce5f89c6b85c99ca9b6c2ea0",
   "pilot": false,
   "lifecycle_state": "ready_not_published",
   "claim_bindings": [
@@ -16,6 +16,7 @@
   ],
   "assigned_source_ids": [
     "rmi",
+    "rgs",
     "deterministic_capability_compilation",
     "benchmaxxing",
     "scf",
@@ -143,7 +144,7 @@
   },
   "staleness": {
     "state": "current",
-    "checked_chapter_sha256": "5080ce0698bcb426766e8649f5325cbab16788184f202ab38685443a3f76bc3c",
+    "checked_chapter_sha256": "8c9abf304368c85e4de9f3408a7a2e7c2c2bd4776a284a5b0790508bd8933490",
     "triggers": [
       "core_claim",
       "mechanism",

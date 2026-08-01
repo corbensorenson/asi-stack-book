@@ -3974,7 +3974,7 @@
       "source_ids": [
         "relational_dimension_compiler"
       ],
-      "source_grounding": "Lifecycle and contraction requirements come from the Relational Dimension Compiler and remain test proposals. Relational-Order Discovery, Inference, and Evaluation should separate at least five capabilities: | Track | Question | |---|---| | Topology discovery | Can the system propose the needed relation without seeing its template in training? | | Role binding | Does it preserve asymmetric roles, missing roles, and permutation behavior? | | Compositional transfer | Does an admitted relation transfer across entities, domains, time, and unseen configurations? | | Order selection | Does the system prefer a simpler sufficient representation and abstain when no candidate qualifies? | | Lifecycle integrity | Can it promote, compile, demote, contract, and invalidate descendants without state corruption? | Synthetic generators permit exact topology and counterfactual controls, but they can reward template recognition. Natural tasks are necessary to test usefulness, yet their ground truth is often incomplete. Both are reported separately.",
+      "source_grounding": "Lifecycle and contraction requirements come from the Relational Dimension Compiler and remain test proposals. Relational-Order Discovery, Inference, and Evaluation should separate the paper's diagnostic suites rather than collapsing them into one “relational intelligence” score: | Track | Question | |---|---| | Minimal relational order | Which primitive order survives competent lower-order rescue at matched information and budget? | | Typed role binding | Does the system preserve asymmetric, symmetric, repeated, optional, missing, and permuted roles? | | Latent topology discovery | Can it propose the needed relation and schema without receiving the authored template or an oracle candidate set? | | Counterfactual and causal fidelity | Do role deletion, substitution, and intervention change predictions in the independently expected direction? | | Dynamic topology and identity | Can relations appear, change, split, merge, contradict, and retire without losing identity or rewriting history? | | Multiscale contraction | Does a macro-object preserve a declared query family within tolerance",
       "contrary_evidence": [],
       "acceptance_criterion": "The `RODIE: a benchmark family, not one score` mechanism changes its named bounded outcome against a competent baseline while all required controls pass and all residuals, costs, and authority effects remain visible.",
       "narrowing_criterion": "Narrow to the exact mechanism, population, environment, artifact, or decision boundary that survives competent challenge.",
@@ -4493,7 +4493,7 @@
     },
     {
       "chapter_id": "open-weight-release-and-post-release-control",
-      "chapter_sha256": "e3036a2b89b49be3b8729338bfcc92fb00672632e7392e0dde947b0a7fec4c7a",
+      "chapter_sha256": "49277832c38dc07dbd03c8689fba0e623505aa5a1439ea1e05a56737244eeca4",
       "concept_ids": [
         "access-tier-option-set",
         "artifact-derivative-identity",
@@ -4597,7 +4597,7 @@
     },
     {
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
-      "chapter_sha256": "cd18047b33ed06a16a8de2c21ecc094a02bba276a61a3009cb562ff2b2f8dc19",
+      "chapter_sha256": "cdf30a5166f4a51c4d7a59b52593a49a7ec8c5a76b367c21eb93b840044805f9",
       "concept_ids": [
         "plant-task-hazard-envelope",
         "observation-control-separation",
@@ -4649,7 +4649,7 @@
     },
     {
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
-      "chapter_sha256": "b3155703d9cdbc0689b309f26223f4e92858f93af4f88bf5802b7c413abaa05c",
+      "chapter_sha256": "ba9f55a9e55a40b12a59788519e119716d7053f95a6076e3768cc32c01ed6649",
       "concept_ids": [
         "dimension-type-separation",
         "typed-role-relational-ir",
@@ -4675,7 +4675,7 @@
     },
     {
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
-      "chapter_sha256": "4e59c1fc56973e12cbe09d764aedcbabda51322d18e83e3142f526d46fa8b8e3",
+      "chapter_sha256": "5cf2a1d2e194c65a3e7e8f65d9ffd069aa65279708179aa793ff3d565a9154f1",
       "concept_ids": [
         "signed-provenance",
         "watermarking",

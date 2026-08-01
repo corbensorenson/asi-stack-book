@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "All nine assigned sources are mapped and passage-reviewed at their available evidence level; `coherence_exchange` and `moecot` remain source-note/connector context, and V-JEPA 2 remains an unreproduced external MPC comparator."
+  - "All assigned sources are mapped and passage-reviewed at their available evidence level; the complete authenticated `moecot` text is reviewed, `coherence_exchange` remains connector-bounded context, and V-JEPA 2 remains an unreproduced external MPC comparator."
   - "The current evidence is a record-and-route scaffold: three valid and ten invalid plan-execution fixtures, two valid scheduler-state traces with seven rejecting mutations, two valid runtime-replan traces with nine rejecting mutations, two no-change transitions, and 31 theorem declarations under seven targets. It contains no planner-generated natural plan, independent decomposition oracle, measured dependency truth, context-demand prediction, selected-tier adequacy, live scheduler, observed replan benefit, or support movement."
   - "The next honest minimum is a preregistered natural multi-planner campaign with strong human and algorithmic/workflow baselines, hidden obligations and perturbations, complete alternative denominators, independent semantic/dependency/feasibility/outcome evaluation, observed costs and feedback, effect-tested stop/recovery, causal ablations, reproduction, and transfer."
   - "No support-state promotion is implied by this drafting pass."
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `coherence_exchange` |
-| Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/source-note only: `moecot`, `coherence_exchange` |
+| Source loading state | source notes: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`; passage-reviewed local raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; authenticated connector text passage-reviewed: `moecot`; connector-bounded: `coherence_exchange` |
 | Test state | The schema/fixture, plan-execution, scheduler-state, runtime-replan, and Lean checks pass over their exact synthetic records. Across them, seven valid records, 26 rejecting cases, two accepted no-change transitions, and 31 theorem declarations under seven targets establish record shape and finite route consequences only. No natural planner output, planner-quality result, live scheduler, observed replan benefit, cost-quality dominance, or support transition exists. |
 
 ## Drafting guardrail
@@ -139,7 +139,7 @@ The claim remains at `argument` support. PlanForge supplies decomposition, depen
 
 ### Claim-source mapping status
 
-Appendix C maps this merged planning-control claim to all assigned source notes. Six local raw-cache mappings are now passage-reviewed. The mappings support planning as a bounded control artifact between accepted goals and execution, DAG scheduling, capability-tier annotation, adequacy contracts, cost-quality accounting, and residual routing. They do not establish planner quality, dependency soundness, selected-tier adequacy, context-demand prediction, route-quality improvement, measured savings, or deployed replanning behavior. `coherence_exchange` and `moecot` remain connector/source-note mapped until usable raw text, code, logs, release artifacts, benchmark records, or external corroboration are imported or inspected.
+Appendix C maps this merged planning-control claim to all assigned source notes. Six local raw-cache mappings and the complete authenticated `moecot` connector text are passage-reviewed. The mappings support planning as a bounded control artifact between accepted goals and execution, DAG scheduling, capability-tier annotation, adequacy contracts, cost-quality accounting, and residual routing. They do not establish planner quality, dependency soundness, selected-tier adequacy, context-demand prediction, route-quality improvement, measured savings, or deployed replanning behavior. `coherence_exchange` remains connector-bounded, and MoECOT code, logs, release artifacts, benchmark records, and external corroboration remain unimported.
 
 | Source | What it supports | Limit |
 |---|---|---|

@@ -180,7 +180,7 @@ state-of-the-art, AGI, or ASI result.</p>
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `vcm_public`, `talos`; supporting: `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; external variants: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025`; connector/recovery: `vcm_editable`, `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; connector-only/source-note mapped: `vcm_editable`, `moecot`; external-literature source-note mapped: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `scf`, `vcm_public`, `talos`, `spinoza`, `field_of_god`, `viea`, `simulation_scaling`; authenticated connector text passage-reviewed: `moecot`; connector-bounded: `vcm_editable`; external-literature source-note mapped: `ext_concrete_ai_safety_2016`, `ext_goal_misgeneralization_2022`, `ext_learned_optimization_risks_2019`, `ext_optimal_policies_power_2019`, `ext_goodhart_variants_2018`, `ext_gradual_disempowerment_2025` |
 | Test state | `failure_boundary_map.valid.json` passes protocol fixture validation with failure class, affected contract refs, promotion blocker, source refs, support-state effect, and non-claims, and `AsiStackProofs.FailureModes` builds locally with finite invariant, governance-failure, incident-route, and recurrence-escalation predicates; no runtime authority gate, context-admission detector, evaluator-independence probe, claim-verification harness, recurrence detector, or deployed failure detector has run. |
 | External taxonomy bridge | The chapter maps stack terms to concrete AI safety accident risks, goal misgeneralization, learned optimization, power-seeking/option preservation, Goodhart/proxy-failure, and gradual-disempowerment families; this is source-noted positioning only. |
 
@@ -282,8 +282,8 @@ authority-boundary risks; Talos for execution, tool-control, audit, replay, and
 secret-boundary risks; Spinoza for verification and downgrade risks; Field of
 God for philosophical governance lineage; VIEA for durable artifact, residual,
 and claim-ledger failures; and Simulation Scaling for resource-contract
-failures. `vcm_editable` and `moecot` remain connector-only/source-note
-mapped. Five external-literature mappings ground the taxonomy against
+failures. `vcm_editable` remains connector/source-note bounded, while the
+complete authenticated `moecot` connector text is passage-reviewed. Five external-literature mappings ground the taxonomy against
 accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and
 Goodhart/proxy-failure families. Those sources supply architecture vocabulary
 and outside comparators, not empirical incident evidence or detector/prevention
@@ -293,7 +293,8 @@ evidence.
 
 Appendix C now maps this core failure claim to every assigned source note.
 Seven local source mappings include reviewed raw-cache passage references,
-`vcm_editable` and `moecot` remain connector-only/source-note mapped, and five
+`vcm_editable` remains connector/source-note bounded, authenticated `moecot`
+text is passage-reviewed, and five
 external-literature mappings provide source-note reviewed taxonomy context.
 The mappings support the obligation map for failure boundaries, not a claim
 that the stack already detects or prevents the failures.

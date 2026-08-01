@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 47,
+    "prose_candidates_adjudicated": 71,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all six exact source mappings, the compressed-artifact schema, the fresh RAW0 replay, three imported NEURAL0 metadata observations, two no-change transitions, all three proof targets and nineteen ArtifactCompression declarations, every manifest atom, every prose candidate, the test plan, source crosswalk, summary, and handoff. The sweep made the artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific Compressed Artifact Admission Lease the distinct owner; expanded the contract to eighteen lifecycle mechanisms, twelve owner interfaces, eighteen invariants, and eighteen failure modes; separated representation, reconstruction, ratio, utility, latency, authority, support, deployment, and SOTA; classified the formal surface as two direct predicate or projection consequences and seventeen derived negative or finite routes; specified strong matched baselines, complete byte and operation accounting, causal ablations, independent implementations, and heterogeneous transfer; and preserved zero chapter-core support effect."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Six exact mappings; one valid schema fixture; one fresh 3,936-byte RAW0 replay producing a 4,434-byte archive with exact roundtrip, no compression advantage, license-disabled NeuralFold, and one rejected byte mutation; three imported NEURAL0 metadata observations for one 100,000,000-byte decoded digest without a fresh encode; two no-change decisions; and nineteen finite declarations. No enabled NeuralFold compressor, heterogeneous corpus, behavioral fallback campaign, or utility result is represented.",
       "model": "An artifact-, consumer-, use-, access-pattern-, risk-, decoder-, platform-, rights-, and time-specific admission lease over preserved source custody, versioned codec identity, separate claim ledgers, complete byte and operation accounting, reconstruction contracts, residuals, probes, fallback, authority, expiry, quarantine, and recovery.",
       "authority": "This chapter owns compact-artifact admission and its use envelope only. Artifact Graph, Context, Routing, Verification, Resource, Claims, Security, Rights and Provenance, Readiness, Runtime, Human review, Incident, and Release owners retain their boundaries.",
-      "time": "Semantic review current through 2026-07-14; source, encoder, decoder, arithmetic, serialization, dependency, platform, hardware, consumer, task, access pattern, workload, rights, threat, policy, incident, or time changes expire affected qualifications.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; six mappings; schema fixture; RAW0 replay; NEURAL0 metadata import; two no-change transitions; three proof targets; nineteen declarations; and the future heterogeneous causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_schema_raw0_exact_roundtrip_corruption_rejection_neural0_metadata_import_and_no_change_boundaries_pending_enabled_heterogeneous_causal_campaign",
@@ -46,13 +46,34 @@
     "strongest_counterclaim": "Optimized standard codecs, literal storage, retrieval indexes, ordinary summaries, quantization, and full-artifact fallback already dominate the relevant storage, transfer, utility, and operational frontier; RankFold/NeuralFold plus admission, probes, residuals, verification, and governance adds cost and risk without a unique useful advantage.",
     "falsifier": "Under matched heterogeneous artifacts, consumers, access patterns, platforms, rights, resources, evaluators, and time, the full candidate fails the preregistered joint reconstruction, useful-task, provenance, rights, security, latency, resource, fallback, recovery, and governance frontier; causal signatures fail; or hidden metadata, residual, code, environment, fallback, selective-denominator, weak-baseline, shared-implementation, or transfer burden explains the result.",
     "required_lanes": [
-      {"lane": "source-synthesis", "necessity": "Freeze strong current literal, standard-codec, model-compression, retrieval, summary-tree, semantic, and archive comparators without importing reported gains."},
-      {"lane": "normative", "necessity": "Justify loss, evidence authority, source retention, rights, deletion, attribution, audit, refusal, fallback, expiry, and residual ownership."},
-      {"lane": "formal", "necessity": "Specify byte-level or declared semantic reconstruction, codec and platform assumptions, adversarial archives, fallback liveness, expiry, and refinement from leases to runtime receipts."},
-      {"lane": "executable", "necessity": "Run enabled encoders and decoders, heterogeneous artifacts, corruption and drift, task probes, fallback, refusal, recovery, and complete telemetry."},
-      {"lane": "empirical", "necessity": "Measure all bytes and operations, exact and lossy reconstruction, downstream utility, rare-case loss, provenance, rights, security, latency, energy, human and governance work, fallback, recovery, and residuals jointly."},
-      {"lane": "causal", "necessity": "Ablate residual coding, probes, exactness, preserved fallback, metadata closure, admission, expiry, quarantine, and source authority separation."},
-      {"lane": "transfer", "necessity": "Reproduce independently and transfer across artifacts, modalities, models, languages, organizations, platforms, rights regimes, attacks, updates, and time."}
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze strong current literal, standard-codec, model-compression, retrieval, summary-tree, semantic, and archive comparators without importing reported gains."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify loss, evidence authority, source retention, rights, deletion, attribution, audit, refusal, fallback, expiry, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify byte-level or declared semantic reconstruction, codec and platform assumptions, adversarial archives, fallback liveness, expiry, and refinement from leases to runtime receipts."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run enabled encoders and decoders, heterogeneous artifacts, corruption and drift, task probes, fallback, refusal, recovery, and complete telemetry."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure all bytes and operations, exact and lossy reconstruction, downstream utility, rare-case loss, provenance, rights, security, latency, energy, human and governance work, fallback, recovery, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate residual coding, probes, exactness, preserved fallback, metadata closure, admission, expiry, quarantine, and source authority separation."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across artifacts, modalities, models, languages, organizations, platforms, rights regimes, attacks, updates, and time."
+      }
     ],
     "evidence_refs": {
       "chapter": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
@@ -124,52 +145,214 @@
     }
   },
   "prose_candidate_dispositions": {
-    "rankfold-neuralfold-and-artifact-compression.prose.e395784efd34": {"state":"duplicate_of_atom","rationale":"Compact form non-authority and fallback are core-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.core"},
-    "rankfold-neuralfold-and-artifact-compression.prose.17ae873c97e1": {"state":"duplicate_of_atom","rationale":"Preserved/lost property disclosure is claim-separation owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.004"},
-    "rankfold-neuralfold-and-artifact-compression.prose.0688c67e9184": {"state":"nonmaterial_explanation","rationale":"Human-path summary of cost and auditability."},
-    "rankfold-neuralfold-and-artifact-compression.prose.e4d9b4d71eeb": {"state":"duplicate_of_atom","rationale":"Reconstruction, probe, and refusal route are lifecycle-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.011"},
-    "rankfold-neuralfold-and-artifact-compression.prose.9f6ee668ba19": {"state":"duplicate_of_atom","rationale":"Source preservation and human review are manifest-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.a9b03646cb6b": {"state":"duplicate_of_atom","rationale":"Problem and failure bundle already atomized.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.problem.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.4c58e9f1b8c9": {"state":"historical_or_source_report","rationale":"Bounded source-lineage report with no local promotion."},
-    "rankfold-neuralfold-and-artifact-compression.prose.bb3d9ce0ccf1": {"state":"duplicate_of_atom","rationale":"Downstream utility requirement is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.014"},
-    "rankfold-neuralfold-and-artifact-compression.prose.7f5814c12e38": {"state":"duplicate_of_atom","rationale":"Access-frequency and horizon cost boundary is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.015"},
-    "rankfold-neuralfold-and-artifact-compression.prose.9633e1d73d44": {"state":"nonmaterial_explanation","rationale":"Introduces bounded comparator vocabulary."},
-    "rankfold-neuralfold-and-artifact-compression.prose.fa383d83f132": {"state":"historical_or_source_report","rationale":"External comparator inventory, not a local result."},
-    "rankfold-neuralfold-and-artifact-compression.prose.a5c28c6b4e37": {"state":"nonmaterial_explanation","rationale":"Transition sentence into claim separation."},
-    "rankfold-neuralfold-and-artifact-compression.prose.8f3b388b5b55": {"state":"duplicate_of_atom","rationale":"Hot-path total cost is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.015"},
-    "rankfold-neuralfold-and-artifact-compression.prose.9f80e7e05a91": {"state":"duplicate_of_atom","rationale":"Use-specific admission scope is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.002"},
-    "rankfold-neuralfold-and-artifact-compression.prose.192d59dbe6af": {"state":"historical_or_source_report","rationale":"Fragment of the explicit import non-claim boundary."},
-    "rankfold-neuralfold-and-artifact-compression.prose.9a39e206430c": {"state":"duplicate_of_atom","rationale":"Failed probe fallback route is mechanism-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.011"},
-    "rankfold-neuralfold-and-artifact-compression.prose.9ce938889f41": {"state":"duplicate_of_atom","rationale":"Candidate rather than source replacement is core-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.core"},
-    "rankfold-neuralfold-and-artifact-compression.prose.6e79635dcbe5": {"state":"duplicate_of_atom","rationale":"Reconstruction ledger is claim-separation owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.004"},
-    "rankfold-neuralfold-and-artifact-compression.prose.a7d990f74acc": {"state":"duplicate_of_atom","rationale":"Ratio ledger and metadata closure are manifest-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.005"},
-    "rankfold-neuralfold-and-artifact-compression.prose.2b3f2ce45f15": {"state":"duplicate_of_atom","rationale":"Non-implication between ledgers is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.003"},
-    "rankfold-neuralfold-and-artifact-compression.prose.1bee62fe8361": {"state":"duplicate_of_atom","rationale":"Lease fields and fallback boundary are core-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.core"},
-    "rankfold-neuralfold-and-artifact-compression.prose.27a027bfe9fd": {"state":"duplicate_of_atom","rationale":"Artifact-graph binding is mechanism-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.014"},
-    "rankfold-neuralfold-and-artifact-compression.prose.90e8400933a8": {"state":"duplicate_of_atom","rationale":"Exact lineage contents are mechanism-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.014"},
-    "rankfold-neuralfold-and-artifact-compression.prose.159ecdd6b30e": {"state":"duplicate_of_atom","rationale":"Access-pattern relative admission is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.002"},
-    "rankfold-neuralfold-and-artifact-compression.prose.5dbb0aa5125a": {"state":"duplicate_of_atom","rationale":"Exact rejecting route is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.008"},
-    "rankfold-neuralfold-and-artifact-compression.prose.bafee0882215": {"state":"duplicate_of_atom","rationale":"Evidence-substitution boundary is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.011"},
-    "rankfold-neuralfold-and-artifact-compression.prose.0c450ec92ce7": {"state":"duplicate_of_atom","rationale":"Exactness contract is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.004"},
-    "rankfold-neuralfold-and-artifact-compression.prose.bd1b39f43f57": {"state":"duplicate_of_atom","rationale":"Governance-tax failure is manifest-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.failure_mode.018"},
-    "rankfold-neuralfold-and-artifact-compression.prose.73d12754aa20": {"state":"duplicate_of_atom","rationale":"Probe failure fallback is mechanism-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.011"},
-    "rankfold-neuralfold-and-artifact-compression.prose.d6e7de9a0d6a": {"state":"duplicate_of_atom","rationale":"Rare-case regression is failure-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.failure_mode.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.23413e379872": {"state":"duplicate_of_atom","rationale":"Encoder burden is complete-accounting owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.mechanism.012"},
-    "rankfold-neuralfold-and-artifact-compression.prose.d20b7acd1d75": {"state":"duplicate_of_atom","rationale":"Decoder drift expiry is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.010"},
-    "rankfold-neuralfold-and-artifact-compression.prose.0568dbc51168": {"state":"historical_or_source_report","rationale":"Exact bounded MVI result and non-claim report."},
-    "rankfold-neuralfold-and-artifact-compression.prose.d174b52e929d": {"state":"historical_or_source_report","rationale":"Bounded current replay and missing-campaign report."},
-    "rankfold-neuralfold-and-artifact-compression.prose.7f97167fff29": {"state":"editorial_or_question","rationale":"Future corpus work instruction superseded by mature campaign."},
-    "rankfold-neuralfold-and-artifact-compression.prose.a10970ba7e6d": {"state":"duplicate_of_atom","rationale":"Future probe and fallback test is mature-target owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.beyond_sota.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.aee90e81eee1": {"state":"duplicate_of_atom","rationale":"Use-specific earned authority is core-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.core"},
-    "rankfold-neuralfold-and-artifact-compression.prose.0214e097201d": {"state":"duplicate_of_atom","rationale":"Claim ledger separation is invariant-owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.invariant.003"},
-    "rankfold-neuralfold-and-artifact-compression.prose.146d73299249": {"state":"duplicate_of_atom","rationale":"Promotion ceiling is mature-target owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.beyond_sota.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.9aaa506b228a": {"state":"duplicate_of_atom","rationale":"Independent reproduction is mature-target owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.beyond_sota.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.1f29219a3445": {"state":"duplicate_of_atom","rationale":"Heterogeneous transfer is mature-target owned.","target_atom_id":"rankfold-neuralfold-and-artifact-compression.beyond_sota.001"},
-    "rankfold-neuralfold-and-artifact-compression.prose.a7d912908d66": {"state":"historical_or_source_report","rationale":"Explicit planned-test and non-result boundary."},
-    "rankfold-neuralfold-and-artifact-compression.prose.ee979c6523a9": {"state":"editorial_or_question","rationale":"Future documentation workflow instruction."},
-    "rankfold-neuralfold-and-artifact-compression.prose.434d332ac372": {"state":"historical_or_source_report","rationale":"Explicit no-ratio reporting boundary."
-    }
-  ,
+    "rankfold-neuralfold-and-artifact-compression.prose.e395784efd34": {
+      "state": "duplicate_of_atom",
+      "rationale": "Compact form non-authority and fallback are core-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.17ae873c97e1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Preserved/lost property disclosure is claim-separation owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.004"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.0688c67e9184": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Human-path summary of cost and auditability."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.e4d9b4d71eeb": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reconstruction, probe, and refusal route are lifecycle-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.011"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9f6ee668ba19": {
+      "state": "duplicate_of_atom",
+      "rationale": "Source preservation and human review are manifest-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a9b03646cb6b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Problem and failure bundle already atomized.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.problem.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.4c58e9f1b8c9": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded source-lineage report with no local promotion."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.bb3d9ce0ccf1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Downstream utility requirement is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.014"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.7f5814c12e38": {
+      "state": "duplicate_of_atom",
+      "rationale": "Access-frequency and horizon cost boundary is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.015"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9633e1d73d44": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Introduces bounded comparator vocabulary."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.fa383d83f132": {
+      "state": "historical_or_source_report",
+      "rationale": "External comparator inventory, not a local result."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a5c28c6b4e37": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Transition sentence into claim separation."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.8f3b388b5b55": {
+      "state": "duplicate_of_atom",
+      "rationale": "Hot-path total cost is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.015"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9f80e7e05a91": {
+      "state": "duplicate_of_atom",
+      "rationale": "Use-specific admission scope is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.002"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.192d59dbe6af": {
+      "state": "historical_or_source_report",
+      "rationale": "Fragment of the explicit import non-claim boundary."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9a39e206430c": {
+      "state": "duplicate_of_atom",
+      "rationale": "Failed probe fallback route is mechanism-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.011"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9ce938889f41": {
+      "state": "duplicate_of_atom",
+      "rationale": "Candidate rather than source replacement is core-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.6e79635dcbe5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reconstruction ledger is claim-separation owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.004"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a7d990f74acc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Ratio ledger and metadata closure are manifest-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.005"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.2b3f2ce45f15": {
+      "state": "duplicate_of_atom",
+      "rationale": "Non-implication between ledgers is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.003"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.1bee62fe8361": {
+      "state": "duplicate_of_atom",
+      "rationale": "Lease fields and fallback boundary are core-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.27a027bfe9fd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Artifact-graph binding is mechanism-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.014"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.90e8400933a8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact lineage contents are mechanism-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.014"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.159ecdd6b30e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Access-pattern relative admission is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.002"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.5dbb0aa5125a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exact rejecting route is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.008"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.bafee0882215": {
+      "state": "duplicate_of_atom",
+      "rationale": "Evidence-substitution boundary is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.011"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.0c450ec92ce7": {
+      "state": "duplicate_of_atom",
+      "rationale": "Exactness contract is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.004"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.bd1b39f43f57": {
+      "state": "duplicate_of_atom",
+      "rationale": "Governance-tax failure is manifest-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.failure_mode.018"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.73d12754aa20": {
+      "state": "duplicate_of_atom",
+      "rationale": "Probe failure fallback is mechanism-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.011"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.d6e7de9a0d6a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Rare-case regression is failure-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.failure_mode.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.23413e379872": {
+      "state": "duplicate_of_atom",
+      "rationale": "Encoder burden is complete-accounting owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.mechanism.012"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.d20b7acd1d75": {
+      "state": "duplicate_of_atom",
+      "rationale": "Decoder drift expiry is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.010"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.0568dbc51168": {
+      "state": "historical_or_source_report",
+      "rationale": "Exact bounded MVI result and non-claim report."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.d174b52e929d": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded current replay and missing-campaign report."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.7f97167fff29": {
+      "state": "editorial_or_question",
+      "rationale": "Future corpus work instruction superseded by mature campaign."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a10970ba7e6d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Future probe and fallback test is mature-target owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.aee90e81eee1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Use-specific earned authority is core-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.0214e097201d": {
+      "state": "duplicate_of_atom",
+      "rationale": "Claim ledger separation is invariant-owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.003"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.146d73299249": {
+      "state": "duplicate_of_atom",
+      "rationale": "Promotion ceiling is mature-target owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.9aaa506b228a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Independent reproduction is mature-target owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.1f29219a3445": {
+      "state": "duplicate_of_atom",
+      "rationale": "Heterogeneous transfer is mature-target owned.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a7d912908d66": {
+      "state": "historical_or_source_report",
+      "rationale": "Explicit planned-test and non-result boundary."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.ee979c6523a9": {
+      "state": "editorial_or_question",
+      "rationale": "Future documentation workflow instruction."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.434d332ac372": {
+      "state": "historical_or_source_report",
+      "rationale": "Explicit no-ratio reporting boundary."
+    },
     "rankfold-neuralfold-and-artifact-compression.prose.3d40c25c37c6": {
       "state": "historical_or_source_report",
       "rationale": "Consolidated finite-model non-claim boundary; it does not promote the chapter core."
@@ -182,6 +365,109 @@
     "rankfold-neuralfold-and-artifact-compression.prose.aeabad7162a4": {
       "state": "nonmaterial_explanation",
       "rationale": "Explicit limitation that curvature and salience are candidate-selection proxies rather than preservation guarantees."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.7a7119057d3a": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `What “universal” means—and does not mean` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.eca0c3ece8f7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The MatrixFold correction: bits cannot hide in richer coordinates` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.b497dbfb98c7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The MatrixFold correction: bits cannot hide in richer coordinates` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.5b7f5d20656a": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `The MatrixFold correction: bits cannot hide in richer coordinates` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a444f953f830": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The MatrixFold correction: bits cannot hide in richer coordinates` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.472d8f5b7b48": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `The MatrixFold correction: bits cannot hide in richer coordinates` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a54acd873a94": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The RankFold candidate codec` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.be5021230de9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The RankFold candidate codec` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.559f0d19632d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The RankFold candidate codec` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.350609600a70": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `The NeuralFold candidate front-ends` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.minimum.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.minimum.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.d2d2b3c70803": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `WORM economics and implementation closure` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.failure_mode.004`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.735e4cd91209": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `WORM economics and implementation closure` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.failure_mode.004`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.68577319a654": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `WORM economics and implementation closure` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.failure_mode.004`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.d3f53093f5cf": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `WORM economics and implementation closure` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.minimum.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.minimum.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.1ad4dff27ebd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `WORM economics and implementation closure` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.failure_mode.004`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.a6e26b095ef8": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Functional precision: preserve behavior, not coordinates` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.minimum.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.minimum.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.639abd7f4413": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional precision: preserve behavior, not coordinates` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`, `rankfold-neuralfold-and-artifact-compression.core`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.44ec7a665026": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional precision: preserve behavior, not coordinates` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`, `rankfold-neuralfold-and-artifact-compression.core`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.f5114076cf9c": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Functional precision: preserve behavior, not coordinates` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.beyond_sota.001"
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.867be40e70cb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional Precision Compiler` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.5b8012a7c836": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional Precision Compiler` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.e11eb9926d00": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional Precision Compiler` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.f03c9f4979fa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional Precision Compiler` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
+    },
+    "rankfold-neuralfold-and-artifact-compression.prose.1f5aa0822af2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Functional Precision Compiler` and reviewed owner atoms `rankfold-neuralfold-and-artifact-compression.minimum.001`, `rankfold-neuralfold-and-artifact-compression.core`, `rankfold-neuralfold-and-artifact-compression.beyond_sota.001`."
     }
   },
   "prose_review_lineage": [

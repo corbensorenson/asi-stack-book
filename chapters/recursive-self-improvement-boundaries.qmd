@@ -4,7 +4,7 @@ chapter_id: "recursive-self-improvement-boundaries"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-07-31"
 primary_sources:
   - "scf"
   - "benchmaxxing"
@@ -16,6 +16,8 @@ primary_sources:
   - "field_of_god_ai_constitution"
   - "theseus_self_evolution_system"
   - "theseus_architecture_gate"
+  - "capability_ratchet_whitepaper"
+  - "attd"
   - "ext_drexler_cais_2019"
   - "ext_darwin_godel_machine_2025"
   - "ext_adas_2024"
@@ -37,13 +39,13 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-16 |
-| Assigned source records | `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `ext_drexler_cais_2019`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_embedded_agency_2019` |
+| Last updated | 2026-07-31 |
+| Assigned source records | The manifest owns the exact source list, including `capability_ratchet_whitepaper` and `attd` alongside the existing RSI architecture, governance, project, and external comparator records. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
 | Source loading state | source notes: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` |
-| Source mapping review | All fourteen assignments have reviewed mappings with explicit limits. Six Corben records have local raw-cache passage review; `moecot` is source-note/connector context; the constitution and two Theseus records are pinned public-project notes; CAIS, Darwin Gödel Machine, ADAS, and Embedded Agency are external comparator or foundations records. |
+| Source mapping review | All assignments have reviewed mappings with explicit limits. Corben records use local raw caches or the fully reviewed authenticated `moecot` connector text; the constitution and two Theseus records are pinned public-project notes; CAIS, Darwin Gödel Machine, ADAS, and Embedded Agency are external comparator or foundations records. |
 | Test state | `AsiStackProofs.SelfImprovementRefinement` and an independently encoded Python consumer now join seven exact inherited suites into an eight-stage proposal-to-outcome lifecycle. The consumer reaches all 118 routes, rejects 129/129 mutations, emits one bounded replacement handoff, consumes one returned outcome reconciliation, and admits only a materially invalidated protocol version 2; support and external-effect authority remain `none`. The retained evidence includes the 3-valid/10-invalid self-improvement fixture, 4-valid/5-invalid readiness fixture, 5-valid/9-invalid replacement fixture, two-transaction/three-control replacement trace, eight-trace/six-control intent bridge, three-seed/twelve-arm fixed update result with three exact local rollbacks and four `no_change` dispositions, and the Open-Ended Improvement handoff with zero threshold passes. The 22 older `SelfImprovement` declarations remain frozen and lineage-bound. No live proposal, natural useful improvement, evaluator or monitor competence, production replacement, semantic recovery, effect-complete rollback, recursive campaign, or transfer has run. |
 
 ## Drafting guardrail
@@ -475,8 +477,10 @@ These rows keep Recursive Self-Improvement Boundaries's manifest assignments vis
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `attd` | Passage-reviewed comparator: Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases. Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation. | Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Grounds the boundary that a self-modifying system reasons about itself with models smaller than the world and may contain parts with divergent objectives. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->

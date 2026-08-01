@@ -3,7 +3,7 @@ title: "Command Contracts: From Intent to Executable Work"
 chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.2 manuscript draft"
+draft_maturity: "v0.3 layered instruction identity"
 last_updated: "2026-07-31"
 primary_sources:
   - "viea"
@@ -37,13 +37,13 @@ open_evidence_gaps:
 | Chapter ID | `intent-to-execution-contracts` |
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
-| Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-15 |
+| Manuscript maturity | v0.3 layered instruction identity |
+| Last updated | 2026-07-31 |
 | Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation`, `ext_camel_prompt_injection_2025`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`; comparator: `ext_camel_prompt_injection_2025`; connector/recovery: `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; authenticated connector text passage-reviewed: `moecot` |
 | Test state | Existing protocol, plan-execution, handoff, replacement-bridge, one-shot-action, and negative natural-work campaigns remain in force. The new vertical refinement consumes an executed nine-scenario governed repository-change result: 89 events, three releases, three pre-effect refusals, two exact-rollback refusals, one failed-rollback quarantine, six material effects and independent observations, two residual scenarios, and 30/30 rejected mutations. No general semantic equivalence, natural-language parser, deployed approval service, complete effects, production transfer, or reliable useful execution is established. |
 
 The executed merge combines two current record families:
@@ -323,6 +323,38 @@ that fact and the exact fallback authority rather than presenting another route
 as though it honored the command. These are proposed contract semantics from a
 Corben-authored paper, not evidence that a parser or dispatcher implements
 them; support remains `argument`.
+
+### Instruction identity has layers
+
+An instruction needs more than a memorable name. Software Magic Grimoire usefully
+separates a human title, a short working seal, and an exact canonical form. The
+governed version extends that into an **Instruction Identity Record**:
+
+- human title and purpose;
+- immutable instruction and contract version;
+- canonicalization schema and normalizer version;
+- ordered typed fields, relations, word-sense namespaces, and literal values;
+- a standard cryptographic digest of that canonical record;
+- redaction-safe identity for sensitive literals;
+- model, runtime, policy, context, tool, environment, verifier, and consumer
+  dependencies required to interpret or replay a run;
+- supersession, compatibility, revocation, and migration history.
+
+These layers answer different questions. A title makes the instruction
+browsable. A working handle makes it portable. A canonical record detects
+specified structural change. None proves semantic equivalence, correctness,
+authorization, confidentiality, or successful replay. Gödel-style
+prime-exponent numbering is one injective encoding of a chosen finite token
+stream, not a solution to ambiguity; a versioned canonical record and ordinary
+cryptographic digest are the practical identity surface.
+
+Identity also includes choreography. Reordering workflow stages, changing a
+transition guard, widening a default, removing a failure route, altering a loop
+budget, or changing a recursive base case creates a new version even when the
+human title stays the same. Concrete paths, versions, target names, and values
+remain typed literals rather than disappearing because they are absent from a
+shared vocabulary. This makes instruction drift inspectable without pretending
+that hashes understand meaning.
 
 ### The command registry is a governed instruction set
 
@@ -748,7 +780,7 @@ These rows keep Command Contracts: From Intent to Executable Work's manifest ass
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `deterministic_capability_compilation` | Metadata-first comparator: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents. Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 governed-work result

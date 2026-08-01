@@ -28,6 +28,9 @@ def main() -> None:
     properties["post_round_18_depth_and_coverage_amendment"] = {
         "const": status["post_round_18_depth_and_coverage_amendment"]
     }
+    properties["round_20_chapter_substance_recovery"] = {
+        "const": status["round_20_chapter_substance_recovery"]
+    }
     properties["activation_truth"] = {"const": status["activation_truth"]}
     properties["negative_result_rehabilitation"] = {
         "const": status["negative_result_rehabilitation"]
