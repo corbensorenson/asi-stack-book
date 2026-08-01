@@ -97,7 +97,9 @@ completed chapter video.
 Current checkpoint: the 84-chapter generation-one baseline remains preserved
 as ignored local history, while generation two is the active quality lane.
 Generation-two chapters 1–17 have passed beat-plan, animatic, and
-picture-and-sound-lock gates; chapters 18–84 remain planned. Generation two
+picture-and-sound-lock gates; Chapter 18 is scripted with its custom scene,
+exact legacy-receipt captions, transcript, and thumbnail under revision, and
+chapters 19–84 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -147,8 +149,9 @@ followed, and chapters 13–84 were held until the revised method passed. Chapte
 18–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 67 planned chapters and seventeen chapters
-through both animatic and picture-and-sound lock. The first seventeen
+The generation-2 ledger currently has 66 planned chapters, one scripted chapter,
+and seventeen chapters through both animatic and picture-and-sound lock. The
+first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
 average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
@@ -193,6 +196,16 @@ seventeen delivery masters remain
 candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
+
+Chapter 18, `stable-capability-fields`, now has a bespoke qualification-desk
+scene: a field contract stays stable while candidate implementations,
+consumer leases, authority ceilings, evidence lanes, residuals, and
+effect-complete recovery remain separate. Its current 04:21.975 script uses
+the byte-identical pinned narration receipt from the prior local chapter
+render so captions remain exact while the host Metal runtime is unavailable;
+the v2 beat-plan lint still requires a fresh narration pass before animatic
+lock. It therefore remains scripted rather than accepted, and no support-state
+promotion is implied.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,

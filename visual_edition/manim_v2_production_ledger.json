@@ -131,9 +131,9 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 67,
+    "planned": 66,
     "briefed": 0,
-    "scripted": 0,
+    "scripted": 1,
     "animatic_passed": 17,
     "picture_and_sound_lock_passed": 17,
     "release_candidate_passed": 0,
@@ -1012,7 +1012,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/stable-capability-fields/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/stable-capability-fields/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/stable-capability-fields/generation-2/narration.txt",
