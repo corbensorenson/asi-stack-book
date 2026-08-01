@@ -4165,7 +4165,7 @@ without imposing a broadcast loudness target on YouTube.
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
 Quarto transitions fail closed. The ledger currently records 76 planned
-chapters, eight chapters through animatic, and seven through picture-and-sound
+chapters, eight chapters through animatic, and eight through picture-and-sound
 lock. Chapter 1 turns a
 duplicate-file deletion request into a persistent proposal, authority,
 observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
@@ -4200,13 +4200,13 @@ maps shared dependencies; routes a separate cohort audit; compares an informed
 direct baseline; preserves four owner firewalls; quarantines the candidate with
 its full record; and binds consumers, readmission, abstention, human capacity,
 operating metrics, and the argument-support ceiling. Together the eight
-animatics and seven delivery locks carry 205 audio-derived
+animatics and eight delivery locks carry 205 audio-derived
 beats, original
 chapter-specific scenes, balanced captions, descriptive transcripts, custom
-thumbnails, 927 exact beat samples across animatic and delivery review, and
+thumbnails, 1,011 exact beat samples across animatic and delivery review, and
 per-dimension experience passes without average laundering. The rejected
 Chapter 1, Chapter 5, Chapter 7, and Chapter 8 animatic revisions remain
-preserved as generation history. All seven delivery masters remain candidates only: zero
+preserved as generation history. All eight delivery masters remain candidates only: zero
 generation-2 chapters have passed
 release candidate, independent review, technical, claim-fidelity, or
 acceptance, and zero generation-2 YouTube or Quarto identities are current.
