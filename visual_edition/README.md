@@ -103,13 +103,27 @@ Owner viewing of the first five previews exposed a stricter pedagogical
 failure that these technical receipts do not measure. Videos 2–5 are thin
 wrappers over a generic seven-tableau engine; their few entrance animations
 often finish well before the narrated idea. They are technically intact but
-not accepted for final publication. P7.3-F9 now requires a beat-level plan,
-chapter-specific persistent visual world, purposeful state change for every
-substantive spoken idea, audio-derived clause-level anchors, and full 1×,
-muted, and audio-only review. The first five form the remediation cohort, the
-remaining seven previews follow, and chapters 13–84 cannot resume upload until
-the revised method passes. Existing unlisted embeds remain historical review
-previews, not publication-quality acceptance.
+not accepted for final publication. P7.3-F9 now requires a v2 beat-level plan;
+chapter-specific art direction, signature image, and persistent visual world;
+purposeful state change for every substantive spoken idea; semantic easing and
+camera rules; audio-derived clause-level anchors; directed narration and sound;
+integrated accessibility; and three-gate animatic, picture-and-sound-lock, and
+release-candidate review. Full experience review covers 1×, muted, audio-only,
+captions-on, phone/large-screen, headphone/speaker, and random-frame passes and
+requires at least 4/5 independently for clarity, composition, motion, sync,
+continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
+The first five form the remediation cohort, the remaining seven previews
+follow, and chapters 13–84 cannot resume upload until the revised method
+passes. Existing unlisted embeds remain historical review previews, not
+publication-quality acceptance.
+
+The upgraded authoring skill includes a structural v2 beat-plan audit,
+start/middle/end frame extraction for every beat, and mechanical A/V
+diagnostics for freezes, black intervals, silence, duration drift, loudness,
+and true peak. On the first current muxed master, the diagnostic found six
+32.5–42.9-second frozen-image intervals while the audio itself measured -16.4
+LUFS integrated, 2.6 LU loudness range, and -1.4 dBTP. Mechanical checks locate
+review risks; they do not certify beauty, comfort, truth, or learning.
 
 The preview exception is narrow and explicit. A managed player may appear
 before full publication only when an exact row in

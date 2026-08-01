@@ -2505,7 +2505,7 @@
     "manim_visual_edition": {
       "const": {
         "id": "P7.3-governed-manim-visual-edition",
-        "state": "active_all_84_ready_not_published_waiting_youtube_authority",
+        "state": "active_84_technical_masters_12_unlisted_previews_pedagogical_remediation_required",
         "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
         "canonical_chapter_count": 84,
         "required_visual_abstract_duration_seconds": {
@@ -2533,8 +2533,65 @@
         },
         "visual_grammar": {
           "contract_path": "visual_edition/visual_grammar.json",
-          "state": "ratified",
+          "state": "technical_visual_grammar_v1_ratified_pedagogical_acceptance_reopened",
           "ratification_requires_all_five_pilots_validated": true
+        },
+        "pedagogical_and_aesthetic_ratchet": {
+          "id": "P7.3-F9",
+          "state": "active_skill_v2_validated_first_master_mechanically_diagnosed",
+          "skill_name": "asi-stack-manim-videos",
+          "beat_plan_schema_version": "asi_stack.manim_beat_plan.v2",
+          "required_briefs": [
+            "story",
+            "art_direction",
+            "audio_direction",
+            "accessibility"
+          ],
+          "required_story_functions": [
+            "hook",
+            "mechanism",
+            "evidence_boundary",
+            "payoff"
+          ],
+          "required_authoring_passes": [
+            "animatic",
+            "picture_and_sound_lock",
+            "release_candidate"
+          ],
+          "experience_dimensions": [
+            "teaching_clarity",
+            "composition",
+            "motion_quality",
+            "synchronization",
+            "continuity",
+            "pacing",
+            "voice",
+            "sound_mix",
+            "engagement",
+            "accessibility",
+            "claim_fidelity"
+          ],
+          "minimum_score_each_dimension": 4,
+          "averaging_may_hide_failure": false,
+          "external_human_prepublication_gate_required": false,
+          "beat_density_and_technique_counts_are_diagnostic_only": true,
+          "mechanical_diagnostic_is_aesthetic_verdict": false,
+          "first_master_diagnostic": {
+            "chapter_id": "asi-is-a-stack-not-a-model",
+            "duration_seconds": 305.6,
+            "freeze_interval_count_at_least_six_seconds": 6,
+            "freeze_duration_seconds_minimum": 32.533,
+            "freeze_duration_seconds_maximum": 42.9,
+            "integrated_loudness_lufs": -16.4,
+            "loudness_range_lu": 2.6,
+            "true_peak_dbtp": -1.4,
+            "interpretation": "confirms_visual_rhythm_defect_while_audio_meter_result_remains_acceptable_no_learning_or_beauty_claim"
+          },
+          "remediation_order": [
+            "videos_1_through_5",
+            "videos_6_through_12",
+            "videos_13_through_84"
+          ]
         },
         "hosting": {
           "canonical_binary_host": "YouTube",
@@ -2597,7 +2654,9 @@
           "pilot_packets_validated": 5,
           "chapter_packets_validated": 84,
           "current_rendered_videos": 84,
+          "youtube_videos_unlisted_preview": 12,
           "youtube_videos_published": 0,
+          "current_quarto_preview_embeds": 12,
           "current_quarto_embeds": 0,
           "stale_videos": 0
         },
@@ -2688,6 +2747,10 @@
         "completion_requires": [
           "84_current_validated_derivative_packets",
           "84_current_rendered_visual_abstracts",
+          "84_v2_beat_plans_with_story_art_audio_and_accessibility_briefs",
+          "84_chapter_specific_signature_visuals_and_persistent_state_change_sequences",
+          "84_per_beat_start_midpoint_end_review_sheets",
+          "minimum_four_of_five_on_every_experience_dimension_without_average_laundering",
           "reviewed_captions_and_descriptive_transcripts",
           "zero_stale_video_claim_surfaces",
           "youtube_playlist_and_exact_platform_receipts_or_84_ready_not_published_authority_disposition",

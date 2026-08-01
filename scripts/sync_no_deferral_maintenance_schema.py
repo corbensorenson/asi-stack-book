@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bind the maintenance-status schema to the superseding no-deferral snapshot."""
+"""Bind const-backed maintenance-status schema fields to the current snapshot."""
 
 from __future__ import annotations
 
@@ -42,6 +42,9 @@ def main() -> None:
     readiness_schema = properties["execution_readiness"]
     readiness_schema["properties"]["structural_admission_freeze"] = {
         "const": status["execution_readiness"]["structural_admission_freeze"]
+    }
+    properties["manim_visual_edition"] = {
+        "const": status["manim_visual_edition"]
     }
     SCHEMA.write_text(json.dumps(schema, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print("Bound maintenance schema to the current no-deferral status snapshot.")

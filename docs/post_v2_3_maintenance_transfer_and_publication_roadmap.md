@@ -4004,17 +4004,34 @@ mechanism, payoff, and transfer—without hype or unrelated spectacle. Reuse the
 opening object through the worked trace and payoff so the viewer sees a
 resolved mechanism rather than seven disconnected summaries.
 
-Before final scene code, create a machine-auditable `beat_plan.json` whose
-concatenated narration exactly matches the final script. Every semantic beat
-must bind exact audio-derived start and end times, a distinctive spoken anchor,
-the relationship being taught, object state before and after, purposeful
-visual action, short on-screen labels, animation technique, claim role, and
-evidence boundary. Target 8–14 meaningful beats per minute, usually 3–8
-seconds each; reject beats above twelve seconds and unexplained static holds
-above six seconds. Motion must encode identity, relation, causality, sequence,
-quantity, uncertainty, contrast, containment, authority, rollback, or
-attention. Movement that encodes none of these is decoration and does not
-satisfy the density gate.
+Before final scene code, create a machine-auditable v2 `beat_plan.json` whose
+concatenated narration exactly matches the final script. It must begin with an
+art-direction brief: visual thesis, signature image, persistent visual world,
+core objects, composition rule, semantic palette and typography roles, motion
+character, camera rule, surface rule, and ending image. Companion audio and
+accessibility briefs define narration direction, pacing arc, music and effects
+policy, device checks, color and motion redundancy, integrated description,
+captions, and reduced-motion risks. This is the chapter's identity within the
+shared ASI Stack grammar; changing the palette or title on a generic scene is
+not identity.
+
+Every semantic beat must bind exact audio-derived start and end times, a
+distinctive spoken anchor, attention target, relationship and semantic
+encoding, object state before and after, persistent-object continuity,
+purposeful visual action, composition, easing, camera behavior, settling time,
+short on-screen labels, claim role, and evidence boundary. The usual 8–14
+meaningful beats per minute and 3–8 seconds per beat are diagnostics rather
+than motion quotas. A beat above twelve seconds requires an explicit viewing
+purpose and no beat may exceed twenty seconds. A slow, meaningful comparison
+is preferable to decorative movement added to satisfy a count. Motion must
+encode identity, relation, causality, sequence, quantity, uncertainty,
+contrast, containment, authority, rollback, or attention.
+
+The story contract is also less templated than the first ratchet. Every video
+needs a hook, mechanism, evidence boundary, and payoff, but construction,
+prediction, trace, comparison, counterexample, failure, consequence, and
+handoff are selected only when the chapter needs them. Do not make the same
+seven-part sequence the new generic engine.
 
 Apply established multimedia-learning constraints: coherence, signaling,
 segmenting, spatial and temporal contiguity, modality matching, redundancy
@@ -4026,7 +4043,10 @@ teaching promise. Use one or two real prediction prompts when useful, provide
 evidence and a short thinking pause, and make the answer visible before naming
 the general principle.
 
-Authoring must use original ManimCE 0.20.1 code. Study explanatory patterns in
+Authoring must use original ManimCE 0.20.1 code. Work through animatic,
+picture-and-sound lock, and release-candidate passes so story and whole-video
+rhythm stabilize before local transitions receive expensive polish. Study
+explanatory patterns in
 3Blue1Brown's published scene repository—object continuity, progressive
 construction, `TransformFromCopy`, focus isolation, live manipulation, and
 purposeful camera reframing—but do not copy ManimGL or CC BY-NC-SA
@@ -4035,13 +4055,47 @@ transformations over full-scene card replacement. Shared primitives are
 appropriate only when they preserve chapter-specific state changes; a thin
 wrapper around generic paragraph cards is not an accepted scene.
 
+Beauty is a separate acceptance surface, not a synonym for technical validity
+or animation count. Compose every frame around one focal hierarchy and enough
+negative space; preserve spatial causality and object identity; use easing by
+meaning; choreograph stagger and emphasis to guide the eye; alternate build,
+transform, hold, and reveal; and earn one memorable visual payoff. Use linear
+motion only for uniform rate or flow, ease-out for arrival, ease-in for
+departure, and ease-in-out for state transformation or motivated reframing.
+Bounce, shake, flash, spin, overshoot, parallax, and continual camera motion
+require a semantic reason and a motion-comfort review.
+
+Speech is the primary audio signal. Direct emphasis, pause, pace, and
+pronunciation; audit regenerated splices; measure integrated loudness,
+loudness range, and true peak; and require true peak at or below -1 dBTP while
+pinning a series-appropriate online loudness target rather than importing the
+-23 LUFS broadcast target. Music and effects must be original or
+rights-cleared, stay substantially below speech, duck under dense ideas, and
+disappear when silence improves comprehension. Captions include meaningful
+sound, and the descriptive transcript or integrated narration conveys every
+visual fact required by the teaching promise.
+
 Review must sample the start, midpoint, and end of every beat and include a
-complete 1× A/V watch, muted watch, and audio-only listen. Reviewers record
-sync, comprehension, continuity, cognitive load, claim boundary, hook payoff,
-and keep/revise/split/merge/cut action per beat. The visual onset should fall
-within roughly half a second of the phrase it explains, and the transformation
-should resolve near the end of that idea. Structural validation is necessary
-but cannot certify insight, truth, beauty, or learning.
+complete 1× A/V watch, muted watch, audio-only listen, captions-on pass,
+phone-size and large-screen inspection, headphones/earbuds/speakers audition,
+and random-frame scrub. Score teaching clarity, composition, motion quality,
+synchronization, continuity, pacing, voice, sound mix, engagement,
+accessibility, and claim fidelity independently from 1–5. Every dimension must
+reach at least 4 with no unresolved critical timestamp; an average cannot hide
+a weak dimension. Revisions compare predecessor and candidate at matched
+display size and volume. The authoring agent performs this gate without an
+external-human prepublication dependency; later owner feedback becomes a new
+revision input.
+
+Mechanical A/V diagnostics flag long frozen intervals, black frames, silence,
+loudness outliers, true-peak overs, and duration drift without pretending to
+judge aesthetics. The new diagnostic found six 32.5–42.9-second frozen-image
+intervals in the first current 305.6-second muxed master, while its measured
+audio was -16.4 LUFS integrated, 2.6 LU loudness range, and -1.4 dBTP. That
+result confirms the known visual-rhythm defect and shows that acceptable audio
+meters do not rescue a static picture. Structural and mechanical validation
+remain necessary but cannot certify insight, truth, beauty, comfort, or
+learning.
 
 Execute in three ratcheted cohorts:
 
@@ -4074,17 +4128,29 @@ study](https://doi.org/10.1103/PhysRevPhysEducRes.18.010148) supports the
 combination of enhanced visuals and embedded questions within its measured
 domain; and [YouTube's retention
 documentation](https://support.google.com/youtube/answer/9314415) defines
-attention diagnostics without converting them into learning evidence.
+attention diagnostics without converting them into learning evidence;
+[Microsoft Fluent motion guidance](https://fluent2.microsoft.design/motion)
+grounds easing, choreography, and attention hierarchy; [Apple's reduced-motion
+criteria](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)
+identify common motion-discomfort risks; [W3C media
+guidance](https://www.w3.org/WAI/media/av/av-content/) grounds captions,
+description, intelligibility, and non-distracting audio; and [EBU loudness
+resources](https://tech.ebu.ch/groups/loudness) supply measurement concepts
+without imposing a broadcast loudness target on YouTube.
 
-**P7.3-F9 completion gate.** Close only when the reusable skill and tracked
-beat-plan schema/validator pass positive and adversarial fixtures; videos 1–5
-pass owner-feedback remediation; videos 6–12 pass the same full-experience
-review; all 84 current packets have exact beat plans, chapter-specific visual
+**P7.3-F9 completion gate.** Close only when the reusable skill and tracked v2
+beat-plan schema/validator pass positive and adversarial fixtures; the
+mechanical A/V diagnostic and per-beat review-sheet generator pass their tests;
+videos 1–5 pass owner-feedback remediation; videos 6–12 pass the same
+full-experience review; all 84 current packets have art/audio/accessibility
+briefs, exact beat plans, chapter-specific signature visuals and persistent
 state changes, audio-derived synchronization, and beat-level contact sheets;
-the complete technical/accessibility suite passes again; and the roadmap,
-manifest, ledger, landing page, README, and live embeds report the same honest
-denominators. Existing unlisted videos remain historical previews until newly
-authorized replacement transactions reconcile their successors.
+every candidate scores at least 4/5 on every experience dimension with no
+critical residual; the complete technical/accessibility suite passes again;
+and the roadmap, manifest, ledger, landing page, README, and live embeds report
+the same honest denominators. Existing unlisted videos remain historical
+previews until newly authorized replacement transactions reconcile their
+successors.
 
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered

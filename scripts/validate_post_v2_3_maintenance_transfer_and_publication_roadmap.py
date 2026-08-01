@@ -1212,8 +1212,8 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_all_84_ready_not_published_waiting_youtube_authority":
-        out.append("Manim visual-edition state does not preserve the 84 validated local masters and open YouTube-authority gate")
+    if manim.get("state") != "active_84_technical_masters_12_unlisted_previews_pedagogical_remediation_required":
+        out.append("Manim visual-edition state does not preserve the 84 technical masters, 12 previews, and open pedagogical remediation")
     if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
         out.append("Manim visual-edition chapter target does not match the canonical manifest")
     if manim.get("pilot_chapter_ids") != expected_pilots:
@@ -1260,7 +1260,9 @@ def errors(data: dict) -> list[str]:
         "pilot_packets_validated": 5,
         "chapter_packets_validated": 84,
         "current_rendered_videos": 84,
+        "youtube_videos_unlisted_preview": 12,
         "youtube_videos_published": 0,
+        "current_quarto_preview_embeds": 12,
         "current_quarto_embeds": 0,
         "stale_videos": 0,
     }
@@ -1284,10 +1286,22 @@ def errors(data: dict) -> list[str]:
     grammar = manim.get("visual_grammar", {})
     if grammar != {
         "contract_path": "visual_edition/visual_grammar.json",
-        "state": "ratified",
+        "state": "technical_visual_grammar_v1_ratified_pedagogical_acceptance_reopened",
         "ratification_requires_all_five_pilots_validated": True,
     }:
         out.append("Manim ratified visual-grammar boundary drifted")
+    ratchet = manim.get("pedagogical_and_aesthetic_ratchet", {})
+    if (
+        ratchet.get("id") != "P7.3-F9"
+        or ratchet.get("state") != "active_skill_v2_validated_first_master_mechanically_diagnosed"
+        or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v2"
+        or ratchet.get("minimum_score_each_dimension") != 4
+        or ratchet.get("averaging_may_hide_failure") is not False
+        or ratchet.get("external_human_prepublication_gate_required") is not False
+        or ratchet.get("beat_density_and_technique_counts_are_diagnostic_only") is not True
+        or ratchet.get("mechanical_diagnostic_is_aesthetic_verdict") is not False
+    ):
+        out.append("Manim pedagogical and aesthetic ratchet drifted")
     first_pilot = manim.get("first_pilot_checkpoint", {})
     if first_pilot != {
         "chapter_id": "asi-is-a-stack-not-a-model",
@@ -2535,6 +2549,10 @@ def main() -> None:
     mutate("Manim premature publication authority", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("external_publication_authorized_now", True))
     mutate("Manim upload-before-validation", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("quarto_embed_only_after_published_current", False))
     mutate("Manim local-completion denominator drift", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 83))
+    mutate("Manim aesthetic floor weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_score_each_dimension", 3))
+    mutate("Manim average laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("averaging_may_hide_failure", True))
+    mutate("Manim external-human blocker", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("external_human_prepublication_gate_required", True))
+    mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))
     mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
     mutate("Manim roadmap section deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("### P7.3 — Governed Manim visual edition", "### Removed visual edition", 1)))
     mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
