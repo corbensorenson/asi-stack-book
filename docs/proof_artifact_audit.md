@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 314, "planned": 10} |
-| Triage class counts | {"formal-invariant": 314, "process-contract": 10} |
-| Lean modules referenced | 87 |
+| Manifest status counts | {"implemented": 315, "planned": 9} |
+| Triage class counts | {"formal-invariant": 315, "process-contract": 9} |
+| Lean modules referenced | 88 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -99,6 +99,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
+| `lean/AsiStackProofs/ReplicationContainmentReview.lean` | 1 | 32 | 0 | 33 | 8 |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 9 | 13 | 5 | 2 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 43 | 0 | 13 | 9 |
@@ -130,7 +131,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
-| `autonomous-replication-proliferation-and-containment` | 1 | 0 | 0 | 0 |
+| `autonomous-replication-proliferation-and-containment` | 1 | 1 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 3 | 3 | 0 | 0 |
 | `capability-replacement-and-rollback` | 6 | 6 | 0 | 0 |
 | `capability-thresholds-and-deployment-commitments` | 8 | 8 | 0 | 0 |
@@ -308,7 +309,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:open_ended_improvement.campaign.erased_failure_history` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.missing_residual_owner` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:open_ended_improvement.campaign.authority_laundering` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovementRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:autonomous-replication-proliferation-and-containment.admission_boundary` | `autonomous-replication-proliferation-and-containment` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:autonomous-replication-proliferation-and-containment.admission_boundary` | `autonomous-replication-proliferation-and-containment` | `AsiStackProofs.ReplicationContainmentReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentExecutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |

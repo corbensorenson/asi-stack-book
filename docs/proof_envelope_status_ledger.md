@@ -11,26 +11,26 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Implemented proof targets | 314 |
-| Planned proof targets | 10 |
-| Lean modules referenced | 87 |
+| Implemented proof targets | 315 |
+| Planned proof targets | 9 |
+| Lean modules referenced | 88 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 1578 |
-| Derived/decomposed theorem declarations | 1004 |
-| Direct/projection-style theorem declarations | 250 |
-| Unknown or mixed theorem declarations | 324 |
+| Theorem declarations classified | 1610 |
+| Derived/decomposed theorem declarations | 1016 |
+| Direct/projection-style theorem declarations | 266 |
+| Unknown or mixed theorem declarations | 328 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical chapter classifications present | 1/1 |
 
 ## Adequacy Snapshot
 
-The current adequacy review classifies 78 adequate finite-record invariant, 160 useful but too narrow, 26 needs richer state-machine or review semantics, 37 needs executable tests first, 21 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
+The current adequacy review classifies 79 adequate finite-record invariant, 160 useful but too narrow, 25 needs richer state-machine or review semantics, 37 needs executable tests first, 21 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
 
 | Adequacy class | Targets |
 |---|---:|
-| adequate finite-record invariant | 78 |
+| adequate finite-record invariant | 79 |
 | useful but too narrow | 160 |
-| needs richer state-machine or review semantics | 26 |
+| needs richer state-machine or review semantics | 25 |
 | needs executable tests first | 37 |
 | needs empirical or baseline tests first | 21 |
 | research-agenda until artifact import | 2 |

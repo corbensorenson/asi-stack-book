@@ -630,14 +630,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "autonomous-replication-proliferation-and-containment": {
-        "reviewed_sha256": "fbaa207081bafb9c756218e75517f9578d30b3edb467315caafb78e7a2a7d94d",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "afaa2ec42f0cef8a907ef79808d0e391b9c967367d94fcb884cfcf36bb0e732b",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish component and chain capability, synthetic resources, descendant lineage, noninheritance, proliferation pathways, containment, recall, and evaluator competence",
             "RepliBench and Deterministic Capability Compilation remain bounded source comparators and authorial architecture rather than local replication, real-provider, containment, propensity, or shutdown evidence",
             "the chapter preserves hazard-minimizing synthetic authority, complete attempt and assistance denominators, positive controls, independently enforceable termination, residual descendants, and no operational proliferation recipe",
+            "the formalization is restricted to authored dossier admissibility, exact mutation routes, lease noninheritance, finite descendant quarantine, bounded receipt invalidation, information-loss countermodels, and a rejecting operations bridge",
         ],
         "support_state_effect": "none",
     },

@@ -2813,7 +2813,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:autonomous-replication-proliferation-and-containment.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Autonomous Replication, Proliferation, and Containment record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:autonomous-replication-proliferation-and-containment.admission_boundary` | `AsiStackProofs.ReplicationContainmentReview` | A reachable eight-transition synthetic replication-containment review admits only dossiers with exact identity, denied-by-default noninherited authority, separated denominators, descendant lineage, independent containment, closure, and no real-infrastructure or support claim; identical component or local-containment signals cannot determine end-to-end replication or global containment. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:autonomous-replication-proliferation-and-containment:END -->
 
 ### Command Contracts: From Intent to Executable Work
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 121 Lean modules, 1578 theorem declarations, 1004 derived/decomposed, 250 direct/projection, 324 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 122 Lean modules, 1610 theorem declarations, 1016 derived/decomposed, 266 direct/projection, 328 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

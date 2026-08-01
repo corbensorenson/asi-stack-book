@@ -34,6 +34,7 @@ import AsiStackProofs.MilitaryInteractionReview
 import AsiStackProofs.OpenWeightReleaseReview
 import AsiStackProofs.CommunicationInfluenceReview
 import AsiStackProofs.ContentAuthenticityReview
+import AsiStackProofs.ReplicationContainmentReview
 import AsiStackProofs.ObjectiveLeaseGovernance
 import AsiStackProofs.AdversarialModelSecurity
 import AsiStackProofs.ProtectedComputationReview

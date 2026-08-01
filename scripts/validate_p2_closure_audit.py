@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 314
-CURRENT_PLANNED_TARGET_COUNT = 10
+CURRENT_IMPLEMENTED_TARGET_COUNT = 315
+CURRENT_PLANNED_TARGET_COUNT = 9
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 78,
+    "adequate finite-record invariant": 79,
     "useful but too narrow": 160,
-    "needs richer state-machine or review semantics": 26,
+    "needs richer state-machine or review semantics": 25,
     "needs executable tests first": 37,
     "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
@@ -120,6 +120,7 @@ PLANNED_CHAPTERS = (
     "adversarial-machine-learning-and-model-attack-surface",
     "confidential-and-verifiable-ai-computation",
     "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "autonomous-replication-proliferation-and-containment",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,

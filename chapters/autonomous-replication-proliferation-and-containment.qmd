@@ -3,8 +3,8 @@ title: "Autonomous Replication, Proliferation, and Containment"
 chapter_id: "autonomous-replication-proliferation-and-containment"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+draft_maturity: "v0.4 concept-complete manuscript with bounded Lean refinement"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_replibench_2025"
 evidence_level: "argument"
@@ -22,8 +22,8 @@ open_evidence_gaps:
 | Chapter ID | `autonomous-replication-proliferation-and-containment` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Manuscript maturity | v0.4 concept-complete manuscript with bounded Lean refinement |
+| Last updated | 2026-08-01 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -359,16 +359,44 @@ A mature containment layer can test increasingly capable replication strategies 
 
 This remains a research target, and no current result establishes complete lineage control. The claim stays at argument until realistic end-to-end attempts demonstrate prevention, detection, shutdown, recall, and residual closure under adaptive assistance.
 
+## Formalization hooks
+
+`AsiStackProofs.ReplicationContainmentReview` now supplies 32 theorem
+declarations over an eight-transition review and 52 admission-axis mutations.
+The model binds parent, attempt, artifact, environment, and protocol identity;
+denied-by-default synthetic authority; noninherited child identity and
+credentials; four separate evaluation denominators; descendant lineage;
+independent containment; closure; and explicit refusal of real-infrastructure,
+replication, containment, support, or release authority.
+
+The formal result includes evidence non-substitution, parent-lease
+noninheritance, exclusion of real providers from synthetic authority, finite
+descendant quarantine, monotone expiry and descendant-overrun results, and
+receipt invalidation under parent, artifact, environment, or protocol change.
+Two collision constructions establish an end-to-end replication impossibility
+for classifiers that see only component signals and a global-containment
+impossibility for classifiers that see only local shutdown signals. A live
+governed-operations consumer receives an intentionally incomplete descendant
+inventory and requests state inventory rather than accepting reconciliation.
+
+These proofs check the authored model, not the world. Chapter support remains
+`argument`. They do not prove provider isolation, census completeness,
+kill-path independence, shutdown, recall, real-world replication capability,
+or containment. Those observations belong to a Project Theseus
+replication-containment campaign before any empirical support transition.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Component/end-to-end separation | Reject a claim of replication from isolated copying, execution, persistence, or resource-acquisition success. | planned |
-| Authority noninheritance | Inject a descendant that reuses parent credentials or permissions and require immediate denial. | planned |
-| Recall completeness | Seed hidden descendants, stale credentials, and persistence artifacts and verify they remain open residuals until found. | planned |
-| Containment positive control | Demonstrate that the environment detects and stops a known escape path before interpreting a clean run. | planned |
+| Lean lifecycle and exact-repair review | Compile the eight-transition model and reject all 52 single-axis mutations with exact repair or refusal routes. | passed locally |
+| Component/end-to-end separation | Prove component evidence does not establish end-to-end replication and that identical component signals can hide opposite composed states. | passed locally |
+| Authority noninheritance | Prove a distinct child cannot use its parent's replication lease and real providers are outside synthetic-test authority. | passed locally |
+| Finite descendant and receipt controls | Prove quarantine covers every listed descendant and identity or protocol changes invalidate a bounded receipt. | passed locally |
+| Recall completeness | Seed hidden descendants, stale credentials, and persistence artifacts and verify they remain open residuals until found. | Project Theseus required |
+| Containment positive control | Demonstrate that the environment detects and stops a known escape path before interpreting a clean run. | Project Theseus required |
 
-Planned formalization route: `lean:autonomous-replication-proliferation-and-containment.admission_boundary` covers only the finite admission record for autonomous replication proliferation and containment; it cannot establish whether autonomous replication proliferation and containment works safely or transfers.
+Implemented formalization route: `lean:autonomous-replication-proliferation-and-containment.admission_boundary` covers only the bounded review, authority, lineage, receipt, collision, and rejecting-consumer properties above; it cannot establish whether autonomous replication, proliferation control, or containment works safely or transfers.
 
 ## Source crosswalk
 

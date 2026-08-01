@@ -585,6 +585,65 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite replication-containment admissibility predicate.",
+    "complete_dossier_reaches_only_replication_containment_campaign": "The closed dossier reaches only Project Theseus replication-containment campaign eligibility, not real infrastructure, replication, containment, or release authority.",
+    "identical_component_signals_can_hide_opposite_replication_state": "Two cases witness opposite end-to-end synthetic replication states under identical component signals.",
+    "identical_local_containment_signals_can_hide_opposite_global_state": "Two cases witness opposite global-containment states under identical local shutdown and known-census signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ReplicationContainmentReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed replication dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "distinct_child_cannot_use_parent_replication_lease": "The principal-identity conjunct excludes every distinct child from using its parent's lease.",
+    "real_provider_path_is_outside_synthetic_test_authority": "The typed infrastructure boundary excludes real providers from synthetic-test authority.",
+    "quarantine_all_covers_every_finite_descendant": "Structural induction proves every member of an arbitrary finite descendant list is quarantined by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 52 replication-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 52 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 52 mutations into the lifecycle repair state.",
+    "expired_lease_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired replication lease.",
+    "descendant_overrun_persists_under_growth_and_no_larger_ceiling": "Natural-number order preserves descendant-ceiling rejection under population growth and no larger ceiling.",
+    "parent_change_invalidates_replication_receipt": "The parent-identity conjunct rejects every receipt presented for a different parent.",
+    "artifact_change_invalidates_replication_receipt": "The artifact-identity conjunct rejects every receipt presented for a different artifact.",
+    "environment_change_invalidates_replication_receipt": "The environment-identity conjunct rejects every receipt presented for a different environment.",
+    "protocol_change_invalidates_replication_receipt": "The protocol-version conjunct rejects every receipt presented under a different protocol.",
+    "component_signals_cannot_recover_end_to_end_replication": "A same-component/opposite-composition collision proves no component-signal classifier is exact for every modeled replication case.",
+    "local_containment_signals_cannot_recover_global_containment": "A same-local/opposite-global collision proves no local-containment classifier is exact for every modeled containment case.",
+    "unresolved_descendants_force_operations_state_inventory": "The consumer refinement deliberately leaves descendant inventory incomplete, making governed operations request state inventory.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ReplicationContainmentReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/replication_containment_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, authority or scope invalidation, non-identifiability result, or rejecting consumer refinement is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "component_success_does_not_establish_end_to_end_replication",
+    "synthetic_completion_does_not_establish_real_infrastructure_capability",
+    "shutdown_acknowledgment_does_not_establish_global_containment",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "campaign_eligibility_requires_admissible_dossier", "readiness_requires_identity",
+    "readiness_requires_authority", "readiness_requires_evaluation",
+    "readiness_requires_lineage", "readiness_requires_containment",
+    "readiness_requires_closure", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ReplicationContainmentReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored replication-containment state"],
+        "rationale": "The theorem constrains only the encoded replication-containment review; it establishes no real-world replication, census completeness, containment efficacy, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -1144,6 +1203,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/ContentAuthenticityReview.lean": {
         "validate_content_authenticity_review.py"
+    },
+    "lean/AsiStackProofs/ReplicationContainmentReview.lean": {
+        "validate_replication_containment_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},
