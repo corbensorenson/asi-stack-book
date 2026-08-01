@@ -131,15 +131,19 @@ follow, and chapters 13–84 cannot resume upload until the revised method
 passes. Existing unlisted embeds remain historical review previews, not
 publication-quality acceptance.
 
-The generation-2 ledger currently has 83 planned chapters and one chapter in
-animatic revision. `asi-is-a-stack-not-a-model` now has a 230.23-second,
-27-beat, audio-locked replacement built around one persistent duplicate-file
-deletion case. Its first tracked animatic review is deliberately rejected: it
-records stale transition labels, weak visual change density, crowded rollback
-composition, and unfinished multi-mode playback rather than treating a valid
-render as acceptance. Later local rerenders remain candidates until a tracked
-review gives every experience dimension at least 4/5 with no open defect. No
-generation-2 video is accepted, uploaded, or current in Quarto yet.
+The generation-2 ledger currently has 74 planned chapters and ten chapters
+through both animatic and picture-and-sound lock. The first ten replacements
+use chapter-specific persistent worlds, audio-derived beat timing, exhaustive
+caption-boundary review, and independent per-dimension scores without average
+laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
+turns one synthetic transfer episode into a worked distinction among nominal
+approval, informed review, effective intervention, and meaningful control; it
+tests an eight-condition control envelope, exercises the safe-hold path, and
+keeps the task record separate from any score of the person. Rejected
+animatics remain preserved as generation history. All ten delivery masters
+remain candidates only: no generation-2 video has passed release-candidate,
+independent, technical, claim-fidelity, or acceptance gates, and none is
+uploaded or current in Quarto.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
