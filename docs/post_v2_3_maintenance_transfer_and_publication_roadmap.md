@@ -218,7 +218,7 @@ proceeds.
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the nine-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter manifest is frozen; unified atom custody must stay 84/84; completion requires a named concept manifest plus a digest-bound semantic disposition, while word and atom counts remain diagnostic only | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff is terminal. Reopen only after digest drift or an explicit successor amendment. |
 | Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
-| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters are locally validated and `ready_not_published`. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. All 588 exact scene-midpoint frames and 84 upload thumbnails passed bounded visual review; mux receipts bind source visual, narration, seven scene endpoints, and final digest. The 1,015,153,522 bytes of final media remain ignored and absent from Pages. The canonical private playlist contains twelve exact unlisted staging videos in positions 1–12, projected into their chapters as owner-authorized preview embeds with adjacent descriptive transcripts. Published-current videos, final platform receipts, and published-current embeds remain zero. | Continue at chapter 13 after the YouTube daily-upload window resets; apply reviewed local captions to videos 1–12 and custom thumbnails to videos 7–12; finish all 84 metadata/caption/thumbnail/order/processing checks; then publish and receipt the complete validated set. The preview projection must never be counted as completion. After public completion, use author feedback to exercise one real new-generation upload, supersession receipt, playlist reconciliation, and embed replacement. |
+| Visual edition — active owner-directed book packet | `P7.3-governed-manim-visual-edition` | All 84 current packets and 1920×1080/30-fps H.264/AAC masters pass the original technical contract. The exact Kokoro/MLX-Whisper audit spans all chapters at 0–2.8658% content-normalized WER, maximum expected-token gap four, and 227.765–331.005 seconds. Twelve exact unlisted staging videos are embedded for integrated review. Owner review of the first five exposed a material pedagogical defect outside that contract: videos 2–5 are thin wrappers over seven generic paragraph-level tableaux, and animation often ends well before the narrated idea. Technical receipts remain valid, but the first-generation masters are no longer accepted as publication-quality teaching artifacts. Published-current videos, final platform receipts, and published-current embeds remain zero. | Execute P7.3-F9 before further upload: install the chapter-video authoring skill and tracked beat-plan contract; revise videos 1–5 around concrete cases, useful curiosity loops, chapter-specific visual mechanisms, and audio-derived clause-level anchors; revise the remaining seven previews; then apply the accepted method to chapters 13–84. Re-run full A/V, captions, transcript, accessibility, visual, and platform-readiness gates. Only after the 84-video pedagogical ratchet passes may upload and public reconciliation resume. |
 | Formal slot — C6 residual triage terminal; dependency-safe execution active | `C6-remaining-stronger-model-rationalization` | The original 54-action residual estate had zero Lean dependencies and zero theorem consumers; two redundant witnesses and 43 Theseus repository-import mirrors are retired, leaving nine actions: eight summary-mirror retirements and one inverse-route rewrite | Retire the eight Benchmark/Runtime/Search/Stable-Capability summary mirrors next, then implement the Failure Modes inverse property. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -3846,14 +3846,15 @@ complete sweep then passed for population, order, legibility, clipping, and
 end-card integrity. The final masters total 1,015,153,522 bytes in ignored
 local storage and remain absent from Git and the Pages artifact.
 
-The manifest and publication ledger therefore report 84/84
+The manifest and publication ledger therefore reported 84/84
 `ready_not_published`, zero platform objects, zero playlist entries, zero
-publications, and zero embeds. The next transaction is platform staging and
-publication, not more local video creation. It requires exact action-time
-authority for playlist creation, 84 unlisted uploads, metadata, reviewed
-captions, thumbnails, ordering, privacy transitions, receipts, and Quarto
-embed reconciliation. After the complete edition is public, author feedback
-must drive one real generation-two supersession exercise.
+publications, and zero embeds under the original technical contract. Later
+integrated owner review found that this contract did not measure whether a
+substantive spoken idea received a contemporaneous, explanatory visual
+change. P7.3-F9 therefore reopens local authoring and pedagogical review while
+preserving the exact technical receipts as historical generation-one
+artifacts. Platform publication now follows, rather than precedes, the new
+pedagogical ratchet.
 
 #### P7.3-F6 publication-transaction preflight and self-staleness repair — 2026-07-29
 
@@ -3979,9 +3980,116 @@ published-current counts remain zero, all 84 packets remain
 unlisted, rendered binaries remain absent from Git and Pages, and support and
 book-claim release effects remain none.
 
+#### P7.3-F9 pedagogical, engagement, and synchronization ratchet — 2026-07-31
+
+Integrated owner review of the first five previews found a defect that the
+original artifact, transcript, and sampled-frame validators could not detect.
+Video 1 contains chapter-specific scene work, but videos 2–5 are twelve-line
+wrappers over `AsiChapterScene`. The shared engine performs a few entrance
+animations for each of seven paragraph-level tableaux and then waits until the
+paragraph endpoint. Their 119–127 spoken words per minute are not unusually
+fast; the failure is low semantic animation density, repeated card layouts,
+and paragraph-level rather than idea-level synchronization. Seven midpoint
+frames can prove population and legibility while missing an early animation
+followed by a long static hold. The prior `ratified` grammar status therefore
+means **technical visual grammar v1**, not pedagogical acceptance.
+
+The revised authoring contract is one visual explanation per chapter, not a
+narrated slide deck. Each video must select one teaching promise and one
+concrete case, then use a chapter-appropriate form such as a causal trace,
+puzzle, construction, comparison, diagnosis, or counterexample. The opening
+must begin delivering the title-and-thumbnail promise within fifteen seconds.
+It should create an honest curiosity loop—expectation, tension, prediction,
+mechanism, payoff, and transfer—without hype or unrelated spectacle. Reuse the
+opening object through the worked trace and payoff so the viewer sees a
+resolved mechanism rather than seven disconnected summaries.
+
+Before final scene code, create a machine-auditable `beat_plan.json` whose
+concatenated narration exactly matches the final script. Every semantic beat
+must bind exact audio-derived start and end times, a distinctive spoken anchor,
+the relationship being taught, object state before and after, purposeful
+visual action, short on-screen labels, animation technique, claim role, and
+evidence boundary. Target 8–14 meaningful beats per minute, usually 3–8
+seconds each; reject beats above twelve seconds and unexplained static holds
+above six seconds. Motion must encode identity, relation, causality, sequence,
+quantity, uncertainty, contrast, containment, authority, rollback, or
+attention. Movement that encodes none of these is decoration and does not
+satisfy the density gate.
+
+Apply established multimedia-learning constraints: coherence, signaling,
+segmenting, spatial and temporal contiguity, modality matching, redundancy
+control, and pretraining for unfamiliar objects. On-screen words label; spoken
+language explains causes and consequences. Place labels beside their objects
+at the moment of reference. Do not duplicate narrated sentences on screen or
+add music, flourishes, jokes, backgrounds, or side facts that compete with the
+teaching promise. Use one or two real prediction prompts when useful, provide
+evidence and a short thinking pause, and make the answer visible before naming
+the general principle.
+
+Authoring must use original ManimCE 0.20.1 code. Study explanatory patterns in
+3Blue1Brown's published scene repository—object continuity, progressive
+construction, `TransformFromCopy`, focus isolation, live manipulation, and
+purposeful camera reframing—but do not copy ManimGL or CC BY-NC-SA
+implementation code into this pipeline. Prefer persistent objects and
+transformations over full-scene card replacement. Shared primitives are
+appropriate only when they preserve chapter-specific state changes; a thin
+wrapper around generic paragraph cards is not an accepted scene.
+
+Review must sample the start, midpoint, and end of every beat and include a
+complete 1× A/V watch, muted watch, and audio-only listen. Reviewers record
+sync, comprehension, continuity, cognitive load, claim boundary, hook payoff,
+and keep/revise/split/merge/cut action per beat. The visual onset should fall
+within roughly half a second of the phrase it explains, and the transformation
+should resolve near the end of that idea. Structural validation is necessary
+but cannot certify insight, truth, beauty, or learning.
+
+Execute in three ratcheted cohorts:
+
+1. Revise the owner-reviewed videos 1–5; preserve useful custom scene work in
+   video 1 and replace generic paragraph wrappers in videos 2–5.
+2. Revise videos 6–12 and evaluate the whole embedded preview sequence before
+   any further YouTube upload.
+3. Apply the accepted authoring and review system to chapters 13–84, with each
+   batch blocked from platform staging until every member passes.
+
+After publication has enough viewers, use first-30-second retention, dips,
+spikes, and top moments to nominate revision hypotheses. These are attention
+signals, not learning evidence: a spike can mean either interest or confusion.
+Preserve generation comparisons and pair retention with a direct pedagogical
+test of whether a viewer can predict the worked trace, explain the mechanism,
+and state the boundary.
+
+The research basis is explicit and bounded: [3Blue1Brown's video-making
+advice](https://www.3blue1brown.com/about/) motivates concrete-before-abstract
+explanation and deliberate motion; the [published 3Blue1Brown scene
+repository](https://github.com/3b1b/videos) supplies pattern-study examples but
+not copy-ready ManimCE code; [Brame's educational-video
+synthesis](https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/) organizes
+cognitive-load, engagement, and active-learning practices; [Mayer's multimedia
+principles](https://doi.org/10.1075/dd.1.1.02may) motivate complementary words
+and pictures, coherence, modality, and contiguity; [Guo, Kim, and
+Rubin](https://doi.org/10.1145/2556325.2566239) provide large-scale
+observational engagement evidence; the [Fyfield et al. controlled physics-video
+study](https://doi.org/10.1103/PhysRevPhysEducRes.18.010148) supports the
+combination of enhanced visuals and embedded questions within its measured
+domain; and [YouTube's retention
+documentation](https://support.google.com/youtube/answer/9314415) defines
+attention diagnostics without converting them into learning evidence.
+
+**P7.3-F9 completion gate.** Close only when the reusable skill and tracked
+beat-plan schema/validator pass positive and adversarial fixtures; videos 1–5
+pass owner-feedback remediation; videos 6–12 pass the same full-experience
+review; all 84 current packets have exact beat plans, chapter-specific visual
+state changes, audio-derived synchronization, and beat-level contact sheets;
+the complete technical/accessibility suite passes again; and the roadmap,
+manifest, ledger, landing page, README, and live embeds report the same honest
+denominators. Existing unlisted videos remain historical previews until newly
+authorized replacement transactions reconcile their successors.
+
 **P7.3 completion gate.** This lane is terminal only when all 84 current
 manifest chapters have validated derivative packets and current rendered
-videos; every published video is hosted on YouTube in the canonical playlist;
+videos that also pass P7.3-F9's pedagogical and beat-synchronization gate;
+every published video is hosted on YouTube in the canonical playlist;
 every published chapter has a validated Quarto embed and adjacent descriptive
 transcript; no video is stale; all output binaries remain outside Git and the
 Pages artifact; platform and repository receipts bind exact identities; the

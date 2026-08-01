@@ -88,7 +88,7 @@ beginning/end coverage, requires content-normalized word error at or below
 masters, word error is 0–2.8658%, the largest expected-token gap is four, and
 duration is 227.765–331.005 seconds.
 
-The shared visual grammar and narration path are `ratified` and
+The original technical visual grammar and narration path are `ratified` and
 `qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
 reviewed captions, descriptive transcripts, validated final masters, render
 and mux receipts, and seven exact scene-midpoint review frames. The local
@@ -98,6 +98,18 @@ and projected into their chapters as visibly labeled preview players with
 adjacent descriptive transcripts. Published-current videos, final platform
 receipts, and published-current Quarto embeds remain zero. A local validated
 master or an unlisted preview is not a publication.
+
+Owner viewing of the first five previews exposed a stricter pedagogical
+failure that these technical receipts do not measure. Videos 2–5 are thin
+wrappers over a generic seven-tableau engine; their few entrance animations
+often finish well before the narrated idea. They are technically intact but
+not accepted for final publication. P7.3-F9 now requires a beat-level plan,
+chapter-specific persistent visual world, purposeful state change for every
+substantive spoken idea, audio-derived clause-level anchors, and full 1×,
+muted, and audio-only review. The first five form the remediation cohort, the
+remaining seven previews follow, and chapters 13–84 cannot resume upload until
+the revised method passes. Existing unlisted embeds remain historical review
+previews, not publication-quality acceptance.
 
 The preview exception is narrow and explicit. A managed player may appear
 before full publication only when an exact row in
