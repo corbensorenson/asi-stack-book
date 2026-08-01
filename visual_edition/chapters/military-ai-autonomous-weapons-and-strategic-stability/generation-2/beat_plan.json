@@ -1,0 +1,267 @@
+{
+  "schema_version": "asi_stack.manim_beat_plan.v2",
+  "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+  "teaching_promise": "The viewer can explain why local model accuracy cannot establish strategic stability and can predict when provenance, judgment, interaction, safe-posture, authority, and off-ramp failures must stop or narrow a military-AI route.",
+  "target_duration_seconds": 329.645,
+  "chapter_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
+  "source_commit": "366c0557a",
+  "story": {
+    "concrete_case": "A synthetic warning display presents two apparently corroborating sensor tiles until provenance reveals one copied upstream feed while the decision clock compresses.",
+    "opening_question": "Does a high-confidence component recommendation remain safe when its evidence is correlated and its interface removes deliberation time?",
+    "payoff": "A command-and-interaction packet keeps mission, authority, observation lineage, meaningful judgment, counterpart response, safe posture, off-ramps, and residuals inspectable without authorizing force.",
+    "transfer": "The next chapter generalizes this discipline into explicit evidence states and claim-revision rules."
+  },
+  "art_direction": {
+    "visual_thesis": "A bright local recommendation can become a brittle strategic loop when duplicated evidence and a shrinking clock cross an authority boundary between interacting actors.",
+    "signature_image": "Two sensor tiles merge into one provenance root while a twelve-minute deliberation ring collapses toward two minutes and a recommendation stops at a gold command boundary.",
+    "visual_world": "A synthetic command table evolves from warning trace to role bands, mission and authority envelopes, a judgment budget, paired strategic actors, interaction matrix, dual-surface assurance packet, suspension rail, and evidence ceiling.",
+    "persistent_objects": ["warning trace", "decision clock", "authority boundary", "interaction pair", "safe-posture route", "dual-surface assurance", "residual"],
+    "composition_rule": "The observation trace begins left, accountable judgment and authority remain central, counterpart response enters from the right, and reversible governance resolves along a lower custody rail.",
+    "palette_rule": "Cyan marks observed or advisory state, green marks bounded confirmed conditions, amber marks accountable authority and off-ramps, magenta marks spoofing, correlation, compression, or prohibited inference; every color is duplicated by label, shape, or line style.",
+    "typography_rule": "Use short mission, authority, provenance, judgment, posture, interaction, and custody labels; never display targeting procedures, real operational data, or dense paragraph cards.",
+    "motion_character": "Provenance roots merge, the decision ring compresses, permissions dock separately, advice stops at command, counterpart loops reciprocate, off-ramps remain reversible, and suspension visibly removes effect.",
+    "camera_rule": "Hold a stable synthetic command table, widen once when the counterpart enters, and reframe downward only for assurance, suspension, decommission, and the evidence boundary.",
+    "surface_rule": "Abstract public-safe command geometry, inspectable receipts, timeline rings, lineage edges, and labeled gates on a dark console without weapon imagery or operational detail.",
+    "ending_image": "A bounded command-and-interaction packet remains behind a no-authority seal while an evidence-state ledger opens beyond the handoff axis."
+  },
+  "audio_direction": {
+    "narration_style": "Calm, serious, and exact, with firm emphasis on copied feed, one autonomy score, meaningful judgment, decision architecture, safe posture, interaction matrix, off-ramps, and maximum inference.",
+    "pacing_arc": "Fast warning surprise, methodical command-envelope construction, visible clock pressure, widening reciprocal interaction, slower assurance and decommission custody, quiet evidence ceiling, concise handoff.",
+    "music_policy": "No music in generation 2; the warning trace, clock, interaction loop, and narration carry the argument without emotionalizing military risk.",
+    "sound_effect_policy": "No effects in the locked mix; correlation, countdown, command stopping, suspension, and decommission remain visually and caption redundantly encoded.",
+    "review_devices": ["headphones", "earbuds", "laptop speakers", "phone speakers"]
+  },
+  "accessibility": {
+    "color_redundancy": "Sensor lineage, role, authority, judgment condition, posture, interaction, secrecy, suspension, and evidence state differ by label, position, shape, enclosure, and line style as well as color.",
+    "motion_redundancy": "Every merge, compression, stop, reciprocal update, off-ramp, suspension, decommission, and evidence rejection resolves into a stable labeled state.",
+    "integrated_description": "Narration names the duplicated feed, decision clock, four role classes, mission and authority envelopes, judgment budget, counterpart loop, interaction matrix, assurance surfaces, suspension, decommission, and evidence ceiling.",
+    "caption_plan": "Exact receipt-derived narration in balanced cues below the active command surface, with no reliance on color or unlabeled motion.",
+    "reduced_motion_assessment": "No flash, shake, spin, continuous zoom, simulated weapon motion, or rapid full-frame parallax; countdown and reciprocal loops settle into labeled still states."
+  },
+  "beats": [
+    {
+      "id": "b01", "story_function": "hook", "start_seconds": 0.0, "end_seconds": 8.45,
+      "narration": "A synthetic warning exercise begins with two sensor tiles and twelve minutes to decide. The AI reports high confidence. Then provenance opens:",
+      "sync_anchor": "The AI reports high confidence", "visual_purpose": "Establish an apparently corroborated high-confidence warning before exposing its lineage.", "visual_action": "Reveal two bright sensor tiles, a high-confidence recommendation, and a wide twelve-minute decision ring approaching but not crossing command.", "attention_target": "The two apparently independent sensor tiles.",
+      "semantic_encodings": ["quantity", "uncertainty", "attention"], "object_before": "An empty synthetic warning table.", "object_after": "Two bright warning tiles and a high-confidence recommendation occupy the table.", "continuity_objects": ["warning trace", "decision clock", "authority boundary"],
+      "composition": "Sensor tiles upper-left, lineage root below, clock center, command boundary right.", "motion_curve": "Quick alert arrival, deliberate lineage merge, sharp but eased clock contraction.", "camera_action": "Static synthetic warning table.", "animation_techniques": ["TransformFromCopy", "ValueTracker", "GrowArrow"],
+      "on_screen_text": ["SENSOR A", "SENSOR B", "HIGH CONFIDENCE", "12 MIN", "RECOMMEND · NOT COMMAND"], "settle_seconds": 0.45, "hold_purpose": "Invite an initial trust judgment before provenance appears.", "new_concepts": ["synthetic warning exercise"], "claim_role": "question", "evidence_boundary": "Synthetic public-safe warning exercise only."
+    },
+    {
+      "id": "b02", "story_function": "prediction", "start_seconds": 8.45, "end_seconds": 15.855,
+      "narration": "both tiles copied one upstream feed. The clock compresses to two minutes. Corroboration was one claim repeated twice.",
+      "sync_anchor": "Corroboration was one claim repeated twice", "visual_purpose": "Overturn apparent corroboration and expose simultaneous timeline compression.", "visual_action": "Merge both sensor lineages into one upstream root, replace the witness count two with lineage count one, and contract the clock to two minutes.", "attention_target": "The single shared provenance root beneath two tiles.",
+      "semantic_encodings": ["causality", "quantity", "uncertainty"], "object_before": "Two tiles appear independent beside a wide decision ring.", "object_after": "One duplicated feed and one compressed clock remain unresolved.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "residual"],
+      "composition": "Sensor tiles upper-left, lineage root below, clock center, command boundary right.", "motion_curve": "Lineages converge first; the clock contracts only after dependence becomes visible.", "camera_action": "Static synthetic warning table.", "animation_techniques": ["GrowArrow", "ReplacementTransform", "ValueTracker"],
+      "on_screen_text": ["ONE UPSTREAM FEED", "2 DISPLAYS · 1 LINEAGE", "12 MIN → 2 MIN"], "settle_seconds": 0.45, "hold_purpose": "Let the false corroboration reversal register.", "new_concepts": ["correlated observation", "timeline compression"], "claim_role": "concrete_example", "evidence_boundary": "Synthetic public-safe warning exercise only."
+    },
+    {
+      "id": "b03", "story_function": "comparison", "start_seconds": 15.855, "end_seconds": 30.86,
+      "narration": "That is why military AI is not one autonomy score. Decision support, defensive automation, targeting support, and autonomous force application occupy different roles, authorities, affected populations, reversibility, and escalation sensitivity.",
+      "sync_anchor": "not one autonomy score", "visual_purpose": "Replace a scalar autonomy label with four decision-role bands.", "visual_action": "Crack one autonomy dial into four labeled horizontal role bands with distinct authority gates and reversibility markers.", "attention_target": "The four noninterchangeable role bands.",
+      "semantic_encodings": ["contrast", "identity", "authority"], "object_before": "One unresolved warning recommendation beside a command boundary.", "object_after": "Four role classes retain distinct authorities and consequences.", "continuity_objects": ["warning trace", "authority boundary"],
+      "composition": "Four bands stacked from advisory to force application; authority gates aligned right.", "motion_curve": "Scalar splits, bands separate, gates dock one by one.", "camera_action": "Reframe upward to role taxonomy.", "animation_techniques": ["ReplacementTransform", "LaggedStart"],
+      "on_screen_text": ["DECISION SUPPORT", "DEFENSIVE AUTOMATION", "TARGETING SUPPORT", "AUTONOMOUS FORCE", "NO SINGLE SCORE"], "settle_seconds": 0.55, "hold_purpose": "Let role and authority differences register.", "new_concepts": ["decision-role taxonomy"], "claim_role": "mechanism", "evidence_boundary": "Taxonomy does not establish legality or safety."
+    },
+    {
+      "id": "b04", "story_function": "setup", "start_seconds": 30.86, "end_seconds": 36.2,
+      "narration": "A component can classify its test data correctly and still destabilize the larger interaction.",
+      "sync_anchor": "still destabilize the larger interaction", "visual_purpose": "Establish the local-score versus system-outcome contradiction.", "visual_action": "Place a green component score inside one node while a surrounding interaction ring shifts to an unstable state.", "attention_target": "The green local node inside the unstable outer ring.",
+      "semantic_encodings": ["contrast", "relation", "causality"], "object_before": "Four role bands expose authority differences without performance evidence.", "object_after": "A locally correct component coexists with an unstable interaction ring.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "interaction pair"],
+      "composition": "Green component center; dependency ring around it; joint brace below.", "motion_curve": "Local score settles first; surrounding dependencies then expand outward.", "camera_action": "Widen to system interaction view.", "animation_techniques": ["FadeIn", "Create", "Circumscribe"],
+      "on_screen_text": ["LOCAL SCORE ✓", "SYSTEM STATE UNSTABLE"], "settle_seconds": 0.35, "hold_purpose": "Prevent local correctness from laundering system stability.", "new_concepts": ["local-system separation"], "claim_role": "counterexample", "evidence_boundary": "No measured stability result."
+    },
+    {
+      "id": "b05", "story_function": "mechanism", "start_seconds": 36.2, "end_seconds": 46.54,
+      "narration": "Strategic stability is a joint claim about sensors, people, command chains, communications, adversaries, time, and possible off-ramps—not a property stored inside one model.",
+      "sync_anchor": "Strategic stability is a joint claim", "visual_purpose": "Reveal the seven dependencies that make stability an interaction claim.", "visual_action": "Expand seven labeled dependencies around the green node and draw one joint-state brace spanning all of them.", "attention_target": "The joint brace spanning dependencies beyond the model.",
+      "semantic_encodings": ["relation", "contrast", "causality"], "object_before": "A green component sits inside an unnamed unstable ring.", "object_after": "Seven named dependencies define the larger interaction claim.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "interaction pair"],
+      "composition": "Green component center; dependency ring around it; joint brace below.", "motion_curve": "Dependencies expand in causal order; the joint brace closes last.", "camera_action": "Hold the widened system interaction view.", "animation_techniques": ["LaggedStart", "Create", "Circumscribe"],
+      "on_screen_text": ["SENSORS", "PEOPLE", "COMMAND", "COMMS", "ADVERSARY", "TIME", "OFF-RAMPS", "JOINT CLAIM"], "settle_seconds": 0.4, "hold_purpose": "Let the complete dependency set register.", "new_concepts": ["strategic interaction claim"], "claim_role": "mechanism", "evidence_boundary": "No measured stability result."
+    },
+    {
+      "id": "b06", "story_function": "construction", "start_seconds": 46.54, "end_seconds": 58.67,
+      "narration": "Start with a mission envelope: purpose, environment, affected population, legal-review state, command chain, time horizon, and termination conditions. A vague objective cannot authorize a precise effect.",
+      "sync_anchor": "mission envelope", "visual_purpose": "Bind the system to a declared mission identity and stop condition.", "visual_action": "Fold seven field chips into a sealed mission envelope while an unbounded objective badge fails to enter.", "attention_target": "The mission envelope's termination field.",
+      "semantic_encodings": ["containment", "identity", "authority"], "object_before": "The joint system claim has unnamed operating context.", "object_after": "A versioned mission envelope names purpose, context, population, review, chain, time, and end.", "continuity_objects": ["warning trace", "authority boundary", "residual"],
+      "composition": "Mission envelope center; seven fields dock around its perimeter; vague objective left.", "motion_curve": "Fields fold inward; the vague badge rebounds softly.", "camera_action": "Static record-construction view.", "animation_techniques": ["LaggedStart", "MoveAlongPath"],
+      "on_screen_text": ["PURPOSE", "ENVIRONMENT", "POPULATION", "LEGAL REVIEW", "COMMAND CHAIN", "TIME", "TERMINATION"], "settle_seconds": 0.55, "hold_purpose": "Make mission termination visible before authority is added.", "new_concepts": ["mission envelope"], "claim_role": "mechanism", "evidence_boundary": "A complete field set does not validate the mission."
+    },
+    {
+      "id": "b07", "story_function": "construction", "start_seconds": 58.67, "end_seconds": 71.05,
+      "narration": "Then bind authority and effect. Separate permission to observe, recommend, approve, and act. Constrain target class, prohibited effects, scope, abstention, communication-loss behavior, and human confirmation.",
+      "sync_anchor": "Separate permission to observe", "visual_purpose": "Show that permissions and effects are distinct typed gates.", "visual_action": "Build OBSERVE, RECOMMEND, APPROVE, and ACT gates in sequence, then dock effect limits and communication-loss rules beneath them.", "attention_target": "The gap between recommend and approve.",
+      "semantic_encodings": ["authority", "sequence", "containment"], "object_before": "Mission identity exists without typed permissions.", "object_after": "Four permissions and bounded effects remain visibly separate.", "continuity_objects": ["warning trace", "authority boundary", "safe-posture route"],
+      "composition": "Permission rail left-to-right; effect constraints on a lower parallel rail.", "motion_curve": "Gates arrive independently; no gate automatically unlocks the next.", "camera_action": "Pan along the permission rail.", "animation_techniques": ["GrowArrow", "LaggedStart"],
+      "on_screen_text": ["OBSERVE", "RECOMMEND", "APPROVE", "ACT", "PROHIBITED EFFECTS", "SCOPE", "ABSTAIN", "COMMS LOSS", "CONFIRM"], "settle_seconds": 0.55, "hold_purpose": "Preserve least-authority separation.", "new_concepts": ["authority and effect envelope"], "claim_role": "mechanism", "evidence_boundary": "No permission is granted by this visual."
+    },
+    {
+      "id": "b08", "story_function": "mechanism", "start_seconds": 71.05, "end_seconds": 83.555,
+      "narration": "Meaningful human judgment is not an icon beside a button. The accountable person needs time, context, alternatives, competence, independence from automation pressure, and power to reject, delay, narrow, or stop.",
+      "sync_anchor": "not an icon beside a button", "visual_purpose": "Replace nominal human presence with six testable judgment conditions.", "visual_action": "Remove a decorative human icon and assemble six keyed conditions around an accountable decision owner.", "attention_target": "The reject-delay-narrow-stop control cluster.",
+      "semantic_encodings": ["authority", "contrast", "identity"], "object_before": "A human icon appears adjacent to the permission rail.", "object_after": "Six conditions surround an accountable owner with real stopping power.", "continuity_objects": ["decision clock", "authority boundary", "residual"],
+      "composition": "Owner center; six condition keys in a balanced ring; decorative icon crossed left.", "motion_curve": "Icon fades; keys arrive with one deliberate stop-control reveal.", "camera_action": "Static judgment close-up.", "animation_techniques": ["FadeOut", "TransformFromCopy", "Indicate"],
+      "on_screen_text": ["TIME", "CONTEXT", "ALTERNATIVES", "COMPETENCE", "INDEPENDENCE", "REJECT · DELAY · NARROW · STOP"], "settle_seconds": 0.65, "hold_purpose": "Let the viewer test whether judgment is substantive.", "new_concepts": ["meaningful human judgment conditions"], "claim_role": "mechanism", "evidence_boundary": "Interface presence alone remains insufficient."
+    },
+    {
+      "id": "b09", "story_function": "consequence", "start_seconds": 83.555, "end_seconds": 95.96,
+      "narration": "Draw a deliberation budget. Verification, consultation, legal review, and communication are not empty latency. Removing them changes the decision architecture even when the final human click remains.",
+      "sync_anchor": "not empty latency", "visual_purpose": "Make removed deliberation an architectural change rather than a speed gain.", "visual_action": "Allocate four labeled wedges inside the decision clock, then show an optimizer deleting them while leaving a tiny final-click marker.", "attention_target": "The missing verification and off-ramp wedges.",
+      "semantic_encodings": ["quantity", "sequence", "contrast"], "object_before": "Six judgment conditions exist without a time allocation.", "object_after": "A visibly depleted deliberation budget leaves only a nominal click.", "continuity_objects": ["decision clock", "authority boundary", "safe-posture route"],
+      "composition": "Decision ring center; four budget wedges; optimizer shear enters from left.", "motion_curve": "Wedges fill evenly, then collapse one by one rather than all at once.", "camera_action": "Close on the clock.", "animation_techniques": ["ValueTracker", "Succession"],
+      "on_screen_text": ["VERIFY", "CONSULT", "LEGAL", "COMMUNICATE", "FINAL CLICK ≠ JUDGMENT"], "settle_seconds": 0.7, "hold_purpose": "Show what timeline compression actually removes.", "new_concepts": ["deliberation budget"], "claim_role": "counterexample", "evidence_boundary": "No universal minimum time is asserted."
+    },
+    {
+      "id": "b10", "story_function": "worked_trace", "start_seconds": 95.96, "end_seconds": 109.615,
+      "narration": "Now reopen the warning trace. Every observation carries source, time, transformation, uncertainty, integrity, and correlation receipts. Two displays derived from one feed count as one lineage, not two independent witnesses.",
+      "sync_anchor": "count as one lineage", "visual_purpose": "Bind every visible observation to inspectable provenance and correlation.", "visual_action": "Expand each sensor tile into six receipt fields, trace both back to one source, and replace the witness count two with lineage count one.", "attention_target": "The two-to-one lineage counter.",
+      "semantic_encodings": ["causality", "identity", "quantity"], "object_before": "Two sensor tiles still look independent at the display layer.", "object_after": "Their shared source and one-lineage count are explicit.", "continuity_objects": ["warning trace", "decision clock", "residual"],
+      "composition": "Tiles top; receipt fields beneath; converging provenance root bottom center.", "motion_curve": "Fields unfold, edges converge, counter transforms from two to one.", "camera_action": "Return to the warning table.", "animation_techniques": ["TransformFromCopy", "ReplacementTransform"],
+      "on_screen_text": ["SOURCE", "TIME", "TRANSFORM", "UNCERTAINTY", "INTEGRITY", "CORRELATION", "2 DISPLAYS · 1 LINEAGE"], "settle_seconds": 0.6, "hold_purpose": "Make dependence visible before interpretation.", "new_concepts": ["observation lineage receipt"], "claim_role": "concrete_example", "evidence_boundary": "Synthetic lineage only; no sensor-performance claim."
+    },
+    {
+      "id": "b11", "story_function": "failure", "start_seconds": 109.615, "end_seconds": 122.545,
+      "narration": "Ambiguous, spoofed, stale, or correlated observations must remain typed as such. A model may help compare hypotheses, but fluency cannot turn missing provenance into truth or uncertainty into authorization.",
+      "sync_anchor": "fluency cannot turn missing provenance", "visual_purpose": "Prevent polished model output from erasing observation defects.", "visual_action": "Route four defect tokens into a hypothesis comparator while a fluent recommendation attempts and fails to cross truth and authority gates.", "attention_target": "The separate TRUTH and AUTHORITY stops.",
+      "semantic_encodings": ["uncertainty", "authority", "containment"], "object_before": "Observation lineage is known but defects are not typed.", "object_after": "Four defect types persist while comparison remains non-authorizing.", "continuity_objects": ["warning trace", "authority boundary", "safe-posture route", "residual"],
+      "composition": "Defect tokens left, comparator center, truth and authority gates right.", "motion_curve": "Tokens enter slowly; fluent card moves quickly but stops twice.", "camera_action": "Static hypothesis bench.", "animation_techniques": ["LaggedStart", "MoveAlongPath"],
+      "on_screen_text": ["AMBIGUOUS", "SPOOFED", "STALE", "CORRELATED", "COMPARE HYPOTHESES", "NO TRUTH MINT", "NO AUTHORITY MINT"], "settle_seconds": 0.65, "hold_purpose": "Keep uncertainty and authority distinct.", "new_concepts": ["typed observation defect"], "claim_role": "counterexample", "evidence_boundary": "No open-world truthfulness result."
+    },
+    {
+      "id": "b12", "story_function": "mechanism", "start_seconds": 122.545, "end_seconds": 134.65,
+      "narration": "Abstention needs a route. Sensor conflict, integrity failure, communication loss, and out-of-envelope conditions resolve to a declared safe posture with an owner, duration, monitoring rule, and re-entry gate.",
+      "sync_anchor": "Abstention needs a route", "visual_purpose": "Turn abstention into an owned transition rather than an empty refusal.", "visual_action": "Fork four failure tokens into a safe-posture capsule and populate owner, duration, monitor, and re-entry fields.", "attention_target": "The owned safe-posture capsule.",
+      "semantic_encodings": ["sequence", "rollback", "containment"], "object_before": "Defects stop recommendation without a successor state.", "object_after": "Each defect reaches a declared, monitored posture with re-entry conditions.", "continuity_objects": ["warning trace", "authority boundary", "safe-posture route", "residual"],
+      "composition": "Failure tokens left, safe-posture capsule center, re-entry gate right.", "motion_curve": "Four routes converge; fields lock around the capsule.", "camera_action": "Pan down to the posture rail.", "animation_techniques": ["GrowArrow", "LaggedStart"],
+      "on_screen_text": ["CONFLICT", "INTEGRITY FAIL", "COMMS LOSS", "OUT OF ENVELOPE", "SAFE POSTURE", "OWNER", "DURATION", "MONITOR", "RE-ENTRY"], "settle_seconds": 0.6, "hold_purpose": "Show abstention's operational successor without implying a universal posture.", "new_concepts": ["owned safe posture"], "claim_role": "mechanism", "evidence_boundary": "Posture is prospectively declared, not validated here."
+    },
+    {
+      "id": "b13", "story_function": "comparison", "start_seconds": 134.65, "end_seconds": 145.505,
+      "narration": "Safe posture does not always mean doing nothing; inaction can preserve a hazard. Compare bounded alternatives without letting urgency manufacture authority or erase legal constraints.",
+      "sync_anchor": "does not always mean doing nothing", "visual_purpose": "Reject a universal no-action fallback while preserving authority limits.", "visual_action": "Compare HOLD, WITHDRAW, SHIELD, and VERIFY branches inside one fixed authority envelope; block an urgent unbounded branch.", "attention_target": "The bounded alternatives inside the unchanged envelope.",
+      "semantic_encodings": ["contrast", "authority", "containment"], "object_before": "One generic safe-posture capsule risks implying universal inaction.", "object_after": "Four bounded posture options remain constrained by the same authority and legal frame.", "continuity_objects": ["authority boundary", "safe-posture route", "residual"],
+      "composition": "Four posture branches fan within a gold boundary; urgent expansion remains outside.", "motion_curve": "Options fan evenly; urgency presses and rebounds from the frame.", "camera_action": "Widen posture comparison.", "animation_techniques": ["TransformFromCopy", "Indicate"],
+      "on_screen_text": ["HOLD", "WITHDRAW", "SHIELD", "VERIFY", "SAME AUTHORITY", "URGENCY ≠ AUTHORITY"], "settle_seconds": 0.65, "hold_purpose": "Preserve context sensitivity without scope expansion.", "new_concepts": ["contextual safe posture"], "claim_role": "mechanism", "evidence_boundary": "No operational posture recommendation."
+    },
+    {
+      "id": "b14", "story_function": "failure", "start_seconds": 145.505, "end_seconds": 157.685,
+      "narration": "Watch advice approach the command boundary. Repetition, ranking, countdowns, and defaults can make a recommendation function like an order. Reveal uncertainty, alternatives, provenance, and who owns the decision.",
+      "sync_anchor": "function like an order", "visual_purpose": "Expose interface-mediated authority drift.", "visual_action": "Repeat and enlarge one advisory card while ranking and countdown pressure push it toward command; then reopen uncertainty, alternatives, provenance, and owner controls that stop it.", "attention_target": "The recommendation stopped at the command boundary.",
+      "semantic_encodings": ["authority", "attention", "causality"], "object_before": "A recommendation is nominally advisory.", "object_after": "Pressure mechanisms are visible and advice remains blocked from command.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "safe-posture route"],
+      "composition": "Advice card left, pressure stack above, command boundary center, accountable owner right.", "motion_curve": "Pressure accelerates; disclosure controls arrive and decelerate the card to a firm stop.", "camera_action": "Static command-boundary close-up.", "animation_techniques": ["ScaleInPlace", "ValueTracker", "Circumscribe"],
+      "on_screen_text": ["ADVICE", "REPEATED", "RANKED #1", "DEFAULT", "COUNTDOWN", "UNCERTAINTY", "ALTERNATIVES", "PROVENANCE", "OWNER"], "settle_seconds": 0.7, "hold_purpose": "Make de facto authority inspectable.", "new_concepts": ["automation pressure"], "claim_role": "counterexample", "evidence_boundary": "No human-factors effectiveness result."
+    },
+    {
+      "id": "b15", "story_function": "consequence", "start_seconds": 157.685, "end_seconds": 169.39,
+      "narration": "Timeline compression is itself an intervention. As seconds disappear, verification paths close and diplomatic off-ramps vanish. A faster local loop may create a more brittle strategic system.",
+      "sync_anchor": "Timeline compression is itself an intervention", "visual_purpose": "Show time reduction removing verification and off-ramps.", "visual_action": "Contract the decision clock while verification and off-ramp branches physically lose reachable length; preserve the resulting brittleness residual.", "attention_target": "The off-ramp that becomes unreachable before command.",
+      "semantic_encodings": ["quantity", "sequence", "causality"], "object_before": "Pressure mechanisms approach but have not changed reachable routes.", "object_after": "A shorter clock visibly deletes two decision paths and opens a residual.", "continuity_objects": ["decision clock", "authority boundary", "safe-posture route", "residual"],
+      "composition": "Clock center, verification branch upper-left, off-ramp lower-left, command gate right.", "motion_curve": "Continuous clock contraction paired with discrete branch closures.", "camera_action": "Pull back to the whole decision topology.", "animation_techniques": ["ValueTracker", "FadeOut", "Create"],
+      "on_screen_text": ["12 MIN", "VERIFY", "CONSULT", "OFF-RAMP", "2 MIN", "BRITTLE LOOP"], "settle_seconds": 0.7, "hold_purpose": "Let the missing routes remain visible as absence and residual.", "new_concepts": ["timeline-compression intervention"], "claim_role": "transition", "evidence_boundary": "No numeric stability threshold is inferred."
+    },
+    {
+      "id": "b16", "story_function": "mechanism", "start_seconds": 169.39, "end_seconds": 182.27,
+      "narration": "Now add a second actor. Each side observes the other's deployment, updates expectations, changes posture, and shortens its own clock. Safety cannot be inferred by evaluating one side while holding the counterpart still.",
+      "sync_anchor": "add a second actor", "visual_purpose": "Turn a one-system evaluation into a reciprocal strategic interaction.", "visual_action": "Mirror the first command table, connect observation and expectation edges in both directions, then shorten both clocks as posture tokens update.", "attention_target": "The reciprocal expectation loop between actors.",
+      "semantic_encodings": ["relation", "causality", "sequence"], "object_before": "One actor has a compressed but isolated decision loop.", "object_after": "Two actors recursively alter each other's posture and time.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "interaction pair", "residual"],
+      "composition": "Actor A left, Actor B right, reciprocal edges center, clocks below each.", "motion_curve": "Second table mirrors in; expectation edges alternate; both clocks contract together.", "camera_action": "Widen to bilateral interaction.", "animation_techniques": ["TransformFromCopy", "GrowArrow", "LaggedStart"],
+      "on_screen_text": ["ACTOR A", "ACTOR B", "OBSERVE", "EXPECT", "POSTURE Δ", "CLOCK Δ"], "settle_seconds": 0.7, "hold_purpose": "Show why a static counterpart invalidates a stability inference.", "new_concepts": ["reciprocal adaptation"], "claim_role": "mechanism", "evidence_boundary": "Abstract interaction model only."
+    },
+    {
+      "id": "b17", "story_function": "failure", "start_seconds": 182.27, "end_seconds": 194.15,
+      "narration": "Reciprocal deployment can produce proliferation, entanglement, and common-mode failure. Shared models, datasets, suppliers, or doctrines may correlate mistakes that a one-system test treats as independent.",
+      "sync_anchor": "common-mode failure", "visual_purpose": "Expose shared dependencies behind apparently separate actors.", "visual_action": "Reveal four shared roots beneath the two actors and transform independent-failure symbols into one correlated failure brace.", "attention_target": "The common supplier-data-model-doctrine roots.",
+      "semantic_encodings": ["causality", "relation", "uncertainty"], "object_before": "Two actors appear operationally separate.", "object_after": "Shared roots create an explicit common-mode dependency.", "continuity_objects": ["interaction pair", "warning trace", "residual"],
+      "composition": "Actors top, four shared roots bottom, correlation brace across both.", "motion_curve": "Roots rise slowly; independent markers merge into one brace.", "camera_action": "Tilt attention below the interaction pair.", "animation_techniques": ["FadeIn", "ReplacementTransform"],
+      "on_screen_text": ["MODEL", "DATA", "SUPPLIER", "DOCTRINE", "COMMON MODE"], "settle_seconds": 0.65, "hold_purpose": "Keep correlated error visible after the actors separate.", "new_concepts": ["strategic common mode"], "claim_role": "counterexample", "evidence_boundary": "No real supplier or actor attribution."
+    },
+    {
+      "id": "b18", "story_function": "construction", "start_seconds": 194.15, "end_seconds": 208.63,
+      "narration": "Use an interaction matrix: false alarm, spoof, ambiguous attribution, communication loss, disagreement, adversary adaptation, reciprocal automation, and escalation. Preserve decision time, reversibility, human burden, and residuals.",
+      "sync_anchor": "Use an interaction matrix", "visual_purpose": "Create a finite scenario surface with multidimensional outcomes.", "visual_action": "Populate an eight-row scenario matrix and attach four outcome columns plus an open-residual rail rather than one pass score.", "attention_target": "The conflicting time, reversibility, burden, and residual columns.",
+      "semantic_encodings": ["identity", "quantity", "uncertainty"], "object_before": "Interaction failures appear as separate anecdotes.", "object_after": "Eight routes and four outcome dimensions share one inspectable matrix.", "continuity_objects": ["interaction pair", "decision clock", "safe-posture route", "residual"],
+      "composition": "Scenario rows left; outcome columns right; residual rail along bottom.", "motion_curve": "Rows populate in two waves; columns resolve with mixed directions.", "camera_action": "Static matrix view.", "animation_techniques": ["LaggedStart", "TransformFromCopy"],
+      "on_screen_text": ["FALSE ALARM", "SPOOF", "ATTRIBUTION?", "COMMS LOSS", "DISAGREEMENT", "ADAPTATION", "RECIPROCAL AUTO", "ESCALATION", "TIME", "REVERSIBLE", "BURDEN", "RESIDUAL"], "settle_seconds": 0.65, "hold_purpose": "Prevent one scalar score from hiding tradeoffs.", "new_concepts": ["interaction scenario matrix"], "claim_role": "mechanism", "evidence_boundary": "Proposed evaluation surface, not a completed campaign."
+    },
+    {
+      "id": "b19", "story_function": "mechanism", "start_seconds": 208.63, "end_seconds": 223.335,
+      "narration": "Prospective off-ramps belong inside the design. Rate limits, reversible modes, narrow geography, staged authority, positive confirmation, independent monitoring, suspension, and decommission must exist before the system creates pressure to continue.",
+      "sync_anchor": "Prospective off-ramps", "visual_purpose": "Make reversal mechanisms preconditions instead of improvised responses.", "visual_action": "Build eight amber off-ramp stations beside the interaction route before allowing its proposal token to advance.", "attention_target": "Suspension and decommission stations placed before operation.",
+      "semantic_encodings": ["rollback", "sequence", "authority"], "object_before": "The interaction matrix diagnoses routes without guaranteed exits.", "object_after": "Eight prospective reversal and monitoring stations bound the route.", "continuity_objects": ["authority boundary", "interaction pair", "safe-posture route", "residual"],
+      "composition": "Main route center; four off-ramps above and four below; proposal token left.", "motion_curve": "Stations build first; only then does the token move into the bounded route.", "camera_action": "Widen to lifecycle rail.", "animation_techniques": ["LaggedStart", "MoveAlongPath"],
+      "on_screen_text": ["RATE LIMIT", "REVERSIBLE", "NARROW SCOPE", "STAGED AUTH", "POSITIVE CONFIRM", "MONITOR", "SUSPEND", "DECOMMISSION"], "settle_seconds": 0.75, "hold_purpose": "Make off-ramps prospective and reachable.", "new_concepts": ["prospective off-ramp"], "claim_role": "mechanism", "evidence_boundary": "Presence in a design does not prove enforceability."
+    },
+    {
+      "id": "b20", "story_function": "mechanism", "start_seconds": 223.335, "end_seconds": 237.84,
+      "narration": "Secrecy complicates assurance but does not erase it. A restricted annex carries sensitive traces under access and retention controls. A public card states method, uncertainty, governance, incidents, and what redaction prevents others from checking.",
+      "sync_anchor": "Secrecy complicates assurance", "visual_purpose": "Split sensitive evidence custody from public accountability while preserving verification limits.", "visual_action": "Divide one assurance receipt into a sealed restricted annex and public card connected by a digest and explicit redaction-gap field.", "attention_target": "The public cannot-check field linked to the sealed annex.",
+      "semantic_encodings": ["containment", "uncertainty", "identity"], "object_before": "Interaction and off-ramp records exist on one undifferentiated surface.", "object_after": "Restricted and public surfaces carry different duties and a visible verification gap.", "continuity_objects": ["dual-surface assurance", "interaction pair", "residual"],
+      "composition": "Restricted annex left, digest center, public card right, cannot-check field below.", "motion_curve": "Receipt bifurcates; annex seals; public fields remain readable.", "camera_action": "Reframe downward to assurance custody.", "animation_techniques": ["ReplacementTransform", "Create"],
+      "on_screen_text": ["RESTRICTED ANNEX", "ACCESS", "RETENTION", "PUBLIC CARD", "METHOD", "UNCERTAINTY", "GOVERNANCE", "INCIDENTS", "CANNOT CHECK"], "settle_seconds": 0.75, "hold_purpose": "Expose the epistemic cost of redaction.", "new_concepts": ["dual-surface military assurance"], "claim_role": "mechanism", "evidence_boundary": "No sensitive or operational trace is displayed."
+    },
+    {
+      "id": "b21", "story_function": "mechanism", "start_seconds": 237.84, "end_seconds": 250.47,
+      "narration": "Independent reviewers need enough access to challenge the mission, authority, evidence, interaction model, and safe posture. A reviewer who sees only the developer's conclusion is not an independent evaluation channel.",
+      "sync_anchor": "not an independent evaluation channel", "visual_purpose": "Define independence as access to challengeable inputs rather than a second signature.", "visual_action": "Route five evidence keys from the annex to an independent reviewer; reject a conclusion-only card that lacks those keys.", "attention_target": "The five challenge keys required by the reviewer.",
+      "semantic_encodings": ["authority", "identity", "contrast"], "object_before": "A dual-surface record exists without a capable challenge channel.", "object_after": "An independent reviewer receives mission, authority, evidence, interaction, and posture access.", "continuity_objects": ["dual-surface assurance", "authority boundary", "safe-posture route", "residual"],
+      "composition": "Annex left, reviewer center, five challenge keys between, conclusion-only card right.", "motion_curve": "Keys arrive one by one; conclusion-only card stops outside review.", "camera_action": "Static independent-review view.", "animation_techniques": ["TransformFromCopy", "LaggedStart"],
+      "on_screen_text": ["MISSION", "AUTHORITY", "EVIDENCE", "INTERACTION", "SAFE POSTURE", "INDEPENDENT REVIEW", "CONCLUSION ONLY ✕"], "settle_seconds": 0.65, "hold_purpose": "Make review competence visible.", "new_concepts": ["challenge access"], "claim_role": "mechanism", "evidence_boundary": "No claim of actual independent review."
+    },
+    {
+      "id": "b22", "story_function": "worked_trace", "start_seconds": 250.47, "end_seconds": 264.55,
+      "narration": "Incidents stay linked to model, mission, operator, observation lineage, authority, effect, and response. Suspension freezes effect. Decommission revokes credentials, archives receipts, removes dependencies, and preserves residual ownership.",
+      "sync_anchor": "Suspension freezes effect", "visual_purpose": "Carry incident identity through effect-off and decommission custody.", "visual_action": "Bind eight incident fields to one token, move it through SUSPEND to EFFECT OFF, then through revoke, archive, dependency removal, and residual custody stations.", "attention_target": "The external-effect rail changing to OFF.",
+      "semantic_encodings": ["rollback", "sequence", "identity"], "object_before": "An incident record remains connected to a live effect route.", "object_after": "Effect is off, credentials revoked, receipts archived, dependencies removed, and residual owned.", "continuity_objects": ["warning trace", "authority boundary", "safe-posture route", "dual-surface assurance", "residual"],
+      "composition": "Incident receipt left; suspension gate center; decommission custody rail right.", "motion_curve": "Fields bind, suspension snaps effect off, later custody steps proceed deliberately.", "camera_action": "Track right along the custody rail.", "animation_techniques": ["MoveAlongPath", "ReplacementTransform", "LaggedStart"],
+      "on_screen_text": ["MODEL", "MISSION", "OPERATOR", "LINEAGE", "AUTHORITY", "EFFECT", "RESPONSE", "SUSPEND", "EFFECT OFF", "REVOKE", "ARCHIVE", "REMOVE DEPENDENCY", "RESIDUAL OWNER"], "settle_seconds": 0.75, "hold_purpose": "Verify effect removal before record closure.", "new_concepts": ["effect-complete decommission"], "claim_role": "transition", "evidence_boundary": "Modeled custody route only; no deployed enforcement."
+    },
+    {
+      "id": "b23", "story_function": "failure", "start_seconds": 264.55, "end_seconds": 279.58,
+      "narration": "The failures are visible: automation bias turns advice into command; compressed time removes deliberation; correlated sensors create false confidence; tactical optimization externalizes civilian harm, escalation, or long-run instability.",
+      "sync_anchor": "The failures are visible", "visual_purpose": "Join four failure mechanisms without collapsing their consequences.", "visual_action": "Place four red failure nodes around the warning trace and connect each to its distinct authority, time, evidence, or consequence break.", "attention_target": "The four different broken boundaries.",
+      "semantic_encodings": ["causality", "contrast", "relation"], "object_before": "Failures are distributed across earlier scenes.", "object_after": "Four named failures remain distinct but joined to one command-and-interaction trace.", "continuity_objects": ["warning trace", "decision clock", "authority boundary", "interaction pair", "residual"],
+      "composition": "Warning trace center; four failure nodes at cardinal points; consequence residual below.", "motion_curve": "Failures arrive in causal order and join only after their local breaks are visible.", "camera_action": "Widen to failure map.", "animation_techniques": ["LaggedStart", "GrowArrow"],
+      "on_screen_text": ["AUTOMATION BIAS", "TIME COMPRESSION", "CORRELATED SENSORS", "TACTICAL EXTERNALITY", "OPEN RESIDUAL"], "settle_seconds": 0.75, "hold_purpose": "Let distinct mechanisms remain diagnosable.", "new_concepts": ["command-interaction failure map"], "claim_role": "counterexample", "evidence_boundary": "Failure taxonomy does not estimate prevalence or risk."
+    },
+    {
+      "id": "b24", "story_function": "evidence_boundary", "start_seconds": 279.58, "end_seconds": 287.218,
+      "narration": "Today this chapter provides a design rationale, a command-and-interaction taxonomy, and a public-safe governance architecture for synthetic scenarios.",
+      "sync_anchor": "Today this chapter provides", "visual_purpose": "Name the three exact supported artifacts at argument level.", "visual_action": "Place rationale, role taxonomy, and safe architecture inside an amber support frame labeled ARGUMENT.", "attention_target": "The three supported artifacts inside the frame.",
+      "semantic_encodings": ["containment", "identity", "uncertainty"], "object_before": "The joined failure map could be mistaken for an evaluated system.", "object_after": "Three argument-level artifacts occupy a bounded support frame.", "continuity_objects": ["warning trace", "dual-surface assurance", "authority boundary", "residual"],
+      "composition": "Supported artifact tiles left; support frame center; empty claim side right.", "motion_curve": "Three tiles settle before the boundary appears.", "camera_action": "Static evidence-boundary view.", "animation_techniques": ["FadeIn", "LaggedStart"],
+      "on_screen_text": ["ARGUMENT", "RATIONALE", "ROLE TAXONOMY", "SAFE ARCHITECTURE"], "settle_seconds": 0.4, "hold_purpose": "Let the current support set register before non-claims arrive.", "new_concepts": ["current evidence envelope"], "claim_role": "evidence", "evidence_boundary": "Argument support only."
+    },
+    {
+      "id": "b25", "story_function": "evidence_boundary", "start_seconds": 287.218, "end_seconds": 295.335,
+      "narration": "It does not test a deployed military system, authorize a weapon, establish lawful use, or measure strategic stability.",
+      "sync_anchor": "does not test a deployed military system", "visual_purpose": "Block deployment, authority, lawfulness, and stability promotion.", "visual_action": "Draw the magenta evidence boundary and stop four prohibited claim tiles as they approach from the right.", "attention_target": "The four claim tiles stopped outside support.",
+      "semantic_encodings": ["containment", "contrast", "authority"], "object_before": "Three supported artifacts sit in an argument frame with unused space beside them.", "object_after": "Four prohibited claims remain visibly outside the evidence boundary.", "continuity_objects": ["warning trace", "dual-surface assurance", "authority boundary", "residual"],
+      "composition": "Supported frame left, vertical evidence boundary center, prohibited claims right.", "motion_curve": "Claim tiles approach sequentially and stop at the same boundary.", "camera_action": "Hold the evidence-boundary view.", "animation_techniques": ["Create", "MoveAlongPath", "LaggedStart"],
+      "on_screen_text": ["NO DEPLOYED TEST", "NO AUTHORITY", "NO LAWFULNESS", "NO STABILITY"], "settle_seconds": 0.45, "hold_purpose": "Prevent the derivative from promoting the chapter.", "new_concepts": ["prohibited inference set"], "claim_role": "boundary", "evidence_boundary": "Argument support only."
+    },
+    {
+      "id": "b26", "story_function": "evidence_boundary", "start_seconds": 295.335, "end_seconds": 309.265,
+      "narration": "Its maximum inference is narrow. Mission, authority, provenance, judgment, safe-posture, interaction, off-ramp, secrecy, and decommission records make responsibility inspectable. Complete records do not prove truth or effectiveness.",
+      "sync_anchor": "Complete records do not prove truth", "visual_purpose": "Separate inspectable completeness from truth and effectiveness.", "visual_action": "Assemble nine record chips into a bounded packet, then stop TRUTH and EFFECTIVE badges outside its maximum-inference seal.", "attention_target": "The maximum-inference seal around the packet.",
+      "semantic_encodings": ["containment", "identity", "contrast"], "object_before": "Supported architecture fields appear as separate artifacts.", "object_after": "A bounded packet makes responsibility inspectable while truth and effectiveness remain outside.", "continuity_objects": ["warning trace", "authority boundary", "interaction pair", "safe-posture route", "dual-surface assurance", "residual"],
+      "composition": "Nine chips center, maximum-inference seal around them, prohibited badges right.", "motion_curve": "Chips assemble in causal groups; seal closes; badges stop outside.", "camera_action": "Close on the bounded packet.", "animation_techniques": ["LaggedStart", "Create", "Indicate"],
+      "on_screen_text": ["MISSION", "AUTHORITY", "PROVENANCE", "JUDGMENT", "POSTURE", "INTERACTION", "OFF-RAMP", "SECRECY", "DECOMMISSION", "MAX INFERENCE", "TRUTH UNPROVED", "EFFECT UNPROVED"], "settle_seconds": 0.8, "hold_purpose": "Let the exact inference boundary scan as one object.", "new_concepts": ["bounded command-interaction packet"], "claim_role": "boundary", "evidence_boundary": "Record completeness only."
+    },
+    {
+      "id": "b27", "story_function": "payoff", "start_seconds": 309.265, "end_seconds": 321.12,
+      "narration": "Military AI becomes governable when local model performance remains subordinate to accountable command, interaction-aware evaluation, preserved decision time, bounded effects, and reversible authority.",
+      "sync_anchor": "remains subordinate to accountable command", "visual_purpose": "Resolve the chapter into a compact command-and-interaction invariant.", "visual_action": "Place local model performance inside a smaller inner ring and surround it with five governing outer rings that remain visibly dominant.", "attention_target": "The smaller model-performance ring inside the governance system.",
+      "semantic_encodings": ["containment", "authority", "relation"], "object_before": "A bounded packet lists responsibilities and non-claims.", "object_after": "Local performance sits subordinate to command, interaction, time, effect, and reversibility.", "continuity_objects": ["decision clock", "authority boundary", "interaction pair", "safe-posture route", "residual"],
+      "composition": "Model score center; five concentric governing rings; residual remains outside but owned.", "motion_curve": "Small center settles; outer rings close in measured succession.", "camera_action": "Pull back for the governing-system payoff.", "animation_techniques": ["Create", "LaggedStart"],
+      "on_screen_text": ["LOCAL PERFORMANCE", "ACCOUNTABLE COMMAND", "INTERACTION", "DECISION TIME", "BOUNDED EFFECT", "REVERSIBLE AUTHORITY"], "settle_seconds": 0.8, "hold_purpose": "Make the hierarchy memorable.", "new_concepts": ["command-and-interaction governance"], "claim_role": "connective", "evidence_boundary": "Design rationale, not demonstrated governance."
+    },
+    {
+      "id": "b28", "story_function": "handoff", "start_seconds": 321.12, "end_seconds": 329.645,
+      "narration": "Next, Evidence States and Claim Discipline asks how every assertion, test, limitation, and revision remains tied to the support it actually earned.",
+      "sync_anchor": "Evidence States and Claim Discipline", "visual_purpose": "Transfer the bounded military-AI packet into the book's evidence-state lifecycle.", "visual_action": "Keep the no-authority seal on the packet, carry it across a vertical handoff axis, and open ASSERTION, TEST, LIMIT, and REVISION lanes in the next chapter.", "attention_target": "The unchanged no-authority seal during handoff.",
+      "semantic_encodings": ["sequence", "identity", "authority"], "object_before": "A governed but argument-only command-and-interaction packet remains local.", "object_after": "The same bounded packet enters an evidence-state ledger without promotion.", "continuity_objects": ["dual-surface assurance", "authority boundary", "residual"],
+      "composition": "Bounded packet left, handoff axis center, evidence-state lanes right.", "motion_curve": "Packet moves slowly; next-chapter lanes unfold after it stops.", "camera_action": "Static cross-chapter handoff.", "animation_techniques": ["MoveAlongPath", "LaggedStart"],
+      "on_screen_text": ["NO AUTHORITY GRANTED", "NEXT · EVIDENCE STATES", "ASSERTION", "TEST", "LIMIT", "REVISION", "ARGUMENT SUPPORT"], "settle_seconds": 0.9, "hold_purpose": "Preserve identity and evidence ceiling into the successor chapter.", "new_concepts": ["evidence-state handoff"], "claim_role": "connective", "evidence_boundary": "No support-state or publication effect."
+    }
+  ]
+}

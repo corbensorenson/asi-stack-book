@@ -4159,8 +4159,8 @@ without imposing a broadcast loudness target on YouTube.
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
-Quarto transitions fail closed. The ledger currently records 79 planned
-chapters, five chapters through animatic, and five through picture-and-sound
+Quarto transitions fail closed. The ledger currently records 78 planned
+chapters, six chapters through animatic, and five through picture-and-sound
 lock. Chapter 1 turns a
 duplicate-file deletion request into a persistent proposal, authority,
 observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
@@ -4177,10 +4177,16 @@ recurrence, detector evaluation, and a hard evidence ceiling. Chapter 5 turns
 equal knowledge but unequal performance in a harmless logistics maze into a
 matched actor-system uplift instrument, protects the null with positive
 controls, separates six quantities, locks every unearned D0–D5 bridge, and
-binds surviving findings to a restricted/public, expiring dossier. Together
-they carry 122 audio-derived beats, original
+binds surviving findings to a restricted/public, expiring dossier. Chapter 6
+turns a synthetic two-display warning into one correlated provenance lineage
+while its clock contracts from twelve minutes to two, then widens local model
+performance into role-specific authority, meaningful judgment, deliberation
+time, safe posture, reciprocal actors, common-mode interaction, prospective
+off-ramps, dual-surface assurance, effect-complete custody, and a narrow
+argument-level maximum inference. Together the six animatics and five delivery
+locks carry 150 audio-derived beats, original
 chapter-specific scenes, balanced captions, descriptive transcripts, custom
-thumbnails, 513 exact beat samples across animatic and delivery review, and
+thumbnails, 597 exact beat samples across animatic and delivery review, and
 per-dimension experience passes without average laundering. The rejected
 Chapter 1 and Chapter 5 animatics remain preserved as generation history. All
 five delivery masters remain candidates only: zero
