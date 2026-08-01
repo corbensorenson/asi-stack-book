@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_experience_review.schema.json",
+  "title": "ASI Stack Manim Experience Review",
+  "type": "object",
+  "required": [
+    "schema_version", "chapter_id", "generation", "pass", "reviewed_master_sha256",
+    "reviewed_at_utc", "viewing_passes", "dimensions", "open_defects", "verdict",
+    "support_state_effect", "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_experience_review.v1"},
+    "chapter_id": {"type": "string"},
+    "generation": {"type": "integer", "minimum": 1},
+    "pass": {"enum": ["animatic", "picture_and_sound_lock", "release_candidate"]},
+    "reviewed_master_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "reviewed_at_utc": {"type": "string"},
+    "viewing_passes": {
+      "type": "object",
+      "required": ["normal_speed", "muted", "audio_only", "captions_on", "phone", "large_screen", "headphones", "speakers", "random_frames"],
+      "additionalProperties": {"enum": ["pass", "fail", "not_applicable"]}
+    },
+    "dimensions": {
+      "type": "object",
+      "required": ["teaching_clarity", "composition", "motion_quality", "synchronization", "continuity", "pacing", "voice", "sound_mix", "engagement", "accessibility", "claim_fidelity"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["score", "rationale"],
+        "properties": {
+          "score": {"type": "integer", "minimum": 1, "maximum": 5},
+          "rationale": {"type": "string", "minLength": 12}
+        },
+        "additionalProperties": false
+      }
+    },
+    "open_defects": {"type": "array", "items": {"type": "string", "minLength": 3}},
+    "verdict": {"enum": ["pass", "revise"]},
+    "support_state_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 30}
+  },
+  "additionalProperties": false
+}

@@ -63,6 +63,7 @@ PRECISION_CONTRACT_TRIAGE = ROOT / "new_paper_triage_scenarios/precision_contrac
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 VISUAL_EDITION_MANIFEST = ROOT / "visual_edition/manifest.json"
+MANIM_V2_LEDGER = ROOT / "visual_edition/manim_v2_production_ledger.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
 CURRENT_ROLE_MAP = ROOT / "evidence_quality/current_chapter_role_map.json"
 PROOF_SEMANTIC_DEPTH_OVERLAY = ROOT / "proofs/proof_semantic_depth_overlay.json"
@@ -252,6 +253,7 @@ def inputs() -> dict:
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
         "visual_edition_manifest": load(VISUAL_EDITION_MANIFEST),
+        "manim_v2_ledger": load(MANIM_V2_LEDGER),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
         "current_role_map": load(CURRENT_ROLE_MAP),
         "proof_semantic_depth_overlay": load(PROOF_SEMANTIC_DEPTH_OVERLAY),
@@ -1212,7 +1214,7 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_84_technical_masters_12_unlisted_previews_pedagogical_remediation_required":
+    if manim.get("state") != "active_generation_2_ledger_83_planned_1_animatic_revision_12_predecessor_previews_preserved":
         out.append("Manim visual-edition state does not preserve the 84 technical masters, 12 previews, and open pedagogical remediation")
     if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
         out.append("Manim visual-edition chapter target does not match the canonical manifest")
@@ -1293,8 +1295,15 @@ def errors(data: dict) -> list[str]:
     ratchet = manim.get("pedagogical_and_aesthetic_ratchet", {})
     if (
         ratchet.get("id") != "P7.3-F9"
-        or ratchet.get("state") != "active_skill_v2_validated_first_master_mechanically_diagnosed"
+        or ratchet.get("state") != "active_repository_tracked_v2_contract_first_replacement_animatic_revision"
+        or ratchet.get("skill_path") != "skills/asi-stack-manim-videos/SKILL.md"
         or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v2"
+        or ratchet.get("beat_plan_schema_path") != "schemas/manim_beat_plan.schema.json"
+        or ratchet.get("experience_review_schema_path") != "schemas/manim_experience_review.schema.json"
+        or ratchet.get("production_ledger_path") != "visual_edition/manim_v2_production_ledger.json"
+        or ratchet.get("production_ledger_schema_path") != "schemas/manim_v2_production_ledger.schema.json"
+        or ratchet.get("production_validator_path") != "scripts/validate_manim_v2_production_ledger.py"
+        or ratchet.get("target_generation") != 2
         or ratchet.get("minimum_score_each_dimension") != 4
         or ratchet.get("averaging_may_hide_failure") is not False
         or ratchet.get("external_human_prepublication_gate_required") is not False
@@ -1302,6 +1311,37 @@ def errors(data: dict) -> list[str]:
         or ratchet.get("mechanical_diagnostic_is_aesthetic_verdict") is not False
     ):
         out.append("Manim pedagogical and aesthetic ratchet drifted")
+    v2_ledger = data["manim_v2_ledger"]
+    v2_entries = v2_ledger.get("entries", [])
+    v2_revision_count = sum(
+        row.get("target", {}).get("stage") == "animatic"
+        and row.get("target", {}).get("gates", {}).get("animatic") == "revise"
+        for row in v2_entries
+    )
+    expected_v2_counts = {
+        "planned": v2_ledger.get("counts", {}).get("planned"),
+        "animatic_revision": v2_revision_count,
+        "animatic_passed": v2_ledger.get("counts", {}).get("animatic_passed"),
+        "picture_and_sound_lock_passed": v2_ledger.get("counts", {}).get("picture_and_sound_lock_passed"),
+        "release_candidate_passed": v2_ledger.get("counts", {}).get("release_candidate_passed"),
+        "accepted": v2_ledger.get("counts", {}).get("accepted_generation_2"),
+        "youtube_current": v2_ledger.get("counts", {}).get("youtube_generation_2_current"),
+        "quarto_current": v2_ledger.get("counts", {}).get("quarto_generation_2_current"),
+    }
+    if ratchet.get("generation_2_counts") != expected_v2_counts:
+        out.append("Manim generation-2 roadmap counts drifted from the canonical production ledger")
+    first_replacement = ratchet.get("first_replacement", {})
+    first_target = v2_entries[0].get("target", {}) if v2_entries else {}
+    if (
+        first_replacement.get("chapter_id") != "asi-is-a-stack-not-a-model"
+        or first_replacement.get("stage") != first_target.get("stage")
+        or first_replacement.get("gate_state") != first_target.get("gates", {}).get("animatic")
+        or first_replacement.get("current_review_path") != first_target.get("experience_review_paths", {}).get("animatic")
+        or first_replacement.get("current_candidate_review_state") != "revise_two_owned_defects_not_passed"
+        or first_replacement.get("support_state_effect") != "none"
+        or first_replacement.get("publication_effect") != "none"
+    ):
+        out.append("Manim first generation-2 replacement checkpoint drifted or overclaimed")
     first_pilot = manim.get("first_pilot_checkpoint", {})
     if first_pilot != {
         "chapter_id": "asi-is-a-stack-not-a-model",

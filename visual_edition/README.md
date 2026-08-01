@@ -12,6 +12,8 @@ the chapter's claim label, support state, maximum inference, or release scope.
 - the candidate or ratified visual grammar;
 - the canonical YouTube channel contract and generated 84-chapter
   publication/revision ledger;
+- the repository-local v2 authoring skill, beat-plan/review schemas, and
+  canonical generation-2 production ledger;
 - owner-authorized unlisted-preview bindings, kept separate from final
   publication receipts;
 - immutable generation receipts and exact, non-authorizing replacement plans;
@@ -74,6 +76,18 @@ python3 scripts/validate_visual_edition.py
 python3 scripts/sync_visual_edition_embeds.py
 ```
 
+Generate and validate the fail-closed generation-2 production state:
+
+```bash
+python3 scripts/sync_manim_v2_production_ledger.py
+python3 scripts/validate_manim_v2_production_ledger.py
+```
+
+`manim_v2_production_ledger.json` is the current generation-2 authority. It
+derives all 84 targets in canonical book order, preserves every generation-one
+master and the twelve unlisted preview identities, and prevents YouTube or
+Quarto advancement before the complete audiovisual acceptance chain passes.
+
 All counts are derived from current packets. A storyboard, scene stub, silent
 preview, unreviewed caption file, upload, or placeholder embed is not a
 completed chapter video.
@@ -117,7 +131,18 @@ follow, and chapters 13–84 cannot resume upload until the revised method
 passes. Existing unlisted embeds remain historical review previews, not
 publication-quality acceptance.
 
-The upgraded authoring skill includes a structural v2 beat-plan audit,
+The generation-2 ledger currently has 83 planned chapters and one chapter in
+animatic revision. `asi-is-a-stack-not-a-model` now has a 230.23-second,
+27-beat, audio-locked replacement built around one persistent duplicate-file
+deletion case. Its first tracked animatic review is deliberately rejected: it
+records stale transition labels, weak visual change density, crowded rollback
+composition, and unfinished multi-mode playback rather than treating a valid
+render as acceptance. Later local rerenders remain candidates until a tracked
+review gives every experience dimension at least 4/5 with no open defect. No
+generation-2 video is accepted, uploaded, or current in Quarto yet.
+
+The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
+a structural v2 beat-plan audit,
 start/middle/end frame extraction for every beat, and mechanical A/V
 diagnostics for freezes, black intervals, silence, duration drift, loudness,
 and true peak. On the first current muxed master, the diagnostic found six

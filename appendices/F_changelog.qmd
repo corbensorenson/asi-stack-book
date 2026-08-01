@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-31 — Generation-2 visual-production ledger and first replacement
+
+- Installed the complete `asi-stack-manim-videos` audiovisual authoring system
+  inside the repository so its art direction, story, Manim, audio,
+  accessibility, experience-review, and research contracts travel with the
+  book rather than depending on an untracked workstation skill.
+- Added machine-auditable beat-plan, experience-review, and 84-chapter
+  generation-2 production-ledger schemas plus a fail-closed validator. The
+  ledger preserves all 84 generation-one master identities and the twelve
+  unlisted preview predecessors; it blocks acceptance, YouTube advancement,
+  and current Quarto projection when any required gate, digest, review,
+  receipt, or predecessor link is missing.
+- Rebuilt the first chapter around one persistent duplicate-file deletion
+  request: a measured 230.23-second narration, 27 exact beats, concrete
+  authority/observation/rollback mechanisms, reviewed captions, a
+  chapter-specific storyboard, and original ManimCE scene code. Its first
+  animatic review was recorded as `revise` after finding stale crossfades,
+  long static intervals, crowded rollback composition, and incomplete
+  multi-mode review. Subsequent local renders remain candidates; no
+  generation-2 master, upload, embed, support movement, or publication claim
+  has been accepted.
+- Hardened the per-beat frame sampler for FFmpeg 8 by emitting PNG review
+  frames instead of non-standard limited-range JPEG. This is a diagnostic
+  compatibility correction, not an audiovisual-quality claim.
+
 ## 2026-07-31 — Manim art direction and audiovisual experience standard
 
 - Upgraded the reusable `asi-stack-manim-videos` skill from a synchronization

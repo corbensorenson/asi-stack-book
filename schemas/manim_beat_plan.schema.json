@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_beat_plan.schema.json",
+  "title": "ASI Stack Manim Semantic Beat Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "teaching_promise",
+    "chapter_sha256",
+    "source_commit",
+    "target_duration_seconds",
+    "story",
+    "art_direction",
+    "audio_direction",
+    "accessibility",
+    "beats"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_beat_plan.v2"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "teaching_promise": {"type": "string", "minLength": 12},
+    "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_commit": {"type": "string", "minLength": 7},
+    "target_duration_seconds": {"type": "number", "minimum": 180, "maximum": 360},
+    "story": {
+      "type": "object",
+      "required": ["concrete_case", "opening_question", "payoff", "transfer"],
+      "properties": {
+        "concrete_case": {"type": "string", "minLength": 8},
+        "opening_question": {"type": "string", "minLength": 8},
+        "payoff": {"type": "string", "minLength": 8},
+        "transfer": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "art_direction": {
+      "type": "object",
+      "required": [
+        "visual_thesis",
+        "signature_image",
+        "visual_world",
+        "persistent_objects",
+        "composition_rule",
+        "palette_rule",
+        "typography_rule",
+        "motion_character",
+        "camera_rule",
+        "surface_rule",
+        "ending_image"
+      ],
+      "properties": {
+        "visual_thesis": {"type": "string", "minLength": 8},
+        "signature_image": {"type": "string", "minLength": 8},
+        "visual_world": {"type": "string", "minLength": 8},
+        "persistent_objects": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 2}
+        },
+        "composition_rule": {"type": "string", "minLength": 8},
+        "palette_rule": {"type": "string", "minLength": 8},
+        "typography_rule": {"type": "string", "minLength": 8},
+        "motion_character": {"type": "string", "minLength": 8},
+        "camera_rule": {"type": "string", "minLength": 8},
+        "surface_rule": {"type": "string", "minLength": 8},
+        "ending_image": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "audio_direction": {
+      "type": "object",
+      "required": [
+        "narration_style",
+        "pacing_arc",
+        "music_policy",
+        "sound_effect_policy",
+        "review_devices"
+      ],
+      "properties": {
+        "narration_style": {"type": "string", "minLength": 8},
+        "pacing_arc": {"type": "string", "minLength": 8},
+        "music_policy": {"type": "string", "minLength": 8},
+        "sound_effect_policy": {"type": "string", "minLength": 8},
+        "review_devices": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 2}
+        }
+      },
+      "additionalProperties": false
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "color_redundancy",
+        "motion_redundancy",
+        "integrated_description",
+        "caption_plan",
+        "reduced_motion_assessment"
+      ],
+      "properties": {
+        "color_redundancy": {"type": "string", "minLength": 8},
+        "motion_redundancy": {"type": "string", "minLength": 8},
+        "integrated_description": {"type": "string", "minLength": 8},
+        "caption_plan": {"type": "string", "minLength": 8},
+        "reduced_motion_assessment": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "story_function",
+          "start_seconds",
+          "end_seconds",
+          "narration",
+          "sync_anchor",
+          "visual_purpose",
+          "visual_action",
+          "attention_target",
+          "semantic_encodings",
+          "object_before",
+          "object_after",
+          "continuity_objects",
+          "composition",
+          "motion_curve",
+          "camera_action",
+          "animation_techniques",
+          "on_screen_text",
+          "settle_seconds",
+          "hold_purpose",
+          "new_concepts",
+          "claim_role",
+          "evidence_boundary"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^b[0-9]{2,3}$"},
+          "story_function": {
+            "enum": [
+              "hook", "setup", "prediction", "construction", "mechanism",
+              "worked_trace", "comparison", "counterexample", "failure",
+              "consequence", "evidence_boundary", "payoff", "handoff"
+            ]
+          },
+          "start_seconds": {"type": "number", "minimum": 0},
+          "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+          "narration": {"type": "string", "minLength": 2},
+          "sync_anchor": {"type": "string", "minLength": 3},
+          "visual_purpose": {"type": "string", "minLength": 8},
+          "visual_action": {"type": "string", "minLength": 8},
+          "attention_target": {"type": "string", "minLength": 8},
+          "semantic_encodings": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "identity", "relation", "causality", "sequence", "quantity",
+                "uncertainty", "contrast", "containment", "authority",
+                "rollback", "attention"
+              ]
+            }
+          },
+          "object_before": {"type": "string", "minLength": 8},
+          "object_after": {"type": "string", "minLength": 8},
+          "continuity_objects": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 2}
+          },
+          "composition": {"type": "string", "minLength": 8},
+          "motion_curve": {"type": "string", "minLength": 8},
+          "camera_action": {"type": "string", "minLength": 8},
+          "animation_techniques": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 2}
+          },
+          "on_screen_text": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "settle_seconds": {"type": "number", "minimum": 0},
+          "hold_purpose": {"type": "string"},
+          "new_concepts": {
+            "type": "array",
+            "maxItems": 4,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "claim_role": {
+            "enum": [
+              "question", "concrete_example", "mechanism", "transition",
+              "counterexample", "evidence", "boundary", "connective"
+            ]
+          },
+          "evidence_boundary": {"type": "string", "minLength": 8},
+          "question_id": {"type": "string", "minLength": 1},
+          "reasoning_pause_seconds": {"type": "number", "minimum": 0},
+          "resolves_question_id": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

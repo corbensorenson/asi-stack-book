@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v24",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-  "snapshot_date": "2026-07-29",
+  "snapshot_date": "2026-07-31",
   "authority": "Corben Sorenson",
   "status": "active",
   "current_priority": "P2",
@@ -1709,7 +1709,7 @@
   },
   "manim_visual_edition": {
     "id": "P7.3-governed-manim-visual-edition",
-    "state": "active_84_technical_masters_12_unlisted_previews_pedagogical_remediation_required",
+    "state": "active_generation_2_ledger_83_planned_1_animatic_revision_12_predecessor_previews_preserved",
     "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
     "canonical_chapter_count": 84,
     "required_visual_abstract_duration_seconds": {
@@ -1742,9 +1742,38 @@
     },
     "pedagogical_and_aesthetic_ratchet": {
       "id": "P7.3-F9",
-      "state": "active_skill_v2_validated_first_master_mechanically_diagnosed",
+      "state": "active_repository_tracked_v2_contract_first_replacement_animatic_revision",
       "skill_name": "asi-stack-manim-videos",
+      "skill_path": "skills/asi-stack-manim-videos/SKILL.md",
       "beat_plan_schema_version": "asi_stack.manim_beat_plan.v2",
+      "beat_plan_schema_path": "schemas/manim_beat_plan.schema.json",
+      "experience_review_schema_path": "schemas/manim_experience_review.schema.json",
+      "production_ledger_path": "visual_edition/manim_v2_production_ledger.json",
+      "production_ledger_schema_path": "schemas/manim_v2_production_ledger.schema.json",
+      "production_validator_path": "scripts/validate_manim_v2_production_ledger.py",
+      "target_generation": 2,
+      "generation_2_counts": {
+        "planned": 83,
+        "animatic_revision": 1,
+        "animatic_passed": 0,
+        "picture_and_sound_lock_passed": 0,
+        "release_candidate_passed": 0,
+        "accepted": 0,
+        "youtube_current": 0,
+        "quarto_current": 0
+      },
+      "first_replacement": {
+        "chapter_id": "asi-is-a-stack-not-a-model",
+        "duration_seconds": 230.23,
+        "beat_count": 27,
+        "stage": "animatic",
+        "gate_state": "revise",
+        "rejected_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
+        "current_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
+        "current_candidate_review_state": "revise_two_owned_defects_not_passed",
+        "support_state_effect": "none",
+        "publication_effect": "none"
+      },
       "required_briefs": [
         "story",
         "art_direction",

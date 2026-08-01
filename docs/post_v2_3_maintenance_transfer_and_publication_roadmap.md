@@ -4138,6 +4138,22 @@ description, intelligibility, and non-distracting audio; and [EBU loudness
 resources](https://tech.ebu.ch/groups/loudness) supply measurement concepts
 without imposing a broadcast loudness target on YouTube.
 
+**Execution checkpoint.** The v2 standard is now repository-local at
+`skills/asi-stack-manim-videos/`, and
+`visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
+canonical order across the 5/7/72 cohorts. Three schemas and a registered
+validator make the beat, review, predecessor, gate, receipt, YouTube, and
+Quarto transitions fail closed. The ledger currently records 83 planned
+chapters and one chapter in animatic revision. Chapter 1 has a new measured
+230.23-second narration, 27-beat plan, storyboard, captions, and original
+chapter-specific scene centered on one duplicate-file deletion request. Its
+first animatic is preserved as an explicit `revise` decision because long
+static spans, stale crossfades, crowded rollback composition, and incomplete
+multi-mode playback remained. Later local renders are candidates only; zero
+generation-2 chapters have passed animatic, picture-and-sound lock, release
+candidate, independent review, technical, claim-fidelity, or acceptance, and
+zero generation-2 YouTube or Quarto identities are current.
+
 **P7.3-F9 completion gate.** Close only when the reusable skill and tracked v2
 beat-plan schema/validator pass positive and adversarial fixtures; the
 mechanical A/V diagnostic and per-beat review-sheet generator pass their tests;

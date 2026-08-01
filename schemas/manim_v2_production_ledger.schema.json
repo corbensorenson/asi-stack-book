@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_v2_production_ledger.schema.json",
+  "title": "ASI Stack Manim V2 Production Ledger",
+  "type": "object",
+  "required": [
+    "schema_version", "edition_id", "generated_at_utc", "book_structure_path",
+    "book_structure_sha256", "visual_manifest_path", "visual_manifest_sha256",
+    "authoring_standard_path", "authoring_standard_sha256", "beat_plan_schema_path",
+    "beat_plan_schema_sha256", "experience_review_schema_path",
+    "experience_review_schema_sha256", "canonical_chapter_count", "target_generation",
+    "cohorts", "acceptance_contract", "counts", "entries", "support_state_effect",
+    "publication_effect", "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_v2_production_ledger.v1"},
+    "edition_id": {"const": "asi-stack-p7.3-visual-edition"},
+    "generated_at_utc": {"type": "string"},
+    "book_structure_path": {"const": "book_structure.json"},
+    "book_structure_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "visual_manifest_path": {"const": "visual_edition/manifest.json"},
+    "visual_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "authoring_standard_path": {"const": "skills/asi-stack-manim-videos/SKILL.md"},
+    "authoring_standard_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "beat_plan_schema_path": {"const": "schemas/manim_beat_plan.schema.json"},
+    "beat_plan_schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "experience_review_schema_path": {"const": "schemas/manim_experience_review.schema.json"},
+    "experience_review_schema_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonical_chapter_count": {"const": 84},
+    "target_generation": {"const": 2},
+    "cohorts": {
+      "type": "object",
+      "required": ["owner_reviewed_remediation", "remaining_unlisted_previews", "not_yet_uploaded"],
+      "properties": {
+        "owner_reviewed_remediation": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+        "remaining_unlisted_previews": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "not_yet_uploaded": {"type": "array", "minItems": 72, "maxItems": 72, "uniqueItems": true, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "acceptance_contract": {
+      "type": "object",
+      "required": ["required_passes", "experience_dimensions", "minimum_score_each_dimension", "average_may_hide_failure", "independent_review_required", "external_human_prepublication_gate_required"],
+      "properties": {
+        "required_passes": {"const": ["animatic", "picture_and_sound_lock", "release_candidate"]},
+        "experience_dimensions": {
+          "const": ["teaching_clarity", "composition", "motion_quality", "synchronization", "continuity", "pacing", "voice", "sound_mix", "engagement", "accessibility", "claim_fidelity"]
+        },
+        "minimum_score_each_dimension": {"const": 4},
+        "average_may_hide_failure": {"const": false},
+        "independent_review_required": {"const": true},
+        "external_human_prepublication_gate_required": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": ["planned", "briefed", "scripted", "animatic_passed", "picture_and_sound_lock_passed", "release_candidate_passed", "accepted_generation_2", "youtube_predecessors", "youtube_generation_2_current", "quarto_generation_2_current"],
+      "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 84}
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 84,
+      "maxItems": 84,
+      "items": {
+        "type": "object",
+        "required": ["position", "chapter_id", "title", "chapter_path", "chapter_sha256", "cohort", "predecessor", "target"],
+        "properties": {
+          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "chapter_id": {"type": "string"},
+          "title": {"type": "string"},
+          "chapter_path": {"type": "string", "pattern": "^chapters/.+\\.qmd$"},
+          "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "cohort": {"enum": ["owner_reviewed_remediation", "remaining_unlisted_previews", "not_yet_uploaded"]},
+          "predecessor": {
+            "type": "object",
+            "required": ["local_generation", "packet_path", "master_path", "master_sha256", "custody_state", "youtube_video_id", "youtube_visibility", "preserve_history"],
+            "properties": {
+              "local_generation": {"const": 1},
+              "packet_path": {"type": "string"},
+              "master_path": {"type": "string"},
+              "master_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "custody_state": {"enum": ["local_only", "unlisted_preview_bound"]},
+              "youtube_video_id": {"type": ["string", "null"]},
+              "youtube_visibility": {"enum": ["not_uploaded", "unlisted"]},
+              "preserve_history": {"const": true}
+            },
+            "additionalProperties": false
+          },
+          "target": {
+            "type": "object",
+            "required": ["generation", "stage", "beat_plan_path", "scene_path", "narration_path", "caption_path", "transcript_path", "thumbnail_path", "master_path", "master_sha256", "render_receipt_path", "experience_review_paths", "gates", "youtube_state", "youtube_video_id", "quarto_embed_state"],
+            "properties": {
+              "generation": {"const": 2},
+              "stage": {"enum": ["planned", "briefed", "scripted", "animatic", "picture_and_sound_lock", "release_candidate", "accepted", "youtube_current", "quarto_current"]},
+              "beat_plan_path": {"type": "string"},
+              "scene_path": {"type": "string"},
+              "narration_path": {"type": "string"},
+              "caption_path": {"type": "string"},
+              "transcript_path": {"type": "string"},
+              "thumbnail_path": {"type": "string"},
+              "master_path": {"type": "string"},
+              "master_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+              "render_receipt_path": {"type": ["string", "null"]},
+              "experience_review_paths": {
+                "type": "object",
+                "required": ["animatic", "picture_and_sound_lock", "release_candidate", "independent_release_candidate"],
+                "additionalProperties": {"type": "string"}
+              },
+              "gates": {
+                "type": "object",
+                "required": ["beat_plan", "animatic", "picture_and_sound_lock", "release_candidate", "independent_release_candidate", "technical", "claim_fidelity", "accepted"],
+                "additionalProperties": {"enum": ["not_started", "in_progress", "revise", "pass"]}
+              },
+              "youtube_state": {"enum": ["not_ready", "ready_for_authorized_supersession", "unlisted_reconciled", "public_current"]},
+              "youtube_video_id": {"type": ["string", "null"]},
+              "quarto_embed_state": {"enum": ["predecessor_preview", "absent", "generation_2_current"]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": false
+}

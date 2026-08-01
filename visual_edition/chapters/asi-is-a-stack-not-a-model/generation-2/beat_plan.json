@@ -1,0 +1,1210 @@
+{
+  "schema_version": "asi_stack.manim_beat_plan.v2",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "teaching_promise": "The viewer can predict why a capable model still needs a governed system before its output may become an effect.",
+  "chapter_sha256": "776e73ab1979d84f3bf9840c0fa7b87ed20ea7a1f2735a54e78480d1b2554c35",
+  "source_commit": "330d4ec027e573ab01404fcb5f7228543c35b71a",
+  "target_duration_seconds": 230.23,
+  "story": {
+    "concrete_case": "A model correctly finds duplicate files and writes a delete command, but the system must decide whether that command may act.",
+    "opening_question": "Should a correct delete command be allowed to change the drive?",
+    "payoff": "Capability supplies the proposal; the surrounding stack makes authority, observation, residuals, and recovery independently inspectable.",
+    "transfer": "Apply the same noninheritance test to memory, tools, model replacement, recursive improvement, evidence, and release."
+  },
+  "art_direction": {
+    "visual_thesis": "One blue request token travels farther only when the surrounding governed machine supplies the missing authority and evidence.",
+    "signature_image": "A small luminous model core inside a transparent machine, with a delete token stopped at a gold gate while a green observer and red rollback thread remain independent.",
+    "visual_world": "A persistent glass-workbench machine containing file tiles, a model core, routed responsibility rails, one authority gate, an observer lens, an evidence ledger, and a rollback thread.",
+    "persistent_objects": [
+      "request token",
+      "model core",
+      "file cluster",
+      "authority gate",
+      "observer lens",
+      "evidence ledger",
+      "rollback thread"
+    ],
+    "composition_rule": "The request moves left to right along one causal axis; the authority gate stays near the right third and evidence branches above and below without erasing history.",
+    "palette_rule": "Cyan carries active information, copper marks proposed effects, gold marks authority, green marks independent evidence, magenta marks unresolved residuals, and red marks rollback; shape and labels duplicate every color meaning.",
+    "typography_rule": "Use adjacent object labels of one to four words, numeric state changes, and short boundary equations; never display a narrated sentence.",
+    "motion_character": "Precise mechanical assembly, routed flow, firm boundary stops, and reversible transformations, with calm settled pauses at predictions and evidence limits.",
+    "camera_rule": "Start close on the concrete file problem, pull back once to reveal the system, then reframe only to follow a causal trace, compare matched systems, or restore the opening composition.",
+    "surface_rule": "Dark matte field, thin glass-like system boundaries, restrained glows only on active objects, consistent stroke hierarchy, and no decorative particles or ambient drift.",
+    "ending_image": "The original delete token rests safely beside the model while the authority key, observer lens, owned residual, and rollback thread remain separately visible around it."
+  },
+  "audio_direction": {
+    "narration_style": "Warm, curious, and conversational; emphasize the prediction, the word 'No,' and each noninheritance contrast without sounding alarmist.",
+    "pacing_arc": "Fast concrete hook, widening reveal, steady causal trace, a real prediction pause, crisp boundary sequence, slower objection, quiet evidence ceiling, resolved callback.",
+    "music_policy": "No music for the animatic. Any later bed must be rights-cleared, sparse, absent under the prediction and evidence boundary, and at least 20 dB below speech when present.",
+    "sound_effect_policy": "Use at most a soft key fit, a restrained boundary stop, a quiet observer discrepancy tone, and a rollback return; never sonify every movement.",
+    "review_devices": [
+      "headphones",
+      "earbuds",
+      "laptop speakers",
+      "phone speakers"
+    ]
+  },
+  "accessibility": {
+    "color_redundancy": "Authority uses a key and shield, evidence uses a lens and ledger, residuals use an open loop, rollback uses a return thread, and all states carry adjacent labels.",
+    "motion_redundancy": "Every transition ends in a distinct stable position or count, so pausing or reducing motion preserves the full causal meaning.",
+    "integrated_description": "Narration names the delete token, gate, receipt, observer count, residual, and rollback relation at the moment each becomes essential.",
+    "caption_plan": "Build exact captions from the final narration receipt, include meaningful non-speech gate and discrepancy cues if they survive the mix, and review line breaks on phone.",
+    "reduced_motion_assessment": "No flashing, spinning, shake, parallax, vortex, bounce, continual zoom, or simultaneous multi-axis travel; use dissolves and highlights if a reduced-motion derivative becomes necessary."
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "story_function": "hook",
+      "start_seconds": 0,
+      "end_seconds": 7.105,
+      "narration": "A model finds twelve duplicate files and writes a perfect delete command. Should it be allowed to run it?",
+      "sync_anchor": "perfect delete command",
+      "visual_purpose": "Create a concrete high-stakes question before naming the architecture.",
+      "visual_action": "Transform a neutral file cluster into twelve matched pairs while the model core writes one delete token.",
+      "attention_target": "the model-written delete token above the duplicated file pairs",
+      "semantic_encodings": [
+        "quantity",
+        "attention"
+      ],
+      "object_before": "One unsorted file cluster and an idle model core.",
+      "object_after": "Twelve duplicated pairs and a model-written delete token make the action concrete.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "file cluster",
+        "authority gate"
+      ],
+      "composition": "File pairs fill the left two thirds; the model and command occupy the right third.",
+      "motion_curve": "Staggered ease-out arrivals with a crisp linear command stroke.",
+      "camera_action": "Static; the question is legible in one frame.",
+      "animation_techniques": [
+        "TransformFromCopy",
+        "LaggedStart"
+      ],
+      "on_screen_text": [
+        "12 duplicates",
+        "delete?yes"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "capability versus authority"
+      ],
+      "claim_role": "question",
+      "evidence_boundary": "Concrete hypothetical only; capability and authority are shown as distinct design concerns.",
+      "question_id": "delete_authority",
+      "reasoning_pause_seconds": 1.2
+    },
+    {
+      "id": "b02",
+      "story_function": "setup",
+      "start_seconds": 7.105,
+      "end_seconds": 14.66,
+      "narration": "The answer is not hidden in the model's intelligence. What matters is whether this system may change this drive.",
+      "sync_anchor": "may change this drive",
+      "visual_purpose": "Separate capability from permission using the same opening object.",
+      "visual_action": "Move the delete token toward the drive, then stop it at an unlabelled gate while the drive boundary sharpens.",
+      "attention_target": "the stopped token and the drive boundary",
+      "semantic_encodings": [
+        "authority",
+        "contrast"
+      ],
+      "object_before": "A delete token is free to travel toward the drive.",
+      "object_after": "The token is visibly blocked pending authority.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "file cluster",
+        "authority gate"
+      ],
+      "composition": "The gate forms a vertical decision axis between token and drive.",
+      "motion_curve": "Linear token travel ending in a firm ease-in stop.",
+      "camera_action": "Static; isolate the gate by dimming context.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "Indicate"
+      ],
+      "on_screen_text": [
+        "correct command",
+        "authority?"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [],
+      "claim_role": "concrete_example",
+      "evidence_boundary": "Concrete hypothetical only; capability and authority are shown as distinct design concerns."
+    },
+    {
+      "id": "b03",
+      "story_function": "setup",
+      "start_seconds": 14.66,
+      "end_seconds": 24.54,
+      "narration": "That difference starts the ASI Stack. A model can generate, criticize, compress, or plan. Capability is only one part of action.",
+      "sync_anchor": "only one part of action",
+      "visual_purpose": "Reframe the model as a component rather than the whole unit of analysis.",
+      "visual_action": "Pull the camera back so the model core shrinks into one chamber of a larger transparent machine.",
+      "attention_target": "the model core inside the newly visible system shell",
+      "semantic_encodings": [
+        "containment",
+        "identity"
+      ],
+      "object_before": "The model fills the frame as if it were the whole system.",
+      "object_after": "The model persists as one chamber inside a larger governed machine.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens"
+      ],
+      "composition": "The system shell opens around a centered model with generous negative space.",
+      "motion_curve": "Slow ease-in-out pullback that settles before new labels arrive.",
+      "camera_action": "Pull back once to reveal the true unit of analysis.",
+      "animation_techniques": [
+        "MovingCameraScene",
+        "ReplacementTransform"
+      ],
+      "on_screen_text": [
+        "MODEL",
+        "SYSTEM"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "system unit of analysis"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b04",
+      "story_function": "construction",
+      "start_seconds": 24.54,
+      "end_seconds": 33.195,
+      "narration": "The system must also choose context, test claims, issue grants, constrain tools, observe effects, and recover from failure.",
+      "sync_anchor": "recover from failure",
+      "visual_purpose": "Make the missing system duties spatially visible around the model.",
+      "visual_action": "Grow context, verifier, gate, observer, ledger, and rollback rails around the persistent request token.",
+      "attention_target": "the six responsibility rails forming around the request",
+      "semantic_encodings": [
+        "relation",
+        "containment"
+      ],
+      "object_before": "Only the model and request token exist.",
+      "object_after": "Six named duties become addressable rails around the request.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens"
+      ],
+      "composition": "Responsibilities form an asymmetric but balanced ring around the fixed request.",
+      "motion_curve": "Clockwise stagger with ease-out rail arrivals.",
+      "camera_action": "Static after pullback; build within the revealed shell.",
+      "animation_techniques": [
+        "LaggedStartMap",
+        "Create"
+      ],
+      "on_screen_text": [
+        "context",
+        "verify",
+        "grant",
+        "execute",
+        "observe",
+        "recover"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "governed responsibilities"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b05",
+      "story_function": "failure",
+      "start_seconds": 33.195,
+      "end_seconds": 40.525,
+      "narration": "Collapse those duties into one opaque model, and a good answer can silently acquire unrelated powers.",
+      "sync_anchor": "silently acquire unrelated powers",
+      "visual_purpose": "Show how opaque consolidation removes addressable control points.",
+      "visual_action": "Draw every rail back into the model core until the surrounding machine becomes one opaque sphere.",
+      "attention_target": "the lost external control points as the sphere closes",
+      "semantic_encodings": [
+        "containment",
+        "contrast"
+      ],
+      "object_before": "Six visible duties surround a bounded model chamber.",
+      "object_after": "The duties vanish into one sphere with no external attachment points.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens"
+      ],
+      "composition": "The opaque sphere centers while orphaned rails collapse inward.",
+      "motion_curve": "Accelerating ease-in collapse with no bounce or shake.",
+      "camera_action": "Push in slightly as the system becomes opaque.",
+      "animation_techniques": [
+        "ReplacementTransform",
+        "FadeTransformPieces"
+      ],
+      "on_screen_text": [
+        "OPAQUE"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "opaque consolidation"
+      ],
+      "claim_role": "counterexample",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b06",
+      "story_function": "failure",
+      "start_seconds": 40.525,
+      "end_seconds": 48.28,
+      "narration": "A plan starts to look like permission. Retrieved text becomes belief. A benchmark becomes deployment approval.",
+      "sync_anchor": "benchmark becomes deployment approval",
+      "visual_purpose": "Expose three common illegitimate transitions as visible counterfeit authority.",
+      "visual_action": "Transform plan, context, and benchmark glyphs into three falsely stamped permission seals, then crack the seals.",
+      "attention_target": "the cracked permission seals",
+      "semantic_encodings": [
+        "authority",
+        "contrast"
+      ],
+      "object_before": "Three artifacts are correctly labeled as plan, retrieved text, and benchmark.",
+      "object_after": "Three counterfeit permission seals crack at explicit boundaries.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens"
+      ],
+      "composition": "Three artifacts share one baseline and meet separate stop marks.",
+      "motion_curve": "Short ease-in stamps followed by restrained ease-out cracks.",
+      "camera_action": "Static comparison view.",
+      "animation_techniques": [
+        "TransformMatchingShapes",
+        "Circumscribe"
+      ],
+      "on_screen_text": [
+        "plan ≠ permission",
+        "context ≠ belief",
+        "score ≠ approval"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "illegitimate inheritance"
+      ],
+      "claim_role": "counterexample",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b07",
+      "story_function": "failure",
+      "start_seconds": 48.28,
+      "end_seconds": 56.085,
+      "narration": "Even a clean receipt can mislead. It records what an adapter reports, not what an independent observer finds.",
+      "sync_anchor": "independent observer finds",
+      "visual_purpose": "Distinguish self-report from independent observation.",
+      "visual_action": "Split the execution receipt from a green observer lens and show their file counts disagreeing.",
+      "attention_target": "the unequal receipt and observation counts",
+      "semantic_encodings": [
+        "uncertainty",
+        "contrast"
+      ],
+      "object_before": "A single receipt path appears to settle the result.",
+      "object_after": "Receipt and observer lens coexist with different epistemic roles.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens"
+      ],
+      "composition": "Receipt and observer use parallel lanes with counts aligned for comparison.",
+      "motion_curve": "Synchronized ease-in-out split so neither record appears primary.",
+      "camera_action": "Static split view for epistemic comparison.",
+      "animation_techniques": [
+        "TransformFromCopy",
+        "ValueTracker"
+      ],
+      "on_screen_text": [
+        "receipt: 12",
+        "observation: ?"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "receipt versus observation"
+      ],
+      "claim_role": "counterexample",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b08",
+      "story_function": "construction",
+      "start_seconds": 56.085,
+      "end_seconds": 64.64,
+      "narration": "Keep the original request visible and rebuild the machine around it. The request names the outcome, constraints, owner, and risk.",
+      "sync_anchor": "rebuild the machine around it",
+      "visual_purpose": "Begin progressive reconstruction without discarding the opening case.",
+      "visual_action": "Restore the request token from the opaque sphere and attach outcome, constraint, owner, and risk tabs.",
+      "attention_target": "the persistent request token and its four typed tabs",
+      "semantic_encodings": [
+        "identity",
+        "relation"
+      ],
+      "object_before": "The opaque monolith hides the original request.",
+      "object_after": "The request returns with outcome, constraint, owner, and risk attached.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The request sits center-left while four tabs build clockwise.",
+      "motion_curve": "Ease-out restoration followed by clockwise tab placement.",
+      "camera_action": "Track the returning request a short distance left to right.",
+      "animation_techniques": [
+        "ReplacementTransform",
+        "LaggedStart"
+      ],
+      "on_screen_text": [
+        "outcome",
+        "constraints",
+        "owner",
+        "risk"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "typed request"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Architecture explanation at argument support; no deployed-system or safety result."
+    },
+    {
+      "id": "b09",
+      "story_function": "mechanism",
+      "start_seconds": 64.64,
+      "end_seconds": 72.52,
+      "narration": "Planning branches into alternatives, but every branch remains a proposal. None can create an effect by itself.",
+      "sync_anchor": "every branch remains a proposal",
+      "visual_purpose": "Encode planning as alternatives that remain non-executing proposals.",
+      "visual_action": "Fork the request into three proposal paths while keeping all endpoints behind the effect boundary.",
+      "attention_target": "the three proposal endpoints before the effect boundary",
+      "semantic_encodings": [
+        "sequence",
+        "contrast"
+      ],
+      "object_before": "One request has no visible alternatives.",
+      "object_after": "Three proposals exist while the effect boundary stays closed.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Proposal branches fan upward, level, and downward toward one fixed boundary.",
+      "motion_curve": "Staggered branch growth with linear endpoints at the boundary.",
+      "camera_action": "Static wide view to keep alternatives simultaneous.",
+      "animation_techniques": [
+        "TransformFromCopy",
+        "MoveAlongPath"
+      ],
+      "on_screen_text": [
+        "proposal A",
+        "proposal B",
+        "proposal C"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "proposal versus effect"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b10",
+      "story_function": "mechanism",
+      "start_seconds": 72.52,
+      "end_seconds": 80.55,
+      "narration": "The context boundary mounts only permitted files and facts. Provenance, freshness, rights, and taint travel with them.",
+      "sync_anchor": "Provenance, freshness, rights",
+      "visual_purpose": "Show source permission and provenance as properties of mounted context.",
+      "visual_action": "Mount only authorized file tiles into the context bay and leave prohibited tiles visibly outside.",
+      "attention_target": "the permitted mounted files and excluded files",
+      "semantic_encodings": [
+        "containment",
+        "authority"
+      ],
+      "object_before": "All file tiles are equally available outside context.",
+      "object_after": "Only authorized files enter context with four provenance properties.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Context bay occupies center; excluded files remain in a clearly separate margin.",
+      "motion_curve": "Ease-out mounts with prohibited files remaining still.",
+      "camera_action": "Short pan to the context bay, then stop.",
+      "animation_techniques": [
+        "LaggedStartMap",
+        "Indicate"
+      ],
+      "on_screen_text": [
+        "permitted",
+        "excluded"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "source-bound context"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b11",
+      "story_function": "mechanism",
+      "start_seconds": 80.55,
+      "end_seconds": 88.605,
+      "narration": "A verifier tests the plan. Unresolved questions remain attached as visible residuals instead of disappearing.",
+      "sync_anchor": "visible residuals instead of disappearing",
+      "visual_purpose": "Keep uncertainty visible instead of allowing verification theater.",
+      "visual_action": "Pass the active proposal through a verifier loop and attach an unresolved magenta loop to one claim.",
+      "attention_target": "the magenta unresolved residual attached to the plan",
+      "semantic_encodings": [
+        "uncertainty",
+        "attention"
+      ],
+      "object_before": "A proposal reaches the verifier without recorded uncertainty.",
+      "object_after": "The proposal keeps an owned unresolved residual.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Verifier loop fills the center and the residual attaches at lower right.",
+      "motion_curve": "Linear plan travel and soft ease-out residual attachment.",
+      "camera_action": "Short push toward the verifier residual.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "always_redraw"
+      ],
+      "on_screen_text": [
+        "verified",
+        "unresolved"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "owned residual"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b12",
+      "story_function": "prediction",
+      "start_seconds": 88.605,
+      "end_seconds": 93.635,
+      "narration": "Now predict: if the plan is correct, may it execute? Hold that thought.",
+      "sync_anchor": "may it execute",
+      "visual_purpose": "Give the viewer a real authority prediction pause.",
+      "visual_action": "Bring the proposal to the authority gate, dim motion, and hold both possible outcomes for prediction.",
+      "attention_target": "the proposal waiting at the closed authority gate",
+      "semantic_encodings": [
+        "authority",
+        "attention"
+      ],
+      "object_before": "A verified proposal waits before an unnamed boundary.",
+      "object_after": "The closed gate and thinking pause expose the pending decision.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The gate occupies the center; all other objects dim but remain spatially stable.",
+      "motion_curve": "All movement settles before a two-second reasoning pause.",
+      "camera_action": "Static and fully settled during prediction.",
+      "animation_techniques": [
+        "Indicate",
+        "Succession"
+      ],
+      "on_screen_text": [
+        "May it execute?"
+      ],
+      "settle_seconds": 1.5,
+      "hold_purpose": "Give the viewer time to predict whether correctness authorizes execution.",
+      "new_concepts": [],
+      "claim_role": "question",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b13",
+      "story_function": "mechanism",
+      "start_seconds": 93.635,
+      "end_seconds": 102.09,
+      "narration": "No. Correctness does not confer authority. A separate gate checks scope, owner, time, revocation, and effect class.",
+      "sync_anchor": "separate gate checks scope",
+      "visual_purpose": "Resolve the prediction through a separate, scoped authorization mechanism.",
+      "visual_action": "Fit a gold key from scope, owner, time, revocation, and effect-class teeth; only the complete key opens the gate.",
+      "attention_target": "the completed gold key and opening gate",
+      "semantic_encodings": [
+        "authority",
+        "causality"
+      ],
+      "object_before": "The gate is closed and no grant exists.",
+      "object_after": "A scoped key exists and opens the gate without changing the plan.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Key teeth assemble left of the fixed gate; effect space stays empty on the right.",
+      "motion_curve": "Sequential ease-out key assembly and deliberate gate opening.",
+      "camera_action": "Static; the gate remains the fixed axis.",
+      "animation_techniques": [
+        "TransformMatchingShapes",
+        "Create"
+      ],
+      "on_screen_text": [
+        "scope",
+        "owner",
+        "time",
+        "revocation",
+        "effect"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "scoped grant"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness.",
+      "resolves_question_id": "delete_authority"
+    },
+    {
+      "id": "b14",
+      "story_function": "worked_trace",
+      "start_seconds": 102.09,
+      "end_seconds": 110.42,
+      "narration": "The execution adapter rechecks the grant. Only then may the delete token cross the boundary and change selected files.",
+      "sync_anchor": "delete token cross the boundary",
+      "visual_purpose": "Show authority becoming a bounded effect through an adapter.",
+      "visual_action": "Recheck the key at the adapter, then move the delete token across the boundary onto exactly twelve selected files.",
+      "attention_target": "the token crossing only after the adapter recheck",
+      "semantic_encodings": [
+        "authority",
+        "sequence"
+      ],
+      "object_before": "A complete grant is present but the effect has not occurred.",
+      "object_after": "Exactly twelve selected files change after a second grant check.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Adapter and gate share the center while selected files occupy the destination.",
+      "motion_curve": "Linear crossing after a brief adapter pulse.",
+      "camera_action": "Track the token only until it crosses.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "Circumscribe"
+      ],
+      "on_screen_text": [
+        "grant rechecked",
+        "12 selected"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "adapter recheck"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b15",
+      "story_function": "worked_trace",
+      "start_seconds": 110.42,
+      "end_seconds": 119.75,
+      "narration": "Execution produces a receipt, while observation follows a separate path. The observer tests the post-state instead of trusting the tool.",
+      "sync_anchor": "observation follows a separate path",
+      "visual_purpose": "Preserve receipt and observation as independent records.",
+      "visual_action": "Fork one line to the copper receipt and another to the green observer lens as the effect settles.",
+      "attention_target": "the diverging receipt and observation paths",
+      "semantic_encodings": [
+        "relation",
+        "uncertainty"
+      ],
+      "object_before": "The changed files and one self-reported receipt exist.",
+      "object_after": "Receipt and observation remain separate descendants of the effect.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Receipt rises and observation falls from one effect node, preserving ancestry.",
+      "motion_curve": "Simultaneous ease-out fork with equal visual weight.",
+      "camera_action": "Static split path.",
+      "animation_techniques": [
+        "TransformFromCopy",
+        "AnimationGroup"
+      ],
+      "on_screen_text": [
+        "receipt",
+        "observation"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "independent observation"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b16",
+      "story_function": "counterexample",
+      "start_seconds": 119.75,
+      "end_seconds": 128.43,
+      "narration": "If the receipt says twelve files changed but observation finds thirteen, the contradiction survives as an owned residual.",
+      "sync_anchor": "contradiction survives as an owned residual",
+      "visual_purpose": "Make contradiction durable and owned rather than averaged away.",
+      "visual_action": "Change the observer count from twelve to thirteen and route the mismatch into a named residual loop.",
+      "attention_target": "the thirteen-file observation and residual owner",
+      "semantic_encodings": [
+        "uncertainty",
+        "contrast"
+      ],
+      "object_before": "Receipt and observation both report twelve changed files.",
+      "object_after": "A thirteen-file observation creates an owned contradiction.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The observer count enlarges at center while residual ownership appears adjacent.",
+      "motion_curve": "Continuous count change followed by a firm residual attachment.",
+      "camera_action": "Short push to the contradictory count, then restore.",
+      "animation_techniques": [
+        "ValueTracker",
+        "always_redraw"
+      ],
+      "on_screen_text": [
+        "receipt: 12",
+        "observed: 13",
+        "owned residual"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "contradiction preservation"
+      ],
+      "claim_role": "counterexample",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b17",
+      "story_function": "worked_trace",
+      "start_seconds": 128.43,
+      "end_seconds": 138.035,
+      "narration": "Because the pre-state was recorded, a reversible effect can roll back exactly. Irreversible effects need compensation or quarantine.",
+      "sync_anchor": "roll back exactly",
+      "visual_purpose": "Connect recoverability to a recorded pre-state and effect reversibility.",
+      "visual_action": "Trace a red thread from the changed files back to the recorded pre-state, then contrast quarantine for irreversible work.",
+      "attention_target": "the rollback thread connecting effect to pre-state",
+      "semantic_encodings": [
+        "rollback",
+        "causality"
+      ],
+      "object_before": "Thirteen changed files remain and the pre-state is visible.",
+      "object_after": "The reversible effect reconnects exactly to its recorded pre-state.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Pre-state and post-state share coordinates so rollback reads as exact reversal.",
+      "motion_curve": "Smooth ease-in-out return along the recorded path.",
+      "camera_action": "Pan along the rollback thread from effect to pre-state.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "ReplacementTransform"
+      ],
+      "on_screen_text": [
+        "recorded pre-state",
+        "rollback",
+        "quarantine"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "effect-complete rollback"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b18",
+      "story_function": "consequence",
+      "start_seconds": 138.035,
+      "end_seconds": 146.015,
+      "narration": "This moving request reveals a general rule: one successful object does not inherit the next layer's powers.",
+      "sync_anchor": "does not inherit the next layer's powers",
+      "visual_purpose": "Generalize the worked trace without replacing its objects.",
+      "visual_action": "Zoom out along the traveled route and place explicit gates at each responsibility handoff.",
+      "attention_target": "the series of explicit gates along the traveled path",
+      "semantic_encodings": [
+        "sequence",
+        "relation"
+      ],
+      "object_before": "The request has completed one concrete route.",
+      "object_after": "Every responsibility transition has an explicit, externally visible gate.",
+      "continuity_objects": [
+        "request token",
+        "file cluster",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The camera reveals the entire left-to-right route and all retained objects.",
+      "motion_curve": "Restrained ease-in-out camera reveal followed by settled gates.",
+      "camera_action": "Pull back to the complete route and stop.",
+      "animation_techniques": [
+        "MovingCameraScene",
+        "LaggedStart"
+      ],
+      "on_screen_text": [
+        "NONINHERITANCE"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "noninheritance"
+      ],
+      "claim_role": "transition",
+      "evidence_boundary": "Worked illustrative trace plus bounded local-contract lineage; not evidence of broad effectiveness."
+    },
+    {
+      "id": "b19",
+      "story_function": "mechanism",
+      "start_seconds": 146.015,
+      "end_seconds": 153.97,
+      "narration": "Capability does not confer authority. Context does not confer belief. A plan does not confer an effect.",
+      "sync_anchor": "Capability does not confer authority",
+      "visual_purpose": "Demonstrate the first half of the noninheritance law.",
+      "visual_action": "Send three inference arrows toward authority, belief, and effect; stop each at its corresponding gate.",
+      "attention_target": "the three blocked inference arrows",
+      "semantic_encodings": [
+        "authority",
+        "contrast"
+      ],
+      "object_before": "Three broad inferences appear plausible.",
+      "object_after": "Capability, context, and plan arrows stop before gaining new powers.",
+      "continuity_objects": [
+        "request token",
+        "authority gate",
+        "evidence ledger"
+      ],
+      "composition": "Three source terms align left and three blocked targets align right.",
+      "motion_curve": "Linear arrows with firm ease-in stops.",
+      "camera_action": "Static repeated gate composition.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "Succession"
+      ],
+      "on_screen_text": [
+        "capability ≠ authority",
+        "context ≠ belief",
+        "plan ≠ effect"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Noninheritance is an engineering rule proposed by the chapter, not a universal theorem about all AI systems."
+    },
+    {
+      "id": "b20",
+      "story_function": "mechanism",
+      "start_seconds": 153.97,
+      "end_seconds": 162.85,
+      "narration": "A receipt does not confer reality. A theorem does not confer enforcement. A replacement does not inherit qualification.",
+      "sync_anchor": "receipt does not confer reality",
+      "visual_purpose": "Demonstrate the second half of the noninheritance law.",
+      "visual_action": "Send three more arrows toward reality, enforcement, and qualification; stop each without clearing the previous gates.",
+      "attention_target": "the three later blocked inference arrows",
+      "semantic_encodings": [
+        "uncertainty",
+        "contrast"
+      ],
+      "object_before": "Three later inferences appear plausible.",
+      "object_after": "Receipt, theorem, and replacement arrows stop before broader states.",
+      "continuity_objects": [
+        "request token",
+        "authority gate",
+        "evidence ledger"
+      ],
+      "composition": "The second trio reuses the same gate coordinates for fast visual transfer.",
+      "motion_curve": "Linear arrows with the same firm stop language.",
+      "camera_action": "Static repeated gate composition.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "Succession"
+      ],
+      "on_screen_text": [
+        "receipt ≠ reality",
+        "theorem ≠ enforcement",
+        "replacement ≠ qualification"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Noninheritance is an engineering rule proposed by the chapter, not a universal theorem about all AI systems."
+    },
+    {
+      "id": "b21",
+      "story_function": "consequence",
+      "start_seconds": 162.85,
+      "end_seconds": 172.205,
+      "narration": "That boundary governs self-improvement. A system may propose a better component, but the proposal cannot approve or certify itself.",
+      "sync_anchor": "proposal cannot approve or certify itself",
+      "visual_purpose": "Transfer noninheritance to recursive architectural replacement.",
+      "visual_action": "Transform the replacement proposal into a candidate module while approval and certification keys remain outside it.",
+      "attention_target": "the candidate module separated from approval keys",
+      "semantic_encodings": [
+        "authority",
+        "identity"
+      ],
+      "object_before": "A replacement proposal resembles a finished module.",
+      "object_after": "The candidate module remains unable to approve or certify itself.",
+      "continuity_objects": [
+        "request token",
+        "authority gate",
+        "evidence ledger"
+      ],
+      "composition": "Candidate module centers while approval keys remain visibly external.",
+      "motion_curve": "Ease-in-out proposal transform; keys remain motionless.",
+      "camera_action": "Short reframe from proposal to separated keys.",
+      "animation_techniques": [
+        "ReplacementTransform",
+        "TransformFromCopy"
+      ],
+      "on_screen_text": [
+        "proposal",
+        "approval",
+        "certification"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "self-improvement authorization"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Noninheritance is an engineering rule proposed by the chapter, not a universal theorem about all AI systems."
+    },
+    {
+      "id": "b22",
+      "story_function": "failure",
+      "start_seconds": 172.205,
+      "end_seconds": 181.21,
+      "narration": "There is a cost. Interfaces can add latency, discard useful information, create attack surfaces, and turn fluid work brittle.",
+      "sync_anchor": "turn fluid work brittle",
+      "visual_purpose": "Represent the strongest practical objection inside the same visual world.",
+      "visual_action": "Add latency, information-loss, attack-surface, and brittleness weights to the explicit boundary rails.",
+      "attention_target": "the four costs weighing down explicit interfaces",
+      "semantic_encodings": [
+        "quantity",
+        "contrast"
+      ],
+      "object_before": "The governed route appears precise but costless.",
+      "object_after": "Four explicit costs become visible on the governed route.",
+      "continuity_objects": [
+        "request token",
+        "authority gate",
+        "evidence ledger"
+      ],
+      "composition": "Cost weights attach directly to their responsible interfaces rather than a detached list.",
+      "motion_curve": "Weights arrive with increasing stagger but no impact bounce.",
+      "camera_action": "Static wide view to preserve the cost-bearing interfaces.",
+      "animation_techniques": [
+        "ValueTracker",
+        "LaggedStart"
+      ],
+      "on_screen_text": [
+        "latency",
+        "information loss",
+        "attack surface",
+        "brittleness"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "interface cost"
+      ],
+      "claim_role": "counterexample",
+      "evidence_boundary": "Noninheritance is an engineering rule proposed by the chapter, not a universal theorem about all AI systems."
+    },
+    {
+      "id": "b23",
+      "story_function": "comparison",
+      "start_seconds": 181.21,
+      "end_seconds": 190.315,
+      "narration": "So the stack does not win by definition. Compare a strong monolith, a lightweight wrapper, and a governed stack under matched conditions.",
+      "sync_anchor": "governed stack under matched conditions",
+      "visual_purpose": "Establish a fair system-level comparison rather than declaring a winner.",
+      "visual_action": "Place monolith, wrapper, and stack racers on one shared task track with matched equipment and no highlighted winner.",
+      "attention_target": "the shared conditions across all three racers",
+      "semantic_encodings": [
+        "contrast",
+        "relation"
+      ],
+      "object_before": "Three architectures lack a common comparison frame.",
+      "object_after": "Monolith, wrapper, and stack share matched task conditions.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Three racers align on one baseline under one matched-condition header.",
+      "motion_curve": "Matched linear starts and synchronized stops.",
+      "camera_action": "Static matched race frame.",
+      "animation_techniques": [
+        "MoveAlongPath",
+        "AnimationGroup"
+      ],
+      "on_screen_text": [
+        "monolith",
+        "wrapper",
+        "stack",
+        "matched conditions"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "matched comparison"
+      ],
+      "claim_role": "evidence",
+      "evidence_boundary": "Fair-comparison design requirement only; no system wins and no metric result is asserted."
+    },
+    {
+      "id": "b24",
+      "story_function": "comparison",
+      "start_seconds": 190.315,
+      "end_seconds": 200.42,
+      "narration": "Count useful completion, unsafe effects, false refusals, recovery, latency, and governance overhead together. Safety theater is not success.",
+      "sync_anchor": "Safety theater is not success",
+      "visual_purpose": "Show that safety, usefulness, and cost must be measured jointly.",
+      "visual_action": "Advance six metric counters together so useful completion cannot hide unsafe effects or governance cost.",
+      "attention_target": "the six counters moving as one evaluation surface",
+      "semantic_encodings": [
+        "quantity",
+        "causality"
+      ],
+      "object_before": "One useful-completion score could dominate the judgment.",
+      "object_after": "Six counters jointly represent usefulness, harm, recovery, latency, and cost.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "Metric counters surround the racers but preserve their shared coordinate system.",
+      "motion_curve": "Continuous linear counters with one coordinated settle.",
+      "camera_action": "Static overview; counters animate locally.",
+      "animation_techniques": [
+        "ValueTracker",
+        "AnimationGroup"
+      ],
+      "on_screen_text": [
+        "useful",
+        "unsafe",
+        "refusal",
+        "recovery",
+        "latency",
+        "cost"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "joint governed metrics"
+      ],
+      "claim_role": "evidence",
+      "evidence_boundary": "Fair-comparison design requirement only; no system wins and no metric result is asserted."
+    },
+    {
+      "id": "b25",
+      "story_function": "evidence_boundary",
+      "start_seconds": 200.42,
+      "end_seconds": 211.3,
+      "narration": "This chapter does not contain that result. Its claim remains an argument. Finite checks do not prove deployment, safety, efficiency, transfer, or ASI.",
+      "sync_anchor": "claim remains an argument",
+      "visual_purpose": "State the chapter's current evidence ceiling without visual overclaim.",
+      "visual_action": "Enclose the local trace inside a double evidence boundary while deployment, safety, efficiency, transfer, and ASI remain outside.",
+      "attention_target": "the double rule around the finite local trace",
+      "semantic_encodings": [
+        "containment",
+        "uncertainty"
+      ],
+      "object_before": "The complete visual world could be mistaken for evidence of broad success.",
+      "object_after": "The local trace is bounded inside argument support and broad claims stay outside.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The finite trace stays centered inside the proof boundary with excluded claims outside.",
+      "motion_curve": "Slow ease-in double-rule construction and no camera movement.",
+      "camera_action": "Static evidence-boundary frame.",
+      "animation_techniques": [
+        "Create",
+        "FadeIn"
+      ],
+      "on_screen_text": [
+        "CURRENT SUPPORT: ARGUMENT",
+        "not deployment • safety • efficiency • transfer • ASI"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "evidence ceiling"
+      ],
+      "claim_role": "boundary",
+      "evidence_boundary": "Current support remains argument; no deployment, safety, efficiency, transfer, AGI, or ASI claim."
+    },
+    {
+      "id": "b26",
+      "story_function": "payoff",
+      "start_seconds": 211.3,
+      "end_seconds": 221.655,
+      "narration": "Return to the delete command. The model supplied capability. The stack made authority, evidence, residuals, and recovery separately inspectable.",
+      "sync_anchor": "separately inspectable",
+      "visual_purpose": "Resolve the opening question with the complete governed system.",
+      "visual_action": "Return to the opening delete token and reveal authority key, observer lens, residual loop, and rollback thread around the model.",
+      "attention_target": "the opening token surrounded by separately inspectable controls",
+      "semantic_encodings": [
+        "identity",
+        "causality"
+      ],
+      "object_before": "The opening delete question remains unresolved at system scale.",
+      "object_after": "The model remains capable while authority, evidence, residual, and recovery stay separate.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The opening files return to center with four distinct controls forming a readable orbit.",
+      "motion_curve": "Ease-out return and restrained sequential control reveal.",
+      "camera_action": "Return to the opening framing at a slightly wider scale.",
+      "animation_techniques": [
+        "ReplacementTransform",
+        "Circumscribe"
+      ],
+      "on_screen_text": [
+        "capability",
+        "authority",
+        "evidence",
+        "residual",
+        "recovery"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "inspectable stack"
+      ],
+      "claim_role": "mechanism",
+      "evidence_boundary": "Derivative explanation only; it changes no support state and authorizes no publication."
+    },
+    {
+      "id": "b27",
+      "story_function": "handoff",
+      "start_seconds": 221.655,
+      "end_seconds": 230.23,
+      "narration": "Next, ask whether those boundaries improve useful work per total governed cost. That is the Efficient ASI Hypothesis.",
+      "sync_anchor": "Efficient ASI Hypothesis",
+      "visual_purpose": "Hand the same case into the efficiency question.",
+      "visual_action": "Carry the request token into a total-governed-cost balance that becomes the next chapter title.",
+      "attention_target": "the total-governed-cost balance and next-chapter label",
+      "semantic_encodings": [
+        "quantity",
+        "sequence"
+      ],
+      "object_before": "The inspected stack surrounds the resolved delete case.",
+      "object_after": "The request becomes the next chapter's governed-efficiency question.",
+      "continuity_objects": [
+        "request token",
+        "model core",
+        "authority gate",
+        "observer lens",
+        "evidence ledger",
+        "rollback thread"
+      ],
+      "composition": "The cost balance occupies center as the route narrows into the next title.",
+      "motion_curve": "Ease-in-out balance motion ending in a stable title lock.",
+      "camera_action": "Short pan from resolved request to the cost balance.",
+      "animation_techniques": [
+        "TransformMatchingShapes",
+        "MoveAlongPath"
+      ],
+      "on_screen_text": [
+        "NEXT",
+        "useful work / total governed cost"
+      ],
+      "settle_seconds": 0.35,
+      "hold_purpose": "Let the causal state change register before the next narrated idea.",
+      "new_concepts": [
+        "governed efficiency"
+      ],
+      "claim_role": "connective",
+      "evidence_boundary": "Derivative explanation only; it changes no support state and authorizes no publication."
+    }
+  ]
+}

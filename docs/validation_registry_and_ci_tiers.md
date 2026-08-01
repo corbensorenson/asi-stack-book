@@ -3,7 +3,7 @@
 Last updated: 2026-07-10
 
 `validation/registry.json` is the sole declarative inventory and execution plan
-for repository validation. It currently contains 443 ordered units and 2,990
+for repository validation. It currently contains 444 ordered units and 3,016
 required artifacts.
 Every unit names an execution tier, validation class, input/output contract,
 claim scope, negative-control status, and prohibited inference.
