@@ -2398,7 +2398,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:open-weight-release-and-post-release-control.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite open-weight decision may hand off only when artifact identity, irreversibility, comparator, fine-tuning state, residual owner, and post-release non-authority are explicit; no theorem authorizes release. | planned |
+| `lean:open-weight-release-and-post-release-control.admission_boundary` | `AsiStackProofs.OpenWeightReleaseReview` | A six-step finite review preserves accumulated artifact, access-alternative, frontier, derivative, distribution, and post-release non-authority obligations; a complete authored dossier reaches only a Project Theseus harmless release-case campaign, while 36 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Frontier expiry remains rejecting as time advances, and any positive public-copy count remains incompatible with universal recall under nondecreasing copies. Official lineage cannot recover universal copy control, and default evaluation cannot recover downstream safeguard state. No theorem authorizes release or establishes recall, telemetry, copy erasure, license enforcement, derivative safety, benefit, risk, support, transfer, or external effect. | implemented |
 
 ### AI Supply-Chain Integrity and Lifecycle Provenance
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 115 Lean modules, 1420 theorem declarations, 932 derived/decomposed, 188 direct/projection, 300 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 116 Lean modules, 1439 theorem declarations, 942 derived/decomposed, 193 direct/projection, 304 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

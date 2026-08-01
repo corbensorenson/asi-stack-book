@@ -4,7 +4,7 @@ chapter_id: "open-weight-release-and-post-release-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-31"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_international_ai_safety_report_2026"
   - "ext_openai_worst_case_open_weight_risks_2025"
@@ -25,7 +25,7 @@ open_evidence_gaps:
 | Exclusive job | govern the irreversible transition from controlled custody to unrestricted copying |
 | Claim label / support | Design rationale / `argument` |
 | Source state | passage-reviewed source notes |
-| Test state | release-dossier and mutation tests planned; no actual release authorized |
+| Test state | finite Lean review and independent 36-mutation consumer implemented; no actual release or ecosystem campaign authorized |
 
 Source loading state for open-weight material: review covers current risk synthesis, malicious adaptation,
 weight-security proposals, and scaling-policy comparisons. Those findings do
@@ -492,18 +492,44 @@ weights. This remains a research target until prospective natural release
 cases, competent derivative elicitation, independent review, and post-release
 measurement establish their bounded effects.
 
-Planned formalization hook: `lean:open-weight-release-and-post-release-control.admission_boundary` remains a process-contract target; it does not claim an implemented theorem.
+### Formalization hooks
+
+`lean:open-weight-release-and-post-release-control.admission_boundary` is
+implemented in `AsiStackProofs.OpenWeightReleaseReview` through 19 theorem
+declarations. A six-step lifecycle preserves exact-artifact,
+access-alternative, frontier, derivative-review, distribution-review, and
+post-release non-authority obligations. One complete authored dossier reaches
+only a Project Theseus harmless release-case campaign.
+
+The independent consumer re-encodes 36 admission-axis mutations. Every one
+blocks readiness and receives its exact repair or refusal disposition. The
+public-copy irreversibility result proves that a positive modeled copy count
+cannot become universally recallable while later copy counts are no smaller;
+frontier expiry remains rejecting as time advances. The official-lineage
+impossibility result proves that official signer and digest data cannot recover
+universal downstream copy control. The default-evaluation impossibility result
+proves that one default score cannot recover whether a downstream derivative
+removed safeguards.
+
+Every dossier field is authored and trusted. This finite-record model does not
+prove that any authored field or downstream ecosystem assumption is true. No theorem publishes or authorizes
+weights, observes a real derivative ecosystem, or establishes recall,
+telemetry, copy erasure, license enforcement, derivative safety, competent
+malicious fine-tuning, benefit, marginal or cumulative risk, support, release,
+transfer, or external effect. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
 
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Artifact identity | Reject a release record missing exact weight, tokenizer, config, code, license, or evaluation identity. | planned |
-| Adversarial derivative gate | Reject default-only evaluation and failed malicious-fine-tuning positive controls. | planned |
-| Comparator expiry | Reopen analysis when the accessible frontier or fine-tuning method changes. | planned |
-| False-recall mutation | Reject any record that claims unrestricted copies were revoked or fully patched. | planned |
-| Distribution completeness | Require benefit, risk, access, affected-party, and cumulative-effect fields. | planned |
-| No-promotion control | Ensure a complete dossier does not itself authorize release or promote support. | planned |
+| Artifact identity | Reject a release record missing exact weight, tokenizer, config, code, license, or evaluation identity. | implemented in Lean and independent fixture consumer |
+| Adversarial derivative gate | Reject default-only evaluation and failed malicious-fine-tuning positive controls. | implemented at the authored-record boundary; no derivative result |
+| Comparator expiry | Preserve frontier rejection as modeled time advances. | implemented arithmetic monotonicity result |
+| False-recall mutation | Reject universal recall, telemetry, copy-erasure, and license-kill-switch claims. | implemented in Lean and independent fixture consumer |
+| Distribution completeness | Require benefit, risk, access, affected-party, safeguard-portability, and independent-review fields. | implemented at the authored-record boundary; no benefit or risk result |
+| No-promotion control | Refuse release authorization and support promotion requests. | implemented; support remains `argument` |
+| Harmless release-case campaign | Compare retained custody, hosted, gated, reduced-artifact, and simulated-publication conditions with derivative and post-release controls. | assigned to Project Theseus; not run |
 
 ## Source crosswalk
 

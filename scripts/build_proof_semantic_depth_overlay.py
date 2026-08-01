@@ -266,6 +266,53 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
+    "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
+    "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",
+    "identical_default_evaluation_can_hide_opposite_derivative_state": "Two derivative states witness opposite safeguard states under identical default evaluation.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/OpenWeightReleaseReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed harmless dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 36 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 36 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 36 mutations into the lifecycle repair state.",
+    "expired_frontier_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired comparator frontier.",
+    "public_copy_irreversibility_is_monotone": "Natural-number order proves nondecreasing positive public copies remain incompatible with universal recall.",
+    "official_lineage_cannot_recover_universal_copy_control": "A same-lineage/opposite-control collision proves no lineage-only classifier is exact for every modeled ecosystem.",
+    "default_evaluation_cannot_recover_derivative_safeguard_state": "A same-default/opposite-derivative collision proves no default-evaluation-only classifier is exact for every modeled derivative.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/OpenWeightReleaseReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/open_weight_release_dossier.json"],
+        "classification_basis": ["a quantified mutation, arithmetic monotonicity, or non-identifiability result is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "simulation_eligibility_requires_admissible_dossier", "readiness_requires_artifact",
+    "readiness_requires_alternatives", "readiness_requires_derivative_review",
+    "readiness_requires_distribution_review", "readiness_requires_post_release_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/OpenWeightReleaseReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a universal finite lifecycle invariant or grouped necessity result constrains authored release-review state"],
+        "rationale": "The theorem constrains only the six-step authored review; it establishes no release merit, recall, safety, support, or authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -807,6 +854,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/MilitaryInteractionReview.lean": {
         "validate_military_interaction_review.py"
+    },
+    "lean/AsiStackProofs/OpenWeightReleaseReview.lean": {
+        "validate_open_weight_release_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

@@ -31,6 +31,7 @@ import AsiStackProofs.Deliberation
 import AsiStackProofs.DeliberationRefinement
 import AsiStackProofs.DangerousCapabilityReview
 import AsiStackProofs.MilitaryInteractionReview
+import AsiStackProofs.OpenWeightReleaseReview
 import AsiStackProofs.Efficiency
 import AsiStackProofs.EvidenceStates
 import AsiStackProofs.EvidenceTransitionRefinement

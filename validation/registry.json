@@ -3102,7 +3102,13 @@
     "scripts/register_military_interaction_review.py",
     "tests/fixtures/proof_models/military_interaction_dossier.json",
     "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
-    "evidence_quality/proof_model_dossiers/military-ai-autonomous-weapons-and-strategic-stability.md"
+    "evidence_quality/proof_model_dossiers/military-ai-autonomous-weapons-and-strategic-stability.md",
+    "lean/AsiStackProofs/OpenWeightReleaseReview.lean",
+    "scripts/validate_open_weight_release_review.py",
+    "scripts/register_open_weight_release_review.py",
+    "tests/fixtures/proof_models/open_weight_release_dossier.json",
+    "chapters/open-weight-release-and-post-release-control.qmd",
+    "evidence_quality/proof_model_dossiers/open-weight-release-and-post-release-control.md"
   ],
   "units": [
     {
@@ -12060,7 +12066,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 308 implemented and 16 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, and Military Interaction Review refinements",
+        "324 current targets comprise 309 implemented and 15 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, and Open-Weight Release Review refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -17539,11 +17545,55 @@
       "prohibited_inference": "No theorem or consumer authorizes a weapon or establishes lawful use, meaningful human control in practice, escalation reduction, strategic stability, safety, support transition, release, transfer, external effect, deployment, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_staged_non_operational_dossier_mutation_monotonicity_two_impossibility_and_no_authorization_boundary_reviewed"
+    },
+    {
+      "id": "validate_open_weight_release_review.py:453",
+      "order": 453,
+      "script": "validate_open_weight_release_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "One six-step authored open-weight review, 36 admission axes, two monotonicity laws, two non-identifiability witness pairs, and exact canonical bindings.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/OpenWeightReleaseReview.lean",
+        "scripts/validate_open_weight_release_review.py",
+        "scripts/register_open_weight_release_review.py",
+        "tests/fixtures/proof_models/open_weight_release_dossier.json",
+        "chapters/open-weight-release-and-post-release-control.qmd",
+        "evidence_quality/proof_model_dossiers/open-weight-release-and-post-release-control.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently re-encode all dossier predicates and repairs, reject 36 mutations, check frontier and public-copy monotonicity, reconstruct both information-loss collisions, and preserve the no-release boundary.",
+      "output_assertions": [
+        "36/36 exact repairs",
+        "19 Lean declarations",
+        "frontier expiry remains rejecting",
+        "positive public copies remain incompatible with universal recall",
+        "official lineage cannot recover copy control",
+        "default evaluation cannot recover derivative safeguard state",
+        "support effect none"
+      ],
+      "claim_scope": "Finite authored release-review semantics, two arithmetic order properties, and two bounded non-identifiability results only.",
+      "negative_controls": "validator_owned_thirty_six_admission_mutations_two_monotonicity_controls_and_two_collision_pairs",
+      "negative_control_cases": [
+        "artifact omission",
+        "comparator or frontier omission",
+        "derivative-test omission",
+        "distribution omission",
+        "false recall or telemetry claim",
+        "release or support request",
+        "lineage collision",
+        "default-evaluation collision"
+      ],
+      "prohibited_inference": "No theorem authorizes release or establishes recall, telemetry, copy erasure, license enforcement, derivative safety, benefit, risk, support, transfer, deployment, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_staged_open_weight_lifecycle_mutation_monotonicity_impossibility_and_no_release_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3058,
-    "unit_count": 452
+    "required_artifact_count": 3064,
+    "unit_count": 453
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

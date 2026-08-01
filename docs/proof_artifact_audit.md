@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 308, "planned": 16} |
-| Triage class counts | {"formal-invariant": 308, "process-contract": 16} |
-| Lean modules referenced | 81 |
+| Manifest status counts | {"implemented": 309, "planned": 15} |
+| Triage class counts | {"formal-invariant": 309, "process-contract": 15} |
+| Lean modules referenced | 82 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -81,6 +81,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | 1 | 22 | 0 | 11 | 1 |
 | `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
+| `lean/AsiStackProofs/OpenWeightReleaseReview.lean` | 1 | 19 | 0 | 23 | 5 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 27 | 0 | 11 | 8 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
@@ -171,7 +172,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 1 | 0 | 0 |
 | `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
-| `open-weight-release-and-post-release-control` | 1 | 0 | 0 | 0 |
+| `open-weight-release-and-post-release-control` | 1 | 1 | 0 | 0 |
 | `perception-sensor-fusion-and-observation-trust` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 1 | 0 | 0 | 0 |
@@ -285,7 +286,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:model_weight_custody.lifecycle.unobserved_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.release_authority_laundering` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.irreversible_distribution_record` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open-weight-release-and-post-release-control.admission_boundary` | `open-weight-release-and-post-release-control` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:open-weight-release-and-post-release-control.admission_boundary` | `open-weight-release-and-post-release-control` | `AsiStackProofs.OpenWeightReleaseReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.missing_lineage.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |

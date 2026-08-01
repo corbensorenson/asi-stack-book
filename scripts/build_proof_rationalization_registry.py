@@ -165,6 +165,30 @@ or external effect follows. Chapter support remains `argument` and
 The independent consumer checks 45 exact mutation dispositions, three arithmetic monotonicity controls, and two impossibility results.
 
 """,
+    "open-weight-release-and-post-release-control": """## Current refinement
+
+`AsiStackProofs.OpenWeightReleaseReview` implements a reachable six-step finite
+review over exact artifact identity, access alternatives, frontier freshness,
+derivative stress coverage, benefit/risk distribution, independent review,
+lineage, incidents, patch semantics, residual ownership, and explicit
+post-release non-authority. One complete dossier reaches only a Project Theseus
+harmless release-case campaign. All 36 admission-axis mutations reject
+readiness and receive exact repair or refusal dispositions.
+
+Two arithmetic results preserve frontier-expiry rejection as time advances and
+show that a positive public-copy count remains incompatible with universal
+recall under nondecreasing copies. Two impossibility results show that official
+lineage cannot recover universal copy control and default evaluation cannot
+recover downstream safeguard state. The independent consumer reconstructs the
+mutation, monotonicity, and collision surfaces from a harmless fixture.
+Authored fields remain assumptions: no release, recall, telemetry, copy
+erasure, license enforcement, derivative safety, benefit, risk, support,
+transfer, or external effect follows. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
+The independent consumer checks 36 exact mutation dispositions, two arithmetic monotonicity controls, and two impossibility results.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

@@ -664,13 +664,14 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "open-weight-release-and-post-release-control": {
-        "reviewed_sha256": "49277832c38dc07dbd03c8689fba0e623505aa5a1439ea1e05a56737244eeca4",
-        "reviewed_date": "2026-07-31",
+        "reviewed_sha256": "ce241d33e2547997fcc7c020011dbcc1c16437f5bfd632490c79da161a373097",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish access options, artifact and derivative identity, competent malicious adaptation, accessible-frontier expiry, marginal and cumulative risk, benefit distribution, controls after copying, and irreversible incident residuals",
             "provider, policy, security, consensus, and international-report sources remain scoped comparators and do not become a categorical release decision or independent local evaluation",
+            "the formalization is restricted to trusted authored fields, exact repairs, arithmetic monotonicity, and information-loss countermodels; it authorizes no release and reports no ecosystem behavior",
             "the chapter preserves fair rescue, exact artifact custody, ecosystem uncertainty, non-adoption, derivative exposure, and argument-only support",
         ],
         "support_state_effect": "none",
