@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 123 |
-| Theorem declarations classified | 1642 |
-| Direct/projection-style theorem declarations | 282 |
-| Derived/decomposed theorem declarations | 1028 |
-| Unknown or mixed theorem declarations | 332 |
+| Lean modules scanned | 124 |
+| Theorem declarations classified | 1674 |
+| Direct/projection-style theorem declarations | 297 |
+| Derived/decomposed theorem declarations | 1041 |
+| Unknown or mixed theorem declarations | 336 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -119,7 +119,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 8 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance | 7 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -161,6 +161,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | societal-resilience-and-misuse-defense | 1 | 32 | 15 | 13 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 15 | 1 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 9 | 1 | 4 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -1654,6 +1655,38 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_native_kv_parity_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_physical_feasibility_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `close_all_covers_every_finite_incident_path` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `complete_dossier_reaches_only_theseus_resilience_exercise` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `exercise_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `expired_response_mandate_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `identical_provider_signals_can_hide_opposite_population_resilience` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `identical_response_speed_can_hide_opposite_equitable_remedy` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `incident_change_invalidates_resilience_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `jurisdiction_change_invalidates_resilience_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `local_safeguard_does_not_establish_cross_organization_defense` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `missing_participant_forces_institutional_review` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `population_change_invalidates_resilience_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `protocol_change_invalidates_resilience_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `provider_signals_cannot_recover_population_resilience` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `provider_takedown_does_not_establish_population_resilience` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `rapid_response_does_not_establish_lawful_equitable_remedy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_adaptation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_defense` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_identity_and_coordination` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_recovery` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `readiness_requires_remedy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `response_speed_cannot_recover_lawful_equitable_remedy` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `single_organization_mandate_cannot_authorize_distinct_organization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `tabletop_completion_does_not_establish_live_recovery` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `uncovered_population_shortfall_persists_when_population_grows` | derived_or_decomposed | no | uses omega |
+| `lean/AsiStackProofs/SocietalResilienceReview.lean` | `unresolved_path_shortfall_persists_when_more_paths_are_discovered` | derived_or_decomposed | no | uses omega |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expanding_replacement_without_grant_rejected` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expansion_without_grant_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `captured_evaluator_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |

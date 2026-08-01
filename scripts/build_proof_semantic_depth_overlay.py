@@ -689,6 +689,52 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite societal-resilience admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_resilience_exercise": "The closed dossier reaches only Project Theseus synthetic exercise eligibility, not population resilience, recovery, remedy, support, or release.",
+    "identical_provider_signals_can_hide_opposite_population_resilience": "Two cases witness opposite affected-population recovery under identical classifier, takedown, and provider-restoration signals.",
+    "identical_response_speed_can_hide_opposite_equitable_remedy": "Two cases witness opposite false-intervention remedy under identical acknowledgement, containment, and tabletop signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SocietalResilienceReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed resilience dossier or collision pair witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "single_organization_mandate_cannot_authorize_distinct_organization": "The organization-identity conjunct excludes mandate use by every distinct organization.",
+    "close_all_covers_every_finite_incident_path": "Structural induction proves every member of an arbitrary finite incident-path list is closed by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 45 resilience-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 45 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 45 mutations into the lifecycle repair state.",
+    "expired_response_mandate_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired response mandate.",
+    "uncovered_population_shortfall_persists_when_population_grows": "Natural-number order preserves a coverage shortfall when the affected population grows.",
+    "unresolved_path_shortfall_persists_when_more_paths_are_discovered": "Natural-number order preserves unresolved-path rejection when additional paths are discovered.",
+    "incident_change_invalidates_resilience_receipt": "The incident-identity conjunct rejects every receipt presented for a different incident.",
+    "population_change_invalidates_resilience_receipt": "The population-digest conjunct rejects every receipt presented for a different affected population.",
+    "jurisdiction_change_invalidates_resilience_receipt": "The jurisdiction conjunct rejects every receipt presented in a different jurisdiction.",
+    "protocol_change_invalidates_resilience_receipt": "The protocol conjunct rejects every receipt presented under a different protocol.",
+    "provider_signals_cannot_recover_population_resilience": "A same-provider/opposite-recovery collision proves no provider-signal classifier is exact for every modeled population case.",
+    "response_speed_cannot_recover_lawful_equitable_remedy": "A same-speed/opposite-remedy collision proves no response-signal classifier is exact for every modeled remedy case.",
+    "missing_participant_forces_institutional_review": "The consumer refinement maps an incomplete participant census to an Institutional Legitimacy rejection.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SocietalResilienceReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/societal_resilience_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, authority or scope invalidation, non-identifiability result, or rejecting consumer refinement is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "provider_takedown_does_not_establish_population_resilience", "tabletop_completion_does_not_establish_live_recovery",
+    "rapid_response_does_not_establish_lawful_equitable_remedy", "local_safeguard_does_not_establish_cross_organization_defense",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant", "exercise_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity_and_coordination", "readiness_requires_defense", "readiness_requires_recovery",
+    "readiness_requires_remedy", "readiness_requires_adaptation", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SocietalResilienceReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored resilience state"],
+        "rationale": "The theorem constrains only the encoded societal-resilience review; it establishes no population resilience, lawful coordination, recovery, remedy efficacy, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -1254,6 +1300,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/InstitutionalLegitimacyReview.lean": {
         "validate_institutional_legitimacy_review.py"
+    },
+    "lean/AsiStackProofs/SocietalResilienceReview.lean": {
+        "validate_societal_resilience_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

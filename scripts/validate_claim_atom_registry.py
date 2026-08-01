@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import copy
 import hashlib
 import json
 import re
@@ -105,7 +104,13 @@ def expected_role_counts(structure: dict[str, Any]) -> Counter[str]:
     return result
 
 
-def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
+def errors(
+    data: dict[str, Any],
+    *,
+    check_generation: bool = True,
+    check_schemas: bool = True,
+    accepted_states: dict[str, str] | None = None,
+) -> list[str]:
     out: list[str] = []
     registry = data["registry"]
     queue = data["queue"]
@@ -113,20 +118,21 @@ def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
     review_packets = data["review_packets"]
     status = data["status"]
     structure = data["structure"]
-    for name, value, schema in (
-        ("registry", registry, data["registry_schema"]),
-        ("queue", queue, data["queue_schema"]),
-        ("reviews", reviews, data["reviews_schema"]),
-    ):
-        try:
-            jsonschema.Draft202012Validator(schema).validate(value)
-        except jsonschema.ValidationError as exc:
-            out.append(f"{name} schema: {exc.message}")
-    for path, packet in review_packets.items():
-        try:
-            jsonschema.Draft202012Validator(data["chapter_review_schema"]).validate(packet)
-        except jsonschema.ValidationError as exc:
-            out.append(f"{path} schema: {exc.message}")
+    if check_schemas:
+        for name, value, schema in (
+            ("registry", registry, data["registry_schema"]),
+            ("queue", queue, data["queue_schema"]),
+            ("reviews", reviews, data["reviews_schema"]),
+        ):
+            try:
+                jsonschema.Draft202012Validator(schema).validate(value)
+            except jsonschema.ValidationError as exc:
+                out.append(f"{name} schema: {exc.message}")
+        for path, packet in review_packets.items():
+            try:
+                jsonschema.Draft202012Validator(data["chapter_review_schema"]).validate(packet)
+            except jsonschema.ValidationError as exc:
+                out.append(f"{path} schema: {exc.message}")
 
     chapter_rows = chapters(structure)
     chapter_ids = [row["id"] for row in chapter_rows]
@@ -165,7 +171,8 @@ def errors(data: dict[str, Any], *, check_generation: bool = True) -> list[str]:
     completed_sweeps = 0
     atoms_by_chapter: dict[str, list[dict[str, Any]]] = {chapter_id: [] for chapter_id in chapter_ids}
     candidates_by_chapter: dict[str, list[dict[str, Any]]] = {chapter_id: [] for chapter_id in chapter_ids}
-    accepted_states = accepted_upward_states()
+    if accepted_states is None:
+        accepted_states = accepted_upward_states()
     for atom in atoms:
         atoms_by_chapter.setdefault(str(atom.get("chapter_id")), []).append(atom)
     for candidate in candidates:
@@ -343,81 +350,135 @@ def snapshot() -> dict[str, Any]:
     }
 
 
+def generation_errors() -> list[str]:
+    out: list[str] = []
+    try:
+        expected_registry, expected_queue, expected_report, expected_dossiers = build()
+    except Exception as exc:  # noqa: BLE001 - exact diagnostic belongs in validator output
+        return [f"claim-atom regeneration failed: {exc}"]
+    if load(REGISTRY_PATH) != expected_registry or load(QUEUE_PATH) != expected_queue:
+        out.append("generated registry or queue is stale")
+    report_path = ROOT / "docs/claim_atom_registry.md"
+    if not report_path.exists() or report_path.read_text(encoding="utf-8") != expected_report:
+        out.append("readable claim registry is stale")
+    for chapter_id, body in expected_dossiers.items():
+        path = ROOT / "evidence_quality/claim_dossiers" / f"{chapter_id}.md"
+        if not path.exists() or path.read_text(encoding="utf-8") != body:
+            out.append(f"{chapter_id}: claim dossier is stale")
+            break
+    return out
+
+
 def main() -> None:
+    failures = generation_errors()
     base = snapshot()
-    failures = errors(base)
-    mutations: list[tuple[str, dict[str, Any]]] = []
+    accepted_states = accepted_upward_states()
+    failures.extend(
+        errors(
+            base,
+            check_generation=False,
+            accepted_states=accepted_states,
+        )
+    )
 
-    missing_core = copy.deepcopy(base)
-    missing_core["registry"]["atoms"] = [row for row in missing_core["registry"]["atoms"] if row["atom_id"] != "asi-is-a-stack-not-a-model.core"]
-    mutations.append(("missing core atom", missing_core))
+    def check_negative(label: str) -> None:
+        if not errors(
+            base,
+            check_generation=False,
+            check_schemas=False,
+            accepted_states=accepted_states,
+        ):
+            failures.append(f"negative mutation accepted: {label}")
 
-    duplicate_owner = copy.deepcopy(base)
-    duplicate_owner["registry"]["atoms"][0]["owner"] = "the-efficient-asi-hypothesis"
-    mutations.append(("owner laundering", duplicate_owner))
+    atoms = base["registry"]["atoms"]
+    base["registry"]["atoms"] = [row for row in atoms if row["atom_id"] != "asi-is-a-stack-not-a-model.core"]
+    check_negative("missing core atom")
+    base["registry"]["atoms"] = atoms
 
-    blank_falsifier = copy.deepcopy(base)
-    blank_falsifier["registry"]["atoms"][0]["falsifier"] = ""
-    mutations.append(("blank falsifier", blank_falsifier))
+    first_atom = atoms[0]
+    old_owner = first_atom["owner"]
+    first_atom["owner"] = "the-efficient-asi-hypothesis"
+    check_negative("owner laundering")
+    first_atom["owner"] = old_owner
 
-    tautology = copy.deepcopy(base)
-    tautology["registry"]["atoms"][0]["falsifier"] = tautology["registry"]["atoms"][0]["proposition"]
-    mutations.append(("tautological falsifier", tautology))
+    old_falsifier = first_atom["falsifier"]
+    first_atom["falsifier"] = ""
+    check_negative("blank falsifier")
+    first_atom["falsifier"] = first_atom["proposition"]
+    check_negative("tautological falsifier")
+    first_atom["falsifier"] = old_falsifier
 
-    lane = copy.deepcopy(base)
-    lane["registry"]["atoms"][0]["required_lanes"].append(copy.deepcopy(lane["registry"]["atoms"][0]["required_lanes"][0]))
-    mutations.append(("duplicate lane", lane))
+    first_atom["required_lanes"].append(dict(first_atom["required_lanes"][0]))
+    check_negative("duplicate lane")
+    first_atom["required_lanes"].pop()
 
-    promotion = copy.deepcopy(base)
-    promotion["registry"]["atoms"][0]["support_state"] = "empirical-test-backed"
-    mutations.append(("unsupported P1 promotion", promotion))
+    old_support = first_atom["support_state"]
+    first_atom["support_state"] = "empirical-test-backed"
+    check_negative("unsupported P1 promotion")
+    first_atom["support_state"] = old_support
 
-    false_completion = copy.deepcopy(base)
-    false_completion["registry"]["atoms"][0]["review_state"] = "machine_candidate"
-    false_completion["registry"]["summary"]["review_state_counts"]["semantically_reviewed"] -= 1
-    false_completion["registry"]["summary"]["review_state_counts"]["machine_candidate"] = 1
-    false_completion["status"]["p1_claim_atom_program"]["structured_machine_candidate_count"] = 1
-    mutations.append(("completion with candidates", false_completion))
+    old_review_state = first_atom["review_state"]
+    review_counts = base["registry"]["summary"]["review_state_counts"]
+    old_candidate_count = review_counts.get("machine_candidate")
+    old_status_candidate_count = base["status"]["p1_claim_atom_program"]["structured_machine_candidate_count"]
+    first_atom["review_state"] = "machine_candidate"
+    review_counts["semantically_reviewed"] -= 1
+    review_counts["machine_candidate"] = 1
+    base["status"]["p1_claim_atom_program"]["structured_machine_candidate_count"] = 1
+    check_negative("completion with candidates")
+    first_atom["review_state"] = old_review_state
+    review_counts["semantically_reviewed"] += 1
+    if old_candidate_count is None:
+        review_counts.pop("machine_candidate", None)
+    else:
+        review_counts["machine_candidate"] = old_candidate_count
+    base["status"]["p1_claim_atom_program"]["structured_machine_candidate_count"] = old_status_candidate_count
 
-    missing_prose = copy.deepcopy(base)
-    missing_prose["queue"]["candidates"] = missing_prose["queue"]["candidates"][:-1]
-    mutations.append(("missing prose candidate", missing_prose))
+    prose_candidates = base["queue"]["candidates"]
+    base["queue"]["candidates"] = prose_candidates[:-1]
+    check_negative("missing prose candidate")
+    base["queue"]["candidates"] = prose_candidates
 
-    scope = copy.deepcopy(base)
     scope_index = next(
         (
             index
-            for index, row in enumerate(scope["registry"]["atoms"])
+            for index, row in enumerate(atoms)
             if row.get("review_state") == "machine_candidate"
         ),
         0,
     )
-    scope["registry"]["atoms"][scope_index]["review_state"] = "semantically_reviewed"
-    scope["registry"]["atoms"][scope_index]["scope"]["population"] = "semantic_review_required"
-    mutations.append(("reviewed scope placeholder", scope))
+    scope_atom = atoms[scope_index]
+    old_scope_state = scope_atom["review_state"]
+    old_population = scope_atom["scope"]["population"]
+    scope_atom["review_state"] = "semantically_reviewed"
+    scope_atom["scope"]["population"] = "semantic_review_required"
+    check_negative("reviewed scope placeholder")
+    scope_atom["review_state"] = old_scope_state
+    scope_atom["scope"]["population"] = old_population
 
-    summary = copy.deepcopy(base)
-    summary["registry"]["summary"]["atom_count"] += 1
-    mutations.append(("summary inflation", summary))
+    base["registry"]["summary"]["atom_count"] += 1
+    check_negative("summary inflation")
+    base["registry"]["summary"]["atom_count"] -= 1
 
-    support = copy.deepcopy(base)
-    support["status"]["p1_claim_atom_program"]["support_state_effect"] = "promotion"
-    mutations.append(("support-effect invention", support))
+    program = base["status"]["p1_claim_atom_program"]
+    old_effect = program["support_state_effect"]
+    program["support_state_effect"] = "promotion"
+    check_negative("support-effect invention")
+    program["support_state_effect"] = old_effect
 
     lineage_path = "evidence_quality/claim_reviews/artifact-graphs-audit-logs-and-replay.json"
-    lineage_hash = copy.deepcopy(base)
-    lineage_hash["review_packets"][lineage_path]["prose_review_lineage"][0]["retired_sentence"] += " changed"
-    mutations.append(("retired prose hash laundering", lineage_hash))
+    lineage = base["review_packets"][lineage_path]["prose_review_lineage"][0]
+    old_sentence = lineage["retired_sentence"]
+    lineage["retired_sentence"] += " changed"
+    check_negative("retired prose hash laundering")
+    lineage["retired_sentence"] = old_sentence
 
-    lineage_replacement = copy.deepcopy(base)
-    lineage_replacement["review_packets"][lineage_path]["prose_review_lineage"][0]["replacement_candidate_ids"] = [
+    old_replacements = lineage["replacement_candidate_ids"]
+    lineage["replacement_candidate_ids"] = [
         "artifact-graphs-audit-logs-and-replay.prose.000000000000"
     ]
-    mutations.append(("noncurrent prose lineage replacement", lineage_replacement))
-
-    for label, candidate in mutations:
-        if not errors(candidate, check_generation=False):
-            failures.append(f"negative mutation accepted: {label}")
+    check_negative("noncurrent prose lineage replacement")
+    lineage["replacement_candidate_ids"] = old_replacements
     if failures:
         raise SystemExit("Claim-atom registry validation failed:\n - " + "\n - ".join(failures))
     print(

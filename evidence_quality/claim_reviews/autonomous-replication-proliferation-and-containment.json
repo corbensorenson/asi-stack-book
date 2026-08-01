@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/autonomous-replication-proliferation-and-containment.qmd",
     "structured_atoms_reviewed": 32,
-    "prose_candidates_adjudicated": 47,
+    "prose_candidates_adjudicated": 48,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the bounded replication-containment Lean refinement on 2026-08-01. The formalization is scoped to authored records, exact mutation routes, authority and receipt boundaries, finite descendant quarantine, information-loss countermodels, and a rejecting consumer. No new support-bearing atom, support transition, efficacy inference, deployment decision, or real-world containment claim was introduced."
   },
@@ -152,10 +152,6 @@
       "state": "duplicate_of_atom",
       "rationale": "Semantically reviewed after the W3 depth repair as a chapter-specific refinement of `autonomous-replication-proliferation-and-containment.core`; it creates no separate support-bearing atom.",
       "target_atom_id": "autonomous-replication-proliferation-and-containment.core"
-    },
-    "autonomous-replication-proliferation-and-containment.prose.7dbf823163b7": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference."
     },
     "autonomous-replication-proliferation-and-containment.prose.7f475d2c895c": {
       "state": "duplicate_of_atom",
@@ -321,6 +317,15 @@
       "state": "duplicate_of_atom",
       "rationale": "Round-21 exact-digest semantic review maps this `elicitation-evaluator-competence` proposition to the existing owner atom `autonomous-replication-proliferation-and-containment.minimum.001`; it creates no additional atom and does not change support state.",
       "target_atom_id": "autonomous-replication-proliferation-and-containment.minimum.001"
+    },
+    "autonomous-replication-proliferation-and-containment.prose.903f14309351": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrap fragment, lifecycle caption, or rendered claim label whose complete material obligation is already represented by the chapter's structured atoms."
+    },
+    "autonomous-replication-proliferation-and-containment.prose.00ce50cab993": {
+      "state": "duplicate_of_atom",
+      "rationale": "Semantically reviewed as a prose explanation or refinement of `autonomous-replication-proliferation-and-containment.beyond_sota.001` within the chapter's declared scope; it creates no separate support-bearing atom.",
+      "target_atom_id": "autonomous-replication-proliferation-and-containment.beyond_sota.001"
     }
   },
   "non_claims": [

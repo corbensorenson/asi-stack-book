@@ -36,6 +36,7 @@ import AsiStackProofs.CommunicationInfluenceReview
 import AsiStackProofs.ContentAuthenticityReview
 import AsiStackProofs.ReplicationContainmentReview
 import AsiStackProofs.InstitutionalLegitimacyReview
+import AsiStackProofs.SocietalResilienceReview
 import AsiStackProofs.ObjectiveLeaseGovernance
 import AsiStackProofs.AdversarialModelSecurity
 import AsiStackProofs.ProtectedComputationReview

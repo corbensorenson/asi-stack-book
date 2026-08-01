@@ -569,14 +569,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "societal-resilience-and-misuse-defense": {
-        "reviewed_sha256": "e1df999b3a234884fc3a54f34bf851f7ccb42fd5d3061fbeca942634e006caae",
-        "reviewed_date": "2026-07-27",
+        "reviewed_sha256": "daae642364909b1ce34f2b9b8ec6a5b88be078182b8cf0f123c503a00b6dd82d",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "all eight named concepts explain resist, absorb, recover, and adapt mechanisms across distinct harm families",
             "federated reporting and recovery limits are explicit and rights-preserving",
             "the chapter states domain-specific failures, non-claims, source limits, and owner handoffs",
+            "the formalization remains restricted to authored dossier admissibility, exact mutation routes, organization authority, finite incident-path closure, receipt invalidation, information-loss countermodels, and a rejecting Institutional Legitimacy bridge",
         ],
         "support_state_effect": "none",
     },
