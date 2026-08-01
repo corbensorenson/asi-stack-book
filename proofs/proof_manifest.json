@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 315,
-    "planned": 9
+    "implemented": 316,
+    "planned": 8
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -607,11 +607,11 @@
       "chapter_id": "institutions-international-coordination-and-public-legitimacy",
       "chapter_title": "Institutions, International Coordination, and Public Legitimacy",
       "tag": "lean:institutions-international-coordination-and-public-legitimacy.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Institutions, International Coordination, and Public Legitimacy record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "status": "planned",
+      "module": "AsiStackProofs.InstitutionalLegitimacyReview",
+      "formal_target": "A reachable eight-transition institutional review admits only dossiers with exact identity, jurisdiction-scoped mandate, affected-public inclusion, testable coordination, enforcement and remedy custody, and no legitimacy or universal-authority claim; procedural participation cannot determine representation and recorded commitments cannot determine effective enforcement.",
+      "status": "implemented",
       "outline_line": 1739,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/InstitutionalLegitimacyReview.lean"
     },
     {
       "chapter_id": "societal-resilience-and-misuse-defense",

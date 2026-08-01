@@ -3,8 +3,8 @@ title: "Institutions, International Coordination, and Public Legitimacy"
 chapter_id: "institutions-international-coordination-and-public-legitimacy"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
-draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+draft_maturity: "v0.4 concept-complete manuscript with bounded Lean refinement"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_un_global_digital_compact_2024"
   - "ext_council_europe_ai_convention_2024"
@@ -26,8 +26,8 @@ open_evidence_gaps:
 | Chapter ID | `institutions-international-coordination-and-public-legitimacy` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Manuscript maturity | v0.4 concept-complete manuscript with bounded Lean refinement |
+| Last updated | 2026-08-01 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -321,16 +321,44 @@ The mature layer lets institutions coordinate shared AI risks while remaining co
 
 No current result establishes that endpoint. Institutional support remains bounded until adversarial cases demonstrate verification access, enforceable remedy, capacity across unequal jurisdictions, and durable public contestability.
 
+## Formalization hooks
+
+`AsiStackProofs.InstitutionalLegitimacyReview` supplies 32 theorem declarations
+over an eight-transition review and 45 admission-axis mutations. The model
+separates identity, jurisdiction-scoped mandate, affected publics,
+cross-border commitments, institutional performance, remedy, and explicit
+non-authority. It proves that signed agreements, bounded legal findings,
+consultation, and technical conformance cannot substitute for implementation,
+legitimacy, representative mandate, or public authority.
+
+The refinement also rejects use of a local mandate in a distinct jurisdiction,
+proves finite affected-public inclusion by induction, preserves expiry and
+population shortfalls under adverse monotone change, and invalidates receipts
+when jurisdiction, instrument, population, or protocol changes. A
+representation impossibility result shows that identical participation signals
+can conceal opposite standing for excluded publics. An effective-enforcement
+impossibility result shows that identical agreement, duty, and verifier signals
+can conceal opposite remedy reach. The Governance Rights consumer routes an
+incomplete affected-public census to review.
+
+These theorems check authored record semantics, not institutional reality.
+Chapter support remains `argument`. They do not prove lawful authority,
+representativeness, implementation, enforcement, remedy efficacy, public
+legitimacy, or geopolitical stability. Those claims require a Project Theseus
+institutional tabletop and later independent institutional evidence.
+
 ## Codex test plan
 
 | Test | Purpose | Status |
 |---|---|---|
-| Mandate and jurisdiction | Reject a technically competent actor that lacks authority over the affected domain or population. | planned |
-| Participation and standing | Inject excluded affected parties and verify notice alone cannot satisfy the route. | planned |
-| Verification asymmetry | Test whether less-resourced parties can inspect, challenge, and appeal the evidence used against them. | planned |
-| Defection and remedy | Exercise noncompliance, capture, suspension, compensation, renegotiation, and lawful exit. | planned |
+| Lean lifecycle and exact repair | Compile the eight-transition model and reject all 45 single-axis mutations with exact repair or refusal. | passed locally |
+| Mandate and jurisdiction | Prove a jurisdiction-bound mandate cannot authorize a distinct jurisdiction. | passed locally |
+| Participation and standing | Prove finite inclusion and that procedural signals cannot determine representative standing. | passed locally |
+| Commitment and enforcement | Prove commitment signals cannot determine whether enforcement and remedy are effective. | passed locally |
+| Verification asymmetry | Test whether less-resourced parties can inspect, challenge, and appeal the evidence used against them. | Project Theseus required |
+| Defection and remedy | Exercise noncompliance, capture, suspension, compensation, renegotiation, and lawful exit. | Project Theseus required |
 
-Planned formalization route: `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` covers only the finite admission record for institutions international coordination and public legitimacy; it cannot establish whether institutions international coordination and public legitimacy works safely or transfers.
+Implemented formalization route: `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` covers only the bounded lifecycle, jurisdiction, affected-public, receipt, collision, and rejecting-consumer properties above; it cannot establish lawful authority, public legitimacy, effective coordination, or transfer.
 
 ## Source crosswalk
 

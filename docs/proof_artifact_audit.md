@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 315, "planned": 9} |
-| Triage class counts | {"formal-invariant": 315, "process-contract": 9} |
-| Lean modules referenced | 88 |
+| Manifest status counts | {"implemented": 316, "planned": 8} |
+| Triage class counts | {"formal-invariant": 316, "process-contract": 8} |
+| Lean modules referenced | 89 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -71,6 +71,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | 1 | 21 | 0 | 4 | 1 |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
+| `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | 1 | 32 | 0 | 32 | 8 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 12 | 0 | 8 | 2 |
@@ -164,7 +165,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 2 | 2 | 0 | 0 |
-| `institutions-international-coordination-and-public-legitimacy` | 1 | 0 | 0 | 0 |
+| `institutions-international-coordination-and-public-legitimacy` | 1 | 1 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
 | `inter-stack-protocols-identity-and-economic-exchange` | 9 | 9 | 0 | 0 |
@@ -264,7 +265,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `governed-objective-formation-value-learning-and-goal-integrity` | `AsiStackProofs.ObjectiveLeaseGovernance` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `institutions-international-coordination-and-public-legitimacy` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `institutions-international-coordination-and-public-legitimacy` | `AsiStackProofs.InstitutionalLegitimacyReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:societal-resilience-and-misuse-defense.admission_boundary` | `societal-resilience-and-misuse-defense` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:scf.field_identity.operational_invariant` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scf.field_identity.failure_blocks_promotion` | `stable-capability-fields` | `AsiStackProofs.StableCapabilityFields` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -644,6 +644,51 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite institutional admissibility predicate.",
+    "complete_dossier_reaches_only_institutional_tabletop": "The closed dossier reaches only Project Theseus institutional-tabletop eligibility, not authority, legitimacy, enforcement, support, or release.",
+    "identical_participation_signals_can_hide_opposite_representation": "Two cases witness opposite excluded-public standing under identical consultation, notice, and comment-count signals.",
+    "identical_commitment_signals_can_hide_opposite_enforcement": "Two cases witness opposite remedy reach under identical agreement, published-duty, and named-verifier signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/InstitutionalLegitimacyReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed institutional dossier or collision pair witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "local_mandate_cannot_authorize_distinct_jurisdiction": "The jurisdiction-identity conjunct excludes use of a local mandate in every distinct jurisdiction.",
+    "include_all_covers_every_finite_affected_public": "Structural induction proves every member of an arbitrary finite affected-public list is included by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 45 institutional-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 45 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 45 mutations into the lifecycle repair state.",
+    "expired_mandate_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired institutional mandate.",
+    "omitted_public_shortfall_persists_when_population_grows": "Natural-number order preserves an inclusion shortfall when the required population grows.",
+    "jurisdiction_change_invalidates_institutional_receipt": "The jurisdiction conjunct rejects every receipt presented in a different jurisdiction.",
+    "instrument_change_invalidates_institutional_receipt": "The instrument conjunct rejects every receipt presented for a different institutional instrument.",
+    "population_change_invalidates_institutional_receipt": "The population-digest conjunct rejects every receipt presented for a different affected population.",
+    "protocol_change_invalidates_institutional_receipt": "The protocol conjunct rejects every receipt presented under a different protocol.",
+    "participation_signals_cannot_recover_representation": "A same-procedure/opposite-standing collision proves no participation-signal classifier is exact for every modeled representation case.",
+    "commitment_signals_cannot_recover_effective_enforcement": "A same-commitment/opposite-remedy collision proves no commitment-signal classifier is exact for every modeled enforcement case.",
+    "excluded_public_forces_governance_rights_review": "The consumer refinement maps an incomplete affected-public census to a protected-right removal and Governance Rights review.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/InstitutionalLegitimacyReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/institutional_legitimacy_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, jurisdiction or scope invalidation, non-identifiability result, or rejecting consumer refinement is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "agreement_does_not_establish_effective_implementation", "legal_compliance_does_not_establish_public_legitimacy",
+    "consultation_does_not_establish_representative_mandate", "technical_conformance_does_not_establish_public_authority",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant", "tabletop_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_mandate", "readiness_requires_publics", "readiness_requires_coordination",
+    "readiness_requires_performance", "readiness_requires_remedy", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/InstitutionalLegitimacyReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored institutional state"],
+        "rationale": "The theorem constrains only the encoded institutional review; it establishes no lawful authority, representation, enforcement, legitimacy, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -1206,6 +1251,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/ReplicationContainmentReview.lean": {
         "validate_replication_containment_review.py"
+    },
+    "lean/AsiStackProofs/InstitutionalLegitimacyReview.lean": {
+        "validate_institutional_legitimacy_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

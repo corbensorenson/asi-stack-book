@@ -694,14 +694,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "institutions-international-coordination-and-public-legitimacy": {
-        "reviewed_sha256": "1650ae6f5ef4f1ebcfa2ff3392d5fe82fb8d3fab9b2a5da44f0251bfbc06e357",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "096dcf01a032690b74a86e9a4fc08699860d70d5e91705e3483457a62a84c7d4",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts keep mandate, affected publics, scientific and legal crosswalks, verification access, cross-border enforcement, capacity, capture and emergency expiry, and remedy or competition distinct",
             "UN, Council of Europe, EU, legal-alignment, hardware, OECD, and ICRC sources remain institution-, jurisdiction-, mandate-, and time-scoped comparators rather than compliance or legitimacy proof",
             "the chapter preserves excluded populations, conflicting jurisdiction, assessor dependence, withdrawal, financing, appeal, irreversible harm, and argument-only support",
+            "the formalization is restricted to authored dossier admissibility, exact mutation routes, jurisdiction scope, finite affected-public inclusion, receipt invalidation, information-loss countermodels, and a rejecting Governance Rights bridge",
         ],
         "support_state_effect": "none",
     },

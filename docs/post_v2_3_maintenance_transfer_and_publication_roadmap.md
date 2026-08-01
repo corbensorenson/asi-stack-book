@@ -1317,9 +1317,9 @@ The dated 2026-08-01 Failure Modes, Governed Operations, Learned Objective
 Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI
 Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, and Military Interaction Review expansions reopen
 formal growth without rewriting that history. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies 1,610 live theorem
-declarations across 121 theorem-bearing modules and maps them to 75 active
-semantic-owner chapters. The 391 added declarations are bound to the
+`proofs/proof_semantic_depth_overlay.json` classifies 1,642 live theorem
+declarations across 122 theorem-bearing modules and maps them to 76 active
+semantic-owner chapters. The 423 added declarations are bound to the
 five-stage failure-recovery model, the eight-stage governed-operations
 lifecycle, the learned-objective non-identification witness and eight-stage
 integrity lifecycle, and the declared-dependence pair classifier plus
@@ -1354,11 +1354,15 @@ They also include Replication Containment Review with 52 exact mutation
 repairs, parent-lease noninheritance, finite descendant quarantine, receipt
 invalidation, end-to-end and global-containment non-identifiability, and a
 rejecting governed-operations bridge.
+They also include Institutional Legitimacy Review with 45 exact mutation
+repairs, jurisdiction and affected-public scope, receipt invalidation,
+representation and enforcement non-identifiability, and a rejecting
+Governance Rights bridge.
 Independently encoded validators preserve exact no-support
 boundaries across every added model.
 
-The live semantic-depth distribution is 26 P0 record-shape results, 824 P1
-finite-route results, 126 P2 reachability/nonvacuity results, 445 P3
+The live semantic-depth distribution is 26 P0 record-shape results, 838 P1
+finite-route results, 130 P2 reachability/nonvacuity results, 459 P3
 implementation-refinement results, 99 P4 cross-component-safety results, 90 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
