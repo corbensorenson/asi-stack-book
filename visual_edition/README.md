@@ -129,15 +129,16 @@ captions-on, phone/large-screen, headphone/speaker, and random-frame passes and
 requires at least 4/5 independently for clarity, composition, motion, sync,
 continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
-follow, and chapters 13–84 cannot resume upload until the revised method
-passes. Existing unlisted embeds remain historical review previews, not
-publication-quality acceptance.
+followed, and chapters 13–84 were held until the revised method passed. Chapter
+13 is now through picture-and-sound lock under that method; chapters 14–84
+remain gated behind the same production chain. Existing unlisted embeds remain
+historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 72 planned chapters and twelve chapters
-through both animatic and picture-and-sound lock. The first twelve replacements
-use chapter-specific persistent worlds, audio-derived beat timing, exhaustive
-caption-boundary review, and independent per-dimension scores without average
-laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
+The generation-2 ledger currently has 71 planned chapters and thirteen chapters
+through both animatic and picture-and-sound lock. The first thirteen
+replacements use chapter-specific persistent worlds, audio-derived beat timing,
+exhaustive caption-boundary review, and independent per-dimension scores without
+average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
 turns one synthetic transfer episode into a worked distinction among nominal
 approval, informed review, effective intervention, and meaningful control; it
 tests an eight-condition control envelope, exercises the safe-hold path, and
@@ -147,8 +148,11 @@ animatics remain preserved as generation history. Chapter 12,
 housing-payment suspension through a noncompensating four-plane review,
 inaccessible-appeal failure, bounded pre-effect correction, self-weakening
 constitutional update, descendant-handle preservation, and explicitly finite
-proof envelope. All twelve delivery masters
-remain candidates only: no generation-2 video has passed release-candidate,
+proof envelope. Chapter 13, `inner-alignment-mesa-optimization-and-learned-objective-integrity`,
+uses an identical-trace sorting-lab puzzle, a sealed stripe intervention,
+camera-aware policy test, four evidence lanes, mitigation transfer, and a
+finite objective-integrity boundary. All thirteen delivery masters remain
+candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
 
