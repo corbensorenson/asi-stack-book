@@ -52,7 +52,7 @@
       "no internal ASR omission spanning more than eight expected content tokens",
       "complete beginning and ending coverage",
       "finite mono samples with no digital clipping",
-      "three-to-six-minute visual-edition duration",
+      "minimum three-minute visual-edition duration with six minutes treated as a soft pacing target rather than an acceptance cap",
       "caption timing derived from the exact narration receipt",
       "final A/V codec, geometry, frame-rate, audio, and duration checks"
     ]
@@ -67,7 +67,7 @@
     "caption_builder": "scripts/build_visual_captions_from_narration_receipt.py",
     "caption_builder_sha256": "b5166f5017e1a9cddd01880eea5eb518eaf7e20bc26f152dcfd389939f8c8612",
     "narration_validator": "scripts/validate_visual_narration.py",
-    "narration_validator_sha256": "9079290cad5ef875b0547722b706f859ebb76571b7371eedd8ce3906e018887b",
+    "narration_validator_sha256": "70544caf54109032652efbc8229c8cf1196ac9790b5e69b1577670e6f8034f11",
     "visual_master_validator": "scripts/validate_visual_master.py",
     "visual_master_validator_sha256": "058dcdd7ce45f1c8941b82b996014488c28e63db1c02e809bde828d3bed40ae5"
   },

@@ -22,7 +22,7 @@
     "teaching_promise": {"type": "string", "minLength": 12},
     "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "source_commit": {"type": "string", "minLength": 7},
-    "target_duration_seconds": {"type": "number", "minimum": 180, "maximum": 360},
+    "target_duration_seconds": {"type": "number", "minimum": 180},
     "story": {
       "type": "object",
       "required": ["concrete_case", "opening_question", "payoff", "transfer"],
@@ -83,6 +83,7 @@
         "pacing_arc": {"type": "string", "minLength": 8},
         "music_policy": {"type": "string", "minLength": 8},
         "sound_effect_policy": {"type": "string", "minLength": 8},
+        "duration_rationale": {"type": "string", "minLength": 24},
         "review_devices": {
           "type": "array",
           "minItems": 2,

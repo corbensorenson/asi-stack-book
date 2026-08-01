@@ -73,8 +73,8 @@ of unrelated slides.
 
 ## Active-viewing prompts
 
-Prompts should make the viewer use the model being taught. In a 3–6 minute
-video, one or two strong prediction prompts are usually better than frequent
+Prompts should make the viewer use the model being taught. In a normally
+3–6-minute video, one or two strong prediction prompts are usually better than frequent
 decorative questions.
 
 For each prompt:

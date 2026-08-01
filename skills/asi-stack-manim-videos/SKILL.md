@@ -84,8 +84,14 @@ complementary picture; do not make viewers read the same sentence they hear.
 
 ## Write for speech and pictures
 
-- Target 3–6 minutes and usually 350–700 spoken words. Prefer a shorter video
-  that lands one idea over a dense synopsis.
+- Treat 3–6 minutes and roughly 350–700 spoken words as the default pacing
+  range, not a hard cap. Prefer a shorter video that lands one idea over a
+  dense synopsis, but allow a longer chapter-specific explanation when cutting
+  it would collapse load-bearing distinctions, evidence boundaries, or a
+  coherent worked trace. Record the reason in
+  `audio_direction.duration_rationale` whenever final audio exceeds six
+  minutes, then judge pacing, synchronized visual change, and viewer load at
+  the actual duration.
 - Target roughly 110–145 spoken words per minute after synthesis. Do not speed
   up an overlong script to make it fit.
 - Use active voice, concrete nouns, specific verbs, and one idea per sentence.

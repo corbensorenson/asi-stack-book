@@ -291,7 +291,14 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
         errors.append("target_duration_seconds must be positive")
         duration = 1.0
     elif not 180 <= duration <= 360:
-        warnings.append("target duration falls outside the normal 3–6 minute visual-abstract range")
+        warnings.append("target duration falls outside the preferred 3–6 minute visual-abstract range")
+    if isinstance(duration, (int, float)) and not isinstance(duration, bool) and duration > 360:
+        audio_direction = plan.get("audio_direction")
+        rationale = audio_direction.get("duration_rationale") if isinstance(audio_direction, dict) else None
+        if not isinstance(rationale, str) or len(rationale.strip()) < 24:
+            errors.append(
+                "audio_direction.duration_rationale must explain why a video above the soft six-minute target improves the teaching result"
+            )
 
     for brief_name, fields in BRIEF_FIELDS.items():
         brief = plan.get(brief_name)
@@ -503,7 +510,7 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
         warnings.append(
             f"semantic beat density is {beat_rate:.2f}/min; inspect pacing against the usual 8–14/min range"
         )
-    if beat_rate < 5 or beat_rate > 20:
+    if beat_rate < 3 or beat_rate > 20:
         errors.append(f"semantic beat density of {beat_rate:.2f}/min is an extreme pacing outlier")
     if len(techniques) < 4:
         warnings.append(

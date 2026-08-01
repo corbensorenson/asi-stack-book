@@ -2,8 +2,10 @@
 
 This directory is the tracked source and accountability boundary for P7.3.
 The canonical book remains the Quarto manuscript. The visual edition projects
-each chapter into a three-to-six-minute Manim visual abstract without changing
-the chapter's claim label, support state, maximum inference, or release scope.
+each chapter into a Manim visual abstract, normally targeting three to six
+minutes while allowing justified longer treatments when clarity requires them,
+without changing the chapter's claim label, support state, maximum inference,
+or release scope.
 
 ## Tracked
 

@@ -249,7 +249,7 @@ def main() -> None:
         ),
         "audio_digest_matches_receipt": sha256(audio_path) == receipt["output_sha256"],
         "duration_matches_receipt": abs(duration - receipt["duration_seconds"]) <= 0.001,
-        "duration_within_visual_edition_contract": 180 <= duration <= 360,
+        "duration_within_visual_edition_contract": duration >= 180,
         "sample_rate_matches_receipt": sample_rate == receipt["sample_rate"],
         "mono": audio.shape[1] == 1,
         "finite_samples": bool(np.isfinite(audio).all()),
@@ -285,6 +285,18 @@ def main() -> None:
         "audio_path": args.audio,
         "audio_sha256": sha256(audio_path),
         "duration_seconds": round(duration, 6),
+        "duration_guidance": {
+            "preferred_minimum_seconds": 180,
+            "soft_target_maximum_seconds": 360,
+            "position": (
+                "below_preferred_range"
+                if duration < 180
+                else "above_soft_target"
+                if duration > 360
+                else "within_preferred_range"
+            ),
+            "over_soft_target_seconds": round(max(0.0, duration - 360), 6),
+        },
         "sample_rate": sample_rate,
         "channels": audio.shape[1],
         "peak": round(peak, 8),
