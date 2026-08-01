@@ -4,7 +4,7 @@ chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five primary external records cover multimodal taxonomy, shared representations, natural corruptions, adversarial cross-channel effects, and integrated vision-language-action systems. All results remain source-reported. |
-| Test state | Claim-bearing campaign specified; no task, sensor stream, corruption, model, or evaluator run. |
+| Test state | Correlated-evidence and observation-custody model formalized in Lean; claim-bearing sensor campaign remains unexecuted. |
 
 ## Drafting guardrail
 
@@ -466,14 +466,43 @@ deadlines, and method-specific rescue. This is a **research target, not a
 current result**: no such joint campaign has passed, and the present work does
 not establish superior fusion or observation trust.
 
+## Formalization hooks
+
+The implemented target
+`lean:perception.correlated_agreement_no_independent_promotion` classifies two
+eligible channel records by hypothesis agreement and an authored dependence
+root. It proves that agreeing channels with the same root count as one
+independent evidence item, while agreeing channels with distinct roots count as
+two. A third witness preserves disagreement instead of averaging it into
+agreement. This is selective evidence accounting, not a rule that rejects every
+multi-channel observation.
+
+The companion target `lean:perception.observation_review_lifecycle` models
+captured, identities-bound, dependence-bound, pair-reviewed, use-bound,
+handed-off, and invalidated stages. Six accepted transitions preserve exact
+observation, channel-set, calibration, clock/pose, dependence, hypothesis,
+consumer, residual, and protocol identity. They reject replay, substituted
+identity, correlated count inflation, erased disagreement, unbounded use,
+truth or authority laundering, and stale descendants. Rejected events preserve
+the entire state; accepted events cannot assign support or external authority.
+
+| Formal result | Exact meaning | Result |
+|---|---|---|
+| Correlated agreement | Two usable, agreeing records with one declared root have independent-evidence count one. | proved in Lean |
+| Independent agreement | Two usable, agreeing records with distinct declared roots have count two. | proved in Lean |
+| Disagreement preservation | Two usable records with different hypotheses remain disagreement with no agreement promotion. | proved in Lean |
+| Observation lifecycle | The canonical six-transition path reaches invalidation with one handoff, one invalidation, and zero support or authority assignments. | proved in Lean and independently replayed |
+| Rejecting controls | Wrong stage, identity substitution, replay, missing custody, inflated counts, erased disagreement, unbounded use, overclaim, and stale descendants preserve rejected state. | 46/46 lifecycle mutations and 13/13 pair controls rejected |
+
+These theorems trust the authored channel records and dependence-root labels.
+The formal model does not establish real sensor dependence, calibration, causal grounding,
+model competence, corruption detection, clock accuracy, or evaluator quality.
+The classifier does not prove environmental truth, robustness, physical safety,
+or useful fusion, and it cannot authorize a controller or promote the chapter
+claim. The sensor campaign and system integration remain executable or Project
+Theseus work; support remains `argument`.
+
 ## Codex test plan
-
-### Planned formalization
-
-`lean:perception.correlated_agreement_no_independent_promotion` will model a
-declared dependence relation and prevent correlated agreement from increasing
-the finite record's independent-evidence count. It will not prove dependence,
-calibration, observation truth, robustness, causal grounding, or safety.
 
 | Test | Purpose | Status |
 |---|---|---|

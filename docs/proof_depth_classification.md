@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 323 |
+| Proof targets in manifest | 324 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1256 |
-| Direct/projection-style theorem declarations | 178 |
-| Derived/decomposed theorem declarations | 847 |
-| Unknown or mixed theorem declarations | 231 |
+| Theorem declarations classified | 1272 |
+| Direct/projection-style theorem declarations | 183 |
+| Derived/decomposed theorem declarations | 854 |
+| Unknown or mixed theorem declarations | 235 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -114,7 +114,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, dangerous-capability-domains-and-misuse-uplift, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, military-ai-autonomous-weapons-and-strategic-stability, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 18 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
@@ -816,6 +816,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `stale_attestation_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `undisclosed_verifier_dependencies_require_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `unobserved_load_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_agreement_no_independent_promotion` | derived_or_decomposed | no | uses left, right, rw |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_cannot_satisfy_two_item_use_request` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_witness_counts_one_independent_item` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `disagreement_witness_is_not_collapsed_into_agreement` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_agreement_with_distinct_roots_is_independent` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_agreement_with_same_root_is_correlated` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_disagreement_is_preserved` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `environmental_truth_overclaim_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `erased_disagreement_blocks_pair_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `full_observation_lifecycle_reaches_invalidated_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `independent_pair_witness_counts_two_independent_items` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `inflated_correlated_evidence_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `stale_descendants_block_invalidation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `candidate_cannot_launder_admission_authority` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `complete_candidate_reaches_governor_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `erased_failure_history_requires_archive_repair` | derived_or_decomposed | no | uses simp, unfold |

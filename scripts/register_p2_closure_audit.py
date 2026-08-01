@@ -44,7 +44,7 @@ def main() -> None:
             "output_assertions": [
                 "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
                 "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-                "323 current targets comprise 298 implemented and 25 planned, including the consumer-owned Failure Modes, Governed Operations, and Learned Objective Integrity lifecycle refinements",
+                "324 current targets comprise 300 implemented and 24 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, and Observation Trust refinements",
                 "the thirty-four richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
                 "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
                 "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement",

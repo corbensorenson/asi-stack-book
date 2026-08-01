@@ -10,10 +10,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 323 |
-| Manifest status counts | {"implemented": 298, "planned": 25} |
-| Triage class counts | {"formal-invariant": 305, "process-contract": 18} |
-| Lean modules referenced | 75 |
+| Proof targets audited | 324 |
+| Manifest status counts | {"implemented": 300, "planned": 24} |
+| Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
+| Lean modules referenced | 76 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -74,6 +74,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 27 | 0 | 11 | 8 |
@@ -166,7 +167,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `open-weight-release-and-post-release-control` | 1 | 0 | 0 | 0 |
-| `perception-sensor-fusion-and-observation-trust` | 1 | 0 | 0 | 0 |
+| `perception-sensor-fusion-and-observation-trust` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 1 | 0 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
@@ -304,7 +305,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:command.semantic_interface.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:command.semantic_interface.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:command.semantic_interface.field_confidence_route` | `intent-to-execution-contracts` | `AsiStackProofs.CommandSemanticRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:perception.correlated_agreement_no_independent_promotion` | `perception-sensor-fusion-and-observation-trust` | `AsiStackProofs.ObservationTrust` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:perception.correlated_agreement_no_independent_promotion` | `perception-sensor-fusion-and-observation-trust` | `AsiStackProofs.ObservationTrust` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:perception.observation_review_lifecycle` | `perception-sensor-fusion-and-observation-trust` | `AsiStackProofs.ObservationTrust` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.operational_invariant` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:planning.control_layer.plan_graph_admission_route` | `planning-as-a-control-layer` | `AsiStackProofs.Planning` | triage ok; module ok; chapter tag ok; limitation ok |

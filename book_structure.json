@@ -7867,8 +7867,14 @@
             {
               "tag": "lean:perception.correlated_agreement_no_independent_promotion",
               "module": "AsiStackProofs.ObservationTrust",
-              "target": "A finite admission model refuses to promote correlated channel agreement as independent evidence.",
-              "status": "planned"
+              "target": "A finite pair classifier counts eligible agreeing channels with one declared dependence root as one independent evidence item, distinguishes eligible agreement with distinct roots, and preserves disagreement instead of collapsing it.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:perception.observation_review_lifecycle",
+              "module": "AsiStackProofs.ObservationTrust",
+              "target": "A seven-stage observation-review model preserves exact observation, channel, calibration, clock/pose, dependence, hypothesis, consumer, residual, and version identity; rejects inflated evidence, truth, support, and authority claims; and invalidates descendants after material change.",
+              "status": "implemented"
             }
           ],
           "draft_maturity": "integrated_argument_chapter",

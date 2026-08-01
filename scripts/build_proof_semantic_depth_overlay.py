@@ -66,6 +66,86 @@ STRONG_NAME_TERMS = (
 # the historical registry.  Each override is theorem-specific and records why
 # the older equivalence judgment is not sufficient for current retirement.
 CURRENT_SEMANTIC_OVERRIDES = {
+    "lean/AsiStackProofs/ObservationTrust.lean::eligible_agreement_with_same_root_is_correlated": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal branch derivation unfolds eligibility, hypothesis agreement, and declared-root equality"
+        ],
+        "rationale": (
+            "The theorem derives the correlated branch for arbitrary eligible channel records "
+            "under explicit same-hypothesis and same-root premises; it is not a direct field projection."
+        ),
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::declared_same_root_agreement_counts_one": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal evidence-count consequence follows from the correlated branch derivation"
+        ],
+        "rationale": (
+            "The theorem derives count one for arbitrary eligible same-root agreement in the finite model; "
+            "the authored root remains an assumption rather than discovered sensor dependence."
+        ),
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::eligible_agreement_with_distinct_roots_is_independent": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal branch derivation unfolds eligibility, agreement, and declared-root inequality"
+        ],
+        "rationale": (
+            "The theorem derives the independent-agreement branch under explicit distinct-root premises; "
+            "it does not establish that the declared roots are causally independent."
+        ),
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::correlated_pair_witness_counts_one_independent_item": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:correlated_pair_witness_counts_one_independent_item"
+        ],
+        "classification_basis": [
+            "concrete eligible same-root pair witnesses the correlated branch and count-one outcome"
+        ],
+        "rationale": "The closed authored pair is a bounded nonvacuity witness for correlated agreement.",
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::independent_pair_witness_counts_two_independent_items": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:independent_pair_witness_counts_two_independent_items"
+        ],
+        "classification_basis": [
+            "concrete eligible distinct-root pair witnesses the independent branch and count-two outcome"
+        ],
+        "rationale": "The closed authored pair proves the classifier is selective rather than a blanket hold.",
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::disagreement_witness_is_not_collapsed_into_agreement": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:disagreement_witness_is_not_collapsed_into_agreement"
+        ],
+        "classification_basis": [
+            "concrete eligible conflicting pair witnesses the disagreement branch without agreement promotion"
+        ],
+        "rationale": "The closed authored pair is a bounded nonvacuity witness for preserved disagreement.",
+    },
+    "lean/AsiStackProofs/ObservationTrust.lean::full_observation_lifecycle_reaches_invalidated_state": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:full_observation_lifecycle_reaches_invalidated_state"
+        ],
+        "classification_basis": [
+            "six concrete accepted events witness reachability from capture through handoff to invalidation"
+        ],
+        "rationale": (
+            "The closed lifecycle witnesses six receipts, one handoff, one invalidation, and zero support "
+            "or external-authority assignments under the canonical packet assumptions."
+        ),
+    },
     "lean/AsiStackProofs/SearchSubstrates.lean::unproven_qualified_record_contradicts_noncore_invariant": {
         "disposition": "retain",
         "semantic_level": "P1",
@@ -497,6 +577,14 @@ def build() -> tuple[dict[str, Any], str]:
 
         inherited = inherited_disposition(old)
         semantic_override = CURRENT_SEMANTIC_OVERRIDES.get(theorem_id)
+        if semantic_override and semantic_override.get("witness_refs"):
+            witness_refs = sorted(
+                set(str(item) for item in semantic_override["witness_refs"])
+            )
+            witness_state = "bounded_local_witness_present"
+            witness_rationale = (
+                "A theorem-specific manual semantic review names the closed Lean witness."
+            )
         if semantic_override and semantic_override.get("semantic_level"):
             level = str(semantic_override["semantic_level"])
             basis = [str(item) for item in semantic_override["classification_basis"]]

@@ -21,9 +21,9 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 323
-CURRENT_IMPLEMENTED_TARGET_COUNT = 298
-CURRENT_PLANNED_TARGET_COUNT = 25
+CURRENT_PROOF_TARGET_COUNT = 324
+CURRENT_IMPLEMENTED_TARGET_COUNT = 300
+CURRENT_PLANNED_TARGET_COUNT = 24
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 3
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -38,7 +38,7 @@ CURRENT_EXPECTED_CLASSES = {
     "useful but too narrow": 159,
     "needs richer state-machine or review semantics": 34,
     "needs executable tests first": 38,
-    "needs empirical or baseline tests first": 20,
+    "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
@@ -106,7 +106,10 @@ PLANNED_CHAPTERS = (
     | NO_DEFERRAL_ADMITTED_CHAPTERS
     | TAXONOMY_MATURITY_ADMITTED_CHAPTERS
     | FULL_COVERAGE_ADMITTED_CHAPTERS
-) - {"inner-alignment-mesa-optimization-and-learned-objective-integrity"}
+) - {
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "perception-sensor-fusion-and-observation-trust",
+}
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
     "moral-uncertainty-and-value-conflict": 6,

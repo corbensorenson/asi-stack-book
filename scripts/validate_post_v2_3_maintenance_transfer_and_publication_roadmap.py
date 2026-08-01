@@ -1644,16 +1644,16 @@ def errors(data: dict) -> list[str]:
     c6_overlay_status = convergence.get("c6_current_semantic_overlay", {})
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
-        "P0": 25,
-        "P1": 683,
-        "P2": 25,
+        "P0": 26,
+        "P1": 694,
+        "P2": 29,
         "P3": 336,
         "P4": 97,
         "P5": 90,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 1256,
+        "retain": 1272,
     }
     if (
         c6_overlay_status.get("state")
@@ -1667,9 +1667,9 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 1256
-        or c6_overlay_status.get("theorem_bearing_module_count") != 108
-        or c6_overlay_status.get("semantic_owner_chapter_count") != 62
+        or c6_overlay_status.get("theorem_count") != 1272
+        or c6_overlay_status.get("theorem_bearing_module_count") != 109
+        or c6_overlay_status.get("semantic_owner_chapter_count") != 63
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
         or c6_overlay_status.get("disposition_counts")
         != expected_c6_dispositions
@@ -1686,9 +1686,9 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 1256
-        or c6_summary.get("current_module_count") != 108
-        or c6_summary.get("semantic_owner_chapter_count") != 62
+        c6_summary.get("current_theorem_count") != 1272
+        or c6_summary.get("current_module_count") != 109
+        or c6_summary.get("semantic_owner_chapter_count") != 63
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
         or c6_summary.get("disposition_counts") != expected_c6_dispositions
         or any(not row.get("mutation_refs") for row in c6_overlay.get("records", []))
@@ -2139,12 +2139,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (323, 113, 1256, 847, 178, 231)
+    expected_proof = (324, 113, 1272, 854, 183, 235)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 323:
-        out.append("proof manifest target count disagrees with the 298 implemented plus twenty-five current planned targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 298, "planned": 25}:
+    if data["proof_manifest"].get("proof_target_count") != 324:
+        out.append("proof manifest target count disagrees with the 300 implemented plus twenty-four current planned targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 300, "planned": 24}:
         out.append("taxonomy-completion proof targets altered the frozen implemented-proof denominator")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})

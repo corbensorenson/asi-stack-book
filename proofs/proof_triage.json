@@ -1034,11 +1034,21 @@
       "tag": "lean:perception.correlated_agreement_no_independent_promotion",
       "chapter_id": "perception-sensor-fusion-and-observation-trust",
       "module": "AsiStackProofs.ObservationTrust",
-      "formal_target": "A finite admission model refuses to promote correlated channel agreement as independent evidence.",
-      "target_status": "planned",
+      "formal_target": "A finite pair classifier counts eligible agreeing channels with one declared dependence root as one independent evidence item, distinguishes eligible agreement with distinct roots, and preserves disagreement instead of collapsing it.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Encode a declared channel-dependence relation and prove only that correlated agreement cannot increase the finite record's independent-evidence count. The theorem cannot establish real dependence, calibration, observation truth, robustness, causal grounding, or safety."
+      "rationale": "Implemented as a universal finite pair classifier plus correlated, independent, and disagreement witnesses. The independent consumer reproduces the pair semantics and lifecycle, rejects 46 exact-state lifecycle mutations and 13 pair-classification controls, and preserves support/effect authority at zero; declared roots do not establish real dependence or perception quality."
+    },
+    {
+      "tag": "lean:perception.observation_review_lifecycle",
+      "chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "module": "AsiStackProofs.ObservationTrust",
+      "formal_target": "A seven-stage observation-review model preserves exact observation, channel, calibration, clock/pose, dependence, hypothesis, consumer, residual, and version identity; rejects inflated evidence, truth, support, and authority claims; and invalidates descendants after material change.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as six reachable accepted transitions with exact rejected-state preservation, bounded use, one handoff, one descendant invalidation, no support or external-authority mutation, and an independently encoded consumer. Sensor dependence, calibration, environmental truth, robustness, and safety remain empirical obligations."
     },
     {
       "tag": "lean:planning.control_layer.operational_invariant",
@@ -3241,5 +3251,5 @@
       "rationale": "The planned boundary makes roles, lower-order rescues, the complete candidate denominator, qualification, cost, fallback, descendants, and contraction state explicit. It cannot establish irreducibility, representational usefulness, bounded primitive arity, general reasoning, safe online adaptation, or ASI."
     }
   ],
-  "record_count": 323
+  "record_count": 324
 }

@@ -723,14 +723,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "perception-sensor-fusion-and-observation-trust": {
-        "reviewed_sha256": "d2b199d42c24e39be96ab3fe1935f291f45569f91b1230f74bb2251fad3e5417",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "1a9b261b86109d0ba82fac5c8ec6a737f1df80a91c19bf27b2bd0ef037cc924f",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve task-relative observation need, exact sensor identity, time and pose, channel hypotheses, dependence, corruption, active sensing, and expiring observation authority as separate lifecycle obligations",
             "multimodal, ImageBind, corruption, sensor-fusion, robotics, and Platonic World Model sources remain survey, reported comparator, benchmark, attack-study, capability, or authorial lineage rather than local observation-trust evidence",
             "the chapter retains missingness, common-mode error, positive controls, active-sensing risk, safe hold, reconciliation, adjacent-owner authority, and argument-only support",
+            "the new Lean pair classifier and lifecycle are limited to authored dependence roots, finite evidence counts, exact record custody, rejecting controls, and descendant invalidation; they do not establish real dependence, calibration, environmental truth, robustness, physical safety, support, or authority",
         ],
         "support_state_effect": "none",
     },

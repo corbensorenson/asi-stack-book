@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-08-01 - Observation-trust dependence accounting
+
+- Added `AsiStackProofs.ObservationTrust`, a universal finite classifier over
+  eligible channel records and declared dependence roots. Same-root agreement
+  counts one independent evidence item, distinct-root agreement counts two,
+  and conflicting hypotheses remain disagreement; concrete Lean witnesses make
+  all three branches reachable.
+- Added a seven-stage observation-review lifecycle with exact observation,
+  channel, calibration, clock/pose, dependence, hypothesis, consumer,
+  residual, and version custody. Its independent validator accepts six ordered
+  transitions, rejects 46 lifecycle mutations with exact state preservation,
+  and passes 13 pair-classification controls.
+- Registered two canonical targets and integrated them into the perception
+  chapter, outline, manifest, proof dossier, adequacy review, and generated
+  proof surfaces. Authored dependence roots are assumptions: real dependence,
+  calibration, environmental truth, fusion quality, robustness, safety,
+  support, and authority remain unproved; chapter support remains `argument`.
+
 ## 2026-08-01 - Learned-objective integrity formalization
 
 - Added `AsiStackProofs.LearnedObjectiveIntegrity`, including a constructive
@@ -1509,7 +1527,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 323 proof targets, 113 Lean modules, 1256 theorem declarations, 847 derived/decomposed, 178 direct/projection, 231 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 324 proof targets, 113 Lean modules, 1272 theorem declarations, 854 derived/decomposed, 183 direct/projection, 235 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.
