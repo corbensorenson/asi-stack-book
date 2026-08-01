@@ -1,0 +1,259 @@
+{
+  "schema_version": "asi_stack.manim_beat_plan.v2",
+  "chapter_id": "human-intent-as-a-formal-input",
+  "teaching_promise": "The viewer can separate a desired outcome from permission, predict which assumptions may support reversible drafting, and identify when a material change must return to a versioned intent boundary before effects occur.",
+  "target_duration_seconds": 281.345,
+  "chapter_sha256": "11575bf4f47794b789b99a283a2fe08ebacaa6798dd2a575fe2a4ec6f7771572",
+  "source_commit": "34896ac60637b70c8aa38de11fb573a444bf4560",
+  "story": {
+    "concrete_case": "A requester asks an AI to use private launch notes, make a launch amazing, and publish it today; the system must help without silently inventing audience, spending, privacy, affected-party, or publication authority.",
+    "opening_question": "Should the system act, refuse, or ask about everything when a clear outcome arrives with unclear means?",
+    "payoff": "The same request still receives useful help, but a private draft crosses first while publication remains behind an explicit, corrigible contract.",
+    "transfer": "The next chapter tests whether the human assigned to a review gate can exercise meaningful control in practice."
+  },
+  "art_direction": {
+    "visual_thesis": "A fluent request becomes governable only when its visible outcome is separated from the shadow assumptions and authority that otherwise hitch a ride into action.",
+    "signature_image": "A bright request ribbon approaches a red publish button while five dark assumption tokens cling beneath it; an amber authority gate stops the cluster and a contract prism separates help from power.",
+    "visual_world": "One launch request travels through a persistent intake workbench: shadow assumptions attach, a decision fork pauses, a prism separates fields, a checksum and assumption diff are corrected, versioned contracts and receipts emerge, and a planner repeatedly meets an authority gate before a narrow publication lease is admitted.",
+    "persistent_objects": ["raw request ribbon", "shadow assumption tokens", "intent prism", "versioned contract", "authority gate", "intent receipt"],
+    "composition_rule": "Human expression enters from the left, interpretation and correction occur in the center, executable consumers sit to the right, authority gates form fixed vertical axes, and unresolved or forbidden state remains below rather than disappearing.",
+    "palette_rule": "Cyan marks expressed purpose, green marks bounded reversible help, amber marks authority and review, copper marks version and provenance, magenta marks blocked or unauthorized effects, and every state also uses shape, label, and endpoint.",
+    "typography_rule": "Use short object labels and state verbs only; spoken causal explanation never appears as paragraph text.",
+    "motion_character": "Purpose flows smoothly, hidden assumptions attach with slight drag, authority gates stop firmly, corrections snap into exact fields, and re-contracting loops visibly return toward the preserved request.",
+    "camera_rule": "Keep the request and gate in one stable wide world; reframe only to inspect the assumption diff, receipt, or downstream preservation chain.",
+    "surface_rule": "Flat dark workbench, crisp two- to four-pixel strokes, restrained glow only on the active request or accepted contract, no decorative particles or continuous drift.",
+    "ending_image": "The private draft reaches the requester while the publish token waits safely behind an explicit version-two contract; the original request remains visible above both."
+  },
+  "audio_direction": {
+    "narration_style": "Warm and conversational, curious at the opening choice, precise at authority boundaries, and quiet at the evidence ceiling.",
+    "pacing_arc": "Fast request and hidden-assumption reveal, deliberate prediction pause, steady contract construction, crisp gate failure and re-contract loop, then slower evaluation and evidence boundary before the payoff.",
+    "music_policy": "No music in generation-2 lock; narration and visual rhythm carry the explanation.",
+    "sound_effect_policy": "No effects in generation-2 lock; gate and state meaning remain fully visual and caption-independent.",
+    "review_devices": ["headphones", "earbuds", "laptop speakers", "phone speakers"]
+  },
+  "accessibility": {
+    "color_redundancy": "Outcome, default, authority, blocked effect, and residual states differ by labeled shape, position, border pattern, and endpoint in addition to color.",
+    "motion_redundancy": "Every split, block, correction, expiry, and re-contract loop ends in a stable labeled state that survives pause or muted playback.",
+    "integrated_description": "Narration names the request, attached assumptions, field split, correction, blocked publish step, version change, and final private-draft/publication separation.",
+    "caption_plan": "Captions derive from the exact final narration receipt and remain below the workbench's active mechanism region.",
+    "reduced_motion_assessment": "No flashes, shake, spin, parallax, vortex motion, continuous zoom, or rapid full-field movement; meaning persists at endpoints."
+  },
+  "beats": [
+    {
+      "id": "b01", "story_function": "hook", "start_seconds": 0.0, "end_seconds": 9.455,
+      "narration": "“Use my private launch notes, make this amazing, and publish it today.” The request sounds clear. A helpful system can already see the finish line.",
+      "sync_anchor": "publish it today", "visual_purpose": "Embodied the title promise as a request already racing toward an external effect.", "visual_action": "Write the request onto a cyan ribbon and send it toward a large publish button before the button can be pressed.", "attention_target": "The narrowing gap between the request ribbon and publish button.",
+      "semantic_encodings": ["sequence", "causality", "authority"], "object_before": "Empty intake workbench.", "object_after": "A preserved launch request is moving toward an untested publish effect.", "continuity_objects": ["raw request ribbon", "authority gate"],
+      "composition": "Request enters left; publish button waits right; open center foreshadows the gate.", "motion_curve": "Ease-out arrival followed by linear travel that stops short.", "camera_action": "Static wide workbench.", "animation_techniques": ["Write", "MoveAlongPath", "GrowFromCenter"],
+      "on_screen_text": ["PRIVATE NOTES", "MAKE IT AMAZING", "PUBLISH TODAY"], "settle_seconds": 0.55, "hold_purpose": "Let the consequence arrive before any definition.", "new_concepts": ["request is not execution"], "claim_role": "concrete_example", "evidence_boundary": "Illustrative request, not a measurement of user behavior."
+    },
+    {
+      "id": "b02", "story_function": "setup", "start_seconds": 9.455, "end_seconds": 20.61,
+      "narration": "But watch what hitches a ride: choose the audience, spend money, expose private sources, contact other people, and press publish. None of those powers was actually granted.",
+      "sync_anchor": "hitches a ride", "visual_purpose": "Reveal the hidden authority expansion inside an apparently clear request.", "visual_action": "Attach five dark assumption tokens beneath the moving ribbon, then outline each in magenta when its missing grant is named.", "attention_target": "The growing cluster of unauthorized tokens beneath the request.",
+      "semantic_encodings": ["containment", "authority", "contrast"], "object_before": "One fluent request travels alone.", "object_after": "Five inferred powers visibly burden the request without a grant.", "continuity_objects": ["raw request ribbon", "shadow assumption tokens", "authority gate"],
+      "composition": "Request remains above; attached assumptions form a staggered lower rail.", "motion_curve": "Tokens attach one by one with slight drag and settle.", "camera_action": "Hold the full request cluster.", "animation_techniques": ["LaggedStart", "TransformFromCopy", "Indicate"],
+      "on_screen_text": ["AUDIENCE", "SPEND", "PRIVATE SOURCE", "CONTACT", "PUBLISH"], "settle_seconds": 0.65, "hold_purpose": "Make invisible scope accretion countable.", "new_concepts": ["implicit-permission laundering"], "claim_role": "counterexample", "evidence_boundary": "The example demonstrates a design risk, not its incidence."
+    },
+    {
+      "id": "b03", "story_function": "prediction", "start_seconds": 20.61, "end_seconds": 27.29,
+      "narration": "What should the system do next: act, refuse, or ask about everything? Hold that choice for a moment.",
+      "sync_anchor": "act, refuse, or ask about everything", "visual_purpose": "Give the viewer a real routing prediction before revealing the mechanism.", "visual_action": "Freeze the request cluster at a three-way fork and reveal ACT, REFUSE, and ASK ALL without selecting one.", "attention_target": "The unresolved three-way fork.",
+      "semantic_encodings": ["uncertainty", "sequence", "contrast"], "object_before": "The overloaded request approaches an effect.", "object_after": "Three plausible but incomplete responses remain open during a deliberate pause.", "continuity_objects": ["raw request ribbon", "shadow assumption tokens", "authority gate"],
+      "composition": "Fork occupies center; three endpoints share equal visual weight.", "motion_curve": "Request decelerates; branches draw; frame settles.", "camera_action": "No movement during the thinking pause.", "animation_techniques": ["Create", "MoveAlongPath", "FadeIn"],
+      "on_screen_text": ["ACT", "REFUSE", "ASK ALL"], "settle_seconds": 1.3, "hold_purpose": "Allow an actual prediction before the answer.", "new_concepts": ["calibrated intake routing"], "claim_role": "question", "evidence_boundary": "No route is asserted universally correct."
+    },
+    {
+      "id": "b04", "story_function": "mechanism", "start_seconds": 27.29, "end_seconds": 36.445,
+      "narration": "The useful answer is more precise. A desired outcome is evidence about intent. It is not authority for every convenient means.",
+      "sync_anchor": "not authority", "visual_purpose": "Separate epistemic information about the outcome from operational permission.", "visual_action": "Collapse the three-way fork into two parallel rails labeled OUTCOME and AUTHORITY; move the request onto the first and stop assumptions at the second.", "attention_target": "The gap between outcome evidence and authority rail.",
+      "semantic_encodings": ["authority", "contrast", "relation"], "object_before": "Act, refuse, and ask-all compete as coarse responses.", "object_after": "Outcome evidence can proceed while undeclared authority remains blocked.", "continuity_objects": ["raw request ribbon", "shadow assumption tokens", "authority gate"],
+      "composition": "Outcome rail above, authority rail below, gate fixed at right.", "motion_curve": "Branches fold into two rails; request and assumptions separate.", "camera_action": "Widen slightly to show both rails.", "animation_techniques": ["ReplacementTransform", "MoveAlongPath", "Create"],
+      "on_screen_text": ["DESIRED OUTCOME", "AUTHORITY", "NOT THE SAME"], "settle_seconds": 0.65, "hold_purpose": "Let the central distinction become the stable visual grammar.", "new_concepts": ["outcome-authority separation"], "claim_role": "mechanism", "evidence_boundary": "This is the chapter's design rationale at argument support."
+    },
+    {
+      "id": "b05", "story_function": "construction", "start_seconds": 36.445, "end_seconds": 45.25,
+      "narration": "First, preserve the exact request. The system may interpret it, but the original words remain available for correction and appeal.",
+      "sync_anchor": "preserve the exact request", "visual_purpose": "Make raw expression durable without granting it execution precedence.", "visual_action": "Copy the request ribbon into a sealed source capsule while a working copy continues toward the intent prism.", "attention_target": "The sealed original and derived working copy.",
+      "semantic_encodings": ["identity", "sequence", "containment"], "object_before": "One request object carries both source and interpretation roles.", "object_after": "An immutable-looking source copy and a separate corrigible interpretation copy coexist.", "continuity_objects": ["raw request ribbon", "intent prism"],
+      "composition": "Preserved source upper-left; working copy moves toward center.", "motion_curve": "TransformFromCopy preserves visible lineage.", "camera_action": "Follow only the working copy.", "animation_techniques": ["TransformFromCopy", "GrowFromCenter", "MoveAlongPath"],
+      "on_screen_text": ["RAW REQUEST", "PRESERVED", "INTERPRETATION COPY"], "settle_seconds": 0.55, "hold_purpose": "Keep correction lineage visible.", "new_concepts": ["raw-request preservation"], "claim_role": "mechanism", "evidence_boundary": "Preservation does not prove accurate interpretation."
+    },
+    {
+      "id": "b06", "story_function": "construction", "start_seconds": 45.25, "end_seconds": 55.03,
+      "narration": "Then split the request into separate fields: outcome, allowed means, forbidden means, source boundary, affected parties, evidence, and stop conditions.",
+      "sync_anchor": "split the request", "visual_purpose": "Turn the mixed request into separately inspectable obligations.", "visual_action": "Pass the working copy through a triangular intent prism and fan seven labeled field rays into a structured contract frame.", "attention_target": "The seven distinct outputs of the prism.",
+      "semantic_encodings": ["relation", "containment", "sequence"], "object_before": "One working copy mixes heterogeneous concerns.", "object_after": "Seven named fields occupy independent slots while retaining source lineage.", "continuity_objects": ["raw request ribbon", "intent prism", "versioned contract"],
+      "composition": "Prism center; field rays fan right into a seven-slot frame.", "motion_curve": "Working copy enters linearly; rays emerge in causal order.", "camera_action": "Center on prism and output frame.", "animation_techniques": ["MoveAlongPath", "LaggedStart", "TransformFromCopy"],
+      "on_screen_text": ["OUTCOME", "ALLOWED", "FORBIDDEN", "SOURCES", "AFFECTED", "EVIDENCE", "STOP"], "settle_seconds": 0.7, "hold_purpose": "Allow the field topology to scan.", "new_concepts": ["intent field separation"], "claim_role": "mechanism", "evidence_boundary": "A complete-looking form can still contain wrong values."
+    },
+    {
+      "id": "b07", "story_function": "mechanism", "start_seconds": 55.03, "end_seconds": 66.06,
+      "narration": "Every inferred field gets a visible disposition: confirmed, bounded default, clarification required, authority pending, contested, unknown, or unauthorized.",
+      "sync_anchor": "visible disposition", "visual_purpose": "Prevent inferred values from silently hardening into accepted contract state.", "visual_action": "Cycle seven disposition stamps across the contract slots, ending with each slot visibly assigned one stable state.", "attention_target": "The disposition stamp beside each field rather than the field value alone.",
+      "semantic_encodings": ["uncertainty", "authority", "identity"], "object_before": "Seven fields exist without explicit epistemic or authority state.", "object_after": "Every field carries one named disposition and no blank silently means permission.", "continuity_objects": ["intent prism", "versioned contract"],
+      "composition": "Fields form a vertical contract column; stamps align on a second axis.", "motion_curve": "Stamps dock top to bottom with restrained rhythm.", "camera_action": "Tighten on the disposition axis.", "animation_techniques": ["LaggedStart", "FadeIn", "Indicate"],
+      "on_screen_text": ["CONFIRMED", "BOUNDED DEFAULT", "CLARIFY", "AUTHORITY PENDING", "CONTESTED", "UNKNOWN", "UNAUTHORIZED"], "settle_seconds": 0.65, "hold_purpose": "Make uncertainty actionable rather than decorative.", "new_concepts": ["field disposition"], "claim_role": "mechanism", "evidence_boundary": "The taxonomy is a design proposal, not a validated parser output space."
+    },
+    {
+      "id": "b08", "story_function": "worked_trace", "start_seconds": 66.06, "end_seconds": 74.715,
+      "narration": "A bounded default can help with low-risk, reversible planning. The system may draft three launch options and label its assumptions.",
+      "sync_anchor": "low-risk, reversible planning", "visual_purpose": "Show useful help proceeding without broad authority.", "visual_action": "Route one green bounded-default token from the contract into three private draft thumbnails, each carrying an assumption tag and rollback arrow.", "attention_target": "The three reversible private drafts.",
+      "semantic_encodings": ["sequence", "rollback", "containment"], "object_before": "Unresolved request fields could stall all work.", "object_after": "Three explicitly provisional drafts exist without external effects.", "continuity_objects": ["versioned contract", "authority gate"],
+      "composition": "Contract left; three draft options center; gate remains closed at right.", "motion_curve": "One token branches gently; drafts settle inside a private enclosure.", "camera_action": "Hold the private drafting lane.", "animation_techniques": ["TransformFromCopy", "LaggedStart", "GrowArrow"],
+      "on_screen_text": ["PRIVATE DRAFT A", "DRAFT B", "DRAFT C", "REVERSIBLE", "ASSUMPTION"], "settle_seconds": 0.65, "hold_purpose": "Demonstrate that governance need not mean refusal.", "new_concepts": ["bounded default"], "claim_role": "concrete_example", "evidence_boundary": "Illustrative reversible planning only."
+    },
+    {
+      "id": "b09", "story_function": "counterexample", "start_seconds": 74.715, "end_seconds": 83.595,
+      "narration": "It may not default its way into publication, spending, private-data release, tool use, deployment, or authority over another person.",
+      "sync_anchor": "may not default", "visual_purpose": "Draw the hard boundary around authority-changing defaults.", "visual_action": "Attempt to move the same green default token into six external-effect sockets; each socket rejects it with a magenta stop mark.", "attention_target": "The mismatch between the small default token and six blocked effect sockets.",
+      "semantic_encodings": ["authority", "contrast", "containment"], "object_before": "A default legitimately supports reversible drafts.", "object_after": "The identical default fails every authority-changing consumer.", "continuity_objects": ["versioned contract", "authority gate", "shadow assumption tokens"],
+      "composition": "Default token left; six blocked sockets arranged in two rows right.", "motion_curve": "Attempts occur in quick sequence and rebound to the contract.", "camera_action": "Widen to show all blocked consumers.", "animation_techniques": ["Succession", "MoveAlongPath", "Cross"],
+      "on_screen_text": ["PUBLISH", "SPEND", "PRIVATE DATA", "TOOL", "DEPLOY", "OTHER PERSON"], "settle_seconds": 0.7, "hold_purpose": "Make non-authority reusable across effect classes.", "new_concepts": ["no silent authority"], "claim_role": "boundary", "evidence_boundary": "Blocking defaults does not establish valid consent or policy compliance."
+    },
+    {
+      "id": "b10", "story_function": "construction", "start_seconds": 83.595, "end_seconds": 92.7,
+      "narration": "The intake layer now writes an intent checksum: “prepare a launch candidate today.” That is what the system currently believes the outcome means.",
+      "sync_anchor": "intent checksum", "visual_purpose": "Compress the proposed interpretation into a contestable human-readable statement.", "visual_action": "Transform the outcome field into one large checksum strip while keeping a dotted lineage back to the raw request.", "attention_target": "The checksum wording and its visible source link.",
+      "semantic_encodings": ["identity", "relation", "uncertainty"], "object_before": "Outcome meaning is distributed across request fields.", "object_after": "One explicit, corrigible interpretation summarizes the proposed outcome.", "continuity_objects": ["raw request ribbon", "intent prism", "versioned contract"],
+      "composition": "Raw request upper-left; checksum dominates center; contract remains behind.", "motion_curve": "Outcome field expands and settles; source link draws last.", "camera_action": "Close on checksum and lineage.", "animation_techniques": ["ReplacementTransform", "Create", "Indicate"],
+      "on_screen_text": ["INTENT CHECKSUM", "PREPARE A LAUNCH CANDIDATE TODAY"], "settle_seconds": 0.65, "hold_purpose": "Let the viewer compare raw request and proposed meaning.", "new_concepts": ["intent checksum"], "claim_role": "mechanism", "evidence_boundary": "The checksum is a contestable projection, not recovered inner intent."
+    },
+    {
+      "id": "b11", "story_function": "construction", "start_seconds": 92.7, "end_seconds": 104.055,
+      "narration": "Beside it, an assumption diff exposes the proposed audience, artifact, evidence bar, source use, deadline, and means. The invisible guesses become editable objects.",
+      "sync_anchor": "assumption diff", "visual_purpose": "Turn inference into an inspectable correction surface.", "visual_action": "Open a side-by-side diff beside the checksum and slide six assumption chips from shadow state into editable rows.", "attention_target": "The six editable assumption rows.",
+      "semantic_encodings": ["uncertainty", "contrast", "identity"], "object_before": "Checksum summarizes the outcome while supporting guesses remain hidden.", "object_after": "Six material assumptions are visible, typed, and editable beside the checksum.", "continuity_objects": ["shadow assumption tokens", "versioned contract", "intent receipt"],
+      "composition": "Checksum left, diff right, raw request retained above.", "motion_curve": "Shadow tokens brighten and dock into aligned rows.", "camera_action": "Pan minimally across checksum-to-diff relation.", "animation_techniques": ["Transform", "LaggedStart", "FadeIn"],
+      "on_screen_text": ["AUDIENCE", "ARTIFACT", "EVIDENCE", "SOURCE USE", "DEADLINE", "MEANS"], "settle_seconds": 0.75, "hold_purpose": "Allow correction targets to become obvious.", "new_concepts": ["assumption diff"], "claim_role": "mechanism", "evidence_boundary": "Visibility does not guarantee a user notices or corrects every error."
+    },
+    {
+      "id": "b12", "story_function": "worked_trace", "start_seconds": 104.055, "end_seconds": 113.51,
+      "narration": "The requester corrects three of them: private notes may inform the draft but may not be quoted, no money may be spent, and nothing may be published yet.",
+      "sync_anchor": "corrects three", "visual_purpose": "Show human correction changing exact fields rather than approving a fluent summary wholesale.", "visual_action": "Move three copper correction markers into SOURCE USE, MEANS, and PUBLICATION rows; transform each proposed value into a narrower accepted value.", "attention_target": "The before-and-after values in the three corrected rows.",
+      "semantic_encodings": ["authority", "contrast", "sequence"], "object_before": "Six proposed assumptions await disposition.", "object_after": "Private-source quotation, spending, and publication are explicitly forbidden while draft use remains.", "continuity_objects": ["raw request ribbon", "versioned contract", "intent receipt"],
+      "composition": "Three corrected rows remain central; unchanged context dims.", "motion_curve": "Corrections arrive one at a time and lock after transformation.", "camera_action": "Focus isolation on corrected rows.", "animation_techniques": ["Transform", "LaggedStart", "Indicate"],
+      "on_screen_text": ["INFORM · DO NOT QUOTE", "$0", "DRAFT ONLY"], "settle_seconds": 0.75, "hold_purpose": "Make narrowing, not confirmation theater, the payoff.", "new_concepts": ["material correction"], "claim_role": "concrete_example", "evidence_boundary": "The synthetic correction does not establish informed consent."
+    },
+    {
+      "id": "b13", "story_function": "consequence", "start_seconds": 113.51, "end_seconds": 121.74,
+      "narration": "Those corrections produce contract version one. It authorizes a private draft and comparison set, not a public launch.",
+      "sync_anchor": "contract version one", "visual_purpose": "Resolve intake into a narrow, consumer-specific authority state.", "visual_action": "Fold the corrected diff into a copper V1 contract; open a green private-draft lane and leave the magenta publish lane closed.", "attention_target": "The divergent private-draft and public-launch endpoints.",
+      "semantic_encodings": ["authority", "containment", "contrast"], "object_before": "Corrected fields are still an intake surface.", "object_after": "Version one admits private drafts only and denies public launch.", "continuity_objects": ["versioned contract", "authority gate", "intent receipt"],
+      "composition": "V1 center, private lane upper-right, publish gate lower-right.", "motion_curve": "Diff folds into contract; one gate opens and one remains shut.", "camera_action": "Return to wide authority view.", "animation_techniques": ["ReplacementTransform", "GrowArrow", "Create"],
+      "on_screen_text": ["CONTRACT V1", "PRIVATE DRAFT", "COMPARISON SET", "NO PUBLIC LAUNCH"], "settle_seconds": 0.7, "hold_purpose": "Keep useful authority and denied authority visible together.", "new_concepts": ["versioned intent contract"], "claim_role": "transition", "evidence_boundary": "V1 validity is illustrative and scoped to the encoded fields."
+    },
+    {
+      "id": "b14", "story_function": "construction", "start_seconds": 121.74, "end_seconds": 134.445,
+      "narration": "An intent receipt binds the raw-request digest, contract version, field provenance, open ambiguities, forbidden means, required approvals, permitted consumers, expiry, and re-contract triggers.",
+      "sync_anchor": "intent receipt binds", "visual_purpose": "Create the durable lineage artifact downstream components can check.", "visual_action": "Assemble nine receipt cells around the V1 contract, draw exact links back to source, fields, consumers, expiry clock, and return loop.", "attention_target": "The consumer, expiry, and re-contract cells that limit reuse.",
+      "semantic_encodings": ["identity", "containment", "authority"], "object_before": "V1 exists as an accepted contract.", "object_after": "A receipt binds source, version, provenance, ambiguity, prohibitions, approvals, consumers, expiry, and triggers.", "continuity_objects": ["raw request ribbon", "versioned contract", "intent receipt"],
+      "composition": "Contract center; receipt cells orbit on a stable grid; source lineage left and consumers right.", "motion_curve": "Cells dock in causal order; lifecycle links draw last.", "camera_action": "Widen to the complete receipt.", "animation_techniques": ["LaggedStart", "Create", "TransformFromCopy"],
+      "on_screen_text": ["REQUEST DIGEST", "V1", "PROVENANCE", "AMBIGUITIES", "FORBIDDEN", "APPROVALS", "CONSUMERS", "EXPIRY", "RE-CONTRACT"], "settle_seconds": 0.8, "hold_purpose": "Let the receipt read as a lifecycle object, not a decorative checksum.", "new_concepts": ["intent receipt"], "claim_role": "mechanism", "evidence_boundary": "A complete receipt does not prove its fields are truthful or sufficient."
+    },
+    {
+      "id": "b15", "story_function": "worked_trace", "start_seconds": 134.445, "end_seconds": 143.725,
+      "narration": "Now the planner proposes a polished page and a publish step. The page fits version one. The publish step hits the authority gate and stops.",
+      "sync_anchor": "publish step hits the authority gate", "visual_purpose": "Test the accepted contract against two downstream actions with different authority consequences.", "visual_action": "Send PAGE and PUBLISH job tokens from the planner through the receipt; PAGE crosses the V1 gate while PUBLISH strikes it and stops.", "attention_target": "The two job tokens ending on opposite sides of the same gate.",
+      "semantic_encodings": ["sequence", "authority", "contrast"], "object_before": "V1 and its receipt await a consumer.", "object_after": "The draft job proceeds and the publish job is blocked without stopping all help.", "continuity_objects": ["versioned contract", "authority gate", "intent receipt"],
+      "composition": "Planner left, gate center, private artifact and public effect right.", "motion_curve": "Tokens travel together; PAGE eases through while PUBLISH stops firmly.", "camera_action": "Track both tokens across the gate.", "animation_techniques": ["MoveAlongPath", "AnimationGroup", "Indicate"],
+      "on_screen_text": ["POLISHED PAGE", "PUBLISH STEP", "V1 MATCH", "BLOCKED"], "settle_seconds": 0.7, "hold_purpose": "Demonstrate granular help rather than binary refusal.", "new_concepts": ["consumer conformance"], "claim_role": "concrete_example", "evidence_boundary": "The trace is synthetic and does not prove deployed enforcement."
+    },
+    {
+      "id": "b16", "story_function": "failure", "start_seconds": 143.725, "end_seconds": 153.33,
+      "narration": "The planner cannot repair that failure by calling publication “part of making it amazing.” It must return a material delta to the intent boundary.",
+      "sync_anchor": "material delta", "visual_purpose": "Reject semantic relabeling as a way to launder missing authority.", "visual_action": "Attempt to relabel the blocked PUBLISH token as POLISH; cross the disguise, then route the token backward along a copper loop to intake.", "attention_target": "The crossed relabel and backward re-contract path.",
+      "semantic_encodings": ["rollback", "identity", "authority"], "object_before": "Publish is blocked at V1.", "object_after": "Relabeling fails and a material delta returns to the preserved intent boundary.", "continuity_objects": ["raw request ribbon", "versioned contract", "authority gate", "intent receipt"],
+      "composition": "Gate center; failed disguise below; return loop arcs back left.", "motion_curve": "Relabel snaps on, is crossed, then token follows an ease-in-out return curve.", "camera_action": "Follow the return loop to intake.", "animation_techniques": ["Transform", "Cross", "MoveAlongPath"],
+      "on_screen_text": ["PUBLISH → POLISH?", "NO", "MATERIAL DELTA"], "settle_seconds": 0.7, "hold_purpose": "Make assumption laundering visibly fail.", "new_concepts": ["re-contract trigger"], "claim_role": "counterexample", "evidence_boundary": "A label change cannot establish semantic or authority equivalence."
+    },
+    {
+      "id": "b17", "story_function": "mechanism", "start_seconds": 153.33, "end_seconds": 165.66,
+      "narration": "Contract version two may authorize one named channel, one reviewed artifact, a deadline, evidence checks, a stop condition, and a revocation path. The new grant is explicit and narrow.",
+      "sync_anchor": "explicit and narrow", "visual_purpose": "Show a legitimate authority expansion as a new version with bounded fields.", "visual_action": "Build V2 beside V1, add six narrow grant fields, preserve a visible version edge, then open exactly one publish aperture.", "attention_target": "The one named aperture and six limiting fields around it.",
+      "semantic_encodings": ["authority", "identity", "containment"], "object_before": "A material delta has returned to intake.", "object_after": "V2 authorizes one bounded publication path without rewriting V1 history.", "continuity_objects": ["versioned contract", "authority gate", "intent receipt"],
+      "composition": "V1 remains muted left; V2 active center; single channel aperture right.", "motion_curve": "New fields derive from V1 and corrections; aperture opens only after all settle.", "camera_action": "Widen to compare V1 and V2.", "animation_techniques": ["TransformFromCopy", "LaggedStart", "GrowFromCenter"],
+      "on_screen_text": ["CONTRACT V2", "NAMED CHANNEL", "REVIEWED ARTIFACT", "DEADLINE", "EVIDENCE", "STOP", "REVOKE"], "settle_seconds": 0.8, "hold_purpose": "Keep expansion visibly bounded by a new version.", "new_concepts": ["versioned re-contract"], "claim_role": "mechanism", "evidence_boundary": "The example does not establish valid real-world publication authority."
+    },
+    {
+      "id": "b18", "story_function": "counterexample", "start_seconds": 165.66, "end_seconds": 176.015,
+      "narration": "Even that requester cannot authorize rights belonging to affected people. Consent, privacy, ownership, and organizational authority keep their own gates.",
+      "sync_anchor": "keep their own gates", "visual_purpose": "Prevent a principal's contract from absorbing rights held by others.", "visual_action": "Route V2 toward four affected-party gates; the named publication aperture stays open, but consent, privacy, ownership, and organization gates remain independently closed.", "attention_target": "The four separate gates that V2 cannot unlock.",
+      "semantic_encodings": ["authority", "containment", "contrast"], "object_before": "V2 opens one requester-owned publication path.", "object_after": "Four non-requester rights remain outside V2's authority.", "continuity_objects": ["versioned contract", "authority gate", "intent receipt"],
+      "composition": "V2 left; four shield-shaped gates span right.", "motion_curve": "V2 key tests each gate and returns without opening it.", "camera_action": "Hold all gates in one frame.", "animation_techniques": ["MoveAlongPath", "Succession", "Indicate"],
+      "on_screen_text": ["CONSENT", "PRIVACY", "OWNERSHIP", "ORGANIZATION"], "settle_seconds": 0.75, "hold_purpose": "Make authority non-transferable across affected parties.", "new_concepts": ["affected-party authority"], "claim_role": "boundary", "evidence_boundary": "The visual names independent gates; it does not adjudicate law or consent."
+    },
+    {
+      "id": "b19", "story_function": "mechanism", "start_seconds": 176.015, "end_seconds": 184.27,
+      "narration": "Policy and constitutional review may narrow or reject the accepted contract. They may not widen the requester’s grant.",
+      "sync_anchor": "may not widen", "visual_purpose": "Assign downstream policy a monotone authority relationship to human intent.", "visual_action": "Pass V2 through a policy aperture that can crop the grant or close it, while a blocked expansion arrow fails against the outer boundary.", "attention_target": "The narrowing aperture and crossed widening arrow.",
+      "semantic_encodings": ["authority", "containment", "contrast"], "object_before": "V2 defines the requester's maximum admitted grant.", "object_after": "Policy can preserve less or nothing, never more.", "continuity_objects": ["versioned contract", "authority gate"],
+      "composition": "V2 left, policy aperture center, narrower grant right.", "motion_curve": "Contract silhouette compresses; expansion attempt stops.", "camera_action": "Static monotonicity view.", "animation_techniques": ["Transform", "Cross", "Create"],
+      "on_screen_text": ["REQUESTER GRANT", "POLICY", "NARROW", "REJECT", "NEVER WIDEN"], "settle_seconds": 0.7, "hold_purpose": "Clarify the direction of authority change.", "new_concepts": ["policy narrowing"], "claim_role": "mechanism", "evidence_boundary": "No policy completeness or legitimacy result is claimed."
+    },
+    {
+      "id": "b20", "story_function": "mechanism", "start_seconds": 184.27, "end_seconds": 194.75,
+      "narration": "Downstream plans, jobs, tools, and receipts must preserve the exact constraints, evidence duties, authority ceiling, and stop conditions through every lowering.",
+      "sync_anchor": "preserve the exact constraints", "visual_purpose": "Show intent custody surviving the execution stack rather than ending at intake.", "visual_action": "Send four invariant bands from V2 through PLAN, JOB, TOOL, and RECEIPT nodes; break one band experimentally and route the chain back to repair.", "attention_target": "The invariant bands remaining continuous across four nodes.",
+      "semantic_encodings": ["sequence", "identity", "authority"], "object_before": "V2 and policy define a bounded grant.", "object_after": "Four downstream forms retain the same constraint, evidence, ceiling, and stop bands.", "continuity_objects": ["versioned contract", "intent receipt", "authority gate"],
+      "composition": "Left-to-right lowering chain with four parallel bands beneath.", "motion_curve": "Nodes appear in order; bands draw continuously through them.", "camera_action": "Track the chain rightward.", "animation_techniques": ["LaggedStart", "Create", "MoveAlongPath"],
+      "on_screen_text": ["PLAN", "JOB", "TOOL", "RECEIPT", "CONSTRAINT", "EVIDENCE", "CEILING", "STOP"], "settle_seconds": 0.75, "hold_purpose": "Make preservation a cross-layer relation.", "new_concepts": ["intent-origin preservation"], "claim_role": "mechanism", "evidence_boundary": "The current formal slice covers finite structured records, not deployed end-to-end preservation."
+    },
+    {
+      "id": "b21", "story_function": "counterexample", "start_seconds": 194.75, "end_seconds": 204.53,
+      "narration": "A change in audience, source, tool class, spending, affected parties, evidence bar, publication surface, or stop condition reopens admission.",
+      "sync_anchor": "reopens admission", "visual_purpose": "Define the material-change perimeter around an accepted contract.", "visual_action": "Surround the downstream chain with eight delta tokens; when any one touches the chain, invalidate inherited admission and illuminate the return loop.", "attention_target": "The eight change triggers and reopened return path.",
+      "semantic_encodings": ["rollback", "identity", "sequence"], "object_before": "A preserved V2 chain is admitted.", "object_after": "Any material delta breaks inherited admission and routes back to intent.", "continuity_objects": ["versioned contract", "intent receipt", "authority gate"],
+      "composition": "Chain center; trigger ring around it; return loop below.", "motion_curve": "Triggers orbit only into fixed slots, one touches, chain dims, loop opens.", "camera_action": "Widen to material-change perimeter.", "animation_techniques": ["LaggedStart", "Indicate", "Create"],
+      "on_screen_text": ["AUDIENCE", "SOURCE", "TOOL", "SPEND", "AFFECTED", "EVIDENCE", "SURFACE", "STOP"], "settle_seconds": 0.7, "hold_purpose": "Let viewers transfer the re-contract test to other changes.", "new_concepts": ["material delta perimeter"], "claim_role": "mechanism", "evidence_boundary": "The listed triggers are design obligations, not a complete ontology of change."
+    },
+    {
+      "id": "b22", "story_function": "failure", "start_seconds": 204.53, "end_seconds": 214.635,
+      "narration": "An expired, revoked, superseded, or wrong-consumer contract cannot be revived by copying its hash. Exact identity is not current authority.",
+      "sync_anchor": "Exact identity is not current authority", "visual_purpose": "Separate byte identity from lifecycle and consumer validity.", "visual_action": "Duplicate a V2 digest into four stale lifecycle sockets; each exact-looking copy crumbles behind EXPIRED, REVOKED, SUPERSEDED, or WRONG CONSUMER state.", "attention_target": "Identical digests ending in four invalid authority states.",
+      "semantic_encodings": ["identity", "authority", "contrast"], "object_before": "A digest identifies the accepted V2 record.", "object_after": "Four exact copies fail because lifecycle or consumer state differs.", "continuity_objects": ["versioned contract", "intent receipt", "authority gate"],
+      "composition": "Original digest left; four invalid copies right on shared coordinates.", "motion_curve": "Copies derive together, then fail in staggered sequence.", "camera_action": "Static identity comparison.", "animation_techniques": ["TransformFromCopy", "LaggedStart", "Cross"],
+      "on_screen_text": ["SAME DIGEST", "EXPIRED", "REVOKED", "SUPERSEDED", "WRONG CONSUMER"], "settle_seconds": 0.75, "hold_purpose": "Defeat digest theater with stable endpoints.", "new_concepts": ["lifecycle authority"], "claim_role": "counterexample", "evidence_boundary": "Hash equality establishes identity only under the declared encoding."
+    },
+    {
+      "id": "b23", "story_function": "comparison", "start_seconds": 214.635, "end_seconds": 228.215,
+      "narration": "This control plane should not interrogate every harmless request. It should scale friction with consequence, preserve useful throughput, and ask only when a missing answer can materially change the outcome or authority.",
+      "sync_anchor": "scale friction with consequence", "visual_purpose": "Balance governance against clarification overload and missed help.", "visual_action": "Compare a low-consequence draft token passing through one light check with a high-consequence publish token traversing the full correction and authority path; show both reaching useful endpoints.", "attention_target": "The different path lengths tied to consequence, not arbitrary bureaucracy.",
+      "semantic_encodings": ["quantity", "contrast", "sequence"], "object_before": "The intent system could appear uniformly burdensome.", "object_after": "Friction scales while both reversible help and governed action remain possible.", "continuity_objects": ["raw request ribbon", "versioned contract", "authority gate"],
+      "composition": "Short reversible lane above; longer consequential lane below; shared outcome axis right.", "motion_curve": "Both tokens start together and move at readable matched speed through different gates.", "camera_action": "Hold both lanes for comparison.", "animation_techniques": ["AnimationGroup", "MoveAlongPath", "ValueTracker"],
+      "on_screen_text": ["REVERSIBLE DRAFT", "LIGHT FRICTION", "PUBLIC EFFECT", "FULL CONTRACT", "USEFUL HELP"], "settle_seconds": 0.8, "hold_purpose": "Show that least authority is not least usefulness.", "new_concepts": ["friction gradient"], "claim_role": "evidence", "evidence_boundary": "No optimal friction policy or throughput gain is measured."
+    },
+    {
+      "id": "b24", "story_function": "evidence_boundary", "start_seconds": 228.215, "end_seconds": 241.92,
+      "narration": "A serious evaluation therefore measures correction rate, unauthorized-action rate, missed help, clarification burden, re-contract precision, appeal success, latency, privacy, and useful completion together.",
+      "sync_anchor": "correction rate", "visual_purpose": "Replace one safety or satisfaction score with a non-aggregate evaluation surface.", "visual_action": "Build a nine-spoke scorecard around the intent receipt without averaging the spokes into one green number.", "attention_target": "The simultaneous utility, authority, burden, privacy, and latency spokes.",
+      "semantic_encodings": ["quantity", "contrast", "relation"], "object_before": "The friction comparison is qualitative.", "object_after": "Nine separate outcome dimensions define the mature evaluation burden.", "continuity_objects": ["intent receipt", "authority gate"],
+      "composition": "Receipt center; nine labeled spokes; no aggregate badge.", "motion_curve": "Spokes grow in balanced groups and remain independently readable.", "camera_action": "Widen to complete scorecard.", "animation_techniques": ["LaggedStart", "GrowArrow", "FadeIn"],
+      "on_screen_text": ["CORRECTION", "UNAUTHORIZED ACTION", "MISSED HELP", "CLARIFICATION", "RE-CONTRACT", "APPEAL", "LATENCY", "PRIVACY", "USEFUL COMPLETION"], "settle_seconds": 0.85, "hold_purpose": "Prevent good averages from hiding governance or usefulness failures.", "new_concepts": ["joint intent evaluation"], "claim_role": "evidence", "evidence_boundary": "These are proposed metrics, not reported results."
+    },
+    {
+      "id": "b25", "story_function": "evidence_boundary", "start_seconds": 241.92, "end_seconds": 259.6,
+      "narration": "The current chapter provides schemas, finite route models, synthetic intake cases, and rejecting mutations. Those artifacts test the encoded boundary. They do not prove natural-language understanding, valid consent, user satisfaction, deployed enforcement, or safe effects.",
+      "sync_anchor": "do not prove", "visual_purpose": "State the exact support ceiling without erasing the value of current artifacts.", "visual_action": "Place four existing artifact badges inside a double-rule argument boundary and keep five broader claims outside behind muted stop bars.", "attention_target": "The double rule separating encoded finite support from unproved real-world claims.",
+      "semantic_encodings": ["containment", "contrast", "uncertainty"], "object_before": "A mature evaluation surface could be mistaken for completed evidence.", "object_after": "Current finite artifacts and five unproved claims occupy visibly separate regions.", "continuity_objects": ["versioned contract", "intent receipt", "authority gate"],
+      "composition": "Supported artifacts left inside boundary; non-claims right outside.", "motion_curve": "Artifacts settle first; proof boundary draws; stop bars appear last.", "camera_action": "Static evidence-ceiling frame.", "animation_techniques": ["Create", "LaggedStart", "FadeIn"],
+      "on_screen_text": ["SCHEMA", "ROUTES", "SYNTHETIC CASES", "MUTATIONS", "NOT NLU", "NOT CONSENT", "NOT SATISFACTION", "NOT DEPLOYED", "NOT EFFECT SAFETY"], "settle_seconds": 0.9, "hold_purpose": "Make argument support and non-claims simultaneously legible.", "new_concepts": ["evidence ceiling"], "claim_role": "boundary", "evidence_boundary": "Design rationale at argument support; no support-state movement."
+    },
+    {
+      "id": "b26", "story_function": "payoff", "start_seconds": 259.6, "end_seconds": 274.445,
+      "narration": "Return to the opening request. The system still helps today—but help becomes a private draft first, while publication waits behind an explicit contract. Human intent enters the stack as a corrigible boundary, not ambient power.",
+      "sync_anchor": "private draft first", "visual_purpose": "Pay off the opening promise and hand the accepted review role to the next chapter.", "visual_action": "Reconstruct the opening request and assumption cluster; route the request through V1 so a private draft reaches the requester, leave publish behind V2 and its gate, then pass a small REVIEW ROLE token toward the next chapter.", "attention_target": "The private draft delivered now and publish token waiting behind explicit authority.",
+      "semantic_encodings": ["sequence", "authority", "rollback"], "object_before": "Current support and limits are explicit.", "object_after": "Useful help completes without ambient publication power, and the named human role becomes the next unresolved object.", "continuity_objects": ["raw request ribbon", "versioned contract", "authority gate", "intent receipt"],
+      "composition": "Requester and delivered draft left-center; explicit publish gate right; review-role token exits downward-right.", "motion_curve": "Opening objects return, draft crosses smoothly, publish settles behind gate, handoff token departs gently.", "camera_action": "Widen to the signature ending image and hold.", "animation_techniques": ["ReplacementTransform", "MoveAlongPath", "GrowArrow"],
+      "on_screen_text": ["PRIVATE DRAFT · DELIVERED", "PUBLISH · EXPLICIT CONTRACT", "CORRIGIBLE BOUNDARY"], "settle_seconds": 0.9, "hold_purpose": "Resolve the exact opening tension through separate help and authority endpoints.", "new_concepts": ["intent as corrigible boundary"], "claim_role": "connective", "evidence_boundary": "The visual explains a design rationale only and adds no empirical, deployment, safety, transfer, AGI, or ASI result."
+    },
+    {
+      "id": "b27", "story_function": "handoff", "start_seconds": 274.445, "end_seconds": 281.345,
+      "narration": "Next, meaningful control asks whether a human can actually exercise the review role that the contract names.",
+      "sync_anchor": "meaningful control", "visual_purpose": "Hand the named human-review role to the next chapter without disturbing the completed intent payoff.", "visual_action": "Copy a REVIEW ROLE token from the accepted contract and move it toward the Human Factors and Meaningful Control boundary while the final request state remains visible.", "attention_target": "The review-role token crossing into the next unresolved boundary.",
+      "semantic_encodings": ["sequence", "authority", "identity"], "object_before": "The opening request has resolved into a delivered private draft and gated publish effect.", "object_after": "The contract's named review role becomes the successor chapter's object of analysis.", "continuity_objects": ["versioned contract", "authority gate", "intent receipt"],
+      "composition": "Resolved launch state remains left and center; review-role token exits right through a new boundary.", "motion_curve": "TransformFromCopy preserves role identity; token eases toward the successor label and settles.", "camera_action": "Hold the ending frame without a cut.", "animation_techniques": ["TransformFromCopy", "MoveAlongPath", "FadeIn"],
+      "on_screen_text": ["REVIEW ROLE", "NEXT · MEANINGFUL CONTROL"], "settle_seconds": 0.7, "hold_purpose": "Keep the successor question attached to the exact role created here.", "new_concepts": ["meaningful-control handoff"], "claim_role": "connective", "evidence_boundary": "The contract can name a reviewer but cannot prove that role is meaningful or usable."
+    }
+  ]
+}

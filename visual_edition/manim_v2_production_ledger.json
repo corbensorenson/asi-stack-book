@@ -3,7 +3,7 @@
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "1f85c9b47e966d6049975fcd8f0a8cfd2ad875d08dab801434d20ba1b31372fd",
+  "book_structure_sha256": "1d990de294cb90d067f7285dede5a386bac34b3e05ba2267068e6ea92c025dcf",
   "visual_manifest_path": "visual_edition/manifest.json",
   "visual_manifest_sha256": "ebae3b7b16cc3d95c4d317bbc6e9db32a3d5de84011cba0a586f90657a76c5f2",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
@@ -131,10 +131,10 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 76,
+    "planned": 75,
     "briefed": 0,
     "scripted": 0,
-    "animatic_passed": 8,
+    "animatic_passed": 9,
     "picture_and_sound_lock_passed": 8,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
@@ -562,7 +562,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "animatic",
         "beat_plan_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/narration.txt",
@@ -579,8 +579,8 @@
           "independent_release_candidate": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
-          "animatic": "not_started",
+          "beat_plan": "pass",
+          "animatic": "pass",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
