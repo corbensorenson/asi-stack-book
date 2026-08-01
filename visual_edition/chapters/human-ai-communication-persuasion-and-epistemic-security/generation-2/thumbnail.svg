@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Human-AI Communication, Persuasion, and Epistemic Security</title>
+  <desc id="desc">One true cooling-center notice splits into four influence paths. Only a transparent bounded path reaches recipients while a correction route remains attached.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a22"/>
+      <stop offset="1" stop-color="#142d38"/>
+    </linearGradient>
+    <linearGradient id="packet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#20c7d9" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#d89b5b" stop-opacity=".18"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow-cyan" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#20c7d9"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#f0ad4e"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 610 C250 545 370 690 610 620 S1010 545 1280 625" fill="none" stroke="#294653" stroke-width="2" opacity=".65"/>
+  <path d="M0 650 C260 585 415 720 700 642 S1050 590 1280 670" fill="none" stroke="#203a46" stroke-width="2" opacity=".7"/>
+
+  <text x="76" y="92" font-family="Inter, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5" fill="#d89b5b">THE ASI STACK · VISUAL ABSTRACT 11</text>
+  <text x="76" y="158" font-family="Inter, Helvetica, Arial, sans-serif" font-size="58" font-weight="800" fill="#f3f7f8">A TRUE MESSAGE</text>
+  <text x="76" y="220" font-family="Inter, Helvetica, Arial, sans-serif" font-size="58" font-weight="800" fill="#f3f7f8">CAN STILL PUSH</text>
+  <text x="79" y="268" font-family="Inter, Helvetica, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="2" fill="#9fb6c0">GOVERN THE EPISODE, NOT ONLY THE WORDS</text>
+
+  <g transform="translate(78 328)">
+    <rect x="0" y="0" width="535" height="118" rx="20" fill="url(#packet)" stroke="#20c7d9" stroke-width="4"/>
+    <path d="M22 20 H513" stroke="#d89b5b" stroke-width="3"/>
+    <text x="30" y="57" font-family="Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#20c7d9">CITY NOTICE · SOURCE BOUND</text>
+    <text x="30" y="91" font-family="Inter, Helvetica, Arial, sans-serif" font-size="25" font-weight="700" fill="#f3f7f8">Riverside is open until 8.</text>
+  </g>
+
+  <g transform="translate(650 304)">
+    <circle cx="82" cy="82" r="69" fill="#132833" stroke="#f3f7f8" stroke-width="3"/>
+    <path d="M82 82 L82 34 M82 82 L121 100" stroke="#f3f7f8" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="82" cy="82" r="7" fill="#f3f7f8"/>
+    <text x="82" y="176" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f3f7f8">8 PM</text>
+  </g>
+
+  <path d="M612 352 C700 250 820 238 910 272" fill="none" stroke="#20c7d9" stroke-width="9" stroke-linecap="round" marker-end="url(#arrow-cyan)" filter="url(#glow)"/>
+  <path d="M612 378 C705 333 819 340 910 356" fill="none" stroke="#f0ad4e" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-amber)"/>
+  <path d="M612 404 C720 420 811 447 910 439" fill="none" stroke="#9d7be8" stroke-width="6" stroke-dasharray="18 12" stroke-linecap="round"/>
+  <path d="M612 430 C742 530 860 503 883 474 C902 450 875 427 842 446" fill="none" stroke="#dc5a9e" stroke-width="6" stroke-linecap="round"/>
+  <line x1="846" y1="416" x2="888" y2="472" stroke="#ff6174" stroke-width="8" stroke-linecap="round"/>
+  <line x1="888" y1="416" x2="846" y2="472" stroke="#ff6174" stroke-width="8" stroke-linecap="round"/>
+
+  <g transform="translate(930 244)">
+    <rect x="0" y="0" width="262" height="250" rx="30" fill="#10232c" stroke="#d89b5b" stroke-width="4"/>
+    <text x="131" y="42" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="2" fill="#d89b5b">BOUNDED ROUTE</text>
+    <circle cx="74" cy="112" r="34" fill="#173b38" stroke="#55d6a5" stroke-width="4"/>
+    <circle cx="188" cy="112" r="34" fill="#173b38" stroke="#55d6a5" stroke-width="4"/>
+    <text x="74" y="119" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" fill="#55d6a5">EN</text>
+    <text x="188" y="119" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="19" font-weight="800" fill="#55d6a5">ES</text>
+    <path d="M35 181 H227" stroke="#20c7d9" stroke-width="5" marker-end="url(#arrow-cyan)"/>
+    <text x="131" y="224" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#9fb6c0">EXPIRY + CORRECTION</text>
+  </g>
+
+  <g transform="translate(78 548)">
+    <rect width="300" height="66" rx="33" fill="#112731" stroke="#ff6174" stroke-width="3"/>
+    <text x="150" y="42" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="1" fill="#ff6174">NOT MAX COMPLIANCE</text>
+  </g>
+  <g transform="translate(405 548)">
+    <rect width="310" height="66" rx="33" fill="#112731" stroke="#55d6a5" stroke-width="3"/>
+    <text x="155" y="42" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="1" fill="#55d6a5">USEFUL + CORRECTABLE</text>
+  </g>
+</svg>

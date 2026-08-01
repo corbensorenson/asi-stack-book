@@ -131,8 +131,8 @@ follow, and chapters 13–84 cannot resume upload until the revised method
 passes. Existing unlisted embeds remain historical review previews, not
 publication-quality acceptance.
 
-The generation-2 ledger currently has 74 planned chapters and ten chapters
-through both animatic and picture-and-sound lock. The first ten replacements
+The generation-2 ledger currently has 73 planned chapters and eleven chapters
+through both animatic and picture-and-sound lock. The first eleven replacements
 use chapter-specific persistent worlds, audio-derived beat timing, exhaustive
 caption-boundary review, and independent per-dimension scores without average
 laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
@@ -140,7 +140,7 @@ turns one synthetic transfer episode into a worked distinction among nominal
 approval, informed review, effective intervention, and meaningful control; it
 tests an eight-condition control envelope, exercises the safe-hold path, and
 keeps the task record separate from any score of the person. Rejected
-animatics remain preserved as generation history. All ten delivery masters
+animatics remain preserved as generation history. All eleven delivery masters
 remain candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
