@@ -96,8 +96,8 @@ completed chapter video.
 
 Current checkpoint: the 84-chapter generation-one baseline remains preserved
 as ignored local history, while generation two is the active quality lane.
-Generation-two chapters 1–14 have passed beat-plan, animatic, and
-picture-and-sound-lock gates; chapters 15–84 remain planned. Generation two
+Generation-two chapters 1–15 have passed beat-plan, animatic, and
+picture-and-sound-lock gates; chapters 16–84 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -106,7 +106,11 @@ collapse distinct teaching responsibilities. Narration uses the pinned
 Apache-2.0 Kokoro-82M bf16 model and `af_heart` voice through the MIT-licensed
 `kokoro-mlx` implementation. Exact narration receipts drive canonical caption
 timing; local AV diagnostics and receipt-derived beat reviews are evidence for
-the audiovisual derivative only, not for any book claim.
+the audiovisual derivative only, not for any book claim. Chapter 15 is
+intentionally 07:00.77: the six-minute value remains a preferred soft range,
+and compressing typed identities, affected-party standing, consumer leases,
+proxy interventions, ontology reopening, descendant retirement, or the public
+authority handoff would remove load-bearing teaching distinctions.
 
 The original technical visual grammar and narration path are `ratified` and
 `qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
@@ -134,12 +138,12 @@ requires at least 4/5 independently for clarity, composition, motion, sync,
 continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
 followed, and chapters 13–84 were held until the revised method passed. Chapters
-13 and 14 are now through picture-and-sound lock under that method; chapters
-15–84 remain gated behind the same production chain. Existing unlisted embeds remain
+13–15 are now through picture-and-sound lock under that method; chapters
+16–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 70 planned chapters and fourteen chapters
-through both animatic and picture-and-sound lock. The first fourteen
+The generation-2 ledger currently has 69 planned chapters and fifteen chapters
+through both animatic and picture-and-sound lock. The first fifteen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
 average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
@@ -159,8 +163,13 @@ finite objective-integrity boundary. Chapter 14,
 `moral-uncertainty-and-value-conflict`, uses one emergency generator, two
 defensible obligations, a value-conflict record, a bounded decision lease, a
 linked rights receipt, fail-closed standing repair, custody separation,
-replacement/fork requalification, and an explicit non-claim boundary. All
-fourteen delivery masters remain
+replacement/fork requalification, and an explicit non-claim boundary. Chapter
+15, `governed-objective-formation-value-learning-and-goal-integrity`, uses a
+Rivergate flood-harm charter to keep purpose, target property, evidence, proxy,
+signal, planner, affected-party standing, consumer leases, evaluator authority,
+and descendant retirement distinct; its sealed proxy intervention,
+hidden-neighborhood counterexample, finite registry, and public-authority
+handoff remain explicitly bounded. All fifteen delivery masters remain
 candidates only: no generation-2 video has passed release-candidate,
 independent, technical, claim-fidelity, or acceptance gates, and none is
 uploaded or current in Quarto.
