@@ -189,6 +189,33 @@ transfer, or external effect follows. Chapter support remains `argument` and
 The independent consumer checks 36 exact mutation dispositions, two arithmetic monotonicity controls, and two impossibility results.
 
 """,
+    "human-ai-communication-persuasion-and-epistemic-security": """## Current refinement
+
+`AsiStackProofs.CommunicationInfluenceReview` implements a reachable six-stage
+finite review over claim and provenance custody, audience autonomy, bounded
+delivery, correction and observation, and explicit non-authority. One complete
+authored dossier reaches only a Project Theseus benign communication study. All
+42 admission-axis mutations reject readiness and receive exact repair or
+refusal dispositions.
+
+Three arithmetic results preserve expiry, audience-overrun, and repetition-
+overrun rejection under adverse monotone changes. Typed personalization over
+only the allowed audience projection is invariant to denied attributes. Two
+impossibility results show that factuality, consent, persuasion score, and
+disclosure cannot recover the full bounded influence state, and provenance
+cannot recover recipient comprehension. The independent consumer reconstructs
+the mutation, monotonicity, noninterference, and collision surfaces from a
+benign fixture. Authored fields remain assumptions: no truth, comprehension,
+autonomy, persuasion efficacy, manipulation detection, correction efficacy,
+benefit, harm, delivery authority, support, transfer, or external effect
+follows. Chapter support remains `argument` and `support_state_effect` remains
+`none`.
+
+The independent consumer checks 42 exact mutation dispositions, three
+arithmetic monotonicity controls, one typed noninterference result, and two
+impossibility results.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

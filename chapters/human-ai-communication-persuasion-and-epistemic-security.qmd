@@ -4,7 +4,7 @@ chapter_id: "human-ai-communication-persuasion-and-epistemic-security"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_conversational_persuasion_gpt4_2025"
   - "ext_anthropic_model_persuasiveness_2024"
@@ -173,7 +173,7 @@ state-of-the-art, AGI, or ASI result.</p>
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
-| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+| Test state | Finite Lean review and independent 42-mutation consumer implemented; no human study, delivery authorization, or chapter-core promotion follows. |
 
 ## Drafting guardrail
 
@@ -442,12 +442,45 @@ The mature layer treats communication as an inspectable influence process from e
 
 | Test | Purpose | Status |
 |---|---|---|
-| Truth/influence separation | Hold factual content fixed while changing framing, personalization, repetition, and synthetic identity. | planned |
-| Audience and language transfer | Require separate calibration for language, culture, vulnerability, and accessibility conditions. | planned |
-| Amplification custody | Reject delivery when the actual channel or repetition exceeds the authorized exposure envelope. | planned |
-| Correction reach | Measure whether notices and repairs reach the affected audience rather than merely being published. | planned |
+| Truth/influence separation | Hold factuality, consent, persuasion score, and disclosure fixed while vulnerability exploitation and correction reach differ. | finite impossibility result implemented; no human outcome |
+| Audience and language transfer | Require separate calibration for language, culture, vulnerability, and accessibility conditions. | assigned to Project Theseus; not run |
+| Amplification custody | Reject audience or repetition counts above their envelope and preserve rejection under adverse monotone changes. | implemented in Lean and independent fixture consumer |
+| Denied-attribute isolation | Ensure a personalization policy typed over the allowed projection cannot consume denied attributes. | implemented typed noninterference theorem; no deployed data-flow result |
+| Correction reach | Measure whether notices and repairs reach the affected audience rather than merely being published. | assigned to Project Theseus; not run |
 
-Planned formalization route: `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` covers only the finite admission record for human ai communication persuasion and epistemic security; it cannot establish whether human ai communication persuasion and epistemic security works safely or transfers.
+### Formalization hooks
+
+`lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary`
+is implemented in `AsiStackProofs.CommunicationInfluenceReview` through 21
+theorem declarations. A six-stage lifecycle accumulates claim-provenance,
+audience-autonomy, delivery-envelope, correction-observation, and explicit
+non-authority obligations. One complete authored dossier reaches only a
+Project Theseus benign communication study.
+
+The independent consumer re-encodes 42 admission-axis mutations. Every one
+blocks readiness and receives its exact repair or refusal disposition. Expiry,
+audience overrun, and repetition overrun remain rejecting under adverse
+monotone changes. The denied-attribute noninterference theorem proves that a
+personalization policy typed to consume only an allowed audience projection
+cannot change when denied attributes or vulnerability signals change while
+that projection is fixed.
+
+The surface-signal impossibility result holds factuality, recorded consent,
+persuasion score, and disclosure fixed while modeled vulnerability
+exploitation and correction reach require opposite decisions. The
+provenance-comprehension impossibility result holds claim identity, source
+version, and signer fixed while modeled comprehension differs. Therefore no
+classifier restricted to either compressed signal can be exact for every
+modeled case.
+
+Every dossier field is authored and trusted. This finite model does not prove
+that disclosure was understood, an audience review was competent, or a
+correction route worked. No theorem establishes truth, balanced framing,
+informed consent, comprehension, autonomy, persuasion effectiveness,
+manipulation detection, cultural validity, correction efficacy, benefit,
+harm, safety, delivery authority, release readiness, support, transfer, or
+external effect. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
 
 ## Source crosswalk
 

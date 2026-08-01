@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 309, "planned": 15} |
-| Triage class counts | {"formal-invariant": 309, "process-contract": 15} |
-| Lean modules referenced | 82 |
+| Manifest status counts | {"implemented": 310, "planned": 14} |
+| Triage class counts | {"formal-invariant": 310, "process-contract": 14} |
+| Lean modules referenced | 83 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -45,6 +45,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | 1 | 21 | 0 | 27 | 7 |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
@@ -152,7 +153,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `governed-objective-formation-value-learning-and-goal-integrity` | 1 | 0 | 0 | 0 |
 | `governed-operations-incident-command-and-graceful-degradation` | 3 | 3 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
-| `human-ai-communication-persuasion-and-epistemic-security` | 1 | 0 | 0 | 0 |
+| `human-ai-communication-persuasion-and-epistemic-security` | 1 | 1 | 0 | 0 |
 | `human-ai-organizations-delegation-and-accountability` | 1 | 1 | 0 | 0 |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 1 | 0 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
@@ -241,7 +242,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:oversight.control_envelope.blocks_action` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:oversight.responsibility_requires_control` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `human-ai-communication-persuasion-and-epistemic-security` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `human-ai-communication-persuasion-and-epistemic-security` | `AsiStackProofs.CommunicationInfluenceReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.lifecycle_admission_route` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |

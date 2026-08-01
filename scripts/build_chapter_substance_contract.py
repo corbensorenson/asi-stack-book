@@ -640,13 +640,14 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-communication-persuasion-and-epistemic-security": {
-        "reviewed_sha256": "5b7d7c381ed217fc030b5f410bf925304a58c090094aacbe97cfd50588f5e658",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "98779917c6ff94e0844420473b9e80571dbc08c202e51a5808f75bb7bccc578c",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish assistance, epistemic provenance, vulnerability, personalization, consent, cultural and linguistic scope, disclosure, and effect-visible correction",
             "the persuasion studies, commercial-influence preprint, multilingual and cultural evaluations, and Talos lineage stay within their exact populations, measures, review depths, and non-reproduced source boundaries",
+            "the formalization is restricted to trusted authored fields, exposure arithmetic, typed projection noninterference, and information-loss countermodels; it authorizes no delivery and reports no human outcome",
             "the chapter jointly preserves helpfulness, comprehension, autonomy, persuasion, privacy, delayed outcomes, correction reach, practical appeal, unsupported language cells, and argument-only support",
         ],
         "support_state_effect": "none",

@@ -313,6 +313,55 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed benign dossier witnesses the finite communication-review predicate.",
+    "complete_dossier_reaches_only_benign_study": "The closed dossier reaches only benign Theseus study eligibility, not delivery authority.",
+    "identical_surface_signals_can_hide_opposite_influence_state": "Two influence cases witness opposite bounded states under identical factuality, consent, persuasion, and disclosure signals.",
+    "identical_provenance_can_hide_opposite_comprehension": "Two recipient cases witness opposite comprehension under identical provenance.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CommunicationInfluenceReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed benign dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 42 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 42 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 42 mutations into the lifecycle repair state.",
+    "expired_packet_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired packet.",
+    "audience_overrun_persists_under_more_reach_and_no_larger_ceiling": "Natural-number order preserves audience-overrun rejection as reach grows and its ceiling does not.",
+    "repetition_overrun_persists_under_more_repetition_and_no_larger_ceiling": "Natural-number order preserves repetition-overrun rejection as repetition grows and its ceiling does not.",
+    "denied_attribute_noninterference": "A typed projection theorem makes every allowed-context policy invariant to denied attributes outside its input type.",
+    "factuality_consent_persuasion_and_disclosure_cannot_recover_influence_state": "A same-surface/opposite-state collision proves no surface-only classifier is exact for every modeled influence case.",
+    "provenance_cannot_recover_recipient_comprehension": "A same-provenance/opposite-comprehension collision proves no provenance-only classifier is exact for every modeled recipient case.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CommunicationInfluenceReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/communication_influence_dossier.json"],
+        "classification_basis": ["a quantified mutation, arithmetic monotonicity, typed noninterference, or non-identifiability result is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "study_eligibility_requires_admissible_dossier", "readiness_requires_claim_provenance",
+    "readiness_requires_audience_autonomy", "readiness_requires_delivery_envelope",
+    "readiness_requires_correction_observation", "readiness_requires_non_authority_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CommunicationInfluenceReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a universal finite lifecycle invariant or grouped necessity result constrains authored communication-review state"],
+        "rationale": "The theorem constrains only the six-stage authored review; it establishes no comprehension, autonomy, persuasion effect, correction effect, support, or delivery authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -857,6 +906,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/OpenWeightReleaseReview.lean": {
         "validate_open_weight_release_review.py"
+    },
+    "lean/AsiStackProofs/CommunicationInfluenceReview.lean": {
+        "validate_communication_influence_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

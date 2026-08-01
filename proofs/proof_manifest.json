@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 309,
-    "planned": 15
+    "implemented": 310,
+    "planned": 14
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -437,11 +437,11 @@
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
       "chapter_title": "Human-AI Communication, Persuasion, and Epistemic Security",
       "tag": "lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Human-AI Communication, Persuasion, and Epistemic Security record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "status": "planned",
+      "module": "AsiStackProofs.CommunicationInfluenceReview",
+      "formal_target": "A six-stage finite review preserves accumulated claim-provenance, audience-autonomy, delivery-envelope, correction-observation, and non-authority obligations; a complete authored dossier reaches only a Project Theseus benign communication study, while 42 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Expiry, audience overrun, and repetition overrun remain rejecting under adverse monotone changes. Personalization typed over only the allowed audience projection is invariant to denied attributes. Factuality, consent, persuasion score, and disclosure cannot recover the full bounded influence state, and provenance cannot recover recipient comprehension. No theorem establishes truth, comprehension, autonomy, persuasion efficacy, manipulation detection, correction efficacy, benefit, harm, delivery authority, support, transfer, or external effect.",
+      "status": "implemented",
       "outline_line": 1344,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/CommunicationInfluenceReview.lean"
     },
     {
       "chapter_id": "constitutional-alignment-substrate",

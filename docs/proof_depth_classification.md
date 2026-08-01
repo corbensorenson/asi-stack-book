@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 116 |
-| Theorem declarations classified | 1439 |
-| Direct/projection-style theorem declarations | 193 |
-| Derived/decomposed theorem declarations | 942 |
-| Unknown or mixed theorem declarations | 304 |
+| Lean modules scanned | 117 |
+| Theorem declarations classified | 1460 |
+| Direct/projection-style theorem declarations | 198 |
+| Derived/decomposed theorem declarations | 954 |
+| Unknown or mixed theorem declarations | 308 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -73,6 +73,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | human-ai-communication-persuasion-and-epistemic-security | 1 | 21 | 5 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
@@ -115,7 +116,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 15 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 14 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
@@ -437,6 +438,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `hidden_instruction_provenance_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `inferred_authority_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | `missing_required_output_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `audience_overrun_persists_under_more_reach_and_no_larger_ceiling` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `complete_dossier_reaches_only_benign_study` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `denied_attribute_noninterference` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `expired_packet_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `factuality_consent_persuasion_and_disclosure_cannot_recover_influence_state` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `identical_provenance_can_hide_opposite_comprehension` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `identical_surface_signals_can_hide_opposite_influence_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `provenance_cannot_recover_recipient_comprehension` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `readiness_requires_audience_autonomy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `readiness_requires_claim_provenance` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `readiness_requires_correction_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `readiness_requires_delivery_envelope` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `readiness_requires_non_authority_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `repetition_overrun_persists_under_more_repetition_and_no_larger_ceiling` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_preserves_bound_representation_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |

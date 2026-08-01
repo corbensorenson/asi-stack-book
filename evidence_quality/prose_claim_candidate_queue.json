@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3817,
+    "candidate_count": 3822,
     "review_state_counts": {
       "duplicate_of_atom": 1828,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1604
+      "nonmaterial_explanation": 1609
     }
   },
   "candidates": [
@@ -8478,13 +8478,12 @@
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.beyond_sota.001"
     },
     {
-      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.e1018c31d077",
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.385c92607025",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:308",
-      "sentence": "Planned formalization route: `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` covers only the finite admission record for human ai communication persuasion and epistemic security; it cannot establish whether human ai communication persuasion and epistemic security works safely or transfers.",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:321",
+      "sentence": "The denied-attribute noninterference theorem proves that a",
       "cues": [
-        "cannot",
-        "transfers"
+        "proves"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -8494,13 +8493,108 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference.",
+      "disposition_rationale": "Line-wrap fragment explaining the typed noninterference theorem already owned by the chapter formal atom; it creates no separate support-bearing proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.63930e914fa1",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:323",
+      "sentence": "cannot change when denied attributes or vulnerability signals change while",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Continuation of the typed noninterference explanation already owned by the chapter formal atom; it creates no separate support-bearing proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.cd554b7d4b61",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:328",
+      "sentence": "exploitation and correction reach require opposite decisions.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrap fragment of the surface-signal collision explanation already owned by the chapter formal atom; it creates no separate support-bearing proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.9c04c451a371",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:334",
+      "sentence": "This finite model does not prove",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Formal-model limitation lead-in whose complete inference ceiling is already carried by the chapter formal atom and proof dossier.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.d4157036817c",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:336",
+      "sentence": "No theorem establishes truth, balanced framing,",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrap fragment of the explicit formal non-claim boundary; it creates no positive support-bearing proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.c699dd1159ef",
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:339",
+      "sentence": "harm, safety, delivery authority, release readiness, support, transfer, or",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Continuation of the explicit formal non-claim boundary; it creates no positive support-bearing proposition.",
       "target_atom_id": null
     },
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.d2702758bb8a",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:363",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:396",
       "sentence": "This decomposition prevents four common category errors: factuality becoming",
       "cues": [
         "prevents"
@@ -8519,7 +8613,7 @@
     {
       "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.37e6813b5a2b",
       "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
-      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:369",
+      "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:402",
       "sentence": "It keeps claim evidence, audience, influence method, personalization, identity, channel, amplification, exposure, observed effects, correction, appeal, and expiry visible so fluent or factual language cannot acquire unlimited social authority.",
       "cues": [
         "cannot"

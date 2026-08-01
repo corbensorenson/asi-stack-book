@@ -1341,7 +1341,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Human-AI Communication, Persuasion, and Epistemic Security record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `AsiStackProofs.CommunicationInfluenceReview` | A six-stage finite review preserves accumulated claim-provenance, audience-autonomy, delivery-envelope, correction-observation, and non-authority obligations; a complete authored dossier reaches only a Project Theseus benign communication study, while 42 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Expiry, audience overrun, and repetition overrun remain rejecting under adverse monotone changes. Personalization typed over only the allowed audience projection is invariant to denied attributes. Factuality, consent, persuasion score, and disclosure cannot recover the full bounded influence state, and provenance cannot recover recipient comprehension. No theorem establishes truth, comprehension, autonomy, persuasion efficacy, manipulation detection, correction efficacy, benefit, harm, delivery authority, support, transfer, or external effect. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:human-ai-communication-persuasion-and-epistemic-security:END -->
 
 ### Constitutional Alignment: Agency, Dignity, and Corrigibility
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 116 Lean modules, 1439 theorem declarations, 942 derived/decomposed, 193 direct/projection, 304 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 117 Lean modules, 1460 theorem declarations, 954 derived/decomposed, 198 direct/projection, 308 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

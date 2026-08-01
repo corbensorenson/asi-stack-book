@@ -3108,7 +3108,12 @@
     "scripts/register_open_weight_release_review.py",
     "tests/fixtures/proof_models/open_weight_release_dossier.json",
     "chapters/open-weight-release-and-post-release-control.qmd",
-    "evidence_quality/proof_model_dossiers/open-weight-release-and-post-release-control.md"
+    "evidence_quality/proof_model_dossiers/open-weight-release-and-post-release-control.md",
+    "scripts/validate_communication_influence_review.py",
+    "lean/AsiStackProofs/CommunicationInfluenceReview.lean",
+    "tests/fixtures/proof_models/communication_influence_dossier.json",
+    "evidence_quality/proof_model_dossiers/human-ai-communication-persuasion-and-epistemic-security.md",
+    "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd"
   ],
   "units": [
     {
@@ -12066,7 +12071,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 309 implemented and 15 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, and Open-Weight Release Review refinements",
+        "324 current targets comprise 310 implemented and 14 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, and Communication Influence Review refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -17589,11 +17594,52 @@
       "prohibited_inference": "No theorem authorizes release or establishes recall, telemetry, copy erasure, license enforcement, derivative safety, benefit, risk, support, transfer, deployment, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_staged_open_weight_lifecycle_mutation_monotonicity_impossibility_and_no_release_boundary_reviewed"
+    },
+    {
+      "id": "validate_communication_influence_review.py:454",
+      "order": 454,
+      "script": "validate_communication_influence_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical communication-influence Lean model, independent 42-axis fixture, chapter proof boundary, proof dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_communication_influence_review.py",
+        "lean/AsiStackProofs/CommunicationInfluenceReview.lean",
+        "tests/fixtures/proof_models/communication_influence_dossier.json",
+        "evidence_quality/proof_model_dossiers/human-ai-communication-persuasion-and-epistemic-security.md",
+        "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, exposure-monotonicity, denied-attribute noninterference, collision-witness, canonical-binding, and no-promotion drift.",
+      "output_assertions": [
+        "six-stage review reaches only Project Theseus benign communication-study eligibility",
+        "42/42 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "expiry, audience overrun, and repetition overrun remain rejecting under adverse monotone changes",
+        "typed personalization is invariant to denied attributes outside its allowed projection",
+        "surface signals cannot recover the full influence state and provenance cannot recover comprehension",
+        "21 exact Lean declarations move no chapter support, delivery, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored-record review, arithmetic exposure controls, typed noninterference, and finite non-identifiability only.",
+      "negative_controls": "validator_owned_42_axis_monotonicity_noninterference_collision_and_binding_mutations",
+      "negative_control_cases": [
+        "missing claim custody",
+        "denied-attribute reuse",
+        "audience overrun",
+        "false surface-signal sufficiency",
+        "false provenance comprehension",
+        "support promotion laundering"
+      ],
+      "prohibited_inference": "Does not establish truth, comprehension, autonomy, persuasion efficacy, manipulation detection, correction efficacy, benefit, harm, safety, delivery authority, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3064,
-    "unit_count": 453
+    "required_artifact_count": 3069,
+    "unit_count": 454
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
