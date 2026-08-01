@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-08-01 - Reachable substrate-adoption classifier
+
+- Replaced the hand-authored `SubstrateAdoptionTraceSummary` with
+  `classifyAdoptionTrace`, a reachable finite classifier over concrete
+  baseline, control, falsification, boundary, fallback, residual, support,
+  workload, result, axis, permission, and adoption-state fields.
+- Added Lean witnesses for all four accepted non-promoting trace states and all
+  eight exact rejecting controls, plus route algebra proving that rejection
+  never grants consumer permission. The independent validator re-encodes all
+  twelve decisions and checks nineteen exact theorem declarations.
+- Marked `lean:substrates.search.adoption_trace_bridge` implemented across the
+  outline, manifest source, chapter, triage record, dossier, and roadmap. This
+  proves only bounded adoption discipline over authored inputs; no substrate
+  benefit, benchmark result, transfer, support transition, or deployment
+  authority follows, and chapter support remains `argument`.
+
 ## 2026-08-01 - Observation-trust dependence accounting
 
 - Added `AsiStackProofs.ObservationTrust`, a universal finite classifier over

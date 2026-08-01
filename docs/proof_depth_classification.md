@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1272 |
+| Theorem declarations classified | 1286 |
 | Direct/projection-style theorem declarations | 183 |
-| Derived/decomposed theorem declarations | 854 |
-| Unknown or mixed theorem declarations | 235 |
+| Derived/decomposed theorem declarations | 856 |
+| Unknown or mixed theorem declarations | 247 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -145,7 +145,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
-| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 19 | 0 | 7 | 12 | manual review |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
@@ -818,9 +818,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `unobserved_load_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
-| `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_agreement_no_independent_promotion` | derived_or_decomposed | no | uses left, right, rw |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_cannot_satisfy_two_item_use_request` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_witness_counts_one_independent_item` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `declared_same_root_agreement_counts_one` | derived_or_decomposed | no | uses left, right, rw |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `disagreement_witness_is_not_collapsed_into_agreement` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_agreement_with_distinct_roots_is_independent` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_agreement_with_same_root_is_correlated` | derived_or_decomposed | no | uses simp |
@@ -1217,9 +1217,23 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `unjustified_abstention_requires_evidence` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_permission_routes_are_exact` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_failed_negative_control_promotion_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_missing_baseline_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_missing_fallback_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_missing_falsification_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_missing_non_claim_boundary_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_support_promotion_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_theorem_spillover_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `invalid_unmeasured_axis_route_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_without_passing_evidence_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `rejection_routes_never_permit_a_consumer` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `substrate_adoption_record_missing_required_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `unproven_qualified_record_contradicts_noncore_invariant` | derived_or_decomposed | no | uses have, rw, simp, unfold |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `valid_consumer_axis_blocked_route_derived` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `valid_exploratory_registration_route_derived` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `valid_negative_control_retirement_route_derived` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SearchSubstrates.lean` | `valid_structural_only_receipt_route_derived` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `insufficient_clearance_blocks_protected_scif_entry` | derived_or_decomposed | no | uses cases, contradiction, rw |

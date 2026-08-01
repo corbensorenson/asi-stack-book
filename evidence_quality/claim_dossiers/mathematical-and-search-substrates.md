@@ -83,7 +83,7 @@ This dossier is generated from the manifest and review overlay. Inclusion is not
 | `mathematical-and-search-substrates.failure_mode.018` | `failure_mode` | `causal` | `semantically_reviewed` | For Mathematical and Search Substrates, a material failure mode is: Governance burden exceeds substrate benefit, but sunk-cost or narrative commitment prevents retirement. |
 | `mathematical-and-search-substrates.formal.substrates-search-operational-invariant` | `formal_target` | `formal` | `semantically_reviewed` | A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate. |
 | `mathematical-and-search-substrates.formal.substrates-search-failure-blocks-promotion` | `formal_target` | `formal` | `semantically_reviewed` | A substrate record marked qualified without passing evidence fails the finite core-adoption predicate. |
-| `mathematical-and-search-substrates.formal.substrates-search-adoption-trace-bridge` | `formal_target` | `formal` | `semantically_reviewed` | A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate. |
+| `mathematical-and-search-substrates.formal.substrates-search-adoption-trace-bridge` | `formal_target` | `formal` | `semantically_reviewed` | A reachable formal substrate-adoption classifier derives four accepted non-promoting states and eight exact rejecting controls from concrete trace inputs; consumer permission is reserved to measured-positive routes, while failed controls, theorem spillover, missing fallback, support promotion, and incomplete boundaries reject. |
 
 ## Argument-exit state
 

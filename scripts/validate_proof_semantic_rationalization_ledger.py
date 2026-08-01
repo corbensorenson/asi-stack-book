@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 26,
-    "P1": 694,
-    "P2": 29,
+    "P1": 696,
+    "P2": 41,
     "P3": 336,
     "P4": 97,
     "P5": 90,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1272,
+    "retain": 1286,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -231,9 +231,11 @@ EXPECTED_TARGETS = {
         "core-adoption predicate."
     ),
     "lean:substrates.search.adoption_trace_bridge": (
-        "A reachable formal substrate-adoption route model derives the four accepted "
-        "states and eight rejected controls from exact trace inputs rather than "
-        "projecting fields from a hand-authored valid-summary predicate."
+        "A reachable formal substrate-adoption classifier derives four accepted "
+        "non-promoting states and eight exact rejecting controls from concrete trace "
+        "inputs; consumer permission is reserved to measured-positive routes, while "
+        "failed controls, theorem spillover, missing fallback, support promotion, and "
+        "incomplete boundaries reject."
     ),
     "lean:artifact_stewards.work_contract.operational_invariant": (
         "A reachable steward dispatch model derives contract repair or refusal when "
@@ -366,7 +368,6 @@ EXPECTED_TARGETS = {
     ),
 }
 PLANNED_TARGETS = {
-    "lean:substrates.search.adoption_trace_bridge",
     "lean:artifact_stewards.work_contract.operational_invariant",
     "lean:artifact_stewards.release_gate.operational_invariant",
 }
@@ -790,7 +791,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1272:
+    if summary.get("current_theorem_count") != 1286:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -909,8 +910,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/SearchSubstrates.lean"
     }
-    if len(substrate_rows) != 5:
-        out.append("SearchSubstrates must retain exactly five declarations")
+    if len(substrate_rows) != 19:
+        out.append("SearchSubstrates must retain exactly nineteen declarations")
     if retired_substrate_names & {row["name"] for row in substrate_rows}:
         out.append("SearchSubstrates retained an executed premise or summary projection")
     substrate_names = {row["name"] for row in substrate_rows}
@@ -918,6 +919,24 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         out.append("SearchSubstrates retained the misleading pre-rewrite theorem name")
     if "unproven_qualified_record_contradicts_noncore_invariant" not in substrate_names:
         out.append("SearchSubstrates precise qualified-record theorem is missing")
+    required_substrate_routes = {
+        "consumer_permission_routes_are_exact",
+        "rejection_routes_never_permit_a_consumer",
+        "valid_exploratory_registration_route_derived",
+        "valid_structural_only_receipt_route_derived",
+        "valid_consumer_axis_blocked_route_derived",
+        "valid_negative_control_retirement_route_derived",
+        "invalid_missing_baseline_route_rejected",
+        "invalid_missing_falsification_route_rejected",
+        "invalid_theorem_spillover_route_rejected",
+        "invalid_unmeasured_axis_route_rejected",
+        "invalid_failed_negative_control_promotion_route_rejected",
+        "invalid_missing_fallback_route_rejected",
+        "invalid_support_promotion_route_rejected",
+        "invalid_missing_non_claim_boundary_route_rejected",
+    }
+    if not required_substrate_routes <= substrate_names:
+        out.append("SearchSubstrates reachable classifier route family is incomplete")
 
     safety_rows = [
         row
@@ -1141,7 +1160,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             out.append(f"proof triage status did not reconcile after migration: {target}")
     for action in actions:
         for migration in action["target_migrations"]:
-            expected = migration["new_target_text"]
+            tag = migration["target_ref"].removeprefix("proof-target:")
+            expected = EXPECTED_TARGETS.get(tag, migration["new_target_text"])
             for relative_path in migration["consumer_paths"]:
                 if relative_path in {
                     "proofs/proof_manifest.json",
@@ -1164,7 +1184,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1272
+        status.get("theorem_count") != 1286
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

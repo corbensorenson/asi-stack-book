@@ -160,12 +160,40 @@ CURRENT_SEMANTIC_OVERRIDES = {
     },
     "lean/AsiStackProofs/SearchSubstrates.lean::qualified_substrate_without_passing_evidence_rejected": {
         "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives rejection of a finite qualified record with explicitly false passing evidence"
+        ],
         "rationale": (
             "Current semantic review overturns the frozen duplicate label: this theorem "
             "negates CoreAdoptionValid, while the proposed replacement negates "
             "UnprovenSubstrateRemainsNonCore. The predicates are related but not "
             "equivalent, so both bounded results remain independently owned."
         ),
+    },
+    "lean/AsiStackProofs/SearchSubstrates.lean::substrate_adoption_record_missing_required_field_rejected": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives rejection from explicitly absent finite adoption-record fields"
+        ],
+        "rationale": "The theorem checks authored record consistency, not the truth or quality of substrate evidence.",
+    },
+    "lean/AsiStackProofs/SearchSubstrates.lean::consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives a finite consumer-axis rejection from authored measurement and block fields"
+        ],
+        "rationale": "The theorem does not measure the axis or establish consumer behavior outside the record model.",
+    },
+    "lean/AsiStackProofs/SearchSubstrates.lean::canary_substrate_without_complete_evidence_packet_rejected": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "statement derives rejection from an explicitly incomplete finite canary evidence packet"
+        ],
+        "rationale": "The theorem checks packet completeness and proves no canary workload result.",
     },
     "lean/AsiStackProofs/SafetyCriticalLifecycle.lean::accepted_promote_support_step_requires_model_promotion_ready": {
         "disposition": "retain",
@@ -180,6 +208,62 @@ CURRENT_SEMANTIC_OVERRIDES = {
         ),
     },
 }
+
+for theorem_name, rationale in {
+    "valid_exploratory_registration_route_derived":
+        "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",
+    "valid_structural_only_receipt_route_derived":
+        "The closed trace derives a diagnostic-only structural receipt without route permission.",
+    "valid_consumer_axis_blocked_route_derived":
+        "The closed trace derives consumer blocking for an unmeasured requested axis.",
+    "valid_negative_control_retirement_route_derived":
+        "The closed trace derives retirement after an authored failed negative control.",
+    "invalid_missing_baseline_route_rejected":
+        "The closed control derives the exact missing-baseline rejection.",
+    "invalid_missing_falsification_route_rejected":
+        "The closed control derives the exact missing-falsification rejection.",
+    "invalid_theorem_spillover_route_rejected":
+        "The closed control derives rejection when structural evidence requests qualified routing.",
+    "invalid_unmeasured_axis_route_rejected":
+        "The closed control derives rejection when an unmeasured axis requests canary routing.",
+    "invalid_failed_negative_control_promotion_route_rejected":
+        "The closed control derives rejection when failed controls request qualification.",
+    "invalid_missing_fallback_route_rejected":
+        "The closed control derives the exact missing-fallback rejection.",
+    "invalid_support_promotion_route_rejected":
+        "The closed control derives rejection of a synthetic support-state promotion request.",
+    "invalid_missing_non_claim_boundary_route_rejected":
+        "The closed control derives rejection when the complete non-claim boundary is absent.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SearchSubstrates.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed concrete substrate-adoption trace witnesses the classifier branch"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "consumer_permission_routes_are_exact",
+    "rejection_routes_never_permit_a_consumer",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SearchSubstrates.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal finite route algebra separates measured permission from rejection"
+        ],
+        "rationale": (
+            "The theorem constrains only the finite TraceRoute constructors; it does not "
+            "establish that any trace input or substrate result is empirically valid."
+        ),
+    }
 
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;

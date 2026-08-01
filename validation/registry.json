@@ -5215,13 +5215,43 @@
       "order": 140,
       "script": "validate_substrate_adoption_trace.py",
       "args": [],
-      "execution_tier": "deep",
-      "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The concrete twelve-record substrate-adoption trace, reachable Lean classifier, deterministic result, exact chapter boundary, proof triage, and canonical target status.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/SearchSubstrates.lean",
+        "scripts/validate_substrate_adoption_trace.py",
+        "experiments/substrate_adoption_trace/results/2026-07-02-local.json",
+        "docs/substrate_adoption_trace.md",
+        "chapters/mathematical-and-search-substrates.qmd",
+        "evidence_quality/proof_model_dossiers/mathematical-and-search-substrates.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently classify all four accepted non-promoting records and eight expected-invalid controls, require the exact nineteen-theorem Lean surface, retire the authored summary fixture, and preserve the no-support boundary.",
+      "output_assertions": [
+        "4 accepted non-promoting routes",
+        "8 exact rejecting controls",
+        "12/12 independently derived formal routes",
+        "19 exact Lean declarations",
+        "authored trace summary retired",
+        "support-state and chapter-core effects remain none"
+      ],
+      "claim_scope": "Finite substrate-adoption classification and non-promotion discipline over authored trace fields only.",
+      "negative_controls": "validator_owned_eight_baseline_falsification_spillover_axis_control_fallback_support_and_boundary_cases",
+      "negative_control_cases": [
+        "missing ordinary baseline",
+        "missing falsification condition",
+        "structural theorem spillover",
+        "unmeasured-axis route permission",
+        "failed negative-control promotion",
+        "missing fallback",
+        "support-state promotion",
+        "missing non-claim boundary"
+      ],
+      "prohibited_inference": "No model or consumer proves substrate advantage, representation efficiency, search or routing quality, compression, model quality, runtime performance, transfer, support, deployment, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_reachable_classifier_consumer_and_no_promotion_boundary_reviewed"
     },
     {
       "id": "validate_planning_scheduler_state_probe:141",
@@ -11971,7 +12001,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 300 implemented and 24 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, and Observation Trust refinements",
+        "324 current targets comprise 301 implemented and 23 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, and Search Substrate refinements",
         "the thirty-four richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"

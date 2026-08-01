@@ -10,6 +10,26 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:substrates.search.failure_blocks_promotion` | terminally_dispositioned | replace_with_stronger_model |
 | `lean:substrates.search.adoption_trace_bridge` | semantically_reviewed | retain_refinement_or_executable_bridge |
 
+## Current refinement
+
+`AsiStackProofs.SearchSubstrates.classifyAdoptionTrace` replaces the retired
+authored summary with a reachable classifier over baseline, negative-control,
+falsification, proof-boundary, fallback, retirement, residual, support,
+non-claim, workload, result, axis, permission, and adoption-state fields.
+Four closed witnesses derive exploratory registration, structural-only receipt,
+consumer-axis blocking, and failed-control retirement. Eight closed controls
+derive exact rejections for missing baseline, missing falsification, theorem
+spillover, unmeasured-axis routing, failed-control promotion, missing fallback,
+support promotion, and missing non-claim boundaries. Route algebra proves that
+only measured-permission constructors can authorize a consumer and that
+rejecting routes never can. `scripts/validate_substrate_adoption_trace.py`
+independently re-encodes all twelve public trace decisions.
+
+The Lean model trusts every input field. It proves no workload result,
+substrate advantage, representation or runtime property, transfer, support
+transition, release authority, AGI, or ASI. `support_state_effect` remains
+`none` and chapter support remains `argument`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |

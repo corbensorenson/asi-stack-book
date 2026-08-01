@@ -162,52 +162,266 @@ theorem canary_substrate_without_complete_evidence_packet_rejected
                           rw [reportMissing] at reportPresent
                           contradiction
 
-structure SubstrateAdoptionTraceSummary where
-  validTraceCount : Nat
-  expectedInvalidControlCount : Nat
-  exploratoryRegistrationPresent : Bool
-  structuralOnlyReceiptPresent : Bool
-  consumerAxisBlockedPresent : Bool
-  negativeControlRetirementPresent : Bool
-  missingBaselineRejected : Bool
-  theoremSpilloverRejected : Bool
-  failedNegativeControlPromotionRejected : Bool
-  unmeasuredAxisAllowedRejected : Bool
-  fallbackRequired : Bool
-  supportStateEffectNone : Bool
-  nonClaimBoundary : Bool
+inductive TraceAdoptionState where
+  | exploratory
+  | structuralOnly
+  | blocked
+  | canary
+  | qualified
+  | retired
+  | refuted
 deriving DecidableEq, Repr
 
-def SubstrateAdoptionTraceValid
-    (summary : SubstrateAdoptionTraceSummary) : Prop :=
-  summary.validTraceCount = 4 ∧
-    summary.expectedInvalidControlCount = 8 ∧
-      summary.exploratoryRegistrationPresent = true ∧
-        summary.structuralOnlyReceiptPresent = true ∧
-          summary.consumerAxisBlockedPresent = true ∧
-            summary.negativeControlRetirementPresent = true ∧
-              summary.missingBaselineRejected = true ∧
-                summary.theoremSpilloverRejected = true ∧
-                  summary.failedNegativeControlPromotionRejected = true ∧
-                    summary.unmeasuredAxisAllowedRejected = true ∧
-                      summary.fallbackRequired = true ∧
-                        summary.supportStateEffectNone = true ∧
-                          summary.nonClaimBoundary = true
+inductive AxisStatus where
+  | planned
+  | structuralOnly
+  | unmeasured
+  | measuredNegative
+  | measuredPositive
+deriving DecidableEq, Repr
 
-def substrateAdoptionTraceFixture : SubstrateAdoptionTraceSummary := {
-  validTraceCount := 4
-  expectedInvalidControlCount := 8
-  exploratoryRegistrationPresent := true
-  structuralOnlyReceiptPresent := true
-  consumerAxisBlockedPresent := true
-  negativeControlRetirementPresent := true
-  missingBaselineRejected := true
-  theoremSpilloverRejected := true
-  failedNegativeControlPromotionRejected := true
-  unmeasuredAxisAllowedRejected := true
-  fallbackRequired := true
-  supportStateEffectNone := true
-  nonClaimBoundary := true
-}
+inductive PermissionEffect where
+  | planningOnly
+  | diagnosticOnly
+  | blocked
+  | retired
+  | canaryRouteAllowed
+  | qualifiedRouteAllowed
+deriving DecidableEq, Repr
+
+inductive TraceRoute where
+  | acceptExploratoryRegistration
+  | acceptStructuralOnlyReceipt
+  | acceptConsumerAxisBlocked
+  | acceptNegativeControlRetirement
+  | permitMeasuredCanary
+  | permitMeasuredQualification
+  | rejectMissingBaseline
+  | rejectMissingFalsification
+  | rejectIncompletePacket
+  | rejectTheoremSpillover
+  | rejectUnmeasuredAxisRouting
+  | rejectFailedNegativeControlPromotion
+  | rejectMissingFallback
+  | rejectSupportPromotion
+  | rejectMissingNonClaimBoundary
+  | rejectIncompleteMeasuredEvidence
+  | rejectIncoherentState
+deriving DecidableEq, Repr
+
+def TraceRoute.accepted : TraceRoute -> Bool
+  | .acceptExploratoryRegistration
+  | .acceptStructuralOnlyReceipt
+  | .acceptConsumerAxisBlocked
+  | .acceptNegativeControlRetirement
+  | .permitMeasuredCanary
+  | .permitMeasuredQualification => true
+  | _ => false
+
+def TraceRoute.permitsConsumer : TraceRoute -> Bool
+  | .permitMeasuredCanary | .permitMeasuredQualification => true
+  | _ => false
+
+structure SubstrateAdoptionTraceInput where
+  baselinePresent : Bool
+  negativeControlPresent : Bool
+  falsificationPresent : Bool
+  proofBoundaryPresent : Bool
+  fallbackPresent : Bool
+  retirementPathPresent : Bool
+  residualsPresent : Bool
+  supportStateEffectNone : Bool
+  chapterCoreEffectNone : Bool
+  evidenceTransitionAbsent : Bool
+  nonClaimBoundaryPresent : Bool
+  workloadPresent : Bool
+  resultReportPresent : Bool
+  failedNegativeControl : Bool
+  axisStatus : AxisStatus
+  permissionEffect : PermissionEffect
+  adoptionState : TraceAdoptionState
+deriving DecidableEq, Repr
+
+def classifyAdoptionTrace (input : SubstrateAdoptionTraceInput) : TraceRoute :=
+  if ! input.baselinePresent then .rejectMissingBaseline
+  else if ! input.falsificationPresent then .rejectMissingFalsification
+  else if ! input.negativeControlPresent || ! input.proofBoundaryPresent ||
+      ! input.retirementPathPresent || ! input.residualsPresent then
+    .rejectIncompletePacket
+  else if ! input.fallbackPresent then .rejectMissingFallback
+  else if ! input.supportStateEffectNone || ! input.chapterCoreEffectNone ||
+      ! input.evidenceTransitionAbsent then
+    .rejectSupportPromotion
+  else if ! input.nonClaimBoundaryPresent then .rejectMissingNonClaimBoundary
+  else if input.failedNegativeControl && input.permissionEffect != .retired then
+    .rejectFailedNegativeControlPromotion
+  else if input.axisStatus = .structuralOnly &&
+      input.permissionEffect = .qualifiedRouteAllowed then
+    .rejectTheoremSpillover
+  else if (input.axisStatus = .planned || input.axisStatus = .unmeasured ||
+      input.axisStatus = .measuredNegative) &&
+      (input.permissionEffect = .canaryRouteAllowed ||
+        input.permissionEffect = .qualifiedRouteAllowed) then
+    .rejectUnmeasuredAxisRouting
+  else match input.permissionEffect with
+  | .planningOnly =>
+      if input.adoptionState = .exploratory then .acceptExploratoryRegistration
+      else .rejectIncoherentState
+  | .diagnosticOnly =>
+      if input.axisStatus = .structuralOnly &&
+          input.adoptionState = .structuralOnly then .acceptStructuralOnlyReceipt
+      else .rejectIncoherentState
+  | .blocked =>
+      if input.adoptionState = .blocked then .acceptConsumerAxisBlocked
+      else .rejectIncoherentState
+  | .retired =>
+      if input.failedNegativeControl &&
+          (input.adoptionState = .retired || input.adoptionState = .refuted) then
+        .acceptNegativeControlRetirement
+      else .rejectIncoherentState
+  | .canaryRouteAllowed =>
+      if input.axisStatus = .measuredPositive && input.workloadPresent &&
+          input.resultReportPresent && input.adoptionState = .canary then
+        .permitMeasuredCanary
+      else .rejectIncompleteMeasuredEvidence
+  | .qualifiedRouteAllowed =>
+      if input.axisStatus = .measuredPositive && input.workloadPresent &&
+          input.resultReportPresent && input.adoptionState = .qualified then
+        .permitMeasuredQualification
+      else .rejectIncompleteMeasuredEvidence
+
+theorem consumer_permission_routes_are_exact (route : TraceRoute) :
+    route.permitsConsumer = true ↔
+      route = .permitMeasuredCanary ∨ route = .permitMeasuredQualification := by
+  cases route <;> decide
+
+theorem rejection_routes_never_permit_a_consumer (route : TraceRoute)
+    (rejected : route.accepted = false) :
+    route.permitsConsumer = false := by
+  cases route <;> simp_all [TraceRoute.accepted, TraceRoute.permitsConsumer]
+
+def baseTraceInput : SubstrateAdoptionTraceInput :=
+  { baselinePresent := true
+    negativeControlPresent := true
+    falsificationPresent := true
+    proofBoundaryPresent := true
+    fallbackPresent := true
+    retirementPathPresent := true
+    residualsPresent := true
+    supportStateEffectNone := true
+    chapterCoreEffectNone := true
+    evidenceTransitionAbsent := true
+    nonClaimBoundaryPresent := true
+    workloadPresent := false
+    resultReportPresent := false
+    failedNegativeControl := false
+    axisStatus := .planned
+    permissionEffect := .planningOnly
+    adoptionState := .exploratory }
+
+def validExploratoryRegistration : SubstrateAdoptionTraceInput := baseTraceInput
+
+def validStructuralOnlyReceipt : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    axisStatus := .structuralOnly
+    permissionEffect := .diagnosticOnly
+    adoptionState := .structuralOnly }
+
+def validConsumerAxisBlocked : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    axisStatus := .unmeasured
+    permissionEffect := .blocked
+    adoptionState := .blocked }
+
+def validNegativeControlRetirement : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    workloadPresent := true
+    resultReportPresent := true
+    failedNegativeControl := true
+    axisStatus := .measuredNegative
+    permissionEffect := .retired
+    adoptionState := .refuted }
+
+def invalidMissingBaseline : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with baselinePresent := false }
+
+def invalidMissingFalsification : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with falsificationPresent := false }
+
+def invalidTheoremSpillover : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    axisStatus := .structuralOnly
+    permissionEffect := .qualifiedRouteAllowed
+    adoptionState := .qualified }
+
+def invalidUnmeasuredAxisRouting : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    axisStatus := .unmeasured
+    permissionEffect := .canaryRouteAllowed
+    adoptionState := .canary }
+
+def invalidFailedNegativeControlPromotion : SubstrateAdoptionTraceInput :=
+  { validNegativeControlRetirement with
+    permissionEffect := .qualifiedRouteAllowed
+    adoptionState := .qualified }
+
+def invalidMissingFallback : SubstrateAdoptionTraceInput :=
+  { baseTraceInput with
+    workloadPresent := true
+    resultReportPresent := true
+    fallbackPresent := false
+    axisStatus := .measuredPositive
+    permissionEffect := .canaryRouteAllowed
+    adoptionState := .canary }
+
+def invalidSupportPromotion : SubstrateAdoptionTraceInput :=
+  { validStructuralOnlyReceipt with supportStateEffectNone := false }
+
+def invalidMissingNonClaimBoundary : SubstrateAdoptionTraceInput :=
+  { validConsumerAxisBlocked with nonClaimBoundaryPresent := false }
+
+theorem valid_exploratory_registration_route_derived :
+    classifyAdoptionTrace validExploratoryRegistration =
+      .acceptExploratoryRegistration := by decide
+
+theorem valid_structural_only_receipt_route_derived :
+    classifyAdoptionTrace validStructuralOnlyReceipt =
+      .acceptStructuralOnlyReceipt := by decide
+
+theorem valid_consumer_axis_blocked_route_derived :
+    classifyAdoptionTrace validConsumerAxisBlocked =
+      .acceptConsumerAxisBlocked := by decide
+
+theorem valid_negative_control_retirement_route_derived :
+    classifyAdoptionTrace validNegativeControlRetirement =
+      .acceptNegativeControlRetirement := by decide
+
+theorem invalid_missing_baseline_route_rejected :
+    classifyAdoptionTrace invalidMissingBaseline = .rejectMissingBaseline := by decide
+
+theorem invalid_missing_falsification_route_rejected :
+    classifyAdoptionTrace invalidMissingFalsification =
+      .rejectMissingFalsification := by decide
+
+theorem invalid_theorem_spillover_route_rejected :
+    classifyAdoptionTrace invalidTheoremSpillover = .rejectTheoremSpillover := by decide
+
+theorem invalid_unmeasured_axis_route_rejected :
+    classifyAdoptionTrace invalidUnmeasuredAxisRouting =
+      .rejectUnmeasuredAxisRouting := by decide
+
+theorem invalid_failed_negative_control_promotion_route_rejected :
+    classifyAdoptionTrace invalidFailedNegativeControlPromotion =
+      .rejectFailedNegativeControlPromotion := by decide
+
+theorem invalid_missing_fallback_route_rejected :
+    classifyAdoptionTrace invalidMissingFallback = .rejectMissingFallback := by decide
+
+theorem invalid_support_promotion_route_rejected :
+    classifyAdoptionTrace invalidSupportPromotion = .rejectSupportPromotion := by decide
+
+theorem invalid_missing_non_claim_boundary_route_rejected :
+    classifyAdoptionTrace invalidMissingNonClaimBoundary =
+      .rejectMissingNonClaimBoundary := by decide
 
 end AsiStackProofs.SearchSubstrates

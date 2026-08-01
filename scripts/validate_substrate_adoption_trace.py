@@ -31,14 +31,36 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "SearchSubstrates.lean"
 COMMAND = "python3 scripts/validate_substrate_adoption_trace.py"
 PROOF_TAG = "lean:substrates.search.adoption_trace_bridge"
 CODEX_TEST_NAME = "Substrate adoption trace"
-REQUIRED_THEOREMS = [
+LEGACY_THEOREMS = [
     "substrate_adoption_record_missing_required_field_rejected",
     "unproven_qualified_record_contradicts_noncore_invariant",
     "qualified_substrate_without_passing_evidence_rejected",
     "consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected",
     "canary_substrate_without_complete_evidence_packet_rejected",
 ]
-RETIRED_FIXTURE_THEOREM = "substrate_adoption_trace_fixture_valid"
+MODEL_THEOREMS = [
+    "consumer_permission_routes_are_exact",
+    "rejection_routes_never_permit_a_consumer",
+    "valid_exploratory_registration_route_derived",
+    "valid_structural_only_receipt_route_derived",
+    "valid_consumer_axis_blocked_route_derived",
+    "valid_negative_control_retirement_route_derived",
+    "invalid_missing_baseline_route_rejected",
+    "invalid_missing_falsification_route_rejected",
+    "invalid_theorem_spillover_route_rejected",
+    "invalid_unmeasured_axis_route_rejected",
+    "invalid_failed_negative_control_promotion_route_rejected",
+    "invalid_missing_fallback_route_rejected",
+    "invalid_support_promotion_route_rejected",
+    "invalid_missing_non_claim_boundary_route_rejected",
+]
+REQUIRED_THEOREMS = LEGACY_THEOREMS + MODEL_THEOREMS
+RETIRED_SUMMARY_NAMES = [
+    "SubstrateAdoptionTraceSummary",
+    "SubstrateAdoptionTraceValid",
+    "substrateAdoptionTraceFixture",
+    "substrate_adoption_trace_fixture_valid",
+]
 REQUIRED_NON_CLAIMS = [
     "does not run a substrate A/B test",
     "does not prove representation efficiency, search quality, routing quality, compression quality, model quality, or runtime performance",
@@ -252,6 +274,21 @@ TRACES: list[dict[str, Any]] = [
     ),
 ]
 
+EXPECTED_FORMAL_ROUTES = {
+    "valid_exploratory_registration": "acceptExploratoryRegistration",
+    "valid_structural_only_receipt": "acceptStructuralOnlyReceipt",
+    "valid_consumer_axis_blocked": "acceptConsumerAxisBlocked",
+    "valid_negative_control_retirement": "acceptNegativeControlRetirement",
+    "invalid_missing_baseline": "rejectMissingBaseline",
+    "invalid_missing_falsification_condition": "rejectMissingFalsification",
+    "invalid_theorem_spillover_route": "rejectTheoremSpillover",
+    "invalid_unmeasured_axis_allowed": "rejectUnmeasuredAxisRouting",
+    "invalid_failed_negative_control_promoted": "rejectFailedNegativeControlPromotion",
+    "invalid_missing_fallback": "rejectMissingFallback",
+    "invalid_support_promotion_overclaim": "rejectSupportPromotion",
+    "invalid_missing_non_claim_boundary": "rejectMissingNonClaimBoundary",
+}
+
 
 def route_allowed(effect: str) -> bool:
     return effect in {"canary_route_allowed", "qualified_route_allowed"}
@@ -275,7 +312,67 @@ def measured_route_allowed(record: dict[str, Any]) -> bool:
         and bool(record.get("result_report_ref"))
         and record.get("fallback_preserved") is True
         and record.get("residuals_preserved") is True
+        and (
+            (record.get("routing_permission_effect") == "canary_route_allowed"
+             and record.get("adoption_state") == "canary")
+            or (record.get("routing_permission_effect") == "qualified_route_allowed"
+                and record.get("adoption_state") == "qualified_for_scope")
+        )
     )
+
+
+def formal_route(record: dict[str, Any]) -> str:
+    """Independent executable rendition of the Lean trace classifier."""
+    if not record.get("ordinary_baseline_ref"):
+        return "rejectMissingBaseline"
+    if not str(record.get("falsification_condition", "")).strip():
+        return "rejectMissingFalsification"
+    if not record.get("negative_control_ref") or not record.get("proof_boundary_ref"):
+        return "rejectIncompletePacket"
+    if record.get("retirement_or_supersession_path_present") is not True:
+        return "rejectIncompletePacket"
+    if record.get("residuals_preserved") is not True:
+        return "rejectIncompletePacket"
+    if record.get("fallback_preserved") is not True or not record.get("fallback_substrate"):
+        return "rejectMissingFallback"
+    if (
+        record.get("support_state_effect") != "none"
+        or record.get("chapter_core_support_effect") != "none"
+        or record.get("evidence_transition_created") is not False
+    ):
+        return "rejectSupportPromotion"
+    non_claim_text = text_blob(record.get("non_claims", []))
+    if any(phrase.lower() not in non_claim_text for phrase in REQUIRED_NON_CLAIMS):
+        return "rejectMissingNonClaimBoundary"
+
+    failed = record.get("failed_negative_control_recorded") is True
+    effect = record.get("routing_permission_effect")
+    axis_status = record.get("requested_axis_status")
+    adoption_state = record.get("adoption_state")
+    if failed and effect != "retired":
+        return "rejectFailedNegativeControlPromotion"
+    if axis_status == "structural_only" and effect == "qualified_route_allowed":
+        return "rejectTheoremSpillover"
+    if axis_status in {"planned", "unmeasured", "measured_negative"} and route_allowed(str(effect)):
+        return "rejectUnmeasuredAxisRouting"
+
+    if effect == "planning_only":
+        return "acceptExploratoryRegistration" if adoption_state == "exploratory" else "rejectIncoherentState"
+    if effect == "diagnostic_only":
+        if axis_status == "structural_only" and adoption_state == "structural_only":
+            return "acceptStructuralOnlyReceipt"
+        return "rejectIncoherentState"
+    if effect == "blocked":
+        return "acceptConsumerAxisBlocked" if adoption_state == "blocked" else "rejectIncoherentState"
+    if effect == "retired":
+        if failed and adoption_state in {"retired", "refuted"}:
+            return "acceptNegativeControlRetirement"
+        return "rejectIncoherentState"
+    if effect == "canary_route_allowed":
+        return "permitMeasuredCanary" if measured_route_allowed(record) else "rejectIncompleteMeasuredEvidence"
+    if effect == "qualified_route_allowed":
+        return "permitMeasuredQualification" if measured_route_allowed(record) else "rejectIncompleteMeasuredEvidence"
+    return "rejectIncoherentState"
 
 
 def trace_errors(record: dict[str, Any]) -> list[str]:
@@ -365,7 +462,8 @@ def build_expected_result() -> dict[str, Any]:
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.SearchSubstrates",
             "proof_tag": PROOF_TAG,
-            "theorem_refs": REQUIRED_THEOREMS,
+            "theorem_refs": MODEL_THEOREMS,
+            "formal_routes": EXPECTED_FORMAL_ROUTES,
             "expected": {
                 "valid_trace_count": len(valid),
                 "expected_invalid_control_count": len(invalid),
@@ -411,41 +509,29 @@ def validate_result(expected: dict[str, Any], write_result: bool, errors: list[s
 
 def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
-    fixture_match = re.search(
-        r"def\s+substrateAdoptionTraceFixture\s*:\s*SubstrateAdoptionTraceSummary\s*:=\s*\{(?P<body>.*?)\n\}",
-        text,
-        re.S,
-    )
-    if not fixture_match:
-        errors.append(f"{rel(LEAN_FILE)} missing substrateAdoptionTraceFixture.")
-        return
-    body = fixture_match.group("body")
-    expected_fields = {
-        "validTraceCount": "4",
-        "expectedInvalidControlCount": "8",
-        "exploratoryRegistrationPresent": "true",
-        "structuralOnlyReceiptPresent": "true",
-        "consumerAxisBlockedPresent": "true",
-        "negativeControlRetirementPresent": "true",
-        "missingBaselineRejected": "true",
-        "theoremSpilloverRejected": "true",
-        "failedNegativeControlPromotionRejected": "true",
-        "unmeasuredAxisAllowedRejected": "true",
-        "fallbackRequired": "true",
-        "supportStateEffectNone": "true",
-        "nonClaimBoundary": "true",
-    }
-    for field, expected in expected_fields.items():
-        if not re.search(rf"{field}\s*:=\s*{expected}\b", body):
-            errors.append(f"{rel(LEAN_FILE)} fixture field {field} must be {expected}.")
     for theorem in REQUIRED_THEOREMS:
         if f"theorem {theorem}" not in text:
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
-    if re.search(rf"\btheorem\s+{re.escape(RETIRED_FIXTURE_THEOREM)}\b", text):
+    declarations = set(re.findall(r"(?m)^theorem\s+([A-Za-z0-9_']+)", text))
+    if declarations != set(REQUIRED_THEOREMS):
         errors.append(
-            f"{rel(LEAN_FILE)} must keep copied fixture theorem "
-            f"{RETIRED_FIXTURE_THEOREM} retired."
+            f"{rel(LEAN_FILE)} theorem surface mismatch: expected {len(REQUIRED_THEOREMS)}, "
+            f"found {len(declarations)}."
         )
+    for name in RETIRED_SUMMARY_NAMES:
+        if re.search(rf"\b{re.escape(name)}\b", text):
+            errors.append(f"{rel(LEAN_FILE)} must keep authored summary surface {name} retired.")
+    for required in [
+        "def classifyAdoptionTrace",
+        "structure SubstrateAdoptionTraceInput",
+        "inductive TraceRoute",
+        "def validExploratoryRegistration",
+        "def invalidMissingNonClaimBoundary",
+    ]:
+        if required not in text:
+            errors.append(f"{rel(LEAN_FILE)} missing model declaration {required!r}.")
+    if re.search(r"\b(sorry|admit|axiom)\b", text):
+        errors.append(f"{rel(LEAN_FILE)} contains an untrusted proof escape hatch.")
 
 
 def require_text(path: Path, snippets: list[str], errors: list[str]) -> None:
@@ -487,6 +573,12 @@ def validate_traces(errors: list[str]) -> None:
     valid_count = 0
     invalid_count = 0
     for record in TRACES:
+        expected_route = EXPECTED_FORMAL_ROUTES.get(record["trace_id"])
+        actual_route = formal_route(record)
+        if actual_route != expected_route:
+            errors.append(
+                f"{record['trace_id']}: formal route {actual_route!r}; expected {expected_route!r}."
+            )
         semantic_errors = trace_errors(record)
         if record["expect_valid"]:
             valid_count += 1
@@ -500,6 +592,8 @@ def validate_traces(errors: list[str]) -> None:
         errors.append(f"Expected 4 valid traces, found {valid_count}.")
     if invalid_count != 8:
         errors.append(f"Expected 8 expected-invalid controls, found {invalid_count}.")
+    if set(EXPECTED_FORMAL_ROUTES) != {record["trace_id"] for record in TRACES}:
+        errors.append("Formal-route expectations do not cover exactly the 12 trace records.")
 
 
 def main() -> None:
@@ -521,7 +615,8 @@ def main() -> None:
     print(
         f"Substrate adoption trace {action}: "
         f"{expected['valid_trace_count']} valid traces, "
-        f"{expected['expected_invalid_control_count']} expected-invalid controls."
+        f"{expected['expected_invalid_control_count']} expected-invalid controls, "
+        f"{len(REQUIRED_THEOREMS)} exact Lean declarations."
     )
 
 

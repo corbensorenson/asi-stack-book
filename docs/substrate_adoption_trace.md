@@ -55,8 +55,9 @@ downstream task quality, does not validate Circle, CoilMoECOT, Mamba, TreeLLM,
 or Theseus substrate adoption, and does not create an evidence transition or
 chapter-core support promotion.
 
-The Python validator derives its accept/reject outcomes from the concrete trace
-records. The current Lean fixture proves only that an authored summary has its
-authored values. The stronger public formal bridge remains planned until a
-reachable Lean route model independently derives the four accepting and eight
-rejecting outcomes from exact inputs.
+The Python validator and Lean module independently derive their accept/reject
+outcomes from concrete trace fields. Lean proves witnesses for all four
+accepted non-promoting states and all eight rejected controls, plus exact route
+algebra separating consumer permission from every rejecting disposition. This
+formal bridge proves bounded adoption discipline over authored inputs; it does
+not establish that any field is empirically true or that any substrate helps.

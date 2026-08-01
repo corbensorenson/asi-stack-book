@@ -4,7 +4,7 @@ chapter_id: "mathematical-and-search-substrates"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-01"
 primary_sources:
   - "genesiscode"
   - "temporal_coil_research"
@@ -24,7 +24,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C records exact passage-reviewed mappings for all fourteen assigned sources. They bound candidate mechanisms and evaluation discipline; none supplies a local substrate benefit or chapter-core transition."
-  - "The exact current minimum is one schema-valid record, four valid synthetic adoption states, eight expected-invalid controls, and five finite Lean negative-case declarations. The former copied trace-summary witness is retired. No candidate substrate A/B, learned model, kernel benchmark, natural workload, measured benefit, independent reproduction, heterogeneous transfer, or accepted chapter-core evidence transition exists."
+  - "The exact current minimum is one schema-valid record, four valid synthetic adoption states, eight expected-invalid controls, and nineteen finite Lean declarations, including a reachable classifier and twelve exact route witnesses. The former copied trace-summary witness is retired. No candidate substrate A/B, learned model, kernel benchmark, natural workload, measured benefit, independent reproduction, heterogeneous transfer, or accepted chapter-core evidence transition exists."
   - "Temporal Coil, Circle, Theseus, TreeLLM, CoilMoECOT, Mamba, Universal Transformer, Recurrent Transformer, and V-JEPA material remains process, structural, speculative, local-project, or external comparator context at its stated boundary; source-reported results are not reproduced or imported as ASI Stack results."
   - "A competent full attempt requires inspectable candidate implementations on natural bounded workloads against ordinary, strongest-current, simple-ablation, and embarrassing controls under matched information and resources; joint axis and total-burden measurement; causal ablations; executable fallback and recovery; independent implementation/evaluation; and heterogeneous transfer."
   - "Useful, efficient, safe, deployable, general, transferable, or SOTA substrate claims remain blocked until the exact consumer-specific campaign passes; no support-state movement is implied by schema validity, deterministic traces, theorem declarations, source review, or this semantic sweep."
@@ -38,13 +38,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-01 |
 | Primary source records | `genesiscode`, `temporal_coil_research`, `cognitive_compilation`, `treellm`, `simulation_scaling`, `coilmoecot`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`, `ext_mamba_2023`, `ext_universal_transformer_2019`, `ext_recurrent_transformer_2026`, `ext_v_jepa_2_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`, `temporal_coil_research`; supporting: `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer`; variants/external literature: `ext_mamba_2023`, `ext_universal_transformer_2019`, `ext_recurrent_transformer_2026`, `ext_v_jepa_2_2025`; connector/recovery: `coilmoecot` |
 | Source loading state | exact passage-reviewed mappings exist for all assigned sources; local raw-cache mappings exist for five source projects; full authenticated connector text is section-audited for CoilMoECOT and Temporal Coil Research; Circle and Theseus use pinned local-project references; the four external comparators use primary-paper or source-note boundaries; raw private source text is not published. |
-| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; `python3 scripts/validate_substrate_adoption_trace.py` validates four synthetic adoption states and eight expected-invalid controls while preserving no-promotion boundaries; `AsiStackProofs.SearchSubstrates` implements finite adoption-field, promotion-gate, consumer-axis, canary-evidence, and trace-summary bridge checks; baseline comparison, representation-efficiency, sequence-substrate A/B, and real falsification tests remain planned. |
+| Test state | `substrate_adoption_record.valid.json` passes repository-level protocol fixture validation for baseline obligations, consumer gate/policy, axis ledger, routing-permission effect, fallback substrate, retirement/supersession path, support-state effect, and non-claims; `python3 scripts/validate_substrate_adoption_trace.py` independently derives four synthetic adoption states and eight expected-invalid controls while preserving no-promotion boundaries; `AsiStackProofs.SearchSubstrates` implements nineteen declarations spanning finite record countermodels, a reachable trace classifier, twelve exact route witnesses, and route-permission algebra; baseline comparison, representation-efficiency, sequence-substrate A/B, and real falsification tests remain planned. |
 
 ## Drafting guardrail
 
@@ -366,8 +366,10 @@ The Substrate adoption trace is now the next minimum executable form. It records
 The trace makes optionality executable before any substrate becomes load-bearing. It still does not run a substrate A/B test, representation-efficiency test, search-quality test, routing-quality test, compression-quality test, Circle sidecar, CoilMoECOT run, Mamba comparison, TreeLLM implementation, or Theseus transfer consumer.
 
 The exact minimum therefore comprises one schema-valid record, four valid
-synthetic states, eight expected-invalid controls, and six live theorem
-declarations in `AsiStackProofs.SearchSubstrates`. It contains no implemented
+synthetic states, eight expected-invalid controls, and nineteen live theorem
+declarations in `AsiStackProofs.SearchSubstrates`. Fourteen declarations belong
+to a reachable classifier and its route witnesses; five retain earlier finite
+record countermodels. It contains no implemented
 candidate substrate, learned model, kernel comparison, natural workload,
 measured benefit, independent reproduction, transfer result, or accepted
 chapter-core transition. The first real evaluation must include a candidate
@@ -434,7 +436,7 @@ language requires separate accepted transitions.
 | Qualified-without-evidence negative case | Prove that a qualified substrate with false passing-evidence rejects the finite core-adoption predicate. | implemented in `AsiStackProofs.SearchSubstrates.qualified_substrate_without_passing_evidence_rejected`; no empirical substrate result |
 | Consumer-axis negative case | Prove that consumer reliance on an unmeasured or blocked substrate axis rejects the finite consumer-axis predicate. | implemented in `AsiStackProofs.SearchSubstrates.consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`; no routing, compression, or reasoning-quality claim |
 | Canary evidence-packet negative case | Prove that canary substrate promotion missing workload, baseline, negative-control, or result-report fields rejects the finite canary-evidence predicate. | implemented in `AsiStackProofs.SearchSubstrates.canary_substrate_without_complete_evidence_packet_rejected`; no canary benchmark claim |
-| Substrate adoption trace | Validate exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement/refutation, fallback preservation, and no-promotion boundaries with expected-invalid controls for missing baseline, missing falsification, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support overclaim, and missing non-claims. | executable trace implemented via `python3 scripts/validate_substrate_adoption_trace.py`; formal route bridge planned because the current Lean fixture proves only its authored summary values; no substrate A/B test, substrate adoption, model-quality result, runtime result, support-state transition, or chapter-core promotion |
+| Substrate adoption trace | Validate exploratory registration, structural-only receipt boundaries, consumer-axis blocking, negative-control retirement/refutation, fallback preservation, and no-promotion boundaries with expected-invalid controls for missing baseline, missing falsification, theorem spillover, unmeasured-axis routing, failed-control promotion, missing fallback, support overclaim, and missing non-claims. | executable trace and reachable Lean classifier implemented; independently derives 4 accepted states and 8 exact rejections with 19 total module declarations; no substrate A/B test, substrate adoption, model-quality result, runtime result, support-state transition, or chapter-core promotion |
 | Baseline comparison test | Check that adoption records name ordinary baselines before quality claims. | planned; not run |
 | Representation efficiency test | Check whether a substrate improves a bounded representation task against a baseline. | planned; not run |
 | Falsification review | Check that the record names what would count against adoption. | planned; not run |
@@ -448,30 +450,35 @@ The implemented rows validate fixture/schema consistency and finite-record negat
 |---|---|---|---|
 | `lean:substrates.search.operational_invariant` | `AsiStackProofs.SearchSubstrates` | A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate. | implemented |
 | `lean:substrates.search.failure_blocks_promotion` | `AsiStackProofs.SearchSubstrates` | A substrate record marked qualified without passing evidence fails the finite core-adoption predicate. | implemented |
-| `lean:substrates.search.adoption_trace_bridge` | `AsiStackProofs.SearchSubstrates` | A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate. | planned |
+| `lean:substrates.search.adoption_trace_bridge` | `AsiStackProofs.SearchSubstrates` | A reachable formal substrate-adoption classifier derives four accepted non-promoting states and eight exact rejecting controls from concrete trace inputs; consumer permission is reserved to measured-positive routes, while failed controls, theorem spillover, missing fallback, support promotion, and incomplete boundaries reject. | implemented |
 
-The two implemented Lean hooks are finite-record rejection results over
+The first two Lean hooks are finite-record rejection results over
 substrate-adoption and promotion-review fields. The first rejects an adoption
 record when at least one required field is explicitly false. The second
 rejects a qualified promotion record when passing evidence is explicitly
 false. The module also proves bounded negative cases named
 `unproven_qualified_record_contradicts_noncore_invariant`,
 `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and
-`canary_substrate_without_complete_evidence_packet_rejected`. These cases
+`canary_substrate_without_complete_evidence_packet_rejected`. The third hook
+replaces the retired authored trace summary with `classifyAdoptionTrace`, which
+derives all four accepted non-promoting routes and all eight expected rejecting
+controls from concrete fields. Route algebra limits consumer permission to the
+two measured constructors and excludes every rejection route. These cases
 reject malformed finite records; they do not prove that any substrate improves
 search, routing, compression, representation, long-context behavior, runtime,
 verifier burden, or model quality.
 
-The module now contains five theorem declarations: derived finite negative
-cases over missing fields, unproven qualification, qualified-without-evidence,
-unsupported consumer axes, and incomplete canary packets. The hand-authored
-trace-summary witness is retired. The seventh C6
-rationalization tranche retired five pass-through or summary projections
-instead of treating theorem count as progress. The trace executable and its
-historical result remain useful protocol tests, but the public formal bridge is
-planned until a reachable model independently derives the four accepting and
-eight rejecting outcomes from exact inputs. This audit classification is not a
-proof-quality promotion. None proves a
+The module now contains nineteen theorem declarations. Five are the retained
+finite countermodels over missing fields, unproven qualification,
+qualified-without-evidence, unsupported consumer axes, and incomplete canary
+packets. Fourteen belong to the reachable classifier: two constrain route
+permission, four derive accepted non-promoting states, and eight derive exact
+rejections. The hand-authored trace-summary witness remains retired after the
+seventh C6 rationalization tranche removed five pass-through or summary
+projections. The independently encoded validator reproduces the twelve closed
+decisions, while Lean additionally requires measured permission to match the
+canary or qualified adoption state. This is not a proof-quality or support
+promotion. None proves a
 semantic correspondence between a mathematical substrate and an executable
 implementation, search completeness or optimality, representation fidelity,
 model quality, speed, memory efficiency, safe fallback, liveness, recovery,

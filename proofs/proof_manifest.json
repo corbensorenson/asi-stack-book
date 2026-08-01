@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 300,
-    "planned": 24
+    "implemented": 301,
+    "planned": 23
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -2488,8 +2488,8 @@
       "chapter_title": "Mathematical and Search Substrates",
       "tag": "lean:substrates.search.adoption_trace_bridge",
       "module": "AsiStackProofs.SearchSubstrates",
-      "formal_target": "A reachable formal substrate-adoption route model derives the four accepted states and eight rejected controls from exact trace inputs rather than projecting fields from a hand-authored valid-summary predicate.",
-      "status": "planned",
+      "formal_target": "A reachable formal substrate-adoption classifier derives four accepted non-promoting states and eight exact rejecting controls from concrete trace inputs; consumer permission is reserved to measured-positive routes, while failed controls, theorem spillover, missing fallback, support promotion, and incomplete boundaries reject.",
+      "status": "implemented",
       "outline_line": 5815,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
