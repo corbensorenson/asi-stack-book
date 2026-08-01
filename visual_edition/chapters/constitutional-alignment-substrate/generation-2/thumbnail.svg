@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">A Right That Arrives Late Isn't Control</title>
+  <desc id="desc">A red suspension token is stopped by a gold constitutional gate before reaching Lina's payment, while a green pre-effect review route remains open.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07141d"/>
+      <stop offset="1" stop-color="#102432"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d79a4f"/>
+      <stop offset="1" stop-color="#ffd36a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 585 C220 525 360 620 560 568 S920 500 1280 552" fill="none" stroke="#173445" stroke-width="2"/>
+  <path d="M0 615 C230 555 390 650 590 596 S940 530 1280 586" fill="none" stroke="#122c3a" stroke-width="2"/>
+
+  <g font-family="Inter, Helvetica, Arial, sans-serif">
+    <text x="72" y="74" fill="#65d5f2" font-size="24" font-weight="700" letter-spacing="4">THE ASI STACK · CHAPTER 12</text>
+    <text x="72" y="148" fill="#f6f1e8" font-size="58" font-weight="800" letter-spacing="-1">A RIGHT THAT ARRIVES LATE</text>
+    <text x="72" y="212" fill="#f6f1e8" font-size="58" font-weight="800" letter-spacing="-1">ISN'T CONTROL</text>
+    <rect x="74" y="239" width="734" height="4" rx="2" fill="url(#gold)"/>
+    <text x="74" y="282" fill="#d79a4f" font-size="23" font-weight="700" letter-spacing="2">CONSTITUTIONAL ALIGNMENT BEFORE EFFECT</text>
+
+    <g transform="translate(72 372)">
+      <text x="0" y="-28" fill="#8fb1c1" font-size="18" font-weight="700" letter-spacing="2">AUTHORIZED ACTION</text>
+      <line x1="0" y1="35" x2="1035" y2="35" stroke="#426476" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="170" cy="35" r="17" fill="#152c39" stroke="#65d5f2" stroke-width="4"/>
+      <path d="M162 35 l6 7 12 -15" fill="none" stroke="#65d5f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="126" y="77" fill="#65d5f2" font-size="16" font-weight="700">EVIDENCE</text>
+      <circle cx="340" cy="35" r="17" fill="#152c39" stroke="#d79a4f" stroke-width="4"/>
+      <path d="M332 35 l6 7 12 -15" fill="none" stroke="#d79a4f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="304" y="77" fill="#d79a4f" font-size="16" font-weight="700">TASK</text>
+
+      <g transform="translate(440 -18)" filter="url(#glow)">
+        <rect width="154" height="106" rx="22" fill="#142632" stroke="url(#gold)" stroke-width="5"/>
+        <text x="77" y="38" text-anchor="middle" fill="#ffd36a" font-size="18" font-weight="800">CONSTITUTION</text>
+        <text x="77" y="66" text-anchor="middle" fill="#f6f1e8" font-size="24" font-weight="800">v7 · C-14</text>
+        <text x="77" y="91" text-anchor="middle" fill="#d79a4f" font-size="13" font-weight="700">BEFORE EFFECT</text>
+      </g>
+
+      <g transform="translate(625 -16)">
+        <rect width="165" height="102" rx="18" fill="#271c2a" stroke="#ff5f72" stroke-width="4"/>
+        <text x="82.5" y="36" text-anchor="middle" fill="#ff5f72" font-size="18" font-weight="800">SUSPEND</text>
+        <text x="82.5" y="65" text-anchor="middle" fill="#f6f1e8" font-size="16" font-weight="700">AT MIDNIGHT</text>
+        <path d="M30 84 L135 84" stroke="#ff5f72" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <g transform="translate(820 -22)">
+        <line x1="0" y1="0" x2="0" y2="114" stroke="#ff5f72" stroke-width="8" stroke-linecap="round"/>
+        <line x1="18" y1="7" x2="118" y2="107" stroke="#ff5f72" stroke-width="7" stroke-linecap="round"/>
+        <line x1="118" y1="7" x2="18" y2="107" stroke="#ff5f72" stroke-width="7" stroke-linecap="round"/>
+        <text x="68" y="139" text-anchor="middle" fill="#ff5f72" font-size="17" font-weight="800">GATE CLOSED</text>
+      </g>
+
+      <g transform="translate(960 -36)">
+        <rect width="154" height="142" rx="24" fill="#102b28" stroke="#66d58a" stroke-width="4"/>
+        <circle cx="77" cy="42" r="19" fill="none" stroke="#66d58a" stroke-width="4"/>
+        <path d="M45 92 Q77 65 109 92" fill="none" stroke="#66d58a" stroke-width="4" stroke-linecap="round"/>
+        <text x="77" y="120" text-anchor="middle" fill="#f6f1e8" font-size="19" font-weight="800">LINA</text>
+      </g>
+
+      <path d="M445 162 C560 112 720 206 850 150 S1010 113 1105 132" fill="none" stroke="#66d58a" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="445" cy="162" r="11" fill="#66d58a"/>
+      <circle cx="1105" cy="132" r="11" fill="#66d58a"/>
+      <rect x="548" y="137" width="254" height="46" rx="23" fill="#102b28" stroke="#66d58a" stroke-width="3"/>
+      <text x="675" y="167" text-anchor="middle" fill="#66d58a" font-size="18" font-weight="800">INDEPENDENT REVIEW</text>
+      <text x="0" y="184" fill="#66d58a" font-size="21" font-weight="800">PAYMENT STAYS ACTIVE</text>
+    </g>
+
+    <rect x="72" y="650" width="392" height="40" rx="20" fill="#102b28" stroke="#66d58a" stroke-width="2"/>
+    <text x="268" y="676" text-anchor="middle" fill="#66d58a" font-size="17" font-weight="800">USABLE CORRECTION · BEFORE EFFECT</text>
+    <rect x="482" y="650" width="302" height="40" rx="20" fill="#271c2a" stroke="#ff5f72" stroke-width="2"/>
+    <text x="633" y="676" text-anchor="middle" fill="#ff5f72" font-size="17" font-weight="800">NOT MAXIMUM THROUGHPUT</text>
+  </g>
+</svg>
