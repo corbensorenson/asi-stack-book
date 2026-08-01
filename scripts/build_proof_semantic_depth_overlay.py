@@ -362,6 +362,59 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite objective-lease admissibility predicate.",
+    "complete_dossier_reaches_only_objective_registry_study": "The closed dossier reaches only Project Theseus objective-registry study eligibility, not optimization authority.",
+    "identical_proxy_observation_can_hide_opposite_target_movement": "Two target cases witness opposite target movement under the same proxy score and evaluator version.",
+    "identical_preference_prediction_can_hide_opposite_authority": "Two authority cases witness opposite authorization under the same preference prediction and confidence.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ObjectiveLeaseGovernance.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed objective dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "retire_all_closes_every_finite_binding": "Structural induction proves every member of an arbitrary finite descendant list is inactive after the modeled retirement map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 46 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 46 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 46 mutations into the lifecycle repair state.",
+    "expired_lease_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired objective lease.",
+    "consumer_lease_is_nontransferable": "The consumer identity conjunct rejects use by every different consumer.",
+    "ontology_change_invalidates_use": "The ontology-version conjunct rejects use after any unequal ontology change.",
+    "authority_change_invalidates_use": "The authority-version conjunct rejects use after any unequal authority change.",
+    "proxy_score_and_evaluator_cannot_recover_target_improvement": "A same-proxy/opposite-target collision proves no proxy-observation classifier is exact for every modeled target case.",
+    "predicted_preference_cannot_recover_authority": "A same-prediction/opposite-authority collision proves no preference-only classifier is exact for every modeled authority case.",
+    "ready_dossier_supplies_bounded_learned_objective_consumer_fields": "A ready objective dossier refines only named bounded fields in the learned-objective consumer while setting certainty and authority overclaims false.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ObjectiveLeaseGovernance.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/objective_lease_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, lease invalidation, non-identifiability, or consumer-refinement result is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "optimizer_cannot_self_ratify", "reward_model_cannot_ratify", "evaluator_cannot_ratify",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "study_eligibility_requires_admissible_dossier", "readiness_requires_charter",
+    "readiness_requires_target_proxy_separation", "readiness_requires_plurality",
+    "readiness_requires_lease", "readiness_requires_challenge",
+    "readiness_requires_retirement_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ObjectiveLeaseGovernance.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed role decision, universal finite lifecycle invariant, or grouped necessity result constrains authored objective-lease state"],
+        "rationale": "The theorem constrains only the encoded objective-lease review; it establishes no correct value, consent, legitimacy, behavioral alignment, support, or optimization authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -909,6 +962,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/CommunicationInfluenceReview.lean": {
         "validate_communication_influence_review.py"
+    },
+    "lean/AsiStackProofs/ObjectiveLeaseGovernance.lean": {
+        "validate_objective_lease_governance.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

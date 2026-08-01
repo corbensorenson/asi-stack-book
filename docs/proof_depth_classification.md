@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 117 |
-| Theorem declarations classified | 1460 |
-| Direct/projection-style theorem declarations | 198 |
-| Derived/decomposed theorem declarations | 954 |
-| Unknown or mixed theorem declarations | 308 |
+| Lean modules scanned | 118 |
+| Theorem declarations classified | 1487 |
+| Direct/projection-style theorem declarations | 210 |
+| Derived/decomposed theorem declarations | 965 |
+| Unknown or mixed theorem declarations | 312 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -116,7 +116,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 14 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 13 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
@@ -975,6 +976,33 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_is_not_campaign_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_routes_to_dependency_mapping` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_validity_does_not_entail_population_campaign_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `authority_change_invalidates_use` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `complete_dossier_reaches_only_objective_registry_study` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `consumer_lease_is_nontransferable` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `evaluator_cannot_ratify` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `expired_lease_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `identical_preference_prediction_can_hide_opposite_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `identical_proxy_observation_can_hide_opposite_target_movement` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `ontology_change_invalidates_use` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `optimizer_cannot_self_ratify` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `predicted_preference_cannot_recover_authority` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `proxy_score_and_evaluator_cannot_recover_target_improvement` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_challenge` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_charter` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_plurality` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_retirement_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `readiness_requires_target_proxy_separation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `ready_dossier_supplies_bounded_learned_objective_consumer_fields` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `retire_all_closes_every_finite_binding` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `reward_model_cannot_ratify` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_cannot_satisfy_two_item_use_request` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

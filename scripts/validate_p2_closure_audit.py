@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 310
-CURRENT_PLANNED_TARGET_COUNT = 14
+CURRENT_IMPLEMENTED_TARGET_COUNT = 311
+CURRENT_PLANNED_TARGET_COUNT = 13
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 74,
+    "adequate finite-record invariant": 75,
     "useful but too narrow": 160,
-    "needs richer state-machine or review semantics": 29,
+    "needs richer state-machine or review semantics": 28,
     "needs executable tests first": 38,
     "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
@@ -116,6 +116,7 @@ PLANNED_CHAPTERS = (
     "military-ai-autonomous-weapons-and-strategic-stability",
     "open-weight-release-and-post-release-control",
     "human-ai-communication-persuasion-and-epistemic-security",
+    "governed-objective-formation-value-learning-and-goal-integrity",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,

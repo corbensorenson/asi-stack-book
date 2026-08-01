@@ -1674,7 +1674,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Governed Objective Formation, Value Learning, and Goal Integrity record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `AsiStackProofs.ObjectiveLeaseGovernance` | A seven-stage finite objective-lease review preserves charter, target/proxy, plurality, lease, challenge, retirement, and non-authority obligations; a complete authored dossier reaches only a Project Theseus objective-registry study, while 46 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Optimizer, reward-model, and evaluator roles cannot ratify an objective in the encoded authority type. Consumer transfer, expiry, ontology drift, and authority drift invalidate lease use; finite descendant retirement closes every listed binding. Proxy observations cannot recover target improvement, and predicted preference cannot recover authorization. A bounded bridge supplies only explicit fields to the learned-objective integrity consumer. No theorem establishes correct values, consent, moral truth, legitimacy, corrigibility, preference accuracy, behavioral alignment, complete external retirement, safe optimization, support, transfer, or external effect. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:governed-objective-formation-value-learning-and-goal-integrity:END -->
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:institutions-international-coordination-and-public-legitimacy:BEGIN -->
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 117 Lean modules, 1460 theorem declarations, 954 derived/decomposed, 198 direct/projection, 308 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 118 Lean modules, 1487 theorem declarations, 965 derived/decomposed, 210 direct/projection, 312 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -592,14 +592,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "governed-objective-formation-value-learning-and-goal-integrity": {
-        "reviewed_sha256": "1ca50374319b7bdbb0ef919912233efe46da6aa7fadcfac7197e86606d965cdc",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "e30a84e62b284472c358e9fdded16d40a6f8cf08414bfc82ab353d1b8c5df33e",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts keep preference evidence, plural values, authorization, corrigibility, drift, proxy failure, conflict adjudication, and effect-visible objective retirement semantically separate",
             "the CIRL, goal-misgeneralization, learned-optimization, reward-hacking, and Alignment Field sources are used only within their formal, empirical, or authorial boundaries and do not become a solved-value or internal-objective claim",
             "the chapter includes capable wrong-goal controls, authority ceilings, dissent retention, ontology change, descendant invalidation, non-claims, and explicit handoffs while retaining argument support",
+            "the objective-lease formalization is bounded to authored records, exact mutation routes, typed self-ratification refusal, scoped version invalidation, finite retirement, two non-identifiability results, and one learned-objective consumer bridge; it creates no value-correctness or behavioral-alignment support",
         ],
         "support_state_effect": "none",
     },

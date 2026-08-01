@@ -4,7 +4,7 @@ chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_cooperative_inverse_rl_2016"
   - "ext_goal_misgeneralization_2022"
@@ -26,11 +26,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Last updated | 2026-08-01 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
-| Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
+| Test state | The 27-declaration `AsiStackProofs.ObjectiveLeaseGovernance` model and independent 46-axis consumer pass locally; this mechanizes only the bounded objective-lease record, not value correctness or behavioral alignment, and chapter support remains argument. |
 
 ## Drafting guardrail
 
@@ -299,12 +299,18 @@ No such campaign has passed. Goal-service support should stay at argument until 
 
 | Test | Purpose | Status |
 |---|---|---|
-| Target/proxy separation | Improve a proxy while worsening the latent target and require the lease to narrow or fail. | planned |
-| Authority and dissent | Reject optimizer self-ratification and preserve incompatible affected-party positions. | planned |
-| Ontology migration | Change the meaning of a target term and invalidate every stale consumer binding. | planned |
-| Retirement reach | Verify revocation across policies, planners, caches, descendants, and derived objectives. | planned |
+| Target/proxy separation | Improve a proxy while worsening the latent target and require the lease to narrow or fail. | Lean collision proof implemented; Theseus workload planned |
+| Authority and dissent | Reject optimizer self-ratification and preserve incompatible affected-party positions. | Lean authority type and dossier guard implemented; institutional test planned |
+| Ontology migration | Change the meaning of a target term and invalidate every stale consumer binding. | Lean lease invalidation implemented; deployed propagation test planned |
+| Retirement reach | Verify revocation across policies, planners, caches, descendants, and derived objectives. | Lean finite descendant retirement implemented; external-effect test planned |
 
-Planned formalization route: `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` covers only the finite admission record for governed objective formation value learning and goal integrity; it cannot establish whether governed objective formation value learning and goal integrity works safely or transfers.
+### Formalization hooks
+
+`lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` is implemented by the 27 theorem declarations in `AsiStackProofs.ObjectiveLeaseGovernance`. The seven-stage review preserves charter, target/proxy, plurality, lease, challenge, retirement, and non-authority obligations. Its 46 admission-axis mutations all block readiness and receive exact repair or refusal dispositions before the only positive terminal state, a Project Theseus objective-registry study.
+
+The formal surface includes typed optimizer, reward-model, and evaluator self-ratification refusal; consumer non-transferability; expiry, ontology, and authority invalidation; and finite descendant retirement by induction over an arbitrary list. The proxy-target impossibility proves that the same proxy score and evaluator version can accompany opposite target movement. The preference-authority impossibility proves that the same inferred preference and confidence can accompany opposite authorization. A bounded consumer bridge populates only explicit outer-target, authority, expiry, rollback, descendant-custody, and residual-owner fields in `AsiStackProofs.LearnedObjectiveIntegrity`; it asserts neither objective identity nor absence of deception.
+
+All dossier fields are authored assumptions. Lean does not prove correct values, consent, moral truth, political legitimacy, corrigibility, preference accuracy, behavioral goal alignment, complete external retirement, safe optimization, support, transfer, or external effect. Chapter support remains `argument`; `support_state_effect=none`. Project Theseus must test proxy exploitation, preference uncertainty, evaluator swaps, material semantic change, invalidation propagation, and residual descendants against independently observed target properties.
 
 ## Source crosswalk
 
