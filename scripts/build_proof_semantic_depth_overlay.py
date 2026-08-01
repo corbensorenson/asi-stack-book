@@ -358,6 +358,91 @@ for theorem_name in (
         ),
     }
 
+for theorem_name, rationale in {
+    "complete_accountability_record_reaches_assignment":
+        "A closed complete record witnesses the five-stage route to modeled assignment readiness.",
+    "missing_information_blocks_accountability_assignment":
+        "A closed record missing information witnesses the exact capacity-repair state.",
+    "missing_competence_blocks_accountability_assignment":
+        "A closed record with stale competence witnesses the exact capacity-repair state.",
+    "missing_time_blocks_accountability_assignment":
+        "A closed record with no review time witnesses the exact capacity-repair state.",
+    "excessive_workload_blocks_accountability_assignment":
+        "A closed overloaded record witnesses the exact workload-repair state.",
+    "missing_decision_authority_blocks_accountability_assignment":
+        "A closed record missing decision authority witnesses the exact authority-repair state.",
+    "missing_intervention_authority_blocks_accountability_assignment":
+        "A closed record missing intervention authority witnesses the exact authority-repair state.",
+    "missing_practical_control_blocks_accountability_assignment":
+        "A closed record missing practical control witnesses the exact control-repair state.",
+    "missing_revocation_blocks_accountability_assignment":
+        "A closed record missing revocation witnesses the exact revocation-repair state.",
+    "missing_independent_review_blocks_accountability_assignment":
+        "A closed record missing independent review witnesses the exact independence-repair state.",
+    "collapsed_separation_of_duties_blocks_accountability_assignment":
+        "A closed record with collapsed duties witnesses the exact separation-repair state.",
+    "undisposed_conflict_blocks_accountability_assignment":
+        "A closed record with an undisposed conflict witnesses the exact conflict-repair state.",
+    "missing_stop_path_blocks_accountability_assignment":
+        "A closed record missing a stop path witnesses the exact remedy-stage repair state.",
+    "missing_appeal_blocks_accountability_assignment":
+        "A closed record missing appeal witnesses the exact remedy-stage repair state.",
+    "missing_remedy_blocks_accountability_assignment":
+        "A closed record missing remedy witnesses the exact remedy-stage repair state.",
+    "missing_evidence_access_blocks_accountability_assignment":
+        "A closed record missing evidence access witnesses the exact remedy-stage repair state.",
+    "orphaned_residuals_block_accountability_assignment":
+        "A closed record with orphaned residuals witnesses the exact custody-repair state.",
+    "missing_non_claim_boundary_blocks_accountability_assignment":
+        "A closed record missing its non-claim boundary witnesses the exact repair state.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanAIOrganizations.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed accountability record witnesses one exact reachable transition state"
+        ],
+        "rationale": rationale,
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/HumanAIOrganizations.lean::accountability_review_run_preserves_stage_invariant"
+] = {
+    "disposition": "retain",
+    "semantic_level": "P2",
+    "classification_basis": [
+        "induction preserves the staged accountability invariant across every finite run"
+    ],
+    "witness_refs": [
+        "lean-theorem:complete_accountability_record_reaches_assignment"
+    ],
+    "rationale": (
+        "Induction over arbitrary finite run length preserves identity, capacity, authority, "
+        "independence, and remedy requirements inside the authored model."
+    ),
+}
+
+for theorem_name in (
+    "accountability_review_step_preserves_stage_invariant",
+    "assignable_accountability_requires_complete_authority_record",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanAIOrganizations.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal local preservation or completeness law constrains the finite authored model"
+        ],
+        "rationale": (
+            "The theorem is a local staged-record law. It trusts all Boolean inputs and proves "
+            "neither real human control nor lawful or effective accountability."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -385,6 +470,9 @@ LEGACY_VALIDATOR_ALIASES = {
     "lean/AsiStackProofs/SearchSubstrates.lean": {"validate_substrate_adoption_trace.py"},
     "lean/AsiStackProofs/ArtifactStewardAgents.lean": {
         "validate_artifact_steward_lifecycle_probe.py"
+    },
+    "lean/AsiStackProofs/HumanAIOrganizations.lean": {
+        "validate_human_ai_organization_accountability.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

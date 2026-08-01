@@ -79,6 +79,23 @@ transition, deployment, transfer, AGI, or ASI. Chapter support remains
 `argument` and `support_state_effect` remains `none`.
 
 """,
+    "human-ai-organizations-delegation-and-accountability": """## Current refinement
+
+`AsiStackProofs.HumanAIOrganizations` implements a five-stage finite review
+from proposed accountability through identity, capacity, authority,
+independence, remedy/custody, and assignment readiness. A stage invariant is
+preserved by one transition and by induction over arbitrary finite run length;
+any reachable `accountabilityAssignable` state therefore requires all twenty
+authored fields. One complete witness reaches readiness and seventeen closed
+mutations reach exact repair states.
+
+The model checks only authored Boolean fields. It proves no field truth,
+reviewer competence, practical human intervention, lawful or legitimate
+accountability, organizational effectiveness, worker welfare, fairness,
+resilience, support transition, external effect, deployment, AGI, or ASI.
+Chapter support remains `argument` and `support_state_effect` remains `none`.
+
+""",
 }
 
 
@@ -333,20 +350,22 @@ def build() -> tuple[dict[str, Any], str, dict[str, str]]:
         chapter_targets[row["chapter_id"]].append(row)
     dossiers: dict[str, str] = {}
     chapter_lines: list[str] = []
-    for chapter_id in sorted(chapter_targets):
+    dossier_chapter_ids = sorted(set(chapter_targets) | set(CURRENT_REFINEMENTS))
+    for chapter_id in dossier_chapter_ids:
         theorems = chapter_theorems[chapter_id]
         targets = chapter_targets[chapter_id]
         pending_theorems = sum(row["review_state"] == "machine_candidate" for row in theorems)
         pending_targets = sum(row["review_state"] == "machine_candidate" for row in targets)
-        chapter_lines.append(f"| `{chapter_id}` | {len(targets)} | {len(theorems)} | {pending_targets} | {pending_theorems} |")
+        if chapter_id in chapter_targets:
+            chapter_lines.append(f"| `{chapter_id}` | {len(targets)} | {len(theorems)} | {pending_targets} | {pending_theorems} |")
         target_lines = "\n".join(
             f"| `{row['target_id']}` | {row['review_state']} | {row.get('disposition') or 'pending'} |"
             for row in targets
-        )
+        ) or "| _No activation-baseline target; current refinement postdates the freeze._ | reviewed | retain |"
         theorem_lines = "\n".join(
             f"| `{row['name']}` | {row['depth_class']} | {row['review_state']} | {row.get('disposition') or 'pending'} |"
             for row in theorems
-        )
+        ) or "| _No activation-baseline declaration; current refinement postdates the freeze._ | n/a | reviewed | retain |"
         current_refinement = CURRENT_REFINEMENTS.get(chapter_id, "")
         dossiers[chapter_id] = f"""# Proof-model dossier: {chapter_id}
 

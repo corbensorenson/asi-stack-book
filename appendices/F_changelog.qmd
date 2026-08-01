@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-08-01 - Human-AI accountability assignment review
+
+- Implemented `lean:human_ai_org.accountability_requires_authority` as a
+  five-stage Lean review from identity through capacity, authority,
+  independence, remedy/custody, and modeled assignment readiness.
+- Added 21 theorem declarations: one-step and arbitrary-run invariant
+  preservation, readiness completeness, one positive reachability witness, and
+  17 exact rejecting controls. An independent validator checks the full route
+  and all 20 single-field mutations with sticky blocked states.
+- Kept the evidence boundary exact. The model trusts authored fields and does
+  not prove practical human control, lawful accountability, organizational
+  effectiveness, worker welfare, support movement, or external effects.
+  Chapter support remains `argument`.
+
 ## 2026-08-01 - Reachable artifact-steward readiness models
 
 - Implemented the two planned Artifact Steward proof targets with reachable

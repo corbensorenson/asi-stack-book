@@ -3859,12 +3859,24 @@ Draft deliverables:
 - Current support remains `argument`; cited field and modeling work does not
   establish an optimal organization, legitimate authority, legal liability, or
   local outcome.
+- Implemented exact formal envelope: `AsiStackProofs.HumanAIOrganizations`
+  contains 21 theorem declarations over a five-stage finite accountability
+  review. A stage invariant holds for every finite run; assignment readiness
+  implies all 20 authored identity, capacity, authority, independence,
+  remedy/custody, and non-claim fields. One complete witness and 17 exact
+  rejecting mutations are mechanized. This establishes authored-record routing
+  only, not field truth, human control, legal accountability, organizational
+  effectiveness, support, or external effects.
+- Next minimum: a prospectively fixed mixed human-AI workflow campaign covering
+  delegation depth and expiry, shift handoff, workload, automation bias,
+  delayed intervention, contested decisions, model replacement, incident
+  reconstruction, appeal, remedy, and dissolution against competent baselines.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A finite organizational record refuses accountability assignment when information, competence, time, or intervention authority is absent. | planned |
+| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A five-stage finite review preserves staged capacity, authority, independence, and remedy invariants over arbitrary run length; assignable accountability requires all 20 authored fields, while 17 closed mutations reach exact repair states. It establishes no field truth, lawful accountability, human control, organizational outcome, support, or external effect. | implemented |
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:BEGIN -->
 ### Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty

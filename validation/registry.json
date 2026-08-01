@@ -378,6 +378,10 @@
     "scripts/validate_human_oversight_degradation.py",
     "scripts/run_artifact_steward_lifecycle_probe.py",
     "scripts/validate_artifact_steward_lifecycle_probe.py",
+    "lean/AsiStackProofs/HumanAIOrganizations.lean",
+    "scripts/validate_human_ai_organization_accountability.py",
+    "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+    "evidence_quality/proof_model_dossiers/human-ai-organizations-delegation-and-accountability.md",
     "scripts/validate_artifact_graph_replay.py",
     "scripts/validate_receipt_faithfulness.py",
     "docs/receipt_faithfulness_adversarial_fixture.md",
@@ -12033,8 +12037,8 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 303 implemented and 21 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, and Artifact Steward refinements",
-        "the thirty-four richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
+        "324 current targets comprise 304 implemented and 20 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, and Human-AI Organizations refinements",
+        "the thirty-three richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
       ],
@@ -17291,11 +17295,49 @@
       "prohibited_inference": "No theorem or consumer discovers real sensor dependence, establishes calibration, synchronization, environmental truth, causal grounding, fusion quality, robustness, physical safety, readiness, release authority, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "manual_pair_nonpromotion_lifecycle_consumer_and_no_promotion_boundary_reviewed"
+    },
+    {
+      "id": "validate_human_ai_organization_accountability.py:448",
+      "order": 448,
+      "script": "validate_human_ai_organization_accountability.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The five-stage finite accountability review, exact 20-field assignment record, 21-theorem Lean surface, chapter formalization boundary, generated proof manifest, and reviewed triage record.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/HumanAIOrganizations.lean",
+        "scripts/validate_human_ai_organization_accountability.py",
+        "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+        "evidence_quality/proof_model_dossiers/human-ai-organizations-delegation-and-accountability.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently reproduce the complete five-stage route, mutate every authored assignment field, require sticky exact rejection states, verify all 21 Lean declarations and canonical target bindings, and reject human-control, legal-accountability, organizational-outcome, support, or external-effect overclaim surfaces.",
+      "output_assertions": [
+        "five ordered accountability review transitions",
+        "one complete assignment-readiness route",
+        "20/20 independently encoded single-field mutations reject",
+        "all rejected routes remain blocked",
+        "21 exact Lean declarations exist",
+        "zero human-control, legal-accountability, organizational-outcome, support, or external-effect claim"
+      ],
+      "claim_scope": "Finite authored accountability-assignment record reachability and refusal semantics only.",
+      "negative_controls": "validator_owned_twenty_single_field_assignment_mutations",
+      "negative_control_cases": [
+        "missing assignment, decision, or actor identity",
+        "missing information, competence, time, or workload capacity",
+        "missing decision authority, intervention authority, practical control, or revocation",
+        "missing independent review, separation of duties, or conflict disposition",
+        "missing stop, appeal, remedy, evidence access, residual custody, or non-claim boundary"
+      ],
+      "prohibited_inference": "No theorem or consumer establishes field truth, reviewer competence, real human intervention, lawful or legitimate accountability, organizational effectiveness, worker welfare, fairness, resilience, support transition, external effect, deployment, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_staged_accountability_reachability_refusal_and_no_promotion_boundary_reviewed"
     }
   ],
   "summary": {
-    "required_artifact_count": 3031,
-    "unit_count": 447
+    "required_artifact_count": 3035,
+    "unit_count": 448
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

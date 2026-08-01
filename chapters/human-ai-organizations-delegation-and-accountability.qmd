@@ -4,7 +4,7 @@ chapter_id: "human-ai-organizations-delegation-and-accountability"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_nist_ai_rmf_1_0_2023"
   - "ext_moral_crumple_zones_2019"
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five external records cover risk-governance roles, moral crumple zones, decision-authority incentives, field productivity heterogeneity, and constructive interdependence. |
-| Test state | Prospective organizational comparison specified; no organization, worker, task, or intervention observed. |
+| Test state | A 21-declaration Lean review model covers one bounded accountability-assignment invariant; no organization, worker, task, or intervention observed. |
 
 ## Drafting guardrail
 
@@ -717,21 +717,36 @@ mandatory, and synthetic people cannot stand in for human evidence. This is a
 passed here, so the technical record establishes no superior organization or
 institutional legitimacy.
 
+## Formalization hooks
+
+### Implemented formalization
+
+`lean:human_ai_org.accountability_requires_authority` is implemented in
+`AsiStackProofs.HumanAIOrganizations` as a five-stage finite review over
+identity, capacity, intervention authority, independence, and remedy/custody.
+The module has 21 theorem declarations. A stage invariant is preserved for one
+step and by induction over an arbitrary finite run; if the run reaches
+`accountabilityAssignable`, all 20 authored assignment fields are true. One
+complete record reaches that state, while 17 closed mutations reach the exact
+repair state for missing information, competence, time, workload, decision or
+intervention authority, practical control, revocation, independent review,
+separation of duties, conflict disposition, stop, appeal, remedy, evidence
+access, residual custody, or the non-claim boundary.
+
+This is a mechanized property of a finite authored record. Lean does not prove
+that any field is truthful or usable, that a person could intervene in a real
+workflow, that accountability is lawful or legitimate, or that an
+organization is effective, fair, resilient, or safe. Chapter support therefore
+remains `argument`.
+
 ## Codex test plan
-
-### Planned formalization
-
-`lean:human_ai_org.accountability_requires_authority` will reject an
-accountability assignment when the authored organizational record lacks
-information, competence, time, or intervention authority. It cannot establish
-that those fields are true, complete, legitimate, lawful, or effective.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Decision-right reachability | Ensure each consequential decision has proposal, review, stop, appeal, and accountable owners. | planned |
-| Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | planned |
+| Decision-right reachability | Ensure each modeled assignment traverses identity, capacity, authority, independence, and remedy stages before becoming assignable. | implemented in Lean; no runtime workflow |
+| Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | implemented for 17 exact authored-record mutations |
 | Delegation-depth and expiry | Reject hidden subdelegation and stale model/role authority. | planned |
-| Workload and competence positive controls | Verify the route narrows when a reviewer cannot meaningfully act. | planned |
+| Workload and competence positive controls | Verify the finite route narrows when authored workload or competence fields fail. | implemented in Lean; real human capacity untested |
 | Contribution/interdependence audit | Prevent task reward from standing in for teamwork. | planned |
 
 ## Source crosswalk

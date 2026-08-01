@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 303, "planned": 21} |
+| Manifest status counts | {"implemented": 304, "planned": 20} |
 | Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
-| Lean modules referenced | 76 |
+| Lean modules referenced | 77 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -64,6 +64,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | 1 | 13 | 0 | 13 | 2 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 9 | 0 | 6 | 2 |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | 1 | 21 | 0 | 4 | 1 |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
@@ -147,7 +148,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `governed-operations-incident-command-and-graceful-degradation` | 3 | 3 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
 | `human-ai-communication-persuasion-and-epistemic-security` | 1 | 0 | 0 | 0 |
-| `human-ai-organizations-delegation-and-accountability` | 1 | 0 | 0 | 0 |
+| `human-ai-organizations-delegation-and-accountability` | 1 | 1 | 0 | 0 |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 1 | 0 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
@@ -348,7 +349,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:human_ai_org.accountability_requires_authority` | `human-ai-organizations-delegation-and-accountability` | `AsiStackProofs.HumanAIOrganizations` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:human_ai_org.accountability_requires_authority` | `human-ai-organizations-delegation-and-accountability` | `AsiStackProofs.HumanAIOrganizations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `ai-deployment-transition-distribution-and-human-agency` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

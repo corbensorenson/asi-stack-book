@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1311 |
+| Theorem declarations classified | 1332 |
 | Direct/projection-style theorem declarations | 183 |
-| Derived/decomposed theorem declarations | 862 |
-| Unknown or mixed theorem declarations | 266 |
+| Derived/decomposed theorem declarations | 865 |
+| Unknown or mixed theorem declarations | 284 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -100,7 +100,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 21 | 0 | 3 | 18 | manual review |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 9 | 0 | 4 | 5 | manual review |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -704,6 +704,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `overprivileged_node_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partition_without_no_mutation_evidence_blocks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partitioned_stale_grant_quarantines_before_mutation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `accountability_review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `accountability_review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `assignable_accountability_requires_complete_authority_record` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `collapsed_separation_of_duties_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `complete_accountability_record_reaches_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `excessive_workload_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_appeal_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_competence_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_decision_authority_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_evidence_access_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_independent_review_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_information_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_intervention_authority_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_non_claim_boundary_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_practical_control_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_remedy_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_revocation_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_stop_path_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_time_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `orphaned_residuals_block_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `undisposed_conflict_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `authority_leak_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `blame_without_control_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `bounded_review_preserves_declared_conditions` | derived_or_decomposed | no | uses split, unfold |
