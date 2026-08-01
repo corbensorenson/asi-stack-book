@@ -369,8 +369,35 @@ class HumanIntentGeneration2(AsiScene):
             spokes.add(Line(receipt_core.get_boundary_point(point), metric.get_boundary_point(-point), color=color, stroke_width=2.5))
         no_average = self.badge("NO SINGLE SCORE", ROLLBACK, 2.55).shift(UP * -1.95)
         scene24 = VGroup(receipt_core, receipt_text, spokes, metrics, no_average)
-        metric_review = Succession(*[Indicate(metrics[i], color=metric_colors[i], scale_factor=1.05) for i in (0, 1, 2, 3, 6, 7, 8)])
-        self.play_beat(24, FadeOut(scene23), GrowFromCenter(receipt_core), FadeIn(receipt_text), Create(spokes), LaggedStart(*[FadeIn(m) for m in metrics], lag_ratio=0.06), metric_review, FadeIn(no_average), settle=0.45)
+        metric_review = Succession(
+            *[
+                Indicate(metrics[i], color=metric_colors[i], scale_factor=1.07)
+                for i in range(len(metrics))
+            ],
+            Indicate(no_average, color=ROLLBACK, scale_factor=1.06),
+        )
+        # Build the evaluation surface quickly, then keep the viewer's eye on
+        # each named dimension in narration order. Running this enumeration as
+        # its own timed pass prevents the final privacy/usefulness clause from
+        # landing on a static scorecard.
+        self.next_section("b24")
+        remaining_24 = max(0.05, self.ENDS[23] - self.renderer.time)
+        construction_24 = min(2.5, max(0.05, remaining_24 - 0.5))
+        review_24 = max(0.05, remaining_24 - construction_24 - 0.35)
+        self.play(
+            LaggedStart(
+                FadeOut(scene23),
+                GrowFromCenter(receipt_core),
+                FadeIn(receipt_text),
+                Create(spokes),
+                LaggedStart(*[FadeIn(m) for m in metrics], lag_ratio=0.06),
+                FadeIn(no_average),
+                lag_ratio=0.12,
+            ),
+            run_time=construction_24,
+        )
+        self.play(metric_review, run_time=review_24)
+        self.wait_until(self.ENDS[23])
 
         # 25 — exact evidence ceiling
         boundary = VGroup(
@@ -388,7 +415,10 @@ class HumanIntentGeneration2(AsiScene):
         self.play_beat(25, FadeOut(scene24), FadeIn(artifacts), Create(boundary), LaggedStart(*[FadeIn(n) for n in nonclaims], lag_ratio=0.1), evidence_review, FadeIn(support), settle=0.45)
 
         # 26 — opening request resolves into help now and explicit authority later
-        final_request = self.request(compact=True).shift(LEFT * 5.0 + UP * 2.25)
+        # Keep the callback comfortably inside the 16:9 action-safe edge. At
+        # x=-5.0 the compact shell's stroke sat exactly on the frame boundary,
+        # which clipped the opening words in delivery-resolution review.
+        final_request = self.request(compact=True).shift(LEFT * 4.65 + UP * 2.25)
         final_v1 = self.contract("V1", COPPER, 3.1, 2.6).shift(LEFT * 2.4)
         final_draft = self.panel("PRIVATE DRAFT · DELIVERED", EVIDENCE, 3.8, 2.5).shift(RIGHT * 2.0 + UP * 1.6)
         final_v2 = self.contract("V2", COPPER, 3.1, 2.6).shift(LEFT * 2.4 + UP * -2.6)
