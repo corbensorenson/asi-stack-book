@@ -131,10 +131,10 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 77,
+    "planned": 76,
     "briefed": 0,
     "scripted": 0,
-    "animatic_passed": 7,
+    "animatic_passed": 8,
     "picture_and_sound_lock_passed": 7,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
@@ -512,7 +512,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "animatic",
         "beat_plan_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/narration.txt",
@@ -529,8 +529,8 @@
           "independent_release_candidate": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
-          "animatic": "not_started",
+          "beat_plan": "pass",
+          "animatic": "pass",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
