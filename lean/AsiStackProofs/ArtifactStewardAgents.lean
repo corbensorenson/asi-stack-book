@@ -343,4 +343,289 @@ theorem complete_scoped_federation_dispatches
     evidenceRequired,
   ]
 
+/-! ## Reachable work-contract dispatch review -/
+
+inductive StewardDispatchState where
+  | proposed
+  | refusedNoRequest
+  | repairObjective
+  | repairAuthority
+  | refuseAuthorityWidening
+  | repairToolBoundary
+  | repairVerification
+  | repairBudget
+  | requestBudgetApproval
+  | repairRollback
+  | repairNonClaimBoundary
+  | dispatchReady
+deriving DecidableEq, Repr
+
+structure StewardDispatchContract where
+  workRequested : Bool := true
+  objectivePresent : Bool := true
+  authorityBasisPresent : Bool := true
+  requestedAuthorityWithinCharter : Bool := true
+  allowedToolsRecorded : Bool := true
+  forbiddenToolsRecorded : Bool := true
+  verificationPlanPresent : Bool := true
+  budgetPresent : Bool := true
+  budgetWithinPolicy : Bool := true
+  rollbackPlanPresent : Bool := true
+  nonClaimBoundaryPresent : Bool := true
+deriving DecidableEq, Repr
+
+def StewardWorkContractComplete (review : StewardDispatchContract) : Bool :=
+  review.workRequested && review.objectivePresent &&
+    review.authorityBasisPresent && review.requestedAuthorityWithinCharter &&
+      review.allowedToolsRecorded && review.forbiddenToolsRecorded &&
+        review.verificationPlanPresent && review.budgetPresent &&
+          review.budgetWithinPolicy && review.rollbackPlanPresent &&
+            review.nonClaimBoundaryPresent
+
+def StewardDispatchStepFor
+    (review : StewardDispatchContract) : StewardDispatchState -> StewardDispatchState
+  | .proposed =>
+      if ! review.workRequested then .refusedNoRequest
+      else if ! review.objectivePresent then .repairObjective
+      else if ! review.authorityBasisPresent then .repairAuthority
+      else if ! review.requestedAuthorityWithinCharter then .refuseAuthorityWidening
+      else if ! review.allowedToolsRecorded || ! review.forbiddenToolsRecorded then
+        .repairToolBoundary
+      else if ! review.verificationPlanPresent then .repairVerification
+      else if ! review.budgetPresent then .repairBudget
+      else if ! review.budgetWithinPolicy then .requestBudgetApproval
+      else if ! review.rollbackPlanPresent then .repairRollback
+      else if ! review.nonClaimBoundaryPresent then .repairNonClaimBoundary
+      else .dispatchReady
+  | state => state
+
+def StewardDispatchRun
+    (review : StewardDispatchContract) : Nat -> StewardDispatchState
+  | 0 => .proposed
+  | n + 1 => StewardDispatchStepFor review (StewardDispatchRun review n)
+
+def StewardDispatchSafe
+    (review : StewardDispatchContract) (state : StewardDispatchState) : Prop :=
+  state = .dispatchReady -> StewardWorkContractComplete review = true
+
+theorem dispatch_ready_requires_complete_work_contract
+    (review : StewardDispatchContract)
+    (ready : StewardDispatchStepFor review .proposed = .dispatchReady) :
+    StewardWorkContractComplete review = true := by
+  unfold StewardDispatchStepFor at ready
+  repeat split at ready <;> simp_all [StewardWorkContractComplete]
+
+theorem steward_dispatch_step_preserves_contract_safety
+    (review : StewardDispatchContract)
+    (state : StewardDispatchState)
+    (safe : StewardDispatchSafe review state) :
+    StewardDispatchSafe review (StewardDispatchStepFor review state) := by
+  cases state
+  · intro ready
+    exact dispatch_ready_requires_complete_work_contract review ready
+  all_goals
+    simp only [StewardDispatchSafe, StewardDispatchStepFor] at safe ⊢
+    exact safe
+
+theorem steward_dispatch_run_ready_requires_complete_contract
+    (review : StewardDispatchContract) (steps : Nat)
+    (ready : StewardDispatchRun review steps = .dispatchReady) :
+    StewardWorkContractComplete review = true := by
+  have safe : StewardDispatchSafe review (StewardDispatchRun review steps) := by
+    clear ready
+    induction steps with
+    | zero => simp [StewardDispatchSafe, StewardDispatchRun]
+    | succ n ih =>
+        simpa [StewardDispatchRun] using
+          steward_dispatch_step_preserves_contract_safety review
+            (StewardDispatchRun review n) ih
+  exact safe ready
+
+theorem complete_work_contract_reaches_dispatch_ready :
+    StewardDispatchRun ({} : StewardDispatchContract) 1 = .dispatchReady := by
+  decide
+
+theorem missing_work_objective_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with objectivePresent := false } 1 =
+        .repairObjective := by decide
+
+theorem missing_work_authority_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with authorityBasisPresent := false } 1 =
+        .repairAuthority := by decide
+
+theorem widened_work_authority_reaches_refusal :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with
+          requestedAuthorityWithinCharter := false } 1 =
+        .refuseAuthorityWidening := by decide
+
+theorem missing_work_tool_boundary_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with forbiddenToolsRecorded := false } 1 =
+        .repairToolBoundary := by decide
+
+theorem missing_work_verification_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with verificationPlanPresent := false } 1 =
+        .repairVerification := by decide
+
+theorem missing_work_budget_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with budgetPresent := false } 1 =
+        .repairBudget := by decide
+
+theorem over_policy_work_budget_reaches_approval :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with budgetWithinPolicy := false } 1 =
+        .requestBudgetApproval := by decide
+
+theorem missing_work_rollback_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with rollbackPlanPresent := false } 1 =
+        .repairRollback := by decide
+
+theorem missing_work_non_claim_boundary_reaches_repair :
+    StewardDispatchRun
+      { ({} : StewardDispatchContract) with nonClaimBoundaryPresent := false } 1 =
+        .repairNonClaimBoundary := by decide
+
+/-! ## Reachable release-review gate -/
+
+inductive StewardReleaseState where
+  | candidate
+  | refusedNoCandidate
+  | repairArtifactBinding
+  | repairTests
+  | repairEvidence
+  | repairChangelog
+  | repairResiduals
+  | requestApproval
+  | refuseSupportPromotion
+  | repairNonClaimBoundary
+  | externalReviewReady
+deriving DecidableEq, Repr
+
+structure StewardReleaseReview where
+  releaseCandidateRequested : Bool := true
+  artifactBindingPresent : Bool := true
+  testsRecorded : Bool := true
+  evidenceRecorded : Bool := true
+  changelogRecorded : Bool := true
+  residualsRecorded : Bool := true
+  approvalRecorded : Bool := true
+  supportStateEffectNone : Bool := true
+  chapterCoreEffectNone : Bool := true
+  nonClaimBoundaryPresent : Bool := true
+deriving DecidableEq, Repr
+
+def StewardReleasePacketComplete (review : StewardReleaseReview) : Bool :=
+  review.releaseCandidateRequested && review.artifactBindingPresent &&
+    review.testsRecorded && review.evidenceRecorded && review.changelogRecorded &&
+      review.residualsRecorded && review.approvalRecorded &&
+        review.supportStateEffectNone && review.chapterCoreEffectNone &&
+          review.nonClaimBoundaryPresent
+
+def StewardReleaseStepFor
+    (review : StewardReleaseReview) : StewardReleaseState -> StewardReleaseState
+  | .candidate =>
+      if ! review.releaseCandidateRequested then .refusedNoCandidate
+      else if ! review.artifactBindingPresent then .repairArtifactBinding
+      else if ! review.testsRecorded then .repairTests
+      else if ! review.evidenceRecorded then .repairEvidence
+      else if ! review.changelogRecorded then .repairChangelog
+      else if ! review.residualsRecorded then .repairResiduals
+      else if ! review.approvalRecorded then .requestApproval
+      else if ! review.supportStateEffectNone || ! review.chapterCoreEffectNone then
+        .refuseSupportPromotion
+      else if ! review.nonClaimBoundaryPresent then .repairNonClaimBoundary
+      else .externalReviewReady
+  | state => state
+
+def StewardReleaseRun (review : StewardReleaseReview) : Nat -> StewardReleaseState
+  | 0 => .candidate
+  | n + 1 => StewardReleaseStepFor review (StewardReleaseRun review n)
+
+def StewardReleaseSafe
+    (review : StewardReleaseReview) (state : StewardReleaseState) : Prop :=
+  state = .externalReviewReady -> StewardReleasePacketComplete review = true
+
+theorem release_review_ready_requires_complete_packet
+    (review : StewardReleaseReview)
+    (ready : StewardReleaseStepFor review .candidate = .externalReviewReady) :
+    StewardReleasePacketComplete review = true := by
+  unfold StewardReleaseStepFor at ready
+  repeat split at ready <;> simp_all [StewardReleasePacketComplete]
+
+theorem steward_release_step_preserves_packet_safety
+    (review : StewardReleaseReview)
+    (state : StewardReleaseState)
+    (safe : StewardReleaseSafe review state) :
+    StewardReleaseSafe review (StewardReleaseStepFor review state) := by
+  cases state
+  · intro ready
+    exact release_review_ready_requires_complete_packet review ready
+  all_goals
+    simp only [StewardReleaseSafe, StewardReleaseStepFor] at safe ⊢
+    exact safe
+
+theorem steward_release_run_ready_requires_complete_packet
+    (review : StewardReleaseReview) (steps : Nat)
+    (ready : StewardReleaseRun review steps = .externalReviewReady) :
+    StewardReleasePacketComplete review = true := by
+  have safe : StewardReleaseSafe review (StewardReleaseRun review steps) := by
+    clear ready
+    induction steps with
+    | zero => simp [StewardReleaseSafe, StewardReleaseRun]
+    | succ n ih =>
+        simpa [StewardReleaseRun] using
+          steward_release_step_preserves_packet_safety review
+            (StewardReleaseRun review n) ih
+  exact safe ready
+
+theorem complete_release_packet_reaches_external_review_ready :
+    StewardReleaseRun ({} : StewardReleaseReview) 1 = .externalReviewReady := by
+  decide
+
+theorem missing_release_artifact_binding_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with artifactBindingPresent := false } 1 =
+        .repairArtifactBinding := by decide
+
+theorem missing_release_tests_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with testsRecorded := false } 1 =
+        .repairTests := by decide
+
+theorem missing_release_evidence_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with evidenceRecorded := false } 1 =
+        .repairEvidence := by decide
+
+theorem missing_release_changelog_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with changelogRecorded := false } 1 =
+        .repairChangelog := by decide
+
+theorem missing_release_residuals_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with residualsRecorded := false } 1 =
+        .repairResiduals := by decide
+
+theorem missing_release_approval_reaches_approval_request :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with approvalRecorded := false } 1 =
+        .requestApproval := by decide
+
+theorem release_support_promotion_reaches_refusal :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with supportStateEffectNone := false } 1 =
+        .refuseSupportPromotion := by decide
+
+theorem missing_release_non_claim_boundary_reaches_repair :
+    StewardReleaseRun
+      { ({} : StewardReleaseReview) with nonClaimBoundaryPresent := false } 1 =
+        .repairNonClaimBoundary := by decide
+
 end AsiStackProofs.ArtifactStewardAgents

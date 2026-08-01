@@ -11,7 +11,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 301, "planned": 23} |
+| Manifest status counts | {"implemented": 303, "planned": 21} |
 | Triage class counts | {"formal-invariant": 306, "process-contract": 18} |
 | Lean modules referenced | 76 |
 | Chapters with proof targets | 84 |
@@ -35,7 +35,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Alignment.lean` | 1 | 21 | 0 | 8 | 3 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 8 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 15 | 0 | 32 | 3 |
-| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 5 | 12 | 0 | 3 | 3 |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 37 | 0 | 11 | 5 |
 | `lean/AsiStackProofs/Authority.lean` | 2 | 28 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 2 | 12 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 3 | 0 | 5 | 4 |
@@ -117,7 +117,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `ai-deployment-transition-distribution-and-human-agency` | 1 | 0 | 0 | 0 |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 6 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
-| `artifact-steward-agents-and-living-project-governance` | 7 | 5 | 0 | 0 |
+| `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `autonomous-replication-proliferation-and-containment` | 1 | 0 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 3 | 3 | 0 | 0 |
@@ -503,9 +503,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `scientific-discovery-and-experimental-governance` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.sunset_review.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.lifecycle_route.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.contribution_ledger.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |

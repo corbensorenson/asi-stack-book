@@ -5401,13 +5401,45 @@
       "order": 152,
       "script": "validate_artifact_steward_lifecycle_probe.py",
       "args": [],
-      "execution_tier": "deep",
-      "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The concrete 26-scenario steward lifecycle result, independently encoded work-contract and release-review classifiers, reachable Lean transition models, exact chapter boundary, proof triage, and canonical target status.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/ArtifactStewardAgents.lean",
+        "scripts/run_artifact_steward_lifecycle_probe.py",
+        "scripts/validate_artifact_steward_lifecycle_probe.py",
+        "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
+        "docs/artifact_steward_lifecycle_probe.md",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+        "evidence_quality/proof_model_dossiers/artifact-steward-agents-and-living-project-governance.md",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json"
+      ],
+      "output_contract": "Independently classify the complete work-contract and release-review packets plus seventeen exact mutations, validate all three accepted and 23 expected-invalid scenarios, require the exact 37-theorem Lean surface, preserve retired premise projections, and preserve the no-execution/no-publication/no-support boundary.",
+      "output_assertions": [
+        "3 accepted proposal or review routes",
+        "23 expected-invalid controls",
+        "17/17 independently encoded work-contract and release-review mutations",
+        "37 exact Lean declarations",
+        "arbitrary-length readiness implies complete modeled packet",
+        "retired premise projections remain absent",
+        "execution, publication, support-state, and chapter-core effects remain none"
+      ],
+      "claim_scope": "Finite steward work-contract, release-review, lifecycle, contribution, and federation routing over authored record fields only.",
+      "negative_controls": "validator_owned_twenty_three_lifecycle_work_contract_and_release_review_cases",
+      "negative_control_cases": [
+        "tainted event without review",
+        "over-policy treasury spend",
+        "collapsed contribution governance",
+        "federated authority inheritance",
+        "release packet evidence gaps",
+        "sunset ordinary-work request",
+        "nine exact work-contract boundary removals",
+        "eight exact release-review boundary removals"
+      ],
+      "prohibited_inference": "No model or probe executes a worker, tool, branch mutation, spend, release, publication, governance change, or support transition; it does not establish stewardship quality, authority legitimacy, treasury safety, capture resistance, deployment, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "manual_reachable_transition_models_independent_mutations_and_no_effect_boundary_reviewed"
     },
     {
       "id": "validate_artifact_graph_replay:153",
@@ -12001,7 +12033,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 301 implemented and 23 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, and Search Substrate refinements",
+        "324 current targets comprise 303 implemented and 21 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, and Artifact Steward refinements",
         "the thirty-four richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"

@@ -265,8 +265,8 @@ BOOK_GATE_CHECKS = [
         "name": "Artifact steward lifecycle probe",
         "doc": "docs/artifact_steward_lifecycle_probe.md",
         "script": "scripts/validate_artifact_steward_lifecycle_probe.py",
-        "summary": "Checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, `invalid_tainted_event_without_review`, `invalid_over_policy_treasury_spend`, `invalid_contribution_governance_laundering`, `invalid_unscoped_federation_contract`, `invalid_release_without_gate_evidence`, and `invalid_sunset_criteria_ordinary_work`.",
-        "boundary": "no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim",
+        "summary": "Checks `valid_bounded_work_dispatch_proposal`, `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and 23 expected-invalid controls, including exact work-contract and release-review boundary mutations.",
+        "boundary": "no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, worker-execution, publication, or support-state-promotion claim",
     },
     {
         "name": "Intent re-contract trigger probe",

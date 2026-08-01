@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 113 |
-| Theorem declarations classified | 1286 |
+| Theorem declarations classified | 1311 |
 | Direct/projection-style theorem declarations | 183 |
-| Derived/decomposed theorem declarations | 856 |
-| Unknown or mixed theorem declarations | 247 |
+| Derived/decomposed theorem declarations | 862 |
+| Unknown or mixed theorem declarations | 266 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -59,7 +59,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 15 | 11 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
@@ -273,16 +273,41 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `trust_binding_requires_recursion_stop` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `autonomy_escalation_without_charter_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `collapsed_contribution_score_cannot_drive_governance_effect` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `complete_release_packet_reaches_external_review_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `complete_scoped_federation_dispatches` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `complete_work_contract_reaches_dispatch_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `dispatch_ready_requires_complete_work_contract` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `external_federation_spend_without_approval_routes_to_approval` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `federated_worker_cannot_inherit_project_authority` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `federation_without_work_contract_requests_contract` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_authorship_credit_routes_to_ledger_repair` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_approval_reaches_approval_request` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_artifact_binding_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_changelog_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_evidence_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_non_claim_boundary_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_residuals_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_release_tests_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_authority_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_budget_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_non_claim_boundary_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_objective_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_rollback_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_tool_boundary_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `missing_work_verification_reaches_repair` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `over_policy_work_budget_reaches_approval` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `release_review_ready_requires_complete_packet` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `release_support_promotion_reaches_refusal` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `separated_contribution_ledger_without_support_change_accepts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `steward_dispatch_run_ready_requires_complete_contract` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `steward_dispatch_step_preserves_contract_safety` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `steward_release_run_ready_requires_complete_packet` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `steward_release_step_preserves_packet_safety` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `sunset_criteria_without_open_review_routes_to_sunset_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `support_state_change_without_transition_requests_evidence_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `tainted_event_without_review_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `treasury_spend_outside_policy_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `widened_work_authority_reaches_refusal` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `authority_lifecycle_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `authority_revocation_trace_surface_bridge` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `complete_authority_lifecycle_admits_record` | derived_or_decomposed | no | uses simp, unfold |

@@ -1645,15 +1645,15 @@ def errors(data: dict) -> list[str]:
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
         "P0": 26,
-        "P1": 696,
-        "P2": 41,
+        "P1": 697,
+        "P2": 63,
         "P3": 336,
-        "P4": 97,
+        "P4": 99,
         "P5": 90,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 1286,
+        "retain": 1311,
     }
     if (
         c6_overlay_status.get("state")
@@ -1667,7 +1667,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 1286
+        or c6_overlay_status.get("theorem_count") != 1311
         or c6_overlay_status.get("theorem_bearing_module_count") != 109
         or c6_overlay_status.get("semantic_owner_chapter_count") != 63
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1686,7 +1686,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 1286
+        c6_summary.get("current_theorem_count") != 1311
         or c6_summary.get("current_module_count") != 109
         or c6_summary.get("semantic_owner_chapter_count") != 63
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1956,9 +1956,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3814
+        or template_guard.get("current_prose_candidate_count") != 3817
         or template_guard.get("retired_inherited_prose_candidate_count") != 248
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 618
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 621
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4059
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1987,7 +1987,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 248
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 618
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 621
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -2139,12 +2139,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 113, 1286, 856, 183, 247)
+    expected_proof = (324, 113, 1311, 862, 183, 266)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 324:
-        out.append("proof manifest target count disagrees with the 301 implemented plus twenty-three current planned targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 301, "planned": 23}:
+        out.append("proof manifest target count disagrees with the 303 implemented plus twenty-one current planned targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 303, "planned": 21}:
         out.append("taxonomy-completion proof targets altered the frozen implemented-proof denominator")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})

@@ -2994,11 +2994,11 @@
       "tag": "lean:artifact_stewards.work_contract.operational_invariant",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "module": "AsiStackProofs.ArtifactStewardAgents",
-      "formal_target": "A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing.",
-      "target_status": "planned",
+      "formal_target": "A reachable steward dispatch model derives contract repair, refusal, or approval when objective, authority, tool, verification, budget, rollback, or non-claim boundaries are missing; arbitrary-length runs reach dispatch readiness only from a complete modeled contract.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Planned after retiring an assumption-restating implication: implement a reachable steward dispatch decision function whose rejecting routes are derived from missing contract boundaries; the current schema fixture proves record shape only."
+      "rationale": "Implemented as a reachable finite transition model with a complete-contract readiness witness, an arbitrary-length safety invariant, exact repair/refusal/approval countermodels, and an independently encoded lifecycle-probe consumer. The model stops at dispatch readiness and does not execute a worker, tool, branch mutation, spend, or support transition."
     },
     {
       "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
@@ -3014,11 +3014,11 @@
       "tag": "lean:artifact_stewards.release_gate.operational_invariant",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "module": "AsiStackProofs.ArtifactStewardAgents",
-      "formal_target": "A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
-      "target_status": "planned",
+      "formal_target": "A reachable steward release model derives repair, refusal, or approval when artifact, test, evidence, changelog, residual, approval, no-promotion, or non-claim records are missing; arbitrary-length runs reach external-review readiness only from a complete modeled packet.",
+      "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Planned after retiring an assumption-restating implication: implement a reachable release decision function whose refusal routes are derived from missing gate records; the executable invalid trace remains separate protocol evidence."
+      "rationale": "Implemented as a reachable finite transition model with a complete-packet review-readiness witness, an arbitrary-length safety invariant, exact repair/refusal/approval countermodels, and an independently encoded lifecycle-probe consumer. The model stops at external-review readiness and contains no publication state or support transition."
     },
     {
       "tag": "lean:artifact_stewards.sunset_review.failure_blocks_promotion",

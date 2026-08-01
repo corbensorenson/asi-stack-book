@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-08-01 - Reachable artifact-steward readiness models
+
+- Implemented the two planned Artifact Steward proof targets with reachable
+  work-contract and release-review transition models. Arbitrary-length Lean
+  run invariants now make dispatch readiness and external-review readiness
+  require complete modeled packets.
+- Added exact repair, refusal, and approval countermodels for nine
+  work-contract boundaries and eight release-review boundaries. The existing
+  lifecycle probe now checks three valid routes and 23 expected-invalid
+  controls, while its validator independently re-encodes all seventeen new
+  mutations and checks 37 exact theorem declarations.
+- Preserved the execution boundary: the models stop before worker execution or
+  publication, create no evidence transition, and do not establish authority
+  legitimacy, project quality, release safety, deployment, transfer, or ASI.
+  Chapter support remains `argument`.
+
 ## 2026-08-01 - Reachable substrate-adoption classifier
 
 - Replaced the hand-authored `SubstrateAdoptionTraceSummary` with

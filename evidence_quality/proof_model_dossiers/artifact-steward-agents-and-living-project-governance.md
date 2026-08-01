@@ -14,6 +14,26 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:artifact_stewards.contribution_ledger.operational_invariant` | semantically_reviewed | retain_load_bearing_semantic |
 | `lean:artifact_stewards.federation_contract.operational_invariant` | semantically_reviewed | retain_load_bearing_semantic |
 
+## Current refinement
+
+`AsiStackProofs.ArtifactStewardAgents` now adds two finite reachable transition
+models to the retained lifecycle, contribution-ledger, and federation routes.
+The work-contract model derives repair, refusal, approval, or dispatch readiness
+from objective, authority, tool, verification, budget, rollback, and non-claim
+fields. The release model derives repair, refusal, approval, or external-review
+readiness from artifact, test, evidence, changelog, residual, approval,
+no-promotion, and non-claim fields. Safety predicates are preserved over
+arbitrary-length runs, so either readiness state implies a complete modeled
+packet. Closed countermodels exercise every named missing boundary.
+
+`scripts/validate_artifact_steward_lifecycle_probe.py` independently re-encodes
+seventeen exact boundary mutations and checks three accepted plus twenty-three
+expected-invalid public scenarios. Both formal models stop before execution or
+publication. They prove no field truth, worker or tool behavior, treasury
+safety, governance legitimacy, project quality, release safety, support
+transition, deployment, transfer, AGI, or ASI. Chapter support remains
+`argument` and `support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |

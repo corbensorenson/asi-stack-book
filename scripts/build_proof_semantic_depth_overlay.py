@@ -265,6 +265,99 @@ for theorem_name in (
         ),
     }
 
+for theorem_name, rationale in {
+    "complete_work_contract_reaches_dispatch_ready":
+        "The closed complete contract witnesses reachability of dispatch readiness without executing work.",
+    "missing_work_objective_reaches_repair":
+        "The closed contract with no objective witnesses the exact objective-repair state.",
+    "missing_work_authority_reaches_repair":
+        "The closed contract with no authority basis witnesses the exact authority-repair state.",
+    "widened_work_authority_reaches_refusal":
+        "The closed authority-widening contract witnesses exact dispatch refusal.",
+    "missing_work_tool_boundary_reaches_repair":
+        "The closed contract with an incomplete tool boundary witnesses exact repair.",
+    "missing_work_verification_reaches_repair":
+        "The closed contract with no verification plan witnesses exact repair.",
+    "missing_work_budget_reaches_repair":
+        "The closed contract with no budget record witnesses exact repair.",
+    "over_policy_work_budget_reaches_approval":
+        "The closed over-policy contract witnesses routing to budget approval.",
+    "missing_work_rollback_reaches_repair":
+        "The closed contract with no rollback plan witnesses exact repair.",
+    "missing_work_non_claim_boundary_reaches_repair":
+        "The closed contract with no non-claim boundary witnesses exact repair.",
+    "complete_release_packet_reaches_external_review_ready":
+        "The closed complete release packet witnesses external-review readiness without publication.",
+    "missing_release_artifact_binding_reaches_repair":
+        "The closed release packet with no artifact binding witnesses exact repair.",
+    "missing_release_tests_reaches_repair":
+        "The closed release packet with no test record witnesses exact repair.",
+    "missing_release_evidence_reaches_repair":
+        "The closed release packet with no evidence record witnesses exact repair.",
+    "missing_release_changelog_reaches_repair":
+        "The closed release packet with no changelog witnesses exact repair.",
+    "missing_release_residuals_reaches_repair":
+        "The closed release packet with no residual record witnesses exact repair.",
+    "missing_release_approval_reaches_approval_request":
+        "The closed release packet with no approval witnesses an approval request.",
+    "release_support_promotion_reaches_refusal":
+        "The closed release packet requesting support effect witnesses exact refusal.",
+    "missing_release_non_claim_boundary_reaches_repair":
+        "The closed release packet with no non-claim boundary witnesses exact repair.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ArtifactStewardAgents.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed concrete steward packet witnesses one reachable transition state"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "steward_dispatch_run_ready_requires_complete_contract": (
+        "Induction over arbitrary finite run length preserves the work-contract safety predicate; "
+        "the result proves modeled readiness requires completeness, not real execution correctness."
+    ),
+    "steward_release_run_ready_requires_complete_packet": (
+        "Induction over arbitrary finite run length preserves the release-packet safety predicate; "
+        "the result proves modeled review readiness requires completeness, not publication safety."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ArtifactStewardAgents.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "classification_basis": [
+            "induction proves a safety predicate across every finite transition run"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "dispatch_ready_requires_complete_work_contract",
+    "steward_dispatch_step_preserves_contract_safety",
+    "release_review_ready_requires_complete_packet",
+    "steward_release_step_preserves_packet_safety",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ArtifactStewardAgents.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal finite transition preservation constrains readiness within the authored model"
+        ],
+        "rationale": (
+            "The theorem is a local completeness or one-step preservation law. It trusts all input "
+            "fields and proves no execution, publication, governance, or support outcome."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -290,6 +383,9 @@ LEGACY_VALIDATOR_ALIASES = {
         "validate_circle_public_replay.py",
     },
     "lean/AsiStackProofs/SearchSubstrates.lean": {"validate_substrate_adoption_trace.py"},
+    "lean/AsiStackProofs/ArtifactStewardAgents.lean": {
+        "validate_artifact_steward_lifecycle_probe.py"
+    },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},
     "lean/AsiStackProofs/CoilAttentionMemory.lean": {"validate_cyclic_memory_contracts.py"},

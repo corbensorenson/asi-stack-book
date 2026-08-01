@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 26,
-    "P1": 696,
-    "P2": 41,
+    "P1": 697,
+    "P2": 63,
     "P3": 336,
-    "P4": 97,
+    "P4": 99,
     "P5": 90,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1286,
+    "retain": 1311,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -238,17 +238,20 @@ EXPECTED_TARGETS = {
         "incomplete boundaries reject."
     ),
     "lean:artifact_stewards.work_contract.operational_invariant": (
-        "A reachable steward dispatch model derives contract repair or refusal when "
-        "objective, authority, tool, verification, budget, or non-claim boundaries "
-        "are missing."
+        "A reachable steward dispatch model derives contract repair, refusal, or "
+        "approval when objective, authority, tool, verification, budget, rollback, "
+        "or non-claim boundaries are missing; arbitrary-length runs reach dispatch "
+        "readiness only from a complete modeled contract."
     ),
     "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion": (
         "A finite steward lifecycle decision with requested treasury spend outside "
         "policy routes to approval."
     ),
     "lean:artifact_stewards.release_gate.operational_invariant": (
-        "A reachable steward release model derives refusal when test, evidence, "
-        "changelog, residual, or approval records are missing."
+        "A reachable steward release model derives repair, refusal, or approval when "
+        "artifact, test, evidence, changelog, residual, approval, no-promotion, or "
+        "non-claim records are missing; arbitrary-length runs reach external-review "
+        "readiness only from a complete modeled packet."
     ),
     "lean:artifact_stewards.sunset_review.failure_blocks_promotion": (
         "A finite steward lifecycle decision with sunset criteria met and no open "
@@ -367,10 +370,7 @@ EXPECTED_TARGETS = {
         "config-or-tool reference, or relies on dashboard prose alone, is rejected."
     ),
 }
-PLANNED_TARGETS = {
-    "lean:artifact_stewards.work_contract.operational_invariant",
-    "lean:artifact_stewards.release_gate.operational_invariant",
-}
+PLANNED_TARGETS = set()
 EXPECTED_RELATIONS = {
     "retire_exact_same_model_duplicate": "exact_same_model_normalized_statement",
     "retire_projection_after_counterexample_consumer_migration": (
@@ -791,7 +791,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1286:
+    if summary.get("current_theorem_count") != 1311:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -961,10 +961,26 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     }
-    if len(steward_rows) != 12:
-        out.append("ArtifactStewardAgents must retain exactly twelve route declarations")
+    if len(steward_rows) != 37:
+        out.append("ArtifactStewardAgents must expose exactly thirty-seven declarations")
     if retired_steward_names & {row["name"] for row in steward_rows}:
         out.append("ArtifactStewardAgents retained an executed premise projection")
+    required_steward_names = {
+        "dispatch_ready_requires_complete_work_contract",
+        "steward_dispatch_step_preserves_contract_safety",
+        "steward_dispatch_run_ready_requires_complete_contract",
+        "complete_work_contract_reaches_dispatch_ready",
+        "release_review_ready_requires_complete_packet",
+        "steward_release_step_preserves_packet_safety",
+        "steward_release_run_ready_requires_complete_packet",
+        "complete_release_packet_reaches_external_review_ready",
+    }
+    missing_steward_names = required_steward_names - {row["name"] for row in steward_rows}
+    if missing_steward_names:
+        out.append(
+            "ArtifactStewardAgents missing reachable readiness invariants: "
+            + ", ".join(sorted(missing_steward_names))
+        )
     steward_source = (ROOT / "lean/AsiStackProofs/ArtifactStewardAgents.lean").read_text(
         encoding="utf-8"
     )
@@ -1184,7 +1200,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1286
+        status.get("theorem_count") != 1311
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

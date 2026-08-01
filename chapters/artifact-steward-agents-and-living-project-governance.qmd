@@ -46,12 +46,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 manuscript draft |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-01 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All assigned sources have public source notes. Internal/local raw passages, authenticated connector text, tracked local-project passages, official documentation pages, and arXiv abstracts have now been passage-reviewed for the chapter. The steward-agent architecture remains a synthesis. The browser note is local-only planning context. |
-| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, sunset review, treasury policy, and event-taint record validate locally; twelve finite Lean route reductions cover lifecycle, contribution-ledger separation, and federation contracts, while reachable work-contract dispatch and release-gate routes remain planned; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic release evidence and approval handoff behavior; `python3 scripts/validate_artifact_steward_lifecycle_probe.py` validates the Artifact steward lifecycle probe over `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls. No steward bot, treasury policy engine, event-taint workflow, contributor-ledger service, governance runner, release runner, sunset protocol, or project federation harness has been run. |
+| Test state | Record-shape fixtures for the steward charter, work contract, contribution ledger entry, action decision, sunset review, treasury policy, and event-taint record validate locally. Thirty-seven Lean declarations now cover lifecycle, contribution-ledger, federation, reachable work-contract review, and reachable release review. `python3 scripts/validate_artifact_steward_lifecycle_probe.py` independently checks the Artifact steward lifecycle probe over `valid_bounded_work_dispatch_proposal`, `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and 23 expected-invalid controls. No steward bot, treasury policy engine, event-taint workflow, contributor-ledger service, governance runner, release runner, sunset protocol, or project federation harness has been run. |
 
 ## Drafting guardrail
 
@@ -381,12 +381,14 @@ close issues while its mission decays.
 
 ## Minimum Viable Implementation
 
-The exact current minimum is seven schema-and-fixture record families; twelve
-Lean declarations reducing lifecycle, contribution-ledger, and federation
-route functions; one deterministic public-safe lifecycle probe with two valid
-routes and six expected-invalid controls; and one adjacent synthetic release
-evidence-and-approval handoff. Work-contract dispatch and release-gate route
-targets remain planned. No steward bot, real event intake,
+The exact current minimum is seven schema-and-fixture record families;
+thirty-seven Lean declarations over lifecycle, contribution-ledger,
+federation, work-contract, and release-review transition functions; one
+deterministic public-safe lifecycle probe with three valid routes and 23
+expected-invalid controls; and one adjacent synthetic release
+evidence-and-approval handoff. The complete modeled work contract reaches only
+dispatch readiness, and the complete modeled release packet reaches only
+external-review readiness. No steward bot, real event intake,
 treasury or compute executor, contributor service, governance runner,
 federation harness, protected-branch action, release runner, sunset protocol,
 natural project workload, independent reproduction, deployment, or
@@ -407,7 +409,7 @@ This repository now contains the record-level first step for that implementation
 
 The repository also now contains `treasury_policy_record.schema.json` and `event_taint_record.schema.json`, each with a matching valid fixture. These close two record-shape gaps in the steward layer but do not connect to a wallet, run a treasury engine, scan workflows, or prove event-intake safety.
 
-The repository also contains the Artifact steward lifecycle probe in `docs/artifact_steward_lifecycle_probe.md` and `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`. The probe checks `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and expected-invalid routes for `invalid_tainted_event_without_review`, `invalid_over_policy_treasury_spend`, `invalid_contribution_governance_laundering`, `invalid_unscoped_federation_contract`, `invalid_release_without_gate_evidence`, and `invalid_sunset_criteria_ordinary_work`. This is a no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim.
+The repository also contains the Artifact steward lifecycle probe in `docs/artifact_steward_lifecycle_probe.md` and `experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json`. The probe checks `valid_bounded_work_dispatch_proposal`, `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and 23 expected-invalid controls. The original six controls retain event-taint, treasury, contribution, federation, release-evidence, and sunset boundaries; seventeen exact mutations independently remove one work-contract or release-review requirement. This is a no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim.
 
 ## Mature Research Target
 
@@ -450,9 +452,9 @@ The completed stewardship surface would make projects more understandable and le
 |---|---|---|
 | Project steward manifest fixture validation | Validate charter shape, authority ceiling, budget policy, evidence policy, governance model, and sunset criteria. | implemented; `validate_protocol_examples.py` validates the fixture shape only |
 | Treasury policy and event-taint fixture validation | Validate proposal-only treasury boundaries and untrusted event-field separation without connecting to funds or scanning real workflows. | implemented; `validate_protocol_examples.py` validates fixture shapes only |
-| Work contract authority denial test | Confirm a steward cannot dispatch work when the contract lacks authority, allowed tools, forbidden-tool handling, verification requirements, or non-claims. | record-shape fixture implemented; reachable formal dispatch route planned; no steward dispatch run |
+| Work contract authority denial test | Confirm a steward cannot reach dispatch readiness when the contract lacks objective, authority, allowed or forbidden tools, verification, budget, rollback, or non-claims. | implemented as an arbitrary-length Lean transition invariant plus nine independently checked controls; no steward dispatch run |
 | Treasury spend-cap test | Confirm proposed spend above policy threshold becomes an approval request, not an executable action. | implemented as a finite Lean lifecycle route to approval; no treasury engine run |
-| Release evidence gate test | Confirm a stewarded release publication requires test, evidence, changelog, residual, and approval records. | expected-invalid lifecycle trace implemented; reachable formal publication route planned; no release runner exists |
+| Release evidence gate test | Confirm a stewarded release cannot reach external-review readiness without artifact, test, evidence, changelog, residual, approval, no-promotion, and non-claim records. | implemented as an arbitrary-length Lean transition invariant plus eight independently checked controls; the model has no publication state and no release runner exists |
 | Sunset ordinary-work block test | Confirm ordinary work generation is blocked when sunset criteria are met and no sunset review has opened. | executable invalid trace and finite Lean route to sunset review implemented; no steward loop exists |
 | Untrusted event taint test | Confirm issue, PR, comment, or worker text routes to quarantine when tainted and unreviewed. | implemented as a finite Lean lifecycle-route predicate; no workflow scan or steward event-intake run |
 | Contribution ledger separation test | Confirm compensation, reputation, governance influence, evidence credit, and authorship are represented separately. | implemented as finite Lean contribution-ledger route predicates; no contributor-ledger service exists |
@@ -460,35 +462,35 @@ The completed stewardship surface would make projects more understandable and le
 | Release evidence handoff test | Confirm release notes and claim updates reference actual tests, proof outputs, source mappings, or reviewer approvals before publication. | implemented by benchmark anti-Goodhart harness for synthetic ratchet/policy evidence refs and approval refs; no steward release runner exists |
 | Project federation contract test | Confirm a worker, personal hive, rented node, or external steward receives only a scoped work contract and cannot inherit project authority. | implemented as finite Lean federation-contract route predicates; no project federation harness exists |
 | Autonomy-mode transition test | Confirm a steward cannot move from assisted to bounded autonomy without charter approval and that over-policy treasury spend routes to approval. | implemented as finite Lean lifecycle-route predicates; no steward autonomy transition or treasury engine exists |
-| Artifact steward lifecycle probe | Confirm fixture-composed lifecycle routes for `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls covering event taint, over-policy treasury spend, contribution-governance laundering, unscoped federation authority inheritance, missing release evidence, and sunset ordinary-work blocking. | implemented by `python3 scripts/validate_artifact_steward_lifecycle_probe.py`; no steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, project federation harness, release runner, sunset protocol, or support-state transition exists |
+| Artifact steward lifecycle probe | Confirm fixture-composed lifecycle routes for `valid_bounded_work_dispatch_proposal`, `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and 23 expected-invalid controls covering lifecycle, work-contract, and release-review boundaries. | implemented by `python3 scripts/validate_artifact_steward_lifecycle_probe.py`; no steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, project federation harness, release runner, sunset protocol, or support-state transition exists |
 
 ## Formalization hooks
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing. | planned |
+| `lean:artifact_stewards.work_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A reachable steward dispatch model derives contract repair, refusal, or approval when objective, authority, tool, verification, budget, rollback, or non-claim boundaries are missing; arbitrary-length runs reach dispatch readiness only from a complete modeled contract. | implemented |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A finite steward lifecycle decision with requested treasury spend outside policy routes to approval. | implemented |
-| `lean:artifact_stewards.release_gate.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing. | planned |
+| `lean:artifact_stewards.release_gate.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A reachable steward release model derives repair, refusal, or approval when artifact, test, evidence, changelog, residual, approval, no-promotion, or non-claim records are missing; arbitrary-length runs reach external-review readiness only from a complete modeled packet. | implemented |
 | `lean:artifact_stewards.sunset_review.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A finite steward lifecycle decision with sunset criteria met and no open review routes to sunset review. | implemented |
 | `lean:artifact_stewards.lifecycle_route.failure_blocks_promotion` | `AsiStackProofs.ArtifactStewardAgents` | A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval. | implemented |
 | `lean:artifact_stewards.contribution_ledger.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records. | implemented |
 | `lean:artifact_stewards.federation_contract.operational_invariant` | `AsiStackProofs.ArtifactStewardAgents` | A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch. | implemented |
 
-**Formal audit.** The module now contains twelve declarations: four
-lifecycle-route reductions, four contribution-ledger reductions, and four
-federation-route reductions. The eighth C6 rationalization tranche removed
-four assumption-restating implication theorems and their otherwise-unused
-record predicates. The treasury and sunset targets now name retained route
-reductions. The work-contract and release-gate targets are planned until
-reachable decision functions derive repair or refusal from missing fields;
-their schema and executable-trace evidence remains separate. None of the
-twelve retained declarations is a direct projection of steward behavior or a
+**Formal audit.** The module now contains 37 declarations: twelve retained
+lifecycle, contribution-ledger, and federation route reductions plus 25
+work-contract and release-review transition results. The latter define
+arbitrary-length finite runs, prove readiness implies complete modeled input,
+prove that invariant is preserved at every transition, provide reachable
+complete witnesses, and derive exact repair, refusal, or approval states for
+every named negative control. The models stop at dispatch readiness and
+external-review readiness; they contain no worker execution or publication
+state. None of the declarations proves steward behavior or a
 real project outcome. This finite model does not prove mission correctness, source or event truth, injection resistance,
 worker quality, authority legitimacy, treasury safety, contribution fairness,
 capture resistance, reviewer independence, release quality, rollback closure,
 human maintainability, sunset quality, deployment, reproduction, or transfer.
-The deterministic lifecycle probe is a separate fixture evidence lane with two
-valid routes and six rejecting controls; it does not turn the route functions
+The deterministic lifecycle probe is a separate fixture evidence lane with
+three valid routes and 23 rejecting controls; it does not turn the route functions
 into empirical governance proof.
 
 ## Source crosswalk

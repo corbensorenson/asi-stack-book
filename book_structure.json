@@ -25226,7 +25226,7 @@
             "Cost and burden externalization omits maintainer attention, reviewer fatigue, affected parties, legal and tax work, privacy, security, compute, environment, recovery, and opportunity cost.",
             "Unsupported transfer generalizes local fixture routing or one project workflow across missions, communities, legal regimes, funding models, repositories, institutions, threats, or time."
           ],
-          "minimal_implementation": "Seven schema-and-fixture record families; twelve Lean declarations reducing lifecycle, contribution-ledger, and federation route functions; one deterministic public-safe lifecycle probe with two valid routes and six expected-invalid controls; and one adjacent synthetic release evidence-and-approval handoff. Work-contract dispatch and release-gate route targets remain planned rather than being represented by assumption-restating implications. No steward bot, real event intake, treasury or compute executor, contributor service, governance runner, federation harness, protected-branch action, release runner, sunset protocol, natural project workload, independent reproduction, deployment, or chapter-core support effect exists.",
+          "minimal_implementation": "Seven schema-and-fixture record families; 37 Lean declarations over lifecycle, contribution-ledger, federation, work-contract, and release-review transition functions; one deterministic public-safe lifecycle probe with three valid routes and 23 expected-invalid controls; and one adjacent synthetic release evidence-and-approval handoff. The formal models stop at dispatch and external-review readiness and contain no worker-execution or publication state. No steward bot, real event intake, treasury or compute executor, contributor service, governance runner, federation harness, protected-branch action, release runner, sunset protocol, natural project workload, independent reproduction, deployment, or chapter-core support effect exists.",
           "beyond_state_of_art": "The argument-exit campaign must run natural, heterogeneous, months-long project workloads with frozen mission and authority charters and matched strong human-maintained, ordinary automation, workflow-platform, and no-steward baselines. It must exercise real tainted events and injection, scoped dispatch, protected branches and credentials, treasury and rented compute, contributor and compensation ledgers, governance proposals and capture pressure, federation, release, incident containment, effect-complete rollback, appeal, fork or exit, maintainer handoff, and genuine sunset decisions while jointly measuring useful throughput, quality, false action and blocking, maintainer burden, legitimacy, concentration, security, recovery, continuity, latency, and total cost. Independent maintainers, contributors, treasurers, security evaluators, governance institutions, projects, legal and funding regimes, and transfer environments must reproduce positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the mature Artifact Steward Continuity Lease is not evidence of safe autonomy, ownership or legal authority, governance legitimacy, treasury safety, capture resistance, project quality, release readiness, deployment, transfer, or SOTA.",
           "codex_tests": [
             {
@@ -25245,10 +25245,10 @@
             },
             {
               "name": "Work contract authority denial test",
-              "purpose": "Check a reachable steward dispatch route that repairs or refuses contracts missing objective, authority, tool, verification, budget, or non-claim boundaries.",
-              "implementation_status": "planned",
-              "result_status": "not run; record-shape fixture only",
-              "status": "reachable formal dispatch route planned; no steward dispatch run"
+              "purpose": "Check a reachable steward dispatch route that repairs, refuses, or requests approval for contracts missing objective, authority, tool, verification, budget, rollback, or non-claim boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build and nine independently encoded lifecycle-probe controls",
+              "status": "implemented as an arbitrary-length readiness invariant; no steward dispatch run"
             },
             {
               "name": "Treasury spend-cap test",
@@ -25301,10 +25301,10 @@
             },
             {
               "name": "Release evidence gate test",
-              "purpose": "Check a reachable steward release route that refuses publication when test, evidence, changelog, residual, or approval records are missing.",
-              "implementation_status": "planned",
-              "result_status": "not run; expected-invalid lifecycle trace only",
-              "status": "reachable formal publication route planned; no release runner exists"
+              "purpose": "Check a reachable steward release route that repairs, refuses, or requests approval when artifact, test, evidence, changelog, residual, approval, no-promotion, or non-claim records are missing.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build and eight independently encoded lifecycle-probe controls",
+              "status": "implemented as an arbitrary-length external-review-readiness invariant; the model has no publication state and no release runner exists"
             },
             {
               "name": "Sunset ordinary-work block test",
@@ -25315,7 +25315,7 @@
             },
             {
               "name": "Artifact steward lifecycle probe",
-              "purpose": "Check fixture-composed steward lifecycle routes for `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and six expected-invalid controls covering tainted events, over-policy treasury spend, contribution-governance laundering, unscoped federation authority inheritance, missing release evidence, and sunset ordinary-work blocking.",
+              "purpose": "Check fixture-composed steward lifecycle routes for `valid_bounded_work_dispatch_proposal`, `valid_clean_release_review_proposal`, `valid_sunset_review_route`, and 23 expected-invalid controls covering lifecycle, work-contract, and release-review boundaries.",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic public-safe lifecycle probe; no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim",
               "status": "implemented by `python3 scripts/validate_artifact_steward_lifecycle_probe.py`; no steward bot, treasury executor, event-taint workflow, contributor-ledger service, governance runner, project federation harness, release runner, sunset protocol, or support-state transition exists"
@@ -25325,8 +25325,8 @@
             {
               "tag": "lean:artifact_stewards.work_contract.operational_invariant",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "A reachable steward dispatch model derives contract repair or refusal when objective, authority, tool, verification, budget, or non-claim boundaries are missing.",
-              "status": "planned"
+              "target": "A reachable steward dispatch model derives contract repair, refusal, or approval when objective, authority, tool, verification, budget, rollback, or non-claim boundaries are missing; arbitrary-length runs reach dispatch readiness only from a complete modeled contract.",
+              "status": "implemented"
             },
             {
               "tag": "lean:artifact_stewards.treasury_boundary.failure_blocks_promotion",
@@ -25337,8 +25337,8 @@
             {
               "tag": "lean:artifact_stewards.release_gate.operational_invariant",
               "module": "AsiStackProofs.ArtifactStewardAgents",
-              "target": "A reachable steward release model derives refusal when test, evidence, changelog, residual, or approval records are missing.",
-              "status": "planned"
+              "target": "A reachable steward release model derives repair, refusal, or approval when artifact, test, evidence, changelog, residual, approval, no-promotion, or non-claim records are missing; arbitrary-length runs reach external-review readiness only from a complete modeled packet.",
+              "status": "implemented"
             },
             {
               "tag": "lean:artifact_stewards.sunset_review.failure_blocks_promotion",

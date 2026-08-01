@@ -35,6 +35,7 @@ NON_CLAIMS = [
 ]
 
 VALID_SCENARIO_IDS = {
+    "valid_bounded_work_dispatch_proposal",
     "valid_clean_release_review_proposal",
     "valid_sunset_review_route",
 }
@@ -46,6 +47,23 @@ EXPECTED_INVALID_IDS = {
     "invalid_unscoped_federation_contract",
     "invalid_release_without_gate_evidence",
     "invalid_sunset_criteria_ordinary_work",
+    "invalid_work_missing_objective",
+    "invalid_work_missing_authority",
+    "invalid_work_authority_widening",
+    "invalid_work_missing_tool_boundary",
+    "invalid_work_missing_verification",
+    "invalid_work_missing_budget",
+    "invalid_work_over_policy_budget",
+    "invalid_work_missing_rollback",
+    "invalid_work_missing_non_claim_boundary",
+    "invalid_release_missing_artifact_binding",
+    "invalid_release_missing_tests",
+    "invalid_release_missing_evidence",
+    "invalid_release_missing_changelog",
+    "invalid_release_missing_residuals",
+    "invalid_release_missing_approval",
+    "invalid_release_support_promotion",
+    "invalid_release_missing_non_claim_boundary",
 }
 
 
@@ -76,6 +94,19 @@ def scenario_templates() -> list[dict[str, Any]]:
         "conflict_notes",
     ]
     base = {
+        "work_contract": {
+            "work_requested": False,
+            "objective_present": True,
+            "authority_basis_present": True,
+            "authority_within_charter": True,
+            "allowed_tools_recorded": True,
+            "forbidden_tools_recorded": True,
+            "verification_plan_present": True,
+            "budget_present": True,
+            "budget_within_policy": True,
+            "rollback_plan_present": True,
+            "non_claim_boundary_present": True,
+        },
         "event": {
             "taint_state": "reviewed",
             "review_completed": True,
@@ -104,11 +135,15 @@ def scenario_templates() -> list[dict[str, Any]]:
         },
         "release": {
             "release_candidate_requested": False,
+            "artifact_binding_present": True,
             "tests_recorded": True,
             "evidence_recorded": True,
             "changelog_recorded": True,
             "residuals_recorded": True,
             "approval_recorded": True,
+            "support_state_effect_none": True,
+            "chapter_core_effect_none": True,
+            "non_claim_boundary_present": True,
         },
         "sunset": {
             "sunset_criteria_met": False,
@@ -131,6 +166,12 @@ def scenario_templates() -> list[dict[str, Any]]:
         return scenario
 
     return [
+        with_updates(
+            "valid_bounded_work_dispatch_proposal",
+            "prepare_bounded_work_dispatch",
+            True,
+            work_contract={"work_requested": True},
+        ),
         with_updates(
             "valid_clean_release_review_proposal",
             "prepare_release_review",
@@ -175,7 +216,7 @@ def scenario_templates() -> list[dict[str, Any]]:
         ),
         with_updates(
             "invalid_release_without_gate_evidence",
-            "block_release_evidence_gate",
+            "repair_release_evidence",
             False,
             release={
                 "release_candidate_requested": True,
@@ -192,6 +233,108 @@ def scenario_templates() -> list[dict[str, Any]]:
             False,
             sunset={"sunset_criteria_met": True, "sunset_review_opened": False, "ordinary_work_requested": True},
         ),
+        with_updates(
+            "invalid_work_missing_objective",
+            "repair_work_objective",
+            False,
+            work_contract={"work_requested": True, "objective_present": False},
+        ),
+        with_updates(
+            "invalid_work_missing_authority",
+            "repair_work_authority",
+            False,
+            work_contract={"work_requested": True, "authority_basis_present": False},
+        ),
+        with_updates(
+            "invalid_work_authority_widening",
+            "refuse_work_authority_widening",
+            False,
+            work_contract={"work_requested": True, "authority_within_charter": False},
+        ),
+        with_updates(
+            "invalid_work_missing_tool_boundary",
+            "repair_work_tool_boundary",
+            False,
+            work_contract={"work_requested": True, "forbidden_tools_recorded": False},
+        ),
+        with_updates(
+            "invalid_work_missing_verification",
+            "repair_work_verification",
+            False,
+            work_contract={"work_requested": True, "verification_plan_present": False},
+        ),
+        with_updates(
+            "invalid_work_missing_budget",
+            "repair_work_budget",
+            False,
+            work_contract={"work_requested": True, "budget_present": False},
+        ),
+        with_updates(
+            "invalid_work_over_policy_budget",
+            "request_work_budget_approval",
+            False,
+            work_contract={"work_requested": True, "budget_within_policy": False},
+        ),
+        with_updates(
+            "invalid_work_missing_rollback",
+            "repair_work_rollback",
+            False,
+            work_contract={"work_requested": True, "rollback_plan_present": False},
+        ),
+        with_updates(
+            "invalid_work_missing_non_claim_boundary",
+            "repair_work_non_claim_boundary",
+            False,
+            work_contract={"work_requested": True, "non_claim_boundary_present": False},
+        ),
+        with_updates(
+            "invalid_release_missing_artifact_binding",
+            "repair_release_artifact_binding",
+            False,
+            release={"release_candidate_requested": True, "artifact_binding_present": False},
+        ),
+        with_updates(
+            "invalid_release_missing_tests",
+            "repair_release_tests",
+            False,
+            release={"release_candidate_requested": True, "tests_recorded": False},
+        ),
+        with_updates(
+            "invalid_release_missing_evidence",
+            "repair_release_evidence",
+            False,
+            release={"release_candidate_requested": True, "evidence_recorded": False},
+        ),
+        with_updates(
+            "invalid_release_missing_changelog",
+            "repair_release_changelog",
+            False,
+            release={"release_candidate_requested": True, "changelog_recorded": False},
+        ),
+        with_updates(
+            "invalid_release_missing_residuals",
+            "repair_release_residuals",
+            False,
+            release={"release_candidate_requested": True, "residuals_recorded": False},
+        ),
+        with_updates(
+            "invalid_release_missing_approval",
+            "request_release_approval",
+            False,
+            release={"release_candidate_requested": True, "approval_recorded": False},
+        ),
+        with_updates(
+            "invalid_release_support_promotion",
+            "refuse_release_support_promotion",
+            False,
+            release={"release_candidate_requested": True, "support_state_effect_none": False},
+        ),
+        with_updates(
+            "invalid_release_missing_non_claim_boundary",
+            "repair_release_non_claim_boundary",
+            False,
+            release={"release_candidate_requested": True, "non_claim_boundary_present": False},
+        ),
     ]
 
 
@@ -201,6 +344,49 @@ def all_release_evidence_recorded(scenario: dict[str, Any]) -> bool:
         bool(release[key])
         for key in ("tests_recorded", "evidence_recorded", "changelog_recorded", "residuals_recorded", "approval_recorded")
     )
+
+
+def route_work_contract(scenario: dict[str, Any]) -> tuple[str, str]:
+    contract = scenario["work_contract"]
+    if not contract["objective_present"]:
+        return "repair_work_objective", "work_contract_missing_objective"
+    if not contract["authority_basis_present"]:
+        return "repair_work_authority", "work_contract_missing_authority_basis"
+    if not contract["authority_within_charter"]:
+        return "refuse_work_authority_widening", "requested_authority_exceeds_charter"
+    if not contract["allowed_tools_recorded"] or not contract["forbidden_tools_recorded"]:
+        return "repair_work_tool_boundary", "work_contract_missing_tool_boundary"
+    if not contract["verification_plan_present"]:
+        return "repair_work_verification", "work_contract_missing_verification_plan"
+    if not contract["budget_present"]:
+        return "repair_work_budget", "work_contract_missing_budget"
+    if not contract["budget_within_policy"]:
+        return "request_work_budget_approval", "work_contract_budget_exceeds_policy"
+    if not contract["rollback_plan_present"]:
+        return "repair_work_rollback", "work_contract_missing_rollback_plan"
+    if not contract["non_claim_boundary_present"]:
+        return "repair_work_non_claim_boundary", "work_contract_missing_non_claim_boundary"
+    return "prepare_bounded_work_dispatch", "complete_contract_is_ready_for_execution_review_only"
+
+
+def route_release(review: dict[str, Any]) -> tuple[str, str]:
+    if not review["artifact_binding_present"]:
+        return "repair_release_artifact_binding", "release_candidate_missing_artifact_binding"
+    if not review["tests_recorded"]:
+        return "repair_release_tests", "release_candidate_missing_test_record"
+    if not review["evidence_recorded"]:
+        return "repair_release_evidence", "release_candidate_missing_evidence_record"
+    if not review["changelog_recorded"]:
+        return "repair_release_changelog", "release_candidate_missing_changelog_record"
+    if not review["residuals_recorded"]:
+        return "repair_release_residuals", "release_candidate_missing_residual_record"
+    if not review["approval_recorded"]:
+        return "request_release_approval", "release_candidate_missing_approval_record"
+    if not review["support_state_effect_none"] or not review["chapter_core_effect_none"]:
+        return "refuse_release_support_promotion", "release_review_cannot_promote_support"
+    if not review["non_claim_boundary_present"]:
+        return "repair_release_non_claim_boundary", "release_candidate_missing_non_claim_boundary"
+    return "prepare_release_review", "release_candidate_has_required_records_but_is_not_published"
 
 
 def all_contribution_fields_separated(scenario: dict[str, Any]) -> bool:
@@ -219,6 +405,7 @@ def all_contribution_fields_separated(scenario: dict[str, Any]) -> bool:
 
 
 def route_scenario(scenario: dict[str, Any]) -> tuple[str, str]:
+    work_contract = scenario["work_contract"]
     event = scenario["event"]
     treasury = scenario["treasury"]
     contribution = scenario["contribution"]
@@ -231,6 +418,8 @@ def route_scenario(scenario: dict[str, Any]) -> tuple[str, str]:
         return "quarantine_event", "tainted_event_without_review"
     if sunset["sunset_criteria_met"] and not sunset["sunset_review_opened"]:
         return "open_sunset_review", "sunset_criteria_met_without_open_review"
+    if work_contract["work_requested"]:
+        return route_work_contract(scenario)
     if treasury["spend_requested"] and treasury["requested_usd"] > treasury["policy_limit_usd"] and not treasury["approval_ref"]:
         return "request_treasury_approval", "spend_exceeds_policy_without_approval"
     if not all_contribution_fields_separated(scenario):
@@ -247,19 +436,21 @@ def route_scenario(scenario: dict[str, Any]) -> tuple[str, str]:
         return "request_treasury_approval", "federated_spend_without_approval"
     if federation["external_worker_requested"] and not federation["evidence_bundle_required"]:
         return "request_federation_evidence_bundle", "federated_worker_missing_evidence_bundle_requirement"
-    if release["release_candidate_requested"] and not all_release_evidence_recorded(scenario):
-        return "block_release_evidence_gate", "release_candidate_missing_required_evidence_records"
+    if release["release_candidate_requested"]:
+        return route_release(release)
     if autonomy["autonomy_increase_requested"] and not autonomy["charter_approval_present"]:
         return "request_charter_approval", "autonomy_escalation_without_charter_approval"
-    if release["release_candidate_requested"]:
-        return "prepare_release_review", "release_candidate_has_required_records_but_is_not_published"
     return "ordinary_work_proposal", "ordinary_work_remains_proposal_only"
 
 
 def evaluate_scenario(scenario: dict[str, Any]) -> dict[str, Any]:
     route, reason = route_scenario(scenario)
     expected_valid = bool(scenario["expected_valid"])
-    protected_action_allowed = route in {"prepare_release_review", "ordinary_work_proposal"}
+    protected_action_allowed = route in {
+        "prepare_bounded_work_dispatch",
+        "prepare_release_review",
+        "ordinary_work_proposal",
+    }
     release_published = False
     spend_executed = False
     external_worker_dispatched = False
@@ -289,6 +480,24 @@ def evaluate_scenario(scenario: dict[str, Any]) -> dict[str, Any]:
         "decision_reason": reason,
         "scenario_pass": scenario_pass,
         "input_summary": {
+            "work_contract_review": dict(scenario["work_contract"]),
+            "release_review": dict(scenario["release"]),
+            "work_requested": scenario["work_contract"]["work_requested"],
+            "work_contract_complete": all(
+                scenario["work_contract"][key]
+                for key in (
+                    "objective_present",
+                    "authority_basis_present",
+                    "authority_within_charter",
+                    "allowed_tools_recorded",
+                    "forbidden_tools_recorded",
+                    "verification_plan_present",
+                    "budget_present",
+                    "budget_within_policy",
+                    "rollback_plan_present",
+                    "non_claim_boundary_present",
+                )
+            ),
             "event_taint_state": scenario["event"]["taint_state"],
             "event_review_completed": scenario["event"]["review_completed"],
             "treasury_requested_usd": scenario["treasury"]["requested_usd"],
@@ -338,8 +547,8 @@ def build_record() -> dict[str, Any]:
     valid = [scenario for scenario in evaluated if scenario["scenario_id"] in VALID_SCENARIO_IDS]
     invalid = [scenario for scenario in evaluated if scenario["scenario_id"] in EXPECTED_INVALID_IDS]
     pass_state = (
-        len(valid) == 2
-        and len(invalid) == 6
+        len(valid) == 3
+        and len(invalid) == 23
         and all(scenario["scenario_pass"] for scenario in evaluated)
         and all(scenario["outcome"]["support_state_effect"] == "none" for scenario in evaluated)
         and all(scenario["outcome"]["chapter_core_support_effect"] == "none" for scenario in evaluated)

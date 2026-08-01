@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
     "structured_atoms_reviewed": 78,
-    "prose_candidates_adjudicated": 58,
+    "prose_candidates_adjudicated": 61,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-01 reachable work-contract and release-review refinement. New formal prose is bounded to exact transition states, arbitrary-length completeness invariants, closed controls, and explicit no-execution/no-publication ceilings. No new chapter-core support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Named projects, artifacts, missions, owners, affected parties, authorities, roadmap items, work contracts, events, workers, treasuries, compute, contributors, evidence, governance systems, releases, federations, sunset decisions, consumers, environments, and times.",
-      "environment": "Twenty-three exact mappings; seven schema-and-fixture families; a deterministic lifecycle probe with two valid and six invalid routes; one adjacent synthetic release handoff; seven proof targets; twelve retained finite route declarations, with work-contract and release-gate route targets planned. No steward bot, real event intake, treasury or compute executor, contributor or governance service, federation, protected-branch action, release runner, sunset protocol, natural workload, reproduction, or transfer exists.",
+      "environment": "Twenty-three exact mappings; seven schema-and-fixture families; a deterministic lifecycle probe with three valid and 23 invalid routes; one adjacent synthetic release handoff; seven implemented proof targets; and 37 Lean declarations including arbitrary-length work-contract and release-review readiness invariants. No steward bot, real event intake, treasury or compute executor, contributor or governance service, federation, protected-branch action, release runner, sunset protocol, natural workload, reproduction, or transfer exists.",
       "model": "A scoped Artifact Steward Continuity Lease over charter, authority, tainted intake, memory, planning, contracts, dispatch, resources, execution, verification, contribution ledgers, release, governance, federation, monitoring, incident rollback, lifecycle modes, sunset, and expiry.",
       "authority": "This chapter owns project continuity only. Intent and rights, task semantics, memory, runtime and security, evidence and proof, evaluation and readiness, learning and data, treasury, contribution and governance, federation, incident, release, publication, archive, and sunset owners retain their boundaries.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest; twenty-three mappings; seven record families; lifecycle probe and validator; adjacent release handoff; seven targets; twelve retained route declarations; semantic review; and future natural independent multi-project campaign."
+      "time": "Semantic review current through 2026-08-01; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "artifact": "Chapter and manifest; twenty-three mappings; seven record families; lifecycle probe and validator; adjacent release handoff; seven implemented targets; 37 Lean declarations; semantic review; and future natural independent multi-project campaign."
     },
     "current_disposition": "retain_argument_with_finite_steward_records_and_probe_no_core_effect_pending_natural_independent_multi_project_campaign",
     "assumptions": [
@@ -82,9 +82,9 @@
       "manifest": "book_structure.json"
     },
     "contrary_evidence": [
-      "The lifecycle probe contains only two valid and six expected-invalid public-safe fixture routes.",
+      "The lifecycle probe contains only three valid and 23 expected-invalid public-safe fixture routes.",
       "No steward bot, real event intake, treasury or compute executor, governance system, contributor service, federation harness, release runner, or sunset protocol has run.",
-      "All twelve retained declarations reduce three hand-authored finite route functions and do not model project behavior or institutional outcomes; reachable work-contract and release-gate decision functions remain planned.",
+      "All 37 declarations remain finite authored transition semantics; the work-contract and release models stop at readiness and do not model worker execution, publication, project behavior, or institutional outcomes.",
       "The adjacent release handoff belongs to the benchmark harness and cannot establish steward quality.",
       "Twenty-three mappings include source-reported or adjacent substrate and risk context that was not locally reproduced."
     ],
@@ -117,7 +117,7 @@
     "promotion_ceiling": "argument_until_natural_multi_project_causal_campaign_with_effect_complete_rollback_independent_reproduction_and_transfer",
     "reproduction": {
       "command": "python3 scripts/validate_artifact_steward_lifecycle_probe.py && python3 scripts/validate_benchmark_antigoodhart.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.ArtifactStewardAgents",
-      "environment_lock": "Local schemas, fixtures, deterministic probe, adjacent synthetic release handoff, validators, and finite module current through 2026-07-15; natural independent multi-project campaign not frozen or run.",
+      "environment_lock": "Local schemas, fixtures, deterministic probe, adjacent synthetic release handoff, independent route validator, and finite module current through 2026-08-01; natural independent multi-project campaign not frozen or run.",
       "artifact_digest": null,
       "evaluator_identity": "Current fixtures, validators, and formalization are repository-local; independent maintainers, contributors, treasurers, security evaluators, governance institutions, projects, and transfer environments are required."
     },
@@ -141,6 +141,18 @@
     }
   },
   "prose_candidate_dispositions": {
+    "artifact-steward-agents-and-living-project-governance.prose.e85c10c53379": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped formal-audit explanation of the implemented arbitrary-length readiness invariant; the material obligation is already owned by the work-contract and release-gate formal target atoms."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.aae513c6d1a6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped formal-audit explanation of transition preservation and reachable controls; it does not create an independent chapter-core or support claim."
+    },
+    "artifact-steward-agents-and-living-project-governance.prose.462b3ced1ea0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit non-claim boundary stating that finite declarations do not prove steward behavior; it creates no affirmative material atom."
+    },
     "artifact-steward-agents-and-living-project-governance.prose.436d024ab2ac": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
