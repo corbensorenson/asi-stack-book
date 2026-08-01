@@ -98,8 +98,9 @@ Current checkpoint: the 84-chapter generation-one baseline remains preserved
 as ignored local history, while generation two is the active quality lane.
 Generation-two chapters 1–17 have passed beat-plan, animatic, and
 picture-and-sound-lock gates; Chapter 18 is scripted with its custom scene,
-exact legacy-receipt captions, transcript, and thumbnail under revision, and
-chapters 19–84 remain planned. Generation two
+exact legacy-receipt captions, transcript, and thumbnail under revision;
+Chapter 19 has passed its beat-plan and animatic gates; and chapters 20–84
+remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -145,12 +146,14 @@ requires at least 4/5 independently for clarity, composition, motion, sync,
 continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
 followed, and chapters 13–84 were held until the revised method passed. Chapters
-13–17 are now through picture-and-sound lock under that method; chapters
-18–84 remain gated behind the same production chain. Existing unlisted embeds remain
+13–17 are now through picture-and-sound lock under that method; Chapter 19 has
+cleared animatic only; chapters 18–84 remain gated behind the same production
+chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 66 planned chapters, one scripted chapter,
-and seventeen chapters through both animatic and picture-and-sound lock. The
+The generation-2 ledger currently has 65 planned chapters, one scripted chapter,
+one animatic-passed chapter, and seventeen chapters through both animatic and
+picture-and-sound lock. The
 first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
@@ -206,6 +209,16 @@ render so captions remain exact while the host Metal runtime is unavailable;
 the v2 beat-plan lint still requires a fresh narration pass before animatic
 lock. It therefore remains scripted rather than accepted, and no support-state
 promotion is implied.
+
+Chapter 19, `capability-replacement-and-rollback`, now has a bespoke
+transaction-control-desk scene: a prior route, candidate route, full
+state/effect inventory, monitor-triggered stop, recovery/compensation path,
+terminal receipt, bounded campaign counters, and explicit nonclaim fan remain
+visible across 24 receipt-bound beats. Its 05:18.170 exact narration receipt,
+72 captions, descriptive transcript, thumbnail, low-resolution animatic, and
+mechanical A/V audit are complete at the animatic gate; picture-and-sound lock,
+release-candidate, independent review, publication, and Quarto reconciliation
+remain intentionally ungranted.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
