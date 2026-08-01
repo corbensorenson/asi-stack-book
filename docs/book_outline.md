@@ -703,6 +703,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: Failure taxonomy detector and mitigation-boundary probe, via `python3 scripts/validate_failure_taxonomy_detector_probe.py` and result `experiments/failure_taxonomy_detector/results/2026-07-02-local.json`, checks two valid synthetic failure incidents and seven expected-invalid controls for authority creep, Goodhart/evaluator drift, missing classes, missing boundary owners, missing receipts, unblocked authority creep, missing Goodhart residuals, recurrence without escalation, and fixture-driven support promotion; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim follows.
 - External taxonomy bridge: the live and curated reader chapters now explicitly map goal misbinding to goal misgeneralization, context pollution to distribution-shift/input-channel control, authority creep to power-seeking and option preservation, evaluator drift to Goodhart/reward-hacking/scalable-oversight limits, hidden optimization pressure to learned optimization, tool/action overreach to side-effect and safe-exploration failure, and residual hiding to metric laundering/evidence smoothing. This is comparator positioning only; no deployed detector, prevention, mitigation-effectiveness, or support-state movement follows.
 - Implemented Lean proof target: finite failure recurrence and receipt escalation route for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records; deployed detection and prevention remain open.
+- Implemented Lean recovery refinement: a reachable five-stage incident lifecycle preserves exact state on rejected events, disables modeled external effects after accepted detection, permits readmission only through identity-bound remediation/review/assurance/authority gates, and re-isolates one bounded recurrence. An independent consumer rejects 31 route, identity, replay, authority, and lifecycle-gate mutations. This is a bounded control-plane model, not evidence that a detector fires, containment works, remediation is effective, or a deployed system recovers.
 
 Lean proof targets:
 
@@ -712,16 +713,21 @@ Lean proof targets:
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches. | implemented |
+| `lean:failure.recovery.closed_loop_refinement` | `AsiStackProofs.FailureRecoveryRefinement` | A five-stage bounded incident lifecycle preserves rejected state, contains accepted incidents, guards readmission through exact identity, remediation, independent review, current assurance and taxonomy, residual custody, and explicit authority, and re-isolates a modeled recurrence; an independently encoded consumer rejects 31 mutations. | implemented |
 
 Proof boundary: the direct `GovernanceFailure` field projection is retired
 with frozen lineage. The affected public target now binds to the retained
 incident-route theorem that sends an explicit authority-over-ceiling state to
-authority review. Twenty-one declarations remain across invariant rejection,
-four incident routes, and recurrence handling. The former detector-summary
-projection is retired; the independent fixture consumer now binds to the
-retained fifteen-theorem failure-record route family. Neither surface
-establishes detector quality, runtime coverage, containment, prevention,
-mitigation effectiveness, or support movement.
+authority review. Twenty-one declarations remain in the original module across
+invariant rejection, four incident routes, and recurrence handling. The
+separate recovery refinement adds eleven declarations over a reachable
+five-stage lifecycle, exact rejected-state preservation, authority
+noninterference, guarded readmission, and recurrence re-isolation. The former
+detector-summary projection is retired; independent consumers bind both the
+retained failure-record route family and the new lifecycle model to rejecting
+controls. Neither surface establishes detector quality, event truth, runtime
+coverage, real containment, remediation effectiveness, deployed recovery, or
+support movement.
 
 ### Dangerous Capability Domains and Misuse Uplift
 
@@ -6147,7 +6153,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 320 proof targets, 111 Lean modules, 1219 theorem declarations, 831 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 321 proof targets, 112 Lean modules, 1229 theorem declarations, 836 derived/decomposed, 172 direct/projection, 221 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

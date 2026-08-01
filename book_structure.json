@@ -1208,7 +1208,7 @@
             "Repeated near misses normalize because recurrence does not trigger review or containment escalation.",
             "Taxonomy or containment paths become stale after architecture, policy, evaluator, or route changes."
           ],
-          "minimal_implementation": "A Failure Boundary Map schema plus an executable receipt suite covering blocked and realized events, recurrence escalation, containment, residuals, detector gaps, and rejecting negative controls.",
+          "minimal_implementation": "A Failure Boundary Map schema and executable receipt suite now pair with a bounded Lean recovery lifecycle. The finite model preserves exact state on rejection, disables modeled external effects after accepted detection, requires identity-bound containment, remediation, independent review, current assurance and taxonomy, residual custody, and explicit authority before readmission, and re-isolates one modeled recurrence. An independently encoded validator rejects 31 stage, identity, replay, authority, and lifecycle-gate mutations. These artifacts establish only record, route, bounded reachability, noninterference, and recovery-contract properties; they do not establish event truth, detector quality, containment or remediation effectiveness, deployed recovery, safety, or support movement.",
           "beyond_state_of_art": "The mature failure radar continuously binds observed boundary events to a versioned taxonomy, independently implemented detectors, containment and recovery decisions, recurrence escalation, residual custody, and learning updates, while measuring missed detection, false alarm, escape, time to contain, and mitigation failure across architecture and policy changes, and recording independently labeled ground truth, explicit abstention or unmapped states, useful-throughput loss, operator burden, and governance cost before any cross-version mitigation claim can survive revalidation.",
           "codex_tests": [
             {
@@ -1250,9 +1250,16 @@
               "name": "Failure taxonomy detector and mitigation-boundary probe",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic failure-taxonomy detector fixture at experiments/failure_taxonomy_detector/results/2026-07-02-local.json: two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, support-state-promotion, or evidence-transition claim"
+            },
+            {
+              "name": "Failure recovery lifecycle refinement",
+              "purpose": "Check exact rejection preservation, bounded incident containment and recovery reachability, guarded readmission, authority noninterference, and recurrence re-isolation in the finite Lean model plus an independently encoded 31-mutation consumer.",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build and python3 scripts/validate_failure_recovery_refinement.py; five reachable stages, five accepted transitions, 31/31 rejecting mutations, support-state effect none; no event-truth, detector-quality, containment-effectiveness, remediation-effectiveness, deployed-recovery, safety, or chapter-core support claim",
+              "status": "implemented as a bounded Lean/Python recovery contract; Theseus system-level recovery evidence remains open"
             }
           ],
-          "lean_module": "AsiStackProofs.FailureModes",
+          "lean_module": "AsiStackProofs.FailureModes; AsiStackProofs.FailureRecoveryRefinement",
           "proof_targets": [
             {
               "tag": "lean:failure.invariant_violation.operational_invariant",
@@ -1276,6 +1283,12 @@
               "tag": "lean:failure.taxonomy.detector_probe_bridge",
               "module": "AsiStackProofs.FailureModes",
               "target": "An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:failure.recovery.closed_loop_refinement",
+              "module": "AsiStackProofs.FailureRecoveryRefinement",
+              "target": "A five-stage bounded incident lifecycle preserves rejected state, contains accepted incidents, guards readmission through exact identity, remediation, independent review, current assurance and taxonomy, residual custody, and explicit authority, and re-isolates a modeled recurrence; an independently encoded consumer rejects 31 mutations.",
               "status": "implemented"
             }
           ]
@@ -21422,7 +21435,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 329-target proof manifest with 303 implemented and 26 planned targets; a 111-module Lean workspace with 1,272 theorem declarations classified as 882 derived/decomposed, 171 direct/projection, and 219 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 321-target proof manifest with 295 implemented and 26 planned targets; a 112-module Lean workspace with 1,229 theorem declarations classified as 836 derived/decomposed, 172 direct/projection, and 221 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",

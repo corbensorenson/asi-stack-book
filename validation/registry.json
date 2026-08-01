@@ -3060,7 +3060,10 @@
     "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/captions.vtt",
     "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/scene.py",
     "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
-    "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json"
+    "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
+    "lean/AsiStackProofs/FailureRecoveryRefinement.lean",
+    "scripts/validate_failure_recovery_refinement.py",
+    "tests/fixtures/protocol_records/failure_boundary_map.valid.json"
   ],
   "units": [
     {
@@ -17076,11 +17079,47 @@
       "prohibited_inference": "A valid plan, scene, animatic, review, master, upload, playlist item, or embed does not prove learning, chapter truth, model quality, safety, SOTA, AGI, ASI, or authority for an unrecorded external mutation.",
       "contract_precision": "exact",
       "semantic_review_state": "tracked_v2_contract_first_rejected_animatic_and_fail_closed_84_chapter_ledger"
+    },
+    {
+      "id": "validate_failure_recovery_refinement.py:445",
+      "order": 445,
+      "script": "validate_failure_recovery_refinement.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The bounded Lean failure-recovery lifecycle, the public failure-boundary fixture, and the retained synthetic detector result with no support effect.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/FailureRecoveryRefinement.lean",
+        "scripts/validate_failure_recovery_refinement.py",
+        "tests/fixtures/protocol_records/failure_boundary_map.valid.json",
+        "experiments/failure_taxonomy_detector/results/2026-07-02-local.json"
+      ],
+      "output_contract": "Independently reproduce five accepted lifecycle transitions, exact rejected-state preservation, guarded readmission, authority noninterference, recurrence re-isolation, and reject every declared stage, identity, replay, authority, and missing-gate mutation.",
+      "output_assertions": [
+        "five reachable stages and five accepted transitions",
+        "31 of 31 mutations reject without state change",
+        "guarded readmission returns to operating once",
+        "one recurrence re-isolates and disables modeled effects",
+        "support and external-authority counters remain zero",
+        "support-state effect none"
+      ],
+      "claim_scope": "Bounded authored failure-recovery transition, rejection, noninterference, reachability, and recurrence semantics only.",
+      "negative_controls": "validator_owned_31_stage_identity_replay_authority_and_lifecycle_gate_mutations",
+      "negative_control_cases": [
+        "five wrong-stage events",
+        "nine identity substitutions",
+        "event replay",
+        "two authority leaks",
+        "fourteen missing lifecycle gates"
+      ],
+      "prohibited_inference": "The model does not establish event truth, detector or reviewer independence, containment or remediation effectiveness, deployed recovery, safety, transfer, chapter-core support, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_reachability_rejection_noninterference_readmission_and_recurrence_contract"
     }
   ],
   "summary": {
-    "required_artifact_count": 3016,
-    "unit_count": 444
+    "required_artifact_count": 3019,
+    "unit_count": 445
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

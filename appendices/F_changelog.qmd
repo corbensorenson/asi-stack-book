@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-01 — Failure-recovery Lean refinement
+
+- Added a five-stage failure-recovery transition system with exact incident and
+  version custody, replay rejection, rejected-state preservation, modeled
+  effect isolation, guarded readmission, authority noninterference, bounded
+  recovery reachability, and recurrence re-isolation.
+- Added an independently encoded validator that reproduces all five accepted
+  transitions and rejects 31 wrong-stage, identity, replay, authority, and
+  lifecycle-gate mutations without changing rejected state.
+- Bound the result into the Failure Modes outline, chapter, proof manifest
+  source, proof-model dossier, adequacy review, and validation registry. Chapter
+  support remains `argument`; event truth, detector quality, containment and
+  remediation effectiveness, deployed recovery, safety, and transfer remain
+  explicit Project Theseus or empirical obligations.
+
 ## 2026-07-31 — Generation-2 visual-production ledger and first replacement
 
 - Installed the complete `asi-stack-manim-videos` audiovisual authoring system
@@ -1461,7 +1476,7 @@
   exact scope-language rewrites, and thirty-nine public-target migrations. The
   live estate is 1,304 declarations: 35 P0, 753 P1, 25 P2, 319 P3, 93 P4, 79
   P5, and zero P6. The remaining queue contains 92 stronger-model rewrites.
-- Current proof-depth snapshot: 320 proof targets, 111 Lean modules, 1219 theorem declarations, 831 derived/decomposed, 169 direct/projection, 219 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 321 proof targets, 112 Lean modules, 1229 theorem declarations, 836 derived/decomposed, 172 direct/projection, 221 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - No theorem count is treated as a success metric. No policy-quality,
   substrate-quality, safety-lifecycle, chapter-core support, release, or
   publication-authority claim changes.

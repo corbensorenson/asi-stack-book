@@ -10,6 +10,20 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:failure.invariant_violation.failure_blocks_promotion` | terminally_dispositioned | replace_with_stronger_model |
 | `lean:failure.recurrence.escalation_route` | semantically_reviewed | retain_load_bearing_semantic |
 | `lean:failure.taxonomy.detector_probe_bridge` | semantically_reviewed | retain_refinement_or_executable_bridge |
+| `lean:failure.recovery.closed_loop_refinement` | semantically_reviewed | retain_reachable_recovery_refinement |
+
+## Current refinement
+
+`AsiStackProofs.FailureRecoveryRefinement` supplies the stronger model requested
+by the baseline review. Its five reachable stages preserve rejected state,
+disable modeled effects after accepted detection, guard readmission through
+exact identity plus remediation, independent review, current assurance and
+taxonomy, residual custody, and authority, and re-isolate one bounded
+recurrence. `scripts/validate_failure_recovery_refinement.py` independently
+encodes the transition system and rejects 31 mutations. The bounded model has
+`support_state_effect=none`: detector truth, containment and remediation
+effectiveness, deployed recovery, safety, and transfer remain Theseus or
+empirical obligations.
 
 ## Baseline theorem declarations
 
@@ -41,4 +55,4 @@ Generated from the frozen activation-baseline inventory and semantic review over
 
 ## Required closure
 
-Every retained item needs one claim atom, exact assumptions and exclusions, a semantic role, dependencies, countermodel or negative-case coverage, mutation coverage, a live consumer, and a bounded disposition. Missing fields remain work; absence is not evidence.
+Every retained item needs one claim atom, exact assumptions and exclusions, a semantic role, dependencies, countermodel or negative-case coverage, mutation coverage, a live consumer, and a bounded disposition. The recovery refinement now meets that contract at bounded local scope through the chapter target, independent validator, existing failure-boundary fixture, inherited detector result, and explicit Theseus handoff. Missing runtime or empirical fields remain work; absence is not evidence.

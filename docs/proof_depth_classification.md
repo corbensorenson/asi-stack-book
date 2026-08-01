@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 320 |
-| Lean modules scanned | 111 |
-| Theorem declarations classified | 1219 |
-| Direct/projection-style theorem declarations | 169 |
-| Derived/decomposed theorem declarations | 831 |
-| Unknown or mixed theorem declarations | 219 |
+| Proof targets in manifest | 321 |
+| Lean modules scanned | 112 |
+| Theorem declarations classified | 1229 |
+| Direct/projection-style theorem declarations | 172 |
+| Derived/decomposed theorem declarations | 836 |
+| Unknown or mixed theorem declarations | 221 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -90,6 +90,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 1 | 6 | 3 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | evidence-states-and-claim-discipline | 2 | 6 | 0 | 2 | 4 | manual review |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | failure-modes-of-ungoverned-intelligence | 1 | 10 | 3 | 5 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -573,6 +574,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | `support_promotion_without_failure_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `tainted_context_without_authority_grant_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unverified_claim_promotion_blocks` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_detection_disables_effects_and_activates_containment` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_readmission_requires_complete_review` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `authority_leak_blocks_every_stage` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `bounded_failure_recovery_reaches_guarded_readmission` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `bounded_recurrence_reisolates_after_recovery` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `captured_reviewer_blocks_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `missing_escape_closure_blocks_containment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `stale_assurance_blocks_readmission` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `transition_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_or_residual_rejected` | derived_or_decomposed | no | uses contradiction, rcases, rw |
 | `lean/AsiStackProofs/FastGeneration.lean` | `high_risk_fast_mode_without_verifier_or_override_rejected` | derived_or_decomposed | no | uses contradiction, rcases, rw |
 | `lean/AsiStackProofs/FastGeneration.lean` | `promotion_candidate_missing_accepted_output_or_verifier_cost_rejected` | derived_or_decomposed | no | uses contradiction, have, rcases, rw |

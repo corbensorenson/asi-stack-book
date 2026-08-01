@@ -35,6 +35,7 @@ import AsiStackProofs.EvidenceTransitionRefinement
 import AsiStackProofs.FastGeneration
 import AsiStackProofs.FastGenerationRefinement
 import AsiStackProofs.FailureModes
+import AsiStackProofs.FailureRecoveryRefinement
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
 import AsiStackProofs.GovernedOperations

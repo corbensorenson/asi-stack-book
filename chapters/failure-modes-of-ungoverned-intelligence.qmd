@@ -578,6 +578,28 @@ fixture-driven support promotion. The slice is diagnostic, not preventive:
 runtime detection, prevention, mitigation effectiveness, evaluator
 independence, and support-state movement remain outside this evidence envelope.
 
+The Lean recovery refinement adds a different kind of evidence: a reachable
+control-plane lifecycle rather than another taxonomy row. An admitted incident
+moves through detection and isolation, containment confirmation, remediation,
+independent review, and guarded readmission. Rejected events preserve the exact
+modeled state. Accepted detection disables modeled external effects, and the
+transition function cannot assign support or external authority. Readmission
+requires exact incident and version identity, current assurance and taxonomy,
+residual custody, and explicit readmission authority. A bounded recurrence
+after recovery returns immediately to isolation. The independently encoded
+Python consumer exercises all five accepted transitions and rejects 31 wrong
+stage, identity substitution, replay, authority leakage, and missing-gate
+mutations.
+
+This is not a detector or recovery result. Every Boolean field is an input to
+the model; Lean does not establish that an incident was observed, that the
+observer was independent, that containment closed a real escape path, that
+remediation repaired a deployed system, or that readmission was safe. Those
+system-level obligations are the Project Theseus handoff: inject real faults,
+observe actual effects and containment, exercise restart and rollback, measure
+escape and recurrence, and independently judge remediation before any broader
+support transition is considered.
+
 ## Mature Research Target
 
 The mature failure radar continuously binds observed boundary events to a versioned taxonomy, independently implemented detectors, containment and recovery decisions, recurrence escalation, residual custody, and learning updates, while measuring missed detection, false alarm, escape, time to contain, and mitigation failure across architecture and policy changes, and recording independently labeled ground truth, explicit abstention or unmapped states, useful-throughput loss, operator burden, and governance cost before any cross-version mitigation claim can survive revalidation.
@@ -600,6 +622,7 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | Unverified-claim scenario | Check that a requested claim promotion with failed verification routes to blocked promotion. | implemented as a finite Lean incident-route predicate; no claim-verification harness run |
 | Failure recurrence escalation route | Check finite failure recurrence routing for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records. | implemented in `AsiStackProofs.FailureModes`; no deployed failure detector, runtime recurrence detector, evaluator-independence probe, context containment, or claim-verification quality claim |
 | Failure taxonomy detector and mitigation-boundary probe | Check that a deterministic synthetic failure-taxonomy detector fixture records authority-creep and Goodhart/evaluator-drift incidents, detector refs, receipts, residuals, mitigation routes, rejected negative controls, no support-state effect, and explicit non-claim boundaries. | implemented by `python3 scripts/validate_failure_taxonomy_detector_probe.py`; two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, or support-state-promotion claim |
+| Failure recovery lifecycle refinement | Check rejected-state preservation, five reachable recovery stages, guarded readmission, authority noninterference, recurrence re-isolation, and independently encoded route mutations. | implemented by `AsiStackProofs.FailureRecoveryRefinement` and `python3 scripts/validate_failure_recovery_refinement.py`; five accepted transitions and 31/31 rejecting mutations; no event-truth, detector-quality, mitigation-effectiveness, deployed-recovery, safety, or support-state claim |
 
 ### Formalization hooks
 
@@ -609,10 +632,12 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches. | implemented |
+| `lean:failure.recovery.closed_loop_refinement` | `AsiStackProofs.FailureRecoveryRefinement` | A five-stage bounded incident lifecycle preserves rejected state, contains accepted incidents, guards readmission through exact identity, remediation, independent review, current assurance and taxonomy, residual custody, and explicit authority, and re-isolates a modeled recurrence; an independently encoded consumer rejects 31 mutations. | implemented |
 
-These proof targets are implemented only over finite Lean records in `AsiStackProofs.FailureModes`. They prove that a modeled component with a failed required invariant is not promotable, that an explicit authority-over-ceiling incident routes to authority review, that three other modeled incident states route to quarantine, frozen review, or blocked promotion, and that modeled failure recurrence records route missing class, boundary, receipt, owner, containment, residual, learning-path, normalization-guard, review, quarantine, evidence-transition, and non-claim-boundary fields to explicit outcomes. The close-state result is now an input-general inverse: returning `closeFailureRecord` entails every required field and excludes every earlier guard, rather than merely normalizing an authored all-green constant. The former direct `GovernanceFailure` field projection is retired; the public authority target now binds to the retained incident-route theorem.
+The original proof targets remain finite records in `AsiStackProofs.FailureModes`. They establish invariant rejection, explicit incident routes, and an input-general close-state inverse. `AsiStackProofs.FailureRecoveryRefinement` adds a reachable five-stage transition system: rejected events preserve exact state; accepted transitions cannot mint support or external authority; accepted detection disables modeled effects; accepted readmission requires current assurance, current taxonomy, residual custody, and explicit authority; and one bounded recurrence re-isolates the system. The former direct `GovernanceFailure` field projection remains retired; the public authority target binds to the retained incident-route theorem.
 
-The module contains twenty-one declarations. The former detector-probe summary
+The original module contains twenty-one declarations and the recovery module
+contains eleven. The former detector-probe summary
 projection is retired. The independent Python consumer now carries exact
 fixture validation, and it is bound to the retained sixteen-theorem
 failure-record route family, including the quantified close-route inverse,

@@ -1304,18 +1304,26 @@ do not move any support state.
 
 ### C6 current-estate classification and cumulative execution receipt — 2026-07-26
 
-C6 now has a complete current-estate classification, not merely the frozen
-historical review. The immutable historical registry remains exactly 1,151
+C6 closed its rationalization transaction with a complete then-current estate
+classification, not merely the frozen historical review. The immutable
+historical registry remains exactly 1,151
 theorems across 298 targets. The separately frozen pre-rationalization overlay
 at commit `d0f9bda14f1253999f2c40d556d925d31e4b36a4` classifies all 1,370
-baseline declarations. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies all 1,219 live theorem
-declarations across 105 theorem-bearing modules and maps them to 61 active
-semantic-owner chapters.
+baseline declarations. At terminal C6 closure, the overlay classified all 1,219 live theorem
+declarations across 105 theorem-bearing modules. That
+denominator remains frozen in the cumulative rationalization ledger.
+
+The dated 2026-08-01 Failure Modes expansion reopens formal growth without
+rewriting that history. The current overlay in
+`proofs/proof_semantic_depth_overlay.json` classifies 1,229 live theorem
+declarations across 106 theorem-bearing modules and maps them to 61 active
+semantic-owner chapters. The ten added declarations are bound to the
+five-stage failure-recovery model, an independently encoded validator, 31
+rejecting mutations, and an exact no-support boundary.
 
 The live semantic-depth distribution is 19 P0 record-shape results, 675 P1
-finite-route results, 25 P2 reachability/nonvacuity results, 323 P3
-implementation-refinement results, 94 P4 cross-component-safety results, 83 P5
+finite-route results, 25 P2 reachability/nonvacuity results, 329 P3
+implementation-refinement results, 96 P4 cross-component-safety results, 85 P5
 liveness/recovery results, and zero P6 empirically bound results. P6 being zero
 is intentional: the existence of an experiment file, trace, or generated
 artifact does not turn a theorem into empirical evidence.
@@ -1323,9 +1331,12 @@ artifact does not turn a theorem into empirical evidence.
 Every overlay row records its assumptions, active semantic owner, downstream
 consumer, witness or explicit witness absence, implementation binding, mutation
 evidence, maximum inference, and disposition. The resulting current estate is
-1,219 retain, zero retire as narrow projection, zero pending scope-language
-rewrites, and zero stronger-model actions remaining. All 1,219 rows have mutation coverage and every
-retained theorem has a named consumer.
+1,229 retain, zero retire as narrow projection, zero pending scope-language
+rewrites, and zero stronger-model actions remaining. All 1,229 rows have
+mutation coverage and every retained theorem has a named consumer. The
+terminal rationalization receipt remains 1,219 retain with no pending action;
+the later ten theorems are additive consumer-owned formal expansion, not
+retroactive rationalization.
 
 The cumulative dependency-safe retirement ledger is
 `proofs/proof_semantic_rationalization_ledger.json`. Its first transaction
