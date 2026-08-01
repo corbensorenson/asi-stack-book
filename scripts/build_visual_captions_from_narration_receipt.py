@@ -20,12 +20,26 @@ def timestamp(seconds: float) -> str:
     return f"{hours:02d}:{minutes:02d}:{secs:02d}.{millis:03d}"
 
 
-def chunks(text: str, maximum_words: int, minimum_final_words: int = 4) -> list[str]:
+def chunks(
+    text: str,
+    maximum_words: int,
+    minimum_final_words: int = 4,
+    maximum_characters: int = 84,
+) -> list[str]:
     words = text.split()
     result = []
     start = 0
     while start < len(words):
-        end = min(start + maximum_words, len(words))
+        end = start
+        while end < len(words) and end - start < maximum_words:
+            candidate = " ".join(words[start : end + 1])
+            if len(candidate) > maximum_characters:
+                break
+            end += 1
+        if end == start:
+            raise ValueError(
+                f"Caption token exceeds {maximum_characters} characters: {words[start]!r}"
+            )
         if end < len(words):
             for candidate in range(end, max(start + 5, end - 4), -1):
                 if re.search(r"[,;:.!?]$", words[candidate - 1]):
@@ -37,10 +51,13 @@ def chunks(text: str, maximum_words: int, minimum_final_words: int = 4) -> list[
         final_words = result[-1].split()
         previous_words = result[-2].split()
         if len(final_words) < minimum_final_words:
-            move = min(minimum_final_words - len(final_words), len(previous_words) - 5)
-            if move > 0:
-                result[-2] = " ".join(previous_words[:-move])
-                result[-1] = " ".join(previous_words[-move:] + final_words)
+            maximum_move = min(minimum_final_words - len(final_words), len(previous_words) - 5)
+            for move in range(maximum_move, 0, -1):
+                candidate_final = " ".join(previous_words[-move:] + final_words)
+                if len(candidate_final) <= maximum_characters:
+                    result[-2] = " ".join(previous_words[:-move])
+                    result[-1] = candidate_final
+                    break
     return result
 
 
@@ -49,6 +66,7 @@ def main() -> None:
     parser.add_argument("--receipt", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--maximum-words", type=int, default=11)
+    parser.add_argument("--maximum-characters", type=int, default=84)
     args = parser.parse_args()
 
     receipt_path = ROOT / args.receipt
@@ -60,7 +78,11 @@ def main() -> None:
     for segment in receipt["segments"]:
         written = segment["written_text"]
         duration = float(segment["generated_duration_seconds"])
-        segment_chunks = chunks(written, args.maximum_words)
+        segment_chunks = chunks(
+            written,
+            args.maximum_words,
+            maximum_characters=args.maximum_characters,
+        )
         weights = [max(1, len(chunk.split())) for chunk in segment_chunks]
         total_weight = sum(weights)
         cue_cursor = cursor + 0.06
