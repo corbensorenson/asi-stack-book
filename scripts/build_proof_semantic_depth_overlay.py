@@ -681,6 +681,90 @@ for theorem_name in (
         ),
     }
 
+for theorem_name, rationale in {
+    "complete_dossier_is_ready":
+        "The closed non-operational dossier witnesses the derived finite admissibility predicate.",
+    "complete_dossier_reaches_only_public_safe_simulation":
+        "The closed dossier reaches only public-safe Theseus simulation eligibility, not authority or a result.",
+    "same_human_interface_can_hide_opposite_judgment_results":
+        "Two closed dossiers witness opposite meaningful-judgment decisions under identical interface presence.",
+    "identical_component_evidence_can_require_opposite_interaction_reviews":
+        "Two closed interaction records witness opposite reviews under identical local component evidence.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MilitaryInteractionReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed public-safe dossier or collision pair witnesses one bounded modeled result"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "every_admission_axis_mutation_blocks_readiness":
+        "Universal finite case analysis shows all 45 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair_disposition":
+        "Universal finite case analysis binds all 45 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair_state":
+        "Universal finite case analysis routes all 45 mutations into the lifecycle repair state.",
+    "every_admission_axis_mutation_blocks_simulation_eligibility":
+        "Universal finite case analysis prevents every mutation from reaching public-safe simulation eligibility.",
+    "expired_dossier_remains_expired_when_time_advances":
+        "Natural-number order proves advancing time cannot restore an already expired dossier.",
+    "decision_time_shortfall_persists_when_available_time_decreases":
+        "Natural-number order proves less available decision time cannot repair an existing shortfall.",
+    "off_ramp_shortfall_persists_when_available_routes_decrease":
+        "Natural-number order proves fewer available off-ramps cannot repair an existing shortfall.",
+    "interface_presence_cannot_recover_meaningful_judgment":
+        "A same-interface/opposite-decision collision proves no interface-only classifier is exact over every modeled dossier.",
+    "component_evidence_cannot_recover_interaction_review":
+        "A same-component/opposite-decision collision proves no local-component-only classifier is exact over every modeled interaction.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MilitaryInteractionReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": [
+            "lean-theorem:complete_dossier_is_ready",
+            "tests/fixtures/proof_models/military_interaction_dossier.json",
+        ],
+        "classification_basis": [
+            "a quantified mutation, arithmetic monotonicity, or non-identifiability result is independently reconstructed"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant",
+    "simulation_eligibility_requires_admissible_dossier",
+    "admissible_dossier_is_ready",
+    "readiness_requires_scope",
+    "readiness_requires_bounded_authority",
+    "readiness_requires_meaningful_human_judgment",
+    "readiness_requires_observation_trust_record",
+    "readiness_requires_safe_posture",
+    "readiness_requires_interaction_case",
+    "readiness_requires_custody_and_non_authorizing_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MilitaryInteractionReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal finite lifecycle invariant, predicate bridge, or grouped necessity result constrains authored dossier state"
+        ],
+        "rationale": (
+            "The theorem constrains only the eight-step non-operational review and authored fields; "
+            "it establishes no lawful use, meaningful control in practice, strategic stability, safety, support, or authority."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
@@ -720,6 +804,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/DangerousCapabilityReview.lean": {
         "validate_dangerous_capability_review.py"
+    },
+    "lean/AsiStackProofs/MilitaryInteractionReview.lean": {
+        "validate_military_interaction_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

@@ -13,10 +13,11 @@ their own support, release, publication, ownership, or external-effect
 authority. P4-C6 therefore closes as `adequate`; the entire six-cluster P4
 audit is terminal at bounded formal scope.
 
-The denominator is 33 public targets through 44 theorem declarations. The
+The denominator is 33 public targets through 69 theorem declarations. The
 independent consumers exercise 66 resource routes with 57 rejected mutations,
-33 artifact-reality routes with 53 mutations, two valid and six invalid steward
-probe cases, and 53 compression routes with 44 mutations. Resource Economics
+33 artifact-reality routes with 53 mutations, three valid and 23 invalid steward
+probe cases plus 17 independently encoded steward route mutations, and 53
+compression routes with 44 mutations. Resource Economics
 owns thirteen public targets: eleven resource/simulation targets plus the two
 Efficiency-specific migrated targets. Its nine theorem declarations support
 the shared lifecycle refinement without reintroducing the retired

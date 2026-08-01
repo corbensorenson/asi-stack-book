@@ -38,7 +38,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Capability-component scalar-collapse counterexample | implemented | passing in Lean and independent fixture validator; no empirical result claim |
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | Expiry and attempt-denominator monotonicity controls | implemented | passing in Lean and independent fixture validator |
 | `dangerous-capability-domains-and-misuse-uplift` | Dangerous Capability Domains and Misuse Uplift | No-authority and information-hazard boundary suite | implemented | passing for finite authored fields; no deployed enforcement or safety claim |
-| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Layer claim falsification test | planned | not run |
+| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Public-safe military-interaction dossier mutation suite | implemented | passing via python3 scripts/validate_military_interaction_review.py; 45/45 mutations reject |
+| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Meaningful-judgment interface counterexample | implemented | passing in Lean and independent fixture validator; no human-factors result claim |
+| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Component-evidence strategic-interaction counterexample | implemented | passing in Lean and independent fixture validator; no strategic-stability result claim |
+| `military-ai-autonomous-weapons-and-strategic-stability` | Military AI, Autonomous Weapons, and Strategic Stability | Expiry, decision-time, and off-ramp monotonicity controls | implemented | passing in Lean and independent fixture validator |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Support-state transition test | implemented | validated locally |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Projection-aware evidence-transition refinement | implemented | validated locally at experiments/evidence_transition_refinement/results/2026-07-26-local.json; all 35 declared routes reached by an independent consumer; support, inheritance, and external effect none |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Evidence bundle completeness and changelog-consistency probe | implemented | validated locally at experiments/evidence_bundle_completeness/results/2026-07-02-local.json; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim; bounded executable consumer retained at its recorded scope; no generic Lean mirror or support-state movement claim |
@@ -704,12 +707,12 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Target status | Count |
 |---|---:|
-| implemented | 307 |
-| planned | 17 |
+| implemented | 308 |
+| planned | 16 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 307 |
-| planned | process-contract | policy-model-first | 17 |
+| implemented | formal-invariant | lean-candidate | 308 |
+| planned | process-contract | policy-model-first | 16 |

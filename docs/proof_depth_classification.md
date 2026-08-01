@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 114 |
-| Theorem declarations classified | 1396 |
-| Direct/projection-style theorem declarations | 187 |
-| Derived/decomposed theorem declarations | 913 |
-| Unknown or mixed theorem declarations | 296 |
+| Lean modules scanned | 115 |
+| Theorem declarations classified | 1420 |
+| Direct/projection-style theorem declarations | 188 |
+| Derived/decomposed theorem declarations | 932 |
+| Unknown or mixed theorem declarations | 300 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -111,10 +111,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, military-ai-autonomous-weapons-and-strategic-stability, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 17 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | adversarial-machine-learning-and-model-attack-surface, ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, governed-objective-formation-value-learning-and-goal-integrity, human-ai-communication-persuasion-and-epistemic-security, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, open-weight-release-and-post-release-control, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 16 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
@@ -894,6 +895,30 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `release_ready_without_validation_changelog_or_residuals_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_marked_valid_without_sync_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `admissible_dossier_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `complete_dossier_reaches_only_public_safe_simulation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `component_evidence_cannot_recover_interaction_review` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `decision_time_shortfall_persists_when_available_time_decreases` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `every_admission_axis_mutation_blocks_simulation_eligibility` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `every_admission_axis_mutation_has_exact_repair_disposition` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `every_admission_axis_mutation_reaches_repair_state` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `expired_dossier_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `identical_component_evidence_can_require_opposite_interaction_reviews` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `interface_presence_cannot_recover_meaningful_judgment` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `off_ramp_shortfall_persists_when_available_routes_decrease` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_bounded_authority` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_custody_and_non_authorizing_boundary` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_interaction_case` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_meaningful_human_judgment` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_observation_trust_record` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_safe_posture` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `readiness_requires_scope` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `same_human_interface_can_hide_opposite_judgment_results` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `simulation_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_missing_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `acknowledged_distribution_records_irreversibility` | derived_or_decomposed | no | uses simp, unfold |

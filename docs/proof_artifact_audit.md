@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 307, "planned": 17} |
-| Triage class counts | {"formal-invariant": 307, "process-contract": 17} |
-| Lean modules referenced | 80 |
+| Manifest status counts | {"implemented": 308, "planned": 16} |
+| Triage class counts | {"formal-invariant": 308, "process-contract": 16} |
+| Lean modules referenced | 81 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -76,6 +76,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
+| `lean/AsiStackProofs/MilitaryInteractionReview.lean` | 1 | 24 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | 1 | 22 | 0 | 11 | 1 |
 | `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
@@ -164,7 +165,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `learning-theory-generalization-and-scaling-science` | 1 | 0 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
-| `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 0 | 0 | 0 |
+| `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 1 | 0 | 0 |
 | `model-weight-custody-and-hardware-roots-of-trust` | 8 | 8 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 1 | 0 | 0 |
@@ -222,7 +223,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:failure.taxonomy.detector_probe_bridge` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.recovery.closed_loop_refinement` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureRecoveryRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary` | `dangerous-capability-domains-and-misuse-uplift` | `AsiStackProofs.DangerousCapabilityReview` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `military-ai-autonomous-weapons-and-strategic-stability` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `military-ai-autonomous-weapons-and-strategic-stability` | `AsiStackProofs.MilitaryInteractionReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.operational_invariant` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceTransitionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.failure_blocks_promotion` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.support_state.transition_lifecycle_route` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceTransitionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

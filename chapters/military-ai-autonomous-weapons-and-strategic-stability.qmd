@@ -4,7 +4,7 @@ chapter_id: "military-ai-autonomous-weapons-and-strategic-stability"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_icrc_autonomous_weapons_ihl_2025"
   - "ext_sipri_military_ai_nuclear_escalation_2025"
@@ -174,12 +174,12 @@ state-of-the-art, AGI, or ASI result.</p>
 | Chapter ID | `military-ai-autonomous-weapons-and-strategic-stability` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-25 |
+| Last updated | 2026-08-01 |
 | Primary source records | `ext_icrc_autonomous_weapons_ihl_2025`, `ext_sipri_military_ai_nuclear_escalation_2025`, `ext_singapore_consensus_2026`, `ext_international_ai_safety_report_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned ICRC, SIPRI, and international synthesis records have bounded notes; no source result is reproduced. |
-| Test state | Chapter-level tests remain planned unless Appendix E records an implemented command and result. |
+| Test state | The finite Lean and independent-fixture boundary is implemented; public-safe simulation, human-factors, legal, adversarial, and strategic evidence remains unrun. |
 
 ## Drafting guardrail
 
@@ -611,19 +611,48 @@ weapon authorization or a stability result.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Decision-role classification test | Verify that sensing, recommendation, authorization, selection, and actuation cannot be collapsed into one autonomy label. | planned; not run |
-| Meaningful-judgment test | Vary time, information, workload, competence, and authority; reject nominal human control when practical intervention fails. | planned; not run |
-| False-alarm interaction test | Propagate ambiguous and correlated signals through operator, command, adversary, and strategic loops. | planned; not run |
-| Doctrine-sensitivity test | Re-evaluate conclusions across multiple plausible command and adversary assumptions. | planned; not run |
-| Off-ramp preservation test | Check whether verification, communication, contest, suspension, and diplomatic options remain under time pressure. | planned; not run |
-| Proliferation test | Model reciprocal adoption and countermeasures instead of a unilateral static baseline. | planned; not run |
-| Public-claim boundary test | Ensure restricted evidence does not produce a broader public assurance than its disclosed boundary supports. | planned; not run |
+| Decision-role and authority classification | Reject missing mission, role, affected-population, legal, accountable-authority, effect-envelope, or no-expansion fields. | implemented in Lean and independent fixture validator |
+| Meaningful-judgment boundary | Reject nominal human control when time, information, competence, attention, authority, intervention, alternatives, or independent judgment is absent. | implemented at the finite authored-record boundary; no human-factors result |
+| Observation and safe-posture boundary | Reject missing provenance, dependency, uncertainty, corroboration, abstention, degraded-posture, or suspension fields. | implemented in Lean and independent fixture validator |
+| Interaction and off-ramp boundary | Reject missing adversary, doctrine, reciprocal-effect, off-ramp, or proliferation-residual fields. | implemented at the finite authored-record boundary; no conflict or stability result |
+| Custody and public-claim boundary | Reject missing independent review, restricted custody, currentness, maximum inference, remedy, decommission, residual, or non-claim fields and refuse forbidden requests. | implemented in Lean and independent fixture validator |
+| Public-safe simulation campaign | Vary doctrine, adversary assumptions, sensor dependence, decision time, communication loss, human workload, reciprocal response, and off-ramp availability against non-AI and advisory baselines. | assigned to Project Theseus; not run |
 
-Planned formalization hook:
+### Formalization hooks
+
 `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary`
-remains a process-contract target; it does not authorize a weapon or prove
-lawful use, meaningful human control, escalation reduction, or strategic
-stability.
+is implemented in `AsiStackProofs.MilitaryInteractionReview`. Its 24 theorem
+declarations operate over a finite, authored, explicitly non-operational
+dossier. An eight-step lifecycle accumulates public-safe scope, bounded
+authority, meaningful-human-judgment conditions, observation trust,
+safe-posture routes, interaction assumptions, custody, and a non-authorizing
+boundary. One complete record reaches only eligibility for a Project Theseus
+public-safe simulation.
+
+The model covers 45 admission-axis mutations. Every mutation blocks readiness
+and lifecycle eligibility, while a separate diagnostic function returns its
+exact repair or refusal disposition. Three arithmetic monotonicity results
+prevent later time, lower available decision time, or fewer available off-ramps
+from laundering an existing rejection. The interface-presence impossibility
+result gives two dossiers with the same visible human interface but opposite
+meaningful-judgment decisions. The component-evidence impossibility result
+gives two interaction records with identical local accuracy, latency, and
+reliability evidence but opposite strategic-review decisions, then proves that
+no classifier using only that local component record is exact for every modeled
+interaction.
+
+The proofs trust every authored mission, legal, human, sensor, adversary,
+doctrine, custody, and residual field. This finite-record model does not prove
+that any authored field is true. No theorem authorizes a weapon or proves
+lawful use, meaningful human control in practice, correct observation,
+acceptable effects, escalation reduction, strategic stability, safety,
+support, release, transfer, or external effect. Chapter support remains
+`argument`; `support_state_effect` remains `none`.
+
+The canonical next consumer is Project Theseus public-safe simulation: exercise
+the same finite dossier against synthetic, non-operational interaction cases,
+competent non-AI and advisory baselines, independent evaluators, doctrine
+variants, and retained failures without inheriting authority from Lean.
 
 ## Source crosswalk
 

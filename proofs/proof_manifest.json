@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 307,
-    "planned": 17
+    "implemented": 308,
+    "planned": 16
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -267,11 +267,11 @@
       "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
       "chapter_title": "Military AI, Autonomous Weapons, and Strategic Stability",
       "tag": "lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability.",
-      "status": "planned",
+      "module": "AsiStackProofs.MilitaryInteractionReview",
+      "formal_target": "An eight-step finite review preserves accumulated public-safe scope, bounded authority, meaningful human judgment, observation, safe-posture, interaction, custody, and non-authorizing boundary obligations; a complete authored dossier reaches only a Project Theseus public-safe simulation, while 45 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Decision-time, off-ramp, and expiry shortfalls remain rejecting under adverse monotone changes. Human-interface presence cannot recover meaningful judgment, and identical component evidence cannot recover strategic-interaction review. No theorem authorizes a weapon or establishes lawful use, meaningful human control in practice, escalation reduction, strategic stability, safety, support, release, transfer, or external effect.",
+      "status": "implemented",
       "outline_line": 817,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/MilitaryInteractionReview.lean"
     },
     {
       "chapter_id": "evidence-states-and-claim-discipline",

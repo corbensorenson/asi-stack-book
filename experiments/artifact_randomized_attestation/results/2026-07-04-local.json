@@ -165,21 +165,21 @@
     {
       "artifact": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
       "artifact_result_id": null,
-      "artifact_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
+      "artifact_sha256": "824e9480819de655b107f03da2e26b0d26db87ace43bb440d5a65f270cbcffe8",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
           "observed_ref": "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
-          "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
+          "observed_sha256": "824e9480819de655b107f03da2e26b0d26db87ace43bb440d5a65f270cbcffe8",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "0373c900056651452b8068dc68e229b62592a809",
+          "git_blob_sha1": "79251748e3c86f13f3242ef1206119aeed7e3ba5",
           "observed_ref": "HEAD:experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json",
-          "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
+          "observed_sha256": "824e9480819de655b107f03da2e26b0d26db87ace43bb440d5a65f270cbcffe8",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
@@ -189,9 +189,9 @@
           "exit_code": 0,
           "observer_role": "command_replay_validator",
           "output_excerpt": [
-            "Artifact steward lifecycle probe validation passed: 2 valid routes and 6 expected-invalid controls checked with no steward execution or support-state movement."
+            "Artifact steward lifecycle probe validation passed: 3 valid routes, 23 expected-invalid controls, 17 independent route mutations, and 37 exact Lean declarations checked with no steward execution or support-state movement."
           ],
-          "output_sha256": "71ae0eaab518bef2ef203e331122f5424ac955290bc5464392d50c4ead4089ac",
+          "output_sha256": "d5a32f16911f3aefbdd1ee7f8d87407ab251eaec403ff679d17f7bbecf9691b8",
           "route_id": "command_replay"
         }
       ],
@@ -199,7 +199,7 @@
       "selection_score": "2b114ad7bc446dba624e39ebaf7dc1e7b2bbd0635d7db648a6ece0c308747577",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "847cfd54af58786fbb0b7327c1a5b2ccccee66b538f090b28bc168655ba72485",
+        "observed_sha256": "824e9480819de655b107f03da2e26b0d26db87ace43bb440d5a65f270cbcffe8",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [

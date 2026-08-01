@@ -6,7 +6,7 @@
   "scope": "bounded_finite_resource_allocation_artifact_reality_stewardship_and_compression_lifecycle_semantics",
   "module_count": 4,
   "public_target_count": 33,
-  "theorem_declaration_count": 44,
+  "theorem_declaration_count": 69,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
@@ -63,9 +63,9 @@
       "path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
       "disposition": "adequate",
       "public_target_count": 7,
-      "theorem_declaration_count": 12,
-      "plain_language_proposition": "Finite steward lifecycle, contribution-ledger, and federation decisions route tainted events, autonomy increases, treasury exceptions, sunset criteria, collapsed contribution scoring, missing evidence, inherited authority, and contract defects to explicit review, rejection, or dispatch outcomes.",
-      "modeled_state": "Hand-authored finite route functions for lifecycle, contribution-ledger, and federation decisions, plus a two-valid/six-invalid independent lifecycle probe. Work-contract repair and release-gate refusal remain public planned targets rather than assumption-restating theorems.",
+      "theorem_declaration_count": 37,
+      "plain_language_proposition": "Finite steward lifecycle, contribution-ledger, federation, work-contract, and release-packet decisions route tainted events, autonomy increases, treasury exceptions, sunset criteria, collapsed contribution scoring, missing evidence, inherited authority, contract defects, authority widening, and support-promotion requests to explicit review, repair, refusal, or bounded readiness outcomes.",
+      "modeled_state": "Hand-authored finite route functions for lifecycle, contribution-ledger, and federation decisions plus separate reachable work-contract and release-packet review lifecycles. The independent consumer exercises three valid routes, 23 expected-invalid controls, and 17 independently encoded route mutations.",
       "assumptions": [
         "Objectives, authority, tool, budget, approval, evidence, contribution, conflict, data-class, and policy fields are truthful and complete for the reviewed action.",
         "The model does not authenticate approvals, execute tools, spend funds, allocate compensation, measure reputation, resolve conflicts, publish a release, or enforce a charter.",
@@ -80,8 +80,8 @@
         "scripts/validate_artifact_steward_lifecycle_probe.py",
         "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json"
       ],
-      "mutation_evidence": "The independent lifecycle probe preserves two valid routes and rejects six expected-invalid controls without executing steward work or changing support; twelve retained route theorems cover the five implemented public targets, while work-contract repair and release-gate refusal remain planned.",
-      "maximum_inference": "Adequate for the exact finite route precedence encoded by the lifecycle, contribution-ledger, and federation models and not for the two planned work-contract and release-gate decision functions. It does not establish field authenticity, agent competence, good stewardship, ownership, fair governance, effective approval, real execution, release validity, federation safety, or support movement."
+      "mutation_evidence": "The independent lifecycle probe preserves three valid routes, rejects 23 expected-invalid controls, and independently re-encodes 17 work-contract and release-packet route mutations; 37 exact Lean declarations cover all seven public targets without executing steward work, authorizing release, or changing support.",
+      "maximum_inference": "Adequate for the exact finite route precedence, stage invariants, admission prerequisites, and rejecting controls encoded by the lifecycle, contribution-ledger, federation, work-contract, and release-packet models. It does not establish field authenticity, agent competence, good stewardship, ownership, fair governance, effective approval, real execution, release validity, federation safety, or support movement."
     },
     {
       "module": "AsiStackProofs.ArtifactCompressionRefinement",

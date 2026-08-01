@@ -713,14 +713,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "military-ai-autonomous-weapons-and-strategic-stability": {
-        "reviewed_sha256": "1db4ba582a54dd4729eb978aa8f79345bb84f7fb1c5f8bafb1962c098561724e",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "cb73c0e8487c237626cff1adb9be1dcb7cab671497649b4dfe965c8d1791eaa3",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish decision role, mission authority, meaningful judgment, observation trust, safe posture, reciprocal adaptation, strategic off-ramps, and accountable decommissioning",
             "ICRC and SIPRI remain mandate-specific official-position and scenario-analysis sources; the international reports add context without becoming legal advice, prediction, or technical validation",
             "the chapter preserves compressed timelines, base-rate failures, adversary response, secrecy limits, independent challenge, decommissioning residuals, and argument-only support",
+            "the 24-declaration finite lifecycle, 45 mutation dispositions, three monotonicity controls, and two non-identifiability results establish only authored public-safe review discipline; operational, legal, human, strategic, safety, support, and release conclusions remain unproved",
         ],
         "support_state_effect": "none",
     },

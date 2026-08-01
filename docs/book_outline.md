@@ -814,7 +814,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability. | planned |
+| `lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary` | `AsiStackProofs.MilitaryInteractionReview` | An eight-step finite review preserves accumulated public-safe scope, bounded authority, meaningful human judgment, observation, safe-posture, interaction, custody, and non-authorizing boundary obligations; a complete authored dossier reaches only a Project Theseus public-safe simulation, while 45 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Decision-time, off-ramp, and expiry shortfalls remain rejecting under adverse monotone changes. Human-interface presence cannot recover meaningful judgment, and identical component evidence cannot recover strategic-interaction review. No theorem authorizes a weapon or establishes lawful use, meaningful human control in practice, escalation reduction, strategic stability, safety, support, release, transfer, or external effect. | implemented |
 
 ### Evidence States and Claim Discipline
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 114 Lean modules, 1396 theorem declarations, 913 derived/decomposed, 187 direct/projection, 296 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 115 Lean modules, 1420 theorem declarations, 932 derived/decomposed, 188 direct/projection, 300 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

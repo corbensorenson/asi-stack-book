@@ -1608,15 +1608,38 @@
           "minimal_implementation": "A non-operational governance prototype with a mission and authority register, legal-review record, decision-role taxonomy, sensor-to-recommendation provenance, abstention and safe-posture rules, escalation-path scenario matrix, accountable approval log, incident schema, and suspension/decommission procedure tested only on synthetic or publicly safe scenarios.",
           "beyond_state_of_art": "A credible advance would link technical behavior, operator performance, command doctrine, adversary response, legal constraints, proliferation, and crisis dynamics in one falsifiable safety case, then show across independently designed safe simulations that the governed system preserves off-ramps and lowers bounded decision risk relative to human-only and automation baselines. The mature target architecture would preserve accountable suspension, audit, public claim boundaries, and renewed review as assumptions change, without operationalizing sensitive detail.",
           "codex_tests": [
-            "Layer claim falsification test"
+            {
+              "name": "Public-safe military-interaction dossier mutation suite",
+              "purpose": "Reject missing scope, authority, judgment, observation, safe-posture, interaction, custody, and boundary fields through exact repair or refusal dispositions.",
+              "implementation_status": "implemented",
+              "result_status": "passing via python3 scripts/validate_military_interaction_review.py; 45/45 mutations reject"
+            },
+            {
+              "name": "Meaningful-judgment interface counterexample",
+              "purpose": "Show that identical human-interface presence can coexist with opposite meaningful-judgment decisions when practical decision time differs.",
+              "implementation_status": "implemented",
+              "result_status": "passing in Lean and independent fixture validator; no human-factors result claim"
+            },
+            {
+              "name": "Component-evidence strategic-interaction counterexample",
+              "purpose": "Show that identical component accuracy, latency, and reliability evidence can coexist with opposite interaction-review decisions.",
+              "implementation_status": "implemented",
+              "result_status": "passing in Lean and independent fixture validator; no strategic-stability result claim"
+            },
+            {
+              "name": "Expiry, decision-time, and off-ramp monotonicity controls",
+              "purpose": "Prevent later time, lower available decision time, or fewer available off-ramps from laundering an existing rejection.",
+              "implementation_status": "implemented",
+              "result_status": "passing in Lean and independent fixture validator"
+            }
           ],
-          "lean_module": "AsiStackProofs.NoDeferralAdmission",
+          "lean_module": "AsiStackProofs.MilitaryInteractionReview",
           "proof_targets": [
             {
               "tag": "lean:military-ai-autonomous-weapons-and-strategic-stability.admission_boundary",
-              "module": "AsiStackProofs.NoDeferralAdmission",
-              "target": "A finite military-AI interaction record may hand off only when mission, authority, human judgment, effect bounds, escalation assumptions, safe posture, and residuals are explicit; no theorem authorizes a weapon or proves lawful use or strategic stability.",
-              "status": "planned"
+              "module": "AsiStackProofs.MilitaryInteractionReview",
+              "target": "An eight-step finite review preserves accumulated public-safe scope, bounded authority, meaningful human judgment, observation, safe-posture, interaction, custody, and non-authorizing boundary obligations; a complete authored dossier reaches only a Project Theseus public-safe simulation, while 45 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Decision-time, off-ramp, and expiry shortfalls remain rejecting under adverse monotone changes. Human-interface presence cannot recover meaningful judgment, and identical component evidence cannot recover strategic-interaction review. No theorem authorizes a weapon or establishes lawful use, meaningful human control in practice, escalation reduction, strategic stability, safety, support, release, transfer, or external effect.",
+              "status": "implemented"
             }
           ]
         },
@@ -21478,7 +21501,7 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 324-target proof manifest with 307 implemented and 17 planned targets; a 114-module Lean workspace with 1,396 theorem declarations classified as 913 derived/decomposed, 187 direct/projection, and 296 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 324-target proof manifest with 308 implemented and 16 planned targets; a 115-module Lean workspace with 1,420 theorem declarations classified as 932 derived/decomposed, 188 direct/projection, and 300 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",
