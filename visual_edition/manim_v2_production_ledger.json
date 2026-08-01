@@ -135,7 +135,7 @@
     "briefed": 0,
     "scripted": 0,
     "animatic_passed": 5,
-    "picture_and_sound_lock_passed": 4,
+    "picture_and_sound_lock_passed": 5,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
     "youtube_predecessors": 12,
@@ -362,7 +362,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "picture_and_sound_lock",
         "beat_plan_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/narration.txt",
@@ -381,7 +381,7 @@
         "gates": {
           "beat_plan": "pass",
           "animatic": "pass",
-          "picture_and_sound_lock": "not_started",
+          "picture_and_sound_lock": "pass",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
