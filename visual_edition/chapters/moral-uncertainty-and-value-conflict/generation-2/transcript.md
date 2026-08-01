@@ -190,4 +190,3 @@ Each section below is a descriptive transcript of the corresponding audio beat. 
 ## Source and evidence boundary
 
 At most, this visual explains the chapter's design rationale at argument support. The case, records, finite harness, and transitions are a chapter-specific teaching derivative; they do not establish moral truth, legal rights, consensus, fair deployment, institutional adequacy, safe export or fork, or any empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result.
-
