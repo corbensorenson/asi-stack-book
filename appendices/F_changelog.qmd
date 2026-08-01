@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-08-01 - Protected-computation evidence and fallback boundaries
+
+- Implemented
+  `lean:confidential-and-verifiable-ai-computation.admission_boundary` as an
+  eight-step finite review over exact identity, separated guarantees,
+  evidence roles and statement scope, freshness, leakage, observable fallback,
+  cross-owner handoff, and explicit non-authority.
+- Added 31 Lean declarations and an independently encoded fixture consumer.
+  One complete authored dossier reaches only a Project Theseus protected-
+  computation campaign; 48 admission-axis mutations reject readiness and
+  receive exact repair or refusal dispositions.
+- Added typed evidence non-substitution, inductive finite leakage accounting,
+  receipt-scope and leakage monotonicity, explicit fallback rejection, and two
+  information-loss results for semantic authority and end-to-end privacy.
+- Added a bounded Privacy Information Flow bridge that deliberately leaves
+  purpose and authority false, preventing a protected-execution receipt from
+  laundering privacy authorization.
+- Preserved the inference boundary. Authored fields remain assumptions, and no
+  theorem establishes cryptographic soundness, attestation validity, hardware
+  trust, side-channel resistance, measured leakage, semantic correctness,
+  authorization, privacy, fallback efficacy, acceptable cost, secure
+  deployment, support, transfer, or external effect. Chapter support remains
+  `argument`.
+- Current proof-depth snapshot: 324 proof targets, 120 Lean modules, 1546
+  theorem declarations, 990 derived/decomposed, 236 direct/projection, 320
+  unknown/mixed, and 1/1 safety-critical chapter classifications present.
+
 ## 2026-08-01 - Adversarial model-security lifecycle and composition boundary
 
 - Implemented

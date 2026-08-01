@@ -1317,9 +1317,9 @@ The dated 2026-08-01 Failure Modes, Governed Operations, Learned Objective
 Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI
 Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, and Military Interaction Review expansions reopen
 formal growth without rewriting that history. The current overlay in
-`proofs/proof_semantic_depth_overlay.json` classifies 1,515 live theorem
-declarations across 118 theorem-bearing modules and maps them to 72 active
-semantic-owner chapters. The 296 added declarations are bound to the
+`proofs/proof_semantic_depth_overlay.json` classifies 1,546 live theorem
+declarations across 119 theorem-bearing modules and maps them to 73 active
+semantic-owner chapters. The 327 added declarations are bound to the
 five-stage failure-recovery model, the eight-stage governed-operations
 lifecycle, the learned-objective non-identification witness and eight-stage
 integrity lifecycle, and the declared-dependence pair classifier plus

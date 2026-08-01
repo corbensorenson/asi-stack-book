@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 119 |
-| Theorem declarations classified | 1515 |
-| Direct/projection-style theorem declarations | 223 |
-| Derived/decomposed theorem declarations | 976 |
-| Unknown or mixed theorem declarations | 316 |
+| Lean modules scanned | 120 |
+| Theorem declarations classified | 1546 |
+| Direct/projection-style theorem declarations | 236 |
+| Derived/decomposed theorem declarations | 990 |
+| Unknown or mixed theorem declarations | 320 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -117,7 +117,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, confidential-and-verifiable-ai-computation, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 12 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, autonomous-replication-proliferation-and-containment, content-authenticity-watermarking-and-synthetic-media-integrity, durable-semantic-memory-and-knowledge-lattices, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, institutions-international-coordination-and-public-legitimacy, learning-theory-generalization-and-scaling-science, physical-compute-infrastructure-energy-and-environmental-constraints, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance, societal-resilience-and-misuse-defense | 11 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -135,6 +135,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 11 | 7 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | confidential-and-verifiable-ai-computation | 1 | 31 | 13 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1212,6 +1213,37 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_lean_artifact_cannot_claim_lean_proof` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_not_implemented` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_without_transition_or_boundaries_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `account_all_covers_every_finite_leakage_channel` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `artifact_change_invalidates_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `attestation_does_not_establish_semantic_correctness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `complete_dossier_reaches_only_protected_computation_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `component_guarantees_cannot_recover_end_to_end_privacy` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `confidentiality_mechanism_does_not_establish_end_to_end_privacy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `encoded_relation_proof_does_not_establish_authorization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `evidence_epoch_change_invalidates_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `evidence_signals_cannot_recover_semantic_authority` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `expired_receipt_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `identical_component_guarantees_can_hide_opposite_end_to_end_privacy` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `identical_evidence_signals_can_hide_opposite_semantic_authority_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `leakage_overrun_persists_under_more_observation_and_no_larger_budget` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `protected_execution_receipt_cannot_substitute_for_privacy_authorization` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_freshness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_guarantees` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `readiness_requires_leakage` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `silent_unprotected_fallback_is_blocked` | derived_or_decomposed | no | uses contradiction, rcases, rw, simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `unprotected_fallback_without_separate_authorization_is_blocked` | derived_or_decomposed | no | uses contradiction, rcases, rw, simp |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | `verifier_policy_change_invalidates_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_non_promoting_phase_integrates` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_prototype_phase_gate_fixture_bridge_preserves_non_claims` | derived_or_decomposed | no | uses cases, simp, unfold |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `complete_prototype_phase_gate_fixture_bridge_accepts` | derived_or_decomposed | no | uses simp |

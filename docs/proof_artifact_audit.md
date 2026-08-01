@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 312, "planned": 12} |
-| Triage class counts | {"formal-invariant": 312, "process-contract": 12} |
-| Lean modules referenced | 85 |
+| Manifest status counts | {"implemented": 313, "planned": 11} |
+| Triage class counts | {"formal-invariant": 313, "process-contract": 11} |
+| Lean modules referenced | 86 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -93,6 +93,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 7 | 0 | 6 | 6 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
+| `lean/AsiStackProofs/ProtectedComputationReview.lean` | 1 | 31 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
@@ -138,7 +139,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
-| `confidential-and-verifiable-ai-computation` | 1 | 0 | 0 | 0 |
+| `confidential-and-verifiable-ai-computation` | 1 | 1 | 0 | 0 |
 | `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 0 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
@@ -280,7 +281,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:adversarial-machine-learning-and-model-attack-surface.admission_boundary` | `adversarial-machine-learning-and-model-attack-surface` | `AsiStackProofs.AdversarialModelSecurity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:privacy_information_flow.admission_invariants` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:privacy_information_flow.outcome_separation` | `privacy-data-rights-and-information-flow-governance` | `AsiStackProofs.PrivacyInformationFlow` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:confidential-and-verifiable-ai-computation.admission_boundary` | `confidential-and-verifiable-ai-computation` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:confidential-and-verifiable-ai-computation.admission_boundary` | `confidential-and-verifiable-ai-computation` | `AsiStackProofs.ProtectedComputationReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.complete_observed_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.lifecycle.missing_lineage` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |

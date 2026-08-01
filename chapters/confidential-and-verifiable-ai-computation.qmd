@@ -4,7 +4,7 @@ chapter_id: "confidential-and-verifiable-ai-computation"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-01"
 primary_sources:
   - "ext_nist_privacy_enhancing_cryptography_2026"
   - "ext_zkllm_2024"
@@ -24,12 +24,12 @@ open_evidence_gaps:
 | Chapter ID | `confidential-and-verifiable-ai-computation` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-25 |
+| Last updated | 2026-08-01 |
 | Primary source records | `ext_nist_privacy_enhancing_cryptography_2026`, `ext_zkllm_2024`, `ext_ietf_rats_architecture_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned primary sources have bounded source notes; no source result is reproduced locally. |
-| Test state | Chapter-level tests remain planned unless Appendix E records an implemented command and result. |
+| Test state | The 31-declaration `AsiStackProofs.ProtectedComputationReview` model and independent 48-axis consumer pass locally; this mechanizes only the bounded protected-execution dossier, not cryptographic security, hardware trust, privacy, authorization, or acceptable deployment cost. |
 
 ## Drafting guardrail
 
@@ -432,17 +432,51 @@ privacy, acceptable cost, or production readiness.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Guarantee-separation test | Seed cases where confidentiality holds but authorization, freshness, or semantic correctness fails; reject any aggregate `secure=true` result. | planned; not run |
-| Replay and mismatch test | Replay evidence and substitute model, tokenizer, policy, or preprocessing commitments; the verifier must fail closed. | planned; not run |
+| Guarantee-separation test | Seed cases where confidentiality holds but authorization, freshness, or semantic correctness fails; reject any aggregate `secure=true` result. | Lean evidence non-substitution and two impossibility results implemented; implementation campaign planned |
+| Replay and mismatch test | Replay evidence and substitute model, tokenizer, policy, or preprocessing commitments; the verifier must fail closed. | Lean artifact, policy, epoch, and expiry invalidation implemented; real verifier planned |
 | Leakage inventory test | Account for outputs, access patterns, timing, logs, caches, crash dumps, receipts, and verifier metadata. | planned; not run |
 | Matched-cost test | Compare native and protected paths under equal task, quality, context, concurrency, and accounting boundaries. | planned; not run |
-| Fallback observability test | Force protected-path failure and verify that no silent unprotected downgrade occurs. | planned; not run |
-| Independent appraisal test | Implement the verifier separately from the prover and test policy/version disagreement. | planned; not run |
+| Fallback observability test | Force protected-path failure and verify that no silent unprotected downgrade occurs. | Lean authorization and observability obligations implemented; executable failure injection planned |
+| Independent appraisal test | Implement the verifier separately from the prover and test policy/version disagreement. | Lean role separation and policy invalidation implemented; independent implementation planned |
 
-Planned formalization hook:
-`lean:confidential-and-verifiable-ai-computation.admission_boundary` remains a
-process-contract target; it does not prove implementation security, semantic
-correctness, authorization, privacy, or acceptable deployment cost.
+### Formalization hooks
+
+`lean:confidential-and-verifiable-ai-computation.admission_boundary` is
+implemented by the 31 theorem declarations in
+`AsiStackProofs.ProtectedComputationReview`. The eight-step review preserves
+transaction and artifact identity, separated guarantee classes, evidence-role
+and statement scope, freshness, leakage, observable fallback, cross-owner
+handoff, and explicit non-authority. Its 48 admission-axis mutations all block
+readiness and receive exact repair or refusal dispositions before the only
+positive terminal state, a Project Theseus protected-computation campaign.
+
+The formal surface includes evidence non-substitution: remote attestation does
+not establish semantic correctness, an encoded-relation proof does not
+establish authorization, and a confidentiality mechanism does not establish
+end-to-end privacy; finite leakage accounting is proved by induction over an
+arbitrary channel list. Artifact, verifier-policy, evidence-epoch, and expiry
+changes invalidate a bounded receipt; a leakage overrun remains rejected under
+more observation and no larger allowance; and unprotected fallback requires
+separate authorization plus consumer-visible disclosure.
+
+The semantic-authority impossibility proves that identical attestation,
+relation-proof, and confidentiality signals can accompany opposite semantic
+and authorization states. The end-to-end privacy impossibility proves that
+identical input-confidentiality, model-confidentiality, and computation-
+integrity signals can accompany opposite output-and-metadata privacy states. A
+bounded bridge supplies threat and flow fields to
+`AsiStackProofs.PrivacyInformationFlow` while deliberately leaving purpose
+and authority false, so the privacy owner rejects rather than inherits them.
+
+All dossier fields are authored assumptions. Lean does not prove cryptographic
+soundness, attestation validity, hardware trust, side-channel resistance,
+measured leakage, semantic correctness, authorization, privacy, fallback
+efficacy, acceptable cost, secure deployment, support, transfer, or external
+effect. Chapter support remains `argument`; `support_state_effect=none`.
+Project Theseus must run a competent protected-computation campaign with
+implemented constructions, independently written appraisers, replay and
+mismatch injection, side-channel inventory, matched native/protected
+workloads, observable fallback, recovery, and complete attempt denominators.
 
 ## Source crosswalk
 

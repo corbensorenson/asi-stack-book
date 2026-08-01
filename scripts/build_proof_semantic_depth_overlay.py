@@ -468,6 +468,64 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite protected-computation admissibility predicate.",
+    "complete_dossier_reaches_only_protected_computation_campaign": "The closed dossier reaches only Project Theseus protected-computation campaign eligibility, not execution, privacy, or release authority.",
+    "identical_evidence_signals_can_hide_opposite_semantic_authority_state": "Two interpretation cases witness opposite semantic-authorization states under identical attestation, relation-proof, and confidentiality signals.",
+    "identical_component_guarantees_can_hide_opposite_end_to_end_privacy": "Two privacy cases witness opposite end-to-end states under identical input-confidentiality, model-confidentiality, and computation-integrity signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProtectedComputationReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed protected-computation dossier or collision pair witnesses one bounded modeled result"],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "account_all_covers_every_finite_leakage_channel": "Structural induction proves every member of an arbitrary finite leakage-channel list is marked accounted by the modeled map.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 48 admission-axis mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 48 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 48 mutations into the lifecycle repair state.",
+    "expired_receipt_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired protected-computation receipt.",
+    "leakage_overrun_persists_under_more_observation_and_no_larger_budget": "Natural-number order preserves leakage-overrun rejection under more observation and no larger allowance.",
+    "artifact_change_invalidates_receipt": "The artifact-identity conjunct rejects every receipt presented for a different artifact.",
+    "verifier_policy_change_invalidates_receipt": "The verifier-policy conjunct rejects every receipt presented under a different policy.",
+    "evidence_epoch_change_invalidates_receipt": "The evidence-epoch conjunct rejects every receipt presented in a different epoch.",
+    "unprotected_fallback_without_separate_authorization_is_blocked": "The typed fallback relation excludes every unprotected path that lacks separate authorization.",
+    "silent_unprotected_fallback_is_blocked": "The typed fallback relation excludes every unprotected path hidden from its consumer.",
+    "evidence_signals_cannot_recover_semantic_authority": "A same-evidence/opposite-interpretation collision proves no evidence-signal classifier is exact for every modeled interpretation case.",
+    "component_guarantees_cannot_recover_end_to_end_privacy": "A same-component/opposite-privacy collision proves no component-guarantee classifier is exact for every modeled privacy case.",
+    "protected_execution_receipt_cannot_substitute_for_privacy_authorization": "The consumer refinement deliberately leaves purpose and authority false, making the existing Privacy Information Flow owner reject the receipt.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProtectedComputationReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P3",
+        "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/protected_computation_dossier.json"],
+        "classification_basis": ["a quantified mutation, finite induction, scope invalidation, fallback rule, non-identifiability result, or rejecting consumer refinement is independently reconstructed"],
+        "rationale": rationale,
+    }
+
+for theorem_name in (
+    "attestation_does_not_establish_semantic_correctness",
+    "encoded_relation_proof_does_not_establish_authorization",
+    "confidentiality_mechanism_does_not_establish_end_to_end_privacy",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "campaign_eligibility_requires_admissible_dossier", "readiness_requires_identity",
+    "readiness_requires_guarantees", "readiness_requires_evidence",
+    "readiness_requires_freshness", "readiness_requires_leakage",
+    "readiness_requires_fallback", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProtectedComputationReview.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored protected-computation state"],
+        "rationale": "The theorem constrains only the encoded protected-computation review; it establishes no cryptographic soundness, hardware trust, measured privacy, authorization, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_control_lease_is_ready":
         "The closed complete lease witnesses the derived finite admissibility predicate.",
     "complete_control_lease_routes_only_to_theseus_trial":
@@ -1021,6 +1079,9 @@ LEGACY_VALIDATOR_ALIASES = {
     },
     "lean/AsiStackProofs/AdversarialModelSecurity.lean": {
         "validate_adversarial_model_security.py"
+    },
+    "lean/AsiStackProofs/ProtectedComputationReview.lean": {
+        "validate_protected_computation_review.py"
     },
     "lean/AsiStackProofs/TheseusReference.lean": {"validate_theseus_report.py"},
     "lean/AsiStackProofs/CyclicMixers.lean": {"validate_circle_cyclic_mixer_receipt_slice.py"},

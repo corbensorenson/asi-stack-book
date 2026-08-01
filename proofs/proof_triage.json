@@ -3223,12 +3223,12 @@
     {
       "tag": "lean:confidential-and-verifiable-ai-computation.admission_boundary",
       "chapter_id": "confidential-and-verifiable-ai-computation",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite protected-execution record may hand off only when guarantees, adversary, leakage, artifact, freshness, verifier policy, fallback, and unsupported properties are explicit; no theorem proves semantic correctness, authorization, or end-to-end privacy.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "The planned boundary separates named protected-compute guarantees from adversary, leakage, artifact, freshness, verification, fallback, and unsupported-property records. It cannot establish cryptographic implementation security, semantic correctness, authorization, privacy, performance, or deployment readiness."
+      "module": "AsiStackProofs.ProtectedComputationReview",
+      "formal_target": "An eight-step finite protected-execution review preserves transaction identity, separated guarantee classes, evidence-role and statement scope, freshness, leakage, observable fallback, cross-owner handoff, and non-authority obligations; a complete authored dossier reaches only a Project Theseus protected-computation campaign, while 48 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Remote attestation, encoded-relation proofs, and confidentiality mechanisms do not substitute for semantic correctness, authorization, or end-to-end privacy. Expiry, artifact change, verifier-policy change, and evidence-epoch change invalidate a bounded receipt; leakage overrun remains an overrun under adverse monotone change, and finite accounting covers every listed leakage channel. Unprotected fallback requires separate authorization and consumer-visible disclosure. Evidence signals cannot recover semantic authority, component guarantees cannot recover end-to-end privacy, and the Privacy Information Flow consumer rejects purpose and authority inheritance. No theorem establishes cryptographic soundness, attestation validity, hardware trust, side-channel resistance, measured leakage, semantic correctness, authorization, privacy, fallback efficacy, acceptable cost, secure deployment, support, transfer, or external effect.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "The implemented eight-step finite review preserves exact transaction, guarantee, evidence, freshness, leakage, fallback, handoff, and non-authority boundaries; 48 independently encoded mutations receive exact repairs, typed non-substitution prevents evidence laundering, receipt and leakage arithmetic preserve adverse invalidation, two collision pairs prove information loss, and the privacy consumer refuses purpose and authority inheritance. Authored fields remain assumptions, and no cryptographic, attestation, hardware, privacy, authorization, deployment, support, transfer, or external-effect claim follows."
     },
     {
       "tag": "lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary",

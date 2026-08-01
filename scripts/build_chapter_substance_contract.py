@@ -779,14 +779,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "confidential-and-verifiable-ai-computation": {
-        "reviewed_sha256": "25c4389bf52c0da42fb7271fe920a70b123e82db04ca2761625e660492558673",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "9d3953fe336005493726584f76af4ecc50effdaf7068d5160f74cb1564d7d657",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts separate guarantee vectors, construction choice, artifact binding, attestation roles, freshness, semantic correspondence, leakage, and cost-visible downgrade",
             "NIST privacy-enhancing cryptography, zkLLM, and RFC 9334 remain program context, a configuration-bound prototype, and informational architecture rather than local security, performance, root, verifier-independence, or authorization evidence",
             "the chapter preserves adversary and leakage models, circuit-to-semantics gaps, replay, composition, side channels, matched native baselines, explicit fallback, and argument-only support",
+            "the formalization is restricted to authored dossier admissibility, typed evidence non-substitution, finite leakage accounting, receipt and fallback invalidation, information-loss countermodels, and a privacy-owner rejection; it establishes no cryptographic, hardware, privacy, authorization, or deployment result",
         ],
         "support_state_effect": "none",
     },
