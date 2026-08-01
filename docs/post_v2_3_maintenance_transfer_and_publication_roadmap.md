@@ -4154,16 +4154,20 @@ without imposing a broadcast loudness target on YouTube.
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
 canonical order across the 5/7/72 cohorts. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
-Quarto transitions fail closed. The ledger currently records 83 planned
-chapters and one chapter in animatic revision. Chapter 1 has a new measured
-230.23-second narration, 27-beat plan, storyboard, captions, and original
-chapter-specific scene centered on one duplicate-file deletion request. Its
-first animatic is preserved as an explicit `revise` decision because long
-static spans, stale crossfades, crowded rollback composition, and incomplete
-multi-mode playback remained. Later local renders are candidates only; zero
-generation-2 chapters have passed animatic, picture-and-sound lock, release
-candidate, independent review, technical, claim-fidelity, or acceptance, and
-zero generation-2 YouTube or Quarto identities are current.
+Quarto transitions fail closed. The ledger currently records 82 planned
+chapters and two chapters through picture-and-sound lock. Chapter 1 turns a
+duplicate-file deletion request into a persistent proposal, authority,
+observation, mismatch, and rollback trace. Chapter 2 turns one invoice into a
+four-route exchange whose visible one-unit winner loses twelve-to-nine after
+fallback, verification, repair, and maintenance enter the same accounting
+boundary. Together they carry 49 audio-derived beats, original
+chapter-specific scenes, balanced captions, descriptive transcripts, custom
+thumbnails, 147 exact beat samples across animatic and delivery review, and
+per-dimension experience passes without average laundering. The rejected
+Chapter 1 animatic remains preserved as generation history. Both delivery
+masters remain candidates only: zero generation-2 chapters have passed
+release candidate, independent review, technical, claim-fidelity, or
+acceptance, and zero generation-2 YouTube or Quarto identities are current.
 
 **P7.3-F9 completion gate.** Close only when the reusable skill and tracked v2
 beat-plan schema/validator pass positive and adversarial fixtures; the

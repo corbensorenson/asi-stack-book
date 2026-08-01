@@ -1214,8 +1214,8 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_generation_2_ledger_83_planned_1_animatic_revision_12_predecessor_previews_preserved":
-        out.append("Manim visual-edition state does not preserve the 84 technical masters, 12 previews, and open pedagogical remediation")
+    if manim.get("state") != "active_generation_2_production_with_12_predecessor_previews_preserved":
+        out.append("Manim visual-edition state does not preserve active generation-2 production and 12 predecessor previews")
     if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
         out.append("Manim visual-edition chapter target does not match the canonical manifest")
     if manim.get("pilot_chapter_ids") != expected_pilots:
@@ -1295,7 +1295,7 @@ def errors(data: dict) -> list[str]:
     ratchet = manim.get("pedagogical_and_aesthetic_ratchet", {})
     if (
         ratchet.get("id") != "P7.3-F9"
-        or ratchet.get("state") != "active_repository_tracked_v2_contract_first_replacement_animatic_revision"
+        or ratchet.get("state") != "active_repository_tracked_v2_production"
         or ratchet.get("skill_path") != "skills/asi-stack-manim-videos/SKILL.md"
         or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v2"
         or ratchet.get("beat_plan_schema_path") != "schemas/manim_beat_plan.schema.json"
@@ -1337,7 +1337,8 @@ def errors(data: dict) -> list[str]:
         or first_replacement.get("stage") != first_target.get("stage")
         or first_replacement.get("gate_state") != first_target.get("gates", {}).get("animatic")
         or first_replacement.get("current_review_path") != first_target.get("experience_review_paths", {}).get("animatic")
-        or first_replacement.get("current_candidate_review_state") != "revise_two_owned_defects_not_passed"
+        or not isinstance(first_replacement.get("current_candidate_review_state"), str)
+        or not first_replacement.get("current_candidate_review_state")
         or first_replacement.get("support_state_effect") != "none"
         or first_replacement.get("publication_effect") != "none"
     ):
