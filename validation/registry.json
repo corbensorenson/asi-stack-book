@@ -3148,7 +3148,12 @@
     "lean/AsiStackProofs/SocietalResilienceReview.lean",
     "tests/fixtures/proof_models/societal_resilience_dossier.json",
     "evidence_quality/proof_model_dossiers/societal-resilience-and-misuse-defense.md",
-    "chapters/societal-resilience-and-misuse-defense.qmd"
+    "chapters/societal-resilience-and-misuse-defense.qmd",
+    "scripts/validate_durable_semantic_memory_review.py",
+    "lean/AsiStackProofs/DurableSemanticMemoryReview.lean",
+    "tests/fixtures/proof_models/durable_semantic_memory_dossier.json",
+    "evidence_quality/proof_model_dossiers/durable-semantic-memory-and-knowledge-lattices.md",
+    "chapters/durable-semantic-memory-and-knowledge-lattices.qmd"
   ],
   "units": [
     {
@@ -12090,7 +12095,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Frozen P2 proof rationalization, current proof manifest and triage, executed semantic-rationalization target migrations, adequacy routes, nine safety-critical/integration/refinement dossiers and registered consumers, and canonical roadmap state.",
+      "input_contract": "Frozen P2 proof rationalization, current proof manifest and triage, executed semantic-rationalization target migrations, adequacy routes, ten safety-critical/integration/refinement dossiers and registered consumers, and canonical roadmap state.",
       "input_artifacts": [
         "scripts/validate_p2_closure_audit.py",
         "proofs/p2_closure_audit.json",
@@ -12106,9 +12111,9 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 317 implemented and 7 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, and Societal Resilience Review refinements",
+        "324 current targets comprise 318 implemented and 6 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, and Durable Semantic Memory Review refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
-        "nine required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
+        "ten required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
       ],
       "claim_scope": "Completeness and routing of the P2 formal-proof program; not truth of chapter-core, deployed, empirical, causal, reproduction, transfer, or SOTA claims.",
@@ -17984,11 +17989,58 @@
       "prohibited_inference": "Does not establish population resilience, lawful authority, cross-organization cooperation, recovery, remedy efficacy, acceptable residual harm, deployment, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
+    },
+    {
+      "id": "validate_durable_semantic_memory_review.py:462",
+      "order": 462,
+      "script": "validate_durable_semantic_memory_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical durable-semantic-memory Lean review, independent 38-axis fixture, chapter proof boundary, dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_durable_semantic_memory_review.py",
+        "lean/AsiStackProofs/DurableSemanticMemoryReview.lean",
+        "tests/fixtures/proof_models/durable_semantic_memory_dossier.json",
+        "evidence_quality/proof_model_dossiers/durable-semantic-memory-and-knowledge-lattices.md",
+        "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, identity, provenance, authority, migration, retrieval, replay, receipt, collision, consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "seven-transition review reaches only Project Theseus memory replay and retrieval-campaign eligibility",
+        "38/38 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "representation rebuilds preserve object identity while aliases do not determine referent equality",
+        "finite parent induction preserves provenance and prevents derived purpose-authority broadening",
+        "lossy ontology migration requires affected-consumer invalidation",
+        "every used retrieval object retains provenance, support, rights, contradiction, and retraction custody",
+        "event-log replay composes exactly across concatenated event sequences",
+        "object, ontology, evidence epoch, and consumer purpose changes invalidate receipts",
+        "summaries cannot recover contradiction state and storage deletion cannot recover learned influence",
+        "open deletion duty blocks Context Transactions materialization",
+        "35 exact Lean declarations move no chapter support, deployment, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored semantic-memory review, identity/revision/migration/retrieval/replay custody, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_38_axis_identity_revision_migration_retrieval_retention_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "alias identity collapse",
+        "provenance loss",
+        "authority broadening",
+        "lossy migration",
+        "unreceipted retrieval",
+        "deletion laundering",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish semantic truth, retrieval utility, complete memory, semantic restart equivalence, behavioral forgetting, deployment, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3104,
-    "unit_count": 461
+    "required_artifact_count": 3109,
+    "unit_count": 462
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

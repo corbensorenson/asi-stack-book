@@ -139,6 +139,11 @@
       "model_id": "open-ended-improvement-refinement",
       "dossier": "evidence_quality/model_adequacy_dossiers/open-ended-improvement-refinement.md",
       "consumer_validator": "validate_open_ended_improvement_refinement.py"
+    },
+    {
+      "model_id": "durable-semantic-memory-review",
+      "dossier": "evidence_quality/proof_model_dossiers/durable-semantic-memory-and-knowledge-lattices.md",
+      "consumer_validator": "validate_durable_semantic_memory_review.py"
     }
   ],
   "support_state_effect": "none",

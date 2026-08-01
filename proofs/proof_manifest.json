@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 317,
-    "planned": 7
+    "implemented": 318,
+    "planned": 6
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -1337,11 +1337,11 @@
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "chapter_title": "Durable Semantic Memory and Knowledge Lattices",
       "tag": "lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Durable Semantic Memory and Knowledge Lattices record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "status": "planned",
+      "module": "AsiStackProofs.DurableSemanticMemoryReview",
+      "formal_target": "A reachable seven-transition semantic-memory review admits only dossiers with exact identity, provenance and revision, loss-aware ontology migration, consumer-scoped retrieval and use receipts, compaction, deletion, replay custody, and explicit non-authority; 38 mutations reject with exact repairs, while induction preserves parent provenance and authority and replay composition, and open deletion duties block Context Transactions materialization. No theorem establishes truth, useful retrieval, complete memory, behavioral forgetting, support, or release.",
+      "status": "implemented",
       "outline_line": 3380,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/DurableSemanticMemoryReview.lean"
     },
     {
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",

@@ -3377,7 +3377,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Durable Semantic Memory and Knowledge Lattices record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` | `AsiStackProofs.DurableSemanticMemoryReview` | A reachable seven-transition semantic-memory review admits only dossiers with exact identity, provenance and revision, loss-aware ontology migration, consumer-scoped retrieval and use receipts, compaction, deletion, replay custody, and explicit non-authority; 38 mutations reject with exact repairs, while induction preserves parent provenance and authority and replay composition, and open deletion duties block Context Transactions materialization. No theorem establishes truth, useful retrieval, complete memory, behavioral forgetting, support, or release. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:durable-semantic-memory-and-knowledge-lattices:END -->
 
 ### Context Transactions, Snapshots, Mounts, and Taint
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 124 Lean modules, 1674 theorem declarations, 1041 derived/decomposed, 297 direct/projection, 336 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 125 Lean modules, 1709 theorem declarations, 1056 derived/decomposed, 312 direct/projection, 341 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

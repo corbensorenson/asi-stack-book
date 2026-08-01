@@ -607,14 +607,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "durable-semantic-memory-and-knowledge-lattices": {
-        "reviewed_sha256": "004b2abacd5c926be8fc7a4a60398375f9fa3ed4c076e0b0866580787f26c6ff",
-        "reviewed_date": "2026-07-31",
+        "reviewed_sha256": "8c8d817c52c52111ccf66ef5e3f30e9868f1b860c45053f6f515bf52b1903b1c",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish semantic identity, write admission, consolidation, contradiction, retrieval, retention, poisoning, and full-state repair without treating storage or access as truth",
             "QCSA, GraphRAG, HippoRAG, Mem0, and Titans remain replaceable source comparators whose reported mechanisms and results do not establish local retrieval advantage, erasure, restart equivalence, or memory safety",
             "the chapter preserves ontology and rights lineage, actual-use receipts, poisoning residuals, restart and descendant repair, distinct forgetting claims, adjacent authority, and argument-only support",
+            "the added Durable Semantic Memory Review is bounded to authored finite records, exact mutation repair, non-identifiability, and a Project Theseus handoff; it expressly does not establish semantic truth, useful retrieval, complete memory, behavioral forgetting, deployment, transfer, or external effect",
         ],
         "support_state_effect": "none",
     },

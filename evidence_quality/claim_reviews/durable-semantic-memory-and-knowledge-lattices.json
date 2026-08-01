@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
     "structured_atoms_reviewed": 36,
-    "prose_candidates_adjudicated": 34,
+    "prose_candidates_adjudicated": 39,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-01 Durable Semantic Memory Review integration. Every newly scanned sentence is covered by bounded existing claim ownership, explicit formalization non-claims, or classified as a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -260,6 +260,26 @@
       "state": "duplicate_of_atom",
       "rationale": "P6.10 section-level semantic review maps this complete proposition within `Retention, forgetting, and deletion` to existing reviewed atom `durable-semantic-memory-and-knowledge-lattices.mechanism.005`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
       "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.005"
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.39c905fcb572": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope line-wrap fragment. The complete parent-provenance obligation is already owned by the implemented bounded proof target and creates no independent support-bearing atom."
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.8793411a0378": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope line-wrap fragment. The complete parent-purpose obligation is already owned by the implemented bounded proof target and creates no independent support-bearing atom."
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.4152ecbc87e2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Formalization-scope line-wrap fragment. The complete non-identifiability boundary is already owned by the implemented bounded proof target and creates no independent support-bearing atom."
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.9bfa15bf23df": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit formalization limitation that narrows the implemented finite model and denies stronger truth, retrieval, completeness, forgetting, support, release, or external-effect inference."
+    },
+    "durable-semantic-memory-and-knowledge-lattices.prose.71e86c288fa7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit formalization limitation that distinguishes authored record assumptions from semantic truth and useful retrieval; it creates no independent support-bearing atom."
     }
   },
   "non_claims": [

@@ -266,6 +266,55 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed authored dossier witnesses the finite semantic-memory admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_memory_replay": "The closed dossier reaches only Project Theseus memory-replay eligibility, not truth, useful retrieval, complete memory, support, or release.",
+    "equal_aliases_do_not_force_equal_semantic_objects": "Two closed semantic identities witness equal aliases and representations with distinct object identities.",
+    "identical_summary_signals_can_hide_opposite_contradiction_state": "Two histories witness opposite contradiction state under identical summary digest and retrieval score.",
+    "identical_deletion_signals_can_hide_opposite_learned_influence": "Two forgetting cases witness opposite learned influence under identical storage, index, and backup-deletion signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DurableSemanticMemoryReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed memory dossier, identity pair, or information-loss collision witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "representation_rebuild_preserves_semantic_object_identity": "The update function changes aliases and representation digests while preserving semantic object identity for every input.",
+    "every_parent_provenance_id_survives_collection": "Structural induction proves every provenance ID of every member of an arbitrary finite parent list remains collected.",
+    "derived_use_cannot_exceed_any_parent_authority": "Structural induction proves all-parent purpose authorization entails authorization by each member parent.",
+    "lossy_migration_without_consumer_invalidation_is_rejected": "A quantified member argument rejects every lossy migration entry that omits affected-consumer invalidation.",
+    "every_used_object_has_current_authorized_provenance": "A quantified use-receipt argument derives provenance, freshness, and rights custody for every used object ID.",
+    "replay_append_composes_exactly": "Structural induction proves event replay composes over concatenation for arbitrary finite event lists.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 38 memory-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 38 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 38 mutations into the lifecycle repair state.",
+    "expired_memory_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired memory contract.",
+    "object_change_invalidates_memory_receipt": "The object-identity conjunct rejects every receipt presented for a different semantic object.",
+    "ontology_change_invalidates_memory_receipt": "The ontology-version conjunct rejects every receipt presented under a different ontology.",
+    "evidence_epoch_change_invalidates_memory_receipt": "The evidence-epoch conjunct rejects every receipt presented under a different evidence snapshot.",
+    "consumer_purpose_change_invalidates_memory_receipt": "The purpose conjunct rejects every receipt presented for a different consumer purpose.",
+    "summary_signals_cannot_recover_contradiction_state": "A same-summary/opposite-conflict collision proves no summary-signal classifier is exact for every modeled history.",
+    "deletion_signals_cannot_recover_behavioral_forgetting": "A same-deletion/opposite-influence collision proves no storage-signal classifier is exact for every modeled forgetting case.",
+    "open_memory_deletion_duty_blocks_context_materialization": "The consumer bridge maps an open memory deletion duty to the existing Context Transactions materialization block.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DurableSemanticMemoryReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/durable_semantic_memory_dossier.json"],
+        "classification_basis": ["a quantified induction, mutation family, migration or retrieval obligation, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "retrieval_benchmark_does_not_establish_semantic_truth", "persistence_replay_does_not_establish_complete_memory",
+    "storage_deletion_does_not_establish_behavioral_forgetting", "graph_connectivity_does_not_establish_decision_authority",
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant", "replay_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_revision", "readiness_requires_migration",
+    "readiness_requires_retrieval", "readiness_requires_retention", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DurableSemanticMemoryReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored semantic-memory state"],
+        "rationale": "The theorem constrains only the encoded semantic-memory review; it establishes no truth, useful retrieval, complete memory, behavioral forgetting, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
     "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",

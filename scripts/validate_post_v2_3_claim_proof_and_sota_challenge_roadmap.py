@@ -2549,7 +2549,27 @@ def errors(data: dict) -> list[str]:
 def main() -> None:
     base = snapshot()
     failures = errors(base)
-    mutations: list[tuple[str, dict]] = []
+
+    class MutationSink:
+        """Run each large-snapshot mutation immediately instead of retaining copies."""
+
+        def __init__(self) -> None:
+            self.count = 0
+
+        def append(self, item: tuple[str, dict]) -> None:
+            label, candidate = item
+            self.count += 1
+            if not errors(candidate):
+                failures.append(f"negative mutation accepted: {label}")
+            candidate.clear()
+
+        def __iter__(self):
+            return iter(())
+
+        def __len__(self) -> int:
+            return self.count
+
+    mutations = MutationSink()
 
     duplicate = copy.deepcopy(base)
     duplicate["active_roadmaps"] = [ROADMAP, "docs/fake_roadmap.md"]

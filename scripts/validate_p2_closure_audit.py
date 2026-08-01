@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 317
-CURRENT_PLANNED_TARGET_COUNT = 7
+CURRENT_IMPLEMENTED_TARGET_COUNT = 318
+CURRENT_PLANNED_TARGET_COUNT = 6
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 81,
+    "adequate finite-record invariant": 82,
     "useful but too narrow": 160,
-    "needs richer state-machine or review semantics": 23,
+    "needs richer state-machine or review semantics": 22,
     "needs executable tests first": 37,
     "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
@@ -123,6 +123,7 @@ PLANNED_CHAPTERS = (
     "autonomous-replication-proliferation-and-containment",
     "institutions-international-coordination-and-public-legitimacy",
     "societal-resilience-and-misuse-defense",
+    "durable-semantic-memory-and-knowledge-lattices",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -347,8 +348,8 @@ def errors(audit: dict[str, Any]) -> list[str]:
 
     registered = {row.get("script") for row in validation.get("units", [])}
     models = audit.get("required_semantic_models", [])
-    if len(models) != 9 or len({row.get("model_id") for row in models}) != 9:
-        out.append("required semantic-model closure set must contain nine unique models")
+    if len(models) != 10 or len({row.get("model_id") for row in models}) != 10:
+        out.append("required semantic-model closure set must contain ten unique models")
     for row in models:
         dossier = ROOT / str(row.get("dossier", ""))
         validator = str(row.get("consumer_validator", ""))
@@ -433,7 +434,7 @@ def main() -> None:
         f"{CURRENT_PROOF_TARGET_COUNT} current targets "
         f"({CURRENT_IMPLEMENTED_TARGET_COUNT} implemented and {CURRENT_PLANNED_TARGET_COUNT} planned), "
         f"{CURRENT_PROOF_TARGET_COUNT}/{CURRENT_PROOF_TARGET_COUNT} current adequacy classifications, "
-        f"nine semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
+        f"ten semantic-model dossiers/consumers, {len(mutations) + current_mutation_count} rejecting mutations, and no support-state effect."
     )
 
 

@@ -29,6 +29,7 @@ import AsiStackProofs.DataEngines
 import AsiStackProofs.DataEngineLifecycleRefinement
 import AsiStackProofs.Deliberation
 import AsiStackProofs.DeliberationRefinement
+import AsiStackProofs.DurableSemanticMemoryReview
 import AsiStackProofs.DangerousCapabilityReview
 import AsiStackProofs.MilitaryInteractionReview
 import AsiStackProofs.OpenWeightReleaseReview

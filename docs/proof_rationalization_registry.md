@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 68 |
+| Chapters | 69 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -47,6 +47,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 23 | 0 | 0 |
 | `dangerous-capability-domains-and-misuse-uplift` | 0 | 0 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
+| `durable-semantic-memory-and-knowledge-lattices` | 0 | 0 | 0 | 0 |
 | `embodied-agency-real-time-control-and-physical-safety` | 0 | 0 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 7 | 31 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 7 | 0 | 0 |

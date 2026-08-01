@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 317, "planned": 7} |
-| Triage class counts | {"formal-invariant": 317, "process-contract": 7} |
-| Lean modules referenced | 90 |
+| Manifest status counts | {"implemented": 318, "planned": 6} |
+| Triage class counts | {"formal-invariant": 318, "process-contract": 6} |
+| Lean modules referenced | 91 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -56,6 +56,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | 1 | 35 | 0 | 37 | 12 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | 1 | 22 | 0 | 12 | 1 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
@@ -149,7 +150,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
 | `dangerous-capability-domains-and-misuse-uplift` | 1 | 1 | 0 | 0 |
 | `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
-| `durable-semantic-memory-and-knowledge-lattices` | 1 | 0 | 0 | 0 |
+| `durable-semantic-memory-and-knowledge-lattices` | 1 | 1 | 0 | 0 |
 | `embodied-agency-real-time-control-and-physical-safety` | 1 | 1 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 3 | 3 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
@@ -339,7 +340,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:vcm.certificates.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.certificates.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.certificates.lifecycle_admission_route` | `virtual-context-abi` | `AsiStackProofs.ContextCertificateRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` | `durable-semantic-memory-and-knowledge-lattices` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` | `durable-semantic-memory-and-knowledge-lattices` | `AsiStackProofs.DurableSemanticMemoryReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.memory_store_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
