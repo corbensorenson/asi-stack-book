@@ -536,9 +536,9 @@
           "codex_tests": [
             {
               "name": "Lower-cost candidate negative case",
-              "purpose": "Check that a listed lower-cost authorized route satisfying the declared quality predicate rejects the finite minimum-viable-route predicate.",
+              "purpose": "Check that the executable finite selector returns a listed eligible route with minimum complete seven-class modeled cost and cannot be displaced by cheaper unauthorized or failed-quality routes.",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean negative case; no route-search completeness or cost-estimate accuracy claim",
+              "result_status": "passes via Lean selector soundness/minimum proofs and two independently matched synthetic traces; no route-search completeness, cost-estimate accuracy, or measured-efficiency claim",
               "status": "implemented in AsiStackProofs.Efficiency; no route-search completeness or cost-estimate accuracy claim"
             },
             {
@@ -582,7 +582,7 @@
             {
               "tag": "lean:efficiency.minimum_viable.operational_invariant",
               "module": "AsiStackProofs.Efficiency",
-              "target": "A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail.",
+              "target": "The executable finite selector returns only a listed eligible route whose complete seven-class modeled total is no greater than every eligible candidate; cheaper unauthorized and failed-quality routes cannot displace the bounded minimum.",
               "status": "implemented"
             },
             {

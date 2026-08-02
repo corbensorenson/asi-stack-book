@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 25,
-    "P1": 882,
-    "P2": 175,
-    "P3": 819,
+    "P1": 884,
+    "P2": 178,
+    "P3": 822,
     "P4": 106,
     "P5": 127,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2134,
+    "retain": 2142,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -275,8 +275,9 @@ EXPECTED_TARGETS = {
         "fails the finite promotion predicate."
     ),
     "lean:efficiency.minimum_viable.operational_invariant": (
-        "A listed lower-cost authorized quality-preserving candidate causes the finite "
-        "minimum-viable-route predicate to fail."
+        "The executable finite selector returns only a listed eligible route whose complete "
+        "seven-class modeled total is no greater than every eligible candidate; cheaper "
+        "unauthorized and failed-quality routes cannot displace the bounded minimum."
     ),
     "lean:efficiency.minimum_viable.failure_blocks_promotion": (
         "A promoted result with open obligations and no residual record causes the "
@@ -791,7 +792,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2134:
+    if summary.get("current_theorem_count") != 2142:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1037,8 +1038,15 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/Efficiency.lean"
     }
-    if len(efficiency_rows) != 2:
-        out.append("Efficiency must retain exactly two derived negative invariants")
+    efficiency_level_counts = Counter(
+        row.get("semantic_level")
+        for row in overlay.get("records", [])
+        if row.get("module_path") == "lean/AsiStackProofs/Efficiency.lean"
+    )
+    if len(efficiency_rows) != 10:
+        out.append("Efficiency must retain exactly ten bounded selector properties")
+    if efficiency_level_counts != Counter({"P1": 4, "P2": 3, "P3": 3}):
+        out.append("Efficiency semantic levels must remain four P1, three P2, and three P3")
     if retired_efficiency_names & {row["name"] for row in efficiency_rows}:
         out.append("Efficiency retained an executed premise projection")
 
@@ -1200,7 +1208,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2134
+        status.get("theorem_count") != 2142
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2134 |
+| Theorem declarations classified | 2142 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1250 |
-| Unknown or mixed theorem declarations | 475 |
+| Derived/decomposed theorem declarations | 1255 |
+| Unknown or mixed theorem declarations | 478 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -91,7 +91,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | ai-deployment-transition-distribution-and-human-agency | 1 | 44 | 15 | 15 | 14 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | durable-semantic-memory-and-knowledge-lattices | 1 | 35 | 15 | 15 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 10 | 0 | 7 | 3 | manual review |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 22 | 1 | 19 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 1 | 6 | 3 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | evidence-states-and-claim-discipline | 2 | 6 | 0 | 2 | 4 | manual review |
@@ -792,8 +792,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `storage_deletion_does_not_establish_behavioral_forgetting` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `summary_signals_cannot_recover_contradiction_state` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/Efficiency.lean` | `cheaper_failed_quality_route_does_not_displace_eligible_minimum` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Efficiency.lean` | `cheaper_unauthorized_route_does_not_displace_eligible_minimum` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Efficiency.lean` | `finite_selector_reaches_bounded_minimum_witness` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Efficiency.lean` | `lower_cost_authorized_quality_candidate_rejects_minimum_viable_route` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/Efficiency.lean` | `no_selected_route_means_no_eligible_candidate` | derived_or_decomposed | no | uses by_cases, cases, induction, rcases, simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `open_obligation_promotion_without_residual_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/Efficiency.lean` | `selected_route_has_minimum_modeled_cost` | derived_or_decomposed | no | uses apply, cases, have, induction, rcases, simp, split, subst |
+| `lean/AsiStackProofs/Efficiency.lean` | `selected_route_is_a_listed_eligible_candidate` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, split, subst |
+| `lean/AsiStackProofs/Efficiency.lean` | `total_cost_is_additive` | derived_or_decomposed | no | uses omega, simp |
+| `lean/AsiStackProofs/Efficiency.lean` | `total_cost_is_componentwise_monotone` | derived_or_decomposed | no | uses omega, simp |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `admissible_control_lease_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `complete_control_lease_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `complete_control_lease_routes_only_to_theseus_trial` | unknown_or_mixed | no | no recognized depth pattern |

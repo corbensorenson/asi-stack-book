@@ -6,6 +6,7 @@
   "evidence_transition_created": false,
   "expected_invalid_controls": 6,
   "fixture_fingerprint_sha256": "4a85b9d4f48b4648877d9c6a5bdb9050d577903c315cc4aaff45c9bf6b6a0517",
+  "lean_model_sha256": "eb1c43210adb9fb4dc8f13c5fca1fade6161909c1588b09ac936ea08345b2544",
   "non_claims": [
     "does not prove route-search completeness",
     "does not prove cost-estimate accuracy",
@@ -14,6 +15,7 @@
     "does not prove compression utility",
     "does not promote the chapter support state"
   ],
+  "selector_agreement_count": 2,
   "support_state_effect": "none",
   "transition_coverage": {
     "authority_bypass_rejection": true,

@@ -529,7 +529,7 @@ Draft deliverables:
 
 - A costed route ledger with route state, task contract ref, quality predicates, outcome state, cost classes, hidden-cost checks, residual accounting, support-state effect, and fallback criteria.
 - Implemented repository-level fixture: `costed_route_record.valid.json` validates route state, task contract ref, outcome state, cost classes, hidden-cost checks, support-state effect, and non-claims only.
-- Implemented synthetic Codex test: Efficiency route-search probe via `python3 scripts/validate_efficiency_route_search_probe.py`, independently deriving two bounded route-trace outcomes and six expected-invalid controls for lower-cost eligible route omission, hidden-cost class omission, erased residuals, compression-utility overclaim, authority bypass, and missing negative controls. The stronger `AsiStackProofs.ResourceEconomicsRefinement` lifecycle owns request-through-closure governance; copied summary literals are not formal evidence. No route-search completeness, cost-estimate accuracy, measured efficiency, model-quality, compression-utility, benchmark, or support-state claim.
+- Implemented synthetic Codex test: Efficiency route-search probe via `python3 scripts/validate_efficiency_route_search_probe.py`, independently agreeing with the Lean finite selector on two bounded route traces and rejecting six expected-invalid controls for lower-cost eligible route omission, hidden-cost class omission, erased residuals, compression-utility overclaim, authority bypass, and missing negative controls. The stronger `AsiStackProofs.ResourceEconomicsRefinement` lifecycle owns request-through-closure governance; copied summary literals are not formal evidence. No route-search completeness, cost-estimate accuracy, measured efficiency, model-quality, compression-utility, benchmark, or support-state claim.
 - Implemented Lean proof target: finite efficiency-claim admission lifecycle route for missing task contracts, quality predicates, selected routes, candidate sets, lower-cost comparisons, cost ledgers, complete visible costs, verification results, failed quality, authority bypass, residual gaps, fallback gaps, hidden-cost audit gaps, benchmark or trace gaps, negative-control gaps, evidence-transition gaps, and non-claim-boundary gaps.
 - Exact Appendix C claim-source mappings for the core claim across all assigned efficiency, compression, simulation, lineage, and implementation-reference sources; support remains `argument` pending measured route, cost, residual, and compression evidence.
 - Source-noted external positioning through sparse/distributed MoE records (`ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, `ext_moe_llm_survey_2024`), query/learned routing records (`ext_frugalgpt_2023`, `ext_hybrid_llm_2024`, `ext_routellm_2024`), prompt-compression record (`ext_longllmlingua_2023`), fast-generation records (`ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`), and benchmark-pressure record (`ext_bigbench_2022`): these are adjacent cost surfaces that need route-ledger authority, predicate, fallback, residual, and support-state accounting; no MoE, cascade, learned-router, prompt-compression, fast-generation, or BIG-bench result is reproduced.
@@ -542,20 +542,20 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail. | implemented |
+| `lean:efficiency.minimum_viable.operational_invariant` | `AsiStackProofs.Efficiency` | The executable finite selector returns only a listed eligible route whose complete seven-class modeled total is no greater than every eligible candidate; cheaper unauthorized and failed-quality routes cannot displace the bounded minimum. | implemented |
 | `lean:efficiency.minimum_viable.failure_blocks_promotion` | `AsiStackProofs.Efficiency` | A promoted result with open obligations and no residual record causes the finite residual-promotion predicate to fail. | implemented |
 | `lean:efficiency.claim_admission_lifecycle_route` | `AsiStackProofs.ResourceEconomicsRefinement` | A reachable nine-stage route-economy lifecycle requires scoped request identities, complete resource and hidden-cost accounting, protected capacity, fallback, actual spend, useful-outcome and resource-bill separation, verification, residual and recovery records, reconciliation, evidence transition, and closure without support or external-effect authority. | implemented |
 | `lean:efficiency.route_search.probe_fixture_bridge` | `AsiStackProofs.ResourceEconomicsRefinement` | The independent synthetic route-search consumer computes two valid and six expected-invalid outcomes over fourteen candidates, while the reachable lifecycle supplies the formal cost, verification, residual, fallback, reconciliation, and no-authority boundary; neither asset is treated as measured efficiency or complete search. | implemented |
 
 Proof boundary: the two assumption-restating route and residual projections are
-retired with frozen lineage. Their public targets now bind to retained finite
-negative cases that derive predicate failure from explicit lower-cost-candidate
-or missing-residual counterexamples. Twenty-four declarations remain across
-the negative cases, the efficiency-claim admission route, and the synthetic
-probe-summary bridge. None proves route-search completeness, cost-estimate
+retired with frozen lineage. `AsiStackProofs.Efficiency` now retains ten bounded
+properties: four cost and rejection invariants, three selector soundness and
+minimum proofs, and three reachable or rejecting countermodels. The public
+target binds to the executable finite selector rather than to a copied summary;
+`AsiStackProofs.ResourceEconomicsRefinement` separately owns the nine-stage admission lifecycle
+and consumer bridge. None proves route-search completeness, cost-estimate
 accuracy, quality evaluation, measured efficiency, residual-burden reduction,
-benchmark performance, model quality, compression utility, or support-state
-promotion.
+benchmark performance, model quality, compression utility, or support-state promotion.
 
 ### System Boundaries and Authority
 
@@ -6181,7 +6181,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2134 theorem declarations, 1250 derived/decomposed, 409 direct/projection, 475 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2142 theorem declarations, 1255 derived/decomposed, 409 direct/projection, 478 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

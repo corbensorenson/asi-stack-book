@@ -66,6 +66,98 @@ STRONG_NAME_TERMS = (
 # the historical registry.  Each override is theorem-specific and records why
 # the older equivalence judgment is not sufficient for current retirement.
 CURRENT_SEMANTIC_OVERRIDES = {
+    "lean/AsiStackProofs/Efficiency.lean::total_cost_is_additive": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal seven-class cost-vector algebra rather than a record projection"
+        ],
+        "rationale": (
+            "The theorem proves modeled total-cost additivity for arbitrary vectors; "
+            "it assumes the seven components are the complete declared accounting surface."
+        ),
+    },
+    "lean/AsiStackProofs/Efficiency.lean::total_cost_is_componentwise_monotone": {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "universal arithmetic consequence across all seven modeled cost components"
+        ],
+        "rationale": (
+            "The theorem derives total-cost monotonicity from componentwise bounds for arbitrary vectors; "
+            "it does not validate the component measurements."
+        ),
+    },
+    "lean/AsiStackProofs/Efficiency.lean::selected_route_is_a_listed_eligible_candidate": {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "classification_basis": [
+            "structural induction proves soundness of the executable finite selector",
+            "the independent route-search consumer is digest-bound to the Lean module",
+        ],
+        "rationale": (
+            "For arbitrary finite candidate lists, every returned route is a listed eligible member. "
+            "Eligibility fields remain authored inputs rather than empirical observations."
+        ),
+    },
+    "lean/AsiStackProofs/Efficiency.lean::no_selected_route_means_no_eligible_candidate": {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "classification_basis": [
+            "structural induction proves the executable selector's none-case completeness over its finite input list",
+            "the independent route-search consumer exercises both accepting and rejecting candidate families",
+        ],
+        "rationale": (
+            "A none result implies no authored candidate satisfies the modeled eligibility predicate; "
+            "the theorem does not establish route-search completeness beyond the supplied list."
+        ),
+    },
+    "lean/AsiStackProofs/Efficiency.lean::selected_route_has_minimum_modeled_cost": {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "classification_basis": [
+            "nested structural induction proves the executable selector's universal minimum property",
+            "two independent synthetic traces agree with the selector while six invalid controls reject",
+        ],
+        "rationale": (
+            "For every eligible member of an arbitrary finite authored candidate list, the returned route's "
+            "seven-class modeled total is no greater. Cost accuracy and candidate completeness are excluded."
+        ),
+    },
+    "lean/AsiStackProofs/Efficiency.lean::finite_selector_reaches_bounded_minimum_witness": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:finite_selector_reaches_bounded_minimum_witness",
+            "experiments/efficiency_route_search/results/2026-07-02-local.json",
+        ],
+        "classification_basis": [
+            "closed four-candidate fixture witnesses a reachable eligible minimum"
+        ],
+        "rationale": "The fixture is a bounded nonvacuity witness for the executable selector.",
+    },
+    "lean/AsiStackProofs/Efficiency.lean::cheaper_unauthorized_route_does_not_displace_eligible_minimum": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:cheaper_unauthorized_route_does_not_displace_eligible_minimum"
+        ],
+        "classification_basis": [
+            "closed countermodel demonstrates cost alone cannot bypass modeled authority"
+        ],
+        "rationale": "The bounded route pair witnesses authority-sensitive selection, not deployed authorization.",
+    },
+    "lean/AsiStackProofs/Efficiency.lean::cheaper_failed_quality_route_does_not_displace_eligible_minimum": {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:cheaper_failed_quality_route_does_not_displace_eligible_minimum"
+        ],
+        "classification_basis": [
+            "closed countermodel demonstrates cost alone cannot bypass the modeled quality predicate"
+        ],
+        "rationale": "The bounded route pair witnesses quality-sensitive selection, not empirical route quality.",
+    },
     "lean/AsiStackProofs/ObservationTrust.lean::eligible_agreement_with_same_root_is_correlated": {
         "disposition": "retain",
         "semantic_level": "P1",

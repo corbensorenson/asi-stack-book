@@ -5,11 +5,11 @@
     "chapter_count": 64,
     "candidate_count": 3871,
     "review_state_counts": {
-      "duplicate_of_atom": 1841,
+      "duplicate_of_atom": 1842,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
-      "nonmaterial_explanation": 1646
+      "nonmaterial_explanation": 1645
     }
   },
   "candidates": [
@@ -2078,14 +2078,14 @@
       "target_atom_id": "the-efficient-asi-hypothesis.minimum.001"
     },
     {
-      "candidate_id": "the-efficient-asi-hypothesis.prose.509e5bd5bcb8",
+      "candidate_id": "the-efficient-asi-hypothesis.prose.5b5ec7c7fe08",
       "chapter_id": "the-efficient-asi-hypothesis",
       "source": "chapters/the-efficient-asi-hypothesis.qmd:425",
-      "sentence": "Passing that fixture shows accounting discipline only, not empirical efficiency.",
+      "sentence": "Lean now supplies an executable finite selector over seven explicit cost classes and proves that any selected route is listed, eligible, and minimum among the authored eligible candidates.",
       "cues": [
-        "shows"
+        "proves"
       ],
-      "review_state": "nonmaterial_explanation",
+      "review_state": "duplicate_of_atom",
       "allowed_dispositions": [
         "material_atom",
         "nonmaterial_explanation",
@@ -2093,8 +2093,8 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Correct limitation that synthetic fixture success is not empirical efficiency.",
-      "target_atom_id": null
+      "disposition_rationale": "Reports the finite selector consequences already owned by the minimum-viable operational formal atom.",
+      "target_atom_id": "the-efficient-asi-hypothesis.formal.efficiency-minimum-viable-operational-invariant"
     },
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.54370e1a031c",
@@ -2196,7 +2196,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d6ac0022309f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:478",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:479",
       "sentence": "they do not prove route-search completeness, cost-estimate accuracy, quality",
       "cues": [
         "prove"
@@ -2215,7 +2215,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.30ce293b7494",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:497",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:498",
       "sentence": "The crosswalk bounds efficiency claims: sources supply design language, while measured support requires route runs, baselines, costs, residuals, and negative results.",
       "cues": [
         "requires"
@@ -2234,7 +2234,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ac04fc2564e8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:528",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:529",
       "sentence": "It is efficient when the record shows what quality predicate it satisfied, what it cost, which alternatives were rejected, what residual remains, and what fallback is available.",
       "cues": [
         "shows"
@@ -2253,7 +2253,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.87adb383eebe",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:528",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:529",
       "sentence": "The stack may prefer a smaller model, cached proof, compressed artifact, specialist core, or generated reconstruction only when the surrounding record still shows permission, adequacy, verification burden, and rollback.",
       "cues": [
         "shows"

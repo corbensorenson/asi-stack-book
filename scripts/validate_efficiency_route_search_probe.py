@@ -11,6 +11,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT_PATH = ROOT / "experiments" / "efficiency_route_search" / "results" / "2026-07-02-local.json"
+LEAN_MODEL = ROOT / "lean" / "AsiStackProofs" / "Efficiency.lean"
 
 COST_CLASSES = ("model", "context", "verification", "repair", "human_review", "regression", "rollback")
 REQUIRED_NONCLAIMS = [
@@ -329,6 +330,17 @@ def candidate_is_eligible(route: dict[str, Any]) -> bool:
     )
 
 
+def select_minimum_eligible(candidates: list[dict[str, Any]]) -> dict[str, Any] | None:
+    best: dict[str, Any] | None = None
+    for candidate in reversed(candidates):
+        candidate_total = route_total(candidate)
+        if candidate_total is None or not candidate_is_eligible(candidate):
+            continue
+        if best is None or candidate_total < route_total(best):
+            best = candidate
+    return best
+
+
 def trace_errors(trace: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     trace_id = str(trace.get("trace_id", "<missing>"))
@@ -401,6 +413,12 @@ def trace_errors(trace: dict[str, Any]) -> list[str]:
                     f"{trace_id}: lower-cost eligible route {route_id} ({candidate_total}) "
                     f"beats selected {selected_id} ({selected_total})."
                 )
+    computed = select_minimum_eligible(candidates)
+    if computed is None or computed.get("route_id") != selected_id:
+        errors.append(
+            f"{trace_id}: independent selector chose "
+            f"{None if computed is None else computed.get('route_id')!r}, not {selected_id!r}."
+        )
 
     non_claim_text = " ".join(str(item).lower() for item in trace.get("non_claims", []))
     for marker in REQUIRED_NONCLAIMS:
@@ -417,9 +435,11 @@ def build_result(valid_count: int, invalid_count: int) -> dict[str, Any]:
         "date": "2026-07-02",
         "validator": "python3 scripts/validate_efficiency_route_search_probe.py",
         "fixture_fingerprint_sha256": hashlib.sha256(payload).hexdigest(),
+        "lean_model_sha256": hashlib.sha256(LEAN_MODEL.read_bytes()).hexdigest(),
         "valid_traces": valid_count,
         "expected_invalid_controls": invalid_count,
         "candidate_routes_checked": 14,
+        "selector_agreement_count": valid_count,
         "transition_coverage": {
             "minimum_verified_route_selection": True,
             "cheap_failed_quality_rejection": True,

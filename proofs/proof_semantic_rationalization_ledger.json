@@ -1936,7 +1936,7 @@
         {
           "target_ref": "proof-target:lean:efficiency.minimum_viable.operational_invariant",
           "old_target_text": "A route is minimum viable only when no lower-cost authorized route satisfies the required quality predicate.",
-          "new_target_text": "A listed lower-cost authorized quality-preserving candidate causes the finite minimum-viable-route predicate to fail.",
+          "new_target_text": "The executable finite selector returns only a listed eligible route whose complete seven-class modeled total is no greater than every eligible candidate; cheaper unauthorized and failed-quality routes cannot displace the bounded minimum.",
           "consumer_paths": [
             "book_structure.json",
             "docs/book_outline.md",
