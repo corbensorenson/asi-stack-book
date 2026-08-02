@@ -41,7 +41,7 @@ python3 scripts/validate_runtime_adapter_permissions.py
 The 2026-07-01 local run passed:
 
 ```text
-Runtime adapter permission harness passed: 2 valid fixture(s), 7 expected-invalid fixture(s).
+Runtime adapter permission harness passed: 2 valid fixture(s), 7 expected-invalid fixture(s), and 25 reachable invariant/refinement theorem(s).
 ```
 
 The result record is
