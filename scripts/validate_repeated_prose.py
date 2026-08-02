@@ -13,6 +13,15 @@ P7_RECONCILIATION_RE = re.compile(
     r"<!-- P7-EVIDENCE-RECONCILIATION:END -->",
     re.S,
 )
+# Visual abstracts are generated narration/transcript artifacts, not
+# canonical chapter prose.  They use intentionally repeatable production
+# vocabulary (for example, a fixed evidence-boundary sentence) and are
+# audited by the visual-edition validators instead of this editorial linter.
+MANAGED_VISUAL_ABSTRACT_RE = re.compile(
+    r"<!-- BEGIN MANAGED VISUAL ABSTRACT:[a-z0-9-]+ -->.*?"
+    r"<!-- END MANAGED VISUAL ABSTRACT:[a-z0-9-]+ -->",
+    re.S,
+)
 FORMULAIC_BEYOND_OPENERS = (
     "The mature version of",
     "The mature version is",
@@ -119,7 +128,8 @@ def strip_frontmatter(text: str) -> str:
 
 def strip_generated_evidence_reconciliation(text: str) -> str:
     """Exclude machine-generated per-atom packets from editorial-repeat checks."""
-    return P7_RECONCILIATION_RE.sub("", text)
+    text = P7_RECONCILIATION_RE.sub("", text)
+    return MANAGED_VISUAL_ABSTRACT_RE.sub("", text)
 
 
 def paragraph_words(paragraph: str) -> list[str]:
