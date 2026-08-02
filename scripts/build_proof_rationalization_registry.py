@@ -23,6 +23,32 @@ DOSSIERS = ROOT / "evidence_quality" / "proof_model_dossiers"
 ROADMAP_ID = "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14"
 
 CURRENT_REFINEMENTS = {
+    "labor-os-and-typed-jobs": """## Current refinement
+
+`AsiStackProofs.TypedJobRefinement` now adds a stage-indexed lifecycle invariant
+and arbitrary-run semantics to the seven-stage job model. Thirty-two exact
+declarations prove rejection noninterference, terminal closure, one-step and
+arbitrary-run preservation of receipt and represented execution-observation
+accounting, zero support and external-effect authority, and full job, contract,
+plan, authority, permission, lease, scheduler, and consumer custody. One
+six-event run reaches exact acknowledged closure; nineteen closed route or
+state countermodels cover approval, lease, retry, cancellation, evidence,
+identity, replay, authority-leak, audit, completion-receipt, residual, and
+post-closure failures.
+
+`scripts/validate_typed_job_refinement.py` requires and compiles the exact
+thirty-two-declaration surface, rejects unproved declarations, consumes the
+2/7 delivery and 2/9 durable suites, independently checks all twenty-nine
+routes, and rejects 42 mutations. Every identity, approval, permission, lease,
+scheduler, idempotency, cancellation, artifact, audit, verifier, receipt,
+replay, residual, and acknowledgment field remains authored. The model proves
+no scheduler or worker behavior, permission or approval enforcement, effect
+truth, idempotence, recovery or cancellation efficacy, artifact or replay
+truth, useful work, support transition, deployment, reproduction, or transfer.
+Those obligations remain Project Theseus or empirical work. Chapter support
+remains `argument` and `support_state_effect` remains `none`.
+
+""",
     "intent-to-execution-contracts": """## Current refinement
 
 `AsiStackProofs.IntentExecutionRefinement` now gives every event kind an exact,

@@ -15,19 +15,22 @@ ARTIFACTS = [
     "docs/typed_job_delivery_probe.md", "scripts/validate_typed_job_durable_lifecycle_probe.py",
     "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json", "docs/typed_job_durable_lifecycle_probe.md",
 ]
+PREFERRED_ORDER = 336
 
 
 def main() -> None:
     value = json.loads(REGISTRY.read_text())
     value["units"] = [unit for unit in value["units"] if unit.get("script") != SCRIPT]
-    order = len(value["units"]) + 1
+    if any(unit.get("order") == PREFERRED_ORDER for unit in value["units"]):
+        raise SystemExit("canonical typed-job registry slot is occupied")
+    order = PREFERRED_ORDER
     value["units"].append({
         "id": f"{SCRIPT}:{order}", "order": order, "script": SCRIPT, "args": [],
         "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
         "input_contract": "Reachable Lean typed-job lifecycle, exact 2/7 delivery and 2/9 durable suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
         "input_artifacts": ARTIFACTS,
-        "output_contract": "Reject identity substitution, replay, authority leakage, unlocked contracts, approval/permission/lease/scheduler/dispatch gaps, retry/cancellation faults, missing artifacts/audit/verification/completion/replay/residual/acknowledgment, support assignment, and external-effect requests.",
-        "output_assertions": ["two valid and seven invalid delivery traces", "two valid and nine invalid durable traces", "twenty-eight routes and seven reachable stages", "forty-two rejected lifecycle mutations", "no support-state or external-effect authority"],
+        "output_contract": "Require and compile the exact thirty-two-declaration Lean surface, reject proof placeholders, and reject identity substitution, replay, authority leakage, unlocked contracts, approval/permission/lease/scheduler/dispatch gaps, retry/cancellation faults, missing artifacts/audit/verification/completion/replay/residual/acknowledgment, support assignment, external-effect requests, and post-closure events.",
+        "output_assertions": ["32 exact Lean declarations", "two valid and seven invalid delivery traces", "two valid and nine invalid durable traces", "twenty-nine routes and seven reachable stages", "forty-two rejected lifecycle mutations", "no support-state or external-effect authority"],
         "claim_scope": "One finite authored versioned typed-job lifecycle plus two existing bounded synthetic suites only.",
         "negative_controls": "validator_owned_identity_sequence_authority_retry_cancellation_delivery_closure_mutations",
         "negative_control_cases": ["job, contract, plan, authority, permission, lease, scheduler, consumer, or event substitution", "approval, permission, lease, scheduler, or dispatch gap", "retry without idempotency or with widened authority", "unacknowledged cancellation or post-cancellation output", "missing output, artifact, audit, verification, completion, replay, residual owner, or consumer acknowledgment", "support assignment or external-effect authority leak"],
@@ -39,6 +42,7 @@ def main() -> None:
     for artifact in ARTIFACTS:
         if artifact not in required: required.append(artifact)
     value["required_artifacts"] = required
+    value["units"].sort(key=lambda unit: unit["order"])
     value["summary"] = {"required_artifact_count": len(required), "unit_count": len(value["units"])}
     REGISTRY.write_text(json.dumps(value, indent=2) + "\n")
     print(f"Registered {SCRIPT}: {len(value['units'])} units, {len(required)} artifacts.")

@@ -6,7 +6,7 @@
   "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
   "module_count": 4,
   "public_target_count": 11,
-  "theorem_declaration_count": 65,
+  "theorem_declaration_count": 90,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
@@ -91,7 +91,7 @@
       "path": "lean/AsiStackProofs/IntentExecutionRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 2,
-      "theorem_declaration_count": 12,
+      "theorem_declaration_count": 37,
       "plain_language_proposition": "A finite vertical can move from one exact root intent through command, plan, job, approval, dispatch, attempted and observed local effect, artifact binding, independent-verification receipt, and delivery only while parent identity and authority ceilings remain intact; missing approval, hidden override, authority widening, effect without dispatch, and delivery without verification are rejected.",
       "modeled_state": "Fifteen layer states, fourteen event kinds, root and artifact identities, authority ceiling, approval and dispatch custody, attempted and observed effect counts, artifact binding, verification, delivery, residual, stop, rollback and quarantine fields, plus one ten-event delivered trace.",
       "assumptions": [

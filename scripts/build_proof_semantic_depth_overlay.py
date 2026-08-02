@@ -1859,6 +1859,62 @@ for theorem_name in (
         ),
     }
 
+_typed_job_lifecycle_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "experiments/typed_job_refinement/results/2026-07-15-local.json",
+        "experiments/typed_job_delivery/results/2026-07-02-local.json",
+        "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the reachable typed-job lifecycle is bound to the exact delivery and durable-suite consumer"
+    ],
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/TypedJobRefinement.lean::initial_state_satisfies_lifecycle_invariant"
+] = {
+    **_typed_job_lifecycle_refinement_base,
+    "semantic_level": "P1",
+    "rationale": "The theorem checks the authored induction base; it is not a run-level result.",
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/TypedJobRefinement.lean::canonical_run_reaches_exact_closed_state"
+] = {
+    **_typed_job_lifecycle_refinement_base,
+    "semantic_level": "P2",
+    "rationale": "The closed six-event run is a bounded nonvacuity witness for exact acknowledged closure.",
+}
+
+for theorem_name in (
+    "rejected_event_is_state_noninterfering",
+    "closed_state_accepts_no_event",
+    "apply_event_preserves_lifecycle_invariant",
+    "apply_event_preserves_full_custody",
+    "run_events_preserves_lifecycle_invariant",
+    "run_events_preserves_full_custody",
+    "reachable_closed_state_has_exact_modeled_accounting",
+    "wrong_stage_event_is_rejected_without_state_change",
+    "substituted_job_is_rejected_without_state_change",
+    "substituted_contract_is_rejected_without_state_change",
+    "repeated_event_digest_is_rejected_without_state_change",
+    "support_assignment_request_is_rejected_without_state_change",
+    "external_effect_request_is_rejected_without_state_change",
+    "execution_without_audit_is_rejected_without_state_change",
+    "adjudication_without_completion_receipt_is_rejected_without_state_change",
+    "adjudication_without_residual_owner_is_rejected_without_state_change",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/TypedJobRefinement.lean::{theorem_name}"
+    ] = {
+        **_typed_job_lifecycle_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves arbitrary-run lifecycle accounting or custody, terminal noninterference, or a closed rejecting countermodel in the exact finite job semantics."
+        ),
+    }
+
 _intent_execution_lifecycle_refinement_base = {
     "disposition": "retain",
     "witness_refs": [

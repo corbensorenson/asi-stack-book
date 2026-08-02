@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -33,6 +34,40 @@ NEXT_STAGE = {
     "dispatched": "executed", "executed": "adjudicated",
     "adjudicated": "closed", "closed": "closed",
 }
+REQUIRED_THEOREMS = (
+    "rejected_event_is_state_noninterfering",
+    "closed_state_accepts_no_event",
+    "apply_event_preserves_lifecycle_invariant",
+    "apply_event_preserves_full_custody",
+    "run_events_preserves_lifecycle_invariant",
+    "run_events_preserves_full_custody",
+    "apply_event_preserves_job_and_contract_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "initial_state_satisfies_lifecycle_invariant",
+    "approval_required_job_cannot_authorize_without_record",
+    "expired_lease_cannot_dispatch",
+    "retry_requires_idempotency_key",
+    "retry_cannot_widen_authority",
+    "cancellation_requires_acknowledgment",
+    "acknowledged_cancellation_rejects_post_cancel_output",
+    "execution_requires_artifact_refs",
+    "adjudication_requires_verification",
+    "evidence_ready_adjudication_requires_replay_reference",
+    "closure_requires_consumer_acknowledgment",
+    "full_typed_job_lifecycle_reaches_closed_state",
+    "canonical_run_reaches_exact_closed_state",
+    "reachable_closed_state_has_exact_modeled_accounting",
+    "wrong_stage_event_is_rejected_without_state_change",
+    "substituted_job_is_rejected_without_state_change",
+    "substituted_contract_is_rejected_without_state_change",
+    "repeated_event_digest_is_rejected_without_state_change",
+    "support_assignment_request_is_rejected_without_state_change",
+    "external_effect_request_is_rejected_without_state_change",
+    "execution_without_audit_is_rejected_without_state_change",
+    "adjudication_without_completion_receipt_is_rejected_without_state_change",
+    "adjudication_without_residual_owner_is_rejected_without_state_change",
+)
 
 
 def sha256(path: Path) -> str:
@@ -90,6 +125,7 @@ def exact_contract(state: dict[str, Any], p: dict[str, Any]) -> bool:
 def route_for(state: dict[str, Any], evt: dict[str, Any]) -> str:
     p = evt["packet"]
     if evt["kind"] != EXPECTED_KIND[state["stage"]]: return "reject_wrong_stage"
+    if state["stage"] == "closed": return "reject_wrong_stage"
     if not exact_job(state, p): return "reject_job_substitution"
     if not exact_contract(state, p): return "reject_contract_substitution"
     if p["event_digest"] == state["last_event_digest"]: return "reject_event_replay"
@@ -194,6 +230,7 @@ def route_cases() -> list[tuple[str, dict[str, Any], dict[str, Any], str]]:
         ("execution_accepted", dispatched, canonical_events()[3], "accept_execution"),
         ("adjudication_accepted", executed, canonical_events()[4], "accept_adjudication"),
         ("closure_accepted", adjudicated, canonical_events()[5], "accept_closure"),
+        ("closed_is_terminal", closed, event("close_job", 20), "reject_wrong_stage"),
     ]
 
 
@@ -249,6 +286,18 @@ def run_validator(name: str) -> None:
 
 
 def build_result() -> dict[str, Any]:
+    lean_text = LEAN.read_text(encoding="utf-8")
+    theorem_names = re.findall(r"(?m)^theorem ([A-Za-z0-9_]+)", lean_text)
+    if theorem_names != list(REQUIRED_THEOREMS):
+        raise AssertionError("TypedJobRefinement exact theorem surface drifted")
+    if re.search(r"\b(sorry|admit|axiom)\b", lean_text):
+        raise AssertionError("TypedJobRefinement contains an unproved declaration")
+    compiled = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/TypedJobRefinement.lean"],
+        cwd=ROOT / "lean", capture_output=True, text=True,
+    )
+    if compiled.returncode:
+        raise AssertionError("TypedJobRefinement Lean compile failed: " + compiled.stdout + compiled.stderr)
     run_validator("validate_typed_job_delivery_probe.py")
     run_validator("validate_typed_job_durable_lifecycle_probe.py")
     delivery = json.loads(DELIVERY_RESULT.read_text()); durable = json.loads(DURABLE_RESULT.read_text())
@@ -295,7 +344,7 @@ def main() -> None:
         RESULT.parent.mkdir(parents=True, exist_ok=True); RESULT.write_text(json.dumps(result, indent=2) + "\n")
     elif not RESULT.exists() or json.loads(RESULT.read_text()) != result:
         raise SystemExit(f"{RESULT.relative_to(ROOT)} is missing or stale; rerun with --write")
-    print(f"Typed-job refinement passed: 2/7 delivery, 2/9 durable, 28 routes, 7 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
+    print(f"Typed-job refinement passed: 32 Lean declarations, 2/7 delivery, 2/9 durable, 29 routes, 7 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
 
 
 if __name__ == "__main__": main()

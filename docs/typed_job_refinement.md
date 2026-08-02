@@ -18,9 +18,17 @@ audit trail. Adjudication requires verification, completion and replay
 receipts, and residual ownership; closure requires consumer acknowledgment.
 
 `python3 scripts/validate_typed_job_refinement.py` independently recomputes all
-twenty-eight routes, consumes the exact two-valid/seven-invalid delivery and
+twenty-nine routes, requires and compiles the exact 32-declaration theorem
+surface, rejects proof placeholders, consumes the exact two-valid/seven-invalid delivery and
 two-valid/nine-invalid durable-lifecycle suites, executes the six-event
 witness, and rejects all 42 mutations.
+
+The lifecycle invariant ties each reachable stage to its exact receipt count,
+one represented execution observation after execution, and zero support or
+external-effect authority. It is preserved by every event and by arbitrary
+finite runs. Rejected events are state-noninterfering, closure is terminal, and
+full job, contract, plan, authority, permission, lease, scheduler, and consumer
+custody survives every run.
 
 ## Exact boundary
 

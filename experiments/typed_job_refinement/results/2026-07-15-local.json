@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.typed_job_refinement.v1",
   "result_id": "typed-job-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "1fe14c6f544bc9320f554ae2ec93dc70de74418dd775caf36d608db2847c3d40",
+    "lean_model": "3cf793d868c89a4cf950724fc902875d2ff34cb61bd052c8ba8cca11e6c17897",
     "delivery_result": "738e4bff59f14b4922862e6cc43547365a81b7c55decf31cc5513e37eddaefeb",
     "durable_result": "cc4a4798d07c6d3838b1b99554ea3f7be89af827f6638e8d038f0912f64f4c52"
   },
@@ -23,7 +23,7 @@
     }
   ],
   "reachable_stage_count": 7,
-  "route_case_count": 28,
+  "route_case_count": 29,
   "route_coverage": [
     {
       "case_id": "wrong_stage",
@@ -164,6 +164,11 @@
       "case_id": "closure_accepted",
       "expected_route": "accept_closure",
       "observed_route": "accept_closure"
+    },
+    {
+      "case_id": "closed_is_terminal",
+      "expected_route": "reject_wrong_stage",
+      "observed_route": "reject_wrong_stage"
     }
   ],
   "mutation_count": 42,

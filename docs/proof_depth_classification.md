@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2052 |
+| Theorem declarations classified | 2070 |
 | Direct/projection-style theorem declarations | 405 |
-| Derived/decomposed theorem declarations | 1194 |
-| Unknown or mixed theorem declarations | 453 |
+| Derived/decomposed theorem declarations | 1202 |
+| Unknown or mixed theorem declarations | 463 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -174,7 +174,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 32 | 10 | 11 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -2129,17 +2129,35 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `acknowledged_cancellation_rejects_post_cancel_output` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `adjudication_requires_verification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `adjudication_without_completion_receipt_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `adjudication_without_residual_owner_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_preserves_full_custody` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_preserves_job_and_contract_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `apply_event_preserves_lifecycle_invariant` | derived_or_decomposed | no | uses by_cases, cases, have, rcases, simp |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `approval_required_job_cannot_authorize_without_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `cancellation_requires_acknowledgment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `canonical_run_reaches_exact_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `closed_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `closure_requires_consumer_acknowledgment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `evidence_ready_adjudication_requires_replay_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `execution_requires_artifact_refs` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `execution_without_audit_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `expired_lease_cannot_dispatch` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `external_effect_request_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `full_typed_job_lifecycle_reaches_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `initial_state_satisfies_lifecycle_invariant` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `reachable_closed_state_has_exact_modeled_accounting` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `rejected_event_is_state_noninterfering` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `repeated_event_digest_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `retry_cannot_widen_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | `retry_requires_idempotency_key` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `run_events_preserves_full_custody` | derived_or_decomposed | no | uses have, induction, rcases, simp |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `run_events_preserves_lifecycle_invariant` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `substituted_contract_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `substituted_job_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `support_assignment_request_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | `wrong_stage_event_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TypedJobs.lean` | `complete_retirement_review_retires_job` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_unverified_output_routes_to_adjudication` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `delivered_verified_output_is_evidence_ready` | derived_or_decomposed | no | uses simp, unfold |

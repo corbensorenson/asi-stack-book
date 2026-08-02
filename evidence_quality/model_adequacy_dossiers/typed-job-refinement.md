@@ -21,9 +21,12 @@ service or real-world effect worked.
 
 ## Consequences, countermodels, and consumer
 
-General consequences preserve job, contract, plan, authority, permission, and
-lease identity and prevent support assignment or external-effect counts from
-changing. Each accepted step adds exactly one receipt. Countermodels reject
+Thirty-two declarations preserve job, contract, plan, authority, permission,
+lease, scheduler, and consumer identity across one event and arbitrary runs.
+The stage-indexed invariant preserves exact receipt and represented
+execution-observation accounting while preventing support assignment or
+external-effect counts from changing. Rejected events are state-noninterfering,
+and closure is terminal. Countermodels reject
 identity substitution, replay, authority leakage, unlocked contracts, approval
 bypass, missing permission or lease, scheduler and dispatch gaps, retry without
 idempotency, retry authority widening, unacknowledged cancellation, output
@@ -32,7 +35,8 @@ adjudication, missing completion/replay/residual custody, and unacknowledged
 closure. A six-event witness reaches closure with one represented execution
 observation, six receipts, zero assigned support, and zero external effects.
 
-The independent consumer covers all twenty-eight routes, consumes the exact
+The independent consumer requires and compiles the exact theorem surface,
+rejects proof placeholders, covers all twenty-nine routes, consumes the exact
 2/7 delivery and 2/9 durable-lifecycle suites, and rejects 42 mutations across
 identity, sequencing, authority, approval, permission, lease, retry,
 cancellation, artifact, audit, verification, receipt, replay, residual, and

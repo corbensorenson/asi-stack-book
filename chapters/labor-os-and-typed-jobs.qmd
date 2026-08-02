@@ -20,8 +20,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All assigned sources are inspected and mapped at their actual boundaries: four local raw caches and the complete authenticated `moecot` connector text are passage-reviewed, `talos_md` remains a variant, and external workflow comparators are official-documentation or specification-note lineage rather than local runtime evidence."
-  - "Current executable evidence is authored and zero-model: 3 valid/10 rejecting plan-execution fixtures, exact 2 valid/7 rejecting delivery and 2 valid/9 rejecting durable-lifecycle suites, plus one accepted no-promotion decision. The two exact suites now feed a seven-stage versioned execution/closure refinement with twenty-eight routes and 42/42 rejecting mutations. No scheduler, worker, workspace, secret broker, permission or approval service, adapter runner, external-effect observer, durable workflow engine, Temporal/Airflow/BPMN/Kubernetes integration, natural workload, useful advantage, causal campaign, reproduction, or transfer is represented."
-  - "All five public targets now resolve to `AsiStackProofs.TypedJobRefinement`, whose fourteen declarations prove exact represented identity custody, zero support/external effects, exact receipt accounting, typed countermodels, and a full witness. Three weak baseline declarations are physically retired and twenty-four exact approval, route, and durable countermodels remain bounded in `AsiStackProofs.TypedJobs`. None proves scheduler quality, task success, output truth, verification soundness, enforcement, recovery, delivery correctness, evidence readiness, usefulness, safety, or transfer."
+  - "Current executable evidence is authored and zero-model: 3 valid/10 rejecting plan-execution fixtures, exact 2 valid/7 rejecting delivery and 2 valid/9 rejecting durable-lifecycle suites, plus one accepted no-promotion decision. The two exact suites now feed a seven-stage versioned execution/closure refinement with twenty-nine routes and 42/42 rejecting mutations. No scheduler, worker, workspace, secret broker, permission or approval service, adapter runner, external-effect observer, durable workflow engine, Temporal/Airflow/BPMN/Kubernetes integration, natural workload, useful advantage, causal campaign, reproduction, or transfer is represented."
+  - "All five public targets now resolve to `AsiStackProofs.TypedJobRefinement`, whose thirty-two declarations prove stage-indexed one-step and arbitrary-run accounting, exact represented identity custody, rejection noninterference, terminal closure, zero support/external effects, typed countermodels, and a full witness. Three weak baseline declarations are physically retired and twenty-four exact approval, route, and durable countermodels remain bounded in `AsiStackProofs.TypedJobs`. None proves scheduler quality, task success, output truth, verification soundness, enforcement, recovery, delivery correctness, evidence readiness, usefulness, safety, or transfer."
   - "No core support transition is authorized."
 ---
 
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `talos`; supporting: `viea`, `genesiscode`, `software_magic_grimoire`; external comparators: `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_kubernetes_jobs_docs`; variant: `talos_md`; connector/recovery: `moecot` |
 | Source loading state | all source notes inspected and mapped; passage-reviewed local raw cache: `talos`, `viea`, `genesiscode`, `software_magic_grimoire`; authenticated connector text passage-reviewed: `moecot`; same-lineage variant boundary: `talos_md`; bounded official-documentation/specification notes: external workflow comparators |
-| Test state | Exact authored scaffold: 3 valid/10 rejecting plan-execution fixtures; exact 2 valid/7 rejecting delivery and 2 valid/9 rejecting durable-lifecycle suites; 7 reachable stages, 28 routes, and 42/42 rejected mutations; 1 accepted no-promotion decision; 38 live declarations across two modules and 5 public targets, with 3 weak declarations retired. No deployed scheduler, worker, permissions, approvals, adapter, external-effect observer, durable workflow, task-success result, natural workload, causal advantage, reproduction, transfer, or core support effect. |
+| Test state | Exact authored scaffold: 3 valid/10 rejecting plan-execution fixtures; exact 2 valid/7 rejecting delivery and 2 valid/9 rejecting durable-lifecycle suites; 7 reachable stages, 29 routes, and 42/42 rejected mutations; 1 accepted no-promotion decision; 56 live declarations across two modules and 5 public targets, with 3 weak declarations retired. No deployed scheduler, worker, permissions, approvals, adapter, external-effect observer, durable workflow, task-success result, natural workload, causal advantage, reproduction, transfer, or core support effect. |
 
 ## Drafting guardrail
 
@@ -534,11 +534,11 @@ The current minimum is an authored zero-model record-and-route scaffold:
   and
 - a seven-stage `AsiStackProofs.TypedJobRefinement` contract-lock,
   authorization, dispatch, execution-observation, adjudication, and
-  acknowledged-closure lifecycle with twenty-eight routes, fourteen
+  acknowledged-closure lifecycle with twenty-nine routes, thirty-two
   declarations, and an independent consumer that rejects 42/42 mutations; and
 - twenty-four retained exact approval, execution-route, and durable-lifecycle
   declarations, with three validity/summary projections physically retired,
-  for 38 live declarations across two modules and five public targets.
+  for 56 live declarations across two modules and five public targets.
 
 The reachable refinement preserves represented job, contract, plan, authority,
 permission, lease, scheduler, retry, cancellation, adjudication, residual, and
@@ -609,7 +609,7 @@ fault campaigns, complete costs, reproduction, and transfer pass.
 |---|---|---|
 | Typed job fixture validation | Check that the typed-job fixture matches the public schema and declares contract, type, lifecycle state, adapter, inputs, outputs, permissions, approval state, failure behavior, audit events, and replay status. | implemented by protocol validation; validated locally |
 | Typed job lifecycle predicate | Check that a transition record marked valid uses the declared finite lifecycle relation. | implemented in `AsiStackProofs.TypedJobs`; checked by Lean build |
-| Typed-job versioned execution and closure refinement | Check exact job, contract, plan, authority, permission, lease, scheduler, retry, cancellation, artifact, audit, verification, receipt, replay, residual-owner, and consumer custody while separating represented execution from support assignment and external effects. | implemented by `python3 scripts/validate_typed_job_refinement.py`: exact 2/7 delivery and 2/9 durable suites, seven stages, twenty-eight routes, and 42/42 rejected mutations; support-state effect `none` |
+| Typed-job versioned execution and closure refinement | Check exact job, contract, plan, authority, permission, lease, scheduler, retry, cancellation, artifact, audit, verification, receipt, replay, residual-owner, and consumer custody while separating represented execution from support assignment and external effects. | implemented by `python3 scripts/validate_typed_job_refinement.py`: exact 32-declaration surface, arbitrary-run lifecycle and custody invariants, exact 2/7 delivery and 2/9 durable suites, seven stages, twenty-nine routes, and 42/42 rejected mutations; support-state effect `none` |
 | Plan-execution typed-job dispatch harness | Check that active typed jobs match the command contract, appear in dispatch receipts, and do not bypass required approval. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic records only |
 | Job execution route proof | Check that a finite job-execution review routes missing jobs, unlocked contracts, invalid lifecycles, missing approvals, missing permissions, observed failures, residuals, unverified delivery, verified delivery, scheduler-slot waits, dispatch-ready jobs, and retirement requests to explicit outcomes. | implemented by Lean build; finite job-execution route coverage only |
 | Tool permission enforcement test | Check that declared permissions cover requested adapter capabilities. | planned; not run |
@@ -627,11 +627,11 @@ Fixture-shape validation, bounded Lean predicates, the finite job-execution rout
 |---|---|---|---|
 | `lean:jobs.lifecycle.operational_invariant` | `AsiStackProofs.TypedJobRefinement` | A reachable versioned typed-job lifecycle preserves exact job, contract, plan, authority, permission, lease, scheduler, and consumer custody from lock through acknowledged closure without assigning support or external effects. | implemented |
 | `lean:jobs.lifecycle.failure_blocks_promotion` | `AsiStackProofs.TypedJobRefinement` | Approval, permission, lease, scheduler, retry/idempotency, cancellation, artifact/audit, verification, completion/replay, residual-owner, and consumer-acknowledgment failures block lifecycle progress. | implemented |
-| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobRefinement` | An independent consumer covers twenty-eight typed-job lifecycle routes and rejects 42 identity, ordering, authority, approval, permission, lease, retry, cancellation, artifact, audit, adjudication, receipt, replay, residual, and acknowledgment mutations. | implemented |
+| `lean:jobs.lifecycle.execution_route_envelope` | `AsiStackProofs.TypedJobRefinement` | An independent consumer covers twenty-nine typed-job lifecycle routes and rejects 42 identity, ordering, authority, approval, permission, lease, retry, cancellation, artifact, audit, adjudication, receipt, replay, residual, and acknowledgment mutations. | implemented |
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/seven-invalid typed-job delivery suite without treating delivery or verification fields as task success, output truth, support, or external effects. | implemented |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/nine-invalid durable retry and lease suite without treating declared idempotence, recovery, enforcement, receipt, or replay fields as real service behavior. | implemented |
 
-The family contains 38 live declarations across two modules: fourteen reachable
+The family contains 56 live declarations across two modules: thirty-two reachable
 refinement consequences/countermodels/witnesses plus twenty-four retained exact
 approval, execution-route, and durable-lifecycle declarations. The valid-record
 projection and two authored-summary bridges are physically retired with frozen
@@ -680,7 +680,7 @@ costs, failures, delivery, evidence eligibility, compensation, and retirement
 attached to one bounded work history.
 
 The present evidence is an authored zero-model scaffold: one schema, three
-fixture families, one no-promotion decision, and twenty-seven finite
+fixture families, one no-promotion decision, and fifty-six finite
 declarations. It establishes record and route discipline only. A scheduler,
 runtime effects, recovery, useful advantage, causal contribution,
 reproduction, and transfer remain unshown.

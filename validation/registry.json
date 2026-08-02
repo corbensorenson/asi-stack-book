@@ -11389,11 +11389,12 @@
         "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json",
         "docs/typed_job_durable_lifecycle_probe.md"
       ],
-      "output_contract": "Reject identity substitution, replay, authority leakage, unlocked contracts, approval/permission/lease/scheduler/dispatch gaps, retry/cancellation faults, missing artifacts/audit/verification/completion/replay/residual/acknowledgment, support assignment, and external-effect requests.",
+      "output_contract": "Require and compile the exact thirty-two-declaration Lean surface, reject proof placeholders, and reject identity substitution, replay, authority leakage, unlocked contracts, approval/permission/lease/scheduler/dispatch gaps, retry/cancellation faults, missing artifacts/audit/verification/completion/replay/residual/acknowledgment, support assignment, external-effect requests, and post-closure events.",
       "output_assertions": [
+        "32 exact Lean declarations",
         "two valid and seven invalid delivery traces",
         "two valid and nine invalid durable traces",
-        "twenty-eight routes and seven reachable stages",
+        "twenty-nine routes and seven reachable stages",
         "forty-two rejected lifecycle mutations",
         "no support-state or external-effect authority"
       ],

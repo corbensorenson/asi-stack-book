@@ -134,6 +134,7 @@ def exactContractBinding (state : State) (packet : Packet) : Bool :=
 
 def routeFor (state : State) (event : Event) : Route :=
   if event.kind != expectedKind state.stage then .rejectWrongStage
+  else if state.stage == .closed then .rejectWrongStage
   else if ! exactJobBinding state event.packet then .rejectJobSubstitution
   else if ! exactContractBinding state event.packet then .rejectContractSubstitution
   else if event.packet.eventDigest == state.lastEventDigest then .rejectEventReplay
@@ -208,6 +209,96 @@ def applyEvent (state : State) (event : Event) : State × Route :=
          if state.stage == .dispatched then state.executionObservationCount + 1
          else state.executionObservationCount }, route)
   else (state, route)
+
+def stageRank : Stage -> Nat
+  | .idle => 0
+  | .locked => 1
+  | .authorized => 2
+  | .dispatched => 3
+  | .executed => 4
+  | .adjudicated => 5
+  | .closed => 6
+
+def expectedExecutionObservations : Stage -> Nat
+  | .idle | .locked | .authorized | .dispatched => 0
+  | .executed | .adjudicated | .closed => 1
+
+def LifecycleInvariant (state : State) : Prop :=
+  state.receiptCount = stageRank state.stage ∧
+  state.executionObservationCount = expectedExecutionObservations state.stage ∧
+  state.supportAssignmentCount = 0 ∧
+  state.externalEffectCount = 0
+
+def FullCustodyEqual (before after : State) : Prop :=
+  after.jobId = before.jobId ∧
+  after.jobVersion = before.jobVersion ∧
+  after.contractDigest = before.contractDigest ∧
+  after.planNodeDigest = before.planNodeDigest ∧
+  after.authorityDigest = before.authorityDigest ∧
+  after.permissionDigest = before.permissionDigest ∧
+  after.leaseEpoch = before.leaseEpoch ∧
+  after.schedulerDigest = before.schedulerDigest ∧
+  after.consumerDigest = before.consumerDigest
+
+def runEvents : State -> List Event -> State
+  | state, [] => state
+  | state, event :: rest => runEvents (applyEvent state event).1 rest
+
+theorem rejected_event_is_state_noninterfering
+    {state : State} {event : Event}
+    (rejected : accepted (routeFor state event) = false) :
+    (applyEvent state event).1 = state := by
+  simp [applyEvent, rejected]
+
+theorem closed_state_accepts_no_event
+    {state : State} {event : Event}
+    (closed : state.stage = .closed) :
+    accepted (routeFor state event) = false := by
+  simp [routeFor, expectedKind, accepted, closed]
+
+theorem apply_event_preserves_lifecycle_invariant
+    {state : State} {event : Event}
+    (safe : LifecycleInvariant state) :
+    LifecycleInvariant (applyEvent state event).1 := by
+  by_cases acceptedRoute : accepted (routeFor state event) = true
+  · rcases safe with ⟨receipts, observations, support, effects⟩
+    cases stageEq : state.stage <;>
+      simp [applyEvent, acceptedRoute, LifecycleInvariant, stageRank,
+        expectedExecutionObservations, advanceStage, stageEq, receipts,
+        observations, support, effects]
+    have rejected := closed_state_accepts_no_event (event := event) stageEq
+    simp [rejected] at acceptedRoute
+  · have rejected : accepted (routeFor state event) = false := by
+      cases route : accepted (routeFor state event) <;> simp_all
+    simpa [rejected_event_is_state_noninterfering rejected] using safe
+
+theorem apply_event_preserves_full_custody
+    (state : State) (event : Event) :
+    FullCustodyEqual state (applyEvent state event).1 := by
+  by_cases acceptedRoute : accepted (routeFor state event) = true <;>
+    simp [applyEvent, acceptedRoute, FullCustodyEqual]
+
+theorem run_events_preserves_lifecycle_invariant
+    {state : State} {events : List Event}
+    (safe : LifecycleInvariant state) :
+    LifecycleInvariant (runEvents state events) := by
+  induction events generalizing state with
+  | nil => simpa [runEvents] using safe
+  | cons event rest ih =>
+      simpa [runEvents] using ih (apply_event_preserves_lifecycle_invariant safe)
+
+theorem run_events_preserves_full_custody
+    (state : State) (events : List Event) :
+    FullCustodyEqual state (runEvents state events) := by
+  induction events generalizing state with
+  | nil => simp [runEvents, FullCustodyEqual]
+  | cons event rest ih =>
+      have head := apply_event_preserves_full_custody state event
+      have tail := ih (applyEvent state event).1
+      rcases head with ⟨h1, h2, h3, h4, h5, h6, h7, h8, h9⟩
+      rcases tail with ⟨t1, t2, t3, t4, t5, t6, t7, t8, t9⟩
+      exact ⟨t1.trans h1, t2.trans h2, t3.trans h3, t4.trans h4,
+        t5.trans h5, t6.trans h6, t7.trans h7, t8.trans h8, t9.trans h9⟩
 
 theorem apply_event_preserves_job_and_contract_identity
     (state : State) (event : Event) :
@@ -287,6 +378,11 @@ def initialState : State :=
     supportAssignmentCount := 0
     externalEffectCount := 0 }
 
+theorem initial_state_satisfies_lifecycle_invariant :
+    LifecycleInvariant initialState := by
+  simp [LifecycleInvariant, initialState, stageRank,
+    expectedExecutionObservations]
+
 def lockEvent : Event := { kind := .lockJob, packet := canonicalPacket }
 def lockedState : State := (applyEvent initialState lockEvent).1
 def authorizeEvent : Event := { kind := .authorizeJob, packet := { canonicalPacket with eventDigest := 2 } }
@@ -357,6 +453,84 @@ theorem full_typed_job_lifecycle_reaches_closed_state :
     finalState.executionObservationCount = 1 ∧
     finalState.supportAssignmentCount = 0 ∧
     finalState.externalEffectCount = 0 := by
+  native_decide
+
+def canonicalLifecycle : List Event :=
+  [lockEvent, authorizeEvent, dispatchEvent, executeEvent,
+    adjudicateEvent, closeEvent]
+
+theorem canonical_run_reaches_exact_closed_state :
+    runEvents initialState canonicalLifecycle = finalState := by
+  native_decide
+
+theorem reachable_closed_state_has_exact_modeled_accounting
+    {events : List Event}
+    (closed : (runEvents initialState events).stage = .closed) :
+    (runEvents initialState events).receiptCount = 6 ∧
+    (runEvents initialState events).executionObservationCount = 1 ∧
+    (runEvents initialState events).supportAssignmentCount = 0 ∧
+    (runEvents initialState events).externalEffectCount = 0 := by
+  have safe := run_events_preserves_lifecycle_invariant
+    (events := events) initial_state_satisfies_lifecycle_invariant
+  simpa [LifecycleInvariant, closed, stageRank,
+    expectedExecutionObservations] using safe
+
+theorem wrong_stage_event_is_rejected_without_state_change :
+    applyEvent initialState authorizeEvent =
+      (initialState, .rejectWrongStage) := by
+  native_decide
+
+theorem substituted_job_is_rejected_without_state_change :
+    applyEvent initialState
+      { lockEvent with packet := { canonicalPacket with jobId := 999 } } =
+      (initialState, .rejectJobSubstitution) := by
+  native_decide
+
+theorem substituted_contract_is_rejected_without_state_change :
+    applyEvent initialState
+      { lockEvent with packet := { canonicalPacket with contractDigest := 999 } } =
+      (initialState, .rejectContractSubstitution) := by
+  native_decide
+
+theorem repeated_event_digest_is_rejected_without_state_change :
+    applyEvent lockedState
+      { authorizeEvent with packet := { canonicalPacket with eventDigest := 1 } } =
+      (lockedState, .rejectEventReplay) := by
+  native_decide
+
+theorem support_assignment_request_is_rejected_without_state_change :
+    applyEvent initialState
+      { lockEvent with
+          packet := { canonicalPacket with supportAssignmentRequested := true } } =
+      (initialState, .rejectAuthorityLeak) := by
+  native_decide
+
+theorem external_effect_request_is_rejected_without_state_change :
+    applyEvent initialState
+      { lockEvent with
+          packet := { canonicalPacket with externalEffectRequested := true } } =
+      (initialState, .rejectAuthorityLeak) := by
+  native_decide
+
+theorem execution_without_audit_is_rejected_without_state_change :
+    applyEvent dispatchedState
+      { executeEvent with packet := { canonicalPacket with
+          eventDigest := 30, auditTrailPresent := false } } =
+      (dispatchedState, .requestAuditTrail) := by
+  native_decide
+
+theorem adjudication_without_completion_receipt_is_rejected_without_state_change :
+    applyEvent executedState
+      { adjudicateEvent with packet := { canonicalPacket with
+          eventDigest := 31, completionReceiptPresent := false } } =
+      (executedState, .requestCompletionReceipt) := by
+  native_decide
+
+theorem adjudication_without_residual_owner_is_rejected_without_state_change :
+    applyEvent executedState
+      { adjudicateEvent with packet := { canonicalPacket with
+          eventDigest := 32, residualOwnerPresent := false } } =
+      (executedState, .requestResidualOwner) := by
   native_decide
 
 end AsiStackProofs.TypedJobRefinement

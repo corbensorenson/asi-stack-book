@@ -1827,7 +1827,7 @@ def errors(data: dict) -> list[str]:
         "typed_job_state":"validated_finite_authored_versioned_execution_closure_lifecycle_not_task_success_enforcement_or_deployed",
         "typed_job_delivery_valid_count":2,"typed_job_delivery_invalid_count":7,
         "typed_job_durable_valid_count":2,"typed_job_durable_invalid_count":9,
-        "typed_job_reachable_stage_count":7,"typed_job_route_case_count":28,
+        "typed_job_reachable_stage_count":7,"typed_job_route_case_count":29,
         "typed_job_mutation_rejection_count":42,
         "typed_job_retired_baseline_declaration_count":3,
         "typed_job_retained_legacy_theorem_count":24,
@@ -1835,12 +1835,12 @@ def errors(data: dict) -> list[str]:
     for key,value in expected_typed_job_contract.items():
         if proof_contract.get(key)!=value: out.append(f"typed-job contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     typed_job=data["typed_job_result"]
-    for key,value in {"reachable_stage_count":7,"route_case_count":28,"mutation_count":42,
+    for key,value in {"reachable_stage_count":7,"route_case_count":29,"mutation_count":42,
                       "mutation_rejection_count":42,"support_state_effect":"none"}.items():
         if typed_job.get(key)!=value: out.append(f"typed-job result drifted: {key}")
     typed_job_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in typed_job.get("input_suites",[])}
     if typed_job_suites!={"typed_job_delivery":(2,7),"typed_job_durable_lifecycle":(2,9)}: out.append("typed-job consumed-suite counts drifted")
-    for phrase in ["twenty-eight routes", "two-valid/seven-invalid", "two-valid/nine-invalid", "all 42 mutations", "Support-state effect: `none`"]:
+    for phrase in ["twenty-nine routes", "two-valid/seven-invalid", "two-valid/nine-invalid", "all 42 mutations", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["typed_job_receipt"].casefold(): out.append(f"typed-job receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "task success", "Support-state effect: exactly `none`"]:
         if phrase.casefold() not in data["typed_job_dossier"].casefold(): out.append(f"typed-job dossier missing adequacy boundary: {phrase}")
