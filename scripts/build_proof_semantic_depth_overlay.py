@@ -301,6 +301,74 @@ CURRENT_SEMANTIC_OVERRIDES = {
     },
 }
 
+_constitutional_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_constitution_trace_reaches_exact_rollback",
+        "scripts/validate_constitutional_alignment.py",
+    ],
+    "classification_basis": [
+        "the versioned lifecycle and five rejecting controls are independently reconstructed by the constitutional-alignment validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_constitution_event_is_admissible",
+    "accepted_constitution_event_is_exact_advance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/Alignment.lean::{theorem_name}"] = {
+        **_constitutional_lifecycle_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded lifecycle.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Alignment.lean::complete_constitution_trace_reaches_exact_rollback"
+] = {
+    **_constitutional_lifecycle_base,
+    "semantic_level": "P2",
+    "rationale": "The four-event review, activation, conflict, and rollback trace is a bounded nonvacuity witness.",
+}
+
+for theorem_name in (
+    "accepted_constitution_event_preserves_custody",
+    "accepted_constitution_event_is_non_authorizing",
+    "accepted_activation_requires_prior_independent_review",
+    "accepted_conflict_creates_one_residual",
+    "self_review_cannot_enter_reviewed_stage",
+    "predicate_substitution_cannot_enter_reviewed_stage",
+    "authority_widening_cannot_enter_reviewed_stage",
+    "action_authority_request_cannot_enter_reviewed_stage",
+    "activation_version_jump_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/Alignment.lean::{theorem_name}"] = {
+        **_constitutional_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem constrains one executable lifecycle boundary and is covered by an independently encoded valid trace or rejecting control."
+        ),
+    }
+
+for theorem_name in (
+    "constitution_run_preserves_custody_and_non_authority",
+    "constitution_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/Alignment.lean::{theorem_name}"] = {
+        **_constitutional_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "Structural induction proves arbitrary accepted traces preserve constitutional custody and non-authority or compose exactly across batches."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Alignment.lean::accepted_rollback_returns_to_recorded_version"
+] = {
+    **_constitutional_lifecycle_base,
+    "semantic_level": "P5",
+    "rationale": "Every accepted rollback returns the bounded lifecycle to its recorded rollback version after residualization.",
+}
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",

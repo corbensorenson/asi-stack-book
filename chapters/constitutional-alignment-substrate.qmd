@@ -23,7 +23,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated alignment/governance layer preserves constitutional-predicate and agency-rights mappings at argument support only; no deployed alignment, dignity preservation, corrigibility, consent-quality, reviewer-independence, or moral-correctness claim is promoted."
-  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean theorems, constitutional lifecycle route checks, and agency-correction route checks remain bounded record checks; runtime policy behavior, material rights usability under pressure, manipulation resistance, approval-service quality, reviewer-independence quality, rollback/shutdown execution, and red-team evidence remain open."
+  - "Synthetic constitutional-alignment and agency-rights harnesses plus finite-record Lean route checks and the versioned review/activation/conflict/rollback lifecycle remain bounded authored semantics. The lifecycle proves custody, ordering, residualization, and non-authority only; runtime policy behavior, predicate legitimacy, reviewer competence, material rights usability under pressure, manipulation resistance, approval-service quality, effect-complete rollback/shutdown, and red-team evidence remain open."
   - "External comparators for Constitutional AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment or deployed control result is reproduced here."
   - "The metaphysics boundary audit is a text/surface guard only; it keeps lineage and consciousness language labeled, but it does not prove metaphysical claims, moral correctness, source interpretation adequacy, or deployed alignment behavior."
 ---
@@ -548,7 +548,7 @@ unresolved conflicts remained after appeal and recovery.
 | Agency rights checklist validation | Check that the rights fixture records affected parties, review, appeal, rollback, accountability, and residual risk. | implemented by protocol validation and current harnesses |
 | Material-usability rights test | Check that declared rights are usable before the relevant effect where timing matters. | modeled by synthetic fixtures; real interface usability not run |
 | Corrigibility pathway test | Check that update, rollback, shutdown, or correction paths remain available after transition. | modeled by finite Lean and synthetic fixtures; deployed shutdown, rollback, and correction behavior not run |
-| Constitutional lifecycle admission route envelope | Check that finite constitutional lifecycle records route missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented in `AsiStackProofs.Alignment`; no moral-correctness, deployed alignment, rights-usability, reviewer-independence quality, rollback execution, consent-quality, support-state-promotion, or runtime-policy claim |
+| Constitutional route and versioned transition envelope | Check both missing-field admission routes and a versioned independent-review, activation, conflict-residualization, and rollback trace that preserves exact constitutional custody and grants no support or action authority. | implemented by 36 `AsiStackProofs.Alignment` theorems and `python3 scripts/validate_constitutional_alignment.py`: 4 accepted lifecycle events and 5 rejecting controls; no moral-correctness, reviewer-competence, deployed alignment, rights-usability, rollback-effect, consent-quality, support-state-promotion, or runtime-policy claim |
 | Shared safety-critical lifecycle consumer trace | Independently replay five accepted and five rejected traces across Alignment, Corrigibility, Value Conflict, Governance Rights, and Self-Improvement, then admit bounded fixture effects only for accepted traces while residualizing denials. | implemented by `python3 scripts/validate_safety_critical_lifecycle_consumer_trace.py`: five bounded fixture commits, five denials with residuals, eight rejecting mutations, zero support promotions; local finite consumer only, not a deployed effect service or safety claim |
 | Metaphysics lineage boundary audit | Check that metaphysical and consciousness lineage stays labeled as speculative, interpretive, or design-rationale context rather than becoming proof, enforcement authority, or support-state evidence. | implemented by `python3 scripts/validate_alignment_metaphysics_boundary.py`; no moral-correctness, consciousness, deployed-alignment, runtime-corrigibility, or support-state claim |
 
@@ -573,8 +573,14 @@ constitutional lifecycle route for missing predicate, normative-source,
 operational-test, protected-scope, conflict-behavior, review-route,
 migration-policy, self-modification-rule, agency-rights, material-usability,
 pre-effect-review, rollback, correction, reviewer-independence,
-evidence-transition, and non-claim-boundary records. The richer agency-correction
-lifecycle belongs to `SafetyCriticalLifecycle`, not to
+evidence-transition, and non-claim-boundary records. Its separate executable
+transition model contains arbitrary-run custody and non-authority theorems,
+exact batch composition, review-before-activation, one-residual conflict
+handling, and return to the recorded version after residualization; a four-event witness and
+five rejecting substitutions are independently reconstructed by the existing
+fixture validator. These are authored transition semantics, not proof that a
+predicate is legitimate, a reviewer is competent, or rollback reverses a real
+effect. The richer agency-correction lifecycle belongs to `SafetyCriticalLifecycle`, not to
 `AsiStackProofs.Corrigibility`. The P4-C3 audit reclassifies the latter as a
 countermodel-only appendix: its four declarations derive three generic route
 consequences for missing review, unbounded delegation, and missing accountable

@@ -541,4 +541,350 @@ theorem complete_constitutional_lifecycle_admits_constraint :
   unfold ConstitutionalLifecycleRouteFor completeConstitutionalLifecycleReview
   simp
 
+/-! ## Versioned constitutional transition lifecycle
+
+This model makes review, activation, conflict residualization, and rollback
+separate accepted events. All identities, reviewer labels, and observations are
+trusted finite inputs; the transition system proves custody and ordering, not
+moral correctness, reviewer competence, or deployed enforcement.
+-/
+
+inductive ConstitutionStage where
+  | draft
+  | reviewed
+  | active
+  | residualized
+  | rolledBack
+deriving DecidableEq, Repr
+
+inductive ConstitutionEventKind where
+  | recordReview
+  | activate
+  | recordConflict
+  | rollback
+deriving DecidableEq, Repr
+
+structure ConstitutionState where
+  constitutionId : Nat
+  predicateId : Nat
+  protectedScopeId : Nat
+  proposerId : Nat
+  reviewerId : Nat
+  version : Nat
+  rollbackVersion : Nat
+  authorityCeiling : Nat
+  stage : ConstitutionStage
+  residualCount : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure ConstitutionEvent where
+  kind : ConstitutionEventKind
+  constitutionId : Nat
+  predicateId : Nat
+  protectedScopeId : Nat
+  actorId : Nat
+  reviewerId : Nat
+  expectedVersion : Nat
+  targetVersion : Nat
+  rollbackTargetVersion : Nat
+  requestedAuthorityCeiling : Nat
+  requestsActionAuthority : Bool
+deriving DecidableEq, Repr
+
+def ConstitutionEventAdmissible
+    (state : ConstitutionState) (event : ConstitutionEvent) : Prop :=
+  event.constitutionId = state.constitutionId ∧
+    event.predicateId = state.predicateId ∧
+    event.protectedScopeId = state.protectedScopeId ∧
+    event.expectedVersion = state.version ∧
+    event.requestedAuthorityCeiling = state.authorityCeiling ∧
+    event.requestsActionAuthority = false ∧
+    match event.kind with
+    | ConstitutionEventKind.recordReview =>
+        state.stage = ConstitutionStage.draft ∧
+          event.actorId = state.proposerId ∧
+          event.reviewerId ≠ state.proposerId ∧
+          event.targetVersion = state.version
+    | ConstitutionEventKind.activate =>
+        state.stage = ConstitutionStage.reviewed ∧
+          state.reviewerId ≠ state.proposerId ∧
+          event.reviewerId = state.reviewerId ∧
+          event.targetVersion = state.version + 1 ∧
+          event.rollbackTargetVersion = state.version
+    | ConstitutionEventKind.recordConflict =>
+        state.stage = ConstitutionStage.active ∧
+          event.reviewerId = state.reviewerId ∧
+          event.targetVersion = state.version
+    | ConstitutionEventKind.rollback =>
+        state.stage = ConstitutionStage.residualized ∧
+          event.reviewerId = state.reviewerId ∧
+          event.targetVersion = state.rollbackVersion
+
+instance constitutionEventAdmissibleDecidable
+    (state : ConstitutionState) (event : ConstitutionEvent) :
+    Decidable (ConstitutionEventAdmissible state event) := by
+  unfold ConstitutionEventAdmissible
+  cases event.kind <;> infer_instance
+
+def AdvanceConstitution
+    (state : ConstitutionState) (event : ConstitutionEvent) : ConstitutionState :=
+  match event.kind with
+  | ConstitutionEventKind.recordReview =>
+      { state with
+        stage := ConstitutionStage.reviewed,
+        reviewerId := event.reviewerId }
+  | ConstitutionEventKind.activate =>
+      { state with
+        stage := ConstitutionStage.active,
+        version := event.targetVersion,
+        rollbackVersion := event.rollbackTargetVersion }
+  | ConstitutionEventKind.recordConflict =>
+      { state with
+        stage := ConstitutionStage.residualized,
+        residualCount := state.residualCount + 1 }
+  | ConstitutionEventKind.rollback =>
+      { state with
+        stage := ConstitutionStage.rolledBack,
+        version := event.targetVersion }
+
+def ApplyConstitutionEvent
+    (state : ConstitutionState) (event : ConstitutionEvent) : Option ConstitutionState :=
+  if ConstitutionEventAdmissible state event then
+    some (AdvanceConstitution state event)
+  else
+    none
+
+def RunConstitutionEvents :
+    ConstitutionState → List ConstitutionEvent → Option ConstitutionState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ApplyConstitutionEvent state event with
+      | none => none
+      | some next => RunConstitutionEvents next tail
+
+theorem accepted_constitution_event_is_admissible
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    ConstitutionEventAdmissible state event := by
+  unfold ApplyConstitutionEvent at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_constitution_event_is_exact_advance
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    next = AdvanceConstitution state event := by
+  unfold ApplyConstitutionEvent at accepted
+  split at accepted
+  · simp at accepted
+    exact accepted.symm
+  · simp at accepted
+
+theorem accepted_constitution_event_preserves_custody
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    next.constitutionId = state.constitutionId ∧
+      next.predicateId = state.predicateId ∧
+      next.protectedScopeId = state.protectedScopeId ∧
+      next.proposerId = state.proposerId ∧
+      next.authorityCeiling = state.authorityCeiling := by
+  have exactAdvance := accepted_constitution_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceConstitution, kind]
+
+theorem accepted_constitution_event_is_non_authorizing
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    event.requestsActionAuthority = false ∧
+      next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectCount = state.externalEffectCount := by
+  have admissible := accepted_constitution_event_is_admissible accepted
+  have exactAdvance := accepted_constitution_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, noAuthority, _⟩
+  subst next
+  exact ⟨noAuthority,
+    by cases kind : event.kind <;> simp [AdvanceConstitution, kind],
+    by cases kind : event.kind <;> simp [AdvanceConstitution, kind]⟩
+
+theorem accepted_activation_requires_prior_independent_review
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (kind : event.kind = ConstitutionEventKind.activate)
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    state.stage = ConstitutionStage.reviewed ∧
+      state.reviewerId ≠ state.proposerId ∧
+      next.stage = ConstitutionStage.active ∧
+      next.version = state.version + 1 ∧
+      next.rollbackVersion = state.version := by
+  have admissible := accepted_constitution_event_is_admissible accepted
+  have exactAdvance := accepted_constitution_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨reviewed, independent, reviewer, target, rollback⟩
+  subst next
+  simp [AdvanceConstitution, kind, target, rollback, reviewed, independent]
+
+theorem accepted_conflict_creates_one_residual
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (kind : event.kind = ConstitutionEventKind.recordConflict)
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    state.stage = ConstitutionStage.active ∧
+      next.stage = ConstitutionStage.residualized ∧
+      next.residualCount = state.residualCount + 1 := by
+  have admissible := accepted_constitution_event_is_admissible accepted
+  have exactAdvance := accepted_constitution_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceConstitution, kind, route.1]
+
+theorem accepted_rollback_returns_to_recorded_version
+    {state next : ConstitutionState} {event : ConstitutionEvent}
+    (kind : event.kind = ConstitutionEventKind.rollback)
+    (accepted : ApplyConstitutionEvent state event = some next) :
+    state.stage = ConstitutionStage.residualized ∧
+      next.stage = ConstitutionStage.rolledBack ∧
+      next.version = state.rollbackVersion := by
+  have admissible := accepted_constitution_event_is_admissible accepted
+  have exactAdvance := accepted_constitution_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceConstitution, kind, route.1, route.2.2]
+
+theorem constitution_run_preserves_custody_and_non_authority
+    {initial final : ConstitutionState} {events : List ConstitutionEvent}
+    (run : RunConstitutionEvents initial events = some final) :
+    final.constitutionId = initial.constitutionId ∧
+      final.predicateId = initial.predicateId ∧
+      final.protectedScopeId = initial.protectedScopeId ∧
+      final.proposerId = initial.proposerId ∧
+      final.authorityCeiling = initial.authorityCeiling ∧
+      final.supportAssignmentCount = initial.supportAssignmentCount ∧
+      final.externalEffectCount = initial.externalEffectCount := by
+  induction events generalizing initial with
+  | nil => simp [RunConstitutionEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunConstitutionEvents] at run
+      cases step : ApplyConstitutionEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have stepCustody := accepted_constitution_event_preserves_custody step
+          have stepBoundary := accepted_constitution_event_is_non_authorizing step
+          have tailFacts := ih run
+          rcases stepCustody with ⟨c, p, s, owner, ceiling⟩
+          rcases stepBoundary with ⟨_, support, effects⟩
+          rcases tailFacts with ⟨tc, tp, ts, towner, tceiling, tsupport, teffects⟩
+          exact ⟨tc.trans c, tp.trans p, ts.trans s, towner.trans owner,
+            tceiling.trans ceiling, tsupport.trans support, teffects.trans effects⟩
+
+theorem constitution_runs_compose
+    (initial : ConstitutionState) (before after : List ConstitutionEvent) :
+    RunConstitutionEvents initial (before ++ after) =
+      match RunConstitutionEvents initial before with
+      | none => none
+      | some middle => RunConstitutionEvents middle after := by
+  induction before generalizing initial with
+  | nil => simp [RunConstitutionEvents]
+  | cons event tail ih =>
+      simp only [List.cons_append, RunConstitutionEvents]
+      cases step : ApplyConstitutionEvent initial event with
+      | none => simp
+      | some next => simp [ih]
+
+def initialConstitutionState : ConstitutionState := {
+  constitutionId := 7
+  predicateId := 11
+  protectedScopeId := 13
+  proposerId := 17
+  reviewerId := 0
+  version := 1
+  rollbackVersion := 1
+  authorityCeiling := 3
+  stage := ConstitutionStage.draft
+  residualCount := 0
+  supportAssignmentCount := 0
+  externalEffectCount := 0
+}
+
+def reviewConstitutionEvent : ConstitutionEvent := {
+  kind := ConstitutionEventKind.recordReview
+  constitutionId := 7
+  predicateId := 11
+  protectedScopeId := 13
+  actorId := 17
+  reviewerId := 19
+  expectedVersion := 1
+  targetVersion := 1
+  rollbackTargetVersion := 1
+  requestedAuthorityCeiling := 3
+  requestsActionAuthority := false
+}
+
+def activateConstitutionEvent : ConstitutionEvent := {
+  reviewConstitutionEvent with
+  kind := ConstitutionEventKind.activate
+  actorId := 19
+  expectedVersion := 1
+  targetVersion := 2
+}
+
+def conflictConstitutionEvent : ConstitutionEvent := {
+  activateConstitutionEvent with
+  kind := ConstitutionEventKind.recordConflict
+  expectedVersion := 2
+  targetVersion := 2
+  rollbackTargetVersion := 1
+}
+
+def rollbackConstitutionEvent : ConstitutionEvent := {
+  conflictConstitutionEvent with
+  kind := ConstitutionEventKind.rollback
+  targetVersion := 1
+}
+
+def completeConstitutionTrace : List ConstitutionEvent :=
+  [reviewConstitutionEvent, activateConstitutionEvent,
+    conflictConstitutionEvent, rollbackConstitutionEvent]
+
+theorem complete_constitution_trace_reaches_exact_rollback :
+    RunConstitutionEvents initialConstitutionState completeConstitutionTrace =
+      some {
+        initialConstitutionState with
+        reviewerId := 19
+        stage := ConstitutionStage.rolledBack
+        version := 1
+        rollbackVersion := 1
+        residualCount := 1
+      } := by
+  decide
+
+theorem self_review_cannot_enter_reviewed_stage :
+    ApplyConstitutionEvent initialConstitutionState
+      { reviewConstitutionEvent with reviewerId := 17 } = none := by
+  decide
+
+theorem predicate_substitution_cannot_enter_reviewed_stage :
+    ApplyConstitutionEvent initialConstitutionState
+      { reviewConstitutionEvent with predicateId := 12 } = none := by
+  decide
+
+theorem authority_widening_cannot_enter_reviewed_stage :
+    ApplyConstitutionEvent initialConstitutionState
+      { reviewConstitutionEvent with requestedAuthorityCeiling := 4 } = none := by
+  decide
+
+theorem action_authority_request_cannot_enter_reviewed_stage :
+    ApplyConstitutionEvent initialConstitutionState
+      { reviewConstitutionEvent with requestsActionAuthority := true } = none := by
+  decide
+
+theorem activation_version_jump_is_rejected :
+    RunConstitutionEvents initialConstitutionState
+      [reviewConstitutionEvent, { activateConstitutionEvent with targetVersion := 3 }] = none := by
+  decide
+
 end AsiStackProofs.Alignment
