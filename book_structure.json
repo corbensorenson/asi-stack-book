@@ -227,9 +227,9 @@
             },
             {
               "name": "Reachable stack-boundary authority/effect consumer",
-              "purpose": "Check arbitrary-run invariants, prefix/suffix composition, multi-layer artifact and authority custody, and the request-to-rollback path against source-anchored local evidence and semantic mutations.",
+              "purpose": "Check arbitrary-run invariants, prefix/suffix composition, quantified complete admission, arbitrary-length handoff authority monotonicity, multi-layer artifact custody, and the request-to-rollback path against source-anchored local evidence and semantic mutations.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 13 invariant-prefix checks, 13 prefix/suffix compositions, 3 multi-layer handoff cases with 2 rejected countermodels, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected runtime mutations; support-state effect none",
+              "result_status": "passes via exact 34-theorem Lean recompile and `python3 scripts/validate_stack_boundary_effect_consumer.py`: 18 admission routes, 6 authority fixtures, 3 runtime paths, 10 accepted events, 13 invariant-prefix checks, 13 prefix/suffix compositions, 3 multi-layer handoff cases with 2 rejected countermodels, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected runtime mutations; support-state effect none",
               "status": "implemented in `AsiStackProofs.StackBoundaries` plus an independent consumer; synthetic fixtures and one local temp-file effect do not establish deployed authority, complete effects, safety, reproduction, transfer, or chapter-core support"
             },
             {
@@ -253,19 +253,19 @@
             {
               "tag": "lean:stack.layer_boundaries.operational_invariant",
               "module": "AsiStackProofs.StackBoundaries",
-              "target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody.",
+              "target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; every valid nonempty handoff chain stays below its initial source ceiling while preserving adjacent artifact custody.",
               "status": "implemented"
             },
             {
               "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
               "module": "AsiStackProofs.StackBoundaries",
-              "target": "The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution.",
+              "target": "The finite boundary model rejects over-ceiling authorization and effect without dispatch; revocation blocks later authorization, dispatch, and effect; arbitrary valid handoff chains cannot widen beyond their head; artifact substitution breaks composition; and an external-action contract without layer authority or an authorized handoff cannot be admitted.",
               "status": "implemented"
             },
             {
               "tag": "lean:stack.layer_contract.admission_lifecycle_route",
               "module": "AsiStackProofs.StackBoundaries",
-              "target": "An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface.",
+              "target": "A quantified Lean inverse requires every admitted layer contract to preserve complete identity, lifecycle, ownership, artifact, authority, handoff, invariant, failure, evidence, source, support-transition, and non-claim obligations; a recompiling independent suite matches all eighteen priority-ordered routes.",
               "status": "implemented"
             }
           ]

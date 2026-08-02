@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independently consume reachable stack-boundary handoff/effect evidence."""
 from __future__ import annotations
-import argparse, copy, hashlib, json
+import argparse, copy, hashlib, json, re, subprocess
 from pathlib import Path
 from typing import Any
 import jsonschema
@@ -46,6 +46,17 @@ def contract_cases()->list[tuple[str,dict[str,bool],str]]:
 
 def load(p:Path)->Any:return json.loads(p.read_text(encoding="utf-8"))
 def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
+
+EXPECTED_THEOREMS={
+ "layer_without_external_authority_requires_authorized_handoff","valid_stack_trace_rejects_unauthorized_external_handoff","handoff_exceeding_caller_ceiling_rejected","admitted_layer_contract_is_complete","unauthorized_external_action_cannot_be_admitted","accepted_boundary_step_is_valid","accepted_boundary_step_applies_event","apply_boundary_event_preserves_caller_ceiling","accepted_boundary_step_preserves_invariant","boundary_run_preserves_invariant","boundary_run_composes","accepted_boundary_run_has_valid_trace","accepted_boundary_run_preserves_caller_ceiling","accepted_revocation_clears_effect_authority","apply_boundary_event_preserves_revocation","boundary_run_preserves_revocation","revoked_boundary_rejects_authorization_dispatch_and_effect","revocation_blocks_effect_authority_after_any_accepted_suffix","accepted_effect_increments_only_material_accounting","accepted_observation_accounts_for_prior_effect","accepted_rollback_requires_complete_observation_and_clears_accounting","valid_chain_bounds_every_handoff_by_both_layers","valid_two_hop_chain_preserves_artifact_and_cannot_widen_authority","adjacent_chain_never_widens_beyond_its_head","valid_nonempty_chain_is_bounded_by_initial_source_ceiling","three_layer_handoff_chain_is_nonvacuously_valid","authority_widening_breaks_layer_composition","artifact_substitution_breaks_layer_composition","accepted_authorization_respects_caller_ceiling","accepted_effect_requires_live_grant_and_dispatch","reachable_effect_trace_rolls_back_exactly","over_ceiling_authorization_is_rejected","effect_without_dispatch_receipt_is_rejected","revoked_grant_effect_is_rejected"
+}
+def formal_surface()->dict[str,Any]:
+ names=set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",LEAN.read_text(encoding="utf-8")))
+ if names!=EXPECTED_THEOREMS:raise AssertionError(f"Lean theorem surface drifted; missing={sorted(EXPECTED_THEOREMS-names)}, extra={sorted(names-EXPECTED_THEOREMS)}")
+ command=["lake","env","lean","AsiStackProofs/StackBoundaries.lean"]
+ completed=subprocess.run(command,cwd=ROOT/"lean",capture_output=True,text=True)
+ if completed.returncode:raise AssertionError(completed.stdout+completed.stderr)
+ return {"theorem_count":len(names),"lean_compile_exit_code":0,"admission_inverse":True,"arbitrary_run_invariant":True,"batch_composition":True,"revoked_suffix_exclusion":True,"arbitrary_handoff_chain_authority_bound":True}
 
 def authority_errors(r:dict[str,Any])->list[str]:
  out=[]; decision=r.get("decision"); perm=r.get("permission_class"); caller=RANK.get(r.get("caller_ceiling"),-1); active=RANK.get(r.get("authority_ceiling"),-1); target=RANK.get(r.get("target_required_authority"),-1)
@@ -164,7 +175,7 @@ def build():
  mutations.append(valid[:2]+[event("revoke",time=3)]+[event("dispatch",time=4),event("commit",time=5)])
  rejected=sum(not run(x)[0] for x in mutations)
  if rejected!=len(mutations):errors.append("mutation accepted")
- result={"schema_version":"asi_stack.stack_boundary_effect_consumer.v1","result_id":"stack-boundary-effect-2026-07-15-local","lean_model_sha256":sha(LEAN),"runtime_result_sha256":sha(RUNTIME),"revocation_result_sha256":sha(REVOCATION),"layer_contract_case_count":len(route_receipts),"layer_contract_route_match_count":sum(x["matched"] for x in route_receipts),"authority_fixture_count":len(fixtures),"authority_fixture_accepted_count":sum(x["accepted"] for x in fixtures),"authority_fixture_rejected_count":sum(not x["accepted"] for x in fixtures),"runtime_case_count":3,"runtime_case_accepted_count":3,"runtime_accepted_event_count":10,"runtime_invariant_prefix_count":invariant_prefix_count,"runtime_composition_check_count":composition_check_count,"layer_handoff_chain_case_count":len(handoff_receipts),"layer_handoff_chain_rejection_count":sum(not x["accepted"] for x in handoff_receipts),"executed_effect_count":1,"independently_observed_effect_count":1,"exact_rollback_count":1,"no_mutation_denial_count":2,"revocation_trace_entry_count":5,"mutation_count":len(mutations),"mutation_rejection_count":rejected,"layer_contract_receipts":route_receipts,"authority_receipts":fixtures,"runtime_receipts":runtime_receipts,"layer_handoff_receipts":handoff_receipts,"support_state_effect":"none","non_claims":["The consumer binds one local temp-file effect and synthetic authority fixtures; it does not establish deployed enforcement.","Recorded grant, owner, receipt, observer, and revocation fields are trusted inputs and do not prove authenticity or complete observation.","Passing traces do not establish safety, security, natural-workload utility, reproduction, transfer, or chapter-core support."]}
+ result={"schema_version":"asi_stack.stack_boundary_effect_consumer.v1","result_id":"stack-boundary-effect-2026-07-15-local","lean_model_sha256":sha(LEAN),"formal_surface":formal_surface(),"runtime_result_sha256":sha(RUNTIME),"revocation_result_sha256":sha(REVOCATION),"layer_contract_case_count":len(route_receipts),"layer_contract_route_match_count":sum(x["matched"] for x in route_receipts),"authority_fixture_count":len(fixtures),"authority_fixture_accepted_count":sum(x["accepted"] for x in fixtures),"authority_fixture_rejected_count":sum(not x["accepted"] for x in fixtures),"runtime_case_count":3,"runtime_case_accepted_count":3,"runtime_accepted_event_count":10,"runtime_invariant_prefix_count":invariant_prefix_count,"runtime_composition_check_count":composition_check_count,"layer_handoff_chain_case_count":len(handoff_receipts),"layer_handoff_chain_rejection_count":sum(not x["accepted"] for x in handoff_receipts),"executed_effect_count":1,"independently_observed_effect_count":1,"exact_rollback_count":1,"no_mutation_denial_count":2,"revocation_trace_entry_count":5,"mutation_count":len(mutations),"mutation_rejection_count":rejected,"layer_contract_receipts":route_receipts,"authority_receipts":fixtures,"runtime_receipts":runtime_receipts,"layer_handoff_receipts":handoff_receipts,"support_state_effect":"none","non_claims":["The consumer binds one local temp-file effect and synthetic authority fixtures; it does not establish deployed enforcement.","Recorded grant, owner, receipt, observer, and revocation fields are trusted inputs and do not prove authenticity or complete observation.","Passing traces do not establish safety, security, natural-workload utility, reproduction, transfer, or chapter-core support."]}
  try:jsonschema.Draft202012Validator(load(SCHEMA)).validate(result)
  except jsonschema.ValidationError as exc:errors.append(f"schema:{exc.message}")
  return result,errors
@@ -173,5 +184,5 @@ def main():
  if e:raise SystemExit("Stack boundary consumer failed:\n - "+"\n - ".join(e))
  if a.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(json.dumps(r,indent=2)+"\n",encoding="utf-8")
  elif not RESULT.exists() or load(RESULT)!=r:raise SystemExit("Stack boundary consumer result stale; run --write")
- print(f"Stack boundary consumer passed: {r['layer_contract_route_match_count']} layer-contract routes, {r['runtime_invariant_prefix_count']} invariant prefixes, {r['runtime_composition_check_count']} compositions, {r['layer_handoff_chain_rejection_count']} handoff countermodels, {r['mutation_rejection_count']} mutations rejected, support effect none.")
+ print(f"Stack boundary consumer passed: {r['formal_surface']['theorem_count']} Lean theorems, {r['layer_contract_route_match_count']} layer-contract routes, {r['runtime_invariant_prefix_count']} invariant prefixes, {r['runtime_composition_check_count']} compositions, {r['layer_handoff_chain_rejection_count']} handoff countermodels, {r['mutation_rejection_count']} mutations rejected, support effect none.")
 if __name__=="__main__":main()

@@ -9,7 +9,10 @@ nominal path can then reach independent observation and exact local rollback.
 Every arbitrary accepted run preserves the modeled authority/effect-accounting
 invariant and caller ceiling and composes exactly across prefixes. A separate
 finite multi-layer path requires endpoint authority bounds, adjacent-layer
-identity, artifact custody, and non-widening authority. Over-ceiling
+identity, artifact custody, and non-widening authority; every valid nonempty
+chain remains below its initial source ceiling. A quantified admission inverse
+requires every admitted contract field and prevents an external-action
+contract with neither layer authority nor an authorized handoff from admission. Over-ceiling
 authorization, missing-dispatch effect, post-revocation effect, cross-layer
 authority widening, and artifact substitution are rejected.
 Once revoked, the modeled boundary remains revoked through every accepted
@@ -53,9 +56,14 @@ suffix and cannot later authorize, dispatch, or commit an effect.
 - Revocation persists through arbitrary accepted suffixes and blocks all later
   authorization, dispatch, and effect events in the model.
 - Boundary runs compose exactly across every prefix/suffix split.
+- Every admitted layer contract satisfies the complete identity, lifecycle,
+  ownership, artifact, authority, handoff, invariant, failure, evidence,
+  source, support-transition, and non-claim predicate.
+- An external-action contract with neither recorded layer authority nor an
+  authorized handoff cannot be admitted.
 - Every handoff in a valid finite chain stays within both endpoint ceilings;
   adjacent handoffs preserve the intermediate artifact and cannot widen
-  authority.
+  authority, and every later handoff stays below the initial source ceiling.
 - The declared six-event nominal run reaches zero remaining effects after one
   independently observed effect and exact rollback.
 - Explicit Lean countermodels reject over-ceiling authorization, effect without
@@ -81,7 +89,8 @@ admission and composition guards rather than merely perturbing formatting.
 
 ## Consumer and refinement boundary
 
-`scripts/validate_stack_boundary_effect_consumer.py` consumes the tracked
+`scripts/validate_stack_boundary_effect_consumer.py` recompiles and locks the
+exact 34-theorem surface, then consumes the tracked
 authority fixtures and checks digest-bound source artifacts from the runtime
 effect and revocation probes. Its state machine is separately implemented and
 its stored result is schema-validated. This is useful cross-implementation
@@ -97,7 +106,8 @@ no-promotion function it actually exercises.
 
 ## Adequacy adjudication
 
-Adequate for: the finite transition semantics above, arbitrary sequential-run
+Adequate for all three public proof targets at their exact finite-record scope:
+the finite transition semantics above, arbitrary sequential-run
 invariant preservation and composition, the finite adjacent-layer handoff
 contract, the five explicit negative families, one source-anchored contained
 effect/observation/rollback path, two denial paths, tracked revocation evidence,

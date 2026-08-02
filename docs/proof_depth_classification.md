@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2351 |
+| Theorem declarations classified | 2355 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1397 |
+| Derived/decomposed theorem declarations | 1401 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -169,7 +169,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | societal-resilience-and-misuse-defense | 1 | 32 | 15 | 13 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 26 | 1 | 23 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 30 | 3 | 22 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 34 | 3 | 26 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
@@ -2333,6 +2333,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_observation_accounts_for_prior_effect` | derived_or_decomposed | no | uses have, rw, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_revocation_clears_effect_authority` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_rollback_requires_complete_observation_and_clears_accounting` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `adjacent_chain_never_widens_beyond_its_head` | derived_or_decomposed | no | uses have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `admitted_layer_contract_is_complete` | derived_or_decomposed | no | uses unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `apply_boundary_event_preserves_caller_ceiling` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `apply_boundary_event_preserves_revocation` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `artifact_substitution_breaks_layer_composition` | derived_or_decomposed | no | uses simp |
@@ -2349,7 +2351,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `revoked_boundary_rejects_authorization_dispatch_and_effect` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `revoked_grant_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `three_layer_handoff_chain_is_nonvacuously_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `unauthorized_external_action_cannot_be_admitted` | derived_or_decomposed | no | uses have, rcases |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_chain_bounds_every_handoff_by_both_layers` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `valid_nonempty_chain_is_bounded_by_initial_source_ceiling` | derived_or_decomposed | no | uses have, rcases, simp, subst |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_two_hop_chain_preserves_artifact_and_cannot_widen_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `complete_requested_artifact_reaches_custody_review` | derived_or_decomposed | no | uses simp, unfold |

@@ -1,7 +1,16 @@
 {
   "schema_version": "asi_stack.stack_boundary_effect_consumer.v1",
   "result_id": "stack-boundary-effect-2026-07-15-local",
-  "lean_model_sha256": "ba20a1f10c924f192f47824480be1cbcf2280fb8c47454990be91a2b281bc50c",
+  "lean_model_sha256": "0aa2fb301da34b2791dbf1225ac8b6364ff9e265a5176bd3fa38226c2e653df7",
+  "formal_surface": {
+    "theorem_count": 34,
+    "lean_compile_exit_code": 0,
+    "admission_inverse": true,
+    "arbitrary_run_invariant": true,
+    "batch_composition": true,
+    "revoked_suffix_exclusion": true,
+    "arbitrary_handoff_chain_authority_bound": true
+  },
   "runtime_result_sha256": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
   "revocation_result_sha256": "8d777ba0c2ec356ca05451b7c19e3b794d9f9202975e2f6fe82c1193adede0e9",
   "layer_contract_case_count": 18,

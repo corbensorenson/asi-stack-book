@@ -1,3 +1,5 @@
+import Std.Tactic.BVDecide
+
 namespace AsiStackProofs.StackBoundaries
 
 structure Layer where
@@ -194,6 +196,48 @@ def completeLayerContractAdmissionReview :
   evidenceTransitionRecorded := true
   nonClaimBoundaryRecorded := true
 }
+
+def LayerContractAdmissionComplete
+    (review : LayerContractAdmissionReview) : Prop :=
+  review.contractRequested = true ∧
+    review.layerIdRecorded = true ∧
+    review.lifecycleStateRecorded = true ∧
+    review.ownerRecorded = true ∧
+    review.responsibilityRecorded = true ∧
+    review.inputArtifactsRecorded = true ∧
+    review.outputArtifactsRecorded = true ∧
+    review.authorityCeilingRecorded = true ∧
+    review.handoffProtocolRecorded = true ∧
+    review.invariantRecorded = true ∧
+    review.failureModeRecorded = true ∧
+    review.evidenceGateRecorded = true ∧
+    (review.externalActionPossible = true →
+      review.externalActionAuthorityRecorded = true ∨
+        review.authorizedHandoffRecorded = true) ∧
+    review.sourceMappingRecorded = true ∧
+    review.supportStateEffectRecorded = true ∧
+    (review.supportPromotionRequested = true →
+      review.evidenceTransitionRecorded = true) ∧
+    review.nonClaimBoundaryRecorded = true
+
+theorem admitted_layer_contract_is_complete
+    {review : LayerContractAdmissionReview}
+    (admitted : LayerContractAdmissionRouteFor review = .admitLayerContract) :
+    LayerContractAdmissionComplete review := by
+  unfold LayerContractAdmissionRouteFor LayerContractAdmissionComplete at *
+  bv_decide
+
+theorem unauthorized_external_action_cannot_be_admitted
+    {review : LayerContractAdmissionReview}
+    (external : review.externalActionPossible = true)
+    (noLayerAuthority : review.externalActionAuthorityRecorded = false)
+    (noHandoff : review.authorizedHandoffRecorded = false) :
+    LayerContractAdmissionRouteFor review ≠ .admitLayerContract := by
+  intro admitted
+  have complete := admitted_layer_contract_is_complete admitted
+  rcases complete.2.2.2.2.2.2.2.2.2.2.2.2.1 external with authority | handoff
+  · simp_all
+  · simp_all
 
 /-! ## Reachable authority-handoff-effect trace
 
@@ -600,6 +644,35 @@ theorem valid_two_hop_chain_preserves_artifact_and_cannot_widen_authority
       left.outputArtifact = right.inputArtifact ∧
         right.requestedAuthority ≤ left.requestedAuthority := by
   exact valid.2.1
+
+theorem adjacent_chain_never_widens_beyond_its_head
+    {head : LayerHandoff} {tail : List LayerHandoff}
+    (composes : AdjacentLayerHandoffsCompose (head :: tail)) :
+    ∀ handoff, handoff ∈ tail →
+      handoff.requestedAuthority ≤ head.requestedAuthority := by
+  induction tail generalizing head with
+  | nil => simp
+  | cons next rest ih =>
+      have pair : LayerHandoffsCompose head next := composes.1
+      have restComposes : AdjacentLayerHandoffsCompose (next :: rest) := composes.2
+      intro handoff present
+      rcases List.mem_cons.mp present with same | later
+      · subst handoff
+        exact pair.2.2
+      · exact Nat.le_trans (ih restComposes handoff later) pair.2.2
+
+theorem valid_nonempty_chain_is_bounded_by_initial_source_ceiling
+    {head : LayerHandoff} {tail : List LayerHandoff}
+    (valid : LayerHandoffChainValid (head :: tail)) :
+    ∀ handoff, handoff ∈ head :: tail →
+      handoff.requestedAuthority ≤ head.sourceCeiling := by
+  have headValid := valid.1 head (by simp)
+  have tailBound := adjacent_chain_never_widens_beyond_its_head valid.2
+  intro handoff present
+  rcases List.mem_cons.mp present with same | later
+  · subst handoff
+    exact headValid.2.2.1
+  · exact Nat.le_trans (tailBound handoff later) headValid.2.2.1
 
 def planningToExecutionHandoff : LayerHandoff := {
   sourceLayer := 10

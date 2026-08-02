@@ -14,31 +14,31 @@
       "tag": "lean:stack.layer_boundaries.operational_invariant",
       "chapter_id": "asi-is-a-stack-not-a-model",
       "module": "AsiStackProofs.StackBoundaries",
-      "formal_target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody.",
+      "formal_target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; every valid nonempty handoff chain stays below its initial source ceiling while preserving adjacent artifact custody.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as an arbitrary-run finite invariant, exact trace-composition law, finite multi-layer handoff discipline, and independent source-anchored consumer; establishes only modeled authority, artifact, dispatch, accounting, observation, and rollback custody under trusted input fields."
+      "rationale": "Implemented as an arbitrary-run finite invariant, exact trace-composition law, arbitrary-length non-widening handoff theorem, and recompiling source-anchored consumer; establishes only modeled authority, artifact, dispatch, accounting, observation, and rollback custody under trusted input fields."
     },
     {
       "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
       "chapter_id": "asi-is-a-stack-not-a-model",
       "module": "AsiStackProofs.StackBoundaries",
-      "formal_target": "The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution.",
+      "formal_target": "The finite boundary model rejects over-ceiling authorization and effect without dispatch; revocation blocks later authorization, dispatch, and effect; arbitrary valid handoff chains cannot widen beyond their head; artifact substitution breaks composition; and an external-action contract without layer authority or an authorized handoff cannot be admitted.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented with persistent-revocation theorems, cross-layer authority/artifact countermodels, and twelve independently checked runtime mutations covering authority widening, missing custody, stale epochs, missing observation, false rollback, and post-revocation effect."
+      "rationale": "Implemented with persistent-revocation theorems, quantified unauthorized-external-action rejection, arbitrary-chain authority bounds, cross-layer artifact countermodels, and twelve independently checked runtime mutations covering authority widening, missing custody, stale epochs, missing observation, false rollback, and post-revocation effect."
     },
     {
       "tag": "lean:stack.layer_contract.admission_lifecycle_route",
       "chapter_id": "asi-is-a-stack-not-a-model",
       "module": "AsiStackProofs.StackBoundaries",
-      "formal_target": "An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface.",
+      "formal_target": "A quantified Lean inverse requires every admitted layer contract to preserve complete identity, lifecycle, ownership, artifact, authority, handoff, invariant, failure, evidence, source, support-transition, and non-claim obligations; a recompiling independent suite matches all eighteen priority-ordered routes.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "The eighteen theorem-per-record normalizations are retired from the live Lean surface; a generated independent suite checks all eighteen priority-ordered route outcomes, while frozen proof lineage is preserved in the rationalization registry."
+      "rationale": "One quantified Lean inverse now owns complete admission and unauthorized-external-action exclusion. The eighteen theorem-per-record normalizations remain retired; a recompiling independent suite checks all eighteen priority-ordered route outcomes, while frozen proof lineage is preserved in the rationalization registry."
     },
     {
       "tag": "lean:efficiency.minimum_viable.operational_invariant",

@@ -14,9 +14,14 @@ authorization cannot exceed the caller ceiling. An accepted material effect
 requires a live same-epoch grant, an earlier dispatch receipt, and a grant that
 has not been revoked. Arbitrary accepted runs preserve the declared state
 invariant and caller ceiling and compose exactly across any prefix. Adjacent
-layer handoffs preserve artifact custody and cannot widen authority.
+layer handoffs preserve artifact custody and cannot widen authority; every
+valid nonempty handoff chain remains below its initial source ceiling. The
+admission inverse requires every declared contract obligation, and an
+external-action contract without layer authority or an authorized handoff
+cannot be admitted.
 
-`scripts/validate_stack_boundary_effect_consumer.py` independently reimplements
+`scripts/validate_stack_boundary_effect_consumer.py` recompiles the exact
+34-theorem Lean surface and independently reimplements
 the finite decisions. It consumes all six tracked authority-transition fixtures
 and binds its runtime adjudication to the existing local runtime-adapter effect
 probe and five-entry revocation trace. The stored result covers:
@@ -27,8 +32,8 @@ probe and five-entry revocation trace. The stored result covers:
 - three accepted runtime paths and ten accepted events;
 - thirteen accepted invariant-prefix checks and thirteen prefix/suffix
   composition checks;
-- one accepted three-layer path plus rejected authority-widening and
-  artifact-substitution handoffs;
+- one accepted three-layer path, an arbitrary-chain authority bound, plus
+  rejected authority-widening and artifact-substitution handoffs;
 - one material local temp-file effect, one independent observation, and one
   exact local rollback;
 - two pre-effect denial paths with no mutation;
