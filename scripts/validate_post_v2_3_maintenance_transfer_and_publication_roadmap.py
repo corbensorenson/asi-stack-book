@@ -1983,7 +1983,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 254
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 673
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 681
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
