@@ -431,6 +431,16 @@ behavior, policy-enforcement correctness, or benchmark performance. The next
 stronger lane is an independently reviewable or deployed replay with the same
 permission, approval, effect, rollback, receipt, and non-claim boundaries.
 
+The companion **Runtime adapter adversarial boundary probe** is a
+deterministic synthetic runtime-adapter adversarial boundary fixture. It exercises parentage
+and authority ceilings, scoped and expired approvals, sandbox and secret
+boundaries, rollback handles, effect receipts, audit references, support-state
+promotion attempts, and missing non-claim boundaries. It records two accepted
+bounded dispatch reviews and twelve expected-invalid controls; it does not
+execute a deployed adapter, prove sandbox isolation, approval-service behavior,
+secret-handle safety, policy-enforcement correctness, or rollback-service
+behavior, and it does not create a support-state transition.
+
 ### Dynamic-spine preflight
 
 Before adding the first accepted chapter:
