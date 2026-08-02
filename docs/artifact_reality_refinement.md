@@ -17,8 +17,14 @@ cross-checks, trap challenges, bounded attestations, roots of trust, verifier
 separation, recursion stops, outside-TCB residuals, revocation closure, and
 consumer acknowledgment remain distinct gates.
 
+The exact twenty-one-theorem surface also proves that every finite event run
+preserves the thirteen-field artifact/lineage identity projection and zero
+support or external-effect authority. Rejected events preserve the complete
+state, event batches compose, and admission absorbs every event suffix.
+
 `python3 scripts/validate_artifact_reality_refinement.py` independently
-recomputes all thirty-three routes, consumes eight exact bounded suites—2/6
+recompiles that exact theorem surface, recomputes all thirty-three routes,
+consumes eight exact bounded suites—2/6
 artifact replay, 1/4 record-reality sequence, 3/6 receipt faithfulness, 4/5
 repository audit, 4/5 repository challenge, 1/7 live attestation, 4/8
 randomized attestation, and 3/6 epistemic TCB—executes the six-event witness,

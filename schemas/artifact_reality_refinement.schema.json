@@ -4,11 +4,25 @@
   "title": "ASI Stack artifact record-reality refinement result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "formal_surface", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.artifact_reality_refinement.v1"},
     "result_id": {"const": "artifact-reality-refinement-2026-07-15-local"},
     "source_sha256": {"type": "object", "additionalProperties": false, "required": ["lean_model"], "properties": {"lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "formal_surface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theorem_count", "lean_module", "lean_compile_receipt", "arbitrary_run_identity_custody", "arbitrary_run_no_support_or_external_effect", "exact_rejection_noninterference", "exact_run_composition", "terminal_state_absorbing"],
+      "properties": {
+        "theorem_count": {"const": 21},
+        "lean_module": {"const": "lean/AsiStackProofs/ArtifactRealityRefinement.lean"},
+        "lean_compile_receipt": {"type": "object"},
+        "arbitrary_run_identity_custody": {"const": true},
+        "arbitrary_run_no_support_or_external_effect": {"const": true},
+        "exact_rejection_noninterference": {"const": true},
+        "exact_run_composition": {"const": true},
+        "terminal_state_absorbing": {"const": true}
+      }
+    },
     "input_suites": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "additionalProperties": false, "required": ["suite_id", "valid_count", "expected_invalid_count", "suite_passed", "validator_sha256"], "properties": {"suite_id": {"type": "string", "minLength": 1}, "valid_count": {"type": "integer", "minimum": 1}, "expected_invalid_count": {"type": "integer", "minimum": 4}, "suite_passed": {"const": true}, "validator_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
     "reachable_stage_count": {"const": 7},
     "route_case_count": {"const": 33},

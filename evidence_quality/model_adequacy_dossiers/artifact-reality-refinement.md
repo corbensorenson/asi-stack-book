@@ -11,28 +11,33 @@
 
 ## Reachable model
 
-The model owns one artifact-specific event sequence from exact registration
+The model owns an artifact-specific event system from exact registration
 through provenance binding, replay validation, independently challengeable
 reality cross-check, epistemic trusted-base binding, revocation closure, and
-consumer-acknowledged admission. It deliberately prevents a schema-valid
+consumer-acknowledged admission. Its arbitrary finite-run semantics preserve a
+thirteen-field identity projection containing the artifact ID plus content,
+parent-job, source, context, transaction, certificate, tool, claim, test,
+policy, consumer, and version digests. It deliberately prevents a schema-valid
 receipt, replay label, attestation, or named verifier from skipping the next
 gate or assigning support.
 
 ## Consequences, countermodels, and consumer
 
-General consequences preserve artifact, content, parent, source, context,
-transaction, and certificate identity and prevent support assignment or
-external-effect counts from changing. Each accepted step adds exactly one
-receipt. Countermodels reject parentage and provenance gaps, stale certificates,
-unvalidated replay, missing observations, dependent cross-checks, unbounded
-attestation, self-verifier laundering, missing recursion stops, and incomplete
-revocation closure. A six-event witness reaches admission with one represented
-reality observation, six receipts, zero assigned support, and zero effects.
+The exact twenty-one-theorem surface proves that every finite event list
+preserves the full identity projection and zero support/effect authority.
+Rejected events preserve the complete state, accepted steps add exactly one
+receipt, event batches compose, and admission absorbs every suffix. Countermodels
+reject parentage and provenance gaps, stale certificates, unvalidated replay,
+missing observations, dependent cross-checks, unbounded attestation,
+self-verifier laundering, missing recursion stops, and incomplete revocation
+closure. A six-event witness reaches admission with one represented reality
+observation, six receipts, zero assigned support, and zero effects.
 
-The independent consumer covers all thirty-three routes, consumes eight exact
-bounded suites, and rejects 53 mutations across identity, lineage, ordering,
-authority, provenance, replay, observation, cross-check, trap, attestation,
-trust-base, recursion, residual, revocation, and consumer boundaries.
+The independent consumer recompiles and checks the exact twenty-one-theorem
+surface, covers all thirty-three routes, consumes eight exact bounded suites,
+and rejects 53 mutations across identity, lineage, ordering, authority,
+provenance, replay, observation, cross-check, trap, attestation, trust-base,
+recursion, residual, revocation, and consumer boundaries.
 
 ## Assumptions, exclusions, and adequacy verdict
 
@@ -40,10 +45,11 @@ Identifiers, digests, reference-presence flags, replay-grade judgments,
 certificate status, replay-validation results, observed-artifact flags,
 cross-check and trap outcomes, attestation limits, trust roots, verifier-
 independence labels, recursion stops, residuals, revocation closure, and
-consumer acknowledgments are trusted inputs. The model is adequate for exact
-represented lifecycle custody, route priority, receipt accounting, and
-authority separation. It is inadequate for open-world provenance, causal
-truth, artifact/source/content correctness, replay semantics, verifier
+consumer acknowledgments are trusted inputs. The model is adequate as a finite
+authored-record invariant for exact represented lifecycle custody, rejected-
+event noninterference, batch composition, absorbing admission, route priority,
+receipt accounting, and authority separation. It is inadequate for open-world provenance,
+causal truth, artifact/source/content correctness, replay semantics, verifier
 correctness, external independence, root security, repository completeness,
 deployed propagation, natural workloads, usefulness, causality, safety,
 reproduction, transfer, SOTA, AGI, ASI, or chapter-core support.

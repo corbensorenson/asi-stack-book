@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2332 |
+| Theorem declarations classified | 2338 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1378 |
+| Derived/decomposed theorem declarations | 1384 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -59,7 +59,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 15 | 11 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 21 | 11 | 9 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 27 | 1 | 16 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -318,6 +318,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | `support_review_without_replay_validated_transaction_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `admission_requires_revocation_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `admitted_event_is_rejected` | derived_or_decomposed | no | uses simp, split |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `admitted_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `apply_event_preserves_artifact_and_lineage_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `attestation_must_preserve_limits` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -328,6 +330,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `provenance_requires_transaction_and_certificate_links` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `reality_review_requires_independent_cross_check` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `reality_review_requires_observed_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `stale_certificate_blocks_replay_validation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `trust_binding_rejects_self_verifier_laundering` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | `trust_binding_requires_recursion_stop` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

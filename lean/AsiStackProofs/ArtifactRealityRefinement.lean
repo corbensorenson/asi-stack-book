@@ -128,6 +128,37 @@ structure State where
   externalEffectCount : Nat
 deriving DecidableEq, Repr
 
+structure ArtifactIdentity where
+  artifactId : Nat
+  artifactVersion : Nat
+  contentDigest : Nat
+  parentJobDigest : Nat
+  sourceDigest : Nat
+  contextDigest : Nat
+  transactionDigest : Nat
+  certificateDigest : Nat
+  toolDigest : Nat
+  claimDigest : Nat
+  testDigest : Nat
+  policyDigest : Nat
+  consumerDigest : Nat
+deriving DecidableEq, Repr
+
+def exactIdentity (state : State) : ArtifactIdentity :=
+  { artifactId := state.artifactId
+    artifactVersion := state.artifactVersion
+    contentDigest := state.contentDigest
+    parentJobDigest := state.parentJobDigest
+    sourceDigest := state.sourceDigest
+    contextDigest := state.contextDigest
+    transactionDigest := state.transactionDigest
+    certificateDigest := state.certificateDigest
+    toolDigest := state.toolDigest
+    claimDigest := state.claimDigest
+    testDigest := state.testDigest
+    policyDigest := state.policyDigest
+    consumerDigest := state.consumerDigest }
+
 def expectedKind : Stage -> EventKind
   | .idle => .registerArtifact
   | .registered => .bindProvenance
@@ -235,16 +266,9 @@ def applyEvent (state : State) (event : Event) : State × Route :=
 
 theorem apply_event_preserves_artifact_and_lineage_identity
     (state : State) (event : Event) :
-    (applyEvent state event).1.artifactId = state.artifactId ∧
-    (applyEvent state event).1.artifactVersion = state.artifactVersion ∧
-    (applyEvent state event).1.contentDigest = state.contentDigest ∧
-    (applyEvent state event).1.parentJobDigest = state.parentJobDigest ∧
-    (applyEvent state event).1.sourceDigest = state.sourceDigest ∧
-    (applyEvent state event).1.contextDigest = state.contextDigest ∧
-    (applyEvent state event).1.transactionDigest = state.transactionDigest ∧
-    (applyEvent state event).1.certificateDigest = state.certificateDigest := by
+    exactIdentity (applyEvent state event).1 = exactIdentity state := by
   by_cases h : accepted (routeFor state event) = true <;>
-    simp [applyEvent, h]
+    simp [applyEvent, exactIdentity, h]
 
 theorem apply_event_cannot_assign_support_or_external_effect
     (state : State) (event : Event) :
@@ -258,6 +282,57 @@ theorem accepted_step_adds_exactly_one_receipt
     (h : accepted (routeFor state event) = true) :
     (applyEvent state event).1.receiptCount = state.receiptCount + 1 := by
   simp [applyEvent, h]
+
+theorem rejected_event_preserves_exact_state
+    (state : State) (event : Event) (h : accepted (routeFor state event) = false) :
+    applyEvent state event = (state, routeFor state event) := by
+  simp [applyEvent, h]
+
+def runEvents : State -> List Event -> State
+  | state, [] => state
+  | state, event :: rest => runEvents (applyEvent state event).1 rest
+
+theorem run_events_preserve_exact_identity
+    (state : State) (events : List Event) :
+    exactIdentity (runEvents state events) = exactIdentity state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      exact (ih (applyEvent state event).1).trans
+        (apply_event_preserves_artifact_and_lineage_identity state event)
+
+theorem run_events_cannot_assign_support_or_external_effect
+    (state : State) (events : List Event) :
+    (runEvents state events).supportAssignmentCount = state.supportAssignmentCount ∧
+    (runEvents state events).externalEffectCount = state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [runEvents]
+  | cons event rest ih =>
+      have head := apply_event_cannot_assign_support_or_external_effect state event
+      have tail := ih (applyEvent state event).1
+      exact ⟨tail.1.trans head.1, tail.2.trans head.2⟩
+
+theorem run_events_compose (state : State) (left right : List Event) :
+    runEvents state (left ++ right) = runEvents (runEvents state left) right := by
+  induction left generalizing state with
+  | nil => rfl
+  | cons event rest ih => simp [runEvents, ih]
+
+theorem admitted_event_is_rejected (state : State) (event : Event)
+    (terminal : state.stage = .admitted) :
+    accepted (routeFor state event) = false := by
+  simp only [routeFor, terminal, expectedKind]
+  repeat' first | split
+  all_goals rfl
+
+theorem admitted_state_is_absorbing (state : State) (events : List Event)
+    (terminal : state.stage = .admitted) :
+    runEvents state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      have rejected := admitted_event_is_rejected state event terminal
+      simp [runEvents, applyEvent, rejected, ih state terminal]
 
 def canonicalPacket : Packet :=
   { artifactId := 801

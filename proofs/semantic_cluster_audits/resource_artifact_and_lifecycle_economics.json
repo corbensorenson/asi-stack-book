@@ -6,7 +6,7 @@
   "scope": "bounded_finite_resource_allocation_artifact_reality_stewardship_and_compression_lifecycle_semantics",
   "module_count": 4,
   "public_target_count": 33,
-  "theorem_declaration_count": 69,
+  "theorem_declaration_count": 75,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
@@ -38,8 +38,8 @@
       "path": "lean/AsiStackProofs/ArtifactRealityRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 10,
-      "theorem_declaration_count": 15,
-      "plain_language_proposition": "A finite artifact lifecycle preserves exact artifact and lineage identity from registration through provenance, replay, observed cross-check, bounded trust-base review, revocation closure, consumer acknowledgment, and admission without assigning support or external effects.",
+      "theorem_declaration_count": 21,
+      "plain_language_proposition": "Every finite artifact lifecycle run preserves exact artifact and lineage identity plus zero support or external-effect authority; rejected events preserve exact state, event batches compose, and admission absorbs every suffix.",
       "modeled_state": "Seven authored states with artifact, parent-job, source, context, transaction, certificate, tool, claim, test, policy, consumer, replay, observation, verifier, trust-root, recursion-stop, residual, revocation, and receipt records across eight exact independent suites.",
       "assumptions": [
         "Every artifact identity, digest, lineage reference, certificate, replay grade, observation, cross-check, trust root, verifier separation, revocation, residual, and consumer acknowledgment is authentic and complete within the declared trusted boundary.",
@@ -56,7 +56,7 @@
         "experiments/artifact_reality_refinement/results/2026-07-15-local.json"
       ],
       "mutation_evidence": "The independent consumer exercises 33 routes, rejects 53 mutations, and preserves eight exact replay, reality, receipt, attestation, and trust-base suites without support movement.",
-      "maximum_inference": "Adequate for exact finite artifact/lineage custody, stage ordering, receipt, replay-gate, observation-gate, bounded trust-base, revocation, and no-authority consequences. It does not establish source truth, open-world completeness, semantic or physical reality, verifier competence, durable provenance, ownership, usefulness, release, deployment, or support movement."
+      "maximum_inference": "Adequate for exact finite-run artifact/lineage custody, rejection noninterference, batch composition, absorbing admission, stage ordering, receipt, replay-gate, observation-gate, bounded trust-base, revocation, and no-authority consequences. It does not establish source truth, open-world completeness, semantic or physical reality, verifier competence, durable provenance, ownership, usefulness, release, deployment, or support movement."
     },
     {
       "module": "AsiStackProofs.ArtifactStewardAgents",

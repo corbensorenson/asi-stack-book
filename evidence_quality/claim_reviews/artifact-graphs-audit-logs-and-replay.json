@@ -7,17 +7,17 @@
     "structured_atoms_reviewed": 81,
     "prose_candidates_adjudicated": 94,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Artifact Reality arbitrary-run proof enhancement. The scanner produced no pending materiality candidates; changed proof prose remains bounded by existing formal-target and non-claim ownership. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Natural and adversarial documents, code, proofs, datasets, model outputs, benchmark results, workflow receipts, signed attestations, release artifacts, and public surfaces whose identity, derivation, observation, replay, revocation, rights, and downstream use must remain reconstructable across repositories and time.",
-      "environment": "Eighteen reviewed assigned sources; two public schemas; 2/6 replay, 1/10 projection-revocation, 1/4 record-reality, 3/6 receipt-faithfulness, four-surface repository-audit, four-challenge, one-live-artifact, four-sampled-artifact, and 3/6 epistemic-TCB records; two historical service observations; eight no-promotion decisions; forty-three finite Lean declarations; and a future natural multi-repository campaign. No deployed graph, complete event collector, open-world observer, reverse-closure service, privacy/deletion runtime, natural causal result, or transfer result is represented.",
+      "environment": "Eighteen reviewed assigned sources; two public schemas; 2/6 replay, 1/10 projection-revocation, 1/4 record-reality, 3/6 receipt-faithfulness, four-surface repository-audit, four-challenge, one-live-artifact, four-sampled-artifact, and 3/6 epistemic-TCB records; two historical service observations; eight no-promotion decisions; fifty-six finite Lean theorems across the refinement and legacy modules; and a future natural multi-repository campaign. No deployed graph, complete event collector, open-world observer, reverse-closure service, privacy/deletion runtime, natural causal result, or transfer result is represented.",
       "model": "A versioned artifact-evidence relation over stable content identity, locations, producers, parent work, observed and asserted lineage, transformations, events, canonical state, projections, forward and reverse dependencies, quarantine and revocation, alternate derivations, replay grades and locks, asynchronous terminal receipts, receipt-reality challenges, epistemic trusted computing bases, rights and deletion duties, claim/test consumers, impact closure, cost, and residuals; current implementations are authored records, repository-local observations, service records, and finite consequences rather than a deployed plane.",
       "authority": "Labor OS owns job lifecycle; Context owners own input views; Runtime Adapters own effects; source, data, weight, and supply-chain owners own admission; Verification owns mode-specific validity; Security, Privacy, Rights, Licensing, and accountable humans own access and obligations; Evidence States and Claim Ledgers own support; Procedural Memory owns learned reuse; Replacement, Readiness, and Publication own deployment and release. Artifact Graphs owns durable artifact identity, derivation, record-reality custody, replay grade, and impact closure only.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; schemas/artifact_graph_record.schema.json and schemas/artifact_projection_revocation_record.schema.json; ten validator/observation families and their retained results; eight accepted no-promotion records; GitHub Actions and public-site observations; forty-three declarations in lean/AsiStackProofs/ArtifactGraph.lean; future natural lineage labels, observer records, fault traces, ablations, reproduction locks, and transfer artifacts."
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; schemas/artifact_graph_record.schema.json and schemas/artifact_projection_revocation_record.schema.json; ten validator/observation families and their retained results; eight accepted no-promotion records; GitHub Actions and public-site observations; twenty-one theorems in lean/AsiStackProofs/ArtifactRealityRefinement.lean plus thirty-five retained consequences in lean/AsiStackProofs/ArtifactGraph.lean; future natural lineage labels, observer records, fault traces, ablations, reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_repository_causal_reproduction_and_transfer_campaign",
     "assumptions": [
@@ -85,12 +85,12 @@
       "receipt_audit_result": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
       "randomized_attestation_result": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
       "epistemic_tcb_result": "experiments/epistemic_tcb/results/2026-07-03-local.json",
-      "lean": "lean/AsiStackProofs/ArtifactGraph.lean"
+      "lean": "lean/AsiStackProofs/ArtifactRealityRefinement.lean; lean/AsiStackProofs/ArtifactGraph.lean"
     },
     "contrary_evidence": [
       "Git, content-addressed stores, workflow engines, PROV-O, Croissant, in-toto, and lineage catalogs already cover substantial identity, history, metadata, and attestation functions.",
       "The current families mostly use authored zero-model records; the repository observations are selected or deterministic local samples, and the CI/public-page observations are historical service facts.",
-      "The forty-three declarations are five predicate/projection/blocking consequences, thirty-one finite route/sequence/negative consequences, and seven authored-summary bridges; none refines a deployed graph or observer.",
+      "The fifty-six theorems are twenty-one arbitrary-run lifecycle/refinement consequences and thirty-five retained legacy route or blocking consequences; none refines a deployed graph or observer.",
       "A digest can match the wrong intended object, a signed chain can faithfully record a compromised authorized actor, and a complete graph can remain consistently false when observation is captured.",
       "Complete event retention can conflict with privacy, consent, confidentiality, deletion, legal hold, security, cost, and organizational feasibility.",
       "Reverse closure can create broad false blocking and remediation cascades when lineage or alternate-derivation policy is imprecise.",
@@ -137,7 +137,7 @@
     },
     "non_claims": [
       "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
-      "The current schemas, fixture/observation families, no-promotion records, service observations, and forty-three declarations establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+      "The current schemas, fixture/observation families, no-promotion records, service observations, and fifty-six theorems establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
       "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review."
     ]
   },

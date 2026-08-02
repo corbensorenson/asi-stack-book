@@ -4155,18 +4155,21 @@ Draft deliverables:
 
 Lean proof targets:
 
-The current formal family has fifty live declarations across
+The current formal family has fifty-six live theorems across
 `AsiStackProofs.ArtifactRealityRefinement` and
-`AsiStackProofs.ArtifactGraph`: fifteen new reachable-lifecycle declarations
+`AsiStackProofs.ArtifactGraph`: twenty-one reachable-lifecycle theorems
 and thirty-five retained consequences. Eight copied fixture summaries or
 one-step projections were physically retired. The independent consumer
-recomputes seven reachable stages, thirty-three routes, eight exact bounded
-suites, and 53/53 rejecting mutations without assigning support or effects.
+recompiles the exact twenty-one-theorem refinement surface, recomputes seven
+reachable stages, thirty-three routes, eight exact bounded suites, and 53/53
+rejecting mutations. Arbitrary finite runs preserve thirteen-field identity
+and zero support/effect authority; rejected events preserve exact state,
+batches compose, and admission is absorbing.
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactRealityRefinement` | A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects. | implemented |
-| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactRealityRefinement` | Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress. | implemented |
+| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactRealityRefinement` | Every finite artifact lifecycle run preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody; rejected events preserve exact state, batches compose, admission is absorbing, and support or external effects remain unassigned. | implemented |
+| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactRealityRefinement` | Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress without mutating exact state. | implemented |
 | `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The refinement preserves exact replay-packet custody and requires replay metadata, sufficient grade, limits, active certificates, and replay validation before reality review. | implemented |
 | `lean:artifacts.graph.record_reality_sequence_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact one-valid/four-invalid stale/partial/fresh record-reality sequence without assigning support. | implemented |
 | `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact three-valid/six-invalid receipt-faithfulness suite while requiring observation, independent cross-checks, trap challenges, and bounded attestation. | implemented |
@@ -6184,7 +6187,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2332 theorem declarations, 1378 derived/decomposed, 410 direct/projection, 544 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2338 theorem declarations, 1384 derived/decomposed, 410 direct/projection, 544 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

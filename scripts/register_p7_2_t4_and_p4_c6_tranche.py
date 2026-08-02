@@ -40,9 +40,9 @@ UNITS = [
     {
         "script": "validate_p4_c6_semantic_proof_cluster.py",
         "artifacts": ["scripts/validate_p4_c6_semantic_proof_cluster.py", "proofs/semantic_cluster_audits/resource_artifact_and_lifecycle_economics.json", "docs/p4_c6_resource_artifact_and_lifecycle_economics_semantic_audit.md", "lean/AsiStackProofs/ResourceEconomicsRefinement.lean", "lean/AsiStackProofs/ArtifactRealityRefinement.lean", "lean/AsiStackProofs/ArtifactStewardAgents.lean", "lean/AsiStackProofs/ArtifactCompressionRefinement.lean"],
-        "input_contract": "The reconciled four-module resource/artifact/steward/compression cluster with 33 public targets and 69 theorem declarations.",
+        "input_contract": "The reconciled four-module resource/artifact/steward/compression cluster with 33 public targets and 75 theorem declarations.",
         "output_contract": "Require propositions, state, assumptions, countermodels, consumers, mutation evidence, semantic separations, and ceilings; execute four consumers and reject twelve audit mutations.",
-        "output_assertions": ["4 adequate modules", "33 public targets", "69 theorem declarations", "6 semantic separations", "4 consumers pass", "12 mutations reject", "all 6 P4 clusters terminal"],
+        "output_assertions": ["4 adequate modules", "33 public targets", "75 theorem declarations", "6 semantic separations", "4 consumers pass", "12 mutations reject", "all 6 P4 clusters terminal"],
         "claim_scope": "Bounded finite resource, artifact, steward, compression, reconciliation, fallback, and closure semantics only.",
         "negative_controls": "validator_owned_twelve_cluster_denominator_disposition_semantic_separation_status_and_support_mutations",
         "negative_control_cases": ["module deletion", "semantic-field erasure", "target inflation", "theorem inflation", "cost-efficiency merger", "stewardship-ownership merger", "status reopening", "support laundering"],

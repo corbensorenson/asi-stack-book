@@ -2,7 +2,21 @@
   "schema_version": "asi_stack.artifact_reality_refinement.v1",
   "result_id": "artifact-reality-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "e9ab2a86fe18687157e4356fdafbc6bf7429946cac474f4423800137b3053190"
+    "lean_model": "d64767757b2b88e7c71de4d58fa105b14690c27857730696035a02024984732b"
+  },
+  "formal_surface": {
+    "theorem_count": 21,
+    "lean_module": "lean/AsiStackProofs/ArtifactRealityRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/ArtifactRealityRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_rejection_noninterference": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {

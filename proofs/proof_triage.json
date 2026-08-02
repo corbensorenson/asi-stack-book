@@ -1484,21 +1484,21 @@
       "tag": "lean:artifacts.graph.operational_invariant",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactRealityRefinement",
-      "formal_target": "A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects.",
+      "formal_target": "Every finite artifact lifecycle run preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody; rejected events preserve exact state, batches compose, admission is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.failure_blocks_promotion",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactRealityRefinement",
-      "formal_target": "Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress.",
+      "formal_target": "Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress without mutating exact state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.replay_packet_bridge",
@@ -1508,7 +1508,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.record_reality_sequence_bridge",
@@ -1518,7 +1518,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.receipt_faithfulness_fixture_bridge",
@@ -1528,7 +1528,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.receipt_repository_audit_fixture_bridge",
@@ -1538,7 +1538,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.receipt_repository_challenge_fixture_bridge",
@@ -1548,7 +1548,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
@@ -1558,7 +1558,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.randomized_attestation_audit_bridge",
@@ -1568,7 +1568,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
@@ -1578,7 +1578,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage artifact record-reality lifecycle with exact identity custody, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
+      "rationale": "Exact twenty-one-theorem artifact record-reality surface over arbitrary finite event runs, with exact identity custody, rejection noninterference, batch composition, absorbing admission, eight bounded suites, 33 routes, 53 rejecting mutations, and no support or external-effect authority."
     },
     {
       "tag": "lean:runtime.adapters.operational_invariant",

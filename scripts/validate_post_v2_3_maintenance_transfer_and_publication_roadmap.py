@@ -1643,13 +1643,13 @@ def errors(data: dict) -> list[str]:
         "P0": 26,
         "P1": 884,
         "P2": 190,
-        "P3": 931,
-        "P4": 138,
-        "P5": 163,
+        "P3": 934,
+        "P4": 139,
+        "P5": 165,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 2332,
+        "retain": 2338,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 2332
+        or c6_overlay_status.get("theorem_count") != 2338
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 2332
+        c6_summary.get("current_theorem_count") != 2338
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -2135,7 +2135,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 130, 2332, 1378, 410, 544)
+    expected_proof = (324, 130, 2338, 1384, 410, 544)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 324:

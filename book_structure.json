@@ -12503,7 +12503,7 @@
             {
               "name": "Artifact record-reality and trust refinement",
               "implementation_status": "implemented",
-              "result_status": "passes eight exact bounded suites, 33 routes, seven reachable stages, and 53/53 rejecting mutations; support-state effect none; no open-world provenance, artifact truth, replay correctness, external independence, deployed revocation, usefulness, safety, reproduction, or transfer claim"
+              "result_status": "recompiles an exact 21-theorem arbitrary-run surface; passes eight exact bounded suites, 33 routes, seven reachable stages, and 53/53 rejecting mutations; exact identity, rejection noninterference, batch composition, absorbing admission, and zero support/effect authority hold only for the finite authored model; no open-world provenance, artifact truth, replay correctness, external independence, deployed revocation, usefulness, safety, reproduction, or transfer claim"
             }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph; AsiStackProofs.ArtifactRealityRefinement",
@@ -12511,13 +12511,13 @@
             {
               "tag": "lean:artifacts.graph.operational_invariant",
               "module": "AsiStackProofs.ArtifactRealityRefinement",
-              "target": "A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects.",
+              "target": "Every finite artifact lifecycle run preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody; rejected events preserve exact state, batches compose, admission is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
               "tag": "lean:artifacts.graph.failure_blocks_promotion",
               "module": "AsiStackProofs.ArtifactRealityRefinement",
-              "target": "Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress.",
+              "target": "Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress without mutating exact state.",
               "status": "implemented"
             },
             {

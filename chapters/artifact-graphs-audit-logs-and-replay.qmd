@@ -4,7 +4,7 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "talos"
   - "viea"
@@ -28,7 +28,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C records eighteen reviewed claim-source mappings: six local raw-cache sources, MoECOT, three external provenance/metadata/attestation comparators, five historical projects, and three additional harness, recovery, and faithfulness comparators."
-  - "The stronger `ArtifactRealityRefinement` model reaches seven lifecycle stages over thirty-three routes while preserving exact identity and lineage custody. Its independent consumer recomputes eight bounded suites and rejects all fifty-three declared mutations. Fifty live declarations remain across the refinement and legacy modules: fifteen new lifecycle theorems plus thirty-five retained consequences; eight copied summaries or one-step projections were physically retired. These are authored finite-model results, not open-world artifact truth, deployed replay, external independence, or support."
+  - "The stronger `ArtifactRealityRefinement` model now exposes an exact twenty-one-theorem surface over arbitrary finite event runs: thirteen-field identity custody, rejected-event noninterference, batch composition, absorbing admission, and zero support/effect authority. Its independent consumer recompiles that surface, recomputes eight bounded suites, and rejects all fifty-three declared mutations. Fifty-six live theorems remain across the refinement and legacy modules: twenty-one refinement theorems plus thirty-five retained consequences; eight copied summaries or one-step projections were physically retired. These are authored finite-model results, not open-world artifact truth, deployed replay, external independence, or support."
   - "No natural multi-repository artifact campaign, independent provenance observer, deployed reverse-closure runtime, privacy/deletion closure, causal ablation, clean reproduction, or heterogeneous transfer result exists; no support-state promotion is implied by this semantic sweep."
 ---
 
@@ -40,13 +40,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-08-02 |
 | Primary source records | eighteen reviewed mappings: seven architecture/runtime sources, three provenance/metadata/attestation comparators, five historical projects, and three additional harness/recovery/faithfulness comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting and historical: sixteen additional assigned comparators and project lineages |
 | Source loading state | all eighteen mappings reviewed at bounded local-cache, source-note, or primary-paper-note scope; none supplies local deployment evidence |
-| Test state | `AsiStackProofs.ArtifactRealityRefinement` models seven reachable stages and thirty-three routes with exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, consumer, and event custody. `python3 scripts/validate_artifact_reality_refinement.py` independently recomputes eight exact suites: artifact replay 2/6, record reality 1/4, receipt faithfulness 3/6, repository audit 4/5, repository challenge 4/5, live attestation 1/7, randomized attestation 4/8, and epistemic TCB 3/6; it rejects 53/53 mutations. Fifty declarations remain live across `ArtifactRealityRefinement` and `ArtifactGraph`: fifteen new refinement theorems and thirty-five retained consequences; eight weak summaries or projections were retired. No open-world provenance, deployed replay/revocation/attestation, independent reproduction, or support-state claim follows. |
+| Test state | `AsiStackProofs.ArtifactRealityRefinement` exposes twenty-one theorems over arbitrary finite runs: exact thirteen-field identity custody, rejected-event noninterference, batch composition, absorbing admission, and zero support/effect authority. `python3 scripts/validate_artifact_reality_refinement.py` recompiles that exact surface and independently recomputes eight suites: artifact replay 2/6, record reality 1/4, receipt faithfulness 3/6, repository audit 4/5, repository challenge 4/5, live attestation 1/7, randomized attestation 4/8, and epistemic TCB 3/6; it rejects 53/53 mutations across thirty-three routes and seven stages. Fifty-six theorems remain live across `ArtifactRealityRefinement` and `ArtifactGraph`: twenty-one refinement theorems and thirty-five retained consequences; eight weak summaries or projections were retired. No open-world provenance, deployed replay/revocation/attestation, independent reproduction, or support-state claim follows. |
 
 ## Drafting guardrail
 
@@ -54,8 +54,8 @@ Artifacts are provenance-bearing work products, not automatic evidence. All
 eighteen assigned mappings have been reviewed at their exact local-cache,
 source-note, or primary-paper-note scope. The repository exercises authored
 schemas and fixtures, selected current and historical repository observations,
-service-status records, and fifty finite Lean declarations under ten public
-targets. Fifteen declarations define the reachable refinement and its
+service-status records, and fifty-six finite Lean theorems under ten public
+targets. Twenty-one theorems define the reachable refinement and its
 countermodels; thirty-five narrower legacy consequences remain; eight copied
 fixture summaries or one-step projections were retired. It has not run a
 deployed artifact graph, complete event
@@ -848,8 +848,8 @@ observation routes and seven mutations; four sampled artifacts with twelve
 accepted observation routes and eight mutations; 3 valid and 6 rejecting
 epistemic-TCB records; one historical GitHub Actions service record; one
 historical public-page fetch record; eight accepted no-promotion decisions;
-and fifty live Lean declarations under ten public targets. The fifty comprise
-fifteen reachable-lifecycle declarations and thirty-five retained legacy
+and fifty-six live Lean theorems under ten public targets. The fifty-six comprise
+twenty-one reachable-lifecycle theorems and thirty-five retained legacy
 consequences; eight weaker declarations were retired.
 
 Those artifacts establish authored record shape, finite consequences, selected
@@ -866,6 +866,9 @@ The mined-project minimum adds `schemas/artifact_projection_revocation_record.sc
 summaries into one reachable lifecycle: registration, provenance binding,
 replay validation, reality cross-check, trust binding, and consumer-acknowledged
 admission. Exact artifact and lineage identities persist through all stages.
+The same thirteen-field identity projection persists over every finite event
+list; rejected events preserve the exact state, event batches compose, and an
+admitted state absorbs every suffix without gaining support or effect authority.
 Progress stops when provenance, replay, observation, independent cross-check,
 trap, attestation-limit, trust-root, verifier-separation, recursion-stop,
 outside-TCB residual, revocation-closure, or consumer obligations fail.
@@ -955,7 +958,7 @@ rights regime, environment, horizon, metrics, and residuals that were tested.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Artifact record-reality and trust refinement | Recompute a reachable seven-stage lifecycle with exact custody, replay, independent observation, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, and consumer-acknowledgment gates; preserve all eight bounded suites and reject every declared mutation. | implemented by `python3 scripts/validate_artifact_reality_refinement.py`; 33 routes, 53/53 mutations rejected, support-state effect none; finite authored model only |
+| Artifact record-reality and trust refinement | Recompile the exact twenty-one-theorem surface; recompute a reachable seven-stage lifecycle and arbitrary finite runs with exact custody, rejection noninterference, batch composition, absorbing admission, replay, independent observation, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, and consumer-acknowledgment gates; preserve all eight bounded suites and reject every declared mutation. | implemented by `python3 scripts/validate_artifact_reality_refinement.py`; 21 theorems, 33 routes, 53/53 mutations rejected, support-state effect none; finite authored model only |
 | Artifact graph fixture validation | Check that the artifact fixture matches the public schema and declares parent job, source/context/context-transaction/semantic-certificate/tool/claim/test refs, audit events, replay metadata, replay grade, environment assumptions, provenance status, replay limits, evidence gate, residuals, and non-claims. | implemented by protocol validation; validated locally |
 | Projection/revocation closure harness | Check one blocked five-project lineage record and reject stale projections, incomplete or unknown reverse closure, replay-grade inflation, terminal async state without receipt, path authority, relocation mismatch, unverified relocation, and support review from playback/unresolved completion. | implemented by `python3 scripts/validate_artifact_projection_revocation.py`; record semantics only; no runtime revocation, replay, portability, or support-state promotion |
 | Artifact traceability predicate and missing-ref negative case | Check that produced artifact records expose parent job and source/context references and that a produced artifact missing those refs cannot satisfy the traceability predicate. | implemented in `AsiStackProofs.ArtifactGraph`; checked by Lean build |
@@ -980,8 +983,8 @@ Fixture-shape validation, bounded Lean theorem declarations over finite provenan
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactRealityRefinement` | A reachable artifact lifecycle preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody from registration through consumer-acknowledged admission without assigning support or external effects. | implemented |
-| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactRealityRefinement` | Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress. | implemented |
+| `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactRealityRefinement` | Every finite artifact lifecycle run preserves exact artifact, content, parent-job, source, context, transaction, certificate, tool, claim, test, policy, and consumer custody; rejected events preserve exact state, batches compose, admission is absorbing, and support or external effects remain unassigned. | implemented |
+| `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactRealityRefinement` | Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block lifecycle progress without mutating exact state. | implemented |
 | `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The refinement preserves exact replay-packet custody and requires replay metadata, sufficient grade, limits, active certificates, and replay validation before reality review. | implemented |
 | `lean:artifacts.graph.record_reality_sequence_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact one-valid/four-invalid stale/partial/fresh record-reality sequence without assigning support. | implemented |
 | `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact three-valid/six-invalid receipt-faithfulness suite while requiring observation, independent cross-checks, trap challenges, and bounded attestation. | implemented |
@@ -991,7 +994,7 @@ Fixture-shape validation, bounded Lean theorem declarations over finite provenan
 | `lean:artifacts.graph.randomized_attestation_audit_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the four-artifact randomized attestation with twelve accepted observation routes and eight mutations without generalizing beyond the sample. | implemented |
 | `lean:artifacts.graph.epistemic_tcb_fixture_bridge` | `AsiStackProofs.ArtifactRealityRefinement` | The independent consumer preserves the exact three-valid/six-invalid epistemic-TCB suite while requiring a bounded trusted core, roots, verifier separation, recursion stop, and outside-TCB residuals. | implemented |
 
-The fifty live declarations divide into fifteen refinement declarations and
+The fifty-six live theorems divide into twenty-one refinement theorems and
 thirty-five retained consequences. Eight weaker declarations were physically
 retired because they merely projected a field or normalized an authored fixture
 summary. None refines a deployed artifact store, event collector, provenance

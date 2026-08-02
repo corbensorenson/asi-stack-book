@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -41,10 +42,67 @@ NEXT_STAGE = {
     "provenance_bound": "replay_validated", "replay_validated": "reality_cross_checked",
     "reality_cross_checked": "trust_bound", "trust_bound": "admitted", "admitted": "admitted",
 }
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_artifact_and_lineage_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "rejected_event_preserves_exact_state",
+    "run_events_preserve_exact_identity",
+    "run_events_cannot_assign_support_or_external_effect",
+    "run_events_compose",
+    "admitted_event_is_rejected",
+    "admitted_state_is_absorbing",
+    "produced_artifact_requires_parent_job",
+    "provenance_requires_transaction_and_certificate_links",
+    "provenance_requires_audit_trail",
+    "stale_certificate_blocks_replay_validation",
+    "incomplete_replay_blocks_reality_review",
+    "reality_review_requires_observed_artifact",
+    "reality_review_requires_independent_cross_check",
+    "attestation_must_preserve_limits",
+    "trust_binding_rejects_self_verifier_laundering",
+    "trust_binding_requires_recursion_stop",
+    "admission_requires_revocation_closure",
+    "full_artifact_reality_lifecycle_reaches_admission",
+}
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise AssertionError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/ArtifactRealityRefinement.lean"]
+    completed = subprocess.run(
+        command, cwd=ROOT / "lean", capture_output=True, text=True
+    )
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_identity_custody": True,
+        "arbitrary_run_no_support_or_external_effect": True,
+        "exact_rejection_noninterference": True,
+        "exact_run_composition": True,
+        "terminal_state_absorbing": True,
+    }
 
 
 def packet(event_digest: int = 1, **updates: Any) -> dict[str, Any]:
@@ -273,7 +331,8 @@ def build_result() -> dict[str, Any]:
     if final_route != "accept_admission" or final["stage"] != "admitted": raise AssertionError("canonical lifecycle failed")
     return {
         "schema_version": "asi_stack.artifact_reality_refinement.v1", "result_id": "artifact-reality-refinement-2026-07-15-local",
-        "source_sha256": {"lean_model": sha256(LEAN)}, "input_suites": suite_rows,
+        "source_sha256": {"lean_model": sha256(LEAN)}, "formal_surface": formal_surface(),
+        "input_suites": suite_rows,
         "reachable_stage_count": 7, "route_case_count": len(coverage), "route_coverage": coverage,
         "mutation_count": len(receipts), "mutation_rejection_count": len(receipts), "mutation_receipts": receipts,
         "final_state": {k: final[k] for k in ("stage", "receipt_count", "reality_observation_count", "support_assignment_count", "external_effect_count")},
@@ -296,7 +355,11 @@ def main() -> None:
         RESULT.parent.mkdir(parents=True, exist_ok=True); RESULT.write_text(json.dumps(result, indent=2) + "\n")
     elif not RESULT.exists() or json.loads(RESULT.read_text()) != result:
         raise SystemExit(f"{RESULT.relative_to(ROOT)} is missing or stale; rerun with --write")
-    print(f"Artifact-reality refinement passed: eight exact suites, 33 routes, 7 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
+    print(
+        "Artifact-reality refinement passed: eight exact suites, 33 routes, 7 stages, "
+        f"{result['mutation_rejection_count']} mutations rejected, "
+        f"{result['formal_surface']['theorem_count']} Lean theorems, support effect none."
+    )
 
 
 if __name__ == "__main__": main()
