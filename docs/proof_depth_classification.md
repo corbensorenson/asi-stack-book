@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2465 |
-| Direct/projection-style theorem declarations | 415 |
-| Derived/decomposed theorem declarations | 1494 |
-| Unknown or mixed theorem declarations | 556 |
+| Theorem declarations classified | 2493 |
+| Direct/projection-style theorem declarations | 419 |
+| Derived/decomposed theorem declarations | 1517 |
+| Unknown or mixed theorem declarations | 557 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -181,7 +181,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 35 | 5 | 26 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
-| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 8 | 0 | 4 | 4 | manual review |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 36 | 4 | 27 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 
 ## Theorem Classification
 
@@ -2644,13 +2644,41 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `tainted_materialization_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `undeclared_omission_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `version_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_causal_policy_route_requires_crosscheck_intervention_and_reviewer` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_consumption_requires_complete_receipts` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_consumption_requires_zero_residual` | derived_or_decomposed | no | uses have, rcases, rw, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_authority_nonincreasing` | derived_or_decomposed | no | uses rw, split, unfold |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_cannot_request_external_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_cannot_request_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_preserves_external_effect_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_preserves_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_governance_step_preserves_support_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_policy_route_never_grants_widening` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_policy_route_requires_admissible_packet` | derived_or_decomposed | no | uses calc, have, rcases, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_policy_route_requires_fresh_lineage` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_policy_route_requires_method_assumptions` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_policy_route_requires_negative_controls` | derived_or_decomposed | no | uses cases, have, simp |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `admitted_causal_packet_records_crosscheck_intervention_and_evaluator` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `apply_governance_event_preserves_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `bounded_causal_fixture_preserves_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `changed_fixture_expires` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `evidence_never_grants_authority` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `governance_reference_trace_reaches_consumed` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `governance_run_append` | derived_or_decomposed | no | uses cases, have, induction, left, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `governance_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `governance_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `invalid_packet_rejected` | derived_or_decomposed | no | uses have, rcases, simp, unfold |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `material_change_expires_admissible_packet` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `missing_assumptions_governance_state_cannot_route` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `missing_negative_controls_governance_state_cannot_route` | derived_or_decomposed | no | uses cases, have, simp |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `stale_fixture_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `stale_governance_state_cannot_route` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `successful_governance_run_authority_nonincreasing` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `successful_governance_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `successful_governance_run_preserves_external_effect_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `successful_governance_run_preserves_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `successful_governance_run_preserves_support_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `unsupported_governance_state_cannot_route` | derived_or_decomposed | no | uses cases, have, simp |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `widening_fixture_escalates_without_grant` | unknown_or_mixed | no | no recognized depth pattern |
 
 ## Validation Errors

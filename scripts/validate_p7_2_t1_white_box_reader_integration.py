@@ -71,10 +71,10 @@ def errors(data: dict[str, Any]) -> list[str]:
     targets = [row for row in data["manifest"].get("records", []) if row.get("module") == "AsiStackProofs.WhiteBoxEvidence"]
     if len(targets) != 2 or any(row.get("status") != "implemented" for row in targets):
         out.append("white-box public proof targets are not both implemented")
-    if audit["formalization"].get("public_target_count") != 2 or audit["formalization"].get("implemented_target_count") != 2 or audit["formalization"].get("theorem_declaration_count") != 8:
+    if audit["formalization"].get("public_target_count") != 2 or audit["formalization"].get("implemented_target_count") != 2 or audit["formalization"].get("theorem_declaration_count") != 36:
         out.append("audited formal denominator drifted")
     lean_text = (ROOT / audit["formalization"]["module_path"]).read_text(encoding="utf-8")
-    if len(re.findall(r"(?m)^theorem ", lean_text)) != 8:
+    if len(re.findall(r"(?m)^theorem ", lean_text)) != 36:
         out.append("white-box theorem denominator drifted")
     if CHAPTER_ID not in data["roles"]["chapter_roles"].get("load-bearing-reference", []):
         out.append("reader-role classification drifted")
@@ -162,7 +162,7 @@ def main() -> None:
         raise SystemExit("P7.2-T1 reader integration failed:\n - " + "\n - ".join(failures))
     print(
         "P7.2-T1 reader integration passed: 1 terminal argument-level chapter, 14 source "
-        "mappings, 2 implemented public proof targets, 8 theorem declarations, 2 method "
+        "mappings, 2 implemented public proof targets, 36 theorem declarations, 2 method "
         "families, 7 competence gates, protected outcomes closed, 12 integration mutations "
         "rejected; support effect none."
     )

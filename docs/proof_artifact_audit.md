@@ -126,7 +126,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 38 | 0 | 19 | 6 |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 35 | 0 | 25 | 4 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 17 | 0 | 16 | 2 |
-| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 8 | 0 | 6 | 1 |
+| `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 36 | 0 | 18 | 3 |
 
 ## Chapter Coverage
 

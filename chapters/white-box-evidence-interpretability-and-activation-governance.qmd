@@ -4,7 +4,7 @@ chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
-last_updated: "2026-07-26"
+last_updated: "2026-08-02"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -21,7 +21,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The chapter has an implemented packet contract, finite non-authority model, and protocol-ready resource-isolated empirical lane, but no white-box method has been run in this repository."
+  - "The chapter has an implemented packet contract, a 36-theorem finite governance transaction, an independently simulated six-event lifecycle with 51 rejecting mutations, and a protocol-ready resource-isolated empirical lane, but no white-box method has been run in this repository."
   - "No feature, circuit, causal intervention, activation policy, cross-checkpoint stability, or safety-relevant prediction has been locally reproduced."
   - "Argument exit requires a competent multi-method campaign with behavioral baselines, positive controls, causal interventions, held-out prediction, coverage and side-effect accounting, independent evaluation, and a claim-specific transition."
 ---
@@ -34,12 +34,12 @@ open_evidence_gaps:
 | Part | Part IV — Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.5 source-role and method-comparison integrated reader chapter |
-| Last updated | 2026-07-26 |
+| Last updated | 2026-08-02 |
 | Primary source records | Four Corben architecture sources plus ten external method, challenge, and measurement comparators; see the source crosswalk below. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All fourteen assigned records have inventory entries and source notes; external results remain source-reported. |
-| Test state | The packet schema, record-shape fixture, independent semantic validator, twelve negative mutations, and two public Lean targets are implemented. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
+| Test state | The packet schema, record-shape fixture, independent semantic validator, twelve packet/protocol mutations, a 36-theorem Lean surface, and an independently simulated six-event lifecycle with 51/51 rejected mutations are implemented under two public targets. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
 
 ## Drafting guardrail
 
@@ -598,16 +598,20 @@ proof theater.
 
 The implemented target
 `lean:white_box.evidence_never_grants_authority` owns the finite
-non-escalation route: a packet may preserve, restrict, escalate, or reject, but
-cannot grant execution or release authority. The companion target
-`lean:white_box.invalid_packet_rejected` owns rejection of stale lineage,
-missing method assumptions, absent negative controls, and unsupported causal
-states. `AsiStackProofs.WhiteBoxEvidence` also checks that an admitted bounded
-causal packet records a behavioral cross-check, an intervention, and a separate
-evaluator, and that material change expires an otherwise admissible packet.
-These are record and workflow properties: eight checked theorem declarations
-cannot establish scientific interpretation, completeness, intervention safety,
-or evaluator truth.
+non-escalation route and the reachable transaction around it. Arbitrary
+successful runs preserve exact packet, model, checkpoint, method, population,
+and version identity; active authority never increases; support and external-
+effect authority never appear; traces remain valid; and event batches compose.
+The companion target `lean:white_box.invalid_packet_rejected` owns packet
+admission, bounded-causal checks, independent review, policy routing, and
+receipt-complete zero-residual consumption. Stale lineage, missing assumptions,
+absent negative controls, and unsupported causal state cannot reach policy
+routing. `scripts/validate_white_box_evidence_contract.py` independently
+reconstructs the six-event lifecycle and rejects 51 identity, receipt, stage,
+time, authority, route, residual, support, effect, and packet-boundary
+mutations. These are authored record and workflow properties: 36 checked
+theorem declarations cannot establish scientific interpretation, completeness,
+intervention safety, evaluator truth, or cross-model transfer.
 
 ## Competent argument-exit campaign
 

@@ -6204,7 +6204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2465 theorem declarations, 1494 derived/decomposed, 415 direct/projection, 556 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2493 theorem declarations, 1517 derived/decomposed, 419 direct/projection, 557 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6455,10 +6455,14 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- Implemented record contract: `schemas/white_box_evidence_packet.schema.json`,
-  one explicitly expired record-shape fixture, the independently implemented
-  `scripts/validate_white_box_evidence_contract.py`, and twelve semantic
-  mutations. This validates custody and non-authority only; no model-internal
+- Implemented record and transaction contract:
+  `schemas/white_box_evidence_packet.schema.json`, one explicitly expired
+  record-shape fixture, a 36-theorem finite governance transaction, and the
+  independently implemented `scripts/validate_white_box_evidence_contract.py`.
+  The consumer reconstructs a six-event packet-to-consumption lifecycle and
+  rejects 51 identity, receipt, stage, time, packet, route, authority, residual,
+  support, and effect mutations alongside twelve packet/protocol mutations.
+  This validates authored custody and non-authority only; no model-internal
   result or support movement exists.
 - Protocol-ready empirical lane:
   `experiments/white_box_argument_exit/preregistration.json` freezes two
@@ -6485,8 +6489,14 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:white_box.evidence_never_grants_authority` | `AsiStackProofs.WhiteBoxEvidence` | In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject. | implemented |
-| `lean:white_box.invalid_packet_rejected` | `AsiStackProofs.WhiteBoxEvidence` | Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use. | implemented |
+| `lean:white_box.evidence_never_grants_authority` | `AsiStackProofs.WhiteBoxEvidence` | Every successful finite governance run preserves exact packet/model/checkpoint/method/population/version identity, never increases active authority, never gains support or external-effect authority, has a valid trace, composes across event batches, and cannot route to an authority-widening grant. | implemented |
+| `lean:white_box.invalid_packet_rejected` | `AsiStackProofs.WhiteBoxEvidence` | Policy routing requires an admissible current packet with fresh lineage, method assumptions, negative controls, and bounded-causal checks; consumption requires complete receipts and zero residuals, while stale or incomplete packets cannot route. | implemented |
+
+Proof boundary: the two public targets group 36 theorem declarations. The
+reachable model proves only an authored six-event packet-governance transaction
+and its finite rejection boundaries; it does not prove feature semantics,
+causal faithfulness, evaluator competence, intervention safety, completeness,
+behavioral utility, reproduction, transfer, support, or ASI.
 
 ### Capability Thresholds and Deployment Commitments
 

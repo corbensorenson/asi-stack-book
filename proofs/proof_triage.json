@@ -2494,21 +2494,21 @@
       "tag": "lean:white_box.evidence_never_grants_authority",
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "module": "AsiStackProofs.WhiteBoxEvidence",
-      "formal_target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
+      "formal_target": "Every successful finite governance run preserves exact packet/model/checkpoint/method/population/version identity, never increases active authority, never gains support or external-effect authority, has a valid trace, composes across event batches, and cannot route to an authority-widening grant.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Prove non-escalation over an explicit evidence-policy route without asserting that any feature, label, circuit, causal intervention, completeness estimate, evaluator, or packet premise is scientifically valid."
+      "rationale": "The 36-theorem reachable transaction and independent six-event/51-mutation consumer prove finite identity, authority, trace, composition, receipt, and non-authority properties without asserting that any feature, circuit, intervention, evaluator, or packet premise is scientifically valid."
     },
     {
       "tag": "lean:white_box.invalid_packet_rejected",
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "module": "AsiStackProofs.WhiteBoxEvidence",
-      "formal_target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
+      "formal_target": "Policy routing requires an admissible current packet with fresh lineage, method assumptions, negative controls, and bounded-causal checks; consumption requires complete receipts and zero residuals, while stale or incomplete packets cannot route.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Encode the enumerated packet-admission defects and their rejecting consequence. The proof cannot establish mechanistic truth, completeness, method independence, negative-control adequacy, behavioral safety, or cross-architecture transfer."
+      "rationale": "The 36-theorem reachable transaction and independent six-event/51-mutation consumer encode exact packet admission, independent review, policy routing, receipt-complete consumption, and rejecting defects. They cannot establish mechanistic truth, completeness, method independence, negative-control adequacy, behavioral safety, or cross-architecture transfer."
     },
     {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",

@@ -22537,7 +22537,7 @@
             "interpretability theater",
             "evidence-to-authority escalation"
           ],
-          "minimal_implementation": "The implemented minimum is a strict internal-evidence packet schema, one explicitly expired record-shape fixture, a separately implemented semantic consumer with twelve rejecting mutations, and a finite Lean route that rejects scientifically incomplete packets, expires changed packets, and cannot grant authority. The claim-bearing campaign is prospectively frozen and resource-isolated but unexecuted; it requires one digest-bound open model, two independently owned methods, a tuned behavioral baseline, positive and negative controls, causal interventions, stability and residual accounting, an independent evaluator, and a one-time held-out opening after seven competence gates.",
+          "minimal_implementation": "The implemented minimum is a strict internal-evidence packet schema, one explicitly expired record-shape fixture, a separately implemented semantic consumer with twelve packet/protocol mutations, and a 36-theorem finite governance transaction. Its independent six-event consumer rejects 51 identity, receipt, stage, time, packet, route, authority, residual, support, and effect mutations while preserving exact identity and non-increasing authority. The claim-bearing campaign is prospectively frozen and resource-isolated but unexecuted; it requires one digest-bound open model, two independently owned methods, a tuned behavioral baseline, positive and negative controls, causal interventions, stability and residual accounting, an independent evaluator, and a one-time held-out opening after seven competence gates.",
           "beyond_state_of_art": "The mature operational contract is a substrate-aware white-box evidence layer that estimates causal coverage, instability, method disagreement, and unexplained residual across model families while preserving exact checkpoint, data, intervention, and evaluator lineage. It predicts behaviorally relevant changes before deployment, expires after material model changes, and can restrict but never widen authority. Maturity requires independently implemented methods, held-out negative controls, causal interventions, blinded adjudication, independent reproduction, and transfer to heterogeneous architectures; even then, the product surface must not claim complete, unique, or faithful mechanistic understanding.",
           "codex_tests": [
             {
@@ -22556,7 +22556,7 @@
               "name": "Governance non-authority mutation test",
               "purpose": "Verify that forged, stale, incomplete, or favorable interpretability packets cannot widen capability or release authority.",
               "implementation_status": "implemented",
-              "result_status": "12_of_12_semantic_mutations_rejected_support_effect_none"
+              "result_status": "36 Lean theorems; six-event independent lifecycle; 51/51 lifecycle mutations and 12/12 packet/protocol mutations rejected; support/effect authority none"
             }
           ],
           "lean_module": "AsiStackProofs.WhiteBoxEvidence",
@@ -22564,13 +22564,13 @@
             {
               "tag": "lean:white_box.evidence_never_grants_authority",
               "module": "AsiStackProofs.WhiteBoxEvidence",
-              "target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
+              "target": "Every successful finite governance run preserves exact packet/model/checkpoint/method/population/version identity, never increases active authority, never gains support or external-effect authority, has a valid trace, composes across event batches, and cannot route to an authority-widening grant.",
               "status": "implemented"
             },
             {
               "tag": "lean:white_box.invalid_packet_rejected",
               "module": "AsiStackProofs.WhiteBoxEvidence",
-              "target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
+              "target": "Policy routing requires an admissible current packet with fresh lineage, method assumptions, negative controls, and bounded-causal checks; consumption requires complete receipts and zero residuals, while stale or incomplete packets cannot route.",
               "status": "implemented"
             }
           ],

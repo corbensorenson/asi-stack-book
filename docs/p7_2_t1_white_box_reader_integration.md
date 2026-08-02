@@ -30,11 +30,14 @@ owners and make evidence-to-authority laundering harder to detect.
   expiry custody.
 - `white_box_evidence_packet.valid.json` is deliberately an expired
   record-shape fixture. It is not a model result.
-- `AsiStackProofs.WhiteBoxEvidence` implements both planned public targets and
-  eight finite theorem declarations. The route can reject, expire, preserve,
+- `AsiStackProofs.WhiteBoxEvidence` implements both public targets through 36
+  finite theorem declarations. A reachable six-event transaction preserves
+  exact packet identity, non-increasing authority, trace composition, receipts,
+  and zero support/effect authority; the route can reject, expire, preserve,
   restrict, or escalate, but never grant widening.
 - `scripts/validate_white_box_evidence_contract.py` independently checks the
-  record, protocol, Lean surface, chapter ceiling, and twelve mutations.
+  record, protocol, exact Lean surface, chapter ceiling, twelve packet/protocol
+  mutations, and 51 lifecycle mutations.
 
 ## Claim-bearing lane
 
