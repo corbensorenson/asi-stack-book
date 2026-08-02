@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 1916 |
-| Direct/projection-style theorem declarations | 390 |
-| Derived/decomposed theorem declarations | 1134 |
-| Unknown or mixed theorem declarations | 392 |
+| Theorem declarations classified | 1958 |
+| Direct/projection-style theorem declarations | 404 |
+| Derived/decomposed theorem declarations | 1153 |
+| Unknown or mixed theorem declarations | 401 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -123,7 +123,6 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -147,6 +146,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 42 | 14 | 19 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 37 | 8 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | autonomous-replication-proliferation-and-containment | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1561,6 +1561,48 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_required_governance_gate_blocks_trace` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_residual_deltas_routes_to_residual_preservation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | `trace_missing_validation_command_requires_validation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `active_descendant_blocks_contraction_closure` | derived_or_decomposed | no | uses cases, have, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `authority_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `candidate_budget_overrun_persists_when_generated_count_grows` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `candidate_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `compiler_version_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `complete_dossier_reaches_only_theseus_relational_compiler_study` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `complete_proposal_denominator_covers_every_expected_candidate` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `complete_role_schema_covers_every_required_role` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `descendants_closed_append_iff` | derived_or_decomposed | no | uses cases, constructor, left, right, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `entity_remapping_preserves_role_identity` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `every_candidate_id_survives_collection` | derived_or_decomposed | no | uses cases, induction, right, simp, subst |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `every_role_id_survives_collection` | derived_or_decomposed | no | uses cases, induction, right, simp, subst |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `expired_compiler_contract_remains_expired_when_time_advances` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `fallback_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `identical_qualification_metrics_can_hide_opposite_role_fidelity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `identical_rescue_records_can_hide_opposite_rescue_competence` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `missing_compiler_experiment_blocks_empirical_support_promotion` | derived_or_decomposed | no | uses apply, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `missing_lower_order_rescue_rejects_substrate_consumer` | derived_or_decomposed | no | uses apply |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `omitted_candidate_rejects_complete_proposal_denominator` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `omitted_required_role_rejects_complete_schema` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `proposal_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `qualification_metrics_cannot_recover_role_fidelity` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `qualification_suite_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_compilation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_contraction` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_nonclaim_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_rescues` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `readiness_requires_typing` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `rescue_records_cannot_recover_lower_order_competence` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `rescue_suite_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `role_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `role_schema_change_invalidates_compiler_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | `unqualified_compiler_routes_runtime_to_fallback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_proposal_does_not_commit_effect` | derived_or_decomposed | no | uses cases, rw, simp, split, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_step_preserves_authority` | derived_or_decomposed | no | uses cases, simp, split, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `accepted_step_preserves_checkpoint_digest` | derived_or_decomposed | no | uses cases, simp, split, unfold |

@@ -764,14 +764,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "relational-dimension-compilation-and-polyadic-cognition": {
-        "reviewed_sha256": "ba9f55a9e55a40b12a59788519e119716d7053f95a6076e3768cc32c01ed6649",
-        "reviewed_date": "2026-07-31",
+        "reviewed_sha256": "a47cf574a3f29be4705bc56db72899d1dbc88f63e9d3b5abf8c123a4f9ed14c7",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts keep dimensional typing, role-sensitive IR, residual proposal, complete denominators, lower-order rescue, qualification, compilation, contraction, and vector evaluation semantically distinct",
             "the Corben-authored compiler remains an unimplemented architecture and message passing remains a bounded molecular graph comparator rather than proof of higher-order necessity, irreducibility, natural-task value, or efficient compilation",
             "the chapter preserves role identity, proposal recall uncertainty, matched rescue budgets, unseen topology, conformance limits, descendant invalidation, hardware cost, and argument-only support",
+            "the new Lean model is limited to finite role and candidate custody, entity-remapping invariance, denominator and descendant closure, exact repair, receipt invalidation, and information-loss boundaries; it does not establish irreducibility, usefulness, efficiency, natural-task transfer, bounded primitive arity, safe adaptation, support, or substrate authority",
         ],
         "support_state_effect": "none",
     },

@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 74 |
+| Chapters | 75 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -85,6 +85,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 19 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 20 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 22 | 0 | 0 |
+| `relational-dimension-compilation-and-polyadic-cognition` | 0 | 0 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 13 | 58 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 20 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 49 | 0 | 0 |

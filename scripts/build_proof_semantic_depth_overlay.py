@@ -504,6 +504,65 @@ for theorem_name, rationale in {
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed relational-compiler dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_relational_compiler_study": "The closed dossier reaches only Project Theseus relational-compiler-study eligibility, not substrate adoption, support, or release.",
+    "identical_qualification_metrics_can_hide_opposite_role_fidelity": "Two compiler cases witness opposite role fidelity under identical score, latency, and memory bands.",
+    "identical_rescue_records_can_hide_opposite_rescue_competence": "Two compiler cases witness opposite lower-order competence under identical named-rescue records.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/RelationalDimensionCompiler.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed dossier or information-loss collision witnesses one bounded relational-compiler result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "role_id_collection_append_composes": "Structural induction proves role-identity collection composes over finite concatenation.",
+    "every_role_id_survives_collection": "Structural induction proves every member role identity survives finite collection.",
+    "entity_remapping_preserves_role_identity": "Structural induction proves entity remapping leaves the role-identity sequence unchanged.",
+    "complete_role_schema_covers_every_required_role": "A quantified required-role argument derives a typed binding witness.",
+    "omitted_required_role_rejects_complete_schema": "A quantified contradiction rejects role-schema completeness when a required role is omitted.",
+    "candidate_id_collection_append_composes": "Structural induction proves candidate-identity collection composes over finite concatenation.",
+    "every_candidate_id_survives_collection": "Structural induction proves every member candidate identity survives finite collection.",
+    "complete_proposal_denominator_covers_every_expected_candidate": "A quantified expected-candidate argument derives an attempted retained witness.",
+    "omitted_candidate_rejects_complete_proposal_denominator": "A quantified contradiction rejects proposal completeness when an expected candidate is hidden.",
+    "descendants_closed_append_iff": "A two-direction finite-list proof shows descendant closure composes exactly over concatenation.",
+    "active_descendant_blocks_contraction_closure": "A quantified member contradiction rejects contraction closure when one dependent remains active.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 54 compiler-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 54 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 54 mutations into the lifecycle repair state.",
+    "expired_compiler_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired compiler contract.",
+    "candidate_budget_overrun_persists_when_generated_count_grows": "Natural-number order proves generating more candidates cannot close an existing budget overrun.",
+    "proposal_change_invalidates_compiler_receipt": "The proposal-identity conjunct rejects a receipt presented for a changed candidate.",
+    "compiler_version_change_invalidates_compiler_receipt": "The compiler-version conjunct rejects a receipt presented under changed compiler code.",
+    "role_schema_change_invalidates_compiler_receipt": "The role-schema conjunct rejects a receipt presented for changed role semantics.",
+    "rescue_suite_change_invalidates_compiler_receipt": "The rescue-suite conjunct rejects a receipt presented under changed baselines.",
+    "qualification_suite_change_invalidates_compiler_receipt": "The qualification-suite conjunct rejects a receipt presented under changed evaluation.",
+    "fallback_change_invalidates_compiler_receipt": "The fallback conjunct rejects a receipt presented under a changed inverse path.",
+    "authority_change_invalidates_compiler_receipt": "The authority conjunct rejects a receipt presented under changed compiler authority.",
+    "qualification_metrics_cannot_recover_role_fidelity": "A same-metrics/opposite-role collision proves no qualification-metric classifier is exact for every modeled case.",
+    "rescue_records_cannot_recover_lower_order_competence": "A same-record/opposite-competence collision proves no rescue-record classifier is exact for every modeled case.",
+    "missing_lower_order_rescue_rejects_substrate_consumer": "The Search Substrates bridge rejects adoption fields with a missing baseline.",
+    "unqualified_compiler_routes_runtime_to_fallback": "The Routing bridge sends a not-ready compiler route to its executable fallback.",
+    "missing_compiler_experiment_blocks_empirical_support_promotion": "The Evidence States bridge rejects empirical promotion without a compiler-experiment witness.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/RelationalDimensionCompiler.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/relational_dimension_compiler_dossier.json"],
+        "classification_basis": ["a quantified induction, transformation invariant, mutation family, denominator or descendant obligation, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "study_eligibility_requires_admissible_dossier", "readiness_requires_identity",
+    "readiness_requires_typing", "readiness_requires_rescues",
+    "readiness_requires_qualification", "readiness_requires_compilation",
+    "readiness_requires_contraction", "readiness_requires_nonclaim_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/RelationalDimensionCompiler.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a universal finite lifecycle invariant or grouped necessity result constrains authored relational-compiler review state"],
+        "rationale": "The theorem constrains only the encoded compiler review; it establishes no irreducibility, usefulness, efficiency, natural-task transfer, bounded primitive arity, safe adaptation, support, or substrate authority.",
+    }
+
+for theorem_name, rationale in {
     "beats_both_components_requires_human_baseline": "Projection from the two-component predicate preserves the human-baseline obligation.",
     "beats_both_components_requires_ai_baseline": "Projection from the two-component predicate preserves the AI-baseline obligation.",
     "single_purpose_grant_is_exact": "Decidable equality proves the finite purpose grant authorizes exactly its named purpose.",

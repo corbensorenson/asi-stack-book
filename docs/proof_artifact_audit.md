@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 323, "planned": 1} |
-| Triage class counts | {"formal-invariant": 323, "process-contract": 1} |
-| Lean modules referenced | 96 |
+| Manifest status counts | {"implemented": 324} |
+| Triage class counts | {"formal-invariant": 324} |
+| Lean modules referenced | 97 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -103,6 +103,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | 1 | 31 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | 1 | 42 | 0 | 31 | 9 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | 1 | 32 | 0 | 33 | 8 |
@@ -199,7 +200,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
-| `relational-dimension-compilation-and-polyadic-cognition` | 1 | 0 | 0 | 0 |
+| `relational-dimension-compilation-and-polyadic-cognition` | 1 | 1 | 0 | 0 |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 1 | 1 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 11 | 11 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
@@ -406,7 +407,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:moecot.runtime.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:moecot.runtime.failure_blocks_promotion` | `routing-heads-and-specialist-cores` | `AsiStackProofs.RoutingRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_kernel.abi_trace_invariants` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `relational-dimension-compilation-and-polyadic-cognition` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `relational-dimension-compilation-and-polyadic-cognition` | `AsiStackProofs.RelationalDimensionCompiler` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.LearningTheoryForecastReview` | triage ok; module ok; chapter tag ok; limitation ok |

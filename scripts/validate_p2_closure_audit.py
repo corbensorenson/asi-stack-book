@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 323
-CURRENT_PLANNED_TARGET_COUNT = 1
+CURRENT_IMPLEMENTED_TARGET_COUNT = 324
+CURRENT_PLANNED_TARGET_COUNT = 0
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,11 +34,11 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 87,
+    "adequate finite-record invariant": 88,
     "useful but too narrow": 160,
     "needs richer state-machine or review semantics": 18,
     "needs executable tests first": 37,
-    "needs empirical or baseline tests first": 20,
+    "needs empirical or baseline tests first": 19,
     "research-agenda until artifact import": 2,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
@@ -129,6 +129,7 @@ PLANNED_CHAPTERS = (
     "scientific-discovery-and-experimental-governance",
     "ai-deployment-transition-distribution-and-human-agency",
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "relational-dimension-compilation-and-polyadic-cognition",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,
@@ -221,8 +222,12 @@ def current_proof_errors(
         or len(set(manifest_ids)) != CURRENT_PROOF_TARGET_COUNT
         or dict(status_counts)
         != {
-            "implemented": CURRENT_IMPLEMENTED_TARGET_COUNT,
-            "planned": CURRENT_PLANNED_TARGET_COUNT,
+            status: count
+            for status, count in {
+                "implemented": CURRENT_IMPLEMENTED_TARGET_COUNT,
+                "planned": CURRENT_PLANNED_TARGET_COUNT,
+            }.items()
+            if count > 0
         }
         or manifest.get("status_counts") != dict(status_counts)
         or activation_truth.get("proof_target_count") != CURRENT_PROOF_TARGET_COUNT

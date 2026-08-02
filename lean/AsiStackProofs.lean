@@ -89,6 +89,7 @@ import AsiStackProofs.ProofCarryingClaimsRefinement
 import AsiStackProofs.ProceduralMemory
 import AsiStackProofs.ProceduralMemoryRefinement
 import AsiStackProofs.ReplaceableCognitiveSubstrates
+import AsiStackProofs.RelationalDimensionCompiler
 import AsiStackProofs.ReadinessGates
 import AsiStackProofs.ReadinessRefinement
 import AsiStackProofs.ReferenceArchitecture

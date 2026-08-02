@@ -4884,7 +4884,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite relational candidate may hand off only when typed roles, lower-order rescues, proposal denominator, qualification, cost, fallback, descendants, and contraction state are explicit; no theorem proves irreducibility, usefulness, or bounded primitive arity. | planned |
+| `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `AsiStackProofs.RelationalDimensionCompiler` | An eight-step finite relational-compiler review preserves exact proposal, compiler, residual, role-schema, branch, authority, rescue, qualification, compilation, fallback, and contraction boundaries; a complete authored dossier reaches only Project Theseus relational-compiler-study eligibility, while 54 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Role and candidate identity compose over finite append, entity remapping preserves role IDs, omitted required roles and hidden candidates reject completeness, and an active descendant blocks contraction closure. Expiry and candidate-budget overrun remain rejecting under adverse change, while proposal, compiler, role, rescue, qualification, fallback, or authority changes invalidate receipts. Qualification metrics cannot recover role fidelity, and named rescue records cannot recover lower-order rescue competence. No theorem establishes higher-order irreducibility, representational usefulness, efficiency, natural-task transfer, bounded primitive arity, safe online adaptation, support, release, transfer, or external effect. | implemented |
 
 ### Governed Model Training, Distributed Optimization, and Scaling
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1916 theorem declarations, 1134 derived/decomposed, 390 direct/projection, 392 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1958 theorem declarations, 1153 derived/decomposed, 404 direct/projection, 401 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

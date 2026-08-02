@@ -3178,7 +3178,12 @@
     "lean/AsiStackProofs/HumanAICognitiveSovereignty.lean",
     "tests/fixtures/proof_models/human_ai_cognitive_sovereignty_dossier.json",
     "evidence_quality/proof_model_dossiers/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.md",
-    "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd"
+    "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+    "scripts/validate_relational_dimension_compiler.py",
+    "lean/AsiStackProofs/RelationalDimensionCompiler.lean",
+    "tests/fixtures/proof_models/relational_dimension_compiler_dossier.json",
+    "evidence_quality/proof_model_dossiers/relational-dimension-compilation-and-polyadic-cognition.md",
+    "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd"
   ],
   "units": [
     {
@@ -12136,7 +12141,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 323 implemented and 1 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, Durable Semantic Memory Review, Physical Compute Infrastructure Review, Learning Theory Forecast Review, Scientific Experiment Review, Deployment Transition Governance, and Human-AI Cognitive Sovereignty refinements",
+        "324 current targets are implemented with zero planned placeholders, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, Durable Semantic Memory Review, Physical Compute Infrastructure Review, Learning Theory Forecast Review, Scientific Experiment Review, Deployment Transition Governance, Human-AI Cognitive Sovereignty, and Relational Dimension Compiler refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "ten required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -18288,11 +18293,57 @@
       "prohibited_inference": "Does not establish field truth, beneficial symbiosis, genuine consent, mental integrity, cognitive enhancement, clinical efficacy, equity, neural safety, lawful authorization, support, release, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_three_existing_consumers_no_support_effect"
+    },
+    {
+      "id": "validate_relational_dimension_compiler.py:468",
+      "order": 468,
+      "script": "validate_relational_dimension_compiler.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical relational-dimension compiler Lean review, independent 54-axis fixture, chapter proof boundary, dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_relational_dimension_compiler.py",
+        "lean/AsiStackProofs/RelationalDimensionCompiler.lean",
+        "tests/fixtures/proof_models/relational_dimension_compiler_dossier.json",
+        "evidence_quality/proof_model_dossiers/relational-dimension-compilation-and-polyadic-cognition.md",
+        "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, role, candidate, denominator, descendant, monotonicity, receipt, collision, consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "eight-transition review reaches only Project Theseus relational-compiler-study eligibility",
+        "54/54 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "role and candidate identities compose over append and entity remapping preserves role IDs",
+        "omitted required roles and hidden candidates reject completeness",
+        "descendant closure composes over append and an active dependent blocks contraction",
+        "candidate overrun remains rejecting as generated count grows",
+        "proposal, compiler, role, rescue, qualification, fallback, and authority changes invalidate receipts",
+        "qualification metrics cannot recover role fidelity and named rescues cannot recover rescue competence",
+        "substrate, routing, and Evidence States consumers reject missing compiler evidence",
+        "42 exact Lean declarations move no chapter support, substrate adoption, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored relational-compiler review, typed-role and proposal custody, contraction closure, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_54_axis_identity_typing_rescue_qualification_compilation_contraction_boundary_role_candidate_descendant_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "role omission",
+        "candidate omission",
+        "active descendant",
+        "expired contract",
+        "scope drift",
+        "signal collision",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish field truth, higher-order irreducibility, representational usefulness, efficiency, natural-task transfer, bounded primitive arity, safe online adaptation, support, release, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_three_existing_consumers_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3134,
-    "unit_count": 467
+    "required_artifact_count": 3139,
+    "unit_count": 468
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
