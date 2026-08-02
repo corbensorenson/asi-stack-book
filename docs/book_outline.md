@@ -4476,13 +4476,13 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:inter_stack.invalid_credential.blocks_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI. | implemented |
 | `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI. | implemented |
-| `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `AsiStackProofs.InterStackProtocols` | A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution. | implemented |
+| `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `AsiStackProofs.InterStackProtocols` | A complete six-event local exchange lifecycle reaches residual closure, while rejected events preserve exact state and arbitrary runs preserve exchange, protocol, sender, receiver, principal, request, budget, receipt, and authority-ceiling identity with zero support, external-effect, or settlement assignment; this proves no runtime authorization, peer trust, execution, payment, or settlement. | implemented |
 | `lean:inter_stack.missing_sender.requires_identity_repair` | `AsiStackProofs.InterStackProtocols` | Missing sender identity routes to identity repair. | implemented |
 | `lean:inter_stack.audience_mismatch.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | Audience or scope mismatch denies ordinary dispatch. | implemented |
 | `lean:inter_stack.expired_request.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | An expired request denies ordinary dispatch. | implemented |
 | `lean:inter_stack.revoked_credential.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | A verified but no-longer-current required credential denies dispatch. | implemented |
-| `lean:inter_stack.disputed_receipt.requires_review` | `AsiStackProofs.InterStackProtocols` | A disputed expected receipt routes to accountable review. | implemented |
-| `lean:inter_stack.missing_residual_owner.requires_review` | `AsiStackProofs.InterStackProtocols` | Missing residual ownership routes to accountable review. | implemented |
+| `lean:inter_stack.disputed_receipt.requires_review` | `AsiStackProofs.InterStackProtocols` | A disputed receipt without an explicit disposition cannot close the finite exchange lifecycle and routes to accountable review, without establishing receipt truth, dispute resolution, payment, or settlement. | implemented |
+| `lean:inter_stack.missing_residual_owner.requires_review` | `AsiStackProofs.InterStackProtocols` | Missing residual ownership prevents finite exchange closure and routes to accountable review, without establishing residual completeness, recovery quality, payment, or settlement. | implemented |
 
 ### Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk
 
@@ -6184,7 +6184,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2263 theorem declarations, 1323 derived/decomposed, 409 direct/projection, 531 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2279 theorem declarations, 1329 derived/decomposed, 409 direct/projection, 541 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

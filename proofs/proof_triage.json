@@ -1674,11 +1674,11 @@
       "tag": "lean:inter_stack.complete_exchange.reaches_local_dispatch",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution.",
+      "formal_target": "A complete six-event local exchange lifecycle reaches residual closure, while rejected events preserve exact state and arbitrary runs preserve exchange, protocol, sender, receiver, principal, request, budget, receipt, and authority-ceiling identity with zero support, external-effect, or settlement assignment; this proves no runtime authorization, peer trust, execution, payment, or settlement.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite handoff routing only; it does not establish runtime authorization, peer trust, or execution."
+      "rationale": "Implemented as a six-event finite lifecycle with exact rejection noninterference, arbitrary-run identity and authority-ceiling custody, and zero support, external-effect, or settlement assignment. It does not establish runtime authorization, peer trust, execution, payment, or settlement."
     },
     {
       "tag": "lean:inter_stack.missing_sender.requires_identity_repair",
@@ -1724,21 +1724,21 @@
       "tag": "lean:inter_stack.disputed_receipt.requires_review",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "A disputed expected receipt routes to accountable review.",
+      "formal_target": "A disputed receipt without an explicit disposition cannot close the finite exchange lifecycle and routes to accountable review, without establishing receipt truth, dispute resolution, payment, or settlement.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite dispute routing only; it does not establish task truth, receipt correctness, or settlement."
+      "rationale": "Finite dispute routing and closure gating only; it does not establish task truth, receipt correctness, dispute resolution, payment, or settlement."
     },
     {
       "tag": "lean:inter_stack.missing_residual_owner.requires_review",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "Missing residual ownership routes to accountable review.",
+      "formal_target": "Missing residual ownership prevents finite exchange closure and routes to accountable review, without establishing residual completeness, recovery quality, payment, or settlement.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Finite custody routing only; it does not establish residual completeness or recovery quality."
+      "rationale": "Finite custody routing and closure gating only; it does not establish residual completeness, recovery quality, payment, or settlement."
     },
     {
       "tag": "lean:multi_agent.pairwise_validity_no_systemic_promotion",

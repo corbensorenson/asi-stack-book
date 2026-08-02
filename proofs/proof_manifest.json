@@ -1787,7 +1787,7 @@
       "chapter_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "tag": "lean:inter_stack.complete_exchange.reaches_local_dispatch",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution.",
+      "formal_target": "A complete six-event local exchange lifecycle reaches residual closure, while rejected events preserve exact state and arbitrary runs preserve exchange, protocol, sender, receiver, principal, request, budget, receipt, and authority-ceiling identity with zero support, external-effect, or settlement assignment; this proves no runtime authorization, peer trust, execution, payment, or settlement.",
       "status": "implemented",
       "outline_line": 4479,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
@@ -1837,7 +1837,7 @@
       "chapter_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "tag": "lean:inter_stack.disputed_receipt.requires_review",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "A disputed expected receipt routes to accountable review.",
+      "formal_target": "A disputed receipt without an explicit disposition cannot close the finite exchange lifecycle and routes to accountable review, without establishing receipt truth, dispute resolution, payment, or settlement.",
       "status": "implemented",
       "outline_line": 4484,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
@@ -1847,7 +1847,7 @@
       "chapter_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "tag": "lean:inter_stack.missing_residual_owner.requires_review",
       "module": "AsiStackProofs.InterStackProtocols",
-      "formal_target": "Missing residual ownership routes to accountable review.",
+      "formal_target": "Missing residual ownership prevents finite exchange closure and routes to accountable review, without establishing residual completeness, recovery quality, payment, or settlement.",
       "status": "implemented",
       "outline_line": 4485,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"

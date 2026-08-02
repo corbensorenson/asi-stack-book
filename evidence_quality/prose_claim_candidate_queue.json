@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3873,
+    "candidate_count": 3874,
     "review_state_counts": {
-      "duplicate_of_atom": 1844,
+      "duplicate_of_atom": 1845,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -37174,9 +37174,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.506e60800ee3",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:658",
+      "sentence": "ceiling, and cannot assign support, external effects, or settlement.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The line-wrapped authority-ceiling and non-authority statement is already governed by the structured minimum atom, formal targets, and chapter non-claims.",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.minimum.001"
+    },
+    {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.293e17a48ad0",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:656",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:664",
       "sentence": "It does not prove that any",
       "cues": [
         "prove"
@@ -37195,7 +37214,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.42d43e88b43e",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:708",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:717",
       "sentence": "The present proof establishes nine finite route consequences.",
       "cues": [
         "establishes"
@@ -37214,7 +37233,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.9e49930bc96a",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:709",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:718",
       "sentence": "claim of useful, secure, private, economically correct interoperability requires",
       "cues": [
         "requires"
@@ -37233,7 +37252,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.6bd213c8e73e",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:711",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:720",
       "sentence": "independent-reproduction, and transfer campaign described above.",
       "cues": [
         "transfer"

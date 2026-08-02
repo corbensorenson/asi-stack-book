@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2263 |
+| Theorem declarations classified | 2279 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1323 |
-| Unknown or mixed theorem declarations | 531 |
+| Derived/decomposed theorem declarations | 1329 |
+| Unknown or mixed theorem declarations | 541 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -115,7 +115,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 25 | 1 | 12 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 25 | 0 | 15 | 10 | manual review |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | learning-theory-generalization-and-scaling-science | 1 | 38 | 17 | 16 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
@@ -1267,14 +1267,30 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | `missing_verification_plan_routes_to_verification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `required_approval_missing_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `audience_mismatch_denies_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `complete_exchange_lifecycle_closes_without_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `complete_exchange_reaches_local_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `disputed_receipt_requires_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `exchange_event_cannot_assign_support_effect_or_settlement` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `exchange_event_preserves_exact_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `expired_request_denies_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `invalid_credential_blocks_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_authority_laundering_blocks_exchange` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_expired_delegation_blocks_exchange` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_invalid_credential_blocks_exchange` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_missing_budget_blocks_value_exchange` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_missing_expected_receipt_blocks_dispatch` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_missing_observed_receipt_blocks_receipt` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_missing_residual_owner_blocks_closure` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_missing_sender_blocks_identity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `lifecycle_undispositioned_dispute_blocks_closure` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_reserved_budget_blocks_economic_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_residual_owner_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_sender_requires_identity_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `rejected_exchange_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | `revoked_credential_denies_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `run_exchange_composes` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `run_exchange_preserves_identity` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `run_exchange_preserves_non_authority` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `absence_of_deception_overclaim_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |

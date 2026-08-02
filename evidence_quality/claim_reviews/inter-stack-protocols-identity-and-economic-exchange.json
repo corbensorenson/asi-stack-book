@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
     "structured_atoms_reviewed": 80,
-    "prose_candidates_adjudicated": 48,
+    "prose_candidates_adjudicated": 49,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all ten bounded source mappings, the nine-record fixture and eleven rejecting mutations, all nine Lean declarations, every manifest atom, every prose candidate, the test plan, crosswalk, summary, and handoff. The sweep made versioned cross-stack exchange identity, delegation, privacy obligation, economic-state separation, dispute, revocation, and residual custody the distinct owner; preserved local effect, intent, organization, security, context, artifact, evidence, resource, rights, federation, adjudication, readiness, and release owners; expanded the lifecycle to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified all nine theorems as finite route or negative-control consequences with zero predicate-projection or authored-summary bridges; specified matched natural baselines, joint usefulness and governance metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero core support effect."
+    "review_note": "Reviewed the complete chapter, all ten bounded source mappings, the nine-record fixture and eleven rejecting mutations, all 25 Lean declarations, every manifest atom, every prose candidate, the test plan, crosswalk, summary, and handoff. The sweep made versioned cross-stack exchange identity, delegation, privacy obligation, economic-state separation, dispute, revocation, and residual custody the distinct owner; preserved local effect, intent, organization, security, context, artifact, evidence, resource, rights, federation, adjudication, readiness, and release owners; expanded the lifecycle to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; classified the formal surface as finite route, transition, induction, composition, witness, or negative-control consequences; specified matched natural baselines, joint usefulness and governance metrics, causal ablations, independent reproduction, and heterogeneous transfer; and preserved zero core support effect."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Natural and adversarial public-safe cross-stack tool, agent-task, artifact, identity, credential, delegation, and value-bearing exchanges under explicit principals, peer roles, versions, privacy obligations, disputes, revocations, and residual owners.",
-      "environment": "Ten reviewed source mappings; nine digest-bound synthetic exchange records; eleven rejecting mutations; nine finite Lean route consequences; one adjacent bounded QCSA result package; and a future natural multi-peer campaign. No live MCP or A2A peer, DID resolver, VC workflow, delegation service, payment connector, settlement network, dispute service, privacy program, or remote effect is represented.",
+      "environment": "Ten reviewed source mappings; nine digest-bound synthetic exchange records; eleven rejecting mutations; an exact 25-theorem Lean surface with a six-event local lifecycle and ten lifecycle rejection checks; one adjacent bounded QCSA result package; and a future natural multi-peer campaign. No live MCP or A2A peer, DID resolver, VC workflow, delegation service, payment connector, settlement network, dispute service, privacy program, or remote effect is represented.",
       "model": "A versioned exchange relation over protocol/schema/binding, actors, task and artifact semantics, endpoint declarations, identity resolution, credentials, delegation, local authorization handoff, economic states, privacy and rights obligations, response binding, independent verification, retry and dispute, revocation propagation, audit, and residual custody.",
       "authority": "Intent and Contracts own task meaning; Labor OS owns organizational roles; Security owns secrets and local authority policy; Runtime Adapters own local effects; Context owns admitted inputs; Artifact Graphs and Evidence own lineage, verification, and support; Resources owns local cost policy; Privacy, Rights, and Legal owns obligations; humans own consequential dispute and appeal; Hives owns federation topology; Readiness and Release own promotion. Inter-Stack owns only the bounded contract crossing a selected independently operated boundary.",
       "time": "Semantic review current through 2026-07-14; changes to protocol, schema, binding, session, endpoint, capability declaration, identity, controller, key, credential, delegation, policy, task, artifact, budget, privacy obligation, dispute, revocation, or residual ownership expire affected decisions.",
-      "artifact": "Chapter and manifest contract; ten source mappings; nine-record fixture and result; eleven rejecting mutations; nine declarations in lean/AsiStackProofs/InterStackProtocols.lean; future natural traces, threat probes, economic-state records, causal ablations, independent reproduction locks, and transfer artifacts."
+      "artifact": "Chapter and manifest contract; ten source mappings; nine-record fixture and result; eleven rejecting mutations; 25 declarations in lean/AsiStackProofs/InterStackProtocols.lean; future natural traces, threat probes, economic-state records, causal ablations, independent reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_peer_interoperability_campaign_with_causality_reproduction_and_transfer",
     "assumptions": [
@@ -85,7 +85,7 @@
     "contrary_evidence": [
       "MCP, A2A, DID/VC, Interledger, IAM, API gateways, brokers, workflows, and payment systems already implement important pieces of the proposed boundary.",
       "The current exchange fixture is authored and synthetic; no real peer, protocol message, resolver, credential, delegation, payment, dispute, privacy control, or remote effect ran.",
-      "All nine Lean declarations are finite route or negative-control consequences; none refines a deployed protocol, identity system, economic network, or runtime.",
+      "All 25 Lean declarations are finite route, transition, induction, composition, witness, or negative-control consequences; none refines a deployed protocol, identity system, economic network, or runtime.",
       "The bounded QCSA package supports local semantic identity and migration behavior but failed its exact matched-advantage and resource gates and exercised no federation.",
       "More metadata can increase privacy leakage, correlation, parser disagreement, stale state, integration burden, and denial of useful work.",
       "Credential and identity systems retain issuer, resolver, controller, key, status, governance, and policy trust outside the envelope.",
@@ -133,7 +133,7 @@
     },
     "non_claims": [
       "A parsed message, endpoint declaration, identifier, credential, delegation record, reservation, routed value packet, receipt, signature, dispute record, replay, taxonomy, fixture, theorem, or green command does not establish peer trust, authorization, task truth, privacy, settlement, legal validity, fairness, useful safety, support, or release.",
-      "The present nine records, eleven mutations, nine finite declarations, and adjacent QCSA result establish only their exact authored, synthetic, local, and finite boundaries.",
+      "The present nine records, eleven fixture mutations, 25 finite declarations, six-event lifecycle, ten lifecycle rejection checks, and adjacent QCSA result establish only their exact authored, synthetic, local, and finite boundaries.",
       "No identity, authority, effect, payment, evidence, support, readiness, release, AGI, or ASI state changes through this semantic review."
     ]
   },
@@ -148,10 +148,10 @@
     },
     "inter-stack-protocols-identity-and-economic-exchange.minimum.001": {
       "current_disposition": "retain_as_finite_route_and_negative_control_evidence_only",
-      "strongest_counterclaim": "Nine authored records and finite theorem consequences test the model, not interoperability.",
-      "falsifier": "The validator accepts a mutated record, a theorem tag lacks a matching route, a digest drifts, or the chapter describes the fixture as a real peer or protocol result.",
+      "strongest_counterclaim": "Nine authored records and a finite six-event lifecycle test the model, not interoperability.",
+      "falsifier": "The validator accepts a mutated record, a rejected lifecycle event changes state, the accepted lifecycle loses identity or authority-ceiling custody, a theorem tag lacks a matching route, a digest drifts, or the chapter describes the fixture as a real peer or protocol result.",
       "acceptance_criteria": [
-        "Keep nine expected routes, eleven rejecting mutations, digest binding, exact theorem ownership, and explicit non-claims green."
+        "Keep nine expected routes, eleven rejecting mutations, six accepted lifecycle stages, ten state-noninterfering lifecycle rejections, exact 25-theorem ownership, identity and authority-ceiling custody, and explicit non-claims green."
       ]
     },
     "inter-stack-protocols-identity-and-economic-exchange.beyond_sota.001": {
@@ -371,6 +371,11 @@
     "inter-stack-protocols-identity-and-economic-exchange.prose.38f7f48c8ff5": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped mature-endpoint or current-result boundary already governed by structured chapter atoms; it adds no independent material claim."
+    },
+    "inter-stack-protocols-identity-and-economic-exchange.prose.506e60800ee3": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.minimum.001",
+      "rationale": "The line-wrapped authority-ceiling and non-authority statement is already governed by the structured minimum atom, formal targets, and chapter non-claims."
     }
   },
   "non_claims": [

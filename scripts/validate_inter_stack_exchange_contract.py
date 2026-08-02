@@ -17,6 +17,150 @@ RESULT_SCHEMA = ROOT / "schemas/inter_stack_exchange_contract_result.schema.json
 LEAN = ROOT / "lean/AsiStackProofs/InterStackProtocols.lean"
 EXPECTED_IDS = ["valid_complete_local_dispatch", "invalid_missing_sender_identity", "invalid_audience_scope_mismatch", "invalid_expired_request", "invalid_required_credential", "invalid_revoked_credential", "invalid_missing_reserved_budget", "invalid_disputed_receipt", "invalid_missing_residual_owner"]
 EXPECTED_THEOREMS = ["invalid_credential_blocks_dispatch", "missing_reserved_budget_blocks_economic_dispatch", "complete_exchange_reaches_local_dispatch", "missing_sender_requires_identity_repair", "audience_mismatch_denies_dispatch", "expired_request_denies_dispatch", "revoked_credential_denies_dispatch", "disputed_receipt_requires_review", "missing_residual_owner_requires_review"]
+LIFECYCLE_THEOREMS = [
+    "rejected_exchange_event_preserves_exact_state",
+    "exchange_event_preserves_exact_identity",
+    "exchange_event_cannot_assign_support_effect_or_settlement",
+    "run_exchange_preserves_identity",
+    "run_exchange_preserves_non_authority",
+    "run_exchange_composes",
+    "complete_exchange_lifecycle_closes_without_authority",
+    "lifecycle_missing_sender_blocks_identity",
+    "lifecycle_expired_delegation_blocks_exchange",
+    "lifecycle_invalid_credential_blocks_exchange",
+    "lifecycle_authority_laundering_blocks_exchange",
+    "lifecycle_missing_budget_blocks_value_exchange",
+    "lifecycle_missing_expected_receipt_blocks_dispatch",
+    "lifecycle_missing_observed_receipt_blocks_receipt",
+    "lifecycle_undispositioned_dispute_blocks_closure",
+    "lifecycle_missing_residual_owner_blocks_closure",
+]
+
+
+LIFECYCLE_STAGES = ["draft", "identityBound", "delegationBound", "budgetBound", "dispatched", "receipted"]
+LIFECYCLE_KINDS = ["bindIdentity", "bindDelegation", "bindBudget", "requestLocalDispatch", "recordReceipt", "closeExchange"]
+NEXT_STAGE = dict(zip(LIFECYCLE_STAGES, ["identityBound", "delegationBound", "budgetBound", "dispatched", "receipted", "closed"]))
+IDENTITY_FIELDS = ["exchange_id", "protocol_version", "sender_id", "receiver_id", "principal_id", "request_digest", "budget_digest", "receipt_digest", "authority_ceiling"]
+
+
+def lifecycle_route(state: dict, kind: str, packet: dict) -> str:
+    stage = state["stage"]
+    expected = {
+        "draft": "bindIdentity", "identityBound": "bindDelegation",
+        "delegationBound": "bindBudget", "budgetBound": "requestLocalDispatch",
+        "dispatched": "recordReceipt", "receipted": "closeExchange",
+    }[stage]
+    if kind != expected:
+        return "rejectWrongStage"
+    if any(state[field] != packet[field] for field in IDENTITY_FIELDS):
+        return "rejectIdentitySubstitution"
+    if packet["event_digest"] == state["last_event_digest"]:
+        return "rejectReplay"
+    if packet["authority_laundering"]:
+        return "rejectAuthorityLaundering"
+    if stage == "draft":
+        if not packet["endpoint"]:
+            return "requestEndpoint"
+        if not packet["sender"]:
+            return "requestSender"
+        if not packet["receiver"]:
+            return "requestReceiver"
+        if not packet["principal"]:
+            return "requestPrincipal"
+        return "acceptIdentity"
+    if stage == "identityBound":
+        if not packet["delegation"]:
+            return "requestDelegation"
+        if not packet["audience"]:
+            return "rejectAudience"
+        if not packet["expiry"]:
+            return "rejectExpiry"
+        if packet["credential_required"] and not packet["credential"]:
+            return "rejectCredential"
+        if not packet["revocation_path"]:
+            return "requestRevocationPath"
+        return "acceptDelegation"
+    if stage == "delegationBound":
+        return "acceptBudget" if not packet["value_bearing"] or packet["budget"] else "requestBudget"
+    if stage == "budgetBound":
+        return "acceptDispatch" if packet["expected_receipt"] else "requestExpectedReceipt"
+    if stage == "dispatched":
+        return "acceptReceipt" if packet["observed_receipt"] else "requestObservedReceipt"
+    if packet["disputed"] and not packet["dispute_disposition"]:
+        return "requestDisputeDisposition"
+    return "acceptClosure" if packet["residual_owner"] else "requestResidualOwner"
+
+
+def apply_lifecycle(state: dict, kind: str, packet: dict) -> dict:
+    route_name = lifecycle_route(state, kind, packet)
+    if not route_name.startswith("accept"):
+        return copy.deepcopy(state)
+    next_state = copy.deepcopy(state)
+    next_state["stage"] = NEXT_STAGE[state["stage"]]
+    next_state["last_event_digest"] = packet["event_digest"]
+    next_state["receipt_count"] += 1
+    next_state["local_handoff_count"] += int(kind == "requestLocalDispatch")
+    next_state["closure_count"] += int(kind == "closeExchange")
+    return next_state
+
+
+def lifecycle_errors() -> list[str]:
+    errors: list[str] = []
+    accepted = ["acceptIdentity", "acceptDelegation", "acceptBudget", "acceptDispatch", "acceptReceipt", "acceptClosure"]
+    state = {"stage": "draft", "exchange_id": 801, "protocol_version": 4,
+             "sender_id": 802, "receiver_id": 803, "principal_id": 804,
+             "request_digest": 805, "budget_digest": 806, "receipt_digest": 807,
+             "authority_ceiling": 2, "last_event_digest": 0, "receipt_count": 0,
+             "local_handoff_count": 0, "closure_count": 0,
+             "support_assignment_count": 0, "external_effect_count": 0,
+             "settlement_count": 0}
+    base = {field: state[field] for field in IDENTITY_FIELDS}
+    base.update({"event_digest": 1, "endpoint": True, "sender": True, "receiver": True,
+            "principal": True, "delegation": True, "audience": True, "expiry": True,
+            "credential_required": True, "credential": True, "revocation_path": True,
+            "value_bearing": True, "budget": True, "expected_receipt": True, "observed_receipt": True,
+            "disputed": False, "dispute_disposition": True, "residual_owner": True,
+            "authority_laundering": False})
+    initial_identity = {field: state[field] for field in IDENTITY_FIELDS}
+    for digest, (stage, kind, expected) in enumerate(zip(LIFECYCLE_STAGES, LIFECYCLE_KINDS, accepted), 1):
+        packet = dict(base)
+        packet["event_digest"] = digest
+        if lifecycle_route(state, kind, packet) != expected:
+            errors.append(f"lifecycle accepted route drifted: {stage}")
+        state = apply_lifecycle(state, kind, packet)
+    if state["stage"] != "closed" or state["receipt_count"] != 6 or state["local_handoff_count"] != 1 or state["closure_count"] != 1:
+        errors.append("lifecycle final state drifted")
+    if {field: state[field] for field in IDENTITY_FIELDS} != initial_identity:
+        errors.append("lifecycle identity or authority ceiling drifted")
+    if any(state[field] for field in ["support_assignment_count", "external_effect_count", "settlement_count"]):
+        errors.append("lifecycle assigned support, effect, or settlement")
+    mutations = [
+        ("draft", "bindIdentity", "sender", False, "requestSender"),
+        ("identityBound", "bindDelegation", "audience", False, "rejectAudience"),
+        ("identityBound", "bindDelegation", "expiry", False, "rejectExpiry"),
+        ("identityBound", "bindDelegation", "credential", False, "rejectCredential"),
+        ("delegationBound", "bindBudget", "budget", False, "requestBudget"),
+        ("budgetBound", "requestLocalDispatch", "expected_receipt", False, "requestExpectedReceipt"),
+        ("dispatched", "recordReceipt", "observed_receipt", False, "requestObservedReceipt"),
+        ("receipted", "closeExchange", "disputed", True, "requestDisputeDisposition"),
+        ("receipted", "closeExchange", "residual_owner", False, "requestResidualOwner"),
+        ("budgetBound", "requestLocalDispatch", "authority_laundering", True, "rejectAuthorityLaundering"),
+    ]
+    for stage, kind, field, value, expected in mutations:
+        mutation_state = copy.deepcopy(state)
+        mutation_state["stage"] = stage
+        mutation_state["last_event_digest"] = 0
+        packet = dict(base)
+        packet["event_digest"] = 99
+        packet[field] = value
+        if field == "disputed":
+            packet["dispute_disposition"] = False
+        before = copy.deepcopy(mutation_state)
+        if lifecycle_route(mutation_state, kind, packet) != expected:
+            errors.append(f"lifecycle mutation drifted: {field}")
+        if apply_lifecycle(mutation_state, kind, packet) != before:
+            errors.append(f"rejected lifecycle mutation changed state: {field}")
+    return errors
 
 
 def route(r: dict) -> str:
@@ -66,6 +210,11 @@ def semantic_errors(data: dict) -> list[str]:
     for theorem in EXPECTED_THEOREMS:
         if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", data["lean"], re.M):
             errors.append(f"Lean theorem absent: {theorem}")
+    if len(re.findall(r"(?m)^theorem ", data["lean"])) != 25:
+        errors.append("Lean theorem denominator drifted")
+    for theorem in LIFECYCLE_THEOREMS:
+        if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", data["lean"], re.M):
+            errors.append(f"Lean lifecycle theorem absent: {theorem}")
     if fixture.get("support_state_effect") != "none" or result.get("support_state_effect") != "none":
         errors.append("support-state movement invented")
     if len(fixture.get("non_claims", [])) < 6 or len(result.get("non_claims", [])) < 6:
@@ -105,10 +254,11 @@ def main() -> None:
     errors = validate_against_schema(data["fixture"], load_json(FIXTURE_SCHEMA), FIXTURE.relative_to(ROOT).as_posix())
     errors.extend(validate_against_schema(data["result"], load_json(RESULT_SCHEMA), RESULT.relative_to(ROOT).as_posix()))
     errors.extend(semantic_errors(data))
+    errors.extend(lifecycle_errors())
     errors.extend(negative_controls(data))
     if errors:
         raise SystemExit("Inter-stack exchange validation failed:\n - " + "\n - ".join(errors))
-    print("Inter-stack exchange contract passed: 9 deterministic routes, 9 owned Lean theorems, no support movement, and 11 rejecting mutations.")
+    print("Inter-stack exchange contract passed: 9 deterministic routes, 25 Lean theorems, one independently simulated six-event lifecycle, 10 rejection-state checks, exact identity and authority-ceiling custody, no support movement, and 11 fixture mutations.")
 
 
 if __name__ == "__main__":

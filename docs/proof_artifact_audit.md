@@ -80,7 +80,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 37 | 0 | 16 | 2 |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 25 | 0 | 14 | 2 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
-| `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 25 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | 1 | 38 | 0 | 29 | 8 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
