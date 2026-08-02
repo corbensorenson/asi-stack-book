@@ -1284,11 +1284,11 @@
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidthRefinement",
-      "formal_target": "Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance to adjudication.",
+      "formal_target": "Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance, while arbitrary successful runs preserve identity, valid traces, composition, and receipt custody.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable verification-plan lifecycle plus independent exact-suite consumer; strongest effect is evidence-gate handoff and support effect remains none."
+      "rationale": "Exact 35-theorem transaction model plus independent three-suite consumer; 87/87 route and lifecycle mutations reject, while support and external-effect authority remain false."
     },
     {
       "tag": "lean:verification_bandwidth.adequacy.failure_blocks_promotion",
@@ -1298,27 +1298,27 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable verification-plan lifecycle plus independent exact-suite consumer; strongest effect is evidence-gate handoff and support effect remains none."
+      "rationale": "Exact 35-theorem transaction model plus independent three-suite consumer; 87/87 route and lifecycle mutations reject, while support and external-effect authority remain false."
     },
     {
       "tag": "lean:verification_bandwidth.adequacy.route_envelope",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidthRefinement",
-      "formal_target": "A five-stage lifecycle covers twelve explicit routes whose strongest positive effect is handoff to an independent evidence gate, never support assignment.",
+      "formal_target": "A five-stage lifecycle and four-event transaction cover twelve routes; arbitrary successful runs preserve zero support and external-effect authority, so the strongest positive effect is evidence-gate handoff.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable verification-plan lifecycle plus independent exact-suite consumer; strongest effect is evidence-gate handoff and support effect remains none."
+      "rationale": "Exact 35-theorem transaction model plus independent three-suite consumer; 87/87 route and lifecycle mutations reject, while support and external-effect authority remain false."
     },
     {
       "tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidthRefinement",
-      "formal_target": "An independent consumer recomputes all twelve routes, consumes the exact 3/5 admission, 2/7 contradiction, and 3/5 capacity suites, and rejects 31 evidence-handoff mutations.",
+      "formal_target": "An independent consumer recompiles the exact 35-theorem surface, recomputes all routes, consumes the 3/5, 2/7, and 3/5 suites, reconstructs the transaction, and rejects 87 route/lifecycle mutations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable verification-plan lifecycle plus independent exact-suite consumer; strongest effect is evidence-gate handoff and support effect remains none."
+      "rationale": "Exact 35-theorem transaction model plus independent three-suite consumer; 87/87 route and lifecycle mutations reject, while support and external-effect authority remain false."
     },
     {
       "tag": "lean:claims.ledger.operational_invariant",

@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -27,7 +27,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "All sixteen assigned source notes are mapped at their inspected boundaries; four local raw caches have passage review, `vcm_editable` remains connector/source-note mapped, and the eleven external records remain bounded comparators rather than local evaluation evidence."
   - "Current executable evidence is authored and zero-model: 3 valid/5 rejecting admission records, 2 valid/7 rejecting contradiction traces, and 3 valid/5 rejecting capacity traces. The 12-unit record models 66 all-pairwise obligations, checks 18, and leaves 48 residual; the named decomposition models 24 obligations including 6 boundary checks. No natural claim, model contradiction-rate, distractor study, citation audit, behavioral suite, formal neural-network property check, independent evaluator, adequacy classifier, deployed ledger, useful advantage, or transfer is represented."
-  - "Four of the 14 activation-baseline Lean declarations are physically retired: one assumption projection, two copied summary projections, and one theorem that mislabeled an adequacy route as permission to assign verified support. Eight replacement declarations model a reachable five-stage plan/execution lifecycle whose strongest route is evidence-gate handoff. They do not prove a model-cognition law, obligation completeness, evaluator competence or independence, formal-model fidelity, calibrated adequacy, usefulness, safety, or transfer."
+  - "Four of the 14 activation-baseline Lean declarations are physically retired: one assumption projection, two copied summary projections, and one theorem that mislabeled an adequacy route as permission to assign verified support. The exact 35-theorem replacement surface adds a computable four-event transaction and arbitrary-run identity, non-authority, trace, composition, and receipt-custody results whose strongest route is evidence-gate handoff. It does not prove a model-cognition law, obligation completeness, evaluator competence or independence, formal-model fidelity, calibrated adequacy, usefulness, safety, or transfer."
   - "No core support transition is authorized."
 ---
 
@@ -459,8 +459,15 @@ search or artifacts cannot reach the evidence gate.
 
 `python3 scripts/validate_verification_bandwidth_refinement.py` independently
 recomputes all twelve routes, consumes the exact 3/5 admission, 2/7
-contradiction, and 3/5 capacity suites, accepts one complete five-stage witness,
-and rejects 31 of 31 mutations before evidence-gate handoff. Its result is
+contradiction, and 3/5 capacity suites, recompiles the exact 35-theorem Lean
+surface, and reconstructs a four-event freeze, execution, adjudication, and
+handoff transaction. Its Lean results cover exact plan/claim/version/packet and
+authority-ceiling identity, valid-trace extraction, event-batch composition,
+monotone receipt custody, and zero support or external-effect authority over
+arbitrary successful runs. The consumer accepts one complete witness and
+rejects all 87 route and lifecycle mutations, including skipped or reordered
+stages, identity and execution substitution, nonmonotone time, missing receipts,
+contradiction laundering, and support or effect requests. Its result is
 `experiments/verification_bandwidth_refinement/results/2026-07-15-local.json`.
 The support-state effect remains `none`.
 
@@ -642,7 +649,7 @@ independent outcomes, causal ablations, reproduction, and transfer pass.
 | Verification adequacy route proof | Check that a finite verification lifecycle separates malformed plans, unadmitted context, missing obligations, unauthorized promotion, inconsistent counts, contradictions, residuals, evaluator dependence, missing negative search, missing artifacts, drafting, and evidence-gate handoff. | implemented by Lean build; finite authored lifecycle only |
 | Verification bandwidth contradiction probe | Check a synthetic adequacy fixture covering pairwise contradiction blocking, drafting-only inadequacy, summary-derived promotion rejection, dominant-distractor miss rejection, high-risk inadequate context without escalation, schema-mode empirical support rejection, ignored negative evidence, unidentified semantic units, and support promotion from the fixture. | implemented in `python3 scripts/validate_verification_bandwidth_probe.py` with two valid synthetic adequacy traces and seven expected-invalid controls at `experiments/verification_bandwidth/results/2026-07-02-local.json`; no model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, or evidence-transition claim |
 | Verification bandwidth capacity model | Check a bounded synthetic verification-workload model where 12 semantic units create 66 all-pairwise obligations, 18 checked obligations leave 48 residual obligations, named decomposition reduces modeled obligations only when boundary checks are explicit, and negative controls reject linear-context overclaim, hidden residuals, unidentified units, and support promotion. | implemented in `python3 scripts/validate_verification_bandwidth_capacity_model.py` with three valid capacity traces and five expected-invalid controls at `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json`; no model-verification-bandwidth law, contradiction-rate-performance, adequacy-classifier, deployed-long-context-failure, support-state-promotion, or evidence-transition claim |
-| Reachable verification-plan and evidence-gate refinement | Bind the exact prospective plan to exhaustive execution dispositions, compute all twelve routes independently, and prevent adequacy from assigning support. | implemented in `python3 scripts/validate_verification_bandwidth_refinement.py`; consumes the 3/5, 2/7, and 3/5 suites, reaches five stages, covers twelve routes, and rejects 31/31 mutations; support effect `none` |
+| Reachable verification-plan and evidence-gate refinement | Bind the exact prospective plan to exhaustive execution dispositions, preserve identity and receipt custody across arbitrary successful runs, compute all twelve routes independently, and prevent adequacy from assigning support or external effects. | implemented in `AsiStackProofs.VerificationBandwidthRefinement` and `python3 scripts/validate_verification_bandwidth_refinement.py`; exact 35-theorem compilation, four-event transaction, three consumed suites, twelve routes, and 87/87 rejected route/lifecycle mutations; support effect `none` |
 | Mode-confusion audit | Check that schema, proof, summary, human-review, and empirical modes are not used to support broader claims than they actually verify. | planned; not run |
 
 The fixture-shape check, finite-record proof predicates, synthetic context admission/adequacy harness, and deterministic contradiction-probe fixture are implemented. The finite route proof records how modeled adequacy reviews should route, and the contradiction probe checks local fixture boundaries, not whether a model actually has enough verification bandwidth. Distractor resistance, contradiction-rate measurement, semantic adequacy classification, and deployed claim-ledger outcomes still require logged prompts or deterministic checkers, real or replayed model traces, and reviewable claim-ledger results.
@@ -651,10 +658,10 @@ The fixture-shape check, finite-record proof predicates, synthetic context admis
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidthRefinement` | Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance to adjudication. | implemented |
+| `lean:verification_bandwidth.adequacy.operational_invariant` | `AsiStackProofs.VerificationBandwidthRefinement` | Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance, while arbitrary successful runs preserve identity, valid traces, composition, and receipt custody. | implemented |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `AsiStackProofs.VerificationBandwidthRefinement` | Direct chapter-core promotion requests and represented contradictions block evidence-gate handoff; high-risk correlated evaluation requires escalation. | implemented |
-| `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidthRefinement` | A five-stage lifecycle covers twelve explicit routes whose strongest positive effect is handoff to an independent evidence gate, never support assignment. | implemented |
-| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `AsiStackProofs.VerificationBandwidthRefinement` | An independent consumer recomputes all twelve routes, consumes the exact 3/5 admission, 2/7 contradiction, and 3/5 capacity suites, and rejects 31 evidence-handoff mutations. | implemented |
+| `lean:verification_bandwidth.adequacy.route_envelope` | `AsiStackProofs.VerificationBandwidthRefinement` | A five-stage lifecycle and four-event transaction cover twelve explicit routes; arbitrary successful runs preserve zero support and external-effect authority, so the strongest positive effect is evidence-gate handoff. | implemented |
+| `lean:verification_bandwidth.contradiction_probe_fixture_bridge` | `AsiStackProofs.VerificationBandwidthRefinement` | An independent consumer recompiles the exact 35-theorem surface, recomputes all twelve routes, consumes the exact 3/5 admission, 2/7 contradiction, and 3/5 capacity suites, reconstructs the transaction, and rejects 87 route/lifecycle mutations. | implemented |
 
 Four of the fourteen activation-baseline declarations are physically retired:
 the direct high-risk assumption projection, both copied validator-summary

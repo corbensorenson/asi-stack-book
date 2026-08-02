@@ -10290,7 +10290,7 @@
             {
               "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
               "module": "AsiStackProofs.VerificationBandwidthRefinement",
-              "target": "Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance to adjudication.",
+              "target": "Context admission is separated from a frozen claim-specific obligation plan; only an exactly bound execution can advance, while arbitrary successful runs preserve identity, valid traces, composition, and receipt custody.",
               "status": "implemented"
             },
             {
@@ -10302,13 +10302,13 @@
             {
               "tag": "lean:verification_bandwidth.adequacy.route_envelope",
               "module": "AsiStackProofs.VerificationBandwidthRefinement",
-              "target": "A five-stage lifecycle covers twelve explicit routes whose strongest positive effect is handoff to an independent evidence gate, never support assignment.",
+              "target": "A five-stage lifecycle and four-event transaction cover twelve routes; arbitrary successful runs preserve zero support and external-effect authority, so the strongest positive effect is evidence-gate handoff.",
               "status": "implemented"
             },
             {
               "tag": "lean:verification_bandwidth.contradiction_probe_fixture_bridge",
               "module": "AsiStackProofs.VerificationBandwidthRefinement",
-              "target": "An independent consumer recomputes all twelve routes, consumes the exact 3/5 admission, 2/7 contradiction, and 3/5 capacity suites, and rejects 31 evidence-handoff mutations.",
+              "target": "An independent consumer recompiles the exact 35-theorem surface, recomputes all routes, consumes the 3/5, 2/7, and 3/5 suites, reconstructs the transaction, and rejects 87 route/lifecycle mutations.",
               "status": "implemented"
             }
           ],

@@ -6,6 +6,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -38,6 +39,27 @@ ROUTES = (
     "allow_draft",
     "handoff_to_evidence_gate",
 )
+
+EXPECTED_THEOREMS = {
+    "accepted_verification_step_is_valid",
+    "accepted_verification_step_applies_event",
+    "accepted_verification_step_preserves_identity",
+    "accepted_verification_step_preserves_support_authority",
+    "accepted_verification_step_preserves_external_effect_authority",
+    "successful_verification_run_preserves_identity",
+    "successful_verification_run_preserves_support_authority",
+    "successful_verification_run_preserves_external_effect_authority",
+    "successful_verification_run_has_valid_trace",
+    "verification_runs_compose",
+    "successful_verification_run_preserves_complete_custody",
+    "accepted_execution_event_binds_valid_execution",
+    "accepted_adjudication_requires_evidence_gate_route",
+    "accepted_handoff_cannot_request_support",
+    "accepted_handoff_cannot_request_external_effect",
+    "reference_verification_run_closes",
+    "reference_verification_run_preserves_identity",
+    "reference_verification_run_has_zero_authority",
+}
 
 
 def load(path: Path) -> Any:
@@ -214,6 +236,206 @@ def mutations() -> list[tuple[str, dict[str, Any], dict[str, Any]]]:
     return rows
 
 
+def initial_state() -> dict[str, Any]:
+    return {
+        "stage": "proposed",
+        "plan": plan(),
+        "execution": execution(),
+        "authority_ceiling": 1,
+        "plan_freeze_receipt": False,
+        "execution_receipt": False,
+        "adjudication_receipt": False,
+        "evidence_gate_receipt": False,
+        "support_authority": False,
+        "external_effect_authority": False,
+        "logical_time": 0,
+    }
+
+
+def lifecycle_events() -> list[dict[str, Any]]:
+    common = {
+        "plan_id": 101,
+        "claim_id": 201,
+        "claim_version": 1,
+        "packet_digest": 301,
+        "authority_ceiling": 1,
+        "execution": execution(),
+        "plan_freeze_receipt": False,
+        "execution_receipt": False,
+        "adjudication_receipt": False,
+        "evidence_gate_receipt": False,
+        "support_promotion_requested": False,
+        "external_effect_requested": False,
+    }
+    events: list[dict[str, Any]] = []
+    for kind, from_stage, to_stage, logical_time in (
+        ("freeze_plan", "proposed", "frozen", 1),
+        ("record_execution", "frozen", "executed", 2),
+        ("adjudicate", "executed", "adjudicated", 3),
+        ("handoff", "adjudicated", "handed_off", 4),
+    ):
+        event = copy.deepcopy(common)
+        event.update({
+            "kind": kind,
+            "from_stage": from_stage,
+            "to_stage": to_stage,
+            "logical_time": logical_time,
+        })
+        events.append(event)
+    events[0]["plan_freeze_receipt"] = True
+    events[1]["execution_receipt"] = True
+    events[2]["adjudication_receipt"] = True
+    events[3]["evidence_gate_receipt"] = True
+    return events
+
+
+def event_errors(state: dict[str, Any], event: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    if state["stage"] != event.get("from_stage"):
+        errors.append("stage_order")
+    if event.get("logical_time", 0) <= state["logical_time"]:
+        errors.append("logical_time")
+    for key in ("plan_id", "claim_id", "claim_version", "packet_digest"):
+        if event.get(key) != state["plan"][key]:
+            errors.append(key)
+    if event.get("authority_ceiling") != state["authority_ceiling"]:
+        errors.append("authority_ceiling")
+    if event.get("support_promotion_requested") is not False:
+        errors.append("support_promotion_requested")
+    if event.get("external_effect_requested") is not False:
+        errors.append("external_effect_requested")
+
+    kind = event.get("kind")
+    if kind == "freeze_plan":
+        if event.get("from_stage") != "proposed" or event.get("to_stage") != "frozen":
+            errors.append("freeze_route")
+        errors.extend("plan." + value for value in plan_errors(state["plan"]))
+        if event.get("plan_freeze_receipt") is not True:
+            errors.append("plan_freeze_receipt")
+    elif kind == "record_execution":
+        if event.get("from_stage") != "frozen" or event.get("to_stage") != "executed":
+            errors.append("execution_route")
+        if state.get("plan_freeze_receipt") is not True:
+            errors.append("prior_plan_freeze_receipt")
+        errors.extend("execution." + value for value in execution_errors(state["plan"], event["execution"]))
+        if event.get("execution_receipt") is not True:
+            errors.append("execution_receipt")
+    elif kind == "adjudicate":
+        if event.get("from_stage") != "executed" or event.get("to_stage") != "adjudicated":
+            errors.append("adjudication_route")
+        if state.get("plan_freeze_receipt") is not True or state.get("execution_receipt") is not True:
+            errors.append("prior_execution_custody")
+        if event.get("execution") != state.get("execution"):
+            errors.append("execution_substitution")
+        if route(state["plan"], state["execution"]) != "handoff_to_evidence_gate":
+            errors.append("evidence_gate_route")
+        if event.get("adjudication_receipt") is not True:
+            errors.append("adjudication_receipt")
+    elif kind == "handoff":
+        if event.get("from_stage") != "adjudicated" or event.get("to_stage") != "handed_off":
+            errors.append("handoff_route")
+        if not all(state.get(key) is True for key in (
+            "plan_freeze_receipt", "execution_receipt", "adjudication_receipt"
+        )):
+            errors.append("prior_adjudication_custody")
+        if event.get("execution") != state.get("execution"):
+            errors.append("execution_substitution")
+        if event.get("evidence_gate_receipt") is not True:
+            errors.append("evidence_gate_receipt")
+    else:
+        errors.append("event_kind")
+    return sorted(set(errors))
+
+
+def apply_event(state: dict[str, Any], event: dict[str, Any]) -> dict[str, Any]:
+    next_state = copy.deepcopy(state)
+    next_state["stage"] = event["to_stage"]
+    if event["kind"] == "record_execution":
+        next_state["execution"] = copy.deepcopy(event["execution"])
+    for key in (
+        "plan_freeze_receipt", "execution_receipt", "adjudication_receipt",
+        "evidence_gate_receipt",
+    ):
+        next_state[key] = bool(state[key] or event[key])
+    next_state["logical_time"] = event["logical_time"]
+    return next_state
+
+
+def run_lifecycle(events: list[dict[str, Any]]) -> tuple[dict[str, Any] | None, list[str]]:
+    state = initial_state()
+    errors: list[str] = []
+    for index, event in enumerate(events):
+        current_errors = event_errors(state, event)
+        if current_errors:
+            errors.extend(f"event_{index}.{value}" for value in current_errors)
+            return None, errors
+        state = apply_event(state, event)
+    if state["stage"] != "handed_off":
+        errors.append("terminal_stage")
+    if not all(state[key] is True for key in (
+        "plan_freeze_receipt", "execution_receipt", "adjudication_receipt",
+        "evidence_gate_receipt",
+    )):
+        errors.append("terminal_custody")
+    if state["support_authority"] is not False:
+        errors.append("support_authority")
+    if state["external_effect_authority"] is not False:
+        errors.append("external_effect_authority")
+    return (state if not errors else None), errors
+
+
+def lifecycle_mutations() -> list[tuple[str, list[dict[str, Any]]]]:
+    rows: list[tuple[str, list[dict[str, Any]]]] = []
+
+    def add(name: str, mutate: Any) -> None:
+        events = lifecycle_events()
+        mutate(events)
+        rows.append((name, events))
+
+    for index in range(4):
+        add(f"drop_event_{index}", lambda events, index=index: events.pop(index))
+        add(f"duplicate_event_{index}", lambda events, index=index: events.insert(index, copy.deepcopy(events[index])))
+        add(f"substitute_ceiling_{index}", lambda events, index=index: events[index].update(authority_ceiling=2))
+        add(f"nonmonotone_time_{index}", lambda events, index=index: events[index].update(logical_time=0))
+        add(f"request_support_{index}", lambda events, index=index: events[index].update(support_promotion_requested=True))
+        add(f"request_external_effect_{index}", lambda events, index=index: events[index].update(external_effect_requested=True))
+        for key in ("plan_id", "claim_id", "claim_version", "packet_digest"):
+            add(f"substitute_{key}_{index}", lambda events, index=index, key=key: events[index].update({key: 999}))
+    for index in range(3):
+        add(f"swap_adjacent_{index}", lambda events, index=index: events.__setitem__(slice(index, index + 2), [events[index + 1], events[index]]))
+    for index, key in enumerate((
+        "plan_freeze_receipt", "execution_receipt", "adjudication_receipt",
+        "evidence_gate_receipt",
+    )):
+        add(f"missing_{key}", lambda events, index=index, key=key: events[index].update({key: False}))
+    for key in ("plan_id", "claim_id", "claim_version", "packet_digest"):
+        add(f"execution_substitute_{key}", lambda events, key=key: events[1]["execution"].update({key: 999}))
+    add("execution_count_short", lambda events: events[1]["execution"].update(passed=3))
+    add("execution_expiry_missing", lambda events: events[1]["execution"].update(expiry_declared=False))
+    add("adjudication_payload_substitution", lambda events: events[2]["execution"].update(passed=3))
+    add("handoff_payload_substitution", lambda events: events[3]["execution"].update(passed=3))
+    add("contradiction_blocks_adjudication", lambda events: events[1]["execution"].update(passed=3, contradicted=1, residuals_recorded=True))
+    return rows
+
+
+def lean_surface(issues: list[str]) -> tuple[int, list[str]]:
+    completed = subprocess.run(
+        ["lake", "env", "lean", str(LEAN.relative_to(ROOT))],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+    if completed.returncode:
+        issues.append("Lean compilation failed: " + completed.stdout + completed.stderr)
+    names = re.findall(r"^theorem\s+([A-Za-z0-9_']+)", LEAN.read_text(encoding="utf-8"), re.MULTILINE)
+    missing = sorted(EXPECTED_THEOREMS - set(names))
+    if len(names) != 35:
+        issues.append(f"Lean theorem count drift: expected 35, observed {len(names)}")
+    if missing:
+        issues.append("Lean lifecycle theorem surface missing: " + ", ".join(missing))
+    return len(names), missing
+
+
 def run_suite(name: str, validator: Path, expected_valid: int, expected_invalid: int, issues: list[str]) -> dict[str, Any]:
     completed = subprocess.run(["python3", str(validator)], cwd=ROOT, text=True, capture_output=True)
     if completed.returncode:
@@ -229,6 +451,7 @@ def run_suite(name: str, validator: Path, expected_valid: int, expected_invalid:
 
 def build() -> tuple[dict[str, Any], list[str]]:
     issues: list[str] = []
+    theorem_count, missing_theorems = lean_surface(issues)
     suites = [
         run_suite("context_admission_adequacy", ADMISSION_VALIDATOR, 3, 5, issues),
         run_suite("verification_bandwidth_probe", PROBE_VALIDATOR, 2, 7, issues),
@@ -267,8 +490,37 @@ def build() -> tuple[dict[str, Any], list[str]]:
         if not rejected:
             issues.append(mutation_id + ": reached evidence gate")
 
+    final_state, lifecycle_errors = run_lifecycle(lifecycle_events())
+    if lifecycle_errors or final_state is None:
+        issues.append("reference transaction rejected: " + ", ".join(lifecycle_errors))
+    else:
+        expected_identity = (101, 201, 1, 301, 1)
+        observed_identity = (
+            final_state["plan"]["plan_id"],
+            final_state["plan"]["claim_id"],
+            final_state["plan"]["claim_version"],
+            final_state["plan"]["packet_digest"],
+            final_state["authority_ceiling"],
+        )
+        if observed_identity != expected_identity:
+            issues.append("reference transaction identity drift")
+
+    lifecycle_receipts: list[dict[str, Any]] = []
+    for mutation_id, mutated_events in lifecycle_mutations():
+        mutated_final, errors = run_lifecycle(mutated_events)
+        rejected = mutated_final is None and bool(errors)
+        lifecycle_receipts.append({
+            "mutation_id": "lifecycle_" + mutation_id,
+            "rejected": rejected,
+            "observed_route": "lifecycle_rejected" if rejected else "handed_off",
+            "semantic_errors": sorted(set(errors)),
+        })
+        if not rejected:
+            issues.append("lifecycle_" + mutation_id + ": reached handoff")
+    mutation_receipts.extend(lifecycle_receipts)
+
     result = {
-        "schema_version": "asi_stack.verification_bandwidth_refinement.v1",
+        "schema_version": "asi_stack.verification_bandwidth_refinement.v2",
         "result_id": "verification-bandwidth-refinement-2026-07-15-local",
         "source_sha256": {
             "lean_model": sha256(LEAN),
@@ -277,7 +529,15 @@ def build() -> tuple[dict[str, Any], list[str]]:
             "capacity_result": sha256(CAPACITY_RESULT),
         },
         "input_suites": suites,
+        "lean_theorem_count": theorem_count,
+        "lean_required_theorems_missing": missing_theorems,
         "reachable_stage_count": 5,
+        "lifecycle_event_count": len(lifecycle_events()),
+        "lifecycle_mutation_count": len(lifecycle_receipts),
+        "lifecycle_mutation_rejection_count": sum(row["rejected"] for row in lifecycle_receipts),
+        "terminal_stage": final_state["stage"] if final_state else "rejected",
+        "terminal_support_authority": final_state["support_authority"] if final_state else True,
+        "terminal_external_effect_authority": final_state["external_effect_authority"] if final_state else True,
         "reference_route": route(p, e),
         "route_case_count": len(coverage),
         "route_coverage": coverage,
@@ -314,7 +574,9 @@ def main() -> None:
     print(
         "Verification bandwidth refinement passed: "
         f"3/5 admission, 2/7 contradiction, 3/5 capacity, {result['route_case_count']} routes, "
-        f"5 stages, {result['mutation_rejection_count']} mutations rejected, support effect none."
+        f"5 stages, {result['lean_theorem_count']} Lean theorems, "
+        f"{result['lifecycle_event_count']} lifecycle events, "
+        f"{result['mutation_rejection_count']} mutations rejected, support effect none."
     )
 
 

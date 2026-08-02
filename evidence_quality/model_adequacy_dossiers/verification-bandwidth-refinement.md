@@ -14,18 +14,23 @@
 The model owns a prospective verification plan, an execution bound to the exact
 plan/claim/version/packet tuple, exhaustive disposition accounting, and a
 bounded route into drafting, residual work, escalation, rejection, or an
-independent evidence gate. It never owns evidence promotion.
+independent evidence gate. A computable four-event transaction freezes the plan,
+records the exact execution, adjudicates its route, and hands it off while
+preserving the authority ceiling. It never owns evidence promotion or external
+effects.
 
 ## Consequences, countermodels, and consumer
 
-General consequences block direct core promotion, block evidence handoff after
-a represented contradiction, and require evaluator separation for an otherwise
-complete high-risk review. A complete witness reaches all five lifecycle
-stages and stops at the evidence gate. The independent consumer covers all
-twelve routes, consumes three existing authored suites, and rejects mutations
-of identity, context, authority, rights, budget, horizon, stop rule, obligation
-counts, disposition closure, negative search, evaluator separation, artifacts,
-residuals, and expiry.
+The exact 35-theorem surface blocks direct core promotion and evidence handoff
+after a represented contradiction, requires evaluator separation for an
+otherwise complete high-risk review, and proves exact identity, valid traces,
+batch composition, receipt custody, and zero support/external-effect authority
+over arbitrary successful transactions. A complete witness reaches all five
+stages and stops at the evidence gate. The independent consumer recompiles the
+surface, covers all twelve routes, consumes three existing authored suites,
+reconstructs the transaction, and rejects 87/87 mutations of route fields,
+event order, time, identity, execution payload, receipts, contradiction state,
+support requests, and external-effect requests.
 
 ## Assumptions, exclusions, and adequacy verdict
 

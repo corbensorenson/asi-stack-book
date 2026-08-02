@@ -24,14 +24,14 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 
 ## Adequacy Snapshot
 
-The current adequacy review classifies 163 adequate finite-record invariant, 89 useful but too narrow, 16 needs richer state-machine or review semantics, 37 needs executable tests first, 17 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
+The current adequacy review classifies 167 adequate finite-record invariant, 89 useful but too narrow, 16 needs richer state-machine or review semantics, 33 needs executable tests first, 17 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
 
 | Adequacy class | Targets |
 |---|---:|
-| adequate finite-record invariant | 163 |
+| adequate finite-record invariant | 167 |
 | useful but too narrow | 89 |
 | needs richer state-machine or review semantics | 16 |
-| needs executable tests first | 37 |
+| needs executable tests first | 33 |
 | needs empirical or baseline tests first | 17 |
 | research-agenda until artifact import | 2 |
 

@@ -9,7 +9,15 @@
     "result_id",
     "source_sha256",
     "input_suites",
+    "lean_theorem_count",
+    "lean_required_theorems_missing",
     "reachable_stage_count",
+    "lifecycle_event_count",
+    "lifecycle_mutation_count",
+    "lifecycle_mutation_rejection_count",
+    "terminal_stage",
+    "terminal_support_authority",
+    "terminal_external_effect_authority",
     "reference_route",
     "route_case_count",
     "route_coverage",
@@ -21,7 +29,7 @@
     "non_claims"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.verification_bandwidth_refinement.v1"},
+    "schema_version": {"const": "asi_stack.verification_bandwidth_refinement.v2"},
     "result_id": {"type": "string", "minLength": 1},
     "source_sha256": {
       "type": "object",
@@ -51,7 +59,15 @@
         }
       }
     },
+    "lean_theorem_count": {"const": 35},
+    "lean_required_theorems_missing": {"type": "array", "maxItems": 0},
     "reachable_stage_count": {"const": 5},
+    "lifecycle_event_count": {"const": 4},
+    "lifecycle_mutation_count": {"const": 56},
+    "lifecycle_mutation_rejection_count": {"const": 56},
+    "terminal_stage": {"const": "handed_off"},
+    "terminal_support_authority": {"const": false},
+    "terminal_external_effect_authority": {"const": false},
     "reference_route": {"const": "handoff_to_evidence_gate"},
     "route_case_count": {"const": 12},
     "route_coverage": {

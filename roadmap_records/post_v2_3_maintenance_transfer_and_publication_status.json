@@ -427,23 +427,23 @@
         "overlay_path": "proofs/proof_semantic_depth_overlay.json",
         "report_path": "docs/proof_semantic_depth_overlay.md",
         "rationalization_ledger_path": "proofs/proof_semantic_rationalization_ledger.json",
-        "theorem_count": 2417,
+        "theorem_count": 2444,
         "theorem_bearing_module_count": 130,
         "semantic_owner_chapter_count": 84,
         "semantic_level_counts": {
-        "P0": 45,
+          "P0": 45,
           "P1": 905,
           "P2": 214,
-          "P3": 931,
-            "P4": 142,
-            "P5": 180,
+          "P3": 950,
+          "P4": 150,
+          "P5": 180,
           "P6": 0
         },
         "disposition_counts": {
-          "retain": 2417
-          },
-      "executed_retirement_count": 157,
-          "executed_scope_rewrite_count": 2,
+          "retain": 2444
+        },
+        "executed_retirement_count": 157,
+        "executed_scope_rewrite_count": 2,
       "remaining_action_count": 0,
         "mutation_coverage_missing_count": 0,
         "frozen_historical_theorem_count": 1151,
@@ -1248,10 +1248,10 @@
     "sota_supported_count": 0,
     "proof_target_count": 324,
     "lean_module_count": 130,
-    "theorem_declaration_count": 2417,
-    "derived_or_decomposed_theorem_count": 1455,
-    "direct_or_projection_theorem_count": 410,
-    "unknown_or_mixed_theorem_count": 552,
+    "theorem_declaration_count": 2444,
+    "derived_or_decomposed_theorem_count": 1475,
+    "direct_or_projection_theorem_count": 413,
+    "unknown_or_mixed_theorem_count": 556,
     "historical_v2_2_approved_exact_local_reader_formats": [
       "html"
     ],

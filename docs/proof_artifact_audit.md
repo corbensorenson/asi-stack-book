@@ -13,7 +13,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Proof targets audited | 324 |
 | Manifest status counts | {"implemented": 324} |
 | Triage class counts | {"formal-invariant": 324} |
-| Lean modules referenced | 97 |
+| Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -35,10 +35,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | 1 | 28 | 0 | 31 | 7 |
 | `lean/AsiStackProofs/Alignment.lean` | 1 | 36 | 0 | 18 | 5 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 8 | 0 | 5 | 2 |
-| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 15 | 0 | 32 | 3 |
+| `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 21 | 0 | 34 | 4 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 37 | 0 | 11 | 5 |
-| `lean/AsiStackProofs/Authority.lean` | 2 | 28 | 0 | 10 | 6 |
-| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 2 | 27 | 0 | 18 | 3 |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 4 | 31 | 0 | 20 | 3 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 3 | 0 | 5 | 4 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 2 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
@@ -50,7 +49,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/ContentAuthenticityReview.lean` | 1 | 32 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
-| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 35 | 0 | 21 | 2 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 1 | 24 | 0 | 17 | 4 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
@@ -63,7 +62,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | 2 | 6 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
-| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 10 | 0 | 8 | 2 |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 19 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |
@@ -95,9 +94,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 48 | 0 | 31 | 10 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
-| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
-| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |
-| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 11 | 0 | 31 | 3 |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 27 | 0 | 15 | 4 |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 21 | 0 | 23 | 4 |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 18 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 7 | 0 | 6 | 6 |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | 1 | 31 | 0 | 34 | 8 |
@@ -105,10 +104,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 24 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | 1 | 42 | 0 | 31 | 9 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
-| `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
+| `lean/AsiStackProofs/Replacement.lean` | 6 | 52 | 0 | 22 | 9 |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | 1 | 32 | 0 | 33 | 8 |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 9 | 13 | 5 | 2 |
-| `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 17 | 0 | 21 | 3 |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 25 | 0 | 23 | 4 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 68 | 0 | 31 | 12 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 8 | 21 | 0 | 20 | 2 |
@@ -119,13 +118,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | 1 | 32 | 0 | 32 | 8 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 26 | 0 | 25 | 8 |
-| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 30 | 0 | 21 | 8 |
-| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
+| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 34 | 0 | 22 | 8 |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 23 | 0 | 13 | 4 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
-| `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 19 | 0 | 32 | 4 |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 32 | 0 | 37 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 38 | 0 | 19 | 6 |
-| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 8 | 0 | 10 | 2 |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 35 | 0 | 25 | 4 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 17 | 0 | 16 | 2 |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 8 | 0 | 6 | 1 |
 
@@ -231,8 +230,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:efficiency.route_search.probe_fixture_bridge` | `the-efficient-asi-hypothesis` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.operational_invariant` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:authority.ceiling.failure_blocks_promotion` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:authority.lifecycle.admission_route` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:authority.revocation.trace_surface_bridge` | `system-boundaries-and-authority` | `AsiStackProofs.Authority` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:authority.lifecycle.admission_route` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:authority.revocation.trace_surface_bridge` | `system-boundaries-and-authority` | `AsiStackProofs.AuthorityEffectRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.invariant_violation.operational_invariant` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:failure.recurrence.escalation_route` | `failure-modes-of-ungoverned-intelligence` | `AsiStackProofs.FailureModes` | triage ok; module ok; chapter tag ok; limitation ok |

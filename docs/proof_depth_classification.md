@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2417 |
-| Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1455 |
-| Unknown or mixed theorem declarations | 552 |
+| Theorem declarations classified | 2444 |
+| Direct/projection-style theorem declarations | 413 |
+| Derived/decomposed theorem declarations | 1475 |
+| Unknown or mixed theorem declarations | 556 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -178,7 +178,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 35 | 5 | 26 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 8 | 0 | 4 | 4 | manual review |
@@ -2560,14 +2560,41 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `missing_verification_artifacts_require_artifacts` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `open_negative_evidence_escalates_risk` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `unadmitted_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_adjudication_requires_evidence_gate_route` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_execution_event_binds_valid_execution` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_handoff_cannot_request_external_effect` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_handoff_cannot_request_support` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_leaves_proposed_stage` | derived_or_decomposed | no | uses cases, have, rcases, subst |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_preserves_external_effect_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_preserves_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `accepted_verification_step_preserves_support_authority` | derived_or_decomposed | no | uses rw |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `admitted_context_does_not_establish_verification_adequacy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `apply_verification_event_preserves_complete_custody` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `apply_verification_event_preserves_external_effect_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `apply_verification_event_preserves_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `apply_verification_event_preserves_support_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `complete_high_risk_review_requires_independent_evaluator` | derived_or_decomposed | no | uses rcases, simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `contradiction_blocks_evidence_handoff` | derived_or_decomposed | no | uses contradiction, rcases, simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_adjudication_step_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_execution_step_accepted` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_execution_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_freeze_step_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_handoff_step_accepted` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_plan_valid` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_route_hands_off_only_to_evidence_gate` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_verification_lifecycle_reachable` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_verification_run_closes` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_verification_run_has_zero_authority` | derived_or_decomposed | no | uses constructor |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `reference_verification_run_preserves_identity` | derived_or_decomposed | no | uses calc |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `successful_verification_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `successful_verification_run_preserves_complete_custody` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `successful_verification_run_preserves_external_effect_authority` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `successful_verification_run_preserves_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `successful_verification_run_preserves_support_authority` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `unauthorized_promotion_request_is_blocked` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | `verification_runs_compose` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `authority_escape_requires_context_authority_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `complete_context_review_materializes` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `failed_adequacy_requires_adequacy_review` | derived_or_decomposed | no | uses simp, unfold |

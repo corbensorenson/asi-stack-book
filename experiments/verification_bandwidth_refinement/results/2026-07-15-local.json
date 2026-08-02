@@ -1,8 +1,8 @@
 {
-  "schema_version": "asi_stack.verification_bandwidth_refinement.v1",
+  "schema_version": "asi_stack.verification_bandwidth_refinement.v2",
   "result_id": "verification-bandwidth-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "a50b430c1f2f3c5128853dfe1b28283b1507c3264fe0ee282dfafa8b30efb62b",
+    "lean_model": "6f0bf7968c2f2819a34f6f9336fd6c60d928ac5dbb6d2a8f19f1be1ad3246b4b",
     "context_adequacy_schema": "07650ede900ffb136c5dde67bc14b02aac4df264c76ddb3549ca7ce17551225e",
     "probe_result": "b9c8d0ea9552b1a158b8f291faf5893e531fc79be2d33a17ed7c0f1f24ef6558",
     "capacity_result": "6072da6472fa3730a56f38cd286ed354075b161a3dbb974a1e61a3b21d58c86e"
@@ -30,7 +30,15 @@
       "validator_sha256": "ff95ffb089483bc236ec1678bcda3ef01bd8d933aecad07a3d30f6055efede45"
     }
   ],
+  "lean_theorem_count": 35,
+  "lean_required_theorems_missing": [],
   "reachable_stage_count": 5,
+  "lifecycle_event_count": 4,
+  "lifecycle_mutation_count": 56,
+  "lifecycle_mutation_rejection_count": 56,
+  "terminal_stage": "handed_off",
+  "terminal_support_authority": false,
+  "terminal_external_effect_authority": false,
   "reference_route": "handoff_to_evidence_gate",
   "route_case_count": 12,
   "route_coverage": [
@@ -95,8 +103,8 @@
       "observed_route": "handoff_to_evidence_gate"
     }
   ],
-  "mutation_count": 31,
-  "mutation_rejection_count": 31,
+  "mutation_count": 87,
+  "mutation_rejection_count": 87,
   "mutation_receipts": [
     {
       "mutation_id": "zero_plan_id",
@@ -327,6 +335,466 @@
       "observed_route": "block_inconsistent_counts",
       "semantic_errors": [
         "expiry_declared"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_drop_event_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.prior_plan_freeze_receipt",
+        "event_0.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_duplicate_event_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.logical_time",
+        "event_1.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_ceiling_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.authority_ceiling"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_nonmonotone_time_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.logical_time"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_support_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_external_effect_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_plan_id_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.plan_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_id_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.claim_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_version_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.claim_version"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_packet_digest_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.packet_digest"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_drop_event_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.prior_execution_custody",
+        "event_1.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_duplicate_event_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.logical_time",
+        "event_2.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_ceiling_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.authority_ceiling"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_nonmonotone_time_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.logical_time"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_support_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_external_effect_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_plan_id_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.plan_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_id_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.claim_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_version_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.claim_version"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_packet_digest_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.packet_digest"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_drop_event_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.prior_adjudication_custody",
+        "event_2.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_duplicate_event_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.logical_time",
+        "event_3.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_ceiling_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.authority_ceiling"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_nonmonotone_time_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.logical_time"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_support_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_external_effect_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_plan_id_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.plan_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_id_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.claim_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_version_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.claim_version"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_packet_digest_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.packet_digest"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_drop_event_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "terminal_custody",
+        "terminal_stage"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_duplicate_event_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_4.logical_time",
+        "event_4.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_ceiling_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.authority_ceiling"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_nonmonotone_time_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.logical_time"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_support_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_request_external_effect_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_plan_id_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.plan_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_id_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.claim_id"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_claim_version_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.claim_version"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_substitute_packet_digest_3",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.packet_digest"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_swap_adjacent_0",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.prior_plan_freeze_receipt",
+        "event_0.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_swap_adjacent_1",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.prior_execution_custody",
+        "event_1.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_swap_adjacent_2",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.prior_adjudication_custody",
+        "event_2.stage_order"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_missing_plan_freeze_receipt",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_0.plan_freeze_receipt"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_missing_execution_receipt",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution_receipt"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_missing_adjudication_receipt",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.adjudication_receipt"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_missing_evidence_gate_receipt",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.evidence_gate_receipt"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_substitute_plan_id",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.binding"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_substitute_claim_id",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.binding"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_substitute_claim_version",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.binding"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_substitute_packet_digest",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.binding"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_count_short",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.disposition_count"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_execution_expiry_missing",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_1.execution.expiry_declared"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_adjudication_payload_substitution",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.execution_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_handoff_payload_substitution",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_3.execution_substitution"
+      ]
+    },
+    {
+      "mutation_id": "lifecycle_contradiction_blocks_adjudication",
+      "rejected": true,
+      "observed_route": "lifecycle_rejected",
+      "semantic_errors": [
+        "event_2.evidence_gate_route",
+        "event_2.execution_substitution"
       ]
     }
   ],

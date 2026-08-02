@@ -1712,18 +1712,18 @@ def errors(data: dict) -> list[str]:
         "verification_bandwidth_contradiction_valid_count":2,"verification_bandwidth_contradiction_invalid_count":7,
         "verification_bandwidth_capacity_valid_count":3,"verification_bandwidth_capacity_invalid_count":5,
         "verification_bandwidth_reachable_stage_count":5,"verification_bandwidth_route_case_count":12,
-        "verification_bandwidth_mutation_rejection_count":31,
+        "verification_bandwidth_mutation_rejection_count":87,
         "verification_bandwidth_strongest_effect":"handoff_to_independent_evidence_gate",
         "verification_bandwidth_support_state_effect":"none"}
     for key,value in expected_verification_bandwidth_contract.items():
         if proof_contract.get(key)!=value: out.append(f"verification-bandwidth contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     verification_bandwidth=data["verification_bandwidth_result"]
-    for key,value in {"reachable_stage_count":5,"route_case_count":12,"mutation_rejection_count":31,
+    for key,value in {"reachable_stage_count":5,"route_case_count":12,"mutation_rejection_count":87,
                       "strongest_effect":"handoff_to_independent_evidence_gate","support_state_effect":"none"}.items():
         if verification_bandwidth.get(key)!=value: out.append(f"verification-bandwidth result drifted: {key}")
     suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in verification_bandwidth.get("input_suites",[])}
     if suites!={"context_admission_adequacy":(3,5),"verification_bandwidth_probe":(2,7),"verification_bandwidth_capacity":(3,5)}: out.append("verification-bandwidth consumed-suite counts drifted")
-    for phrase in ["3-valid/5-invalid admission", "2-valid/7-invalid contradiction", "3-valid/5-invalid capacity", "31 of 31", "Support-state effect: `none`"]:
+    for phrase in ["3-valid/5-invalid admission", "2-valid/7-invalid contradiction", "3-valid/5-invalid capacity", "87 of 87", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["verification_bandwidth_receipt"].casefold(): out.append(f"verification-bandwidth receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "never owns evidence promotion", "Support-state effect: exactly `none`"]:
         if phrase.casefold() not in data["verification_bandwidth_dossier"].casefold(): out.append(f"verification-bandwidth dossier missing adequacy boundary: {phrase}")
