@@ -33,6 +33,8 @@ structure ContextState where
   materializationReceipt : Bool
   typedFaultReceipt : Bool
   materializationEmitted : Bool
+  supportAuthority : Bool
+  externalEffectAuthority : Bool
   logicalTime : Nat
 deriving DecidableEq, Repr
 
@@ -62,6 +64,8 @@ structure ContextEvent where
   typedFaultReceipt : Bool
   materializationEmitted : Bool
   denialReceipt : Bool
+  supportPromotionRequested : Bool
+  externalEffectRequested : Bool
   logicalTime : Nat
 deriving DecidableEq, Repr
 
@@ -90,7 +94,7 @@ def ContextEventSpecificValid (state : ContextState) (event : ContextEvent) : Bo
         !event.typedFaultReceipt && !event.materializationEmitted
   | .resolveMiss =>
       decide (event.fromStage = .requestBound) && decide (event.toStage = .typedFault) &&
-        decide (event.requestId = state.requestId) && event.mandatory &&
+        RequestMatches state event && event.mandatory &&
         !event.resolverFound && event.typedFaultReceipt &&
         !event.materializationEmitted && !event.materializationReceipt
   | .certify =>
@@ -99,6 +103,7 @@ def ContextEventSpecificValid (state : ContextState) (event : ContextEvent) : Bo
         decide (event.certificateSourceHash = state.sourceHash) &&
         decide (0 < event.derivedHash) &&
         decide (event.requestedAuthority ≤ state.approvedAuthority) &&
+        decide (event.logicalTime < state.leaseExpiry) &&
         event.certificateReceipt && event.omissionDeclared &&
         !event.exactCompletenessClaimed && !event.taintDetected &&
         !event.materializationEmitted
@@ -107,14 +112,21 @@ def ContextEventSpecificValid (state : ContextState) (event : ContextEvent) : Bo
         RequestMatches state event && decide (event.sourceHash = state.sourceHash) &&
         decide (event.derivedHash = state.derivedHash) &&
         decide (event.requestedAuthority ≤ state.approvedAuthority) &&
+        decide (event.logicalTime < state.leaseExpiry) &&
         state.resolverReceipt && state.certificateReceipt &&
         !event.taintDetected && event.materializationReceipt &&
         event.materializationEmitted && !event.typedFaultReceipt
-  | .deny => decide (event.toStage = .denied) && event.denialReceipt &&
+  | .deny =>
+      decide (event.fromStage != .materialized) &&
+      decide (event.fromStage != .typedFault) &&
+      decide (event.fromStage != .denied) &&
+      decide (event.toStage = .denied) && event.denialReceipt &&
       !event.materializationEmitted
 
 def ContextEventValid (state : ContextState) (event : ContextEvent) : Prop :=
   state.stage = event.fromStage ∧ state.logicalTime < event.logicalTime ∧
+    event.supportPromotionRequested = false ∧
+    event.externalEffectRequested = false ∧
     ContextEventSpecificValid state event = true
 
 instance contextEventValidDecidable (state : ContextState) (event : ContextEvent) :
@@ -152,6 +164,16 @@ def ContextRun : ContextState → List ContextEvent → Option ContextState
       | none => none
       | some next => ContextRun next tail
 
+def RequestIdentity (state : ContextState) : Nat × Nat × Nat × Nat × Nat × Bool :=
+  (state.requestId, state.address, state.version, state.snapshot, state.mount,
+    state.mandatory)
+
+def ContextTraceValid : ContextState → List ContextEvent → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ContextEventValid state event ∧
+      ContextTraceValid (ApplyContextEvent state event) tail
+
 theorem accepted_step_is_valid
     {state next : ContextState} {event : ContextEvent}
     (accepted : ContextStep state event = some next) : ContextEventValid state event := by
@@ -159,6 +181,180 @@ theorem accepted_step_is_valid
   split at accepted
   · assumption
   · simp at accepted
+
+theorem accepted_step_applies_event
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    next = ApplyContextEvent state event := by
+  unfold ContextStep at accepted
+  split at accepted
+  · exact Option.some.inj accepted |>.symm
+  · simp at accepted
+
+theorem accepted_step_cannot_request_support
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    event.supportPromotionRequested = false := by
+  exact (accepted_step_is_valid accepted).2.2.1
+
+theorem accepted_step_cannot_request_external_effect
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    event.externalEffectRequested = false := by
+  exact (accepted_step_is_valid accepted).2.2.2.1
+
+theorem apply_event_preserves_authority_ceiling
+    (state : ContextState) (event : ContextEvent) :
+    (ApplyContextEvent state event).authorityCeiling = state.authorityCeiling := by
+  rfl
+
+theorem apply_event_preserves_support_authority
+    (state : ContextState) (event : ContextEvent) :
+    (ApplyContextEvent state event).supportAuthority = state.supportAuthority := by
+  rfl
+
+theorem apply_event_preserves_external_effect_authority
+    (state : ContextState) (event : ContextEvent) :
+    (ApplyContextEvent state event).externalEffectAuthority =
+      state.externalEffectAuthority := by
+  rfl
+
+theorem accepted_step_preserves_authority_ceiling
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    next.authorityCeiling = state.authorityCeiling := by
+  rw [accepted_step_applies_event accepted]
+  exact apply_event_preserves_authority_ceiling state event
+
+theorem accepted_step_preserves_support_authority
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    next.supportAuthority = state.supportAuthority := by
+  rw [accepted_step_applies_event accepted]
+  exact apply_event_preserves_support_authority state event
+
+theorem accepted_step_preserves_external_effect_authority
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) :
+    next.externalEffectAuthority = state.externalEffectAuthority := by
+  rw [accepted_step_applies_event accepted]
+  exact apply_event_preserves_external_effect_authority state event
+
+theorem accepted_step_never_returns_raw
+    {state next : ContextState} {event : ContextEvent}
+    (accepted : ContextStep state event = some next) : next.stage ≠ .raw := by
+  rw [accepted_step_applies_event accepted]
+  rcases accepted_step_is_valid accepted with ⟨_, _, _, _, specific⟩
+  intro raw
+  have rawTarget : event.toStage = .raw := by
+    simpa [ApplyContextEvent] using raw
+  cases kind : event.kind <;>
+    simp [ContextEventSpecificValid, kind, rawTarget] at specific
+
+theorem accepted_bound_step_preserves_request_identity
+    {state next : ContextState} {event : ContextEvent}
+    (bound : state.stage ≠ .raw)
+    (accepted : ContextStep state event = some next) :
+    RequestIdentity next = RequestIdentity state := by
+  have notBind : event.kind ≠ .bindRequest := by
+    intro kind
+    rcases accepted_step_is_valid accepted with ⟨stage, _, _, _, specific⟩
+    rw [stage] at bound
+    simp [ContextEventSpecificValid, kind, bound] at specific
+  rw [accepted_step_applies_event accepted]
+  simp [RequestIdentity, ApplyContextEvent, notBind]
+
+theorem successful_run_preserves_authority_ceiling
+    {state final : ContextState} {events : List ContextEvent}
+    (ran : ContextRun state events = some final) :
+    final.authorityCeiling = state.authorityCeiling := by
+  induction events generalizing state with
+  | nil => simp [ContextRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at ran
+      | some next =>
+          have tailRan : ContextRun next tail = some final := by
+            simpa [ContextRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_authority_ceiling stepped)
+
+theorem successful_run_preserves_support_authority
+    {state final : ContextState} {events : List ContextEvent}
+    (ran : ContextRun state events = some final) :
+    final.supportAuthority = state.supportAuthority := by
+  induction events generalizing state with
+  | nil => simp [ContextRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at ran
+      | some next =>
+          have tailRan : ContextRun next tail = some final := by
+            simpa [ContextRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_support_authority stepped)
+
+theorem successful_run_preserves_external_effect_authority
+    {state final : ContextState} {events : List ContextEvent}
+    (ran : ContextRun state events = some final) :
+    final.externalEffectAuthority = state.externalEffectAuthority := by
+  induction events generalizing state with
+  | nil => simp [ContextRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at ran
+      | some next =>
+          have tailRan : ContextRun next tail = some final := by
+            simpa [ContextRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_step_preserves_external_effect_authority stepped)
+
+theorem successful_bound_run_preserves_request_identity
+    {state final : ContextState} {events : List ContextEvent}
+    (bound : state.stage ≠ .raw)
+    (ran : ContextRun state events = some final) :
+    RequestIdentity final = RequestIdentity state := by
+  induction events generalizing state with
+  | nil => simp [ContextRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at ran
+      | some next =>
+          have tailRan : ContextRun next tail = some final := by
+            simpa [ContextRun, stepped] using ran
+          calc
+            RequestIdentity final = RequestIdentity next :=
+              ih (accepted_step_never_returns_raw stepped) tailRan
+            _ = RequestIdentity state :=
+              accepted_bound_step_preserves_request_identity bound stepped
+
+theorem successful_run_has_valid_trace
+    {state final : ContextState} {events : List ContextEvent}
+    (ran : ContextRun state events = some final) :
+    ContextTraceValid state events := by
+  induction events generalizing state with
+  | nil => simp [ContextTraceValid]
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at ran
+      | some next =>
+          have tailRan : ContextRun next tail = some final := by
+            simpa [ContextRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_valid stepped, ih tailRan⟩
+
+theorem context_run_append
+    (state middle : ContextState) (left right : List ContextEvent)
+    (leftRan : ContextRun state left = some middle) :
+    ContextRun state (left ++ right) = ContextRun middle right := by
+  induction left generalizing state with
+  | nil => simp [ContextRun] at leftRan; subst middle; rfl
+  | cons event tail ih =>
+      cases stepped : ContextStep state event with
+      | none => simp [ContextRun, stepped] at leftRan
+      | some next =>
+          have tailRan : ContextRun next tail = some middle := by
+            simpa [ContextRun, stepped] using leftRan
+          simpa [ContextRun, stepped] using ih next tailRan
 
 theorem accepted_materialization_preserves_binding_and_authority
     {state next : ContextState} {event : ContextEvent}
@@ -170,7 +366,7 @@ theorem accepted_materialization_preserves_binding_and_authority
       event.derivedHash = state.derivedHash ∧
       event.requestedAuthority ≤ state.approvedAuthority ∧
       event.materializationReceipt = true := by
-  rcases accepted_step_is_valid accepted with ⟨_, _, specific⟩
+  rcases accepted_step_is_valid accepted with ⟨_, _, _, _, specific⟩
   simp [ContextEventSpecificValid, kind, RequestMatches, and_assoc] at specific
   have fields :
       event.fromStage = .certified ∧ event.toStage = .materialized ∧
@@ -179,13 +375,27 @@ theorem accepted_materialization_preserves_binding_and_authority
         event.mount = state.mount ∧ event.mandatory = state.mandatory ∧
         event.sourceHash = state.sourceHash ∧ event.derivedHash = state.derivedHash ∧
         event.requestedAuthority ≤ state.approvedAuthority ∧
+        event.logicalTime < state.leaseExpiry ∧
         state.resolverReceipt = true ∧ state.certificateReceipt = true ∧
         event.taintDetected = false ∧ event.materializationReceipt = true ∧
         event.materializationEmitted = true ∧ event.typedFaultReceipt = false := by
     simpa [and_assoc] using specific
   rcases fields with ⟨_, _, request, address, version, snapshot, mount, _, source,
-    derived, authority, _, _, _, receipt, _, _⟩
+    derived, authority, _, _, _, _, receipt, _, _⟩
   exact ⟨request, address, version, snapshot, mount, source, derived, authority, receipt⟩
+
+theorem accepted_materialization_requires_fresh_lease_and_complete_receipts
+    {state next : ContextState} {event : ContextEvent}
+    (kind : event.kind = .materialize)
+    (accepted : ContextStep state event = some next) :
+    event.logicalTime < state.leaseExpiry ∧
+      state.resolverReceipt = true ∧ state.certificateReceipt = true ∧
+      event.materializationReceipt = true := by
+  rcases accepted_step_is_valid accepted with ⟨_, _, _, _, specific⟩
+  simp [ContextEventSpecificValid, kind, RequestMatches, and_assoc] at specific
+  rcases specific with ⟨_, _, _, _, _, _, _, _, _, _, _, fresh,
+    resolver, certificate, _, receipt, _, _⟩
+  exact ⟨fresh, resolver, certificate, receipt⟩
 
 theorem accepted_mandatory_miss_emits_fault_without_materialization
     {state next : ContextState} {event : ContextEvent}
@@ -193,10 +403,43 @@ theorem accepted_mandatory_miss_emits_fault_without_materialization
     (accepted : ContextStep state event = some next) :
     event.mandatory = true ∧ event.typedFaultReceipt = true ∧
       event.materializationEmitted = false ∧ event.materializationReceipt = false := by
-  rcases accepted_step_is_valid accepted with ⟨_, _, specific⟩
-  simp [ContextEventSpecificValid, kind, and_assoc] at specific
-  exact ⟨specific.2.2.2.1, specific.2.2.2.2.2.1,
-    specific.2.2.2.2.2.2.1, specific.2.2.2.2.2.2.2⟩
+  rcases accepted_step_is_valid accepted with ⟨_, _, _, _, specific⟩
+  simp [ContextEventSpecificValid, kind, RequestMatches, and_assoc] at specific
+  rcases specific with ⟨_, _, _, _, _, _, _, _, mandatory, _, fault,
+    emitted, receipt⟩
+  exact ⟨mandatory, fault, emitted, receipt⟩
+
+theorem terminal_state_accepts_no_event
+    {state next : ContextState} {event : ContextEvent}
+    (terminal : state.stage = .materialized ∨ state.stage = .typedFault ∨
+      state.stage = .denied) : ContextStep state event ≠ some next := by
+  intro accepted
+  rcases accepted_step_is_valid accepted with ⟨stage, _, _, _, specific⟩
+  rcases terminal with materialized | typedFault | denied
+  · have fromStage : event.fromStage = .materialized := stage.symm.trans materialized
+    cases kind : event.kind <;>
+      simp [ContextEventSpecificValid, kind, fromStage] at specific
+  · have fromStage : event.fromStage = .typedFault := stage.symm.trans typedFault
+    cases kind : event.kind <;>
+      simp [ContextEventSpecificValid, kind, fromStage] at specific
+  · have fromStage : event.fromStage = .denied := stage.symm.trans denied
+    cases kind : event.kind <;>
+      simp [ContextEventSpecificValid, kind, fromStage] at specific
+
+theorem materialized_state_accepts_no_event
+    {state next : ContextState} {event : ContextEvent}
+    (terminal : state.stage = .materialized) : ContextStep state event ≠ some next :=
+  terminal_state_accepts_no_event (Or.inl terminal)
+
+theorem typed_fault_state_accepts_no_event
+    {state next : ContextState} {event : ContextEvent}
+    (terminal : state.stage = .typedFault) : ContextStep state event ≠ some next :=
+  terminal_state_accepts_no_event (Or.inr (Or.inl terminal))
+
+theorem denied_state_accepts_no_event
+    {state next : ContextState} {event : ContextEvent}
+    (terminal : state.stage = .denied) : ContextStep state event ≠ some next :=
+  terminal_state_accepts_no_event (Or.inr (Or.inr terminal))
 
 def initialState : ContextState where
   stage := .raw
@@ -216,6 +459,8 @@ def initialState : ContextState where
   materializationReceipt := false
   typedFaultReceipt := false
   materializationEmitted := false
+  supportAuthority := false
+  externalEffectAuthority := false
   logicalTime := 0
 
 def baseEvent (kind : ContextEventKind) (fromStage toStage : ContextStage)
@@ -245,6 +490,8 @@ def baseEvent (kind : ContextEventKind) (fromStage toStage : ContextStage)
   typedFaultReceipt := false
   materializationEmitted := false
   denialReceipt := false
+  supportPromotionRequested := false
+  externalEffectRequested := false
   logicalTime := time
 
 def bindEvent : ContextEvent := baseEvent .bindRequest .raw .requestBound 1

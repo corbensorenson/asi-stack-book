@@ -1174,31 +1174,31 @@
       "tag": "lean:vcm.abi.operational_invariant",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextRefinement",
-      "formal_target": "Every accepted materialization in the finite reachable model preserves the exact represented request, address, version, snapshot, mount, source, derived representation, approved authority, and receipt custody.",
+      "formal_target": "Every successful finite run from a bound request preserves exact request, address, version, snapshot, mount, and mandatory identity; every run preserves the authority ceiling and support/external-effect authority; accepted materialization additionally requires fresh lease and complete resolver, certificate, and materialization receipts.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced projection-only ownership with reachable request-binding materialization and mandatory-fault semantics plus an independent 11-scenario/55-mutation consumer; support effect none."
+      "rationale": "Exact 39-theorem bound-request lifecycle plus an independent exact-build 11-scenario/73-mutation consumer covering arbitrary-run identity, authority, trace, composition, receipt, lease, terminality, support, and external-effect boundaries."
     },
     {
       "tag": "lean:vcm.abi.failure_blocks_promotion",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextRefinement",
-      "formal_target": "A represented mandatory miss reaches typed-fault state only with a fault receipt and without materialization; binding, lease, authority, certificate, omission, overclaim, taint, and receipt faults are rejected.",
+      "formal_target": "A represented mandatory miss reaches typed-fault state only with exact bound identity, a fault receipt, and no materialization; binding, lease, authority, certificate, omission, overclaim, taint, receipt, support, and external-effect faults are rejected, and materialized, typed-fault, and denied states are terminal.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced projection-only ownership with reachable request-binding materialization and mandatory-fault semantics plus an independent 11-scenario/55-mutation consumer; support effect none."
+      "rationale": "Exact 39-theorem bound-request lifecycle plus an independent exact-build 11-scenario/73-mutation consumer covering arbitrary-run identity, authority, trace, composition, receipt, lease, terminality, support, and external-effect boundaries."
     },
     {
       "tag": "lean:vcm.abi.context_admission_route_envelope",
       "chapter_id": "virtual-context-abi",
       "module": "AsiStackProofs.VirtualContextRefinement",
-      "formal_target": "The original finite admission routes are consumed alongside separate four-event materialization and two-event mandatory-fault refinements plus an independent 11-scenario/55-mutation consumer.",
+      "formal_target": "The original finite admission routes are consumed alongside four-event materialization and two-event mandatory-fault refinements, arbitrary-run trace and batch-composition theorems, and an independent exact-build 11-scenario/73-mutation consumer.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced projection-only ownership with reachable request-binding materialization and mandatory-fault semantics plus an independent 11-scenario/55-mutation consumer; support effect none."
+      "rationale": "Exact 39-theorem bound-request lifecycle plus an independent exact-build 11-scenario/73-mutation consumer covering arbitrary-run identity, authority, trace, composition, receipt, lease, terminality, support, and external-effect boundaries."
     },
     {
       "tag": "lean:vcm.certificates.operational_invariant",

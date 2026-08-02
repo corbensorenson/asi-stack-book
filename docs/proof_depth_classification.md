@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2493 |
-| Direct/projection-style theorem declarations | 419 |
-| Derived/decomposed theorem declarations | 1517 |
-| Unknown or mixed theorem declarations | 557 |
+| Theorem declarations classified | 2515 |
+| Direct/projection-style theorem declarations | 424 |
+| Derived/decomposed theorem declarations | 1531 |
+| Unknown or mixed theorem declarations | 560 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -180,7 +180,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 35 | 5 | 26 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 39 | 5 | 17 | 17 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 36 | 4 | 27 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 
 ## Theorem Classification
@@ -2627,21 +2627,43 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `optional_absent_context_requests_context` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `stale_certificate_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | `tainted_context_quarantines` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_bound_step_preserves_request_identity` | derived_or_decomposed | no | uses have, rcases, rw, simp |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_mandatory_miss_emits_fault_without_materialization` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_materialization_preserves_binding_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_materialization_requires_fresh_lease_and_complete_receipts` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_cannot_request_external_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_cannot_request_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_never_returns_raw` | derived_or_decomposed | no | uses cases, have, rcases, rw, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_preserves_authority_ceiling` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_preserves_external_effect_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `accepted_step_preserves_support_authority` | derived_or_decomposed | no | uses rw |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `address_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `apply_event_preserves_authority_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `apply_event_preserves_external_effect_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `apply_event_preserves_support_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `certificate_authority_escalation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `certificate_binding_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `context_run_append` | derived_or_decomposed | no | uses cases, have, induction, left, simp, subst |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `denied_state_accepts_no_event` | unknown_or_mixed | no | no ':= by' body detected |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `exact_completeness_overclaim_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `exact_resolver_trace_materializes` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `expired_lease_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mandatory_miss_trace_faults_without_packet` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mandatory_miss_without_fault_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `materialization_without_certificate_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `materialized_state_accepts_no_event` | unknown_or_mixed | no | no ':= by' body detected |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `mount_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `snapshot_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `successful_bound_run_preserves_request_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `successful_run_preserves_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `successful_run_preserves_external_effect_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `successful_run_preserves_support_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `tainted_materialization_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `terminal_state_accepts_no_event` | derived_or_decomposed | no | uses cases, have, rcases, simp |
+| `lean/AsiStackProofs/VirtualContextRefinement.lean` | `typed_fault_state_accepts_no_event` | unknown_or_mixed | no | no ':= by' body detected |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `undeclared_omission_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | `version_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | `accepted_causal_policy_route_requires_crosscheck_intervention_and_reviewer` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

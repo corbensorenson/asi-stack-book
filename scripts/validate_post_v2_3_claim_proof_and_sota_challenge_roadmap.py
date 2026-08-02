@@ -1625,7 +1625,11 @@ def errors(data: dict) -> list[str]:
         "virtual_context_admission_invalid_count": 5,
         "virtual_context_materialization_event_count": 4,
         "virtual_context_mandatory_miss_event_count": 2,
-        "virtual_context_mutation_rejection_count": 55,
+        "virtual_context_theorem_declaration_count": 39,
+        "virtual_context_composition_split_count": 8,
+        "virtual_context_terminal_rejection_count": 2,
+        "virtual_context_non_authority_checked": True,
+        "virtual_context_mutation_rejection_count": 73,
         "virtual_context_support_state_effect": "none",
     }
     for key, value in expected_virtual_context_contract.items():
@@ -1636,10 +1640,12 @@ def errors(data: dict) -> list[str]:
                        "resolver_invalid_count": 9, "admission_fixture_count": 8,
                        "admission_valid_fixture_count": 3, "admission_invalid_fixture_count": 5,
                        "materialization_trace_event_count": 4, "mandatory_miss_trace_event_count": 2,
-                       "mutation_rejection_count": 55, "support_state_effect": "none"}.items():
+                       "theorem_declaration_count": 39, "composition_split_count": 8,
+                       "terminal_rejection_count": 2, "non_authority_checked": True,
+                       "mutation_rejection_count": 73, "support_state_effect": "none"}.items():
         if virtual_context.get(key) != value:
             out.append(f"virtual-context result drifted: {key} expected {value!r}, got {virtual_context.get(key)!r}")
-    for phrase in ["two valid and nine expected-invalid", "three-valid/five-invalid", "55 of 55 mutations", "Support-state effect: `none`"]:
+    for phrase in ["exact 39-theorem", "two valid and nine expected-invalid", "three-valid/five-invalid", "eight prefix/suffix composition splits", "73 of 73 mutations", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["virtual_context_receipt"].casefold():
             out.append(f"virtual-context receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "admission validity is never treated as resolver correctness", "Support-state effect: exactly `none`"]:
