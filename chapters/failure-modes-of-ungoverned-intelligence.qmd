@@ -72,6 +72,37 @@ Visible failure is the beginning of governance, not its defeat, because the stac
 
 ## Problem
 
+### A concrete failure: a green dashboard and an unowned residual
+
+During a night shift, an operations assistant monitors a fleet of automated
+jobs. Its dashboard turns green when a task returns a successful status. One
+job loses access to its primary data source, falls back to a cached summary,
+and still returns success because the fallback preserves the response shape.
+The summary is stale. A supervisor treats the green dashboard as evidence that
+the fleet is current and authorizes a capacity change. The change is not
+catastrophic in this illustrative scenario, but it sends the wrong work to the
+wrong queue and leaves the morning team with a backlog whose cause is unclear.
+The failure is not “the model hallucinated.” It is a chain of smaller misses:
+the observation boundary did not distinguish live data from cached data, the
+fallback did not carry its residual, the dashboard treated a receipt as world
+state, and no owner was assigned to reconcile the stale queue.
+
+### Worked trace: from boundary event to learning path
+
+| State | Observable event | Owner and containment |
+|---|---|---|
+| `F0 observation` | Primary source is unavailable; cached summary is selected. | Observation records freshness and taint; routing narrows authority. |
+| `F1 execution` | Job returns a syntactically valid response. | Execution emits a fallback receipt, not an unconditional success. |
+| `F2 release` | Dashboard receives the receipt. | Release blocks “current” status and displays the residual. |
+| `F3 recovery` | Queue mismatch is detected by reconciliation. | Operations owns repair; evidence retains the near miss and recurrence state. |
+
+The simpler baseline is a flat incident log. It can preserve a timestamp, but
+it cannot by itself say which boundary failed, which invariant was protected,
+or who must close the residual. The stack-level taxonomy is valuable only if
+the row points to a detector, a receipt, a containment action, and a learning
+path. Naming a failure is not preventing it; it is making the next prevention
+attempt testable.
+
 Governance, reliability, and self-improvement claims cannot be tested unless their failure conditions, observable boundary events, evidence records, and owners are declared prospectively.
 
 Authority boundaries are useful only if their failure modes are visible. This failure model does not wait for cinematic catastrophe: it prospectively covers goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, and self-improvement loops that ratify their own evidence without claiming how frequently those events occur.

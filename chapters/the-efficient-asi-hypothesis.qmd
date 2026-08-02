@@ -67,6 +67,41 @@ The target is not austerity; it is measured adequacy under a trace that later la
 
 ## Problem
 
+### A concrete failure: the cheap route that hid its repair bill
+
+Imagine a service that classifies one hundred supplier invoices. Three routes
+are authorized: a cached template for familiar layouts, a small model for
+ordinary cases, and a larger verifier for ambiguous currency and tax fields.
+The router reports a lower average latency after sending almost everything to
+the cached template. On the first dashboard the result looks like an
+efficiency win. A month later, an invoice from a new country exposes a decimal
+separator the template never represented. The downstream payment system
+accepts the wrong amount, an operator reconstructs the invoice, the route is
+rolled back, and every invoice touched by the template must be rechecked. The
+cheap route did not make the work cheaper; it moved verification and repair
+into a delayed, high-cost residual. This is an illustrative scenario, not a
+reported benchmark. Its purpose is to make the denominator visible.
+
+### Worked trace: useful work per total contract cost
+
+| State | Route decision | Cost or residual that must remain visible |
+|---|---|---|
+| `R0 contract` | Currency, tax, and supplier identity are fixed as the quality predicate. | A route cannot silently weaken the predicate. |
+| `R1 proposal` | The cache proposes a parse with confidence and coverage metadata. | Cache lookup and coverage checks count as cost. |
+| `R2 verification` | Novel format is sent to the larger verifier; familiar formats stay cached. | The fallback decision and rejected lower-cost route are recorded. |
+| `R3 acceptance` | Only fields that satisfy the predicate become accepted work. | Unresolved invoices remain residuals, not successes. |
+| `R4 update` | A repeated novel layout is compiled into a new procedure after review. | Compilation, regression tests, and rollback preparation enter the denominator. |
+
+The readable claim is simple: spend the expensive route where the contract
+needs it, and make every saved unit of work carry its remaining burden. The
+normative rule is to compare routes on accepted quality, total contract cost,
+and residuals together. The formal binding is the route record’s predicate,
+authority ceiling, verification outcome, fallback, and residual fields. The
+strongest simpler baseline is always-maximal routing. It can be better on a
+small or novel workload, which is why the hypothesis is conditional on
+repetition, route diversity, and a fixed predicate rather than a promise that
+the stack always wins.
+
 The architecture needs a non-scale-only theory for how useful capability can increase without spending maximal cognition on every subtask.
 
 ASI as a stack has an economic consequence. If every task is routed to the largest available model with the fullest available context, the system may look capable while burning verification budget, hiding residuals, and making repeated work non-durable. If every task is routed to the cheapest component, the system may look efficient while silently dropping constraints that only a stronger verifier, richer memory packet, or human review could preserve.

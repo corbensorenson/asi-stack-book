@@ -31,6 +31,26 @@ not to optimize a phrase counter; it is to make every chapter easier to
 understand without deleting a claim, caveat, source, proof boundary, or
 non-claim.
 
+## Calibration tranche executed (2026-08-02)
+
+The first editorial tranche is now in the canonical live chapter sources. It
+covers the stack thesis, efficient-ASI thesis, failure model, inner-alignment
+chapter, and claim-ledger chapter. Each received a chapter-specific
+illustrative failure, a state-labelled worked trace, and a strongest simpler
+baseline or counterexample. The scenes are explicitly pedagogical: they do not
+report incidents, benchmark outcomes, objective-identification results, or
+support-state changes. The inner-alignment chapter also received a
+digest-bound semantic re-review because its existing concept contract is
+active; the review records the new prose as editorial substance with
+`support_state_effect: none`.
+
+This tranche is a calibration pass, not the 84-chapter closure. The machine
+status therefore records `active_calibration_tranche_complete_packet_contract_ready`
+while the per-chapter packet count remains zero until the packet writer and
+adversarial fixtures are applied to the tranche. The remaining chapters still
+require their own scenes, traces, caveat dispositions, and digest-bound
+packets.
+
 ## Diagnosis and disposition
 
 This is a prose and reader-model defect, not a reason to add chapters. The

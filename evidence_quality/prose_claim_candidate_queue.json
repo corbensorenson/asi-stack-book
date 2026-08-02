@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3863,
+    "candidate_count": 3871,
     "review_state_counts": {
-      "duplicate_of_atom": 1833,
+      "duplicate_of_atom": 1841,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -90,9 +90,47 @@
       "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"
     },
     {
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.888dc83931f2",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:94",
+      "sentence": "is not a counterexample to the stack; it is a reminder that the stack must",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The simpler-baseline conclusion restates the chapter's existing requirement that a layer earn a distinct boundary benefit or failure owner.",
+      "target_atom_id": "asi-is-a-stack-not-a-model.core"
+    },
+    {
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.7c5a4fbd54e8",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:95",
+      "sentence": "show a distinct benefit or failure owner before adding another layer.",
+      "cues": [
+        "show"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The simpler-baseline conclusion restates the chapter's existing layer-admission criterion and creates no new support-bearing proposition.",
+      "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"
+    },
+    {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.19fa85de1ffc",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:58",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:97",
       "sentence": "Advanced AI systems that plan, remember, verify, act, route work, compress representations, and improve under governance need one architecture frame.",
       "cues": [
         "improve"
@@ -111,7 +149,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.839c2c136f89",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:60",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:99",
       "sentence": "An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress.",
       "cues": [
         "should"
@@ -130,7 +168,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.de4130a3c23c",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:64",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:103",
       "sentence": "If it cannot answer those questions, it may still be an idea, but it is not yet an architectural layer.",
       "cues": [
         "cannot"
@@ -149,7 +187,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.9233fb8b203a",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:66",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:105",
       "sentence": "Later chapters should not inflate ordinary reuse of the pattern into separate novelty claims; they should state their local delta, such as a new artifact type, invariant, failure mode, proof/evidence lane, or implementation horizon.",
       "cues": [
         "should"
@@ -168,7 +206,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.3258c1d971d9",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:72",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:111",
       "sentence": "A retrieval system can surface a source without proving that the source is current, permitted, or sufficient for the task.",
       "cues": [
         "sufficient"
@@ -187,7 +225,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.21db0e0db80d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:72",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:111",
       "sentence": "A benchmark can improve while hiding new failure cases.",
       "cues": [
         "improve"
@@ -206,7 +244,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.c47a09fc55aa",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:72",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:111",
       "sentence": "Adding more parameters may improve a component, but it does not by itself record what changed, who approved it, what evidence exists, or what should happen if the change fails.",
       "cues": [
         "improve",
@@ -226,7 +264,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.073c75d0dc10",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:74",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:113",
       "sentence": "It should not silently become the constitution, the memory authority, the deployment authority, the approval body, and the evidence registry at the same time.",
       "cues": [
         "should"
@@ -245,7 +283,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.2cb1eb1cb869",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:76",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:115",
       "sentence": "A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module.",
       "cues": [
         "required"
@@ -264,7 +302,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.91d0b0ed754d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:80",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:119",
       "sentence": "MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator.",
       "cues": [
         "show"
@@ -283,7 +321,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.4f86f4293582",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:84",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:123",
       "sentence": "[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.",
       "cues": [
         "should"
@@ -302,7 +340,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b0d9962f1a90",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:114",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:153",
       "sentence": "does not inherit qualification; and a self-improvement proposal cannot confer",
       "cues": [
         "cannot"
@@ -321,7 +359,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.e6cfa5ba0e8f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:128",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:167",
       "sentence": "designers what must remain separate, and the machine projection tells an",
       "cues": [
         "must"
@@ -340,7 +378,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.57bbfab11396",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:129",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:168",
       "sentence": "implementation what record must cross a boundary.",
       "cues": [
         "must"
@@ -359,7 +397,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.c90dad94ad0e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:143",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:182",
       "sentence": "This prevents a long context window or a",
       "cues": [
         "prevents"
@@ -378,7 +416,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.107cedc648b5",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:154",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:193",
       "sentence": "able to contradict them, and unresolved discrepancies must survive as owned",
       "cues": [
         "must"
@@ -397,7 +435,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.9351e9725aaa",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:169",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:208",
       "sentence": "own code, objectives, evaluators, or constitution, but it cannot be the sole",
       "cues": [
         "cannot"
@@ -416,7 +454,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.fb6809f3ad10",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:186",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:225",
       "sentence": "tooling, provenance logs, and release engineering may provide the necessary",
       "cues": [
         "necessary"
@@ -435,7 +473,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.579812d2d680",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:188",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:227",
       "sentence": "produce excellent records while failing to improve the external outcomes that",
       "cues": [
         "improve"
@@ -454,7 +492,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.caa2d349818c",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:195",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:234",
       "sentence": "would measure useful completion, unsafe or unauthorized effect, false refusal,",
       "cues": [
         "measure"
@@ -473,7 +511,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.d3c54fc1895e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:201",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:240",
       "sentence": "Any boundary should be narrowed wherever a simpler design performs equally",
       "cues": [
         "should"
@@ -492,7 +530,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.8a6c2760ece2",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:207",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:246",
       "sentence": "layers; each layer must own a distinct failure family or measurable interface",
       "cues": [
         "must"
@@ -511,7 +549,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.35dd3c20d72f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:211",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:250",
       "sentence": "natural traces in which explicit boundaries prevent or recover failures that",
       "cues": [
         "prevent"
@@ -530,7 +568,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.ced251f76d58",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:258",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:297",
       "sentence": "Self-improvement is not outside the stack; it returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.",
       "cues": [
         "must"
@@ -549,7 +587,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.7cdc971f6060",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:264",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:303",
       "sentence": "The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what lifecycle state is this layer in, who owns the boundary, which chapters currently carry it, what responsibility does the layer own, what artifact does it emit, how does handoff work, what authority does it have and lack, what invariant must survive implementation changes, what new-source integration decision applies, and what evidence would justify promotion, replacement, or rollback.",
       "cues": [
         "must"
@@ -568,7 +606,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.4ac94161694f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:268",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:307",
       "sentence": "The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action.",
       "cues": [
         "require"
@@ -587,7 +625,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.3230238081c0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:270",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:309",
       "sentence": "Render and validation gates prevent the public book from drifting away from the repository that defines it.",
       "cues": [
         "prevent"
@@ -606,7 +644,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f2585203b08b",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:285",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:324",
       "sentence": "Prose can improve, chapters can move, and implementations can be replaced, but the contract must continue to say what the layer owns and what it is not allowed to claim.",
       "cues": [
         "improve",
@@ -626,7 +664,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.55051a33d86d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:315",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:354",
       "sentence": "If an adjacent layer cannot identify its input artifact or authority ceiling, the right behavior is not improvisation.",
       "cues": [
         "cannot"
@@ -645,7 +683,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.42f477c812af",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:317",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:356",
       "sentence": "A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.",
       "cues": [
         "should"
@@ -664,7 +702,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.8a22bd4fd15f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:319",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:358",
       "sentence": "The book should therefore be edited like a stack, not like a table of contents.",
       "cues": [
         "should"
@@ -683,7 +721,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b95183464fc6",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:319",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:358",
       "sentence": "If it changes a contract, the outline, chapter, schema, proof target, and crosswalk should move together.",
       "cues": [
         "should"
@@ -702,7 +740,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.941a90f851e0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:325",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:364",
       "sentence": "approves an authority level no higher than the caller ceiling, requires a",
       "cues": [
         "requires"
@@ -721,7 +759,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.37b2091619d4",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:328",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:367",
       "sentence": "Lean proves the within-ceiling and live-grant consequences",
       "cues": [
         "proves"
@@ -740,7 +778,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.bd8fb9e6de51",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:371",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:410",
       "sentence": "Scale-first systems can improve component capability, but model weights do not carry authority ceilings, source adequacy, rollback ownership, or support-state transitions.",
       "cues": [
         "improve",
@@ -760,7 +798,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.30bd19f7ccad",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:371",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:410",
       "sentence": "Compound and modular systems such as MRKL-style architectures show that model-plus-expert decomposition is real architecture vocabulary, but decomposition alone does not create claim ledgers, replacement transactions, or recursive-improvement boundaries.",
       "cues": [
         "show"
@@ -779,7 +817,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.1819a04274c3",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:373",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:412",
       "sentence": "Cognitive-architecture and layered-control lineages become useful comparators, but the ASI Stack adds a stricter obligation: every layer must name its responsibility, interface artifact, invariant, failure mode, promotion rule, non-claims, and rollback path before it can be treated as part of the governed machine.",
       "cues": [
         "must"
@@ -798,7 +836,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.226f59300f5e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:375",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:414",
       "sentence": "Planning, memory, reasoning, execution, routing, compression, and evidence should exchange typed artifacts rather than hidden state.",
       "cues": [
         "should"
@@ -817,7 +855,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.369689b7d708",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:377",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:416",
       "sentence": "It stays at `argument` support until layer-boundary records, source-to-layer reviews, handoff-denial fixtures, traceability audits, and governed replacement examples show that stack separation survives real integration pressure.",
       "cues": [
         "show"
@@ -836,7 +874,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.912aba349a3c",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:399",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:438",
       "sentence": "Recorded custody fields remain trusted inputs, and the result does not prove authentic authority, complete effects, distributed execution, whole-system safety, capability, source interpretation, support-state promotion, reproduction, transfer, or deployed layer enforcement.",
       "cues": [
         "prove",
@@ -856,7 +894,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.0dbff04c3469",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:432",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:471",
       "sentence": "That stance also changes how capability should be measured.",
       "cues": [
         "should"
@@ -875,7 +913,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f4b2bd909f75",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:432",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:471",
       "sentence": "The efficiency hypothesis follows naturally: capability should grow by routing, reusing, compressing, and verifying cognition at the right boundary, not by spending maximum cognition everywhere and hoping governance can be added afterward.",
       "cues": [
         "should"
@@ -894,7 +932,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f25144b16387",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:470",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:509",
       "sentence": "If explicit boundaries cannot route and reuse cognition more",
       "cues": [
         "cannot"
@@ -913,7 +951,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.5d005b8d7b83",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:472",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:511",
       "sentence": "verification, repair, and governance cost, the stack should become smaller.",
       "cues": [
         "should"
@@ -932,7 +970,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b81edb0329f0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:483",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:522",
       "sentence": "blind spot; it cannot prove that no blind spot exists.",
       "cues": [
         "cannot",
@@ -1084,9 +1122,28 @@
       "target_atom_id": "the-efficient-asi-hypothesis.invariant.004"
     },
     {
+      "candidate_id": "the-efficient-asi-hypothesis.prose.5462c488d47c",
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:80",
+      "sentence": "rolled back, and every invoice touched by the template must be rechecked.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The illustrative invoice trace restates the efficient-ASI core's residual and total-contract-cost boundary; it is not a measured route result.",
+      "target_atom_id": "the-efficient-asi-hypothesis.core"
+    },
+    {
       "candidate_id": "the-efficient-asi-hypothesis.prose.57c972c1aa71",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:74",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:109",
       "sentence": "The efficient-ASI hypothesis is therefore not \"small models are enough\" and not \"scale is unnecessary.\" It is a claim about allocation.",
       "cues": [
         "scale"
@@ -1105,7 +1162,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.75c6d7123bf3",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:76",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:111",
       "sentence": "A route must say what quality it preserved, what cost it paid, and what residual it left behind.",
       "cues": [
         "must"
@@ -1124,7 +1181,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.b388edbd0663",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:82",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:117",
       "sentence": "A scale-only account has no native place to record why a cheap route was adequate, why a costly route was necessary, what quality predicate was satisfied, what verification was skipped, or what residual burden remains.",
       "cues": [
         "necessary",
@@ -1144,7 +1201,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.f2e8c7b43d39",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:84",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:119",
       "sentence": "Sparse MoE work such as `ext_sparse_moe_2017`, `ext_gshard_2020`, `ext_switch_transformer_2021`, `ext_expert_choice_routing_2022`, and the `ext_moe_llm_survey_2024` source note shows conditional computation, expert routing, sharding, communication overhead, stability, load balancing, and system constraints as efficiency surfaces.",
       "cues": [
         "shows"
@@ -1163,7 +1220,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ca62d012b1c8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:84",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:119",
       "sentence": "BIG-bench in `ext_bigbench_2022` shows why broad task suites can pressure capability claims without resolving hidden route cost or residual burden.",
       "cues": [
         "shows"
@@ -1182,7 +1239,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.f19bb8ad3a22",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:86",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
       "sentence": "Those external records also show the boundary of the claim.",
       "cues": [
         "show"
@@ -1201,7 +1258,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.0285df21a92f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:86",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
       "sentence": "Conditional computation can reduce the amount of active model computation, but it does not by itself say whether the selected expert had authority, whether the route preserved a task predicate, or whether overload and fallback were recorded.",
       "cues": [
         "reduce"
@@ -1220,7 +1277,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.3b51dd58dfab",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:86",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
       "sentence": "Cost-aware cascades and learned routers can reduce visible spend, but they can also omit verification, repair, provenance, or human-review costs if the record is too narrow.",
       "cues": [
         "reduce"
@@ -1239,7 +1296,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.7577834a0da2",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:86",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
       "sentence": "Prompt compression and fast decoding can reduce context or latency cost, but they do not prove that downstream utility, citation faithfulness, tool authority, or residual obligations survived.",
       "cues": [
         "prove",
@@ -1259,7 +1316,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d383971a4622",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:86",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
       "sentence": "Broad benchmarks can reveal scale-sensitive behavior, but they cannot by themselves tell whether a cheaper route preserved the same predicate under the same authority ceiling.",
       "cues": [
         "cannot",
@@ -1279,7 +1336,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d4ef2502cfba",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:94",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:129",
       "sentence": "[the-efficient-asi-hypothesis.core, label: Design rationale, support: argument] On repeated workloads with multiple authorized routes, selecting the lowest-cost route that satisfies a fixed quality predicate and compiling reusable work can improve useful-task success per total contract cost over always-maximal and always-cheapest policies, provided authority, verification, residual, and fallback obligations remain intact.",
       "cues": [
         "improve"
@@ -1298,7 +1355,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d31d59bf331d",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:121",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:156",
       "sentence": "inside its authority ceiling, survives the required verification, and leaves",
       "cues": [
         "required"
@@ -1317,7 +1374,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.716302fe3f0d",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:127",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:162",
       "sentence": "This definition prevents three common substitutions.",
       "cues": [
         "prevents"
@@ -1336,7 +1393,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.6f73d18ef05e",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:128",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:163",
       "sentence": "usefulness: generating more candidates can increase verifier load while",
       "cues": [
         "increase"
@@ -1355,7 +1412,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ac5a57dda1a0",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:130",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:165",
       "sentence": "a smaller worker may transfer cost to a stronger reviewer, a human operator,",
       "cues": [
         "transfer"
@@ -1374,7 +1431,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.71d1d2896a7e",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:136",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:171",
       "sentence": "The comparison must include both obvious degenerate policies.",
       "cues": [
         "must"
@@ -1393,7 +1450,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.9b54127195ee",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:138",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:173",
       "sentence": "can waste cognition and prevent reuse, but it supplies a serious quality",
       "cues": [
         "prevent"
@@ -1412,7 +1469,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.aa204adac38d",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:142",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:177",
       "sentence": "improves useful accepted work per total contract cost over both, with matched",
       "cues": [
         "improves"
@@ -1431,7 +1488,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.1c1697948111",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:155",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:190",
       "sentence": "The architecture should be allowed to learn that selectivity",
       "cues": [
         "should"
@@ -1450,7 +1507,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.6a033d252efc",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:161",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:196",
       "sentence": "Efficiency governance must reason about scale without turning an empirical fit",
       "cues": [
         "must",
@@ -1470,7 +1527,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.9de8df9020a0",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:164",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:199",
       "sentence": "Hoffmann et al. show why the allocation matters: within their studied",
       "cues": [
         "show"
@@ -1489,7 +1546,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.e0bbcc7fdea8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:169",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:204",
       "sentence": "must be planned jointly and re-fit when the regime changes.",
       "cues": [
         "must"
@@ -1508,7 +1565,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.c397f4548f1e",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:171",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:206",
       "sentence": "A **Scaling Forecast Record** should bind:",
       "cues": [
         "should"
@@ -1527,7 +1584,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.8d259dea617f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:186",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:221",
       "sentence": "Miranda, and Koyejo show that discontinuous or nonlinear scoring can create",
       "cues": [
         "show"
@@ -1546,7 +1603,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.fdb4c7229b35",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:204",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:239",
       "sentence": "metrics, neighboring scales, seeds, and independent reproduction.",
       "cues": [
         "scales"
@@ -1565,7 +1622,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.be0ea24ae5a2",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:211",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:246",
       "sentence": "recurrence, test-time search, and tool use should compete on the same useful-",
       "cues": [
         "should"
@@ -1584,7 +1641,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.37893b170243",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:226",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:261",
       "sentence": "A competent test must make those explanations compete.",
       "cues": [
         "must"
@@ -1603,7 +1660,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.72fa13a300d9",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:228",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:263",
       "sentence": "and strong monolithic-with-tools baselines under matched budgets; prevent",
       "cues": [
         "prevent"
@@ -1622,7 +1679,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.6cb1994a0389",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:236",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:271",
       "sentence": "review time, misses a policy dependency, and requires a later rollback.",
       "cues": [
         "requires"
@@ -1641,7 +1698,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.47df6e5cd69a",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:238",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:273",
       "sentence": "The ledger must attach those downstream effects to the",
       "cues": [
         "must"
@@ -1660,7 +1717,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.4028c740aca4",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:253",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:288",
       "sentence": "BeastBrain and MoECOT keep routing and specialist-lane economics visible, and Aletheia prevents verification effort from being counted as optional decoration.",
       "cues": [
         "prevents"
@@ -1679,7 +1736,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d8f2af0c1d25",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:276",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:311",
       "sentence": "The system tries to spend only the cognition the contract demands, but it must also say which cheaper routes were rejected, which stronger route remains available, and what residual burden survives the result.",
       "cues": [
         "must"
@@ -1698,7 +1755,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d93b60daf44c",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:276",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:311",
       "sentence": "Repeated cognition should harden into durable artifacts, tools, procedural memory, specialist arms, or regression tests.",
       "cues": [
         "should"
@@ -1717,7 +1774,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.39e4c3971a24",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:276",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:311",
       "sentence": "Compression should be counted only after the verifier and repair path expose what the compact representation did not carry.",
       "cues": [
         "should"
@@ -1736,7 +1793,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.728efb10f855",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:278",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:313",
       "sentence": "RMI gives the route decision a ratchet: solved work should become regression coverage, reusable tools, specialist arms, or procedural memory; unsolved work should become residual escrow rather than narrative success.",
       "cues": [
         "should"
@@ -1755,7 +1812,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.8467d6d5b8b7",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:278",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:313",
       "sentence": "Simulation Scaling prevents the architecture from treating simulated or synthetic evaluation as free; scope, fidelity, clockspeed, and bottlenecks have to be in the contract.",
       "cues": [
         "prevents"
@@ -1774,7 +1831,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.eeb0ef229f26",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:280",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:315",
       "sentence": "A route can be useful while still failing to prove efficiency; a route can be cheap while still creating too much repair; and a route can be powerful while still being wasteful if its output never becomes reusable evidence.",
       "cues": [
         "prove"
@@ -1793,7 +1850,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d0b94034f848",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:317",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:352",
       "sentence": "more cheaply, the ledger should choose it.",
       "cues": [
         "should"
@@ -1812,7 +1869,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.70cb62d626fd",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:318",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:353",
       "sentence": "only where its complete routed policy improves the measured frontier rather",
       "cues": [
         "improves"
@@ -1831,7 +1888,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.a45a2fb9fec4",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:352",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:387",
       "sentence": "A complete record should also distinguish cost classes:",
       "cues": [
         "should"
@@ -1850,7 +1907,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.834ccd11e0cb",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:362",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:397",
       "sentence": "A router may reduce model tokens by increasing context-packaging burden.",
       "cues": [
         "reduce"
@@ -1869,7 +1926,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.5a84fce0cd1c",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:362",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:397",
       "sentence": "A compressor may reduce storage while increasing repair.",
       "cues": [
         "reduce"
@@ -1888,7 +1945,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.bb9eec1cc050",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:362",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:397",
       "sentence": "A policy update may reduce latency while increasing human review.",
       "cues": [
         "reduce"
@@ -1907,7 +1964,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.a5efe249ca69",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:372",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:407",
       "sentence": "If a lower-cost route was not tried, was unauthorized, or failed the predicate, the record should say so.",
       "cues": [
         "should"
@@ -1926,7 +1983,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.9f452a2db8a6",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:372",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:407",
       "sentence": "If the system cannot reconstruct that comparison, the efficiency claim should stay as design rationale rather than measurement.",
       "cues": [
         "cannot",
@@ -1946,7 +2003,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.fee8bd859b48",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:382",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:417",
       "sentence": "Benchmarks can improve while residual escrow grows.",
       "cues": [
         "improve"
@@ -1965,7 +2022,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.688ee6f7260f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:382",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:417",
       "sentence": "The remedy is not a slogan about scale; it is a ledger that keeps quality, cost, residual, and fallback coupled.",
       "cues": [
         "scale"
@@ -1984,7 +2041,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.3438c72ae1fd",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:388",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:423",
       "sentence": "It should not claim empirical efficiency.",
       "cues": [
         "should"
@@ -2003,7 +2060,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.960c0af4eb6e",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:388",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:423",
       "sentence": "It should only prove that the book can represent the decision boundary it is asking future systems to test: task, route state, task contract, predicate, route choices, outcome state, cost accounting, cost classes, hidden-cost checks, verification result, residual obligations, fallback, support-state effect, and non-claims.",
       "cues": [
         "prove",
@@ -2023,7 +2080,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.509e5bd5bcb8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:390",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:425",
       "sentence": "Passing that fixture shows accounting discipline only, not empirical efficiency.",
       "cues": [
         "shows"
@@ -2042,7 +2099,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.54370e1a031c",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:398",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:433",
       "sentence": "In that endpoint, capability grows because the system learns where expensive cognition is actually necessary and where prior work can be reused without losing the predicate.",
       "cues": [
         "necessary"
@@ -2061,7 +2118,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.599361a51202",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:398",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:433",
       "sentence": "Benchmarks measure not only visible score but residual burden, hidden cost, fallback cost, and regression survival.",
       "cues": [
         "measure"
@@ -2080,7 +2137,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.633ff11538c8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:400",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:435",
       "sentence": "That endpoint would outgrow both scale-only and cheap-route-only framings.",
       "cues": [
         "scale"
@@ -2099,7 +2156,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ef82a13cff4a",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:400",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:435",
       "sentence": "Scale remains available when the contract requires it; smaller or faster routes earn use only when they preserve quality, authority, and residual honesty.",
       "cues": [
         "requires",
@@ -2119,7 +2176,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.4aa5783d9f7f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:400",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:435",
       "sentence": "The efficient-ASI claim remains at `argument` until route ledgers, lower-cost comparison traces, residual-accounting tests, hidden-cost audits, and quality/cost benchmarks show that cheaper cognition actually preserves the required predicates.",
       "cues": [
         "required",
@@ -2139,7 +2196,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.d6ac0022309f",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:443",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:478",
       "sentence": "they do not prove route-search completeness, cost-estimate accuracy, quality",
       "cues": [
         "prove"
@@ -2158,7 +2215,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.30ce293b7494",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:462",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:497",
       "sentence": "The crosswalk bounds efficiency claims: sources supply design language, while measured support requires route runs, baselines, costs, residuals, and negative results.",
       "cues": [
         "requires"
@@ -2177,7 +2234,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.ac04fc2564e8",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:493",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:528",
       "sentence": "It is efficient when the record shows what quality predicate it satisfied, what it cost, which alternatives were rejected, what residual remains, and what fallback is available.",
       "cues": [
         "shows"
@@ -2196,7 +2253,7 @@
     {
       "candidate_id": "the-efficient-asi-hypothesis.prose.87adb383eebe",
       "chapter_id": "the-efficient-asi-hypothesis",
-      "source": "chapters/the-efficient-asi-hypothesis.qmd:493",
+      "source": "chapters/the-efficient-asi-hypothesis.qmd:528",
       "sentence": "The stack may prefer a smaller model, cached proof, compressed artifact, specialist core, or generated reconstruction only when the surrounding record still shows permission, adequacy, verification burden, and rollback.",
       "cues": [
         "shows"
@@ -3167,9 +3224,66 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.0a54b4ad5ac7",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:84",
+      "sentence": "wrong queue and leaves the morning team with a backlog whose cause is unclear.",
+      "cues": [
+        "cause"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The illustrative near-miss scene restates the failure-model core's residual ownership and recurrence boundary.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
+    },
+    {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.abc35ce4b0b4",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:100",
+      "sentence": "it cannot by itself say which boundary failed, which invariant was protected,",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The flat-incident-log comparison restates the chapter's boundary-event and owner requirements without adding an empirical claim.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
+    },
+    {
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.757e0d2d8832",
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:101",
+      "sentence": "or who must close the residual.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The flat-incident-log comparison restates the chapter's residual-closure requirement without adding an empirical claim.",
+      "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
+    },
+    {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4645e9ed8c69",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:79",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:110",
       "sentence": "Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit.",
       "cues": [
         "must"
@@ -3188,7 +3302,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.f94eaac273f1",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:79",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:110",
       "sentence": "If a later chapter cannot connect its mechanism back to a failure boundary, the mechanism may be interesting, but it has not yet justified its place in the stack.",
       "cues": [
         "cannot"
@@ -3207,7 +3321,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.394f4c34c562",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:129",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:160",
       "sentence": "This bridge does not prove detection or prevention; it keeps the",
       "cues": [
         "prove"
@@ -3226,7 +3340,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.544e89de94a5",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:133",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:164",
       "sentence": "An admitted taxonomy row should map to an invariant, a detector or observer, an evidence record, and a containment path.",
       "cues": [
         "should"
@@ -3245,7 +3359,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.f48e30054f35",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:133",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:164",
       "sentence": "An observation that cannot yet be mapped stays visible as an `unmapped_event` and boundary gap rather than being forced into a known class or treated as impossible.",
       "cues": [
         "cannot"
@@ -3264,7 +3378,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4a018185e0d1",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:135",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:166",
       "sentence": "A denied authority escalation, rejected context packet, failed verifier, quarantined route, or preserved residual should be recorded before success stories dominate the ledger; its receipt is an event trace, not proof that the detector or mitigation is adequate.",
       "cues": [
         "should"
@@ -3283,7 +3397,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.c5c84dd406db",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:139",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:170",
       "sentence": "[failure-modes-of-ungoverned-intelligence.core, label: Design rationale, support: argument] A stack-level failure model should represent each named risk as a distinct boundary event with a trigger, protected invariant, detector or observer, receipt, owner, containment action, residual, recurrence state, and escalation or learning path; a taxonomy entry alone establishes neither occurrence nor mitigation.",
       "cues": [
         "establishes",
@@ -3303,7 +3417,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4b5703e47da1",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:163",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:194",
       "sentence": "that the stack already detects or prevents the failures.",
       "cues": [
         "prevents"
@@ -3322,7 +3436,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.970c51403933",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:185",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:216",
       "sentence": "must say what observable event would instantiate the class, which detector or",
       "cues": [
         "must"
@@ -3341,7 +3455,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2e9376a18ad7",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:187",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:218",
       "sentence": "event threatens, who may contain it, and what happens when the event cannot be",
       "cues": [
         "cannot"
@@ -3360,7 +3474,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.9cab0077ca2a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:188",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:219",
       "sentence": "Retrospective labels can improve learning, but they",
       "cues": [
         "improve"
@@ -3379,7 +3493,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.cb7bf79ebb9e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:189",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:220",
       "sentence": "cannot establish that the system was governable at the moment an effect was",
       "cues": [
         "cannot"
@@ -3398,7 +3512,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.d044851ca470",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:205",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:236",
       "sentence": "A containment path should be tested against",
       "cues": [
         "should"
@@ -3417,7 +3531,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.d66ee7f04a15",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:215",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:246",
       "sentence": "The failure map must retain causal and",
       "cues": [
         "must"
@@ -3436,7 +3550,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2087372c9f6a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:223",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:254",
       "sentence": "becoming safer on paper by deleting the cases its current taxonomy cannot",
       "cues": [
         "cannot"
@@ -3455,7 +3569,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.c0ad9e9e057b",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:235",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:266",
       "sentence": "that every capable system will seek power or that every increase in options is",
       "cues": [
         "increase"
@@ -3474,7 +3588,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.f626fc6b3fab",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:257",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:288",
       "sentence": "because they improve expected objective achievement.",
       "cues": [
         "improve"
@@ -3493,7 +3607,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.3d458a7a2ac7",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:261",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:292",
       "sentence": "The decisive tests must create benign opportunities to expand power and",
       "cues": [
         "must"
@@ -3512,7 +3626,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.aa253d98e6e8",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:263",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:294",
       "sentence": "Measure resource and option acquisition, shutdown compliance,",
       "cues": [
         "measure"
@@ -3531,7 +3645,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6737d4cee4fa",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:275",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:306",
       "sentence": "controls reduce opportunity and improve evidence.",
       "cues": [
         "improve",
@@ -3551,7 +3665,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.7a6b8e699a80",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:275",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:306",
       "sentence": "They do not prove that the",
       "cues": [
         "prove"
@@ -3570,7 +3684,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6ec498fb5720",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:288",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:319",
       "sentence": "scale, named owner, containment state, and postmortem.",
       "cues": [
         "scale"
@@ -3589,7 +3703,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.48272469231a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:289",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:320",
       "sentence": "its extra structure only if prospective field bindings improve detection,",
       "cues": [
         "improve"
@@ -3608,7 +3722,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.b390ae2cf18a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:291",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:322",
       "sentence": "Evaluation must include previously unseen events, ambiguous cases,",
       "cues": [
         "must"
@@ -3627,7 +3741,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.82b8e41b5147",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:297",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:328",
       "sentence": "and measure missed detection, false alarm, abstention quality, time to contain,",
       "cues": [
         "measure"
@@ -3646,7 +3760,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.0395c566e4ed",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:303",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:334",
       "sentence": "Results showing better prose but no prospective benefit would require",
       "cues": [
         "require"
@@ -3665,7 +3779,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.83d094f9b316",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:304",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:335",
       "sentence": "High false-alarm burden, unstable labels, poor transfer, or a",
       "cues": [
         "transfer"
@@ -3684,7 +3798,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.eb0c42c665ee",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:307",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:338",
       "sentence": "the mapped boundaries detect, block, recover, or preserve evidence better than",
       "cues": [
         "better than"
@@ -3703,7 +3817,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.b50eb79cd633",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:309",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:340",
       "sentence": "It would not prove the absence of unmodeled failures or the safety",
       "cues": [
         "prove"
@@ -3722,7 +3836,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8707e28202c5",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:316",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:347",
       "sentence": "A Failure Boundary Map is the mechanism that connects each risk to the boundary that must detect, contain, or preserve evidence about it.",
       "cues": [
         "must"
@@ -3741,7 +3855,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.5762d6925d87",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:337",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:368",
       "sentence": "Each admitted taxonomy row is connected to the boundary that should detect it, contain it, or preserve the residual, while unmapped observations remain explicit gaps rather than disappearing into a dramatic list.",
       "cues": [
         "should"
@@ -3760,7 +3874,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.5f0e0a00d500",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:339",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:370",
       "sentence": "They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.",
       "cues": [
         "must",
@@ -3780,7 +3894,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.481ca8e77c2f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:341",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:372",
       "sentence": "The Field of God source is not used here as empirical safety evidence; it preserves the deeper governance concern that power should not erase agency, dignity, plurality, and contestability.",
       "cues": [
         "should"
@@ -3799,7 +3913,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4f1c180dbdfc",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:343",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:374",
       "sentence": "The failure map should be boring enough to test.",
       "cues": [
         "should"
@@ -3818,7 +3932,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4a4f3eb3f358",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:382",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:413",
       "sentence": "A VCM chapter should be able to point back to context-pollution failures.",
       "cues": [
         "should"
@@ -3837,7 +3951,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4eb0d3ab7840",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:382",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:413",
       "sentence": "A Talos chapter should point back to tool/action overreach.",
       "cues": [
         "should"
@@ -3856,7 +3970,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.cbd665c3643e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:382",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:413",
       "sentence": "A benchmark-ratchet chapter should point back to evaluator drift and residual hiding.",
       "cues": [
         "should"
@@ -3875,7 +3989,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.228b57203a50",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:399",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:430",
       "sentence": "A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.",
       "cues": [
         "should"
@@ -3894,7 +4008,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8122eb84e2db",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:401",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:432",
       "sentence": "Failure ownership also cannot transfer quietly; the receiving layer must accept the residual before the risk can move.",
       "cues": [
         "cannot",
@@ -3915,7 +4029,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.82469cdb4d57",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:403",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:434",
       "sentence": "A material architecture, policy, evaluator, or route change reopens that binding and requires regression review rather than silently inheriting an old mitigation claim.",
       "cues": [
         "requires"
@@ -3934,7 +4048,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.092d4c8fe8c4",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:426",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:457",
       "sentence": "The first failure artifact should be a `failure_boundary_map` schema plus an executable receipt suite covering blocked and realized events, recurrence escalation, containment, residuals, detector gaps, and rejecting negative controls.",
       "cues": [
         "should"
@@ -3953,7 +4067,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6299bda2eebe",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:426",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:457",
       "sentence": "That suite must not claim that those risks are solved.",
       "cues": [
         "must"
@@ -3972,7 +4086,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.0eafc3944a4d",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:426",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:457",
       "sentence": "It should establish only that the book can represent a failure class, affected contracts, event state, severity, reversibility, recurrence, protected invariant, receipt, promotion blocker, containment path, normalization guard, learning path, source refs, support-state effect, and boundary owner.",
       "cues": [
         "should"
@@ -3991,7 +4105,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.d0f12be291bd",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:428",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:459",
       "sentence": "A failure-receipt suite should be the first diagnostic harness: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.",
       "cues": [
         "should"
@@ -4010,7 +4124,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.d8e05dc6da47",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:449",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:480",
       "sentence": "transition function cannot assign support or external authority.",
       "cues": [
         "cannot"
@@ -4029,7 +4143,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.6ee2a5207cdd",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:450",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:481",
       "sentence": "requires exact incident and version identity, current assurance and taxonomy,",
       "cues": [
         "requires"
@@ -4048,7 +4162,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.4d1adf1dac2f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:462",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:493",
       "sentence": "observe actual effects and containment, exercise restart and rollback, measure",
       "cues": [
         "measure"
@@ -4067,7 +4181,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.50a163ae7d4e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:470",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:501",
       "sentence": "Ungoverned intelligence should be monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language.",
       "cues": [
         "should"
@@ -4086,7 +4200,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.c4a4deae6594",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:470",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:501",
       "sentence": "A mature failure-radar layer would classify failures by layer, map each failure to an invariant, attach at least one planned falsification test, and use the resulting failures to justify new boundaries only when the records show a real control need.",
       "cues": [
         "show"
@@ -4105,7 +4219,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.bcc0c42d77db",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:472",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:503",
       "sentence": "A risk that cannot be mapped to a boundary would remain a residual rather than becoming vague fear or rhetorical urgency.",
       "cues": [
         "cannot"
@@ -4124,7 +4238,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.50d767ea0abe",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:500",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:531",
       "sentence": "`AsiStackProofs.FailureRecoveryRefinement` adds a reachable five-stage transition system: rejected events preserve exact state; accepted transitions cannot mint support or external authority; accepted detection disables modeled effects; accepted readmission requires current assurance, current taxonomy, residual custody, and explicit authority; and one bounded recurrence re-isolates the system.",
       "cues": [
         "cannot",
@@ -4144,7 +4258,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.887c506d8be3",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:511",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:542",
       "sentence": "These hooks do not prove those properties and do",
       "cues": [
         "prove"
@@ -4163,7 +4277,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.5e2dacd86611",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:528",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:559",
       "sentence": "require explicit boundary records and treat normalized expansion of option",
       "cues": [
         "require"
@@ -4182,7 +4296,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8c072742bcf6",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:538",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:569",
       "sentence": "If AI substitutes reduce both forms of dependence, local adoption",
       "cues": [
         "reduce"
@@ -4201,7 +4315,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.15d4e52f1140",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:543",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:574",
       "sentence": "The failure record therefore cannot be a deployment count or GDP proxy.",
       "cues": [
         "cannot"
@@ -4220,7 +4334,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.fdc29bafa970",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:548",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:579",
       "sentence": "It must distinguish augmentation from displacement, relative",
       "cues": [
         "must"
@@ -4239,7 +4353,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.836ad3bf9aa8",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:550",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:581",
       "sentence": "Leading indicators, thresholds, and intervention triggers must be",
       "cues": [
         "must"
@@ -4258,7 +4372,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2f2363db023e",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:554",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:585",
       "sentence": "can identify a mechanism or falsify a local model, but it cannot establish a",
       "cues": [
         "cannot"
@@ -4277,7 +4391,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.dbf882a812cf",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:558",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:589",
       "sentence": "cross-system feedback, distribution-sensitive welfare and agency measures,",
       "cues": [
         "measures"
@@ -4296,7 +4410,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.b854ed808173",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:566",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:597",
       "sentence": "warning threshold, or show that any proposed intervention works.",
       "cues": [
         "show"
@@ -4315,7 +4429,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.df0c8c37138f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:604",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:635",
       "sentence": "Each failure names a boundary that must detect, contain, and preserve evidence:",
       "cues": [
         "must"
@@ -4334,7 +4448,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.bfe680e01110",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:611",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:642",
       "sentence": "The failure taxonomy appears early because the rest of the book should read like a response to it.",
       "cues": [
         "should"
@@ -4353,7 +4467,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.8a1d468e6f4f",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:611",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:642",
       "sentence": "If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative.",
       "cues": [
         "cannot",
@@ -4373,7 +4487,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.08361505a02a",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:613",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:644",
       "sentence": "A failure mode should have somewhere to go.",
       "cues": [
         "should"
@@ -4392,7 +4506,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.9a058e570cf0",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:613",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:644",
       "sentence": "If it cannot produce a receipt, owner, containment action, residual, or review path, the architecture has named a worry but not yet built a boundary.",
       "cues": [
         "cannot"
@@ -4411,7 +4525,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.ab69c20adc4b",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:653",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:684",
       "sentence": "Prospective failure obligations identify broad hazards but do not measure",
       "cues": [
         "measure"
@@ -4430,7 +4544,7 @@
     {
       "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.cfcd78ccb82d",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
-      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:654",
+      "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:685",
       "sentence": "whether a particular model materially helps a particular actor cause them.",
       "cues": [
         "cause"
@@ -29625,9 +29739,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "claim-ledgers-and-belief-revision.prose.71d1006ac0c0",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:91",
+      "sentence": "18 changes the exception: a second scan is no longer sufficient for one class",
+      "cues": [
+        "sufficient"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The policy-version vignette instantiates the claim-ledger core's semantic identity and scope-change boundary; it is explicitly illustrative.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.core"
+    },
+    {
+      "candidate_id": "claim-ledgers-and-belief-revision.prose.b020800941b6",
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:111",
+      "sentence": "useful and may be sufficient for a small, manually audited system; it records",
+      "cues": [
+        "sufficient"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The version-control baseline comparison restates the claim-ledger core's semantic-propagation distinction and adds no support result.",
+      "target_atom_id": "claim-ledgers-and-belief-revision.core"
+    },
+    {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.1d9ba534f2e5",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:97",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:128",
       "sentence": "embedding, semantic address, graph node, or database key cannot supply the",
       "cues": [
         "cannot"
@@ -29646,7 +29798,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.84fa3c7cf484",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:102",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:133",
       "sentence": "must reconstruct every accepted and rejected change without becoming the",
       "cues": [
         "must"
@@ -29665,7 +29817,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b705caae50ec",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:134",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:165",
       "sentence": "[claim-ledgers-and-belief-revision.core, label: Design rationale, support: argument] Claim Ledgers should own the durable identity and append-only state-transition history of each material claim and its semantic variants.",
       "cues": [
         "should"
@@ -29684,7 +29836,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.c9693c67a8ec",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:139",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:170",
       "sentence": "revision, complete propagation, useful advantage, or transfer.",
       "cues": [
         "transfer"
@@ -29703,7 +29855,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.e3ed8abce1ad",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:170",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:201",
       "sentence": "The extra metadata, review, storage, and propagation can increase privacy risk,",
       "cues": [
         "increase"
@@ -29722,7 +29874,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.f9245aca735e",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:215",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:260",
       "sentence": "Require the Evidence States owner to authorize support movement through",
       "cues": [
         "require"
@@ -29741,7 +29893,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b6f4e967339f",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:260",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:307",
       "sentence": "their bounded decision, repairs the declared dependency closure, and requires",
       "cues": [
         "requires"
@@ -29760,7 +29912,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.d1e80389e1cb",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:280",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:327",
       "sentence": "a versioned migration, and a restart observation must still expose the old",
       "cues": [
         "must"
@@ -29779,7 +29931,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.f33cee6c1551",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:295",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:342",
       "sentence": "Certificate integrity proves only that the recorded address",
       "cues": [
         "proves"
@@ -29798,7 +29950,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.809c2931eb2f",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:318",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:365",
       "sentence": "by routing, but the claim ledger must prevent it from collapsing unlike record",
       "cues": [
         "must",
@@ -29818,7 +29970,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.06726184ff07",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:331",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:378",
       "sentence": "the view must retain the ledger and Chronicle refs that make later replay and",
       "cues": [
         "must"
@@ -29837,7 +29989,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.6347548f60b9",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:370",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:417",
       "sentence": "enumerate; it cannot make materiality, implicit assertion detection,",
       "cues": [
         "cannot"
@@ -29856,7 +30008,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.82a2ecf11f5c",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:407",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:454",
       "sentence": "observation, and transaction time prevent a correction from erasing what the",
       "cues": [
         "prevent"
@@ -29875,7 +30027,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.8fd297d708bf",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:430",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:477",
       "sentence": "record, policy, or high-impact decision, its material claims must be extracted",
       "cues": [
         "must"
@@ -29894,7 +30046,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.10f51de01e44",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:433",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:480",
       "sentence": "review roles cannot create verified standing; challenge, expiry, failed tests,",
       "cues": [
         "cannot"
@@ -29913,7 +30065,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b08512704b84",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:440",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:487",
       "sentence": "The ledger stores their relation to a claim but cannot",
       "cues": [
         "cannot"
@@ -29932,7 +30084,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.e48a2fc73cdb",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:457",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:504",
       "sentence": "cannot silently pin, rewrite, or promote ledger state.",
       "cues": [
         "cannot"
@@ -29951,7 +30103,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.50e688e7ac18",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:468",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:515",
       "sentence": "variants but cannot establish equivalence, truth, support, contradiction",
       "cues": [
         "cannot"
@@ -29970,7 +30122,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.24353cb5ff39",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:472",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:519",
       "sentence": "Automation may request and preserve those decisions but cannot fabricate",
       "cues": [
         "cannot"
@@ -29989,7 +30141,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.54048a272f46",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:504",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:551",
       "sentence": "No support increase is accepted without an exact accepted evidence",
       "cues": [
         "increase"
@@ -30008,7 +30160,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.f397e14c5deb",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:516",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:563",
       "sentence": "Ontology, schema, predicate, or identity-rule changes require versioned",
       "cues": [
         "require"
@@ -30027,7 +30179,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.bc19a6b0e0bb",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:525",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:572",
       "sentence": "source ceilings and cannot validate themselves.",
       "cues": [
         "cannot"
@@ -30046,7 +30198,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.705387edd05c",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:553",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:600",
       "sentence": "Semantic-merge laundering transfers evidence or support across broader,",
       "cues": [
         "transfers"
@@ -30065,7 +30217,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.a4bf3d6da5d2",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:609",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:656",
       "sentence": "The refinement proves exact represented claim-identity custody and zero",
       "cues": [
         "proves"
@@ -30084,7 +30236,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.c316c1abdb38",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:621",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:668",
       "sentence": "The next honest minimum must freeze a public natural multi-surface corpus with",
       "cues": [
         "must"
@@ -30103,7 +30255,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.f77ea3a5881f",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:631",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:678",
       "sentence": "Reproduction from locks and transfer to a second model, domain, ontology,",
       "cues": [
         "transfer"
@@ -30122,7 +30274,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.cd281bb6282d",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:632",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:679",
       "sentence": "language, and evaluator implementation are required before promotion.",
       "cues": [
         "required"
@@ -30141,7 +30293,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.0858b5e01f2d",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:642",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:689",
       "sentence": "On prospectively frozen natural workloads, it must outperform strong citation,",
       "cues": [
         "must",
@@ -30161,7 +30313,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.5bd9283cd339",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:653",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:700",
       "sentence": "cross-ontology, cross-language, cross-organization, and temporal transfer.",
       "cues": [
         "transfer"
@@ -30180,7 +30332,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.7a49d7243622",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:667",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:714",
       "sentence": "causal ablations, complete costs, reproduction, and transfer pass.",
       "cues": [
         "transfer"
@@ -30199,7 +30351,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.ec07e67d36a8",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:686",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:733",
       "sentence": "The remaining tests require natural claim extraction,",
       "cues": [
         "require"
@@ -30218,7 +30370,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.487e9fc466f3",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:712",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:759",
       "sentence": "This proves only the represented authored lifecycle.",
       "cues": [
         "proves"
@@ -30237,7 +30389,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.ca66e229f3bc",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:713",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:760",
       "sentence": "require typed natural semantics, actual concurrent artifacts and event",
       "cues": [
         "require"
@@ -30256,7 +30408,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.42374c9e624a",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:715",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:762",
       "sentence": "outcomes, complete costs, reproduction, transfer, and accepted evidence",
       "cues": [
         "transfer"
@@ -30275,7 +30427,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b9bf7ab1f684",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:718",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:765",
       "sentence": "It does not prove natural semantic identity, evidence quality, contradiction",
       "cues": [
         "prove"
@@ -30294,7 +30446,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.bc527fb27add",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:765",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:812",
       "sentence": "The current repository proves a bounded authored append-only lifecycle and its",
       "cues": [
         "proves"
@@ -30313,7 +30465,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b070a65a56c1",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:766",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:813",
       "sentence": "It does not show that natural claims are identified",
       "cues": [
         "show"
@@ -30332,7 +30484,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.f38b3ad2fce1",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:767",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:814",
       "sentence": "correctly or that belief revision improves decisions.",
       "cues": [
         "improves"
@@ -30351,7 +30503,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.b40d7930da5e",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:772",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:819",
       "sentence": "Even a semantically coherent ledger cannot verify a high-value claim.",
       "cues": [
         "cannot"
@@ -30370,7 +30522,7 @@
     {
       "candidate_id": "claim-ledgers-and-belief-revision.prose.c7cc9e17a9d6",
       "chapter_id": "claim-ledgers-and-belief-revision",
-      "source": "chapters/claim-ledgers-and-belief-revision.qmd:811",
+      "source": "chapters/claim-ledgers-and-belief-revision.qmd:858",
       "sentence": "It turns selected claims and high-risk artifacts into proof-carrying, justification-carrying, or tribunal-review envelopes with required tiers, verifier results, downgrades, timeouts, mismatches, dissent, and explicit refusal paths.",
       "cues": [
         "required"

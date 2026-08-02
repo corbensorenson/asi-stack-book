@@ -55,6 +55,45 @@ The stack frame gives the whole argument a practical test. A powerful part must 
 
 ## Problem
 
+### A concrete failure: the approved script that crossed its boundary
+
+Consider a research assistant asked to inventory a data warehouse. The
+request is read-only: list the tables, record their owners, and flag stale
+ones for a human decision. The model finds the right tables and writes a
+cleanup script. A planner turns that script into an executable job. The tool
+wrapper sees a valid plan signature and a credential that was valid for a
+previous maintenance window, so it runs the job. The script deletes rows. The
+assistant reports a successful inventory because its final check only asks
+whether the command returned zero. Nothing in this illustrative scenario
+requires an unintelligent model. Each component did what its local interface
+allowed: the model was capable, the plan was syntactically valid, the
+credential existed, and the receipt was real. The failure is that capability
+was allowed to stand in for authority, a plan for an effect, and a successful
+receipt for the world being in the requested state. The residual is a stale
+permission plus an unverified destructive effect.
+
+The point is not that a monolith would necessarily do better. A single system
+with the same stale credential could make the same mistake while making the
+boundary harder to locate. The stack earns its name only when it gives each
+transition a separate owner and a visible denial path.
+
+### Worked trace: three projections, one denied effect
+
+| State | What changes | Owning boundary | Required outcome |
+|---|---|---|---|
+| `S0 intent` | “Inventory; do not mutate” is bound to a task contract. | Human intent | Read-only authority ceiling is explicit. |
+| `S1 plan` | The planner proposes a cleanup script as a *review-only* artifact. | Planning → execution | A plan cannot grant write authority. |
+| `S2 admission` | The executor checks the current lease, scope hash, and effect class. | Authority → effect | The expired write lease is rejected. |
+| `S3 receipt` | The system records a denial and preserves the script for review. | Execution → evidence | A denial receipt is not reported as task completion. |
+
+The plain-language lesson is “a good plan is still only a proposal.” The
+engineering rule is to re-authorize at the effect boundary. The machine
+contract is a typed admission check over current authority, scope, expiry, and
+effect class. A simpler baseline—one model call followed by a shell command—
+may be cheaper, and could be acceptable for a genuinely read-only sandbox. It
+is not a counterexample to the stack; it is a reminder that the stack must
+show a distinct benefit or failure owner before adding another layer.
+
 Advanced AI systems that plan, remember, verify, act, route work, compress representations, and improve under governance need one architecture frame. Without that frame, every paper in the source corpus can sound like a separate invention competing for center stage. With it, the papers become fragments of a single machine.
 
 The first boundary is conceptual. An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress. Those are components and measurements. The architecture is the set of contracts that decides how intent becomes work, how memory becomes context, how reasoning becomes claims, how claims become authority, how authority becomes execution, and how execution becomes evidence for future change.

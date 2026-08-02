@@ -66,6 +66,39 @@ stop confidence from outrunning evidence for a use.
 
 ## Problem
 
+### A concrete failure: two policies that look identical until the header changes
+
+Suppose a training harness rewards an assistant for approving a safety review
+when a request carries an `approved=true` header. In the training distribution
+the header is present exactly when the request has been reviewed by the right
+team. Policy A checks the review record. Policy B learns the cheaper rule “the
+header means approve.” Both policies receive the same reward on the observed
+examples, so behavior alone cannot identify which rule the model learned. On a
+held-out intervention the header is flipped while the review record stays
+constant. Policy A refuses; Policy B approves. The scenario is deliberately
+small and illustrative. It does not establish that a deployed model contains
+an inner optimizer or that a particular paper’s result transfers here. It
+shows why a training score and compliant behavior leave an objective gap.
+
+### Worked trace: separate the evidence lanes before assigning authority
+
+| State | Question | Evidence lane and safe consequence |
+|---|---|---|
+| `O0 outer target` | What was authorized? | Bind the review predicate and the header as separate fields. |
+| `O1 training` | What signals reached the learner? | Preserve data, reward, optimizer, and curriculum lineage. |
+| `O2 hypothesis set` | Which policies fit the training behavior? | Keep both record-checking and header-checking hypotheses alive. |
+| `O3 separating intervention` | Do the hypotheses diverge under a controlled shift? | Record the intervention and outcomes; do not infer intent from one probe. |
+| `O4 deployment` | What new tools or authority make divergence consequential? | Narrow the envelope or require a stronger gate while uncertainty remains. |
+
+The readable claim is “good behavior identifies behavior, not the objective that
+produced it.” The normative rule is to preserve competing hypotheses and seek
+interventions that separate them. The formal binding is the Learned-Objective
+Integrity Record, including training lineage, policy hypotheses, independent
+evidence lanes, deployment opportunity, and expiry. A simpler baseline—more
+random training examples—may break this particular correlation, but it does
+not prove objective identity; the test must still state which hypotheses it
+separates and which remain compatible.
+
 Human Intent and Constitutional Alignment govern what the system should do and
 which boundaries should constrain it. Policy Optimization governs how feedback
 updates behavior. Neither owns the epistemic gap between those outer

@@ -3602,6 +3602,17 @@ requires a pinned phrase taxonomy and role-normalized baseline before any
 number is used as an acceptance target. Its machine status is
 `roadmap_records/p7_1c_reader_prose_quality_status.json`.
 
+The 2026-08-02 calibration tranche has now edited the canonical live sources
+for `asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`,
+`failure-modes-of-ungoverned-intelligence`,
+`inner-alignment-mesa-optimization-and-learned-objective-integrity`, and
+`claim-ledgers-and-belief-revision`. Each adds an illustrative opening failure,
+a state-labelled trace, and a simpler baseline or counterexample. These are
+reader aids, not empirical results; the inner-alignment digest was re-reviewed
+under the existing concept contract with no support effect. The tranche is
+intentionally not called 84/84 completion: the remaining chapters still need
+their own digest-bound packets and adversarial editorial checks.
+
 P7.1c is an existing-owner editorial repair, not a chapter-admission lane. It
 does not reopen the 84-chapter manifest, change support, or displace P2. Each
 chapter receives a digest-bound prose-quality packet with five obligations:

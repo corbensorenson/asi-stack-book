@@ -83,6 +83,37 @@ Belief revision becomes safer when a downgrade is treated as progress. The ledge
 
 ## Problem
 
+### A concrete failure: the policy sentence that outlived its source
+
+An operations assistant keeps a claim that “hazardous shipments may leave the
+warehouse after a second scan.” The sentence was correct under policy version
+17, appears in a playbook, and is copied into a weekly briefing. Policy version
+18 changes the exception: a second scan is no longer sufficient for one class
+of material. A reviewer updates the source document, but the briefing and a
+cached assistant prompt still contain the old sentence. When a dispatcher asks
+for a quick answer, the assistant repeats it with a confident citation. The
+problem is not merely stale text. The old and new sentences have different
+scope, source version, and permitted action, yet the system treated a string
+match and a citation as if they supplied semantic identity. The residual is an
+unreconciled downstream surface that can continue to authorize the old action.
+
+### Worked trace: revise the claim without erasing the trail
+
+| State | Ledger transition | What remains deliberately separate |
+|---|---|---|
+| `L0 candidate` | Register the exact proposition, scope, source, and surface refs. | Registration is not truth or support. |
+| `L1 challenge` | Attach the policy-18 source and a scope-difference attack. | Provenance does not validate the source. |
+| `L2 downgrade` | Evidence owner accepts a support transition; the old claim is downgraded. | The ledger records the transition but cannot authorize it itself. |
+| `L3 propagation` | Mark the briefing and prompt as stale and block release until reconciled. | Surface repair is not semantic equivalence. |
+| `L4 closure` | Publish the new bounded claim and retain the rejected proposal. | The current view is reproducible from append-only events. |
+
+The simpler baseline is version control over the playbook. Version control is
+useful and may be sufficient for a small, manually audited system; it records
+changed bytes but does not, by itself, identify that two differently worded
+sentences refer to the same claim or that a downstream surface still carries
+the old scope. The ledger earns its extra machinery only when that semantic
+and propagation burden is real and measured.
+
 A claim can be repeated, paraphrased, narrowed, challenged, contradicted,
 split, merged, downgraded, superseded, or published across many surfaces
 without a durable identity and append-only transition history. Prose, caches,
@@ -184,6 +215,20 @@ attack references, dependencies, and proposed mutations as distinct records.
 This arrangement makes the history inspectable without granting an extractor,
 similarity model, provenance link, or event log the power to decide truth.
 
+Readers can hold the mechanism as four responsibilities before opening the
+field-level contract. **Identity** fixes what the claim means and which
+wordings are only hypotheses about that meaning. **Evidence custody** keeps
+support, attacks, provenance, and dependencies visible without letting any of
+them certify themselves. **Transition custody** records who proposed a change,
+which gate accepted it, and how the current view can be replayed. **Change
+repair** carries that decision through conflicts, ontology migrations, stale
+surfaces, expiry, and comparison with simpler baselines. The numbered fields
+below are the implementation contract for those four jobs; they are not four
+additional claims about truth.
+
+<details>
+<summary>Open the field-level contract</summary>
+
 1. Register each candidate material claim with durable ID, origin, raw wording,
    extraction method, materiality decision, canonical proposition, and version
    without treating registration as truth or support.
@@ -239,6 +284,8 @@ similarity model, provenance link, or event log the power to decide truth.
     database/event-sourcing, truth-maintenance, retrieval/self-critique,
     behavioral-test, human-editorial, and governed-ledger routes on natural
     multi-surface revision workloads with complete outcomes and costs.
+
+</details>
 
 ```{mermaid}
 flowchart LR
