@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 319, "planned": 5} |
-| Triage class counts | {"formal-invariant": 319, "process-contract": 5} |
-| Lean modules referenced | 92 |
+| Manifest status counts | {"implemented": 320, "planned": 4} |
+| Triage class counts | {"formal-invariant": 320, "process-contract": 4} |
+| Lean modules referenced | 93 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -80,6 +80,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | 1 | 38 | 0 | 29 | 8 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | 1 | 24 | 0 | 31 | 3 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
@@ -173,7 +174,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
 | `inter-stack-protocols-identity-and-economic-exchange` | 9 | 9 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
-| `learning-theory-generalization-and-scaling-science` | 1 | 0 | 0 | 0 |
+| `learning-theory-generalization-and-scaling-science` | 1 | 1 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
 | `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 1 | 0 | 0 |
@@ -405,7 +406,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `relational-dimension-compilation-and-polyadic-cognition` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.LearningTheoryForecastReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.lifecycle_probe_bridge` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

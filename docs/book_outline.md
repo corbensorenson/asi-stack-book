@@ -5061,7 +5061,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Learning Theory, Generalization, and Scaling Science record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `AsiStackProofs.LearningTheoryForecastReview` | A reachable six-transition forecast review admits only dossiers that bind claim, population, sample process, support, hypothesis, algorithm, optimization, architecture, metric, compute, prospective design, transfer boundaries, correction, expiry, residuals, and explicit non-authority. All 45 admission-axis mutations reject with exact repairs. Finite attempt identity composes and preserves every member, omitted attempts and unscored preregistered alternatives reject completeness, expiry and unsupported extrapolation remain rejecting under adverse changes, seven regime changes invalidate receipts, retrospective fit cannot recover prospective coverage, threshold metrics cannot recover mechanism change, and a missing prospective holdout rejects Benchmark Ratchet readiness promotion. No theorem establishes generalization, transfer, emergence, scaling accuracy, calibration, safety, deployment, support, or release. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:learning-theory-generalization-and-scaling-science:END -->
 
 ### Readiness Gates, Residual Escrow, and Quarantine
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 126 Lean modules, 1745 theorem declarations, 1072 derived/decomposed, 328 direct/projection, 345 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 127 Lean modules, 1783 theorem declarations, 1088 derived/decomposed, 345 direct/projection, 350 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

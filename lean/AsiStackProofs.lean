@@ -31,6 +31,7 @@ import AsiStackProofs.Deliberation
 import AsiStackProofs.DeliberationRefinement
 import AsiStackProofs.DurableSemanticMemoryReview
 import AsiStackProofs.PhysicalComputeInfrastructureReview
+import AsiStackProofs.LearningTheoryForecastReview
 import AsiStackProofs.DangerousCapabilityReview
 import AsiStackProofs.MilitaryInteractionReview
 import AsiStackProofs.OpenWeightReleaseReview

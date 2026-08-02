@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3846,
+    "candidate_count": 3850,
     "review_state_counts": {
       "duplicate_of_atom": 1830,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1631
+      "nonmaterial_explanation": 1635
     }
   },
   "candidates": [
@@ -40787,13 +40787,12 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.beyond_sota.001"
     },
     {
-      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c8d6b0c168c5",
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.cda620fe973f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:339",
-      "sentence": "Planned formalization route: `lean:learning-theory-generalization-and-scaling-science.admission_boundary` covers only the finite admission record for learning theory generalization and scaling science; it cannot establish whether learning theory generalization and scaling science works safely or transfers.",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:343",
+      "sentence": "The mechanized core proves forecast custody rather than forecast truth.",
       "cues": [
-        "cannot",
-        "transfers"
+        "proves"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -40803,13 +40802,92 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference.",
+      "disposition_rationale": "Bounded explanation of the implemented formal model; it narrows the proof to forecast-record custody and creates no separate support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8b06c333ab13",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:343",
+      "sentence": "A complete denominator must count each attempt, while an omitted attempt or unscored preregistered alternative rejects completeness.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Bounded explanation of the implemented finite-denominator theorem and its negative control; it creates no separate support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.eda788983be2",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:345",
+      "sentence": "Two information-loss constructions show why equal retrospective-fit signals cannot determine prospective held-out coverage and why equal threshold-metric signals cannot determine whether an underlying mechanism changed.",
+      "cues": [
+        "cannot",
+        "show"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Bounded explanation of two encoded information-loss theorems; it does not broaden the chapter's structured claim or support state.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2ae627879bed",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:345",
+      "sentence": "These are theorems about encoded records and transitions; the model does not prove generalization, transfer, emergence, scaling accuracy, calibration, safety, deployment readiness, support, or release.",
+      "cues": [
+        "prove",
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit formal non-claim boundary that prevents proof laundering and creates no separate support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.84423a796f77",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:345",
+      "sentence": "Those claims require the Project Theseus prospective forecast campaign across model, task, data, optimizer, architecture, metric, scale, and distribution-shift families.",
+      "cues": [
+        "require",
+        "scale"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit Project Theseus handoff for empirical and transfer claims outside Lean; it creates no separate support-bearing atom.",
       "target_atom_id": null
     },
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e3f84310e420",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:418",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:424",
       "sentence": "corrections, allowing transfer to broaden only through prospective evidence",
       "cues": [
         "transfer"
@@ -40828,7 +40906,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.dce3227e0a8f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:421",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:427",
       "sentence": "The forecast discipline keeps bounds, fits, simplicity lenses, interpolation, emergence, compute, metrics, uncertainty, alternatives, and transfer limits visible so retrospective regularity cannot become destiny or acquire unwarranted authority over future architectures and safety decisions.",
       "cues": [
         "cannot",

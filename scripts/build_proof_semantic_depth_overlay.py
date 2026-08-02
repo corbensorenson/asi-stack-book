@@ -366,6 +366,59 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed forecast dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_prospective_forecast_campaign": "The closed dossier reaches only Project Theseus prospective forecast campaign eligibility, not forecast truth, support, or release.",
+    "identical_retrospective_fit_can_hide_opposite_prospective_coverage": "Two forecast cases witness opposite prospective-coverage state under identical retrospective-fit signals.",
+    "identical_threshold_metrics_can_hide_opposite_mechanism_change": "Two measurement cases witness opposite mechanism-change state under identical threshold metrics.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/LearningTheoryForecastReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed forecast dossier or information-loss collision witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "attempt_id_collection_append_composes": "Structural induction proves attempt-identity collection composes over concatenation for arbitrary finite attempt lists.",
+    "every_attempt_id_survives_collection": "Structural induction proves every member attempt identity remains present in the collected finite ledger.",
+    "complete_denominator_counts_every_member": "A quantified member argument derives denominator inclusion for every recorded attempt.",
+    "omitted_attempt_rejects_complete_denominator": "A quantified contradiction rejects denominator completeness whenever one member attempt is marked omitted.",
+    "unscored_preregistered_alternative_rejects_complete_comparison": "A quantified contradiction rejects comparison completeness whenever a preregistered alternative is unscored.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 45 forecast-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 45 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 45 mutations into the lifecycle repair state.",
+    "expired_forecast_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired forecast contract.",
+    "extrapolation_remains_outside_support_when_observed_range_shrinks": "Natural-number order proves shrinking observed support cannot repair an already unsupported forecast scale.",
+    "unscored_gap_persists_when_scored_count_falls": "Natural-number order proves scoring fewer alternatives cannot close an existing preregistered-alternative gap.",
+    "population_change_invalidates_forecast_receipt": "The population-identity conjunct rejects a receipt presented for a different population.",
+    "sample_process_change_invalidates_forecast_receipt": "The sample-process conjunct rejects a receipt presented under a changed sampling process.",
+    "algorithm_change_invalidates_forecast_receipt": "The algorithm conjunct rejects a receipt presented for a changed learning algorithm.",
+    "architecture_change_invalidates_forecast_receipt": "The architecture conjunct rejects a receipt presented for a changed architecture.",
+    "metric_change_invalidates_forecast_receipt": "The metric conjunct rejects a receipt presented under a changed evaluation metric.",
+    "compute_regime_change_invalidates_forecast_receipt": "The compute-regime conjunct rejects a receipt presented under changed compute.",
+    "horizon_change_invalidates_forecast_receipt": "The forecast-horizon conjunct rejects a receipt presented outside its bound horizon.",
+    "retrospective_fit_cannot_recover_prospective_coverage": "A same-fit/opposite-coverage collision proves no retrospective-fit classifier is exact for every modeled forecast.",
+    "threshold_metrics_cannot_recover_mechanism_change": "A same-threshold/opposite-mechanism collision proves no threshold-metric classifier is exact for every modeled case.",
+    "missing_prospective_holdout_rejects_benchmark_ratchet_promotion": "The consumer bridge maps absent prospective holdout custody to the existing Benchmark Ratchet readiness rejection.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/LearningTheoryForecastReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/learning_theory_forecast_dossier.json"],
+        "classification_basis": ["a quantified induction, mutation family, denominator obligation, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "training_fit_does_not_establish_broad_generalization", "iid_holdout_does_not_establish_distribution_transfer",
+    "retrospective_scaling_fit_does_not_establish_future_scaling_behavior", "compression_score_does_not_establish_safety",
+    "threshold_benchmark_does_not_establish_mechanism_emergence", "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant", "campaign_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_design", "readiness_requires_transfer",
+    "readiness_requires_lifecycle", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/LearningTheoryForecastReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored forecast-review state"],
+        "rationale": "The theorem constrains only the encoded forecast review; it establishes no generalization, transfer, emergence, scaling accuracy, calibration, safety, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
     "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",

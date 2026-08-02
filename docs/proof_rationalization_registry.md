@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 70 |
+| Chapters | 71 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -63,6 +63,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `intent-to-execution-contracts` | 7 | 19 | 0 | 0 |
 | `inter-stack-protocols-identity-and-economic-exchange` | 9 | 9 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 27 | 0 | 0 |
+| `learning-theory-generalization-and-scaling-science` | 0 | 0 | 0 | 0 |
 | `living-book-methodology` | 4 | 21 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 11 | 0 | 0 |
 | `military-ai-autonomous-weapons-and-strategic-stability` | 0 | 0 | 0 | 0 |

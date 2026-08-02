@@ -478,6 +478,31 @@ effect. Chapter support remains `argument` and `support_state_effect` remains
 `none`.
 
 """,
+    "learning-theory-generalization-and-scaling-science": """## Current refinement
+
+`AsiStackProofs.LearningTheoryForecastReview` implements a reachable
+six-transition review over exact claim, population, sample, support,
+hypothesis, algorithm, optimization, architecture, metric, compute,
+prospective-design, transfer, lifecycle, and non-authority obligations. One
+complete dossier reaches only Project Theseus prospective forecast campaign
+eligibility. All 45 admission-axis mutations reject readiness and receive exact
+repair or refusal dispositions.
+
+Structural induction preserves every attempt identity over arbitrary finite
+lists, and append composition preserves the attempt ledger. Omitted attempts
+and unscored preregistered alternatives reject completeness. Expiry,
+unsupported extrapolation, and scoring shortfall remain rejecting under
+adverse changes. Seven population and regime changes invalidate receipts. Two
+non-identifiability results separate retrospective fit from prospective
+coverage and threshold metrics from mechanism change. A Benchmark Ratchets
+bridge rejects readiness promotion without a prospective holdout.
+
+Authored dossier fields remain assumptions. No theorem establishes
+generalization, transfer, emergence, scaling accuracy, calibration, safety,
+deployment, support, release, or external effect. Chapter support remains
+`argument` and `support_state_effect` remains `none`.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

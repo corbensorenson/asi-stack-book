@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 126 |
-| Theorem declarations classified | 1745 |
-| Direct/projection-style theorem declarations | 328 |
-| Derived/decomposed theorem declarations | 1072 |
-| Unknown or mixed theorem declarations | 345 |
+| Lean modules scanned | 127 |
+| Theorem declarations classified | 1783 |
+| Direct/projection-style theorem declarations | 345 |
+| Derived/decomposed theorem declarations | 1088 |
+| Unknown or mixed theorem declarations | 350 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -115,12 +115,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | learning-theory-generalization-and-scaling-science | 1 | 38 | 17 | 16 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, learning-theory-generalization-and-scaling-science, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance | 5 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance | 4 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -1036,6 +1037,44 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `separating_opportunity_distinguishes_the_witness` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `stale_descendants_block_invalidation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | `unresolved_hypothesis_is_required_for_bounded_use` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `algorithm_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `architecture_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `attempt_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `complete_denominator_counts_every_member` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `complete_dossier_reaches_only_theseus_prospective_forecast_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `compression_score_does_not_establish_safety` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `compute_regime_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `every_attempt_id_survives_collection` | derived_or_decomposed | no | uses induction, left, rcases, right, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `expired_forecast_contract_remains_expired_when_time_advances` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `extrapolation_remains_outside_support_when_observed_range_shrinks` | derived_or_decomposed | no | uses omega |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `horizon_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `identical_retrospective_fit_can_hide_opposite_prospective_coverage` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `identical_threshold_metrics_can_hide_opposite_mechanism_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `iid_holdout_does_not_establish_distribution_transfer` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `metric_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `missing_prospective_holdout_rejects_benchmark_ratchet_promotion` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `omitted_attempt_rejects_complete_denominator` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `population_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `readiness_requires_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `readiness_requires_design` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `readiness_requires_lifecycle` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `readiness_requires_transfer` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `retrospective_fit_cannot_recover_prospective_coverage` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `retrospective_scaling_fit_does_not_establish_future_scaling_behavior` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `sample_process_change_invalidates_forecast_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `threshold_benchmark_does_not_establish_mechanism_emergence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `threshold_metrics_cannot_recover_mechanism_change` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `training_fit_does_not_establish_broad_generalization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `unscored_gap_persists_when_scored_count_falls` | derived_or_decomposed | no | uses omega |
+| `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `unscored_preregistered_alternative_rejects_complete_comparison` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
