@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3880,
+    "candidate_count": 3881,
     "review_state_counts": {
-      "duplicate_of_atom": 1848,
+      "duplicate_of_atom": 1849,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -26063,9 +26063,28 @@
       "target_atom_id": "cognitive-compilation-and-semantic-ir.minimum.001"
     },
     {
+      "candidate_id": "cognitive-compilation-and-semantic-ir.prose.0d7d24d68fdc",
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:953",
+      "sentence": "the lowered stage, closes the represented residual, and requires validation",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The line-wrapped sentence restates the reviewed finite-model repair and fresh-revalidation obligation owned by the Cognitive Compilation failure-blocks-promotion formal target; it introduces no broader compiler-correctness or support claim.",
+      "target_atom_id": "cognitive-compilation-and-semantic-ir.formal.cognitive-compilation-ir-failure-blocks-promotion"
+    },
+    {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.9be43cfcd04f",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:970",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:976",
       "sentence": "backend, validate actual artifact content, measure repair locality, or prove",
       "cues": [
         "measure",
@@ -26085,7 +26104,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.98263405b88e",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:973",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:979",
       "sentence": "These targets do not prove semantic preservation, compiler correctness,",
       "cues": [
         "prove"
@@ -26104,7 +26123,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.fe8b527274c7",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:974",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:980",
       "sentence": "incremental-repair locality, artifact usefulness, or production transfer.",
       "cues": [
         "transfer"
@@ -26123,7 +26142,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.1430cf3c674a",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:1038",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:1044",
       "sentence": "shows that the extra machinery improves useful preservation over matched",
       "cues": [
         "improves",
@@ -26143,7 +26162,7 @@
     {
       "candidate_id": "cognitive-compilation-and-semantic-ir.prose.4134164da5e9",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:1077",
+      "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:1083",
       "sentence": "Semantic IR can only preserve obligations when the context feeding those obligations is addressable, authorized, and reviewable.",
       "cues": [
         "can only"

@@ -42,7 +42,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 2 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 27 | 0 | 14 | 2 |
-| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 33 | 0 | 23 | 2 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | 1 | 21 | 0 | 27 | 7 |

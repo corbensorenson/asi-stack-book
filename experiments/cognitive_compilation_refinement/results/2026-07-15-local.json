@@ -1,12 +1,14 @@
 {
-  "schema_version": "asi_stack.cognitive_compilation_refinement.v1",
+  "schema_version": "asi_stack.cognitive_compilation_refinement.v2",
   "result_id": "cognitive-compilation-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "c0bfb1fd84c65a8ed4055e4870cc70407919b6fc31a88c17e47db925927f7f5a",
+    "lean_model": "4bd8b4a0859e4e3015731fa6e4dba593fb65cdd1de5f76fa835f63e922af3d91",
     "semantic_atom_schema": "5abb1e3f9bf7e363d45bed271cad6dbecae3b3ec7747505de13d70d296c3ed01",
     "fixture_inventory": "759929ff6bfa4225a64a23aa673f234da1be90a38d463c6e9696422b7898171f",
     "prior_result": "8f4273ded701c1567cf92e8074a5dc3c0f7621b6ba75ab83c4d99e5260037fac"
   },
+  "lean_theorem_count": 33,
+  "lean_required_theorems_missing": [],
   "fixture_count": 6,
   "accepted_fixture_count": 2,
   "rejected_fixture_count": 4,
@@ -48,11 +50,11 @@
       "reason": "bounded_fixture_acceptance"
     }
   ],
-  "reachable_trace_event_count": 7,
+  "reachable_trace_event_count": 8,
   "reference_trace_final_state": {
     "stage": "accepted",
     "plan_id": 101,
-    "plan_version": 1,
+    "plan_version": 2,
     "obligation_one": 501,
     "obligation_two": 502,
     "obligation_three": 503,
@@ -61,14 +63,17 @@
     "authority_ceiling": 3,
     "approved_authority": 3,
     "ledger_version": 2,
+    "validated_plan_version": 2,
     "lowering_receipt": true,
     "validation_receipt": true,
     "repair_receipt": true,
     "residual_count": 0,
-    "logical_time": 7
+    "support_authority": false,
+    "external_effect_authority": false,
+    "logical_time": 8
   },
-  "mutation_count": 47,
-  "mutation_rejection_count": 47,
+  "mutation_count": 86,
+  "mutation_rejection_count": 86,
   "mutation_receipts": [
     {
       "mutation_id": "bind_plan_id_missing",
@@ -127,6 +132,22 @@
       ]
     },
     {
+      "mutation_id": "bind_version_laundering",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "bind_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "bind_residual",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "bind_residual"
+      ]
+    },
+    {
       "mutation_id": "type_plan_id_substitution",
       "rejected": true,
       "failed_event_index": 1,
@@ -180,6 +201,22 @@
       "failed_event_index": 1,
       "reasons": [
         "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "type_version_laundering",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "type_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "type_residual_laundering",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "type_residual_changed"
       ]
     },
     {
@@ -255,6 +292,22 @@
       ]
     },
     {
+      "mutation_id": "lower_version_laundering",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "lower_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "lower_residual_laundering",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "lower_residual_changed"
+      ]
+    },
+    {
       "mutation_id": "validate_plan_id_substitution",
       "rejected": true,
       "failed_event_index": 3,
@@ -319,6 +372,22 @@
       ]
     },
     {
+      "mutation_id": "validate_version_laundering",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "validation_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "validate_residual_laundering",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "validation_residual_changed"
+      ]
+    },
+    {
       "mutation_id": "detect_target_substitution",
       "rejected": true,
       "failed_event_index": 4,
@@ -340,6 +409,22 @@
       "failed_event_index": 4,
       "reasons": [
         "ledger_version_mismatch"
+      ]
+    },
+    {
+      "mutation_id": "detect_version_laundering",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "detection_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "detect_missing_residual",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "repair_residual_missing"
       ]
     },
     {
@@ -391,6 +476,14 @@
       ]
     },
     {
+      "mutation_id": "repair_plan_increment",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "plan_not_incremented"
+      ]
+    },
+    {
       "mutation_id": "repair_receipt",
       "rejected": true,
       "failed_event_index": 5,
@@ -407,7 +500,23 @@
       ]
     },
     {
-      "mutation_id": "accept_target_substitution",
+      "mutation_id": "repair_residual_open",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_residual_open"
+      ]
+    },
+    {
+      "mutation_id": "repair_wrong_stage",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "repair_stage"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_plan_id_substitution",
       "rejected": true,
       "failed_event_index": 6,
       "reasons": [
@@ -415,9 +524,81 @@
       ]
     },
     {
-      "mutation_id": "accept_obligation_loss",
+      "mutation_id": "revalidate_obligation_one_substitution",
       "rejected": true,
       "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_obligation_two_substitution",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_obligation_three_substitution",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_constraint_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_target_hash_substitution",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_receipt_missing",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "validation_receipt_missing"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_stale_plan",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "validation_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "revalidate_residual_reopened",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "validation_residual_changed"
+      ]
+    },
+    {
+      "mutation_id": "accept_target_substitution",
+      "rejected": true,
+      "failed_event_index": 7,
+      "reasons": [
+        "target_or_source_substitution"
+      ]
+    },
+    {
+      "mutation_id": "accept_obligation_loss",
+      "rejected": true,
+      "failed_event_index": 7,
       "reasons": [
         "obligation_loss"
       ]
@@ -425,7 +606,7 @@
     {
       "mutation_id": "accept_residual",
       "rejected": true,
-      "failed_event_index": 6,
+      "failed_event_index": 7,
       "reasons": [
         "open_residual"
       ]
@@ -433,7 +614,7 @@
     {
       "mutation_id": "accept_authority",
       "rejected": true,
-      "failed_event_index": 6,
+      "failed_event_index": 7,
       "reasons": [
         "authority_changed"
       ]
@@ -441,9 +622,145 @@
     {
       "mutation_id": "accept_time",
       "rejected": true,
-      "failed_event_index": 6,
+      "failed_event_index": 7,
       "reasons": [
         "time_not_monotonic"
+      ]
+    },
+    {
+      "mutation_id": "accept_version_laundering",
+      "rejected": true,
+      "failed_event_index": 7,
+      "reasons": [
+        "accept_version_changed"
+      ]
+    },
+    {
+      "mutation_id": "support_request_0",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_0",
+      "rejected": true,
+      "failed_event_index": 0,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_1",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_1",
+      "rejected": true,
+      "failed_event_index": 1,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_2",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_2",
+      "rejected": true,
+      "failed_event_index": 2,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_3",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_3",
+      "rejected": true,
+      "failed_event_index": 3,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_4",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_4",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_5",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_5",
+      "rejected": true,
+      "failed_event_index": 5,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_6",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_6",
+      "rejected": true,
+      "failed_event_index": 6,
+      "reasons": [
+        "external_effect_requested"
+      ]
+    },
+    {
+      "mutation_id": "support_request_7",
+      "rejected": true,
+      "failed_event_index": 7,
+      "reasons": [
+        "support_promotion_requested"
+      ]
+    },
+    {
+      "mutation_id": "external_effect_request_7",
+      "rejected": true,
+      "failed_event_index": 7,
+      "reasons": [
+        "external_effect_requested"
       ]
     }
   ],

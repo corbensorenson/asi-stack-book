@@ -1247,7 +1247,7 @@
       "chapter_title": "Cognitive Compilation and Semantic IR",
       "tag": "lean:cognitive_compilation.ir.operational_invariant",
       "module": "AsiStackProofs.CognitiveCompilationRefinement",
-      "formal_target": "Every accepted target in the finite reachable lowering model preserves the exact plan, three represented obligations, source constraint, target identity, approved authority, and lowering/validation custody.",
+      "formal_target": "Arbitrary successful runs preserve exact source identity, zero support/external-effect authority, valid traces, batch composition, receipt custody, and nondecreasing plan versions; acceptance requires validation bound to the current plan version.",
       "status": "implemented",
       "outline_line": 3250,
       "module_path": "lean/AsiStackProofs/CognitiveCompilationRefinement.lean"
@@ -1257,7 +1257,7 @@
       "chapter_title": "Cognitive Compilation and Semantic IR",
       "tag": "lean:cognitive_compilation.ir.failure_blocks_promotion",
       "module": "AsiStackProofs.CognitiveCompilationRefinement",
-      "formal_target": "A material repair can return to validated state only with localized scope, exact affected-obligation preservation, a one-step repair-ledger version increment, and a ledger receipt; open residuals block acceptance.",
+      "formal_target": "A material repair returns to lowering only with localized scope, exact obligation preservation, coordinated one-step plan/ledger increments, a ledger receipt, and closed represented residuals; fresh repaired-plan validation is required before acceptance.",
       "status": "implemented",
       "outline_line": 3251,
       "module_path": "lean/AsiStackProofs/CognitiveCompilationRefinement.lean"
@@ -1267,7 +1267,7 @@
       "chapter_title": "Cognitive Compilation and Semantic IR",
       "tag": "lean:cognitive_compilation.ir.semantic_lowering_route_envelope",
       "module": "AsiStackProofs.CognitiveCompilationRefinement",
-      "formal_target": "The original finite lowering routes are consumed alongside a seven-event reachable refinement and independent six-fixture/47-mutation consumer covering source, obligation, authority, target, validation, receipt, repair, ledger, and residual failures.",
+      "formal_target": "The original finite routes are consumed alongside an eight-event reachable refinement and independent exact-build six-fixture/86-mutation consumer covering source, obligation, authority, target, version, validation, receipt, repair, ledger, residual, support, and effect failures.",
       "status": "implemented",
       "outline_line": 3252,
       "module_path": "lean/AsiStackProofs/CognitiveCompilationRefinement.lean"

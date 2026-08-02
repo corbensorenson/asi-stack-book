@@ -26,8 +26,8 @@ def main() -> None:
     value = json.loads(REVIEWS.read_text(encoding="utf-8")); targets = value["target_reviews"]; theorems = value["theorem_reviews"]
     if TARGETS - set(targets) or RETIRED - set(theorems): raise SystemExit("missing frozen Cognitive Compilation lineage")
     roles = {
-        "lean:cognitive_compilation.ir.operational_invariant": "A reachable seven-event lowering and localized-repair path preserves exact plan, obligation, source-constraint, target, authority, version, receipt, and residual custody before acceptance.",
-        "lean:cognitive_compilation.ir.failure_blocks_promotion": "Countermodels and 47 mutations reject obligation or target substitution, authority widening, missing receipts, validation laundering, global or unversioned repair, and residual-bearing acceptance.",
+        "lean:cognitive_compilation.ir.operational_invariant": "An eight-event lowering, localized-repair, and fresh-revalidation path preserves exact plan, obligation, source-constraint, target, authority, version, receipt, and residual custody before acceptance; arbitrary successful runs preserve source identity and non-authority.",
+        "lean:cognitive_compilation.ir.failure_blocks_promotion": "Countermodels and 86 mutations reject obligation or target substitution, authority widening, missing receipts, stale validation, global or unversioned repair, residual-bearing acceptance, support requests, and effect requests.",
         "lean:cognitive_compilation.ir.semantic_lowering_route_envelope": "Twelve bounded priority branches remain, now consumed alongside a reachable refinement and independent classification of all six trace fixtures.",
     }
     for target in TARGETS:
@@ -37,7 +37,7 @@ def main() -> None:
         record["review_rationale"] = "Resolve frozen Cognitive Compilation lineage to a reachable exact-obligation/target/authority/receipt/repair-ledger model and independent consumer without support promotion."
     theorem_ids = [key for key in theorems if key.startswith(PREFIX)]
     for theorem_id in theorem_ids: attach(theorems[theorem_id])
-    for theorem_id in RETIRED: theorems[theorem_id]["review_rationale"] = "Frozen lineage retained; the assumption-projection declaration is physically retired and superseded by the reachable model, independent fixture consumer, countermodels, and 47 mutations."
+    for theorem_id in RETIRED: theorems[theorem_id]["review_rationale"] = "Frozen lineage retained; the assumption-projection declaration is physically retired and superseded by the reachable model, independent fixture consumer, countermodels, and 86 mutations."
     REVIEWS.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     print(f"Attached Cognitive Compilation refs to {len(TARGETS)} targets and {len(theorem_ids)} theorems; {len(RETIRED)} declarations retired.")
 

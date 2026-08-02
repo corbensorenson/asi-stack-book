@@ -1591,8 +1591,8 @@ def errors(data: dict) -> list[str]:
         "cognitive_compilation_fixture_count": 6,
         "cognitive_compilation_accepted_fixture_count": 2,
         "cognitive_compilation_rejected_fixture_count": 4,
-        "cognitive_compilation_reachable_event_count": 7,
-        "cognitive_compilation_mutation_rejection_count": 47,
+        "cognitive_compilation_reachable_event_count": 8,
+        "cognitive_compilation_mutation_rejection_count": 86,
         "cognitive_compilation_support_state_effect": "none",
     }
     for key, value in expected_cognitive_compilation_contract.items():
@@ -1600,11 +1600,11 @@ def errors(data: dict) -> list[str]:
             out.append(f"cognitive-compilation contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     cognitive_compilation = data["cognitive_compilation_result"]
     for key, value in {"fixture_count": 6, "accepted_fixture_count": 2,
-                       "rejected_fixture_count": 4, "reachable_trace_event_count": 7,
-                       "mutation_rejection_count": 47, "support_state_effect": "none"}.items():
+                       "rejected_fixture_count": 4, "reachable_trace_event_count": 8,
+                       "mutation_rejection_count": 86, "support_state_effect": "none"}.items():
         if cognitive_compilation.get(key) != value:
             out.append(f"cognitive-compilation result drifted: {key} expected {value!r}, got {cognitive_compilation.get(key)!r}")
-    for phrase in ["accepts exactly the two intended fixtures", "rejects the four expected-invalid fixtures", "47 of 47 mutations", "Support-state effect: `none`"]:
+    for phrase in ["accepts exactly the two intended fixtures", "rejects the four expected-invalid fixtures", "86 of 86 mutations", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["cognitive_compilation_receipt"].casefold():
             out.append(f"cognitive-compilation receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "Schema validity alone", "Support-state effect: exactly `none`"]:

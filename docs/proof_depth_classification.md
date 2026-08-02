@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2444 |
-| Direct/projection-style theorem declarations | 413 |
-| Derived/decomposed theorem declarations | 1475 |
+| Theorem declarations classified | 2465 |
+| Direct/projection-style theorem declarations | 415 |
+| Derived/decomposed theorem declarations | 1494 |
 | Unknown or mixed theorem declarations | 556 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -70,7 +70,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedger.lean` | unmapped | 0 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 27 | 0 | 15 | 12 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 12 | 0 | 3 | 9 | manual review |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 33 | 2 | 22 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
@@ -501,15 +501,36 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `missing_validators_require_validator` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `obligation_loss_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `validator_failure_routes_to_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_bound_step_is_not_source_binding` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_bound_step_preserves_source_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_repair_increments_plan_and_ledger_versions` | derived_or_decomposed | no | uses have, rcases, rw |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_repair_requires_local_exact_ledger_update` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_cannot_request_external_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_cannot_request_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_leaves_raw_stage` | derived_or_decomposed | no | uses cases, have, rcases, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_plan_version_monotone` | derived_or_decomposed | no | uses cases, have, rcases, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_preserves_external_effect_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_step_preserves_support_authority` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_target_closes_residuals` | derived_or_decomposed | no | uses have, rcases, rw |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_target_preserves_exact_source_and_target` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `accepted_target_requires_current_plan_validation` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `apply_event_preserves_complete_compilation_custody` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `apply_nonbinding_event_preserves_source_identity` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `compilation_runs_compose` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `dropped_obligation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `global_repair_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `localized_repair_trace_reaches_accepted_target` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `missing_lowering_receipt_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `repair_without_ledger_increment_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `residual_target_acceptance_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_bound_run_preserves_source_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_run_plan_version_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_run_preserves_complete_compilation_custody` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_run_preserves_external_effect_authority` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `successful_run_preserves_support_authority` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `target_substitution_at_accept_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `validator_pass_without_preservation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `widened_authority_rejected` | unknown_or_mixed | no | no recognized depth pattern |

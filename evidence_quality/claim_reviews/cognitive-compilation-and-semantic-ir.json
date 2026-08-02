@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/cognitive-compilation-and-semantic-ir.qmd",
     "structured_atoms_reviewed": 72,
-    "prose_candidates_adjudicated": 87,
+    "prose_candidates_adjudicated": 88,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 proof refinement. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -764,6 +764,11 @@
     "cognitive-compilation-and-semantic-ir.prose.26b61ee8f80e": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Protected, sense-aware lowering into a Kernel packet` and reviewed owner atoms `cognitive-compilation-and-semantic-ir.core`, `cognitive-compilation-and-semantic-ir.beyond_sota.001`, `cognitive-compilation-and-semantic-ir.minimum.001`."
+    },
+    "cognitive-compilation-and-semantic-ir.prose.0d7d24d68fdc": {
+      "state": "duplicate_of_atom",
+      "rationale": "The line-wrapped sentence restates the reviewed finite-model repair and fresh-revalidation obligation owned by the Cognitive Compilation failure-blocks-promotion formal target; it introduces no broader compiler-correctness or support claim.",
+      "target_atom_id": "cognitive-compilation-and-semantic-ir.formal.cognitive-compilation-ir-failure-blocks-promotion"
     }
   },
   "non_claims": [

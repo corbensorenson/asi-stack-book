@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -27,7 +27,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Seventeen exact claim mappings now cover the chapter's twenty assigned sources, including the passage-reviewed Relational Dimension Compiler. Three assigned comparators remain supporting context rather than exact mappings; source mapping does not establish local reproduction, semantic preservation, or novelty."
-  - "The current scaffold contains two valid and four rejecting compilation traces, one blocked semantic-preservation record with nine rejecting mutations, and 24 live Lean declarations across the retained route module and reachable refinement under three targets. These are hand-authored record and finite-transition evidence, not a source parser, compiler backend, translation proof, or natural artifact result."
+  - "The current scaffold contains two valid and four rejecting compilation traces, one blocked semantic-preservation record with nine rejecting mutations, and 45 live Lean declarations across the retained route module and reachable refinement under three targets. These are hand-authored record and finite-transition evidence, not a source parser, compiler backend, translation proof, or natural artifact result."
   - "The QCSA program produced 2,340 deterministic predictions over 60 cases, 13 systems, and three seeds plus one 13-stage zero-model temporary-file trace with ten rejecting adversarial paths and one exact rollback. QCSA tied the selected baseline at 1.000 task accuracy while using 1.913386 times the operations; matched advantage and resource gates failed on this proxy, the active-question ablation is N2 proxy/regime evidence rather than an exact refutation, and the chapter core received no support movement."
   - "No natural accepted plan has been compiled into a concrete cognitive artifact and independently validated for semantic preservation, useful quality, causal repair benefit, reproducibility, or cross-target transfer."
 ---
@@ -40,13 +40,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-02 |
 | Primary source records | 20 assigned records with 17 exact claim mappings, including the Relational Dimension Compiler's dimension-safe relational lowering proposal |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`; external comparators: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
 | Source loading state | all twenty source notes reviewed at their recorded boundary; the Relational Dimension Compiler is passage-reviewed from the local author paper; external systems are not locally reproduced |
-| Test state | Exact current boundary: two valid/four rejecting hand-authored compilation traces; one independent seven-event obligation/repair refinement with 47 rejected mutations; one blocked semantic-preservation record/nine rejecting mutations; 24 live Lean declarations across two modules under three targets; 2,340 QCSA predictions over 60 synthetic cases, 13 systems, and three seeds; one 13-stage zero-model reversible trace with ten rejecting adversarial controls; no natural cognitive artifact, matched advantage, or chapter-core support movement. |
+| Test state | Exact current boundary: two valid/four rejecting hand-authored compilation traces; one independent eight-event obligation/repair/fresh-validation refinement with 86 rejected mutations; one blocked semantic-preservation record/nine rejecting mutations; 45 live Lean declarations across two modules under three targets; 2,340 QCSA predictions over 60 synthetic cases, 13 systems, and three seeds; one 13-stage zero-model reversible trace with ten rejecting adversarial controls; no natural cognitive artifact, matched advantage, or chapter-core support movement. |
 
 ## Drafting guardrail
 
@@ -929,7 +929,7 @@ pass.
 | Semantic lowering route proof | Check that a finite semantic-lowering review routes missing source plans, missing atoms, missing obligation links, cyclic dependencies, authority escapes, missing validators, validator failures, missing receipts, obligation loss, invalidating repairs without ledger updates, known residuals, and complete lowering reviews to explicit outcomes. | implemented by Lean build; finite semantic-lowering route coverage only |
 | Incremental repair regression test | Break one atom-level requirement and check that the repair can stay within the declared repair scope. | implemented in `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | Target compilation audit | Check that a target artifact records which atoms, assumptions, validators, and residuals produced it. | implemented in `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
-| Executed obligation-preserving compilation refinement | Preserve exact source obligations and target identity through lowering, validation, localized repair, versioned ledger update, and acceptance, while independently classifying every existing trace fixture. | implemented in `python3 scripts/validate_cognitive_compilation_refinement.py`: two accepted/four rejected fixtures, one seven-event repaired witness, and 47/47 rejected mutations; support-state effect `none` |
+| Executed obligation-preserving compilation refinement | Preserve exact source obligations and target identity through lowering, validation, localized repair, coordinated plan/ledger version updates, fresh repaired-plan validation, and acceptance, while independently classifying every existing trace fixture. | implemented in `AsiStackProofs.CognitiveCompilationRefinement` and `python3 scripts/validate_cognitive_compilation_refinement.py`: exact 33-theorem compilation, two accepted/four rejected fixtures, one eight-event repaired witness, and 86/86 rejected mutations; support-state effect `none` |
 | Historical-project contract-preservation fixture | Check authority-bearing IR, ambiguity ledger, complete field lineage, retained pass/failure bundle, source-requirement obligations, observed repair blast radius, and the insufficiency of digest parity against nine mutations. | implemented in `python3 scripts/validate_semantic_contract_preservation.py`; one hand-authored blocked fixture only, no parser, backend, execution authority, measured repair locality, or support promotion |
 | QCSA held-out reference evaluation | Compare full QCSA, seven baselines, and five ablations on 60 deterministic synthetic cases across three seeds, preserving all 2,340 predictions and exact resource and failure denominators. | implemented and dispositioned; full and best baseline both reached 1.000 task accuracy, operation ratio was 1.913386, matched-advantage/resource gates failed on the proxy, the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation, bounded non-core mechanisms were promoted or narrowed, and the chapter core stayed `argument` |
 | QCSA governed vertical reference | Exercise intent, semantic IR, stable identity/address, evidence graph, question trace, context, physical route, separate authority, one temporary-file effect, independent byte observation, artifact receipts, migration, and rollback. | implemented as one 13-stage zero-model local trace with ten rejected adversarial paths and one byte-exact rollback; no natural compiler, learned model, irreversible effect, external evaluator, production transfer, or support movement |
@@ -947,23 +947,29 @@ The reachable compilation refinement runs with
 `python3 scripts/validate_cognitive_compilation_refinement.py` and records
 `experiments/cognitive_compilation_refinement/results/2026-07-15-local.json`.
 It preserves one plan, three represented obligations, one source constraint,
-one target, approved authority, and lowering/validation/repair custody through
-a seven-event localized-repair trace. Its independently written consumer
+one target, approved authority, zero support/external-effect authority, and
+lowering/validation/repair custody through an eight-event localized-repair
+trace. Repair increments both plan and ledger versions, returns the artifact to
+the lowered stage, closes the represented residual, and requires validation
+bound to the repaired plan version before acceptance. Arbitrary successful runs
+preserve source identity and non-authority, produce valid traces, compose across
+event batches, retain complete receipts, and never decrease plan version. Its independently written consumer
 accepts exactly the two intended trace fixtures, rejects all four known-invalid
-fixtures, and rejects 47 mutations. Numeric identities and record labels remain
+fixtures, recompiles all 33 refinement theorems, and rejects 86 mutations.
+Numeric identities and record labels remain
 trusted; this is not natural-language semantic equivalence or a backend result.
 
 ### Formalization hooks
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilationRefinement` | Every accepted target in the finite reachable lowering model preserves the exact plan, three represented obligations, source constraint, target identity, approved authority, and lowering/validation custody. | implemented |
-| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilationRefinement` | A material repair can return to validated state only with localized scope, exact affected-obligation preservation, a one-step repair-ledger version increment, and a ledger receipt; open residuals block acceptance. | implemented |
-| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilationRefinement` | The original finite lowering routes are consumed alongside a seven-event reachable refinement and independent six-fixture/47-mutation consumer covering source, obligation, authority, target, validation, receipt, repair, ledger, and residual failures. | implemented |
+| `lean:cognitive_compilation.ir.operational_invariant` | `AsiStackProofs.CognitiveCompilationRefinement` | Arbitrary successful runs preserve exact source identity, zero support/external-effect authority, valid traces, batch composition, receipt custody, and nondecreasing plan versions; acceptance requires validation bound to the current plan version. | implemented |
+| `lean:cognitive_compilation.ir.failure_blocks_promotion` | `AsiStackProofs.CognitiveCompilationRefinement` | A material repair returns to lowering only with localized scope, exact obligation preservation, coordinated one-step plan/ledger increments, a ledger receipt, and closed represented residuals; fresh repaired-plan validation is required before acceptance. | implemented |
+| `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilationRefinement` | The original finite routes are consumed alongside an eight-event reachable refinement and independent exact-build six-fixture/86-mutation consumer covering source, obligation, authority, target, version, validation, receipt, repair, ledger, residual, support, and effect failures. | implemented |
 
-The three public targets now group 24 live declarations: twelve retained finite
-route consequences and twelve reachable-refinement consequences, including a
-seven-event witness and eight countermodels. The two former assumption
+The three public targets now group 45 live declarations: twelve retained finite
+route consequences and 33 reachable-refinement consequences, including an
+eight-event fresh-validation witness and eight closed Lean countermodels. The two former assumption
 projections are physically retired with frozen lineage. The refinement proves
 exact abstract identity and transition consequences; it still does not inspect
 source or target meaning, establish arbitrary obligation completeness, run a
