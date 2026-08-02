@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 75 |
+| Chapters | 76 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -59,6 +59,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `human-ai-communication-persuasion-and-epistemic-security` | 0 | 0 | 0 | 0 |
 | `human-ai-organizations-delegation-and-accountability` | 0 | 0 | 0 | 0 |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 0 | 0 | 0 | 0 |
+| `human-factors-and-meaningful-control-in-oversight` | 0 | 0 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 25 | 0 | 0 |
 | `institutions-international-coordination-and-public-legitimacy` | 0 | 0 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 16 | 0 | 0 |

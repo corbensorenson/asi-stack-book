@@ -17,6 +17,41 @@ PROTOCOL = ROOT / "experiments/human_factors_argument_exit/preregistration.json"
 LEAN = ROOT / "lean/AsiStackProofs/HumanFactorsOversight.lean"
 CHAPTER = ROOT / "chapters/human-factors-and-meaningful-control-in-oversight.qmd"
 
+REQUIRED_THEOREMS = (
+    "control_route_never_grants_support_or_effect",
+    "control_envelope_blocks_action",
+    "responsibility_requires_control",
+    "bounded_review_preserves_declared_conditions",
+    "complete_fixture_routes_to_bounded_review",
+    "overloaded_fixture_requests_capacity",
+    "late_fixture_reduces_autonomy",
+    "blame_without_control_is_rejected",
+    "authority_leak_is_rejected",
+    "initial_review_state_satisfies_invariant",
+    "accepted_review_step_preserves_invariant",
+    "accepted_review_step_preserves_custody",
+    "accepted_review_run_preserves_invariant",
+    "accepted_review_run_preserves_custody",
+    "reachable_accountability_requires_control_decision_intervention_and_response",
+    "reachable_review_authority_never_exceeds_ceiling",
+    "reachable_review_never_assigns_support_or_release_authority",
+    "complete_review_trace_reaches_accountability_closure",
+    "substituted_reviewer_is_rejected_before_briefing",
+    "substituted_action_is_rejected_before_briefing",
+    "overloaded_review_is_rejected_before_control_opportunity",
+    "late_review_is_rejected_before_control_opportunity",
+    "missing_comprehension_acknowledgement_is_rejected_before_decision",
+    "missing_independent_challenge_is_rejected_before_decision",
+    "missing_override_path_is_rejected_before_decision",
+    "authority_widening_is_rejected_before_decision",
+    "intervention_before_decision_is_rejected",
+    "intervention_without_receipt_is_rejected",
+    "response_observation_before_intervention_is_rejected",
+    "accountability_without_observed_response_is_rejected",
+    "accountability_without_control_opportunity_is_rejected",
+    "blocked_review_revokes_active_authority_without_support_effect",
+)
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -101,14 +136,11 @@ def errors(data: dict[str, Any]) -> list[str]:
     if isolation.get("prepublication_human_review_substitution_allowed") is not False:
         out.append("protocol substitutes participants for prepublication review")
 
-    if len(re.findall(r"(?m)^theorem ", lean_text)) != 9:
+    theorem_names = re.findall(r"(?m)^theorem ([A-Za-z0-9_]+)", lean_text)
+    if theorem_names != list(REQUIRED_THEOREMS):
         out.append("HumanFactorsOversight theorem denominator drifted")
-    for theorem in (
-        "control_envelope_blocks_action", "responsibility_requires_control",
-        "control_route_never_grants_support_or_effect", "bounded_review_preserves_declared_conditions",
-    ):
-        if f"theorem {theorem}" not in lean_text:
-            out.append(f"Lean theorem missing: {theorem}")
+    if re.search(r"\b(sorry|admit|axiom)\b", lean_text):
+        out.append("HumanFactorsOversight contains an unproved declaration")
     for phrase in (
         "Why this boundary earns a chapter",
         "integrate at argument support",
@@ -164,7 +196,7 @@ def main() -> None:
         raise SystemExit("Human oversight control contract failed:\n - " + "\n - ".join(failures))
     print(
         "Human oversight control contract passed: one safe-hold no-human fixture, "
-        "two public targets through 9 theorem declarations, 4 arms, 9 competence "
+        "two public targets through 32 theorem declarations, 4 arms, 9 competence "
         "gates, 5 positive and 7 adversarial controls, 6 rescue steps, 12 outcomes, "
         "15 mutations rejected; participants and protected outcomes closed, "
         "support/effect/release authority none."

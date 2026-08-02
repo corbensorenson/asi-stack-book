@@ -1276,6 +1276,18 @@ Lean proof targets:
 | `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In the finite model, any consequential transition lacking authority, observability, comprehension, timely intervention, or a reachable safe state is rejected or degraded. | implemented |
 | `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | The bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | implemented |
 
+Current formal ceiling: thirty-two theorem declarations now cover the retained
+admission router plus a reachable briefing, decision, intervention,
+response-observation, accountability, and blocking lifecycle. One-step and
+arbitrary-run invariants preserve exact review identity, authority ceilings,
+receipt ordering, accountability ancestry, and zero support or release
+authority; one complete witness and thirteen rejecting lifecycle countermodels
+establish nonvacuity and prohibited-shortcut behavior. These are finite
+authored-record results only. Actual comprehension, workload calibration,
+reviewer competence, automation-bias resistance, intervention efficacy,
+outcome truth, responsibility, meaningful control, and safety remain empirical
+or Project Theseus obligations.
+
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:human-ai-communication-persuasion-and-epistemic-security:BEGIN -->
 ### Human-AI Communication, Persuasion, and Epistemic Security
 
@@ -6169,7 +6181,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2004 theorem declarations, 1175 derived/decomposed, 404 direct/projection, 425 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2027 theorem declarations, 1182 derived/decomposed, 405 direct/projection, 440 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

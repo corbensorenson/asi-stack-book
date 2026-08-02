@@ -2675,14 +2675,14 @@
             "unsafe handoff",
             "blame-oriented logging"
           ],
-          "minimal_implementation": "Implement one bounded high-impact workflow with a versioned oversight contract, workload and deadline gate, mode/authority display, comprehension probe, exercised override, safe hold, intervention receipt, and simulator scenarios for overload, missed alarms, mode confusion, and late intervention.",
+          "minimal_implementation": "Implement one bounded high-impact workflow with a versioned oversight contract, workload and deadline gate, mode/authority display, comprehension probe, exercised override, safe hold, intervention receipt, and simulator scenarios for overload, missed alarms, mode confusion, and late intervention. The current formal floor is a thirty-two-declaration Lean surface with a reachable briefing-to-accountability lifecycle, arbitrary-run identity, authority, and receipt-order invariants, one complete witness, thirteen rejecting lifecycle countermodels, and an exact independent consumer; it proves finite authored-record discipline only.",
           "beyond_state_of_art": "The mature target architecture is an empirically calibrated control-envelope controller that reallocates autonomy using measured human and system state while preserving authority, contestability, and graceful degradation. Its operational contract publishes versioned workload, comprehension, intervention-latency, reversible-window, qualification, and fallback thresholds; compares strong allocation and interface baselines; and retains failures, operator burden, and residual harm. It remains a research target until preregistered, representative, independently reproduced trials show better joint safety and useful throughput without responsibility or authority laundering.",
           "codex_tests": [
             {
               "name": "Oversight-envelope boundary suite",
               "purpose": "Vary workload, explanation burden, intervention time, authority, and observability to test whether autonomy degrades before control is nominal only.",
-              "implementation_status": "planned",
-              "result_status": "not_run"
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_human_oversight_control_contract.py`: one safe-hold record, thirty-two exact Lean declarations, thirteen closed lifecycle countermodels, and fifteen independently applied record mutations; no human observation, comprehension, intervention-efficacy, meaningful-control, safety, or support-state result"
             },
             {
               "name": "Automation-bias and mode-confusion adversarial study",

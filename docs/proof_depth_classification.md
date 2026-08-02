@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2004 |
-| Direct/projection-style theorem declarations | 404 |
-| Derived/decomposed theorem declarations | 1175 |
-| Unknown or mixed theorem declarations | 425 |
+| Theorem declarations classified | 2027 |
+| Direct/projection-style theorem declarations | 405 |
+| Derived/decomposed theorem declarations | 1182 |
+| Unknown or mixed theorem declarations | 440 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -108,7 +108,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty | 1 | 48 | 16 | 17 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 21 | 0 | 3 | 18 | manual review |
-| `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 9 | 0 | 4 | 5 | manual review |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 32 | 1 | 11 | 20 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | institutions-international-coordination-and-public-legitimacy | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -992,15 +992,38 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `missing_time_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `orphaned_residuals_block_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `undisposed_conflict_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_run_preserves_custody` | derived_or_decomposed | no | uses contradiction, have, induction, rcases, simp, split |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_run_preserves_invariant` | derived_or_decomposed | no | uses contradiction, induction, simp, split |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_step_preserves_custody` | derived_or_decomposed | no | uses cases, rcases, simp |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_step_preserves_invariant` | derived_or_decomposed | no | uses cases, rcases, simp |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accountability_without_control_opportunity_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accountability_without_observed_response_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `authority_leak_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `authority_widening_is_rejected_before_decision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `blame_without_control_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `blocked_review_revokes_active_authority_without_support_effect` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `bounded_review_preserves_declared_conditions` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `complete_fixture_routes_to_bounded_review` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `complete_review_trace_reaches_accountability_closure` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `control_envelope_blocks_action` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `control_route_never_grants_support_or_effect` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `initial_review_state_satisfies_invariant` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `intervention_before_decision_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `intervention_without_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `late_fixture_reduces_autonomy` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `late_review_is_rejected_before_control_opportunity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `missing_comprehension_acknowledgement_is_rejected_before_decision` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `missing_independent_challenge_is_rejected_before_decision` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `missing_override_path_is_rejected_before_decision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `overloaded_fixture_requests_capacity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `overloaded_review_is_rejected_before_control_opportunity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `reachable_accountability_requires_control_decision_intervention_and_response` | derived_or_decomposed | no | uses have, rcases |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `reachable_review_authority_never_exceeds_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `reachable_review_never_assigns_support_or_release_authority` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `response_observation_before_intervention_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `responsibility_requires_control` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `substituted_action_is_rejected_before_briefing` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | `substituted_reviewer_is_rejected_before_briefing` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | `agreement_does_not_establish_effective_implementation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | `commitment_signals_cannot_recover_effective_enforcement` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |

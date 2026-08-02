@@ -326,7 +326,7 @@ The following 2026-07-19 checkpoint closed
 Human Factors as a load-bearing argument-level chapter with ten reconciled
 sources, an exact control-envelope schema, one deliberately incompetent
 safe-hold fixture that observes zero humans, two implemented public Lean
-targets through nine declarations, fifteen rejecting contract mutations, and
+targets through thirty-two declarations, fifteen rejecting contract mutations, and
 overview, glossary, handoff, claim-matrix, source, and final-synthesis
 integration. Its four-arm human-subjects campaign freezes nine competence
 gates, five positive controls, seven adversarial controls, six rescue steps,

@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Source notes are available for all ten assigned records; Appendix C contains ten exact claim-level mappings. The four legacy automation notes are based on inspected primary metadata/abstract records, not locally reproduced studies. |
-| Test state | The control-envelope schema, safe-hold fixture, independent semantic validator, rejecting mutations, and two public Lean targets through nine declarations are implemented. The four-arm human-subjects campaign is protocol-ready but requires exact ethics, privacy, participant, and resource authority before recruitment; protected outcomes remain closed. |
+| Test state | The control-envelope schema, safe-hold fixture, independent semantic validator, rejecting mutations, and two public Lean targets through thirty-two declarations are implemented. The formal layer includes a reachable review lifecycle, arbitrary-run invariants and identity custody, one complete witness, and thirteen rejecting lifecycle countermodels. The four-arm human-subjects campaign is protocol-ready but requires exact ethics, privacy, participant, and resource authority before recruitment; protected outcomes remain closed. |
 
 ## Drafting guardrail
 
@@ -718,24 +718,37 @@ state.
 
 | Tag | Module | Finite target | Status |
 |---|---|---|---|
-| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In a finite record model, any consequential transition lacking declared authority, observability, comprehension disposition, timely intervention, or a reachable safe state is rejected or degraded. | implemented through nine declarations and an independent consumer |
+| `lean:oversight.control_envelope.blocks_action` | `AsiStackProofs.HumanFactorsOversight` | In a finite record model, any consequential transition lacking declared authority, observability, comprehension disposition, timely intervention, or a reachable safe state is rejected or degraded. | implemented through thirty-two declarations and an independent consumer |
 | `lean:oversight.responsibility_requires_control` | `AsiStackProofs.HumanFactorsOversight` | A bounded accountability assignment never attributes operational responsibility beyond the authority and effective control recorded in the oversight contract. | implemented through the same finite route model and consumer |
 
 The `human_oversight_control_packet.schema.json` contract and deliberately
 incompetent safe-hold fixture now provide the versioned record boundary. The
 fixture recruits or observes no person. `AsiStackProofs.HumanFactorsOversight`
-implements both public targets through nine theorem declarations: missing
-necessary predicates cannot reach bounded review, responsibility outside
-effective control is rejected, and no review route grants support or external
-effect authority. The independent consumer checks the same consequences and
-rejects semantic mutations.
+implements both public targets through thirty-two theorem declarations. The
+original admission router rejects missing necessary predicates and
+responsibility outside recorded effective control. A second finite model then
+tracks one review through briefing, decision, intervention, response
+observation, accountability closure, or blocking while preserving exact
+oversight, reviewer, action, and decision identity. One-step and arbitrary-run
+theorems preserve authority ceilings; review-before-decision,
+decision-before-intervention, intervention-before-response, and
+response-before-accountability ordering; and zero support or release authority.
+A complete five-event witness reaches accountability closure. Thirteen closed
+countermodels reject identity substitution, overload, lateness, missing
+comprehension acknowledgement, missing independent challenge, missing override,
+authority widening, premature intervention or observation, missing receipts,
+and accountability without control opportunity or observed response. The
+independent consumer requires this exact theorem surface and rejects record
+mutations.
 
 This formalization does not prove comprehension, workload calibration, trust,
 consent, privacy adequacy, responsibility, intervention efficacy, moral
-meaningfulness, or safety. Every human-state, authority, timing, and channel
-predicate remains trusted input. It is adequate only for finite routing over
-declared records; the prospective human-subjects protocol owns the empirical
-burden and remains unopened.
+meaningfulness, or safety. A comprehension acknowledgement is only an authored
+field; a response receipt is not proof that intervention worked. Every
+human-state, authority, timing, channel, and outcome predicate remains trusted
+input. Lean establishes finite custody and ordering only. Representative
+human-in-the-loop measurement belongs to the unopened prospective protocol;
+cross-component and deployed behavior belongs to Project Theseus.
 
 ## Evidence and non-claims
 

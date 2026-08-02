@@ -73,7 +73,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | 6 | 17 | 0 | 10 | 3 |
 | `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | 1 | 48 | 0 | 30 | 8 |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | 1 | 21 | 0 | 4 | 1 |
-| `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 9 | 0 | 6 | 1 |
+| `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 32 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | 1 | 32 | 0 | 32 | 8 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |

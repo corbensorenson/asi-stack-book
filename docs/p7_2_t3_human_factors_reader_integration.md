@@ -28,7 +28,7 @@ with control in the same episode.
   recruits, observes, scores, or surveils no person and is record-shape evidence
   only.
 - `AsiStackProofs.HumanFactorsOversight` implements both planned public targets
-  through nine theorem declarations. Missing necessary predicates cannot reach
+  through thirty-two theorem declarations. Missing necessary predicates cannot reach
   bounded review, responsibility outside effective control is rejected, and no
   bounded-review route assigns support or external-effect authority.
 - `scripts/validate_human_oversight_control_contract.py` checks the schema,

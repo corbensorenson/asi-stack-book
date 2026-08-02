@@ -1795,6 +1795,70 @@ for theorem_name in (
         ),
     }
 
+_human_factors_lifecycle_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "tests/fixtures/protocol_records/human_oversight_control_packet.valid.json",
+        "experiments/human_factors_argument_exit/preregistration.json",
+    ],
+    "classification_basis": [
+        "the reachable review lifecycle is bound to the exact human-oversight contract consumer"
+    ],
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/HumanFactorsOversight.lean::initial_review_state_satisfies_invariant"
+] = {
+    **_human_factors_lifecycle_refinement_base,
+    "semantic_level": "P1",
+    "rationale": (
+        "The theorem checks the initial authored state against the lifecycle invariant; it is an induction base, not a complete review witness."
+    ),
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/HumanFactorsOversight.lean::complete_review_trace_reaches_accountability_closure"
+] = {
+    **_human_factors_lifecycle_refinement_base,
+    "semantic_level": "P2",
+    "rationale": (
+        "The closed five-event trace is a bounded nonvacuity witness for briefing, decision, intervention, response observation, and accountability closure."
+    ),
+}
+
+for theorem_name in (
+    "accepted_review_step_preserves_invariant",
+    "accepted_review_step_preserves_custody",
+    "accepted_review_run_preserves_invariant",
+    "accepted_review_run_preserves_custody",
+    "reachable_accountability_requires_control_decision_intervention_and_response",
+    "reachable_review_authority_never_exceeds_ceiling",
+    "reachable_review_never_assigns_support_or_release_authority",
+    "substituted_reviewer_is_rejected_before_briefing",
+    "substituted_action_is_rejected_before_briefing",
+    "overloaded_review_is_rejected_before_control_opportunity",
+    "late_review_is_rejected_before_control_opportunity",
+    "missing_comprehension_acknowledgement_is_rejected_before_decision",
+    "missing_independent_challenge_is_rejected_before_decision",
+    "missing_override_path_is_rejected_before_decision",
+    "authority_widening_is_rejected_before_decision",
+    "intervention_before_decision_is_rejected",
+    "intervention_without_receipt_is_rejected",
+    "response_observation_before_intervention_is_rejected",
+    "accountability_without_observed_response_is_rejected",
+    "accountability_without_control_opportunity_is_rejected",
+    "blocked_review_revokes_active_authority_without_support_effect",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanFactorsOversight.lean::{theorem_name}"
+    ] = {
+        **_human_factors_lifecycle_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves an arbitrary-run custody invariant or a closed rejecting countermodel inside the finite review lifecycle bound to the independent consumer."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

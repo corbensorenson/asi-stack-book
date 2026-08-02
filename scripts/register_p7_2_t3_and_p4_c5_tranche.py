@@ -9,6 +9,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "validation/registry.json"
 REGISTER = "scripts/register_p7_2_t3_and_p4_c5_tranche.py"
+PREFERRED_ORDERS = {
+    "validate_human_oversight_control_contract.py": 409,
+    "validate_p7_2_t3_human_factors_reader_integration.py": 410,
+    "validate_p4_c5_semantic_proof_cluster.py": 411,
+}
 
 UNITS = [
     {
@@ -23,8 +28,8 @@ UNITS = [
             "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
         ],
         "input_contract": "One typed safe-hold record-shape fixture with zero human observations, a prospectively frozen but unexecuted four-arm minimal-risk human-factors campaign, and a finite necessary-condition/responsibility/non-authority model.",
-        "output_contract": "Require exact task, evidence, workload, time, authority, intervention, conflict, privacy, responsibility, and lifecycle custody; ethics/privacy authority before recruitment; nine competence gates; six rescue steps; an N3 exact ceiling; nine Lean declarations; and fifteen rejecting mutations.",
-        "output_assertions": ["1 safe-hold no-human fixture", "4 matched arms", "9 competence gates", "5 positive controls", "7 adversarial controls", "9 Lean declarations", "15 mutations reject", "support/effect/release authority none"],
+        "output_contract": "Require exact task, evidence, workload, time, authority, intervention, conflict, privacy, responsibility, and lifecycle custody; ethics/privacy authority before recruitment; nine competence gates; six rescue steps; an N3 exact ceiling; thirty-two Lean declarations; and fifteen rejecting record mutations.",
+        "output_assertions": ["1 safe-hold no-human fixture", "4 matched arms", "9 competence gates", "5 positive controls", "7 adversarial controls", "32 Lean declarations", "15 record mutations reject", "13 lifecycle countermodels reject", "support/effect/release authority none"],
         "claim_scope": "Human control-envelope packet shape, campaign custody, and finite necessary-condition/responsibility-route semantics only.",
         "negative_controls": "validator_owned_fifteen_authority_responsibility_privacy_surveillance_participant_outcome_competence_scope_and_isolation_mutations",
         "negative_control_cases": ["effect authorization", "support grant", "responsibility laundering", "punitive inference", "biometric inference", "participant invention", "outcome opening", "ethics deletion", "surveillance enablement", "negative-scope inflation", "P2 displacement"],
@@ -47,7 +52,7 @@ UNITS = [
         ],
         "input_contract": "The admitted Human Factors chapter, ten exact source mappings, two implemented public proof targets, a no-human safe-hold fixture, a closed ethics-gated campaign, and adjacent reader surfaces.",
         "output_contract": "Bind artifact digests, preserve source/role/proof/participant denominators, require handoffs and synthesis surfaces, keep recruitment and protected outcomes closed, and reject thirteen integration mutations.",
-        "output_assertions": ["1 terminal argument-level chapter", "10 source mappings", "2 implemented proof targets", "9 Lean declarations", "4 claim-bearing arms", "0 participants", "13 integration mutations reject", "support effect none"],
+        "output_assertions": ["1 terminal argument-level chapter", "10 source mappings", "2 implemented proof targets", "32 Lean declarations", "4 claim-bearing arms", "0 participants", "13 integration mutations reject", "support effect none"],
         "claim_scope": "P7.2-T3 chapter necessity, argument-level integration, traceability, ethics boundary, and reader continuity only.",
         "negative_controls": "validator_owned_thirteen_manifest_source_digest_proof_participant_outcome_isolation_role_status_and_support_mutations",
         "negative_control_cases": ["terminal removal", "source deletion", "digest drift", "proof reduction", "participant invention", "outcome opening", "P2 displacement", "review substitution", "role deletion", "status reopening", "support laundering"],
@@ -85,12 +90,15 @@ def main() -> None:
     value = json.loads(REGISTRY.read_text(encoding="utf-8"))
     scripts = {row["script"] for row in UNITS}
     value["units"] = [row for row in value["units"] if row.get("script") not in scripts]
-    next_order = len(value["units"]) + 1
-    for offset, spec in enumerate(UNITS):
+    occupied_orders = {row["order"] for row in value["units"]}
+    if occupied_orders.intersection(PREFERRED_ORDERS.values()):
+        raise SystemExit("canonical P7.2-T3/P4-C5 registry slots are occupied")
+    for spec in UNITS:
+        order = PREFERRED_ORDERS[spec["script"]]
         unit = {key: item for key, item in spec.items() if key != "artifacts"}
         unit.update({
-            "id": f"{spec['script']}:{next_order + offset}",
-            "order": next_order + offset,
+            "id": f"{spec['script']}:{order}",
+            "order": order,
             "args": [],
             "execution_tier": "pr",
             "validation_class": "proof_or_evidence_gate",

@@ -75,7 +75,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     if len(targets) != 2 or any(row.get("status") != "implemented" for row in targets):
         out.append("proof target implementation denominator drifted")
     formal = audit.get("formalization", {})
-    if formal.get("public_target_count") != 2 or formal.get("implemented_target_count") != 2 or formal.get("theorem_declaration_count") != 9:
+    if formal.get("public_target_count") != 2 or formal.get("implemented_target_count") != 2 or formal.get("theorem_declaration_count") != 32:
         out.append("formal denominator drifted")
     record = audit.get("record_contract", {})
     if record.get("fixture_disposition") != "safe_hold" or record.get("human_participants_observed") != 0 or record.get("semantic_mutations_rejected") != 15:
@@ -170,7 +170,7 @@ def main() -> None:
         raise SystemExit("P7.2-T3 reader integration failed:\n - " + "\n - ".join(failures))
     print(
         "P7.2-T3 reader integration passed: 1 terminal argument-level chapter, "
-        "10 source mappings, 2 implemented public proof targets, 9 theorem declarations, "
+        "10 source mappings, 2 implemented public proof targets, 32 theorem declarations, "
         "4 arms, 9 competence gates, no participants, protected outcomes closed, "
         "13 integration mutations rejected; support/release/publication none."
     )
