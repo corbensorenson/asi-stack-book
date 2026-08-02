@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/claim-ledgers-and-belief-revision.qmd",
     "structured_atoms_reviewed": 73,
-    "prose_candidates_adjudicated": 44,
+    "prose_candidates_adjudicated": 43,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -494,10 +494,6 @@
       "rationale": "Handoff description of the next chapter's verification envelope.",
       "target_atom_id": null
     },
-    "claim-ledgers-and-belief-revision.prose.08fe4c348e4c": {
-      "state": "historical_or_source_report",
-      "rationale": "Bounded formal countermodel and reachable-witness report; it does not promote the chapter core."
-    },
     "claim-ledgers-and-belief-revision.prose.42374c9e624a": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped argument-exit requirements already governed by the chapter minimum."
@@ -507,7 +503,7 @@
       "rationale": "Restates the authored-lifecycle ceiling.",
       "target_atom_id": "claim-ledgers-and-belief-revision.minimum.001"
     },
-    "claim-ledgers-and-belief-revision.prose.98dc7e32a828": {
+    "claim-ledgers-and-belief-revision.prose.a4bf3d6da5d2": {
       "state": "historical_or_source_report",
       "rationale": "Bounded refinement summary with explicit external-effect and semantic limits."
     },
@@ -558,6 +554,18 @@
   },
   "prose_review_lineage": [
     {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.08fe4c348e4c",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:701",
+      "retired_sentence": "and a full reachable witness; explicit countermodels show that stale bases,",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Bounded formal countermodel and reachable-witness report; it does not promote the chapter core."
+      },
+      "retirement_reason": "The stronger refinement paragraph now binds the countermodels to exact theorem and formal-target statements; this line fragment is no longer a standalone prose candidate.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-08-01"
+    },
+    {
       "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.121fb915aa20",
       "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:555",
       "retired_sentence": "predicates, fourteen prove finite Boolean route branches, and one restates the",
@@ -568,8 +576,7 @@
       },
       "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
       "replacement_candidate_ids": [
-        "claim-ledgers-and-belief-revision.prose.98dc7e32a828",
-        "claim-ledgers-and-belief-revision.prose.08fe4c348e4c"
+        "claim-ledgers-and-belief-revision.prose.a4bf3d6da5d2"
       ],
       "recorded_on": "2026-07-15"
     },
@@ -676,8 +683,7 @@
       },
       "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
       "replacement_candidate_ids": [
-        "claim-ledgers-and-belief-revision.prose.98dc7e32a828",
-        "claim-ledgers-and-belief-revision.prose.08fe4c348e4c"
+        "claim-ledgers-and-belief-revision.prose.a4bf3d6da5d2"
       ],
       "recorded_on": "2026-07-15"
     },
