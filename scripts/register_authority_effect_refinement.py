@@ -24,6 +24,8 @@ ARTIFACTS = [
 def main() -> None:
     value = json.loads(REGISTRY.read_text(encoding="utf-8"))
     value["units"] = [row for row in value["units"] if row.get("script") != SCRIPT]
+    for index, row in enumerate(value["units"], start=1):
+        row["order"] = index
     order = len(value["units"]) + 1
     value["units"].append({
         "id": f"validate_authority_effect_refinement:{order}",
@@ -34,11 +36,11 @@ def main() -> None:
         "validation_class": "proof_or_evidence_gate",
         "input_contract": "The reachable Lean grant-to-effect model, authority decision fixtures, executed runtime effect/denial result, revocation trace, governed repository result, schema, receipt, and adequacy dossier.",
         "input_artifacts": ARTIFACTS,
-        "output_contract": "Reject authority amplification, exact-binding substitution, stale/expired/revoked grants, receipt bypass, effect without dispatch, nonindependent observation, inexact rollback, one-shot reuse, source drift, and support promotion.",
-        "output_assertions": ["six authority fixtures", "six reachable witness events", "one executed local effect", "one independent observation", "one exact rollback", "two pre-effect denials", "five revocation entries", "nine governed scenarios", "thirty-eight rejected mutations", "no support-state effect"],
+        "output_contract": "Check arbitrary-run authority invariants, valid traces, batch composition, irreversible revocation, and rejection noninterference; reject authority amplification, exact-binding substitution, stale/expired/revoked grants, receipt bypass, effect without dispatch, observation overcount, inexact rollback, one-shot reuse, source drift, and support promotion.",
+        "output_assertions": ["twenty-seven compiled Lean declarations", "six authority fixtures", "three reachable traces and twenty events", "twenty invariant prefixes", "twenty-three batch compositions", "one executed local effect", "one independent observation", "one exact rollback", "two pre-effect denials", "five revocation entries", "nine governed scenarios", "fifty state-noninterfering mutation rejections", "no support-state effect"],
         "claim_scope": "One finite numeric-identity model and fixed local executed evidence surfaces only.",
         "negative_controls": "validator_owned_model_and_source_semantic_mutations",
-        "negative_control_cases": ["grant identity or binding substitution", "authority widening", "stale epoch or expiry", "missing approval/dispatch/effect receipt", "post-revocation dispatch", "nonindependent observation", "inexact rollback", "one-shot reuse"],
+        "negative_control_cases": ["grant identity or binding substitution", "authority widening", "stale epoch or expiry", "missing approval/dispatch/effect/revocation receipt", "post-revocation dispatch, effect, or reissuance", "nonindependent or excess observation", "inexact or premature rollback", "one-shot reuse"],
         "prohibited_inference": "The finite local refinement does not establish natural-language authority extraction, authentic identity or receipts, wise issuance, concurrent revocation, complete effects, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
         "contract_precision": "inherited",
         "semantic_review_state": "checked_finite_grant_effect_refinement_not_authentic_concurrent_external_or_deployed",

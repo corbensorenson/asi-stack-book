@@ -896,7 +896,7 @@
               "name": "Executed Authority grant-to-effect refinement",
               "purpose": "Refine exact grant binding, ceiling, epoch, expiry, approval, dispatch, effect observation, revocation, one-shot use, and rollback against existing executed local evidence.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_authority_effect_refinement.py`: 6 authority fixtures, 6 reachable events, 1 executed effect, 1 independent observation, 1 exact rollback, 2 pre-effect denials, 5 revocation entries, 9 governed scenarios, and 38/38 rejected mutations; support-state effect none",
+              "result_status": "passes via `python3 scripts/validate_authority_effect_refinement.py`: 3 reachable traces/20 events, 20 invariant-prefix checks, 23 batch-composition checks, 6 authority fixtures, 1 executed effect, 1 independent observation, 1 exact rollback, 2 pre-effect denials, 5 revocation entries, 9 governed scenarios, and 50/50 state-noninterfering mutation rejections; support-state effect none",
               "status": "implemented bounded local refinement; no authentic identity/receipt, deployed authorization, concurrent revocation, production security, reproduction, transfer, safety, or chapter-core support claim"
             }
           ],
@@ -905,13 +905,13 @@
             {
               "tag": "lean:authority.ceiling.operational_invariant",
               "module": "AsiStackProofs.AuthorityEffectRefinement",
-              "target": "Every accepted issuance, dispatch, and effect in the finite reachable grant model remains within the caller ceiling and exactly binds grant ID, principal, operation, target, epoch, expiry, remaining uses, approval, dispatch, and effect custody.",
+              "target": "Every successful finite run preserves observation/effect accounting, live-grant ceiling/epoch/revocation safety, exact approval/dispatch custody, and a valid transition trace; accepted issuance, dispatch, and effect remain exactly grant-bound.",
               "status": "implemented"
             },
             {
               "tag": "lean:authority.ceiling.failure_blocks_promotion",
               "module": "AsiStackProofs.AuthorityEffectRefinement",
-              "target": "The reachable model and independent consumer reject authority widening, confused-deputy substitution, stale or expired grants, missing approval/dispatch/effect receipts, post-revocation dispatch, effect without dispatch, and consumed one-shot reuse.",
+              "target": "Revoked grant IDs persist and cannot commit an effect in any successful suffix; the independent consumer checks one-use, two-use, and revocation traces, every prefix and batch split, and 50 state-noninterfering widening, substitution, freshness, receipt, observation, rollback, revocation, and reuse mutations.",
               "status": "implemented"
             },
             {

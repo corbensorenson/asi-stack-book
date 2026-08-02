@@ -49,7 +49,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("machine status does not record the terminal adequate cluster")
     if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 11:
         out.append("public target denominator drifted")
-    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 90:
+    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 105:
         out.append("theorem denominator drifted")
 
     required = (
@@ -147,7 +147,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C3 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C3 semantic proof cluster passed: 4 modules, 11 public targets, 90 theorem "
+        "P4-C3 semantic proof cluster passed: 4 modules, 11 public targets, 105 theorem "
         "declarations, 3 adequate and 1 reclassified disposition, 6 executable checks, "
         "10 cluster mutations rejected, support effect none."
     )

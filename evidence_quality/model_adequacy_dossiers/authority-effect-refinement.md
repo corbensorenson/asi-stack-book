@@ -21,7 +21,10 @@ The validity relation requires monotone logical time and event-specific custody.
 - accepted issuance respects the caller ceiling and current epoch;
 - accepted dispatch is exactly grant-bound, approved, unrevoked, current-epoch, nonexpired, positive-use, and receipted;
 - accepted effect has the same properties and additionally requires a matching dispatch;
-- the exact six-event witness reaches independent observation and exact rollback;
+- every successful arbitrary-length run preserves observation/effect accounting, live-grant ceiling/epoch/revocation safety, and exact approval/dispatch custody;
+- every successful run yields a recursively valid transition trace and composes across arbitrary event-batch splits;
+- revoked grant IDs persist through every successful suffix, and no event in such a suffix can commit an effect under the revoked ID;
+- exact one-use and two-use witnesses reach independent observation and exact rollback, while a separate revocation witness clears custody and advances the epoch;
 - widening, principal substitution, expiry, stale epoch, revocation, missing dispatch, and one-shot reuse are rejected in concrete countermodels.
 
 ## Independent executable refinement
@@ -29,16 +32,17 @@ The validity relation requires monotone logical time and event-specific custody.
 The Python consumer independently reimplements the state machine and validates the executed source records rather than reading a Lean-generated summary. It validates the governed repository result against its own schema, binds every source by SHA-256, and records:
 
 - 6 authority fixtures: 3 accepted and 3 rejected;
-- 6 reachable witness events;
+- 3 reachable witness traces with 20 accepted events;
+- 20 invariant-preserving prefixes and 23 exact batch compositions;
 - 1 executed local effect, 1 independent observation, and 1 exact rollback;
 - 2 pre-effect denials;
 - 5 revocation trace entries;
 - 9 governed scenarios, 3 releases, and 0 unsafe releases;
-- 38 of 38 rejected model/source mutations.
+- 50 of 50 rejected model/source mutations, each preserving the accepted prefix state.
 
 ## Countermodels and mutation adequacy
 
-The mutation set changes one semantically material source field or sequence condition at a time: grant identity, caller-ceiling relation, epoch, expiry, remaining uses, target-owner approval, approval receipt, principal, operation, target, dispatch receipt, effect receipt, independent observation, exact rollback, revocation ordering, and second use. This demonstrates consequence sensitivity within the fixed local schema. It does not establish completeness against unmodeled fields or attacks.
+The mutation set changes one semantically material source field or sequence condition at a time: grant identity, caller-ceiling relation, epoch, expiry, remaining uses, target-owner approval, approval receipt, principal, operation, target, dispatch/effect/revocation receipts, independent observation, observation overcount, exact rollback, rollback ordering, revocation binding, post-revocation dispatch/effect/reissuance, and second use. This demonstrates consequence sensitivity and rejection noninterference within the fixed local schema. It does not establish completeness against unmodeled fields or attacks.
 
 ## Assumptions and exclusions
 

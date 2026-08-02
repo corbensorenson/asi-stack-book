@@ -8,7 +8,7 @@ Support-state effect: `none`
 
 The `system-boundaries-and-authority` proof family now has a reachable grant-to-effect model in `lean/AsiStackProofs/AuthorityEffectRefinement.lean` and an independently implemented concrete consumer in `scripts/validate_authority_effect_refinement.py`.
 
-The Lean model binds every grant, approval, dispatch, and material effect to the same abstract grant ID, principal, operation, target, authority ceiling, authority epoch, expiry, and remaining-use count. It proves that accepted issuance cannot exceed the caller ceiling, accepted dispatch is exactly bound and fresh, and accepted material effect requires the live grant, its approval, and its dispatch receipt. A six-event witness reaches one independently observed effect and exact rollback. Countermodels reject authority widening, principal substitution, expired or stale dispatch, post-revocation dispatch, effect without dispatch, and reuse of a consumed one-shot grant.
+The Lean model binds every grant, approval, dispatch, and material effect to the same abstract grant ID, principal, operation, target, authority ceiling, authority epoch, expiry, and remaining-use count. Its 27 declarations include one-step consequences plus an inductive state invariant and caller-ceiling preservation over arbitrary successful runs, valid-trace extraction, event-batch composition, revoked-ID persistence, and a theorem that no successful suffix can commit an effect for an already revoked grant. Separate one-use, two-use, and revocation witnesses cover 20 accepted events; the effect traces reach independent observation and exact rollback, while the revocation trace clears grant, approval, and dispatch custody and advances the epoch.
 
 The consumer binds that model to four pre-existing evidence surfaces by digest:
 
@@ -18,7 +18,7 @@ The consumer binds that model to four pre-existing evidence surfaces by digest:
 - five revocation-propagation trace entries;
 - nine governed repository-change scenarios, including three releases and zero unsafe releases.
 
-It also rejects 38 single-fault and sequence mutations spanning grant identity, principal, operation, target, ceiling, epoch, expiry, use count, target-owner approval, dispatch/effect receipts, observation independence, rollback exactness, post-revocation dispatch, and one-shot reuse.
+It independently checks all 20 witness prefixes and 23 event-batch splits. It also rejects 50 single-fault and sequence mutations spanning grant identity, principal, operation, target, ceiling, epoch, expiry, use count, target-owner approval, approval/dispatch/effect/revocation receipts, observation independence and overcount, rollback exactness and ordering, post-revocation dispatch/effect/reissuance, and one-shot reuse. Every rejection is checked against the accepted prefix state so failure cannot mutate authority state in the executable model.
 
 ## What changed in the proof envelope
 

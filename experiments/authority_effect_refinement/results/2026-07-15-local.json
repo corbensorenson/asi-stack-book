@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.authority_effect_refinement.v1",
   "result_id": "authority-effect-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "4423f689fdb850e2acfe489416290ffdbe740740958050a3a968d8d546bd0835",
+    "lean_model": "d226e0e4130d2b637229f4ffbc2ffcc2332eac9e3c14118011f6331041a9beef",
     "runtime_effect": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
     "revocation_trace": "8d777ba0c2ec356ca05451b7c19e3b794d9f9202975e2f6fe82c1193adede0e9",
     "governed_repository": "21b8e61485f6f36dbe09da1ef34bce0339d078407bf0474ddbefd14cc90564a5"
@@ -11,6 +11,10 @@
   "authority_fixture_accepted_count": 3,
   "authority_fixture_rejected_count": 3,
   "reachable_trace_event_count": 6,
+  "reachable_scenario_count": 3,
+  "reachable_scenario_event_count": 20,
+  "invariant_prefix_check_count": 20,
+  "composition_check_count": 23,
   "executed_local_effect_count": 1,
   "independently_observed_effect_count": 1,
   "exact_rollback_count": 1,
@@ -19,8 +23,9 @@
   "governed_scenario_count": 9,
   "governed_release_count": 3,
   "governed_unsafe_release_count": 0,
-  "mutation_count": 38,
-  "mutation_rejection_count": 38,
+  "mutation_count": 50,
+  "mutation_rejection_count": 50,
+  "rejection_noninterference_count": 50,
   "reference_trace_final_state": {
     "caller_ceiling": 3,
     "epoch": 11,
@@ -42,6 +47,85 @@
     "observed": 0,
     "rolled_back": true
   },
+  "scenario_receipts": [
+    {
+      "scenario_id": "one_use_observe_rollback",
+      "event_count": 6,
+      "accepted": true,
+      "prefix_invariant_check_count": 6,
+      "composition_check_count": 7,
+      "final_state": {
+        "caller_ceiling": 3,
+        "epoch": 11,
+        "time": 6,
+        "grant": {
+          "grant_id": 71,
+          "principal": 101,
+          "operation": 201,
+          "target": 301,
+          "authority": 3,
+          "epoch": 11,
+          "expires": 20,
+          "uses": 0
+        },
+        "approved": null,
+        "dispatched": null,
+        "revoked": [],
+        "effects": 0,
+        "observed": 0,
+        "rolled_back": true
+      }
+    },
+    {
+      "scenario_id": "two_use_two_observations_rollback",
+      "event_count": 10,
+      "accepted": true,
+      "prefix_invariant_check_count": 10,
+      "composition_check_count": 11,
+      "final_state": {
+        "caller_ceiling": 3,
+        "epoch": 11,
+        "time": 10,
+        "grant": {
+          "grant_id": 71,
+          "principal": 101,
+          "operation": 201,
+          "target": 301,
+          "authority": 3,
+          "epoch": 11,
+          "expires": 20,
+          "uses": 0
+        },
+        "approved": null,
+        "dispatched": null,
+        "revoked": [],
+        "effects": 0,
+        "observed": 0,
+        "rolled_back": true
+      }
+    },
+    {
+      "scenario_id": "dispatch_then_revoke",
+      "event_count": 4,
+      "accepted": true,
+      "prefix_invariant_check_count": 4,
+      "composition_check_count": 5,
+      "final_state": {
+        "caller_ceiling": 3,
+        "epoch": 12,
+        "time": 4,
+        "grant": null,
+        "approved": null,
+        "dispatched": null,
+        "revoked": [
+          71
+        ],
+        "effects": 0,
+        "observed": 0,
+        "rolled_back": false
+      }
+    }
+  ],
   "authority_fixture_receipts": [
     {
       "fixture": "invalid_allow_over_ceiling.json",
@@ -97,6 +181,7 @@
       "mutation_id": "issue_grant_id",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "invalid_grant_identity"
       ]
@@ -105,6 +190,7 @@
       "mutation_id": "issue_authority",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "authority_amplification_or_stale_epoch"
       ]
@@ -113,6 +199,7 @@
       "mutation_id": "issue_epoch",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "authority_amplification_or_stale_epoch"
       ]
@@ -121,6 +208,7 @@
       "mutation_id": "issue_expires",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "expired_or_consumed_grant"
       ]
@@ -129,6 +217,7 @@
       "mutation_id": "issue_uses",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "expired_or_consumed_grant"
       ]
@@ -137,6 +226,7 @@
       "mutation_id": "issue_owner",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "missing_target_owner_approval"
       ]
@@ -145,6 +235,7 @@
       "mutation_id": "issue_approval",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "missing_target_owner_approval"
       ]
@@ -153,6 +244,7 @@
       "mutation_id": "issue_time",
       "rejected": true,
       "failed_event_index": 0,
+      "state_noninterfering": true,
       "reasons": [
         "non_monotone_time"
       ]
@@ -161,6 +253,7 @@
       "mutation_id": "approve_principal",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch"
       ]
@@ -169,6 +262,7 @@
       "mutation_id": "approve_operation",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch"
       ]
@@ -177,6 +271,7 @@
       "mutation_id": "approve_target",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch"
       ]
@@ -185,6 +280,7 @@
       "mutation_id": "approve_authority",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch"
       ]
@@ -193,6 +289,7 @@
       "mutation_id": "approve_epoch",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch",
         "stale_expired_or_consumed_approval"
@@ -202,6 +299,7 @@
       "mutation_id": "approve_expires",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch",
         "stale_expired_or_consumed_approval"
@@ -211,6 +309,7 @@
       "mutation_id": "approve_uses",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "approval_binding_mismatch",
         "stale_expired_or_consumed_approval"
@@ -220,6 +319,7 @@
       "mutation_id": "approve_owner",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "missing_approval_receipt"
       ]
@@ -228,6 +328,7 @@
       "mutation_id": "approve_approval",
       "rejected": true,
       "failed_event_index": 1,
+      "state_noninterfering": true,
       "reasons": [
         "missing_approval_receipt"
       ]
@@ -236,6 +337,7 @@
       "mutation_id": "dispatch_principal",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch"
       ]
@@ -244,6 +346,7 @@
       "mutation_id": "dispatch_operation",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch"
       ]
@@ -252,6 +355,7 @@
       "mutation_id": "dispatch_target",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch"
       ]
@@ -260,6 +364,7 @@
       "mutation_id": "dispatch_authority",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch"
       ]
@@ -268,6 +373,7 @@
       "mutation_id": "dispatch_epoch",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch",
         "stale_expired_revoked_or_consumed_dispatch"
@@ -277,6 +383,7 @@
       "mutation_id": "dispatch_expires",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch",
         "stale_expired_revoked_or_consumed_dispatch"
@@ -286,6 +393,7 @@
       "mutation_id": "dispatch_uses",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch",
         "stale_expired_revoked_or_consumed_dispatch"
@@ -295,6 +403,7 @@
       "mutation_id": "dispatch_dispatch_receipt",
       "rejected": true,
       "failed_event_index": 2,
+      "state_noninterfering": true,
       "reasons": [
         "missing_dispatch_receipt"
       ]
@@ -303,6 +412,7 @@
       "mutation_id": "effect_principal",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch"
       ]
@@ -311,6 +421,7 @@
       "mutation_id": "effect_operation",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch"
       ]
@@ -319,6 +430,7 @@
       "mutation_id": "effect_target",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch"
       ]
@@ -327,6 +439,7 @@
       "mutation_id": "effect_epoch",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch",
         "stale_expired_revoked_or_consumed_effect"
@@ -336,6 +449,7 @@
       "mutation_id": "effect_expires",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch",
         "stale_expired_revoked_or_consumed_effect"
@@ -345,6 +459,7 @@
       "mutation_id": "effect_uses",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch",
         "stale_expired_revoked_or_consumed_effect"
@@ -354,6 +469,7 @@
       "mutation_id": "effect_effect_receipt",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "missing_effect_receipt"
       ]
@@ -362,6 +478,7 @@
       "mutation_id": "observe_nonindependent",
       "rejected": true,
       "failed_event_index": 4,
+      "state_noninterfering": true,
       "reasons": [
         "invalid_or_nonindependent_observation"
       ]
@@ -370,6 +487,7 @@
       "mutation_id": "observe_missing_receipt",
       "rejected": true,
       "failed_event_index": 4,
+      "state_noninterfering": true,
       "reasons": [
         "invalid_or_nonindependent_observation"
       ]
@@ -378,6 +496,7 @@
       "mutation_id": "rollback_inexact",
       "rejected": true,
       "failed_event_index": 5,
+      "state_noninterfering": true,
       "reasons": [
         "inexact_or_unobserved_rollback"
       ]
@@ -386,6 +505,7 @@
       "mutation_id": "rollback_missing_receipt",
       "rejected": true,
       "failed_event_index": 5,
+      "state_noninterfering": true,
       "reasons": [
         "inexact_or_unobserved_rollback"
       ]
@@ -394,6 +514,7 @@
       "mutation_id": "dispatch_after_revocation",
       "rejected": true,
       "failed_event_index": 3,
+      "state_noninterfering": true,
       "reasons": [
         "dispatch_binding_mismatch",
         "stale_expired_revoked_or_consumed_dispatch"
@@ -403,9 +524,119 @@
       "mutation_id": "second_effect_after_one_shot_consumption",
       "rejected": true,
       "failed_event_index": 4,
+      "state_noninterfering": true,
       "reasons": [
         "effect_binding_or_handoff_mismatch",
         "stale_expired_revoked_or_consumed_effect"
+      ]
+    },
+    {
+      "mutation_id": "revoke_principal",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_operation",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_target",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_authority",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_epoch",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_expires",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_uses",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "revoke_revocation_receipt",
+      "rejected": true,
+      "failed_event_index": 2,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_revocation"
+      ]
+    },
+    {
+      "mutation_id": "effect_after_revocation",
+      "rejected": true,
+      "failed_event_index": 3,
+      "state_noninterfering": true,
+      "reasons": [
+        "effect_binding_or_handoff_mismatch",
+        "stale_expired_revoked_or_consumed_effect"
+      ]
+    },
+    {
+      "mutation_id": "reissue_same_id_after_revocation",
+      "rejected": true,
+      "failed_event_index": 3,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_grant_identity"
+      ]
+    },
+    {
+      "mutation_id": "observation_exceeds_material_effects",
+      "rejected": true,
+      "failed_event_index": 5,
+      "state_noninterfering": true,
+      "reasons": [
+        "invalid_or_nonindependent_observation"
+      ]
+    },
+    {
+      "mutation_id": "rollback_before_independent_observation",
+      "rejected": true,
+      "failed_event_index": 4,
+      "state_noninterfering": true,
+      "reasons": [
+        "inexact_or_unobserved_rollback"
       ]
     }
   ],
@@ -413,6 +644,6 @@
   "non_claims": [
     "The reachable model uses abstract numeric identities and trusted receipts; it does not prove identity, approval, receipt, observer, or revocation authenticity.",
     "The executed effect is a generated local temporary-file mutation, and the governed repository workload is bounded; neither establishes deployed authorization middleware or production security.",
-    "The packet does not establish natural-language authority extraction, complete effect observation, concurrent revocation safety, reproduction, transfer, safety, or chapter-core support."
+    "The packet does not establish natural-language authority extraction, complete effect observation, concurrent or distributed revocation safety, reproduction, transfer, safety, or chapter-core support."
   ]
 }

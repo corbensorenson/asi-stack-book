@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2085 |
-| Direct/projection-style theorem declarations | 405 |
-| Derived/decomposed theorem declarations | 1212 |
-| Unknown or mixed theorem declarations | 468 |
+| Theorem declarations classified | 2100 |
+| Direct/projection-style theorem declarations | 406 |
+| Derived/decomposed theorem declarations | 1224 |
+| Unknown or mixed theorem declarations | 470 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -62,7 +62,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 15 | 11 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 12 | 0 | 4 | 8 | manual review |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 27 | 1 | 16 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -384,15 +384,30 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_dispatch_is_exactly_bound_and_fresh` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_effect_requires_exact_live_grant_approval_and_dispatch` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_issue_respects_caller_ceiling_and_epoch` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_preserves_state_invariant` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `apply_event_preserves_caller_ceiling` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `apply_event_preserves_revoked_grant` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `confused_deputy_principal_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `consumed_one_shot_grant_cannot_effect_again` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `effect_without_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `every_successful_reference_trace_preserves_authority_invariant` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `exact_bound_authority_trace_reaches_observed_exact_rollback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `expired_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `initial_state_satisfies_authority_invariant` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `invariant_without_active_grant_has_no_custody` | derived_or_decomposed | no | uses cases, constructor, contradiction, rcases, rw |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revocation_trace_closes_custody_and_advances_epoch` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_cannot_commit_effect_in_successful_suffix` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `stale_epoch_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_preserves_caller_ceiling` | derived_or_decomposed | no | uses calc, cases, have, induction, rw, simp, subst |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_preserves_revoked_grant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_preserves_state_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `two_use_trace_reaches_two_observations_and_exact_rollback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |

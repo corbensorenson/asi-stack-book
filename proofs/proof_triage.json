@@ -84,21 +84,21 @@
       "tag": "lean:authority.ceiling.operational_invariant",
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.AuthorityEffectRefinement",
-      "formal_target": "Every accepted issuance, dispatch, and effect in the finite reachable grant model remains within the caller ceiling and exactly binds grant ID, principal, operation, target, epoch, expiry, remaining uses, approval, dispatch, and effect custody.",
+      "formal_target": "Every successful finite run preserves observation/effect accounting, live-grant ceiling/epoch/revocation safety, exact approval/dispatch custody, and a valid transition trace; accepted issuance, dispatch, and effect remain exactly grant-bound.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced the weaker target owner with a reachable grant-to-effect transition model and an independent consumer over executed effect, denial, revocation, authority-fixture, and governed-repository evidence plus 38 rejecting mutations; support-state effect remains none."
+      "rationale": "The reachable grant-to-effect model now proves arbitrary-run invariant preservation, valid-trace extraction, batch composition, revoked-ID persistence, and revoked-suffix effect exclusion. Its independent consumer checks three traces, every prefix and batch split, and 50 state-noninterfering mutations alongside bounded executed records; support-state effect remains none."
     },
     {
       "tag": "lean:authority.ceiling.failure_blocks_promotion",
       "chapter_id": "system-boundaries-and-authority",
       "module": "AsiStackProofs.AuthorityEffectRefinement",
-      "formal_target": "The reachable model and independent consumer reject authority widening, confused-deputy substitution, stale or expired grants, missing approval/dispatch/effect receipts, post-revocation dispatch, effect without dispatch, and consumed one-shot reuse.",
+      "formal_target": "Revoked grant IDs persist and cannot commit an effect in any successful suffix; the independent consumer checks one-use, two-use, and revocation traces, every prefix and batch split, and 50 state-noninterfering widening, substitution, freshness, receipt, observation, rollback, revocation, and reuse mutations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced the weaker target owner with a reachable grant-to-effect transition model and an independent consumer over executed effect, denial, revocation, authority-fixture, and governed-repository evidence plus 38 rejecting mutations; support-state effect remains none."
+      "rationale": "The reachable grant-to-effect model now proves arbitrary-run invariant preservation, valid-trace extraction, batch composition, revoked-ID persistence, and revoked-suffix effect exclusion. Its independent consumer checks three traces, every prefix and batch split, and 50 state-noninterfering mutations alongside bounded executed records; support-state effect remains none."
     },
     {
       "tag": "lean:authority.lifecycle.admission_route",

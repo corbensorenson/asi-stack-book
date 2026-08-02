@@ -6,16 +6,16 @@
   "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
   "module_count": 4,
   "public_target_count": 11,
-  "theorem_declaration_count": 90,
+  "theorem_declaration_count": 105,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
       "path": "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 2,
-      "theorem_declaration_count": 12,
-      "plain_language_proposition": "Within one finite grant lifecycle, an accepted issuance stays at or below the caller ceiling and binds the declared epoch and lifetime; accepted dispatch and effect steps require the exact live grant, approval, dispatch, remaining-use, and receipt fields, while one source-anchored trace reaches one independently recorded local observation and exact local rollback.",
-      "modeled_state": "Exact numeric grant, principal, operation, target, ceiling, epoch, logical time, expiry, remaining uses, approval, dispatch, revocation, local effect, observation, and rollback fields across seven event kinds and one reachable six-event trace.",
+      "theorem_declaration_count": 27,
+      "plain_language_proposition": "Within any successful finite grant lifecycle, accepted transitions preserve observation/effect accounting, live-grant ceiling/epoch/revocation safety, exact approval/dispatch custody, and recursive trace validity; event batches compose, revoked IDs persist, and no successful suffix can commit an effect under an already revoked ID.",
+      "modeled_state": "Exact numeric grant, principal, operation, target, ceiling, epoch, logical time, expiry, remaining uses, approval, dispatch, revocation, local effect, observation, and rollback fields across seven event kinds, an inductive state invariant, a recursive trace-validity predicate, and three reachable traces covering one-use, two-use, and revocation lifecycles.",
       "assumptions": [
         "Grant, identity, target ownership, time, epoch, approval, dispatch, effect, observation, revocation, and rollback fields are truthful and authentic inputs.",
         "One sequential finite state machine is sufficient for the checked cases; concurrency, distributed revocation, partial observation, descendant effects, and external compensation are omitted.",
@@ -24,14 +24,14 @@
       "countermodels": [
         "Authority above the caller ceiling and confused-deputy principal substitution are rejected.",
         "Expired, stale-epoch, and revoked grants cannot dispatch.",
-        "Effect without dispatch and reuse of a consumed one-shot grant are rejected."
+        "Effect without dispatch, observation overcount, premature rollback, post-revocation effect or reissuance, and reuse of a consumed one-shot grant are rejected."
       ],
       "consumers": [
         "scripts/validate_authority_effect_refinement.py",
         "experiments/authority_effect_refinement/results/2026-07-15-local.json"
       ],
-      "mutation_evidence": "The independently implemented consumer binds six authority fixtures, six reachable events, nine governed repository scenarios, one local effect, one independent observation, one exact rollback, two pre-effect denials, and five revocation records while rejecting 38 source/model mutations.",
-      "maximum_inference": "Adequate for exact bounded sequential grant, approval, dispatch, local effect, observation, revocation, one-shot, and rollback consequences. It does not establish authentic identities or receipts, wise grants, complete observation, concurrent or distributed revocation, deployed enforcement, effect-complete recovery, production security, safety, transfer, or support movement."
+      "mutation_evidence": "The independently implemented consumer binds six authority fixtures, three reachable traces with twenty events, twenty invariant prefixes, twenty-three exact batch compositions, nine governed repository scenarios, one local effect, one independent observation, one exact rollback, two pre-effect denials, and five revocation records while rejecting 50/50 source/model mutations with exact rejected-state preservation.",
+      "maximum_inference": "Adequate for arbitrary-length but finite sequential grant, approval, dispatch, local effect, observation, revocation, bounded-use, rollback, trace-composition, and rejection-noninterference consequences. It does not establish authentic identities or receipts, wise grants, complete observation, concurrent or distributed revocation, deployed enforcement, effect-complete recovery, production security, safety, transfer, or support movement."
     },
     {
       "module": "AsiStackProofs.Replacement",
