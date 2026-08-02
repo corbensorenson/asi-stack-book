@@ -93,6 +93,34 @@ structure Packet where
   externalAuthorityRequested : Bool
 deriving DecidableEq, Repr
 
+structure Event where
+  kind : EventKind
+  packet : Packet
+deriving DecidableEq, Repr
+
+structure IncidentIdentity where
+  incidentId : Nat
+  boundaryVersion : Nat
+  architectureDigest : Nat
+  policyDigest : Nat
+  detectorDigest : Nat
+  containmentDigest : Nat
+  remediationDigest : Nat
+  reviewerDigest : Nat
+  assuranceDigest : Nat
+deriving DecidableEq, Repr
+
+def exactIdentity (state : State) : IncidentIdentity :=
+  { incidentId := state.incidentId
+    boundaryVersion := state.boundaryVersion
+    architectureDigest := state.architectureDigest
+    policyDigest := state.policyDigest
+    detectorDigest := state.detectorDigest
+    containmentDigest := state.containmentDigest
+    remediationDigest := state.remediationDigest
+    reviewerDigest := state.reviewerDigest
+    assuranceDigest := state.assuranceDigest }
+
 def expectedKind : Stage -> EventKind
   | .operating => .detectAndIsolate
   | .detected => .confirmContainment
@@ -169,6 +197,158 @@ def applyEvent (state : State) (kind : EventKind) (packet : Packet) : State × R
        containmentActive := route != .acceptReadmission
        externalEffectsEnabled := route = .acceptReadmission }, route)
   else (state, route)
+
+def RecoveryStep (state : State) (event : Event) : Option State :=
+  if accepted (routeFor state event.kind event.packet) then
+    some (applyEvent state event.kind event.packet).1
+  else none
+
+def RecoveryRun : State → List Event → Option State
+  | state, [] => some state
+  | state, event :: tail =>
+      match RecoveryStep state event with
+      | none => none
+      | some next => RecoveryRun next tail
+
+def RecoveryTraceValid : State → List Event → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      accepted (routeFor state event.kind event.packet) = true ∧
+        RecoveryTraceValid (applyEvent state event.kind event.packet).1 tail
+
+theorem apply_event_preserves_incident_identity
+    (state : State) (kind : EventKind) (packet : Packet) :
+    exactIdentity (applyEvent state kind packet).1 = exactIdentity state := by
+  by_cases h : accepted (routeFor state kind packet) = true <;>
+    simp [applyEvent, exactIdentity, h]
+
+theorem accepted_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    accepted (routeFor state event.kind event.packet) = true := by
+  unfold RecoveryStep at stepped
+  split at stepped
+  · assumption
+  · simp at stepped
+
+theorem accepted_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    next = (applyEvent state event.kind event.packet).1 := by
+  unfold RecoveryStep at stepped
+  split at stepped
+  · exact Option.some.inj stepped |>.symm
+  · simp at stepped
+
+theorem accepted_step_adds_exactly_one_receipt
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  have acceptedRoute := accepted_step_is_accepted stepped
+  have applies := accepted_step_applies_event stepped
+  subst next
+  simp [applyEvent, acceptedRoute]
+
+theorem successful_run_preserves_incident_identity
+    {state final : State} {events : List Event}
+    (ran : RecoveryRun state events = some final) :
+    exactIdentity final = exactIdentity state := by
+  induction events generalizing state with
+  | nil =>
+      simp [RecoveryRun] at ran
+      subst final
+      rfl
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event with
+      | none => simp [RecoveryRun, stepped] at ran
+      | some next =>
+          have tailRan : RecoveryRun next tail = some final := by
+            simpa [RecoveryRun, stepped] using ran
+          calc
+            exactIdentity final = exactIdentity next := ih tailRan
+            _ = exactIdentity state := by
+              have applies := accepted_step_applies_event stepped
+              subst next
+              exact apply_event_preserves_incident_identity state event.kind event.packet
+
+theorem successful_run_cannot_assign_support_or_external_authority
+    {state final : State} {events : List Event}
+    (ran : RecoveryRun state events = some final) :
+    final.supportAssignmentCount = state.supportAssignmentCount ∧
+      final.externalAuthorityCount = state.externalAuthorityCount := by
+  induction events generalizing state with
+  | nil =>
+      simp [RecoveryRun] at ran
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event with
+      | none => simp [RecoveryRun, stepped] at ran
+      | some next =>
+          have tailRan : RecoveryRun next tail = some final := by
+            simpa [RecoveryRun, stepped] using ran
+          have tailSafe := ih tailRan
+          have applies := accepted_step_applies_event stepped
+          subst next
+          have headSafe :
+              (applyEvent state event.kind event.packet).1.supportAssignmentCount =
+                  state.supportAssignmentCount ∧
+                (applyEvent state event.kind event.packet).1.externalAuthorityCount =
+                  state.externalAuthorityCount := by
+            by_cases h : accepted (routeFor state event.kind event.packet) = true <;>
+              simp [applyEvent, h]
+          exact ⟨tailSafe.1.trans headSafe.1, tailSafe.2.trans headSafe.2⟩
+
+theorem successful_run_adds_exactly_one_receipt_per_event
+    {state final : State} {events : List Event}
+    (ran : RecoveryRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil =>
+      simp [RecoveryRun] at ran
+      subst final
+      simp
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event with
+      | none => simp [RecoveryRun, stepped] at ran
+      | some next =>
+          have tailRan : RecoveryRun next tail = some final := by
+            simpa [RecoveryRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_step_adds_exactly_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons, Nat.add_assoc]
+              rw [Nat.add_comm 1 tail.length]
+
+theorem successful_run_has_valid_trace
+    {state final : State} {events : List Event}
+    (ran : RecoveryRun state events = some final) :
+    RecoveryTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event with
+      | none => simp [RecoveryRun, stepped] at ran
+      | some next =>
+          have tailRan : RecoveryRun next tail = some final := by
+            simpa [RecoveryRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_accepted stepped, ih tailRan⟩
+
+theorem recovery_run_composes_across_event_batches
+    (state : State) (left right : List Event) :
+    RecoveryRun state (left ++ right) =
+      match RecoveryRun state left with
+      | none => none
+      | some middle => RecoveryRun middle right := by
+  induction left generalizing state with
+  | nil => simp [RecoveryRun]
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event <;>
+        simp [RecoveryRun, stepped, ih]
 
 theorem rejected_event_preserves_exact_state
     (state : State) (kind : EventKind) (packet : Packet)

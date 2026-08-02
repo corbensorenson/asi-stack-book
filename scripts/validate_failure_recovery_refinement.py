@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import copy
 import json
+import re
+import subprocess
 from pathlib import Path
 
 
@@ -63,6 +65,43 @@ GATES = {
         ("readmissionAuthorityPresent", False, "requestReadmissionAuthority"),
     ),
 }
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_incident_identity",
+    "accepted_step_is_accepted",
+    "accepted_step_applies_event",
+    "accepted_step_adds_exactly_one_receipt",
+    "successful_run_preserves_incident_identity",
+    "successful_run_cannot_assign_support_or_external_authority",
+    "successful_run_adds_exactly_one_receipt_per_event",
+    "successful_run_has_valid_trace",
+    "recovery_run_composes_across_event_batches",
+    "rejected_event_preserves_exact_state",
+    "transition_cannot_assign_support_or_external_authority",
+    "accepted_detection_disables_effects_and_activates_containment",
+    "accepted_readmission_requires_complete_review",
+    "missing_escape_closure_blocks_containment",
+    "captured_reviewer_blocks_review",
+    "stale_assurance_blocks_readmission",
+    "authority_leak_blocks_every_stage",
+    "bounded_failure_recovery_reaches_guarded_readmission",
+    "bounded_recurrence_reisolates_after_recovery",
+}
+
+
+def validate_formal_surface() -> int:
+    source = LEAN.read_text(encoding="utf-8")
+    names = set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)", source))
+    if names != EXPECTED_THEOREMS:
+        raise AssertionError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - names)}, "
+            f"extra={sorted(names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/FailureRecoveryRefinement.lean"]
+    completed = subprocess.run(command, cwd=ROOT / "lean", capture_output=True, text=True)
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    return len(names)
 
 
 def state(stage: str = "operating") -> dict[str, object]:
@@ -135,15 +174,7 @@ def apply(current: dict[str, object], kind: str, event: dict[str, object]) -> tu
 
 def main() -> None:
     failures: list[str] = []
-    source = LEAN.read_text(encoding="utf-8")
-    for needle in (
-        "rejected_event_preserves_exact_state",
-        "accepted_readmission_requires_complete_review",
-        "bounded_failure_recovery_reaches_guarded_readmission",
-        "bounded_recurrence_reisolates_after_recovery",
-    ):
-        if needle not in source:
-            failures.append(f"Lean source missing {needle}")
+    theorem_count = validate_formal_surface()
 
     boundary = json.loads(BOUNDARY_FIXTURE.read_text(encoding="utf-8"))
     detector = json.loads(DETECTOR_RESULT.read_text(encoding="utf-8"))
@@ -212,7 +243,8 @@ def main() -> None:
     if failures:
         raise SystemExit("Failure-recovery refinement failed:\n - " + "\n - ".join(failures))
     print(
-        "Failure-recovery refinement passed: 5 reachable stages, 5 accepted "
+        f"Failure-recovery refinement passed: {theorem_count} Lean theorems, "
+        "5 reachable stages, 5 accepted "
         f"transitions, {len(mutations)}/{len(mutations)} rejecting mutations, "
         "guarded readmission, recurrence re-isolation, support effect none."
     )

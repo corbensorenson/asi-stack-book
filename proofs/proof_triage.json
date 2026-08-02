@@ -164,11 +164,11 @@
       "tag": "lean:failure.recovery.closed_loop_refinement",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "module": "AsiStackProofs.FailureRecoveryRefinement",
-      "formal_target": "A five-stage bounded incident lifecycle preserves rejected state, contains accepted incidents, guards readmission through exact identity, remediation, independent review, current assurance and taxonomy, residual custody, and explicit authority, and re-isolates a modeled recurrence; an independently encoded consumer rejects 31 mutations.",
+      "formal_target": "Every successful finite recovery run preserves exact nine-field incident/version identity and zero support/external-authority assignment, adds exactly one receipt per accepted event, exposes a valid trace, and composes across event batches; the five-stage lifecycle guards readmission and re-isolates a modeled recurrence, while the recompiling consumer rejects 31 mutations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a reachable bounded transition system with exact rejection preservation, modeled effect isolation, guarded readmission, authority noninterference, recovery and recurrence witnesses, and an independently encoded 31-mutation consumer. It does not establish event truth, detector or reviewer independence, mitigation effectiveness, deployed recovery, safety, transfer, or chapter-core support."
+      "rationale": "Implemented as an exact 19-theorem reachable transition system with arbitrary-run incident/version custody, zero support or external-authority assignment, exact accepted-event receipt accounting, valid traces, batch composition, rejection preservation, guarded readmission, recovery and recurrence witnesses, and a recompiling independent 31-mutation consumer. It does not establish event truth, detector or reviewer independence, mitigation effectiveness, deployed recovery, safety, transfer, or chapter-core support."
     },
     {
       "tag": "lean:dangerous-capability-domains-and-misuse-uplift.admission_boundary",

@@ -17269,16 +17269,18 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The bounded Lean failure-recovery lifecycle, the public failure-boundary fixture, and the retained synthetic detector result with no support effect.",
+      "input_contract": "The exact 19-theorem bounded Lean failure-recovery lifecycle, the public failure-boundary fixture, and the retained synthetic detector result with no support effect.",
       "input_artifacts": [
         "lean/AsiStackProofs/FailureRecoveryRefinement.lean",
         "scripts/validate_failure_recovery_refinement.py",
         "tests/fixtures/protocol_records/failure_boundary_map.valid.json",
         "experiments/failure_taxonomy_detector/results/2026-07-02-local.json"
       ],
-      "output_contract": "Independently reproduce five accepted lifecycle transitions, exact rejected-state preservation, guarded readmission, authority noninterference, recurrence re-isolation, and reject every declared stage, identity, replay, authority, and missing-gate mutation.",
+      "output_contract": "Recompile the exact theorem surface; independently reproduce five accepted lifecycle transitions, exact rejected-state preservation, guarded readmission and recurrence re-isolation; and reject every declared stage, identity, replay, authority, and missing-gate mutation.",
       "output_assertions": [
+        "19 Lean theorems recompile",
         "five reachable stages and five accepted transitions",
+        "arbitrary successful runs preserve exact identity, zero authority, valid traces, receipt accounting, and batch composition",
         "31 of 31 mutations reject without state change",
         "guarded readmission returns to operating once",
         "one recurrence re-isolates and disables modeled effects",

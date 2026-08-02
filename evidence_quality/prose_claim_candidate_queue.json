@@ -4236,12 +4236,11 @@
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.interface.001"
     },
     {
-      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.50d767ea0abe",
+      "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2cde942a5732",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:531",
-      "sentence": "`AsiStackProofs.FailureRecoveryRefinement` adds a reachable five-stage transition system: rejected events preserve exact state; accepted transitions cannot mint support or external authority; accepted detection disables modeled effects; accepted readmission requires current assurance, current taxonomy, residual custody, and explicit authority; and one bounded recurrence re-isolates the system.",
+      "sentence": "The exact 19-theorem `AsiStackProofs.FailureRecoveryRefinement` surface adds a reachable five-stage transition system and accepted-run semantics: rejected events preserve exact state; every successful finite run preserves all nine incident/version identities and zero support or external authority, adds exactly one receipt per accepted event, yields a valid trace, and composes across event batches; accepted detection disables modeled effects; accepted readmission requires current assurance, current taxonomy, residual custody, and explicit authority; and one bounded recurrence re-isolates the system.",
       "cues": [
-        "cannot",
         "requires"
       ],
       "review_state": "duplicate_of_atom",
@@ -4252,7 +4251,7 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Readable summary of exact rejected-state, authority-neutrality, detection, readmission, and recurrence results owned by the closed-loop refinement target.",
+      "disposition_rationale": "Readable summary of exact arbitrary-run identity, authority-neutrality, receipt, trace, composition, rejected-state, detection, readmission, and recurrence results owned by the closed-loop refinement target.",
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.formal.failure-recovery-closed-loop-refinement"
     },
     {
