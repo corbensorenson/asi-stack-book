@@ -1697,17 +1697,7 @@
       "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "tag": "lean:runtime.adapters.operational_invariant",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed.",
-      "status": "implemented",
-      "outline_line": 4289,
-      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
-    },
-    {
-      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
-      "tag": "lean:runtime.adapters.failure_blocks_promotion",
-      "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
+      "formal_target": "Every accepted event and arbitrary finite run in the reachable runtime-effect model preserves exact job, caller, capability, target, active-lease, approval, dispatch, caller-ceiling, epoch, revocation, and observed-effect accounting invariants, and refines the corresponding authority-effect run.",
       "status": "implemented",
       "outline_line": 4290,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
@@ -1715,9 +1705,9 @@
     {
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
-      "tag": "lean:runtime.adapters.effect_replay_fixture_bridge",
+      "tag": "lean:runtime.adapters.failure_blocks_promotion",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
+      "formal_target": "The reachable model rejects missing permission, caller or scoped-target substitution, authority widening, expiry, secret materialization, effect without dispatch, missing rollback handles, pre-state mismatch, revoked-lease reuse, and post-revocation dispatch before any accepted state transition; denial is state-noninterfering in the modeled step semantics.",
       "status": "implemented",
       "outline_line": 4291,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
@@ -1725,9 +1715,9 @@
     {
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
-      "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
+      "tag": "lean:runtime.adapters.effect_replay_fixture_bridge",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
+      "formal_target": "A six-event prepare-to-rollback witness reaches exact baseline restoration, and the entire trace simulates an accepted authority-effect trace while the independent temp-file probe supplies only bounded local effect and rollback observations.",
       "status": "implemented",
       "outline_line": 4292,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
@@ -1735,11 +1725,21 @@
     {
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
-      "tag": "lean:runtime.adapters.revocation_route_bridge",
+      "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+      "formal_target": "The independently encoded permission and adversarial consumers reject identity, authority, approval, lease, sandbox, secret, rollback, receipt, audit, support, and non-claim mutations, while the reachable Lean countermodels prove the corresponding pre-effect rejections at exact modeled boundaries.",
       "status": "implemented",
       "outline_line": 4293,
+      "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
+    },
+    {
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "chapter_title": "Runtime Adapters, Tool Permissions, and Human Approval",
+      "tag": "lean:runtime.adapters.revocation_route_bridge",
+      "module": "AsiStackProofs.RuntimeAdapters",
+      "formal_target": "An accepted revocation clears active lease, approval, and dispatch state, advances the authority epoch, records the revoked lease, and prevents both same-lease preparation and dispatch until a distinct fresh lease is admitted; repository fixtures retain no-mutation and non-promotion boundaries.",
+      "status": "implemented",
+      "outline_line": 4294,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
     },
     {
@@ -1749,7 +1749,7 @@
       "module": "AsiStackProofs.RuntimeAdapters",
       "formal_target": "An independent human-oversight consumer computes low-fatigue, overload, automation-bias, and invalid-control outcomes; separately, retained runtime-adapter route theorems govern permission, approval, lease, sandbox, rollback, receipt, and revocation boundaries. Lean does not formalize reviewer cognition or copy the consumer summary.",
       "status": "implemented",
-      "outline_line": 4294,
+      "outline_line": 4295,
       "module_path": "lean/AsiStackProofs/RuntimeAdapters.lean"
     },
     {
@@ -1759,7 +1759,7 @@
       "module": "AsiStackProofs.EmbodiedPhysicalSafety",
       "formal_target": "A finite control-lease model derives freshness, timing, state-envelope, actuator, fallback-distance, stop, effect, custody, and boundary conditions from authored fields; one complete lease reaches only a Project Theseus closed-loop trial, while 13 axis mutations fail readiness and reach exact repair routes. Monotonicity laws preserve valid timing under reduced latency and preserve state or fallback rejection under worsened bounds. It establishes no plant truth, physical or human safety, deadline satisfaction, safe-set validity, fallback effectiveness, recovery, support, release, transfer, or external effect.",
       "status": "implemented",
-      "outline_line": 4355,
+      "outline_line": 4356,
       "module_path": "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean"
     },
     {
@@ -1769,7 +1769,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI.",
       "status": "implemented",
-      "outline_line": 4460,
+      "outline_line": 4461,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1779,7 +1779,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI.",
       "status": "implemented",
-      "outline_line": 4461,
+      "outline_line": 4462,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1789,7 +1789,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution.",
       "status": "implemented",
-      "outline_line": 4462,
+      "outline_line": 4463,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1799,7 +1799,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "Missing sender identity routes to identity repair.",
       "status": "implemented",
-      "outline_line": 4463,
+      "outline_line": 4464,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1809,7 +1809,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "Audience or scope mismatch denies ordinary dispatch.",
       "status": "implemented",
-      "outline_line": 4464,
+      "outline_line": 4465,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1819,7 +1819,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "An expired request denies ordinary dispatch.",
       "status": "implemented",
-      "outline_line": 4465,
+      "outline_line": 4466,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1829,7 +1829,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "A verified but no-longer-current required credential denies dispatch.",
       "status": "implemented",
-      "outline_line": 4466,
+      "outline_line": 4467,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1839,7 +1839,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "A disputed expected receipt routes to accountable review.",
       "status": "implemented",
-      "outline_line": 4467,
+      "outline_line": 4468,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1849,7 +1849,7 @@
       "module": "AsiStackProofs.InterStackProtocols",
       "formal_target": "Missing residual ownership routes to accountable review.",
       "status": "implemented",
-      "outline_line": 4468,
+      "outline_line": 4469,
       "module_path": "lean/AsiStackProofs/InterStackProtocols.lean"
     },
     {
@@ -1859,7 +1859,7 @@
       "module": "AsiStackProofs.MultiAgentDynamics",
       "formal_target": "A finite three-party population model proves that identical six-edge pairwise-authorization evidence can coexist with opposite campaign-readiness decisions; no classifier over that matrix alone can exactly recover the ten-dimension review. Nine systemic-axis mutations preserve pairwise validity, fail readiness, and reach exact repair routes. It establishes no cooperation, non-collusion, systemic safety, human agency, institutional outcome, support, or external effect.",
       "status": "implemented",
-      "outline_line": 4529,
+      "outline_line": 4530,
       "module_path": "lean/AsiStackProofs/MultiAgentDynamics.lean"
     },
     {
@@ -1869,7 +1869,7 @@
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
       "formal_target": "A reachable procedure lifecycle preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody from clustering through acknowledged routing and receipt-bound retirement without assigning support or external effects.",
       "status": "implemented",
-      "outline_line": 4604,
+      "outline_line": 4605,
       "module_path": "lean/AsiStackProofs/ProceduralMemoryRefinement.lean"
     },
     {
@@ -1879,7 +1879,7 @@
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
       "formal_target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine.",
       "status": "implemented",
-      "outline_line": 4605,
+      "outline_line": 4606,
       "module_path": "lean/AsiStackProofs/ProceduralMemoryRefinement.lean"
     },
     {
@@ -1889,7 +1889,7 @@
       "module": "AsiStackProofs.RoutingRefinement",
       "formal_target": "A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects.",
       "status": "implemented",
-      "outline_line": 4714,
+      "outline_line": 4715,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
     },
     {
@@ -1899,7 +1899,7 @@
       "module": "AsiStackProofs.RoutingRefinement",
       "formal_target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress.",
       "status": "implemented",
-      "outline_line": 4715,
+      "outline_line": 4716,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
     },
     {
@@ -1909,7 +1909,7 @@
       "module": "AsiStackProofs.RoutingRefinement",
       "formal_target": "The independent consumer preserves all forty-two routing outcomes, including label-leak rejection, complete candidate denominators, least-capable-adequate selection, ambiguity-triggered selective action, fallback/residual routes, and separate dispatch, observation, and closure stages.",
       "status": "implemented",
-      "outline_line": 4716,
+      "outline_line": 4717,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
     },
     {
@@ -1919,7 +1919,7 @@
       "module": "AsiStackProofs.RoutingRefinement",
       "formal_target": "A runtime-backed route cannot qualify until inspected source state, concrete runtime evidence, replay evidence, task-local dispatch authority, and isolation are bound to the same routing lease.",
       "status": "implemented",
-      "outline_line": 4717,
+      "outline_line": 4718,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
     },
     {
@@ -1929,7 +1929,7 @@
       "module": "AsiStackProofs.RoutingRefinement",
       "formal_target": "Unavailable or source-only runtime material, missing replay evidence, or unobserved route and answer outcomes cannot be laundered into runtime, routing-quality, support, or deployment claims.",
       "status": "implemented",
-      "outline_line": 4718,
+      "outline_line": 4719,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
     },
     {
@@ -1939,7 +1939,7 @@
       "module": "AsiStackProofs.ReplaceableCognitiveSubstrates",
       "formal_target": "A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes.",
       "status": "implemented",
-      "outline_line": 4820,
+      "outline_line": 4821,
       "module_path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean"
     },
     {
@@ -1949,7 +1949,7 @@
       "module": "AsiStackProofs.RelationalDimensionCompiler",
       "formal_target": "An eight-step finite relational-compiler review preserves exact proposal, compiler, residual, role-schema, branch, authority, rescue, qualification, compilation, fallback, and contraction boundaries; a complete authored dossier reaches only Project Theseus relational-compiler-study eligibility, while 54 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Role and candidate identity compose over finite append, entity remapping preserves role IDs, omitted required roles and hidden candidates reject completeness, and an active descendant blocks contraction closure. Expiry and candidate-budget overrun remain rejecting under adverse change, while proposal, compiler, role, rescue, qualification, fallback, or authority changes invalidate receipts. Qualification metrics cannot recover role fidelity, and named rescue records cannot recover lower-order rescue competence. No theorem establishes higher-order irreducibility, representational usefulness, efficiency, natural-task transfer, bounded primitive arity, safe online adaptation, support, release, transfer, or external effect.",
       "status": "implemented",
-      "outline_line": 4887,
+      "outline_line": 4888,
       "module_path": "lean/AsiStackProofs/RelationalDimensionCompiler.lean"
     },
     {
@@ -1959,7 +1959,7 @@
       "module": "AsiStackProofs.GovernedModelTraining",
       "formal_target": "An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request.",
       "status": "implemented",
-      "outline_line": 4998,
+      "outline_line": 4999,
       "module_path": "lean/AsiStackProofs/GovernedModelTraining.lean"
     },
     {
@@ -1969,7 +1969,7 @@
       "module": "AsiStackProofs.GovernedModelTraining",
       "formal_target": "An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification.",
       "status": "implemented",
-      "outline_line": 4999,
+      "outline_line": 5000,
       "module_path": "lean/AsiStackProofs/GovernedModelTraining.lean"
     },
     {
@@ -1979,7 +1979,7 @@
       "module": "AsiStackProofs.LearningTheoryForecastReview",
       "formal_target": "A reachable six-transition forecast review admits only dossiers that bind claim, population, sample process, support, hypothesis, algorithm, optimization, architecture, metric, compute, prospective design, transfer boundaries, correction, expiry, residuals, and explicit non-authority. All 45 admission-axis mutations reject with exact repairs. Finite attempt identity composes and preserves every member, omitted attempts and unscored preregistered alternatives reject completeness, expiry and unsupported extrapolation remain rejecting under adverse changes, seven regime changes invalidate receipts, retrospective fit cannot recover prospective coverage, threshold metrics cannot recover mechanism change, and a missing prospective holdout rejects Benchmark Ratchet readiness promotion. No theorem establishes generalization, transfer, emergence, scaling accuracy, calibration, safety, deployment, support, or release.",
       "status": "implemented",
-      "outline_line": 5064,
+      "outline_line": 5065,
       "module_path": "lean/AsiStackProofs/LearningTheoryForecastReview.lean"
     },
     {
@@ -1989,7 +1989,7 @@
       "module": "AsiStackProofs.ReadinessRefinement",
       "formal_target": "A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects.",
       "status": "implemented",
-      "outline_line": 5144,
+      "outline_line": 5145,
       "module_path": "lean/AsiStackProofs/ReadinessRefinement.lean"
     },
     {
@@ -1999,7 +1999,7 @@
       "module": "AsiStackProofs.ReadinessRefinement",
       "formal_target": "Missing workload, baseline, evaluator, non-claims, fresh shadow evidence, regression floor, residual escrow, fallback, rollback, monitoring, canary outcome accounting, independent evaluation, transfer, delayed outcomes, transitive quarantine, route blocking, or terminal revocation custody blocks lifecycle progress.",
       "status": "implemented",
-      "outline_line": 5145,
+      "outline_line": 5146,
       "module_path": "lean/AsiStackProofs/ReadinessRefinement.lean"
     },
     {
@@ -2009,7 +2009,7 @@
       "module": "AsiStackProofs.ReadinessRefinement",
       "formal_target": "The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
       "status": "implemented",
-      "outline_line": 5146,
+      "outline_line": 5147,
       "module_path": "lean/AsiStackProofs/ReadinessRefinement.lean"
     },
     {
@@ -2019,7 +2019,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "A reachable Hive lifecycle preserves exact job, principal, contract, registry, candidate-set, selected-node, policy, authority, lease, evaluator, consumer, and residual custody from policy binding through acknowledged closure while separating dispatch, useful-outcome, recovery, support, and external-effect accounting.",
       "status": "implemented",
-      "outline_line": 5236,
+      "outline_line": 5237,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2029,7 +2029,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "Incomplete identity, data, tool, approval, registry, candidate-denominator, least-authority, locality, budget, energy, or dropout policy blocks selection before optimization.",
       "status": "implemented",
-      "outline_line": 5237,
+      "outline_line": 5238,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2039,7 +2039,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "A high-risk Hive job cannot execute without a bound approval receipt tied to the exact job and lease.",
       "status": "implemented",
-      "outline_line": 5238,
+      "outline_line": 5239,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2049,7 +2049,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "External Hive access cannot receive a lease without federation, sandbox, scope, evidence-obligation, expiration, and revocation custody bound to the selected node.",
       "status": "implemented",
-      "outline_line": 5239,
+      "outline_line": 5240,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2059,7 +2059,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "The independent consumer preserves all forty-seven policy, selection, lease, partition, execution, reconciliation, recovery, revocation, and closure outcomes.",
       "status": "implemented",
-      "outline_line": 5240,
+      "outline_line": 5241,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2069,7 +2069,7 @@
       "module": "AsiStackProofs.HiveLifecycleRefinement",
       "formal_target": "Partitioned stale authority quarantines before mutation only with denial and no-mutation evidence; otherwise the lifecycle requests evidence and never infers deployed partition tolerance or support.",
       "status": "implemented",
-      "outline_line": 5241,
+      "outline_line": 5242,
       "module_path": "lean/AsiStackProofs/HiveLifecycleRefinement.lean"
     },
     {
@@ -2079,7 +2079,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Reachable residualization blocks unresolved obligations lacking record, owner, burden, provenance, cost, or fallback receipt.",
       "status": "implemented",
-      "outline_line": 5333,
+      "outline_line": 5334,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2089,7 +2089,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Lossy exactness is blocked and failed or mismatched verification requires executable preserved-source fallback.",
       "status": "implemented",
-      "outline_line": 5334,
+      "outline_line": 5335,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2099,7 +2099,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Nine reachable stages and 60 routes bind representation identities from source through closure.",
       "status": "implemented",
-      "outline_line": 5335,
+      "outline_line": 5336,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2109,7 +2109,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Independent digest-bound GVR conformance plus reachable verification/fallback semantics replaces copied fixture facts.",
       "status": "implemented",
-      "outline_line": 5336,
+      "outline_line": 5337,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2119,7 +2119,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Independent digest-bound residual result conformance plus result-substitution and broken-chain closure guards replaces copied summaries.",
       "status": "implemented",
-      "outline_line": 5337,
+      "outline_line": 5338,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2129,7 +2129,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Observed reconstruction, target identity, verifier identity, and executable fallback are reachable lifecycle obligations.",
       "status": "implemented",
-      "outline_line": 5338,
+      "outline_line": 5339,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2139,7 +2139,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Failed verification activates preserved-source fallback or blocks progress without promotion authority.",
       "status": "implemented",
-      "outline_line": 5339,
+      "outline_line": 5340,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2149,7 +2149,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Semantic use requires provenance identity, content, and a grounding evaluator before migration.",
       "status": "implemented",
-      "outline_line": 5340,
+      "outline_line": 5341,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2159,7 +2159,7 @@
       "module": "AsiStackProofs.CompactGenerationRefinement",
       "formal_target": "Hierarchy changes require migration records, reference continuity, and consumer mapping.",
       "status": "implemented",
-      "outline_line": 5341,
+      "outline_line": 5342,
       "module_path": "lean/AsiStackProofs/CompactGenerationRefinement.lean"
     },
     {
@@ -2169,7 +2169,7 @@
       "module": "AsiStackProofs.FastGenerationRefinement",
       "formal_target": "Reachable admission binds task, context, consumer, mode, risk, verifier, baseline, quality, latency, resource, fallback, and rights records before fast selection.",
       "status": "implemented",
-      "outline_line": 5423,
+      "outline_line": 5424,
       "module_path": "lean/AsiStackProofs/FastGenerationRefinement.lean"
     },
     {
@@ -2179,7 +2179,7 @@
       "module": "AsiStackProofs.FastGenerationRefinement",
       "formal_target": "Reachable accounting and decision routes block raw-speed promotion without accepted output, task success, matched baseline, complete costs, and an evidence transition.",
       "status": "implemented",
-      "outline_line": 5424,
+      "outline_line": 5425,
       "module_path": "lean/AsiStackProofs/FastGenerationRefinement.lean"
     },
     {
@@ -2189,7 +2189,7 @@
       "module": "AsiStackProofs.FastGenerationRefinement",
       "formal_target": "Eight stages and sixty independently consumed routes govern context binding, selection, drafting, verification or fallback, useful-outcome accounting, decision, and closure.",
       "status": "implemented",
-      "outline_line": 5425,
+      "outline_line": 5426,
       "module_path": "lean/AsiStackProofs/FastGenerationRefinement.lean"
     },
     {
@@ -2199,7 +2199,7 @@
       "module": "AsiStackProofs.FastGenerationRefinement",
       "formal_target": "A digest-bound external validator owns Theseus report counts while Lean owns general reachable raw-speed, fallback, promotion, and closure policy.",
       "status": "implemented",
-      "outline_line": 5426,
+      "outline_line": 5427,
       "module_path": "lean/AsiStackProofs/FastGenerationRefinement.lean"
     },
     {
@@ -2209,7 +2209,7 @@
       "module": "AsiStackProofs.FastGenerationRefinement",
       "formal_target": "A digest-bound external validator owns the three-route task result while Lean owns general task-success, cost-separation, speed-proxy, support-transition, and closure policy.",
       "status": "implemented",
-      "outline_line": 5427,
+      "outline_line": 5428,
       "module_path": "lean/AsiStackProofs/FastGenerationRefinement.lean"
     },
     {
@@ -2219,7 +2219,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "High-risk evaluation without an independent-enough review record is blocked before selection or planning handoff.",
       "status": "implemented",
-      "outline_line": 5514,
+      "outline_line": 5515,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2229,7 +2229,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Budget or dispute exhaustion requires an owned residual before bounded planning handoff.",
       "status": "implemented",
-      "outline_line": 5515,
+      "outline_line": 5516,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2239,7 +2239,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "A complete seven-receipt lifecycle reaches a bounded planning handoff and closure without execution, support, or external-effect authority.",
       "status": "implemented",
-      "outline_line": 5516,
+      "outline_line": 5517,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2249,7 +2249,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Candidate generation requires a prospectively bound budget and budget identity.",
       "status": "implemented",
-      "outline_line": 5517,
+      "outline_line": 5518,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2259,7 +2259,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Candidate generation requires a registered deliberation mode policy.",
       "status": "implemented",
-      "outline_line": 5518,
+      "outline_line": 5519,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2269,7 +2269,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Evaluation requires explicit obligations, verifier identity, evidence view, dependence, calibration, abstention, and false-decision boundaries.",
       "status": "implemented",
-      "outline_line": 5519,
+      "outline_line": 5520,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2279,7 +2279,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Candidate generation requires first-candidate capture, complete history, trace privacy, and the complete attempt denominator.",
       "status": "implemented",
-      "outline_line": 5520,
+      "outline_line": 5521,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2289,7 +2289,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Candidate generation and handoff require prospectively bound stop rules and a stop receipt.",
       "status": "implemented",
-      "outline_line": 5521,
+      "outline_line": 5522,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2299,7 +2299,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "No verified candidate, exhausted budget, or unresolved dispute routes through residual escrow and closure.",
       "status": "implemented",
-      "outline_line": 5522,
+      "outline_line": 5523,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2309,7 +2309,7 @@
       "module": "AsiStackProofs.DeliberationRefinement",
       "formal_target": "Raw scores, traces, and a planning handoff cannot grant support or execution authority.",
       "status": "implemented",
-      "outline_line": 5523,
+      "outline_line": 5524,
       "module_path": "lean/AsiStackProofs/DeliberationRefinement.lean"
     },
     {
@@ -2319,7 +2319,7 @@
       "module": "AsiStackProofs.ArtifactCompressionRefinement",
       "formal_target": "A reachable artifact-to-consumption lifecycle requires full-source custody, exact identities, reconstruction checks, consumer probes, executable fallback, observed outcomes, and closure before a qualified use can complete.",
       "status": "implemented",
-      "outline_line": 5595,
+      "outline_line": 5596,
       "module_path": "lean/AsiStackProofs/ArtifactCompressionRefinement.lean"
     },
     {
@@ -2329,7 +2329,7 @@
       "module": "AsiStackProofs.ArtifactCompressionRefinement",
       "formal_target": "Failed probes route to fallback, exact-replay gaps block use, raw ratios cannot promote support, and missing evidence transitions block consumption.",
       "status": "implemented",
-      "outline_line": 5596,
+      "outline_line": 5597,
       "module_path": "lean/AsiStackProofs/ArtifactCompressionRefinement.lean"
     },
     {
@@ -2339,7 +2339,7 @@
       "module": "AsiStackProofs.ArtifactCompressionRefinement",
       "formal_target": "Eight stages and 53 independently consumed routes govern registration, encoding, verification, probing, fallback, admission, observed consumption, and closure without support or external-effect authority.",
       "status": "implemented",
-      "outline_line": 5597,
+      "outline_line": 5598,
       "module_path": "lean/AsiStackProofs/ArtifactCompressionRefinement.lean"
     },
     {
@@ -2349,7 +2349,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "A reachable allocation lifecycle requires a scoped request, explicit resource inventory and units, direct, displaced, verification, and uncertainty costs, protected floors, bounded capacity, reviewer and verifier capacity, queue policy, observed spend, useful-outcome accounting, verification, reconciliation, and closure.",
       "status": "implemented",
-      "outline_line": 5694,
+      "outline_line": 5695,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2359,7 +2359,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "Missing protected floors, reviewer capacity, failure retention, or evidence-transition accounting blocks the corresponding allocation stage; raw resource proxies cannot promote support.",
       "status": "implemented",
-      "outline_line": 5695,
+      "outline_line": 5696,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2369,7 +2369,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "The stronger lifecycle digest-binds the bounded four-route cost fixture while preserving its two eligible and two rejected routes and its fixture-specific 66.98% arithmetic without inferring economic optimality.",
       "status": "implemented",
-      "outline_line": 5696,
+      "outline_line": 5697,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2379,7 +2379,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "The stronger lifecycle digest-binds the three-step workflow result and requires queue policy, high-risk priority, protected overhead, residual ownership, actual spend, verification outcome, variance, incidents, descendants, and closure.",
       "status": "implemented",
-      "outline_line": 5697,
+      "outline_line": 5698,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2389,7 +2389,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "Reservation and scheduling require capacity, reviewer and verifier capacity, protected overhead, debt expiry, an owner, high-risk priority, tenant isolation, tail policy, fallback, and later variance and opportunity-cost reconciliation.",
       "status": "implemented",
-      "outline_line": 5698,
+      "outline_line": 5699,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2399,7 +2399,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "Observed resource bills and useful outcomes remain separate, and raw throughput, memory, or cost proxies cannot promote support without verification and evidence-transition accounting.",
       "status": "implemented",
-      "outline_line": 5699,
+      "outline_line": 5700,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2409,7 +2409,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "The lifecycle digest-binds the three-scenario governance-tax fixture while keeping its two governed choices and one low-risk shortcut explicitly synthetic, cost-complete only within the fixture, and non-promotional.",
       "status": "implemented",
-      "outline_line": 5700,
+      "outline_line": 5701,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2419,7 +2419,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "Transported simulation claims require explicit scope, fidelity, temporal semantics, resource bills, omissions, and a transfer decision before reconciliation.",
       "status": "implemented",
-      "outline_line": 5701,
+      "outline_line": 5702,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2429,7 +2429,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "A simulated claim above its declared fidelity support is blocked before reconciliation, and missing simulation scope, fidelity, temporal semantics, resource bills, omissions, or transfer decisions cannot pass.",
       "status": "implemented",
-      "outline_line": 5702,
+      "outline_line": 5703,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2439,7 +2439,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "The lifecycle digest-binds the sanitized five-scenario, six-receipt Theseus simulation result while preserving its seven invalid controls and excluding physical-feasibility, benchmark-transfer, native-parity, deployment, and support claims.",
       "status": "implemented",
-      "outline_line": 5703,
+      "outline_line": 5704,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2449,7 +2449,7 @@
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "formal_target": "The lifecycle digest-binds the sanitized one-ready-export, three-format, seven-field Theseus trace result while preserving its seven invalid controls and excluding dataset-quality, replay-success, deployment, and support claims.",
       "status": "implemented",
-      "outline_line": 5704,
+      "outline_line": 5705,
       "module_path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean"
     },
     {
@@ -2459,7 +2459,7 @@
       "module": "AsiStackProofs.PhysicalComputeInfrastructureReview",
       "formal_target": "A reachable six-transition physical-infrastructure review admits only dossiers that bind workload, site, interval, hardware, topology, workload version, and meter version; separate requested, nameplate, available, delivered, and useful compute; account capacity, energy, cooling, water, materials, community, uncertainty, resilience, retirement, rebound, and residual ownership; and reject broad availability, sustainability, resilience, community-acceptability, support, and release claims. All 44 admission-axis mutations reject with exact repairs. Finite workload demand and attributed energy compose; demand growth, capacity loss, expiry, and hidden backup energy remain rejecting; five scope changes invalidate receipts; two signal collisions prove that energy headlines cannot recover useful delivery and unit efficiency cannot recover total impact; and missing physical capacity rejects the Resource Economics budget gate. No theorem establishes delivered performance, sustainability, resilience, community acceptance, deployment, support, or transfer.",
       "status": "implemented",
-      "outline_line": 5764,
+      "outline_line": 5765,
       "module_path": "lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean"
     },
     {
@@ -2469,7 +2469,7 @@
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate adoption record missing a baseline reference, measured target, or falsification criterion fails the finite adoption-fields predicate.",
       "status": "implemented",
-      "outline_line": 5825,
+      "outline_line": 5826,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
     {
@@ -2479,7 +2479,7 @@
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A substrate record marked qualified without passing evidence fails the finite core-adoption predicate.",
       "status": "implemented",
-      "outline_line": 5826,
+      "outline_line": 5827,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
     {
@@ -2489,7 +2489,7 @@
       "module": "AsiStackProofs.SearchSubstrates",
       "formal_target": "A reachable formal substrate-adoption classifier derives four accepted non-promoting states and eight exact rejecting controls from concrete trace inputs; consumer permission is reserved to measured-positive routes, while failed controls, theorem spillover, missing fallback, support promotion, and incomplete boundaries reject.",
       "status": "implemented",
-      "outline_line": 5827,
+      "outline_line": 5828,
       "module_path": "lean/AsiStackProofs/SearchSubstrates.lean"
     },
     {
@@ -2499,7 +2499,7 @@
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A finite proof-contract receipt missing theorem references, deterministic fields, or an explicit non-claim boundary is rejected from downstream use.",
       "status": "implemented",
-      "outline_line": 5892,
+      "outline_line": 5893,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
     },
     {
@@ -2509,7 +2509,7 @@
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact.",
       "status": "implemented",
-      "outline_line": 5893,
+      "outline_line": 5894,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
     },
     {
@@ -2519,7 +2519,7 @@
       "module": "AsiStackProofs.ProofCarryingContracts",
       "formal_target": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
       "status": "implemented",
-      "outline_line": 5894,
+      "outline_line": 5895,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
     },
     {
@@ -2529,7 +2529,7 @@
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "A reused cyclic slot with missing residue or winding and no visible alias residual fails the finite alias-boundary predicate.",
       "status": "implemented",
-      "outline_line": 5972,
+      "outline_line": 5973,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
     {
@@ -2539,7 +2539,7 @@
       "module": "AsiStackProofs.CoilAttentionMemory",
       "formal_target": "A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate.",
       "status": "implemented",
-      "outline_line": 5973,
+      "outline_line": 5974,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
     },
     {
@@ -2549,7 +2549,7 @@
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A cyclic mixer review missing any structural, quality, runtime, memory, or parameter partition fails the finite structural-claim predicate.",
       "status": "implemented",
-      "outline_line": 6083,
+      "outline_line": 6084,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
     {
@@ -2559,7 +2559,7 @@
       "module": "AsiStackProofs.CyclicMixers",
       "formal_target": "A promoted cyclic substrate missing baseline references or tradeoff metrics fails the finite promotion predicate.",
       "status": "implemented",
-      "outline_line": 6084,
+      "outline_line": 6085,
       "module_path": "lean/AsiStackProofs/CyclicMixers.lean"
     },
     {
@@ -2569,7 +2569,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build.",
       "status": "implemented",
-      "outline_line": 6225,
+      "outline_line": 6226,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -2579,7 +2579,7 @@
       "module": "AsiStackProofs.ProofEnvelope",
       "formal_target": "The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
       "status": "implemented",
-      "outline_line": 6226,
+      "outline_line": 6227,
       "module_path": "lean/AsiStackProofs/ProofEnvelope.lean"
     },
     {
@@ -2589,7 +2589,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
       "status": "implemented",
-      "outline_line": 6349,
+      "outline_line": 6350,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -2599,7 +2599,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
       "status": "implemented",
-      "outline_line": 6350,
+      "outline_line": 6351,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -2609,7 +2609,7 @@
       "module": "AsiStackProofs.BenchmarkRatchets",
       "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean.",
       "status": "implemented",
-      "outline_line": 6351,
+      "outline_line": 6352,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
@@ -2619,7 +2619,7 @@
       "module": "AsiStackProofs.WhiteBoxEvidence",
       "formal_target": "In the finite policy model, no interpretability evidence packet can widen execution or release authority; it may only preserve, restrict, escalate, or reject.",
       "status": "implemented",
-      "outline_line": 6451,
+      "outline_line": 6452,
       "module_path": "lean/AsiStackProofs/WhiteBoxEvidence.lean"
     },
     {
@@ -2629,7 +2629,7 @@
       "module": "AsiStackProofs.WhiteBoxEvidence",
       "formal_target": "Packets with stale lineage, missing method assumptions, absent negative controls, or unsupported causal state are rejected before governance use.",
       "status": "implemented",
-      "outline_line": 6452,
+      "outline_line": 6453,
       "module_path": "lean/AsiStackProofs/WhiteBoxEvidence.lean"
     },
     {
@@ -2639,7 +2639,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "A crossed-threshold lifecycle cannot reach control completion without a safeguard package, verifier, bypass test, and rollback plan.",
       "status": "implemented",
-      "outline_line": 6542,
+      "outline_line": 6543,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2649,7 +2649,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "Missing evaluation envelope, elicitation, baseline, uncertainty, independent-evaluator, or assessment-result custody blocks assessment.",
       "status": "implemented",
-      "outline_line": 6543,
+      "outline_line": 6544,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2659,7 +2659,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "A fully recorded crossed-threshold assessment can emit only a readiness handoff after control, monitoring, residual, authority, and release-path custody.",
       "status": "implemented",
-      "outline_line": 6544,
+      "outline_line": 6545,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2669,7 +2669,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "A recorded non-crossing may bypass crossed-only safeguard gates but still requires monitoring, residual, authority, and release-path custody before readiness review.",
       "status": "implemented",
-      "outline_line": 6545,
+      "outline_line": 6546,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2679,7 +2679,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "Missing baseline blocks the scoped-to-assessed transition without mutating threshold state.",
       "status": "implemented",
-      "outline_line": 6546,
+      "outline_line": 6547,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2689,7 +2689,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "Missing assessment or decision uncertainty blocks lifecycle progress without converting absence into a non-crossing.",
       "status": "implemented",
-      "outline_line": 6547,
+      "outline_line": 6548,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2699,7 +2699,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "Missing residual ownership blocks adjudication or readiness; an exception additionally requires owner, expiry, compensating controls, and a review trigger.",
       "status": "implemented",
-      "outline_line": 6548,
+      "outline_line": 6549,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2709,7 +2709,7 @@
       "module": "AsiStackProofs.CapabilityThresholdRefinement",
       "formal_target": "A crossed threshold without the complete safeguard-verification envelope remains blocked, while later envelope change requires descendant invalidation and a successor assessment version.",
       "status": "implemented",
-      "outline_line": 6549,
+      "outline_line": 6550,
       "module_path": "lean/AsiStackProofs/CapabilityThresholdRefinement.lean"
     },
     {
@@ -2719,7 +2719,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "A reachable, prospectively bound observation lifecycle can emit only a bounded decision-review handoff after complete observation, independent-probe, alternative-hypothesis, discrepancy, uncertainty, residual, expiry, and authority-separation custody.",
       "status": "implemented",
-      "outline_line": 6618,
+      "outline_line": 6619,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2729,7 +2729,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "Missing selection context blocks observation admission without mutating lifecycle state.",
       "status": "implemented",
-      "outline_line": 6619,
+      "outline_line": 6620,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2739,7 +2739,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "Missing reward provenance blocks observation admission without converting absence into behavioral evidence.",
       "status": "implemented",
-      "outline_line": 6620,
+      "outline_line": 6621,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2749,7 +2749,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "Missing monitor provenance blocks observation admission without treating an unobserved trace as negative evidence.",
       "status": "implemented",
-      "outline_line": 6621,
+      "outline_line": 6622,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2759,7 +2759,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "Missing independent evaluation or evaluator separation blocks adjudication.",
       "status": "implemented",
-      "outline_line": 6622,
+      "outline_line": 6623,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2769,7 +2769,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "Missing cross-context or matched-access comparison blocks adjudication.",
       "status": "implemented",
-      "outline_line": 6623,
+      "outline_line": 6624,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2779,7 +2779,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "An unresolved discrepancy requires explicit quarantine custody and cannot take the favorable promotion-review route.",
       "status": "implemented",
-      "outline_line": 6624,
+      "outline_line": 6625,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2789,7 +2789,7 @@
       "module": "AsiStackProofs.AdversarialEvaluationRefinement",
       "formal_target": "An observation lifecycle rejects intent inference and cannot assign support or an external decision effect.",
       "status": "implemented",
-      "outline_line": 6625,
+      "outline_line": 6626,
       "module_path": "lean/AsiStackProofs/AdversarialEvaluationRefinement.lean"
     },
     {
@@ -2799,7 +2799,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "A reachable case lifecycle binds exact case, context, hazard, evidence, challenge, review, authority, and residual identity before emitting a readiness handoff that assigns no release authority.",
       "status": "implemented",
-      "outline_line": 6710,
+      "outline_line": 6711,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2809,7 +2809,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Missing deployment context blocks the draft-to-scoped transition without mutating case state.",
       "status": "implemented",
-      "outline_line": 6711,
+      "outline_line": 6712,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2819,7 +2819,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Missing hazard or argument structure blocks scope admission without mutating case state.",
       "status": "implemented",
-      "outline_line": 6712,
+      "outline_line": 6713,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2829,7 +2829,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Missing, stale, or assumption-free evidence blocks the scoped-to-evidenced transition.",
       "status": "implemented",
-      "outline_line": 6713,
+      "outline_line": 6714,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2839,7 +2839,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Missing countercase review or defeater disposition blocks challenge closure.",
       "status": "implemented",
-      "outline_line": 6714,
+      "outline_line": 6715,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2849,7 +2849,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Missing competence records, conflict disclosure, or independent review blocks reviewed status.",
       "status": "implemented",
-      "outline_line": 6715,
+      "outline_line": 6716,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2859,7 +2859,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "An unresolved defeater blocks progression, while later invalidation requires cause, affected paths, and complete descendant invalidation before returning a readiness-bound case to challenge.",
       "status": "implemented",
-      "outline_line": 6716,
+      "outline_line": 6717,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2869,7 +2869,7 @@
       "module": "AsiStackProofs.SafetyCaseRefinement",
       "formal_target": "Case status cannot assign support or an external effect, and missing separation between case status and decision authority rejects the readiness handoff.",
       "status": "implemented",
-      "outline_line": 6717,
+      "outline_line": 6718,
       "module_path": "lean/AsiStackProofs/SafetyCaseRefinement.lean"
     },
     {
@@ -2879,7 +2879,7 @@
       "module": "AsiStackProofs.ContentAuthenticityReview",
       "formal_target": "An eight-transition finite authenticity-envelope review preserves identity, typed evidence, transformation, current trust, conflict/remedy, accessible-disclosure, and non-authority invariants; 42 exact mutation repairs, receipt/staleness invalidation, transformation rejection, semantic-truth and origin-from-absence impossibility results, and a rejecting communication-consumer bridge prove only authored record and information-loss properties before Project Theseus evaluation.",
       "status": "implemented",
-      "outline_line": 6752,
+      "outline_line": 6753,
       "module_path": "lean/AsiStackProofs/ContentAuthenticityReview.lean"
     },
     {
@@ -2889,7 +2889,7 @@
       "module": "AsiStackProofs.GovernedOperations",
       "formal_target": "Every finite degraded-mode transition preserves or narrows capability, data, tool, and duration authority.",
       "status": "implemented",
-      "outline_line": 6866,
+      "outline_line": 6867,
       "module_path": "lean/AsiStackProofs/GovernedOperations.lean"
     },
     {
@@ -2899,7 +2899,7 @@
       "module": "AsiStackProofs.GovernedOperations",
       "formal_target": "Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing.",
       "status": "implemented",
-      "outline_line": 6867,
+      "outline_line": 6868,
       "module_path": "lean/AsiStackProofs/GovernedOperations.lean"
     },
     {
@@ -2909,7 +2909,7 @@
       "module": "AsiStackProofs.GovernedOperationsRefinement",
       "formal_target": "A reachable eight-stage incident lifecycle preserves exact state on rejection, refines the existing degradation and recovery predicates at accepted boundaries, expires emergency authority before restoration, and re-enters incident control on modeled recurrence without assigning support or external authority.",
       "status": "implemented",
-      "outline_line": 6868,
+      "outline_line": 6869,
       "module_path": "lean/AsiStackProofs/GovernedOperationsRefinement.lean"
     },
     {
@@ -2919,7 +2919,7 @@
       "module": "AsiStackProofs.PolicyOptimizationRefinement",
       "formal_target": "A versioned governed-update lifecycle binds target, baseline, objective, data, feedback, full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback, and readmission without assigning support or an external effect.",
       "status": "implemented",
-      "outline_line": 6976,
+      "outline_line": 6977,
       "module_path": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
     },
     {
@@ -2929,7 +2929,7 @@
       "module": "AsiStackProofs.PolicyOptimizationRefinement",
       "formal_target": "Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty, or independent evaluation blocks a policy update before bounded-lease adjudication.",
       "status": "implemented",
-      "outline_line": 6977,
+      "outline_line": 6978,
       "module_path": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
     },
     {
@@ -2939,7 +2939,7 @@
       "module": "AsiStackProofs.PolicyOptimizationRefinement",
       "formal_target": "All finite update-lifecycle routes reject or redirect incomplete scope, state, update, evaluation, adjudication, lease, rollback, or readmission records before bounded use.",
       "status": "implemented",
-      "outline_line": 6978,
+      "outline_line": 6979,
       "module_path": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
     },
     {
@@ -2949,7 +2949,7 @@
       "module": "AsiStackProofs.PolicyOptimizationRefinement",
       "formal_target": "The independently consumed six-sample/five-candidate lease probe and the reachable lifecycle preserve three rejected controls, experimental-only use, versioned readmission, and no support or external-effect authority.",
       "status": "implemented",
-      "outline_line": 6979,
+      "outline_line": 6980,
       "module_path": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
     },
     {
@@ -2959,7 +2959,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing bound provenance, rights, or authority blocks the reachable custody lifecycle before data admission.",
       "status": "implemented",
-      "outline_line": 7152,
+      "outline_line": 7153,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -2969,7 +2969,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing split exclusions or a contamination-check record blocks the reachable custody lifecycle before admission.",
       "status": "implemented",
-      "outline_line": 7153,
+      "outline_line": 7154,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -2979,7 +2979,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "A complete admission record advances only to full-state binding and does not establish data quality, training, deletion, or support.",
       "status": "implemented",
-      "outline_line": 7154,
+      "outline_line": 7155,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -2989,7 +2989,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Complete declared full-state custody and a prospectively fixed selection rule advance only to an update receipt, not promotion.",
       "status": "implemented",
-      "outline_line": 7155,
+      "outline_line": 7156,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -2999,7 +2999,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing optimizer state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7156,
+      "outline_line": 7157,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3009,7 +3009,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing scheduler state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7157,
+      "outline_line": 7158,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3019,7 +3019,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing RNG state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7158,
+      "outline_line": 7159,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3029,7 +3029,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing cache state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7159,
+      "outline_line": 7160,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3039,7 +3039,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing backup state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7160,
+      "outline_line": 7161,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3049,7 +3049,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing descendant state blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7161,
+      "outline_line": 7162,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3059,7 +3059,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Missing prospective checkpoint authority or selection rule blocks full-state binding.",
       "status": "implemented",
-      "outline_line": 7162,
+      "outline_line": 7163,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3069,7 +3069,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "A declared-surface rollback mismatch blocks the update record and cannot be generalized to semantic or production recovery.",
       "status": "implemented",
-      "outline_line": 7163,
+      "outline_line": 7164,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3079,7 +3079,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Behavioral cohort change cannot serve as evidence of causal influence reduction in deletion-claim adjudication.",
       "status": "implemented",
-      "outline_line": 7164,
+      "outline_line": 7165,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3089,7 +3089,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Behavioral cohort change cannot serve as evidence of privacy protection or erasure in deletion-claim adjudication.",
       "status": "implemented",
-      "outline_line": 7165,
+      "outline_line": 7166,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3099,7 +3099,7 @@
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
       "formal_target": "Lineage propagation or invalidation cannot serve as evidence of physical storage or backup erasure in deletion-claim adjudication.",
       "status": "implemented",
-      "outline_line": 7166,
+      "outline_line": 7167,
       "module_path": "lean/AsiStackProofs/DataEngineLifecycleRefinement.lean"
     },
     {
@@ -3109,7 +3109,7 @@
       "module": "AsiStackProofs.ScientificExperimentReview",
       "formal_target": "An eight-transition experiment review admits only dossiers that bind hypothesis ancestry, exploration versus confirmation, preregistered design, instrument authority, complete attempts, analysis, replication, correction, dual-use custody, expiry, and explicit non-authority. All 54 admission-axis mutations reject with exact repairs. Finite attempt identity composes and preserves every member, omitted attempts and outcome-exposed confirmatory branches reject completeness, expiry and denominator or replication gaps remain rejecting under adverse changes, seven scope changes invalidate receipts, significance cannot recover preregistration integrity, replication counts cannot recover independence, missing independent replication blocks Evidence States empirical promotion, and missing null results reject Benchmark Ratchet promotion. No theorem establishes hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect.",
       "status": "implemented",
-      "outline_line": 7233,
+      "outline_line": 7234,
       "module_path": "lean/AsiStackProofs/ScientificExperimentReview.lean"
     },
     {
@@ -3119,7 +3119,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A reachable steward dispatch model derives contract repair, refusal, or approval when objective, authority, tool, verification, budget, rollback, or non-claim boundaries are missing; arbitrary-length runs reach dispatch readiness only from a complete modeled contract.",
       "status": "implemented",
-      "outline_line": 7367,
+      "outline_line": 7368,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3129,7 +3129,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A finite steward lifecycle decision with requested treasury spend outside policy routes to approval.",
       "status": "implemented",
-      "outline_line": 7368,
+      "outline_line": 7369,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3139,7 +3139,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A reachable steward release model derives repair, refusal, or approval when artifact, test, evidence, changelog, residual, approval, no-promotion, or non-claim records are missing; arbitrary-length runs reach external-review readiness only from a complete modeled packet.",
       "status": "implemented",
-      "outline_line": 7369,
+      "outline_line": 7370,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3149,7 +3149,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A finite steward lifecycle decision with sunset criteria met and no open review routes to sunset review.",
       "status": "implemented",
-      "outline_line": 7370,
+      "outline_line": 7371,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3159,7 +3159,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
       "status": "implemented",
-      "outline_line": 7371,
+      "outline_line": 7372,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3169,7 +3169,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
       "status": "implemented",
-      "outline_line": 7372,
+      "outline_line": 7373,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3179,7 +3179,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
       "status": "implemented",
-      "outline_line": 7373,
+      "outline_line": 7374,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -3189,7 +3189,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority.",
       "status": "implemented",
-      "outline_line": 7515,
+      "outline_line": 7516,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3199,7 +3199,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "A cross-layer transition with a parent/state fork, missing governance gate, residual erasure, effect after revocation, unacknowledged terminal effect, missing receipt, or incomplete rollback is rejected or contained in quarantine.",
       "status": "implemented",
-      "outline_line": 7516,
+      "outline_line": 7517,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3209,7 +3209,7 @@
       "module": "AsiStackProofs.IntegratedReferenceTrace",
       "formal_target": "The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations.",
       "status": "implemented",
-      "outline_line": 7517,
+      "outline_line": 7518,
       "module_path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean"
     },
     {
@@ -3219,7 +3219,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A finite implementation-reference claim that lacks both a report and a config-or-tool reference, or relies on dashboard prose alone, is rejected.",
       "status": "implemented",
-      "outline_line": 7613,
+      "outline_line": 7614,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3229,7 +3229,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 7614,
+      "outline_line": 7615,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3239,7 +3239,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 7615,
+      "outline_line": 7616,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -3249,7 +3249,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
       "status": "implemented",
-      "outline_line": 7675,
+      "outline_line": 7676,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3259,7 +3259,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
       "status": "implemented",
-      "outline_line": 7676,
+      "outline_line": 7677,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3269,7 +3269,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
       "status": "implemented",
-      "outline_line": 7677,
+      "outline_line": 7678,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -3279,7 +3279,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite manifest review with a present chapter but missing outline targets or claim placeholders is rejected.",
       "status": "implemented",
-      "outline_line": 7740,
+      "outline_line": 7741,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3289,7 +3289,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A finite structural update marked valid while either the scaffold or proof manifest is unsynchronized is rejected.",
       "status": "implemented",
-      "outline_line": 7741,
+      "outline_line": 7742,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3299,7 +3299,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 7742,
+      "outline_line": 7743,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3309,7 +3309,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain.",
       "status": "implemented",
-      "outline_line": 7743,
+      "outline_line": 7744,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -3319,7 +3319,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim with neither a source note nor an ingested artifact fails the finite source-evidence predicate.",
       "status": "implemented",
-      "outline_line": 7824,
+      "outline_line": 7825,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -3329,7 +3329,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "An accepted new-source assignment to a nonexistent chapter fails the finite assignment predicate.",
       "status": "implemented",
-      "outline_line": 7825,
+      "outline_line": 7826,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

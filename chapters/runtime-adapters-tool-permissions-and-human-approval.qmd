@@ -66,10 +66,11 @@ layer owns the leased dispatch, independent observation, containment, and
 terminal receipt of an external effect. It does **not** own objective or plan
 correctness, principal or policy authorship, permission or approval legitimacy,
 context truth, artifact truth, mode-specific verification, evidence acceptance,
-support, readiness, or release. The current forty-nine Lean declarations under
-six public targets divide into ten predicate/projection or blocking
-consequences, thirty-seven finite route or negative-case consequences, and two
-authored-summary bridges. No current record or theorem changes core support.
+support, readiness, or release. The current sixty-eight Lean declarations under
+six public targets retain forty-three finite predicate, route, negative-case,
+and summary results and add twenty-five reachable invariant, rollback,
+noninterference, countermodel, and authority-refinement results. No current
+record or theorem changes core support.
 
 The runtime-adapter layer sits after artifact graphs so the reader already has the evidence surface in mind before the book turns to external effects. The runtime adapter is the narrow point where a typed job may receive authority, use a tool, produce an effect receipt, and hand evidence back to the artifact graph.
 
@@ -615,10 +616,10 @@ no-mutation denial controls; 2 valid/12 rejecting adversarial-boundary records;
 decision; 3 valid/6 rejecting partitioned-authority records; one bounded/10
 rejecting historical capability-envelope record; adjacent QCSA synthetic
 authority and reversible vertical-effect results at their exact non-core
-ceilings; and forty-nine Lean declarations under six public targets.
+ceilings; and sixty-eight Lean declarations under six public targets.
 
-These artifacts exercise record shape, finite route consequences, one local
-write/restore, and synthetic authority, approval, injection-adjacent,
+These artifacts exercise record shape, finite transition and refinement
+consequences, one local write/restore, and synthetic authority, approval, injection-adjacent,
 revocation, reviewer, and partition controls. They do not establish deployed
 adapters, OS/hardware confinement, prompt-injection robustness, approval
 quality, reviewer correctness, secret isolation, distributed authority,
@@ -728,23 +729,31 @@ Fixture-shape validation, bounded Lean theorem declarations over finite permissi
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | A runtime adapter invocation is valid only when job permissions include the adapter capability, its effect lease is active, scoped to that capability, sandboxed, and its requested authority remains within the parent and lease ceilings. | implemented |
-| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | A high-impact adapter call without scoped approval or a required rollback handle is rejected, mismatched/expired/unsandboxed effect leases cannot validate invocation, confused-deputy and sandbox-escape attempts are rejected, and missing receipt/audit/non-claim records block dispatch. | implemented |
-| `lean:runtime.adapters.effect_replay_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay. | implemented |
-| `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records. | implemented |
-| `lean:runtime.adapters.revocation_route_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries. | implemented |
+| `lean:runtime.adapters.operational_invariant` | `AsiStackProofs.RuntimeAdapters` | Every accepted event and arbitrary finite run in the reachable runtime-effect model preserves exact job, caller, capability, target, active-lease, approval, dispatch, caller-ceiling, epoch, revocation, and observed-effect accounting invariants, and refines the corresponding authority-effect run. | implemented |
+| `lean:runtime.adapters.failure_blocks_promotion` | `AsiStackProofs.RuntimeAdapters` | The reachable model rejects missing permission, caller or scoped-target substitution, authority widening, expiry, secret materialization, effect without dispatch, missing rollback handles, pre-state mismatch, revoked-lease reuse, and post-revocation dispatch before any accepted state transition; denial is state-noninterfering in the modeled step semantics. | implemented |
+| `lean:runtime.adapters.effect_replay_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A six-event prepare-to-rollback witness reaches exact baseline restoration, and the entire trace simulates an accepted authority-effect trace while the independent temp-file probe supplies only bounded local effect and rollback observations. | implemented |
+| `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `AsiStackProofs.RuntimeAdapters` | The independently encoded permission and adversarial consumers reject identity, authority, approval, lease, sandbox, secret, rollback, receipt, audit, support, and non-claim mutations, while the reachable Lean countermodels prove the corresponding pre-effect rejections at exact modeled boundaries. | implemented |
+| `lean:runtime.adapters.revocation_route_bridge` | `AsiStackProofs.RuntimeAdapters` | An accepted revocation clears active lease, approval, and dispatch state, advances the authority epoch, records the revoked lease, and prevents both same-lease preparation and dispatch until a distinct fresh lease is admitted; repository fixtures retain no-mutation and non-promotion boundaries. | implemented |
 | `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | An independent human-oversight consumer computes low-fatigue, overload, automation-bias, and invalid-control outcomes; separately, retained runtime-adapter route theorems govern permission, approval, lease, sandbox, rollback, receipt, and revocation boundaries. Lean does not formalize reviewer cognition or copy the consumer summary. | implemented |
 
-The forty-three theorem declarations divide into six predicate or blocking
-consequences and thirty-seven finite route or negative-case consequences. The
-authored human-oversight summary mirror is retired; its independent executable
-consumer remains finite fixture evidence. None refines a deployed
+The sixty-eight theorem declarations retain the forty-three finite route and
+negative-case consequences and add twenty-five reachable refinement results.
+The new model proves one-step and arbitrary-run state invariants, exact
+adapter-to-authority event and run simulation, a six-event rollback witness,
+modeled denial noninterference, and eleven closed countermodels for permission,
+identity, ceiling, expiry, scope, secret, dispatch, rollback, pre-state, and
+revocation failures. `python3 scripts/validate_runtime_adapter_permissions.py`
+independently checks the existing two valid and seven expected-invalid fixtures
+and requires the exact refinement theorem surface. The authored human-oversight
+summary mirror remains retired; its executable consumer remains finite fixture
+evidence. None refines a deployed
 adapter, operating-system or hardware sandbox, capability service, approval
 service, secret broker, distributed authority service, effect observer,
 rollback service, or support gate. This is executable vocabulary and finite
-counterexample coverage, not semantic or empirical proof of the core claim.
+transition, refinement, and counterexample coverage, not empirical proof of the
+core claim.
 
-These proof hooks are implemented as finite-record predicates plus negative-case and route theorems over modeled records. They prove only record-level implications: valid leased invocations require parent permission plus an active scoped sandboxed lease; mismatched, expired, revoked, or unsandboxed leases do not satisfy the modeled validity predicate; high-impact unapproved or underscoped-approved calls are routed to approval; over-ceiling authority requests are denied; confused-deputy and sandbox-escape attempts are rejected; high-impact rollback-required calls without rollback handles cannot satisfy the rollback-obligation predicate while remaining unrejected; revoked approvals, leases, and authority receipts block dispatch only when denial-before-mutation and unchanged-state evidence are recorded, otherwise they request no-mutation evidence; missing receipt/audit/non-claim records block dispatch; effect-replay records without permission, active approval, no-mutation evidence, exact rollback, receipts, public-safe side-effect boundaries, or non-promoting support effects cannot be accepted; the adversarial boundary route rejects parentage mismatch, authority ceiling overrun, approval expiry, sandbox path escape, secret materialization, missing rollback/receipt/audit/non-claim records, and support-state effects; and complete low-impact and scoped high-impact records route to dispatch. Human-oversight degradation outcomes are computed by the separate executable consumer, not proved by copying its summary into Lean. They do not prove deployed sandboxing, authority-handle mediation, actual production tool invocation, effect receipt validity, approval-service quality, reviewer correctness, deployed human-factors behavior, secret-handle safety, deployed revocation propagation, or rollback behavior in a target service.
+The reachable model still trusts every encoded identity, permission, sandbox observation, receipt, digest, and independent-observer field. Its refinement theorem establishes that accepted adapter events obey the narrower authority state machine; it does not prove those fields are authentic or that either machine is enforced by a process, kernel, service, or organization. Human-oversight degradation outcomes are computed by the separate executable consumer, not proved by copying its summary into Lean. The full proof family does not prove deployed sandboxing, authority-handle mediation, actual production tool invocation, effect-receipt truth, approval-service quality, reviewer correctness, deployed human-factors behavior, secret-handle safety, distributed revocation propagation, effect-complete rollback, useful-action advantage, production security, reproduction, transfer, or chapter-core support.
 
 ## Source crosswalk
 

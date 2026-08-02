@@ -1584,51 +1584,51 @@
       "tag": "lean:runtime.adapters.operational_invariant",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A runtime adapter invocation is valid only when job permissions include the adapter capability and its effect lease is active, scoped to that capability, and sandboxed.",
+      "formal_target": "Every accepted event and arbitrary finite run in the reachable runtime-effect model preserves exact job, caller, capability, target, active-lease, approval, dispatch, caller-ceiling, epoch, revocation, and observed-effect accounting invariants, and refines the corresponding authority-effect run.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite permission and effect-lease predicates: valid adapter invocations require parent job permission plus an active, capability-scoped, sandboxed effect lease."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a reachable seven-event transition system. One-step and arbitrary-run induction preserve exact lease, approval, dispatch, caller-ceiling, epoch, revocation, and observed-effect accounting, while adapter events and runs simulate AsiStackProofs.AuthorityEffectRefinement."
     },
     {
       "tag": "lean:runtime.adapters.failure_blocks_promotion",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A high-impact adapter call without approval or a required rollback handle is rejected, mismatched, expired, or unsandboxed effect leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch.",
+      "formal_target": "The reachable model rejects missing permission, caller or scoped-target substitution, authority widening, expiry, secret materialization, effect without dispatch, missing rollback handles, pre-state mismatch, revoked-lease reuse, and post-revocation dispatch before any accepted state transition; denial is state-noninterfering in the modeled step semantics.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as finite approval, lease, rollback-obligation, confused-deputy, sandbox-escape, and dispatch-route predicates: high-impact calls without approval or required rollback handles are rejected, mismatched, expired, or unsandboxed leases cannot validate invocation, and modeled confused-deputy or sandbox-escape attempts cannot pass dispatch."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters through eleven closed transition countermodels plus the retained route predicates. Rejected modeled steps return no successor state; this proves no deployed pre-effect enforcement, field authenticity, sandbox isolation, or rollback correctness."
     },
     {
       "tag": "lean:runtime.adapters.effect_replay_fixture_bridge",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
+      "formal_target": "A six-event prepare-to-rollback witness reaches exact baseline restoration, and the entire trace simulates an accepted authority-effect trace while the independent temp-file probe supplies only bounded local effect and rollback observations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite effect-replay route bridge matching the local runtime-adapter effect probe shape: missing permission and expired approval deny before mutation when no-mutation evidence exists, missing no-mutation evidence requests proof, inexact rollback requests rollback evidence, missing receipts request effect receipts, repository/network side effects or support-state effects preserve the no-promotion boundary, and a complete rollback-exact public-safe replay can be accepted."
+      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a reachable six-event exact-rollback witness and a run-simulation theorem into the authority-effect model, alongside the retained finite replay route. The executable observation remains the bounded temp-file probe only."
     },
     {
       "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
+      "formal_target": "The independently encoded permission and adversarial consumers reject identity, authority, approval, lease, sandbox, secret, rollback, receipt, audit, support, and non-claim mutations, while the reachable Lean countermodels prove the corresponding pre-effect rejections at exact modeled boundaries.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite adversarial-boundary route bridge matching the runtime-adapter adversarial boundary probe shape: parentage mismatches deny confused-deputy routes, parent and lease authority ceiling overruns deny escalation, scoped-approval and expiry failures route away from dispatch, sandbox escape and secret materialization are rejected, rollback/receipt/audit/non-claim gaps block dispatch, support-state effects preserve the no-promotion boundary, and complete low-impact plus scoped high-impact records dispatch."
+      "rationale": "Implemented by the retained finite adversarial route plus the reachable transition countermodels. The Python consumer independently evaluates existing fixtures and requires the exact Lean refinement surface without turning fixture fields into claims about deployed security."
     },
     {
       "tag": "lean:runtime.adapters.revocation_route_bridge",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "module": "AsiStackProofs.RuntimeAdapters",
-      "formal_target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+      "formal_target": "An accepted revocation clears active lease, approval, and dispatch state, advances the authority epoch, records the revoked lease, and prevents both same-lease preparation and dispatch until a distinct fresh lease is admitted; repository fixtures retain no-mutation and non-promotion boundaries.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite revocation-route bridge: revoked approvals, revoked leases, and revoked authority receipts deny before effect only when no-mutation evidence is present and request that evidence otherwise; complete non-revoked records with effect receipts, audit refs, no support-state effect, and non-claim boundaries can dispatch."
+      "rationale": "Implemented by the retained revocation route plus reachable revocation transitions and two closed post-revocation countermodels. The model proves finite state clearing and lease-ID rejection only, not distributed revocation propagation or service behavior."
     },
     {
       "tag": "lean:runtime.adapters.human_oversight_degradation_fixture_bridge",

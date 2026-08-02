@@ -15,10 +15,10 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Planned proof targets | 0 |
 | Lean modules referenced | 97 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 1958 |
-| Derived/decomposed theorem declarations | 1153 |
+| Theorem declarations classified | 1983 |
+| Derived/decomposed theorem declarations | 1166 |
 | Direct/projection-style theorem declarations | 404 |
-| Unknown or mixed theorem declarations | 401 |
+| Unknown or mixed theorem declarations | 413 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical chapter classifications present | 1/1 |
 

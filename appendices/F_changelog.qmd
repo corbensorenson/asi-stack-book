@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-08-01 - Runtime-adapter effect refinement and authority simulation
+
+- Deepened `AsiStackProofs.RuntimeAdapters` from 43 finite route declarations
+  to 68 declarations by adding a 25-result reachable effect model over prepare,
+  approval, dispatch, commit, independent observation, revocation, and rollback.
+- Proved one-step and arbitrary-run preservation of exact active-lease,
+  approval, dispatch, caller-ceiling, epoch, revocation, and observed-effect
+  accounting invariants.
+- Proved exact lease identity projection, transition commutation, admissibility
+  refinement, step simulation, and arbitrary-run simulation into
+  `AsiStackProofs.AuthorityEffectRefinement`.
+- Added one six-event exact-rollback witness, modeled denial noninterference,
+  and eleven closed countermodels for missing permission, caller/target
+  substitution, authority widening, expiry, secret materialization, effect
+  without dispatch, missing rollback handle, pre-state mismatch, revoked-lease
+  reuse, and post-revocation dispatch.
+- Bound the theorem surface to the existing two-valid/seven-invalid independent
+  permission consumer. No new fixture or support transition was created;
+  chapter support remains `argument`, and deployed enforcement, sandbox,
+  approval, reviewer, secret, distributed-revocation, effect-truth, rollback,
+  reproduction, and transfer claims remain open.
+
 ## 2026-08-01 - Relational-compiler role, denominator, and contraction custody
 
 - Implemented `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary`
@@ -20,7 +42,7 @@
   representational usefulness, efficiency, natural-task transfer, bounded
   primitive arity, safe online adaptation, support, release, or external effect
   follows. Chapter support remains `argument`.
-- Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1958 theorem declarations, 1153 derived/decomposed, 404 direct/projection, 401 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1983 theorem declarations, 1166 derived/decomposed, 404 direct/projection, 413 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-08-01 - Cognitive-sovereignty custody and human-outcome non-inference
 

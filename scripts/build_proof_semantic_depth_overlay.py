@@ -1624,6 +1624,99 @@ for theorem_name in (
         ),
     }
 
+_runtime_adapter_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "experiments/runtime_adapter_permissions/fixtures/valid_low_impact_local_write.json",
+        "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the reachable runtime-effect model is bound to the existing independent permission consumer and bounded local effect probe"
+    ],
+}
+
+for theorem_name in (
+    "accepted_runtime_effect_step_is_admissible",
+    "accepted_runtime_effect_step_applies_event",
+    "initial_runtime_effect_state_satisfies_invariant",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/RuntimeAdapters.lean::{theorem_name}"
+    ] = {
+        **_runtime_adapter_refinement_base,
+        "semantic_level": "P1",
+        "rationale": (
+            "The theorem exposes a local transition premise, application identity, or initial witness; "
+            "it is load-bearing for the stronger induction but does not alone establish run safety."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/RuntimeAdapters.lean::projected_runtime_lease_preserves_exact_identity"
+] = {
+    **_runtime_adapter_refinement_base,
+    "semantic_level": "P2",
+    "rationale": (
+        "The theorem proves nonvacuous exact identity preservation across the adapter-to-authority lease projection."
+    ),
+}
+
+for theorem_name in (
+    "apply_runtime_effect_event_preserves_invariant",
+    "accepted_runtime_effect_step_preserves_invariant",
+    "runtime_effect_run_preserves_invariant",
+    "complete_runtime_effect_trace_reaches_exact_rollback",
+    "missing_parent_permission_is_rejected_before_prepare",
+    "caller_identity_substitution_is_rejected_before_prepare",
+    "authority_widening_is_rejected_before_prepare",
+    "expired_lease_is_rejected_before_dispatch",
+    "scoped_approval_identity_substitution_is_rejected",
+    "secret_materialization_is_rejected_before_dispatch",
+    "effect_without_dispatch_is_rejected",
+    "rollback_required_without_handle_is_rejected_before_effect",
+    "effect_prestate_mismatch_is_rejected",
+    "revoked_lease_cannot_be_prepared_again",
+    "revoked_state_cannot_dispatch_without_a_fresh_lease",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/RuntimeAdapters.lean::{theorem_name}"
+    ] = {
+        **_runtime_adapter_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves a reachable lifecycle invariant, exact rollback witness, or closed pre-effect countermodel "
+            "inside the finite adapter semantics."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/RuntimeAdapters.lean::runtime_effect_denial_is_state_noninterfering"
+] = {
+    **_runtime_adapter_refinement_base,
+    "semantic_level": "P4",
+    "rationale": (
+        "The theorem constrains rejected adapter transitions to produce no successor state in the modeled effect boundary."
+    ),
+}
+
+for theorem_name in (
+    "project_runtime_apply_commutes",
+    "runtime_admissibility_refines_authority_admissibility",
+    "runtime_step_refines_authority_step",
+    "runtime_run_refines_authority_run",
+    "successful_trace_refines_authority_trace",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/RuntimeAdapters.lean::{theorem_name}"
+    ] = {
+        **_runtime_adapter_refinement_base,
+        "semantic_level": "P5",
+        "rationale": (
+            "The theorem proves an executable-model refinement or simulation from runtime-adapter transitions into the "
+            "independently owned authority-effect state machine."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

@@ -5462,7 +5462,20 @@
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
+      "negative_controls": "validator_owned",
+      "input_artifacts": [
+        "lean/AsiStackProofs/RuntimeAdapters.lean",
+        "experiments/runtime_adapter_permissions/fixtures/valid_high_impact_approved_preview.json",
+        "experiments/runtime_adapter_permissions/fixtures/valid_low_impact_local_write.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_confused_deputy_ambient_authority.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_executed_without_effect_receipt.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_expired_approval.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_high_impact_without_approval.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_irreversible_without_residual.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_missing_permission.json",
+        "experiments/runtime_adapter_permissions/fixtures/invalid_revoked_authority_receipt.json",
+        "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"
+      ],
       "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {
@@ -7797,8 +7810,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",

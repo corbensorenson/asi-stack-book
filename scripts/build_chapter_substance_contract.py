@@ -647,7 +647,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-communication-persuasion-and-epistemic-security": {
-        "reviewed_sha256": "98779917c6ff94e0844420473b9e80571dbc08c202e51a5808f75bb7bccc578c",
+        "reviewed_sha256": "21cf5dac20a4fd6b5a5bbca1cac073d412ab4557233ed9d9b2b9a19417da52bc",
         "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,

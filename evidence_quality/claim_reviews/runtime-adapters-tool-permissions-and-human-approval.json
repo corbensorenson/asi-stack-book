@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
     "structured_atoms_reviewed": 77,
-    "prose_candidates_adjudicated": 76,
+    "prose_candidates_adjudicated": 79,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -707,9 +707,22 @@
       "rationale": "Rendered prose restates or specializes an owned structured atom.",
       "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.minimum.001"
     },
-    "runtime-adapters-tool-permissions-and-human-approval.prose.5243de4455ff": {
+    "runtime-adapters-tool-permissions-and-human-approval.prose.57b7b4b07f9a": {
       "state": "nonmaterial_explanation",
       "rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.8b2f7f7f1523": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped formalization-summary fragment; the complete result is owned by the reviewed runtime-adapter formal targets."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.7031f280aeae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped validator-binding fragment; it adds no proposition beyond the reviewed formal targets and test specification."
+    },
+    "runtime-adapters-tool-permissions-and-human-approval.prose.2cfd3cde4c52": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the reviewed adapter-to-authority refinement result and narrows its trusted-field boundary.",
+      "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.formal.runtime-adapters-operational-invariant"
     },
     "runtime-adapters-tool-permissions-and-human-approval.prose.44b41995c5a9": {
       "state": "historical_or_source_report",

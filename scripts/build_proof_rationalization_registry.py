@@ -23,6 +23,30 @@ DOSSIERS = ROOT / "evidence_quality" / "proof_model_dossiers"
 ROADMAP_ID = "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14"
 
 CURRENT_REFINEMENTS = {
+    "runtime-adapters-tool-permissions-and-human-approval": """## Current refinement
+
+`AsiStackProofs.RuntimeAdapters` now adds a reachable prepare, approve,
+dispatch, commit, observe, revoke, and rollback model to the retained finite
+route surfaces. Twenty-five declarations prove one-step and arbitrary-run
+preservation of exact active-lease, approval, dispatch, caller-ceiling, epoch,
+revocation, and observed-effect accounting invariants. Projection commutes with
+every transition, and accepted adapter events and arbitrary runs simulate
+`AsiStackProofs.AuthorityEffectRefinement`. One six-event witness reaches exact
+baseline restoration; eleven closed countermodels reject permission, identity,
+authority, expiry, secret, dispatch, rollback, pre-state, and revocation
+failures.
+
+`scripts/validate_runtime_adapter_permissions.py` independently checks the
+existing two valid and seven expected-invalid fixtures and requires the exact
+refinement theorem surface. The model trusts authored identities, permissions,
+sandbox observations, receipts, digests, and observer fields. It proves no OS
+or hardware enforcement, approval or reviewer competence, secret-broker
+security, target-service effect truth, distributed revocation, effect-complete
+rollback, useful-action advantage, support transition, deployment,
+reproduction, or transfer. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
+""",
     "failure-modes-of-ungoverned-intelligence": """## Current refinement
 
 `AsiStackProofs.FailureRecoveryRefinement` supplies the stronger model requested

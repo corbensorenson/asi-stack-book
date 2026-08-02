@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -10,6 +11,35 @@ from validate_protocol_examples import validate_value
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "runtime_adapter_permissions" / "fixtures"
+LEAN = ROOT / "lean" / "AsiStackProofs" / "RuntimeAdapters.lean"
+
+REFINEMENT_THEOREMS = (
+    "accepted_runtime_effect_step_is_admissible",
+    "accepted_runtime_effect_step_applies_event",
+    "apply_runtime_effect_event_preserves_invariant",
+    "accepted_runtime_effect_step_preserves_invariant",
+    "runtime_effect_run_preserves_invariant",
+    "initial_runtime_effect_state_satisfies_invariant",
+    "complete_runtime_effect_trace_reaches_exact_rollback",
+    "projected_runtime_lease_preserves_exact_identity",
+    "project_runtime_apply_commutes",
+    "runtime_admissibility_refines_authority_admissibility",
+    "runtime_step_refines_authority_step",
+    "runtime_run_refines_authority_run",
+    "runtime_effect_denial_is_state_noninterfering",
+    "missing_parent_permission_is_rejected_before_prepare",
+    "caller_identity_substitution_is_rejected_before_prepare",
+    "authority_widening_is_rejected_before_prepare",
+    "expired_lease_is_rejected_before_dispatch",
+    "scoped_approval_identity_substitution_is_rejected",
+    "secret_materialization_is_rejected_before_dispatch",
+    "effect_without_dispatch_is_rejected",
+    "rollback_required_without_handle_is_rejected_before_effect",
+    "effect_prestate_mismatch_is_rejected",
+    "revoked_lease_cannot_be_prepared_again",
+    "revoked_state_cannot_dispatch_without_a_fresh_lease",
+    "successful_trace_refines_authority_trace",
+)
 
 SCHEMAS = {
     "typed_job": ROOT / "schemas" / "typed_job.schema.json",
@@ -244,6 +274,28 @@ def main() -> None:
         raise SystemExit(f"No runtime adapter permission fixtures found in {FIXTURE_DIR.relative_to(ROOT)}.")
 
     errors: list[str] = []
+    if not LEAN.exists():
+        errors.append(f"Missing {LEAN.relative_to(ROOT)}.")
+        lean_text = ""
+    else:
+        lean_text = LEAN.read_text(encoding="utf-8")
+        theorem_names = re.findall(r"^theorem\s+([A-Za-z0-9_']+)", lean_text, re.MULTILINE)
+        if len(theorem_names) != 68:
+            errors.append(
+                f"{LEAN.relative_to(ROOT)} must contain exactly 68 theorem declarations; "
+                f"found {len(theorem_names)}."
+            )
+        for theorem_name in REFINEMENT_THEOREMS:
+            if theorem_name not in theorem_names:
+                errors.append(
+                    f"{LEAN.relative_to(ROOT)} missing refinement theorem {theorem_name}."
+                )
+        for forbidden in (r"\bsorry\b", r"\badmit\b", r"^axiom\s"):
+            if re.search(forbidden, lean_text, re.MULTILINE):
+                errors.append(
+                    f"{LEAN.relative_to(ROOT)} contains forbidden proof escape matching {forbidden!r}."
+                )
+
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -279,7 +331,8 @@ def main() -> None:
 
     print(
         "Runtime adapter permission harness passed: "
-        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s)."
+        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
+        f"and {len(REFINEMENT_THEOREMS)} reachable invariant/refinement theorem(s)."
     )
 
 

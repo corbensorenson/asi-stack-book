@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 1958 |
+| Theorem declarations classified | 1983 |
 | Direct/projection-style theorem declarations | 404 |
-| Derived/decomposed theorem declarations | 1153 |
-| Unknown or mixed theorem declarations | 401 |
+| Derived/decomposed theorem declarations | 1166 |
+| Unknown or mixed theorem declarations | 413 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -154,7 +154,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 43 | 0 | 43 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 68 | 0 | 56 | 12 | manual review |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1730,6 +1730,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `registry_freeze_requires_complete_candidate_denominator` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `stale_context_lease_blocks_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `unavailable_runtime_evidence_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `accepted_runtime_effect_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `accepted_runtime_effect_step_is_admissible` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `accepted_runtime_effect_step_preserves_invariant` | derived_or_decomposed | no | uses have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_confused_deputy_parent_mismatch_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_expired_approval_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_high_impact_dispatch_accepted` | derived_or_decomposed | no | uses simp, unfold |
@@ -1745,32 +1748,54 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_scoped_approval_mismatch_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_secret_materialization_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `adapter_adversarial_support_promotion_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `apply_runtime_effect_event_preserves_invariant` | derived_or_decomposed | no | uses cases, contradiction, have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `authority_widening_is_rejected_before_prepare` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `caller_identity_substitution_is_rejected_before_prepare` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `complete_revocation_route_dispatches` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `complete_runtime_adapter_review_dispatches` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `complete_runtime_effect_replay_accepts` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `complete_runtime_effect_trace_reaches_exact_rollback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `confused_deputy_attempt_rejected_by_adapter_route` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `effect_prestate_mismatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `effect_without_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `expired_approval_no_mutation_denies_before_effect` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `expired_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `expired_lease_is_rejected_before_dispatch` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_adapter_without_approval_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `high_impact_without_scoped_approval_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `initial_runtime_effect_state_satisfies_invariant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `invocation_without_parent_permission_rejected` | derived_or_decomposed | no | uses contradiction, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `lease_authority_ceiling_blocks_adapter_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `mismatched_effect_lease_rejected` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `missing_effect_receipt_blocks_adapter_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `missing_effect_receipt_requests_effect_receipt` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `missing_parent_permission_is_rejected_before_prepare` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `missing_permission_no_mutation_denies_before_effect` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `missing_permission_without_no_mutation_evidence_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `parent_authority_ceiling_blocks_adapter_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `project_runtime_apply_commutes` | derived_or_decomposed | no | uses cases, simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `projected_runtime_lease_preserves_exact_identity` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revocation_route_missing_receipt_requests_effect_receipt` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_approval_with_no_mutation_evidence_denies_before_effect` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_approval_without_no_mutation_evidence_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_authority_receipt_with_no_mutation_denies_before_effect` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_authority_receipt_without_no_mutation_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_lease_cannot_be_prepared_again` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_lease_with_no_mutation_evidence_denies_before_effect` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_lease_without_no_mutation_evidence_requests_evidence` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `revoked_state_cannot_dispatch_without_a_fresh_lease` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `rollback_required_without_exact_rollback_requests_rollback_evidence` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `rollback_required_without_handle_cannot_be_unrejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `rollback_required_without_handle_is_rejected_before_effect` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `runtime_admissibility_refines_authority_admissibility` | derived_or_decomposed | no | uses cases, rcases, simp |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `runtime_effect_denial_is_state_noninterfering` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `runtime_effect_run_preserves_invariant` | derived_or_decomposed | no | uses cases, induction, simp, subst |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `runtime_run_refines_authority_run` | derived_or_decomposed | no | uses cases, induction, simp, subst |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `runtime_step_refines_authority_step` | derived_or_decomposed | no | uses have, simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `sandbox_escape_attempt_rejected_by_adapter_route` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `scoped_approval_identity_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `secret_materialization_is_rejected_before_dispatch` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/RuntimeAdapters.lean` | `successful_trace_refines_authority_trace` | derived_or_decomposed | no | uses apply |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `support_effect_or_repo_write_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `unsandboxed_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | `accepted_event_adds_one_receipt` | derived_or_decomposed | no | uses simp |

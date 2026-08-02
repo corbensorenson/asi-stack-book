@@ -1,3 +1,5 @@
+import AsiStackProofs.AuthorityEffectRefinement
+
 namespace AsiStackProofs.RuntimeAdapters
 
 structure ParentJob where
@@ -1229,5 +1231,853 @@ def HumanOversightDegradationFixtureValid
                     summary.nonClaimBoundaryRequired = true ∧
                       summary.supportStateEffectNone = true ∧
                         summary.chapterCoreSupportEffectNone = true
+
+/-!
+Reachable effect refinement
+
+The earlier predicates remain as compatibility and fixture-facing surfaces.
+This model adds an executable transition system with exact job, caller,
+capability, target, lease, epoch, approval, dispatch, effect, observation,
+revocation, and rollback custody. It refines the authority-effect model but
+does not establish deployed enforcement, sandbox isolation, approval quality,
+secret-broker security, effect correctness, or rollback completeness outside
+the finite state represented here.
+-/
+
+structure RuntimeEffectLease where
+  leaseId : Nat
+  jobId : Nat
+  callerId : Nat
+  capabilityId : Nat
+  targetId : Nat
+  authority : Nat
+  authorityEpoch : Nat
+  expiresAt : Nat
+  remainingUses : Nat
+  highImpact : Bool
+  rollbackRequired : Bool
+deriving DecidableEq, Repr
+
+inductive RuntimeEffectEventKind where
+  | prepare | approve | dispatch | commitEffect | observe | revoke | rollback
+deriving DecidableEq, Repr
+
+structure RuntimeEffectState where
+  parentJobId : Nat
+  callerId : Nat
+  parentAuthorityCeiling : Nat
+  authorityEpoch : Nat
+  logicalTime : Nat
+  activeLease : Option RuntimeEffectLease
+  approvedLeaseId : Option Nat
+  dispatchedLeaseId : Option Nat
+  revokedLeaseIds : List Nat
+  baselineDigest : Nat
+  currentDigest : Nat
+  materialEffects : Nat
+  observedEffects : Nat
+  lastEffectLeaseId : Option Nat
+  rolledBack : Bool
+deriving DecidableEq, Repr
+
+structure RuntimeEffectEvent where
+  kind : RuntimeEffectEventKind
+  leaseId : Nat
+  jobId : Nat
+  callerId : Nat
+  capabilityId : Nat
+  targetId : Nat
+  authority : Nat
+  authorityEpoch : Nat
+  expiresAt : Nat
+  remainingUses : Nat
+  highImpact : Bool
+  rollbackRequired : Bool
+  logicalTime : Nat
+  permissionPresent : Bool
+  sandboxObserved : Bool
+  targetOwnerApproved : Bool
+  approvalReceipt : Bool
+  approverIndependent : Bool
+  dispatchReceipt : Bool
+  effectReceipt : Bool
+  independentObservation : Bool
+  revocationReceipt : Bool
+  rollbackHandlePresent : Bool
+  rollbackReceipt : Bool
+  secretMaterializedToModelContext : Bool
+  preDigest : Nat
+  postDigest : Nat
+deriving DecidableEq, Repr
+
+def RuntimeEffectEvent.lease (event : RuntimeEffectEvent) : RuntimeEffectLease := {
+  leaseId := event.leaseId
+  jobId := event.jobId
+  callerId := event.callerId
+  capabilityId := event.capabilityId
+  targetId := event.targetId
+  authority := event.authority
+  authorityEpoch := event.authorityEpoch
+  expiresAt := event.expiresAt
+  remainingUses := event.remainingUses
+  highImpact := event.highImpact
+  rollbackRequired := event.rollbackRequired
+}
+
+def RuntimeEffectEventAdmissible
+    (state : RuntimeEffectState) (event : RuntimeEffectEvent) : Prop :=
+  state.logicalTime < event.logicalTime ∧
+  match event.kind with
+  | .prepare =>
+      state.activeLease = none ∧
+        event.leaseId ∉ state.revokedLeaseIds ∧
+        0 < event.leaseId ∧
+        event.jobId = state.parentJobId ∧
+        event.callerId = state.callerId ∧
+        event.authority ≤ state.parentAuthorityCeiling ∧
+        event.authorityEpoch = state.authorityEpoch ∧
+        event.logicalTime ≤ event.expiresAt ∧
+        0 < event.remainingUses ∧
+        event.permissionPresent = true ∧
+        event.sandboxObserved = true ∧
+        event.targetOwnerApproved = true ∧
+        event.approvalReceipt = true ∧
+        event.secretMaterializedToModelContext = false
+  | .approve =>
+      state.activeLease = some event.lease ∧
+        state.dispatchedLeaseId = none ∧
+        event.leaseId ∉ state.revokedLeaseIds ∧
+        event.authorityEpoch = state.authorityEpoch ∧
+        event.logicalTime ≤ event.expiresAt ∧
+        0 < event.remainingUses ∧
+        event.targetOwnerApproved = true ∧
+        event.approvalReceipt = true ∧
+        (event.highImpact = false ∨ event.approverIndependent = true)
+  | .dispatch =>
+      state.activeLease = some event.lease ∧
+        state.approvedLeaseId = some event.leaseId ∧
+        event.leaseId ∉ state.revokedLeaseIds ∧
+        event.authorityEpoch = state.authorityEpoch ∧
+        event.logicalTime ≤ event.expiresAt ∧
+        0 < event.remainingUses ∧
+        event.sandboxObserved = true ∧
+        event.secretMaterializedToModelContext = false ∧
+        event.dispatchReceipt = true
+  | .commitEffect =>
+      state.activeLease = some event.lease ∧
+        state.approvedLeaseId = some event.leaseId ∧
+        state.dispatchedLeaseId = some event.leaseId ∧
+        event.leaseId ∉ state.revokedLeaseIds ∧
+        event.authorityEpoch = state.authorityEpoch ∧
+        event.logicalTime ≤ event.expiresAt ∧
+        0 < event.remainingUses ∧
+        event.effectReceipt = true ∧
+        event.preDigest = state.currentDigest ∧
+        event.postDigest ≠ state.currentDigest ∧
+        (event.rollbackRequired = false ∨ event.rollbackHandlePresent = true)
+  | .observe =>
+      state.lastEffectLeaseId = some event.leaseId ∧
+        state.observedEffects < state.materialEffects ∧
+        event.independentObservation = true ∧
+        event.effectReceipt = true
+  | .revoke =>
+      state.activeLease = some event.lease ∧
+        event.revocationReceipt = true
+  | .rollback =>
+      state.lastEffectLeaseId = some event.leaseId ∧
+        0 < state.materialEffects ∧
+        state.observedEffects = state.materialEffects ∧
+        event.rollbackHandlePresent = true ∧
+        event.rollbackReceipt = true ∧
+        event.effectReceipt = true ∧
+        event.postDigest = state.baselineDigest
+
+instance runtimeEffectEventAdmissibleDecidable
+    (state : RuntimeEffectState) (event : RuntimeEffectEvent) :
+    Decidable (RuntimeEffectEventAdmissible state event) := by
+  unfold RuntimeEffectEventAdmissible
+  cases event.kind <;> infer_instance
+
+def ApplyRuntimeEffectEvent
+    (state : RuntimeEffectState) (event : RuntimeEffectEvent) :
+    RuntimeEffectState :=
+  match event.kind with
+  | .prepare =>
+      { state with
+          activeLease := some event.lease
+          logicalTime := event.logicalTime }
+  | .approve =>
+      { state with
+          approvedLeaseId := some event.leaseId
+          logicalTime := event.logicalTime }
+  | .dispatch =>
+      { state with
+          dispatchedLeaseId := some event.leaseId
+          logicalTime := event.logicalTime }
+  | .commitEffect =>
+      { state with
+          activeLease := some { event.lease with remainingUses := event.remainingUses - 1 }
+          approvedLeaseId := none
+          dispatchedLeaseId := none
+          currentDigest := event.postDigest
+          materialEffects := state.materialEffects + 1
+          lastEffectLeaseId := some event.leaseId
+          logicalTime := event.logicalTime }
+  | .observe =>
+      { state with
+          observedEffects := state.observedEffects + 1
+          logicalTime := event.logicalTime }
+  | .revoke =>
+      { state with
+          authorityEpoch := state.authorityEpoch + 1
+          activeLease := none
+          approvedLeaseId := none
+          dispatchedLeaseId := none
+          revokedLeaseIds := event.leaseId :: state.revokedLeaseIds
+          logicalTime := event.logicalTime }
+  | .rollback =>
+      { state with
+          currentDigest := event.postDigest
+          materialEffects := 0
+          observedEffects := 0
+          rolledBack := true
+          logicalTime := event.logicalTime }
+
+def RuntimeEffectStep
+    (state : RuntimeEffectState) (event : RuntimeEffectEvent) :
+    Option RuntimeEffectState :=
+  if RuntimeEffectEventAdmissible state event then
+    some (ApplyRuntimeEffectEvent state event)
+  else
+    none
+
+def RuntimeEffectRun :
+    RuntimeEffectState → List RuntimeEffectEvent → Option RuntimeEffectState
+  | state, [] => some state
+  | state, event :: tail =>
+      match RuntimeEffectStep state event with
+      | none => none
+      | some next => RuntimeEffectRun next tail
+
+def RuntimeLeaseBoundToState
+    (state : RuntimeEffectState) (lease : RuntimeEffectLease) : Prop :=
+  lease.jobId = state.parentJobId ∧
+    lease.callerId = state.callerId ∧
+    lease.authority ≤ state.parentAuthorityCeiling ∧
+    lease.authorityEpoch = state.authorityEpoch ∧
+    lease.leaseId ∉ state.revokedLeaseIds
+
+def RuntimeEffectStateInvariant (state : RuntimeEffectState) : Prop :=
+  (∀ lease, state.activeLease = some lease ->
+      RuntimeLeaseBoundToState state lease) ∧
+    (∀ leaseId, state.approvedLeaseId = some leaseId ->
+      ∃ lease, state.activeLease = some lease ∧ lease.leaseId = leaseId) ∧
+    (∀ leaseId, state.dispatchedLeaseId = some leaseId ->
+      ∃ lease, state.activeLease = some lease ∧
+        state.approvedLeaseId = some leaseId ∧ lease.leaseId = leaseId) ∧
+    state.observedEffects ≤ state.materialEffects
+
+theorem accepted_runtime_effect_step_is_admissible
+    {state next : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (accepted : RuntimeEffectStep state event = some next) :
+    RuntimeEffectEventAdmissible state event := by
+  unfold RuntimeEffectStep at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_runtime_effect_step_applies_event
+    {state next : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (accepted : RuntimeEffectStep state event = some next) :
+    next = ApplyRuntimeEffectEvent state event := by
+  unfold RuntimeEffectStep at accepted
+  split at accepted
+  · simp_all
+  · simp at accepted
+
+theorem apply_runtime_effect_event_preserves_invariant
+    {state : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (invariant : RuntimeEffectStateInvariant state)
+    (admissible : RuntimeEffectEventAdmissible state event) :
+    RuntimeEffectStateInvariant (ApplyRuntimeEffectEvent state event) := by
+  rcases invariant with
+    ⟨activeInvariant, approvedInvariant, dispatchedInvariant,
+      observationInvariant⟩
+  rcases admissible with ⟨_time, admissible⟩
+  cases kind : event.kind
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨noActive, notRevoked, _positiveId, job, caller, ceiling, epoch,
+        _fresh, _uses, _permission, _sandbox, _owner, _receipt, _secret⟩
+    have noApproved : state.approvedLeaseId = none := by
+      cases approved : state.approvedLeaseId with
+      | none => rfl
+      | some leaseId =>
+          rcases approvedInvariant leaseId approved with
+            ⟨lease, active, _binding⟩
+          rw [noActive] at active
+          contradiction
+    have noDispatched : state.dispatchedLeaseId = none := by
+      cases dispatched : state.dispatchedLeaseId with
+      | none => rfl
+      | some leaseId =>
+          rcases dispatchedInvariant leaseId dispatched with
+            ⟨lease, active, _approved, _binding⟩
+          rw [noActive] at active
+          contradiction
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease active
+      have leaseEq : event.lease = lease := by
+        exact Option.some.inj (by
+          simpa [ApplyRuntimeEffectEvent, kind] using active)
+      subst lease
+      simp [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind,
+        RuntimeEffectEvent.lease, job, caller, ceiling, epoch, notRevoked]
+    · simp [ApplyRuntimeEffectEvent, kind, noApproved]
+    · simp [ApplyRuntimeEffectEvent, kind, noDispatched]
+    · simpa [ApplyRuntimeEffectEvent, kind] using observationInvariant
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, noDispatched, _notRevoked, _epoch, _fresh, _uses,
+        _owner, _receipt, _independent⟩
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease nextActive
+      have oldBound := activeInvariant lease (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextActive)
+      simpa [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind] using
+        oldBound
+    · intro leaseId approved
+      have leaseIdEq : event.leaseId = leaseId := by
+        exact Option.some.inj (by
+          simpa [ApplyRuntimeEffectEvent, kind] using approved)
+      exact ⟨event.lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using active, leaseIdEq⟩
+    · simp [ApplyRuntimeEffectEvent, kind, noDispatched]
+    · simpa [ApplyRuntimeEffectEvent, kind] using observationInvariant
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, approved, _notRevoked, _epoch, _fresh, _uses, _sandbox,
+        _secret, _receipt⟩
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease nextActive
+      have oldBound := activeInvariant lease (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextActive)
+      simpa [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind] using
+        oldBound
+    · intro leaseId nextApproved
+      rcases approvedInvariant leaseId (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextApproved) with
+        ⟨lease, oldActive, binding⟩
+      exact ⟨lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldActive, binding⟩
+    · intro leaseId dispatched
+      have leaseIdEq : event.leaseId = leaseId := by
+        exact Option.some.inj (by
+          simpa [ApplyRuntimeEffectEvent, kind] using dispatched)
+      have approvedForLeaseId : state.approvedLeaseId = some leaseId := by
+        simpa [leaseIdEq] using approved
+      exact ⟨event.lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using active, by
+        simpa [ApplyRuntimeEffectEvent, kind] using approvedForLeaseId,
+        leaseIdEq⟩
+    · simpa [ApplyRuntimeEffectEvent, kind] using observationInvariant
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, _approved, _dispatched, _notRevoked, _epoch, _fresh,
+        _uses, _receipt, _pre, _changed, _rollback⟩
+    have bound := activeInvariant event.lease active
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease nextActive
+      have leaseEq :
+          { event.lease with remainingUses := event.remainingUses - 1 } =
+            lease := by
+        exact Option.some.inj (by
+          simpa [ApplyRuntimeEffectEvent, kind] using nextActive)
+      subst lease
+      simpa [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind,
+        RuntimeEffectEvent.lease] using bound
+    · simp [ApplyRuntimeEffectEvent, kind]
+    · simp [ApplyRuntimeEffectEvent, kind]
+    · simpa [ApplyRuntimeEffectEvent, kind] using
+        (Nat.le.step observationInvariant)
+  · simp [kind] at admissible
+    rcases admissible with ⟨_lease, observed, _independent, _receipt⟩
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease nextActive
+      have oldBound := activeInvariant lease (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextActive)
+      simpa [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind] using
+        oldBound
+    · intro leaseId nextApproved
+      rcases approvedInvariant leaseId (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextApproved) with
+        ⟨lease, oldActive, binding⟩
+      exact ⟨lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldActive, binding⟩
+    · intro leaseId nextDispatched
+      rcases dispatchedInvariant leaseId (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextDispatched) with
+        ⟨lease, oldActive, oldApproved, binding⟩
+      exact ⟨lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldActive, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldApproved, binding⟩
+    · simpa [ApplyRuntimeEffectEvent, kind] using Nat.succ_le_of_lt observed
+  · refine ⟨?_, ?_, ?_, ?_⟩
+    · simp [ApplyRuntimeEffectEvent, kind]
+    · simp [ApplyRuntimeEffectEvent, kind]
+    · simp [ApplyRuntimeEffectEvent, kind]
+    · simpa [ApplyRuntimeEffectEvent, kind] using observationInvariant
+  · simp [kind] at admissible
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · intro lease nextActive
+      have oldBound := activeInvariant lease (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextActive)
+      simpa [RuntimeLeaseBoundToState, ApplyRuntimeEffectEvent, kind] using
+        oldBound
+    · intro leaseId nextApproved
+      rcases approvedInvariant leaseId (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextApproved) with
+        ⟨lease, oldActive, binding⟩
+      exact ⟨lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldActive, binding⟩
+    · intro leaseId nextDispatched
+      rcases dispatchedInvariant leaseId (by
+        simpa [ApplyRuntimeEffectEvent, kind] using nextDispatched) with
+        ⟨lease, oldActive, oldApproved, binding⟩
+      exact ⟨lease, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldActive, by
+        simpa [ApplyRuntimeEffectEvent, kind] using oldApproved, binding⟩
+    · simp [ApplyRuntimeEffectEvent, kind]
+
+theorem accepted_runtime_effect_step_preserves_invariant
+    {state next : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (invariant : RuntimeEffectStateInvariant state)
+    (accepted : RuntimeEffectStep state event = some next) :
+    RuntimeEffectStateInvariant next := by
+  have admissible := accepted_runtime_effect_step_is_admissible accepted
+  have applies := accepted_runtime_effect_step_applies_event accepted
+  rw [applies]
+  exact apply_runtime_effect_event_preserves_invariant invariant admissible
+
+theorem runtime_effect_run_preserves_invariant
+    {state next : RuntimeEffectState} {events : List RuntimeEffectEvent}
+    (invariant : RuntimeEffectStateInvariant state)
+    (run : RuntimeEffectRun state events = some next) :
+    RuntimeEffectStateInvariant next := by
+  induction events generalizing state with
+  | nil =>
+      simp [RuntimeEffectRun] at run
+      subst next
+      exact invariant
+  | cons event tail ih =>
+      simp [RuntimeEffectRun] at run
+      cases step : RuntimeEffectStep state event with
+      | none => simp [step] at run
+      | some middle =>
+          simp [step] at run
+          exact ih (accepted_runtime_effect_step_preserves_invariant invariant step) run
+
+def initialRuntimeEffectState : RuntimeEffectState where
+  parentJobId := 101
+  callerId := 201
+  parentAuthorityCeiling := 3
+  authorityEpoch := 11
+  logicalTime := 0
+  activeLease := none
+  approvedLeaseId := none
+  dispatchedLeaseId := none
+  revokedLeaseIds := []
+  baselineDigest := 7001
+  currentDigest := 7001
+  materialEffects := 0
+  observedEffects := 0
+  lastEffectLeaseId := none
+  rolledBack := false
+
+def prepareRuntimeEffect : RuntimeEffectEvent where
+  kind := .prepare
+  leaseId := 71
+  jobId := 101
+  callerId := 201
+  capabilityId := 301
+  targetId := 401
+  authority := 3
+  authorityEpoch := 11
+  expiresAt := 20
+  remainingUses := 1
+  highImpact := false
+  rollbackRequired := true
+  logicalTime := 1
+  permissionPresent := true
+  sandboxObserved := true
+  targetOwnerApproved := true
+  approvalReceipt := true
+  approverIndependent := true
+  dispatchReceipt := false
+  effectReceipt := false
+  independentObservation := false
+  revocationReceipt := false
+  rollbackHandlePresent := true
+  rollbackReceipt := false
+  secretMaterializedToModelContext := false
+  preDigest := 7001
+  postDigest := 7001
+
+def successfulRuntimeEffectTrace : List RuntimeEffectEvent := [
+  prepareRuntimeEffect,
+  { prepareRuntimeEffect with
+      kind := .approve
+      logicalTime := 2 },
+  { prepareRuntimeEffect with
+      kind := .dispatch
+      logicalTime := 3
+      dispatchReceipt := true },
+  { prepareRuntimeEffect with
+      kind := .commitEffect
+      logicalTime := 4
+      effectReceipt := true
+      postDigest := 8002 },
+  { prepareRuntimeEffect with
+      kind := .observe
+      logicalTime := 5
+      effectReceipt := true
+      independentObservation := true },
+  { prepareRuntimeEffect with
+      kind := .rollback
+      logicalTime := 6
+      effectReceipt := true
+      rollbackReceipt := true
+      postDigest := 7001 }
+]
+
+theorem initial_runtime_effect_state_satisfies_invariant :
+    RuntimeEffectStateInvariant initialRuntimeEffectState := by
+  simp [RuntimeEffectStateInvariant, initialRuntimeEffectState]
+
+theorem complete_runtime_effect_trace_reaches_exact_rollback :
+    RuntimeEffectRun initialRuntimeEffectState successfulRuntimeEffectTrace = some
+      { initialRuntimeEffectState with
+          activeLease := some { prepareRuntimeEffect.lease with remainingUses := 0 }
+          currentDigest := 7001
+          materialEffects := 0
+          observedEffects := 0
+          lastEffectLeaseId := some prepareRuntimeEffect.leaseId
+          rolledBack := true
+          logicalTime := 6 } := by
+  native_decide
+
+def ProjectRuntimeLease
+    (lease : RuntimeEffectLease) :
+    AsiStackProofs.AuthorityEffectRefinement.Grant := {
+  grantId := lease.leaseId
+  principalId := lease.callerId
+  operationId := lease.capabilityId
+  targetId := lease.targetId
+  authority := lease.authority
+  epoch := lease.authorityEpoch
+  expiresAt := lease.expiresAt
+  remainingUses := lease.remainingUses
+}
+
+def ProjectRuntimeEffectState
+    (state : RuntimeEffectState) :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityState := {
+  callerCeiling := state.parentAuthorityCeiling
+  authorityEpoch := state.authorityEpoch
+  logicalTime := state.logicalTime
+  activeGrant := state.activeLease.map ProjectRuntimeLease
+  approvedGrantId := state.approvedLeaseId
+  dispatchedGrantId := state.dispatchedLeaseId
+  revokedGrantIds := state.revokedLeaseIds
+  materialEffects := state.materialEffects
+  observedEffects := state.observedEffects
+  rolledBack := state.rolledBack
+}
+
+def ProjectRuntimeEffectEventKind : RuntimeEffectEventKind ->
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityEventKind
+  | .prepare => .issue
+  | .approve => .approve
+  | .dispatch => .dispatch
+  | .commitEffect => .commitEffect
+  | .observe => .observe
+  | .revoke => .revoke
+  | .rollback => .rollback
+
+def ProjectRuntimeEffectEvent
+    (event : RuntimeEffectEvent) :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent := {
+  kind := ProjectRuntimeEffectEventKind event.kind
+  grantId := event.leaseId
+  principalId := event.callerId
+  operationId := event.capabilityId
+  targetId := event.targetId
+  authority := event.authority
+  authorityEpoch := event.authorityEpoch
+  expiresAt := event.expiresAt
+  remainingUses := event.remainingUses
+  logicalTime := event.logicalTime
+  targetOwnerApproved := event.targetOwnerApproved
+  approvalReceipt := event.approvalReceipt
+  dispatchReceipt := event.dispatchReceipt
+  effectReceipt := event.effectReceipt
+  independentObservation := event.independentObservation
+  revocationReceipt := event.revocationReceipt
+  rollbackExact := event.rollbackReceipt
+}
+
+theorem projected_runtime_lease_preserves_exact_identity
+    (lease : RuntimeEffectLease) :
+    (ProjectRuntimeLease lease).grantId = lease.leaseId ∧
+      (ProjectRuntimeLease lease).principalId = lease.callerId ∧
+      (ProjectRuntimeLease lease).operationId = lease.capabilityId ∧
+      (ProjectRuntimeLease lease).targetId = lease.targetId ∧
+      (ProjectRuntimeLease lease).authority = lease.authority ∧
+      (ProjectRuntimeLease lease).epoch = lease.authorityEpoch := by
+  simp [ProjectRuntimeLease]
+
+theorem project_runtime_apply_commutes
+    (state : RuntimeEffectState) (event : RuntimeEffectEvent) :
+    ProjectRuntimeEffectState (ApplyRuntimeEffectEvent state event) =
+      AsiStackProofs.AuthorityEffectRefinement.ApplyAuthorityEvent
+        (ProjectRuntimeEffectState state) (ProjectRuntimeEffectEvent event) := by
+  unfold AsiStackProofs.AuthorityEffectRefinement.ApplyAuthorityEvent
+  cases kind : event.kind <;>
+    simp [ApplyRuntimeEffectEvent, ProjectRuntimeEffectState,
+      ProjectRuntimeEffectEvent, ProjectRuntimeEffectEventKind,
+      ProjectRuntimeLease, RuntimeEffectEvent.lease,
+      AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent.grant, kind]
+
+theorem runtime_admissibility_refines_authority_admissibility
+    {state : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (admissible : RuntimeEffectEventAdmissible state event) :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid
+      (ProjectRuntimeEffectState state) (ProjectRuntimeEffectEvent event) = true := by
+  rcases admissible with ⟨time, admissible⟩
+  cases kind : event.kind
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, notRevoked, positiveId, _job, _caller, ceiling, epoch,
+        fresh, uses, _permission, _sandbox, owner, receipt, _secret⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, kind, time, active, notRevoked,
+      positiveId, ceiling, epoch, fresh, uses, owner, receipt]
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, _noDispatched, notRevoked, epoch, fresh, uses, owner, receipt,
+        _independent⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, ProjectRuntimeLease,
+      RuntimeEffectEvent.lease, kind, time, active, notRevoked, epoch,
+      fresh, uses, owner, receipt,
+      AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent.grant]
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, approved, notRevoked, epoch, fresh, uses, _sandbox,
+        _secret, receipt⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, ProjectRuntimeLease,
+      RuntimeEffectEvent.lease, kind, time, active, approved, notRevoked,
+      epoch, fresh, uses, receipt,
+      AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent.grant]
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨active, approved, dispatched, notRevoked, epoch, fresh, uses,
+        receipt, _pre, _changed, _rollback⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, ProjectRuntimeLease,
+      RuntimeEffectEvent.lease, kind, time, active, approved, dispatched,
+      notRevoked, epoch, fresh, uses, receipt,
+      AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent.grant]
+  · simp [kind] at admissible
+    rcases admissible with ⟨_lease, observed, independent, receipt⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, kind, time, observed, independent,
+      receipt]
+  · simp [kind] at admissible
+    rcases admissible with ⟨active, receipt⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, ProjectRuntimeLease,
+      RuntimeEffectEvent.lease, kind, time, active, receipt,
+      AsiStackProofs.AuthorityEffectRefinement.AuthorityEvent.grant]
+  · simp [kind] at admissible
+    rcases admissible with
+      ⟨_lease, effects, observed, _handle, rollback, receipt, _digest⟩
+    simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityEventValid,
+      ProjectRuntimeEffectState, ProjectRuntimeEffectEvent,
+      ProjectRuntimeEffectEventKind, kind, time, effects, observed,
+      rollback, receipt]
+
+theorem runtime_step_refines_authority_step
+    {state next : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (accepted : RuntimeEffectStep state event = some next) :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityStep
+      (ProjectRuntimeEffectState state) (ProjectRuntimeEffectEvent event) =
+        some (ProjectRuntimeEffectState next) := by
+  have admissible := accepted_runtime_effect_step_is_admissible accepted
+  have authorityValid :=
+    runtime_admissibility_refines_authority_admissibility admissible
+  have applies := accepted_runtime_effect_step_applies_event accepted
+  unfold AsiStackProofs.AuthorityEffectRefinement.AuthorityStep
+  simp [authorityValid, applies, project_runtime_apply_commutes]
+
+theorem runtime_run_refines_authority_run
+    {state next : RuntimeEffectState} {events : List RuntimeEffectEvent}
+    (run : RuntimeEffectRun state events = some next) :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityRun
+      (ProjectRuntimeEffectState state) (events.map ProjectRuntimeEffectEvent) =
+        some (ProjectRuntimeEffectState next) := by
+  induction events generalizing state with
+  | nil =>
+      simp [RuntimeEffectRun] at run
+      subst next
+      rfl
+  | cons event tail ih =>
+      simp [RuntimeEffectRun] at run
+      cases step : RuntimeEffectStep state event with
+      | none => simp [step] at run
+      | some middle =>
+          simp [step] at run
+          simp [AsiStackProofs.AuthorityEffectRefinement.AuthorityRun,
+            runtime_step_refines_authority_step step]
+          exact ih run
+
+theorem runtime_effect_denial_is_state_noninterfering
+    {state : RuntimeEffectState} {event : RuntimeEffectEvent}
+    (denied : RuntimeEffectStep state event = none) :
+    RuntimeEffectRun state [event] = none := by
+  simp [RuntimeEffectRun, denied]
+
+def preparedRuntimeEffectState : RuntimeEffectState :=
+  ApplyRuntimeEffectEvent initialRuntimeEffectState prepareRuntimeEffect
+
+def approvedRuntimeEffectState : RuntimeEffectState :=
+  ApplyRuntimeEffectEvent preparedRuntimeEffectState
+    { prepareRuntimeEffect with
+        kind := .approve
+        logicalTime := 2 }
+
+def dispatchedRuntimeEffectState : RuntimeEffectState :=
+  ApplyRuntimeEffectEvent approvedRuntimeEffectState
+    { prepareRuntimeEffect with
+        kind := .dispatch
+        logicalTime := 3
+        dispatchReceipt := true }
+
+theorem missing_parent_permission_is_rejected_before_prepare :
+    RuntimeEffectStep initialRuntimeEffectState
+      { prepareRuntimeEffect with permissionPresent := false } = none := by
+  native_decide
+
+theorem caller_identity_substitution_is_rejected_before_prepare :
+    RuntimeEffectStep initialRuntimeEffectState
+      { prepareRuntimeEffect with callerId := 999 } = none := by
+  native_decide
+
+theorem authority_widening_is_rejected_before_prepare :
+    RuntimeEffectStep initialRuntimeEffectState
+      { prepareRuntimeEffect with authority := 4 } = none := by
+  native_decide
+
+theorem expired_lease_is_rejected_before_dispatch :
+    RuntimeEffectStep approvedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .dispatch
+          logicalTime := 21
+          dispatchReceipt := true } = none := by
+  native_decide
+
+theorem scoped_approval_identity_substitution_is_rejected :
+    RuntimeEffectStep approvedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .dispatch
+          targetId := 999
+          logicalTime := 3
+          dispatchReceipt := true } = none := by
+  native_decide
+
+theorem secret_materialization_is_rejected_before_dispatch :
+    RuntimeEffectStep approvedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .dispatch
+          logicalTime := 3
+          dispatchReceipt := true
+          secretMaterializedToModelContext := true } = none := by
+  native_decide
+
+theorem effect_without_dispatch_is_rejected :
+    RuntimeEffectStep approvedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .commitEffect
+          logicalTime := 3
+          effectReceipt := true
+          postDigest := 8002 } = none := by
+  native_decide
+
+theorem rollback_required_without_handle_is_rejected_before_effect :
+    RuntimeEffectStep dispatchedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .commitEffect
+          logicalTime := 4
+          effectReceipt := true
+          postDigest := 8002
+          rollbackHandlePresent := false } = none := by
+  native_decide
+
+theorem effect_prestate_mismatch_is_rejected :
+    RuntimeEffectStep dispatchedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .commitEffect
+          logicalTime := 4
+          effectReceipt := true
+          preDigest := 9999
+          postDigest := 8002 } = none := by
+  native_decide
+
+def revokedRuntimeEffectState : RuntimeEffectState :=
+  ApplyRuntimeEffectEvent preparedRuntimeEffectState
+    { prepareRuntimeEffect with
+        kind := .revoke
+        logicalTime := 2
+        revocationReceipt := true }
+
+theorem revoked_lease_cannot_be_prepared_again :
+    RuntimeEffectStep revokedRuntimeEffectState
+      { prepareRuntimeEffect with
+          authorityEpoch := 12
+          logicalTime := 3 } = none := by
+  native_decide
+
+theorem revoked_state_cannot_dispatch_without_a_fresh_lease :
+    RuntimeEffectStep revokedRuntimeEffectState
+      { prepareRuntimeEffect with
+          kind := .dispatch
+          authorityEpoch := 12
+          logicalTime := 3
+          dispatchReceipt := true } = none := by
+  native_decide
+
+theorem successful_trace_refines_authority_trace :
+    AsiStackProofs.AuthorityEffectRefinement.AuthorityRun
+      (ProjectRuntimeEffectState initialRuntimeEffectState)
+      (successfulRuntimeEffectTrace.map ProjectRuntimeEffectEvent) =
+        some (ProjectRuntimeEffectState
+          { initialRuntimeEffectState with
+              activeLease := some
+                { prepareRuntimeEffect.lease with remainingUses := 0 }
+              currentDigest := 7001
+              materialEffects := 0
+              observedEffects := 0
+              lastEffectLeaseId := some prepareRuntimeEffect.leaseId
+              rolledBack := true
+              logicalTime := 6 }) := by
+  apply runtime_run_refines_authority_run
+  exact complete_runtime_effect_trace_reaches_exact_rollback
 
 end AsiStackProofs.RuntimeAdapters
