@@ -2504,16 +2504,23 @@ Draft deliverables:
   Signing, and SPDX AI Profile comparators; none demonstrates local inventory,
   provenance, signing, supplier trust, integrity, safety, readiness, authority,
   or deployment.
-- Implemented proof-backed check: finite supply-chain admission routes quarantine
-  a requested artifact with an unresolved critical advisory or required but
-  unverified signature; this is structured-record coverage only, not a real
-  advisory, signer, BOM, supplier, artifact, security, or safety result.
+- Implemented proof-backed check: 23 declarations retain finite admission routes
+  and add a reachable bind, clean-or-critical review, admit-or-quarantine, and
+  revoke lifecycle. Arbitrary accepted finite runs preserve exact declared
+  artifact/provenance identity, authority ceilings, non-authority, trace validity,
+  composition, and admission/invalidation receipt accounting; critical review
+  quarantines, quarantine excludes admission, and accepted revocation returns
+  active authority to zero. This is authored transition semantics only, not a
+  real advisory, signer, BOM, supplier, artifact, security, or safety result.
 - Implemented Codex test: one public-safe hand-authored three-project record and
   ten rejecting mutations for complete bounded path,
   missing lineage, stale BOM, unverified signature, critical advisory, revoked
   signer, changed derivative, revocation gap, and missing residual owner, using
   no real artifacts, supplier data, build inputs, models, or credentials. The
-  test validates declared graph and record semantics only.
+  test validates declared graph and record semantics only. The same validator
+  independently recompiles the exact 23-theorem surface, closes clean
+  admit-then-revoke and critical-advisory quarantine paths, and rejects eight
+  lifecycle controls without validating the truth of any modeled event field.
 
 Lean proof targets:
 
@@ -6187,7 +6194,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2370 theorem declarations, 1414 derived/decomposed, 410 direct/projection, 546 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2386 theorem declarations, 1425 derived/decomposed, 410 direct/projection, 551 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

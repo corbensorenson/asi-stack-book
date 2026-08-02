@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2370 |
+| Theorem declarations classified | 2386 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1414 |
-| Unknown or mixed theorem declarations | 546 |
+| Derived/decomposed theorem declarations | 1425 |
+| Unknown or mixed theorem declarations | 551 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -170,7 +170,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | societal-resilience-and-misuse-defense | 1 | 32 | 15 | 13 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 26 | 1 | 23 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 34 | 3 | 26 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 23 | 0 | 18 | 5 | manual review |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 19 | 8 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -2371,12 +2371,28 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_nonempty_chain_is_bounded_by_initial_source_ceiling` | derived_or_decomposed | no | uses have, rcases, simp, subst |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_two_hop_chain_preserves_artifact_and_cannot_widen_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_admission_records_authority_and_receipt` | unknown_or_mixed | no | contains sorry/admit marker |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_admission_requires_clean_review` | unknown_or_mixed | no | contains sorry/admit marker |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_revocation_zeros_authority_and_records_invalidation` | derived_or_decomposed | no | uses have, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_supply_chain_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_supply_chain_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_supply_chain_step_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `accepted_supply_chain_step_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `admitted_then_revoked_run_reaches_zero_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `apply_supply_chain_event_preserves_identity` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `complete_requested_artifact_reaches_custody_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `critical_advisory_run_reaches_quarantine` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_component_inventory_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_lineage_requires_repair` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_residual_owner_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_revocation_path_requires_repair` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `quarantined_artifact_cannot_be_admitted` | unknown_or_mixed | no | contains sorry/admit marker |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `required_unverified_signature_quarantines_artifact` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `successful_supply_chain_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `successful_supply_chain_run_preserves_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `successful_supply_chain_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `successful_supply_chain_run_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `supply_chain_run_composes` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `unresolved_critical_advisory_quarantines_requested_artifact` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_promotion_with_missing_or_failing_gate_reports_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_theseus_report_bundle_audit_preserves_public_boundaries` | derived_or_decomposed | no | uses cases, simp, unfold |

@@ -4,7 +4,7 @@ chapter_id: "ai-supply-chain-integrity-and-lifecycle-provenance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-07-16"
+last_updated: "2026-08-02"
 primary_sources:
   - "ext_nist_cscrm_2022"
   - "ext_slsa_build_track_1_2"
@@ -21,7 +21,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All eleven assigned source notes now have reviewed mappings, but none of the seven external comparators has been reproduced locally and the three project notes are author-lineage context rather than independent corroboration."
-  - "Current executable evidence is exactly one hand-authored quarantined three-project affected-path record, ten rejecting mutations, and seven Lean declarations under six manifest targets with no support movement; no real AI BOM, artifact/content verification, dataset, supplier, build/training execution, signature, key, verifier, advisory feed, dependency discovery, reproducible rebuild, relation-specific propagation, quarantine/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric has been exercised."
+  - "Current executable evidence is exactly one hand-authored quarantined three-project affected-path record, ten rejecting fixture mutations, eight independently encoded lifecycle controls, and 23 Lean declarations under six manifest targets with no support movement. The reachable model preserves declared artifact/provenance identity, authority ceilings, non-authority, admission/invalidation receipts, quarantine, and revocation over arbitrary accepted finite runs; no real AI BOM, artifact/content verification, dataset, supplier, build/training execution, signature, key, verifier, advisory feed, dependency discovery, reproducible rebuild, relation-specific propagation, quarantine/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric has been exercised."
   - "No local result establishes consumer-relative inventory adequacy, assertion truth, artifact integrity, absence of compromise, data fitness or rights, trustworthy suppliers, advisory applicability, effective propagation/restoration/revocation, legal compliance, model safety, readiness, authority, or ASI."
   - "Promotion or refutation requires the preregistered effect-bearing multi-comparator campaign with independent artifact discovery/content verification, assertion verification, supplier challenge, advisory applicability, affected-path, downstream-effect, restoration, privacy/rights, and cost implementations plus causal ablations, replication, and transfer."
 ---
@@ -33,13 +33,13 @@ open_evidence_gaps:
 | Chapter ID | `ai-supply-chain-integrity-and-lifecycle-provenance` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-08-02 |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
 | Primary source records | eleven reviewed mappings: NIST C-SCRM; SLSA; OpenSSF Model Signing; SPDX AI; W3C PROV-O; MLCommons Croissant; in-toto; OWASP Agentic; and three local-project implementation-context notes |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | 11 assigned sources / 11 reviewed mappings. Primary standards and papers cover lifecycle risk, builds, signing, BOMs, asserted provenance, dataset metadata, and signed step layouts; OWASP supplies supporting threat taxonomy and the three local projects remain author-lineage context. No local AI BOM, provenance, signer, verifier, supplier review, advisory feed, or incident workflow has run. |
-| Test state | Exact finite boundary: one quarantined three-project affected-path record, ten rejecting mutations, and seven Lean declarations under six manifest targets. No real artifact/content verification, dataset, supplier, build/training execution, signature, advisory feed, dependency discovery, propagation/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric was exercised. |
+| Test state | Exact finite boundary: one quarantined three-project affected-path record, ten rejecting fixture mutations, eight independently encoded lifecycle controls, and 23 Lean declarations under six manifest targets. The consumer recompiles the module and checks clean admit/revoke and critical-advisory quarantine runs. No real artifact/content verification, dataset, supplier, build/training execution, signature, advisory feed, dependency discovery, propagation/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric was exercised. |
 
 ## Drafting guardrail
 
@@ -410,8 +410,8 @@ The contract exposes ten typed handoffs:
 14. Security findings remain paired with affected-path precision/recall, false
     quarantine, useful-service loss, restoration, availability, operator labor,
     privacy/rights, benefit, and total cost.
-15. Finite records, one declared graph, seven theorem declarations, ten
-    mutations, or zero observed compromise establish only their exact
+15. Finite records, one declared graph, 23 theorem declarations, eighteen
+    rejecting fixture/lifecycle controls, or zero observed compromise establish only their exact
     scope—not inventory completeness, assertion truth, artifact integrity,
     supplier trust, effective control, safety, compliance, or transfer.
 
@@ -624,8 +624,15 @@ harness rejects digest substitution, incomplete declared downstream closure,
 missing response ownership, ordinary use during invalidation, overwritten
 history, a revoked path that avoids quarantine, stale assurance admitted as
 current, custody after invalidation, missing disposal closure, and support
-promotion. Seven Lean declarations under six manifest targets preserve only
-their explicit Boolean admission-route consequences.
+promotion. Twenty-three Lean declarations under six manifest targets preserve
+the original Boolean admission routes and add a reachable bind, clean-or-critical
+review, admit-or-quarantine, and revoke lifecycle. Arbitrary accepted finite runs
+preserve exact artifact/digest/lineage/supplier/build identity, authority ceilings,
+and zero support or external-effect authority; admission and invalidation receipts
+are explicit, quarantine excludes admission, and revocation returns active authority
+to zero. The independent consumer recompiles the exact theorem surface, closes one
+admit-then-revoke path and one critical-advisory quarantine path, and rejects eight
+identity, ceiling, non-authority, signature, stage-order, and revocation controls.
 
 This establishes one declared graph's record, route, closure, and mutation
 semantics. No real AI BOM, artifact/content verification, dataset, supplier,
@@ -710,6 +717,7 @@ independent reproduction, and transfer pass the joint gates.
 | Unresolved-critical-advisory route | Ensure a requested artifact with a recorded unresolved critical advisory quarantines rather than reaching custody review. | Implemented as a finite Lean theorem. |
 | Required-but-unverified signature control | Ensure required signing does not become a pass-through when verification is absent or fails. | Implemented as a finite Lean theorem. |
 | Admission completeness routes | Distinguish complete custody handoff from missing lineage, inventory, revocation path, or residual ownership. | Implemented as five additional derived Lean routes. |
+| Reachable lifecycle and revocation invariants | Preserve exact declared identity, authority ceilings, non-authority, trace validity, composition, admission/invalidation receipts, quarantine, and zero-authority revocation across arbitrary accepted finite event lists. | Implemented as sixteen additional Lean declarations; the independent consumer recompiles all 23 declarations, closes clean and critical paths, and rejects eight lifecycle controls. Event truth and deployed effects remain outside the model. |
 | Stale BOM and derivative-propagation controls | Route a stale inventory or affected derivative to refresh, repair, or accountable review. | Implemented for one hand-authored graph and deterministic mutations; no inventory service or live propagation ran. |
 | Public-safe supply-chain workload | Exercise synthetic identities, provenance, signing, advisory, revocation, and residual records without real artifacts or supplier data. | Implemented as `python3 scripts/validate_supply_chain_affected_paths.py`: one bounded record and ten expected-invalid mutations; no supply-chain system has run. |
 
@@ -724,12 +732,15 @@ independent reproduction, and transfer pass the joint gates.
 | `lean:ai_supply_chain.missing_revocation_path.requires_repair` | implemented | A missing revocation path routes to lineage repair. |
 | `lean:ai_supply_chain.missing_residual_owner.requires_review` | implemented | A missing residual owner routes to accountable review. |
 
-The seven theorem declarations do not prove that an advisory is accurate, that an artifact is
+The 23 theorem declarations do not prove that an advisory is accurate, that an artifact is
 compromised, that inventory is complete, that a signature is genuine, that a
 supplier is trustworthy, that training data is fit, that a model is safe, or
-that any release may proceed. They preserve only the modeled consequences of
-missing fields, an unresolved critical advisory, or a required unverified
-signature and the boundary between supply-chain review and custody review.
+that any release may proceed. They preserve only the modeled route consequences
+and reachable finite-run invariants when identity, signature, inventory,
+independent-review, advisory, revocation, residual-owner, and non-claim fields are
+already supplied to the transition predicate. The model does not discover or
+validate those fields, observe a supplier or artifact, or execute quarantine or
+revocation in a deployed system.
 
 ## Source crosswalk
 
