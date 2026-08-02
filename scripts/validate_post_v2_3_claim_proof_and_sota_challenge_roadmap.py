@@ -1486,7 +1486,7 @@ def errors(data: dict) -> list[str]:
         "authority_effect_governed_scenario_count": 9,
         "authority_effect_governed_release_count": 3,
         "authority_effect_governed_unsafe_release_count": 0,
-        "authority_effect_mutation_rejection_count": 38,
+        "authority_effect_mutation_rejection_count": 50,
         "authority_effect_support_state_effect": "none",
     }
     for key, value in expected_authority_contract.items():
@@ -1499,11 +1499,11 @@ def errors(data: dict) -> list[str]:
         "exact_rollback_count": 1, "pre_effect_denial_count": 2,
         "revocation_trace_entry_count": 5, "governed_scenario_count": 9,
         "governed_release_count": 3, "governed_unsafe_release_count": 0,
-        "mutation_rejection_count": 38, "support_state_effect": "none",
+        "mutation_rejection_count": 50, "support_state_effect": "none",
     }.items():
         if authority_result.get(key) != value:
             out.append(f"authority-effect result drifted: {key} expected {value!r}, got {authority_result.get(key)!r}")
-    for phrase in ["six authority-decision fixtures", "nine governed repository-change scenarios", "38 single-fault", "Support-state effect: `none`"]:
+    for phrase in ["six authority-decision fixtures", "nine governed repository-change scenarios", "50 single-fault", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["authority_effect_receipt"].casefold():
             out.append(f"authority-effect receipt missing exact boundary: {phrase}")
     for phrase in ["State, transitions, and reachable consequences", "Assumptions and exclusions", "does not establish completeness", "Support-state effect is exactly `none`"]:
@@ -1524,7 +1524,7 @@ def errors(data: dict) -> list[str]:
         "intent_resolution_plan_fixture_count": 13,
         "intent_resolution_reachable_event_count": 5,
         "intent_resolution_accepted_contract_version": 2,
-        "intent_resolution_mutation_rejection_count": 30,
+        "intent_resolution_mutation_rejection_count": 40,
         "intent_resolution_support_state_effect": "none",
     }
     for key, value in expected_intent_resolution_contract.items():
@@ -1536,11 +1536,11 @@ def errors(data: dict) -> list[str]:
         "intake_signal_count": 6, "recontract_valid_scenario_count": 2,
         "recontract_invalid_control_count": 7, "plan_fixture_count": 13,
         "reachable_trace_event_count": 5, "accepted_contract_version": 2,
-        "mutation_rejection_count": 30, "support_state_effect": "none",
+        "mutation_rejection_count": 40, "support_state_effect": "none",
     }.items():
         if intent_resolution.get(key) != value:
             out.append(f"intent-resolution result drifted: {key} expected {value!r}, got {intent_resolution.get(key)!r}")
-    for phrase in ["4 valid and 6 invalid intake cases", "2 valid and 7 invalid re-contract cases", "30 of 30", "Support-state effect: `none`"]:
+    for phrase in ["4 valid and 6 invalid intake cases", "2 valid and 7 invalid re-contract cases", "40/40", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["intent_resolution_receipt"].casefold():
             out.append(f"intent-resolution receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions and exclusions", "Hashes are abstract equality tokens", "Support-state effect is exactly `none`"]:
