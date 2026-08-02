@@ -21,12 +21,15 @@ ARTIFACTS = [
     "schemas/governed_repository_change_result.schema.json",
     "experiments/intent_execution_handoff/results/2026-07-02-local.json",
 ]
+PREFERRED_ORDER = 324
 
 
 def main() -> None:
     value = json.loads(REGISTRY.read_text(encoding="utf-8"))
     value["units"] = [row for row in value["units"] if row.get("script") != SCRIPT]
-    order = len(value["units"]) + 1
+    if any(row.get("order") == PREFERRED_ORDER for row in value["units"]):
+        raise SystemExit("canonical intent-execution registry slot is occupied")
+    order = PREFERRED_ORDER
     value["units"].append({
         "id": f"validate_intent_execution_vertical_refinement:{order}",
         "order": order,
@@ -36,8 +39,8 @@ def main() -> None:
         "validation_class": "proof_or_evidence_gate",
         "input_contract": "The reachable Lean vertical model, complete schema-validated executed governed repository-change result, prior synthetic handoff probe, result schema, receipt, and adequacy dossier.",
         "input_artifacts": ARTIFACTS,
-        "output_contract": "Reject missing or reordered intent/authority/plan/context/route lineage, approval or dispatch bypass, unobserved effects, artifact or verifier mismatch, unsafe release, incomplete rollback/quarantine/residual custody, source drift, and support promotion.",
-        "output_assertions": ["nine executed scenarios", "eighty-nine governed events", "three releases", "three pre-effect refusals", "two exact-rollback refusals", "one failed-rollback quarantine", "six material and independently observed effects", "two residual scenarios", "thirty rejected concrete source mutations", "no support-state effect"],
+        "output_contract": "Require the exact thirty-seven-declaration Lean surface and reject unproved declarations, ill-typed event payloads, missing or reordered intent/authority/plan/context/route lineage, approval or dispatch bypass, unobserved effects, artifact or verifier mismatch, unsafe release, incomplete rollback/quarantine/residual custody, source drift, and support promotion.",
+        "output_assertions": ["37 exact Lean declarations", "nine executed scenarios", "eighty-nine governed events", "three releases", "three pre-effect refusals", "two exact-rollback refusals", "one failed-rollback quarantine", "six material and independently observed effects", "two residual scenarios", "thirty rejected concrete source mutations", "no support-state effect"],
         "claim_scope": "One fixed executed local repository-change task and its exact versioned result schema only.",
         "negative_controls": "validator_owned_concrete_source_field_mutations_and_digest_binding",
         "negative_control_cases": ["lineage event deletion or reordering", "authority and approval bypass", "untrusted instruction not quarantined", "unauthorized artifact path or digest mismatch", "correlated verifier or missing observation", "rollback or residual laundering", "unsafe release", "support promotion"],
@@ -50,6 +53,7 @@ def main() -> None:
         if artifact not in required:
             required.append(artifact)
     value["required_artifacts"] = required
+    value["units"].sort(key=lambda row: row["order"])
     value["summary"] = {"required_artifact_count": len(required), "unit_count": len(value["units"])}
     REGISTRY.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     print(f"Registered {SCRIPT}: {len(value['units'])} units, {len(required)} artifacts.")

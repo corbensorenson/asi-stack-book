@@ -1534,11 +1534,13 @@ theorem admitted_plan_event_refines_vertical_lower_plan
   have phasePair :
       event.fromPhase = .command ∧ event.toPhase = .admitted :=
     specific.1.1.1.1.1.1.1
+  have residual : event.residualDelta = 0 := specific.2
   simp [AsiStackProofs.IntentExecutionRefinement.VerticalEventValid,
+    AsiStackProofs.IntentExecutionRefinement.PayloadWellTyped,
     AsiStackProofs.IntentExecutionRefinement.EventSpecificValid,
     ProjectPlanningStateToVertical, ProjectPlanningEventToVertical,
     ProjectPlanningPhaseToVerticalLayer, kind, phase, root, artifact, time,
-    authority, hidden, phasePair.1, phasePair.2]
+    authority, hidden, residual, phasePair.1, phasePair.2]
 
 theorem lowered_job_event_refines_vertical_lower_job
     {state : PlanningLifecycleState} {event : PlanningLifecycleEvent}
@@ -1553,10 +1555,12 @@ theorem lowered_job_event_refines_vertical_lower_job
   have phasePair :
       event.fromPhase = .ready ∧ event.toPhase = .lowered :=
     specific.1.1.1.1
+  have residual : event.residualDelta = 0 := specific.2
   simp [AsiStackProofs.IntentExecutionRefinement.VerticalEventValid,
+    AsiStackProofs.IntentExecutionRefinement.PayloadWellTyped,
     AsiStackProofs.IntentExecutionRefinement.EventSpecificValid,
     ProjectPlanningStateToVertical, ProjectPlanningEventToVertical,
     ProjectPlanningPhaseToVerticalLayer, kind, phase, root, artifact, time,
-    authority, hidden, phasePair.1, phasePair.2]
+    authority, hidden, residual, phasePair.1, phasePair.2]
 
 end AsiStackProofs.Planning

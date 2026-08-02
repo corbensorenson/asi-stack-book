@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2027 |
+| Theorem declarations classified | 2052 |
 | Direct/projection-style theorem declarations | 405 |
-| Derived/decomposed theorem declarations | 1182 |
-| Unknown or mixed theorem declarations | 440 |
+| Derived/decomposed theorem declarations | 1194 |
+| Unknown or mixed theorem declarations | 453 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -112,7 +112,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | institutions-international-coordination-and-public-legitimacy | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 12 | 0 | 6 | 6 | manual review |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 12 | 0 | 4 | 8 | manual review |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
@@ -1099,18 +1099,43 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentContracts.lean` | `non_goal_conflict_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `prohibited_action_rejects_as_non_executable` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `unresolved_ambiguity_requests_clarification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_block_stops_without_changing_effect_accounting` | derived_or_decomposed | no | uses have, simp, subst |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_delivery_requires_verified_observed_effect` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_dispatch_requires_approval_and_receipt` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_effect_requires_prior_dispatch` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_residualization_increases_residuals_without_effect` | derived_or_decomposed | no | uses have, omega, simp, subst |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_run_never_reverses_logical_time` | derived_or_decomposed | no | uses contradiction, induction, simp, split |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_run_preserves_vertical_custody` | derived_or_decomposed | no | uses contradiction, have, induction, simp, split |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_run_preserves_vertical_invariant` | derived_or_decomposed | no | uses contradiction, induction, simp, split |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_advances_logical_time` | derived_or_decomposed | no | uses have, subst |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_cannot_widen_authority` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_payload_is_well_typed` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_preserves_root_and_parent` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_preserves_vertical_custody` | derived_or_decomposed | no | uses have, simp, subst |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `accepted_step_preserves_vertical_invariant` | derived_or_decomposed | no | uses cases, have, omega, rcases, simp, subst |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `artifact_binding_before_observation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `delivery_payload_on_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `delivery_without_verification_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `effect_payload_on_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `effect_without_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `full_vertical_trace_reaches_exact_delivery` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `inexact_rollback_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `missing_approval_authorization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `observation_before_attempted_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `observation_payload_on_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `quarantine_without_residual_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `reachable_delivery_has_full_modeled_custody` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `residual_payload_on_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `rollback_payload_on_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `self_verification_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `stale_logical_time_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `substituted_parent_artifact_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `substituted_root_contract_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentExecutionRefinement.lean` | `vertical_initial_satisfies_invariant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_compile_preserves_constraints_stops_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_material_delta_requires_recontract_state` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_recontract_increments_version_and_respects_ceiling` | derived_or_decomposed | no | uses have, rcases, simp |

@@ -7,6 +7,8 @@ import argparse
 import copy
 import hashlib
 import json
+import re
+import subprocess
 from pathlib import Path
 from typing import Any, Callable
 
@@ -21,6 +23,45 @@ LEAN = ROOT / "lean/AsiStackProofs/IntentExecutionRefinement.lean"
 SCHEMA = ROOT / "schemas/intent_execution_vertical_refinement.schema.json"
 RESULT = ROOT / "experiments/intent_execution_vertical_refinement/results/2026-07-15-local.json"
 PREFIX = ["intent_contract_accepted", "authority_ceiling_bound", "plan_dag_built", "context_packet_admitted", "route_candidates_costed"]
+REQUIRED_THEOREMS = (
+    "accepted_step_is_valid",
+    "accepted_step_applies_event",
+    "accepted_step_payload_is_well_typed",
+    "accepted_step_preserves_root_and_parent",
+    "accepted_step_cannot_widen_authority",
+    "accepted_dispatch_requires_approval_and_receipt",
+    "accepted_effect_requires_prior_dispatch",
+    "accepted_delivery_requires_verified_observed_effect",
+    "accepted_step_preserves_vertical_invariant",
+    "accepted_step_preserves_vertical_custody",
+    "accepted_step_advances_logical_time",
+    "accepted_block_stops_without_changing_effect_accounting",
+    "accepted_residualization_increases_residuals_without_effect",
+    "accepted_run_preserves_vertical_invariant",
+    "accepted_run_preserves_vertical_custody",
+    "accepted_run_never_reverses_logical_time",
+    "vertical_initial_satisfies_invariant",
+    "reachable_delivery_has_full_modeled_custody",
+    "full_vertical_trace_reaches_exact_delivery",
+    "missing_approval_authorization_is_rejected",
+    "authority_widening_is_rejected",
+    "hidden_override_is_rejected",
+    "effect_without_dispatch_is_rejected",
+    "delivery_without_verification_is_rejected",
+    "substituted_root_contract_is_rejected",
+    "substituted_parent_artifact_is_rejected",
+    "stale_logical_time_is_rejected",
+    "observation_payload_on_lowering_is_rejected",
+    "effect_payload_on_lowering_is_rejected",
+    "delivery_payload_on_lowering_is_rejected",
+    "residual_payload_on_lowering_is_rejected",
+    "rollback_payload_on_lowering_is_rejected",
+    "observation_before_attempted_effect_is_rejected",
+    "artifact_binding_before_observation_is_rejected",
+    "self_verification_is_rejected",
+    "inexact_rollback_is_rejected",
+    "quarantine_without_residual_is_rejected",
+)
 
 
 def load(path: Path) -> Any:
@@ -155,6 +196,18 @@ def mutations(source: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
 def build() -> tuple[dict[str, Any], list[str]]:
     source = load(SOURCE)
     errors = source_errors(source)
+    lean_text = LEAN.read_text(encoding="utf-8")
+    theorem_names = re.findall(r"(?m)^theorem ([A-Za-z0-9_]+)", lean_text)
+    if theorem_names != list(REQUIRED_THEOREMS):
+        errors.append("IntentExecutionRefinement exact theorem surface drifted")
+    if re.search(r"\b(sorry|admit|axiom)\b", lean_text):
+        errors.append("IntentExecutionRefinement contains an unproved declaration")
+    lean = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/IntentExecutionRefinement.lean"],
+        cwd=ROOT / "lean", text=True, capture_output=True,
+    )
+    if lean.returncode:
+        errors.append("IntentExecutionRefinement Lean compile failed: " + (lean.stdout + lean.stderr).strip())
     rejected = sum(bool(source_errors(value)) for _, value in mutations(source))
     if rejected != len(mutations(source)):
         errors.append("one or more semantic mutations were accepted")
@@ -208,7 +261,7 @@ def main() -> None:
         RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     elif not RESULT.exists() or load(RESULT) != result:
         raise SystemExit("Intent-execution vertical refinement result stale; run --write")
-    print(f"Intent-execution vertical refinement passed: {result['scenario_count']} scenarios, {result['accepted_event_count']} events, {result['material_effect_count']} effects, {result['mutation_rejection_count']} mutations rejected, support effect none.")
+    print(f"Intent-execution vertical refinement passed: 37 Lean declarations, {result['scenario_count']} scenarios, {result['accepted_event_count']} events, {result['material_effect_count']} effects, {result['mutation_rejection_count']} mutations rejected, support effect none.")
 
 
 if __name__ == "__main__":

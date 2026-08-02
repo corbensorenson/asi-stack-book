@@ -10857,8 +10857,9 @@
         "schemas/governed_repository_change_result.schema.json",
         "experiments/intent_execution_handoff/results/2026-07-02-local.json"
       ],
-      "output_contract": "Reject missing or reordered intent/authority/plan/context/route lineage, approval or dispatch bypass, unobserved effects, artifact or verifier mismatch, unsafe release, incomplete rollback/quarantine/residual custody, source drift, and support promotion.",
+      "output_contract": "Require the exact thirty-seven-declaration Lean surface and reject unproved declarations, ill-typed event payloads, missing or reordered intent/authority/plan/context/route lineage, approval or dispatch bypass, unobserved effects, artifact or verifier mismatch, unsafe release, incomplete rollback/quarantine/residual custody, source drift, and support promotion.",
       "output_assertions": [
+        "37 exact Lean declarations",
         "nine executed scenarios",
         "eighty-nine governed events",
         "three releases",

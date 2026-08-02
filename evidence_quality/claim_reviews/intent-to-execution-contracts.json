@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/intent-to-execution-contracts.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 51,
+    "prose_candidates_adjudicated": 52,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -271,6 +271,11 @@
     }
   },
   "prose_candidate_dispositions": {
+    "intent-to-execution-contracts.prose.0104b57597c0": {
+      "state": "duplicate_of_atom",
+      "rationale": "The chapter's finite arbitrary-run proof description is already owned by the strengthened operational-invariant formal target.",
+      "target_atom_id": "intent-to-execution-contracts.formal.intent-execution-contracts-operational-invariant"
+    },
     "intent-to-execution-contracts.prose.fa723efe9397": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped explanation of the existing typed-ingress boundary; the material obligation is already atomized."
@@ -471,12 +476,12 @@
       "rationale": "Summary restates future causal and transfer gates.",
       "target_atom_id": "intent-to-execution-contracts.beyond_sota.001"
     },
-    "intent-to-execution-contracts.prose.155b7d9b9aee": {
+    "intent-to-execution-contracts.prose.396677b03e78": {
       "state": "duplicate_of_atom",
       "rationale": "The bounded reachable-model result is already owned by the strengthened operational-invariant formal target.",
       "target_atom_id": "intent-to-execution-contracts.formal.intent-execution-contracts-operational-invariant"
     },
-    "intent-to-execution-contracts.prose.a0b8d14174cf": {
+    "intent-to-execution-contracts.prose.7e933b930812": {
       "state": "historical_or_source_report",
       "rationale": "States the exact formal and executable evidence limitations and makes no new positive claim.",
       "target_atom_id": null

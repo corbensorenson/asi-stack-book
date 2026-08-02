@@ -9,16 +9,20 @@ Status: validated source-anchored finite refinement; support-state effect
 transition model from accepted intent through command, plan, job, authorization,
 dispatch, attempted effect, independent observation, artifact binding,
 verification, delivery, blocking, residual custody, rollback, and quarantine.
-Every accepted step joins the same root contract and exact parent artifact,
-cannot widen authority, and cannot apply a hidden override. Dispatch requires
-approval and a dispatch receipt; effect requires prior dispatch; delivery
-requires verification and complete effect observation.
+Its exact 37-declaration surface gives every event kind an exclusive payload
+contract and proves one-step and arbitrary-run preservation of contract and
+authority custody, authority bounds, logical time, effect accounting, dispatch,
+artifact, verification, delivery, stop, and residual invariants. Eighteen
+closed countermodels reject identity substitution, stale time, smuggled
+payloads, premature transitions, self-verification, inexact rollback, and
+quarantine without residual custody.
 
 `scripts/validate_intent_execution_vertical_refinement.py` independently
 consumes the complete tracked
 `asi_stack.governed_repository_change_result.v0` artifact and validates it
-against its public schema. It checks all nine executed scenarios and all 89
-recorded governed events:
+against its public schema. It also requires the exact theorem surface, rejects
+unproved declarations, and compiles the module before checking all nine
+executed scenarios and all 89 recorded governed events:
 
 - three release paths with exact allowed changed paths, matching artifact
   receipts, independent effect observation, independent evaluator identity,
@@ -45,11 +49,10 @@ python3 scripts/validate_intent_execution_vertical_refinement.py
 
 ## Adjudication
 
-This replaces two assumption-restating theorem declarations with a reachable
-vertical transition relation and a checked executable refinement over one
-executed source schema. It is evidence for the exact local contract lineage,
-authority, effect, observation, artifact, verification, terminal, rollback,
-and residual obligations above. The support-state effect is exactly `none`.
+This is evidence for the exact finite contract lineage, payload typing,
+authority, time, effect, observation, artifact, verification, terminal,
+rollback, and residual obligations above, plus a checked executable refinement
+over one executed source schema. The support-state effect is exactly `none`.
 
 ## Non-claims
 

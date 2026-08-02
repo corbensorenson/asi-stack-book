@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3863,
+    "candidate_count": 3864,
     "review_state_counts": {
-      "duplicate_of_atom": 1832,
+      "duplicate_of_atom": 1833,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
@@ -23131,9 +23131,28 @@
       "target_atom_id": "intent-to-execution-contracts.mechanism.011"
     },
     {
+      "candidate_id": "intent-to-execution-contracts.prose.0104b57597c0",
+      "chapter_id": "intent-to-execution-contracts",
+      "source": "chapters/intent-to-execution-contracts.qmd:528",
+      "sentence": "kind-exclusive and prove the vertical invariant across arbitrary accepted",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The chapter's finite arbitrary-run proof description is already owned by the strengthened operational-invariant formal target.",
+      "target_atom_id": "intent-to-execution-contracts.formal.intent-execution-contracts-operational-invariant"
+    },
+    {
       "candidate_id": "intent-to-execution-contracts.prose.979b9ed96430",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:555",
+      "source": "chapters/intent-to-execution-contracts.qmd:565",
       "sentence": "It does not show that arbitrary natural-language",
       "cues": [
         "show"
@@ -23152,7 +23171,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.4c73995b8f5c",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:557",
+      "source": "chapters/intent-to-execution-contracts.qmd:567",
       "sentence": "that the effect transfers beyond one authored corpus and one quantized model.",
       "cues": [
         "transfers"
@@ -23171,7 +23190,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.7eaaa1228e66",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:587",
+      "source": "chapters/intent-to-execution-contracts.qmd:597",
       "sentence": "Promotion requires a nonzero useful denominator, effect-bearing controls,",
       "cues": [
         "requires"
@@ -23190,7 +23209,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.06ec0c1961aa",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:596",
+      "source": "chapters/intent-to-execution-contracts.qmd:606",
       "sentence": "evaluation, causal controls, reproduction, and transfer pass.",
       "cues": [
         "transfer"
@@ -23209,7 +23228,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.a62ae78fecbd",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:652",
+      "source": "chapters/intent-to-execution-contracts.qmd:662",
       "sentence": "applies stricter confidence eligibility to authority, and requires precedence,",
       "cues": [
         "requires"
@@ -23228,7 +23247,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.d3286417985a",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:667",
+      "source": "chapters/intent-to-execution-contracts.qmd:677",
       "sentence": "that is blocked because the required approval receipt is absent.",
       "cues": [
         "required"
@@ -23247,7 +23266,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.12c2bd254f8d",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:671",
+      "source": "chapters/intent-to-execution-contracts.qmd:681",
       "sentence": "parse natural-language intent, execute a deployed dispatcher, prove",
       "cues": [
         "prove"
@@ -23264,10 +23283,10 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "intent-to-execution-contracts.prose.155b7d9b9aee",
+      "candidate_id": "intent-to-execution-contracts.prose.396677b03e78",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:708",
-      "sentence": "The reachable model proves exact finite transition consequences and its Python",
+      "source": "chapters/intent-to-execution-contracts.qmd:719",
+      "sentence": "The reachable model proves exact finite transition and arbitrary-run invariant",
       "cues": [
         "proves"
       ],
@@ -23283,10 +23302,10 @@
       "target_atom_id": "intent-to-execution-contracts.formal.intent-execution-contracts-operational-invariant"
     },
     {
-      "candidate_id": "intent-to-execution-contracts.prose.a0b8d14174cf",
+      "candidate_id": "intent-to-execution-contracts.prose.7e933b930812",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:711",
-      "sentence": "they do not prove field meaning, arbitrary compilation refinement, parser",
+      "source": "chapters/intent-to-execution-contracts.qmd:722",
+      "sentence": "Together they do not prove field meaning, arbitrary",
       "cues": [
         "prove"
       ],
@@ -23304,7 +23323,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.c00c1fbac35c",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:714",
+      "source": "chapters/intent-to-execution-contracts.qmd:726",
       "sentence": "production behavior, reproduction, transfer, or chapter-core support.",
       "cues": [
         "transfer"
@@ -23323,7 +23342,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.2a03489329dc",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:802",
+      "source": "chapters/intent-to-execution-contracts.qmd:816",
       "sentence": "intent parsing, approval enforcement, sandboxing, or production transfer.",
       "cues": [
         "transfer"
@@ -23342,7 +23361,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.772be84ea85f",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:807",
+      "source": "chapters/intent-to-execution-contracts.qmd:821",
       "sentence": "transactions and deliberately measures usefulness with safety.",
       "cues": [
         "measures"
@@ -23361,7 +23380,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.6bad30035bd5",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:831",
+      "source": "chapters/intent-to-execution-contracts.qmd:845",
       "sentence": "it shows why the final contract surface is itself a measured gate, not evidence",
       "cues": [
         "shows"
@@ -23380,7 +23399,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.6e5c94bd2a11",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:848",
+      "source": "chapters/intent-to-execution-contracts.qmd:862",
       "sentence": "The renewal establishes neither useful-throughput advantage nor unsafe-release",
       "cues": [
         "establishes"
@@ -23399,7 +23418,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.a548471e9b3d",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:860",
+      "source": "chapters/intent-to-execution-contracts.qmd:874",
       "sentence": "verification, delivery, costs, compensation, and residuals must remain linked",
       "cues": [
         "must"
@@ -23418,7 +23437,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.56f7c6b87e42",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:863",
+      "source": "chapters/intent-to-execution-contracts.qmd:877",
       "sentence": "The current schemas, fixtures, finite proofs, and local campaigns show how to",
       "cues": [
         "show"
@@ -23437,7 +23456,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.9792f2ccb830",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:864",
+      "source": "chapters/intent-to-execution-contracts.qmd:878",
       "sentence": "They also show the central negative",
       "cues": [
         "show"
@@ -23456,7 +23475,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.3b4abd9b35df",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:869",
+      "source": "chapters/intent-to-execution-contracts.qmd:883",
       "sentence": "causal ablations, replication, transfer, and accepted evidence transitions.",
       "cues": [
         "transfer"
@@ -23475,7 +23494,7 @@
     {
       "candidate_id": "intent-to-execution-contracts.prose.50d71c279b13",
       "chapter_id": "intent-to-execution-contracts",
-      "source": "chapters/intent-to-execution-contracts.qmd:924",
+      "source": "chapters/intent-to-execution-contracts.qmd:938",
       "sentence": "then establishes which environmental signals may enter the contract's planning",
       "cues": [
         "establishes"

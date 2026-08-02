@@ -1859,6 +1859,66 @@ for theorem_name in (
         ),
     }
 
+_intent_execution_lifecycle_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "experiments/intent_execution_vertical_refinement/results/2026-07-15-local.json",
+        "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
+    ],
+    "classification_basis": [
+        "the reachable vertical lifecycle is bound to an independently checked governed repository-change result"
+    ],
+}
+
+for theorem_name in (
+    "accepted_step_applies_event",
+    "accepted_step_payload_is_well_typed",
+    "vertical_initial_satisfies_invariant",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/IntentExecutionRefinement.lean::{theorem_name}"
+    ] = {
+        **_intent_execution_lifecycle_refinement_base,
+        "semantic_level": "P1",
+        "rationale": (
+            "The theorem exposes an accepted-step consequence or checks the authored induction base; it supports the deeper lifecycle proof but is not itself a run-level result."
+        ),
+    }
+
+for theorem_name in (
+    "accepted_step_preserves_vertical_invariant",
+    "accepted_step_preserves_vertical_custody",
+    "accepted_step_advances_logical_time",
+    "accepted_block_stops_without_changing_effect_accounting",
+    "accepted_residualization_increases_residuals_without_effect",
+    "accepted_run_preserves_vertical_invariant",
+    "accepted_run_preserves_vertical_custody",
+    "accepted_run_never_reverses_logical_time",
+    "reachable_delivery_has_full_modeled_custody",
+    "substituted_root_contract_is_rejected",
+    "substituted_parent_artifact_is_rejected",
+    "stale_logical_time_is_rejected",
+    "observation_payload_on_lowering_is_rejected",
+    "effect_payload_on_lowering_is_rejected",
+    "delivery_payload_on_lowering_is_rejected",
+    "residual_payload_on_lowering_is_rejected",
+    "rollback_payload_on_lowering_is_rejected",
+    "observation_before_attempted_effect_is_rejected",
+    "artifact_binding_before_observation_is_rejected",
+    "self_verification_is_rejected",
+    "inexact_rollback_is_rejected",
+    "quarantine_without_residual_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/IntentExecutionRefinement.lean::{theorem_name}"
+    ] = {
+        **_intent_execution_lifecycle_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves a one-step or arbitrary-run lifecycle invariant, a reachable terminal custody result, or a closed rejecting countermodel in the exact finite vertical semantics."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

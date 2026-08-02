@@ -14,6 +14,34 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:command.semantic_interface.failure_blocks_promotion` | semantically_reviewed | retain_load_bearing_semantic |
 | `lean:command.semantic_interface.field_confidence_route` | semantically_reviewed | retain_load_bearing_semantic |
 
+## Current refinement
+
+`AsiStackProofs.IntentExecutionRefinement` now gives every event kind an exact,
+exclusive payload contract, closing the prior path by which a lowering event
+could carry effect, observation, delivery, residual, or rollback data. Its
+thirty-seven declarations prove one-step and arbitrary-run preservation of the
+vertical invariant, root-contract and authority-ceiling custody, monotone
+logical time, bounded active authority, effect-attempt and observation
+accounting, approval and dispatch custody, artifact and independent-verification
+custody, exact delivery accounting, stopped blocking, positive residualization,
+and failed-rollback quarantine. The existing ten-event witness reaches delivery;
+eighteen closed countermodels reject custody substitution, stale time,
+kind-invalid payloads, premature lifecycle transitions, self-verification,
+inexact rollback, and quarantine without a residual.
+
+`scripts/validate_intent_execution_vertical_refinement.py` requires the exact
+thirty-seven-declaration theorem surface, rejects unproved declarations,
+compiles the module, and independently checks nine executed scenarios, 89
+events, six material effects, and thirty concrete source mutations. The model
+trusts authored event kinds, contract and artifact identities, authority,
+receipts, observations, verifier identity, rollback, and residual fields. It
+proves no parser correctness, natural-language or arbitrary semantic
+equivalence, authentic authority, approval-service behavior, tool-effect truth,
+verifier competence, rollback efficacy, useful delivery, support transition,
+deployment, reproduction, or transfer. Those behavioral and cross-component
+obligations belong to Project Theseus or empirical evaluation. Chapter support
+remains `argument` and `support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |
