@@ -106,7 +106,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 52 | 0 | 22 | 9 |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | 1 | 32 | 0 | 33 | 8 |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 9 | 13 | 5 | 2 |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 29 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 25 | 0 | 23 | 4 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 68 | 0 | 31 | 12 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |

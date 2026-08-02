@@ -11,6 +11,27 @@ SOURCES={
 "budget":ROOT/"experiments/resource_budget_ledgers/results/2026-07-01-local.md","costed":ROOT/"experiments/costed_route_resource_slice/results/2026-06-29-local.json","workflow":ROOT/"experiments/resource_workflow_trace/results/2026-07-01-local.json","capacity":ROOT/"experiments/capacity_smoothing/results/2026-07-01-local.md","flagship":ROOT/"experiments/resource_flagship_lane/results/2026-07-01-local.json","ci":ROOT/"experiments/resource_ci_cost_profile/results/2026-07-04-main.json","governance":ROOT/"experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json","simulation":ROOT/"experiments/simulation_transfer_boundaries/results/2026-06-30-local.md","theseus_sim":ROOT/"experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json","theseus_export":ROOT/"experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json","workload":ROOT/"experiments/resource_workload_quality_probe/results/2026-07-01-local.json","load":ROOT/"experiments/resource_load_stability_probe/results/2026-07-01-local.json"}
 KINDS={"requested":"bindRequest","budgeted":"declareBudget","reserved":"reserveCapacity","scheduled":"scheduleWork","executed":"recordExecution","verified":"verifyOutcome","transferred":"transportClaim","reconciled":"reconcileSpend","closed":"close"}
 ACCEPTED={"acceptBudgeting","acceptReservation","acceptSchedule","acceptExecution","acceptVerification","acceptTransfer","acceptReconciliation","acceptClosure","acceptClosed"}
+STAGES=tuple(KINDS)
+LIVE_STAGES=STAGES[:-1]
+NEXT_STAGE=dict(zip(STAGES[:-1],STAGES[1:]))
+IDENTITY_KEYS=("requestDigest","consumerDigest","taskDigest","policyDigest","rightsDigest","resourceDigest","evaluatorDigest","simulationDigest","resultDigest")
+THEOREMS=(
+ "authority_request_never_accepts","missing_protected_floor_blocks_reservation",
+ "missing_reviewer_capacity_blocks_schedule","raw_proxy_cannot_promote_executed_work",
+ "simulated_claim_without_fidelity_blocks_transfer","simulated_claim_above_fidelity_blocks_transfer",
+ "missing_failure_retention_blocks_verification",
+ "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
+ "complete_simulation_transport_reaches_reconciliation_without_promotion",
+ "accepted_step_is_accepted","accepted_step_applies_event","apply_event_preserves_full_identity",
+ "rejected_apply_event_preserves_state","accepted_step_preserves_full_identity",
+ "accepted_step_preserves_non_authority","accepted_step_adds_exactly_one_receipt",
+ "accepted_step_advances_stage","apply_event_resource_bill_count_monotone",
+ "apply_event_reconciliation_count_monotone","accepted_run_preserves_full_identity",
+ "accepted_run_preserves_support","accepted_run_preserves_external_effect",
+ "accepted_run_accounts_exact_receipts","accepted_run_resource_bill_count_monotone",
+ "accepted_run_reconciliation_count_monotone","accepted_run_has_accepted_trace",
+ "resource_run_append","closed_state_accepts_no_event",
+ "complete_resource_run_reaches_closed_with_exact_receipts")
 def load(p:Path)->Any:return json.loads(p.read_text())
 def rel(p:Path)->str:return str(p.relative_to(ROOT))
 def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -24,7 +45,7 @@ def packet()->dict[str,Any]:
  for k in ["rawProxyPromotion","simulated","supportPromotionRequested","externalEffectRequested"]:p[k]=False
  return p
 def state(stage,last=0):
- p=packet();return {k:p[k] for k in ["requestDigest","consumerDigest","taskDigest","policyDigest","rightsDigest","resourceDigest","evaluatorDigest","simulationDigest","resultDigest"]}|{"lastEventDigest":last}
+ p=packet();return {k:p[k] for k in IDENTITY_KEYS}|{"stage":stage,"lastEventDigest":last,"receiptCount":0,"resourceBillReceiptCount":0,"reconciliationReceiptCount":0,"supportAssigned":False,"externalEffectCommitted":False}
 def route(stage,kind,p,s):
  if kind!=KINDS[stage]:return "rejectWrongStage"
  if any(p[k]!=s[k] for k in ["requestDigest","consumerDigest","taskDigest"]):return "rejectRequestSubstitution"
@@ -47,6 +68,26 @@ def route(stage,kind,p,s):
    if p["fidelitySupportLevel"]<p["claimedSupportLevel"]:return "blockFidelityOverclaim"
   return "acceptReconciliation"
  raise AssertionError(stage)
+def step(s:dict[str,Any],kind:str,p:dict[str,Any])->dict[str,Any]|None:
+ if s["stage"]=="closed":return None
+ selected=route(s["stage"],kind,p,s)
+ if selected not in ACCEPTED:return None
+ out=dict(s);out["stage"]=NEXT_STAGE[s["stage"]];out["lastEventDigest"]=p["eventDigest"];out["receiptCount"]+=1
+ if selected=="acceptVerification":out["resourceBillReceiptCount"]+=1
+ if selected=="acceptClosure":out["reconciliationReceiptCount"]+=1
+ return out
+def lifecycle_events()->list[tuple[str,dict[str,Any]]]:
+ rows=[]
+ for index,stage_name in enumerate(LIVE_STAGES,start=1):
+  p=packet();p["eventDigest"]=index;rows.append((KINDS[stage_name],p))
+ return rows
+def run_states(initial:dict[str,Any],events:list[tuple[str,dict[str,Any]]])->list[dict[str,Any]]|None:
+ states=[dict(initial)];current=dict(initial)
+ for kind,p in events:
+  nxt=step(current,kind,p)
+  if nxt is None:return None
+  states.append(nxt);current=nxt
+ return states
 def cases():
  rows=[]
  def add(cid,stage,expected,mutation=None,kind=None,last=0):
@@ -70,16 +111,66 @@ def source_results(errors):
  if counts!=expected:errors.append(f"source counts drifted: {counts}")
  validators=["validate_resource_budget_ledgers.py","validate_costed_route_resource_slice.py","validate_resource_workflow_trace.py","validate_capacity_smoothing.py","validate_resource_flagship_lane.py","validate_resource_ci_cost_profile.py","validate_resource_governance_tax_tradeoff.py","validate_simulation_transfer_boundaries.py","validate_theseus_simulation_fidelity_receipt_suite_import.py","validate_theseus_rlds_minari_trace_export_import.py","validate_resource_workload_quality_probe.py","validate_resource_load_stability_probe.py"]
  return {"counts":counts,"sha256":{rel(p):sha(p) for p in SOURCES.values()},"validator_runs":[run(["python3",f"scripts/{v}"]) for v in validators]}
+def lifecycle_checks(errors:list[str])->dict[str,Any]:
+ initial=state("requested");events=lifecycle_events();states=run_states(initial,events)
+ if states is None:errors.append("canonical lifecycle failed");return {}
+ final=states[-1]
+ expected={"stage":"closed","lastEventDigest":8,"receiptCount":8,"resourceBillReceiptCount":1,"reconciliationReceiptCount":1,"supportAssigned":False,"externalEffectCommitted":False}
+ for key,value in expected.items():
+  if final.get(key)!=value:errors.append(f"terminal witness drifted: {key}")
+ split_checks=0
+ for split in range(len(events)+1):
+  prefix=run_states(initial,events[:split])
+  if prefix is None:errors.append(f"trace prefix {split} failed");continue
+  suffix=run_states(prefix[-1],events[split:])
+  if suffix is None or suffix[-1]!=final:errors.append(f"trace composition split {split} failed")
+  split_checks+=1
+ identity_checks=sum(all(s[k]==initial[k] for k in IDENTITY_KEYS) for s in states)
+ nonauthority_checks=sum(not s["supportAssigned"] and not s["externalEffectCommitted"] for s in states)
+ bill_monotonicity_checks=sum(a["resourceBillReceiptCount"]<=b["resourceBillReceiptCount"] for a,b in zip(states,states[1:]))
+ reconciliation_monotonicity_checks=sum(a["reconciliationReceiptCount"]<=b["reconciliationReceiptCount"] for a,b in zip(states,states[1:]))
+ terminal_rejections=sum(step(final,kind,{**packet(),"eventDigest":900+i}) is None for i,kind in enumerate(KINDS.values()))
+ return {"states":states,"trace_event_count":len(events),"trace_composition_split_count":split_checks,"identity_preservation_check_count":identity_checks,"non_authority_preservation_check_count":nonauthority_checks,"resource_bill_monotonicity_check_count":bill_monotonicity_checks,"reconciliation_monotonicity_check_count":reconciliation_monotonicity_checks,"terminal_rejection_count":terminal_rejections,"final":final}
+def mutation_checks()->list[dict[str,Any]]:
+ receipts=[]
+ for row in cases():
+  if not row["accepted"]:receipts.append({"mutation_id":f"route:{row['case_id']}","rejected":True})
+ for stage_index,stage_name in enumerate(LIVE_STAGES):
+  for key in IDENTITY_KEYS:
+   p=packet();p["eventDigest"]=200+stage_index;p[key]=999999
+   receipts.append({"mutation_id":f"identity:{stage_name}:{key}","rejected":step(state(stage_name),KINDS[stage_name],p) is None})
+  wrong_kind=KINDS[LIVE_STAGES[(stage_index+1)%len(LIVE_STAGES)]]
+  p=packet();p["eventDigest"]=300+stage_index
+  receipts.append({"mutation_id":f"wrong-kind:{stage_name}","rejected":step(state(stage_name),wrong_kind,p) is None})
+  p=packet();p["eventDigest"]=400+stage_index
+  receipts.append({"mutation_id":f"replay:{stage_name}","rejected":step(state(stage_name,last=p["eventDigest"]),KINDS[stage_name],p) is None})
+  p=packet();p["eventDigest"]=500+stage_index;p["supportPromotionRequested"]=True
+  receipts.append({"mutation_id":f"support:{stage_name}","rejected":step(state(stage_name),KINDS[stage_name],p) is None})
+  p=packet();p["eventDigest"]=600+stage_index;p["externalEffectRequested"]=True
+  receipts.append({"mutation_id":f"effect:{stage_name}","rejected":step(state(stage_name),KINDS[stage_name],p) is None})
+ closed=state("closed")
+ for index,kind in enumerate(KINDS.values()):
+  p=packet();p["eventDigest"]=700+index
+  receipts.append({"mutation_id":f"terminal:{kind}","rejected":step(closed,kind,p) is None})
+ return receipts
 def build(errors):
- rows=cases();text=LEAN.read_text();body=re.search(r"inductive Route where(?P<body>.*?)deriving DecidableEq",text,re.S).group("body");declared=set(re.findall(r"\|\s+([A-Za-z][A-Za-z0-9]*)",body));reached={x["actual_route"] for x in rows};negative=[x for x in rows if not x["accepted"]]
+ rows=cases();text=LEAN.read_text();body=re.search(r"inductive Route where(?P<body>.*?)deriving DecidableEq",text,re.S).group("body");declared=set(re.findall(r"\|\s+([A-Za-z][A-Za-z0-9]*)",body));reached={x["actual_route"] for x in rows};negative=[x for x in rows if not x["accepted"]];theorem_surface=tuple(re.findall(r"^theorem\s+([A-Za-z0-9_]+)",text,re.M));checks=lifecycle_checks(errors);mutations=mutation_checks()
  for x in rows:
   if x["actual_route"]!=x["expected_route"]:errors.append(f"{x['case_id']}: {x['actual_route']} != {x['expected_route']}")
  if (len(declared),len(reached),len(rows),len(negative))!=(66,66,66,57):errors.append(f"route coverage drifted: {len(declared)}/{len(reached)}/{len(rows)}/{len(negative)}")
- return {"schema_version":"asi_stack.resource_economics_refinement.result.v1","result_id":"2026-07-15-resource-economics-refinement","recorded_date":"2026-07-15","command":COMMAND,"model":{"lean_module":rel(LEAN),"stage_count":9,"route_count":len(declared),"reached_route_count":len(reached),"route_case_count":len(rows),"rejected_mutation_count":len(negative),"simulation_transfer_route_reached":"acceptReconciliation" in reached,"closed_route_reached":"acceptClosed" in reached,"support_assignment_count":0,"external_effect_count":0},"source_result_refinement":source_results(errors),"route_cases":rows,"lean_verification":run(["lake","env","lean","AsiStackProofs/ResourceEconomicsRefinement.lean"],ROOT/"lean"),"support_state_effect":"none","external_effect":"none","residuals":["Finite authored allocation-and-claim-transport lifecycle only; no deployed scheduler, market, serving system, reviewer pool, or simulator ran.","Source suites combine synthetic fixtures, repository replays, local timing, historical CI records, and sanitized imports with different evidence meanings.","The costed-route 66.98% result and governance-pays scenarios are fixture-specific and do not establish economic optimality or general savings.","Simulation scope, fidelity, temporal semantics, omissions, resource bills, and support levels are authored gates or bounded records, not calibrated world-model measurements."],"non_claims":["no economic optimality, useful-throughput, model quality, safety, deployed scheduling, simulation adequacy, physical feasibility, transfer, SOTA, AGI, ASI, or support claim","no inference from cost arithmetic, repository replay, CI timing, route coverage, or green validators to real-world resource benefit","no support assignment or external effect"]}
+ if theorem_surface!=THEOREMS:errors.append(f"theorem surface drifted: {theorem_surface}")
+ if re.search(r"\b(sorry|axiom)\b",text):errors.append("Lean placeholder detected")
+ if len(mutations)!=170 or not all(x["rejected"] for x in mutations):errors.append(f"mutation coverage drifted: {sum(x['rejected'] for x in mutations)}/{len(mutations)}")
+ expected_checks={"trace_event_count":8,"trace_composition_split_count":9,"identity_preservation_check_count":9,"non_authority_preservation_check_count":9,"resource_bill_monotonicity_check_count":8,"reconciliation_monotonicity_check_count":8,"terminal_rejection_count":9}
+ for key,value in expected_checks.items():
+  if checks.get(key)!=value:errors.append(f"lifecycle check drifted: {key}")
+ model={"lean_module":rel(LEAN),"stage_count":9,"lean_theorem_count":len(theorem_surface),"lean_theorem_surface":list(theorem_surface),"route_count":len(declared),"reached_route_count":len(reached),"route_case_count":len(rows),**expected_checks,"identity_field_count":len(IDENTITY_KEYS),"mutation_count":len(mutations),"rejected_mutation_count":sum(x["rejected"] for x in mutations),"simulation_transfer_route_reached":"acceptReconciliation" in reached,"closed_route_reached":"acceptClosed" in reached,"support_assignment_count":0,"external_effect_count":0}
+ final=checks.get("final",{});witness={"terminal_stage":final.get("stage"),"receipt_count":final.get("receiptCount"),"resource_bill_receipt_count":final.get("resourceBillReceiptCount"),"reconciliation_receipt_count":final.get("reconciliationReceiptCount"),"support_assigned":final.get("supportAssigned"),"external_effect_committed":final.get("externalEffectCommitted")}
+ return {"schema_version":"asi_stack.resource_economics_refinement.result.v2","result_id":"2026-07-15-resource-economics-refinement","recorded_date":"2026-07-15","command":COMMAND,"model":model,"source_result_refinement":source_results(errors),"route_cases":rows,"mutation_receipts":mutations,"witness":witness,"lean_verification":run(["lake","env","lean","AsiStackProofs/ResourceEconomicsRefinement.lean"],ROOT/"lean"),"support_state_effect":"none","external_effect":"none","residuals":["Finite authored allocation-and-claim-transport lifecycle only; no deployed scheduler, market, serving system, reviewer pool, or simulator ran.","Source suites combine synthetic fixtures, repository replays, local timing, historical CI records, and sanitized imports with different evidence meanings.","The costed-route 66.98% result and governance-pays scenarios are fixture-specific and do not establish economic optimality or general savings.","Simulation scope, fidelity, temporal semantics, omissions, resource bills, and support levels are authored gates or bounded records, not calibrated world-model measurements."],"non_claims":["no economic optimality, useful-throughput, model quality, safety, deployed scheduling, simulation adequacy, physical feasibility, transfer, SOTA, AGI, ASI, or support claim","no inference from cost arithmetic, repository replay, CI timing, route coverage, mutation rejection, or green validators to real-world resource benefit","no support assignment or external effect"]}
 def main():
  a=argparse.ArgumentParser();a.add_argument("--write-result",action="store_true");args=a.parse_args();errors=[];result=build(errors);jsonschema.validate(result,load(SCHEMA));serialized=json.dumps(result,indent=2)+"\n"
  if args.write_result:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(serialized)
  elif not RESULT.exists() or RESULT.read_text()!=serialized:errors.append(f"{rel(RESULT)} stale; run {COMMAND} --write-result")
  if errors:print("Resource Economics refinement failed:\n - "+"\n - ".join(errors));sys.exit(1)
- print("Resource Economics refinement passed: 9 stages, 66 routes, 57/57 mutations rejected; twelve bounded resource/simulation results digest-bound; support/effect none.")
+ print("Resource Economics refinement passed: 29 Lean theorems, 9 stages, 9 trace splits, 66 routes, 170/170 mutations rejected; twelve bounded resource/simulation results digest-bound; support/effect none.")
 if __name__=="__main__":main()

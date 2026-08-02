@@ -2224,11 +2224,11 @@
       "tag": "lean:resources.budgets.operational_invariant",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
-      "formal_target": "A reachable allocation lifecycle requires a scoped request, explicit resource inventory and units, direct, displaced, verification, and uncertainty costs, protected floors, bounded capacity, reviewer and verifier capacity, queue policy, observed spend, useful-outcome accounting, verification, reconciliation, and closure.",
+      "formal_target": "A reachable allocation lifecycle requires a scoped request, explicit resource inventory and units, direct, displaced, verification, and uncertainty costs, protected floors, bounded capacity, reviewer and verifier capacity, queue policy, observed spend, useful-outcome accounting, verification, reconciliation, and closure. Arbitrary accepted runs preserve nine bound identities and zero support/external-effect authority, account for exactly one receipt per event, keep resource-bill and reconciliation receipts monotone, compose across event batches, and admit no event after closure; an independent consumer rejects 170/170 mutations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resources.budgets.failure_blocks_promotion",
@@ -2238,7 +2238,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resources.costed_route.fixture_bridge",
@@ -2248,7 +2248,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resources.workflow_trace.trace_property_bridge",
@@ -2258,7 +2258,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resources.capacity_smoothing.reviewer_trace_bridge",
@@ -2268,7 +2268,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resources.serving_memory.separation_guard",
@@ -2278,7 +2278,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resource.governance_tax.tradeoff_bridge",
@@ -2288,7 +2288,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:simulation.fidelity.operational_invariant",
@@ -2298,7 +2298,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:simulation.fidelity.failure_blocks_promotion",
@@ -2308,7 +2308,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge",
@@ -2318,7 +2318,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge",
@@ -2328,7 +2328,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable nine-stage allocation-and-simulation-transport lifecycle, 66 routes, 57 rejecting mutations, twelve digest-bound bounded source families, and no support/effect authority."
+      "rationale": "Exact 29-theorem nine-stage lifecycle proves arbitrary-run nine-field identity custody, non-authority, exact receipts, resource-bill and reconciliation monotonicity, traces, composition, and closure; the consumer reaches 66 routes and rejects 170 mutations."
     },
     {
       "tag": "lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary",

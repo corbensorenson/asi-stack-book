@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2585 |
+| Theorem declarations classified | 2605 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1597 |
-| Unknown or mixed theorem declarations | 563 |
+| Derived/decomposed theorem declarations | 1616 |
+| Unknown or mixed theorem declarations | 564 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -151,7 +151,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 52 | 8 | 42 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | autonomous-replication-proliferation-and-containment | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
-| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 29 | 0 | 20 | 9 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 25 | 13 | 11 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 68 | 0 | 56 | 12 | manual review |
@@ -2102,13 +2102,33 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `resource_workflow_trace_fixture_events_roll_up_to_summary` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `selected_route_is_lowest_cost_eligible_in_fixture` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | `serving_memory_throughput_quality_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_has_accepted_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_preserves_external_effect` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_preserves_full_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_preserves_support` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_reconciliation_count_monotone` | derived_or_decomposed | no | uses cases, have, induction, rw, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_run_resource_bill_count_monotone` | derived_or_decomposed | no | uses cases, have, induction, rw, simp, subst |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_advances_stage` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_preserves_full_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `accepted_step_preserves_non_authority` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `apply_event_preserves_full_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `apply_event_reconciliation_count_monotone` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `apply_event_resource_bill_count_monotone` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `authority_request_never_accepts` | derived_or_decomposed | no | uses by_cases, cases, simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `closed_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_resource_run_reaches_closed_with_exact_receipts` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `complete_simulation_transport_reaches_reconciliation_without_promotion` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_failure_retention_blocks_verification` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_protected_floor_blocks_reservation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `missing_reviewer_capacity_blocks_schedule` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `raw_proxy_cannot_promote_executed_work` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `rejected_apply_event_preserves_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `resource_run_append` | derived_or_decomposed | no | uses cases, induction, simp |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `simulated_claim_above_fidelity_blocks_transfer` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | `simulated_claim_without_fidelity_blocks_transfer` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Routing.lean` | `failed_readiness_routes_to_fallback_or_residual_not_promotion` | derived_or_decomposed | no | uses cases, constructor, have, rw |

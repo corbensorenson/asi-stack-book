@@ -6,16 +6,16 @@
   "scope": "bounded_finite_resource_allocation_artifact_reality_stewardship_and_compression_lifecycle_semantics",
   "module_count": 4,
   "public_target_count": 33,
-  "theorem_declaration_count": 94,
+  "theorem_declaration_count": 114,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.ResourceEconomicsRefinement",
       "path": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 13,
-      "theorem_declaration_count": 9,
-      "plain_language_proposition": "A finite request-to-closure lifecycle keeps resource identity, units, direct and displaced cost, verification cost, uncertainty, protected floors, capacity, queue policy, observed spend, useful outcome, simulation fidelity, residual, and reconciliation records joined while rejecting raw-proxy promotion and authority leakage.",
-      "modeled_state": "Nine authored stages and 66 routes over request, policy, rights, resource, evaluator, simulation, result, capacity, queue, verification, transfer, reconciliation, and closure fields, with twelve bounded result artifacts digest-bound by an independent consumer.",
+      "theorem_declaration_count": 29,
+      "plain_language_proposition": "A finite request-to-closure lifecycle keeps resource identity, units, direct and displaced cost, verification cost, uncertainty, protected floors, capacity, queue policy, observed spend, useful outcome, simulation fidelity, residual, and reconciliation records joined while rejecting raw-proxy promotion and authority leakage; arbitrary accepted runs preserve identity and non-authority, account for exact receipts, compose, and terminate at absorbing closure.",
+      "modeled_state": "Nine authored stages and 66 routes over request, policy, rights, resource, evaluator, simulation, result, capacity, queue, verification, transfer, reconciliation, and closure fields, with receipt, resource-bill, reconciliation, support, and external-effect state and twelve bounded result artifacts digest-bound by an independent consumer.",
       "assumptions": [
         "All resource inventories, units, costs, capacity limits, queue policies, useful outcomes, verifier results, simulation declarations, residuals, descendants, and digests are truthful and complete for the declared boundary.",
         "The lifecycle does not allocate real capacity, measure opportunity cost, validate a simulator, observe a natural task, or enforce a queue in a deployed system.",
@@ -30,7 +30,7 @@
         "scripts/validate_resource_economics_refinement.py",
         "experiments/resource_economics_refinement/results/2026-07-15-local.json"
       ],
-      "mutation_evidence": "The independent consumer exercises 66 routes, rejects 57 of 57 mutations, and digest-binds twelve bounded resource and simulation results while preserving support and external effects at none.",
+      "mutation_evidence": "The independent consumer checks nine trace splits, exercises 66 routes, rejects 170 of 170 route and lifecycle mutations, and digest-binds twelve bounded resource and simulation results while preserving support and external effects at none.",
       "maximum_inference": "Adequate for exact finite allocation-record ordering, identity, protected-floor, proxy-blocking, simulation-fidelity, reconciliation, and closure consequences. It does not establish inventory completeness, measured efficiency, optimal allocation, useful throughput, fairness, simulator validity, transfer, safety, deployment, or support movement."
     },
     {

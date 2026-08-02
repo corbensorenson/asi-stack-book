@@ -1,15 +1,56 @@
 {
-  "schema_version": "asi_stack.resource_economics_refinement.result.v1",
+  "schema_version": "asi_stack.resource_economics_refinement.result.v2",
   "result_id": "2026-07-15-resource-economics-refinement",
   "recorded_date": "2026-07-15",
   "command": "python3 scripts/validate_resource_economics_refinement.py",
   "model": {
     "lean_module": "lean/AsiStackProofs/ResourceEconomicsRefinement.lean",
     "stage_count": 9,
+    "lean_theorem_count": 29,
+    "lean_theorem_surface": [
+      "authority_request_never_accepts",
+      "missing_protected_floor_blocks_reservation",
+      "missing_reviewer_capacity_blocks_schedule",
+      "raw_proxy_cannot_promote_executed_work",
+      "simulated_claim_without_fidelity_blocks_transfer",
+      "simulated_claim_above_fidelity_blocks_transfer",
+      "missing_failure_retention_blocks_verification",
+      "complete_resource_lifecycle_reaches_closed_without_support_or_effect_authority",
+      "complete_simulation_transport_reaches_reconciliation_without_promotion",
+      "accepted_step_is_accepted",
+      "accepted_step_applies_event",
+      "apply_event_preserves_full_identity",
+      "rejected_apply_event_preserves_state",
+      "accepted_step_preserves_full_identity",
+      "accepted_step_preserves_non_authority",
+      "accepted_step_adds_exactly_one_receipt",
+      "accepted_step_advances_stage",
+      "apply_event_resource_bill_count_monotone",
+      "apply_event_reconciliation_count_monotone",
+      "accepted_run_preserves_full_identity",
+      "accepted_run_preserves_support",
+      "accepted_run_preserves_external_effect",
+      "accepted_run_accounts_exact_receipts",
+      "accepted_run_resource_bill_count_monotone",
+      "accepted_run_reconciliation_count_monotone",
+      "accepted_run_has_accepted_trace",
+      "resource_run_append",
+      "closed_state_accepts_no_event",
+      "complete_resource_run_reaches_closed_with_exact_receipts"
+    ],
     "route_count": 66,
     "reached_route_count": 66,
     "route_case_count": 66,
-    "rejected_mutation_count": 57,
+    "trace_event_count": 8,
+    "trace_composition_split_count": 9,
+    "identity_preservation_check_count": 9,
+    "non_authority_preservation_check_count": 9,
+    "resource_bill_monotonicity_check_count": 8,
+    "reconciliation_monotonicity_check_count": 8,
+    "terminal_rejection_count": 9,
+    "identity_field_count": 9,
+    "mutation_count": 170,
+    "rejected_mutation_count": 170,
     "simulation_transfer_route_reached": true,
     "closed_route_reached": true,
     "support_assignment_count": 0,
@@ -587,6 +628,696 @@
       "accepted": true
     }
   ],
+  "mutation_receipts": [
+    {
+      "mutation_id": "route:wrong-stage",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:request-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:policy-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:resource-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:evidence-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:event-replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:authority-leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-consumer",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-task",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-risk",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-rights",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-horizon",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:requested-nonClaims",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-resourceInventory",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-units",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-directCost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-displacedCost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-verificationCost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-uncertainty",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:budgeted-protectedFloors",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-capacity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-reviewerCapacity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-verifierCapacity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-protectedOverhead",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-debtExpiry",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reserved-capacityOwner",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:scheduled-queuePolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:scheduled-highRiskPriority",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:scheduled-tailPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:scheduled-tenantIsolation",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:scheduled-fallback",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-actualSpend",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-failureRetention",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-unsafeReleaseAccounting",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-usefulOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-resourceBill",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:executed-raw-proxy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-verifierOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-evaluatorBoundary",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-falseDecisionAccounting",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-residuals",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-recovery",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reconciled-variance",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reconciled-opportunityCost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reconciled-incidents",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reconciled-descendants",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:reconciled-evidenceTransition",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-acknowledgment",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-resultDigestBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-cleanup",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-simulationScope",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-simulationFidelity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-temporalSemantics",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-simulationResourceBill",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-simulationOmissions",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-transferDecision",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:transferred-overclaim",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:requested:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:budgeted:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:budgeted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:budgeted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:budgeted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:budgeted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reserved:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:reserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:reserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:reserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:reserved",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:scheduled:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:scheduled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:scheduled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:scheduled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:scheduled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:executed:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:transferred:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:transferred",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:transferred",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:transferred",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:transferred",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:requestDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:taskDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:resourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:simulationDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:reconciled:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:bindRequest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:declareBudget",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:reserveCapacity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:scheduleWork",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:recordExecution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:verifyOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:transportClaim",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:reconcileSpend",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:close",
+      "rejected": true
+    }
+  ],
+  "witness": {
+    "terminal_stage": "closed",
+    "receipt_count": 8,
+    "resource_bill_receipt_count": 1,
+    "reconciliation_receipt_count": 1,
+    "support_assigned": false,
+    "external_effect_committed": false
+  },
   "lean_verification": {
     "command": "lake env lean AsiStackProofs/ResourceEconomicsRefinement.lean",
     "exit_code": 0,
@@ -602,7 +1333,7 @@
   ],
   "non_claims": [
     "no economic optimality, useful-throughput, model quality, safety, deployed scheduling, simulation adequacy, physical feasibility, transfer, SOTA, AGI, ASI, or support claim",
-    "no inference from cost arithmetic, repository replay, CI timing, route coverage, or green validators to real-world resource benefit",
+    "no inference from cost arithmetic, repository replay, CI timing, route coverage, mutation rejection, or green validators to real-world resource benefit",
     "no support assignment or external effect"
   ]
 }

@@ -20,7 +20,7 @@ EXPECTED_MODULES = [
     "AsiStackProofs.ArtifactCompressionRefinement",
 ]
 EXPECTED_TARGETS = [13, 10, 7, 3]
-EXPECTED_THEOREMS = [9, 21, 37, 27]
+EXPECTED_THEOREMS = [29, 21, 37, 27]
 EXPECTED_CONSUMERS = [
     "scripts/validate_resource_economics_refinement.py",
     "scripts/validate_artifact_reality_refinement.py",
@@ -44,7 +44,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("module denominator or order drifted")
     if [row.get("public_target_count") for row in rows] != EXPECTED_TARGETS or audit.get("public_target_count") != 33:
         out.append("public target denominator drifted")
-    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 94:
+    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 114:
         out.append("theorem denominator drifted")
     if cluster is None or cluster.get("state") != "adequate" or cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
@@ -103,7 +103,7 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("P4-C6 semantic proof cluster failed:\n - " + "\n - ".join(failures))
-    print("P4-C6 semantic proof cluster passed: 4 adequate modules, 33 public targets, 94 theorem declarations, cost/reality/ownership/compression/lifecycle/authority semantics separated, 12 audit mutations rejected; all 6 P4 clusters terminal; support/release/publication none.")
+    print("P4-C6 semantic proof cluster passed: 4 adequate modules, 33 public targets, 114 theorem declarations, cost/reality/ownership/compression/lifecycle/authority semantics separated, 12 audit mutations rejected; all 6 P4 clusters terminal; support/release/publication none.")
 
 
 if __name__ == "__main__":

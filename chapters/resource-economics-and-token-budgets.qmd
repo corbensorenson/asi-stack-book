@@ -125,12 +125,22 @@ The claim remains at `argument` support. The source notes justify design discuss
 ### Proof rationalization receipt
 
 The formal surface now separates policy conformance from economic or simulation
-evidence. `AsiStackProofs.ResourceEconomicsRefinement` models nine reachable
-stages and 66 routes from scoped request through budgeting, protected capacity,
-scheduling, observed execution, verification, simulation-claim transport,
-reconciliation, and closure. An independently implemented consumer reaches all
-routes and rejects 57/57 non-accepting mutations, including identity
-substitution, replay, authority leakage, missing protected floors, missing
+evidence. `AsiStackProofs.ResourceEconomicsRefinement` contains 29 theorem
+declarations over nine reachable stages and 66 routes from scoped request
+through budgeting, protected capacity, scheduling, observed execution,
+verification, simulation-claim transport, reconciliation, and closure.
+Arbitrary accepted runs preserve nine request, consumer, task, policy, rights,
+resource, evaluator, simulation, and result identities and zero
+support/external-effect authority. They account for exactly one receipt per
+event, keep resource-bill and reconciliation receipts monotone, expose an
+accepted trace, compose across event batches, and admit no event after closure.
+One eight-event witness closes with eight receipts, one resource-bill receipt,
+and one reconciliation receipt.
+
+An independently implemented consumer reconstructs the lifecycle, checks all
+nine prefix/suffix composition splits, reaches all 66 routes, and rejects
+170/170 route, identity, wrong-stage, replay, authority, support, effect, and
+post-closure mutations. These include missing protected floors, missing
 reviewer or verifier capacity, raw-proxy promotion, incomplete failure
 accounting, incomplete simulation contracts, fidelity overclaim, and incomplete
 closure.

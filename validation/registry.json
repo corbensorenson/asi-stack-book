@@ -14979,12 +14979,12 @@
     },
     {
       "script": "validate_p4_c6_semantic_proof_cluster.py",
-      "input_contract": "The current four-module resource/artifact/steward/compression cluster with 33 public targets and 75 theorem declarations.",
+      "input_contract": "The current four-module resource/artifact/steward/compression cluster with 33 public targets and 114 theorem declarations.",
       "output_contract": "Require propositions, state, assumptions, countermodels, consumers, mutation evidence, semantic separations, and ceilings; execute four consumers and reject twelve audit mutations.",
       "output_assertions": [
         "4 adequate modules",
         "33 public targets",
-        "75 theorem declarations",
+        "114 theorem declarations",
         "6 semantic separations",
         "4 consumers pass",
         "12 mutations reject",
