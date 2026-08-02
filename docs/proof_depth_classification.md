@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2174 |
+| Theorem declarations classified | 2194 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1274 |
-| Unknown or mixed theorem declarations | 491 |
-| Safety-critical theorem declarations | 105 |
+| Derived/decomposed theorem declarations | 1286 |
+| Unknown or mixed theorem declarations | 499 |
+| Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
 | Validation errors | 0 |
@@ -31,7 +31,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 36 | 0 | 30 | 6 | manual review |
-| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -82,7 +82,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | unmapped | 0 | 16 | 0 | 16 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 20 | 0 | 4 | 16 | manual review |
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | dangerous-capability-domains-and-misuse-uplift | 1 | 20 | 1 | 15 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
@@ -666,6 +666,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | `tainted_transaction_without_declassification_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `target_branch_mismatch_rejects_context_transaction` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `untainted_derivative_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_agency_correction_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_agency_correction_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_agency_correction_event_is_non_authorizing` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_agency_correction_event_never_widens_authority` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_agency_correction_event_preserves_custody` | derived_or_decomposed | yes | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_bounded_control_requires_review_approval_paths_and_expiry` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_challenge_requires_affected_party_and_preexpiry` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_correction_records_accountability_residual_and_zero_ceiling` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_independent_review_records_correction_paths` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `accepted_material_notice_is_recorded` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_authority_widening_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_consent_laundering_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_missing_accountability_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_missing_notice_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_outsider_challenge_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_run_preserves_custody_non_authority_and_narrowing` | derived_or_decomposed | yes | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_runs_compose` | derived_or_decomposed | yes | uses cases, induction, simp |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_self_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `agency_correction_unbounded_delegation_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Corrigibility.lean` | `complete_agency_correction_trace_reaches_exact_corrected_state` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Corrigibility.lean` | `denied_action_without_accountable_principal_preserves_audit` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_usable_review_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |

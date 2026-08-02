@@ -5083,10 +5083,24 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
+      "input_artifacts": [
+        "scripts/validate_agency_rights.py",
+        "lean/AsiStackProofs/Corrigibility.lean",
+        "schemas/agency_rights_checklist.schema.json",
+        "experiments/agency_rights/fixtures/valid_degraded_right_residualized.json",
+        "experiments/agency_rights/fixtures/valid_high_impact_pre_effect_approval.json",
+        "experiments/agency_rights/fixtures/valid_reversible_maintainer_review.json",
+        "experiments/agency_rights/fixtures/invalid_empty_affected_parties.json",
+        "experiments/agency_rights/fixtures/invalid_high_impact_no_approval.json",
+        "experiments/agency_rights/fixtures/invalid_late_review_after_effect.json",
+        "experiments/agency_rights/fixtures/invalid_no_corrigibility_path.json",
+        "experiments/agency_rights/fixtures/invalid_rights_theater_unusable.json",
+        "experiments/agency_rights/fixtures/invalid_unaccountable_delegation.json"
+      ],
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
+      "negative_controls": "validator_owned",
       "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {

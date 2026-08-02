@@ -439,6 +439,85 @@ CURRENT_SEMANTIC_OVERRIDES[
     "rationale": "An accepted expiry closes the bounded constraint lease and sets its modeled authority ceiling to zero after the recorded time threshold.",
 }
 
+_agency_correction_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_agency_correction_trace_reaches_exact_corrected_state",
+        "scripts/validate_agency_rights.py",
+    ],
+    "classification_basis": [
+        "the correction-control lifecycle and seven rejecting controls are independently reconstructed by the agency-rights validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_agency_correction_event_is_admissible",
+    "accepted_agency_correction_event_is_exact_advance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Corrigibility.lean::{theorem_name}"
+    ] = {
+        **_agency_correction_lifecycle_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded correction-control lifecycle.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Corrigibility.lean::complete_agency_correction_trace_reaches_exact_corrected_state"
+] = {
+    **_agency_correction_lifecycle_base,
+    "semantic_level": "P2",
+    "rationale": "The five-event notice, review, bounded-control, challenge, and correction trace is a bounded nonvacuity witness.",
+}
+
+for theorem_name in (
+    "accepted_agency_correction_event_preserves_custody",
+    "accepted_agency_correction_event_is_non_authorizing",
+    "accepted_agency_correction_event_never_widens_authority",
+    "accepted_material_notice_is_recorded",
+    "accepted_independent_review_records_correction_paths",
+    "accepted_bounded_control_requires_review_approval_paths_and_expiry",
+    "accepted_challenge_requires_affected_party_and_preexpiry",
+    "agency_correction_missing_notice_is_rejected",
+    "agency_correction_self_review_is_rejected",
+    "agency_correction_unbounded_delegation_is_rejected",
+    "agency_correction_authority_widening_is_rejected",
+    "agency_correction_outsider_challenge_is_rejected",
+    "agency_correction_missing_accountability_is_rejected",
+    "agency_correction_consent_laundering_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Corrigibility.lean::{theorem_name}"
+    ] = {
+        **_agency_correction_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem constrains one executable correction-control boundary and is covered by an independently encoded accepted trace or rejecting control."
+        ),
+    }
+
+for theorem_name in (
+    "agency_correction_run_preserves_custody_non_authority_and_narrowing",
+    "agency_correction_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Corrigibility.lean::{theorem_name}"
+    ] = {
+        **_agency_correction_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "Structural induction proves arbitrary accepted traces preserve correction-control custody, non-authority, and narrowing or compose exactly across batches."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Corrigibility.lean::accepted_correction_records_accountability_residual_and_zero_ceiling"
+] = {
+    **_agency_correction_lifecycle_base,
+    "semantic_level": "P5",
+    "rationale": "An accepted bounded correction records one correction and accountability receipt, preserves a residual, and closes the modeled control ceiling.",
+}
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",

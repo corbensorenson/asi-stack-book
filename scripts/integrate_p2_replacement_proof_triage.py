@@ -45,7 +45,7 @@ def entry(record: dict) -> dict:
             **base,
             "triage": "formal-invariant",
             "recommended_route": "lean-candidate",
-            "rationale": "Implemented four bounded generic countermodel consequences for missing review, unbounded delegation, and missing accountability. The literal theorem-per-fixture lifecycle surface was retired into the shared transition model and executable consumer/refinement suite; these retained consequences do not establish material rights usability, evaluator quality, correction outcomes, rollback execution, or deployment.",
+            "rationale": "Four bounded generic route consequences now sit beside a twenty-theorem correction-control lifecycle with arbitrary-run custody, non-authority, narrowing, exact composition, a five-event witness, and seven controls independently reconstructed by the agency-rights validator. These authored records do not establish affected-party standing, notice comprehension, consent, reviewer competence, material interface usability, correction outcome truth, rollback execution, deployment, or support.",
         }
     return {
         **base,

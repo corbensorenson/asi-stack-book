@@ -32,7 +32,7 @@ python3 scripts/validate_agency_rights.py
 The 2026-06-28 local run passed:
 
 ```text
-Agency rights harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).
+Agency rights harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s), 5 correction events, 7 rejecting correction controls.
 ```
 
 The result record is `experiments/agency_rights/results/2026-06-28-local.md`.

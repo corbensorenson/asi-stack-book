@@ -51,7 +51,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContentAuthenticityReview.lean` | 1 | 32 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 20 | 0 | 18 | 2 |
-| `lean/AsiStackProofs/Corrigibility.lean` | 1 | 4 | 0 | 6 | 2 |
+| `lean/AsiStackProofs/Corrigibility.lean` | 1 | 24 | 0 | 17 | 4 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
