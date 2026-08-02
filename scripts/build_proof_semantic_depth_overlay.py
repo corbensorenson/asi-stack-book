@@ -419,6 +419,61 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed experiment dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_governed_experiment_campaign": "The closed dossier reaches only Project Theseus governed experiment campaign eligibility, not scientific truth, support, or release.",
+    "identical_significance_can_hide_opposite_preregistration_integrity": "Two experiment cases witness opposite preregistration integrity under identical significance signals.",
+    "identical_replication_counts_can_hide_opposite_independence": "Two replication cases witness opposite independence under identical success-count signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ScientificExperimentReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed experiment dossier or information-loss collision witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "attempt_id_collection_append_composes": "Structural induction proves attempt-identity collection composes over concatenation for arbitrary finite experiment lists.",
+    "every_attempt_id_survives_collection": "Structural induction proves every member attempt identity remains present in the collected finite ledger.",
+    "complete_denominator_counts_every_attempt": "A quantified member argument derives denominator inclusion for every recorded attempt.",
+    "omitted_attempt_rejects_complete_denominator": "A quantified contradiction rejects denominator completeness whenever one member attempt is omitted.",
+    "outcome_exposed_branch_rejects_confirmatory_integrity": "A quantified contradiction rejects confirmatory integrity when protected outcomes were opened.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 54 experiment-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 54 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 54 mutations into the lifecycle repair state.",
+    "expired_experiment_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired experiment contract.",
+    "omitted_attempt_gap_persists_when_included_count_falls": "Natural-number order proves counting fewer attempts cannot close an existing denominator gap.",
+    "replication_gap_persists_when_independent_count_falls": "Natural-number order proves fewer independent replications cannot close an existing replication gap.",
+    "hypothesis_change_invalidates_experiment_receipt": "The hypothesis-identity conjunct rejects a receipt presented for a different hypothesis.",
+    "protocol_change_invalidates_experiment_receipt": "The protocol-version conjunct rejects a receipt presented under a changed protocol.",
+    "instrument_change_invalidates_experiment_receipt": "The instrument-version conjunct rejects a receipt presented under a changed instrument.",
+    "data_change_invalidates_experiment_receipt": "The data-snapshot conjunct rejects a receipt presented for changed data.",
+    "analysis_change_invalidates_experiment_receipt": "The analysis-version conjunct rejects a receipt presented under a changed analysis.",
+    "environment_change_invalidates_experiment_receipt": "The environment conjunct rejects a receipt presented in a changed environment.",
+    "claim_ceiling_change_invalidates_experiment_receipt": "The claim-ceiling conjunct rejects a receipt presented for a changed inference ceiling.",
+    "significance_signals_cannot_recover_preregistration_integrity": "A same-significance/opposite-preregistration collision proves no significance classifier is exact for every modeled experiment.",
+    "replication_counts_cannot_recover_independence": "A same-count/opposite-independence collision proves no replication-count classifier is exact for every modeled replication.",
+    "missing_independent_replication_blocks_empirical_support_promotion": "The Evidence States bridge rejects empirical support promotion without an empirical replication witness.",
+    "missing_null_results_rejects_benchmark_ratchet_promotion": "The Benchmark Ratchets bridge rejects readiness promotion when null results are absent.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ScientificExperimentReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/scientific_experiment_dossier.json"],
+        "classification_basis": ["a quantified induction, mutation family, denominator obligation, confirmatory counterexample, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "generated_hypothesis_does_not_establish_discovery", "completed_experiment_does_not_establish_causal_truth",
+    "significant_result_does_not_establish_reproducibility", "replay_does_not_establish_independent_replication",
+    "dual_use_review_does_not_establish_safety", "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant", "campaign_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_design", "readiness_requires_execution",
+    "readiness_requires_analysis", "readiness_requires_replication", "readiness_requires_governance",
+    "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ScientificExperimentReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored experiment-review state"],
+        "rationale": "The theorem constrains only the encoded experiment review; it establishes no hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
     "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",

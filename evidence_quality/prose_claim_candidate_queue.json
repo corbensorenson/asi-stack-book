@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3850,
+    "candidate_count": 3854,
     "review_state_counts": {
       "duplicate_of_atom": 1830,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1635
+      "nonmaterial_explanation": 1639
     }
   },
   "candidates": [
@@ -66519,13 +66519,12 @@
       "target_atom_id": "scientific-discovery-and-experimental-governance.beyond_sota.001"
     },
     {
-      "candidate_id": "scientific-discovery-and-experimental-governance.prose.a699f046284d",
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.39f0e38f45db",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:319",
-      "sentence": "Planned formalization route: `lean:scientific-discovery-and-experimental-governance.admission_boundary` covers only the finite admission record for scientific discovery and experimental governance; it cannot establish whether scientific discovery and experimental governance works safely or transfers.",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:323",
+      "sentence": "The mechanized core proves experimental-record custody rather than scientific truth.",
       "cues": [
-        "cannot",
-        "transfers"
+        "proves"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -66535,13 +66534,91 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference.",
+      "disposition_rationale": "This sentence bounds the mechanized contribution to experimental-record custody and explicitly withholds scientific truth; it explains the proof envelope without creating a support-bearing atom or support-state movement.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.686eaa47f86c",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:323",
+      "sentence": "A complete denominator must count each attempt, while an omitted attempt rejects completeness; an outcome-exposed branch cannot satisfy confirmatory integrity.",
+      "cues": [
+        "cannot",
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This is a compact explanation of the finite-attempt denominator and confirmatory-branch integrity theorems in the cited Lean module. It adds no empirical result, causal conclusion, or support-state promotion.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.0c20e568c1c3",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:325",
+      "sentence": "Two information-loss constructions show why equal significance signals cannot determine whether preregistration remained intact and why equal successful-replication counts cannot determine whether replication was independent.",
+      "cues": [
+        "cannot",
+        "show"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This sentence summarizes two bounded information-loss countermodels proved in Lean. It does not claim that real experiments are preregistered, independent, reproducible, or scientifically successful.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.206c537e1d5e",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:325",
+      "sentence": "These are theorems about encoded records and transitions; the model does not prove hypothesis truth, causal identification, instrument accuracy, reproducibility, scientific discovery, laboratory safety, deployment readiness, support, release, or external effect.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This explicit nonclaim prevents proof laundering by enumerating propositions outside the formal envelope; it creates no positive chapter claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "scientific-discovery-and-experimental-governance.prose.8efb9f545696",
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:325",
+      "sentence": "Those claims require the Project Theseus governed experiment campaign across preregistered synthetic and benign natural protocols, instruments or simulators, known-null and known-effect controls, drift, contamination, analysis variation, independent replication, correction, and dual-use review.",
+      "cues": [
+        "require"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This is the explicit Project Theseus handoff for empirical and whole-system work excluded from Lean. It records future evidence ownership without asserting that the campaign exists, succeeds, or changes support state.",
       "target_atom_id": null
     },
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.2dc2d398af99",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:333",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:339",
       "sentence": "AI can accelerate every stage, so it must also make every",
       "cues": [
         "must"
@@ -66560,7 +66637,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.00739a956cab",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:343",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:349",
       "sentence": "Experimental custody preserves ancestry, design, instruments, calibration, attempts, blinding, stopping, analysis, replication, dual-use decisions, correction, and claim ceilings so automation increases search without silently weakening science.",
       "cues": [
         "increases"
@@ -66579,7 +66656,7 @@
     {
       "candidate_id": "scientific-discovery-and-experimental-governance.prose.d197a762b3ce",
       "chapter_id": "scientific-discovery-and-experimental-governance",
-      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:350",
+      "source": "chapters/scientific-discovery-and-experimental-governance.qmd:356",
       "sentence": "maintain and coordinate those artifacts but cannot promote the scientific",
       "cues": [
         "cannot"

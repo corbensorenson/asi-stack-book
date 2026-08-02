@@ -3,8 +3,8 @@
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
   "proof_target_count": 324,
   "status_counts": {
-    "implemented": 320,
-    "planned": 4
+    "implemented": 321,
+    "planned": 3
   },
   "chapter_counts": {
     "adversarial-evaluation-sandbagging-and-training-time-deception": 8,
@@ -3107,11 +3107,11 @@
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "chapter_title": "Scientific Discovery and Experimental Governance",
       "tag": "lean:scientific-discovery-and-experimental-governance.admission_boundary",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Scientific Discovery and Experimental Governance record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "status": "planned",
+      "module": "AsiStackProofs.ScientificExperimentReview",
+      "formal_target": "An eight-transition experiment review admits only dossiers that bind hypothesis ancestry, exploration versus confirmation, preregistered design, instrument authority, complete attempts, analysis, replication, correction, dual-use custody, expiry, and explicit non-authority. All 54 admission-axis mutations reject with exact repairs. Finite attempt identity composes and preserves every member, omitted attempts and outcome-exposed confirmatory branches reject completeness, expiry and denominator or replication gaps remain rejecting under adverse changes, seven scope changes invalidate receipts, significance cannot recover preregistration integrity, replication counts cannot recover independence, missing independent replication blocks Evidence States empirical promotion, and missing null results reject Benchmark Ratchet promotion. No theorem establishes hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect.",
+      "status": "implemented",
       "outline_line": 7233,
-      "module_path": "lean/AsiStackProofs/NoDeferralAdmission.lean"
+      "module_path": "lean/AsiStackProofs/ScientificExperimentReview.lean"
     },
     {
       "chapter_id": "artifact-steward-agents-and-living-project-governance",

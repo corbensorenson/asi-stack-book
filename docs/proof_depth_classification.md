@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 127 |
-| Theorem declarations classified | 1783 |
-| Direct/projection-style theorem declarations | 345 |
-| Derived/decomposed theorem declarations | 1088 |
-| Unknown or mixed theorem declarations | 350 |
+| Lean modules scanned | 128 |
+| Theorem declarations classified | 1824 |
+| Direct/projection-style theorem declarations | 359 |
+| Derived/decomposed theorem declarations | 1102 |
+| Unknown or mixed theorem declarations | 363 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -121,7 +121,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition, scientific-discovery-and-experimental-governance | 4 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition | 3 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -158,6 +158,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | scientific-discovery-and-experimental-governance | 1 | 41 | 14 | 14 | 13 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 19 | 0 | 7 | 12 | manual review |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -1694,6 +1695,47 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `rejected_event_preserves_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `undisclosed_shared_dependencies_require_review` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | `unjustified_abstention_requires_evidence` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `analysis_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `attempt_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `claim_ceiling_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `complete_denominator_counts_every_attempt` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `complete_dossier_reaches_only_theseus_governed_experiment_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `completed_experiment_does_not_establish_causal_truth` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `data_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `dual_use_review_does_not_establish_safety` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `environment_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `every_attempt_id_survives_collection` | derived_or_decomposed | no | uses cases, induction, right, simp, subst |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `expired_experiment_contract_remains_expired_when_time_advances` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `generated_hypothesis_does_not_establish_discovery` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `hypothesis_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `identical_replication_counts_can_hide_opposite_independence` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `identical_significance_can_hide_opposite_preregistration_integrity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `instrument_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `missing_independent_replication_blocks_empirical_support_promotion` | derived_or_decomposed | no | uses apply, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `missing_null_results_rejects_benchmark_ratchet_promotion` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `omitted_attempt_gap_persists_when_included_count_falls` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `omitted_attempt_rejects_complete_denominator` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `outcome_exposed_branch_rejects_confirmatory_integrity` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `protocol_change_invalidates_experiment_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_analysis` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_design` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_execution` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_governance` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `readiness_requires_replication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `replay_does_not_establish_independent_replication` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `replication_counts_cannot_recover_independence` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `replication_gap_persists_when_independent_count_falls` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `significance_signals_cannot_recover_preregistration_integrity` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | `significant_result_does_not_establish_reproducibility` | unknown_or_mixed | no | no ':= by' body detected |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_permission_routes_are_exact` | derived_or_decomposed | no | uses cases |

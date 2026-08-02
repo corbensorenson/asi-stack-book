@@ -3163,7 +3163,12 @@
     "lean/AsiStackProofs/LearningTheoryForecastReview.lean",
     "tests/fixtures/proof_models/learning_theory_forecast_dossier.json",
     "evidence_quality/proof_model_dossiers/learning-theory-generalization-and-scaling-science.md",
-    "chapters/learning-theory-generalization-and-scaling-science.qmd"
+    "chapters/learning-theory-generalization-and-scaling-science.qmd",
+    "scripts/validate_scientific_experiment_review.py",
+    "lean/AsiStackProofs/ScientificExperimentReview.lean",
+    "tests/fixtures/proof_models/scientific_experiment_dossier.json",
+    "evidence_quality/proof_model_dossiers/scientific-discovery-and-experimental-governance.md",
+    "chapters/scientific-discovery-and-experimental-governance.qmd"
   ],
   "units": [
     {
@@ -18135,11 +18140,56 @@
       "prohibited_inference": "Does not establish generalization, transfer, emergence, scaling accuracy, calibration, safety, deployment, support, release, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
+    },
+    {
+      "id": "validate_scientific_experiment_review.py:465",
+      "order": 465,
+      "script": "validate_scientific_experiment_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical scientific-experiment Lean review, independent 54-axis fixture, chapter proof boundary, dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_scientific_experiment_review.py",
+        "lean/AsiStackProofs/ScientificExperimentReview.lean",
+        "tests/fixtures/proof_models/scientific_experiment_dossier.json",
+        "evidence_quality/proof_model_dossiers/scientific-discovery-and-experimental-governance.md",
+        "chapters/scientific-discovery-and-experimental-governance.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, attempt, confirmation, monotonicity, receipt, collision, consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "eight-transition review reaches only Project Theseus governed experiment campaign eligibility",
+        "54/54 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "finite attempt identity composes and preserves every member",
+        "omitted attempts and outcome-exposed confirmatory branches reject completeness",
+        "expiry, attempt gaps, and replication gaps remain rejecting under adverse changes",
+        "hypothesis, protocol, instrument, data, analysis, environment, and claim-ceiling changes invalidate receipts",
+        "significance cannot recover preregistration integrity and replication counts cannot recover independence",
+        "missing independent replication and null results reject Evidence States and Benchmark Ratchet promotion",
+        "41 exact Lean declarations move no chapter support, deployment, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored experiment review, finite attempt custody, confirmatory integrity, adverse monotonicity, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_54_axis_identity_design_execution_analysis_replication_governance_boundary_attempt_confirmation_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "hypothesis drift",
+        "attempt omission",
+        "outcome exposure",
+        "expired contract",
+        "scope drift",
+        "signal collision",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, deployment, support, release, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_two_independent_consumers_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3119,
-    "unit_count": 464
+    "required_artifact_count": 3124,
+    "unit_count": 465
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

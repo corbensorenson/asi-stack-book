@@ -582,14 +582,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "scientific-discovery-and-experimental-governance": {
-        "reviewed_sha256": "23673a03724b4987590fd9d53a698b57c92343e820b9b05ebc8d188218e34b2e",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "7105890fc550a748e37cc17e9a67e14168c89c6c2656be147ef25ae2b3a8a066",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve hypothesis ancestry, laboratory authority, discovery ceilings, complete attempts, replication, dual-use review, resource allocation, and accountable scientific judgment as distinct lifecycle roles",
             "the Aletheia and corrected A-Lab source contributions remain explicitly bounded from local reproduction, causal discovery, domain transfer, laboratory safety, and general scientific autonomy",
             "the chapter preserves positive-control competence, null and inconclusive denominators, information-hazard limits, adjacent-owner handoffs, and argument-only support without padding-based completion",
+            "the formalization is restricted to authored experiment-dossier admissibility, finite attempt and confirmatory custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and Evidence States/Benchmark Ratchets rejection; it establishes no hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect",
         ],
         "support_state_effect": "none",
     },

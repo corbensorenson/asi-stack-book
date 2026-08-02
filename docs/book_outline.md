@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 127 Lean modules, 1783 theorem declarations, 1088 derived/decomposed, 345 direct/projection, 350 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 128 Lean modules, 1824 theorem declarations, 1102 derived/decomposed, 359 direct/projection, 363 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -7230,7 +7230,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Scientific Discovery and Experimental Governance record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `AsiStackProofs.ScientificExperimentReview` | An eight-transition experiment review admits only dossiers that bind hypothesis ancestry, exploration versus confirmation, preregistered design, instrument authority, complete attempts, analysis, replication, correction, dual-use custody, expiry, and explicit non-authority. All 54 admission-axis mutations reject with exact repairs. Finite attempt identity composes and preserves every member, omitted attempts and outcome-exposed confirmatory branches reject completeness, expiry and denominator or replication gaps remain rejecting under adverse changes, seven scope changes invalidate receipts, significance cannot recover preregistration integrity, replication counts cannot recover independence, missing independent replication blocks Evidence States empirical promotion, and missing null results reject Benchmark Ratchet promotion. No theorem establishes hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:scientific-discovery-and-experimental-governance:END -->
 
 ### Artifact Steward Agents and Living Project Governance

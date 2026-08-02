@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 71 |
+| Chapters | 72 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -88,6 +88,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 49 | 0 | 0 |
 | `safety-cases-and-structured-assurance` | 8 | 8 | 0 | 0 |
 | `scalable-oversight-and-adversarial-ai-control` | 7 | 8 | 0 | 0 |
+| `scientific-discovery-and-experimental-governance` | 0 | 0 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 22 | 0 | 0 |
 | `societal-resilience-and-misuse-defense` | 0 | 0 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 21 | 0 | 0 |

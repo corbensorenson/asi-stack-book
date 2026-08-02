@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 320, "planned": 4} |
-| Triage class counts | {"formal-invariant": 320, "process-contract": 4} |
-| Lean modules referenced | 93 |
+| Manifest status counts | {"implemented": 321, "planned": 3} |
+| Triage class counts | {"formal-invariant": 321, "process-contract": 3} |
+| Lean modules referenced | 94 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -110,6 +110,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 8 | 21 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | 7 | 11 | 0 | 8 | 2 |
+| `lean/AsiStackProofs/ScientificExperimentReview.lean` | 1 | 41 | 0 | 28 | 8 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 19 | 0 | 22 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 21 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
@@ -203,7 +204,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 6 | 0 | 0 |
 | `safety-cases-and-structured-assurance` | 8 | 8 | 0 | 0 |
 | `scalable-oversight-and-adversarial-ai-control` | 7 | 7 | 0 | 0 |
-| `scientific-discovery-and-experimental-governance` | 1 | 0 | 0 | 0 |
+| `scientific-discovery-and-experimental-governance` | 1 | 1 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
 | `societal-resilience-and-misuse-defense` | 1 | 1 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
@@ -519,7 +520,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngineLifecycleRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `scientific-discovery-and-experimental-governance` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:scientific-discovery-and-experimental-governance.admission_boundary` | `scientific-discovery-and-experimental-governance` | `AsiStackProofs.ScientificExperimentReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
