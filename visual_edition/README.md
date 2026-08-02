@@ -17,7 +17,8 @@ or release scope.
 - the repository-local v2 authoring skill, beat-plan/review schemas, and
   canonical generation-2 production ledger;
 - owner-authorized unlisted-preview bindings, kept separate from final
-  publication receipts;
+  publication receipts, plus an explicit withdrawal record for superseded
+  predecessors;
 - immutable generation receipts and exact, non-authorizing replacement plans;
 - reusable Manim source;
 - per-chapter packet metadata, storyboard, scene code, narration, reviewed
@@ -87,7 +88,7 @@ python3 scripts/validate_manim_v2_production_ledger.py
 
 `manim_v2_production_ledger.json` is the current generation-2 authority. It
 derives all 84 targets in canonical book order, preserves every generation-one
-master and the twelve unlisted preview identities, and prevents YouTube or
+master and the twelve predecessor identities (now private historical custody), and prevents YouTube or
 Quarto advancement before the complete audiovisual acceptance chain passes.
 
 All counts are derived from current packets. A storyboard, scene stub, silent
@@ -130,12 +131,14 @@ The original technical visual grammar and narration path are `ratified` and
 `qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
 reviewed captions, descriptive transcripts, validated final masters, render
 and mux receipts, and seven exact scene-midpoint review frames. The local
-masters total 1,015,153,522 bytes outside Git and Pages. Twelve exact masters
-are now staged as unlisted YouTube videos in the private canonical playlist
-and projected into their chapters as visibly labeled preview players with
-adjacent descriptive transcripts. Published-current videos, final platform
-receipts, and published-current Quarto embeds remain zero. A local validated
-master or an unlisted preview is not a publication.
+masters total 1,015,153,522 bytes outside Git and Pages. The first-generation
+twelve preview identities were withdrawn from the current projection and made
+private on YouTube; their exact custody remains in
+`youtube_preview_history_2026-07-30.json`. Generation-two candidates 19–24
+remain unlisted in the private canonical playlist but are not accepted/current.
+Published-current videos, final platform receipts, and published-current
+Quarto embeds remain zero. A local validated master or an unlisted candidate
+is not a publication.
 
 Owner viewing of the first five previews exposed a stricter pedagogical
 failure that these technical receipts do not measure. Videos 2–5 are thin
@@ -317,9 +320,13 @@ before full publication only when an exact row in
 position, YouTube identity, local master, chapter digest, source commit,
 caption, transcript, thumbnail state, and unlisted visibility. The player and
 landing-page roster must identify the incomplete denominator, and preview
-counts must remain separate from `published_current`. The current preview is
-12/84; local caption tracks still need platform attachment for all twelve, and
-custom thumbnails still need application for videos 7–12.
+counts must remain separate from `published_current`. The current projection
+is intentionally **0/84**: the twelve generation-one predecessors were
+withdrawn from Quarto and the landing page on 2026-08-02, with their exact
+identities and digests preserved in
+`youtube_preview_history_2026-07-30.json`. Generation-two candidates 19–24
+remain unlisted but are not accepted/current; chapters 13–18 have no YouTube
+object yet.
 
 Each packet keeps an editable SVG thumbnail source in Git. Upload preparation
 rasterizes it to an ignored 3840×2160 PNG, binds both source and output
@@ -391,6 +398,21 @@ packet and lifecycle state, YouTube channel/video/playlist identity, upload
 generation, uploaded render digest, bound chapter digest and source commit,
 publication receipt, predecessor video, and the next required action. Rebuild
 the ledger after any chapter, packet, publication, or playlist change.
+
+## P7.3-F10 — withdrawn predecessor preview (2026-08-02)
+
+The first-generation 1–12 previews are no longer allowed to project as the
+current visual edition. `youtube_preview_bindings.json` now records an
+explicit `owner_withdrew_partial_unlisted_preview` state with zero current
+entries and `next_upload_position: 1`; the previous twelve identities,
+master/chapter/source/caption digests, and platform observations are retained
+in `youtube_preview_history_2026-07-30.json`. The managed chapter players and
+landing-page roster were removed by the same reconciler, so the living book
+does not point at an old generation. The YouTube objects were changed to
+**private** historical custody at the same time and remain private until a
+successor is accepted; this is reversible and does not delete or rewrite
+platform history. No chapter claim, support state,
+published-current state, or generation-two candidate was promoted.
 
 YouTube does not replace an uploaded binary at the same URL. A material chapter
 revision therefore creates a new video generation and new YouTube video ID.

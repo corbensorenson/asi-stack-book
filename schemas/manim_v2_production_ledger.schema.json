@@ -30,10 +30,10 @@
     "target_generation": {"const": 2},
     "cohorts": {
       "type": "object",
-      "required": ["owner_reviewed_remediation", "remaining_unlisted_previews", "not_yet_uploaded"],
+      "required": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "not_yet_uploaded"],
       "properties": {
         "owner_reviewed_remediation": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
-        "remaining_unlisted_previews": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+        "withdrawn_predecessor_previews": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
         "not_yet_uploaded": {"type": "array", "minItems": 72, "maxItems": 72, "uniqueItems": true, "items": {"type": "string"}}
       },
       "additionalProperties": false
@@ -71,7 +71,7 @@
           "title": {"type": "string"},
           "chapter_path": {"type": "string", "pattern": "^chapters/.+\\.qmd$"},
           "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-          "cohort": {"enum": ["owner_reviewed_remediation", "remaining_unlisted_previews", "not_yet_uploaded"]},
+          "cohort": {"enum": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "not_yet_uploaded"]},
           "predecessor": {
             "type": "object",
             "required": ["local_generation", "packet_path", "master_path", "master_sha256", "custody_state", "youtube_video_id", "youtube_visibility", "preserve_history"],
@@ -80,9 +80,11 @@
               "packet_path": {"type": "string"},
               "master_path": {"type": "string"},
               "master_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-              "custody_state": {"enum": ["local_only", "unlisted_preview_bound"]},
+              "custody_state": {"enum": ["local_only", "unlisted_preview_bound", "private_historical_withdrawn"]},
               "youtube_video_id": {"type": ["string", "null"]},
-              "youtube_visibility": {"enum": ["not_uploaded", "unlisted"]},
+              "youtube_visibility": {"enum": ["not_uploaded", "unlisted", "private"]},
+              "withdrawn_at_utc": {"type": "string"},
+              "history_record_path": {"const": "visual_edition/youtube_preview_history_2026-07-30.json"},
               "preserve_history": {"const": true}
             },
             "additionalProperties": false

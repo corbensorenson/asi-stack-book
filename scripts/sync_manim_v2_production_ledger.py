@@ -12,10 +12,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "visual_edition/manim_v2_production_ledger.json"
+PREVIEW_BINDINGS = ROOT / "visual_edition/youtube_preview_bindings.json"
+PREVIEW_HISTORY = ROOT / "visual_edition/youtube_preview_history_2026-07-30.json"
 
 
 def load(path: str) -> dict:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
+
+
+def load_path(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def digest(path: str) -> str:
@@ -38,7 +44,11 @@ def preserved_targets() -> dict[str, dict]:
     }
 
 
-def target_for(chapter_id: str, cohort: str, prior: dict | None) -> dict:
+def target_for(
+    chapter_id: str,
+    has_current_preview: bool,
+    prior: dict | None,
+) -> dict:
     base = f"visual_edition/chapters/{chapter_id}"
     default = {
         "generation": 2,
@@ -70,7 +80,7 @@ def target_for(chapter_id: str, cohort: str, prior: dict | None) -> dict:
         },
         "youtube_state": "not_ready",
         "youtube_video_id": None,
-        "quarto_embed_state": "predecessor_preview" if cohort != "not_yet_uploaded" else "absent"
+        "quarto_embed_state": "predecessor_preview" if has_current_preview else "absent"
     }
     if not prior:
         return default
@@ -81,6 +91,12 @@ def target_for(chapter_id: str, cohort: str, prior: dict | None) -> dict:
         **prior.get("experience_review_paths", {})
     }
     merged["gates"] = {**default["gates"], **prior.get("gates", {})}
+    # The current preview binding is authoritative for the live Quarto
+    # projection; a withdrawn predecessor must not leave a stale embed state
+    # behind merely because its generation-2 target was previously recorded.
+    merged["quarto_embed_state"] = (
+        "predecessor_preview" if has_current_preview else "absent"
+    )
     return merged
 
 
@@ -88,15 +104,21 @@ def build() -> dict:
     chapters = canonical_chapters()
     manifest = load("visual_edition/manifest.json")
     packets = {row["chapter_id"]: row for row in manifest["chapters"]}
-    previews = {
-        row["chapter_id"]: row
-        for row in load("visual_edition/youtube_preview_bindings.json")["entries"]
-    }
+    binding = load_path(PREVIEW_BINDINGS)
+    previews = {row["chapter_id"]: row for row in binding["entries"]}
+    history_rows = {}
+    if PREVIEW_HISTORY.is_file():
+        history = load_path(PREVIEW_HISTORY)
+        history_rows = {
+            row["chapter_id"]: row for row in history.get("entries", [])
+        }
+    withdrawn_at = binding.get("withdrawal", {}).get("withdrawn_at_utc")
+    history_path = str(PREVIEW_HISTORY.relative_to(ROOT))
     prior_targets = preserved_targets()
     entries = []
     cohorts = {
         "owner_reviewed_remediation": [],
-        "remaining_unlisted_previews": [],
+        "withdrawn_predecessor_previews": [],
         "not_yet_uploaded": []
     }
     for position, chapter in enumerate(chapters, start=1):
@@ -104,7 +126,7 @@ def build() -> dict:
         if position <= 5:
             cohort = "owner_reviewed_remediation"
         elif position <= 12:
-            cohort = "remaining_unlisted_previews"
+            cohort = "withdrawn_predecessor_previews"
         else:
             cohort = "not_yet_uploaded"
         cohorts[cohort].append(chapter_id)
@@ -112,6 +134,42 @@ def build() -> dict:
         packet = load(packet_path)
         receipt = packet["render_receipt"]
         preview = previews.get(chapter_id)
+        historical = history_rows.get(chapter_id)
+        if preview:
+            predecessor = {
+                "local_generation": 1,
+                "packet_path": packet_path,
+                "master_path": f"build/visual_edition/final/{chapter_id}.mp4",
+                "master_sha256": receipt["output_sha256"],
+                "custody_state": "unlisted_preview_bound",
+                "youtube_video_id": preview["video_id"],
+                "youtube_visibility": "unlisted",
+                "preserve_history": True
+            }
+        elif historical:
+            predecessor = {
+                "local_generation": 1,
+                "packet_path": packet_path,
+                "master_path": f"build/visual_edition/final/{chapter_id}.mp4",
+                "master_sha256": historical["local_master_sha256"],
+                "custody_state": "private_historical_withdrawn",
+                "youtube_video_id": historical["video_id"],
+                "youtube_visibility": "private",
+                "preserve_history": True,
+                "withdrawn_at_utc": withdrawn_at or historical["observed_at_utc"],
+                "history_record_path": history_path
+            }
+        else:
+            predecessor = {
+                "local_generation": 1,
+                "packet_path": packet_path,
+                "master_path": f"build/visual_edition/final/{chapter_id}.mp4",
+                "master_sha256": receipt["output_sha256"],
+                "custody_state": "local_only",
+                "youtube_video_id": None,
+                "youtube_visibility": "not_uploaded",
+                "preserve_history": True
+            }
         entries.append({
             "position": position,
             "chapter_id": chapter_id,
@@ -119,17 +177,12 @@ def build() -> dict:
             "chapter_path": chapter["file"],
             "chapter_sha256": packets[chapter_id]["chapter_sha256"],
             "cohort": cohort,
-            "predecessor": {
-                "local_generation": 1,
-                "packet_path": packet_path,
-                "master_path": f"build/visual_edition/final/{chapter_id}.mp4",
-                "master_sha256": receipt["output_sha256"],
-                "custody_state": "unlisted_preview_bound" if preview else "local_only",
-                "youtube_video_id": preview["video_id"] if preview else None,
-                "youtube_visibility": "unlisted" if preview else "not_uploaded",
-                "preserve_history": True
-            },
-            "target": target_for(chapter_id, cohort, prior_targets.get(chapter_id))
+            "predecessor": predecessor,
+            "target": target_for(
+                chapter_id,
+                has_current_preview=preview is not None,
+                prior=prior_targets.get(chapter_id),
+            )
         })
     counts = {
         "planned": sum(e["target"]["stage"] == "planned" for e in entries),
@@ -139,7 +192,7 @@ def build() -> dict:
         "picture_and_sound_lock_passed": sum(e["target"]["gates"]["picture_and_sound_lock"] == "pass" for e in entries),
         "release_candidate_passed": sum(e["target"]["gates"]["release_candidate"] == "pass" for e in entries),
         "accepted_generation_2": sum(e["target"]["gates"]["accepted"] == "pass" for e in entries),
-        "youtube_predecessors": len(previews),
+        "youtube_predecessors": len(previews) + len(history_rows),
         "youtube_generation_2_current": sum(e["target"]["youtube_state"] == "public_current" for e in entries),
         "quarto_generation_2_current": sum(e["target"]["quarto_embed_state"] == "generation_2_current" for e in entries)
     }

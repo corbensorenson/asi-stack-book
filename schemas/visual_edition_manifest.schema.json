@@ -82,7 +82,10 @@
       ],
       "properties": {
         "state": {
-          "const": "owner_authorized_partial_unlisted_preview"
+          "enum": [
+            "owner_authorized_partial_unlisted_preview",
+            "owner_withdrew_partial_unlisted_preview"
+          ]
         },
         "binding_path": {
           "const": "visual_edition/youtube_preview_bindings.json"
@@ -92,12 +95,12 @@
         },
         "unlisted_video_count": {
           "type": "integer",
-          "minimum": 1,
+          "minimum": 0,
           "maximum": 84
         },
         "current_quarto_preview_embeds": {
           "type": "integer",
-          "minimum": 1,
+          "minimum": 0,
           "maximum": 84
         },
         "edition_complete": {

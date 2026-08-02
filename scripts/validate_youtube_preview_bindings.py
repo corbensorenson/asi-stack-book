@@ -51,13 +51,20 @@ def semantic_errors(
     upload_plan = load(UPLOAD_PLAN)
     entries = preview.get("entries", [])
     count = len(entries)
+    state = preview.get("state")
+    withdrawn = state == "owner_withdrew_partial_unlisted_preview"
     if preview.get("preview_entry_count") != count:
         failures.append("preview entry count drift")
-    if preview.get("next_upload_position") != count + 1:
+    expected_next_position = 1 if withdrawn else count + 1
+    if preview.get("next_upload_position") != expected_next_position:
         failures.append("next upload position is not the first unbound chapter")
     positions = [entry.get("position") for entry in entries]
-    if positions != list(range(1, count + 1)):
+    if count and positions != list(range(1, count + 1)):
         failures.append("preview entries are not one contiguous canonical prefix")
+    if withdrawn and count:
+        failures.append("withdrawn preview projection retains current entries")
+    if not withdrawn and not count:
+        failures.append("active preview projection has no entries")
     video_ids = [entry.get("video_id") for entry in entries]
     if len(video_ids) != len(set(video_ids)):
         failures.append("preview video IDs are not unique")
@@ -75,9 +82,7 @@ def semantic_errors(
         failures.append("preview exceeds upload-plan denominator")
         return failures
 
-    for expected_position, (entry, upload) in enumerate(
-        zip(entries, plan_entries), start=1
-    ):
+    for expected_position, (entry, upload) in enumerate(zip(entries, plan_entries), start=1):
         chapter_id = upload.get("chapter_id")
         packet_path = ROOT / f"visual_edition/chapters/{chapter_id}/packet.json"
         packet = load(packet_path)
@@ -144,7 +149,6 @@ def semantic_errors(
                 )
             elif (
                 entry.get("embed_url") not in source
-                or "first 12 uploaded chapters" not in source
                 or "unlisted staging preview" not in source
             ):
                 failures.append(
@@ -172,6 +176,8 @@ def semantic_errors(
             or index_source.count(ROSTER_END) != 1
         ):
             failures.append("landing-page preview roster is absent")
+        if withdrawn and "No visual abstracts are currently linked" not in index_source:
+            failures.append("withdrawn preview roster does not state that current embeds are absent")
         for entry in entries:
             target = (
                 f"{entry['chapter_path']}#visual-abstract"
@@ -185,13 +191,13 @@ def semantic_errors(
         manifest = load(MANIFEST)
         manifest_preview = manifest.get("preview", {})
         expected_manifest = {
-            "state": "owner_authorized_partial_unlisted_preview",
+            "state": state,
             "binding_path": "visual_edition/youtube_preview_bindings.json",
             "binding_sha256": digest(PREVIEW),
             "unlisted_video_count": count,
             "current_quarto_preview_embeds": count,
             "edition_complete": False,
-            "next_upload_position": count + 1,
+            "next_upload_position": expected_next_position,
         }
         for key, expected in expected_manifest.items():
             if manifest_preview.get(key) != expected:
@@ -204,8 +210,34 @@ def semantic_errors(
             or counts.get("current_quarto_preview_embeds") != count
         ):
             failures.append("manifest confuses preview and published-current counts")
+    if withdrawn:
+        withdrawal = preview.get("withdrawal", {})
+        history_path = ROOT / withdrawal.get("historical_record_path", "")
+        if not history_path.is_file():
+            failures.append("withdrawn preview historical record is missing")
+        else:
+            try:
+                history = load(history_path)
+                if len(history.get("entries", [])) != 12:
+                    failures.append("withdrawn preview historical denominator drift")
+                if history.get("source_binding_sha256_before_withdrawal") != "58aacb7d7e3057deda783bb260c466e8a8f10f31c7169190890c08f810aa1dca":
+                    failures.append("withdrawn preview historical source digest drift")
+                if history.get("post_withdrawal_visibility") != "private":
+                    failures.append("withdrawn preview post-withdrawal privacy is not private")
+                history_ids = [row.get("video_id") for row in history.get("entries", [])]
+                if sorted(history.get("private_video_ids_observed", [])) != sorted(history_ids):
+                    failures.append("withdrawn preview private-video receipt identity drift")
+            except (OSError, json.JSONDecodeError):
+                failures.append("withdrawn preview historical record is not readable JSON")
     if preview.get("support_state_effect") != "none":
         failures.append("preview projection moves support state")
+    expected_release_effect = (
+        "preview_withdrawal_only_no_published_current_transition"
+        if withdrawn
+        else "preview_projection_only_no_published_current_transition"
+    )
+    if preview.get("release_effect") != expected_release_effect:
+        failures.append("preview release effect does not match projection state")
     return failures
 
 
@@ -213,48 +245,14 @@ def main() -> None:
     preview = load(PREVIEW)
     failures = semantic_errors(preview)
     mutations = [
-        (
-            "duplicate video identity",
-            lambda value: value["entries"][1].__setitem__(
-                "video_id", value["entries"][0]["video_id"]
-            ),
-        ),
-        (
-            "position gap",
-            lambda value: value["entries"][2].__setitem__("position", 9),
-        ),
-        (
-            "public visibility overclaim",
-            lambda value: value["entries"][0].__setitem__(
-                "video_visibility", "public"
-            ),
-        ),
-        (
-            "caption attachment overclaim",
-            lambda value: value["entries"][0].__setitem__(
-                "platform_caption_state", "published"
-            ),
-        ),
-        (
-            "master substitution",
-            lambda value: value["entries"][0].__setitem__(
-                "local_master_sha256", "0" * 64
-            ),
-        ),
-        (
-            "chapter substitution",
-            lambda value: value["entries"][0].__setitem__(
-                "chapter_id", "wrong"
-            ),
-        ),
-        (
-            "entry omission",
-            lambda value: value["entries"].pop(),
-        ),
-        (
-            "support promotion",
-            lambda value: value.__setitem__("support_state_effect", "promotion"),
-        ),
+        ("authority digest drift", lambda value: value.__setitem__("authority_statement_sha256", "0" * 64)),
+        ("preview count drift", lambda value: value.__setitem__("preview_entry_count", 1)),
+        ("next position drift", lambda value: value.__setitem__("next_upload_position", 13)),
+        ("state widening", lambda value: value.__setitem__("state", "owner_authorized_partial_unlisted_preview")),
+        ("withdrawal deletion", lambda value: value.pop("withdrawal", None)),
+        ("release effect drift", lambda value: value.__setitem__("release_effect", "preview_projection_only_no_published_current_transition")),
+        ("unexpected current entry", lambda value: value["entries"].append({})),
+        ("support promotion", lambda value: value.__setitem__("support_state_effect", "promotion")),
     ]
     for label, mutate in mutations:
         candidate = copy.deepcopy(preview)
@@ -272,7 +270,7 @@ def main() -> None:
     print(
         "YouTube preview validation passed: "
         f"{preview['preview_entry_count']} exact unlisted chapter bindings, "
-        "12 managed preview embeds, 8/8 mutations rejected, "
+        f"{preview['preview_entry_count']} managed preview embeds, 8/8 mutations rejected, "
         "published-current count zero, support effect none."
     )
 

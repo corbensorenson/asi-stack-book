@@ -60,10 +60,10 @@ def render_block(packet: dict, preview: dict | None = None) -> str:
         preview_notice = f"""
 <div class="asi-visual-preview-notice" role="status">
 <strong>Visual-edition preview — {preview["position"]} of 84.</strong>
-This is an unlisted staging preview from the first 12 uploaded chapters. The
-complete edition is not public yet; the reviewed local caption track has not
-yet been attached on YouTube, and this preview does not count as
-<code>published_current</code> or change any book claim.
+This is an unlisted staging preview. The complete edition is not public yet;
+the reviewed local caption track has not yet been attached on YouTube, and
+this preview does not count as <code>published_current</code> or change any
+book claim.
 </div>
 """
     return f"""{BEGIN.format(chapter_id=chapter_id)}
@@ -163,17 +163,27 @@ def roster_pattern() -> re.Pattern[str]:
 
 def render_roster(preview: dict) -> str:
     entries = preview["entries"]
+    withdrawn = preview.get("state") == "owner_withdrew_partial_unlisted_preview"
     lines = [
         ROSTER_BEGIN,
         "## Visual edition preview",
         "",
         (
-            f"The first **{len(entries)} of 84** visual abstracts are embedded "
-            "in their canonical chapters for integrated review. They remain "
-            "unlisted staging previews, not a completed or published-current "
-            "visual edition. Every preview includes an adjacent descriptive "
-            "transcript; final YouTube caption and thumbnail reconciliation "
-            "is still open."
+            "No visual abstracts are currently linked from the living book. "
+            "The first-generation 1–12 predecessors were withdrawn from the "
+            "current projection and preserved as historical custody while "
+            "generation-two replacements are reviewed. Chapters 13–18 have "
+            "no YouTube object yet; generation-two 19–24 are unlisted "
+            "candidates, not current embeds."
+            if withdrawn
+            else (
+                f"The first **{len(entries)} of 84** visual abstracts are embedded "
+                "in their canonical chapters for integrated review. They remain "
+                "unlisted staging previews, not a completed or published-current "
+                "visual edition. Every preview includes an adjacent descriptive "
+                "transcript; final YouTube caption and thumbnail reconciliation "
+                "is still open."
+            )
         ),
         "",
         "::: {.asi-visual-preview-roster}",
