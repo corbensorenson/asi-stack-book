@@ -52,11 +52,11 @@ def errors(data: dict[str, Any]) -> list[str]:
     ):
         if expected != digest(ROOT / path):
             out.append(f"digest drifted: {path}")
-    if (formal.get("public_target_count"), formal.get("implemented_target_count"), formal.get("theorem_declaration_count")) != (2, 2, 9):
+    if (formal.get("public_target_count"), formal.get("implemented_target_count"), formal.get("theorem_declaration_count")) != (2, 2, 32):
         out.append("formal denominator drifted")
     if sum(record.get("module") == formal["module"] for record in data["manifest"].get("records", [])) != 2:
         out.append("proof manifest target denominator drifted")
-    if len(re.findall(r"(?m)^theorem ", (ROOT / formal["module_path"]).read_text(encoding="utf-8"))) != 9:
+    if len(re.findall(r"(?m)^theorem ", (ROOT / formal["module_path"]).read_text(encoding="utf-8"))) != 32:
         out.append("Lean theorem denominator drifted")
     if contract.get("fixture_disposition") != "safe_hold" or contract.get("semantic_mutations_rejected") != 13 or contract.get("record_shape_only") is not True:
         out.append("record-contract custody drifted")
@@ -161,7 +161,7 @@ def main() -> None:
         raise SystemExit("P7.2-T2 reader integration failed:\n - " + "\n - ".join(failures))
     print(
         "P7.2-T2 reader integration passed: 1 terminal argument-level chapter, 15 source "
-        "mappings, 2 implemented public proof targets, 9 theorem declarations, 6 arms, "
+        "mappings, 2 implemented public proof targets, 32 theorem declarations, 6 arms, "
         "8 competence gates, protected outcomes closed, 13 integration mutations rejected; "
         "support/release/publication none."
     )

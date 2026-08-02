@@ -4,7 +4,7 @@ chapter_id: "governed-world-models-and-reality-grounding"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-07-22"
+last_updated: "2026-08-02"
 primary_sources:
   - "platonic_world_model"
   - "deterministic_capability_compilation"
@@ -37,13 +37,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-08-02 |
 | Primary source records | fourteen assigned records, adding causal-representation, deep-ensemble, conformal-prediction, and natural distribution-shift comparators to the prior typed relation, latent dynamics, and governance sources |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
 | Source loading state | Public-safe source notes exist for all fourteen assigned records. External results remain source-reported and unreproduced; Corben-authored sources contribute architecture and bounded lineage at their recorded limits. |
-| Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen negative mutations, and two public Lean targets through nine declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
+| Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen fixture/protocol mutations, a six-event transaction lifecycle with eleven independent lifecycle rejections, and two public Lean targets through 32 declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
 
@@ -842,7 +842,16 @@ The minimum executable boundary is now concrete. The
 unsupported safe-hold fixture make qualified-branch, authority, and
 reality-residual custody independently rejectable. The fixture is record-shape
 evidence only: no predictor was trained or evaluated, and it produces no
-support-state or authority change. The six-arm claim-bearing campaign is
+support-state or authority change. The Lean lifecycle additionally proves that
+an admitted observation, current model, qualified imagined branch, bounded
+planning handoff, independently observed effect, and owned residual can compose
+into one reconciled transaction. Arbitrary accepted runs preserve the exact
+model, observation, branch, action, and effect identities, preserve the
+authority ceiling, and cannot assign support or effect authority. The Python
+consumer reconstructs those routes independently and rejects eleven stale,
+unsupported, actuality-laundering, self-observation, residual, and authority
+mutations. These are consequences of authored fields, not evidence that any
+field is true. The six-arm claim-bearing campaign is
 **protocol-ready and resource-isolated, not executed**; its protected outcomes
 remain closed.
 
@@ -858,7 +867,7 @@ any of those conclusions.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Qualified-branch and reality-residual contract | Reject stale, unsupported, materially disagreeing, authority-widening, or residual-laundering packets before they reach Planning. | implemented as one schema, one safe-hold record fixture, one independent validator, 13 rejecting mutations, and two public Lean targets through nine theorem declarations; record-shape evidence only |
+| Qualified-branch and reality-residual contract | Reject stale, unsupported, materially disagreeing, authority-widening, actuality-laundering, or residual-laundering packets before they reach Planning or reconciliation. | implemented as one schema, one safe-hold record fixture, one independent validator, 13 fixture/protocol mutations, one six-event lifecycle, 11 independently reconstructed lifecycle rejections, and two public Lean targets through 32 theorem declarations; record-shape and finite-contract evidence only |
 | Prior situated-world-model campaign | Exercise bounded model-state, discrepancy, and rollback routes in two authored finite environments. | completed adjacent synthetic evidence; does not transfer to the chapter core |
 | Reality-gap and horizon calibration benchmark | Measure prediction error, calibration, decision regret, safe abstention, and resource cost across horizons and controlled shifts against reactive, model-free, ordinary predictive, single-governed, plural-governed, and oracle-sensitivity arms. | six-arm protocol ready; protected outcomes closed; not executed |
 | Model-exploitation red-team suite | Search for policies that target high-value, low-support, stale, aliased, or misspecified regions and test whether the admission and authority boundaries reject or narrow them. | planned; not implemented or run |
@@ -867,17 +876,18 @@ any of those conclusions.
 
 ## Formalization hooks
 
-Finite formalization is appropriate for two route invariants because their
+Finite formalization is appropriate for the two public targets because their
 objects and consumers can be modeled without pretending to formalize reality.
 The compiled module is `AsiStackProofs.GovernedWorldModels`. Both public targets
-are implemented through nine theorem declarations; the independent contract
-validator also checks the schema, fixture, protocol, chapter ceiling, and
-rejecting mutations.
+are implemented through 32 theorem declarations: nine retained route results
+and 23 temporal lifecycle results. The independent contract validator also
+checks the schema, fixture, protocol, chapter ceiling, exact six-event witness,
+and eleven rejecting lifecycle mutations.
 
 | Implemented target | Finite model | Honest conclusion | Semantic limit |
 |---|---|---|---|
-| `lean:world_model.unsupported_rollout_no_authority` | a rollout record with version-currentness, support, calibration, disagreement, consequence, and authority-request flags | unsupported, stale, materially disagreeing, or uncalibrated rollout states cannot reach the consequential authorization constructor | the booleans do not establish that support domains, calibration estimates, disagreement thresholds, or consequence classes are correct |
-| `lean:world_model.reality_residual_forces_route` | a transition system with material residual and routes for re-estimation, fallback, review, safe hold, or continued model-based execution | a material residual cannot transition directly to continued model-based execution before a bounded response route | the theorem cannot determine whether an observation is true, a residual is material, or the selected recovery is sufficient |
+| `lean:world_model.unsupported_rollout_no_authority` | a rollout classifier plus reachable observation-model-branch-planning-effect-reconciliation transaction | stale, unsupported, disagreeing, unbounded, or authority-laundering packets are rejected; arbitrary accepted runs preserve exact identities, the authority ceiling, and zero support/effect-authority assignment | the fields do not establish that observations, support domains, calibration estimates, disagreement thresholds, or consequence classes are correct |
+| `lean:world_model.reality_residual_forces_route` | a residual classifier plus temporal gates for action receipts, independent effect observation, actuality labels, residual computation, material-response selection, and residual ownership | a material residual cannot continue directly, and a transaction cannot reconcile before its modeled actuality and residual obligations are complete | the theorems cannot determine whether an observation is true, an effect is independently observed in practice, a residual is material, or the selected recovery is sufficient |
 
 These are consequences of authored finite predicates, not truth certificates.
 The formalization does not prove observation truth, causal grounding,

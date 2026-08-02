@@ -18,6 +18,158 @@ PROTOCOL = ROOT / "experiments/governed_world_model_argument_exit/preregistratio
 LEAN = ROOT / "lean/AsiStackProofs/GovernedWorldModels.lean"
 CHAPTER = ROOT / "chapters/governed-world-models-and-reality-grounding.qmd"
 
+LIFECYCLE_NEXT = {
+    "awaitingObservation": ("bindObservation", "observationBound", "acceptObservation"),
+    "observationBound": ("bindModel", "modelBound", "acceptModel"),
+    "modelBound": ("qualifyBranch", "branchQualified", "acceptBranch"),
+    "branchQualified": ("handoffForPlanning", "planningHandoff", "acceptPlanningHandoff"),
+    "planningHandoff": ("recordObservedEffect", "effectObserved", "acceptEffectObservation"),
+    "effectObserved": ("reconcileResidual", "reconciled", "acceptReconciliation"),
+}
+
+
+def lifecycle_route(state: dict[str, Any], kind: str, packet: dict[str, Any]) -> str:
+    expected = LIFECYCLE_NEXT.get(state["stage"], ("bindObservation", "observationBound", "acceptObservation"))[0]
+    if kind != expected:
+        return "rejectWrongStage"
+    for field in (
+        "modelIdentity", "modelVersion", "observationDigest", "branchDigest",
+        "actionDigest", "effectDigest", "authorityCeiling",
+    ):
+        if state[field] != packet[field]:
+            return "rejectIdentitySubstitution"
+    if packet["eventDigest"] == state["lastEventDigest"]:
+        return "rejectEventReplay"
+    if packet["supportAssignmentRequested"] or packet["executionAuthorityRequested"]:
+        return "rejectAuthorityLaundering"
+    stage = state["stage"]
+    if stage in {"awaitingObservation", "reconciled"}:
+        if not packet["observationAdmitted"]:
+            return "requestAdmittedObservation"
+        if not packet["observationFresh"]:
+            return "requestFreshObservation"
+        if not packet["observationMarkedActual"]:
+            return "rejectImaginationAsObservation"
+        return "acceptObservation"
+    if stage == "observationBound":
+        if not packet["modelCheckpointBound"]:
+            return "requestBoundModel"
+        if not packet["modelCurrent"]:
+            return "requestCurrentModel"
+        return "acceptModel"
+    if stage == "modelBound":
+        if not packet["interventionSemanticsBound"]:
+            return "requestInterventionSemantics"
+        if not packet["horizonBound"]:
+            return "requestBoundHorizon"
+        if not packet["calibrationCurrent"]:
+            return "requestCalibration"
+        if not packet["supportQualified"]:
+            return "requestQualifiedSupport"
+        if packet["materialDisagreement"] and not packet["disagreementDispositionPresent"]:
+            return "requestDisagreementDisposition"
+        if not packet["branchDerivedFromObservation"]:
+            return "requestObservationLineage"
+        if not packet["branchMarkedImagined"]:
+            return "requestImaginedLabel"
+        return "acceptBranch"
+    if stage == "branchQualified":
+        return "acceptPlanningHandoff" if packet["plannerUseBounded"] else "requestBoundedPlannerUse"
+    if stage == "planningHandoff":
+        if not packet["actionReceiptPresent"]:
+            return "requestActionReceipt"
+        if not packet["effectIndependentlyObserved"]:
+            return "requestIndependentEffectObservation"
+        if not packet["effectMarkedActual"]:
+            return "requestActualityLabel"
+        return "acceptEffectObservation"
+    if not packet["residualComputed"]:
+        return "requestResidual"
+    if packet["materialResidual"] and not packet["residualResponseSelected"]:
+        return "requestResidualResponse"
+    if not packet["residualOwnerPresent"]:
+        return "requestResidualOwner"
+    return "acceptReconciliation"
+
+
+def canonical_lifecycle_packet(event_digest: int) -> dict[str, Any]:
+    return {
+        "modelIdentity": 401, "modelVersion": 7, "observationDigest": 402,
+        "branchDigest": 403, "actionDigest": 404, "effectDigest": 405,
+        "authorityCeiling": 2, "eventDigest": event_digest,
+        "observationAdmitted": True, "observationFresh": True,
+        "observationMarkedActual": True, "modelCheckpointBound": True,
+        "modelCurrent": True, "interventionSemanticsBound": True,
+        "horizonBound": True, "calibrationCurrent": True, "supportQualified": True,
+        "materialDisagreement": False, "disagreementDispositionPresent": True,
+        "branchDerivedFromObservation": True, "branchMarkedImagined": True,
+        "plannerUseBounded": True, "actionReceiptPresent": True,
+        "effectIndependentlyObserved": True, "effectMarkedActual": True,
+        "residualComputed": True, "materialResidual": True,
+        "residualResponseSelected": True, "residualOwnerPresent": True,
+        "supportAssignmentRequested": False, "executionAuthorityRequested": False,
+    }
+
+
+def lifecycle_checks() -> list[str]:
+    failures: list[str] = []
+    state = {
+        "stage": "awaitingObservation", "modelIdentity": 401, "modelVersion": 7,
+        "observationDigest": 402, "branchDigest": 403, "actionDigest": 404,
+        "effectDigest": 405, "authorityCeiling": 2, "lastEventDigest": 0,
+        "receiptCount": 0, "planningHandoffCount": 0, "observedEffectCount": 0,
+        "reconciliationCount": 0, "supportAssignmentCount": 0, "effectAuthorityCount": 0,
+    }
+    stages: list[dict[str, Any]] = [copy.deepcopy(state)]
+    events = [
+        "bindObservation", "bindModel", "qualifyBranch", "handoffForPlanning",
+        "recordObservedEffect", "reconcileResidual",
+    ]
+    for digest, kind in enumerate(events, start=1):
+        packet = canonical_lifecycle_packet(digest)
+        route = lifecycle_route(state, kind, packet)
+        expected_kind, next_stage, expected_route = LIFECYCLE_NEXT[state["stage"]]
+        if kind != expected_kind or route != expected_route:
+            failures.append(f"lifecycle event {kind} routed {route}, expected {expected_route}")
+            break
+        state = copy.deepcopy(state)
+        state["stage"] = next_stage
+        state["lastEventDigest"] = digest
+        state["receiptCount"] += 1
+        state["planningHandoffCount"] += kind == "handoffForPlanning"
+        state["observedEffectCount"] += kind == "recordObservedEffect"
+        state["reconciliationCount"] += kind == "reconcileResidual"
+        stages.append(copy.deepcopy(state))
+    expected_final = {
+        "stage": "reconciled", "receiptCount": 6, "planningHandoffCount": 1,
+        "observedEffectCount": 1, "reconciliationCount": 1,
+        "supportAssignmentCount": 0, "effectAuthorityCount": 0, "authorityCeiling": 2,
+    }
+    for field, expected in expected_final.items():
+        if state.get(field) != expected:
+            failures.append(f"lifecycle final {field} was {state.get(field)!r}, expected {expected!r}")
+
+    mutations = [
+        (0, "bindObservation", "observationFresh", False, "requestFreshObservation"),
+        (0, "bindObservation", "observationMarkedActual", False, "rejectImaginationAsObservation"),
+        (1, "bindModel", "modelCurrent", False, "requestCurrentModel"),
+        (2, "qualifyBranch", "supportQualified", False, "requestQualifiedSupport"),
+        (2, "qualifyBranch", "branchMarkedImagined", False, "requestImaginedLabel"),
+        (3, "handoffForPlanning", "plannerUseBounded", False, "requestBoundedPlannerUse"),
+        (3, "handoffForPlanning", "executionAuthorityRequested", True, "rejectAuthorityLaundering"),
+        (4, "recordObservedEffect", "actionReceiptPresent", False, "requestActionReceipt"),
+        (4, "recordObservedEffect", "effectIndependentlyObserved", False, "requestIndependentEffectObservation"),
+        (5, "reconcileResidual", "residualComputed", False, "requestResidual"),
+        (5, "reconcileResidual", "residualOwnerPresent", False, "requestResidualOwner"),
+    ]
+    for stage_index, kind, field, value, expected in mutations:
+        packet = canonical_lifecycle_packet(stage_index + 1)
+        packet[field] = value
+        route = lifecycle_route(stages[stage_index], kind, packet)
+        if route != expected:
+            failures.append(f"lifecycle mutation {field} routed {route}, expected {expected}")
+    return failures
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -80,13 +232,18 @@ def errors(data: dict[str, Any]) -> list[str]:
     if predecessor.get("disposition") != "adjacent_bounded_synthetic_evidence_only" or "does not establish this chapter core" not in predecessor.get("prohibited_transfer", ""):
         out.append("P4/M8 predecessor support boundary drifted")
 
-    if len(re.findall(r"(?m)^theorem ", lean_text)) != 9:
+    if len(re.findall(r"(?m)^theorem ", lean_text)) != 32:
         out.append("GovernedWorldModels theorem denominator drifted")
     for theorem in (
         "unsupported_rollout_no_authority",
         "reality_residual_forces_route",
         "rollout_never_authorizes_effect",
         "material_residual_selects_bounded_response",
+        "complete_world_model_lifecycle_reconciles_without_authority",
+        "successful_lifecycle_run_preserves_identity",
+        "successful_lifecycle_run_preserves_non_authority",
+        "successful_lifecycle_run_preserves_authority_ceiling",
+        "accepted_effect_record_requires_independent_actuality",
     ):
         if f"theorem {theorem}" not in lean_text:
             out.append(f"Lean theorem missing: {theorem}")
@@ -111,7 +268,7 @@ def main() -> None:
         "lean_text": LEAN.read_text(encoding="utf-8"),
         "chapter": CHAPTER.read_text(encoding="utf-8"),
     }
-    failures = errors(data)
+    failures = errors(data) + lifecycle_checks()
     mutations = [
         ("authorize effect", lambda d: d["fixture"]["authority_boundary"].__setitem__("effect_authorized", True)),
         ("grant release", lambda d: d["fixture"]["authority_boundary"].__setitem__("release_authority", True)),
@@ -143,8 +300,9 @@ def main() -> None:
         raise SystemExit("Governed world-model contract failed:\n - " + "\n - ".join(failures))
     print(
         "Governed world-model contract passed: one safe-hold record fixture, two public "
-        "targets through 9 theorem declarations, 6 matched arms, 8 competence gates, "
-        "7 rescue steps, 10 outcomes, 6 causal ablations, 13 mutations rejected; "
+        "targets through 32 theorem declarations, one six-event transaction lifecycle, "
+        "11 lifecycle rejections, 6 matched arms, 8 competence gates, 7 rescue steps, "
+        "10 outcomes, 6 causal ablations, 13 fixture/protocol mutations rejected; "
         "protected outcomes closed and support/effect authority none."
     )
 

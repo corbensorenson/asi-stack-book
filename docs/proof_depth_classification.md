@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2240 |
+| Theorem declarations classified | 2263 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1312 |
-| Unknown or mixed theorem declarations | 519 |
+| Derived/decomposed theorem declarations | 1323 |
+| Unknown or mixed theorem declarations | 531 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -104,7 +104,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 2 | 13 | 0 | 4 | 9 | manual review |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
-| `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 32 | 0 | 16 | 16 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty | 1 | 48 | 16 | 17 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 21 | 0 | 3 | 18 | manual review |
@@ -970,13 +970,36 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `transition_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `unknown_effect_blocks_reconciliation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | `widening_authority_blocks_degradation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `accepted_effect_record_requires_independent_actuality` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `accepted_lifecycle_event_adds_one_receipt` | derived_or_decomposed | no | uses by_cases, simp, subst |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `accepted_lifecycle_event_preserves_identity` | derived_or_decomposed | no | uses by_cases, simp, subst |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `accepted_planning_handoff_does_not_record_effect` | derived_or_decomposed | no | uses by_cases, simp, subst |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `admitted_rollout_preserves_declared_boundary` | derived_or_decomposed | no | uses cases, split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `complete_world_model_lifecycle_reconciles_without_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `imagined_branch_cannot_launder_as_observation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `lifecycle_event_cannot_assign_support_or_effect_authority` | derived_or_decomposed | no | uses by_cases, simp, subst |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `lifecycle_event_preserves_authority_ceiling` | derived_or_decomposed | no | uses by_cases, simp, subst |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `lifecycle_run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_fixture_holds_safely` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `material_residual_selects_bounded_response` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `missing_action_receipt_blocks_effect_record` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `missing_residual_blocks_reconciliation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `planning_handoff_cannot_launder_execution_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `qualified_fixture_admits_for_planning` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `reality_residual_forces_route` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `rejected_lifecycle_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `rollout_never_authorizes_effect` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `self_observed_effect_blocks_actuality_record` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `stale_fixture_requires_reobservation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `stale_model_blocks_lifecycle` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `stale_observation_blocks_lifecycle` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `successful_lifecycle_run_preserves_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `successful_lifecycle_run_preserves_identity` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `successful_lifecycle_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unbounded_planner_use_blocks_handoff` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unowned_residual_blocks_reconciliation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unresolved_model_disagreement_blocks_qualification` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_branch_blocks_qualification` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_fixture_falls_back` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_rollout_no_authority` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |

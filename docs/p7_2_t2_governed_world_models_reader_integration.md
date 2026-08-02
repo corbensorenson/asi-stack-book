@@ -25,11 +25,15 @@ prediction-to-observation boundary.
 - The valid fixture is deliberately stale, unsupported, materially disagreeing,
   and routed to safe hold. It is a record-shape fixture, not a predictor result.
 - `AsiStackProofs.GovernedWorldModels` implements both planned public targets
-  through nine theorem declarations. It can admit a branch for bounded planning
-  or require rejection, re-observation, fallback, review, re-estimation, or safe
-  hold, but it has no effect-authority constructor reachable from the router.
+  through 32 theorem declarations. Nine retained declarations classify branch
+  admission and residual response; 23 lifecycle declarations compose admitted
+  observation, current model, qualified imagined branch, bounded planning
+  handoff, independently observed actuality, and owned residual reconciliation.
+  Arbitrary accepted runs preserve exact identities, authority ceilings, and
+  zero support or effect-authority assignment.
 - `scripts/validate_governed_world_model_contract.py` checks the schema, fixture,
-  protocol, Lean surface, chapter ceiling, and thirteen rejecting mutations.
+  protocol, Lean surface, chapter ceiling, thirteen fixture/protocol mutations,
+  the six accepted lifecycle events, and eleven independent lifecycle rejections.
 
 ## Evidence separation
 
