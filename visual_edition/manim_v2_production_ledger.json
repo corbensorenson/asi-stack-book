@@ -131,7 +131,7 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 63,
+    "planned": 62,
     "briefed": 0,
     "scripted": 1,
     "animatic_passed": 18,
@@ -1212,7 +1212,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "animatic",
         "beat_plan_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/narration.txt",
@@ -1229,8 +1229,8 @@
           "independent_release_candidate": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
-          "animatic": "not_started",
+          "beat_plan": "revise",
+          "animatic": "revise",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
