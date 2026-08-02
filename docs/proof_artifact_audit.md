@@ -78,7 +78,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 37 | 0 | 16 | 2 |
-| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 25 | 0 | 14 | 2 |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 12 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
