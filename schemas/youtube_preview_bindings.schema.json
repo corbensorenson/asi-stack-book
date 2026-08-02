@@ -40,10 +40,11 @@
       "format": "date-time"
     },
     "authority_statement": {
-      "const": "can we get those 12 videos that we have uploaded to youtube embedded properly into the living book? id like to see it together properly."
+      "type": "string",
+      "minLength": 20
     },
     "authority_statement_sha256": {
-      "const": "6e62537b8f21d8c4a97e9af1e5913aec8b2e2332d70dfa8168ebedd2050d14ee"
+      "pattern": "^[0-9a-f]{64}$"
     },
     "channel_id": {
       "const": "UCX7Tu67cGmKfT6O38xxiQFA"
@@ -152,7 +153,10 @@
             "pattern": "^[0-9a-f]{64}$"
           },
           "platform_caption_state": {
-            "const": "machine_audited_local_vtt_not_yet_attached"
+            "enum": [
+              "machine_audited_local_vtt_not_yet_attached",
+              "published"
+            ]
           },
           "platform_thumbnail_state": {
             "enum": [

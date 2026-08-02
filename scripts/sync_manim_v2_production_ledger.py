@@ -119,6 +119,7 @@ def build() -> dict:
     cohorts = {
         "owner_reviewed_remediation": [],
         "withdrawn_predecessor_previews": [],
+        "current_unlisted_previews": [],
         "not_yet_uploaded": []
     }
     for position, chapter in enumerate(chapters, start=1):
@@ -127,6 +128,8 @@ def build() -> dict:
             cohort = "owner_reviewed_remediation"
         elif position <= 12:
             cohort = "withdrawn_predecessor_previews"
+        elif chapter_id in previews:
+            cohort = "current_unlisted_previews"
         else:
             cohort = "not_yet_uploaded"
         cohorts[cohort].append(chapter_id)
@@ -192,7 +195,8 @@ def build() -> dict:
         "picture_and_sound_lock_passed": sum(e["target"]["gates"]["picture_and_sound_lock"] == "pass" for e in entries),
         "release_candidate_passed": sum(e["target"]["gates"]["release_candidate"] == "pass" for e in entries),
         "accepted_generation_2": sum(e["target"]["gates"]["accepted"] == "pass" for e in entries),
-        "youtube_predecessors": len(previews) + len(history_rows),
+        "youtube_predecessors": len(history_rows),
+        "youtube_generation_2_unlisted_preview": len(previews),
         "youtube_generation_2_current": sum(e["target"]["youtube_state"] == "public_current" for e in entries),
         "quarto_generation_2_current": sum(e["target"]["quarto_embed_state"] == "generation_2_current" for e in entries)
     }

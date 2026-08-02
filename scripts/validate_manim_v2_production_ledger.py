@@ -168,7 +168,7 @@ def main() -> None:
     if errors:
         raise SystemExit("Manim v2 production ledger validation failed:\n - " + "\n - ".join(errors))
     print(
-        "Manim v2 production ledger validates: 84 identities, three cohorts, "
+        "Manim v2 production ledger validates: 84 identities, four cohorts, "
         "preserved predecessors, fail-closed generation-2 gates, and seven rejecting mutations."
     )
 

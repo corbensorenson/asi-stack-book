@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PREVIEW = ROOT / "visual_edition/youtube_preview_bindings.json"
 SCHEMA = ROOT / "schemas/youtube_preview_bindings.schema.json"
 UPLOAD_PLAN = ROOT / "visual_edition/youtube_upload_plan.json"
+GENERATION2_CANDIDATES = ROOT / "visual_edition/youtube_generation2_upload_candidates.json"
 MANIFEST = ROOT / "visual_edition/manifest.json"
 BEGIN = "<!-- BEGIN MANAGED VISUAL ABSTRACT:{chapter_id} -->"
 END = "<!-- END MANAGED VISUAL ABSTRACT:{chapter_id} -->"
@@ -49,18 +50,45 @@ def semantic_errors(
 ) -> list[str]:
     failures = schema_errors(preview)
     upload_plan = load(UPLOAD_PLAN)
+    generation2 = load(GENERATION2_CANDIDATES)
+    candidate_by_chapter = {
+        row.get("chapter_id"): row for row in generation2.get("entries", [])
+    }
+    structure = load(ROOT / "book_structure.json")
+    chapter_ids = []
+    for part in structure.get("parts", []):
+        chapter_ids.extend(
+            chapter.get("id") for chapter in part.get("chapters", [])
+        )
+    chapter_positions = {
+        chapter_id: position
+        for position, chapter_id in enumerate(chapter_ids, start=1)
+    }
     entries = preview.get("entries", [])
     count = len(entries)
     state = preview.get("state")
     withdrawn = state == "owner_withdrew_partial_unlisted_preview"
     if preview.get("preview_entry_count") != count:
         failures.append("preview entry count drift")
-    expected_next_position = 1 if withdrawn else count + 1
+    bound_positions = {entry.get("position") for entry in entries}
+    expected_next_position = next(
+        (
+            position
+            for position in range(1, 85)
+            if position not in bound_positions
+        ),
+        85,
+    )
     if preview.get("next_upload_position") != expected_next_position:
         failures.append("next upload position is not the first unbound chapter")
     positions = [entry.get("position") for entry in entries]
-    if count and positions != list(range(1, count + 1)):
-        failures.append("preview entries are not one contiguous canonical prefix")
+    if count and all(isinstance(position, int) for position in positions):
+        if positions != sorted(positions):
+            failures.append("preview entries are not in canonical order")
+    if len(positions) != len(set(positions)):
+        failures.append("preview positions are not unique")
+    if any(not isinstance(position, int) or not 1 <= position <= 84 for position in positions):
+        failures.append("preview position is outside the canonical denominator")
     if withdrawn and count:
         failures.append("withdrawn preview projection retains current entries")
     if not withdrawn and not count:
@@ -77,12 +105,21 @@ def semantic_errors(
         failures.append("preview authority statement digest drift")
     if preview.get("channel_id") != upload_plan.get("channel_id"):
         failures.append("preview/upload-plan channel identity drift")
-    plan_entries = upload_plan.get("entries", [])
-    if count > len(plan_entries):
-        failures.append("preview exceeds upload-plan denominator")
-        return failures
+    if generation2.get("channel_id") != upload_plan.get("channel_id"):
+        failures.append("preview/generation-2 candidate channel identity drift")
 
-    for expected_position, (entry, upload) in enumerate(zip(entries, plan_entries), start=1):
+    for entry in entries:
+        chapter_id = entry.get("chapter_id")
+        upload = candidate_by_chapter.get(chapter_id)
+        if upload is None:
+            failures.append(f"{chapter_id}: no exact generation-2 upload candidate")
+            continue
+        expected_position = chapter_positions.get(chapter_id)
+        if expected_position is None:
+            failures.append(f"{chapter_id}: preview chapter is not canonical")
+            continue
+        if entry.get("position") != expected_position:
+            failures.append(f"{chapter_id}: preview position is not canonical")
         chapter_id = upload.get("chapter_id")
         packet_path = ROOT / f"visual_edition/chapters/{chapter_id}/packet.json"
         packet = load(packet_path)
@@ -112,10 +149,14 @@ def semantic_errors(
                 digest(caption_path) if caption_path.is_file() else None
             ),
             "platform_caption_state": (
-                "machine_audited_local_vtt_not_yet_attached"
+                "published"
+                if upload.get("youtube_captions_state") == "published"
+                else "machine_audited_local_vtt_not_yet_attached"
             ),
             "platform_thumbnail_state": (
-                "applied" if expected_position <= 6 else "not_yet_applied"
+                "applied"
+                if upload.get("youtube_thumbnail_state") == "uploaded"
+                else "not_yet_applied"
             ),
         }
         for key, expected in exact.items():
@@ -157,7 +198,6 @@ def semantic_errors(
 
     if check_projection:
         preview_ids = {entry.get("chapter_id") for entry in entries}
-        structure = load(ROOT / "book_structure.json")
         for part in structure.get("parts", []):
             for chapter in part.get("chapters", []):
                 if chapter.get("id") in preview_ids:
@@ -248,12 +288,15 @@ def main() -> None:
         ("authority digest drift", lambda value: value.__setitem__("authority_statement_sha256", "0" * 64)),
         ("preview count drift", lambda value: value.__setitem__("preview_entry_count", 1)),
         ("next position drift", lambda value: value.__setitem__("next_upload_position", 13)),
-        ("state widening", lambda value: value.__setitem__("state", "owner_authorized_partial_unlisted_preview")),
-        ("withdrawal deletion", lambda value: value.pop("withdrawal", None)),
-        ("release effect drift", lambda value: value.__setitem__("release_effect", "preview_projection_only_no_published_current_transition")),
+        ("state widening", lambda value: value.__setitem__("state", "owner_authorized_full_public_release")),
+        ("release effect drift", lambda value: value.__setitem__("release_effect", "preview_withdrawal_only_no_published_current_transition")),
         ("unexpected current entry", lambda value: value["entries"].append({})),
         ("support promotion", lambda value: value.__setitem__("support_state_effect", "promotion")),
     ]
+    if preview.get("state") == "owner_withdrew_partial_unlisted_preview":
+        mutations.append(("withdrawal deletion", lambda value: value.pop("withdrawal", None)))
+    else:
+        mutations.append(("unexpected withdrawal", lambda value: value.__setitem__("withdrawal", {})))
     for label, mutate in mutations:
         candidate = copy.deepcopy(preview)
         mutate(candidate)

@@ -30,11 +30,12 @@
     "target_generation": {"const": 2},
     "cohorts": {
       "type": "object",
-      "required": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "not_yet_uploaded"],
+      "required": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "current_unlisted_previews", "not_yet_uploaded"],
       "properties": {
         "owner_reviewed_remediation": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
         "withdrawn_predecessor_previews": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
-        "not_yet_uploaded": {"type": "array", "minItems": 72, "maxItems": 72, "uniqueItems": true, "items": {"type": "string"}}
+        "current_unlisted_previews": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+        "not_yet_uploaded": {"type": "array", "minItems": 68, "maxItems": 68, "uniqueItems": true, "items": {"type": "string"}}
       },
       "additionalProperties": false
     },
@@ -55,7 +56,7 @@
     },
     "counts": {
       "type": "object",
-      "required": ["planned", "briefed", "scripted", "animatic_passed", "picture_and_sound_lock_passed", "release_candidate_passed", "accepted_generation_2", "youtube_predecessors", "youtube_generation_2_current", "quarto_generation_2_current"],
+      "required": ["planned", "briefed", "scripted", "animatic_passed", "picture_and_sound_lock_passed", "release_candidate_passed", "accepted_generation_2", "youtube_predecessors", "youtube_generation_2_unlisted_preview", "youtube_generation_2_current", "quarto_generation_2_current"],
       "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 84}
     },
     "entries": {
@@ -71,7 +72,7 @@
           "title": {"type": "string"},
           "chapter_path": {"type": "string", "pattern": "^chapters/.+\\.qmd$"},
           "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-          "cohort": {"enum": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "not_yet_uploaded"]},
+          "cohort": {"enum": ["owner_reviewed_remediation", "withdrawn_predecessor_previews", "current_unlisted_previews", "not_yet_uploaded"]},
           "predecessor": {
             "type": "object",
             "required": ["local_generation", "packet_path", "master_path", "master_sha256", "custody_state", "youtube_video_id", "youtube_visibility", "preserve_history"],

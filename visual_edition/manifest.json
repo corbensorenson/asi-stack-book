@@ -1,9 +1,9 @@
 {
   "schema_version": "asi_stack.visual_edition_manifest.v1",
   "edition_id": "asi-stack-p7.3-visual-edition",
-  "generated_at_utc": "2026-08-02T04:06:36Z",
+  "generated_at_utc": "2026-08-02T04:42:08Z",
   "book_structure_path": "book_structure.json",
-  "source_commit_at_generation": "932a3c30f2923c1beb4d9528ef8a9d4ce48154db",
+  "source_commit_at_generation": "30d10d2c725883bf74c47257456f8d947361d419",
   "canonical_chapter_count": 84,
   "pilot_chapter_ids": [
     "asi-is-a-stack-not-a-model",
@@ -29,11 +29,11 @@
     "local_render_location_class": "ignored_build_space"
   },
   "preview": {
-    "state": "owner_withdrew_partial_unlisted_preview",
+    "state": "owner_authorized_partial_unlisted_preview",
     "binding_path": "visual_edition/youtube_preview_bindings.json",
-    "binding_sha256": "dfd1b25ee429faa99576dfb2a795dc871efd3d9c442e74c9851c00af0dd45194",
-    "unlisted_video_count": 0,
-    "current_quarto_preview_embeds": 0,
+    "binding_sha256": "5287ac4332be9dc9f7c31a4e5a853bbe52322710607c5e3b848ecb155ddc790d",
+    "unlisted_video_count": 4,
+    "current_quarto_preview_embeds": 4,
     "edition_complete": false,
     "next_upload_position": 1
   },
@@ -51,8 +51,8 @@
     "current_rendered_videos": 84,
     "youtube_videos_published": 0,
     "current_quarto_embeds": 0,
-    "youtube_videos_unlisted_preview": 0,
-    "current_quarto_preview_embeds": 0
+    "youtube_videos_unlisted_preview": 4,
+    "current_quarto_preview_embeds": 4
   },
   "chapters": [
     {
@@ -431,7 +431,7 @@
       "chapter_id": "planning-as-a-control-layer",
       "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "chapter_path": "chapters/planning-as-a-control-layer.qmd",
-      "chapter_sha256": "f7d1ce7a9815939815f4a2c90838792326971f6b778c3fbda11f76ceeb993087",
+      "chapter_sha256": "6483ac30a3d3e06a8c3d1ce9a4b57b1e497f9ed37745ad8c54e847b6c7c1d52e",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
       "chapter_index": 3,
@@ -599,7 +599,7 @@
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "chapter_sha256": "78c2ac057693889f0ecfecb4421dffa3dce5c8c53010a958fb66f9b5b4126fdd",
+      "chapter_sha256": "84b71f2940e7272f288c3fcce579fa81e216d8fb64800b192af9b4adbbac3bde",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
       "chapter_index": 17,
@@ -863,7 +863,7 @@
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "chapter_sha256": "f71fd4fa74ca588a997ded1e5a94d6a4a9c7c484742aa5c955010c641227c0f8",
+      "chapter_sha256": "378f99abf9f2cc0a0d4bad9ab0425236d7959c125dabd9472dfb306df21a1d17",
       "part_id": "evidence-implementation-living-book",
       "part_index": 4,
       "chapter_index": 1,

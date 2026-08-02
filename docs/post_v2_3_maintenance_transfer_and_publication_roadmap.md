@@ -4201,9 +4201,10 @@ without imposing a broadcast loudness target on YouTube.
 **Execution checkpoint.** The v2 standard is now repository-local at
 `skills/asi-stack-manim-videos/`, and
 `visual_edition/manim_v2_production_ledger.json` derives all 84 targets in
-canonical order across the 5/7/72 work cohorts; the seven residual generation-one
-predecessors are now explicitly private historical custody rather than active
-unlisted previews. Three schemas and a registered
+canonical order across the 5/7/4/68 work cohorts; the seven residual generation-one
+predecessors are explicitly private historical custody rather than active
+unlisted previews, and four generation-two candidates are current unlisted
+previews. Three schemas and a registered
 validator make the beat, review, predecessor, gate, receipt, YouTube, and
 Quarto transitions fail closed. The ledger currently records 76 planned
 chapters, eight chapters through animatic, and eight through picture-and-sound
@@ -4470,6 +4471,17 @@ objects were observed private at withdrawal time. Generation-two candidates
 19–24 remain unlisted but unaccepted, and chapters 13–18 have no YouTube
 object. This disposition changes neither chapter support nor claim state and
 does not delete platform history.
+
+#### P7.3-F11 current generation-two preview projection — 2026-08-02
+
+The owner-authorized projection now links the four generation-two candidates
+whose uploaded master and chapter digests still agree: positions 19, 20, 22,
+and 24. Their YouTube rows are observed `unlisted`, with captions published
+and reviewed thumbnails applied; the four managed chapter players and landing
+roster are reconciled to those exact identities. Candidates 21 and 23 remain
+unlisted but are not linked because their chapters changed after upload and
+their bound digests are stale. This is a preview-only projection and changes
+neither support, claim, release, nor public-current state.
 
 ## Milestones
 

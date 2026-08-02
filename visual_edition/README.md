@@ -135,10 +135,12 @@ masters total 1,015,153,522 bytes outside Git and Pages. The first-generation
 twelve preview identities were withdrawn from the current projection and made
 private on YouTube; their exact custody remains in
 `youtube_preview_history_2026-07-30.json`. Generation-two candidates 19–24
-remain unlisted in the private canonical playlist but are not accepted/current.
-Published-current videos, final platform receipts, and published-current
-Quarto embeds remain zero. A local validated master or an unlisted candidate
-is not a publication.
+remain unlisted in the private canonical playlist. Four candidates (19, 20,
+22, and 24) are now linked as current unlisted previews; 21 and 23 are held
+out because their chapter digests drifted after upload and require a new
+render. Published-current videos, final platform receipts, and
+published-current Quarto embeds remain zero. A local validated master or an
+unlisted candidate is not a publication.
 
 Owner viewing of the first five previews exposed a stricter pedagogical
 failure that these technical receipts do not measure. Videos 2–5 are thin
@@ -321,12 +323,12 @@ position, YouTube identity, local master, chapter digest, source commit,
 caption, transcript, thumbnail state, and unlisted visibility. The player and
 landing-page roster must identify the incomplete denominator, and preview
 counts must remain separate from `published_current`. The current projection
-is intentionally **0/84**: the twelve generation-one predecessors were
-withdrawn from Quarto and the landing page on 2026-08-02, with their exact
-identities and digests preserved in
-`youtube_preview_history_2026-07-30.json`. Generation-two candidates 19–24
-remain unlisted but are not accepted/current; chapters 13–18 have no YouTube
-object yet.
+is **4/84** at canonical positions 19, 20, 22, and 24: the twelve
+generation-one predecessors were withdrawn from Quarto and the landing page
+on 2026-08-02, with their exact identities and digests preserved in
+`youtube_preview_history_2026-07-30.json`. Candidates 21 and 23 remain
+unlisted but are held out for chapter-digest re-rendering; chapters 1–18 and
+25–84 have no current YouTube preview link.
 
 Each packet keeps an editable SVG thumbnail source in Git. Upload preparation
 rasterizes it to an ignored 3840×2160 PNG, binds both source and output
@@ -413,6 +415,18 @@ does not point at an old generation. The YouTube objects were changed to
 successor is accepted; this is reversible and does not delete or rewrite
 platform history. No chapter claim, support state,
 published-current state, or generation-two candidate was promoted.
+
+## P7.3-F11 — current generation-two preview projection (2026-08-02)
+
+The owner-authorized current projection now links the four generation-two
+videos whose uploaded master and chapter digests still agree: positions 19,
+20, 22, and 24. Their YouTube rows are observed `unlisted`, with captions
+published and reviewed thumbnails applied; the managed chapter players and
+landing-page roster are reconciled to those exact identities. Candidates 21
+and 23 remain on YouTube as unlisted historical candidates but are not linked,
+because their chapters changed after upload and the candidate digests no
+longer match. This projection is preview-only: it changes no claim, support,
+publication, or public-current state.
 
 YouTube does not replace an uploaded binary at the same URL. A material chapter
 revision therefore creates a new video generation and new YouTube video ID.

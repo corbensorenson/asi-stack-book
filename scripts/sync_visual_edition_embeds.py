@@ -57,11 +57,22 @@ def render_block(packet: dict, preview: dict | None = None) -> str:
     heading = "Visual abstract preview" if preview is not None else "Visual abstract"
     preview_notice = ""
     if preview is not None:
+        caption_state = preview.get("platform_caption_state")
+        caption_note = (
+            "The reviewed caption track is attached on YouTube."
+            if caption_state == "published"
+            else "The reviewed local caption track has not yet been attached on YouTube."
+        )
+        thumbnail_note = (
+            "The reviewed thumbnail is applied."
+            if preview.get("platform_thumbnail_state") == "applied"
+            else "The reviewed thumbnail is not yet applied."
+        )
         preview_notice = f"""
 <div class="asi-visual-preview-notice" role="status">
 <strong>Visual-edition preview — {preview["position"]} of 84.</strong>
 This is an unlisted staging preview. The complete edition is not public yet;
-the reviewed local caption track has not yet been attached on YouTube, and
+{caption_note} {thumbnail_note}
 this preview does not count as <code>published_current</code> or change any
 book claim.
 </div>
@@ -164,6 +175,17 @@ def roster_pattern() -> re.Pattern[str]:
 def render_roster(preview: dict) -> str:
     entries = preview["entries"]
     withdrawn = preview.get("state") == "owner_withdrew_partial_unlisted_preview"
+    positions = [entry["position"] for entry in entries]
+    if positions and positions == list(range(1, len(positions) + 1)):
+        coverage = f"the first **{len(entries)} of 84**"
+    elif positions:
+        rendered_positions = ", ".join(str(position) for position in positions)
+        coverage = (
+            f"**{len(entries)} of 84** currently linked visual abstracts "
+            f"(canonical positions {rendered_positions})"
+        )
+    else:
+        coverage = "no visual abstracts"
     lines = [
         ROSTER_BEGIN,
         "## Visual edition preview",
@@ -177,12 +199,12 @@ def render_roster(preview: dict) -> str:
             "candidates, not current embeds."
             if withdrawn
             else (
-                f"The first **{len(entries)} of 84** visual abstracts are embedded "
-                "in their canonical chapters for integrated review. They remain "
+                f"{coverage} are embedded in their canonical chapters for "
+                "integrated review. They remain "
                 "unlisted staging previews, not a completed or published-current "
                 "visual edition. Every preview includes an adjacent descriptive "
-                "transcript; final YouTube caption and thumbnail reconciliation "
-                "is still open."
+                "transcript, and the observed platform caption and thumbnail "
+                "states remain recorded in the binding ledger."
             )
         ),
         "",
