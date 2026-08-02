@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 318, "planned": 6} |
-| Triage class counts | {"formal-invariant": 318, "process-contract": 6} |
-| Lean modules referenced | 91 |
+| Manifest status counts | {"implemented": 319, "planned": 5} |
+| Triage class counts | {"formal-invariant": 319, "process-contract": 5} |
+| Lean modules referenced | 92 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -88,6 +88,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | 7 | 5 | 7 | 10 | 2 |
 | `lean/AsiStackProofs/OpenWeightReleaseReview.lean` | 1 | 19 | 0 | 23 | 5 |
+| `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | 1 | 36 | 0 | 33 | 10 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 27 | 0 | 11 | 8 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
@@ -184,7 +185,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `open-weight-release-and-post-release-control` | 1 | 1 | 0 | 0 |
 | `perception-sensor-fusion-and-observation-trust` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
-| `physical-compute-infrastructure-energy-and-environmental-constraints` | 1 | 0 | 0 | 0 |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | 1 | 1 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
 | `privacy-data-rights-and-information-flow-governance` | 2 | 2 | 0 | 0 |
@@ -452,7 +453,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:simulation.fidelity.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomicsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `AsiStackProofs.PhysicalComputeInfrastructureReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.operational_invariant` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.failure_blocks_promotion` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.adoption_trace_bridge` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |

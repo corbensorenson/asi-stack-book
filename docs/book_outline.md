@@ -5761,7 +5761,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. | planned |
+| `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` | `AsiStackProofs.PhysicalComputeInfrastructureReview` | A reachable six-transition physical-infrastructure review admits only dossiers that bind workload, site, interval, hardware, topology, workload version, and meter version; separate requested, nameplate, available, delivered, and useful compute; account capacity, energy, cooling, water, materials, community, uncertainty, resilience, retirement, rebound, and residual ownership; and reject broad availability, sustainability, resilience, community-acceptability, support, and release claims. All 44 admission-axis mutations reject with exact repairs. Finite workload demand and attributed energy compose; demand growth, capacity loss, expiry, and hidden backup energy remain rejecting; five scope changes invalidate receipts; two signal collisions prove that energy headlines cannot recover useful delivery and unit efficiency cannot recover total impact; and missing physical capacity rejects the Resource Economics budget gate. No theorem establishes delivered performance, sustainability, resilience, community acceptance, deployment, support, or transfer. | implemented |
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:physical-compute-infrastructure-energy-and-environmental-constraints:END -->
 
 ### Mathematical and Search Substrates
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 125 Lean modules, 1709 theorem declarations, 1056 derived/decomposed, 312 direct/projection, 341 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 126 Lean modules, 1745 theorem declarations, 1072 derived/decomposed, 328 direct/projection, 345 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

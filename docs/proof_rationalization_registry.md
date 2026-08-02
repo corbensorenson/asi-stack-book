@@ -10,7 +10,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 |---|---:|
 | Baseline theorem declarations | 1151 |
 | Baseline proof targets | 298 |
-| Chapters | 69 |
+| Chapters | 70 |
 | Lean modules | 65 |
 | Fully reviewed modules | 65 |
 | Safety-critical modules fully reviewed | 5/5 |
@@ -73,6 +73,7 @@ This inventory freezes the 1,151 theorem declarations and 298 proof targets that
 | `open-research-agenda-and-bibliography-plan` | 2 | 4 | 0 | 0 |
 | `open-weight-release-and-post-release-control` | 0 | 0 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 26 | 0 | 0 |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | 0 | 0 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 33 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 4 | 19 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 19 | 0 | 0 |

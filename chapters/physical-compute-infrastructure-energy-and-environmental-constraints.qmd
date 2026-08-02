@@ -317,7 +317,13 @@ The support state remains at argument until multi-site, multi-season campaigns r
 | Failure and degradation | Inject power, cooling, network, and supplier faults and verify quality and authority ceilings remain visible. | planned |
 | Embodied and retirement boundary | Preserve materials, construction, maintenance, reuse, e-waste, and community residuals. | planned |
 
-Planned formalization route: `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` covers only the finite admission record for physical compute infrastructure energy and environmental constraints; it cannot establish whether physical compute infrastructure energy and environmental constraints works safely or transfers.
+## Formalization hooks
+
+Implemented formalization: `lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary` binds this chapter to `AsiStackProofs.PhysicalComputeInfrastructureReview`. Its 36 theorem declarations define a reachable six-transition review and test 44 admission-axis mutations. A complete authored dossier reaches only eligibility for a Project Theseus workload-capacity campaign; every one-axis omission or forbidden broad claim reaches repair with an exact disposition.
+
+The mechanized core proves bounded accounting properties rather than physical outcomes. Workload demand and attributed energy compose over finite lists, every member's compute demand is bounded by the aggregate, aggregate overrun rejects fleet fit, and omitting positive backup energy breaks exact accounting. Increasing demand beyond capacity, losing capacity after an overrun, and advancing time after expiry cannot repair the corresponding failure. Workload, site, interval, hardware, and meter changes invalidate capacity receipts. Two information-loss constructions show why equal energy headlines cannot determine useful delivery and why equal unit-efficiency signals cannot determine total impact. The consumer bridge maps absent physical capacity to a disabled required safety gate in Resource Economics.
+
+These are theorems about the encoded records and transitions, not measurements of a facility. The dossier fields are authored assumptions; the model does not prove delivered useful work, metering accuracy, sustainability, resilience, community acceptability, rebound control, deployment readiness, support, or transfer. Chapter support remains `argument` and `support_state_effect` remains `none`. Those claims require the Project Theseus workload-capacity campaign across sites, seasons, faults, meters, allocation methods, and affected-community outcomes.
 
 ## Source crosswalk
 

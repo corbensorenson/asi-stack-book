@@ -22,8 +22,8 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
 CURRENT_PROOF_TARGET_COUNT = 324
-CURRENT_IMPLEMENTED_TARGET_COUNT = 318
-CURRENT_PLANNED_TARGET_COUNT = 6
+CURRENT_IMPLEMENTED_TARGET_COUNT = 319
+CURRENT_PLANNED_TARGET_COUNT = 5
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -34,9 +34,9 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 82,
+    "adequate finite-record invariant": 83,
     "useful but too narrow": 160,
-    "needs richer state-machine or review semantics": 22,
+    "needs richer state-machine or review semantics": 21,
     "needs executable tests first": 37,
     "needs empirical or baseline tests first": 21,
     "research-agenda until artifact import": 2,
@@ -124,6 +124,7 @@ PLANNED_CHAPTERS = (
     "institutions-international-coordination-and-public-legitimacy",
     "societal-resilience-and-misuse-defense",
     "durable-semantic-memory-and-knowledge-lattices",
+    "physical-compute-infrastructure-energy-and-environmental-constraints",
 }
 EXPECTED_RICHER = {
     "constitutional-alignment-substrate": 6,

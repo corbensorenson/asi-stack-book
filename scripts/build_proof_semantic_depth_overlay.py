@@ -315,6 +315,57 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed physical-infrastructure dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_workload_capacity_campaign": "The closed dossier reaches only Project Theseus workload-capacity campaign eligibility, not performance, sustainability, support, or release.",
+    "identical_energy_headlines_can_hide_opposite_useful_delivery": "Two workload cases witness opposite useful-delivery state under identical average-power and annual-energy signals.",
+    "identical_unit_efficiency_can_hide_opposite_total_impact": "Two rebound cases witness opposite total-impact state under identical unit-efficiency and unit-cost signals.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed infrastructure dossier or information-loss collision witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "aggregate_demand_append_composes": "Structural induction proves six-axis workload demand composes over concatenation for arbitrary finite workload lists.",
+    "every_member_compute_demand_is_bounded_by_aggregate": "Structural induction proves every member workload's compute demand is bounded by the finite aggregate.",
+    "aggregate_compute_overrun_rejects_fleet_fit": "The compute-capacity conjunct rejects every aggregate demand that exceeds the fleet envelope.",
+    "attributed_energy_append_composes": "Structural induction proves attributed operational, facility, backup, and cooling energy composes over concatenation.",
+    "hidden_backup_energy_breaks_exact_accounting": "Positive omitted backup energy is a quantified counterexample to exact reported-energy accounting.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 44 infrastructure-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 44 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 44 mutations into the lifecycle repair state.",
+    "expired_capacity_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired infrastructure contract.",
+    "demand_increase_past_capacity_rejects_fit": "Natural-number order proves demand growth beyond a formerly fitting capacity rejects fit.",
+    "capacity_loss_preserves_existing_overrun": "Natural-number order proves capacity loss cannot repair an existing demand overrun.",
+    "workload_change_invalidates_capacity_receipt": "The workload-identity conjunct rejects a receipt presented for a different workload.",
+    "site_change_invalidates_capacity_receipt": "The site-identity conjunct rejects a receipt presented at a different site.",
+    "interval_change_invalidates_capacity_receipt": "The interval conjunct rejects a receipt presented outside its measured interval.",
+    "hardware_change_invalidates_capacity_receipt": "The hardware-digest conjunct rejects a receipt presented for a changed configuration.",
+    "meter_change_invalidates_capacity_receipt": "The meter-version conjunct rejects a receipt presented under a changed meter version.",
+    "energy_headlines_cannot_recover_useful_delivery": "A same-headline/opposite-delivery collision proves no headline-signal classifier is exact for every modeled case.",
+    "unit_efficiency_cannot_recover_total_impact": "A same-unit-efficiency/opposite-impact collision proves no unit-signal classifier is exact for every modeled rebound case.",
+    "physical_capacity_failure_rejects_resource_budget_gate": "The consumer bridge maps absent physical capacity to the existing Resource Economics required-safety-gate rejection.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/physical_compute_infrastructure_dossier.json"],
+        "classification_basis": ["a quantified induction, mutation family, accounting counterexample, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "device_counter_does_not_establish_delivered_useful_compute", "facility_pue_does_not_establish_sustainability",
+    "renewable_contract_does_not_establish_temporal_grid_impact", "workload_energy_estimate_does_not_establish_community_acceptability",
+    "outage_drill_does_not_establish_resilience", "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant", "campaign_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_capacity", "readiness_requires_impact",
+    "readiness_requires_resilience", "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored infrastructure state"],
+        "rationale": "The theorem constrains only the encoded physical-infrastructure review; it establishes no delivered performance, sustainability, resilience, community acceptability, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
     "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",

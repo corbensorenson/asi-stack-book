@@ -2333,12 +2333,12 @@
     {
       "tag": "lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary",
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
-      "module": "AsiStackProofs.NoDeferralAdmission",
-      "formal_target": "A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-      "target_status": "planned",
-      "triage": "process-contract",
-      "recommended_route": "policy-model-first",
-      "rationale": "The planned admission boundary gives Physical Compute Infrastructure, Energy, and Environmental Constraints a finite identity/authority/version/check/residual guard, but static authored fields cannot establish the chapter mechanism, empirical effect, independent enforcement, transfer, release readiness, AGI, or ASI. Model the full lifecycle and rejecting routes before formal work."
+      "module": "AsiStackProofs.PhysicalComputeInfrastructureReview",
+      "formal_target": "A reachable six-transition physical-infrastructure review admits only dossiers that bind workload, site, interval, hardware, topology, workload version, and meter version; separate requested, nameplate, available, delivered, and useful compute; account capacity, energy, cooling, water, materials, community, uncertainty, resilience, retirement, rebound, and residual ownership; and reject broad availability, sustainability, resilience, community-acceptability, support, and release claims. All 44 admission-axis mutations reject with exact repairs. Finite workload demand and attributed energy compose; demand growth, capacity loss, expiry, and hidden backup energy remain rejecting; five scope changes invalidate receipts; two signal collisions prove that energy headlines cannot recover useful delivery and unit efficiency cannot recover total impact; and missing physical capacity rejects the Resource Economics budget gate. No theorem establishes delivered performance, sustainability, resilience, community acceptance, deployment, support, or transfer.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a reachable six-transition review with 44 exact mutation repairs, finite workload and impact accounting, adverse monotonicity, scoped receipts, two non-identifiability results, and a rejecting Resource Economics consumer. Authored fields remain assumptions and support_state_effect remains none."
     },
     {
       "tag": "lean:substrates.search.operational_invariant",

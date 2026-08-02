@@ -19796,12 +19796,12 @@
           "proof_targets": [
             {
               "tag": "lean:physical-compute-infrastructure-energy-and-environmental-constraints.admission_boundary",
-              "module": "AsiStackProofs.NoDeferralAdmission",
-              "target": "A finite Physical Compute Infrastructure, Energy, and Environmental Constraints record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority.",
-              "status": "planned"
+              "module": "AsiStackProofs.PhysicalComputeInfrastructureReview",
+              "target": "A reachable six-transition physical-infrastructure review admits only dossiers that bind workload, site, interval, hardware, topology, workload version, and meter version; separate requested, nameplate, available, delivered, and useful compute; account capacity, energy, cooling, water, materials, community, uncertainty, resilience, retirement, rebound, and residual ownership; and reject broad availability, sustainability, resilience, community-acceptability, support, and release claims. All 44 admission-axis mutations reject with exact repairs. Finite workload demand and attributed energy compose; demand growth, capacity loss, expiry, and hidden backup energy remain rejecting; five scope changes invalidate receipts; two signal collisions prove that energy headlines cannot recover useful delivery and unit efficiency cannot recover total impact; and missing physical capacity rejects the Resource Economics budget gate. No theorem establishes delivered performance, sustainability, resilience, community acceptance, deployment, support, or transfer.",
+              "status": "implemented"
             }
           ],
-          "lean_module": "AsiStackProofs.NoDeferralAdmission"
+          "lean_module": "AsiStackProofs.PhysicalComputeInfrastructureReview"
         },
         {
           "id": "mathematical-and-search-substrates",

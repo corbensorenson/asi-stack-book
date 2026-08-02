@@ -684,13 +684,14 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "physical-compute-infrastructure-energy-and-environmental-constraints": {
-        "reviewed_sha256": "93c3e0e439438480a1fc5dc0385064fd754cb29658d09a28c350116fddcbf068",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "1e2a0bc56d932526ff3fbe67d9e41b9e8e212e19b8ac32fdf9b67f3e369ffcbe",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish useful compute, bottleneck topology, temporal grid effects, local cooling and community constraints, embodied lifecycle, degradation, metering and rebound, and hardware-control concentration",
             "IEA, LBNL, hardware-guarantee, and OECD sources remain scenario, national-method, design-proposal, and market-specific evidence rather than local facility measurement or legal adjudication",
+            "the formalization is restricted to authored finite records, accounting composition, adverse monotonicity, scoped receipts, information-loss countermodels, and a rejecting Resource Economics consumer; it supplies no facility measurement or outcome authority",
             "the chapter preserves denominators, time and location, uncertainty, distribution, correlated failure, total versus marginal effects, and argument-only support",
         ],
         "support_state_effect": "none",

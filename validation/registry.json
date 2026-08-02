@@ -3153,7 +3153,12 @@
     "lean/AsiStackProofs/DurableSemanticMemoryReview.lean",
     "tests/fixtures/proof_models/durable_semantic_memory_dossier.json",
     "evidence_quality/proof_model_dossiers/durable-semantic-memory-and-knowledge-lattices.md",
-    "chapters/durable-semantic-memory-and-knowledge-lattices.qmd"
+    "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+    "scripts/validate_physical_compute_infrastructure_review.py",
+    "lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean",
+    "tests/fixtures/proof_models/physical_compute_infrastructure_dossier.json",
+    "evidence_quality/proof_model_dossiers/physical-compute-infrastructure-energy-and-environmental-constraints.md",
+    "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd"
   ],
   "units": [
     {
@@ -12111,7 +12116,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 318 implemented and 6 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, and Durable Semantic Memory Review refinements",
+        "324 current targets comprise 319 implemented and 5 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, Durable Semantic Memory Review, and Physical Compute Infrastructure Review refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "ten required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -18036,11 +18041,55 @@
       "prohibited_inference": "Does not establish semantic truth, retrieval utility, complete memory, semantic restart equivalence, behavioral forgetting, deployment, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
+    },
+    {
+      "id": "validate_physical_compute_infrastructure_review.py:463",
+      "order": 463,
+      "script": "validate_physical_compute_infrastructure_review.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical physical-compute Lean review, independent 44-axis fixture, chapter proof boundary, dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_physical_compute_infrastructure_review.py",
+        "lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean",
+        "tests/fixtures/proof_models/physical_compute_infrastructure_dossier.json",
+        "evidence_quality/proof_model_dossiers/physical-compute-infrastructure-energy-and-environmental-constraints.md",
+        "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, accounting, capacity, impact, scope, collision, consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "six-transition review reaches only Project Theseus workload-capacity campaign eligibility",
+        "44/44 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "finite workload demand and attributed energy compose over list append",
+        "member demand, aggregate overrun, hidden backup energy, demand growth, capacity loss, and expiry remain bounded",
+        "workload, site, interval, hardware, and meter changes invalidate receipts",
+        "energy headlines cannot recover useful delivery and unit efficiency cannot recover total impact",
+        "missing physical capacity rejects the Resource Economics required safety gate",
+        "36 exact Lean declarations move no chapter support, deployment, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored physical-infrastructure review, finite accounting, adverse monotonicity, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_44_axis_identity_capacity_impact_resilience_boundary_accounting_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "identity loss",
+        "capacity omission",
+        "impact omission",
+        "hidden backup energy",
+        "scope drift",
+        "efficiency laundering",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish delivered performance, meter accuracy, sustainability, resilience, community acceptability, rebound control, deployment, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_independent_consumer_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3109,
-    "unit_count": 462
+    "required_artifact_count": 3114,
+    "unit_count": 463
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
