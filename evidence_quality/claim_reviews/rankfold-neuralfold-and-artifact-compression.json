@@ -299,7 +299,7 @@
       "rationale": "Decoder drift expiry is invariant-owned.",
       "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.010"
     },
-    "rankfold-neuralfold-and-artifact-compression.prose.0568dbc51168": {
+    "rankfold-neuralfold-and-artifact-compression.prose.a4f1d556b38a": {
       "state": "historical_or_source_report",
       "rationale": "Exact bounded MVI result and non-claim report."
     },
@@ -471,6 +471,20 @@
     }
   },
   "prose_review_lineage": [
+    {
+      "retired_candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.0568dbc51168",
+      "retired_source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:733",
+      "retired_sentence": "The MVI establishes record shape, one exact local raw-storage roundtrip, one corrupt-archive rejection, bounded metadata consistency, and modeled route behavior only.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Exact bounded MVI result and non-claim report."
+      },
+      "retirement_reason": "The proof tranche replaced the route-only wording with the stronger but still bounded lifecycle-invariant wording.",
+      "replacement_candidate_ids": [
+        "rankfold-neuralfold-and-artifact-compression.prose.a4f1d556b38a"
+      ],
+      "recorded_on": "2026-08-02"
+    },
     {
       "retired_candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.76719c7fd75e",
       "retired_source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:396",

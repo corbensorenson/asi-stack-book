@@ -1,15 +1,53 @@
 {
-  "schema_version": "asi_stack.artifact_compression_refinement.result.v1",
+  "schema_version": "asi_stack.artifact_compression_refinement.result.v2",
   "result_id": "2026-07-15-artifact-compression-refinement",
   "recorded_date": "2026-07-15",
   "command": "python3 scripts/validate_artifact_compression_refinement.py",
   "model": {
     "lean_module": "lean/AsiStackProofs/ArtifactCompressionRefinement.lean",
     "stage_count": 8,
+    "lean_theorem_count": 27,
+    "lean_theorem_surface": [
+      "accepted_step_is_accepted",
+      "accepted_step_applies_event",
+      "apply_event_preserves_full_identity",
+      "accepted_step_preserves_full_identity",
+      "accepted_step_preserves_non_authority",
+      "accepted_step_adds_exactly_one_receipt",
+      "accepted_step_advances_stage",
+      "apply_event_fallback_count_monotone",
+      "accepted_step_fallback_count_monotone",
+      "accepted_run_preserves_full_identity",
+      "accepted_run_preserves_support",
+      "accepted_run_preserves_external_effect",
+      "accepted_run_accounts_exact_receipts",
+      "accepted_run_fallback_count_monotone",
+      "accepted_run_has_accepted_trace",
+      "artifact_run_append",
+      "closed_state_accepts_no_event",
+      "exact_lifecycle_reaches_closed_with_receipts",
+      "failed_probe_lifecycle_reaches_closed_with_one_fallback",
+      "complete_packet_has_no_support_or_effect_authority",
+      "failed_probe_with_fallback_routes_to_fallback",
+      "failed_probe_without_fallback_requests_artifact",
+      "exact_replay_without_readiness_blocks_use",
+      "raw_ratio_cannot_promote_admitted_artifact",
+      "missing_evidence_transition_blocks_consumption",
+      "exact_use_lifecycle_routes_to_closed",
+      "failed_probe_lifecycle_has_executable_fallback_without_support"
+    ],
     "route_count": 53,
     "reached_route_count": 53,
     "route_case_count": 53,
-    "rejected_mutation_count": 44,
+    "trace_event_count": 7,
+    "trace_composition_split_count": 8,
+    "identity_preservation_check_count": 8,
+    "non_authority_preservation_check_count": 8,
+    "fallback_monotonicity_check_count": 7,
+    "terminal_rejection_count": 8,
+    "identity_field_count": 9,
+    "mutation_count": 143,
+    "rejected_mutation_count": 143,
     "fallback_route_reached": true,
     "exact_use_route_reached": true,
     "support_assignment_count": 0,
@@ -428,6 +466,596 @@
       "accepted": true
     }
   ],
+  "mutation_receipts": [
+    {
+      "mutation_id": "route:wrong-stage",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:identity-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:policy-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:decoder-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:evidence-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:event-replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:authority-leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-fullArtifact",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-manifest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-useEnvelope",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-accessPattern",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-consumer",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:registered-rights",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-codecIdentity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-decoderIdentity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-platform",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-byteAccounting",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-residual",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:encoded-artifactDigestRecord",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-decoderDeterminism",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-integrity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-adversarialMutation",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-verificationReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:verified-exact-replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:fallbackReady-fallbackTrigger",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:fallbackReady-fallbackExecuted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:fallbackReady-recoveryReceipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:fallbackReady-costAccounting",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:consumed-consumerAck",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:consumed-observedOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:consumed-fallbackOutcome",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:consumed-residualClosure",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-descendants",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-resultDigestBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:closed-cleanup",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:probed-missing-probe",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:probed-no-fallback",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:probed-utilityEvidence",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:probed-rareCaseCoverage",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:probed-securityAndRights",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:admitted-unqualified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:admitted-ratio",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:admitted-transition",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route:admitted-nonclaims",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:registered:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:registered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:registered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:registered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:registered",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:encoded:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:encoded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:encoded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:encoded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:encoded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:verified:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:probed:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:probed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:probed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:probed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:probed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:fallbackReady:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:fallbackReady",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:fallbackReady",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:fallbackReady",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:fallbackReady",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:admitted:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:admitted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:admitted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:admitted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:admitted",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:artifactDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:useDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:rightsDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:codecDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:decoderDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:evidenceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "identity:consumed:resultDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong-kind:consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay:consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support:consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect:consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:bindArtifact",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:recordEncoding",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:verifyReconstruction",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:probeConsumer",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:prepareFallback",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:admitUse",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:recordConsumption",
+      "rejected": true
+    },
+    {
+      "mutation_id": "terminal:close",
+      "rejected": true
+    }
+  ],
+  "witnesses": {
+    "exact_use": {
+      "terminal_stage": "closed",
+      "receipt_count": 7,
+      "fallback_count": 0,
+      "support_assigned": false,
+      "external_effect_committed": false
+    },
+    "failed_probe_fallback": {
+      "terminal_stage": "closed",
+      "receipt_count": 7,
+      "fallback_count": 1,
+      "support_assigned": false,
+      "external_effect_committed": false
+    }
+  },
   "lean_verification": {
     "command": "lake env lean AsiStackProofs/ArtifactCompressionRefinement.lean",
     "exit_code": 0,

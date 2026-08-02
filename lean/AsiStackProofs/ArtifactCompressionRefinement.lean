@@ -42,6 +42,8 @@ structure State where
   evidenceDigest : Nat
   resultDigest : Nat
   lastEventDigest : Nat
+  receiptCount : Nat := 0
+  fallbackCount : Nat := 0
   supportAssigned : Bool := false
   externalEffectCommitted : Bool := false
 deriving DecidableEq, Repr
@@ -153,6 +155,251 @@ def route (s : State) (kind : EventKind) (p : Packet) : Route :=
       if !p.descendants then .requestDescendants else if !p.resultDigestBound then .requestResultDigest
       else if !p.cleanup then .requestCleanup else .acceptClosed
 
+structure StateIdentity where
+  artifactDigest : Nat
+  consumerDigest : Nat
+  useDigest : Nat
+  policyDigest : Nat
+  rightsDigest : Nat
+  codecDigest : Nat
+  decoderDigest : Nat
+  evidenceDigest : Nat
+  resultDigest : Nat
+deriving DecidableEq, Repr
+
+def stateIdentity (s : State) : StateIdentity :=
+  { artifactDigest := s.artifactDigest
+    consumerDigest := s.consumerDigest
+    useDigest := s.useDigest
+    policyDigest := s.policyDigest
+    rightsDigest := s.rightsDigest
+    codecDigest := s.codecDigest
+    decoderDigest := s.decoderDigest
+    evidenceDigest := s.evidenceDigest
+    resultDigest := s.resultDigest }
+
+def advance : Stage → Stage
+  | .registered => .encoded
+  | .encoded => .verified
+  | .verified => .probed
+  | .probed => .fallbackReady
+  | .fallbackReady => .admitted
+  | .admitted => .consumed
+  | .consumed => .closed
+  | .closed => .closed
+
+def applyEvent (s : State) (kind : EventKind) (p : Packet) : State × Route :=
+  let selectedRoute := route s kind p
+  if accepted selectedRoute then
+    ({s with
+      stage := advance s.stage
+      lastEventDigest := p.eventDigest
+      receiptCount := s.receiptCount + 1
+      fallbackCount := if selectedRoute == .routeToFallback then s.fallbackCount + 1 else s.fallbackCount},
+      selectedRoute)
+  else (s, selectedRoute)
+
+structure Event where
+  kind : EventKind
+  packet : Packet
+deriving DecidableEq, Repr
+
+def ArtifactStep (s : State) (e : Event) : Option State :=
+  if s.stage = .closed then none
+  else if accepted (route s e.kind e.packet) then some (applyEvent s e.kind e.packet).1 else none
+
+def ArtifactRun : State → List Event → Option State
+  | state, [] => some state
+  | state, event :: tail =>
+      match ArtifactStep state event with
+      | none => none
+      | some next => ArtifactRun next tail
+
+def ArtifactTraceAccepted : State → List Event → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      accepted (route state event.kind event.packet) = true ∧
+      ArtifactTraceAccepted (applyEvent state event.kind event.packet).1 tail
+
+theorem accepted_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    accepted (route state event.kind event.packet) = true := by
+  unfold ArtifactStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · assumption
+    · simp at stepped
+
+theorem accepted_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    next = (applyEvent state event.kind event.packet).1 := by
+  unfold ArtifactStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · exact Option.some.inj stepped |>.symm
+    · simp at stepped
+
+theorem apply_event_preserves_full_identity (state : State) (event : Event) :
+    stateIdentity (applyEvent state event.kind event.packet).1 = stateIdentity state := by
+  by_cases h : accepted (route state event.kind event.packet) = true <;>
+    simp [applyEvent, h, stateIdentity]
+
+theorem accepted_step_preserves_full_identity
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    stateIdentity next = stateIdentity state := by
+  rw [accepted_step_applies_event stepped]
+  exact apply_event_preserves_full_identity state event
+
+theorem accepted_step_preserves_non_authority
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    next.supportAssigned = state.supportAssigned ∧
+    next.externalEffectCommitted = state.externalEffectCommitted := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_adds_exactly_one_receipt
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_advances_stage
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    next.stage = advance state.stage := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem apply_event_fallback_count_monotone (state : State) (event : Event) :
+    state.fallbackCount ≤ (applyEvent state event.kind event.packet).1.fallbackCount := by
+  cases routed : route state event.kind event.packet <;>
+    simp [applyEvent, routed, accepted]
+
+theorem accepted_step_fallback_count_monotone
+    {state next : State} {event : Event}
+    (stepped : ArtifactStep state event = some next) :
+    state.fallbackCount ≤ next.fallbackCount := by
+  rw [accepted_step_applies_event stepped]
+  exact apply_event_fallback_count_monotone state event
+
+theorem accepted_run_preserves_full_identity
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    stateIdentity final = stateIdentity state := by
+  induction events generalizing state with
+  | nil => simp [ArtifactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_full_identity stepped)
+
+theorem accepted_run_preserves_support
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    final.supportAssigned = state.supportAssigned := by
+  induction events generalizing state with
+  | nil => simp [ArtifactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_non_authority stepped).1
+
+theorem accepted_run_preserves_external_effect
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    final.externalEffectCommitted = state.externalEffectCommitted := by
+  induction events generalizing state with
+  | nil => simp [ArtifactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_non_authority stepped).2
+
+theorem accepted_run_accounts_exact_receipts
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [ArtifactRun] at ran; subst final; simp
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_step_adds_exactly_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem accepted_run_fallback_count_monotone
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    state.fallbackCount ≤ final.fallbackCount := by
+  induction events generalizing state with
+  | nil => simp [ArtifactRun] at ran; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          exact Nat.le_trans (accepted_step_fallback_count_monotone stepped) (ih tailRan)
+
+theorem accepted_run_has_accepted_trace
+    {state final : State} {events : List Event}
+    (ran : ArtifactRun state events = some final) :
+    ArtifactTraceAccepted state events := by
+  induction events generalizing state with
+  | nil => simp [ArtifactTraceAccepted]
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at ran
+      | some next =>
+          have tailRan : ArtifactRun next tail = some final := by
+            simpa [ArtifactRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_accepted stepped, ih tailRan⟩
+
+theorem artifact_run_append
+    (state middle : State) (left right : List Event)
+    (leftRan : ArtifactRun state left = some middle) :
+    ArtifactRun state (left ++ right) = ArtifactRun middle right := by
+  induction left generalizing state with
+  | nil => simp [ArtifactRun] at leftRan; subst middle; rfl
+  | cons event tail ih =>
+      cases stepped : ArtifactStep state event with
+      | none => simp [ArtifactRun, stepped] at leftRan
+      | some next =>
+          have tailRan : ArtifactRun next tail = some middle := by
+            simpa [ArtifactRun, stepped] using leftRan
+          simpa [ArtifactRun, stepped] using ih next tailRan
+
+theorem closed_state_accepts_no_event
+    {state : State} (closed : state.stage = .closed) (event : Event) :
+    ArtifactStep state event = none := by
+  simp [ArtifactStep, closed]
+
 def completeState (selectedStage : Stage) : State where
   stage := selectedStage
   artifactDigest := 5001
@@ -167,6 +414,41 @@ def completeState (selectedStage : Stage) : State where
   lastEventDigest := 0
 
 def completePacket : Packet := {}
+
+def eventAt (kind : EventKind) (digest : Nat) (selectedPacket : Packet := completePacket) : Event :=
+  { kind := kind, packet := {selectedPacket with eventDigest := digest} }
+
+def exactLifecycleEvents : List Event :=
+  [eventAt .bindArtifact 101,
+   eventAt .recordEncoding 102,
+   eventAt .verifyReconstruction 103,
+   eventAt .probeConsumer 104,
+   eventAt .prepareFallback 105,
+   eventAt .admitUse 106,
+   eventAt .recordConsumption 107]
+
+def fallbackLifecycleEvents : List Event :=
+  [eventAt .bindArtifact 101,
+   eventAt .recordEncoding 102,
+   eventAt .verifyReconstruction 103,
+   eventAt .probeConsumer 104 {completePacket with taskProbePassed := false},
+   eventAt .prepareFallback 105,
+   eventAt .admitUse 106,
+   eventAt .recordConsumption 107]
+
+def exactLifecycleFinal : State :=
+  {completeState .closed with lastEventDigest := 107, receiptCount := 7}
+
+def fallbackLifecycleFinal : State :=
+  {completeState .closed with lastEventDigest := 107, receiptCount := 7, fallbackCount := 1}
+
+theorem exact_lifecycle_reaches_closed_with_receipts :
+    ArtifactRun (completeState .registered) exactLifecycleEvents = some exactLifecycleFinal := by
+  native_decide
+
+theorem failed_probe_lifecycle_reaches_closed_with_one_fallback :
+    ArtifactRun (completeState .registered) fallbackLifecycleEvents = some fallbackLifecycleFinal := by
+  native_decide
 
 theorem complete_packet_has_no_support_or_effect_authority :
     completePacket.supportPromotionRequested = false ∧

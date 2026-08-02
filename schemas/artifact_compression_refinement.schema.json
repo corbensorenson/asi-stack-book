@@ -2,20 +2,26 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Artifact compression request-to-closure refinement result",
   "type": "object",
-  "required": ["schema_version","result_id","recorded_date","command","model","source_result_refinement","route_cases","lean_verification","support_state_effect","external_effect","residuals","non_claims"],
+  "required": ["schema_version","result_id","recorded_date","command","model","source_result_refinement","route_cases","mutation_receipts","witnesses","lean_verification","support_state_effect","external_effect","residuals","non_claims"],
   "properties": {
-    "schema_version": {"const": "asi_stack.artifact_compression_refinement.result.v1"},
+    "schema_version": {"const": "asi_stack.artifact_compression_refinement.result.v2"},
     "result_id": {"const": "2026-07-15-artifact-compression-refinement"},
     "recorded_date": {"const": "2026-07-15"},
     "command": {"const": "python3 scripts/validate_artifact_compression_refinement.py"},
-    "model": {"type":"object","required":["lean_module","stage_count","route_count","reached_route_count","route_case_count","rejected_mutation_count","fallback_route_reached","exact_use_route_reached","support_assignment_count","external_effect_count"],"properties":{"lean_module":{"const":"lean/AsiStackProofs/ArtifactCompressionRefinement.lean"},"stage_count":{"const":8},"route_count":{"const":53},"reached_route_count":{"const":53},"route_case_count":{"const":53},"rejected_mutation_count":{"const":44},"fallback_route_reached":{"const":true},"exact_use_route_reached":{"const":true},"support_assignment_count":{"const":0},"external_effect_count":{"const":0}},"additionalProperties":false},
+    "model": {"type":"object","required":["lean_module","stage_count","lean_theorem_count","lean_theorem_surface","route_count","reached_route_count","route_case_count","trace_event_count","trace_composition_split_count","identity_field_count","identity_preservation_check_count","non_authority_preservation_check_count","fallback_monotonicity_check_count","terminal_rejection_count","mutation_count","rejected_mutation_count","fallback_route_reached","exact_use_route_reached","support_assignment_count","external_effect_count"],"properties":{"lean_module":{"const":"lean/AsiStackProofs/ArtifactCompressionRefinement.lean"},"stage_count":{"const":8},"lean_theorem_count":{"const":27},"lean_theorem_surface":{"type":"array","minItems":27,"maxItems":27,"uniqueItems":true,"items":{"type":"string"}},"route_count":{"const":53},"reached_route_count":{"const":53},"route_case_count":{"const":53},"trace_event_count":{"const":7},"trace_composition_split_count":{"const":8},"identity_field_count":{"const":9},"identity_preservation_check_count":{"const":8},"non_authority_preservation_check_count":{"const":8},"fallback_monotonicity_check_count":{"const":7},"terminal_rejection_count":{"const":8},"mutation_count":{"const":143},"rejected_mutation_count":{"const":143},"fallback_route_reached":{"const":true},"exact_use_route_reached":{"const":true},"support_assignment_count":{"const":0},"external_effect_count":{"const":0}},"additionalProperties":false},
     "source_result_refinement":{"type":"object"},
     "route_cases":{"type":"array","minItems":53,"maxItems":53},
+    "mutation_receipts":{"type":"array","minItems":143,"maxItems":143,"items":{"type":"object","required":["mutation_id","rejected"]}},
+    "witnesses":{"type":"object","required":["exact_use","failed_probe_fallback"],"properties":{"exact_use":{"$ref":"#/$defs/exactWitness"},"failed_probe_fallback":{"$ref":"#/$defs/fallbackWitness"}},"additionalProperties":false},
     "lean_verification":{"type":"object"},
     "support_state_effect":{"const":"none"},
     "external_effect":{"const":"none"},
     "residuals":{"type":"array","minItems":4},
     "non_claims":{"type":"array","minItems":3}
+  },
+  "$defs": {
+    "exactWitness":{"type":"object","properties":{"terminal_stage":{"const":"closed"},"receipt_count":{"const":7},"fallback_count":{"const":0},"support_assigned":{"const":false},"external_effect_committed":{"const":false}},"required":["terminal_stage","receipt_count","fallback_count","support_assigned","external_effect_committed"],"additionalProperties":false},
+    "fallbackWitness":{"type":"object","properties":{"terminal_stage":{"const":"closed"},"receipt_count":{"const":7},"fallback_count":{"const":1},"support_assigned":{"const":false},"external_effect_committed":{"const":false}},"required":["terminal_stage","receipt_count","fallback_count","support_assigned","external_effect_committed"],"additionalProperties":false}
   },
   "additionalProperties": false
 }

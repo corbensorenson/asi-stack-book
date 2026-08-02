@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2547 |
+| Theorem declarations classified | 2566 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1562 |
-| Unknown or mixed theorem declarations | 560 |
+| Derived/decomposed theorem declarations | 1579 |
+| Unknown or mixed theorem declarations | 562 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -57,7 +57,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | adversarial-machine-learning-and-model-attack-surface | 1 | 28 | 13 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 1 | 36 | 0 | 30 | 6 | manual review |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 8 | 0 | 0 | 8 | manual review |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 27 | 0 | 17 | 10 | manual review |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 21 | 11 | 9 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
@@ -273,10 +273,29 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `support_promotion_without_alignment_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `invalid_compressed_artifact_use_without_probe_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_candidate_missing_residual_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_fallback_count_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_has_accepted_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_preserves_external_effect` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_preserves_full_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_preserves_support` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_advances_stage` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_fallback_count_monotone` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_preserves_full_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_step_preserves_non_authority` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `apply_event_fallback_count_monotone` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `apply_event_preserves_full_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `artifact_run_append` | derived_or_decomposed | no | uses cases, have, induction, left, simp, subst |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `closed_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `complete_packet_has_no_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `exact_lifecycle_reaches_closed_with_receipts` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `exact_replay_without_readiness_blocks_use` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `exact_use_lifecycle_routes_to_closed` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_lifecycle_has_executable_fallback_without_support` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_lifecycle_reaches_closed_with_one_fallback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_with_fallback_routes_to_fallback` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `failed_probe_without_fallback_requests_artifact` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `missing_evidence_transition_blocks_consumption` | unknown_or_mixed | no | no recognized depth pattern |
