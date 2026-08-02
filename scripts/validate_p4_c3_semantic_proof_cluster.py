@@ -49,7 +49,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("machine status does not record the terminal adequate cluster")
     if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 13:
         out.append("public target denominator drifted")
-    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 129:
+    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 144:
         out.append("theorem denominator drifted")
 
     required = (
@@ -91,7 +91,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     normalized_chapter_text = re.sub(r"\s+", " ", chapter_text)
     for phrase in (
         "adequate only for its bounded reachable grant-to-local-effect semantics",
-        "Its 37 declarations remain bounded consequences of authored records",
+        "Its exact 52 declarations remain bounded consequences of authored records and reachable sequential events",
         "That historical classification no longer describes the current module",
         "adequate finite-record invariant only for its kind-exclusive payload discipline",
     ):
@@ -147,7 +147,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C3 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C3 semantic proof cluster passed: 4 modules, 13 public targets, 129 theorem "
+        "P4-C3 semantic proof cluster passed: 4 modules, 13 public targets, 144 theorem "
         "declarations, 4 adequate dispositions, 6 executable checks, "
         "10 cluster mutations rejected, support effect none."
     )

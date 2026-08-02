@@ -705,6 +705,385 @@ theorem complete_replacement_lifecycle_commits_default
     noIrreversible, ownerPresent, noDeprecation, noRetirement, boundaryPresent,
     defaultRequested]
 
+/-! ## Reachable replacement lifecycle
+
+The route tables above classify authored reviews. This state machine owns the
+stronger finite proposition that one replacement keeps its identity and
+authority ceiling across preparation, canary execution, independent monitor
+observation, either default activation or rollback, and arbitrary event batches.
+-/
+
+inductive ReplacementStage where
+  | baseline
+  | prepared
+  | canary
+  | monitoredClean
+  | monitoredFailed
+  | defaultActive
+  | rolledBack
+deriving DecidableEq, Repr
+
+inductive ReplacementEventKind where
+  | prepare
+  | beginCanary
+  | recordCleanMonitor
+  | recordFailedMonitor
+  | commitDefault
+  | rollback
+deriving DecidableEq, Repr
+
+structure ReplacementState where
+  stage : ReplacementStage
+  fieldId : Nat
+  priorImplementation : Nat
+  candidateImplementation : Nat
+  authorityCeiling : Nat
+  activeAuthority : Nat
+  activeImplementation : Nat
+  receiptCount : Nat
+  supportAssignmentCount : Nat
+  externalEffectAuthorityCount : Nat
+deriving DecidableEq, Repr
+
+structure ReplacementEvent where
+  kind : ReplacementEventKind
+  fieldId : Nat
+  priorImplementation : Nat
+  candidateImplementation : Nat
+  requestedAuthority : Nat
+  qualificationEvidence : Bool
+  evaluatorIndependent : Bool
+  regressionPassed : Bool
+  rollbackHandlePresent : Bool
+  rollbackDryRunPassed : Bool
+  residualOwnerPresent : Bool
+  nonClaimBoundaryPresent : Bool
+  supportAssignmentRequested : Bool
+  externalEffectAuthorityRequested : Bool
+deriving DecidableEq, Repr
+
+structure ReplacementIdentity where
+  fieldId : Nat
+  priorImplementation : Nat
+  candidateImplementation : Nat
+  authorityCeiling : Nat
+deriving DecidableEq, Repr
+
+def replacementIdentity (state : ReplacementState) : ReplacementIdentity := {
+  fieldId := state.fieldId
+  priorImplementation := state.priorImplementation
+  candidateImplementation := state.candidateImplementation
+  authorityCeiling := state.authorityCeiling
+}
+
+def ReplacementEventValid
+    (state : ReplacementState) (event : ReplacementEvent) : Prop :=
+  event.fieldId = state.fieldId ∧
+    event.priorImplementation = state.priorImplementation ∧
+    event.candidateImplementation = state.candidateImplementation ∧
+    event.requestedAuthority ≤ state.authorityCeiling ∧
+    event.supportAssignmentRequested = false ∧
+    event.externalEffectAuthorityRequested = false ∧
+    event.residualOwnerPresent = true ∧
+    event.nonClaimBoundaryPresent = true ∧
+    match state.stage, event.kind with
+    | .baseline, .prepare =>
+        event.qualificationEvidence = true ∧
+          event.evaluatorIndependent = true ∧
+          event.regressionPassed = true ∧
+          event.rollbackHandlePresent = true ∧
+          event.rollbackDryRunPassed = true
+    | .prepared, .beginCanary => True
+    | .canary, .recordCleanMonitor => event.evaluatorIndependent = true
+    | .canary, .recordFailedMonitor => event.evaluatorIndependent = true
+    | .monitoredClean, .commitDefault => True
+    | .monitoredFailed, .rollback =>
+        event.rollbackHandlePresent = true ∧
+          event.rollbackDryRunPassed = true
+    | _, _ => False
+
+instance replacementEventValidDecidable
+    (state : ReplacementState) (event : ReplacementEvent) :
+    Decidable (ReplacementEventValid state event) := by
+  cases hstage : state.stage <;> cases hkind : event.kind <;>
+    simp [ReplacementEventValid, hstage, hkind] <;> infer_instance
+
+def applyReplacementEvent
+    (state : ReplacementState) (event : ReplacementEvent) : ReplacementState :=
+  match event.kind with
+  | .prepare =>
+      { state with stage := .prepared
+                   receiptCount := state.receiptCount + 1 }
+  | .beginCanary =>
+      { state with stage := .canary
+                   activeAuthority := event.requestedAuthority
+                   activeImplementation := state.candidateImplementation
+                   receiptCount := state.receiptCount + 1 }
+  | .recordCleanMonitor =>
+      { state with stage := .monitoredClean
+                   receiptCount := state.receiptCount + 1 }
+  | .recordFailedMonitor =>
+      { state with stage := .monitoredFailed
+                   receiptCount := state.receiptCount + 1 }
+  | .commitDefault =>
+      { state with stage := .defaultActive
+                   receiptCount := state.receiptCount + 1 }
+  | .rollback =>
+      { state with stage := .rolledBack
+                   activeAuthority := 0
+                   activeImplementation := state.priorImplementation
+                   receiptCount := state.receiptCount + 1 }
+
+def ReplacementStep
+    (state : ReplacementState) (event : ReplacementEvent) : Option ReplacementState :=
+  if ReplacementEventValid state event then
+    some (applyReplacementEvent state event)
+  else none
+
+def ReplacementRun : ReplacementState → List ReplacementEvent → Option ReplacementState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ReplacementStep state event with
+      | none => none
+      | some next => ReplacementRun next tail
+
+def ReplacementTraceValid : ReplacementState → List ReplacementEvent → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ReplacementEventValid state event ∧
+        ReplacementTraceValid (applyReplacementEvent state event) tail
+
+theorem accepted_replacement_step_is_valid
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (stepped : ReplacementStep state event = some next) :
+    ReplacementEventValid state event := by
+  unfold ReplacementStep at stepped
+  split at stepped
+  · assumption
+  · simp at stepped
+
+theorem accepted_replacement_step_applies_event
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (stepped : ReplacementStep state event = some next) :
+    next = applyReplacementEvent state event := by
+  unfold ReplacementStep at stepped
+  split at stepped
+  · exact Option.some.inj stepped |>.symm
+  · simp at stepped
+
+theorem apply_replacement_event_preserves_identity
+    (state : ReplacementState) (event : ReplacementEvent) :
+    replacementIdentity (applyReplacementEvent state event) =
+      replacementIdentity state := by
+  cases h : event.kind <;>
+    simp [applyReplacementEvent, replacementIdentity, h]
+
+theorem accepted_replacement_step_preserves_non_authority
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (stepped : ReplacementStep state event = some next) :
+    next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectAuthorityCount = state.externalEffectAuthorityCount := by
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  cases h : event.kind <;> simp [applyReplacementEvent, h]
+
+theorem accepted_replacement_step_adds_one_receipt
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (stepped : ReplacementStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  cases h : event.kind <;> simp [applyReplacementEvent, h]
+
+theorem accepted_replacement_step_respects_authority_ceiling
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (bounded : state.activeAuthority ≤ state.authorityCeiling)
+    (stepped : ReplacementStep state event = some next) :
+    next.activeAuthority ≤ next.authorityCeiling := by
+  have valid := accepted_replacement_step_is_valid stepped
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  rcases valid with ⟨_, _, _, requestedBound, _⟩
+  cases h : event.kind <;>
+    simp [applyReplacementEvent, h, bounded, requestedBound]
+
+theorem successful_replacement_run_preserves_identity
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (ran : ReplacementRun state events = some final) :
+    replacementIdentity final = replacementIdentity state := by
+  induction events generalizing state with
+  | nil =>
+      simp [ReplacementRun] at ran
+      subst final
+      rfl
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          calc
+            replacementIdentity final = replacementIdentity next := ih tailRan
+            _ = replacementIdentity state := by
+              have applies := accepted_replacement_step_applies_event stepped
+              subst next
+              exact apply_replacement_event_preserves_identity state event
+
+theorem successful_replacement_run_preserves_non_authority
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (ran : ReplacementRun state events = some final) :
+    final.supportAssignmentCount = state.supportAssignmentCount ∧
+      final.externalEffectAuthorityCount = state.externalEffectAuthorityCount := by
+  induction events generalizing state with
+  | nil =>
+      simp [ReplacementRun] at ran
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          have tailPreserved := ih tailRan
+          have stepPreserved := accepted_replacement_step_preserves_non_authority stepped
+          exact ⟨tailPreserved.1.trans stepPreserved.1,
+            tailPreserved.2.trans stepPreserved.2⟩
+
+theorem successful_replacement_run_respects_authority_ceiling
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (bounded : state.activeAuthority ≤ state.authorityCeiling)
+    (ran : ReplacementRun state events = some final) :
+    final.activeAuthority ≤ final.authorityCeiling := by
+  induction events generalizing state with
+  | nil =>
+      simp [ReplacementRun] at ran
+      subst final
+      exact bounded
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          exact ih (accepted_replacement_step_respects_authority_ceiling bounded stepped) tailRan
+
+theorem successful_replacement_run_has_valid_trace
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (ran : ReplacementRun state events = some final) :
+    ReplacementTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          have applies := accepted_replacement_step_applies_event stepped
+          exact ⟨accepted_replacement_step_is_valid stepped, by
+            simpa [applies] using ih tailRan⟩
+
+theorem replacement_run_composes
+    {state middle final : ReplacementState}
+    {front back : List ReplacementEvent}
+    (first : ReplacementRun state front = some middle)
+    (second : ReplacementRun middle back = some final) :
+    ReplacementRun state (front ++ back) = some final := by
+  induction front generalizing state middle with
+  | nil =>
+      simp [ReplacementRun] at first
+      subst middle
+      exact second
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at first
+      | some next =>
+          have tailFirst : ReplacementRun next tail = some middle := by
+            simpa [ReplacementRun, stepped] using first
+          simpa [ReplacementRun, stepped] using ih tailFirst second
+
+theorem failed_monitor_cannot_commit_default
+    {state : ReplacementState} {event : ReplacementEvent}
+    (failed : state.stage = .monitoredFailed)
+    (commit : event.kind = .commitDefault) :
+    ReplacementStep state event = none := by
+  simp [ReplacementStep, ReplacementEventValid, failed, commit]
+
+theorem accepted_rollback_restores_prior_implementation
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (rollback : event.kind = .rollback)
+    (stepped : ReplacementStep state event = some next) :
+    next.stage = .rolledBack ∧
+      next.activeImplementation = state.priorImplementation ∧
+      next.activeAuthority = 0 := by
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  simp [applyReplacementEvent, rollback]
+
+def replacementInitialState : ReplacementState := {
+  stage := .baseline
+  fieldId := 10
+  priorImplementation := 100
+  candidateImplementation := 200
+  authorityCeiling := 3
+  activeAuthority := 0
+  activeImplementation := 100
+  receiptCount := 0
+  supportAssignmentCount := 0
+  externalEffectAuthorityCount := 0
+}
+
+def replacementEvent (kind : ReplacementEventKind) : ReplacementEvent := {
+  kind := kind
+  fieldId := 10
+  priorImplementation := 100
+  candidateImplementation := 200
+  requestedAuthority := 2
+  qualificationEvidence := true
+  evaluatorIndependent := true
+  regressionPassed := true
+  rollbackHandlePresent := true
+  rollbackDryRunPassed := true
+  residualOwnerPresent := true
+  nonClaimBoundaryPresent := true
+  supportAssignmentRequested := false
+  externalEffectAuthorityRequested := false
+}
+
+def cleanReplacementEvents : List ReplacementEvent :=
+  [.prepare, .beginCanary, .recordCleanMonitor, .commitDefault].map replacementEvent
+
+def failedReplacementEvents : List ReplacementEvent :=
+  [.prepare, .beginCanary, .recordFailedMonitor, .rollback].map replacementEvent
+
+def cleanReplacementFinalState : ReplacementState :=
+  { replacementInitialState with
+    stage := .defaultActive
+    activeAuthority := 2
+    activeImplementation := 200
+    receiptCount := 4 }
+
+def failedReplacementFinalState : ReplacementState :=
+  { replacementInitialState with
+    stage := .rolledBack
+    activeAuthority := 0
+    activeImplementation := 100
+    receiptCount := 4 }
+
+theorem clean_replacement_run_reaches_default :
+    ∃ final, ReplacementRun replacementInitialState cleanReplacementEvents = some final ∧
+      final.stage = .defaultActive ∧ final.activeImplementation = 200 := by
+  refine ⟨cleanReplacementFinalState, ?_⟩
+  native_decide
+
+theorem failed_replacement_run_restores_prior :
+    ∃ final, ReplacementRun replacementInitialState failedReplacementEvents = some final ∧
+      final.stage = .rolledBack ∧ final.activeImplementation = 100 ∧
+      final.activeAuthority = 0 := by
+  refine ⟨failedReplacementFinalState, ?_⟩
+  native_decide
+
 structure ReplacementTraceProbeSummary where
   traceStepCount : Nat
   traceTransactionCount : Nat

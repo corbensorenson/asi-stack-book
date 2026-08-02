@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2355 |
+| Theorem declarations classified | 2370 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1401 |
-| Unknown or mixed theorem declarations | 544 |
+| Derived/decomposed theorem declarations | 1414 |
+| Unknown or mixed theorem declarations | 546 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -148,7 +148,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 42 | 14 | 19 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
-| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 37 | 8 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 52 | 8 | 42 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | autonomous-replication-proliferation-and-containment | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
@@ -1882,12 +1882,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `revoked_kernel_cannot_propose` | derived_or_decomposed | no | uses have, simp, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `run_preserves_authority` | derived_or_decomposed | no | uses calc, contradiction, induction, simp, split |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `run_preserves_exact_checkpoint` | derived_or_decomposed | no | uses contradiction, have, induction, simp, split |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_replacement_step_adds_one_receipt` | derived_or_decomposed | no | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_replacement_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_replacement_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_replacement_step_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_replacement_step_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `accepted_rollback_restores_prior_implementation` | derived_or_decomposed | no | uses have, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `apply_replacement_event_preserves_identity` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/Replacement.lean` | `authority_expansion_without_approval_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `captured_evaluator_routes_replacement_to_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `clean_replacement_run_reaches_default` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_lifecycle_commits_default` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `complete_replacement_review_commits_default` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `failed_monitor_cannot_commit_default` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_blocks_replacement_promotion` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_regression_routes_to_quarantine` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Replacement.lean` | `failed_replacement_run_restores_prior` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Replacement.lean` | `failed_rollback_dry_run_routes_to_canary_only` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `intent_governed_replacement_bridge_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `intent_governed_replacement_bridge_preserves_no_promotion_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -1916,9 +1926,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_identity_sequence_bridge_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_identity_sequence_bridge_preserves_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_identity_sequence_bridge_preserves_no_promotion_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Replacement.lean` | `replacement_run_composes` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_fixture_valid` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_preserves_no_promotion_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/Replacement.lean` | `replacement_trace_probe_rejects_authority_widening` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Replacement.lean` | `successful_replacement_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/Replacement.lean` | `successful_replacement_run_preserves_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `successful_replacement_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Replacement.lean` | `successful_replacement_run_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | `artifact_change_invalidates_replication_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | `campaign_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |

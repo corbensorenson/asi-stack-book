@@ -196,6 +196,32 @@
     },
     "weakening_condition": "The identity-under-replacement thesis weakens if a later replay can change field identity, accept default promotion after monitor failure, lose rollback ownership, widen authority, or restore a different prior artifact while still satisfying the replacement record shape."
   },
+  "formal_surface": {
+    "theorem_count": 52,
+    "lean_compile_exit_code": 0,
+    "lifecycle_theorem_refs": [
+      "accepted_replacement_step_is_valid",
+      "accepted_replacement_step_applies_event",
+      "apply_replacement_event_preserves_identity",
+      "accepted_replacement_step_preserves_non_authority",
+      "accepted_replacement_step_adds_one_receipt",
+      "accepted_replacement_step_respects_authority_ceiling",
+      "successful_replacement_run_preserves_identity",
+      "successful_replacement_run_preserves_non_authority",
+      "successful_replacement_run_respects_authority_ceiling",
+      "successful_replacement_run_has_valid_trace",
+      "replacement_run_composes",
+      "failed_monitor_cannot_commit_default",
+      "accepted_rollback_restores_prior_implementation",
+      "clean_replacement_run_reaches_default",
+      "failed_replacement_run_restores_prior"
+    ],
+    "arbitrary_run_identity": true,
+    "arbitrary_run_authority_bound": true,
+    "batch_composition": true,
+    "failed_monitor_blocks_default": true,
+    "rollback_restores_prior": true
+  },
   "identity_sequence_control_count": 4,
   "identity_sequence_controls": [
     {

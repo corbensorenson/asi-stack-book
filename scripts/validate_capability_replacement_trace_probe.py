@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -44,6 +45,23 @@ REQUIRED_THEOREMS = [
     "replacement_identity_sequence_bridge_preserves_identity",
     "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
     "replacement_identity_sequence_bridge_preserves_no_promotion_boundary",
+]
+LIFECYCLE_THEOREMS = [
+    "accepted_replacement_step_is_valid",
+    "accepted_replacement_step_applies_event",
+    "apply_replacement_event_preserves_identity",
+    "accepted_replacement_step_preserves_non_authority",
+    "accepted_replacement_step_adds_one_receipt",
+    "accepted_replacement_step_respects_authority_ceiling",
+    "successful_replacement_run_preserves_identity",
+    "successful_replacement_run_preserves_non_authority",
+    "successful_replacement_run_respects_authority_ceiling",
+    "successful_replacement_run_has_valid_trace",
+    "replacement_run_composes",
+    "failed_monitor_cannot_commit_default",
+    "accepted_rollback_restores_prior_implementation",
+    "clean_replacement_run_reaches_default",
+    "failed_replacement_run_restores_prior",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute deployed or runtime replacement behavior",
@@ -313,6 +331,16 @@ def build_expected_result() -> dict[str, Any]:
             for control in negative_controls
         ],
         "identity_sequence_bridge": identity_sequence_summary(transactions),
+        "formal_surface": {
+            "theorem_count": 52,
+            "lean_compile_exit_code": 0,
+            "lifecycle_theorem_refs": LIFECYCLE_THEOREMS,
+            "arbitrary_run_identity": True,
+            "arbitrary_run_authority_bound": True,
+            "batch_composition": True,
+            "failed_monitor_blocks_default": True,
+            "rollback_restores_prior": True,
+        },
         "identity_sequence_control_count": 4,
         "identity_sequence_controls": [
             {
@@ -461,6 +489,20 @@ def validate_result(expected: dict[str, Any], write_result: bool, errors: list[s
         errors.append(f"{rel(RESULT)}: identity_sequence_controls must contain four controls.")
     elif not all(control.get("rejected") is True for control in sequence_controls):
         errors.append(f"{rel(RESULT)}: all identity sequence controls must be rejected.")
+    formal = value.get("formal_surface", {})
+    if formal.get("theorem_count") != 52 or formal.get("lean_compile_exit_code") != 0:
+        errors.append(f"{rel(RESULT)}: formal surface must bind the exact 52-theorem compile.")
+    if formal.get("lifecycle_theorem_refs") != LIFECYCLE_THEOREMS:
+        errors.append(f"{rel(RESULT)}: lifecycle theorem references drifted.")
+    for key in (
+        "arbitrary_run_identity",
+        "arbitrary_run_authority_bound",
+        "batch_composition",
+        "failed_monitor_blocks_default",
+        "rollback_restores_prior",
+    ):
+        if formal.get(key) is not True:
+            errors.append(f"{rel(RESULT)}: formal_surface.{key} must be true.")
     non_claim_text = text_blob(value.get("non_claims", []))
     for phrase in REQUIRED_NON_CLAIMS:
         if phrase.lower() not in non_claim_text:
@@ -491,7 +533,10 @@ def validate_manifest(errors: list[str]) -> None:
 
 def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
-    for theorem in REQUIRED_THEOREMS:
+    theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)", text))
+    if len(theorem_names) != 52:
+        errors.append(f"{rel(LEAN_FILE)} must expose exactly 52 theorems, found {len(theorem_names)}.")
+    for theorem in REQUIRED_THEOREMS + LIFECYCLE_THEOREMS:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
     for field in (
@@ -511,6 +556,14 @@ def validate_lean(errors: list[str]) -> None:
     ):
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/Replacement.lean"],
+        cwd=ROOT / "lean",
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode:
+        errors.append("Replacement Lean surface failed to compile: " + completed.stdout + completed.stderr)
 
 
 def validate_surfaces(errors: list[str]) -> None:
@@ -593,7 +646,10 @@ def main() -> None:
     validate_surfaces(errors)
     if errors:
         fail(errors)
-    print("Capability replacement trace probe validation passed.")
+    print(
+        "Capability replacement trace probe validation passed: exact 52-theorem Lean "
+        "surface recompiled; two transactions and seven sequence/route controls checked."
+    )
 
 
 if __name__ == "__main__":

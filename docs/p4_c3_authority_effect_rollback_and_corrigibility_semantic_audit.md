@@ -9,7 +9,7 @@ Authority: `proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigi
 
 The frozen third cluster remains terminal at bounded scope: all four modules are
 `adequate` for their exact finite semantics. The denominator
-is four modules, thirteen public proof targets, and 129 theorem
+is four modules, thirteen public proof targets, and 144 theorem
 declarations. No theorem, target, or module was counted as evidence merely
 because it compiles.
 
@@ -20,8 +20,13 @@ one-shot, and rollback model plus a separate 50-mutation consumer. Its exact
 arbitrary runs, excludes approval and dispatch as well as effects under revoked
 IDs, gives rejected events no successor, and clears exact effect accounting on
 accepted rollback.
-`Replacement` earns its role from transaction and lifecycle routing plus three
-fixture bridges consumed by separate validators. `IntentExecutionRefinement`
+`Replacement` earns its role from transaction and lifecycle routing plus a
+reachable canary/monitor/default-or-rollback model. Its exact 52-theorem surface
+preserves identity, non-authority, authority ceilings, trace validity, and batch
+composition over arbitrary accepted runs; excludes default commit after monitor
+failure; restores the prior implementation on rollback; reaches clean and
+failed terminal witnesses; and retains three fixture bridges consumed by
+separate validators. `IntentExecutionRefinement`
 earns its role from exact root/parent and authority invariants over a reachable
 vertical plus an 89-event consumer and thirty mutations.
 

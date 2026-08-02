@@ -124,9 +124,9 @@ def artifact_errors(data: dict[str, Any]) -> list[str]:
     expected_reconciliation = {
         "baseline_prose_candidate_count": 3444,
         "current_prose_candidate_count": 3881,
-        "unchanged_prose_candidate_count": 3181,
-        "retired_inherited_prose_candidate_count": 263,
-        "added_domain_specific_prose_candidate_count": 700,
+        "unchanged_prose_candidate_count": 3179,
+        "retired_inherited_prose_candidate_count": 265,
+        "added_domain_specific_prose_candidate_count": 702,
         "baseline_structured_atom_count": 4067,
         "current_structured_atom_count": 4059,
         "current_pending_prose_candidate_count": 0,
