@@ -5202,6 +5202,10 @@
       "order": 129,
       "script": "validate_scf_lifecycle_trace.py",
       "args": [],
+      "input_artifacts": [
+        "lean/AsiStackProofs/StableCapabilityFields.lean",
+        "experiments/scf_lifecycle_trace/results/2026-07-02-local.json"
+      ],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",

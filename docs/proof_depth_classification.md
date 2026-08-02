@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2285 |
+| Theorem declarations classified | 2296 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1333 |
-| Unknown or mixed theorem declarations | 542 |
+| Derived/decomposed theorem declarations | 1342 |
+| Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -168,7 +168,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | societal-resilience-and-misuse-defense | 1 | 32 | 15 | 13 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 15 | 1 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 26 | 1 | 23 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 30 | 3 | 22 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
@@ -2248,10 +2248,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | `tabletop_completion_does_not_establish_live_recovery` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | `uncovered_population_shortfall_persists_when_population_grows` | derived_or_decomposed | no | uses omega |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | `unresolved_path_shortfall_persists_when_more_paths_are_discovered` | derived_or_decomposed | no | uses omega |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `accepted_lifecycle_event_advances_and_records_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `apply_lifecycle_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `apply_lifecycle_event_preserves_exact_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expanding_replacement_without_grant_rejected` | derived_or_decomposed | no | uses cases, rw, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expansion_without_grant_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `captured_evaluator_routes_to_governance_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `complete_default_review_routes_to_default` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `complete_scf_lifecycle_trace_reaches_exact_retired_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_authority_expansion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_transition_requires_full_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_with_open_incident_rejected` | derived_or_decomposed | no | uses cases, have, rw |
@@ -2259,10 +2263,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_without_regression_floor_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `default_without_rollback_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `field_identity_mismatch_rejects_replacement` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `incident_trace_reaches_exact_absorbing_quarantine_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `missing_evidence_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `open_incident_requires_rollback` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `rejected_lifecycle_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `retired_state_cannot_transition` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `run_lifecycle_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `run_lifecycle_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `run_lifecycle_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `terminal_lifecycle_event_is_rejected` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | `terminal_lifecycle_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_authorization_respects_caller_ceiling` | derived_or_decomposed | no | uses omega, simp, split, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_run_preserves_caller_ceiling` | derived_or_decomposed | no | uses calc, cases, have, induction, rw, simp, subst |

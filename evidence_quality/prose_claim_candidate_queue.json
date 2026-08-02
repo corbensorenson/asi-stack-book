@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3875,
+    "candidate_count": 3876,
     "review_state_counts": {
       "duplicate_of_atom": 1846,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
-      "nonmaterial_explanation": 1645
+      "nonmaterial_explanation": 1646
     }
   },
   "candidates": [
@@ -13454,10 +13454,29 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "stable-capability-fields.prose.c8fdb0504f6e",
+      "candidate_id": "stable-capability-fields.prose.c7edacf62c76",
       "chapter_id": "stable-capability-fields",
       "source": "chapters/stable-capability-fields.qmd:447",
-      "sentence": "The module does not prove the richer behavioral-refinement contract, deployed route validity, evaluator independence, provenance, real regression preservation, migration or composition safety, effect-complete rollback, terminal governance, or lifecycle enforcement.",
+      "sentence": "In addition to explicit rejection or nondefault routes, the execution layer proves exact rejection noninterference, arbitrary-run identity and non-authority preservation, exact prefix/suffix composition, terminal-state absorption, and exact retirement and quarantine witnesses.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Summary of the two implemented SCF lifecycle formal-target atoms; it introduces no independent chapter claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "stable-capability-fields.prose.eb306651efa4",
+      "chapter_id": "stable-capability-fields",
+      "source": "chapters/stable-capability-fields.qmd:447",
+      "sentence": "The module does not prove the richer behavioral-refinement contract, deployed route validity, measured evaluator independence, provenance, real regression preservation, migration or composition safety, effect-complete rollback, organizational terminal governance, or production lifecycle enforcement.",
       "cues": [
         "prove"
       ],

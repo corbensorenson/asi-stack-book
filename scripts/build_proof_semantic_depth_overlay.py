@@ -301,6 +301,103 @@ CURRENT_SEMANTIC_OVERRIDES = {
     },
 }
 
+_scf_execution_overrides = {
+    "apply_lifecycle_event_preserves_exact_identity": (
+        "P3",
+        "one-step identity custody is proved for the executable finite SCF transition function",
+    ),
+    "accepted_lifecycle_event_advances_and_records_receipt": (
+        "P3",
+        "accepted executable transitions advance to the event destination and record its receipt",
+    ),
+    "run_lifecycle_events_compose": (
+        "P3",
+        "structural induction proves exact prefix/suffix composition for the executable lifecycle runner",
+    ),
+    "apply_lifecycle_event_cannot_assign_support_or_external_effect": (
+        "P4",
+        "one-step noninterference keeps support and external-effect authority outside the lifecycle transition",
+    ),
+    "rejected_lifecycle_event_preserves_exact_state": (
+        "P4",
+        "a rejected event is proved unable to mutate any runtime-state field",
+    ),
+    "run_lifecycle_events_preserve_exact_identity": (
+        "P4",
+        "induction preserves the complete field, evaluator, authority, regression, and rollback identity across arbitrary event lists",
+    ),
+    "run_lifecycle_events_cannot_assign_support_or_external_effect": (
+        "P4",
+        "induction proves support and external-effect non-authority across arbitrary event lists",
+    ),
+    "terminal_lifecycle_event_is_rejected": (
+        "P5",
+        "every event is rejected from either modeled terminal state",
+    ),
+    "terminal_lifecycle_state_is_absorbing": (
+        "P5",
+        "induction proves retired and quarantined states absorb arbitrary event suffixes",
+    ),
+    "complete_scf_lifecycle_trace_reaches_exact_retired_state": (
+        "P2",
+        "a closed five-event witness reaches the exact retired state with five receipts",
+    ),
+    "incident_trace_reaches_exact_absorbing_quarantine_state": (
+        "P2",
+        "a closed incident witness reaches the exact quarantined state and records quarantine custody",
+    ),
+}
+
+for _theorem_name in (
+    "authority_expanding_replacement_without_grant_rejected",
+    "field_identity_mismatch_rejects_replacement",
+    "stale_qualification_lease_requires_requalification",
+    "missing_evidence_requires_requalification",
+    "captured_evaluator_routes_to_governance_review",
+    "authority_expansion_without_grant_routes_to_governance_review",
+    "open_incident_requires_rollback",
+    "complete_default_review_routes_to_default",
+    "retired_state_cannot_transition",
+    "default_transition_requires_full_readiness",
+    "default_without_qualification_evidence_rejected",
+    "default_without_regression_floor_rejected",
+    "default_authority_expansion_rejected",
+    "default_without_rollback_rejected",
+    "default_with_open_incident_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/StableCapabilityFields.lean::{_theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "the statement remains a one-step finite route, rejection, or readiness consequence despite module-level validator binding"
+        ],
+        "rationale": (
+            "The independent consumer binds the module but does not turn this local finite "
+            "consequence into implementation refinement, cross-component safety, or liveness."
+        ),
+    }
+
+for _theorem_name, (_semantic_level, _basis) in _scf_execution_overrides.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/StableCapabilityFields.lean::{_theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": _semantic_level,
+        "witness_refs": [
+            f"lean-theorem:{_theorem_name}",
+            "scripts/validate_scf_lifecycle_trace.py",
+            "experiments/scf_lifecycle_trace/results/2026-07-02-local.json",
+        ],
+        "classification_basis": [_basis],
+        "rationale": (
+            "The result is confined to the authored finite SCF lifecycle. It does not "
+            "measure evaluator independence, validate real regressions, execute rollback, "
+            "enforce a production route, or promote chapter support."
+        ),
+    }
+
 _constitutional_lifecycle_base = {
     "disposition": "retain",
     "witness_refs": [
@@ -2448,7 +2545,10 @@ LEGACY_VALIDATOR_ALIASES = {
     "lean/AsiStackProofs/ValueConflict.lean": {"validate_value_conflicts.py"},
     "lean/AsiStackProofs/Efficiency.lean": {"validate_costed_route_resource_slice.py"},
     "lean/AsiStackProofs/SecurityKernel.lean": {"validate_security_kernel.py"},
-    "lean/AsiStackProofs/StableCapabilityFields.lean": {"validate_stable_capability_fields.py"},
+    "lean/AsiStackProofs/StableCapabilityFields.lean": {
+        "validate_stable_capability_fields.py",
+        "validate_scf_lifecycle_trace.py",
+    },
     "lean/AsiStackProofs/FailureModes.lean": {"validate_architecture_red_team.py"},
     "lean/AsiStackProofs/ProofCarryingContracts.lean": {
         "validate_circle_contract_pack_archive.py",

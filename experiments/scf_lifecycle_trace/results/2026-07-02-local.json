@@ -5,6 +5,15 @@
   "evidence_transition_created": false,
   "expected_invalid_controls": 6,
   "fixture_fingerprint_sha256": "8f4268049d7f5bbd028caf16164030daf642a8a42feea4a2ec5f925f582bd0d1",
+  "formal_surface": {
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_run_composition": true,
+    "lean_compile_exit_code": 0,
+    "lean_module": "lean/AsiStackProofs/StableCapabilityFields.lean",
+    "terminal_states_absorbing": true,
+    "theorem_count": 26
+  },
   "negative_control_coverage": {
     "default_authority_expansion": true,
     "default_without_regression_floor": true,

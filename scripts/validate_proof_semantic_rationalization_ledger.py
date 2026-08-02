@@ -172,14 +172,14 @@ EXPECTED_ACTION_IDS.append(
 EXPECTED_LEVELS = {
     "P0": 26,
     "P1": 884,
-    "P2": 188,
-    "P3": 907,
-    "P4": 129,
-    "P5": 151,
+    "P2": 190,
+    "P3": 910,
+    "P4": 133,
+    "P5": 153,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2285,
+    "retain": 2296,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -204,11 +204,18 @@ EXPECTED_TARGETS = {
         "replacement rejection."
     ),
     "lean:scf.lifecycle.route_envelope": (
-        "A structured SCF lifecycle review routes identity mismatch, missing evidence, "
-        "stale leases, evaluator capture, authority expansion, and open incidents to "
-        "explicit nondefault outcomes; the finite transition predicate rejects retired "
-        "restart and default promotion without qualification evidence, preserved "
-        "regressions, authority within ceiling, rollback readiness, or incident closure."
+        "A structured SCF lifecycle review routes identity, evidence, lease, evaluator, "
+        "authority, incident, rollback, and regression failures away from default; "
+        "accepted finite lifecycle events advance and record receipts, rejected events "
+        "preserve exact state, and arbitrary runs preserve exact field/evaluator/authority/"
+        "regression/rollback identity and cannot assign support or external-effect authority."
+    ),
+    "lean:scf.lifecycle.trace_fixture_bridge": (
+        "An independent SCF lifecycle consumer computes two contiguous valid traces and "
+        "six rejected controls; separately, arbitrary formal runs compose exactly, retired "
+        "and quarantined states absorb every suffix, and exact closed witnesses reach "
+        "retirement and quarantine. Executable totals and no-promotion flags are not "
+        "copied into Lean."
     ),
     "lean:evidence.support_state.operational_invariant": (
         "A reachable lifecycle freezes exact atom and proposition/obligation/predicate "
@@ -792,7 +799,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2285:
+    if summary.get("current_theorem_count") != 2296:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -856,8 +863,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/StableCapabilityFields.lean"
     ]
-    if len(scf_rows) != 15:
-        out.append("StableCapabilityFields must retain exactly fifteen declarations")
+    if len(scf_rows) != 26:
+        out.append("StableCapabilityFields must retain exactly twenty-six declarations")
     retired_scf_names = {
         "replacement_requires_field_qualification",
         "allowed_transition_preserves_field_identity",
@@ -1209,7 +1216,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2285
+        status.get("theorem_count") != 2296
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

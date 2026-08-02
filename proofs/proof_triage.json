@@ -554,21 +554,21 @@
       "tag": "lean:scf.lifecycle.route_envelope",
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
-      "formal_target": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, and open incidents to explicit nondefault outcomes; the finite transition predicate rejects retired restart and default promotion without qualification evidence, preserved regressions, authority within ceiling, rollback readiness, or incident closure.",
+      "formal_target": "A structured SCF lifecycle review routes identity, evidence, lease, evaluator, authority, incident, rollback, and regression failures away from default; accepted finite lifecycle events advance and record receipts, rejected events preserve exact state, and arbitrary runs preserve exact field/evaluator/authority/regression/rollback identity and cannot assign support or external-effect authority.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as finite lifecycle-review routing plus retained derived rejection cases for retired restart and default promotion with missing evidence, regression floor, authority ceiling, rollback readiness, or incident closure. Direct projections for general forward-path, identity-preservation, canary, qualified, deprecation-notice, and retirement-receipt fields were retired and are not represented by this narrower target."
+      "rationale": "Implemented in AsiStackProofs.StableCapabilityFields as finite lifecycle-review routing plus an executable event-list semantics with exact rejection noninterference, arbitrary-run identity and non-authority preservation, receipt advance, and exact composition. The model does not establish that the authored identities or readiness fields are empirically valid."
     },
     {
       "tag": "lean:scf.lifecycle.trace_fixture_bridge",
       "chapter_id": "stable-capability-fields",
       "module": "AsiStackProofs.StableCapabilityFields",
-      "formal_target": "An independent SCF lifecycle consumer computes two valid traces and six rejected controls; separately, retained quantified lifecycle theorems route identity, evidence, lease, evaluator, authority, incident, transition, and retirement failures. Executable totals and no-promotion flags are not copied into Lean.",
+      "formal_target": "An independent SCF lifecycle consumer computes two contiguous valid traces and six rejected controls; separately, arbitrary formal runs compose exactly, retired and quarantined states absorb every suffix, and exact closed witnesses reach retirement and quarantine. Executable totals and no-promotion flags are not copied into Lean.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
+      "rationale": "The independent consumer checks trace contiguity, all six rejecting controls, the exact 26-theorem surface, and Lean compilation. Formal witnesses and arbitrary-run terminal absorption remain separate from executable totals, and neither surface promotes support."
     },
     {
       "tag": "lean:replacement.transaction.operational_invariant",

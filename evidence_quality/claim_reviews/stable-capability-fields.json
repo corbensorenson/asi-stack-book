@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/stable-capability-fields.qmd",
     "structured_atoms_reviewed": 54,
-    "prose_candidates_adjudicated": 43,
+    "prose_candidates_adjudicated": 44,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 SCF lifecycle proof refinement. The new proof-summary sentence is a nonmaterial explanation of two existing formal-target atoms; every other scanned sentence remains covered by bounded existing ownership or status/non-claim classification. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -17,7 +17,7 @@
       "model": "A versioned consumer-relative substitution-contract and lifecycle state machine whose current implementation validates record shape, selected route consequences, transition constraints, fixture counts, and no-promotion boundaries; future preservation claims require real candidate behavior and independent observers.",
       "authority": "Field governance owns semantic identity and versioning; System Authority bounds grants; consumers declare use requirements; separate-enough evaluators and promotion owners judge evidence; execution owns effects; incident and rollback owners govern recovery; Evidence States alone owns support movement.",
       "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter, manifest, eight source notes and mappings, SCF schema, nine record fixtures, readiness/residual harness, lifecycle trace probe, 25 Lean theorem declarations under four proof targets, field history, qualification and replacement receipts, effect inventory, and downstream public projections."
+      "artifact": "Chapter, manifest, eight source notes and mappings, SCF schema, nine record fixtures, readiness/residual harness, lifecycle trace probe, 26 Lean theorem declarations under four proof targets, field history, qualification and replacement receipts, effect inventory, and downstream public projections."
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
     "assumptions": [
@@ -604,6 +604,10 @@
     }
   },
   "prose_candidate_dispositions": {
+    "stable-capability-fields.prose.c7edacf62c76": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Summary of the two implemented SCF lifecycle formal-target atoms; it introduces no independent chapter claim."
+    },
     "stable-capability-fields.prose.553a50cdf784": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped Reflexive Router integration restates the stable-field interface already owned by structured atoms; it creates no independent material claim."
@@ -730,7 +734,7 @@
       "state": "nonmaterial_explanation",
       "rationale": "Explicit beyond-SOTA non-claim."
     },
-    "stable-capability-fields.prose.c8fdb0504f6e": {
+    "stable-capability-fields.prose.eb306651efa4": {
       "state": "nonmaterial_explanation",
       "rationale": "Explicit formal-model non-claim."
     },

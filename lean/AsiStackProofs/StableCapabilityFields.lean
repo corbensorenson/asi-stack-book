@@ -278,6 +278,15 @@ def ScfLifecycleTransitionAllowed
               DeprecationTransitionReady transition ∧
                 RetirementTransitionReady transition
 
+instance scfLifecycleTransitionAllowedDecidable
+    (transition : ScfLifecycleTransition) :
+    Decidable (ScfLifecycleTransitionAllowed transition) := by
+  unfold ScfLifecycleTransitionAllowed ForwardLifecycleStep
+    TransitionIdentityPreserved TransitionNotFromRetired
+    CanaryTransitionReady QualifiedTransitionReady DefaultTransitionReady
+    DeprecationTransitionReady RetirementTransitionReady
+  infer_instance
+
 theorem retired_state_cannot_transition
     {transition : ScfLifecycleTransition} :
     transition.fromState = ScfLifecycleState.retired ->
@@ -351,6 +360,222 @@ theorem default_with_open_incident_rejected
   have noIncident := ready.right.right.right.right
   rw [incidentOpen] at noIncident
   cases noIncident
+
+structure ScfLifecycleIdentity where
+  fieldIdentity : Nat
+  authorityCeilingRank : Nat
+  evaluatorIdentity : Nat
+  qualificationEpoch : Nat
+  regressionSuiteIdentity : Nat
+  rollbackPlanIdentity : Nat
+deriving DecidableEq, Repr
+
+structure ScfLifecycleRuntimeState where
+  lifecycleState : ScfLifecycleState
+  identity : ScfLifecycleIdentity
+  lastReceiptDigest : Nat
+  receiptCount : Nat
+  quarantineCount : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure ScfLifecycleEvent where
+  transition : ScfLifecycleTransition
+  identity : ScfLifecycleIdentity
+  receiptDigest : Nat
+  supportAssignmentRequested : Bool
+  externalEffectRequested : Bool
+deriving DecidableEq, Repr
+
+def ScfLifecycleEventAllowed
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent) : Prop :=
+  state.lifecycleState ≠ ScfLifecycleState.retired ∧
+    state.lifecycleState ≠ ScfLifecycleState.quarantined ∧
+      event.transition.fromState = state.lifecycleState ∧
+        event.identity = state.identity ∧
+          event.receiptDigest ≠ state.lastReceiptDigest ∧
+            event.supportAssignmentRequested = false ∧
+              event.externalEffectRequested = false ∧
+                ScfLifecycleTransitionAllowed event.transition
+
+instance scfLifecycleEventAllowedDecidable
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent) :
+    Decidable (ScfLifecycleEventAllowed state event) := by
+  unfold ScfLifecycleEventAllowed
+  infer_instance
+
+def applyLifecycleEvent
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent) :
+    ScfLifecycleRuntimeState × Bool :=
+  if ScfLifecycleEventAllowed state event then
+    ({state with
+      lifecycleState := event.transition.toState
+      lastReceiptDigest := event.receiptDigest
+      receiptCount := state.receiptCount + 1
+      quarantineCount :=
+        if event.transition.toState == ScfLifecycleState.quarantined then
+          state.quarantineCount + 1
+        else state.quarantineCount}, true)
+  else (state, false)
+
+theorem apply_lifecycle_event_preserves_exact_identity
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent) :
+    (applyLifecycleEvent state event).1.identity = state.identity := by
+  by_cases h : ScfLifecycleEventAllowed state event <;>
+    simp [applyLifecycleEvent, h]
+
+theorem apply_lifecycle_event_cannot_assign_support_or_external_effect
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent) :
+    (applyLifecycleEvent state event).1.supportAssignmentCount =
+        state.supportAssignmentCount ∧
+      (applyLifecycleEvent state event).1.externalEffectCount =
+        state.externalEffectCount := by
+  by_cases h : ScfLifecycleEventAllowed state event <;>
+    simp [applyLifecycleEvent, h]
+
+theorem accepted_lifecycle_event_advances_and_records_receipt
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent)
+    (allowed : ScfLifecycleEventAllowed state event) :
+    (applyLifecycleEvent state event).1.lifecycleState = event.transition.toState ∧
+      (applyLifecycleEvent state event).1.receiptCount = state.receiptCount + 1 ∧
+        (applyLifecycleEvent state event).1.lastReceiptDigest = event.receiptDigest := by
+  simp [applyLifecycleEvent, allowed]
+
+theorem rejected_lifecycle_event_preserves_exact_state
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent)
+    (rejected : ¬ ScfLifecycleEventAllowed state event) :
+    applyLifecycleEvent state event = (state, false) := by
+  simp [applyLifecycleEvent, rejected]
+
+def runLifecycleEvents :
+    ScfLifecycleRuntimeState -> List ScfLifecycleEvent -> ScfLifecycleRuntimeState
+  | state, [] => state
+  | state, event :: rest =>
+      runLifecycleEvents (applyLifecycleEvent state event).1 rest
+
+theorem run_lifecycle_events_preserve_exact_identity
+    (state : ScfLifecycleRuntimeState) (events : List ScfLifecycleEvent) :
+    (runLifecycleEvents state events).identity = state.identity := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      exact (ih (applyLifecycleEvent state event).1).trans
+        (apply_lifecycle_event_preserves_exact_identity state event)
+
+theorem run_lifecycle_events_cannot_assign_support_or_external_effect
+    (state : ScfLifecycleRuntimeState) (events : List ScfLifecycleEvent) :
+    (runLifecycleEvents state events).supportAssignmentCount =
+        state.supportAssignmentCount ∧
+      (runLifecycleEvents state events).externalEffectCount =
+        state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [runLifecycleEvents]
+  | cons event rest ih =>
+      have head :=
+        apply_lifecycle_event_cannot_assign_support_or_external_effect state event
+      have tail := ih (applyLifecycleEvent state event).1
+      exact ⟨tail.1.trans head.1, tail.2.trans head.2⟩
+
+theorem run_lifecycle_events_compose
+    (state : ScfLifecycleRuntimeState)
+    (left right : List ScfLifecycleEvent) :
+    runLifecycleEvents state (left ++ right) =
+      runLifecycleEvents (runLifecycleEvents state left) right := by
+  induction left generalizing state with
+  | nil => simp [runLifecycleEvents]
+  | cons event rest ih => simp [runLifecycleEvents, ih]
+
+theorem terminal_lifecycle_event_is_rejected
+    (state : ScfLifecycleRuntimeState) (event : ScfLifecycleEvent)
+    (terminal : state.lifecycleState = ScfLifecycleState.retired ∨
+      state.lifecycleState = ScfLifecycleState.quarantined) :
+    ¬ ScfLifecycleEventAllowed state event := by
+  intro allowed
+  cases terminal with
+  | inl retired => exact allowed.1 retired
+  | inr quarantined => exact allowed.2.1 quarantined
+
+theorem terminal_lifecycle_state_is_absorbing
+    (state : ScfLifecycleRuntimeState) (events : List ScfLifecycleEvent)
+    (terminal : state.lifecycleState = ScfLifecycleState.retired ∨
+      state.lifecycleState = ScfLifecycleState.quarantined) :
+    runLifecycleEvents state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      have rejected := terminal_lifecycle_event_is_rejected state event terminal
+      simp [runLifecycleEvents, applyLifecycleEvent, rejected, ih state terminal]
+
+def scfLifecycleIdentityFixture : ScfLifecycleIdentity :=
+  { fieldIdentity := 5001
+    authorityCeilingRank := AuthorityLevel.execute.rank
+    evaluatorIdentity := 5002
+    qualificationEpoch := 7
+    regressionSuiteIdentity := 5003
+    rollbackPlanIdentity := 5004 }
+
+def scfLifecycleStateAt (lifecycleState : ScfLifecycleState) :
+    ScfLifecycleRuntimeState :=
+  { lifecycleState := lifecycleState
+    identity := scfLifecycleIdentityFixture
+    lastReceiptDigest := 0
+    receiptCount := 0
+    quarantineCount := 0
+    supportAssignmentCount := 0
+    externalEffectCount := 0 }
+
+def scfForwardTransition
+    (fromState toState : ScfLifecycleState) : ScfLifecycleTransition :=
+  { fromState := fromState
+    toState := toState
+    fieldIdentityPreserved := true
+    qualificationEvidencePresent := true
+    regressionFloorPreserved := true
+    authorityWithinCeiling := true
+    rollbackReady := true
+    incidentOpen := false
+    deprecationNoticePresent := true
+    retirementReceiptPresent := true }
+
+def scfLifecycleEvent
+    (fromState toState : ScfLifecycleState) (receiptDigest : Nat) :
+    ScfLifecycleEvent :=
+  { transition := scfForwardTransition fromState toState
+    identity := scfLifecycleIdentityFixture
+    receiptDigest := receiptDigest
+    supportAssignmentRequested := false
+    externalEffectRequested := false }
+
+def scfCompleteLifecycleTrace : List ScfLifecycleEvent :=
+  [scfLifecycleEvent .shadow .canary 1,
+    scfLifecycleEvent .canary .qualified 2,
+    scfLifecycleEvent .qualified .default 3,
+    scfLifecycleEvent .default .deprecated 4,
+    scfLifecycleEvent .deprecated .retired 5]
+
+def scfIncidentQuarantineEvent : ScfLifecycleEvent :=
+  { scfLifecycleEvent .canary .quarantined 6 with
+    transition :=
+      { scfForwardTransition .canary .quarantined with incidentOpen := true } }
+
+theorem complete_scf_lifecycle_trace_reaches_exact_retired_state :
+    runLifecycleEvents (scfLifecycleStateAt .shadow) scfCompleteLifecycleTrace =
+      { scfLifecycleStateAt .shadow with
+        lifecycleState := .retired
+        lastReceiptDigest := 5
+        receiptCount := 5 } := by
+  native_decide
+
+theorem incident_trace_reaches_exact_absorbing_quarantine_state :
+    runLifecycleEvents (scfLifecycleStateAt .canary)
+        [scfIncidentQuarantineEvent] =
+      { scfLifecycleStateAt .canary with
+        lifecycleState := .quarantined
+        lastReceiptDigest := 6
+        receiptCount := 1
+        quarantineCount := 1 } := by
+  native_decide
 
 structure ScfLifecycleTraceProbeSummary where
   validTraces : Nat

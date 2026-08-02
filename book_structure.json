@@ -4422,13 +4422,13 @@
             {
               "tag": "lean:scf.lifecycle.route_envelope",
               "module": "AsiStackProofs.StableCapabilityFields",
-              "target": "A structured SCF lifecycle review routes identity mismatch, missing evidence, stale leases, evaluator capture, authority expansion, and open incidents to explicit nondefault outcomes; the finite transition predicate rejects retired restart and default promotion without qualification evidence, preserved regressions, authority within ceiling, rollback readiness, or incident closure.",
+              "target": "A structured SCF lifecycle review routes identity, evidence, lease, evaluator, authority, incident, rollback, and regression failures away from default; accepted finite lifecycle events advance and record receipts, rejected events preserve exact state, and arbitrary runs preserve exact field/evaluator/authority/regression/rollback identity and cannot assign support or external-effect authority.",
               "status": "implemented"
             },
             {
               "tag": "lean:scf.lifecycle.trace_fixture_bridge",
               "module": "AsiStackProofs.StableCapabilityFields",
-              "target": "An independent SCF lifecycle consumer computes two valid traces and six rejected controls; separately, retained quantified lifecycle theorems route identity, evidence, lease, evaluator, authority, incident, transition, and retirement failures. Executable totals and no-promotion flags are not copied into Lean.",
+              "target": "An independent SCF lifecycle consumer computes two contiguous valid traces and six rejected controls; separately, arbitrary formal runs compose exactly, retired and quarantined states absorb every suffix, and exact closed witnesses reach retirement and quarantine. Executable totals and no-promotion flags are not copied into Lean.",
               "status": "implemented"
             }
           ],
