@@ -1643,13 +1643,13 @@ def errors(data: dict) -> list[str]:
         "P0": 26,
         "P1": 884,
         "P2": 190,
-        "P3": 918,
-        "P4": 135,
-        "P5": 157,
+        "P3": 922,
+        "P4": 136,
+        "P5": 159,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 2310,
+        "retain": 2317,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 2310
+        or c6_overlay_status.get("theorem_count") != 2317
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 2310
+        c6_summary.get("current_theorem_count") != 2317
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1982,8 +1982,8 @@ def errors(data: dict) -> list[str]:
         or w3.get("corpus", {}).get("manifest_chapter_count") != 84
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
-        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 262
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 695
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 263
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 697
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -2135,7 +2135,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 130, 2310, 1356, 410, 544)
+    expected_proof = (324, 130, 2317, 1363, 410, 544)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 324:

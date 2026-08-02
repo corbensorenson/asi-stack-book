@@ -1384,21 +1384,21 @@
       "tag": "lean:tribunal.review.operational_invariant",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.TribunalRefinement",
-      "formal_target": "A versioned request, dossier, panel, verdict, acknowledgment, and appeal lifecycle preserves exact case and evidence custody, dissent, action, residual, and appeal obligations while preventing support assignment and external effects.",
+      "formal_target": "Every finite versioned Tribunal run preserves exact case, target, evidence, dossier, panel, policy, consumer, and verdict-version custody; rejected events preserve exact state, batches compose, appeal resolution is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage Tribunal lifecycle plus an independent exact-suite consumer; accepted steps preserve case/evidence identity, add one receipt, and cannot assign support or commit effects."
+      "rationale": "Exact nineteen-theorem Tribunal lifecycle with arbitrary-run ten-field identity and non-authority custody, rejection noninterference, composition, absorbing appeal resolution, and an independent exact-suite consumer."
     },
     {
       "tag": "lean:tribunal.review.failure_blocks_promotion",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.TribunalRefinement",
-      "formal_target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress.",
+      "formal_target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress without mutating exact state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable route semantics cover twenty-eight accepted and blocking paths; the independent consumer preserves the exact 3/5 and 1/11 suites and rejects 45 mutations without support movement."
+      "rationale": "Reachable route semantics cover twenty-eight accepted and blocking paths; every rejected event preserves exact state, and the independent consumer recompiles the nineteen-theorem surface, preserves the exact 3/5 and 1/11 suites, and rejects 45 mutations without support movement."
     },
     {
       "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",

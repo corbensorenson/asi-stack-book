@@ -4,13 +4,26 @@
   "title": "Tribunal lifecycle refinement result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "formal_surface", "input_suites", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "final_state", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.tribunal_refinement.v1"},
     "result_id": {"type": "string", "minLength": 1},
     "source_sha256": {
       "type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
       "required": ["lean_model", "tribunal_review_schema", "method_independence_record"]
+    },
+    "formal_surface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theorem_count", "lean_module", "lean_compile_receipt", "arbitrary_run_identity_custody", "arbitrary_run_no_support_or_external_effect", "exact_run_composition", "terminal_state_absorbing"],
+      "properties": {
+        "theorem_count": {"const": 19},
+        "lean_module": {"const": "lean/AsiStackProofs/TribunalRefinement.lean"},
+        "lean_compile_receipt": {"type": "object"},
+        "arbitrary_run_identity_custody": {"const": true},
+        "arbitrary_run_no_support_or_external_effect": {"const": true},
+        "exact_run_composition": {"const": true},
+        "terminal_state_absorbing": {"const": true}
+      }
     },
     "input_suites": {
       "type": "array", "minItems": 2, "maxItems": 2,

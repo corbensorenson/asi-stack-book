@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2310 |
+| Theorem declarations classified | 2317 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1356 |
+| Derived/decomposed theorem declarations | 1363 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -173,7 +173,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 19 | 8 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 32 | 10 | 11 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -2337,15 +2337,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Tribunal.lean` | `accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `action_verdict_without_actions_or_constraints_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/Tribunal.lean` | `high_risk_accepted_verdict_without_probes_or_independence_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `accepted_event_advances_and_records_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `action_verdict_requires_actions_and_constraints` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `appeal_resolved_event_is_rejected` | derived_or_decomposed | no | uses simp, split |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `appeal_resolved_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `apply_event_preserves_case_and_evidence_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `changed_evidence_blocks_prior_verdict_reuse` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `default_approval_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `full_tribunal_lifecycle_reaches_appeal_resolution` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `high_risk_without_probe_requests_adversarial_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `requested_appeal_requires_resolution_record` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/TribunalRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `shared_independence_group_requests_graph_repair` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `support_change_requires_evidence_owner_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | `unpreserved_dissent_blocks_verdict` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

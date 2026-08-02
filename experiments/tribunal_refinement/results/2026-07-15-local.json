@@ -2,9 +2,22 @@
   "schema_version": "asi_stack.tribunal_refinement.v1",
   "result_id": "tribunal-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "be90f0c33ef3137c2c2f2e91f88dedbf39f67e3894e3b8d3a6f786216fee5b7b",
+    "lean_model": "67439012a5b88bddc622b4cdacbff1ee5c3d51f9fad0611f8695c345bfad68b8",
     "tribunal_review_schema": "d593b5c5c237111e9dbd05a7f6387c1c4cf4113606059fe028eff3e06894cc99",
     "method_independence_record": "5293b206cd0149b578047fc4a0520a472f6190905a7e177a40a78bcddaaad74d"
+  },
+  "formal_surface": {
+    "theorem_count": 19,
+    "lean_module": "lean/AsiStackProofs/TribunalRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/TribunalRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {

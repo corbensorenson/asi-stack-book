@@ -11318,7 +11318,7 @@
               "name": "Tribunal versioned-verdict and appeal refinement",
               "purpose": "Check a reachable request, dossier, panel, verdict, consumer-acknowledgment, and appeal lifecycle with exact case/evidence custody, dissent, action, residual, owner-handoff, and authority boundaries.",
               "implementation_status": "implemented",
-              "result_status": "passes via python3 scripts/validate_tribunal_refinement.py: exact 3/5 review fixtures, 1/11 method-independence lifecycle, 28 routes, 7 stages, and 45/45 rejected mutations; support effect none",
+              "result_status": "passes via python3 scripts/validate_tribunal_refinement.py: exact 19-theorem surface, arbitrary-run custody and non-authority, rejection noninterference, batch composition, absorbing appeal resolution, exact 3/5 review fixtures, 1/11 method-independence lifecycle, 28 routes, 7 stages, and 45/45 rejected mutations; support effect none",
               "status": "bounded authored lifecycle in AsiStackProofs.TribunalRefinement; no competence, independence-in-fact, verdict-correctness, live-tribunal, usefulness, causality, deployment, reproduction, transfer, or core-support claim"
             },
             {
@@ -11356,13 +11356,13 @@
             {
               "tag": "lean:tribunal.review.operational_invariant",
               "module": "AsiStackProofs.TribunalRefinement",
-              "target": "A versioned request, dossier, panel, verdict, acknowledgment, and appeal lifecycle preserves exact case and evidence custody, dissent, action, residual, and appeal obligations while preventing support assignment and external effects.",
+              "target": "Every finite versioned Tribunal run preserves exact case, target, evidence, dossier, panel, policy, consumer, and verdict-version custody; rejected events preserve exact state, batches compose, appeal resolution is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
               "tag": "lean:tribunal.review.failure_blocks_promotion",
               "module": "AsiStackProofs.TribunalRefinement",
-              "target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress.",
+              "target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress without mutating exact state.",
               "status": "implemented"
             },
             {

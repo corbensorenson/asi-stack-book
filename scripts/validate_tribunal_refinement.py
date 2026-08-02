@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -36,6 +37,27 @@ NEXT_STAGE = {
     "acknowledged": "appeal_resolved", "appeal_resolved": "appeal_resolved",
 }
 ACTION_VERDICTS = {"revise", "reject", "block"}
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_case_and_evidence_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "accepted_event_advances_and_records_receipt",
+    "rejected_event_preserves_exact_state",
+    "run_events_preserve_exact_identity",
+    "run_events_cannot_assign_support_or_external_effect",
+    "run_events_compose",
+    "appeal_resolved_event_is_rejected",
+    "appeal_resolved_state_is_absorbing",
+    "high_risk_without_probe_requests_adversarial_review",
+    "shared_independence_group_requests_graph_repair",
+    "default_approval_is_rejected",
+    "unpreserved_dissent_blocks_verdict",
+    "changed_evidence_blocks_prior_verdict_reuse",
+    "action_verdict_requires_actions_and_constraints",
+    "support_change_requires_evidence_owner_handoff",
+    "requested_appeal_requires_resolution_record",
+    "full_tribunal_lifecycle_reaches_appeal_resolution",
+}
 
 
 def sha256(path: Path) -> str:
@@ -260,6 +282,39 @@ def run_validator(name: str) -> None:
     if completed.returncode: raise AssertionError(f"{name} failed: {completed.stdout}{completed.stderr}")
 
 
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise AssertionError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/TribunalRefinement.lean"]
+    completed = subprocess.run(
+        command, cwd=ROOT / "lean", capture_output=True, text=True
+    )
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_identity_custody": True,
+        "arbitrary_run_no_support_or_external_effect": True,
+        "exact_run_composition": True,
+        "terminal_state_absorbing": True,
+    }
+
+
 def build_result() -> dict[str, Any]:
     run_validator("validate_tribunal_review.py"); run_validator("validate_tribunal_method_independence.py")
     valid_count = len(list(TRIBUNAL_FIXTURES.glob("valid_*.json")))
@@ -282,6 +337,7 @@ def build_result() -> dict[str, Any]:
         "schema_version": "asi_stack.tribunal_refinement.v1",
         "result_id": "tribunal-refinement-2026-07-15-local",
         "source_sha256": {"lean_model": sha256(LEAN), "tribunal_review_schema": sha256(TRIBUNAL_SCHEMA), "method_independence_record": sha256(METHOD_RECORD)},
+        "formal_surface": formal_surface(),
         "input_suites": [
             {"suite_id": "tribunal_review", "valid_count": valid_count, "expected_invalid_count": invalid_count, "suite_passed": True, "validator_sha256": sha256(ROOT / "scripts/validate_tribunal_review.py")},
             {"suite_id": "tribunal_method_independence", "valid_count": 1, "expected_invalid_count": method_invalid, "suite_passed": True, "validator_sha256": sha256(ROOT / "scripts/validate_tribunal_method_independence.py")},
@@ -310,7 +366,11 @@ def main() -> None:
         RESULT.parent.mkdir(parents=True, exist_ok=True); RESULT.write_text(json.dumps(result, indent=2) + "\n")
     elif not RESULT.exists() or json.loads(RESULT.read_text()) != result:
         raise SystemExit(f"{RESULT.relative_to(ROOT)} is missing or stale; rerun with --write")
-    print(f"Tribunal refinement passed: 3/5 review fixtures, 1/11 method-independence lifecycle, 28 routes, 7 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
+    print(
+        "Tribunal refinement passed: 3/5 review fixtures, 1/11 method-independence lifecycle, "
+        f"28 routes, 7 stages, {result['mutation_rejection_count']} mutations rejected, "
+        f"{result['formal_surface']['theorem_count']} Lean theorems, support effect none."
+    )
 
 
 if __name__ == "__main__": main()

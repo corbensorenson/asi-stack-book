@@ -11269,7 +11269,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Reachable Lean Tribunal lifecycle, exact 3/5 review and 1/11 method-independence suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_contract": "Reachable Lean Tribunal lifecycle with an exact 19-theorem surface covering arbitrary finite runs, exact identity custody, nonauthority, composition, and absorbing appeal resolution; exact 3/5 review and 1/11 method-independence suites; independent consumer; result schema; receipt; and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_tribunal_refinement.py",
         "schemas/tribunal_refinement.schema.json",
@@ -11291,9 +11291,12 @@
         "one valid and eleven invalid method-independence records",
         "twenty-eight routes and seven reachable stages",
         "forty-five rejected lifecycle mutations",
+        "exact nineteen-theorem Lean surface recompiles",
+        "arbitrary finite runs preserve exact identity and assign no support or external effects",
+        "event batches compose and appeal resolution absorbs every suffix",
         "no support-state effect"
       ],
-      "claim_scope": "One finite authored versioned Tribunal lifecycle plus two existing bounded synthetic suites only.",
+      "claim_scope": "Arbitrary finite runs of the authored versioned Tribunal lifecycle plus two existing bounded synthetic suites only.",
       "negative_controls": "validator_owned_case_evidence_panel_verdict_appeal_authority_mutations",
       "negative_control_cases": [
         "case, evidence, verdict, or event substitution and replay",

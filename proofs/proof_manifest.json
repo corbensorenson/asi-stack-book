@@ -1487,7 +1487,7 @@
       "chapter_title": "Proof-Carrying Claims and Adversarial Review",
       "tag": "lean:tribunal.review.operational_invariant",
       "module": "AsiStackProofs.TribunalRefinement",
-      "formal_target": "A versioned request, dossier, panel, verdict, acknowledgment, and appeal lifecycle preserves exact case and evidence custody, dissent, action, residual, and appeal obligations while preventing support assignment and external effects.",
+      "formal_target": "Every finite versioned Tribunal run preserves exact case, target, evidence, dossier, panel, policy, consumer, and verdict-version custody; rejected events preserve exact state, batches compose, appeal resolution is absorbing, and support or external effects remain unassigned.",
       "status": "implemented",
       "outline_line": 3744,
       "module_path": "lean/AsiStackProofs/TribunalRefinement.lean"
@@ -1497,7 +1497,7 @@
       "chapter_title": "Proof-Carrying Claims and Adversarial Review",
       "tag": "lean:tribunal.review.failure_blocks_promotion",
       "module": "AsiStackProofs.TribunalRefinement",
-      "formal_target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress.",
+      "formal_target": "Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress without mutating exact state.",
       "status": "implemented",
       "outline_line": 3745,
       "module_path": "lean/AsiStackProofs/TribunalRefinement.lean"

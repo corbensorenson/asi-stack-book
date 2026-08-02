@@ -11,9 +11,9 @@
 
 ## Reachable model
 
-The model owns one case-specific Tribunal event from review request through
-versioned dossier/evidence binding, bounded panel execution, verdict issue,
-consumer acknowledgment, and appeal resolution. It represents panel methods,
+The model owns arbitrary finite lists of case-specific Tribunal events from
+review request through versioned dossier/evidence binding, bounded panel
+execution, verdict issue, consumer acknowledgment, and appeal resolution. It represents panel methods,
 independence groups, shared-evidence risk, falsification, abstention, veto,
 dissent, changed-evidence reuse, actions, constraints, residuals, appeal,
 support-owner handoff, and consumer custody without treating any field as proof
@@ -21,9 +21,12 @@ of reviewer competence or verdict truth.
 
 ## Consequences, countermodels, and consumer
 
-General consequences preserve case, target, and evidence identity and prevent
-changes to support-assignment or external-effect counts across every accepted
-step. Each accepted step adds exactly one receipt. Countermodels reject case,
+Nineteen exact declarations preserve all ten represented case, target,
+evidence, dossier, panel, policy, consumer, and verdict-version identities and
+prevent changes to support-assignment or external-effect counts across every
+finite event list. Rejected events preserve exact state, accepted steps advance
+and add exactly one receipt, event batches compose, and appeal-resolved states
+absorb every suffix. Countermodels reject case,
 evidence, verdict, and event substitution; missing review, dossier, evidence,
 probe, panel size, independence graph, shared-evidence disclosure,
 falsification, abstention, veto, dissent, actions, constraints, residual,
@@ -31,10 +34,11 @@ appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse;
 default approval; unresolved appeal; and authority leakage. A six-event witness
 reaches appeal resolution with zero assigned support and zero external effects.
 
-The independent consumer covers all twenty-eight routes, consumes the exact
-3/5 tribunal-review fixtures and 1/11 method-independence lifecycle, and rejects
-45 mutations across those boundaries, including an explicit action-required
-packet whose verdict label is otherwise non-action-bearing.
+The independent consumer recompiles the exact nineteen-theorem surface, covers
+all twenty-eight routes, consumes the exact 3/5 tribunal-review fixtures and
+1/11 method-independence lifecycle, and rejects 45 mutations across those
+boundaries, including an explicit action-required packet whose verdict label is
+otherwise non-action-bearing.
 
 ## Assumptions, exclusions, and adequacy verdict
 
@@ -42,8 +46,9 @@ Identifiers, digests, evidence-version facts, method labels, reviewer and
 independence-group counts, graph acyclicity, shared-evidence disclosure,
 falsification, abstention, veto, dissent, actions, constraints, residuals,
 appeal, owner handoff, and consumer acknowledgment are trusted inputs. The
-model is adequate for the exact represented lifecycle, route priority,
-versioned custody, no-default discipline, and authority separation. It is
+model is adequate for the exact represented finite-run lifecycle, route
+priority, rejection noninterference, composition, terminal closure, versioned
+custody, no-default discipline, and authority separation. It is
 inadequate for reviewer competence, independence in fact, error decorrelation,
 dossier completeness, evidence truth, probe efficacy, verdict correctness,
 legitimacy, fairness, action or appeal quality, claim truth, evidence adequacy,
