@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 128 |
-| Theorem declarations classified | 1824 |
-| Direct/projection-style theorem declarations | 359 |
-| Derived/decomposed theorem declarations | 1102 |
-| Unknown or mixed theorem declarations | 363 |
+| Lean modules scanned | 129 |
+| Theorem declarations classified | 1868 |
+| Direct/projection-style theorem declarations | 374 |
+| Derived/decomposed theorem declarations | 1117 |
+| Unknown or mixed theorem declarations | 377 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -89,6 +89,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | ai-deployment-transition-distribution-and-human-agency | 1 | 44 | 15 | 15 | 14 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | durable-semantic-memory-and-knowledge-lattices | 1 | 35 | 15 | 15 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 22 | 1 | 19 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -121,7 +122,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | ai-deployment-transition-distribution-and-human-agency, human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition | 3 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -681,6 +682,50 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `no_verified_candidate_reaches_closed_with_residual_escrow` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `raw_score_cannot_promote_selected_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `adoption_does_not_establish_welfare` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `affected_denominator_gap_persists_when_observed_count_falls` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `aggregate_gain_does_not_establish_successful_transition` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `aggregate_signals_cannot_recover_harmed_cohort_status` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `approval_click_does_not_establish_agency` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `approval_counts_cannot_recover_practical_agency` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `authority_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `baseline_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `cohort_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `complete_denominator_covers_every_expected_cohort` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `complete_dossier_reaches_only_theseus_governed_transition_study` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `contract_version_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `denominator_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `deployment_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `every_cohort_id_survives_collection` | derived_or_decomposed | no | uses cases, induction, right, simp, subst |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `expired_transition_contract_remains_expired_when_time_advances` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `exposure_does_not_establish_displacement` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `fully_remedied_append_iff` | derived_or_decomposed | no | uses cases, constructor, left, right, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `identical_aggregate_signals_can_hide_opposite_harm_status` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `identical_approval_counts_can_hide_opposite_practical_agency` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `missing_transition_checks_reject_readiness_consumer` | derived_or_decomposed | no | uses apply |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `missing_transition_remedy_blocks_accountability_consumer` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `missing_transition_study_blocks_empirical_support_promotion` | derived_or_decomposed | no | uses apply, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `observation_schedule_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `omitted_expected_cohort_rejects_complete_denominator` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `positive_aggregate_can_coexist_with_unremedied_harm` | derived_or_decomposed | no | uses apply, constructor, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `productivity_does_not_establish_distributional_benefit` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_accounting` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_agency` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_capacity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_design` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `readiness_requires_remedy` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `remedy_gap_persists_when_delivered_amount_falls` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `remedy_plan_change_invalidates_transition_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `unremedied_member_blocks_transition_acceptance` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `complete_dossier_reaches_only_theseus_memory_replay` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | `consumer_purpose_change_invalidates_memory_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

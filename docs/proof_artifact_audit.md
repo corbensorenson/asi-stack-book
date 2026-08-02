@@ -11,9 +11,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Metric | Value |
 |---|---:|
 | Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 321, "planned": 3} |
-| Triage class counts | {"formal-invariant": 321, "process-contract": 3} |
-| Lean modules referenced | 94 |
+| Manifest status counts | {"implemented": 322, "planned": 2} |
+| Triage class counts | {"formal-invariant": 322, "process-contract": 2} |
+| Lean modules referenced | 95 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -56,6 +56,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | 1 | 44 | 0 | 34 | 7 |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | 1 | 35 | 0 | 37 | 12 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 2 | 0 | 3 | 2 |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | 1 | 22 | 0 | 12 | 1 |
@@ -132,7 +133,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 8 | 0 | 0 |
 | `adversarial-machine-learning-and-model-attack-surface` | 1 | 1 | 0 | 0 |
-| `ai-deployment-transition-distribution-and-human-agency` | 1 | 0 | 0 | 0 |
+| `ai-deployment-transition-distribution-and-human-agency` | 1 | 1 | 0 | 0 |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 6 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
@@ -368,7 +369,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human_ai_org.accountability_requires_authority` | `human-ai-organizations-delegation-and-accountability` | `AsiStackProofs.HumanAIOrganizations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
-| `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `ai-deployment-transition-distribution-and-human-agency` | `AsiStackProofs.NoDeferralAdmission` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `ai-deployment-transition-distribution-and-human-agency` | `AsiStackProofs.DeploymentTransitionGovernance` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.operational_invariant` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.failure_blocks_promotion` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifacts.graph.replay_packet_bridge` | `artifact-graphs-audit-logs-and-replay` | `AsiStackProofs.ArtifactRealityRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

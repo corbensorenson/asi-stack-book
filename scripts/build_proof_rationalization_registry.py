@@ -529,6 +529,34 @@ laboratory safety, deployment, support, release, transfer, or external effect.
 Chapter support remains `argument` and `support_state_effect` remains `none`.
 
 """,
+    "ai-deployment-transition-distribution-and-human-agency": """## Current refinement
+
+`AsiStackProofs.DeploymentTransitionGovernance` implements a reachable
+eight-transition review over deployment and counterfactual identity, complete
+affected-person denominators, disaggregated task-to-social accounting,
+practical refusal and exit, transition capacity, delayed monitoring, remedy,
+expiry, and explicit non-authority. One complete dossier reaches only Project
+Theseus governed transition-study eligibility. All 54 admission-axis mutations
+reject readiness and receive exact repair or refusal dispositions.
+
+Finite-list proofs preserve cohort identity and append composition, require
+every expected cohort in the denominator, and prevent an unremedied harmed
+cohort from disappearing behind other gains. A concrete witness has positive
+aggregate gain while worker harm remains unremedied. Expiry, population gaps,
+and remedy gaps remain rejecting under adverse changes. Seven scope changes
+invalidate receipts. Two non-identifiability results separate aggregate signals
+from harmed-cohort status and approval counts from practical refusal. Existing
+Human-AI Organizations, Readiness Gates, and Evidence States consumers reject
+missing remedy, failed transition checks, and empirical promotion without a
+transition study.
+
+Authored dossier fields remain assumptions. No theorem establishes field truth,
+causal deployment effect, job change, welfare, fairness, meaningful agency,
+lawful remedy, service continuity, deployment readiness, support, release,
+transfer, or external effect. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

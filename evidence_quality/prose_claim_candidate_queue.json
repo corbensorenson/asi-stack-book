@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3854,
+    "candidate_count": 3859,
     "review_state_counts": {
       "duplicate_of_atom": 1830,
       "editorial_or_question": 59,
       "historical_or_source_report": 323,
       "material_atom": 3,
-      "nonmaterial_explanation": 1639
+      "nonmaterial_explanation": 1644
     }
   },
   "candidates": [
@@ -32644,13 +32644,12 @@
       "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.beyond_sota.001"
     },
     {
-      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.c5fb8565af6e",
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.093236490b46",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:310",
-      "sentence": "Planned formalization route: `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` covers only the finite admission record for ai deployment transition distribution and human agency; it cannot establish whether ai deployment transition distribution and human agency works safely or transfers.",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:305",
+      "sentence": "The finite cohort model proves append composition, expected-cohort coverage, and that an unremedied cohort blocks acceptance.",
       "cues": [
-        "cannot",
-        "transfers"
+        "proves"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -32660,13 +32659,111 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Formalization-scope caption that narrows a planned finite record target and expressly denies live efficacy, safety, or transfer inference.",
+      "disposition_rationale": "This sentence summarizes finite cohort-composition, denominator, and remedy theorems in the cited Lean module; it creates no empirical, causal, welfare, or support claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.9724371abfad",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:305",
+      "sentence": "Its concrete counterexample has positive aggregate gain and unresolved worker harm, so aggregate benefit cannot erase the subgroup obligation inside the model.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This is a bounded explanation of the closed positive-aggregate/unremedied-harm witness. It does not claim that any real deployment produced either quantity or that the modeled obligation is a complete welfare rule.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.e664e8d13543",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:305",
+      "sentence": "Two further information-loss constructions show why identical productivity and aggregate-gain signals cannot determine whether a harmed cohort remains, and why identical approval and human-review counts cannot determine whether practical refusal is usable.",
+      "cues": [
+        "cannot",
+        "show"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This sentence summarizes two information-loss countermodels proved in Lean; it does not establish real subgroup harm, coercion, agency, or measurement validity.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.0734cef26b77",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:307",
+      "sentence": "The formalization proves authored record custody and local non-inference only; it does not prove field truth, causal deployment effect, job change, welfare, fairness, meaningful agency, lawful remedy, service continuity, deployment readiness, support, release, or external effect.",
+      "cues": [
+        "prove",
+        "proves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This explicit nonclaim prevents proof laundering by enumerating propositions outside the formal envelope; it creates no positive chapter claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.3438e295a614",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:307",
+      "sentence": "Project Theseus must run the prospective governed transition campaign with competent nondeployment and ordinary-improvement baselines, complete affected-person denominators, delayed subgroup outcomes, exercised exit, continuity failures, and observed remedy.",
+      "cues": [
+        "must"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This is the explicit Project Theseus handoff for empirical and whole-system work excluded from Lean. It records future evidence ownership without asserting that the campaign exists, succeeds, or changes support state.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.b6cac1ba50e7",
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:318",
+      "sentence": "Implemented formalization route: `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` covers the bounded transition-record lifecycle, cohort accounting, mutation repair, receipt invalidation, and non-identifiability boundary; it cannot establish causal deployment effects, welfare, fairness, meaningful agency, lawful remedy, service continuity, support, release, or transfer.",
+      "cues": [
+        "cannot",
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "This implemented-route caption bounds the exact formal surface and expressly denies causal, welfare, agency, remedy, continuity, support, release, and transfer inference.",
       "target_atom_id": null
     },
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.6c6897aae50f",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:366",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:374",
       "sentence": "The transition ledger keeps capability, adoption, task change, productivity, distribution, concentration, service continuity, human decision rights, delayed outcomes, remedy, and exit separate so a locally successful tool cannot silently become an irreversible institution.",
       "cues": [
         "cannot"
@@ -32685,7 +32782,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.9a7dcb2fcef8",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:372",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:380",
       "sentence": "It preserves that history but cannot decide",
       "cues": [
         "cannot"
@@ -32704,7 +32801,7 @@
     {
       "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.88b1cbd8ed44",
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
-      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:373",
+      "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:381",
       "sentence": "whether the distribution was fair, the remedy sufficient, the practical exit",
       "cues": [
         "sufficient"

@@ -621,14 +621,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "ai-deployment-transition-distribution-and-human-agency": {
-        "reviewed_sha256": "09218942f975868056b764a5581a0833ae30aa853d8a0205f978b19a4833d48f",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "95f59853cd1b785d6ec2b586bf776476f9b53659925be6f145ae8dfb711fdfa3",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve distribution, labor transition, agency, access and concentration, practical exit, skill, delayed remedy, and institutional authority on shared population and time denominators",
             "the workplace study, ILO exposure index, OECD infrastructure analysis, and Coherence Exchange are bounded from economy-wide causal inference, legal adjudication, welfare proof, and tested institutional design",
             "the chapter keeps nondeployment comparators, subgroup and attrition denominators, transition cost, effect-visible remedy, concentration residuals, practical alternatives, and argument-level handoffs explicit",
+            "the formalization is restricted to authored transition-dossier admissibility, finite cohort and remedy custody, adverse monotonicity, receipt invalidation, aggregate-harm and practical-agency information-loss countermodels, and rejecting accountability, readiness, and Evidence States consumers; it establishes no field truth, causal deployment effect, job change, welfare, fairness, meaningful agency, lawful remedy, service continuity, support, release, or external effect",
         ],
         "support_state_effect": "none",
     },

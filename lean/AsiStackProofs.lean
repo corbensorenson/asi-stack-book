@@ -33,6 +33,7 @@ import AsiStackProofs.DurableSemanticMemoryReview
 import AsiStackProofs.PhysicalComputeInfrastructureReview
 import AsiStackProofs.LearningTheoryForecastReview
 import AsiStackProofs.ScientificExperimentReview
+import AsiStackProofs.DeploymentTransitionGovernance
 import AsiStackProofs.DangerousCapabilityReview
 import AsiStackProofs.MilitaryInteractionReview
 import AsiStackProofs.OpenWeightReleaseReview

@@ -474,6 +474,64 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "complete_dossier_is_ready": "The closed transition dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_governed_transition_study": "The closed dossier reaches only Project Theseus governed transition-study eligibility, not deployment, support, or release.",
+    "positive_aggregate_can_coexist_with_unremedied_harm": "A closed two-cohort witness has positive aggregate gain while one worker cohort remains unremedied.",
+    "identical_aggregate_signals_can_hide_opposite_harm_status": "Two transition cases witness opposite harmed-cohort status under identical productivity and aggregate-gain signals.",
+    "identical_approval_counts_can_hide_opposite_practical_agency": "Two transition cases witness opposite practical-refusal status under identical approval and human-review counts.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DeploymentTransitionGovernance.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed transition dossier, aggregate-harm witness, or information-loss collision witnesses one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "cohort_id_collection_append_composes": "Structural induction proves cohort-identity collection composes over concatenation for arbitrary finite transition ledgers.",
+    "every_cohort_id_survives_collection": "Structural induction proves every member cohort identity remains present in the collected finite ledger.",
+    "complete_denominator_covers_every_expected_cohort": "A quantified expected-member argument derives an included cohort witness from denominator completeness.",
+    "omitted_expected_cohort_rejects_complete_denominator": "A quantified contradiction rejects denominator completeness when an expected cohort is omitted.",
+    "fully_remedied_append_iff": "A two-direction finite-list proof shows remedy completeness composes exactly over ledger concatenation.",
+    "unremedied_member_blocks_transition_acceptance": "A quantified member contradiction rejects full remedy when one cohort has a strict remedy gap.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 54 transition-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 54 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 54 mutations into the lifecycle repair state.",
+    "expired_transition_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired transition contract.",
+    "affected_denominator_gap_persists_when_observed_count_falls": "Natural-number order proves observing fewer affected cohorts cannot close an existing denominator gap.",
+    "remedy_gap_persists_when_delivered_amount_falls": "Natural-number order proves delivering less remedy cannot close an existing burden gap.",
+    "deployment_change_invalidates_transition_receipt": "The deployment-identity conjunct rejects a receipt presented for a changed deployment.",
+    "baseline_change_invalidates_transition_receipt": "The counterfactual-baseline conjunct rejects a receipt presented under a changed baseline.",
+    "contract_version_change_invalidates_transition_receipt": "The contract-version conjunct rejects a receipt presented under a changed transition contract.",
+    "denominator_change_invalidates_transition_receipt": "The affected-denominator conjunct rejects a receipt presented for a changed population.",
+    "observation_schedule_change_invalidates_transition_receipt": "The observation-schedule conjunct rejects a receipt presented under a changed follow-up schedule.",
+    "remedy_plan_change_invalidates_transition_receipt": "The remedy-plan conjunct rejects a receipt presented under a changed remedy plan.",
+    "authority_change_invalidates_transition_receipt": "The authority conjunct rejects a receipt presented under changed transition authority.",
+    "aggregate_signals_cannot_recover_harmed_cohort_status": "A same-aggregate/opposite-harm collision proves no aggregate-signal classifier is exact for every modeled transition.",
+    "approval_counts_cannot_recover_practical_agency": "A same-count/opposite-refusal collision proves no approval-count classifier is exact for every modeled transition.",
+    "missing_transition_remedy_blocks_accountability_consumer": "The Human-AI Organizations bridge routes a transition without remedy to the existing accountability repair state.",
+    "missing_transition_checks_reject_readiness_consumer": "The Readiness Gates bridge rejects a canary decision when required transition checks fail.",
+    "missing_transition_study_blocks_empirical_support_promotion": "The Evidence States bridge rejects empirical support promotion without a transition-study witness.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DeploymentTransitionGovernance.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/deployment_transition_dossier.json"],
+        "classification_basis": ["a quantified induction, mutation family, denominator or remedy obligation, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "exposure_does_not_establish_displacement", "adoption_does_not_establish_welfare",
+    "productivity_does_not_establish_distributional_benefit", "approval_click_does_not_establish_agency",
+    "aggregate_gain_does_not_establish_successful_transition", "review_step_preserves_stage_invariant",
+    "review_run_preserves_stage_invariant", "study_eligibility_requires_admissible_dossier",
+    "readiness_requires_identity", "readiness_requires_design", "readiness_requires_accounting",
+    "readiness_requires_agency", "readiness_requires_capacity", "readiness_requires_remedy",
+    "readiness_requires_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/DeploymentTransitionGovernance.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a typed evidence decision, universal finite lifecycle invariant, or grouped necessity result constrains authored deployment-transition review state"],
+        "rationale": "The theorem constrains only the encoded transition review; it establishes no causal deployment effect, welfare, fairness, meaningful agency, lawful remedy, service continuity, support, or deployment authority.",
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready": "The closed harmless dossier witnesses the finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_release_case": "The closed dossier reaches only harmless Theseus campaign eligibility, not release authority.",
     "identical_official_lineage_can_hide_opposite_copy_control": "Two ecosystem states witness opposite copy-control results under identical official lineage.",
