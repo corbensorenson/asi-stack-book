@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "rmi"
   - "rgs"
@@ -28,7 +28,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Current positive evidence is finite record discipline plus one exact Project Theseus YELLOW currentness observation. Post-v2.1 released only 2/36 useful candidates and missed its rollback threshold; the ambiguous router produced zero correct substantive candidates out of 360; and the post-v2.3 pressure campaign emitted zero admissible final decisions out of 24."
-  - "Seventeen reachable-lifecycle declarations, eleven retained legacy countermodels, three exact bounded suites, forty routes, and 45/45 rejected mutations do not establish evaluator adequacy, gate calibration, useful throughput, live residual custody, production quarantine enforcement, effect-complete rollback, terminal closure, or transfer."
+  - "Twenty-four reachable-lifecycle declarations, eleven retained legacy countermodels, three exact bounded suites, forty routes, and 45/45 rejected mutations do not establish evaluator adequacy, gate calibration, useful throughput, live residual custody, production quarantine enforcement, effect-complete rollback, organizational terminal governance, or transfer."
   - "Run a preregistered natural lifecycle campaign across multiple strong current models, specialists, tools, human lanes, updates, incidents, rights changes, load states, and delayed outcomes with strong matched baselines and complete usefulness, safety, recovery, cost, human-work, and residual denominators."
   - "Require prospective causal interventions, independent gate and evaluator implementations, live residual storage, transitive quarantine, effect-complete rollback and compensation, terminal-state enforcement, runtime replay where claimed, and heterogeneous transfer before any readiness-efficacy or SOTA promotion."
 ---
@@ -499,9 +499,11 @@ records six valid synthetic readiness lifecycle transitions and twelve
 expected-invalid controls. Its theorem alignment now points to the reachable
 refinement rather than the retired fixture-summary bridge.
 
-`AsiStackProofs.ReadinessRefinement` adds seventeen reachable-lifecycle
+`AsiStackProofs.ReadinessRefinement` now has twenty-four reachable-lifecycle
 declarations and an independent consumer over seven stages, forty routes, and
-45/45 rejecting mutations. Eleven legacy countermodels remain bounded; nine
+45/45 rejecting mutations. It proves exact rejection noninterference,
+arbitrary-run identity and non-authority preservation, batch composition, and
+absorbing terminal closure in addition to the six-event witness. Eleven legacy countermodels remain bounded; nine
 definition-unpacking or fixture-summary declarations are retired. The model
 separates ordinary release, quarantine, terminal closure, support assignment,
 and external effects while preserving capability and evidence custody.
@@ -571,7 +573,7 @@ time.
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | implemented by readiness/residual gate harness for route residual obligations and inherited residual custody; residual-ledger storage not run |
 | Quarantine routing harness test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run |
 | Historical-project readiness check lifecycle | Check applicability, requiredness, attempt, result, waiver, evidence identity, expiry, invalidating dependencies, monotone containment, quarantine ownership, descendant closure, and route blocking against nine mutations. | implemented by `python3 scripts/validate_readiness_check_lifecycle.py`; one quarantined six-project fixture only, no deployed readiness or support-state promotion |
-| Readiness candidate-to-terminal refinement | Check exact capability/evidence custody through shadow, canary, qualification, default, transitive quarantine, revocation-aware terminal closure, and separate release/quarantine/effect accounting. | implemented in `AsiStackProofs.ReadinessRefinement` and `python3 scripts/validate_readiness_refinement.py`; three exact suites, seven stages, 40 routes, 45/45 mutations; no evaluator adequacy, calibration, natural usefulness, effect-complete rollback, deployed quarantine/revocation, transfer, or support claim |
+| Readiness candidate-to-terminal refinement | Check exact capability/evidence custody through shadow, canary, qualification, default, transitive quarantine, revocation-aware terminal closure, and separate release/quarantine/effect accounting. | implemented in `AsiStackProofs.ReadinessRefinement` and `python3 scripts/validate_readiness_refinement.py`; exact 24-theorem surface, arbitrary-run custody and non-authority, batch composition, absorbing terminal state, three exact suites, seven stages, 40 routes, 45/45 mutations; no evaluator adequacy, calibration, natural usefulness, effect-complete rollback, deployed quarantine/revocation, transfer, or support claim |
 
 Fixture-shape validation, finite predicates, three rejecting harness families,
 the exact YELLOW currentness import, and bounded calibration results are
@@ -595,12 +597,12 @@ remains `argument`.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessRefinement` | A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects. | implemented |
+| `lean:readiness.gates.operational_invariant` | `AsiStackProofs.ReadinessRefinement` | Every finite run through the reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody; rejected events preserve exact state, event batches compose, terminal closure is absorbing, and support or external effects remain unassigned. | implemented |
 | `lean:readiness.gates.failure_blocks_promotion` | `AsiStackProofs.ReadinessRefinement` | Missing workload, baseline, evaluator, non-claims, fresh shadow evidence, regression floor, residual escrow, fallback, rollback, monitoring, canary outcome accounting, independent evaluation, transfer, delayed outcomes, transitive quarantine, route blocking, or terminal revocation custody blocks lifecycle progress. | implemented |
-| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessRefinement` | The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects. | implemented |
+| `lean:readiness.gates.lifecycle_probe_bridge` | `AsiStackProofs.ReadinessRefinement` | The independent consumer recompiles the exact twenty-four-theorem surface while preserving three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects. | implemented |
 
 These proof hooks now resolve to a reachable seven-stage lifecycle plus an
-independent consumer. Seventeen refinement declarations and eleven retained
+independent consumer. Twenty-four refinement declarations and eleven retained
 legacy countermodels remain live; nine definition-unpacking or fixture-summary
 declarations are retired. This
 classification prevents theorem count or the bridge from standing in for

@@ -11492,7 +11492,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Reachable Lean readiness lifecycle, three exact bounded suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_contract": "Exact twenty-four-theorem reachable Lean readiness lifecycle with arbitrary-run invariants, three exact bounded suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_readiness_refinement.py",
         "schemas/readiness_refinement.schema.json",
@@ -11506,6 +11506,9 @@
       ],
       "output_contract": "Reject identity substitution, incomplete evidence, regression, missing residual/fallback/rollback/monitoring/outcome/independence/transfer, incomplete quarantine and terminal custody, replay, and support/effect leakage.",
       "output_assertions": [
+        "exact theorem surface recompiles",
+        "arbitrary finite runs preserve identity and assign no support or external effects",
+        "event batches compose and terminal closure is absorbing",
         "three exact bounded suites",
         "forty routes and seven reachable stages",
         "forty-five rejected mutations",

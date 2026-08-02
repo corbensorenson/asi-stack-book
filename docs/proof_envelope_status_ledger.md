@@ -15,8 +15,8 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Planned proof targets | 0 |
 | Lean modules referenced | 97 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 2296 |
-| Derived/decomposed theorem declarations | 1342 |
+| Theorem declarations classified | 2303 |
+| Derived/decomposed theorem declarations | 1349 |
 | Direct/projection-style theorem declarations | 410 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
@@ -24,12 +24,12 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 
 ## Adequacy Snapshot
 
-The current adequacy review classifies 131 adequate finite-record invariant, 121 useful but too narrow, 16 needs richer state-machine or review semantics, 37 needs executable tests first, 17 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
+The current adequacy review classifies 134 adequate finite-record invariant, 118 useful but too narrow, 16 needs richer state-machine or review semantics, 37 needs executable tests first, 17 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
 
 | Adequacy class | Targets |
 |---|---:|
-| adequate finite-record invariant | 131 |
-| useful but too narrow | 121 |
+| adequate finite-record invariant | 134 |
+| useful but too narrow | 118 |
 | needs richer state-machine or review semantics | 16 |
 | needs executable tests first | 37 |
 | needs empirical or baseline tests first | 17 |

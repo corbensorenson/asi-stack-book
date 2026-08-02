@@ -2,7 +2,20 @@
   "schema_version": "asi_stack.readiness_refinement.v1",
   "result_id": "readiness-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "996a8b875f7e8fe73bd1428850f57ec61da61a7e5868b6b857577f96997628f1"
+    "lean_model": "9e11d55c711e9b7b49fbda2fdf37cf9c374cdf3679e254721c88a1f2a57173cc"
+  },
+  "formal_surface": {
+    "theorem_count": 24,
+    "lean_module": "lean/AsiStackProofs/ReadinessRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/ReadinessRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {

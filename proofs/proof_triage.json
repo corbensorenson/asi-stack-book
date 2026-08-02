@@ -1864,11 +1864,11 @@
       "tag": "lean:readiness.gates.operational_invariant",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessRefinement",
-      "formal_target": "A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects.",
+      "formal_target": "Every finite run through the reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody; rejected events preserve exact state, event batches compose, terminal closure is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage readiness lifecycle with exact custody, three bounded suites, 40 routes, 45 rejecting mutations, and no support/effect authority."
+      "rationale": "Exact 24-theorem seven-stage readiness lifecycle with rejection noninterference, arbitrary-run identity and non-authority invariants, composition, absorbing terminal closure, three bounded suites, 40 routes, and 45 rejecting mutations."
     },
     {
       "tag": "lean:readiness.gates.failure_blocks_promotion",
@@ -1878,17 +1878,17 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage readiness lifecycle with exact custody, three bounded suites, 40 routes, 45 rejecting mutations, and no support/effect authority."
+      "rationale": "Exact 24-theorem seven-stage readiness lifecycle with rejection noninterference, arbitrary-run identity and non-authority invariants, composition, absorbing terminal closure, three bounded suites, 40 routes, and 45 rejecting mutations."
     },
     {
       "tag": "lean:readiness.gates.lifecycle_probe_bridge",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "module": "AsiStackProofs.ReadinessRefinement",
-      "formal_target": "The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
+      "formal_target": "The independent consumer recompiles the exact twenty-four-theorem surface while preserving three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage readiness lifecycle with exact custody, three bounded suites, 40 routes, 45 rejecting mutations, and no support/effect authority."
+      "rationale": "Exact 24-theorem seven-stage readiness lifecycle with rejection noninterference, arbitrary-run identity and non-authority invariants, composition, absorbing terminal closure, three bounded suites, 40 routes, and 45 rejecting mutations."
     },
     {
       "tag": "lean:personal_hives.scheduling.operational_invariant",

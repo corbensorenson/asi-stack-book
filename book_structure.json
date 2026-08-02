@@ -16625,7 +16625,7 @@
             {
               "name": "Readiness candidate-to-terminal refinement",
               "implementation_status": "implemented",
-              "result_status": "passes three exact suites, 40 routes, seven reachable stages, and 45/45 rejecting mutations; one ordinary release, quarantine, and terminal closure remain separate; support-state effect none; no evaluator adequacy, calibration, natural usefulness, effect-complete rollback, deployed quarantine/revocation, transfer, or support claim"
+              "result_status": "passes an exact 24-theorem surface, arbitrary finite-run identity and non-authority invariants, exact batch composition, absorbing terminal closure, three exact suites, 40 routes, seven reachable stages, and 45/45 rejecting mutations; one ordinary release, quarantine, and terminal closure remain separate; support-state effect none; no evaluator adequacy, calibration, natural usefulness, effect-complete rollback, deployed quarantine/revocation, transfer, or support claim"
             }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates; AsiStackProofs.ReadinessRefinement",
@@ -16633,7 +16633,7 @@
             {
               "tag": "lean:readiness.gates.operational_invariant",
               "module": "AsiStackProofs.ReadinessRefinement",
-              "target": "A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects.",
+              "target": "Every finite run through the reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody; rejected events preserve exact state, event batches compose, terminal closure is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
@@ -16645,7 +16645,7 @@
             {
               "tag": "lean:readiness.gates.lifecycle_probe_bridge",
               "module": "AsiStackProofs.ReadinessRefinement",
-              "target": "The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
+              "target": "The independent consumer recompiles the exact twenty-four-theorem surface while preserving three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
               "status": "implemented"
             }
           ],

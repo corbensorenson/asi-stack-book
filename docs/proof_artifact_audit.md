@@ -102,7 +102,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | 1 | 31 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
-| `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 17 | 0 | 10 | 3 |
+| `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 24 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | 1 | 42 | 0 | 31 | 9 |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 37 | 0 | 10 | 6 |
@@ -118,7 +118,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 44 | 0 | 18 | 6 |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | 1 | 32 | 0 | 32 | 8 |
-| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 15 | 0 | 16 | 5 |
+| `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 26 | 0 | 25 | 8 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 30 | 0 | 21 | 8 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |

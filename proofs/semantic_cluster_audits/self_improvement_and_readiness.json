@@ -6,7 +6,7 @@
   "scope": "bounded_finite_self_improvement_open_ended_campaign_capability_threshold_and_readiness_lifecycle_semantics",
   "module_count": 4,
   "public_target_count": 21,
-  "theorem_declaration_count": 36,
+  "theorem_declaration_count": 43,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.SelfImprovementRefinement",
@@ -63,8 +63,8 @@
       "path": "lean/AsiStackProofs/ReadinessRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 3,
-      "theorem_declaration_count": 17,
-      "plain_language_proposition": "A finite seven-stage readiness lifecycle binds exact capability and evidence identity from candidate through shadow, canary, qualification, default readiness, quarantine, and acknowledged terminal closure while blocking stale, incomplete, unsafe, untransferred, or unrevoked records.",
+      "theorem_declaration_count": 24,
+      "plain_language_proposition": "Every finite run through a seven-stage readiness lifecycle binds exact capability and evidence identity from candidate through shadow, canary, qualification, default readiness, quarantine, and acknowledged terminal closure; rejection is state-noninterfering, event batches compose, terminal closure absorbs every suffix, and support or external effects remain unassigned.",
       "modeled_state": "Authored capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, residual, release, quarantine, revocation, and acknowledgment fields across 40 routes and a six-receipt terminal witness.",
       "assumptions": [
         "Capability, evidence, workload, baseline, evaluator, freshness, regression, throughput, unsafe-release, transfer, delayed-outcome, quarantine, revocation, consumer, and authority fields are truthful and complete.",
@@ -80,7 +80,7 @@
         "scripts/validate_readiness_refinement.py",
         "experiments/readiness_refinement/results/2026-07-15-local.json"
       ],
-      "mutation_evidence": "The independent consumer preserves three exact inherited suites, exercises 40 routes and the terminal witness, and rejects 45 of 45 binding, gate, replay, support, and effect mutations.",
+      "mutation_evidence": "The independent consumer recompiles the exact twenty-four-theorem surface, preserves three exact inherited suites, exercises 40 routes and the terminal witness, and rejects 45 of 45 binding, gate, replay, support, and effect mutations.",
       "maximum_inference": "Adequate for exact finite readiness-record identity, gate ordering, failed-event preservation, quarantine, revocation, and terminal acknowledgment consequences. It does not establish gate calibration, evaluator adequacy, natural useful throughput, safety, rollback efficacy, transfer, delayed outcomes, dependency completeness, deployment readiness, or support movement."
     },
     {

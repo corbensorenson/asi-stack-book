@@ -1987,7 +1987,7 @@
       "chapter_title": "Readiness Gates, Residual Escrow, and Quarantine",
       "tag": "lean:readiness.gates.operational_invariant",
       "module": "AsiStackProofs.ReadinessRefinement",
-      "formal_target": "A reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody from candidate through acknowledged terminal closure while separating ordinary release, quarantine, support, and external effects.",
+      "formal_target": "Every finite run through the reachable readiness lifecycle preserves exact capability, implementation, model-state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual custody; rejected events preserve exact state, event batches compose, terminal closure is absorbing, and support or external effects remain unassigned.",
       "status": "implemented",
       "outline_line": 5161,
       "module_path": "lean/AsiStackProofs/ReadinessRefinement.lean"
@@ -2007,7 +2007,7 @@
       "chapter_title": "Readiness Gates, Residual Escrow, and Quarantine",
       "tag": "lean:readiness.gates.lifecycle_probe_bridge",
       "module": "AsiStackProofs.ReadinessRefinement",
-      "formal_target": "The independent consumer preserves three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
+      "formal_target": "The independent consumer recompiles the exact twenty-four-theorem surface while preserving three exact readiness suites, all forty lifecycle routes, the six-receipt terminal witness, and forty-five rejecting identity, gate, replay, and authority-leak mutations without assigning support or external effects.",
       "status": "implemented",
       "outline_line": 5163,
       "module_path": "lean/AsiStackProofs/ReadinessRefinement.lean"

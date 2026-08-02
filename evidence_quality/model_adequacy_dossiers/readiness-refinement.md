@@ -6,11 +6,11 @@ Adequate for one finite authored candidate-to-terminal readiness lifecycle and t
 
 ## Reachable model
 
-Seven reachable stages and six advancing events preserve exact capability, implementation, model state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual identity. Forty routes cover missing workload/baseline/evaluator/non-claims; stale, regressed, residual-free, fallback-free, rollback-free, or unmonitored shadow evidence; incomplete canary outcome accounting; missing independent evaluation, transfer, or delayed outcomes; incomplete transitive quarantine; and terminal closure without dependency, revocation, receipt, or acknowledgment custody.
+Seven reachable stages and six advancing events preserve exact capability, implementation, model state, workload, baseline, evaluator, policy, authority, consumer, fallback, and residual identity. The preservation and zero-support/effect properties hold for arbitrary finite event lists; rejected events preserve exact state, event batches compose, and terminal states absorb every suffix. Forty routes cover missing workload/baseline/evaluator/non-claims; stale, regressed, residual-free, fallback-free, rollback-free, or unmonitored shadow evidence; incomplete canary outcome accounting; missing independent evaluation, transfer, or delayed outcomes; incomplete transitive quarantine; and terminal closure without dependency, revocation, receipt, or acknowledgment custody.
 
 ## Countermodels and consumer
 
-Seventeen refinement theorems include identity/effect invariants, thirteen concrete countermodels, and one terminal witness. The independent Python consumer rejects 45/45 binding, lifecycle, replay, and authority-leak mutations and reruns the three inherited suites exactly.
+Twenty-four refinement theorems include one-step and arbitrary-run identity/effect invariants, rejection noninterference, exact composition, terminal absorption, thirteen concrete countermodels, and one terminal witness. The independent Python consumer recompiles the exact theorem surface, rejects 45/45 binding, lifecycle, replay, and authority-leak mutations, and reruns the three inherited suites exactly.
 
 ## Assumptions, exclusions, and adequacy verdict
 
