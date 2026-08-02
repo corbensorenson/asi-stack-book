@@ -510,8 +510,9 @@ establishes dominance, physical safety, or general embodied competence.
 **Implemented finite control-lease model.**
 
 `lean:embodiment.missing_safety_state_blocks_control` is implemented in
-`AsiStackProofs.EmbodiedPhysicalSafety` with 22 theorem declarations in a finite
-control-lease model. A complete authored lease derives current-version and
+`AsiStackProofs.EmbodiedPhysicalSafety` with 41 theorem declarations: 22 in the
+finite control-lease admission model and 19 in a separate simulation-trial
+review lifecycle. A complete authored lease derives current-version and
 expiry checks, observation freshness, state and actuator envelopes, timing
 budget, fallback stopping distance, independent stop, effect observation,
 residual custody, and a non-claim boundary. Its only successful route is
@@ -526,6 +527,17 @@ cannot restore the state envelope, and increasing an already-infeasible stop-
 distance bound cannot restore fallback reachability. The independent Python
 consumer re-encodes those decisions instead of reading a copied Lean summary.
 
+The eight-stage simulation-only lifecycle binds nine plant, lease, controller,
+estimator, policy, envelope, actuator, observer, and result identities from
+proposal through closure. Arbitrary successful runs preserve those identities
+and zero support/external-effect authority, account for exactly one receipt per
+accepted event, keep stop-receipt counts monotone, expose an accepted trace,
+compose across all eight prefix/suffix splits, and reject every event after
+closure. A seven-event witness closes with seven receipts and one stop receipt;
+any of the thirteen missing safety axes prevents the trial from starting. The
+independent consumer rejects 105/105 lifecycle mutations spanning identity,
+stage, safety-axis, replay, authority, support, effect, and post-closure cases.
+
 The formalization does not prove physical safety. The model trusts every
 authored plant, estimator, controller, timing, effect,
 custody, and boundary field. It establishes no plant truth, physical or human
@@ -535,6 +547,7 @@ recovery, support movement, release, transfer, or external effect. Chapter suppo
 | Test | Purpose | Status |
 |---|---|---|
 | Derived control-lease admission guard | Recompute the positive route, all 13 exact failure routes, and three arithmetic monotonicity controls independently of Lean. | implemented and passed locally |
+| Simulation-trial review lifecycle | Recompile the exact 41-theorem surface; execute the seven-event review; check identity, non-authority, receipts, stop monotonicity, eight trace splits, closure, and 105/105 rejecting mutations. | implemented and passed locally |
 | Deadline and jitter injection | Verify late control narrows authority before unsafe state. | planned |
 | State and actuator fault suite | Detect wrong estimates, saturation, desynchronization, and unavailable fallback. | planned |
 | Independent stop-path test | Demonstrate stop reachability under advanced-controller and communication failure. | planned |

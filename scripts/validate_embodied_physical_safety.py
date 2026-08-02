@@ -25,8 +25,10 @@ FORMAL_TARGET = (
     "A finite control-lease model derives freshness, timing, state-envelope, actuator, "
     "fallback-distance, stop, effect, custody, and boundary conditions from authored fields; "
     "one complete lease reaches only a Project Theseus closed-loop trial, while 13 axis mutations "
-    "fail readiness and reach exact repair routes. Monotonicity laws preserve valid timing under "
-    "reduced latency and preserve state or fallback rejection under worsened bounds. It establishes "
+    "fail readiness and reach exact repair routes. A separate eight-stage simulation-trial review "
+    "lifecycle proves arbitrary-run nine-field identity custody, support/effect non-authority, exact "
+    "receipts, stop-count monotonicity, accepted traces, batch composition, absorbing closure, and "
+    "safety-axis start blocking; an independent consumer rejects 105/105 mutations. It establishes "
     "no plant truth, physical or human safety, deadline satisfaction, safe-set validity, fallback "
     "effectiveness, recovery, support, release, transfer, or external effect."
 )
@@ -148,7 +150,111 @@ REQUIRED_THEOREMS = {
     "readiness_requires_effect_observation",
     "readiness_requires_residual_custody",
     "readiness_requires_non_claim_boundary",
+    "accepted_trial_step_is_accepted",
+    "accepted_trial_step_applies_event",
+    "apply_trial_event_preserves_identity",
+    "accepted_trial_step_preserves_identity",
+    "accepted_trial_step_preserves_non_authority",
+    "accepted_trial_step_adds_exactly_one_receipt",
+    "accepted_trial_step_advances_stage",
+    "apply_trial_event_stop_count_monotone",
+    "accepted_trial_step_stop_count_monotone",
+    "accepted_trial_run_preserves_identity",
+    "accepted_trial_run_preserves_support",
+    "accepted_trial_run_preserves_external_effect",
+    "accepted_trial_run_accounts_exact_receipts",
+    "accepted_trial_run_stop_count_monotone",
+    "accepted_trial_run_has_accepted_trace",
+    "trial_run_append",
+    "closed_trial_state_accepts_no_event",
+    "complete_trial_reaches_closed_with_receipts_and_stop",
+    "missing_safety_axis_cannot_start_trial",
 }
+
+TRIAL_STAGES = [
+    "proposed", "leaseBound", "independentlyReviewed", "commandStaged",
+    "observationRecorded", "stopRecorded", "reconciled", "closed",
+]
+TRIAL_EVENTS = [
+    "bindLease", "reviewLease", "stageCommand", "recordObservation",
+    "recordStop", "reconcile", "close",
+]
+IDENTITY_KEYS = [
+    "plantDigest", "leaseDigest", "controllerDigest", "estimatorDigest",
+    "policyDigest", "safetyEnvelopeDigest", "actuatorDigest", "observerDigest",
+    "resultDigest",
+]
+
+
+def trial_state(stage: str = "proposed") -> dict[str, Any]:
+    state = {key: 7001 + index for index, key in enumerate(IDENTITY_KEYS)}
+    state.update(stage=stage, lastEventDigest=0, receiptCount=0, stopReceiptCount=0,
+                 supportAssigned=False, externalEffectCommitted=False)
+    return state
+
+
+def trial_packet(kind_index: int, lease: dict[str, Any] | None = None) -> dict[str, Any]:
+    packet = {key: 7001 + index for index, key in enumerate(IDENTITY_KEYS)}
+    packet.update(
+        eventDigest=kind_index + 1,
+        lease=deepcopy(lease if lease is not None else complete_lease()),
+        independentReview=True,
+        boundedCommand=True,
+        observationReceipt=True,
+        stopReceipt=True,
+        residualClosure=True,
+        nonClaims=True,
+        supportRequested=False,
+        externalEffectRequested=False,
+    )
+    return packet
+
+
+def trial_route(state: dict[str, Any], kind: str, packet: dict[str, Any]) -> str:
+    stage_index = TRIAL_STAGES.index(state["stage"])
+    if state["stage"] == "closed" or kind != TRIAL_EVENTS[stage_index]:
+        return "rejectWrongStage"
+    if any(packet[key] != state[key] for key in IDENTITY_KEYS):
+        return "rejectIdentitySubstitution"
+    if packet["eventDigest"] == state["lastEventDigest"]:
+        return "rejectEventReplay"
+    if packet["supportRequested"] or packet["externalEffectRequested"]:
+        return "rejectAuthorityLeak"
+    requirements = [
+        (ready(packet["lease"]), "requestLeaseRepair", "acceptLease"),
+        (packet["independentReview"], "requestIndependentReview", "acceptReview"),
+        (packet["boundedCommand"], "requestBoundedCommand", "acceptCommandStage"),
+        (packet["observationReceipt"], "requestObservationReceipt", "acceptObservation"),
+        (packet["stopReceipt"], "requestStopReceipt", "acceptStop"),
+        (packet["residualClosure"], "requestResidualClosure", "acceptReconciliation"),
+        (packet["nonClaims"], "requestNonClaims", "acceptClosure"),
+    ]
+    passed, rejected, accepted = requirements[stage_index]
+    return accepted if passed else rejected
+
+
+def trial_step(state: dict[str, Any], kind: str, packet: dict[str, Any]) -> dict[str, Any] | None:
+    selected = trial_route(state, kind, packet)
+    if not selected.startswith("accept"):
+        return None
+    next_state = deepcopy(state)
+    next_state["stage"] = TRIAL_STAGES[TRIAL_STAGES.index(state["stage"]) + 1]
+    next_state["lastEventDigest"] = packet["eventDigest"]
+    next_state["receiptCount"] += 1
+    if selected == "acceptStop":
+        next_state["stopReceiptCount"] += 1
+    return next_state
+
+
+def trial_run(events: list[tuple[str, dict[str, Any]]],
+              initial: dict[str, Any] | None = None) -> list[dict[str, Any]]:
+    states = [deepcopy(initial) if initial is not None else trial_state()]
+    for kind, packet in events:
+        next_state = trial_step(states[-1], kind, packet)
+        if next_state is None:
+            raise ValueError(f"trial rejected at {states[-1]['stage']}: {kind}")
+        states.append(next_state)
+    return states
 
 
 def load(path: Path) -> Any:
@@ -206,6 +312,56 @@ def main() -> None:
         if next(value for axis, value, _ in checks(worsened) if axis == "fallbackReachability"):
             errors.append(f"larger stop-distance bound {larger_stop_distance} laundered fallback rejection")
 
+    events = [(kind, trial_packet(index)) for index, kind in enumerate(TRIAL_EVENTS)]
+    states = trial_run(events)
+    final = states[-1]
+    if (final["stage"], final["receiptCount"], final["stopReceiptCount"]) != ("closed", 7, 1):
+        errors.append("complete simulation-trial review did not close with seven receipts and one stop")
+    for state in states:
+        if any(state[key] != states[0][key] for key in IDENTITY_KEYS):
+            errors.append(f"identity custody failed at {state['stage']}")
+        if state["supportAssigned"] or state["externalEffectCommitted"]:
+            errors.append(f"non-authority failed at {state['stage']}")
+    if any(states[index]["stopReceiptCount"] > states[index + 1]["stopReceiptCount"] for index in range(7)):
+        errors.append("stop-receipt count decreased across an accepted transition")
+    for split in range(8):
+        prefix_final = trial_run(events[:split])[-1]
+        composed_final = trial_run(events[split:], prefix_final)[-1]
+        if composed_final != final:
+            errors.append(f"trace composition failed at split {split}")
+
+    rejected_mutations = 0
+    for stage_index, state in enumerate(states[:-1]):
+        kind, baseline_packet = events[stage_index]
+        for key in IDENTITY_KEYS:
+            packet = deepcopy(baseline_packet)
+            packet[key] += 1
+            rejected_mutations += trial_step(state, kind, packet) is None
+        packet = deepcopy(baseline_packet)
+        if stage_index == 0:
+            packet["lease"] = deepcopy(complete)
+            MUTATIONS["stateEnvelope"](packet["lease"])
+        else:
+            requirement_keys = [None, "independentReview", "boundedCommand", "observationReceipt",
+                                "stopReceipt", "residualClosure", "nonClaims"]
+            packet[requirement_keys[stage_index]] = False
+        rejected_mutations += trial_step(state, kind, packet) is None
+        wrong_kind = TRIAL_EVENTS[(stage_index + 1) % len(TRIAL_EVENTS)]
+        rejected_mutations += trial_step(state, wrong_kind, deepcopy(baseline_packet)) is None
+        packet = deepcopy(baseline_packet)
+        packet["eventDigest"] = state["lastEventDigest"]
+        rejected_mutations += trial_step(state, kind, packet) is None
+        packet = deepcopy(baseline_packet)
+        packet["supportRequested"] = True
+        rejected_mutations += trial_step(state, kind, packet) is None
+        packet = deepcopy(baseline_packet)
+        packet["externalEffectRequested"] = True
+        rejected_mutations += trial_step(state, kind, packet) is None
+    for index, kind in enumerate(TRIAL_EVENTS):
+        rejected_mutations += trial_step(final, kind, trial_packet(index)) is None
+    if rejected_mutations != 105:
+        errors.append(f"simulation-trial mutation rejection drifted: {rejected_mutations}/105")
+
     lean_text = LEAN.read_text(encoding="utf-8")
     theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z0-9_']+)", lean_text))
     if theorem_names != REQUIRED_THEOREMS:
@@ -260,8 +416,9 @@ def main() -> None:
     dossier_flat = re.sub(r"\s+", " ", DOSSIER.read_text(encoding="utf-8"))
     for fragment in (
         TAG,
-        "22 theorem declarations",
+        "41 theorem declarations",
         "Thirteen independently checkable admission-axis mutations",
+        "105/105 lifecycle mutations",
         "Chapter support remains `argument`",
         "Project Theseus closed-loop campaign",
     ):
@@ -270,6 +427,7 @@ def main() -> None:
     for fragment in (
         "13 exact mutation routes",
         "three arithmetic monotonicity controls",
+        "105 lifecycle mutations",
         "support_state_effect` remains `none",
     ):
         if fragment not in dossier_flat:
@@ -281,7 +439,8 @@ def main() -> None:
     fail(errors)
     print(
         "Embodied physical-safety validation passed: complete finite lease, 13/13 exact "
-        "admission-axis mutations, 3 arithmetic monotonicity controls, and 22 exact Lean "
+        "admission-axis mutations, 3 arithmetic monotonicity controls, an eight-stage "
+        "simulation-trial lifecycle with 105/105 rejected mutations, and 41 exact Lean "
         "declarations; no plant-truth, physical/human-safety, deadline, safe-set, fallback-"
         "effectiveness, recovery, support, release, transfer, or external-effect claim."
     )

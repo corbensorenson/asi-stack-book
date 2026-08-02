@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2566 |
+| Theorem declarations classified | 2585 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1579 |
-| Unknown or mixed theorem declarations | 562 |
+| Derived/decomposed theorem declarations | 1597 |
+| Unknown or mixed theorem declarations | 563 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -92,7 +92,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | ai-deployment-transition-distribution-and-human-agency | 1 | 44 | 15 | 15 | 14 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | durable-semantic-memory-and-knowledge-lattices | 1 | 35 | 15 | 15 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 10 | 0 | 7 | 3 | manual review |
-| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 22 | 1 | 19 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | embodied-agency-real-time-control-and-physical-safety | 1 | 41 | 1 | 37 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 1 | 6 | 3 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | evidence-states-and-claim-discipline | 2 | 6 | 0 | 2 | 4 | manual review |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
@@ -926,14 +926,32 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Efficiency.lean` | `selected_route_is_a_listed_eligible_candidate` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, split, subst |
 | `lean/AsiStackProofs/Efficiency.lean` | `total_cost_is_additive` | derived_or_decomposed | no | uses omega, simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `total_cost_is_componentwise_monotone` | derived_or_decomposed | no | uses omega, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_has_accepted_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_preserves_external_effect` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_preserves_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_preserves_support` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_run_stop_count_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_advances_stage` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_preserves_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_preserves_non_authority` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `accepted_trial_step_stop_count_monotone` | derived_or_decomposed | no | uses rw |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `admissible_control_lease_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `apply_trial_event_preserves_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `apply_trial_event_stop_count_monotone` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `closed_trial_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `complete_control_lease_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `complete_control_lease_routes_only_to_theseus_trial` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `complete_trial_reaches_closed_with_receipts_and_stop` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `every_control_axis_omission_blocks_readiness` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `every_control_axis_omission_blocks_trial_eligibility` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `every_control_axis_omission_reaches_exact_repair_route` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `fallback_distance_violation_persists_when_bound_grows` | derived_or_decomposed | no | uses omega, unfold |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `lower_state_violation_persists_under_downward_widening` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `missing_safety_axis_cannot_start_trial` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `readiness_requires_actuator_envelope` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `readiness_requires_command_request` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `readiness_requires_current_lease_version` | derived_or_decomposed | no | uses have |
@@ -948,6 +966,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `readiness_requires_timing_budget` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `readiness_requires_unexpired_lease` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `reduced_latency_preserves_timing_validity` | derived_or_decomposed | no | uses omega, unfold |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | `trial_run_append` | derived_or_decomposed | no | uses cases, induction, simp |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `accepted_terminal_transition_blocks_promotion_to_new_state` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `missing_required_evidence_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/EvidenceStates.lean` | `no_self_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

@@ -349,4 +349,404 @@ theorem readiness_requires_non_claim_boundary
   have admissible : ControlLeaseAdmissible lease := of_decide_eq_true ready
   exact admissible.2.2.2.2.2.2.2.2.2.2.2.2
 
+inductive TrialStage where
+  | proposed | leaseBound | independentlyReviewed | commandStaged
+  | observationRecorded | stopRecorded | reconciled | closed
+deriving DecidableEq, Repr
+
+inductive TrialEventKind where
+  | bindLease | reviewLease | stageCommand | recordObservation
+  | recordStop | reconcile | close
+deriving DecidableEq, Repr
+
+inductive TrialRoute where
+  | rejectWrongStage | rejectIdentitySubstitution | rejectEventReplay
+  | rejectAuthorityLeak | requestLeaseRepair | requestIndependentReview
+  | requestBoundedCommand | requestObservationReceipt | requestStopReceipt
+  | requestResidualClosure | requestNonClaims
+  | acceptLease | acceptReview | acceptCommandStage | acceptObservation
+  | acceptStop | acceptReconciliation | acceptClosure
+deriving DecidableEq, Repr
+
+structure TrialState where
+  stage : TrialStage
+  plantDigest : Nat
+  leaseDigest : Nat
+  controllerDigest : Nat
+  estimatorDigest : Nat
+  policyDigest : Nat
+  safetyEnvelopeDigest : Nat
+  actuatorDigest : Nat
+  observerDigest : Nat
+  resultDigest : Nat
+  lastEventDigest : Nat
+  receiptCount : Nat := 0
+  stopReceiptCount : Nat := 0
+  supportAssigned : Bool := false
+  externalEffectCommitted : Bool := false
+deriving DecidableEq, Repr
+
+structure TrialPacket where
+  plantDigest : Nat := 7001
+  leaseDigest : Nat := 7002
+  controllerDigest : Nat := 7003
+  estimatorDigest : Nat := 7004
+  policyDigest : Nat := 7005
+  safetyEnvelopeDigest : Nat := 7006
+  actuatorDigest : Nat := 7007
+  observerDigest : Nat := 7008
+  resultDigest : Nat := 7009
+  eventDigest : Nat := 1
+  lease : ControlLease := completeControlLease
+  independentReview : Bool := true
+  boundedCommand : Bool := true
+  observationReceipt : Bool := true
+  stopReceipt : Bool := true
+  residualClosure : Bool := true
+  nonClaims : Bool := true
+  supportRequested : Bool := false
+  externalEffectRequested : Bool := false
+deriving DecidableEq, Repr
+
+structure TrialIdentity where
+  plantDigest : Nat
+  leaseDigest : Nat
+  controllerDigest : Nat
+  estimatorDigest : Nat
+  policyDigest : Nat
+  safetyEnvelopeDigest : Nat
+  actuatorDigest : Nat
+  observerDigest : Nat
+  resultDigest : Nat
+deriving DecidableEq, Repr
+
+def trialIdentity (state : TrialState) : TrialIdentity :=
+  { plantDigest := state.plantDigest
+    leaseDigest := state.leaseDigest
+    controllerDigest := state.controllerDigest
+    estimatorDigest := state.estimatorDigest
+    policyDigest := state.policyDigest
+    safetyEnvelopeDigest := state.safetyEnvelopeDigest
+    actuatorDigest := state.actuatorDigest
+    observerDigest := state.observerDigest
+    resultDigest := state.resultDigest }
+
+def expectedTrialKind : TrialStage -> TrialEventKind
+  | .proposed => .bindLease
+  | .leaseBound => .reviewLease
+  | .independentlyReviewed => .stageCommand
+  | .commandStaged => .recordObservation
+  | .observationRecorded => .recordStop
+  | .stopRecorded => .reconcile
+  | .reconciled => .close
+  | .closed => .close
+
+def trialAccepted : TrialRoute -> Bool
+  | .acceptLease | .acceptReview | .acceptCommandStage | .acceptObservation
+  | .acceptStop | .acceptReconciliation | .acceptClosure => true
+  | _ => false
+
+def trialRoute (state : TrialState) (kind : TrialEventKind)
+    (packet : TrialPacket) : TrialRoute :=
+  if kind != expectedTrialKind state.stage then .rejectWrongStage
+  else if packet.plantDigest != state.plantDigest ||
+      packet.leaseDigest != state.leaseDigest ||
+      packet.controllerDigest != state.controllerDigest ||
+      packet.estimatorDigest != state.estimatorDigest ||
+      packet.policyDigest != state.policyDigest ||
+      packet.safetyEnvelopeDigest != state.safetyEnvelopeDigest ||
+      packet.actuatorDigest != state.actuatorDigest ||
+      packet.observerDigest != state.observerDigest ||
+      packet.resultDigest != state.resultDigest then .rejectIdentitySubstitution
+  else if packet.eventDigest = state.lastEventDigest then .rejectEventReplay
+  else if packet.supportRequested || packet.externalEffectRequested then .rejectAuthorityLeak
+  else match state.stage with
+  | .proposed =>
+      if ControlLeaseReady packet.lease then .acceptLease else .requestLeaseRepair
+  | .leaseBound =>
+      if packet.independentReview then .acceptReview else .requestIndependentReview
+  | .independentlyReviewed =>
+      if packet.boundedCommand then .acceptCommandStage else .requestBoundedCommand
+  | .commandStaged =>
+      if packet.observationReceipt then .acceptObservation else .requestObservationReceipt
+  | .observationRecorded =>
+      if packet.stopReceipt then .acceptStop else .requestStopReceipt
+  | .stopRecorded =>
+      if packet.residualClosure then .acceptReconciliation else .requestResidualClosure
+  | .reconciled =>
+      if packet.nonClaims then .acceptClosure else .requestNonClaims
+  | .closed => .rejectWrongStage
+
+def advanceTrialStage : TrialStage -> TrialStage
+  | .proposed => .leaseBound
+  | .leaseBound => .independentlyReviewed
+  | .independentlyReviewed => .commandStaged
+  | .commandStaged => .observationRecorded
+  | .observationRecorded => .stopRecorded
+  | .stopRecorded => .reconciled
+  | .reconciled => .closed
+  | .closed => .closed
+
+def applyTrialEvent (state : TrialState) (kind : TrialEventKind)
+    (packet : TrialPacket) : TrialState × TrialRoute :=
+  let selectedRoute := trialRoute state kind packet
+  if trialAccepted selectedRoute then
+    ({state with
+      stage := advanceTrialStage state.stage
+      lastEventDigest := packet.eventDigest
+      receiptCount := state.receiptCount + 1
+      stopReceiptCount := if selectedRoute == .acceptStop then
+        state.stopReceiptCount + 1 else state.stopReceiptCount}, selectedRoute)
+  else (state, selectedRoute)
+
+structure TrialEvent where
+  kind : TrialEventKind
+  packet : TrialPacket
+deriving DecidableEq, Repr
+
+def TrialStep (state : TrialState) (event : TrialEvent) : Option TrialState :=
+  if state.stage = .closed then none
+  else if trialAccepted (trialRoute state event.kind event.packet) then
+    some (applyTrialEvent state event.kind event.packet).1
+  else none
+
+def TrialRun : TrialState -> List TrialEvent -> Option TrialState
+  | state, [] => some state
+  | state, event :: tail =>
+      match TrialStep state event with
+      | none => none
+      | some next => TrialRun next tail
+
+def TrialTraceAccepted : TrialState -> List TrialEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      trialAccepted (trialRoute state event.kind event.packet) = true ∧
+      TrialTraceAccepted (applyTrialEvent state event.kind event.packet).1 tail
+
+theorem accepted_trial_step_is_accepted
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    trialAccepted (trialRoute state event.kind event.packet) = true := by
+  unfold TrialStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · assumption
+    · simp at stepped
+
+theorem accepted_trial_step_applies_event
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    next = (applyTrialEvent state event.kind event.packet).1 := by
+  unfold TrialStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · exact Option.some.inj stepped |>.symm
+    · simp at stepped
+
+theorem apply_trial_event_preserves_identity (state : TrialState)
+    (event : TrialEvent) :
+    trialIdentity (applyTrialEvent state event.kind event.packet).1 =
+      trialIdentity state := by
+  by_cases accepted : trialAccepted (trialRoute state event.kind event.packet) = true <;>
+    simp [applyTrialEvent, accepted, trialIdentity]
+
+theorem accepted_trial_step_preserves_identity
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    trialIdentity next = trialIdentity state := by
+  rw [accepted_trial_step_applies_event stepped]
+  exact apply_trial_event_preserves_identity state event
+
+theorem accepted_trial_step_preserves_non_authority
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    next.supportAssigned = state.supportAssigned ∧
+    next.externalEffectCommitted = state.externalEffectCommitted := by
+  rw [accepted_trial_step_applies_event stepped]
+  simp [applyTrialEvent, accepted_trial_step_is_accepted stepped]
+
+theorem accepted_trial_step_adds_exactly_one_receipt
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [accepted_trial_step_applies_event stepped]
+  simp [applyTrialEvent, accepted_trial_step_is_accepted stepped]
+
+theorem accepted_trial_step_advances_stage
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    next.stage = advanceTrialStage state.stage := by
+  rw [accepted_trial_step_applies_event stepped]
+  simp [applyTrialEvent, accepted_trial_step_is_accepted stepped]
+
+theorem apply_trial_event_stop_count_monotone (state : TrialState)
+    (event : TrialEvent) :
+    state.stopReceiptCount ≤
+      (applyTrialEvent state event.kind event.packet).1.stopReceiptCount := by
+  cases routed : trialRoute state event.kind event.packet <;>
+    simp [applyTrialEvent, routed, trialAccepted]
+
+theorem accepted_trial_step_stop_count_monotone
+    {state next : TrialState} {event : TrialEvent}
+    (stepped : TrialStep state event = some next) :
+    state.stopReceiptCount ≤ next.stopReceiptCount := by
+  rw [accepted_trial_step_applies_event stepped]
+  exact apply_trial_event_stop_count_monotone state event
+
+theorem accepted_trial_run_preserves_identity
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    trialIdentity final = trialIdentity state := by
+  induction events generalizing state with
+  | nil => simp [TrialRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_trial_step_preserves_identity stepped)
+
+theorem accepted_trial_run_preserves_support
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    final.supportAssigned = state.supportAssigned := by
+  induction events generalizing state with
+  | nil => simp [TrialRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_trial_step_preserves_non_authority stepped).1
+
+theorem accepted_trial_run_preserves_external_effect
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    final.externalEffectCommitted = state.externalEffectCommitted := by
+  induction events generalizing state with
+  | nil => simp [TrialRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_trial_step_preserves_non_authority stepped).2
+
+theorem accepted_trial_run_accounts_exact_receipts
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [TrialRun] at ran; subst final; simp
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_trial_step_adds_exactly_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem accepted_trial_run_stop_count_monotone
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    state.stopReceiptCount ≤ final.stopReceiptCount := by
+  induction events generalizing state with
+  | nil => simp [TrialRun] at ran; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          exact Nat.le_trans (accepted_trial_step_stop_count_monotone stepped)
+            (ih tailRan)
+
+theorem accepted_trial_run_has_accepted_trace
+    {state final : TrialState} {events : List TrialEvent}
+    (ran : TrialRun state events = some final) :
+    TrialTraceAccepted state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : TrialStep state event with
+      | none => simp [TrialRun, stepped] at ran
+      | some next =>
+          have tailRan : TrialRun next tail = some final := by
+            simpa [TrialRun, stepped] using ran
+          exact ⟨accepted_trial_step_is_accepted stepped, by
+            rw [← accepted_trial_step_applies_event stepped]
+            exact ih tailRan⟩
+
+theorem trial_run_append (state : TrialState) (first second : List TrialEvent) :
+    TrialRun state (first ++ second) =
+      (TrialRun state first).bind fun intermediate => TrialRun intermediate second := by
+  induction first generalizing state with
+  | nil => simp [TrialRun]
+  | cons event tail ih =>
+      simp only [List.cons_append, TrialRun]
+      cases TrialStep state event <;> simp [ih]
+
+theorem closed_trial_state_accepts_no_event
+    (state : TrialState) (event : TrialEvent)
+    (closed : state.stage = .closed) :
+    TrialStep state event = none := by
+  simp [TrialStep, closed]
+
+def initialTrialState : TrialState :=
+  { stage := .proposed
+    plantDigest := 7001
+    leaseDigest := 7002
+    controllerDigest := 7003
+    estimatorDigest := 7004
+    policyDigest := 7005
+    safetyEnvelopeDigest := 7006
+    actuatorDigest := 7007
+    observerDigest := 7008
+    resultDigest := 7009
+    lastEventDigest := 0 }
+
+def trialEventAt (kind : TrialEventKind) (digest : Nat) : TrialEvent :=
+  { kind := kind, packet := { eventDigest := digest } }
+
+def completeTrialEvents : List TrialEvent :=
+  [ trialEventAt .bindLease 1
+  , trialEventAt .reviewLease 2
+  , trialEventAt .stageCommand 3
+  , trialEventAt .recordObservation 4
+  , trialEventAt .recordStop 5
+  , trialEventAt .reconcile 6
+  , trialEventAt .close 7 ]
+
+def completeTrialFinal : TrialState :=
+  { initialTrialState with
+    stage := .closed
+    lastEventDigest := 7
+    receiptCount := 7
+    stopReceiptCount := 1 }
+
+theorem complete_trial_reaches_closed_with_receipts_and_stop :
+    TrialRun initialTrialState completeTrialEvents = some completeTrialFinal := by
+  decide
+
+def missingSafetyAxisEvent (axis : ControlAxis) : TrialEvent :=
+  { kind := .bindLease
+    packet := { lease := omitControlAxis axis, eventDigest := 1 } }
+
+theorem missing_safety_axis_cannot_start_trial (axis : ControlAxis) :
+    TrialStep initialTrialState (missingSafetyAxisEvent axis) = none := by
+  cases axis <;> decide
+
 end AsiStackProofs.EmbodiedPhysicalSafety

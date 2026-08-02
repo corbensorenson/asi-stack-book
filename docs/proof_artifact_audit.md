@@ -58,7 +58,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | 1 | 44 | 0 | 34 | 7 |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | 1 | 35 | 0 | 37 | 12 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 10 | 0 | 11 | 4 |
-| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | 1 | 22 | 0 | 12 | 1 |
+| `lean/AsiStackProofs/EmbodiedPhysicalSafety.lean` | 1 | 41 | 0 | 26 | 5 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | 2 | 6 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
