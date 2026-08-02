@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-07-31
+Substantively revised: 2026-08-02
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -3581,6 +3581,64 @@ reduction remains diagnostic; acceptance comes from one invariant-method owner,
 local unique chapter meaning, and prospective rejection of the removed
 scaffold.
 
+### P7.1c — Reader-first concreteness, prose, and surface discipline
+
+The owner-supplied Round 23 reading review found a material gap that the
+existing atom, source, proof, and repetition audits do not measure: the book's
+ideas are stronger than the reader's experience of them. The review praised
+the noninheritance law, three-projection device, efficiency denominator
+analysis, and willingness to state falsifiers, but found that mechanism prose
+often reads like schemas in sentence costume. It specifically called out the
+scarcity of concrete scenes and worked traces, long enumerations and
+mega-sentence claims, over-distributed disclaimer language, the quarantining
+of the Human Reading Path voice, and bookkeeping tables interrupting the
+argument.
+
+The reported corpus counts (approximately 640,000 words, ten “for example”
+uses, no “for instance,” three “worked example” uses, one “case study,” and
+about 820 disclaimer phrases) are review signals, not project facts. The
+reconciliation packet `docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md`
+requires a pinned phrase taxonomy and role-normalized baseline before any
+number is used as an acceptance target. Its machine status is
+`roadmap_records/p7_1c_reader_prose_quality_status.json`.
+
+P7.1c is an existing-owner editorial repair, not a chapter-admission lane. It
+does not reopen the 84-chapter manifest, change support, or displace P2. Each
+chapter receives a digest-bound prose-quality packet with five obligations:
+
+1. Open with a 150–250 word chapter-specific failure, decision, or discovery
+   scene that names the actor or system, attempted action, observable outcome,
+   failed boundary, and residual owner. A thin reference or speculative
+   chapter may use a bounded domain vignette, but may not substitute a generic
+   schema restatement.
+2. Follow the scene with one state-labelled worked trace, one counterexample
+   or strongest simpler baseline, and a chapter-specific handoff. The trace is
+   explanatory unless its evidence lane independently makes a measured claim.
+3. Convert field-by-field mechanism lists into four or five prose groupings;
+   split every mega-sentence core claim into a readable claim, normative rule,
+   and separately addressable formal binding. Preserve all atom, source,
+   equation, protocol, proof-boundary, and non-claim links in Appendix C or a
+   stable detail surface.
+4. Keep one local caveat where a reader needs it and consolidate repeated
+   limits into a chapter-level “what this does not establish” block. A pinned
+   role-normalized audit flags density outliers; editorial review must preserve
+   every distinct limitation rather than delete caveats to improve a metric.
+5. Move repeated claim/source/status tables off the reading path, and bring the
+   direct, agentive register already demonstrated by Human Reading Path blocks
+   into the main argument. A paragraph should normally say who or what acts,
+   what changes, and why it matters before introducing the schema.
+
+The acceptance gate is **84/84** current digest-bound packets; concrete scene,
+worked trace, counterexample, readable/formal claim projections, role-normalized
+caveat audit, reader-surface audit, semantic diff, link/render/browser/
+accessibility checks, and adversarial editorial fixtures must all pass. No
+word-count increase, appendix dump, or generic vignette can close the lane.
+Changed QMD content invalidates its packet. The prose packet closes before
+the 84-video narration briefs are reconciled so visual scripts inherit the
+concrete cases and state transitions rather than the old paragraph-tableau
+style. No external prepublication reader is required; all decisions and
+residuals remain in the owner-directed local workflow.
+
 ### P7.2 — Structural-tranche reader integration
 
 First close R16-B: derive and validate a current 84-chapter reader-freshness
@@ -4320,7 +4378,10 @@ boundary before `T4`, but may not substitute fixtures for the natural
 vertical. P3 opens only after `T5` and exact access predicates are true. P7
 preserves current published artifacts now; its R16-A, W3, T1D, and R16-B
 organization sequence is terminal, while P7.1b narrative
-synthesis waits for `T4`. P7.3 is the active owner-directed book-production
+synthesis waits for `T4`. P7.1c is the active reader-quality repair in
+parallel with P7.3: prose packets may be authored and audited without opening
+protected empirical outcomes, and P7.3 narration must consume their concrete
+scenes and traces. P7.3 is the active owner-directed book-production
 packet while P2 remains resource-blocked: foundation and pilot work may proceed
 now, followed by the all-84 rollout, without changing the P2 scientific
 headline or consuming protected outcomes. YouTube and other external actions
@@ -4507,7 +4568,8 @@ identity, claim-commensurate competence, immutable raw evidence, N0–N5 negativ
 scope, semantic rather than count-based formal depth, independent transfer for
 broad claims, effect-complete implementation boundaries, current sources and
 instruments, non-overlapping Q1/Q2 denominators, a meaning-preserving
-reader-spine synthesis around the shared flagship case, terminal disposition
+reader-spine synthesis around the shared flagship case, 84/84 P7.1c
+digest-bound reader-prose packets with concrete scenes and traces, terminal disposition
 of the Round 16 atom/current-reader/template and six-chapter proof-readiness
 integration debt, a
 birth-complete terminal Round 18 breadth transaction followed by a structural

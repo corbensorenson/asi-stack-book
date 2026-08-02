@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack P7.1c Reader Prose Quality Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "status",
+    "authority",
+    "snapshot_date",
+    "roadmap_path",
+    "review_packet_path",
+    "canonical_chapter_count",
+    "state",
+    "scope",
+    "review_signals",
+    "packet_contract",
+    "acceptance_gates",
+    "execution_order",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p7_1c_reader_prose_quality_status.v1"},
+    "packet_id": {"const": "P7.1c-reader-concreteness-and-prose-quality"},
+    "status": {"const": "active"},
+    "authority": {"const": "Corben Sorenson"},
+    "snapshot_date": {"type": "string", "format": "date"},
+    "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
+    "review_packet_path": {"const": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md"},
+    "canonical_chapter_count": {"const": 84},
+    "state": {"const": "active_not_started_packet_contract_ready"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapters", "new_chapters_authorized", "support_state_effect", "release_effect", "external_prepublication_human_required"],
+      "properties": {
+        "chapters": {"const": 84},
+        "new_chapters_authorized": {"const": 0},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"},
+        "external_prepublication_human_required": {"const": false}
+      }
+    },
+    "review_signals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reported_total_words", "reported_for_example_count", "reported_for_instance_count", "reported_worked_example_count", "reported_case_study_count", "reported_disclaimer_phrase_count", "authority", "reproduction_required"],
+      "properties": {
+        "reported_total_words": {"const": 640000},
+        "reported_for_example_count": {"const": 10},
+        "reported_for_instance_count": {"const": 0},
+        "reported_worked_example_count": {"const": 3},
+        "reported_case_study_count": {"const": 1},
+        "reported_disclaimer_phrase_count": {"const": 820},
+        "authority": {"const": "owner_supplied_external_review_signal_not_yet_reproduced"},
+        "reproduction_required": {"const": true}
+      }
+    },
+    "packet_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["directory", "required_fields", "required_chapter_packets", "current_packets", "current_digest_bound_packets"],
+      "properties": {
+        "directory": {"const": "evidence_quality/reader_prose_quality_packets"},
+        "required_fields": {"type": "array", "minItems": 16, "uniqueItems": true, "items": {"type": "string"}},
+        "required_chapter_packets": {"const": 84},
+        "current_packets": {"const": 0},
+        "current_digest_bound_packets": {"const": 0}
+      }
+    },
+    "acceptance_gates": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "execution_order": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  }
+}

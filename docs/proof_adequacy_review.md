@@ -8,8 +8,8 @@ This review classifies implemented Lean proof targets by adequacy for the claims
 
 | Adequacy class | Targets | Meaning |
 |---|---:|---|
-| adequate finite-record invariant | 90 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
-| useful but too narrow | 160 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
+| adequate finite-record invariant | 97 | The current Lean predicate is adequate for a narrow repository/process or finite-record claim if the claim text remains narrow. |
+| useful but too narrow | 153 | The predicate is a useful guard, but the chapter needs state-machine, trace, integration, empirical, or benchmark tests before the proof can support the larger boundary. |
 | needs richer state-machine or review semantics | 16 | The current finite record omits timing, lifecycle, review, social, adversarial, or governance semantics that are central to the chapter. |
 | needs executable tests first | 37 | Behavior, replay, routing, context, tool-use, memory, or artifact mechanics need deterministic harnesses before stronger proof work is meaningful. |
 | needs empirical or baseline tests first | 19 | Performance, efficiency, policy, substrate, or quality claims need workloads, baselines, measurements, and negative controls before proof adequacy can rise; deterministic accounting harnesses may check record discipline but do not replace model or workload results. |

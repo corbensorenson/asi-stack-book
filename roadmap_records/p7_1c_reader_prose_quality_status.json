@@ -1,0 +1,74 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_status.v1",
+  "packet_id": "P7.1c-reader-concreteness-and-prose-quality",
+  "status": "active",
+  "authority": "Corben Sorenson",
+  "snapshot_date": "2026-08-02",
+  "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+  "review_packet_path": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
+  "canonical_chapter_count": 84,
+  "state": "active_not_started_packet_contract_ready",
+  "scope": {
+    "chapters": 84,
+    "new_chapters_authorized": 0,
+    "support_state_effect": "none",
+    "release_effect": "none",
+    "external_prepublication_human_required": false
+  },
+  "review_signals": {
+    "reported_total_words": 640000,
+    "reported_for_example_count": 10,
+    "reported_for_instance_count": 0,
+    "reported_worked_example_count": 3,
+    "reported_case_study_count": 1,
+    "reported_disclaimer_phrase_count": 820,
+    "authority": "owner_supplied_external_review_signal_not_yet_reproduced",
+    "reproduction_required": true
+  },
+  "packet_contract": {
+    "directory": "evidence_quality/reader_prose_quality_packets",
+    "required_fields": [
+      "chapter_identity",
+      "chapter_digest",
+      "chapter_role",
+      "reader_spine_unit",
+      "concrete_scene",
+      "worked_trace",
+      "counterexample_or_simpler_baseline",
+      "short_claim",
+      "normative_rule",
+      "formal_binding_link",
+      "claim_atom_and_source_links",
+      "caveat_consolidation",
+      "bookkeeping_surface_disposition",
+      "semantic_diff",
+      "editorial_diagnostics",
+      "non_claims"
+    ],
+    "required_chapter_packets": 84,
+    "current_packets": 0,
+    "current_digest_bound_packets": 0
+  },
+  "acceptance_gates": [
+    "84/84 digest-bound chapter packets validate",
+    "84/84 chapters contain a concrete scene, worked trace, counterexample boundary, and handoff",
+    "84/84 core claims have readable and formal projections with stable atom/source identity",
+    "role-normalized disclaimer audit has no unjustified outlier",
+    "direct/agentive prose and off-surface bookkeeping audit passes",
+    "semantic diff, render, browser Human-view, accessibility-tree, and link gates pass",
+    "adversarial editorial fixtures reject generic scenes, deleted caveats, stale digests, and unsupported examples"
+  ],
+  "execution_order": [
+    "calibrate on thesis and representative mechanism chapters",
+    "process all 84 chapters by reader role",
+    "regenerate and audit the reader derivative",
+    "reconcile synopsis, source crosswalk, Appendix C, landing page, and video briefs",
+    "run final main/render/deploy/public-surface attestation"
+  ],
+  "non_claims": [
+    "Editorial concreteness does not establish mechanism truth or empirical support",
+    "A worked trace is not a measured result unless its evidence lane says so",
+    "Prose quality and visual polish do not promote support or release state",
+    "No new chapter or external prepublication reader is required by this packet"
+  ]
+}
