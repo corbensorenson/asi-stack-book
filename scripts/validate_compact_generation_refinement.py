@@ -39,6 +39,49 @@ REPRESENTATION_KEYS = {
     "representationId", "representationVersion", "sourceDigest", "contractDigest",
     "generatorDigest", "targetDigest", "verifierDigest", "residualLedgerDigest",
 }
+IDENTITY_KEYS = (
+    "representationId", "representationVersion", "sourceDigest", "contractDigest",
+    "generatorDigest", "targetDigest", "verifierDigest", "residualLedgerDigest",
+    "consumerDigest", "resultSetDigest",
+)
+NEXT_STAGE = dict(zip(STAGES[:-1], STAGES[1:]))
+THEOREMS = (
+    "accepted_step_is_accepted",
+    "accepted_step_applies_event",
+    "apply_event_preserves_full_identity",
+    "accepted_step_preserves_full_identity",
+    "accepted_step_preserves_support_and_external_effect_counts",
+    "accepted_step_adds_exactly_one_receipt",
+    "accepted_step_advances_stage",
+    "apply_event_fallback_count_monotone",
+    "accepted_step_fallback_count_monotone",
+    "accepted_run_preserves_full_identity",
+    "accepted_run_preserves_support_count",
+    "accepted_run_preserves_external_effect_count",
+    "accepted_run_accounts_exact_receipts",
+    "accepted_run_fallback_count_monotone",
+    "accepted_run_has_accepted_trace",
+    "compact_run_append",
+    "closed_state_accepts_no_event",
+    "apply_event_preserves_bound_representation_and_result_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_one_receipt",
+    "fallback_receipt_required_after_activated_fallback",
+    "source_substitution_rejected",
+    "missing_rights_blocks_source_binding",
+    "missing_generated_artifact_blocks_generation",
+    "lossy_exactness_is_blocked_before_verification",
+    "reconstruction_mismatch_activates_preserved_source_fallback",
+    "reconstruction_mismatch_without_executable_fallback_is_blocked",
+    "unresolved_obligation_without_owner_blocks_residualization",
+    "result_digest_substitution_blocks_publication",
+    "support_promotion_without_transition_blocks_publication",
+    "semantic_node_without_provenance_identity_blocks_migration",
+    "hierarchy_change_without_reference_continuity_blocks_migration",
+    "incompatible_consumer_policy_blocks_consumption",
+    "broken_residual_chain_blocks_closure",
+    "fallback_lifecycle_reaches_closed_without_support_or_effect_authority",
+)
 
 
 def rel(path: Path) -> str:
@@ -94,7 +137,20 @@ def packet() -> dict[str, Any]:
 def state(stage: str, *, last: int = 0, fallback_count: int = 0) -> dict[str, Any]:
     p = packet()
     s = {key: p[key] for key in REPRESENTATION_KEYS}
-    s.update({"consumerDigest": p["consumerDigest"], "resultSetDigest": p["resultSetDigest"], "lastEventDigest": last, "fallbackCount": fallback_count})
+    s.update({
+        "stage": stage,
+        "consumerDigest": p["consumerDigest"],
+        "resultSetDigest": p["resultSetDigest"],
+        "lastEventDigest": last,
+        "receiptCount": 0,
+        "generationCount": 0,
+        "verificationCount": 0,
+        "fallbackCount": fallback_count,
+        "migrationCount": 0,
+        "consumptionCount": 0,
+        "supportAssignmentCount": 0,
+        "externalEffectCount": 0,
+    })
     return s
 
 
@@ -204,6 +260,52 @@ def route(stage: str, kind: str, p: dict[str, Any], s: dict[str, Any] | None = N
             return "require_consumer_map"
         return "accept_migration"
     return "reject_wrong_stage"
+
+
+def step(s: dict[str, Any], kind: str, event: dict[str, Any]) -> dict[str, Any] | None:
+    if s["stage"] == "closed":
+        return None
+    outcome = route(s["stage"], kind, event, s)
+    if outcome not in ACCEPTED:
+        return None
+    next_state = dict(s)
+    next_state["stage"] = NEXT_STAGE[s["stage"]]
+    next_state["lastEventDigest"] = event["eventDigest"]
+    next_state["receiptCount"] += 1
+    if s["stage"] == "sourceBound":
+        next_state["generationCount"] += 1
+    if s["stage"] == "generated":
+        next_state["verificationCount"] += 1
+    if outcome == "activate_fallback":
+        next_state["fallbackCount"] += 1
+    if s["stage"] == "published":
+        next_state["migrationCount"] += 1
+    if s["stage"] == "migrated":
+        next_state["consumptionCount"] += 1
+    return next_state
+
+
+def run_trace(
+    initial: dict[str, Any], events: list[tuple[str, dict[str, Any]]]
+) -> dict[str, Any] | None:
+    current = dict(initial)
+    for kind, event in events:
+        next_state = step(current, kind, event)
+        if next_state is None:
+            return None
+        current = next_state
+    return current
+
+
+def canonical_events() -> list[tuple[str, dict[str, Any]]]:
+    events = []
+    for index, stage_name in enumerate(STAGES[:-1], start=1):
+        event = packet()
+        event["eventDigest"] = index
+        if stage_name == "generated":
+            event["verificationPassed"] = False
+        events.append((KINDS[stage_name], event))
+    return events
 
 
 def route_cases() -> list[dict[str, Any]]:
@@ -354,25 +456,131 @@ def build(errors: list[str]) -> dict[str, Any]:
     negative = [case for case in cases if not case["accepted"]]
     source = validate_source_results(errors)
     lean_text = LEAN.read_text(encoding="utf-8")
+    theorem_surface = re.findall(r"^theorem\s+([A-Za-z0-9_']+)", lean_text, re.MULTILINE)
+    if tuple(theorem_surface) != THEOREMS:
+        errors.append("Lean theorem surface drifted.")
+    if re.search(r"\b(?:sorry|admit|axiom)\b", lean_text):
+        errors.append("Lean source contains a forbidden proof placeholder.")
     declared = set(re.findall(r"\|\s+([A-Za-z][A-Za-z0-9]*)", re.search(r"inductive Route where(?P<body>.*?)deriving DecidableEq", lean_text, re.S).group("body")))
     if len(declared) != 60:
         errors.append(f"Lean Route must declare 60 constructors, got {len(declared)}.")
     if len(reached) != 60:
         errors.append(f"independent consumer must reach 60 routes, got {len(reached)}.")
+
+    events = canonical_events()
+    initial = state("requested")
+    stage_states = [initial]
+    current = initial
+    for kind, event in events:
+        next_state = step(current, kind, event)
+        if next_state is None:
+            errors.append(f"canonical lifecycle rejected at {current['stage']}.")
+            break
+        current = next_state
+        stage_states.append(current)
+    final = stage_states[-1]
+    identity = {field: initial[field] for field in IDENTITY_KEYS}
+    identity_checks = sum(
+        {field: current_state[field] for field in IDENTITY_KEYS} == identity
+        for current_state in stage_states
+    )
+    non_authority_checks = sum(
+        current_state["supportAssignmentCount"] == 0
+        and current_state["externalEffectCount"] == 0
+        for current_state in stage_states
+    )
+    fallback_monotonicity_checks = sum(
+        left["fallbackCount"] <= right["fallbackCount"]
+        for left, right in zip(stage_states, stage_states[1:])
+    )
+    composition_checks = 0
+    for split in range(len(events) + 1):
+        middle = run_trace(initial, events[:split])
+        if middle is not None and run_trace(middle, events[split:]) == final:
+            composition_checks += 1
+
+    mutations = [
+        {"mutation_id": f"route_{case['case_id']}", "rejected": not case["accepted"]}
+        for case in negative
+    ]
+    for stage_name in STAGES[:-1]:
+        current_state = stage_states[STAGES.index(stage_name)]
+        for field in IDENTITY_KEYS:
+            event = packet()
+            event["eventDigest"] = STAGES.index(stage_name) + 1
+            event[field] += 1000
+            mutations.append({
+                "mutation_id": f"binding_{stage_name}_{field}",
+                "rejected": step(current_state, KINDS[stage_name], event) is None,
+            })
+        for label, kind, field in (
+            ("wrong_kind", "bindSource" if KINDS[stage_name] == "close" else "close", None),
+            ("replay", KINDS[stage_name], "eventDigest"),
+            ("effect", KINDS[stage_name], "externalEffectRequested"),
+        ):
+            event = packet()
+            event["eventDigest"] = STAGES.index(stage_name) + 1
+            if field == "eventDigest":
+                event[field] = current_state["lastEventDigest"]
+            elif field:
+                event[field] = True
+            mutations.append({
+                "mutation_id": f"{label}_{stage_name}",
+                "rejected": step(current_state, kind, event) is None,
+            })
+    for kind in sorted(set(KINDS.values())):
+        event = packet()
+        event["eventDigest"] = 99
+        mutations.append({
+            "mutation_id": f"post_closed_{kind}",
+            "rejected": step(final, kind, event) is None,
+        })
+
+    witness = {
+        "terminal_stage": final["stage"],
+        "receipt_count": final["receiptCount"],
+        "generation_count": final["generationCount"],
+        "verification_count": final["verificationCount"],
+        "fallback_count": final["fallbackCount"],
+        "migration_count": final["migrationCount"],
+        "consumption_count": final["consumptionCount"],
+        "support_assignment_count": final["supportAssignmentCount"],
+        "external_effect_count": final["externalEffectCount"],
+    }
+    expected_witness = {
+        "terminal_stage": "closed", "receipt_count": 8, "generation_count": 1,
+        "verification_count": 1, "fallback_count": 1, "migration_count": 1,
+        "consumption_count": 1, "support_assignment_count": 0,
+        "external_effect_count": 0,
+    }
+    if witness != expected_witness:
+        errors.append(f"independent lifecycle witness drifted: {witness!r}.")
     return {
-        "schema_version": "asi_stack.compact_generation_refinement.result.v1",
+        "schema_version": "asi_stack.compact_generation_refinement.result.v2",
         "result_id": "2026-07-15-compact-generation-refinement",
         "recorded_date": "2026-07-15",
         "command": COMMAND,
         "model": {
             "lean_module": rel(LEAN), "stage_count": len(STAGES), "stages": STAGES,
+            "lean_theorem_count": len(theorem_surface),
+            "lean_theorem_surface": theorem_surface,
             "route_count": len(declared), "independently_reached_route_count": len(reached),
-            "rejected_mutation_count": len(negative), "route_case_count": len(cases),
+            "trace_event_count": len(events),
+            "trace_composition_split_count": composition_checks,
+            "identity_field_count": len(IDENTITY_KEYS),
+            "identity_preservation_check_count": identity_checks,
+            "non_authority_preservation_check_count": non_authority_checks,
+            "fallback_monotonicity_check_count": fallback_monotonicity_checks,
+            "terminal_rejection_count": len(set(KINDS.values())),
+            "rejected_mutation_count": sum(item["rejected"] for item in mutations),
+            "mutation_count": len(mutations), "route_case_count": len(cases),
             "fallback_route_reached": "activate_fallback" in reached,
             "support_assignment_count": 0, "external_effect_count": 0,
         },
         "source_result_refinement": source,
         "route_cases": cases,
+        "mutation_receipts": mutations,
+        "witness": witness,
         "verification": {
             "lean": run(["lake", "env", "lean", "AsiStackProofs/CompactGenerationRefinement.lean"], ROOT / "lean"),
             "result": "pass",
@@ -399,6 +607,25 @@ def main() -> None:
     args = parser.parse_args()
     errors: list[str] = []
     result = build(errors)
+    model = result["model"]
+    expected_model = {
+        "lean_theorem_count": 35,
+        "stage_count": 9,
+        "trace_event_count": 8,
+        "trace_composition_split_count": 9,
+        "identity_field_count": 10,
+        "identity_preservation_check_count": 9,
+        "non_authority_preservation_check_count": 9,
+        "fallback_monotonicity_check_count": 8,
+        "terminal_rejection_count": 8,
+        "route_count": 60,
+        "route_case_count": 60,
+        "mutation_count": 163,
+        "rejected_mutation_count": 163,
+    }
+    for key, value in expected_model.items():
+        if model.get(key) != value:
+            errors.append(f"model.{key} must be {value}, got {model.get(key)!r}.")
     jsonschema.validate(result, load(SCHEMA))
     serialized = json.dumps(result, indent=2) + "\n"
     if args.write_result:
@@ -416,7 +643,11 @@ def main() -> None:
             errors.append(f"{rel(RESULT)} is stale; run {COMMAND} --write-result.")
     if errors:
         fail(errors)
-    print(f"Compact generation refinement passed: {len(STAGES)} stages, {result['model']['route_count']} routes, {result['model']['rejected_mutation_count']}/{result['model']['rejected_mutation_count']} mutations rejected, four source results digest-bound, support/effect none.")
+    print(
+        "Compact generation refinement passed: 35 Lean theorems, 9 stages, "
+        "9 trace splits, 60 routes, 163/163 mutations rejected, four source "
+        "results digest-bound, support/effect none."
+    )
 
 
 if __name__ == "__main__":

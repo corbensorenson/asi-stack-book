@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.compact_generation_refinement.result.v1",
+  "schema_version": "asi_stack.compact_generation_refinement.result.v2",
   "result_id": "2026-07-15-compact-generation-refinement",
   "recorded_date": "2026-07-15",
   "command": "python3 scripts/validate_compact_generation_refinement.py",
@@ -17,9 +17,55 @@
       "consumed",
       "closed"
     ],
+    "lean_theorem_count": 35,
+    "lean_theorem_surface": [
+      "accepted_step_is_accepted",
+      "accepted_step_applies_event",
+      "apply_event_preserves_full_identity",
+      "accepted_step_preserves_full_identity",
+      "accepted_step_preserves_support_and_external_effect_counts",
+      "accepted_step_adds_exactly_one_receipt",
+      "accepted_step_advances_stage",
+      "apply_event_fallback_count_monotone",
+      "accepted_step_fallback_count_monotone",
+      "accepted_run_preserves_full_identity",
+      "accepted_run_preserves_support_count",
+      "accepted_run_preserves_external_effect_count",
+      "accepted_run_accounts_exact_receipts",
+      "accepted_run_fallback_count_monotone",
+      "accepted_run_has_accepted_trace",
+      "compact_run_append",
+      "closed_state_accepts_no_event",
+      "apply_event_preserves_bound_representation_and_result_identity",
+      "apply_event_cannot_assign_support_or_external_effect",
+      "accepted_step_adds_one_receipt",
+      "fallback_receipt_required_after_activated_fallback",
+      "source_substitution_rejected",
+      "missing_rights_blocks_source_binding",
+      "missing_generated_artifact_blocks_generation",
+      "lossy_exactness_is_blocked_before_verification",
+      "reconstruction_mismatch_activates_preserved_source_fallback",
+      "reconstruction_mismatch_without_executable_fallback_is_blocked",
+      "unresolved_obligation_without_owner_blocks_residualization",
+      "result_digest_substitution_blocks_publication",
+      "support_promotion_without_transition_blocks_publication",
+      "semantic_node_without_provenance_identity_blocks_migration",
+      "hierarchy_change_without_reference_continuity_blocks_migration",
+      "incompatible_consumer_policy_blocks_consumption",
+      "broken_residual_chain_blocks_closure",
+      "fallback_lifecycle_reaches_closed_without_support_or_effect_authority"
+    ],
     "route_count": 60,
     "independently_reached_route_count": 60,
-    "rejected_mutation_count": 51,
+    "trace_event_count": 8,
+    "trace_composition_split_count": 9,
+    "identity_field_count": 10,
+    "identity_preservation_check_count": 9,
+    "non_authority_preservation_check_count": 9,
+    "fallback_monotonicity_check_count": 8,
+    "terminal_rejection_count": 8,
+    "rejected_mutation_count": 163,
+    "mutation_count": 163,
     "route_case_count": 60,
     "fallback_route_reached": true,
     "support_assignment_count": 0,
@@ -466,6 +512,671 @@
       "accepted": true
     }
   ],
+  "mutation_receipts": [
+    {
+      "mutation_id": "route_wrong-stage",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_representation-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumer-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_result-substitution",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_event-replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_authority-leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-requestWellFormed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-sourceArtifactPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-sourceDigestBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-rightsBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-versionedContract",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-compressionBoundary",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_requested-consumerPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_sourceBound-generatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_sourceBound-seedOrLawPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_sourceBound-searchBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_sourceBound-generatedArtifactPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_sourceBound-generationCostRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_migrated-consumerAcknowledgment",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_migrated-policyCompatible",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_migrated-downstreamEvaluation",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_migrated-utilityMeasured",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumed-residualClosedOrEscrowed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumed-chainIntegrity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumed-descendantReferences",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumed-cleanup",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumed-finalNonClaims",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_lossy-exact",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_verifier-identity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_independent-evaluator",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_observed-reconstruction",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_mismatch-no-fallback",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_verifier-cost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_obligation-scan",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_residual-record",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_residual-owner",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_residual-burden",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_zero-residual-overclaim",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_source-provenance",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_total-cost",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_fallback-receipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_artifact-receipt",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_bound-result-digests",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_evidence-transition",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_publication-nonclaims",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_provenance-identity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_provenance-content",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_grounding-evaluator",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_migration-record",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_reference-continuity",
+      "rejected": true
+    },
+    {
+      "mutation_id": "route_consumer-map",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_requested_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_sourceBound_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_sourceBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_sourceBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_sourceBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_generated_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_generated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_generated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_generated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_verified_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_verified",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_residualized_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_residualized",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_residualized",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_residualized",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_published_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_published",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_published",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_published",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_migrated_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_migrated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_migrated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_migrated",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_representationId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_representationVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_sourceDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_generatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_targetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_verifierDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_residualLedgerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumed_resultSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_consumed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_bindSource",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_close",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_consume",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_generate",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_migrate",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_publish",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_residualize",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_verify",
+      "rejected": true
+    }
+  ],
+  "witness": {
+    "terminal_stage": "closed",
+    "receipt_count": 8,
+    "generation_count": 1,
+    "verification_count": 1,
+    "fallback_count": 1,
+    "migration_count": 1,
+    "consumption_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
   "verification": {
     "lean": {
       "command": "lake env lean AsiStackProofs/CompactGenerationRefinement.lean",

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2529 |
-| Direct/projection-style theorem declarations | 424 |
-| Derived/decomposed theorem declarations | 1545 |
+| Theorem declarations classified | 2547 |
+| Direct/projection-style theorem declarations | 425 |
+| Derived/decomposed theorem declarations | 1562 |
 | Unknown or mixed theorem declarations | 560 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -75,7 +75,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | human-ai-communication-persuasion-and-epistemic-security | 1 | 21 | 5 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | compact-generative-systems-and-residual-honesty | 9 | 35 | 14 | 20 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ContentAuthenticityReview.lean` | content-authenticity-watermarking-and-synthetic-media-integrity | 1 | 32 | 14 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
@@ -576,11 +576,29 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_fallback_count_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_has_accepted_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_preserves_external_effect_count` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_preserves_full_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_run_preserves_support_count` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_advances_stage` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_fallback_count_monotone` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_preserves_full_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `accepted_step_preserves_support_and_external_effect_counts` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_fallback_count_monotone` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_preserves_bound_representation_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `apply_event_preserves_full_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `broken_residual_chain_blocks_closure` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `closed_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `compact_run_append` | derived_or_decomposed | no | uses cases, have, induction, left, simp, subst |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `fallback_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `fallback_receipt_required_after_activated_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `hierarchy_change_without_reference_continuity_blocks_migration` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `incompatible_consumer_policy_blocks_consumption` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | `lossy_exactness_is_blocked_before_verification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

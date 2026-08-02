@@ -2308,7 +2308,11 @@ def errors(data: dict) -> list[str]:
         "compact_generation_residual_valid_count":3,"compact_generation_residual_invalid_count":5,
         "compact_generation_trace_entry_count":4,"compact_generation_storage_entry_count":4,
         "compact_generation_storage_invalid_count":5,"compact_generation_reachable_stage_count":9,
-        "compact_generation_route_case_count":60,"compact_generation_mutation_rejection_count":51,
+        "compact_generation_lean_theorem_count":35,"compact_generation_trace_event_count":8,
+        "compact_generation_trace_composition_split_count":9,"compact_generation_identity_field_count":10,
+        "compact_generation_identity_preservation_check_count":9,"compact_generation_non_authority_preservation_check_count":9,
+        "compact_generation_fallback_monotonicity_check_count":8,"compact_generation_terminal_rejection_count":8,
+        "compact_generation_route_case_count":60,"compact_generation_mutation_rejection_count":163,
         "compact_generation_retired_baseline_declaration_count":26,
         "compact_generation_retained_legacy_theorem_count":6,"compact_generation_fallback_count":1,
         "compact_generation_support_state_effect":"none"}
@@ -2316,14 +2320,14 @@ def errors(data: dict) -> list[str]:
         if proof_contract.get(key)!=value: out.append(f"compact-generation contract drifted: {key}")
     compact=data["compact_generation_result"]
     compact_model=compact.get("model",{})
-    for key,value in {"stage_count":9,"route_count":60,"independently_reached_route_count":60,"route_case_count":60,"rejected_mutation_count":51,"fallback_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
+    for key,value in {"stage_count":9,"lean_theorem_count":35,"trace_event_count":8,"trace_composition_split_count":9,"identity_field_count":10,"identity_preservation_check_count":9,"non_authority_preservation_check_count":9,"fallback_monotonicity_check_count":8,"terminal_rejection_count":8,"route_count":60,"independently_reached_route_count":60,"route_case_count":60,"mutation_count":163,"rejected_mutation_count":163,"fallback_route_reached":True,"support_assignment_count":0,"external_effect_count":0}.items():
         if compact_model.get(key)!=value: out.append(f"compact-generation result drifted: model.{key}")
     expected_source_counts={"gvr_case_count":5,"gvr_negative_control_count":3,"gvr_baseline_bytes":368,"gvr_selected_bytes":78,"residual_valid_count":3,"residual_invalid_count":5,"trace_entry_count":4,"storage_entry_count":4,"storage_invalid_count":5}
     if compact.get("source_result_refinement",{}).get("counts")!=expected_source_counts:out.append("compact-generation consumed result counts drifted")
     if compact.get("support_state_effect")!="none" or compact.get("external_effect")!="none":out.append("compact-generation support/effect boundary drifted")
     compact_chapter=next((row for row in structure_rows if row.get("id")=="compact-generative-systems-and-residual-honesty"),{})
     if {row.get("module") for row in compact_chapter.get("proof_targets",[])}!={"AsiStackProofs.CompactGenerationRefinement"}:out.append("Compact Generation public targets do not resolve to refinement")
-    for phrase in ["nine-stage", "60 routes", "51/51", "no support-state or external effect"]:
+    for phrase in ["nine-stage", "35 theorems", "60 routes", "163/163", "no support-state or external effect"]:
         if phrase.casefold() not in data["compact_generation_receipt"].casefold():out.append(f"compact-generation receipt missing exact boundary: {phrase}")
     for phrase in ["Modeled boundary", "60 Lean route constructors", "Authored Boolean fields are not measurements", "No support transition"]:
         if phrase.casefold() not in data["compact_generation_dossier"].casefold():out.append(f"compact-generation dossier missing adequacy boundary: {phrase}")

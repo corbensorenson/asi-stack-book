@@ -6,7 +6,7 @@ The model covers nine reachable lifecycle stages and exact identity binding for 
 
 ## Consumers and mutations
 
-The independent Python consumer reaches all 60 Lean route constructors and rejects 51/51 non-accepting route mutations. It also reads and SHA-256 binds the four existing bounded result families rather than copying their Boolean summaries into Lean.
+The independent Python consumer recompiles the exact 35-theorem surface, executes one complete eight-event fallback lifecycle, verifies all nine prefix/suffix composition splits, preserves all ten identity fields and zero support/effect authority at every reachable state, checks fallback monotonicity across all eight transitions, reaches all 60 Lean route constructors, rejects all eight event kinds after closure, and rejects 163/163 lifecycle mutations. It also reads and SHA-256 binds the four existing bounded result families rather than copying their Boolean summaries into Lean.
 
 ## Honest exclusions
 

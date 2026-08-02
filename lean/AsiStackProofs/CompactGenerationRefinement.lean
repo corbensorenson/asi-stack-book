@@ -259,6 +259,229 @@ def applyEvent (s : State) (e : Event) : State × Route :=
       consumptionCount := if s.stage == .migrated then s.consumptionCount + 1 else s.consumptionCount}, r)
   else (s, r)
 
+structure StateIdentity where
+  representationId : Nat
+  representationVersion : Nat
+  sourceDigest : Nat
+  contractDigest : Nat
+  generatorDigest : Nat
+  targetDigest : Nat
+  verifierDigest : Nat
+  residualLedgerDigest : Nat
+  consumerDigest : Nat
+  resultSetDigest : Nat
+deriving DecidableEq, Repr
+
+def stateIdentity (s : State) : StateIdentity :=
+  { representationId := s.representationId
+    representationVersion := s.representationVersion
+    sourceDigest := s.sourceDigest
+    contractDigest := s.contractDigest
+    generatorDigest := s.generatorDigest
+    targetDigest := s.targetDigest
+    verifierDigest := s.verifierDigest
+    residualLedgerDigest := s.residualLedgerDigest
+    consumerDigest := s.consumerDigest
+    resultSetDigest := s.resultSetDigest }
+
+def CompactStep (s : State) (e : Event) : Option State :=
+  if s.stage = .closed then none
+  else if accepted (routeFor s e) then some (applyEvent s e).1 else none
+
+def CompactRun : State -> List Event -> Option State
+  | state, [] => some state
+  | state, event :: tail =>
+      match CompactStep state event with
+      | none => none
+      | some next => CompactRun next tail
+
+def CompactTraceAccepted : State -> List Event -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      accepted (routeFor state event) = true ∧
+      CompactTraceAccepted (applyEvent state event).1 tail
+
+theorem accepted_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    accepted (routeFor state event) = true := by
+  unfold CompactStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · assumption
+    · simp at stepped
+
+theorem accepted_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    next = (applyEvent state event).1 := by
+  unfold CompactStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · exact Option.some.inj stepped |>.symm
+    · simp at stepped
+
+theorem apply_event_preserves_full_identity (state : State) (event : Event) :
+    stateIdentity (applyEvent state event).1 = stateIdentity state := by
+  by_cases h : accepted (routeFor state event) = true <;>
+    simp [applyEvent, h, stateIdentity]
+
+theorem accepted_step_preserves_full_identity
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    stateIdentity next = stateIdentity state := by
+  rw [accepted_step_applies_event stepped]
+  exact apply_event_preserves_full_identity state event
+
+theorem accepted_step_preserves_support_and_external_effect_counts
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    next.supportAssignmentCount = state.supportAssignmentCount ∧
+    next.externalEffectCount = state.externalEffectCount := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_adds_exactly_one_receipt
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_advances_stage
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    next.stage = advance state.stage := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem apply_event_fallback_count_monotone (state : State) (event : Event) :
+    state.fallbackCount ≤ (applyEvent state event).1.fallbackCount := by
+  cases routed : routeFor state event <;>
+    simp [applyEvent, routed, accepted]
+
+theorem accepted_step_fallback_count_monotone
+    {state next : State} {event : Event}
+    (stepped : CompactStep state event = some next) :
+    state.fallbackCount ≤ next.fallbackCount := by
+  rw [accepted_step_applies_event stepped]
+  exact apply_event_fallback_count_monotone state event
+
+theorem accepted_run_preserves_full_identity
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    stateIdentity final = stateIdentity state := by
+  induction events generalizing state with
+  | nil => simp [CompactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_full_identity stepped)
+
+theorem accepted_run_preserves_support_count
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    final.supportAssignmentCount = state.supportAssignmentCount := by
+  induction events generalizing state with
+  | nil => simp [CompactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_step_preserves_support_and_external_effect_counts stepped).1
+
+theorem accepted_run_preserves_external_effect_count
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    final.externalEffectCount = state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [CompactRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_step_preserves_support_and_external_effect_counts stepped).2
+
+theorem accepted_run_accounts_exact_receipts
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [CompactRun] at ran; subst final; simp
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_step_adds_exactly_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem accepted_run_fallback_count_monotone
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    state.fallbackCount ≤ final.fallbackCount := by
+  induction events generalizing state with
+  | nil => simp [CompactRun] at ran; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          exact Nat.le_trans (accepted_step_fallback_count_monotone stepped) (ih tailRan)
+
+theorem accepted_run_has_accepted_trace
+    {state final : State} {events : List Event}
+    (ran : CompactRun state events = some final) :
+    CompactTraceAccepted state events := by
+  induction events generalizing state with
+  | nil => simp [CompactTraceAccepted]
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at ran
+      | some next =>
+          have tailRan : CompactRun next tail = some final := by
+            simpa [CompactRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_accepted stepped, ih tailRan⟩
+
+theorem compact_run_append
+    (state middle : State) (left right : List Event)
+    (leftRan : CompactRun state left = some middle) :
+    CompactRun state (left ++ right) = CompactRun middle right := by
+  induction left generalizing state with
+  | nil => simp [CompactRun] at leftRan; subst middle; rfl
+  | cons event tail ih =>
+      cases stepped : CompactStep state event with
+      | none => simp [CompactRun, stepped] at leftRan
+      | some next =>
+          have tailRan : CompactRun next tail = some middle := by
+            simpa [CompactRun, stepped] using leftRan
+          simpa [CompactRun, stepped] using ih next tailRan
+
+theorem closed_state_accepts_no_event
+    {state : State} (closed : state.stage = .closed) (event : Event) :
+    CompactStep state event = none := by
+  simp [CompactStep, closed]
+
 theorem apply_event_preserves_bound_representation_and_result_identity (s : State) (e : Event) :
     (applyEvent s e).1.representationId = s.representationId ∧
     (applyEvent s e).1.sourceDigest = s.sourceDigest ∧
@@ -311,6 +534,11 @@ def stateAt (stage : Stage) : State :=
     receiptCount := 0, generationCount := 0, verificationCount := 0
     fallbackCount := 0, migrationCount := 0, consumptionCount := 0
     supportAssignmentCount := 0, externalEffectCount := 0 }
+
+theorem fallback_receipt_required_after_activated_fallback :
+    routeFor {stateAt .verified with fallbackCount := 1}
+      {kind := .residualize, packet := {completePacket with fallbackReceipt := false}} =
+      .requireFallbackReceipt := by rfl
 
 theorem source_substitution_rejected :
     routeFor (stateAt .requested)

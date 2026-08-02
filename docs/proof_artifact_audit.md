@@ -46,7 +46,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | 1 | 21 | 0 | 27 | 7 |
-| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 17 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 35 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/ContentAuthenticityReview.lean` | 1 | 32 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | 3 | 17 | 0 | 17 | 2 |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | 4 | 35 | 0 | 21 | 2 |

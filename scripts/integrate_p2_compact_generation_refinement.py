@@ -66,13 +66,13 @@ def main() -> None:
             target["target"] = TARGETS[target["tag"]]
     chapter["lean_module"] = "AsiStackProofs.CompactGenerativeSystems; AsiStackProofs.GenerateVerifyRepair; AsiStackProofs.SemanticRepresentation; AsiStackProofs.CompactGenerationRefinement"
     chapter["minimal_implementation"] = (
-        "The current minimum contains six retained finite countermodels plus a seventeen-declaration, nine-stage, sixty-route source-to-closure lifecycle; an independent consumer that rejects 51/51 non-accepting route mutations and digest-binds the five-case GVR, three-valid/five-invalid conservation, four-entry trace, and four-entry/five-invalid replay results; the exact prior Circle and residual-pressure outcomes; and no support or external effect. Twenty-six assumed projections, fixture normalizations, copied result facts, and summary bridges are retired. This is bounded local policy/conformance evidence, not useful compression, codec correctness, verifier adequacy, semantic grounding, deployed fallback, live residual detection, downstream utility, transfer, or SOTA evidence."
+        "The current minimum contains six retained finite countermodels plus a thirty-five-theorem, nine-stage, sixty-route source-to-closure lifecycle. The refinement proves exact ten-field identity custody, support/effect non-authority, receipt accounting, fallback monotonicity, accepted-trace validity, event-batch composition, and absorbing closure over arbitrary accepted runs. An independent consumer executes one eight-event fallback trace, verifies all nine trace splits, rejects 163/163 lifecycle mutations, reaches all sixty routes, and digest-binds the five-case GVR, three-valid/five-invalid conservation, four-entry trace, and four-entry/five-invalid replay results. Twenty-six assumed projections, fixture normalizations, copied result facts, and summary bridges are retired. This is bounded local policy/conformance evidence, not useful compression, codec correctness, verifier adequacy, semantic grounding, deployed fallback, live residual detection, downstream utility, transfer, or SOTA evidence."
     )
-    chapter["codex_tests"] = [row for row in chapter["codex_tests"] if not (isinstance(row, dict) and row.get("name") in {"Compact admission route", "Compact GVR fixture bridge", "Residual honesty fixture bridge", "Residual ledger trace surface bridge", "Residual ledger storage replay bridge"})]
+    chapter["codex_tests"] = [row for row in chapter["codex_tests"] if not (isinstance(row, dict) and row.get("name") in {"Compact admission route", "Compact GVR fixture bridge", "Residual honesty fixture bridge", "Residual ledger trace surface bridge", "Residual ledger storage replay bridge", "Compact generation source-to-closure lifecycle refinement"})]
     chapter["codex_tests"].append({
         "name": "Compact generation source-to-closure lifecycle refinement",
         "implementation_status": "implemented",
-        "result_status": "passes nine stages, all sixty routes, 51/51 non-accepting mutations, four digest-bound source result families, one reachable modeled fallback, and support/effect none; no codec, semantic utility, deployed fallback, residual completeness, transfer, or support claim",
+        "result_status": "passes 35 Lean theorems, nine stages, all sixty routes, nine trace splits, 163/163 lifecycle mutations, four digest-bound source result families, one reachable modeled fallback, and support/effect none; no codec, semantic utility, deployed fallback, residual completeness, transfer, or support claim",
     })
     STRUCTURE.write_text(json.dumps(structure, indent=2) + "\n", encoding="utf-8")
 
@@ -81,7 +81,7 @@ def main() -> None:
         if record["tag"] in TARGETS:
             record["module"] = MODULE
             record["formal_target"] = TARGETS[record["tag"]]
-            record["rationale"] = "Reachable nine-stage source-to-closure lifecycle, sixty routes, 51 rejecting mutations, four digest-bound bounded result families, and no support/effect authority."
+            record["rationale"] = "Exact 35-theorem arbitrary-run lifecycle with ten-field custody, non-authority, receipt accounting, fallback monotonicity, nine trace splits, sixty routes, 163 rejecting mutations, four digest-bound bounded result families, and no support/effect authority."
     TRIAGE.write_text(json.dumps(triage, indent=2) + "\n", encoding="utf-8")
 
     reviews = json.loads(REVIEWS.read_text(encoding="utf-8"))
