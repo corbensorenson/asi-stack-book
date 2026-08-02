@@ -14211,7 +14211,7 @@
             {
               "name": "Procedural Memory promotion and retirement refinement",
               "implementation_status": "implemented",
-              "result_status": "passes two exact suites, 32 routes, seven reachable stages, and 33/33 rejecting mutations; support-state effect none; no natural trace-mining, generated-tool correctness, deployed routing, rollback, monitoring, retirement, usefulness, safety, reproduction, or transfer claim"
+              "result_status": "passes an exact 21-theorem surface covering arbitrary finite-run identity and nonauthority, exact rejected-event state preservation, batch composition, and absorbing retirement; independently recompiles that surface while preserving two exact suites, 32 routes, seven reachable stages, and 33/33 rejecting mutations; support-state effect none; no natural trace-mining, generated-tool correctness, deployed routing, rollback, monitoring, retirement, usefulness, safety, reproduction, or transfer claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProceduralMemory; AsiStackProofs.ProceduralMemoryRefinement",
@@ -14219,20 +14219,20 @@
             {
               "tag": "lean:procedural.loop_closure.operational_invariant",
               "module": "AsiStackProofs.ProceduralMemoryRefinement",
-              "target": "A reachable procedure lifecycle preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody from clustering through acknowledged routing and receipt-bound retirement without assigning support or external effects.",
+              "target": "Every finite procedure lifecycle run preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody; rejected events preserve exact state, batches compose, retirement is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
               "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
               "module": "AsiStackProofs.ProceduralMemoryRefinement",
-              "target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine.",
+              "target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine without mutating exact state.",
               "status": "implemented"
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
           "open_evidence_gaps": [
             "No deployed trace miner, prospective comparability rule, loop clusterer, causal invariant learner, parameter-discovery system, tool synthesizer, independent generated-tool verifier, natural regression campaign, production router, or retirement automation has run.",
-            "The current schema, three valid and six invalid qualification packets, one four-project promotion record and ten mutations, and nineteen Lean declarations establish record and finite-route discipline only; they do not establish useful, causal, safe, general, private, efficient, or deployable procedural learning.",
+            "The current schema, three valid and six invalid qualification packets, one four-project promotion record and ten mutations, and thirty-five live Lean declarations establish authored-record and arbitrary finite-run lifecycle discipline only; they do not establish useful, causal, safe, general, private, efficient, or deployable procedural learning.",
             "Run the preregistered natural repeated-work campaign against strong matched manual, retrieval, prompt/checklist, script, workflow, learned-tool-use, library-learning, and skill-library baselines with complete denominators and joint lifecycle metrics.",
             "Require causal interventions, independent implementation and evaluation, and transfer across models, tasks, tools, effects, environments, organizations, rights regimes, attacks, and time before promoting the claim."
           ]

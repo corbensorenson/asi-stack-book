@@ -11415,7 +11415,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Reachable Lean procedure promotion/retirement lifecycle, two exact bounded suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_contract": "Exact 21-theorem Lean procedure promotion/retirement surface over arbitrary finite event runs, two exact bounded suites, independent recompiling consumer, result schema, receipt, and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_procedural_memory_refinement.py",
         "schemas/procedural_memory_refinement.schema.json",
@@ -11431,12 +11431,15 @@
       "output_contract": "Reject identity/lineage substitution, replay, authority leakage, incomplete trace and negative-example custody, abstraction gaps, failed verification/regression, missing qualification/rollback/monitoring/residual/retirement custody.",
       "output_assertions": [
         "two exact bounded suites",
+        "exact twenty-one-theorem Lean surface recompiles",
         "thirty-two routes and seven reachable stages",
         "thirty-three rejected lifecycle mutations",
         "one qualified route and receipt-bound retirement",
+        "arbitrary finite runs preserve exact identity and assign no support or external effects",
+        "event batches compose and retirement absorbs every suffix",
         "no support-state or external-effect authority"
       ],
-      "claim_scope": "One finite authored procedure lifecycle plus two existing bounded fixture suites only.",
+      "claim_scope": "Arbitrary finite runs over one authored procedure transition system plus two existing bounded fixture suites only.",
       "negative_controls": "validator_owned_identity_lineage_lifecycle_authority_mutations",
       "negative_control_cases": [
         "procedure, source, trace, abstraction, regression, SCF, policy, consumer, or event substitution",

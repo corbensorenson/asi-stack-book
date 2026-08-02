@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from copy import deepcopy
@@ -35,6 +36,29 @@ BINDING_FIELDS = {
     "abstractionDigest", "regressionSuiteDigest", "scfDigest", "policyDigest", "consumerDigest",
 }
 LINEAGE_FIELDS = {"sourceSetDigest", "traceClusterDigest", "abstractionDigest", "regressionSuiteDigest", "scfDigest"}
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_procedure_and_lineage_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "accepted_event_advances_and_records_receipt",
+    "rejected_event_preserves_exact_state",
+    "run_events_preserve_exact_identity",
+    "run_events_cannot_assign_support_or_external_effect",
+    "run_events_compose",
+    "retired_event_is_rejected",
+    "retired_state_is_absorbing",
+    "clustering_requires_negative_examples",
+    "clustering_requires_effect_receipts",
+    "abstraction_requires_parameters",
+    "abstraction_requires_preconditions",
+    "failed_verification_blocks_qualification",
+    "failed_regression_routes_quarantine",
+    "qualification_requires_active_scf",
+    "qualification_requires_rehearsed_rollback",
+    "routing_requires_monitoring",
+    "retirement_requires_receipt",
+    "full_procedure_lifecycle_reaches_retirement",
+}
 
 
 def sha(path: Path) -> str:
@@ -104,6 +128,39 @@ def run(command: str) -> tuple[int, str]:
     return proc.returncode, proc.stdout
 
 
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise RuntimeError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/ProceduralMemoryRefinement.lean"]
+    completed = subprocess.run(
+        command, cwd=ROOT / "lean", capture_output=True, text=True
+    )
+    if completed.returncode:
+        raise RuntimeError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_identity_custody": True,
+        "arbitrary_run_no_support_or_external_effect": True,
+        "exact_run_composition": True,
+        "terminal_state_absorbing": True,
+    }
+
+
 def build() -> dict[str, Any]:
     cases: list[dict[str, Any]] = []
     for stage_name in STAGES[:-1]:
@@ -156,6 +213,7 @@ def build() -> dict[str, Any]:
         "schema_version": "asi_stack.procedural_memory_refinement.v1",
         "result_id": "procedural-memory-refinement-2026-07-15-local",
         "source_sha256": {"lean_model": sha(LEAN)},
+        "formal_surface": formal_surface(),
         "input_suites": [
             {"suite_id": "procedural_memory_loop", "valid_count": loop_valid, "expected_invalid_count": loop_invalid},
             {"suite_id": "procedural_trace_promotion", "valid_count": 1, "expected_invalid_count": promotion_invalid},
@@ -186,7 +244,11 @@ def main() -> None:
     elif not RESULT.exists() or RESULT.read_text() != serialized: errors.append(f"{RESULT.relative_to(ROOT)} is stale; run {COMMAND} --write")
     if errors:
         print("Procedural-memory refinement failed:"); [print(f" - {error}") for error in errors]; sys.exit(1)
-    print(f"Procedural-memory refinement passed: 2 exact suites, 7 stages, 32 routes, {result['mutation_count']} mutations rejected, support effect none.")
+    print(
+        "Procedural-memory refinement passed: 2 exact suites, 7 stages, 32 routes, "
+        f"{result['mutation_count']} mutations rejected, "
+        f"{result['formal_surface']['theorem_count']} Lean theorems, support effect none."
+    )
 
 
 if __name__ == "__main__": main()

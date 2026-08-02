@@ -1867,7 +1867,7 @@
       "chapter_title": "Procedural Memory and Cognitive Loop Closure",
       "tag": "lean:procedural.loop_closure.operational_invariant",
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
-      "formal_target": "A reachable procedure lifecycle preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody from clustering through acknowledged routing and receipt-bound retirement without assigning support or external effects.",
+      "formal_target": "Every finite procedure lifecycle run preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody; rejected events preserve exact state, batches compose, retirement is absorbing, and support or external effects remain unassigned.",
       "status": "implemented",
       "outline_line": 4621,
       "module_path": "lean/AsiStackProofs/ProceduralMemoryRefinement.lean"
@@ -1877,7 +1877,7 @@
       "chapter_title": "Procedural Memory and Cognitive Loop Closure",
       "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
-      "formal_target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine.",
+      "formal_target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine without mutating exact state.",
       "status": "implemented",
       "outline_line": 4622,
       "module_path": "lean/AsiStackProofs/ProceduralMemoryRefinement.lean"

@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2317 |
+| Theorem declarations classified | 2324 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1363 |
+| Derived/decomposed theorem declarations | 1370 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -136,7 +136,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 21 | 10 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 18 | 7 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -1672,6 +1672,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `unverified_source_state_cannot_become_routable` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `abstraction_requires_parameters` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `abstraction_requires_preconditions` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `accepted_event_advances_and_records_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `apply_event_preserves_procedure_and_lineage_identity` | derived_or_decomposed | no | uses by_cases, simp |
@@ -1682,8 +1683,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `full_procedure_lifecycle_reaches_retirement` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `qualification_requires_active_scf` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `qualification_requires_rehearsed_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `retired_event_is_rejected` | derived_or_decomposed | no | uses simp, split |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `retired_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `retirement_requires_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `routing_requires_monitoring` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_requires_non_promotional_effect` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_with_scoped_update_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_result_requires_verifier_artifact_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

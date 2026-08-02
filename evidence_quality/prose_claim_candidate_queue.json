@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3878,
+    "candidate_count": 3879,
     "review_state_counts": {
-      "duplicate_of_atom": 1847,
+      "duplicate_of_atom": 1848,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -38391,6 +38391,25 @@
       ],
       "disposition_rationale": "Section transition, example, limitation, line-wrapped fragment, or explanatory elaboration already governed by structured atoms and chapter defaults.",
       "target_atom_id": null
+    },
+    {
+      "candidate_id": "procedural-memory-and-cognitive-loop-closure.prose.2b789a9b3c5f",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "source": "chapters/procedural-memory-and-cognitive-loop-closure.qmd:633",
+      "sentence": "Its exact twenty-one-theorem surface proves, for every finite event list, preservation of procedure, version, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer identity plus zero support/effect authority.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The exact twenty-one-theorem arbitrary-run summary restates the reviewed operational formal target and its explicit zero-authority boundary; it introduces no separate support-bearing claim.",
+      "target_atom_id": "procedural-memory-and-cognitive-loop-closure.formal.procedural-loop-closure-operational-invariant"
     },
     {
       "candidate_id": "procedural-memory-and-cognitive-loop-closure.prose.53b8040df89f",

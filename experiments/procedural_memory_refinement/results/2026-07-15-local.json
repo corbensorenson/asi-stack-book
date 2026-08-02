@@ -2,7 +2,20 @@
   "schema_version": "asi_stack.procedural_memory_refinement.v1",
   "result_id": "procedural-memory-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "cab21958f5bf6ae70a22d25b157f83ce593ab8263fa12d6ffa23199f23dde219"
+    "lean_model": "f92e6073ad838694648ff8b35b9592221631aa2fdc7bed5cc57e7ae71215fd47"
+  },
+  "formal_surface": {
+    "theorem_count": 21,
+    "lean_module": "lean/AsiStackProofs/ProceduralMemoryRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/ProceduralMemoryRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {

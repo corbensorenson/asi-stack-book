@@ -1754,21 +1754,21 @@
       "tag": "lean:procedural.loop_closure.operational_invariant",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
-      "formal_target": "A reachable procedure lifecycle preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody from clustering through acknowledged routing and receipt-bound retirement without assigning support or external effects.",
+      "formal_target": "Every finite procedure lifecycle run preserves exact procedure, source-set, trace-cluster, abstraction, regression-suite, SCF, policy, and consumer custody; rejected events preserve exact state, batches compose, retirement is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage procedure promotion and retirement lifecycle with exact custody, two bounded suites, 32 routes, 33 rejecting mutations, and no support or effect authority."
+      "rationale": "The exact 21-theorem surface proves nine-field identity and zero-authority preservation for arbitrary finite event runs, exact rejected-event noninterference, batch composition, and absorbing retirement; the independent consumer recompiles that surface and preserves two bounded suites, 32 routes, and 33 rejecting mutations."
     },
     {
       "tag": "lean:procedural.loop_closure.failure_blocks_promotion",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "module": "AsiStackProofs.ProceduralMemoryRefinement",
-      "formal_target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine.",
+      "formal_target": "Missing comparable traces, negative examples, source/effect receipts, abstraction contracts, verification, regression clearance, benchmark floor, active SCF, rehearsed rollback, monitoring, residuals, non-claims, acknowledgment, or retirement custody blocks lifecycle progress or routes to quarantine without mutating exact state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage procedure promotion and retirement lifecycle with exact custody, two bounded suites, 32 routes, 33 rejecting mutations, and no support or effect authority."
+      "rationale": "Rejected events preserve the complete authored state exactly, including terminal retirement; the exact 21-theorem surface and independent recompiling consumer establish only finite authored lifecycle refusal, not the truth or quality of any trusted input."
     },
     {
       "tag": "lean:routing.specialists.operational_invariant",
