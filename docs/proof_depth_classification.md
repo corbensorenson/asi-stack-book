@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2303 |
+| Theorem declarations classified | 2310 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1349 |
+| Derived/decomposed theorem declarations | 1356 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -138,7 +138,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 14 | 10 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 11 | 7 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 18 | 7 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | confidential-and-verifiable-ai-computation | 1 | 31 | 13 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1688,6 +1688,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `negative_verifier_result_with_scoped_update_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_result_requires_verifier_artifact_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_without_artifact_reference_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `accepted_event_advances_and_records_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `apply_event_preserves_target_identity` | derived_or_decomposed | no | uses by_cases, simp |
@@ -1697,8 +1698,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `negative_execution_without_attempt_history_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `negative_result_scoped_proposal_is_blocked` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `passed_execution_without_artifact_refs_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `support_assignment_request_is_authority_leak` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `unverified_pass_is_blocked_before_adjudication` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `written_back_event_is_rejected` | derived_or_decomposed | no | uses simp, split |
+| `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | `written_back_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_missing_mutation_control_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_promotion_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |

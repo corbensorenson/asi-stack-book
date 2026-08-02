@@ -11335,7 +11335,7 @@
               "name": "Proof-Carrying Claims target-to-writeback refinement",
               "purpose": "Replace assumed-validity projections with exact target and artifact custody, executed-verifier results, semantic review, adversarial dossier requirements, negative-result handling, and owner-only writeback.",
               "implementation_status": "implemented",
-              "result_status": "passes via python3 scripts/validate_proof_carrying_claims_refinement.py: exact 3/5 proof fixtures, 2/7 dossier cases, 23 routes, 6 stages, and 36/36 rejected mutations; support effect none",
+              "result_status": "passes via python3 scripts/validate_proof_carrying_claims_refinement.py: exact 18-theorem surface, arbitrary-run custody and non-authority, rejection noninterference, batch composition, absorbing writeback, exact 3/5 proof fixtures, 2/7 dossier cases, 23 routes, 6 stages, and 36/36 rejected mutations; support effect none",
               "status": "bounded authored lifecycle; no semantic-equivalence, verifier-soundness, reviewer-quality, usefulness, causality, deployment, reproduction, transfer, or core-support claim"
             }
           ],
@@ -11344,7 +11344,7 @@
             {
               "tag": "lean:spinoza.proof_carrying.operational_invariant",
               "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-              "target": "A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects.",
+              "target": "Every finite target-specific verification run preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody; rejected events preserve exact state, batches compose, owner writeback is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
@@ -11368,7 +11368,7 @@
             {
               "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
               "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-              "target": "An independent consumer covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
+              "target": "An independent consumer recompiles the exact eighteen-theorem surface, covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
               "status": "implemented"
             }
           ]

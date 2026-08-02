@@ -1364,11 +1364,11 @@
       "tag": "lean:spinoza.proof_carrying.operational_invariant",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-      "formal_target": "A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects.",
+      "formal_target": "Every finite target-specific verification run preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody; rejected events preserve exact state, batches compose, owner writeback is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable target-freeze through owner-writeback lifecycle with exact custody, zero support assignment, zero external effects, and an independent 23-route consumer."
+      "rationale": "Exact eighteen-theorem target-freeze through owner-writeback lifecycle with rejection noninterference, arbitrary-run identity and non-authority invariants, composition, absorbing writeback, and an independent 23-route consumer."
     },
     {
       "tag": "lean:spinoza.proof_carrying.failure_blocks_promotion",
@@ -1404,11 +1404,11 @@
       "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-      "formal_target": "An independent consumer covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
+      "formal_target": "An independent consumer recompiles the exact eighteen-theorem surface, covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "The fixture-summary projection is replaced by executable result refinement over exact source suites, a reachable five-event witness, 23 routes, and 36 rejected mutations; support effect none."
+      "rationale": "The independent consumer recompiles the exact eighteen-theorem lifecycle, preserves the exact source suites and five-event witness, covers 23 routes, and rejects 36 mutations; support effect none."
     },
     {
       "tag": "lean:jobs.lifecycle.operational_invariant",

@@ -11223,7 +11223,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Reachable Lean target-to-writeback lifecycle, exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_contract": "Reachable Lean target-to-writeback lifecycle with an exact 18-theorem surface covering arbitrary finite runs, exact identity custody, nonauthority, composition, and absorbing owner writeback; exact 3/5 proof-carrying and 2/7 adversarial-dossier suites; independent consumer; result schema; receipt; and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_proof_carrying_claims_refinement.py",
         "schemas/proof_carrying_claims_refinement.schema.json",
@@ -11243,9 +11243,12 @@
         "two valid and seven invalid adversarial-dossier cases",
         "twenty-three routes and six reachable stages",
         "thirty-six rejected lifecycle mutations",
+        "exact eighteen-theorem Lean surface recompiles",
+        "arbitrary finite runs preserve exact identity and assign no support or external effects",
+        "event batches compose and owner writeback absorbs every suffix",
         "no support-state effect"
       ],
-      "claim_scope": "One finite authored target-specific verification lifecycle plus two existing bounded synthetic suites only.",
+      "claim_scope": "Arbitrary finite runs of the authored target-specific verification lifecycle plus two existing bounded synthetic suites only.",
       "negative_controls": "validator_owned_target_artifact_verifier_adjudication_writeback_mutations",
       "negative_control_cases": [
         "target, artifact, verifier, result, or event substitution",

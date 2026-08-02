@@ -1467,7 +1467,7 @@
       "chapter_title": "Proof-Carrying Claims and Adversarial Review",
       "tag": "lean:spinoza.proof_carrying.operational_invariant",
       "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-      "formal_target": "A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects.",
+      "formal_target": "Every finite target-specific verification run preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody; rejected events preserve exact state, batches compose, owner writeback is absorbing, and support or external effects remain unassigned.",
       "status": "implemented",
       "outline_line": 3742,
       "module_path": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean"
@@ -1507,7 +1507,7 @@
       "chapter_title": "Proof-Carrying Claims and Adversarial Review",
       "tag": "lean:spinoza.adversarial_review.dossier_probe_bridge",
       "module": "AsiStackProofs.ProofCarryingClaimsRefinement",
-      "formal_target": "An independent consumer covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
+      "formal_target": "An independent consumer recompiles the exact eighteen-theorem surface, covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support.",
       "status": "implemented",
       "outline_line": 3746,
       "module_path": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean"

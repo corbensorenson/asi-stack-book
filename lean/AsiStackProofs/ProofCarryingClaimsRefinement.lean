@@ -120,6 +120,31 @@ structure State where
   externalEffectCount : Nat
 deriving DecidableEq, Repr
 
+structure VerificationIdentity where
+  claimId : Nat
+  claimVersion : Nat
+  targetDigest : Nat
+  interpretationDigest : Nat
+  scopeDigest : Nat
+  assumptionsDigest : Nat
+  artifactDigest : Nat
+  verifierId : Nat
+  verifierVersion : Nat
+  trustedBaseDigest : Nat
+deriving DecidableEq, Repr
+
+def exactIdentity (state : State) : VerificationIdentity :=
+  { claimId := state.claimId
+    claimVersion := state.claimVersion
+    targetDigest := state.targetDigest
+    interpretationDigest := state.interpretationDigest
+    scopeDigest := state.scopeDigest
+    assumptionsDigest := state.assumptionsDigest
+    artifactDigest := state.artifactDigest
+    verifierId := state.verifierId
+    verifierVersion := state.verifierVersion
+    trustedBaseDigest := state.trustedBaseDigest }
+
 def expectedKind : Stage -> EventKind
   | .idle => .freezeTarget
   | .frozen => .bindArtifact
@@ -232,14 +257,9 @@ def applyEvent (state : State) (event : Event) : State × Route :=
 
 theorem apply_event_preserves_target_identity
     (state : State) (event : Event) :
-    (applyEvent state event).1.claimId = state.claimId ∧
-    (applyEvent state event).1.claimVersion = state.claimVersion ∧
-    (applyEvent state event).1.targetDigest = state.targetDigest ∧
-    (applyEvent state event).1.interpretationDigest = state.interpretationDigest ∧
-    (applyEvent state event).1.scopeDigest = state.scopeDigest ∧
-    (applyEvent state event).1.assumptionsDigest = state.assumptionsDigest := by
+    exactIdentity (applyEvent state event).1 = exactIdentity state := by
   by_cases h : accepted (routeFor state event) = true <;>
-    simp [applyEvent, h]
+    simp [applyEvent, exactIdentity, h]
 
 theorem apply_event_cannot_assign_support_or_external_effect
     (state : State) (event : Event) :
@@ -253,6 +273,66 @@ theorem accepted_step_adds_exactly_one_receipt
     (h : accepted (routeFor state event) = true) :
     (applyEvent state event).1.receiptCount = state.receiptCount + 1 := by
   simp [applyEvent, h]
+
+theorem accepted_event_advances_and_records_receipt
+    (state : State) (event : Event)
+    (h : accepted (routeFor state event) = true) :
+    (applyEvent state event).1.stage = advanceStage state.stage ∧
+    (applyEvent state event).1.lastEventDigest = event.packet.eventDigest ∧
+    (applyEvent state event).1.receiptCount = state.receiptCount + 1 := by
+  simp [applyEvent, h]
+
+theorem rejected_event_preserves_exact_state
+    (state : State) (event : Event)
+    (h : accepted (routeFor state event) = false) :
+    applyEvent state event = (state, routeFor state event) := by
+  simp [applyEvent, h]
+
+def runEvents : State -> List Event -> State
+  | state, [] => state
+  | state, event :: rest => runEvents (applyEvent state event).1 rest
+
+theorem run_events_preserve_exact_identity
+    (state : State) (events : List Event) :
+    exactIdentity (runEvents state events) = exactIdentity state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      exact (ih (applyEvent state event).1).trans
+        (apply_event_preserves_target_identity state event)
+
+theorem run_events_cannot_assign_support_or_external_effect
+    (state : State) (events : List Event) :
+    (runEvents state events).supportAssignmentCount = state.supportAssignmentCount ∧
+    (runEvents state events).externalEffectCount = state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [runEvents]
+  | cons event rest ih =>
+      have head := apply_event_cannot_assign_support_or_external_effect state event
+      have tail := ih (applyEvent state event).1
+      exact ⟨tail.1.trans head.1, tail.2.trans head.2⟩
+
+theorem run_events_compose (state : State) (left right : List Event) :
+    runEvents state (left ++ right) = runEvents (runEvents state left) right := by
+  induction left generalizing state with
+  | nil => rfl
+  | cons event rest ih => simp [runEvents, ih]
+
+theorem written_back_event_is_rejected (state : State) (event : Event)
+    (terminal : state.stage = .writtenBack) :
+    accepted (routeFor state event) = false := by
+  simp only [routeFor, terminal, expectedKind]
+  repeat' first | split
+  all_goals rfl
+
+theorem written_back_state_is_absorbing (state : State) (events : List Event)
+    (terminal : state.stage = .writtenBack) :
+    runEvents state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      have rejected := written_back_event_is_rejected state event terminal
+      simp [runEvents, applyEvent, rejected, ih state terminal]
 
 def canonicalPacket : Packet :=
   { claimId := 41

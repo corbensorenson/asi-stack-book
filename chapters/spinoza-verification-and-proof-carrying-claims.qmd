@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-08-02"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -29,7 +29,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "All eighteen assigned sources are inspected and mapped at their actual boundaries: six local raw caches are passage-reviewed, `coherence_exchange` remains source-note/connector bounded, five historical projects have public-safe pinned notes, and six external comparators are source-note or full-paper-note lineage rather than local evaluation evidence."
   - "Current executable evidence remains authored and zero-model: the exact 3-valid/5-invalid proof-carrying and 2-valid/7-invalid adversarial-dossier suites feed a six-stage target-to-writeback refinement with twenty-three routes and 36/36 rejecting mutations. The Tribunal refinement consumes the exact 3-valid/5-invalid review suite plus one-valid/eleven-invalid method/independence suite, reaches seven stages across twenty-eight routes, and rejects 45/45 lifecycle mutations; a related 3/6 epistemic-TCB fixture remains owned by Artifact Graphs. No natural target corpus, theorem/citation-validity campaign, semantic-equivalence evaluator, model judge, debate, multi-model tribunal, competence audit, useful advantage, reproduction, or transfer is represented."
-  - "Three public targets resolve to `AsiStackProofs.ProofCarryingClaimsRefinement`, whose eleven declarations prove exact target custody, zero support/external effects, exact receipt accounting, typed countermodels, and a full witness. Two Tribunal targets resolve to `AsiStackProofs.TribunalRefinement`, whose twelve declarations cover a reachable versioned-verdict and appeal lifecycle without support or effect authority. Four weak Proof-Carrying Claims and ten weak Tribunal baseline declarations are physically retired; four small Proof-Carrying Claims lemmas and three Tribunal countermodels remain bounded. None proves target meaning, artifact truth, verifier soundness, reviewer competence or independence in fact, verdict correctness, usefulness, safety, or transfer."
+  - "Three public targets resolve to `AsiStackProofs.ProofCarryingClaimsRefinement`, whose eighteen declarations prove exact arbitrary-run target and artifact custody, rejection noninterference, zero support/external effects, batch composition, terminal absorption, typed countermodels, and a full witness. Two Tribunal targets resolve to `AsiStackProofs.TribunalRefinement`, whose twelve declarations cover a reachable versioned-verdict and appeal lifecycle without support or effect authority but still lack arbitrary-run and terminal-state results. Four weak Proof-Carrying Claims and ten weak Tribunal baseline declarations are physically retired; four small Proof-Carrying Claims lemmas and three Tribunal countermodels remain bounded. None proves target meaning, artifact truth, verifier soundness, reviewer competence or independence in fact, verdict correctness, usefulness, safety, or transfer."
   - "No core support transition is authorized."
 ---
 
@@ -632,8 +632,8 @@ The current minimum is an authored record-and-route scaffold:
 - a related three-valid/six-rejecting epistemic trusted-computing-base fixture
   owned by Artifact Graphs; and
 - a six-stage `AsiStackProofs.ProofCarryingClaimsRefinement` lifecycle with
-  twenty-three routes, eleven declarations, and an independent consumer that
-  rejects 36/36 mutations;
+  twenty-three routes, eighteen declarations, and an independent consumer that
+  recompiles the exact surface and rejects 36/36 mutations;
 - four retained small legacy artifact-reference and negative-result lemmas,
   with four weak baseline projections physically retired; and
 - a seven-stage `AsiStackProofs.TribunalRefinement` versioned request,
@@ -655,9 +655,10 @@ root, delegation, recursion stop, independence, compromise, and residual
 evidence that the broader trust claim would need.
 
 The proof-carrying refinement proves exact represented target custody, zero
-support and external-effect authority, exact accepted-step receipt accounting,
-negative and mismatch routing, dossier/dissent/residual requirements, and a
-full reachable witness. The Tribunal refinement proves exact represented case,
+support and external-effect authority over arbitrary finite event lists,
+rejection noninterference, exact batch composition, absorbing writeback,
+accepted-step receipt accounting, negative and mismatch routing,
+dossier/dissent/residual requirements, and a full reachable witness. The Tribunal refinement proves exact represented case,
 evidence, verdict, acknowledgment, and appeal custody across a reachable
 authored lifecycle, but not competence, independence in fact, or correctness.
 The retained legacy declarations remain finite countermodels or small record
@@ -736,7 +737,7 @@ verifier tests, causal ablations, reproduction, and transfer pass.
 | Proof-carrying claim fixture validation | Check that the proof-carrying claim fixture records claim scope, tier, justification type, interpretation mapping/confidence, artifact ref, verifier, result field, verifier artifacts, failed attempts, formal scope, limitations, downgrade rule, tribunal ref, ledger update, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Proof artifact presence predicate | Check that modeled formal or verified claims carry an appropriate artifact reference, and that passed verifier records carry verifier artifact refs. | implemented in `AsiStackProofs.ProofCarryingClaims`; builds locally |
 | Failed verification route predicate | Check that failed, timed-out, or mismatched verifier results produce non-promotional effects. | implemented in `AsiStackProofs.ProofCarryingClaims`; builds locally |
-| Proof-Carrying Claims target-to-writeback refinement | Check exact target, interpretation, artifact, verifier, trusted-base, attempt, dossier, dissent, limitation, residual, and owner custody while separating verifier pass, semantic review, bounded proposal, support assignment, and external effects. | implemented by `python3 scripts/validate_proof_carrying_claims_refinement.py`: exact 3/5 proof and 2/7 dossier suites, six stages, twenty-three routes, and 36/36 rejected mutations; support-state effect `none` |
+| Proof-Carrying Claims target-to-writeback refinement | Check exact target, interpretation, artifact, verifier, trusted-base, attempt, dossier, dissent, limitation, residual, and owner custody while separating verifier pass, semantic review, bounded proposal, support assignment, and external effects. | implemented by `python3 scripts/validate_proof_carrying_claims_refinement.py`: exact eighteen-theorem surface, arbitrary-run custody and non-authority, rejection noninterference, batch composition, absorbing writeback, exact 3/5 proof and 2/7 dossier suites, six stages, twenty-three routes, and 36/36 rejected mutations; support-state effect `none` |
 | Tribunal review fixture validation | Check that the tribunal fixture records target, risk class, dossier, reviewer roles, probes, findings, evidence refs, dissent, unresolved issues, verdict, required actions, and human adjudication. | implemented by protocol validation; validated locally |
 | High-risk accepted-verdict negative case | Check that a finite high-risk accepted verdict without adversarial probes or reviewer-independence records rejects the probe-discipline predicate. | implemented in `AsiStackProofs.Tribunal.high_risk_accepted_verdict_without_probes_or_independence_rejected`; no reviewer-independence or probe-quality claim |
 | Prior-review reuse negative case | Check that finite accepted reuse of prior review over unchanged evidence rejects the guard predicate when the unchanged-evidence guard is absent. | implemented in `AsiStackProofs.Tribunal.accepted_prior_review_reuse_without_unchanged_evidence_guard_rejected`; no prior-review adequacy or semantic-equivalence claim |
@@ -756,19 +757,21 @@ deployed review systems.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaimsRefinement` | A target-specific verification lifecycle preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody while preventing direct support assignment or external effects. | implemented |
+| `lean:spinoza.proof_carrying.operational_invariant` | `AsiStackProofs.ProofCarryingClaimsRefinement` | Every finite target-specific verification run preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base custody; rejected events preserve exact state, batches compose, owner writeback is absorbing, and support or external effects remain unassigned. | implemented |
 | `lean:spinoza.proof_carrying.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingClaimsRefinement` | Passed results require artifacts and semantic review; negative results cannot request scoped promotion; mismatch requires tribunal; high-risk adjudication requires an independent dossier. | implemented |
 | `lean:tribunal.review.operational_invariant` | `AsiStackProofs.TribunalRefinement` | A versioned request, dossier, panel, verdict, acknowledgment, and appeal lifecycle preserves exact case and evidence custody, dissent, action, residual, and appeal obligations while preventing support assignment and external effects. | implemented |
 | `lean:tribunal.review.failure_blocks_promotion` | `AsiStackProofs.TribunalRefinement` | Missing high-risk probes, panel or independence records, falsification, preserved dissent, actions, constraints, residuals, appeal, owner handoff, or consumer acknowledgment; changed-evidence reuse; default approval; replay; substitution; and authority leakage all block lifecycle progress. | implemented |
-| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaimsRefinement` | An independent consumer covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support. | implemented |
+| `lean:spinoza.adversarial_review.dossier_probe_bridge` | `AsiStackProofs.ProofCarryingClaimsRefinement` | An independent consumer recompiles the exact eighteen-theorem surface, covers twenty-three lifecycle routes, consumes the exact 3/5 proof-carrying and 2/7 adversarial-dossier suites, and rejects 36 mutations without assigning support. | implemented |
 
-The family now contains 30 live declarations across four modules: eleven
+The family now contains 37 live declarations across four modules: eighteen
 Proof-Carrying Claims refinement declarations, four retained small legacy
 lemmas, twelve Tribunal refinement declarations, and three retained Tribunal
 countermodels. Four Proof-Carrying Claims and ten Tribunal assumption-
 restating, broad-summary, or literal-route declarations are absent from the
-live corpus with frozen rationalization lineage. The reachable models establish
-authored lifecycle custody and rejection behavior only. The five public targets
+live corpus with frozen rationalization lineage. The Proof-Carrying Claims
+subfamily now establishes arbitrary-run authored lifecycle custody, rejection
+noninterference, composition, and terminal closure; the Tribunal subfamily
+still has one-step custody and reachable witnesses only. All five public targets
 remain narrower than the chapter core claim and do not convert fields, route
 order, panel labels, or a bounded verdict into competence, correctness,
 semantic evidence, empirical evidence, support, or effect authority.

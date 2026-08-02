@@ -2,9 +2,22 @@
   "schema_version": "asi_stack.proof_carrying_claims_refinement.v1",
   "result_id": "proof-carrying-claims-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "950c96096b0b671a248cc69d8e603c6da368eb5d608d5fb6ae1e3ae0c794adbb",
+    "lean_model": "b288296f835f642d08928e7943baf5aff2c0694ce8fc740768feaadd5736780d",
     "proof_claim_schema": "b1e0f9fa1316e05b188c09010647156cf625c7f63a36179d28dd792d7e2b7d71",
     "adversarial_dossier_result": "1d4eda5fd089ea17750010e169c52d01da09173d38913fb48339a25c0027798a"
+  },
+  "formal_surface": {
+    "theorem_count": 18,
+    "lean_module": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/ProofCarryingClaimsRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {

@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -35,6 +36,26 @@ NEXT_STAGE = {
 EXPECTED_KIND = {
     "idle": "freeze_target", "frozen": "bind_artifact", "artifact_bound": "execute_verifier",
     "executed": "adjudicate", "adjudicated": "write_back", "written_back": "write_back",
+}
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_target_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "accepted_event_advances_and_records_receipt",
+    "rejected_event_preserves_exact_state",
+    "run_events_preserve_exact_identity",
+    "run_events_cannot_assign_support_or_external_effect",
+    "run_events_compose",
+    "written_back_event_is_rejected",
+    "written_back_state_is_absorbing",
+    "passed_execution_without_artifact_refs_is_rejected",
+    "negative_execution_without_attempt_history_is_rejected",
+    "negative_result_scoped_proposal_is_blocked",
+    "mismatch_requires_tribunal_effect",
+    "unverified_pass_is_blocked_before_adjudication",
+    "high_risk_without_independent_dossier_is_rejected",
+    "support_assignment_request_is_authority_leak",
+    "full_verification_lifecycle_reaches_owner_writeback",
 }
 
 
@@ -291,6 +312,39 @@ def run_validator(script: str) -> None:
         raise AssertionError(f"{script} failed: {completed.stdout}{completed.stderr}")
 
 
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise AssertionError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/ProofCarryingClaimsRefinement.lean"]
+    completed = subprocess.run(
+        command, cwd=ROOT / "lean", capture_output=True, text=True
+    )
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_identity_custody": True,
+        "arbitrary_run_no_support_or_external_effect": True,
+        "exact_run_composition": True,
+        "terminal_state_absorbing": True,
+    }
+
+
 def build_result() -> dict[str, Any]:
     run_validator("validate_proof_carrying_claims.py")
     run_validator("validate_adversarial_review_dossier_probe.py")
@@ -323,6 +377,7 @@ def build_result() -> dict[str, Any]:
             "lean_model": sha256(LEAN), "proof_claim_schema": sha256(PROOF_SCHEMA),
             "adversarial_dossier_result": sha256(DOSSIER_RESULT),
         },
+        "formal_surface": formal_surface(),
         "input_suites": [
             {"suite_id": "proof_carrying_claims", "valid_count": proof_valid,
              "expected_invalid_count": proof_invalid, "suite_passed": True,
@@ -366,7 +421,8 @@ def main() -> None:
         raise SystemExit(f"{RESULT.relative_to(ROOT)} is missing or stale; rerun with --write")
     print(
         "Proof-Carrying Claims refinement passed: 3/5 proof fixtures, 2/7 dossier cases, "
-        f"23 routes, 6 stages, {result['mutation_rejection_count']} mutations rejected, support effect none."
+        f"23 routes, 6 stages, {result['mutation_rejection_count']} mutations rejected, "
+        f"{result['formal_surface']['theorem_count']} Lean theorems, support effect none."
     )
 
 

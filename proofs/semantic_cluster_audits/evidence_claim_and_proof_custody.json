@@ -90,8 +90,8 @@
       "path": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 3,
-      "theorem_declaration_count": 11,
-      "plain_language_proposition": "A frozen claim target can move through artifact binding, verifier execution, bounded adjudication, and owner writeback only with exact target, interpretation, artifact, verifier, trusted-base, attempt-history, semantic-review, dossier, dissent, limitation, residual, and authority custody; accepted steps preserve identity, add one receipt, and cannot assign support or an external effect.",
+      "theorem_declaration_count": 18,
+      "plain_language_proposition": "Every finite run over a frozen claim target preserves exact claim, interpretation, scope, assumption, artifact, verifier, and trusted-base identity while moving through artifact binding, verifier execution, bounded adjudication, and owner writeback; rejection is state-noninterfering, batches compose, writeback absorbs every suffix, and support or external effects remain unassigned.",
       "modeled_state": "Six stages, twenty-three routes, exact target and artifact bindings, verifier result distinct from semantic adequacy, risk and tribunal requirements, attempt history, dissent, limitations, residuals, owner handoff, receipt count, support-assignment count, and external-effect count.",
       "assumptions": [
         "Identifiers, digests, artifact presence, verifier result, semantic review, trusted base, dossier quality, and owner receipt are truthful inputs.",
@@ -108,8 +108,8 @@
         "experiments/proof_carrying_claims_refinement/results/2026-07-15-local.json",
         "schemas/proof_carrying_claims_refinement.schema.json"
       ],
-      "mutation_evidence": "The independent consumer covers all 23 routes, consumes 3/5 proof fixtures and 2/7 adversarial-dossier cases, and rejects 36 target, interpretation, artifact, verifier, result, dossier, dissent, limitation, residual, writeback, support, and effect mutations.",
-      "maximum_inference": "Adequate for the represented target-specific verification lifecycle, binding custody, negative-result handling, receipt accounting, and authority separation. It does not establish target interpretation, artifact or source truth, proof or verifier soundness, reviewer competence or independence, verdict quality, claim truth, useful outcomes, safety, transfer, or chapter-core support."
+      "mutation_evidence": "The independent consumer recompiles the exact eighteen-theorem surface, covers all 23 routes, consumes 3/5 proof fixtures and 2/7 adversarial-dossier cases, and rejects 36 target, interpretation, artifact, verifier, result, dossier, dissent, limitation, residual, writeback, support, and effect mutations.",
+      "maximum_inference": "Adequate for the represented target-specific finite verification lifecycle, arbitrary-run binding custody, rejection noninterference, composition, terminal closure, negative-result handling, receipt accounting, and authority separation. It does not establish target interpretation, artifact or source truth, proof or verifier soundness, reviewer competence or independence, verdict quality, claim truth, useful outcomes, safety, transfer, or chapter-core support."
     },
     {
       "module": "AsiStackProofs.ProofEnvelope",

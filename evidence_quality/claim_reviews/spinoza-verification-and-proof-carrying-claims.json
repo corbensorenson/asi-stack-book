@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 49,
+    "prose_candidates_adjudicated": 50,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Proof-Carrying Claims formal refinement. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Natural and formal high-value claims and high-risk artifacts submitted for source inspection, citation review, formal proof or countermodel, executable procedure, replay, benchmark, adversarial review, model judging, accountable-human adjudication, appeal, abstention, downgrade, or block, including every attempt, failure, dissent, action, cost, outcome, and residual.",
-      "environment": "Eighteen inspected assigned sources; 3 valid/5 rejecting authored proof-carrying fixtures; 3 valid/5 rejecting tribunal fixtures; 2 valid/7 rejecting authored dossier cases; one bounded five-project method/independence record and eleven rejecting mutations; a related 3 valid/6 rejecting epistemic-TCB fixture owned by Artifact Graphs; twenty-one finite Lean declarations; and a future frozen natural cross-domain, multi-model, multi-evaluator campaign. No natural verifier-quality or tribunal-quality result is represented.",
+      "environment": "Eighteen inspected assigned sources; 3 valid/5 rejecting authored proof-carrying fixtures; 3 valid/5 rejecting tribunal fixtures; 2 valid/7 rejecting authored dossier cases; one bounded five-project method/independence record and eleven rejecting mutations; a related 3 valid/6 rejecting epistemic-TCB fixture owned by Artifact Graphs; thirty-seven live finite Lean declarations across the proof-carrying and Tribunal family, including an exact eighteen-theorem Proof-Carrying Claims refinement surface; and a future frozen natural cross-domain, multi-model, multi-evaluator campaign. No natural verifier-quality or tribunal-quality result is represented.",
       "model": "A prospective route-and-verdict contract over frozen targets, eligible modes, interpretation mappings, artifacts, trusted verifier roots, complete attempts, dossiers, reviewer dependence, adversarial probes, stop rules, ignorance, dissent, appeal, verdicts, constraints, expiry, writeback requests, costs, outcomes, and residuals; current implementations are schemas, authored validators, and finite predicates/routes rather than a deployed verification operating system.",
       "authority": "Claim Ledgers owns identity/history; Verification Bandwidth owns obligation adequacy; mode-specific formal, source, procedure, replay, benchmark, and empirical evaluators own exact validity; Artifact Graphs owns lineage and receipt faithfulness; Scalable Oversight and accountable humans own competence, appeal, adjudication, and legitimacy; Evidence States owns support; execution owns action; Security, Privacy, Rights, and Licensing own access and use; Resource Economics owns cost; Readiness and Publication own release. This layer owns route execution and bounded verdict custody only and grants no support, action, disclosure, training, or release authority.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; three public schemas; proof-carrying, tribunal, adversarial-dossier, historical method/independence, and related epistemic-TCB fixtures; twenty-one declarations across lean/AsiStackProofs/ProofCarryingClaims.lean and lean/AsiStackProofs/Tribunal.lean; future natural target corpus, mappings, proof/source/procedure/replay/benchmark outputs, dossiers, dependence graphs, independent labels, action and appeal traces, delayed outcomes, reproduction locks, and transfer artifacts."
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "artifact": "Chapter and manifest contract; eighteen bounded source mappings; three public schemas; proof-carrying, tribunal, adversarial-dossier, historical method/independence, and related epistemic-TCB fixtures; thirty-seven live declarations across ProofCarryingClaims, ProofCarryingClaimsRefinement, Tribunal, and TribunalRefinement, including the exact eighteen-theorem refinement surface and its independent recompiling consumer; future natural target corpus, mappings, proof/source/procedure/replay/benchmark outputs, dossiers, dependence graphs, independent labels, action and appeal traces, delayed outcomes, reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_route_multi_model_multi_evaluator_campaign",
     "assumptions": [
@@ -87,12 +87,15 @@
       "method_fixture": "tests/fixtures/protocol_records/tribunal_method_independence_record.valid.json",
       "tcb_result": "experiments/epistemic_tcb/results/2026-07-03-local.json",
       "proof_lean": "lean/AsiStackProofs/ProofCarryingClaims.lean",
-      "tribunal_lean": "lean/AsiStackProofs/Tribunal.lean"
+      "proof_refinement_lean": "lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean",
+      "proof_refinement_result": "experiments/proof_carrying_claims_refinement/results/2026-07-15-local.json",
+      "tribunal_lean": "lean/AsiStackProofs/Tribunal.lean",
+      "tribunal_refinement_lean": "lean/AsiStackProofs/TribunalRefinement.lean"
     },
     "contrary_evidence": [
       "Proof assistants, PCC-style consumer checking, source and citation review, executable tests, replay systems, benchmark harnesses, debate, model judging, human adjudication, contestability practices, and ordinary release gates already cover important parts without one combined operating layer.",
       "The current fixtures are entirely authored and zero-model: 3/5 proof-carrying, 3/5 tribunal, 2/7 dossier, 1/11 historical method/independence, and a related 3/6 epistemic-TCB record family.",
-      "The twenty-one Lean declarations consist of twelve predicate-projection or blocking consequences, eight finite route branches, and one assumption-restating authored-summary bridge; they do not establish semantic or empirical adequacy.",
+      "The thirty-seven live Lean declarations include an eighteen-theorem Proof-Carrying Claims refinement surface with arbitrary-run custody, nonauthority, composition, and terminal absorption, but they still do not establish semantic or empirical adequacy.",
       "A kernel-valid theorem can target the wrong proposition; an accurate citation can fail to entail the claim; a replay can reproduce a flawed procedure; a benchmark can reward a proxy; a complete tribunal can be consistently wrong.",
       "Debate depends on refutation being easier than deception, trustworthy reveals, judge competence, practical equilibrium, and faithful decomposition; the source's narrow MNIST evidence is not reproduced or transferable here.",
       "Model judges exhibit position, verbosity, self-enhancement, and reasoning biases, while human reviewers and institutions can share incentives, blind spots, or insufficient redress authority.",
@@ -140,7 +143,7 @@
     },
     "non_claims": [
       "A schema-valid record, proof term, citation, replay, benchmark, reviewer label, majority verdict, independence-group count, green route theorem, or complete dossier does not establish target meaning, truth, adequacy, competence, usefulness, safety, support, authority, redress, or release.",
-      "The current authored fixtures and twenty-one declarations establish only their exact finite record, route, negative-control, and no-promotion boundaries.",
+      "The current authored fixtures and thirty-seven live declarations establish only their exact finite record, route, arbitrary-run custody, composition, terminal-state, negative-control, and no-promotion boundaries.",
       "No claim identity, adequacy, formal validity, source truth, empirical result, reviewer competence, support, action, rights, release, publication, AGI, or ASI state changes through this semantic review."
     ]
   },
@@ -282,19 +285,19 @@
       ]
     },
     "spinoza-verification-and-proof-carrying-claims.formal.spinoza-proof-carrying-operational-invariant": {
-      "current_disposition": "retain_as_assumption_projection_not_substantive_proof",
-      "strongest_counterclaim": "The theorem provides meaningful proof that formal tiers carry justification.",
-      "falsifier": "The predicate's trusted premise or Boolean artifact reference is presented as artifact validity, target fidelity, or runtime enforcement.",
+      "current_disposition": "retain_as_adequate_finite_record_invariant_not_semantic_proof",
+      "strongest_counterclaim": "Arbitrary-run identity custody over an authored state machine still says nothing about whether the target, artifact, or verifier is correct.",
+      "falsifier": "Any accepted finite run changes represented claim, interpretation, scope, assumption, artifact, verifier, or trusted-base identity, or assigns support or an external effect.",
       "acceptance_criteria": [
-        "Replace or supplement with typed artifact identities, checker semantics, countermodels, and implementation refinement before substantive classification."
+        "Keep the exact eighteen-theorem surface recompiling and preserve arbitrary-run identity, nonauthority, composition, rejection noninterference, and terminal absorption under every modeled route."
       ]
     },
     "spinoza-verification-and-proof-carrying-claims.formal.spinoza-proof-carrying-failure-blocks-promotion": {
-      "current_disposition": "retain_as_assumption_projection_not_effect_enforcement",
-      "strongest_counterclaim": "The theorem proves failed verification blocks promotion.",
-      "falsifier": "No runtime or ledger implementation is connected, or a failed real route still creates an upward effect.",
+      "current_disposition": "retain_as_adequate_finite_route_rejection_invariant_not_deployed_enforcement",
+      "strongest_counterclaim": "Finite rejecting routes do not prove a deployed verifier or ledger will enforce the same boundary.",
+      "falsifier": "A modeled unverified pass, negative promotion, mismatch without tribunal, missing independent dossier, or authority leak advances the lifecycle.",
       "acceptance_criteria": [
-        "Prove refinement to an executable owner-gated transition system and test observed effects under faults and retries."
+        "Retain exact countermodels and rejection noninterference, then separately connect the model to an executable owner-gated transition system before any deployed claim."
       ]
     },
     "spinoza-verification-and-proof-carrying-claims.formal.tribunal-review-operational-invariant": {
@@ -314,11 +317,11 @@
       ]
     },
     "spinoza-verification-and-proof-carrying-claims.formal.spinoza-adversarial-review-dossier-probe-bridge": {
-      "current_disposition": "retain_as_assumption_restating_authored_summary_bridge",
-      "strongest_counterclaim": "The bridge formalizes the dossier probe's substantive success.",
-      "falsifier": "Any conjunct is merely asserted, mismatches the JSON artifact, or is narrated as semantic equivalence, judge quality, verdict correctness, or support evidence.",
+      "current_disposition": "retain_as_adequate_independent_finite_consumer_bridge_not_review_quality_evidence",
+      "strongest_counterclaim": "An independently implemented consumer over synthetic suites still does not measure reviewer or verdict quality.",
+      "falsifier": "The consumer stops recompiling the exact theorem surface, accepts a named mutation, drifts from either bounded fixture suite, or is narrated as semantic equivalence, judge quality, verdict correctness, or support evidence.",
       "acceptance_criteria": [
-        "Bind generated data to typed semantics and prove artifact correspondence before classifying above an authored-summary bridge."
+        "Keep theorem names, fixture denominators, routes, mutation rejection, result schema, and no-support boundary exact; require natural calibrated review evidence for every stronger inference."
       ]
     }
   },
@@ -532,6 +535,11 @@
     "spinoza-verification-and-proof-carrying-claims.prose.b712161e1927": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `What a bounded verification loop converges to` and reviewed owner atoms `spinoza-verification-and-proof-carrying-claims.beyond_sota.001`, `spinoza-verification-and-proof-carrying-claims.invariant.017`, `spinoza-verification-and-proof-carrying-claims.minimum.001`."
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.25d0d4a36377": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the reviewed finite authored-lifecycle custody and nonauthority boundary.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.core"
     },
     "spinoza-verification-and-proof-carrying-claims.prose.c3732d529d42": {
       "state": "nonmaterial_explanation",

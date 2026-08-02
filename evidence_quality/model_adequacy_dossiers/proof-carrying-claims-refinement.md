@@ -15,16 +15,19 @@
 
 The model owns one target-specific verification event from prospective freeze
 through artifact binding, verifier execution, bounded adjudication, and owner
-writeback. It preserves exact target and interpretation identity; binds the
-artifact, verifier version, and trusted base; separates verifier result from
-artifact and semantic adequacy; preserves negative attempts and dissent; and
-turns the final effect into a handoff rather than direct support assignment.
+writeback. Every finite event list preserves exact claim, target,
+interpretation, scope, assumption, artifact, verifier, and trusted-base
+identity and leaves support and external-effect counts unchanged. Rejected
+events preserve exact state, event batches compose, and written-back states
+absorb every suffix. The model separates verifier result from artifact and
+semantic adequacy, preserves negative attempts and dissent, and turns the
+final effect into a handoff rather than direct support assignment.
 
 ## Consequences, countermodels, and consumer
 
-General consequences preserve target identity and prevent changes to support-
-assignment or external-effect counts across every accepted step. Each accepted
-step adds exactly one receipt. Countermodels reject target, artifact, verifier,
+Eighteen declarations prove one-step and arbitrary-run identity and
+non-authority consequences, accepted receipt-bearing advance, rejection
+noninterference, exact batch composition, and terminal absorption. Countermodels reject target, artifact, verifier,
 result, and writeback substitution; missing interpretation, scope, assumptions,
 artifact, trusted base, execution receipt, passed-verifier refs, negative
 attempt history, semantic review, independent dossier, dissent, limitations,
@@ -32,9 +35,9 @@ residual, and owner handoff; negative promotion; mismatch without tribunal; and
 support or external-effect authority leakage. A five-event witness reaches
 owner writeback with zero assigned support and zero external effects.
 
-The independent consumer covers all twenty-three routes, consumes the exact
-3/5 proof-carrying fixtures and 2/7 adversarial-dossier cases, and rejects 36
-mutations across those boundaries.
+The independent consumer recompiles the exact theorem surface, covers all
+twenty-three routes, consumes the exact 3/5 proof-carrying fixtures and 2/7
+adversarial-dossier cases, and rejects 36 mutations across those boundaries.
 
 ## Assumptions, exclusions, and adequacy verdict
 
