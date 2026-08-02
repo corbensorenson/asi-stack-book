@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
     "structured_atoms_reviewed": 77,
-    "prose_candidates_adjudicated": 67,
+    "prose_candidates_adjudicated": 68,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Hive lifecycle proof refinement. The new theorem-summary sentence maps to the existing work-admission lifecycle target, and the revised exclusion sentence remains a bounded non-claim. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Natural and adversarial jobs proposed for execution across separately governed personal, family, project, owned, and isolated external portals, workers, stores, authority services, runtimes, tools, datasets, evaluators, and providers.",
-      "environment": "Twenty-three exact reviewed source mappings; seven public schemas; two valid and eight invalid hive-admission records; three valid and six invalid partitioned-authority records; one accepted no-change transition; and twenty-six finite Lean declarations. No live hive implementation is represented.",
+      "environment": "Twenty-six exact reviewed source mappings; seven public schemas; two valid and eight invalid hive-admission records; three valid and six invalid partitioned-authority records; one accepted no-change transition; fifty-two live Lean declarations; and an independently consumed thirty-one-theorem lifecycle refinement with seven trace splits, forty-seven routes, and 144/144 rejected mutations. No live hive implementation is represented.",
       "model": "An exact consumer-specific placement relation over versioned principals, jobs, uses, data and tool classes, effects, rights, budgets, node attestations, context and execution leases, approvals, policy-first eligibility, bids, least-authority selection, runtime enforcement, partition handling, receipts, recovery, descendant invalidation, reputation, and terminal residual custody.",
       "authority": "The hive owns consumer-specific admission and placement only. Intent, context, routing/readiness, security/privacy/rights/legal/constitutional, runtime/tools/effects, humans/labor/family/tribunal, resources, artifact/evidence/claims, procedural/data/learning, inter-stack/federation, project/provider, and release/deployment owners retain their boundaries.",
       "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest contract; twenty-three source mappings; seven schemas; hive-admission and partitioned-authority harnesses; one no-change transition; twenty-six declarations in lean/AsiStackProofs/PersonalComputeHives.lean; and the future governed reference slice and causal transfer campaign."
+      "artifact": "Chapter and manifest contract; twenty-six source mappings; seven schemas; hive-admission and partitioned-authority harnesses; one no-change transition; thirty-one declarations in lean/AsiStackProofs/HiveLifecycleRefinement.lean plus twenty-one retained legacy consequences; the independent lifecycle consumer and receipt; and the future governed reference slice and causal transfer campaign."
     },
     "current_disposition": "retain_argument_with_exact_record_route_and_partition_boundaries_pending_live_governed_hive_campaign",
     "assumptions": [
@@ -86,14 +86,14 @@
       "partition_validator": "scripts/validate_partitioned_authority_fixture.py",
       "partition_result": "experiments/partitioned_authority/results/2026-07-03-local.json",
       "transition": "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
-      "lean": "lean/AsiStackProofs/PersonalComputeHives.lean",
+      "lean": "lean/AsiStackProofs/HiveLifecycleRefinement.lean",
       "manifest": "book_structure.json"
     },
     "contrary_evidence": [
       "Cloud services, manual placement, single-device applications, Kubernetes, Nomad, Ray, BOINC, and self-hosted runners already solve important subsets of connectivity, scheduling, execution, and operations.",
       "The two local harnesses are authored synthetic record checks; no live scheduler, registry, portal, authority service, network overlay, sandbox, federation, partition experiment, or recovery path ran.",
       "The partition fixture checks three accepted records and six mutations but does not execute a distributed authority service, consensus protocol, availability test, or revocation propagation.",
-      "The twenty-six Lean declarations comprise four direct checks, twenty-one finite consequences, and one authored-summary bridge; they do not establish model adequacy, independent replay, or runtime truth.",
+      "The fifty-two live Lean declarations include a thirty-one-theorem reachable lifecycle and twenty-one retained consequences; they establish only finite authored-record custody, route, accounting, composition, terminal, and non-authority properties, not authentic field truth, distributed execution, or runtime enforcement.",
       "A conservative policy can appear safe by refusing useful work while shifting effort, delay, cost, and responsibility to humans or cloud fallback.",
       "Personal and family telemetry, approval, and reputation surfaces can create surveillance, coercion, fatigue, and unequal control even when records are complete.",
       "No current result independently reproduces or transfers a useful, safe, private, available, efficient, or secure hive benefit."
@@ -127,8 +127,8 @@
     ],
     "promotion_ceiling": "argument_until_live_governed_reference_slice_natural_causal_campaign_independent_reproduction_and_transfer",
     "reproduction": {
-      "command": "python3 scripts/validate_hive_admission.py && python3 scripts/validate_partitioned_authority_fixture.py && cd lean && lake build AsiStackProofs.PersonalComputeHives",
-      "environment_lock": "Repository finite fixtures and proof envelope current through 2026-07-14; live multi-node campaign not yet frozen.",
+      "command": "python3 scripts/validate_hive_lifecycle_refinement.py && cd lean && lake build",
+      "environment_lock": "Repository finite fixtures and proof envelope current through 2026-08-02; live multi-node campaign not yet frozen.",
       "artifact_digest": null,
       "evaluator_identity": "Current harness evaluators are local deterministic implementations; independent placement, authority, runtime, security, privacy, and outcome evaluators are required for promotion."
     },
@@ -419,7 +419,12 @@
       "rationale": "Adjudicated as explanatory prose already owned by the cited structured chapter atom; no additional load-bearing claim is required.",
       "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.core"
     },
-    "personal-compute-hives-and-federated-edge-intelligence.prose.6c1f4eca77ba": {
+    "personal-compute-hives-and-federated-edge-intelligence.prose.495a412f4e06": {
+      "state": "duplicate_of_atom",
+      "rationale": "The finite lifecycle theorem summary is owned by the reviewed work-admission lifecycle target and creates no broader support-bearing claim.",
+      "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.formal.personal-hives-work-admission-lifecycle-route"
+    },
+    "personal-compute-hives-and-federated-edge-intelligence.prose.d3051daa343d": {
       "state": "historical_or_source_report",
       "rationale": "Revised bounded non-claim report; it does not create an independent promoted atom."
     },
@@ -503,9 +508,23 @@
       },
       "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose. Listed replacements preserve the nearest current semantic role, not textual identity.",
       "replacement_candidate_ids": [
-        "personal-compute-hives-and-federated-edge-intelligence.prose.6c1f4eca77ba"
+        "personal-compute-hives-and-federated-edge-intelligence.prose.d3051daa343d"
       ],
       "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "personal-compute-hives-and-federated-edge-intelligence.prose.6c1f4eca77ba",
+      "retired_source": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:548",
+      "retired_sentence": "These surfaces do not prove model adequacy or a distributed scheduler, network boundary, rented-node sandbox, family-governance policy, privacy guarantee, approval service, partition tolerance, energy-aware scheduling, dropout recovery, audit replay, revocation propagation, effect-complete rollback, useful work, transfer, or live federation behavior.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Revised bounded non-claim report; it does not create an independent promoted atom."
+      },
+      "retirement_reason": "The Hive formalization paragraph was strengthened with exact theorem and consumer results while preserving the same non-claim boundary.",
+      "replacement_candidate_ids": [
+        "personal-compute-hives-and-federated-edge-intelligence.prose.d3051daa343d"
+      ],
+      "recorded_on": "2026-08-02"
     }
   ],
   "non_claims": [

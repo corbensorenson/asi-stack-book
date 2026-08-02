@@ -1,13 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hive Lifecycle Refinement Result",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schema_version",
     "result_id",
     "source_sha256",
+    "lean_theorem_count",
+    "lean_theorem_surface",
     "input_suites",
     "reachable_stage_count",
+    "trace_event_count",
+    "trace_composition_split_count",
+    "identity_field_count",
+    "identity_preservation_check_count",
+    "non_authority_preservation_check_count",
+    "terminal_rejection_count",
     "route_case_count",
     "route_coverage",
     "mutation_count",
@@ -19,57 +28,53 @@
     "non_claims"
   ],
   "properties": {
-    "schema_version": {
-      "const": "asi_stack.hive_lifecycle_refinement.v1"
-    },
-    "result_id": {
-      "const": "hive-lifecycle-refinement-2026-07-15-local"
-    },
+    "schema_version": {"const": "asi_stack.hive_lifecycle_refinement.v2"},
+    "result_id": {"const": "hive-lifecycle-refinement-2026-07-15-local"},
     "source_sha256": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lean_model"],
+      "properties": {"lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
     },
-    "input_suites": {
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2
-    },
-    "reachable_stage_count": {
-      "const": 7
-    },
-    "route_case_count": {
-      "const": 47
-    },
-    "route_coverage": {
-      "type": "array",
-      "minItems": 47,
-      "maxItems": 47
-    },
-    "mutation_count": {
-      "const": 53
-    },
-    "mutation_rejection_count": {
-      "const": 53
-    },
-    "mutation_receipts": {
-      "type": "array",
-      "minItems": 53,
-      "maxItems": 53
-    },
-    "command_receipts": {
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2
-    },
+    "lean_theorem_count": {"const": 31},
+    "lean_theorem_surface": {"type": "array", "minItems": 31, "maxItems": 31, "items": {"type": "string"}},
+    "input_suites": {"type": "array", "minItems": 2, "maxItems": 2},
+    "reachable_stage_count": {"const": 7},
+    "trace_event_count": {"const": 6},
+    "trace_composition_split_count": {"const": 7},
+    "identity_field_count": {"const": 13},
+    "identity_preservation_check_count": {"const": 7},
+    "non_authority_preservation_check_count": {"const": 7},
+    "terminal_rejection_count": {"const": 6},
+    "route_case_count": {"const": 47},
+    "route_coverage": {"type": "array", "minItems": 47, "maxItems": 47},
+    "mutation_count": {"const": 144},
+    "mutation_rejection_count": {"const": 144},
+    "mutation_receipts": {"type": "array", "minItems": 144, "maxItems": 144},
+    "command_receipts": {"type": "array", "minItems": 3, "maxItems": 3},
     "witness": {
-      "type": "object"
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "terminal_stage",
+        "receipt_count",
+        "dispatch_count",
+        "useful_outcome_count",
+        "recovery_count",
+        "support_assignment_count",
+        "external_effect_count"
+      ],
+      "properties": {
+        "terminal_stage": {"const": "closed"},
+        "receipt_count": {"const": 6},
+        "dispatch_count": {"const": 1},
+        "useful_outcome_count": {"const": 1},
+        "recovery_count": {"const": 1},
+        "support_assignment_count": {"const": 0},
+        "external_effect_count": {"const": 0}
+      }
     },
-    "support_state_effect": {
-      "const": "none"
-    },
-    "non_claims": {
-      "type": "array",
-      "minItems": 5
-    }
-  },
-  "title": "Hive Lifecycle Refinement Result"
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5}
+  }
 }

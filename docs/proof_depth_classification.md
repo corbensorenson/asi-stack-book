@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2515 |
+| Theorem declarations classified | 2529 |
 | Direct/projection-style theorem declarations | 424 |
-| Derived/decomposed theorem declarations | 1531 |
+| Derived/decomposed theorem declarations | 1545 |
 | Unknown or mixed theorem declarations | 560 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -105,7 +105,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 32 | 0 | 16 | 16 | manual review |
-| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 31 | 13 | 17 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty | 1 | 48 | 16 | 17 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 21 | 0 | 3 | 18 | manual review |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 32 | 1 | 11 | 20 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1063,12 +1063,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_branch_blocks_qualification` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_fixture_falls_back` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | `unsupported_rollout_no_authority` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_run_has_accepted_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_run_preserves_external_effect_count` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_run_preserves_full_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_run_preserves_support_count` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_advances_stage` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_preserves_full_identity` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `accepted_step_preserves_support_and_external_effect_counts` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_preserves_full_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `apply_event_preserves_job_node_lease_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `closed_state_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `external_access_without_lease_blocks_issue` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `full_hive_lifecycle_reaches_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `high_risk_without_bound_approval_blocks_execution` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `hive_run_append` | derived_or_decomposed | no | uses cases, have, induction, left, simp, subst |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `incomplete_candidate_denominator_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `malformed_job_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `missing_data_policy_blocks_binding` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

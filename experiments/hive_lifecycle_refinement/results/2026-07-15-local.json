@@ -1,9 +1,43 @@
 {
-  "schema_version": "asi_stack.hive_lifecycle_refinement.v1",
+  "schema_version": "asi_stack.hive_lifecycle_refinement.v2",
   "result_id": "hive-lifecycle-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "387ffc1aff8e409b4fab1d77ba104d30b496ded1f9ab48280ed4291d3a24f813"
+    "lean_model": "369f06f920fe1eedf6a5dd8b61bd639ca7ee137e000a566a1f25058d548acc2f"
   },
+  "lean_theorem_count": 31,
+  "lean_theorem_surface": [
+    "accepted_step_is_accepted",
+    "accepted_step_applies_event",
+    "apply_event_preserves_full_identity",
+    "accepted_step_preserves_full_identity",
+    "accepted_step_preserves_support_and_external_effect_counts",
+    "accepted_step_adds_exactly_one_receipt",
+    "accepted_step_advances_stage",
+    "accepted_run_preserves_full_identity",
+    "accepted_run_preserves_support_count",
+    "accepted_run_preserves_external_effect_count",
+    "accepted_run_accounts_exact_receipts",
+    "accepted_run_has_accepted_trace",
+    "hive_run_append",
+    "closed_state_accepts_no_event",
+    "apply_event_preserves_job_node_lease_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_one_receipt",
+    "malformed_job_rejected",
+    "missing_data_policy_blocks_binding",
+    "incomplete_candidate_denominator_blocks_selection",
+    "overprivileged_node_blocks_selection",
+    "external_access_without_lease_blocks_issue",
+    "missing_sandbox_blocks_lease",
+    "high_risk_without_bound_approval_blocks_execution",
+    "partitioned_stale_grant_quarantines_before_mutation",
+    "partition_without_no_mutation_evidence_blocks",
+    "missing_effect_receipt_blocks_reconciliation",
+    "missing_useful_outcome_blocks_reconciliation",
+    "missing_dropout_recovery_blocks_closure",
+    "missing_revocation_closure_blocks_closure",
+    "full_hive_lifecycle_reaches_closed_state"
+  ],
   "input_suites": [
     {
       "suite_id": "hive_admission",
@@ -17,6 +51,12 @@
     }
   ],
   "reachable_stage_count": 7,
+  "trace_event_count": 6,
+  "trace_composition_split_count": 7,
+  "identity_field_count": 13,
+  "identity_preservation_check_count": 7,
+  "non_authority_preservation_check_count": 7,
+  "terminal_rejection_count": 6,
   "route_case_count": 47,
   "route_coverage": [
     {
@@ -208,59 +248,319 @@
       "expected_route": "reject_authority_leak"
     }
   ],
-  "mutation_count": 53,
-  "mutation_rejection_count": 53,
+  "mutation_count": 144,
+  "mutation_rejection_count": 144,
   "mutation_receipts": [
     {
-      "mutation_id": "binding_authorityDigest",
+      "mutation_id": "binding_requested_jobId",
       "rejected": true
     },
     {
-      "mutation_id": "binding_candidateSetDigest",
+      "mutation_id": "binding_requested_jobVersion",
       "rejected": true
     },
     {
-      "mutation_id": "binding_consumerDigest",
+      "mutation_id": "binding_requested_principalDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_contractDigest",
+      "mutation_id": "binding_requested_contractDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_evaluatorDigest",
+      "mutation_id": "binding_requested_nodeRegistryDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_jobId",
+      "mutation_id": "binding_requested_candidateSetDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_jobVersion",
+      "mutation_id": "binding_requested_selectedNodeDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_leaseDigest",
+      "mutation_id": "binding_requested_policyDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_nodeRegistryDigest",
+      "mutation_id": "binding_requested_authorityDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_policyDigest",
+      "mutation_id": "binding_requested_leaseDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_principalDigest",
+      "mutation_id": "binding_requested_evaluatorDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_residualDigest",
+      "mutation_id": "binding_requested_consumerDigest",
       "rejected": true
     },
     {
-      "mutation_id": "binding_selectedNodeDigest",
+      "mutation_id": "binding_requested_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_policyBound_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_nodeSelected_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_leased_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_executed_residualDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_jobId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_jobVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_principalDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_contractDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_nodeRegistryDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_candidateSetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_selectedNodeDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_policyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_leaseDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_reconciled_residualDigest",
       "rejected": true
     },
     {
@@ -408,23 +708,132 @@
       "rejected": true
     },
     {
-      "mutation_id": "wrong_kind",
+      "mutation_id": "wrong_kind_requested",
       "rejected": true
     },
     {
-      "mutation_id": "replay",
+      "mutation_id": "replay_requested",
       "rejected": true
     },
     {
-      "mutation_id": "support",
+      "mutation_id": "support_requested",
       "rejected": true
     },
     {
-      "mutation_id": "effect",
+      "mutation_id": "effect_requested",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_policyBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_policyBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_policyBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_policyBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_nodeSelected",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_nodeSelected",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_nodeSelected",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_nodeSelected",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_leased",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_leased",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leased",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leased",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_executed",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind_reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "replay_reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_reconciled",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_bindPolicy",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_close",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_execute",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_issueLease",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_reconcile",
+      "rejected": true
+    },
+    {
+      "mutation_id": "post_closed_selectNode",
       "rejected": true
     }
   ],
   "command_receipts": [
+    {
+      "command": "lake env lean AsiStackProofs/HiveLifecycleRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
     {
       "command": "python3 scripts/validate_hive_admission.py",
       "exit_code": 0,

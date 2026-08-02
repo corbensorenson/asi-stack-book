@@ -140,6 +140,209 @@ def applyEvent(s:State)(e:Event):State×Route :=
     recoveryCount:=if s.stage==.reconciled then s.recoveryCount+1 else s.recoveryCount},r)
  else (s,r)
 
+structure StateIdentity where
+ jobId : Nat
+ jobVersion : Nat
+ principalDigest : Nat
+ contractDigest : Nat
+ nodeRegistryDigest : Nat
+ candidateSetDigest : Nat
+ selectedNodeDigest : Nat
+ policyDigest : Nat
+ authorityDigest : Nat
+ leaseDigest : Nat
+ evaluatorDigest : Nat
+ consumerDigest : Nat
+ residualDigest : Nat
+deriving DecidableEq, Repr
+
+def stateIdentity (s : State) : StateIdentity :=
+ { jobId := s.jobId
+   jobVersion := s.jobVersion
+   principalDigest := s.principalDigest
+   contractDigest := s.contractDigest
+   nodeRegistryDigest := s.nodeRegistryDigest
+   candidateSetDigest := s.candidateSetDigest
+   selectedNodeDigest := s.selectedNodeDigest
+   policyDigest := s.policyDigest
+   authorityDigest := s.authorityDigest
+   leaseDigest := s.leaseDigest
+   evaluatorDigest := s.evaluatorDigest
+   consumerDigest := s.consumerDigest
+   residualDigest := s.residualDigest }
+
+def HiveStep (s : State) (e : Event) : Option State :=
+ if s.stage = .closed then none
+ else if accepted (routeFor s e) then some (applyEvent s e).1 else none
+
+def HiveRun : State -> List Event -> Option State
+ | state, [] => some state
+ | state, event :: tail =>
+     match HiveStep state event with
+     | none => none
+     | some next => HiveRun next tail
+
+def HiveTraceAccepted : State -> List Event -> Prop
+ | _, [] => True
+ | state, event :: tail =>
+     accepted (routeFor state event) = true ∧
+     HiveTraceAccepted (applyEvent state event).1 tail
+
+theorem accepted_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    accepted (routeFor state event) = true := by
+  unfold HiveStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · assumption
+    · simp at stepped
+
+theorem accepted_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    next = (applyEvent state event).1 := by
+  unfold HiveStep at stepped
+  split at stepped
+  · simp at stepped
+  · split at stepped
+    · exact Option.some.inj stepped |>.symm
+    · simp at stepped
+
+theorem apply_event_preserves_full_identity (state : State) (event : Event) :
+    stateIdentity (applyEvent state event).1 = stateIdentity state := by
+  by_cases h : accepted (routeFor state event) = true <;>
+    simp [applyEvent, h, stateIdentity]
+
+theorem accepted_step_preserves_full_identity
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    stateIdentity next = stateIdentity state := by
+  rw [accepted_step_applies_event stepped]
+  exact apply_event_preserves_full_identity state event
+
+theorem accepted_step_preserves_support_and_external_effect_counts
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    next.supportAssignmentCount = state.supportAssignmentCount ∧
+    next.externalEffectCount = state.externalEffectCount := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_adds_exactly_one_receipt
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_step_advances_stage
+    {state next : State} {event : Event}
+    (stepped : HiveStep state event = some next) :
+    next.stage = advance state.stage := by
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, accepted_step_is_accepted stepped]
+
+theorem accepted_run_preserves_full_identity
+    {state final : State} {events : List Event}
+    (ran : HiveRun state events = some final) :
+    stateIdentity final = stateIdentity state := by
+  induction events generalizing state with
+  | nil => simp [HiveRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at ran
+      | some next =>
+          have tailRan : HiveRun next tail = some final := by
+            simpa [HiveRun, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_full_identity stepped)
+
+theorem accepted_run_preserves_support_count
+    {state final : State} {events : List Event}
+    (ran : HiveRun state events = some final) :
+    final.supportAssignmentCount = state.supportAssignmentCount := by
+  induction events generalizing state with
+  | nil => simp [HiveRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at ran
+      | some next =>
+          have tailRan : HiveRun next tail = some final := by
+            simpa [HiveRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_step_preserves_support_and_external_effect_counts stepped).1
+
+theorem accepted_run_preserves_external_effect_count
+    {state final : State} {events : List Event}
+    (ran : HiveRun state events = some final) :
+    final.externalEffectCount = state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [HiveRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at ran
+      | some next =>
+          have tailRan : HiveRun next tail = some final := by
+            simpa [HiveRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_step_preserves_support_and_external_effect_counts stepped).2
+
+theorem accepted_run_accounts_exact_receipts
+    {state final : State} {events : List Event}
+    (ran : HiveRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [HiveRun] at ran; subst final; simp
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at ran
+      | some next =>
+          have tailRan : HiveRun next tail = some final := by
+            simpa [HiveRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_step_adds_exactly_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem accepted_run_has_accepted_trace
+    {state final : State} {events : List Event}
+    (ran : HiveRun state events = some final) :
+    HiveTraceAccepted state events := by
+  induction events generalizing state with
+  | nil => simp [HiveTraceAccepted]
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at ran
+      | some next =>
+          have tailRan : HiveRun next tail = some final := by
+            simpa [HiveRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_accepted stepped, ih tailRan⟩
+
+theorem hive_run_append
+    (state middle : State) (left right : List Event)
+    (leftRan : HiveRun state left = some middle) :
+    HiveRun state (left ++ right) = HiveRun middle right := by
+  induction left generalizing state with
+  | nil => simp [HiveRun] at leftRan; subst middle; rfl
+  | cons event tail ih =>
+      cases stepped : HiveStep state event with
+      | none => simp [HiveRun, stepped] at leftRan
+      | some next =>
+          have tailRan : HiveRun next tail = some middle := by
+            simpa [HiveRun, stepped] using leftRan
+          simpa [HiveRun, stepped] using ih next tailRan
+
+theorem closed_state_accepts_no_event
+    {state : State} (closed : state.stage = .closed) (event : Event) :
+    HiveStep state event = none := by
+  simp [HiveStep, closed]
+
 theorem apply_event_preserves_job_node_lease_identity (s : State) (e : Event) :
     (applyEvent s e).1.jobId = s.jobId ∧
     (applyEvent s e).1.selectedNodeDigest = s.selectedNodeDigest ∧
