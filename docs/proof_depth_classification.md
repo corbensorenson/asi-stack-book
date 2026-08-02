@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2157 |
+| Theorem declarations classified | 2174 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1264 |
-| Unknown or mixed theorem declarations | 484 |
-| Safety-critical theorem declarations | 88 |
+| Derived/decomposed theorem declarations | 1274 |
+| Unknown or mixed theorem declarations | 491 |
+| Safety-critical theorem declarations | 105 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
 | Validation errors | 0 |
@@ -34,7 +34,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -176,7 +176,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 32 | 10 | 11 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 21 | 1 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
@@ -2269,9 +2269,18 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `missing_permissions_block_job_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `observed_failure_records_job_failure` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TypedJobs.lean` | `unlocked_contract_requests_job_contract` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_bounded_lease_requires_review_dissent_residual_and_expiry` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_expiry_closes_lease_and_removes_constraint_ceiling` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_revisit_preserves_dissent_and_adds_residual` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_non_authorizing` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_never_widens_authority` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_preserves_custody` | derived_or_decomposed | yes | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_conflict_lifecycle_admits_bounded_decision` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_lease_trace_reaches_exact_expiry` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `contestability_worked_example_bridge` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_unresolved_conflict_without_residual_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `high_stakes_without_residual_blocks` | derived_or_decomposed | yes | uses simp, unfold |
@@ -2290,6 +2299,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_narrowed_authority_routes_to_narrowing` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_high_stakes_conflict_without_revisit_path_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_conflict_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_authority_widening_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_missing_dissent_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_nonfuture_expiry_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_revisit_without_trigger_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_run_preserves_custody_non_authority_and_narrowing` | derived_or_decomposed | yes | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_runs_compose` | derived_or_decomposed | yes | uses cases, induction, simp |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_self_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_stakeholder_substitution_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `admitted_context_packet_may_still_be_marked_inadequate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `complete_draft_review_allows_draft_support` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | `detected_contradiction_blocks_verified_support_route` | derived_or_decomposed | no | uses contradiction, simp, unfold |

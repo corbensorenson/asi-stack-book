@@ -34,7 +34,7 @@ python3 scripts/validate_constitutional_alignment.py
 The 2026-06-28 local run passed:
 
 ```text
-Constitutional alignment harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).
+Constitutional alignment harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s), 4 lifecycle events, 5 rejecting lifecycle controls.
 ```
 
 The result record is

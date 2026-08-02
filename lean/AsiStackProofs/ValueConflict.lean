@@ -575,4 +575,436 @@ theorem contestability_worked_example_bridge
   intro valid
   exact valid
 
+/-! ## Versioned contestable decision-lease lifecycle
+
+The lease below is a constraint on separately authorized action, not a grant of
+authority. Conflict, value-set, stakeholder-set, and dissent fields are trusted
+finite inputs. The model proves custody, narrowing, revisit, and expiry
+consequences only; it does not identify moral truth or ensure an expiry event is
+delivered by a deployed system.
+-/
+
+inductive ValueLeaseStage where
+  | draft
+  | reviewed
+  | leased
+  | revisiting
+  | expired
+deriving DecidableEq, Repr
+
+inductive ValueLeaseEventKind where
+  | recordIndependentReview
+  | recordBoundedLease
+  | openRevisit
+  | expire
+deriving DecidableEq, Repr
+
+structure ValueLeaseState where
+  conflictId : Nat
+  leaseId : Nat
+  valueSetId : Nat
+  stakeholderSetId : Nat
+  proposerId : Nat
+  reviewerId : Nat
+  version : Nat
+  baseAuthorityCeiling : Nat
+  currentAuthorityCeiling : Nat
+  stage : ValueLeaseStage
+  dissentRecorded : Bool
+  residualCount : Nat
+  expiresAt : Nat
+  now : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure ValueLeaseEvent where
+  kind : ValueLeaseEventKind
+  conflictId : Nat
+  leaseId : Nat
+  valueSetId : Nat
+  stakeholderSetId : Nat
+  actorId : Nat
+  reviewerId : Nat
+  expectedVersion : Nat
+  targetVersion : Nat
+  requestedAuthorityCeiling : Nat
+  dissentPayloadPresent : Bool
+  residualUncertaintyPresent : Bool
+  revisitTriggerPresent : Bool
+  observedNow : Nat
+  requestedExpiry : Nat
+  requestsActionAuthority : Bool
+  requestsMoralSettlement : Bool
+deriving DecidableEq, Repr
+
+def ValueLeaseEventAdmissible
+    (state : ValueLeaseState) (event : ValueLeaseEvent) : Prop :=
+  event.conflictId = state.conflictId ∧
+    event.leaseId = state.leaseId ∧
+    event.valueSetId = state.valueSetId ∧
+    event.stakeholderSetId = state.stakeholderSetId ∧
+    event.expectedVersion = state.version ∧
+    state.now ≤ event.observedNow ∧
+    event.requestsActionAuthority = false ∧
+    event.requestsMoralSettlement = false ∧
+    match event.kind with
+    | ValueLeaseEventKind.recordIndependentReview =>
+        state.stage = ValueLeaseStage.draft ∧
+          event.actorId = state.proposerId ∧
+          event.reviewerId ≠ state.proposerId ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | ValueLeaseEventKind.recordBoundedLease =>
+        state.stage = ValueLeaseStage.reviewed ∧
+          state.reviewerId ≠ state.proposerId ∧
+          event.reviewerId = state.reviewerId ∧
+          event.dissentPayloadPresent = true ∧
+          event.residualUncertaintyPresent = true ∧
+          event.requestedAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+          event.observedNow < event.requestedExpiry ∧
+          event.targetVersion = state.version + 1
+    | ValueLeaseEventKind.openRevisit =>
+        state.stage = ValueLeaseStage.leased ∧
+          event.reviewerId = state.reviewerId ∧
+          event.revisitTriggerPresent = true ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | ValueLeaseEventKind.expire =>
+        (state.stage = ValueLeaseStage.leased ∨
+          state.stage = ValueLeaseStage.revisiting) ∧
+          event.reviewerId = state.reviewerId ∧
+          state.expiresAt ≤ event.observedNow ∧
+          event.targetVersion = state.version
+
+instance valueLeaseEventAdmissibleDecidable
+    (state : ValueLeaseState) (event : ValueLeaseEvent) :
+    Decidable (ValueLeaseEventAdmissible state event) := by
+  unfold ValueLeaseEventAdmissible
+  cases event.kind <;> infer_instance
+
+def AdvanceValueLease
+    (state : ValueLeaseState) (event : ValueLeaseEvent) : ValueLeaseState :=
+  match event.kind with
+  | ValueLeaseEventKind.recordIndependentReview =>
+      { state with
+        stage := ValueLeaseStage.reviewed
+        reviewerId := event.reviewerId
+        now := event.observedNow }
+  | ValueLeaseEventKind.recordBoundedLease =>
+      { state with
+        stage := ValueLeaseStage.leased
+        version := event.targetVersion
+        currentAuthorityCeiling := event.requestedAuthorityCeiling
+        dissentRecorded := true
+        residualCount := state.residualCount + 1
+        expiresAt := event.requestedExpiry
+        now := event.observedNow }
+  | ValueLeaseEventKind.openRevisit =>
+      { state with
+        stage := ValueLeaseStage.revisiting
+        residualCount := state.residualCount + 1
+        now := event.observedNow }
+  | ValueLeaseEventKind.expire =>
+      { state with
+        stage := ValueLeaseStage.expired
+        currentAuthorityCeiling := 0
+        now := event.observedNow }
+
+def ApplyValueLeaseEvent
+    (state : ValueLeaseState) (event : ValueLeaseEvent) : Option ValueLeaseState :=
+  if ValueLeaseEventAdmissible state event then
+    some (AdvanceValueLease state event)
+  else
+    none
+
+def RunValueLeaseEvents :
+    ValueLeaseState → List ValueLeaseEvent → Option ValueLeaseState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ApplyValueLeaseEvent state event with
+      | none => none
+      | some next => RunValueLeaseEvents next tail
+
+theorem accepted_value_lease_event_is_admissible
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    ValueLeaseEventAdmissible state event := by
+  unfold ApplyValueLeaseEvent at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_value_lease_event_is_exact_advance
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    next = AdvanceValueLease state event := by
+  unfold ApplyValueLeaseEvent at accepted
+  split at accepted
+  · simp at accepted
+    exact accepted.symm
+  · simp at accepted
+
+theorem accepted_value_lease_event_preserves_custody
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    next.conflictId = state.conflictId ∧
+      next.leaseId = state.leaseId ∧
+      next.valueSetId = state.valueSetId ∧
+      next.stakeholderSetId = state.stakeholderSetId ∧
+      next.proposerId = state.proposerId ∧
+      next.baseAuthorityCeiling = state.baseAuthorityCeiling := by
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceValueLease, kind]
+
+theorem accepted_value_lease_event_is_non_authorizing
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    event.requestsActionAuthority = false ∧
+      event.requestsMoralSettlement = false ∧
+      next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectCount = state.externalEffectCount := by
+  have admissible := accepted_value_lease_event_is_admissible accepted
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, noAuthority, noSettlement, _⟩
+  subst next
+  exact ⟨noAuthority, noSettlement,
+    by cases kind : event.kind <;> simp [AdvanceValueLease, kind],
+    by cases kind : event.kind <;> simp [AdvanceValueLease, kind]⟩
+
+theorem accepted_value_lease_event_never_widens_authority
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling := by
+  have admissible := accepted_value_lease_event_is_admissible accepted
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, route⟩
+  subst next
+  cases kind : event.kind with
+  | recordIndependentReview => simp [AdvanceValueLease, kind]
+  | recordBoundedLease =>
+      simp [kind] at route
+      simpa [AdvanceValueLease, kind] using route.2.2.2.2.2.1
+  | openRevisit => simp [AdvanceValueLease, kind]
+  | expire => simp [AdvanceValueLease, kind]
+
+theorem accepted_bounded_lease_requires_review_dissent_residual_and_expiry
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (kind : event.kind = ValueLeaseEventKind.recordBoundedLease)
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    state.stage = ValueLeaseStage.reviewed ∧
+      state.reviewerId ≠ state.proposerId ∧
+      event.dissentPayloadPresent = true ∧
+      event.residualUncertaintyPresent = true ∧
+      next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+      next.dissentRecorded = true ∧
+      next.residualCount = state.residualCount + 1 ∧
+      next.now < next.expiresAt := by
+  have admissible := accepted_value_lease_event_is_admissible accepted
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨reviewed, independent, reviewer, dissent, residual,
+    narrowed, future, version⟩
+  subst next
+  simp [AdvanceValueLease, kind, reviewed, independent, dissent, residual,
+    narrowed, future]
+
+theorem accepted_revisit_preserves_dissent_and_adds_residual
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (kind : event.kind = ValueLeaseEventKind.openRevisit)
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    state.stage = ValueLeaseStage.leased ∧
+      next.stage = ValueLeaseStage.revisiting ∧
+      next.dissentRecorded = state.dissentRecorded ∧
+      next.residualCount = state.residualCount + 1 := by
+  have admissible := accepted_value_lease_event_is_admissible accepted
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceValueLease, kind, route.1]
+
+theorem accepted_expiry_closes_lease_and_removes_constraint_ceiling
+    {state next : ValueLeaseState} {event : ValueLeaseEvent}
+    (kind : event.kind = ValueLeaseEventKind.expire)
+    (accepted : ApplyValueLeaseEvent state event = some next) :
+    (state.stage = ValueLeaseStage.leased ∨
+      state.stage = ValueLeaseStage.revisiting) ∧
+      state.expiresAt ≤ event.observedNow ∧
+      next.stage = ValueLeaseStage.expired ∧
+      next.currentAuthorityCeiling = 0 := by
+  have admissible := accepted_value_lease_event_is_admissible accepted
+  have exactAdvance := accepted_value_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  exact ⟨route.1, route.2.2.1, by simp [AdvanceValueLease, kind],
+    by simp [AdvanceValueLease, kind]⟩
+
+theorem value_lease_run_preserves_custody_non_authority_and_narrowing
+    {initial final : ValueLeaseState} {events : List ValueLeaseEvent}
+    (run : RunValueLeaseEvents initial events = some final) :
+    final.conflictId = initial.conflictId ∧
+      final.leaseId = initial.leaseId ∧
+      final.valueSetId = initial.valueSetId ∧
+      final.stakeholderSetId = initial.stakeholderSetId ∧
+      final.proposerId = initial.proposerId ∧
+      final.baseAuthorityCeiling = initial.baseAuthorityCeiling ∧
+      final.currentAuthorityCeiling ≤ initial.currentAuthorityCeiling ∧
+      final.supportAssignmentCount = initial.supportAssignmentCount ∧
+      final.externalEffectCount = initial.externalEffectCount := by
+  induction events generalizing initial with
+  | nil => simp [RunValueLeaseEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunValueLeaseEvents] at run
+      cases step : ApplyValueLeaseEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have custody := accepted_value_lease_event_preserves_custody step
+          have boundary := accepted_value_lease_event_is_non_authorizing step
+          have narrowed := accepted_value_lease_event_never_widens_authority step
+          have tailFacts := ih run
+          rcases custody with ⟨c, l, v, stakeholders, owner, base⟩
+          rcases boundary with ⟨_, _, support, effects⟩
+          rcases tailFacts with ⟨tc, tl, tv, tstakeholders, towner, tbase,
+            tnarrowed, tsupport, teffects⟩
+          exact ⟨tc.trans c, tl.trans l, tv.trans v,
+            tstakeholders.trans stakeholders, towner.trans owner,
+            tbase.trans base, Nat.le_trans tnarrowed narrowed,
+            tsupport.trans support, teffects.trans effects⟩
+
+theorem value_lease_runs_compose
+    (initial : ValueLeaseState) (before after : List ValueLeaseEvent) :
+    RunValueLeaseEvents initial (before ++ after) =
+      match RunValueLeaseEvents initial before with
+      | none => none
+      | some middle => RunValueLeaseEvents middle after := by
+  induction before generalizing initial with
+  | nil => simp [RunValueLeaseEvents]
+  | cons event tail ih =>
+      simp only [List.cons_append, RunValueLeaseEvents]
+      cases step : ApplyValueLeaseEvent initial event with
+      | none => simp
+      | some next => simp [ih]
+
+def initialValueLeaseState : ValueLeaseState := {
+  conflictId := 23
+  leaseId := 29
+  valueSetId := 31
+  stakeholderSetId := 37
+  proposerId := 41
+  reviewerId := 0
+  version := 1
+  baseAuthorityCeiling := 5
+  currentAuthorityCeiling := 5
+  stage := ValueLeaseStage.draft
+  dissentRecorded := false
+  residualCount := 0
+  expiresAt := 0
+  now := 10
+  supportAssignmentCount := 0
+  externalEffectCount := 0
+}
+
+def reviewValueLeaseEvent : ValueLeaseEvent := {
+  kind := ValueLeaseEventKind.recordIndependentReview
+  conflictId := 23
+  leaseId := 29
+  valueSetId := 31
+  stakeholderSetId := 37
+  actorId := 41
+  reviewerId := 43
+  expectedVersion := 1
+  targetVersion := 1
+  requestedAuthorityCeiling := 5
+  dissentPayloadPresent := true
+  residualUncertaintyPresent := true
+  revisitTriggerPresent := false
+  observedNow := 11
+  requestedExpiry := 30
+  requestsActionAuthority := false
+  requestsMoralSettlement := false
+}
+
+def recordBoundedLeaseEvent : ValueLeaseEvent := {
+  reviewValueLeaseEvent with
+  kind := ValueLeaseEventKind.recordBoundedLease
+  actorId := 43
+  targetVersion := 2
+  requestedAuthorityCeiling := 3
+}
+
+def revisitValueLeaseEvent : ValueLeaseEvent := {
+  recordBoundedLeaseEvent with
+  kind := ValueLeaseEventKind.openRevisit
+  expectedVersion := 2
+  targetVersion := 2
+  requestedAuthorityCeiling := 3
+  revisitTriggerPresent := true
+  observedNow := 20
+}
+
+def expireValueLeaseEvent : ValueLeaseEvent := {
+  revisitValueLeaseEvent with
+  kind := ValueLeaseEventKind.expire
+  revisitTriggerPresent := false
+  observedNow := 30
+}
+
+def completeValueLeaseTrace : List ValueLeaseEvent :=
+  [reviewValueLeaseEvent, recordBoundedLeaseEvent,
+    revisitValueLeaseEvent, expireValueLeaseEvent]
+
+theorem complete_value_lease_trace_reaches_exact_expiry :
+    RunValueLeaseEvents initialValueLeaseState completeValueLeaseTrace =
+      some {
+        initialValueLeaseState with
+        reviewerId := 43
+        version := 2
+        currentAuthorityCeiling := 0
+        stage := ValueLeaseStage.expired
+        dissentRecorded := true
+        residualCount := 2
+        expiresAt := 30
+        now := 30
+      } := by
+  decide
+
+theorem value_lease_self_review_is_rejected :
+    ApplyValueLeaseEvent initialValueLeaseState
+      { reviewValueLeaseEvent with reviewerId := 41 } = none := by
+  decide
+
+theorem value_lease_stakeholder_substitution_is_rejected :
+    ApplyValueLeaseEvent initialValueLeaseState
+      { reviewValueLeaseEvent with stakeholderSetId := 38 } = none := by
+  decide
+
+theorem value_lease_missing_dissent_is_rejected :
+    RunValueLeaseEvents initialValueLeaseState
+      [reviewValueLeaseEvent,
+        { recordBoundedLeaseEvent with dissentPayloadPresent := false }] = none := by
+  decide
+
+theorem value_lease_authority_widening_is_rejected :
+    RunValueLeaseEvents initialValueLeaseState
+      [reviewValueLeaseEvent,
+        { recordBoundedLeaseEvent with requestedAuthorityCeiling := 6 }] = none := by
+  decide
+
+theorem value_lease_nonfuture_expiry_is_rejected :
+    RunValueLeaseEvents initialValueLeaseState
+      [reviewValueLeaseEvent,
+        { recordBoundedLeaseEvent with requestedExpiry := 11 }] = none := by
+  decide
+
+theorem value_lease_revisit_without_trigger_is_rejected :
+    RunValueLeaseEvents initialValueLeaseState
+      [reviewValueLeaseEvent, recordBoundedLeaseEvent,
+        { revisitValueLeaseEvent with revisitTriggerPresent := false }] = none := by
+  decide
+
 end AsiStackProofs.ValueConflict

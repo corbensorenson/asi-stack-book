@@ -1641,15 +1641,15 @@ def errors(data: dict) -> list[str]:
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
         "P0": 25,
-        "P1": 886,
-        "P2": 179,
-        "P3": 831,
-        "P4": 108,
-        "P5": 128,
+        "P1": 876,
+        "P2": 182,
+        "P3": 842,
+        "P4": 113,
+        "P5": 136,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 2157,
+        "retain": 2174,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 2157
+        or c6_overlay_status.get("theorem_count") != 2174
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 2157
+        c6_summary.get("current_theorem_count") != 2174
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -2135,7 +2135,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 130, 2157, 1264, 409, 484)
+    expected_proof = (324, 130, 2174, 1274, 409, 491)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 324:

@@ -4,7 +4,7 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-07-16"
+last_updated: "2026-08-02"
 primary_sources:
   - "ethica_mechanica"
   - "alignment_field"
@@ -23,7 +23,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated contestability layer preserves value-conflict and governance-right mappings at argument support only; no moral-correctness, legal-rights, institutional-adequacy, reviewer-independence, export-usability, fork-safety, or deployed-governance claim is promoted."
-  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems, value-conflict lifecycle route checks, and governance-right lifecycle route checks remain bounded record checks; real review quality, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
+  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems, a versioned value-conflict decision-lease lifecycle, value-conflict route checks, and governance-right lifecycle route checks remain bounded authored-record checks; stakeholder standing, review quality, moral grounding, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
   - "External comparators for moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment, legal process, or deployed governance result is reproduced here."
 ---
 
@@ -33,12 +33,13 @@ Contestability matters precisely when no single moral, legal, institutional,
 or technical answer can close the disagreement. This combined value-conflict
 and governance-rights owner remains conceptual, with its core claim at `Design
 rationale` and `argument` support. Existing source notes,
-synthetic harnesses, finite-record Lean theorems, a bounded value-conflict
-lifecycle route, and a bounded governance-right lifecycle route make the idea
+synthetic harnesses, finite-record Lean theorems, a versioned four-stage
+value-conflict decision-lease lifecycle, and bounded value-conflict and
+governance-right routes make the idea
 more inspectable, but they do not prove moral correctness, legal rights,
-institutional adequacy, reviewer independence, real export usability, safe fork
-execution, redaction quality, SCF replacement behavior, or deployed governance
-enforcement.
+stakeholder standing, institutional adequacy, reviewer independence or
+competence, real export usability, safe fork execution, redaction quality, SCF
+replacement behavior, or deployed governance enforcement.
 
 The consolidated layer combines two record families:
 
@@ -658,7 +659,7 @@ succeeds.
 | Value-conflict fixture validation | Check that conflict records preserve value axes, stakeholders, residual uncertainty, dissent, review routes, and non-claims. | implemented by protocol validation and current harnesses |
 | High-stakes review gate | Check that unresolved high-stakes conflicts require review and residual uncertainty. | modeled by finite Lean and synthetic fixtures; moral correctness and reviewer quality not run |
 | Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
-| Value conflict lifecycle admission route envelope | Check that finite value-conflict lifecycle records route missing conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, high-stakes residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries to explicit outcomes. | implemented in `AsiStackProofs.ValueConflict`; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim |
+| Value-conflict route and decision-lease envelope | Check the finite admission routes and a versioned independent-review, bounded-lease, revisit, and expiry lifecycle for exact record custody, preserved dissent, residual accounting, non-increasing authority, zero support/effect assignment, batch composition, one complete trace, and six rejecting controls. | implemented by 38 declarations in `AsiStackProofs.ValueConflict` and an independently reconstructed four-event trace plus six controls; no moral-correctness, stakeholder-standing, reviewer-quality, deployed-expiry, legal-rights, support-state-promotion, or runtime-governance claim |
 | Contestability worked example fixture | Check one synthetic care-memory export scenario across value-conflict residual, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries. | implemented by `python3 scripts/validate_contestability_worked_example.py`; no moral-correctness, legal-rights, reviewer-independence, export-usability, fork-safety, deployed-governance, or support-state-promotion claim |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
@@ -683,20 +684,26 @@ source manuscripts. These Lean modules prove small finite-record properties,
 rejection cases, and bounded route outcomes for declared records.
 Direct/projection hooks remain projection-only traceability unless the theorem
 reasons over an explicit transition, negative case, residual path, authority
-ceiling, or support-state boundary. The Value Conflict module now also checks a
-finite lifecycle route for missing conflict records, value axes, stakeholder
-records, stakes, reversibility, authority boundaries, evidence requirements,
-review routes, high-stakes review, residual uncertainty, dissent preservation,
-authority narrowing, expiry or revisit records, evidence-transition records,
-and non-claim boundaries. The Governance Rights module now also checks a finite
+ceiling, or support-state boundary. The Value Conflict module contains a
+versioned proposal, independent-review, bounded-lease, revisit, and expiry
+lifecycle beside the finite admission router. Accepted event sequences preserve
+conflict, lease, value-set, stakeholder, proposer, reviewer, dissent, and
+authority custody; never assign action authority, moral settlement, support, or
+external effects; compose exactly across batches; carry residual uncertainty
+through revisit; and end a complete four-event witness at expiry with no active
+constraint ceiling. The independent consumer reconstructs that witness and
+rejects self-review, stakeholder substitution, missing dissent, authority
+widening, nonfuture expiry, and an untriggered revisit. The Governance Rights
+module also checks a finite
 lifecycle route for missing governance records, audit material, redaction
 appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
 protected-right removal, unrecorded dissent, replacement receipt loss, durable
 receipt gaps, evidence-transition requirements, and complete contestable
 transitions. These hooks do not prove moral correctness, automatic value
-classification, reviewer quality, legal rights, actual export usability, safe
-forks, institutional contestability, redaction quality, SCF replacement
-behavior, or deployed rights enforcement.
+classification, stakeholder standing, reviewer quality, legal rights, actual
+export usability, safe forks, institutional contestability, real expiry or
+revisit delivery, redaction quality, SCF replacement behavior, or deployed
+rights enforcement.
 
 ## Source crosswalk
 

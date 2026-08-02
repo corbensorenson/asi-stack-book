@@ -3576,10 +3576,10 @@
               "result_status": "passing via synthetic value conflict harness; no runtime policy or deployed decision claim"
             },
             {
-              "name": "Value conflict lifecycle admission route envelope",
-              "purpose": "Check that finite value-conflict lifecycle records route missing conflict records, value axes, stakeholder records, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, high-stakes residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence-transition records, and non-claim boundaries to explicit outcomes.",
+              "name": "Value-conflict route and decision-lease envelope",
+              "purpose": "Check the finite admission routes and a versioned independent-review, bounded-lease, revisit, and expiry lifecycle for exact record custody, preserved dissent, residual accounting, non-increasing authority, zero support/effect assignment, batch composition, one complete trace, and six rejecting controls.",
               "implementation_status": "implemented",
-              "result_status": "passes via Lean route theorems; no moral-correctness, classification-quality, reviewer-quality, deployed contestability, legal-rights, support-state-promotion, or runtime-governance claim",
+              "result_status": "passes via 38 Lean declarations and an independently reconstructed four-event trace plus six controls; no moral-correctness, stakeholder-standing, reviewer-quality, deployed-expiry, legal-rights, support-state-promotion, or runtime-governance claim",
               "status": "implemented in AsiStackProofs.ValueConflict; no deployed value-conflict behavior claim"
             },
             {

@@ -4922,6 +4922,11 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
+      "input_artifacts": [
+        "scripts/validate_efficiency_route_search_probe.py",
+        "lean/AsiStackProofs/Efficiency.lean",
+        "experiments/efficiency_route_search/results/2026-07-02-local.json"
+      ],
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
@@ -4987,10 +4992,23 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
+      "input_artifacts": [
+        "scripts/validate_value_conflicts.py",
+        "lean/AsiStackProofs/ValueConflict.lean",
+        "schemas/value_conflict_record.schema.json",
+        "experiments/value_conflicts/fixtures/valid_bounded_privacy_audit.json",
+        "experiments/value_conflicts/fixtures/valid_deferred_benefit_risk.json",
+        "experiments/value_conflicts/fixtures/valid_escalated_self_modification.json",
+        "experiments/value_conflicts/fixtures/invalid_bounded_no_residual.json",
+        "experiments/value_conflicts/fixtures/invalid_high_stakes_no_review.json",
+        "experiments/value_conflicts/fixtures/invalid_no_revisit.json",
+        "experiments/value_conflicts/fixtures/invalid_single_axis_classification.json",
+        "experiments/value_conflicts/fixtures/invalid_unbounded_authority.json"
+      ],
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
+      "negative_controls": "validator_owned",
       "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {
@@ -5026,10 +5044,23 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
+      "input_artifacts": [
+        "scripts/validate_constitutional_alignment.py",
+        "lean/AsiStackProofs/Alignment.lean",
+        "schemas/constitutional_predicate_record.schema.json",
+        "experiments/constitutional_alignment/fixtures/valid_conflict_routes_to_review.json",
+        "experiments/constitutional_alignment/fixtures/valid_least_sufficient_power.json",
+        "experiments/constitutional_alignment/fixtures/valid_migration_requires_review.json",
+        "experiments/constitutional_alignment/fixtures/invalid_empty_scope.json",
+        "experiments/constitutional_alignment/fixtures/invalid_no_non_claims.json",
+        "experiments/constitutional_alignment/fixtures/invalid_power_without_care.json",
+        "experiments/constitutional_alignment/fixtures/invalid_self_modification_weakens.json",
+        "experiments/constitutional_alignment/fixtures/invalid_speculative_authorizes_action.json"
+      ],
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
+      "negative_controls": "validator_owned",
       "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {
@@ -7831,8 +7862,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",

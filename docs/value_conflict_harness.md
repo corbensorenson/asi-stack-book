@@ -30,7 +30,7 @@ python3 scripts/validate_value_conflicts.py
 The 2026-06-28 local run passed:
 
 ```text
-Value conflict harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s).
+Value conflict harness passed: 3 valid fixture(s), 5 expected-invalid fixture(s), 4 lease events, 6 rejecting lease controls.
 ```
 
 The result record is `experiments/value_conflicts/results/2026-06-28-local.md`.

@@ -369,6 +369,76 @@ CURRENT_SEMANTIC_OVERRIDES[
     "rationale": "Every accepted rollback returns the bounded lifecycle to its recorded rollback version after residualization.",
 }
 
+_value_lease_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_value_lease_trace_reaches_exact_expiry",
+        "scripts/validate_value_conflicts.py",
+    ],
+    "classification_basis": [
+        "the decision-lease lifecycle and six rejecting controls are independently reconstructed by the value-conflict validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_value_lease_event_is_admissible",
+    "accepted_value_lease_event_is_exact_advance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ValueConflict.lean::{theorem_name}"] = {
+        **_value_lease_lifecycle_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded lease lifecycle.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/ValueConflict.lean::complete_value_lease_trace_reaches_exact_expiry"
+] = {
+    **_value_lease_lifecycle_base,
+    "semantic_level": "P2",
+    "rationale": "The four-event independent-review, bounded-lease, revisit, and expiry trace is a bounded nonvacuity witness.",
+}
+
+for theorem_name in (
+    "accepted_value_lease_event_preserves_custody",
+    "accepted_value_lease_event_is_non_authorizing",
+    "accepted_value_lease_event_never_widens_authority",
+    "accepted_bounded_lease_requires_review_dissent_residual_and_expiry",
+    "accepted_revisit_preserves_dissent_and_adds_residual",
+    "value_lease_self_review_is_rejected",
+    "value_lease_stakeholder_substitution_is_rejected",
+    "value_lease_missing_dissent_is_rejected",
+    "value_lease_authority_widening_is_rejected",
+    "value_lease_nonfuture_expiry_is_rejected",
+    "value_lease_revisit_without_trigger_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ValueConflict.lean::{theorem_name}"] = {
+        **_value_lease_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem constrains one executable lease boundary and is covered by an independently encoded accepted trace or rejecting control."
+        ),
+    }
+
+for theorem_name in (
+    "value_lease_run_preserves_custody_non_authority_and_narrowing",
+    "value_lease_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ValueConflict.lean::{theorem_name}"] = {
+        **_value_lease_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "Structural induction proves arbitrary accepted traces preserve lease custody, non-authority, and narrowing or compose exactly across batches."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/ValueConflict.lean::accepted_expiry_closes_lease_and_removes_constraint_ceiling"
+] = {
+    **_value_lease_lifecycle_base,
+    "semantic_level": "P5",
+    "rationale": "An accepted expiry closes the bounded constraint lease and sets its modeled authority ceiling to zero after the recorded time threshold.",
+}
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",
