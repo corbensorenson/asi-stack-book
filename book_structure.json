@@ -2452,7 +2452,7 @@
               "name": "Executed Human Intent resolution-to-contract refinement",
               "purpose": "Refine root intent, constraint/stop preservation, authority review, material-delta custody, and versioned re-contract against bounded intake, re-contract, and plan fixtures.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_intent_resolution_refinement.py`: 4 valid/6 invalid intake cases, 6 signals, 2 valid/7 invalid re-contract cases, 13 plan fixtures, a 5-event version-2 witness, and 30/30 rejected mutations; support-state effect none",
+              "result_status": "passes via `python3 scripts/validate_intent_resolution_refinement.py`: 4 reachable traces/14 events, 14 invariant-prefix checks, 18 batch compositions, 4 valid/6 invalid intake cases, 2 valid/7 invalid re-contract cases, 13 plan fixtures, and 40/40 state-noninterfering mutations; support-state effect none",
               "status": "implemented bounded structured-record refinement; no natural-language understanding, semantic completeness, authentic authority extraction, deployed dispatch, reproduction, transfer, safety, or chapter-core support claim"
             }
           ],
@@ -2461,13 +2461,13 @@
             {
               "tag": "lean:intent.contract.operational_invariant",
               "module": "AsiStackProofs.IntentResolutionRefinement",
-              "target": "Every accepted compile in the finite reachable intent model preserves the root intent, exact versioned constraint and stop-condition hashes, and approved authority before contract acceptance.",
+              "target": "Every successful finite run preserves root-intent identity, the original authority ceiling, and approved-authority boundedness; only parse or accepted re-contract events can write contract payload, and accepted traces compose across event batches.",
               "status": "implemented"
             },
             {
               "tag": "lean:intent.contract.failure_blocks_promotion",
               "module": "AsiStackProofs.IntentResolutionRefinement",
-              "target": "The reachable model and independent consumer reject missing payload, prohibited action, hidden override, authority widening, constraint/stop substitution, silent material deltas, and unreceipted or non-versioned re-contract.",
+              "target": "The model and independent consumer reject payload, prohibition, override, lineage, authority, clarification, constraint/stop, material-delta, rejection, and re-contract faults across four traces, every prefix and batch split, and forty state-noninterfering mutations.",
               "status": "implemented"
             },
             {
@@ -2479,7 +2479,7 @@
             {
               "tag": "lean:intent.intake.probe_fixture_bridge",
               "module": "AsiStackProofs.IntentResolutionRefinement",
-              "target": "The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with exact counts and thirty rejecting mutations rather than literal summary theorems.",
+              "target": "The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with four reachable traces, fourteen invariant prefixes, eighteen batch compositions, and forty state-noninterfering mutations.",
               "status": "implemented"
             }
           ]

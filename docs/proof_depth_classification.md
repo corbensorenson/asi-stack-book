@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2100 |
-| Direct/projection-style theorem declarations | 406 |
-| Derived/decomposed theorem declarations | 1224 |
-| Unknown or mixed theorem declarations | 470 |
+| Theorem declarations classified | 2113 |
+| Direct/projection-style theorem declarations | 407 |
+| Derived/decomposed theorem declarations | 1232 |
+| Unknown or mixed theorem declarations | 474 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -113,7 +113,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 37 | 0 | 18 | 19 | manual review |
-| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 12 | 0 | 4 | 8 | manual review |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 25 | 1 | 12 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1169,15 +1169,28 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_compile_preserves_constraints_stops_and_authority` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_material_delta_requires_recontract_state` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_recontract_increments_version_and_respects_ceiling` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_preserves_approved_authority_ceiling` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `apply_event_preserves_authority_ceiling` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `apply_event_preserves_root_intent` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `clarified_trace_reaches_same_bounded_contract` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `compiled_constraint_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `every_successful_reference_trace_preserves_authority_ceiling` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `exact_intent_trace_reaches_accepted_contract` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `initial_approved_authority_is_within_ceiling` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `material_delta_cannot_silently_continue` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `missing_intent_payload_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `prohibited_action_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `recontract_without_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `rejection_blocks_without_materializing_contract_payload` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `run_composes_across_intent_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_preserves_approved_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_preserves_root_and_ceiling` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `unchanged_contract_continues_without_payload_rewrite` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `hidden_override_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |

@@ -18,9 +18,9 @@ Compilation requires exact source/output constraint and stop hashes, the approve
 
 ## Finite consequences and countermodels
 
-The kernel checks exact compile preservation, material-delta custody, re-contract version increase, one complete five-event trace, and rejecting cases for absent payload, prohibited action, hidden override, authority widening, constraint substitution, silent material continuation, and missing re-contract receipt.
+The kernel checks kind-specific write ownership, arbitrary-run root/ceiling/approved-authority preservation, recursive trace validity, batch composition, exact compile preservation, material-delta custody, re-contract version increase, and four traces covering re-contract, clarification, unchanged continuation, and rejection.
 
-The independent consumer binds 4 valid/6 invalid intake counts, all 6 intake signals, 2 valid/7 invalid re-contract scenarios, and 13 plan fixtures. It rejects 30 single-field or route mutations across lineage, time, payload, prohibition, override, authority, constraint/stop preservation, ambiguity, material-delta detection, re-contract versioning, receipts, and ceiling.
+The independent consumer binds 4 valid/6 invalid intake counts, all 6 intake signals, 2 valid/7 invalid re-contract scenarios, and 13 plan fixtures. It checks all 14 trace prefixes and 18 batch splits, then rejects 40/40 single-field or route mutations across lineage, time, payload, prohibition, override, authority, clarification, constraint/stop preservation, ambiguity, material-delta detection, rejection, re-contract versioning, receipts, and ceiling while preserving the accepted prefix state.
 
 ## Assumptions and exclusions
 

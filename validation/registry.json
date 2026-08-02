@@ -10892,51 +10892,8 @@
       "semantic_review_state": "checked_single_executed_schema_vertical_refinement_not_general_external_or_deployed"
     },
     {
-      "id": "validate_intent_resolution_refinement:326",
-      "order": 325,
-      "script": "validate_intent_resolution_refinement.py",
-      "args": [],
-      "execution_tier": "deep",
-      "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The reachable Lean intent model, bounded intake/re-contract results, complete plan fixture inventory, schema, receipt, and adequacy dossier.",
-      "input_artifacts": [
-        "scripts/validate_intent_resolution_refinement.py",
-        "schemas/intent_resolution_refinement.schema.json",
-        "experiments/intent_resolution_refinement/results/2026-07-15-local.json",
-        "docs/intent_resolution_refinement.md",
-        "evidence_quality/model_adequacy_dossiers/intent-resolution-refinement.md",
-        "lean/AsiStackProofs/IntentResolutionRefinement.lean",
-        "experiments/intent_intake_probe/results/2026-07-02-local.json",
-        "experiments/intent_recontract_probe/results/2026-07-02-local.json",
-        "experiments/plan_execution_contracts/fixtures"
-      ],
-      "output_contract": "Reject lineage, time, payload, prohibition, override, authority, constraint/stop, ambiguity, material-delta, re-contract-version, receipt, source-drift, and support-promotion failures.",
-      "output_assertions": [
-        "four valid and six invalid intake cases",
-        "six intake signals",
-        "two valid and seven invalid re-contract cases",
-        "thirteen plan fixtures",
-        "five reachable events",
-        "thirty rejected mutations",
-        "no support-state effect"
-      ],
-      "claim_scope": "One finite structured request-to-contract model and fixed local synthetic records only.",
-      "negative_controls": "validator_owned_model_and_source_mutations",
-      "negative_control_cases": [
-        "payload or lineage removal",
-        "hidden override or prohibition",
-        "authority widening",
-        "constraint/stop substitution",
-        "silent material delta",
-        "missing re-contract receipt or version increase"
-      ],
-      "prohibited_inference": "Does not establish natural-language intent understanding, semantic completeness, authentic authority extraction, prompt-injection containment, deployed dispatch/effects, user satisfaction, natural workloads, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
-      "contract_precision": "inherited",
-      "semantic_review_state": "checked_structured_intent_resolution_refinement_not_natural_language_external_or_deployed"
-    },
-    {
       "id": "validate_command_semantic_refinement:327",
-      "order": 326,
+      "order": 325,
       "script": "validate_command_semantic_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -10980,7 +10937,7 @@
     },
     {
       "id": "validate_cognitive_compilation_refinement:328",
-      "order": 327,
+      "order": 326,
       "script": "validate_cognitive_compilation_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11020,7 +10977,7 @@
     },
     {
       "id": "validate_virtual_context_refinement:329",
-      "order": 328,
+      "order": 327,
       "script": "validate_virtual_context_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11060,7 +11017,7 @@
     },
     {
       "id": "validate_context_certificate_refinement:330",
-      "order": 329,
+      "order": 328,
       "script": "validate_context_certificate_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11102,7 +11059,7 @@
     },
     {
       "id": "validate_context_transaction_refinement:331",
-      "order": 330,
+      "order": 329,
       "script": "validate_context_transaction_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11145,7 +11102,7 @@
     },
     {
       "id": "validate_verification_bandwidth_refinement:332",
-      "order": 331,
+      "order": 330,
       "script": "validate_verification_bandwidth_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11190,7 +11147,7 @@
     },
     {
       "id": "validate_proof_carrying_claims_refinement.py:334",
-      "order": 332,
+      "order": 331,
       "script": "validate_proof_carrying_claims_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11233,7 +11190,7 @@
     },
     {
       "id": "validate_tribunal_refinement.py:335",
-      "order": 333,
+      "order": 332,
       "script": "validate_tribunal_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11278,7 +11235,7 @@
     },
     {
       "id": "validate_typed_job_refinement.py:336",
-      "order": 334,
+      "order": 333,
       "script": "validate_typed_job_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11323,7 +11280,7 @@
     },
     {
       "id": "validate_artifact_reality_refinement.py:337",
-      "order": 335,
+      "order": 334,
       "script": "validate_artifact_reality_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11376,7 +11333,7 @@
     },
     {
       "id": "validate_procedural_memory_refinement.py:338",
-      "order": 336,
+      "order": 335,
       "script": "validate_procedural_memory_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11416,7 +11373,7 @@
     },
     {
       "id": "validate_routing_refinement.py:339",
-      "order": 337,
+      "order": 336,
       "script": "validate_routing_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11459,7 +11416,7 @@
     },
     {
       "id": "validate_readiness_refinement.py:340",
-      "order": 338,
+      "order": 337,
       "script": "validate_readiness_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11498,7 +11455,7 @@
     },
     {
       "id": "validate_hive_lifecycle_refinement.py:341",
-      "order": 339,
+      "order": 338,
       "script": "validate_hive_lifecycle_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11534,7 +11491,7 @@
     },
     {
       "id": "validate_compact_generation_refinement.py:342",
-      "order": 340,
+      "order": 339,
       "script": "validate_compact_generation_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11573,7 +11530,7 @@
     },
     {
       "id": "validate_fast_generation_refinement.py:343",
-      "order": 341,
+      "order": 340,
       "script": "validate_fast_generation_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11611,7 +11568,7 @@
     },
     {
       "id": "validate_deliberation_refinement.py:344",
-      "order": 342,
+      "order": 341,
       "script": "validate_deliberation_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11652,7 +11609,7 @@
     },
     {
       "id": "validate_artifact_compression_refinement.py:345",
-      "order": 343,
+      "order": 342,
       "script": "validate_artifact_compression_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11690,7 +11647,7 @@
     },
     {
       "id": "validate_resource_economics_refinement.py:346",
-      "order": 344,
+      "order": 343,
       "script": "validate_resource_economics_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11737,7 +11694,7 @@
     },
     {
       "id": "validate_safety_case_refinement.py:347",
-      "order": 345,
+      "order": 344,
       "script": "validate_safety_case_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11776,7 +11733,7 @@
     },
     {
       "id": "validate_capability_threshold_refinement.py:348",
-      "order": 346,
+      "order": 345,
       "script": "validate_capability_threshold_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11815,7 +11772,7 @@
     },
     {
       "id": "validate_adversarial_evaluation_refinement.py:349",
-      "order": 347,
+      "order": 346,
       "script": "validate_adversarial_evaluation_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11854,7 +11811,7 @@
     },
     {
       "id": "validate_scalable_oversight_refinement.py:350",
-      "order": 348,
+      "order": 347,
       "script": "validate_scalable_oversight_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11893,7 +11850,7 @@
     },
     {
       "id": "validate_policy_optimization_refinement.py:351",
-      "order": 349,
+      "order": 348,
       "script": "validate_policy_optimization_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11933,7 +11890,7 @@
     },
     {
       "id": "validate_data_engine_lifecycle_refinement.py:352",
-      "order": 350,
+      "order": 349,
       "script": "validate_data_engine_lifecycle_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -11977,7 +11934,7 @@
     },
     {
       "id": "validate_open_ended_improvement_refinement.py:353",
-      "order": 351,
+      "order": 350,
       "script": "validate_open_ended_improvement_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -12021,7 +11978,7 @@
     },
     {
       "id": "validate_self_improvement_refinement.py:354",
-      "order": 352,
+      "order": 351,
       "script": "validate_self_improvement_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -12065,7 +12022,7 @@
     },
     {
       "id": "validate_p2_closure_audit.py:355",
-      "order": 353,
+      "order": 352,
       "script": "validate_p2_closure_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -12107,7 +12064,7 @@
     },
     {
       "id": "validate_research_foundation.py:356",
-      "order": 354,
+      "order": 353,
       "script": "validate_research_foundation.py",
       "args": [],
       "execution_tier": "pr",
@@ -12146,7 +12103,7 @@
     },
     {
       "id": "validate_p3_integrated_slices.py:357",
-      "order": 355,
+      "order": 354,
       "script": "validate_p3_integrated_slices.py",
       "args": [],
       "execution_tier": "deep",
@@ -12196,7 +12153,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_preregistration.py:358",
-      "order": 356,
+      "order": 355,
       "script": "validate_p4_governed_usefulness_preregistration.py",
       "args": [],
       "execution_tier": "pr",
@@ -12239,7 +12196,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_instrument_repair.py:359",
-      "order": 357,
+      "order": 356,
       "script": "validate_p4_governed_usefulness_instrument_repair.py",
       "args": [],
       "execution_tier": "pr",
@@ -12281,7 +12238,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_difficulty_sweep_design.py:360",
-      "order": 358,
+      "order": 357,
       "script": "validate_p4_governed_usefulness_difficulty_sweep_design.py",
       "args": [],
       "execution_tier": "pr",
@@ -12322,7 +12279,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_difficulty_sweep_runner.py:361",
-      "order": 359,
+      "order": 358,
       "script": "validate_p4_governed_usefulness_difficulty_sweep_runner.py",
       "args": [],
       "execution_tier": "pr",
@@ -12366,7 +12323,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_confirmatory.py:362",
-      "order": 360,
+      "order": 359,
       "script": "validate_p4_governed_usefulness_confirmatory.py",
       "args": [],
       "execution_tier": "pr",
@@ -12418,7 +12375,7 @@
     },
     {
       "id": "validate_p4_m6_routing_deliberation.py:363",
-      "order": 361,
+      "order": 360,
       "script": "validate_p4_m6_routing_deliberation.py",
       "args": [],
       "execution_tier": "pr",
@@ -12467,7 +12424,7 @@
     },
     {
       "id": "validate_p4_m7_update_unlearning_v3.py:364",
-      "order": 362,
+      "order": 361,
       "script": "validate_p4_m7_update_unlearning_v3.py",
       "args": [],
       "execution_tier": "pr",
@@ -12521,7 +12478,7 @@
     },
     {
       "id": "validate_p4_m8_residual_verifier_terminal.py:365",
-      "order": 363,
+      "order": 362,
       "script": "validate_p4_m8_residual_verifier_terminal.py",
       "args": [],
       "execution_tier": "pr",
@@ -12581,7 +12538,7 @@
     },
     {
       "id": "validate_p4_m8_world_model_campaign.py:366",
-      "order": 364,
+      "order": 363,
       "script": "validate_p4_m8_world_model_campaign.py",
       "args": [],
       "execution_tier": "pr",
@@ -12632,7 +12589,7 @@
     },
     {
       "id": "validate_p4_governed_usefulness_local_instrument.py:367",
-      "order": 365,
+      "order": 364,
       "script": "validate_p4_governed_usefulness_local_instrument.py",
       "args": [],
       "execution_tier": "pr",
@@ -12668,7 +12625,7 @@
     },
     {
       "id": "validate_p4_m7_update_unlearning.py:368",
-      "order": 366,
+      "order": 365,
       "script": "validate_p4_m7_update_unlearning.py",
       "args": [],
       "execution_tier": "pr",
@@ -12706,7 +12663,7 @@
     },
     {
       "id": "validate_p4_m7_update_unlearning_design.py:369",
-      "order": 367,
+      "order": 366,
       "script": "validate_p4_m7_update_unlearning_design.py",
       "args": [],
       "execution_tier": "pr",
@@ -12740,7 +12697,7 @@
     },
     {
       "id": "validate_p4_m7_update_unlearning_failure_lineage.py:370",
-      "order": 368,
+      "order": 367,
       "script": "validate_p4_m7_update_unlearning_failure_lineage.py",
       "args": [],
       "execution_tier": "pr",
@@ -12773,7 +12730,7 @@
     },
     {
       "id": "validate_p4_m7_update_unlearning_v3_design.py:371",
-      "order": 369,
+      "order": 368,
       "script": "validate_p4_m7_update_unlearning_v3_design.py",
       "args": [],
       "execution_tier": "pr",
@@ -12809,7 +12766,7 @@
     },
     {
       "id": "validate_p4_m8_world_model_design.py:372",
-      "order": 370,
+      "order": 369,
       "script": "validate_p4_m8_world_model_design.py",
       "args": [],
       "execution_tier": "pr",
@@ -12844,7 +12801,7 @@
     },
     {
       "id": "validate_reflexive_dispatch_trace.py:373",
-      "order": 371,
+      "order": 370,
       "script": "validate_reflexive_dispatch_trace.py",
       "args": [],
       "execution_tier": "pr",
@@ -12876,7 +12833,7 @@
     },
     {
       "id": "validate_p4_m8_kerc_campaign.py:374",
-      "order": 372,
+      "order": 371,
       "script": "validate_p4_m8_kerc_campaign.py",
       "args": [],
       "execution_tier": "pr",
@@ -12928,7 +12885,7 @@
     },
     {
       "id": "validate_p4_m8_kerc_design.py:375",
-      "order": 373,
+      "order": 372,
       "script": "validate_p4_m8_kerc_design.py",
       "args": [],
       "execution_tier": "pr",
@@ -12963,7 +12920,7 @@
     },
     {
       "id": "validate_p5_terminal_batch.py:376",
-      "order": 374,
+      "order": 373,
       "script": "validate_p5_terminal_batch.py",
       "args": [],
       "execution_tier": "pr",
@@ -13001,7 +12958,7 @@
     },
     {
       "id": "validate_claim_family_terminal_program.py:377",
-      "order": 375,
+      "order": 374,
       "script": "validate_claim_family_terminal_program.py",
       "args": [],
       "execution_tier": "pr",
@@ -13042,7 +12999,7 @@
     },
     {
       "id": "validate_claim_family_bundle_coverage.py:378",
-      "order": 376,
+      "order": 375,
       "script": "validate_claim_family_bundle_coverage.py",
       "args": [],
       "execution_tier": "pr",
@@ -13078,7 +13035,7 @@
     },
     {
       "id": "validate_p6_external_reproduction_terminal.py:379",
-      "order": 377,
+      "order": 376,
       "script": "validate_p6_external_reproduction_terminal.py",
       "args": [],
       "execution_tier": "pr",
@@ -13118,7 +13075,7 @@
     },
     {
       "id": "validate_p7_book_evidence_reconciliation.py:380",
-      "order": 378,
+      "order": 377,
       "script": "validate_p7_book_evidence_reconciliation.py",
       "args": [],
       "execution_tier": "pr",
@@ -13178,7 +13135,7 @@
     },
     {
       "id": "validate_p8_reader_evidence_freeze.py:381",
-      "order": 379,
+      "order": 378,
       "script": "validate_p8_reader_evidence_freeze.py",
       "args": [],
       "execution_tier": "pr",
@@ -13224,7 +13181,7 @@
     },
     {
       "id": "validate_x_article_synopsis.py:382",
-      "order": 380,
+      "order": 379,
       "script": "validate_x_article_synopsis.py",
       "args": [],
       "execution_tier": "pr",
@@ -13275,7 +13232,7 @@
     },
     {
       "id": "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py:383",
-      "order": 381,
+      "order": 380,
       "script": "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
       "args": [],
       "execution_tier": "pr",
@@ -13467,7 +13424,7 @@
     },
     {
       "id": "validate_claim_identity_graph.py:384",
-      "order": 382,
+      "order": 381,
       "script": "validate_claim_identity_graph.py",
       "args": [],
       "execution_tier": "pr",
@@ -13517,7 +13474,7 @@
     },
     {
       "id": "validate_negative_result_rehabilitation.py:385",
-      "order": 383,
+      "order": 382,
       "script": "validate_negative_result_rehabilitation.py",
       "args": [],
       "execution_tier": "pr",
@@ -13565,7 +13522,7 @@
     },
     {
       "id": "validate_negative_inference_surface_audit.py:386",
-      "order": 384,
+      "order": 383,
       "script": "validate_negative_inference_surface_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -13609,7 +13566,7 @@
     },
     {
       "id": "validate_p2_frontier_selection.py:387",
-      "order": 385,
+      "order": 384,
       "script": "validate_p2_frontier_selection.py",
       "args": [],
       "execution_tier": "pr",
@@ -13652,7 +13609,7 @@
     },
     {
       "id": "validate_p2_development_corpus_preflight.py:388",
-      "order": 386,
+      "order": 385,
       "script": "validate_p2_development_corpus_preflight.py",
       "args": [],
       "execution_tier": "pr",
@@ -13703,7 +13660,7 @@
     },
     {
       "id": "validate_p2_task_qualification_and_replacement_policy.py:389",
-      "order": 387,
+      "order": 386,
       "script": "validate_p2_task_qualification_and_replacement_policy.py",
       "args": [],
       "execution_tier": "pr",
@@ -13754,7 +13711,7 @@
     },
     {
       "id": "validate_p2_gold_preflight_diagnosis.py:390",
-      "order": 388,
+      "order": 387,
       "script": "validate_p2_gold_preflight_diagnosis.py",
       "args": [],
       "execution_tier": "pr",
@@ -13816,7 +13773,7 @@
     },
     {
       "id": "validate_p2_resource_ceiling.py:391",
-      "order": 389,
+      "order": 388,
       "script": "validate_p2_resource_ceiling.py",
       "args": [],
       "execution_tier": "pr",
@@ -13871,7 +13828,7 @@
     },
     {
       "id": "validate_p2_replacement_queue.py:392",
-      "order": 390,
+      "order": 389,
       "script": "validate_p2_replacement_queue.py",
       "args": [],
       "execution_tier": "pr",
@@ -13925,7 +13882,7 @@
     },
     {
       "id": "validate_p2_replacement_provenance_preflight.py:393",
-      "order": 391,
+      "order": 390,
       "script": "validate_p2_replacement_provenance_preflight.py",
       "args": [],
       "execution_tier": "pr",
@@ -13972,7 +13929,7 @@
     },
     {
       "id": "validate_p2_replacement_image_resource_preflight.py:394",
-      "order": 392,
+      "order": 391,
       "script": "validate_p2_replacement_image_resource_preflight.py",
       "args": [],
       "execution_tier": "pr",
@@ -14024,7 +13981,7 @@
     },
     {
       "id": "validate_p2_replacement_task_opening_and_evaluator.py:395",
-      "order": 393,
+      "order": 392,
       "script": "validate_p2_replacement_task_opening_and_evaluator.py",
       "args": [],
       "execution_tier": "pr",
@@ -14076,7 +14033,7 @@
     },
     {
       "id": "validate_p2_infrastructure_content_freeze_amendment.py:396",
-      "order": 394,
+      "order": 393,
       "script": "validate_p2_infrastructure_content_freeze_amendment.py",
       "args": [],
       "execution_tier": "pr",
@@ -14120,7 +14077,7 @@
     },
     {
       "id": "validate_evidence_git_custody.py:397",
-      "order": 395,
+      "order": 394,
       "script": "validate_evidence_git_custody.py",
       "args": [],
       "execution_tier": "release",
@@ -14150,7 +14107,7 @@
     },
     {
       "id": "validate_reader_public_release_manifest.py:398",
-      "order": 396,
+      "order": 395,
       "script": "validate_reader_public_release_manifest.py",
       "args": [],
       "execution_tier": "release",
@@ -14209,7 +14166,7 @@
       "contract_precision": "exact_packet_digest_and_recomputed_baseline",
       "semantic_review_state": "checked_terminal_editorial_boundary_semantics",
       "id": "validate_p7_1a_w1_editorial_boundary_audit.py:399",
-      "order": 397,
+      "order": 396,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p7_1a_w1_editorial_boundary_audit.py",
@@ -14249,7 +14206,7 @@
       "contract_precision": "exact_commit_bound_meaning_preservation",
       "semantic_review_state": "checked_terminal_narrative_role_depth_and_handoff_semantics",
       "id": "validate_p7_1a_w2_narrative_audit.py:400",
-      "order": 398,
+      "order": 397,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p7_1a_w2_narrative_audit.py",
@@ -14292,7 +14249,7 @@
       "contract_precision": "exact_module_target_and_semantic_disposition",
       "semantic_review_state": "checked_terminal_bounded_evidence_claim_and_proof_custody_semantics",
       "id": "validate_p4_c1_semantic_proof_cluster.py:401",
-      "order": 399,
+      "order": 398,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p4_c1_semantic_proof_cluster.py",
@@ -14329,7 +14286,7 @@
       "contract_precision": "exact_module_target_and_semantic_disposition",
       "semantic_review_state": "checked_terminal_bounded_safety_assurance_and_oversight_semantics",
       "id": "validate_p4_c2_semantic_proof_cluster.py:402",
-      "order": 400,
+      "order": 399,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p4_c2_semantic_proof_cluster.py",
@@ -14372,7 +14329,7 @@
       "contract_precision": "exact_record_protocol_and_finite_route_contract",
       "semantic_review_state": "checked_white_box_record_custody_and_non_authority_semantics",
       "id": "validate_white_box_evidence_contract.py:403",
-      "order": 401,
+      "order": 400,
       "args": [],
       "input_artifacts": [
         "scripts/validate_white_box_evidence_contract.py",
@@ -14414,7 +14371,7 @@
       "contract_precision": "digest_bound_reader_and_evidence_custody",
       "semantic_review_state": "checked_terminal_white_box_argument_chapter_integration",
       "id": "validate_p7_2_t1_white_box_reader_integration.py:404",
-      "order": 402,
+      "order": 401,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p7_2_t1_white_box_reader_integration.py",
@@ -14467,7 +14424,7 @@
       "contract_precision": "exact_module_target_theorem_and_semantic_disposition",
       "semantic_review_state": "checked_terminal_bounded_authority_effect_replacement_and_corrigibility_semantics",
       "id": "validate_p4_c3_semantic_proof_cluster.py:405",
-      "order": 403,
+      "order": 402,
       "args": [],
       "input_artifacts": [
         "scripts/validate_p4_c3_semantic_proof_cluster.py",
@@ -14513,7 +14470,7 @@
       "prohibited_inference": "The fixture, theorem, and protocol do not establish prediction quality, grounding, calibration, useful planning, safe control, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_world_model_packet_residual_and_non_authority_semantics",
       "id": "validate_governed_world_model_contract.py:406",
-      "order": 404,
+      "order": 403,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14557,7 +14514,7 @@
       "prohibited_inference": "Terminal reader integration does not establish a world-model, grounding, causal, control, safety, empirical, release, publication, AGI, or ASI result.",
       "semantic_review_state": "checked_terminal_governed_world_models_argument_chapter_integration",
       "id": "validate_p7_2_t2_governed_world_models_reader_integration.py:407",
-      "order": 405,
+      "order": 404,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14609,7 +14566,7 @@
       "prohibited_inference": "The audit proves no learning, forgetting, influence removal, privacy reduction, storage or backup erasure, legal compliance, rollback efficacy, deployment, support, release, or publication.",
       "semantic_review_state": "checked_terminal_bounded_learning_update_weight_context_and_unlearning_axis_semantics",
       "id": "validate_p4_c4_semantic_proof_cluster.py:408",
-      "order": 406,
+      "order": 405,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14662,7 +14619,7 @@
       "prohibited_inference": "The fixture, theorem, and protocol do not establish comprehension, workload calibration, consent, privacy adequacy, moral responsibility, intervention efficacy, meaningful control, safety, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_human_control_envelope_responsibility_privacy_and_non_authority_semantics",
       "id": "validate_human_oversight_control_contract.py:409",
-      "order": 407,
+      "order": 406,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14710,7 +14667,7 @@
       "prohibited_inference": "Terminal reader integration does not establish human comprehension, workload, trust, control efficacy, responsibility, privacy, meaningful control, safety, empirical support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_terminal_human_factors_argument_chapter_integration",
       "id": "validate_p7_2_t3_human_factors_reader_integration.py:410",
-      "order": 408,
+      "order": 407,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14762,7 +14719,7 @@
       "prohibited_inference": "The audit proves no legitimate objective, adaptive or open-ended improvement, capability threshold, effective safeguard or rollback, readiness, safety, deployment, transfer, support, release, or publication.",
       "semantic_review_state": "checked_terminal_bounded_self_improvement_campaign_threshold_and_readiness_semantics",
       "id": "validate_p4_c5_semantic_proof_cluster.py:411",
-      "order": 409,
+      "order": 408,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14824,7 +14781,7 @@
       "prohibited_inference": "The authored case and finite model do not establish natural incident behavior, detector quality, inventory completeness, effect reversal, fallback usefulness, recovery efficacy, safety, transfer, deployment, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_governed_operations_authority_effect_recovery_and_non_authority_semantics",
       "id": "validate_governed_operations_control_contract.py:412",
-      "order": 410,
+      "order": 409,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14894,7 +14851,7 @@
       "prohibited_inference": "Terminal reader integration does not establish operational efficacy, resilience, recovery, safety, NIST conformance, empirical support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_terminal_governed_operations_argument_chapter_integration",
       "id": "validate_p7_2_t4_governed_operations_reader_integration.py:413",
-      "order": 411,
+      "order": 410,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14958,7 +14915,7 @@
       "prohibited_inference": "The audit proves no efficiency, optimal allocation, artifact truth or durability, ownership, competent stewardship, useful compression, lifecycle success, deployment, transfer, support, release, or publication.",
       "semantic_review_state": "checked_terminal_resource_artifact_steward_and_compression_semantics",
       "id": "validate_p4_c6_semantic_proof_cluster.py:414",
-      "order": 412,
+      "order": 411,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14992,7 +14949,7 @@
       "negative_controls": "validator_owned_twenty_one_freeze_topology_batch_numeric_denominator_state_commit_resume_selection_qualification_source_and_authority_mutations",
       "prohibited_inference": "No model training, resume equivalence, distributed efficiency, fault tolerance, model quality, inventory completeness, support, readiness, release, transfer, SOTA, AGI, or ASI follows.",
       "id": "validate_training_run_transaction.py:415",
-      "order": 413,
+      "order": 412,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15028,7 +14985,7 @@
       "negative_controls": "validator_owned_nine_decision_source_manifest_proof_campaign_competence_status_and_support_mutations",
       "prohibited_inference": "Reader integration and finite artifacts do not establish training integrity, exact resume, model quality, efficiency, fault tolerance, support, readiness, release, transfer, or SOTA.",
       "id": "validate_p6_4_a1_governed_model_training_reader_integration.py:416",
-      "order": 414,
+      "order": 413,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15067,7 +15024,7 @@
       "negative_controls": "validator_owned_twenty_six_party_purpose_authority_minimization_flow_derivative_privacy_attack_rights_residual_source_and_authority_mutations",
       "prohibited_inference": "No personal-data processing, privacy, lawful basis, compliance, attack absence, complete lineage, deletion, forgetting, influence removal, support, readiness, release, transfer, SOTA, AGI, or ASI follows.",
       "id": "validate_information_lifecycle_transaction.py:417",
-      "order": 415,
+      "order": 414,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15102,7 +15059,7 @@
       "negative_controls": "validator_owned_ten_decision_source_manifest_proof_campaign_outcome_competence_status_and_compliance_mutations",
       "prohibited_inference": "Reader integration and finite artifacts do not establish privacy, rights completion, legal compliance, deletion, forgetting, influence removal, support, readiness, release, transfer, or SOTA.",
       "id": "validate_p6_4_a2_privacy_information_flow_reader_integration.py:418",
-      "order": 416,
+      "order": 415,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15125,7 +15082,7 @@
     },
     {
       "id": "validate_optimizer_policy_card.py:419",
-      "order": 417,
+      "order": 416,
       "script": "validate_optimizer_policy_card.py",
       "args": [],
       "execution_tier": "pr",
@@ -15180,7 +15137,7 @@
     },
     {
       "id": "validate_proof_semantic_depth_overlay.py:420",
-      "order": 418,
+      "order": 417,
       "script": "validate_proof_semantic_depth_overlay.py",
       "args": [],
       "execution_tier": "pr",
@@ -15235,7 +15192,7 @@
     },
     {
       "id": "validate_proof_semantic_rationalization_ledger.py:421",
-      "order": 419,
+      "order": 418,
       "script": "validate_proof_semantic_rationalization_ledger.py",
       "args": [],
       "execution_tier": "pr",
@@ -15409,7 +15366,7 @@
     },
     {
       "id": "validate_evidence_transition_refinement.py:422",
-      "order": 420,
+      "order": 419,
       "script": "validate_evidence_transition_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -15446,7 +15403,7 @@
     },
     {
       "id": "validate_post_activation_six_chapter_claim_atom_addendum.py:423",
-      "order": 421,
+      "order": 420,
       "script": "validate_post_activation_six_chapter_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -15495,7 +15452,7 @@
     },
     {
       "id": "validate_p7_1a_w3_inheritance_guard.py:424",
-      "order": 422,
+      "order": 421,
       "script": "validate_p7_1a_w3_inheritance_guard.py",
       "args": [],
       "execution_tier": "pr",
@@ -15540,7 +15497,7 @@
     },
     {
       "id": "validate_p7_2_t1d_six_chapter_maturity.py:425",
-      "order": 423,
+      "order": 422,
       "script": "validate_p7_2_t1d_six_chapter_maturity.py",
       "args": [],
       "execution_tier": "pr",
@@ -15577,7 +15534,7 @@
     },
     {
       "id": "validate_r16_b_current_reader_freshness.py:426",
-      "order": 424,
+      "order": 423,
       "script": "validate_r16_b_current_reader_freshness.py",
       "args": [],
       "execution_tier": "pr",
@@ -15614,7 +15571,7 @@
     },
     {
       "id": "validate_p2_r3a_capacity_preflight.py:427",
-      "order": 425,
+      "order": 424,
       "script": "validate_p2_r3a_capacity_preflight.py",
       "args": [],
       "execution_tier": "pr",
@@ -15664,7 +15621,7 @@
     },
     {
       "id": "validate_c6_remaining_stronger_model_audit.py:428",
-      "order": 426,
+      "order": 425,
       "script": "validate_c6_remaining_stronger_model_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -15713,7 +15670,7 @@
     },
     {
       "id": "validate_theseus_t0a_architecture_closure_currentness_import:429",
-      "order": 427,
+      "order": 426,
       "script": "validate_theseus_t0a_architecture_closure_currentness_import.py",
       "args": [],
       "execution_tier": "deep",
@@ -15770,7 +15727,7 @@
     },
     {
       "id": "validate_p5_effect_complete_reference:430",
-      "order": 428,
+      "order": 427,
       "script": "validate_p5_effect_complete_reference.py",
       "args": [],
       "execution_tier": "deep",
@@ -15812,7 +15769,7 @@
     },
     {
       "id": "validate_p5_stateful_service_reference:431",
-      "order": 429,
+      "order": 428,
       "script": "validate_p5_stateful_service_reference.py",
       "args": [],
       "execution_tier": "deep",
@@ -15858,7 +15815,7 @@
     },
     {
       "id": "validate_p5_natural_publication_service_trace:432",
-      "order": 430,
+      "order": 429,
       "script": "validate_p5_natural_publication_service_trace.py",
       "args": [],
       "execution_tier": "deep",
@@ -15904,7 +15861,7 @@
     },
     {
       "id": "validate_round22_concept_linked_claim_atom_addendum.py:433",
-      "order": 431,
+      "order": 430,
       "script": "validate_round22_concept_linked_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -15947,7 +15904,7 @@
     },
     {
       "id": "validate_round20_four_chapter_claim_atom_addendum.py:434",
-      "order": 432,
+      "order": 431,
       "script": "validate_round20_four_chapter_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -15987,7 +15944,7 @@
     },
     {
       "id": "validate_p6_9_raw_scaffold_ownership_audit.py:435",
-      "order": 433,
+      "order": 432,
       "script": "validate_p6_9_raw_scaffold_ownership_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -16036,7 +15993,7 @@
     },
     {
       "id": "validate_p6_9_proof_evidence_handoff.py:436",
-      "order": 434,
+      "order": 433,
       "script": "validate_p6_9_proof_evidence_handoff.py",
       "args": [],
       "execution_tier": "pr",
@@ -16091,7 +16048,7 @@
     },
     {
       "id": "validate_p5_natural_service_campaign_qualification.py:437",
-      "order": 435,
+      "order": 434,
       "script": "validate_p5_natural_service_campaign_qualification.py",
       "args": [],
       "execution_tier": "pr",
@@ -16159,7 +16116,7 @@
     },
     {
       "id": "validate_visual_edition.py:438",
-      "order": 436,
+      "order": 435,
       "script": "validate_visual_edition.py",
       "args": [],
       "execution_tier": "pr",
@@ -16936,7 +16893,7 @@
     },
     {
       "id": "sync_visual_edition_embeds.py:439",
-      "order": 437,
+      "order": 436,
       "script": "sync_visual_edition_embeds.py",
       "args": [],
       "execution_tier": "pr",
@@ -16964,7 +16921,7 @@
     },
     {
       "id": "validate_youtube_preview_bindings.py:440",
-      "order": 438,
+      "order": 437,
       "script": "validate_youtube_preview_bindings.py",
       "args": [],
       "execution_tier": "pr",
@@ -17006,7 +16963,7 @@
     },
     {
       "id": "validate_manim_toolchain.py:441",
-      "order": 439,
+      "order": 438,
       "script": "validate_manim_toolchain.py",
       "args": [],
       "execution_tier": "pr",
@@ -17045,7 +17002,7 @@
     },
     {
       "id": "validate_chapter_substance_contract.py:442",
-      "order": 440,
+      "order": 439,
       "script": "validate_chapter_substance_contract.py",
       "args": [],
       "execution_tier": "pr",
@@ -17099,7 +17056,7 @@
     },
     {
       "id": "validate_youtube_supersession_workflow.py:443",
-      "order": 441,
+      "order": 440,
       "script": "validate_youtube_supersession_workflow.py",
       "args": [],
       "execution_tier": "pr",
@@ -17151,7 +17108,7 @@
     },
     {
       "id": "validate_manim_v2_production_ledger.py:444",
-      "order": 442,
+      "order": 441,
       "script": "validate_manim_v2_production_ledger.py",
       "args": [],
       "execution_tier": "pr",
@@ -17218,7 +17175,7 @@
     },
     {
       "id": "validate_failure_recovery_refinement.py:445",
-      "order": 443,
+      "order": 442,
       "script": "validate_failure_recovery_refinement.py",
       "args": [],
       "execution_tier": "pr",
@@ -17254,7 +17211,7 @@
     },
     {
       "id": "validate_learned_objective_integrity.py:446",
-      "order": 444,
+      "order": 443,
       "script": "validate_learned_objective_integrity.py",
       "args": [],
       "execution_tier": "pr",
@@ -17300,7 +17257,7 @@
     },
     {
       "id": "validate_observation_trust.py:447",
-      "order": 445,
+      "order": 444,
       "script": "validate_observation_trust.py",
       "args": [],
       "execution_tier": "pr",
@@ -17348,7 +17305,7 @@
     },
     {
       "id": "validate_human_ai_organization_accountability.py:448",
-      "order": 446,
+      "order": 445,
       "script": "validate_human_ai_organization_accountability.py",
       "args": [],
       "execution_tier": "pr",
@@ -17386,7 +17343,7 @@
     },
     {
       "id": "validate_multi_agent_systemic_boundary.py:449",
-      "order": 447,
+      "order": 446,
       "script": "validate_multi_agent_systemic_boundary.py",
       "args": [],
       "execution_tier": "pr",
@@ -17430,7 +17387,7 @@
     },
     {
       "id": "validate_embodied_physical_safety.py:450",
-      "order": 448,
+      "order": 447,
       "script": "validate_embodied_physical_safety.py",
       "args": [],
       "execution_tier": "pr",
@@ -17479,7 +17436,7 @@
     },
     {
       "id": "validate_dangerous_capability_review.py:451",
-      "order": 449,
+      "order": 448,
       "script": "validate_dangerous_capability_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17523,7 +17480,7 @@
     },
     {
       "id": "validate_military_interaction_review.py:452",
-      "order": 450,
+      "order": 449,
       "script": "validate_military_interaction_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17569,7 +17526,7 @@
     },
     {
       "id": "validate_open_weight_release_review.py:453",
-      "order": 451,
+      "order": 450,
       "script": "validate_open_weight_release_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17613,7 +17570,7 @@
     },
     {
       "id": "validate_communication_influence_review.py:454",
-      "order": 452,
+      "order": 451,
       "script": "validate_communication_influence_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17654,7 +17611,7 @@
     },
     {
       "id": "validate_objective_lease_governance.py:455",
-      "order": 453,
+      "order": 452,
       "script": "validate_objective_lease_governance.py",
       "args": [],
       "execution_tier": "pr",
@@ -17698,7 +17655,7 @@
     },
     {
       "id": "validate_adversarial_model_security.py:456",
-      "order": 454,
+      "order": 453,
       "script": "validate_adversarial_model_security.py",
       "args": [],
       "execution_tier": "pr",
@@ -17743,7 +17700,7 @@
     },
     {
       "id": "validate_protected_computation_review.py:457",
-      "order": 455,
+      "order": 454,
       "script": "validate_protected_computation_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17788,7 +17745,7 @@
     },
     {
       "id": "validate_content_authenticity_review.py:458",
-      "order": 456,
+      "order": 455,
       "script": "validate_content_authenticity_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17834,7 +17791,7 @@
     },
     {
       "id": "validate_replication_containment_review.py:459",
-      "order": 457,
+      "order": 456,
       "script": "validate_replication_containment_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17879,7 +17836,7 @@
     },
     {
       "id": "validate_institutional_legitimacy_review.py:460",
-      "order": 458,
+      "order": 457,
       "script": "validate_institutional_legitimacy_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17923,7 +17880,7 @@
     },
     {
       "id": "validate_societal_resilience_review.py:461",
-      "order": 459,
+      "order": 458,
       "script": "validate_societal_resilience_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17968,7 +17925,7 @@
     },
     {
       "id": "validate_durable_semantic_memory_review.py:462",
-      "order": 460,
+      "order": 459,
       "script": "validate_durable_semantic_memory_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18015,7 +17972,7 @@
     },
     {
       "id": "validate_physical_compute_infrastructure_review.py:463",
-      "order": 461,
+      "order": 460,
       "script": "validate_physical_compute_infrastructure_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18059,7 +18016,7 @@
     },
     {
       "id": "validate_learning_theory_forecast_review.py:464",
-      "order": 462,
+      "order": 461,
       "script": "validate_learning_theory_forecast_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18104,7 +18061,7 @@
     },
     {
       "id": "validate_scientific_experiment_review.py:465",
-      "order": 463,
+      "order": 462,
       "script": "validate_scientific_experiment_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18149,7 +18106,7 @@
     },
     {
       "id": "validate_deployment_transition_governance.py:466",
-      "order": 464,
+      "order": 463,
       "script": "validate_deployment_transition_governance.py",
       "args": [],
       "execution_tier": "pr",
@@ -18195,7 +18152,7 @@
     },
     {
       "id": "validate_human_ai_cognitive_sovereignty.py:467",
-      "order": 465,
+      "order": 464,
       "script": "validate_human_ai_cognitive_sovereignty.py",
       "args": [],
       "execution_tier": "pr",
@@ -18242,7 +18199,7 @@
     },
     {
       "id": "validate_relational_dimension_compiler.py:468",
-      "order": 466,
+      "order": 465,
       "script": "validate_relational_dimension_compiler.py",
       "args": [],
       "execution_tier": "pr",
@@ -18288,7 +18245,7 @@
     },
     {
       "id": "validate_p7_1c_reader_prose_quality.py:469",
-      "order": 467,
+      "order": 466,
       "script": "validate_p7_1c_reader_prose_quality.py",
       "args": [],
       "execution_tier": "deep",
@@ -18326,7 +18283,7 @@
     },
     {
       "id": "validate_claim_ledger_refinement:469",
-      "order": 468,
+      "order": 467,
       "script": "validate_claim_ledger_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -18370,7 +18327,7 @@
     },
     {
       "id": "validate_authority_effect_refinement:469",
-      "order": 469,
+      "order": 468,
       "script": "validate_authority_effect_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -18418,6 +18375,53 @@
       "prohibited_inference": "The finite local refinement does not establish natural-language authority extraction, authentic identity or receipts, wise issuance, concurrent revocation, complete effects, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
       "contract_precision": "inherited",
       "semantic_review_state": "checked_finite_grant_effect_refinement_not_authentic_concurrent_external_or_deployed"
+    },
+    {
+      "id": "validate_intent_resolution_refinement:469",
+      "order": 469,
+      "script": "validate_intent_resolution_refinement.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The reachable Lean intent model, bounded intake/re-contract results, complete plan fixture inventory, schema, receipt, and adequacy dossier.",
+      "input_artifacts": [
+        "scripts/validate_intent_resolution_refinement.py",
+        "schemas/intent_resolution_refinement.schema.json",
+        "experiments/intent_resolution_refinement/results/2026-07-15-local.json",
+        "docs/intent_resolution_refinement.md",
+        "evidence_quality/model_adequacy_dossiers/intent-resolution-refinement.md",
+        "lean/AsiStackProofs/IntentResolutionRefinement.lean",
+        "experiments/intent_intake_probe/results/2026-07-02-local.json",
+        "experiments/intent_recontract_probe/results/2026-07-02-local.json",
+        "experiments/plan_execution_contracts/fixtures"
+      ],
+      "output_contract": "Check event write ownership, arbitrary-run identity/ceiling custody, trace validity, batch composition, and rejection noninterference; reject lineage, time, payload, prohibition, override, authority, clarification, constraint/stop, material-delta, rejection, re-contract-version, receipt, source-drift, and support-promotion failures.",
+      "output_assertions": [
+        "twenty-five compiled Lean declarations",
+        "four reachable traces and fourteen events",
+        "fourteen invariant prefixes",
+        "eighteen batch compositions",
+        "four valid and six invalid intake cases",
+        "six intake signals",
+        "two valid and seven invalid re-contract cases",
+        "thirteen plan fixtures",
+        "forty state-noninterfering mutations",
+        "no support-state effect"
+      ],
+      "claim_scope": "One finite structured request-to-contract model and fixed local synthetic records only.",
+      "negative_controls": "validator_owned_model_and_source_mutations",
+      "negative_control_cases": [
+        "payload or lineage removal",
+        "hidden override or prohibition",
+        "authority widening",
+        "clarification or rejection bypass",
+        "constraint/stop substitution",
+        "silent material delta",
+        "missing re-contract receipt or version increase"
+      ],
+      "prohibited_inference": "Does not establish natural-language intent understanding, semantic completeness, authentic authority extraction, prompt-injection containment, deployed dispatch/effects, user satisfaction, natural workloads, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
+      "contract_precision": "inherited",
+      "semantic_review_state": "checked_structured_intent_resolution_refinement_not_natural_language_external_or_deployed"
     }
   ],
   "summary": {

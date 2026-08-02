@@ -1178,10 +1178,10 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentResolutionRefinement` | Every accepted compile in the finite reachable intent model preserves the root intent, exact versioned constraint and stop-condition hashes, and approved authority before contract acceptance. | implemented |
-| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentResolutionRefinement` | The reachable model and independent consumer reject missing payload, prohibited action, hidden override, authority widening, constraint/stop substitution, silent material deltas, and unreceipted or non-versioned re-contract. | implemented |
+| `lean:intent.contract.operational_invariant` | `AsiStackProofs.IntentResolutionRefinement` | Every successful finite run preserves root-intent identity, the original authority ceiling, and approved-authority boundedness; only parse or accepted re-contract events can write contract payload, and accepted traces compose across event batches. | implemented |
+| `lean:intent.contract.failure_blocks_promotion` | `AsiStackProofs.IntentResolutionRefinement` | The model and independent consumer reject payload, prohibition, override, lineage, authority, clarification, constraint/stop, material-delta, rejection, and re-contract faults across four traces, every prefix and batch split, and forty state-noninterfering mutations. | implemented |
 | `lean:intent.resolution.route_envelope` | `AsiStackProofs.IntentContracts` | Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission. | implemented |
-| `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentResolutionRefinement` | The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with exact counts and thirty rejecting mutations rather than literal summary theorems. | implemented |
+| `lean:intent.intake.probe_fixture_bridge` | `AsiStackProofs.IntentResolutionRefinement` | The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with four reachable traces, fourteen invariant prefixes, eighteen batch compositions, and forty state-noninterfering mutations. | implemented |
 
 ### Human Factors and Meaningful Control in Oversight
 

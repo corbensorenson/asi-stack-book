@@ -8,9 +8,9 @@ Support-state effect: `none`
 
 `lean/AsiStackProofs/IntentResolutionRefinement.lean` replaces two assumption-restating preservation/authority declarations and three literal intake-summary declarations with a reachable request-to-contract model. The model keeps root intent, contract version, constraint and stop-condition hashes, authority ceiling, approved authority, ambiguity, accepted-contract, re-contract, block, and logical-time state explicit.
 
-Lean proves that an accepted compile preserves the exact constraint hash, stop-condition hash, and approved authority; a material downstream delta enters re-contract state; and an accepted re-contract increments the version without exceeding the authority ceiling. A five-event witness reaches accepted contract version 2 after a material-means delta and explicit re-contract. Countermodels reject missing intent payload, prohibited action, hidden override, authority widening, constraint substitution, silent material-delta continuation, and re-contract without a receipt.
+Lean now gives each event kind explicit write ownership. Parse and accepted re-contract are the only payload writers; authority review and accepted re-contract are the only approved-authority writers. Across arbitrary successful runs, 25 declarations preserve root intent, the original ceiling, and approved-authority boundedness, extract recursive trace validity, and prove event-batch composition. Four witnesses cover re-contract, clarification, unchanged continuation, and rejection.
 
-`python3 scripts/validate_intent_resolution_refinement.py` independently consumes the prior intake and re-contract results and the complete plan-execution fixture inventory. It records 4 valid and 6 invalid intake cases, 6 intake signals, 2 valid and 7 invalid re-contract cases, 13 plan fixtures (3 valid and 10 invalid), the five-event witness, and 30 of 30 rejected semantic mutations.
+`python3 scripts/validate_intent_resolution_refinement.py` independently consumes the prior intake and re-contract results and the complete plan-execution fixture inventory. It checks 4 reachable traces/14 events, all 14 prefixes, 18 batch compositions, 4 valid and 6 invalid intake cases, 6 intake signals, 2 valid and 7 invalid re-contract cases, 13 plan fixtures, and 40/40 state-noninterfering semantic mutations.
 
 ## Exact boundary
 

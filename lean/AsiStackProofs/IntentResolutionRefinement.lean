@@ -63,6 +63,9 @@ def EventSpecificValid (state : IntentState) (event : IntentEvent) : Bool :=
   | .parse =>
       decide (event.fromStage = .received) && decide (event.toStage = .parsed) &&
         decide (0 < event.sourceConstraintHash) && decide (0 < event.sourceStopHash) &&
+        decide (event.outputVersion = event.inputVersion) &&
+        decide (event.outputConstraintHash = event.sourceConstraintHash) &&
+        decide (event.outputStopHash = event.sourceStopHash) &&
         !event.prohibitedAction && !event.hiddenOverride
   | .clarify =>
       decide (event.fromStage = .parsed) && decide (event.toStage = .clarified) &&
@@ -109,17 +112,59 @@ instance intentEventValidDecidable (state : IntentState) (event : IntentEvent) :
   infer_instance
 
 def ApplyIntentEvent (state : IntentState) (event : IntentEvent) : IntentState :=
-  { state with
-    stage := event.toStage
-    contractVersion := event.outputVersion
-    constraintHash := if event.outputConstraintHash = 0 then state.constraintHash else event.outputConstraintHash
-    stopHash := if event.outputStopHash = 0 then state.stopHash else event.outputStopHash
-    approvedAuthority := if event.authorityReceipt then event.requestedAuthority else state.approvedAuthority
-    ambiguityOpen := if event.kind = .clarify then false else state.ambiguityOpen || event.ambiguityPresent
-    contractAccepted := event.toStage = .accepted
-    recontractRequired := event.toStage = .recontractRequired
-    blocked := state.blocked || event.blockReceipt
-    logicalTime := event.logicalTime }
+  match event.kind with
+  | .parse =>
+      { state with
+        stage := event.toStage
+        constraintHash := event.outputConstraintHash
+        stopHash := event.outputStopHash
+        ambiguityOpen := event.ambiguityPresent
+        contractAccepted := false
+        recontractRequired := false
+        logicalTime := event.logicalTime }
+  | .clarify =>
+      { state with
+        stage := event.toStage
+        ambiguityOpen := false
+        contractAccepted := false
+        recontractRequired := false
+        logicalTime := event.logicalTime }
+  | .reviewAuthority =>
+      { state with
+        stage := event.toStage
+        approvedAuthority := event.requestedAuthority
+        contractAccepted := false
+        recontractRequired := false
+        logicalTime := event.logicalTime }
+  | .compile | .continueContract =>
+      { state with
+        stage := event.toStage
+        contractAccepted := true
+        recontractRequired := false
+        logicalTime := event.logicalTime }
+  | .detectMaterialDelta =>
+      { state with
+        stage := event.toStage
+        contractAccepted := false
+        recontractRequired := true
+        logicalTime := event.logicalTime }
+  | .acceptRecontract =>
+      { state with
+        stage := event.toStage
+        contractVersion := event.outputVersion
+        constraintHash := event.outputConstraintHash
+        stopHash := event.outputStopHash
+        approvedAuthority := event.requestedAuthority
+        contractAccepted := true
+        recontractRequired := false
+        logicalTime := event.logicalTime }
+  | .reject =>
+      { state with
+        stage := event.toStage
+        contractAccepted := false
+        recontractRequired := false
+        blocked := true
+        logicalTime := event.logicalTime }
 
 def IntentStep (state : IntentState) (event : IntentEvent) : Option IntentState :=
   if IntentEventValid state event then some (ApplyIntentEvent state event) else none
@@ -131,6 +176,12 @@ def IntentRun : IntentState → List IntentEvent → Option IntentState
       | none => none
       | some next => IntentRun next tail
 
+def IntentTraceValid : IntentState → List IntentEvent → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      IntentEventValid state event ∧
+        IntentTraceValid (ApplyIntentEvent state event) tail
+
 theorem accepted_step_is_valid
     {state next : IntentState} {event : IntentEvent}
     (accepted : IntentStep state event = some next) :
@@ -139,6 +190,130 @@ theorem accepted_step_is_valid
   split at accepted
   · assumption
   · simp at accepted
+
+theorem accepted_step_applies_event
+    {state next : IntentState} {event : IntentEvent}
+    (accepted : IntentStep state event = some next) :
+    next = ApplyIntentEvent state event := by
+  unfold IntentStep at accepted
+  split at accepted
+  · exact Option.some.inj accepted |>.symm
+  · simp at accepted
+
+theorem apply_event_preserves_root_intent
+    (state : IntentState) (event : IntentEvent) :
+    (ApplyIntentEvent state event).rootIntent = state.rootIntent := by
+  unfold ApplyIntentEvent
+  split <;> rfl
+
+theorem apply_event_preserves_authority_ceiling
+    (state : IntentState) (event : IntentEvent) :
+    (ApplyIntentEvent state event).authorityCeiling = state.authorityCeiling := by
+  unfold ApplyIntentEvent
+  split <;> rfl
+
+theorem accepted_step_preserves_approved_authority_ceiling
+    {state next : IntentState} {event : IntentEvent}
+    (bounded : state.approvedAuthority ≤ state.authorityCeiling)
+    (accepted : IntentStep state event = some next) :
+    next.approvedAuthority ≤ next.authorityCeiling := by
+  have valid := accepted_step_is_valid accepted
+  have applies := accepted_step_applies_event accepted
+  subst next
+  rcases valid with ⟨_, _, _, _, specific⟩
+  cases kind : event.kind
+  · simpa [ApplyIntentEvent, kind] using bounded
+  · simpa [ApplyIntentEvent, kind] using bounded
+  · simp [EventSpecificValid, kind] at specific
+    have fields :
+        event.toStage = .authorityReviewed ∧
+          (event.fromStage = .parsed ∨ event.fromStage = .clarified) ∧
+          state.ambiguityOpen = false ∧ event.authorityReceipt = true ∧
+          event.requestedAuthority ≤ state.authorityCeiling := by
+      simpa [and_assoc] using specific
+    simpa [ApplyIntentEvent, kind] using fields.2.2.2.2
+  · simpa [ApplyIntentEvent, kind] using bounded
+  · simpa [ApplyIntentEvent, kind] using bounded
+  · simpa [ApplyIntentEvent, kind] using bounded
+  · simp [EventSpecificValid, kind] at specific
+    have fields :
+        event.fromStage = .recontractRequired ∧ event.toStage = .accepted ∧
+          state.recontractRequired = true ∧ event.recontractReceipt = true ∧
+          state.contractVersion < event.outputVersion ∧
+          0 < event.outputConstraintHash ∧ 0 < event.outputStopHash ∧
+          event.requestedAuthority ≤ state.authorityCeiling := by
+      simpa [and_assoc] using specific
+    simpa [ApplyIntentEvent, kind] using fields.2.2.2.2.2.2.2
+  · simpa [ApplyIntentEvent, kind] using bounded
+
+theorem successful_run_preserves_root_and_ceiling
+    {state final : IntentState} {events : List IntentEvent}
+    (ran : IntentRun state events = some final) :
+    final.rootIntent = state.rootIntent ∧
+      final.authorityCeiling = state.authorityCeiling := by
+  induction events generalizing state with
+  | nil =>
+      simp [IntentRun] at ran
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      cases stepped : IntentStep state event with
+      | none => simp [IntentRun, stepped] at ran
+      | some next =>
+          have tailRan : IntentRun next tail = some final := by
+            simpa [IntentRun, stepped] using ran
+          rcases ih tailRan with ⟨root, ceiling⟩
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨root.trans (apply_event_preserves_root_intent state event),
+            ceiling.trans (apply_event_preserves_authority_ceiling state event)⟩
+
+theorem successful_run_preserves_approved_authority_ceiling
+    {state final : IntentState} {events : List IntentEvent}
+    (bounded : state.approvedAuthority ≤ state.authorityCeiling)
+    (ran : IntentRun state events = some final) :
+    final.approvedAuthority ≤ final.authorityCeiling := by
+  induction events generalizing state with
+  | nil =>
+      simp [IntentRun] at ran
+      subst final
+      exact bounded
+  | cons event tail ih =>
+      cases stepped : IntentStep state event with
+      | none => simp [IntentRun, stepped] at ran
+      | some next =>
+          have tailRan : IntentRun next tail = some final := by
+            simpa [IntentRun, stepped] using ran
+          exact ih (accepted_step_preserves_approved_authority_ceiling bounded stepped)
+            tailRan
+
+theorem successful_run_has_valid_trace
+    {state final : IntentState} {events : List IntentEvent}
+    (ran : IntentRun state events = some final) :
+    IntentTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : IntentStep state event with
+      | none => simp [IntentRun, stepped] at ran
+      | some next =>
+          have tailRan : IntentRun next tail = some final := by
+            simpa [IntentRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ⟨accepted_step_is_valid stepped, ih tailRan⟩
+
+theorem run_composes_across_intent_batches
+    (state : IntentState) (left right : List IntentEvent) :
+    IntentRun state (left ++ right) =
+      match IntentRun state left with
+      | none => none
+      | some middle => IntentRun middle right := by
+  induction left generalizing state with
+  | nil => simp [IntentRun]
+  | cons event tail ih =>
+      cases stepped : IntentStep state event <;>
+        simp [IntentRun, stepped, ih]
 
 theorem accepted_compile_preserves_constraints_stops_and_authority
     {state next : IntentState} {event : IntentEvent}
@@ -206,6 +381,10 @@ def initialState : IntentState where
   blocked := false
   logicalTime := 0
 
+theorem initial_approved_authority_is_within_ceiling :
+    initialState.approvedAuthority ≤ initialState.authorityCeiling := by
+  decide
+
 def baseEvent : IntentEvent where
   kind := .parse
   fromStage := .received
@@ -249,6 +428,47 @@ def acceptedIntentTrace : List IntentEvent := [
       logicalTime := 3 }
 ]
 
+def clarifiedIntentTrace : List IntentEvent := [
+  { baseEvent with ambiguityPresent := true },
+  { baseEvent with
+      kind := .clarify
+      fromStage := .parsed
+      toStage := .clarified
+      ambiguityPresent := true
+      clarificationReceipt := true
+      logicalTime := 2 },
+  { baseEvent with
+      kind := .reviewAuthority
+      fromStage := .clarified
+      toStage := .authorityReviewed
+      authorityReceipt := true
+      logicalTime := 3 },
+  { baseEvent with
+      kind := .compile
+      fromStage := .authorityReviewed
+      toStage := .accepted
+      authorityReceipt := true
+      logicalTime := 4 }
+]
+
+def continuedIntentTrace : List IntentEvent := acceptedIntentTrace ++ [
+  { baseEvent with
+      kind := .continueContract
+      fromStage := .accepted
+      toStage := .accepted
+      logicalTime := 4 }
+]
+
+def rejectedIntentTrace : List IntentEvent := [
+  { baseEvent with
+      kind := .reject
+      fromStage := .received
+      toStage := .rejected
+      outputConstraintHash := 0
+      outputStopHash := 0
+      blockReceipt := true }
+]
+
 theorem exact_intent_trace_reaches_accepted_contract :
     IntentRun initialState acceptedIntentTrace = some
       { initialState with
@@ -259,6 +479,44 @@ theorem exact_intent_trace_reaches_accepted_contract :
         contractAccepted := true
         logicalTime := 3 } := by
   native_decide
+
+theorem clarified_trace_reaches_same_bounded_contract :
+    IntentRun initialState clarifiedIntentTrace = some
+      { initialState with
+        stage := .accepted
+        constraintHash := 501
+        stopHash := 601
+        approvedAuthority := 3
+        ambiguityOpen := false
+        contractAccepted := true
+        logicalTime := 4 } := by
+  native_decide
+
+theorem unchanged_contract_continues_without_payload_rewrite :
+    IntentRun initialState continuedIntentTrace = some
+      { initialState with
+        stage := .accepted
+        constraintHash := 501
+        stopHash := 601
+        approvedAuthority := 3
+        contractAccepted := true
+        logicalTime := 4 } := by
+  native_decide
+
+theorem rejection_blocks_without_materializing_contract_payload :
+    IntentRun initialState rejectedIntentTrace = some
+      { initialState with
+        stage := .rejected
+        blocked := true
+        logicalTime := 1 } := by
+  native_decide
+
+theorem every_successful_reference_trace_preserves_authority_ceiling :
+    ∀ final, IntentRun initialState acceptedIntentTrace = some final →
+      final.approvedAuthority ≤ final.authorityCeiling := by
+  intro final ran
+  exact successful_run_preserves_approved_authority_ceiling
+    initial_approved_authority_is_within_ceiling ran
 
 def acceptedState : IntentState :=
   { initialState with
