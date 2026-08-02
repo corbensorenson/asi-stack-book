@@ -518,6 +518,88 @@ CURRENT_SEMANTIC_OVERRIDES[
     "rationale": "An accepted bounded correction records one correction and accountability receipt, preserves a residual, and closes the modeled control ceiling.",
 }
 
+_authority_transaction_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_authority_transaction_trace_reaches_exact_revoked_state",
+        "scripts/validate_security_kernel.py",
+    ],
+    "classification_basis": [
+        "the eight-event authority-use transaction and nine rejecting controls are independently reconstructed by the security-kernel validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_authority_transaction_event_is_admissible",
+    "accepted_authority_transaction_event_is_exact_advance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SecurityKernel.lean::{theorem_name}"
+    ] = {
+        **_authority_transaction_lifecycle_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded authority-use transaction.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/SecurityKernel.lean::complete_authority_transaction_trace_reaches_exact_revoked_state"
+] = {
+    **_authority_transaction_lifecycle_base,
+    "semantic_level": "P2",
+    "rationale": "The eight-event lease, substitution, execution, sanitization, declassification, zeroization, commit, and revocation trace is a bounded nonvacuity witness.",
+}
+
+for theorem_name in (
+    "accepted_authority_transaction_event_preserves_custody",
+    "accepted_authority_transaction_event_is_non_authorizing",
+    "accepted_authority_transaction_event_never_widens_authority",
+    "accepted_lease_is_bounded_versioned_and_unexpired",
+    "accepted_secret_injection_is_scoped_mediated_and_preexpiry",
+    "accepted_sanitization_excludes_raw_secret_and_handle",
+    "accepted_declassification_is_independent_and_post_sanitization",
+    "accepted_commit_requires_zeroization_and_preserves_residual",
+    "authority_transaction_stale_version_is_rejected",
+    "authority_transaction_ambient_context_is_rejected",
+    "authority_transaction_unmediated_injection_is_rejected",
+    "authority_transaction_expired_injection_is_rejected",
+    "authority_transaction_secret_output_is_rejected",
+    "authority_transaction_self_declassification_is_rejected",
+    "authority_transaction_commit_before_zeroization_is_rejected",
+    "authority_transaction_partial_descendant_revocation_is_rejected",
+    "authority_transaction_security_claim_laundering_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SecurityKernel.lean::{theorem_name}"
+    ] = {
+        **_authority_transaction_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem constrains one executable authority-use boundary and is covered by an independently encoded accepted trace or rejecting control."
+        ),
+    }
+
+for theorem_name in (
+    "authority_transaction_run_preserves_custody_non_authority_and_narrowing",
+    "authority_transaction_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SecurityKernel.lean::{theorem_name}"
+    ] = {
+        **_authority_transaction_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "Structural induction proves arbitrary accepted transactions preserve custody, non-authority, and narrowing or compose exactly across batches."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/SecurityKernel.lean::accepted_revocation_covers_descendants_and_closes_authority"
+] = {
+    **_authority_transaction_lifecycle_base,
+    "semantic_level": "P5",
+    "rationale": "An accepted bounded revocation closes the modeled authority ceiling and records exact finite descendant coverage.",
+}
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",

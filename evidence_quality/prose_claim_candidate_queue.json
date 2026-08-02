@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3871,
+    "candidate_count": 3873,
     "review_state_counts": {
-      "duplicate_of_atom": 1842,
+      "duplicate_of_atom": 1844,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -15498,9 +15498,47 @@
       "target_atom_id": "security-kernel-and-digital-scifs.beyond_sota.001"
     },
     {
-      "candidate_id": "security-kernel-and-digital-scifs.prose.affaf45c9c1b",
+      "candidate_id": "security-kernel-and-digital-scifs.prose.6537bc154bf1",
       "chapter_id": "security-kernel-and-digital-scifs",
       "source": "chapters/security-kernel-and-digital-scifs.qmd:469",
+      "sentence": "The model establishes only consequences of authored finite authorization fields.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the finite authored-field scope of the route-envelope formal target.",
+      "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+    },
+    {
+      "candidate_id": "security-kernel-and-digital-scifs.prose.8ecbc87b1198",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:469",
+      "sentence": "It does not prove that those fields bind a runtime, that sanitization or declassification is correct, that revocation reaches real descendants, that the records are semantically adequate, or that a deployed monitor enforces complete mediation, side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, runtime budgets, privacy, security, or security economics.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the explicit runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
+      "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+    },
+    {
+      "candidate_id": "security-kernel-and-digital-scifs.prose.affaf45c9c1b",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:471",
       "sentence": "These targets do not prove that those fields bind a runtime, that the records are semantically adequate, or that a deployed monitor enforces side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, declassification quality, runtime budgets, privacy, security, or security economics.",
       "cues": [
         "prove"
@@ -15519,7 +15557,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.845c23e61b00",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:482",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:484",
       "sentence": "The grouping prevents related author projects, risk taxonomies, and interface-rich local systems from being miscounted as independent security confirmations.",
       "cues": [
         "prevents"
@@ -15538,7 +15576,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.270ea9ecb81b",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:485",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:487",
       "sentence": "A rule-owned attack suite cannot establish security, and this escaped case blocks any claim that representation layers safely separate quotation from executable authority.",
       "cues": [
         "cannot"
@@ -15557,7 +15595,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.fcce7d4c784c",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:505",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:507",
       "sentence": "specific: fail-closed routing can prevent a class of unsafe effects, while",
       "cues": [
         "prevent"
@@ -15576,7 +15614,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.21aa8ddf56ed",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:548",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:550",
       "sentence": "The current repository proves only finite record and route consequences plus one bounded fail-closed negative result.",
       "cues": [
         "proves"
@@ -15595,7 +15633,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.97ace20a97b3",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:548",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:550",
       "sentence": "It does not prove isolation, complete mediation, prompt-injection containment, semantic non-disclosure, effect-complete revocation, side-channel safety, privacy, or production security.",
       "cues": [
         "prove"
@@ -15614,7 +15652,7 @@
     {
       "candidate_id": "security-kernel-and-digital-scifs.prose.8fa6cd2c2ff5",
       "chapter_id": "security-kernel-and-digital-scifs",
-      "source": "chapters/security-kernel-and-digital-scifs.qmd:595",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:597",
       "sentence": "poisoning, backdoors, extraction, inversion, transfer, adaptive, multimodal, or",
       "cues": [
         "transfer"

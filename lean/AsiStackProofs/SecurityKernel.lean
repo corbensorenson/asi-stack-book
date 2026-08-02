@@ -430,4 +430,733 @@ theorem scif_commit_clean_sanitized_output_commits_summary
   simp [noSecret, noHandle, lifecycleComplete, contextScoped, approvalActive,
     residualBoundary, noPromptInjection]
 
+/-! ## Versioned authority-use transaction lifecycle
+
+This finite model separates lease issuance, mediated substitution, execution,
+sanitization, independent declassification, zeroization, commit, and descendant
+revocation. It trusts the event fields: a checked record is not evidence of
+runtime complete mediation, secret non-disclosure, isolation, or side-channel
+control.
+-/
+
+inductive AuthorityTransactionStage where
+  | requested
+  | leased
+  | injected
+  | executed
+  | sanitized
+  | declassified
+  | zeroized
+  | committed
+  | revoked
+deriving DecidableEq, Repr
+
+inductive AuthorityTransactionEventKind where
+  | issueLease
+  | injectSecret
+  | recordExecution
+  | recordSanitization
+  | recordDeclassification
+  | recordZeroization
+  | commitOutput
+  | propagateRevocation
+deriving DecidableEq, Repr
+
+structure AuthorityTransactionState where
+  transactionId : Nat
+  handleId : Nat
+  secretClassId : Nat
+  purposeId : Nat
+  destinationId : Nat
+  principalId : Nat
+  kernelId : Nat
+  declassifierId : Nat
+  version : Nat
+  baseAuthorityCeiling : Nat
+  currentAuthorityCeiling : Nat
+  stage : AuthorityTransactionStage
+  descendantCount : Nat
+  revokedDescendantCount : Nat
+  sanitizerReceiptCount : Nat
+  declassificationReceiptCount : Nat
+  zeroizationReceiptCount : Nat
+  commitReceiptCount : Nat
+  revocationReceiptCount : Nat
+  residualCount : Nat
+  expiresAt : Nat
+  now : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure AuthorityTransactionEvent where
+  kind : AuthorityTransactionEventKind
+  transactionId : Nat
+  handleId : Nat
+  secretClassId : Nat
+  purposeId : Nat
+  destinationId : Nat
+  actorId : Nat
+  expectedVersion : Nat
+  targetVersion : Nat
+  requestedAuthorityCeiling : Nat
+  requestedExpiry : Nat
+  observedNow : Nat
+  approvalPresent : Bool
+  contextScoped : Bool
+  boundaryMediated : Bool
+  substitutionAuthorized : Bool
+  executionReceiptPresent : Bool
+  outputContainsSecret : Bool
+  outputContainsHandle : Bool
+  sanitizerReceiptPresent : Bool
+  declassificationReceiptPresent : Bool
+  disclosureAuthorized : Bool
+  zeroizationReceiptPresent : Bool
+  commitReceiptPresent : Bool
+  revocationReceiptPresent : Bool
+  requestedRevokedDescendantCount : Nat
+  residualPresent : Bool
+  claimsSecurity : Bool
+  requestsSupportAssignment : Bool
+  requestsExternalEffect : Bool
+deriving DecidableEq, Repr
+
+def AuthorityTransactionEventAdmissible
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent) : Prop :=
+  event.transactionId = state.transactionId ∧
+    event.handleId = state.handleId ∧
+    event.secretClassId = state.secretClassId ∧
+    event.purposeId = state.purposeId ∧
+    event.destinationId = state.destinationId ∧
+    event.expectedVersion = state.version ∧
+    state.now ≤ event.observedNow ∧
+    event.claimsSecurity = false ∧
+    event.requestsSupportAssignment = false ∧
+    event.requestsExternalEffect = false ∧
+    match event.kind with
+    | AuthorityTransactionEventKind.issueLease =>
+        state.stage = AuthorityTransactionStage.requested ∧
+          event.actorId = state.principalId ∧
+          event.approvalPresent = true ∧
+          event.requestedAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+          event.observedNow < event.requestedExpiry ∧
+          event.targetVersion = state.version + 1
+    | AuthorityTransactionEventKind.injectSecret =>
+        state.stage = AuthorityTransactionStage.leased ∧
+          event.actorId = state.kernelId ∧
+          event.contextScoped = true ∧
+          event.boundaryMediated = true ∧
+          event.substitutionAuthorized = true ∧
+          event.observedNow < state.expiresAt ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.recordExecution =>
+        state.stage = AuthorityTransactionStage.injected ∧
+          event.actorId = state.kernelId ∧
+          event.boundaryMediated = true ∧
+          event.executionReceiptPresent = true ∧
+          event.observedNow < state.expiresAt ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.recordSanitization =>
+        state.stage = AuthorityTransactionStage.executed ∧
+          event.actorId = state.kernelId ∧
+          event.outputContainsSecret = false ∧
+          event.outputContainsHandle = false ∧
+          event.sanitizerReceiptPresent = true ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.recordDeclassification =>
+        state.stage = AuthorityTransactionStage.sanitized ∧
+          event.actorId = state.declassifierId ∧
+          state.declassifierId ≠ state.principalId ∧
+          state.declassifierId ≠ state.kernelId ∧
+          event.declassificationReceiptPresent = true ∧
+          event.disclosureAuthorized = true ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.recordZeroization =>
+        state.stage = AuthorityTransactionStage.declassified ∧
+          event.actorId = state.kernelId ∧
+          event.zeroizationReceiptPresent = true ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.commitOutput =>
+        state.stage = AuthorityTransactionStage.zeroized ∧
+          event.actorId = state.kernelId ∧
+          event.commitReceiptPresent = true ∧
+          event.residualPresent = true ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | AuthorityTransactionEventKind.propagateRevocation =>
+        state.stage = AuthorityTransactionStage.committed ∧
+          event.actorId = state.kernelId ∧
+          event.revocationReceiptPresent = true ∧
+          event.requestedRevokedDescendantCount = state.descendantCount ∧
+          event.residualPresent = true ∧
+          event.requestedAuthorityCeiling = 0 ∧
+          event.targetVersion = state.version + 1
+
+instance authorityTransactionEventAdmissibleDecidable
+    (state : AuthorityTransactionState) (event : AuthorityTransactionEvent) :
+    Decidable (AuthorityTransactionEventAdmissible state event) := by
+  unfold AuthorityTransactionEventAdmissible
+  cases event.kind <;> infer_instance
+
+def AdvanceAuthorityTransaction
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent) : AuthorityTransactionState :=
+  match event.kind with
+  | AuthorityTransactionEventKind.issueLease =>
+      { state with
+        stage := AuthorityTransactionStage.leased
+        version := event.targetVersion
+        currentAuthorityCeiling := event.requestedAuthorityCeiling
+        expiresAt := event.requestedExpiry
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.injectSecret =>
+      { state with
+        stage := AuthorityTransactionStage.injected
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.recordExecution =>
+      { state with
+        stage := AuthorityTransactionStage.executed
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.recordSanitization =>
+      { state with
+        stage := AuthorityTransactionStage.sanitized
+        sanitizerReceiptCount := state.sanitizerReceiptCount + 1
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.recordDeclassification =>
+      { state with
+        stage := AuthorityTransactionStage.declassified
+        declassificationReceiptCount := state.declassificationReceiptCount + 1
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.recordZeroization =>
+      { state with
+        stage := AuthorityTransactionStage.zeroized
+        zeroizationReceiptCount := state.zeroizationReceiptCount + 1
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.commitOutput =>
+      { state with
+        stage := AuthorityTransactionStage.committed
+        commitReceiptCount := state.commitReceiptCount + 1
+        residualCount := state.residualCount + 1
+        now := event.observedNow }
+  | AuthorityTransactionEventKind.propagateRevocation =>
+      { state with
+        stage := AuthorityTransactionStage.revoked
+        version := event.targetVersion
+        currentAuthorityCeiling := 0
+        revokedDescendantCount := event.requestedRevokedDescendantCount
+        revocationReceiptCount := state.revocationReceiptCount + 1
+        residualCount := state.residualCount + 1
+        now := event.observedNow }
+
+def ApplyAuthorityTransactionEvent
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent) : Option AuthorityTransactionState :=
+  if AuthorityTransactionEventAdmissible state event then
+    some (AdvanceAuthorityTransaction state event)
+  else
+    none
+
+def RunAuthorityTransactionEvents :
+    AuthorityTransactionState -> List AuthorityTransactionEvent ->
+      Option AuthorityTransactionState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ApplyAuthorityTransactionEvent state event with
+      | none => none
+      | some next => RunAuthorityTransactionEvents next tail
+
+theorem accepted_authority_transaction_event_is_admissible
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    AuthorityTransactionEventAdmissible state event := by
+  unfold ApplyAuthorityTransactionEvent at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_authority_transaction_event_is_exact_advance
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    next = AdvanceAuthorityTransaction state event := by
+  unfold ApplyAuthorityTransactionEvent at accepted
+  split at accepted
+  · simp at accepted
+    exact accepted.symm
+  · simp at accepted
+
+theorem accepted_authority_transaction_event_preserves_custody
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    next.transactionId = state.transactionId ∧
+      next.handleId = state.handleId ∧
+      next.secretClassId = state.secretClassId ∧
+      next.purposeId = state.purposeId ∧
+      next.destinationId = state.destinationId ∧
+      next.principalId = state.principalId ∧
+      next.kernelId = state.kernelId ∧
+      next.declassifierId = state.declassifierId ∧
+      next.baseAuthorityCeiling = state.baseAuthorityCeiling := by
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceAuthorityTransaction, kind]
+
+theorem accepted_authority_transaction_event_is_non_authorizing
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    event.claimsSecurity = false ∧
+      event.requestsSupportAssignment = false ∧
+      event.requestsExternalEffect = false ∧
+      next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectCount = state.externalEffectCount := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, noSecurity, noSupport,
+    noEffect, _⟩
+  subst next
+  exact ⟨noSecurity, noSupport, noEffect,
+    by cases kind : event.kind <;> simp [AdvanceAuthorityTransaction, kind],
+    by cases kind : event.kind <;> simp [AdvanceAuthorityTransaction, kind]⟩
+
+theorem accepted_authority_transaction_event_never_widens_authority
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  subst next
+  cases kind : event.kind with
+  | issueLease =>
+      simp [kind] at route
+      simpa [AdvanceAuthorityTransaction, kind] using route.2.2.2.1
+  | injectSecret => simp [AdvanceAuthorityTransaction, kind]
+  | recordExecution => simp [AdvanceAuthorityTransaction, kind]
+  | recordSanitization => simp [AdvanceAuthorityTransaction, kind]
+  | recordDeclassification => simp [AdvanceAuthorityTransaction, kind]
+  | recordZeroization => simp [AdvanceAuthorityTransaction, kind]
+  | commitOutput => simp [AdvanceAuthorityTransaction, kind]
+  | propagateRevocation => simp [AdvanceAuthorityTransaction, kind]
+
+theorem accepted_lease_is_bounded_versioned_and_unexpired
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.issueLease)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.requested ∧
+      event.approvalPresent = true ∧
+      next.version = state.version + 1 ∧
+      next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+      next.now < next.expiresAt := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨requested, _, approval, bounded, future, versioned⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, requested, approval, bounded, future,
+    versioned]
+
+theorem accepted_secret_injection_is_scoped_mediated_and_preexpiry
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.injectSecret)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.leased ∧
+      event.actorId = state.kernelId ∧
+      event.contextScoped = true ∧
+      event.boundaryMediated = true ∧
+      event.substitutionAuthorized = true ∧
+      event.observedNow < state.expiresAt ∧
+      next.stage = AuthorityTransactionStage.injected := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨leased, kernel, scopedContext, mediated, authorized, future, _, _⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, leased, kernel, scopedContext, mediated,
+    authorized, future]
+
+theorem accepted_sanitization_excludes_raw_secret_and_handle
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.recordSanitization)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.executed ∧
+      event.outputContainsSecret = false ∧
+      event.outputContainsHandle = false ∧
+      event.sanitizerReceiptPresent = true ∧
+      next.sanitizerReceiptCount = state.sanitizerReceiptCount + 1 := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨executed, _, noSecret, noHandle, receipt, _, _⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, executed, noSecret, noHandle, receipt]
+
+theorem accepted_declassification_is_independent_and_post_sanitization
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.recordDeclassification)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.sanitized ∧
+      event.actorId = state.declassifierId ∧
+      state.declassifierId ≠ state.principalId ∧
+      state.declassifierId ≠ state.kernelId ∧
+      event.declassificationReceiptPresent = true ∧
+      event.disclosureAuthorized = true ∧
+      next.declassificationReceiptCount =
+        state.declassificationReceiptCount + 1 := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨sanitized, actor, notPrincipal, notKernel, receipt,
+    authorized, _, _⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, sanitized, actor, notPrincipal,
+    notKernel, receipt, authorized]
+
+theorem accepted_commit_requires_zeroization_and_preserves_residual
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.commitOutput)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.zeroized ∧
+      event.commitReceiptPresent = true ∧
+      event.residualPresent = true ∧
+      next.stage = AuthorityTransactionStage.committed ∧
+      next.commitReceiptCount = state.commitReceiptCount + 1 ∧
+      next.residualCount = state.residualCount + 1 := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨zeroized, _, receipt, residual, _, _⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, zeroized, receipt, residual]
+
+theorem accepted_revocation_covers_descendants_and_closes_authority
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (kind : event.kind = AuthorityTransactionEventKind.propagateRevocation)
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    state.stage = AuthorityTransactionStage.committed ∧
+      event.revocationReceiptPresent = true ∧
+      next.revokedDescendantCount = state.descendantCount ∧
+      next.currentAuthorityCeiling = 0 ∧
+      next.stage = AuthorityTransactionStage.revoked ∧
+      next.revocationReceiptCount = state.revocationReceiptCount + 1 := by
+  have admissible :=
+    accepted_authority_transaction_event_is_admissible accepted
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨committed, _, receipt, descendants, _, _, _⟩
+  subst next
+  simp [AdvanceAuthorityTransaction, kind, committed, receipt, descendants]
+
+theorem authority_transaction_run_preserves_custody_non_authority_and_narrowing
+    {initial final : AuthorityTransactionState}
+    {events : List AuthorityTransactionEvent}
+    (run : RunAuthorityTransactionEvents initial events = some final) :
+    final.transactionId = initial.transactionId ∧
+      final.handleId = initial.handleId ∧
+      final.secretClassId = initial.secretClassId ∧
+      final.purposeId = initial.purposeId ∧
+      final.destinationId = initial.destinationId ∧
+      final.principalId = initial.principalId ∧
+      final.kernelId = initial.kernelId ∧
+      final.declassifierId = initial.declassifierId ∧
+      final.baseAuthorityCeiling = initial.baseAuthorityCeiling ∧
+      final.currentAuthorityCeiling ≤ initial.currentAuthorityCeiling ∧
+      final.supportAssignmentCount = initial.supportAssignmentCount ∧
+      final.externalEffectCount = initial.externalEffectCount := by
+  induction events generalizing initial with
+  | nil => simp [RunAuthorityTransactionEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunAuthorityTransactionEvents] at run
+      cases step : ApplyAuthorityTransactionEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have custody :=
+            accepted_authority_transaction_event_preserves_custody step
+          have boundary :=
+            accepted_authority_transaction_event_is_non_authorizing step
+          have narrowed :=
+            accepted_authority_transaction_event_never_widens_authority step
+          have tailFacts := ih run
+          rcases custody with ⟨transaction, handle, secretClass, purpose,
+            destination, principal, kernel, declassifier, base⟩
+          rcases boundary with ⟨_, _, _, support, effects⟩
+          rcases tailFacts with ⟨ttransaction, thandle, tsecretClass, tpurpose,
+            tdestination, tprincipal, tkernel, tdeclassifier, tbase, tnarrowed,
+            tsupport, teffects⟩
+          exact ⟨ttransaction.trans transaction, thandle.trans handle,
+            tsecretClass.trans secretClass, tpurpose.trans purpose,
+            tdestination.trans destination, tprincipal.trans principal,
+            tkernel.trans kernel, tdeclassifier.trans declassifier,
+            tbase.trans base, Nat.le_trans tnarrowed narrowed,
+            tsupport.trans support, teffects.trans effects⟩
+
+theorem authority_transaction_runs_compose
+    (initial : AuthorityTransactionState)
+    (before after : List AuthorityTransactionEvent) :
+    RunAuthorityTransactionEvents initial (before ++ after) =
+      match RunAuthorityTransactionEvents initial before with
+      | none => none
+      | some middle => RunAuthorityTransactionEvents middle after := by
+  induction before generalizing initial with
+  | nil => simp [RunAuthorityTransactionEvents]
+  | cons event tail ih =>
+      simp only [List.cons_append, RunAuthorityTransactionEvents]
+      cases step : ApplyAuthorityTransactionEvent initial event with
+      | none => simp
+      | some next => simp [ih]
+
+def initialAuthorityTransactionState : AuthorityTransactionState := {
+  transactionId := 79
+  handleId := 83
+  secretClassId := 89
+  purposeId := 97
+  destinationId := 101
+  principalId := 103
+  kernelId := 107
+  declassifierId := 109
+  version := 1
+  baseAuthorityCeiling := 7
+  currentAuthorityCeiling := 7
+  stage := AuthorityTransactionStage.requested
+  descendantCount := 3
+  revokedDescendantCount := 0
+  sanitizerReceiptCount := 0
+  declassificationReceiptCount := 0
+  zeroizationReceiptCount := 0
+  commitReceiptCount := 0
+  revocationReceiptCount := 0
+  residualCount := 0
+  expiresAt := 0
+  now := 20
+  supportAssignmentCount := 0
+  externalEffectCount := 0
+}
+
+def issueAuthorityLeaseEvent : AuthorityTransactionEvent := {
+  kind := AuthorityTransactionEventKind.issueLease
+  transactionId := 79
+  handleId := 83
+  secretClassId := 89
+  purposeId := 97
+  destinationId := 101
+  actorId := 103
+  expectedVersion := 1
+  targetVersion := 2
+  requestedAuthorityCeiling := 5
+  requestedExpiry := 40
+  observedNow := 21
+  approvalPresent := true
+  contextScoped := false
+  boundaryMediated := false
+  substitutionAuthorized := false
+  executionReceiptPresent := false
+  outputContainsSecret := false
+  outputContainsHandle := false
+  sanitizerReceiptPresent := false
+  declassificationReceiptPresent := false
+  disclosureAuthorized := false
+  zeroizationReceiptPresent := false
+  commitReceiptPresent := false
+  revocationReceiptPresent := false
+  requestedRevokedDescendantCount := 0
+  residualPresent := false
+  claimsSecurity := false
+  requestsSupportAssignment := false
+  requestsExternalEffect := false
+}
+
+def injectAuthoritySecretEvent : AuthorityTransactionEvent := {
+  issueAuthorityLeaseEvent with
+  kind := AuthorityTransactionEventKind.injectSecret
+  actorId := 107
+  expectedVersion := 2
+  targetVersion := 2
+  requestedAuthorityCeiling := 5
+  contextScoped := true
+  boundaryMediated := true
+  substitutionAuthorized := true
+  observedNow := 22
+}
+
+def recordAuthorityExecutionEvent : AuthorityTransactionEvent := {
+  injectAuthoritySecretEvent with
+  kind := AuthorityTransactionEventKind.recordExecution
+  executionReceiptPresent := true
+  observedNow := 23
+}
+
+def recordAuthoritySanitizationEvent : AuthorityTransactionEvent := {
+  recordAuthorityExecutionEvent with
+  kind := AuthorityTransactionEventKind.recordSanitization
+  executionReceiptPresent := false
+  sanitizerReceiptPresent := true
+  observedNow := 24
+}
+
+def recordAuthorityDeclassificationEvent : AuthorityTransactionEvent := {
+  recordAuthoritySanitizationEvent with
+  kind := AuthorityTransactionEventKind.recordDeclassification
+  actorId := 109
+  sanitizerReceiptPresent := false
+  declassificationReceiptPresent := true
+  disclosureAuthorized := true
+  observedNow := 25
+}
+
+def recordAuthorityZeroizationEvent : AuthorityTransactionEvent := {
+  recordAuthorityDeclassificationEvent with
+  kind := AuthorityTransactionEventKind.recordZeroization
+  actorId := 107
+  declassificationReceiptPresent := false
+  disclosureAuthorized := false
+  zeroizationReceiptPresent := true
+  observedNow := 26
+}
+
+def commitAuthorityOutputEvent : AuthorityTransactionEvent := {
+  recordAuthorityZeroizationEvent with
+  kind := AuthorityTransactionEventKind.commitOutput
+  zeroizationReceiptPresent := false
+  commitReceiptPresent := true
+  residualPresent := true
+  observedNow := 27
+}
+
+def propagateAuthorityRevocationEvent : AuthorityTransactionEvent := {
+  commitAuthorityOutputEvent with
+  kind := AuthorityTransactionEventKind.propagateRevocation
+  expectedVersion := 2
+  targetVersion := 3
+  requestedAuthorityCeiling := 0
+  commitReceiptPresent := false
+  revocationReceiptPresent := true
+  requestedRevokedDescendantCount := 3
+  observedNow := 28
+}
+
+def completeAuthorityTransactionTrace : List AuthorityTransactionEvent :=
+  [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+    recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
+    recordAuthorityDeclassificationEvent, recordAuthorityZeroizationEvent,
+    commitAuthorityOutputEvent, propagateAuthorityRevocationEvent]
+
+theorem complete_authority_transaction_trace_reaches_exact_revoked_state :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      completeAuthorityTransactionTrace =
+      some {
+        initialAuthorityTransactionState with
+        version := 3
+        currentAuthorityCeiling := 0
+        stage := AuthorityTransactionStage.revoked
+        revokedDescendantCount := 3
+        sanitizerReceiptCount := 1
+        declassificationReceiptCount := 1
+        zeroizationReceiptCount := 1
+        commitReceiptCount := 1
+        revocationReceiptCount := 1
+        residualCount := 2
+        expiresAt := 40
+        now := 28
+      } := by
+  decide
+
+theorem authority_transaction_stale_version_is_rejected :
+    ApplyAuthorityTransactionEvent initialAuthorityTransactionState
+      { issueAuthorityLeaseEvent with expectedVersion := 0 } = none := by
+  decide
+
+theorem authority_transaction_ambient_context_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent,
+        { injectAuthoritySecretEvent with contextScoped := false }] = none := by
+  decide
+
+theorem authority_transaction_unmediated_injection_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent,
+        { injectAuthoritySecretEvent with boundaryMediated := false }] = none := by
+  decide
+
+theorem authority_transaction_expired_injection_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent,
+        { injectAuthoritySecretEvent with observedNow := 40 }] = none := by
+  decide
+
+theorem authority_transaction_secret_output_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+        recordAuthorityExecutionEvent,
+        { recordAuthoritySanitizationEvent with outputContainsSecret := true }] =
+      none := by
+  decide
+
+theorem authority_transaction_self_declassification_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+        recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
+        { recordAuthorityDeclassificationEvent with actorId := 103 }] = none := by
+  decide
+
+theorem authority_transaction_commit_before_zeroization_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+        recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
+        recordAuthorityDeclassificationEvent, commitAuthorityOutputEvent] = none := by
+  decide
+
+theorem authority_transaction_partial_descendant_revocation_is_rejected :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+        recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
+        recordAuthorityDeclassificationEvent, recordAuthorityZeroizationEvent,
+        commitAuthorityOutputEvent,
+        { propagateAuthorityRevocationEvent with
+          requestedRevokedDescendantCount := 2 }] = none := by
+  decide
+
+theorem authority_transaction_security_claim_laundering_is_rejected :
+    ApplyAuthorityTransactionEvent initialAuthorityTransactionState
+      { issueAuthorityLeaseEvent with claimsSecurity := true } = none := by
+  decide
+
 end AsiStackProofs.SecurityKernel

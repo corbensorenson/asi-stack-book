@@ -1,6 +1,6 @@
 # Security Kernel Harness
 
-Last updated: 2026-07-01
+Last updated: 2026-08-02
 
 The eighteenth Phase 5 harness checks synthetic authority-use receipt fixtures
 under `experiments/security_kernel/`.
@@ -23,6 +23,16 @@ under `experiments/security_kernel/`.
   non-claim boundaries.
 - Revocation paths must name expiry, revocation, deletion, lease closure, or
   zeroization.
+- The Lean module must compile with the exact 23-theorem transaction-lifecycle
+  surface.
+- An independently implemented eight-event transaction must preserve exact
+  identity, non-authority, a non-increasing ceiling, sanitization before
+  independent declassification, zeroization before commit, and exact finite
+  descendant revocation.
+- Nine lifecycle mutations must reject stale version, ambient context,
+  unmediated or expired injection, raw-secret output, self-declassification,
+  premature commit, partial descendant revocation, and security-claim
+  laundering.
 
 ## Command
 
@@ -32,13 +42,16 @@ python3 scripts/validate_security_kernel.py
 
 ## Current Local Result
 
-The 2026-07-01 local run passed:
+The 2026-08-02 local revalidation passed:
 
 ```text
-Security kernel harness passed: 3 valid fixture(s), 8 expected-invalid fixture(s).
+Security kernel harness passed: 3 valid fixture(s), 8 expected-invalid fixture(s). Security kernel formal binding passed: 2 retained authority-route theorem binding(s), 23 transaction-lifecycle theorem(s), 8 accepted event(s), and 9 rejecting lifecycle control(s).
 ```
 
-The result record is `experiments/security_kernel/results/2026-07-01-local.md`.
+The result lineage remains in
+`experiments/security_kernel/results/2026-07-01-local.md`, with the dated
+2026-08-02 lifecycle revalidation appended rather than replacing the original
+fixture result.
 
 ## Boundary
 
@@ -52,6 +65,7 @@ boundaries have to line up.
 It is not a kernel-security result, sandbox-isolation result, side-channel
 safety result, prompt-injection containment result, secret-handle safety result,
 deployed approval-expiry enforcement, least-privilege context result,
+sanitizer or declassifier competence, effect-complete runtime revocation,
 security-overhead budget-preservation result, runtime-policy trace,
 source-interpretation review, reader-release review, or proof of deployed
 security. It does not promote Appendix C, validate deployed AI behavior, or
