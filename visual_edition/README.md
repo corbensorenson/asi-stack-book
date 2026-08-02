@@ -206,8 +206,9 @@ positive, affected-path inventory, authority handoff, correction propagation,
 residual ledger, and finite tabletop ceiling remain explicitly bounded. All
 seventeen delivery masters remain
 candidates only: no generation-2 video has passed release-candidate,
-independent, technical, claim-fidelity, or acceptance gates, and none is
-uploaded or current in Quarto.
+independent, technical, claim-fidelity, or acceptance gates. Six candidates
+(chapters 19–24) are now present on YouTube only as unlisted uploads with
+platform receipts; none is YouTube-current or projected into Quarto.
 
 Chapter 18, `stable-capability-fields`, now has a bespoke qualification-desk
 scene: a field contract stays stable while candidate implementations,
@@ -294,9 +295,10 @@ promotion is implied.
 The six new generation-2 masters for chapters 19–24 are staged locally in
 `youtube_generation2_upload_candidates.json` with exact hashes, captions,
 transcripts, thumbnails, chapter digests, and playlist positions. Their upload
-privacy is intentionally `unlisted`; the candidate batch is waiting on the
-Chrome file-chooser permission, and no candidate has been projected into
-Quarto or marked YouTube-current.
+privacy is intentionally `unlisted`; each now has a recorded YouTube video ID,
+saved title/description and Education metadata, a custom thumbnail, and a
+published English caption track. They remain revise-status candidates: none
+has been projected into Quarto or marked YouTube-current.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
