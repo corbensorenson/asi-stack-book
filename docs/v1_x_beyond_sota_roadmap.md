@@ -413,6 +413,24 @@ second parallel roadmap:
 | Human Intent, Context Transactions, and Scalable Oversight | inherited goal drift; objective fingerprints and periodic recontracting; human-AI delegation calibration; rejector/router calibration limits; operator-load residuals. |
 | Personal Compute Hives, Resource Economics, and Operational Resilience | provider concentration; critical third-party dependencies; substitutability; exit and portability; degraded operation; impact tolerances. |
 
+#### Runtime adapter effect replay probe
+
+The Runtime adapter effect replay probe is now a bounded, public-safe
+execution lane rather than a prose-only intention. The valid
+`valid_low_impact_local_write_effect_replay` case writes a generated marker to
+a temporary file outside the repository, records pre/post/rollback bytes and
+SHA-256 digests, and requires `rollback-exact` restoration before the receipt
+can close. The two negative controls,
+`invalid_missing_permission_no_mutation` and
+`invalid_expired_approval_no_mutation`, must deny before mutation and retain an
+unchanged state. The result is local evidence with `support-state` effect
+`none`; it does not promote any chapter core claim or create a support-state
+transition. It does not establish deployed adapter behavior, sandbox
+isolation, approval-service behavior, secret-handle safety, rollback-service
+behavior, policy-enforcement correctness, or benchmark performance. The next
+stronger lane is an independently reviewable or deployed replay with the same
+permission, approval, effect, rollback, receipt, and non-claim boundaries.
+
 ### Dynamic-spine preflight
 
 Before adding the first accepted chapter:
