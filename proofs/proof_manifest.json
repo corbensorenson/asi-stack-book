@@ -97,7 +97,7 @@
       "chapter_title": "ASI Is a Stack, Not a Model",
       "tag": "lean:stack.layer_boundaries.operational_invariant",
       "module": "AsiStackProofs.StackBoundaries",
-      "formal_target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback.",
+      "formal_target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody.",
       "status": "implemented",
       "outline_line": 477,
       "module_path": "lean/AsiStackProofs/StackBoundaries.lean"
@@ -107,7 +107,7 @@
       "chapter_title": "ASI Is a Stack, Not a Model",
       "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
       "module": "AsiStackProofs.StackBoundaries",
-      "formal_target": "The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect.",
+      "formal_target": "The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution.",
       "status": "implemented",
       "outline_line": 478,
       "module_path": "lean/AsiStackProofs/StackBoundaries.lean"

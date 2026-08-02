@@ -57,7 +57,7 @@ hooks are allowed to mean; it does not strengthen the underlying proofs.
 
 | Chapter | Targets | Adequacy class | Next action |
 |---|---:|---|---|
-| `asi-is-a-stack-not-a-model` | 3 | useful but too narrow | Stack-trace unauthorized external-handoff envelope and layer-contract admission lifecycle route added; still add source-to-layer traceability review, claim-support audit, integration traces, deployed layer-boundary pressure tests, and runtime authority behavior tests. |
+| `asi-is-a-stack-not-a-model` | 3 | useful but too narrow | Arbitrary finite runs now preserve authority/effect-accounting and caller-ceiling invariants and compose exactly; a multi-layer handoff chain adds endpoint authority bounds, artifact custody, and widening/substitution countermodels. Source-to-layer and claim-support audits pass; still add deployed integration traces, adversarial layer-boundary pressure tests, concurrent runtime authority behavior, and cryptographically bound custody. |
 | `the-efficient-asi-hypothesis` | 4 | needs empirical or baseline tests first | Efficiency-claim admission lifecycle route added; still build workload, baseline, negative-control, quality, residual, hidden-cost, and result records before stronger proof. |
 | `system-boundaries-and-authority` | 4 | useful but too narrow | Two operational targets now have an adequate arbitrary-run finite invariant, exact trace composition, irreversible revoked-ID custody, and 50/50 state-noninterfering mutations; the lifecycle and cross-artifact targets remain narrow. Project Theseus still owns deployed adapter enforcement, concurrent revocation propagation, live confused-deputy probes, approval-service quality checks, and deployment traces. |
 | `failure-modes-of-ungoverned-intelligence` | 5 | useful but too narrow | A reachable five-stage recovery refinement now adds exact rejected-state preservation, effect disablement after accepted detection, guarded readmission, bounded recurrence re-isolation, and an independently encoded 31-mutation consumer to the incident-route and recurrence envelopes. It remains bounded authored control-plane semantics; add deployed fault injection, actual effect and containment observation, remediation and restart checks, detector/evaluator independence, escape and recurrence measurement, transfer, and Theseus whole-system recovery before stronger claims. |
@@ -185,12 +185,18 @@ gates, external-action authority or authorized handoff records, source
 mappings, support-state effects, evidence-transition records, and non-claim
 boundaries.
 
-This keeps `asi-is-a-stack-not-a-model` in the `useful but too narrow` class.
-The trace theorem and admission route are better stack-level guards than
-single-field projections, but they still do not prove whole-system safety,
-deployed layer enforcement, source-to-layer traceability completeness,
-runtime authority behavior, integration behavior, support-state promotion, or
-that the ASI Stack is empirically better than monolithic systems.
+The current increment keeps `asi-is-a-stack-not-a-model` in the `useful but too
+narrow` class while materially deepening its semantics. An arbitrary accepted
+run now preserves effect accounting, live-grant authority bounds, dispatch
+custody, caller ceiling, and persistent revocation; revocation blocks later
+authorization, dispatch, and effects after any accepted suffix, and runs compose exactly across prefixes. A separate
+multi-layer handoff chain proves endpoint ceiling bounds and adjacent artifact
+custody and rejects authority widening and artifact substitution. The
+independent consumer checks thirteen prefixes, thirteen compositions, and the
+two cross-layer countermodels. These results still do not prove whole-system
+safety, deployed layer enforcement, authentic custody, concurrent runtime
+authority behavior, integration behavior, support-state promotion, or that the
+ASI Stack is empirically better than monolithic systems.
 
 ### Authority Decision and Lifecycle Admission Envelope
 

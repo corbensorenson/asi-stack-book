@@ -227,9 +227,9 @@
             },
             {
               "name": "Reachable stack-boundary authority/effect consumer",
-              "purpose": "Check request, within-ceiling authorization, receipt-bound dispatch, material effect, independent observation, revocation, denial, and exact rollback against source-anchored local evidence and targeted semantic mutations.",
+              "purpose": "Check arbitrary-run invariants, prefix/suffix composition, multi-layer artifact and authority custody, and the request-to-rollback path against source-anchored local evidence and semantic mutations.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected mutations; support-state effect none",
+              "result_status": "passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 13 invariant-prefix checks, 13 prefix/suffix compositions, 3 multi-layer handoff cases with 2 rejected countermodels, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected runtime mutations; support-state effect none",
               "status": "implemented in `AsiStackProofs.StackBoundaries` plus an independent consumer; synthetic fixtures and one local temp-file effect do not establish deployed authority, complete effects, safety, reproduction, transfer, or chapter-core support"
             },
             {
@@ -253,13 +253,13 @@
             {
               "tag": "lean:stack.layer_boundaries.operational_invariant",
               "module": "AsiStackProofs.StackBoundaries",
-              "target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback.",
+              "target": "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody.",
               "status": "implemented"
             },
             {
               "tag": "lean:stack.layer_boundaries.failure_blocks_promotion",
               "module": "AsiStackProofs.StackBoundaries",
-              "target": "The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect.",
+              "target": "The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution.",
               "status": "implemented"
             },
             {

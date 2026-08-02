@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2113 |
-| Direct/projection-style theorem declarations | 407 |
-| Derived/decomposed theorem declarations | 1232 |
-| Unknown or mixed theorem declarations | 474 |
+| Theorem declarations classified | 2134 |
+| Direct/projection-style theorem declarations | 409 |
+| Derived/decomposed theorem declarations | 1250 |
+| Unknown or mixed theorem declarations | 475 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -169,7 +169,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | unmapped | 0 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | societal-resilience-and-misuse-defense | 1 | 32 | 15 | 13 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 15 | 1 | 14 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 9 | 1 | 4 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 30 | 3 | 22 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 6 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Tribunal.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
@@ -2130,14 +2130,35 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `retired_state_cannot_transition` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `stale_qualification_lease_requires_requalification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_authorization_respects_caller_ceiling` | derived_or_decomposed | no | uses omega, simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_run_preserves_caller_ceiling` | derived_or_decomposed | no | uses calc, cases, have, induction, rw, simp, subst |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_boundary_step_preserves_invariant` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_effect_increments_only_material_accounting` | derived_or_decomposed | no | uses rw, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_effect_requires_live_grant_and_dispatch` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_observation_accounts_for_prior_effect` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_revocation_clears_effect_authority` | derived_or_decomposed | no | uses rw, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `accepted_rollback_requires_complete_observation_and_clears_accounting` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `apply_boundary_event_preserves_caller_ceiling` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `apply_boundary_event_preserves_revocation` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `artifact_substitution_breaks_layer_composition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `authority_widening_breaks_layer_composition` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `boundary_run_composes` | derived_or_decomposed | no | uses cases, induction, simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `boundary_run_preserves_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `boundary_run_preserves_revocation` | derived_or_decomposed | no | uses cases, have, induction, rw, simp, subst |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `effect_without_dispatch_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `handoff_exceeding_caller_ceiling_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `layer_without_external_authority_requires_authorized_handoff` | derived_or_decomposed | no | uses cases, contradiction, rw |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `over_ceiling_authorization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `reachable_effect_trace_rolls_back_exactly` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `revocation_blocks_effect_authority_after_any_accepted_suffix` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `revoked_boundary_rejects_authorization_dispatch_and_effect` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `revoked_grant_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `three_layer_handoff_chain_is_nonvacuously_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `valid_chain_bounds_every_handoff_by_both_layers` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/StackBoundaries.lean` | `valid_two_hop_chain_preserves_artifact_and_cannot_widen_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `complete_requested_artifact_reaches_custody_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_component_inventory_requires_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `missing_lineage_requires_repair` | derived_or_decomposed | no | uses simp, unfold |

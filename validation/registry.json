@@ -10799,7 +10799,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The reachable Lean boundary model, eighteen-case generated layer-contract suite, six tracked authority fixtures, one local effect probe, five-entry revocation trace, schema-bound result, receipt, and model-adequacy dossier.",
+      "input_contract": "The arbitrary-run Lean boundary invariant, exact run composition, finite multi-layer handoff model, eighteen-case generated layer-contract suite, six tracked authority fixtures, one local effect probe, five-entry revocation trace, schema-bound result, receipt, and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_stack_boundary_effect_consumer.py",
         "schemas/stack_boundary_effect_consumer.schema.json",
@@ -10821,6 +10821,8 @@
         "eighteen matched layer-contract routes",
         "six authority fixtures with three accepted and three rejected",
         "three accepted runtime paths and ten accepted events",
+        "thirteen invariant-prefix checks and thirteen prefix-suffix composition checks",
+        "one accepted three-layer handoff path and two rejected handoff countermodels",
         "one material effect one independent observation and one exact rollback",
         "two no-mutation denials and five revocation entries",
         "twelve rejected semantic mutations",
@@ -10836,6 +10838,7 @@
         "missing independent observation",
         "false or receipt-free rollback",
         "post-revocation dispatch and effect",
+        "cross-layer authority widening or artifact substitution",
         "support promotion laundering"
       ],
       "prohibited_inference": "Synthetic fixtures and one local temp-file effect do not establish authentic or deployed authority, complete effect discovery, distributed behavior, security, natural-workload usefulness, reproduction, transfer, safety, or chapter-core support.",

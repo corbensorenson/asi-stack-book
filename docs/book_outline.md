@@ -474,8 +474,8 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback. | implemented |
-| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect. | implemented |
+| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody. | implemented |
+| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution. | implemented |
 | `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface. | implemented |
 
 ### The Efficient ASI Hypothesis

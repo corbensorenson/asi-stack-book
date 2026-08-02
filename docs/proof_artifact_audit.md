@@ -119,7 +119,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | 3 | 2 | 3 | 10 | 2 |
 | `lean/AsiStackProofs/SocietalResilienceReview.lean` | 1 | 32 | 0 | 32 | 8 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 15 | 0 | 16 | 5 |
-| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 9 | 0 | 13 | 7 |
+| `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 30 | 0 | 21 | 8 |
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |

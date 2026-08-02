@@ -6,12 +6,15 @@ deployed-authority or chapter-core support claim.
 ## What ran
 
 `lean/AsiStackProofs/StackBoundaries.lean` now separates three narrow reusable
-order lemmas from a reachable boundary transition model. The model represents
+order lemmas from a reachable boundary transition model and a multi-layer
+artifact-handoff model. The transition model represents
 a request, target-owner authorization, receipt-bound dispatch, material effect,
 independent observation, revocation, denial, and exact rollback. An accepted
 authorization cannot exceed the caller ceiling. An accepted material effect
 requires a live same-epoch grant, an earlier dispatch receipt, and a grant that
-has not been revoked.
+has not been revoked. Arbitrary accepted runs preserve the declared state
+invariant and caller ceiling and compose exactly across any prefix. Adjacent
+layer handoffs preserve artifact custody and cannot widen authority.
 
 `scripts/validate_stack_boundary_effect_consumer.py` independently reimplements
 the finite decisions. It consumes all six tracked authority-transition fixtures
@@ -22,6 +25,10 @@ probe and five-entry revocation trace. The stored result covers:
   priority-ordered admission outcome;
 - six authority fixtures: three accepted and three rejected;
 - three accepted runtime paths and ten accepted events;
+- thirteen accepted invariant-prefix checks and thirteen prefix/suffix
+  composition checks;
+- one accepted three-layer path plus rejected authority-widening and
+  artifact-substitution handoffs;
 - one material local temp-file effect, one independent observation, and one
   exact local rollback;
 - two pre-effect denial paths with no mutation;
@@ -42,9 +49,10 @@ python3 scripts/validate_stack_boundary_effect_consumer.py
 ## Adjudication
 
 This closes the bounded proposition that the declared reachable model and its
-independent consumer reject authority widening, effect without dispatch custody,
-and post-revocation effect, while the source-anchored nominal path reaches an
-observed effect and exact rollback. The consumer also preserves the behavior of
+independent consumer preserve the authored invariant and exact sequential
+composition, reject authority widening, artifact substitution, effect without
+dispatch custody, and post-revocation effect, while the source-anchored nominal
+path reaches an observed effect and exact rollback. The consumer also preserves the behavior of
 the eighteen priority-ordered layer-contract cases after physically retiring
 their theorem-per-record normalizations from the live Lean surface; their frozen
 rationalization lineage remains available in the proof registry.

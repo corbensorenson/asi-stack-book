@@ -13,10 +13,10 @@ TRIAGE = ROOT / "proofs/proof_triage.json"
 
 TARGETS = {
     "lean:stack.layer_boundaries.operational_invariant": (
-        "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback."
+        "Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody."
     ),
     "lean:stack.layer_boundaries.failure_blocks_promotion": (
-        "The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect."
+        "The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution."
     ),
     "lean:stack.layer_contract.admission_lifecycle_route": (
         "An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface."
@@ -50,6 +50,13 @@ def main() -> None:
             test["status"] = (
                 "implemented by the independent stack-boundary consumer; retired Lean normalizations remain frozen in the rationalization registry"
             )
+        elif test.get("name") == "Reachable stack-boundary authority/effect consumer":
+            test["purpose"] = (
+                "Check arbitrary-run invariants, prefix/suffix composition, multi-layer artifact and authority custody, and the request-to-rollback path against source-anchored local evidence and semantic mutations."
+            )
+            test["result_status"] = (
+                "passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 13 invariant-prefix checks, 13 prefix/suffix compositions, 3 multi-layer handoff cases with 2 rejected countermodels, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected runtime mutations; support-state effect none"
+            )
     if not any(test.get("name") == "Reachable stack-boundary authority/effect consumer" for test in tests):
         tests.insert(1, {
             "name": "Reachable stack-boundary authority/effect consumer",
@@ -58,12 +65,12 @@ def main() -> None:
             "result_status": "passes via `python3 scripts/validate_stack_boundary_effect_consumer.py`: 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected mutations; support-state effect none",
             "status": "implemented in `AsiStackProofs.StackBoundaries` plus an independent consumer; synthetic fixtures and one local temp-file effect do not establish deployed authority, complete effects, safety, reproduction, transfer, or chapter-core support",
         })
-    STRUCTURE.write_text(json.dumps(structure, indent=2) + "\n", encoding="utf-8")
+    STRUCTURE.write_text(json.dumps(structure, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     triage = json.loads(TRIAGE.read_text(encoding="utf-8"))
     rationales = {
-        "lean:stack.layer_boundaries.operational_invariant": "Implemented as a reachable finite state transition model plus an independent source-anchored consumer; establishes only live-grant/dispatch custody and one observed exact local rollback path under trusted input fields.",
-        "lean:stack.layer_boundaries.failure_blocks_promotion": "Implemented with Lean countermodels and twelve independently checked semantic mutations covering authority widening, missing custody, stale epochs, missing observation, false rollback, and post-revocation effect.",
+        "lean:stack.layer_boundaries.operational_invariant": "Implemented as an arbitrary-run finite invariant, exact trace-composition law, finite multi-layer handoff discipline, and independent source-anchored consumer; establishes only modeled authority, artifact, dispatch, accounting, observation, and rollback custody under trusted input fields.",
+        "lean:stack.layer_boundaries.failure_blocks_promotion": "Implemented with persistent-revocation theorems, cross-layer authority/artifact countermodels, and twelve independently checked runtime mutations covering authority widening, missing custody, stale epochs, missing observation, false rollback, and post-revocation effect.",
         "lean:stack.layer_contract.admission_lifecycle_route": "The eighteen theorem-per-record normalizations are retired from the live Lean surface; a generated independent suite checks all eighteen priority-ordered route outcomes, while frozen proof lineage is preserved in the rationalization registry.",
     }
     for target in triage["records"]:

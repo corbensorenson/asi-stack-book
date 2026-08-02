@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; external comparators: `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; connector/recovery: `moecot` |
 | Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`, `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; primary-report passages reviewed: `ext_drexler_cais_2019`; authenticated connector text passage-reviewed: `moecot` |
-| Test state | `layer_boundary_record.valid.json` passes protocol validation; `AsiStackProofs.StackBoundaries` builds a reachable request → grant → dispatch → effect → observation → rollback model and explicit rejection theorems; `python3 scripts/validate_stack_boundary_effect_consumer.py` independently matches 18/18 generated admission routes, classifies six authority fixtures, accepts three runtime paths totaling ten events, and rejects 12/12 semantic mutations with support-state effect `none`. `python3 scripts/validate_stack_layer_traceability.py` separately checks source-to-layer and claim-support metadata. Contract-change triage remains planned. |
+| Test state | `layer_boundary_record.valid.json` passes protocol validation; `AsiStackProofs.StackBoundaries` proves an arbitrary-run authority/effect-accounting invariant, exact run composition, and a finite multi-layer artifact-handoff discipline around a reachable request → grant → dispatch → effect → observation → rollback model; `python3 scripts/validate_stack_boundary_effect_consumer.py` independently matches 18/18 generated admission routes, checks 13 invariant prefixes and 13 prefix/suffix compositions, rejects two multi-layer handoff countermodels, classifies six authority fixtures, accepts three runtime paths totaling ten events, and rejects 12/12 semantic mutations with support-state effect `none`. `python3 scripts/validate_stack_layer_traceability.py` separately checks source-to-layer and claim-support metadata. Contract-change triage remains planned. |
 
 ## Drafting guardrail
 
@@ -364,15 +364,23 @@ The finite model begins with a request, admits a grant only when the target owne
 approves an authority level no higher than the caller ceiling, requires a
 same-epoch dispatch receipt before any material effect, separates effect from
 independent observation, and represents revocation, denial, and exact rollback
-as different events. Lean proves the within-ceiling and live-grant consequences
-and rejects over-ceiling authorization, missing-dispatch effects, and
-post-revocation effects.
+as different events. Lean now proves that every accepted finite run preserves
+effect accounting, live-grant authority bounds, dispatch custody, and the caller
+ceiling, and that splitting a run at any prefix does not change its result.
+Separate multi-layer handoff semantics bind adjacent layers to the same
+intermediate layer and artifact while forbidding authority widening. Concrete
+countermodels reject over-ceiling grants, missing-dispatch and post-revocation
+effects, cross-layer authority widening, and artifact substitution. Revocation
+itself is persistent: after any accepted suffix, later authorization, dispatch,
+and effect events remain blocked.
 
 An independently implemented consumer checks the same declared boundary against
 six tracked authority fixtures and existing local runtime-effect and revocation
 results. Its accepted nominal path contains one local temporary-file effect,
 one independent observation, and one exact rollback; two other paths deny before
-mutation. Twelve semantic mutations all fail. This is evidence for the bounded
+mutation. The consumer checks all thirteen prefixes and all thirteen ways to
+split those paths, plus one accepted three-layer path and two rejected handoff
+countermodels. Twelve runtime semantic mutations all fail. This is evidence for the bounded
 transition contract, not for authentic receipts, complete observation, a live
 authorization service, distributed execution, or whole-stack safety. The
 support-state effect is exactly `none`.
@@ -420,7 +428,7 @@ This stack doctrine is still an architectural claim. It stays at `argument` supp
 | Test | Purpose | Status |
 |---|---|---|
 | Layer-boundary record validation | Check that the layer boundary fixture records lifecycle state, owner, chapter refs, traceability state, responsibility, input/output artifacts, authority ceiling, handoff protocol, contract refs, change policy, integration decision, invariants, failure modes, evidence gates, downstream interfaces, promotion blockers, source refs, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
-| Reachable stack-boundary authority/effect consumer | Check request, within-ceiling authorization, receipt-bound dispatch, material effect, independent observation, revocation, denial, and exact rollback against source-anchored local evidence and semantic mutations. | implemented by `AsiStackProofs.StackBoundaries` and `python3 scripts/validate_stack_boundary_effect_consumer.py`; 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected mutations; support-state effect `none` |
+| Reachable stack-boundary authority/effect consumer | Check arbitrary-run invariants, prefix/suffix composition, multi-layer artifact and authority custody, and the request-to-rollback path against source-anchored local evidence and semantic mutations. | implemented by `AsiStackProofs.StackBoundaries` and `python3 scripts/validate_stack_boundary_effect_consumer.py`; 13 invariant prefixes, 13 compositions, 3 multi-layer handoff cases with 2 rejected countermodels, 6 authority fixtures, 3 runtime paths, 10 accepted events, 1 effect, 1 observation, 1 exact rollback, 2 no-mutation denials, 5 revocation entries, and 12/12 rejected runtime mutations; support-state effect `none` |
 | Layer-contract admission lifecycle route | Check all eighteen priority-ordered layer-contract admission outcomes through a generated independent route suite while preserving frozen lineage for the retired theorem-per-record normalizations. | 18/18 generated route cases match via `python3 scripts/validate_stack_boundary_effect_consumer.py`; no deployed layer enforcement, complete source-to-layer traceability, whole-system safety, or support-state promotion claim |
 | Layer-boundary audit | Check that layer-boundary fixture refs, contract refs, non-claims, and text markers stay connected to the opener. | implemented in `python3 scripts/validate_stack_layer_traceability.py`; repository metadata/fixture audit only |
 | Source-to-layer traceability review | Check that source notes map to layer responsibilities before support promotion. | implemented in `python3 scripts/validate_stack_layer_traceability.py`; source-note mapping audit only |
@@ -431,11 +439,11 @@ This stack doctrine is still an architectural claim. It stays at `argument` supp
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; the source-anchored nominal path reaches independent observation and exact local rollback. | implemented |
-| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization, effect without a dispatch receipt, and post-revocation effect. | implemented |
+| `lean:stack.layer_boundaries.operational_invariant` | `AsiStackProofs.StackBoundaries` | Every accepted material effect in the finite boundary transition model requires a live same-epoch grant within the caller ceiling and a prior dispatch receipt; arbitrary accepted runs preserve the authority/effect-accounting invariant and caller ceiling and compose exactly across prefixes; a finite multi-layer handoff chain preserves endpoint authority bounds and artifact custody. | implemented |
+| `lean:stack.layer_boundaries.failure_blocks_promotion` | `AsiStackProofs.StackBoundaries` | The finite boundary model rejects over-ceiling authorization and effect without a dispatch receipt; revocation persists through every accepted suffix and blocks later authorization, dispatch, and effect; adjacent layers reject authority widening and artifact substitution. | implemented |
 | `lean:stack.layer_contract.admission_lifecycle_route` | `AsiStackProofs.StackBoundaries` | An independently implemented generated suite matches all eighteen priority-ordered layer-contract admission routes after the theorem-per-record normalizations are retired from the live proof surface. | implemented |
 
-These hooks retain three genuine reusable order/trace lemmas and add a reachable boundary transition model. Eighteen former theorem-per-record normalizations have been physically retired; their frozen identities remain in the proof rationalization registry, and the independent consumer preserves their finite route behavior with a generated 18/18 suite. The reachable model and consumer establish only the declared finite handoff, authority, dispatch, effect, observation, denial, revocation, and local rollback boundaries. Recorded custody fields remain trusted inputs, and the result does not prove authentic authority, complete effects, distributed execution, whole-system safety, capability, source interpretation, support-state promotion, reproduction, transfer, or deployed layer enforcement.
+These hooks retain three genuine reusable order/trace lemmas and add an arbitrary-length boundary invariant, exact trace composition, and a finite multi-layer handoff chain. Eighteen former theorem-per-record normalizations have been physically retired; their frozen identities remain in the proof rationalization registry, and the independent consumer preserves their finite route behavior with a generated 18/18 suite. The reachable model and consumer establish only the authored handoff, authority, dispatch, effect-accounting, observation, denial, revocation, local rollback, and adjacent-layer custody boundaries. Recorded identities, artifact digests, approvals, and receipts remain trusted inputs, and the result does not prove authentic authority, complete effects, distributed execution, whole-system safety, capability, source interpretation, support-state promotion, reproduction, transfer, or deployed layer enforcement.
 
 ## Source crosswalk
 

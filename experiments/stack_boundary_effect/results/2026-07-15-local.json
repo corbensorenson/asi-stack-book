@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.stack_boundary_effect_consumer.v1",
   "result_id": "stack-boundary-effect-2026-07-15-local",
-  "lean_model_sha256": "2990c888ce10ae23cf7b468a70a7c606564554db8afaeabaab8723d00481cffb",
+  "lean_model_sha256": "ba20a1f10c924f192f47824480be1cbcf2280fb8c47454990be91a2b281bc50c",
   "runtime_result_sha256": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
   "revocation_result_sha256": "8d777ba0c2ec356ca05451b7c19e3b794d9f9202975e2f6fe82c1193adede0e9",
   "layer_contract_case_count": 18,
@@ -12,6 +12,10 @@
   "runtime_case_count": 3,
   "runtime_case_accepted_count": 3,
   "runtime_accepted_event_count": 10,
+  "runtime_invariant_prefix_count": 13,
+  "runtime_composition_check_count": 13,
+  "layer_handoff_chain_case_count": 3,
+  "layer_handoff_chain_rejection_count": 2,
   "executed_effect_count": 1,
   "independently_observed_effect_count": 1,
   "exact_rollback_count": 1,
@@ -230,6 +234,23 @@
         "rolled_back": false,
         "logical_time": 2
       }
+    }
+  ],
+  "layer_handoff_receipts": [
+    {
+      "id": "valid_three_layer_path",
+      "expected": true,
+      "accepted": true
+    },
+    {
+      "id": "authority_widening",
+      "expected": false,
+      "accepted": false
+    },
+    {
+      "id": "artifact_substitution",
+      "expected": false,
+      "accepted": false
     }
   ],
   "support_state_effect": "none",

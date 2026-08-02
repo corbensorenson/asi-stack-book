@@ -6,8 +6,14 @@ The model owns a finite boundary proposition: an accepted material effect is
 reachable only through request, within-ceiling target-owner grant, same-epoch
 receipt-bound dispatch, and a live non-revoked authority state; the declared
 nominal path can then reach independent observation and exact local rollback.
-Over-ceiling authorization, missing-dispatch effect, and post-revocation effect
-are rejected.
+Every arbitrary accepted run preserves the modeled authority/effect-accounting
+invariant and caller ceiling and composes exactly across prefixes. A separate
+finite multi-layer path requires endpoint authority bounds, adjacent-layer
+identity, artifact custody, and non-widening authority. Over-ceiling
+authorization, missing-dispatch effect, post-revocation effect, cross-layer
+authority widening, and artifact substitution are rejected.
+Once revoked, the modeled boundary remains revoked through every accepted
+suffix and cannot later authorize, dispatch, or commit an effect.
 
 ## Entities and transition semantics
 
@@ -20,6 +26,10 @@ are rejected.
 - `BoundaryEventValid` is the bounded admission predicate.
 - `BoundaryStep` is a deterministic partial transition and `BoundaryRun`
   composes accepted events.
+- `BoundaryStateInvariant` owns effect accounting, live-grant ceiling and
+  revocation bounds, and dispatch custody across arbitrary accepted runs.
+- `LayerHandoff`, `LayerHandoffsCompose`, and `LayerHandoffChainValid` own the
+  finite adjacent-layer identity, artifact, and authority boundary.
 
 ## Trusted computing base and assumptions
 
@@ -38,6 +48,14 @@ are rejected.
 
 - An accepted authorization respects the caller authority ceiling.
 - An accepted material effect requires a live grant and prior dispatch receipt.
+- Arbitrary accepted runs preserve effect accounting, live-grant bounds,
+  dispatch custody, and the immutable caller ceiling.
+- Revocation persists through arbitrary accepted suffixes and blocks all later
+  authorization, dispatch, and effect events in the model.
+- Boundary runs compose exactly across every prefix/suffix split.
+- Every handoff in a valid finite chain stays within both endpoint ceilings;
+  adjacent handoffs preserve the intermediate artifact and cannot widen
+  authority.
 - The declared six-event nominal run reaches zero remaining effects after one
   independently observed effect and exact rollback.
 - Explicit Lean countermodels reject over-ceiling authorization, effect without
@@ -48,6 +66,8 @@ are rejected.
 - A generated suite checks all eighteen declared layer-contract admission routes
   against the independent priority-ordered route implementation.
 - Twelve semantic mutations are all rejected.
+- The consumer checks thirteen invariant prefixes, thirteen run compositions,
+  one accepted three-layer path, and two rejected cross-layer countermodels.
 
 ## Countermodels and mutation coverage
 
@@ -55,8 +75,9 @@ The negative suite changes zero-valued requests, widens grant scope, removes
 owner approval, removes authorization or dispatch receipts, changes the
 authority epoch, removes effect custody, removes independent observation,
 removes observation or rollback receipts, falsifies exact rollback, and inserts
-revocation before dispatch/effect. These cases target distinct admission guards
-rather than merely perturbing formatting.
+revocation before dispatch/effect. Separate handoff countermodels widen
+authority and substitute the intermediate artifact. These cases target distinct
+admission and composition guards rather than merely perturbing formatting.
 
 ## Consumer and refinement boundary
 
@@ -76,9 +97,11 @@ no-promotion function it actually exercises.
 
 ## Adequacy adjudication
 
-Adequate for: the finite transition semantics above, the three explicit negative
-families, one source-anchored contained effect/observation/rollback path, two
-denial paths, tracked revocation evidence, and twelve targeted mutations.
+Adequate for: the finite transition semantics above, arbitrary sequential-run
+invariant preservation and composition, the finite adjacent-layer handoff
+contract, the five explicit negative families, one source-anchored contained
+effect/observation/rollback path, two denial paths, tracked revocation evidence,
+and twelve targeted runtime mutations.
 
 Not adequate for: authentic grants or receipts; complete effect discovery; a
 real target owner; multidimensional delegation; compromised authorities;

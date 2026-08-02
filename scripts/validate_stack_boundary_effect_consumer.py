@@ -101,13 +101,26 @@ def apply(s,e):
  elif k=="revoke":s["active_grant"]=None;s["authority_epoch"]+=1;s["revoked"]=True;s["dispatch_receipt"]=False
  elif k=="deny":s["pending_request"]=None
  return s
-def run(events):
- s=initial()
+def state_invariant(s):
+ if s["observed_effects"]>s["material_effects"]:return False
+ if s["active_grant"] is not None and (s["active_grant"]>s["caller_ceiling"] or s["revoked"]):return False
+ if s["dispatch_receipt"] and (s["active_grant"] is None or s["revoked"]):return False
+ return True
+def run_from(s,events):
+ s=copy.deepcopy(s)
  for i,e in enumerate(events):
   x=event_errors(s,e)
   if x:return False,i,x,s
   s=apply(s,e)
  return True,None,[],s
+def run(events):return run_from(initial(),events)
+
+def handoff(source,target,source_ceiling,target_ceiling,requested,input_artifact,output_artifact):
+ return {"source":source,"target":target,"source_ceiling":source_ceiling,"target_ceiling":target_ceiling,"requested":requested,"input_artifact":input_artifact,"output_artifact":output_artifact,"authorized":True}
+def handoff_valid(h):
+ return h["source"]!=h["target"] and h["authorized"] and h["requested"]<=h["source_ceiling"] and h["requested"]<=h["target_ceiling"]
+def handoffs_compose(left,right):
+ return left["target"]==right["source"] and left["output_artifact"]==right["input_artifact"] and right["requested"]<=left["requested"]
 
 def build():
  errors=[];fixtures=[]
@@ -126,17 +139,32 @@ def build():
  denial=[event("request",time=1),event("deny",time=2)]
  runtime_cases=[("executed_effect_and_rollback",valid),("missing_permission_denial",denial),("expired_approval_denial",denial)]
  runtime_receipts=[]
+ invariant_prefix_count=0;composition_check_count=0
  for name,events in runtime_cases:
   ok,idx,reasons,state=run(events)
   if not ok:errors.append(f"{name}: rejected")
+  for split in range(len(events)+1):
+   prefix_ok,_,_,prefix_state=run(events[:split])
+   if not prefix_ok or not state_invariant(prefix_state):errors.append(f"{name}: invariant failed at prefix {split}")
+   else:invariant_prefix_count+=1
+   suffix_ok,_,_,staged_state=run_from(prefix_state,events[split:])
+   if not suffix_ok or staged_state!=state:errors.append(f"{name}: composition failed at split {split}")
+   else:composition_check_count+=1
   runtime_receipts.append({"id":name,"accepted":ok,"events":len(events),"final_state":state})
+ left=handoff(10,20,4,3,3,101,202);right=handoff(20,30,3,2,2,202,303)
+ handoff_cases=[("valid_three_layer_path",left,right,True),("authority_widening",left,{**right,"requested":4},False),("artifact_substitution",left,{**right,"input_artifact":999},False)]
+ handoff_receipts=[]
+ for name,first,second,expected in handoff_cases:
+  accepted=handoff_valid(first) and handoff_valid(second) and handoffs_compose(first,second)
+  if accepted!=expected:errors.append(f"{name}: handoff-chain disposition mismatch")
+  handoff_receipts.append({"id":name,"expected":expected,"accepted":accepted})
  mutations=[]
  def m(i,k,v):x=copy.deepcopy(valid);x[i][k]=v;return x
  mutations += [m(0,"requested",0),m(1,"grant",4),m(1,"owner",False),m(1,"receipt",False),m(2,"epoch",12),m(2,"receipt",False),m(3,"receipt",False),m(4,"observer",False),m(4,"receipt",False),m(5,"exact",False),m(5,"receipt",False)]
  mutations.append(valid[:2]+[event("revoke",time=3)]+[event("dispatch",time=4),event("commit",time=5)])
  rejected=sum(not run(x)[0] for x in mutations)
  if rejected!=len(mutations):errors.append("mutation accepted")
- result={"schema_version":"asi_stack.stack_boundary_effect_consumer.v1","result_id":"stack-boundary-effect-2026-07-15-local","lean_model_sha256":sha(LEAN),"runtime_result_sha256":sha(RUNTIME),"revocation_result_sha256":sha(REVOCATION),"layer_contract_case_count":len(route_receipts),"layer_contract_route_match_count":sum(x["matched"] for x in route_receipts),"authority_fixture_count":len(fixtures),"authority_fixture_accepted_count":sum(x["accepted"] for x in fixtures),"authority_fixture_rejected_count":sum(not x["accepted"] for x in fixtures),"runtime_case_count":3,"runtime_case_accepted_count":3,"runtime_accepted_event_count":10,"executed_effect_count":1,"independently_observed_effect_count":1,"exact_rollback_count":1,"no_mutation_denial_count":2,"revocation_trace_entry_count":5,"mutation_count":len(mutations),"mutation_rejection_count":rejected,"layer_contract_receipts":route_receipts,"authority_receipts":fixtures,"runtime_receipts":runtime_receipts,"support_state_effect":"none","non_claims":["The consumer binds one local temp-file effect and synthetic authority fixtures; it does not establish deployed enforcement.","Recorded grant, owner, receipt, observer, and revocation fields are trusted inputs and do not prove authenticity or complete observation.","Passing traces do not establish safety, security, natural-workload utility, reproduction, transfer, or chapter-core support."]}
+ result={"schema_version":"asi_stack.stack_boundary_effect_consumer.v1","result_id":"stack-boundary-effect-2026-07-15-local","lean_model_sha256":sha(LEAN),"runtime_result_sha256":sha(RUNTIME),"revocation_result_sha256":sha(REVOCATION),"layer_contract_case_count":len(route_receipts),"layer_contract_route_match_count":sum(x["matched"] for x in route_receipts),"authority_fixture_count":len(fixtures),"authority_fixture_accepted_count":sum(x["accepted"] for x in fixtures),"authority_fixture_rejected_count":sum(not x["accepted"] for x in fixtures),"runtime_case_count":3,"runtime_case_accepted_count":3,"runtime_accepted_event_count":10,"runtime_invariant_prefix_count":invariant_prefix_count,"runtime_composition_check_count":composition_check_count,"layer_handoff_chain_case_count":len(handoff_receipts),"layer_handoff_chain_rejection_count":sum(not x["accepted"] for x in handoff_receipts),"executed_effect_count":1,"independently_observed_effect_count":1,"exact_rollback_count":1,"no_mutation_denial_count":2,"revocation_trace_entry_count":5,"mutation_count":len(mutations),"mutation_rejection_count":rejected,"layer_contract_receipts":route_receipts,"authority_receipts":fixtures,"runtime_receipts":runtime_receipts,"layer_handoff_receipts":handoff_receipts,"support_state_effect":"none","non_claims":["The consumer binds one local temp-file effect and synthetic authority fixtures; it does not establish deployed enforcement.","Recorded grant, owner, receipt, observer, and revocation fields are trusted inputs and do not prove authenticity or complete observation.","Passing traces do not establish safety, security, natural-workload utility, reproduction, transfer, or chapter-core support."]}
  try:jsonschema.Draft202012Validator(load(SCHEMA)).validate(result)
  except jsonschema.ValidationError as exc:errors.append(f"schema:{exc.message}")
  return result,errors
@@ -145,5 +173,5 @@ def main():
  if e:raise SystemExit("Stack boundary consumer failed:\n - "+"\n - ".join(e))
  if a.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(json.dumps(r,indent=2)+"\n",encoding="utf-8")
  elif not RESULT.exists() or load(RESULT)!=r:raise SystemExit("Stack boundary consumer result stale; run --write")
- print(f"Stack boundary consumer passed: {r['layer_contract_route_match_count']} layer-contract routes, {r['authority_fixture_count']} authority fixtures, {r['runtime_case_count']} runtime paths, {r['mutation_rejection_count']} mutations rejected, support effect none.")
+ print(f"Stack boundary consumer passed: {r['layer_contract_route_match_count']} layer-contract routes, {r['runtime_invariant_prefix_count']} invariant prefixes, {r['runtime_composition_check_count']} compositions, {r['layer_handoff_chain_rejection_count']} handoff countermodels, {r['mutation_rejection_count']} mutations rejected, support effect none.")
 if __name__=="__main__":main()
