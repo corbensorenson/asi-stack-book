@@ -40,6 +40,7 @@ structure Packet where
   taskDigest : Nat
   policyDigest : Nat
   budgetDigest : Nat
+  authorityCeiling : Nat
   verifierDigest : Nat
   evaluatorDigest : Nat
   resultDigest : Nat
@@ -107,6 +108,7 @@ structure State where
   taskDigest : Nat
   policyDigest : Nat
   budgetDigest : Nat
+  authorityCeiling : Nat
   verifierDigest : Nat
   evaluatorDigest : Nat
   resultDigest : Nat
@@ -121,6 +123,28 @@ structure State where
   supportAssignmentCount : Nat
   externalEffectCount : Nat
 deriving DecidableEq, Repr
+
+structure Identity where
+  requestId : Nat
+  requestVersion : Nat
+  consumerDigest : Nat
+  taskDigest : Nat
+  policyDigest : Nat
+  budgetDigest : Nat
+  authorityCeiling : Nat
+  verifierDigest : Nat
+  evaluatorDigest : Nat
+  resultDigest : Nat
+  residualDigest : Nat
+deriving DecidableEq, Repr
+
+def State.identity (s : State) : Identity :=
+  { requestId := s.requestId, requestVersion := s.requestVersion
+    consumerDigest := s.consumerDigest, taskDigest := s.taskDigest
+    policyDigest := s.policyDigest, budgetDigest := s.budgetDigest
+    authorityCeiling := s.authorityCeiling, verifierDigest := s.verifierDigest
+    evaluatorDigest := s.evaluatorDigest, resultDigest := s.resultDigest
+    residualDigest := s.residualDigest }
 
 def expectedKind : Stage -> EventKind
   | .requested => .bindScope
@@ -137,7 +161,8 @@ def exactRequest (s : State) (p : Packet) : Bool :=
   p.consumerDigest == s.consumerDigest && p.taskDigest == s.taskDigest
 
 def exactPolicy (s : State) (p : Packet) : Bool :=
-  p.policyDigest == s.policyDigest && p.budgetDigest == s.budgetDigest
+  p.policyDigest == s.policyDigest && p.budgetDigest == s.budgetDigest &&
+    p.authorityCeiling == s.authorityCeiling
 
 def exactEvaluator (s : State) (p : Packet) : Bool :=
   p.verifierDigest == s.verifierDigest && p.evaluatorDigest == s.evaluatorDigest
@@ -242,11 +267,9 @@ def applyEvent (s : State) (e : Event) : State × Route :=
   else (s, r)
 
 theorem apply_event_preserves_request_policy_evaluator_and_result_identity (s : State) (e : Event) :
-    (applyEvent s e).1.requestId = s.requestId ∧
-    (applyEvent s e).1.policyDigest = s.policyDigest ∧
-    (applyEvent s e).1.verifierDigest = s.verifierDigest ∧
-    (applyEvent s e).1.resultDigest = s.resultDigest := by
-  by_cases h : accepted (routeFor s e) = true <;> simp [applyEvent, h]
+    (applyEvent s e).1.identity = s.identity := by
+  by_cases h : accepted (routeFor s e) = true <;>
+    simp [applyEvent, State.identity, h]
 
 theorem apply_event_cannot_assign_support_or_external_effect (s : State) (e : Event) :
     (applyEvent s e).1.supportAssignmentCount = s.supportAssignmentCount ∧
@@ -257,9 +280,43 @@ theorem accepted_step_adds_one_receipt (s : State) (e : Event)
     (h : accepted (routeFor s e) = true) :
     (applyEvent s e).1.receiptCount = s.receiptCount + 1 := by simp [applyEvent, h]
 
+theorem rejected_event_preserves_exact_state (s : State) (e : Event)
+    (h : accepted (routeFor s e) = false) :
+    applyEvent s e = (s, routeFor s e) := by simp [applyEvent, h]
+
+def runEvents : State -> List Event -> State
+  | s, [] => s
+  | s, e :: rest => runEvents (applyEvent s e).1 rest
+
+theorem run_events_preserve_exact_identity (s : State) (events : List Event) :
+    (runEvents s events).identity = s.identity := by
+  induction events generalizing s with
+  | nil => rfl
+  | cons event rest ih =>
+      exact (ih (applyEvent s event).1).trans
+        (apply_event_preserves_request_policy_evaluator_and_result_identity s event)
+
+theorem run_events_cannot_assign_support_or_external_effect
+    (s : State) (events : List Event) :
+    (runEvents s events).supportAssignmentCount = s.supportAssignmentCount ∧
+      (runEvents s events).externalEffectCount = s.externalEffectCount := by
+  induction events generalizing s with
+  | nil => simp [runEvents]
+  | cons event rest ih =>
+      have head := apply_event_cannot_assign_support_or_external_effect s event
+      have tail := ih (applyEvent s event).1
+      exact ⟨tail.1.trans head.1, tail.2.trans head.2⟩
+
+theorem run_events_compose (s : State) (left right : List Event) :
+    runEvents s (left ++ right) = runEvents (runEvents s left) right := by
+  induction left generalizing s with
+  | nil => simp [runEvents]
+  | cons event rest ih => simp [runEvents, ih]
+
 def completePacket : Packet :=
   { requestId := 4001, requestVersion := 3, consumerDigest := 4002
     taskDigest := 4003, policyDigest := 4004, budgetDigest := 4005
+    authorityCeiling := 2
     verifierDigest := 4006, evaluatorDigest := 4007, resultDigest := 4008
     residualDigest := 4009, eventDigest := 1, requestWellFormed := true
     consumer := true, taskContract := true, rights := true, riskClass := true
@@ -282,7 +339,7 @@ def completePacket : Packet :=
 def stateAt (stage : Stage) : State :=
   { stage := stage, requestId := 4001, requestVersion := 3
     consumerDigest := 4002, taskDigest := 4003, policyDigest := 4004
-    budgetDigest := 4005, verifierDigest := 4006, evaluatorDigest := 4007
+    budgetDigest := 4005, authorityCeiling := 2, verifierDigest := 4006, evaluatorDigest := 4007
     resultDigest := 4008, residualDigest := 4009, lastEventDigest := 0
     receiptCount := 0, candidateBatchCount := 0, evaluationCount := 0
     selectionCount := 0, residualEscrowCount := 0, planningHandoffCount := 0
@@ -312,8 +369,29 @@ theorem execution_authority_cannot_cross_planning_handoff :
   routeFor (stateAt .handedOff) {kind := .close, packet := {completePacket with executionRequested := true}} =
   .rejectExecutionAuthority := by rfl
 
+theorem authority_ceiling_substitution_is_rejected :
+  routeFor (stateAt .requested)
+    {kind := .bindScope, packet := {completePacket with authorityCeiling := 3}} =
+  .rejectPolicySubstitution := by rfl
+
 def event (kind : EventKind) (digest : Nat) (packet : Packet := completePacket) : Event :=
   {kind := kind, packet := {packet with eventDigest := digest}}
+
+def completeTrace : List Event :=
+  [event .bindScope 1, event .generateCandidates 2, event .evaluateCandidates 3,
+   event .selectCandidate 4, event .stopDeliberation 5,
+   event .handoffToPlanning 6, event .close 7]
+
+theorem complete_trace_reaches_exact_closed_state :
+    runEvents (stateAt .requested) completeTrace =
+      { stateAt .requested with
+        stage := .closed
+        lastEventDigest := 7
+        receiptCount := 7
+        candidateBatchCount := 1
+        evaluationCount := 1
+        selectionCount := 1
+        planningHandoffCount := 1 } := by native_decide
 
 theorem verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority :
   let s0 := stateAt .requested

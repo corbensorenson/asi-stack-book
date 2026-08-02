@@ -4,7 +4,7 @@ chapter_id: "governed-deliberation-and-test-time-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-16"
+last_updated: "2026-08-02"
 primary_sources:
   - "verification_bandwidth"
   - "ext_tree_of_thoughts_2023"
@@ -19,7 +19,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The exact current evidence is ten synthetic admission cases with eleven mutations and fifteen preserved harms; one 300-example frozen setup; one deterministic three-seed result where adaptive stopping reached 179/180 in 236 operations, fixed search 154/180 in 540 and corrupted fifteen initially correct answers, direct generation reached 130/180, and fallback never activated; one later actual-model five-arm result with 0/60 correct in every arm and no initially correct cases; two no-change decisions; two retained general countermodels; and an eleven-declaration, eight-stage, 59-route request-to-closure refinement whose independent consumer rejects 51/51 non-accepting mutations and digest-binds all three evidence families. Eight flat route consequences are retired."
+  - "The exact current evidence is ten synthetic admission cases with eleven mutations and fifteen preserved harms; one 300-example frozen setup; one deterministic three-seed result where adaptive stopping reached 179/180 in 236 operations, fixed search 154/180 in 540 and corrupted fifteen initially correct answers, direct generation reached 130/180, and fallback never activated; one later actual-model five-arm result with 0/60 correct in every arm and no initially correct cases; two no-change decisions; two retained general countermodels; and a seventeen-declaration, eight-stage, 59-route request-to-closure refinement whose independent consumer simulates the seven-event lifecycle, rejects 51/51 non-accepting mutations, and digest-binds all three evidence families. Eight flat route consequences are retired."
   - "A full attempt still requires a deliberately ambiguous natural held-out workload with meaningful direct, revision, search, fallback, abstention, and human-review opportunities; actual current-model candidates; initially correct and incorrect strata; independent outcome and trace-faithfulness evaluators; delayed high-risk outcomes; and complete resource, human, governance, and residual accounting."
   - "The causal campaign must compare direct, bounded revision, fixed, adaptive, verifier-disabled, overcompute, self-consistency, process-reward, early-exit, human, abstention, and governed arms under matched information, models, tools, resources, evaluators, retries, and time while preserving all fifteen harms."
   - "Useful test-time scaling, faithful reasoning, verifier adequacy, safety, efficiency, generality, or state-of-the-art claims remain blocked until independent model-runner, verifier, evaluator, faithfulness, cost, and handoff implementations reproduce results and transfer spans heterogeneous models, prompts, tasks, domains, languages, tools, organizations, rights regimes, attacks, updates, and time."
@@ -33,12 +33,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-08-02 |
 | Primary source records | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_faithfulness_information_flow_2026` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All eight assigned sources have exact bounded mappings: the local Verification Bandwidth raw cache is passage-reviewed; Tree of Thoughts, test-time compute, R1, S-GRPO, and faithfulness records are passage-reviewed public comparators; Universal Transformer and Dynamic Compute are metadata-first source-note comparators. No source system has been reproduced. |
-| Test state | Post-v2 and post-v2.1 comparisons preserve a bounded synthetic benefit, fifteen known harms, and an actual-model 0/60 null. The replacement proof family has eight reachable stages, 59 routes, eleven refinement declarations, two retained countermodels, eight retired flat consequences, and an independent consumer rejecting 51/51 non-accepting mutations. No beneficial actual-model or independent-evaluator result exists. |
+| Test state | Post-v2 and post-v2.1 comparisons preserve a bounded synthetic benefit, fifteen known harms, and an actual-model 0/60 null. The replacement proof family has eight reachable stages, 59 routes, seventeen refinement declarations, two retained countermodels, eight retired flat consequences, arbitrary-run identity/non-authority invariants, exact composition and closure, and an independent lifecycle consumer rejecting 51/51 non-accepting mutations. No beneficial actual-model or independent-evaluator result exists. |
 
 ## Drafting guardrail
 
@@ -622,16 +622,20 @@ safety, generality, or state-of-the-art performance.
 | `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.DeliberationRefinement` | implemented | High-risk evaluation without an independent-enough review record is blocked before selection or planning handoff. |
 
 The family now contains two retained general countermodels in
-`AsiStackProofs.Deliberation` and eleven request-to-closure declarations in
+`AsiStackProofs.Deliberation` and seventeen request-to-closure declarations in
 `AsiStackProofs.DeliberationRefinement`; eight flat route consequences were
-physically retired. The independent consumer reaches all 59 routes, rejects
+physically retired. The refinement proves rejected-event state noninterference,
+exact full identity and authority-ceiling custody over arbitrary event lists,
+zero support or external-effect assignment over arbitrary runs, exact batch
+composition, authority-ceiling substitution rejection, and one exact seven-event
+closure. The independent consumer simulates the lifecycle, reaches all 59 routes, rejects
 51/51 non-accepting mutations, reruns the exact source validators, and binds
 the admission, synthetic comparison, actual-model result, and adjudicated
 outcome artifacts by SHA-256. The actual-model attempt remains exactly 0/60 in
 every arm with no initially correct cases, so corruption reduction is
 non-estimable and the disposition remains `no_change`/`no_core_promotion`.
 
-Compilation and route coverage establish only the authored finite lifecycle.
+Compilation, induction, composition, and route coverage establish only the authored finite lifecycle.
 Verifier independence, evaluator correctness, corruption, repair,
 faithfulness, costs, useful metrics, and residual fields are modeled gates,
 not measurements. Neither the trace nor the planning handoff grants execution,

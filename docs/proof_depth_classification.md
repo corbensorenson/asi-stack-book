@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2279 |
-| Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1329 |
-| Unknown or mixed theorem declarations | 541 |
+| Theorem declarations classified | 2285 |
+| Direct/projection-style theorem declarations | 410 |
+| Derived/decomposed theorem declarations | 1333 |
+| Unknown or mixed theorem declarations | 542 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -88,7 +88,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Deliberation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 11 | 6 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | governed-deliberation-and-test-time-scaling | 10 | 17 | 7 | 7 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | ai-deployment-transition-distribution-and-human-agency | 1 | 44 | 15 | 15 | 14 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | durable-semantic-memory-and-knowledge-lattices | 1 | 35 | 15 | 15 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 2 | 10 | 0 | 7 | 3 | manual review |
@@ -740,13 +740,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `apply_event_preserves_request_policy_evaluator_and_result_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `authority_ceiling_substitution_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `budget_exhaustion_without_residual_blocks_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `complete_trace_reaches_exact_closed_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `execution_authority_cannot_cross_planning_handoff` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `high_risk_without_independent_review_blocks_evaluation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `missing_budget_blocks_candidate_generation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `missing_first_correctness_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `no_verified_candidate_reaches_closed_with_residual_escrow` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `raw_score_cannot_promote_selected_candidate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/DeliberationRefinement.lean` | `verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `adoption_does_not_establish_welfare` | unknown_or_mixed | no | no ':= by' body detected |
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | `affected_denominator_gap_persists_when_observed_count_falls` | unknown_or_mixed | no | no ':= by' body detected |

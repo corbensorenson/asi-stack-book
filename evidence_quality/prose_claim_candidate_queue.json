@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3874,
+    "candidate_count": 3875,
     "review_state_counts": {
-      "duplicate_of_atom": 1845,
+      "duplicate_of_atom": 1846,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -47819,9 +47819,28 @@
       "target_atom_id": "governed-deliberation-and-test-time-scaling.beyond_sota.001"
     },
     {
+      "candidate_id": "governed-deliberation-and-test-time-scaling.prose.c72f1a2d35a2",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:627",
+      "sentence": "The refinement proves rejected-event state noninterference,",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The line-wrapped rejection-noninterference statement is already governed by the structured minimum atom, formal targets, and finite-model non-claims.",
+      "target_atom_id": "governed-deliberation-and-test-time-scaling.minimum.001"
+    },
+    {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.fe2acfe9e7b2",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:638",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:642",
       "sentence": "This finite model does not prove useful",
       "cues": [
         "prove"
@@ -47840,7 +47859,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.45d27ce030f0",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:640",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:644",
       "sentence": "reproduction, transfer, or a state-of-the-art result.",
       "cues": [
         "transfer"
@@ -47859,7 +47878,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.d12065dfe460",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:644",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:648",
       "sentence": "Longer deliberation can improve a candidate while making the visible rationale",
       "cues": [
         "improve"
@@ -47878,7 +47897,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.60346be98ec0",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:651",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:655",
       "sentence": "The last question cannot be settled from transcript plausibility.",
       "cues": [
         "cannot"
@@ -47897,7 +47916,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.2280427191d6",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:708",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:712",
       "sentence": "reduction cannot be estimated on this workload; the fifteen earlier",
       "cues": [
         "cannot"
@@ -47916,7 +47935,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.9b94ec29ed93",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:718",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:722",
       "sentence": "inference is worth spending and when a result must remain a draft, a residual,",
       "cues": [
         "must"
@@ -47935,7 +47954,7 @@
     {
       "candidate_id": "governed-deliberation-and-test-time-scaling.prose.fe9d24a2fa2f",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
-      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:766",
+      "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:770",
       "sentence": "That successor carries forward the same requirement: an efficient representation must preserve enough provenance and fallback information for a later reviewer to understand what the system did not retain.",
       "cues": [
         "must"

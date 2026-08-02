@@ -17,25 +17,45 @@ OUTCOMES=ROOT/"experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2
 COMMAND="python3 scripts/validate_deliberation_refinement.py"
 KINDS={"requested":"bindScope","scoped":"generateCandidates","candidatesReady":"evaluateCandidates","evaluated":"selectCandidate","selected":"stopDeliberation","stopped":"handoffToPlanning","handedOff":"close","closed":"close"}
 ACCEPTED={"stop_and_escrow","accept_scope","accept_candidates","accept_evaluation","accept_selection","accept_stop","accept_handoff","accept_closure"}
+EXPECTED_THEOREMS={
+ "apply_event_preserves_request_policy_evaluator_and_result_identity",
+ "apply_event_cannot_assign_support_or_external_effect",
+ "accepted_step_adds_one_receipt",
+ "rejected_event_preserves_exact_state",
+ "run_events_preserve_exact_identity",
+ "run_events_cannot_assign_support_or_external_effect",
+ "run_events_compose",
+ "missing_budget_blocks_candidate_generation",
+ "high_risk_without_independent_review_blocks_evaluation",
+ "missing_first_correctness_blocks_selection",
+ "raw_score_cannot_promote_selected_candidate",
+ "budget_exhaustion_without_residual_blocks_handoff",
+ "execution_authority_cannot_cross_planning_handoff",
+ "authority_ceiling_substitution_is_rejected",
+ "complete_trace_reaches_exact_closed_state",
+ "verified_deliberation_lifecycle_reaches_closed_without_support_or_effect_authority",
+ "no_verified_candidate_reaches_closed_with_residual_escrow",
+}
+IDENTITY_FIELDS=["requestId","requestVersion","consumerDigest","taskDigest","policyDigest","budgetDigest","authorityCeiling","verifierDigest","evaluatorDigest","resultDigest","residualDigest"]
 
 def rel(p:Path)->str:return str(p.relative_to(ROOT))
 def load(p:Path)->Any:return json.loads(p.read_text())
 def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
 
 def packet()->dict[str,Any]:
- p={"requestId":4001,"requestVersion":3,"consumerDigest":4002,"taskDigest":4003,"policyDigest":4004,"budgetDigest":4005,"verifierDigest":4006,"evaluatorDigest":4007,"resultDigest":4008,"residualDigest":4009,"eventDigest":91}
+ p={"requestId":4001,"requestVersion":3,"consumerDigest":4002,"taskDigest":4003,"policyDigest":4004,"budgetDigest":4005,"authorityCeiling":2,"verifierDigest":4006,"evaluatorDigest":4007,"resultDigest":4008,"residualDigest":4009,"eventDigest":91}
  for k in ["requestWellFormed","consumer","taskContract","rights","riskClass","expiry","modePolicy","budget","candidateLimit","stopRule","firstCandidateCapture","candidateHistory","tracePrivacy","completeAttemptDenominator","evaluationObligations","verifierIdentity","evidenceView","dependenceRecord","calibrationRecord","abstentionRule","falseDecisionBounds","independentHighRiskReview","candidateResults","firstCorrectness","corruptionAccounting","repairAccounting","faithfulnessAxes","completeCostAccounting","failureRetention","matchedBaseline","usefulMetric","verifiedCandidate","selectionReceipt","selectionNonClaims","residualRecord","stopReceipt","consumerAcknowledgment","residualClosure","descendantReferences","resultDigestBound","cleanup"]:p[k]=True
  for k in ["highRisk","rawScorePromotionRequested","budgetExhausted","disputed","executionRequested","externalEffectRequested"]:p[k]=False
  return p
 
 def state(stage:str,last:int=0)->dict[str,Any]:
- p=packet();return {k:p[k] for k in ["requestId","requestVersion","consumerDigest","taskDigest","policyDigest","budgetDigest","verifierDigest","evaluatorDigest","resultDigest","residualDigest"]}|{"lastEventDigest":last}
+ p=packet();return {k:p[k] for k in IDENTITY_FIELDS}|{"lastEventDigest":last}
 
 def route(stage:str,kind:str,p:dict[str,Any],s:dict[str,Any]|None=None)->str:
  s=state(stage) if s is None else s
  if kind!=KINDS[stage]:return "reject_wrong_stage"
  if any(p[k]!=s[k] for k in ["requestId","requestVersion","consumerDigest","taskDigest"]):return "reject_request_substitution"
- if any(p[k]!=s[k] for k in ["policyDigest","budgetDigest"]):return "reject_policy_substitution"
+ if any(p[k]!=s[k] for k in ["policyDigest","budgetDigest","authorityCeiling"]):return "reject_policy_substitution"
  if any(p[k]!=s[k] for k in ["verifierDigest","evaluatorDigest"]):return "reject_evaluator_substitution"
  if any(p[k]!=s[k] for k in ["resultDigest","residualDigest"]):return "reject_result_substitution"
  if p["eventDigest"]==s["lastEventDigest"]:return "reject_event_replay"
@@ -89,6 +109,39 @@ def cases()->list[dict[str,Any]]:
  add("stopped-budget","stopped","require_budget_residual",{"budgetExhausted":True,"residualRecord":False});add("stopped-dispute","stopped","require_dispute_residual",{"disputed":True,"residualRecord":False});add("stopped-high-risk","stopped","require_high_risk_review",{"highRisk":True,"independentHighRiskReview":False});add("stopped-receipt","stopped","require_stop_receipt",{"stopReceipt":False});add("stopped-accepted","stopped","accept_handoff")
  return rows
 
+def lifecycle_errors()->list[str]:
+ errors=[]
+ stages=["requested","scoped","candidatesReady","evaluated","selected","stopped","handedOff"]
+ kinds=["bindScope","generateCandidates","evaluateCandidates","selectCandidate","stopDeliberation","handoffToPlanning","close"]
+ next_stages=["scoped","candidatesReady","evaluated","selected","stopped","handedOff","closed"]
+ accepted_routes=["accept_scope","accept_candidates","accept_evaluation","accept_selection","accept_stop","accept_handoff","accept_closure"]
+ p=packet()
+ s=state("requested")|{"stage":"requested","receiptCount":0,"candidateBatchCount":0,"evaluationCount":0,"selectionCount":0,"residualEscrowCount":0,"planningHandoffCount":0,"supportAssignmentCount":0,"externalEffectCount":0}
+ initial_identity={k:s[k] for k in IDENTITY_FIELDS}
+ for digest,(stage,kind,next_stage,expected) in enumerate(zip(stages,kinds,next_stages,accepted_routes),1):
+  p=dict(p);p["eventDigest"]=digest
+  actual=route(stage,kind,p,s)
+  if actual!=expected:errors.append(f"accepted lifecycle route drifted at {stage}: {actual}")
+  before=dict(s)
+  if actual in ACCEPTED:
+   s["stage"]=next_stage;s["lastEventDigest"]=digest;s["receiptCount"]+=1
+   s["candidateBatchCount"]+=int(stage=="scoped")
+   s["evaluationCount"]+=int(stage=="candidatesReady")
+   s["selectionCount"]+=int(stage=="evaluated")
+   s["residualEscrowCount"]+=int(actual=="stop_and_escrow")
+   s["planningHandoffCount"]+=int(stage=="stopped")
+  elif s!=before:errors.append(f"rejected lifecycle event changed state at {stage}")
+ expected_final={"stage":"closed","receiptCount":7,"candidateBatchCount":1,"evaluationCount":1,"selectionCount":1,"residualEscrowCount":0,"planningHandoffCount":1,"supportAssignmentCount":0,"externalEffectCount":0}
+ for key,value in expected_final.items():
+  if s[key]!=value:errors.append(f"lifecycle final {key} expected {value}, got {s[key]}")
+ if {k:s[k] for k in IDENTITY_FIELDS}!=initial_identity:errors.append("lifecycle identity or authority ceiling drifted")
+ mutation=dict(p);mutation["eventDigest"]=101;mutation["authorityCeiling"]=3
+ mutation_state=state("requested")|{"stage":"requested"}
+ before=dict(mutation_state)
+ if route("requested","bindScope",mutation,mutation_state)!="reject_policy_substitution":errors.append("authority ceiling substitution was accepted")
+ if mutation_state!=before:errors.append("authority ceiling rejection changed state")
+ return errors
+
 def run(cmd:list[str],cwd:Path=ROOT)->dict[str,Any]:
  p=subprocess.run(cmd,cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  if p.returncode:raise RuntimeError(p.stdout)
@@ -106,7 +159,10 @@ def build(errors:list[str])->dict[str,Any]:
  rows=cases()
  for row in rows:
   if row["actual_route"]!=row["expected_route"]:errors.append(f"{row['case_id']} expected {row['expected_route']}, got {row['actual_route']}")
+ errors.extend(lifecycle_errors())
  text=LEAN.read_text();body=re.search(r"inductive Route where(?P<body>.*?)deriving DecidableEq",text,re.S).group("body");declared=set(re.findall(r"\|\s+([A-Za-z][A-Za-z0-9]*)",body));reached={r["actual_route"] for r in rows};negative=[r for r in rows if not r["accepted"]]
+ theorem_names=set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",text))
+ if theorem_names!=EXPECTED_THEOREMS:errors.append(f"Lean theorem surface drifted: expected {len(EXPECTED_THEOREMS)}, got {len(theorem_names)}")
  if (len(declared),len(reached),len(rows),len(negative))!=(59,59,59,51):errors.append(f"route coverage expected 59/59/59/51, got {len(declared)}/{len(reached)}/{len(rows)}/{len(negative)}")
  return {"schema_version":"asi_stack.deliberation_refinement.result.v1","result_id":"2026-07-15-deliberation-refinement","recorded_date":"2026-07-15","command":COMMAND,"model":{"lean_module":rel(LEAN),"stage_count":8,"route_count":len(declared),"reached_route_count":len(reached),"route_case_count":len(rows),"rejected_mutation_count":len(negative),"residual_escrow_route_reached":"stop_and_escrow" in reached,"planning_handoff_route_reached":"accept_handoff" in reached,"support_assignment_count":0,"external_effect_count":0},"source_result_refinement":source_results(errors),"route_cases":rows,"lean_verification":run(["lake","env","lean","AsiStackProofs/DeliberationRefinement.lean"],ROOT/"lean"),"support_state_effect":"none","external_effect":"none","residuals":["Finite authored lifecycle only; no language-model candidate, natural workload, evaluator, or planning execution ran.","The post-v2 campaign is deterministic synthetic evidence with zero fallback activation and fifteen fixed-step harms.","Verifier independence, correctness, calibration, trace faithfulness, useful metrics, costs, and residual fields are authored gates or inherited bounded records.","Digest binding establishes artifact identity, not source truth, empirical adequacy, or transfer."],"non_claims":["no reasoning quality, useful-throughput, verifier, faithfulness, safety, deployment, transfer, SOTA, AGI, or ASI claim","no execution authority or chapter-core support transition","no inference from route coverage, synthetic accuracy, or green validators to empirical adequacy"]}
 
@@ -116,6 +172,6 @@ def main()->None:
  elif not RESULT.exists() or RESULT.read_text()!=serialized:errors.append(f"{rel(RESULT)} missing or stale; run {COMMAND} --write-result")
  if errors:
   print("Deliberation refinement failed:");[print(f" - {e}") for e in errors];sys.exit(1)
- print("Deliberation refinement passed: 8 stages, 59 routes, 51/51 mutations rejected; 10-case admission, 3-seed/1,440-record campaign, and real-model 0/60 no-change result digest-bound; support/effect none.")
+ print("Deliberation refinement passed: 17 Lean theorems, an independently simulated seven-event lifecycle with exact identity and authority-ceiling custody, 8 stages, 59 routes, 51/51 mutations rejected; 10-case admission, 3-seed/1,440-record campaign, and real-model 0/60 no-change result digest-bound; support/effect none.")
 
 if __name__=="__main__":main()

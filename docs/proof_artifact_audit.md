@@ -55,7 +55,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 5 | 0 | 5 | 5 |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | 1 | 20 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | 15 | 5 | 15 | 10 | 2 |
-| `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 11 | 0 | 12 | 3 |
+| `lean/AsiStackProofs/DeliberationRefinement.lean` | 10 | 17 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/DeploymentTransitionGovernance.lean` | 1 | 44 | 0 | 34 | 7 |
 | `lean/AsiStackProofs/DurableSemanticMemoryReview.lean` | 1 | 35 | 0 | 37 | 12 |
 | `lean/AsiStackProofs/Efficiency.lean` | 2 | 10 | 0 | 11 | 4 |
