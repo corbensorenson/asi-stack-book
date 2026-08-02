@@ -11458,7 +11458,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Reachable Lean routing lifecycle, three exact bounded suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_contract": "Exact 25-theorem Lean routing lifecycle over arbitrary finite event runs, three exact bounded suites, independent recompiling consumer, result schema, receipt, and model-adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_routing_refinement.py",
         "schemas/routing_refinement.schema.json",
@@ -11475,13 +11475,16 @@
       ],
       "output_contract": "Reject identity substitution, label leakage, incomplete denominators, missing authority/readiness/leases/selective action/runtime/replay evidence, dispatch isolation gaps, outcome conflation, incomplete revocation closure, and support/effect leakage.",
       "output_assertions": [
+        "exact twenty-five-theorem Lean surface recompiles",
+        "arbitrary finite runs preserve fourteen-field identity and assign no support or external effects",
+        "rejected events preserve exact state, batches compose, and closure absorbs every suffix",
         "three exact bounded suites",
         "forty-two routes and seven reachable stages",
         "forty-seven rejected mutations",
         "separate route and answer outcomes",
         "no support-state or external-effect authority"
       ],
-      "claim_scope": "One finite authored routing lifecycle plus three existing bounded suites only.",
+      "claim_scope": "Arbitrary finite runs over one authored routing transition system plus three existing bounded suites only.",
       "negative_controls": "validator_owned_identity_registry_lease_dispatch_outcome_revocation_authority_mutations",
       "negative_control_cases": [
         "task, registry, candidate, specialist, lease, evaluator, policy, consumer, or event substitution",

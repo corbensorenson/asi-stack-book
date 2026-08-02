@@ -110,6 +110,39 @@ structure State where
   externalEffectCount : Nat
 deriving DecidableEq, Repr
 
+structure RoutingIdentity where
+  taskId : Nat
+  taskVersion : Nat
+  requestDigest : Nat
+  registryDigest : Nat
+  candidateSetDigest : Nat
+  selectedSpecialistDigest : Nat
+  capabilityDigest : Nat
+  authorityDigest : Nat
+  readinessDigest : Nat
+  contextLeaseDigest : Nat
+  toolLeaseDigest : Nat
+  evaluatorDigest : Nat
+  policyDigest : Nat
+  consumerDigest : Nat
+deriving DecidableEq, Repr
+
+def exactIdentity (state : State) : RoutingIdentity :=
+  { taskId := state.taskId
+    taskVersion := state.taskVersion
+    requestDigest := state.requestDigest
+    registryDigest := state.registryDigest
+    candidateSetDigest := state.candidateSetDigest
+    selectedSpecialistDigest := state.selectedSpecialistDigest
+    capabilityDigest := state.capabilityDigest
+    authorityDigest := state.authorityDigest
+    readinessDigest := state.readinessDigest
+    contextLeaseDigest := state.contextLeaseDigest
+    toolLeaseDigest := state.toolLeaseDigest
+    evaluatorDigest := state.evaluatorDigest
+    policyDigest := state.policyDigest
+    consumerDigest := state.consumerDigest }
+
 def expectedKind : Stage -> EventKind
   | .idle => .bindRequest
   | .requestBound => .freezeRegistry
@@ -224,14 +257,9 @@ def applyEvent (state : State) (event : Event) : State × Route :=
 
 theorem apply_event_preserves_task_registry_and_lease_identity
     (state : State) (event : Event) :
-    (applyEvent state event).1.taskId = state.taskId ∧
-    (applyEvent state event).1.requestDigest = state.requestDigest ∧
-    (applyEvent state event).1.registryDigest = state.registryDigest ∧
-    (applyEvent state event).1.candidateSetDigest = state.candidateSetDigest ∧
-    (applyEvent state event).1.selectedSpecialistDigest = state.selectedSpecialistDigest ∧
-    (applyEvent state event).1.contextLeaseDigest = state.contextLeaseDigest ∧
-    (applyEvent state event).1.toolLeaseDigest = state.toolLeaseDigest := by
-  by_cases h : accepted (routeFor state event) = true <;> simp [applyEvent, h]
+    exactIdentity (applyEvent state event).1 = exactIdentity state := by
+  by_cases h : accepted (routeFor state event) = true <;>
+    simp [applyEvent, exactIdentity, h]
 
 theorem apply_event_cannot_assign_support_or_external_effect
     (state : State) (event : Event) :
@@ -243,6 +271,76 @@ theorem accepted_step_adds_exactly_one_receipt
     (state : State) (event : Event) (h : accepted (routeFor state event) = true) :
     (applyEvent state event).1.receiptCount = state.receiptCount + 1 := by
   simp [applyEvent, h]
+
+theorem rejected_event_preserves_exact_state
+    (state : State) (event : Event) (h : accepted (routeFor state event) = false) :
+    applyEvent state event = (state, routeFor state event) := by
+  simp [applyEvent, h]
+
+theorem apply_event_preserves_route_answer_balance
+    (state : State) (event : Event)
+    (balanced : state.routeOutcomeCount = state.answerOutcomeCount) :
+    (applyEvent state event).1.routeOutcomeCount =
+      (applyEvent state event).1.answerOutcomeCount := by
+  by_cases h : accepted (routeFor state event) = true <;>
+    simp [applyEvent, h, balanced]
+
+def runEvents : State -> List Event -> State
+  | state, [] => state
+  | state, event :: rest => runEvents (applyEvent state event).1 rest
+
+theorem run_events_preserve_exact_identity
+    (state : State) (events : List Event) :
+    exactIdentity (runEvents state events) = exactIdentity state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      exact (ih (applyEvent state event).1).trans
+        (apply_event_preserves_task_registry_and_lease_identity state event)
+
+theorem run_events_cannot_assign_support_or_external_effect
+    (state : State) (events : List Event) :
+    (runEvents state events).supportAssignmentCount = state.supportAssignmentCount ∧
+    (runEvents state events).externalEffectCount = state.externalEffectCount := by
+  induction events generalizing state with
+  | nil => simp [runEvents]
+  | cons event rest ih =>
+      have head := apply_event_cannot_assign_support_or_external_effect state event
+      have tail := ih (applyEvent state event).1
+      exact ⟨tail.1.trans head.1, tail.2.trans head.2⟩
+
+theorem run_events_preserve_route_answer_balance
+    (state : State) (events : List Event)
+    (balanced : state.routeOutcomeCount = state.answerOutcomeCount) :
+    (runEvents state events).routeOutcomeCount =
+      (runEvents state events).answerOutcomeCount := by
+  induction events generalizing state with
+  | nil => exact balanced
+  | cons event rest ih =>
+      exact ih (applyEvent state event).1
+        (apply_event_preserves_route_answer_balance state event balanced)
+
+theorem run_events_compose (state : State) (left right : List Event) :
+    runEvents state (left ++ right) = runEvents (runEvents state left) right := by
+  induction left generalizing state with
+  | nil => rfl
+  | cons event rest ih => simp [runEvents, ih]
+
+theorem closed_event_is_rejected (state : State) (event : Event)
+    (terminal : state.stage = .closed) :
+    accepted (routeFor state event) = false := by
+  simp only [routeFor, terminal, expectedKind]
+  repeat' first | split
+  all_goals rfl
+
+theorem closed_state_is_absorbing (state : State) (events : List Event)
+    (terminal : state.stage = .closed) :
+    runEvents state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      have rejected := closed_event_is_rejected state event terminal
+      simp [runEvents, applyEvent, rejected, ih state terminal]
 
 def canonicalPacket : Packet :=
   { taskId := 601, taskVersion := 4, requestDigest := 701, registryDigest := 702

@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -32,7 +32,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The post-v2.1 learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 substantive candidates were wrong; its 20 correct outcomes came entirely from non-answer actions on one synthetic six-action workload, one 4B model, one seed, and an internal deterministic evaluator."
-  - "The schemas, fixtures, finite theorem consequences, separable matched workload, and ambiguous narrow result do not establish useful specialist answers, independent evaluation, authority enforcement, interference control, natural multi-model routing, production recovery, MoECOT runtime behavior, or transfer."
+  - "The exact twenty-five-theorem arbitrary finite-run surface, four retained legacy routes, schemas, fixtures, separable matched workload, and ambiguous narrow result establish authored-record discipline only; they do not establish useful specialist answers, independent evaluation, authority enforcement, interference control, natural multi-model routing, production recovery, MoECOT runtime behavior, or transfer."
   - "Run a preregistered natural and adversarial campaign with heterogeneous current specialists, strong matched policies, joint outcome and governance gates, causal interventions, independent implementations, complete denominators, delayed outcomes, and transfer before promotion."
 ---
 
@@ -44,13 +44,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-08-02 |
 | Primary source records | 20 assigned records with 18 exact mappings, including relational operator, order, topology, fallback, and abstention routing |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; variant: `moecot_md`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`; passage-reviewed local public-project source: `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`; authenticated connector text reviewed for `moecot` and the `moecot_md` variant; raw source text is not published. |
-| Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and 21 live family declarations. The new refinement contributes seventeen lifecycle theorems, retains four load-bearing legacy theorems, and physically retires sixteen projection/fixture declarations. Its independent consumer covers seven stages, all 42 routes, and 47/47 rejecting mutations while keeping route and answer outcomes distinct. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
+| Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and twenty-nine live family declarations. The refinement contributes an exact twenty-five-theorem arbitrary finite-run surface, retains four load-bearing legacy routes, and physically retires sixteen projection/fixture declarations. Its independent consumer recompiles the exact surface, covers seven stages and all 42 routes, and rejects 47/47 mutations while keeping route and answer outcomes separately represented and balanced. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
 ## Drafting guardrail
 
@@ -65,9 +65,9 @@ no deployed authority enforcement, trained-specialist utility, independent
 evaluation, MoECOT replay, orchestration benchmark, natural multi-model
 routing, or production transfer.
 
-The evidence surface is now more precise than that older boundary. Twenty-one
-live family declarations comprise seventeen reachable-lifecycle theorems and
-four retained load-bearing legacy theorems; sixteen projection or fixture
+The evidence surface is now more precise than that older boundary. Twenty-nine
+live family declarations comprise twenty-five arbitrary-run lifecycle theorems
+and four retained load-bearing legacy routes; sixteen projection or fixture
 declarations were physically retired. The independent consumer exercises seven
 stages, all forty-two routes, and forty-seven rejecting mutations. The post-v2.1 workload supplies
 a bounded local learned-route result: 59/60 route labels were correct and
@@ -799,18 +799,17 @@ The minimum viable routing surface is now larger than a schema and smaller than
 a production router. It contains three public record schemas, three valid and
 seven invalid routing-lease fixtures, four valid and five invalid
 readiness/residual fixtures, two bounded routing programs, two accepted
-no-promotion or narrow transition records, and twenty Lean declarations. This
+no-promotion or narrow transition records, and twenty-nine live Lean declarations. This
 surface makes route decisions inspectable and exercises several refusal paths;
 it does not establish useful specialist answering or safe deployment.
 
 The `specialist_registry_record` schema describes a bounded specialist core. The `routing_decision_record` schema records the task, candidates, rejected candidates, selected route, route shape, route receipt, authority subset, denied authority, readiness check, leases, verifier requirement, budget, expiry, fallback, residual owner, residuals, and ledger references. Passing these fixtures confirms structural validity only; routing accuracy still requires measured route outcomes.
 
-`AsiStackProofs.Routing` and `AsiStackProofs.MoECOTRuntime` contain twenty
-declarations: three are direct predicate/projection checks and seventeen are
-derived finite route or negative consequences. They model selected-route
-authority and readiness, failed-readiness fallback or residualization, route
-lifecycle outcomes, and runtime-source promotion boundaries. They establish
-facts about the encoded finite records; learned-router selection quality,
+`AsiStackProofs.RoutingRefinement` contains an exact twenty-five-theorem
+surface over the authored request-to-closure transition system. Four retained
+legacy routes in `AsiStackProofs.Routing` and `AsiStackProofs.MoECOTRuntime`
+preserve selected-route and source-boundary ownership. These declarations
+establish facts about encoded finite records; learned-router selection quality,
 specialist correctness, production lease enforcement, and correct MoECOT
 execution or replay remain outside those facts.
 
@@ -826,6 +825,14 @@ model, KAN, recurrent core, graph system, memory-augmented system, or future
 substrate can occupy the specialist slot only through this same contract. That
 abstraction is not evidence that the substrates are interchangeable or equally
 capable: the route can be correct while the answer is wrong.
+
+The exact theorem surface proves that every finite event list preserves all
+fourteen task, registry, candidate, specialist, capability, authority,
+readiness, lease, evaluator, policy, and consumer identity fields and cannot
+assign support or external effects. Rejected events preserve complete state,
+route and answer counters remain separately represented and balanced, event
+batches compose, and a closed route absorbs every suffix. The independent
+consumer recompiles that exact surface before exercising the bounded suites.
 
 The folded MoECOT slice adds an orchestration fixture, finite source-boundary predicates, finite negative-case theorems, and source-only packet checks inside the route-lease harness. The new Lean negative cases reject runtime-core promotion records missing readiness, regression, or replay evidence and unavailable-text-only runtime claims that try to promote above `argument`. The smallest honest runtime-crosswalk fixture records one accepted command, one denied route, one missing replay reference, one residual handoff, one failed gate, and one promotion blocker. These checks cover record shape, route-lease discipline, and evidence partitioning only; they are not runtime replay, orchestration benchmarks, specialist-quality results, route-quality measurements, or deployment claims.
 
@@ -897,10 +904,10 @@ is narrowed or refuted.
 | Runtime crosswalk completeness test | Check that a runtime record links command, route, cores, gates, ledgers, replay, handoff, and residuals. | planned; not run |
 | Readiness/replay mapping review | Check that promotion decisions reference readiness and replay artifacts, not source branding alone. | partially implemented by readiness/residual gate harness for readiness mapping; MoECOT replay mapping not run |
 
-Fixture-shape validation, 21 live family declarations across Routing, MoECOT,
+Fixture-shape validation, twenty-nine live family declarations across Routing, MoECOT,
 and the reachable refinement, the readiness/residual harness, the routing
 decision lease harness, the independent refinement consumer, and both bounded
-routing programs are implemented. Seventeen new lifecycle theorems and four
+routing programs are implemented. Twenty-five refinement theorems and four
 retained legacy theorems remain live; sixteen weaker declarations are retired.
 The independent surface covers seven stages, 42 routes, and 47/47 rejecting
 mutations. The post-v2.1 program
@@ -915,15 +922,15 @@ enforcement, runtime replay, or transfer.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects. | implemented |
-| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or acknowledgment blocks progress. | implemented |
+| `lean:routing.specialists.operational_invariant` | `AsiStackProofs.RoutingRefinement` | Every finite routing lifecycle run preserves exact task, request, registry, candidate-set, selected-specialist, capability, authority, readiness, lease, evaluator, policy, and consumer custody; rejected events preserve exact state, route and answer accounting remains separate and balanced, batches compose, closure is absorbing, and support or external effects remain unassigned. | implemented |
+| `lean:routing.specialists.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or acknowledgment blocks progress without mutating exact state. | implemented |
 | `lean:routing.specialists.decision_lifecycle_route` | `AsiStackProofs.RoutingRefinement` | The independent consumer preserves all 42 routing outcomes, including label-leak rejection, complete candidate denominators, least-capable-adequate selection, ambiguity-triggered selective action, fallback/residual routes, and separate dispatch, observation, and closure. | implemented |
 | `lean:moecot.runtime.operational_invariant` | `AsiStackProofs.RoutingRefinement` | A runtime-backed route cannot qualify until inspected source state, concrete runtime evidence, replay evidence, task-local dispatch authority, and isolation bind to the same lease. | implemented |
 | `lean:moecot.runtime.failure_blocks_promotion` | `AsiStackProofs.RoutingRefinement` | Unavailable or source-only runtime material, missing replay evidence, or unobserved route and answer outcomes cannot be laundered into runtime, routing-quality, support, or deployment claims. | implemented |
 
 These proof hooks now resolve to a reachable finite lifecycle plus independent
-route-consumer evidence. Of the 21 live family declarations, seventeen belong
-to the refinement and four retained legacy theorems remain load-bearing;
+route-consumer evidence. Of the twenty-nine live family declarations, twenty-five belong
+to the refinement and four retained legacy routes remain load-bearing;
 sixteen weaker projections or fixture admissions were retired. The proofs still
 derive finite route or negative consequences from them. This classification
 prevents theorem count from standing in for breadth or empirical validity. The

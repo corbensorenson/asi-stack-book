@@ -14717,7 +14717,7 @@
             "Replay theater preserves successful records while omitting nondeterminism, denied routes, failed gates, interventions, counterfactuals, costs, and residuals.",
             "State-of-the-art theater generalizes from a separable or finite synthetic workload, high route accuracy, or non-answer coverage to useful safe routing."
           ],
-          "minimal_implementation": "Three public routing/runtime record schemas; a routing-decision lease harness with three valid and seven invalid fixtures; four valid and five invalid readiness/residual fixtures; a 300-example matched routing program over three seeds whose policies tied on a separable held-out split; a 60-request ambiguous single-model workload where the learned router selected 59 routes correctly but all 360 substantive candidates were wrong and its 20 correct outcomes were non-answer actions; two no-change or narrow evidence dispositions; and twenty Lean declarations classified as three direct predicate/projection checks and seventeen derived finite route or negative consequences. No useful specialist answer, independent evaluator, trained-specialist interference result, natural multi-model workload, production authority enforcement, MoECOT replay, or transfer result is established.",
+          "minimal_implementation": "Three public routing/runtime record schemas; a routing-decision lease harness with three valid and seven invalid fixtures; four valid and five invalid readiness/residual fixtures; a 300-example matched routing program over three seeds whose policies tied on a separable held-out split; a 60-request ambiguous single-model workload where the learned router selected 59 routes correctly but all 360 substantive candidates were wrong and its 20 correct outcomes were non-answer actions; two no-change or narrow evidence dispositions; and twenty-nine live Lean declarations across an exact twenty-five-theorem arbitrary finite-run refinement and four retained legacy routes. No useful specialist answer, independent evaluator, trained-specialist interference result, natural multi-model workload, production authority enforcement, MoECOT replay, or transfer result is established.",
           "beyond_state_of_art": "The mature operational contract is a governed routing market tested on preregistered natural and adversarial workloads with real current heterogeneous models, specialists, tools, retrieval systems, proof checkers, human lanes, local and remote runtimes, capacity constraints, and delayed outcomes. It compares oracle, learned, rule, generalist, random, cost-only, confidence-only, cascade, abstention, human, and governed policies under matched information, authority, resources, retries, evaluators, and time. Joint gates cover route accuracy, substantive useful correctness, selective risk and coverage, calibration, authority and rights violations, privacy, interference, correlated failure and collusion, capacity and tail latency, tokens, money, compute, human effort, verification, recovery, residuals, and total lifecycle cost. Prospectively fixed interventions isolate semantic compilation, capability gates, readiness, least-authority choice, calibration, fallback, rejected-candidate evidence, route memory, load awareness, independent evaluation, and lifecycle invalidation. Independent implementations must reproduce and transfer conclusions across models, tasks, domains, tools, organizations, rights regimes, workloads, attacks, capacity states, and time. The existing ambiguous result is a valuable negative boundary, not a useful-routing or state-of-the-art result.",
           "codex_tests": [
             "Specialist routing accuracy test",
@@ -14760,7 +14760,7 @@
             {
               "name": "Routing and replaceable-substrate lifecycle refinement",
               "implementation_status": "implemented",
-              "result_status": "passes three exact suites, 42 routes, seven reachable stages, and 47/47 rejecting mutations; route and answer outcomes remain distinct; support-state effect none; no natural useful-routing, strong-model transfer, deployed runtime/replay correctness, substrate superiority, RSI, or support claim"
+              "result_status": "passes an exact 25-theorem surface covering arbitrary finite-run fourteen-field identity and nonauthority, exact rejected-event state preservation, separate balanced route/answer accounting, batch composition, and absorbing closure; independently recompiles that surface while preserving three exact suites, 42 routes, seven reachable stages, and 47/47 rejecting mutations; support-state effect none; no natural useful-routing, strong-model transfer, deployed runtime/replay correctness, substrate superiority, RSI, or support claim"
             }
           ],
           "lean_module": "AsiStackProofs.Routing; AsiStackProofs.MoECOTRuntime; AsiStackProofs.RoutingRefinement",
@@ -14768,13 +14768,13 @@
             {
               "tag": "lean:routing.specialists.operational_invariant",
               "module": "AsiStackProofs.RoutingRefinement",
-              "target": "A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects.",
+              "target": "Every finite routing lifecycle run preserves exact task, request, registry, candidate-set, selected-specialist, capability, authority, readiness, lease, evaluator, policy, and consumer custody; rejected events preserve exact state, route and answer accounting remains separate and balanced, batches compose, closure is absorbing, and support or external effects remain unassigned.",
               "status": "implemented"
             },
             {
               "tag": "lean:routing.specialists.failure_blocks_promotion",
               "module": "AsiStackProofs.RoutingRefinement",
-              "target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress.",
+              "target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress without mutating exact state.",
               "status": "implemented"
             },
             {

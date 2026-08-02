@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -31,10 +32,72 @@ BINDING_FIELDS = {
     "contextLeaseDigest", "toolLeaseDigest", "evaluatorDigest", "policyDigest", "consumerDigest",
 }
 TASK_FIELDS = {"taskId", "taskVersion", "requestDigest", "capabilityDigest", "policyDigest", "consumerDigest"}
+EXPECTED_THEOREMS = {
+    "apply_event_preserves_task_registry_and_lease_identity",
+    "apply_event_cannot_assign_support_or_external_effect",
+    "accepted_step_adds_exactly_one_receipt",
+    "rejected_event_preserves_exact_state",
+    "apply_event_preserves_route_answer_balance",
+    "run_events_preserve_exact_identity",
+    "run_events_cannot_assign_support_or_external_effect",
+    "run_events_preserve_route_answer_balance",
+    "run_events_compose",
+    "closed_event_is_rejected",
+    "closed_state_is_absorbing",
+    "registry_freeze_requires_complete_candidate_denominator",
+    "held_out_label_leak_blocks_registry_freeze",
+    "missing_authority_blocks_lease",
+    "failed_readiness_with_fallback_routes_to_fallback",
+    "failed_readiness_without_fallback_requires_residual_owner",
+    "stale_context_lease_blocks_qualification",
+    "overprivileged_selection_requires_least_capable_justification",
+    "ambiguous_task_requires_selective_action",
+    "unavailable_runtime_evidence_blocks_lease",
+    "missing_replay_evidence_blocks_lease",
+    "dispatch_requires_separate_grant",
+    "outcome_keeps_route_and_answer_quality_separate",
+    "closure_requires_revocation_propagation",
+    "full_routing_lifecycle_reaches_closed_state",
+}
 
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise RuntimeError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/RoutingRefinement.lean"]
+    completed = subprocess.run(
+        command, cwd=ROOT / "lean", capture_output=True, text=True
+    )
+    if completed.returncode:
+        raise RuntimeError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_identity_custody": True,
+        "arbitrary_run_no_support_or_external_effect": True,
+        "exact_rejection_noninterference": True,
+        "route_answer_balance_preserved": True,
+        "exact_run_composition": True,
+        "terminal_state_absorbing": True,
+    }
 
 
 def packet() -> dict[str, Any]:
@@ -237,6 +300,7 @@ def build() -> dict[str, Any]:
         "schema_version": "asi_stack.routing_refinement.v1",
         "result_id": "routing-refinement-2026-07-15-local",
         "source_sha256": {"lean_model": sha(LEAN), "post_v2_result": sha(POST_V2)},
+        "formal_surface": formal_surface(),
         "input_suites": [
             {"suite_id": "routing_decision_lease", "valid_count": 3, "expected_invalid_count": 7},
             {"suite_id": "readiness_residual_gates", "valid_count": 4, "expected_invalid_count": 5},
@@ -274,7 +338,11 @@ def main() -> None:
         errors.append(f"{RESULT.relative_to(ROOT)} is stale; run {COMMAND} --write")
     if errors:
         print("Routing refinement failed:"); [print(f" - {error}") for error in errors]; sys.exit(1)
-    print("Routing refinement passed: 3 exact suites, 7 stages, 42 routes, 47/47 mutations rejected, distinct route/answer outcomes, support effect none.")
+    print(
+        "Routing refinement passed: 3 exact suites, 7 stages, 42 routes, "
+        f"47/47 mutations rejected, {result['formal_surface']['theorem_count']} Lean "
+        "theorems, distinct route/answer outcomes, support effect none."
+    )
 
 
 if __name__ == "__main__": main()

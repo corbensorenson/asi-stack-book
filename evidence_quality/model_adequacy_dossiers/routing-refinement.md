@@ -6,11 +6,11 @@ Adequate for a finite authored request-to-closure routing invariant and its coun
 
 ## State space and reachability
 
-The model has seven reachable stages (`idle`, `requestBound`, `registryFrozen`, `leaseQualified`, `dispatched`, `outcomeObserved`, `closed`), six advancing event kinds, forty-two possible routes, and one six-receipt terminal witness. Exact task, registry, specialist, authority, readiness, context lease, tool lease, evaluator, policy, and consumer bindings survive every accepted transition.
+The model has seven reachable stages (`idle`, `requestBound`, `registryFrozen`, `leaseQualified`, `dispatched`, `outcomeObserved`, `closed`), six advancing event kinds, forty-two possible routes, and one six-receipt terminal witness. Its exact twenty-five-theorem surface proves task, task-version, request, registry, candidate-set, selected-specialist, capability, authority, readiness, context-lease, tool-lease, evaluator, policy, and consumer identity custody for every finite event run. Support and effect counts remain unchanged, rejected events preserve complete state, route and answer accounting remains separately represented and balanced, event batches compose, and closure absorbs every suffix.
 
 ## Failure surface
 
-Countermodels cover incomplete candidate denominators, held-out label leakage, missing authority, failed readiness with fallback or residual routing, stale leases, overprivileged selection, missing rejected-candidate evidence, ambiguous requests without selective action, source-only runtime claims, missing replay evidence, absent dispatch isolation, conflated route/answer outcomes, and incomplete revocation propagation. The independent consumer adds forty-seven identity, gate, replay, and authority-leak mutations; all are rejected.
+Countermodels cover incomplete candidate denominators, held-out label leakage, missing authority, failed readiness with fallback or residual routing, stale leases, overprivileged selection, missing rejected-candidate evidence, ambiguous requests without selective action, source-only runtime claims, missing replay evidence, absent dispatch isolation, conflated route/answer outcomes, and incomplete revocation propagation. The independent consumer recompiles the exact theorem surface and adds forty-seven identity, gate, replay, and authority-leak mutations; all are rejected.
 
 ## Independent consumers and inherited evidence
 
@@ -25,4 +25,4 @@ The finite model trusts the authored identifiers, booleans, digests, outcome rec
 
 ## Prohibited inference
 
-Do not infer natural routing utility, production routing, model-scale transfer, superiority of KANs/Mamba/transformers or any other substrate, deployed MoECOT correctness, answer correctness from route correctness, autonomous architecture search, RSI, AGI, ASI, or chapter-core support.
+All five public targets are adequate only for this finite authored-record contract. Do not infer natural routing utility, production routing, model-scale transfer, superiority of KANs/Mamba/transformers or any other substrate, deployed MoECOT correctness, answer correctness from route correctness, evaluator independence, runtime/replay truth, autonomous architecture search, RSI, AGI, ASI, or chapter-core support.

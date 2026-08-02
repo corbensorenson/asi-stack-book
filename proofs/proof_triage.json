@@ -1774,21 +1774,21 @@
       "tag": "lean:routing.specialists.operational_invariant",
       "chapter_id": "routing-heads-and-specialist-cores",
       "module": "AsiStackProofs.RoutingRefinement",
-      "formal_target": "A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects.",
+      "formal_target": "Every finite routing lifecycle run preserves exact task, request, registry, candidate-set, selected-specialist, capability, authority, readiness, lease, evaluator, policy, and consumer custody; rejected events preserve exact state, route and answer accounting remains separate and balanced, batches compose, closure is absorbing, and support or external effects remain unassigned.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage routing lifecycle with exact request/registry/lease custody, three bounded suites, 42 routes, 47 rejecting mutations, distinct route/answer outcomes, and no support or effect authority."
+      "rationale": "The exact 25-theorem surface proves fourteen-field identity and zero-authority preservation for arbitrary finite event runs, exact rejected-event noninterference, balanced separate route/answer accounting, batch composition, and absorbing closure; the independent consumer recompiles it and preserves three bounded suites, 42 routes, and 47 rejecting mutations."
     },
     {
       "tag": "lean:routing.specialists.failure_blocks_promotion",
       "chapter_id": "routing-heads-and-specialist-cores",
       "module": "AsiStackProofs.RoutingRefinement",
-      "formal_target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress.",
+      "formal_target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress without mutating exact state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage routing lifecycle with exact request/registry/lease custody, three bounded suites, 42 routes, 47 rejecting mutations, distinct route/answer outcomes, and no support or effect authority."
+      "rationale": "Rejected events preserve complete authored state and closed routes absorb every suffix; this proves only exact refusal in the finite authored transition system, not that trusted routing fields or recorded outcomes are true or useful."
     },
     {
       "tag": "lean:routing.specialists.decision_lifecycle_route",
@@ -1798,7 +1798,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable seven-stage routing lifecycle with exact request/registry/lease custody, three bounded suites, 42 routes, 47 rejecting mutations, distinct route/answer outcomes, and no support or effect authority."
+      "rationale": "The independently recompiling consumer covers all forty-two route outcomes and the exact 25-theorem arbitrary-run surface while preserving three bounded suites and rejecting 47 mutations; it does not establish natural route or answer quality."
     },
     {
       "tag": "lean:moecot.runtime.operational_invariant",

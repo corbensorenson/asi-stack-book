@@ -1887,7 +1887,7 @@
       "chapter_title": "Routing Heads and Specialist Cores",
       "tag": "lean:routing.specialists.operational_invariant",
       "module": "AsiStackProofs.RoutingRefinement",
-      "formal_target": "A reachable routing lifecycle preserves exact task, request, registry, candidate-set, selected-specialist, authority, readiness, lease, evaluator, policy, and consumer custody from request binding through consumer-acknowledged closure while keeping route and answer outcomes distinct and assigning no support or external effects.",
+      "formal_target": "Every finite routing lifecycle run preserves exact task, request, registry, candidate-set, selected-specialist, capability, authority, readiness, lease, evaluator, policy, and consumer custody; rejected events preserve exact state, route and answer accounting remains separate and balanced, batches compose, closure is absorbing, and support or external effects remain unassigned.",
       "status": "implemented",
       "outline_line": 4731,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"
@@ -1897,7 +1897,7 @@
       "chapter_title": "Routing Heads and Specialist Cores",
       "tag": "lean:routing.specialists.failure_blocks_promotion",
       "module": "AsiStackProofs.RoutingRefinement",
-      "formal_target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress.",
+      "formal_target": "Missing authority, readiness, fresh leases, selective handling, fallback or residual ownership, dispatch isolation, observed route/answer/unsafe/cost outcomes, lifecycle currentness, revocation closure, or consumer acknowledgment blocks lifecycle progress without mutating exact state.",
       "status": "implemented",
       "outline_line": 4732,
       "module_path": "lean/AsiStackProofs/RoutingRefinement.lean"

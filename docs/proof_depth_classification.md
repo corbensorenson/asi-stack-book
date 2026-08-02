@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2324 |
+| Theorem declarations classified | 2332 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1370 |
+| Derived/decomposed theorem declarations | 1378 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -153,7 +153,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | resource-economics-and-token-budgets, the-efficient-asi-hypothesis | 13 | 9 | 0 | 1 | 8 | manual review |
 | `lean/AsiStackProofs/Routing.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | routing-heads-and-specialist-cores | 5 | 25 | 13 | 11 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 68 | 0 | 56 | 12 | manual review |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
@@ -1960,7 +1960,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `ambiguous_task_requires_selective_action` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `apply_event_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `apply_event_preserves_route_answer_balance` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `apply_event_preserves_task_registry_and_lease_identity` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `closed_event_is_rejected` | derived_or_decomposed | no | uses simp, split |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `closed_state_is_absorbing` | derived_or_decomposed | no | uses have, induction, simp |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `closure_requires_revocation_propagation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `dispatch_requires_separate_grant` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `failed_readiness_with_fallback_routes_to_fallback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
@@ -1972,6 +1975,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `outcome_keeps_route_and_answer_quality_separate` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `overprivileged_selection_requires_least_capable_justification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `registry_freeze_requires_complete_candidate_denominator` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `run_events_cannot_assign_support_or_external_effect` | derived_or_decomposed | no | uses have, induction, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `run_events_compose` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `run_events_preserve_exact_identity` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/RoutingRefinement.lean` | `run_events_preserve_route_answer_balance` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `stale_context_lease_blocks_qualification` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RoutingRefinement.lean` | `unavailable_runtime_evidence_blocks_lease` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `accepted_runtime_effect_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |

@@ -2,8 +2,23 @@
   "schema_version": "asi_stack.routing_refinement.v1",
   "result_id": "routing-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "4023532b6f7635cb4e880f5f3df58866ffe0159eb1aed5c9ab35b53628096dad",
+    "lean_model": "643316eaeef47a979f5399bdd7262f1e7ba9cc82f0e8f6d7ac4add585afcf4ef",
     "post_v2_result": "aeb55600763191c83938ec9bf87a3d6814e06f490442f0babb5deab487041ad6"
+  },
+  "formal_surface": {
+    "theorem_count": 25,
+    "lean_module": "lean/AsiStackProofs/RoutingRefinement.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/RoutingRefinement.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_identity_custody": true,
+    "arbitrary_run_no_support_or_external_effect": true,
+    "exact_rejection_noninterference": true,
+    "route_answer_balance_preserved": true,
+    "exact_run_composition": true,
+    "terminal_state_absorbing": true
   },
   "input_suites": [
     {
