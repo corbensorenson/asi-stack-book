@@ -6,6 +6,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -32,6 +33,36 @@ ROUTES = {
     "materialize_view", "acknowledge_surfaces",
 }
 
+LEAN_THEOREMS = (
+    "apply_event_preserves_claim_identity",
+    "apply_event_preserves_external_effects",
+    "accepted_step_preserves_claim_identity",
+    "accepted_step_cannot_commit_external_effect",
+    "accepted_append_is_exactly_one_new_version",
+    "apply_event_preserves_version_append_balance",
+    "accepted_step_preserves_accounting_invariant",
+    "successful_run_preserves_claim_identity",
+    "successful_run_preserves_external_effects",
+    "successful_run_preserves_accounting_invariant",
+    "run_composes_across_event_batches",
+    "acknowledged_state_accepts_no_event",
+    "same_digest_payload_substitution_is_rejected",
+    "initial_state_satisfies_accounting_invariant",
+    "stale_base_is_rejected",
+    "ledger_self_approval_is_rejected",
+    "upward_revision_with_open_contradiction_is_blocked",
+    "upward_revision_without_owner_receipt_is_handed_off",
+    "ontology_change_without_migration_receipt_is_rejected",
+    "full_revision_lifecycle_reaches_exact_acknowledgment",
+    "every_successful_initial_run_preserves_exact_accounting",
+    "append_action_substitution_is_rejected",
+    "append_semantic_version_substitution_is_rejected",
+    "append_ontology_version_substitution_is_rejected",
+    "append_support_rank_substitution_is_rejected",
+    "append_owner_receipt_substitution_is_rejected",
+    "acknowledgment_before_materialization_is_rejected",
+)
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -55,7 +86,8 @@ def initial_state() -> dict[str, Any]:
     return {
         "claim_id": 101, "ledger_version": 7, "head_digest": 7001,
         "semantic_version": 3, "ontology_version": 2, "support_rank": 1,
-        "stage": "idle", "pending_event_digest": None, "required_surface_acks": 0,
+        "stage": "idle", "pending_event_digest": None, "pending_proposal": None,
+        "required_surface_acks": 0,
         "observed_surface_acks": 0, "materialized_ledger_version": 7,
         "append_count": 7, "external_effects": 0,
     }
@@ -109,6 +141,9 @@ def route(state: dict[str, Any], event: dict[str, Any]) -> str:
     if kind == "append":
         if state["stage"] != "proposed": return "reject_wrong_stage"
         if state["pending_event_digest"] != event["event_digest"]: return "reject_event_substitution"
+        proposed = copy.deepcopy(event)
+        proposed["kind"] = "propose"
+        if state["pending_proposal"] != proposed: return "reject_event_substitution"
         if not exact_base(state, event): return "reject_stale_base"
         return "authorize_append"
     if kind == "materialize":
@@ -129,9 +164,15 @@ POSITIVE = {"accept_proposal", "authorize_append", "materialize_view", "acknowle
 def apply_event(state: dict[str, Any], event: dict[str, Any]) -> dict[str, Any]:
     nxt = copy.deepcopy(state)
     if event["kind"] == "propose":
-        nxt.update(stage="proposed", pending_event_digest=event["event_digest"], required_surface_acks=event["required_surface_acks"], observed_surface_acks=0)
+        nxt.update(
+            stage="proposed",
+            pending_event_digest=event["event_digest"],
+            pending_proposal=copy.deepcopy(event),
+            required_surface_acks=event["required_surface_acks"],
+            observed_surface_acks=0,
+        )
     elif event["kind"] == "append":
-        nxt.update(ledger_version=state["ledger_version"] + 1, head_digest=event["event_digest"], semantic_version=event["next_semantic_version"], ontology_version=event["next_ontology_version"], support_rank=event["next_support_rank"], stage="appended", pending_event_digest=None, append_count=state["append_count"] + 1)
+        nxt.update(ledger_version=state["ledger_version"] + 1, head_digest=event["event_digest"], semantic_version=event["next_semantic_version"], ontology_version=event["next_ontology_version"], support_rank=event["next_support_rank"], stage="appended", pending_event_digest=None, pending_proposal=None, append_count=state["append_count"] + 1)
     elif event["kind"] == "materialize":
         nxt.update(stage="materialized", materialized_ledger_version=state["ledger_version"])
     elif event["kind"] == "acknowledge":
@@ -172,6 +213,11 @@ def route_cases() -> list[tuple[str, dict[str, Any], dict[str, Any], str]]:
     add("wrong_stage", states[1], "propose", {}, "reject_wrong_stage")
     add("stale_base", states[0], "propose", {"base_ledger_version": 6}, "reject_stale_base")
     add("event_substitution", states[1], "append", {"event_digest": 9999}, "reject_event_substitution")
+    add("append_action_substitution", states[1], "append", {"action": "dispute"}, "reject_event_substitution")
+    add("append_semantic_substitution", states[1], "append", {"next_semantic_version": 5}, "reject_event_substitution")
+    add("append_ontology_substitution", states[1], "append", {"next_ontology_version": 4}, "reject_event_substitution")
+    add("append_support_substitution", states[1], "append", {"next_support_rank": 3}, "reject_event_substitution")
+    add("append_owner_receipt_substitution", states[1], "append", {"evidence_owner_receipt_present": False}, "reject_event_substitution")
     add("ledger_authority_leak", states[0], "propose", {"ledger_self_approves_support": True}, "reject_ledger_authority_leak")
     add("open_contradiction", states[0], "propose", {"open_contradiction": True}, "block_open_contradiction")
     add("evidence_owner_handoff", states[0], "propose", {"evidence_owner_receipt_present": False}, "handoff_to_evidence_owner")
@@ -202,6 +248,11 @@ def mutations() -> list[tuple[str, list[dict[str, Any]]]]:
     event_mutation("proposal_missing_residual", 0, {"residual_required": True, "residual_refs_present": False})
     event_mutation("proposal_zero_surfaces", 0, {"required_surface_acks": 0})
     event_mutation("append_substitution", 1, {"event_digest": 9999})
+    event_mutation("append_action_substitution", 1, {"action": "dispute"})
+    event_mutation("append_semantic_substitution", 1, {"next_semantic_version": 5})
+    event_mutation("append_ontology_substitution", 1, {"next_ontology_version": 4})
+    event_mutation("append_support_substitution", 1, {"next_support_rank": 3})
+    event_mutation("append_owner_receipt_substitution", 1, {"evidence_owner_receipt_present": False})
     event_mutation("append_stale_base", 1, {"base_ledger_version": 6})
     event_mutation("materialize_substitution", 2, {"event_digest": 9999})
     event_mutation("materialize_stale_base", 2, {"base_ledger_version": 8})
@@ -219,8 +270,24 @@ def run_suite(name: str, validator: Path, valid: int, invalid: int, issues: list
     return {"suite_id": name, "valid_count": valid, "expected_invalid_count": invalid, "suite_passed": completed.returncode == 0, "validator_sha256": sha256(validator)}
 
 
+def validate_lean_surface(issues: list[str]) -> None:
+    source = LEAN.read_text(encoding="utf-8")
+    observed = tuple(re.findall(r"^theorem\s+([A-Za-z0-9_']+)", source, flags=re.MULTILINE))
+    if observed != LEAN_THEOREMS:
+        issues.append(f"Lean theorem surface mismatch: expected {len(LEAN_THEOREMS)}, observed {len(observed)}")
+    if re.search(r"\b(sorry|admit|axiom)\b", source):
+        issues.append("Lean source contains a forbidden placeholder or axiom")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/ClaimLedgerRefinement.lean"],
+        cwd=ROOT / "lean", text=True, capture_output=True,
+    )
+    if completed.returncode:
+        issues.append(f"Lean compilation failed: {completed.stdout}{completed.stderr}")
+
+
 def build() -> tuple[dict[str, Any], list[str]]:
     issues: list[str] = []
+    validate_lean_surface(issues)
     suites = [
         run_suite("claim_ledger_revision", REVISION_VALIDATOR, 5, 7, issues),
         run_suite("contradiction_revision_lifecycle", HISTORICAL_VALIDATOR, 1, 11, issues),
@@ -236,7 +303,7 @@ def build() -> tuple[dict[str, Any], list[str]]:
     expected_final = {
         "claim_id": 101, "ledger_version": 8, "head_digest": 8001,
         "semantic_version": 4, "ontology_version": 3, "support_rank": 2,
-        "stage": "acknowledged", "pending_event_digest": None,
+        "stage": "acknowledged", "pending_event_digest": None, "pending_proposal": None,
         "required_surface_acks": 3, "observed_surface_acks": 3,
         "materialized_ledger_version": 8, "append_count": 8, "external_effects": 0,
     }
@@ -260,7 +327,7 @@ def build() -> tuple[dict[str, Any], list[str]]:
         "mutation_count": len(receipts),
         "mutation_rejection_count": sum(row["rejected"] for row in receipts),
         "mutation_receipts": receipts,
-        "final_state": {key: value for key, value in final.items() if key != "pending_event_digest"},
+        "final_state": {key: value for key, value in final.items() if key not in {"pending_event_digest", "pending_proposal"}},
         "strongest_effect": "append_materialize_and_acknowledge_evidence_owner_decision",
         "support_state_effect": "none",
         "non_claims": [
@@ -283,7 +350,7 @@ def main() -> None:
         RESULT.parent.mkdir(parents=True, exist_ok=True); RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     elif not RESULT.exists() or load(RESULT) != result:
         raise SystemExit("Claim Ledger refinement result stale; run --write")
-    print(f"Claim Ledger refinement passed: 5/7 revision fixtures, 1/11 historical lifecycle, {result['route_case_count']} routes, 5 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
+    print(f"Claim Ledger refinement passed: {len(LEAN_THEOREMS)} Lean declarations, 5/7 revision fixtures, 1/11 historical lifecycle, {result['route_case_count']} routes, 5 stages, {result['mutation_rejection_count']} mutations rejected, support effect none.")
 
 
 if __name__ == "__main__": main()

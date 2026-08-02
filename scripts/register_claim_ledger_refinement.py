@@ -26,17 +26,22 @@ ARTIFACTS = [
 def main() -> None:
     value = json.loads(REGISTRY.read_text())
     value["units"] = [unit for unit in value["units"] if unit.get("script") != SCRIPT]
+    # Removing a unit creates a hole in the positional order.  Normalize the
+    # surviving rows before appending the replacement so the registry remains
+    # the contiguous, deterministic authority consumed by CI.
+    for order, unit in enumerate(value["units"], start=1):
+        unit["order"] = order
     order = len(value["units"]) + 1
     value["units"].append({
         "id": f"validate_claim_ledger_refinement:{order}", "order": order, "script": SCRIPT,
         "args": [], "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
-        "input_contract": "Reachable Lean append-only lifecycle, exact 5/7 revision and 1/11 historical suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
+        "input_contract": "Reachable 27-declaration Lean append-only lifecycle, exact 5/7 revision and 1/11 historical suites, independent consumer, result schema, receipt, and model-adequacy dossier.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Reject stale identity or base, support self-approval, external-effect requests, contradictions, missing evidence-owner custody, overwritten history, incomplete dependencies or migration, event substitution, and incomplete surface acknowledgment.",
-        "output_assertions": ["five valid and seven invalid revision fixtures", "one valid and eleven invalid historical lifecycle cases", "seventeen routes and five reachable stages", "twenty-nine rejected lifecycle mutations", "no support-state effect"],
+        "output_assertions": ["exactly twenty-seven compiled Lean declarations with no placeholders or axioms", "five valid and seven invalid revision fixtures", "one valid and eleven invalid historical lifecycle cases", "twenty-two route cases and five reachable stages", "thirty-four rejected lifecycle mutations", "no support-state effect"],
         "claim_scope": "One finite authored single-claim event lifecycle plus two existing bounded synthetic suites only.",
         "negative_controls": "validator_owned_revision_event_and_lifecycle_mutations",
-        "negative_control_cases": ["claim, base, version, or event substitution", "ledger support self-approval or external effect request", "open contradiction or missing evidence-owner receipt", "history, residual, dependency, migration, or surface omission", "skipped append, materialize, or acknowledgment stage"],
+        "negative_control_cases": ["claim, base, version, digest, or same-digest proposal-payload substitution", "ledger support self-approval or external effect request", "open contradiction or missing evidence-owner receipt", "history, residual, dependency, migration, or surface omission", "skipped append, materialize, or acknowledgment stage"],
         "prohibited_inference": "Does not establish truth, evidence validity, reviewer competence, semantic equivalence, assumption completeness, natural claim extraction, concurrent persistence, deployed synchronization, causal usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
         "contract_precision": "inherited",
         "semantic_review_state": "checked_structured_append_only_lifecycle_not_natural_concurrent_deployed_or_support_authority",

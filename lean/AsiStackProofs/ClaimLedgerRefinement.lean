@@ -53,22 +53,6 @@ inductive RevisionRoute where
   | acknowledgeSurfaces
 deriving DecidableEq, Repr
 
-structure LedgerState where
-  claimId : Nat
-  ledgerVersion : Nat
-  headDigest : Nat
-  semanticVersion : Nat
-  ontologyVersion : Nat
-  supportRank : Nat
-  stage : LifecycleStage
-  pendingEventDigest : Option Nat
-  requiredSurfaceAcks : Nat
-  observedSurfaceAcks : Nat
-  materializedLedgerVersion : Nat
-  appendCount : Nat
-  externalEffects : Nat
-deriving DecidableEq, Repr
-
 structure RevisionEvent where
   kind : LifecycleEventKind
   action : RevisionAction
@@ -99,6 +83,23 @@ structure RevisionEvent where
   surfaceAcknowledgmentReceiptPresent : Bool
 deriving DecidableEq, Repr
 
+structure LedgerState where
+  claimId : Nat
+  ledgerVersion : Nat
+  headDigest : Nat
+  semanticVersion : Nat
+  ontologyVersion : Nat
+  supportRank : Nat
+  stage : LifecycleStage
+  pendingEventDigest : Option Nat
+  pendingProposal : Option RevisionEvent
+  requiredSurfaceAcks : Nat
+  observedSurfaceAcks : Nat
+  materializedLedgerVersion : Nat
+  appendCount : Nat
+  externalEffects : Nat
+deriving DecidableEq, Repr
+
 def ExactBase (state : LedgerState) (event : RevisionEvent) : Bool :=
   decide (event.claimId = state.claimId) &&
     decide (event.baseLedgerVersion = state.ledgerVersion) &&
@@ -112,6 +113,9 @@ def SupportMovesUp (event : RevisionEvent) : Bool :=
 
 def OntologyChanges (event : RevisionEvent) : Bool :=
   decide (event.priorOntologyVersion != event.nextOntologyVersion)
+
+def PendingPayloadMatches (state : LedgerState) (event : RevisionEvent) : Bool :=
+  decide (state.pendingProposal = some { event with kind := .propose })
 
 def RevisionRouteFor (state : LedgerState) (event : RevisionEvent) : RevisionRoute :=
   match event.kind with
@@ -145,6 +149,8 @@ def RevisionRouteFor (state : LedgerState) (event : RevisionEvent) : RevisionRou
         .rejectWrongStage
       else if state.pendingEventDigest != some event.eventDigest then
         .rejectEventSubstitution
+      else if !PendingPayloadMatches state event then
+        .rejectEventSubstitution
       else if ExactBase state event = false then
         .rejectStaleBase
       else
@@ -174,6 +180,7 @@ def ApplyEvent (state : LedgerState) (event : RevisionEvent) : LedgerState :=
       { state with
         stage := .proposed
         pendingEventDigest := some event.eventDigest
+        pendingProposal := some event
         requiredSurfaceAcks := event.requiredSurfaceAcks
         observedSurfaceAcks := 0 }
   | .append =>
@@ -185,6 +192,7 @@ def ApplyEvent (state : LedgerState) (event : RevisionEvent) : LedgerState :=
         supportRank := event.nextSupportRank
         stage := .appended
         pendingEventDigest := none
+        pendingProposal := none
         appendCount := state.appendCount + 1 }
   | .materialize =>
       { state with
@@ -249,6 +257,112 @@ theorem accepted_append_is_exactly_one_new_version
     cases accepted
     simp [ApplyEvent, appendEvent]
 
+def LedgerAccountingInvariant (state : LedgerState) : Prop :=
+  state.ledgerVersion = state.appendCount /\
+  state.externalEffects = 0
+
+theorem apply_event_preserves_version_append_balance
+    {state : LedgerState} {event : RevisionEvent}
+    (balanced : state.ledgerVersion = state.appendCount) :
+    (ApplyEvent state event).ledgerVersion = (ApplyEvent state event).appendCount := by
+  unfold ApplyEvent
+  split <;> simp [balanced]
+
+theorem accepted_step_preserves_accounting_invariant
+    {state next : LedgerState} {event : RevisionEvent}
+    (safe : LedgerAccountingInvariant state)
+    (accepted : Step state event = some next) :
+    LedgerAccountingInvariant next := by
+  rcases safe with ⟨balanced, effects⟩
+  constructor
+  · unfold Step at accepted
+    split at accepted <;> try contradiction
+    all_goals
+      cases accepted
+      exact apply_event_preserves_version_append_balance balanced
+  · rw [accepted_step_cannot_commit_external_effect accepted]
+    exact effects
+
+theorem successful_run_preserves_claim_identity
+    {state final : LedgerState} {events : List RevisionEvent}
+    (ran : Run state events = some final) :
+    final.claimId = state.claimId := by
+  induction events generalizing state with
+  | nil =>
+      have same := congrArg (fun result => Option.map LedgerState.claimId result) ran
+      simpa [Run] using same.symm
+  | cons event tail ih =>
+      cases stepped : Step state event with
+      | none => simp [Run, stepped] at ran
+      | some next =>
+          have tailRan : Run next tail = some final := by
+            simpa [Run, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_preserves_claim_identity stepped)
+
+theorem successful_run_preserves_external_effects
+    {state final : LedgerState} {events : List RevisionEvent}
+    (ran : Run state events = some final) :
+    final.externalEffects = state.externalEffects := by
+  induction events generalizing state with
+  | nil =>
+      have same := congrArg (fun result => Option.map LedgerState.externalEffects result) ran
+      simpa [Run] using same.symm
+  | cons event tail ih =>
+      cases stepped : Step state event with
+      | none => simp [Run, stepped] at ran
+      | some next =>
+          have tailRan : Run next tail = some final := by
+            simpa [Run, stepped] using ran
+          exact (ih tailRan).trans (accepted_step_cannot_commit_external_effect stepped)
+
+theorem successful_run_preserves_accounting_invariant
+    {state final : LedgerState} {events : List RevisionEvent}
+    (safe : LedgerAccountingInvariant state)
+    (ran : Run state events = some final) :
+    LedgerAccountingInvariant final := by
+  induction events generalizing state with
+  | nil =>
+      simp [Run] at ran
+      subst final
+      exact safe
+  | cons event tail ih =>
+      cases stepped : Step state event with
+      | none => simp [Run, stepped] at ran
+      | some next =>
+          have tailRan : Run next tail = some final := by
+            simpa [Run, stepped] using ran
+          exact ih (accepted_step_preserves_accounting_invariant safe stepped) tailRan
+
+theorem run_composes_across_event_batches
+    (state : LedgerState) (left right : List RevisionEvent) :
+    Run state (left ++ right) =
+      match Run state left with
+      | none => none
+      | some middle => Run middle right := by
+  induction left generalizing state with
+  | nil => simp [Run]
+  | cons event tail ih =>
+      cases stepped : Step state event <;> simp [Run, stepped, ih]
+
+theorem acknowledged_state_accepts_no_event
+    {state : LedgerState} {event : RevisionEvent}
+    (closed : state.stage = .acknowledged) :
+    Step state event = none := by
+  have route : RevisionRouteFor state event = .rejectWrongStage := by
+    unfold RevisionRouteFor
+    split <;> simp [closed]
+  simp [Step, route]
+
+theorem same_digest_payload_substitution_is_rejected
+    {state : LedgerState} {event : RevisionEvent}
+    (appendEvent : event.kind = .append)
+    (proposed : state.stage = .proposed)
+    (sameDigest : state.pendingEventDigest = some event.eventDigest)
+    (payloadMismatch : state.pendingProposal != some { event with kind := .propose }) :
+    RevisionRouteFor state event = .rejectEventSubstitution := by
+  cases event
+  simp_all [RevisionRouteFor, PendingPayloadMatches]
+
 def initialState : LedgerState where
   claimId := 101
   ledgerVersion := 7
@@ -258,11 +372,16 @@ def initialState : LedgerState where
   supportRank := 1
   stage := .idle
   pendingEventDigest := none
+  pendingProposal := none
   requiredSurfaceAcks := 0
   observedSurfaceAcks := 0
   materializedLedgerVersion := 7
   appendCount := 7
   externalEffects := 0
+
+theorem initial_state_satisfies_accounting_invariant :
+    LedgerAccountingInvariant initialState := by
+  simp [LedgerAccountingInvariant, initialState]
 
 def referenceRevision : RevisionEvent where
   kind := .propose
@@ -332,11 +451,49 @@ theorem full_revision_lifecycle_reaches_exact_acknowledgment :
         supportRank := 2
         stage := .acknowledged
         pendingEventDigest := none
+        pendingProposal := none
         requiredSurfaceAcks := 3
         observedSurfaceAcks := 3
         materializedLedgerVersion := 8
         appendCount := 8
         externalEffects := 0 } := by native_decide
+
+theorem every_successful_initial_run_preserves_exact_accounting
+    {events : List RevisionEvent} {final : LedgerState}
+    (ran : Run initialState events = some final) :
+    final.claimId = 101 /\
+    final.ledgerVersion = final.appendCount /\
+    final.externalEffects = 0 := by
+  have identity := successful_run_preserves_claim_identity ran
+  have accounting := successful_run_preserves_accounting_invariant
+    initial_state_satisfies_accounting_invariant ran
+  simpa [initialState, LedgerAccountingInvariant] using And.intro identity accounting
+
+theorem append_action_substitution_is_rejected :
+    RevisionRouteFor (ApplyEvent initialState referenceRevision)
+      { appendRevision with action := .deprecate } = .rejectEventSubstitution := by
+  native_decide
+
+theorem append_semantic_version_substitution_is_rejected :
+    RevisionRouteFor (ApplyEvent initialState referenceRevision)
+      { appendRevision with nextSemanticVersion := 5 } = .rejectEventSubstitution := by
+  native_decide
+
+theorem append_ontology_version_substitution_is_rejected :
+    RevisionRouteFor (ApplyEvent initialState referenceRevision)
+      { appendRevision with nextOntologyVersion := 4 } = .rejectEventSubstitution := by
+  native_decide
+
+theorem append_support_rank_substitution_is_rejected :
+    RevisionRouteFor (ApplyEvent initialState referenceRevision)
+      { appendRevision with nextSupportRank := 3 } = .rejectEventSubstitution := by
+  native_decide
+
+theorem append_owner_receipt_substitution_is_rejected :
+    RevisionRouteFor (ApplyEvent initialState referenceRevision)
+      { appendRevision with evidenceOwnerReceiptPresent := false } =
+        .rejectEventSubstitution := by
+  native_decide
 
 theorem acknowledgment_before_materialization_is_rejected :
     RevisionRouteFor initialState acknowledgeRevision = RevisionRoute.rejectWrongStage := by

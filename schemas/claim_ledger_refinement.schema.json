@@ -52,11 +52,11 @@
       }
     },
     "reachable_stage_count": {"const": 5},
-    "route_case_count": {"const": 17},
+    "route_case_count": {"const": 22},
     "route_coverage": {
       "type": "array",
-      "minItems": 17,
-      "maxItems": 17,
+      "minItems": 22,
+      "maxItems": 22,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -68,11 +68,12 @@
         }
       }
     },
-    "mutation_count": {"type": "integer", "minimum": 20},
-    "mutation_rejection_count": {"type": "integer", "minimum": 20},
+    "mutation_count": {"const": 34},
+    "mutation_rejection_count": {"const": 34},
     "mutation_receipts": {
       "type": "array",
-      "minItems": 20,
+      "minItems": 34,
+      "maxItems": 34,
       "items": {
         "type": "object",
         "additionalProperties": false,

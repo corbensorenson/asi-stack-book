@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.claim_ledger_refinement.v1",
   "result_id": "claim-ledger-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "1e786a445e0892ef4d2968eaff6786bac2c3983f585d03ee1cd5adc9c91b6339",
+    "lean_model": "cc67f9cb605782ea4f6ea0def6edb60ad77549f477beb27934e0794303440c58",
     "revision_fixtures": "1dc650f20a5987019e2f86aab994d5231524cfaa1ef84318873c2caaf4a28824",
     "historical_record": "c357ee80a2e9c74714ca1aa586ccc74f0e0deeae18018706a8e891d649959fb9",
     "historical_schema": "1b7f12d0641780e9f6e4be2a5e3ac73eaf663bf27e95b0c6d9530d2c4eede9e8"
@@ -24,7 +24,7 @@
     }
   ],
   "reachable_stage_count": 5,
-  "route_case_count": 17,
+  "route_case_count": 22,
   "route_coverage": [
     {
       "case_id": "wrong_stage",
@@ -38,6 +38,31 @@
     },
     {
       "case_id": "event_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "append_action_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "append_semantic_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "append_ontology_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "append_support_substitution",
+      "expected_route": "reject_event_substitution",
+      "observed_route": "reject_event_substitution"
+    },
+    {
+      "case_id": "append_owner_receipt_substitution",
       "expected_route": "reject_event_substitution",
       "observed_route": "reject_event_substitution"
     },
@@ -112,8 +137,8 @@
       "observed_route": "acknowledge_surfaces"
     }
   ],
-  "mutation_count": 29,
-  "mutation_rejection_count": 29,
+  "mutation_count": 34,
+  "mutation_rejection_count": 34,
   "mutation_receipts": [
     {
       "mutation_id": "proposal_claim_id",
@@ -236,10 +261,40 @@
       "failure_route": "reject_event_substitution"
     },
     {
+      "mutation_id": "append_action_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "append_semantic_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "append_ontology_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "append_support_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
+      "mutation_id": "append_owner_receipt_substitution",
+      "rejected": true,
+      "terminal_stage": "proposed",
+      "failure_route": "reject_event_substitution"
+    },
+    {
       "mutation_id": "append_stale_base",
       "rejected": true,
       "terminal_stage": "proposed",
-      "failure_route": "reject_stale_base"
+      "failure_route": "reject_event_substitution"
     },
     {
       "mutation_id": "materialize_substitution",
