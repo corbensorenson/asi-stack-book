@@ -259,21 +259,21 @@
     {
       "artifact": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
       "artifact_result_id": "2026-07-02-capability-replacement-trace-probe",
-      "artifact_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
+      "artifact_sha256": "a6dcc058b41dc61d323ecc3f2a1d7eda77c77a90b921ca35c233ceca84600747",
       "clean_in_worktree": true,
       "observation_routes": [
         {
           "accepted": true,
           "observed_ref": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
-          "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
+          "observed_sha256": "a6dcc058b41dc61d323ecc3f2a1d7eda77c77a90b921ca35c233ceca84600747",
           "observer_role": "filesystem_reader",
           "route_id": "filesystem_bytes"
         },
         {
           "accepted": true,
-          "git_blob_sha1": "b098be2fb27ad7f2e3aa5fc6901942ba17a88224",
+          "git_blob_sha1": "50fa632130c27a7449edfa465b590221c7b0388d",
           "observed_ref": "HEAD:experiments/capability_replacement_trace/results/2026-07-02-local.json",
-          "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
+          "observed_sha256": "a6dcc058b41dc61d323ecc3f2a1d7eda77c77a90b921ca35c233ceca84600747",
           "observer_role": "git_object_database",
           "route_id": "git_object_bytes"
         },
@@ -283,9 +283,9 @@
           "exit_code": 0,
           "observer_role": "command_replay_validator",
           "output_excerpt": [
-            "Capability replacement trace probe validation passed."
+            "Capability replacement trace probe validation passed: exact 52-theorem Lean surface recompiled; two transactions and seven sequence/route controls checked."
           ],
-          "output_sha256": "b3076247aa7310aed4202f75b20c7bfc25f6c1d9786a267871a9fc0322cb63ea",
+          "output_sha256": "5843cf8ed9ceb77ee5aa2d8e71f9b1bd19226f15a9835753083ab6529c7af5a6",
           "route_id": "command_replay"
         }
       ],
@@ -293,7 +293,7 @@
       "selection_score": "bb2552614b63e03d9e06e8fea992d7ccdea87d782b37a9bd6bbafff995109ffa",
       "trap_receipt": {
         "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
-        "observed_sha256": "8ae1f639e60f9c9b0b544f94c910735a1d6979bec9e9b627e951f92519573659",
+        "observed_sha256": "a6dcc058b41dc61d323ecc3f2a1d7eda77c77a90b921ca35c233ceca84600747",
         "receipt_shape_valid": true,
         "rejected": true,
         "rejection_reasons": [
