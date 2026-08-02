@@ -63,9 +63,9 @@
       "path": "lean/AsiStackProofs/ClaimLedgerRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 4,
-      "theorem_declaration_count": 12,
-      "plain_language_proposition": "A single-claim append-only revision lifecycle preserves exact claim identity and external-effect count, admits an append only from an exact base with evidence-owner custody and required contradiction, dependency, residual, migration, and history records, advances the ledger exactly once, and reaches surface acknowledgment only after exact materialization.",
-      "modeled_state": "Five lifecycle stages, seventeen routes, immutable claim identity, semantic and ontology versions, head and append counts, contradiction state, evidence-owner receipt, history, dependency, residual, migration, materialized view, and surface acknowledgment.",
+      "theorem_declaration_count": 27,
+      "plain_language_proposition": "A single-claim append-only revision lifecycle preserves exact claim identity, zero external effects, and exact ledger-version/append-count balance across arbitrary successful event lists, admits an append only from an exact base matching the full pending proposal and evidence-owner custody, composes event batches, and reaches a terminal surface acknowledgment only after exact materialization.",
+      "modeled_state": "Five lifecycle stages, twenty-two route cases, immutable claim identity, semantic and ontology versions, head and append counts, full pending proposal, contradiction state, evidence-owner receipt, history, dependency, residual, migration, materialized view, and surface acknowledgment.",
       "assumptions": [
         "Identifiers, digests, evidence-owner receipts, dependencies, migrations, and surface acknowledgments are truthful.",
         "Digest collision resistance and concurrent event-store behavior are outside the model.",
@@ -74,15 +74,16 @@
       "countermodels": [
         "A stale base or ledger self-approval is rejected.",
         "Upward revision with an open contradiction is blocked; missing evidence-owner custody is handed off rather than accepted.",
-        "Ontology change without migration custody and acknowledgment before materialization are rejected."
+        "Ontology change without migration custody and acknowledgment before materialization are rejected.",
+        "Five same-digest substitutions of action, semantic version, ontology version, support rank, or evidence-owner receipt are rejected."
       ],
       "consumers": [
         "scripts/validate_claim_ledger_refinement.py",
         "experiments/claim_ledger_refinement/results/2026-07-15-local.json",
         "schemas/claim_ledger_refinement.schema.json"
       ],
-      "mutation_evidence": "The independent consumer covers all 17 routes, the 5/7 revision fixtures and 1/11 historical lifecycle, and rejects 29 identity, version, history, contradiction, ownership, migration, surface, order, and acknowledgment mutations.",
-      "maximum_inference": "Adequate for the represented reachable append-only lifecycle, route priority, identity/history custody, exact append accounting, and authority separation. It does not establish natural claim extraction, semantic equivalence, evidence or reviewer quality, contradiction discovery, concurrency, persistence, causal benefit, transfer, or chapter-core support."
+      "mutation_evidence": "The independent consumer compiles the exact theorem surface, covers all 22 route cases, consumes the 5/7 revision fixtures and 1/11 historical lifecycle, and rejects 34 identity, version, same-digest payload, history, contradiction, ownership, migration, surface, order, and acknowledgment mutations.",
+      "maximum_inference": "Adequate for the represented reachable append-only lifecycle, route priority, arbitrary-run identity and history custody, exact append accounting, proposal-payload commitment, batch composition, terminal closure, and authority separation. It does not establish natural claim extraction, semantic equivalence, evidence or reviewer quality, contradiction discovery, concurrency, persistence, causal benefit, transfer, or chapter-core support."
     },
     {
       "module": "AsiStackProofs.ProofCarryingClaimsRefinement",

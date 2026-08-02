@@ -1740,20 +1740,20 @@ def errors(data: dict) -> list[str]:
         "claim_ledger_state":"validated_finite_authored_append_only_revision_lifecycle_not_semantic_concurrent_or_deployed",
         "claim_ledger_revision_valid_count":5,"claim_ledger_revision_invalid_count":7,
         "claim_ledger_historical_valid_count":1,"claim_ledger_historical_invalid_count":11,
-        "claim_ledger_reachable_stage_count":5,"claim_ledger_route_case_count":17,
-        "claim_ledger_mutation_rejection_count":29,
+        "claim_ledger_reachable_stage_count":5,"claim_ledger_route_case_count":22,
+        "claim_ledger_mutation_rejection_count":34,
         "claim_ledger_retired_baseline_declaration_count":16,
         "claim_ledger_retained_legacy_theorem_count":4,
         "claim_ledger_support_state_effect":"none"}
     for key,value in expected_claim_ledger_contract.items():
         if proof_contract.get(key)!=value: out.append(f"claim-ledger contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     claim_ledger=data["claim_ledger_result"]
-    for key,value in {"reachable_stage_count":5,"route_case_count":17,"mutation_count":29,
-                      "mutation_rejection_count":29,"support_state_effect":"none"}.items():
+    for key,value in {"reachable_stage_count":5,"route_case_count":22,"mutation_count":34,
+                      "mutation_rejection_count":34,"support_state_effect":"none"}.items():
         if claim_ledger.get(key)!=value: out.append(f"claim-ledger result drifted: {key}")
     claim_suites={row.get("suite_id"):(row.get("valid_count"),row.get("expected_invalid_count")) for row in claim_ledger.get("input_suites",[])}
     if claim_suites!={"claim_ledger_revision":(5,7),"contradiction_revision_lifecycle":(1,11)}: out.append("claim-ledger consumed-suite counts drifted")
-    for phrase in ["all seventeen routes", "five-valid/seven-invalid", "one-valid/eleven-invalid", "all 29 lifecycle mutations", "Support-state effect: `none`"]:
+    for phrase in ["exact 27-declaration theorem surface", "all 22 route cases", "five-valid/seven-invalid", "one-valid/eleven-invalid", "all 34 lifecycle mutations", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["claim_ledger_receipt"].casefold(): out.append(f"claim-ledger receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "single-claim append-only event lifecycle", "Support-state effect: exactly `none`"]:
         if phrase.casefold() not in data["claim_ledger_dossier"].casefold(): out.append(f"claim-ledger dossier missing adequacy boundary: {phrase}")

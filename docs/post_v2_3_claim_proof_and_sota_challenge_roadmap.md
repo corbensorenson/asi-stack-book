@@ -2602,14 +2602,17 @@ model separates idle, proposed, appended, materialized, and acknowledged
 stages over exact claim identity, base ledger version, prior head digest,
 semantic and ontology versions, recorded support ranks, history,
 non-overwrite attestation, evidence-owner custody, contradiction state,
-dependency closure, migration, residuals, and surface receipts. Its seventeen
-routes reject stale bases, event substitution, ledger authority leakage, open
+dependency closure, migration, residuals, surfaces, and the full pending
+proposal. Its 27 declarations prove one-step and arbitrary-run identity,
+zero-effect, and ledger/append accounting, batch composition, and terminal
+closure. Its 22 route cases reject stale bases, digest or same-digest payload
+substitution, ledger authority leakage, open
 contradictions, missing evidence-owner receipts, overwritten history, missing
 reasons or residuals, incomplete dependency or migration custody, and missing
 surface plans or acknowledgments before authorizing exact append,
 materialization, and acknowledgment. The independent consumer preserves the
 exact five-valid/seven-invalid revision suite and one-valid/eleven-invalid
-five-project lifecycle, executes the four-event witness, and rejects 29/29
+five-project lifecycle, executes the four-event witness, and rejects 34/34
 mutations. Sixteen baseline declarations are physically retired with frozen
 lineage; four small legacy lemmas remain bounded. Event fields, digests,
 evidence-owner receipts, dependency closure, migration receipts, and surface

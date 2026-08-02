@@ -14,7 +14,7 @@ record at
 | Module | Disposition | Semantic reason |
 |---|---|---|
 | `AsiStackProofs.EvidenceStates` | reclassify | The transition route and four executable audit bridges are useful finite policy semantics. Direct conjunct projections remain lineage and receive no semantic credit. |
-| `AsiStackProofs.ClaimLedgerRefinement` | adequate | A reachable append-only lifecycle preserves identity/history/effect custody, rejects stale and unauthorized revisions, advances one exact version, and has a 17-route independent consumer with 29 mutations. |
+| `AsiStackProofs.ClaimLedgerRefinement` | adequate | A 27-declaration reachable append-only lifecycle preserves arbitrary-run identity, effect, and ledger/append accounting; commits the full proposal payload; composes batches; closes acknowledged states; and has a 22-case independent consumer with 34 rejecting mutations. |
 | `AsiStackProofs.ProofCarryingClaimsRefinement` | adequate | A reachable verification lifecycle separates target, artifact, verifier, semantic review, adjudication, and owner authority; a 23-route consumer rejects 36 mutations. |
 | `AsiStackProofs.ProofEnvelope` | reclassify | Its negative artifact-admission countermodels are useful, but positive module/build and non-operational results are assumed-record projections. It is retained as specification policy, not runtime enforcement. |
 
