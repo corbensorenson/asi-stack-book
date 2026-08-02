@@ -3,7 +3,7 @@
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "674e368a4f757553774c18fe31126ee497c1e6c76711b9ee9adfa0d0ce070152",
+  "book_structure_sha256": "4279fdd274bd92aaee42926e12924adb7758f493e9343bf8a9abfe5622f194d6",
   "visual_manifest_path": "visual_edition/manifest.json",
   "visual_manifest_sha256": "66543db7cdf7afd2483a966d0d41119f3e767918f69a40e448bb34987bf42a85",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
@@ -131,7 +131,7 @@
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 61,
+    "planned": 60,
     "briefed": 0,
     "scripted": 1,
     "animatic_passed": 18,
@@ -1312,7 +1312,7 @@
       },
       "target": {
         "generation": 2,
-        "stage": "planned",
+        "stage": "animatic",
         "beat_plan_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/narration.txt",
@@ -1329,8 +1329,8 @@
           "independent_release_candidate": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
-          "animatic": "not_started",
+          "beat_plan": "revise",
+          "animatic": "revise",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",

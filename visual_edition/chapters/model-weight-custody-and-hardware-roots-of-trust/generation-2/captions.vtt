@@ -1,0 +1,261 @@
+WEBVTT
+
+NOTE
+Canonical written narration timed from the exact local narration render receipt.
+Pronunciation-only substitutions are intentionally absent from caption text.
+
+1
+00:00:00.060 --> 00:00:06.878
+This chapter asks a specific question: A system can govern runtime tool authority
+
+2
+00:00:06.878 --> 00:00:11.598
+while model weights, optimizer state, adapters, quantizations, checkpoints, caches,
+
+3
+00:00:11.598 --> 00:00:16.318
+recovery images, extracted equivalents, and recipient derivatives are copied,
+
+4
+00:00:16.318 --> 00:00:18.940
+reconstructed, decrypted, loaded, served, revoked,
+
+5
+00:00:19.280 --> 00:00:24.402
+sanitized, or released across storage, key, hardware, vendor, operator,
+
+6
+00:00:24.402 --> 00:00:28.385
+and organizational trust boundaries without effect-complete custody.
+
+7
+00:00:28.985 --> 00:00:34.395
+The chapter's core claim is this: Every governed model-family custody transition
+
+8
+00:00:34.395 --> 00:00:39.313
+should bind a prospectively declared asset-and-derivative closure to exact artifact
+
+9
+00:00:39.313 --> 00:00:43.248
+and lineage identity, holder and purpose, storage/transfer state,
+
+10
+00:00:43.248 --> 00:00:45.215
+key and metadata lifecycle,
+
+11
+00:00:45.555 --> 00:00:50.571
+Attester/Verifier/Relying-Party roles and policies, reference values and
+
+12
+00:00:50.571 --> 00:00:55.587
+endorsements, freshness, measured target and attesting environments,
+
+13
+00:00:55.587 --> 00:01:00.602
+verifier dependencies, independent-enough effect observation, plaintext and
+
+14
+00:01:00.602 --> 00:01:04.185
+output-extraction exposure, load/use/serve/release authority separation,
+
+15
+00:01:04.525 --> 00:01:08.004
+backup and emergency recovery, copy/recipient/descendant state,
+
+16
+00:01:08.004 --> 00:01:12.643
+incident and revocation semantics, sanitization method and validation,
+
+17
+00:01:12.643 --> 00:01:16.702
+irreversible distribution, privacy/rights/cost residuals, and terminal ownership;
+
+18
+00:01:16.702 --> 00:01:23.080
+missing or failed modeled predicates route to a named non-default state,
+
+19
+00:01:23.420 --> 00:01:27.953
+while no record, encryption, signature, security level, attestation result,
+
+20
+00:01:27.953 --> 00:01:30.975
+hardware root, key action, deletion receipt.
+
+21
+00:01:31.575 --> 00:01:36.261
+A concrete implementation trace makes the proposal testable.
+
+22
+00:01:36.261 --> 00:01:42.119
+Preserve the exact current finite boundary: eight deterministic Boolean custody
+
+23
+00:01:42.119 --> 00:01:46.219
+records route one bounded-load admission, five repair/review/refresh/observation
+
+24
+00:01:46.219 --> 00:01:50.905
+cases, one release-laundering rejection, and one irreversible-release record;
+
+25
+00:01:51.245 --> 00:01:57.743
+nine Lean theorem declarations under eight manifest targets prove only their
+
+26
+00:01:57.743 --> 00:02:01.287
+explicit route consequences; nine rejecting mutations
+
+27
+00:02:01.287 --> 00:02:03.650
+and support_state_effect=none preserve non-claims.
+
+28
+00:02:03.990 --> 00:02:10.466
+No real weight, derivative closure, key, KMS/HSM, TEE, root, Evidence,
+
+29
+00:02:10.466 --> 00:02:15.647
+Attestation Result, verifier, reference value, endorsement, relying-party decision,
+
+30
+00:02:15.647 --> 00:02:20.180
+plaintext load, extraction, revocation propagation, recovery, sanitization,
+
+31
+00:02:20.180 --> 00:02:22.770
+recipient release, privacy, availability,
+
+32
+00:02:23.110 --> 00:02:25.865
+or security metric has been exercised.
+
+33
+00:02:26.465 --> 00:02:32.508
+The design can still fail. Weight and capability sprawl through checkpoints,
+
+34
+00:02:32.508 --> 00:02:36.902
+optimizer state, adapters, quantizations, distillations, caches, backups, packages,
+
+35
+00:02:36.902 --> 00:02:40.748
+recovery images, extracted equivalents, developer copies, recipients,
+
+36
+00:02:40.748 --> 00:02:42.945
+or descendants outside closure.
+
+37
+00:02:43.285 --> 00:02:47.448
+Artifact, lineage, tokenizer, policy, environment, holder, recipient,
+
+38
+00:02:47.448 --> 00:02:53.990
+or model-family identity is substituted after approval or mislabeled as equivalent.
+
+39
+00:02:54.330 --> 00:02:58.668
+Key lifecycle drift, backup leakage, trust-anchor compromise, rotation failure,
+
+40
+00:02:58.668 --> 00:03:04.452
+recovery abuse, or break-glass authority permits use beyond purpose or usage period.
+
+41
+00:03:04.452 --> 00:03:09.754
+Attestation laundering, replay, or freshness mismatch turns Evidence or a Verifier
+
+42
+00:03:09.754 --> 00:03:13.610
+result into a universal trust or authorization bit.
+
+43
+00:03:14.210 --> 00:03:19.256
+This chapter remains Design rationale at argument support. Its contracts, examples,
+
+44
+00:03:19.256 --> 00:03:23.385
+tests, or local artifacts establish only their encoded scope.
+
+45
+00:03:23.385 --> 00:03:28.890
+The chapter names proof targets rather than pretending they are already closed.
+
+46
+00:03:29.230 --> 00:03:34.258
+A finite weight-custody record with a requested load, required attestation,
+
+47
+00:03:34.258 --> 00:03:39.285
+and invalid attestation routes to block rather than readiness review,
+
+48
+00:03:39.285 --> 00:03:43.810
+without inferring hardware compromise, weight confidentiality, safety, or ASI.
+
+49
+00:03:44.150 --> 00:03:49.842
+A complete finite custody lifecycle record with a current valid attestation,
+
+50
+00:03:49.842 --> 00:03:53.463
+dependency disclosure, independent load observation, residual owner,
+
+51
+00:03:53.463 --> 00:03:57.085
+and revocation semantics routes to bounded load
+
+52
+00:03:57.085 --> 00:03:59.155
+admission without authorizing deployment.
+
+53
+00:03:59.755 --> 00:04:04.719
+No chapter claim or evidence state is promoted by this visual.
+
+54
+00:04:04.719 --> 00:04:10.134
+A named mechanism is not proof of correct implementation or useful deployment.
+
+55
+00:04:10.134 --> 00:04:16.001
+A local check or formal model does not establish real-world enforcement. No safety,
+
+56
+00:04:16.001 --> 00:04:19.160
+transfer, state-of-the-art, AGI, or ASI conclusion follows.
+
+57
+00:04:19.500 --> 00:04:24.382
+These boundaries matter because an explanatory derivative is useful only if it
+
+58
+00:04:24.382 --> 00:04:27.230
+preserves the evidence ceiling of its source.
+
+59
+00:04:27.830 --> 00:04:33.541
+At most, this visual explains the chapter's design rationale at argument support;
+
+60
+00:04:33.541 --> 00:04:37.824
+it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI,
+
+61
+00:04:37.824 --> 00:04:43.535
+or ASI result. The next chapter is Open-Weight Release and Post-Release Control.
+
+62
+00:04:43.875 --> 00:04:48.897
+It takes responsibility for Once unrestricted model weights are published,
+
+63
+00:04:48.897 --> 00:04:52.412
+the original releaser generally cannot recall copies,
+
+64
+00:04:52.412 --> 00:04:56.430
+enforce serving-layer safeguards, observe use, or prevent derivatives.

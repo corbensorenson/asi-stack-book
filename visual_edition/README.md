@@ -104,8 +104,9 @@ rendered animatic marked revise for narration refresh; Chapter 21 now has a
 rendered attack-surface animatic also marked revise for narration refresh;
 Chapter 22 now has a rendered rights-and-flow animatic marked revise for
 narration refresh; Chapter 23 now has a rendered confidential-computation
-animatic marked revise for narration refresh; and chapters 24–84 remain
-planned. Generation two
+animatic marked revise for narration refresh; Chapter 24 now has a rendered
+model-custody animatic marked revise for narration refresh; and chapters
+25–84 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -156,11 +157,11 @@ cleared animatic; Chapter 20 has a rendered animatic marked revise because its
 inherited narration still needs a fresh voice/prose pass; Chapter 21 has a
 rendered attack-surface animatic marked revise for the same reason; Chapter 22
 has a rendered rights-and-flow animatic marked revise for the same reason; and
-chapters 18 and 24–84 remain gated behind the same production chain. Existing unlisted embeds remain
+chapters 18 and 25–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 61 planned chapters, one scripted chapter,
-one animatic-passed chapter, four animatics marked revise, and seventeen chapters
+The generation-2 ledger currently has 60 planned chapters, one scripted chapter,
+one animatic-passed chapter, five animatics marked revise, and seventeen chapters
 through both animatic and picture-and-sound lock. The
 first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
@@ -276,6 +277,26 @@ is marked revise because its inherited narration still needs a fresh
 prose/voice pass; a new narration receipt is required before picture-and-sound
 lock. No publication, Quarto reconciliation, or support-state promotion is
 implied.
+
+Chapter 24, `model-weight-custody-and-hardware-roots-of-trust`, now has a
+bespoke custody control room: a capability-bearing state fan, prospective
+custody contract, holder ledger, lifecycle-role lanes, finite deterministic
+router, formal-target chain, evidence ceiling, key-freshness gate, bounded-load
+airlock, media nonpromotion boundary, and irreversible post-release divergence
+remain visible across 20 provisional receipt-bound beats. Its 04:56.490
+legacy-receipt animatic, 64 exact captions, descriptive transcript, custom
+thumbnail, low-resolution render, and mechanical A/V audit are complete at the
+animatic gate. The animatic is marked revise because its inherited narration
+still needs a fresh prose/voice pass; a new narration receipt is required before
+picture-and-sound lock. No publication, Quarto reconciliation, or support-state
+promotion is implied.
+
+The six new generation-2 masters for chapters 19–24 are staged locally in
+`youtube_generation2_upload_candidates.json` with exact hashes, captions,
+transcripts, thumbnails, chapter digests, and playlist positions. Their upload
+privacy is intentionally `unlisted`; the candidate batch is waiting on the
+Chrome file-chooser permission, and no candidate has been projected into
+Quarto or marked YouTube-current.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
