@@ -3183,7 +3183,11 @@
     "lean/AsiStackProofs/RelationalDimensionCompiler.lean",
     "tests/fixtures/proof_models/relational_dimension_compiler_dossier.json",
     "evidence_quality/proof_model_dossiers/relational-dimension-compilation-and-polyadic-cognition.md",
-    "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd"
+    "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+    "scripts/validate_p7_1c_reader_prose_quality.py",
+    "roadmap_records/p7_1c_reader_prose_quality_status.json",
+    "schemas/p7_1c_reader_prose_quality_status.schema.json",
+    "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md"
   ],
   "units": [
     {
@@ -18371,11 +18375,49 @@
       "prohibited_inference": "Does not establish field truth, higher-order irreducibility, representational usefulness, efficiency, natural-task transfer, bounded primitive arity, safe online adaptation, support, release, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_three_existing_consumers_no_support_effect"
+    },
+    {
+      "id": "validate_p7_1c_reader_prose_quality.py:469",
+      "order": 469,
+      "script": "validate_p7_1c_reader_prose_quality.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "reader_artifact_gate",
+      "input_contract": "P7.1c reader-prose quality status, reconciliation packet, active roadmap, and schema-bound 84-chapter packet contract.",
+      "input_artifacts": [
+        "scripts/validate_p7_1c_reader_prose_quality.py",
+        "roadmap_records/p7_1c_reader_prose_quality_status.json",
+        "schemas/p7_1c_reader_prose_quality_status.schema.json",
+        "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
+        "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
+        "book_structure.json"
+      ],
+      "output_contract": "Reject missing packet contract, stale roadmap/review markers, chapter-count drift, unsupported external-reader requirement, or support/release promotion language.",
+      "output_assertions": [
+        "P7.1c status schema validates",
+        "84-chapter scope and zero new-chapter authorization are explicit",
+        "reported review measurements remain un-reproduced signals",
+        "digest-bound packet fields and 84/84 acceptance gates are explicit",
+        "concrete scenes, worked traces, counterexamples, readable/formal projections, caveat audit, and off-surface bookkeeping are required",
+        "no support-state or release effect is declared"
+      ],
+      "claim_scope": "Editorial packet-contract and roadmap continuity only; no chapter truth, reader comprehension, empirical result, or support movement.",
+      "negative_controls": "validator_owned_missing_marker_schema_scope_and_promotion_mutations",
+      "negative_control_cases": [
+        "missing roadmap marker",
+        "stale review packet",
+        "chapter-count drift",
+        "new chapter authorization",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish prose effectiveness, reader comprehension, mechanism truth, empirical support, safety, deployment, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_editorial_status_schema_and_roadmap_markers_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3139,
-    "unit_count": 468
+    "required_artifact_count": 3143,
+    "unit_count": 469
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
