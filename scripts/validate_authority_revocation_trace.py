@@ -143,7 +143,9 @@ def build_result(errors: list[str]) -> dict[str, Any]:
     for fragment in (
         "invalid_revoked_authority_receipt.json",
         "prove revocation propagation in a deployed runtime",
-        "Runtime adapter permission harness passed: 2 valid fixture(s), 7 expected-invalid fixture(s).",
+        # Keep this cross-artifact check stable as the permission harness adds
+        # supplementary theorem-count details to its summary line.
+        "Runtime adapter permission harness passed: 2 valid fixture(s), 7 expected-invalid fixture(s)",
     ):
         require_fragment(rel(RUNTIME_PERMS_RESULT), runtime_text, fragment, errors)
     for fragment in (
