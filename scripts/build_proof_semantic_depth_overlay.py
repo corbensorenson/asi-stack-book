@@ -600,6 +600,70 @@ CURRENT_SEMANTIC_OVERRIDES[
     "rationale": "An accepted bounded revocation closes the modeled authority ceiling and records exact finite descendant coverage.",
 }
 
+_weight_custody_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_weight_custody_trace_reaches_exact_erased_state",
+        "scripts/validate_model_weight_custody_lifecycle.py",
+        "experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json",
+    ],
+    "classification_basis": [
+        "the six-event attestation-to-erasure lifecycle and nine rejecting controls are independently reconstructed by the model-weight custody validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_weight_custody_event_is_admissible",
+    "accepted_weight_custody_event_is_exact_advance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
+        **_weight_custody_lifecycle_base, "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded custody lifecycle.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::complete_weight_custody_trace_reaches_exact_erased_state"] = {
+    **_weight_custody_lifecycle_base, "semantic_level": "P2",
+    "rationale": "The six-event attestation, key-release, load, observation, revocation, and erasure trace is a bounded nonvacuity witness.",
+}
+
+for theorem_name in (
+    "accepted_weight_custody_event_preserves_identity",
+    "accepted_weight_custody_event_is_non_authorizing",
+    "accepted_weight_custody_event_never_widens_authority",
+    "accepted_attestation_is_independent_and_future_bounded",
+    "accepted_key_release_is_current_bounded_and_versioned",
+    "accepted_load_requires_active_key_receipt_and_no_distribution",
+    "accepted_load_observation_is_independent",
+    "accepted_erasure_follows_complete_revocation_and_records_residual",
+    "weight_custody_stale_version_is_rejected",
+    "weight_custody_self_attestation_is_rejected",
+    "weight_custody_expired_key_release_is_rejected",
+    "weight_custody_authority_widening_is_rejected",
+    "weight_custody_distribution_during_load_is_rejected",
+    "weight_custody_self_observation_is_rejected",
+    "weight_custody_partial_descendant_revocation_is_rejected",
+    "weight_custody_erasure_before_revocation_is_rejected",
+    "weight_custody_confidentiality_laundering_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
+        **_weight_custody_lifecycle_base, "semantic_level": "P3",
+        "rationale": "The theorem constrains one executable custody boundary and is covered by an independently encoded accepted trace or rejecting control.",
+    }
+
+for theorem_name in (
+    "weight_custody_run_preserves_identity_non_authority_and_narrowing",
+    "weight_custody_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
+        **_weight_custody_lifecycle_base, "semantic_level": "P4",
+        "rationale": "Structural induction proves arbitrary accepted custody traces preserve identity, non-authority, and narrowing or compose exactly across batches.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::accepted_key_revocation_closes_authority_and_descendants"] = {
+    **_weight_custody_lifecycle_base, "semantic_level": "P5",
+    "rationale": "Accepted key revocation closes the modeled authority ceiling and records exact finite descendant-key coverage.",
+}
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",

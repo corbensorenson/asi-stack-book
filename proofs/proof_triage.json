@@ -714,11 +714,11 @@
       "tag": "lean:model_weight_custody.lifecycle.complete_observed_load",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "module": "AsiStackProofs.ModelWeightCustody",
-      "formal_target": "A complete finite custody lifecycle record with a current valid attestation, dependency disclosure, independent load observation, residual owner, and revocation semantics routes to bounded load admission without authorizing deployment.",
+      "formal_target": "A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, exact finite descendant-key revocation, and erasure-after-revocation while arbitrary accepted runs preserve identity, non-authority, and narrowing.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a derived finite-record route and bridged to the deterministic custody fixture. It does not prove confidentiality, security effectiveness, or deployment merit."
+      "rationale": "The original derived route remains bridged to the deterministic custody fixture. A 23-theorem transaction layer adds exact one-step advancement, six ordered stages, arbitrary-run identity/non-authority/narrowing invariants, one exact attestation-to-erasure witness, and nine closed substitutions. All fields remain authored; no theorem proves attestation genuineness, hardware trust, confidentiality, extraction resistance, deployed erasure, security effectiveness, or deployment merit."
     },
     {
       "tag": "lean:model_weight_custody.lifecycle.missing_lineage",

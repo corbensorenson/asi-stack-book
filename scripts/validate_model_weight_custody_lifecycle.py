@@ -6,6 +6,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import re
+import subprocess
 from collections import Counter
 
 from build_canonical_public_status import ROOT, load_json, validate_against_schema
@@ -31,6 +32,106 @@ EXPECTED_THEOREMS = [
     "distribution_cannot_launder_load_authority",
     "acknowledged_distribution_records_irreversibility",
 ]
+LIFECYCLE_THEOREMS = {
+    "accepted_weight_custody_event_is_admissible",
+    "accepted_weight_custody_event_is_exact_advance",
+    "accepted_weight_custody_event_preserves_identity",
+    "accepted_weight_custody_event_is_non_authorizing",
+    "accepted_weight_custody_event_never_widens_authority",
+    "accepted_attestation_is_independent_and_future_bounded",
+    "accepted_key_release_is_current_bounded_and_versioned",
+    "accepted_load_requires_active_key_receipt_and_no_distribution",
+    "accepted_load_observation_is_independent",
+    "accepted_key_revocation_closes_authority_and_descendants",
+    "accepted_erasure_follows_complete_revocation_and_records_residual",
+    "weight_custody_run_preserves_identity_non_authority_and_narrowing",
+    "weight_custody_runs_compose",
+    "complete_weight_custody_trace_reaches_exact_erased_state",
+    "weight_custody_stale_version_is_rejected",
+    "weight_custody_self_attestation_is_rejected",
+    "weight_custody_expired_key_release_is_rejected",
+    "weight_custody_authority_widening_is_rejected",
+    "weight_custody_distribution_during_load_is_rejected",
+    "weight_custody_self_observation_is_rejected",
+    "weight_custody_partial_descendant_revocation_is_rejected",
+    "weight_custody_erasure_before_revocation_is_rejected",
+    "weight_custody_confidentiality_laundering_is_rejected",
+}
+
+
+def apply_lifecycle(state: dict, event: dict) -> dict | None:
+    for field in ("artifact", "policy", "environment", "recipient"):
+        if event[field] != state[field]:
+            return None
+    if event["version"] != state["version"] or event["now"] < state["now"]:
+        return None
+    if event.get("trust") or event.get("confidentiality") or event.get("support") or event.get("effect"):
+        return None
+    kind = event["kind"]
+    if kind == "attest":
+        ok = state["stage"] == "sealed" and event["actor"] == state["verifier"] and state["verifier"] != state["custodian"] and event["measurement"] and event["attestation"] and event["now"] < event["expiry"] and event["target_version"] == state["version"] and event["ceiling"] == state["ceiling"]
+    elif kind == "release":
+        ok = state["stage"] == "attested" and event["actor"] == state["key_service"] and event["policy_auth"] and event["key_receipt"] and event["now"] < state["expiry"] and event["ceiling"] <= state["ceiling"] and event["target_version"] == state["version"] + 1
+    elif kind == "load":
+        ok = state["stage"] == "key_released" and state["key_active"] and event["actor"] == state["loader"] and event["load_receipt"] and not event["distribution"] and event["now"] < state["expiry"] and event["ceiling"] == state["ceiling"] and event["target_version"] == state["version"]
+    elif kind == "observe":
+        ok = state["stage"] == "loaded" and event["actor"] == state["observer"] and state["observer"] not in {state["loader"], state["key_service"]} and event["independent"] and event["observation_receipt"] and event["ceiling"] == state["ceiling"] and event["target_version"] == state["version"]
+    elif kind == "revoke":
+        ok = state["stage"] == "observed" and event["actor"] == state["key_service"] and event["revocation_receipt"] and event["revoked_children"] == state["children"] and event["ceiling"] == 0 and event["target_version"] == state["version"] + 1
+    elif kind == "erase":
+        ok = state["stage"] == "revoked" and not state["key_active"] and state["revoked_children"] == state["children"] and event["actor"] == state["loader"] and event["erasure_receipt"] and event["residual"] and event["ceiling"] == 0 and event["target_version"] == state["version"]
+    else:
+        return None
+    if not ok:
+        return None
+    out = dict(state)
+    out["now"] = event["now"]
+    if kind == "attest": out.update(stage="attested", expiry=event["expiry"])
+    elif kind == "release": out.update(stage="key_released", version=event["target_version"], ceiling=event["ceiling"], key_active=True)
+    elif kind == "load": out["stage"] = "loaded"
+    elif kind == "observe": out.update(stage="observed", observations=out["observations"] + 1)
+    elif kind == "revoke": out.update(stage="revoked", version=event["target_version"], ceiling=0, key_active=False, revoked_children=event["revoked_children"], revocations=out["revocations"] + 1)
+    else: out.update(stage="erased", erasures=out["erasures"] + 1, residuals=out["residuals"] + 1)
+    return out
+
+
+def run_lifecycle(initial: dict, events: list[dict]) -> dict | None:
+    state = dict(initial)
+    custody = {key: state[key] for key in ("artifact", "policy", "environment", "recipient", "custodian", "verifier", "key_service", "loader", "observer", "support", "effect")}
+    ceiling = state["ceiling"]
+    for event in events:
+        state = apply_lifecycle(state, event)
+        if state is None:
+            return None
+        if any(state[key] != value for key, value in custody.items()) or state["ceiling"] > ceiling:
+            raise AssertionError("accepted custody lifecycle changed identity or widened authority")
+        ceiling = state["ceiling"]
+    return state
+
+
+def lifecycle_cases() -> tuple[int, int]:
+    initial = dict(artifact=113, policy=127, environment=131, recipient=137, custodian=139, verifier=149, key_service=151, loader=157, observer=163, version=1, ceiling=6, stage="sealed", children=4, revoked_children=0, key_active=False, expiry=0, observations=0, revocations=0, erasures=0, residuals=0, now=30, support=0, effect=0)
+    base = dict(kind="attest", artifact=113, policy=127, environment=131, recipient=137, actor=149, version=1, target_version=1, ceiling=6, now=31, expiry=50, measurement=True, attestation=True, policy_auth=False, key_receipt=False, load_receipt=False, distribution=False, independent=False, observation_receipt=False, revocation_receipt=False, revoked_children=0, erasure_receipt=False, residual=False, trust=False, confidentiality=False, support=False, effect=False)
+    def ev(**changes):
+        item = dict(base); item.update(changes); return item
+    events = [
+        ev(),
+        ev(kind="release", actor=151, target_version=2, ceiling=4, now=32, policy_auth=True, key_receipt=True),
+        ev(kind="load", actor=157, version=2, target_version=2, ceiling=4, now=33, load_receipt=True),
+        ev(kind="observe", actor=163, version=2, target_version=2, ceiling=4, now=34, independent=True, observation_receipt=True),
+        ev(kind="revoke", actor=151, version=2, target_version=3, ceiling=0, now=35, revocation_receipt=True, revoked_children=4),
+        ev(kind="erase", actor=157, version=3, target_version=3, ceiling=0, now=36, erasure_receipt=True, residual=True),
+    ]
+    final = run_lifecycle(initial, events)
+    expected = dict(initial); expected.update(version=3, ceiling=0, stage="erased", revoked_children=4, key_active=False, expiry=50, observations=1, revocations=1, erasures=1, residuals=1, now=36)
+    if final != expected:
+        raise AssertionError("complete custody lifecycle did not reach exact erased state")
+    mutations = ((0,"version",0),(0,"actor",139),(1,"now",50),(1,"ceiling",7),(2,"distribution",True),(3,"actor",157),(4,"revoked_children",3),(4,"kind","erase"),(0,"confidentiality",True))
+    for index, field, value in mutations:
+        changed = [dict(item) for item in events]; changed[index][field] = value
+        if run_lifecycle(initial, changed) is not None:
+            raise AssertionError(f"custody lifecycle mutation accepted: {index}:{field}")
+    return len(events), len(mutations)
 
 
 def route(r: dict) -> str:
@@ -113,14 +214,22 @@ def main() -> None:
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("missing custody lifecycle artifacts: " + ", ".join(missing))
+    compile_result = subprocess.run(["lake", "env", "lean", str(LEAN.relative_to(ROOT))], cwd=ROOT, capture_output=True, text=True, check=False)
+    if compile_result.returncode:
+        raise SystemExit("Model-weight custody Lean compile failed:\n" + compile_result.stdout + compile_result.stderr)
     data = {"fixture": load_json(FIXTURE), "result": load_json(RESULT), "lean": LEAN.read_text(encoding="utf-8")}
     errors = validate_against_schema(data["fixture"], load_json(FIXTURE_SCHEMA), FIXTURE.relative_to(ROOT).as_posix())
     errors.extend(validate_against_schema(data["result"], load_json(RESULT_SCHEMA), RESULT.relative_to(ROOT).as_posix()))
     errors.extend(semantic_errors(data))
     errors.extend(negative_controls(data))
+    names = set(re.findall(r"^theorem\s+([A-Za-z0-9_]+)", data["lean"], re.M))
+    surface = {name for name in names if name.startswith("accepted_weight_") or name.startswith("weight_custody_") or name.startswith("complete_weight_custody_") or name.startswith("accepted_attestation_") or name.startswith("accepted_key_") or name.startswith("accepted_load_") or name.startswith("accepted_erasure_")}
+    if surface != LIFECYCLE_THEOREMS:
+        errors.append(f"custody lifecycle theorem surface drifted: missing={sorted(LIFECYCLE_THEOREMS-surface)}, extra={sorted(surface-LIFECYCLE_THEOREMS)}")
     if errors:
         raise SystemExit("Model-weight custody lifecycle validation failed:\n - " + "\n - ".join(errors))
-    print("Model-weight custody lifecycle passed: 8 deterministic routes, 9 Lean theorems, no support movement, and 9 rejecting mutations.")
+    event_count, control_count = lifecycle_cases()
+    print(f"Model-weight custody lifecycle passed: 8 deterministic routes, 9 retained route theorems, 23 transaction-lifecycle theorems, {event_count} accepted events, {control_count} rejecting lifecycle controls, no support movement, and 9 fixture mutations.")
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@
   "scope": "bounded_finite_data_update_weight_custody_context_transaction_and_unlearning_claim_axis_semantics",
   "module_count": 4,
   "public_target_count": 31,
-  "theorem_declaration_count": 39,
+  "theorem_declaration_count": 62,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
@@ -63,25 +63,26 @@
       "path": "lean/AsiStackProofs/ModelWeightCustody.lean",
       "disposition": "adequate",
       "public_target_count": 8,
-      "theorem_declaration_count": 9,
-      "plain_language_proposition": "Finite weight-custody records route missing identity, lineage, attestation, freshness, key, role, purpose, authority-separation, exposure, recovery, sanitization, recipient, irreversibility, or residual fields away from bounded load or distribution records.",
-      "modeled_state": "Eight deterministic load, denial, quarantine, revocation, sanitization, bounded-transfer, and irreversible-release routes over exact authored asset, derivative, holder, purpose, key, attestation, authority, exposure, backup, recipient, descendant, and residual predicates.",
+      "theorem_declaration_count": 32,
+      "plain_language_proposition": "Finite weight-custody records route missing identity, lineage, attestation, freshness, key, role, purpose, authority-separation, exposure, recovery, sanitization, recipient, irreversibility, or residual fields away from bounded load or distribution records; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, exact descendant-key revocation, and erasure-after-revocation without granting support or external-effect authority.",
+      "modeled_state": "Eight deterministic custody routes over exact authored predicates plus a seven-stage, six-event state machine with artifact, policy, environment, recipient, actor, version, logical-time, expiry, authority, key, descendant-revocation, observation, erasure, residual, support, and external-effect fields; one complete witness reaches exact erasure and nine substitutions reject.",
       "assumptions": [
         "Asset, derivative, key, identity, attestation, freshness, role, purpose, recipient, exposure, recovery, deletion, revocation, and residual fields are authentic and complete.",
-        "Eight finite route outcomes are sufficient only for the encoded decisions; cryptographic protocols, hardware behavior, side channels, concurrent copies, remote recipients, and physical destruction are not modeled.",
-        "A bounded-load or irreversible-release record is a route classification, not execution authority or proof that confidentiality, sanitization, revocation, or deletion succeeded."
+        "The finite routes and sequential lifecycle are sufficient only for the encoded authored decisions; cryptographic protocols, hardware behavior, side channels, concurrent copies, remote recipients, and physical destruction are not modeled.",
+        "A bounded-load, revocation, erasure, or irreversible-release record is not execution authority or proof that confidentiality, sanitization, revocation propagation, or deletion succeeded."
       ],
       "countermodels": [
         "Missing identity, lineage, attestation, freshness, purpose, or role custody prevents bounded load.",
         "Authority laundering, plaintext/output-extraction exposure, or absent recovery and revocation custody routes away from ordinary use.",
-        "A distribution request without explicit recipient, descendant, irreversibility, residual, and no-authority fields cannot become an irreversible-release record."
+        "A distribution request without explicit recipient, descendant, irreversibility, residual, and no-authority fields cannot become an irreversible-release record.",
+        "Stale version, self-attestation, expired or widening key release, distribution during load, self-observation, partial descendant revocation, premature erasure, and confidentiality laundering cannot enter the accepted lifecycle."
       ],
       "consumers": [
         "scripts/validate_model_weight_custody_lifecycle.py",
         "experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json"
       ],
-      "mutation_evidence": "The independent lifecycle consumer checks eight deterministic routes, nine Lean declarations, and nine rejecting mutations without support movement.",
-      "maximum_inference": "Adequate for the exact finite load, deny, quarantine, sanitization, revocation, transfer, and release-record routing consequences. It does not establish authentic custody facts, cryptographic or hardware security, confidentiality, copy or descendant completeness, sanitization or deletion efficacy, actual load or distribution, safety, readiness, deployment, or support movement."
+      "mutation_evidence": "The independent consumer recompiles the exact 32-declaration surface, checks eight deterministic routes and nine route mutations, and independently reconstructs the six accepted lifecycle events and nine rejecting substitutions without support movement.",
+      "maximum_inference": "Adequate for the exact finite custody routes and versioned attestation-to-erasure lifecycle ordering, identity, non-authority, narrowing, witness, and refusal consequences. It does not establish authentic custody or attestation facts, cryptographic or hardware security, confidentiality, extraction resistance, copy or descendant completeness, revocation propagation, sanitization or deletion efficacy, actual load or distribution, safety, readiness, deployment, or support movement."
     },
     {
       "module": "AsiStackProofs.ContextTransactionRefinement",
@@ -118,7 +119,7 @@
     "backup_erasure": "Requires separately scoped backup and regeneration postconditions.",
     "legal_compliance": "Requires the applicable rights and legal authority; no technical receipt decides it."
   },
-  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential data/update custody, policy-update lease, weight-custody routing, context-transaction sequencing, and explicit unlearning claim-axis separation. It proves no input field authentic or complete, no model learned or forgot, no influence or privacy removed, no bytes or backups erased, no legal duty satisfied, no rollback or sanitization effective, no transaction deployed, and no empirical, safety, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential data/update custody, policy-update lease, weight-custody routing and attestation-to-erasure lifecycle, context-transaction sequencing, and explicit unlearning claim-axis separation. It proves no input field authentic or complete, no attestation genuine, no model learned or forgot, no influence or privacy removed, no bytes or backups erased, no legal duty satisfied, no rollback, revocation, erasure, or sanitization effective, no transaction deployed, and no empirical, safety, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none"

@@ -9325,7 +9325,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Eight frozen model-weight custody lifecycle records, two schemas, deterministic route recomputation, exact result digest and counts, nine named Lean theorems, limitations, non-claims, and no support effect.",
+      "input_contract": "Eight frozen model-weight custody route records, two schemas, deterministic route recomputation, exact result digest and counts, nine retained route theorems, an exact 23-theorem attestation-to-erasure lifecycle, an independent six-event witness and nine rejecting lifecycle controls, limitations, non-claims, and no support effect.",
       "input_artifacts": [
         "scripts/validate_model_weight_custody_lifecycle.py",
         "schemas/model_weight_custody_lifecycle_fixture.schema.json",
@@ -9335,10 +9335,13 @@
         "lean/AsiStackProofs/ModelWeightCustody.lean",
         "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd"
       ],
-      "output_contract": "Reject missing or misrouted cases, lineage/policy/freshness/dependency/observation/authority laundering, result or digest drift, theorem erasure, support promotion, or non-claim erasure.",
+      "output_contract": "Reject missing or misrouted cases, lineage/policy/freshness/dependency/observation/authority laundering, result or digest drift, theorem-surface erasure, stale versions, self-attestation or observation, expired or widening key release, distribution during load, partial descendant revocation, premature erasure, confidentiality laundering, support promotion, or non-claim erasure.",
       "output_assertions": [
         "eight deterministic routes",
-        "nine named Lean theorems",
+        "nine retained route theorems",
+        "23 transaction-lifecycle theorems",
+        "six accepted lifecycle events",
+        "nine rejecting lifecycle controls",
         "one bounded load",
         "one irreversible-release record",
         "no support movement",
@@ -14462,13 +14465,13 @@
       "script": "validate_p4_c3_semantic_proof_cluster.py",
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "A frozen four-module authority/effect/replacement/corrigibility/intent-execution cluster with eleven public targets and sixty-five theorem declarations.",
-      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve three adequate dispositions and one countermodel-only reclassification; execute six consumers and reject ten mutations.",
+      "input_contract": "A frozen four-module authority/effect/replacement/corrigibility/intent-execution cluster with eleven public targets and 125 theorem declarations.",
+      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve four adequate bounded dispositions; execute six consumers and reject ten mutations.",
       "output_assertions": [
         "4 modules",
         "11 public targets",
-        "65 theorem declarations",
-        "3 adequate and 1 reclassified",
+        "125 theorem declarations",
+        "4 adequate dispositions",
         "6 consumers pass",
         "10 mutations reject",
         "support effect none"
@@ -14477,7 +14480,7 @@
       "negative_controls": "validator_owned_ten_cluster_denominator_disposition_semantic_status_and_support_mutations",
       "negative_control_cases": [
         "module deletion",
-        "corrigibility inflation",
+        "corrigibility downgrade",
         "semantic-field erasure",
         "target inflation",
         "theorem inflation",
@@ -14604,12 +14607,12 @@
     },
     {
       "script": "validate_p4_c4_semantic_proof_cluster.py",
-      "input_contract": "A frozen four-module data/update/weight/context cluster with 31 public targets and 39 theorem declarations.",
+      "input_contract": "A frozen four-module data/update/weight/context cluster with 31 public targets and 62 theorem declarations.",
       "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, claim-axis separation, and ceilings; execute four consumers and reject twelve audit mutations.",
       "output_assertions": [
         "4 adequate modules",
         "31 public targets",
-        "39 theorem declarations",
+        "62 theorem declarations",
         "7 unlearning claim axes separated",
         "4 consumers pass",
         "12 mutations reject",

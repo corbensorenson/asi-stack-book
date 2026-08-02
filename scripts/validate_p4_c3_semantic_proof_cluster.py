@@ -22,7 +22,7 @@ EXPECTED_MODULES = [
 EXPECTED_DISPOSITIONS = {
     "AsiStackProofs.AuthorityEffectRefinement": "adequate",
     "AsiStackProofs.Replacement": "adequate",
-    "AsiStackProofs.Corrigibility": "reclassify",
+    "AsiStackProofs.Corrigibility": "adequate",
     "AsiStackProofs.IntentExecutionRefinement": "adequate",
 }
 ALLOWED_DISPOSITIONS = {"adequate", "merge", "reclassify", "remove"}
@@ -49,7 +49,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("machine status does not record the terminal adequate cluster")
     if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 11:
         out.append("public target denominator drifted")
-    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 105:
+    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 125:
         out.append("theorem denominator drifted")
 
     required = (
@@ -92,7 +92,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     for phrase in (
         "adequate only for its bounded reachable grant-to-local-effect semantics",
         "Its 37 declarations remain bounded consequences of authored records",
-        "reclassifies the latter as a countermodel-only appendix",
+        "That historical classification no longer describes the current module",
         "adequate finite-record invariant only for its kind-exclusive payload discipline",
     ):
         if phrase not in normalized_chapter_text:
@@ -128,7 +128,7 @@ def main() -> None:
             failures.append(failure)
     mutations = [
         ("delete module", lambda value: value["audit"]["module_dispositions"].pop()),
-        ("upgrade corrigibility", lambda value: value["audit"]["module_dispositions"][2].__setitem__("disposition", "adequate")),
+        ("downgrade corrigibility", lambda value: value["audit"]["module_dispositions"][2].__setitem__("disposition", "reclassify")),
         ("erase proposition", lambda value: value["audit"]["module_dispositions"][0].__setitem__("plain_language_proposition", "")),
         ("erase assumptions", lambda value: value["audit"]["module_dispositions"][1].__setitem__("assumptions", [])),
         ("erase countermodels", lambda value: value["audit"]["module_dispositions"][2].__setitem__("countermodels", [])),
@@ -147,8 +147,8 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C3 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C3 semantic proof cluster passed: 4 modules, 11 public targets, 105 theorem "
-        "declarations, 3 adequate and 1 reclassified disposition, 6 executable checks, "
+        "P4-C3 semantic proof cluster passed: 4 modules, 11 public targets, 125 theorem "
+        "declarations, 4 adequate dispositions, 6 executable checks, "
         "10 cluster mutations rejected, support effect none."
     )
 

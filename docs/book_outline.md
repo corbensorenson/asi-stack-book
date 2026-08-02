@@ -2349,10 +2349,13 @@ Draft deliverables:
   15 invariants, 17 failure modes, nine reviewed source mappings, a RATS-
   separated custody-flow diagram, worked mismatch/release trace, and explicit
   promotion/refutation program.
-- Implemented finite proof packet: nine declarations under eight manifest
-  targets cover invalid attestation, lineage, policy/freshness, dependencies,
-  observation, authority laundering, bounded load, and irreversible-release
-  recording. This remains Boolean structured-record coverage only.
+- Implemented finite proof packet: 32 declarations under eight manifest
+  targets retain the original route consequences and add a versioned six-event
+  lifecycle from independent attestation through bounded key release,
+  no-distribution load, independent observation, exact descendant-key
+  revocation, and erasure-after-revocation. Arbitrary accepted runs preserve
+  identity, non-authority, and narrowing; nine lifecycle substitutions reject.
+  This remains authored structured-record coverage only.
 - Implemented finite test: eight public-safe synthetic custody records and nine
   rejecting mutations are digest-bound to
   `experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json`.
@@ -2369,7 +2372,7 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `AsiStackProofs.ModelWeightCustody` | A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI. | implemented |
-| `lean:model_weight_custody.lifecycle.complete_observed_load` | `AsiStackProofs.ModelWeightCustody` | A complete finite custody lifecycle record with a current valid attestation, dependency disclosure, independent load observation, residual owner, and revocation semantics routes to bounded load admission without authorizing deployment. | implemented |
+| `lean:model_weight_custody.lifecycle.complete_observed_load` | `AsiStackProofs.ModelWeightCustody` | A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, exact finite descendant-key revocation, and erasure-after-revocation while arbitrary accepted runs preserve identity, non-authority, and narrowing. | implemented |
 | `lean:model_weight_custody.lifecycle.missing_lineage` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with an artifact digest but no lineage routes to lineage repair. | implemented |
 | `lean:model_weight_custody.lifecycle.stale_attestation` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with stale attestation evidence routes to a fresh-attestation requirement. | implemented |
 | `lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record without verifier-dependency disclosure routes to dependency review without proving disclosed verifiers independent. | implemented |
@@ -6181,7 +6184,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2217 theorem declarations, 1299 derived/decomposed, 409 direct/projection, 509 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2240 theorem declarations, 1312 derived/decomposed, 409 direct/projection, 519 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

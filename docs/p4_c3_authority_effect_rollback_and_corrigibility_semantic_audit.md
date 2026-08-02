@@ -7,9 +7,9 @@ Authority: `proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigi
 
 ## Terminal decision
 
-The frozen third cluster is terminal at bounded scope: three modules are
-`adequate`, and `AsiStackProofs.Corrigibility` is `reclassify`. The denominator
-is four modules, eleven public proof targets, and sixty-five theorem
+The frozen third cluster remains terminal at bounded scope: all four modules are
+`adequate` for their exact finite semantics. The denominator
+is four modules, eleven public proof targets, and 125 theorem
 declarations. No theorem, target, or module was counted as evidence merely
 because it compiles.
 
@@ -21,18 +21,23 @@ fixture bridges consumed by separate validators. `IntentExecutionRefinement`
 earns its role from exact root/parent and authority invariants over a reachable
 vertical plus an 89-event consumer and thirty mutations.
 
-`Corrigibility` does not model the richer agency lifecycle described elsewhere.
-Its four declarations derive three generic branch consequences from authored
-predicates and have no independent runtime consumer. They remain useful as
-countermodels, so deletion would lose a small explicit failure surface; citing
-them as a whole-system corrigibility theorem would be proof laundering. The
-chapter now names that reclassification directly.
+`Corrigibility` retains four generic branch consequences from authored
+predicates and now adds a twenty-theorem correction-control lifecycle. The
+versioned model orders material notice, independent review, bounded control,
+affected-party-representative challenge, and accountable correction; proves
+one-step and arbitrary-run custody, non-authority, and narrowing; reaches one
+exact five-event corrected witness; and rejects seven substitutions through an
+independent consumer. This is adequate for those finite authored semantics.
+Citing it as evidence of notice comprehension, legitimate standing, reviewer
+competence, effective correction, deployed shutdown, or whole-system
+corrigibility would still be proof laundering.
 
 ## Maximum inference
 
 The cluster establishes only consequences inside its finite declared models:
 sequential grant/effect routing, selected replacement decisions and fixture
-bridges, three countermodel routes, and one intent-to-local-effect vertical. It
+bridges, finite correction-control ordering and refusals, and one
+intent-to-local-effect vertical. It
 does not establish authentic identity or receipts, wise authorization,
 concurrent enforcement, complete effects, monitor or evaluator truth,
 inventory completeness, semantic recovery, irreversible-effect reversal,

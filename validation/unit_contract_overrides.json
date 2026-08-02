@@ -2609,7 +2609,7 @@
     {
       "script": "validate_model_weight_custody_lifecycle.py",
       "args": [],
-      "input_contract": "Eight frozen model-weight custody lifecycle records, two schemas, deterministic route recomputation, exact result digest and counts, nine named Lean theorems, limitations, non-claims, and no support effect.",
+      "input_contract": "Eight frozen model-weight custody route records, two schemas, deterministic route recomputation, exact result digest and counts, nine retained route theorems, an exact 23-theorem attestation-to-erasure lifecycle, an independent six-event witness and nine rejecting lifecycle controls, limitations, non-claims, and no support effect.",
       "input_artifacts": [
         "scripts/validate_model_weight_custody_lifecycle.py",
         "schemas/model_weight_custody_lifecycle_fixture.schema.json",
@@ -2619,10 +2619,13 @@
         "lean/AsiStackProofs/ModelWeightCustody.lean",
         "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd"
       ],
-      "output_contract": "Reject missing or misrouted cases, lineage/policy/freshness/dependency/observation/authority laundering, result or digest drift, theorem erasure, support promotion, or non-claim erasure.",
+      "output_contract": "Reject missing or misrouted cases, lineage/policy/freshness/dependency/observation/authority laundering, result or digest drift, theorem-surface erasure, stale versions, self-attestation or observation, expired or widening key release, distribution during load, partial descendant revocation, premature erasure, confidentiality laundering, support promotion, or non-claim erasure.",
       "output_assertions": [
         "eight deterministic routes",
-        "nine named Lean theorems",
+        "nine retained route theorems",
+        "23 transaction-lifecycle theorems",
+        "six accepted lifecycle events",
+        "nine rejecting lifecycle controls",
         "one bounded load",
         "one irreversible-release record",
         "no support movement",

@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2217 |
+| Theorem declarations classified | 2240 |
 | Direct/projection-style theorem declarations | 409 |
-| Derived/decomposed theorem declarations | 1299 |
-| Unknown or mixed theorem declarations | 509 |
+| Derived/decomposed theorem declarations | 1312 |
+| Unknown or mixed theorem declarations | 519 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -121,7 +121,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 32 | 0 | 22 | 10 | manual review |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1348,8 +1348,20 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `simulation_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `runtime_core_promotion_missing_evidence_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | `unavailable_text_only_with_promotion_above_argument_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_attestation_is_independent_and_future_bounded` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_erasure_follows_complete_revocation_and_records_residual` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_key_release_is_current_bounded_and_versioned` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_key_revocation_closes_authority_and_descendants` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_load_observation_is_independent` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_load_requires_active_key_receipt_and_no_distribution` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_weight_custody_event_is_admissible` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_weight_custody_event_is_exact_advance` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_weight_custody_event_is_non_authorizing` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_weight_custody_event_never_widens_authority` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `accepted_weight_custody_event_preserves_identity` | derived_or_decomposed | no | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `acknowledged_distribution_records_irreversibility` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `complete_observed_load_is_bounded` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `complete_weight_custody_trace_reaches_exact_erased_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `distribution_cannot_launder_load_authority` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `missing_lineage_blocks_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `missing_lineage_requires_custody_repair` | derived_or_decomposed | no | uses simp, unfold |
@@ -1357,6 +1369,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `stale_attestation_requires_refresh` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `undisclosed_verifier_dependencies_require_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `unobserved_load_requires_observation` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_confidentiality_laundering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_distribution_during_load_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_erasure_before_revocation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_expired_key_release_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_partial_descendant_revocation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_run_preserves_identity_non_authority_and_narrowing` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_runs_compose` | derived_or_decomposed | no | uses cases, induction, simp |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_self_attestation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_self_observation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_stale_version_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_affected_party_coverage` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_diversified_resource_control` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_effective_diversity` | derived_or_decomposed | no | uses simp |

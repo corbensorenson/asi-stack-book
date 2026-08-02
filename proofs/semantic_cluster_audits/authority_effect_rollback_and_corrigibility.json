@@ -6,7 +6,7 @@
   "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
   "module_count": 4,
   "public_target_count": 11,
-  "theorem_declaration_count": 105,
+  "theorem_declaration_count": 125,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
@@ -64,27 +64,29 @@
     {
       "module": "AsiStackProofs.Corrigibility",
       "path": "lean/AsiStackProofs/Corrigibility.lean",
-      "disposition": "reclassify",
+      "disposition": "adequate",
       "public_target_count": 1,
-      "theorem_declaration_count": 4,
-      "plain_language_proposition": "Under hand-authored finite predicates, a high-impact action without usable or pre-effect review routes to review, a low-risk unbounded delegation routes to narrowing, and a denied action without an accountable principal preserves an audit residual.",
-      "modeled_state": "Two small decision records, two route functions, six agency phases, four route labels, and three concrete countermodel records; there is no transition lifecycle, effect, shutdown execution, learning state, or runtime consumer.",
+      "theorem_declaration_count": 24,
+      "plain_language_proposition": "Under hand-authored finite predicates, generic review, delegation, and accountability failures route explicitly; a versioned correction-control lifecycle additionally orders material notice, independent review, bounded control, affected-party-representative challenge, and accountable correction while preserving exact custody, non-authority, and a non-increasing authority ceiling.",
+      "modeled_state": "Two small decision records and their generic routes plus a six-stage correction-control state machine with exact action, affected-party, principal, reviewer, controller, version, expiry, authority, correction-path, challenge, accountability, residual, support, and external-effect fields; one five-event witness reaches correction and seven closed substitutions reject.",
       "assumptions": [
         "High-impact, review usability, delegation bounds, denial, accountability, appeal, interruption, and rollback fields are truthful authored predicates.",
-        "The branch order and route labels capture only three local policy consequences and do not model incentives, embedded agency, subsystem behavior, or correction over time.",
-        "A route label does not demonstrate that review, appeal, interruption, rollback, or accountable correction is available or effective."
+        "The route and lifecycle fields truthfully encode the represented notice, correction paths, review independence, affected-party representation, expiry, accountability, and residual facts.",
+        "A successful authored transition does not demonstrate comprehension, standing, consent quality, reviewer competence, deployed rollback, shutdown, or effective correction."
       ],
       "countermodels": [
         "A high-impact record with missing pre-effect review must select the review route under the assumed predicate.",
         "A low-risk record with unbounded delegation must select narrowing under the assumed predicate.",
-        "A denied record without an accountable principal must select the audit-residual route under the assumed predicate."
+        "A denied record without an accountable principal must select the audit-residual route under the assumed predicate.",
+        "Missing notice, self-review, unbounded delegation, authority widening, outsider challenge, missing accountability, and consent laundering cannot enter the accepted lifecycle."
       ],
       "consumers": [
         "chapters/constitutional-alignment-substrate.qmd",
+        "scripts/validate_agency_rights.py",
         "scripts/validate_proof_depth.py"
       ],
-      "mutation_evidence": "The four declarations are retained as generic finite counterexamples and chapter traceability only. The richer lifecycle and deletion-countermodel semantics live in SafetyCriticalLifecycle; this module has no independent runtime consumer and is prohibited from carrying a whole-system corrigibility claim.",
-      "maximum_inference": "Reclassified as countermodel-only formal evidence for three declared routing implications. It does not establish corrigibility, shutdown incentives, usable review, affected-party agency, independent oversight, successful correction, rollback execution, embedded-agent behavior, safety, deployment, transfer, or support movement."
+      "mutation_evidence": "The four generic declarations remain bounded route consequences. Twenty lifecycle theorems add exact accepted advancement, custody, non-authority, narrowing, phase obligations, arbitrary-run preservation, composition, one complete five-event witness, and seven closed substitutions; the independent agency-rights validator recompiles the exact surface and reconstructs all accepted and rejected lifecycle cases.",
+      "maximum_inference": "Adequate for the declared finite route implications and versioned correction-control lifecycle ordering, custody, non-authority, narrowing, witness, and refusal consequences. It does not establish corrigibility, shutdown incentives, notice comprehension, affected-party standing, consent quality, reviewer competence, usable correction, successful correction, rollback execution, embedded-agent behavior, safety, deployment, transfer, or support movement."
     },
     {
       "module": "AsiStackProofs.IntentExecutionRefinement",
@@ -114,7 +116,7 @@
       "maximum_inference": "Adequate for exact finite root/parent joins, non-widening authority, approval/dispatch custody, local effect observation, artifact binding, verification, delivery, and encoded rejection routes. It does not establish intent fidelity, parser correctness, authentic authority or receipts, prompt-injection resistance, complete effects, verifier independence, useful delivery, deployment, transfer, or support movement."
     }
   ],
-  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential authority/effect lifecycle, replacement transaction routes and bridge summaries, three corrigibility countermodel implications, and intent-to-local-effect vertical. It proves no identity or receipt authentic, no grant wise, no monitor or verifier valid, no inventory complete, no external effect reversed, no system corrigible, no intent preserved in meaning, and no empirical, safety, deployment, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential authority/effect lifecycle, replacement transaction routes and bridge summaries, corrigibility route and correction-control lifecycle consequences, and intent-to-local-effect vertical. It proves no identity or receipt authentic, no grant wise, no notice comprehended, no standing legitimate, no monitor, reviewer, or verifier valid, no inventory complete, no external effect reversed, no system corrigible, no intent preserved in meaning, and no empirical, safety, deployment, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none"

@@ -85,7 +85,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | 1 | 38 | 0 | 29 | 8 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 18 | 0 | 10 | 6 |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | 1 | 24 | 0 | 31 | 3 |
-| `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 0 | 2 | 2 |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 33 | 0 | 14 | 4 |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | 1 | 22 | 0 | 11 | 1 |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | 1 | 27 | 0 | 31 | 7 |
 | `lean/AsiStackProofs/ObservationTrust.lean` | 2 | 16 | 0 | 16 | 4 |
