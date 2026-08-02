@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2070 |
+| Theorem declarations classified | 2085 |
 | Direct/projection-style theorem declarations | 405 |
-| Derived/decomposed theorem declarations | 1202 |
-| Unknown or mixed theorem declarations | 463 |
+| Derived/decomposed theorem declarations | 1212 |
+| Unknown or mixed theorem declarations | 468 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -68,7 +68,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ClaimLedger.lean` | unmapped | 0 | 4 | 3 | 1 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 12 | 0 | 5 | 7 | manual review |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 27 | 0 | 15 | 12 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
@@ -424,14 +424,29 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedger.lean` | `open_contradiction_blocks_claim_promotion` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_append_is_exactly_one_new_version` | derived_or_decomposed | no | uses cases, contradiction, simp, split, unfold |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_step_cannot_commit_external_effect` | derived_or_decomposed | no | uses cases, contradiction, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_step_preserves_accounting_invariant` | derived_or_decomposed | no | uses cases, constructor, contradiction, rcases, rw, split, unfold |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `accepted_step_preserves_claim_identity` | derived_or_decomposed | no | uses cases, contradiction, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `acknowledged_state_accepts_no_event` | derived_or_decomposed | no | uses have, simp, split, unfold |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `acknowledgment_before_materialization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `append_action_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `append_ontology_version_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `append_owner_receipt_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `append_semantic_version_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `append_support_rank_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `apply_event_preserves_claim_identity` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `apply_event_preserves_external_effects` | derived_or_decomposed | no | uses split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `apply_event_preserves_version_append_balance` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `every_successful_initial_run_preserves_exact_accounting` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `full_revision_lifecycle_reaches_exact_acknowledgment` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `initial_state_satisfies_accounting_invariant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `ledger_self_approval_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `ontology_change_without_migration_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `same_digest_payload_substitution_is_rejected` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `stale_base_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `successful_run_preserves_accounting_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `successful_run_preserves_claim_identity` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `successful_run_preserves_external_effects` | derived_or_decomposed | no | uses cases, have, induction, simp |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `upward_revision_with_open_contradiction_is_blocked` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | `upward_revision_without_owner_receipt_is_handed_off` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | `authority_escape_blocks_semantic_lowering` | derived_or_decomposed | no | uses simp, unfold |

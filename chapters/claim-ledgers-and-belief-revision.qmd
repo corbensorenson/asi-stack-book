@@ -29,8 +29,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All eighteen assigned source notes have bounded mappings: four local raw caches are passage-reviewed, `coherence_exchange` remains source-note/connector bounded, five historical-project notes and QCSA are public-safe lineage, and seven external records are comparators rather than local result evidence."
-  - "Current executable evidence remains authored and zero-model: the exact five-valid/seven-invalid claim-ledger revision suite and one-valid/eleven-invalid five-project lifecycle now feed a five-stage append-only refinement with seventeen routes and 29/29 rejecting mutations. No natural claim extraction, semantic-equivalence or assumption-completeness evaluation, contradiction-quality study, concurrent event store, natural ontology migration or surface repair, independent evaluator, useful advantage, or transfer is represented."
-  - "All four public targets now resolve to `AsiStackProofs.ClaimLedgerRefinement`: twelve declarations prove reachable lifecycle invariants, exact append accounting, authority separation, blocking countermodels, and one full witness. Sixteen weak baseline declarations are physically retired with lineage preserved; four small legacy lemmas remain bounded. None proves natural claim identity, semantic equivalence, dependency discovery, evidence quality, event-store behavior, useful belief revision, safety, or transfer."
+  - "Current executable evidence remains authored and zero-model: the exact five-valid/seven-invalid claim-ledger revision suite and one-valid/eleven-invalid five-project lifecycle now feed a five-stage append-only refinement with 22 route cases and 34/34 rejecting mutations. No natural claim extraction, semantic-equivalence or assumption-completeness evaluation, contradiction-quality study, concurrent event store, natural ontology migration or surface repair, independent evaluator, useful advantage, or transfer is represented."
+  - "All four public targets now resolve to `AsiStackProofs.ClaimLedgerRefinement`: 27 declarations prove one-step and arbitrary-run custody, exact append accounting, full pending-proposal binding, batch composition, terminal closure, authority separation, blocking countermodels, and one full witness. Sixteen weak baseline declarations are physically retired with lineage preserved; four small legacy lemmas remain bounded. None proves natural claim identity, semantic equivalence, dependency discovery, evidence quality, event-store behavior, useful belief revision, safety, or transfer."
   - "No chapter-core support transition is authorized."
 ---
 
@@ -48,7 +48,7 @@ open_evidence_gaps:
 | Evidence level | argument |
 | Source queue | primary: `spinoza`, `viea`; supporting: `coherence_exchange`, `aletheia`, `uat`, five historical projects, and `reflexive_router_whitepaper`; external comparators: AGM, TMS, ATMS, ALCE, Self-RAG, CheckList, and PROV-O; local semantic-addressing lineage: QCSA |
 | Source loading state | all 19 source notes inspected and mapped; passage-reviewed local raw cache: `spinoza`, `viea`, `aletheia`, `uat`, `reflexive_router_whitepaper`; source-note/connector boundary: `coherence_exchange`; public-safe pinned notes: five historical projects and QCSA; bounded primary-record or primary-paper notes: seven external comparators |
-| Test state | Exact authored refinement: 5 valid/7 rejecting revision fixtures; 1 valid/11 rejecting historical lifecycle fixtures; 5 reachable stages, 17 routes, and 29/29 rejected lifecycle mutations; 12 refinement declarations under 4 public targets, with 16 weak baseline declarations retired and 4 bounded legacy lemmas retained. No open-domain extractor, natural workload, semantic-equivalence or contradiction-quality evaluator, concurrent ledger, natural migration or surface synchronizer, independent reviewer, useful advantage, or chapter-core support effect. |
+| Test state | Exact authored refinement: 5 valid/7 rejecting revision fixtures; 1 valid/11 rejecting historical lifecycle fixtures; 5 reachable stages, 22 route cases, and 34/34 rejected lifecycle mutations; 27 refinement declarations under 4 public targets, with 16 weak baseline declarations retired and 4 bounded legacy lemmas retained. No open-domain extractor, natural workload, semantic-equivalence or contradiction-quality evaluator, concurrent ledger, natural migration or surface synchronizer, independent reviewer, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
 
@@ -56,7 +56,7 @@ Claim Ledgers owns durable semantic identity and append-only transition history,
 not truth. The repository has five valid and seven rejecting authored revision
 fixtures, one bounded five-project lifecycle with eleven rejecting mutations,
 and a reachable five-stage Lean refinement whose independent consumer covers
-seventeen routes and rejects 29 lifecycle mutations. Those artifacts test exact
+22 route cases and rejects 34 lifecycle mutations. Those artifacts test exact
 version custody, append accounting, authority separation, branch behavior, and
 stated no-promotion boundaries. They do not run an open-domain
 extractor, natural contradiction detector, semantic-equivalence evaluator,
@@ -598,16 +598,19 @@ The current minimum is an authored append-only record-and-route refinement:
 - one bounded five-project contradiction/revision lifecycle and eleven
   rejecting mutations;
 - `AsiStackProofs.ClaimLedgerRefinement`, a reachable idle/proposed/appended/
-  materialized/acknowledged lifecycle with seventeen explicit routes and twelve
+  materialized/acknowledged lifecycle with 22 explicit route cases and 27
   theorem declarations; and
 - an independent executable consumer that recomputes both input suites,
-  executes the four-event witness, and rejects all 29 mutations of identity,
-  versions, heads, authority, contradictions, history, residuals, dependencies,
-  migration, event order, and surface acknowledgment.
+  executes the four-event witness, and rejects all 34 mutations of identity,
+  versions, heads, same-digest proposal payload, authority, contradictions,
+  history, residuals, dependencies, migration, event order, and surface
+  acknowledgment.
 
-The refinement proves exact represented claim-identity custody, no external
-effect, one-version/one-append accounting, owner-gated upward support records,
-contradiction blocking, and exact final acknowledgment. Sixteen weak baseline
+The refinement proves exact represented claim-identity custody and zero
+external effects for every successful event list, one-version/one-append
+accounting, composition across event batches, terminal closure, owner-gated
+upward support records, full proposal-payload custody, contradiction blocking,
+and exact final acknowledgment. Sixteen weak baseline
 declarations were physically retired with frozen lineage; four small prior-
 history and contradiction lemmas remain bounded. These results establish
 neither natural claim identity, semantic equivalence, extraction or assumption
@@ -676,7 +679,7 @@ causal ablations, complete costs, reproduction, and transfer pass.
 | Semantic variant and assumption-context fixture | Check that semantic variants merge only when scope and support-state effect stay unchanged, contested assumption contexts split or route instead of being erased, and unsynchronized variant surfaces block merge. | implemented in `python3 scripts/validate_claim_ledger_revision.py` with 5 valid fixture(s), 7 expected-invalid fixture(s), and result record `experiments/claim_ledger_revision/results/2026-07-02-local.md`; no semantic-equivalence proof, assumption-context completeness proof, contradiction-quality claim, deployed belief-engine claim, or support-state promotion |
 | Belief revision engine test | Check that support-state updates over extracted claims preserve prior evidence and revision history. | synthetic fixture discipline implemented; deployed belief-revision engine not implemented |
 | Historical-project contradiction/revision lifecycle | Check state separation, monotone weak/medium/strong responses, strong-evidence downgrade/split, supersession, exact bounded repair, ontology migration, residual conservation, restart persistence, and no fixture promotion. | implemented by `python3 scripts/validate_contradiction_revision_lifecycle.py` with one bounded five-project record and eleven expected-invalid mutations; no open-domain detector, deployed belief engine, ontology-correctness, or support claim |
-| Append-only Claim Ledger and evidence-owner refinement | Check exact base/version/head binding, append-only accounting, evidence-owner handoff, contradiction blocking, event substitution, dependency and migration receipts, materialization, and exact surface acknowledgment. | implemented by `python3 scripts/validate_claim_ledger_refinement.py`: exact 5/7 and 1/11 source suites, five stages, seventeen routes, and 29/29 rejected mutations; authored finite lifecycle only and support-state effect `none` |
+| Append-only Claim Ledger and evidence-owner refinement | Check exact base/version/head and full pending-proposal binding, arbitrary-run append-only accounting and custody, evidence-owner handoff, contradiction blocking, same-digest payload substitution, dependency and migration receipts, materialization, and exact surface acknowledgment. | implemented by `python3 scripts/validate_claim_ledger_refinement.py`: exact 27-declaration theorem surface, 5/7 and 1/11 source suites, five stages, 22 route cases, and 34/34 rejected mutations; authored finite lifecycle only and support-state effect `none` |
 
 Fixture-shape validation, synthetic revision fixtures, semantic-variant and
 assumption-context controls, and the append-only finite lifecycle are
@@ -690,17 +693,19 @@ and transfer.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedgerRefinement` | An accepted ledger step preserves durable claim identity and cannot commit an external effect; an authorized append advances ledger version and append count exactly once. | implemented |
-| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedgerRefinement` | Stale bases, ledger self-approval, event substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. | implemented |
-| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedgerRefinement` | A reachable propose-append-materialize-acknowledge lifecycle binds exact versions, history, dependencies, ontology migration, residuals, and surface receipts. | implemented |
-| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedgerRefinement` | An independent consumer covers seventeen routes, consumes the exact 5/7 revision suite and 1/11 five-project lifecycle, and rejects 29 mutations without support movement. | implemented |
+| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedgerRefinement` | Every accepted step and arbitrary successful run preserve durable claim identity, zero external effects, and exact ledger-version/append-count balance; an authorized append advances both counters exactly once. | implemented |
+| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedgerRefinement` | Stale bases, ledger self-approval, digest or same-digest payload substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. | implemented |
+| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedgerRefinement` | A reachable propose-append-materialize-acknowledge lifecycle binds the full pending proposal, exact versions, history, dependencies, ontology migration, residuals, and surface receipts; successful event batches compose and acknowledged states are terminal. | implemented |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedgerRefinement` | An independent consumer compiles the exact 27-declaration surface, covers 22 route cases, consumes the exact 5/7 revision suite and 1/11 five-project lifecycle, and rejects 34 mutations without support movement. | implemented |
 
-`AsiStackProofs.ClaimLedgerRefinement` contains twelve declarations backing all
-four public targets. General theorems cover identity and external-effect
-preservation, exact append accounting, typed blocking and handoff conditions,
-and a full reachable witness; explicit countermodels show that stale bases,
-self-approval, contradictions, missing receipts, and premature acknowledgment
-do not pass. Sixteen baseline projection or finite-normalization declarations
+`AsiStackProofs.ClaimLedgerRefinement` contains 27 declarations backing all
+four public targets. General theorems cover one-step and arbitrary-run identity,
+external-effect, and append-accounting preservation, event-batch composition,
+terminal closure, exact proposal-payload commitment, typed blocking and handoff
+conditions, and a full reachable witness. Explicit countermodels show that
+stale bases, self-approval, contradictions, missing receipts, same-digest action,
+semantic, ontology, support, or owner-receipt substitutions, and premature
+acknowledgment do not pass. Sixteen baseline projection or finite-normalization declarations
 are absent from the live corpus and preserved only in the rationalization
 lineage; four small legacy lemmas remain reusable at their narrow scope.
 

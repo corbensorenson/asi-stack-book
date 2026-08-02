@@ -20,12 +20,18 @@ route is `handoff_to_evidence_owner`; the ledger cannot self-approve support or
 request an external effect. A successful append advances the ledger and append
 count by exactly one, preserves claim identity and the prior head through the
 event binding, materializes the current view, and requires exact surface
-acknowledgment before completion.
+acknowledgment before completion. The full normalized proposal is committed in
+the pending state, so reusing its digest cannot substitute action, semantic
+version, ontology version, support rank, or evidence-owner receipt at append
+time. Every successful event list preserves identity, zero external effects,
+and ledger/append accounting; event batches compose, and acknowledged states
+admit no later event.
 
-`python3 scripts/validate_claim_ledger_refinement.py` independently recomputes
-all seventeen routes, consumes the exact five-valid/seven-invalid revision
+`python3 scripts/validate_claim_ledger_refinement.py` independently compiles the
+exact 27-declaration theorem surface, recomputes all 22 route cases, consumes the
+exact five-valid/seven-invalid revision
 suite and one-valid/eleven-invalid five-project contradiction lifecycle,
-executes the four-event witness, and rejects all 29 lifecycle mutations.
+executes the four-event witness, and rejects all 34 lifecycle mutations.
 
 ## Exact boundary
 

@@ -3657,7 +3657,7 @@ Draft deliverables:
 - Eighteen bounded claim-source mappings: four passage-reviewed local caches, one source-note/connector boundary, five public-safe historical-project notes, QCSA, and seven external comparators.
 - Eighteen mechanisms, eleven owner interfaces, seventeen invariants, and eighteen named failure modes.
 - Public claim, belief-revision, contradiction-lifecycle, and append-only refinement schemas; five valid/seven rejecting revision fixtures; one bounded five-project lifecycle/eleven rejecting mutations.
-- Four public Lean targets backed by `AsiStackProofs.ClaimLedgerRefinement`: a reachable five-stage lifecycle, seventeen explicit routes, twelve refinement declarations, and an independent consumer rejecting 29/29 lifecycle mutations.
+- Four public Lean targets backed by `AsiStackProofs.ClaimLedgerRefinement`: a reachable five-stage lifecycle, 22 explicit route cases, 27 refinement declarations, arbitrary-run custody and accounting, full pending-proposal binding, and an independent consumer rejecting 34/34 lifecycle mutations.
 - Sixteen weak baseline declarations are physically retired with frozen lineage; four small legacy prior-history and contradiction lemmas remain bounded and reusable.
 - No open-domain extractor, semantic-equivalence or assumption-completeness evaluator, contradiction-quality study, concurrent event store, natural dependency repair, ontology migration, surface synchronizer, model-backed belief engine, independent reviewer, causal benefit, useful advantage, reproduction, transfer, or support promotion.
 - Next minimum: a frozen public natural multi-surface corpus; gold identity, scope, assumption, semantic-relation, evidence/attack, contradiction, dependency, migration, concurrency, surface, and delayed-outcome labels; matched strong baselines; complete errors and costs; causal ablations; clean reproduction; and transfer across a second model, domain, ontology, language, and independent evaluator.
@@ -3666,10 +3666,10 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedgerRefinement` | An accepted ledger step preserves durable claim identity and cannot commit an external effect; an authorized append advances ledger version and append count exactly once. | implemented |
-| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedgerRefinement` | Stale bases, ledger self-approval, event substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. | implemented |
-| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedgerRefinement` | A reachable propose-append-materialize-acknowledge lifecycle binds exact versions, history, dependencies, ontology migration, residuals, and surface receipts. | implemented |
-| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedgerRefinement` | An independent consumer covers seventeen routes, consumes the exact 5/7 revision suite and 1/11 five-project lifecycle, and rejects 29 mutations without support movement. | implemented |
+| `lean:claims.ledger.operational_invariant` | `AsiStackProofs.ClaimLedgerRefinement` | Every accepted step and arbitrary successful run preserve durable claim identity, zero external effects, and exact ledger-version/append-count balance; an authorized append advances both counters exactly once. | implemented |
+| `lean:claims.ledger.failure_blocks_promotion` | `AsiStackProofs.ClaimLedgerRefinement` | Stale bases, ledger self-approval, digest or same-digest payload substitution, open contradictions, missing evidence-owner receipts, and incomplete custody block append or exact acknowledgment. | implemented |
+| `lean:claims.ledger.revision_lifecycle_route` | `AsiStackProofs.ClaimLedgerRefinement` | A reachable propose-append-materialize-acknowledge lifecycle binds the full pending proposal, exact versions, history, dependencies, ontology migration, residuals, and surface receipts; successful event batches compose and acknowledged states are terminal. | implemented |
+| `lean:claims.ledger.semantic_assumption_fixture_bridge` | `AsiStackProofs.ClaimLedgerRefinement` | An independent consumer compiles the exact 27-declaration surface, covers 22 route cases, consumes the exact 5/7 revision suite and 1/11 five-project lifecycle, and rejects 34 mutations without support movement. | implemented |
 
 ### Proof-Carrying Claims and Adversarial Review
 
@@ -6181,7 +6181,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2070 theorem declarations, 1202 derived/decomposed, 405 direct/projection, 463 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2085 theorem declarations, 1212 derived/decomposed, 405 direct/projection, 468 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

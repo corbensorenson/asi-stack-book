@@ -21,18 +21,23 @@ release.
 
 ## Consequences, countermodels, and consumer
 
-General consequences preserve claim identity and external-effect count across
-every accepted step. An accepted append advances both ledger version and append
-count exactly once and binds the new head to the event digest. Countermodels
+General consequences preserve claim identity, zero external effects, and exact
+ledger-version/append-count balance across every accepted step and arbitrary
+successful event list. Accepted event batches compose, and acknowledged states
+are terminal. An accepted append advances both counters exactly once, binds the
+new head to the event digest, and must exactly match the full normalized pending
+proposal. Countermodels
 reject stale bases, substituted events, ledger self-approval, upward movement
 under open contradiction, missing evidence-owner receipt, overwritten history,
 missing residual or dependency closure, unacknowledged ontology migration, and
 incomplete surface acknowledgment. A concrete four-event witness reaches the
 acknowledged state.
 
-The independent consumer covers all seventeen routes, consumes the exact 5/7
+The independent consumer compiles the exact 27-declaration Lean surface, covers
+22 route cases, consumes the exact 5/7
 revision fixtures and 1/11 five-project contradiction lifecycle, and rejects
-29 mutations of identity, versions, heads, support custody, contradictions,
+34 mutations of identity, versions, heads, same-digest payload custody,
+contradictions,
 history, non-overwrite, reasons, residuals, dependencies, migration, surfaces,
 event order, and acknowledgment.
 
@@ -41,7 +46,8 @@ event order, and acknowledgment.
 The event fields, evidence-owner receipt, digests, dependency closure,
 migration receipt, and surface receipts are trusted inputs. Digest collision
 resistance is not formalized. The model is adequate for the exact represented
-lifecycle, route priority, append-only accounting, and authority separation.
+lifecycle, route priority, arbitrary-run append-only accounting,
+proposal-payload custody, terminal closure, and authority separation.
 It is inadequate for natural claim extraction, semantic equivalence,
 assumption completeness, evidence or reviewer quality, contradiction and
 dependency discovery, concurrent event-store behavior, natural multi-surface
