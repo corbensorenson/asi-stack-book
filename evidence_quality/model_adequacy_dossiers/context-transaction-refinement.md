@@ -15,7 +15,7 @@ The model orders snapshot binding, branch/mount-scoped staging, one-step version
 
 ## Consequences, countermodels, and consumer
 
-Three general consequences establish exact read custody, declassification necessity for represented taint removal, and full receipt custody at materialization. One six-event witness and fifteen countermodels are kernel checked. The independent consumer rejects 78 mutations and consumes both existing fixture families at exactly 3/6 store and 2/4 sequence outcomes. The original validators now require the reachable model rather than copied Lean fixture constants.
+The kernel-checked surface contains 35 declarations. It establishes exact read custody, declassification necessity for represented taint removal, full receipt custody at materialization, bound-run identity, non-raw lifecycle closure, valid-trace extraction, run composition, monotone receipt/deletion/materialization custody, and direct materialization guard consequences. One six-event witness and fifteen countermodels remain. The independent consumer recompiles the exact module, verifies 12 named lifecycle controls, rejects 81 mutations, and consumes both existing fixture families at exactly 3/6 store and 2/4 sequence outcomes. The original validators require the reachable model rather than copied Lean fixture constants.
 
 ## Assumptions, exclusions, and adequacy verdict
 

@@ -3479,9 +3479,9 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactionRefinement` | Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody before materialization. | implemented |
-| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactionRefinement` | Taint removal requires represented declassification authority and receipt; open deletion or support promotion without its receipt blocks materialization. | implemented |
-| `lean:vcm.transactions.memory_store_fixture_bridge` | `AsiStackProofs.ContextTransactionRefinement` | The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and 78-mutation independent checker. | implemented |
+| `lean:vcm.transactions.operational_invariant` | `AsiStackProofs.ContextTransactionRefinement` | Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody; every successful bound run preserves transaction identity and yields a valid compositional trace. | implemented |
+| `lean:vcm.transactions.failure_blocks_promotion` | `AsiStackProofs.ContextTransactionRefinement` | Accepted materialization of tainted context requires propagated taint or represented declassification, open deletion requires a closure receipt, and support requests require an evidence-transition receipt; custody, closure, and materialization remain monotone across successful runs. | implemented |
+| `lean:vcm.transactions.memory_store_fixture_bridge` | `AsiStackProofs.ContextTransactionRefinement` | The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and an independent exact-module checker that verifies 35 Lean declarations, 12 lifecycle controls, and 81 rejecting mutations. | implemented |
 | `lean:vcm.transactions.sequence_fixture_bridge` | `AsiStackProofs.ContextTransactionRefinement` | The six-event ordered witness is consumed alongside the exact 2-valid/4-invalid sequence suite and rejects read-before-write and missing-replay faults. | implemented |
 
 ### Verification Bandwidth and Context Adequacy
@@ -6204,7 +6204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2402 theorem declarations, 1440 derived/decomposed, 410 direct/projection, 552 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2417 theorem declarations, 1455 derived/decomposed, 410 direct/projection, 552 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

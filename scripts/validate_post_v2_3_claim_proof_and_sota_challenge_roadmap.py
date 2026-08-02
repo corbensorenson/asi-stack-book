@@ -1688,16 +1688,16 @@ def errors(data: dict) -> list[str]:
         "context_transaction_store_fixture_count":9,"context_transaction_store_valid_count":3,
         "context_transaction_store_invalid_count":6,"context_transaction_sequence_fixture_count":6,
         "context_transaction_sequence_valid_count":2,"context_transaction_sequence_invalid_count":4,
-        "context_transaction_reachable_event_count":6,"context_transaction_mutation_rejection_count":78,
+        "context_transaction_reachable_event_count":6,"context_transaction_mutation_rejection_count":81,
         "context_transaction_support_state_effect":"none"}
     for key,value in expected_context_transaction_contract.items():
         if proof_contract.get(key)!=value: out.append(f"context-transaction contract drifted: {key} expected {value!r}, got {proof_contract.get(key)!r}")
     transaction=data["context_transaction_result"]
     if transaction.get("store_suite",{}).get("valid_count")!=3 or transaction.get("store_suite",{}).get("invalid_count")!=6: out.append("context-transaction store suite drifted")
     if transaction.get("sequence_suite",{}).get("valid_count")!=2 or transaction.get("sequence_suite",{}).get("invalid_count")!=4: out.append("context-transaction sequence suite drifted")
-    for key,value in {"reachable_trace_event_count":6,"mutation_rejection_count":78,"support_state_effect":"none"}.items():
+    for key,value in {"reachable_trace_event_count":6,"mutation_rejection_count":81,"support_state_effect":"none"}.items():
         if transaction.get(key)!=value: out.append(f"context-transaction result drifted: {key}")
-    for phrase in ["three-valid/six-invalid", "two-valid/four-invalid", "78 of 78 mutations", "Support-state effect: `none`"]:
+    for phrase in ["three-valid/six-invalid", "two-valid/four-invalid", "81 of 81 mutations", "Support-state effect: `none`"]:
         if phrase.casefold() not in data["context_transaction_receipt"].casefold(): out.append(f"context-transaction receipt missing exact boundary: {phrase}")
     for phrase in ["Reachable model", "Assumptions, exclusions, and adequacy verdict", "single-cell, sequential, and deterministic", "Support-state effect: exactly `none`"]:
         if phrase.casefold() not in data["context_transaction_dossier"].casefold(): out.append(f"context-transaction dossier missing adequacy boundary: {phrase}")

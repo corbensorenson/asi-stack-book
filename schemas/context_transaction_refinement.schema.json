@@ -8,6 +8,8 @@
     "schema_version",
     "result_id",
     "source_sha256",
+    "lean_theorem_declaration_count",
+    "lean_lifecycle_control_count",
     "store_suite",
     "sequence_suite",
     "reachable_trace_event_count",
@@ -52,6 +54,12 @@
           "pattern": "^[0-9a-f]{64}$"
         }
       }
+    },
+    "lean_theorem_declaration_count": {
+      "const": 35
+    },
+    "lean_lifecycle_control_count": {
+      "const": 12
     },
     "store_suite": {
       "$ref": "#/$defs/store"

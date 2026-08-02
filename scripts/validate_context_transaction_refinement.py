@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Independently consume reachable Context Transaction semantics."""
 from __future__ import annotations
-import argparse, copy, hashlib, json, subprocess
+import argparse, copy, hashlib, json, re, subprocess
 from pathlib import Path
 from typing import Any
 import jsonschema
@@ -16,6 +16,20 @@ TX_SCHEMA=ROOT/"schemas/context_transaction_record.schema.json"
 SCHEMA=ROOT/"schemas/context_transaction_refinement.schema.json"
 RESULT=ROOT/"experiments/context_transaction_refinement/results/2026-07-15-local.json"
 IDS=("transaction_id","snapshot_id","snapshot_epoch","branch_id","mount_id","authority_epoch")
+LEAN_LIFECYCLE_CONTROLS=(
+ "accepted_step_applies_event",
+ "accepted_bound_step_preserves_transaction_identity",
+ "accepted_step_preserves_nonraw_stage",
+ "successful_bound_run_preserves_transaction_identity",
+ "successful_transaction_run_has_valid_trace",
+ "transaction_runs_compose",
+ "successful_run_preserves_complete_transaction_custody",
+ "successful_run_preserves_deletion_closure_receipt",
+ "successful_run_preserves_materialization",
+ "accepted_materialization_closes_open_deletion_obligation",
+ "accepted_materialization_governs_tainted_source",
+ "accepted_materialization_support_request_has_transition_receipt",
+)
 
 def load(p:Path)->Any:return json.loads(p.read_text())
 def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -87,19 +101,32 @@ def mutations(base:list[dict])->list[tuple[str,list[dict]]]:
  for i,prefix in ((1,"stage"),(2,"commit"),(3,"read"),(4,"derive"),(5,"materialize")):
   for k in IDS:m(prefix+"_"+k,i,k,999)
  for name,i,k,v in [("stage_cell",1,"cell_id",0),("stage_version",1,"input_version",1),("stage_receipt",1,"write_receipt",False),("stage_branch",1,"branch_matches",False),("stage_mount",1,"mount_permitted",False),("stage_time",1,"logical_time",1),("commit_cell",2,"cell_id",999),("commit_input",2,"input_version",1),("commit_output",2,"output_version",2),("commit_flag",2,"write_committed",False),("commit_receipt",2,"commit_receipt",False),("commit_audit",2,"audit_receipt",False),("commit_time",2,"logical_time",2),("read_cell",3,"cell_id",999),("read_version",3,"input_version",0),("read_commit",3,"write_committed",False),("read_visible",3,"read_visible",False),("read_receipt",3,"read_receipt",False),("read_replay",3,"replay_receipt",False),("read_branch",3,"branch_matches",False),("read_mount",3,"mount_permitted",False),("read_time",3,"logical_time",3),("derive_cell",4,"cell_id",999),("derive_version",4,"input_version",0),("derive_source",4,"source_tainted",True),("derive_deletion",4,"deletion_obligation_open",True),("derive_receipt",4,"derivation_receipt",False),("derive_time",4,"logical_time",4),("materialize_cell",5,"cell_id",999),("materialize_version",5,"input_version",0),("materialize_support",5,"support_promotion_requested",True),("materialize_receipt",5,"materialization_receipt",False),("materialize_flag",5,"materialized",False),("materialize_time",5,"logical_time",5)]:m(name,i,k,v)
+ rows=copy.deepcopy(base);rows[1]["source_tainted"]=True;rows[4]["source_tainted"]=True;out.append(("trace_taint_laundering",rows))
+ rows=copy.deepcopy(base);rows[1]["source_tainted"]=True;rows[4].update(source_tainted=True,declassification_authorized=True,declassification_receipt=False);out.append(("trace_false_declassification",rows))
+ rows=copy.deepcopy(base);rows[1]["deletion_obligation_open"]=True;rows[4]["deletion_obligation_open"]=True;out.append(("trace_open_deletion",rows))
  return out
+
+def lean_controls(issues:list[str])->tuple[int,int]:
+ text=LEAN.read_text()
+ theorem_count=len(re.findall(r"(?m)^theorem ",text))
+ missing=[name for name in LEAN_LIFECYCLE_CONTROLS if not re.search(rf"(?m)^theorem {re.escape(name)}\b",text)]
+ if theorem_count!=35:issues.append(f"Lean theorem declaration count drifted: {theorem_count} != 35")
+ if missing:issues.append("Lean lifecycle controls missing: "+", ".join(missing))
+ built=subprocess.run(["lake","build","AsiStackProofs.ContextTransactionRefinement"],cwd=ROOT/"lean",text=True,capture_output=True)
+ if built.returncode:issues.append("Lean exact-module build failed: "+built.stdout+built.stderr)
+ return theorem_count,len(LEAN_LIFECYCLE_CONTROLS)-len(missing)
 def suite(path:Path,validator:Path,valid:int,invalid:int,issues:list[str])->dict:
  paths=sorted(path.glob("*.json"));v=sum(p.name.startswith("valid_") for p in paths);iv=sum(p.name.startswith("invalid_") for p in paths);runp=subprocess.run(["python3",str(validator)],cwd=ROOT,text=True,capture_output=True)
  if (v,iv)!=(valid,invalid) or runp.returncode:issues.append(f"{path.name} suite drift: {runp.stdout}{runp.stderr}")
  return {"fixture_count":len(paths),"valid_count":v,"invalid_count":iv,"suite_passed":runp.returncode==0,"inventory_sha256":inv(paths)}
 def build()->tuple[dict,list[str]]:
- issues=[];store=suite(STORE,STORE_VALIDATOR,3,6,issues);seq=suite(SEQUENCES,SEQUENCE_VALIDATOR,2,4,issues);base=trace();ok,_,_,final=run(base)
+ issues=[];theorem_count,control_count=lean_controls(issues);store=suite(STORE,STORE_VALIDATOR,3,6,issues);seq=suite(SEQUENCES,SEQUENCE_VALIDATOR,2,4,issues);base=trace();ok,_,_,final=run(base)
  if not ok or not final["materialized"]:issues.append("reference trace rejected")
  receipts=[]
  for mid,rows in mutations(base):
   accepted,index,why,_=run(rows);receipts.append({"mutation_id":mid,"rejected":not accepted,"failed_event_index":index,"reasons":why})
   if accepted:issues.append(mid+": accepted")
- result={"schema_version":"asi_stack.context_transaction_refinement.v1","result_id":"context-transaction-refinement-2026-07-15-local","source_sha256":{"lean_model":sha(LEAN),"transaction_schema":sha(TX_SCHEMA),"store_validator":sha(STORE_VALIDATOR),"sequence_validator":sha(SEQUENCE_VALIDATOR)},"store_suite":store,"sequence_suite":seq,"reachable_trace_event_count":len(base),"reference_trace_final_state":final,"mutation_count":len(receipts),"mutation_rejection_count":sum(x["rejected"] for x in receipts),"mutation_receipts":receipts,"support_state_effect":"none","non_claims":["This finite sequential model does not establish serializability, linearizability, distributed isolation, crash recovery, or a deployed store.","Fixture-suite validity is consumed at its exact hand-authored boundary and does not establish natural-workload usefulness or transfer.","Numeric identities, policy decisions, taint/deletion facts, authority epochs, and receipts are trusted; no source truth, erasure, side-channel safety, reproduction, SOTA, AGI, ASI, or chapter-core support follows."]}
+ result={"schema_version":"asi_stack.context_transaction_refinement.v1","result_id":"context-transaction-refinement-2026-07-15-local","source_sha256":{"lean_model":sha(LEAN),"transaction_schema":sha(TX_SCHEMA),"store_validator":sha(STORE_VALIDATOR),"sequence_validator":sha(SEQUENCE_VALIDATOR)},"lean_theorem_declaration_count":theorem_count,"lean_lifecycle_control_count":control_count,"store_suite":store,"sequence_suite":seq,"reachable_trace_event_count":len(base),"reference_trace_final_state":final,"mutation_count":len(receipts),"mutation_rejection_count":sum(x["rejected"] for x in receipts),"mutation_receipts":receipts,"support_state_effect":"none","non_claims":["This finite sequential model does not establish serializability, linearizability, distributed isolation, crash recovery, or a deployed store.","Fixture-suite validity is consumed at its exact hand-authored boundary and does not establish natural-workload usefulness or transfer.","Numeric identities, policy decisions, taint/deletion facts, authority epochs, and receipts are trusted; no source truth, erasure, side-channel safety, reproduction, SOTA, AGI, ASI, or chapter-core support follows."]}
  try:jsonschema.Draft202012Validator(load(SCHEMA)).validate(result)
  except jsonschema.ValidationError as e:issues.append("schema: "+e.message)
  return result,issues
@@ -108,5 +135,5 @@ def main():
  if e:raise SystemExit("Context transaction refinement failed:\n - "+"\n - ".join(e))
  if a.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(json.dumps(r,indent=2)+"\n")
  elif not RESULT.exists() or load(RESULT)!=r:raise SystemExit("Context transaction refinement result stale; run --write")
- print(f"Context transaction refinement passed: 3/6 store fixtures, 2/4 sequence fixtures, 6 events, {r['mutation_rejection_count']} mutations rejected, support effect none.")
+ print(f"Context transaction refinement passed: {r['lean_theorem_declaration_count']} Lean theorems, {r['lean_lifecycle_control_count']} lifecycle controls, 3/6 store fixtures, 2/4 sequence fixtures, 6 events, {r['mutation_rejection_count']} mutations rejected, support effect none.")
 if __name__=="__main__":main()

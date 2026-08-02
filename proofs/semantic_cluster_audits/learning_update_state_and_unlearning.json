@@ -6,7 +6,7 @@
   "scope": "bounded_finite_data_update_weight_custody_context_transaction_and_unlearning_claim_axis_semantics",
   "module_count": 4,
   "public_target_count": 31,
-  "theorem_declaration_count": 62,
+  "theorem_declaration_count": 77,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.DataEngineLifecycleRefinement",
@@ -89,8 +89,8 @@
       "path": "lean/AsiStackProofs/ContextTransactionRefinement.lean",
       "disposition": "adequate",
       "public_target_count": 4,
-      "theorem_declaration_count": 20,
-      "plain_language_proposition": "A finite context-transaction lifecycle preserves exact snapshot, parent, participant, read/write, taint, declassification, deletion, derivative, materialization, and receipt custody across six events; invalid events leave state unchanged and cannot silently convert context mutation into support or external-effect authority.",
+      "theorem_declaration_count": 35,
+      "plain_language_proposition": "A finite context-transaction lifecycle preserves exact bound transaction identity across arbitrary successful runs, extracts a valid compositional trace, monotonically preserves complete receipt custody, deletion closure, and materialization, and requires explicit taint, declassification, deletion, and evidence-transition guards at materialization.",
       "modeled_state": "Authored snapshot, begin, operation, commit, materialization, and closure records with branch, ordering, isolation, taint, declassification, deletion, derivative, cache/store, recovery, durability, effect, and support fields; three of six store fixtures and two of four sequence fixtures are accepted.",
       "assumptions": [
         "Principal, snapshot, participant, ordering, isolation, taint, declassification, deletion, derivative, durability, recovery, materialization, receipt, effect, and support fields are truthful and complete.",
@@ -106,8 +106,8 @@
         "scripts/validate_context_transaction_refinement.py",
         "experiments/context_transaction_refinement/results/2026-07-15-local.json"
       ],
-      "mutation_evidence": "The independent consumer accepts three of six store fixtures and two of four sequence fixtures, composes six events, and rejects 78 semantic mutations while preserving support effect none.",
-      "maximum_inference": "Adequate for exact finite context-record admission, six-event sequencing, rejected-event state preservation, taint/deletion closure predicates, and non-authority routing. It does not establish concurrency correctness, serializability, linearizability, durability, recovery, cache invalidation completeness, deletion or forgetting, external-effect rollback, deployment, transfer, or support movement."
+      "mutation_evidence": "The independent consumer recompiles the exact 35-declaration module, verifies 12 named lifecycle controls, accepts three of six store fixtures and two of four sequence fixtures, composes six events, and rejects 81 semantic mutations including whole-trace taint laundering, false declassification, and open deletion while preserving support effect none.",
+      "maximum_inference": "Adequate for exact finite context-record admission, six-event sequencing, bound-run identity, valid-trace extraction, run composition, monotone receipt and closure custody, and represented materialization guards. It does not establish concurrency correctness, serializability, linearizability, durability, recovery, cache invalidation completeness, truthful taint or deletion facts, deletion or forgetting, external-effect rollback, deployment, transfer, or support movement."
     }
   ],
   "claim_axis_separation": {

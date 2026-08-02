@@ -20,7 +20,7 @@ EXPECTED_MODULES = [
     "AsiStackProofs.ContextTransactionRefinement",
 ]
 EXPECTED_TARGETS = [15, 4, 8, 4]
-EXPECTED_THEOREMS = [5, 5, 32, 20]
+EXPECTED_THEOREMS = [5, 5, 32, 35]
 
 
 def load(path: Path) -> Any:
@@ -41,7 +41,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("module denominator or order drifted")
     if [row.get("public_target_count") for row in rows] != EXPECTED_TARGETS or audit.get("public_target_count") != 31:
         out.append("public target denominator drifted")
-    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 62:
+    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 77:
         out.append("theorem denominator drifted")
     if status_cluster is None or status_cluster.get("state") != "adequate" or status_cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
@@ -93,7 +93,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         "adequate only for its bounded eight-stage custody and claim-axis-separation semantics",
         "adequate only for exact bounded update-lease and readmission semantics",
         "adequate only for its finite custody routes and versioned attestation-to-erasure lifecycle",
-        "adequate only for exact finite record admission and six-event sequencing",
+        "adequate only for exact finite record admission, six-event sequencing, and accepted-run custody invariants",
     ):
         if phrase not in normalized:
             out.append(f"chapter limitation surface missing: {phrase}")
@@ -150,7 +150,7 @@ def main() -> None:
         raise SystemExit("P4-C4 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
         "P4-C4 semantic proof cluster passed: 4 adequate modules, 31 public targets, "
-        "62 theorem declarations, behavioral/influence/privacy/lineage/storage/backup/legal "
+        "77 theorem declarations, behavioral/influence/privacy/lineage/storage/backup/legal "
         "axes separated, 12 audit mutations rejected; support/release/publication none."
     )
 

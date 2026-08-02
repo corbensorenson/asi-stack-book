@@ -200,6 +200,22 @@ def TransactionRun : TransactionState → List TransactionEvent → Option Trans
       | none => none
       | some next => TransactionRun next tail
 
+def TransactionIdentity (state : TransactionState) : Nat × Nat × Nat × Nat × Nat × Nat :=
+  (state.transactionId, state.snapshotId, state.snapshotEpoch,
+    state.branchId, state.mountId, state.authorityEpoch)
+
+def CompleteTransactionCustody (state : TransactionState) : Prop :=
+  state.snapshotReceipt = true ∧ state.writeReceipt = true ∧
+    state.commitReceipt = true ∧ state.readReceipt = true ∧
+    state.derivationReceipt = true ∧ state.replayReceipt = true ∧
+    state.auditReceipt = true
+
+def TransactionTraceValid : TransactionState → List TransactionEvent → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      TransactionEventValid state event ∧
+        TransactionTraceValid (ApplyTransactionEvent state event) tail
+
 theorem accepted_step_is_valid
     {state next : TransactionState} {event : TransactionEvent}
     (accepted : TransactionStep state event = some next) : TransactionEventValid state event := by
@@ -207,6 +223,204 @@ theorem accepted_step_is_valid
   split at accepted
   · assumption
   · simp at accepted
+
+theorem accepted_step_applies_event
+    {state next : TransactionState} {event : TransactionEvent}
+    (accepted : TransactionStep state event = some next) :
+    next = ApplyTransactionEvent state event := by
+  unfold TransactionStep at accepted
+  split at accepted
+  · exact Option.some.inj accepted |>.symm
+  · simp at accepted
+
+theorem apply_nonbinding_event_preserves_transaction_identity
+    (state : TransactionState) (event : TransactionEvent)
+    (notBind : event.kind ≠ .bindSnapshot) :
+    TransactionIdentity (ApplyTransactionEvent state event) =
+      TransactionIdentity state := by
+  cases kind : event.kind <;>
+    simp_all [ApplyTransactionEvent, TransactionIdentity]
+
+theorem accepted_bound_step_is_not_snapshot_binding
+    {state next : TransactionState} {event : TransactionEvent}
+    (bound : state.stage ≠ .raw)
+    (accepted : TransactionStep state event = some next) :
+    event.kind ≠ .bindSnapshot := by
+  intro bind
+  rcases accepted_step_is_valid accepted with ⟨stage, _, specific⟩
+  simp [TransactionEventSpecificValid, bind] at specific
+  simp only [and_assoc] at specific
+  exact bound (stage.trans specific.1)
+
+theorem accepted_bound_step_preserves_transaction_identity
+    {state next : TransactionState} {event : TransactionEvent}
+    (bound : state.stage ≠ .raw)
+    (accepted : TransactionStep state event = some next) :
+    TransactionIdentity next = TransactionIdentity state := by
+  have applies := accepted_step_applies_event accepted
+  subst next
+  exact apply_nonbinding_event_preserves_transaction_identity state event
+    (accepted_bound_step_is_not_snapshot_binding bound accepted)
+
+theorem accepted_step_preserves_nonraw_stage
+    {state next : TransactionState} {event : TransactionEvent}
+    (accepted : TransactionStep state event = some next) :
+    next.stage ≠ .raw := by
+  have valid := accepted_step_is_valid accepted
+  have applies := accepted_step_applies_event accepted
+  subst next
+  rcases valid with ⟨_, _, specific⟩
+  cases kind : event.kind <;>
+    simp_all [TransactionEventSpecificValid, ApplyTransactionEvent]
+
+theorem successful_bound_run_preserves_transaction_identity
+    {state final : TransactionState} {events : List TransactionEvent}
+    (bound : state.stage ≠ .raw)
+    (ran : TransactionRun state events = some final) :
+    TransactionIdentity final = TransactionIdentity state := by
+  induction events generalizing state with
+  | nil =>
+      simp [TransactionRun] at ran
+      subst final
+      rfl
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event with
+      | none => simp [TransactionRun, stepped] at ran
+      | some next =>
+          have tailRan : TransactionRun next tail = some final := by
+            simpa [TransactionRun, stepped] using ran
+          calc
+            TransactionIdentity final = TransactionIdentity next :=
+              ih (accepted_step_preserves_nonraw_stage stepped) tailRan
+            _ = TransactionIdentity state :=
+              accepted_bound_step_preserves_transaction_identity bound stepped
+
+theorem successful_transaction_run_has_valid_trace
+    {state final : TransactionState} {events : List TransactionEvent}
+    (ran : TransactionRun state events = some final) :
+    TransactionTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event with
+      | none => simp [TransactionRun, stepped] at ran
+      | some next =>
+          have tailRan : TransactionRun next tail = some final := by
+            simpa [TransactionRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          exact ⟨accepted_step_is_valid stepped, by
+            simpa [applies] using ih tailRan⟩
+
+theorem transaction_runs_compose
+    (state : TransactionState) (left right : List TransactionEvent) :
+    TransactionRun state (left ++ right) =
+      match TransactionRun state left with
+      | none => none
+      | some middle => TransactionRun middle right := by
+  induction left generalizing state with
+  | nil => simp [TransactionRun]
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event <;>
+        simp [TransactionRun, stepped, ih]
+
+theorem apply_event_preserves_complete_transaction_custody
+    (state : TransactionState) (event : TransactionEvent)
+    (custody : CompleteTransactionCustody state) :
+    CompleteTransactionCustody (ApplyTransactionEvent state event) := by
+  rcases custody with ⟨snapshot, write, commit, read, derive, replay, audit⟩
+  simp [CompleteTransactionCustody, ApplyTransactionEvent, snapshot, write,
+    commit, read, derive, replay, audit]
+
+theorem successful_run_preserves_complete_transaction_custody
+    {state final : TransactionState} {events : List TransactionEvent}
+    (custody : CompleteTransactionCustody state)
+    (ran : TransactionRun state events = some final) :
+    CompleteTransactionCustody final := by
+  induction events generalizing state with
+  | nil =>
+      simp [TransactionRun] at ran
+      subst final
+      exact custody
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event with
+      | none => simp [TransactionRun, stepped] at ran
+      | some next =>
+          have tailRan : TransactionRun next tail = some final := by
+            simpa [TransactionRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ih (apply_event_preserves_complete_transaction_custody state event custody)
+            tailRan
+
+theorem successful_run_preserves_deletion_closure_receipt
+    {state final : TransactionState} {events : List TransactionEvent}
+    (closed : state.deletionClosureReceipt = true)
+    (ran : TransactionRun state events = some final) :
+    final.deletionClosureReceipt = true := by
+  induction events generalizing state with
+  | nil =>
+      simp [TransactionRun] at ran
+      subst final
+      exact closed
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event with
+      | none => simp [TransactionRun, stepped] at ran
+      | some next =>
+          have tailRan : TransactionRun next tail = some final := by
+            simpa [TransactionRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ih (by simp [ApplyTransactionEvent, closed]) tailRan
+
+theorem successful_run_preserves_materialization
+    {state final : TransactionState} {events : List TransactionEvent}
+    (materialized : state.materialized = true)
+    (ran : TransactionRun state events = some final) :
+    final.materialized = true := by
+  induction events generalizing state with
+  | nil =>
+      simp [TransactionRun] at ran
+      subst final
+      exact materialized
+  | cons event tail ih =>
+      cases stepped : TransactionStep state event with
+      | none => simp [TransactionRun, stepped] at ran
+      | some next =>
+          have tailRan : TransactionRun next tail = some final := by
+            simpa [TransactionRun, stepped] using ran
+          have applies := accepted_step_applies_event stepped
+          subst next
+          exact ih (by simp [ApplyTransactionEvent, materialized]) tailRan
+
+theorem accepted_materialization_closes_open_deletion_obligation
+    {state next : TransactionState} {event : TransactionEvent}
+    (kind : event.kind = .materialize)
+    (openDuty : state.deletionObligationOpen = true)
+    (accepted : TransactionStep state event = some next) :
+    state.deletionClosureReceipt = true := by
+  rcases accepted_step_is_valid accepted with ⟨_, _, specific⟩
+  simp_all [TransactionEventSpecificValid, CellIdentityMatches,
+    SnapshotIdentityMatches]
+
+theorem accepted_materialization_governs_tainted_source
+    {state next : TransactionState} {event : TransactionEvent}
+    (kind : event.kind = .materialize)
+    (tainted : state.sourceTainted = true)
+    (accepted : TransactionStep state event = some next) :
+    state.derivedTainted = true ∨ state.declassificationAuthorized = true := by
+  rcases accepted_step_is_valid accepted with ⟨_, _, specific⟩
+  simp_all [TransactionEventSpecificValid, CellIdentityMatches,
+    SnapshotIdentityMatches]
+
+theorem accepted_materialization_support_request_has_transition_receipt
+    {state next : TransactionState} {event : TransactionEvent}
+    (kind : event.kind = .materialize)
+    (requested : event.supportPromotionRequested = true)
+    (accepted : TransactionStep state event = some next) :
+    event.evidenceTransitionReceipt = true := by
+  rcases accepted_step_is_valid accepted with ⟨_, _, specific⟩
+  simp_all [TransactionEventSpecificValid, CellIdentityMatches,
+    SnapshotIdentityMatches]
 
 theorem accepted_snapshot_read_preserves_snapshot_branch_mount_and_version
     {state next : TransactionState} {event : TransactionEvent}

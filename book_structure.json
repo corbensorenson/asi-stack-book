@@ -9905,7 +9905,7 @@
               "name": "Executed snapshot transaction and taint/deletion refinement",
               "purpose": "Refine snapshot/write/commit/read/derive/materialize order and custody against both transaction fixture families.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_context_transaction_refinement.py`: 3/6 store fixtures, 2/4 sequences, 6 events, 78/78 rejected mutations; support effect none",
+              "result_status": "passes via `python3 scripts/validate_context_transaction_refinement.py`: 35 Lean declarations, 12 lifecycle controls, 3/6 store fixtures, 2/4 sequences, 6 events, 81/81 rejected mutations; support effect none",
               "status": "bounded sequential model; no concurrency, distributed isolation, crash recovery, deployed storage, erasure, reproduction, transfer, safety, or core-support claim"
             }
           ],
@@ -9914,19 +9914,19 @@
             {
               "tag": "lean:vcm.transactions.operational_invariant",
               "module": "AsiStackProofs.ContextTransactionRefinement",
-              "target": "Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody before materialization.",
+              "target": "Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody; every successful bound run preserves transaction identity and yields a valid compositional trace.",
               "status": "implemented"
             },
             {
               "tag": "lean:vcm.transactions.failure_blocks_promotion",
               "module": "AsiStackProofs.ContextTransactionRefinement",
-              "target": "Taint removal requires represented declassification authority and receipt; open deletion or support promotion without its receipt blocks materialization.",
+              "target": "Accepted materialization of tainted context requires propagated taint or represented declassification, open deletion requires a closure receipt, and support requests require an evidence-transition receipt; custody, closure, and materialization remain monotone across successful runs.",
               "status": "implemented"
             },
             {
               "tag": "lean:vcm.transactions.memory_store_fixture_bridge",
               "module": "AsiStackProofs.ContextTransactionRefinement",
-              "target": "The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and 78-mutation independent checker.",
+              "target": "The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and an independent exact-module checker that verifies 35 Lean declarations, 12 lifecycle controls, and 81 rejecting mutations.",
               "status": "implemented"
             },
             {

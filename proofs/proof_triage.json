@@ -1244,31 +1244,31 @@
       "tag": "lean:vcm.transactions.operational_invariant",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactionRefinement",
-      "formal_target": "Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody before materialization.",
+      "formal_target": "Accepted reads preserve exact snapshot, branch, mount, cell, committed version, and replay custody; every successful bound run preserves transaction identity and yields a valid compositional trace.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable transaction model plus exact 3/6 store, 2/4 sequence, and 78-mutation consumer; support effect none."
+      "rationale": "Reachable transaction model with bound-run identity, valid-trace, composition, and monotone-custody proofs plus exact 3/6 store, 2/4 sequence, and 81-mutation consumer; support effect none."
     },
     {
       "tag": "lean:vcm.transactions.failure_blocks_promotion",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactionRefinement",
-      "formal_target": "Taint removal requires represented declassification authority and receipt; open deletion or support promotion without its receipt blocks materialization.",
+      "formal_target": "Accepted materialization of tainted context requires propagated taint or represented declassification, open deletion requires a closure receipt, and support requests require an evidence-transition receipt; custody, closure, and materialization remain monotone across successful runs.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable transaction model plus exact 3/6 store, 2/4 sequence, and 78-mutation consumer; support effect none."
+      "rationale": "Reachable transaction model with bound-run identity, valid-trace, composition, and monotone-custody proofs plus exact 3/6 store, 2/4 sequence, and 81-mutation consumer; support effect none."
     },
     {
       "tag": "lean:vcm.transactions.memory_store_fixture_bridge",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "module": "AsiStackProofs.ContextTransactionRefinement",
-      "formal_target": "The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and 78-mutation independent checker.",
+      "formal_target": "The reachable model is consumed alongside the exact 3-valid/6-invalid memory-store suite and an independent exact-module checker that verifies 35 Lean declarations, 12 lifecycle controls, and 81 rejecting mutations.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable transaction model plus exact 3/6 store, 2/4 sequence, and 78-mutation consumer; support effect none."
+      "rationale": "Reachable transaction model with bound-run identity, valid-trace, composition, and monotone-custody proofs plus exact 3/6 store, 2/4 sequence, and 81-mutation consumer; support effect none."
     },
     {
       "tag": "lean:vcm.transactions.sequence_fixture_bridge",
@@ -1278,7 +1278,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Reachable transaction model plus exact 3/6 store, 2/4 sequence, and 78-mutation consumer; support effect none."
+      "rationale": "Reachable transaction model with bound-run identity, valid-trace, composition, and monotone-custody proofs plus exact 3/6 store, 2/4 sequence, and 81-mutation consumer; support effect none."
     },
     {
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",

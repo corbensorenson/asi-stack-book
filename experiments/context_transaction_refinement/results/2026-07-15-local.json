@@ -2,11 +2,13 @@
   "schema_version": "asi_stack.context_transaction_refinement.v1",
   "result_id": "context-transaction-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "cd0c32b6b7205b68401518572f0b2ff993b094c09ab86382e6e445dbcfe77b03",
+    "lean_model": "3f46d63934fc47060aefb16ea2a9ec6c376b020f0d5faa03186c94355d47138e",
     "transaction_schema": "5df8e03749a4df28ec28a7082fcba4f9a0cae269a99881538e5038b52fcc5500",
     "store_validator": "74b7968b02c3c577b13ec8c8038797995f93731b734190508df10b52d34666f2",
     "sequence_validator": "d5c5c400d21a9ee244aaddae3aebdd73bf71815e9834641c733233be99ecc47b"
   },
+  "lean_theorem_declaration_count": 35,
+  "lean_lifecycle_control_count": 12,
   "store_suite": {
     "fixture_count": 9,
     "valid_count": 3,
@@ -50,8 +52,8 @@
     "materialized": true,
     "logical_time": 6
   },
-  "mutation_count": 78,
-  "mutation_rejection_count": 78,
+  "mutation_count": 81,
+  "mutation_rejection_count": 81,
   "mutation_receipts": [
     {
       "mutation_id": "bind_transaction_id",
@@ -676,6 +678,30 @@
       "failed_event_index": 5,
       "reasons": [
         "time"
+      ]
+    },
+    {
+      "mutation_id": "trace_taint_laundering",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "taint_laundering"
+      ]
+    },
+    {
+      "mutation_id": "trace_false_declassification",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "taint_laundering"
+      ]
+    },
+    {
+      "mutation_id": "trace_open_deletion",
+      "rejected": true,
+      "failed_event_index": 4,
+      "reasons": [
+        "deletion_gap"
       ]
     }
   ],

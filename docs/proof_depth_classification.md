@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2402 |
+| Theorem declarations classified | 2417 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1440 |
+| Derived/decomposed theorem declarations | 1455 |
 | Unknown or mixed theorem declarations | 552 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -80,7 +80,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContentAuthenticityReview.lean` | content-authenticity-watermarking-and-synthetic-media-integrity | 1 | 32 | 14 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificateRefinement.lean` | virtual-context-abi | 3 | 17 | 0 | 3 | 14 | manual review |
 | `lean/AsiStackProofs/ContextCertificates.lean` | unmapped | 0 | 16 | 0 | 16 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 20 | 0 | 4 | 16 | manual review |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 35 | 0 | 19 | 16 | manual review |
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
@@ -639,10 +639,19 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | `tainted_certificate_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `undeclared_omissions_require_omission_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `unpermitted_consumer_use_requires_policy_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_bound_step_is_not_snapshot_binding` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_bound_step_preserves_transaction_identity` | derived_or_decomposed | no | uses have, subst |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_materialization_closes_open_deletion_obligation` | derived_or_decomposed | no | uses rcases |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_materialization_governs_tainted_source` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_materialization_preserves_transaction_custody` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_materialization_support_request_has_transition_receipt` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_snapshot_read_preserves_snapshot_branch_mount_and_version` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_step_preserves_nonraw_stage` | derived_or_decomposed | no | uses cases, have, rcases, subst |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `accepted_untainted_derivation_from_tainted_source_requires_declassification` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `apply_event_preserves_complete_transaction_custody` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `apply_nonbinding_event_preserves_transaction_identity` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `branch_substitution_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `commit_version_skip_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `exact_transaction_trace_materializes` | unknown_or_mixed | no | no recognized depth pattern |
@@ -655,8 +664,14 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `open_deletion_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `stale_read_version_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `stale_snapshot_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `successful_bound_run_preserves_transaction_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `successful_run_preserves_complete_transaction_custody` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `successful_run_preserves_deletion_closure_receipt` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `successful_run_preserves_materialization` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `successful_transaction_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `support_promotion_without_transition_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `taint_laundering_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `transaction_runs_compose` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `unauthorized_mount_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | `uncommitted_write_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `committed_read_without_visible_read_set_rejected` | derived_or_decomposed | no | uses simp, unfold |
