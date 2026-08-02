@@ -4,7 +4,7 @@ chapter_id: "privacy-data-rights-and-information-flow-governance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-07-19"
+last_updated: "2026-08-02"
 primary_sources:
   - "ext_nist_privacy_framework_2020"
   - "ext_eu_gdpr_2016"
@@ -22,6 +22,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "No ASI Stack privacy/data-rights campaign has run for this chapter."
   - "The authored transaction fixture is record-shape evidence only."
+  - "The exact 27-declaration Lean surface and independent eight-stage consumer prove only authored finite-run identity, authority-ceiling, non-authority, receipt, stage-order, revocation, and known-copy disposition consequences. Event truth, unknown-copy discovery, deletion in fact, total erasure, privacy, compliance, and rights fulfillment remain unproved."
   - "No source mechanism, attack, legal determination, or rights workflow has been reproduced locally."
   - "No group-privacy remedy or universal jurisdictional mapping is established."
 ---
@@ -538,7 +539,19 @@ unlearning/remediation receive matched utility targets and tuning opportunity.
 At least three seeds, positive-control canaries, independent attack and receipt
 evaluators, complete denominator custody, cost measurement, and unopened final
 qualification are required. The current authored fixture and Lean model are a
-precondition for this implementation, not evidence that it already exists.
+precondition for this implementation, not evidence that it already exists. The
+formal surface now has 27 declarations: the original route consequences plus a
+reachable purpose, minimization, flow-map, privacy-evaluation,
+rights-disposition, activation, revocation, and bounded deletion-record
+lifecycle. Arbitrary accepted finite runs preserve exact
+subject/dataset/purpose/jurisdiction/copy identity, authority ceilings, and zero
+support or external-effect authority; every event adds one receipt, activation
+requires prior rights disposition, active use cannot jump directly to deletion,
+revocation zeros modeled authority, and deletion records disposition only for
+the already-declared known-copy count. The independent consumer recompiles the
+exact surface and rejects eleven purpose, identity, authority, flow, evaluator,
+rights, stage-order, deletion, compliance, erasure, and nonpromotion controls.
+All predicates remain authored.
 
 ## Mature Research Target
 
@@ -579,7 +592,7 @@ outcomes satisfy the frozen transition rules.
 | Test | Purpose | Status |
 |---|---|---|
 | Information-lifecycle transaction contract | Validate purpose/authority, minimization, twelve flow surfaces, derivative propagation, privacy evaluation, rights receipts, sources, non-authorities, and 26 semantic mutations. | implemented; authored record only |
-| Lean information-flow semantics | Check bounded admission requirements and separation of storage, behavior, influence, privacy, and compliance outcomes. | implemented; finite model only |
+| Lean information-flow semantics | Check bounded admission requirements plus a reachable purpose-to-revocation/deletion-record lifecycle with arbitrary-run identity, authority-ceiling, non-authority, receipt, trace, composition, stage-order, and known-copy disposition invariants. | implemented as exactly 27 declarations; the independent consumer recompiles the module, closes one eight-event witness, and rejects eleven lifecycle controls; finite authored model only |
 | Natural privacy and rights campaign | Compare six competent matched arms across thirteen failure families, at least three seeds, strong attacks, rights propagation, and joint outcomes. | prospectively specified; not run |
 | Independent attack reproduction | Reimplement extraction, confidence and label-only membership, linkage, cross-user, and purpose-bypass evaluations without sharing candidate code. | planned after instrument qualification |
 | Rights and descendant replay | Reconstruct access, correction, export, restriction, deletion, recipient notification, backup, exception, and residual paths from retained artifacts. | planned after a valid campaign |
@@ -640,18 +653,25 @@ invalidation rather than a negative architectural claim.
 
 ## Formalization hooks
 
-The finite Lean model proves only record-route consequences:
+The finite Lean model proves only record-route and authored transition
+consequences:
 
 1. `lean:privacy_information_flow.admission_invariants` — an accepted use
    requires matching purpose, authority, minimization, flow, rights, and
    privacy-evaluation predicates; and
 2. `lean:privacy_information_flow.outcome_separation` — a completed deletion
    route preserves the distinction between storage disposition, behavioral
-   evidence, influence evidence, and legal-compliance authority.
+   evidence, influence evidence, and legal-compliance authority. Its exact 27
+   declarations also preserve transaction identity, authority ceilings,
+   non-authority, receipt accounting, valid traces, and composition across
+   arbitrary accepted finite runs; activation requires rights disposition,
+   revocation zeros authority, and deletion recording is bounded to known
+   copies without claiming total erasure.
 
 These theorems trust their input predicates. They do not prove a real purpose is
-lawful, the flow graph complete, the DP implementation correct, an attack
-strong, a right fulfilled, or information forgotten.
+lawful, the flow graph or known-copy inventory complete, the DP implementation
+correct, an attack strong, a right fulfilled, a deletion performed, unknown
+copies absent, total erasure achieved, or information forgotten.
 
 ## Nonclaims
 

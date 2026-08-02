@@ -2188,7 +2188,17 @@ Draft deliverables:
 - Terminal structural adjudication and integrated argument chapter.
 - Nine-source four-role packet with authoritative/legal status ceilings.
 - Authored twelve-surface Information Lifecycle Transaction and 26 rejecting mutations.
-- Finite Lean model with eleven theorem declarations and two public targets.
+- Finite Lean model with 27 theorem declarations and two public targets. The
+  original route consequences now sit under a reachable purpose binding,
+  minimization, flow mapping, privacy evaluation, rights disposition,
+  activation, revocation, and bounded deletion-record lifecycle. Arbitrary
+  accepted finite runs preserve exact transaction identity, authority ceilings,
+  non-authority, receipts, valid traces, and composition; activation requires
+  rights disposition, active use cannot jump to deletion, revocation zeros
+  authority, and deletion records only the declared known-copy disposition.
+  The independent consumer recompiles the exact surface, closes one eight-event
+  witness, and rejects eleven lifecycle controls without establishing privacy,
+  compliance, rights fulfillment, deletion in fact, or total erasure.
 - Prospectively frozen six-arm natural campaign across thirteen failure families,
   at least three seeds, positive controls, independent evaluation, full
   denominators, derivative rights propagation, and joint utility/privacy/rights/cost.
@@ -6194,7 +6204,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2386 theorem declarations, 1425 derived/decomposed, 410 direct/projection, 551 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2402 theorem declarations, 1440 derived/decomposed, 410 direct/projection, 552 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
