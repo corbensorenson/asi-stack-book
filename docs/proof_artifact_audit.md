@@ -42,7 +42,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 3 | 0 | 5 | 4 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 2 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
-| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 12 | 0 | 12 | 2 |
+| `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 27 | 0 | 14 | 2 |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 12 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
@@ -123,7 +123,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 0 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 12 | 0 | 30 | 3 |
-| `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 14 | 0 | 31 | 3 |
+| `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 32 | 0 | 37 | 3 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 2 | 21 | 0 | 9 | 4 |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 8 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 17 | 0 | 16 | 2 |
