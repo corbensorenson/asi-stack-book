@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/planning-as-a-control-layer.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 43,
+    "prose_candidates_adjudicated": 44,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -13,7 +13,7 @@
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Accepted command obligations transformed into candidate, blocked, dispatchable, replanned, residualized, failed, stopped, or completed plan nodes for a declared consumer and purpose.",
-      "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; two no-change transitions; thirty-three finite Lean declarations; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
+      "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; two no-change transitions; fifty-one Lean declarations including a reachable lifecycle and vertical refinement; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
       "model": "A versioned consumer-relative plan policy over candidate decompositions, typed obligation graphs, assumptions and observations, dependency and feasibility predicates, route requests, lifecycle, scheduling, dispatch, merge, stop, recovery, replan, denominators, costs, and residuals; current implementations are trusted-field validators and finite routes, not a planner.",
       "authority": "Intent owns accepted semantics; Context and Memory own observations; Compilation owns lowering; Routing and Fields own worker qualification; Labor OS owns jobs; Runtime, Security, and Authority owners decide effects; Verification owns outcomes; Evidence and Readiness own support and release; Rights and Publication owners govern external use. Planning may order, block, request, replan, and residualize, but cannot grant authority or execute.",
       "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
@@ -467,9 +467,14 @@
       "rationale": "Restates beyond-SOTA promotion and transfer controls.",
       "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
     },
-    "planning-as-a-control-layer.prose.77735b3c2279": {
+    "planning-as-a-control-layer.prose.83f0b5a005aa": {
       "state": "historical_or_source_report",
       "rationale": "Reports the remaining natural planner harness gaps.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.0292a70b6785": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the chapter's remaining Project Theseus and empirical obligations.",
       "target_atom_id": "planning-as-a-control-layer.minimum.001"
     },
     "planning-as-a-control-layer.prose.98689027e874": {

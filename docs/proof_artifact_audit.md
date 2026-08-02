@@ -93,7 +93,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/OpenWeightReleaseReview.lean` | 1 | 19 | 0 | 23 | 5 |
 | `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | 1 | 36 | 0 | 33 | 10 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 3 | 0 | 4 | 3 |
-| `lean/AsiStackProofs/Planning.lean` | 5 | 27 | 0 | 11 | 8 |
+| `lean/AsiStackProofs/Planning.lean` | 5 | 48 | 0 | 31 | 10 |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | 4 | 5 | 0 | 10 | 2 |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | 2 | 11 | 0 | 5 | 1 |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 14 | 0 | 21 | 3 |

@@ -5218,6 +5218,15 @@
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
+      "input_artifacts": [
+        "lean/AsiStackProofs/Planning.lean",
+        "schemas/command_contract.schema.json",
+        "schemas/plan_graph.schema.json",
+        "schemas/planforge_dag.schema.json",
+        "schemas/typed_job.schema.json",
+        "schemas/semantic_atom.schema.json",
+        "experiments/plan_execution_contracts/fixtures"
+      ],
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
       "negative_controls": "not_declared",
@@ -5369,6 +5378,10 @@
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
+      "input_artifacts": [
+        "lean/AsiStackProofs/Planning.lean",
+        "experiments/planning_scheduler_state/results/2026-07-02-local.json"
+      ],
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
       "negative_controls": "validator_owned",
@@ -5382,6 +5395,10 @@
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
+      "input_artifacts": [
+        "lean/AsiStackProofs/Planning.lean",
+        "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json"
+      ],
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
       "negative_controls": "validator_owned",

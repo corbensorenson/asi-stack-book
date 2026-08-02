@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-08-01 - Reachable planning lifecycle and vertical refinement
+
+- Deepened `AsiStackProofs.Planning` from 27 to 48 theorem declarations by
+  adding a 21-result reachable lifecycle over command admission, node
+  readiness, job lowering, feedback, scoped replanning, and blocking.
+- Proved one-step and arbitrary-run preservation of authority ceilings,
+  ready-before-job and feedback-before-replan ordering, exact plan-version
+  accounting, stop conditions, phase-specific dispatch obligations, and
+  residual accounting.
+- Added one complete seven-event replan witness, denial noninterference, eleven
+  closed rejecting countermodels, and admitted-plan/job-lowering refinement
+  into `AsiStackProofs.IntentExecutionRefinement`.
+- Bound the exact theorem surface to the existing independent scheduler-state
+  and runtime-replan consumers. No new empirical result or support transition
+  was created; decomposition quality, dependency truth, context and route
+  adequacy, scheduler usefulness, deployed replanning, causal benefit,
+  reproduction, and transfer remain Project Theseus or empirical obligations.
+
 ## 2026-08-01 - Runtime-adapter effect refinement and authority simulation
 
 - Deepened `AsiStackProofs.RuntimeAdapters` from 43 finite route declarations
@@ -42,7 +60,7 @@
   representational usefulness, efficiency, natural-task transfer, bounded
   primitive arity, safe online adaptation, support, release, or external effect
   follows. Chapter support remains `argument`.
-- Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1983 theorem declarations, 1166 derived/decomposed, 404 direct/projection, 413 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2004 theorem declarations, 1175 derived/decomposed, 404 direct/projection, 425 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 
 ## 2026-08-01 - Cognitive-sovereignty custody and human-outcome non-inference
 

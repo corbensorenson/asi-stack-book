@@ -23,6 +23,33 @@ DOSSIERS = ROOT / "evidence_quality" / "proof_model_dossiers"
 ROADMAP_ID = "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14"
 
 CURRENT_REFINEMENTS = {
+    "planning-as-a-control-layer": """## Current refinement
+
+`AsiStackProofs.Planning` now adds a reachable command, admission, readiness,
+job-lowering, feedback, replanning, and blocking model to the retained finite
+record routes. Twenty-one declarations prove local and arbitrary-run
+preservation of authority ceilings, ready-before-lower ordering,
+feedback-before-replan ordering, exact plan-version accounting, stop-condition
+preservation, dispatch-state obligations, and residual growth. One seven-event
+witness reaches a second lowered job after scoped replanning; eleven closed
+countermodels reject authority widening, incomplete decomposition, missing
+context, inadequate routing, missing or blocked dispatch, premature feedback,
+stop erasure, unscoped repair, missing residuals, and hidden overrides. The
+admission and job-lowering events also refine the independently owned
+`AsiStackProofs.IntentExecutionRefinement` vertical transition model.
+
+`scripts/validate_planning_scheduler_state_probe.py` requires the exact
+forty-eight-declaration Planning surface and independently checks two accepted
+and seven rejected scheduler fixtures. The runtime-replan consumer requires the
+replan-specific theorem subset and checks two accepted and nine rejected delta
+fixtures. The model trusts authored decomposition, dependency, context,
+adequacy, route, receipt, authority, stop, and residual fields. It proves no
+decomposition quality, dependency truth, context-demand prediction, selected
+tier or route adequacy, scheduler optimality, live feedback handling, deployed
+replanning, causal advantage, support transition, reproduction, or transfer.
+Chapter support remains `argument` and `support_state_effect` remains `none`.
+
+""",
     "runtime-adapters-tool-permissions-and-human-approval": """## Current refinement
 
 `AsiStackProofs.RuntimeAdapters` now adds a reachable prepare, approve,

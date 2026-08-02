@@ -37,6 +37,16 @@ REQUIRED_THEOREMS = [
     "runtime_replan_delta_stop_erasure_rejected",
     "runtime_replan_delta_blocked_authority_dispatch_rejected",
     "runtime_replan_delta_complete_audit_accepted",
+    "apply_planning_lifecycle_event_preserves_invariant",
+    "accepted_planning_lifecycle_step_preserves_invariant",
+    "planning_lifecycle_run_preserves_invariant",
+    "complete_planning_lifecycle_trace_reaches_replanned_lowering",
+    "planning_lifecycle_denial_is_state_noninterfering",
+    "authority_widening_is_rejected_before_plan_admission",
+    "blocked_authority_path_is_rejected_before_job_lowering",
+    "stop_condition_erasure_is_rejected_before_replan",
+    "unscoped_repair_is_rejected_before_replan",
+    "missing_replan_residual_is_rejected",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute a deployed planner",

@@ -1717,6 +1717,84 @@ for theorem_name in (
         ),
     }
 
+_planning_lifecycle_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+        "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the reachable planning lifecycle is bound to independent scheduler-state and runtime-replan consumers"
+    ],
+}
+
+for theorem_name in (
+    "accepted_planning_lifecycle_step_is_admissible",
+    "accepted_planning_lifecycle_step_applies_event",
+    "initial_planning_lifecycle_state_satisfies_invariant",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Planning.lean::{theorem_name}"
+    ] = {
+        **_planning_lifecycle_refinement_base,
+        "semantic_level": "P1",
+        "rationale": (
+            "The theorem exposes one accepted-step premise, application identity, or initial invariant; "
+            "it is load-bearing for induction but does not alone establish a complete lifecycle."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Planning.lean::complete_planning_lifecycle_trace_reaches_replanned_lowering"
+] = {
+    **_planning_lifecycle_refinement_base,
+    "semantic_level": "P2",
+    "rationale": (
+        "The closed seven-event trace is a bounded nonvacuity witness for admission, dispatch, feedback, scoped replanning, and renewed lowering."
+    ),
+}
+
+for theorem_name in (
+    "apply_planning_lifecycle_event_preserves_invariant",
+    "accepted_planning_lifecycle_step_preserves_invariant",
+    "planning_lifecycle_run_preserves_invariant",
+    "authority_widening_is_rejected_before_plan_admission",
+    "incomplete_decomposition_is_rejected_before_plan_admission",
+    "missing_context_is_rejected_before_node_readiness",
+    "inadequate_selected_route_is_rejected_before_node_readiness",
+    "missing_dispatch_receipt_is_rejected_before_job_lowering",
+    "blocked_authority_path_is_rejected_before_job_lowering",
+    "feedback_before_job_lowering_is_rejected",
+    "stop_condition_erasure_is_rejected_before_replan",
+    "unscoped_repair_is_rejected_before_replan",
+    "missing_replan_residual_is_rejected",
+    "hidden_override_is_rejected_before_planning_transition",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Planning.lean::{theorem_name}"
+    ] = {
+        **_planning_lifecycle_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves a reachable lifecycle invariant or closed rejecting control inside the finite planning semantics bound to the two fixture consumers."
+        ),
+    }
+
+for theorem_name in (
+    "planning_lifecycle_denial_is_state_noninterfering",
+    "admitted_plan_event_refines_vertical_lower_plan",
+    "lowered_job_event_refines_vertical_lower_job",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Planning.lean::{theorem_name}"
+    ] = {
+        **_planning_lifecycle_refinement_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "The theorem proves bounded state noninterference for rejection or a cross-layer refinement into the independent intent-to-execution transition model."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

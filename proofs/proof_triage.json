@@ -1058,7 +1058,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as a reachable command-to-replan lifecycle with one-step and arbitrary-run invariant preservation plus admitted-plan and lowered-job refinement into the independently owned IntentExecutionRefinement model. All semantic input fields remain trusted authored records."
     },
     {
       "tag": "lean:planning.control_layer.failure_blocks_promotion",
@@ -1068,7 +1068,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Initial triage: this target can be stated over finite records, state machines, orderings, or transition predicates and is a credible Lean/executable-model candidate."
+      "rationale": "Implemented as eleven closed transition countermodels plus a general denial noninterference theorem over the reachable lifecycle; rejection is formal state-machine behavior, not deployed planner or scheduler evidence."
     },
     {
       "tag": "lean:planning.control_layer.plan_graph_admission_route",
@@ -1088,7 +1088,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a split evidence surface: an independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while retained AsiStackProofs.Planning route theorems cover contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches. The former valid-summary projection is retired."
+      "rationale": "Implemented as an exact theorem-surface and fixture binding: the independent scheduler consumer checks two accepted and seven rejected records and requires all 21 reachable lifecycle results within the 48-declaration Planning module. The former valid-summary projection remains retired."
     },
     {
       "tag": "lean:planning.runtime_replan.delta_audit_bridge",
@@ -1098,7 +1098,7 @@
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a split evidence surface: an independent finite runtime-replan consumer validates local-repair and blocked-authority traces plus rejecting controls, while four retained AsiStackProofs.Planning delta-route theorems reject authority widening, stop erasure, and blocked-authority dispatch and accept a complete bounded audit. The former valid-summary projection is retired."
+      "rationale": "Implemented as an exact replan-subset and fixture binding: the independent delta consumer checks two accepted and nine rejected records and requires lifecycle preservation, a complete scoped-replan witness, denial noninterference, and authority/dispatch/stop/scope/residual countermodels. The former valid-summary projection remains retired."
     },
     {
       "tag": "lean:planforge.dag.operational_invariant",

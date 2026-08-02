@@ -500,6 +500,7 @@ evaluation, causal ablations, reproduction, and transfer pass.
 | Plan-control record proof envelope | Check that a modeled dispatchable plan carries command validation, constraints, stop conditions, context requirements, a verification plan, no blocked nodes, a dispatch receipt, and authority within the parent ceiling; check that modeled blocked and replanned states preserve the expected receipt and residual boundaries. | implemented in `AsiStackProofs.Planning`; planner quality and runtime replanning traces not run |
 | Plan-control dispatch route proof | Check that a modeled valid dispatchable plan routes through the finite `PlanControlRouteFor` decision to `allowDispatch` only after the required command, constraint, stop-condition, context, verification, receipt, and no-blocked-node gates hold. | implemented in `AsiStackProofs.Planning`; route-quality, scheduler, and runtime dispatch traces not run |
 | Plan-graph admission lifecycle route proof | Check that a modeled plan graph admission routes missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contract, verification plan, dispatch gate, dispatch receipt, replanning controls, residual register, and non-claim boundary to explicit outcomes before admission. | implemented in `AsiStackProofs.Planning`; finite record routing only, not planner quality, scheduler behavior, selected-tier adequacy, or deployed replanning |
+| Reachable planning lifecycle and vertical-refinement proof | Check arbitrary finite accepted runs for authority, ready-before-job, feedback-before-replan, version, stop-condition, dispatch, and residual invariants; exercise one complete replan witness and rejecting transition controls; refine admitted-plan and lowered-job events into the intent-to-execution vertical model. | implemented in `AsiStackProofs.Planning`; 21 lifecycle declarations compile and are required by the scheduler/replan consumers; no planner-quality, dependency-truth, route-adequacy, deployed-scheduler, causal-benefit, or support-promotion claim |
 | Decomposition accuracy test | Check whether plan nodes preserve the accepted command objective and constraints. | planned; not run |
 | Dependency ordering test | Check whether dependencies precede dependents before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; synthetic graph fixtures only |
 | Context-demand prediction test | Check whether each node declares needed context before execution. | planned; not run |
@@ -512,7 +513,7 @@ evaluation, causal ablations, reproduction, and transfer pass.
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
 | Escalation trigger test | Check that failed quality predicates route to escalation or residuals. | implemented in `AsiStackProofs.PlanForge`; builds locally |
 
-The fixture-shape check, finite Lean predicates, and synthetic plan-execution harness now cover narrow dependency ordering, modeled dispatch gates, dispatchable-record route selection, plan-graph admission routing, blocked-plan receipt separation, DAG acyclicity, failed-quality escalation/residual routing, scheduler-state boundaries, runtime-replan delta shape, and replanning-residual bookkeeping. Decomposition quality, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, deployed runtime replanning, and support-state movement still require a planner harness, context-demand oracle, scheduler trace, or replay trace.
+The fixture-shape check, finite route predicates, reachable Planning lifecycle, vertical-refinement bridge, and synthetic plan-execution harness now cover narrow dependency ordering, modeled dispatch gates, dispatchable-record route selection, plan-graph admission routing, authority and stop preservation across arbitrary accepted finite runs, ready-before-job and feedback-before-replan ordering, exact version/residual accounting, blocked-plan receipt separation, eleven invalid-transition countermodels, DAG acyclicity, failed-quality escalation/residual routing, scheduler-state boundaries, and runtime-replan delta shape. Decomposition quality, dependency truth, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, deployed runtime replanning, causal benefit, and support-state movement still require a natural planner harness and Project Theseus system evidence.
 
 ### Formalization hooks
 
@@ -526,24 +527,28 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 | `lean:planforge.dag.operational_invariant` | `AsiStackProofs.PlanForge` | For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency. | implemented |
 | `lean:planforge.dag.failure_blocks_promotion` | `AsiStackProofs.PlanForge` | A node whose quality predicate fails must escalate or emit a residual. | implemented |
 
-The seven targets group 30 theorem declarations across
+The seven targets group 51 theorem declarations across
 `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge`. Their useful content
-is finite consequence and branch coverage over trusted records. The two former
+now includes a 21-result reachable planning lifecycle in addition to finite
+consequence and branch coverage over trusted records. The lifecycle proves
+arbitrary-run authority, ordering, version, stop, dispatch, and residual
+invariants; a complete scoped-replan witness; rejecting countermodels; denial
+noninterference; and two transitions that refine the independently owned
+intent-to-execution vertical model. The two former
 valid-summary projections are retired, and the independently implemented
 scheduler and replan consumers now bind to retained admission and delta route
 families. The former PlanForge conjunction projection is also retired: the
 public target now binds to `dispatchable_plan_graph_orders_member_edges` and
 `dependency_precedence_blocks_self_dependency`, so it claims finite listed-edge
 ordering and exclusion of a self-edge rather than general graph acyclicity.
-Several operational invariants still restate assumptions or unfold predicates;
-the admission and replan routes establish only the consequences of Boolean or
-enumerated fields. The index-order model is not general DAG acyclicity or
-dependency truth. These are activation scaffolds, not evidence of
+The models still trust authored decomposition, dependency, context, adequacy,
+route, receipt, authority, stop, and residual fields. The index-order model is
+not general DAG acyclicity or dependency truth. These are mechanized control
+semantics, not evidence of
 decomposition coverage, semantic dependency validity, context prediction,
 route adequacy, scheduler optimality, live feedback benefit, cost dominance,
-safe model-predictive control, or deployed replanning. Stronger graph semantics,
-countermodels, executable producers, observed outcomes, and runtime refinement
-remain required.
+safe model-predictive control, or deployed replanning.
+Stronger graph semantics, executable planner producers, observed outcomes, causal comparison, deployment, reproduction, and transfer remain Project Theseus or empirical obligations.
 
 These targets do not prove planning correctness, dependency truth, useful
 scheduling, safe control, or deployed runtime behavior.

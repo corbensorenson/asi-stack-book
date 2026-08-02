@@ -1,3 +1,5 @@
+import AsiStackProofs.IntentExecutionRefinement
+
 namespace AsiStackProofs.Planning
 
 inductive AuthorityLevel where
@@ -866,5 +868,695 @@ def RuntimeReplanDeltaSummaryValid
                     summary.blockedAuthorityNoDispatch = true ∧
                       summary.supportStateEffectNone = true ∧
                         summary.nonClaimBoundary = true
+
+/-! ## Reachable planning-control refinement -/
+
+inductive PlanningLifecyclePhase where
+  | command
+  | admitted
+  | ready
+  | lowered
+  | feedback
+  | blocked
+deriving DecidableEq, Repr
+
+inductive PlanningLifecycleEventKind where
+  | admitPlan
+  | markNodeReady
+  | lowerJob
+  | observeFeedback
+  | applyReplan
+  | blockPlan
+deriving DecidableEq, Repr
+
+structure PlanningLifecycleState where
+  phase : PlanningLifecyclePhase
+  rootContract : Nat
+  currentArtifact : Nat
+  parentAuthorityCeiling : Nat
+  activeAuthority : Nat
+  planVersion : Nat
+  readyNodes : Nat
+  loweredJobs : Nat
+  feedbackCount : Nat
+  replanCount : Nat
+  residualCount : Nat
+  stopConditionsPreserved : Bool
+  pendingDispatch : Bool
+  logicalTime : Nat
+deriving DecidableEq, Repr
+
+structure PlanningLifecycleEvent where
+  kind : PlanningLifecycleEventKind
+  fromPhase : PlanningLifecyclePhase
+  toPhase : PlanningLifecyclePhase
+  rootContract : Nat
+  parentArtifact : Nat
+  outputArtifact : Nat
+  requestedAuthority : Nat
+  logicalTime : Nat
+  commandAccepted : Bool
+  decompositionComplete : Bool
+  graphAcyclic : Bool
+  dependenciesOrdered : Bool
+  dependenciesReady : Bool
+  contextPresent : Bool
+  adequacyContractPresent : Bool
+  selectedRouteAdequate : Bool
+  verificationPresent : Bool
+  dispatchReceipt : Bool
+  feedbackReceipt : Bool
+  affectedSubgraphOnly : Bool
+  authorityPreserved : Bool
+  stopConditionsPreserved : Bool
+  contextDeltaRecorded : Bool
+  verificationDeltaRecorded : Bool
+  blockedAuthorityPath : Bool
+  hiddenOverrideApplied : Bool
+  residualDelta : Nat
+deriving DecidableEq, Repr
+
+def PlanningLifecycleEventSpecificValid
+    (state : PlanningLifecycleState)
+    (event : PlanningLifecycleEvent) : Bool :=
+  match event.kind with
+  | .admitPlan =>
+      decide (event.fromPhase = .command) &&
+        decide (event.toPhase = .admitted) &&
+          event.commandAccepted && event.decompositionComplete &&
+            event.graphAcyclic && event.dependenciesOrdered &&
+              event.adequacyContractPresent &&
+                event.verificationPresent &&
+                  decide (event.residualDelta = 0)
+  | .markNodeReady =>
+      decide (event.fromPhase = .admitted) &&
+        decide (event.toPhase = .ready) &&
+          event.dependenciesReady && event.contextPresent &&
+            event.adequacyContractPresent &&
+              event.selectedRouteAdequate && event.verificationPresent &&
+                !event.blockedAuthorityPath && !event.dispatchReceipt &&
+                  decide (event.residualDelta = 0)
+  | .lowerJob =>
+      decide (event.fromPhase = .ready) &&
+        decide (event.toPhase = .lowered) && state.pendingDispatch &&
+          event.dispatchReceipt && !event.blockedAuthorityPath &&
+            decide (event.residualDelta = 0)
+  | .observeFeedback =>
+      decide (event.fromPhase = .lowered) &&
+        decide (event.toPhase = .feedback) && event.feedbackReceipt &&
+          !event.dispatchReceipt && decide (event.residualDelta = 0)
+  | .applyReplan =>
+      decide (event.fromPhase = .feedback) &&
+        decide (event.toPhase = .admitted) &&
+          event.affectedSubgraphOnly && event.authorityPreserved &&
+            event.stopConditionsPreserved && event.contextDeltaRecorded &&
+              event.verificationDeltaRecorded && !event.dispatchReceipt &&
+                decide (0 < event.residualDelta)
+  | .blockPlan =>
+      decide (event.toPhase = .blocked) && !event.dispatchReceipt &&
+        decide (0 < event.residualDelta)
+
+def PlanningLifecycleEventAdmissible
+    (state : PlanningLifecycleState)
+    (event : PlanningLifecycleEvent) : Prop :=
+  state.phase = event.fromPhase ∧
+    state.rootContract = event.rootContract ∧
+      state.currentArtifact = event.parentArtifact ∧
+        state.logicalTime < event.logicalTime ∧
+          event.requestedAuthority ≤ state.parentAuthorityCeiling ∧
+            event.stopConditionsPreserved = true ∧
+              event.hiddenOverrideApplied = false ∧
+                PlanningLifecycleEventSpecificValid state event = true
+
+instance planningLifecycleEventAdmissibleDecidable
+    (state : PlanningLifecycleState) (event : PlanningLifecycleEvent) :
+    Decidable (PlanningLifecycleEventAdmissible state event) := by
+  unfold PlanningLifecycleEventAdmissible
+  infer_instance
+
+def ApplyPlanningLifecycleEvent
+    (state : PlanningLifecycleState)
+    (event : PlanningLifecycleEvent) : PlanningLifecycleState :=
+  { state with
+    phase := event.toPhase
+    currentArtifact := event.outputArtifact
+    activeAuthority := event.requestedAuthority
+    planVersion := state.planVersion +
+      (if event.kind = .applyReplan then 1 else 0)
+    readyNodes := state.readyNodes +
+      (if event.kind = .markNodeReady then 1 else 0)
+    loweredJobs := state.loweredJobs +
+      (if event.kind = .lowerJob then 1 else 0)
+    feedbackCount := state.feedbackCount +
+      (if event.kind = .observeFeedback then 1 else 0)
+    replanCount := state.replanCount +
+      (if event.kind = .applyReplan then 1 else 0)
+    residualCount := state.residualCount + event.residualDelta
+    stopConditionsPreserved :=
+      state.stopConditionsPreserved && event.stopConditionsPreserved
+    pendingDispatch := event.kind = .markNodeReady
+    logicalTime := event.logicalTime }
+
+def PlanningLifecycleStep
+    (state : PlanningLifecycleState)
+    (event : PlanningLifecycleEvent) : Option PlanningLifecycleState :=
+  if PlanningLifecycleEventAdmissible state event then
+    some (ApplyPlanningLifecycleEvent state event)
+  else
+    none
+
+def PlanningLifecycleRun :
+    PlanningLifecycleState → List PlanningLifecycleEvent →
+      Option PlanningLifecycleState
+  | state, [] => some state
+  | state, event :: tail =>
+      match PlanningLifecycleStep state event with
+      | none => none
+      | some next => PlanningLifecycleRun next tail
+
+def PlanningLifecycleInvariant (state : PlanningLifecycleState) : Prop :=
+  state.activeAuthority ≤ state.parentAuthorityCeiling ∧
+    state.loweredJobs ≤ state.readyNodes ∧
+      state.feedbackCount ≤ state.loweredJobs ∧
+        state.replanCount ≤ state.feedbackCount ∧
+          state.planVersion = state.replanCount + 1 ∧
+            state.stopConditionsPreserved = true ∧
+              (state.phase = .ready →
+                state.pendingDispatch = true ∧
+                  state.loweredJobs < state.readyNodes) ∧
+                (state.phase = .lowered →
+                  state.pendingDispatch = false ∧
+                    state.feedbackCount < state.loweredJobs) ∧
+                  (state.phase = .feedback →
+                    state.pendingDispatch = false ∧
+                      state.replanCount < state.feedbackCount) ∧
+                    (state.phase = .blocked →
+                      state.pendingDispatch = false)
+
+theorem accepted_planning_lifecycle_step_is_admissible
+    {state next : PlanningLifecycleState}
+    {event : PlanningLifecycleEvent}
+    (accepted : PlanningLifecycleStep state event = some next) :
+    PlanningLifecycleEventAdmissible state event := by
+  unfold PlanningLifecycleStep at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_planning_lifecycle_step_applies_event
+    {state next : PlanningLifecycleState}
+    {event : PlanningLifecycleEvent}
+    (accepted : PlanningLifecycleStep state event = some next) :
+    next = ApplyPlanningLifecycleEvent state event := by
+  unfold PlanningLifecycleStep at accepted
+  split at accepted
+  · simp_all
+  · simp at accepted
+
+theorem apply_planning_lifecycle_event_preserves_invariant
+    {state : PlanningLifecycleState}
+    {event : PlanningLifecycleEvent}
+    (invariant : PlanningLifecycleInvariant state)
+    (admissible : PlanningLifecycleEventAdmissible state event) :
+    PlanningLifecycleInvariant (ApplyPlanningLifecycleEvent state event) := by
+  rcases invariant with
+    ⟨authority, loweredReady, feedbackLowered, replanFeedback,
+      version, stops, readyState, loweredState, feedbackState, blockedState⟩
+  rcases admissible with
+    ⟨phase, _root, _artifact, _time, requested, eventStops,
+      _override, specific⟩
+  cases kind : event.kind
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have phasePair :
+        event.fromPhase = .command ∧ event.toPhase = .admitted :=
+      specific.1.1.1.1.1.1.1
+    have statePhase : state.phase = .command := phase.trans phasePair.1
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simpa [ApplyPlanningLifecycleEvent, kind] using loweredReady
+    · simpa [ApplyPlanningLifecycleEvent, kind] using feedbackLowered
+    · simpa [ApplyPlanningLifecycleEvent, kind] using replanFeedback
+    · simpa [ApplyPlanningLifecycleEvent, kind] using version
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have phasePair :
+        event.fromPhase = .admitted ∧ event.toPhase = .ready :=
+      specific.1.1.1.1.1.1.1.1
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      omega
+    · simpa [ApplyPlanningLifecycleEvent, kind] using feedbackLowered
+    · simpa [ApplyPlanningLifecycleEvent, kind] using replanFeedback
+    · simpa [ApplyPlanningLifecycleEvent, kind] using version
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+      omega
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have phasePair :
+        event.fromPhase = .ready ∧ event.toPhase = .lowered :=
+      specific.1.1.1.1
+    have currentReady := readyState (phase.trans phasePair.1)
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      exact currentReady.2
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      omega
+    · simpa [ApplyPlanningLifecycleEvent, kind] using replanFeedback
+    · simpa [ApplyPlanningLifecycleEvent, kind] using version
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+      omega
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have phasePair :
+        event.fromPhase = .lowered ∧ event.toPhase = .feedback :=
+      specific.1.1.1
+    have currentLowered := loweredState (phase.trans phasePair.1)
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simpa [ApplyPlanningLifecycleEvent, kind] using loweredReady
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      exact currentLowered.2
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      omega
+    · simpa [ApplyPlanningLifecycleEvent, kind] using version
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+      omega
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have phasePair :
+        event.fromPhase = .feedback ∧ event.toPhase = .admitted :=
+      specific.1.1.1.1.1.1.1
+    have currentFeedback := feedbackState (phase.trans phasePair.1)
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simpa [ApplyPlanningLifecycleEvent, kind] using loweredReady
+    · simpa [ApplyPlanningLifecycleEvent, kind] using feedbackLowered
+    · simp [ApplyPlanningLifecycleEvent, kind]
+      exact currentFeedback.2
+    · simp [ApplyPlanningLifecycleEvent, kind, version]
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+    · simp [ApplyPlanningLifecycleEvent, kind, phasePair.2]
+  · simp [PlanningLifecycleEventSpecificValid, kind] at specific
+    have toPhase : event.toPhase = .blocked := specific.1.1
+    refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+    · exact requested
+    · simpa [ApplyPlanningLifecycleEvent, kind] using loweredReady
+    · simpa [ApplyPlanningLifecycleEvent, kind] using feedbackLowered
+    · simpa [ApplyPlanningLifecycleEvent, kind] using replanFeedback
+    · simpa [ApplyPlanningLifecycleEvent, kind] using version
+    · simp [ApplyPlanningLifecycleEvent, kind, stops, eventStops]
+    · simp [ApplyPlanningLifecycleEvent, kind, toPhase]
+    · simp [ApplyPlanningLifecycleEvent, kind, toPhase]
+    · simp [ApplyPlanningLifecycleEvent, kind, toPhase]
+    · simp [ApplyPlanningLifecycleEvent, kind, toPhase]
+
+theorem accepted_planning_lifecycle_step_preserves_invariant
+    {state next : PlanningLifecycleState}
+    {event : PlanningLifecycleEvent}
+    (invariant : PlanningLifecycleInvariant state)
+    (accepted : PlanningLifecycleStep state event = some next) :
+    PlanningLifecycleInvariant next := by
+  rw [accepted_planning_lifecycle_step_applies_event accepted]
+  exact apply_planning_lifecycle_event_preserves_invariant invariant
+    (accepted_planning_lifecycle_step_is_admissible accepted)
+
+theorem planning_lifecycle_run_preserves_invariant
+    {state next : PlanningLifecycleState}
+    {events : List PlanningLifecycleEvent}
+    (invariant : PlanningLifecycleInvariant state)
+    (run : PlanningLifecycleRun state events = some next) :
+    PlanningLifecycleInvariant next := by
+  induction events generalizing state with
+  | nil =>
+      simp [PlanningLifecycleRun] at run
+      subst next
+      exact invariant
+  | cons event tail ih =>
+      simp [PlanningLifecycleRun] at run
+      cases step : PlanningLifecycleStep state event with
+      | none => simp [step] at run
+      | some middle =>
+          simp [step] at run
+          exact ih
+            (accepted_planning_lifecycle_step_preserves_invariant invariant step)
+            run
+
+def initialPlanningLifecycleState : PlanningLifecycleState where
+  phase := .command
+  rootContract := 101
+  currentArtifact := 1002
+  parentAuthorityCeiling := 3
+  activeAuthority := 0
+  planVersion := 1
+  readyNodes := 0
+  loweredJobs := 0
+  feedbackCount := 0
+  replanCount := 0
+  residualCount := 0
+  stopConditionsPreserved := true
+  pendingDispatch := false
+  logicalTime := 1
+
+def basePlanningLifecycleEvent : PlanningLifecycleEvent where
+  kind := .admitPlan
+  fromPhase := .command
+  toPhase := .admitted
+  rootContract := 101
+  parentArtifact := 1002
+  outputArtifact := 1003
+  requestedAuthority := 3
+  logicalTime := 2
+  commandAccepted := true
+  decompositionComplete := true
+  graphAcyclic := true
+  dependenciesOrdered := true
+  dependenciesReady := true
+  contextPresent := true
+  adequacyContractPresent := true
+  selectedRouteAdequate := true
+  verificationPresent := true
+  dispatchReceipt := false
+  feedbackReceipt := false
+  affectedSubgraphOnly := true
+  authorityPreserved := true
+  stopConditionsPreserved := true
+  contextDeltaRecorded := true
+  verificationDeltaRecorded := true
+  blockedAuthorityPath := false
+  hiddenOverrideApplied := false
+  residualDelta := 0
+
+def completePlanningLifecycleTrace : List PlanningLifecycleEvent := [
+  basePlanningLifecycleEvent,
+  { basePlanningLifecycleEvent with
+      kind := .markNodeReady
+      fromPhase := .admitted
+      toPhase := .ready
+      parentArtifact := 1003
+      outputArtifact := 1003
+      logicalTime := 3 },
+  { basePlanningLifecycleEvent with
+      kind := .lowerJob
+      fromPhase := .ready
+      toPhase := .lowered
+      parentArtifact := 1003
+      outputArtifact := 1004
+      dispatchReceipt := true
+      logicalTime := 4 },
+  { basePlanningLifecycleEvent with
+      kind := .observeFeedback
+      fromPhase := .lowered
+      toPhase := .feedback
+      parentArtifact := 1004
+      outputArtifact := 1004
+      feedbackReceipt := true
+      logicalTime := 5 },
+  { basePlanningLifecycleEvent with
+      kind := .applyReplan
+      fromPhase := .feedback
+      toPhase := .admitted
+      parentArtifact := 1004
+      outputArtifact := 1005
+      residualDelta := 1
+      logicalTime := 6 },
+  { basePlanningLifecycleEvent with
+      kind := .markNodeReady
+      fromPhase := .admitted
+      toPhase := .ready
+      parentArtifact := 1005
+      outputArtifact := 1005
+      logicalTime := 7 },
+  { basePlanningLifecycleEvent with
+      kind := .lowerJob
+      fromPhase := .ready
+      toPhase := .lowered
+      parentArtifact := 1005
+      outputArtifact := 1006
+      dispatchReceipt := true
+      logicalTime := 8 }
+]
+
+theorem initial_planning_lifecycle_state_satisfies_invariant :
+    PlanningLifecycleInvariant initialPlanningLifecycleState := by
+  simp [PlanningLifecycleInvariant, initialPlanningLifecycleState]
+
+theorem complete_planning_lifecycle_trace_reaches_replanned_lowering :
+    PlanningLifecycleRun initialPlanningLifecycleState
+      completePlanningLifecycleTrace =
+      some {
+        phase := .lowered
+        rootContract := 101
+        currentArtifact := 1006
+        parentAuthorityCeiling := 3
+        activeAuthority := 3
+        planVersion := 2
+        readyNodes := 2
+        loweredJobs := 2
+        feedbackCount := 1
+        replanCount := 1
+        residualCount := 1
+        stopConditionsPreserved := true
+        pendingDispatch := false
+        logicalTime := 8 } := by
+  decide
+
+theorem planning_lifecycle_denial_is_state_noninterfering
+    {state : PlanningLifecycleState} {event : PlanningLifecycleEvent}
+    (denied : PlanningLifecycleStep state event = none) :
+    ¬ ∃ next, PlanningLifecycleStep state event = some next := by
+  intro accepted
+  rcases accepted with ⟨next, accepted⟩
+  rw [denied] at accepted
+  contradiction
+
+theorem authority_widening_is_rejected_before_plan_admission :
+    PlanningLifecycleStep initialPlanningLifecycleState
+      { basePlanningLifecycleEvent with requestedAuthority := 4 } = none := by
+  decide
+
+theorem incomplete_decomposition_is_rejected_before_plan_admission :
+    PlanningLifecycleStep initialPlanningLifecycleState
+      { basePlanningLifecycleEvent with decompositionComplete := false } = none := by
+  decide
+
+def admittedPlanningLifecycleState : PlanningLifecycleState :=
+  ApplyPlanningLifecycleEvent initialPlanningLifecycleState
+    basePlanningLifecycleEvent
+
+def readyPlanningLifecycleEvent : PlanningLifecycleEvent :=
+  { basePlanningLifecycleEvent with
+      kind := .markNodeReady
+      fromPhase := .admitted
+      toPhase := .ready
+      parentArtifact := 1003
+      outputArtifact := 1003
+      logicalTime := 3 }
+
+theorem missing_context_is_rejected_before_node_readiness :
+    PlanningLifecycleStep admittedPlanningLifecycleState
+      { readyPlanningLifecycleEvent with contextPresent := false } = none := by
+  decide
+
+theorem inadequate_selected_route_is_rejected_before_node_readiness :
+    PlanningLifecycleStep admittedPlanningLifecycleState
+      { readyPlanningLifecycleEvent with selectedRouteAdequate := false } = none := by
+  decide
+
+def readyPlanningLifecycleState : PlanningLifecycleState :=
+  ApplyPlanningLifecycleEvent admittedPlanningLifecycleState
+    readyPlanningLifecycleEvent
+
+def lowerPlanningLifecycleEvent : PlanningLifecycleEvent :=
+  { basePlanningLifecycleEvent with
+      kind := .lowerJob
+      fromPhase := .ready
+      toPhase := .lowered
+      parentArtifact := 1003
+      outputArtifact := 1004
+      dispatchReceipt := true
+      logicalTime := 4 }
+
+theorem missing_dispatch_receipt_is_rejected_before_job_lowering :
+    PlanningLifecycleStep readyPlanningLifecycleState
+      { lowerPlanningLifecycleEvent with dispatchReceipt := false } = none := by
+  decide
+
+theorem blocked_authority_path_is_rejected_before_job_lowering :
+    PlanningLifecycleStep readyPlanningLifecycleState
+      { lowerPlanningLifecycleEvent with blockedAuthorityPath := true } = none := by
+  decide
+
+def loweredPlanningLifecycleState : PlanningLifecycleState :=
+  ApplyPlanningLifecycleEvent readyPlanningLifecycleState
+    lowerPlanningLifecycleEvent
+
+theorem feedback_before_job_lowering_is_rejected :
+    PlanningLifecycleStep readyPlanningLifecycleState
+      { basePlanningLifecycleEvent with
+          kind := .observeFeedback
+          fromPhase := .lowered
+          toPhase := .feedback
+          parentArtifact := 1004
+          outputArtifact := 1004
+          feedbackReceipt := true
+          logicalTime := 5 } = none := by
+  decide
+
+def feedbackPlanningLifecycleEvent : PlanningLifecycleEvent :=
+  { basePlanningLifecycleEvent with
+      kind := .observeFeedback
+      fromPhase := .lowered
+      toPhase := .feedback
+      parentArtifact := 1004
+      outputArtifact := 1004
+      feedbackReceipt := true
+      logicalTime := 5 }
+
+def feedbackPlanningLifecycleState : PlanningLifecycleState :=
+  ApplyPlanningLifecycleEvent loweredPlanningLifecycleState
+    feedbackPlanningLifecycleEvent
+
+def replanPlanningLifecycleEvent : PlanningLifecycleEvent :=
+  { basePlanningLifecycleEvent with
+      kind := .applyReplan
+      fromPhase := .feedback
+      toPhase := .admitted
+      parentArtifact := 1004
+      outputArtifact := 1005
+      residualDelta := 1
+      logicalTime := 6 }
+
+theorem stop_condition_erasure_is_rejected_before_replan :
+    PlanningLifecycleStep feedbackPlanningLifecycleState
+      { replanPlanningLifecycleEvent with
+          stopConditionsPreserved := false } = none := by
+  decide
+
+theorem unscoped_repair_is_rejected_before_replan :
+    PlanningLifecycleStep feedbackPlanningLifecycleState
+      { replanPlanningLifecycleEvent with
+          affectedSubgraphOnly := false } = none := by
+  decide
+
+theorem missing_replan_residual_is_rejected :
+    PlanningLifecycleStep feedbackPlanningLifecycleState
+      { replanPlanningLifecycleEvent with residualDelta := 0 } = none := by
+  decide
+
+theorem hidden_override_is_rejected_before_planning_transition :
+    PlanningLifecycleStep initialPlanningLifecycleState
+      { basePlanningLifecycleEvent with hiddenOverrideApplied := true } = none := by
+  decide
+
+def ProjectPlanningPhaseToVerticalLayer :
+    PlanningLifecyclePhase →
+      AsiStackProofs.IntentExecutionRefinement.VerticalLayer
+  | .command => .command
+  | .admitted => .plan
+  | .ready => .plan
+  | .lowered => .job
+  | .feedback => .plan
+  | .blocked => .blocked
+
+def ProjectPlanningStateToVertical
+    (state : PlanningLifecycleState) :
+    AsiStackProofs.IntentExecutionRefinement.VerticalState where
+  layer := ProjectPlanningPhaseToVerticalLayer state.phase
+  rootContract := state.rootContract
+  currentArtifact := state.currentArtifact
+  authorityCeiling := state.parentAuthorityCeiling
+  activeAuthority := state.activeAuthority
+  requiredApproval := false
+  approvalPresent := false
+  dispatchReceipt := false
+  attemptedEffects := 0
+  observedEffects := 0
+  artifactBound := false
+  verificationComplete := false
+  delivered := false
+  openResiduals := state.residualCount
+  stopped := state.phase = .blocked
+  logicalTime := state.logicalTime
+
+def ProjectPlanningEventToVertical
+    (event : PlanningLifecycleEvent) :
+    AsiStackProofs.IntentExecutionRefinement.VerticalEvent where
+  kind := if event.kind = .admitPlan then .lowerPlan else .lowerJob
+  fromLayer := ProjectPlanningPhaseToVerticalLayer event.fromPhase
+  toLayer := ProjectPlanningPhaseToVerticalLayer event.toPhase
+  rootContract := event.rootContract
+  parentArtifact := event.parentArtifact
+  outputArtifact := event.outputArtifact
+  requestedAuthority := event.requestedAuthority
+  approvalReceipt := false
+  dispatchReceipt := false
+  hiddenOverrideApplied := event.hiddenOverrideApplied
+  effectDelta := 0
+  observationDelta := 0
+  observationReceipt := false
+  artifactParentBound := false
+  independentVerifier := false
+  verificationReceipt := false
+  deliveryReceipt := false
+  blockReceipt := false
+  residualDelta := event.residualDelta
+  rollbackExact := false
+  logicalTime := event.logicalTime
+
+theorem admitted_plan_event_refines_vertical_lower_plan
+    {state : PlanningLifecycleState} {event : PlanningLifecycleEvent}
+    (kind : event.kind = .admitPlan)
+    (admissible : PlanningLifecycleEventAdmissible state event) :
+    AsiStackProofs.IntentExecutionRefinement.VerticalEventValid
+      (ProjectPlanningStateToVertical state)
+      (ProjectPlanningEventToVertical event) := by
+  rcases admissible with
+    ⟨phase, root, artifact, time, authority, _stops, hidden, specific⟩
+  simp [PlanningLifecycleEventSpecificValid, kind] at specific
+  have phasePair :
+      event.fromPhase = .command ∧ event.toPhase = .admitted :=
+    specific.1.1.1.1.1.1.1
+  simp [AsiStackProofs.IntentExecutionRefinement.VerticalEventValid,
+    AsiStackProofs.IntentExecutionRefinement.EventSpecificValid,
+    ProjectPlanningStateToVertical, ProjectPlanningEventToVertical,
+    ProjectPlanningPhaseToVerticalLayer, kind, phase, root, artifact, time,
+    authority, hidden, phasePair.1, phasePair.2]
+
+theorem lowered_job_event_refines_vertical_lower_job
+    {state : PlanningLifecycleState} {event : PlanningLifecycleEvent}
+    (kind : event.kind = .lowerJob)
+    (admissible : PlanningLifecycleEventAdmissible state event) :
+    AsiStackProofs.IntentExecutionRefinement.VerticalEventValid
+      (ProjectPlanningStateToVertical state)
+      (ProjectPlanningEventToVertical event) := by
+  rcases admissible with
+    ⟨phase, root, artifact, time, authority, _stops, hidden, specific⟩
+  simp [PlanningLifecycleEventSpecificValid, kind] at specific
+  have phasePair :
+      event.fromPhase = .ready ∧ event.toPhase = .lowered :=
+    specific.1.1.1.1
+  simp [AsiStackProofs.IntentExecutionRefinement.VerticalEventValid,
+    AsiStackProofs.IntentExecutionRefinement.EventSpecificValid,
+    ProjectPlanningStateToVertical, ProjectPlanningEventToVertical,
+    ProjectPlanningPhaseToVerticalLayer, kind, phase, root, artifact, time,
+    authority, hidden, phasePair.1, phasePair.2]
 
 end AsiStackProofs.Planning

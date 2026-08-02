@@ -170,16 +170,16 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 26,
-    "P1": 900,
-    "P2": 172,
-    "P3": 668,
-    "P4": 101,
+    "P0": 25,
+    "P1": 877,
+    "P2": 173,
+    "P3": 708,
+    "P4": 105,
     "P5": 116,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 1983,
+    "retain": 2004,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -791,7 +791,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 1983:
+    if summary.get("current_theorem_count") != 2004:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1082,8 +1082,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/Planning.lean"
     }
-    if len(planning_rows) != 27:
-        out.append("Planning must retain exactly twenty-seven declarations")
+    if len(planning_rows) != 48:
+        out.append("Planning must retain exactly forty-eight declarations")
     if retired_planning_names & {row["name"] for row in planning_rows}:
         out.append("Planning retained an executed premise or summary projection")
 
@@ -1200,7 +1200,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 1983
+        status.get("theorem_count") != 2004
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

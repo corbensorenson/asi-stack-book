@@ -31,6 +31,7 @@ LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Planning.lean"
 COMMAND = "python3 scripts/validate_planning_scheduler_state_probe.py"
 PROOF_TAG = "lean:planning.scheduler_state.probe_fixture_bridge"
 CODEX_TEST_NAME = "Planning scheduler-state probe"
+EXPECTED_PLANNING_THEOREM_COUNT = 48
 REQUIRED_THEOREMS = [
     "missing_command_contract_blocks_plan_graph_admission",
     "incomplete_decomposition_blocks_plan_graph_admission",
@@ -46,6 +47,27 @@ REQUIRED_THEOREMS = [
     "missing_residual_register_blocks_new_plan_admission",
     "complete_new_plan_graph_routes_to_admissible",
     "complete_replanned_graph_routes_to_admissible",
+    "accepted_planning_lifecycle_step_is_admissible",
+    "accepted_planning_lifecycle_step_applies_event",
+    "apply_planning_lifecycle_event_preserves_invariant",
+    "accepted_planning_lifecycle_step_preserves_invariant",
+    "planning_lifecycle_run_preserves_invariant",
+    "initial_planning_lifecycle_state_satisfies_invariant",
+    "complete_planning_lifecycle_trace_reaches_replanned_lowering",
+    "planning_lifecycle_denial_is_state_noninterfering",
+    "authority_widening_is_rejected_before_plan_admission",
+    "incomplete_decomposition_is_rejected_before_plan_admission",
+    "missing_context_is_rejected_before_node_readiness",
+    "inadequate_selected_route_is_rejected_before_node_readiness",
+    "missing_dispatch_receipt_is_rejected_before_job_lowering",
+    "blocked_authority_path_is_rejected_before_job_lowering",
+    "feedback_before_job_lowering_is_rejected",
+    "stop_condition_erasure_is_rejected_before_replan",
+    "unscoped_repair_is_rejected_before_replan",
+    "missing_replan_residual_is_rejected",
+    "hidden_override_is_rejected_before_planning_transition",
+    "admitted_plan_event_refines_vertical_lower_plan",
+    "lowered_job_event_refines_vertical_lower_job",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not prove decomposition quality",
@@ -562,9 +584,22 @@ def validate_manifest(errors: list[str]) -> None:
 
 def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
+    theorem_count = len(re.findall(r"(?m)^theorem\s+[A-Za-z_][A-Za-z0-9_']*", text))
+    if theorem_count != EXPECTED_PLANNING_THEOREM_COUNT:
+        errors.append(
+            f"{rel(LEAN_FILE)} has {theorem_count} theorem declarations; "
+            f"expected exactly {EXPECTED_PLANNING_THEOREM_COUNT}."
+        )
     for theorem in REQUIRED_THEOREMS:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
+    for label, pattern in (
+        ("sorry", r"\bsorry\b"),
+        ("admit", r"\badmit\b"),
+        ("axiom declaration", r"(?m)^\s*axiom\s"),
+    ):
+        if re.search(pattern, text):
+            errors.append(f"{rel(LEAN_FILE)} contains forbidden {label}.")
     for field in (
         "validSchedulerTracePresent",
         "localRepairTracePresent",
