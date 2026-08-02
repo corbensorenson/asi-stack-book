@@ -99,7 +99,8 @@ as ignored local history, while generation two is the active quality lane.
 Generation-two chapters 1–17 have passed beat-plan, animatic, and
 picture-and-sound-lock gates; Chapter 18 is scripted with its custom scene,
 exact legacy-receipt captions, transcript, and thumbnail under revision;
-Chapter 19 has passed its beat-plan and animatic gates; and chapters 20–84
+Chapter 19 has passed its beat-plan and animatic gates; Chapter 20 has a
+rendered animatic marked revise for narration refresh; and chapters 21–84
 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
@@ -147,13 +148,14 @@ continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
 The first five form the remediation cohort, the remaining seven previews
 followed, and chapters 13–84 were held until the revised method passed. Chapters
 13–17 are now through picture-and-sound lock under that method; Chapter 19 has
-cleared animatic only; chapters 18–84 remain gated behind the same production
-chain. Existing unlisted embeds remain
+cleared animatic; Chapter 20 has a rendered animatic marked revise because its
+inherited narration still needs a fresh voice/prose pass; and chapters 18 and
+21–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 65 planned chapters, one scripted chapter,
-one animatic-passed chapter, and seventeen chapters through both animatic and
-picture-and-sound lock. The
+The generation-2 ledger currently has 64 planned chapters, one scripted chapter,
+one animatic-passed chapter, one animatic marked revise, and seventeen chapters
+through both animatic and picture-and-sound lock. The
 first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
 exhaustive caption-boundary review, and independent per-dimension scores without
@@ -219,6 +221,19 @@ visible across 24 receipt-bound beats. Its 05:18.170 exact narration receipt,
 mechanical A/V audit are complete at the animatic gate; picture-and-sound lock,
 release-candidate, independent review, publication, and Quarto reconciliation
 remain intentionally ungranted.
+
+Chapter 20, `security-kernel-and-digital-scifs`, now has a bespoke
+security-operations desk: an untrusted prompt fans across model, runtime,
+operator, vendor, and descendant boundaries; an exact principal/purpose/target/
+taint/budget/nonce lease admits minimized context into a graded SCIF; the
+effect gate, revocation lanes, confused-deputy failures, typed dispositions,
+bounded local counters, and media non-promotion boundary remain visible across
+22 receipt-bound beats. Its 04:57.030 exact legacy-receipt animatic, 64
+captions, descriptive transcript, thumbnail, low-resolution render, and
+mechanical A/V audit are complete, but the animatic is marked revise because
+the inherited narration contains legacy template framing; a fresh narration
+receipt is required before picture-and-sound lock. No publication, Quarto
+reconciliation, or support-state promotion is implied.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,

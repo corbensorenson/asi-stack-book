@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Security Kernel and Digital SCIFs — generation two</title>
+  <desc id="desc">An untrusted prompt is separated from a protected SCIF by an exact authority lease and an effect gate; unresolved residuals remain visible.</desc>
+  <rect width="1280" height="720" fill="#101820"/>
+  <text x="70" y="96" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="46" font-weight="700">SECURITY KERNEL</text>
+  <text x="70" y="148" fill="#9C82E8" font-family="Avenir Next, sans-serif" font-size="31" font-weight="700">EXACT AUTHORITY • ISOLATED EFFECT</text>
+  <rect x="56" y="278" width="260" height="170" rx="20" fill="#182630" stroke="#FF6073" stroke-width="7"/>
+  <text x="186" y="348" text-anchor="middle" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="24" font-weight="700">UNTRUSTED</text>
+  <text x="186" y="384" text-anchor="middle" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="24" font-weight="700">PROMPT</text>
+  <path d="M330 363 H455" stroke="#F2BD63" stroke-width="7" marker-end="url(#arrow)"/>
+  <rect x="475" y="248" width="270" height="230" rx="20" fill="#182630" stroke="#F2BD63" stroke-width="7"/>
+  <text x="610" y="302" text-anchor="middle" fill="#F2BD63" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">AUTHORITY</text>
+  <text x="610" y="336" text-anchor="middle" fill="#F2BD63" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">LEASE</text>
+  <text x="610" y="390" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">PRINCIPAL · PURPOSE · TARGET</text>
+  <text x="610" y="420" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">TAINT · BUDGET · NONCE</text>
+  <path d="M760 363 H865" stroke="#9C82E8" stroke-width="7" marker-end="url(#arrow)"/>
+  <rect x="885" y="248" width="290" height="230" rx="20" fill="#182630" stroke="#9C82E8" stroke-width="7"/>
+  <text x="1030" y="310" text-anchor="middle" fill="#9C82E8" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">GRADED SCIF</text>
+  <text x="1030" y="358" text-anchor="middle" fill="#66D58A" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">EFFECT GATE</text>
+  <text x="1030" y="414" text-anchor="middle" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="17">REVOKE • OWN RESIDUAL</text>
+  <line x1="55" y1="555" x2="1225" y2="555" stroke="#FF6073" stroke-width="5" stroke-dasharray="15 12"/>
+  <text x="640" y="620" text-anchor="middle" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="27" font-weight="700">RECORD ≠ SECURITY • RECEIPT ≠ ENFORCEMENT</text>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F2BD63"/></marker></defs>
+</svg>
