@@ -896,11 +896,11 @@
               "name": "Executed Authority grant-to-effect refinement",
               "purpose": "Refine exact grant binding, ceiling, epoch, expiry, approval, dispatch, effect observation, revocation, one-shot use, and rollback against existing executed local evidence.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_authority_effect_refinement.py`: 3 reachable traces/20 events, 20 invariant-prefix checks, 23 batch-composition checks, 6 authority fixtures, 1 executed effect, 1 independent observation, 1 exact rollback, 2 pre-effect denials, 5 revocation entries, 9 governed scenarios, and 50/50 state-noninterfering mutation rejections; support-state effect none",
+              "result_status": "passes via `python3 scripts/validate_authority_effect_refinement.py`: recompiles the exact 31-theorem surface; 3 reachable traces/20 events, 20 invariant-prefix checks, 23 batch-composition checks, 6 authority fixtures, 1 executed effect, 1 independent observation, 1 exact rollback, 2 pre-effect denials, 5 revocation entries, 9 governed scenarios, and 50/50 state-noninterfering mutation rejections; support-state effect none",
               "status": "implemented bounded local refinement; no authentic identity/receipt, deployed authorization, concurrent revocation, production security, reproduction, transfer, safety, or chapter-core support claim"
             }
           ],
-          "lean_module": "AsiStackProofs.Authority",
+          "lean_module": "AsiStackProofs.AuthorityEffectRefinement",
           "proof_targets": [
             {
               "tag": "lean:authority.ceiling.operational_invariant",
@@ -911,19 +911,19 @@
             {
               "tag": "lean:authority.ceiling.failure_blocks_promotion",
               "module": "AsiStackProofs.AuthorityEffectRefinement",
-              "target": "Revoked grant IDs persist and cannot commit an effect in any successful suffix; the independent consumer checks one-use, two-use, and revocation traces, every prefix and batch split, and 50 state-noninterfering widening, substitution, freshness, receipt, observation, rollback, revocation, and reuse mutations.",
+              "target": "Revoked grant IDs persist and cannot approve, dispatch, or commit an effect in any successful suffix; the independent consumer recompiles the exact surface and checks one-use, two-use, and revocation traces, every prefix and batch split, and 50 state-noninterfering mutations.",
               "status": "implemented"
             },
             {
               "tag": "lean:authority.lifecycle.admission_route",
-              "module": "AsiStackProofs.Authority",
-              "target": "Modeled authority lifecycle admission routes missing principals, operations, permission classes, caller ceilings, target requirements, delegation chains, grants, active grant state, expiry and revocation boundaries, scope matches, grant-ceiling coverage, approval records, effect or denial receipts, audit refs, evidence-transition records, and non-claim boundaries to explicit outcomes.",
+              "module": "AsiStackProofs.AuthorityEffectRefinement",
+              "target": "The exact thirty-one-theorem grant-to-effect refinement and independent consumer preserve six authority-decision fixtures, arbitrary-run state invariants, valid traces, batch composition, exact grant binding, and explicit denial, rollback, and revocation routes.",
               "status": "implemented"
             },
             {
               "tag": "lean:authority.revocation.trace_surface_bridge",
-              "module": "AsiStackProofs.Authority",
-              "target": "A cross-artifact authority revocation trace preserves denial, revoked-receipt blocking, expired-approval no-mutation, SCIF inactive-approval blocking, blocked reference-trace authority, support-state non-promotion, and deployed-revocation non-claim boundaries.",
+              "module": "AsiStackProofs.AuthorityEffectRefinement",
+              "target": "Revoked grant IDs persist through every successful suffix, which excludes approval, dispatch, or effect under the revoked ID; rejected events return no successor, while the independent consumer preserves the five-entry cross-artifact revocation trace and zero support effect.",
               "status": "implemented"
             }
           ]

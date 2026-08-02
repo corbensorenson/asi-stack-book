@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2338 |
+| Theorem declarations classified | 2342 |
 | Direct/projection-style theorem declarations | 410 |
-| Derived/decomposed theorem declarations | 1384 |
+| Derived/decomposed theorem declarations | 1388 |
 | Unknown or mixed theorem declarations | 544 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -61,8 +61,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 21 | 11 | 9 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
-| `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 2 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 2 | 27 | 1 | 16 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Authority.lean` | unmapped | 0 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 4 | 31 | 1 | 20 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -404,7 +404,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | `valid_transition_without_grant_preserves_ceiling` | derived_or_decomposed | no | uses cases, contradiction, rcases, rw |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_dispatch_is_exactly_bound_and_fresh` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_effect_requires_exact_live_grant_approval_and_dispatch` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_grant_use_is_not_revoked` | derived_or_decomposed | no | uses have, rcases, simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_issue_respects_caller_ceiling_and_epoch` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_rollback_clears_effect_accounting` | derived_or_decomposed | no | uses have, simp, subst |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `accepted_step_preserves_state_invariant` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
@@ -419,7 +421,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `expired_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `initial_state_satisfies_authority_invariant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `invariant_without_active_grant_has_no_custody` | derived_or_decomposed | no | uses cases, constructor, contradiction, rcases, rw |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `rejected_step_returns_no_successor` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revocation_trace_closes_custody_and_advances_epoch` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_cannot_be_used_in_successful_suffix` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_cannot_commit_effect_in_successful_suffix` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst, unfold |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `revoked_grant_dispatch_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |

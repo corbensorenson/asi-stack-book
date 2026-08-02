@@ -5,16 +5,16 @@
   "state": "adequate",
   "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
   "module_count": 4,
-  "public_target_count": 11,
-  "theorem_declaration_count": 125,
+  "public_target_count": 13,
+  "theorem_declaration_count": 129,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
       "path": "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
       "disposition": "adequate",
-      "public_target_count": 2,
-      "theorem_declaration_count": 27,
-      "plain_language_proposition": "Within any successful finite grant lifecycle, accepted transitions preserve observation/effect accounting, live-grant ceiling/epoch/revocation safety, exact approval/dispatch custody, and recursive trace validity; event batches compose, revoked IDs persist, and no successful suffix can commit an effect under an already revoked ID.",
+      "public_target_count": 4,
+      "theorem_declaration_count": 31,
+      "plain_language_proposition": "Within any successful finite grant lifecycle, accepted transitions preserve exact record identity, non-authority, observation/effect accounting, live-grant ceiling/epoch/revocation safety, approval/dispatch custody, and recursive trace validity; event batches compose, revoked IDs persist, no successful suffix can approve, dispatch, or commit an effect under an already revoked ID, rejected events have no successor, and accepted rollback clears exact effect accounting.",
       "modeled_state": "Exact numeric grant, principal, operation, target, ceiling, epoch, logical time, expiry, remaining uses, approval, dispatch, revocation, local effect, observation, and rollback fields across seven event kinds, an inductive state invariant, a recursive trace-validity predicate, and three reachable traces covering one-use, two-use, and revocation lifecycles.",
       "assumptions": [
         "Grant, identity, target ownership, time, epoch, approval, dispatch, effect, observation, revocation, and rollback fields are truthful and authentic inputs.",

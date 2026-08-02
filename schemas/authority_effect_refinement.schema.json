@@ -4,7 +4,7 @@
   "title": "Authority Effect Refinement Result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "authority_fixture_count", "authority_fixture_accepted_count", "authority_fixture_rejected_count", "reachable_trace_event_count", "reachable_scenario_count", "reachable_scenario_event_count", "invariant_prefix_check_count", "composition_check_count", "executed_local_effect_count", "independently_observed_effect_count", "exact_rollback_count", "pre_effect_denial_count", "revocation_trace_entry_count", "governed_scenario_count", "governed_release_count", "governed_unsafe_release_count", "mutation_count", "mutation_rejection_count", "rejection_noninterference_count", "reference_trace_final_state", "scenario_receipts", "authority_fixture_receipts", "mutation_receipts", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "formal_surface", "authority_fixture_count", "authority_fixture_accepted_count", "authority_fixture_rejected_count", "reachable_trace_event_count", "reachable_scenario_count", "reachable_scenario_event_count", "invariant_prefix_check_count", "composition_check_count", "executed_local_effect_count", "independently_observed_effect_count", "exact_rollback_count", "pre_effect_denial_count", "revocation_trace_entry_count", "governed_scenario_count", "governed_release_count", "governed_unsafe_release_count", "mutation_count", "mutation_rejection_count", "rejection_noninterference_count", "reference_trace_final_state", "scenario_receipts", "authority_fixture_receipts", "mutation_receipts", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.authority_effect_refinement.v1"},
     "result_id": {"const": "authority-effect-refinement-2026-07-15-local"},
@@ -17,6 +17,21 @@
         "runtime_effect": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "revocation_trace": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "governed_repository": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "formal_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theorem_count", "lean_module", "lean_compile_receipt", "arbitrary_run_invariant", "batch_composition", "revoked_suffix_excludes_all_grant_use", "rejection_noninterference", "exact_rollback_accounting"],
+      "properties": {
+        "theorem_count": {"const": 31},
+        "lean_module": {"const": "lean/AsiStackProofs/AuthorityEffectRefinement.lean"},
+        "lean_compile_receipt": {"type": "object"},
+        "arbitrary_run_invariant": {"const": true},
+        "batch_composition": {"const": true},
+        "revoked_suffix_excludes_all_grant_use": {"const": true},
+        "rejection_noninterference": {"const": true},
+        "exact_rollback_accounting": {"const": true}
       }
     },
     "authority_fixture_count": {"const": 6},

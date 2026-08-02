@@ -8,9 +8,9 @@ Support-state effect: `none`
 
 The `system-boundaries-and-authority` proof family now has a reachable grant-to-effect model in `lean/AsiStackProofs/AuthorityEffectRefinement.lean` and an independently implemented concrete consumer in `scripts/validate_authority_effect_refinement.py`.
 
-The Lean model binds every grant, approval, dispatch, and material effect to the same abstract grant ID, principal, operation, target, authority ceiling, authority epoch, expiry, and remaining-use count. Its 27 declarations include one-step consequences plus an inductive state invariant and caller-ceiling preservation over arbitrary successful runs, valid-trace extraction, event-batch composition, revoked-ID persistence, and a theorem that no successful suffix can commit an effect for an already revoked grant. Separate one-use, two-use, and revocation witnesses cover 20 accepted events; the effect traces reach independent observation and exact rollback, while the revocation trace clears grant, approval, and dispatch custody and advances the epoch.
+The Lean model binds every grant, approval, dispatch, and material effect to the same abstract grant ID, principal, operation, target, authority ceiling, authority epoch, expiry, and remaining-use count. Its 31 declarations include one-step consequences plus an inductive state invariant and caller-ceiling preservation over arbitrary successful runs, valid-trace extraction, event-batch composition, revoked-ID persistence, and a theorem that no successful suffix can approve, dispatch, or commit an effect for an already revoked grant. Rejected events return no successor state, and accepted rollback clears both effect counters and marks exact rollback. Separate one-use, two-use, and revocation witnesses cover 20 accepted events; the effect traces reach independent observation and exact rollback, while the revocation trace clears grant, approval, and dispatch custody and advances the epoch.
 
-The consumer binds that model to four pre-existing evidence surfaces by digest:
+The consumer recompiles the exact thirty-one-theorem surface and binds that model to four pre-existing evidence surfaces by digest:
 
 - six authority-decision fixtures: three accepted and three rejected;
 - one executed local temporary-file effect with independent digest observation and exact rollback;
@@ -22,7 +22,7 @@ It independently checks all 20 witness prefixes and 23 event-batch splits. It al
 
 ## What changed in the proof envelope
 
-The general finite ceiling theorems and useful lifecycle route lemmas remain bounded local results. The projection-only theorem `valid_authority_decision_has_audit_and_nonclaims` is physically retired. Its frozen lineage remains auditable, but current ownership moves to the reachable model, concrete consumer, mutation suite, and this receipt.
+The general finite ceiling theorems and useful lifecycle route lemmas remain bounded local results. The projection-only theorem `valid_authority_decision_has_audit_and_nonclaims` is physically retired. Its frozen lineage remains auditable, but all four public targets now move to the reachable model, concrete consumer, mutation suite, and this receipt at finite authored-record scope.
 
 ## Exact boundary
 

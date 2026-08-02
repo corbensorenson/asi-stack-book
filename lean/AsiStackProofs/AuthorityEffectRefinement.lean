@@ -447,6 +447,89 @@ theorem revoked_grant_cannot_commit_effect_in_successful_suffix
             exact ih (apply_event_preserves_revoked_grant revoked) tailRan candidate
               inTail effectKind sameGrant
 
+def UsesGrantAuthority (event : AuthorityEvent) : Prop :=
+  event.kind = .approve ∨ event.kind = .dispatch ∨ event.kind = .commitEffect
+
+def NoAuthorityUseForGrant (grantId : Nat) (events : List AuthorityEvent) : Prop :=
+  ∀ event, event ∈ events → UsesGrantAuthority event → event.grantId ≠ grantId
+
+theorem accepted_grant_use_is_not_revoked
+    {state next : AuthorityState} {event : AuthorityEvent}
+    (accepted : AuthorityStep state event = some next)
+    (uses : UsesGrantAuthority event) :
+    event.grantId ∉ state.revokedGrantIds := by
+  have valid := accepted_step_is_valid accepted
+  rcases uses with approve | dispatch | effect
+  · simp [AuthorityEventValid, approve] at valid
+    have fields :
+        state.activeGrant = some event.grant ∧
+          event.grantId ∉ state.revokedGrantIds ∧
+          event.authorityEpoch = state.authorityEpoch ∧
+          event.logicalTime ≤ event.expiresAt ∧
+          0 < event.remainingUses ∧
+          event.targetOwnerApproved = true ∧ event.approvalReceipt = true := by
+      simpa [and_assoc] using valid.2
+    exact fields.2.1
+  · simp [AuthorityEventValid, dispatch] at valid
+    have fields :
+        state.activeGrant = some event.grant ∧
+          state.approvedGrantId = some event.grantId ∧
+          event.grantId ∉ state.revokedGrantIds ∧
+          event.authorityEpoch = state.authorityEpoch ∧
+          event.logicalTime ≤ event.expiresAt ∧
+          0 < event.remainingUses ∧ event.dispatchReceipt = true := by
+      simpa [and_assoc] using valid.2
+    exact fields.2.2.1
+  · simp [AuthorityEventValid, effect] at valid
+    have fields :
+        state.activeGrant = some event.grant ∧
+          state.approvedGrantId = some event.grantId ∧
+          state.dispatchedGrantId = some event.grantId ∧
+          event.grantId ∉ state.revokedGrantIds ∧
+          event.authorityEpoch = state.authorityEpoch ∧
+          event.logicalTime ≤ event.expiresAt ∧
+          0 < event.remainingUses ∧ event.effectReceipt = true := by
+      simpa [and_assoc] using valid.2
+    exact fields.2.2.2.1
+
+theorem revoked_grant_cannot_be_used_in_successful_suffix
+    {state final : AuthorityState} {events : List AuthorityEvent} {grantId : Nat}
+    (revoked : grantId ∈ state.revokedGrantIds)
+    (ran : AuthorityRun state events = some final) :
+    NoAuthorityUseForGrant grantId events := by
+  unfold NoAuthorityUseForGrant
+  induction events generalizing state with
+  | nil => simp
+  | cons event tail ih =>
+      intro candidate present uses sameGrant
+      cases stepped : AuthorityStep state event with
+      | none => simp [AuthorityRun, stepped] at ran
+      | some next =>
+          have tailRan : AuthorityRun next tail = some final := by
+            simpa [AuthorityRun, stepped] using ran
+          rcases List.mem_cons.mp present with same | inTail
+          · subst candidate
+            exact (accepted_grant_use_is_not_revoked stepped uses) (sameGrant ▸ revoked)
+          · have applies := accepted_step_applies_event stepped
+            subst next
+            exact ih (apply_event_preserves_revoked_grant revoked) tailRan candidate
+              inTail uses sameGrant
+
+theorem rejected_step_returns_no_successor
+    (state : AuthorityState) (event : AuthorityEvent)
+    (rejected : AuthorityEventValid state event = false) :
+    AuthorityStep state event = none := by
+  simp [AuthorityStep, rejected]
+
+theorem accepted_rollback_clears_effect_accounting
+    {state next : AuthorityState} {event : AuthorityEvent}
+    (kind : event.kind = .rollback)
+    (accepted : AuthorityStep state event = some next) :
+    next.materialEffects = 0 ∧ next.observedEffects = 0 ∧ next.rolledBack = true := by
+  have applies := accepted_step_applies_event accepted
+  subst next
+  simp [ApplyAuthorityEvent, kind]
+
 theorem accepted_issue_respects_caller_ceiling_and_epoch
     {state next : AuthorityState} {event : AuthorityEvent}
     (kind : event.kind = .issue)

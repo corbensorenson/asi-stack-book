@@ -23,13 +23,18 @@ The validity relation requires monotone logical time and event-specific custody.
 - accepted effect has the same properties and additionally requires a matching dispatch;
 - every successful arbitrary-length run preserves observation/effect accounting, live-grant ceiling/epoch/revocation safety, and exact approval/dispatch custody;
 - every successful run yields a recursively valid transition trace and composes across arbitrary event-batch splits;
-- revoked grant IDs persist through every successful suffix, and no event in such a suffix can commit an effect under the revoked ID;
+- revoked grant IDs persist through every successful suffix, and no event in such a suffix can approve, dispatch, or commit an effect under the revoked ID;
+- a rejected event returns no successor state, while every accepted rollback clears material and observed effect accounting and marks exact rollback;
 - exact one-use and two-use witnesses reach independent observation and exact rollback, while a separate revocation witness clears custody and advances the epoch;
 - widening, principal substitution, expiry, stale epoch, revocation, missing dispatch, and one-shot reuse are rejected in concrete countermodels.
 
 ## Independent executable refinement
 
-The Python consumer independently reimplements the state machine and validates the executed source records rather than reading a Lean-generated summary. It validates the governed repository result against its own schema, binds every source by SHA-256, and records:
+The Python consumer independently reimplements the state machine, recompiles
+the exact thirty-one-theorem Lean surface, and validates the executed source
+records rather than reading a Lean-generated summary. It validates the
+governed repository result against its own schema, binds every source by
+SHA-256, and records:
 
 - 6 authority fixtures: 3 accepted and 3 rejected;
 - 3 reachable witness traces with 20 accepted events;
@@ -50,4 +55,10 @@ Identifiers are abstract natural numbers; exact equality is not identity proof. 
 
 ## Disposition
 
-Retain the general ceiling lemmas and lifecycle negative cases at their exact finite scope. Physically retire the projection-only audit/nonclaim theorem. Use the reachable model and independent consumer as the current bounded owner of grant-to-effect refinement. Do not promote the chapter core until authentic producers, concurrent revocation, deployed consumers, natural workloads, independent reproduction, and transfer evidence exist.
+Retain the general ceiling lemmas and lifecycle negative cases at their exact
+finite scope. Physically retire the projection-only audit/nonclaim theorem.
+Move all four public targets to the reachable model and independent consumer as
+the current bounded owner of grant-to-effect refinement. This is adequate only
+as a finite authored-record invariant. Do not promote the chapter core until
+authentic producers, concurrent revocation, deployed consumers, natural
+workloads, independent reproduction, and transfer evidence exist.

@@ -6,6 +6,8 @@ import argparse
 import copy
 import hashlib
 import json
+import re
+import subprocess
 from pathlib import Path
 from typing import Any
 
@@ -30,6 +32,29 @@ RANK = {
     "governance_approval": 6,
 }
 MINIMUM = {"read": 1, "transform": 2, "write": 3, "execute": 4, "disclose": 5, "approve": 6}
+EXPECTED_THEOREMS = {
+    "accepted_step_is_valid", "accepted_step_applies_event",
+    "apply_event_preserves_caller_ceiling", "apply_event_preserves_revoked_grant",
+    "invariant_without_active_grant_has_no_custody", "accepted_step_preserves_state_invariant",
+    "successful_run_preserves_state_invariant", "successful_run_preserves_caller_ceiling",
+    "successful_run_has_valid_trace", "run_composes_across_event_batches",
+    "successful_run_preserves_revoked_grant",
+    "revoked_grant_cannot_commit_effect_in_successful_suffix",
+    "accepted_grant_use_is_not_revoked", "revoked_grant_cannot_be_used_in_successful_suffix",
+    "rejected_step_returns_no_successor", "accepted_rollback_clears_effect_accounting",
+    "accepted_issue_respects_caller_ceiling_and_epoch",
+    "accepted_dispatch_is_exactly_bound_and_fresh",
+    "accepted_effect_requires_exact_live_grant_approval_and_dispatch",
+    "initial_state_satisfies_authority_invariant",
+    "exact_bound_authority_trace_reaches_observed_exact_rollback",
+    "two_use_trace_reaches_two_observations_and_exact_rollback",
+    "revocation_trace_closes_custody_and_advances_epoch",
+    "every_successful_reference_trace_preserves_authority_invariant",
+    "authority_widening_is_rejected", "confused_deputy_principal_substitution_is_rejected",
+    "expired_grant_dispatch_is_rejected", "stale_epoch_dispatch_is_rejected",
+    "revoked_grant_dispatch_is_rejected", "effect_without_dispatch_is_rejected",
+    "consumed_one_shot_grant_cannot_effect_again",
+}
 
 
 def load(path: Path) -> Any:
@@ -38,6 +63,36 @@ def load(path: Path) -> Any:
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)", LEAN.read_text(encoding="utf-8")
+    ))
+    if theorem_names != EXPECTED_THEOREMS:
+        raise AssertionError(
+            "Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/AuthorityEffectRefinement.lean"]
+    completed = subprocess.run(command, cwd=ROOT / "lean", capture_output=True, text=True)
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command), "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_invariant": True,
+        "batch_composition": True,
+        "revoked_suffix_excludes_all_grant_use": True,
+        "rejection_noninterference": True,
+        "exact_rollback_accounting": True,
+    }
 
 
 def grant(event: dict[str, Any]) -> dict[str, int]:
@@ -344,6 +399,7 @@ def build() -> tuple[dict[str, Any], list[str]]:
         "schema_version": "asi_stack.authority_effect_refinement.v1",
         "result_id": "authority-effect-refinement-2026-07-15-local",
         "source_sha256": {"lean_model": sha(LEAN), "runtime_effect": sha(RUNTIME), "revocation_trace": sha(REVOCATION), "governed_repository": sha(GOVERNED)},
+        "formal_surface": formal_surface(),
         "authority_fixture_count": len(fixtures),
         "authority_fixture_accepted_count": sum(row["accepted"] for row in fixtures),
         "authority_fixture_rejected_count": sum(not row["accepted"] for row in fixtures),
@@ -393,7 +449,7 @@ def main() -> None:
         RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     elif not RESULT.exists() or load(RESULT) != result:
         raise SystemExit("Authority effect refinement result stale; run with --write")
-    print(f"Authority effect refinement passed: {result['authority_fixture_count']} fixtures, {result['reachable_scenario_count']} reachable traces/{result['reachable_scenario_event_count']} events, {result['invariant_prefix_check_count']} invariant prefixes, {result['composition_check_count']} batch compositions, {result['mutation_rejection_count']} state-noninterfering mutation rejections, support effect none.")
+    print(f"Authority effect refinement passed: {result['formal_surface']['theorem_count']} Lean theorems, {result['authority_fixture_count']} fixtures, {result['reachable_scenario_count']} reachable traces/{result['reachable_scenario_event_count']} events, {result['invariant_prefix_check_count']} invariant prefixes, {result['composition_check_count']} batch compositions, {result['mutation_rejection_count']} state-noninterfering mutation rejections, support effect none.")
 
 
 if __name__ == "__main__":
