@@ -3173,7 +3173,12 @@
     "lean/AsiStackProofs/DeploymentTransitionGovernance.lean",
     "tests/fixtures/proof_models/deployment_transition_dossier.json",
     "evidence_quality/proof_model_dossiers/ai-deployment-transition-distribution-and-human-agency.md",
-    "chapters/ai-deployment-transition-distribution-and-human-agency.qmd"
+    "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
+    "scripts/validate_human_ai_cognitive_sovereignty.py",
+    "lean/AsiStackProofs/HumanAICognitiveSovereignty.lean",
+    "tests/fixtures/proof_models/human_ai_cognitive_sovereignty_dossier.json",
+    "evidence_quality/proof_model_dossiers/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.md",
+    "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd"
   ],
   "units": [
     {
@@ -12131,7 +12136,7 @@
       "output_assertions": [
         "1,151/1,151 activation-baseline theorem declarations and 298/298 baseline targets are reviewed and dispositioned",
         "298/298 historical proof targets remain implemented and explicitly adequacy-routed",
-        "324 current targets comprise 319 implemented and 5 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, Durable Semantic Memory Review, and Physical Compute Infrastructure Review refinements",
+        "324 current targets comprise 323 implemented and 1 planned, including the consumer-owned Failure Modes, Governed Operations, Learned Objective Integrity, Observation Trust, Search Substrate, Artifact Steward, Human-AI Organizations, Multi-Agent Dynamics, Embodied Physical Safety, Dangerous Capability Review, Military Interaction Review, Open-Weight Release Review, Communication Influence Review, Objective Lease Governance, Adversarial Model Security, Protected Computation Review, Content Authenticity Review, Replication Containment Review, Institutional Legitimacy Review, Societal Resilience Review, Durable Semantic Memory Review, Physical Compute Infrastructure Review, Learning Theory Forecast Review, Scientific Experiment Review, Deployment Transition Governance, and Human-AI Cognitive Sovereignty refinements",
         "the thirty-two richer-semantics targets remain bounded and route to P3/P4 rather than disappearing",
         "ten required safety-critical, integration, and review-named refinement models have dossiers and registered consumers",
         "P2/M3 is completed, P3 is active, and prerequisite M2 is active without support-state movement"
@@ -18236,11 +18241,58 @@
       "prohibited_inference": "Does not establish field truth, causal deployment effect, job change, welfare, fairness, meaningful agency, lawful remedy, service continuity, deployment readiness, support, release, transfer, SOTA, AGI, or ASI.",
       "contract_precision": "exact",
       "semantic_review_state": "checked_bounded_formal_model_and_three_existing_consumers_no_support_effect"
+    },
+    {
+      "id": "validate_human_ai_cognitive_sovereignty.py:467",
+      "order": 467,
+      "script": "validate_human_ai_cognitive_sovereignty.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Canonical human-AI cognitive-sovereignty Lean review, independent 49-axis fixture, chapter proof boundary, dossier, manifest, triage, and outline binding.",
+      "input_artifacts": [
+        "scripts/validate_human_ai_cognitive_sovereignty.py",
+        "lean/AsiStackProofs/HumanAICognitiveSovereignty.lean",
+        "tests/fixtures/proof_models/human_ai_cognitive_sovereignty_dossier.json",
+        "evidence_quality/proof_model_dossiers/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.md",
+        "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/book_outline.md"
+      ],
+      "output_contract": "Reject lifecycle, exact-repair, comparator, purpose, participant, denominator, monotonicity, receipt, collision, consumer, binding, and no-promotion drift.",
+      "output_assertions": [
+        "eight-transition review reaches only Project Theseus low-risk coupling-study eligibility",
+        "49/49 admission-axis mutations reject readiness and receive exact repair or refusal dispositions",
+        "combined-system qualification requires both competent human-alone and AI-alone baselines",
+        "purpose grants are exact and unrelated use, revocation, and expiry block authorization",
+        "finite participant identity composes and every expected participant requires post-exit follow-up",
+        "expiry and post-exit denominator gaps remain rejecting under adverse changes",
+        "participant, protocol, device/model, purpose, observation, exit, and authority changes invalidate receipts",
+        "nominal revocation cannot recover practical exit and session metrics cannot recover post-exit skill retention",
+        "privacy, human-control, and Evidence States consumers reject missing coupling evidence",
+        "48 exact Lean declarations move no chapter support, neural-intervention, release, transfer, or external-effect state"
+      ],
+      "claim_scope": "Bounded authored human-AI coupling review, comparator and purpose discipline, finite longitudinal custody, receipt invalidation, consumer rejection, and non-identifiability only.",
+      "negative_controls": "validator_owned_49_axis_identity_comparator_authorization_data_exit_observation_boundary_participant_receipt_collision_consumer_and_binding_mutations",
+      "negative_control_cases": [
+        "one-sided comparator",
+        "unrelated purpose",
+        "revoked grant",
+        "post-exit omission",
+        "expired contract",
+        "scope drift",
+        "signal collision",
+        "support promotion"
+      ],
+      "prohibited_inference": "Does not establish field truth, beneficial symbiosis, genuine consent, mental integrity, cognitive enhancement, clinical efficacy, equity, neural safety, lawful authorization, support, release, transfer, SOTA, AGI, or ASI.",
+      "contract_precision": "exact",
+      "semantic_review_state": "checked_bounded_formal_model_and_three_existing_consumers_no_support_effect"
     }
   ],
   "summary": {
-    "required_artifact_count": 3129,
-    "unit_count": 466
+    "required_artifact_count": 3134,
+    "unit_count": 467
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

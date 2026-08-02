@@ -13,11 +13,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Lean modules scanned | 129 |
-| Theorem declarations classified | 1868 |
-| Direct/projection-style theorem declarations | 374 |
-| Derived/decomposed theorem declarations | 1117 |
-| Unknown or mixed theorem declarations | 377 |
+| Lean modules scanned | 130 |
+| Theorem declarations classified | 1916 |
+| Direct/projection-style theorem declarations | 390 |
+| Derived/decomposed theorem declarations | 1134 |
+| Unknown or mixed theorem declarations | 392 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -106,6 +106,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 9 | 0 | 5 | 4 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 17 | 13 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty | 1 | 48 | 16 | 17 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 21 | 0 | 3 | 18 | manual review |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 9 | 0 | 4 | 5 | manual review |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | institutions-international-coordination-and-public-legitimacy | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -122,7 +123,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/NoDeferralAdmission.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty, relational-dimension-compilation-and-polyadic-cognition | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/NoDeferralAdmission.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -922,6 +923,54 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `overprivileged_node_blocks_selection` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partition_without_no_mutation_evidence_blocks` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | `partitioned_stale_grant_quarantines_before_mutation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `assistance_grant_does_not_authorize_model_training` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `authority_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `beating_ai_alone_does_not_establish_complementarity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `beating_human_alone_does_not_establish_complementarity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `beats_both_components_requires_ai_baseline` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `beats_both_components_requires_human_baseline` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `complete_dossier_reaches_only_theseus_low_risk_coupling_study` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `complete_longitudinal_denominator_covers_every_expected_participant` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `device_or_model_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `equal_to_strongest_component_does_not_establish_complementarity` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `every_admission_axis_mutation_blocks_readiness` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `every_admission_axis_mutation_has_exact_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `every_admission_axis_mutation_reaches_repair` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `every_participant_id_survives_collection` | derived_or_decomposed | no | uses cases, induction, right, simp, subst |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `exit_plan_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `expired_coupling_contract_remains_expired_when_time_advances` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `expired_purpose_lease_blocks_authorization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `identical_revocation_signals_can_hide_opposite_practical_exit` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `identical_session_signals_can_hide_opposite_post_exit_retention` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `missing_longitudinal_study_blocks_empirical_support_promotion` | derived_or_decomposed | no | uses apply, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `missing_pause_channel_rejects_human_control_consumer` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `observation_schedule_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `omitted_post_exit_checkpoint_rejects_complete_denominator` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `participant_id_collection_append_composes` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `participant_set_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `personalization_grant_does_not_authorize_advertising` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `post_exit_gap_persists_when_observation_count_falls` | unknown_or_mixed | no | no ':= by' body detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `protocol_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `purpose_change_invalidates_coupling_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_authorization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_comparators` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_data_custody` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_exit_capacity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_nonclaim_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `readiness_requires_observation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `revocation_signals_cannot_recover_practical_exit` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `revoked_purpose_lease_blocks_authorization` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `sensing_grant_does_not_authorize_employment_use` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `session_signals_cannot_recover_post_exit_skill_retention` | derived_or_decomposed | no | uses have, left, right, rw, simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `single_purpose_grant_is_exact` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `stimulation_grant_does_not_authorize_surveillance` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `unrelated_mental_data_use_rejects_privacy_consumer` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | `unrelated_purpose_blocks_authorization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `accountability_review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `accountability_review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `assignable_accountability_requires_complete_authority_record` | derived_or_decomposed | no | uses have |

@@ -11,28 +11,28 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 324 |
-| Implemented proof targets | 322 |
-| Planned proof targets | 2 |
-| Lean modules referenced | 95 |
+| Implemented proof targets | 323 |
+| Planned proof targets | 1 |
+| Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 1868 |
-| Derived/decomposed theorem declarations | 1117 |
-| Direct/projection-style theorem declarations | 374 |
-| Unknown or mixed theorem declarations | 377 |
+| Theorem declarations classified | 1916 |
+| Derived/decomposed theorem declarations | 1134 |
+| Direct/projection-style theorem declarations | 390 |
+| Unknown or mixed theorem declarations | 392 |
 | Safety-critical theorem declarations | 73 |
 | Safety-critical chapter classifications present | 1/1 |
 
 ## Adequacy Snapshot
 
-The current adequacy review classifies 86 adequate finite-record invariant, 160 useful but too narrow, 18 needs richer state-machine or review semantics, 37 needs executable tests first, 21 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
+The current adequacy review classifies 87 adequate finite-record invariant, 160 useful but too narrow, 18 needs richer state-machine or review semantics, 37 needs executable tests first, 20 needs empirical or baseline tests first, and 2 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
 
 | Adequacy class | Targets |
 |---|---:|
-| adequate finite-record invariant | 86 |
+| adequate finite-record invariant | 87 |
 | useful but too narrow | 160 |
 | needs richer state-machine or review semantics | 18 |
 | needs executable tests first | 37 |
-| needs empirical or baseline tests first | 21 |
+| needs empirical or baseline tests first | 20 |
 | research-agenda until artifact import | 2 |
 
 ## Traceability Reports

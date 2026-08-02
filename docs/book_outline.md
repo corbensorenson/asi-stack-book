@@ -3932,7 +3932,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `AsiStackProofs.NoDeferralAdmission` | A finite human-AI coupling record may hand off only when component baselines, adaptation, data purpose, skill, dependence, exit, subgroup, and irreversible residuals are explicit; no theorem establishes beneficial symbiosis or authorizes neural intervention. | planned |
+| `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `AsiStackProofs.HumanAICognitiveSovereignty` | An eight-step finite human-AI coupling review preserves exact participant, protocol, coupling, model, purpose, comparator, observation, exit, and authority boundaries; a complete authored dossier reaches only Project Theseus low-risk coupling-study eligibility, while 49 admission-axis mutations block readiness and receive exact repair or refusal dispositions. Combined-system qualification requires both competent component baselines, purpose grants do not authorize unrelated uses, revoked or expired grants fail authorization, every expected participant requires post-exit follow-up, and participant, protocol, device/model, purpose, observation, exit, or authority changes invalidate receipts. Nominal revocation signals cannot recover practical exit, and session metrics cannot recover post-exit skill retention. No theorem establishes beneficial symbiosis, genuine consent, mental integrity, cognitive enhancement, clinical efficacy, equity, neural safety, lawful authorization, support, release, transfer, or external effect. | implemented |
 
 ### AI Deployment, Transition, Distribution, and Human Agency
 
@@ -6167,7 +6167,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 129 Lean modules, 1868 theorem declarations, 1117 derived/decomposed, 374 direct/projection, 377 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 1916 theorem declarations, 1134 derived/decomposed, 390 direct/projection, 392 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

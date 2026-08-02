@@ -486,6 +486,71 @@ for theorem_name, rationale in {
     }
 
 for theorem_name, rationale in {
+    "beating_human_alone_does_not_establish_complementarity": "A closed score witness beats the human component while losing to the AI component.",
+    "beating_ai_alone_does_not_establish_complementarity": "A closed score witness beats the AI component while losing to the human component.",
+    "equal_to_strongest_component_does_not_establish_complementarity": "A closed score witness ties rather than beats the strongest component.",
+    "assistance_grant_does_not_authorize_model_training": "A closed purpose witness separates assistance from model-training authority.",
+    "sensing_grant_does_not_authorize_employment_use": "A closed purpose witness separates neural sensing from employment authority.",
+    "personalization_grant_does_not_authorize_advertising": "A closed purpose witness separates personalization from advertising authority.",
+    "stimulation_grant_does_not_authorize_surveillance": "A closed purpose witness separates stimulation from surveillance authority.",
+    "complete_dossier_is_ready": "The closed coupling dossier witnesses the bounded admissibility predicate.",
+    "complete_dossier_reaches_only_theseus_low_risk_coupling_study": "The closed dossier reaches only Project Theseus low-risk coupling-study eligibility, not human intervention, support, or release.",
+    "identical_revocation_signals_can_hide_opposite_practical_exit": "Two coupling cases witness opposite practical-exit status under identical revocation signals.",
+    "identical_session_signals_can_hide_opposite_post_exit_retention": "Two coupling cases witness opposite post-exit retention under identical session metrics.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/HumanAICognitiveSovereignty.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P2", "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": ["a closed comparator, purpose, dossier, or information-loss witness establishes one bounded modeled result"], "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "beats_both_components_requires_human_baseline": "Projection from the two-component predicate preserves the human-baseline obligation.",
+    "beats_both_components_requires_ai_baseline": "Projection from the two-component predicate preserves the AI-baseline obligation.",
+    "single_purpose_grant_is_exact": "Decidable equality proves the finite purpose grant authorizes exactly its named purpose.",
+    "revoked_purpose_lease_blocks_authorization": "A contradiction on the revocation field rejects authorization for every modeled lease.",
+    "expired_purpose_lease_blocks_authorization": "Natural-number order rejects authorization for every expired modeled lease.",
+    "unrelated_purpose_blocks_authorization": "Purpose inequality rejects authorization for every mismatched modeled lease.",
+    "participant_id_collection_append_composes": "Structural induction proves participant-identity collection composes over concatenation.",
+    "every_participant_id_survives_collection": "Structural induction proves every participant identity survives finite collection.",
+    "complete_longitudinal_denominator_covers_every_expected_participant": "A quantified expected-member argument derives complete longitudinal custody.",
+    "omitted_post_exit_checkpoint_rejects_complete_denominator": "A quantified contradiction rejects completeness when one expected participant lacks post-exit follow-up.",
+    "every_admission_axis_mutation_blocks_readiness": "Universal case analysis shows all 49 coupling-dossier mutations reject readiness.",
+    "every_admission_axis_mutation_has_exact_repair": "Universal case analysis binds all 49 mutations to exact repair or refusal dispositions.",
+    "every_admission_axis_mutation_reaches_repair": "Universal case analysis routes all 49 mutations into the lifecycle repair state.",
+    "expired_coupling_contract_remains_expired_when_time_advances": "Natural-number order proves advancing time cannot restore an expired coupling contract.",
+    "post_exit_gap_persists_when_observation_count_falls": "Natural-number order proves fewer post-exit observations cannot close an existing denominator gap.",
+    "participant_set_change_invalidates_coupling_receipt": "The participant-set conjunct rejects a receipt presented for a changed cohort.",
+    "protocol_change_invalidates_coupling_receipt": "The protocol-version conjunct rejects a receipt presented under a changed protocol.",
+    "device_or_model_change_invalidates_coupling_receipt": "The device/model conjunct rejects a receipt presented for changed technical state.",
+    "purpose_change_invalidates_coupling_receipt": "The purpose-grant conjunct rejects a receipt presented for changed use.",
+    "observation_schedule_change_invalidates_coupling_receipt": "The observation-schedule conjunct rejects a receipt under changed follow-up.",
+    "exit_plan_change_invalidates_coupling_receipt": "The exit-plan conjunct rejects a receipt under changed practical-exit provisions.",
+    "authority_change_invalidates_coupling_receipt": "The authority conjunct rejects a receipt under changed coupling authority.",
+    "revocation_signals_cannot_recover_practical_exit": "A same-signal/opposite-exit collision proves no revocation-signal classifier is exact for every modeled case.",
+    "session_signals_cannot_recover_post_exit_skill_retention": "A same-session/opposite-retention collision proves no session-signal classifier is exact for every modeled case.",
+    "unrelated_mental_data_use_rejects_privacy_consumer": "The Privacy Information Flow bridge rejects a purpose-drifted mental-data use.",
+    "missing_pause_channel_rejects_human_control_consumer": "The Human Factors bridge reduces autonomy when the intervention channel is unreachable.",
+    "missing_longitudinal_study_blocks_empirical_support_promotion": "The Evidence States bridge rejects empirical promotion without a longitudinal-study witness.",
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/HumanAICognitiveSovereignty.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P3", "witness_refs": ["lean-theorem:complete_dossier_is_ready", "tests/fixtures/proof_models/human_ai_cognitive_sovereignty_dossier.json"],
+        "classification_basis": ["a quantified projection, induction, mutation family, authorization rule, denominator obligation, monotonicity result, scope invalidation, information-loss result, or rejecting consumer is independently reconstructed"], "rationale": rationale,
+    }
+
+for theorem_name in (
+    "review_step_preserves_stage_invariant", "review_run_preserves_stage_invariant",
+    "study_eligibility_requires_admissible_dossier", "readiness_requires_identity",
+    "readiness_requires_comparators", "readiness_requires_authorization",
+    "readiness_requires_data_custody", "readiness_requires_exit_capacity",
+    "readiness_requires_observation", "readiness_requires_nonclaim_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/HumanAICognitiveSovereignty.lean::{theorem_name}"] = {
+        "disposition": "retain", "semantic_level": "P1",
+        "classification_basis": ["a universal finite lifecycle invariant or grouped necessity result constrains authored human-AI coupling review state"],
+        "rationale": "The theorem constrains only the encoded coupling review; it establishes no beneficial symbiosis, genuine consent, mental integrity, clinical efficacy, equity, neural safety, support, or intervention authority.",
+    }
+
+for theorem_name, rationale in {
     "cohort_id_collection_append_composes": "Structural induction proves cohort-identity collection composes over concatenation for arbitrary finite transition ledgers.",
     "every_cohort_id_survives_collection": "Structural induction proves every member cohort identity remains present in the collected finite ledger.",
     "complete_denominator_covers_every_expected_cohort": "A quantified expected-member argument derives an included cohort witness from denominator completeness.",

@@ -751,14 +751,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": {
-        "reviewed_sha256": "73aa3426379c6f0057eebf4efd8ecf890505eb63fe54694fcbe2b73c9cc929fa",
-        "reviewed_date": "2026-07-28",
+        "reviewed_sha256": "be04aceb66555879a25adfb637603a453666a37dc2910e6990abf8598eb8737a",
+        "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish coupled trajectories, strongest-component complementarity, bidirectional adaptation, skill and dependence, neural inference, intervention authority, practical exit, and longitudinal equity or remedy",
             "the team meta-analysis, feedback-loop study, OECD convergence work, and WHO landscape retain task, population, study-duration, policy, clinical, and modality ceilings and do not become beneficial-symbiosis or neural-intervention evidence",
             "the chapter preserves consent renewal, three-arm baselines, unaided recovery, attrition, inferred-data rights, clinical boundaries, irreversible residuals, and argument-only support",
+            "the new Lean model is limited to strongest-component comparison, purpose-exact grants, finite longitudinal custody, exact repair, receipt invalidation, and information-loss boundaries; it does not establish beneficial coupling, genuine consent, mental integrity, clinical efficacy, equity, neural safety, support, or intervention authority",
         ],
         "support_state_effect": "none",
     },
