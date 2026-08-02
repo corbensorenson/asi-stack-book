@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Adversarial Machine Learning and the Model Attack Surface — generation two</title>
+  <desc id="desc">A checkpoint vault sits beside separate attack lanes and an adaptive defense ledger, with a bounded evidence airlock.</desc>
+  <rect width="1280" height="720" fill="#101820"/>
+  <text x="64" y="92" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="42" font-weight="700">MODEL ATTACK SURFACE</text>
+  <text x="64" y="140" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="28" font-weight="700">SEPARATE LANES • ADAPTIVE DEFENSE</text>
+  <rect x="64" y="268" width="250" height="178" rx="20" fill="#182630" stroke="#67D5F2" stroke-width="7"/>
+  <text x="189" y="337" text-anchor="middle" fill="#67D5F2" font-family="Avenir Next, sans-serif" font-size="23" font-weight="700">CHECKPOINT</text>
+  <text x="189" y="377" text-anchor="middle" fill="#F5F8FA" font-family="Avenir Next, sans-serif" font-size="23" font-weight="700">VAULT</text>
+  <path d="M330 357 H435" stroke="#F2BD63" stroke-width="7" marker-end="url(#arrow)"/>
+  <rect x="455" y="240" width="300" height="235" rx="20" fill="#182630" stroke="#F2BD63" stroke-width="7"/>
+  <text x="605" y="294" text-anchor="middle" fill="#F2BD63" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">THREAT CONTRACT</text>
+  <text x="605" y="344" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">CHECKPOINT • ATTACKER • BUDGET</text>
+  <text x="605" y="376" text-anchor="middle" fill="#B8C4CC" font-family="Avenir Next, sans-serif" font-size="17">LANE • EFFECT • RESIDUAL</text>
+  <text x="605" y="420" text-anchor="middle" fill="#66D58A" font-family="Avenir Next, sans-serif" font-size="20" font-weight="700">ADAPTIVE LEDGER</text>
+  <path d="M770 357 H865" stroke="#9C82E8" stroke-width="7" marker-end="url(#arrow)"/>
+  <rect x="885" y="240" width="330" height="235" rx="20" fill="#182630" stroke="#9C82E8" stroke-width="7"/>
+  <text x="1050" y="294" text-anchor="middle" fill="#9C82E8" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">ADAPTIVE</text>
+  <text x="1050" y="330" text-anchor="middle" fill="#9C82E8" font-family="Avenir Next, sans-serif" font-size="22" font-weight="700">DEFENSE</text>
+  <text x="1050" y="382" text-anchor="middle" fill="#66D58A" font-family="Avenir Next, sans-serif" font-size="18">CLEAN / ATTACKED UTILITY</text>
+  <text x="1050" y="414" text-anchor="middle" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="18">RECOVERY • COST • RESIDUAL</text>
+  <line x1="60" y1="550" x2="1220" y2="550" stroke="#FF6073" stroke-width="5" stroke-dasharray="15 12"/>
+  <text x="640" y="616" text-anchor="middle" fill="#FF6073" font-family="Avenir Next, sans-serif" font-size="27" font-weight="700">ONE SCORE ≠ SECURE DEPLOYMENT</text>
+  <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F2BD63"/></marker></defs>
+</svg>

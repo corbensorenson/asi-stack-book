@@ -100,8 +100,9 @@ Generation-two chapters 1–17 have passed beat-plan, animatic, and
 picture-and-sound-lock gates; Chapter 18 is scripted with its custom scene,
 exact legacy-receipt captions, transcript, and thumbnail under revision;
 Chapter 19 has passed its beat-plan and animatic gates; Chapter 20 has a
-rendered animatic marked revise for narration refresh; and chapters 21–84
-remain planned. Generation two
+rendered animatic marked revise for narration refresh; Chapter 21 now has a
+rendered attack-surface animatic also marked revise for narration refresh; and
+chapters 22–84 remain planned. Generation two
 does not yet have a release candidate, accepted video, YouTube-current video,
 or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
 value is a preferred soft range, and shortening its allocation puzzle, standing
@@ -149,12 +150,13 @@ The first five form the remediation cohort, the remaining seven previews
 followed, and chapters 13–84 were held until the revised method passed. Chapters
 13–17 are now through picture-and-sound lock under that method; Chapter 19 has
 cleared animatic; Chapter 20 has a rendered animatic marked revise because its
-inherited narration still needs a fresh voice/prose pass; and chapters 18 and
-21–84 remain gated behind the same production chain. Existing unlisted embeds remain
+inherited narration still needs a fresh voice/prose pass; Chapter 21 has a
+rendered attack-surface animatic marked revise for the same reason; and chapters
+18 and 22–84 remain gated behind the same production chain. Existing unlisted embeds remain
 historical review previews, not publication-quality acceptance.
 
-The generation-2 ledger currently has 64 planned chapters, one scripted chapter,
-one animatic-passed chapter, one animatic marked revise, and seventeen chapters
+The generation-2 ledger currently has 63 planned chapters, one scripted chapter,
+one animatic-passed chapter, two animatics marked revise, and seventeen chapters
 through both animatic and picture-and-sound lock. The
 first seventeen
 replacements use chapter-specific persistent worlds, audio-derived beat timing,
@@ -234,6 +236,18 @@ mechanical A/V audit are complete, but the animatic is marked revise because
 the inherited narration contains legacy template framing; a fresh narration
 receipt is required before picture-and-sound lock. No publication, Quarto
 reconciliation, or support-state promotion is implied.
+
+Chapter 21, `adversarial-machine-learning-and-model-attack-surface`, now has a
+bespoke attack-surface lab: a checkpoint vault, versioned model-threat contract,
+separate attack-lane matrix, adaptive attacker, joint utility/recovery ledger,
+typed residual dispositions, and a bounded rights-handoff airlock remain visible
+across 18 provisional receipt-bound beats. Its 04:31.570 legacy-receipt
+animatic, 63 exact captions, descriptive transcript, custom thumbnail,
+low-resolution render, and mechanical A/V audit are complete at the animatic
+gate. The animatic is marked revise because its inherited narration still needs
+a fresh prose/voice pass; a new narration receipt is required before
+picture-and-sound lock. No publication, Quarto reconciliation, or support-state
+promotion is implied.
 
 The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
 a structural v2 beat-plan audit,
