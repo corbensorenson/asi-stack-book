@@ -15,11 +15,15 @@ Generated from the frozen activation-baseline inventory and semantic review over
 
 `AsiStackProofs.FailureRecoveryRefinement` supplies the stronger model requested
 by the baseline review. Its five reachable stages preserve rejected state,
-disable modeled effects after accepted detection, guard readmission through
-exact identity plus remediation, independent review, current assurance and
-taxonomy, residual custody, and authority, and re-isolate one bounded
+admit events only from a valid control state, require failure-class and boundary
+custody before detection, open one residual while disabling modeled effects and
+promotion, guard readmission through exact identity plus remediation,
+independent review, current assurance and taxonomy, residual discharge, and
+authority, monotonically account for incidents, recoveries, and recurrences,
+and re-isolate one bounded
 recurrence. `scripts/validate_failure_recovery_refinement.py` independently
-encodes the transition system and rejects 31 mutations. The bounded model has
+encodes the transition system, checks all six lifecycle splits, and rejects 117
+state-preserving mutations. The bounded model has
 `support_state_effect=none`: detector truth, containment and remediation
 effectiveness, deployed recovery, safety, and transfer remain Theseus or
 empirical obligations.

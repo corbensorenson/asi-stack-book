@@ -1259,9 +1259,9 @@
             },
             {
               "name": "Failure recovery lifecycle refinement",
-              "purpose": "Check exact rejection preservation, arbitrary-run identity and authority custody, receipt accounting, trace validity, batch composition, bounded recovery reachability, guarded readmission, and recurrence re-isolation in the exact 19-theorem Lean model plus an independently encoded 31-mutation consumer.",
+              "purpose": "Check exact rejection preservation, arbitrary-run identity and authority custody, receipt and lifecycle-count accounting, trace validity, batch composition, valid control-state admission, failure-class and boundary custody, residual opening and discharge, guarded readmission, and recurrence re-isolation in the exact 27-theorem Lean model plus an independently encoded 117-mutation consumer.",
               "implementation_status": "implemented",
-              "result_status": "passes via exact 19-theorem Lean recompile and python3 scripts/validate_failure_recovery_refinement.py; five reachable stages, five accepted transitions, 31/31 rejecting mutations, support-state effect none; no event-truth, detector-quality, containment-effectiveness, remediation-effectiveness, deployed-recovery, safety, or chapter-core support claim",
+              "result_status": "passes via exact 27-theorem Lean recompile and python3 scripts/validate_failure_recovery_refinement.py; five reachable stages, five accepted transitions, six lifecycle splits, 117/117 rejecting mutations, support-state effect none; no event-truth, detector-quality, containment-effectiveness, remediation-effectiveness, deployed-recovery, safety, or chapter-core support claim",
               "status": "implemented as a bounded Lean/Python recovery contract; Theseus system-level recovery evidence remains open"
             }
           ],
@@ -1294,7 +1294,7 @@
             {
               "tag": "lean:failure.recovery.closed_loop_refinement",
               "module": "AsiStackProofs.FailureRecoveryRefinement",
-              "target": "Every successful finite recovery run preserves exact nine-field incident/version identity and zero support/external-authority assignment, adds exactly one receipt per accepted event, exposes a valid trace, and composes across event batches; the five-stage lifecycle guards readmission and re-isolates a modeled recurrence, while the recompiling consumer rejects 31 mutations.",
+              "target": "Every successful finite recovery run preserves exact nine-field incident/version identity and zero support/external-authority assignment, adds exactly one receipt per accepted event, monotonically accounts for incident, recovery, and recurrence events, exposes a valid trace, and composes across event batches; accepted events require a valid control state, detection requires recorded failure class and boundary and opens one residual while disabling effects and promotion, readmission requires residual discharge and restores operation, and the recompiling consumer checks all six lifecycle splits while rejecting 117 mutations.",
               "status": "implemented"
             }
           ]

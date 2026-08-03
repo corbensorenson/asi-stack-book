@@ -62,7 +62,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/EvidenceStates.lean` | 1 | 6 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | 2 | 6 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
-| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 19 | 0 | 12 | 4 |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 27 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |

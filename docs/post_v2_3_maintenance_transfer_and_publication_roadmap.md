@@ -2193,6 +2193,22 @@ partitions, deployed enforcement, whole-stack execution, safety, reproduction,
 transfer, support movement, and ASI remain unproved and route to Theseus or an
 empirical program.
 
+The Failure Modes tranche is complete at authored finite-record scope.
+`AsiStackProofs.FailureRecoveryRefinement` now has 27 theorems over a checked
+five-stage recovery cycle. Accepted events require a valid control state;
+detection requires explicit failure-class and affected-boundary custody, opens
+one residual, and disables effects and promotion; readmission requires current
+assurance, current taxonomy, residual discharge, and authority before it closes
+the residual and restores operation. Arbitrary successful runs preserve exact
+identity, non-authority, receipts, monotone incident/recovery/recurrence counts,
+valid traces, and batch composition. The independent consumer checks all six
+lifecycle splits and rejects 117/117 mutations. Maximum inference: the bounded
+recovery target is stronger, but the five-target chapter remains `useful but
+too narrow` and at `argument`; detector truth, containment and remediation
+effectiveness, deployed recovery, recurrence and escape measurement, safety,
+reproduction, transfer, and whole-system recovery remain Theseus or empirical
+obligations.
+
 ## P5 — Effect-complete governed reference system
 
 Evolve the integrated local slice into a real multi-process reference system

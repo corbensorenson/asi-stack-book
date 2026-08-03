@@ -17,11 +17,14 @@ inductive EventKind where
 deriving DecidableEq, Repr
 
 inductive Route where
+  | rejectInvalidControlState
   | rejectWrongStage
   | rejectIncidentSubstitution
   | rejectEventReplay
   | rejectAuthorityLeak
   | requestObservation
+  | requestFailureClass
+  | requestBoundary
   | rejectSelfJudgment
   | requestContainment
   | requestEscapeClosure
@@ -34,6 +37,7 @@ inductive Route where
   | requestResidual
   | requestCurrentAssurance
   | requestCurrentTaxonomy
+  | requestResidualDischarge
   | requestReadmissionAuthority
   | acceptDetection
   | acceptContainment
@@ -55,10 +59,13 @@ structure State where
   assuranceDigest : Nat
   lastEventDigest : Nat
   receiptCount : Nat
+  incidentCount : Nat
   recoveryCount : Nat
   recurrenceCount : Nat
+  openResidualCount : Nat
   containmentActive : Bool
   externalEffectsEnabled : Bool
+  promotionEnabled : Bool
   supportAssignmentCount : Nat
   externalAuthorityCount : Nat
 deriving DecidableEq, Repr
@@ -75,6 +82,8 @@ structure Packet where
   assuranceDigest : Nat
   eventDigest : Nat
   failureObserved : Bool
+  failureClassRecorded : Bool
+  boundaryRecorded : Bool
   detectorIndependent : Bool
   containmentApplied : Bool
   escapePathClosed : Bool
@@ -87,6 +96,7 @@ structure Packet where
   residualRecorded : Bool
   assuranceCurrent : Bool
   taxonomyCurrent : Bool
+  residualDischarged : Bool
   readmissionAuthorityPresent : Bool
   recurrenceOfPriorIncident : Bool
   supportAssignmentRequested : Bool
@@ -128,6 +138,23 @@ def expectedKind : Stage -> EventKind
   | .remediated => .recordReview
   | .reviewed => .requestReadmission
 
+def openIncidentCount : Stage -> Nat
+  | .operating => 0
+  | _ => 1
+
+def ControlStateValid (state : State) : Bool :=
+  match state.stage with
+  | .operating =>
+      !state.containmentActive && state.externalEffectsEnabled &&
+        state.promotionEnabled && state.openResidualCount == 0
+  | _ =>
+      state.containmentActive && !state.externalEffectsEnabled &&
+        !state.promotionEnabled && state.openResidualCount == 1
+
+def LifecycleAccountingValid (state : State) : Prop :=
+  state.recoveryCount + openIncidentCount state.stage = state.incidentCount ∧
+    state.recurrenceCount ≤ state.incidentCount
+
 def identityMatches (state : State) (packet : Packet) : Bool :=
   state.incidentId = packet.incidentId &&
     state.boundaryVersion = packet.boundaryVersion &&
@@ -140,7 +167,8 @@ def identityMatches (state : State) (packet : Packet) : Bool :=
     state.assuranceDigest = packet.assuranceDigest
 
 def routeFor (state : State) (kind : EventKind) (packet : Packet) : Route :=
-  if kind = expectedKind state.stage then
+  if ControlStateValid state = false then .rejectInvalidControlState
+  else if kind = expectedKind state.stage then
     if identityMatches state packet = false then .rejectIncidentSubstitution
     else if packet.eventDigest = state.lastEventDigest then .rejectEventReplay
     else if packet.supportAssignmentRequested || packet.externalAuthorityRequested then
@@ -148,6 +176,8 @@ def routeFor (state : State) (kind : EventKind) (packet : Packet) : Route :=
     else match state.stage with
     | .operating =>
       if packet.failureObserved = false then .requestObservation
+      else if packet.failureClassRecorded = false then .requestFailureClass
+      else if packet.boundaryRecorded = false then .requestBoundary
       else if packet.detectorIndependent = false then .rejectSelfJudgment
       else .acceptDetection
     | .detected =>
@@ -168,6 +198,7 @@ def routeFor (state : State) (kind : EventKind) (packet : Packet) : Route :=
     | .reviewed =>
       if packet.assuranceCurrent = false then .requestCurrentAssurance
       else if packet.taxonomyCurrent = false then .requestCurrentTaxonomy
+      else if packet.residualDischarged = false then .requestResidualDischarge
       else if packet.readmissionAuthorityPresent = false then .requestReadmissionAuthority
       else .acceptReadmission
   else .rejectWrongStage
@@ -191,11 +222,17 @@ def applyEvent (state : State) (kind : EventKind) (packet : Packet) : State × R
        stage := nextStage state.stage
        lastEventDigest := packet.eventDigest
        receiptCount := state.receiptCount + 1
+       incidentCount := state.incidentCount + (if route = .acceptDetection then 1 else 0)
        recoveryCount := state.recoveryCount + (if route = .acceptReadmission then 1 else 0)
        recurrenceCount := state.recurrenceCount +
          (if route = .acceptDetection && packet.recurrenceOfPriorIncident then 1 else 0)
+       openResidualCount :=
+         if route = .acceptDetection then state.openResidualCount + 1
+         else if route = .acceptReadmission then state.openResidualCount - 1
+         else state.openResidualCount
        containmentActive := route != .acceptReadmission
-       externalEffectsEnabled := route = .acceptReadmission }, route)
+       externalEffectsEnabled := route = .acceptReadmission
+       promotionEnabled := route = .acceptReadmission }, route)
   else (state, route)
 
 def RecoveryStep (state : State) (event : Event) : Option State :=
@@ -248,6 +285,54 @@ theorem accepted_step_adds_exactly_one_receipt
   have applies := accepted_step_applies_event stepped
   subst next
   simp [applyEvent, acceptedRoute]
+
+theorem accepted_step_starts_from_valid_control_state
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    ControlStateValid state = true := by
+  have acceptedRoute := accepted_step_is_accepted stepped
+  by_cases invalid : ControlStateValid state = false
+  · simp [routeFor, invalid, accepted] at acceptedRoute
+  · cases valid : ControlStateValid state <;> simp_all
+
+theorem accepted_step_updates_incident_count_exactly
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    next.incidentCount = state.incidentCount +
+      (if routeFor state event.kind event.packet = .acceptDetection then 1 else 0) := by
+  have acceptedRoute := accepted_step_is_accepted stepped
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, acceptedRoute]
+
+theorem accepted_step_updates_recovery_count_exactly
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    next.recoveryCount = state.recoveryCount +
+      (if routeFor state event.kind event.packet = .acceptReadmission then 1 else 0) := by
+  have acceptedRoute := accepted_step_is_accepted stepped
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, acceptedRoute]
+
+theorem accepted_step_updates_recurrence_count_exactly
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    next.recurrenceCount = state.recurrenceCount +
+      (if routeFor state event.kind event.packet = .acceptDetection &&
+          event.packet.recurrenceOfPriorIncident then 1 else 0) := by
+  have acceptedRoute := accepted_step_is_accepted stepped
+  rw [accepted_step_applies_event stepped]
+  simp [applyEvent, acceptedRoute]
+
+theorem accepted_step_incident_recovery_and_recurrence_monotone
+    {state next : State} {event : Event}
+    (stepped : RecoveryStep state event = some next) :
+    state.incidentCount ≤ next.incidentCount ∧
+      state.recoveryCount ≤ next.recoveryCount ∧
+      state.recurrenceCount ≤ next.recurrenceCount := by
+  rw [accepted_step_updates_incident_count_exactly stepped,
+    accepted_step_updates_recovery_count_exactly stepped,
+    accepted_step_updates_recurrence_count_exactly stepped]
+  omega
 
 theorem successful_run_preserves_incident_identity
     {state final : State} {events : List Event}
@@ -322,6 +407,29 @@ theorem successful_run_adds_exactly_one_receipt_per_event
               simp only [List.length_cons, Nat.add_assoc]
               rw [Nat.add_comm 1 tail.length]
 
+theorem successful_run_incident_recovery_and_recurrence_monotone
+    {state final : State} {events : List Event}
+    (ran : RecoveryRun state events = some final) :
+    state.incidentCount ≤ final.incidentCount ∧
+      state.recoveryCount ≤ final.recoveryCount ∧
+      state.recurrenceCount ≤ final.recurrenceCount := by
+  induction events generalizing state with
+  | nil =>
+      simp [RecoveryRun] at ran
+      subst final
+      exact ⟨Nat.le_refl _, Nat.le_refl _, Nat.le_refl _⟩
+  | cons event tail ih =>
+      cases stepped : RecoveryStep state event with
+      | none => simp [RecoveryRun, stepped] at ran
+      | some next =>
+          have tailRan : RecoveryRun next tail = some final := by
+            simpa [RecoveryRun, stepped] using ran
+          have head := accepted_step_incident_recovery_and_recurrence_monotone stepped
+          have rest := ih tailRan
+          exact ⟨Nat.le_trans head.1 rest.1,
+            Nat.le_trans head.2.1 rest.2.1,
+            Nat.le_trans head.2.2 rest.2.2⟩
+
 theorem successful_run_has_valid_trace
     {state final : State} {events : List Event}
     (ran : RecoveryRun state events = some final) :
@@ -365,12 +473,45 @@ theorem transition_cannot_assign_support_or_external_authority
   by_cases h : accepted (routeFor state kind packet) = true <;>
     simp [applyEvent, h]
 
-theorem accepted_detection_disables_effects_and_activates_containment
+theorem nonoperating_valid_state_blocks_effects_and_promotion
+    (state : State)
+    (valid : ControlStateValid state = true)
+    (notOperating : state.stage ≠ .operating) :
+    state.containmentActive = true ∧
+      state.externalEffectsEnabled = false ∧
+      state.promotionEnabled = false ∧
+      state.openResidualCount = 1 := by
+  cases stage : state.stage <;> simp [ControlStateValid, stage] at valid notOperating ⊢ <;>
+    simp_all
+
+theorem accepted_detection_opens_residual_and_blocks_effects_and_promotion
     (state : State) (kind : EventKind) (packet : Packet)
+    (stageOperating : state.stage = .operating)
+    (valid : ControlStateValid state = true)
     (h : routeFor state kind packet = .acceptDetection) :
     (applyEvent state kind packet).1.externalEffectsEnabled = false ∧
-      (applyEvent state kind packet).1.containmentActive = true := by
-  simp [applyEvent, h, accepted]
+      (applyEvent state kind packet).1.promotionEnabled = false ∧
+      (applyEvent state kind packet).1.containmentActive = true ∧
+      (applyEvent state kind packet).1.openResidualCount = 1 := by
+  have openZero : state.openResidualCount = 0 := by
+    simp [ControlStateValid, stageOperating] at valid
+    exact valid.2
+  simp [applyEvent, h, accepted, openZero]
+
+theorem accepted_readmission_closes_residual_and_restores_bounded_operation
+    (state : State) (kind : EventKind) (packet : Packet)
+    (stageReviewed : state.stage = .reviewed)
+    (valid : ControlStateValid state = true)
+    (h : routeFor state kind packet = .acceptReadmission) :
+    (applyEvent state kind packet).1.stage = .operating ∧
+      (applyEvent state kind packet).1.openResidualCount = 0 ∧
+      (applyEvent state kind packet).1.containmentActive = false ∧
+      (applyEvent state kind packet).1.externalEffectsEnabled = true ∧
+      (applyEvent state kind packet).1.promotionEnabled = true := by
+  have openOne : state.openResidualCount = 1 := by
+    simp [ControlStateValid, stageReviewed] at valid
+    exact valid.2
+  simp [applyEvent, h, accepted, nextStage, stageReviewed, openOne]
 
 theorem accepted_readmission_requires_complete_review
     (state : State) (kind : EventKind) (packet : Packet)
@@ -380,6 +521,7 @@ theorem accepted_readmission_requires_complete_review
     identityMatches state packet = true ∧
       packet.assuranceCurrent = true ∧
       packet.taxonomyCurrent = true ∧
+      packet.residualDischarged = true ∧
       packet.readmissionAuthorityPresent = true ∧
       packet.supportAssignmentRequested = false ∧
       packet.externalAuthorityRequested = false := by
@@ -387,40 +529,54 @@ theorem accepted_readmission_requires_complete_review
     cases value <;> simp_all
   have boolFalse {value : Bool} (notTrue : ¬ value = true) : value = false := by
     cases value <;> simp_all
+  have controlValid : ControlStateValid state = true := by
+    by_cases invalid : ControlStateValid state = false
+    · simp [routeFor, invalid] at h
+    · exact boolTrue invalid
   have identity : identityMatches state packet = true := by
     by_cases missing : identityMatches state packet = false
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, missing] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        missing] at h
     · exact boolTrue missing
   have freshEvent : ¬ packet.eventDigest = state.lastEventDigest := by
     intro replay
-    simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, replay] at h
+    simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+      identity, replay] at h
   have noSupportRequest : packet.supportAssignmentRequested = false := by
     by_cases requested : packet.supportAssignmentRequested = true
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, freshEvent,
-        requested] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, requested] at h
     · exact boolFalse requested
   have noExternalRequest : packet.externalAuthorityRequested = false := by
     by_cases requested : packet.externalAuthorityRequested = true
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, freshEvent,
-        noSupportRequest, requested] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, noSupportRequest, requested] at h
     · exact boolFalse requested
   have currentAssurance : packet.assuranceCurrent = true := by
     by_cases stale : packet.assuranceCurrent = false
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, freshEvent,
-        noSupportRequest, noExternalRequest, stale] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, noSupportRequest, noExternalRequest, stale] at h
     · exact boolTrue stale
   have currentTaxonomy : packet.taxonomyCurrent = true := by
     by_cases stale : packet.taxonomyCurrent = false
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, freshEvent,
-        noSupportRequest, noExternalRequest, currentAssurance, stale] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, noSupportRequest, noExternalRequest, currentAssurance,
+        stale] at h
     · exact boolTrue stale
+  have residualDischarged : packet.residualDischarged = true := by
+    by_cases missing : packet.residualDischarged = false
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, noSupportRequest, noExternalRequest, currentAssurance,
+        currentTaxonomy, missing] at h
+    · exact boolTrue missing
   have readmissionAuthority : packet.readmissionAuthorityPresent = true := by
     by_cases missing : packet.readmissionAuthorityPresent = false
-    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, identity, freshEvent,
-        noSupportRequest, noExternalRequest, currentAssurance, currentTaxonomy,
-        missing] at h
+    · simp [routeFor, expectedKind, stageReviewed, kindReadmission, controlValid,
+        identity, freshEvent, noSupportRequest, noExternalRequest, currentAssurance,
+        currentTaxonomy, residualDischarged, missing] at h
     · exact boolTrue missing
-  exact ⟨identity, currentAssurance, currentTaxonomy, readmissionAuthority,
+  exact ⟨identity, currentAssurance, currentTaxonomy, residualDischarged,
+    readmissionAuthority,
     noSupportRequest, noExternalRequest⟩
 
 def canonicalState (stage : Stage) : State :=
@@ -428,21 +584,26 @@ def canonicalState (stage : Stage) : State :=
     architectureDigest := 101, policyDigest := 102, detectorDigest := 103,
     containmentDigest := 104, remediationDigest := 105, reviewerDigest := 106,
     assuranceDigest := 107, lastEventDigest := 0, receiptCount := 0,
-    recoveryCount := 0, recurrenceCount := 0,
+    incidentCount := openIncidentCount stage, recoveryCount := 0,
+    recurrenceCount := 0, openResidualCount := openIncidentCount stage,
     containmentActive := stage != .operating,
     externalEffectsEnabled := stage = .operating,
+    promotionEnabled := stage = .operating,
     supportAssignmentCount := 0, externalAuthorityCount := 0 }
 
 def canonicalPacket (eventDigest : Nat) : Packet :=
   { incidentId := 41, boundaryVersion := 3, architectureDigest := 101,
     policyDigest := 102, detectorDigest := 103, containmentDigest := 104,
     remediationDigest := 105, reviewerDigest := 106, assuranceDigest := 107,
-    eventDigest := eventDigest, failureObserved := true, detectorIndependent := true,
+    eventDigest := eventDigest, failureObserved := true,
+    failureClassRecorded := true, boundaryRecorded := true,
+    detectorIndependent := true,
     containmentApplied := true, escapePathClosed := true,
     containmentOwnerAccepted := true, causeRecorded := true,
     remediationApplied := true, regressionEvidencePassed := true,
     independentReviewRecorded := true, reviewerIndependent := true,
     residualRecorded := true, assuranceCurrent := true, taxonomyCurrent := true,
+    residualDischarged := true,
     readmissionAuthorityPresent := true, recurrenceOfPriorIncident := false,
     supportAssignmentRequested := false, externalAuthorityRequested := false }
 
@@ -475,8 +636,10 @@ theorem bounded_failure_recovery_reaches_guarded_readmission :
   let s3 := (applyEvent s2 .recordRemediation (canonicalPacket 3)).1
   let s4 := (applyEvent s3 .recordReview (canonicalPacket 4)).1
   let s5 := (applyEvent s4 .requestReadmission (canonicalPacket 5)).1
-  s5.stage = .operating ∧ s5.receiptCount = 5 ∧ s5.recoveryCount = 1 ∧
+  s5.stage = .operating ∧ s5.receiptCount = 5 ∧ s5.incidentCount = 1 ∧
+    s5.recoveryCount = 1 ∧ s5.openResidualCount = 0 ∧
     s5.containmentActive = false ∧ s5.externalEffectsEnabled = true ∧
+    s5.promotionEnabled = true ∧
     s5.supportAssignmentCount = 0 ∧ s5.externalAuthorityCount = 0 := by
   native_decide
 
@@ -489,9 +652,11 @@ theorem bounded_recurrence_reisolates_after_recovery :
   let s5 := (applyEvent s4 .requestReadmission (canonicalPacket 5)).1
   let recurrence := { canonicalPacket 6 with recurrenceOfPriorIncident := true }
   let s6 := (applyEvent s5 .detectAndIsolate recurrence).1
-  s6.stage = .detected ∧ s6.receiptCount = 6 ∧ s6.recoveryCount = 1 ∧
-    s6.recurrenceCount = 1 ∧ s6.containmentActive = true ∧
-    s6.externalEffectsEnabled = false ∧ s6.supportAssignmentCount = 0 ∧
+  s6.stage = .detected ∧ s6.receiptCount = 6 ∧ s6.incidentCount = 2 ∧
+    s6.recoveryCount = 1 ∧ s6.recurrenceCount = 1 ∧
+    s6.openResidualCount = 1 ∧ s6.containmentActive = true ∧
+    s6.externalEffectsEnabled = false ∧ s6.promotionEnabled = false ∧
+    s6.supportAssignmentCount = 0 ∧
     s6.externalAuthorityCount = 0 := by
   native_decide
 

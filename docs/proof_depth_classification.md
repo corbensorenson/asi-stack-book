@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2648 |
+| Theorem declarations classified | 2656 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1657 |
+| Derived/decomposed theorem declarations | 1665 |
 | Unknown or mixed theorem declarations | 566 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -96,7 +96,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 1 | 6 | 3 | 3 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceTransitionRefinement.lean` | evidence-states-and-claim-discipline | 2 | 6 | 0 | 2 | 4 | manual review |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | failure-modes-of-ungoverned-intelligence | 1 | 19 | 3 | 14 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | failure-modes-of-ungoverned-intelligence | 1 | 27 | 3 | 22 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -1000,23 +1000,31 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | `support_promotion_without_failure_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `tainted_context_without_authority_grant_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/FailureModes.lean` | `unverified_claim_promotion_blocks` | derived_or_decomposed | no | uses simp, unfold |
-| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_detection_disables_effects_and_activates_containment` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_detection_opens_residual_and_blocks_effects_and_promotion` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_readmission_closes_residual_and_restores_bounded_operation` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_readmission_requires_complete_review` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses have, simp, subst |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_incident_recovery_and_recurrence_monotone` | derived_or_decomposed | no | uses omega, rw |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_starts_from_valid_control_state` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_updates_incident_count_exactly` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_updates_recovery_count_exactly` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `accepted_step_updates_recurrence_count_exactly` | derived_or_decomposed | no | uses have, rw, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `apply_event_preserves_incident_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `authority_leak_blocks_every_stage` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `bounded_failure_recovery_reaches_guarded_readmission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `bounded_recurrence_reisolates_after_recovery` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `captured_reviewer_blocks_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `missing_escape_closure_blocks_containment` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `nonoperating_valid_state_blocks_effects_and_promotion` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `recovery_run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `stale_assurance_blocks_readmission` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `successful_run_adds_exactly_one_receipt_per_event` | derived_or_decomposed | no | uses calc, cases, have, induction, rw, simp, subst |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `successful_run_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `successful_run_incident_recovery_and_recurrence_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `successful_run_preserves_incident_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | `transition_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/FastGeneration.lean` | `failed_acceptance_without_fallback_or_residual_rejected` | derived_or_decomposed | no | uses contradiction, rcases, rw |

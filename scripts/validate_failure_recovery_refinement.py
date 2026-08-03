@@ -42,6 +42,8 @@ ACCEPTED = {
 GATES = {
     "operating": (
         ("failureObserved", False, "requestObservation"),
+        ("failureClassRecorded", False, "requestFailureClass"),
+        ("boundaryRecorded", False, "requestBoundary"),
         ("detectorIndependent", False, "rejectSelfJudgment"),
     ),
     "detected": (
@@ -62,6 +64,7 @@ GATES = {
     "reviewed": (
         ("assuranceCurrent", False, "requestCurrentAssurance"),
         ("taxonomyCurrent", False, "requestCurrentTaxonomy"),
+        ("residualDischarged", False, "requestResidualDischarge"),
         ("readmissionAuthorityPresent", False, "requestReadmissionAuthority"),
     ),
 }
@@ -70,14 +73,22 @@ EXPECTED_THEOREMS = {
     "accepted_step_is_accepted",
     "accepted_step_applies_event",
     "accepted_step_adds_exactly_one_receipt",
+    "accepted_step_starts_from_valid_control_state",
+    "accepted_step_updates_incident_count_exactly",
+    "accepted_step_updates_recovery_count_exactly",
+    "accepted_step_updates_recurrence_count_exactly",
+    "accepted_step_incident_recovery_and_recurrence_monotone",
     "successful_run_preserves_incident_identity",
     "successful_run_cannot_assign_support_or_external_authority",
     "successful_run_adds_exactly_one_receipt_per_event",
+    "successful_run_incident_recovery_and_recurrence_monotone",
     "successful_run_has_valid_trace",
     "recovery_run_composes_across_event_batches",
     "rejected_event_preserves_exact_state",
     "transition_cannot_assign_support_or_external_authority",
-    "accepted_detection_disables_effects_and_activates_containment",
+    "nonoperating_valid_state_blocks_effects_and_promotion",
+    "accepted_detection_opens_residual_and_blocks_effects_and_promotion",
+    "accepted_readmission_closes_residual_and_restores_bounded_operation",
     "accepted_readmission_requires_complete_review",
     "missing_escape_closure_blocks_containment",
     "captured_reviewer_blocks_review",
@@ -105,14 +116,18 @@ def validate_formal_surface() -> int:
 
 
 def state(stage: str = "operating") -> dict[str, object]:
+    open_incident = stage != "operating"
     return {
         "stage": stage, "incidentId": 41, "boundaryVersion": 3,
         "architectureDigest": 101, "policyDigest": 102, "detectorDigest": 103,
         "containmentDigest": 104, "remediationDigest": 105,
         "reviewerDigest": 106, "assuranceDigest": 107, "lastEventDigest": 0,
-        "receiptCount": 0, "recoveryCount": 0, "recurrenceCount": 0,
-        "containmentActive": stage != "operating",
+        "receiptCount": 0, "incidentCount": int(open_incident),
+        "recoveryCount": 0, "recurrenceCount": 0,
+        "openResidualCount": int(open_incident),
+        "containmentActive": open_incident,
         "externalEffectsEnabled": stage == "operating",
+        "promotionEnabled": stage == "operating",
         "supportAssignmentCount": 0, "externalAuthorityCount": 0,
     }
 
@@ -123,13 +138,15 @@ def packet(event_digest: int) -> dict[str, object]:
         "policyDigest": 102, "detectorDigest": 103, "containmentDigest": 104,
         "remediationDigest": 105, "reviewerDigest": 106,
         "assuranceDigest": 107, "eventDigest": event_digest,
-        "failureObserved": True, "detectorIndependent": True,
+        "failureObserved": True, "failureClassRecorded": True,
+        "boundaryRecorded": True, "detectorIndependent": True,
         "containmentApplied": True, "escapePathClosed": True,
         "containmentOwnerAccepted": True, "causeRecorded": True,
         "remediationApplied": True, "regressionEvidencePassed": True,
         "independentReviewRecorded": True, "reviewerIndependent": True,
         "residualRecorded": True, "assuranceCurrent": True,
-        "taxonomyCurrent": True, "readmissionAuthorityPresent": True,
+        "taxonomyCurrent": True, "residualDischarged": True,
+        "readmissionAuthorityPresent": True,
         "recurrenceOfPriorIncident": False,
         "supportAssignmentRequested": False, "externalAuthorityRequested": False,
     }
@@ -137,6 +154,8 @@ def packet(event_digest: int) -> dict[str, object]:
 
 def route(current: dict[str, object], kind: str, event: dict[str, object]) -> str:
     stage = str(current["stage"])
+    if not control_state_valid(current):
+        return "rejectInvalidControlState"
     if kind != EXPECTED[stage]:
         return "rejectWrongStage"
     if any(current[name] != event[name] for name in IDENTITY):
@@ -155,6 +174,16 @@ def route(current: dict[str, object], kind: str, event: dict[str, object]) -> st
     }[stage]
 
 
+def control_state_valid(current: dict[str, object]) -> bool:
+    operating = current["stage"] == "operating"
+    return (
+        current["containmentActive"] is (not operating)
+        and current["externalEffectsEnabled"] is operating
+        and current["promotionEnabled"] is operating
+        and current["openResidualCount"] == int(not operating)
+    )
+
+
 def apply(current: dict[str, object], kind: str, event: dict[str, object]) -> tuple[dict[str, object], str]:
     answer = route(current, kind, event)
     if answer not in ACCEPTED:
@@ -163,13 +192,28 @@ def apply(current: dict[str, object], kind: str, event: dict[str, object]) -> tu
     updated["stage"] = NEXT[str(current["stage"])]
     updated["lastEventDigest"] = event["eventDigest"]
     updated["receiptCount"] = int(current["receiptCount"]) + 1
+    updated["incidentCount"] = int(current["incidentCount"]) + (answer == "acceptDetection")
     updated["recoveryCount"] = int(current["recoveryCount"]) + (answer == "acceptReadmission")
     updated["recurrenceCount"] = int(current["recurrenceCount"]) + (
         answer == "acceptDetection" and bool(event["recurrenceOfPriorIncident"])
     )
+    if answer == "acceptDetection":
+        updated["openResidualCount"] = int(current["openResidualCount"]) + 1
+    elif answer == "acceptReadmission":
+        updated["openResidualCount"] = int(current["openResidualCount"]) - 1
     updated["containmentActive"] = answer != "acceptReadmission"
     updated["externalEffectsEnabled"] = answer == "acceptReadmission"
+    updated["promotionEnabled"] = answer == "acceptReadmission"
     return updated, answer
+
+
+def run(current: dict[str, object], events: list[tuple[str, dict[str, object]]]) -> dict[str, object] | None:
+    result = copy.deepcopy(current)
+    for kind, event in events:
+        result, answer = apply(result, kind, event)
+        if answer not in ACCEPTED:
+            return None
+    return result
 
 
 def main() -> None:
@@ -185,21 +229,49 @@ def main() -> None:
 
     mutations: list[tuple[str, dict[str, object], str, dict[str, object]]] = []
     for index, stage_name in enumerate(STAGES, 1):
-        wrong_kind = "detectAndIsolate" if stage_name == "reviewed" else "requestReadmission"
-        mutations.append((f"wrong_stage_{stage_name}", state(stage_name), wrong_kind, packet(index)))
-    for field in IDENTITY:
-        changed = packet(20)
-        changed[field] = int(changed[field]) + 1000
-        mutations.append((f"identity_{field}", state(), EXPECTED["operating"], changed))
-    replay = packet(0)
-    mutations.append(("event_replay", state(), EXPECTED["operating"], replay))
-    for field in ("supportAssignmentRequested", "externalAuthorityRequested"):
-        leaked = packet(21)
-        leaked[field] = True
-        mutations.append((f"authority_{field}", state(), EXPECTED["operating"], leaked))
+        before = state(stage_name)
+        for wrong_kind in EXPECTED.values():
+            if wrong_kind != EXPECTED[stage_name]:
+                mutations.append((
+                    f"wrong_stage_{stage_name}_{wrong_kind}", before,
+                    wrong_kind, packet(index),
+                ))
+        for field in IDENTITY:
+            changed = packet(20 + index)
+            changed[field] = int(changed[field]) + 1000
+            mutations.append((
+                f"identity_{stage_name}_{field}", before,
+                EXPECTED[stage_name], changed,
+            ))
+        replay = packet(0)
+        mutations.append((
+            f"event_replay_{stage_name}", before, EXPECTED[stage_name], replay,
+        ))
+        for field in ("supportAssignmentRequested", "externalAuthorityRequested"):
+            leaked = packet(30 + index)
+            leaked[field] = True
+            mutations.append((
+                f"authority_{stage_name}_{field}", before,
+                EXPECTED[stage_name], leaked,
+            ))
+        for field in (
+            "containmentActive", "externalEffectsEnabled", "promotionEnabled",
+        ):
+            invalid = copy.deepcopy(before)
+            invalid[field] = not bool(invalid[field])
+            mutations.append((
+                f"control_{stage_name}_{field}", invalid,
+                EXPECTED[stage_name], packet(40 + index),
+            ))
+        invalid_residual = copy.deepcopy(before)
+        invalid_residual["openResidualCount"] = 2
+        mutations.append((
+            f"control_{stage_name}_openResidualCount", invalid_residual,
+            EXPECTED[stage_name], packet(50 + index),
+        ))
     for stage_name, gates in GATES.items():
         for field, bad, _ in gates:
-            rejected = packet(22)
+            rejected = packet(60 + len(mutations))
             rejected[field] = bad
             mutations.append((f"gate_{stage_name}_{field}", state(stage_name), EXPECTED[stage_name], rejected))
 
@@ -210,15 +282,31 @@ def main() -> None:
         if after != before:
             failures.append(f"rejected mutation changed state: {label}")
 
+    lifecycle = [(EXPECTED[stage_name], packet(digest))
+                 for digest, stage_name in enumerate(STAGES, 1)]
     current = state()
-    for digest, stage_name in enumerate(STAGES, 1):
-        current, answer = apply(current, EXPECTED[stage_name], packet(digest))
+    reachable = [copy.deepcopy(current)]
+    for kind, event in lifecycle:
+        current, answer = apply(current, kind, event)
         if answer not in ACCEPTED:
-            failures.append(f"canonical lifecycle blocked at {stage_name}: {answer}")
+            failures.append(f"canonical lifecycle blocked at {kind}: {answer}")
+        if not control_state_valid(current):
+            failures.append(f"canonical lifecycle produced invalid control state at {kind}")
+        reachable.append(copy.deepcopy(current))
+    for split in range(len(lifecycle) + 1):
+        prefix = run(state(), lifecycle[:split])
+        if prefix != reachable[split]:
+            failures.append(f"prefix replay drifted at split {split}")
+            continue
+        suffix = run(prefix, lifecycle[split:])
+        if suffix != current:
+            failures.append(f"composition replay drifted at split {split}")
     expected_recovery = {
-        "stage": "operating", "receiptCount": 5, "recoveryCount": 1,
+        "stage": "operating", "receiptCount": 5, "incidentCount": 1,
+        "recoveryCount": 1, "openResidualCount": 0,
         "recurrenceCount": 0, "containmentActive": False,
-        "externalEffectsEnabled": True, "supportAssignmentCount": 0,
+        "externalEffectsEnabled": True, "promotionEnabled": True,
+        "supportAssignmentCount": 0,
         "externalAuthorityCount": 0,
     }
     for field, expected in expected_recovery.items():
@@ -229,9 +317,10 @@ def main() -> None:
     recurrence["recurrenceOfPriorIncident"] = True
     current, answer = apply(current, "detectAndIsolate", recurrence)
     expected_recurrence = {
-        "stage": "detected", "receiptCount": 6, "recoveryCount": 1,
-        "recurrenceCount": 1, "containmentActive": True,
-        "externalEffectsEnabled": False, "supportAssignmentCount": 0,
+        "stage": "detected", "receiptCount": 6, "incidentCount": 2,
+        "recoveryCount": 1, "recurrenceCount": 1, "openResidualCount": 1,
+        "containmentActive": True, "externalEffectsEnabled": False,
+        "promotionEnabled": False, "supportAssignmentCount": 0,
         "externalAuthorityCount": 0,
     }
     if answer != "acceptDetection":
@@ -246,7 +335,8 @@ def main() -> None:
         f"Failure-recovery refinement passed: {theorem_count} Lean theorems, "
         "5 reachable stages, 5 accepted "
         f"transitions, {len(mutations)}/{len(mutations)} rejecting mutations, "
-        "guarded readmission, recurrence re-isolation, support effect none."
+        f"{len(lifecycle) + 1} lifecycle splits, guarded readmission, "
+        "recurrence re-isolation, support effect none."
     )
 
 
