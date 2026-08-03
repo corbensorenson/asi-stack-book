@@ -10,27 +10,27 @@ It does **not** add proof targets, prove semantic adequacy, promote support stat
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 329 |
-| Implemented proof targets | 329 |
+| Proof targets in manifest | 330 |
+| Implemented proof targets | 330 |
 | Planned proof targets | 0 |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
-| Theorem declarations classified | 2706 |
-| Derived/decomposed theorem declarations | 1696 |
-| Direct/projection-style theorem declarations | 429 |
-| Unknown or mixed theorem declarations | 581 |
-| Safety-critical theorem declarations | 145 |
+| Theorem declarations classified | 2783 |
+| Derived/decomposed theorem declarations | 1742 |
+| Direct/projection-style theorem declarations | 432 |
+| Unknown or mixed theorem declarations | 609 |
+| Safety-critical theorem declarations | 197 |
 | Safety-critical chapter classifications present | 2/2 |
 
 ## Adequacy Snapshot
 
-The current adequacy review classifies 216 adequate finite-record invariant, 79 useful but too narrow, 14 needs richer state-machine or review semantics, 3 needs executable tests first, 17 needs empirical or baseline tests first, and 0 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
+The current adequacy review classifies 236 adequate finite-record invariant, 74 useful but too narrow, 0 needs richer state-machine or review semantics, 3 needs executable tests first, 17 needs empirical or baseline tests first, and 0 research-agenda until artifact import. These classes route follow-through work; they do not change theorem status or chapter support states.
 
 | Adequacy class | Targets |
 |---|---:|
-| adequate finite-record invariant | 216 |
-| useful but too narrow | 79 |
-| needs richer state-machine or review semantics | 14 |
+| adequate finite-record invariant | 236 |
+| useful but too narrow | 74 |
+| needs richer state-machine or review semantics | 0 |
 | needs executable tests first | 3 |
 | needs empirical or baseline tests first | 17 |
 | research-agenda until artifact import | 0 |

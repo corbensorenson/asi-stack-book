@@ -1210,4 +1210,637 @@ theorem missing_stakeholder_standing_is_rejected_even_with_matching_count :
     } = none := by
   decide
 
+/-! ## Contestable profiled-lease lifecycle
+
+This lifecycle joins the bounded lease and finite stakeholder-profile models.
+It treats the supplied profile, standing bits, role identities, and appeal
+outcome as authored inputs. The model proves exact custody, role separation,
+bounded authority, and appeal-history consequences only. It does not prove
+that the supplied stakeholders are complete, that standing is legitimate, or
+that any reviewer is competent or institutionally independent.
+-/
+
+def StakeholderPositionMatchesRecordedId
+    (position : StakeholderPosition) (stakeholderId : Nat) : Bool :=
+  position.standingRecorded && decide (position.stakeholderId = stakeholderId)
+
+def StakeholderProfileHasRecordedStakeholder
+    (profile : StakeholderProfile) (stakeholderId : Nat) : Bool :=
+  StakeholderPositionMatchesRecordedId profile.first stakeholderId ||
+    StakeholderPositionMatchesRecordedId profile.second stakeholderId ||
+      StakeholderPositionMatchesRecordedId profile.third stakeholderId
+
+inductive ContestableLeaseStage where
+  | draft
+  | reviewed
+  | leased
+  | appealed
+  | redressed
+  | expired
+deriving DecidableEq, Repr
+
+inductive ContestableLeaseEventKind where
+  | recordIndependentReview
+  | issueBoundedLease
+  | fileAffectedPartyAppeal
+  | sustainAppeal
+  | expire
+deriving DecidableEq, Repr
+
+structure ContestableLeaseState where
+  conflictId : Nat
+  leaseId : Nat
+  stakeholderProfile : StakeholderProfile
+  dissentPayload : StakeholderProfile
+  reportedSupportCount : Nat
+  proposerId : Nat
+  reviewerId : Nat
+  appellantId : Nat
+  appealReviewerId : Nat
+  version : Nat
+  baseAuthorityCeiling : Nat
+  currentAuthorityCeiling : Nat
+  stage : ContestableLeaseStage
+  appealCount : Nat
+  adverseRecordCount : Nat
+  expiresAt : Nat
+  now : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure ContestableLeaseEvent where
+  kind : ContestableLeaseEventKind
+  conflictId : Nat
+  leaseId : Nat
+  stakeholderProfile : StakeholderProfile
+  dissentPayload : StakeholderProfile
+  reportedSupportCount : Nat
+  actorId : Nat
+  reviewerId : Nat
+  appealReviewerId : Nat
+  expectedVersion : Nat
+  targetVersion : Nat
+  requestedAuthorityCeiling : Nat
+  observedNow : Nat
+  requestedExpiry : Nat
+  appealSustained : Bool
+  requestsActionAuthority : Bool
+  requestsMoralSettlement : Bool
+deriving DecidableEq, Repr
+
+def ContestableLeaseEventAdmissible
+    (state : ContestableLeaseState) (event : ContestableLeaseEvent) : Prop :=
+  event.conflictId = state.conflictId ∧
+    event.leaseId = state.leaseId ∧
+    event.stakeholderProfile = state.stakeholderProfile ∧
+    event.dissentPayload = state.dissentPayload ∧
+    event.reportedSupportCount = state.reportedSupportCount ∧
+    event.expectedVersion = state.version ∧
+    state.now ≤ event.observedNow ∧
+    event.requestsActionAuthority = false ∧
+    event.requestsMoralSettlement = false ∧
+    match event.kind with
+    | ContestableLeaseEventKind.recordIndependentReview =>
+        state.stage = ContestableLeaseStage.draft ∧
+          event.actorId = state.proposerId ∧
+          StakeholderProfileAllStandingRecorded state.stakeholderProfile = true ∧
+          state.dissentPayload = state.stakeholderProfile ∧
+          state.reportedSupportCount =
+            StakeholderProfileSupportCount state.stakeholderProfile ∧
+          event.reviewerId ≠ state.proposerId ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | ContestableLeaseEventKind.issueBoundedLease =>
+        state.stage = ContestableLeaseStage.reviewed ∧
+          state.reviewerId ≠ state.proposerId ∧
+          event.actorId = state.reviewerId ∧
+          event.reviewerId = state.reviewerId ∧
+          StakeholderProfileAllStandingRecorded state.stakeholderProfile = true ∧
+          state.dissentPayload = state.stakeholderProfile ∧
+          state.reportedSupportCount =
+            StakeholderProfileSupportCount state.stakeholderProfile ∧
+          event.requestedAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+          event.observedNow < event.requestedExpiry ∧
+          event.targetVersion = state.version + 1
+    | ContestableLeaseEventKind.fileAffectedPartyAppeal =>
+        state.stage = ContestableLeaseStage.leased ∧
+          StakeholderProfileHasRecordedStakeholder
+            state.stakeholderProfile event.actorId = true ∧
+          event.reviewerId = state.reviewerId ∧
+          event.targetVersion = state.version ∧
+          event.requestedAuthorityCeiling = state.currentAuthorityCeiling
+    | ContestableLeaseEventKind.sustainAppeal =>
+        state.stage = ContestableLeaseStage.appealed ∧
+          event.actorId = event.appealReviewerId ∧
+          event.appealReviewerId ≠ state.proposerId ∧
+          event.appealReviewerId ≠ state.reviewerId ∧
+          event.appealReviewerId ≠ state.appellantId ∧
+          event.appealSustained = true ∧
+          event.requestedAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+          event.targetVersion = state.version + 1
+    | ContestableLeaseEventKind.expire =>
+        (state.stage = ContestableLeaseStage.leased ∨
+          state.stage = ContestableLeaseStage.redressed) ∧
+          state.expiresAt ≤ event.observedNow ∧
+          event.targetVersion = state.version
+
+instance contestableLeaseEventAdmissibleDecidable
+    (state : ContestableLeaseState) (event : ContestableLeaseEvent) :
+    Decidable (ContestableLeaseEventAdmissible state event) := by
+  unfold ContestableLeaseEventAdmissible
+  cases event.kind <;> infer_instance
+
+def AdvanceContestableLease
+    (state : ContestableLeaseState)
+    (event : ContestableLeaseEvent) : ContestableLeaseState :=
+  match event.kind with
+  | ContestableLeaseEventKind.recordIndependentReview =>
+      { state with
+        reviewerId := event.reviewerId
+        stage := ContestableLeaseStage.reviewed
+        now := event.observedNow }
+  | ContestableLeaseEventKind.issueBoundedLease =>
+      { state with
+        version := event.targetVersion
+        currentAuthorityCeiling := event.requestedAuthorityCeiling
+        stage := ContestableLeaseStage.leased
+        expiresAt := event.requestedExpiry
+        now := event.observedNow }
+  | ContestableLeaseEventKind.fileAffectedPartyAppeal =>
+      { state with
+        appellantId := event.actorId
+        stage := ContestableLeaseStage.appealed
+        appealCount := state.appealCount + 1
+        now := event.observedNow }
+  | ContestableLeaseEventKind.sustainAppeal =>
+      { state with
+        appealReviewerId := event.appealReviewerId
+        version := event.targetVersion
+        currentAuthorityCeiling := event.requestedAuthorityCeiling
+        stage := ContestableLeaseStage.redressed
+        adverseRecordCount := state.adverseRecordCount + 1
+        now := event.observedNow }
+  | ContestableLeaseEventKind.expire =>
+      { state with
+        currentAuthorityCeiling := 0
+        stage := ContestableLeaseStage.expired
+        now := event.observedNow }
+
+def ApplyContestableLeaseEvent
+    (state : ContestableLeaseState)
+    (event : ContestableLeaseEvent) : Option ContestableLeaseState :=
+  if ContestableLeaseEventAdmissible state event then
+    some (AdvanceContestableLease state event)
+  else
+    none
+
+def RunContestableLeaseEvents :
+    ContestableLeaseState → List ContestableLeaseEvent →
+      Option ContestableLeaseState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ApplyContestableLeaseEvent state event with
+      | none => none
+      | some next => RunContestableLeaseEvents next tail
+
+theorem accepted_contestable_lease_event_is_admissible
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    ContestableLeaseEventAdmissible state event := by
+  unfold ApplyContestableLeaseEvent at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_contestable_lease_event_is_exact_advance
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    next = AdvanceContestableLease state event := by
+  unfold ApplyContestableLeaseEvent at accepted
+  split at accepted
+  · simp at accepted
+    exact accepted.symm
+  · simp at accepted
+
+theorem accepted_contestable_lease_event_preserves_profile_custody
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    next.conflictId = state.conflictId ∧
+      next.leaseId = state.leaseId ∧
+      next.stakeholderProfile = state.stakeholderProfile ∧
+      next.dissentPayload = state.dissentPayload ∧
+      next.reportedSupportCount = state.reportedSupportCount ∧
+      next.proposerId = state.proposerId ∧
+      next.baseAuthorityCeiling = state.baseAuthorityCeiling := by
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceContestableLease, kind]
+
+theorem accepted_contestable_lease_event_is_non_authorizing
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    event.requestsActionAuthority = false ∧
+      event.requestsMoralSettlement = false ∧
+      next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectCount = state.externalEffectCount := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, noAuthority, noSettlement, _⟩
+  subst next
+  exact ⟨noAuthority, noSettlement,
+    by cases kind : event.kind <;> simp [AdvanceContestableLease, kind],
+    by cases kind : event.kind <;> simp [AdvanceContestableLease, kind]⟩
+
+theorem accepted_contestable_lease_event_never_widens_authority
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, route⟩
+  subst next
+  cases kind : event.kind with
+  | recordIndependentReview => simp [AdvanceContestableLease, kind]
+  | issueBoundedLease =>
+      simp [kind] at route
+      simpa [AdvanceContestableLease, kind] using route.2.2.2.2.2.2.2.1
+  | fileAffectedPartyAppeal => simp [AdvanceContestableLease, kind]
+  | sustainAppeal =>
+      simp [kind] at route
+      simpa [AdvanceContestableLease, kind] using route.2.2.2.2.2.2.1
+  | expire => simp [AdvanceContestableLease, kind]
+
+theorem accepted_contestable_review_requires_complete_profile_and_separation
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (kind : event.kind = ContestableLeaseEventKind.recordIndependentReview)
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    state.stage = ContestableLeaseStage.draft ∧
+      StakeholderProfileAllStandingRecorded state.stakeholderProfile = true ∧
+      state.dissentPayload = state.stakeholderProfile ∧
+      state.reportedSupportCount =
+        StakeholderProfileSupportCount state.stakeholderProfile ∧
+      next.reviewerId ≠ next.proposerId := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨draft, _, standing, dissent, count, independent, _, _⟩
+  subst next
+  exact ⟨draft, standing, dissent, count,
+    by simpa [AdvanceContestableLease, kind] using independent⟩
+
+theorem accepted_contestable_issue_rechecks_profile_and_bounds
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (kind : event.kind = ContestableLeaseEventKind.issueBoundedLease)
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    state.stage = ContestableLeaseStage.reviewed ∧
+      state.reviewerId ≠ state.proposerId ∧
+      StakeholderProfileAllStandingRecorded state.stakeholderProfile = true ∧
+      state.dissentPayload = state.stakeholderProfile ∧
+      state.reportedSupportCount =
+        StakeholderProfileSupportCount state.stakeholderProfile ∧
+      next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling ∧
+      next.now < next.expiresAt := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨reviewed, independent, _, _, standing, dissent, count,
+    narrowed, future, _⟩
+  subst next
+  exact ⟨reviewed, independent, standing, dissent, count,
+    by simpa [AdvanceContestableLease, kind] using narrowed,
+    by simpa [AdvanceContestableLease, kind] using future⟩
+
+theorem accepted_affected_party_appeal_has_recorded_standing
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (kind : event.kind = ContestableLeaseEventKind.fileAffectedPartyAppeal)
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    state.stage = ContestableLeaseStage.leased ∧
+      StakeholderProfileHasRecordedStakeholder
+        state.stakeholderProfile event.actorId = true ∧
+      next.appellantId = event.actorId ∧
+      next.appealCount = state.appealCount + 1 := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  exact ⟨route.1, route.2.1,
+    by simp [AdvanceContestableLease, kind],
+    by simp [AdvanceContestableLease, kind]⟩
+
+theorem accepted_sustained_appeal_has_independent_custody_and_adverse_record
+    {state next : ContestableLeaseState} {event : ContestableLeaseEvent}
+    (kind : event.kind = ContestableLeaseEventKind.sustainAppeal)
+    (accepted : ApplyContestableLeaseEvent state event = some next) :
+    state.stage = ContestableLeaseStage.appealed ∧
+      next.appealReviewerId ≠ next.proposerId ∧
+      next.appealReviewerId ≠ next.reviewerId ∧
+      next.appealReviewerId ≠ next.appellantId ∧
+      next.adverseRecordCount = state.adverseRecordCount + 1 ∧
+      next.currentAuthorityCeiling ≤ state.currentAuthorityCeiling := by
+  have admissible := accepted_contestable_lease_event_is_admissible accepted
+  have exactAdvance := accepted_contestable_lease_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨appealed, _, distinctProposer, distinctReviewer,
+    distinctAppellant, _, narrowed, _⟩
+  subst next
+  exact ⟨appealed,
+    by simpa [AdvanceContestableLease, kind] using distinctProposer,
+    by simpa [AdvanceContestableLease, kind] using distinctReviewer,
+    by simpa [AdvanceContestableLease, kind] using distinctAppellant,
+    by simp [AdvanceContestableLease, kind],
+    by simpa [AdvanceContestableLease, kind] using narrowed⟩
+
+theorem open_contestable_appeal_cannot_expire
+    (state : ContestableLeaseState) (event : ContestableLeaseEvent)
+    (appealed : state.stage = ContestableLeaseStage.appealed)
+    (kind : event.kind = ContestableLeaseEventKind.expire) :
+    ApplyContestableLeaseEvent state event = none := by
+  unfold ApplyContestableLeaseEvent
+  simp [ContestableLeaseEventAdmissible, kind, appealed]
+
+theorem contestable_lease_run_preserves_profile_non_authority_narrowing_and_history
+    {initial final : ContestableLeaseState}
+    {events : List ContestableLeaseEvent}
+    (run : RunContestableLeaseEvents initial events = some final) :
+    final.conflictId = initial.conflictId ∧
+      final.leaseId = initial.leaseId ∧
+      final.stakeholderProfile = initial.stakeholderProfile ∧
+      final.dissentPayload = initial.dissentPayload ∧
+      final.reportedSupportCount = initial.reportedSupportCount ∧
+      final.proposerId = initial.proposerId ∧
+      final.baseAuthorityCeiling = initial.baseAuthorityCeiling ∧
+      final.currentAuthorityCeiling ≤ initial.currentAuthorityCeiling ∧
+      initial.appealCount ≤ final.appealCount ∧
+      initial.adverseRecordCount ≤ final.adverseRecordCount ∧
+      final.supportAssignmentCount = initial.supportAssignmentCount ∧
+      final.externalEffectCount = initial.externalEffectCount := by
+  induction events generalizing initial with
+  | nil => simp [RunContestableLeaseEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunContestableLeaseEvents] at run
+      cases step : ApplyContestableLeaseEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have custody :=
+            accepted_contestable_lease_event_preserves_profile_custody step
+          have boundary :=
+            accepted_contestable_lease_event_is_non_authorizing step
+          have narrowed :=
+            accepted_contestable_lease_event_never_widens_authority step
+          have tailFacts := ih run
+          have appealStep : initial.appealCount ≤ next.appealCount := by
+            have exactAdvance :=
+              accepted_contestable_lease_event_is_exact_advance step
+            subst next
+            cases kind : event.kind <;>
+              simp [AdvanceContestableLease, kind]
+          have adverseStep :
+              initial.adverseRecordCount ≤ next.adverseRecordCount := by
+            have exactAdvance :=
+              accepted_contestable_lease_event_is_exact_advance step
+            subst next
+            cases kind : event.kind <;>
+              simp [AdvanceContestableLease, kind]
+          rcases custody with ⟨c, l, profile, dissent, count, proposer, base⟩
+          rcases boundary with ⟨_, _, support, effects⟩
+          rcases tailFacts with ⟨tc, tl, tprofile, tdissent, tcount,
+            tproposer, tbase, tnarrowed, tappeals, tadverse, tsupport,
+            teffects⟩
+          exact ⟨tc.trans c, tl.trans l, tprofile.trans profile,
+            tdissent.trans dissent, tcount.trans count,
+            tproposer.trans proposer, tbase.trans base,
+            Nat.le_trans tnarrowed narrowed,
+            Nat.le_trans appealStep tappeals,
+            Nat.le_trans adverseStep tadverse,
+            tsupport.trans support, teffects.trans effects⟩
+
+theorem contestable_lease_runs_compose
+    (initial : ContestableLeaseState)
+    (before after : List ContestableLeaseEvent) :
+    RunContestableLeaseEvents initial (before ++ after) =
+      match RunContestableLeaseEvents initial before with
+      | none => none
+      | some middle => RunContestableLeaseEvents middle after := by
+  induction before generalizing initial with
+  | nil => simp [RunContestableLeaseEvents]
+  | cons event tail ih =>
+      simp only [List.cons_append, RunContestableLeaseEvents]
+      cases step : ApplyContestableLeaseEvent initial event with
+      | none => simp
+      | some next => simp [ih]
+
+def initialContestableLeaseState : ContestableLeaseState := {
+  conflictId := 307
+  leaseId := 311
+  stakeholderProfile := leftDissentProfile
+  dissentPayload := leftDissentProfile
+  reportedSupportCount := 2
+  proposerId := 401
+  reviewerId := 0
+  appellantId := 0
+  appealReviewerId := 0
+  version := 1
+  baseAuthorityCeiling := 5
+  currentAuthorityCeiling := 5
+  stage := ContestableLeaseStage.draft
+  appealCount := 0
+  adverseRecordCount := 0
+  expiresAt := 0
+  now := 10
+  supportAssignmentCount := 0
+  externalEffectCount := 0
+}
+
+def contestableReviewEvent : ContestableLeaseEvent := {
+  kind := ContestableLeaseEventKind.recordIndependentReview
+  conflictId := 307
+  leaseId := 311
+  stakeholderProfile := leftDissentProfile
+  dissentPayload := leftDissentProfile
+  reportedSupportCount := 2
+  actorId := 401
+  reviewerId := 403
+  appealReviewerId := 0
+  expectedVersion := 1
+  targetVersion := 1
+  requestedAuthorityCeiling := 5
+  observedNow := 11
+  requestedExpiry := 30
+  appealSustained := false
+  requestsActionAuthority := false
+  requestsMoralSettlement := false
+}
+
+def contestableIssueEvent : ContestableLeaseEvent := {
+  contestableReviewEvent with
+  kind := ContestableLeaseEventKind.issueBoundedLease
+  actorId := 403
+  targetVersion := 2
+  requestedAuthorityCeiling := 3
+}
+
+def contestableAppealEvent : ContestableLeaseEvent := {
+  contestableIssueEvent with
+  kind := ContestableLeaseEventKind.fileAffectedPartyAppeal
+  actorId := 102
+  expectedVersion := 2
+  targetVersion := 2
+  observedNow := 20
+}
+
+def contestableSustainAppealEvent : ContestableLeaseEvent := {
+  contestableAppealEvent with
+  kind := ContestableLeaseEventKind.sustainAppeal
+  actorId := 409
+  appealReviewerId := 409
+  targetVersion := 3
+  requestedAuthorityCeiling := 2
+  observedNow := 21
+  appealSustained := true
+}
+
+def contestableExpireEvent : ContestableLeaseEvent := {
+  contestableSustainAppealEvent with
+  kind := ContestableLeaseEventKind.expire
+  expectedVersion := 3
+  targetVersion := 3
+  observedNow := 30
+  appealSustained := false
+}
+
+def completeContestableLeaseTrace : List ContestableLeaseEvent :=
+  [contestableReviewEvent, contestableIssueEvent, contestableAppealEvent,
+    contestableSustainAppealEvent, contestableExpireEvent]
+
+theorem complete_contestable_lease_trace_reaches_exact_expiry :
+    RunContestableLeaseEvents initialContestableLeaseState
+      completeContestableLeaseTrace = some {
+        initialContestableLeaseState with
+        reviewerId := 403
+        appellantId := 102
+        appealReviewerId := 409
+        version := 3
+        currentAuthorityCeiling := 0
+        stage := ContestableLeaseStage.expired
+        appealCount := 1
+        adverseRecordCount := 1
+        expiresAt := 30
+        now := 30
+      } := by
+  decide
+
+theorem contestable_scalar_equivalent_profile_substitution_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent,
+        { contestableIssueEvent with
+          stakeholderProfile := rightDissentProfile }] = none := by
+  decide
+
+theorem contestable_dissent_substitution_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent,
+        { contestableIssueEvent with dissentPayload := rightDissentProfile }] =
+      none := by
+  decide
+
+theorem contestable_support_count_substitution_is_rejected :
+    ApplyContestableLeaseEvent initialContestableLeaseState
+      { contestableReviewEvent with reportedSupportCount := 1 } = none := by
+  decide
+
+theorem contestable_forged_self_reviewed_state_is_rejected :
+    ApplyContestableLeaseEvent
+      { initialContestableLeaseState with
+        stage := ContestableLeaseStage.reviewed
+        reviewerId := 401 }
+      contestableIssueEvent = none := by
+  decide
+
+theorem contestable_outsider_appeal_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent, contestableIssueEvent,
+        { contestableAppealEvent with actorId := 999 }] = none := by
+  decide
+
+def missingAppealStandingProfile : StakeholderProfile := {
+  leftDissentProfile with
+  second := { leftDissentProfile.second with standingRecorded := false }
+}
+
+def missingAppealStandingState : ContestableLeaseState := {
+  initialContestableLeaseState with
+  stakeholderProfile := missingAppealStandingProfile
+  dissentPayload := missingAppealStandingProfile
+  reportedSupportCount := 2
+  reviewerId := 403
+  version := 2
+  currentAuthorityCeiling := 3
+  stage := ContestableLeaseStage.leased
+  expiresAt := 30
+  now := 11
+}
+
+theorem contestable_unrecorded_standing_appeal_is_rejected :
+    ApplyContestableLeaseEvent missingAppealStandingState
+      { contestableAppealEvent with
+        stakeholderProfile := missingAppealStandingProfile
+        dissentPayload := missingAppealStandingProfile } = none := by
+  decide
+
+theorem contestable_captured_appeal_review_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent, contestableIssueEvent, contestableAppealEvent,
+        { contestableSustainAppealEvent with
+          actorId := 403
+          appealReviewerId := 403 }] = none := by
+  decide
+
+theorem contestable_appellant_self_review_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent, contestableIssueEvent, contestableAppealEvent,
+        { contestableSustainAppealEvent with
+          actorId := 102
+          appealReviewerId := 102 }] = none := by
+  decide
+
+theorem contestable_appeal_authority_widening_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent, contestableIssueEvent, contestableAppealEvent,
+        { contestableSustainAppealEvent with
+          requestedAuthorityCeiling := 4 }] = none := by
+  decide
+
+theorem contestable_open_appeal_expiry_is_rejected :
+    RunContestableLeaseEvents initialContestableLeaseState
+      [contestableReviewEvent, contestableIssueEvent, contestableAppealEvent,
+        { contestableExpireEvent with expectedVersion := 2
+        }] = none := by
+  decide
+
+theorem contestable_action_authority_request_is_rejected :
+    ApplyContestableLeaseEvent initialContestableLeaseState
+      { contestableReviewEvent with requestsActionAuthority := true } = none := by
+  decide
+
+theorem contestable_moral_settlement_request_is_rejected :
+    ApplyContestableLeaseEvent initialContestableLeaseState
+      { contestableReviewEvent with requestsMoralSettlement := true } = none := by
+  decide
+
+theorem expired_contestable_lease_is_terminal
+    (event : ContestableLeaseEvent) :
+    ApplyContestableLeaseEvent
+      { initialContestableLeaseState with
+        stage := ContestableLeaseStage.expired }
+      event = none := by
+  unfold ApplyContestableLeaseEvent
+  cases kind : event.kind <;>
+    simp [ContestableLeaseEventAdmissible, kind]
+
 end AsiStackProofs.ValueConflict

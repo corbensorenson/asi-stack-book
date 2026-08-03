@@ -45,6 +45,32 @@ REQUIRED_LEASE_THEOREMS = {
     "valid_profiled_lease_issues_exact_receipt",
     "aggregate_equivalent_dissent_substitution_is_rejected",
     "missing_stakeholder_standing_is_rejected_even_with_matching_count",
+    "accepted_contestable_lease_event_is_admissible",
+    "accepted_contestable_lease_event_is_exact_advance",
+    "accepted_contestable_lease_event_preserves_profile_custody",
+    "accepted_contestable_lease_event_is_non_authorizing",
+    "accepted_contestable_lease_event_never_widens_authority",
+    "accepted_contestable_review_requires_complete_profile_and_separation",
+    "accepted_contestable_issue_rechecks_profile_and_bounds",
+    "accepted_affected_party_appeal_has_recorded_standing",
+    "accepted_sustained_appeal_has_independent_custody_and_adverse_record",
+    "open_contestable_appeal_cannot_expire",
+    "contestable_lease_run_preserves_profile_non_authority_narrowing_and_history",
+    "contestable_lease_runs_compose",
+    "complete_contestable_lease_trace_reaches_exact_expiry",
+    "contestable_scalar_equivalent_profile_substitution_is_rejected",
+    "contestable_dissent_substitution_is_rejected",
+    "contestable_support_count_substitution_is_rejected",
+    "contestable_forged_self_reviewed_state_is_rejected",
+    "contestable_outsider_appeal_is_rejected",
+    "contestable_unrecorded_standing_appeal_is_rejected",
+    "contestable_captured_appeal_review_is_rejected",
+    "contestable_appellant_self_review_is_rejected",
+    "contestable_appeal_authority_widening_is_rejected",
+    "contestable_open_appeal_expiry_is_rejected",
+    "contestable_action_authority_request_is_rejected",
+    "contestable_moral_settlement_request_is_rejected",
+    "expired_contestable_lease_is_terminal",
 }
 HIGH_STAKES_TERMS = {"high", "irreversible", "safety", "rights", "public", "self-modification"}
 REVIEW_TERMS = {"review", "tribunal", "human", "appeal"}
@@ -373,6 +399,299 @@ def stakeholder_profile_errors() -> list[str]:
     return errors
 
 
+def contestable_lease_lifecycle_errors() -> list[str]:
+    errors: list[str] = []
+    left = ((101, True, True), (102, True, False), (103, True, True))
+    right = ((101, True, False), (102, True, True), (103, True, True))
+
+    def support_count(profile: tuple[tuple[int, bool, bool], ...]) -> int:
+        return sum(1 for _, standing, support in profile if standing and support)
+
+    def has_recorded_stakeholder(
+        profile: tuple[tuple[int, bool, bool], ...], stakeholder_id: int
+    ) -> bool:
+        return any(
+            recorded and candidate_id == stakeholder_id
+            for candidate_id, recorded, _ in profile
+        )
+
+    def apply(
+        state: dict[str, Any], event: dict[str, Any]
+    ) -> dict[str, Any] | None:
+        if not (
+            event["conflict_id"] == state["conflict_id"]
+            and event["lease_id"] == state["lease_id"]
+            and event["stakeholder_profile"] == state["stakeholder_profile"]
+            and event["dissent_payload"] == state["dissent_payload"]
+            and event["reported_support_count"] == state["reported_support_count"]
+            and event["expected_version"] == state["version"]
+            and state["now"] <= event["observed_now"]
+            and event["requests_action_authority"] is False
+            and event["requests_moral_settlement"] is False
+        ):
+            return None
+
+        next_state = dict(state)
+        kind = event["kind"]
+        if kind == "record_independent_review":
+            if not (
+                state["stage"] == "draft"
+                and event["actor_id"] == state["proposer_id"]
+                and all(recorded for _, recorded, _ in state["stakeholder_profile"])
+                and state["dissent_payload"] == state["stakeholder_profile"]
+                and state["reported_support_count"]
+                == support_count(state["stakeholder_profile"])
+                and event["reviewer_id"] != state["proposer_id"]
+                and event["target_version"] == state["version"]
+                and event["requested_authority_ceiling"]
+                == state["current_authority_ceiling"]
+            ):
+                return None
+            next_state.update(
+                reviewer_id=event["reviewer_id"],
+                stage="reviewed",
+                now=event["observed_now"],
+            )
+        elif kind == "issue_bounded_lease":
+            if not (
+                state["stage"] == "reviewed"
+                and state["reviewer_id"] != state["proposer_id"]
+                and event["actor_id"] == state["reviewer_id"]
+                and event["reviewer_id"] == state["reviewer_id"]
+                and all(recorded for _, recorded, _ in state["stakeholder_profile"])
+                and state["dissent_payload"] == state["stakeholder_profile"]
+                and state["reported_support_count"]
+                == support_count(state["stakeholder_profile"])
+                and event["requested_authority_ceiling"]
+                <= state["current_authority_ceiling"]
+                and event["observed_now"] < event["requested_expiry"]
+                and event["target_version"] == state["version"] + 1
+            ):
+                return None
+            next_state.update(
+                version=event["target_version"],
+                current_authority_ceiling=event["requested_authority_ceiling"],
+                stage="leased",
+                expires_at=event["requested_expiry"],
+                now=event["observed_now"],
+            )
+        elif kind == "file_affected_party_appeal":
+            if not (
+                state["stage"] == "leased"
+                and has_recorded_stakeholder(
+                    state["stakeholder_profile"], event["actor_id"]
+                )
+                and event["reviewer_id"] == state["reviewer_id"]
+                and event["target_version"] == state["version"]
+                and event["requested_authority_ceiling"]
+                == state["current_authority_ceiling"]
+            ):
+                return None
+            next_state.update(
+                appellant_id=event["actor_id"],
+                stage="appealed",
+                appeal_count=state["appeal_count"] + 1,
+                now=event["observed_now"],
+            )
+        elif kind == "sustain_appeal":
+            if not (
+                state["stage"] == "appealed"
+                and event["actor_id"] == event["appeal_reviewer_id"]
+                and event["appeal_reviewer_id"] != state["proposer_id"]
+                and event["appeal_reviewer_id"] != state["reviewer_id"]
+                and event["appeal_reviewer_id"] != state["appellant_id"]
+                and event["appeal_sustained"] is True
+                and event["requested_authority_ceiling"]
+                <= state["current_authority_ceiling"]
+                and event["target_version"] == state["version"] + 1
+            ):
+                return None
+            next_state.update(
+                appeal_reviewer_id=event["appeal_reviewer_id"],
+                version=event["target_version"],
+                current_authority_ceiling=event["requested_authority_ceiling"],
+                stage="redressed",
+                adverse_record_count=state["adverse_record_count"] + 1,
+                now=event["observed_now"],
+            )
+        elif kind == "expire":
+            if not (
+                state["stage"] in {"leased", "redressed"}
+                and state["expires_at"] <= event["observed_now"]
+                and event["target_version"] == state["version"]
+            ):
+                return None
+            next_state.update(
+                current_authority_ceiling=0,
+                stage="expired",
+                now=event["observed_now"],
+            )
+        else:
+            return None
+        return next_state
+
+    def run(
+        state: dict[str, Any], events: list[dict[str, Any]]
+    ) -> dict[str, Any] | None:
+        current = dict(state)
+        for event in events:
+            current = apply(current, event)
+            if current is None:
+                return None
+        return current
+
+    initial = {
+        "conflict_id": 307,
+        "lease_id": 311,
+        "stakeholder_profile": left,
+        "dissent_payload": left,
+        "reported_support_count": 2,
+        "proposer_id": 401,
+        "reviewer_id": 0,
+        "appellant_id": 0,
+        "appeal_reviewer_id": 0,
+        "version": 1,
+        "base_authority_ceiling": 5,
+        "current_authority_ceiling": 5,
+        "stage": "draft",
+        "appeal_count": 0,
+        "adverse_record_count": 0,
+        "expires_at": 0,
+        "now": 10,
+        "support_assignment_count": 0,
+        "external_effect_count": 0,
+    }
+    review = {
+        "kind": "record_independent_review",
+        "conflict_id": 307,
+        "lease_id": 311,
+        "stakeholder_profile": left,
+        "dissent_payload": left,
+        "reported_support_count": 2,
+        "actor_id": 401,
+        "reviewer_id": 403,
+        "appeal_reviewer_id": 0,
+        "expected_version": 1,
+        "target_version": 1,
+        "requested_authority_ceiling": 5,
+        "observed_now": 11,
+        "requested_expiry": 30,
+        "appeal_sustained": False,
+        "requests_action_authority": False,
+        "requests_moral_settlement": False,
+    }
+    issue = dict(
+        review,
+        kind="issue_bounded_lease",
+        actor_id=403,
+        target_version=2,
+        requested_authority_ceiling=3,
+    )
+    appeal = dict(
+        issue,
+        kind="file_affected_party_appeal",
+        actor_id=102,
+        expected_version=2,
+        target_version=2,
+        observed_now=20,
+    )
+    sustain = dict(
+        appeal,
+        kind="sustain_appeal",
+        actor_id=409,
+        appeal_reviewer_id=409,
+        target_version=3,
+        requested_authority_ceiling=2,
+        observed_now=21,
+        appeal_sustained=True,
+    )
+    expire = dict(
+        sustain,
+        kind="expire",
+        expected_version=3,
+        target_version=3,
+        observed_now=30,
+        appeal_sustained=False,
+    )
+    events = [review, issue, appeal, sustain, expire]
+    expected = dict(
+        initial,
+        reviewer_id=403,
+        appellant_id=102,
+        appeal_reviewer_id=409,
+        version=3,
+        current_authority_ceiling=0,
+        stage="expired",
+        appeal_count=1,
+        adverse_record_count=1,
+        expires_at=30,
+        now=30,
+    )
+    final = run(initial, events)
+    if final != expected:
+        errors.append(f"contestable profiled-lease final state drifted: {final!r}.")
+
+    for split in range(len(events) + 1):
+        middle = run(initial, events[:split])
+        recomposed = None if middle is None else run(middle, events[split:])
+        if recomposed != final:
+            errors.append(
+                f"contestable profiled-lease composition failed at split {split}."
+            )
+
+    reviewed = run(initial, [review])
+    leased = run(initial, [review, issue])
+    appealed = run(initial, [review, issue, appeal])
+    if reviewed is None or leased is None or appealed is None:
+        errors.append("contestable profiled-lease could not prepare control states.")
+        return errors
+
+    missing_standing = (
+        left[0],
+        (left[1][0], False, left[1][2]),
+        left[2],
+    )
+    missing_standing_state = dict(
+        leased,
+        stakeholder_profile=missing_standing,
+        dissent_payload=missing_standing,
+    )
+    controls = [
+        (reviewed, dict(issue, stakeholder_profile=right)),
+        (reviewed, dict(issue, dissent_payload=right)),
+        (initial, dict(review, reported_support_count=1)),
+        (dict(reviewed, reviewer_id=401), issue),
+        (leased, dict(appeal, actor_id=999)),
+        (
+            missing_standing_state,
+            dict(
+                appeal,
+                stakeholder_profile=missing_standing,
+                dissent_payload=missing_standing,
+            ),
+        ),
+        (appealed, dict(sustain, actor_id=403, appeal_reviewer_id=403)),
+        (appealed, dict(sustain, actor_id=102, appeal_reviewer_id=102)),
+        (appealed, dict(sustain, requested_authority_ceiling=4)),
+        (appealed, dict(expire, expected_version=2)),
+        (initial, dict(review, requests_action_authority=True)),
+        (initial, dict(review, requests_moral_settlement=True)),
+    ]
+    for index, (state, event) in enumerate(controls, start=1):
+        if apply(state, event) is not None:
+            errors.append(
+                f"contestable profiled-lease accepted rejecting control {index}."
+            )
+
+    if final is not None:
+        for index, event in enumerate(events, start=1):
+            if apply(final, event) is not None:
+                errors.append(
+                    f"contestable profiled-lease terminal state accepted event {index}."
+                )
+    return errors
+
+
 def main() -> None:
     schema = load_json(SCHEMA)
     fixtures = sorted(FIXTURE_DIR.glob("*.json"))
@@ -383,6 +702,7 @@ def main() -> None:
         compile_and_check_lean_surface()
         + lease_lifecycle_errors()
         + stakeholder_profile_errors()
+        + contestable_lease_lifecycle_errors()
     )
     valid_count = 0
     invalid_count = 0
@@ -420,7 +740,9 @@ def main() -> None:
         "Value conflict harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
         "4 lease events, 6 rejecting lease controls, 8 stakeholder profiles, "
-        "scalar aggregation collisions, and 2 dissent-custody controls."
+        "scalar aggregation collisions, 2 dissent-custody controls, one "
+        "5-event contestable profiled-lease trace, 6 composition splits, "
+        "12 rejecting contestability controls, and 5 terminal rejections."
     )
 
 

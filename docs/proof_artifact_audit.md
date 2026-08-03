@@ -123,7 +123,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 19 | 0 | 32 | 4 |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 32 | 0 | 37 | 3 |
-| `lean/AsiStackProofs/ValueConflict.lean` | 3 | 47 | 0 | 28 | 10 |
+| `lean/AsiStackProofs/ValueConflict.lean` | 3 | 73 | 0 | 43 | 12 |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 35 | 0 | 25 | 4 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 39 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 36 | 0 | 18 | 3 |
