@@ -1,3 +1,5 @@
+import AsiStackProofs.Authority
+
 namespace AsiStackProofs.HumanAIOrganizations
 
 inductive AccountabilityReviewState where
@@ -777,5 +779,578 @@ theorem authored_exercise_witness_reaches_terminal_record :
     ExerciseRun initialExerciseState completeExerciseEvents =
       some completeExerciseFinal := by
   decide
+
+/-!
+Organizational responsibility refinement over the authority-delegation chain.
+This finite bridge proves that an accepted authored handoff cannot erase the
+current accountable owner, widen authority, collapse the named reviewer into
+the delegator or delegate, orphan prior responsibility, or create support or
+external-effect authority. It does not establish that any identity, assignment,
+review, evidence, intervention, appeal, or remedy is authentic or usable.
+-/
+
+structure ResponsibilityDelegationState where
+  authorityState : Authority.DelegationState
+  accountableOwnerId : Nat
+  reviewerId : Nat
+  evidenceCustodianId : Nat
+  residualOwnerIds : List Nat
+  responsibilityReceiptCount : Nat
+  assignmentComplete : Bool
+  interventionPathPresent : Bool
+  appealPathPresent : Bool
+  remedyPathPresent : Bool
+  supportAssigned : Bool
+  externalEffectCommitted : Bool
+deriving DecidableEq, Repr
+
+structure ResponsibilityDelegationEvent where
+  authorityEvent : Authority.DelegationEvent
+  transferringOwnerId : Nat
+  nextAccountableOwnerId : Nat
+  reviewerId : Nat
+  evidenceCustodianId : Nat
+  assignment : AccountabilityAssignment := {}
+  handoffAcknowledgment : Bool := true
+  interventionPathTransferred : Bool := true
+  evidenceCustodyTransferred : Bool := true
+  appealPathTransferred : Bool := true
+  remedyPathTransferred : Bool := true
+  residualCustodyAcknowledged : Bool := true
+  supportRequested : Bool := false
+  externalEffectRequested : Bool := false
+deriving DecidableEq, Repr
+
+def ValidResponsibilityDelegationEvent
+    (state : ResponsibilityDelegationState)
+    (event : ResponsibilityDelegationEvent) : Prop :=
+  state.accountableOwnerId = state.authorityState.currentDelegateId ∧
+    event.transferringOwnerId = state.accountableOwnerId ∧
+    Authority.ValidDelegationEvent state.authorityState event.authorityEvent ∧
+    event.nextAccountableOwnerId = event.authorityEvent.childDelegateId ∧
+    0 < event.nextAccountableOwnerId ∧
+    0 < event.reviewerId ∧
+    event.reviewerId ≠ event.authorityEvent.actingPrincipalId ∧
+    event.reviewerId ≠ event.nextAccountableOwnerId ∧
+    0 < event.evidenceCustodianId ∧
+    event.evidenceCustodianId ≠ event.nextAccountableOwnerId ∧
+    AccountabilityAssignmentComplete event.assignment = true ∧
+    event.handoffAcknowledgment = true ∧
+    event.interventionPathTransferred = true ∧
+    event.evidenceCustodyTransferred = true ∧
+    event.appealPathTransferred = true ∧
+    event.remedyPathTransferred = true ∧
+    event.residualCustodyAcknowledged = true ∧
+    event.supportRequested = false ∧
+    event.externalEffectRequested = false
+
+instance responsibilityDelegationEventValidityDecidable
+    (state : ResponsibilityDelegationState)
+    (event : ResponsibilityDelegationEvent) :
+    Decidable (ValidResponsibilityDelegationEvent state event) := by
+  unfold ValidResponsibilityDelegationEvent
+  infer_instance
+
+def ApplyResponsibilityDelegationEvent
+    (state : ResponsibilityDelegationState)
+    (event : ResponsibilityDelegationEvent) : ResponsibilityDelegationState :=
+  { state with
+      authorityState :=
+        Authority.ApplyDelegationEvent state.authorityState event.authorityEvent
+      accountableOwnerId := event.nextAccountableOwnerId
+      reviewerId := event.reviewerId
+      evidenceCustodianId := event.evidenceCustodianId
+      residualOwnerIds := state.accountableOwnerId :: state.residualOwnerIds
+      responsibilityReceiptCount := state.responsibilityReceiptCount + 1
+      assignmentComplete := true
+      interventionPathPresent := true
+      appealPathPresent := true
+      remedyPathPresent := true }
+
+def ResponsibilityDelegationStep
+    (state : ResponsibilityDelegationState)
+    (event : ResponsibilityDelegationEvent) :
+    Option ResponsibilityDelegationState :=
+  if ValidResponsibilityDelegationEvent state event then
+    some (ApplyResponsibilityDelegationEvent state event)
+  else
+    none
+
+def ResponsibilityDelegationRun :
+    ResponsibilityDelegationState -> List ResponsibilityDelegationEvent ->
+      Option ResponsibilityDelegationState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ResponsibilityDelegationStep state event with
+      | none => none
+      | some next => ResponsibilityDelegationRun next tail
+
+def ResponsibilityDelegationTraceValid :
+    ResponsibilityDelegationState -> List ResponsibilityDelegationEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ValidResponsibilityDelegationEvent state event ∧
+        ResponsibilityDelegationTraceValid
+          (ApplyResponsibilityDelegationEvent state event) tail
+
+def ResponsibilityDelegationNonAuthority
+    (state : ResponsibilityDelegationState) : Prop :=
+  state.supportAssigned = false ∧
+    state.externalEffectCommitted = false ∧
+    Authority.DelegationNonAuthority state.authorityState
+
+instance responsibilityDelegationNonAuthorityDecidable
+    (state : ResponsibilityDelegationState) :
+    Decidable (ResponsibilityDelegationNonAuthority state) := by
+  unfold ResponsibilityDelegationNonAuthority
+  infer_instance
+
+structure ResponsibilityDelegationInvariant
+    (state : ResponsibilityDelegationState) : Prop where
+  authorityInvariant : Authority.DelegationStateInvariant state.authorityState
+  accountableMatchesDelegate :
+    state.accountableOwnerId = state.authorityState.currentDelegateId
+  accountableOwnerPositive : 0 < state.accountableOwnerId
+  reviewerPositive : 0 < state.reviewerId
+  reviewerIndependentFromOwner : state.reviewerId ≠ state.accountableOwnerId
+  reviewerIndependentFromPrincipal :
+    state.reviewerId ≠ state.authorityState.currentPrincipalId
+  evidenceCustodianPositive : 0 < state.evidenceCustodianId
+  evidenceCustodianIndependentFromOwner :
+    state.evidenceCustodianId ≠ state.accountableOwnerId
+  receiptAligned :
+    state.responsibilityReceiptCount = state.authorityState.receiptCount
+  residualDepthAligned :
+    state.residualOwnerIds.length = state.authorityState.depth
+  assignmentComplete : state.assignmentComplete = true
+  interventionPathPresent : state.interventionPathPresent = true
+  appealPathPresent : state.appealPathPresent = true
+  remedyPathPresent : state.remedyPathPresent = true
+  nonAuthority : ResponsibilityDelegationNonAuthority state
+
+theorem responsibility_delegation_accepted_step_is_valid
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    ValidResponsibilityDelegationEvent state event := by
+  unfold ResponsibilityDelegationStep at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem responsibility_delegation_accepted_step_applies_event
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    next = ApplyResponsibilityDelegationEvent state event := by
+  unfold ResponsibilityDelegationStep at accepted
+  split at accepted
+  · exact (Option.some.inj accepted).symm
+  · simp at accepted
+
+theorem responsibility_delegation_step_refines_authority_step
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    Authority.DelegationStep state.authorityState event.authorityEvent =
+      some next.authorityState := by
+  have valid := responsibility_delegation_accepted_step_is_valid accepted
+  have applies := responsibility_delegation_accepted_step_applies_event accepted
+  rw [applies]
+  rcases valid with ⟨_, _, authorityValid, _⟩
+  simp [ApplyResponsibilityDelegationEvent, Authority.DelegationStep,
+    authorityValid]
+
+theorem responsibility_delegation_step_assigns_exact_child_owner
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    next.accountableOwnerId = event.authorityEvent.childDelegateId := by
+  have valid := responsibility_delegation_accepted_step_is_valid accepted
+  have applies := responsibility_delegation_accepted_step_applies_event accepted
+  rw [applies]
+  exact valid.2.2.2.1
+
+theorem responsibility_delegation_step_retains_prior_owner
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    next.residualOwnerIds =
+      state.accountableOwnerId :: state.residualOwnerIds := by
+  rw [responsibility_delegation_accepted_step_applies_event accepted]
+  rfl
+
+theorem responsibility_delegation_step_adds_exact_receipt
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    next.responsibilityReceiptCount =
+      state.responsibilityReceiptCount + 1 := by
+  rw [responsibility_delegation_accepted_step_applies_event accepted]
+  rfl
+
+theorem responsibility_delegation_step_preserves_non_authority
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (bounded : ResponsibilityDelegationNonAuthority state)
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    ResponsibilityDelegationNonAuthority next := by
+  have authorityAccepted :=
+    responsibility_delegation_step_refines_authority_step accepted
+  have applies := responsibility_delegation_accepted_step_applies_event accepted
+  rw [applies] at authorityAccepted
+  have authorityBounded := Authority.delegation_step_preserves_non_authority
+    bounded.2.2 authorityAccepted
+  rw [applies]
+  exact ⟨bounded.1, bounded.2.1, authorityBounded⟩
+
+theorem responsibility_delegation_step_preserves_invariant
+    {state next : ResponsibilityDelegationState}
+    {event : ResponsibilityDelegationEvent}
+    (safe : ResponsibilityDelegationInvariant state)
+    (accepted : ResponsibilityDelegationStep state event = some next) :
+    ResponsibilityDelegationInvariant next := by
+  have valid := responsibility_delegation_accepted_step_is_valid accepted
+  have authorityAccepted :=
+    responsibility_delegation_step_refines_authority_step accepted
+  have applies := responsibility_delegation_accepted_step_applies_event accepted
+  have preservedNonAuthority :=
+    responsibility_delegation_step_preserves_non_authority
+      safe.nonAuthority accepted
+  rw [applies] at authorityAccepted
+  rw [applies] at preservedNonAuthority
+  rcases valid with
+    ⟨ownerMatches, transferringOwner, authorityValid, nextOwner,
+      nextOwnerPositive, reviewerPositive, reviewerNotPrincipal,
+      reviewerNotOwner, custodianPositive, custodianNotOwner,
+      assignmentComplete, handoffAcknowledgment, interventionTransferred,
+      evidenceTransferred, appealTransferred, remedyTransferred,
+      residualAcknowledged, noSupport, noEffect⟩
+  rw [applies]
+  exact {
+    authorityInvariant := Authority.delegation_step_preserves_invariant
+      safe.authorityInvariant authorityAccepted
+    accountableMatchesDelegate := by
+      simp [ApplyResponsibilityDelegationEvent,
+        Authority.ApplyDelegationEvent, nextOwner]
+    accountableOwnerPositive := nextOwnerPositive
+    reviewerPositive := reviewerPositive
+    reviewerIndependentFromOwner := reviewerNotOwner
+    reviewerIndependentFromPrincipal := by
+      simpa [ApplyResponsibilityDelegationEvent,
+        Authority.ApplyDelegationEvent] using reviewerNotPrincipal
+    evidenceCustodianPositive := custodianPositive
+    evidenceCustodianIndependentFromOwner := custodianNotOwner
+    receiptAligned := by
+      simp [ApplyResponsibilityDelegationEvent,
+        Authority.ApplyDelegationEvent, safe.receiptAligned]
+    residualDepthAligned := by
+      simp [ApplyResponsibilityDelegationEvent,
+        Authority.ApplyDelegationEvent, safe.residualDepthAligned]
+    assignmentComplete := rfl
+    interventionPathPresent := rfl
+    appealPathPresent := rfl
+    remedyPathPresent := rfl
+    nonAuthority := preservedNonAuthority }
+
+theorem responsibility_delegation_run_preserves_invariant
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (safe : ResponsibilityDelegationInvariant state)
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    ResponsibilityDelegationInvariant final := by
+  induction events generalizing state with
+  | nil =>
+      simp [ResponsibilityDelegationRun] at ran
+      subst final
+      exact safe
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event with
+      | none => simp [ResponsibilityDelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : ResponsibilityDelegationRun next tail = some final := by
+            simpa [ResponsibilityDelegationRun, stepped] using ran
+          exact ih
+            (responsibility_delegation_step_preserves_invariant safe stepped)
+            tailRan
+
+theorem responsibility_delegation_run_refines_authority_run
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    Authority.DelegationRun state.authorityState
+      (events.map (fun event => event.authorityEvent)) =
+        some final.authorityState := by
+  induction events generalizing state with
+  | nil =>
+      simp [ResponsibilityDelegationRun] at ran
+      subst final
+      simp [Authority.DelegationRun]
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event with
+      | none => simp [ResponsibilityDelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : ResponsibilityDelegationRun next tail = some final := by
+            simpa [ResponsibilityDelegationRun, stepped] using ran
+          have authorityStepped :=
+            responsibility_delegation_step_refines_authority_step stepped
+          simp [Authority.DelegationRun, authorityStepped, ih tailRan]
+
+theorem responsibility_delegation_run_has_no_owner_gap
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (safe : ResponsibilityDelegationInvariant state)
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    0 < final.accountableOwnerId ∧
+      final.accountableOwnerId = final.authorityState.currentDelegateId := by
+  have finalSafe := responsibility_delegation_run_preserves_invariant safe ran
+  exact ⟨finalSafe.accountableOwnerPositive,
+    finalSafe.accountableMatchesDelegate⟩
+
+theorem responsibility_delegation_run_accounts_exact_receipts
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    final.responsibilityReceiptCount =
+      state.responsibilityReceiptCount + events.length := by
+  induction events generalizing state with
+  | nil =>
+      simp [ResponsibilityDelegationRun] at ran
+      subst final
+      simp
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event with
+      | none => simp [ResponsibilityDelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : ResponsibilityDelegationRun next tail = some final := by
+            simpa [ResponsibilityDelegationRun, stepped] using ran
+          calc
+            final.responsibilityReceiptCount =
+                next.responsibilityReceiptCount + tail.length := ih tailRan
+            _ = (state.responsibilityReceiptCount + 1) + tail.length := by
+              rw [responsibility_delegation_step_adds_exact_receipt stepped]
+            _ = state.responsibilityReceiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem responsibility_delegation_run_accounts_residual_owners
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    final.residualOwnerIds.length =
+      state.residualOwnerIds.length + events.length := by
+  induction events generalizing state with
+  | nil =>
+      simp [ResponsibilityDelegationRun] at ran
+      subst final
+      simp
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event with
+      | none => simp [ResponsibilityDelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : ResponsibilityDelegationRun next tail = some final := by
+            simpa [ResponsibilityDelegationRun, stepped] using ran
+          calc
+            final.residualOwnerIds.length =
+                next.residualOwnerIds.length + tail.length := ih tailRan
+            _ = (state.residualOwnerIds.length + 1) + tail.length := by
+              rw [responsibility_delegation_step_retains_prior_owner stepped]
+              simp
+            _ = state.residualOwnerIds.length + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem responsibility_delegation_successful_run_has_valid_trace
+    {state final : ResponsibilityDelegationState}
+    {events : List ResponsibilityDelegationEvent}
+    (ran : ResponsibilityDelegationRun state events = some final) :
+    ResponsibilityDelegationTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event with
+      | none => simp [ResponsibilityDelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : ResponsibilityDelegationRun next tail = some final := by
+            simpa [ResponsibilityDelegationRun, stepped] using ran
+          have applies :=
+            responsibility_delegation_accepted_step_applies_event stepped
+          exact ⟨responsibility_delegation_accepted_step_is_valid stepped, by
+            rw [← applies]
+            exact ih tailRan⟩
+
+theorem responsibility_delegation_run_composes_across_event_batches
+    (state : ResponsibilityDelegationState)
+    (left right : List ResponsibilityDelegationEvent) :
+    ResponsibilityDelegationRun state (left ++ right) =
+      match ResponsibilityDelegationRun state left with
+      | none => none
+      | some middle => ResponsibilityDelegationRun middle right := by
+  induction left generalizing state with
+  | nil => simp [ResponsibilityDelegationRun]
+  | cons event tail ih =>
+      cases stepped : ResponsibilityDelegationStep state event <;>
+        simp [ResponsibilityDelegationRun, stepped, ih]
+
+def responsibilityDelegationInitialState : ResponsibilityDelegationState :=
+  { authorityState := Authority.delegationInitialState
+    accountableOwnerId := 2
+    reviewerId := 50
+    evidenceCustodianId := 60
+    residualOwnerIds := []
+    responsibilityReceiptCount := 0
+    assignmentComplete := true
+    interventionPathPresent := true
+    appealPathPresent := true
+    remedyPathPresent := true
+    supportAssigned := false
+    externalEffectCommitted := false }
+
+def firstResponsibilityDelegationEvent : ResponsibilityDelegationEvent :=
+  { authorityEvent := Authority.firstDelegationEvent
+    transferringOwnerId := 2
+    nextAccountableOwnerId := 3
+    reviewerId := 51
+    evidenceCustodianId := 61 }
+
+def secondResponsibilityDelegationEvent : ResponsibilityDelegationEvent :=
+  { authorityEvent := Authority.secondDelegationEvent
+    transferringOwnerId := 3
+    nextAccountableOwnerId := 4
+    reviewerId := 52
+    evidenceCustodianId := 62 }
+
+def twoHopResponsibilityDelegationTrace :
+    List ResponsibilityDelegationEvent :=
+  [firstResponsibilityDelegationEvent, secondResponsibilityDelegationEvent]
+
+theorem responsibility_delegation_initial_state_is_invariant :
+    ResponsibilityDelegationInvariant responsibilityDelegationInitialState := by
+  exact {
+    authorityInvariant := Authority.delegation_initial_state_is_invariant
+    accountableMatchesDelegate := by native_decide
+    accountableOwnerPositive := by native_decide
+    reviewerPositive := by native_decide
+    reviewerIndependentFromOwner := by native_decide
+    reviewerIndependentFromPrincipal := by native_decide
+    evidenceCustodianPositive := by native_decide
+    evidenceCustodianIndependentFromOwner := by native_decide
+    receiptAligned := by native_decide
+    residualDepthAligned := by native_decide
+    assignmentComplete := by native_decide
+    interventionPathPresent := by native_decide
+    appealPathPresent := by native_decide
+    remedyPathPresent := by native_decide
+    nonAuthority := by native_decide }
+
+theorem two_hop_responsibility_delegation_preserves_accountability :
+    ∃ final,
+      ResponsibilityDelegationRun responsibilityDelegationInitialState
+        twoHopResponsibilityDelegationTrace = some final ∧
+      final.accountableOwnerId = 4 ∧
+      final.authorityState.currentDelegateId = 4 ∧
+      final.authorityState.currentCeiling = .read ∧
+      final.residualOwnerIds = [3, 2] ∧
+      final.responsibilityReceiptCount = 2 ∧
+      final.authorityState.receiptCount = 2 ∧
+      ResponsibilityDelegationNonAuthority final := by
+  refine ⟨ApplyResponsibilityDelegationEvent
+    (ApplyResponsibilityDelegationEvent responsibilityDelegationInitialState
+      firstResponsibilityDelegationEvent)
+    secondResponsibilityDelegationEvent, ?_⟩
+  native_decide
+
+theorem responsibility_delegation_closed_countermodels :
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with transferringOwnerId := 99 } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with nextAccountableOwnerId := 99 } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with reviewerId := 2 } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with reviewerId := 3 } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with evidenceCustodianId := 3 } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            assignment := { ({} : AccountabilityAssignment) with
+              informationAvailable := false } } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with handoffAcknowledgment := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            interventionPathTransferred := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            evidenceCustodyTransferred := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with appealPathTransferred := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with remedyPathTransferred := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            residualCustodyAcknowledged := false } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with supportRequested := true } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with externalEffectRequested := true } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            authorityEvent := { Authority.firstDelegationEvent with
+              childCeiling := .approve } } = none ∧
+    ResponsibilityDelegationStep responsibilityDelegationInitialState
+        { firstResponsibilityDelegationEvent with
+            authorityEvent := { Authority.firstDelegationEvent with epoch := 8 } } = none := by
+  native_decide
+
+structure ThinResponsibilitySummary where
+  delegationDepth : Nat
+  receiptCount : Nat
+  ceilingRank : Nat
+  residualCount : Nat
+deriving DecidableEq, Repr
+
+def thinResponsibilitySummaryOf
+    (state : ResponsibilityDelegationState) : ThinResponsibilitySummary :=
+  { delegationDepth := state.authorityState.depth
+    receiptCount := state.responsibilityReceiptCount
+    ceilingRank := state.authorityState.currentCeiling.rank
+    residualCount := state.residualOwnerIds.length }
+
+def responsibilityAssignableFor
+    (state : ResponsibilityDelegationState) : Bool :=
+  decide (0 < state.accountableOwnerId ∧
+    0 < state.reviewerId ∧
+    state.reviewerId ≠ state.accountableOwnerId ∧
+    0 < state.evidenceCustodianId ∧
+    state.evidenceCustodianId ≠ state.accountableOwnerId)
+
+def responsibilityGapState : ResponsibilityDelegationState :=
+  { responsibilityDelegationInitialState with
+      accountableOwnerId := 0
+      reviewerId := 0
+      evidenceCustodianId := 0 }
+
+theorem thin_responsibility_summary_hides_accountability_gap :
+    thinResponsibilitySummaryOf responsibilityDelegationInitialState =
+      thinResponsibilitySummaryOf responsibilityGapState ∧
+    responsibilityAssignableFor responsibilityDelegationInitialState = true ∧
+    responsibilityAssignableFor responsibilityGapState = false := by
+  native_decide
+
+theorem thin_responsibility_summary_cannot_recover_accountability
+    (classify : ThinResponsibilitySummary -> Bool) :
+    classify (thinResponsibilitySummaryOf responsibilityDelegationInitialState) ≠ true ∨
+      classify (thinResponsibilitySummaryOf responsibilityGapState) ≠ false := by
+  have same :
+      thinResponsibilitySummaryOf responsibilityDelegationInitialState =
+        thinResponsibilitySummaryOf responsibilityGapState :=
+    thin_responsibility_summary_hides_accountability_gap.1
+  by_cases accepted :
+      classify (thinResponsibilitySummaryOf responsibilityDelegationInitialState) = true
+  · right
+    rw [← same]
+    simp [accepted]
+  · exact Or.inl accepted
 
 end AsiStackProofs.HumanAIOrganizations

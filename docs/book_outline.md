@@ -3928,13 +3928,16 @@ Draft deliverables:
   establish an optimal organization, legitimate authority, legal liability, or
   local outcome.
 - Implemented exact formal envelope: `AsiStackProofs.HumanAIOrganizations`
-  contains 42 theorem declarations over a five-stage finite accountability
-  review. A stage invariant holds for every finite run; assignment readiness
-  implies all 20 authored identity, capacity, authority, independence,
-  remedy/custody, and non-claim fields. One complete witness and 17 exact
-  rejecting mutations are mechanized. This establishes authored-record routing
-  only, not field truth, human control, legal accountability, organizational
-  effectiveness, support, or external effects.
+  contains 62 theorem declarations over a five-stage finite accountability
+  review, a ten-stage delegation-to-remedy lifecycle, and an organizational
+  responsibility refinement of the authority-delegation chain. The refinement
+  preserves exact accountable-owner custody, independent review and evidence
+  roles, prior-owner residuals, receipt alignment, attenuated authority, and
+  non-authority over arbitrary runs. A two-hop witness, all three bridge
+  compositions, 50/50 independent bridge mutations, and an aggregate-summary
+  accountability-gap collision are checked. This establishes authored-record
+  routing and refinement only, not field truth, human control, legal
+  accountability, organizational effectiveness, support, or external effects.
 - Next minimum: a prospectively fixed mixed human-AI workflow campaign covering
   delegation depth and expiry, shift handoff, workload, automation bias,
   delayed intervention, contested decisions, model replacement, incident
@@ -3944,7 +3947,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A five-stage finite review preserves staged capacity, authority, independence, and remedy invariants over arbitrary run length; assignable accountability requires all 20 authored fields, while 20 closed mutations reach exact repair states. A separate ten-stage delegation-to-remedy lifecycle proves arbitrary-run nine-field identity custody, support/effect non-authority, exact receipts, contest/remedy monotonicity, accepted traces, batch composition, absorbing closure, and one bounded adverse-path witness; an independent consumer reaches all 39 routes and rejects 156/156 lifecycle mutations. It establishes no field truth, lawful accountability, human control, organizational outcome, support, or external effect. | implemented |
+| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A five-stage finite review preserves staged capacity, authority, independence, and remedy invariants over arbitrary run length; assignable accountability requires all 20 authored fields, while 20 closed mutations reach exact repair states. A separate ten-stage delegation-to-remedy lifecycle proves arbitrary-run nine-field identity custody, support/effect non-authority, exact receipts, contest/remedy monotonicity, accepted traces, batch composition, absorbing closure, and one bounded adverse-path witness. A compositional responsibility bridge then refines the authority-delegation chain, preserves accountable-owner, independent-review, evidence, residual-owner, receipt, and non-authority invariants through a two-hop witness, and shows that aggregate delegation summaries cannot recover accountability. An independent consumer reaches all 39 lifecycle routes, rejects 156/156 lifecycle mutations and 50/50 bridge mutations, and checks all three bridge compositions. It establishes no field truth, lawful accountability, human control, organizational outcome, support, or external effect. | implemented |
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:BEGIN -->
 ### Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty
@@ -6252,7 +6255,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2902 theorem declarations, 1804 derived/decomposed, 435 direct/projection, 663 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2922 theorem declarations, 1820 derived/decomposed, 436 direct/projection, 666 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6268,8 +6271,8 @@ Draft deliverables:
   exclusions, implementation binding, and no-promotion boundaries.
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
-330-target live manifest; a 130-module Lean workspace with 2,902 declarations
-classified as 1,804 derived/decomposed, 435 direct/projection, and 663
+330-target live manifest; a 130-module Lean workspace with 2,922 declarations
+classified as 1,820 derived/decomposed, 436 direct/projection, and 666
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer

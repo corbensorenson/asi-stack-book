@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import copy
 import json
 import re
 from pathlib import Path
@@ -16,6 +17,7 @@ MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 TRIAGE = ROOT / "proofs" / "proof_triage.json"
 STRUCTURE = ROOT / "book_structure.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
+BRIDGE_FIXTURE = ROOT / "tests" / "fixtures" / "proof_models" / "human_ai_organization_responsibility_bridge.json"
 
 TAG = "lean:human_ai_org.accountability_requires_authority"
 MODULE = "AsiStackProofs.HumanAIOrganizations"
@@ -25,9 +27,13 @@ FORMAL_TARGET = (
     "fields, while 20 closed mutations reach exact repair states. A separate ten-stage "
     "delegation-to-remedy lifecycle proves arbitrary-run nine-field identity custody, support/effect "
     "non-authority, exact receipts, contest/remedy monotonicity, accepted traces, batch composition, "
-    "absorbing closure, and one bounded adverse-path witness; an independent consumer reaches all "
-    "39 routes and rejects 156/156 lifecycle mutations. It establishes no field truth, lawful "
-    "accountability, human control, organizational outcome, support, or external effect."
+    "absorbing closure, and one bounded adverse-path witness. A compositional responsibility bridge "
+    "then refines the authority-delegation chain, preserves accountable-owner, independent-review, "
+    "evidence, residual-owner, receipt, and non-authority invariants through a two-hop witness, and "
+    "shows that aggregate delegation summaries cannot recover accountability. An independent consumer "
+    "reaches all 39 lifecycle routes, rejects 156/156 lifecycle mutations and 50/50 bridge mutations, "
+    "and checks all three bridge compositions. It establishes no field truth, lawful accountability, "
+    "human control, organizational outcome, support, or external effect."
 )
 
 EXERCISE_STAGES = (
@@ -141,6 +147,26 @@ REQUIRED_THEOREMS = {
     "closed_exercise_state_accepts_no_event",
     "over_ceiling_delegation_cannot_start",
     "authored_exercise_witness_reaches_terminal_record",
+    "responsibility_delegation_accepted_step_is_valid",
+    "responsibility_delegation_accepted_step_applies_event",
+    "responsibility_delegation_step_refines_authority_step",
+    "responsibility_delegation_step_assigns_exact_child_owner",
+    "responsibility_delegation_step_retains_prior_owner",
+    "responsibility_delegation_step_adds_exact_receipt",
+    "responsibility_delegation_step_preserves_non_authority",
+    "responsibility_delegation_step_preserves_invariant",
+    "responsibility_delegation_run_preserves_invariant",
+    "responsibility_delegation_run_refines_authority_run",
+    "responsibility_delegation_run_has_no_owner_gap",
+    "responsibility_delegation_run_accounts_exact_receipts",
+    "responsibility_delegation_run_accounts_residual_owners",
+    "responsibility_delegation_successful_run_has_valid_trace",
+    "responsibility_delegation_run_composes_across_event_batches",
+    "responsibility_delegation_initial_state_is_invariant",
+    "two_hop_responsibility_delegation_preserves_accountability",
+    "responsibility_delegation_closed_countermodels",
+    "thin_responsibility_summary_hides_accountability_gap",
+    "thin_responsibility_summary_cannot_recover_accountability",
 }
 
 
@@ -461,6 +487,333 @@ def exercise_mutations() -> list[dict[str, Any]]:
     return receipts
 
 
+def authority_delegation_state() -> dict[str, Any]:
+    return {
+        "rootGrantId": 100,
+        "rootPrincipalId": 1,
+        "operationId": 10,
+        "targetId": 20,
+        "scopeId": 30,
+        "rootCeiling": 5,
+        "rootEpoch": 7,
+        "rootExpiresAt": 100,
+        "currentGrantId": 100,
+        "currentPrincipalId": 1,
+        "currentDelegateId": 2,
+        "currentCeiling": 4,
+        "currentEpoch": 7,
+        "currentExpiresAt": 90,
+        "logicalTime": 0,
+        "revokedGrantIds": [99],
+        "depth": 0,
+        "receiptCount": 0,
+        "supportAuthority": False,
+        "externalEffectAuthority": False,
+    }
+
+
+def authority_delegation_event(second: bool = False) -> dict[str, Any]:
+    if second:
+        return {
+            "parentGrantId": 101,
+            "childGrantId": 102,
+            "actingPrincipalId": 3,
+            "childDelegateId": 4,
+            "operationId": 10,
+            "targetId": 20,
+            "scopeId": 30,
+            "childCeiling": 1,
+            "epoch": 7,
+            "expiresAt": 70,
+            "logicalTime": 20,
+            "delegationReceipt": True,
+            "supportPromotionRequested": False,
+            "externalEffectRequested": False,
+        }
+    return {
+        "parentGrantId": 100,
+        "childGrantId": 101,
+        "actingPrincipalId": 2,
+        "childDelegateId": 3,
+        "operationId": 10,
+        "targetId": 20,
+        "scopeId": 30,
+        "childCeiling": 3,
+        "epoch": 7,
+        "expiresAt": 80,
+        "logicalTime": 10,
+        "delegationReceipt": True,
+        "supportPromotionRequested": False,
+        "externalEffectRequested": False,
+    }
+
+
+def authority_delegation_valid(
+    state: dict[str, Any], event: dict[str, Any]
+) -> bool:
+    return (
+        event["parentGrantId"] == state["currentGrantId"]
+        and event["actingPrincipalId"] == state["currentDelegateId"]
+        and event["childGrantId"] > 0
+        and event["childGrantId"] != state["currentGrantId"]
+        and event["childGrantId"] not in state["revokedGrantIds"]
+        and event["childDelegateId"] > 0
+        and event["operationId"] == state["operationId"]
+        and event["targetId"] == state["targetId"]
+        and event["scopeId"] == state["scopeId"]
+        and event["childCeiling"] <= state["currentCeiling"]
+        and event["epoch"] == state["currentEpoch"]
+        and event["expiresAt"] <= state["currentExpiresAt"]
+        and state["logicalTime"] < event["logicalTime"]
+        and event["logicalTime"] <= event["expiresAt"]
+        and event["delegationReceipt"] is True
+        and event["supportPromotionRequested"] is False
+        and event["externalEffectRequested"] is False
+    )
+
+
+def apply_authority_delegation(
+    state: dict[str, Any], event: dict[str, Any]
+) -> dict[str, Any]:
+    result = copy.deepcopy(state)
+    result.update({
+        "currentGrantId": event["childGrantId"],
+        "currentPrincipalId": event["actingPrincipalId"],
+        "currentDelegateId": event["childDelegateId"],
+        "currentCeiling": event["childCeiling"],
+        "currentEpoch": event["epoch"],
+        "currentExpiresAt": event["expiresAt"],
+        "logicalTime": event["logicalTime"],
+        "depth": state["depth"] + 1,
+        "receiptCount": state["receiptCount"] + 1,
+    })
+    return result
+
+
+def authority_delegation_invariant(state: dict[str, Any]) -> bool:
+    return (
+        state["rootGrantId"] > 0
+        and state["rootPrincipalId"] > 0
+        and state["currentGrantId"] > 0
+        and state["currentPrincipalId"] > 0
+        and state["currentDelegateId"] > 0
+        and state["currentCeiling"] <= state["rootCeiling"]
+        and state["currentEpoch"] == state["rootEpoch"]
+        and state["currentExpiresAt"] <= state["rootExpiresAt"]
+        and state["logicalTime"] <= state["currentExpiresAt"]
+        and state["currentGrantId"] not in state["revokedGrantIds"]
+        and state["supportAuthority"] is False
+        and state["externalEffectAuthority"] is False
+    )
+
+
+def responsibility_delegation_state() -> dict[str, Any]:
+    return {
+        "authorityState": authority_delegation_state(),
+        "accountableOwnerId": 2,
+        "reviewerId": 50,
+        "evidenceCustodianId": 60,
+        "residualOwnerIds": [],
+        "responsibilityReceiptCount": 0,
+        "assignmentComplete": True,
+        "interventionPathPresent": True,
+        "appealPathPresent": True,
+        "remedyPathPresent": True,
+        "supportAssigned": False,
+        "externalEffectCommitted": False,
+    }
+
+
+def responsibility_delegation_event(second: bool = False) -> dict[str, Any]:
+    return {
+        "authorityEvent": authority_delegation_event(second),
+        "transferringOwnerId": 3 if second else 2,
+        "nextAccountableOwnerId": 4 if second else 3,
+        "reviewerId": 52 if second else 51,
+        "evidenceCustodianId": 62 if second else 61,
+        "assignment": dict(BASE_RECORD),
+        "handoffAcknowledgment": True,
+        "interventionPathTransferred": True,
+        "evidenceCustodyTransferred": True,
+        "appealPathTransferred": True,
+        "remedyPathTransferred": True,
+        "residualCustodyAcknowledged": True,
+        "supportRequested": False,
+        "externalEffectRequested": False,
+    }
+
+
+def responsibility_delegation_valid(
+    state: dict[str, Any], event: dict[str, Any]
+) -> bool:
+    authority_event = event["authorityEvent"]
+    return (
+        state["accountableOwnerId"] == state["authorityState"]["currentDelegateId"]
+        and event["transferringOwnerId"] == state["accountableOwnerId"]
+        and authority_delegation_valid(state["authorityState"], authority_event)
+        and event["nextAccountableOwnerId"] == authority_event["childDelegateId"]
+        and event["nextAccountableOwnerId"] > 0
+        and event["reviewerId"] > 0
+        and event["reviewerId"] != authority_event["actingPrincipalId"]
+        and event["reviewerId"] != event["nextAccountableOwnerId"]
+        and event["evidenceCustodianId"] > 0
+        and event["evidenceCustodianId"] != event["nextAccountableOwnerId"]
+        and all(event["assignment"].values())
+        and event["handoffAcknowledgment"] is True
+        and event["interventionPathTransferred"] is True
+        and event["evidenceCustodyTransferred"] is True
+        and event["appealPathTransferred"] is True
+        and event["remedyPathTransferred"] is True
+        and event["residualCustodyAcknowledged"] is True
+        and event["supportRequested"] is False
+        and event["externalEffectRequested"] is False
+    )
+
+
+def responsibility_delegation_step(
+    state: dict[str, Any], event: dict[str, Any]
+) -> dict[str, Any] | None:
+    if not responsibility_delegation_valid(state, event):
+        return None
+    result = copy.deepcopy(state)
+    result.update({
+        "authorityState": apply_authority_delegation(
+            state["authorityState"], event["authorityEvent"]
+        ),
+        "accountableOwnerId": event["nextAccountableOwnerId"],
+        "reviewerId": event["reviewerId"],
+        "evidenceCustodianId": event["evidenceCustodianId"],
+        "residualOwnerIds": [state["accountableOwnerId"], *state["residualOwnerIds"]],
+        "responsibilityReceiptCount": state["responsibilityReceiptCount"] + 1,
+        "assignmentComplete": True,
+        "interventionPathPresent": True,
+        "appealPathPresent": True,
+        "remedyPathPresent": True,
+    })
+    return result
+
+
+def responsibility_delegation_invariant(state: dict[str, Any]) -> bool:
+    authority = state["authorityState"]
+    return (
+        authority_delegation_invariant(authority)
+        and state["accountableOwnerId"] == authority["currentDelegateId"]
+        and state["accountableOwnerId"] > 0
+        and state["reviewerId"] > 0
+        and state["reviewerId"] != state["accountableOwnerId"]
+        and state["reviewerId"] != authority["currentPrincipalId"]
+        and state["evidenceCustodianId"] > 0
+        and state["evidenceCustodianId"] != state["accountableOwnerId"]
+        and state["responsibilityReceiptCount"] == authority["receiptCount"]
+        and len(state["residualOwnerIds"]) == authority["depth"]
+        and state["assignmentComplete"] is True
+        and state["interventionPathPresent"] is True
+        and state["appealPathPresent"] is True
+        and state["remedyPathPresent"] is True
+        and state["supportAssigned"] is False
+        and state["externalEffectCommitted"] is False
+    )
+
+
+def responsibility_delegation_run_states(
+    initial: dict[str, Any], events: list[dict[str, Any]]
+) -> list[dict[str, Any]] | None:
+    states = [copy.deepcopy(initial)]
+    current = copy.deepcopy(initial)
+    for event in events:
+        next_state = responsibility_delegation_step(current, event)
+        if next_state is None:
+            return None
+        states.append(next_state)
+        current = next_state
+    return states
+
+
+def responsibility_bridge_mutations() -> list[dict[str, Any]]:
+    initial = responsibility_delegation_state()
+    mutations: list[tuple[str, dict[str, Any]]] = []
+
+    authority_mutations = (
+        ("parent-grant", "parentGrantId", 999),
+        ("child-grant-reuse", "childGrantId", 100),
+        ("child-grant-revoked", "childGrantId", 99),
+        ("child-grant-zero", "childGrantId", 0),
+        ("acting-principal", "actingPrincipalId", 999),
+        ("child-delegate-zero", "childDelegateId", 0),
+        ("operation", "operationId", 999),
+        ("target", "targetId", 999),
+        ("scope", "scopeId", 999),
+        ("ceiling-widening", "childCeiling", 5),
+        ("stale-epoch", "epoch", 8),
+        ("expiry-widening", "expiresAt", 91),
+        ("nonmonotone-time", "logicalTime", 0),
+        ("time-after-expiry", "logicalTime", 81),
+        ("missing-delegation-receipt", "delegationReceipt", False),
+        ("authority-support-request", "supportPromotionRequested", True),
+        ("authority-effect-request", "externalEffectRequested", True),
+    )
+    for label, field, value in authority_mutations:
+        event = responsibility_delegation_event()
+        event["authorityEvent"][field] = value
+        mutations.append((f"authority:{label}", event))
+
+    responsibility_mutations = (
+        ("transferring-owner", "transferringOwnerId", 99),
+        ("next-owner", "nextAccountableOwnerId", 99),
+        ("reviewer-is-principal", "reviewerId", 2),
+        ("reviewer-is-child", "reviewerId", 3),
+        ("custodian-is-child", "evidenceCustodianId", 3),
+        ("handoff-ack", "handoffAcknowledgment", False),
+        ("intervention-transfer", "interventionPathTransferred", False),
+        ("evidence-transfer", "evidenceCustodyTransferred", False),
+        ("appeal-transfer", "appealPathTransferred", False),
+        ("remedy-transfer", "remedyPathTransferred", False),
+        ("residual-ack", "residualCustodyAcknowledged", False),
+        ("support-request", "supportRequested", True),
+        ("effect-request", "externalEffectRequested", True),
+    )
+    for label, field, value in responsibility_mutations:
+        event = responsibility_delegation_event()
+        event[field] = value
+        mutations.append((f"responsibility:{label}", event))
+
+    for field in BASE_RECORD:
+        event = responsibility_delegation_event()
+        event["assignment"][field] = False
+        mutations.append((f"assignment:{field}", event))
+
+    receipts = []
+    for label, event in mutations:
+        before = copy.deepcopy(initial)
+        rejected = responsibility_delegation_step(initial, event) is None
+        receipts.append({
+            "mutation_id": label,
+            "rejected": rejected,
+            "state_noninterference": initial == before,
+        })
+    return receipts
+
+
+def thin_responsibility_summary(state: dict[str, Any]) -> tuple[int, int, int, int]:
+    authority = state["authorityState"]
+    return (
+        authority["depth"],
+        state["responsibilityReceiptCount"],
+        authority["currentCeiling"],
+        len(state["residualOwnerIds"]),
+    )
+
+
+def responsibility_assignable(state: dict[str, Any]) -> bool:
+    return (
+        state["accountableOwnerId"] > 0
+        and state["reviewerId"] > 0
+        and state["reviewerId"] != state["accountableOwnerId"]
+        and state["evidenceCustodianId"] > 0
+        and state["evidenceCustodianId"] != state["accountableOwnerId"]
+    )
+
+
 def fail(errors: list[str]) -> None:
     if errors:
         raise SystemExit("Human-AI organization accountability validation failed:\n" + "\n".join(f" - {e}" for e in errors))
@@ -468,7 +821,7 @@ def fail(errors: list[str]) -> None:
 
 def main() -> None:
     errors: list[str] = []
-    for path in (LEAN, LEAN_ROOT, CHAPTER, DOSSIER, MANIFEST, TRIAGE, STRUCTURE, OUTLINE):
+    for path in (LEAN, LEAN_ROOT, CHAPTER, DOSSIER, MANIFEST, TRIAGE, STRUCTURE, OUTLINE, BRIDGE_FIXTURE):
         if not path.exists():
             errors.append(f"missing {path.relative_to(ROOT)}")
     fail(errors)
@@ -553,6 +906,136 @@ def main() -> None:
             f"{sum(row['rejected'] for row in mutation_receipts)}/{len(mutation_receipts)}"
         )
 
+    bridge_fixture = load(BRIDGE_FIXTURE)
+    if (
+        bridge_fixture.get("schema_version")
+        != "asi_stack.human_ai_org_responsibility_bridge.v1"
+        or bridge_fixture.get("support_state_effect") != "none"
+        or bridge_fixture.get("assignment_complete_fields") != list(BASE_RECORD)
+    ):
+        errors.append("responsibility bridge fixture identity or assignment profile drifted")
+    responsibility_initial = bridge_fixture["initial_state"]
+    bridge_events = copy.deepcopy(bridge_fixture["events"])
+    for event in bridge_events:
+        if event.pop("assignment_profile", None) != "complete":
+            errors.append("responsibility bridge fixture has an unknown assignment profile")
+        event["assignment"] = dict(BASE_RECORD)
+    if responsibility_initial != responsibility_delegation_state() or bridge_events != [
+        responsibility_delegation_event(),
+        responsibility_delegation_event(second=True),
+    ]:
+        errors.append("responsibility bridge fixture no longer matches the independent model")
+    if not responsibility_delegation_invariant(responsibility_initial):
+        errors.append("initial responsibility-delegation invariant failed")
+    bridge_states = responsibility_delegation_run_states(
+        responsibility_initial, bridge_events
+    )
+    if bridge_states is None:
+        errors.append("two-hop responsibility-delegation witness failed")
+    else:
+        if len(bridge_states) != 3 or not all(
+            responsibility_delegation_invariant(row) for row in bridge_states
+        ):
+            errors.append("responsibility-delegation invariant drifted across two hops")
+        expected_bridge_final = bridge_fixture["expected_final"]
+        for key, value in {
+            "accountableOwnerId": expected_bridge_final["accountableOwnerId"],
+            "residualOwnerIds": expected_bridge_final["residualOwnerIds"],
+            "responsibilityReceiptCount": expected_bridge_final["responsibilityReceiptCount"],
+            "supportAssigned": expected_bridge_final["supportAssigned"],
+            "externalEffectCommitted": expected_bridge_final["externalEffectCommitted"],
+        }.items():
+            if bridge_states[-1][key] != value:
+                errors.append(f"responsibility-delegation witness drifted: {key}")
+        expected_authority_final = {
+            "currentDelegateId": expected_bridge_final["currentDelegateId"],
+            "currentCeiling": expected_bridge_final["currentCeiling"],
+            "depth": len(bridge_events),
+            "receiptCount": expected_bridge_final["authorityReceiptCount"],
+        }
+        for key, value in expected_authority_final.items():
+            if bridge_states[-1]["authorityState"][key] != value:
+                errors.append(f"authority projection witness drifted: {key}")
+
+        authority_projection = copy.deepcopy(
+            responsibility_initial["authorityState"]
+        )
+        for event in bridge_events:
+            authority_projection = apply_authority_delegation(
+                authority_projection, event["authorityEvent"]
+            )
+        if bridge_states[-1]["authorityState"] != authority_projection:
+            errors.append("responsibility run does not refine the authority run")
+
+        composition_count = 0
+        for split in range(len(bridge_events) + 1):
+            prefix = responsibility_delegation_run_states(
+                responsibility_initial, bridge_events[:split]
+            )
+            if prefix is None:
+                errors.append(f"responsibility bridge prefix {split} failed")
+                continue
+            suffix = responsibility_delegation_run_states(
+                prefix[-1], bridge_events[split:]
+            )
+            if suffix is None or suffix[-1] != bridge_states[-1]:
+                errors.append(f"responsibility bridge composition split {split} failed")
+            composition_count += 1
+        if composition_count != bridge_fixture["expected_composition_count"]:
+            errors.append(
+                f"responsibility bridge composition denominator drifted: {composition_count}"
+            )
+
+        for previous, current in zip(bridge_states, bridge_states[1:]):
+            if current["residualOwnerIds"] != [
+                previous["accountableOwnerId"],
+                *previous["residualOwnerIds"],
+            ]:
+                errors.append("responsibility bridge lost prior-owner residual custody")
+            if current["responsibilityReceiptCount"] != (
+                previous["responsibilityReceiptCount"] + 1
+            ):
+                errors.append("responsibility bridge did not add exactly one receipt")
+            if current["accountableOwnerId"] != current["authorityState"]["currentDelegateId"]:
+                errors.append("responsibility bridge introduced an owner gap")
+
+    bridge_mutation_receipts = responsibility_bridge_mutations()
+    rejected_bridge_mutations = sum(
+        row["rejected"] for row in bridge_mutation_receipts
+    )
+    noninterfering_bridge_mutations = sum(
+        row["state_noninterference"] for row in bridge_mutation_receipts
+    )
+    expected_bridge_mutations = bridge_fixture["expected_bridge_mutation_count"]
+    if len(bridge_mutation_receipts) != expected_bridge_mutations or rejected_bridge_mutations != expected_bridge_mutations:
+        errors.append(
+            "responsibility bridge mutation coverage drifted: "
+            f"{rejected_bridge_mutations}/{len(bridge_mutation_receipts)}"
+        )
+    if noninterfering_bridge_mutations != expected_bridge_mutations:
+        errors.append(
+            "rejected responsibility bridge mutations changed state: "
+            f"{noninterfering_bridge_mutations}/{expected_bridge_mutations}"
+        )
+
+    accountability_gap = copy.deepcopy(responsibility_initial)
+    collision = bridge_fixture["summary_collision"]
+    accountability_gap.update(collision["gap_updates"])
+    if list(thin_responsibility_summary(responsibility_initial)) != collision["summary"]:
+        errors.append("responsibility bridge fixture summary drifted")
+    if thin_responsibility_summary(responsibility_initial) != thin_responsibility_summary(accountability_gap):
+        errors.append("thin responsibility summaries did not collide")
+    if (
+        responsibility_assignable(responsibility_initial) is not collision["safe_assignable"]
+        or responsibility_assignable(accountability_gap) is not collision["gap_assignable"]
+    ):
+        errors.append("accountability-gap witness decisions drifted")
+    for constant_classifier in (False, True):
+        safe_decision = constant_classifier
+        gap_decision = constant_classifier
+        if safe_decision is True and gap_decision is False:
+            errors.append("constant thin-summary classifier distinguished a collision")
+
     lean_text = LEAN.read_text(encoding="utf-8")
     theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z0-9_']+)", lean_text))
     if theorem_names != REQUIRED_THEOREMS:
@@ -606,9 +1089,12 @@ def main() -> None:
     outline_text = OUTLINE.read_text(encoding="utf-8")
     for fragment in (
         TAG,
-        "42 theorem declarations",
+        "62 theorem declarations",
         "20 closed mutations",
         "156/156 lifecycle mutations",
+        "50/50 bridge mutations",
+        "three bridge compositions",
+        "aggregate delegation summary",
         "does not prove",
         "remains `argument`",
     ):
@@ -619,6 +1105,8 @@ def main() -> None:
         "twenty closed",
         "ten-stage delegation-to-remedy lifecycle",
         "156/156 lifecycle mutations",
+        "50/50 bridge mutations",
+        "aggregate delegation summary",
         "support_state_effect` remains `none",
     ):
         if fragment not in dossier_text:
@@ -631,7 +1119,9 @@ def main() -> None:
         "Human-AI organization accountability validation passed: five reachable review stages, "
         "one complete assignment route, 20/20 independent field mutations, a ten-stage "
         "delegation-to-remedy lifecycle, 10 trace splits, 39 routes, 156/156 lifecycle mutations, "
-        "and 42 exact Lean declarations; "
+        "a two-hop authority/accountability bridge, three bridge compositions, 50/50 bridge "
+        "mutations with state noninterference, one aggregate-summary collision, and 62 exact "
+        "Lean declarations; "
         "no human-control, legal-accountability, organizational-outcome, support, or external-effect claim."
     )
 

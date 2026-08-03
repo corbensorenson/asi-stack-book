@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2902 |
-| Direct/projection-style theorem declarations | 435 |
-| Derived/decomposed theorem declarations | 1804 |
-| Unknown or mixed theorem declarations | 663 |
+| Theorem declarations classified | 2922 |
+| Direct/projection-style theorem declarations | 436 |
+| Derived/decomposed theorem declarations | 1820 |
+| Unknown or mixed theorem declarations | 666 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -107,7 +107,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 32 | 0 | 16 | 16 | manual review |
 | `lean/AsiStackProofs/HiveLifecycleRefinement.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 31 | 13 | 17 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanAICognitiveSovereignty.lean` | human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty | 1 | 48 | 16 | 17 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 42 | 0 | 22 | 20 | manual review |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 62 | 1 | 38 | 23 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 32 | 1 | 11 | 20 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | institutions-international-coordination-and-public-legitimacy | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 45 | 0 | 35 | 10 | manual review |
@@ -1386,6 +1386,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `orphaned_residuals_block_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `over_ceiling_delegation_cannot_start` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `rejected_exercise_event_preserves_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_closed_countermodels` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_initial_state_is_invariant` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_accounts_residual_owners` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_has_no_owner_gap` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_preserves_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_run_refines_authority_run` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_adds_exact_receipt` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_assigns_exact_child_owner` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_preserves_invariant` | derived_or_decomposed | no | uses have, rcases, rw, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_preserves_non_authority` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_refines_authority_step` | derived_or_decomposed | no | uses have, rcases, rw, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_step_retains_prior_owner` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `responsibility_delegation_successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `thin_responsibility_summary_cannot_recover_accountability` | derived_or_decomposed | no | uses by_cases, have, right, rw, simp |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `thin_responsibility_summary_hides_accountability_gap` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/HumanAIOrganizations.lean` | `two_hop_responsibility_delegation_preserves_accountability` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | `undisposed_conflict_blocks_accountability_assignment` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_run_preserves_custody` | derived_or_decomposed | no | uses contradiction, have, induction, rcases, simp, split |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | `accepted_review_run_preserves_invariant` | derived_or_decomposed | no | uses contradiction, induction, simp, split |

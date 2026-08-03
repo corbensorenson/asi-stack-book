@@ -722,7 +722,7 @@ institutional legitimacy.
 ### Implemented formalization
 
 `lean:human_ai_org.accountability_requires_authority` is implemented in
-`AsiStackProofs.HumanAIOrganizations` as two bounded models with 42 theorem declarations.
+`AsiStackProofs.HumanAIOrganizations` as three bounded models with 62 theorem declarations.
 The retained five-stage finite review covers identity, capacity,
 intervention authority, independence, and remedy/custody. A stage invariant is preserved for one
 step and by induction over an arbitrary finite run; if the run reaches
@@ -743,9 +743,25 @@ independent consumer reaches all 39 routes and rejects 156/156 lifecycle mutatio
 spanning identity, stage, replay, over-ceiling delegation, missing
 process records, authority requests, and post-closure events.
 
+The third model composes organizational responsibility with the independently
+defined authority-delegation chain. Every accepted handoff refines an accepted
+authority step, assigns the exact child delegate as accountable owner, retains
+the prior owner in residual custody, adds exactly one responsibility receipt,
+and preserves reviewer and evidence-custodian separation plus zero support and
+external-effect authority. These properties hold over arbitrary successful
+runs and across event-batch composition. A concrete two-hop witness delegates
+from owner 2 to 3 to 4 while attenuating authority to read-only, retaining
+residual owners `[3, 2]`, and aligning two responsibility receipts with two
+authority receipts. The independent consumer checks all three bridge compositions
+and rejects 50/50 bridge mutations without changing the rejected state. A paired
+countermodel also gives a safe record and an owner/reviewer/evidence gap the
+same aggregate delegation summary; no classifier over only that summary can
+recover whether accountability is assignable.
+
 This is a mechanized property of a finite authored record. Lean does not prove
-that any field is truthful or usable, that a person could intervene in a real
-workflow, that accountability is lawful or legitimate, or that an
+that any identity, assignment, review, evidence, handoff, or control field is
+truthful or usable, that a person could intervene in a real workflow, that
+accountability is lawful or legitimate, or that an
 organization is effective, fair, resilient, or safe. Chapter support therefore
 remains `argument`.
 
@@ -756,6 +772,8 @@ remains `argument`.
 | Decision-right reachability | Ensure each modeled assignment traverses identity, capacity, authority, independence, and remedy stages before becoming assignable. | implemented in Lean; no runtime workflow |
 | Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | implemented for 20 exact authored-record mutations |
 | Delegation-to-remedy lifecycle | Exercise bounded delegation, escalation, handoff, contestation, expiry, reconstruction, remedy, and closure with exact custody and non-authority checks. | implemented in Lean and independently reconstructed; no runtime workflow |
+| Authority/accountability refinement | Prevent accepted subdelegation from creating an owner gap, erasing residual custody, collapsing review, or widening authority. | implemented in Lean with a two-hop witness, three bridge compositions, and 50/50 bridge mutations; authentic identities and controls untested |
+| Aggregate-summary countermodel | Show that depth, receipt count, authority ceiling, and residual count cannot recover missing accountability identities. | implemented as a paired Lean witness and independent summary collision |
 | Workload and competence positive controls | Verify the finite route narrows when authored workload or competence fields fail. | implemented in Lean; real human capacity untested |
 | Contribution/interdependence audit | Prevent task reward from standing in for teamwork. | planned |
 

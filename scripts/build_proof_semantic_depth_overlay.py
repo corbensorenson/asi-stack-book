@@ -1929,6 +1929,128 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "responsibility_delegation_accepted_step_is_valid": (
+        "An accepted responsibility step exposes the full finite authored event predicate."
+    ),
+    "responsibility_delegation_accepted_step_applies_event": (
+        "An accepted responsibility step is definitionally the modeled state transformer."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanAIOrganizations.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal local route or application law constrains the finite authored bridge"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "responsibility_delegation_step_assigns_exact_child_owner": (
+        "The independently exercised transition assigns the authority event's exact child delegate as owner."
+    ),
+    "responsibility_delegation_step_retains_prior_owner": (
+        "The independently exercised transition prepends the prior owner to residual custody."
+    ),
+    "responsibility_delegation_step_adds_exact_receipt": (
+        "The independently exercised transition adds exactly one responsibility receipt."
+    ),
+    "responsibility_delegation_successful_run_has_valid_trace": (
+        "Every successful finite run exposes the exact recursively valid authored event trace."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanAIOrganizations.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": [
+            "lean-theorem:two_hop_responsibility_delegation_preserves_accountability",
+            "scripts/validate_human_ai_organization_accountability.py",
+        ],
+        "classification_basis": [
+            "the exact transition or trace consequence is independently reconstructed over the two-hop bridge"
+        ],
+        "rationale": rationale,
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/HumanAIOrganizations.lean::responsibility_delegation_initial_state_is_invariant"
+] = {
+    "disposition": "retain",
+    "semantic_level": "P2",
+    "witness_refs": [
+        "lean-theorem:responsibility_delegation_initial_state_is_invariant"
+    ],
+    "classification_basis": [
+        "one closed initial organizational delegation state witnesses the full finite invariant"
+    ],
+    "rationale": (
+        "The closed initial record is a nonvacuity witness for owner, reviewer, evidence, "
+        "receipt, residual, authority, and non-authority alignment."
+    ),
+}
+
+for theorem_name, rationale in {
+    "responsibility_delegation_step_refines_authority_step": (
+        "Every accepted responsibility handoff projects to an accepted step in the separate authority model."
+    ),
+    "responsibility_delegation_step_preserves_non_authority": (
+        "An accepted organizational handoff cannot create support or external-effect authority in either model."
+    ),
+    "responsibility_delegation_step_preserves_invariant": (
+        "One accepted cross-model handoff preserves authority, owner, review, evidence, residual, receipt, and non-authority alignment."
+    ),
+    "responsibility_delegation_run_preserves_invariant": (
+        "Induction preserves the cross-model organizational responsibility invariant across arbitrary successful finite runs."
+    ),
+    "responsibility_delegation_run_refines_authority_run": (
+        "Every successful responsibility run projects to the corresponding successful authority-delegation run."
+    ),
+    "responsibility_delegation_run_has_no_owner_gap": (
+        "Every successful invariant-preserving run ends with a positive owner equal to the current authority delegate."
+    ),
+    "responsibility_delegation_run_accounts_exact_receipts": (
+        "Every successful run aligns responsibility receipt growth exactly with event count."
+    ),
+    "responsibility_delegation_run_accounts_residual_owners": (
+        "Every successful run retains one prior owner per accepted handoff."
+    ),
+    "responsibility_delegation_run_composes_across_event_batches": (
+        "Responsibility execution is invariant under splitting the same finite event list into prefix and suffix batches."
+    ),
+    "two_hop_responsibility_delegation_preserves_accountability": (
+        "A closed two-hop witness attenuates authority while preserving exact owner, residual, receipt, review, evidence, and non-authority custody."
+    ),
+    "responsibility_delegation_closed_countermodels": (
+        "Sixteen closed substitutions or omissions reject owner mismatch, role collapse, missing controls, authority widening, stale epoch, support, and effect requests."
+    ),
+    "thin_responsibility_summary_hides_accountability_gap": (
+        "A safe record and a record missing owner, reviewer, and evidence custody have the same aggregate delegation summary and opposite decisions."
+    ),
+    "thin_responsibility_summary_cannot_recover_accountability": (
+        "No Boolean classifier over the colliding aggregate summary can recover both finite accountability decisions."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/HumanAIOrganizations.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P4",
+        "witness_refs": [
+            "lean-theorem:two_hop_responsibility_delegation_preserves_accountability",
+            "lean-theorem:thin_responsibility_summary_hides_accountability_gap",
+            "scripts/validate_human_ai_organization_accountability.py",
+        ],
+        "classification_basis": [
+            "a cross-model refinement, noninterference, composition, countermodel, or information-loss result is independently reconstructed"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
     "complete_population_has_pairwise_validity":
         "The closed complete population witnesses all six directed pairwise authorizations.",
     "complete_population_is_campaign_ready":
