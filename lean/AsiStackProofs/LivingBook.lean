@@ -522,4 +522,461 @@ theorem reader_release_candidate_support_promotion_claim_rejected
   unfold ReaderReleaseCandidateRouteFor
   simp [promotionClaimed]
 
+structure ManifestChapter where
+  stableId : Nat
+  partId : Nat
+  titleDigest : Nat
+deriving DecidableEq, Repr
+
+structure NumberedManifestChapter where
+  ordinal : Nat
+  stableId : Nat
+  partId : Nat
+  titleDigest : Nat
+deriving DecidableEq, Repr
+
+def numberManifestFrom : Nat -> List ManifestChapter -> List NumberedManifestChapter
+  | _, [] => []
+  | next, chapter :: rest =>
+      {
+        ordinal := next
+        stableId := chapter.stableId
+        partId := chapter.partId
+        titleDigest := chapter.titleDigest
+      } :: numberManifestFrom (next + 1) rest
+
+def numberManifest (chapters : List ManifestChapter) : List NumberedManifestChapter :=
+  numberManifestFrom 1 chapters
+
+def ConsecutiveManifestOrdinals : Nat -> List NumberedManifestChapter -> Prop
+  | _, [] => True
+  | next, chapter :: rest =>
+      chapter.ordinal = next ∧ ConsecutiveManifestOrdinals (next + 1) rest
+
+theorem number_manifest_preserves_length
+    (next : Nat) (chapters : List ManifestChapter) :
+    (numberManifestFrom next chapters).length = chapters.length := by
+  induction chapters generalizing next with
+  | nil => rfl
+  | cons chapter rest ih =>
+      simp [numberManifestFrom, ih]
+
+theorem number_manifest_preserves_stable_id_order
+    (next : Nat) (chapters : List ManifestChapter) :
+    (numberManifestFrom next chapters).map (fun chapter => chapter.stableId) =
+      chapters.map (fun chapter => chapter.stableId) := by
+  induction chapters generalizing next with
+  | nil => rfl
+  | cons chapter rest ih =>
+      simp [numberManifestFrom, ih]
+
+theorem number_manifest_derives_consecutive_ordinals
+    (next : Nat) (chapters : List ManifestChapter) :
+    ConsecutiveManifestOrdinals next (numberManifestFrom next chapters) := by
+  induction chapters generalizing next with
+  | nil => trivial
+  | cons chapter rest ih =>
+      simp [numberManifestFrom, ConsecutiveManifestOrdinals, ih]
+
+inductive ManifestChangeStage where
+  | proposed
+  | structureSynced
+  | evidenceSynced
+  | validated
+  | acceptedCurrent
+  | rolledBack
+deriving DecidableEq, Repr, BEq
+
+structure ManifestChangeState where
+  stage : ManifestChangeStage
+  changeDigest : Nat
+  expectedChangeDigest : Nat
+  priorManifestDigest : Nat
+  candidateManifestDigest : Nat
+  expectedCandidateManifestDigest : Nat
+  priorChapterCount : Nat
+  candidateChapterCount : Nat
+  renderedChapterCount : Nat
+  stableIdsUnique : Bool
+  scaffoldSynced : Bool
+  outlineSynced : Bool
+  proofManifestSynced : Bool
+  sourceMatrixSynced : Bool
+  renderValidated : Bool
+  validatorsPassed : Bool
+  changelogRecorded : Bool
+  nonClaimsRecorded : Bool
+  receipts : Nat
+  authorityCeiling : Nat
+  expectedAuthorityCeiling : Nat
+  supportAssignments : Nat
+  publicationEffects : Nat
+deriving DecidableEq, Repr
+
+inductive ManifestChangeEvent where
+  | synchronizeStructure
+      (changeDigest candidateManifestDigest renderedChapterCount : Nat)
+      (stableIdsUnique : Bool)
+  | synchronizeEvidence
+      (changeDigest : Nat)
+      (outlineSynced proofManifestSynced sourceMatrixSynced : Bool)
+  | validateCurrent
+      (changeDigest : Nat)
+      (renderValidated validatorsPassed : Bool)
+  | acceptCurrent
+      (changeDigest : Nat)
+      (changelogRecorded nonClaimsRecorded : Bool)
+  | rollback
+      (changeDigest : Nat)
+      (residualOwned : Bool)
+deriving DecidableEq, Repr
+
+def ManifestChangeCustody (state : ManifestChangeState) : Prop :=
+  state.changeDigest = state.expectedChangeDigest ∧
+    state.candidateManifestDigest = state.expectedCandidateManifestDigest ∧
+      state.authorityCeiling = state.expectedAuthorityCeiling
+
+def ManifestChangeInvariant (state : ManifestChangeState) : Prop :=
+  ManifestChangeCustody state ∧
+    state.supportAssignments = 0 ∧
+      state.publicationEffects = 0 ∧
+        match state.stage with
+        | .proposed => True
+        | .structureSynced =>
+            state.stableIdsUnique = true ∧
+              state.scaffoldSynced = true ∧
+                state.renderedChapterCount = state.candidateChapterCount
+        | .evidenceSynced =>
+            state.stableIdsUnique = true ∧
+              state.scaffoldSynced = true ∧
+                state.renderedChapterCount = state.candidateChapterCount ∧
+                  state.outlineSynced = true ∧
+                    state.proofManifestSynced = true ∧
+                      state.sourceMatrixSynced = true
+        | .validated =>
+            state.stableIdsUnique = true ∧
+              state.scaffoldSynced = true ∧
+                state.renderedChapterCount = state.candidateChapterCount ∧
+                  state.outlineSynced = true ∧
+                    state.proofManifestSynced = true ∧
+                      state.sourceMatrixSynced = true ∧
+                        state.renderValidated = true ∧
+                          state.validatorsPassed = true
+        | .acceptedCurrent =>
+            state.stableIdsUnique = true ∧
+              state.scaffoldSynced = true ∧
+                state.renderedChapterCount = state.candidateChapterCount ∧
+                  state.outlineSynced = true ∧
+                    state.proofManifestSynced = true ∧
+                      state.sourceMatrixSynced = true ∧
+                        state.renderValidated = true ∧
+                          state.validatorsPassed = true ∧
+                            state.changelogRecorded = true ∧
+                              state.nonClaimsRecorded = true
+        | .rolledBack => True
+
+def manifestChangeStep
+    (state : ManifestChangeState) (event : ManifestChangeEvent) :
+    Bool × ManifestChangeState :=
+  match event with
+  | .synchronizeStructure change candidate rendered unique =>
+      if state.stage = .proposed ∧
+          change = state.changeDigest ∧
+          candidate = state.candidateManifestDigest ∧
+          candidate = state.expectedCandidateManifestDigest ∧
+          rendered = state.candidateChapterCount ∧
+          unique = true then
+        (true, {
+          state with
+          stage := .structureSynced
+          renderedChapterCount := rendered
+          stableIdsUnique := true
+          scaffoldSynced := true
+          receipts := state.receipts + 1
+        })
+      else
+        (false, state)
+  | .synchronizeEvidence change outline proofManifest sourceMatrix =>
+      if state.stage = .structureSynced ∧
+          change = state.changeDigest ∧
+          outline = true ∧ proofManifest = true ∧ sourceMatrix = true then
+        (true, {
+          state with
+          stage := .evidenceSynced
+          outlineSynced := true
+          proofManifestSynced := true
+          sourceMatrixSynced := true
+          receipts := state.receipts + 1
+        })
+      else
+        (false, state)
+  | .validateCurrent change renderPassed validatorsPassed =>
+      if state.stage = .evidenceSynced ∧
+          change = state.changeDigest ∧
+          renderPassed = true ∧ validatorsPassed = true then
+        (true, {
+          state with
+          stage := .validated
+          renderValidated := true
+          validatorsPassed := true
+          receipts := state.receipts + 1
+        })
+      else
+        (false, state)
+  | .acceptCurrent change changelog nonClaims =>
+      if state.stage = .validated ∧
+          change = state.changeDigest ∧
+          changelog = true ∧ nonClaims = true then
+        (true, {
+          state with
+          stage := .acceptedCurrent
+          changelogRecorded := true
+          nonClaimsRecorded := true
+          receipts := state.receipts + 1
+        })
+      else
+        (false, state)
+  | .rollback change residualOwned =>
+      if state.stage ≠ .acceptedCurrent ∧
+          state.stage ≠ .rolledBack ∧
+          change = state.changeDigest ∧ residualOwned = true then
+        (true, {
+          state with
+          stage := .rolledBack
+          candidateManifestDigest := state.priorManifestDigest
+          expectedCandidateManifestDigest := state.priorManifestDigest
+          candidateChapterCount := state.priorChapterCount
+          renderedChapterCount := state.priorChapterCount
+          receipts := state.receipts + 1
+        })
+      else
+        (false, state)
+
+def runManifestChange :
+    ManifestChangeState -> List ManifestChangeEvent -> ManifestChangeState
+  | state, [] => state
+  | state, event :: rest =>
+      runManifestChange (manifestChangeStep state event).2 rest
+
+def referenceManifestChange : ManifestChangeState := {
+  stage := .proposed
+  changeDigest := 701
+  expectedChangeDigest := 701
+  priorManifestDigest := 800
+  candidateManifestDigest := 801
+  expectedCandidateManifestDigest := 801
+  priorChapterCount := 83
+  candidateChapterCount := 84
+  renderedChapterCount := 0
+  stableIdsUnique := false
+  scaffoldSynced := false
+  outlineSynced := false
+  proofManifestSynced := false
+  sourceMatrixSynced := false
+  renderValidated := false
+  validatorsPassed := false
+  changelogRecorded := false
+  nonClaimsRecorded := false
+  receipts := 0
+  authorityCeiling := 1
+  expectedAuthorityCeiling := 1
+  supportAssignments := 0
+  publicationEffects := 0
+}
+
+def referenceManifestChangeEvents : List ManifestChangeEvent := [
+  .synchronizeStructure 701 801 84 true,
+  .synchronizeEvidence 701 true true true,
+  .validateCurrent 701 true true,
+  .acceptCurrent 701 true true
+]
+
+theorem manifest_change_rejected_event_is_noninterfering
+    (state : ManifestChangeState) (event : ManifestChangeEvent)
+    (h : (manifestChangeStep state event).1 = false) :
+    (manifestChangeStep state event).2 = state := by
+  cases event with
+  | synchronizeStructure change candidate rendered unique =>
+      by_cases gate : state.stage = .proposed ∧
+        change = state.changeDigest ∧
+        candidate = state.candidateManifestDigest ∧
+        candidate = state.expectedCandidateManifestDigest ∧
+        rendered = state.candidateChapterCount ∧ unique = true
+      · have candidateEq :
+          state.candidateManifestDigest = state.expectedCandidateManifestDigest :=
+            gate.2.2.1.symm.trans gate.2.2.2.1
+        simp [manifestChangeStep, gate, candidateEq] at h
+      · simp [manifestChangeStep, gate]
+  | synchronizeEvidence change outline proofManifest sourceMatrix =>
+      by_cases gate : state.stage = .structureSynced ∧
+        change = state.changeDigest ∧
+        outline = true ∧ proofManifest = true ∧ sourceMatrix = true
+      · simp [manifestChangeStep, gate] at h
+      · simp [manifestChangeStep, gate]
+  | validateCurrent change renderPassed validatorsPassed =>
+      by_cases gate : state.stage = .evidenceSynced ∧
+        change = state.changeDigest ∧
+        renderPassed = true ∧ validatorsPassed = true
+      · simp [manifestChangeStep, gate] at h
+      · simp [manifestChangeStep, gate]
+  | acceptCurrent change changelog nonClaims =>
+      by_cases gate : state.stage = .validated ∧
+        change = state.changeDigest ∧
+        changelog = true ∧ nonClaims = true
+      · simp [manifestChangeStep, gate] at h
+      · simp [manifestChangeStep, gate]
+  | rollback change residualOwned =>
+      by_cases gate : state.stage ≠ .acceptedCurrent ∧
+        state.stage ≠ .rolledBack ∧
+        change = state.changeDigest ∧ residualOwned = true
+      · simp [manifestChangeStep, gate] at h
+      · simp [manifestChangeStep, gate]
+
+theorem manifest_change_step_preserves_custody
+    (state : ManifestChangeState) (event : ManifestChangeEvent)
+    (h : ManifestChangeCustody state) :
+    ManifestChangeCustody (manifestChangeStep state event).2 := by
+  cases event <;>
+    simp [manifestChangeStep, ManifestChangeCustody] at h ⊢ <;>
+    split <;> simp_all
+
+theorem run_manifest_change_preserves_custody
+    (state : ManifestChangeState) (events : List ManifestChangeEvent)
+    (h : ManifestChangeCustody state) :
+    ManifestChangeCustody (runManifestChange state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (manifestChangeStep state event).2
+        (manifest_change_step_preserves_custody state event h)
+
+theorem manifest_change_step_preserves_invariant
+    (state : ManifestChangeState) (event : ManifestChangeEvent)
+    (h : ManifestChangeInvariant state) :
+    ManifestChangeInvariant (manifestChangeStep state event).2 := by
+  cases event <;>
+    simp [manifestChangeStep, ManifestChangeInvariant, ManifestChangeCustody] at h ⊢ <;>
+    split <;> simp_all
+
+theorem run_manifest_change_preserves_invariant
+    (state : ManifestChangeState) (events : List ManifestChangeEvent)
+    (h : ManifestChangeInvariant state) :
+    ManifestChangeInvariant (runManifestChange state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (manifestChangeStep state event).2
+        (manifest_change_step_preserves_invariant state event h)
+
+theorem run_manifest_change_append
+    (state : ManifestChangeState)
+    (left right : List ManifestChangeEvent) :
+    runManifestChange state (left ++ right) =
+      runManifestChange (runManifestChange state left) right := by
+  induction left generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      simp [runManifestChange, ih]
+
+theorem reference_manifest_change_reaches_accepted_current :
+    (runManifestChange referenceManifestChange referenceManifestChangeEvents).stage =
+      .acceptedCurrent := by
+  rfl
+
+theorem reference_manifest_change_has_no_support_or_publication_authority :
+    let final := runManifestChange referenceManifestChange referenceManifestChangeEvents
+    final.supportAssignments = 0 ∧ final.publicationEffects = 0 := by
+  decide
+
+theorem reference_manifest_change_has_exact_receipt_count :
+    (runManifestChange referenceManifestChange referenceManifestChangeEvents).receipts = 4 := by
+  rfl
+
+theorem missing_proof_manifest_sync_rejects_without_state_change :
+    let synchronized := (manifestChangeStep referenceManifestChange
+      (.synchronizeStructure 701 801 84 true)).2
+    manifestChangeStep synchronized (.synchronizeEvidence 701 true false true) =
+      (false, synchronized) := by
+  decide
+
+theorem duplicate_stable_ids_reject_structure_sync_without_state_change :
+    manifestChangeStep referenceManifestChange
+      (.synchronizeStructure 701 801 84 false) =
+        (false, referenceManifestChange) := by
+  decide
+
+theorem failed_render_rejects_validation_without_state_change :
+    let synchronized := runManifestChange referenceManifestChange
+      (referenceManifestChangeEvents.take 2)
+    manifestChangeStep synchronized (.validateCurrent 701 false true) =
+      (false, synchronized) := by
+  decide
+
+theorem accepted_manifest_change_is_absorbing_one_step
+    (state : ManifestChangeState) (event : ManifestChangeEvent)
+    (h : state.stage = .acceptedCurrent) :
+    manifestChangeStep state event = (false, state) := by
+  cases event <;> simp [manifestChangeStep, h]
+
+theorem rolled_back_manifest_change_is_absorbing_one_step
+    (state : ManifestChangeState) (event : ManifestChangeEvent)
+    (h : state.stage = .rolledBack) :
+    manifestChangeStep state event = (false, state) := by
+  cases event <;> simp [manifestChangeStep, h]
+
+theorem accepted_manifest_change_is_absorbing_for_any_suffix
+    (state : ManifestChangeState) (events : List ManifestChangeEvent)
+    (h : state.stage = .acceptedCurrent) :
+    runManifestChange state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      rw [show runManifestChange state (event :: rest) =
+        runManifestChange (manifestChangeStep state event).2 rest by rfl]
+      rw [accepted_manifest_change_is_absorbing_one_step state event h]
+      exact ih state h
+
+theorem rolled_back_manifest_change_is_absorbing_for_any_suffix
+    (state : ManifestChangeState) (events : List ManifestChangeEvent)
+    (h : state.stage = .rolledBack) :
+    runManifestChange state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      rw [show runManifestChange state (event :: rest) =
+        runManifestChange (manifestChangeStep state event).2 rest by rfl]
+      rw [rolled_back_manifest_change_is_absorbing_one_step state event h]
+      exact ih state h
+
+def manifestChangeThinSummary (state : ManifestChangeState) : Nat × Nat :=
+  (state.candidateManifestDigest, state.candidateChapterCount)
+
+def ManifestChangeAccepted (state : ManifestChangeState) : Prop :=
+  state.stage = .acceptedCurrent
+
+def acceptedReferenceManifestChange : ManifestChangeState :=
+  runManifestChange referenceManifestChange referenceManifestChangeEvents
+
+theorem manifest_thin_summary_collides_across_acceptance :
+    manifestChangeThinSummary acceptedReferenceManifestChange =
+        manifestChangeThinSummary referenceManifestChange ∧
+      ManifestChangeAccepted acceptedReferenceManifestChange ∧
+      ¬ ManifestChangeAccepted referenceManifestChange := by
+  simp [manifestChangeThinSummary, acceptedReferenceManifestChange,
+    ManifestChangeAccepted, runManifestChange, referenceManifestChangeEvents,
+    referenceManifestChange, manifestChangeStep]
+
+theorem no_manifest_thin_summary_classifier_recovers_acceptance :
+    ¬ ∃ classify : Nat × Nat -> Bool,
+      ∀ state : ManifestChangeState,
+        classify (manifestChangeThinSummary state) = true ↔
+          ManifestChangeAccepted state := by
+  intro proposed
+  rcases proposed with ⟨classify, exactResult⟩
+  have collision := manifest_thin_summary_collides_across_acceptance
+  have accepted := (exactResult acceptedReferenceManifestChange).2 collision.2.1
+  have proposedRejected := (exactResult referenceManifestChange).1
+  rw [collision.1] at accepted
+  exact collision.2.2 (proposedRejected accepted)
+
 end AsiStackProofs.LivingBook

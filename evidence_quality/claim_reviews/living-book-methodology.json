@@ -7,17 +7,17 @@
     "structured_atoms_reviewed": 75,
     "prose_candidates_adjudicated": 63,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete Living Book Methodology chapter on 2026-07-26 after W3 centralized the shared lifecycle and inheritance boundary. Twelve new sentences refine existing method, invariant, failure-mode, and mature-campaign atoms; no new material atom, support, release, or publication movement was introduced. The 2026-07-25 C1–C8 reconciliation classifies new scanner-only line-wrap fragments as nonmaterial and changes no support state."
+    "review_note": "Re-reviewed the complete Living Book Methodology chapter on 2026-08-03 after adding the 39-declaration dynamic-numbering and structural-change lifecycle. The changed prose refines the existing minimum-implementation and publication-boundary atoms; no new material atom, support, release, or publication movement was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Exact books, editions, changes, sources, claims, proofs, tests, renders, audiences, derivatives, releases, rights, reviewers, consumers, environments, and times.",
-      "environment": "Sixteen mappings; release-record fixture; three valid/six invalid change packets; blocked reader candidate plus three valid and five invalid routes; synchronized publication surfaces; four targets; nineteen retained finite declarations. No manuscript-quality, accessibility-approval, reader-value, external-reproduction, or transfer result.",
+      "environment": "Sixteen mappings; release-record fixture; three valid/six invalid change packets; blocked reader candidate plus three valid and eleven invalid routes; synchronized publication surfaces; four targets; 39 Lean declarations; five trace splits; nine reachable lifecycle states through 162 transitions; five terminal states through ninety absorbing transitions; and fifteen semantic mutations. No source-truth, manuscript-quality, accessibility-approval, reader-value, public-release, future-maintainer, external-reproduction, or transfer result.",
       "model": "Evidence-Preserving Publication Transaction over canonical source, provenance, lane separation, claim and proof scope, change packets, regeneration, validation, typed derivatives, release identity, correction, successor continuity, and expiry.",
       "authority": "Owns publication-state integrity only; author intent, source truth, claim evidence, editorial quality, accessibility approval, rights, release approval, external publication, and reader judgment remain separate.",
-      "time": "Semantic review current through 2026-07-26; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
-      "artifact": "Chapter, manifest, sixteen mappings, release/change/reader fixtures and validators, publication surfaces, four targets, nineteen retained declarations, semantic review, and future campaign."
+      "time": "Semantic review current through 2026-08-03; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "artifact": "Chapter, manifest, sixteen mappings, release/change/reader fixtures and validators, publication surfaces, four targets, 39-declaration Lean surface, semantic review, and future campaign."
     },
     "current_disposition": "retain_argument_with_repository_release_and_derivative_discipline_no_core_effect",
     "assumptions": [
@@ -78,7 +78,7 @@
       "Repository hygiene and green builds do not establish semantic, editorial, accessibility, or reader quality.",
       "The change packets and reader bridge are synthetic or hand-authored finite records.",
       "The blocked reader candidate has local format evidence but still lacks exact approval states.",
-      "All twenty-one declarations reduce hand-authored finite predicates, records, or routes.",
+      "The 39 declarations prove only authored finite manifest-compiler, transaction, record, and route semantics; they do not establish source, prose, review, validator, or public-release truth.",
       "External comparators are not external review or certification."
     ],
     "known_confounds": [
@@ -109,7 +109,7 @@
     "promotion_ceiling": "argument_until_natural_independent_multi_maintainer_campaign_with_reader_accessibility_editorial_reproduction_and_transfer",
     "reproduction": {
       "command": "python3 scripts/validate_living_book_change_packets.py && python3 scripts/validate_reader_release_candidate_bridge.py && python3 scripts/validate_outline_consistency.py && python3 scripts/validate_claim_atom_registry.py && cd lean && lake build AsiStackProofs.LivingBook",
-      "environment_lock": "Repository-local publication fixtures, validators, and module current through 2026-07-15; natural matched workflow campaign not run.",
+      "environment_lock": "Repository-local publication fixtures, validators, and module current through 2026-08-03; natural matched workflow campaign not run.",
       "artifact_digest": null,
       "evaluator_identity": "Repository-local; independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosts, and domains required."
     },
@@ -187,9 +187,10 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
     },
-    "living-book-methodology.prose.3429569c56ea": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.6ed57219335e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the bounded structural-change lifecycle now owned by the chapter's reviewed minimum-implementation atom; it creates no separate support-bearing claim.",
+      "target_atom_id": "living-book-methodology.minimum.001"
     },
     "living-book-methodology.prose.3633c5503703": {
       "state": "duplicate_of_atom",
@@ -272,9 +273,9 @@
       "state": "nonmaterial_explanation",
       "rationale": "Fragment of the change-control rule for evidence field semantics and inference rules."
     },
-    "living-book-methodology.prose.8ec5966a273c": {
-      "state": "historical_or_source_report",
-      "rationale": "Enumerates retained bounded negative-case declarations after projection retirement; it reports formal coverage and does not establish manuscript quality, release approval, accessibility, or a support-state transition."
+    "living-book-methodology.prose.be493544326f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicitly preserves the source, validator, prose, accessibility, public-availability, future-maintainer, and transfer non-claim boundary."
     },
     "living-book-methodology.prose.9369b19b8091": {
       "state": "nonmaterial_explanation",
@@ -336,9 +337,10 @@
       "rationale": "Semantically reviewed after W3 as a local object and boundary requirement of `living-book-methodology.mechanism.008`; it creates no separate support-bearing atom.",
       "target_atom_id": "living-book-methodology.mechanism.008"
     },
-    "living-book-methodology.prose.bd3e62131945": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    "living-book-methodology.prose.c5727e63be9b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the stage and non-authority semantics already owned by the chapter's reviewed minimum-implementation atom; it creates no separate support-bearing claim.",
+      "target_atom_id": "living-book-methodology.minimum.001"
     },
     "living-book-methodology.prose.bd6c53f58c0c": {
       "state": "nonmaterial_explanation",

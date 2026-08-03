@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3009 |
-| Direct/projection-style theorem declarations | 440 |
-| Derived/decomposed theorem declarations | 1889 |
-| Unknown or mixed theorem declarations | 680 |
+| Theorem declarations classified | 3030 |
+| Direct/projection-style theorem declarations | 442 |
+| Derived/decomposed theorem declarations | 1904 |
+| Unknown or mixed theorem declarations | 684 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -118,7 +118,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 25 | 0 | 15 | 10 | manual review |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 34 | 7 | 23 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | learning-theory-generalization-and-scaling-science | 1 | 38 | 17 | 16 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 18 | 0 | 18 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 39 | 2 | 33 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 32 | 0 | 22 | 10 | manual review |
@@ -1764,12 +1764,25 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `training_fit_does_not_establish_broad_generalization` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `unscored_gap_persists_when_scored_count_falls` | derived_or_decomposed | no | uses omega |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | `unscored_preregistered_alternative_rejects_complete_comparison` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `accepted_manifest_change_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/LivingBook.lean` | `accepted_manifest_change_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_without_source_review_or_support_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `duplicate_stable_ids_reject_structure_sync_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LivingBook.lean` | `failed_render_rejects_validation_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/LivingBook.lean` | `local_reader_artifacts_do_not_clear_missing_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `manifest_change_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `manifest_change_step_preserves_custody` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/LivingBook.lean` | `manifest_change_step_preserves_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/LivingBook.lean` | `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `manifest_thin_summary_collides_across_acceptance` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `missing_proof_manifest_sync_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LivingBook.lean` | `no_manifest_thin_summary_classifier_recovers_acceptance` | derived_or_decomposed | no | uses have, rcases, rw |
+| `lean/AsiStackProofs/LivingBook.lean` | `number_manifest_derives_consecutive_ordinals` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `number_manifest_preserves_length` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `number_manifest_preserves_stable_id_order` | derived_or_decomposed | no | uses induction, simp |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_approval_routes_to_release_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_approved_record_routes_to_release_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_audio_files_routes_to_audio_review` | derived_or_decomposed | no | uses simp, unfold |
@@ -1779,7 +1792,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_screen_reader_routes_to_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_wcag_routes_to_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_support_promotion_claim_rejected` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `reference_manifest_change_has_exact_receipt_count` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LivingBook.lean` | `reference_manifest_change_has_no_support_or_publication_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/LivingBook.lean` | `reference_manifest_change_reaches_accepted_current` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `release_ready_without_validation_changelog_or_residuals_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `rolled_back_manifest_change_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/LivingBook.lean` | `rolled_back_manifest_change_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `run_manifest_change_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/LivingBook.lean` | `run_manifest_change_preserves_custody` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/LivingBook.lean` | `run_manifest_change_preserves_invariant` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_marked_valid_without_sync_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | `admissible_dossier_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

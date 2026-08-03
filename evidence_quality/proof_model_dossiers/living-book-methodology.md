@@ -11,6 +11,31 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:living_book.methodology.change_packet_boundary` | semantically_reviewed | retain_refinement_or_executable_bridge |
 | `lean:living_book.methodology.reader_release_candidate_bridge` | semantically_reviewed | retain_refinement_or_executable_bridge |
 
+## Current refinement
+
+`AsiStackProofs.LivingBook` now exposes 39 theorem declarations. Eighteen
+retained record and release-route guards sit beside an inductive manifest
+compiler and a governed structural-change lifecycle. The compiler derives
+contiguous display ordinals while preserving manifest length and stable chapter
+identity order. The lifecycle proves rejected-event noninterference, exact
+manifest and authority custody, gate coherence across arbitrary runs, exact
+trace composition, one reachable accepted-current witness, zero support and
+publication authority, terminal accepted and rolled-back suffixes, and a thin-
+summary collision that rules out exact acceptance classification from manifest
+digest and chapter count alone.
+
+`scripts/validate_living_book_change_packets.py` recompiles the exact surface,
+retains three valid and six expected-invalid change-packet fixtures, verifies a
+middle insertion with stable IDs and derived ordinals, checks all five reference
+trace splits, explores nine reachable states through 162 transitions, checks
+five terminal states through ninety absorbing transitions, and rejects fifteen
+semantic mutations. These are authored finite-state and repository-process
+results. They do not establish source truth, prose correctness, editorial or
+accessibility quality, validator adequacy, public-site availability, reader or
+audio approval, future-maintainer behavior, superior scholarship, support,
+safety, reproduction, transfer, or ASI. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |

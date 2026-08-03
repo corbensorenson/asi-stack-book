@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 48,
-    "P1": 977,
-    "P2": 311,
-    "P3": 1182,
-    "P4": 243,
-    "P5": 248,
+    "P1": 980,
+    "P2": 315,
+    "P3": 1189,
+    "P4": 247,
+    "P5": 251,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 3009,
+    "retain": 3030,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -817,7 +817,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 3009:
+    if summary.get("current_theorem_count") != 3030:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1184,10 +1184,26 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     rationalized_module_expectations = {
         "lean/AsiStackProofs/LivingBook.lean": (
-            18,
+            39,
             {
                 "manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected",
                 "structural_update_marked_valid_without_sync_artifacts_rejected",
+                "number_manifest_preserves_length",
+                "number_manifest_preserves_stable_id_order",
+                "number_manifest_derives_consecutive_ordinals",
+                "manifest_change_rejected_event_is_noninterfering",
+                "run_manifest_change_preserves_custody",
+                "run_manifest_change_preserves_invariant",
+                "run_manifest_change_append",
+                "reference_manifest_change_reaches_accepted_current",
+                "reference_manifest_change_has_no_support_or_publication_authority",
+                "missing_proof_manifest_sync_rejects_without_state_change",
+                "duplicate_stable_ids_reject_structure_sync_without_state_change",
+                "failed_render_rejects_validation_without_state_change",
+                "accepted_manifest_change_is_absorbing_for_any_suffix",
+                "rolled_back_manifest_change_is_absorbing_for_any_suffix",
+                "manifest_thin_summary_collides_across_acceptance",
+                "no_manifest_thin_summary_classifier_recovers_acceptance",
             },
         ),
         "lean/AsiStackProofs/PlanForge.lean": (
@@ -1314,7 +1330,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 3009
+        status.get("theorem_count") != 3030
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

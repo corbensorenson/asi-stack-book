@@ -3588,6 +3588,111 @@ CURRENT_SEMANTIC_OVERRIDES[
     ),
 }
 
+_living_book_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean/AsiStackProofs/LivingBook.lean",
+        "scripts/validate_living_book_change_packets.py",
+        "experiments/living_book_change_packets/fixtures/valid_chapter_revision.json",
+    ],
+}
+
+for theorem_name in (
+    "missing_proof_manifest_sync_rejects_without_state_change",
+    "duplicate_stable_ids_reject_structure_sync_without_state_change",
+    "failed_render_rejects_validation_without_state_change",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LivingBook.lean::{theorem_name}"
+    ] = {
+        **_living_book_refinement_base,
+        "semantic_level": "P1",
+        "classification_basis": [
+            "one-step finite synchronization or validation rejection consequence"
+        ],
+        "rationale": (
+            "The theorem rejects a named malformed manifest-change event without proving manuscript quality or release readiness."
+        ),
+    }
+
+for theorem_name in (
+    "number_manifest_preserves_length",
+    "reference_manifest_change_reaches_accepted_current",
+    "reference_manifest_change_has_exact_receipt_count",
+    "manifest_thin_summary_collides_across_acceptance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LivingBook.lean::{theorem_name}"
+    ] = {
+        **_living_book_refinement_base,
+        "semantic_level": "P2",
+        "classification_basis": [
+            "inductive manifest witness or closed reachable change-lifecycle witness"
+        ],
+        "rationale": (
+            "The theorem establishes bounded nonvacuity for derived numbering or one authored change transaction only."
+        ),
+    }
+
+for theorem_name in (
+    "number_manifest_preserves_stable_id_order",
+    "number_manifest_derives_consecutive_ordinals",
+    "manifest_change_step_preserves_custody",
+    "run_manifest_change_preserves_custody",
+    "manifest_change_step_preserves_invariant",
+    "run_manifest_change_preserves_invariant",
+    "run_manifest_change_append",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LivingBook.lean::{theorem_name}"
+    ] = {
+        **_living_book_refinement_base,
+        "semantic_level": "P3",
+        "classification_basis": [
+            "inductive implementation refinement for dynamic numbering, identity custody, gate coherence, or trace composition"
+        ],
+        "rationale": (
+            "The theorem refines the executable finite manifest compiler or transaction runner; source, prose, and validator truth remain inputs."
+        ),
+    }
+
+for theorem_name in (
+    "manifest_change_rejected_event_is_noninterfering",
+    "reference_manifest_change_has_no_support_or_publication_authority",
+    "accepted_manifest_change_is_absorbing_one_step",
+    "rolled_back_manifest_change_is_absorbing_one_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LivingBook.lean::{theorem_name}"
+    ] = {
+        **_living_book_refinement_base,
+        "semantic_level": "P4",
+        "classification_basis": [
+            "finite noninterference or terminal-safety property for support, publication authority, or rejected change events"
+        ],
+        "rationale": (
+            "The theorem constrains local transaction authority and terminal reopening, not public deployment or scholarly quality."
+        ),
+    }
+
+for theorem_name in (
+    "accepted_manifest_change_is_absorbing_for_any_suffix",
+    "rolled_back_manifest_change_is_absorbing_for_any_suffix",
+    "no_manifest_thin_summary_classifier_recovers_acceptance",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LivingBook.lean::{theorem_name}"
+    ] = {
+        **_living_book_refinement_base,
+        "semantic_level": "P5",
+        "classification_basis": [
+            "arbitrary finite suffix closure or impossibility of recovering acceptance from a lossy manifest summary"
+        ],
+        "rationale": (
+            "The theorem establishes bounded terminal closure or information insufficiency only; it does not establish future-maintainer liveness or release correctness."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

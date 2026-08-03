@@ -6262,7 +6262,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3009 theorem declarations, 1889 derived/decomposed, 440 direct/projection, 680 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3030 theorem declarations, 1904 derived/decomposed, 442 direct/projection, 684 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6278,8 +6278,8 @@ Draft deliverables:
   exclusions, implementation binding, and no-promotion boundaries.
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
-330-target live manifest; a 130-module Lean workspace with 3,009 declarations
-classified as 1,889 derived/decomposed, 440 direct/projection, and 680
+330-target live manifest; a 130-module Lean workspace with 3,030 declarations
+classified as 1,904 derived/decomposed, 442 direct/projection, and 684
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer
@@ -7817,6 +7817,7 @@ Draft arc:
 - Mechanism: Freeze exact source commit, change graph, audiences, authority, rights, release target, environment, time, and non-claims; identify every source, claim, proof, test, figure, derivative, release, residual, correction, and successor.
 - Mechanism: Ingest through explicit provenance and permission; separate source report, author intent, synthesis, experiment, proof, editorial judgment, and open questions; atomize material claims with falsifiers and evidence ceilings.
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
+- Mechanism: Treat chapter and part numbers as generated presentation data over stable manifest IDs; derive contiguous ordinals from current manifest order so insertion, removal, movement, or merge requires no stored-number rewrite and cannot change evidence identity.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
 - Mechanism: Compress the 84-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
@@ -7833,7 +7834,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantically reviewed Evidence-Preserving Publication Transaction with sixteen exact mappings, eighteen mechanisms, twelve interfaces, eighteen invariants, eighteen failure modes, four proof targets, seventy-five structured atoms, and no unowned material prose.
-- An exact minimum slice comprising release-record, three-valid/six-invalid change-packet, blocked-reader plus three-valid/five-invalid route fixtures, synchronized publication surfaces, and twenty-one finite declarations; no manuscript, accessibility, reader, or chapter-core effect.
+- An exact minimum slice comprising release-record, three-valid/six-invalid change-packet, blocked-reader plus three-valid/eleven-invalid route fixtures, synchronized publication surfaces, and 39 Lean declarations. Eighteen retained record and reader-route guards sit beside an inductive manifest compiler and governed structural-change lifecycle proving stable-ID order, derived contiguous ordinals, arbitrary-run custody and gate coherence, exact composition, accepted-current reachability with zero support/publication authority, terminal closure, and thin-summary insufficiency; no manuscript, accessibility, reader, public-release, or chapter-core effect.
 - A frozen argument-exit campaign over natural substantive updates by independent human and AI maintainers, matched publishing workflows, injected source/claim/proof/rights/derivative/release/handoff failures, joint reader/editorial/accessibility outcomes and total cost, causal ablations, reproduction, and transfer.
 - A public Quarto repo with dynamic scaffold, source matrix, claim matrix, proof manifest, validation, GitHub Pages, and public release records.
 - A public-safe author-intent and lineage appendix that preserves architecture intent without publishing private conversation text.
@@ -7845,7 +7846,7 @@ Draft deliverables:
 - Planned Codex test: Quarto render check.
 - Planned Codex test: Manifest/outline consistency check.
 - Planned Codex test: Changelog update check.
-- Implemented Codex test: Living-book change-packet validation, via `python3 scripts/validate_living_book_change_packets.py`, with 3 valid and 6 expected-invalid synthetic fixtures.
+- Implemented Codex test: Living-book change-packet validation, via `python3 scripts/validate_living_book_change_packets.py`, with 3 valid and 6 expected-invalid fixtures, 39 exact Lean declarations, 5/5 trace splits, 9 reachable states through 162 transitions, 5 terminal states through 90 absorbing transitions, and 15 semantic mutations.
 - Implemented Codex test: Reader release-candidate bridge, via `python3 scripts/validate_reader_release_candidate_bridge.py`, with the current blocked curated candidate, 3 additional valid route cases, and 11 expected-invalid controls.
 
 Lean proof targets:

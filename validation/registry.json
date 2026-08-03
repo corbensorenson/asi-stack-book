@@ -3397,11 +3397,33 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "input_contract": "The exact 39-declaration LivingBook Lean surface, the living-book change-packet schema, three valid and six expected-invalid fixtures, a derived-numbering insertion witness, and the independently encoded manifest-change lifecycle.",
+      "output_contract": "Reject theorem drift, Lean compile failure, fixture-schema or semantic failure, noncontiguous derived ordinals, stable-ID drift, custody or gate-coherence failure, trace-composition failure, terminal reopening, thin-summary overclassification, or any of fifteen semantic mutations.",
+      "claim_scope": "Authored finite manifest numbering, change-packet record discipline, and structural-change lifecycle semantics only.",
+      "negative_controls": "validator_owned:6_fixture_controls+15_semantic_mutations",
+      "prohibited_inference": "Does not establish source truth, manuscript or editorial quality, accessibility, release approval, public availability, future-maintainer correctness, support, safety, reproduction, transfer, or ASI.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/LivingBook.lean",
+        "schemas/living_book_change_packet.schema.json",
+        "experiments/living_book_change_packets/fixtures/valid_chapter_revision.json",
+        "experiments/living_book_change_packets/fixtures/valid_proof_manifest_shift.json",
+        "experiments/living_book_change_packets/fixtures/valid_release_blocker.json",
+        "experiments/living_book_change_packets/fixtures/invalid_missing_changelog.json",
+        "experiments/living_book_change_packets/fixtures/invalid_no_non_claims.json",
+        "experiments/living_book_change_packets/fixtures/invalid_pass_without_validation_commands.json",
+        "experiments/living_book_change_packets/fixtures/invalid_reader_equal_authority.json",
+        "experiments/living_book_change_packets/fixtures/invalid_render_pass_without_render_command.json",
+        "experiments/living_book_change_packets/fixtures/invalid_support_promotion_without_transition.json"
+      ],
+      "assertions": [
+        "exact 39-declaration LivingBook theorem surface recompiles",
+        "derived ordinals remain contiguous after a middle insertion while stable IDs preserve order",
+        "all 5 reference-trace splits compose",
+        "9 reachable states preserve custody, gate coherence, zero support assignment, and zero publication effects across 162 transitions",
+        "5 accepted or rolled-back terminal states absorb all 90 tested suffix transitions",
+        "manifest digest and chapter count alone do not determine acceptance",
+        "all 6 fixture controls and 15 semantic mutations reject"
+      ]
     },
     {
       "id": "validate_release_profiles:011",
