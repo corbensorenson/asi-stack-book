@@ -21,8 +21,8 @@ STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_st
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 325
-CURRENT_IMPLEMENTED_TARGET_COUNT = 325
+CURRENT_PROOF_TARGET_COUNT = 326
+CURRENT_IMPLEMENTED_TARGET_COUNT = 326
 CURRENT_PLANNED_TARGET_COUNT = 0
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
@@ -36,7 +36,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 212,
     "useful but too narrow": 79,
-    "needs richer state-machine or review semantics": 12,
+    "needs richer state-machine or review semantics": 13,
     "needs executable tests first": 3,
     "needs empirical or baseline tests first": 17,
     "research-agenda until artifact import": 2,

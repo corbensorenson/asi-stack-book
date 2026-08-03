@@ -7,6 +7,20 @@ Authority: Corben Sorenson
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
 
+## 2026-08-02 Constitutional predicate proof-to-system boundary
+
+The book-local Constitutional Alignment lane now proves subset refinement,
+transitive no-reintroduction, exact prior-set rollback, concrete widening
+rejection, and scalar-count non-identifiability for a finite two-predicate
+migration model. Its independent consumer exhausts all sixteen prior/candidate
+pairs. This is a representation and transition result over authored fields; it
+does not establish predicate meaning or completeness, legitimacy, reviewer
+competence or independence, material rights usability, effect-complete
+rollback, deployed conflict handling, alignment, or safety. Route those open
+claims to normative review, prospective empirical evaluation, and Project
+Theseus integration. Reopen Lean only for a materially richer predicate,
+descendant-preservation, or compositional semantic model.
+
 ## 2026-08-02 Human Intent proof-to-system boundary
 
 The book-local Human Intent proof tranche now has a finite information-loss

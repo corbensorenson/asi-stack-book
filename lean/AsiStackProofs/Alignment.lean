@@ -887,4 +887,175 @@ theorem activation_version_jump_is_rejected :
       [reviewConstitutionEvent, { activateConstitutionEvent with targetVersion := 3 }] = none := by
   decide
 
+/-! ## Predicate-set refinement and exact rollback
+
+This finite model separates preservation of predicate identity from a scalar
+predicate count. It proves subset refinement and rollback only for two authored
+Boolean predicates; it does not establish that either predicate is morally
+correct, complete, usable, or correctly interpreted.
+-/
+
+structure FinitePredicateSet where
+  dignity : Bool
+  consent : Bool
+deriving DecidableEq, Repr
+
+def FinitePredicateSet.Refines
+    (candidate prior : FinitePredicateSet) : Prop :=
+  (candidate.dignity = true -> prior.dignity = true) ∧
+    (candidate.consent = true -> prior.consent = true)
+
+instance finitePredicateSetRefinesDecidable
+    (candidate prior : FinitePredicateSet) :
+    Decidable (FinitePredicateSet.Refines candidate prior) := by
+  unfold FinitePredicateSet.Refines
+  infer_instance
+
+structure PredicateMigration where
+  prior : FinitePredicateSet
+  candidate : FinitePredicateSet
+  proposerId : Nat
+  reviewerId : Nat
+  independentReviewRecorded : Bool
+  rollbackRecorded : Bool
+deriving DecidableEq, Repr
+
+def PredicateMigrationAdmissible (migration : PredicateMigration) : Prop :=
+  FinitePredicateSet.Refines migration.candidate migration.prior ∧
+    migration.independentReviewRecorded = true ∧
+    migration.reviewerId ≠ migration.proposerId ∧
+    migration.rollbackRecorded = true
+
+instance predicateMigrationAdmissibleDecidable (migration : PredicateMigration) :
+    Decidable (PredicateMigrationAdmissible migration) := by
+  unfold PredicateMigrationAdmissible
+  infer_instance
+
+structure ActivatedPredicateVersion where
+  active : FinitePredicateSet
+  rollback : FinitePredicateSet
+deriving DecidableEq, Repr
+
+def ActivatePredicateMigration
+    (migration : PredicateMigration) : Option ActivatedPredicateVersion :=
+  if PredicateMigrationAdmissible migration then
+    some { active := migration.candidate, rollback := migration.prior }
+  else
+    none
+
+def RollbackPredicateVersion
+    (version : ActivatedPredicateVersion) : FinitePredicateSet :=
+  version.rollback
+
+theorem accepted_predicate_migration_is_admissible
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version) :
+    PredicateMigrationAdmissible migration := by
+  unfold ActivatePredicateMigration at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_predicate_migration_is_exact
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version) :
+    version = { active := migration.candidate, rollback := migration.prior } := by
+  unfold ActivatePredicateMigration at accepted
+  split at accepted
+  · simp at accepted
+    exact accepted.symm
+  · simp at accepted
+
+theorem accepted_predicate_migration_refines_prior
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version) :
+    FinitePredicateSet.Refines version.active migration.prior := by
+  have admissible := accepted_predicate_migration_is_admissible accepted
+  have exactVersion := accepted_predicate_migration_is_exact accepted
+  rw [exactVersion]
+  exact admissible.1
+
+theorem accepted_predicate_migration_stores_exact_rollback
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version) :
+    version.rollback = migration.prior := by
+  rw [accepted_predicate_migration_is_exact accepted]
+
+theorem rollback_restores_exact_prior_predicate_set
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version) :
+    RollbackPredicateVersion version = migration.prior := by
+  unfold RollbackPredicateVersion
+  exact accepted_predicate_migration_stores_exact_rollback accepted
+
+theorem predicate_refinement_is_transitive
+    {newer middle prior : FinitePredicateSet}
+    (newerRefines : FinitePredicateSet.Refines newer middle)
+    (middleRefines : FinitePredicateSet.Refines middle prior) :
+    FinitePredicateSet.Refines newer prior := by
+  constructor
+  · intro dignity
+    exact middleRefines.1 (newerRefines.1 dignity)
+  · intro consent
+    exact middleRefines.2 (newerRefines.2 consent)
+
+theorem accepted_migration_cannot_add_dignity
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version)
+    (candidateDignity : version.active.dignity = true) :
+    migration.prior.dignity = true := by
+  exact (accepted_predicate_migration_refines_prior accepted).1 candidateDignity
+
+theorem accepted_migration_cannot_add_consent
+    {migration : PredicateMigration} {version : ActivatedPredicateVersion}
+    (accepted : ActivatePredicateMigration migration = some version)
+    (candidateConsent : version.active.consent = true) :
+    migration.prior.consent = true := by
+  exact (accepted_predicate_migration_refines_prior accepted).2 candidateConsent
+
+def dignityOnlyPredicateSet : FinitePredicateSet :=
+  { dignity := true, consent := false }
+
+def consentOnlyPredicateSet : FinitePredicateSet :=
+  { dignity := false, consent := true }
+
+def wideningPredicateMigration : PredicateMigration :=
+  { prior := dignityOnlyPredicateSet
+    candidate := { dignity := true, consent := true }
+    proposerId := 17
+    reviewerId := 19
+    independentReviewRecorded := true
+    rollbackRecorded := true }
+
+theorem predicate_widening_migration_is_rejected :
+    ActivatePredicateMigration wideningPredicateMigration = none := by
+  decide
+
+def FinitePredicateSet.count (predicates : FinitePredicateSet) : Nat :=
+  (if predicates.dignity then 1 else 0) +
+    (if predicates.consent then 1 else 0)
+
+theorem equal_predicate_counts_do_not_identify_predicate_sets :
+    dignityOnlyPredicateSet ≠ consentOnlyPredicateSet ∧
+      dignityOnlyPredicateSet.count = consentOnlyPredicateSet.count := by
+  decide
+
+theorem no_predicate_count_decoder_recovers_both_collision_witnesses
+    (decode : Nat -> FinitePredicateSet) :
+    decode dignityOnlyPredicateSet.count ≠ dignityOnlyPredicateSet ∨
+      decode consentOnlyPredicateSet.count ≠ consentOnlyPredicateSet := by
+  rcases equal_predicate_counts_do_not_identify_predicate_sets with
+    ⟨distinct, collision⟩
+  by_cases recoversDignity :
+      decode dignityOnlyPredicateSet.count = dignityOnlyPredicateSet
+  · right
+    intro recoversConsent
+    apply distinct
+    calc
+      dignityOnlyPredicateSet = decode dignityOnlyPredicateSet.count :=
+        recoversDignity.symm
+      _ = decode consentOnlyPredicateSet.count := congrArg decode collision
+      _ = consentOnlyPredicateSet := recoversConsent
+  · exact Or.inl recoversDignity
+
 end AsiStackProofs.Alignment

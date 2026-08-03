@@ -85,7 +85,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Timing-before-effect test | implemented | passing via synthetic agency rights harness; no deployed pre-effect review enforcement claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Corrigibility pathway test | implemented | passes via 24 Corrigibility theorems and an independently reconstructed five-event trace plus seven controls; no affected-party-standing, consent-quality, reviewer-competence, deployed-correction, rollback-effect, support-state-promotion, or runtime-corrigibility claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | High-impact approval test | implemented | passing via synthetic agency rights harness; no approval-service quality or reviewer-independence claim |
-| `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional route and versioned transition envelope | implemented | passes via 36 Alignment theorems and an independent four-event/five-rejection consumer; no moral-correctness, reviewer-competence, deployed alignment, rights-usability, rollback-effect, consent-quality, support-state-promotion, or runtime-policy claim |
+| `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Constitutional route and versioned transition envelope | implemented | passes via 47 Alignment theorems and an independent four-event/five-rejection lifecycle consumer plus exhaustive sixteen-pair predicate refinement: nine admitted subset refinements, seven widening rejections, nine exact rollbacks, and one predicate-count collision; no moral-correctness, predicate-semantic-adequacy, reviewer-competence, deployed alignment, rights-usability, rollback-effect, consent-quality, support-state-promotion, or runtime-policy claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Shared safety-critical lifecycle consumer trace | implemented | passes with ten receipts, five bounded fixture commits, five denials with residuals, eight rejecting mutations, and zero support promotions; no deployed effect-service, moral-correctness, legal-rights, affected-party-completeness, evaluator-quality, or runtime-safety claim |
 | `constitutional-alignment-substrate` | Constitutional Alignment: Agency, Dignity, and Corrigibility | Metaphysics lineage boundary audit | implemented | passing via python3 scripts/validate_alignment_metaphysics_boundary.py; no moral-correctness, consciousness, deployed-alignment, or support-state claim |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity | Goal versus capability shift suite | planned | not_run |
@@ -703,16 +703,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 325 |
+| Proof targets covered by triage | 326 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 325 |
+| implemented | 326 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 325 |
+| implemented | formal-invariant | lean-candidate | 326 |

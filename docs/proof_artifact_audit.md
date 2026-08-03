@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 325 |
-| Manifest status counts | {"implemented": 325} |
-| Triage class counts | {"formal-invariant": 325} |
+| Proof targets audited | 326 |
+| Manifest status counts | {"implemented": 326} |
+| Triage class counts | {"formal-invariant": 326} |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -33,7 +33,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|---:|
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | 1 | 28 | 0 | 31 | 7 |
-| `lean/AsiStackProofs/Alignment.lean` | 1 | 36 | 0 | 18 | 5 |
+| `lean/AsiStackProofs/Alignment.lean` | 2 | 47 | 0 | 26 | 8 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 27 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 21 | 0 | 34 | 4 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 37 | 0 | 11 | 5 |
@@ -150,7 +150,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `confidential-and-verifiable-ai-computation` | 1 | 1 | 0 | 0 |
-| `constitutional-alignment-substrate` | 6 | 6 | 0 | 0 |
+| `constitutional-alignment-substrate` | 7 | 7 | 0 | 0 |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 1 | 1 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
 | `dangerous-capability-domains-and-misuse-uplift` | 1 | 1 | 0 | 0 |
@@ -260,6 +260,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:alignment.constitution.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:alignment.constitution.lifecycle_admission_route` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:alignment.constitution.predicate_refinement` | `constitutional-alignment-substrate` | `AsiStackProofs.Alignment` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.operational_invariant` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `constitutional-alignment-substrate` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:corrigibility.agency.generic_countermodel_routes` | `constitutional-alignment-substrate` | `AsiStackProofs.Corrigibility` | triage ok; module ok; chapter tag ok; limitation ok |

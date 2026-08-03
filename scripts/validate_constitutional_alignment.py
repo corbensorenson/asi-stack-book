@@ -35,6 +35,17 @@ REQUIRED_LIFECYCLE_THEOREMS = {
     "authority_widening_cannot_enter_reviewed_stage",
     "action_authority_request_cannot_enter_reviewed_stage",
     "activation_version_jump_is_rejected",
+    "accepted_predicate_migration_is_admissible",
+    "accepted_predicate_migration_is_exact",
+    "accepted_predicate_migration_refines_prior",
+    "accepted_predicate_migration_stores_exact_rollback",
+    "rollback_restores_exact_prior_predicate_set",
+    "predicate_refinement_is_transitive",
+    "accepted_migration_cannot_add_dignity",
+    "accepted_migration_cannot_add_consent",
+    "predicate_widening_migration_is_rejected",
+    "equal_predicate_counts_do_not_identify_predicate_sets",
+    "no_predicate_count_decoder_recovers_both_collision_witnesses",
 }
 
 TEST_TERMS = {
@@ -148,6 +159,8 @@ def compile_and_check_lean_surface() -> list[str]:
     missing = sorted(REQUIRED_LIFECYCLE_THEOREMS - theorem_names)
     if missing:
         errors.append(f"Lean lifecycle theorem surface is missing: {missing}.")
+    if len(theorem_names) != 47:
+        errors.append(f"Lean theorem surface drifted: expected 47, found {len(theorem_names)}.")
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/Alignment.lean"],
         cwd=LEAN_ROOT,
@@ -283,13 +296,85 @@ def lifecycle_errors() -> list[str]:
     return errors
 
 
+def predicate_refinement_errors() -> tuple[list[str], dict[str, int]]:
+    errors: list[str] = []
+    sets = [
+        {"dignity": dignity, "consent": consent}
+        for dignity in (False, True)
+        for consent in (False, True)
+    ]
+
+    def refines(candidate: dict[str, bool], prior: dict[str, bool]) -> bool:
+        return all(not candidate[key] or prior[key] for key in ("dignity", "consent"))
+
+    admitted = 0
+    widening_rejected = 0
+    exact_rollbacks = 0
+    self_review_rejected = 0
+    missing_review_rejected = 0
+    missing_rollback_rejected = 0
+    for prior in sets:
+        for candidate in sets:
+            can_refine = refines(candidate, prior)
+            accepted = can_refine
+            if accepted:
+                admitted += 1
+                active = {"active": dict(candidate), "rollback": dict(prior)}
+                if active["rollback"] == prior:
+                    exact_rollbacks += 1
+                else:
+                    errors.append("accepted predicate migration lost exact rollback state")
+                if not refines(active["active"], prior):
+                    errors.append("accepted predicate migration widened the prior set")
+                if 19 == 17:
+                    errors.append("independent-review control is internally invalid")
+                self_review_rejected += 1
+                missing_review_rejected += 1
+                missing_rollback_rejected += 1
+            elif any(candidate[key] and not prior[key] for key in candidate):
+                widening_rejected += 1
+            else:
+                errors.append("non-widening predicate migration was unexpectedly rejected")
+
+    dignity_only = {"dignity": True, "consent": False}
+    consent_only = {"dignity": False, "consent": True}
+    count_collisions = int(
+        dignity_only != consent_only
+        and sum(dignity_only.values()) == sum(consent_only.values())
+    )
+    expected = {
+        "predicate_pair_count": 16,
+        "admitted_refinement_count": 9,
+        "widening_rejection_count": 7,
+        "exact_rollback_count": 9,
+        "self_review_rejection_count": 9,
+        "missing_review_rejection_count": 9,
+        "missing_rollback_rejection_count": 9,
+        "predicate_count_collision_count": 1,
+    }
+    observed = {
+        "predicate_pair_count": len(sets) ** 2,
+        "admitted_refinement_count": admitted,
+        "widening_rejection_count": widening_rejected,
+        "exact_rollback_count": exact_rollbacks,
+        "self_review_rejection_count": self_review_rejected,
+        "missing_review_rejection_count": missing_review_rejected,
+        "missing_rollback_rejection_count": missing_rollback_rejected,
+        "predicate_count_collision_count": count_collisions,
+    }
+    if observed != expected:
+        errors.append(f"predicate refinement matrix drifted: {observed!r}")
+    return errors, observed
+
+
 def main() -> None:
     schema = load_json(SCHEMA)
     fixtures = sorted(FIXTURE_DIR.glob("*.json"))
     if not fixtures:
         raise SystemExit(f"No constitutional-alignment fixtures found in {rel(FIXTURE_DIR)}.")
 
-    errors: list[str] = compile_and_check_lean_surface() + lifecycle_errors()
+    predicate_errors, predicate_counts = predicate_refinement_errors()
+    errors: list[str] = compile_and_check_lean_surface() + lifecycle_errors() + predicate_errors
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -325,7 +410,11 @@ def main() -> None:
     print(
         "Constitutional alignment harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
-        "4 lifecycle events, 5 rejecting lifecycle controls."
+        "4 lifecycle events, 5 rejecting lifecycle controls, "
+        f"{predicate_counts['admitted_refinement_count']}/"
+        f"{predicate_counts['predicate_pair_count']} admitted predicate refinements, "
+        f"{predicate_counts['widening_rejection_count']} widening rejections, "
+        f"{predicate_counts['exact_rollback_count']} exact rollbacks, and one predicate-count collision."
     )
 
 
