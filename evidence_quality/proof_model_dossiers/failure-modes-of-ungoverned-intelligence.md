@@ -14,16 +14,19 @@ Generated from the frozen activation-baseline inventory and semantic review over
 ## Current refinement
 
 `AsiStackProofs.FailureRecoveryRefinement` supplies the stronger model requested
-by the baseline review. Its five reachable stages preserve rejected state,
-admit events only from a valid control state, require failure-class and boundary
-custody before detection, open one residual while disabling modeled effects and
-promotion, guard readmission through exact identity plus remediation,
-independent review, current assurance and taxonomy, residual discharge, and
-authority, monotonically account for incidents, recoveries, and recurrences,
-and re-isolate one bounded
-recurrence. `scripts/validate_failure_recovery_refinement.py` independently
-encodes the transition system, checks all six lifecycle splits, and rejects 117
-state-preserving mutations. The bounded model has
+by the baseline review. Its observation gate admits only an operating,
+identity-matched, fresh, evidence-bearing, independently observed,
+authority-bounded, quarantine-safe, non-authorizing record. Rejected
+observations preserve exact state; unclassified observations preserve an
+unmapped residual; and accepted ordinary, recurrence, and severe-irreversible
+observations refine to detection, open one residual, and disable effects and
+promotion. Five recovery stages then guard readmission through exact identity
+plus remediation, independent review, current assurance and taxonomy, residual
+discharge, and authority; monotonically account for incidents, recoveries, and
+recurrences; and re-isolate one bounded recurrence.
+`scripts/validate_failure_recovery_refinement.py` independently checks three
+admitted ingress classes, twenty-six rejection controls, 256 exhaustive ingress
+combinations, all six recovery splits, and 117 recovery mutations. The bounded model has
 `support_state_effect=none`: detector truth, containment and remediation
 effectiveness, deployed recovery, safety, and transfer remain Theseus or
 empirical obligations.

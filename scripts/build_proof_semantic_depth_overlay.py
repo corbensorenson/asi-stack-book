@@ -916,6 +916,77 @@ for theorem_name in (
         "rationale": "The theorem proves a bounded rollback or post-failure recovery property while making no production or effect-complete recovery claim.",
     }
 
+_failure_observation_ingress_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_ordinary_observation_reaches_isolated_recovery",
+        "lean-theorem:complete_recurrence_observation_admits_escalated_recovery",
+        "lean-theorem:complete_severe_irreversible_observation_admits_escalated_recovery",
+        "scripts/validate_failure_recovery_refinement.py",
+        "experiments/failure_taxonomy_detector/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the exact 44-theorem module is independently recompiled across three admitted observation classes, 26 named rejection controls, 256 exhaustive ingress combinations, six recovery splits, and 117 recovery mutations"
+    ],
+}
+
+for theorem_name in (
+    "missing_observation_receipt_requests_evidence",
+    "unclassified_observation_preserves_unmapped_residual",
+    "captured_detector_cannot_admit_recovery",
+    "authority_over_ceiling_cannot_admit_recovery",
+    "open_escape_without_quarantine_cannot_admit_recovery",
+    "recurrence_marker_substitution_cannot_admit_recovery",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/FailureRecoveryRefinement.lean::{theorem_name}"
+    ] = {
+        **_failure_observation_ingress_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem is an exact bounded detector-ingress rejection or residual route over authored observation fields.",
+    }
+
+for theorem_name in (
+    "complete_recurrence_observation_admits_escalated_recovery",
+    "complete_severe_irreversible_observation_admits_escalated_recovery",
+    "complete_ordinary_observation_reaches_isolated_recovery",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/FailureRecoveryRefinement.lean::{theorem_name}"
+    ] = {
+        **_failure_observation_ingress_base,
+        "semantic_level": "P2",
+        "rationale": "The theorem supplies a closed nonvacuity witness for an admitted observation class and its bounded isolation outcome.",
+    }
+
+for theorem_name in (
+    "accepted_observation_starts_from_valid_operating_state",
+    "admitted_observation_requires_record_evidence_independence_and_boundary",
+    "accepted_observation_refines_recovery_detection",
+    "accepted_observation_records_exactly_one_incident_and_receipt",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/FailureRecoveryRefinement.lean::{theorem_name}"
+    ] = {
+        **_failure_observation_ingress_base,
+        "semantic_level": "P3",
+        "rationale": "The theorem binds the observation admission contract to the executable recovery transition and exact accounting surface.",
+    }
+
+for theorem_name in (
+    "rejected_observation_preserves_exact_state",
+    "accepted_observation_preserves_incident_identity",
+    "accepted_observation_opens_residual_and_blocks_effects_and_promotion",
+    "accepted_observation_cannot_assign_support_or_external_authority",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/FailureRecoveryRefinement.lean::{theorem_name}"
+    ] = {
+        **_failure_observation_ingress_base,
+        "semantic_level": "P4",
+        "rationale": "The theorem proves detector-to-recovery noninterference, identity custody, effect containment, or non-authority under the exact admission predicate.",
+    }
+
 _benchmark_ratchet_base = {
     "disposition": "retain",
     "witness_refs": [

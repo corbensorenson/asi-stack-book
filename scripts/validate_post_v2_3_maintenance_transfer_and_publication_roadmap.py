@@ -1641,15 +1641,15 @@ def errors(data: dict) -> list[str]:
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
         "P0": 47,
-        "P1": 979,
-        "P2": 321,
-        "P3": 1200,
-        "P4": 255,
+        "P1": 985,
+        "P2": 324,
+        "P3": 1204,
+        "P4": 259,
         "P5": 256,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 3058,
+        "retain": 3075,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 3058
+        or c6_overlay_status.get("theorem_count") != 3075
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 3058
+        c6_summary.get("current_theorem_count") != 3075
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1952,9 +1952,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 3893
+        or template_guard.get("current_prose_candidate_count") != 3891
         or template_guard.get("retired_inherited_prose_candidate_count") != 298
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 747
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 745
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4064
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -1983,7 +1983,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 298
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 747
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 745
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -2135,7 +2135,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (330, 130, 3058, 1919, 446, 693)
+    expected_proof = (330, 130, 3075, 1926, 447, 702)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 330:

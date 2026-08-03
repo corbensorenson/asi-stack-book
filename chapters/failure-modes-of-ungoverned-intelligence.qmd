@@ -473,16 +473,23 @@ runtime detection, prevention, mitigation effectiveness, evaluator
 independence, and support-state movement remain outside this evidence envelope.
 
 The Lean recovery refinement adds a different kind of evidence: a reachable
-control-plane lifecycle rather than another taxonomy row. An admitted incident
-moves through detection and isolation, containment confirmation, remediation,
-independent review, and guarded readmission. Rejected events preserve the exact
-modeled state. Accepted detection disables modeled external effects, and the
-transition function cannot assign support or external authority. Readmission
-requires exact incident and version identity, current assurance and taxonomy,
-residual custody, and explicit readmission authority. A bounded recurrence
-after recovery returns immediately to isolation. The independently encoded
-Python consumer exercises all five accepted transitions and rejects 31 wrong
-stage, identity substitution, replay, authority leakage, and missing-gate
+detector-to-recovery control-plane lifecycle rather than another taxonomy row.
+Its observation gate admits only an operating, identity-matched, fresh,
+evidence-bearing, independently observed, authority-bounded, quarantine-safe,
+non-authorizing record. Unclassified observations preserve an unmapped
+residual; captured detectors, authority excess, open escape paths, recurrence
+substitution, and missing evidence remain distinct non-admitting routes.
+Accepted ordinary, recurrence, and severe-irreversible observations refine to
+the recovery system's detection event, open one residual, and disable modeled
+external effects and promotion. Recovery then moves through containment
+confirmation, remediation, independent review, and guarded readmission.
+Rejected observations and recovery events preserve the exact modeled state.
+Readmission requires exact incident and version identity, current assurance and
+taxonomy, residual discharge, and explicit readmission authority. A bounded
+recurrence after recovery returns immediately to isolation. The independently
+encoded Python consumer checks three admitted ingress classes, twenty-six
+rejecting ingress controls, 256 exhaustive ingress combinations, all five
+accepted recovery transitions, six lifecycle splits, and 117 recovery
 mutations.
 
 This is not a detector or recovery result. Every Boolean field is an input to
@@ -516,7 +523,7 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | Unverified-claim scenario | Check that a requested claim promotion with failed verification routes to blocked promotion. | implemented as a finite Lean incident-route predicate; no claim-verification harness run |
 | Failure recurrence escalation route | Check finite failure recurrence routing for missing failure class, boundary, receipt, owner, containment, residual, learning path, normalization guard, review escalation, quarantine, evidence-transition, and non-claim-boundary records. | implemented in `AsiStackProofs.FailureModes`; no deployed failure detector, runtime recurrence detector, evaluator-independence probe, context containment, or claim-verification quality claim |
 | Failure taxonomy detector and mitigation-boundary probe | Check that a deterministic synthetic failure-taxonomy detector fixture records authority-creep and Goodhart/evaluator-drift incidents, detector refs, receipts, residuals, mitigation routes, rejected negative controls, no support-state effect, and explicit non-claim boundaries. | implemented by `python3 scripts/validate_failure_taxonomy_detector_probe.py`; two valid synthetic failure incidents and seven expected-invalid controls; no deployed detector, prevention, mitigation-effectiveness, evaluator-independence, or support-state-promotion claim |
-| Failure recovery lifecycle refinement | Check rejected-state preservation, arbitrary-run identity and authority custody, exact receipt and lifecycle-count accounting, trace validity, batch composition, valid control-state admission, failure-class and boundary custody, residual opening and discharge, guarded readmission, recurrence re-isolation, and independently encoded route mutations. | implemented by the exact 27-theorem `AsiStackProofs.FailureRecoveryRefinement` surface and `python3 scripts/validate_failure_recovery_refinement.py`; five accepted transitions, all six lifecycle splits, and 117/117 rejecting mutations; no event-truth, detector-quality, mitigation-effectiveness, deployed-recovery, safety, or support-state claim |
+| Failure recovery lifecycle refinement | Check rejected-state preservation, arbitrary-run identity and authority custody, exact receipt and lifecycle-count accounting, trace validity, batch composition, detector-observation admission, unmapped residuals, detector separation, authority and quarantine gates, residual opening and discharge, guarded readmission, recurrence re-isolation, and independently encoded route mutations. | implemented by the exact 44-theorem `AsiStackProofs.FailureRecoveryRefinement` surface and `python3 scripts/validate_failure_recovery_refinement.py`; three accepted observation-ingress classes, 26/26 rejecting observation controls, 256 exhaustive observation combinations, five accepted recovery transitions, all six lifecycle splits, and 117/117 rejecting recovery mutations; no event-truth, detector-quality, mitigation-effectiveness, deployed-recovery, safety, or support-state claim |
 
 ### Formalization hooks
 
@@ -526,12 +533,12 @@ This failure-radar layer is still an architectural safety discipline. Its suppor
 | `lean:failure.invariant_violation.failure_blocks_promotion` | `AsiStackProofs.FailureModes` | A finite incident whose authority exceeds its ceiling routes to explicit authority review. | implemented |
 | `lean:failure.recurrence.escalation_route` | `AsiStackProofs.FailureModes` | If the finite failure-recurrence router returns closeFailureRecord, every required failure, class, boundary, receipt, owner, containment, residual, learning, normalization, and non-claim field is true and no earlier recurrence, severe-irreversible, unreviewed-promotion, unquarantined-escape, or missing-evidence-transition branch applies. | implemented |
 | `lean:failure.taxonomy.detector_probe_bridge` | `AsiStackProofs.FailureModes` | An independent finite incident consumer validates authority-creep and Goodhart/evaluator-drift fixtures and rejecting controls, while the retained Lean failure-record route family covers required-field repair, escalation, quarantine, residual, learning, normalization, evidence-transition, non-claim, and closure branches. | implemented |
-| `lean:failure.recovery.closed_loop_refinement` | `AsiStackProofs.FailureRecoveryRefinement` | Every successful finite recovery run preserves exact nine-field incident/version identity and zero support/external-authority assignment, adds exactly one receipt per accepted event, monotonically accounts for incident, recovery, and recurrence events, exposes a valid trace, and composes across event batches; accepted events require a valid control state, detection requires recorded failure class and boundary and opens one residual while disabling effects and promotion, readmission requires residual discharge and restores operation, and the recompiling consumer checks all six lifecycle splits while rejecting 117 mutations. | implemented |
+| `lean:failure.recovery.closed_loop_refinement` | `AsiStackProofs.FailureRecoveryRefinement` | Every successful finite recovery run preserves exact nine-field incident/version identity and zero support/external-authority assignment, adds exactly one receipt per accepted event, monotonically accounts for incident, recovery, and recurrence events, exposes a valid trace, and composes across event batches. A separate observation-ingress refinement admits only an operating, identity-matched, fresh, evidence-bearing, independently observed, authority-bounded, quarantine-safe, non-authorizing record; accepted ordinary, recurrence, and severe-irreversible observations refine to recovery detection, open one residual, and disable effects and promotion, while rejected observations preserve exact state. | implemented |
 
-The original proof targets remain finite records in `AsiStackProofs.FailureModes`. They establish invariant rejection, explicit incident routes, and an input-general close-state inverse. The exact 27-theorem `AsiStackProofs.FailureRecoveryRefinement` surface adds a reachable five-stage transition system and accepted-run semantics: rejected events preserve exact state; every accepted event starts from a valid control state; every successful finite run preserves all nine incident/version identities and zero support or external authority, adds exactly one receipt per accepted event, monotonically accounts for incidents, recoveries, and recurrences, yields a valid trace, and composes across event batches. Detection now requires an explicit failure class and affected boundary, opens one modeled residual, and disables both external effects and promotion. Readmission requires current assurance, current taxonomy, residual discharge, and explicit authority before it closes the residual and restores bounded operation. The independent validator recompiles that exact surface, checks every prefix and all six composition splits, and rejects 117 state-preserving mutations across wrong-stage events, identity substitutions, replay, authority requests, invalid control states, and stage-specific gates. The former direct `GovernanceFailure` field projection remains retired; the public authority target binds to the retained incident-route theorem.
+The original proof targets remain finite records in `AsiStackProofs.FailureModes`. They establish invariant rejection, explicit incident routes, and an input-general close-state inverse. The exact 44-theorem `AsiStackProofs.FailureRecoveryRefinement` surface now joins those routes to a reachable observation-ingress and five-stage recovery system. Only a complete admissible observation refines to recovery detection; rejected observations preserve exact state, and accepted ingress preserves incident identity, records exactly one incident and receipt, opens one residual, and disables effects and promotion. Arbitrary successful recovery runs preserve all nine incident/version identities and zero support or external authority, monotonically account for incidents, recoveries, and recurrences, yield valid traces, and compose across event batches. Readmission requires current assurance, current taxonomy, residual discharge, and explicit authority before it restores bounded operation. The independent validator checks three admitted ingress classes, twenty-six named rejection controls, 256 exhaustive ingress combinations, every recovery prefix and all six composition splits, and 117 state-preserving recovery mutations. The former direct `GovernanceFailure` field projection remains retired; the public authority target binds to the retained incident-route theorem.
 
 The original module contains twenty-one declarations and the recovery module
-contains twenty-seven. The former detector-probe summary
+contains forty-four. The former detector-probe summary
 projection is retired. The independent Python consumer now carries exact
 fixture validation, and it is bound to the retained sixteen-theorem
 failure-record route family, including the quantified close-route inverse,

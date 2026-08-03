@@ -660,4 +660,275 @@ theorem bounded_recurrence_reisolates_after_recovery :
     s6.externalAuthorityCount = 0 := by
   native_decide
 
+inductive ObservationRoute where
+  | rejectInvalidControlState
+  | rejectNonoperatingIngress
+  | rejectIncidentSubstitution
+  | rejectObservationReplay
+  | requestIncidentRecord
+  | requestEvidenceReceipt
+  | preserveUnmappedResidual
+  | rejectCapturedDetector
+  | requestAuthorityReview
+  | requestQuarantine
+  | rejectRecurrenceSubstitution
+  | requestNonClaimBoundary
+  | rejectAuthorityLeak
+  | admitRecovery
+  | admitRecurrenceRecovery
+  | admitSevereRecovery
+deriving DecidableEq, Repr
+
+structure IncidentObservation where
+  packet : Packet
+  detectorObserverDigest : Nat
+  subjectDigest : Nat
+  incidentRecorded : Bool
+  evidenceReceiptRecorded : Bool
+  authorityRequested : Nat
+  authorityCeiling : Nat
+  escapePathOpen : Bool
+  quarantineRecorded : Bool
+  recurrenceObserved : Bool
+  severityHigh : Bool
+  reversible : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def ObservationAdmissible (state : State) (observation : IncidentObservation) : Prop :=
+  ControlStateValid state = true ∧
+    state.stage = .operating ∧
+    identityMatches state observation.packet = true ∧
+    observation.packet.eventDigest ≠ state.lastEventDigest ∧
+    observation.incidentRecorded = true ∧
+    observation.evidenceReceiptRecorded = true ∧
+    observation.packet.failureObserved = true ∧
+    observation.packet.failureClassRecorded = true ∧
+    observation.packet.boundaryRecorded = true ∧
+    observation.packet.detectorIndependent = true ∧
+    observation.detectorObserverDigest ≠ observation.subjectDigest ∧
+    observation.authorityRequested ≤ observation.authorityCeiling ∧
+    (observation.escapePathOpen = false ∨ observation.quarantineRecorded = true) ∧
+    observation.packet.recurrenceOfPriorIncident = observation.recurrenceObserved ∧
+    observation.nonClaimBoundaryRecorded = true ∧
+    observation.packet.supportAssignmentRequested = false ∧
+    observation.packet.externalAuthorityRequested = false
+
+instance observationAdmissibleDecidable (state : State) (observation : IncidentObservation) :
+    Decidable (ObservationAdmissible state observation) := by
+  unfold ObservationAdmissible
+  infer_instance
+
+def observationRouteFor (state : State) (observation : IncidentObservation) :
+    ObservationRoute :=
+  if ObservationAdmissible state observation then
+    if observation.recurrenceObserved then .admitRecurrenceRecovery
+    else if observation.severityHigh && !observation.reversible then
+      .admitSevereRecovery
+    else .admitRecovery
+  else if ControlStateValid state = false then .rejectInvalidControlState
+  else if state.stage != .operating then .rejectNonoperatingIngress
+  else if identityMatches state observation.packet = false then
+    .rejectIncidentSubstitution
+  else if observation.packet.eventDigest = state.lastEventDigest then
+    .rejectObservationReplay
+  else if observation.incidentRecorded = false then .requestIncidentRecord
+  else if observation.evidenceReceiptRecorded = false then .requestEvidenceReceipt
+  else if observation.packet.failureObserved = false ||
+      observation.packet.failureClassRecorded = false ||
+      observation.packet.boundaryRecorded = false then
+    .preserveUnmappedResidual
+  else if observation.packet.detectorIndependent = false ||
+      observation.detectorObserverDigest = observation.subjectDigest then
+    .rejectCapturedDetector
+  else if observation.authorityCeiling < observation.authorityRequested then
+    .requestAuthorityReview
+  else if observation.escapePathOpen && !observation.quarantineRecorded then
+    .requestQuarantine
+  else if observation.packet.recurrenceOfPriorIncident !=
+      observation.recurrenceObserved then
+    .rejectRecurrenceSubstitution
+  else if observation.nonClaimBoundaryRecorded = false then
+    .requestNonClaimBoundary
+  else if observation.packet.supportAssignmentRequested ||
+      observation.packet.externalAuthorityRequested then .rejectAuthorityLeak
+  else .requestNonClaimBoundary
+
+def ingestObservation (state : State) (observation : IncidentObservation) :
+    State × ObservationRoute :=
+  let route := observationRouteFor state observation
+  if ObservationAdmissible state observation then
+    ((applyEvent state .detectAndIsolate observation.packet).1, route)
+  else (state, route)
+
+theorem rejected_observation_preserves_exact_state
+    (state : State) (observation : IncidentObservation)
+    (rejected : ¬ ObservationAdmissible state observation) :
+    (ingestObservation state observation).1 = state := by
+  simp [ingestObservation, rejected]
+
+theorem accepted_observation_starts_from_valid_operating_state
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    ControlStateValid state = true ∧ state.stage = .operating := by
+  exact ⟨admitted.1, admitted.2.1⟩
+
+theorem admitted_observation_requires_record_evidence_independence_and_boundary
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    observation.incidentRecorded = true ∧
+      observation.evidenceReceiptRecorded = true ∧
+      observation.packet.failureObserved = true ∧
+      observation.packet.failureClassRecorded = true ∧
+      observation.packet.boundaryRecorded = true ∧
+      observation.packet.detectorIndependent = true ∧
+      observation.detectorObserverDigest ≠ observation.subjectDigest ∧
+      observation.authorityRequested ≤ observation.authorityCeiling ∧
+      observation.nonClaimBoundaryRecorded = true ∧
+      observation.packet.supportAssignmentRequested = false ∧
+      observation.packet.externalAuthorityRequested = false := by
+  rcases admitted with ⟨_, _, _, _, incident, evidence, observed, failureClass,
+    boundary, independent, separated, authority, _, _, nonClaim, noSupport,
+    noExternal⟩
+  exact ⟨incident, evidence, observed, failureClass, boundary, independent,
+    separated, authority, nonClaim, noSupport, noExternal⟩
+
+theorem accepted_observation_refines_recovery_detection
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    routeFor state .detectAndIsolate observation.packet = .acceptDetection := by
+  have gates := admitted_observation_requires_record_evidence_independence_and_boundary
+    state observation admitted
+  have start := accepted_observation_starts_from_valid_operating_state
+    state observation admitted
+  rcases gates with ⟨_, _, observed, failureClass, boundary, independent, _, _, _,
+    noSupport, noExternal⟩
+  have identity := admitted.2.2.1
+  have fresh := admitted.2.2.2.1
+  simp [routeFor, start.1, start.2, expectedKind, identity, fresh, noSupport,
+    noExternal, observed, failureClass, boundary, independent]
+
+theorem accepted_observation_preserves_incident_identity
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    exactIdentity (ingestObservation state observation).1 = exactIdentity state := by
+  simp [ingestObservation, admitted,
+    apply_event_preserves_incident_identity state .detectAndIsolate observation.packet]
+
+theorem accepted_observation_opens_residual_and_blocks_effects_and_promotion
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    (ingestObservation state observation).1.stage = .detected ∧
+      (ingestObservation state observation).1.openResidualCount = 1 ∧
+      (ingestObservation state observation).1.containmentActive = true ∧
+      (ingestObservation state observation).1.externalEffectsEnabled = false ∧
+      (ingestObservation state observation).1.promotionEnabled = false := by
+  have start := accepted_observation_starts_from_valid_operating_state
+    state observation admitted
+  have refined := accepted_observation_refines_recovery_detection
+    state observation admitted
+  have blocked := accepted_detection_opens_residual_and_blocks_effects_and_promotion
+    state .detectAndIsolate observation.packet start.2 start.1 refined
+  have openZero : state.openResidualCount = 0 := by
+    have valid := start.1
+    simp [ControlStateValid, start.2] at valid
+    exact valid.2
+  simp [ingestObservation, admitted, applyEvent, refined, accepted, start.2,
+    nextStage, openZero]
+
+theorem accepted_observation_cannot_assign_support_or_external_authority
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    (ingestObservation state observation).1.supportAssignmentCount =
+        state.supportAssignmentCount ∧
+      (ingestObservation state observation).1.externalAuthorityCount =
+        state.externalAuthorityCount := by
+  have unchanged := transition_cannot_assign_support_or_external_authority
+    state .detectAndIsolate observation.packet
+  simpa [ingestObservation, admitted] using unchanged
+
+theorem accepted_observation_records_exactly_one_incident_and_receipt
+    (state : State) (observation : IncidentObservation)
+    (admitted : ObservationAdmissible state observation) :
+    (ingestObservation state observation).1.incidentCount = state.incidentCount + 1 ∧
+      (ingestObservation state observation).1.receiptCount = state.receiptCount + 1 := by
+  have refined := accepted_observation_refines_recovery_detection
+    state observation admitted
+  simp [ingestObservation, admitted, applyEvent, refined, accepted]
+
+def canonicalObservation (eventDigest : Nat) : IncidentObservation :=
+  { packet := canonicalPacket eventDigest
+    detectorObserverDigest := 501
+    subjectDigest := 502
+    incidentRecorded := true
+    evidenceReceiptRecorded := true
+    authorityRequested := 2
+    authorityCeiling := 3
+    escapePathOpen := false
+    quarantineRecorded := true
+    recurrenceObserved := false
+    severityHigh := false
+    reversible := true
+    nonClaimBoundaryRecorded := true }
+
+theorem missing_observation_receipt_requests_evidence :
+    observationRouteFor (canonicalState .operating)
+      { canonicalObservation 1 with evidenceReceiptRecorded := false } =
+        .requestEvidenceReceipt := by
+  native_decide
+
+theorem unclassified_observation_preserves_unmapped_residual :
+    observationRouteFor (canonicalState .operating)
+      { canonicalObservation 1 with
+        packet := { canonicalPacket 1 with failureClassRecorded := false } } =
+        .preserveUnmappedResidual := by
+  native_decide
+
+theorem captured_detector_cannot_admit_recovery :
+    observationRouteFor (canonicalState .operating)
+      { canonicalObservation 1 with detectorObserverDigest := 502 } =
+        .rejectCapturedDetector := by
+  native_decide
+
+theorem authority_over_ceiling_cannot_admit_recovery :
+    observationRouteFor (canonicalState .operating)
+      { canonicalObservation 1 with authorityRequested := 4 } =
+        .requestAuthorityReview := by
+  native_decide
+
+theorem open_escape_without_quarantine_cannot_admit_recovery :
+    observationRouteFor (canonicalState .operating)
+      { { canonicalObservation 1 with escapePathOpen := true } with
+        quarantineRecorded := false } = .requestQuarantine := by
+  native_decide
+
+theorem recurrence_marker_substitution_cannot_admit_recovery :
+    observationRouteFor (canonicalState .operating)
+      { canonicalObservation 1 with recurrenceObserved := true } =
+        .rejectRecurrenceSubstitution := by
+  native_decide
+
+theorem complete_recurrence_observation_admits_escalated_recovery :
+    observationRouteFor (canonicalState .operating)
+      { { canonicalObservation 1 with
+        packet := { canonicalPacket 1 with recurrenceOfPriorIncident := true } } with
+        recurrenceObserved := true } = .admitRecurrenceRecovery := by
+  native_decide
+
+theorem complete_severe_irreversible_observation_admits_escalated_recovery :
+    observationRouteFor (canonicalState .operating)
+      { { canonicalObservation 1 with severityHigh := true } with reversible := false } =
+        .admitSevereRecovery := by
+  native_decide
+
+theorem complete_ordinary_observation_reaches_isolated_recovery :
+    let result := ingestObservation (canonicalState .operating) (canonicalObservation 1)
+    result.2 = .admitRecovery ∧
+      result.1.stage = .detected ∧ result.1.openResidualCount = 1 ∧
+      result.1.containmentActive = true ∧
+      result.1.externalEffectsEnabled = false ∧ result.1.promotionEnabled = false ∧
+      result.1.receiptCount = 1 ∧ result.1.incidentCount = 1 ∧
+      result.1.supportAssignmentCount = 0 ∧ result.1.externalAuthorityCount = 0 := by
+  native_decide
+
 end AsiStackProofs.FailureRecoveryRefinement

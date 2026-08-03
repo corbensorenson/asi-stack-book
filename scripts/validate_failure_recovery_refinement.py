@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import itertools
 import json
 import re
 import subprocess
@@ -96,6 +97,23 @@ EXPECTED_THEOREMS = {
     "authority_leak_blocks_every_stage",
     "bounded_failure_recovery_reaches_guarded_readmission",
     "bounded_recurrence_reisolates_after_recovery",
+    "rejected_observation_preserves_exact_state",
+    "accepted_observation_starts_from_valid_operating_state",
+    "admitted_observation_requires_record_evidence_independence_and_boundary",
+    "accepted_observation_refines_recovery_detection",
+    "accepted_observation_preserves_incident_identity",
+    "accepted_observation_opens_residual_and_blocks_effects_and_promotion",
+    "accepted_observation_cannot_assign_support_or_external_authority",
+    "accepted_observation_records_exactly_one_incident_and_receipt",
+    "missing_observation_receipt_requests_evidence",
+    "unclassified_observation_preserves_unmapped_residual",
+    "captured_detector_cannot_admit_recovery",
+    "authority_over_ceiling_cannot_admit_recovery",
+    "open_escape_without_quarantine_cannot_admit_recovery",
+    "recurrence_marker_substitution_cannot_admit_recovery",
+    "complete_recurrence_observation_admits_escalated_recovery",
+    "complete_severe_irreversible_observation_admits_escalated_recovery",
+    "complete_ordinary_observation_reaches_isolated_recovery",
 }
 
 
@@ -216,6 +234,105 @@ def run(current: dict[str, object], events: list[tuple[str, dict[str, object]]])
     return result
 
 
+OBSERVATION_ADMISSIONS = {
+    "admitRecovery", "admitRecurrenceRecovery", "admitSevereRecovery",
+}
+
+
+def observation(event_digest: int = 1) -> dict[str, object]:
+    return {
+        "packet": packet(event_digest),
+        "detectorObserverDigest": 501,
+        "subjectDigest": 502,
+        "incidentRecorded": True,
+        "evidenceReceiptRecorded": True,
+        "authorityRequested": 2,
+        "authorityCeiling": 3,
+        "escapePathOpen": False,
+        "quarantineRecorded": True,
+        "recurrenceObserved": False,
+        "severityHigh": False,
+        "reversible": True,
+        "nonClaimBoundaryRecorded": True,
+    }
+
+
+def observation_admissible(current: dict[str, object], item: dict[str, object]) -> bool:
+    event = item["packet"]
+    assert isinstance(event, dict)
+    return (
+        control_state_valid(current)
+        and current["stage"] == "operating"
+        and all(current[name] == event[name] for name in IDENTITY)
+        and event["eventDigest"] != current["lastEventDigest"]
+        and bool(item["incidentRecorded"])
+        and bool(item["evidenceReceiptRecorded"])
+        and bool(event["failureObserved"])
+        and bool(event["failureClassRecorded"])
+        and bool(event["boundaryRecorded"])
+        and bool(event["detectorIndependent"])
+        and item["detectorObserverDigest"] != item["subjectDigest"]
+        and int(item["authorityRequested"]) <= int(item["authorityCeiling"])
+        and (not bool(item["escapePathOpen"]) or bool(item["quarantineRecorded"]))
+        and bool(event["recurrenceOfPriorIncident"]) == bool(item["recurrenceObserved"])
+        and bool(item["nonClaimBoundaryRecorded"])
+        and not bool(event["supportAssignmentRequested"])
+        and not bool(event["externalAuthorityRequested"])
+    )
+
+
+def observation_route(current: dict[str, object], item: dict[str, object]) -> str:
+    event = item["packet"]
+    assert isinstance(event, dict)
+    if observation_admissible(current, item):
+        if item["recurrenceObserved"]:
+            return "admitRecurrenceRecovery"
+        if item["severityHigh"] and not item["reversible"]:
+            return "admitSevereRecovery"
+        return "admitRecovery"
+    if not control_state_valid(current):
+        return "rejectInvalidControlState"
+    if current["stage"] != "operating":
+        return "rejectNonoperatingIngress"
+    if any(current[name] != event[name] for name in IDENTITY):
+        return "rejectIncidentSubstitution"
+    if event["eventDigest"] == current["lastEventDigest"]:
+        return "rejectObservationReplay"
+    if not item["incidentRecorded"]:
+        return "requestIncidentRecord"
+    if not item["evidenceReceiptRecorded"]:
+        return "requestEvidenceReceipt"
+    if not event["failureObserved"] or not event["failureClassRecorded"] or not event["boundaryRecorded"]:
+        return "preserveUnmappedResidual"
+    if not event["detectorIndependent"] or item["detectorObserverDigest"] == item["subjectDigest"]:
+        return "rejectCapturedDetector"
+    if int(item["authorityCeiling"]) < int(item["authorityRequested"]):
+        return "requestAuthorityReview"
+    if item["escapePathOpen"] and not item["quarantineRecorded"]:
+        return "requestQuarantine"
+    if bool(event["recurrenceOfPriorIncident"]) != bool(item["recurrenceObserved"]):
+        return "rejectRecurrenceSubstitution"
+    if not item["nonClaimBoundaryRecorded"]:
+        return "requestNonClaimBoundary"
+    if event["supportAssignmentRequested"] or event["externalAuthorityRequested"]:
+        return "rejectAuthorityLeak"
+    return "requestNonClaimBoundary"
+
+
+def ingest_observation(
+    current: dict[str, object], item: dict[str, object]
+) -> tuple[dict[str, object], str]:
+    answer = observation_route(current, item)
+    if not observation_admissible(current, item):
+        return copy.deepcopy(current), answer
+    event = item["packet"]
+    assert isinstance(event, dict)
+    updated, recovery_answer = apply(current, "detectAndIsolate", event)
+    if recovery_answer != "acceptDetection":
+        raise AssertionError(f"admitted observation failed recovery refinement: {recovery_answer}")
+    return updated, answer
+
+
 def main() -> None:
     failures: list[str] = []
     theorem_count = validate_formal_surface()
@@ -226,6 +343,145 @@ def main() -> None:
         failures.append("failure boundary fixture support scope drifted")
     if detector.get("valid_incident_count") != 2 or detector.get("support_state_effect") != "none":
         failures.append("inherited detector result boundary drifted")
+
+    observation_controls: list[tuple[str, dict[str, object], dict[str, object], str]] = []
+
+    def add_observation_control(
+        label: str,
+        item: dict[str, object],
+        expected_route: str,
+        before: dict[str, object] | None = None,
+    ) -> None:
+        observation_controls.append((label, before or state(), item, expected_route))
+
+    invalid_control = state()
+    invalid_control["promotionEnabled"] = False
+    add_observation_control(
+        "invalid_control_state", observation(), "rejectInvalidControlState", invalid_control
+    )
+    add_observation_control(
+        "nonoperating_ingress", observation(), "rejectNonoperatingIngress", state("detected")
+    )
+    for field in IDENTITY:
+        changed = observation()
+        changed_packet = changed["packet"]
+        assert isinstance(changed_packet, dict)
+        changed_packet[field] = int(changed_packet[field]) + 1000
+        add_observation_control(f"observation_identity_{field}", changed, "rejectIncidentSubstitution")
+    replay = observation(0)
+    add_observation_control("observation_replay", replay, "rejectObservationReplay")
+    missing_incident = observation()
+    missing_incident["incidentRecorded"] = False
+    add_observation_control("missing_incident_record", missing_incident, "requestIncidentRecord")
+    missing_evidence = observation()
+    missing_evidence["evidenceReceiptRecorded"] = False
+    add_observation_control("missing_evidence_receipt", missing_evidence, "requestEvidenceReceipt")
+    for field in ("failureObserved", "failureClassRecorded", "boundaryRecorded"):
+        unmapped = observation()
+        unmapped_packet = unmapped["packet"]
+        assert isinstance(unmapped_packet, dict)
+        unmapped_packet[field] = False
+        add_observation_control(f"unmapped_{field}", unmapped, "preserveUnmappedResidual")
+    captured_flag = observation()
+    captured_packet = captured_flag["packet"]
+    assert isinstance(captured_packet, dict)
+    captured_packet["detectorIndependent"] = False
+    add_observation_control("captured_detector_flag", captured_flag, "rejectCapturedDetector")
+    captured_role = observation()
+    captured_role["detectorObserverDigest"] = captured_role["subjectDigest"]
+    add_observation_control("captured_detector_role", captured_role, "rejectCapturedDetector")
+    excess_authority = observation()
+    excess_authority["authorityRequested"] = 4
+    add_observation_control("authority_over_ceiling", excess_authority, "requestAuthorityReview")
+    open_escape = observation()
+    open_escape["escapePathOpen"] = True
+    open_escape["quarantineRecorded"] = False
+    add_observation_control("open_escape_without_quarantine", open_escape, "requestQuarantine")
+    recurrence_observation_only = observation()
+    recurrence_observation_only["recurrenceObserved"] = True
+    add_observation_control(
+        "recurrence_observation_substitution",
+        recurrence_observation_only,
+        "rejectRecurrenceSubstitution",
+    )
+    recurrence_packet_only = observation()
+    recurrence_packet = recurrence_packet_only["packet"]
+    assert isinstance(recurrence_packet, dict)
+    recurrence_packet["recurrenceOfPriorIncident"] = True
+    add_observation_control(
+        "recurrence_packet_substitution", recurrence_packet_only, "rejectRecurrenceSubstitution"
+    )
+    missing_nonclaim = observation()
+    missing_nonclaim["nonClaimBoundaryRecorded"] = False
+    add_observation_control("missing_nonclaim_boundary", missing_nonclaim, "requestNonClaimBoundary")
+    for field in ("supportAssignmentRequested", "externalAuthorityRequested"):
+        authority_leak = observation()
+        authority_packet = authority_leak["packet"]
+        assert isinstance(authority_packet, dict)
+        authority_packet[field] = True
+        add_observation_control(f"observation_{field}", authority_leak, "rejectAuthorityLeak")
+
+    for label, before, item, expected_route in observation_controls:
+        after, answer = ingest_observation(before, item)
+        if answer != expected_route:
+            failures.append(f"observation control {label} routed {answer}, expected {expected_route}")
+        if answer in OBSERVATION_ADMISSIONS:
+            failures.append(f"observation control admitted: {label}")
+        if after != before:
+            failures.append(f"rejected observation changed recovery state: {label}")
+
+    accepted_observations: list[tuple[str, dict[str, object], str]] = []
+    accepted_observations.append(("ordinary", observation(), "admitRecovery"))
+    recurrence_item = observation()
+    recurrence_item["recurrenceObserved"] = True
+    recurrence_item_packet = recurrence_item["packet"]
+    assert isinstance(recurrence_item_packet, dict)
+    recurrence_item_packet["recurrenceOfPriorIncident"] = True
+    accepted_observations.append(("recurrence", recurrence_item, "admitRecurrenceRecovery"))
+    severe_item = observation()
+    severe_item["severityHigh"] = True
+    severe_item["reversible"] = False
+    accepted_observations.append(("severe_irreversible", severe_item, "admitSevereRecovery"))
+
+    for label, item, expected_route in accepted_observations:
+        after, answer = ingest_observation(state(), item)
+        if answer != expected_route:
+            failures.append(f"accepted observation {label} routed {answer}, expected {expected_route}")
+        for field, expected in {
+            "stage": "detected",
+            "openResidualCount": 1,
+            "containmentActive": True,
+            "externalEffectsEnabled": False,
+            "promotionEnabled": False,
+            "receiptCount": 1,
+            "incidentCount": 1,
+            "supportAssignmentCount": 0,
+            "externalAuthorityCount": 0,
+        }.items():
+            if after[field] != expected:
+                failures.append(f"accepted observation {label} {field} drifted")
+        expected_recurrence = int(label == "recurrence")
+        if after["recurrenceCount"] != expected_recurrence:
+            failures.append(f"accepted observation {label} recurrence count drifted")
+
+    exhaustive_observation_count = 0
+    for values in itertools.product((False, True), repeat=8):
+        item = observation()
+        event = item["packet"]
+        assert isinstance(event, dict)
+        (
+            item["incidentRecorded"], item["evidenceReceiptRecorded"],
+            event["failureObserved"], event["failureClassRecorded"],
+            event["boundaryRecorded"], event["detectorIndependent"],
+            item["nonClaimBoundaryRecorded"], event["supportAssignmentRequested"],
+        ) = values
+        admissible = observation_admissible(state(), item)
+        after, answer = ingest_observation(state(), item)
+        if (answer in OBSERVATION_ADMISSIONS) != admissible:
+            failures.append(f"exhaustive observation admission mismatch: {values}")
+        if not admissible and after != state():
+            failures.append(f"exhaustive rejected observation changed state: {values}")
+        exhaustive_observation_count += 1
 
     mutations: list[tuple[str, dict[str, object], str, dict[str, object]]] = []
     for index, stage_name in enumerate(STAGES, 1):
@@ -333,7 +589,10 @@ def main() -> None:
         raise SystemExit("Failure-recovery refinement failed:\n - " + "\n - ".join(failures))
     print(
         f"Failure-recovery refinement passed: {theorem_count} Lean theorems, "
-        "5 reachable stages, 5 accepted "
+        "3 accepted observation-ingress classes, "
+        f"{len(observation_controls)}/{len(observation_controls)} rejecting observation controls, "
+        f"{exhaustive_observation_count} exhaustive observation combinations, "
+        "5 reachable recovery stages, 5 accepted "
         f"transitions, {len(mutations)}/{len(mutations)} rejecting mutations, "
         f"{len(lifecycle) + 1} lifecycle splits, guarded readmission, "
         "recurrence re-isolation, support effect none."

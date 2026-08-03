@@ -17273,36 +17273,41 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The exact 19-theorem bounded Lean failure-recovery lifecycle, the public failure-boundary fixture, and the retained synthetic detector result with no support effect.",
+      "input_contract": "The exact 44-theorem detector-observation ingress and bounded failure-recovery lifecycle, the public failure-boundary fixture, and the retained synthetic detector result with no support effect.",
       "input_artifacts": [
         "lean/AsiStackProofs/FailureRecoveryRefinement.lean",
         "scripts/validate_failure_recovery_refinement.py",
         "tests/fixtures/protocol_records/failure_boundary_map.valid.json",
         "experiments/failure_taxonomy_detector/results/2026-07-02-local.json"
       ],
-      "output_contract": "Recompile the exact theorem surface; independently reproduce five accepted lifecycle transitions, exact rejected-state preservation, guarded readmission and recurrence re-isolation; and reject every declared stage, identity, replay, authority, and missing-gate mutation.",
+      "output_contract": "Recompile the exact theorem surface; independently reproduce three accepted detector-observation ingress classes and five recovery transitions; exhaust 256 ingress combinations; preserve exact state for rejected ingress and recovery events; guard readmission and recurrence re-isolation; and reject every declared observation, stage, identity, replay, authority, and missing-gate mutation.",
       "output_assertions": [
-        "19 Lean theorems recompile",
-        "five reachable stages and five accepted transitions",
+        "44 Lean theorems recompile",
+        "three admitted observation-ingress classes refine to recovery detection",
+        "26 of 26 observation controls reject without state change",
+        "256 observation combinations agree with the exact admission predicate",
+        "five reachable recovery stages and five accepted transitions",
         "arbitrary successful runs preserve exact identity, zero authority, valid traces, receipt accounting, and batch composition",
-        "31 of 31 mutations reject without state change",
+        "117 of 117 recovery mutations reject without state change",
         "guarded readmission returns to operating once",
         "one recurrence re-isolates and disables modeled effects",
         "support and external-authority counters remain zero",
         "support-state effect none"
       ],
-      "claim_scope": "Bounded authored failure-recovery transition, rejection, noninterference, reachability, and recurrence semantics only.",
-      "negative_controls": "validator_owned_31_stage_identity_replay_authority_and_lifecycle_gate_mutations",
+      "claim_scope": "Bounded authored detector-observation admission, failure-recovery transition, rejection, noninterference, reachability, and recurrence semantics only.",
+      "negative_controls": "validator_owned_26_observation_and_117_recovery_mutations",
       "negative_control_cases": [
-        "five wrong-stage events",
-        "nine identity substitutions",
-        "event replay",
-        "two authority leaks",
-        "fourteen missing lifecycle gates"
+        "invalid or nonoperating observation ingress",
+        "observation identity substitution or replay",
+        "missing incident, evidence, class, or boundary records",
+        "captured detector or authority excess",
+        "open escape path or recurrence substitution",
+        "missing non-claim boundary or authority leakage",
+        "recovery wrong-stage, identity, replay, authority, control-state, and lifecycle-gate mutations"
       ],
       "prohibited_inference": "The model does not establish event truth, detector or reviewer independence, containment or remediation effectiveness, deployed recovery, safety, transfer, chapter-core support, AGI, or ASI.",
       "contract_precision": "exact",
-      "semantic_review_state": "checked_bounded_reachability_rejection_noninterference_readmission_and_recurrence_contract"
+      "semantic_review_state": "checked_detector_ingress_refinement_bounded_reachability_rejection_noninterference_readmission_and_recurrence_contract"
     },
     {
       "id": "validate_learned_objective_integrity.py:446",
