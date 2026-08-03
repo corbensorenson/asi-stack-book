@@ -374,4 +374,126 @@ theorem incompatible_fixture_migration_is_rejected :
       { baseEvent with kind := .migrate, migrationCompatible := false } = none := by
   decide
 
+/-! ## Architecture-specific migration information boundary
+
+These records model only declared continuation state. The result below says
+that a common schema-and-digest projection cannot recover architecture-specific
+state it does not carry. It does not establish that the full record captures
+every causal state of a real kernel or that any real translation is correct.
+-/
+
+structure KernelContinuationState where
+  family : KernelFamily
+  commonSchema : Nat
+  commonDigest : Nat
+  architectureStateDigest : Nat
+  memoryStateDigest : Nat
+  recurrenceStateDigest : Nat
+deriving DecidableEq, Repr
+
+structure CommonKernelCheckpoint where
+  commonSchema : Nat
+  commonDigest : Nat
+deriving DecidableEq, Repr
+
+def ProjectCommonCheckpoint
+    (state : KernelContinuationState) : CommonKernelCheckpoint := {
+  commonSchema := state.commonSchema
+  commonDigest := state.commonDigest
+}
+
+structure FullKernelCheckpoint where
+  family : KernelFamily
+  commonSchema : Nat
+  commonDigest : Nat
+  architectureStateDigest : Nat
+  memoryStateDigest : Nat
+  recurrenceStateDigest : Nat
+deriving DecidableEq, Repr
+
+def EncodeFullKernelCheckpoint
+    (state : KernelContinuationState) : FullKernelCheckpoint := {
+  family := state.family
+  commonSchema := state.commonSchema
+  commonDigest := state.commonDigest
+  architectureStateDigest := state.architectureStateDigest
+  memoryStateDigest := state.memoryStateDigest
+  recurrenceStateDigest := state.recurrenceStateDigest
+}
+
+def DecodeFullKernelCheckpoint
+    (checkpoint : FullKernelCheckpoint) : KernelContinuationState := {
+  family := checkpoint.family
+  commonSchema := checkpoint.commonSchema
+  commonDigest := checkpoint.commonDigest
+  architectureStateDigest := checkpoint.architectureStateDigest
+  memoryStateDigest := checkpoint.memoryStateDigest
+  recurrenceStateDigest := checkpoint.recurrenceStateDigest
+}
+
+def transformerContinuation : KernelContinuationState := {
+  family := .transformer
+  commonSchema := 17
+  commonDigest := 17001
+  architectureStateDigest := 17002
+  memoryStateDigest := 17003
+  recurrenceStateDigest := 0
+}
+
+def stateSpaceContinuation : KernelContinuationState := {
+  family := .selectiveStateSpace
+  commonSchema := 17
+  commonDigest := 17001
+  architectureStateDigest := 17102
+  memoryStateDigest := 17103
+  recurrenceStateDigest := 17104
+}
+
+theorem common_checkpoint_collision_states_are_distinct :
+    transformerContinuation ≠ stateSpaceContinuation := by
+  decide
+
+theorem common_checkpoint_collision_projects_equal :
+    ProjectCommonCheckpoint transformerContinuation =
+      ProjectCommonCheckpoint stateSpaceContinuation := by
+  decide
+
+theorem common_checkpoint_projection_is_not_injective :
+    ¬ Function.Injective ProjectCommonCheckpoint := by
+  intro injective
+  apply common_checkpoint_collision_states_are_distinct
+  exact injective common_checkpoint_collision_projects_equal
+
+theorem no_common_checkpoint_decoder_recovers_every_kernel_state
+    (decode : CommonKernelCheckpoint → KernelContinuationState) :
+    ¬ ∀ state, decode (ProjectCommonCheckpoint state) = state := by
+  intro recovers
+  have transformer := recovers transformerContinuation
+  have stateSpace := recovers stateSpaceContinuation
+  have sameDecoded :
+      decode (ProjectCommonCheckpoint transformerContinuation) =
+        decode (ProjectCommonCheckpoint stateSpaceContinuation) := by
+    rw [common_checkpoint_collision_projects_equal]
+  apply common_checkpoint_collision_states_are_distinct
+  exact transformer.symm.trans (sameDecoded.trans stateSpace)
+
+theorem full_kernel_checkpoint_round_trip
+    (state : KernelContinuationState) :
+    DecodeFullKernelCheckpoint (EncodeFullKernelCheckpoint state) = state := by
+  cases state
+  rfl
+
+theorem full_kernel_checkpoint_encoding_is_injective :
+    Function.Injective EncodeFullKernelCheckpoint := by
+  intro left right encodedEqual
+  have decodedEqual := congrArg DecodeFullKernelCheckpoint encodedEqual
+  simpa [full_kernel_checkpoint_round_trip] using decodedEqual
+
+theorem full_checkpoint_distinguishes_heterogeneous_continuations :
+    EncodeFullKernelCheckpoint transformerContinuation ≠
+      EncodeFullKernelCheckpoint stateSpaceContinuation := by
+  intro encodedEqual
+  apply common_checkpoint_collision_states_are_distinct
+  exact full_kernel_checkpoint_encoding_is_injective encodedEqual
+
 end AsiStackProofs.ReplaceableCognitiveSubstrates

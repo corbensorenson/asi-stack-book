@@ -10698,7 +10698,7 @@
         "evidence_quality/model_adequacy_dossiers/cognitive-kernel-abi.md",
         "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean"
       ],
-      "output_contract": "Reject corpus or model digest drift, proposal-time effects, authority widening, checkpoint mismatch, revoked-kernel use, incompatible migration, missing custody fields, commit without proposal/receipt/evidence transition, stale result records, support promotion, and targeted guard mutations.",
+      "output_contract": "Reject corpus or model digest drift, proposal-time effects, authority widening, checkpoint mismatch, revoked-kernel use, incompatible migration, missing custody fields, commit without proposal/receipt/evidence transition, stale result records, support promotion, targeted guard mutations, loss of the four common-checkpoint collisions, or acceptance of any of six full-checkpoint mutations.",
       "output_assertions": [
         "sixteen exact cases",
         "one accepted mixed-family trace",
@@ -10707,9 +10707,12 @@
         "two receipt-bound committed effects",
         "zero proposal effects",
         "twelve rejected event mutations",
+        "four common-checkpoint omitted-state collisions",
+        "six full-checkpoint mutations rejected",
+        "twenty-three Lean theorem declarations",
         "no support-state effect"
       ],
-      "claim_scope": "The exact finite Cognitive Kernel ABI state machine, one mixed-family fixture trace, and independently encoded local transition consumer only.",
+      "claim_scope": "The exact finite Cognitive Kernel ABI state machine, one mixed-family fixture trace, an authored six-field heterogeneous continuation state, its thin/full checkpoint projections, and an independently encoded local consumer only.",
       "negative_controls": "validator_owned_and_digest_bound",
       "negative_control_cases": [
         "proposal observed effect",
@@ -10721,7 +10724,7 @@
         "commit without proposal, receipt, or evidence transition",
         "support promotion laundering"
       ],
-      "prohibited_inference": "A passing finite ABI trace does not establish real-kernel capability, architecture interchangeability, full-state checkpoint migration, evaluator independence, rollback efficacy, matched benchmark superiority, deployment, transfer, architectural RSI, AGI, ASI, or chapter-core promotion.",
+      "prohibited_inference": "A passing finite ABI trace and information-boundary proof do not establish causal-state inventory completeness, real-kernel capability, architecture interchangeability, full-state checkpoint migration, evaluator independence, rollback efficacy, matched benchmark superiority, deployment, transfer, architectural RSI, AGI, ASI, or chapter-core promotion.",
       "contract_precision": "inherited",
       "semantic_review_state": "independently_encoded_local_consumer_not_external_or_deployed"
     },

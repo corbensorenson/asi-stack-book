@@ -103,7 +103,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 24 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | 1 | 42 | 0 | 31 | 9 |
-| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 16 | 0 | 15 | 2 |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | 1 | 23 | 0 | 20 | 5 |
 | `lean/AsiStackProofs/Replacement.lean` | 6 | 52 | 0 | 22 | 9 |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | 1 | 32 | 0 | 33 | 8 |
 | `lean/AsiStackProofs/ResourceEconomicsRefinement.lean` | 13 | 29 | 0 | 15 | 4 |

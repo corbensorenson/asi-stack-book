@@ -26,6 +26,9 @@ routes, and retaining required custody fields.
 - Event fields are assumed to be faithfully serialized facts. Boolean
   `evaluatorIndependent`, `rollbackReady`, and similar fields are declarations,
   not proofs of the world facts they name.
+- The six-field `KernelContinuationState` is an authored inventory. Injectivity
+  of its full encoding does not establish that a real kernel has no additional
+  causal continuation state.
 - Kernel IDs, family names, checkpoint schemas, and checkpoint digests are
   assumed to have an external registry and collision-resistant meaning.
 - The transition is sequential and atomic; logical concurrency and distributed
@@ -40,9 +43,14 @@ routes, and retaining required custody fields.
 - Accepted proposal events do not increment the committed-effect count.
 - A revoked actor cannot propose and an incompatible migration cannot execute.
 - One exact nine-event mixed-family route reaches the declared final state.
+- A common schema-and-digest checkpoint projection is non-injective over the
+  modeled heterogeneous continuation state, and no decoder from that projection
+  recovers every modeled state.
+- The declared six-field full checkpoint round-trips and is injective.
 - The independent consumer accepts that route, rejects fifteen malformed or
   unsafe routes, records two commits and zero proposal effects, and rejects
-  twelve targeted mutations.
+  twelve targeted event mutations, reconstructs four omitted-state collisions,
+  and rejects six full-record mutations.
 
 ## Countermodels and mutations
 
@@ -65,10 +73,12 @@ objects and Lean values, and no material external effect service is connected.
 ## Adequacy adjudication
 
 Adequate for: finite ABI record semantics, exact fixture lineage, negative-case
-guard use, and one mixed-family control-plane trace.
+guard use, one mixed-family control-plane trace, and the modeled checkpoint
+information-loss and round-trip properties.
 
-Not adequate for: real architecture interchangeability; kernel capability or
-quality; full-state checkpoint migration; concurrent revocation races;
+Not adequate for: causal-state inventory completeness; real architecture
+interchangeability; kernel capability or quality; full-state checkpoint
+migration; concurrent revocation races;
 effect-complete rollback; evaluator independence; lifecycle-cost accuracy;
 natural workloads; matched baselines; reproduction; transfer; deployment;
 architectural RSI; AGI; or ASI.

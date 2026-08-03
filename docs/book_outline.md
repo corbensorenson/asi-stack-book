@@ -4843,10 +4843,12 @@ Draft deliverables:
   architecture taxonomy, route crosswalk, KISS accounting, architectural-RSI
   lifecycle, OneCell candidate and falsifiers, and exact existing-chapter
   handoffs.
-- Formal ABI model plus independent malicious-kernel checker for proposal/effect
-  separation, authority monotonicity, exact checkpoint compatibility, revocation,
-  fallback, mixed-kernel lineage, assistance, cost, residual, and no-promotion
-  boundaries.
+- Formal ABI model with 23 theorem declarations plus an independent malicious-kernel
+  checker for proposal/effect separation, authority monotonicity, exact checkpoint
+  compatibility, revocation, fallback, mixed-kernel lineage, assistance, cost,
+  residual, and no-promotion boundaries. The same consumer reconstructs four
+  common-checkpoint omitted-state collisions and rejects mutations to all six
+  fields of the declared full checkpoint.
 - Matched Transformer/recurrent-or-SSM/non-token-or-exact-controller tournament
   with equal-active-parameter and equal-total-lifecycle-cost views, natural and
   adversarial tasks, independent evaluators, reproduction, and transfer.
@@ -4862,13 +4864,14 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:cognitive_kernel.abi_trace_invariants` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes. | implemented |
+| `lean:cognitive_kernel.abi_trace_invariants` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes; a common schema-and-digest checkpoint projection is non-injective over the modeled heterogeneous continuation state, while the declared full encoding round-trips and is injective. | implemented |
 
 This implemented target belongs to the authorized post-activation expansion;
 the 298-target P2 activation audit remains historical truth. The Lean transition
 model and independently encoded 16-case Python consumer establish only finite
-ABI record semantics. They do not execute or compare real cognitive kernels,
-translate full training/runtime state, establish evaluator independence, or
+ABI record and information-boundary semantics. They do not establish that the
+six modeled fields capture all causal state, execute or compare real cognitive
+kernels, translate full training/runtime state, establish evaluator independence, or
 support a chapter-core promotion.
 
 ### Relational Dimension Compilation and Polyadic Cognition
@@ -6220,7 +6223,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 328 proof targets, 130 Lean modules, 2688 theorem declarations, 1685 derived/decomposed, 429 direct/projection, 574 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 328 proof targets, 130 Lean modules, 2695 theorem declarations, 1690 derived/decomposed, 429 direct/projection, 576 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

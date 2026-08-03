@@ -13,6 +13,8 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import re
+import subprocess
 import sys
 from typing import Any
 
@@ -53,6 +55,15 @@ EVENT_MUTATIONS = (
     (3, "effect_receipt_present", False),
     (3, "evidence_transition_present", False),
 )
+REQUIRED_MIGRATION_BOUNDARY_THEOREMS = {
+    "common_checkpoint_collision_states_are_distinct",
+    "common_checkpoint_collision_projects_equal",
+    "common_checkpoint_projection_is_not_injective",
+    "no_common_checkpoint_decoder_recovers_every_kernel_state",
+    "full_kernel_checkpoint_round_trip",
+    "full_kernel_checkpoint_encoding_is_injective",
+    "full_checkpoint_distinguishes_heterogeneous_continuations",
+}
 
 
 def load(path: Path) -> Any:
@@ -299,11 +310,81 @@ def build_result() -> tuple[dict[str, Any], list[str]]:
     return result, errors
 
 
+def migration_information_boundary_errors() -> list[str]:
+    errors: list[str] = []
+    theorem_names = set(
+        re.findall(
+            r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
+            LEAN_MODEL.read_text(encoding="utf-8"),
+        )
+    )
+    missing = sorted(REQUIRED_MIGRATION_BOUNDARY_THEOREMS - theorem_names)
+    if missing:
+        errors.append(f"Lean migration information-boundary surface is missing: {missing}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/ReplaceableCognitiveSubstrates.lean"],
+        cwd=ROOT / "lean",
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode:
+        errors.append(
+            "Lean migration information-boundary model did not compile: "
+            + (completed.stdout + completed.stderr).strip()
+        )
+
+    fields = (
+        "family",
+        "common_schema",
+        "common_digest",
+        "architecture_state_digest",
+        "memory_state_digest",
+        "recurrence_state_digest",
+    )
+    transformer = {
+        "family": "transformer",
+        "common_schema": 17,
+        "common_digest": 17001,
+        "architecture_state_digest": 17002,
+        "memory_state_digest": 17003,
+        "recurrence_state_digest": 0,
+    }
+
+    def common(state: dict[str, Any]) -> tuple[int, int]:
+        return state["common_schema"], state["common_digest"]
+
+    def full(state: dict[str, Any]) -> tuple[Any, ...]:
+        return tuple(state[field] for field in fields)
+
+    collision_count = 0
+    for index, field in enumerate(("family", *fields[3:]), start=1):
+        changed = dict(transformer)
+        changed[field] = "selective_state_space" if field == "family" else changed[field] + 1000 + index
+        if changed == transformer or common(changed) != common(transformer):
+            errors.append(f"common-checkpoint collision reconstruction failed for {field}")
+        else:
+            collision_count += 1
+        if full(changed) == full(transformer):
+            errors.append(f"full checkpoint missed architecture-specific mutation {field}")
+
+    full_mutation_rejections = 0
+    for index, field in enumerate(fields, start=1):
+        changed = dict(transformer)
+        changed[field] = "recurrent" if field == "family" else changed[field] + 2000 + index
+        if full(changed) != full(transformer):
+            full_mutation_rejections += 1
+    if collision_count != 4 or full_mutation_rejections != 6:
+        errors.append("migration information-boundary denominators drifted")
+    return errors
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
     result, errors = build_result()
+    errors.extend(migration_information_boundary_errors())
     if args.write:
         RESULT.parent.mkdir(parents=True, exist_ok=True)
         RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
@@ -338,7 +419,8 @@ def main() -> None:
         f"{result['case_count']} cases ({result['accepted_case_count']} accepted, "
         f"{result['rejected_case_count']} rejected), {result['accepted_event_count']} accepted events, "
         f"{result['committed_effect_count']} committed effects, "
-        f"{result['mutation_rejection_count']} event mutations rejected, support effect none."
+        f"{result['mutation_rejection_count']} event mutations rejected, four common-checkpoint "
+        "collisions and six full-checkpoint mutation rejections, support effect none."
     )
 
 

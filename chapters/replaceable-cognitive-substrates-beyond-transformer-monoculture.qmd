@@ -72,7 +72,8 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | All 41 assigned records have source notes; 36 carry exact bounded claim mappings and five are metadata-first reconciliation assignments. The public shares are author-intent inputs, the Relational Dimension Compiler is an author proposal, and the architecture and paging sources are external comparators. No architecture result was imported as local evidence. |
-| Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
+| Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented, including 12 event mutations, four common-checkpoint omitted-state collisions, and six full-checkpoint mutations. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
+| Formal state | The public ABI target is implemented by 23 theorem declarations covering finite transition invariants and a heterogeneous checkpoint information boundary. |
 
 ## Drafting guardrail
 
@@ -915,7 +916,7 @@ architecture wins.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Cognitive Kernel ABI conformance and malicious-kernel rejection | Check typed proposals, receipt consumption, exact state identity, authority ceilings, checkpoint/restore, cost disclosure, fallback, and rejected forgery or omitted-state controls. | bounded synthetic P2 trace passes; real-kernel conformance is `blocked_after_full_attempt` under P6 |
+| Cognitive Kernel ABI conformance and malicious-kernel rejection | Check typed proposals, receipt consumption, exact state identity, authority ceilings, checkpoint/restore, cost disclosure, fallback, rejected forgery or omitted-state controls, four common-checkpoint collisions, and six full-checkpoint mutations. | 23-declaration bounded synthetic P2 trace and information boundary pass; real-kernel conformance is `blocked_after_full_attempt` under P6 |
 | Matched heterogeneous-kernel tournament | Compare at least three genuinely different kernels under equal-active-parameter and equal-total-lifecycle-cost views on preregistered workloads and strong baselines. | `blocked_after_full_attempt`: strongest comparators cannot run on the available hardware and no complete candidate set exists |
 | Frozen-core verified-abstraction ratchet | Test whether held-out future search cost falls while central parameters remain fixed, without answer-bearing retrieval, hidden assistance, or growing unreported compute. | `blocked_after_full_attempt`: OneCell and the verified-abstraction learner are unimplemented; defeat prediction frozen, zero outcome runs |
 | Governed architectural-RSI lifecycle | Exercise candidate generation, independent evaluation, shadow, canary, promotion denial, rollback, retirement, and descendant invalidation without self-approval. | `blocked_after_full_attempt`: bounded lifecycle fixtures exist, but no externally reproduced architecture candidate entered the lifecycle |
@@ -924,17 +925,22 @@ architecture wins.
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:cognitive_kernel.abi_trace_invariants` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes. | implemented |
+| `lean:cognitive_kernel.abi_trace_invariants` | `AsiStackProofs.ReplaceableCognitiveSubstrates` | A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes; a common schema-and-digest checkpoint projection is non-injective over the modeled heterogeneous continuation state, while the declared full encoding round-trips and is injective. | implemented |
 
 The target is a post-activation obligation and does not alter the historical
 298-target activation audit. `AsiStackProofs.ReplaceableCognitiveSubstrates`
 proves accepted-step and accepted-trace preservation of authority and exact
 checkpoint identity, proposal/effect separation, rejected revoked-kernel
 proposals, rejected incompatible migrations, and one exact nine-event
-mixed-family trace. The independent Python consumer checks sixteen corpus cases
+mixed-family trace. It also proves that two distinct heterogeneous continuation
+states can share the same common schema and digest, so no decoder from that
+projection recovers every modeled state; the declared six-field full encoding
+round-trips and is injective. The independent Python consumer checks sixteen corpus cases
 (one accepted and fifteen rejected), two receipt-bound commits, zero proposal
-effects, and twelve rejecting event mutations. This is finite schema and
-transition evidence, not a real-model ABI, full-state checkpoint translation,
+effects, twelve rejecting event mutations, four independently reconstructed
+common-checkpoint collisions, and six full-record mutation rejections. This is
+finite schema, transition, and information-boundary evidence, not a real-model
+ABI, proof that the six fields capture all causal state, full-state checkpoint translation,
 benchmark result, evaluator-independence result, deployment, or support-state
 promotion.
 

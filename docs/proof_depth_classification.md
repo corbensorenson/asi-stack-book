@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 328 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2688 |
+| Theorem declarations classified | 2695 |
 | Direct/projection-style theorem declarations | 429 |
-| Derived/decomposed theorem declarations | 1685 |
-| Unknown or mixed theorem declarations | 574 |
+| Derived/decomposed theorem declarations | 1690 |
+| Unknown or mixed theorem declarations | 576 |
 | Safety-critical theorem declarations | 145 |
 | Safety-critical direct/projection declarations | 5 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -147,7 +147,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 24 | 13 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 42 | 14 | 19 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 16 | 0 | 11 | 5 | manual review |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 23 | 0 | 16 | 7 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 52 | 8 | 42 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplicationContainmentReview.lean` | autonomous-replication-proliferation-and-containment | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ResourceEconomics.lean` | unmapped | 0 | 14 | 0 | 11 | 3 | manual review |
@@ -2070,9 +2070,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `apply_event_preserves_checkpoint_digest` | derived_or_decomposed | no | uses cases, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `apply_event_preserves_checkpoint_schema` | derived_or_decomposed | no | uses cases, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `common_checkpoint_collision_projects_equal` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `common_checkpoint_collision_states_are_distinct` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `common_checkpoint_projection_is_not_injective` | derived_or_decomposed | no | uses apply |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `full_checkpoint_distinguishes_heterogeneous_continuations` | derived_or_decomposed | no | uses apply |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `full_kernel_checkpoint_encoding_is_injective` | derived_or_decomposed | no | uses have, left, right |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `full_kernel_checkpoint_round_trip` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `incompatible_fixture_migration_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `incompatible_migration_is_rejected` | derived_or_decomposed | no | uses have, simp, unfold |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `mixed_kernel_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `no_common_checkpoint_decoder_recovers_every_kernel_state` | derived_or_decomposed | no | uses apply, have, rw |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `omitted_cost_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `proposal_with_observed_effect_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | `revoked_kernel_cannot_propose` | derived_or_decomposed | no | uses have, simp, unfold |

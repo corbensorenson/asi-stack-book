@@ -1854,11 +1854,11 @@
       "tag": "lean:cognitive_kernel.abi_trace_invariants",
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "module": "AsiStackProofs.ReplaceableCognitiveSubstrates",
-      "formal_target": "A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes.",
+      "formal_target": "A finite Cognitive Kernel ABI trace keeps proposals separate from effects, preserves non-increasing authority and declared exact checkpoint state, rejects revoked kernels and incompatible migrations, and preserves fallback, evaluator, assistance, cost, evidence, and residual ownership across mixed-kernel routes; a common schema-and-digest checkpoint projection is non-injective over the modeled heterogeneous continuation state, while the declared full encoding round-trips and is injective.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Post-activation target implemented as a finite ABI transition model plus an independently encoded 16-case executable consumer. It preserves authority and declared checkpoint identity, separates proposals from commits, exercises a mixed-family route, rejects revoked or incompatible routes, and retains custody fields only inside the bounded schema; it does not establish real-kernel capability, full-state migration, evaluator independence, deployment, or chapter support."
+      "rationale": "Post-activation target implemented as a finite ABI transition model plus an independently encoded 16-case executable consumer. It preserves authority and declared checkpoint identity, separates proposals from commits, exercises a mixed-family route, rejects revoked or incompatible routes, proves a thin common checkpoint non-injective over authored heterogeneous continuation state, and proves round-trip and injectivity only for the declared six-field full encoding. The consumer retains twelve event mutations, reconstructs four omitted-state collisions, and rejects six full-record mutations. It does not establish real causal-state completeness, real-kernel capability, full-state migration, evaluator independence, deployment, or chapter support."
     },
     {
       "tag": "lean:governed_training.run_admission_invariants",
