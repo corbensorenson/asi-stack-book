@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 326 |
-| Manifest status counts | {"implemented": 326} |
-| Triage class counts | {"formal-invariant": 326} |
+| Proof targets audited | 327 |
+| Manifest status counts | {"implemented": 327} |
+| Triage class counts | {"formal-invariant": 327} |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -123,7 +123,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/TheseusReference.lean` | 3 | 9 | 0 | 8 | 6 |
 | `lean/AsiStackProofs/TribunalRefinement.lean` | 2 | 19 | 0 | 32 | 4 |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | 5 | 32 | 0 | 37 | 3 |
-| `lean/AsiStackProofs/ValueConflict.lean` | 2 | 38 | 0 | 19 | 6 |
+| `lean/AsiStackProofs/ValueConflict.lean` | 3 | 47 | 0 | 28 | 10 |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | 4 | 35 | 0 | 25 | 4 |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | 3 | 39 | 0 | 18 | 2 |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | 2 | 36 | 0 | 18 | 3 |
@@ -182,7 +182,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
 | `military-ai-autonomous-weapons-and-strategic-stability` | 1 | 1 | 0 | 0 |
 | `model-weight-custody-and-hardware-roots-of-trust` | 8 | 8 | 0 | 0 |
-| `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
+| `moral-uncertainty-and-value-conflict` | 8 | 8 | 0 | 0 |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 1 | 1 | 0 | 0 |
 | `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
@@ -270,6 +270,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:values.conflict.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.lifecycle_admission_route` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.contestability_example_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:values.conflict.aggregation_and_dissent_custody` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |

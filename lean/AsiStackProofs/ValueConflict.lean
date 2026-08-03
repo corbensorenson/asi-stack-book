@@ -1007,4 +1007,207 @@ theorem value_lease_revisit_without_trigger_is_rejected :
         { revisitValueLeaseEvent with revisitTriggerPresent := false }] = none := by
   decide
 
+/-! ## Aggregation information loss and exact dissent custody
+
+The fixed three-slot profile below is an authored finite input, not a claim that
+three parties are complete, representative, or legitimately selected. The
+model separates two facts: a scalar support count cannot identify which
+recorded parties support an action, while an accepted profiled lease preserves
+the entire supplied profile and dissent payload exactly.
+-/
+
+structure StakeholderPosition where
+  stakeholderId : Nat
+  standingRecorded : Bool
+  supportsAction : Bool
+deriving DecidableEq, Repr
+
+structure StakeholderProfile where
+  first : StakeholderPosition
+  second : StakeholderPosition
+  third : StakeholderPosition
+deriving DecidableEq, Repr
+
+def StakeholderPositionSupportBit (position : StakeholderPosition) : Nat :=
+  if position.standingRecorded && position.supportsAction then 1 else 0
+
+def StakeholderProfileSupportCount (profile : StakeholderProfile) : Nat :=
+  StakeholderPositionSupportBit profile.first +
+    StakeholderPositionSupportBit profile.second +
+      StakeholderPositionSupportBit profile.third
+
+def StakeholderProfileAllStandingRecorded
+    (profile : StakeholderProfile) : Bool :=
+  profile.first.standingRecorded &&
+    profile.second.standingRecorded &&
+      profile.third.standingRecorded
+
+def leftDissentProfile : StakeholderProfile := {
+  first := {
+    stakeholderId := 101
+    standingRecorded := true
+    supportsAction := true
+  }
+  second := {
+    stakeholderId := 102
+    standingRecorded := true
+    supportsAction := false
+  }
+  third := {
+    stakeholderId := 103
+    standingRecorded := true
+    supportsAction := true
+  }
+}
+
+def rightDissentProfile : StakeholderProfile := {
+  first := {
+    stakeholderId := 101
+    standingRecorded := true
+    supportsAction := false
+  }
+  second := {
+    stakeholderId := 102
+    standingRecorded := true
+    supportsAction := true
+  }
+  third := {
+    stakeholderId := 103
+    standingRecorded := true
+    supportsAction := true
+  }
+}
+
+theorem aggregate_collision_profiles_are_distinct :
+    leftDissentProfile ≠ rightDissentProfile := by
+  decide
+
+theorem aggregate_collision_has_equal_support_count :
+    StakeholderProfileSupportCount leftDissentProfile =
+      StakeholderProfileSupportCount rightDissentProfile := by
+  decide
+
+theorem scalar_support_count_is_not_injective :
+    ¬ Function.Injective StakeholderProfileSupportCount := by
+  intro injective
+  apply aggregate_collision_profiles_are_distinct
+  exact injective aggregate_collision_has_equal_support_count
+
+theorem no_scalar_decoder_recovers_every_stakeholder_profile
+    (decode : Nat → StakeholderProfile) :
+    ¬ ∀ profile,
+      decode (StakeholderProfileSupportCount profile) = profile := by
+  intro recovers
+  have left := recovers leftDissentProfile
+  have right := recovers rightDissentProfile
+  have sameDecoded :
+      decode (StakeholderProfileSupportCount leftDissentProfile) =
+        decode (StakeholderProfileSupportCount rightDissentProfile) := by
+    rw [aggregate_collision_has_equal_support_count]
+  apply aggregate_collision_profiles_are_distinct
+  exact left.symm.trans (sameDecoded.trans right)
+
+structure ProfiledBoundedLeaseRequest where
+  leaseId : Nat
+  stakeholderProfile : StakeholderProfile
+  reportedSupportCount : Nat
+  dissentPayload : StakeholderProfile
+deriving DecidableEq, Repr
+
+structure ProfiledBoundedLeaseReceipt where
+  leaseId : Nat
+  stakeholderProfile : StakeholderProfile
+  reportedSupportCount : Nat
+  dissentPayload : StakeholderProfile
+deriving DecidableEq, Repr
+
+def ProfiledBoundedLeaseRequestAdmissible
+    (request : ProfiledBoundedLeaseRequest) : Prop :=
+  StakeholderProfileAllStandingRecorded request.stakeholderProfile = true ∧
+    request.reportedSupportCount =
+      StakeholderProfileSupportCount request.stakeholderProfile ∧
+    request.dissentPayload = request.stakeholderProfile
+
+instance profiledBoundedLeaseRequestAdmissibleDecidable
+    (request : ProfiledBoundedLeaseRequest) :
+    Decidable (ProfiledBoundedLeaseRequestAdmissible request) := by
+  unfold ProfiledBoundedLeaseRequestAdmissible
+  infer_instance
+
+def IssueProfiledBoundedLease
+    (request : ProfiledBoundedLeaseRequest) :
+    Option ProfiledBoundedLeaseReceipt :=
+  if ProfiledBoundedLeaseRequestAdmissible request then
+    some {
+      leaseId := request.leaseId
+      stakeholderProfile := request.stakeholderProfile
+      reportedSupportCount := request.reportedSupportCount
+      dissentPayload := request.dissentPayload
+    }
+  else
+    none
+
+theorem accepted_profiled_lease_request_is_admissible
+    {request : ProfiledBoundedLeaseRequest}
+    {receipt : ProfiledBoundedLeaseReceipt}
+    (accepted : IssueProfiledBoundedLease request = some receipt) :
+    ProfiledBoundedLeaseRequestAdmissible request := by
+  unfold IssueProfiledBoundedLease at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_profiled_lease_preserves_exact_stakeholder_and_dissent_custody
+    {request : ProfiledBoundedLeaseRequest}
+    {receipt : ProfiledBoundedLeaseReceipt}
+    (accepted : IssueProfiledBoundedLease request = some receipt) :
+    receipt.leaseId = request.leaseId ∧
+      receipt.stakeholderProfile = request.stakeholderProfile ∧
+      receipt.reportedSupportCount = request.reportedSupportCount ∧
+      receipt.dissentPayload = request.stakeholderProfile := by
+  have admissible := accepted_profiled_lease_request_is_admissible accepted
+  unfold IssueProfiledBoundedLease at accepted
+  split at accepted
+  · simp at accepted
+    subst receipt
+    exact ⟨rfl, rfl, rfl, admissible.2.2⟩
+  · contradiction
+
+def validProfiledBoundedLeaseRequest : ProfiledBoundedLeaseRequest := {
+  leaseId := 211
+  stakeholderProfile := leftDissentProfile
+  reportedSupportCount := 2
+  dissentPayload := leftDissentProfile
+}
+
+def missingStandingProfile : StakeholderProfile := {
+  leftDissentProfile with
+  second := { leftDissentProfile.second with standingRecorded := false }
+}
+
+theorem valid_profiled_lease_issues_exact_receipt :
+    IssueProfiledBoundedLease validProfiledBoundedLeaseRequest = some {
+      leaseId := 211
+      stakeholderProfile := leftDissentProfile
+      reportedSupportCount := 2
+      dissentPayload := leftDissentProfile
+    } := by
+  decide
+
+theorem aggregate_equivalent_dissent_substitution_is_rejected :
+    IssueProfiledBoundedLease {
+      validProfiledBoundedLeaseRequest with
+      dissentPayload := rightDissentProfile
+    } = none := by
+  decide
+
+theorem missing_stakeholder_standing_is_rejected_even_with_matching_count :
+    IssueProfiledBoundedLease {
+      leaseId := 211
+      stakeholderProfile := missingStandingProfile
+      reportedSupportCount := 2
+      dissentPayload := missingStandingProfile
+    } = none := by
+  decide
+
 end AsiStackProofs.ValueConflict

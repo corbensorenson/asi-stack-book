@@ -12,14 +12,14 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 326 |
+| Proof targets in manifest | 327 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2672 |
-| Direct/projection-style theorem declarations | 428 |
-| Derived/decomposed theorem declarations | 1676 |
-| Unknown or mixed theorem declarations | 568 |
-| Safety-critical theorem declarations | 136 |
-| Safety-critical direct/projection declarations | 4 |
+| Theorem declarations classified | 2681 |
+| Direct/projection-style theorem declarations | 429 |
+| Derived/decomposed theorem declarations | 1680 |
+| Unknown or mixed theorem declarations | 572 |
+| Safety-critical theorem declarations | 145 |
+| Safety-critical direct/projection declarations | 5 |
 | Safety-critical chapter classifications present | 2/2 |
 | Validation errors | 0 |
 | Warnings | 2 |
@@ -34,7 +34,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 47 | 2 | 34 | 11 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
 
@@ -46,7 +46,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | `chapters/constitutional-alignment-substrate.qmd` | 0 | no | yes |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 0 | no | yes |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `chapters/recursive-self-improvement-boundaries.qmd` | 0 | no | no |
-| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 1 | yes | yes |
+| `lean/AsiStackProofs/ValueConflict.lean` | `chapters/moral-uncertainty-and-value-conflict.qmd` | 2 | yes | yes |
 
 ## Module Classification
 
@@ -176,7 +176,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TribunalRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 19 | 8 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobRefinement.lean` | labor-os-and-typed-jobs | 5 | 32 | 10 | 11 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | unmapped | 0 | 24 | 0 | 24 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 2 | 38 | 1 | 30 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 47 | 2 | 34 | 11 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/VerificationBandwidth.lean` | unmapped | 0 | 10 | 1 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VerificationBandwidthRefinement.lean` | verification-bandwidth-and-context-adequacy | 4 | 35 | 5 | 26 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
@@ -2692,12 +2692,17 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TypedJobs.lean` | `unlocked_contract_requests_job_contract` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_bounded_lease_requires_review_dissent_residual_and_expiry` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_expiry_closes_lease_and_removes_constraint_ceiling` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_profiled_lease_preserves_exact_stakeholder_and_dissent_custody` | derived_or_decomposed | yes | uses contradiction, have, simp, split, subst, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `accepted_profiled_lease_request_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_revisit_preserves_dissent_and_adds_residual` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_is_non_authorizing` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_never_widens_authority` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `accepted_value_lease_event_preserves_custody` | derived_or_decomposed | yes | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/ValueConflict.lean` | `aggregate_collision_has_equal_support_count` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `aggregate_collision_profiles_are_distinct` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `aggregate_equivalent_dissent_substitution_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_preserves_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `bounded_decision_without_dissent_routes_to_preservation` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `complete_value_conflict_lifecycle_admits_bounded_decision` | derived_or_decomposed | yes | uses simp, unfold |
@@ -2713,17 +2718,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ValueConflict.lean` | `missing_reversibility_record_requests_reversibility` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `missing_review_route_requests_route` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `missing_stakeholder_record_requests_stakeholders` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `missing_stakeholder_standing_is_rejected_even_with_matching_count` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `missing_stakes_record_requests_stakes` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `missing_value_axes_requests_axes` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `no_scalar_decoder_recovers_every_stakeholder_profile` | derived_or_decomposed | yes | uses apply, have, left, right, rw |
+| `lean/AsiStackProofs/ValueConflict.lean` | `scalar_support_count_is_not_injective` | derived_or_decomposed | yes | uses apply |
 | `lean/AsiStackProofs/ValueConflict.lean` | `support_promotion_without_value_conflict_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_authority_narrowing_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_conflict_without_narrowed_authority_routes_to_narrowing` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `unresolved_high_stakes_conflict_without_revisit_path_is_blocked` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/ValueConflict.lean` | `valid_profiled_lease_issues_exact_receipt` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_conflict_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_authority_widening_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_missing_dissent_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_nonfuture_expiry_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
-| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_revisit_without_trigger_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_revisit_without_trigger_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_run_preserves_custody_non_authority_and_narrowing` | derived_or_decomposed | yes | uses cases, have, induction, rcases, simp, subst |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_runs_compose` | derived_or_decomposed | yes | uses cases, induction, simp |
 | `lean/AsiStackProofs/ValueConflict.lean` | `value_lease_self_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
@@ -2867,4 +2876,4 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 ## Warnings
 
 - lean/AsiStackProofs/Alignment.lean has 3 direct/projection-style theorem(s) and must remain explicitly scoped.
-- lean/AsiStackProofs/ValueConflict.lean has 1 direct/projection-style theorem(s) and must remain explicitly scoped.
+- lean/AsiStackProofs/ValueConflict.lean has 2 direct/projection-style theorem(s) and must remain explicitly scoped.

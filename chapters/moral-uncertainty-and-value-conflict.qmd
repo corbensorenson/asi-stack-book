@@ -589,12 +589,17 @@ conflict harness with three valid and five expected-invalid cases, a governance-
 rights harness with three valid and five expected-invalid cases, one synthetic
 care-memory contestability example with seven rejecting mutations, a bounded
 Theseus import covering four governance-right and four constitutional scenarios
-plus seven expected-invalid controls, chapter-local finite Lean route models,
-and a shared safety-critical lifecycle model with an independently implemented
-trace checker and downstream effect-admission consumer. The seven manifest proof
+plus seven expected-invalid controls, chapter-local finite Lean route,
+decision-lease, and stakeholder-profile models, and a shared safety-critical
+lifecycle model with an independently implemented trace checker and downstream
+effect-admission consumer. The eight manifest proof
 targets now distinguish retained generic countermodels and the validator-backed
 Theseus import from operational trace preservation, protected-right rejection,
-and missing-obligation countermodels. The consumer independently replays five
+missing-obligation countermodels, scalar aggregation non-identifiability, and
+exact dissent custody. `AsiStackProofs.ValueConflict` has 47 declarations; its
+consumer enumerates all eight finite support profiles, detects count collisions,
+and rejects aggregate-equivalent dissent substitution plus missing standing.
+The shared consumer independently replays five
 accepted and five rejected domain traces, commits five bounded fixture effects,
 denies five effects with residuals, and claims no support promotion; it is not a
 deployed legal, exit, fork, or governance service.
@@ -614,10 +619,12 @@ The MVI should include:
   receipt or unresolved conflict residual.
 
 These artifacts exercise record shape, selected decision and rights routes,
-residual and dissent preservation, audit/redaction/exit/fork fields, finite
+residual and dissent preservation, authored stakeholder-profile custody, scalar
+aggregation non-identifiability, audit/redaction/exit/fork fields, finite
 rejection consequences, import counts, and no-promotion boundaries only. They
-do not test moral classification, stakeholder completeness, legitimate
-aggregation, real consent, reviewer independence, material appeal or redress,
+do not test moral classification, stakeholder completeness or legitimate
+standing, representative aggregation, real consent, reviewer independence,
+material appeal or redress,
 export fidelity, privacy leakage, destination continuity, fork activation
 safety, replacement preservation, institutional adequacy, or deployed
 enforcement.
@@ -659,7 +666,7 @@ succeeds.
 | Value-conflict fixture validation | Check that conflict records preserve value axes, stakeholders, residual uncertainty, dissent, review routes, and non-claims. | implemented by protocol validation and current harnesses |
 | High-stakes review gate | Check that unresolved high-stakes conflicts require review and residual uncertainty. | modeled by finite Lean and synthetic fixtures; moral correctness and reviewer quality not run |
 | Bounded-decision lease test | Check that bounded decisions preserve authority limits, dissent payloads, expiry, and revisit triggers. | modeled by finite Lean and synthetic fixtures; deployed policy behavior not run |
-| Value-conflict route and decision-lease envelope | Check the finite admission routes and a versioned independent-review, bounded-lease, revisit, and expiry lifecycle for exact record custody, preserved dissent, residual accounting, non-increasing authority, zero support/effect assignment, batch composition, one complete trace, and six rejecting controls. | implemented by 38 declarations in `AsiStackProofs.ValueConflict` and an independently reconstructed four-event trace plus six controls; no moral-correctness, stakeholder-standing, reviewer-quality, deployed-expiry, legal-rights, support-state-promotion, or runtime-governance claim |
+| Value-conflict route, decision-lease, and dissent-custody envelope | Check the finite admission routes, a versioned independent-review, bounded-lease, revisit, and expiry lifecycle, and a finite stakeholder-profile boundary for exact record and dissent custody, scalar aggregation non-identifiability, non-increasing authority, zero support/effect assignment, batch composition, one complete trace, and eight rejecting controls. | implemented by 47 declarations in `AsiStackProofs.ValueConflict` and `python3 scripts/validate_value_conflicts.py`: one reconstructed four-event trace, six lifecycle controls, all eight finite support profiles, scalar-count collisions, and two dissent-custody controls; no moral-correctness, stakeholder-completeness, legitimate-standing, representative-aggregation, reviewer-quality, deployed-expiry, legal-rights, support-state-promotion, or runtime-governance claim |
 | Contestability worked example fixture | Check one synthetic care-memory export scenario across value-conflict residual, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries. | implemented by `python3 scripts/validate_contestability_worked_example.py`; no moral-correctness, legal-rights, reviewer-independence, export-usability, fork-safety, deployed-governance, or support-state-promotion claim |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
@@ -675,6 +682,7 @@ succeeds.
 | `lean:values.conflict.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-residual countermodel cannot commit, so the modeled high-stakes path cannot bypass its residual and review obligations. | implemented |
 | `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes. | implemented |
 | `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
+| `lean:values.conflict.aggregation_and_dissent_custody` | `AsiStackProofs.ValueConflict` | A scalar support count is non-injective over a finite authored stakeholder profile and no count-only decoder recovers every profile, while an accepted modeled bounded-lease receipt preserves the full supplied profile and dissent payload exactly and rejects aggregate-equivalent substitution or missing recorded standing. | implemented |
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit. | implemented |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
@@ -693,14 +701,20 @@ external effects; compose exactly across batches; carry residual uncertainty
 through revisit; and end a complete four-event witness at expiry with no active
 constraint ceiling. The independent consumer reconstructs that witness and
 rejects self-review, stakeholder substitution, missing dissent, authority
-widening, nonfuture expiry, and an untriggered revisit. The Governance Rights
+widening, nonfuture expiry, and an untriggered revisit. A separate fixed
+three-slot profile model proves that scalar support count loses party-specific
+positions, no count-only decoder can recover every profile, and accepted
+profiled receipts preserve the exact authored profile and dissent payload. Its
+consumer enumerates all eight support profiles and rejects same-count payload
+substitution and missing standing. The Governance Rights
 module also checks a finite
 lifecycle route for missing governance records, audit material, redaction
 appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
 protected-right removal, unrecorded dissent, replacement receipt loss, durable
 receipt gaps, evidence-transition requirements, and complete contestable
 transitions. These hooks do not prove moral correctness, automatic value
-classification, stakeholder standing, reviewer quality, legal rights, actual
+classification, stakeholder completeness, legitimate standing or representative
+aggregation, reviewer quality, legal rights, actual
 export usability, safe forks, institutional contestability, real expiry or
 revisit delivery, redaction quality, SCF replacement behavior, or deployed
 rights enforcement.

@@ -4,10 +4,10 @@
   "review_state": "completed",
   "semantic_sweep": {
     "reviewed_source": "chapters/moral-uncertainty-and-value-conflict.qmd",
-    "structured_atoms_reviewed": 58,
-    "prose_candidates_adjudicated": 57,
+    "structured_atoms_reviewed": 59,
+    "prose_candidates_adjudicated": 58,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 aggregation-and-dissent-custody proof increment. The new formal atom is bounded to finite profile information loss and exact authored receipt custody, and its new prose candidate is mapped back to that atom. Source-reported results remain source reports. No efficacy inference, evidence transition, support promotion, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -107,7 +107,7 @@
     },
     "non_claims": [
       "Semantic review, source citation, schema completeness, a green fixture, a sanitized import, or a Lean theorem does not establish moral truth, stakeholder completeness, legitimate aggregation, legal rights, consent, reviewer independence, material contestability, portability, fork safety, or governance efficacy.",
-      "The current 44 declarations, 16 core harness outcomes, one worked example, and bounded 4+4-scenario import establish only finite record, count, and route consequences under encoded assumptions.",
+      "The current 53 declarations, 16 core harness outcomes, eight finite support profiles, two dissent-custody controls, one worked example, and bounded 4+4-scenario import establish only finite record, count, information-loss, and route consequences under encoded assumptions.",
       "No support state, action grant, legal right, governance legitimacy, external publication, release readiness, AGI, or ASI claim changes without its separate owning gate and accepted transition."
     ]
   },
@@ -163,6 +163,7 @@
         "moral-uncertainty-and-value-conflict.formal.values-conflict-failure-blocks-promotion",
         "moral-uncertainty-and-value-conflict.formal.values-conflict-lifecycle-admission-route",
         "moral-uncertainty-and-value-conflict.formal.values-conflict-contestability-example-bridge",
+        "moral-uncertainty-and-value-conflict.formal.values-conflict-aggregation-and-dissent-custody",
         "moral-uncertainty-and-value-conflict.formal.governance-rights-operational-invariant",
         "moral-uncertainty-and-value-conflict.formal.governance-rights-failure-blocks-promotion",
         "moral-uncertainty-and-value-conflict.formal.governance-rights-theseus-receipt-suite-fixture-bridge"
@@ -170,7 +171,7 @@
       "strongest_counterclaim": "The minimum is self-authored schema, Boolean, and import theater that validates no moral decision, right, appeal, export, fork, or successor behavior.",
       "falsifier": "A field or mutation lacks a consumer, counts fail recomputation, or prose exceeds finite routing and import boundaries.",
       "acceptance_criteria": [
-        "44 declarations, seven targets, 3/5 value, 3/5 rights, seven worked-example mutations, and the bounded 4+4/7 import reproduce with all non-claims."
+        "53 declarations, eight targets, 3/5 value, 3/5 rights, seven worked-example mutations, eight enumerated support profiles, two dissent-custody controls, and the bounded 4+4/7 import reproduce with all non-claims."
       ],
       "promotion_ceiling": "synthetic_test_backed_for_exact_record_route_and_import_semantics_only_after_transition"
     },
@@ -759,6 +760,20 @@
         "moral-uncertainty-and-value-conflict.core"
       ]
     },
+    "moral-uncertainty-and-value-conflict.formal.values-conflict-aggregation-and-dissent-custody": {
+      "proposition_type": "formal",
+      "strongest_counterclaim": "The finite three-slot model is too small and authored to establish stakeholder legitimacy, representativeness, or moral correctness; only its exact aggregation-loss and custody consequences are proved.",
+      "falsifier": "Lean admits an injective scalar support count, a decoder that recovers both collision witnesses, an accepted receipt that changes the supplied profile or dissent payload, or the independent consumer accepts same-count substitution or missing standing.",
+      "acceptance_criteria": [
+        "The nine declarations build, all eight finite support profiles are independently enumerated, scalar-count collisions are reconstructed, exact custody is accepted, and both dissent-custody controls reject."
+      ],
+      "promotion_ceiling": "finite_profile_information_boundary_only_no_behavioral_promotion",
+      "dependencies": [
+        "moral-uncertainty-and-value-conflict.core",
+        "moral-uncertainty-and-value-conflict.mechanism.002",
+        "moral-uncertainty-and-value-conflict.mechanism.003"
+      ]
+    },
     "moral-uncertainty-and-value-conflict.formal.governance-rights-operational-invariant": {
       "proposition_type": "formal",
       "strongest_counterclaim": "This theorem restates finite premises and proves no moral truth, rights usability, institutional quality, portability, fork safety, successor behavior, or governance efficacy. Challenged proposition: A governance transition preserves required audit and exit capabilities.",
@@ -968,6 +983,11 @@
     "moral-uncertainty-and-value-conflict.prose.258c5a12ae95": {
       "state": "nonmaterial_explanation",
       "rationale": "Finite formal-boundary explanation."
+    },
+    "moral-uncertainty-and-value-conflict.prose.d91d1ca7082a": {
+      "state": "duplicate_of_atom",
+      "rationale": "Line-wrapped explanation of scalar aggregation information loss owned by the new finite-profile formal atom.",
+      "target_atom_id": "moral-uncertainty-and-value-conflict.formal.values-conflict-aggregation-and-dissent-custody"
     },
     "moral-uncertainty-and-value-conflict.prose.f19f349fe252": {
       "state": "nonmaterial_explanation",

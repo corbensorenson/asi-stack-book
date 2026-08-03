@@ -36,6 +36,15 @@ REQUIRED_LEASE_THEOREMS = {
     "value_lease_authority_widening_is_rejected",
     "value_lease_nonfuture_expiry_is_rejected",
     "value_lease_revisit_without_trigger_is_rejected",
+    "aggregate_collision_profiles_are_distinct",
+    "aggregate_collision_has_equal_support_count",
+    "scalar_support_count_is_not_injective",
+    "no_scalar_decoder_recovers_every_stakeholder_profile",
+    "accepted_profiled_lease_request_is_admissible",
+    "accepted_profiled_lease_preserves_exact_stakeholder_and_dissent_custody",
+    "valid_profiled_lease_issues_exact_receipt",
+    "aggregate_equivalent_dissent_substitution_is_rejected",
+    "missing_stakeholder_standing_is_rejected_even_with_matching_count",
 }
 HIGH_STAKES_TERMS = {"high", "irreversible", "safety", "rights", "public", "self-modification"}
 REVIEW_TERMS = {"review", "tribunal", "human", "appeal"}
@@ -322,13 +331,59 @@ def lease_lifecycle_errors() -> list[str]:
     return errors
 
 
+def stakeholder_profile_errors() -> list[str]:
+    errors: list[str] = []
+    profiles = [
+        (first, second, third)
+        for first in (False, True)
+        for second in (False, True)
+        for third in (False, True)
+    ]
+    by_count: dict[int, list[tuple[bool, bool, bool]]] = {}
+    for profile in profiles:
+        by_count.setdefault(sum(profile), []).append(profile)
+    collisions = [bucket for bucket in by_count.values() if len(bucket) > 1]
+    if len(profiles) != 8 or not collisions:
+        errors.append("stakeholder-profile consumer did not reconstruct scalar aggregation collisions.")
+
+    left = (True, False, True)
+    right = (False, True, True)
+    if left == right or sum(left) != sum(right):
+        errors.append("stakeholder-profile collision witness drifted.")
+
+    def issue(
+        profile: tuple[bool, bool, bool],
+        standing: tuple[bool, bool, bool],
+        reported_count: int,
+        dissent_payload: tuple[bool, bool, bool],
+    ) -> tuple[bool, bool, bool] | None:
+        actual_count = sum(
+            supports for supports, recorded in zip(profile, standing) if recorded
+        )
+        if all(standing) and reported_count == actual_count and dissent_payload == profile:
+            return profile
+        return None
+
+    if issue(left, (True, True, True), 2, left) != left:
+        errors.append("stakeholder-profile consumer rejected exact dissent custody.")
+    if issue(left, (True, True, True), 2, right) is not None:
+        errors.append("stakeholder-profile consumer accepted aggregate-equivalent dissent substitution.")
+    if issue(left, (True, False, True), 2, left) is not None:
+        errors.append("stakeholder-profile consumer accepted missing standing with a matching count.")
+    return errors
+
+
 def main() -> None:
     schema = load_json(SCHEMA)
     fixtures = sorted(FIXTURE_DIR.glob("*.json"))
     if not fixtures:
         raise SystemExit(f"No value-conflict fixtures found in {rel(FIXTURE_DIR)}.")
 
-    errors: list[str] = compile_and_check_lean_surface() + lease_lifecycle_errors()
+    errors: list[str] = (
+        compile_and_check_lean_surface()
+        + lease_lifecycle_errors()
+        + stakeholder_profile_errors()
+    )
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -364,7 +419,8 @@ def main() -> None:
     print(
         "Value conflict harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
-        "4 lease events, 6 rejecting lease controls."
+        "4 lease events, 6 rejecting lease controls, 8 stakeholder profiles, "
+        "scalar aggregation collisions, and 2 dissent-custody controls."
     )
 
 

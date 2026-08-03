@@ -7,7 +7,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 ## Coverage summary
 
 - Chapters: 64
-- Structured manifest atoms: 4061
+- Structured manifest atoms: 4062
 - Machine candidates awaiting semantic atom review: 0
 - Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
@@ -17,7 +17,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | `beyond_sota` | 64 |
 | `core` | 64 |
 | `failure_mode` | 1031 |
-| `formal_target` | 296 |
+| `formal_target` | 297 |
 | `insufficiency` | 64 |
 | `interface` | 603 |
 | `invariant` | 902 |
@@ -39,7 +39,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Human Intent as a Formal Input | 46 | 0 | 0 | `evidence_quality/claim_dossiers/human-intent-as-a-formal-input.md` |
 | Human-AI Communication, Persuasion, and Epistemic Security | 33 | 0 | 0 | `evidence_quality/claim_dossiers/human-ai-communication-persuasion-and-epistemic-security.md` |
 | Constitutional Alignment: Agency, Dignity, and Corrigibility | 52 | 0 | 0 | `evidence_quality/claim_dossiers/constitutional-alignment-substrate.md` |
-| Moral Uncertainty, Value Conflict, and Contestable Governance | 58 | 0 | 0 | `evidence_quality/claim_dossiers/moral-uncertainty-and-value-conflict.md` |
+| Moral Uncertainty, Value Conflict, and Contestable Governance | 59 | 0 | 0 | `evidence_quality/claim_dossiers/moral-uncertainty-and-value-conflict.md` |
 | Governed Objective Formation, Value Learning, and Goal Integrity | 35 | 0 | 0 | `evidence_quality/claim_dossiers/governed-objective-formation-value-learning-and-goal-integrity.md` |
 | Institutions, International Coordination, and Public Legitimacy | 35 | 0 | 0 | `evidence_quality/claim_dossiers/institutions-international-coordination-and-public-legitimacy.md` |
 | Stable Capability Fields | 54 | 0 | 0 | `evidence_quality/claim_dossiers/stable-capability-fields.md` |
