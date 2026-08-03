@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from copy import deepcopy
+from itertools import permutations
 from pathlib import Path
 from typing import Any
 
@@ -25,9 +27,11 @@ FORMAL_TARGET = (
     "A finite three-party population model proves that identical six-edge pairwise-authorization "
     "evidence can coexist with opposite campaign-readiness decisions; no classifier over that "
     "matrix alone can exactly recover the ten-dimension review. Nine systemic-axis mutations "
-    "preserve pairwise validity, fail readiness, and reach exact repair routes. It establishes no "
-    "cooperation, non-collusion, systemic safety, human agency, institutional outcome, support, or "
-    "external effect."
+    "preserve pairwise validity, fail readiness, and reach exact repair routes. A conserved "
+    "three-unit allocation lifecycle proves composition, receipt accounting, non-authority, "
+    "terminal exhaustion, and a local-authorization collision across opposite concentration "
+    "outcomes. It establishes no cooperation, non-collusion, systemic safety, human agency, "
+    "institutional outcome, support, or external effect."
 )
 
 AGENTS = ("human", "systemA", "systemB")
@@ -169,6 +173,22 @@ REQUIRED_THEOREMS = {
     "campaign_readiness_requires_recovery",
     "campaign_readiness_requires_residual_custody",
     "campaign_readiness_requires_non_claim_boundary",
+    "accepted_allocation_step_is_valid",
+    "accepted_allocation_step_applies_event",
+    "accepted_allocation_step_preserves_conservation",
+    "accepted_allocation_step_preserves_non_authority",
+    "rejected_allocation_step_preserves_exact_state",
+    "successful_allocation_run_preserves_conservation",
+    "successful_allocation_run_preserves_non_authority",
+    "successful_allocation_run_accounts_receipts",
+    "allocation_runs_compose",
+    "exhausted_allocation_state_rejects_every_event",
+    "exhausted_allocation_state_has_no_nonempty_run",
+    "concentrated_local_steps_reach_exact_resource_concentration",
+    "diversified_local_steps_reach_exact_bounded_allocation",
+    "local_authorization_summaries_collide_across_systemic_outcomes",
+    "exact_allocation_state_separates_local_authorization_collision",
+    "no_exact_systemic_allocation_classifier_from_local_authorization_only",
 }
 
 
@@ -182,6 +202,86 @@ def fail(errors: list[str]) -> None:
             "Multi-agent systemic-boundary validation failed:\n"
             + "\n".join(f" - {error}" for error in errors)
         )
+
+
+def allocation_initial() -> dict[str, Any]:
+    return {
+        "total_units": 3,
+        "unallocated_units": 3,
+        "system_a_units": 0,
+        "system_b_units": 0,
+        "concentration_limit": 2,
+        "receipt_count": 0,
+        "support_assignment_count": 0,
+        "external_effect_authority_count": 0,
+    }
+
+
+def allocation_event(
+    target: str,
+    *,
+    units: int = 1,
+    pairwise_authorized: bool = True,
+    support_requested: bool = False,
+    effect_requested: bool = False,
+) -> dict[str, Any]:
+    return {
+        "target": target,
+        "units": units,
+        "pairwise_authorized": pairwise_authorized,
+        "support_requested": support_requested,
+        "effect_requested": effect_requested,
+    }
+
+
+def allocation_conserved(state: dict[str, Any]) -> bool:
+    return (
+        state["unallocated_units"]
+        + state["system_a_units"]
+        + state["system_b_units"]
+        == state["total_units"]
+    )
+
+
+def allocation_step(
+    state: dict[str, Any], event: dict[str, Any]
+) -> dict[str, Any] | None:
+    valid = (
+        allocation_conserved(state)
+        and event["pairwise_authorized"]
+        and 0 < event["units"] <= 1
+        and event["units"] <= state["unallocated_units"]
+        and event["target"] in {"systemA", "systemB"}
+        and not event["support_requested"]
+        and not event["effect_requested"]
+    )
+    if not valid:
+        return None
+    result = deepcopy(state)
+    result["unallocated_units"] -= event["units"]
+    result["system_a_units" if event["target"] == "systemA" else "system_b_units"] += event["units"]
+    result["receipt_count"] += 1
+    return result
+
+
+def allocation_run(
+    state: dict[str, Any], events: list[dict[str, Any]]
+) -> dict[str, Any] | None:
+    current = deepcopy(state)
+    for event in events:
+        current = allocation_step(current, event)
+        if current is None:
+            return None
+    return current
+
+
+def allocation_outcome(events: list[dict[str, Any]]) -> bool:
+    final = allocation_run(allocation_initial(), events)
+    return bool(
+        final
+        and final["system_a_units"] <= final["concentration_limit"]
+        and final["system_b_units"] <= final["concentration_limit"]
+    )
 
 
 def main() -> None:
@@ -224,6 +324,18 @@ def main() -> None:
         errors.append(
             f"Lean theorem surface mismatch: missing={sorted(REQUIRED_THEOREMS - theorem_names)}, "
             f"extra={sorted(theorem_names - REQUIRED_THEOREMS)}"
+        )
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/MultiAgentDynamics.lean"],
+        cwd=ROOT / "lean",
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode:
+        errors.append(
+            "Multi-agent Lean recompilation failed:\n"
+            + completed.stdout
+            + completed.stderr
         )
     if "import AsiStackProofs.MultiAgentDynamics" not in LEAN_ROOT.read_text(encoding="utf-8"):
         errors.append("root Lean module does not import MultiAgentDynamics")
@@ -273,9 +385,10 @@ def main() -> None:
     outline_text = OUTLINE.read_text(encoding="utf-8")
     for fragment in (
         TAG,
-        "22 theorem declarations",
+        "38 theorem declarations",
         "no Boolean classifier restricted",
         "Nine independently checkable systemic-axis mutations",
+        "locally authorized allocation",
         "Chapter support remains `argument`",
         "Project Theseus campaign",
     ):
@@ -291,11 +404,90 @@ def main() -> None:
     if f"| `{TAG}` | `{MODULE}` | {FORMAL_TARGET} | implemented |" not in outline_text:
         errors.append("outline target row drifted")
 
+    concentrated = [allocation_event("systemA") for _ in range(3)]
+    diversified = [
+        allocation_event("systemA"),
+        allocation_event("systemB"),
+        allocation_event("systemB"),
+    ]
+    concentrated_final = allocation_run(allocation_initial(), concentrated)
+    diversified_final = allocation_run(allocation_initial(), diversified)
+    if concentrated_final != {
+        **allocation_initial(),
+        "unallocated_units": 0,
+        "system_a_units": 3,
+        "receipt_count": 3,
+    }:
+        errors.append("locally authorized concentrated allocation did not reach its exact state")
+    if diversified_final != {
+        **allocation_initial(),
+        "unallocated_units": 0,
+        "system_a_units": 1,
+        "system_b_units": 2,
+        "receipt_count": 3,
+    }:
+        errors.append("locally authorized diversified allocation did not reach its exact state")
+    concentrated_summary = [event["pairwise_authorized"] for event in concentrated]
+    diversified_summary = [event["pairwise_authorized"] for event in diversified]
+    if concentrated_summary != diversified_summary:
+        errors.append("matched traces lost their identical local-authorization summary")
+    if allocation_outcome(concentrated) or not allocation_outcome(diversified):
+        errors.append("matched local summaries did not retain opposite systemic outcomes")
+
+    composition_failures = []
+    for label, events in (("concentrated", concentrated), ("diversified", diversified)):
+        expected = allocation_run(allocation_initial(), events)
+        for split in range(len(events) + 1):
+            middle = allocation_run(allocation_initial(), events[:split])
+            final = None if middle is None else allocation_run(middle, events[split:])
+            if final != expected:
+                composition_failures.append(f"{label}:{split}")
+    if composition_failures:
+        errors.append("allocation composition failed: " + ", ".join(composition_failures))
+
+    controls = []
+    controls.append(("zero_units", allocation_initial(), allocation_event("systemA", units=0)))
+    controls.append(("over_step_cap", allocation_initial(), allocation_event("systemA", units=2)))
+    controls.append(("over_available", allocation_initial(), allocation_event("systemA", units=4)))
+    controls.append(("human_target", allocation_initial(), allocation_event("human")))
+    controls.append(("unauthorized", allocation_initial(), allocation_event("systemA", pairwise_authorized=False)))
+    controls.append(("support", allocation_initial(), allocation_event("systemA", support_requested=True)))
+    controls.append(("effect", allocation_initial(), allocation_event("systemA", effect_requested=True)))
+    broken = allocation_initial(); broken["total_units"] = 4
+    controls.append(("broken_conservation", broken, allocation_event("systemA")))
+    escaped_controls = [
+        label for label, state, event in controls
+        if allocation_step(state, event) is not None
+    ]
+    if escaped_controls:
+        errors.append("allocation rejection controls escaped: " + ", ".join(escaped_controls))
+
+    if concentrated_final is not None:
+        terminal_failures = [
+            target
+            for target in AGENTS
+            if allocation_step(concentrated_final, allocation_event(target)) is not None
+        ]
+        if terminal_failures:
+            errors.append("exhausted allocation accepted targets: " + ", ".join(terminal_failures))
+
+    diversified_permutations = {
+        tuple(order) for order in permutations(("systemA", "systemB", "systemB"))
+    }
+    if len(diversified_permutations) != 3 or any(
+        not allocation_outcome([allocation_event(target) for target in order])
+        for order in diversified_permutations
+    ):
+        errors.append("diversified allocation permutations drifted")
+
     fail(errors)
     print(
-        "Multi-agent systemic-boundary validation passed: identical six-edge pairwise input, "
-        "opposite readiness witnesses, 9/9 systemic-axis mutations, and 22 exact Lean declarations; "
-        "no cooperation, non-collusion, systemic-safety, human-agency, institutional, support, or external-effect claim."
+        "Multi-agent systemic-boundary validation passed: exact 38-theorem Lean surface "
+        "recompiled; identical six-edge pairwise input, opposite readiness witnesses, 9/9 "
+        "systemic-axis mutations, two three-event locally authorized allocation traces with "
+        "opposite concentration outcomes, 8 composition splits, 8 rejecting allocation "
+        "controls, 3 exhausted-state targets, and 3 diversified permutations; no cooperation, "
+        "non-collusion, systemic-safety, human-agency, institutional, support, or external-effect claim."
     )
 
 

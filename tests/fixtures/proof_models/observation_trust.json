@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "initial_stage": "captured",
+  "event_sequence": [
+    "bind_identities",
+    "bind_dependence",
+    "review_pair",
+    "bind_use",
+    "handoff_observation",
+    "invalidate_for_change"
+  ],
+  "expected_routes": [
+    "accept_identities",
+    "accept_dependence",
+    "accept_pair_review",
+    "accept_use_binding",
+    "accept_handoff",
+    "accept_invalidation"
+  ],
+  "expected_final": {
+    "stage": "invalidated",
+    "receipt_count": 6,
+    "handoff_count": 1,
+    "invalidation_count": 1,
+    "support_assignment_count": 0,
+    "external_authority_count": 0
+  },
+  "common_cause_collision": {
+    "left_root": 7,
+    "right_root": 9,
+    "clear_common_cause_present": false,
+    "shared_common_cause_present": true,
+    "clear_admitted": true,
+    "shared_admitted": false
+  },
+  "support_state_effect": "none"
+}

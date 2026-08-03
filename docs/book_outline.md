@@ -4610,7 +4610,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `AsiStackProofs.MultiAgentDynamics` | A finite three-party population model proves that identical six-edge pairwise-authorization evidence can coexist with opposite campaign-readiness decisions; no classifier over that matrix alone can exactly recover the ten-dimension review. Nine systemic-axis mutations preserve pairwise validity, fail readiness, and reach exact repair routes. It establishes no cooperation, non-collusion, systemic safety, human agency, institutional outcome, support, or external effect. | implemented |
+| `lean:multi_agent.pairwise_validity_no_systemic_promotion` | `AsiStackProofs.MultiAgentDynamics` | A finite three-party population model proves that identical six-edge pairwise-authorization evidence can coexist with opposite campaign-readiness decisions; no classifier over that matrix alone can exactly recover the ten-dimension review. Nine systemic-axis mutations preserve pairwise validity, fail readiness, and reach exact repair routes. A conserved three-unit allocation lifecycle proves composition, receipt accounting, non-authority, terminal exhaustion, and a local-authorization collision across opposite concentration outcomes. It establishes no cooperation, non-collusion, systemic safety, human agency, institutional outcome, support, or external effect. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 

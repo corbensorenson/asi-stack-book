@@ -3188,7 +3188,8 @@
     "roadmap_records/p7_1c_reader_prose_quality_status.json",
     "schemas/p7_1c_reader_prose_quality_status.schema.json",
     "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
-    "lean/AsiStackProofs/Authority.lean"
+    "lean/AsiStackProofs/Authority.lean",
+    "tests/fixtures/proof_models/observation_trust.json"
   ],
   "units": [
     {
@@ -17357,17 +17358,18 @@
       "semantic_review_state": "manual_nonidentification_lifecycle_consumer_and_no_promotion_boundary_reviewed"
     },
     {
-      "id": "validate_observation_trust.py:447",
+      "id": "validate_observation_trust.py:439",
       "order": 439,
       "script": "validate_observation_trust.py",
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The bounded pair-classification model, seven-stage observation lifecycle, exact chapter proof boundary, generated proof manifest, and reviewed triage record.",
+      "input_contract": "The bounded pair-classification model, canonical lifecycle/common-cause fixture, seven-stage observation lifecycle, exact 32-theorem chapter proof boundary, generated proof manifest, and reviewed triage record.",
       "input_artifacts": [
         "lean/AsiStackProofs/ObservationTrust.lean",
         "scripts/validate_observation_trust.py",
         "scripts/register_observation_trust.py",
+        "tests/fixtures/proof_models/observation_trust.json",
         "chapters/perception-sensor-fusion-and-observation-trust.qmd",
         "evidence_quality/proof_model_dossiers/perception-sensor-fusion-and-observation-trust.md",
         "proofs/proof_manifest.json",
@@ -17381,7 +17383,7 @@
         "seven lifecycle stages and six accepted transitions",
         "46 exact-state lifecycle mutations reject",
         "13 pair-classification controls pass",
-        "16 Lean declarations exist",
+        "32 Lean declarations exist",
         "zero support or external-authority effect"
       ],
       "claim_scope": "Finite declared-dependence accounting and authored observation-record custody only.",
@@ -17458,7 +17460,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The finite three-party population model, six-edge pairwise evidence projection, ten-dimension campaign-readiness predicate, nine systemic mutation axes, 22-theorem Lean surface, chapter boundary, generated proof manifest, and reviewed triage record.",
+      "input_contract": "The finite three-party population model, six-edge pairwise evidence projection, ten-dimension campaign-readiness predicate, nine systemic mutation axes, conserved temporal allocation lifecycle, exact 38-theorem Lean surface, chapter boundary, generated proof manifest, and reviewed triage record.",
       "input_artifacts": [
         "lean/AsiStackProofs/MultiAgentDynamics.lean",
         "scripts/validate_multi_agent_systemic_boundary.py",
@@ -17468,14 +17470,17 @@
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json"
       ],
-      "output_contract": "Independently reproduce two records with identical six-edge pairwise input and opposite campaign-readiness decisions; mutate all nine systemic axes while preserving pairwise validity; require exact repair routes; verify all 22 Lean declarations and canonical bindings; and reject population-outcome or support overclaims.",
+      "output_contract": "Independently reproduce two records with identical six-edge pairwise input and opposite campaign-readiness decisions; mutate all nine systemic axes while preserving pairwise validity; require exact repair routes; reconstruct concentrated and diversified allocation traces, composition, rejection, terminal exhaustion, and local-summary insufficiency; verify all 38 Lean declarations and canonical bindings; and reject population-outcome or support overclaims.",
       "output_assertions": [
         "six directed pairwise authorization edges",
         "identical pairwise input with opposite readiness outputs",
         "complete record routes only to a Project Theseus campaign",
         "9/9 systemic-axis mutations preserve pairwise validity and reject readiness",
         "all nine mutations reach exact repair routes",
-        "22 exact Lean declarations exist",
+        "two locally authorized allocation traces reach opposite concentration outcomes",
+        "8/8 allocation composition splits and 8/8 rejecting controls pass",
+        "three exhausted-state targets reject and three diversified permutations remain bounded",
+        "38 exact Lean declarations exist",
         "zero cooperation, non-collusion, systemic-safety, human-agency, institutional, support, or external-effect claim"
       ],
       "claim_scope": "Finite pairwise-evidence underdetermination and authored population-campaign admission semantics only.",
@@ -18767,7 +18772,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3144,
+    "required_artifact_count": 3145,
     "unit_count": 469
   },
   "non_claims": [

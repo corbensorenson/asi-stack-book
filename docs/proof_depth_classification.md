@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3137 |
+| Theorem declarations classified | 3153 |
 | Direct/projection-style theorem declarations | 447 |
-| Derived/decomposed theorem declarations | 1966 |
-| Unknown or mixed theorem declarations | 724 |
+| Derived/decomposed theorem declarations | 1978 |
+| Unknown or mixed theorem declarations | 728 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -122,7 +122,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 44 | 0 | 29 | 15 | manual review |
-| `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 38 | 2 | 26 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 32 | 5 | 21 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
@@ -1890,6 +1890,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_self_attestation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_self_observation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | `weight_custody_stale_version_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `accepted_allocation_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `accepted_allocation_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `accepted_allocation_step_preserves_conservation` | derived_or_decomposed | no | uses cases, have, omega, rcases, simp, subst |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `accepted_allocation_step_preserves_non_authority` | derived_or_decomposed | no | uses cases, rw, simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `allocation_runs_compose` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_affected_party_coverage` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_diversified_resource_control` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `campaign_readiness_requires_effective_diversity` | derived_or_decomposed | no | uses simp |
@@ -1904,14 +1909,25 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_has_pairwise_validity` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_is_campaign_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `complete_population_routes_to_theseus_campaign` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `concentrated_local_steps_reach_exact_resource_concentration` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `diversified_local_steps_reach_exact_bounded_allocation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_blocks_campaign_readiness` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_preserves_pairwise_validity` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `every_systemic_axis_omission_reaches_exact_repair_route` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `exact_allocation_state_separates_local_authorization_collision` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `exhausted_allocation_state_has_no_nonempty_run` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `exhausted_allocation_state_rejects_every_event` | derived_or_decomposed | no | uses omega, rcases |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `local_authorization_summaries_collide_across_systemic_outcomes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `no_exact_systemic_allocation_classifier_from_local_authorization_only` | derived_or_decomposed | no | uses have, rw |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `no_pairwise_only_classifier_exactly_recovers_campaign_readiness` | derived_or_decomposed | no | uses have, rw, simp |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_has_pairwise_validity` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_is_not_campaign_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_only_population_routes_to_dependency_mapping` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | `pairwise_validity_does_not_entail_population_campaign_readiness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `rejected_allocation_step_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `successful_allocation_run_accounts_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `successful_allocation_run_preserves_conservation` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/MultiAgentDynamics.lean` | `successful_allocation_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `authority_change_invalidates_use` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `complete_dossier_is_ready` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `complete_dossier_reaches_only_objective_registry_study` | unknown_or_mixed | no | no recognized depth pattern |

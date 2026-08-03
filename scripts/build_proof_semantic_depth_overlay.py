@@ -2749,6 +2749,134 @@ for theorem_name in (
     }
 
 for theorem_name, rationale in {
+    "accepted_allocation_step_is_valid": (
+        "Every accepted transition exposes the exact authored event-validity conjunction."
+    ),
+    "accepted_allocation_step_applies_event": (
+        "Every accepted transition equals the explicit allocation-event transformer."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal one-step theorem exposes exact validity or application semantics"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "concentrated_local_steps_reach_exact_resource_concentration": (
+        "A closed three-event locally authorized trace reaches the exact concentrated allocation state."
+    ),
+    "diversified_local_steps_reach_exact_bounded_allocation": (
+        "A closed three-event locally authorized trace reaches the exact diversified allocation state."
+    ),
+    "local_authorization_summaries_collide_across_systemic_outcomes": (
+        "Two distinct closed traces expose the same all-true local-authorization summary."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [f"lean-theorem:{theorem_name}"],
+        "classification_basis": [
+            "a closed allocation trace or trace pair witnesses an exact modeled result"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "accepted_allocation_step_preserves_conservation": (
+        "Every accepted event preserves the authored finite resource-conservation invariant."
+    ),
+    "accepted_allocation_step_preserves_non_authority": (
+        "Every accepted event leaves support assignment and external-effect authority counts unchanged."
+    ),
+    "exact_allocation_state_separates_local_authorization_collision": (
+        "The colliding local summaries have opposite concentration decisions under the exact final-state predicate."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P3",
+        "witness_refs": [
+            "lean-theorem:concentrated_local_steps_reach_exact_resource_concentration",
+            "lean-theorem:diversified_local_steps_reach_exact_bounded_allocation",
+        ],
+        "classification_basis": [
+            "a universal invariant or exact witness separation establishes a bounded transition property"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "rejected_allocation_step_preserves_exact_state": (
+        "The executable processor refines a rejected optional step to exact prior-state preservation."
+    ),
+    "successful_allocation_run_preserves_conservation": (
+        "Induction lifts one-step conservation through every successful finite allocation run."
+    ),
+    "successful_allocation_run_preserves_non_authority": (
+        "Induction lifts support and effect non-authority through every successful finite allocation run."
+    ),
+    "successful_allocation_run_accounts_receipts": (
+        "Every successful run increases the receipt count by exactly the accepted event-list length."
+    ),
+    "allocation_runs_compose": (
+        "Allocation execution is invariant under splitting one finite event list into prefix and suffix batches."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P4",
+        "witness_refs": [
+            "scripts/validate_multi_agent_systemic_boundary.py",
+            "lean-theorem:concentrated_local_steps_reach_exact_resource_concentration",
+            "lean-theorem:diversified_local_steps_reach_exact_bounded_allocation",
+        ],
+        "classification_basis": [
+            "an inductive lifecycle, composition, exact-rejection, or accounting result is independently reconstructed over eight splits and eight rejecting controls"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
+    "exhausted_allocation_state_rejects_every_event": (
+        "Zero remaining allocation capacity universally invalidates every next event."
+    ),
+    "exhausted_allocation_state_has_no_nonempty_run": (
+        "Every nonempty suffix from an exhausted allocation state is terminally rejected."
+    ),
+    "no_exact_systemic_allocation_classifier_from_local_authorization_only": (
+        "A same-summary/opposite-outcome collision proves no local-authorization-only Boolean classifier is exact for every modeled trace."
+    ),
+}.items():
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/MultiAgentDynamics.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P5",
+        "witness_refs": [
+            "scripts/validate_multi_agent_systemic_boundary.py",
+            "lean-theorem:local_authorization_summaries_collide_across_systemic_outcomes",
+            "lean-theorem:exact_allocation_state_separates_local_authorization_collision",
+        ],
+        "classification_basis": [
+            "a universal terminal or information-loss result is independently reconstructed across three terminal targets and three diversified permutations"
+        ],
+        "rationale": rationale,
+    }
+
+for theorem_name, rationale in {
     "complete_dossier_is_ready":
         "The closed complete dossier witnesses the derived finite admissibility predicate.",
     "complete_dossier_reaches_only_harmless_analogue_campaign":

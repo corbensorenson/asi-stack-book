@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 LEAN = ROOT / "lean/AsiStackProofs/ObservationTrust.lean"
 CHAPTER = ROOT / "chapters/perception-sensor-fusion-and-observation-trust.qmd"
 DOSSIER = ROOT / "evidence_quality/proof_model_dossiers/perception-sensor-fusion-and-observation-trust.md"
+FIXTURE = ROOT / "tests/fixtures/proof_models/observation_trust.json"
 
 STAGES = [
     "captured", "identities_bound", "dependence_bound", "pair_reviewed",
@@ -373,6 +375,9 @@ def lifecycle_mutations() -> list[tuple[str, dict, str, dict, str]]:
 def main() -> None:
     validate_lean_surface()
     failures = []
+    fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    if fixture.get("schema_version") != "1.0.0" or fixture.get("support_state_effect") != "none":
+        failures.append("observation-trust fixture metadata drifted")
     chapter = CHAPTER.read_text(encoding="utf-8")
     for phrase in (
         "support remains `argument`",
@@ -410,23 +415,18 @@ def main() -> None:
     if pair_failures:
         failures.append("pair-classification controls failed: " + ", ".join(pair_failures))
 
-    initial = canonical_state("captured")
+    initial = canonical_state(fixture["initial_stage"])
     state = copy.deepcopy(initial)
     observed = []
-    for index, event in enumerate(EVENTS, 1):
+    fixture_events = fixture["event_sequence"]
+    for index, event in enumerate(fixture_events, 1):
         state, route = apply_event(state, event, canonical_packet(index))
         observed.append(route)
-    if observed != [
-        "accept_identities", "accept_dependence", "accept_pair_review",
-        "accept_use_binding", "accept_handoff", "accept_invalidation",
-    ]:
+    if fixture_events != EVENTS or observed != fixture["expected_routes"]:
         failures.append(f"accepted route sequence drifted: {observed}")
-    if state["stage"] != "invalidated" or state["receipt_count"] != 6:
-        failures.append("complete lifecycle did not reach invalidated with six receipts")
-    if state["handoff_count"] != 1 or state["invalidation_count"] != 1:
-        failures.append("handoff/invalidation accounting drifted")
-    if state["support_assignment_count"] or state["external_authority_count"]:
-        failures.append("accepted lifecycle minted support or external authority")
+    expected_final = fixture["expected_final"]
+    if any(state.get(field) != value for field, value in expected_final.items()):
+        failures.append("complete lifecycle drifted from the fixture's exact final projection")
 
     composition_failures = []
     for split in range(len(EVENTS) + 1):
@@ -473,6 +473,21 @@ def main() -> None:
             "common-cause summary collisions failed: "
             + ", ".join(common_cause_collisions)
         )
+    collision = fixture["common_cause_collision"]
+    clear_fixture = {
+        "left_root": collision["left_root"],
+        "right_root": collision["right_root"],
+        "common_cause_present": collision["clear_common_cause_present"],
+    }
+    shared_fixture = {
+        **clear_fixture,
+        "common_cause_present": collision["shared_common_cause_present"],
+    }
+    if (
+        global_independence_admitted(clear_fixture) != collision["clear_admitted"]
+        or global_independence_admitted(shared_fixture) != collision["shared_admitted"]
+    ):
+        failures.append("fixture common-cause collision drifted")
 
     mutations = lifecycle_mutations()
     escaped = []

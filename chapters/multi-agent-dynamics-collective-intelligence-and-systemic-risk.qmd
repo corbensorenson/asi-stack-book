@@ -4,7 +4,7 @@ chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-03"
 primary_sources:
   - "ext_multi_agent_risks_2025"
   - "ext_cooperative_ai_foundations_2023"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five records cover advanced multi-agent risks, cooperative-AI foundations, gradual human disempowerment, constructive interdependence, and decision-theory disagreement. |
-| Test state | A 22-declaration Lean countermodel separates six-edge pairwise authorization from ten-dimension campaign readiness; no environment, agent, institution, market, or person observed. |
+| Test state | A 38-declaration Lean packet separates six-edge pairwise authorization from ten-dimension campaign readiness and locally authorized allocation traces from systemic concentration outcomes; no environment, agent, institution, market, or person observed. |
 
 ## Drafting guardrail
 
@@ -545,11 +545,12 @@ cannot promote claims about society.
 
 `lean:multi_agent.pairwise_validity_no_systemic_promotion` is implemented in
 `AsiStackProofs.MultiAgentDynamics` as a finite three-party population review.
-The 22 theorem declarations compute six directed pairwise-authorization edges,
-effective model-lineage diversity, diversification of compute and capital
-control, human stop reachability, participant and bystander coverage, human
-exit, recovery, residual custody, and the non-claim boundary. A complete record
-reaches `runTheseusPopulationCampaign`; a pairwise-only record has the identical
+The 38 theorem declarations contain two bounded models. The static admission
+guard computes six directed pairwise-authorization edges, effective model-
+lineage diversity, diversification of compute and capital control, human stop
+reachability, participant and bystander coverage, human exit, recovery,
+residual custody, and the non-claim boundary. A complete record reaches
+`runTheseusPopulationCampaign`; a pairwise-only record has the identical
 authorization matrix but fails campaign readiness and routes to dependency
 mapping.
 
@@ -558,10 +559,26 @@ to that pairwise matrix can exactly recover the full review for every record:
 the two closed records supply the same classifier input and require opposite
 outputs. Nine independently checkable systemic-axis mutations preserve all six
 pairwise authorizations, fail readiness, and reach their exact repair routes.
-This is a non-inference boundary over authored finite data, not a model of
-emergent behavior. It does not prove beneficial cooperation, non-collusion,
-systemic safety, effective human agency, institutional legitimacy, social
-prediction, support, or an external effect. Chapter support remains `argument`.
+
+The temporal model follows a conserved three-unit resource through locally
+authorized allocation events. Accepted steps preserve resource conservation,
+support and external-effect non-authority, and exact receipt accounting;
+successful batches compose; rejected events preserve the exact prior state;
+and exhaustion blocks every nonempty suffix. Two three-event traces have the
+same all-true local-authorization summary but opposite concentration outcomes:
+`[systemA, systemA, systemA]` breaches the authored limit while
+`[systemA, systemB, systemB]` does not. Therefore no Boolean classifier
+restricted to the local-authorization summary can recover the modeled systemic
+allocation outcome for every trace. The independent validator recompiles the
+exact theorem surface, checks both witnesses, all eight prefix/suffix splits,
+eight rejecting controls, three exhausted-state targets, and all three
+permutations of the diversified trace.
+
+This is a non-inference and transition-integrity boundary over authored finite
+data, not a model of emergent behavior. It does not prove beneficial
+cooperation, non-collusion, systemic safety, effective human agency,
+institutional legitimacy, social prediction, support, or an external effect.
+Chapter support remains `argument`.
 
 The executable handoff is a Project Theseus campaign that must vary population
 size, communication, common lineage, resource control, coalition incentives,
@@ -577,6 +594,7 @@ only those observations can evaluate population outcomes.
 |---|---|---|
 | Known-game positive controls | Recover seeded equilibria and deliberately seeded collusion/cascades. | planned |
 | Pairwise-only inference guard | Reject population-campaign readiness when identical pairwise evidence omits any modeled systemic axis. | implemented in Lean with nine exact mutations; no runtime outcome |
+| Local-to-systemic allocation guard | Preserve conservation, receipts, non-authority, rejection, composition, and exhaustion while showing identical local authorization can hide opposite concentration outcomes. | implemented in Lean; independent validator checks two traces, 8 splits, 8 rejecting controls, 3 exhausted targets, and 3 diversified permutations; no population outcome |
 | Effective-diversity audit | Detect common models, data, evaluators, and infrastructure behind nominally distinct agents. | finite lineage countermodel implemented; population campaign planned |
 | Cooperation-versus-collusion test | Show beneficiary and externality identity changes the policy. | planned |
 | Human-influence trajectory | Track veto, exit, option value, and dependence across repeated rounds. | finite stop/exit refusal implemented; longitudinal campaign planned |
