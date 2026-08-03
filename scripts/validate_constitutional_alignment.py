@@ -46,6 +46,32 @@ REQUIRED_LIFECYCLE_THEOREMS = {
     "predicate_widening_migration_is_rejected",
     "equal_predicate_counts_do_not_identify_predicate_sets",
     "no_predicate_count_decoder_recovers_both_collision_witnesses",
+    "accepted_amendment_event_is_admissible",
+    "accepted_amendment_event_is_exact_advance",
+    "accepted_amendment_event_preserves_custody",
+    "accepted_amendment_event_is_non_authorizing",
+    "accepted_review_separates_proposer_and_reviewer",
+    "accepted_ratification_separates_all_three_roles",
+    "accepted_ratification_requires_predicate_refinement",
+    "accepted_activation_uses_ratified_candidate_and_records_rollback",
+    "accepted_appeal_preserves_dissent_and_adverse_record",
+    "accepted_appeal_resolution_preserves_adverse_record",
+    "accepted_amendment_rollback_restores_exact_prior",
+    "accepted_amendment_rollback_preserves_dissent_and_adverse_record",
+    "accepted_amendment_event_never_erases_contestability_records",
+    "amendment_run_preserves_custody_and_non_authority",
+    "amendment_run_never_erases_contestability_records",
+    "amendment_runs_compose",
+    "complete_amendment_trace_reaches_contestable_exact_rollback",
+    "self_reviewed_amendment_is_rejected",
+    "proposer_ratification_is_rejected",
+    "reviewer_ratification_is_rejected",
+    "widening_amendment_cannot_be_ratified",
+    "activation_before_ratification_is_rejected",
+    "outsider_appeal_is_rejected",
+    "captured_appeal_review_is_rejected",
+    "rollback_before_appeal_is_upheld_is_rejected",
+    "rolled_back_amendment_is_closed",
 }
 
 TEST_TERMS = {
@@ -159,8 +185,8 @@ def compile_and_check_lean_surface() -> list[str]:
     missing = sorted(REQUIRED_LIFECYCLE_THEOREMS - theorem_names)
     if missing:
         errors.append(f"Lean lifecycle theorem surface is missing: {missing}.")
-    if len(theorem_names) != 47:
-        errors.append(f"Lean theorem surface drifted: expected 47, found {len(theorem_names)}.")
+    if len(theorem_names) != 73:
+        errors.append(f"Lean theorem surface drifted: expected 73, found {len(theorem_names)}.")
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/Alignment.lean"],
         cwd=LEAN_ROOT,
@@ -296,6 +322,275 @@ def lifecycle_errors() -> list[str]:
     return errors
 
 
+def apply_amendment_event(state: dict[str, Any], event: dict[str, Any]) -> dict[str, Any] | None:
+    common_matches = (
+        event["constitution_id"] == state["constitution_id"]
+        and event["amendment_id"] == state["amendment_id"]
+        and event["expected_version"] == state["version"]
+        and event["requested_authority_ceiling"] <= state["authority_ceiling"]
+        and event["requests_action_authority"] is False
+    )
+    if not common_matches:
+        return None
+
+    next_state = dict(state)
+    kind = event["kind"]
+    if kind == "record_review":
+        if not (
+            state["stage"] == "draft"
+            and event["actor_id"] == state["proposer_id"]
+            and event["reviewer_id"] != state["proposer_id"]
+            and event["target_version"] == state["version"]
+        ):
+            return None
+        next_state.update(
+            stage="reviewed",
+            reviewer_id=event["reviewer_id"],
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    elif kind == "ratify":
+        candidate_refines = all(
+            not state["candidate"][key] or state["prior"][key]
+            for key in ("dignity", "consent")
+        )
+        if not (
+            state["stage"] == "reviewed"
+            and event["reviewer_id"] == state["reviewer_id"]
+            and event["actor_id"] == event["ratifier_id"]
+            and state["reviewer_id"] != state["proposer_id"]
+            and event["ratifier_id"] != state["proposer_id"]
+            and event["ratifier_id"] != state["reviewer_id"]
+            and candidate_refines
+            and event["target_version"] == state["version"]
+        ):
+            return None
+        next_state.update(
+            stage="ratified",
+            ratifier_id=event["ratifier_id"],
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    elif kind == "activate":
+        if not (
+            state["stage"] == "ratified"
+            and event["actor_id"] == state["ratifier_id"]
+            and event["ratifier_id"] == state["ratifier_id"]
+            and event["target_version"] == state["version"] + 1
+            and event["rollback_target_version"] == state["version"]
+        ):
+            return None
+        next_state.update(
+            stage="active",
+            active=dict(state["candidate"]),
+            version=event["target_version"],
+            rollback_version=event["rollback_target_version"],
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    elif kind == "file_appeal":
+        independent_appeal_reviewer = event["appeal_reviewer_id"] not in {
+            state["proposer_id"],
+            state["reviewer_id"],
+            state["ratifier_id"],
+            state["affected_party_id"],
+        }
+        if not (
+            state["stage"] == "active"
+            and event["actor_id"] == state["affected_party_id"]
+            and independent_appeal_reviewer
+            and event["target_version"] == state["version"]
+        ):
+            return None
+        next_state.update(
+            stage="appealed",
+            appeal_reviewer_id=event["appeal_reviewer_id"],
+            dissent_count=state["dissent_count"] + 1,
+            adverse_record_count=state["adverse_record_count"] + 1,
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    elif kind == "uphold_appeal":
+        if not (
+            state["stage"] == "appealed"
+            and event["actor_id"] == state["appeal_reviewer_id"]
+            and event["appeal_reviewer_id"] == state["appeal_reviewer_id"]
+            and event["target_version"] == state["version"]
+        ):
+            return None
+        next_state.update(
+            stage="appeal_upheld",
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    elif kind == "rollback":
+        if not (
+            state["stage"] == "appeal_upheld"
+            and event["actor_id"] == state["ratifier_id"]
+            and event["ratifier_id"] == state["ratifier_id"]
+            and event["target_version"] == state["rollback_version"]
+        ):
+            return None
+        next_state.update(
+            stage="rolled_back",
+            active=dict(state["prior"]),
+            version=event["target_version"],
+            authority_ceiling=event["requested_authority_ceiling"],
+        )
+    else:
+        return None
+    return next_state
+
+
+def run_amendment_events(
+    initial: dict[str, Any], events: list[dict[str, Any]]
+) -> dict[str, Any] | None:
+    state = dict(initial)
+    state["prior"] = dict(initial["prior"])
+    state["candidate"] = dict(initial["candidate"])
+    state["active"] = dict(initial["active"])
+    for event in events:
+        next_state = apply_amendment_event(state, event)
+        if next_state is None:
+            return None
+        state = next_state
+    return state
+
+
+def amendment_lifecycle_errors() -> tuple[list[str], dict[str, int]]:
+    errors: list[str] = []
+    initial = {
+        "constitution_id": 7,
+        "amendment_id": 23,
+        "prior": {"dignity": True, "consent": True},
+        "candidate": {"dignity": True, "consent": False},
+        "active": {"dignity": True, "consent": True},
+        "proposer_id": 17,
+        "reviewer_id": 0,
+        "ratifier_id": 0,
+        "affected_party_id": 29,
+        "appeal_reviewer_id": 0,
+        "version": 1,
+        "rollback_version": 1,
+        "authority_ceiling": 3,
+        "stage": "draft",
+        "dissent_count": 0,
+        "adverse_record_count": 0,
+        "support_assignment_count": 0,
+        "external_effect_count": 0,
+    }
+    review = {
+        "kind": "record_review",
+        "constitution_id": 7,
+        "amendment_id": 23,
+        "actor_id": 17,
+        "reviewer_id": 19,
+        "ratifier_id": 0,
+        "appeal_reviewer_id": 0,
+        "expected_version": 1,
+        "target_version": 1,
+        "rollback_target_version": 1,
+        "requested_authority_ceiling": 3,
+        "requests_action_authority": False,
+    }
+    ratify = dict(review, kind="ratify", actor_id=31, ratifier_id=31)
+    activate = dict(ratify, kind="activate", actor_id=31, target_version=2)
+    appeal = dict(
+        activate,
+        kind="file_appeal",
+        actor_id=29,
+        appeal_reviewer_id=37,
+        expected_version=2,
+        target_version=2,
+    )
+    uphold = dict(appeal, kind="uphold_appeal", actor_id=37)
+    rollback = dict(uphold, kind="rollback", actor_id=31, target_version=1)
+    trace = [review, ratify, activate, appeal, uphold, rollback]
+
+    final = run_amendment_events(initial, trace)
+    expected_final = dict(
+        initial,
+        reviewer_id=19,
+        ratifier_id=31,
+        appeal_reviewer_id=37,
+        stage="rolled_back",
+        active=dict(initial["prior"]),
+        dissent_count=1,
+        adverse_record_count=1,
+    )
+    if final != expected_final:
+        errors.append(f"independent amendment lifecycle final state drifted: {final!r}")
+
+    split_count = 0
+    for split in range(len(trace) + 1):
+        middle = run_amendment_events(initial, trace[:split])
+        composed = None if middle is None else run_amendment_events(middle, trace[split:])
+        if composed != final:
+            errors.append(f"amendment lifecycle split {split} did not compose exactly")
+        else:
+            split_count += 1
+
+    controls: list[tuple[dict[str, Any], list[dict[str, Any]]]] = [
+        (initial, [dict(review, reviewer_id=17)]),
+        (
+            dict(initial, stage="reviewed", reviewer_id=17),
+            [dict(ratify, reviewer_id=17)],
+        ),
+        (initial, [review, dict(ratify, actor_id=17, ratifier_id=17)]),
+        (initial, [review, dict(ratify, actor_id=19, ratifier_id=19)]),
+        (
+            dict(
+                initial,
+                prior={"dignity": True, "consent": False},
+                candidate={"dignity": True, "consent": True},
+                active={"dignity": True, "consent": False},
+            ),
+            [review, ratify],
+        ),
+        (initial, [review, activate]),
+        (initial, [review, ratify, activate, dict(appeal, actor_id=41)]),
+        (initial, [review, ratify, activate, dict(appeal, appeal_reviewer_id=31)]),
+        (initial, [review, ratify, activate, appeal, rollback]),
+        (initial, [dict(review, requested_authority_ceiling=4)]),
+        (initial, [dict(review, requests_action_authority=True)]),
+    ]
+    rejected_controls = 0
+    for index, (control_initial, control_trace) in enumerate(controls, start=1):
+        if run_amendment_events(control_initial, control_trace) is not None:
+            errors.append(f"independent amendment lifecycle accepted rejecting control {index}")
+        else:
+            rejected_controls += 1
+
+    terminal_rejections = 0
+    if final is not None:
+        terminal_events = [
+            dict(review, kind="record_review", expected_version=1),
+            dict(ratify, kind="ratify", expected_version=1),
+            dict(activate, kind="activate", expected_version=1),
+            dict(appeal, kind="file_appeal", expected_version=1, target_version=1),
+            dict(uphold, kind="uphold_appeal", expected_version=1, target_version=1),
+            dict(rollback, kind="rollback", expected_version=1, target_version=1),
+        ]
+        for event in terminal_events:
+            if apply_amendment_event(final, event) is not None:
+                errors.append(f"rolled-back amendment accepted terminal event {event['kind']}")
+            else:
+                terminal_rejections += 1
+
+    counts = {
+        "accepted_event_count": len(trace),
+        "split_count": split_count,
+        "split_total": len(trace) + 1,
+        "rejecting_control_count": rejected_controls,
+        "terminal_rejection_count": terminal_rejections,
+    }
+    expected_counts = {
+        "accepted_event_count": 6,
+        "split_count": 7,
+        "split_total": 7,
+        "rejecting_control_count": 11,
+        "terminal_rejection_count": 6,
+    }
+    if counts != expected_counts:
+        errors.append(f"amendment lifecycle counts drifted: {counts!r}")
+    return errors, counts
+
+
 def predicate_refinement_errors() -> tuple[list[str], dict[str, int]]:
     errors: list[str] = []
     sets = [
@@ -374,7 +669,13 @@ def main() -> None:
         raise SystemExit(f"No constitutional-alignment fixtures found in {rel(FIXTURE_DIR)}.")
 
     predicate_errors, predicate_counts = predicate_refinement_errors()
-    errors: list[str] = compile_and_check_lean_surface() + lifecycle_errors() + predicate_errors
+    amendment_errors, amendment_counts = amendment_lifecycle_errors()
+    errors: list[str] = (
+        compile_and_check_lean_surface()
+        + lifecycle_errors()
+        + predicate_errors
+        + amendment_errors
+    )
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -411,6 +712,10 @@ def main() -> None:
         "Constitutional alignment harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s), "
         "4 lifecycle events, 5 rejecting lifecycle controls, "
+        f"{amendment_counts['accepted_event_count']} amendment events, "
+        f"{amendment_counts['split_count']}/{amendment_counts['split_total']} amendment splits, "
+        f"{amendment_counts['rejecting_control_count']} rejecting amendment controls, "
+        f"{amendment_counts['terminal_rejection_count']} terminal amendment rejections, "
         f"{predicate_counts['admitted_refinement_count']}/"
         f"{predicate_counts['predicate_pair_count']} admitted predicate refinements, "
         f"{predicate_counts['widening_rejection_count']} widening rejections, "

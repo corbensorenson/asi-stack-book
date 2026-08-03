@@ -33,7 +33,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 |---|---:|---:|---:|---:|---:|
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | 1 | 28 | 0 | 31 | 7 |
-| `lean/AsiStackProofs/Alignment.lean` | 2 | 47 | 0 | 26 | 8 |
+| `lean/AsiStackProofs/Alignment.lean` | 2 | 73 | 0 | 38 | 10 |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | 3 | 27 | 0 | 16 | 4 |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 21 | 0 | 34 | 4 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 37 | 0 | 11 | 5 |

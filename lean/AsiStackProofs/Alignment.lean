@@ -1058,4 +1058,565 @@ theorem no_predicate_count_decoder_recovers_both_collision_witnesses
       _ = consentOnlyPredicateSet := recoversConsent
   · exact Or.inl recoversDignity
 
+/-! ## Contestable constitutional amendment lifecycle
+
+This finite lifecycle separates proposal, independent review, ratification,
+activation, affected-party appeal, appeal adjudication, and rollback. The model
+proves exact role separation, predicate-set refinement, record custody,
+non-authority, adverse-history preservation, and exact modeled rollback. Actor
+identities, affected-party standing, predicate meaning, reviewer competence,
+ratifier legitimacy, and correspondence with external effects remain trusted
+inputs rather than conclusions.
+-/
+
+inductive AmendmentStage where
+  | draft
+  | reviewed
+  | ratified
+  | active
+  | appealed
+  | appealUpheld
+  | rolledBack
+deriving DecidableEq, Repr
+
+inductive AmendmentEventKind where
+  | recordReview
+  | ratify
+  | activate
+  | fileAppeal
+  | upholdAppeal
+  | rollback
+deriving DecidableEq, Repr
+
+structure AmendmentState where
+  constitutionId : Nat
+  amendmentId : Nat
+  prior : FinitePredicateSet
+  candidate : FinitePredicateSet
+  active : FinitePredicateSet
+  proposerId : Nat
+  reviewerId : Nat
+  ratifierId : Nat
+  affectedPartyId : Nat
+  appealReviewerId : Nat
+  version : Nat
+  rollbackVersion : Nat
+  authorityCeiling : Nat
+  stage : AmendmentStage
+  dissentCount : Nat
+  adverseRecordCount : Nat
+  supportAssignmentCount : Nat
+  externalEffectCount : Nat
+deriving DecidableEq, Repr
+
+structure AmendmentEvent where
+  kind : AmendmentEventKind
+  constitutionId : Nat
+  amendmentId : Nat
+  actorId : Nat
+  reviewerId : Nat
+  ratifierId : Nat
+  appealReviewerId : Nat
+  expectedVersion : Nat
+  targetVersion : Nat
+  rollbackTargetVersion : Nat
+  requestedAuthorityCeiling : Nat
+  requestsActionAuthority : Bool
+deriving DecidableEq, Repr
+
+def AmendmentEventAdmissible
+    (state : AmendmentState) (event : AmendmentEvent) : Prop :=
+  event.constitutionId = state.constitutionId ∧
+    event.amendmentId = state.amendmentId ∧
+    event.expectedVersion = state.version ∧
+    event.requestedAuthorityCeiling ≤ state.authorityCeiling ∧
+    event.requestsActionAuthority = false ∧
+    match event.kind with
+    | AmendmentEventKind.recordReview =>
+        state.stage = AmendmentStage.draft ∧
+          event.actorId = state.proposerId ∧
+          event.reviewerId ≠ state.proposerId ∧
+          event.targetVersion = state.version
+    | AmendmentEventKind.ratify =>
+        state.stage = AmendmentStage.reviewed ∧
+          event.reviewerId = state.reviewerId ∧
+          event.actorId = event.ratifierId ∧
+          state.reviewerId ≠ state.proposerId ∧
+          event.ratifierId ≠ state.proposerId ∧
+          event.ratifierId ≠ state.reviewerId ∧
+          FinitePredicateSet.Refines state.candidate state.prior ∧
+          event.targetVersion = state.version
+    | AmendmentEventKind.activate =>
+        state.stage = AmendmentStage.ratified ∧
+          event.actorId = state.ratifierId ∧
+          event.ratifierId = state.ratifierId ∧
+          event.targetVersion = state.version + 1 ∧
+          event.rollbackTargetVersion = state.version
+    | AmendmentEventKind.fileAppeal =>
+        state.stage = AmendmentStage.active ∧
+          event.actorId = state.affectedPartyId ∧
+          event.appealReviewerId ≠ state.proposerId ∧
+          event.appealReviewerId ≠ state.reviewerId ∧
+          event.appealReviewerId ≠ state.ratifierId ∧
+          event.appealReviewerId ≠ state.affectedPartyId ∧
+          event.targetVersion = state.version
+    | AmendmentEventKind.upholdAppeal =>
+        state.stage = AmendmentStage.appealed ∧
+          event.actorId = state.appealReviewerId ∧
+          event.appealReviewerId = state.appealReviewerId ∧
+          event.targetVersion = state.version
+    | AmendmentEventKind.rollback =>
+        state.stage = AmendmentStage.appealUpheld ∧
+          event.actorId = state.ratifierId ∧
+          event.ratifierId = state.ratifierId ∧
+          event.targetVersion = state.rollbackVersion
+
+instance amendmentEventAdmissibleDecidable
+    (state : AmendmentState) (event : AmendmentEvent) :
+    Decidable (AmendmentEventAdmissible state event) := by
+  unfold AmendmentEventAdmissible
+  cases event.kind <;> infer_instance
+
+def AdvanceAmendment
+    (state : AmendmentState) (event : AmendmentEvent) : AmendmentState :=
+  match event.kind with
+  | AmendmentEventKind.recordReview =>
+      { state with
+        stage := AmendmentStage.reviewed
+        reviewerId := event.reviewerId
+        authorityCeiling := event.requestedAuthorityCeiling }
+  | AmendmentEventKind.ratify =>
+      { state with
+        stage := AmendmentStage.ratified
+        ratifierId := event.ratifierId
+        authorityCeiling := event.requestedAuthorityCeiling }
+  | AmendmentEventKind.activate =>
+      { state with
+        stage := AmendmentStage.active
+        active := state.candidate
+        version := event.targetVersion
+        rollbackVersion := event.rollbackTargetVersion
+        authorityCeiling := event.requestedAuthorityCeiling }
+  | AmendmentEventKind.fileAppeal =>
+      { state with
+        stage := AmendmentStage.appealed
+        appealReviewerId := event.appealReviewerId
+        dissentCount := state.dissentCount + 1
+        adverseRecordCount := state.adverseRecordCount + 1
+        authorityCeiling := event.requestedAuthorityCeiling }
+  | AmendmentEventKind.upholdAppeal =>
+      { state with
+        stage := AmendmentStage.appealUpheld
+        authorityCeiling := event.requestedAuthorityCeiling }
+  | AmendmentEventKind.rollback =>
+      { state with
+        stage := AmendmentStage.rolledBack
+        active := state.prior
+        version := event.targetVersion
+        authorityCeiling := event.requestedAuthorityCeiling }
+
+def ApplyAmendmentEvent
+    (state : AmendmentState) (event : AmendmentEvent) : Option AmendmentState :=
+  if AmendmentEventAdmissible state event then
+    some (AdvanceAmendment state event)
+  else
+    none
+
+def RunAmendmentEvents :
+    AmendmentState → List AmendmentEvent → Option AmendmentState
+  | state, [] => some state
+  | state, event :: tail =>
+      match ApplyAmendmentEvent state event with
+      | none => none
+      | some next => RunAmendmentEvents next tail
+
+theorem accepted_amendment_event_is_admissible
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    AmendmentEventAdmissible state event := by
+  unfold ApplyAmendmentEvent at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_amendment_event_is_exact_advance
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    next = AdvanceAmendment state event := by
+  unfold ApplyAmendmentEvent at accepted
+  split at accepted
+  · simpa using accepted.symm
+  · simp at accepted
+
+theorem accepted_amendment_event_preserves_custody
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    next.constitutionId = state.constitutionId ∧
+      next.amendmentId = state.amendmentId ∧
+      next.prior = state.prior ∧
+      next.candidate = state.candidate ∧
+      next.proposerId = state.proposerId ∧
+      next.affectedPartyId = state.affectedPartyId := by
+  rw [accepted_amendment_event_is_exact_advance accepted]
+  cases kind : event.kind <;> simp [AdvanceAmendment, kind]
+
+theorem accepted_amendment_event_is_non_authorizing
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    next.authorityCeiling ≤ state.authorityCeiling ∧
+      event.requestsActionAuthority = false ∧
+      next.supportAssignmentCount = state.supportAssignmentCount ∧
+      next.externalEffectCount = state.externalEffectCount := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, ceiling, noAuthority, _⟩
+  subst next
+  exact ⟨by cases kind : event.kind <;> simpa [AdvanceAmendment, kind] using ceiling,
+    noAuthority,
+    by cases kind : event.kind <;> simp [AdvanceAmendment, kind],
+    by cases kind : event.kind <;> simp [AdvanceAmendment, kind]⟩
+
+theorem accepted_review_separates_proposer_and_reviewer
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.recordReview)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.stage = AmendmentStage.draft ∧
+      next.stage = AmendmentStage.reviewed ∧
+      next.reviewerId ≠ state.proposerId := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceAmendment, kind, route.1, route.2.2.1]
+
+theorem accepted_ratification_separates_all_three_roles
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.ratify)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.reviewerId ≠ state.proposerId ∧
+      next.ratifierId ≠ state.proposerId ∧
+      next.ratifierId ≠ state.reviewerId := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with
+    ⟨_, _, _, reviewerIndependent, ratifierProposer,
+      ratifierReviewer, _, _⟩
+  subst next
+  simpa [AdvanceAmendment, kind] using
+    ⟨reviewerIndependent, ratifierProposer, ratifierReviewer⟩
+
+theorem accepted_ratification_requires_predicate_refinement
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.ratify)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    FinitePredicateSet.Refines state.candidate state.prior := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  rcases route with ⟨_, _, _, _, _, _, refinement, _⟩
+  exact refinement
+
+theorem accepted_activation_uses_ratified_candidate_and_records_rollback
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.activate)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.stage = AmendmentStage.ratified ∧
+      next.stage = AmendmentStage.active ∧
+      next.active = state.candidate ∧
+      next.version = state.version + 1 ∧
+      next.rollbackVersion = state.version := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceAmendment, kind, route.1, route.2.2.2.1, route.2.2.2.2]
+
+theorem accepted_appeal_preserves_dissent_and_adverse_record
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.fileAppeal)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.stage = AmendmentStage.active ∧
+      next.stage = AmendmentStage.appealed ∧
+      next.dissentCount = state.dissentCount + 1 ∧
+      next.adverseRecordCount = state.adverseRecordCount + 1 := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceAmendment, kind, route.1]
+
+theorem accepted_appeal_resolution_preserves_adverse_record
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.upholdAppeal)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.stage = AmendmentStage.appealed ∧
+      next.stage = AmendmentStage.appealUpheld ∧
+      next.dissentCount = state.dissentCount ∧
+      next.adverseRecordCount = state.adverseRecordCount := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceAmendment, kind, route.1]
+
+theorem accepted_amendment_rollback_restores_exact_prior
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.rollback)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.stage = AmendmentStage.appealUpheld ∧
+      next.stage = AmendmentStage.rolledBack ∧
+      next.active = state.prior ∧
+      next.version = state.rollbackVersion := by
+  have admissible := accepted_amendment_event_is_admissible accepted
+  have exactAdvance := accepted_amendment_event_is_exact_advance accepted
+  rcases admissible with ⟨_, _, _, _, _, route⟩
+  rw [kind] at route
+  subst next
+  simp [AdvanceAmendment, kind, route.1, route.2.2.2]
+
+theorem accepted_amendment_rollback_preserves_dissent_and_adverse_record
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (kind : event.kind = AmendmentEventKind.rollback)
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    next.dissentCount = state.dissentCount ∧
+      next.adverseRecordCount = state.adverseRecordCount := by
+  rw [accepted_amendment_event_is_exact_advance accepted]
+  simp [AdvanceAmendment, kind]
+
+theorem accepted_amendment_event_never_erases_contestability_records
+    {state next : AmendmentState} {event : AmendmentEvent}
+    (accepted : ApplyAmendmentEvent state event = some next) :
+    state.dissentCount ≤ next.dissentCount ∧
+      state.adverseRecordCount ≤ next.adverseRecordCount := by
+  rw [accepted_amendment_event_is_exact_advance accepted]
+  cases kind : event.kind <;> simp [AdvanceAmendment, kind]
+
+theorem amendment_run_preserves_custody_and_non_authority
+    {initial final : AmendmentState} {events : List AmendmentEvent}
+    (run : RunAmendmentEvents initial events = some final) :
+    final.constitutionId = initial.constitutionId ∧
+      final.amendmentId = initial.amendmentId ∧
+      final.prior = initial.prior ∧
+      final.candidate = initial.candidate ∧
+      final.proposerId = initial.proposerId ∧
+      final.affectedPartyId = initial.affectedPartyId ∧
+      final.authorityCeiling ≤ initial.authorityCeiling ∧
+      final.supportAssignmentCount = initial.supportAssignmentCount ∧
+      final.externalEffectCount = initial.externalEffectCount := by
+  induction events generalizing initial with
+  | nil => simp [RunAmendmentEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunAmendmentEvents] at run
+      cases step : ApplyAmendmentEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          rcases accepted_amendment_event_preserves_custody step with
+            ⟨c, a, prior, candidate, proposer, affected⟩
+          rcases accepted_amendment_event_is_non_authorizing step with
+            ⟨ceiling, _, support, effects⟩
+          rcases ih run with
+            ⟨tc, ta, tprior, tcandidate, tproposer, taffected,
+              tceiling, tsupport, teffects⟩
+          exact ⟨tc.trans c, ta.trans a, tprior.trans prior,
+            tcandidate.trans candidate, tproposer.trans proposer,
+            taffected.trans affected, Nat.le_trans tceiling ceiling,
+            tsupport.trans support, teffects.trans effects⟩
+
+theorem amendment_run_never_erases_contestability_records
+    {initial final : AmendmentState} {events : List AmendmentEvent}
+    (run : RunAmendmentEvents initial events = some final) :
+    initial.dissentCount ≤ final.dissentCount ∧
+      initial.adverseRecordCount ≤ final.adverseRecordCount := by
+  induction events generalizing initial with
+  | nil => simp [RunAmendmentEvents] at run; subst final; simp
+  | cons event tail ih =>
+      simp only [RunAmendmentEvents] at run
+      cases step : ApplyAmendmentEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have head := accepted_amendment_event_never_erases_contestability_records step
+          have rest := ih run
+          exact ⟨Nat.le_trans head.1 rest.1, Nat.le_trans head.2 rest.2⟩
+
+theorem amendment_runs_compose
+    (initial : AmendmentState) (before after : List AmendmentEvent) :
+    RunAmendmentEvents initial (before ++ after) =
+      match RunAmendmentEvents initial before with
+      | none => none
+      | some middle => RunAmendmentEvents middle after := by
+  induction before generalizing initial with
+  | nil => simp [RunAmendmentEvents]
+  | cons event tail ih =>
+      simp only [List.cons_append, RunAmendmentEvents]
+      cases step : ApplyAmendmentEvent initial event with
+      | none => simp
+      | some next => simp [ih]
+
+def initialAmendmentState : AmendmentState := {
+  constitutionId := 7
+  amendmentId := 23
+  prior := { dignity := true, consent := true }
+  candidate := dignityOnlyPredicateSet
+  active := { dignity := true, consent := true }
+  proposerId := 17
+  reviewerId := 0
+  ratifierId := 0
+  affectedPartyId := 29
+  appealReviewerId := 0
+  version := 1
+  rollbackVersion := 1
+  authorityCeiling := 3
+  stage := AmendmentStage.draft
+  dissentCount := 0
+  adverseRecordCount := 0
+  supportAssignmentCount := 0
+  externalEffectCount := 0
+}
+
+def reviewAmendmentEvent : AmendmentEvent := {
+  kind := AmendmentEventKind.recordReview
+  constitutionId := 7
+  amendmentId := 23
+  actorId := 17
+  reviewerId := 19
+  ratifierId := 0
+  appealReviewerId := 0
+  expectedVersion := 1
+  targetVersion := 1
+  rollbackTargetVersion := 1
+  requestedAuthorityCeiling := 3
+  requestsActionAuthority := false
+}
+
+def ratifyAmendmentEvent : AmendmentEvent := {
+  reviewAmendmentEvent with
+  kind := AmendmentEventKind.ratify
+  actorId := 31
+  ratifierId := 31
+}
+
+def activateAmendmentEvent : AmendmentEvent := {
+  ratifyAmendmentEvent with
+  kind := AmendmentEventKind.activate
+  actorId := 31
+  targetVersion := 2
+}
+
+def appealAmendmentEvent : AmendmentEvent := {
+  activateAmendmentEvent with
+  kind := AmendmentEventKind.fileAppeal
+  actorId := 29
+  appealReviewerId := 37
+  expectedVersion := 2
+  targetVersion := 2
+}
+
+def upholdAmendmentAppealEvent : AmendmentEvent := {
+  appealAmendmentEvent with
+  kind := AmendmentEventKind.upholdAppeal
+  actorId := 37
+}
+
+def rollbackAmendmentEvent : AmendmentEvent := {
+  upholdAmendmentAppealEvent with
+  kind := AmendmentEventKind.rollback
+  actorId := 31
+  targetVersion := 1
+}
+
+def completeAmendmentTrace : List AmendmentEvent :=
+  [reviewAmendmentEvent, ratifyAmendmentEvent, activateAmendmentEvent,
+    appealAmendmentEvent, upholdAmendmentAppealEvent, rollbackAmendmentEvent]
+
+theorem complete_amendment_trace_reaches_contestable_exact_rollback :
+    RunAmendmentEvents initialAmendmentState completeAmendmentTrace =
+      some {
+        initialAmendmentState with
+        reviewerId := 19
+        ratifierId := 31
+        appealReviewerId := 37
+        stage := AmendmentStage.rolledBack
+        active := initialAmendmentState.prior
+        version := 1
+        rollbackVersion := 1
+        dissentCount := 1
+        adverseRecordCount := 1
+      } := by
+  decide
+
+theorem self_reviewed_amendment_is_rejected :
+    ApplyAmendmentEvent initialAmendmentState
+      { reviewAmendmentEvent with reviewerId := 17 } = none := by
+  decide
+
+theorem proposer_ratification_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent,
+        { ratifyAmendmentEvent with
+          actorId := 17
+          ratifierId := 17 }] = none := by
+  decide
+
+theorem reviewer_ratification_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent,
+        { ratifyAmendmentEvent with
+          actorId := 19
+          ratifierId := 19 }] = none := by
+  decide
+
+theorem widening_amendment_cannot_be_ratified :
+    let widening := {
+      initialAmendmentState with
+      prior := dignityOnlyPredicateSet
+      candidate := { dignity := true, consent := true }
+      active := dignityOnlyPredicateSet
+    }
+    RunAmendmentEvents widening
+      [reviewAmendmentEvent, ratifyAmendmentEvent] = none := by
+  decide
+
+theorem activation_before_ratification_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent, activateAmendmentEvent] = none := by
+  decide
+
+theorem outsider_appeal_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent, ratifyAmendmentEvent, activateAmendmentEvent,
+        { appealAmendmentEvent with actorId := 41 }] = none := by
+  decide
+
+theorem captured_appeal_review_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent, ratifyAmendmentEvent, activateAmendmentEvent,
+        { appealAmendmentEvent with appealReviewerId := 31 }] = none := by
+  decide
+
+theorem rollback_before_appeal_is_upheld_is_rejected :
+    RunAmendmentEvents initialAmendmentState
+      [reviewAmendmentEvent, ratifyAmendmentEvent, activateAmendmentEvent,
+        appealAmendmentEvent, rollbackAmendmentEvent] = none := by
+  decide
+
+theorem rolled_back_amendment_is_closed
+    (event : AmendmentEvent) :
+    ApplyAmendmentEvent
+      { initialAmendmentState with stage := AmendmentStage.rolledBack } event = none := by
+  unfold ApplyAmendmentEvent
+  split
+  · rename_i admissible
+    unfold AmendmentEventAdmissible at admissible
+    rcases admissible with ⟨_, _, _, _, _, route⟩
+    cases kind : event.kind <;> rw [kind] at route <;> simp at route
+  · rfl
+
 end AsiStackProofs.Alignment

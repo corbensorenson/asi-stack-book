@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2731 |
+| Theorem declarations classified | 2757 |
 | Direct/projection-style theorem declarations | 431 |
-| Derived/decomposed theorem declarations | 1712 |
-| Unknown or mixed theorem declarations | 588 |
-| Safety-critical theorem declarations | 145 |
+| Derived/decomposed theorem declarations | 1729 |
+| Unknown or mixed theorem declarations | 597 |
+| Safety-critical theorem declarations | 171 |
 | Safety-critical direct/projection declarations | 5 |
 | Safety-critical chapter classifications present | 2/2 |
 | Validation errors | 0 |
@@ -30,7 +30,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 47 | 3 | 37 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 73 | 3 | 54 | 16 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
@@ -55,7 +55,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | adversarial-machine-learning-and-model-attack-surface | 1 | 28 | 13 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 47 | 3 | 37 | 7 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 73 | 3 | 54 | 16 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | rankfold-neuralfold-and-artifact-compression | 3 | 27 | 0 | 17 | 10 | manual review |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -236,6 +236,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `review_run_preserves_stage_invariant` | derived_or_decomposed | no | uses induction, simp |
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_activation_requires_prior_independent_review` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_activation_uses_ratified_candidate_and_records_rollback` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_event_is_non_authorizing` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_event_never_erases_contestability_records` | derived_or_decomposed | yes | uses cases, rw, simp |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_event_preserves_custody` | derived_or_decomposed | yes | uses cases, rw, simp |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_rollback_preserves_dissent_and_adverse_record` | derived_or_decomposed | yes | uses rw, simp |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_amendment_rollback_restores_exact_prior` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_appeal_preserves_dissent_and_adverse_record` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_appeal_resolution_preserves_adverse_record` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_conflict_creates_one_residual` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_constitution_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_constitution_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
@@ -247,11 +257,20 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_predicate_migration_is_exact` | derived_or_decomposed | yes | uses simp, split, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_predicate_migration_refines_prior` | derived_or_decomposed | yes | uses have, rw |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_predicate_migration_stores_exact_rollback` | derived_or_decomposed | yes | uses rw |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_ratification_requires_predicate_refinement` | derived_or_decomposed | yes | uses have, rcases, rw |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_ratification_separates_all_three_roles` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `accepted_review_separates_proposer_and_reviewer` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_rollback_returns_to_recorded_version` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/Alignment.lean` | `accepted_transition_cannot_drop_protected_predicate` | derived_or_decomposed | yes | uses contradiction, rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `action_authority_request_cannot_enter_reviewed_stage` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `activation_before_ratification_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `activation_version_jump_is_rejected` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Alignment.lean` | `amendment_run_never_erases_contestability_records` | derived_or_decomposed | yes | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `amendment_run_preserves_custody_and_non_authority` | derived_or_decomposed | yes | uses cases, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/Alignment.lean` | `amendment_runs_compose` | derived_or_decomposed | yes | uses cases, induction, simp |
 | `lean/AsiStackProofs/Alignment.lean` | `authority_widening_cannot_enter_reviewed_stage` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `captured_appeal_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `complete_amendment_trace_reaches_contestable_exact_rollback` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `complete_constitution_trace_reaches_exact_rollback` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `complete_constitutional_lifecycle_admits_constraint` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `constitution_run_preserves_custody_and_non_authority` | derived_or_decomposed | yes | uses cases, have, induction, rcases, simp, subst |
@@ -274,14 +293,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Alignment.lean` | `missing_review_route_requests_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `missing_self_modification_rule_requests_rule` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `no_predicate_count_decoder_recovers_both_collision_witnesses` | derived_or_decomposed | yes | uses apply, by_cases, calc, rcases, right |
+| `lean/AsiStackProofs/Alignment.lean` | `outsider_appeal_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `predicate_refinement_is_transitive` | derived_or_decomposed | yes | uses constructor |
 | `lean/AsiStackProofs/Alignment.lean` | `predicate_substitution_cannot_enter_reviewed_stage` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `predicate_widening_migration_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `proposer_ratification_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_migration_without_rollback_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `protected_predicate_weakening_without_reviewer_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `reviewer_ratification_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `rollback_before_appeal_is_upheld_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `rollback_restores_exact_prior_predicate_set` | derived_or_decomposed | yes | uses unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `rolled_back_amendment_is_closed` | derived_or_decomposed | yes | uses cases, rcases, rw, simp, split, unfold |
 | `lean/AsiStackProofs/Alignment.lean` | `self_review_cannot_enter_reviewed_stage` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/Alignment.lean` | `self_reviewed_amendment_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/Alignment.lean` | `support_promotion_without_alignment_transition_requests_transition` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/Alignment.lean` | `widening_amendment_cannot_be_ratified` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `invalid_compressed_artifact_use_without_probe_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | `promotion_candidate_missing_residual_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ArtifactCompressionRefinement.lean` | `accepted_run_accounts_exact_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, omega, rw, simp, subst |

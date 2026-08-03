@@ -480,11 +480,19 @@ The current minimum is two public record schemas with valid fixtures, a
 constitutional-alignment harness with three valid and five expected-invalid
 cases, an agency-rights harness with three valid and six expected-invalid cases,
 a deterministic metaphysics-boundary surface audit, chapter-local finite Lean
-route models, a two-predicate migration refinement, and a shared safety-critical lifecycle model with an independently
+route models, a two-predicate migration refinement, a six-event contestable
+amendment lifecycle, and a shared safety-critical lifecycle model with an independently
 implemented trace checker and downstream effect-admission consumer. The seven
 manifest proof targets now separate retained generic record-routing
 countermodels from operational trace preservation, rejected authority widening,
-protected-predicate preservation, predicate-set subset refinement, exact modeled rollback, and deletion countermodels. The constitutional consumer also exhausts all sixteen prior/candidate pairs, admits nine subset refinements, rejects seven widenings, checks nine exact rollbacks, and preserves a same-count/different-predicate collision. The shared consumer
+protected-predicate preservation, predicate-set subset refinement, exact modeled
+rollback, and deletion countermodels. The 73-declaration Alignment surface
+separates proposer, reviewer, ratifier, affected-party appellant, and appeal
+reviewer; its independent consumer reconstructs six amendment events, all seven
+batch splits, eleven rejecting controls, and six terminal rejections. It also
+exhausts all sixteen prior/candidate pairs, admits nine subset refinements,
+rejects seven widenings, checks nine exact rollbacks, and preserves a
+same-count/different-predicate collision. The shared consumer
 independently replays five accepted and five rejected domain traces, commits
 five bounded fixture effects, denies five effects with residuals, and claims no
 support promotion; it is not a deployed rights or approval service.
@@ -548,7 +556,7 @@ unresolved conflicts remained after appeal and recovery.
 | Agency rights checklist validation | Check that the rights fixture records affected parties, review, appeal, rollback, accountability, and residual risk. | implemented by protocol validation and current harnesses |
 | Material-usability rights test | Check that declared rights are usable before the relevant effect where timing matters. | modeled by synthetic fixtures; real interface usability not run |
 | Agency correction route and lifecycle envelope | Check the generic route consequences plus a versioned material-notice, independent-review, bounded-control, affected-party-challenge, and accountable-correction lifecycle for exact custody, non-increasing authority, zero support/effect assignment, batch composition, one complete trace, and seven rejecting controls. | implemented by 24 `AsiStackProofs.Corrigibility` theorems and `python3 scripts/validate_agency_rights.py`: 5 accepted lifecycle events and 7 rejecting controls; no affected-party-standing, consent-quality, reviewer-competence, deployed-correction, rollback-effect, support-state-promotion, or runtime-corrigibility claim |
-| Constitutional route, transition, and predicate-refinement envelope | Check missing-field admission routes, a versioned independent-review, activation, conflict-residualization, and rollback trace, and finite predicate-set subset refinement with exact modeled rollback and count non-identifiability. | implemented by 47 `AsiStackProofs.Alignment` theorems and `python3 scripts/validate_constitutional_alignment.py`: 4 accepted lifecycle events, 5 rejecting lifecycle controls, 9/16 admitted subset refinements, 7 widening rejections, 9 exact rollbacks, and one same-count/different-predicate collision; no moral-correctness, predicate-semantic-adequacy, reviewer-competence, deployed alignment, rights-usability, rollback-effect, consent-quality, support-state-promotion, or runtime-policy claim |
+| Constitutional route, transition, and predicate-refinement envelope | Check missing-field admission routes, a versioned independent-review, activation, conflict-residualization, and rollback trace, a contestable proposal-review-ratification-appeal lifecycle, and finite predicate-set subset refinement with exact modeled rollback and count non-identifiability. | implemented by 73 `AsiStackProofs.Alignment` theorems and `python3 scripts/validate_constitutional_alignment.py`: 4 legacy events and 5 controls, 6 amendment events, 7/7 batch splits, 11 amendment controls, 6 terminal rejections, 9/16 admitted subset refinements, 7 widening rejections, 9 exact rollbacks, and one same-count/different-predicate collision; no moral-correctness, predicate-semantic-adequacy, reviewer or ratifier competence, legitimate standing, deployed alignment, rights-usability, rollback-effect, consent-quality, support-state-promotion, or runtime-policy claim |
 | Shared safety-critical lifecycle consumer trace | Independently replay five accepted and five rejected traces across Alignment, Corrigibility, Value Conflict, Governance Rights, and Self-Improvement, then admit bounded fixture effects only for accepted traces while residualizing denials. | implemented by `python3 scripts/validate_safety_critical_lifecycle_consumer_trace.py`: five bounded fixture commits, five denials with residuals, eight rejecting mutations, zero support promotions; local finite consumer only, not a deployed effect service or safety claim |
 | Metaphysics lineage boundary audit | Check that metaphysical and consciousness lineage stays labeled as speculative, interpretive, or design-rationale context rather than becoming proof, enforcement authority, or support-state evidence. | implemented by `python3 scripts/validate_alignment_metaphysics_boundary.py`; no moral-correctness, consciousness, deployed-alignment, runtime-corrigibility, or support-state claim |
 
@@ -558,7 +566,7 @@ unresolved conflicts remained after appeal and recovery.
 |---|---|---|---|
 | `lean:alignment.constitution.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | Every accepted finite lifecycle trace preserves the recorded protected predicate and cannot increase authority; an alignment effect commits only after the modeled alignment obligations are ready. | implemented |
 | `lean:alignment.constitution.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-predicate removal and actual authority widening are rejected by the transition function, and the alignment deletion countermodel without pre-effect review cannot commit. | implemented |
-| `lean:alignment.constitution.lifecycle_admission_route` | `AsiStackProofs.Alignment` | Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes. | implemented |
+| `lean:alignment.constitution.lifecycle_admission_route` | `AsiStackProofs.Alignment` | Modeled constitutional lifecycle admission routes missing predicate, source, operational-test, protected-scope, conflict-behavior, review, migration, self-modification, agency-rights, material-usability, pre-effect review, rollback, correction, reviewer-independence, evidence-transition, and non-claim-boundary records to explicit outcomes; a contestable amendment lifecycle separates proposal, independent review, ratification, affected-party appeal, appeal review, and rollback while preserving exact predicate custody, non-increasing authority, dissent and adverse history, batch composition, and exact prior-predicate restoration. | implemented |
 | `lean:alignment.constitution.predicate_refinement` | `AsiStackProofs.Alignment` | Accepted finite predicate migrations are subset refinements of the prior two-predicate set, compose transitively without reintroducing removed predicates, store and restore the exact prior set for rollback, reject a concrete widening, and cannot use scalar predicate count to identify predicate content. | implemented |
 | `lean:corrigibility.agency.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A corrigibility effect commits only after affected-party, notice, pre-effect review, approval, bounded-delegation, correction, rollback, and accountability obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
 | `lean:corrigibility.agency.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | The missing-affected-party countermodel cannot commit, and protected-predicate removal or authority widening remains unrepresentable as an accepted transition. | implemented |
@@ -579,7 +587,18 @@ transition model contains arbitrary-run custody and non-authority theorems,
 exact batch composition, review-before-activation, one-residual conflict
 handling, and return to the recorded version after residualization; a four-event witness and
 five rejecting substitutions are independently reconstructed by the existing
-fixture validator. The same module now proves subset refinement and transitivity for a finite two-predicate migration, exact prior-set rollback, concrete widening rejection, and non-identifiability from scalar predicate count; the validator exhausts all sixteen set pairs. These are authored transition and representation semantics, not proof that a
+	fixture validator. A separate six-event amendment lifecycle requires distinct
+	proposal, review, and ratification roles; affected-party appeal with a fourth
+	reviewer; refinement before ratification; non-increasing authority; monotone
+	dissent and adverse records; and exact prior-predicate rollback only after an
+	upheld appeal. Arbitrary runs preserve exact constitutional and predicate
+	custody, assign no support or external effects, and compose across every batch
+	split. The independent validator reconstructs the full path, ten rejecting
+	controls, and terminal closure. The same module also proves subset refinement
+	and transitivity for a finite two-predicate migration, exact prior-set rollback,
+	concrete widening rejection, and non-identifiability from scalar predicate
+	count; the validator exhausts all sixteen set pairs. These are authored
+	transition and representation semantics, not proof that a
 predicate is legitimate, a reviewer is competent, or rollback reverses a real
 effect. `AsiStackProofs.Corrigibility` retains those four generic route
 consequences. The P4-C3 audit recorded that the retired surface had no transition lifecycle or
