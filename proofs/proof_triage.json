@@ -1114,11 +1114,11 @@
       "tag": "lean:planning.scheduler_state.probe_fixture_bridge",
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.Planning",
-      "formal_target": "An independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while the retained Lean plan-admission route family covers contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches.",
+      "formal_target": "An independent finite scheduler-state consumer validates scheduler and local-repair traces, actual-edge PlanForge graph decisions and transports, and rejecting controls; graph-bound admission requires both lifecycle admissibility and an exact verified graph artifact before applying the planning transition.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as an exact theorem-surface and fixture binding: the independent scheduler consumer checks two accepted and seven rejected records and requires all 21 reachable lifecycle results within the 48-declaration Planning module. The former valid-summary projection remains retired."
+      "rationale": "Implemented as an exact theorem-surface and fixture binding: the independent scheduler consumer checks two accepted and seven rejected scheduler records, one valid and three rejected actual-edge graphs, a thin-summary admission collision, five reachable dependency pairs without a cycle, and twelve complete-transport mutations. It recompiles the 53-declaration Planning and 18-declaration PlanForge modules. Five graph-bound admission theorems require lifecycle admissibility, exact output-artifact/graph identity, and executable graph verification together. Support effect remains none."
     },
     {
       "tag": "lean:planning.runtime_replan.delta_audit_bridge",
@@ -1134,11 +1134,11 @@
       "tag": "lean:planforge.dag.operational_invariant",
       "chapter_id": "planning-as-a-control-layer",
       "module": "AsiStackProofs.PlanForge",
-      "formal_target": "For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency.",
+      "formal_target": "An executable finite plan graph verifies node bounds and strict topological order over its actual edge list; every dependency path strictly increases and therefore cannot cycle. A five-field summary has a valid/invalid admission collision that no exact summary-only classifier can recover, while the complete edge-carrying transport round-trips, is injective, and preserves admission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PlanForge as a finite indexed plan-graph predicate: dispatchable records carry an acyclicity certificate and all member dependency edges precede dependents."
+      "rationale": "The 18-declaration PlanForge surface retains the legacy listed-edge predicate and adds an executable verifier over graph identity, node count, actual edges, and declared boundaries. Verified member edges are in bounds and strictly ordered; dependency reachability is transitively increasing and excludes cycles; a concrete diamond graph is nonvacuous; self, reverse, and out-of-bounds graphs reject; a thin five-field summary has an admission-changing collision and no exact classifier; and the complete transport round-trips, is injective, and preserves admission. The existing scheduler consumer independently reconstructs these cases and mutations. This does not establish edge completeness or semantic dependency truth."
     },
     {
       "tag": "lean:planforge.dag.failure_blocks_promotion",

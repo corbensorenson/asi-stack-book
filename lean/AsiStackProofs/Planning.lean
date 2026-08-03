@@ -1,4 +1,5 @@
 import AsiStackProofs.IntentExecutionRefinement
+import AsiStackProofs.PlanForge
 
 namespace AsiStackProofs.Planning
 
@@ -1562,5 +1563,93 @@ theorem lowered_job_event_refines_vertical_lower_job
     ProjectPlanningStateToVertical, ProjectPlanningEventToVertical,
     ProjectPlanningPhaseToVerticalLayer, kind, phase, root, artifact, time,
     authority, hidden, residual, phasePair.1, phasePair.2]
+
+/-! ## PlanForge graph-bound admission bridge
+
+The lifecycle's graph booleans are not sufficient evidence about an edge list.
+This wrapper binds an admitted planning event to the exact PlanForge graph
+artifact and requires the executable edge verifier in the same transition.
+-/
+
+structure GraphBoundPlanAdmission where
+  event : PlanningLifecycleEvent
+  graph : AsiStackProofs.PlanForge.ExecutablePlanGraph
+deriving DecidableEq, Repr
+
+def GraphBoundPlanAdmissionAdmissible
+    (state : PlanningLifecycleState)
+    (admission : GraphBoundPlanAdmission) : Prop :=
+  admission.event.kind = .admitPlan ∧
+    admission.event.outputArtifact = admission.graph.graphId ∧
+      PlanningLifecycleEventAdmissible state admission.event ∧
+        AsiStackProofs.PlanForge.VerifiedPlanGraph admission.graph = true
+
+instance graphBoundPlanAdmissionAdmissibleDecidable
+    (state : PlanningLifecycleState) (admission : GraphBoundPlanAdmission) :
+    Decidable (GraphBoundPlanAdmissionAdmissible state admission) := by
+  unfold GraphBoundPlanAdmissionAdmissible
+  infer_instance
+
+def GraphBoundPlanAdmissionStep
+    (state : PlanningLifecycleState)
+    (admission : GraphBoundPlanAdmission) : Option PlanningLifecycleState :=
+  if GraphBoundPlanAdmissionAdmissible state admission then
+    some (ApplyPlanningLifecycleEvent state admission.event)
+  else
+    none
+
+theorem accepted_graph_bound_plan_admission_preserves_both_models
+    {state next : PlanningLifecycleState}
+    {admission : GraphBoundPlanAdmission}
+    (accepted : GraphBoundPlanAdmissionStep state admission = some next) :
+    PlanningLifecycleEventAdmissible state admission.event ∧
+      admission.event.outputArtifact = admission.graph.graphId ∧
+        AsiStackProofs.PlanForge.VerifiedPlanGraph admission.graph = true := by
+  unfold GraphBoundPlanAdmissionStep at accepted
+  split at accepted
+  · rcases ‹GraphBoundPlanAdmissionAdmissible state admission› with
+      ⟨_kind, artifact, lifecycle, verified⟩
+    exact ⟨lifecycle, artifact, verified⟩
+  · simp at accepted
+
+def diamondGraphBoundPlanAdmission : GraphBoundPlanAdmission where
+  event := basePlanningLifecycleEvent
+  graph := AsiStackProofs.PlanForge.diamondPlanGraph
+
+def selfDependentGraphBoundPlanAdmission : GraphBoundPlanAdmission where
+  event := basePlanningLifecycleEvent
+  graph := AsiStackProofs.PlanForge.selfDependentPlanGraph
+
+def mismatchedGraphBoundPlanAdmission : GraphBoundPlanAdmission where
+  event := basePlanningLifecycleEvent
+  graph := { AsiStackProofs.PlanForge.diamondPlanGraph with graphId := 9999 }
+
+theorem diamond_graph_bound_admission_reaches_admitted_state :
+    GraphBoundPlanAdmissionStep initialPlanningLifecycleState
+      diamondGraphBoundPlanAdmission = some admittedPlanningLifecycleState := by
+  decide
+
+theorem self_dependent_graph_bound_admission_is_rejected :
+    GraphBoundPlanAdmissionStep initialPlanningLifecycleState
+      selfDependentGraphBoundPlanAdmission = none := by
+  decide
+
+theorem mismatched_graph_artifact_admission_is_rejected :
+    GraphBoundPlanAdmissionStep initialPlanningLifecycleState
+      mismatchedGraphBoundPlanAdmission = none := by
+  decide
+
+theorem accepted_graph_bound_admission_projects_to_legacy_dispatchable
+    {state next : PlanningLifecycleState}
+    {admission : GraphBoundPlanAdmission}
+    (accepted : GraphBoundPlanAdmissionStep state admission = some next) :
+    AsiStackProofs.PlanForge.Dispatchable
+      (AsiStackProofs.PlanForge.ProjectExecutablePlanGraphToLegacy
+        admission.graph) := by
+  have both :=
+    accepted_graph_bound_plan_admission_preserves_both_models accepted
+  exact
+    AsiStackProofs.PlanForge.verified_plan_graph_projects_to_legacy_dispatchable
+      both.2.2
 
 end AsiStackProofs.Planning

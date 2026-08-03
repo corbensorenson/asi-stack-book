@@ -5462,12 +5462,22 @@
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "input_artifacts": [
         "lean/AsiStackProofs/Planning.lean",
+        "lean/AsiStackProofs/PlanForge.lean",
         "experiments/planning_scheduler_state/results/2026-07-02-local.json"
       ],
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
+      "output_contract": "Exact recompilation of the 53-declaration Planning and 18-declaration PlanForge surfaces; two accepted/seven rejected scheduler records; one valid/three rejected actual-edge graphs; five reachable dependency pairs without a cycle; one thin-summary admission collision; twelve complete-transport mutation rejections; graph-bound admission identity and verifier checks; and no support effect.",
+      "output_assertions": [
+        "two valid and seven invalid scheduler records",
+        "one valid and three rejected PlanForge graphs",
+        "five reachable dependency pairs without a cycle",
+        "one thin-summary admission collision",
+        "twelve complete graph-transport mutation rejections",
+        "exact Planning and PlanForge theorem surfaces",
+        "no support-state effect"
+      ],
+      "claim_scope": "The bounded scheduler records, finite actual-edge graph verifier, dependency-path cycle exclusion, summary non-identifiability, complete graph transport, and graph-bound admission bridge explicitly named by the validator.",
       "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "prohibited_inference": "does not establish decomposition quality, dependency truth or edge completeness, context or route adequacy, scheduler optimality, deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {
       "id": "validate_planning_runtime_replan_delta:142",

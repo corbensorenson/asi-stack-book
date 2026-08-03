@@ -13,6 +13,15 @@ route selection, conflicting merge acceptance, replanning authority erasure,
 accepted dependency cycles, and cost-quality ledgers that erase repair,
 human-review, failed-attempt, or residual costs.
 
+The same consumer now recompiles the exact 53-declaration Planning and
+18-declaration PlanForge modules. It independently reconstructs one valid
+diamond graph and three rejected self, reverse, or out-of-bounds graphs; five
+reachable dependency pairs with no cycle; one pair of distinct graphs with the
+same five-field summary but opposite admission decisions; and twelve mutations
+to the complete edge-carrying transport. The graph-bound Planning bridge admits
+the diamond only when lifecycle admissibility, output-artifact identity, and
+PlanForge verification hold together.
+
 Run:
 
 ```bash
@@ -25,7 +34,8 @@ The local result record is:
 experiments/planning_scheduler_state/results/2026-07-02-local.json
 ```
 
-This probe does not prove decomposition quality, context-demand prediction,
+This probe does not prove decomposition quality, dependency truth or edge
+completeness, context-demand prediction,
 selected-tier adequacy, route quality, scheduler optimality, deployed
 scheduler behavior, runtime replanning behavior, or chapter support-state
 promotion. In short: no support-state transition.

@@ -5,18 +5,18 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/planning-as-a-control-layer.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 44,
+    "prose_candidates_adjudicated": 45,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 actual-edge PlanForge and graph-bound Planning proof increment. All 45 prose candidates are mapped to existing structured ownership, bounded proof-status reporting, or nonmaterial explanation. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Accepted command obligations transformed into candidate, blocked, dispatchable, replanned, residualized, failed, stopped, or completed plan nodes for a declared consumer and purpose.",
-      "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; two no-change transitions; fifty-one Lean declarations including a reachable lifecycle and vertical refinement; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
+      "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; one valid and three rejected actual-edge graphs; twelve complete graph-transport mutations; two no-change transitions; seventy-one Lean declarations including a reachable lifecycle, vertical refinement, finite graph verifier, and graph-bound admission bridge; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
       "model": "A versioned consumer-relative plan policy over candidate decompositions, typed obligation graphs, assumptions and observations, dependency and feasibility predicates, route requests, lifecycle, scheduling, dispatch, merge, stop, recovery, replan, denominators, costs, and residuals; current implementations are trusted-field validators and finite routes, not a planner.",
       "authority": "Intent owns accepted semantics; Context and Memory own observations; Compilation owns lowering; Routing and Fields own worker qualification; Labor OS owns jobs; Runtime, Security, and Authority owners decide effects; Verification owns outcomes; Evidence and Readiness own support and release; Rights and Publication owners govern external use. Planning may order, block, request, replan, and residualize, but cannot grant authority or execute.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; nine reviewed source mappings; plan-graph and PlanForge-DAG fixtures; scheduler and replan traces; two no-change decisions; seven proof targets in two Lean modules; future natural tasks, plans, dependency labels, outcomes, costs, ablations, replications, and transfer bundles."
     },
     "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
@@ -89,7 +89,7 @@
       "An acyclic or optimally scheduled graph can encode false dependencies, omit obligations, or optimize the wrong model.",
       "Learned predictive state and planner self-evaluation can be miscalibrated, distribution-bound, or correlated with the plan generator.",
       "The current records use trusted fields and contain no planner-generated natural plan, independently measured dependency truth, live schedule, observed effect, or useful outcome.",
-      "The thirty-three theorem declarations establish finite consequences over modeled assumptions and do not prove general DAG acyclicity, dependency truth, planner quality, or runtime refinement.",
+      "The seventy-one theorem declarations establish finite consequences over modeled assumptions and actual listed edges; they do not establish dependency truth or completeness, planner quality, scheduler optimality, deployed behavior, or support movement.",
       "Both empirical transitions explicitly preserve no support-state change.",
       "Extra search, context, retries, parallelism, or human repair can explain apparent plan quality while increasing total cost.",
       "Fail-closed planning can look safe by dispatching nothing and suppress useful opportunity."
@@ -136,7 +136,7 @@
     },
     "non_claims": [
       "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
-      "The current seven valid records, twenty-six rejecting controls, two no-change transitions, and thirty-three theorem declarations establish only their exact record checks, finite branch consequences, and non-promotion boundaries.",
+      "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
       "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition."
     ]
   },
@@ -274,9 +274,9 @@
       ]
     },
     "planning-as-a-control-layer.formal.planning-scheduler-state-probe-fixture-bridge": {
-      "current_disposition": "retain_fixture_bridge_only_pending_live_scheduler",
-      "strongest_counterclaim": "The theorem trusts fixture summary bits and proves no scheduler policy, optimality, or deployed behavior.",
-      "falsifier": "A malformed trace can set the bits or the theorem is cited as scheduler evidence.",
+      "current_disposition": "retain_exact_graph_bound_fixture_bridge_pending_live_scheduler",
+      "strongest_counterclaim": "The bridge now binds lifecycle admissibility, exact artifact identity, and finite graph verification, but still proves no scheduler policy, optimality, or deployed behavior.",
+      "falsifier": "A mismatched or invalid graph reaches admission, or the theorem is cited as scheduler-quality or deployment evidence.",
       "acceptance_criteria": [
         "Connect typed traces to an independently implemented scheduler, observed dispatch, costs, outcomes, and perturbations."
       ]
@@ -290,11 +290,11 @@
       ]
     },
     "planning-as-a-control-layer.formal.planforge-dag-operational-invariant": {
-      "current_disposition": "retain_index_order_scaffold_not_general_dag_or_dependency_proof",
-      "strongest_counterclaim": "Increasing node indices encode only a chosen order and do not prove general acyclicity, dependency truth, or completeness.",
-      "falsifier": "The theorem is cited as general DAG correctness or a false dependency graph satisfies the ordering predicate.",
+      "current_disposition": "retain_actual_edge_finite_graph_proof_not_dependency_truth_or_completeness",
+      "strongest_counterclaim": "Strict order over every listed finite edge proves cycle exclusion for that representation, but authored edges may still be false, stale, or incomplete.",
+      "falsifier": "A bounded non-increasing listed edge is admitted, a verified listed-edge cycle exists, complete transport loses an edge or changes admission, or the result is cited as dependency-truth or completeness evidence.",
       "acceptance_criteria": [
-        "Model typed finite graphs, reachability, cycles, semantic dependency validity, missing edges, and executable scheduling refinement."
+        "Retain typed finite graph, reachability, cycle, summary-impossibility, and complete-transport checks; move semantic dependency validity, missing-edge detection, generated-plan production, and executable scheduling refinement to measured Project Theseus work."
       ]
     },
     "planning-as-a-control-layer.formal.planforge-dag-failure-blocks-promotion": {
@@ -467,10 +467,15 @@
       "rationale": "Restates beyond-SOTA promotion and transfer controls.",
       "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
     },
-    "planning-as-a-control-layer.prose.83f0b5a005aa": {
-      "state": "historical_or_source_report",
-      "rationale": "Reports the remaining natural planner harness gaps.",
+    "planning-as-a-control-layer.prose.f6842972c864": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the natural planner and Project Theseus evidence obligations after the finite proof increment.",
       "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    "planning-as-a-control-layer.prose.a08f3edfd608": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the bounded actual-edge path and cycle theorem result without extending it to dependency truth, completeness, or planner quality.",
+      "target_atom_id": "planning-as-a-control-layer.formal.planforge-dag-operational-invariant"
     },
     "planning-as-a-control-layer.prose.0292a70b6785": {
       "state": "duplicate_of_atom",

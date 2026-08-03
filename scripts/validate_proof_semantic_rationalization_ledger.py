@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 95,
-    "P1": 980,
-    "P2": 264,
-    "P3": 1085,
-    "P4": 183,
-    "P5": 221,
+    "P1": 982,
+    "P2": 267,
+    "P3": 1098,
+    "P4": 184,
+    "P5": 222,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2828,
+    "retain": 2848,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -333,10 +333,10 @@ EXPECTED_TARGETS = {
     ),
     "lean:planning.scheduler_state.probe_fixture_bridge": (
         "An independent finite scheduler-state consumer validates scheduler and "
-        "local-repair traces plus rejecting controls, while the retained Lean "
-        "plan-admission route family covers contract, decomposition, graph, authority, "
-        "context, adequacy, verification, dispatch, replanning, residual, and admission "
-        "branches."
+        "local-repair traces, actual-edge PlanForge graph decisions and transports, "
+        "and rejecting controls; graph-bound admission requires both lifecycle "
+        "admissibility and an exact verified graph artifact before applying the "
+        "planning transition."
     ),
     "lean:planning.runtime_replan.delta_audit_bridge": (
         "An independent finite runtime-replan consumer validates local-repair and "
@@ -353,9 +353,11 @@ EXPECTED_TARGETS = {
         "manifest is unsynchronized is rejected."
     ),
     "lean:planforge.dag.operational_invariant": (
-        "For every listed dependency edge in a finite dispatchable plan record, the "
-        "dependency index precedes the dependent index; the order predicate rules out "
-        "self-dependency."
+        "An executable finite plan graph verifies node bounds and strict topological "
+        "order over its actual edge list; every dependency path strictly increases and "
+        "therefore cannot cycle. A five-field summary has a valid/invalid admission "
+        "collision that no exact summary-only classifier can recover, while the complete "
+        "edge-carrying transport round-trips, is injective, and preserves admission."
     ),
     "lean:proofs.envelope.operational_invariant": (
         "Independent registry and artifact validators require each implemented target "
@@ -809,7 +811,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2828:
+    if summary.get("current_theorem_count") != 2848:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1125,8 +1127,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/Planning.lean"
     }
-    if len(planning_rows) != 48:
-        out.append("Planning must retain exactly forty-eight declarations")
+    if len(planning_rows) != 53:
+        out.append("Planning must retain exactly fifty-three declarations")
     if retired_planning_names & {row["name"] for row in planning_rows}:
         out.append("Planning retained an executed premise or summary projection")
 
@@ -1139,10 +1141,19 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             },
         ),
         "lean/AsiStackProofs/PlanForge.lean": (
-            3,
+            18,
             {
                 "dispatchable_plan_graph_orders_member_edges",
                 "dependency_precedence_blocks_self_dependency",
+                "verified_plan_graph_dependency_paths_strictly_increase",
+                "verified_plan_graph_excludes_dependency_cycles",
+                "diamond_plan_graph_has_reachable_join",
+                "self_dependency_graph_is_rejected",
+                "reverse_dependency_graph_is_rejected",
+                "out_of_bounds_graph_is_rejected",
+                "no_thin_plan_graph_classifier_recovers_both_decisions",
+                "complete_plan_graph_transport_is_injective",
+                "complete_plan_graph_transport_preserves_admission",
             },
         ),
         "lean/AsiStackProofs/ProofEnvelope.lean": (
@@ -1244,7 +1255,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2828
+        status.get("theorem_count") != 2848
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

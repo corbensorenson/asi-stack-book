@@ -1217,7 +1217,7 @@
       "chapter_title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "tag": "lean:planning.scheduler_state.probe_fixture_bridge",
       "module": "AsiStackProofs.Planning",
-      "formal_target": "An independent finite scheduler-state consumer validates scheduler and local-repair traces plus rejecting controls, while the retained Lean plan-admission route family covers contract, decomposition, graph, authority, context, adequacy, verification, dispatch, replanning, residual, and admission branches.",
+      "formal_target": "An independent finite scheduler-state consumer validates scheduler and local-repair traces, actual-edge PlanForge graph decisions and transports, and rejecting controls; graph-bound admission requires both lifecycle admissibility and an exact verified graph artifact before applying the planning transition.",
       "status": "implemented",
       "outline_line": 3120,
       "module_path": "lean/AsiStackProofs/Planning.lean"
@@ -1237,7 +1237,7 @@
       "chapter_title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "tag": "lean:planforge.dag.operational_invariant",
       "module": "AsiStackProofs.PlanForge",
-      "formal_target": "For every listed dependency edge in a finite dispatchable plan record, the dependency index precedes the dependent index; the order predicate rules out self-dependency.",
+      "formal_target": "An executable finite plan graph verifies node bounds and strict topological order over its actual edge list; every dependency path strictly increases and therefore cannot cycle. A five-field summary has a valid/invalid admission collision that no exact summary-only classifier can recover, while the complete edge-carrying transport round-trips, is injective, and preserves admission.",
       "status": "implemented",
       "outline_line": 3122,
       "module_path": "lean/AsiStackProofs/PlanForge.lean"

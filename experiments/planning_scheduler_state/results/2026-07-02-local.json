@@ -49,7 +49,12 @@
       "missing_replan_residual_is_rejected",
       "hidden_override_is_rejected_before_planning_transition",
       "admitted_plan_event_refines_vertical_lower_plan",
-      "lowered_job_event_refines_vertical_lower_job"
+      "lowered_job_event_refines_vertical_lower_job",
+      "accepted_graph_bound_plan_admission_preserves_both_models",
+      "diamond_graph_bound_admission_reaches_admitted_state",
+      "self_dependent_graph_bound_admission_is_rejected",
+      "mismatched_graph_artifact_admission_is_rejected",
+      "accepted_graph_bound_admission_projects_to_legacy_dispatchable"
     ]
   },
   "negative_controls": {
@@ -69,6 +74,45 @@
     "does not execute a deployed scheduler or runtime replanning loop",
     "does not promote the chapter support state"
   ],
+  "planforge_graph_alignment": {
+    "complete_transport_mutation_rejection_count": 12,
+    "graph_case_count": 4,
+    "module": "AsiStackProofs.PlanForge",
+    "planning_bridge_module": "AsiStackProofs.Planning",
+    "planning_bridge_theorem_refs": [
+      "accepted_graph_bound_plan_admission_preserves_both_models",
+      "diamond_graph_bound_admission_reaches_admitted_state",
+      "self_dependent_graph_bound_admission_is_rejected",
+      "mismatched_graph_artifact_admission_is_rejected",
+      "accepted_graph_bound_admission_projects_to_legacy_dispatchable"
+    ],
+    "proof_tag": "lean:planforge.dag.operational_invariant",
+    "reachable_pair_count": 5,
+    "rejected_graph_count": 3,
+    "theorem_count": 18,
+    "theorem_refs": [
+      "dispatchable_plan_graph_orders_member_edges",
+      "dependency_precedence_blocks_self_dependency",
+      "verified_plan_graph_member_edge_is_bounded_and_ordered",
+      "verified_plan_graph_dependency_paths_strictly_increase",
+      "verified_plan_graph_excludes_dependency_cycles",
+      "verified_plan_graph_routes_to_admission",
+      "diamond_plan_graph_is_verified",
+      "diamond_plan_graph_has_reachable_join",
+      "self_dependency_graph_is_rejected",
+      "reverse_dependency_graph_is_rejected",
+      "out_of_bounds_graph_is_rejected",
+      "thin_plan_graph_summary_has_admission_collision",
+      "no_thin_plan_graph_classifier_recovers_both_decisions",
+      "complete_plan_graph_transport_round_trips",
+      "complete_plan_graph_transport_is_injective",
+      "complete_plan_graph_transport_preserves_admission",
+      "verified_plan_graph_projects_to_legacy_dispatchable",
+      "failed_quality_predicate_routes_to_escalation_or_residual"
+    ],
+    "thin_summary_collision_count": 1,
+    "valid_graph_count": 1
+  },
   "recorded_date": "2026-07-02",
   "residuals": [
     "Synthetic scheduler-state fixture only; no deployed planner, scheduler, route-quality evaluator, or runtime replanning loop was exercised.",

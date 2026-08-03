@@ -2296,6 +2296,120 @@ for theorem_name in (
         ),
     }
 
+for theorem_name in (
+    "diamond_graph_bound_admission_reaches_admitted_state",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Planning.lean::{theorem_name}"
+    ] = {
+        **_planning_lifecycle_refinement_base,
+        "semantic_level": "P2",
+        "rationale": (
+            "The theorem is a closed nonvacuity witness that a verified actual-edge graph with exact artifact identity can reach admitted planning state."
+        ),
+    }
+
+for theorem_name in (
+    "self_dependent_graph_bound_admission_is_rejected",
+    "mismatched_graph_artifact_admission_is_rejected",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Planning.lean::{theorem_name}"
+    ] = {
+        **_planning_lifecycle_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem is a closed rejecting countermodel for invalid graph structure or graph/artifact identity at the planning admission boundary."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Planning.lean::accepted_graph_bound_plan_admission_preserves_both_models"
+] = {
+    **_planning_lifecycle_refinement_base,
+    "semantic_level": "P4",
+    "rationale": (
+        "The theorem composes the independent Planning lifecycle and PlanForge actual-edge verifier, preserving both models across one graph-bound admission transition."
+    ),
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Planning.lean::accepted_graph_bound_admission_projects_to_legacy_dispatchable"
+] = {
+    **_planning_lifecycle_refinement_base,
+    "semantic_level": "P1",
+    "rationale": (
+        "The theorem projects accepted graph-bound admission into the retained legacy dispatchability predicate and adds no deeper graph semantics."
+    ),
+}
+
+_planforge_graph_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the actual-edge finite graph semantics and transport are independently reconstructed by the scheduler-state consumer"
+    ],
+}
+
+for theorem_name in (
+    "diamond_plan_graph_is_verified",
+    "diamond_plan_graph_has_reachable_join",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PlanForge.lean::{theorem_name}"
+    ] = {
+        **_planforge_graph_refinement_base,
+        "semantic_level": "P2",
+        "rationale": (
+            "The theorem supplies a closed nonvacuity witness for verification or dependency reachability in a concrete diamond graph."
+        ),
+    }
+
+for theorem_name in (
+    "verified_plan_graph_member_edge_is_bounded_and_ordered",
+    "verified_plan_graph_dependency_paths_strictly_increase",
+    "verified_plan_graph_excludes_dependency_cycles",
+    "verified_plan_graph_routes_to_admission",
+    "self_dependency_graph_is_rejected",
+    "reverse_dependency_graph_is_rejected",
+    "out_of_bounds_graph_is_rejected",
+    "thin_plan_graph_summary_has_admission_collision",
+    "complete_plan_graph_transport_round_trips",
+    "complete_plan_graph_transport_is_injective",
+    "complete_plan_graph_transport_preserves_admission",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PlanForge.lean::{theorem_name}"
+    ] = {
+        **_planforge_graph_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves a quantified listed-edge/path/transport invariant or a closed rejecting/collision countermodel in the executable finite graph semantics."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/PlanForge.lean::no_thin_plan_graph_classifier_recovers_both_decisions"
+] = {
+    **_planforge_graph_refinement_base,
+    "semantic_level": "P5",
+    "rationale": (
+        "The theorem proves an information-loss impossibility: no classifier over the authored thin graph summary can recover both opposite admission decisions."
+    ),
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/PlanForge.lean::verified_plan_graph_projects_to_legacy_dispatchable"
+] = {
+    **_planforge_graph_refinement_base,
+    "semantic_level": "P1",
+    "rationale": (
+        "The theorem projects the verified actual-edge graph into the retained legacy summary predicate and adds no deeper graph property."
+    ),
+}
+
 CURRENT_SEMANTIC_OVERRIDES[
     "lean/AsiStackProofs/Planning.lean::complete_planning_lifecycle_trace_reaches_replanned_lowering"
 ] = {

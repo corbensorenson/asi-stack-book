@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -27,11 +29,13 @@ CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Planning.lean"
+PLANFORGE_LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PlanForge.lean"
 
 COMMAND = "python3 scripts/validate_planning_scheduler_state_probe.py"
 PROOF_TAG = "lean:planning.scheduler_state.probe_fixture_bridge"
 CODEX_TEST_NAME = "Planning scheduler-state probe"
-EXPECTED_PLANNING_THEOREM_COUNT = 48
+EXPECTED_PLANNING_THEOREM_COUNT = 53
+EXPECTED_PLANFORGE_THEOREM_COUNT = 18
 REQUIRED_THEOREMS = [
     "missing_command_contract_blocks_plan_graph_admission",
     "incomplete_decomposition_blocks_plan_graph_admission",
@@ -68,6 +72,31 @@ REQUIRED_THEOREMS = [
     "hidden_override_is_rejected_before_planning_transition",
     "admitted_plan_event_refines_vertical_lower_plan",
     "lowered_job_event_refines_vertical_lower_job",
+    "accepted_graph_bound_plan_admission_preserves_both_models",
+    "diamond_graph_bound_admission_reaches_admitted_state",
+    "self_dependent_graph_bound_admission_is_rejected",
+    "mismatched_graph_artifact_admission_is_rejected",
+    "accepted_graph_bound_admission_projects_to_legacy_dispatchable",
+]
+REQUIRED_PLANFORGE_THEOREMS = [
+    "dispatchable_plan_graph_orders_member_edges",
+    "dependency_precedence_blocks_self_dependency",
+    "verified_plan_graph_member_edge_is_bounded_and_ordered",
+    "verified_plan_graph_dependency_paths_strictly_increase",
+    "verified_plan_graph_excludes_dependency_cycles",
+    "verified_plan_graph_routes_to_admission",
+    "diamond_plan_graph_is_verified",
+    "diamond_plan_graph_has_reachable_join",
+    "self_dependency_graph_is_rejected",
+    "reverse_dependency_graph_is_rejected",
+    "out_of_bounds_graph_is_rejected",
+    "thin_plan_graph_summary_has_admission_collision",
+    "no_thin_plan_graph_classifier_recovers_both_decisions",
+    "complete_plan_graph_transport_round_trips",
+    "complete_plan_graph_transport_is_injective",
+    "complete_plan_graph_transport_preserves_admission",
+    "verified_plan_graph_projects_to_legacy_dispatchable",
+    "failed_quality_predicate_routes_to_escalation_or_residual",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not prove decomposition quality",
@@ -89,6 +118,45 @@ REQUIRED_LEDGER_FIELDS = {
 }
 READY_STATES = {"ready", "dispatchable", "running", "merged"}
 BLOCKED_STATES = {"blocked_context", "blocked_authority", "blocked_dependency", "blocked_verification"}
+
+PLAN_GRAPH_CASES = [
+    {
+        "case_id": "diamond_graph",
+        "expect_valid": True,
+        "graph_id": 1003,
+        "node_count": 4,
+        "declared_acyclic": True,
+        "declared_dependencies_ordered": True,
+        "edges": [(0, 1), (0, 2), (1, 3), (2, 3)],
+    },
+    {
+        "case_id": "self_dependency_graph",
+        "expect_valid": False,
+        "graph_id": 1003,
+        "node_count": 4,
+        "declared_acyclic": True,
+        "declared_dependencies_ordered": True,
+        "edges": [(0, 1), (0, 2), (1, 1), (2, 3)],
+    },
+    {
+        "case_id": "reverse_dependency_graph",
+        "expect_valid": False,
+        "graph_id": 1003,
+        "node_count": 4,
+        "declared_acyclic": True,
+        "declared_dependencies_ordered": True,
+        "edges": [(2, 1)],
+    },
+    {
+        "case_id": "out_of_bounds_graph",
+        "expect_valid": False,
+        "graph_id": 1003,
+        "node_count": 4,
+        "declared_acyclic": True,
+        "declared_dependencies_ordered": True,
+        "edges": [(3, 4)],
+    },
+]
 
 
 TRACES: list[dict[str, Any]] = [
@@ -490,7 +558,112 @@ def trace_errors(trace: dict[str, Any]) -> list[str]:
     return errors
 
 
-def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any]:
+def graph_verified(graph: dict[str, Any]) -> bool:
+    node_count = graph["node_count"]
+    return (
+        graph["declared_acyclic"] is True
+        and graph["declared_dependencies_ordered"] is True
+        and node_count > 0
+        and all(0 <= dependency < dependent < node_count for dependency, dependent in graph["edges"])
+    )
+
+
+def thin_graph_summary(graph: dict[str, Any]) -> tuple[Any, ...]:
+    return (
+        graph["graph_id"],
+        graph["node_count"],
+        len(graph["edges"]),
+        graph["declared_acyclic"],
+        graph["declared_dependencies_ordered"],
+    )
+
+
+def complete_graph_transport(graph: dict[str, Any]) -> tuple[Any, ...]:
+    return (
+        graph["graph_id"],
+        graph["node_count"],
+        tuple(graph["edges"]),
+        graph["declared_acyclic"],
+        graph["declared_dependencies_ordered"],
+    )
+
+
+def dependency_reachability(graph: dict[str, Any]) -> set[tuple[int, int]]:
+    reachable = set(graph["edges"])
+    changed = True
+    while changed:
+        changed = False
+        for start, middle in tuple(reachable):
+            for next_middle, finish in tuple(reachable):
+                if middle == next_middle and (start, finish) not in reachable:
+                    reachable.add((start, finish))
+                    changed = True
+    return reachable
+
+
+def validate_planforge_graph_cases(errors: list[str]) -> dict[str, int]:
+    valid_count = 0
+    rejected_count = 0
+    for graph in PLAN_GRAPH_CASES:
+        actual = graph_verified(graph)
+        if actual is bool(graph["expect_valid"]):
+            if actual:
+                valid_count += 1
+            else:
+                rejected_count += 1
+        else:
+            errors.append(f"{graph['case_id']}: graph-verifier decision drifted.")
+
+    diamond, self_dependent = PLAN_GRAPH_CASES[:2]
+    thin_collision_count = int(
+        diamond != self_dependent
+        and thin_graph_summary(diamond) == thin_graph_summary(self_dependent)
+        and graph_verified(diamond) != graph_verified(self_dependent)
+    )
+    if thin_collision_count != 1:
+        errors.append("PlanForge thin graph summary failed to expose its admission collision.")
+
+    reachable = dependency_reachability(diamond)
+    if (0, 3) not in reachable:
+        errors.append("PlanForge diamond graph did not reconstruct the 0-to-3 dependency path.")
+    if any(start == finish for start, finish in reachable):
+        errors.append("PlanForge verified graph admitted a dependency cycle.")
+
+    complete_transport_rejections = 0
+    mutations: list[dict[str, Any]] = []
+    for field in ("graph_id", "node_count", "declared_acyclic", "declared_dependencies_ordered"):
+        changed = copy.deepcopy(diamond)
+        if isinstance(changed[field], bool):
+            changed[field] = not changed[field]
+        else:
+            changed[field] += 1
+        mutations.append(changed)
+    for index in range(len(diamond["edges"])):
+        for endpoint in (0, 1):
+            changed = copy.deepcopy(diamond)
+            edge = list(changed["edges"][index])
+            edge[endpoint] += 10
+            changed["edges"][index] = tuple(edge)
+            mutations.append(changed)
+    for changed in mutations:
+        if complete_graph_transport(changed) != complete_graph_transport(diamond):
+            complete_transport_rejections += 1
+        else:
+            errors.append("PlanForge complete graph transport accepted a field mutation.")
+
+    return {
+        "graph_case_count": len(PLAN_GRAPH_CASES),
+        "valid_graph_count": valid_count,
+        "rejected_graph_count": rejected_count,
+        "reachable_pair_count": len(reachable),
+        "thin_summary_collision_count": thin_collision_count,
+        "complete_transport_mutation_rejection_count": complete_transport_rejections,
+    }
+
+
+def build_expected_result(
+    valid_count: int, invalid_count: int, graph_metrics: dict[str, int]
+) -> dict[str, Any]:
     return {
         "schema_version": "asi_stack.planning_scheduler_state_probe.v0",
         "result_id": "2026-07-02-planning-scheduler-state-probe",
@@ -529,6 +702,21 @@ def build_expected_result(valid_count: int, invalid_count: int) -> dict[str, Any
                 "support_state_effect_none": True,
                 "non_claim_boundary": True,
             },
+        },
+        "planforge_graph_alignment": {
+            "module": "AsiStackProofs.PlanForge",
+            "proof_tag": "lean:planforge.dag.operational_invariant",
+            "planning_bridge_module": "AsiStackProofs.Planning",
+            "theorem_count": EXPECTED_PLANFORGE_THEOREM_COUNT,
+            "theorem_refs": REQUIRED_PLANFORGE_THEOREMS,
+            "planning_bridge_theorem_refs": [
+                "accepted_graph_bound_plan_admission_preserves_both_models",
+                "diamond_graph_bound_admission_reaches_admitted_state",
+                "self_dependent_graph_bound_admission_is_rejected",
+                "mismatched_graph_artifact_admission_is_rejected",
+                "accepted_graph_bound_admission_projects_to_legacy_dispatchable",
+            ],
+            **graph_metrics,
         },
         "support_state_effect": "none",
         "chapter_core_support_effect": "none",
@@ -611,6 +799,30 @@ def validate_lean(errors: list[str]) -> None:
         if field not in text:
             errors.append(f"{rel(LEAN_FILE)} missing fixture field {field}.")
 
+    planforge_text = PLANFORGE_LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
+    planforge_theorem_count = len(
+        re.findall(r"(?m)^theorem\s+[A-Za-z_][A-Za-z0-9_']*", planforge_text)
+    )
+    if planforge_theorem_count != EXPECTED_PLANFORGE_THEOREM_COUNT:
+        errors.append(
+            f"{rel(PLANFORGE_LEAN_FILE)} has {planforge_theorem_count} theorem declarations; "
+            f"expected exactly {EXPECTED_PLANFORGE_THEOREM_COUNT}."
+        )
+    for theorem in REQUIRED_PLANFORGE_THEOREMS:
+        if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", planforge_text):
+            errors.append(f"{rel(PLANFORGE_LEAN_FILE)} missing theorem {theorem}.")
+    for path in (PLANFORGE_LEAN_FILE, LEAN_FILE):
+        completed = subprocess.run(
+            ["lake", "env", "lean", str(path.relative_to(ROOT / "lean"))],
+            cwd=ROOT / "lean",
+            capture_output=True,
+            text=True,
+        )
+        if completed.returncode:
+            errors.append(
+                f"{rel(path)} did not compile:\n{completed.stdout}{completed.stderr}"
+            )
+
 
 def validate_surfaces(errors: list[str]) -> None:
     required = {
@@ -689,7 +901,8 @@ def main() -> None:
     if invalid_count != 7:
         errors.append("Expected exactly seven expected-invalid controls.")
 
-    expected = build_expected_result(valid_count, invalid_count)
+    graph_metrics = validate_planforge_graph_cases(errors)
+    expected = build_expected_result(valid_count, invalid_count, graph_metrics)
     validate_result(expected, args.write_result, errors)
     validate_manifest(errors)
     validate_lean(errors)

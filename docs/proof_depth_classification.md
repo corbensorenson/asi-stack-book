@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2828 |
-| Direct/projection-style theorem declarations | 432 |
-| Derived/decomposed theorem declarations | 1764 |
-| Unknown or mixed theorem declarations | 632 |
+| Theorem declarations classified | 2848 |
+| Direct/projection-style theorem declarations | 433 |
+| Derived/decomposed theorem declarations | 1774 |
+| Unknown or mixed theorem declarations | 641 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -130,8 +130,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/OpenWeightReleaseReview.lean` | open-weight-release-and-post-release-control | 1 | 19 | 5 | 10 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | unmapped | 0 | 21 | 0 | 21 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | physical-compute-infrastructure-energy-and-environmental-constraints | 1 | 36 | 16 | 16 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 3 | 1 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 48 | 6 | 30 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 18 | 2 | 10 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 53 | 6 | 32 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 27 | 0 | 18 | 9 | manual review |
@@ -1873,9 +1873,26 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | `unit_efficiency_cannot_recover_total_impact` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
 | `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | `workload_change_invalidates_capacity_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean` | `workload_energy_estimate_does_not_establish_community_acceptability` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PlanForge.lean` | `complete_plan_graph_transport_is_injective` | derived_or_decomposed | no | uses calc, left, right |
+| `lean/AsiStackProofs/PlanForge.lean` | `complete_plan_graph_transport_preserves_admission` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/PlanForge.lean` | `complete_plan_graph_transport_round_trips` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/PlanForge.lean` | `dependency_precedence_blocks_self_dependency` | derived_or_decomposed | no | uses rw, unfold |
+| `lean/AsiStackProofs/PlanForge.lean` | `diamond_plan_graph_has_reachable_join` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PlanForge.lean` | `diamond_plan_graph_is_verified` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PlanForge.lean` | `dispatchable_plan_graph_orders_member_edges` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PlanForge.lean` | `failed_quality_predicate_routes_to_escalation_or_residual` | derived_or_decomposed | no | uses cases, rw |
+| `lean/AsiStackProofs/PlanForge.lean` | `no_thin_plan_graph_classifier_recovers_both_decisions` | derived_or_decomposed | no | uses apply, by_cases, calc, have, right |
+| `lean/AsiStackProofs/PlanForge.lean` | `out_of_bounds_graph_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PlanForge.lean` | `reverse_dependency_graph_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PlanForge.lean` | `self_dependency_graph_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PlanForge.lean` | `thin_plan_graph_summary_has_admission_collision` | unknown_or_mixed | no | contains sorry/admit marker |
+| `lean/AsiStackProofs/PlanForge.lean` | `verified_plan_graph_dependency_paths_strictly_increase` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/PlanForge.lean` | `verified_plan_graph_excludes_dependency_cycles` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PlanForge.lean` | `verified_plan_graph_member_edge_is_bounded_and_ordered` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/PlanForge.lean` | `verified_plan_graph_projects_to_legacy_dispatchable` | derived_or_decomposed | no | uses constructor |
+| `lean/AsiStackProofs/PlanForge.lean` | `verified_plan_graph_routes_to_admission` | unknown_or_mixed | no | contains sorry/admit marker |
+| `lean/AsiStackProofs/Planning.lean` | `accepted_graph_bound_admission_projects_to_legacy_dispatchable` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/Planning.lean` | `accepted_graph_bound_plan_admission_preserves_both_models` | derived_or_decomposed | no | uses rcases, simp, split, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `accepted_planning_lifecycle_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `accepted_planning_lifecycle_step_is_admissible` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `accepted_planning_lifecycle_step_preserves_invariant` | derived_or_decomposed | no | uses rw |
@@ -1888,6 +1905,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `complete_planning_lifecycle_trace_reaches_replanned_lowering` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `complete_replanned_graph_routes_to_admissible` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `cyclic_plan_graph_blocks_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `diamond_graph_bound_admission_reaches_admitted_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `feedback_before_job_lowering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `hidden_override_is_rejected_before_planning_transition` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `inadequate_selected_route_is_rejected_before_node_readiness` | unknown_or_mixed | no | no recognized depth pattern |
@@ -1895,6 +1913,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `incomplete_decomposition_is_rejected_before_plan_admission` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `initial_planning_lifecycle_state_satisfies_invariant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Planning.lean` | `lowered_job_event_refines_vertical_lower_job` | derived_or_decomposed | no | uses have, rcases, simp |
+| `lean/AsiStackProofs/Planning.lean` | `mismatched_graph_artifact_admission_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `missing_adequacy_contract_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `missing_command_contract_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `missing_context_demand_blocks_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
@@ -1913,6 +1932,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_blocked_authority_dispatch_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_complete_audit_accepted` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `runtime_replan_delta_stop_erasure_rejected` | derived_or_decomposed | no | uses rw, simp, unfold |
+| `lean/AsiStackProofs/Planning.lean` | `self_dependent_graph_bound_admission_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `stop_condition_erasure_is_rejected_before_replan` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Planning.lean` | `unordered_dependencies_block_plan_graph_admission` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Planning.lean` | `unsatisfied_required_constraints_block_dispatch` | derived_or_decomposed | no | uses cases, rw, unfold |

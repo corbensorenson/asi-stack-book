@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3894,
+    "candidate_count": 3895,
     "review_state_counts": {
-      "duplicate_of_atom": 1858,
+      "duplicate_of_atom": 1859,
       "editorial_or_question": 58,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -24390,7 +24390,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.c1fd69f2c87d",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:458",
+      "source": "chapters/planning-as-a-control-layer.qmd:460",
       "sentence": "stop and recovery; causal ablations; clean reproduction; and transfer.",
       "cues": [
         "transfer"
@@ -24409,7 +24409,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.30c119f8b61c",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:483",
+      "source": "chapters/planning-as-a-control-layer.qmd:485",
       "sentence": "controls, transfer, and an accepted claim-specific transition.",
       "cues": [
         "transfer"
@@ -24428,7 +24428,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.218e1aaacbfc",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:491",
+      "source": "chapters/planning-as-a-control-layer.qmd:493",
       "sentence": "evaluation, causal ablations, reproduction, and transfer pass.",
       "cues": [
         "transfer"
@@ -24445,12 +24445,32 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "planning-as-a-control-layer.prose.83f0b5a005aa",
+      "candidate_id": "planning-as-a-control-layer.prose.f6842972c864",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:516",
-      "sentence": "Decomposition quality, dependency truth, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, deployed runtime replanning, causal benefit, and support-state movement still require a natural planner harness and Project Theseus system evidence.",
+      "source": "chapters/planning-as-a-control-layer.qmd:518",
+      "sentence": "Decomposition quality, dependency truth and edge completeness, context-demand prediction, selected-tier adequacy, route quality, live feedback handling, deployed scheduling/replanning, causal benefit, and support-state movement still require a natural planner harness and Project Theseus system evidence.",
       "cues": [
         "require"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the natural planner and Project Theseus evidence obligations after the finite proof increment.",
+      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+    },
+    {
+      "candidate_id": "planning-as-a-control-layer.prose.a08f3edfd608",
+      "chapter_id": "planning-as-a-control-layer",
+      "source": "chapters/planning-as-a-control-layer.qmd:543",
+      "sentence": "edge list, proves every dependency path strictly increases and excludes cycles,",
+      "cues": [
+        "increases",
+        "proves"
       ],
       "review_state": "historical_or_source_report",
       "allowed_dispositions": [
@@ -24460,13 +24480,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Reports the remaining natural planner harness gaps.",
-      "target_atom_id": "planning-as-a-control-layer.minimum.001"
+      "disposition_rationale": "Reports the bounded actual-edge path and cycle theorem result without extending it to dependency truth, completeness, or planner quality.",
+      "target_atom_id": "planning-as-a-control-layer.formal.planforge-dag-operational-invariant"
     },
     {
       "candidate_id": "planning-as-a-control-layer.prose.0292a70b6785",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:551",
+      "source": "chapters/planning-as-a-control-layer.qmd:557",
       "sentence": "Stronger graph semantics, executable planner producers, observed outcomes, causal comparison, deployment, reproduction, and transfer remain Project Theseus or empirical obligations.",
       "cues": [
         "transfer"
@@ -24485,7 +24505,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.928295b48aad",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:553",
+      "source": "chapters/planning-as-a-control-layer.qmd:559",
       "sentence": "These targets do not prove planning correctness, dependency truth, useful",
       "cues": [
         "prove"
@@ -24504,7 +24524,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.98689027e874",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:566",
+      "source": "chapters/planning-as-a-control-layer.qmd:572",
       "sentence": "The plan node must therefore name the observation and world-model versions,",
       "cues": [
         "must"
@@ -24523,7 +24543,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.1cd2d5670ba1",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:572",
+      "source": "chapters/planning-as-a-control-layer.qmd:578",
       "sentence": "Adoption requires a matched baseline, intervention",
       "cues": [
         "requires"
@@ -24542,7 +24562,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.10736586eaee",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:608",
+      "source": "chapters/planning-as-a-control-layer.qmd:614",
       "sentence": "predictive control, or transfer beyond the declared interface.",
       "cues": [
         "transfer"
@@ -24561,7 +24581,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.fdc62448f305",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:626",
+      "source": "chapters/planning-as-a-control-layer.qmd:632",
       "sentence": "paper's laboratory-access trace demonstrates the intended object flow only; it",
       "cues": [
         "demonstrates"
@@ -24580,7 +24600,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.4469d4dd41dc",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:667",
+      "source": "chapters/planning-as-a-control-layer.qmd:673",
       "sentence": "The present fixtures and Lean modules show how selected synthetic records route",
       "cues": [
         "show"
@@ -24599,7 +24619,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.b02f33cd62ae",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:668",
+      "source": "chapters/planning-as-a-control-layer.qmd:674",
       "sentence": "They do not show that a planner finds good decompositions, true",
       "cues": [
         "show"
@@ -24618,7 +24638,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.7901923176e3",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:672",
+      "source": "chapters/planning-as-a-control-layer.qmd:678",
       "sentence": "ablations, reproduction, and transfer produce claim-specific evidence.",
       "cues": [
         "transfer"
@@ -24637,7 +24657,7 @@
     {
       "candidate_id": "planning-as-a-control-layer.prose.15391e775a25",
       "chapter_id": "planning-as-a-control-layer",
-      "source": "chapters/planning-as-a-control-layer.qmd:721",
+      "source": "chapters/planning-as-a-control-layer.qmd:727",
       "sentence": "predicted world is true and cannot authorize an effect.",
       "cues": [
         "cannot"
