@@ -3893,7 +3893,7 @@ Draft deliverables:
   establish an optimal organization, legitimate authority, legal liability, or
   local outcome.
 - Implemented exact formal envelope: `AsiStackProofs.HumanAIOrganizations`
-  contains 21 theorem declarations over a five-stage finite accountability
+  contains 42 theorem declarations over a five-stage finite accountability
   review. A stage invariant holds for every finite run; assignment readiness
   implies all 20 authored identity, capacity, authority, independence,
   remedy/custody, and non-claim fields. One complete witness and 17 exact
@@ -3909,7 +3909,7 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A five-stage finite review preserves staged capacity, authority, independence, and remedy invariants over arbitrary run length; assignable accountability requires all 20 authored fields, while 17 closed mutations reach exact repair states. It establishes no field truth, lawful accountability, human control, organizational outcome, support, or external effect. | implemented |
+| `lean:human_ai_org.accountability_requires_authority` | `AsiStackProofs.HumanAIOrganizations` | A five-stage finite review preserves staged capacity, authority, independence, and remedy invariants over arbitrary run length; assignable accountability requires all 20 authored fields, while 20 closed mutations reach exact repair states. A separate ten-stage delegation-to-remedy lifecycle proves arbitrary-run nine-field identity custody, support/effect non-authority, exact receipts, contest/remedy monotonicity, accepted traces, batch composition, absorbing closure, and one bounded adverse-path witness; an independent consumer reaches all 39 routes and rejects 156/156 lifecycle mutations. It establishes no field truth, lawful accountability, human control, organizational outcome, support, or external effect. | implemented |
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:ai-deployment-transition-distribution-and-human-agency:BEGIN -->
 ### Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty
@@ -6206,7 +6206,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2605 theorem declarations, 1616 derived/decomposed, 425 direct/projection, 564 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2626 theorem declarations, 1635 derived/decomposed, 425 direct/projection, 566 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

@@ -221,8 +221,17 @@ from proposed accountability through identity, capacity, authority,
 independence, remedy/custody, and assignment readiness. A stage invariant is
 preserved by one transition and by induction over arbitrary finite run length;
 any reachable `accountabilityAssignable` state therefore requires all twenty
-authored fields. One complete witness reaches readiness and seventeen closed
-mutations reach exact repair states.
+authored fields. One complete witness reaches readiness and twenty closed
+mutations reach exact refusal or repair states.
+
+A separate ten-stage delegation-to-remedy lifecycle binds nine identities from
+delegation through activation, escalation, handoff, contestation, authority
+expiry, incident reconstruction, remedy, and closure. Arbitrary successful
+runs preserve identity and zero support/external-effect authority, account for
+exact receipts, keep contest and remedy receipts monotone, expose accepted
+traces, compose across event batches, and stop at closure. One nine-event
+adverse-path witness closes with authority zero; the independent consumer
+reaches all 39 routes and rejects 156/156 lifecycle mutations.
 
 The model checks only authored Boolean fields. It proves no field truth,
 reviewer competence, practical human intervention, lawful or legitimate
@@ -760,9 +769,18 @@ fail readiness and reach exact repair routes, while three arithmetic
 monotonicity controls preserve timing validity under reduced latency or
 preserve rejection under worsened state and fallback bounds.
 
+A separate eight-stage simulation-trial review lifecycle adds nineteen
+theorems, bringing the module to 41 declarations. It proves arbitrary-run
+nine-field identity custody, support/effect non-authority, exact receipt
+accounting, stop-count monotonicity, accepted traces, batch composition,
+absorbing closure, one seven-event closed witness, and safety-axis start
+blocking. The independent consumer checks all eight trace splits and rejects
+105 lifecycle mutations without treating the simulation-review record as a
+physical execution.
+
 `scripts/validate_embodied_physical_safety.py` independently re-encodes the
-positive route, 13 exact mutation routes, and three arithmetic monotonicity
-controls. The model trusts every authored plant, estimator, controller,
+positive route, 13 exact mutation routes, three arithmetic monotonicity
+controls, and 105 lifecycle mutations. The model trusts every authored plant, estimator, controller,
 timing, effect, custody, and boundary field. It proves no plant truth, physical
 or human safety, deadline satisfaction, safe-set validity, fallback
 effectiveness, recovery, support transition, release, transfer, external

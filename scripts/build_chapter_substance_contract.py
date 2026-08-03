@@ -830,15 +830,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-organizations-delegation-and-accountability": {
-        "reviewed_sha256": "b33d68ac2929bd25e425df9815b0298199128f14ac70412a736d9388cd71d2ce",
-        "reviewed_date": "2026-08-01",
+        "reviewed_sha256": "40f174f80720b78fd630673248122b88906172ac58e813d39f5aa038da5fd394",
+        "reviewed_date": "2026-08-02",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts distinguish charter and standing, operational role capacity, decision rights, bounded delegation, duty separation, incentives, longitudinal contribution and dependence, accountability and remedy, and succession or dissolution",
             "NIST, moral-crumple-zone analysis, authority-allocation theory, workplace evidence, constructive interdependence, teaming synthesis, feedback-loop experiments, EU liability analysis, and Talos remain framework, conceptual, model, setting, metric, population, jurisdiction, or authorial comparators rather than proof of one superior or legitimate organization",
             "the chapter preserves affected nonusers, practical intervention, workload and accessibility, strongest-component baselines, attrition, evidence access, legal non-claims, unowned-residual closure blocks, and argument-only support",
-            "the added five-stage Lean review and twenty-field mutation consumer establish only finite authored-record reachability and refusal; explicit prose preserves field-truth, real human-control, lawful-accountability, organizational-outcome, support, and external-effect nonclaims",
+            "the retained five-stage Lean review and twenty-field mutation consumer establish only finite authored-record reachability and refusal; the added ten-stage delegation-to-remedy lifecycle and 156-mutation consumer establish only authored identity custody, ordering, receipts, non-authority, and closure, while explicit prose preserves field-truth, reviewer-competence, real human-control, remedy-effectiveness, lawful-accountability, organizational-outcome, support, and external-effect nonclaims",
         ],
         "support_state_effect": "none",
     },

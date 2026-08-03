@@ -1640,8 +1640,8 @@ def errors(data: dict) -> list[str]:
     c6_overlay_status = convergence.get("c6_current_semantic_overlay", {})
     c6_overlay = data["proof_semantic_depth_overlay"]
     expected_c6_levels = {
-        "P0": 50,
-        "P1": 907,
+        "P0": 62,
+        "P1": 916,
         "P2": 225,
         "P3": 1063,
         "P4": 175,
@@ -1649,7 +1649,7 @@ def errors(data: dict) -> list[str]:
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 2605,
+        "retain": 2626,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 2605
+        or c6_overlay_status.get("theorem_count") != 2626
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 2605
+        c6_summary.get("current_theorem_count") != 2626
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -2135,7 +2135,7 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 130, 2605, 1616, 425, 564)
+    expected_proof = (324, 130, 2626, 1635, 425, 566)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
     if data["proof_manifest"].get("proof_target_count") != 324:

@@ -722,16 +722,26 @@ institutional legitimacy.
 ### Implemented formalization
 
 `lean:human_ai_org.accountability_requires_authority` is implemented in
-`AsiStackProofs.HumanAIOrganizations` as a five-stage finite review over
-identity, capacity, intervention authority, independence, and remedy/custody.
-The module has 21 theorem declarations. A stage invariant is preserved for one
+`AsiStackProofs.HumanAIOrganizations` as two bounded models with 42 theorem declarations.
+The retained five-stage finite review covers identity, capacity,
+intervention authority, independence, and remedy/custody. A stage invariant is preserved for one
 step and by induction over an arbitrary finite run; if the run reaches
 `accountabilityAssignable`, all 20 authored assignment fields are true. One
-complete record reaches that state, while 17 closed mutations reach the exact
-repair state for missing information, competence, time, workload, decision or
-intervention authority, practical control, revocation, independent review,
-separation of duties, conflict disposition, stop, appeal, remedy, evidence
-access, residual custody, or the non-claim boundary.
+complete record reaches that state, while 20 closed mutations cover every
+assignment field and reach the exact refusal or repair state.
+
+The separate ten-stage delegation-to-remedy lifecycle binds nine decision,
+delegator, delegate, policy, authority, reviewer, evidence, remedy, and result
+identities across delegation, activation, escalation, handoff, contestation,
+authority expiry, incident reconstruction, remedy, and closure. Arbitrary
+successful runs preserve those identities and zero support/external-effect
+authority, account for exactly one receipt per event, keep contest and remedy
+receipts monotone, expose accepted traces, compose across all ten prefix/suffix
+splits, and reject every event after closure. One nine-event adverse-path
+witness closes with authority zero and one contest and remedy receipt. The
+independent consumer reaches all 39 routes and rejects 156/156 lifecycle mutations
+spanning identity, stage, replay, over-ceiling delegation, missing
+process records, authority requests, and post-closure events.
 
 This is a mechanized property of a finite authored record. Lean does not prove
 that any field is truthful or usable, that a person could intervene in a real
@@ -744,8 +754,8 @@ remains `argument`.
 | Test | Purpose | Status |
 |---|---|---|
 | Decision-right reachability | Ensure each modeled assignment traverses identity, capacity, authority, independence, and remedy stages before becoming assignable. | implemented in Lean; no runtime workflow |
-| Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | implemented for 17 exact authored-record mutations |
-| Delegation-depth and expiry | Reject hidden subdelegation and stale model/role authority. | planned |
+| Moral-crumple-zone mutation | Reject accountability assigned to an actor without real authority or capacity. | implemented for 20 exact authored-record mutations |
+| Delegation-to-remedy lifecycle | Exercise bounded delegation, escalation, handoff, contestation, expiry, reconstruction, remedy, and closure with exact custody and non-authority checks. | implemented in Lean and independently reconstructed; no runtime workflow |
 | Workload and competence positive controls | Verify the finite route narrows when authored workload or competence fields fail. | implemented in Lean; real human capacity untested |
 | Contribution/interdependence audit | Prevent task reward from standing in for teamwork. | planned |
 

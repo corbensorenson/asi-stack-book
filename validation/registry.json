@@ -17405,7 +17405,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The five-stage finite accountability review, exact 20-field assignment record, 21-theorem Lean surface, chapter formalization boundary, generated proof manifest, and reviewed triage record.",
+      "input_contract": "The five-stage finite accountability review, exact 20-field assignment record, ten-stage delegation-to-remedy lifecycle, 42-theorem Lean surface, chapter formalization boundary, generated proof manifest, and reviewed triage record.",
       "input_artifacts": [
         "lean/AsiStackProofs/HumanAIOrganizations.lean",
         "scripts/validate_human_ai_organization_accountability.py",
@@ -17414,17 +17414,19 @@
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json"
       ],
-      "output_contract": "Independently reproduce the complete five-stage route, mutate every authored assignment field, require sticky exact rejection states, verify all 21 Lean declarations and canonical target bindings, and reject human-control, legal-accountability, organizational-outcome, support, or external-effect overclaim surfaces.",
+      "output_contract": "Independently reproduce the complete five-stage assignment route and ten-stage delegation-to-remedy lifecycle, mutate every authored assignment field, check all ten lifecycle composition splits, reach all 39 lifecycle routes, reject 156 lifecycle mutations, verify all 42 Lean declarations and canonical target bindings, and reject human-control, legal-accountability, organizational-outcome, support, or external-effect overclaim surfaces.",
       "output_assertions": [
         "five ordered accountability review transitions",
         "one complete assignment-readiness route",
         "20/20 independently encoded single-field mutations reject",
         "all rejected routes remain blocked",
-        "21 exact Lean declarations exist",
+        "ten-stage delegation-to-remedy lifecycle closes with authority zero",
+        "39 lifecycle routes reached and 156/156 mutations rejected",
+        "42 exact Lean declarations exist",
         "zero human-control, legal-accountability, organizational-outcome, support, or external-effect claim"
       ],
-      "claim_scope": "Finite authored accountability-assignment record reachability and refusal semantics only.",
-      "negative_controls": "validator_owned_twenty_single_field_assignment_mutations",
+      "claim_scope": "Finite authored accountability-assignment and delegation-to-remedy record reachability, custody, receipt, ordering, and refusal semantics only.",
+      "negative_controls": "validator_owned_twenty_single_field_assignment_and_156_lifecycle_mutations",
       "negative_control_cases": [
         "missing assignment, decision, or actor identity",
         "missing information, competence, time, or workload capacity",
