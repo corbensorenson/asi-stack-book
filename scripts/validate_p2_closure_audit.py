@@ -34,8 +34,8 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 256,
-    "useful but too narrow": 56,
+    "adequate finite-record invariant": 264,
+    "useful but too narrow": 48,
     "needs executable tests first": 3,
     "needs empirical or baseline tests first": 15,
 }

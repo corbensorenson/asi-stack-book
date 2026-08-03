@@ -342,6 +342,8 @@ structure WeightCustodyState where
   stage : WeightCustodyStage
   descendantKeyCount : Nat
   revokedDescendantKeyCount : Nat
+  descendantKeyIds : List Nat
+  revokedDescendantKeyIds : List Nat
   keyActive : Bool
   attestationExpiresAt : Nat
   observationReceiptCount : Nat
@@ -375,6 +377,7 @@ structure WeightCustodyEvent where
   observationReceiptPresent : Bool
   revocationReceiptPresent : Bool
   requestedRevokedDescendantKeyCount : Nat
+  requestedRevokedDescendantKeyIds : List Nat
   erasureReceiptPresent : Bool
   residualPresent : Bool
   claimsHardwareTrust : Bool
@@ -435,13 +438,17 @@ def WeightCustodyEventAdmissible
         state.stage = WeightCustodyStage.observed ∧
           event.actorId = state.keyServiceId ∧
           event.revocationReceiptPresent = true ∧
+          state.descendantKeyIds.Nodup ∧
+          state.descendantKeyCount = state.descendantKeyIds.length ∧
           event.requestedRevokedDescendantKeyCount = state.descendantKeyCount ∧
+          event.requestedRevokedDescendantKeyIds = state.descendantKeyIds ∧
           event.requestedAuthorityCeiling = 0 ∧
           event.targetVersion = state.version + 1
     | WeightCustodyEventKind.recordErasure =>
-        state.stage = WeightCustodyStage.revoked ∧
+          state.stage = WeightCustodyStage.revoked ∧
           state.keyActive = false ∧
           state.revokedDescendantKeyCount = state.descendantKeyCount ∧
+          state.revokedDescendantKeyIds = state.descendantKeyIds ∧
           event.actorId = state.loaderId ∧
           event.erasureReceiptPresent = true ∧
           event.residualPresent = true ∧
@@ -486,6 +493,7 @@ def AdvanceWeightCustody
         currentAuthorityCeiling := 0
         keyActive := false
         revokedDescendantKeyCount := event.requestedRevokedDescendantKeyCount
+        revokedDescendantKeyIds := event.requestedRevokedDescendantKeyIds
         revocationReceiptCount := state.revocationReceiptCount + 1
         now := event.observedNow }
   | WeightCustodyEventKind.recordErasure =>
@@ -509,6 +517,20 @@ def RunWeightCustodyEvents :
       match ApplyWeightCustodyEvent state event with
       | none => none
       | some next => RunWeightCustodyEvents next tail
+
+def ProcessWeightCustodyEvent
+    (state : WeightCustodyState) (event : WeightCustodyEvent) :
+    WeightCustodyState × Bool :=
+  match ApplyWeightCustodyEvent state event with
+  | none => (state, false)
+  | some next => (next, true)
+
+def WeightCustodyTraceValid :
+    WeightCustodyState -> List WeightCustodyEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ∃ next, ApplyWeightCustodyEvent state event = some next ∧
+        WeightCustodyTraceValid next tail
 
 theorem accepted_weight_custody_event_is_admissible
     {state next : WeightCustodyState} {event : WeightCustodyEvent}
@@ -579,6 +601,21 @@ theorem accepted_weight_custody_event_never_widens_authority
   | observeLoad => simp [AdvanceWeightCustody, kind]
   | revokeKey => simp [AdvanceWeightCustody, kind]
   | recordErasure => simp [AdvanceWeightCustody, kind]
+
+theorem accepted_weight_custody_event_preserves_descendant_key_inventory
+    {state next : WeightCustodyState} {event : WeightCustodyEvent}
+    (accepted : ApplyWeightCustodyEvent state event = some next) :
+    next.descendantKeyCount = state.descendantKeyCount ∧
+      next.descendantKeyIds = state.descendantKeyIds := by
+  have exactAdvance := accepted_weight_custody_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceWeightCustody, kind]
+
+theorem rejected_weight_custody_event_preserves_exact_state
+    (state : WeightCustodyState) (event : WeightCustodyEvent)
+    (rejected : ApplyWeightCustodyEvent state event = none) :
+    ProcessWeightCustodyEvent state event = (state, false) := by
+  simp [ProcessWeightCustodyEvent, rejected]
 
 theorem accepted_attestation_is_independent_and_future_bounded
     {state next : WeightCustodyState} {event : WeightCustodyEvent}
@@ -656,16 +693,22 @@ theorem accepted_key_revocation_closes_authority_and_descendants
     (accepted : ApplyWeightCustodyEvent state event = some next) :
     state.stage = WeightCustodyStage.observed ∧
       event.revocationReceiptPresent = true ∧
+      state.descendantKeyIds.Nodup ∧
+      state.descendantKeyCount = state.descendantKeyIds.length ∧
       next.keyActive = false ∧ next.currentAuthorityCeiling = 0 ∧
       next.revokedDescendantKeyCount = state.descendantKeyCount ∧
+      next.revokedDescendantKeyIds = state.descendantKeyIds ∧
+      next.revokedDescendantKeyCount = next.revokedDescendantKeyIds.length ∧
       next.revocationReceiptCount = state.revocationReceiptCount + 1 := by
   have admissible := accepted_weight_custody_event_is_admissible accepted
   have exactAdvance := accepted_weight_custody_event_is_exact_advance accepted
   rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
   rw [kind] at route
-  rcases route with ⟨observed, _, receipt, descendants, _, _⟩
+  rcases route with ⟨observed, _, receipt, unique, countMatches, descendants,
+    descendantIds, _, _⟩
   subst next
-  simp [AdvanceWeightCustody, kind, observed, receipt, descendants]
+  simp [AdvanceWeightCustody, kind, observed, receipt, unique, countMatches,
+    descendants, descendantIds]
 
 theorem accepted_erasure_follows_complete_revocation_and_records_residual
     {state next : WeightCustodyState} {event : WeightCustodyEvent}
@@ -673,6 +716,7 @@ theorem accepted_erasure_follows_complete_revocation_and_records_residual
     (accepted : ApplyWeightCustodyEvent state event = some next) :
     state.stage = WeightCustodyStage.revoked ∧ state.keyActive = false ∧
       state.revokedDescendantKeyCount = state.descendantKeyCount ∧
+      state.revokedDescendantKeyIds = state.descendantKeyIds ∧
       event.erasureReceiptPresent = true ∧ event.residualPresent = true ∧
       next.stage = WeightCustodyStage.erased ∧
       next.erasureReceiptCount = state.erasureReceiptCount + 1 ∧
@@ -681,9 +725,11 @@ theorem accepted_erasure_follows_complete_revocation_and_records_residual
   have exactAdvance := accepted_weight_custody_event_is_exact_advance accepted
   rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
   rw [kind] at route
-  rcases route with ⟨revoked, inactive, complete, _, receipt, residual, _, _⟩
+  rcases route with ⟨revoked, inactive, complete, exactIds, _, receipt,
+    residual, _, _⟩
   subst next
-  simp [AdvanceWeightCustody, kind, revoked, inactive, complete, receipt, residual]
+  simp [AdvanceWeightCustody, kind, revoked, inactive, complete, exactIds,
+    receipt, residual]
 
 theorem weight_custody_run_preserves_identity_non_authority_and_narrowing
     {initial final : WeightCustodyState} {events : List WeightCustodyEvent}
@@ -725,6 +771,57 @@ theorem weight_custody_run_preserves_identity_non_authority_and_narrowing
             Nat.le_trans tnarrowed narrowed, tsupport.trans support,
             teffects.trans effects⟩
 
+theorem weight_custody_run_preserves_descendant_key_inventory
+    {initial final : WeightCustodyState} {events : List WeightCustodyEvent}
+    (run : RunWeightCustodyEvents initial events = some final) :
+    final.descendantKeyCount = initial.descendantKeyCount ∧
+      final.descendantKeyIds = initial.descendantKeyIds := by
+  induction events generalizing initial with
+  | nil =>
+      simp [RunWeightCustodyEvents] at run
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      simp only [RunWeightCustodyEvents] at run
+      cases step : ApplyWeightCustodyEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have head :=
+            accepted_weight_custody_event_preserves_descendant_key_inventory step
+          have rest := ih run
+          exact ⟨rest.1.trans head.1, rest.2.trans head.2⟩
+
+theorem successful_weight_custody_run_has_valid_trace
+    {initial final : WeightCustodyState} {events : List WeightCustodyEvent}
+    (run : RunWeightCustodyEvents initial events = some final) :
+    WeightCustodyTraceValid initial events := by
+  induction events generalizing initial with
+  | nil => trivial
+  | cons event tail ih =>
+      simp only [RunWeightCustodyEvents] at run
+      cases step : ApplyWeightCustodyEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          exact ⟨next, step, ih run⟩
+
+theorem erased_weight_custody_state_rejects_every_event
+    (state : WeightCustodyState) (event : WeightCustodyEvent)
+    (erased : state.stage = WeightCustodyStage.erased) :
+    ¬ WeightCustodyEventAdmissible state event := by
+  intro admissible
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  cases kind : event.kind <;> simp [kind, erased] at route
+
+theorem erased_weight_custody_state_has_no_nonempty_run
+    (state : WeightCustodyState) (event : WeightCustodyEvent)
+    (tail : List WeightCustodyEvent)
+    (erased : state.stage = WeightCustodyStage.erased) :
+    RunWeightCustodyEvents state (event :: tail) = none := by
+  have rejected := erased_weight_custody_state_rejects_every_event state event erased
+  simp [RunWeightCustodyEvents, ApplyWeightCustodyEvent, rejected]
+
 theorem weight_custody_runs_compose
     (initial : WeightCustodyState)
     (before after : List WeightCustodyEvent) :
@@ -746,7 +843,10 @@ def initialWeightCustodyState : WeightCustodyState := {
   loaderId := 157, observerId := 163, version := 1
   baseAuthorityCeiling := 6, currentAuthorityCeiling := 6
   stage := WeightCustodyStage.sealed, descendantKeyCount := 4
-  revokedDescendantKeyCount := 0, keyActive := false
+  revokedDescendantKeyCount := 0
+  descendantKeyIds := [167, 173, 179, 181]
+  revokedDescendantKeyIds := []
+  keyActive := false
   attestationExpiresAt := 0, observationReceiptCount := 0
   revocationReceiptCount := 0, erasureReceiptCount := 0, residualCount := 0
   now := 30, supportAssignmentCount := 0, externalEffectCount := 0
@@ -762,7 +862,9 @@ def weightAttestationEvent : WeightCustodyEvent := {
   keyReleaseReceiptPresent := false, loadReceiptPresent := false
   distributionRequested := false, independentObservationPresent := false
   observationReceiptPresent := false, revocationReceiptPresent := false
-  requestedRevokedDescendantKeyCount := 0, erasureReceiptPresent := false
+  requestedRevokedDescendantKeyCount := 0
+  requestedRevokedDescendantKeyIds := []
+  erasureReceiptPresent := false
   residualPresent := false, claimsHardwareTrust := false
   claimsConfidentiality := false, requestsSupportAssignment := false
   requestsExternalEffect := false
@@ -799,6 +901,7 @@ def weightRevocationEvent : WeightCustodyEvent := {
   actorId := 151, targetVersion := 3, requestedAuthorityCeiling := 0
   independentObservationPresent := false, observationReceiptPresent := false
   revocationReceiptPresent := true, requestedRevokedDescendantKeyCount := 4
+  requestedRevokedDescendantKeyIds := [167, 173, 179, 181]
   observedNow := 35
 }
 
@@ -814,12 +917,43 @@ def completeWeightCustodyTrace : List WeightCustodyEvent :=
   [weightAttestationEvent, weightKeyReleaseEvent, weightLoadEvent,
     weightObservationEvent, weightRevocationEvent, weightErasureEvent]
 
+def observedWeightCustodyState : WeightCustodyState := {
+  initialWeightCustodyState with
+  version := 2
+  currentAuthorityCeiling := 4
+  stage := WeightCustodyStage.observed
+  keyActive := true
+  attestationExpiresAt := 50
+  observationReceiptCount := 1
+  now := 34
+}
+
+def substitutedDescendantKeyRevocationEvent : WeightCustodyEvent := {
+  weightRevocationEvent with
+  requestedRevokedDescendantKeyIds := [167, 173, 179, 191]
+}
+
+def DescendantKeyRevocationCountSummary (event : WeightCustodyEvent) : Nat :=
+  event.requestedRevokedDescendantKeyCount
+
+def DescendantKeyRevocationAdmitted
+    (state : WeightCustodyState) (event : WeightCustodyEvent) : Bool :=
+  decide (WeightCustodyEventAdmissible state event)
+
+theorem complete_weight_custody_prefix_reaches_exact_observed_state :
+    RunWeightCustodyEvents initialWeightCustodyState
+      [weightAttestationEvent, weightKeyReleaseEvent, weightLoadEvent,
+        weightObservationEvent] = some observedWeightCustodyState := by
+  decide
+
 theorem complete_weight_custody_trace_reaches_exact_erased_state :
     RunWeightCustodyEvents initialWeightCustodyState completeWeightCustodyTrace =
       some { initialWeightCustodyState with
         version := 3
         currentAuthorityCeiling := 0, stage := WeightCustodyStage.erased
-        revokedDescendantKeyCount := 4, keyActive := false
+        revokedDescendantKeyCount := 4
+        revokedDescendantKeyIds := [167, 173, 179, 181]
+        keyActive := false
         attestationExpiresAt := 50, observationReceiptCount := 1
         revocationReceiptCount := 1, erasureReceiptCount := 1
         residualCount := 1, now := 36 } := by
@@ -859,6 +993,49 @@ theorem weight_custody_partial_descendant_revocation_is_rejected :
         weightObservationEvent,
         { weightRevocationEvent with requestedRevokedDescendantKeyCount := 3 }] =
       none := by decide
+
+theorem weight_custody_same_count_descendant_key_substitution_is_rejected :
+    ApplyWeightCustodyEvent observedWeightCustodyState
+      substitutedDescendantKeyRevocationEvent = none := by
+  decide
+
+theorem weight_custody_duplicate_descendant_key_inventory_is_rejected :
+    ApplyWeightCustodyEvent
+      { observedWeightCustodyState with
+        descendantKeyIds := [167, 167, 179, 181] }
+      { weightRevocationEvent with
+        requestedRevokedDescendantKeyIds := [167, 167, 179, 181] } = none := by
+  decide
+
+theorem weight_custody_revocation_count_summary_collides :
+    DescendantKeyRevocationCountSummary weightRevocationEvent =
+        DescendantKeyRevocationCountSummary
+          substitutedDescendantKeyRevocationEvent ∧
+      weightRevocationEvent.requestedRevokedDescendantKeyIds ≠
+        substitutedDescendantKeyRevocationEvent.requestedRevokedDescendantKeyIds := by
+  decide
+
+theorem weight_custody_exact_inventory_separates_count_collision :
+    DescendantKeyRevocationAdmitted observedWeightCustodyState
+        weightRevocationEvent = true ∧
+      DescendantKeyRevocationAdmitted observedWeightCustodyState
+        substitutedDescendantKeyRevocationEvent = false := by
+  decide
+
+theorem no_exact_descendant_key_revocation_classifier_from_count_only :
+    ¬ ∃ classify : Nat → Bool,
+      ∀ event : WeightCustodyEvent,
+        classify (DescendantKeyRevocationCountSummary event) =
+          DescendantKeyRevocationAdmitted observedWeightCustodyState event := by
+  intro ⟨classify, exact⟩
+  have good := exact weightRevocationEvent
+  have bad := exact substitutedDescendantKeyRevocationEvent
+  have collision := weight_custody_revocation_count_summary_collides
+  have separated := weight_custody_exact_inventory_separates_count_collision
+  rw [separated.1] at good
+  rw [separated.2] at bad
+  rw [collision.1] at good
+  simp_all
 
 theorem weight_custody_erasure_before_revocation_is_rejected :
     RunWeightCustodyEvents initialWeightCustodyState

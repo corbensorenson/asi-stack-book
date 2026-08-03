@@ -753,7 +753,7 @@ _weight_custody_lifecycle_base = {
         "experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json",
     ],
     "classification_basis": [
-        "the six-event attestation-to-erasure lifecycle and nine rejecting controls are independently reconstructed by the model-weight custody validator"
+        "the six-event attestation-to-erasure lifecycle, twelve rejecting controls, six erased-state event kinds, and twenty-four descendant-key inventory permutations are independently reconstructed by the model-weight custody validator"
     ],
 }
 
@@ -766,15 +766,22 @@ for theorem_name in (
         "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded custody lifecycle.",
     }
 
-CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::complete_weight_custody_trace_reaches_exact_erased_state"] = {
-    **_weight_custody_lifecycle_base, "semantic_level": "P2",
-    "rationale": "The six-event attestation, key-release, load, observation, revocation, and erasure trace is a bounded nonvacuity witness.",
-}
+for theorem_name in (
+    "complete_weight_custody_prefix_reaches_exact_observed_state",
+    "complete_weight_custody_trace_reaches_exact_erased_state",
+    "weight_custody_revocation_count_summary_collides",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
+        **_weight_custody_lifecycle_base, "semantic_level": "P2",
+        "rationale": "The theorem supplies a bounded reachable witness or an explicit equal-count descendant-key collision.",
+    }
 
 for theorem_name in (
     "accepted_weight_custody_event_preserves_identity",
     "accepted_weight_custody_event_is_non_authorizing",
     "accepted_weight_custody_event_never_widens_authority",
+    "accepted_weight_custody_event_preserves_descendant_key_inventory",
+    "rejected_weight_custody_event_preserves_exact_state",
     "accepted_attestation_is_independent_and_future_bounded",
     "accepted_key_release_is_current_bounded_and_versioned",
     "accepted_load_requires_active_key_receipt_and_no_distribution",
@@ -787,6 +794,9 @@ for theorem_name in (
     "weight_custody_distribution_during_load_is_rejected",
     "weight_custody_self_observation_is_rejected",
     "weight_custody_partial_descendant_revocation_is_rejected",
+    "weight_custody_same_count_descendant_key_substitution_is_rejected",
+    "weight_custody_duplicate_descendant_key_inventory_is_rejected",
+    "weight_custody_exact_inventory_separates_count_collision",
     "weight_custody_erasure_before_revocation_is_rejected",
     "weight_custody_confidentiality_laundering_is_rejected",
 ):
@@ -797,6 +807,8 @@ for theorem_name in (
 
 for theorem_name in (
     "weight_custody_run_preserves_identity_non_authority_and_narrowing",
+    "weight_custody_run_preserves_descendant_key_inventory",
+    "successful_weight_custody_run_has_valid_trace",
     "weight_custody_runs_compose",
 ):
     CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
@@ -804,10 +816,16 @@ for theorem_name in (
         "rationale": "Structural induction proves arbitrary accepted custody traces preserve identity, non-authority, and narrowing or compose exactly across batches.",
     }
 
-CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::accepted_key_revocation_closes_authority_and_descendants"] = {
-    **_weight_custody_lifecycle_base, "semantic_level": "P5",
-    "rationale": "Accepted key revocation closes the modeled authority ceiling and records exact finite descendant-key coverage.",
-}
+for theorem_name in (
+    "accepted_key_revocation_closes_authority_and_descendants",
+    "erased_weight_custody_state_rejects_every_event",
+    "erased_weight_custody_state_has_no_nonempty_run",
+    "no_exact_descendant_key_revocation_classifier_from_count_only",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ModelWeightCustody.lean::{theorem_name}"] = {
+        **_weight_custody_lifecycle_base, "semantic_level": "P5",
+        "rationale": "The theorem establishes exact canonical descendant-key revocation, terminal erasure, or the impossibility of exact admission from count alone.",
+    }
 
 _replacement_route_base = {
     "disposition": "retain",

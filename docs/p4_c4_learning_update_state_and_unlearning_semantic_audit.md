@@ -13,11 +13,13 @@ versioned readmission. The audit therefore closes P4-C4 as `adequate`, not as a
 claim that learning, unlearning, privacy, erasure, rollback, or deployed
 transactions were proven.
 
-The public denominator is 31 targets through 62 theorem declarations. The
+The public denominator is 31 targets through 89 theorem declarations. The
 independent consumers exercise 82 data-engine routes with 99 rejecting
 mutations, 63 policy-update routes with 76 rejecting mutations, eight
 weight-custody routes with nine route mutations plus a six-event
-attestation-to-erasure lifecycle with nine rejecting substitutions, and one
+attestation-to-erasure lifecycle with 12 rejecting controls, six erased-state
+event kinds, all 24 permutations of a four-key inventory, and a count-only
+identity impossibility result, and one
 six-event context transaction with 78 rejecting mutations. These checks
 establish authored record consequences and mutation sensitivity only.
 

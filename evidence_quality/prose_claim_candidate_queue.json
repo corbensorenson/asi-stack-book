@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3892,
+    "candidate_count": 3893,
     "review_state_counts": {
-      "duplicate_of_atom": 1861,
+      "duplicate_of_atom": 1862,
       "editorial_or_question": 58,
       "historical_or_source_report": 321,
       "material_atom": 3,
@@ -18438,9 +18438,29 @@
       "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.invariant.009"
     },
     {
+      "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.8a0a12a54c07",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:787",
+      "sentence": "proves that count alone cannot decide exact revocation admission.",
+      "cues": [
+        "cannot",
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the exact count-only revocation impossibility result already bounded by the implemented custody-lifecycle target.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.minimum.001"
+    },
+    {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.ea8ab6f565e0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:789",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:793",
       "sentence": "binds the fixture digest and theorem names, and demonstrates that invalid",
       "cues": [
         "demonstrates"
@@ -18459,7 +18479,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.dc8c8a1a73d7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:816",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:820",
       "sentence": "The next slice must therefore stop adding fields to the same Boolean fixture",
       "cues": [
         "must"
@@ -18478,7 +18498,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.d20b782d0537",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:817",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:821",
       "sentence": "It should preregister a public-safe model-family artifact",
       "cues": [
         "should"
@@ -18497,7 +18517,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1779474ac611",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:824",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:828",
       "sentence": "extraction beyond a public-safe artifact requires a separately authorized",
       "cues": [
         "requires"
@@ -18516,7 +18536,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.de6306c88599",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:835",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:839",
       "sentence": "effect-complete custody transaction may outperform narrower controls by",
       "cues": [
         "outperform"
@@ -18535,7 +18555,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.1d490d9f953c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:842",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:846",
       "sentence": "The campaign must preregister a public-safe but effect-bearing model-family",
       "cues": [
         "must"
@@ -18554,7 +18574,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.0b118a3593de",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:854",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:858",
       "sentence": "Independent implementations must own asset and derivative discovery, Attester",
       "cues": [
         "must"
@@ -18573,7 +18593,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.480b6e08c16e",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:859",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:863",
       "sentence": "measures unauthorized acquisition and use; plaintext and side-channel exposure;",
       "cues": [
         "measures"
@@ -18592,7 +18612,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.416f3cab3db0",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:869",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:873",
       "sentence": "Replication and transfer span model families and",
       "cues": [
         "transfer"
@@ -18611,7 +18631,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.f7751737c34f",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:884",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:888",
       "sentence": "transfer pass the frozen joint gates.",
       "cues": [
         "transfer"
@@ -18630,7 +18650,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.cf3a21cdcf3c",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:917",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:921",
       "sentence": "They do not prove that an attestation is",
       "cues": [
         "prove"
@@ -18649,7 +18669,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.3b888bce6047",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:944",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:948",
       "sentence": "must not treat those nine records as nine independent demonstrations of one",
       "cues": [
         "must"
@@ -18668,7 +18688,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.140a9447d530",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1009",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1013",
       "sentence": "The current evidence proves nine finite routing declarations and eight fixture",
       "cues": [
         "proves"
@@ -18687,7 +18707,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.effbba13fd96",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1010",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1014",
       "sentence": "It neither demonstrates effective custody nor resolves whether a",
       "cues": [
         "demonstrates"
@@ -18706,7 +18726,7 @@
     {
       "candidate_id": "model-weight-custody-and-hardware-roots-of-trust.prose.2ef51a5d16c7",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
-      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1011",
+      "source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:1015",
       "sentence": "particular model should be used or released.",
       "cues": [
         "should"

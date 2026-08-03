@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
     "structured_atoms_reviewed": 71,
-    "prose_candidates_adjudicated": 90,
+    "prose_candidates_adjudicated": 91,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all nine assigned source notes and passage-mapping limits, the eight-record deterministic custody route fixture, all 32 Lean declarations under eight manifest targets, nine route mutations, nine lifecycle substitutions, every manifest atom, all prose scanner candidates, the worked custody trace, flow diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced file-centric custody with a threat-model-bound model-family and derivative-closure contract; separated Attester Evidence, Verifier appraisal, Attestation Result, Relying-Party authorization, key release, observed load/use effects, runtime authority, and distribution authority; added exact key lifecycle, plaintext and output-extraction exposure, role-dependency, backup/recovery, incident/revocation, effort-relative sanitization, privacy/rights, availability, cost, and irreversible-release semantics; installed strong comparators, effect-bearing workload requirements, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect. The 2026-08-02 proof pass adds a six-event authored-record lifecycle and preserves the same evidence ceiling and support state."
+    "review_note": "Reviewed the complete chapter, all nine assigned source notes and passage-mapping limits, the eight-record deterministic custody route fixture, all 44 Lean declarations under eight manifest targets, nine route mutations, twelve lifecycle controls, six erased-state event kinds, twenty-four canonical descendant-key inventory permutations, every manifest atom, all prose scanner candidates, the worked custody trace, flow diagram, test plan, source crosswalk, summary, and handoff. The sweep replaced file-centric custody with a threat-model-bound model-family and derivative-closure contract; separated Attester Evidence, Verifier appraisal, Attestation Result, Relying-Party authorization, key release, observed load/use effects, runtime authority, and distribution authority; added exact key lifecycle, plaintext and output-extraction exposure, role-dependency, backup/recovery, incident/revocation, effort-relative sanitization, privacy/rights, availability, cost, and irreversible-release semantics; installed strong comparators, effect-bearing workload requirements, joint metrics, causal ablations, independent replication, transfer, and explicit promotion/refutation gates; and preserved zero chapter-core support effect. The 2026-08-03 proof pass makes descendant-key revocation identity-complete, adds rejected-state and terminal-erasure guarantees, proves count-only exact admission impossible, and preserves the same evidence ceiling and support state."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Model-family assets and reconstructable derivatives across creation, acquisition, encryption, storage, copying, transformation, packaging, transfer, decryption, load, serving, backup, recovery, revocation, sanitization, disclosure, recipient distribution, and retirement events.",
       "environment": "Current public source notes, deterministic Boolean custody records, finite Lean routes, and a future preregistered public-safe effect-bearing campaign spanning mock and authorized hardware-backed local, cloud, and edge environments; production custody is outside current evidence.",
-      "model": "A versioned threat-model, asset-and-derivative-closure, key-lifecycle, RATS-separated appraisal, effect-observation, authority-separation, recovery, sanitization, and irreversible-release transaction whose current implementation validates eight finite route records and 32 theorem declarations, including a six-event authored lifecycle.",
+      "model": "A versioned threat-model, asset-and-derivative-closure, key-lifecycle, RATS-separated appraisal, effect-observation, authority-separation, recovery, sanitization, and irreversible-release transaction whose current implementation validates eight finite route records and 44 theorem declarations, including a six-event identity-complete authored lifecycle.",
       "authority": "Human/governance owners freeze threat model, closure, security and availability properties, rights, release policy, and residual acceptance; separate-enough asset, key, Attester, Verifier, Relying-Party, observer, incident, recovery, sanitization, privacy/rights, and Evidence State owners govern their exact surfaces.",
       "time": "Semantic review current through 2026-07-14; threat model, asset closure, identities, keys, appraisal and relying-party policies, reference values, endorsements, trust anchors, dependency graph, freshness, operation, recipient, observers, outcome window, metrics, and comparators must be frozen prospectively and versioned after material change.",
-      "artifact": "Chapter and manifest contract; nine reviewed source mappings; eight deterministic custody route records; 32 Lean declarations under eight targets; nine route mutations; nine lifecycle substitutions; future discovery, key, appraisal, load/effect, extraction, incident, recovery, sanitization, comparison, ablation, replication, and transfer artifacts."
+      "artifact": "Chapter and manifest contract; nine reviewed source mappings; eight deterministic custody route records; 44 Lean declarations under eight targets; nine route mutations; twelve lifecycle controls; six erased-state event-kind checks; twenty-four descendant-key inventory permutations; future discovery, key, appraisal, load/effect, extraction, incident, recovery, sanitization, comparison, ablation, replication, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
     "assumptions": [
@@ -79,7 +79,7 @@
       "Attestation depends on roots, firmware, endorsements, reference values, policies, Verifier code, vendors, operators, and Relying-Party interpretation; a valid result is not universal trust.",
       "Authorized workloads, outputs, adapters, distillation, queries, insiders, recovery paths, and recipients can expose or reconstruct effective capability despite encrypted storage or confidential loading.",
       "Revocation and sanitization cannot recall plaintext, recipient-controlled artifacts, descendants, or public disclosures outside the controller's boundary.",
-      "The current evidence consists only of eight deterministic Boolean route records, 32 finite theorem declarations, nine route mutations, and nine lifecycle substitutions with no real artifact, key, hardware, effect, adversary, recovery, or sanitization result."
+      "The current evidence consists only of eight deterministic Boolean route records, 44 finite theorem declarations, nine route mutations, twelve lifecycle controls, six erased-state event-kind checks, and twenty-four descendant-key inventory permutations with no real artifact, key, hardware, effect, adversary, recovery, or sanitization result."
     ],
     "known_confounds": [
       "Threat models, derivative-closure rules, attacker effort, sanitization targets, freshness, observers, release properties, and residuals can be narrowed after failures are seen.",
@@ -120,7 +120,7 @@
     },
     "non_claims": [
       "Semantic review, source mapping, encryption, a signature, a security level, an attestation result, a key decision, a valid record, a finite theorem, or zero observed theft does not establish custody completeness, confidentiality, trustworthy hardware, extraction resistance, sanitization, recall, or safe release.",
-      "The current eight custody route records, 32 theorem declarations under eight targets, nine route mutations, and nine lifecycle substitutions establish only their exact finite authored-record semantics.",
+      "The current eight custody route records, 44 theorem declarations under eight targets, nine route mutations, twelve lifecycle controls, six erased-state event-kind checks, and twenty-four descendant-key inventory permutations establish only their exact finite authored-record semantics.",
       "No support state, deployment permission, release authority, conformance, novelty, AGI, or ASI claim changes without its separate owner and accepted evidence transition."
     ]
   },
@@ -156,9 +156,9 @@
       "proposition_type": "executable",
       "current_disposition": "retain_finite_record_and_route_evidence_without_core_promotion",
       "strongest_counterclaim": "The minimum is self-authored Boolean record and theorem theater with no key, attestation, load, extraction, recovery, or sanitization effect.",
-      "falsifier": "Any of the exact eight routes, 32 theorem declarations, six accepted lifecycle events, nine route mutations, nine lifecycle substitutions, fixture digest, or non-claim boundaries fails clean recomputation or prose generalizes beyond them.",
+      "falsifier": "Any of the exact eight routes, 44 theorem declarations, six accepted lifecycle events, nine route mutations, twelve lifecycle controls, six erased-state event-kind checks, twenty-four descendant-key inventory permutations, fixture digest, or non-claim boundaries fails clean recomputation or prose generalizes beyond them.",
       "acceptance_criteria": [
-        "Cleanly reproduce the eight expected routes, 32 theorem declarations under eight targets, six accepted lifecycle events, nine route mutations, nine lifecycle substitutions, exact fixture digest, and support_state_effect=none."
+        "Cleanly reproduce the eight expected routes, 44 theorem declarations under eight targets, six accepted lifecycle events, nine route mutations, twelve lifecycle controls, six erased-state event-kind checks, twenty-four descendant-key inventory permutations, exact fixture digest, and support_state_effect=none."
       ],
       "promotion_ceiling": "synthetic_test_backed_for_exact_record_and_route_semantics_only_after_accepted_transition"
     },
@@ -185,7 +185,7 @@
       "strongest_counterclaim": "The route and lifecycle map trusted fields through authored states and neither authenticate attestation nor observe any real key, decrypt, plaintext, load, serve, extraction, revocation, or erasure effect.",
       "falsifier": "A modeled incomplete record reaches bounded load, an inadmissible lifecycle substitution is accepted, an accepted run violates identity/non-authority/narrowing, or the model cannot refine to an effect-bearing custody operation without semantic distortion.",
       "acceptance_criteria": [
-        "Preserve the exact six-event witness and nine lifecycle refusals, then add executable key, appraisal, load, plaintext, extraction, revocation, erasure, observer-uncertainty, and runtime-refinement traces before mechanized-custody language."
+        "Preserve the exact six-event witness, twelve lifecycle refusals, terminal erasure, canonical descendant-key inventory, and count-only impossibility result, then add executable key, appraisal, load, plaintext, extraction, revocation, erasure, observer-uncertainty, and runtime-refinement traces before mechanized-custody language."
       ]
     },
     "model-weight-custody-and-hardware-roots-of-trust.formal.model-weight-custody-lifecycle-irreversible-distribution-record": {
@@ -627,6 +627,11 @@
     "model-weight-custody-and-hardware-roots-of-trust.prose.4a9c1aaf32a4": {
       "state": "nonmaterial_explanation",
       "rationale": "Explicit non-claim separating custody traceability from behavioral equivalence and output-mediated leakage prevention."
+    },
+    "model-weight-custody-and-hardware-roots-of-trust.prose.8a0a12a54c07": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the exact count-only revocation impossibility result already bounded by the implemented custody-lifecycle target.",
+      "target_atom_id": "model-weight-custody-and-hardware-roots-of-trust.minimum.001"
     }
   },
   "prose_review_lineage": [

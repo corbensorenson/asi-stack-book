@@ -123,10 +123,10 @@ def artifact_errors(data: dict[str, Any]) -> list[str]:
     reconciliation = data.get("claim_review_reconciliation", {})
     expected_reconciliation = {
         "baseline_prose_candidate_count": 3444,
-        "current_prose_candidate_count": 3892,
+        "current_prose_candidate_count": 3893,
         "unchanged_prose_candidate_count": 3146,
         "retired_inherited_prose_candidate_count": 298,
-        "added_domain_specific_prose_candidate_count": 746,
+        "added_domain_specific_prose_candidate_count": 747,
         "baseline_structured_atom_count": 4067,
         "current_structured_atom_count": 4064,
         "current_pending_prose_candidate_count": 0,

@@ -744,11 +744,11 @@
       "tag": "lean:model_weight_custody.lifecycle.complete_observed_load",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "module": "AsiStackProofs.ModelWeightCustody",
-      "formal_target": "A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, exact finite descendant-key revocation, and erasure-after-revocation while arbitrary accepted runs preserve identity, non-authority, and narrowing.",
+      "formal_target": "A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, canonical descendant-key revocation, and terminal erasure while preserving rejected state, identity, descendant inventory, valid traces, non-authority, and narrowing; descendant counts alone cannot classify exact revocation admission.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "The original derived route remains bridged to the deterministic custody fixture. A 23-theorem transaction layer adds exact one-step advancement, six ordered stages, arbitrary-run identity/non-authority/narrowing invariants, one exact attestation-to-erasure witness, and nine closed substitutions. All fields remain authored; no theorem proves attestation genuineness, hardware trust, confidentiality, extraction resistance, deployed erasure, security effectiveness, or deployment merit."
+      "rationale": "The original derived route remains bridged to the deterministic custody fixture. A 35-theorem transaction layer adds exact one-step advancement, canonical duplicate-free descendant-key identity, rejected-state noninterference, arbitrary-run identity/inventory/non-authority/narrowing and trace invariants, exact observed and erased witnesses, terminal erasure, twelve rejecting controls, and an equal-count collision proving count-only exact revocation admission impossible. The independent consumer checks six erased-state event kinds and all twenty-four permutations of the four-key inventory. All fields remain authored; no theorem proves attestation genuineness, hardware trust, confidentiality, extraction resistance, deployed erasure, security effectiveness, or deployment merit."
     },
     {
       "tag": "lean:model_weight_custody.lifecycle.missing_lineage",

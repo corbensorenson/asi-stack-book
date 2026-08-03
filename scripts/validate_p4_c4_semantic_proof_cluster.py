@@ -20,7 +20,7 @@ EXPECTED_MODULES = [
     "AsiStackProofs.ContextTransactionRefinement",
 ]
 EXPECTED_TARGETS = [15, 4, 8, 4]
-EXPECTED_THEOREMS = [5, 5, 32, 35]
+EXPECTED_THEOREMS = [5, 5, 44, 35]
 
 
 def load(path: Path) -> Any:
@@ -41,7 +41,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("module denominator or order drifted")
     if [row.get("public_target_count") for row in rows] != EXPECTED_TARGETS or audit.get("public_target_count") != 31:
         out.append("public target denominator drifted")
-    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 77:
+    if [row.get("theorem_declaration_count") for row in rows] != EXPECTED_THEOREMS or audit.get("theorem_declaration_count") != 89:
         out.append("theorem denominator drifted")
     if status_cluster is None or status_cluster.get("state") != "adequate" or status_cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
@@ -150,7 +150,7 @@ def main() -> None:
         raise SystemExit("P4-C4 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
         "P4-C4 semantic proof cluster passed: 4 adequate modules, 31 public targets, "
-        "77 theorem declarations, behavioral/influence/privacy/lineage/storage/backup/legal "
+        "89 theorem declarations, behavioral/influence/privacy/lineage/storage/backup/legal "
         "axes separated, 12 audit mutations rejected; support/release/publication none."
     )
 

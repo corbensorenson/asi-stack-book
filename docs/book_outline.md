@@ -2394,12 +2394,15 @@ Draft deliverables:
   15 invariants, 17 failure modes, nine reviewed source mappings, a RATS-
   separated custody-flow diagram, worked mismatch/release trace, and explicit
   promotion/refutation program.
-- Implemented finite proof packet: 32 declarations under eight manifest
+- Implemented finite proof packet: 44 declarations under eight manifest
   targets retain the original route consequences and add a versioned six-event
   lifecycle from independent attestation through bounded key release,
-  no-distribution load, independent observation, exact descendant-key
-  revocation, and erasure-after-revocation. Arbitrary accepted runs preserve
-  identity, non-authority, and narrowing; nine lifecycle substitutions reject.
+  no-distribution load, independent observation, canonical descendant-key
+  revocation, and terminal erasure. Arbitrary accepted runs preserve identity,
+  descendant inventory, valid traces, non-authority, and narrowing; rejected
+  events preserve exact state; twelve lifecycle controls, six erased-state event
+  kinds, and all twenty-four four-key inventory permutations are checked; and
+  count-only exact revocation admission is impossible.
   This remains authored structured-record coverage only.
 - Implemented finite test: eight public-safe synthetic custody records and nine
   rejecting mutations are digest-bound to
@@ -2417,7 +2420,7 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `AsiStackProofs.ModelWeightCustody` | A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI. | implemented |
-| `lean:model_weight_custody.lifecycle.complete_observed_load` | `AsiStackProofs.ModelWeightCustody` | A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, exact finite descendant-key revocation, and erasure-after-revocation while arbitrary accepted runs preserve identity, non-authority, and narrowing. | implemented |
+| `lean:model_weight_custody.lifecycle.complete_observed_load` | `AsiStackProofs.ModelWeightCustody` | A complete finite route reaches bounded load admission; a versioned lifecycle additionally orders independent attestation, bounded key release, no-distribution load, independent observation, canonical descendant-key revocation, and terminal erasure while preserving rejected state, identity, descendant inventory, valid traces, non-authority, and narrowing; descendant counts alone cannot classify exact revocation admission. | implemented |
 | `lean:model_weight_custody.lifecycle.missing_lineage` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with an artifact digest but no lineage routes to lineage repair. | implemented |
 | `lean:model_weight_custody.lifecycle.stale_attestation` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with stale attestation evidence routes to a fresh-attestation requirement. | implemented |
 | `lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record without verifier-dependency disclosure routes to dependency review without proving disclosed verifiers independent. | implemented |
@@ -6262,7 +6265,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3087 theorem declarations, 1933 derived/decomposed, 447 direct/projection, 707 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3099 theorem declarations, 1940 derived/decomposed, 447 direct/projection, 712 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6278,8 +6281,8 @@ Draft deliverables:
   exclusions, implementation binding, and no-promotion boundaries.
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
-330-target live manifest; a 130-module Lean workspace with 3,087 declarations
-classified as 1,933 derived/decomposed, 447 direct/projection, and 707
+330-target live manifest; a 130-module Lean workspace with 3,099 declarations
+classified as 1,940 derived/decomposed, 447 direct/projection, and 712
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer
