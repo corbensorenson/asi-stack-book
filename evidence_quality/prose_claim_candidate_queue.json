@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3891,
+    "candidate_count": 3894,
     "review_state_counts": {
-      "duplicate_of_atom": 1857,
+      "duplicate_of_atom": 1858,
       "editorial_or_question": 58,
       "historical_or_source_report": 322,
       "material_atom": 3,
-      "nonmaterial_explanation": 1651
+      "nonmaterial_explanation": 1653
     }
   },
   "candidates": [
@@ -7748,12 +7748,12 @@
       "target_atom_id": "human-intent-as-a-formal-input.minimum.001"
     },
     {
-      "candidate_id": "human-intent-as-a-formal-input.prose.9c6fc2200d00",
+      "candidate_id": "human-intent-as-a-formal-input.prose.b541c682d788",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:361",
-      "sentence": "The resulting evidence is stronger at the structured-record boundary, not at natural-language semantics: the theorem proves information preservation only for the modeled fields, while field meanings, hashes, labels, authority, consent, and receipts remain trusted inputs and the model stops before dispatch or effect.",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:363",
+      "sentence": "Therefore an exact router cannot be reconstructed from the thin conflict transport alone.",
       "cues": [
-        "proves"
+        "cannot"
       ],
       "review_state": "duplicate_of_atom",
       "allowed_dispositions": [
@@ -7763,13 +7763,51 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Restates the modeled-field information-preservation result and its semantic non-claim boundary.",
-      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-lowering-information-boundary"
+      "disposition_rationale": "Restates the exact-router impossibility theorem for the authored thin transport.",
+      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-resolution-route-envelope"
+    },
+    {
+      "candidate_id": "human-intent-as-a-formal-input.prose.fd6c18278f46",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:363",
+      "sentence": "This establishes a precise minimum information boundary for this finite router, not that seven Boolean fields are a semantically complete account of human intent.",
+      "cues": [
+        "establishes"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicitly bounds complete transport to the seven authored Boolean router fields.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "human-intent-as-a-formal-input.prose.649d718f2f2f",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:365",
+      "sentence": "The resulting evidence is stronger at the structured-record boundary, not at natural-language semantics: the theorems prove information preservation only for the modeled fields, while field meanings, hashes, labels, authority, consent, and receipts remain trusted inputs and the model stops before dispatch or effect.",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explains the trusted-input and pre-effect boundary of the finite proof packet.",
+      "target_atom_id": null
     },
     {
       "candidate_id": "human-intent-as-a-formal-input.prose.755e8b072507",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:370",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:374",
       "sentence": "and preference-learning baselines and measures interpretation accuracy,",
       "cues": [
         "measures"
@@ -7788,7 +7826,7 @@
     {
       "candidate_id": "human-intent-as-a-formal-input.prose.7482aace2909",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:389",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:393",
       "sentence": "Crucially, a successful result must improve useful assistance as well as",
       "cues": [
         "improve",
@@ -7808,7 +7846,7 @@
     {
       "candidate_id": "human-intent-as-a-formal-input.prose.6de3b709c95a",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:390",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:394",
       "sentence": "authority precision; clarification that merely prevents all action is not",
       "cues": [
         "prevents"
@@ -7825,10 +7863,10 @@
       "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
     },
     {
-      "candidate_id": "human-intent-as-a-formal-input.prose.ad342f87d7df",
+      "candidate_id": "human-intent-as-a-formal-input.prose.f77892390f8a",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:420",
-      "sentence": "The reachable model proves exact bounded write ownership, arbitrary-run root/ceiling/approved-authority preservation, valid-trace extraction, material-delta custody, batch composition, versioned re-contract consequences, one explicit lossy-projection collision, decoder impossibility for the colliding pair, and injectivity of the modeled full projection.",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:424",
+      "sentence": "The reachable model proves exact bounded write ownership, arbitrary-run root/ceiling/approved-authority preservation, valid-trace extraction, material-delta custody, batch composition, versioned re-contract consequences, one explicit lossy command-projection collision, decoder impossibility for the colliding pair, and injectivity of the modeled full command projection.",
       "cues": [
         "proves"
       ],
@@ -7840,14 +7878,33 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Summarizes the existing lifecycle targets and the new lowering information-boundary target without adding a distinct support-bearing proposition.",
+      "disposition_rationale": "Summarizes the existing lifecycle and command-lowering proof targets without adding a distinct proposition.",
       "target_atom_id": "human-intent-as-a-formal-input.formal.intent-lowering-information-boundary"
     },
     {
-      "candidate_id": "human-intent-as-a-formal-input.prose.27d65dbaeb78",
+      "candidate_id": "human-intent-as-a-formal-input.prose.f8feb16d1a28",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:420",
-      "sentence": "This proof packet does not prove natural-language parsing, semantic adequacy of the modeled fields, legitimate authority extraction, valid consent, user preference fidelity, prompt-injection containment, private-source safety, deployed end-to-end lowering, dispatch/effects, user satisfaction, natural-workload usefulness, reproduction, transfer, or chapter-core support.",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:424",
+      "sentence": "The route bridge proves two route-changing thin-transport collisions, impossibility of recovering both conflict routes from that transport, and round-trip, injectivity, and route preservation for the complete seven-field transport.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Summarizes the strengthened route-envelope target without adding a distinct proposition.",
+      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-resolution-route-envelope"
+    },
+    {
+      "candidate_id": "human-intent-as-a-formal-input.prose.6c322f9ab246",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:424",
+      "sentence": "This proof packet does not prove natural-language parsing, semantic sufficiency of the modeled fields, legitimate authority extraction, valid consent, user preference fidelity, prompt-injection containment, private-source safety, deployed end-to-end lowering, dispatch/effects, user satisfaction, natural-workload usefulness, reproduction, transfer, or chapter-core support.",
       "cues": [
         "prove",
         "transfer"
@@ -7860,13 +7917,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Explicit non-claim boundary for the finite lifecycle and lowering proof packet.",
+      "disposition_rationale": "Explicit non-claim boundary for the finite lifecycle, lowering, and route-transport proof packet.",
       "target_atom_id": null
     },
     {
       "candidate_id": "human-intent-as-a-formal-input.prose.2db9dde64d09",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:472",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:476",
       "sentence": "A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.",
       "cues": [
         "show"

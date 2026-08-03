@@ -303,12 +303,12 @@
     {
       "tag": "lean:intent.resolution.route_envelope",
       "chapter_id": "human-intent-as-a-formal-input",
-      "module": "AsiStackProofs.IntentContracts",
-      "formal_target": "Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
+      "module": "AsiStackProofs.IntentResolutionRefinement",
+      "formal_target": "Structured intent-resolution records route missing text, prohibited actions, ambiguity, conflicts, and high-impact authority or reversibility gaps before compilation; a thin two-field transport has route-changing conflict and reversibility collisions that no exact router can recover, while the complete seven-field transport round-trips, is injective, and preserves the static route.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.IntentContracts as finite resolution and admission route functions with derived route theorems for missing text, prohibited action, ambiguity, non-goal conflict, missing high-impact authority, irreversible high-impact review, hidden override rejection, unresolved ambiguity, constraint-precedence and preservation gaps, missing stop conditions, missing or widened authority, downstream re-contract triggers, missing non-claim boundaries, and complete admission."
+      "rationale": "The refinement imports the legacy static router, retains its finite resolution consequences, proves two route-changing collisions when conflict, impact, authority, and reversibility are omitted from a thin lifecycle transport, proves no router over that transport can recover both conflict routes, and proves round-trip, injectivity, and exact route preservation for the complete seven-field transport. The independent consumer reconstructs both collisions and rejects mutations to every complete transport field. This is exact only for authored Boolean records, not semantic interpretation, authentic authority, valid consent, or deployed routing."
     },
     {
       "tag": "lean:intent.intake.probe_fixture_bridge",

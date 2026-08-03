@@ -27,11 +27,16 @@ The book-local Human Intent proof tranche now has a finite information-loss
 boundary as well as lifecycle custody. `AsiStackProofs.IntentResolutionRefinement`
 proves that a thin four-field lowering collapses distinct ten-field intents,
 that no decoder can recover both collision witnesses, and that the modeled
-full lowering is injective. Its independent consumer reconstructs all six
-omitted-field collision classes and rejects mutations to all ten full fields,
-in addition to the existing lifecycle traces and mutations. This closes the
-current Lean obligation for modeled representational preservation without
-promoting chapter support.
+full lowering is injective. It also imports the static router and proves that a
+thin two-field lifecycle transport collapses compile-versus-clarify and
+compile-versus-review records, that no router over the conflict transport can
+recover both routes, and that a complete seven-field transport round-trips, is
+injective, and preserves the static route. Its independent consumer reconstructs
+all six omitted command-field collision classes and both route-changing
+transport collisions, and rejects mutations to all ten command fields and all
+seven complete transport fields, in addition to the existing lifecycle traces
+and mutations. This closes the current Lean obligation for modeled
+representational preservation without promoting chapter support.
 
 Do not spend book-local proof cycles pretending that these finite records can
 settle natural-language meaning, authentic authority, informed consent,

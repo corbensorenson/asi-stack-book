@@ -13,7 +13,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Proof targets audited | 330 |
 | Manifest status counts | {"implemented": 330} |
 | Triage class counts | {"formal-invariant": 330} |
-| Lean modules referenced | 96 |
+| Lean modules referenced | 95 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -75,9 +75,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 32 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | 1 | 32 | 0 | 32 | 8 |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 45 | 0 | 42 | 4 |
-| `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 37 | 0 | 16 | 2 |
-| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 4 | 30 | 0 | 18 | 5 |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 5 | 36 | 0 | 26 | 7 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 25 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
@@ -251,7 +250,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:scalable_oversight.use.authority_laundering_rejected` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversightRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.lowering.information_boundary` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:oversight.control_envelope.blocks_action` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |

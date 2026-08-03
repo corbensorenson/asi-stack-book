@@ -396,11 +396,11 @@
       "chapter_id": "human-intent-as-a-formal-input",
       "chapter_title": "Human Intent as a Formal Input",
       "tag": "lean:intent.resolution.route_envelope",
-      "module": "AsiStackProofs.IntentContracts",
-      "formal_target": "Structured intent-resolution and intent-admission records route missing text, prohibited actions, ambiguity, conflicts, high-impact authority gaps, hidden overrides, preservation failures, re-contract triggers, and missing non-claim boundaries to rejection, clarification, repair, review, or re-contracting before compilation/admission.",
+      "module": "AsiStackProofs.IntentResolutionRefinement",
+      "formal_target": "Structured intent-resolution records route missing text, prohibited actions, ambiguity, conflicts, and high-impact authority or reversibility gaps before compilation; a thin two-field transport has route-changing conflict and reversibility collisions that no exact router can recover, while the complete seven-field transport round-trips, is injective, and preserves the static route.",
       "status": "implemented",
       "outline_line": 1184,
-      "module_path": "lean/AsiStackProofs/IntentContracts.lean"
+      "module_path": "lean/AsiStackProofs/IntentResolutionRefinement.lean"
     },
     {
       "chapter_id": "human-intent-as-a-formal-input",

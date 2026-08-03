@@ -1,3 +1,5 @@
+import AsiStackProofs.IntentContracts
+
 namespace AsiStackProofs.IntentResolutionRefinement
 
 inductive IntentStage where
@@ -476,6 +478,174 @@ theorem privacy_change_changes_lossless_lowering
   have same := congrArg LosslessCommand.privacyBoundary equal
   simp [LosslessLower] at same
   exact different same
+
+/-! ## Static-router to lifecycle transport boundary
+
+The original intent router distinguishes missing text, prohibition, ambiguity,
+non-goal conflict, high impact, authority grants, and reversibility. A parse
+payload carrying only prohibition and ambiguity cannot determine that route.
+The complete transport below preserves all seven fields. This proves an exact
+representation boundary; it does not establish that any field was extracted
+correctly from natural language or that an authority grant is legitimate.
+-/
+
+structure ThinResolutionTransport where
+  prohibitedActionRequested : Bool
+  ambiguousTermsPresent : Bool
+deriving DecidableEq, Repr
+
+def ThinResolutionTransportOf
+    (record : AsiStackProofs.IntentContracts.IntentResolutionRecord) :
+    ThinResolutionTransport :=
+  { prohibitedActionRequested := record.prohibitedActionRequested
+    ambiguousTermsPresent := record.ambiguousTermsPresent }
+
+structure CompleteResolutionTransport where
+  intentTextPresent : Bool
+  ambiguousTermsPresent : Bool
+  highImpact : Bool
+  authorityGrantPresent : Bool
+  reversible : Bool
+  nonGoalConflictPresent : Bool
+  prohibitedActionRequested : Bool
+deriving DecidableEq, Repr
+
+def CompleteResolutionTransportOf
+    (record : AsiStackProofs.IntentContracts.IntentResolutionRecord) :
+    CompleteResolutionTransport :=
+  { intentTextPresent := record.intentTextPresent
+    ambiguousTermsPresent := record.ambiguousTermsPresent
+    highImpact := record.highImpact
+    authorityGrantPresent := record.authorityGrantPresent
+    reversible := record.reversible
+    nonGoalConflictPresent := record.nonGoalConflictPresent
+    prohibitedActionRequested := record.prohibitedActionRequested }
+
+def ResolutionRecordOf
+    (transport : CompleteResolutionTransport) :
+    AsiStackProofs.IntentContracts.IntentResolutionRecord :=
+  { intentTextPresent := transport.intentTextPresent
+    ambiguousTermsPresent := transport.ambiguousTermsPresent
+    highImpact := transport.highImpact
+    authorityGrantPresent := transport.authorityGrantPresent
+    reversible := transport.reversible
+    nonGoalConflictPresent := transport.nonGoalConflictPresent
+    prohibitedActionRequested := transport.prohibitedActionRequested }
+
+def RouteFromCompleteResolutionTransport
+    (transport : CompleteResolutionTransport) :
+    AsiStackProofs.IntentContracts.IntentResolutionRoute :=
+  AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+    (ResolutionRecordOf transport)
+
+def directCompileResolutionRecord :
+    AsiStackProofs.IntentContracts.IntentResolutionRecord :=
+  { intentTextPresent := true
+    ambiguousTermsPresent := false
+    highImpact := false
+    authorityGrantPresent := false
+    reversible := true
+    nonGoalConflictPresent := false
+    prohibitedActionRequested := false }
+
+def conflictingResolutionRecord :
+    AsiStackProofs.IntentContracts.IntentResolutionRecord :=
+  { directCompileResolutionRecord with nonGoalConflictPresent := true }
+
+def reversibleHighImpactResolutionRecord :
+    AsiStackProofs.IntentContracts.IntentResolutionRecord :=
+  { directCompileResolutionRecord with
+    highImpact := true
+    authorityGrantPresent := true
+    reversible := true }
+
+def irreversibleHighImpactResolutionRecord :
+    AsiStackProofs.IntentContracts.IntentResolutionRecord :=
+  { reversibleHighImpactResolutionRecord with reversible := false }
+
+theorem thin_resolution_transport_has_non_goal_conflict_collision :
+    directCompileResolutionRecord ≠ conflictingResolutionRecord ∧
+      ThinResolutionTransportOf directCompileResolutionRecord =
+        ThinResolutionTransportOf conflictingResolutionRecord ∧
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          directCompileResolutionRecord =
+        AsiStackProofs.IntentContracts.IntentResolutionRoute.compileCommand ∧
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          conflictingResolutionRecord =
+        AsiStackProofs.IntentContracts.IntentResolutionRoute.requestClarification := by
+  decide
+
+theorem thin_resolution_transport_has_reversibility_collision :
+    reversibleHighImpactResolutionRecord ≠
+        irreversibleHighImpactResolutionRecord ∧
+      ThinResolutionTransportOf reversibleHighImpactResolutionRecord =
+        ThinResolutionTransportOf irreversibleHighImpactResolutionRecord ∧
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          reversibleHighImpactResolutionRecord =
+        AsiStackProofs.IntentContracts.IntentResolutionRoute.compileCommand ∧
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          irreversibleHighImpactResolutionRecord =
+        AsiStackProofs.IntentContracts.IntentResolutionRoute.requestReview := by
+  decide
+
+theorem no_thin_resolution_router_recovers_both_conflict_routes
+    (route : ThinResolutionTransport ->
+      AsiStackProofs.IntentContracts.IntentResolutionRoute) :
+    route (ThinResolutionTransportOf directCompileResolutionRecord) ≠
+        AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          directCompileResolutionRecord ∨
+      route (ThinResolutionTransportOf conflictingResolutionRecord) ≠
+        AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          conflictingResolutionRecord := by
+  have collision :=
+    thin_resolution_transport_has_non_goal_conflict_collision.2.1
+  have separated :
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          directCompileResolutionRecord ≠
+        AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          conflictingResolutionRecord := by
+    decide
+  by_cases recoversDirect :
+      route (ThinResolutionTransportOf directCompileResolutionRecord) =
+        AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          directCompileResolutionRecord
+  · right
+    intro recoversConflict
+    apply separated
+    calc
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          directCompileResolutionRecord =
+          route (ThinResolutionTransportOf directCompileResolutionRecord) :=
+        recoversDirect.symm
+      _ = route (ThinResolutionTransportOf conflictingResolutionRecord) :=
+        congrArg route collision
+      _ = AsiStackProofs.IntentContracts.IntentResolutionRouteFor
+          conflictingResolutionRecord := recoversConflict
+  · exact Or.inl recoversDirect
+
+theorem complete_resolution_transport_round_trips
+    (record : AsiStackProofs.IntentContracts.IntentResolutionRecord) :
+    ResolutionRecordOf (CompleteResolutionTransportOf record) = record := by
+  cases record
+  rfl
+
+theorem complete_resolution_transport_is_injective :
+    Function.Injective CompleteResolutionTransportOf := by
+  intro left right equal
+  calc
+    left = ResolutionRecordOf (CompleteResolutionTransportOf left) :=
+      (complete_resolution_transport_round_trips left).symm
+    _ = ResolutionRecordOf (CompleteResolutionTransportOf right) :=
+      congrArg ResolutionRecordOf equal
+    _ = right := complete_resolution_transport_round_trips right
+
+theorem complete_resolution_transport_preserves_route
+    (record : AsiStackProofs.IntentContracts.IntentResolutionRecord) :
+    RouteFromCompleteResolutionTransport
+        (CompleteResolutionTransportOf record) =
+      AsiStackProofs.IntentContracts.IntentResolutionRouteFor record := by
+  unfold RouteFromCompleteResolutionTransport
+  rw [complete_resolution_transport_round_trips]
 
 def initialState : IntentState where
   stage := .received
