@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 324 |
-| Manifest status counts | {"implemented": 324} |
-| Triage class counts | {"formal-invariant": 324} |
+| Proof targets audited | 325 |
+| Manifest status counts | {"implemented": 325} |
+| Triage class counts | {"formal-invariant": 325} |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -77,7 +77,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 45 | 0 | 42 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 37 | 0 | 16 | 2 |
-| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 25 | 0 | 14 | 2 |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 4 | 30 | 0 | 18 | 5 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 2 | 9 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 25 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | 2 | 14 | 0 | 13 | 4 |
@@ -170,7 +170,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `human-ai-organizations-delegation-and-accountability` | 1 | 1 | 0 | 0 |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 1 | 1 | 0 | 0 |
 | `human-factors-and-meaningful-control-in-oversight` | 2 | 2 | 0 | 0 |
-| `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
+| `human-intent-as-a-formal-input` | 5 | 5 | 0 | 0 |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 2 | 2 | 0 | 0 |
 | `institutions-international-coordination-and-public-legitimacy` | 1 | 1 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
@@ -253,6 +253,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.intake.probe_fixture_bridge` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:intent.lowering.information_boundary` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentResolutionRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:oversight.control_envelope.blocks_action` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:oversight.responsibility_requires_control` | `human-factors-and-meaningful-control-in-oversight` | `AsiStackProofs.HumanFactorsOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human-ai-communication-persuasion-and-epistemic-security.admission_boundary` | `human-ai-communication-persuasion-and-epistemic-security` | `AsiStackProofs.CommunicationInfluenceReview` | triage ok; module ok; chapter tag ok; limitation ok |

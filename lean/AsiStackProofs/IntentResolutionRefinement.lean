@@ -367,6 +367,116 @@ theorem accepted_recontract_increments_version_and_respects_ceiling
     simpa [and_assoc] using specific
   exact ⟨fields.2.2.2.2.1, fields.2.2.2.2.2.2.2⟩
 
+structure IntentMeaning where
+  desiredOutcome : Nat
+  allowedMeans : Nat
+  forbiddenMeans : Nat
+  authorityBasis : Nat
+  authorityCeiling : Nat
+  affectedParties : Nat
+  privacyBoundary : Nat
+  acceptanceEvidence : Nat
+  stopConditions : Nat
+  permittedConsumers : Nat
+deriving DecidableEq, Repr
+
+structure ThinCommand where
+  desiredOutcome : Nat
+  allowedMeans : Nat
+  authorityCeiling : Nat
+  stopConditions : Nat
+deriving DecidableEq, Repr
+
+structure LosslessCommand where
+  desiredOutcome : Nat
+  allowedMeans : Nat
+  forbiddenMeans : Nat
+  authorityBasis : Nat
+  authorityCeiling : Nat
+  affectedParties : Nat
+  privacyBoundary : Nat
+  acceptanceEvidence : Nat
+  stopConditions : Nat
+  permittedConsumers : Nat
+deriving DecidableEq, Repr
+
+def ThinLower (intent : IntentMeaning) : ThinCommand :=
+  { desiredOutcome := intent.desiredOutcome
+    allowedMeans := intent.allowedMeans
+    authorityCeiling := intent.authorityCeiling
+    stopConditions := intent.stopConditions }
+
+def LosslessLower (intent : IntentMeaning) : LosslessCommand :=
+  { desiredOutcome := intent.desiredOutcome
+    allowedMeans := intent.allowedMeans
+    forbiddenMeans := intent.forbiddenMeans
+    authorityBasis := intent.authorityBasis
+    authorityCeiling := intent.authorityCeiling
+    affectedParties := intent.affectedParties
+    privacyBoundary := intent.privacyBoundary
+    acceptanceEvidence := intent.acceptanceEvidence
+    stopConditions := intent.stopConditions
+    permittedConsumers := intent.permittedConsumers }
+
+def collisionIntentA : IntentMeaning :=
+  { desiredOutcome := 1, allowedMeans := 2, forbiddenMeans := 3,
+    authorityBasis := 4, authorityCeiling := 5, affectedParties := 6,
+    privacyBoundary := 7, acceptanceEvidence := 8, stopConditions := 9,
+    permittedConsumers := 10 }
+
+def collisionIntentB : IntentMeaning :=
+  { collisionIntentA with
+    affectedParties := 60
+    privacyBoundary := 70
+    acceptanceEvidence := 80
+    permittedConsumers := 100 }
+
+theorem thin_lowering_has_distinct_intent_collision :
+    collisionIntentA ≠ collisionIntentB ∧
+      ThinLower collisionIntentA = ThinLower collisionIntentB := by
+  decide
+
+theorem no_thin_decoder_recovers_both_colliding_intents
+    (decode : ThinCommand -> IntentMeaning) :
+    decode (ThinLower collisionIntentA) ≠ collisionIntentA ∨
+      decode (ThinLower collisionIntentB) ≠ collisionIntentB := by
+  rcases thin_lowering_has_distinct_intent_collision with ⟨distinct, collision⟩
+  by_cases recoversA : decode (ThinLower collisionIntentA) = collisionIntentA
+  · right
+    intro recoversB
+    apply distinct
+    calc
+      collisionIntentA = decode (ThinLower collisionIntentA) := recoversA.symm
+      _ = decode (ThinLower collisionIntentB) := congrArg decode collision
+      _ = collisionIntentB := recoversB
+  · exact Or.inl recoversA
+
+theorem lossless_lowering_is_injective :
+    Function.Injective LosslessLower := by
+  intro left right equal
+  cases left
+  cases right
+  simp [LosslessLower] at equal ⊢
+  exact equal
+
+theorem affected_party_change_changes_lossless_lowering
+    (intent : IntentMeaning) (changed : Nat)
+    (different : changed ≠ intent.affectedParties) :
+    LosslessLower { intent with affectedParties := changed } ≠ LosslessLower intent := by
+  intro equal
+  have same := congrArg LosslessCommand.affectedParties equal
+  simp [LosslessLower] at same
+  exact different same
+
+theorem privacy_change_changes_lossless_lowering
+    (intent : IntentMeaning) (changed : Nat)
+    (different : changed ≠ intent.privacyBoundary) :
+    LosslessLower { intent with privacyBoundary := changed } ≠ LosslessLower intent := by
+  intro equal
+  have same := congrArg LosslessCommand.privacyBoundary equal
+  simp [LosslessLower] at same
+  exact different same
+
 def initialState : IntentState where
   stage := .received
   rootIntent := 101

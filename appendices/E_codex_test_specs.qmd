@@ -67,7 +67,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Stop-condition preservation test | partially implemented | plan-level preservation passes via synthetic plan-execution contract harness; runtime preservation not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Re-contract trigger test | implemented | Intent re-contract trigger probe passes via python3 scripts/validate_intent_recontract_probe.py; valid_no_material_delta_continue, valid_publication_surface_delta_recontracts, and seven expected-invalid controls block material deltas; no natural-language-intent-understanding, deployed-parser-quality, deployed-authority-extraction, prompt-injection-containment, runtime-dispatch, approval-service, user-satisfaction, or support-state-promotion claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Bounded-default audit | partially implemented | synthetic intent intake probe checks bounded defaults cannot become authority grants; deployed intake UI not run |
-| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Executed Human Intent resolution-to-contract refinement | implemented | passes via `python3 scripts/validate_intent_resolution_refinement.py`: 4 reachable traces/14 events, 14 invariant-prefix checks, 18 batch compositions, 4 valid/6 invalid intake cases, 2 valid/7 invalid re-contract cases, 13 plan fixtures, and 40/40 state-noninterfering mutations; support-state effect none |
+| `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Executed Human Intent resolution-to-contract refinement | implemented | passes via `python3 scripts/validate_intent_resolution_refinement.py`: 30 Lean declarations, 4 reachable traces/14 events, 14 invariant-prefix checks, 18 batch compositions, 4 valid/6 invalid intake cases, 2 valid/7 invalid re-contract cases, 13 plan fixtures, 40/40 state-noninterfering lifecycle mutations, 6 thin-lowering collisions, and 10/10 full-field mutation rejections; support-state effect none |
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Oversight-envelope boundary suite | implemented | passes via `python3 scripts/validate_human_oversight_control_contract.py`: one safe-hold record, thirty-two exact Lean declarations, thirteen closed lifecycle countermodels, and fifteen independently applied record mutations; no human observation, comprehension, intervention-efficacy, meaningful-control, safety, or support-state result |
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Automation-bias and mode-confusion adversarial study | planned | not_run |
 | `human-factors-and-meaningful-control-in-oversight` | Human Factors and Meaningful Control in Oversight | Rare-event intervention retention study | planned | not_run |
@@ -703,16 +703,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 324 |
+| Proof targets covered by triage | 325 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 324 |
+| implemented | 325 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 324 |
+| implemented | formal-invariant | lean-candidate | 325 |

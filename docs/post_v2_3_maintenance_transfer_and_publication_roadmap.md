@@ -7,6 +7,28 @@ Authority: Corben Sorenson
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
 
+## 2026-08-02 Human Intent proof-to-system boundary
+
+The book-local Human Intent proof tranche now has a finite information-loss
+boundary as well as lifecycle custody. `AsiStackProofs.IntentResolutionRefinement`
+proves that a thin four-field lowering collapses distinct ten-field intents,
+that no decoder can recover both collision witnesses, and that the modeled
+full lowering is injective. Its independent consumer reconstructs all six
+omitted-field collision classes and rejects mutations to all ten full fields,
+in addition to the existing lifecycle traces and mutations. This closes the
+current Lean obligation for modeled representational preservation without
+promoting chapter support.
+
+Do not spend book-local proof cycles pretending that these finite records can
+settle natural-language meaning, authentic authority, informed consent,
+affected-party standing, prompt-injection containment, deployed lowering,
+runtime stop-condition preservation, useful assistance, or effect safety.
+Those are empirical, integration, or whole-system obligations. Route them to
+prospectively frozen evaluations and Project Theseus, preserving exact model,
+field, authority, consumer, and non-claim boundaries in every returned
+artifact. Reopen Lean here only for a genuinely richer formal semantic model
+or a newly identified book-local invariant.
+
 ## Binding no-deferral manuscript policy — 2026-07-24
 
 The author has withdrawn the structural-freeze rule for manuscript ideas.

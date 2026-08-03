@@ -2,10 +2,13 @@
   "schema_version": "asi_stack.intent_resolution_refinement.v1",
   "result_id": "intent-resolution-refinement-2026-07-15-local",
   "source_sha256": {
-    "lean_model": "fabb8c2d9fd962b38ea3b42ff4cd31edb28eef4af679041b2862a762cb0d74e7",
+    "lean_model": "c6bf412d4845f571996a5884dcc0582515c1f6910945fa601c04c5ec5704d491",
     "intake_result": "1aee8323c4e01c1c620ff274afd9539fdd3701a7a24d04a5753dd5cc337bfa3a",
     "recontract_result": "7d43dc9c9295e78eb90dc9e261f5a893837bced3d6601972b1ca130c34ef786e"
   },
+  "lean_theorem_count": 30,
+  "thin_lowering_collision_count": 6,
+  "lossless_lowering_mutation_rejection_count": 10,
   "intake_valid_scenario_count": 4,
   "intake_invalid_control_count": 6,
   "intake_signal_count": 6,

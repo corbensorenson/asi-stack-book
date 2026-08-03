@@ -2395,7 +2395,7 @@
             "Evidence or stop erosion preserves the desired outcome while weakening acceptance criteria, source boundaries, verification, rollback, or termination duties during lowering.",
             "Clarification overload or least-authority miscalibration blocks benign reversible help so aggressively that users route around governance or the system loses useful throughput."
           ],
-          "minimal_implementation": "The current minimum is a public `intent_contract` schema and valid fixture, a 25-declaration finite Lean module grouped under four manifest proof targets, a synthetic intake probe with four valid scenarios and six expected-invalid request-pressure controls, a re-contract probe with two valid routes and seven expected-invalid material-delta controls, and a plan-execution harness with three valid and ten expected-invalid fixtures. These artifacts exercise record shape, finite route consequences, origin/preservation checks, bounded-default non-authority, and no-support boundaries only; they do not measure natural-language understanding, authority extraction, informed consent, preference inference, user satisfaction, prompt-injection containment, deployed runtime enforcement, or effect safety.",
+          "minimal_implementation": "The current minimum is a public `intent_contract` schema and valid fixture, a 30-declaration finite Lean refinement grouped with the route model under five manifest proof targets, a synthetic intake probe with four valid scenarios and six expected-invalid request-pressure controls, a re-contract probe with two valid routes and seven expected-invalid material-delta controls, and a plan-execution harness with three valid and ten expected-invalid fixtures. The refinement also proves that a thin four-field lowering collapses distinct ten-field intent records, no decoder can recover both collision witnesses, and the modeled full lowering is injective; its independent consumer reconstructs six omitted-field collisions and rejects mutations to all ten full fields. These artifacts exercise record shape, finite route consequences, representational information loss, origin/preservation checks, bounded-default non-authority, and no-support boundaries only; they do not measure natural-language understanding, semantic adequacy of the fields, authority extraction, informed consent, preference inference, user satisfaction, prompt-injection containment, deployed runtime enforcement, or effect safety.",
           "beyond_state_of_art": "A mature intent control plane combines humane conversational intake with an independently challengeable, versioned authorization boundary. It evaluates natural and adversarial requests across ambiguity, language, culture, accessibility, emotion, multi-party conflict, preference drift, and high-impact authority; compares strong requirements-engineering, direct-confirmation, and preference-learning baselines; measures interpretation accuracy, unauthorized-action rate, missed-help and clarification burden, re-contract precision/recall, user correction and appeal success, affected-party protection, latency, privacy, and useful throughput; and tests causal ablations plus independent implementations across downstream planners and runtimes. It preserves raw expression without allowing it to become ambient power and remains corrigible throughout execution. This is a target architecture, not evidence that the repository understands human intent, solves value alignment or consent, or safely authorizes real-world effects.",
           "codex_tests": [
             {
@@ -2450,10 +2450,10 @@
             },
             {
               "name": "Executed Human Intent resolution-to-contract refinement",
-              "purpose": "Refine root intent, constraint/stop preservation, authority review, material-delta custody, and versioned re-contract against bounded intake, re-contract, and plan fixtures.",
+              "purpose": "Refine root intent, constraint/stop preservation, authority review, material-delta custody, versioned re-contract, and lowering information boundaries against bounded intake, re-contract, and plan fixtures.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_intent_resolution_refinement.py`: 4 reachable traces/14 events, 14 invariant-prefix checks, 18 batch compositions, 4 valid/6 invalid intake cases, 2 valid/7 invalid re-contract cases, 13 plan fixtures, and 40/40 state-noninterfering mutations; support-state effect none",
-              "status": "implemented bounded structured-record refinement; no natural-language understanding, semantic completeness, authentic authority extraction, deployed dispatch, reproduction, transfer, safety, or chapter-core support claim"
+              "result_status": "passes via `python3 scripts/validate_intent_resolution_refinement.py`: 30 Lean declarations, 4 reachable traces/14 events, 14 invariant-prefix checks, 18 batch compositions, 4 valid/6 invalid intake cases, 2 valid/7 invalid re-contract cases, 13 plan fixtures, 40/40 state-noninterfering lifecycle mutations, 6 thin-lowering collisions, and 10/10 full-field mutation rejections; support-state effect none",
+              "status": "implemented bounded structured-record and lowering refinement; no natural-language understanding, semantic completeness, authentic authority extraction, valid consent, deployed dispatch, reproduction, transfer, safety, or chapter-core support claim"
             }
           ],
           "lean_module": "AsiStackProofs.IntentContracts",
@@ -2480,6 +2480,12 @@
               "tag": "lean:intent.intake.probe_fixture_bridge",
               "module": "AsiStackProofs.IntentResolutionRefinement",
               "target": "The bounded intake, re-contract, and plan-fixture surfaces are digest-bound to an independent consumer with four reachable traces, fourteen invariant prefixes, eighteen batch compositions, and forty state-noninterfering mutations.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:intent.lowering.information_boundary",
+              "module": "AsiStackProofs.IntentResolutionRefinement",
+              "target": "A thin lowering that omits forbidden means, authority basis, affected parties, privacy boundary, acceptance evidence, and permitted consumers has distinct-intent collisions and no decoder can recover both witnesses, while the modeled full ten-field lowering is injective and changes when affected-party or privacy fields change.",
               "status": "implemented"
             }
           ]

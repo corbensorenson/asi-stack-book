@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Consume the reachable intent-resolution model against bounded local evidence."""
 from __future__ import annotations
-import argparse, copy, hashlib, json
+import argparse, copy, hashlib, json, re, subprocess
 from pathlib import Path
 from typing import Any
 import jsonschema
@@ -13,9 +13,19 @@ RECONTRACT=ROOT/"experiments/intent_recontract_probe/results/2026-07-02-local.js
 PLAN_FIXTURES=ROOT/"experiments/plan_execution_contracts/fixtures"
 RESULT=ROOT/"experiments/intent_resolution_refinement/results/2026-07-15-local.json"
 SCHEMA=ROOT/"schemas/intent_resolution_refinement.schema.json"
+LOWERING_THEOREMS={"thin_lowering_has_distinct_intent_collision","no_thin_decoder_recovers_both_colliding_intents","lossless_lowering_is_injective","affected_party_change_changes_lossless_lowering","privacy_change_changes_lossless_lowering"}
 
 def load(p:Path)->Any:return json.loads(p.read_text(encoding="utf-8"))
 def sha(p:Path)->str:return hashlib.sha256(p.read_bytes()).hexdigest()
+def validate_formal_surface():
+ source=LEAN.read_text(encoding="utf-8");names=set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",source))
+ if len(names)!=30 or not LOWERING_THEOREMS.issubset(names):raise AssertionError(f"Lean surface drifted: count={len(names)} missing={sorted(LOWERING_THEOREMS-names)}")
+ completed=subprocess.run(["lake","env","lean","AsiStackProofs/IntentResolutionRefinement.lean"],cwd=ROOT/"lean",capture_output=True,text=True)
+ if completed.returncode:raise AssertionError(completed.stdout+completed.stderr)
+ return len(names)
+def intent_meaning():return {"desiredOutcome":1,"allowedMeans":2,"forbiddenMeans":3,"authorityBasis":4,"authorityCeiling":5,"affectedParties":6,"privacyBoundary":7,"acceptanceEvidence":8,"stopConditions":9,"permittedConsumers":10}
+def thin_lower(x):return {k:x[k] for k in ("desiredOutcome","allowedMeans","authorityCeiling","stopConditions")}
+def lossless_lower(x):return copy.deepcopy(x)
 def initial():return {"stage":"received","root":101,"version":1,"constraint":0,"stop":0,"ceiling":3,"approved":0,"ambiguity":False,"accepted":False,"recontract":False,"blocked":False,"time":0}
 def event(kind,from_stage,to_stage,time):return {"kind":kind,"from":from_stage,"to":to_stage,"root":101,"input_version":1,"output_version":1,"source_constraint":501,"source_stop":601,"output_constraint":501,"output_stop":601,"authority":3,"prohibited":False,"hidden":False,"ambiguity":False,"clarification":False,"authority_receipt":False,"means":False,"authority_expanded":False,"evidence":False,"stop_dropped":False,"parties":False,"promotion":False,"recontract_receipt":False,"block":False,"time":time}
 def material(e):return any(e[k] for k in ("means","authority_expanded","evidence","stop_dropped","parties","promotion"))
@@ -102,7 +112,7 @@ def mutations(base):
   x=copy.deepcopy(base[:3])+[event("continue","accepted","accepted",4)];x[-1][key]=True;out.append(("continue_"+key,x))
  return out
 def build():
- issues=[]; intake=load(INTAKE); recontract=load(RECONTRACT)
+ issues=[]; theorem_count=validate_formal_surface(); intake=load(INTAKE); recontract=load(RECONTRACT)
  if intake.get("valid_scenarios")!=4 or intake.get("expected_invalid_controls")!=6 or intake.get("support_state_effect")!="none":issues.append("intake drift")
  signals=intake.get("signal_coverage",{})
  if len(signals)!=6 or not all(signals.values()):issues.append("intake signals drift")
@@ -130,7 +140,18 @@ def build():
   receipts.append({"mutation_id":mid,"rejected":not accepted,"failed_event_index":index,"state_noninterfering":same,"reasons":reasons})
   if accepted:issues.append(mid+": mutation accepted")
   if not same:issues.append(mid+": rejection changed state")
- result={"schema_version":"asi_stack.intent_resolution_refinement.v1","result_id":"intent-resolution-refinement-2026-07-15-local","source_sha256":{"lean_model":sha(LEAN),"intake_result":sha(INTAKE),"recontract_result":sha(RECONTRACT)},"intake_valid_scenario_count":4,"intake_invalid_control_count":6,"intake_signal_count":6,"recontract_valid_scenario_count":2,"recontract_invalid_control_count":7,"plan_fixture_count":13,"plan_valid_fixture_count":3,"plan_invalid_fixture_count":10,"reachable_trace_event_count":5,"reachable_scenario_count":4,"reachable_scenario_event_count":14,"invariant_prefix_check_count":14,"composition_check_count":18,"accepted_contract_version":2,"mutation_count":len(receipts),"mutation_rejection_count":sum(x["rejected"] for x in receipts),"rejection_noninterference_count":noninterference,"reference_trace_final_state":final,"scenario_receipts":scenario_receipts,"mutation_receipts":receipts,"support_state_effect":"none","non_claims":["The consumer reads structured bounded records and does not establish natural-language intent understanding or semantic completeness.","Numeric hashes, authority and receipts are trusted inputs; the packet does not establish authentic authority extraction, prompt-injection containment, or deployed dispatch.","Passing does not establish user satisfaction, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."]}
+ base_intent=intent_meaning();omitted=("forbiddenMeans","authorityBasis","affectedParties","privacyBoundary","acceptanceEvidence","permittedConsumers")
+ collisions=0
+ for index,key in enumerate(omitted,1):
+  changed=copy.deepcopy(base_intent);changed[key]+=100*index
+  if changed!=base_intent and thin_lower(changed)==thin_lower(base_intent):collisions+=1
+  else:issues.append("thin lowering failed collision control: "+key)
+ lossless_rejections=0
+ for index,key in enumerate(base_intent,1):
+  changed=copy.deepcopy(base_intent);changed[key]+=1000*index
+  if lossless_lower(changed)!=lossless_lower(base_intent):lossless_rejections+=1
+  else:issues.append("lossless lowering accepted field mutation: "+key)
+ result={"schema_version":"asi_stack.intent_resolution_refinement.v1","result_id":"intent-resolution-refinement-2026-07-15-local","source_sha256":{"lean_model":sha(LEAN),"intake_result":sha(INTAKE),"recontract_result":sha(RECONTRACT)},"lean_theorem_count":theorem_count,"thin_lowering_collision_count":collisions,"lossless_lowering_mutation_rejection_count":lossless_rejections,"intake_valid_scenario_count":4,"intake_invalid_control_count":6,"intake_signal_count":6,"recontract_valid_scenario_count":2,"recontract_invalid_control_count":7,"plan_fixture_count":13,"plan_valid_fixture_count":3,"plan_invalid_fixture_count":10,"reachable_trace_event_count":5,"reachable_scenario_count":4,"reachable_scenario_event_count":14,"invariant_prefix_check_count":14,"composition_check_count":18,"accepted_contract_version":2,"mutation_count":len(receipts),"mutation_rejection_count":sum(x["rejected"] for x in receipts),"rejection_noninterference_count":noninterference,"reference_trace_final_state":final,"scenario_receipts":scenario_receipts,"mutation_receipts":receipts,"support_state_effect":"none","non_claims":["The consumer reads structured bounded records and does not establish natural-language intent understanding or semantic completeness.","Numeric hashes, authority and receipts are trusted inputs; the packet does not establish authentic authority extraction, prompt-injection containment, or deployed dispatch.","Passing does not establish user satisfaction, natural-workload usefulness, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support."]}
  try:jsonschema.Draft202012Validator(load(SCHEMA)).validate(result)
  except jsonschema.ValidationError as e:issues.append("schema: "+e.message)
  return result,issues
@@ -139,5 +160,5 @@ def main():
  if e:raise SystemExit("Intent resolution refinement failed:\n - "+"\n - ".join(e))
  if a.write:RESULT.parent.mkdir(parents=True,exist_ok=True);RESULT.write_text(json.dumps(r,indent=2)+"\n",encoding="utf-8")
  elif not RESULT.exists() or load(RESULT)!=r:raise SystemExit("Intent resolution result stale; run --write")
- print(f"Intent resolution refinement passed: {r['reachable_scenario_count']} traces/{r['reachable_scenario_event_count']} events, {r['invariant_prefix_check_count']} invariant prefixes, {r['composition_check_count']} compositions, {r['mutation_rejection_count']} state-noninterfering mutations rejected, support effect none.")
+ print(f"Intent resolution refinement passed: {r['lean_theorem_count']} Lean theorems, {r['reachable_scenario_count']} traces/{r['reachable_scenario_event_count']} events, {r['invariant_prefix_check_count']} invariant prefixes, {r['composition_check_count']} compositions, {r['mutation_rejection_count']} state-noninterfering mutations rejected, {r['thin_lowering_collision_count']} thin collisions, {r['lossless_lowering_mutation_rejection_count']} lossless mutations rejected, support effect none.")
 if __name__=="__main__":main()

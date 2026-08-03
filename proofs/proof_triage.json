@@ -321,6 +321,16 @@
       "rationale": "Replaced assumption/literal-summary ownership with a reachable request-to-contract model and independent consumer over bounded intake, re-contract, and plan fixtures plus thirty mutations; support effect none."
     },
     {
+      "tag": "lean:intent.lowering.information_boundary",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "module": "AsiStackProofs.IntentResolutionRefinement",
+      "formal_target": "A thin lowering that omits forbidden means, authority basis, affected parties, privacy boundary, acceptance evidence, and permitted consumers has distinct-intent collisions and no decoder can recover both witnesses, while the modeled full ten-field lowering is injective and changes when affected-party or privacy fields change.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "The refinement proves one concrete distinct-intent collision, decoder impossibility for that collision, and full-lowering injectivity; the independent consumer reconstructs six omitted-field collisions and rejects ten full-field mutations. This is a finite representation theorem, not semantic interpretation, authority, consent, or deployed lowering evidence."
+    },
+    {
       "tag": "lean:oversight.control_envelope.blocks_action",
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
       "module": "AsiStackProofs.HumanFactorsOversight",
@@ -3251,5 +3261,5 @@
       "rationale": "The implemented eight-step finite review preserves exact compiler identity, typed roles, complete proposal denominators, seven lower-order rescue families, held-out qualification, fallback, contraction, and explicit non-authority. All 54 independently encoded mutations receive exact repairs; role and candidate identities compose over append, entity remapping preserves role IDs, omitted roles and candidates are rejected, an active descendant blocks contraction, seven scope changes invalidate receipts, two collision pairs prove signal insufficiency, and three existing consumers reject missing evidence. Authored fields remain assumptions, and no irreducibility, usefulness, efficiency, natural-task, bounded-arity, safe-adaptation, support, transfer, or external-effect claim follows."
     }
   ],
-  "record_count": 324
+  "record_count": 325
 }

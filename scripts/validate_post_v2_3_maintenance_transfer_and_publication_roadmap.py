@@ -298,7 +298,7 @@ def errors(data: dict) -> list[str]:
         or no_deferral.get("structural_freeze_for_manuscript_ideas") is not False
         or no_deferral.get("all_chapter_core_support_states") != "argument"
         or no_deferral.get("current_semantically_reviewed_chapter_count") != 68
-        or no_deferral.get("current_structured_atom_count") != 4059
+        or no_deferral.get("current_structured_atom_count") != 4060
     ):
         out.append("no-deferral manuscript admission state drifted")
 
@@ -1643,13 +1643,13 @@ def errors(data: dict) -> list[str]:
         "P0": 62,
         "P1": 916,
         "P2": 225,
-        "P3": 1076,
+        "P3": 1080,
         "P4": 175,
-        "P5": 202,
+        "P5": 203,
         "P6": 0,
     }
     expected_c6_dispositions = {
-        "retain": 2656,
+        "retain": 2661,
     }
     if (
         c6_overlay_status.get("state")
@@ -1663,7 +1663,7 @@ def errors(data: dict) -> list[str]:
         != "docs/proof_semantic_depth_overlay.md"
         or c6_overlay_status.get("rationalization_ledger_path")
         != "proofs/proof_semantic_rationalization_ledger.json"
-        or c6_overlay_status.get("theorem_count") != 2656
+        or c6_overlay_status.get("theorem_count") != 2661
         or c6_overlay_status.get("theorem_bearing_module_count") != 130
         or c6_overlay_status.get("semantic_owner_chapter_count") != 84
         or c6_overlay_status.get("semantic_level_counts") != expected_c6_levels
@@ -1682,7 +1682,7 @@ def errors(data: dict) -> list[str]:
         out.append("C6 current semantic-overlay status drifted")
     c6_summary = c6_overlay.get("summary", {})
     if (
-        c6_summary.get("current_theorem_count") != 2656
+        c6_summary.get("current_theorem_count") != 2661
         or c6_summary.get("current_module_count") != 130
         or c6_summary.get("semantic_owner_chapter_count") != 84
         or c6_summary.get("semantic_level_counts") != expected_c6_levels
@@ -1956,7 +1956,7 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("retired_inherited_prose_candidate_count") != 254
         or template_guard.get("added_domain_specific_prose_candidate_count") != 681
         or template_guard.get("baseline_structured_atom_count") != 4067
-        or template_guard.get("current_structured_atom_count") != 4059
+        or template_guard.get("current_structured_atom_count") != 4060
         or template_guard.get("pending_prose_candidate_count") != 0
         or template_guard.get("affected_semantic_review_chapter_count") != 11
         or template_guard.get("copied_scaffold_fixture_rejected") is not True
@@ -1982,8 +1982,8 @@ def errors(data: dict) -> list[str]:
         or w3.get("corpus", {}).get("manifest_chapter_count") != 84
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
-        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 269
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 710
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 270
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 712
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):
@@ -2121,7 +2121,7 @@ def errors(data: dict) -> list[str]:
         if materialization.get(field) != expected:
             out.append(f"P2 sequential materialization contract drift: {field}")
 
-    if data["atom_registry"].get("summary", {}).get("atom_count") != 4059:
+    if data["atom_registry"].get("summary", {}).get("atom_count") != 4060:
         out.append("current semantic atom registry denominator drifted")
     if len(data["atom_addendum"].get("atoms", [])) != 15:
         out.append("post-activation addendum denominator drifted")
@@ -2135,12 +2135,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (324, 130, 2656, 1665, 425, 566)
+    expected_proof = (325, 130, 2661, 1669, 425, 567)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 324:
-        out.append("proof manifest target count disagrees with the 324 implemented targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 324}:
+    if data["proof_manifest"].get("proof_target_count") != 325:
+        out.append("proof manifest target count disagrees with the 325 implemented targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 325}:
         out.append("taxonomy-completion proof targets altered the frozen implemented-proof denominator")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})

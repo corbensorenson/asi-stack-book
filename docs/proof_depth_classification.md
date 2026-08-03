@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 324 |
+| Proof targets in manifest | 325 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2656 |
+| Theorem declarations classified | 2661 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1665 |
-| Unknown or mixed theorem declarations | 566 |
+| Derived/decomposed theorem declarations | 1669 |
+| Unknown or mixed theorem declarations | 567 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
 | Safety-critical chapter classifications present | 1/1 |
@@ -113,7 +113,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 45 | 0 | 35 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 37 | 0 | 18 | 19 | manual review |
-| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 25 | 1 | 12 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 4 | 30 | 1 | 16 | 13 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 25 | 0 | 15 | 10 | manual review |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 14 | 6 | 5 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1420,6 +1420,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `accepted_step_preserves_approved_authority_ceiling` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `affected_party_change_changes_lossless_lowering` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `apply_event_preserves_authority_ceiling` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `apply_event_preserves_root_intent` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
@@ -1429,8 +1430,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `exact_intent_trace_reaches_accepted_contract` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `hidden_override_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `initial_approved_authority_is_within_ceiling` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `lossless_lowering_is_injective` | derived_or_decomposed | no | uses cases, left, right, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `material_delta_cannot_silently_continue` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `missing_intent_payload_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `no_thin_decoder_recovers_both_colliding_intents` | derived_or_decomposed | no | uses apply, by_cases, calc, rcases, right |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `privacy_change_changes_lossless_lowering` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `prohibited_action_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `recontract_without_receipt_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `rejection_blocks_without_materializing_contract_payload` | unknown_or_mixed | no | no recognized depth pattern |
@@ -1438,6 +1442,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_preserves_approved_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `successful_run_preserves_root_and_ceiling` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `thin_lowering_has_distinct_intent_collision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | `unchanged_contract_continues_without_payload_rewrite` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `authority_widening_blocks_execution_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `complete_dispatch_review_is_ready` | derived_or_decomposed | no | uses simp, unfold |

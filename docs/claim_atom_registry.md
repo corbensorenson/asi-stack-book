@@ -7,7 +7,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 ## Coverage summary
 
 - Chapters: 64
-- Structured manifest atoms: 4059
+- Structured manifest atoms: 4060
 - Machine candidates awaiting semantic atom review: 0
 - Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
@@ -17,7 +17,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | `beyond_sota` | 64 |
 | `core` | 64 |
 | `failure_mode` | 1031 |
-| `formal_target` | 294 |
+| `formal_target` | 295 |
 | `insufficiency` | 64 |
 | `interface` | 603 |
 | `invariant` | 902 |
@@ -36,7 +36,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Failure Modes of Ungoverned Intelligence | 33 | 0 | 0 | `evidence_quality/claim_dossiers/failure-modes-of-ungoverned-intelligence.md` |
 | Evidence States and Claim Discipline | 42 | 0 | 0 | `evidence_quality/claim_dossiers/evidence-states-and-claim-discipline.md` |
 | Scalable Oversight and Adversarial AI Control | 45 | 0 | 0 | `evidence_quality/claim_dossiers/scalable-oversight-and-adversarial-ai-control.md` |
-| Human Intent as a Formal Input | 45 | 0 | 0 | `evidence_quality/claim_dossiers/human-intent-as-a-formal-input.md` |
+| Human Intent as a Formal Input | 46 | 0 | 0 | `evidence_quality/claim_dossiers/human-intent-as-a-formal-input.md` |
 | Human-AI Communication, Persuasion, and Epistemic Security | 33 | 0 | 0 | `evidence_quality/claim_dossiers/human-ai-communication-persuasion-and-epistemic-security.md` |
 | Constitutional Alignment: Agency, Dignity, and Corrigibility | 51 | 0 | 0 | `evidence_quality/claim_dossiers/constitutional-alignment-substrate.md` |
 | Moral Uncertainty, Value Conflict, and Contestable Governance | 58 | 0 | 0 | `evidence_quality/claim_dossiers/moral-uncertainty-and-value-conflict.md` |

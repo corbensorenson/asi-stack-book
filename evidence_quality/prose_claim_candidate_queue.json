@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3885,
+    "candidate_count": 3886,
     "review_state_counts": {
-      "duplicate_of_atom": 1853,
+      "duplicate_of_atom": 1854,
       "editorial_or_question": 59,
       "historical_or_source_report": 322,
       "material_atom": 3,
@@ -7748,6 +7748,25 @@
       "target_atom_id": "human-intent-as-a-formal-input.minimum.001"
     },
     {
+      "candidate_id": "human-intent-as-a-formal-input.prose.9c6fc2200d00",
+      "chapter_id": "human-intent-as-a-formal-input",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:361",
+      "sentence": "The resulting evidence is stronger at the structured-record boundary, not at natural-language semantics: the theorem proves information preservation only for the modeled fields, while field meanings, hashes, labels, authority, consent, and receipts remain trusted inputs and the model stops before dispatch or effect.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the modeled-field information-preservation result and its semantic non-claim boundary.",
+      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-lowering-information-boundary"
+    },
+    {
       "candidate_id": "human-intent-as-a-formal-input.prose.755e8b072507",
       "chapter_id": "human-intent-as-a-formal-input",
       "source": "chapters/human-intent-as-a-formal-input.qmd:370",
@@ -7806,10 +7825,10 @@
       "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
     },
     {
-      "candidate_id": "human-intent-as-a-formal-input.prose.539a32a93484",
+      "candidate_id": "human-intent-as-a-formal-input.prose.ad342f87d7df",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:419",
-      "sentence": "The reachable model proves exact bounded write ownership, arbitrary-run root/ceiling/approved-authority preservation, valid-trace extraction, material-delta custody, batch composition, and versioned re-contract consequences, while the independent consumer binds the existing structured records and 40 state-noninterfering mutations.",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:420",
+      "sentence": "The reachable model proves exact bounded write ownership, arbitrary-run root/ceiling/approved-authority preservation, valid-trace extraction, material-delta custody, batch composition, versioned re-contract consequences, one explicit lossy-projection collision, decoder impossibility for the colliding pair, and injectivity of the modeled full projection.",
       "cues": [
         "proves"
       ],
@@ -7821,14 +7840,14 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Reports the bounded arbitrary-run model and consumer result already owned by the strengthened intent contract operational target.",
-      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-contract-operational-invariant"
+      "disposition_rationale": "Summarizes the existing lifecycle targets and the new lowering information-boundary target without adding a distinct support-bearing proposition.",
+      "target_atom_id": "human-intent-as-a-formal-input.formal.intent-lowering-information-boundary"
     },
     {
-      "candidate_id": "human-intent-as-a-formal-input.prose.a7eb681810e1",
+      "candidate_id": "human-intent-as-a-formal-input.prose.27d65dbaeb78",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:419",
-      "sentence": "This proof packet does not prove natural-language parsing, semantic equivalence, legitimate authority extraction, user preference fidelity, prompt-injection containment, private-source safety, end-to-end lowering, deployed dispatch/effects, user satisfaction, natural-workload usefulness, reproduction, transfer, or chapter-core support.",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:420",
+      "sentence": "This proof packet does not prove natural-language parsing, semantic adequacy of the modeled fields, legitimate authority extraction, valid consent, user preference fidelity, prompt-injection containment, private-source safety, deployed end-to-end lowering, dispatch/effects, user satisfaction, natural-workload usefulness, reproduction, transfer, or chapter-core support.",
       "cues": [
         "prove",
         "transfer"
@@ -7841,13 +7860,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Explicit non-claim boundary for the finite intent-resolution proof packet.",
+      "disposition_rationale": "Explicit non-claim boundary for the finite lifecycle and lowering proof packet.",
       "target_atom_id": null
     },
     {
       "candidate_id": "human-intent-as-a-formal-input.prose.2db9dde64d09",
       "chapter_id": "human-intent-as-a-formal-input",
-      "source": "chapters/human-intent-as-a-formal-input.qmd:471",
+      "source": "chapters/human-intent-as-a-formal-input.qmd:472",
       "sentence": "A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.",
       "cues": [
         "show"
