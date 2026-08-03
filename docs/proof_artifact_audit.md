@@ -38,7 +38,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | 10 | 21 | 0 | 34 | 4 |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | 7 | 37 | 0 | 11 | 5 |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | 4 | 31 | 0 | 20 | 3 |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 3 | 0 | 5 | 4 |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 15 | 0 | 10 | 5 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 2 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 27 | 0 | 14 | 2 |

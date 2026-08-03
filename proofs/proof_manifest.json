@@ -2647,7 +2647,7 @@
       "chapter_title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "tag": "lean:benchmarks.ratchet.operational_invariant",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
+      "formal_target": "Every accepted finite ratchet-lifecycle step preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields, adds exactly one receipt, and composes across event batches; clean evidence can reach only a non-authorizing independent-review candidate.",
       "status": "implemented",
       "outline_line": 6407,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
@@ -2657,7 +2657,7 @@
       "chapter_title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
+      "formal_target": "The finite ratchet lifecycle quarantines suspected contamination, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, and makes closed dispositions absorbing.",
       "status": "implemented",
       "outline_line": 6408,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
@@ -2667,7 +2667,7 @@
       "chapter_title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "tag": "lean:benchmarks.ratchet.fixture_bridge",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean.",
+      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 15-declaration Lean surface, executes clean, saturated, and contaminated lifecycle witnesses, checks all seven clean-trace splits, and rejects 15 lifecycle mutations; executable totals remain separate from the quantified Lean semantics.",
       "status": "implemented",
       "outline_line": 6409,
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"

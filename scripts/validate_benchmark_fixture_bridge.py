@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -35,6 +36,7 @@ CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
 VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "BenchmarkRatchets.lean"
+LEAN_ROOT = ROOT / "lean"
 
 COMMAND = "python3 scripts/validate_benchmark_fixture_bridge.py"
 PROOF_TAG = "lean:benchmarks.ratchet.fixture_bridge"
@@ -44,6 +46,42 @@ REQUIRED_THEOREMS = [
     "accepted_saturated_floor_requires_regression_records",
     "contaminated_review_cannot_promote_readiness",
 ]
+LIFECYCLE_THEOREMS = {
+    "ratchet_rejected_event_is_noninterfering",
+    "ratchet_step_preserves_identity_and_authority",
+    "ratchet_accepted_step_adds_exactly_one_receipt",
+    "run_ratchet_lifecycle_append",
+    "contaminated_decision_cannot_recommend_promotion",
+    "saturated_decision_routes_to_regression_floor",
+    "missing_transfer_check_rejected_noninterferingly",
+    "missing_preserved_evidence_rejects_disposition",
+    "clean_trace_reaches_closed_independent_review_candidate",
+    "saturated_trace_reaches_closed_regression_floor",
+    "contaminated_trace_quarantines_before_transfer",
+    "closed_ratchet_is_absorbing",
+}
+PROTECTED_FIELDS = (
+    "instrument_digest",
+    "dataset_version",
+    "harness_version",
+    "claim_digest",
+    "authority_ceiling",
+    "benchmark_saturated",
+    "contamination_suspected",
+    "transfer_or_mutation_check_present",
+    "regression_records_preserved",
+    "negative_results_preserved",
+    "support_assignments",
+    "external_effects",
+)
+CLEAN_TRACE = (
+    "lock_baseline",
+    "record_evaluation",
+    "review_integrity",
+    "review_transfer",
+    "decide",
+    "close",
+)
 RETIRED_FIXTURE_THEOREMS = [
     "benchmark_antigoodhart_fixture_bridge_valid",
     "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
@@ -269,6 +307,171 @@ def validate_lean_fixture(errors: list[str]) -> None:
     for theorem in RETIRED_FIXTURE_THEOREMS:
         if re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FIXTURE)} must keep copied fixture theorem {theorem} retired.")
+    theorem_names = set(
+        re.findall(r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)", text)
+    )
+    missing_lifecycle = sorted(LIFECYCLE_THEOREMS - theorem_names)
+    if missing_lifecycle:
+        errors.append(f"{rel(LEAN_FIXTURE)} missing lifecycle theorems {missing_lifecycle!r}.")
+    if len(theorem_names) != 15:
+        errors.append(
+            f"{rel(LEAN_FIXTURE)} must contain exactly 15 theorem declarations, "
+            f"found {len(theorem_names)}."
+        )
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/BenchmarkRatchets.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(
+            "Lean benchmark-ratchet lifecycle did not compile: "
+            + (completed.stdout + completed.stderr).strip()
+        )
+
+
+def reference_lifecycle_state() -> dict[str, Any]:
+    return {
+        "stage": "registered",
+        "instrument_digest": 6101,
+        "dataset_version": 6102,
+        "harness_version": 6103,
+        "claim_digest": 6104,
+        "authority_ceiling": 1,
+        "benchmark_saturated": False,
+        "contamination_suspected": False,
+        "transfer_or_mutation_check_present": True,
+        "regression_records_preserved": True,
+        "negative_results_preserved": True,
+        "outcome": "none",
+        "receipt_count": 0,
+        "support_assignments": 0,
+        "external_effects": 0,
+    }
+
+
+def lifecycle_step(state: dict[str, Any], event: str) -> tuple[str, dict[str, Any]]:
+    next_state = dict(state)
+    if event == "lock_baseline":
+        if state["stage"] != "registered":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "baseline_locked"
+    elif event == "record_evaluation":
+        if state["stage"] != "baseline_locked":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "evaluation_recorded"
+    elif event == "review_integrity":
+        if state["stage"] != "evaluation_recorded":
+            return "reject_stage", dict(state)
+        if state["contamination_suspected"]:
+            next_state["stage"] = "dispositioned"
+            next_state["outcome"] = "quarantine"
+        else:
+            next_state["stage"] = "integrity_reviewed"
+    elif event == "review_transfer":
+        if state["stage"] != "integrity_reviewed":
+            return "reject_stage", dict(state)
+        if not state["transfer_or_mutation_check_present"]:
+            return "reject_evidence", dict(state)
+        next_state["stage"] = "transfer_reviewed"
+    elif event == "decide":
+        if state["stage"] != "transfer_reviewed":
+            return "reject_stage", dict(state)
+        if state["contamination_suspected"]:
+            next_state["outcome"] = "quarantine"
+        elif not state["regression_records_preserved"] or not state["negative_results_preserved"]:
+            return "reject_evidence", dict(state)
+        elif state["benchmark_saturated"]:
+            next_state["outcome"] = "regression_floor"
+        else:
+            next_state["outcome"] = "independent_review_candidate"
+        next_state["stage"] = "dispositioned"
+    elif event == "close":
+        if state["stage"] != "dispositioned":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "closed"
+    else:
+        raise ValueError(f"unknown ratchet event {event}")
+    next_state["receipt_count"] += 1
+    return "accepted", next_state
+
+
+def run_lifecycle(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, Any]:
+    current = dict(state)
+    for event in events:
+        _, current = lifecycle_step(current, event)
+    return current
+
+
+def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
+    baseline = reference_lifecycle_state()
+    current = dict(baseline)
+    accepted_count = 0
+    for event in CLEAN_TRACE:
+        route, next_state = lifecycle_step(current, event)
+        if route != "accepted":
+            errors.append(f"clean benchmark lifecycle event {event} returned {route}")
+        else:
+            accepted_count += 1
+        for field in PROTECTED_FIELDS:
+            if next_state[field] != current[field]:
+                errors.append(f"clean benchmark lifecycle event {event} changed {field}")
+        if route == "accepted" and next_state["receipt_count"] != current["receipt_count"] + 1:
+            errors.append(f"clean benchmark lifecycle event {event} did not add one receipt")
+        current = next_state
+    if current["stage"] != "closed" or current["outcome"] != "independent_review_candidate":
+        errors.append("clean benchmark lifecycle did not close with an independent-review candidate")
+    for split in range(len(CLEAN_TRACE) + 1):
+        left = run_lifecycle(baseline, CLEAN_TRACE[:split])
+        if run_lifecycle(left, CLEAN_TRACE[split:]) != current:
+            errors.append(f"benchmark lifecycle composition failed at split {split}")
+
+    saturated = reference_lifecycle_state()
+    saturated["benchmark_saturated"] = True
+    saturated_final = run_lifecycle(saturated, CLEAN_TRACE)
+    if saturated_final["outcome"] != "regression_floor" or saturated_final["receipt_count"] != 6:
+        errors.append("saturated benchmark did not close as a regression floor")
+
+    contaminated = reference_lifecycle_state()
+    contaminated["contamination_suspected"] = True
+    contaminated_trace = ("lock_baseline", "record_evaluation", "review_integrity", "close")
+    contaminated_final = run_lifecycle(contaminated, contaminated_trace)
+    if contaminated_final["outcome"] != "quarantine" or contaminated_final["receipt_count"] != 4:
+        errors.append("contaminated benchmark did not quarantine before transfer review")
+
+    def changed(**updates: Any) -> dict[str, Any]:
+        state = reference_lifecycle_state()
+        state.update(updates)
+        return state
+
+    mutations = [
+        ("lock wrong stage", "lock_baseline", changed(stage="baseline_locked"), "reject_stage"),
+        ("record wrong stage", "record_evaluation", changed(), "reject_stage"),
+        ("integrity wrong stage", "review_integrity", changed(), "reject_stage"),
+        ("transfer wrong stage", "review_transfer", changed(), "reject_stage"),
+        ("missing transfer evidence", "review_transfer", changed(stage="integrity_reviewed", transfer_or_mutation_check_present=False), "reject_evidence"),
+        ("decision wrong stage", "decide", changed(), "reject_stage"),
+        ("missing regression records", "decide", changed(stage="transfer_reviewed", regression_records_preserved=False), "reject_evidence"),
+        ("missing negative results", "decide", changed(stage="transfer_reviewed", negative_results_preserved=False), "reject_evidence"),
+        ("close wrong stage", "close", changed(), "reject_stage"),
+    ]
+    closed = changed(stage="closed", outcome="independent_review_candidate", receipt_count=6)
+    mutations.extend(
+        (f"closed absorbs {event}", event, closed, "reject_stage")
+        for event in CLEAN_TRACE
+    )
+    rejected_count = 0
+    for name, event, state, expected_route in mutations:
+        route, next_state = lifecycle_step(state, event)
+        if route != expected_route:
+            errors.append(f"benchmark lifecycle mutation {name} expected {expected_route}, got {route}")
+        elif next_state != state:
+            errors.append(f"benchmark lifecycle mutation {name} changed state on rejection")
+        else:
+            rejected_count += 1
+    return accepted_count, len(CLEAN_TRACE) + 1, rejected_count
 
 
 def manifest_contains_bridge(errors: list[str]) -> None:
@@ -357,6 +560,7 @@ def main() -> None:
     errors: list[str] = []
     validate_result(expected, args.write_result, errors)
     validate_lean_fixture(errors)
+    accepted_count, split_count, rejected_count = validate_lifecycle(errors)
     validate_surfaces(errors)
     if errors:
         fail(errors)
@@ -364,7 +568,10 @@ def main() -> None:
         "Benchmark fixture bridge validation passed: "
         f"{summary['valid_fixture_count']} valid fixture(s), "
         f"{summary['expected_invalid_fixture_count']} expected-invalid fixture(s), "
-        "executable fixture and quantified Lean decision boundary aligned."
+        f"15 Lean declarations, {accepted_count} accepted clean transitions, "
+        f"{split_count}/{split_count} trace splits, saturated-floor and "
+        f"contamination-quarantine witnesses, and {rejected_count}/15 rejecting "
+        "lifecycle mutations; executable fixture and finite decision boundary aligned."
     )
 
 

@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-02"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -32,7 +32,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Thirty-two exact passage-reviewed mappings cover the chapter's thirty-nine assigned sources, now including RGS as a same-author precursor and RODIE as a proposed relational instrument family; neither overlap nor an unexecuted proposal is independent result evidence."
-  - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and eight finite declarations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
+  - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and fifteen finite decision/lifecycle declarations with an independent consumer. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
   - "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
   - "Campaign 5 adds a prospectively frozen two-environment, five-seed, ten-arm causal packet and one bounded non-core synthetic transition; it does not validate the authored simulators, establish general transfer, or promote this chapter core."
 ---
@@ -751,9 +751,12 @@ The exact current minimum is one benchmark-ratchet schema and valid record
 fixture; one metric-provenance schema with one valid blocked six-project-
 lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness
 with two valid records and five expected-invalid controls; one persisted
-executable fixture result aligned to that same set; three proof targets; and
-three local BenchmarkRatchets declarations proving input-general finite
-decision consequences. Executable fixture totals are not copied into Lean.
+executable fixture result aligned to that same set; three proof targets; and a
+15-declaration BenchmarkRatchets surface with an independent lifecycle
+consumer. The consumer recompiles the module, executes six clean transitions,
+checks all seven trace splits, reaches saturated-floor and contamination-
+quarantine outcomes, and rejects 15/15 mutations. Executable fixture totals
+are not copied into Lean.
 There is no natural
 benchmark workload, hidden
 holdout, contamination audit, public-calibration budget, strong empirical
@@ -850,16 +853,15 @@ unresolved mechanism.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records. | implemented |
-| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model. | implemented |
-| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean. | implemented |
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | Every accepted finite ratchet-lifecycle step preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields, adds exactly one receipt, and composes across event batches; clean evidence can reach only a non-authorizing independent-review candidate. | implemented |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | The finite ratchet lifecycle quarantines suspected contamination, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, and makes closed dispositions absorbing. | implemented |
+| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 15-declaration Lean surface, executes clean, saturated, and contaminated lifecycle witnesses, checks all seven clean-trace splits, and rejects 15 lifecycle mutations; executable totals remain separate from the quantified Lean semantics. | implemented |
 
-These Lean hooks are implemented as three finite-record consequences over ratchet-decision reviews. They prove only record-level gates: an accepted readiness-promotion decision requires transfer-or-mutation checks plus preserved negative and regression records, saturated benchmarks moved to regression-floor status require preserved regression records, and an accepted contaminated review cannot select readiness promotion. The independent fixture consumer remains executable evidence at its own scope; neither surface inherits the other's result. They do not prove benchmark success, transfer, contamination resistance, regression-suite quality, anti-Goodhart effectiveness, policy quality, steward release safety, or empirical capability gains.
+These Lean hooks now combine three retained decision consequences with a finite registered-to-closed instrument lifecycle. Accepted events preserve exact instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields; add one receipt; and compose across batches. Missing transfer or preserved evidence rejects without state change, suspected contamination quarantines, saturation routes to a regression floor, and a closed disposition is absorbing. The independent consumer recompiles the exact surface, executes clean, saturated, and contaminated witnesses, checks all seven clean-trace splits, and rejects 15/15 lifecycle mutations. These formal targets do not prove benchmark validity, transfer quality, contamination detection, regression-suite quality, anti-Goodhart effectiveness, policy quality, steward release safety, or empirical capability gains.
 
-The formal audit counts three declarations: derived finite decision cases for
-accepted readiness promotion, saturated-floor conversion, and
-contaminated-review rejection. The three former summary-mirror declarations
-are retired. None proves
+The formal audit counts 15 declarations: three retained finite decision cases
+and twelve lifecycle results. The three former summary-mirror declarations are
+retired. None proves
 construct validity, target capacity, metric causality, benchmark adequacy,
 contamination resistance, hidden-holdout integrity, model capability, policy
 quality, safety, unlearning, deployment, reproduction, or transfer. Useful

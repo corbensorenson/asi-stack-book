@@ -2524,31 +2524,31 @@
       "tag": "lean:benchmarks.ratchet.operational_invariant",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An accepted readiness-promotion decision in the finite ratchet model requires transfer-or-mutation checks, preserved negative evidence, and preserved regression records.",
+      "formal_target": "Every accepted finite ratchet-lifecycle step preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields, adds exactly one receipt, and composes across event batches; clean evidence can reach only a non-authorizing independent-review candidate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite capability-promotion predicate: promotion requires benchmark evidence and preserved regression records."
+      "rationale": "Implemented as a versioned registered-to-closed lifecycle with arbitrary-step identity and zero-authority preservation, exact accepted-event receipt accounting, batch composition, and a bounded clean witness. The outcome is only a recommendation; benchmark validity, capability, support, and release remain outside the model."
     },
     {
       "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An accepted contaminated benchmark review cannot select readiness promotion in the finite ratchet model.",
+      "formal_target": "The finite ratchet lifecycle quarantines suspected contamination, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, and makes closed dispositions absorbing.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.BenchmarkRatchets as a finite saturation predicate: a saturated benchmark alone cannot promote higher readiness."
+      "rationale": "Implemented as quantified finite lifecycle routes for contamination quarantine, saturation-to-floor disposition, missing-evidence rejection noninterference, and absorbing closure. Authored detection and evidence fields remain assumptions."
     },
     {
       "tag": "lean:benchmarks.ratchet.fixture_bridge",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls; separately, retained quantified ratchet theorems require clean transfer-or-mutation checks, negative-evidence preservation, and regression records and reject contaminated promotion. Executable totals are not imported into Lean.",
+      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 15-declaration Lean surface, executes clean, saturated, and contaminated lifecycle witnesses, checks all seven clean-trace splits, and rejects 15 lifecycle mutations; executable totals remain separate from the quantified Lean semantics.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "C6 final rationalization keeps executable outcomes separate from formal route properties and replaces the authored close-state fixture with a quantified inverse; no copied summary is counted as formal evidence."
+      "rationale": "The consumer keeps executable fixture outcomes separate from Lean semantics while independently reconstructing the lifecycle, exact split composition, and rejection noninterference. No fixture total, benchmark result, or support movement is imported as a theorem premise."
     },
     {
       "tag": "lean:white_box.evidence_never_grants_authority",

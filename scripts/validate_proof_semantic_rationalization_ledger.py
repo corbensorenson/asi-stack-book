@@ -170,8 +170,8 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 86,
-    "P1": 934,
+    "P0": 90,
+    "P1": 942,
     "P2": 232,
     "P3": 1080,
     "P4": 177,
@@ -179,7 +179,7 @@ EXPECTED_LEVELS = {
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2719,
+    "retain": 2731,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -191,13 +191,23 @@ EXPECTED_TARGETS = {
         "assignment predicate."
     ),
     "lean:benchmarks.ratchet.operational_invariant": (
-        "An accepted readiness-promotion decision in the finite ratchet model requires "
-        "transfer-or-mutation checks, preserved negative evidence, and preserved "
-        "regression records."
+        "Every accepted finite ratchet-lifecycle step preserves instrument, dataset, "
+        "harness, claim, authority, evidence-policy, support, and effect fields, adds "
+        "exactly one receipt, and composes across event batches; clean evidence can "
+        "reach only a non-authorizing independent-review candidate."
     ),
     "lean:benchmarks.ratchet.failure_blocks_promotion": (
-        "An accepted contaminated benchmark review cannot select readiness promotion "
-        "in the finite ratchet model."
+        "The finite ratchet lifecycle quarantines suspected contamination, routes "
+        "saturated clean instruments to regression-floor status, rejects missing "
+        "transfer or preserved-evidence records without state change, and makes closed "
+        "dispositions absorbing."
+    ),
+    "lean:benchmarks.ratchet.fixture_bridge": (
+        "An independent benchmark anti-Goodhart consumer computes two valid fixtures "
+        "and five rejected controls, recompiles the exact 15-declaration Lean surface, "
+        "executes clean, saturated, and contaminated lifecycle witnesses, checks all "
+        "seven clean-trace splits, and rejects 15 lifecycle mutations; executable "
+        "totals remain separate from the quantified Lean semantics."
     ),
     "lean:scf.field_identity.operational_invariant": (
         "A lifecycle review with a mismatched field identity routes to explicit "
@@ -799,7 +809,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2719:
+    if summary.get("current_theorem_count") != 2731:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -835,8 +845,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for row in current_rows
         if row["module_path"] == "lean/AsiStackProofs/BenchmarkRatchets.lean"
     ]
-    if len(benchmark_rows) != 3:
-        out.append("BenchmarkRatchets must retain exactly three derived declarations")
+    if len(benchmark_rows) != 15:
+        out.append("BenchmarkRatchets must retain exactly fifteen decision and lifecycle declarations")
     if any(row.get("depth_class") == "direct_or_projection" for row in benchmark_rows):
         out.append("BenchmarkRatchets retained a direct projection")
 
@@ -1234,7 +1244,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2719
+        status.get("theorem_count") != 2731
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0
