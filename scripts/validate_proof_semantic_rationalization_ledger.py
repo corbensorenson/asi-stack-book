@@ -170,16 +170,16 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 61,
-    "P1": 978,
-    "P2": 296,
-    "P3": 1166,
-    "P4": 223,
-    "P5": 240,
+    "P0": 55,
+    "P1": 974,
+    "P2": 305,
+    "P3": 1172,
+    "P4": 231,
+    "P5": 244,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2964,
+    "retain": 2981,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -817,7 +817,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2964:
+    if summary.get("current_theorem_count") != 2981:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1038,10 +1038,29 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         "structure_only_retrieval_quality_promotion_rejected",
         "recurrence_without_budget_exit_or_fallback_rejected",
         "stale_read_admitted_as_fresh_without_residual_rejected",
+        "residue_collision_addresses_are_distinct",
+        "residue_only_projection_collides",
         "residue_only_projection_is_not_injective",
         "no_residue_only_decoder_recovers_every_cyclic_address",
+        "complete_address_encoding_round_trips",
+        "complete_address_encoding_is_injective",
         "memory_lifecycle_rejected_event_is_noninterfering",
         "memory_lifecycle_step_preserves_identity_and_authority",
+        "memory_lifecycle_step_preserves_custody",
+        "memory_custody_transitive",
+        "run_memory_lifecycle_preserves_custody",
+        "memory_lifecycle_step_preserves_invariant",
+        "run_memory_lifecycle_preserves_invariant",
+        "memory_lifecycle_step_recurrence_monotone",
+        "run_memory_lifecycle_recurrence_monotone",
+        "memory_lifecycle_step_preserves_stage_coherence",
+        "run_memory_lifecycle_preserves_stage_coherence",
+        "stale_path_containment_survives_one_step",
+        "stale_path_containment_survives_arbitrary_suffix",
+        "stale_path_excludes_fresh_consumption",
+        "stale_detection_excludes_fresh_consumption_after_any_suffix",
+        "closed_memory_lifecycle_step_is_absorbing",
+        "closed_memory_lifecycle_suffix_is_absorbing",
         "run_memory_lifecycle_append",
         "same_residue_different_winding_is_not_fresh",
         "stale_classification_blocks_fresh_consumption",
@@ -1051,8 +1070,8 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         "stale_alias_trace_uses_fallback_and_closes",
     }
     coil_names = {row["name"] for row in coil_rows}
-    if len(coil_rows) != 17 or not required_coil_names <= coil_names:
-        out.append("CoilAttentionMemory must retain the exact 17-declaration negative-case and lifecycle surface")
+    if len(coil_rows) != 34 or coil_names != required_coil_names:
+        out.append("CoilAttentionMemory must retain the exact 34-declaration negative-case and lifecycle surface")
     if retired_coil_names & {row["name"] for row in coil_rows}:
         out.append("CoilAttentionMemory retained an executed premise projection")
 
@@ -1270,7 +1289,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2964
+        status.get("theorem_count") != 2981
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

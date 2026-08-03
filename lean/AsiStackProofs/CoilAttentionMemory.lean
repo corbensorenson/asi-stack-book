@@ -164,6 +164,21 @@ theorem no_residue_only_decoder_recovers_every_cyclic_address :
   rw [residue_only_projection_collides] at zeroRecovered
   exact residue_collision_addresses_are_distinct (zeroRecovered.symm.trans oneRecovered)
 
+def completeAddressEncode (address : CyclicAddress) : Nat × Nat :=
+  (address.residue, address.winding)
+
+def completeAddressDecode (encoded : Nat × Nat) : CyclicAddress :=
+  { residue := encoded.1, winding := encoded.2 }
+
+theorem complete_address_encoding_round_trips (address : CyclicAddress) :
+    completeAddressDecode (completeAddressEncode address) = address := by
+  cases address
+  rfl
+
+theorem complete_address_encoding_is_injective :
+    Function.Injective completeAddressEncode := by
+  exact Function.LeftInverse.injective complete_address_encoding_round_trips
+
 inductive MemoryLifecycleStage where
   | written
   | readRequested
@@ -209,10 +224,39 @@ structure MemoryLifecycleState where
   externalEffects : Nat := 0
 deriving DecidableEq, Repr
 
+def MemoryCustodyPreserved
+    (before after : MemoryLifecycleState) : Prop :=
+  after.memoryDigest = before.memoryDigest ∧
+    after.requestDigest = before.requestDigest ∧
+    after.slotEpoch = before.slotEpoch ∧
+    after.requestedEpoch = before.requestedEpoch ∧
+    after.slotResidue = before.slotResidue ∧
+    after.requestedResidue = before.requestedResidue ∧
+    after.slotWinding = before.slotWinding ∧
+    after.requestedWinding = before.requestedWinding ∧
+    after.recurrenceBudget = before.recurrenceBudget ∧
+    after.supportAssignments = before.supportAssignments ∧
+    after.externalEffects = before.externalEffects
+
+def MemoryLifecycleInvariant (state : MemoryLifecycleState) : Prop :=
+  state.recurrenceSteps ≤ state.recurrenceBudget ∧
+    state.supportAssignments = 0 ∧
+    state.externalEffects = 0
+
+def StalePathContained (state : MemoryLifecycleState) : Prop :=
+  state.stage = .staleDetected ∨
+    state.stage = .fallback ∨
+    state.stage = .recurring ∨
+    state.stage = .closed
+
 def exactFreshRead (state : MemoryLifecycleState) : Bool :=
   state.slotEpoch == state.requestedEpoch &&
     state.slotResidue == state.requestedResidue &&
       state.slotWinding == state.requestedWinding
+
+def MemoryStageCoherent (state : MemoryLifecycleState) : Prop :=
+  (state.stage = .freshValidated -> exactFreshRead state = true) ∧
+    (state.stage = .staleDetected -> exactFreshRead state = false)
 
 def memoryLifecycleStep
     (state : MemoryLifecycleState) (event : MemoryLifecycleEvent) :
@@ -286,6 +330,156 @@ theorem memory_lifecycle_step_preserves_identity_and_authority
   cases event <;>
     simp [memoryLifecycleStep] <;>
     repeat' first | split | simp_all
+
+theorem memory_lifecycle_step_preserves_custody
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent) :
+    MemoryCustodyPreserved state (memoryLifecycleStep state event).2 := by
+  exact memory_lifecycle_step_preserves_identity_and_authority state event
+
+theorem memory_custody_transitive
+    {initial middle final : MemoryLifecycleState}
+    (h₁ : MemoryCustodyPreserved initial middle)
+    (h₂ : MemoryCustodyPreserved middle final) :
+    MemoryCustodyPreserved initial final := by
+  unfold MemoryCustodyPreserved at *
+  rcases h₁ with ⟨h₁a, h₁b, h₁c, h₁d, h₁e, h₁f, h₁g, h₁h, h₁i, h₁j, h₁k⟩
+  rcases h₂ with ⟨h₂a, h₂b, h₂c, h₂d, h₂e, h₂f, h₂g, h₂h, h₂i, h₂j, h₂k⟩
+  constructor
+  · exact h₂a.trans h₁a
+  constructor
+  · exact h₂b.trans h₁b
+  constructor
+  · exact h₂c.trans h₁c
+  constructor
+  · exact h₂d.trans h₁d
+  constructor
+  · exact h₂e.trans h₁e
+  constructor
+  · exact h₂f.trans h₁f
+  constructor
+  · exact h₂g.trans h₁g
+  constructor
+  · exact h₂h.trans h₁h
+  constructor
+  · exact h₂i.trans h₁i
+  constructor
+  · exact h₂j.trans h₁j
+  · exact h₂k.trans h₁k
+
+theorem run_memory_lifecycle_preserves_custody
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent) :
+    MemoryCustodyPreserved state (runMemoryLifecycle state events) := by
+  induction events generalizing state with
+  | nil =>
+      simp [runMemoryLifecycle, MemoryCustodyPreserved]
+  | cons event rest ih =>
+      exact memory_custody_transitive
+        (memory_lifecycle_step_preserves_custody state event)
+        (ih (memoryLifecycleStep state event).2)
+
+theorem memory_lifecycle_step_preserves_invariant
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent)
+    (h : MemoryLifecycleInvariant state) :
+    MemoryLifecycleInvariant (memoryLifecycleStep state event).2 := by
+  cases event <;>
+    simp [MemoryLifecycleInvariant, memoryLifecycleStep] at * <;>
+    repeat' first | split | simp_all
+  omega
+
+theorem run_memory_lifecycle_preserves_invariant
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent)
+    (h : MemoryLifecycleInvariant state) :
+    MemoryLifecycleInvariant (runMemoryLifecycle state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (memoryLifecycleStep state event).2
+        (memory_lifecycle_step_preserves_invariant state event h)
+
+theorem memory_lifecycle_step_recurrence_monotone
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent) :
+    state.recurrenceSteps ≤ (memoryLifecycleStep state event).2.recurrenceSteps := by
+  cases event <;>
+    simp [memoryLifecycleStep] <;>
+    repeat' first | split | simp_all
+
+theorem run_memory_lifecycle_recurrence_monotone
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent) :
+    state.recurrenceSteps ≤ (runMemoryLifecycle state events).recurrenceSteps := by
+  induction events generalizing state with
+  | nil => simp [runMemoryLifecycle]
+  | cons event rest ih =>
+      exact Nat.le_trans
+        (memory_lifecycle_step_recurrence_monotone state event)
+        (ih (memoryLifecycleStep state event).2)
+
+theorem memory_lifecycle_step_preserves_stage_coherence
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent)
+    (h : MemoryStageCoherent state) :
+    MemoryStageCoherent (memoryLifecycleStep state event).2 := by
+  cases event <;>
+    simp [MemoryStageCoherent, memoryLifecycleStep, exactFreshRead] at * <;>
+    repeat' first | split | simp_all
+  assumption
+
+theorem run_memory_lifecycle_preserves_stage_coherence
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent)
+    (h : MemoryStageCoherent state) :
+    MemoryStageCoherent (runMemoryLifecycle state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (memoryLifecycleStep state event).2
+        (memory_lifecycle_step_preserves_stage_coherence state event h)
+
+theorem stale_path_containment_survives_one_step
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent)
+    (h : StalePathContained state) :
+    StalePathContained (memoryLifecycleStep state event).2 := by
+  rcases h with h | h | h | h <;>
+    cases event <;>
+    simp [StalePathContained, memoryLifecycleStep, h] <;>
+    repeat' first | split | simp_all
+
+theorem stale_path_containment_survives_arbitrary_suffix
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent)
+    (h : StalePathContained state) :
+    StalePathContained (runMemoryLifecycle state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (memoryLifecycleStep state event).2
+        (stale_path_containment_survives_one_step state event h)
+
+theorem stale_path_excludes_fresh_consumption
+    (state : MemoryLifecycleState) (h : StalePathContained state) :
+    state.stage ≠ .freshValidated ∧ state.stage ≠ .consumed := by
+  rcases h with h | h | h | h <;> simp_all
+
+theorem stale_detection_excludes_fresh_consumption_after_any_suffix
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent)
+    (h : state.stage = .staleDetected) :
+    let final := runMemoryLifecycle state events
+    final.stage ≠ .freshValidated ∧ final.stage ≠ .consumed := by
+  apply stale_path_excludes_fresh_consumption
+  apply stale_path_containment_survives_arbitrary_suffix
+  exact Or.inl h
+
+theorem closed_memory_lifecycle_step_is_absorbing
+    (state : MemoryLifecycleState) (event : MemoryLifecycleEvent)
+    (h : state.stage = .closed) :
+    (memoryLifecycleStep state event).2 = state := by
+  cases event <;> simp [memoryLifecycleStep, h]
+
+theorem closed_memory_lifecycle_suffix_is_absorbing
+    (state : MemoryLifecycleState) (events : List MemoryLifecycleEvent)
+    (h : state.stage = .closed) :
+    runMemoryLifecycle state events = state := by
+  induction events generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      rw [runMemoryLifecycle, closed_memory_lifecycle_step_is_absorbing state event h]
+      exact ih state h
 
 theorem run_memory_lifecycle_append
     (state : MemoryLifecycleState)

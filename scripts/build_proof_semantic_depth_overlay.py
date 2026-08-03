@@ -3255,6 +3255,123 @@ for theorem_name in (
         ),
     }
 
+_coil_memory_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean/AsiStackProofs/CoilAttentionMemory.lean",
+        "scripts/validate_cyclic_memory_contracts.py",
+    ],
+}
+
+for theorem_name in (
+    "reused_cyclic_slot_without_winding_or_residual_rejected",
+    "structure_only_retrieval_quality_promotion_rejected",
+    "recurrence_without_budget_exit_or_fallback_rejected",
+    "stale_read_admitted_as_fresh_without_residual_rejected",
+    "same_residue_different_winding_is_not_fresh",
+    "stale_classification_blocks_fresh_consumption",
+    "recurrence_at_budget_is_rejected_noninterferingly",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CoilAttentionMemory.lean::{theorem_name}"
+    ] = {
+        **_coil_memory_refinement_base,
+        "semantic_level": "P1",
+        "classification_basis": [
+            "one-step finite rejection, freshness, or admission consequence in the authored cyclic-memory model"
+        ],
+        "rationale": (
+            "The theorem closes a local finite guard or transition consequence; it does not establish deployed memory behavior or semantic utility."
+        ),
+    }
+
+for theorem_name in (
+    "residue_collision_addresses_are_distinct",
+    "residue_only_projection_collides",
+    "residue_only_projection_is_not_injective",
+    "no_residue_only_decoder_recovers_every_cyclic_address",
+    "complete_address_encoding_round_trips",
+    "complete_address_encoding_is_injective",
+    "fresh_trace_reaches_bounded_recurrence_closure",
+    "third_recurrence_step_is_rejected_without_state_change",
+    "stale_alias_trace_uses_fallback_and_closes",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CoilAttentionMemory.lean::{theorem_name}"
+    ] = {
+        **_coil_memory_refinement_base,
+        "semantic_level": "P2",
+        "classification_basis": [
+            "bounded address countermodel, universal complete-address witness, or closed reachable lifecycle witness"
+        ],
+        "rationale": (
+            "The theorem establishes nonvacuity or a finite address impossibility inside the authored model; no runtime address truth or memory quality follows."
+        ),
+    }
+
+for theorem_name in (
+    "memory_lifecycle_step_preserves_identity_and_authority",
+    "memory_lifecycle_step_preserves_custody",
+    "memory_lifecycle_step_preserves_invariant",
+    "memory_lifecycle_step_recurrence_monotone",
+    "memory_lifecycle_step_preserves_stage_coherence",
+    "run_memory_lifecycle_append",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CoilAttentionMemory.lean::{theorem_name}"
+    ] = {
+        **_coil_memory_refinement_base,
+        "semantic_level": "P3",
+        "classification_basis": [
+            "implementation refinement for the executable finite lifecycle, independently checked across its reachable state graph"
+        ],
+        "rationale": (
+            "The theorem refines the exact transition runner and is bound to an independent exhaustive consumer; all state fields remain authored."
+        ),
+    }
+
+for theorem_name in (
+    "memory_lifecycle_rejected_event_is_noninterfering",
+    "memory_custody_transitive",
+    "run_memory_lifecycle_preserves_custody",
+    "run_memory_lifecycle_preserves_invariant",
+    "run_memory_lifecycle_recurrence_monotone",
+    "run_memory_lifecycle_preserves_stage_coherence",
+    "stale_path_containment_survives_one_step",
+    "stale_path_excludes_fresh_consumption",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CoilAttentionMemory.lean::{theorem_name}"
+    ] = {
+        **_coil_memory_refinement_base,
+        "semantic_level": "P4",
+        "classification_basis": [
+            "finite noninterference or arbitrary-run safety composition over custody, budget, authority, coherence, or stale-path state"
+        ],
+        "rationale": (
+            "The theorem prevents a named class of finite lifecycle interference under authored inputs; it does not prove cross-request isolation or deployed enforcement."
+        ),
+    }
+
+for theorem_name in (
+    "stale_path_containment_survives_arbitrary_suffix",
+    "stale_detection_excludes_fresh_consumption_after_any_suffix",
+    "closed_memory_lifecycle_step_is_absorbing",
+    "closed_memory_lifecycle_suffix_is_absorbing",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CoilAttentionMemory.lean::{theorem_name}"
+    ] = {
+        **_coil_memory_refinement_base,
+        "semantic_level": "P5",
+        "classification_basis": [
+            "arbitrary finite suffix containment or absorbing terminal behavior for the authored lifecycle"
+        ],
+        "rationale": (
+            "The theorem establishes bounded suffix safety or closure absorption; it does not establish unbounded liveness, recovery, concurrency, or runtime behavior."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

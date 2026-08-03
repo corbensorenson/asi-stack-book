@@ -28,8 +28,25 @@ LIFECYCLE_THEOREMS = {
     "residue_only_projection_collides",
     "residue_only_projection_is_not_injective",
     "no_residue_only_decoder_recovers_every_cyclic_address",
+    "complete_address_encoding_round_trips",
+    "complete_address_encoding_is_injective",
     "memory_lifecycle_rejected_event_is_noninterfering",
     "memory_lifecycle_step_preserves_identity_and_authority",
+    "memory_lifecycle_step_preserves_custody",
+    "memory_custody_transitive",
+    "run_memory_lifecycle_preserves_custody",
+    "memory_lifecycle_step_preserves_invariant",
+    "run_memory_lifecycle_preserves_invariant",
+    "memory_lifecycle_step_recurrence_monotone",
+    "run_memory_lifecycle_recurrence_monotone",
+    "memory_lifecycle_step_preserves_stage_coherence",
+    "run_memory_lifecycle_preserves_stage_coherence",
+    "stale_path_containment_survives_one_step",
+    "stale_path_containment_survives_arbitrary_suffix",
+    "stale_path_excludes_fresh_consumption",
+    "stale_detection_excludes_fresh_consumption_after_any_suffix",
+    "closed_memory_lifecycle_step_is_absorbing",
+    "closed_memory_lifecycle_suffix_is_absorbing",
     "run_memory_lifecycle_append",
     "same_residue_different_winding_is_not_fresh",
     "stale_classification_blocks_fresh_consumption",
@@ -61,6 +78,17 @@ FRESH_TRACE = (
     "recur",
     "recur",
     "exit_recurrence",
+)
+
+EVENTS = (
+    "request_read",
+    "classify_read",
+    "consume_fresh",
+    "use_fallback",
+    "start_recurrence",
+    "recur",
+    "exit_recurrence",
+    "close",
 )
 
 
@@ -308,7 +336,49 @@ def run_lifecycle(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, A
     return current
 
 
-def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
+def state_key(state: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(state[field] for field in ("stage", *PROTECTED_FIELDS, "recurrence_steps"))
+
+
+def explore_reachable(roots: tuple[dict[str, Any], ...]) -> dict[tuple[Any, ...], dict[str, Any]]:
+    reachable = {state_key(root): dict(root) for root in roots}
+    frontier = list(reachable.values())
+    while frontier:
+        state = frontier.pop()
+        for event in EVENTS:
+            _, next_state = lifecycle_step(state, event)
+            key = state_key(next_state)
+            if key not in reachable:
+                reachable[key] = next_state
+                frontier.append(next_state)
+    return reachable
+
+
+def custody_preserved(before: dict[str, Any], after: dict[str, Any]) -> bool:
+    return all(before[field] == after[field] for field in PROTECTED_FIELDS)
+
+
+def lifecycle_invariant(state: dict[str, Any]) -> bool:
+    return (
+        state["recurrence_steps"] <= state["recurrence_budget"]
+        and state["support_assignments"] == 0
+        and state["external_effects"] == 0
+    )
+
+
+def stage_coherent(state: dict[str, Any]) -> bool:
+    if state["stage"] == "fresh_validated":
+        return exact_fresh_read(state)
+    if state["stage"] == "stale_detected":
+        return not exact_fresh_read(state)
+    return True
+
+
+def stale_path_contained(state: dict[str, Any]) -> bool:
+    return state["stage"] in {"stale_detected", "fallback", "recurring", "closed"}
+
+
+def validate_lifecycle(errors: list[str]) -> dict[str, int]:
     theorem_names = set(
         re.findall(
             r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
@@ -318,8 +388,8 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
     missing = sorted(LIFECYCLE_THEOREMS - theorem_names)
     if missing:
         errors.append(f"Lean cyclic-memory lifecycle surface is missing: {missing}")
-    if len(theorem_names) != 17:
-        errors.append(f"Lean cyclic-memory theorem count must be 17, observed {len(theorem_names)}")
+    if len(theorem_names) != 34:
+        errors.append(f"Lean cyclic-memory theorem count must be 34, observed {len(theorem_names)}")
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/CoilAttentionMemory.lean"],
         cwd=LEAN_ROOT,
@@ -337,6 +407,28 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
     address_one = {"residue": 7, "winding": 1}
     if address_zero == address_one or address_zero["residue"] != address_one["residue"]:
         errors.append("independent residue-only collision reconstruction failed")
+    addresses = tuple(
+        {"residue": residue, "winding": winding}
+        for residue in (0, 1, 7, 31)
+        for winding in (0, 1, 4, 19)
+    )
+    encoded = tuple((address["residue"], address["winding"]) for address in addresses)
+    decoded = tuple({"residue": residue, "winding": winding} for residue, winding in encoded)
+    if decoded != addresses:
+        errors.append("complete cyclic-address encoding failed independent round-trip reconstruction")
+    if len(set(encoded)) != len(addresses):
+        errors.append("complete cyclic-address encoding was not injective over the independent sample")
+    address_mutations = 0
+    if address_zero["residue"] == address_one["residue"]:
+        address_mutations += 1
+    else:
+        errors.append("dropping winding did not reproduce the expected address collision")
+    same_winding_left = {"residue": 7, "winding": 0}
+    same_winding_right = {"residue": 8, "winding": 0}
+    if same_winding_left["winding"] == same_winding_right["winding"]:
+        address_mutations += 1
+    else:
+        errors.append("dropping residue did not reproduce the expected address collision")
 
     baseline = reference_state()
     current = dict(baseline)
@@ -359,6 +451,7 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
             errors.append(f"fresh lifecycle composition failed at split {split}")
 
     stale_count = 0
+    stale_roots: list[dict[str, Any]] = []
     for field, value in (
         ("requested_epoch", 32),
         ("requested_residue", 8),
@@ -370,6 +463,7 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
         if classified["stage"] != "stale_detected":
             errors.append(f"{field} mismatch was not classified stale")
             continue
+        stale_roots.append(classified)
         route, unchanged = lifecycle_step(classified, "consume_fresh")
         if route != "reject_stale" or unchanged != classified:
             errors.append(f"{field} stale read was not rejected noninterferingly")
@@ -379,6 +473,54 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
             errors.append(f"{field} stale path did not close through fallback")
             continue
         stale_count += 1
+
+    roots = [reference_state()]
+    for field, value in (
+        ("requested_epoch", 32),
+        ("requested_residue", 8),
+        ("requested_winding", 5),
+    ):
+        root = reference_state()
+        root[field] = value
+        roots.append(root)
+    reachable = explore_reachable(tuple(roots))
+    transition_count = 0
+    rejected_transition_count = 0
+    for state in reachable.values():
+        if not lifecycle_invariant(state):
+            errors.append(f"reachable state violates lifecycle invariant: {state}")
+        if not stage_coherent(state):
+            errors.append(f"reachable state violates stage coherence: {state}")
+        for event in EVENTS:
+            transition_count += 1
+            route, next_state = lifecycle_step(state, event)
+            if not custody_preserved(state, next_state):
+                errors.append(f"reachable transition {state['stage']}:{event} violated custody")
+            if lifecycle_invariant(state) and not lifecycle_invariant(next_state):
+                errors.append(f"reachable transition {state['stage']}:{event} violated invariant preservation")
+            if stage_coherent(state) and not stage_coherent(next_state):
+                errors.append(f"reachable transition {state['stage']}:{event} violated stage coherence")
+            if next_state["recurrence_steps"] < state["recurrence_steps"]:
+                errors.append(f"reachable transition {state['stage']}:{event} decreased recurrence steps")
+            if route != "accepted":
+                rejected_transition_count += 1
+                if next_state != state:
+                    errors.append(f"reachable rejection {state['stage']}:{event} changed state")
+            if state["stage"] == "closed" and next_state != state:
+                errors.append(f"closed state was not absorbing under {event}")
+
+    stale_reachable = explore_reachable(tuple(stale_roots)) if stale_roots else {}
+    stale_transition_count = 0
+    for state in stale_reachable.values():
+        if not stale_path_contained(state):
+            errors.append(f"stale suffix escaped containment: {state}")
+        if state["stage"] in {"fresh_validated", "consumed"}:
+            errors.append(f"stale suffix reached prohibited fresh stage: {state}")
+        for event in EVENTS:
+            stale_transition_count += 1
+            _, next_state = lifecycle_step(state, event)
+            if not stale_path_contained(next_state):
+                errors.append(f"stale transition {state['stage']}:{event} escaped containment")
 
     def changed(**updates: Any) -> dict[str, Any]:
         state = reference_state()
@@ -407,7 +549,60 @@ def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
             errors.append(f"lifecycle mutation {name} changed state on rejection")
         else:
             rejected_count += 1
-    return accepted_count, stale_count, rejected_count
+
+    semantic_mutations = 0
+    before = reference_state()
+    _, after = lifecycle_step(before, "request_read")
+    for field in PROTECTED_FIELDS:
+        mutated = dict(after)
+        mutated[field] += 1
+        if custody_preserved(before, mutated):
+            errors.append(f"protected-field mutation was not detected for {field}")
+        else:
+            semantic_mutations += 1
+    mutation_checks = (
+        ("recurrence overflow", not lifecycle_invariant(changed(recurrence_steps=3))),
+        (
+            "fresh stage with mismatched address",
+            not stage_coherent(changed(stage="fresh_validated", requested_winding=5)),
+        ),
+        (
+            "stale stage with exact address",
+            not stage_coherent(changed(stage="stale_detected")),
+        ),
+        (
+            "stale path reaches consumed",
+            not stale_path_contained(changed(stage="consumed", requested_winding=5)),
+        ),
+        (
+            "closed state changes",
+            changed(stage="closed") != changed(stage="recurring"),
+        ),
+        (
+            "recurrence decreases",
+            changed(stage="recurring", recurrence_steps=2)["recurrence_steps"]
+            > changed(stage="recurring", recurrence_steps=1)["recurrence_steps"],
+        ),
+    )
+    for name, detected in mutation_checks:
+        if not detected:
+            errors.append(f"semantic mutation was not detected: {name}")
+        else:
+            semantic_mutations += 1
+
+    return {
+        "accepted_trace_transitions": accepted_count,
+        "stale_classifications": stale_count,
+        "rejecting_mutations": rejected_count,
+        "reachable_states": len(reachable),
+        "reachable_transitions": transition_count,
+        "reachable_rejections": rejected_transition_count,
+        "stale_states": len(stale_reachable),
+        "stale_transitions": stale_transition_count,
+        "semantic_mutations": semantic_mutations,
+        "address_samples": len(addresses),
+        "address_mutations": address_mutations,
+    }
 
 
 def main() -> None:
@@ -417,7 +612,7 @@ def main() -> None:
         raise SystemExit(f"No cyclic-memory fixtures found in {FIXTURE_DIR.relative_to(ROOT)}.")
 
     errors: list[str] = []
-    accepted_count, stale_count, rejected_count = validate_lifecycle(errors)
+    lifecycle = validate_lifecycle(errors)
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -452,10 +647,16 @@ def main() -> None:
     print(
         "Cyclic memory contract harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s); "
-        f"17 Lean declarations, one residue-only collision, {accepted_count} accepted "
-        f"fresh transitions, 8/8 trace splits, {stale_count}/3 stale classifications "
-        f"routed through fallback, and {rejected_count}/11 rejecting "
-        "lifecycle mutations; no retrieval-quality or support-state effect."
+        f"34 Lean declarations, {lifecycle['address_samples']} complete-address round trips, "
+        f"{lifecycle['address_mutations']}/2 dropped-coordinate collisions, "
+        f"{lifecycle['accepted_trace_transitions']} accepted fresh transitions, 8/8 trace splits, "
+        f"{lifecycle['stale_classifications']}/3 stale classifications routed through fallback, "
+        f"{lifecycle['reachable_states']} reachable states and {lifecycle['reachable_transitions']} "
+        f"independently checked transitions ({lifecycle['reachable_rejections']} rejections), "
+        f"{lifecycle['stale_states']} stale-suffix states and {lifecycle['stale_transitions']} "
+        f"contained transitions, {lifecycle['rejecting_mutations']}/11 rejecting lifecycle mutations, "
+        f"and {lifecycle['semantic_mutations']}/17 semantic mutations; no retrieval-quality or "
+        "support-state effect."
     )
 
 

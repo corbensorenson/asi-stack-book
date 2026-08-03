@@ -5892,11 +5892,27 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "input_contract": "The exact CoilAttentionMemory Lean module, cyclic-memory schema, three valid and six expected-invalid fixtures, and independently implemented exhaustive lifecycle consumer.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/CoilAttentionMemory.lean",
+        "scripts/validate_cyclic_memory_contracts.py",
+        "schemas/cyclic_memory_contract.schema.json",
+        "experiments/cyclic_memory_contracts/fixtures"
+      ],
+      "output_contract": "Compile exactly 34 Lean declarations; check complete-address and dropped-coordinate controls, all reachable fresh/mismatch-root transitions, stale-suffix containment, trace composition, event rejection noninterference, and semantic mutations; reject fixture or theorem drift.",
+      "output_assertions": [
+        "34 exact Lean declarations",
+        "16 complete-address round trips",
+        "2 dropped-coordinate collisions",
+        "40 reachable states and 320 transitions",
+        "24 stale-suffix states and 192 contained transitions",
+        "11 rejecting event mutations",
+        "17 semantic mutations",
+        "3 valid and 6 expected-invalid fixtures"
+      ],
+      "claim_scope": "Authored finite cyclic-address, freshness, fallback, recurrence, custody, budget, coherence, stale-containment, and closure semantics only.",
+      "negative_controls": "validator_owned_and_model_bound",
+      "prohibited_inference": "Does not establish deployed cache truth or isolation, freshness-report truth, sparse-attention coverage, recurrence utility, retrieval or reasoning quality, long-context behavior, resource benefit, safety, deployment, reproduction, transfer, support movement, or ASI."
     },
     {
       "id": "validate_context_transaction_memory_store:166",
@@ -8018,8 +8034,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",

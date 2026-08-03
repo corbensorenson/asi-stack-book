@@ -2474,11 +2474,11 @@
       "tag": "lean:coil_memory.versioned_freshness_and_recurrence.lifecycle",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
-      "formal_target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective, classifies epoch, residue, or winding mismatch as stale, preserves memory/request identity and zero support/effect authority, rejects invalid events without state change, composes traces, routes stale aliases through fallback, and prevents recurrence beyond the declared budget.",
+      "formal_target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective and complete residue-plus-winding encoding injective; preserves custody, budget safety, zero support/effect authority, freshness-stage coherence, and recurrence monotonicity across arbitrary event lists; composes traces; confines stale classifications away from fresh consumption across arbitrary suffixes; and makes closure absorbing.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as an authored finite lifecycle with exact address countermodels, freshness classification, rejected-event noninterference, identity and authority preservation, trace composition, bounded recurrence closure, stale fallback, and an independently implemented recompiling consumer covering all eight trace splits and eleven rejecting mutations. It does not establish deployed cache truth, recurrence utility, retrieval quality, support movement, reproduction, or transfer."
+      "rationale": "Implemented as an authored finite lifecycle with incomplete-address countermodels, complete-address round trips and injectivity, rejected-event noninterference, arbitrary-run custody, budget and zero-authority invariants, recurrence monotonicity, freshness-stage coherence, stale-suffix containment, trace composition, and absorbing closure. Its independent recompiling consumer checks all 40 reachable states and 320 transitions from fresh and single-coordinate-mismatch roots, all 24 stale-suffix states and 192 transitions, all eight trace splits, eleven event mutations, and seventeen semantic mutations. It does not establish deployed cache truth, recurrence utility, retrieval quality, support movement, reproduction, or transfer."
     },
     {
       "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",

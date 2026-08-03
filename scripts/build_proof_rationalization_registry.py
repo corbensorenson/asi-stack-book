@@ -124,6 +124,30 @@ support, safety, deployment, reproduction, transfer, or ASI. Chapter support
 remains `argument` and `support_state_effect` remains `none`.
 
 """,
+    "coil-attention-cyclic-memory-and-recurrence-contracts": """## Current refinement
+
+`AsiStackProofs.CoilAttentionMemory` now exposes 34 theorem declarations. The
+finite model proves that residue-only addressing is non-injective while the
+complete residue-plus-winding encoding round-trips and is injective. Across
+arbitrary finite event lists it preserves memory, request, address, budget,
+support, and effect custody; recurrence-budget safety; zero support/effect
+authority; freshness-stage coherence; and monotone recurrence depth. Trace
+composition holds, every suffix after stale detection excludes fresh validation
+and consumption, and closure absorbs every later event.
+
+`scripts/validate_cyclic_memory_contracts.py` recompiles the exact surface and
+independently checks sixteen complete-address round trips, two dropped-coordinate
+collision controls, forty reachable states through 320 transitions, twenty-four
+stale-suffix states through 192 contained transitions, all eight composition
+splits, three mismatch/fallback paths, eleven rejecting event mutations, and
+seventeen semantic mutations. These are authored finite-state results. They do
+not establish deployed cache truth or isolation, freshness-report truth,
+sparse-attention coverage, recurrence utility, retrieval or reasoning quality,
+long-context behavior, resource benefit, support, safety, deployment,
+reproduction, transfer, or ASI. Chapter support remains `argument` and
+`support_state_effect` remains `none`.
+
+""",
     "human-factors-and-meaningful-control-in-oversight": """## Current refinement
 
 `AsiStackProofs.HumanFactorsOversight` now adds a reachable briefing, decision,

@@ -2597,7 +2597,7 @@
       "chapter_title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
       "tag": "lean:coil_memory.versioned_freshness_and_recurrence.lifecycle",
       "module": "AsiStackProofs.CoilAttentionMemory",
-      "formal_target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective, classifies epoch, residue, or winding mismatch as stale, preserves memory/request identity and zero support/effect authority, rejects invalid events without state change, composes traces, routes stale aliases through fallback, and prevents recurrence beyond the declared budget.",
+      "formal_target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective and complete residue-plus-winding encoding injective; preserves custody, budget safety, zero support/effect authority, freshness-stage coherence, and recurrence monotonicity across arbitrary event lists; composes traces; confines stale classifications away from fresh consumption across arbitrary suffixes; and makes closure absorbing.",
       "status": "implemented",
       "outline_line": 6061,
       "module_path": "lean/AsiStackProofs/CoilAttentionMemory.lean"
