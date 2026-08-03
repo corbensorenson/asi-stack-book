@@ -718,4 +718,631 @@ theorem authority_revocation_trace_surface_bridge :
   unfold authorityRevocationTraceSummary
   simp
 
+/-!
+Delegation-chain refinement. This finite model proves attenuation and identity
+custody for authored grant records. It does not authenticate principals,
+grants, clocks, receipts, revocation inventories, or deployed mediation.
+-/
+
+structure DelegationState where
+  rootGrantId : Nat
+  rootPrincipalId : Nat
+  operationId : Nat
+  targetId : Nat
+  scopeId : Nat
+  rootCeiling : AuthorityLevel
+  rootEpoch : Nat
+  rootExpiresAt : Nat
+  currentGrantId : Nat
+  currentPrincipalId : Nat
+  currentDelegateId : Nat
+  currentCeiling : AuthorityLevel
+  currentEpoch : Nat
+  currentExpiresAt : Nat
+  logicalTime : Nat
+  revokedGrantIds : List Nat
+  depth : Nat
+  receiptCount : Nat
+  supportAuthority : Bool
+  externalEffectAuthority : Bool
+deriving DecidableEq, Repr
+
+structure DelegationEvent where
+  parentGrantId : Nat
+  childGrantId : Nat
+  actingPrincipalId : Nat
+  childDelegateId : Nat
+  operationId : Nat
+  targetId : Nat
+  scopeId : Nat
+  childCeiling : AuthorityLevel
+  epoch : Nat
+  expiresAt : Nat
+  logicalTime : Nat
+  delegationReceipt : Bool
+  supportPromotionRequested : Bool
+  externalEffectRequested : Bool
+deriving DecidableEq, Repr
+
+def ValidDelegationEvent
+    (state : DelegationState) (event : DelegationEvent) : Prop :=
+  event.parentGrantId = state.currentGrantId ∧
+    event.actingPrincipalId = state.currentDelegateId ∧
+    0 < event.childGrantId ∧
+    event.childGrantId ≠ state.currentGrantId ∧
+    event.childGrantId ∉ state.revokedGrantIds ∧
+    0 < event.childDelegateId ∧
+    event.operationId = state.operationId ∧
+    event.targetId = state.targetId ∧
+    event.scopeId = state.scopeId ∧
+    event.childCeiling.rank ≤ state.currentCeiling.rank ∧
+    event.epoch = state.currentEpoch ∧
+    event.expiresAt ≤ state.currentExpiresAt ∧
+    state.logicalTime < event.logicalTime ∧
+    event.logicalTime ≤ event.expiresAt ∧
+    event.delegationReceipt = true ∧
+    event.supportPromotionRequested = false ∧
+    event.externalEffectRequested = false
+
+instance delegationEventValidityDecidable
+    (state : DelegationState) (event : DelegationEvent) :
+    Decidable (ValidDelegationEvent state event) := by
+  unfold ValidDelegationEvent
+  infer_instance
+
+def ApplyDelegationEvent
+    (state : DelegationState) (event : DelegationEvent) : DelegationState :=
+  { state with
+      currentGrantId := event.childGrantId
+      currentPrincipalId := event.actingPrincipalId
+      currentDelegateId := event.childDelegateId
+      currentCeiling := event.childCeiling
+      currentEpoch := event.epoch
+      currentExpiresAt := event.expiresAt
+      logicalTime := event.logicalTime
+      depth := state.depth + 1
+      receiptCount := state.receiptCount + 1 }
+
+def DelegationStep
+    (state : DelegationState) (event : DelegationEvent) : Option DelegationState :=
+  if ValidDelegationEvent state event then
+    some (ApplyDelegationEvent state event)
+  else
+    none
+
+def DelegationRun :
+    DelegationState -> List DelegationEvent -> Option DelegationState
+  | state, [] => some state
+  | state, event :: tail =>
+      match DelegationStep state event with
+      | none => none
+      | some next => DelegationRun next tail
+
+def DelegationTraceValid : DelegationState -> List DelegationEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ValidDelegationEvent state event ∧
+        DelegationTraceValid (ApplyDelegationEvent state event) tail
+
+structure DelegationCustodyPreserved
+    (before after : DelegationState) : Prop where
+  rootGrantId : after.rootGrantId = before.rootGrantId
+  rootPrincipalId : after.rootPrincipalId = before.rootPrincipalId
+  operationId : after.operationId = before.operationId
+  targetId : after.targetId = before.targetId
+  scopeId : after.scopeId = before.scopeId
+  rootCeiling : after.rootCeiling = before.rootCeiling
+  rootEpoch : after.rootEpoch = before.rootEpoch
+  rootExpiresAt : after.rootExpiresAt = before.rootExpiresAt
+  ceilingNarrowed : after.currentCeiling.rank ≤ before.currentCeiling.rank
+  epochPreserved : after.currentEpoch = before.currentEpoch
+  expiryNarrowed : after.currentExpiresAt ≤ before.currentExpiresAt
+  supportPreserved : after.supportAuthority = before.supportAuthority
+  effectPreserved :
+    after.externalEffectAuthority = before.externalEffectAuthority
+
+def DelegationNonAuthority (state : DelegationState) : Prop :=
+  state.supportAuthority = false ∧ state.externalEffectAuthority = false
+
+instance delegationNonAuthorityDecidable (state : DelegationState) :
+    Decidable (DelegationNonAuthority state) := by
+  unfold DelegationNonAuthority
+  infer_instance
+
+structure DelegationStateInvariant (state : DelegationState) : Prop where
+  rootGrantPositive : 0 < state.rootGrantId
+  rootPrincipalPositive : 0 < state.rootPrincipalId
+  currentGrantPositive : 0 < state.currentGrantId
+  currentPrincipalPositive : 0 < state.currentPrincipalId
+  currentDelegatePositive : 0 < state.currentDelegateId
+  ceilingWithinRoot : state.currentCeiling.rank ≤ state.rootCeiling.rank
+  epochMatchesRoot : state.currentEpoch = state.rootEpoch
+  expiryWithinRoot : state.currentExpiresAt ≤ state.rootExpiresAt
+  timeWithinCurrentExpiry : state.logicalTime ≤ state.currentExpiresAt
+  currentGrantNotRevoked : state.currentGrantId ∉ state.revokedGrantIds
+  nonAuthority : DelegationNonAuthority state
+
+theorem delegation_accepted_step_is_valid
+    {state next : DelegationState} {event : DelegationEvent}
+    (accepted : DelegationStep state event = some next) :
+    ValidDelegationEvent state event := by
+  unfold DelegationStep at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem delegation_accepted_step_applies_event
+    {state next : DelegationState} {event : DelegationEvent}
+    (accepted : DelegationStep state event = some next) :
+    next = ApplyDelegationEvent state event := by
+  unfold DelegationStep at accepted
+  split at accepted
+  · exact (Option.some.inj accepted).symm
+  · simp at accepted
+
+theorem delegation_rejected_event_is_noninterfering
+    {state : DelegationState} {event : DelegationEvent}
+    (rejected : DelegationStep state event = none) :
+    DelegationStep state event = none ∧ state = state := by
+  exact ⟨rejected, rfl⟩
+
+theorem delegation_step_preserves_custody
+    {state next : DelegationState} {event : DelegationEvent}
+    (accepted : DelegationStep state event = some next) :
+    DelegationCustodyPreserved state next := by
+  have valid := delegation_accepted_step_is_valid accepted
+  have applies := delegation_accepted_step_applies_event accepted
+  subst next
+  exact {
+    rootGrantId := rfl
+    rootPrincipalId := rfl
+    operationId := rfl
+    targetId := rfl
+    scopeId := rfl
+    rootCeiling := rfl
+    rootEpoch := rfl
+    rootExpiresAt := rfl
+    ceilingNarrowed := valid.2.2.2.2.2.2.2.2.2.1
+    epochPreserved := valid.2.2.2.2.2.2.2.2.2.2.1
+    expiryNarrowed := valid.2.2.2.2.2.2.2.2.2.2.2.1
+    supportPreserved := rfl
+    effectPreserved := rfl }
+
+theorem delegation_custody_is_transitive
+    {first second third : DelegationState}
+    (left : DelegationCustodyPreserved first second)
+    (right : DelegationCustodyPreserved second third) :
+    DelegationCustodyPreserved first third := by
+  exact {
+    rootGrantId := right.rootGrantId.trans left.rootGrantId
+    rootPrincipalId := right.rootPrincipalId.trans left.rootPrincipalId
+    operationId := right.operationId.trans left.operationId
+    targetId := right.targetId.trans left.targetId
+    scopeId := right.scopeId.trans left.scopeId
+    rootCeiling := right.rootCeiling.trans left.rootCeiling
+    rootEpoch := right.rootEpoch.trans left.rootEpoch
+    rootExpiresAt := right.rootExpiresAt.trans left.rootExpiresAt
+    ceilingNarrowed := Nat.le_trans right.ceilingNarrowed left.ceilingNarrowed
+    epochPreserved := right.epochPreserved.trans left.epochPreserved
+    expiryNarrowed := Nat.le_trans right.expiryNarrowed left.expiryNarrowed
+    supportPreserved := right.supportPreserved.trans left.supportPreserved
+    effectPreserved := right.effectPreserved.trans left.effectPreserved }
+
+theorem delegation_run_preserves_custody
+    {state final : DelegationState} {events : List DelegationEvent}
+    (ran : DelegationRun state events = some final) :
+    DelegationCustodyPreserved state final := by
+  induction events generalizing state with
+  | nil =>
+      simp [DelegationRun] at ran
+      subst final
+      exact {
+        rootGrantId := rfl
+        rootPrincipalId := rfl
+        operationId := rfl
+        targetId := rfl
+        scopeId := rfl
+        rootCeiling := rfl
+        rootEpoch := rfl
+        rootExpiresAt := rfl
+        ceilingNarrowed := Nat.le_refl _
+        epochPreserved := rfl
+        expiryNarrowed := Nat.le_refl _
+        supportPreserved := rfl
+        effectPreserved := rfl }
+  | cons event tail ih =>
+      cases stepped : DelegationStep state event with
+      | none => simp [DelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : DelegationRun next tail = some final := by
+            simpa [DelegationRun, stepped] using ran
+          exact delegation_custody_is_transitive
+            (delegation_step_preserves_custody stepped) (ih tailRan)
+
+theorem delegation_step_preserves_non_authority
+    {state next : DelegationState} {event : DelegationEvent}
+    (bounded : DelegationNonAuthority state)
+    (accepted : DelegationStep state event = some next) :
+    DelegationNonAuthority next := by
+  have applies := delegation_accepted_step_applies_event accepted
+  subst next
+  exact bounded
+
+theorem delegation_run_preserves_non_authority
+    {state final : DelegationState} {events : List DelegationEvent}
+    (bounded : DelegationNonAuthority state)
+    (ran : DelegationRun state events = some final) :
+    DelegationNonAuthority final := by
+  induction events generalizing state with
+  | nil =>
+      simp [DelegationRun] at ran
+      subst final
+      exact bounded
+  | cons event tail ih =>
+      cases stepped : DelegationStep state event with
+      | none => simp [DelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : DelegationRun next tail = some final := by
+            simpa [DelegationRun, stepped] using ran
+          exact ih (delegation_step_preserves_non_authority bounded stepped)
+            tailRan
+
+theorem delegation_accepted_step_adds_one_receipt
+    {state next : DelegationState} {event : DelegationEvent}
+    (accepted : DelegationStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [delegation_accepted_step_applies_event accepted]
+  rfl
+
+theorem delegation_accepted_step_adds_one_depth
+    {state next : DelegationState} {event : DelegationEvent}
+    (accepted : DelegationStep state event = some next) :
+    next.depth = state.depth + 1 := by
+  rw [delegation_accepted_step_applies_event accepted]
+  rfl
+
+theorem delegation_run_composes_across_event_batches
+    (state : DelegationState) (left right : List DelegationEvent) :
+    DelegationRun state (left ++ right) =
+      match DelegationRun state left with
+      | none => none
+      | some middle => DelegationRun middle right := by
+  induction left generalizing state with
+  | nil => simp [DelegationRun]
+  | cons event tail ih =>
+      cases stepped : DelegationStep state event <;>
+        simp [DelegationRun, stepped, ih]
+
+theorem delegation_step_preserves_invariant
+    {state next : DelegationState} {event : DelegationEvent}
+    (safe : DelegationStateInvariant state)
+    (accepted : DelegationStep state event = some next) :
+    DelegationStateInvariant next := by
+  have valid := delegation_accepted_step_is_valid accepted
+  have applies := delegation_accepted_step_applies_event accepted
+  subst next
+  exact {
+    rootGrantPositive := safe.rootGrantPositive
+    rootPrincipalPositive := safe.rootPrincipalPositive
+    currentGrantPositive := valid.2.2.1
+    currentPrincipalPositive := by
+      simpa [ApplyDelegationEvent, valid.2.1] using safe.currentDelegatePositive
+    currentDelegatePositive := valid.2.2.2.2.2.1
+    ceilingWithinRoot := Nat.le_trans
+      valid.2.2.2.2.2.2.2.2.2.1 safe.ceilingWithinRoot
+    epochMatchesRoot := valid.2.2.2.2.2.2.2.2.2.2.1.trans
+      safe.epochMatchesRoot
+    expiryWithinRoot := Nat.le_trans
+      valid.2.2.2.2.2.2.2.2.2.2.2.1 safe.expiryWithinRoot
+    timeWithinCurrentExpiry :=
+      valid.2.2.2.2.2.2.2.2.2.2.2.2.2.1
+    currentGrantNotRevoked := valid.2.2.2.2.1
+    nonAuthority := safe.nonAuthority }
+
+theorem delegation_run_preserves_invariant
+    {state final : DelegationState} {events : List DelegationEvent}
+    (safe : DelegationStateInvariant state)
+    (ran : DelegationRun state events = some final) :
+    DelegationStateInvariant final := by
+  induction events generalizing state with
+  | nil =>
+      simp [DelegationRun] at ran
+      subst final
+      exact safe
+  | cons event tail ih =>
+      cases stepped : DelegationStep state event with
+      | none => simp [DelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : DelegationRun next tail = some final := by
+            simpa [DelegationRun, stepped] using ran
+          exact ih (delegation_step_preserves_invariant safe stepped) tailRan
+
+theorem delegation_successful_run_has_valid_trace
+    {state final : DelegationState} {events : List DelegationEvent}
+    (ran : DelegationRun state events = some final) :
+    DelegationTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : DelegationStep state event with
+      | none => simp [DelegationRun, stepped] at ran
+      | some next =>
+          have tailRan : DelegationRun next tail = some final := by
+            simpa [DelegationRun, stepped] using ran
+          have applies := delegation_accepted_step_applies_event stepped
+          subst next
+          exact ⟨delegation_accepted_step_is_valid stepped, ih tailRan⟩
+
+def delegationInitialState : DelegationState :=
+  { rootGrantId := 100
+    rootPrincipalId := 1
+    operationId := 10
+    targetId := 20
+    scopeId := 30
+    rootCeiling := .approve
+    rootEpoch := 7
+    rootExpiresAt := 100
+    currentGrantId := 100
+    currentPrincipalId := 1
+    currentDelegateId := 2
+    currentCeiling := .execute
+    currentEpoch := 7
+    currentExpiresAt := 90
+    logicalTime := 0
+    revokedGrantIds := [99]
+    depth := 0
+    receiptCount := 0
+    supportAuthority := false
+    externalEffectAuthority := false }
+
+def firstDelegationEvent : DelegationEvent :=
+  { parentGrantId := 100
+    childGrantId := 101
+    actingPrincipalId := 2
+    childDelegateId := 3
+    operationId := 10
+    targetId := 20
+    scopeId := 30
+    childCeiling := .write
+    epoch := 7
+    expiresAt := 80
+    logicalTime := 10
+    delegationReceipt := true
+    supportPromotionRequested := false
+    externalEffectRequested := false }
+
+def secondDelegationEvent : DelegationEvent :=
+  { parentGrantId := 101
+    childGrantId := 102
+    actingPrincipalId := 3
+    childDelegateId := 4
+    operationId := 10
+    targetId := 20
+    scopeId := 30
+    childCeiling := .read
+    epoch := 7
+    expiresAt := 70
+    logicalTime := 20
+    delegationReceipt := true
+    supportPromotionRequested := false
+    externalEffectRequested := false }
+
+def twoHopDelegationTrace : List DelegationEvent :=
+  [firstDelegationEvent, secondDelegationEvent]
+
+theorem delegation_initial_state_is_invariant :
+    DelegationStateInvariant delegationInitialState := by
+  exact {
+    rootGrantPositive := by native_decide
+    rootPrincipalPositive := by native_decide
+    currentGrantPositive := by native_decide
+    currentPrincipalPositive := by native_decide
+    currentDelegatePositive := by native_decide
+    ceilingWithinRoot := by native_decide
+    epochMatchesRoot := by native_decide
+    expiryWithinRoot := by native_decide
+    timeWithinCurrentExpiry := by native_decide
+    currentGrantNotRevoked := by native_decide
+    nonAuthority := by native_decide }
+
+theorem two_hop_delegation_reaches_attenuated_grandchild :
+    ∃ final,
+      DelegationRun delegationInitialState twoHopDelegationTrace = some final ∧
+        final.currentGrantId = 102 ∧
+        final.currentPrincipalId = 3 ∧
+        final.currentDelegateId = 4 ∧
+        final.currentCeiling = .read ∧
+        final.depth = 2 ∧
+        final.receiptCount = 2 ∧
+        DelegationNonAuthority final := by
+  refine ⟨ApplyDelegationEvent
+    (ApplyDelegationEvent delegationInitialState firstDelegationEvent)
+    secondDelegationEvent, ?_⟩
+  native_decide
+
+theorem authority_widening_delegation_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with childCeiling := .approve } = none := by
+  native_decide
+
+theorem confused_deputy_principal_substitution_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with actingPrincipalId := 1 } = none := by
+  native_decide
+
+theorem delegation_operation_substitution_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with operationId := 11 } = none := by
+  native_decide
+
+theorem delegation_target_substitution_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with targetId := 21 } = none := by
+  native_decide
+
+theorem delegation_scope_substitution_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with scopeId := 31 } = none := by
+  native_decide
+
+theorem stale_epoch_delegation_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with epoch := 6 } = none := by
+  native_decide
+
+theorem expiry_widening_delegation_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with expiresAt := 91 } = none := by
+  native_decide
+
+theorem revoked_child_grant_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with childGrantId := 99 } = none := by
+  native_decide
+
+theorem support_promotion_delegation_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with supportPromotionRequested := true } = none := by
+  native_decide
+
+theorem external_effect_delegation_is_rejected :
+    DelegationStep delegationInitialState
+      { firstDelegationEvent with externalEffectRequested := true } = none := by
+  native_decide
+
+structure ThinDelegationSummary where
+  ceilingRank : Nat
+  expiresAt : Nat
+  depth : Nat
+deriving DecidableEq, Repr
+
+def ThinDelegationSummaryOf (state : DelegationState) : ThinDelegationSummary :=
+  { ceilingRank := state.currentCeiling.rank
+    expiresAt := state.currentExpiresAt
+    depth := state.depth }
+
+def confusedDeputyDelegationState : DelegationState :=
+  { delegationInitialState with currentDelegateId := 5 }
+
+def DelegationDecisionFor (state : DelegationState) : Bool :=
+  decide (ValidDelegationEvent state firstDelegationEvent)
+
+theorem thin_delegation_summary_has_authority_collision :
+    delegationInitialState ≠ confusedDeputyDelegationState ∧
+      ThinDelegationSummaryOf delegationInitialState =
+        ThinDelegationSummaryOf confusedDeputyDelegationState ∧
+      DelegationDecisionFor delegationInitialState = true ∧
+      DelegationDecisionFor confusedDeputyDelegationState = false := by
+  native_decide
+
+theorem no_thin_delegation_classifier_recovers_authority
+    (classify : ThinDelegationSummary -> Bool) :
+    classify (ThinDelegationSummaryOf delegationInitialState) ≠ true ∨
+      classify (ThinDelegationSummaryOf confusedDeputyDelegationState) ≠
+        false := by
+  have collision :
+      ThinDelegationSummaryOf delegationInitialState =
+        ThinDelegationSummaryOf confusedDeputyDelegationState :=
+    thin_delegation_summary_has_authority_collision.2.1
+  by_cases admitted :
+      classify (ThinDelegationSummaryOf delegationInitialState) = true
+  · right
+    intro rejected
+    have sameClassification := congrArg classify collision
+    rw [admitted, rejected] at sameClassification
+    contradiction
+  · exact Or.inl admitted
+
+structure CompleteDelegationTransport where
+  rootGrantId : Nat
+  rootPrincipalId : Nat
+  operationId : Nat
+  targetId : Nat
+  scopeId : Nat
+  rootCeiling : AuthorityLevel
+  rootEpoch : Nat
+  rootExpiresAt : Nat
+  currentGrantId : Nat
+  currentPrincipalId : Nat
+  currentDelegateId : Nat
+  currentCeiling : AuthorityLevel
+  currentEpoch : Nat
+  currentExpiresAt : Nat
+  logicalTime : Nat
+  revokedGrantIds : List Nat
+  depth : Nat
+  receiptCount : Nat
+  supportAuthority : Bool
+  externalEffectAuthority : Bool
+deriving DecidableEq, Repr
+
+def CompleteDelegationTransportOf
+    (state : DelegationState) : CompleteDelegationTransport :=
+  { rootGrantId := state.rootGrantId
+    rootPrincipalId := state.rootPrincipalId
+    operationId := state.operationId
+    targetId := state.targetId
+    scopeId := state.scopeId
+    rootCeiling := state.rootCeiling
+    rootEpoch := state.rootEpoch
+    rootExpiresAt := state.rootExpiresAt
+    currentGrantId := state.currentGrantId
+    currentPrincipalId := state.currentPrincipalId
+    currentDelegateId := state.currentDelegateId
+    currentCeiling := state.currentCeiling
+    currentEpoch := state.currentEpoch
+    currentExpiresAt := state.currentExpiresAt
+    logicalTime := state.logicalTime
+    revokedGrantIds := state.revokedGrantIds
+    depth := state.depth
+    receiptCount := state.receiptCount
+    supportAuthority := state.supportAuthority
+    externalEffectAuthority := state.externalEffectAuthority }
+
+def DelegationStateOf
+    (transport : CompleteDelegationTransport) : DelegationState :=
+  { rootGrantId := transport.rootGrantId
+    rootPrincipalId := transport.rootPrincipalId
+    operationId := transport.operationId
+    targetId := transport.targetId
+    scopeId := transport.scopeId
+    rootCeiling := transport.rootCeiling
+    rootEpoch := transport.rootEpoch
+    rootExpiresAt := transport.rootExpiresAt
+    currentGrantId := transport.currentGrantId
+    currentPrincipalId := transport.currentPrincipalId
+    currentDelegateId := transport.currentDelegateId
+    currentCeiling := transport.currentCeiling
+    currentEpoch := transport.currentEpoch
+    currentExpiresAt := transport.currentExpiresAt
+    logicalTime := transport.logicalTime
+    revokedGrantIds := transport.revokedGrantIds
+    depth := transport.depth
+    receiptCount := transport.receiptCount
+    supportAuthority := transport.supportAuthority
+    externalEffectAuthority := transport.externalEffectAuthority }
+
+theorem complete_delegation_transport_round_trips
+    (state : DelegationState) :
+    DelegationStateOf (CompleteDelegationTransportOf state) = state := by
+  cases state
+  rfl
+
+theorem complete_delegation_transport_is_injective :
+    Function.Injective CompleteDelegationTransportOf := by
+  intro left right equal
+  calc
+    left = DelegationStateOf (CompleteDelegationTransportOf left) :=
+      (complete_delegation_transport_round_trips left).symm
+    _ = DelegationStateOf (CompleteDelegationTransportOf right) :=
+      congrArg DelegationStateOf equal
+    _ = right := complete_delegation_transport_round_trips right
+
+theorem complete_delegation_transport_preserves_step
+    (state : DelegationState) (event : DelegationEvent) :
+    DelegationStep
+        (DelegationStateOf (CompleteDelegationTransportOf state)) event =
+      DelegationStep state event := by
+  rw [complete_delegation_transport_round_trips]
+
 end AsiStackProofs.Authority

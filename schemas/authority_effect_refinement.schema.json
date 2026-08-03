@@ -4,16 +4,17 @@
   "title": "Authority Effect Refinement Result",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "source_sha256", "formal_surface", "authority_fixture_count", "authority_fixture_accepted_count", "authority_fixture_rejected_count", "reachable_trace_event_count", "reachable_scenario_count", "reachable_scenario_event_count", "invariant_prefix_check_count", "composition_check_count", "executed_local_effect_count", "independently_observed_effect_count", "exact_rollback_count", "pre_effect_denial_count", "revocation_trace_entry_count", "governed_scenario_count", "governed_release_count", "governed_unsafe_release_count", "mutation_count", "mutation_rejection_count", "rejection_noninterference_count", "reference_trace_final_state", "scenario_receipts", "authority_fixture_receipts", "mutation_receipts", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "result_id", "source_sha256", "formal_surface", "delegation_formal_surface", "delegation_chain", "authority_fixture_count", "authority_fixture_accepted_count", "authority_fixture_rejected_count", "reachable_trace_event_count", "reachable_scenario_count", "reachable_scenario_event_count", "invariant_prefix_check_count", "composition_check_count", "executed_local_effect_count", "independently_observed_effect_count", "exact_rollback_count", "pre_effect_denial_count", "revocation_trace_entry_count", "governed_scenario_count", "governed_release_count", "governed_unsafe_release_count", "mutation_count", "mutation_rejection_count", "rejection_noninterference_count", "reference_trace_final_state", "scenario_receipts", "authority_fixture_receipts", "mutation_receipts", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.authority_effect_refinement.v1"},
     "result_id": {"const": "authority-effect-refinement-2026-07-15-local"},
     "source_sha256": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["lean_model", "runtime_effect", "revocation_trace", "governed_repository"],
+      "required": ["lean_model", "authority_model", "runtime_effect", "revocation_trace", "governed_repository"],
       "properties": {
         "lean_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "authority_model": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "runtime_effect": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "revocation_trace": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "governed_repository": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
@@ -32,6 +33,43 @@
         "revoked_suffix_excludes_all_grant_use": {"const": true},
         "rejection_noninterference": {"const": true},
         "exact_rollback_accounting": {"const": true}
+      }
+    },
+    "delegation_formal_surface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theorem_count", "lean_module", "lean_compile_receipt", "arbitrary_run_custody", "arbitrary_run_invariant", "arbitrary_run_non_authority", "batch_composition", "summary_loss_impossibility", "complete_transport"],
+      "properties": {
+        "theorem_count": {"const": 59},
+        "lean_module": {"const": "lean/AsiStackProofs/Authority.lean"},
+        "lean_compile_receipt": {"type": "object"},
+        "arbitrary_run_custody": {"const": true},
+        "arbitrary_run_invariant": {"const": true},
+        "arbitrary_run_non_authority": {"const": true},
+        "batch_composition": {"const": true},
+        "summary_loss_impossibility": {"const": true},
+        "complete_transport": {"const": true}
+      }
+    },
+    "delegation_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_event_count", "invariant_state_check_count", "composition_split_count", "custody_preserved", "attenuation_preserved", "mutation_count", "mutation_rejection_count", "rejection_noninterference_count", "summary_collision_count", "complete_transport_field_count", "complete_transport_mutation_rejection_count", "final_state", "mutation_receipts", "complete_transport_receipts"],
+      "properties": {
+        "trace_event_count": {"const": 2},
+        "invariant_state_check_count": {"const": 3},
+        "composition_split_count": {"const": 3},
+        "custody_preserved": {"const": true},
+        "attenuation_preserved": {"const": true},
+        "mutation_count": {"const": 17},
+        "mutation_rejection_count": {"const": 17},
+        "rejection_noninterference_count": {"const": 17},
+        "summary_collision_count": {"const": 1},
+        "complete_transport_field_count": {"const": 20},
+        "complete_transport_mutation_rejection_count": {"const": 20},
+        "final_state": {"type": "object"},
+        "mutation_receipts": {"type": "array", "minItems": 17, "maxItems": 17, "items": {"type": "object"}},
+        "complete_transport_receipts": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"type": "object"}}
       }
     },
     "authority_fixture_count": {"const": 6},

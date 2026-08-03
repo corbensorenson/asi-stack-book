@@ -1103,8 +1103,8 @@ def errors(data: dict) -> list[str]:
     current_units = {row.get("script") for row in registry_units}
     if "validate_post_v2_3_claim_proof_and_sota_challenge_roadmap.py" not in current_units:
         out.append("active roadmap validator is absent from the authoritative validation registry")
-    if exact_contracts != 88:
-        out.append("activation must not silently alter the 88 exact high-impact contract baseline")
+    if exact_contracts != 89:
+        out.append("current registry must retain the 88-contract activation baseline plus the exact proof-artifact audit contract")
     live_chapter_count = len(chapter_ids)
     vector_summary = data["vectors"].get("summary", {})
     successor_activation_truth = successor_status.get("activation_truth", {})
@@ -1735,7 +1735,7 @@ def errors(data: dict) -> list[str]:
         if phrase.casefold() not in data["verification_bandwidth_dossier"].casefold(): out.append(f"verification-bandwidth dossier missing adequacy boundary: {phrase}")
 
     expected_claim_ledger_contract = {
-        "current_missing_or_changed_theorem_count":474,
+        "current_missing_or_changed_theorem_count":475,
         "current_missing_or_changed_target_count":252,
         "current_live_theorem_declaration_count":1219,
         "current_live_proof_target_count":320,

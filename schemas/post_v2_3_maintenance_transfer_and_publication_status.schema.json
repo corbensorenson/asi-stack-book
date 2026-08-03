@@ -569,7 +569,7 @@
                   "const": "proofs/proof_semantic_rationalization_ledger.json"
                 },
                 "theorem_count": {
-                  "const": 2871
+                  "const": 2902
                 },
                 "theorem_bearing_module_count": {
                   "const": 130
@@ -579,18 +579,18 @@
                 },
                 "semantic_level_counts": {
                   "const": {
-                    "P0": 94,
-                    "P1": 979,
-                    "P2": 269,
-                    "P3": 1118,
-                    "P4": 187,
-                    "P5": 224,
+                    "P0": 93,
+                    "P1": 972,
+                    "P2": 271,
+                    "P3": 1136,
+                    "P4": 196,
+                    "P5": 234,
                     "P6": 0
                   }
                 },
                 "disposition_counts": {
                   "const": {
-                    "retain": 2871
+                    "retain": 2902
                   }
                 },
                 "executed_retirement_count": {
@@ -1043,9 +1043,9 @@
           "current_copied_diagram_and_test_spread": 0,
           "repaired_chapter_count": 10,
           "baseline_prose_candidate_count": 3444,
-          "current_prose_candidate_count": 3890,
-          "retired_inherited_prose_candidate_count": 277,
-          "added_domain_specific_prose_candidate_count": 728,
+          "current_prose_candidate_count": 3891,
+          "retired_inherited_prose_candidate_count": 286,
+          "added_domain_specific_prose_candidate_count": 733,
           "baseline_structured_atom_count": 4067,
           "current_structured_atom_count": 4064,
           "pending_prose_candidate_count": 0,
@@ -1453,10 +1453,10 @@
         "sota_supported_count": 0,
         "proof_target_count": 330,
         "lean_module_count": 130,
-        "theorem_declaration_count": 2871,
-        "derived_or_decomposed_theorem_count": 1787,
-        "direct_or_projection_theorem_count": 433,
-        "unknown_or_mixed_theorem_count": 651,
+        "theorem_declaration_count": 2902,
+        "derived_or_decomposed_theorem_count": 1804,
+        "direct_or_projection_theorem_count": 435,
+        "unknown_or_mixed_theorem_count": 663,
         "historical_v2_2_approved_exact_local_reader_formats": [
           "html"
         ],
@@ -3105,6 +3105,7 @@
             "modules": {
               "const": [
                 "AsiStackProofs.AuthorityEffectRefinement",
+                "AsiStackProofs.Authority",
                 "AsiStackProofs.Replacement",
                 "AsiStackProofs.Corrigibility",
                 "AsiStackProofs.IntentExecutionRefinement"

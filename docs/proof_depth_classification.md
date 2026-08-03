@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2871 |
-| Direct/projection-style theorem declarations | 433 |
-| Derived/decomposed theorem declarations | 1787 |
-| Unknown or mixed theorem declarations | 651 |
+| Theorem declarations classified | 2902 |
+| Direct/projection-style theorem declarations | 435 |
+| Derived/decomposed theorem declarations | 1804 |
+| Unknown or mixed theorem declarations | 663 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -61,7 +61,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactGraph.lean` | unmapped | 0 | 35 | 1 | 34 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactRealityRefinement.lean` | artifact-graphs-audit-logs-and-replay | 10 | 21 | 11 | 9 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
-| `lean/AsiStackProofs/Authority.lean` | unmapped | 0 | 28 | 0 | 28 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Authority.lean` | unmapped | 0 | 59 | 2 | 45 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 4 | 31 | 1 | 20 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 15 | 0 | 12 | 3 | manual review |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -432,8 +432,33 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | `widened_work_authority_reaches_refusal` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `authority_lifecycle_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `authority_revocation_trace_surface_bridge` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `authority_widening_delegation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `complete_authority_lifecycle_admits_record` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `complete_delegation_transport_is_injective` | derived_or_decomposed | no | uses calc, left, right |
+| `lean/AsiStackProofs/Authority.lean` | `complete_delegation_transport_preserves_step` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/Authority.lean` | `complete_delegation_transport_round_trips` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/Authority.lean` | `confused_deputy_principal_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_accepted_step_adds_one_depth` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_accepted_step_adds_one_receipt` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_custody_is_transitive` | derived_or_decomposed | no | uses left, right |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_initial_state_is_invariant` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_operation_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_rejected_event_is_noninterfering` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_run_composes_across_event_batches` | derived_or_decomposed | no | uses cases, induction, left, simp |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_run_preserves_custody` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_run_preserves_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_scope_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_step_preserves_custody` | derived_or_decomposed | no | uses have, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_step_preserves_invariant` | derived_or_decomposed | no | uses have, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_step_preserves_non_authority` | derived_or_decomposed | no | uses have, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_successful_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/Authority.lean` | `delegation_target_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `expired_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `expiry_widening_delegation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `external_effect_delegation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `grant_ceiling_gap_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `inactive_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `missing_audit_refs_requests_audit_refs` | derived_or_decomposed | no | uses simp, unfold |
@@ -448,10 +473,16 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | `missing_principal_requests_principal` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `missing_target_requirement_requests_target_requirement` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `no_authority_request_stays_idle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `no_thin_delegation_classifier_recovers_authority` | derived_or_decomposed | no | uses by_cases, contradiction, have, right, rw |
 | `lean/AsiStackProofs/Authority.lean` | `promotion_request_without_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `required_approval_gap_requests_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `revoked_child_grant_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `revoked_grant_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `scope_mismatch_denies_authority_lifecycle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Authority.lean` | `stale_epoch_delegation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `support_promotion_delegation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `thin_delegation_summary_has_authority_collision` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/Authority.lean` | `two_hop_delegation_reaches_attenuated_grandchild` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_has_effect_receipt` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_preserves_caller_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |
 | `lean/AsiStackProofs/Authority.lean` | `valid_allow_decision_target_within_active_ceiling` | derived_or_decomposed | no | uses rcases, rw, unfold |

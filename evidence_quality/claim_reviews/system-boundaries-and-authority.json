@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/system-boundaries-and-authority.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 45,
+    "prose_candidates_adjudicated": 46,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 43 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-02 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model, its six-event witness, six authority fixtures, executed local effect and rollback, two pre-effect denials, five revocation entries, nine governed scenarios, and 50 rejecting mutations. It also checked arbitrary-run identity and non-authority preservation, revoked-suffix exclusion of approval, dispatch, and effect, rejected-step noninterference, exact rollback accounting, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state."
+    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Attempted external effects, privileged information transitions, approval decisions, delegated operations, replays, and cross-domain handoffs in governed AI-system workflows.",
-      "environment": "Controlled ASI Stack reference slices, six synthetic authority fixtures, one sandboxed local effect with exact rollback, two pre-effect denials, five replayable revocation entries, nine bounded governed repository scenarios, and 50 semantic mutations; production identity providers, operating-system isolation, concurrent/distributed revocation, hardware roots, and open-world deployments are outside current evidence.",
-      "model": "A substrate-neutral logical authority system with a reachable sequential grant-to-effect refinement binding abstract grant, principal, operation, target, ceiling, epoch, expiry, remaining-use, approval, dispatch, observation, revocation, and rollback state; identities and receipts remain trusted finite inputs rather than authenticated enforcement facts.",
+      "environment": "Controlled ASI Stack reference slices, six synthetic authority fixtures, one sandboxed local effect with exact rollback, two pre-effect denials, five replayable revocation entries, nine bounded governed repository scenarios, one two-hop delegation trace, 67 semantic mutations, one summary collision, and 20 transport-field mutations; production identity providers, operating-system isolation, concurrent/distributed delegation or revocation, hardware roots, and open-world deployments are outside current evidence.",
+      "model": "A substrate-neutral logical authority system with complementary reachable sequential grant-to-effect and delegation-chain refinements binding abstract root/parent/child grant, principal/delegate, operation, target, scope, ceiling, epoch, expiry, remaining-use, receipt, approval, dispatch, observation, revocation, non-authority, and rollback state; identities and receipts remain trusted finite inputs rather than authenticated enforcement facts.",
       "authority": "A prospectively named issuer and revocation authority controls each grant; author, model, process, tool, or session capability does not create runtime permission, and trust in issuer identity or enforcement is an explicit assumption.",
-      "time": "Semantic review current through 2026-08-02; policies, grant versions, clocks, revocation epochs, adapter versions, and threat models must be frozen for outcome-bearing campaigns.",
-      "artifact": "chapters/system-boundaries-and-authority.qmd, authority-transition and authority-tuple records, permission and revocation harnesses, `AsiStackProofs.AuthorityEffectRefinement`, the independent authority-effect consumer result/receipt/dossier, raw public-safe traces, campaign records, and evidence-transition decisions"
+      "time": "Semantic review current through 2026-08-03; policies, grant versions, clocks, revocation epochs, adapter versions, and threat models must be frozen for outcome-bearing campaigns.",
+      "artifact": "chapters/system-boundaries-and-authority.qmd, authority-transition and authority-tuple records, permission and revocation harnesses, `AsiStackProofs.AuthorityEffectRefinement`, `AsiStackProofs.Authority`, the independent authority-effect consumer result/receipt/dossier, raw public-safe traces, campaign records, and evidence-transition decisions"
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
     "contrary_evidence": [
@@ -644,7 +644,7 @@
       "required_lanes": [
         {
           "lane": "formal",
-          "necessity": "Check scope subset and identity continuity relations."
+          "necessity": "The finite sequential delegation refinement now checks exact operation/target/scope custody, ceiling and expiry attenuation, epoch continuity, non-authority, composition, closed substitutions, and summary-loss limits; legitimate identity migration, forks/joins, hidden descendants, and concurrent/distributed chains remain open."
         },
         {
           "lane": "executable",
@@ -1351,18 +1351,23 @@
       "state": "editorial_or_question",
       "rationale": "Handoff sentence into the failure-radar chapter rather than a new authority claim."
     },
-    "system-boundaries-and-authority.prose.6c24b1b22fe6": {
+    "system-boundaries-and-authority.prose.89a33845d976": {
       "state": "duplicate_of_atom",
-      "rationale": "Reports the bounded arbitrary-run model and executed-consumer result already owned by the strengthened Authority operational-invariant target.",
+      "rationale": "Reports the bounded grant-to-effect theorem surface already owned by the strengthened Authority operational-invariant target.",
       "target_atom_id": "system-boundaries-and-authority.formal.authority-ceiling-operational-invariant"
     },
-    "system-boundaries-and-authority.prose.2dce22d5f6ff": {
+    "system-boundaries-and-authority.prose.fb484fad33a8": {
+      "state": "duplicate_of_atom",
+      "rationale": "Reports the finite delegation-chain consequences already owned by the chapter's delegation custody and narrowing invariant.",
+      "target_atom_id": "system-boundaries-and-authority.invariant.004"
+    },
+    "system-boundaries-and-authority.prose.0c61c1a7f0b9": {
       "state": "nonmaterial_explanation",
       "rationale": "Explicit non-claim boundary for the finite Authority proof packet; it adds no positive proposition."
     },
-    "system-boundaries-and-authority.prose.e35c8c008c71": {
-      "state": "historical_or_source_report",
-      "rationale": "Line-wrapped report of the bounded three-trace theorem and mutation result; its limitations remain explicit and it adds no broader authority claim."
+    "system-boundaries-and-authority.prose.29b3bc0e81d7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped continuation of the bounded proof-packet report; the complete proposition is already owned by the chapter's reviewed formal and invariant atoms."
     },
     "system-boundaries-and-authority.prose.cb57367916f3": {
       "state": "nonmaterial_explanation",

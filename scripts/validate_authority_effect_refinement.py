@@ -15,6 +15,7 @@ import jsonschema
 
 ROOT = Path(__file__).resolve().parents[1]
 LEAN = ROOT / "lean/AsiStackProofs/AuthorityEffectRefinement.lean"
+AUTHORITY_LEAN = ROOT / "lean/AsiStackProofs/Authority.lean"
 AUTHORITY_FIXTURES = ROOT / "experiments/authority_transitions/fixtures"
 RUNTIME = ROOT / "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"
 REVOCATION = ROOT / "experiments/authority_revocation_trace/results/2026-07-03-local.json"
@@ -56,6 +57,68 @@ EXPECTED_THEOREMS = {
     "consumed_one_shot_grant_cannot_effect_again",
 }
 
+EXPECTED_AUTHORITY_THEOREMS = {
+    "valid_transition_without_grant_preserves_ceiling",
+    "missing_grant_blocks_over_ceiling_execution",
+    "valid_allow_decision_has_effect_receipt",
+    "valid_allow_decision_preserves_caller_ceiling",
+    "valid_allow_decision_target_within_active_ceiling",
+    "valid_deny_decision_has_no_effect_receipt",
+    "valid_escalation_routes_to_review",
+    "no_authority_request_stays_idle",
+    "missing_principal_requests_principal",
+    "missing_operation_requests_operation",
+    "missing_permission_class_requests_permission_class",
+    "missing_caller_ceiling_requests_caller_ceiling",
+    "missing_target_requirement_requests_target_requirement",
+    "missing_delegation_chain_requests_delegation_chain",
+    "missing_grant_requests_grant_record",
+    "inactive_grant_denies_authority_lifecycle",
+    "expired_grant_denies_authority_lifecycle",
+    "revoked_grant_denies_authority_lifecycle",
+    "scope_mismatch_denies_authority_lifecycle",
+    "grant_ceiling_gap_denies_authority_lifecycle",
+    "required_approval_gap_requests_approval",
+    "missing_effect_receipt_requests_effect_receipt",
+    "missing_denial_receipt_requests_denial_receipt",
+    "missing_audit_refs_requests_audit_refs",
+    "promotion_request_without_evidence_transition_requests_transition",
+    "authority_lifecycle_without_nonclaim_boundary_preserves_boundary",
+    "complete_authority_lifecycle_admits_record",
+    "authority_revocation_trace_surface_bridge",
+    "delegation_accepted_step_is_valid",
+    "delegation_accepted_step_applies_event",
+    "delegation_rejected_event_is_noninterfering",
+    "delegation_step_preserves_custody",
+    "delegation_custody_is_transitive",
+    "delegation_run_preserves_custody",
+    "delegation_step_preserves_non_authority",
+    "delegation_run_preserves_non_authority",
+    "delegation_accepted_step_adds_one_receipt",
+    "delegation_accepted_step_adds_one_depth",
+    "delegation_run_composes_across_event_batches",
+    "delegation_step_preserves_invariant",
+    "delegation_run_preserves_invariant",
+    "delegation_successful_run_has_valid_trace",
+    "delegation_initial_state_is_invariant",
+    "two_hop_delegation_reaches_attenuated_grandchild",
+    "authority_widening_delegation_is_rejected",
+    "confused_deputy_principal_substitution_is_rejected",
+    "delegation_operation_substitution_is_rejected",
+    "delegation_target_substitution_is_rejected",
+    "delegation_scope_substitution_is_rejected",
+    "stale_epoch_delegation_is_rejected",
+    "expiry_widening_delegation_is_rejected",
+    "revoked_child_grant_is_rejected",
+    "support_promotion_delegation_is_rejected",
+    "external_effect_delegation_is_rejected",
+    "thin_delegation_summary_has_authority_collision",
+    "no_thin_delegation_classifier_recovers_authority",
+    "complete_delegation_transport_round_trips",
+    "complete_delegation_transport_is_injective",
+    "complete_delegation_transport_preserves_step",
+}
+
 
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -92,6 +155,39 @@ def formal_surface() -> dict[str, Any]:
         "revoked_suffix_excludes_all_grant_use": True,
         "rejection_noninterference": True,
         "exact_rollback_accounting": True,
+    }
+
+
+def delegation_formal_surface() -> dict[str, Any]:
+    theorem_names = set(re.findall(
+        r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)",
+        AUTHORITY_LEAN.read_text(encoding="utf-8"),
+    ))
+    if theorem_names != EXPECTED_AUTHORITY_THEOREMS:
+        raise AssertionError(
+            "Authority Lean theorem surface drifted; "
+            f"missing={sorted(EXPECTED_AUTHORITY_THEOREMS - theorem_names)}, "
+            f"extra={sorted(theorem_names - EXPECTED_AUTHORITY_THEOREMS)}"
+        )
+    command = ["lake", "env", "lean", "AsiStackProofs/Authority.lean"]
+    completed = subprocess.run(command, cwd=ROOT / "lean", capture_output=True, text=True)
+    if completed.returncode:
+        raise AssertionError(completed.stdout + completed.stderr)
+    output = completed.stdout + completed.stderr
+    return {
+        "theorem_count": len(theorem_names),
+        "lean_module": str(AUTHORITY_LEAN.relative_to(ROOT)),
+        "lean_compile_receipt": {
+            "command": " ".join(command),
+            "exit_code": completed.returncode,
+            "output_sha256": hashlib.sha256(output.encode()).hexdigest(),
+        },
+        "arbitrary_run_custody": True,
+        "arbitrary_run_invariant": True,
+        "arbitrary_run_non_authority": True,
+        "batch_composition": True,
+        "summary_loss_impossibility": True,
+        "complete_transport": True,
     }
 
 
@@ -322,6 +418,285 @@ def mutation_cases(base: list[dict[str, Any]]) -> list[tuple[str, list[dict[str,
     return cases
 
 
+DELEGATION_TRANSPORT_FIELDS = (
+    "root_grant_id", "root_principal_id", "operation_id", "target_id", "scope_id",
+    "root_ceiling", "root_epoch", "root_expires_at", "current_grant_id",
+    "current_principal_id", "current_delegate_id", "current_ceiling", "current_epoch",
+    "current_expires_at", "logical_time", "revoked_grant_ids", "depth",
+    "receipt_count", "support_authority", "external_effect_authority",
+)
+
+
+def delegation_initial() -> dict[str, Any]:
+    return {
+        "root_grant_id": 100,
+        "root_principal_id": 1,
+        "operation_id": 10,
+        "target_id": 20,
+        "scope_id": 30,
+        "root_ceiling": 5,
+        "root_epoch": 7,
+        "root_expires_at": 100,
+        "current_grant_id": 100,
+        "current_principal_id": 1,
+        "current_delegate_id": 2,
+        "current_ceiling": 4,
+        "current_epoch": 7,
+        "current_expires_at": 90,
+        "logical_time": 0,
+        "revoked_grant_ids": [99],
+        "depth": 0,
+        "receipt_count": 0,
+        "support_authority": False,
+        "external_effect_authority": False,
+    }
+
+
+def delegation_event(first: bool = True) -> dict[str, Any]:
+    if first:
+        return {
+            "parent_grant_id": 100,
+            "child_grant_id": 101,
+            "acting_principal_id": 2,
+            "child_delegate_id": 3,
+            "operation_id": 10,
+            "target_id": 20,
+            "scope_id": 30,
+            "child_ceiling": 3,
+            "epoch": 7,
+            "expires_at": 80,
+            "logical_time": 10,
+            "delegation_receipt": True,
+            "support_promotion_requested": False,
+            "external_effect_requested": False,
+        }
+    return {
+        "parent_grant_id": 101,
+        "child_grant_id": 102,
+        "acting_principal_id": 3,
+        "child_delegate_id": 4,
+        "operation_id": 10,
+        "target_id": 20,
+        "scope_id": 30,
+        "child_ceiling": 1,
+        "epoch": 7,
+        "expires_at": 70,
+        "logical_time": 20,
+        "delegation_receipt": True,
+        "support_promotion_requested": False,
+        "external_effect_requested": False,
+    }
+
+
+def delegation_event_errors(state: dict[str, Any], row: dict[str, Any]) -> list[str]:
+    checks = (
+        (row["parent_grant_id"] == state["current_grant_id"], "parent_grant_mismatch"),
+        (row["acting_principal_id"] == state["current_delegate_id"], "acting_principal_mismatch"),
+        (row["child_grant_id"] > 0, "invalid_child_grant"),
+        (row["child_grant_id"] != state["current_grant_id"], "child_reuses_parent_grant"),
+        (row["child_grant_id"] not in state["revoked_grant_ids"], "child_grant_revoked"),
+        (row["child_delegate_id"] > 0, "invalid_child_delegate"),
+        (row["operation_id"] == state["operation_id"], "operation_substitution"),
+        (row["target_id"] == state["target_id"], "target_substitution"),
+        (row["scope_id"] == state["scope_id"], "scope_substitution"),
+        (row["child_ceiling"] <= state["current_ceiling"], "authority_widening"),
+        (row["epoch"] == state["current_epoch"], "stale_epoch"),
+        (row["expires_at"] <= state["current_expires_at"], "expiry_widening"),
+        (state["logical_time"] < row["logical_time"], "non_monotone_time"),
+        (row["logical_time"] <= row["expires_at"], "event_after_expiry"),
+        (row["delegation_receipt"] is True, "missing_delegation_receipt"),
+        (row["support_promotion_requested"] is False, "support_promotion_request"),
+        (row["external_effect_requested"] is False, "external_effect_request"),
+    )
+    return [reason for accepted, reason in checks if not accepted]
+
+
+def apply_delegation_event(state: dict[str, Any], row: dict[str, Any]) -> dict[str, Any]:
+    next_state = copy.deepcopy(state)
+    next_state.update({
+        "current_grant_id": row["child_grant_id"],
+        "current_principal_id": row["acting_principal_id"],
+        "current_delegate_id": row["child_delegate_id"],
+        "current_ceiling": row["child_ceiling"],
+        "current_epoch": row["epoch"],
+        "current_expires_at": row["expires_at"],
+        "logical_time": row["logical_time"],
+        "depth": state["depth"] + 1,
+        "receipt_count": state["receipt_count"] + 1,
+    })
+    return next_state
+
+
+def delegation_invariant_errors(state: dict[str, Any]) -> list[str]:
+    checks = (
+        (state["root_grant_id"] > 0, "invalid_root_grant"),
+        (state["root_principal_id"] > 0, "invalid_root_principal"),
+        (state["current_grant_id"] > 0, "invalid_current_grant"),
+        (state["current_principal_id"] > 0, "invalid_current_principal"),
+        (state["current_delegate_id"] > 0, "invalid_current_delegate"),
+        (state["current_ceiling"] <= state["root_ceiling"], "ceiling_exceeds_root"),
+        (state["current_epoch"] == state["root_epoch"], "epoch_differs_from_root"),
+        (state["current_expires_at"] <= state["root_expires_at"], "expiry_exceeds_root"),
+        (state["logical_time"] <= state["current_expires_at"], "state_after_expiry"),
+        (state["current_grant_id"] not in state["revoked_grant_ids"], "current_grant_revoked"),
+        (state["support_authority"] is False, "support_authority_present"),
+        (state["external_effect_authority"] is False, "external_effect_authority_present"),
+    )
+    return [reason for accepted, reason in checks if not accepted]
+
+
+def delegation_run(
+    rows: list[dict[str, Any]], start: dict[str, Any] | None = None,
+) -> tuple[bool, int | None, list[str], dict[str, Any], list[dict[str, Any]]]:
+    state = copy.deepcopy(start) if start is not None else delegation_initial()
+    states = [copy.deepcopy(state)]
+    initial_errors = delegation_invariant_errors(state)
+    if initial_errors:
+        return False, 0, initial_errors, state, states
+    for index, row in enumerate(rows):
+        errors = delegation_event_errors(state, row)
+        if errors:
+            return False, index, errors, state, states
+        state = apply_delegation_event(state, row)
+        states.append(copy.deepcopy(state))
+        errors = delegation_invariant_errors(state)
+        if errors:
+            return False, index, errors, state, states
+    return True, None, [], state, states
+
+
+def delegation_mutation_cases(base: list[dict[str, Any]]) -> list[tuple[str, list[dict[str, Any]]]]:
+    cases = (
+        ("parent_grant_substitution", "parent_grant_id", 999),
+        ("acting_principal_substitution", "acting_principal_id", 999),
+        ("zero_child_grant", "child_grant_id", 0),
+        ("parent_grant_reuse", "child_grant_id", 100),
+        ("revoked_child_grant", "child_grant_id", 99),
+        ("zero_child_delegate", "child_delegate_id", 0),
+        ("operation_substitution", "operation_id", 11),
+        ("target_substitution", "target_id", 21),
+        ("scope_substitution", "scope_id", 31),
+        ("authority_widening", "child_ceiling", 5),
+        ("stale_epoch", "epoch", 6),
+        ("expiry_widening", "expires_at", 91),
+        ("non_monotone_time", "logical_time", 0),
+        ("event_after_expiry", "logical_time", 81),
+        ("missing_receipt", "delegation_receipt", False),
+        ("support_promotion_request", "support_promotion_requested", True),
+        ("external_effect_request", "external_effect_requested", True),
+    )
+    out: list[tuple[str, list[dict[str, Any]]]] = []
+    for mutation_id, key, value in cases:
+        rows = copy.deepcopy(base)
+        rows[0][key] = value
+        out.append((mutation_id, rows))
+    return out
+
+
+def complete_delegation_transport(state: dict[str, Any]) -> dict[str, Any]:
+    return {field: copy.deepcopy(state[field]) for field in DELEGATION_TRANSPORT_FIELDS}
+
+
+def audit_delegation_chain() -> tuple[dict[str, Any], list[str]]:
+    errors: list[str] = []
+    rows = [delegation_event(), delegation_event(False)]
+    accepted, _, reasons, final_state, states = delegation_run(rows)
+    if not accepted:
+        errors.append(f"two-hop delegation trace rejected: {reasons}")
+    custody_preserved = all(
+        state[key] == states[0][key]
+        for state in states
+        for key in (
+            "root_grant_id", "root_principal_id", "operation_id", "target_id",
+            "scope_id", "root_ceiling", "root_epoch", "root_expires_at",
+            "support_authority", "external_effect_authority",
+        )
+    )
+    attenuated = all(
+        after["current_ceiling"] <= before["current_ceiling"]
+        and after["current_expires_at"] <= before["current_expires_at"]
+        and after["current_epoch"] == before["current_epoch"]
+        for before, after in zip(states, states[1:])
+    )
+    if not custody_preserved or not attenuated:
+        errors.append("delegation custody or attenuation drifted")
+
+    composition_split_count = 0
+    for split in range(len(rows) + 1):
+        left_ok, _, left_reasons, middle, _ = delegation_run(rows[:split])
+        right_ok, _, right_reasons, composed, _ = delegation_run(rows[split:], middle)
+        composition_split_count += 1
+        if not left_ok or not right_ok or composed != final_state:
+            errors.append(
+                f"delegation composition split {split} drift: {left_reasons + right_reasons}"
+            )
+
+    mutation_receipts = []
+    rejection_noninterference_count = 0
+    for mutation_id, candidate in delegation_mutation_cases(rows):
+        mutation_accepted, failed_index, mutation_errors, rejected_state, _ = delegation_run(candidate)
+        noninterfering = failed_index == 0 and rejected_state == delegation_initial()
+        if noninterfering:
+            rejection_noninterference_count += 1
+        mutation_receipts.append({
+            "mutation_id": mutation_id,
+            "rejected": not mutation_accepted,
+            "failed_event_index": failed_index,
+            "state_noninterfering": noninterfering,
+            "reasons": mutation_errors,
+        })
+        if mutation_accepted or not noninterfering:
+            errors.append(f"delegation mutation escaped or interfered: {mutation_id}")
+
+    confused = delegation_initial()
+    confused["current_delegate_id"] = 5
+    summary_fields = ("current_ceiling", "current_expires_at", "depth")
+    same_summary = all(delegation_initial()[key] == confused[key] for key in summary_fields)
+    base_decision = not delegation_event_errors(delegation_initial(), rows[0])
+    confused_decision = not delegation_event_errors(confused, rows[0])
+    summary_collision = same_summary and base_decision and not confused_decision
+    if not summary_collision:
+        errors.append("thin delegation summary no longer exhibits an authority collision")
+
+    original = delegation_initial()
+    round_trip = complete_delegation_transport(original)
+    if round_trip != original:
+        errors.append("complete delegation transport does not round trip")
+    transport_receipts = []
+    for field in DELEGATION_TRANSPORT_FIELDS:
+        mutated = copy.deepcopy(round_trip)
+        value = mutated[field]
+        if isinstance(value, bool):
+            mutated[field] = not value
+        elif isinstance(value, list):
+            mutated[field] = value + [1000]
+        else:
+            mutated[field] = value + 1
+        mismatch_rejected = mutated != original
+        transport_receipts.append({"field": field, "mismatch_rejected": mismatch_rejected})
+        if not mismatch_rejected:
+            errors.append(f"complete transport field mutation escaped: {field}")
+
+    return {
+        "trace_event_count": len(rows),
+        "invariant_state_check_count": len(states),
+        "composition_split_count": composition_split_count,
+        "custody_preserved": custody_preserved,
+        "attenuation_preserved": attenuated,
+        "mutation_count": len(mutation_receipts),
+        "mutation_rejection_count": sum(row["rejected"] for row in mutation_receipts),
+        "rejection_noninterference_count": rejection_noninterference_count,
+        "summary_collision_count": int(summary_collision),
+        "complete_transport_field_count": len(DELEGATION_TRANSPORT_FIELDS),
+        "complete_transport_mutation_rejection_count": sum(
+            row["mismatch_rejected"] for row in transport_receipts
+        ),
+        "final_state": final_state,
+        "mutation_receipts": mutation_receipts,
+        "complete_transport_receipts": transport_receipts,
+    }, errors
+
+
 def build() -> tuple[dict[str, Any], list[str]]:
     errors: list[str] = []
     runtime = load(RUNTIME)
@@ -351,6 +726,8 @@ def build() -> tuple[dict[str, Any], list[str]]:
     summary = governed.get("governed_summary", {})
     if governed.get("scenario_count") != 9 or summary.get("unsafe_releases") != 0 or summary.get("releases") != 3:
         errors.append("governed repository evidence drift")
+    delegation_chain, delegation_errors = audit_delegation_chain()
+    errors.extend(delegation_errors)
 
     base = [event("issue", 1), event("approve", 2), event("dispatch", 3), event("effect", 4), event("observe", 5), event("rollback", 6)]
     two_use = [event("issue", 1), event("approve", 2), event("dispatch", 3), event("effect", 4), event("approve", 5), event("dispatch", 6), event("effect", 7), event("observe", 8), event("observe", 9), event("rollback", 10)]
@@ -398,8 +775,10 @@ def build() -> tuple[dict[str, Any], list[str]]:
     result = {
         "schema_version": "asi_stack.authority_effect_refinement.v1",
         "result_id": "authority-effect-refinement-2026-07-15-local",
-        "source_sha256": {"lean_model": sha(LEAN), "runtime_effect": sha(RUNTIME), "revocation_trace": sha(REVOCATION), "governed_repository": sha(GOVERNED)},
+        "source_sha256": {"lean_model": sha(LEAN), "authority_model": sha(AUTHORITY_LEAN), "runtime_effect": sha(RUNTIME), "revocation_trace": sha(REVOCATION), "governed_repository": sha(GOVERNED)},
         "formal_surface": formal_surface(),
+        "delegation_formal_surface": delegation_formal_surface(),
+        "delegation_chain": delegation_chain,
         "authority_fixture_count": len(fixtures),
         "authority_fixture_accepted_count": sum(row["accepted"] for row in fixtures),
         "authority_fixture_rejected_count": sum(not row["accepted"] for row in fixtures),
@@ -426,6 +805,7 @@ def build() -> tuple[dict[str, Any], list[str]]:
         "support_state_effect": "none",
         "non_claims": [
             "The reachable model uses abstract numeric identities and trusted receipts; it does not prove identity, approval, receipt, observer, or revocation authenticity.",
+            "The delegation refinement proves finite sequential custody and attenuation over authored records; it does not authenticate principals, discover hidden descendants, or establish concurrent or distributed delegation safety.",
             "The executed effect is a generated local temporary-file mutation, and the governed repository workload is bounded; neither establishes deployed authorization middleware or production security.",
             "The packet does not establish natural-language authority extraction, complete effect observation, concurrent or distributed revocation safety, reproduction, transfer, safety, or chapter-core support.",
         ],
@@ -449,7 +829,8 @@ def main() -> None:
         RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     elif not RESULT.exists() or load(RESULT) != result:
         raise SystemExit("Authority effect refinement result stale; run with --write")
-    print(f"Authority effect refinement passed: {result['formal_surface']['theorem_count']} Lean theorems, {result['authority_fixture_count']} fixtures, {result['reachable_scenario_count']} reachable traces/{result['reachable_scenario_event_count']} events, {result['invariant_prefix_check_count']} invariant prefixes, {result['composition_check_count']} batch compositions, {result['mutation_rejection_count']} state-noninterfering mutation rejections, support effect none.")
+    delegation = result["delegation_chain"]
+    print(f"Authority effect refinement passed: {result['formal_surface']['theorem_count']} effect + {result['delegation_formal_surface']['theorem_count']} authority Lean theorems, {result['authority_fixture_count']} fixtures, {result['reachable_scenario_count']} effect traces/{result['reachable_scenario_event_count']} events, one {delegation['trace_event_count']}-event delegation trace, {result['composition_check_count'] + delegation['composition_split_count']} batch compositions, {result['mutation_rejection_count'] + delegation['mutation_rejection_count']} state-noninterfering mutation rejections, {delegation['complete_transport_mutation_rejection_count']} transport-field rejections, support effect none.")
 
 
 if __name__ == "__main__":

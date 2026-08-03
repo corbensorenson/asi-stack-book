@@ -18408,7 +18408,7 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The exact 31-theorem reachable Lean grant-to-effect model, authority decision fixtures, executed runtime effect/denial result, revocation trace, governed repository result, independent recompiling consumer, schema, receipt, and adequacy dossier.",
+      "input_contract": "The exact 31-theorem reachable Lean grant-to-effect model, exact 59-theorem authority/delegation model, authority decision fixtures, executed runtime effect/denial result, revocation trace, governed repository result, independent recompiling consumer, schema, receipt, and adequacy dossier.",
       "input_artifacts": [
         "scripts/validate_authority_effect_refinement.py",
         "schemas/authority_effect_refinement.schema.json",
@@ -18416,19 +18416,22 @@
         "docs/authority_effect_refinement.md",
         "evidence_quality/model_adequacy_dossiers/authority-effect-refinement.md",
         "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+        "lean/AsiStackProofs/Authority.lean",
         "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
         "experiments/authority_revocation_trace/results/2026-07-03-local.json",
         "experiments/governed_repository_change_slice/results/2026-07-10-local.json"
       ],
-      "output_contract": "Check arbitrary-run authority invariants, valid traces, batch composition, irreversible revocation, and rejection noninterference; reject authority amplification, exact-binding substitution, stale/expired/revoked grants, receipt bypass, effect without dispatch, observation overcount, inexact rollback, one-shot reuse, source drift, and support promotion.",
+      "output_contract": "Check arbitrary-run grant/effect invariants, delegation custody, attenuation, non-authority, valid traces, batch composition, irreversible revocation, summary-loss impossibility, complete transport, and rejection noninterference; reject authority amplification, confused-deputy and exact-binding substitutions, stale/expired/revoked grants, receipt bypass, effect without dispatch, observation overcount, inexact rollback, one-shot reuse, source drift, and support promotion.",
       "output_assertions": [
         "thirty-one compiled Lean declarations",
+        "fifty-nine compiled authority and delegation declarations",
         "revoked suffix excludes approval, dispatch, and effect use",
         "rejected events return no successor state",
         "six authority fixtures",
         "three reachable traces and twenty events",
         "twenty invariant prefixes",
         "twenty-three batch compositions",
+        "one two-event delegation trace and three delegation batch compositions",
         "one executed local effect",
         "one independent observation",
         "one exact rollback",
@@ -18436,9 +18439,12 @@
         "five revocation entries",
         "nine governed scenarios",
         "fifty state-noninterfering mutation rejections",
+        "seventeen delegation mutation rejections preserving exact state",
+        "one thin-summary authority collision",
+        "twenty complete-transport field mutations rejected",
         "no support-state effect"
       ],
-      "claim_scope": "One finite numeric-identity model and fixed local executed evidence surfaces only.",
+      "claim_scope": "Two finite sequential numeric-identity models and fixed local executed evidence surfaces only.",
       "negative_controls": "validator_owned_model_and_source_semantic_mutations",
       "negative_control_cases": [
         "grant identity or binding substitution",
@@ -18448,9 +18454,12 @@
         "post-revocation dispatch, effect, or reissuance",
         "nonindependent or excess observation",
         "inexact or premature rollback",
-        "one-shot reuse"
+        "one-shot reuse",
+        "delegation parent, principal, operation, target, or scope substitution",
+        "delegation ceiling or expiry widening, stale epoch, or revoked child",
+        "delegation support/effect request or lossy-summary collision"
       ],
-      "prohibited_inference": "The finite local refinement does not establish natural-language authority extraction, authentic identity or receipts, wise issuance, concurrent revocation, complete effects, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
+      "prohibited_inference": "The finite local refinements do not establish natural-language authority extraction, authentic identity or receipts, wise issuance, hidden-descendant discovery, concurrent or distributed delegation/revocation safety, complete effects, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, ASI, or chapter-core support.",
       "contract_precision": "inherited",
       "semantic_review_state": "checked_finite_grant_effect_refinement_not_authentic_concurrent_external_or_deployed"
     },

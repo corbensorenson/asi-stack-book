@@ -3,6 +3,7 @@
   "result_id": "authority-effect-refinement-2026-07-15-local",
   "source_sha256": {
     "lean_model": "c3c0b2b01c11628b667354a8e8f931c309bce6360141a43cd6cacaefd86d10be",
+    "authority_model": "8457ff72efbb40ffe92b2874f103c92c6566310ec60cc86e720bb70884a50328",
     "runtime_effect": "8691dfdba88eb967a47fb65c76ac175307480057e2f89527e540f06d51047679",
     "revocation_trace": "8d777ba0c2ec356ca05451b7c19e3b794d9f9202975e2f6fe82c1193adede0e9",
     "governed_repository": "21b8e61485f6f36dbe09da1ef34bce0339d078407bf0474ddbefd14cc90564a5"
@@ -20,6 +21,295 @@
     "revoked_suffix_excludes_all_grant_use": true,
     "rejection_noninterference": true,
     "exact_rollback_accounting": true
+  },
+  "delegation_formal_surface": {
+    "theorem_count": 59,
+    "lean_module": "lean/AsiStackProofs/Authority.lean",
+    "lean_compile_receipt": {
+      "command": "lake env lean AsiStackProofs/Authority.lean",
+      "exit_code": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "arbitrary_run_custody": true,
+    "arbitrary_run_invariant": true,
+    "arbitrary_run_non_authority": true,
+    "batch_composition": true,
+    "summary_loss_impossibility": true,
+    "complete_transport": true
+  },
+  "delegation_chain": {
+    "trace_event_count": 2,
+    "invariant_state_check_count": 3,
+    "composition_split_count": 3,
+    "custody_preserved": true,
+    "attenuation_preserved": true,
+    "mutation_count": 17,
+    "mutation_rejection_count": 17,
+    "rejection_noninterference_count": 17,
+    "summary_collision_count": 1,
+    "complete_transport_field_count": 20,
+    "complete_transport_mutation_rejection_count": 20,
+    "final_state": {
+      "root_grant_id": 100,
+      "root_principal_id": 1,
+      "operation_id": 10,
+      "target_id": 20,
+      "scope_id": 30,
+      "root_ceiling": 5,
+      "root_epoch": 7,
+      "root_expires_at": 100,
+      "current_grant_id": 102,
+      "current_principal_id": 3,
+      "current_delegate_id": 4,
+      "current_ceiling": 1,
+      "current_epoch": 7,
+      "current_expires_at": 70,
+      "logical_time": 20,
+      "revoked_grant_ids": [
+        99
+      ],
+      "depth": 2,
+      "receipt_count": 2,
+      "support_authority": false,
+      "external_effect_authority": false
+    },
+    "mutation_receipts": [
+      {
+        "mutation_id": "parent_grant_substitution",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "parent_grant_mismatch"
+        ]
+      },
+      {
+        "mutation_id": "acting_principal_substitution",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "acting_principal_mismatch"
+        ]
+      },
+      {
+        "mutation_id": "zero_child_grant",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "invalid_child_grant"
+        ]
+      },
+      {
+        "mutation_id": "parent_grant_reuse",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "child_reuses_parent_grant"
+        ]
+      },
+      {
+        "mutation_id": "revoked_child_grant",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "child_grant_revoked"
+        ]
+      },
+      {
+        "mutation_id": "zero_child_delegate",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "invalid_child_delegate"
+        ]
+      },
+      {
+        "mutation_id": "operation_substitution",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "operation_substitution"
+        ]
+      },
+      {
+        "mutation_id": "target_substitution",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "target_substitution"
+        ]
+      },
+      {
+        "mutation_id": "scope_substitution",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "scope_substitution"
+        ]
+      },
+      {
+        "mutation_id": "authority_widening",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "authority_widening"
+        ]
+      },
+      {
+        "mutation_id": "stale_epoch",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "stale_epoch"
+        ]
+      },
+      {
+        "mutation_id": "expiry_widening",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "expiry_widening"
+        ]
+      },
+      {
+        "mutation_id": "non_monotone_time",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "non_monotone_time"
+        ]
+      },
+      {
+        "mutation_id": "event_after_expiry",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "event_after_expiry"
+        ]
+      },
+      {
+        "mutation_id": "missing_receipt",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "missing_delegation_receipt"
+        ]
+      },
+      {
+        "mutation_id": "support_promotion_request",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "support_promotion_request"
+        ]
+      },
+      {
+        "mutation_id": "external_effect_request",
+        "rejected": true,
+        "failed_event_index": 0,
+        "state_noninterfering": true,
+        "reasons": [
+          "external_effect_request"
+        ]
+      }
+    ],
+    "complete_transport_receipts": [
+      {
+        "field": "root_grant_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "root_principal_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "operation_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "target_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "scope_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "root_ceiling",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "root_epoch",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "root_expires_at",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_grant_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_principal_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_delegate_id",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_ceiling",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_epoch",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "current_expires_at",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "logical_time",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "revoked_grant_ids",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "depth",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "receipt_count",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "support_authority",
+        "mismatch_rejected": true
+      },
+      {
+        "field": "external_effect_authority",
+        "mismatch_rejected": true
+      }
+    ]
   },
   "authority_fixture_count": 6,
   "authority_fixture_accepted_count": 3,
@@ -657,6 +947,7 @@
   "support_state_effect": "none",
   "non_claims": [
     "The reachable model uses abstract numeric identities and trusted receipts; it does not prove identity, approval, receipt, observer, or revocation authenticity.",
+    "The delegation refinement proves finite sequential custody and attenuation over authored records; it does not authenticate principals, discover hidden descendants, or establish concurrent or distributed delegation safety.",
     "The executed effect is a generated local temporary-file mutation, and the governed repository workload is bounded; neither establishes deployed authorization middleware or production security.",
     "The packet does not establish natural-language authority extraction, complete effect observation, concurrent or distributed revocation safety, reproduction, transfer, safety, or chapter-core support."
   ]

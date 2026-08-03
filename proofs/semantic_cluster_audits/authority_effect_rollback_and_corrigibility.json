@@ -3,10 +3,10 @@
   "cluster_id": "authority_effect_rollback_and_corrigibility",
   "packet_id": "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
   "state": "adequate",
-  "scope": "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics",
-  "module_count": 4,
+  "scope": "bounded_finite_authority_delegation_effect_replacement_corrigibility_and_intent_execution_semantics",
+  "module_count": 5,
   "public_target_count": 13,
-  "theorem_declaration_count": 144,
+  "theorem_declaration_count": 203,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
@@ -32,6 +32,31 @@
       ],
       "mutation_evidence": "The independently implemented consumer binds six authority fixtures, three reachable traces with twenty events, twenty invariant prefixes, twenty-three exact batch compositions, nine governed repository scenarios, one local effect, one independent observation, one exact rollback, two pre-effect denials, and five revocation records while rejecting 50/50 source/model mutations with exact rejected-state preservation.",
       "maximum_inference": "Adequate for arbitrary-length but finite sequential grant, approval, dispatch, local effect, observation, revocation, bounded-use, rollback, trace-composition, and rejection-noninterference consequences. It does not establish authentic identities or receipts, wise grants, complete observation, concurrent or distributed revocation, deployed enforcement, effect-complete recovery, production security, safety, transfer, or support movement."
+    },
+    {
+      "module": "AsiStackProofs.Authority",
+      "path": "lean/AsiStackProofs/Authority.lean",
+      "disposition": "adequate",
+      "public_target_count": 0,
+      "theorem_declaration_count": 59,
+      "plain_language_proposition": "Across any successful finite delegation chain, exact root, operation, target, scope, epoch, support, and effect custody persist; authority ceilings and expiries never widen; state invariants and non-authority persist; event batches compose; and every accepted handoff contributes exactly one depth step and one receipt. A two-hop witness reaches an attenuated second-generation delegate, exact substitutions reject, a lossy summary cannot recover authority across a confused-deputy collision, and a complete 20-field transport preserves the step relation.",
+      "modeled_state": "Twenty root/current identity, operation, target, scope, ceiling, epoch, expiry, time, revocation, depth, receipt, support, and external-effect fields; fourteen child-delegation event fields; an inductive state invariant and trace predicate; one two-event witness; one three-field lossy summary; and one complete 20-field transport.",
+      "assumptions": [
+        "Grant, principal, delegate, operation, target, scope, epoch, expiry, time, revocation, and receipt records are truthful and authentic inputs.",
+        "One finite sequential chain is sufficient for the checked consequences; concurrency, distributed revocation, dynamic graph discovery, cycles, forks, joins, and hidden descendants are omitted.",
+        "A recorded delegation receipt and exact numeric join do not establish legitimate delegation, principal control, deployed mediation, or effect-complete enforcement."
+      ],
+      "countermodels": [
+        "Authority or expiry widening and stale epochs are rejected before a child state exists.",
+        "Parent, acting-principal, operation, target, and scope substitutions, including the confused-deputy witness, are rejected.",
+        "Revoked child IDs, support promotion requests, external-effect requests, missing receipts, invalid identities, and invalid event time are rejected by the independent consumer."
+      ],
+      "consumers": [
+        "scripts/validate_authority_effect_refinement.py",
+        "experiments/authority_effect_refinement/results/2026-07-15-local.json"
+      ],
+      "mutation_evidence": "The independent consumer recompiles the exact 59-theorem module, reconstructs one two-event delegation trace, checks three invariant states and three batch splits, rejects 17/17 semantic mutations with exact rejected-state preservation, reproduces one lossy-summary authority collision, and rejects mutations to all 20 complete-transport fields.",
+      "maximum_inference": "Adequate for finite sequential delegation-chain custody, attenuation, epoch/expiry continuity, non-authority, trace composition, closed countermodels, summary-loss impossibility, and complete transport over authored records. It does not establish authentic identities or receipts, legitimate delegation, hidden-descendant discovery, concurrent or distributed graph safety, deployed enforcement, external effects, safety, transfer, or support movement."
     },
     {
       "module": "AsiStackProofs.Replacement",
@@ -116,7 +141,7 @@
       "maximum_inference": "Adequate for exact finite root/parent joins, non-widening authority, approval/dispatch custody, local effect observation, artifact binding, verification, delivery, and encoded rejection routes. It does not establish intent fidelity, parser correctness, authentic authority or receipts, prompt-injection resistance, complete effects, verifier independence, useful delivery, deployment, transfer, or support movement."
     }
   ],
-  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential authority/effect lifecycle, replacement transaction routes and bridge summaries, corrigibility route and correction-control lifecycle consequences, and intent-to-local-effect vertical. It proves no identity or receipt authentic, no grant wise, no notice comprehended, no standing legitimate, no monitor, reviewer, or verifier valid, no inventory complete, no external effect reversed, no system corrigible, no intent preserved in meaning, and no empirical, safety, deployment, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
+  "cluster_maximum_inference": "The cluster is adequate for its recorded finite sequential authority/delegation/effect lifecycles, replacement transaction routes and bridge summaries, corrigibility route and correction-control lifecycle consequences, and intent-to-local-effect vertical. It proves no identity or receipt authentic, no grant or delegation wise, no hidden descendant discovered, no notice comprehended, no standing legitimate, no monitor, reviewer, or verifier valid, no inventory complete, no external effect reversed, no system corrigible, no intent preserved in meaning, and no empirical, safety, deployment, transfer, SOTA, AGI, ASI, support, release, or publication claim.",
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none"

@@ -2176,6 +2176,97 @@ for theorem_name in (
         ),
     }
 
+_authority_delegation_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:two_hop_delegation_reaches_attenuated_grandchild",
+        "experiments/authority_effect_refinement/results/2026-07-15-local.json",
+    ],
+    "classification_basis": [
+        "the delegation-chain semantics are independently reconstructed by the authority-effect validator"
+    ],
+}
+
+for theorem_name in (
+    "delegation_accepted_step_is_valid",
+    "delegation_accepted_step_applies_event",
+    "delegation_accepted_step_adds_one_receipt",
+    "delegation_accepted_step_adds_one_depth",
+    "delegation_initial_state_is_invariant",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Authority.lean::{theorem_name}"
+    ] = {
+        **_authority_delegation_refinement_base,
+        "semantic_level": "P1",
+        "rationale": (
+            "The theorem exposes an accepted-step premise, exact application, accounting increment, or initial invariant; "
+            "it is load-bearing for the arbitrary-run results but does not establish them alone."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/Authority.lean::two_hop_delegation_reaches_attenuated_grandchild"
+] = {
+    **_authority_delegation_refinement_base,
+    "semantic_level": "P2",
+    "rationale": (
+        "The closed two-event witness reaches a second-generation delegate with exact identity custody, lower authority, "
+        "narrower expiry, two receipts, and no support or external-effect authority."
+    ),
+}
+
+for theorem_name in (
+    "delegation_rejected_event_is_noninterfering",
+    "delegation_step_preserves_custody",
+    "delegation_custody_is_transitive",
+    "delegation_step_preserves_non_authority",
+    "delegation_step_preserves_invariant",
+    "authority_widening_delegation_is_rejected",
+    "confused_deputy_principal_substitution_is_rejected",
+    "delegation_operation_substitution_is_rejected",
+    "delegation_target_substitution_is_rejected",
+    "delegation_scope_substitution_is_rejected",
+    "stale_epoch_delegation_is_rejected",
+    "expiry_widening_delegation_is_rejected",
+    "revoked_child_grant_is_rejected",
+    "support_promotion_delegation_is_rejected",
+    "external_effect_delegation_is_rejected",
+    "complete_delegation_transport_round_trips",
+    "complete_delegation_transport_is_injective",
+    "complete_delegation_transport_preserves_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Authority.lean::{theorem_name}"
+    ] = {
+        **_authority_delegation_refinement_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves one-step custody, a closed adversarial refusal, or lossless transport for the finite "
+            "delegation model reconstructed by the independent consumer."
+        ),
+    }
+
+for theorem_name in (
+    "delegation_run_preserves_custody",
+    "delegation_run_preserves_non_authority",
+    "delegation_run_composes_across_event_batches",
+    "delegation_run_preserves_invariant",
+    "delegation_successful_run_has_valid_trace",
+    "thin_delegation_summary_has_authority_collision",
+    "no_thin_delegation_classifier_recovers_authority",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Authority.lean::{theorem_name}"
+    ] = {
+        **_authority_delegation_refinement_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "The theorem constrains arbitrary finite delegation runs or proves that a lossy summary cannot recover "
+            "the exact authority decision across a confused-deputy collision."
+        ),
+    }
+
 _runtime_adapter_refinement_base = {
     "disposition": "retain",
     "witness_refs": [

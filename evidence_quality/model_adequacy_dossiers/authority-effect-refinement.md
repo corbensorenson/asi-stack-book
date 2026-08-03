@@ -4,7 +4,7 @@
 
 - Chapter: `system-boundaries-and-authority`
 - Frozen targets: `lean:authority.ceiling.operational_invariant`, `lean:authority.ceiling.failure_blocks_promotion`, `lean:authority.lifecycle.admission_route`, `lean:authority.revocation.trace_surface_bridge`
-- Stronger model: `lean/AsiStackProofs/AuthorityEffectRefinement.lean`
+- Stronger models: `lean/AsiStackProofs/AuthorityEffectRefinement.lean` and `lean/AsiStackProofs/Authority.lean`
 - Executable consumer: `scripts/validate_authority_effect_refinement.py`
 - Stored result: `experiments/authority_effect_refinement/results/2026-07-15-local.json`
 - Result schema: `schemas/authority_effect_refinement.schema.json`
@@ -15,6 +15,8 @@
 The modeled state contains a caller ceiling, authority epoch, logical time, an optional active grant, approval and dispatch bindings, revoked grant IDs, material- and observed-effect counts, and rollback state. A grant binds an ID, principal, operation, target, authority level, epoch, expiry, and remaining-use count. Reachable events issue, approve, dispatch, commit an effect, independently observe it, revoke a grant, or roll the observed effect back.
 
 The validity relation requires monotone logical time and event-specific custody. Issuance requires target-owner approval, a nonzero fresh grant ID, a live epoch, a nonexpired positive-use grant, and an authority level no greater than the caller ceiling. Approval, dispatch, and effect all require exact equality with the active grant; dispatch and effect additionally require matching approval/dispatch custody. Revocation clears live custody and increments the epoch. Effect consumes a use and clears approval and dispatch, preventing silent one-shot reuse.
+
+The delegation refinement separately models a root grant and principal, exact operation/target/scope custody, current parent grant, acting principal, child grant and delegate, current ceiling, epoch, expiry, logical time, revocation inventory, depth, receipt count, and support/effect non-authority. An accepted handoff requires exact parent and acting-principal joins, a fresh nonrevoked child, a positive delegate, unchanged operation/target/scope/epoch, non-increasing ceiling and expiry, monotone live time, a receipt, and no support or external-effect request.
 
 ## Proven finite consequences
 
@@ -27,11 +29,15 @@ The validity relation requires monotone logical time and event-specific custody.
 - a rejected event returns no successor state, while every accepted rollback clears material and observed effect accounting and marks exact rollback;
 - exact one-use and two-use witnesses reach independent observation and exact rollback, while a separate revocation witness clears custody and advances the epoch;
 - widening, principal substitution, expiry, stale epoch, revocation, missing dispatch, and one-shot reuse are rejected in concrete countermodels.
+- arbitrary finite delegation runs preserve root and effect custody, non-authority, attenuation, epoch continuity, expiry bounds, state invariants, and recursively valid traces, and compose across event batches;
+- a two-hop witness reaches an attenuated second-generation delegate with two receipts, while ten closed substitutions reject;
+- identical thin summaries can hide opposite authority decisions, so no classifier over that summary can recover exact authority for both witness states;
+- a complete 20-field transport round-trips, is injective, and preserves the delegation step.
 
 ## Independent executable refinement
 
-The Python consumer independently reimplements the state machine, recompiles
-the exact thirty-one-theorem Lean surface, and validates the executed source
+The Python consumer independently reimplements both state machines, recompiles
+the exact 31- and 59-theorem Lean surfaces, and validates the executed source
 records rather than reading a Lean-generated summary. It validates the
 governed repository result against its own schema, binds every source by
 SHA-256, and records:
@@ -44,6 +50,9 @@ SHA-256, and records:
 - 5 revocation trace entries;
 - 9 governed scenarios, 3 releases, and 0 unsafe releases;
 - 50 of 50 rejected model/source mutations, each preserving the accepted prefix state.
+- 1 two-event delegation trace, 3 invariant states, and 3 exact delegation compositions;
+- 17 of 17 rejected delegation mutations, each preserving the exact pre-event state;
+- 1 thin-summary authority collision and 20 of 20 rejected complete-transport field mutations.
 
 ## Countermodels and mutation adequacy
 
@@ -51,7 +60,7 @@ The mutation set changes one semantically material source field or sequence cond
 
 ## Assumptions and exclusions
 
-Identifiers are abstract natural numbers; exact equality is not identity proof. Owner approval, receipts, observations, expiry, epoch, and source records are trusted inputs. The model is sequential and finite. The effect probe uses a generated local temporary file, while the repository workload is a bounded synthetic task. The model excludes natural-language interpretation, authentic identity and grant issuance, cryptography, races, distributed consistency, partial observation, adversarial infrastructure, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, and ASI.
+Identifiers are abstract natural numbers; exact equality is not identity proof. Owner approval, delegation and effect receipts, observations, expiry, epoch, and source records are trusted inputs. The models are sequential and finite. The effect probe uses a generated local temporary file, while the repository workload is a bounded synthetic task. The models exclude natural-language interpretation, authentic identity and grant issuance, hidden descendants, cryptography, races, distributed consistency, partial observation, adversarial infrastructure, deployed enforcement, production security, reproduction, transfer, safety, SOTA, AGI, and ASI.
 
 ## Disposition
 

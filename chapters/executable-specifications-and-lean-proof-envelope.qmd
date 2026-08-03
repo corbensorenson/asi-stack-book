@@ -22,7 +22,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence."
-  - "The frozen activation-baseline rationalization contains 298 targets and 1,151 declarations; the live surface contains 330 targets and 2,871 declarations. Neither denominator establishes semantic adequacy, implementation binding, independent reproduction, transfer, or system behavior."
+  - "The frozen activation-baseline rationalization contains 298 targets and 1,151 declarations; the live surface contains 330 targets and 2,902 declarations. Neither denominator establishes semantic adequacy, implementation binding, independent reproduction, transfer, or system behavior."
   - "The local ProofEnvelope module has 28 finite declarations and an independent bounded lifecycle consumer. They establish authored lease transitions, custody, rejection, information-loss, and transport properties only; they do not prove artifact or source truth, full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
 ---
 
@@ -86,7 +86,7 @@ Semantic proof drift is the proof-envelope risk. A finite predicate can be corre
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
 
-The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and no planned placeholders; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2871 theorem declarations, 1787 derived/decomposed, 433 direct/projection, 651 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
+The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and no planned placeholders; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2902 theorem declarations, 1804 derived/decomposed, 435 direct/projection, 663 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
 
 The proof-depth classifier is intentionally blunt. `derived/decomposed` means a theorem body uses structural proof steps such as unfolding, case analysis, rewriting, branching, contradiction handling, or comparable decomposition. `direct/projection` means the proof mostly projects an already-assumed field, implication, or equality. Direct/projection theorems can still be valuable traceability hooks, but the rendered chapter must preserve projection-only traceability language when safety-critical modules contain them. The classifier is not a proof of semantic adequacy; it is a guard against letting green builds sound broader than the predicates they actually check.
 
@@ -547,8 +547,8 @@ implementation, and fixture-based support promotion.
 
 The exact current minimum is one proof-target schema and valid fixture; one
 generated 330-target proof manifest with all 330 targets implemented; a
-130-module Lean workspace with 2,871 theorem declarations classified as 1,787
-derived/decomposed, 433 direct/projection, and 651 unknown/mixed;
+130-module Lean workspace with 2,902 theorem declarations classified as 1,804
+derived/decomposed, 435 direct/projection, and 663 unknown/mixed;
 proof-readiness, traceability, depth, and semantic-adequacy review surfaces; one
 blocked formal-semantic-depth record with ten rejecting mutations; and an exact
 28-declaration `ProofEnvelope` surface. Five retained negative cases sit beside

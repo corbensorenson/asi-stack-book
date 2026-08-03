@@ -15,12 +15,14 @@ STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_
 MANIFEST = ROOT / "proofs/proof_manifest.json"
 EXPECTED_MODULES = [
     "AsiStackProofs.AuthorityEffectRefinement",
+    "AsiStackProofs.Authority",
     "AsiStackProofs.Replacement",
     "AsiStackProofs.Corrigibility",
     "AsiStackProofs.IntentExecutionRefinement",
 ]
 EXPECTED_DISPOSITIONS = {
     "AsiStackProofs.AuthorityEffectRefinement": "adequate",
+    "AsiStackProofs.Authority": "adequate",
     "AsiStackProofs.Replacement": "adequate",
     "AsiStackProofs.Corrigibility": "adequate",
     "AsiStackProofs.IntentExecutionRefinement": "adequate",
@@ -41,15 +43,15 @@ def errors(data: dict[str, Any]) -> list[str]:
         None,
     )
     records = data["manifest"].get("records", [])
-    if audit.get("state") != "adequate" or audit.get("scope") != "bounded_finite_authority_effect_replacement_corrigibility_and_intent_execution_semantics":
+    if audit.get("state") != "adequate" or audit.get("scope") != "bounded_finite_authority_delegation_effect_replacement_corrigibility_and_intent_execution_semantics":
         out.append("cluster state or scope drifted")
-    if [row.get("module") for row in rows] != EXPECTED_MODULES or audit.get("module_count") != 4:
+    if [row.get("module") for row in rows] != EXPECTED_MODULES or audit.get("module_count") != 5:
         out.append("module denominator or order drifted")
     if status_cluster is None or status_cluster.get("state") != "adequate" or status_cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
     if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 13:
         out.append("public target denominator drifted")
-    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 144:
+    if sum(row.get("theorem_declaration_count", 0) for row in rows) != audit.get("theorem_declaration_count") or audit.get("theorem_declaration_count") != 203:
         out.append("theorem denominator drifted")
 
     required = (
@@ -91,6 +93,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     normalized_chapter_text = re.sub(r"\s+", " ", chapter_text)
     for phrase in (
         "adequate only for its bounded reachable grant-to-local-effect semantics",
+        "The exact 59-declaration authority surface now includes a transitive delegation-chain refinement",
         "Its exact 52 declarations remain bounded consequences of authored records and reachable sequential events",
         "That historical classification no longer describes the current module",
         "adequate finite-record invariant only for its kind-exclusive payload discipline",
@@ -128,11 +131,11 @@ def main() -> None:
             failures.append(failure)
     mutations = [
         ("delete module", lambda value: value["audit"]["module_dispositions"].pop()),
-        ("downgrade corrigibility", lambda value: value["audit"]["module_dispositions"][2].__setitem__("disposition", "reclassify")),
+        ("downgrade corrigibility", lambda value: value["audit"]["module_dispositions"][3].__setitem__("disposition", "reclassify")),
         ("erase proposition", lambda value: value["audit"]["module_dispositions"][0].__setitem__("plain_language_proposition", "")),
         ("erase assumptions", lambda value: value["audit"]["module_dispositions"][1].__setitem__("assumptions", [])),
-        ("erase countermodels", lambda value: value["audit"]["module_dispositions"][2].__setitem__("countermodels", [])),
-        ("erase consumers", lambda value: value["audit"]["module_dispositions"][3].__setitem__("consumers", [])),
+        ("erase countermodels", lambda value: value["audit"]["module_dispositions"][3].__setitem__("countermodels", [])),
+        ("erase consumers", lambda value: value["audit"]["module_dispositions"][4].__setitem__("consumers", [])),
         ("inflate target count", lambda value: value["audit"].__setitem__("public_target_count", 99)),
         ("inflate theorem count", lambda value: value["audit"].__setitem__("theorem_declaration_count", 999)),
         ("invent support", lambda value: value["audit"].__setitem__("support_state_effect", "promotion")),
@@ -147,8 +150,8 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C3 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C3 semantic proof cluster passed: 4 modules, 13 public targets, 144 theorem "
-        "declarations, 4 adequate dispositions, 6 executable checks, "
+        "P4-C3 semantic proof cluster passed: 5 modules, 13 public targets, 203 theorem "
+        "declarations, 5 adequate dispositions, 6 executable checks, "
         "10 cluster mutations rejected, support effect none."
     )
 
