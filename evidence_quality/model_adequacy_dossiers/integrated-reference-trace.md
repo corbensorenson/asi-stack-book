@@ -59,7 +59,8 @@ receipts, and explicit non-claims.
   tie, unacknowledged terminal effect, and residual erasure are rejected in
   Lean.
 - The independent consumer accepts four outcome paths, rejects fourteen invalid
-  paths, and rejects fifteen targeted guard mutations.
+  paths, checks all thirteen lifecycle prefixes and composition splits, and
+  rejects 108/108 systematic guard mutations.
 - The concrete runtime-schema adapter validates and round-trips all nine source
   scenarios, derives three approved completions, three pre-effect refusals, two
   exact rollbacks, and one failed-rollback quarantine, and rejects twenty

@@ -28,25 +28,6 @@ ADVANCE_PAIRS = {
     ("plan", "route"), ("route", "authorize"), ("authorize", "job"),
     ("job", "adapter"),
 }
-MUTATIONS = (
-    (0, "parent_artifact", 999),
-    (0, "state_before", 9999),
-    (0, "requested_authority", 4),
-    (0, "residual_owner_present", False),
-    (0, "non_claim_present", False),
-    (0, "produced_artifact", 0),
-    (4, "gate_present", False),
-    (7, "effect_delta", 0),
-    (7, "rollback_ready", False),
-    (8, "acknowledgement_delta", 2),
-    (8, "independent_observation", False),
-    (9, "independent_evaluator", False),
-    (10, "residual_discharged", 2),
-    (11, "receipt_present", False),
-    (11, "support_after", 2),
-)
-
-
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -66,6 +47,8 @@ def expand(base: dict[str, Any], patches: list[dict[str, Any]]) -> list[dict[str
 
 def reasons(state: dict[str, Any], event: dict[str, Any]) -> list[str]:
     failures: list[str] = []
+    if state.get("current_layer") in {"terminal", "quarantine"}:
+        return ["closed_layer"]
     kind = event.get("kind")
     if kind not in KINDS:
         return ["unknown_event_kind"]
@@ -221,6 +204,31 @@ def run(initial: dict[str, Any], events: list[dict[str, Any]]) -> dict[str, Any]
     return {"accepted": True, "rejection_index": None, "reasons": [], "final_state": state}
 
 
+def lifecycle_mutations(events: list[dict[str, Any]]) -> list[tuple[int, str, Any]]:
+    mutations: list[tuple[int, str, Any]] = []
+    common = (
+        ("parent_artifact", 999),
+        ("state_before", 9999),
+        ("requested_authority", 4),
+        ("produced_artifact", 0),
+        ("residual_owner_present", False),
+        ("non_claim_present", False),
+        ("logical_time", -1),
+        ("support_before", 999),
+    )
+    for index in range(len(events)):
+        mutations.extend((index, field, value) for field, value in common)
+    mutations.extend((index, "effect_delta", 1) for index in range(7))
+    mutations.extend((
+        (7, "rollback_ready", False),
+        (8, "independent_observation", False),
+        (9, "independent_evaluator", False),
+        (10, "support_after", 2),
+        (11, "receipt_present", False),
+    ))
+    return mutations
+
+
 def validate_source(corpus: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     source = ROOT / corpus["source_result_ref"]
@@ -272,6 +280,11 @@ def build_result() -> tuple[dict[str, Any], list[str]]:
     support_transitions = 0
     receipts: list[dict[str, Any]] = []
     accepted_complete_events: list[dict[str, Any]] | None = None
+    lifecycle_prefix_checks = 0
+    composition_checks = 0
+    effect_accounting_checks = 0
+    residual_accounting_checks = 0
+    closed_layer_rejections = 0
 
     for case in corpus["cases"]:
         initial = copy.deepcopy(initial_template)
@@ -317,10 +330,60 @@ def build_result() -> tuple[dict[str, Any], list[str]]:
         })
 
     mutation_rejections = 0
+    mutations: list[tuple[int, str, Any]] = []
     if accepted_complete_events is None:
         errors.append("missing accepted complete join trace")
     else:
-        for index, field, value in MUTATIONS:
+        states = [copy.deepcopy(initial_template)]
+        for index, event in enumerate(accepted_complete_events):
+            before = states[-1]
+            failed = reasons(before, event)
+            if failed:
+                errors.append(f"complete trace prefix {index} rejected: {failed}")
+                break
+            after = apply_event(before, event)
+            if after["active_authority"] > before["active_authority"]:
+                errors.append(f"authority widened at complete trace event {index}")
+            if after["active_authority"] > after["authority_ceiling"]:
+                errors.append(f"authority ceiling exceeded at complete trace event {index}")
+            if after["logical_time"] < before["logical_time"]:
+                errors.append(f"logical time regressed at complete trace event {index}")
+            if after["acknowledged_effects"] > after["material_effects"]:
+                errors.append(f"effect accounting failed at complete trace event {index}")
+            effect_accounting_checks += 1
+            states.append(after)
+        lifecycle_prefix_checks = len(states)
+
+        created = sum(event["residual_created"] for event in accepted_complete_events)
+        discharged = sum(event["residual_discharged"] for event in accepted_complete_events)
+        if states[-1]["open_residuals"] + discharged != initial_template["open_residuals"] + created:
+            errors.append("complete trace residual conservation failed")
+        else:
+            residual_accounting_checks = 1
+
+        expected_final = states[-1]
+        for split in range(len(accepted_complete_events) + 1):
+            prefix = run(initial_template, accepted_complete_events[:split])
+            if not prefix["accepted"]:
+                errors.append(f"composition prefix rejected at split {split}")
+                continue
+            suffix = run(prefix["final_state"], accepted_complete_events[split:])
+            if not suffix["accepted"] or suffix["final_state"] != expected_final:
+                errors.append(f"composition mismatch at split {split}")
+                continue
+            composition_checks += 1
+
+        for closed_layer in ("terminal", "quarantine"):
+            closed = copy.deepcopy(expected_final)
+            closed["current_layer"] = closed_layer
+            probe = run(closed, [copy.deepcopy(base)])
+            if not probe["accepted"] and probe["reasons"] == ["closed_layer"]:
+                closed_layer_rejections += 1
+            else:
+                errors.append(f"{closed_layer} layer accepted a suffix event")
+
+        mutations = lifecycle_mutations(accepted_complete_events)
+        for index, field, value in mutations:
             mutated = copy.deepcopy(accepted_complete_events)
             mutated[index][field] = value
             if not run(initial_template, mutated)["accepted"]:
@@ -347,7 +410,12 @@ def build_result() -> tuple[dict[str, Any], list[str]]:
         "rolled_back_case_count": rolled_back,
         "quarantined_case_count": quarantined,
         "support_transition_count": support_transitions,
-        "mutation_count": len(MUTATIONS),
+        "lifecycle_prefix_check_count": lifecycle_prefix_checks,
+        "composition_split_count": composition_checks,
+        "effect_accounting_check_count": effect_accounting_checks,
+        "residual_accounting_check_count": residual_accounting_checks,
+        "closed_layer_rejection_count": closed_layer_rejections,
+        "mutation_count": len(mutations),
         "mutation_rejection_count": mutation_rejections,
         "source_scenario_count": len({case["source_scenario"] for case in corpus["cases"]}),
         "receipts": receipts,
@@ -361,8 +429,11 @@ def build_result() -> tuple[dict[str, Any], list[str]]:
         "final_net_effect_count": 2, "final_acknowledged_effect_count": 1,
         "final_open_residual_count": 3, "terminal_receipt_count": 4,
         "rolled_back_case_count": 1, "quarantined_case_count": 2,
-        "support_transition_count": 0, "mutation_count": 15,
-        "mutation_rejection_count": 15, "source_scenario_count": 6,
+        "support_transition_count": 0, "lifecycle_prefix_check_count": 13,
+        "composition_split_count": 13, "effect_accounting_check_count": 12,
+        "residual_accounting_check_count": 1, "closed_layer_rejection_count": 2,
+        "mutation_count": 108, "mutation_rejection_count": 108,
+        "source_scenario_count": 6,
     }
     for field, value in exact.items():
         if result[field] != value:

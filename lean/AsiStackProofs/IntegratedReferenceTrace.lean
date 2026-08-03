@@ -228,8 +228,13 @@ def ApplyEvent (state : TraceState) (event : TraceEvent) : TraceState :=
     rolledBack := state.rolledBack || event.kind = EventKind.rollback
     logicalTime := event.logicalTime }
 
+def LayerClosed : Layer -> Bool
+  | .terminal | .quarantine => true
+  | _ => false
+
 def Step (state : TraceState) (event : TraceEvent) : Option TraceState :=
-  if EventValid state event then some (ApplyEvent state event) else none
+  if LayerClosed state.currentLayer then none
+  else if EventValid state event then some (ApplyEvent state event) else none
 
 def Run : TraceState → List TraceEvent → Option TraceState
   | state, [] => some state
@@ -237,6 +242,23 @@ def Run : TraceState → List TraceEvent → Option TraceState
       match Step state event with
       | none => none
       | some next => Run next tail
+
+def TraceAccepted : TraceState -> List TraceEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      EventValid state event = true ∧
+      TraceAccepted (ApplyEvent state event) tail
+
+def ResidualCreatedTotal : List TraceEvent -> Nat
+  | [] => 0
+  | event :: tail => event.residualCreated + ResidualCreatedTotal tail
+
+def ResidualDischargedTotal : List TraceEvent -> Nat
+  | [] => 0
+  | event :: tail => event.residualDischarged + ResidualDischargedTotal tail
+
+def EffectAccountingValid (state : TraceState) : Prop :=
+  state.acknowledgedEffects <= state.materialEffects
 
 theorem common_valid_authority_bound
     {state : TraceState} {event : TraceEvent}
@@ -265,29 +287,43 @@ theorem common_valid_state_join
   simp [ParentStateJoinValid] at join
   exact join.2
 
+theorem accepted_step_is_valid
+    {state next : TraceState} {event : TraceEvent}
+    (accepted : Step state event = some next) :
+    EventValid state event = true := by
+  unfold Step at accepted
+  split at accepted
+  · simp at accepted
+  · split at accepted
+    · assumption
+    · simp at accepted
+
+theorem accepted_step_applies_event
+    {state next : TraceState} {event : TraceEvent}
+    (accepted : Step state event = some next) :
+    next = ApplyEvent state event := by
+  unfold Step at accepted
+  split at accepted
+  · simp at accepted
+  · split at accepted
+    · exact Option.some.inj accepted |>.symm
+    · simp at accepted
+
 theorem accepted_step_authority_nonincreasing
     {state next : TraceState} {event : TraceEvent}
     (accepted : Step state event = some next) :
     next.activeAuthority ≤ state.activeAuthority := by
-  unfold Step at accepted
-  split at accepted
-  · rename_i valid
-    have parts : CommonValid state event = true ∧ KindValid state event = true := by
-      simpa [EventValid] using valid
-    have common := parts.1
-    cases accepted
-    exact common_valid_authority_bound common
-  · simp at accepted
+  have parts : CommonValid state event = true ∧ KindValid state event = true := by
+    simpa [EventValid] using accepted_step_is_valid accepted
+  rw [accepted_step_applies_event accepted]
+  exact common_valid_authority_bound parts.1
 
 theorem accepted_step_preserves_ceiling
     {state next : TraceState} {event : TraceEvent}
     (accepted : Step state event = some next) :
     next.authorityCeiling = state.authorityCeiling := by
-  unfold Step at accepted
-  split at accepted
-  · cases accepted
-    rfl
-  · simp at accepted
+  rw [accepted_step_applies_event accepted]
+  rfl
 
 theorem accepted_step_joins_parent_and_state
     {state next : TraceState} {event : TraceEvent}
@@ -296,15 +332,53 @@ theorem accepted_step_joins_parent_and_state
       event.stateBefore = state.canonicalState ∧
       next.lastArtifact = event.producedArtifact ∧
       next.canonicalState = event.stateAfter := by
-  unfold Step at accepted
-  split at accepted
-  · rename_i valid
-    have parts : CommonValid state event = true ∧ KindValid state event = true := by
-      simpa [EventValid] using valid
-    have common := parts.1
-    cases accepted
-    exact ⟨common_valid_parent_join common, common_valid_state_join common, rfl, rfl⟩
-  · simp at accepted
+  have parts : CommonValid state event = true ∧ KindValid state event = true := by
+    simpa [EventValid] using accepted_step_is_valid accepted
+  rw [accepted_step_applies_event accepted]
+  exact ⟨common_valid_parent_join parts.1, common_valid_state_join parts.1, rfl, rfl⟩
+
+theorem accepted_step_logical_time_monotone
+    {state next : TraceState} {event : TraceEvent}
+    (accepted : Step state event = some next) :
+    state.logicalTime <= next.logicalTime := by
+  have valid := accepted_step_is_valid accepted
+  simp [EventValid, CommonValid, CustodyValid] at valid
+  rw [accepted_step_applies_event accepted]
+  simp [ApplyEvent]
+  omega
+
+theorem accepted_step_preserves_residual_accounting
+    {state next : TraceState} {event : TraceEvent}
+    (accepted : Step state event = some next) :
+    next.openResiduals + event.residualDischarged =
+      state.openResiduals + event.residualCreated := by
+  have valid := accepted_step_is_valid accepted
+  simp [EventValid, CommonValid, CustodyValid] at valid
+  rw [accepted_step_applies_event accepted]
+  simp [ApplyEvent]
+  omega
+
+theorem accepted_step_preserves_effect_accounting
+    {state next : TraceState} {event : TraceEvent}
+    (accounted : EffectAccountingValid state)
+    (accepted : Step state event = some next) :
+    EffectAccountingValid next := by
+  have parts : CommonValid state event = true ∧ KindValid state event = true := by
+    simpa [EventValid] using accepted_step_is_valid accepted
+  have kindValid := parts.2
+  rw [accepted_step_applies_event accepted]
+  cases selectedKind : event.kind <;>
+    simp [KindValid, selectedKind, AdvanceValid, EffectValid, AcknowledgeValid,
+      EvaluationValid, EvidenceValid, RollbackValid, TerminalValid,
+      QuarantineValid] at kindValid <;>
+    simp [EffectAccountingValid, ApplyEvent, selectedKind] at accounted ⊢ <;>
+    omega
+
+theorem closed_layer_accepts_no_event
+    (state : TraceState) (event : TraceEvent)
+    (closed : LayerClosed state.currentLayer = true) :
+    Step state event = none := by
+  simp [Step, closed]
 
 theorem accepted_trace_authority_nonincreasing
     {initial final : TraceState} {events : List TraceEvent}
@@ -321,6 +395,86 @@ theorem accepted_trace_authority_nonincreasing
       case h_2 next stepAccepted =>
         exact Nat.le_trans (inductionHypothesis accepted)
           (accepted_step_authority_nonincreasing stepAccepted)
+
+theorem accepted_trace_preserves_ceiling
+    {initial final : TraceState} {events : List TraceEvent}
+    (accepted : Run initial events = some final) :
+    final.authorityCeiling = initial.authorityCeiling := by
+  induction events generalizing initial with
+  | nil => simp [Run] at accepted; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : Step initial event with
+      | none => simp [Run, stepped] at accepted
+      | some next =>
+          have tailRun : Run next tail = some final := by
+            simpa [Run, stepped] using accepted
+          exact (ih tailRun).trans (accepted_step_preserves_ceiling stepped)
+
+theorem accepted_trace_logical_time_monotone
+    {initial final : TraceState} {events : List TraceEvent}
+    (accepted : Run initial events = some final) :
+    initial.logicalTime <= final.logicalTime := by
+  induction events generalizing initial with
+  | nil => simp [Run] at accepted; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : Step initial event with
+      | none => simp [Run, stepped] at accepted
+      | some next =>
+          have tailRun : Run next tail = some final := by
+            simpa [Run, stepped] using accepted
+          exact Nat.le_trans (accepted_step_logical_time_monotone stepped)
+            (ih tailRun)
+
+theorem accepted_trace_preserves_effect_accounting
+    {initial final : TraceState} {events : List TraceEvent}
+    (accounted : EffectAccountingValid initial)
+    (accepted : Run initial events = some final) :
+    EffectAccountingValid final := by
+  induction events generalizing initial with
+  | nil => simp [Run] at accepted; subst final; exact accounted
+  | cons event tail ih =>
+      cases stepped : Step initial event with
+      | none => simp [Run, stepped] at accepted
+      | some next =>
+          have tailRun : Run next tail = some final := by
+            simpa [Run, stepped] using accepted
+          exact ih (accepted_step_preserves_effect_accounting accounted stepped)
+            tailRun
+
+theorem accepted_trace_preserves_residual_accounting
+    {initial final : TraceState} {events : List TraceEvent}
+    (accepted : Run initial events = some final) :
+    final.openResiduals + ResidualDischargedTotal events =
+      initial.openResiduals + ResidualCreatedTotal events := by
+  induction events generalizing initial with
+  | nil => simp [Run] at accepted; subst final; simp [ResidualDischargedTotal,
+      ResidualCreatedTotal]
+  | cons event tail ih =>
+      cases stepped : Step initial event with
+      | none => simp [Run, stepped] at accepted
+      | some next =>
+          have tailRun : Run next tail = some final := by
+            simpa [Run, stepped] using accepted
+          have stepAccounting := accepted_step_preserves_residual_accounting stepped
+          have tailAccounting := ih tailRun
+          simp only [ResidualDischargedTotal, ResidualCreatedTotal]
+          omega
+
+theorem accepted_run_has_valid_trace
+    {initial final : TraceState} {events : List TraceEvent}
+    (accepted : Run initial events = some final) :
+    TraceAccepted initial events := by
+  induction events generalizing initial with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : Step initial event with
+      | none => simp [Run, stepped] at accepted
+      | some next =>
+          have tailRun : Run next tail = some final := by
+            simpa [Run, stepped] using accepted
+          exact ⟨accepted_step_is_valid stepped, by
+            rw [← accepted_step_applies_event stepped]
+            exact ih tailRun⟩
 
 theorem run_append
     (state : TraceState) (first second : List TraceEvent) :
@@ -694,6 +848,13 @@ def ConcurrentEffectRun :
       | none => none
       | some next => ConcurrentEffectRun next tail
 
+def ConcurrentEffectTraceAccepted :
+    ConcurrentEffectState -> List ConcurrentEffectEvent -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ConcurrentEffectEventValid state event = true ∧
+      ConcurrentEffectTraceAccepted (ApplyConcurrentEffectEvent state event) tail
+
 def EffectClosed (state : ConcurrentEffectState) (effectId : Nat) : Prop :=
   effectId ∈ state.acknowledged ∨
     effectId ∈ state.compensated ∨
@@ -705,6 +866,43 @@ theorem accepted_concurrent_attempt_precedes_revocation
     (revoked : state.revokedAt = some event.logicalTime)
     (accepted : ConcurrentEffectStep state event = some next) : False := by
   simp [ConcurrentEffectStep, ConcurrentEffectEventValid, kind, BeforeRevocation, revoked] at accepted
+
+theorem accepted_concurrent_step_is_valid
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectStep state event = some next) :
+    ConcurrentEffectEventValid state event = true := by
+  unfold ConcurrentEffectStep at accepted
+  split at accepted
+  · assumption
+  · simp at accepted
+
+theorem accepted_concurrent_step_applies_event
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectStep state event = some next) :
+    next = ApplyConcurrentEffectEvent state event := by
+  unfold ConcurrentEffectStep at accepted
+  split at accepted
+  · exact Option.some.inj accepted |>.symm
+  · simp at accepted
+
+theorem accepted_concurrent_step_logical_time_monotone
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectStep state event = some next) :
+    state.logicalTime <= next.logicalTime := by
+  have valid := accepted_concurrent_step_is_valid accepted
+  have timeValid : state.logicalTime <= event.logicalTime := by
+    change (decide (state.logicalTime <= event.logicalTime) && _) = true at valid
+    exact of_decide_eq_true (Bool.and_eq_true_iff.mp valid).1
+  rw [accepted_concurrent_step_applies_event accepted]
+  cases kindEq : event.kind <;>
+    simpa [ApplyConcurrentEffectEvent, kindEq] using timeValid
+
+theorem accepted_concurrent_step_authority_epoch_monotone
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectStep state event = some next) :
+    state.authorityEpoch <= next.authorityEpoch := by
+  rw [accepted_concurrent_step_applies_event accepted]
+  cases kindEq : event.kind <;> simp [ApplyConcurrentEffectEvent, kindEq]
 
 theorem accepted_observation_has_attempt
     {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
@@ -741,6 +939,87 @@ theorem accepted_acknowledgement_closes_effect
     simp [ApplyConcurrentEffectEvent, kind, EffectClosed]
   · simp at accepted
 
+theorem accepted_compensation_closes_effect
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (kind : event.kind = ConcurrentEffectKind.compensate)
+    (accepted : ConcurrentEffectStep state event = some next) :
+    EffectClosed next event.effectId := by
+  unfold ConcurrentEffectStep at accepted
+  split at accepted
+  · cases accepted
+    simp [ApplyConcurrentEffectEvent, kind, EffectClosed]
+  · simp at accepted
+
+theorem accepted_residualization_closes_effect
+    {state next : ConcurrentEffectState} {event : ConcurrentEffectEvent}
+    (kind : event.kind = ConcurrentEffectKind.residualize)
+    (accepted : ConcurrentEffectStep state event = some next) :
+    EffectClosed next event.effectId := by
+  unfold ConcurrentEffectStep at accepted
+  split at accepted
+  · cases accepted
+    simp [ApplyConcurrentEffectEvent, kind, EffectClosed]
+  · simp at accepted
+
+theorem accepted_concurrent_run_logical_time_monotone
+    {initial final : ConcurrentEffectState} {events : List ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectRun initial events = some final) :
+    initial.logicalTime <= final.logicalTime := by
+  induction events generalizing initial with
+  | nil => simp [ConcurrentEffectRun] at accepted; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : ConcurrentEffectStep initial event with
+      | none => simp [ConcurrentEffectRun, stepped] at accepted
+      | some next =>
+          have tailRun : ConcurrentEffectRun next tail = some final := by
+            simpa [ConcurrentEffectRun, stepped] using accepted
+          exact Nat.le_trans (accepted_concurrent_step_logical_time_monotone stepped)
+            (ih tailRun)
+
+theorem accepted_concurrent_run_authority_epoch_monotone
+    {initial final : ConcurrentEffectState} {events : List ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectRun initial events = some final) :
+    initial.authorityEpoch <= final.authorityEpoch := by
+  induction events generalizing initial with
+  | nil => simp [ConcurrentEffectRun] at accepted; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : ConcurrentEffectStep initial event with
+      | none => simp [ConcurrentEffectRun, stepped] at accepted
+      | some next =>
+          have tailRun : ConcurrentEffectRun next tail = some final := by
+            simpa [ConcurrentEffectRun, stepped] using accepted
+          exact Nat.le_trans
+            (accepted_concurrent_step_authority_epoch_monotone stepped)
+            (ih tailRun)
+
+theorem accepted_concurrent_run_has_valid_trace
+    {initial final : ConcurrentEffectState} {events : List ConcurrentEffectEvent}
+    (accepted : ConcurrentEffectRun initial events = some final) :
+    ConcurrentEffectTraceAccepted initial events := by
+  induction events generalizing initial with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : ConcurrentEffectStep initial event with
+      | none => simp [ConcurrentEffectRun, stepped] at accepted
+      | some next =>
+          have tailRun : ConcurrentEffectRun next tail = some final := by
+            simpa [ConcurrentEffectRun, stepped] using accepted
+          exact ⟨accepted_concurrent_step_is_valid stepped, by
+            rw [← accepted_concurrent_step_applies_event stepped]
+            exact ih tailRun⟩
+
+theorem concurrent_effect_run_append
+    (state : ConcurrentEffectState)
+    (first second : List ConcurrentEffectEvent) :
+    ConcurrentEffectRun state (first ++ second) =
+      (ConcurrentEffectRun state first).bind fun middle =>
+        ConcurrentEffectRun middle second := by
+  induction first generalizing state with
+  | nil => simp [ConcurrentEffectRun]
+  | cons event tail ih =>
+      simp only [List.cons_append, ConcurrentEffectRun]
+      cases ConcurrentEffectStep state event <;> simp [ih]
+
 def concurrentInitial : ConcurrentEffectState where
   authorityEpoch := 7
   revokedAt := none
@@ -750,6 +1029,34 @@ def concurrentInitial : ConcurrentEffectState where
   compensated := []
   residualized := []
   logicalTime := 0
+
+def oneEffectAcknowledgement : List ConcurrentEffectEvent := [
+  ⟨.attempt, 1, 7, 1, false⟩,
+  ⟨.observe, 1, 7, 2, false⟩,
+  ⟨.acknowledge, 1, 7, 3, true⟩ ]
+
+def oneEffectFinal : ConcurrentEffectState where
+  authorityEpoch := 7
+  revokedAt := none
+  attempted := [1]
+  observed := [1]
+  acknowledged := [1]
+  compensated := []
+  residualized := []
+  logicalTime := 3
+
+def AuthoredEffectProjection
+    (layerState : TraceState) (effectState : ConcurrentEffectState) : Prop :=
+  layerState.materialEffects = effectState.attempted.length ∧
+    layerState.acknowledgedEffects = effectState.acknowledged.length ∧
+    layerState.openResiduals = effectState.residualized.length
+
+theorem authored_one_effect_projection_witness :
+    Run initialState completeTrace = some completeFinal ∧
+    ConcurrentEffectRun concurrentInitial oneEffectAcknowledgement = some oneEffectFinal ∧
+    AuthoredEffectProjection completeFinal oneEffectFinal := by
+  exact ⟨complete_cross_layer_trace_is_accepted, by decide,
+    by simp [AuthoredEffectProjection, completeFinal, oneEffectFinal]⟩
 
 def twoEffectInterleaving : List ConcurrentEffectEvent := [
   ⟨.attempt, 1, 7, 1, false⟩,

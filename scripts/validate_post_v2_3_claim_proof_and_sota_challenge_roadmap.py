@@ -1296,7 +1296,7 @@ def errors(data: dict) -> list[str]:
         "integrated_trace_accepted_case_count": 4,
         "integrated_trace_rejected_case_count": 14,
         "integrated_trace_accepted_event_count": 35,
-        "integrated_trace_mutation_rejection_count": 15,
+        "integrated_trace_mutation_rejection_count": 108,
         "integrated_trace_support_state_effect": "none",
         "integrated_runtime_refinement_result_path": INTEGRATED_REFINEMENT_RESULT,
         "integrated_runtime_refinement_schema_path": INTEGRATED_REFINEMENT_SCHEMA,
@@ -1311,7 +1311,7 @@ def errors(data: dict) -> list[str]:
         "concurrent_effect_case_count": 16,
         "concurrent_effect_accepted_case_count": 4,
         "concurrent_effect_rejected_case_count": 12,
-        "concurrent_effect_mutation_rejection_count": 12,
+        "concurrent_effect_mutation_rejection_count": 62,
         "concurrent_effect_support_state_effect": "none",
     }
     for key, value in expected_integrated_contract.items():
@@ -1331,7 +1331,7 @@ def errors(data: dict) -> list[str]:
         "rolled_back_case_count": 1,
         "quarantined_case_count": 2,
         "support_transition_count": 0,
-        "mutation_rejection_count": 15,
+        "mutation_rejection_count": 108,
         "source_scenario_count": 6,
     }
     for key, value in expected_integrated_summary.items():
@@ -1342,7 +1342,7 @@ def errors(data: dict) -> list[str]:
     for phrase in ["Adequacy adjudication", "Executable refinement boundary", "does not establish"]:
         if phrase.casefold() not in data["integrated_trace_dossier"].casefold():
             out.append(f"integrated trace dossier missing adequacy boundary: {phrase}")
-    for phrase in ["eighteen", "four accepted", "fourteen rejected", "fifteen", "support-state effect is exactly `none`"]:
+    for phrase in ["eighteen", "four accepted", "fourteen rejected", "108", "support-state effect is exactly `none`"]:
         if phrase.casefold() not in data["integrated_trace_receipt"].casefold():
             out.append(f"integrated trace receipt missing exact boundary: {phrase}")
     refinement = data["integrated_refinement_result"]
@@ -1373,12 +1373,12 @@ def errors(data: dict) -> list[str]:
         "acknowledged_effect_count": 3,
         "compensated_effect_count": 1,
         "residualized_effect_count": 1,
-        "mutation_rejection_count": 12,
+        "mutation_rejection_count": 62,
         "support_state_effect": "none",
     }.items():
         if concurrent.get(key) != value:
             out.append(f"concurrent effect consumer drifted: {key} expected {value!r}, got {concurrent.get(key)!r}")
-    for phrase in ["sixteen", "four accepted", "twelve rejected", "idempotency", "support-state effect is exactly `none`"]:
+    for phrase in ["sixteen", "four accepted", "twelve rejected", "62", "idempotency", "support-state effect is exactly `none`"]:
         if phrase.casefold() not in data["concurrent_effect_receipt"].casefold():
             out.append(f"concurrent effect receipt missing exact boundary: {phrase}")
 
@@ -2432,7 +2432,7 @@ def errors(data: dict) -> list[str]:
         "resource_economics_theseus_export_invalid_count": 7,
         "resource_economics_reachable_stage_count": 9,
         "resource_economics_route_case_count": 66,
-        "resource_economics_mutation_rejection_count": 57,
+        "resource_economics_mutation_rejection_count": 170,
         "resource_economics_retired_baseline_declaration_count": 35,
         "resource_economics_retained_legacy_theorem_count": 23,
         "resource_economics_support_state_effect": "none",
@@ -2442,7 +2442,7 @@ def errors(data: dict) -> list[str]:
             out.append(f"resource-economics contract drifted: {key}")
     resource_economics = data["resource_economics_result"]
     resource_model = resource_economics.get("model", {})
-    for key, value in {"stage_count": 9, "route_count": 66, "reached_route_count": 66, "route_case_count": 66, "rejected_mutation_count": 57, "simulation_transfer_route_reached": True, "closed_route_reached": True, "support_assignment_count": 0, "external_effect_count": 0}.items():
+    for key, value in {"stage_count": 9, "route_count": 66, "reached_route_count": 66, "route_case_count": 66, "rejected_mutation_count": 170, "simulation_transfer_route_reached": True, "closed_route_reached": True, "support_assignment_count": 0, "external_effect_count": 0}.items():
         if resource_model.get(key) != value:
             out.append(f"resource-economics result drifted: model.{key}")
     expected_resource_counts = {"budget_valid_count":6,"budget_invalid_count":7,"costed_eligible_count":2,"costed_rejected_count":2,"workflow_valid_count":1,"workflow_invalid_count":5,"workflow_step_count":3,"capacity_valid_count":3,"capacity_invalid_count":6,"flagship_command_count":10,"flagship_artifact_count":26,"ci_run_count":8,"ci_failure_count":3,"governance_valid_count":3,"governance_invalid_count":5,"governed_selection_count":2,"low_risk_shortcut_count":1,"simulation_valid_count":3,"simulation_invalid_count":6,"theseus_sim_scenario_count":5,"theseus_sim_receipt_count":6,"theseus_sim_invalid_count":7,"theseus_export_ready_count":1,"theseus_export_format_count":3,"theseus_export_field_count":7,"theseus_export_invalid_count":7,"workload_probe_pass_count":1,"load_probe_pass_count":1}

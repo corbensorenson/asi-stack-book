@@ -14,7 +14,9 @@ The digest-bound corpus is anchored to the executed governed-trace invariant
 result and covers sixteen cases: four accepted and twelve rejected. The four
 accepted traces contain seventeen events, five unique effects, three
 acknowledgements, one compensation, one residualized effect, one revocation,
-and one exact idempotent retry. Twelve additional semantic mutations all
+and one exact idempotent retry. All 21 accepted lifecycle prefixes and
+prefix/suffix composition splits preserve logical-time and authority-epoch
+monotonicity and terminal disposition. All 62/62 systematic semantic mutations
 reject. They exercise zero or unknown identities, stale epochs, time
 regression, observation without attempt, duplicate observation, wrong or
 receipt-free terminal custody, double disposition, unclosed observed effects,

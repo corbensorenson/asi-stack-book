@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 97,
+    "prose_candidates_adjudicated": 99,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -13,11 +13,11 @@
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Exact traces, runs, requests, intents, authorities, owner contracts, artifacts, parents, states, effects, receipts, evaluators, evidence, residuals, rollbacks, consumers, environments, and times.",
-      "environment": "Thirty mappings; one schema/fixture; three valid and six invalid trace fixtures; thirteen-artifact replay; blocked lineage plus eight mutations; nine-scenario/eight-attack disposable slice with baseline false accepts 8 versus governed 0, zero unsafe releases, three rollback attempts; finite invariants; sixteen declarations. No deployed services, natural workload, independent evaluator, reproduction, or transfer.",
+      "environment": "Thirty mappings; one schema/fixture; three valid and six invalid trace fixtures; thirteen-artifact replay; blocked lineage plus eight mutations; nine-scenario/eight-attack disposable slice with baseline false accepts 8 versus governed 0, zero unsafe releases, three rollback attempts; finite invariants; a 45-theorem cross-layer and concurrent-effect model; 108/108 and 62/62 independent consumer mutations. No deployed services, natural workload, independent evaluator, reproduction, or transfer.",
       "model": "Cross-Layer Trace Join Contract over owner-preserving handoffs, authority, identities, canonical state, material effects, receipts, evaluators, evidence, residuals, lifecycle, matched baselines, correction, rollback, monitoring, and expiry.",
       "authority": "Owns cross-layer joinability only; every layer retains intent, planning, context, computation, evidence, runtime, artifact, data, evaluation, update, readiness, resource, governance, incident, release, and publication authority.",
       "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter, manifest, thirty mappings, records, fixtures, replay, slice, invariant result, validators, three targets, sixteen declarations, review, and future campaign."
+      "artifact": "Chapter, manifest, thirty mappings, records, fixtures, replay, slice, invariant results, validators, three targets, 45 theorem declarations, review, and future campaign."
     },
     "current_disposition": "retain_argument_with_local_join_slices_no_core_effect_pending_natural_independent_multi_service_campaign",
     "assumptions": [
@@ -526,6 +526,16 @@
       "state": "duplicate_of_atom",
       "rationale": "P6.10 section-level semantic review maps this complete proposition within `Recomposition is a transaction` to existing reviewed atom `integrated-reference-architecture.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
       "target_atom_id": "integrated-reference-architecture.core"
+    },
+    "integrated-reference-architecture.prose.316cb4d4d716": {
+      "state": "duplicate_of_atom",
+      "rationale": "Line-wrap fragment from the arbitrary-run authority and effect-accounting explanation; the complete proposition is already owned by the operational invariant target.",
+      "target_atom_id": "integrated-reference-architecture.formal.reference-architecture-trace-operational-invariant"
+    },
+    "integrated-reference-architecture.prose.5fe29490890b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Line-wrap fragment from the authored cross-model projection explanation; the complete finite-consumer proposition is already owned by the governed-trace target.",
+      "target_atom_id": "integrated-reference-architecture.formal.reference-architecture-governed-trace-four-invariants"
     }
   },
   "non_claims": [

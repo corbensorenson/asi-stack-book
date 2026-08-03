@@ -3064,11 +3064,11 @@
       "tag": "lean:reference_architecture.trace.operational_invariant",
       "chapter_id": "integrated-reference-architecture",
       "module": "AsiStackProofs.IntegratedReferenceTrace",
-      "formal_target": "Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority.",
+      "formal_target": "Every accepted finite cross-layer run joins exact parent artifacts and canonical state at each typed handoff, preserves the authority ceiling and non-increasing active authority, advances logical time monotonically, preserves effect-accounting and residual-conservation invariants, composes across event batches, and rejects suffixes after a terminal or quarantine state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Replaced by AsiStackProofs.IntegratedReferenceTrace: a partial transition system proves accepted-step artifact/state joins, authority-ceiling preservation, arbitrary accepted-trace non-widening, and trace composition. The independently encoded consumer covers four accepted outcome paths, fourteen rejections, and fifteen guard mutations. It remains a finite source-anchored abstraction, not real-service semantic preservation, distributed execution, deployment, or support evidence."
+      "rationale": "AsiStackProofs.IntegratedReferenceTrace proves one-step and arbitrary-run artifact/state joins, authority-ceiling and logical-time invariants, effect accounting, residual conservation, exact composition, and terminal absorption. The independently encoded consumer checks 13 prefixes and splits across four accepted outcome paths and rejects fourteen cases plus 108/108 mutations. This is adequate only for authored finite-record invariants, not real-service semantic preservation, distributed execution, deployment, or support evidence."
     },
     {
       "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
@@ -3084,11 +3084,11 @@
       "tag": "lean:reference_architecture.governed_trace.four_invariants",
       "chapter_id": "integrated-reference-architecture",
       "module": "AsiStackProofs.IntegratedReferenceTrace",
-      "formal_target": "The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations.",
+      "formal_target": "The source-anchored finite consumers compose approved, blocked, rolled-back, quarantined, and concurrent effect traces while preserving joined artifact/state lineage, authority and epoch monotonicity, effect acknowledgement or explicit terminal disposition, evidence, residual, terminal-receipt, and no-promotion boundaries; the authored one-effect projection agrees across the layer and effect models.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "The earlier invariant extraction remains historical evidence, but the live target now resolves to AsiStackProofs.IntegratedReferenceTrace plus a digest-bound Python consumer anchored to the executed repository-change source. It covers 18 cases, four accepted outcomes, 35 accepted events, effect/acknowledgement/residual/receipt accounting, and 15 rejecting mutations. It does not establish checked live-schema refinement, distributed timing, deployed enforcement, semantic equivalence, residual completeness, safety, transfer, or ASI."
+      "rationale": "The earlier invariant extraction remains historical evidence, while the live target resolves to the 45-theorem IntegratedReferenceTrace model plus two independent consumers. They cover 18 cross-layer cases and 108/108 mutations, 16 concurrent cases and 62/62 mutations, every accepted lifecycle prefix and composition split, exclusive terminal disposition, and one authored cross-model projection. Checked governed-result schema refinement exists separately; distributed timing, deployed enforcement, semantic equivalence, complete effect discovery, safety, transfer, and ASI remain unproved."
     },
     {
       "tag": "lean:theseus.reference.report_contract.operational_invariant",

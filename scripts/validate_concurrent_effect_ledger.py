@@ -48,7 +48,7 @@ def apply(state: dict[str, Any], event: list[Any]) -> dict[str, Any]:
     elif kind=="revoke": state["revoked_at"]=time; state["authority_epoch"]+=1
     return state
 
-def run(initial: dict[str,Any], events: list[list[Any]]) -> dict[str,Any]:
+def run(initial: dict[str,Any], events: list[list[Any]], require_closed: bool = True) -> dict[str,Any]:
     state=copy.deepcopy(initial)
     for i,event in enumerate(events):
         failed=reasons(state,event)
@@ -56,24 +56,33 @@ def run(initial: dict[str,Any], events: list[list[Any]]) -> dict[str,Any]:
         state=apply(state,event)
     closed=set(state["acknowledged"]+state["compensated"]+state["residualized"])
     unclosed=sorted(set(state["observed"])-closed)
-    if unclosed: return {"accepted":False,"rejection_index":len(events),"reasons":["observed_effect_left_open"],"final_state":state}
+    if require_closed and unclosed: return {"accepted":False,"rejection_index":len(events),"reasons":["observed_effect_left_open"],"final_state":state}
     return {"accepted":True,"rejection_index":None,"reasons":[],"final_state":state}
 
-def mutation_suite(base: dict[str,Any]) -> list[tuple[str,list[list[Any]]]]:
-    e=base["events"]
-    def changed(index:int, field:int, value:Any):
-        x=copy.deepcopy(e); x[index][field]=value; return x
-    return [
-      ("zero id",changed(0,1,0)), ("stale epoch",changed(0,2,6)),
-      ("time regression",changed(3,3,0)), ("unknown observation",changed(2,1,99)),
-      ("duplicate observation",copy.deepcopy(e[:3])+[copy.deepcopy(e[2])]),
-      ("ack wrong effect",changed(4,1,2)), ("ack missing receipt",changed(4,4,False)),
-      ("residual missing receipt",changed(5,4,False)),
-      ("double terminal",copy.deepcopy(e)+[["compensate",1,7,4,True]]),
-      ("remove acknowledgement",copy.deepcopy(e[:4])+copy.deepcopy(e[5:])),
-      ("remove residual custody",copy.deepcopy(e[:5])),
-      ("revoke then retry",copy.deepcopy(e)+[["revoke",0,7,4,True],["attempt",1,7,4,False]])
-    ]
+def mutation_suite(cases: list[dict[str,Any]]) -> list[tuple[str,list[list[Any]]]]:
+    mutations: list[tuple[str,list[list[Any]]]] = []
+    for case in cases:
+        events = case["events"]
+        for index, event in enumerate(events):
+            for field, value, label in ((0, "unknown", "kind"), (3, -1, "time")):
+                changed = copy.deepcopy(events)
+                changed[index][field] = value
+                mutations.append((f"{case['id']}:{index}:{label}", changed))
+            kind = event[0]
+            controls: list[tuple[int, Any, str]] = []
+            if kind == "attempt":
+                controls = [(1, 0, "zero-id"), (2, 6, "stale-epoch")]
+            elif kind == "observe":
+                controls = [(1, 99, "unknown-effect")]
+            elif kind in {"acknowledge", "compensate", "residualize"}:
+                controls = [(1, 99, "unknown-effect"), (4, False, "missing-receipt")]
+            elif kind == "revoke":
+                controls = [(2, 6, "stale-epoch")]
+            for field, value, label in controls:
+                changed = copy.deepcopy(events)
+                changed[index][field] = value
+                mutations.append((f"{case['id']}:{index}:{label}", changed))
+    return mutations
 
 def build() -> tuple[dict[str,Any],list[str]]:
     corpus=load(CORPUS); errors=[]
@@ -83,12 +92,48 @@ def build() -> tuple[dict[str,Any],list[str]]:
     if len(source_data.get("revocation_effect_attempts",[]))!=3 or len(source_data.get("residual_deltas",[]))!=2:
         errors.append("source concurrency/residual anchors drifted")
     receipts=[]
+    accepted_cases=[]
     for case in corpus["cases"]:
         outcome=run(corpus["initial_state"],case["events"])
         if outcome["accepted"]!=case["expected"]: errors.append(f"{case['id']}: expected {case['expected']}")
+        if case["expected"]:
+            accepted_cases.append(case)
         receipts.append({"id":case["id"],"expected":case["expected"],"accepted":outcome["accepted"],"rejection_index":outcome["rejection_index"],"reasons":outcome["reasons"],"final_state":outcome["final_state"]})
     accepted=[r for r in receipts if r["accepted"]]
-    mutations=mutation_suite(corpus["cases"][0]); rejected=sum(not run(corpus["initial_state"],events)["accepted"] for _,events in mutations)
+    prefix_checks=0; composition_checks=0; logical_time_checks=0; authority_epoch_checks=0; closure_checks=0
+    for case in accepted_cases:
+        state=copy.deepcopy(corpus["initial_state"]); states=[copy.deepcopy(state)]
+        for index,event in enumerate(case["events"]):
+            failed=reasons(state,event)
+            if failed:
+                errors.append(f"{case['id']}: accepted prefix {index} rejected: {failed}")
+                break
+            next_state=apply(state,event)
+            if next_state["logical_time"]<state["logical_time"]: errors.append(f"{case['id']}: logical time regressed at {index}")
+            if next_state["authority_epoch"]<state["authority_epoch"]: errors.append(f"{case['id']}: authority epoch regressed at {index}")
+            logical_time_checks+=1; authority_epoch_checks+=1
+            state=next_state; states.append(copy.deepcopy(state))
+        prefix_checks+=len(states)
+        closed=set(state["acknowledged"]+state["compensated"]+state["residualized"])
+        if set(state["observed"]).issubset(closed): closure_checks+=1
+        else: errors.append(f"{case['id']}: terminal disposition closure failed")
+        expected_final=state
+        for split in range(len(case["events"])+1):
+            prefix=run(corpus["initial_state"],case["events"][:split],require_closed=False)
+            suffix=run(prefix["final_state"],case["events"][split:]) if prefix["accepted"] else {"accepted":False}
+            if prefix["accepted"] and suffix["accepted"] and suffix["final_state"]==expected_final: composition_checks+=1
+            else: errors.append(f"{case['id']}: composition mismatch at split {split}")
+
+    authored_one_effect=[["attempt",1,7,1,False],["observe",1,7,2,False],["acknowledge",1,7,3,True]]
+    projection=run(corpus["initial_state"],authored_one_effect)
+    projection_witness_checks=int(
+        projection["accepted"] and len(projection["final_state"]["attempted"])==1 and
+        len(projection["final_state"]["acknowledged"])==1 and
+        len(projection["final_state"]["residualized"])==0
+    )
+    if projection_witness_checks!=1: errors.append("authored one-effect projection witness failed")
+
+    mutations=mutation_suite(accepted_cases); rejected=sum(not run(corpus["initial_state"],events)["accepted"] for _,events in mutations)
     if rejected!=len(mutations): errors.append("one or more semantic mutations accepted")
     result={
       "schema_version":"asi_stack.concurrent_effect_ledger_result.v1","result_id":"concurrent-effect-ledger-2026-07-15-local",
@@ -100,6 +145,9 @@ def build() -> tuple[dict[str,Any],list[str]]:
       "compensated_effect_count":sum(len(r["final_state"]["compensated"]) for r in accepted),
       "residualized_effect_count":sum(len(r["final_state"]["residualized"]) for r in accepted),
       "revocation_count":sum(r["final_state"]["authority_epoch"]>7 for r in accepted),
+      "lifecycle_prefix_check_count":prefix_checks,"composition_split_count":composition_checks,
+      "logical_time_check_count":logical_time_checks,"authority_epoch_check_count":authority_epoch_checks,
+      "terminal_disposition_check_count":closure_checks,"projection_witness_check_count":projection_witness_checks,
       "mutation_count":len(mutations),"mutation_rejection_count":rejected,"receipts":receipts,
       "support_state_effect":"none","non_claims":["Finite logical-time interleavings do not establish distributed-clock or network-partition behavior.","Effect identity is treated as an idempotency key; real adapter enforcement and complete effect discovery are not established.","Source anchoring and mutation rejection do not establish deployment, safety, reproduction, transfer, or chapter-core support."]}
     try: jsonschema.Draft202012Validator(load(SCHEMA)).validate(result)

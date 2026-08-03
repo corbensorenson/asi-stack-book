@@ -757,6 +757,31 @@ transfer, or external effect. Chapter support remains `argument` and
 `support_state_effect` remains `none`.
 
 """,
+    "integrated-reference-architecture": """## Current refinement
+
+`AsiStackProofs.IntegratedReferenceTrace` now contains 45 theorem declarations
+over two connected finite models. The 14-layer trace proves one-step and
+arbitrary-run parent/state custody, non-increasing authority, ceiling
+preservation, logical-time monotonicity, effect-accounting preservation,
+residual conservation, valid-trace lifting, exact event-batch composition, and
+terminal/quarantine absorption. The concurrent effect ledger proves valid-step
+inversion, logical-time and authority-epoch monotonicity, observation causality,
+idempotent attempt custody, exclusive acknowledged/compensated/residualized
+closure, arbitrary-run lifting, exact composition, and one authored one-effect
+projection into the layer trace.
+
+The independently encoded layer consumer retains 18 source-anchored cases and
+35 accepted events, checks all 13 lifecycle prefixes and prefix/suffix splits,
+and rejects 108/108 systematic mutations. The concurrent consumer retains 16
+cases and 17 accepted events, checks all 21 accepted prefixes and composition
+splits, and rejects 62/62 systematic mutations. The three public targets are
+adequate only for these authored finite-record invariants. Field truth,
+semantic payload equivalence, complete effect discovery, evaluator competence,
+distributed clocks and partitions, deployed enforcement, whole-stack
+execution, safety, reproduction, transfer, support movement, and ASI remain
+unproved and belong to Project Theseus or empirical work.
+
+""",
     "embodied-agency-real-time-control-and-physical-safety": """## Current refinement
 
 `AsiStackProofs.EmbodiedPhysicalSafety` implements a finite control-lease

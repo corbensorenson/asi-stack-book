@@ -74,7 +74,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | 1 | 42 | 0 | 17 | 5 |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | 2 | 32 | 0 | 15 | 2 |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | 1 | 32 | 0 | 32 | 8 |
-| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 23 | 0 | 33 | 4 |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | 3 | 45 | 0 | 42 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 1 | 20 | 0 | 2 | 2 |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | 2 | 37 | 0 | 16 | 2 |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | 3 | 25 | 0 | 14 | 2 |

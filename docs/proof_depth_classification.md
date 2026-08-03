@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 324 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2626 |
+| Theorem declarations classified | 2648 |
 | Direct/projection-style theorem declarations | 425 |
-| Derived/decomposed theorem declarations | 1635 |
+| Derived/decomposed theorem declarations | 1657 |
 | Unknown or mixed theorem declarations | 566 |
 | Safety-critical theorem declarations | 125 |
 | Safety-critical direct/projection declarations | 1 |
@@ -110,7 +110,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/HumanAIOrganizations.lean` | human-ai-organizations-delegation-and-accountability | 1 | 42 | 0 | 22 | 20 | manual review |
 | `lean/AsiStackProofs/HumanFactorsOversight.lean` | human-factors-and-meaningful-control-in-oversight | 2 | 32 | 1 | 11 | 20 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | institutions-international-coordination-and-public-legitimacy | 1 | 32 | 16 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 23 | 0 | 13 | 10 | manual review |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | integrated-reference-architecture | 3 | 45 | 0 | 35 | 10 | manual review |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 1 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/IntentExecutionRefinement.lean` | intent-to-execution-contracts | 2 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/IntentResolutionRefinement.lean` | human-intent-as-a-formal-input | 3 | 25 | 1 | 12 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1306,17 +1306,39 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/InstitutionalLegitimacyReview.lean` | `technical_conformance_does_not_establish_public_authority` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_acknowledgement_closes_effect` | derived_or_decomposed | no | uses cases, simp, split, unfold |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_attempt_records_idempotency_key` | derived_or_decomposed | no | uses by_cases, cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_compensation_closes_effect` | derived_or_decomposed | no | uses cases, simp, split, unfold |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_attempt_precedes_revocation` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_run_authority_epoch_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_run_logical_time_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_step_authority_epoch_monotone` | derived_or_decomposed | no | uses cases, rw, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_concurrent_step_logical_time_monotone` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_observation_has_attempt` | derived_or_decomposed | no | uses simp, split, unfold |
-| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_authority_nonincreasing` | derived_or_decomposed | no | uses cases, have, simp, split, unfold |
-| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_joins_parent_and_state` | derived_or_decomposed | no | uses cases, have, simp, split, unfold |
-| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_preserves_ceiling` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_residualization_closes_effect` | derived_or_decomposed | no | uses cases, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, rw, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_authority_nonincreasing` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_joins_parent_and_state` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_logical_time_monotone` | derived_or_decomposed | no | uses have, omega, rw, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_preserves_ceiling` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_preserves_effect_accounting` | derived_or_decomposed | no | uses cases, have, omega, rw, simp |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_step_preserves_residual_accounting` | derived_or_decomposed | no | uses have, omega, rw, simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_authority_nonincreasing` | derived_or_decomposed | no | uses contradiction, induction, simp, split, unfold |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_logical_time_monotone` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_preserves_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_preserves_effect_accounting` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `accepted_trace_preserves_residual_accounting` | derived_or_decomposed | no | uses cases, have, induction, omega, simp, subst |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `authored_one_effect_projection_witness` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `authority_widening_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `closed_layer_accepts_no_event` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_authority_bound` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_parent_join` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `common_valid_state_join` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `complete_cross_layer_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `concurrent_effect_run_append` | derived_or_decomposed | no | uses cases, induction, simp |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `effect_at_revocation_tie_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `exact_attempt_retry_is_idempotent` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntegratedReferenceTrace.lean` | `missing_gate_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |

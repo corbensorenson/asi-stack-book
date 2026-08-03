@@ -31,7 +31,9 @@ The stored result covers:
 - three final open residuals, four terminal/quarantine receipts, one exact-
   rollback case, and two quarantined cases;
 - zero support transitions; and
-- fifteen targeted mutations, all rejected.
+- 108 systematic mutations across every lifecycle event, all rejected; and
+- all thirteen lifecycle prefixes and prefix/suffix composition splits checked,
+  with effect accounting, residual conservation, and terminal absorption intact.
 
 The checked runtime-schema refinement then consumes the complete tracked
 `asi_stack.governed_repository_change_result.v0` artifact rather than another
@@ -47,11 +49,11 @@ residuals, plus unsafe release and support-transition laundering.
 The corpus SHA-256 is
 `36444721042e5e56d0f4a5bada88dbcd6600f14755cb151f3d19a62952cdd630`,
 the Lean-model SHA-256 is
-`632a75e332fe841ed30f3ae6c5764974e8157c5c52e58b5f66f098b00b4b351e`,
+`6ddd770a146a2ead285ec0ac538844d7db4a7e21193124a151a1ce2f841586b1`,
 and the stored-result SHA-256 is
-`f184037d1cc80a5cad3877a21286e9355af5b44f3339aa20082798282a05649a`.
+`f1a3b5eddcba78c522ac00788dd2fc2c6ae240255409130d8678055a933bc64a`.
 The runtime-schema refinement result SHA-256 is
-`731784e5f7f0edc5f6de91b3a2700ff19950238a69f23449cb24b2a3537b6271`.
+`6800c0b7cc4ceef87c6f94ea891e47ed955639cc72ff1fb0b62a10d69ebc3113`.
 
 Run:
 

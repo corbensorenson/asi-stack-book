@@ -6206,7 +6206,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2626 theorem declarations, 1635 derived/decomposed, 425 direct/projection, 566 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 324 proof targets, 130 Lean modules, 2648 theorem declarations, 1657 derived/decomposed, 425 direct/projection, 566 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -7510,7 +7510,7 @@ Draft deliverables:
 - Implemented Codex test: Authority stop-condition test as deterministic blocked-trace fixture coverage only; no deployed authority stop-condition checker exists.
 - Implemented Codex test: Actual command replay trace as a local Resource flagship validator replay with command output digest, tracked artifact bundle, and blocked-path stop-condition attachment only; no live runtime integration, external replay, model-quality result, benchmark result, or support-state promotion exists.
 - Implemented Codex test: Governed cross-stack trace invariants test derives authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed local repository-change log; finite local trace only.
-- Implemented Codex test: Integrated cross-layer trace consumer replays eighteen source-anchored finite cases across approved completion, pre-effect quarantine, exact rollback, and failed-rollback quarantine; four paths and thirty-five events are accepted, fourteen invalid paths and fifteen mutations are rejected, and support effect remains none. This is not a checked live-schema encoder, distributed replay, deployment, or support promotion.
+- Implemented Codex test: Integrated cross-layer trace consumer replays eighteen source-anchored finite cases across approved completion, pre-effect quarantine, exact rollback, and failed-rollback quarantine; four paths and thirty-five events are accepted, fourteen invalid paths and 108/108 systematic mutations are rejected, all thirteen lifecycle prefixes and composition splits are checked, and support effect remains none. This is not distributed replay, deployment, or support promotion; checked governed-result schema refinement remains a separate executable lane.
 - Implemented P5 local multi-process slice: eight frozen cases now run through
   real subprocesses, a durable SQLite/WAL ledger, scoped authority, concurrent
   idempotency, crash recovery, exact local rollback or compensation, a
@@ -7528,11 +7528,11 @@ Draft deliverables:
   fixtures, one thirteen-artifact validator replay, one blocked lineage plus
   eight mutations, a nine-scenario/eight-attack repository slice with baseline
   false accepts 8 versus governed 0 and three rollback attempts, a finite
-  invariant extraction with four mutations, an eighteen-case/fifteen-mutation
+  invariant extraction with four mutations, an eighteen-case/108-mutation
   integrated transition consumer, a nine-scenario/twenty-mutation checked
-  governed-result schema refinement, a sixteen-case/twelve-mutation independent
+  governed-result schema refinement, a sixteen-case/62-mutation independent
   concurrent effect-ledger consumer, an eight-case real-subprocess P5 local
-  effect/recovery slice, and the stronger partial Lean trace model; no model
+  effect/recovery slice, and the 45-theorem Lean trace model; no model
   planning/generation, deployed services, production enforcement, independent
   evaluator, natural workload, reproduction, transfer, deployment, or core
   effect exists. The successor stateful-service slice adds seven cases with
@@ -7544,13 +7544,14 @@ Draft deliverables:
   lifecycle/rollback/release/embedded-residual tests; joint utility, failure,
   latency, resource, governance, and cost measures; independent reproduction
   and transfer.
-- Formal audit: the three headline targets now resolve to the partial
-  `IntegratedReferenceTrace` model with accepted-step joins, accepted-trace
-  authority non-widening, trace composition, exact terminal execution,
-  countermodels, an independently encoded consumer, and checked executable
-  refinement for one projected governed-result schema, plus effect identity,
-  idempotent retry, authority-epoch, revocation-tie, and exclusive terminal-
-  custody semantics with an independent consumer. Five older route
+- Formal audit: the three headline targets now resolve to the finite
+  `IntegratedReferenceTrace` model with accepted-step joins, arbitrary-run
+  authority and logical-time invariants, effect accounting, residual
+  conservation, terminal absorption, exact composition, countermodels, an
+  independently encoded consumer, and checked executable refinement for one
+  projected governed-result schema, plus effect identity, idempotent retry,
+  authority-epoch monotonicity, revocation-tie, exclusive terminal-custody, and
+  an authored cross-model projection with an independent consumer. Five older route
   reductions remain narrow repair-routing lemmas, while the prior fixture
   invariant extraction remains historical lineage; none proves deployed
   semantics, distributed authority/revocation, causality, evaluator
@@ -7561,9 +7562,9 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.IntegratedReferenceTrace` | Every accepted finite cross-layer trace joins exact parent artifacts and canonical state across typed layers, preserves the authority ceiling, and cannot widen active authority. | implemented |
+| `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.IntegratedReferenceTrace` | Every accepted finite cross-layer run joins exact parent artifacts and canonical state at each typed handoff, preserves the authority ceiling and non-increasing active authority, advances logical time monotonically, preserves effect-accounting and residual-conservation invariants, composes across event batches, and rejects suffixes after a terminal or quarantine state. | implemented |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.IntegratedReferenceTrace` | A cross-layer transition with a parent/state fork, missing governance gate, residual erasure, effect after revocation, unacknowledged terminal effect, missing receipt, or incomplete rollback is rejected or contained in quarantine. | implemented |
-| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.IntegratedReferenceTrace` | The source-anchored finite consumer composes approved, blocked, rolled-back, and quarantined traces while preserving joined artifact/state lineage, authority, effect acknowledgement, evidence, residual, terminal-receipt, and no-promotion boundaries and rejecting targeted mutations. | implemented |
+| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.IntegratedReferenceTrace` | The source-anchored finite consumers compose approved, blocked, rolled-back, quarantined, and concurrent effect traces while preserving joined artifact/state lineage, authority and epoch monotonicity, effect acknowledgement or explicit terminal disposition, evidence, residual, terminal-receipt, and no-promotion boundaries; the authored one-effect projection agrees across the layer and effect models. | implemented |
 
 ### Project Theseus as Report-First Implementation Reference
 

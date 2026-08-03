@@ -2165,6 +2165,34 @@ be added later
 without a dated machine-validated amendment, and no listed module or cluster
 may disappear without a terminal disposition.
 
+### 2026-08-02 chapter-local Lean successor amendment
+
+Corben explicitly opened a chapter-wide Lean-local proof program after the
+six-cluster P4 audit closed. This does not reopen or rewrite the terminal audit;
+it creates a successor lane for exact chapter claims that still have a named
+semantic defect. Each tranche must identify the weak claim-to-model link, build
+a reachable and nonvacuous transition, refinement, composition, accounting,
+noninterference, bounded-liveness, or impossibility result, bind an independent
+consumer and rejecting countermodels or mutations, and state a maximum
+inference. The program has no theorem-count quota. Runtime truth, empirical
+competence, cross-component behavior, deployment, and whole-system properties
+remain Project Theseus work.
+
+The Integrated Reference Architecture tranche is complete at authored
+finite-record scope. `AsiStackProofs.IntegratedReferenceTrace` now has 45
+theorems over connected cross-layer and concurrent-effect models. Arbitrary
+runs preserve parent/state custody, authority and logical-time invariants,
+effect accounting, residual conservation, valid traces, exact batch
+composition, terminal absorption, effect causality, and exclusive disposition;
+one authored one-effect projection joins the models. Independent consumers
+check all 13 cross-layer and 21 concurrent prefixes/composition splits and
+reject 108/108 and 62/62 mutations. Maximum inference: the three public targets
+are adequate only as finite authored-record invariants. Semantic payload truth,
+complete effect discovery, evaluator competence, distributed clocks and
+partitions, deployed enforcement, whole-stack execution, safety, reproduction,
+transfer, support movement, and ASI remain unproved and route to Theseus or an
+empirical program.
+
 ## P5 — Effect-complete governed reference system
 
 Evolve the integrated local slice into a real multi-process reference system
