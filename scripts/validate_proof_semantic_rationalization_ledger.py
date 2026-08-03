@@ -171,15 +171,15 @@ EXPECTED_ACTION_IDS.append(
 )
 EXPECTED_LEVELS = {
     "P0": 48,
-    "P1": 973,
-    "P2": 307,
-    "P3": 1178,
-    "P4": 238,
-    "P5": 247,
+    "P1": 977,
+    "P2": 311,
+    "P3": 1182,
+    "P4": 243,
+    "P5": 248,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2991,
+    "retain": 3009,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -817,7 +817,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2991:
+    if summary.get("current_theorem_count") != 3009:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1085,8 +1085,33 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/CyclicMixers.lean"
     }
-    if len(cyclic_rows) != 5:
-        out.append("CyclicMixers must retain exactly five derived negative cases")
+    required_cyclic_names = {
+        "cyclic_mixer_claim_missing_claim_partition_rejected",
+        "cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected",
+        "cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected",
+        "cyclic_adoption_without_complete_tradeoff_packet_rejected",
+        "hardware_mismatch_without_refusal_path_rejected",
+        "cyclic_candidate_rejected_event_is_noninterfering",
+        "cyclic_candidate_step_preserves_custody",
+        "cyclic_candidate_custody_transitive",
+        "run_cyclic_candidate_preserves_custody",
+        "cyclic_candidate_step_preserves_invariant",
+        "run_cyclic_candidate_preserves_invariant",
+        "run_cyclic_candidate_append",
+        "reference_cyclic_candidate_reaches_canary_eligibility",
+        "reference_cyclic_candidate_preserves_zero_authority",
+        "reference_regression_retires_through_fallback",
+        "missing_baseline_matrix_rejects_without_state_change",
+        "incomplete_tradeoff_partition_rejects_without_state_change",
+        "hardware_mismatch_without_refusal_rejects_without_state_change",
+        "canary_admission_without_fallback_rejects_without_state_change",
+        "retired_candidate_is_absorbing_one_step",
+        "retired_candidate_is_absorbing_for_any_suffix",
+        "structural_summary_collides_across_canary_eligibility",
+        "no_structural_summary_classifier_recovers_canary_eligibility",
+    }
+    if len(cyclic_rows) != 23 or {row["name"] for row in cyclic_rows} != required_cyclic_names:
+        out.append("CyclicMixers must retain the exact 23-declaration negative-case and canary-lifecycle surface")
     if retired_cyclic_names & {row["name"] for row in cyclic_rows}:
         out.append("CyclicMixers retained an executed premise projection")
 
@@ -1289,7 +1314,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2991
+        status.get("theorem_count") != 3009
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

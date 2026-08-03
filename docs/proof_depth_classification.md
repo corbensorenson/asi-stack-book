@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2991 |
+| Theorem declarations classified | 3009 |
 | Direct/projection-style theorem declarations | 440 |
-| Derived/decomposed theorem declarations | 1878 |
-| Unknown or mixed theorem declarations | 673 |
+| Derived/decomposed theorem declarations | 1889 |
+| Unknown or mixed theorem declarations | 680 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -83,7 +83,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactionRefinement.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 35 | 0 | 19 | 16 | manual review |
 | `lean/AsiStackProofs/ContextTransactions.lean` | unmapped | 0 | 17 | 0 | 17 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
-| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 23 | 0 | 16 | 7 | manual review |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | dangerous-capability-domains-and-misuse-uplift | 1 | 20 | 1 | 15 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DataEngineLifecycleRefinement.lean` | data-engines-continual-learning-and-unlearning | 15 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 15 | 0 | 15 | 0 | derived/decomposed by classifier |
@@ -897,11 +897,29 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_pre_effect_review_blocks` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `high_impact_action_without_usable_review_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/Corrigibility.lean` | `low_risk_unbounded_delegation_routes_to_narrowing` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `canary_admission_without_fallback_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_adoption_without_complete_tradeoff_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_candidate_custody_transitive` | derived_or_decomposed | no | uses rcases, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_candidate_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_candidate_step_preserves_custody` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_candidate_step_preserves_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_mixer_claim_missing_claim_partition_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `incomplete_tradeoff_partition_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `missing_baseline_matrix_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `no_structural_summary_classifier_recovers_canary_eligibility` | derived_or_decomposed | no | uses have, rcases, rw |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `reference_cyclic_candidate_preserves_zero_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `reference_cyclic_candidate_reaches_canary_eligibility` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `reference_regression_retires_through_fallback` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `retired_candidate_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `retired_candidate_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `run_cyclic_candidate_append` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `run_cyclic_candidate_preserves_custody` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `run_cyclic_candidate_preserves_invariant` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/CyclicMixers.lean` | `structural_summary_collides_across_canary_eligibility` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `admissible_dossier_is_ready` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `aggregate_score_cannot_recover_component_sensitive_review` | derived_or_decomposed | no | uses contradiction, have, rw, simp |
 | `lean/AsiStackProofs/DangerousCapabilityReview.lean` | `attempt_shortfall_persists_when_retention_decreases` | derived_or_decomposed | no | uses omega, unfold |

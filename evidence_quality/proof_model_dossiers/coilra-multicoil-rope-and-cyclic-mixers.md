@@ -9,6 +9,30 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:cyclic_mixers.structural_not_quality.operational_invariant` | semantically_reviewed | retain_load_bearing_semantic |
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | semantically_reviewed | retain_load_bearing_semantic |
 
+## Current refinement
+
+`AsiStackProofs.CyclicMixers` now exposes 23 theorem declarations. Five retained
+claim-separation guards sit beside a candidate lifecycle that binds structural
+receipts, ordinary baselines, four separate tradeoff axes, hardware route or
+refusal, fallback, authority, support, and effect state. The lifecycle proves
+rejected-event noninterference, arbitrary-run identity and non-authority
+custody, stage coherence, exact composition, a reachable five-step canary-
+eligibility witness, regression-triggered fallback retirement, absorbing
+retirement across arbitrary suffixes, and a structural-summary collision that
+rules out an exact canary-admissibility classifier over structural identity
+alone.
+
+`scripts/validate_circle_cyclic_mixer_receipt_slice.py` recompiles the exact
+surface, retains the pinned Circle parity and parameter-accounting receipt,
+checks all six reference-trace splits, explores thirty-five reachable states
+through 700 transitions, checks seventeen retired states through 340 absorbing
+transitions, and rejects eighteen semantic mutations. These are authored finite-
+state and pinned-receipt results. They do not establish receipt truth beyond the
+pinned artifact, real baseline adequacy, metric truth, model quality, context
+length, runtime, memory, hardware efficiency, training stability, useful canary
+behavior, deployed fallback, support, safety, reproduction, transfer, or ASI.
+Chapter support remains `argument` and `support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |

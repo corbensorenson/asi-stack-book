@@ -6460,11 +6460,25 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "input_contract": "The exact CyclicMixers Lean module, pinned public-safe Circle cyclic-mixer receipt result and no-change transition, chapter surfaces, and independently encoded candidate-lifecycle consumer.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/CyclicMixers.lean",
+        "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
+        "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json",
+        "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json"
+      ],
+      "output_contract": "Verify the pinned parity and parameter-accounting receipt; compile exactly 23 Lean declarations; check the reference trace, reachable candidate graph, retired suffixes, structural-summary collision, custody, gate coherence, and semantic mutations.",
+      "output_assertions": [
+        "23 exact Lean declarations",
+        "6/6 reference-trace splits",
+        "35 reachable states and 700 transitions",
+        "17 retired states and 340 absorbing transitions",
+        "18 semantic mutations",
+        "no support-state effect"
+      ],
+      "claim_scope": "Pinned Circle structural receipt plus authored finite cyclic-candidate canary-admission, fallback-retirement, custody, coherence, and information-boundary semantics only.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish cyclic mechanism correctness, baseline or metric truth, model quality, context use, runtime, memory, hardware efficiency, useful canary behavior, deployed fallback, reproduction, transfer, safety, support movement, or ASI."
     },
     {
       "id": "validate_circle_multicoil_phase_receipt_slice:204",

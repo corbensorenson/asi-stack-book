@@ -6123,6 +6123,7 @@ Draft deliverables:
 - Planned Codex test: RoPE receipt boundary test
 - Implemented Codex test: Circle concrete RoPE boundary evidence-surface validation
 - Implemented Codex test: Circle cyclic-mixer receipt-slice validation, via `python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py`; checks `CC-AI-CONTRACT-MIXER-001`, kind `circulant_block_cyclic_mixer`, theorem IDs `AIT-T0006`, `AIT-T0007`, `AIT-T0008`, `AIT-T0009`, `AIRA-T0001`, `AIRA-T0002`, `AIRA-T0004`, `theorem_count=7`, `max_abs_dense_delta=0`, `dense_parameters=64`, `circulant_parameters=8`, `circulant_parameter_ratio=0.125`, `dense_adapter_parameters=2048`, `lora_parameters=576`, `block_cyclic_parameters=128`, `block_to_dense_ratio=0.0625`, `3 passed in 2.49s`, `1 passed in 1.47s`, and `circle_cyclic_mixer_receipt_no_change.json`; does not prove cyclic-mixer model quality, does not prove runtime speed, and no memory scaling, hardware efficiency, training stability, deployment, transfer, ASI, or support-state-transition claim.
+- Implemented Codex test: cyclic candidate canary lifecycle, through the same validator; recompiles the exact 23-declaration surface, checks arbitrary-run custody and stage coherence, all six trace splits, a five-step canary-eligibility witness, regression-triggered retirement, 35 reachable states through 700 transitions, 17 retired states through 340 absorbing transitions, structural-summary insufficiency, and 18 semantic mutations; authored finite semantics only, with no metric truth, useful canary, deployed fallback, support transition, or chapter-core effect.
 - Implemented Codex test: Circle MultiCoil phase receipt-slice validation, via `python3 scripts/validate_circle_multicoil_phase_receipt_slice.py`; checks `CC-AI-CONTRACT-PHASE-FEATURE-001`, kind `multicoil_phase_feature`, theorem IDs `AIA-T0001`, `AIA-T0002`, `AIA-T0004`, `AIT-T0004`, `AIT-T0005`, `theorem_count=5`, `periods=[5, 7]`, `phase_tuple=[2, 2]`, `shifted_phase_tuple=[2, 2]`, `joint_repeat_horizon=35`, `relative_phase=3`, `shifted_relative_phase=3`, `relative_phase_invariant=true`, `3 passed in 2.99s`, `1 passed in 1.76s`, and `circle_multicoil_phase_receipt_no_change.json`; does not prove MultiCoil, RoPE, attention, retrieval, or model-quality, context length, runtime, memory scaling, hardware efficiency, training stability, deployment, transfer, ASI, or support-state-transition claim.
 - Planned Codex test: Cyclic mixer baseline matrix test
 - Planned Codex test: Residue/winding alias diagnostic
@@ -6131,8 +6132,10 @@ Draft deliverables:
 Exact current minimum: one schema-valid evaluation record; one inherited RoPE
 structural receipt boundary; one Circle cyclic-mixer receipt with bounded
 dense-reference parity and parameter accounting; one MultiCoil phase receipt
-with finite phase and relative-shift facts; two no-change decisions; and five
-finite local theorem declarations. There is no trained cyclic model, natural
+with finite phase and relative-shift facts; two no-change decisions; and a
+23-declaration finite local Lean surface whose independent consumer checks 35
+reachable states through 700 transitions, 17 retired states through 340
+absorbing transitions, all six trace splits, and 18 semantic mutations. There is no trained cyclic model, natural
 workload, matched baseline matrix, real kernel or hardware benchmark, measured
 quality/context/runtime/memory/stability benefit, independent reproduction,
 transfer, or chapter-core transition.
@@ -6153,11 +6156,15 @@ implementations, and heterogeneous transfer. A competent result may qualify a
 narrow use, narrow/null/refute/retire a claim, or end
 `blocked_after_full_attempt`; the core remains `argument` until the gates pass.
 
-Formal audit: the five declarations are derived finite negative cases for
-missing partitions, missing baselines or tradeoffs, alias review without
-winding/residuals, an incomplete packet, and a hardware mismatch without
-refusal. The two former assumption-restating projections were retired after
-the public targets moved to the corresponding negative cases. They prove no cyclic semantics, general
+Formal audit: the 23 declarations retain five derived finite negative cases and
+add 18 lifecycle, arbitrary-run, reachable-witness, closure, and information-
+boundary results. They prove rejected-event noninterference, candidate identity
+and non-authority custody, gate coherence, exact composition, reachable canary
+eligibility, regression-triggered fallback retirement, absorbing retirement,
+and that structural identity alone cannot classify canary admissibility. The
+independent consumer checks all six trace splits, 35 reachable states through
+700 transitions, 17 retired states through 340 absorbing transitions, and 18
+semantic mutations. They prove no cyclic mechanism semantics, general
 functional equivalence, numerical stability, trained quality, context use,
 kernel behavior, runtime, memory, parameter efficiency, fallback liveness,
 reproduction, or transfer. Future useful proofs should target mechanism
@@ -6255,7 +6262,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2991 theorem declarations, 1878 derived/decomposed, 440 direct/projection, 673 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3009 theorem declarations, 1889 derived/decomposed, 440 direct/projection, 680 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6271,8 +6278,8 @@ Draft deliverables:
   exclusions, implementation binding, and no-promotion boundaries.
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
-330-target live manifest; a 130-module Lean workspace with 2,991 declarations
-classified as 1,878 derived/decomposed, 440 direct/projection, and 673
+330-target live manifest; a 130-module Lean workspace with 3,009 declarations
+classified as 1,889 derived/decomposed, 440 direct/projection, and 680
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer

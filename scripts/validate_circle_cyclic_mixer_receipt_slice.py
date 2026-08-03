@@ -9,7 +9,10 @@ hardware-efficiency, deployment, or support-state claims.
 
 from __future__ import annotations
 
+import copy
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -27,6 +30,8 @@ CHAPTER = ROOT / "chapters" / "coilra-multicoil-rope-and-cyclic-mixers.qmd"
 READER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "coilra-multicoil-rope-and-cyclic-mixers.qmd"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
+LEAN_ROOT = ROOT / "lean"
+LEAN_MODULE = LEAN_ROOT / "AsiStackProofs" / "CyclicMixers.lean"
 
 EXPECTED = {
     "result_id": "2026-07-05-local-circle-cyclic-mixer-receipt-slice",
@@ -101,6 +106,70 @@ READER_FRAGMENTS = (
     EXPECTED["contract_ready_pytest_summary"],
 ) + THEOREMS + RECOMMENDATIONS + NON_CLAIMS
 
+LIFECYCLE_THEOREMS = {
+    "cyclic_candidate_rejected_event_is_noninterfering",
+    "cyclic_candidate_step_preserves_custody",
+    "cyclic_candidate_custody_transitive",
+    "run_cyclic_candidate_preserves_custody",
+    "cyclic_candidate_step_preserves_invariant",
+    "run_cyclic_candidate_preserves_invariant",
+    "run_cyclic_candidate_append",
+    "reference_cyclic_candidate_reaches_canary_eligibility",
+    "reference_cyclic_candidate_preserves_zero_authority",
+    "reference_regression_retires_through_fallback",
+    "missing_baseline_matrix_rejects_without_state_change",
+    "incomplete_tradeoff_partition_rejects_without_state_change",
+    "hardware_mismatch_without_refusal_rejects_without_state_change",
+    "canary_admission_without_fallback_rejects_without_state_change",
+    "retired_candidate_is_absorbing_one_step",
+    "retired_candidate_is_absorbing_for_any_suffix",
+    "structural_summary_collides_across_canary_eligibility",
+    "no_structural_summary_classifier_recovers_canary_eligibility",
+}
+
+IDENTITY_AND_AUTHORITY_FIELDS = (
+    "candidate_digest",
+    "expected_candidate_digest",
+    "workload_digest",
+    "expected_workload_digest",
+    "baseline_digest",
+    "expected_baseline_digest",
+    "tradeoff_digest",
+    "expected_tradeoff_digest",
+    "hardware_digest",
+    "expected_hardware_digest",
+    "authority_ceiling",
+    "support_assignments",
+    "external_effects",
+)
+
+REFERENCE_EVENTS = (
+    ("certify", 101, True),
+    ("bind", 101, 202, 303, True),
+    ("tradeoffs", 101, 404, True, True, True, True),
+    ("hardware", 101, 505, True, False),
+    ("admit", 101, 303, 404, 505, True),
+)
+
+LIFECYCLE_EVENTS = (
+    *REFERENCE_EVENTS,
+    ("certify", 999, True),
+    ("certify", 101, False),
+    ("bind", 101, 999, 303, True),
+    ("bind", 101, 202, 303, False),
+    ("tradeoffs", 101, 404, False, True, True, True),
+    ("tradeoffs", 101, 404, True, False, True, True),
+    ("tradeoffs", 101, 404, True, True, False, True),
+    ("tradeoffs", 101, 404, True, True, True, False),
+    ("hardware", 101, 505, False, True),
+    ("hardware", 101, 505, False, False),
+    ("admit", 101, 303, 404, 505, False),
+    ("regression", 101, True),
+    ("regression", 101, False),
+    ("retire", 101, True),
+    ("retire", 101, False),
+)
+
 
 def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
@@ -134,6 +203,299 @@ def chapter_record(structure: dict[str, Any], chapter_id: str) -> dict[str, Any]
             if isinstance(chapter, dict) and chapter.get("id") == chapter_id:
                 return chapter
     return {}
+
+
+def reference_candidate() -> dict[str, Any]:
+    return {
+        "stage": "proposed",
+        "candidate_digest": 101,
+        "expected_candidate_digest": 101,
+        "workload_digest": 202,
+        "expected_workload_digest": 202,
+        "baseline_digest": 303,
+        "expected_baseline_digest": 303,
+        "tradeoff_digest": 404,
+        "expected_tradeoff_digest": 404,
+        "hardware_digest": 505,
+        "expected_hardware_digest": 505,
+        "structural_receipt_bound": False,
+        "baseline_matrix_bound": False,
+        "tradeoff_metrics_bound": False,
+        "hardware_route_bound": False,
+        "fallback_ready": False,
+        "receipts": 0,
+        "authority_ceiling": 2,
+        "support_assignments": 0,
+        "external_effects": 0,
+    }
+
+
+def candidate_step(state: dict[str, Any], event: tuple[Any, ...]) -> tuple[str, dict[str, Any]]:
+    kind, *args = event
+    next_state = copy.deepcopy(state)
+    accepted = False
+    if kind == "certify":
+        candidate, receipt_valid = args
+        accepted = (
+            state["stage"] == "proposed"
+            and candidate == state["candidate_digest"]
+            and state["candidate_digest"] == state["expected_candidate_digest"]
+            and receipt_valid is True
+        )
+        if accepted:
+            next_state["stage"] = "structure_certified"
+            next_state["structural_receipt_bound"] = True
+    elif kind == "bind":
+        candidate, workload, baseline, complete = args
+        accepted = (
+            state["stage"] == "structure_certified"
+            and candidate == state["candidate_digest"]
+            and workload == state["workload_digest"] == state["expected_workload_digest"]
+            and baseline == state["baseline_digest"] == state["expected_baseline_digest"]
+            and complete is True
+        )
+        if accepted:
+            next_state["stage"] = "baseline_bound"
+            next_state["baseline_matrix_bound"] = True
+    elif kind == "tradeoffs":
+        candidate, tradeoff, quality, runtime, memory, parameters = args
+        accepted = (
+            state["stage"] == "baseline_bound"
+            and candidate == state["candidate_digest"]
+            and tradeoff == state["tradeoff_digest"] == state["expected_tradeoff_digest"]
+            and all((quality, runtime, memory, parameters))
+        )
+        if accepted:
+            next_state["stage"] = "tradeoffs_recorded"
+            next_state["tradeoff_metrics_bound"] = True
+    elif kind == "hardware":
+        candidate, hardware, kernel_available, refusal_path = args
+        accepted = (
+            state["stage"] == "tradeoffs_recorded"
+            and candidate == state["candidate_digest"]
+            and hardware == state["hardware_digest"] == state["expected_hardware_digest"]
+            and (kernel_available is True or refusal_path is True)
+        )
+        if accepted:
+            next_state["stage"] = "hardware_qualified"
+            next_state["hardware_route_bound"] = True
+    elif kind == "admit":
+        candidate, baseline, tradeoff, hardware, fallback = args
+        accepted = (
+            state["stage"] == "hardware_qualified"
+            and candidate == state["candidate_digest"]
+            and baseline == state["baseline_digest"]
+            and tradeoff == state["tradeoff_digest"]
+            and hardware == state["hardware_digest"]
+            and all(
+                (
+                    state["structural_receipt_bound"],
+                    state["baseline_matrix_bound"],
+                    state["tradeoff_metrics_bound"],
+                    state["hardware_route_bound"],
+                    fallback,
+                )
+            )
+        )
+        if accepted:
+            next_state["stage"] = "canary_eligible"
+            next_state["fallback_ready"] = True
+    elif kind == "regression":
+        candidate, fallback_applied = args
+        accepted = (
+            state["stage"] == "canary_eligible"
+            and candidate == state["candidate_digest"]
+            and state["fallback_ready"] is True
+            and fallback_applied is True
+        )
+        if accepted:
+            next_state["stage"] = "retired"
+    elif kind == "retire":
+        candidate, residual_owned = args
+        accepted = (
+            state["stage"] != "retired"
+            and candidate == state["candidate_digest"]
+            and residual_owned is True
+        )
+        if accepted:
+            next_state["stage"] = "retired"
+    else:
+        raise ValueError(f"unknown cyclic candidate event: {event}")
+    if accepted:
+        next_state["receipts"] += 1
+        return "accepted", next_state
+    return "rejected", copy.deepcopy(state)
+
+
+def run_candidate(state: dict[str, Any], events: tuple[tuple[Any, ...], ...]) -> dict[str, Any]:
+    current = copy.deepcopy(state)
+    for event in events:
+        _, current = candidate_step(current, event)
+    return current
+
+
+def candidate_invariant(state: dict[str, Any]) -> bool:
+    if state["support_assignments"] != 0 or state["external_effects"] != 0:
+        return False
+    required = {
+        "structure_certified": ("structural_receipt_bound",),
+        "baseline_bound": ("structural_receipt_bound", "baseline_matrix_bound"),
+        "tradeoffs_recorded": (
+            "structural_receipt_bound",
+            "baseline_matrix_bound",
+            "tradeoff_metrics_bound",
+        ),
+        "hardware_qualified": (
+            "structural_receipt_bound",
+            "baseline_matrix_bound",
+            "tradeoff_metrics_bound",
+            "hardware_route_bound",
+        ),
+        "canary_eligible": (
+            "structural_receipt_bound",
+            "baseline_matrix_bound",
+            "tradeoff_metrics_bound",
+            "hardware_route_bound",
+            "fallback_ready",
+        ),
+    }
+    return all(state[field] is True for field in required.get(state["stage"], ()))
+
+
+def candidate_key(state: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(state[key] for key in state)
+
+
+def explore_candidates(roots: tuple[dict[str, Any], ...]) -> dict[tuple[Any, ...], dict[str, Any]]:
+    reachable = {candidate_key(root): copy.deepcopy(root) for root in roots}
+    frontier = list(reachable.values())
+    while frontier:
+        state = frontier.pop()
+        for event in LIFECYCLE_EVENTS:
+            _, next_state = candidate_step(state, event)
+            key = candidate_key(next_state)
+            if key not in reachable:
+                reachable[key] = next_state
+                frontier.append(next_state)
+    return reachable
+
+
+def validate_lifecycle(errors: list[str]) -> dict[str, int]:
+    theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)", LEAN_MODULE.read_text()))
+    missing = sorted(LIFECYCLE_THEOREMS - theorem_names)
+    if missing:
+        errors.append(f"CyclicMixers lifecycle theorem surface is missing: {missing}")
+    if len(theorem_names) != 23:
+        errors.append(f"CyclicMixers theorem count must be 23, observed {len(theorem_names)}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/CyclicMixers.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(f"CyclicMixers Lean compilation failed: {completed.stdout}{completed.stderr}")
+
+    initial = reference_candidate()
+    final = run_candidate(initial, REFERENCE_EVENTS)
+    if final["stage"] != "canary_eligible" or final["receipts"] != 5:
+        errors.append("reference cyclic candidate did not reach exact canary eligibility")
+    regression_route, retired = candidate_step(final, ("regression", 101, True))
+    if regression_route != "accepted" or retired["stage"] != "retired":
+        errors.append("reference cyclic regression did not retire through fallback")
+
+    split_count = 0
+    for index in range(len(REFERENCE_EVENTS) + 1):
+        left = REFERENCE_EVENTS[:index]
+        right = REFERENCE_EVENTS[index:]
+        if run_candidate(initial, REFERENCE_EVENTS) != run_candidate(run_candidate(initial, left), right):
+            errors.append(f"cyclic lifecycle composition failed at split {index}")
+        else:
+            split_count += 1
+
+    roots = [initial]
+    for field in (
+        "candidate_digest",
+        "workload_digest",
+        "baseline_digest",
+        "tradeoff_digest",
+        "hardware_digest",
+    ):
+        root = reference_candidate()
+        root[field] = 999
+        roots.append(root)
+    reachable = explore_candidates(tuple(roots))
+    transition_count = 0
+    rejected_count = 0
+    retired_states = []
+    for state in reachable.values():
+        if not candidate_invariant(state):
+            errors.append(f"reachable cyclic candidate violates invariant: {state}")
+        if state["stage"] == "retired":
+            retired_states.append(state)
+        for event in LIFECYCLE_EVENTS:
+            transition_count += 1
+            route, next_state = candidate_step(state, event)
+            if any(next_state[field] != state[field] for field in IDENTITY_AND_AUTHORITY_FIELDS):
+                errors.append(f"cyclic candidate custody changed through {state['stage']}:{event[0]}")
+            if candidate_invariant(state) and not candidate_invariant(next_state):
+                errors.append(f"cyclic candidate invariant failed through {state['stage']}:{event[0]}")
+            if route == "rejected":
+                rejected_count += 1
+                if next_state != state:
+                    errors.append(f"rejected cyclic event changed state: {state['stage']}:{event}")
+
+    absorbing_transitions = 0
+    for state in retired_states:
+        for event in LIFECYCLE_EVENTS:
+            absorbing_transitions += 1
+            _, next_state = candidate_step(state, event)
+            if next_state != state:
+                errors.append(f"retired cyclic candidate reopened through {event}")
+
+    qualified = run_candidate(initial, REFERENCE_EVENTS[:4])
+    structural = run_candidate(initial, REFERENCE_EVENTS[:1])
+    if (qualified["candidate_digest"], qualified["structural_receipt_bound"]) != (
+        structural["candidate_digest"],
+        structural["structural_receipt_bound"],
+    ):
+        errors.append("structural-summary collision witness drifted")
+    if qualified["stage"] != "hardware_qualified" or structural["stage"] == "hardware_qualified":
+        errors.append("structural-summary collision no longer separates canary eligibility")
+
+    semantic_mutations = 0
+    _, certified = candidate_step(initial, REFERENCE_EVENTS[0])
+    for field in IDENTITY_AND_AUTHORITY_FIELDS:
+        mutation = copy.deepcopy(certified)
+        mutation[field] += 1
+        if all(mutation[name] == initial[name] for name in IDENTITY_AND_AUTHORITY_FIELDS):
+            errors.append(f"cyclic custody mutation was not detected for {field}")
+        else:
+            semantic_mutations += 1
+    for field in (
+        "structural_receipt_bound",
+        "baseline_matrix_bound",
+        "tradeoff_metrics_bound",
+        "hardware_route_bound",
+        "fallback_ready",
+    ):
+        mutation = copy.deepcopy(final)
+        mutation[field] = False
+        if candidate_invariant(mutation):
+            errors.append(f"cyclic stage-coherence mutation was not detected for {field}")
+        else:
+            semantic_mutations += 1
+
+    return {
+        "trace_splits": split_count,
+        "reachable_states": len(reachable),
+        "reachable_transitions": transition_count,
+        "reachable_rejections": rejected_count,
+        "retired_states": len(retired_states),
+        "absorbing_transitions": absorbing_transitions,
+        "semantic_mutations": semantic_mutations,
+    }
 
 
 def validate_result(errors: list[str]) -> dict[str, Any]:
@@ -344,6 +706,7 @@ def main() -> None:
     validate_result(errors)
     validate_transition(errors)
     validate_surfaces(errors)
+    lifecycle = validate_lifecycle(errors)
 
     if errors:
         print("Circle cyclic-mixer receipt slice validation failed:")
@@ -354,7 +717,12 @@ def main() -> None:
     print(
         "Circle cyclic-mixer receipt slice validation passed: "
         "CC-AI-CONTRACT-MIXER-001 max_abs_dense_delta=0, "
-        "block_to_dense_ratio=0.0625, no support-state promotion."
+        "block_to_dense_ratio=0.0625; 23 Lean declarations, "
+        f"{lifecycle['trace_splits']}/6 trace splits, {lifecycle['reachable_states']} "
+        f"reachable states through {lifecycle['reachable_transitions']} transitions "
+        f"({lifecycle['reachable_rejections']} rejections), {lifecycle['retired_states']} "
+        f"retired states through {lifecycle['absorbing_transitions']} absorbing transitions, "
+        f"and {lifecycle['semantic_mutations']} semantic mutations; no support-state promotion."
     )
 
 

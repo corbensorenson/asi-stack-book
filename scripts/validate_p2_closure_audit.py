@@ -34,10 +34,10 @@ HISTORICAL_EXPECTED_CLASSES = {
     "research-agenda until artifact import": 2,
 }
 CURRENT_EXPECTED_CLASSES = {
-    "adequate finite-record invariant": 242,
+    "adequate finite-record invariant": 244,
     "useful but too narrow": 68,
     "needs executable tests first": 3,
-    "needs empirical or baseline tests first": 17,
+    "needs empirical or baseline tests first": 15,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
     "white-box-evidence-interpretability-and-activation-governance",

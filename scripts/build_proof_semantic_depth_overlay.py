@@ -3484,6 +3484,110 @@ for theorem_name in (
         ),
     }
 
+_cyclic_mixer_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean/AsiStackProofs/CyclicMixers.lean",
+        "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
+        "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json",
+    ],
+}
+
+for theorem_name in (
+    "cyclic_mixer_claim_missing_claim_partition_rejected",
+    "cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected",
+    "cyclic_alias_diagnostic_without_winding_or_visible_residual_rejected",
+    "cyclic_adoption_without_complete_tradeoff_packet_rejected",
+    "hardware_mismatch_without_refusal_path_rejected",
+    "missing_baseline_matrix_rejects_without_state_change",
+    "incomplete_tradeoff_partition_rejects_without_state_change",
+    "hardware_mismatch_without_refusal_rejects_without_state_change",
+    "canary_admission_without_fallback_rejects_without_state_change",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CyclicMixers.lean::{theorem_name}"
+    ] = {
+        **_cyclic_mixer_refinement_base,
+        "semantic_level": "P1",
+        "classification_basis": [
+            "one-step finite claim-partition, baseline, tradeoff, hardware, alias, or fallback rejection consequence"
+        ],
+        "rationale": (
+            "The theorem closes a named local adoption guard; it does not establish model quality, performance, or deployed routing."
+        ),
+    }
+
+for theorem_name in (
+    "reference_cyclic_candidate_reaches_canary_eligibility",
+    "reference_cyclic_candidate_preserves_zero_authority",
+    "reference_regression_retires_through_fallback",
+    "structural_summary_collides_across_canary_eligibility",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CyclicMixers.lean::{theorem_name}"
+    ] = {
+        **_cyclic_mixer_refinement_base,
+        "semantic_level": "P2",
+        "classification_basis": [
+            "closed reachable witness for canary eligibility, fallback retirement, non-authority, or structural-summary insufficiency"
+        ],
+        "rationale": (
+            "The theorem establishes bounded nonvacuity for the authored candidate lifecycle, not useful or safe canary behavior."
+        ),
+    }
+
+for theorem_name in (
+    "cyclic_candidate_step_preserves_custody",
+    "cyclic_candidate_step_preserves_invariant",
+    "run_cyclic_candidate_append",
+    "no_structural_summary_classifier_recovers_canary_eligibility",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CyclicMixers.lean::{theorem_name}"
+    ] = {
+        **_cyclic_mixer_refinement_base,
+        "semantic_level": "P3",
+        "classification_basis": [
+            "implementation refinement or information boundary for the executable finite canary-admission runner"
+        ],
+        "rationale": (
+            "The theorem refines exact authored transition or information-loss semantics; metric and artifact truth remain inputs."
+        ),
+    }
+
+for theorem_name in (
+    "cyclic_candidate_rejected_event_is_noninterfering",
+    "cyclic_candidate_custody_transitive",
+    "run_cyclic_candidate_preserves_custody",
+    "run_cyclic_candidate_preserves_invariant",
+    "retired_candidate_is_absorbing_one_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/CyclicMixers.lean::{theorem_name}"
+    ] = {
+        **_cyclic_mixer_refinement_base,
+        "semantic_level": "P4",
+        "classification_basis": [
+            "finite noninterference or arbitrary-run safety composition over candidate custody, authority, gate coherence, or retirement"
+        ],
+        "rationale": (
+            "The theorem prevents a named finite gate interference under authored inputs; deployed substrate enforcement remains unproved."
+        ),
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/CyclicMixers.lean::retired_candidate_is_absorbing_for_any_suffix"
+] = {
+    **_cyclic_mixer_refinement_base,
+    "semantic_level": "P5",
+    "classification_basis": [
+        "arbitrary finite suffix absorption for a retired cyclic candidate"
+    ],
+    "rationale": (
+        "The theorem establishes bounded terminal closure only; it does not establish unbounded liveness, recovery, or deployed rollback."
+    ),
+}
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.
