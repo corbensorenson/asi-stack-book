@@ -23,15 +23,31 @@ EXPECTED_NON_AUTHORITIES = {"legal_compliance", "valid_consent", "lawful_basis",
 REQUIRED_SURFACES = {"input", "context", "memory", "training", "inference", "output", "audit", "sharing", "cache", "backup", "checkpoint", "derivative"}
 REQUIRED_ATTACKS = {"extraction", "confidence-membership", "label-only-membership", "linkage", "cross-user-memory"}
 LEAN = ROOT / "lean/AsiStackProofs/PrivacyInformationFlow.lean"
+ROUTE_THEOREMS = {
+    "accepted_requires_purpose_and_authority",
+    "accepted_requires_flow_and_privacy_evaluation",
+    "accepted_separates_outcomes_and_refuses_compliance",
+    "purpose_drift_rejects",
+    "hidden_unknown_copies_request_flow_map",
+    "label_attack_incompetence_rejects_privacy_evaluation",
+    "missing_recipient_notice_requests_rights_work",
+    "conflated_behavior_and_storage_quarantines",
+    "compliance_laundering_quarantines",
+    "release_laundering_quarantines",
+    "complete_authored_record_accepts_bounded_receipt",
+}
 LIFECYCLE_THEOREMS = {
     "accepted_information_step_is_valid",
     "accepted_information_step_applies_event",
     "apply_information_event_preserves_identity",
     "accepted_information_step_preserves_non_authority",
+    "accepted_information_step_preserves_known_copy_inventory",
+    "rejected_information_step_preserves_exact_state",
     "accepted_information_step_adds_one_receipt",
     "accepted_information_step_respects_authority_ceiling",
     "successful_information_run_preserves_identity",
     "successful_information_run_preserves_non_authority",
+    "successful_information_run_preserves_known_copy_inventory",
     "successful_information_run_respects_authority_ceiling",
     "successful_information_run_has_valid_trace",
     "information_run_composes",
@@ -39,7 +55,15 @@ LIFECYCLE_THEOREMS = {
     "accepted_activation_requires_rights_disposition",
     "accepted_revocation_zeros_information_authority",
     "accepted_deletion_records_only_known_copy_disposition",
+    "deletion_recorded_information_state_rejects_every_event",
+    "deletion_recorded_information_state_has_no_nonempty_run",
+    "complete_information_prefix_reaches_exact_revoked_state",
     "complete_information_run_reaches_bounded_deletion_record",
+    "information_same_count_copy_substitution_is_rejected",
+    "information_duplicate_known_copy_inventory_is_rejected",
+    "information_copy_disposition_count_summary_collides",
+    "information_exact_inventory_separates_count_collision",
+    "no_exact_copy_deletion_classifier_from_count_only",
 }
 
 
@@ -80,11 +104,12 @@ def validate(record: dict, schema: dict) -> list[str]:
 def validate_lean_surface() -> None:
     text = LEAN.read_text(encoding="utf-8")
     theorems = set(re.findall(r"^theorem\s+([A-Za-z0-9_]+)", text, re.MULTILINE))
-    if len(theorems) != 27:
-        raise SystemExit(f"Privacy Lean surface must contain exactly 27 theorems, found {len(theorems)}.")
-    missing = sorted(LIFECYCLE_THEOREMS - theorems)
-    if missing:
-        raise SystemExit(f"Privacy lifecycle theorem(s) missing: {missing}")
+    expected = ROUTE_THEOREMS | LIFECYCLE_THEOREMS
+    if theorems != expected:
+        raise SystemExit(
+            "Privacy Lean theorem surface drifted: "
+            f"missing={sorted(expected - theorems)}, extra={sorted(theorems - expected)}."
+        )
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/PrivacyInformationFlow.lean"],
         cwd=ROOT / "lean",
@@ -98,6 +123,12 @@ def validate_lean_surface() -> None:
 def lifecycle_step(state: dict, event: dict) -> dict | None:
     identity = ("subject_id", "dataset_id", "purpose_lease_id", "jurisdiction_id")
     if any(event[field] != state[field] for field in identity):
+        return None
+    if event["known_copy_ids"] != state["known_copy_ids"]:
+        return None
+    if len(state["known_copy_ids"]) != len(set(state["known_copy_ids"])):
+        return None
+    if state["known_copies"] != len(state["known_copy_ids"]):
         return None
     if event["requested_authority"] > state["authority_ceiling"]:
         return None
@@ -139,7 +170,11 @@ def lifecycle_step(state: dict, event: dict) -> dict | None:
         valid = True
         next_stage = "revoked"
     elif transition == ("revoked", "record_deletion"):
-        valid = event["outcomes_separated"] and event["disposed_copies"] == state["known_copies"]
+        valid = (
+            event["outcomes_separated"]
+            and event["disposed_copies"] == state["known_copies"]
+            and event["requested_disposed_copy_ids"] == state["known_copy_ids"]
+        )
         next_stage = "deletion_recorded"
     else:
         return None
@@ -154,7 +189,13 @@ def lifecycle_step(state: dict, event: dict) -> dict | None:
         next_state["active_authority"] = 0
     if event["kind"] == "record_deletion":
         next_state["disposed_copies"] = event["disposed_copies"]
+        next_state["disposed_copy_ids"] = copy.deepcopy(event["requested_disposed_copy_ids"])
     return next_state
+
+
+def process_lifecycle_event(state: dict, event: dict) -> tuple[dict, bool]:
+    next_state = lifecycle_step(state, event)
+    return (copy.deepcopy(state), False) if next_state is None else (next_state, True)
 
 
 def validate_lifecycle_consumer() -> int:
@@ -168,6 +209,8 @@ def validate_lifecycle_consumer() -> int:
         "active_authority": 0,
         "known_copies": 4,
         "disposed_copies": 0,
+        "known_copy_ids": [53, 59, 61, 67],
+        "disposed_copy_ids": [],
         "receipts": 0,
         "support_count": 0,
         "external_effect_authority_count": 0,
@@ -180,6 +223,8 @@ def validate_lifecycle_consumer() -> int:
             "dataset_id": 20,
             "purpose_lease_id": 30,
             "jurisdiction_id": 40,
+            "known_copy_ids": [53, 59, 61, 67],
+            "requested_disposed_copy_ids": [53, 59, 61, 67],
             "requested_authority": 2,
             "purpose_matches": True,
             "authority_recorded": True,
@@ -224,13 +269,15 @@ def validate_lifecycle_consumer() -> int:
             raise SystemExit("Independent privacy lifecycle did not close.")
         states.append(next_state)
     final = states[-1]
-    identity = ("subject_id", "dataset_id", "purpose_lease_id", "jurisdiction_id", "authority_ceiling", "known_copies")
+    identity = ("subject_id", "dataset_id", "purpose_lease_id", "jurisdiction_id", "authority_ceiling", "known_copies", "known_copy_ids")
     if any(final[field] != initial[field] for field in identity):
         raise SystemExit("Independent privacy lifecycle changed transaction identity.")
     if final["stage"] != "deletion_recorded" or final["active_authority"] != 0:
         raise SystemExit("Independent privacy lifecycle did not close authority before deletion recording.")
     if final["disposed_copies"] != final["known_copies"] or final["receipts"] != 8:
         raise SystemExit("Independent privacy lifecycle lost bounded copy or receipt accounting.")
+    if final["disposed_copy_ids"] != final["known_copy_ids"]:
+        raise SystemExit("Independent privacy lifecycle lost exact known-copy disposition identity.")
     if final["support_count"] != 0 or final["external_effect_authority_count"] != 0:
         raise SystemExit("Independent privacy lifecycle assigned support or external-effect authority.")
 
@@ -246,15 +293,61 @@ def validate_lifecycle_consumer() -> int:
         (states[5], event("record_deletion")),
         (states[7], event("record_deletion", disposed_copies=3)),
         (states[7], event("record_deletion", total_erasure_claimed=True)),
+        (states[6], event("revoke_purpose", known_copy_ids=[53, 59, 61, 71])),
+        (states[7], event("record_deletion", requested_disposed_copy_ids=[53, 59, 61, 71])),
+        (
+            {**states[7], "known_copy_ids": [53, 53, 61, 67]},
+            event(
+                "record_deletion",
+                known_copy_ids=[53, 53, 61, 67],
+                requested_disposed_copy_ids=[53, 53, 61, 67],
+            ),
+        ),
     ]
-    if any(lifecycle_step(state, item) is not None for state, item in controls):
-        raise SystemExit("Independent privacy lifecycle accepted a rejecting control.")
-    return len(controls)
+    for state, item in controls:
+        processed, accepted = process_lifecycle_event(state, item)
+        if accepted or processed != state:
+            raise SystemExit("Independent privacy lifecycle accepted or mutated a rejecting control.")
+
+    from itertools import permutations
+
+    canonical = initial["known_copy_ids"]
+    permutations_checked = 0
+    accepted_permutations = 0
+    for ordering in permutations(canonical):
+        permutations_checked += 1
+        candidate = lifecycle_step(
+            states[7],
+            event("record_deletion", requested_disposed_copy_ids=list(ordering)),
+        )
+        if candidate is not None:
+            accepted_permutations += 1
+            if list(ordering) != canonical:
+                raise SystemExit("Independent privacy lifecycle accepted reordered copy identity.")
+    if permutations_checked != 24 or accepted_permutations != 1:
+        raise SystemExit("Independent privacy copy-inventory permutation denominator drifted.")
+
+    valid_deletion = event("record_deletion")
+    substituted = event("record_deletion", requested_disposed_copy_ids=[53, 59, 61, 71])
+    if valid_deletion["disposed_copies"] != substituted["disposed_copies"]:
+        raise SystemExit("Independent privacy count-collision witness lost equal count.")
+    if valid_deletion["requested_disposed_copy_ids"] == substituted["requested_disposed_copy_ids"]:
+        raise SystemExit("Independent privacy count-collision witness lost identity separation.")
+    if lifecycle_step(states[7], valid_deletion) is None or lifecycle_step(states[7], substituted) is not None:
+        raise SystemExit("Exact copy identity did not separate the count collision.")
+
+    event_kinds = (
+        "bind_purpose", "record_minimization", "map_flows", "evaluate_privacy",
+        "disposition_rights", "activate_use", "revoke_purpose", "record_deletion",
+    )
+    if any(lifecycle_step(final, event(kind)) is not None for kind in event_kinds):
+        raise SystemExit("Independent deletion-recorded state accepted a terminal event.")
+    return len(controls), permutations_checked, len(event_kinds)
 
 
 def main() -> None:
     validate_lean_surface()
-    lifecycle_controls = validate_lifecycle_consumer()
+    lifecycle_controls, inventory_permutations, terminal_event_kinds = validate_lifecycle_consumer()
     schema, record = load(SCHEMA), load(FIXTURE)
     baseline = validate(record, schema)
     if baseline:
@@ -299,10 +392,12 @@ def main() -> None:
     if missing or notes:
         raise SystemExit(f"Source packet incomplete: inventory={missing}, notes={notes}")
     print(
-        "Information lifecycle transaction passed: exact 27-theorem Lean surface recompiled; "
+        "Information lifecycle transaction passed: exact 38-theorem Lean surface recompiled; "
         "purpose/authority, minimization, 12-surface flow, derivatives, privacy evaluation, "
         f"rights receipts, nine sources, ten non-authorities, 26 fixture mutations, and {lifecycle_controls} "
-        "lifecycle controls; no personal-data, privacy, compliance, total-erasure, support, or release claim."
+        f"lifecycle controls with exact state preservation, {inventory_permutations} known-copy inventory "
+        f"permutations, and {terminal_event_kinds} deletion-recorded event kinds; no personal-data, "
+        "privacy, compliance, total-erasure, support, or release claim."
     )
 
 

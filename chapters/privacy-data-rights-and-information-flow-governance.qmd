@@ -22,7 +22,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "No ASI Stack privacy/data-rights campaign has run for this chapter."
   - "The authored transaction fixture is record-shape evidence only."
-  - "The exact 27-declaration Lean surface and independent eight-stage consumer prove only authored finite-run identity, authority-ceiling, non-authority, receipt, stage-order, revocation, and known-copy disposition consequences. Event truth, unknown-copy discovery, deletion in fact, total erasure, privacy, compliance, and rights fulfillment remain unproved."
+  - "The exact 38-declaration Lean surface and independent eight-stage consumer prove only authored finite-run transaction and canonical duplicate-free known-copy identity, authority-ceiling, non-authority, receipt, stage-order, exact rejected-state, revocation, exact known-copy disposition, terminal deletion-recording, and count-only identity-impossibility consequences. The consumer rejects fourteen lifecycle controls without state change, checks all 24 permutations of a four-copy inventory, and rejects all eight event kinds after deletion recording. Event truth, unknown-copy discovery, inventory completeness, deletion in fact, total erasure, privacy, compliance, and rights fulfillment remain unproved."
   - "No source mechanism, attack, legal determination, or rights workflow has been reproduced locally."
   - "No group-privacy remedy or universal jurisdictional mapping is established."
 ---
@@ -540,17 +540,22 @@ At least three seeds, positive-control canaries, independent attack and receipt
 evaluators, complete denominator custody, cost measurement, and unopened final
 qualification are required. The current authored fixture and Lean model are a
 precondition for this implementation, not evidence that it already exists. The
-formal surface now has 27 declarations: the original route consequences plus a
+formal surface now has 38 declarations: the eleven original route consequences plus a
 reachable purpose, minimization, flow-map, privacy-evaluation,
 rights-disposition, activation, revocation, and bounded deletion-record
 lifecycle. Arbitrary accepted finite runs preserve exact
-subject/dataset/purpose/jurisdiction/copy identity, authority ceilings, and zero
+subject/dataset/purpose/jurisdiction identity, a canonical duplicate-free
+known-copy identity inventory, authority ceilings, and zero
 support or external-effect authority; every event adds one receipt, activation
 requires prior rights disposition, active use cannot jump directly to deletion,
-revocation zeros modeled authority, and deletion records disposition only for
-the already-declared known-copy count. The independent consumer recompiles the
-exact surface and rejects eleven purpose, identity, authority, flow, evaluator,
-rights, stage-order, deletion, compliance, erasure, and nonpromotion controls.
+revocation zeros modeled authority, exact deletion disposition must name the
+already-declared known-copy identities, and deletion recording becomes terminal.
+Rejected events preserve exact state, and a same-count substitution witness proves
+that count-only admission cannot recover copy identity. The independent consumer
+recompiles the exact surface, rejects fourteen purpose, identity, authority, flow,
+evaluator, rights, stage-order, deletion, compliance, erasure, inventory, and
+nonpromotion controls without state change, checks all 24 four-copy permutations,
+and rejects all eight event kinds after deletion recording.
 All predicates remain authored.
 
 ## Mature Research Target
@@ -592,7 +597,7 @@ outcomes satisfy the frozen transition rules.
 | Test | Purpose | Status |
 |---|---|---|
 | Information-lifecycle transaction contract | Validate purpose/authority, minimization, twelve flow surfaces, derivative propagation, privacy evaluation, rights receipts, sources, non-authorities, and 26 semantic mutations. | implemented; authored record only |
-| Lean information-flow semantics | Check bounded admission requirements plus a reachable purpose-to-revocation/deletion-record lifecycle with arbitrary-run identity, authority-ceiling, non-authority, receipt, trace, composition, stage-order, and known-copy disposition invariants. | implemented as exactly 27 declarations; the independent consumer recompiles the module, closes one eight-event witness, and rejects eleven lifecycle controls; finite authored model only |
+| Lean information-flow semantics | Check bounded admission requirements plus a reachable purpose-to-revocation/deletion-record lifecycle with arbitrary-run transaction and exact known-copy identity, authority-ceiling, non-authority, receipt, trace, composition, stage-order, rejected-state, exact disposition, terminal-state, and count-only impossibility invariants. | implemented as exactly 38 declarations: eleven routes plus 27 lifecycle results; the independent consumer recompiles the module, closes one eight-event witness, rejects fourteen lifecycle controls without state change, checks all 24 four-copy permutations, and rejects all eight event kinds after deletion recording; finite authored model only |
 | Natural privacy and rights campaign | Compare six competent matched arms across thirteen failure families, at least three seeds, strong attacks, rights propagation, and joint outcomes. | prospectively specified; not run |
 | Independent attack reproduction | Reimplement extraction, confidence and label-only membership, linkage, cross-user, and purpose-bypass evaluations without sharing candidate code. | planned after instrument qualification |
 | Rights and descendant replay | Reconstruct access, correction, export, restriction, deletion, recipient notification, backup, exception, and residual paths from retained artifacts. | planned after a valid campaign |
@@ -661,12 +666,14 @@ consequences:
    privacy-evaluation predicates; and
 2. `lean:privacy_information_flow.outcome_separation` — a completed deletion
    route preserves the distinction between storage disposition, behavioral
-   evidence, influence evidence, and legal-compliance authority. Its exact 27
+   evidence, influence evidence, and legal-compliance authority. Its exact 38
    declarations also preserve transaction identity, authority ceilings,
    non-authority, receipt accounting, valid traces, and composition across
    arbitrary accepted finite runs; activation requires rights disposition,
-   revocation zeros authority, and deletion recording is bounded to known
-   copies without claiming total erasure.
+   revocation zeros authority, exact deletion recording is bounded to the
+   canonical duplicate-free known-copy identities, rejected events preserve
+   exact state, deletion recording is terminal, and count-only admission cannot
+   recover identity, without claiming copy completeness or total erasure.
 
 These theorems trust their input predicates. They do not prove a real purpose is
 lawful, the flow graph or known-copy inventory complete, the DP implementation

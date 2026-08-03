@@ -168,6 +168,8 @@ structure InformationState where
   activeAuthority : Nat
   knownCopyCount : Nat
   disposedCopyCount : Nat
+  knownCopyIds : List Nat
+  disposedCopyIds : List Nat
   receiptCount : Nat
   supportAssignmentCount : Nat
   externalEffectAuthorityCount : Nat
@@ -179,6 +181,8 @@ structure InformationEvent where
   datasetId : Nat
   purposeLeaseId : Nat
   jurisdictionId : Nat
+  knownCopyIds : List Nat
+  requestedDisposedCopyIds : List Nat
   requestedAuthority : Nat
   purposeMatches : Bool
   claimedAuthorityRecorded : Bool
@@ -211,6 +215,7 @@ structure InformationIdentity where
   jurisdictionId : Nat
   authorityCeiling : Nat
   knownCopyCount : Nat
+  knownCopyIds : List Nat
 deriving DecidableEq, Repr
 
 def informationIdentity (state : InformationState) : InformationIdentity := {
@@ -220,6 +225,7 @@ def informationIdentity (state : InformationState) : InformationIdentity := {
   jurisdictionId := state.jurisdictionId
   authorityCeiling := state.authorityCeiling
   knownCopyCount := state.knownCopyCount
+  knownCopyIds := state.knownCopyIds
 }
 
 def InformationEventValid
@@ -228,6 +234,9 @@ def InformationEventValid
     event.datasetId = state.datasetId ∧
     event.purposeLeaseId = state.purposeLeaseId ∧
     event.jurisdictionId = state.jurisdictionId ∧
+    event.knownCopyIds = state.knownCopyIds ∧
+    state.knownCopyIds.Nodup ∧
+    state.knownCopyCount = state.knownCopyIds.length ∧
     event.requestedAuthority ≤ state.authorityCeiling ∧
     event.legalComplianceClaimed = false ∧
     event.totalErasureClaimed = false ∧
@@ -259,7 +268,8 @@ def InformationEventValid
     | .active, .revokePurpose => True
     | .revoked, .recordDeletion =>
         event.outcomesSeparated = true ∧
-          event.disposedCopyCount = state.knownCopyCount
+          event.disposedCopyCount = state.knownCopyCount ∧
+          event.requestedDisposedCopyIds = state.knownCopyIds
     | _, _ => False
 
 instance informationEventValidDecidable
@@ -298,6 +308,7 @@ def applyInformationEvent
   | .recordDeletion =>
       { state with stage := .deletionRecorded
                    disposedCopyCount := event.disposedCopyCount
+                   disposedCopyIds := event.requestedDisposedCopyIds
                    receiptCount := nextReceipt }
 
 def InformationStep
@@ -312,6 +323,13 @@ def InformationRun : InformationState → List InformationEvent → Option Infor
       match InformationStep state event with
       | none => none
       | some next => InformationRun next tail
+
+def ProcessInformationEvent
+    (state : InformationState) (event : InformationEvent) :
+    InformationState × Bool :=
+  match InformationStep state event with
+  | none => (state, false)
+  | some next => (next, true)
 
 def InformationTraceValid : InformationState → List InformationEvent → Prop
   | _, [] => True
@@ -353,6 +371,21 @@ theorem accepted_information_step_preserves_non_authority
   subst next
   cases h : event.kind <;> simp [applyInformationEvent, h]
 
+theorem accepted_information_step_preserves_known_copy_inventory
+    {state next : InformationState} {event : InformationEvent}
+    (stepped : InformationStep state event = some next) :
+    next.knownCopyCount = state.knownCopyCount ∧
+      next.knownCopyIds = state.knownCopyIds := by
+  have applies := accepted_information_step_applies_event stepped
+  subst next
+  cases h : event.kind <;> simp [applyInformationEvent, h]
+
+theorem rejected_information_step_preserves_exact_state
+    (state : InformationState) (event : InformationEvent)
+    (rejected : InformationStep state event = none) :
+    ProcessInformationEvent state event = (state, false) := by
+  simp [ProcessInformationEvent, rejected]
+
 theorem accepted_information_step_adds_one_receipt
     {state next : InformationState} {event : InformationEvent}
     (stepped : InformationStep state event = some next) :
@@ -369,7 +402,7 @@ theorem accepted_information_step_respects_authority_ceiling
   have valid := accepted_information_step_is_valid stepped
   have applies := accepted_information_step_applies_event stepped
   subst next
-  rcases valid with ⟨_, _, _, _, requestedBound, _⟩
+  rcases valid with ⟨_, _, _, _, _, _, _, requestedBound, _⟩
   cases h : event.kind <;>
     simp [applyInformationEvent, h, bounded, requestedBound]
 
@@ -415,6 +448,27 @@ theorem successful_information_run_preserves_non_authority
           have stepPreserved := accepted_information_step_preserves_non_authority stepped
           exact ⟨tailPreserved.1.trans stepPreserved.1,
             tailPreserved.2.trans stepPreserved.2⟩
+
+theorem successful_information_run_preserves_known_copy_inventory
+    {state final : InformationState} {events : List InformationEvent}
+    (ran : InformationRun state events = some final) :
+    final.knownCopyCount = state.knownCopyCount ∧
+      final.knownCopyIds = state.knownCopyIds := by
+  induction events generalizing state with
+  | nil =>
+      simp [InformationRun] at ran
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      cases stepped : InformationStep state event with
+      | none => simp [InformationRun, stepped] at ran
+      | some next =>
+          have tailRan : InformationRun next tail = some final := by
+            simpa [InformationRun, stepped] using ran
+          have head :=
+            accepted_information_step_preserves_known_copy_inventory stepped
+          have rest := ih tailRan
+          exact ⟨rest.1.trans head.1, rest.2.trans head.2⟩
 
 theorem successful_information_run_respects_authority_ceiling
     {state final : InformationState} {events : List InformationEvent}
@@ -502,21 +556,42 @@ theorem accepted_deletion_records_only_known_copy_disposition
     (stepped : InformationStep state event = some next) :
     state.stage = .revoked ∧
       next.stage = .deletionRecorded ∧
-      next.disposedCopyCount = state.knownCopyCount := by
+      next.disposedCopyCount = state.knownCopyCount ∧
+      next.disposedCopyIds = state.knownCopyIds ∧
+      next.disposedCopyCount = next.disposedCopyIds.length := by
   have valid := accepted_information_step_is_valid stepped
   have applies := accepted_information_step_applies_event stepped
   have stage : state.stage = .revoked := by
     cases h : state.stage <;>
       simp [InformationEventValid, h, deletion] at valid ⊢
-  rcases valid with ⟨_, _, _, _, _, _, _, _, _, _, stageValid⟩
+  rcases valid with ⟨_, _, _, _, _, unique, knownCount, _, _, _, _, _, _, stageValid⟩
   have deletionValid :
       event.outcomesSeparated = true ∧
-        event.disposedCopyCount = state.knownCopyCount := by
+        event.disposedCopyCount = state.knownCopyCount ∧
+        event.requestedDisposedCopyIds = state.knownCopyIds := by
     simpa [stage, deletion] using stageValid
-  have disposed := deletionValid.2
+  have disposed := deletionValid.2.1
+  have disposedIds := deletionValid.2.2
   subst next
   refine ⟨stage, ?_⟩
-  simp [applyInformationEvent, deletion, disposed]
+  simp [applyInformationEvent, deletion, disposed, disposedIds, knownCount]
+
+theorem deletion_recorded_information_state_rejects_every_event
+    (state : InformationState) (event : InformationEvent)
+    (deleted : state.stage = .deletionRecorded) :
+    ¬ InformationEventValid state event := by
+  intro valid
+  rcases valid with ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, route⟩
+  cases kind : event.kind <;> simp [kind, deleted] at route
+
+theorem deletion_recorded_information_state_has_no_nonempty_run
+    (state : InformationState) (event : InformationEvent)
+    (tail : List InformationEvent)
+    (deleted : state.stage = .deletionRecorded) :
+    InformationRun state (event :: tail) = none := by
+  have rejected :=
+    deletion_recorded_information_state_rejects_every_event state event deleted
+  simp [InformationRun, InformationStep, rejected]
 
 def informationInitialState : InformationState := {
   stage := .collected
@@ -528,6 +603,8 @@ def informationInitialState : InformationState := {
   activeAuthority := 0
   knownCopyCount := 4
   disposedCopyCount := 0
+  knownCopyIds := [53, 59, 61, 67]
+  disposedCopyIds := []
   receiptCount := 0
   supportAssignmentCount := 0
   externalEffectAuthorityCount := 0
@@ -539,6 +616,8 @@ def informationEvent (kind : InformationEventKind) : InformationEvent := {
   datasetId := 20
   purposeLeaseId := 30
   jurisdictionId := 40
+  knownCopyIds := [53, 59, 61, 67]
+  requestedDisposedCopyIds := [53, 59, 61, 67]
   requestedAuthority := 2
   purposeMatches := true
   claimedAuthorityRecorded := true
@@ -574,7 +653,35 @@ def completeInformationFinalState : InformationState :=
     stage := .deletionRecorded
     activeAuthority := 0
     disposedCopyCount := 4
+    disposedCopyIds := [53, 59, 61, 67]
     receiptCount := 8 }
+
+def revokedInformationState : InformationState :=
+  { informationInitialState with
+    stage := .revoked
+    activeAuthority := 0
+    receiptCount := 7 }
+
+def informationDeletionEvent : InformationEvent :=
+  informationEvent .recordDeletion
+
+def substitutedCopyDeletionEvent : InformationEvent :=
+  { informationDeletionEvent with
+    requestedDisposedCopyIds := [53, 59, 61, 71] }
+
+def CopyDispositionCountSummary (event : InformationEvent) : Nat :=
+  event.disposedCopyCount
+
+def CopyDeletionAdmitted
+    (state : InformationState) (event : InformationEvent) : Bool :=
+  decide (InformationEventValid state event)
+
+theorem complete_information_prefix_reaches_exact_revoked_state :
+    InformationRun informationInitialState
+      ([.bindPurpose, .recordMinimization, .mapFlows, .evaluatePrivacy,
+        .dispositionRights, .activateUse, .revokePurpose].map informationEvent) =
+      some revokedInformationState := by
+  native_decide
 
 theorem complete_information_run_reaches_bounded_deletion_record :
     ∃ final,
@@ -585,5 +692,45 @@ theorem complete_information_run_reaches_bounded_deletion_record :
       final.receiptCount = 8 := by
   refine ⟨completeInformationFinalState, ?_⟩
   native_decide
+
+theorem information_same_count_copy_substitution_is_rejected :
+    InformationStep revokedInformationState substitutedCopyDeletionEvent = none := by
+  decide
+
+theorem information_duplicate_known_copy_inventory_is_rejected :
+    InformationStep
+      { revokedInformationState with knownCopyIds := [53, 53, 61, 67] }
+      { informationDeletionEvent with
+        knownCopyIds := [53, 53, 61, 67]
+        requestedDisposedCopyIds := [53, 53, 61, 67] } = none := by
+  decide
+
+theorem information_copy_disposition_count_summary_collides :
+    CopyDispositionCountSummary informationDeletionEvent =
+        CopyDispositionCountSummary substitutedCopyDeletionEvent ∧
+      informationDeletionEvent.requestedDisposedCopyIds ≠
+        substitutedCopyDeletionEvent.requestedDisposedCopyIds := by
+  decide
+
+theorem information_exact_inventory_separates_count_collision :
+    CopyDeletionAdmitted revokedInformationState informationDeletionEvent = true ∧
+      CopyDeletionAdmitted revokedInformationState
+        substitutedCopyDeletionEvent = false := by
+  decide
+
+theorem no_exact_copy_deletion_classifier_from_count_only :
+    ¬ ∃ classify : Nat → Bool,
+      ∀ event : InformationEvent,
+        classify (CopyDispositionCountSummary event) =
+          CopyDeletionAdmitted revokedInformationState event := by
+  intro ⟨classify, exact⟩
+  have good := exact informationDeletionEvent
+  have bad := exact substitutedCopyDeletionEvent
+  have collision := information_copy_disposition_count_summary_collides
+  have separated := information_exact_inventory_separates_count_collision
+  rw [separated.1] at good
+  rw [separated.2] at bad
+  rw [collision.1] at good
+  simp_all
 
 end AsiStackProofs.PrivacyInformationFlow

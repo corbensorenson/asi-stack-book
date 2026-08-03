@@ -2223,17 +2223,17 @@ Draft deliverables:
 - Terminal structural adjudication and integrated argument chapter.
 - Nine-source four-role packet with authoritative/legal status ceilings.
 - Authored twelve-surface Information Lifecycle Transaction and 26 rejecting mutations.
-- Finite Lean model with 27 theorem declarations and two public targets. The
-  original route consequences now sit under a reachable purpose binding,
-  minimization, flow mapping, privacy evaluation, rights disposition,
-  activation, revocation, and bounded deletion-record lifecycle. Arbitrary
-  accepted finite runs preserve exact transaction identity, authority ceilings,
-  non-authority, receipts, valid traces, and composition; activation requires
-  rights disposition, active use cannot jump to deletion, revocation zeros
-  authority, and deletion records only the declared known-copy disposition.
-  The independent consumer recompiles the exact surface, closes one eight-event
-  witness, and rejects eleven lifecycle controls without establishing privacy,
-  compliance, rights fulfillment, deletion in fact, or total erasure.
+- Finite Lean model with 38 declarations and two public targets. Its eleven routes
+  sit under a reachable purpose, minimization, flow, evaluation, rights,
+  activation, revocation, and deletion-record lifecycle. Arbitrary accepted runs
+  preserve exact transaction and canonical duplicate-free known-copy identity,
+  authority bounds, non-authority, receipts, traces, and composition. Activation
+  requires rights disposition; revocation zeros authority; exact deletion
+  disposition names every known copy; rejected events preserve exact state; and
+  deletion recording is terminal. The independent consumer closes one witness,
+  rejects fourteen controls, checks all 24 four-copy permutations and eight
+  terminal event kinds, and proves same-count substitution and count-only admission
+  insufficient without establishing privacy, compliance, rights, deletion, or erasure.
 - Prospectively frozen six-arm natural campaign across thirteen failure families,
   at least three seeds, positive controls, independent evaluation, full
   denominators, derivative rights propagation, and joint utility/privacy/rights/cost.

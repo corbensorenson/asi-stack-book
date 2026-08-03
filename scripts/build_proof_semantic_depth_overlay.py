@@ -878,6 +878,57 @@ for theorem_name in (
         "rationale": "The theorem establishes terminal revocation for arbitrary nonempty suffixes or the impossibility of exact component revocation from count alone.",
     }
 
+_privacy_information_inventory_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:complete_information_run_reaches_bounded_deletion_record",
+        "scripts/validate_information_lifecycle_transaction.py",
+        "tests/fixtures/protocol_records/information_lifecycle_transaction.valid.json",
+    ],
+    "classification_basis": [
+        "the independent information-lifecycle consumer recompiles all 38 declarations, rejects fourteen lifecycle controls without state change, checks all twenty-four four-copy inventory permutations, and rejects all eight event kinds after deletion recording"
+    ],
+}
+
+for theorem_name in (
+    "complete_information_prefix_reaches_exact_revoked_state",
+    "information_copy_disposition_count_summary_collides",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PrivacyInformationFlow.lean::{theorem_name}"] = {
+        **_privacy_information_inventory_base, "semantic_level": "P2",
+        "rationale": "The theorem supplies an exact reachable revoked-state witness or an explicit equal-count known-copy identity collision.",
+    }
+
+for theorem_name in (
+    "accepted_information_step_preserves_known_copy_inventory",
+    "information_same_count_copy_substitution_is_rejected",
+    "information_duplicate_known_copy_inventory_is_rejected",
+    "information_exact_inventory_separates_count_collision",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PrivacyInformationFlow.lean::{theorem_name}"] = {
+        **_privacy_information_inventory_base, "semantic_level": "P3",
+        "rationale": "The theorem constrains exact known-copy identity at one accepted or rejected lifecycle boundary covered by the independent consumer.",
+    }
+
+for theorem_name in (
+    "rejected_information_step_preserves_exact_state",
+    "successful_information_run_preserves_known_copy_inventory",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PrivacyInformationFlow.lean::{theorem_name}"] = {
+        **_privacy_information_inventory_base, "semantic_level": "P4",
+        "rationale": "The theorem proves exact rejection noninterference or arbitrary-run known-copy inventory preservation for the bounded lifecycle.",
+    }
+
+for theorem_name in (
+    "deletion_recorded_information_state_rejects_every_event",
+    "deletion_recorded_information_state_has_no_nonempty_run",
+    "no_exact_copy_deletion_classifier_from_count_only",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/PrivacyInformationFlow.lean::{theorem_name}"] = {
+        **_privacy_information_inventory_base, "semantic_level": "P5",
+        "rationale": "The theorem establishes terminal deletion recording for arbitrary nonempty suffixes or the impossibility of exact copy-deletion admission from count alone.",
+    }
+
 _replacement_route_base = {
     "disposition": "retain",
     "witness_refs": [

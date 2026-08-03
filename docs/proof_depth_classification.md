@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3110 |
+| Theorem declarations classified | 3121 |
 | Direct/projection-style theorem declarations | 447 |
-| Derived/decomposed theorem declarations | 1946 |
-| Unknown or mixed theorem declarations | 717 |
+| Derived/decomposed theorem declarations | 1952 |
+| Unknown or mixed theorem declarations | 722 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -134,7 +134,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 53 | 6 | 32 | 15 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/PolicyOptimizationRefinement.lean` | policy-optimization-and-learning-from-feedback | 4 | 5 | 0 | 2 | 3 | manual review |
-| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 27 | 0 | 18 | 9 | manual review |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | privacy-data-rights-and-information-flow-governance | 2 | 38 | 0 | 24 | 14 | manual review |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | unmapped | 0 | 14 | 0 | 14 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 21 | 10 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -2135,6 +2135,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_adds_one_receipt` | derived_or_decomposed | no | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_is_valid` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_preserves_known_copy_inventory` | derived_or_decomposed | no | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_information_step_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `accepted_requires_flow_and_privacy_evaluation` | derived_or_decomposed | no | uses split, unfold |
@@ -2144,17 +2145,27 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `active_information_use_cannot_record_deletion` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `apply_information_event_preserves_identity` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `complete_authored_record_accepts_bounded_receipt` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `complete_information_prefix_reaches_exact_revoked_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `complete_information_run_reaches_bounded_deletion_record` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `compliance_laundering_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `conflated_behavior_and_storage_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `deletion_recorded_information_state_has_no_nonempty_run` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `deletion_recorded_information_state_rejects_every_event` | derived_or_decomposed | no | uses cases, rcases, simp |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `hidden_unknown_copies_request_flow_map` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `information_copy_disposition_count_summary_collides` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `information_duplicate_known_copy_inventory_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `information_exact_inventory_separates_count_collision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `information_run_composes` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `information_same_count_copy_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `label_attack_incompetence_rejects_privacy_evaluation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `missing_recipient_notice_requests_rights_work` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `no_exact_copy_deletion_classifier_from_count_only` | derived_or_decomposed | no | uses have, rw |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `purpose_drift_rejects` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `rejected_information_step_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `release_laundering_quarantines` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `successful_information_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `successful_information_run_preserves_identity` | derived_or_decomposed | no | uses calc, cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `successful_information_run_preserves_known_copy_inventory` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `successful_information_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/PrivacyInformationFlow.lean` | `successful_information_run_respects_authority_ceiling` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | `failed_regression_with_routable_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
