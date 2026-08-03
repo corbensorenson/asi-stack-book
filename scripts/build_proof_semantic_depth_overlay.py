@@ -301,6 +301,67 @@ CURRENT_SEMANTIC_OVERRIDES = {
     },
 }
 
+_observation_run_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:full_observation_lifecycle_reaches_invalidated_state",
+        "scripts/validate_observation_trust.py",
+    ],
+    "classification_basis": [
+        "the independent consumer recompiles all 32 declarations, checks seven trace splits, rejects 46 lifecycle mutations and 13 pair controls, rejects six invalidated-state event kinds, and reconstructs twelve same-summary/opposite-common-cause controls"
+    ],
+}
+
+for theorem_name in (
+    "accepted_observation_step_is_accepted",
+    "accepted_observation_step_applies_event",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ObservationTrust.lean::{theorem_name}"] = {
+        **_observation_run_base, "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility or exact transition identity for the bounded observation lifecycle.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/ObservationTrust.lean::pairwise_root_summary_collides_across_global_common_cause"
+] = {
+    **_observation_run_base, "semantic_level": "P2",
+    "rationale": "A closed pair witnesses identical distinct-root summaries with opposite authored global-common-cause states.",
+}
+
+for theorem_name in (
+    "apply_event_preserves_exact_observation_identity",
+    "accepted_observation_step_preserves_exact_identity",
+    "accepted_observation_step_adds_one_receipt",
+    "exact_common_cause_state_separates_pairwise_root_collision",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ObservationTrust.lean::{theorem_name}"] = {
+        **_observation_run_base, "semantic_level": "P3",
+        "rationale": "The theorem binds one executable observation boundary to exact identity, accounting, or common-cause-sensitive admission semantics.",
+    }
+
+for theorem_name in (
+    "rejected_observation_step_preserves_exact_state",
+    "successful_observation_run_preserves_exact_identity",
+    "successful_observation_run_preserves_non_authority",
+    "successful_observation_run_accounts_receipts",
+    "successful_observation_run_has_valid_trace",
+    "observation_runs_compose",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ObservationTrust.lean::{theorem_name}"] = {
+        **_observation_run_base, "semantic_level": "P4",
+        "rationale": "The theorem proves exact rejection noninterference or an arbitrary-run custody, accounting, trace, or composition invariant.",
+    }
+
+for theorem_name in (
+    "invalidated_observation_state_rejects_every_event",
+    "invalidated_observation_state_has_no_nonempty_run",
+    "no_exact_global_independence_classifier_from_pairwise_roots_only",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/ObservationTrust.lean::{theorem_name}"] = {
+        **_observation_run_base, "semantic_level": "P5",
+        "rationale": "The theorem establishes terminal invalidation for arbitrary nonempty suffixes or the impossibility of exact global-independence classification from pairwise roots alone.",
+    }
+
 _scf_execution_overrides = {
     "apply_lifecycle_event_preserves_exact_identity": (
         "P3",

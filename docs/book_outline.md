@@ -3036,8 +3036,8 @@ Draft deliverables:
   competent early/late/shared-representation baselines, missing-channel and
   common-mode controls, calibration/selective-risk metrics, complete latency
   and cost, and an independent outcome evaluator.
-- Current support remains `argument`; cited multimodal and robotics results are
-  not local sensor-truth, robustness, causal-grounding, or safety evidence.
+- Exact 32-theorem pair/lifecycle packet: arbitrary-run custody, composition,
+  terminal invalidation, and root/common-cause impossibility; support remains `argument`.
 
 Lean proof targets:
 

@@ -4,7 +4,7 @@ chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-03"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
@@ -17,6 +17,7 @@ open_evidence_gaps:
   - "No ASI Stack multimodal perception campaign has run."
   - "No source model, corruption benchmark, robot, or sensor-fusion result has been reproduced locally."
   - "No observation contract has yet been tested on a natural consequential workload."
+  - "The exact 32-theorem Lean surface and independent consumer establish only authored pair classification, finite-run custody, rejection noninterference, terminal invalidation, and pairwise-root information loss. They do not establish real dependence, calibration, environmental truth, robustness, safety, or useful fusion."
 ---
 
 ## Chapter status
@@ -30,7 +31,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Five primary external records cover multimodal taxonomy, shared representations, natural corruptions, adversarial cross-channel effects, and integrated vision-language-action systems. All results remain source-reported. |
-| Test state | Correlated-evidence and observation-custody model formalized in Lean; claim-bearing sensor campaign remains unexecuted. |
+| Test state | Exact 32-theorem correlated-evidence and observation-custody model formalized in Lean and independently replayed; claim-bearing sensor campaign remains unexecuted. |
 
 ## Drafting guardrail
 
@@ -420,6 +421,31 @@ calibration, provenance, coverage, dependence, disagreement, consumer,
 authority, and expiry state. Seeded corruptions serve as positive controls,
 while clean cases verify that the guard does not collapse into refusal.
 
+The current formal precondition is narrower than that service. Its exact
+32-theorem surface retains the pair classifier and adds total step/run semantics,
+arbitrary-run exact identity and non-authority custody, one receipt per accepted
+event, valid-trace extraction, exact batch composition, rejection
+noninterference, and terminal invalidation. A separate finite countermodel shows
+that two distinct declared roots can retain the same pairwise summary while
+differing on a shared global cause; pairwise roots do not establish global independence.
+The independent consumer recompiles the module, checks all seven trace splits,
+46 lifecycle mutations, 13 pair controls, six terminal event kinds, and twelve
+same-summary/opposite-common-cause controls. Every field remains authored.
+
+The countermodel matters because dependence is not generally a property of one
+pair viewed in isolation. A camera and lidar can have different device roots
+while sharing a scene obstruction, calibration service, synchronization fault,
+training corpus, learned fusion model, operator, power rail, or adversarial
+intervention. Their pair record can therefore look unchanged while the causal
+graph relevant to the decision changes. The formal result does not solve causal
+discovery; it proves why a consumer cannot treat distinct labels as sufficient.
+The implementation consequence is concrete: an observation receipt must carry
+the reviewed common-cause context, its version and expiry, and the residual
+uncertainty that survives review. A planner or controller may use the bounded
+receipt, but it may not reinterpret a two-item count as universal independence.
+Material changes to any shared dependency must invalidate descendants and force
+review instead of silently preserving the old evidence multiplier.
+
 Report false admission, false refusal, selective risk, disagreement routing,
 active-sensing success, deadline misses, privacy and energy cost, and downstream
 decision harm for every case. Passing record validation or detecting the
@@ -485,13 +511,18 @@ consumer, residual, and protocol identity. They reject replay, substituted
 identity, correlated count inflation, erased disagreement, unbounded use,
 truth or authority laundering, and stale descendants. Rejected events preserve
 the entire state; accepted events cannot assign support or external authority.
+The total runner additionally proves arbitrary-run exact identity, non-authority,
+receipt accounting, trace validity, and batch composition. Invalidation rejects
+every modeled event kind and every nonempty finite suffix.
 
 | Formal result | Exact meaning | Result |
 |---|---|---|
 | Correlated agreement | Two usable, agreeing records with one declared root have independent-evidence count one. | proved in Lean |
 | Independent agreement | Two usable, agreeing records with distinct declared roots have count two. | proved in Lean |
 | Disagreement preservation | Two usable records with different hypotheses remain disagreement with no agreement promotion. | proved in Lean |
-| Observation lifecycle | The canonical six-transition path reaches invalidation with one handoff, one invalidation, and zero support or authority assignments. | proved in Lean and independently replayed |
+| Observation lifecycle | The canonical six-transition path reaches invalidation with one handoff, one invalidation, six receipts, and zero support or authority assignments; arbitrary accepted runs preserve exact identity and compose. | proved in Lean and independently replayed across all seven splits |
+| Terminal invalidation | Every modeled event and every nonempty finite suffix rejects after invalidation. | six event kinds independently checked |
+| Pairwise-root insufficiency | Equal distinct-root summaries can encode opposite global-common-cause states, so no classifier over the pair alone is exact for every modeled case. | universal impossibility proved; twelve concrete controls reconstructed independently |
 | Rejecting controls | Wrong stage, identity substitution, replay, missing custody, inflated counts, erased disagreement, unbounded use, overclaim, and stale descendants preserve rejected state. | 46/46 lifecycle mutations and 13/13 pair controls rejected |
 
 These theorems trust the authored channel records and dependence-root labels.
@@ -506,7 +537,7 @@ Theseus work; support remains `argument`.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Identity and freshness mutation suite | Reject wrong sensor, clock, calibration, pose, model, or expired observation. | planned |
+| Authored pair, lifecycle, and common-cause contract | Recompile the exact theorem surface; replay the six-event run and every split; reject identity, custody, count, disagreement, authority, overclaim, terminal-state, and pairwise-root sufficiency failures without mutating rejected state. | implemented: 32 Lean declarations, 46 lifecycle mutations, 13 pair controls, seven splits, six terminal event kinds, and twelve common-cause collisions; authored records only |
 | Correlated-agreement positive control | Show that common-mode agreement does not increase evidence as if independent. | planned |
 | Cross-channel defense test | Detect a defense that hardens one modality while weakening another. | planned |
 | Active-observation value test | Measure whether asking for another observation reduces decision harm enough to justify cost. | planned |

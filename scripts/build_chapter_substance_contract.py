@@ -738,15 +738,15 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "perception-sensor-fusion-and-observation-trust": {
-        "reviewed_sha256": "1a9b261b86109d0ba82fac5c8ec6a737f1df80a91c19bf27b2bd0ef037cc924f",
-        "reviewed_date": "2026-08-01",
+        "reviewed_sha256": "5998d44d6fa3782750905e9c2472c47f21a5c4fab4a7b928dbd6dc7f7497279d",
+        "reviewed_date": "2026-08-03",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve task-relative observation need, exact sensor identity, time and pose, channel hypotheses, dependence, corruption, active sensing, and expiring observation authority as separate lifecycle obligations",
             "multimodal, ImageBind, corruption, sensor-fusion, robotics, and Platonic World Model sources remain survey, reported comparator, benchmark, attack-study, capability, or authorial lineage rather than local observation-trust evidence",
             "the chapter retains missingness, common-mode error, positive controls, active-sensing risk, safe hold, reconciliation, adjacent-owner authority, and argument-only support",
-            "the new Lean pair classifier and lifecycle are limited to authored dependence roots, finite evidence counts, exact record custody, rejecting controls, and descendant invalidation; they do not establish real dependence, calibration, environmental truth, robustness, physical safety, support, or authority",
+            "the exact 32-theorem Lean pair and lifecycle surface adds arbitrary-run custody, composition, terminal invalidation, and a pairwise-root/global-common-cause impossibility result while remaining limited to authored fields; it does not establish real dependence, calibration, environmental truth, robustness, useful fusion, physical safety, support, or authority",
         ],
         "support_state_effect": "none",
     },

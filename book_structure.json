@@ -7926,14 +7926,14 @@
             "active-perception harm",
             "stale observation replay"
           ],
-          "minimal_implementation": "Build a two- or three-modality observation service that emits a versioned Observation Trust Record and validator with immutable identity, clock and calibration checks, per-channel hypotheses, dependence-aware fusion, calibrated abstention, one active-observation action, a safe-hold route, and seeded time, missing-channel, correlated-failure, spoofing, and benign-disagreement fixtures.",
+          "minimal_implementation": "Preserve the exact current finite boundary before building the natural service: the 32-theorem ObservationTrust surface retains a universal pair classifier and adds total step/run semantics, arbitrary-run exact identity and non-authority custody, receipt accounting, trace validity, batch composition, rejection noninterference, terminal invalidation, and a universal counterexample showing that pairwise distinct-root summaries cannot recover global common-cause state. Its independent consumer recompiles the surface, checks seven trace splits, 46 exact-state lifecycle mutations, 13 pair controls, six invalidated-state event kinds, and twelve same-summary/opposite-common-cause controls. Then build a two- or three-modality observation service that emits a versioned Observation Trust Record and validator with immutable identity, clock and calibration checks, per-channel hypotheses, dependence-aware fusion, calibrated abstention, one active-observation action, a safe-hold route, and seeded time, missing-channel, correlated-failure, spoofing, and benign-disagreement fixtures.",
           "beyond_state_of_art": "A mature substrate-neutral observation fabric would host present and future modalities behind stable contracts, estimate evidence dependence, choose observations by expected decision value, preserve plural hypotheses through ontology change, and transfer calibrated uncertainty into world models and controllers without claiming open-world truth. It would learn when to sense, abstain, slow, or request a new viewpoint; preserve calibration through replacement; expose shared causes and adversarial channels; and measure whether additional sensing actually improves downstream decisions after latency, energy, privacy, and physical risk are counted.",
           "codex_tests": [
             {
-              "name": "Identity freshness and dependence mutations",
-              "purpose": "Reject wrong sensor, stale calibration, bad clocks, and common-mode agreement counted as independent.",
-              "implementation_status": "planned",
-              "result_status": "not_run"
+              "name": "Authored observation lifecycle and common-cause contract",
+              "purpose": "Recompile the exact formal surface; preserve exact state under identity, freshness, dependence, count, disagreement, authority, overclaim, and terminal-state rejection; and demonstrate that pairwise distinct roots cannot recover global common-cause state.",
+              "implementation_status": "implemented",
+              "result_status": "implemented_32_exact_lean_theorems_46_lifecycle_mutations_13_pair_controls_7_trace_splits_6_terminal_event_kinds_12_common_cause_collisions_authored_record_only"
             },
             {
               "name": "Natural shift and active-observation campaign",
@@ -7961,7 +7961,8 @@
           "open_evidence_gaps": [
             "No natural ASI Stack multimodal perception campaign has run.",
             "No external perception result is reproduced.",
-            "No consequential observation threshold is established."
+            "No consequential observation threshold is established.",
+            "The exact 32-theorem Lean packet establishes authored pair, lifecycle, terminal-state, and information-loss consequences only; real dependence, calibration, observation truth, robustness, safety, and useful fusion remain unproved."
           ]
         },
         {

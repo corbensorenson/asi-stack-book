@@ -232,6 +232,35 @@ structure State where
   externalAuthorityCount : Nat
 deriving DecidableEq, Repr
 
+structure ObservationIdentity where
+  observationDigest : Nat
+  channelSetDigest : Nat
+  calibrationDigest : Nat
+  clockPoseDigest : Nat
+  dependenceDigest : Nat
+  hypothesisDigest : Nat
+  consumerDigest : Nat
+  residualDigest : Nat
+  protocolVersion : Nat
+  pairDisposition : PairDisposition
+  computedIndependentCount : Nat
+  requestedIndependentCount : Nat
+deriving DecidableEq, Repr
+
+def observationIdentity (state : State) : ObservationIdentity :=
+  { observationDigest := state.observationDigest
+    channelSetDigest := state.channelSetDigest
+    calibrationDigest := state.calibrationDigest
+    clockPoseDigest := state.clockPoseDigest
+    dependenceDigest := state.dependenceDigest
+    hypothesisDigest := state.hypothesisDigest
+    consumerDigest := state.consumerDigest
+    residualDigest := state.residualDigest
+    protocolVersion := state.protocolVersion
+    pairDisposition := state.pairDisposition
+    computedIndependentCount := state.computedIndependentCount
+    requestedIndependentCount := state.requestedIndependentCount }
+
 def expectedKind : Stage -> EventKind
   | .captured => .bindIdentities
   | .identitiesBound => .bindDependence
@@ -256,7 +285,8 @@ def exactBinding (state : State) (packet : Packet) : Bool :=
   packet.requestedIndependentCount == state.requestedIndependentCount
 
 def routeFor (state : State) (event : Event) : Route :=
-  if event.kind != expectedKind state.stage then .rejectWrongStage
+  if state.stage == .invalidated then .rejectWrongStage
+  else if event.kind != expectedKind state.stage then .rejectWrongStage
   else if ! exactBinding state event.packet then .rejectIdentitySubstitution
   else if event.packet.eventDigest == state.lastEventDigest then .rejectReplay
   else if event.packet.supportAssignmentRequested ||
@@ -331,6 +361,29 @@ def applyEvent (state : State) (event : Event) : State × Route :=
          (if route = .acceptInvalidation then 1 else 0) }, route)
   else (state, route)
 
+def ObservationStep (state : State) (event : Event) : Option State :=
+  if accepted (routeFor state event) then
+    some (applyEvent state event).1
+  else none
+
+def ObservationRun : State → List Event → Option State
+  | state, [] => some state
+  | state, event :: tail =>
+      match ObservationStep state event with
+      | none => none
+      | some next => ObservationRun next tail
+
+def ProcessObservationEvent (state : State) (event : Event) : State × Bool :=
+  match ObservationStep state event with
+  | none => (state, false)
+  | some next => (next, true)
+
+def ObservationTraceValid : State → List Event → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      accepted (routeFor state event) = true ∧
+        ObservationTraceValid (applyEvent state event).1 tail
+
 theorem rejected_event_preserves_exact_state (state : State) (event : Event)
     (rejected : accepted (routeFor state event) = false) :
     (applyEvent state event).1 = state := by
@@ -349,6 +402,203 @@ theorem apply_event_cannot_assign_support_or_external_authority
     (applyEvent state event).1.supportAssignmentCount = state.supportAssignmentCount ∧
     (applyEvent state event).1.externalAuthorityCount = state.externalAuthorityCount := by
   by_cases h : accepted (routeFor state event) = true <;> simp [applyEvent, h]
+
+theorem apply_event_preserves_exact_observation_identity
+    (state : State) (event : Event) :
+    observationIdentity (applyEvent state event).1 = observationIdentity state := by
+  by_cases h : accepted (routeFor state event) = true <;>
+    simp [applyEvent, observationIdentity, h]
+
+theorem accepted_observation_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : ObservationStep state event = some next) :
+    accepted (routeFor state event) = true := by
+  unfold ObservationStep at stepped
+  split at stepped
+  · assumption
+  · simp at stepped
+
+theorem accepted_observation_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : ObservationStep state event = some next) :
+    next = (applyEvent state event).1 := by
+  unfold ObservationStep at stepped
+  split at stepped
+  · exact Option.some.inj stepped |>.symm
+  · simp at stepped
+
+theorem accepted_observation_step_preserves_exact_identity
+    {state next : State} {event : Event}
+    (stepped : ObservationStep state event = some next) :
+    observationIdentity next = observationIdentity state := by
+  rw [accepted_observation_step_applies_event stepped]
+  exact apply_event_preserves_exact_observation_identity state event
+
+theorem accepted_observation_step_adds_one_receipt
+    {state next : State} {event : Event}
+    (stepped : ObservationStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  have acceptedStep := accepted_observation_step_is_accepted stepped
+  rw [accepted_observation_step_applies_event stepped]
+  simp [applyEvent, acceptedStep]
+
+theorem rejected_observation_step_preserves_exact_state
+    (state : State) (event : Event)
+    (rejected : ObservationStep state event = none) :
+    ProcessObservationEvent state event = (state, false) := by
+  simp [ProcessObservationEvent, rejected]
+
+theorem successful_observation_run_preserves_exact_identity
+    {state final : State} {events : List Event}
+    (ran : ObservationRun state events = some final) :
+    observationIdentity final = observationIdentity state := by
+  induction events generalizing state with
+  | nil =>
+      simp [ObservationRun] at ran
+      subst final
+      rfl
+  | cons event tail ih =>
+      cases stepped : ObservationStep state event with
+      | none => simp [ObservationRun, stepped] at ran
+      | some next =>
+          have tailRan : ObservationRun next tail = some final := by
+            simpa [ObservationRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_observation_step_preserves_exact_identity stepped)
+
+theorem successful_observation_run_preserves_non_authority
+    {state final : State} {events : List Event}
+    (ran : ObservationRun state events = some final) :
+    final.supportAssignmentCount = state.supportAssignmentCount ∧
+      final.externalAuthorityCount = state.externalAuthorityCount := by
+  induction events generalizing state with
+  | nil =>
+      simp [ObservationRun] at ran
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      cases stepped : ObservationStep state event with
+      | none => simp [ObservationRun, stepped] at ran
+      | some next =>
+          have tailRan : ObservationRun next tail = some final := by
+            simpa [ObservationRun, stepped] using ran
+          have rest := ih tailRan
+          have applies := accepted_observation_step_applies_event stepped
+          have head := apply_event_cannot_assign_support_or_external_authority state event
+          rw [← applies] at head
+          exact ⟨rest.1.trans head.1, rest.2.trans head.2⟩
+
+theorem successful_observation_run_accounts_receipts
+    {state final : State} {events : List Event}
+    (ran : ObservationRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil =>
+      simp [ObservationRun] at ran
+      subst final
+      simp
+  | cons event tail ih =>
+      cases stepped : ObservationStep state event with
+      | none => simp [ObservationRun, stepped] at ran
+      | some next =>
+          have tailRan : ObservationRun next tail = some final := by
+            simpa [ObservationRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [accepted_observation_step_adds_one_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp [Nat.add_comm, Nat.add_left_comm]
+
+theorem successful_observation_run_has_valid_trace
+    {state final : State} {events : List Event}
+    (ran : ObservationRun state events = some final) :
+    ObservationTraceValid state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : ObservationStep state event with
+      | none => simp [ObservationRun, stepped] at ran
+      | some next =>
+          have tailRan : ObservationRun next tail = some final := by
+            simpa [ObservationRun, stepped] using ran
+          have applies := accepted_observation_step_applies_event stepped
+          exact ⟨accepted_observation_step_is_accepted stepped, by
+            simpa [applies] using ih tailRan⟩
+
+theorem observation_runs_compose
+    {state middle final : State} {front back : List Event}
+    (first : ObservationRun state front = some middle)
+    (second : ObservationRun middle back = some final) :
+    ObservationRun state (front ++ back) = some final := by
+  induction front generalizing state middle with
+  | nil =>
+      simp [ObservationRun] at first
+      subst middle
+      exact second
+  | cons event tail ih =>
+      cases stepped : ObservationStep state event with
+      | none => simp [ObservationRun, stepped] at first
+      | some next =>
+          have tailFirst : ObservationRun next tail = some middle := by
+            simpa [ObservationRun, stepped] using first
+          simpa [ObservationRun, stepped] using ih tailFirst second
+
+theorem invalidated_observation_state_rejects_every_event
+    (state : State) (event : Event) (invalidated : state.stage = .invalidated) :
+    accepted (routeFor state event) = false := by
+  simp [routeFor, invalidated, accepted]
+
+theorem invalidated_observation_state_has_no_nonempty_run
+    (state : State) (event : Event) (tail : List Event)
+    (invalidated : state.stage = .invalidated) :
+    ObservationRun state (event :: tail) = none := by
+  have rejected := invalidated_observation_state_rejects_every_event
+    state event invalidated
+  simp [ObservationRun, ObservationStep, rejected]
+
+structure GlobalDependenceCase where
+  leftRoot : Nat
+  rightRoot : Nat
+  commonCausePresent : Bool
+deriving DecidableEq, Repr
+
+def pairRootSummary (case : GlobalDependenceCase) : Nat × Nat :=
+  (case.leftRoot, case.rightRoot)
+
+def globalIndependenceAdmitted (case : GlobalDependenceCase) : Bool :=
+  !(case.leftRoot == case.rightRoot) && !case.commonCausePresent
+
+def distinctRootsNoCommonCause : GlobalDependenceCase :=
+  { leftRoot := 7, rightRoot := 9, commonCausePresent := false }
+
+def distinctRootsSharedCommonCause : GlobalDependenceCase :=
+  { leftRoot := 7, rightRoot := 9, commonCausePresent := true }
+
+theorem pairwise_root_summary_collides_across_global_common_cause :
+    pairRootSummary distinctRootsNoCommonCause =
+        pairRootSummary distinctRootsSharedCommonCause ∧
+      distinctRootsNoCommonCause ≠ distinctRootsSharedCommonCause := by
+  decide
+
+theorem exact_common_cause_state_separates_pairwise_root_collision :
+    globalIndependenceAdmitted distinctRootsNoCommonCause = true ∧
+      globalIndependenceAdmitted distinctRootsSharedCommonCause = false := by
+  decide
+
+theorem no_exact_global_independence_classifier_from_pairwise_roots_only :
+    ¬ ∃ classify : (Nat × Nat) → Bool,
+      ∀ case : GlobalDependenceCase,
+        classify (pairRootSummary case) = globalIndependenceAdmitted case := by
+  intro ⟨classify, exact⟩
+  have clear := exact distinctRootsNoCommonCause
+  have shared := exact distinctRootsSharedCommonCause
+  have collision := pairwise_root_summary_collides_across_global_common_cause
+  have separated := exact_common_cause_state_separates_pairwise_root_collision
+  rw [separated.1] at clear
+  rw [separated.2] at shared
+  rw [collision.1] at clear
+  simp_all
 
 def canonicalPacket : Packet :=
   { observationDigest := 801, channelSetDigest := 802,

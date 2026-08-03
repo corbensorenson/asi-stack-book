@@ -25,15 +25,27 @@ The module also defines seven stages: captured, identities bound, dependence
 bound, pair reviewed, use bound, handed off, and invalidated. Six accepted
 transitions preserve exact observation, channel-set, calibration, clock/pose,
 dependence, hypothesis, consumer, residual, protocol, pair-classification, and
-evidence-count identity. A correlated pair cannot satisfy a two-item use
-request. Rejected events preserve the whole state, and accepted events do not
-change support-assignment or external-authority counters.
+evidence-count identity. Total step/run semantics extend those properties to
+arbitrary accepted finite runs, add exact receipt accounting, extract valid
+traces, compose across event batches, preserve rejected state, and make
+invalidation terminal for every modeled event and nonempty suffix. A correlated
+pair cannot satisfy a two-item use request, and accepted events do not change
+support-assignment or external-authority counters.
+
+A separate finite dependence model distinguishes a pairwise root summary from
+the global common-cause state. Two cases have the same distinct-root pair and
+opposite global-independence decisions. The resulting universal impossibility
+theorem establishes that no classifier over the root pair alone is exact for
+every modeled case. It does not discover causal structure or validate any root.
 
 The independently encoded consumer is
 `scripts/validate_observation_trust.py`. It reproduces the three pair branches
-and complete lifecycle, rejects 46 wrong-stage, identity, replay, custody,
-count-inflation, disagreement, use, handoff, and invalidation mutations with
-exact state preservation, and passes 13 pair-classification controls.
+and complete lifecycle, recompiles the exact 32-theorem surface, checks all
+seven prefix/suffix compositions, rejects 46 wrong-stage, identity, replay,
+custody, count-inflation, disagreement, use, handoff, and invalidation mutations
+with exact state preservation, passes 13 pair-classification controls, rejects
+all six event kinds after invalidation, and reconstructs twelve
+same-summary/opposite-common-cause controls.
 
 ## Exact boundary
 

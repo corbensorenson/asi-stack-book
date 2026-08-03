@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import copy
 import re
+import subprocess
 from pathlib import Path
 
 
@@ -43,6 +44,22 @@ THEOREMS = [
     "rejected_event_preserves_exact_state",
     "apply_event_preserves_observation_identity",
     "apply_event_cannot_assign_support_or_external_authority",
+    "apply_event_preserves_exact_observation_identity",
+    "accepted_observation_step_is_accepted",
+    "accepted_observation_step_applies_event",
+    "accepted_observation_step_preserves_exact_identity",
+    "accepted_observation_step_adds_one_receipt",
+    "rejected_observation_step_preserves_exact_state",
+    "successful_observation_run_preserves_exact_identity",
+    "successful_observation_run_preserves_non_authority",
+    "successful_observation_run_accounts_receipts",
+    "successful_observation_run_has_valid_trace",
+    "observation_runs_compose",
+    "invalidated_observation_state_rejects_every_event",
+    "invalidated_observation_state_has_no_nonempty_run",
+    "pairwise_root_summary_collides_across_global_common_cause",
+    "exact_common_cause_state_separates_pairwise_root_collision",
+    "no_exact_global_independence_classifier_from_pairwise_roots_only",
     "inflated_correlated_evidence_is_rejected",
     "correlated_pair_cannot_satisfy_two_item_use_request",
     "erased_disagreement_blocks_pair_review",
@@ -149,6 +166,8 @@ def canonical_state(stage: str) -> dict:
 
 def route_for(state: dict, event: str, packet: dict) -> str:
     stage = state["stage"]
+    if stage == "invalidated":
+        return "reject_wrong_stage"
     expected = EVENTS[STAGES.index(stage)] if stage != "invalidated" else EVENTS[-1]
     if event != expected:
         return "reject_wrong_stage"
@@ -234,6 +253,41 @@ def apply_event(state: dict, event: str, packet: dict) -> tuple[dict, str]:
     return result, route
 
 
+def run_events(state: dict, events: list[str], start_digest: int = 1) -> dict | None:
+    current = copy.deepcopy(state)
+    for offset, event in enumerate(events):
+        current, route = apply_event(
+            current, event, canonical_packet(start_digest + offset)
+        )
+        if route not in ACCEPTED:
+            return None
+    return current
+
+
+def global_independence_admitted(case: dict) -> bool:
+    return case["left_root"] != case["right_root"] and not case["common_cause_present"]
+
+
+def validate_lean_surface() -> None:
+    declarations = re.findall(
+        r"(?m)^theorem\s+([A-Za-z0-9_]+)", LEAN.read_text(encoding="utf-8")
+    )
+    if declarations != THEOREMS:
+        raise SystemExit(f"Observation-trust Lean theorem surface drifted: {declarations}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/ObservationTrust.lean"],
+        cwd=ROOT / "lean",
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode:
+        raise SystemExit(
+            "Observation-trust Lean recompilation failed:\n"
+            + completed.stdout
+            + completed.stderr
+        )
+
+
 def lifecycle_mutations() -> list[tuple[str, dict, str, dict, str]]:
     cases = []
     for index, stage in enumerate(STAGES[:-1]):
@@ -317,17 +371,14 @@ def lifecycle_mutations() -> list[tuple[str, dict, str, dict, str]]:
 
 
 def main() -> None:
+    validate_lean_surface()
     failures = []
-    declarations = re.findall(
-        r"(?m)^theorem\s+([A-Za-z0-9_]+)", LEAN.read_text(encoding="utf-8")
-    )
-    if declarations != THEOREMS:
-        failures.append(f"Lean theorem surface drifted: {declarations}")
     chapter = CHAPTER.read_text(encoding="utf-8")
     for phrase in (
         "support remains `argument`",
         "does not establish real sensor dependence",
         "does not prove environmental truth",
+        "pairwise roots do not establish global independence",
     ):
         if phrase not in chapter:
             failures.append(f"chapter boundary missing: {phrase}")
@@ -359,7 +410,8 @@ def main() -> None:
     if pair_failures:
         failures.append("pair-classification controls failed: " + ", ".join(pair_failures))
 
-    state = canonical_state("captured")
+    initial = canonical_state("captured")
+    state = copy.deepcopy(initial)
     observed = []
     for index, event in enumerate(EVENTS, 1):
         state, route = apply_event(state, event, canonical_packet(index))
@@ -375,6 +427,52 @@ def main() -> None:
         failures.append("handoff/invalidation accounting drifted")
     if state["support_assignment_count"] or state["external_authority_count"]:
         failures.append("accepted lifecycle minted support or external authority")
+
+    composition_failures = []
+    for split in range(len(EVENTS) + 1):
+        middle = run_events(initial, EVENTS[:split])
+        if middle is None:
+            composition_failures.append(f"front:{split}")
+            continue
+        composed = run_events(middle, EVENTS[split:], split + 1)
+        if composed != state:
+            composition_failures.append(f"back:{split}")
+    if composition_failures:
+        failures.append("lifecycle composition failed: " + ", ".join(composition_failures))
+
+    terminal_failures = []
+    for index, event in enumerate(EVENTS, 1):
+        after, route = apply_event(state, event, canonical_packet(index + 20))
+        if route in ACCEPTED or after != state:
+            terminal_failures.append(f"{event}:{route}")
+    if terminal_failures:
+        failures.append("invalidated terminal controls failed: " + ", ".join(terminal_failures))
+
+    common_cause_collisions = []
+    roots = [7, 9, 11, 13]
+    for left_root in roots:
+        for right_root in roots:
+            if left_root == right_root:
+                continue
+            clear = {
+                "left_root": left_root,
+                "right_root": right_root,
+                "common_cause_present": False,
+            }
+            shared = {**clear, "common_cause_present": True}
+            clear_summary = (clear["left_root"], clear["right_root"])
+            shared_summary = (shared["left_root"], shared["right_root"])
+            if (
+                clear_summary != shared_summary
+                or not global_independence_admitted(clear)
+                or global_independence_admitted(shared)
+            ):
+                common_cause_collisions.append(f"{left_root}:{right_root}")
+    if common_cause_collisions:
+        failures.append(
+            "common-cause summary collisions failed: "
+            + ", ".join(common_cause_collisions)
+        )
 
     mutations = lifecycle_mutations()
     escaped = []
@@ -392,10 +490,13 @@ def main() -> None:
     if failures:
         raise SystemExit("Observation-trust validation failed:\n - " + "\n - ".join(failures))
     print(
-        "Observation trust passed: correlated agreement counts one independent item, "
-        "independent agreement counts two, disagreement remains distinct, 7 stages, "
-        "6 accepted transitions, 46/46 exact-state lifecycle mutations and 13/13 "
-        "pair-classification controls, 16 Lean declarations, no support or external-authority effect."
+        "Observation trust passed: exact 32-theorem Lean surface recompiled; correlated "
+        "agreement counts one independent item, distinct declared roots count two only "
+        "inside the pair model, disagreement remains distinct, 7 stages, 6 accepted "
+        "transitions, 7 composition splits, 46/46 exact-state lifecycle mutations, "
+        "13/13 pair-classification controls, 6 invalidated-state event kinds, and 12 "
+        "same-root-summary/opposite-common-cause controls; no sensor truth, global "
+        "independence, support, safety, or external-authority effect."
     )
 
 

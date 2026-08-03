@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3121 |
+| Theorem declarations classified | 3137 |
 | Direct/projection-style theorem declarations | 447 |
-| Derived/decomposed theorem declarations | 1952 |
-| Unknown or mixed theorem declarations | 722 |
+| Derived/decomposed theorem declarations | 1966 |
+| Unknown or mixed theorem declarations | 724 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -124,7 +124,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 8 | 44 | 0 | 29 | 15 | manual review |
 | `lean/AsiStackProofs/MultiAgentDynamics.lean` | multi-agent-dynamics-collective-intelligence-and-systemic-risk | 1 | 22 | 2 | 14 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | governed-objective-formation-value-learning-and-goal-integrity | 1 | 27 | 12 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 16 | 5 | 7 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ObservationTrust.lean` | perception-sensor-fusion-and-observation-trust | 2 | 32 | 5 | 21 | 6 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | unmapped | 0 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/OpenEndedImprovementRefinement.lean` | open-ended-improvement-engines | 7 | 5 | 0 | 2 | 3 | manual review |
 | `lean/AsiStackProofs/OpenWeightReleaseReview.lean` | open-weight-release-and-post-release-control | 1 | 19 | 5 | 10 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1939,7 +1939,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `review_step_preserves_stage_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `reward_model_cannot_ratify` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObjectiveLeaseGovernance.lean` | `study_eligibility_requires_admissible_dossier` | derived_or_decomposed | no | uses have |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `accepted_observation_step_adds_one_receipt` | derived_or_decomposed | no | uses have, rw, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `accepted_observation_step_applies_event` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `accepted_observation_step_is_accepted` | derived_or_decomposed | no | uses simp, split, unfold |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `accepted_observation_step_preserves_exact_identity` | derived_or_decomposed | no | uses rw |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_cannot_assign_support_or_external_authority` | derived_or_decomposed | no | uses by_cases, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_exact_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `apply_event_preserves_observation_identity` | derived_or_decomposed | no | uses by_cases, simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_cannot_satisfy_two_item_use_request` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `correlated_pair_witness_counts_one_independent_item` | unknown_or_mixed | no | no recognized depth pattern |
@@ -1950,11 +1955,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ObservationTrust.lean` | `eligible_disagreement_is_preserved` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `environmental_truth_overclaim_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `erased_disagreement_blocks_pair_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `exact_common_cause_state_separates_pairwise_root_collision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `full_observation_lifecycle_reaches_invalidated_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `independent_pair_witness_counts_two_independent_items` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `inflated_correlated_evidence_is_rejected` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `invalidated_observation_state_has_no_nonempty_run` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `invalidated_observation_state_rejects_every_event` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `no_exact_global_independence_classifier_from_pairwise_roots_only` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `observation_runs_compose` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `pairwise_root_summary_collides_across_global_common_cause` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `rejected_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `rejected_observation_step_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ObservationTrust.lean` | `stale_descendants_block_invalidation` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `successful_observation_run_accounts_receipts` | derived_or_decomposed | no | uses calc, cases, have, induction, rw, simp, subst |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `successful_observation_run_has_valid_trace` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `successful_observation_run_preserves_exact_identity` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
+| `lean/AsiStackProofs/ObservationTrust.lean` | `successful_observation_run_preserves_non_authority` | derived_or_decomposed | no | uses cases, have, induction, rw, simp, subst |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `candidate_cannot_launder_admission_authority` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `complete_candidate_reaches_governor_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/OpenEndedImprovement.lean` | `erased_failure_history_requires_archive_repair` | derived_or_decomposed | no | uses simp, unfold |
