@@ -3,9 +3,9 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3891,
+    "candidate_count": 3892,
     "review_state_counts": {
-      "duplicate_of_atom": 1860,
+      "duplicate_of_atom": 1861,
       "editorial_or_question": 58,
       "historical_or_source_report": 321,
       "material_atom": 3,
@@ -15382,6 +15382,26 @@
       "target_atom_id": "security-kernel-and-digital-scifs.minimum.001"
     },
     {
+      "candidate_id": "security-kernel-and-digital-scifs.prose.f45208cd6167",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "source": "chapters/security-kernel-and-digital-scifs.qmd:387",
+      "sentence": "A closed equal-count substitution proves that descendant count alone cannot classify exact revocation admission.",
+      "cues": [
+        "cannot",
+        "proves"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Plain-language statement of the count-only revocation impossibility now owned by the route-envelope formal target.",
+      "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+    },
+    {
       "candidate_id": "security-kernel-and-digital-scifs.prose.45e1ca578237",
       "chapter_id": "security-kernel-and-digital-scifs",
       "source": "chapters/security-kernel-and-digital-scifs.qmd:387",
@@ -15668,10 +15688,10 @@
       "target_atom_id": "security-kernel-and-digital-scifs.beyond_sota.001"
     },
     {
-      "candidate_id": "security-kernel-and-digital-scifs.prose.6537bc154bf1",
+      "candidate_id": "security-kernel-and-digital-scifs.prose.a20c08f637dd",
       "chapter_id": "security-kernel-and-digital-scifs",
       "source": "chapters/security-kernel-and-digital-scifs.qmd:469",
-      "sentence": "The model establishes only consequences of authored finite authorization fields.",
+      "sentence": "The model establishes only consequences of authored finite authorization and inventory fields.",
       "cues": [
         "establishes"
       ],
@@ -15683,14 +15703,14 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Restates the finite authored-field scope of the route-envelope formal target.",
+      "disposition_rationale": "Restates the finite authored authorization-and-inventory scope of the route-envelope formal target.",
       "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
     },
     {
-      "candidate_id": "security-kernel-and-digital-scifs.prose.8ecbc87b1198",
+      "candidate_id": "security-kernel-and-digital-scifs.prose.ba444f22e393",
       "chapter_id": "security-kernel-and-digital-scifs",
       "source": "chapters/security-kernel-and-digital-scifs.qmd:469",
-      "sentence": "It does not prove that those fields bind a runtime, that sanitization or declassification is correct, that revocation reaches real descendants, that the records are semantically adequate, or that a deployed monitor enforces complete mediation, side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, runtime budgets, privacy, security, or security economics.",
+      "sentence": "It does not prove that those fields bind a runtime, that the descendant inventory is complete, that sanitization or declassification is correct, that revocation reaches real descendants, that the records are semantically adequate, or that a deployed monitor enforces complete mediation, side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, runtime budgets, privacy, security, or security economics.",
       "cues": [
         "prove"
       ],
@@ -15702,7 +15722,7 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Restates the explicit runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
+      "disposition_rationale": "Restates the explicit inventory-completeness, runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
       "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
     },
     {

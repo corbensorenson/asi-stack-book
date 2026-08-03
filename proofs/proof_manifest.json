@@ -777,7 +777,7 @@
       "chapter_title": "Security Kernel and Digital SCIFs",
       "tag": "lean:security.scif.route_envelope",
       "module": "AsiStackProofs.SecurityKernel",
-      "formal_target": "A structured authority-use review routes explicit failures and clean use; a versioned transaction additionally orders bounded lease, scoped mediated substitution, execution, sanitization, independent declassification, zeroization, commit, and exact finite descendant revocation while preserving custody, non-authority, and narrowing across arbitrary accepted runs.",
+      "formal_target": "A structured authority-use review routes explicit failures and clean use; a versioned transaction additionally orders bounded lease, scoped mediated substitution, execution, sanitization, independent declassification, zeroization, commit, and canonical descendant-ID revocation while preserving rejected state, identity, authority, descendant inventory, valid traces, and narrowing across arbitrary accepted runs; revoked states reject every event, and descendant counts alone cannot classify exact revocation admission.",
       "status": "implemented",
       "outline_line": 2098,
       "module_path": "lean/AsiStackProofs/SecurityKernel.lean"

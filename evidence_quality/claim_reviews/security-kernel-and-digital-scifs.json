@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/security-kernel-and-digital-scifs.qmd",
     "structured_atoms_reviewed": 66,
-    "prose_candidates_adjudicated": 65,
+    "prose_candidates_adjudicated": 66,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 authority-transaction proof increment. Every newly scanned sentence is covered by an existing formal target or explicit non-claim boundary. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 canonical descendant-revocation proof increment. The exact 56-theorem surface now includes rejected-state noninterference, arbitrary-run descendant-inventory and trace custody, terminal revocation, twelve state-preserving rejecting controls, six inventory permutations, and a count-only impossibility result. Every newly scanned sentence remains owned by an existing formal target or explicit non-claim boundary. No new support atom, runtime-security inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,8 +16,8 @@
       "environment": "Current public schemas, deterministic fixtures, finite Lean records, one bounded repository-task campaign, and future frozen natural/adversarial real-model environments spanning local, cloud, browser, multimodal, and multi-agent execution; production security is outside current evidence.",
       "model": "A versioned threat-model-bound authority-use transaction whose current implementation validates only explicit finite record fields and bounded routes; non-bypassability, isolation, semantic declassification, side-channel control, revocation, recovery, security, and transfer require runtime and independent empirical evidence.",
       "authority": "Human/governance owners authorize threat model and policy; separate-enough identity, policy, approval, enforcement, context, declassification, audit, incident, revocation, recovery, privacy/rights, and Evidence State owners govern their exact surfaces; the model under judgment remains a proposer rather than sole authority.",
-      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest contract; sixteen reviewed source mappings; authority-use schema and 3/8 corpus; 2/6 SCIF commit probe; 6/7 budget corpus; 44 Lean declarations under four targets, including a 23-theorem transaction lifecycle with an independent eight-event/nine-control consumer; post-v2.1 36-transaction outcome; future threat, lease, admission, effect, declassification, closure, attack, metric, ablation, replication, and transfer records."
+      "time": "Semantic review current through 2026-08-03; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "artifact": "Chapter and manifest contract; sixteen reviewed source mappings; authority-use schema and 3/8 corpus; 2/6 SCIF commit probe; 6/7 budget corpus; 56 Lean declarations under four targets, including a 35-theorem transaction lifecycle with an independent eight-event/twelve-control consumer, eight revoked-state event-kind checks, six canonical descendant-inventory permutations, and a count-only impossibility result; post-v2.1 36-transaction outcome; future threat, lease, admission, effect, declassification, closure, attack, metric, ablation, replication, and transfer records."
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
     "assumptions": [
@@ -178,47 +178,52 @@
       ]
     },
     "security-kernel-and-digital-scifs.formal.security-scif-operational-invariant": {
-      "current_disposition": "retain_narrow_finite_theorem_pending_runtime_refinement",
+      "current_disposition": "retain_adequate_finite_route_pending_runtime_enforcement",
       "strongest_counterclaim": "The theorem restates an explicit authorization premise and says nothing about whether a runtime obtains or enforces it.",
       "falsifier": "The model admits substitution without its named authorization or cannot refine to the executable route without changing meaning.",
       "acceptance_criteria": [
-        "Audit proof necessity and connect the predicate to an executable enforcement trace with rejecting mutations in P2."
+        "The retained route theorems and `python3 scripts/validate_security_kernel.py` must continue to reject unauthorized substitution in the exact finite record model; runtime enforcement remains a separate Project Theseus obligation."
       ]
     },
     "security-kernel-and-digital-scifs.formal.security-scif-failure-blocks-promotion": {
-      "current_disposition": "retain_narrow_finite_theorem_pending_runtime_refinement",
+      "current_disposition": "retain_adequate_finite_clearance_guard_pending_runtime_admission",
       "strongest_counterclaim": "The theorem restates a clearance comparison and does not prove context minimization, taint, isolation, or runtime admission.",
       "falsifier": "The model admits insufficient clearance or cannot refine to an executable admission path without changing meaning.",
       "acceptance_criteria": [
-        "Audit proof necessity and bind clearance to real context admission, omitted-material residuals, and rejecting runtime mutations in P2."
+        "The finite clearance guard must continue to reject insufficient modeled clearance; real context admission, taint, omitted-material residuals, and isolation remain separate executable and empirical obligations."
       ]
     },
     "security-kernel-and-digital-scifs.formal.security-scif-route-envelope": {
-      "current_disposition": "retain_finite_route_envelope_pending_semantic_model_and_refinement",
+      "current_disposition": "retain_adequate_finite_transaction_pending_runtime_security",
       "strongest_counterclaim": "The route merely maps trusted Boolean fields to labels; it neither detects the fields nor models information flow, actual effects, observer error, or bypass.",
       "falsifier": "A modeled record reaches an unsafe allow state or the route cannot represent an executable threat-model case without semantic distortion.",
       "acceptance_criteria": [
-        "Add countermodels, observer uncertainty, actual effect semantics, non-vacuity tests, and executable refinement in P2 before any mechanized-security language."
+        "`cd lean && lake build` must check the exact 56-theorem surface and `python3 scripts/validate_security_kernel.py` must reconstruct eight accepted events, reject twelve controls without state change, reject all eight event kinds after revocation, distinguish all six canonical-inventory permutations, and reproduce the count-only impossibility boundary; no runtime-security inference follows."
       ]
     },
     "security-kernel-and-digital-scifs.formal.security-scif-commit-probe-bridge": {
-      "current_disposition": "retain_finite_probe_bridge_pending_semantic_declassification_model",
+      "current_disposition": "retain_adequate_finite_probe_bridge_pending_semantic_declassification",
       "strongest_counterclaim": "Literal field checks over a toy commit cannot represent semantic disclosure, declassification quality, isolation, zeroization, side channels, or descendant effects.",
       "falsifier": "Any probe control reaches commit incorrectly or a realistic semantic leakage case cannot be represented without changing the target.",
       "acceptance_criteria": [
-        "Replace literal-only abstractions with explicit information labels, declassification authority, evaluator uncertainty, effect inventory, and executable refinement in P2/P3."
+        "The exact commit routes and six rejecting probe controls must remain reproducible; semantic information labels, declassification competence, evaluator uncertainty, effect inventory, and runtime refinement remain outside this finite bridge."
       ]
     }
   },
   "prose_candidate_dispositions": {
-    "security-kernel-and-digital-scifs.prose.6537bc154bf1": {
+    "security-kernel-and-digital-scifs.prose.a20c08f637dd": {
       "state": "duplicate_of_atom",
-      "rationale": "Restates the finite authored-field scope of the route-envelope formal target.",
+      "rationale": "Restates the finite authored authorization-and-inventory scope of the route-envelope formal target.",
       "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
     },
-    "security-kernel-and-digital-scifs.prose.8ecbc87b1198": {
+    "security-kernel-and-digital-scifs.prose.ba444f22e393": {
       "state": "duplicate_of_atom",
-      "rationale": "Restates the explicit runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
+      "rationale": "Restates the explicit inventory-completeness, runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
+      "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+    },
+    "security-kernel-and-digital-scifs.prose.f45208cd6167": {
+      "state": "duplicate_of_atom",
+      "rationale": "Plain-language statement of the count-only revocation impossibility now owned by the route-envelope formal target.",
       "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
     },
     "security-kernel-and-digital-scifs.prose.affaf45c9c1b": {
@@ -508,6 +513,38 @@
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Representation-layer security: residuals, macros, and exact objects` and reviewed owner atoms `security-kernel-and-digital-scifs.beyond_sota.001`, `security-kernel-and-digital-scifs.minimum.001`, `security-kernel-and-digital-scifs.core`."
     }
   },
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "security-kernel-and-digital-scifs.prose.6537bc154bf1",
+      "retired_source": "chapters/security-kernel-and-digital-scifs.qmd:469",
+      "retired_sentence": "The model establishes only consequences of authored finite authorization fields.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the finite authored-field scope of the route-envelope formal target.",
+        "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+      },
+      "retirement_reason": "The canonical descendant-inventory refinement expanded the sentence without changing its formal-target ownership or support ceiling.",
+      "replacement_candidate_ids": [
+        "security-kernel-and-digital-scifs.prose.a20c08f637dd"
+      ],
+      "recorded_on": "2026-08-03"
+    },
+    {
+      "retired_candidate_id": "security-kernel-and-digital-scifs.prose.8ecbc87b1198",
+      "retired_source": "chapters/security-kernel-and-digital-scifs.qmd:469",
+      "retired_sentence": "It does not prove that those fields bind a runtime, that sanitization or declassification is correct, that revocation reaches real descendants, that the records are semantically adequate, or that a deployed monitor enforces complete mediation, side-channel resistance, approval expiry, least-privilege context, prompt-injection containment, runtime budgets, privacy, security, or security economics.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the explicit runtime, semantic-adequacy, and security non-claim boundary of the route-envelope formal target.",
+        "target_atom_id": "security-kernel-and-digital-scifs.formal.security-scif-route-envelope"
+      },
+      "retirement_reason": "The revised boundary explicitly adds descendant-inventory completeness while preserving every prior non-claim.",
+      "replacement_candidate_ids": [
+        "security-kernel-and-digital-scifs.prose.ba444f22e393"
+      ],
+      "recorded_on": "2026-08-03"
+    }
+  ],
   "non_claims": [
     "This semantic sweep does not promote the chapter, prove novelty, or authorize deployment.",
     "No source mapping, handle, SCIF label, schema, fixture, theorem, audit row, or blocked attack is counted as security evidence beyond its exact frozen scope.",

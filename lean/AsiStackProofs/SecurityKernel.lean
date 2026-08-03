@@ -477,6 +477,8 @@ structure AuthorityTransactionState where
   stage : AuthorityTransactionStage
   descendantCount : Nat
   revokedDescendantCount : Nat
+  descendantIds : List Nat
+  revokedDescendantIds : List Nat
   sanitizerReceiptCount : Nat
   declassificationReceiptCount : Nat
   zeroizationReceiptCount : Nat
@@ -516,6 +518,7 @@ structure AuthorityTransactionEvent where
   commitReceiptPresent : Bool
   revocationReceiptPresent : Bool
   requestedRevokedDescendantCount : Nat
+  requestedRevokedDescendantIds : List Nat
   residualPresent : Bool
   claimsSecurity : Bool
   requestsSupportAssignment : Bool
@@ -594,7 +597,10 @@ def AuthorityTransactionEventAdmissible
         state.stage = AuthorityTransactionStage.committed ∧
           event.actorId = state.kernelId ∧
           event.revocationReceiptPresent = true ∧
+          state.descendantIds.Nodup ∧
+          state.descendantCount = state.descendantIds.length ∧
           event.requestedRevokedDescendantCount = state.descendantCount ∧
+          event.requestedRevokedDescendantIds = state.descendantIds ∧
           event.residualPresent = true ∧
           event.requestedAuthorityCeiling = 0 ∧
           event.targetVersion = state.version + 1
@@ -651,6 +657,7 @@ def AdvanceAuthorityTransaction
         version := event.targetVersion
         currentAuthorityCeiling := 0
         revokedDescendantCount := event.requestedRevokedDescendantCount
+        revokedDescendantIds := event.requestedRevokedDescendantIds
         revocationReceiptCount := state.revocationReceiptCount + 1
         residualCount := state.residualCount + 1
         now := event.observedNow }
@@ -671,6 +678,20 @@ def RunAuthorityTransactionEvents :
       match ApplyAuthorityTransactionEvent state event with
       | none => none
       | some next => RunAuthorityTransactionEvents next tail
+
+def ProcessAuthorityTransactionEvent
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent) : AuthorityTransactionState × Bool :=
+  match ApplyAuthorityTransactionEvent state event with
+  | some next => (next, true)
+  | none => (state, false)
+
+def AuthorityTransactionTraceValid :
+    AuthorityTransactionState → List AuthorityTransactionEvent → Prop
+  | _, [] => True
+  | state, event :: tail =>
+      ∃ next, ApplyAuthorityTransactionEvent state event = some next ∧
+        AuthorityTransactionTraceValid next tail
 
 theorem accepted_authority_transaction_event_is_admissible
     {state next : AuthorityTransactionState}
@@ -753,6 +774,24 @@ theorem accepted_authority_transaction_event_never_widens_authority
   | recordZeroization => simp [AdvanceAuthorityTransaction, kind]
   | commitOutput => simp [AdvanceAuthorityTransaction, kind]
   | propagateRevocation => simp [AdvanceAuthorityTransaction, kind]
+
+theorem accepted_authority_transaction_event_preserves_descendant_inventory
+    {state next : AuthorityTransactionState}
+    {event : AuthorityTransactionEvent}
+    (accepted : ApplyAuthorityTransactionEvent state event = some next) :
+    next.descendantCount = state.descendantCount ∧
+      next.descendantIds = state.descendantIds := by
+  have exactAdvance :=
+    accepted_authority_transaction_event_is_exact_advance accepted
+  subst next
+  cases kind : event.kind <;> simp [AdvanceAuthorityTransaction, kind]
+
+theorem rejected_authority_transaction_event_preserves_exact_state
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent)
+    (rejected : ApplyAuthorityTransactionEvent state event = none) :
+    ProcessAuthorityTransactionEvent state event = (state, false) := by
+  simp [ProcessAuthorityTransactionEvent, rejected]
 
 theorem accepted_lease_is_bounded_versioned_and_unexpired
     {state next : AuthorityTransactionState}
@@ -871,7 +910,11 @@ theorem accepted_revocation_covers_descendants_and_closes_authority
     (accepted : ApplyAuthorityTransactionEvent state event = some next) :
     state.stage = AuthorityTransactionStage.committed ∧
       event.revocationReceiptPresent = true ∧
+      state.descendantIds.Nodup ∧
+      state.descendantCount = state.descendantIds.length ∧
       next.revokedDescendantCount = state.descendantCount ∧
+      next.revokedDescendantIds = state.descendantIds ∧
+      next.revokedDescendantCount = next.revokedDescendantIds.length ∧
       next.currentAuthorityCeiling = 0 ∧
       next.stage = AuthorityTransactionStage.revoked ∧
       next.revocationReceiptCount = state.revocationReceiptCount + 1 := by
@@ -881,9 +924,11 @@ theorem accepted_revocation_covers_descendants_and_closes_authority
     accepted_authority_transaction_event_is_exact_advance accepted
   rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
   rw [kind] at route
-  rcases route with ⟨committed, _, receipt, descendants, _, _, _⟩
+  rcases route with ⟨committed, _, receipt, unique, countMatches,
+    countRequested, idsRequested, _, _, _⟩
   subst next
-  simp [AdvanceAuthorityTransaction, kind, committed, receipt, descendants]
+  simp [AdvanceAuthorityTransaction, kind, committed, receipt, unique,
+    countMatches, countRequested, idsRequested]
 
 theorem authority_transaction_run_preserves_custody_non_authority_and_narrowing
     {initial final : AuthorityTransactionState}
@@ -929,6 +974,62 @@ theorem authority_transaction_run_preserves_custody_non_authority_and_narrowing
             tbase.trans base, Nat.le_trans tnarrowed narrowed,
             tsupport.trans support, teffects.trans effects⟩
 
+theorem authority_transaction_run_preserves_descendant_inventory
+    {initial final : AuthorityTransactionState}
+    {events : List AuthorityTransactionEvent}
+    (run : RunAuthorityTransactionEvents initial events = some final) :
+    final.descendantCount = initial.descendantCount ∧
+      final.descendantIds = initial.descendantIds := by
+  induction events generalizing initial with
+  | nil =>
+      simp [RunAuthorityTransactionEvents] at run
+      subst final
+      exact ⟨rfl, rfl⟩
+  | cons event tail ih =>
+      simp only [RunAuthorityTransactionEvents] at run
+      cases step : ApplyAuthorityTransactionEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          have head :=
+            accepted_authority_transaction_event_preserves_descendant_inventory step
+          have rest := ih run
+          exact ⟨rest.1.trans head.1, rest.2.trans head.2⟩
+
+theorem successful_authority_transaction_run_has_valid_trace
+    {initial final : AuthorityTransactionState}
+    {events : List AuthorityTransactionEvent}
+    (run : RunAuthorityTransactionEvents initial events = some final) :
+    AuthorityTransactionTraceValid initial events := by
+  induction events generalizing initial with
+  | nil => trivial
+  | cons event tail ih =>
+      simp only [RunAuthorityTransactionEvents] at run
+      cases step : ApplyAuthorityTransactionEvent initial event with
+      | none => simp [step] at run
+      | some next =>
+          simp [step] at run
+          exact ⟨next, step, ih run⟩
+
+theorem revoked_authority_transaction_state_rejects_every_event
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent)
+    (revoked : state.stage = AuthorityTransactionStage.revoked) :
+    ¬ AuthorityTransactionEventAdmissible state event := by
+  intro admissible
+  rcases admissible with ⟨_, _, _, _, _, _, _, _, _, _, route⟩
+  cases kind : event.kind <;> simp [kind, revoked] at route
+
+theorem revoked_authority_transaction_state_has_no_nonempty_run
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent)
+    (tail : List AuthorityTransactionEvent)
+    (revoked : state.stage = AuthorityTransactionStage.revoked) :
+    RunAuthorityTransactionEvents state (event :: tail) = none := by
+  have rejected :=
+    revoked_authority_transaction_state_rejects_every_event state event revoked
+  simp [RunAuthorityTransactionEvents, ApplyAuthorityTransactionEvent, rejected]
+
 theorem authority_transaction_runs_compose
     (initial : AuthorityTransactionState)
     (before after : List AuthorityTransactionEvent) :
@@ -959,6 +1060,8 @@ def initialAuthorityTransactionState : AuthorityTransactionState := {
   stage := AuthorityTransactionStage.requested
   descendantCount := 3
   revokedDescendantCount := 0
+  descendantIds := [113, 127, 131]
+  revokedDescendantIds := []
   sanitizerReceiptCount := 0
   declassificationReceiptCount := 0
   zeroizationReceiptCount := 0
@@ -998,6 +1101,7 @@ def issueAuthorityLeaseEvent : AuthorityTransactionEvent := {
   commitReceiptPresent := false
   revocationReceiptPresent := false
   requestedRevokedDescendantCount := 0
+  requestedRevokedDescendantIds := []
   residualPresent := false
   claimsSecurity := false
   requestsSupportAssignment := false
@@ -1070,6 +1174,7 @@ def propagateAuthorityRevocationEvent : AuthorityTransactionEvent := {
   commitReceiptPresent := false
   revocationReceiptPresent := true
   requestedRevokedDescendantCount := 3
+  requestedRevokedDescendantIds := [113, 127, 131]
   observedNow := 28
 }
 
@@ -1078,6 +1183,41 @@ def completeAuthorityTransactionTrace : List AuthorityTransactionEvent :=
     recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
     recordAuthorityDeclassificationEvent, recordAuthorityZeroizationEvent,
     commitAuthorityOutputEvent, propagateAuthorityRevocationEvent]
+
+def committedAuthorityTransactionState : AuthorityTransactionState := {
+  initialAuthorityTransactionState with
+  version := 2
+  currentAuthorityCeiling := 5
+  stage := AuthorityTransactionStage.committed
+  sanitizerReceiptCount := 1
+  declassificationReceiptCount := 1
+  zeroizationReceiptCount := 1
+  commitReceiptCount := 1
+  residualCount := 1
+  expiresAt := 40
+  now := 27
+}
+
+def substitutedDescendantRevocationEvent : AuthorityTransactionEvent := {
+  propagateAuthorityRevocationEvent with
+  requestedRevokedDescendantIds := [113, 127, 137]
+}
+
+def RevocationCountSummary (event : AuthorityTransactionEvent) : Nat :=
+  event.requestedRevokedDescendantCount
+
+def RevocationAdmitted
+    (state : AuthorityTransactionState)
+    (event : AuthorityTransactionEvent) : Bool :=
+  decide (AuthorityTransactionEventAdmissible state event)
+
+theorem complete_authority_transaction_prefix_reaches_exact_committed_state :
+    RunAuthorityTransactionEvents initialAuthorityTransactionState
+      [issueAuthorityLeaseEvent, injectAuthoritySecretEvent,
+        recordAuthorityExecutionEvent, recordAuthoritySanitizationEvent,
+        recordAuthorityDeclassificationEvent, recordAuthorityZeroizationEvent,
+        commitAuthorityOutputEvent] = some committedAuthorityTransactionState := by
+  decide
 
 theorem complete_authority_transaction_trace_reaches_exact_revoked_state :
     RunAuthorityTransactionEvents initialAuthorityTransactionState
@@ -1088,6 +1228,7 @@ theorem complete_authority_transaction_trace_reaches_exact_revoked_state :
         currentAuthorityCeiling := 0
         stage := AuthorityTransactionStage.revoked
         revokedDescendantCount := 3
+        revokedDescendantIds := [113, 127, 131]
         sanitizerReceiptCount := 1
         declassificationReceiptCount := 1
         zeroizationReceiptCount := 1
@@ -1153,6 +1294,48 @@ theorem authority_transaction_partial_descendant_revocation_is_rejected :
         { propagateAuthorityRevocationEvent with
           requestedRevokedDescendantCount := 2 }] = none := by
   decide
+
+theorem authority_transaction_same_count_descendant_substitution_is_rejected :
+    ApplyAuthorityTransactionEvent committedAuthorityTransactionState
+      substitutedDescendantRevocationEvent = none := by
+  decide
+
+theorem authority_transaction_duplicate_descendant_inventory_is_rejected :
+    ApplyAuthorityTransactionEvent
+      { committedAuthorityTransactionState with
+        descendantIds := [113, 113, 131] }
+      { propagateAuthorityRevocationEvent with
+        requestedRevokedDescendantIds := [113, 113, 131] } = none := by
+  decide
+
+theorem authority_transaction_revocation_count_summary_collides :
+    RevocationCountSummary propagateAuthorityRevocationEvent =
+        RevocationCountSummary substitutedDescendantRevocationEvent ∧
+      propagateAuthorityRevocationEvent.requestedRevokedDescendantIds ≠
+        substitutedDescendantRevocationEvent.requestedRevokedDescendantIds := by
+  decide
+
+theorem authority_transaction_exact_inventory_separates_count_collision :
+    RevocationAdmitted committedAuthorityTransactionState
+        propagateAuthorityRevocationEvent = true ∧
+      RevocationAdmitted committedAuthorityTransactionState
+        substitutedDescendantRevocationEvent = false := by
+  decide
+
+theorem no_exact_revocation_admission_classifier_from_count_only :
+    ¬ ∃ classify : Nat → Bool,
+      ∀ event : AuthorityTransactionEvent,
+        classify (RevocationCountSummary event) =
+          RevocationAdmitted committedAuthorityTransactionState event := by
+  intro ⟨classify, exact⟩
+  have good := exact propagateAuthorityRevocationEvent
+  have bad := exact substitutedDescendantRevocationEvent
+  have collision := authority_transaction_revocation_count_summary_collides
+  have separated := authority_transaction_exact_inventory_separates_count_collision
+  rw [separated.1] at good
+  rw [separated.2] at bad
+  rw [collision.1] at good
+  simp_all
 
 theorem authority_transaction_security_claim_laundering_is_rejected :
     ApplyAuthorityTransactionEvent initialAuthorityTransactionState

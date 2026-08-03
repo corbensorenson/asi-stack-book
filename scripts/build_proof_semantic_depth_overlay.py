@@ -622,7 +622,7 @@ _authority_transaction_lifecycle_base = {
         "scripts/validate_security_kernel.py",
     ],
     "classification_basis": [
-        "the eight-event authority-use transaction and nine rejecting controls are independently reconstructed by the security-kernel validator"
+        "the eight-event authority-use transaction, twelve state-preserving rejecting controls, eight revoked-state suffix routes, and six descendant-inventory permutations are independently reconstructed by the security-kernel validator"
     ],
 }
 
@@ -646,10 +646,19 @@ CURRENT_SEMANTIC_OVERRIDES[
     "rationale": "The eight-event lease, substitution, execution, sanitization, declassification, zeroization, commit, and revocation trace is a bounded nonvacuity witness.",
 }
 
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/SecurityKernel.lean::complete_authority_transaction_prefix_reaches_exact_committed_state"
+] = {
+    **_authority_transaction_lifecycle_base,
+    "semantic_level": "P2",
+    "rationale": "The seven-event prefix is a bounded witness that reaches the exact committed state before canonical descendant revocation.",
+}
+
 for theorem_name in (
     "accepted_authority_transaction_event_preserves_custody",
     "accepted_authority_transaction_event_is_non_authorizing",
     "accepted_authority_transaction_event_never_widens_authority",
+    "accepted_authority_transaction_event_preserves_descendant_inventory",
     "accepted_lease_is_bounded_versioned_and_unexpired",
     "accepted_secret_injection_is_scoped_mediated_and_preexpiry",
     "accepted_sanitization_excludes_raw_secret_and_handle",
@@ -676,7 +685,26 @@ for theorem_name in (
     }
 
 for theorem_name in (
+    "authority_transaction_same_count_descendant_substitution_is_rejected",
+    "authority_transaction_duplicate_descendant_inventory_is_rejected",
+    "authority_transaction_revocation_count_summary_collides",
+    "authority_transaction_exact_inventory_separates_count_collision",
+    "no_exact_revocation_admission_classifier_from_count_only",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SecurityKernel.lean::{theorem_name}"
+    ] = {
+        **_authority_transaction_lifecycle_base,
+        "semantic_level": "P2",
+        "rationale": (
+            "A closed canonical-inventory countermodel witnesses that equal descendant counts can encode opposite revocation-admission outcomes."
+        ),
+    }
+
+for theorem_name in (
     "authority_transaction_run_preserves_custody_non_authority_and_narrowing",
+    "authority_transaction_run_preserves_descendant_inventory",
+    "successful_authority_transaction_run_has_valid_trace",
     "authority_transaction_runs_compose",
 ):
     CURRENT_SEMANTIC_OVERRIDES[
@@ -690,11 +718,31 @@ for theorem_name in (
     }
 
 CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/SecurityKernel.lean::rejected_authority_transaction_event_preserves_exact_state"
+] = {
+    **_authority_transaction_lifecycle_base,
+    "semantic_level": "P4",
+    "rationale": "The total transaction wrapper proves exact state noninterference for every rejected event.",
+}
+
+for theorem_name in (
+    "revoked_authority_transaction_state_rejects_every_event",
+    "revoked_authority_transaction_state_has_no_nonempty_run",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/SecurityKernel.lean::{theorem_name}"
+    ] = {
+        **_authority_transaction_lifecycle_base,
+        "semantic_level": "P5",
+        "rationale": "Revocation is terminal for every modeled event and every nonempty finite suffix.",
+    }
+
+CURRENT_SEMANTIC_OVERRIDES[
     "lean/AsiStackProofs/SecurityKernel.lean::accepted_revocation_covers_descendants_and_closes_authority"
 ] = {
     **_authority_transaction_lifecycle_base,
     "semantic_level": "P5",
-    "rationale": "An accepted bounded revocation closes the modeled authority ceiling and records exact finite descendant coverage.",
+    "rationale": "An accepted bounded revocation closes the modeled authority ceiling and records the exact duplicate-free canonical descendant-ID inventory, not merely its count.",
 }
 
 _weight_custody_lifecycle_base = {

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from itertools import permutations
 from pathlib import Path
 import re
 import subprocess
@@ -27,6 +28,8 @@ LIFECYCLE_THEOREMS = {
     "accepted_authority_transaction_event_preserves_custody",
     "accepted_authority_transaction_event_is_non_authorizing",
     "accepted_authority_transaction_event_never_widens_authority",
+    "accepted_authority_transaction_event_preserves_descendant_inventory",
+    "rejected_authority_transaction_event_preserves_exact_state",
     "accepted_lease_is_bounded_versioned_and_unexpired",
     "accepted_secret_injection_is_scoped_mediated_and_preexpiry",
     "accepted_sanitization_excludes_raw_secret_and_handle",
@@ -34,7 +37,12 @@ LIFECYCLE_THEOREMS = {
     "accepted_commit_requires_zeroization_and_preserves_residual",
     "accepted_revocation_covers_descendants_and_closes_authority",
     "authority_transaction_run_preserves_custody_non_authority_and_narrowing",
+    "authority_transaction_run_preserves_descendant_inventory",
+    "successful_authority_transaction_run_has_valid_trace",
+    "revoked_authority_transaction_state_rejects_every_event",
+    "revoked_authority_transaction_state_has_no_nonempty_run",
     "authority_transaction_runs_compose",
+    "complete_authority_transaction_prefix_reaches_exact_committed_state",
     "complete_authority_transaction_trace_reaches_exact_revoked_state",
     "authority_transaction_stale_version_is_rejected",
     "authority_transaction_ambient_context_is_rejected",
@@ -44,6 +52,11 @@ LIFECYCLE_THEOREMS = {
     "authority_transaction_self_declassification_is_rejected",
     "authority_transaction_commit_before_zeroization_is_rejected",
     "authority_transaction_partial_descendant_revocation_is_rejected",
+    "authority_transaction_same_count_descendant_substitution_is_rejected",
+    "authority_transaction_duplicate_descendant_inventory_is_rejected",
+    "authority_transaction_revocation_count_summary_collides",
+    "authority_transaction_exact_inventory_separates_count_collision",
+    "no_exact_revocation_admission_classifier_from_count_only",
     "authority_transaction_security_claim_laundering_is_rejected",
 }
 
@@ -275,8 +288,12 @@ def apply_authority_event(
             state["stage"] == "committed"
             and event["actor_id"] == state["kernel_id"]
             and event["revocation_receipt_present"]
+            and len(state["descendant_ids"]) == len(set(state["descendant_ids"]))
+            and state["descendant_count"] == len(state["descendant_ids"])
             and event["requested_revoked_descendant_count"]
             == state["descendant_count"]
+            and event["requested_revoked_descendant_ids"]
+            == state["descendant_ids"]
             and event["residual_present"]
             and event["requested_authority_ceiling"] == 0
             and event["target_version"] == state["version"] + 1
@@ -318,10 +335,20 @@ def apply_authority_event(
             version=event["target_version"],
             current_authority_ceiling=0,
             revoked_descendant_count=event["requested_revoked_descendant_count"],
+            revoked_descendant_ids=list(event["requested_revoked_descendant_ids"]),
         )
         next_state["revocation_receipt_count"] += 1
         next_state["residual_count"] += 1
     return next_state
+
+
+def process_authority_event(
+    state: dict[str, Any], event: dict[str, Any]
+) -> tuple[dict[str, Any], bool]:
+    next_state = apply_authority_event(state, event)
+    if next_state is None:
+        return dict(state), False
+    return next_state, True
 
 
 def run_authority_events(
@@ -340,6 +367,8 @@ def run_authority_events(
             "kernel_id",
             "declassifier_id",
             "base_authority_ceiling",
+            "descendant_count",
+            "descendant_ids",
             "support_assignment_count",
             "external_effect_count",
         )
@@ -357,7 +386,7 @@ def run_authority_events(
     return state
 
 
-def authority_lifecycle_cases() -> tuple[int, int]:
+def authority_lifecycle_cases() -> tuple[int, int, int, int]:
     initial = {
         "transaction_id": 79,
         "handle_id": 83,
@@ -373,6 +402,8 @@ def authority_lifecycle_cases() -> tuple[int, int]:
         "stage": "requested",
         "descendant_count": 3,
         "revoked_descendant_count": 0,
+        "descendant_ids": [113, 127, 131],
+        "revoked_descendant_ids": [],
         "sanitizer_receipt_count": 0,
         "declassification_receipt_count": 0,
         "zeroization_receipt_count": 0,
@@ -411,6 +442,7 @@ def authority_lifecycle_cases() -> tuple[int, int]:
         "commit_receipt_present": False,
         "revocation_receipt_present": False,
         "requested_revoked_descendant_count": 0,
+        "requested_revoked_descendant_ids": [],
         "residual_present": False,
         "claims_security": False,
         "requests_support_assignment": False,
@@ -479,6 +511,7 @@ def authority_lifecycle_cases() -> tuple[int, int]:
             requested_authority_ceiling=0,
             revocation_receipt_present=True,
             requested_revoked_descendant_count=3,
+            requested_revoked_descendant_ids=[113, 127, 131],
             residual_present=True,
             observed_now=28,
         ),
@@ -490,6 +523,7 @@ def authority_lifecycle_cases() -> tuple[int, int]:
         current_authority_ceiling=0,
         stage="revoked",
         revoked_descendant_count=3,
+        revoked_descendant_ids=[113, 127, 131],
         sanitizer_receipt_count=1,
         declassification_receipt_count=1,
         zeroization_receipt_count=1,
@@ -511,6 +545,8 @@ def authority_lifecycle_cases() -> tuple[int, int]:
         (4, "actor_id", 103),
         (5, "kind", "commit_output"),
         (7, "requested_revoked_descendant_count", 2),
+        (7, "requested_revoked_descendant_ids", [113, 127, 137]),
+        (7, "requested_revoked_descendant_ids", [131, 127, 113]),
         (0, "claims_security", True),
     )
     for index, field, value in mutations:
@@ -520,7 +556,68 @@ def authority_lifecycle_cases() -> tuple[int, int]:
             raise AssertionError(
                 f"authority lifecycle mutation {index}:{field} was accepted"
             )
-    return len(events), len(mutations)
+        prefix = run_authority_events(initial, changed[:index])
+        if prefix is None:
+            raise AssertionError(f"mutation {index}:{field} corrupted its valid prefix")
+        after, admitted = process_authority_event(prefix, changed[index])
+        if admitted or after != prefix:
+            raise AssertionError(
+                f"authority lifecycle mutation {index}:{field} changed rejected state"
+            )
+
+    duplicate_initial = dict(initial)
+    duplicate_initial["descendant_ids"] = [113, 113, 131]
+    duplicate_events = [dict(item) for item in events]
+    duplicate_events[-1]["requested_revoked_descendant_ids"] = [113, 113, 131]
+    duplicate_prefix = run_authority_events(duplicate_initial, duplicate_events[:-1])
+    if duplicate_prefix is None:
+        raise AssertionError("duplicate-inventory control corrupted its valid prefix")
+    duplicate_after, duplicate_admitted = process_authority_event(
+        duplicate_prefix, duplicate_events[-1]
+    )
+    if duplicate_admitted or duplicate_after != duplicate_prefix:
+        raise AssertionError("duplicate descendant inventory was not state-preserving rejection")
+
+    committed = run_authority_events(initial, events[:-1])
+    if committed is None:
+        raise AssertionError("complete authority prefix did not reach committed state")
+    canonical_ids = tuple(initial["descendant_ids"])
+    inventory_permutations = list(permutations(canonical_ids))
+    for candidate_ids in inventory_permutations:
+        probe = dict(events[-1])
+        probe["requested_revoked_descendant_ids"] = list(candidate_ids)
+        admitted = apply_authority_event(committed, probe) is not None
+        if admitted != (candidate_ids == canonical_ids):
+            raise AssertionError(
+                f"canonical descendant inventory permutation routed incorrectly: {candidate_ids}"
+            )
+
+    substituted = dict(events[-1])
+    substituted["requested_revoked_descendant_ids"] = [113, 127, 137]
+    if (
+        substituted["requested_revoked_descendant_count"]
+        != events[-1]["requested_revoked_descendant_count"]
+        or apply_authority_event(committed, events[-1]) is None
+        or apply_authority_event(committed, substituted) is not None
+    ):
+        raise AssertionError("count-only revocation collision was not independently reproduced")
+
+    event_kinds = (
+        "issue_lease", "inject_secret", "record_execution", "record_sanitization",
+        "record_declassification", "record_zeroization", "commit_output",
+        "propagate_revocation",
+    )
+    for kind in event_kinds:
+        probe = dict(events[0])
+        probe["kind"] = kind
+        after, admitted = process_authority_event(final, probe)
+        if admitted or after != final:
+            raise AssertionError(f"revoked terminal state accepted {kind}")
+
+    return (
+        len(events), len(mutations) + 1, len(event_kinds),
+        len(inventory_permutations),
+    )
 
 
 def main() -> None:
@@ -592,8 +689,12 @@ def main() -> None:
         name
         for name in theorem_names
         if name.startswith("accepted_")
+        or name.startswith("rejected_authority_transaction_")
         or name.startswith("authority_transaction_")
         or name.startswith("complete_authority_transaction_")
+        or name.startswith("successful_authority_transaction_")
+        or name.startswith("revoked_authority_transaction_")
+        or name.startswith("no_exact_revocation_")
     }
     if lifecycle_surface != LIFECYCLE_THEOREMS:
         missing = sorted(LIFECYCLE_THEOREMS - lifecycle_surface)
@@ -601,17 +702,26 @@ def main() -> None:
         print("Security kernel harness failed:")
         print(f" - authority lifecycle theorem surface mismatch: missing={missing}, extra={extra}")
         sys.exit(1)
+    if len(theorem_names) != 56:
+        print("Security kernel harness failed:")
+        print(f" - exact theorem count drifted: expected 56, got {len(theorem_names)}")
+        sys.exit(1)
 
-    lifecycle_events, lifecycle_controls = authority_lifecycle_cases()
+    lifecycle_events, lifecycle_controls, terminal_kinds, inventory_orders = (
+        authority_lifecycle_cases()
+    )
 
     print(
         "Security kernel harness passed: "
         f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s). "
         "Security kernel formal binding passed: "
+        f"{len(theorem_names)} exact Lean theorems, "
         f"{len(REQUIRED_THEOREMS)} retained authority-route theorem binding(s), "
         f"{len(LIFECYCLE_THEOREMS)} transaction-lifecycle theorem(s), "
         f"{lifecycle_events} accepted event(s), and "
-        f"{lifecycle_controls} rejecting lifecycle control(s)."
+        f"{lifecycle_controls} state-preserving rejecting lifecycle control(s), "
+        f"{terminal_kinds} revoked-state event kinds, and "
+        f"{inventory_orders} descendant-inventory permutations."
     )
 
 

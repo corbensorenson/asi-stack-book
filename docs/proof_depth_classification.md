@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3075 |
+| Theorem declarations classified | 3087 |
 | Direct/projection-style theorem declarations | 447 |
-| Derived/decomposed theorem declarations | 1926 |
-| Unknown or mixed theorem declarations | 702 |
+| Derived/decomposed theorem declarations | 1933 |
+| Unknown or mixed theorem declarations | 707 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -162,7 +162,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ScientificExperimentReview.lean` | scientific-discovery-and-experimental-governance | 1 | 41 | 14 | 14 | 13 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 19 | 0 | 7 | 12 | manual review |
-| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 44 | 0 | 34 | 10 | manual review |
+| `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 56 | 0 | 41 | 15 | manual review |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SelfImprovementRefinement.lean` | recursive-self-improvement-boundaries | 3 | 2 | 0 | 0 | 2 | manual review |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -2784,6 +2784,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_authority_transaction_event_is_non_authorizing` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_authority_transaction_event_never_widens_authority` | derived_or_decomposed | no | uses cases, have, rcases, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_authority_transaction_event_preserves_custody` | derived_or_decomposed | no | uses cases, have, simp, subst |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_authority_transaction_event_preserves_descendant_inventory` | derived_or_decomposed | no | uses cases, have, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_commit_requires_zeroization_and_preserves_residual` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_declassification_is_independent_and_post_sanitization` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_lease_is_bounded_versioned_and_unexpired` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
@@ -2792,16 +2793,22 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `accepted_secret_injection_is_scoped_mediated_and_preexpiry` | derived_or_decomposed | no | uses have, rcases, rw, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_ambient_context_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_commit_before_zeroization_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_duplicate_descendant_inventory_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_exact_inventory_separates_count_collision` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_expired_injection_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_partial_descendant_revocation_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_revocation_count_summary_collides` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_run_preserves_custody_non_authority_and_narrowing` | derived_or_decomposed | no | uses cases, have, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_run_preserves_descendant_inventory` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_runs_compose` | derived_or_decomposed | no | uses cases, induction, simp |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_same_count_descendant_substitution_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_secret_output_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_security_claim_laundering_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_self_declassification_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_stale_version_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `authority_transaction_unmediated_injection_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `clean_authorized_use_is_allowed` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `complete_authority_transaction_prefix_reaches_exact_committed_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `complete_authority_transaction_trace_reaches_exact_revoked_state` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `inactive_lease_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `insufficient_clearance_blocks_protected_scif_entry` | derived_or_decomposed | no | uses cases, contradiction, rw |
@@ -2810,9 +2817,13 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `missing_handle_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `missing_required_scif_routes_to_scif_spawn` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `missing_secret_substitution_permission_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `no_exact_revocation_admission_classifier_from_count_only` | derived_or_decomposed | no | uses have, rw |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `prompt_injection_records_leak_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `rejected_authority_transaction_event_preserves_exact_state` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `residual_risk_records_leak_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `revocation_request_revokes_handle` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `revoked_authority_transaction_state_has_no_nonempty_run` | derived_or_decomposed | no | uses have, simp |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `revoked_authority_transaction_state_rejects_every_event` | derived_or_decomposed | no | uses cases, rcases, simp |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_clean_sanitized_output_commits_summary` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_handle_output_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_inactive_approval_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
@@ -2821,6 +2832,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_overbroad_context_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_prompt_injection_routes_to_sanitized_refusal` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `scif_commit_secret_output_blocks_commit` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SecurityKernel.lean` | `successful_authority_transaction_run_has_valid_trace` | derived_or_decomposed | no | uses cases, induction, simp |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unauthorized_boundary_denies_authority_use` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SecurityKernel.lean` | `unsanitized_output_routes_to_sanitization` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `authority_boundary_delta_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
