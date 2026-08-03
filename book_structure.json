@@ -20323,7 +20323,7 @@
             "A narrow external Circle rope result is generalized to all Circle contracts, AI substrates, real RoPE, model quality, safety, or transfer.",
             "Transport and governance cost exceed ambiguity reduction, but institutional commitment prevents retirement."
           ],
-          "minimal_implementation": "The exact current minimum contains two schema-valid proof/receipt records; one external clean-checkout Circle rope slice with a narrow non-core argument-to-prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and ten finite local Lean theorem declarations. It does not establish a locally built general resolver, end-to-end transport service, semantic refinement, descendant revocation, independent reproduction, downstream empirical benefit, or chapter-core transition.",
+          "minimal_implementation": "The exact current minimum contains two schema-valid proof/receipt records; one external clean-checkout Circle rope slice with a narrow non-core argument-to-prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and an 18-declaration local Lean surface with a seven-transition versioned transport and descendant-revocation lifecycle. The existing independent validator recompiles the module, checks all eight trace splits, and rejects 16 lifecycle mutations with exact state preservation. It does not establish a locally built general resolver, authenticated end-to-end transport service, semantic refinement, deployed revocation, independent reproduction, downstream empirical benefit, or chapter-core transition.",
           "beyond_state_of_art": "The mature Proof Contract Transport Service carries exact formal facts from independently implemented producers through resolvers, canonicalizers, authenticated artifact graphs, clean replays, least-authority consumers, drift and descendant revocation, fallback, and recovery. It competes against signed manifests, hashes, schemas, tests, SBOM/provenance systems, and ordinary versioned APIs on natural multi-consumer workloads; measures resolution and semantic-refinement accuracy, false acceptance/rejection, replay determinism, tamper and stale-proof detection, revocation completeness, liveness, recovery, latency, cost, rights, and consumer misuse jointly; and requires adversarial mutations, causal component ablations, independent reproduction, and heterogeneous transfer while keeping every downstream empirical claim separate.",
           "codex_tests": [
             {
@@ -20383,6 +20383,13 @@
               "status": "implemented; passing via `cd lean && lake build`"
             },
             {
+              "name": "Versioned proof-contract lifecycle and descendant revocation",
+              "purpose": "Recompile the 18-declaration Lean surface and independently replay the seven-transition lifecycle, all eight trace splits, persistent root and descendant revocation, unrelated-lineage availability, protected identity and authority fields, and 16 state-preserving rejection controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_circle_contract_pack_archive.py`; finite authored lifecycle only, with no external theorem resolution, semantic refinement, authenticated transport, deployed revocation, support transition, or chapter-core effect",
+              "status": "implemented; passing via `python3 scripts/validate_circle_contract_pack_archive.py`"
+            },
+            {
               "name": "Missing receipt-boundary negative case",
               "purpose": "Reject downstream-ready receipt status when theorem refs, deterministic fields, or non-claim boundary fields are missing.",
               "implementation_status": "implemented",
@@ -20419,8 +20426,8 @@
           "draft_maturity": "v0.3 manuscript draft",
           "open_evidence_gaps": [
             "Appendix C records exact passage-reviewed mappings for all five assigned sources. They support proof and receipt shape, finite Circle contract families, exact/discretized RoPE boundaries, cyclic-compute lineage, and anti-overclaim discipline; none independently proves a general transport service or downstream empirical result.",
-            "The exact current minimum contains two schema-valid records; one external clean-checkout Circle rope slice with a narrow non-core prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and ten finite local theorem declarations.",
-            "No locally built general theorem resolver, producer-to-multiple-consumer service, authenticated transport, semantic refinement proof, descendant revocation, liveness or recovery campaign, independent implementation, heterogeneous transfer, downstream model-quality result, or accepted chapter-core transition exists.",
+            "The exact current minimum contains two schema-valid records; one external clean-checkout Circle rope slice with a narrow non-core prototype-backed transition; one ASI-side gate accepting one pinned receipt and rejecting four mutations with no core effect; one digest-verified archive of nine contracts and four policy receipts with five rejected controls and a no-change decision; and an 18-declaration local Lean surface with a seven-transition versioned transport and descendant-revocation lifecycle, eight checked trace splits, and 16 independently reconstructed rejecting mutations.",
+            "No locally built general theorem resolver, producer-to-multiple-consumer service, authenticated transport, semantic refinement proof, deployed descendant revocation, liveness or recovery campaign, independent implementation, heterogeneous transfer, downstream model-quality result, or accepted chapter-core transition exists.",
             "A competent full attempt requires natural multi-consumer contract transport against signed manifests, hashes, schemas, tests, SBOM/provenance systems, and ordinary versioned APIs; exact resolution and semantic-refinement measurement; adversarial mutations; complete cost and rights accounting; revocation/fallback/recovery; causal ablations; independent producers/resolvers/consumers; and heterogeneous transfer.",
             "Model quality, runtime, memory, safety, deployment, transfer, support, or SOTA remain separate empirical claims. No chapter-core support effect, local Circle proof ownership, private-result inference, or general proof-transport claim follows from the current fixtures, external replay, archive, or finite Lean checks."
           ],
@@ -20456,6 +20463,12 @@
               "tag": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
               "module": "AsiStackProofs.ProofCarryingContracts",
               "target": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:circle_contracts.versioned_transport.descendant_revocation",
+              "module": "AsiStackProofs.ProofCarryingContracts",
+              "target": "The finite versioned transport state machine preserves theorem, parent, consumer, support, and external-effect fields; rejects invalid events without state change; composes traces; and makes root revocation persistently invalidate descendants while preserving unrelated-lineage availability.",
               "status": "implemented"
             }
           ],

@@ -320,4 +320,241 @@ theorem circle_public_consumer_gate_missing_mutation_control_rejected
               rw [unsupportedTransferNotRejected] at unsupportedTransferRejected
               contradiction
 
+/-! ## Versioned transport and descendant revocation
+
+This finite state machine models only repository-local contract lifecycle
+semantics. Digests and Boolean checks are authored inputs. The results do not
+establish that an external theorem resolves, that a formal model refines a
+deployed implementation, or that any transport service is authenticated,
+available, useful, independently reproduced, or deployed.
+-/
+
+inductive ContractStage where
+  | absent
+  | authored
+  | resolved
+  | ready
+  | consumed
+  | revoked
+deriving DecidableEq, Repr
+
+inductive ContractTransportEvent where
+  | resolveRoot
+  | attestRoot
+  | issueDescendant
+  | resolveDescendant
+  | attestDescendant
+  | consumeDescendant
+  | revokeRoot
+  | consumeIndependent
+deriving DecidableEq, Repr
+
+inductive ContractTransportRoute where
+  | accepted
+  | rejectStage
+  | rejectIdentity
+  | rejectParent
+  | rejectRevoked
+deriving DecidableEq, Repr
+
+structure ContractTransportState where
+  rootStage : ContractStage := .authored
+  descendantStage : ContractStage := .absent
+  independentStage : ContractStage := .ready
+  rootTheoremDigest : Nat := 4101
+  expectedRootTheoremDigest : Nat := 4101
+  descendantTheoremDigest : Nat := 4102
+  expectedDescendantTheoremDigest : Nat := 4102
+  descendantParentDigest : Nat := 4101
+  expectedParentDigest : Nat := 4101
+  consumerDigest : Nat := 4103
+  expectedConsumerDigest : Nat := 4103
+  supportAssignments : Nat := 0
+  externalEffects : Nat := 0
+deriving DecidableEq, Repr
+
+def rootIdentityExact (state : ContractTransportState) : Bool :=
+  state.rootTheoremDigest == state.expectedRootTheoremDigest
+
+def descendantIdentityExact (state : ContractTransportState) : Bool :=
+  state.descendantTheoremDigest == state.expectedDescendantTheoremDigest
+
+def descendantParentExact (state : ContractTransportState) : Bool :=
+  state.descendantParentDigest == state.expectedParentDigest
+
+def consumerIdentityExact (state : ContractTransportState) : Bool :=
+  state.consumerDigest == state.expectedConsumerDigest
+
+def rootLineageRevoked (state : ContractTransportState) : Bool :=
+  state.rootStage == .revoked
+
+def descendantUsable (state : ContractTransportState) : Bool :=
+  ! rootLineageRevoked state &&
+    (state.descendantStage == .ready || state.descendantStage == .consumed)
+
+def revokeRootLineage (state : ContractTransportState) : ContractTransportState :=
+  { state with rootStage := .revoked, descendantStage := .revoked }
+
+def contractTransportStep
+    (state : ContractTransportState)
+    (event : ContractTransportEvent) :
+    ContractTransportRoute × ContractTransportState :=
+  match event with
+  | .resolveRoot =>
+      if state.rootStage != .authored then (.rejectStage, state)
+      else if ! rootIdentityExact state then (.rejectIdentity, state)
+      else (.accepted, { state with rootStage := .resolved })
+  | .attestRoot =>
+      if state.rootStage == .resolved then
+        (.accepted, { state with rootStage := .ready })
+      else (.rejectStage, state)
+  | .issueDescendant =>
+      if state.rootStage == .revoked then (.rejectRevoked, state)
+      else if state.rootStage != .ready || state.descendantStage != .absent then
+        (.rejectStage, state)
+      else if ! descendantParentExact state then (.rejectParent, state)
+      else (.accepted, { state with descendantStage := .authored })
+  | .resolveDescendant =>
+      if state.rootStage == .revoked || state.descendantStage == .revoked then
+        (.rejectRevoked, state)
+      else if state.descendantStage != .authored then (.rejectStage, state)
+      else if ! descendantIdentityExact state then (.rejectIdentity, state)
+      else (.accepted, { state with descendantStage := .resolved })
+  | .attestDescendant =>
+      if state.rootStage == .revoked || state.descendantStage == .revoked then
+        (.rejectRevoked, state)
+      else if state.descendantStage == .resolved then
+        (.accepted, { state with descendantStage := .ready })
+      else (.rejectStage, state)
+  | .consumeDescendant =>
+      if rootLineageRevoked state || state.descendantStage == .revoked then
+        (.rejectRevoked, state)
+      else if ! consumerIdentityExact state then (.rejectIdentity, state)
+      else if state.descendantStage == .ready then
+        (.accepted, { state with descendantStage := .consumed })
+      else (.rejectStage, state)
+  | .revokeRoot =>
+      if state.rootStage == .absent || state.rootStage == .revoked then
+        (.rejectStage, state)
+      else (.accepted, revokeRootLineage state)
+  | .consumeIndependent =>
+      if state.independentStage == .revoked then (.rejectRevoked, state)
+      else if ! consumerIdentityExact state then (.rejectIdentity, state)
+      else if state.independentStage == .ready then
+        (.accepted, { state with independentStage := .consumed })
+      else (.rejectStage, state)
+
+def runContractTransport :
+    ContractTransportState -> List ContractTransportEvent -> ContractTransportState
+  | state, [] => state
+  | state, event :: rest =>
+      runContractTransport (contractTransportStep state event).2 rest
+
+theorem contract_transport_rejected_event_is_noninterfering
+    (state : ContractTransportState) (event : ContractTransportEvent)
+    (h : (contractTransportStep state event).1 ≠ .accepted) :
+    (contractTransportStep state event).2 = state := by
+  cases event <;>
+    simp_all [contractTransportStep] <;>
+    repeat' first | split | simp_all
+
+theorem contract_transport_step_preserves_identity_and_authority
+    (state : ContractTransportState) (event : ContractTransportEvent) :
+    let next := (contractTransportStep state event).2
+    next.rootTheoremDigest = state.rootTheoremDigest ∧
+      next.expectedRootTheoremDigest = state.expectedRootTheoremDigest ∧
+      next.descendantTheoremDigest = state.descendantTheoremDigest ∧
+      next.expectedDescendantTheoremDigest = state.expectedDescendantTheoremDigest ∧
+      next.descendantParentDigest = state.descendantParentDigest ∧
+      next.expectedParentDigest = state.expectedParentDigest ∧
+      next.consumerDigest = state.consumerDigest ∧
+      next.expectedConsumerDigest = state.expectedConsumerDigest ∧
+      next.supportAssignments = state.supportAssignments ∧
+      next.externalEffects = state.externalEffects := by
+  cases event <;>
+    simp [contractTransportStep, revokeRootLineage] <;>
+    repeat' first | split | simp_all
+
+theorem run_contract_transport_append
+    (state : ContractTransportState)
+    (left right : List ContractTransportEvent) :
+    runContractTransport state (left ++ right) =
+      runContractTransport (runContractTransport state left) right := by
+  induction left generalizing state with
+  | nil => rfl
+  | cons event rest ih =>
+      simp only [List.cons_append, runContractTransport]
+      exact ih (contractTransportStep state event).2
+
+theorem root_revocation_invalidates_root_and_descendant
+    (state : ContractTransportState)
+    (hPresent : state.rootStage ≠ .absent)
+    (hLive : state.rootStage ≠ .revoked) :
+    let result := contractTransportStep state .revokeRoot
+    result.1 = .accepted ∧
+      result.2.rootStage = .revoked ∧
+      result.2.descendantStage = .revoked ∧
+      result.2.independentStage = state.independentStage := by
+  simp [contractTransportStep, hPresent, hLive, revokeRootLineage]
+
+theorem descendant_unusable_after_root_revocation
+    (state : ContractTransportState)
+    (h : state.rootStage = .revoked) :
+    descendantUsable state = false := by
+  simp [descendantUsable, rootLineageRevoked, h]
+
+theorem root_revocation_is_persistent
+    (state : ContractTransportState) (event : ContractTransportEvent)
+    (h : state.rootStage = .revoked) :
+    (contractTransportStep state event).2.rootStage = .revoked := by
+  cases event <;>
+    simp [contractTransportStep, h, rootLineageRevoked] <;>
+    repeat' first | split | simp_all
+
+def referenceContractTrace : List ContractTransportEvent :=
+  [.resolveRoot, .attestRoot, .issueDescendant, .resolveDescendant,
+    .attestDescendant, .consumeDescendant, .revokeRoot]
+
+theorem reference_contract_trace_consumes_then_revokes_lineage :
+    let beforeRevocation := runContractTransport ({} : ContractTransportState)
+      [.resolveRoot, .attestRoot, .issueDescendant, .resolveDescendant,
+        .attestDescendant, .consumeDescendant]
+    let afterRevocation := runContractTransport ({} : ContractTransportState)
+      referenceContractTrace
+    beforeRevocation.descendantStage = .consumed ∧
+      afterRevocation.rootStage = .revoked ∧
+      afterRevocation.descendantStage = .revoked ∧
+      afterRevocation.independentStage = .ready ∧
+      afterRevocation.supportAssignments = 0 ∧
+      afterRevocation.externalEffects = 0 := by native_decide
+
+theorem revoked_descendant_consumer_is_rejected_without_state_change :
+    let revoked := runContractTransport ({} : ContractTransportState)
+      referenceContractTrace
+    contractTransportStep revoked .consumeDescendant =
+      (.rejectRevoked, revoked) := by native_decide
+
+theorem unrelated_lineage_remains_consumable_after_root_revocation :
+    let revoked := runContractTransport ({} : ContractTransportState)
+      referenceContractTrace
+    let result := contractTransportStep revoked .consumeIndependent
+    result.1 = .accepted ∧
+      result.2.independentStage = .consumed ∧
+      result.2.rootStage = .revoked ∧
+      result.2.descendantStage = .revoked := by native_decide
+
+theorem root_identity_mismatch_rejects_resolution_noninterferingly :
+    let state := { ({} : ContractTransportState) with rootTheoremDigest := 9999 }
+    contractTransportStep state .resolveRoot = (.rejectIdentity, state) := by
+  native_decide
+
+theorem parent_mismatch_rejects_descendant_issue_noninterferingly :
+    let state := {
+      ({} : ContractTransportState) with
+      rootStage := .ready
+      descendantParentDigest := 9999
+    }
+    contractTransportStep state .issueDescendant = (.rejectParent, state) := by
+  native_decide
+
 end AsiStackProofs.ProofCarryingContracts

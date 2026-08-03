@@ -481,6 +481,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Receipt boundary Lean predicate | implemented | passes via Lean build; record-boundary predicate only |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Consumer gate promotion predicate | implemented | passes via Lean build; no workload or model-quality claim |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Circle public consumer-gate Lean fixture bridge | implemented | passes via Lean build; no local Circle replay, deployed transport, or support-state promotion claim |
+| `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Versioned proof-contract lifecycle and descendant revocation | implemented | passes via `python3 scripts/validate_circle_contract_pack_archive.py`; finite authored lifecycle only, with no external theorem resolution, semantic refinement, authenticated transport, deployed revocation, support transition, or chapter-core effect |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Missing receipt-boundary negative case | implemented | passes via Lean negative case; no theorem-resolution or replay claim |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Contract-readiness promotion negative case | implemented | passes via Lean negative case; no consumer acceptance or quality claim |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Circle Calculus and Proof-Carrying AI Contracts | Stale or unsupported consumer-gate negative case | implemented | passes via Lean negative case; no transfer or support-state claim |
@@ -703,16 +704,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 328 |
+| Proof targets covered by triage | 329 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 328 |
+| implemented | 329 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 328 |
+| implemented | formal-invariant | lean-candidate | 329 |

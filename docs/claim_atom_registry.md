@@ -7,7 +7,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 ## Coverage summary
 
 - Chapters: 64
-- Structured manifest atoms: 4062
+- Structured manifest atoms: 4063
 - Machine candidates awaiting semantic atom review: 0
 - Prose-only candidates awaiting materiality adjudication: 0
 - Support-state effect: none
@@ -17,7 +17,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | `beyond_sota` | 64 |
 | `core` | 64 |
 | `failure_mode` | 1031 |
-| `formal_target` | 297 |
+| `formal_target` | 298 |
 | `insufficiency` | 64 |
 | `interface` | 603 |
 | `invariant` | 902 |
@@ -77,7 +77,7 @@ This is the readable projection of `evidence_quality/claim_atom_registry.json`. 
 | Resource Economics and Token Budgets | 82 | 0 | 0 | `evidence_quality/claim_dossiers/resource-economics-and-token-budgets.md` |
 | Physical Compute Infrastructure, Energy, and Environmental Constraints | 34 | 0 | 0 | `evidence_quality/claim_dossiers/physical-compute-infrastructure-energy-and-environmental-constraints.md` |
 | Mathematical and Search Substrates | 74 | 0 | 0 | `evidence_quality/claim_dossiers/mathematical-and-search-substrates.md` |
-| Circle Calculus and Proof-Carrying AI Contracts | 74 | 0 | 0 | `evidence_quality/claim_dossiers/circle-calculus-and-proof-carrying-ai-contracts.md` |
+| Circle Calculus and Proof-Carrying AI Contracts | 75 | 0 | 0 | `evidence_quality/claim_dossiers/circle-calculus-and-proof-carrying-ai-contracts.md` |
 | Coil Attention, Cyclic Memory, and Recurrence Contracts | 73 | 0 | 0 | `evidence_quality/claim_dossiers/coil-attention-cyclic-memory-and-recurrence-contracts.md` |
 | CoilRA, MultiCoil RoPE, and Cyclic Mixers | 73 | 0 | 0 | `evidence_quality/claim_dossiers/coilra-multicoil-rope-and-cyclic-mixers.md` |
 | Executable Specifications and Lean Proof Envelope | 73 | 0 | 0 | `evidence_quality/claim_dossiers/executable-specifications-and-lean-proof-envelope.md` |

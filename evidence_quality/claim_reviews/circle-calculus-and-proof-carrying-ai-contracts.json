@@ -4,20 +4,20 @@
   "review_state": "completed",
   "semantic_sweep": {
     "reviewed_source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-    "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 53,
+    "structured_atoms_reviewed": 75,
+    "prose_candidates_adjudicated": 52,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all five exact source mappings, both protocol records, the external rope slice and narrow non-core transition, the one-valid/four-invalid public consumer gate, the nine-contract/four-policy-receipt/five-invalid archive and no-change decision, all three proof targets, all ten ProofCarryingContracts theorem declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope the distinct owner; expanded it to eighteen lifecycle mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved the exact current evidence and non-claim boundaries; and froze the natural multi-consumer, semantic-refinement, adversarial, causal, independent-reproduction, and heterogeneous-transfer campaign with zero chapter-core effect."
+    "review_note": "Reviewed the complete chapter, all five exact source mappings, both protocol records, the external rope slice and narrow non-core transition, the one-valid/four-invalid public consumer gate, the nine-contract/four-policy-receipt/five-invalid archive and no-change decision, all four proof targets, all 18 current ProofCarryingContracts theorem declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep keeps the theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope as the distinct owner; records the finite descendant-revocation lifecycle without converting it into deployed transport evidence; preserves the exact current evidence and non-claim boundaries; and leaves the natural multi-consumer, semantic-refinement, adversarial, causal, independent-reproduction, and heterogeneous-transfer campaign with zero chapter-core effect."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Versioned finite formal facts transported from named public-safe producer artifacts through resolvers, builders, canonicalizers, artifact graphs, and least-authority consumer gates to named consumers and uses.",
-      "environment": "Five exact mappings; two schema-valid records; one external Circle rope replay with one narrow non-core prototype-backed transition; one-valid/four-invalid ASI gate; one nine-contract/four-policy-receipt/five-invalid archive with no-change decision; three proof targets; ten finite declarations. No general local resolver, multi-consumer service, semantic refinement proof, descendant revocation, independent reproduction, or transfer campaign exists.",
+      "environment": "Five exact mappings; two schema-valid records; one external Circle rope replay with one narrow non-core prototype-backed transition; one-valid/four-invalid ASI gate; one nine-contract/four-policy-receipt/five-invalid archive with no-change decision; four proof targets; 18 finite declarations including a seven-transition lifecycle, eight trace splits, and 16 independently reconstructed rejecting mutations. No general local resolver, multi-consumer service, semantic refinement proof, deployed revocation, independent reproduction, or transfer campaign exists.",
       "model": "A theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, environment-, and time-specific envelope over source/toolchain pinning, build, resolution, refinement, canonicalization, deterministic recomputation, non-claims, replay, consumer authority, transport, invalidation, fallback, recovery, reproduction, transfer, expiry, and residuals.",
       "authority": "This chapter owns exact proof-contract transport only. Formal Methods, Executable Specifications, Artifacts, Supply Chain, Runtime, structural consumers, Verification, Security, Privacy, Rights, Resources, Claims, Evidence, Readiness, Incident, and Release retain their boundaries.",
       "time": "Semantic review current through 2026-07-14; theorem, statement, assumption, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, organization, or time change expires affected envelopes.",
-      "artifact": "Chapter and manifest contract; five mappings; two record fixtures; external rope slice and transition; public consumer gate; contract-pack archive and no-change decision; three targets; ten declarations; semantic review; and future natural transport campaign."
+      "artifact": "Chapter and manifest contract; five mappings; two record fixtures; external rope slice and transition; public consumer gate; contract-pack archive and no-change decision; four targets; 18 declarations; seven-transition local lifecycle; independent recompiling consumer; semantic review; and future natural transport campaign."
     },
     "current_disposition": "retain_argument_with_one_narrow_noncore_external_transition_and_no_core_effect_pending_natural_multiconsumer_transport_campaign",
     "assumptions": [
@@ -64,7 +64,7 @@
       "The only positive transition is narrow, non-core, external-checkout, rope-receipt replay evidence for one pinned Circle commit and contract.",
       "The ASI consumer gate validates one authored receipt and four mutations, not a live producer-to-consumer transport service.",
       "The archive checks digests for nine contracts and four policy receipts but does not rerun Circle Lean or establish semantic refinement, revocation, liveness, or downstream benefit.",
-      "Ten declarations are finite record consequences—two direct projections, seven derived finite or negative cases, and one authored fixture bridge—not transport correctness or liveness proof.",
+      "Eighteen declarations now include a finite lifecycle with descendant invalidation, persistent revocation, trace composition, protected identity and authority fields, reachable witnesses, and countermodels; authored digests and stages remain assumptions, so this is not external resolution, semantic refinement, authenticated/deployed transport, distributed revocation, or liveness proof.",
       "No chapter-core transition, general local resolver, multi-consumer campaign, independent reproduction, or heterogeneous transfer exists."
     ],
     "known_confounds": [
@@ -172,10 +172,9 @@
     "circle-calculus-and-proof-carrying-ai-contracts.prose.3354cb033a52": {"state": "duplicate_of_atom", "rationale": "Fragment of argument-exit gates.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.beyond_sota.001"},
     "circle-calculus-and-proof-carrying-ai-contracts.prose.137c60c0d47c": {"state": "historical_or_source_report", "rationale": "States planned-test rather than result status."},
     "circle-calculus-and-proof-carrying-ai-contracts.prose.c7d3ecb6248a": {"state": "editorial_or_question", "rationale": "Is a future documentation maintenance instruction."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.c76d83d36186": {"state": "historical_or_source_report", "rationale": "Reports current finite theorem meaning."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.8e94ea10010b": {"state": "historical_or_source_report", "rationale": "States current formal non-claims."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.ad3c1896324b": {"state": "historical_or_source_report", "rationale": "Fragment of theorem classification audit."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.853fa224eadc": {"state": "editorial_or_question", "rationale": "Fragment of theorem retirement instruction."},
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.f99d75c68d63": {"state": "historical_or_source_report", "rationale": "Reports the bounded lifecycle result and its deployed-revocation non-claim."},
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.a6c4c40056b2": {"state": "historical_or_source_report", "rationale": "States the exact authored finite transition-system boundary."},
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.e03a51aebfa9": {"state": "historical_or_source_report", "rationale": "States the unresolved semantic, deployment, reproduction, and transfer boundaries."},
     "circle-calculus-and-proof-carrying-ai-contracts.prose.43064389a348": {"state": "duplicate_of_atom", "rationale": "Restates structural-only consumption.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
     "circle-calculus-and-proof-carrying-ai-contracts.prose.fa4ef8f87e07": {"state": "duplicate_of_atom", "rationale": "Restates downstream evidence obligations.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.013"},
     "circle-calculus-and-proof-carrying-ai-contracts.prose.022b7ed379fa": {"state": "nonmaterial_explanation", "rationale": "Reader-facing statement of the contract's purpose."},

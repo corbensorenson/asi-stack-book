@@ -12,6 +12,8 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -46,6 +48,8 @@ CIRCLE_READER = (
     / "circle-calculus-and-proof-carrying-ai-contracts.qmd"
 )
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
+LEAN_ROOT = ROOT / "lean"
+LEAN_MODEL = LEAN_ROOT / "AsiStackProofs" / "ProofCarryingContracts.lean"
 
 PACK_FILE_SHA256 = "b5488c93109ef120b97fdea7bd5d5605f32b2618c6cbfb9dde9a3328652551c4"
 PACK_STABLE_JSON_SHA256 = "10e2dc51e9a6fe2591b2878a293dfdaa2fecf7a2ff588954495f429082724891"
@@ -119,6 +123,43 @@ COMMON_SURFACE_FRAGMENTS = (
     "transfer",
     "safety",
     "ASI",
+)
+
+LIFECYCLE_THEOREMS = {
+    "contract_transport_rejected_event_is_noninterfering",
+    "contract_transport_step_preserves_identity_and_authority",
+    "run_contract_transport_append",
+    "root_revocation_invalidates_root_and_descendant",
+    "descendant_unusable_after_root_revocation",
+    "root_revocation_is_persistent",
+    "reference_contract_trace_consumes_then_revokes_lineage",
+    "revoked_descendant_consumer_is_rejected_without_state_change",
+    "unrelated_lineage_remains_consumable_after_root_revocation",
+    "root_identity_mismatch_rejects_resolution_noninterferingly",
+    "parent_mismatch_rejects_descendant_issue_noninterferingly",
+}
+
+IDENTITY_AND_AUTHORITY_FIELDS = (
+    "root_theorem_digest",
+    "expected_root_theorem_digest",
+    "descendant_theorem_digest",
+    "expected_descendant_theorem_digest",
+    "descendant_parent_digest",
+    "expected_parent_digest",
+    "consumer_digest",
+    "expected_consumer_digest",
+    "support_assignments",
+    "external_effects",
+)
+
+REFERENCE_EVENTS = (
+    "resolve_root",
+    "attest_root",
+    "issue_descendant",
+    "resolve_descendant",
+    "attest_descendant",
+    "consume_descendant",
+    "revoke_root",
 )
 
 
@@ -397,6 +438,199 @@ def validate_surfaces(errors: list[str]) -> None:
         require_fragments(rel(path), path.read_text(encoding="utf-8"), fragments, errors)
 
 
+def reference_transport_state() -> dict[str, Any]:
+    return {
+        "root_stage": "authored",
+        "descendant_stage": "absent",
+        "independent_stage": "ready",
+        "root_theorem_digest": 4101,
+        "expected_root_theorem_digest": 4101,
+        "descendant_theorem_digest": 4102,
+        "expected_descendant_theorem_digest": 4102,
+        "descendant_parent_digest": 4101,
+        "expected_parent_digest": 4101,
+        "consumer_digest": 4103,
+        "expected_consumer_digest": 4103,
+        "support_assignments": 0,
+        "external_effects": 0,
+    }
+
+
+def transport_step(state: dict[str, Any], event: str) -> tuple[str, dict[str, Any]]:
+    next_state = copy.deepcopy(state)
+    if event == "resolve_root":
+        if state["root_stage"] != "authored":
+            return "reject_stage", copy.deepcopy(state)
+        if state["root_theorem_digest"] != state["expected_root_theorem_digest"]:
+            return "reject_identity", copy.deepcopy(state)
+        next_state["root_stage"] = "resolved"
+    elif event == "attest_root":
+        if state["root_stage"] != "resolved":
+            return "reject_stage", copy.deepcopy(state)
+        next_state["root_stage"] = "ready"
+    elif event == "issue_descendant":
+        if state["root_stage"] == "revoked":
+            return "reject_revoked", copy.deepcopy(state)
+        if state["root_stage"] != "ready" or state["descendant_stage"] != "absent":
+            return "reject_stage", copy.deepcopy(state)
+        if state["descendant_parent_digest"] != state["expected_parent_digest"]:
+            return "reject_parent", copy.deepcopy(state)
+        next_state["descendant_stage"] = "authored"
+    elif event == "resolve_descendant":
+        if state["root_stage"] == "revoked" or state["descendant_stage"] == "revoked":
+            return "reject_revoked", copy.deepcopy(state)
+        if state["descendant_stage"] != "authored":
+            return "reject_stage", copy.deepcopy(state)
+        if state["descendant_theorem_digest"] != state["expected_descendant_theorem_digest"]:
+            return "reject_identity", copy.deepcopy(state)
+        next_state["descendant_stage"] = "resolved"
+    elif event == "attest_descendant":
+        if state["root_stage"] == "revoked" or state["descendant_stage"] == "revoked":
+            return "reject_revoked", copy.deepcopy(state)
+        if state["descendant_stage"] != "resolved":
+            return "reject_stage", copy.deepcopy(state)
+        next_state["descendant_stage"] = "ready"
+    elif event == "consume_descendant":
+        if state["root_stage"] == "revoked" or state["descendant_stage"] == "revoked":
+            return "reject_revoked", copy.deepcopy(state)
+        if state["consumer_digest"] != state["expected_consumer_digest"]:
+            return "reject_identity", copy.deepcopy(state)
+        if state["descendant_stage"] != "ready":
+            return "reject_stage", copy.deepcopy(state)
+        next_state["descendant_stage"] = "consumed"
+    elif event == "revoke_root":
+        if state["root_stage"] in {"absent", "revoked"}:
+            return "reject_stage", copy.deepcopy(state)
+        next_state["root_stage"] = "revoked"
+        next_state["descendant_stage"] = "revoked"
+    elif event == "consume_independent":
+        if state["independent_stage"] == "revoked":
+            return "reject_revoked", copy.deepcopy(state)
+        if state["consumer_digest"] != state["expected_consumer_digest"]:
+            return "reject_identity", copy.deepcopy(state)
+        if state["independent_stage"] != "ready":
+            return "reject_stage", copy.deepcopy(state)
+        next_state["independent_stage"] = "consumed"
+    else:
+        raise ValueError(f"unknown event {event}")
+    return "accepted", next_state
+
+
+def run_transport(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, Any]:
+    current = copy.deepcopy(state)
+    for event in events:
+        _, current = transport_step(current, event)
+    return current
+
+
+def validate_lifecycle_model(errors: list[str]) -> tuple[int, int]:
+    theorem_names = set(
+        re.findall(
+            r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
+            LEAN_MODEL.read_text(encoding="utf-8"),
+        )
+    )
+    missing = sorted(LIFECYCLE_THEOREMS - theorem_names)
+    if missing:
+        errors.append(f"Lean proof-contract lifecycle surface is missing: {missing}")
+    if len(theorem_names) != 18:
+        errors.append(f"Lean proof-contract theorem count must be 18, observed {len(theorem_names)}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/ProofCarryingContracts.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(
+            "Lean proof-contract lifecycle model did not compile: "
+            + (completed.stdout + completed.stderr).strip()
+        )
+
+    baseline = reference_transport_state()
+    current = copy.deepcopy(baseline)
+    accepted_count = 0
+    for event in REFERENCE_EVENTS:
+        route, next_state = transport_step(current, event)
+        if route != "accepted":
+            errors.append(f"reference lifecycle event {event} returned {route}")
+        else:
+            accepted_count += 1
+        for field in IDENTITY_AND_AUTHORITY_FIELDS:
+            if next_state[field] != current[field]:
+                errors.append(f"reference lifecycle event {event} changed protected field {field}")
+        current = next_state
+    expected_terminal = {
+        "root_stage": "revoked",
+        "descendant_stage": "revoked",
+        "independent_stage": "ready",
+        "support_assignments": 0,
+        "external_effects": 0,
+    }
+    for field, expected in expected_terminal.items():
+        if current[field] != expected:
+            errors.append(f"reference lifecycle terminal {field} must be {expected!r}")
+
+    for split in range(len(REFERENCE_EVENTS) + 1):
+        left = run_transport(baseline, REFERENCE_EVENTS[:split])
+        composed = run_transport(left, REFERENCE_EVENTS[split:])
+        if composed != current:
+            errors.append(f"reference lifecycle append composition failed at split {split}")
+
+    route, unchanged = transport_step(current, "consume_descendant")
+    if route != "reject_revoked" or unchanged != current:
+        errors.append("revoked descendant consumer was not rejected noninterferingly")
+    route, unrelated = transport_step(current, "consume_independent")
+    if route != "accepted" or unrelated["independent_stage"] != "consumed":
+        errors.append("unrelated lineage did not remain consumable after root revocation")
+    if unrelated["root_stage"] != "revoked" or unrelated["descendant_stage"] != "revoked":
+        errors.append("unrelated consumption reopened the revoked lineage")
+
+    mutation_cases: list[tuple[str, str, dict[str, Any], str]] = []
+
+    def mutated(**changes: Any) -> dict[str, Any]:
+        value = reference_transport_state()
+        value.update(changes)
+        return value
+
+    mutation_cases.extend(
+        [
+            ("resolve wrong stage", "resolve_root", mutated(root_stage="ready"), "reject_stage"),
+            ("root identity mismatch", "resolve_root", mutated(root_theorem_digest=9999), "reject_identity"),
+            ("attest wrong stage", "attest_root", mutated(), "reject_stage"),
+            ("issue under revoked root", "issue_descendant", mutated(root_stage="revoked"), "reject_revoked"),
+            ("issue wrong root stage", "issue_descendant", mutated(), "reject_stage"),
+            ("parent mismatch", "issue_descendant", mutated(root_stage="ready", descendant_parent_digest=9999), "reject_parent"),
+            ("resolve descendant wrong stage", "resolve_descendant", mutated(root_stage="ready"), "reject_stage"),
+            ("descendant identity mismatch", "resolve_descendant", mutated(root_stage="ready", descendant_stage="authored", descendant_theorem_digest=9999), "reject_identity"),
+            ("attest descendant wrong stage", "attest_descendant", mutated(root_stage="ready", descendant_stage="authored"), "reject_stage"),
+            ("descendant consumer mismatch", "consume_descendant", mutated(root_stage="ready", descendant_stage="ready", consumer_digest=9999), "reject_identity"),
+            ("descendant consumer wrong stage", "consume_descendant", mutated(root_stage="ready", descendant_stage="resolved"), "reject_stage"),
+            ("revoke absent root", "revoke_root", mutated(root_stage="absent"), "reject_stage"),
+            ("revoke revoked root", "revoke_root", mutated(root_stage="revoked", descendant_stage="revoked"), "reject_stage"),
+            ("independent lineage revoked", "consume_independent", mutated(independent_stage="revoked"), "reject_revoked"),
+            ("independent consumer mismatch", "consume_independent", mutated(consumer_digest=9999), "reject_identity"),
+            ("independent wrong stage", "consume_independent", mutated(independent_stage="consumed"), "reject_stage"),
+        ]
+    )
+    rejected_count = 0
+    for name, event, candidate, expected_route in mutation_cases:
+        route, next_state = transport_step(candidate, event)
+        if route != expected_route:
+            errors.append(f"lifecycle mutation {name} expected {expected_route}, got {route}")
+        elif next_state != candidate:
+            errors.append(f"lifecycle mutation {name} changed state on rejection")
+        else:
+            rejected_count += 1
+
+    for event in (*REFERENCE_EVENTS, "consume_independent"):
+        _, next_state = transport_step(current, event)
+        if next_state["root_stage"] != "revoked":
+            errors.append(f"event {event} reopened a revoked root")
+    return accepted_count, rejected_count
+
+
 def fail(errors: list[str]) -> None:
     print("Circle contract-pack archive validation failed:")
     for error in errors:
@@ -430,13 +664,17 @@ def main() -> None:
     validate_result(errors)
     validate_transition(errors)
     validate_surfaces(errors)
+    accepted_count, rejected_count = validate_lifecycle_model(errors)
 
     if errors:
         fail(errors)
 
     print(
         "Circle contract-pack archive validation passed: "
-        "9 archived contracts, 4 accepted policy receipts, 5 expected-invalid controls."
+        "9 archived contracts, 4 accepted policy receipts, 5 archive controls; "
+        f"18 Lean declarations, {accepted_count} accepted lifecycle transitions, "
+        f"8/8 trace splits, and {rejected_count}/{rejected_count} rejecting lifecycle mutations; "
+        "descendant revocation is local modeled evidence only and has no support-state effect."
     )
 
 
