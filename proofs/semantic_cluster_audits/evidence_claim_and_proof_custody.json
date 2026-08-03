@@ -116,29 +116,30 @@
       "path": "lean/AsiStackProofs/ProofEnvelope.lean",
       "disposition": "reclassify",
       "public_target_count": 2,
-      "theorem_declaration_count": 5,
-      "plain_language_proposition": "Within the finite proof-envelope record, contradictions rule out implemented status when a module is missing or a build failed, non-Lean artifacts cannot be labeled Lean proofs, support promotion is invalid without an accepted transition and bounded semantic and non-claim records, and external theorem references require exact identity and scope boundaries.",
-      "modeled_state": "Proof-target status with module/build flags plus artifact lane, verifier result, semantic-adequacy label, support-effect request, accepted-transition flag, consumer match, limitations, non-claims, and external theorem identity fields.",
+      "theorem_declaration_count": 28,
+      "plain_language_proposition": "Within the authored finite model, a formal-artifact authority lease preserves exact target, proposition, artifact, verifier, consumer, implementation, environment, expiry, support, effect, version, and receipt custody over arbitrary accepted runs; artifact change invalidates active authority; exact re-review and reissue can restore it; invalid issue routes are noninterfering; revocation absorbs suffixes; thin summaries lose boundary-sensitive decisions; and complete transport preserves steps.",
+      "modeled_state": "A seven-stage proof lease with target/proposition/artifact/verifier/consumer/implementation/environment identities and versions, logical and expiry time, artifact validity, adequacy, consumer requirements, limitations, non-claims, revocation reason, support/effect authority, and receipts, plus retained proof-target admission records.",
       "assumptions": [
         "All record fields are truthful and the bounded predicates are complete for the declared admission decision.",
         "Module existence, build success, theorem semantics, external theorem identity, and consumer effects are not checked by Lean itself.",
-        "The two former direct positive projections have been retired; the retained declarations are bounded negative cases or derived countermodels over the finite record."
+        "All artifact, adequacy, consumer, limitation, non-claim, time, and revocation fields are authored observations; the model does not discover or authenticate them."
       ],
       "countermodels": [
         "Implemented status with a missing module or failing build contradicts ImplementedTargetValid.",
         "A non-Lean artifact carrying a Lean-proof claim is rejected.",
-        "Support promotion without transition, adequate finite semantics, limitations, non-claims, or consumer match is rejected; external references without identifiers or boundaries are rejected."
+        "Issue requests with stale identity, missing artifact, adequacy, consumer, limitation, or non-claim boundaries, expiry, support promotion, or external-effect authority are rejected without state change; revoked leases reject every suffix event.",
+        "Two states with the same thin summary but different non-claim boundaries produce opposite issue decisions, so no summary-only classifier can recover the route."
       ],
       "consumers": [
         "scripts/validate_proof_readiness.py",
         "scripts/validate_proof_artifact_audit.py",
         "proofs/proof_manifest.json"
       ],
-      "mutation_evidence": "Repository proof-readiness and artifact-audit validators exercise the executable manifest surface and bind the retained bounded countermodel theorem names; this cluster validator rejects missing module, countermodel, consumer, and maximum-inference records. There is no checked Lean-to-runtime refinement, and the former positive projection theorems are retired rather than credited as enforcement.",
-      "maximum_inference": "Retain only as finite proof-artifact admission countermodels and specification-layer policy. It does not establish that files exist, builds ran, theorems are true or semantically adequate, external references resolve, support transitions are enforced, consumers obey the envelope, or any empirical or safety claim holds."
+      "mutation_evidence": "The independent proof-artifact consumer recompiles the exact 28-declaration module, executes one ten-event issue/change/re-review/reissue/revoke trace, checks all eleven composition splits, rejects 33 route cases, exercises expiry and one thin-summary collision, and rejects mutations to all 19 complete-transport fields. There is no checked Lean-to-runtime refinement or support effect.",
+      "maximum_inference": "Adequate only for the represented finite proof-artifact lease transitions, custody, countermodels, information-loss result, and transport. It does not establish that files or sources are truthful, builds or verifiers are sound, predicates are semantically adequate, implementations refine the model, external references resolve, deployed consumers enforce the lease, or any empirical, support, safety, transfer, or SOTA claim holds."
     }
   ],
-  "cluster_maximum_inference": "The cluster is adequate at bounded finite custody semantics after retiring the direct ProofEnvelope projections and retaining only consumed countermodels and bounded non-executable rules. It proves no claim truth, evidence truth, verifier soundness, reviewer quality, deployed enforcement, empirical behavior, safety, transfer, SOTA, AGI, ASI, or support-state movement.",
+  "cluster_maximum_inference": "The cluster is adequate at bounded finite custody semantics; ProofEnvelope now contributes a reachable authority-lease lifecycle, rejecting countermodels, summary-loss impossibility, and complete transport while remaining authored formal state. It proves no claim truth, evidence truth, artifact or source truth, verifier soundness, reviewer quality, implementation refinement, deployed enforcement, empirical behavior, safety, transfer, SOTA, AGI, ASI, or support-state movement.",
   "support_state_effect": "none",
   "release_effect": "none",
   "publication_effect": "none"

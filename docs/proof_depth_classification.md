@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2848 |
+| Theorem declarations classified | 2871 |
 | Direct/projection-style theorem declarations | 433 |
-| Derived/decomposed theorem declarations | 1774 |
-| Unknown or mixed theorem declarations | 641 |
+| Derived/decomposed theorem declarations | 1787 |
+| Unknown or mixed theorem declarations | 651 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -140,7 +140,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 18 | 7 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 4 | 18 | 0 | 13 | 5 | manual review |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 28 | 0 | 18 | 10 | manual review |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | confidential-and-verifiable-ai-computation | 1 | 31 | 13 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
@@ -2062,11 +2062,34 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_revocation_is_persistent` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `run_contract_transport_append` | derived_or_decomposed | no | uses induction, left, simp |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `unrelated_lineage_remains_consumable_after_root_revocation` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `artifact_change_invalidates_active_lease` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `complete_proof_lease_trace_reissues_changed_artifact_then_revokes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `complete_proof_lease_transport_is_injective` | derived_or_decomposed | no | uses calc, left, right |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `complete_proof_lease_transport_preserves_step` | derived_or_decomposed | no | uses rw |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `complete_proof_lease_transport_round_trips` | derived_or_decomposed | no | uses cases |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `expired_issue_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `external_effect_issue_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `external_theorem_without_ids_or_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `implemented_target_missing_module_or_build_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `initial_issue_trace_reaches_active_lease` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `no_thin_proof_lease_classifier_recovers_boundary_state` | derived_or_decomposed | no | uses by_cases, contradiction, have, right, rw |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_lean_artifact_cannot_claim_lean_proof` | derived_or_decomposed | no | uses have, unfold |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `non_operational_target_not_implemented` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `proof_lease_accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `proof_lease_custody_is_transitive` | derived_or_decomposed | no | uses left, right, unfold |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `proof_lease_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `proof_lease_step_preserves_custody` | derived_or_decomposed | no | uses cases, omega, simp, split |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `proof_lease_step_preserves_non_authority` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `revocation_without_reason_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `revoked_proof_lease_is_absorbing` | derived_or_decomposed | no | uses cases, have, induction, simp |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `run_proof_lease_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `run_proof_lease_preserves_custody` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `run_proof_lease_preserves_non_authority` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `stale_artifact_verification_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_issue_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `support_promotion_without_transition_or_boundaries_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `thin_proof_lease_summary_has_issue_collision` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | `wrong_consumer_binding_is_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | `account_all_covers_every_finite_leakage_channel` | derived_or_decomposed | no | uses induction, rcases, simp, subst |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | `artifact_change_invalidates_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | `attestation_does_not_establish_semantic_correctness` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

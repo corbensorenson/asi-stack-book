@@ -170,16 +170,16 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 95,
-    "P1": 982,
-    "P2": 267,
-    "P3": 1098,
-    "P4": 184,
-    "P5": 222,
+    "P0": 94,
+    "P1": 979,
+    "P2": 269,
+    "P3": 1118,
+    "P4": 187,
+    "P5": 224,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2848,
+    "retain": 2871,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -360,14 +360,17 @@ EXPECTED_TARGETS = {
         "edge-carrying transport round-trips, is injective, and preserves admission."
     ),
     "lean:proofs.envelope.operational_invariant": (
-        "Independent registry and artifact validators require each implemented target "
-        "to name an existing imported module, while the retained finite Lean negative "
-        "case rejects an implemented target missing its module or passing build."
+        "An exact formal-artifact authority lease preserves target, proposition, verifier, "
+        "consumer, implementation, environment, expiry, support, and effect custody over "
+        "arbitrary runs; artifact versions increase only on explicit change; a ten-event "
+        "witness invalidates, re-verifies, rebinds, reissues, and revokes."
     ),
     "lean:proofs.envelope.failure_blocks_promotion": (
-        "The retained finite Lean route excludes implemented status for a target assumed "
-        "non-operational and routed only to planned or blocked, while independent "
-        "validators enforce the current registry classification."
+        "Lease issuance rejects mismatched identity, missing artifact, adequacy, consumer, "
+        "limitation, or non-claim boundaries, expiry, support promotion, or external-effect "
+        "authority; rejected events are noninterfering, revoked states absorb suffixes, "
+        "thin summaries cannot recover boundary-sensitive issue decisions, and complete "
+        "transport preserves steps."
     ),
     "lean:roadmap.phases.operational_invariant": (
         "A finite prototype-phase route with declared prerequisites but failed "
@@ -811,7 +814,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2848:
+    if summary.get("current_theorem_count") != 2871:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1157,10 +1160,19 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             },
         ),
         "lean/AsiStackProofs/ProofEnvelope.lean": (
-            5,
+            28,
             {
                 "implemented_target_missing_module_or_build_rejected",
                 "non_operational_target_not_implemented",
+                "initial_issue_trace_reaches_active_lease",
+                "complete_proof_lease_trace_reissues_changed_artifact_then_revokes",
+                "run_proof_lease_preserves_custody",
+                "run_proof_lease_preserves_non_authority",
+                "artifact_change_invalidates_active_lease",
+                "revoked_proof_lease_is_absorbing",
+                "no_thin_proof_lease_classifier_recovers_boundary_state",
+                "complete_proof_lease_transport_is_injective",
+                "complete_proof_lease_transport_preserves_step",
             },
         ),
         "lean/AsiStackProofs/PrototypeRoadmap.lean": (
@@ -1255,7 +1267,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2848
+        status.get("theorem_count") != 2871
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

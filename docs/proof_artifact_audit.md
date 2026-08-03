@@ -17,6 +17,12 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
 | Warnings | 0 |
+| ProofEnvelope theorem declarations | 28 |
+| Proof-lease accepted trace events | 10 |
+| Proof-lease composition splits | 11 |
+| Proof-lease rejecting route cases | 33 |
+| Proof-lease thin-summary collisions | 1 |
+| Proof-lease complete-transport mutations rejected | 19 |
 
 ## Checked Boundaries
 
@@ -26,6 +32,21 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 - Every implemented target tag must appear in its chapter file.
 - Every chapter formalization-hook section with implemented targets must include explicit limitation or non-claim language.
 - Appendix E must expose the current proof target count, proof-readiness coverage boundary, and proof artifact traceability audit.
+- The exact 28-declaration `ProofEnvelope` module must compile, and the independent consumer must reproduce the ten-event artifact-change/reissue/revocation trace, all eleven composition splits, 33 rejecting routes with exact state preservation, one expiration witness, one thin-summary/opposite-decision collision, and all nineteen complete-transport mutations.
+
+## Proof-Envelope Lifecycle Alignment
+
+The independent consumer reconstructs a formal-artifact authority lease without
+copying Lean outcomes. It requires exact target, proposition, artifact,
+verifier, consumer, implementation, and environment identity; adequacy,
+limitation, non-claim, and consumer-boundary review; unexpired least-authority
+issuance; artifact-change invalidation and re-review; and explicit revocation or
+expiry. The checked finite trace changes artifact version once, reissues only
+after repeating verification and review, then revokes with ten receipts.
+
+This alignment proves no theorem meaning, filesystem truth, semantic adequacy,
+implementation refinement, deployed enforcement, support movement, external
+effect, safety, transfer, SOTA, AGI, or ASI.
 
 ## Module Coverage
 
@@ -97,7 +118,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | 2 | 21 | 0 | 23 | 4 |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | 3 | 18 | 0 | 33 | 4 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 4 | 19 | 0 | 16 | 7 |
-| `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 5 | 0 | 5 | 2 |
+| `lean/AsiStackProofs/ProofEnvelope.lean` | 2 | 29 | 0 | 19 | 5 |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | 1 | 31 | 0 | 34 | 8 |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | 3 | 9 | 0 | 4 | 3 |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | 3 | 24 | 0 | 12 | 4 |

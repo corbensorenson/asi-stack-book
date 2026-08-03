@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import re
+import subprocess
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -18,9 +20,37 @@ ROOT_LEAN_MODULE = ROOT / "lean" / "AsiStackProofs.lean"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
 REPORT = ROOT / "docs" / "proof_artifact_audit.md"
 PROOF_ENVELOPE = ROOT / "lean" / "AsiStackProofs" / "ProofEnvelope.lean"
+LEAN_ROOT = ROOT / "lean"
+EXPECTED_PROOF_ENVELOPE_THEOREM_COUNT = 28
 REQUIRED_PROOF_ENVELOPE_THEOREMS = {
+    "artifact_change_invalidates_active_lease",
+    "complete_proof_lease_trace_reissues_changed_artifact_then_revokes",
+    "complete_proof_lease_transport_is_injective",
+    "complete_proof_lease_transport_preserves_step",
+    "complete_proof_lease_transport_round_trips",
+    "expired_issue_is_rejected",
+    "external_effect_issue_is_rejected",
+    "external_theorem_without_ids_or_boundary_rejected",
+    "initial_issue_trace_reaches_active_lease",
     "implemented_target_missing_module_or_build_rejected",
+    "no_thin_proof_lease_classifier_recovers_boundary_state",
+    "non_lean_artifact_cannot_claim_lean_proof",
     "non_operational_target_not_implemented",
+    "proof_lease_accepted_step_adds_exactly_one_receipt",
+    "proof_lease_custody_is_transitive",
+    "proof_lease_rejected_event_is_noninterfering",
+    "proof_lease_step_preserves_custody",
+    "proof_lease_step_preserves_non_authority",
+    "revocation_without_reason_is_rejected",
+    "revoked_proof_lease_is_absorbing",
+    "run_proof_lease_append",
+    "run_proof_lease_preserves_custody",
+    "run_proof_lease_preserves_non_authority",
+    "stale_artifact_verification_is_rejected",
+    "support_promotion_issue_is_rejected",
+    "support_promotion_without_transition_or_boundaries_rejected",
+    "thin_proof_lease_summary_has_issue_collision",
+    "wrong_consumer_binding_is_rejected",
 }
 
 LIMITATION_MARKERS = [
@@ -94,6 +124,334 @@ def module_stats(module_path: Path) -> dict[str, int]:
     }
 
 
+PROOF_LEASE_FIELDS = (
+    "stage",
+    "target_id",
+    "proposition_version",
+    "artifact_version",
+    "verifier_version",
+    "consumer_id",
+    "implementation_version",
+    "environment_version",
+    "logical_time",
+    "expiry_time",
+    "artifact_valid",
+    "adequacy_accepted",
+    "consumer_requirements_matched",
+    "limitations_recorded",
+    "non_claims_recorded",
+    "revocation_reason_present",
+    "support_state_effect",
+    "external_effect_authorized",
+    "receipt_count",
+)
+
+
+def proof_lease_initial_state() -> dict[str, Any]:
+    return {
+        "stage": "registered",
+        "target_id": 9001,
+        "proposition_version": 7,
+        "artifact_version": 1,
+        "verifier_version": 3,
+        "consumer_id": 42,
+        "implementation_version": 11,
+        "environment_version": 13,
+        "logical_time": 0,
+        "expiry_time": 10,
+        "artifact_valid": True,
+        "adequacy_accepted": True,
+        "consumer_requirements_matched": True,
+        "limitations_recorded": True,
+        "non_claims_recorded": True,
+        "revocation_reason_present": True,
+        "support_state_effect": "noChange",
+        "external_effect_authorized": False,
+        "receipt_count": 0,
+    }
+
+
+def proof_lease_step(
+    state: dict[str, Any], event: tuple[Any, ...]
+) -> tuple[str, dict[str, Any]]:
+    kind, *args = event
+    next_state = copy.deepcopy(state)
+
+    def accepted(stage: str) -> tuple[str, dict[str, Any]]:
+        next_state["stage"] = stage
+        next_state["receipt_count"] += 1
+        return "accepted", next_state
+
+    if kind == "verify":
+        target_id, artifact_version, verifier_version = args
+        if state["stage"] != "registered":
+            return "rejectStage", state
+        if (
+            target_id != state["target_id"]
+            or artifact_version != state["artifact_version"]
+            or verifier_version != state["verifier_version"]
+        ):
+            return "rejectIdentity", state
+        if not state["artifact_valid"]:
+            return "rejectBoundary", state
+        return accepted("verified")
+    if kind == "adequacy":
+        target_id, proposition_version = args
+        if state["stage"] != "verified":
+            return "rejectStage", state
+        if (
+            target_id != state["target_id"]
+            or proposition_version != state["proposition_version"]
+        ):
+            return "rejectIdentity", state
+        if not all(
+            state[field]
+            for field in (
+                "adequacy_accepted",
+                "limitations_recorded",
+                "non_claims_recorded",
+            )
+        ):
+            return "rejectBoundary", state
+        return accepted("adequacyReviewed")
+    if kind == "bind":
+        (consumer_id,) = args
+        if state["stage"] != "adequacyReviewed":
+            return "rejectStage", state
+        if consumer_id != state["consumer_id"]:
+            return "rejectIdentity", state
+        if not state["consumer_requirements_matched"]:
+            return "rejectBoundary", state
+        return accepted("consumerBound")
+    if kind == "issue":
+        consumer_id, implementation_version, environment_version = args
+        if state["stage"] != "consumerBound":
+            return "rejectStage", state
+        if (
+            consumer_id != state["consumer_id"]
+            or implementation_version != state["implementation_version"]
+            or environment_version != state["environment_version"]
+        ):
+            return "rejectIdentity", state
+        if not all(
+            state[field]
+            for field in (
+                "artifact_valid",
+                "adequacy_accepted",
+                "consumer_requirements_matched",
+                "limitations_recorded",
+                "non_claims_recorded",
+            )
+        ):
+            return "rejectBoundary", state
+        if state["expiry_time"] <= state["logical_time"]:
+            return "rejectBoundary", state
+        if (
+            state["support_state_effect"] != "noChange"
+            or state["external_effect_authorized"]
+        ):
+            return "rejectAuthority", state
+        return accepted("active")
+    if kind == "change":
+        (new_artifact_version,) = args
+        if state["stage"] != "active":
+            return "rejectStage", state
+        if new_artifact_version <= state["artifact_version"]:
+            return "rejectVersion", state
+        next_state["artifact_version"] = new_artifact_version
+        return accepted("registered")
+    if kind == "revoke":
+        if state["stage"] != "active":
+            return "rejectStage", state
+        if not state["revocation_reason_present"]:
+            return "rejectBoundary", state
+        return accepted("revoked")
+    if kind == "expire":
+        if state["stage"] != "active":
+            return "rejectStage", state
+        if state["logical_time"] < state["expiry_time"]:
+            return "rejectBoundary", state
+        return accepted("expired")
+    raise ValueError(f"unknown proof-lease event: {kind}")
+
+
+def run_proof_lease(
+    state: dict[str, Any], events: list[tuple[Any, ...]]
+) -> dict[str, Any]:
+    current = copy.deepcopy(state)
+    for event in events:
+        _, current = proof_lease_step(current, event)
+    return current
+
+
+def proof_lease_transport(state: dict[str, Any]) -> dict[str, Any]:
+    return {field: copy.deepcopy(state[field]) for field in PROOF_LEASE_FIELDS}
+
+
+def proof_lease_state_from_transport(transport: dict[str, Any]) -> dict[str, Any]:
+    return {field: copy.deepcopy(transport[field]) for field in PROOF_LEASE_FIELDS}
+
+
+def validate_proof_lease_lifecycle(errors: list[str]) -> dict[str, int]:
+    source = PROOF_ENVELOPE.read_text(encoding="utf-8", errors="ignore")
+    theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z0-9_]+)", source))
+    if theorem_names != REQUIRED_PROOF_ENVELOPE_THEOREMS:
+        errors.append(
+            "ProofEnvelope theorem surface drifted: "
+            f"expected {EXPECTED_PROOF_ENVELOPE_THEOREM_COUNT}, got {len(theorem_names)}."
+        )
+
+    compile_result = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/ProofEnvelope.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if compile_result.returncode != 0:
+        errors.append(
+            "ProofEnvelope exact Lean compilation failed: "
+            + (compile_result.stderr or compile_result.stdout).strip()
+        )
+
+    initial = proof_lease_initial_state()
+    trace = [
+        ("verify", 9001, 1, 3),
+        ("adequacy", 9001, 7),
+        ("bind", 42),
+        ("issue", 42, 11, 13),
+        ("change", 2),
+        ("verify", 9001, 2, 3),
+        ("adequacy", 9001, 7),
+        ("bind", 42),
+        ("issue", 42, 11, 13),
+        ("revoke",),
+    ]
+    final = run_proof_lease(initial, trace)
+    if not (
+        final["stage"] == "revoked"
+        and final["artifact_version"] == 2
+        and final["receipt_count"] == 10
+        and final["support_state_effect"] == "noChange"
+        and final["external_effect_authorized"] is False
+    ):
+        errors.append("proof-lease complete reissue-and-revocation witness drifted")
+
+    composition_split_count = 0
+    for split in range(len(trace) + 1):
+        if run_proof_lease(initial, trace) != run_proof_lease(
+            run_proof_lease(initial, trace[:split]), trace[split:]
+        ):
+            errors.append(f"proof-lease composition failed at split {split}")
+        composition_split_count += 1
+
+    active = run_proof_lease(initial, trace[:4])
+    reviewed = run_proof_lease(initial, trace[:2])
+    verified = run_proof_lease(initial, trace[:1])
+    issue_ready = copy.deepcopy(active)
+    issue_ready["stage"] = "consumerBound"
+    expired_active = copy.deepcopy(active)
+    expired_active["logical_time"] = 10
+
+    def changed(state: dict[str, Any], **updates: Any) -> dict[str, Any]:
+        candidate = copy.deepcopy(state)
+        candidate.update(updates)
+        return candidate
+
+    reject_cases = [
+        (active, ("verify", 9001, 1, 3), "rejectStage"),
+        (initial, ("verify", 9002, 1, 3), "rejectIdentity"),
+        (initial, ("verify", 9001, 2, 3), "rejectIdentity"),
+        (initial, ("verify", 9001, 1, 4), "rejectIdentity"),
+        (changed(initial, artifact_valid=False), ("verify", 9001, 1, 3), "rejectBoundary"),
+        (initial, ("adequacy", 9001, 7), "rejectStage"),
+        (verified, ("adequacy", 9002, 7), "rejectIdentity"),
+        (verified, ("adequacy", 9001, 8), "rejectIdentity"),
+        (changed(verified, adequacy_accepted=False), ("adequacy", 9001, 7), "rejectBoundary"),
+        (changed(verified, limitations_recorded=False), ("adequacy", 9001, 7), "rejectBoundary"),
+        (changed(verified, non_claims_recorded=False), ("adequacy", 9001, 7), "rejectBoundary"),
+        (verified, ("bind", 42), "rejectStage"),
+        (reviewed, ("bind", 43), "rejectIdentity"),
+        (changed(reviewed, consumer_requirements_matched=False), ("bind", 42), "rejectBoundary"),
+        (reviewed, ("issue", 42, 11, 13), "rejectStage"),
+        (issue_ready, ("issue", 43, 11, 13), "rejectIdentity"),
+        (issue_ready, ("issue", 42, 12, 13), "rejectIdentity"),
+        (issue_ready, ("issue", 42, 11, 14), "rejectIdentity"),
+        (changed(issue_ready, artifact_valid=False), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, adequacy_accepted=False), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, consumer_requirements_matched=False), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, limitations_recorded=False), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, non_claims_recorded=False), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, logical_time=10), ("issue", 42, 11, 13), "rejectBoundary"),
+        (changed(issue_ready, support_state_effect="supportPromotion"), ("issue", 42, 11, 13), "rejectAuthority"),
+        (changed(issue_ready, external_effect_authorized=True), ("issue", 42, 11, 13), "rejectAuthority"),
+        (issue_ready, ("change", 2), "rejectStage"),
+        (active, ("change", 1), "rejectVersion"),
+        (active, ("change", 0), "rejectVersion"),
+        (issue_ready, ("revoke",), "rejectStage"),
+        (changed(active, revocation_reason_present=False), ("revoke",), "rejectBoundary"),
+        (issue_ready, ("expire",), "rejectStage"),
+        (active, ("expire",), "rejectBoundary"),
+    ]
+    rejected_route_count = 0
+    for index, (state, event, expected_route) in enumerate(reject_cases):
+        route, after = proof_lease_step(state, event)
+        if route != expected_route or after != state:
+            errors.append(
+                f"proof-lease rejecting case {index} drifted: {route}, state_changed={after != state}"
+            )
+        rejected_route_count += 1
+
+    expire_route, expired = proof_lease_step(expired_active, ("expire",))
+    if not (
+        expire_route == "accepted"
+        and expired["stage"] == "expired"
+        and expired["receipt_count"] == expired_active["receipt_count"] + 1
+    ):
+        errors.append("proof-lease expiration witness drifted")
+
+    thin_fields = ("target_id", "artifact_version", "consumer_id", "stage", "expiry_time")
+    missing_non_claims = changed(issue_ready, non_claims_recorded=False)
+    thin_ready = tuple(issue_ready[field] for field in thin_fields)
+    thin_missing = tuple(missing_non_claims[field] for field in thin_fields)
+    ready_route = proof_lease_step(issue_ready, ("issue", 42, 11, 13))[0]
+    missing_route = proof_lease_step(missing_non_claims, ("issue", 42, 11, 13))[0]
+    if not (
+        issue_ready != missing_non_claims
+        and thin_ready == thin_missing
+        and ready_route == "accepted"
+        and missing_route == "rejectBoundary"
+    ):
+        errors.append("proof-lease thin-summary collision drifted")
+
+    transport = proof_lease_transport(final)
+    if proof_lease_state_from_transport(transport) != final:
+        errors.append("proof-lease complete transport failed to round-trip")
+    transport_mutation_rejection_count = 0
+    for field in PROOF_LEASE_FIELDS:
+        mutation = copy.deepcopy(transport)
+        value = mutation[field]
+        if isinstance(value, bool):
+            mutation[field] = not value
+        elif isinstance(value, int):
+            mutation[field] = value + 1
+        else:
+            mutation[field] = "active" if field == "stage" else "supportPromotion"
+        if proof_lease_state_from_transport(mutation) == final:
+            errors.append(f"proof-lease transport mutation escaped: {field}")
+        transport_mutation_rejection_count += 1
+
+    return {
+        "theorem_count": len(theorem_names),
+        "accepted_trace_event_count": len(trace),
+        "composition_split_count": composition_split_count,
+        "rejected_route_count": rejected_route_count,
+        "thin_summary_collision_count": 1,
+        "transport_mutation_rejection_count": transport_mutation_rejection_count,
+        "expiration_witness_count": 1,
+    }
+
+
 def build_report() -> tuple[str, list[str]]:
     structure = read_json(STRUCTURE)
     manifest = read_json(MANIFEST)
@@ -138,6 +496,7 @@ def build_report() -> tuple[str, list[str]]:
             errors.append(
                 f"{PROOF_ENVELOPE.relative_to(ROOT)} is missing retained theorem {theorem}."
             )
+    proof_lease_metrics = validate_proof_lease_lifecycle(errors)
 
     duplicate_tags = [tag for tag, count in Counter(record.get("tag") for record in records).items() if count > 1]
     for tag in sorted(str(tag) for tag in duplicate_tags):
@@ -264,6 +623,12 @@ def build_report() -> tuple[str, list[str]]:
         f"| Chapters with proof targets | {len(chapter_results)} |",
         f"| Validation errors | {len(errors)} |",
         f"| Warnings | {len(warnings)} |",
+        f"| ProofEnvelope theorem declarations | {proof_lease_metrics['theorem_count']} |",
+        f"| Proof-lease accepted trace events | {proof_lease_metrics['accepted_trace_event_count']} |",
+        f"| Proof-lease composition splits | {proof_lease_metrics['composition_split_count']} |",
+        f"| Proof-lease rejecting route cases | {proof_lease_metrics['rejected_route_count']} |",
+        f"| Proof-lease thin-summary collisions | {proof_lease_metrics['thin_summary_collision_count']} |",
+        f"| Proof-lease complete-transport mutations rejected | {proof_lease_metrics['transport_mutation_rejection_count']} |",
     ]
 
     error_text = "\n".join(f"- {qmd_escape(error)}" for error in errors) if errors else "- None."
@@ -291,6 +656,21 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 - Every implemented target tag must appear in its chapter file.
 - Every chapter formalization-hook section with implemented targets must include explicit limitation or non-claim language.
 - Appendix E must expose the current proof target count, proof-readiness coverage boundary, and proof artifact traceability audit.
+- The exact 28-declaration `ProofEnvelope` module must compile, and the independent consumer must reproduce the ten-event artifact-change/reissue/revocation trace, all eleven composition splits, 33 rejecting routes with exact state preservation, one expiration witness, one thin-summary/opposite-decision collision, and all nineteen complete-transport mutations.
+
+## Proof-Envelope Lifecycle Alignment
+
+The independent consumer reconstructs a formal-artifact authority lease without
+copying Lean outcomes. It requires exact target, proposition, artifact,
+verifier, consumer, implementation, and environment identity; adequacy,
+limitation, non-claim, and consumer-boundary review; unexpired least-authority
+issuance; artifact-change invalidation and re-review; and explicit revocation or
+expiry. The checked finite trace changes artifact version once, reissues only
+after repeating verification and review, then revokes with ten receipts.
+
+This alignment proves no theorem meaning, filesystem truth, semantic adequacy,
+implementation refinement, deployed enforcement, support movement, external
+effect, safety, transfer, SOTA, AGI, or ASI.
 
 ## Module Coverage
 

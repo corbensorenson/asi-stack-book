@@ -30,6 +30,43 @@
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
+      "script": "validate_proof_artifact_audit.py",
+      "args": [],
+      "input_contract": "The exact ProofEnvelope Lean module, generated proof manifest and triage, and generated proof-artifact audit.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/ProofEnvelope.lean",
+        "proofs/proof_manifest.json",
+        "proofs/proof_triage.json",
+        "docs/proof_artifact_audit.md"
+      ],
+      "output_contract": "Reject theorem-surface drift, target wiring gaps, lifecycle reconstruction failures, noninterfering-route failures, composition failures, lossy-summary overclaims, complete-transport corruption, and support/effect authority laundering.",
+      "output_assertions": [
+        "exact 28-declaration module compiles",
+        "330 targets remain traceable",
+        "ten-event lease lifecycle closes",
+        "eleven composition splits agree",
+        "33 rejected routes preserve exact state",
+        "expiry and thin-summary collision remain explicit",
+        "19 complete-transport mutations reject",
+        "support and external-effect authority remain false"
+      ],
+      "claim_scope": "Finite authored proof-target wiring and formal-artifact authority-lease lifecycle records explicitly checked.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "wrong consumer binding",
+        "stale artifact verification",
+        "missing non-claim boundary",
+        "support promotion request",
+        "external-effect authority request",
+        "expired issue request",
+        "reasonless revocation",
+        "complete-transport field mutation"
+      ],
+      "prohibited_inference": "The audit does not establish artifact, source, or filesystem truth; semantic adequacy; implementation refinement; deployed enforcement; safety; empirical utility; support; transfer; or SOTA.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
       "script": "validate_release_reproducibility.py",
       "args": [],
       "input_contract": "Pinned tested-build/deploy workflow tool versions, Lean toolchain, CITATION.cff, and release reproducibility ledger.",

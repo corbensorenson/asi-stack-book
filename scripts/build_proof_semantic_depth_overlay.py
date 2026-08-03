@@ -2353,6 +2353,96 @@ _planforge_graph_refinement_base = {
     ],
 }
 
+_proof_envelope_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "docs/proof_artifact_audit.md",
+    ],
+    "classification_basis": [
+        "the formal-artifact authority-lease lifecycle is independently reconstructed by the proof-artifact audit consumer"
+    ],
+}
+
+CURRENT_SEMANTIC_OVERRIDES[
+    "lean/AsiStackProofs/ProofEnvelope.lean::proof_lease_custody_is_transitive"
+] = {
+    **_proof_envelope_lifecycle_base,
+    "semantic_level": "P1",
+    "rationale": (
+        "The theorem composes the authored custody relation and is a load-bearing helper for the arbitrary-run result, not a lifecycle witness by itself."
+    ),
+}
+
+for theorem_name in (
+    "initial_issue_trace_reaches_active_lease",
+    "complete_proof_lease_trace_reissues_changed_artifact_then_revokes",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofEnvelope.lean::{theorem_name}"
+    ] = {
+        **_proof_envelope_lifecycle_base,
+        "semantic_level": "P2",
+        "rationale": (
+            "The theorem supplies a closed nonvacuity witness for issuance or artifact-change invalidation, re-review, reissuance, and revocation."
+        ),
+    }
+
+for theorem_name in (
+    "proof_lease_rejected_event_is_noninterfering",
+    "proof_lease_step_preserves_custody",
+    "proof_lease_step_preserves_non_authority",
+    "proof_lease_accepted_step_adds_exactly_one_receipt",
+    "run_proof_lease_append",
+    "artifact_change_invalidates_active_lease",
+    "wrong_consumer_binding_is_rejected",
+    "stale_artifact_verification_is_rejected",
+    "support_promotion_issue_is_rejected",
+    "external_effect_issue_is_rejected",
+    "expired_issue_is_rejected",
+    "revocation_without_reason_is_rejected",
+    "thin_proof_lease_summary_has_issue_collision",
+    "complete_proof_lease_transport_round_trips",
+    "complete_proof_lease_transport_is_injective",
+    "complete_proof_lease_transport_preserves_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofEnvelope.lean::{theorem_name}"
+    ] = {
+        **_proof_envelope_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": (
+            "The theorem proves a quantified finite transition, custody, noninterference, receipt, collision, or complete-transport property bound to the independent audit consumer."
+        ),
+    }
+
+for theorem_name in (
+    "run_proof_lease_preserves_custody",
+    "run_proof_lease_preserves_non_authority",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofEnvelope.lean::{theorem_name}"
+    ] = {
+        **_proof_envelope_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": (
+            "The theorem lifts exact identity, version monotonicity, and zero support/effect authority across arbitrary event lists."
+        ),
+    }
+
+for theorem_name in (
+    "revoked_proof_lease_is_absorbing",
+    "no_thin_proof_lease_classifier_recovers_boundary_state",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofEnvelope.lean::{theorem_name}"
+    ] = {
+        **_proof_envelope_lifecycle_base,
+        "semantic_level": "P5",
+        "rationale": (
+            "The theorem proves terminal revocation closure or a bounded information-loss impossibility for summary-only lease classification."
+        ),
+    }
+
 for theorem_name in (
     "diamond_plan_graph_is_verified",
     "diamond_plan_graph_has_reachable_join",
@@ -2840,6 +2930,7 @@ def validation_index() -> dict[str, dict[str, Any]]:
         binding_refs = [
             item for item in artifacts
             if item.startswith(("schemas/", "tests/fixtures/", "experiments/"))
+            or item == "docs/proof_artifact_audit.md"
         ]
         witness_refs = [
             item for item in artifacts

@@ -21552,12 +21552,12 @@
             "Revocation stops at the theorem record while derived claims, releases, runtime consumers, caches, and public wording remain stale.",
             "Sunk-cost attachment to a large proof corpus prevents merging, replacing, refuting, or retiring declarations that do not constrain a real consumer."
           ],
-          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 324-target proof manifest with 314 implemented and 10 planned targets; a 121-module Lean workspace with 1,578 theorem declarations classified as 1004 derived/decomposed, 250 direct/projection, and 324 unknown/mixed; one proof-readiness classification; one wiring-only proof artifact audit; one semantic-adequacy review surface; one blocked formal-semantic-depth record with ten rejecting mutations; and five local ProofEnvelope declarations, all derived finite negative cases after retirement of its two direct projections. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
+          "minimal_implementation": "The exact current minimum is one proof-target schema and valid fixture; one generated 330-target proof manifest with all 330 targets implemented; a 130-module Lean workspace with 2,871 theorem declarations classified as 1,787 derived/decomposed, 433 direct/projection, and 651 unknown/mixed; proof-readiness, traceability, depth, and semantic-adequacy review surfaces; one blocked formal-semantic-depth record with ten rejecting mutations; and an exact 28-declaration ProofEnvelope surface. Five retained finite negative cases sit beside 23 authority-lease lifecycle and transport results proving arbitrary-run identity, version, custody, and non-authority invariants; reachable issue, artifact-change, re-review, reissue, revocation, and expiry paths; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport. The independent consumer recompiles the module, executes a ten-event trace, checks all eleven prefix/suffix splits, rejects 33 route cases, exercises one expiry witness and one thin-summary collision, and rejects mutations to all 19 complete-transport fields. The separate activation audit preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This minimum provides no filesystem or source truth, complete semantic formalization of the stack, deployed enforcement proof, general implementation refinement, independent formal reproduction, empirical result, chapter-core transition, or SOTA result.",
           "beyond_state_of_art": "The mature Formal Claim Admission and Proof-Rationalization Program audits every proposition, all 298 activation-baseline proof targets, and all 1,151 activation-baseline theorem declarations for semantic necessity, vacuity, reachability, assumptions, dependencies, consumers, and implementation binding. It replaces load-bearing projections with richer state-machine, temporal, concurrency, noninterference, resource, recovery, probabilistic, or refinement models where warranted; moves behavior and performance obligations to executable and empirical lanes; validates implementation relations and runtime monitors; runs countermodels, mutations, adversarial schedules, and negative controls; requires independent formalizations, tools, implementations, and evaluators for decisive claims; measures proof and governance cost; propagates expiry and revocation through every consumer and release surface; and preserves narrow, null, refuted, retired, or blocked-after-full-attempt outcomes instead of optimizing theorem counts or green builds.",
           "open_evidence_gaps": [
             "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence.",
-            "The current surface contains 298 targets and 1,151 declarations, but the activation-baseline rationalization is not complete: projections, assumption restatements, vacuity, reachability, duplicate/orphan status, consumer use, richer-model needs, executable and empirical handoffs, implementation binding, independent reproduction, and transfer must still receive terminal dispositions under the roadmap.",
-            "The local ProofEnvelope module has seven finite declarations\u2014two direct projections and five derived negative cases\u2014and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
+            "The live surface contains 330 targets and 2,871 declarations, while the frozen activation baseline contains 298 targets and 1,151 declarations. Rationalization is not complete: projections, assumption restatements, vacuity, reachability, duplicate/orphan status, consumer use, richer-model needs, executable and empirical handoffs, implementation binding, independent reproduction, and transfer must still receive terminal dispositions under the roadmap.",
+            "The local ProofEnvelope module has 28 finite declarations and an independent bounded lifecycle consumer. They establish only authored record transitions, custody, rejection, information-loss, and transport properties; they do not establish artifact or source truth, full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
           ],
           "codex_tests": [
             {
@@ -21618,10 +21618,10 @@
             },
             {
               "name": "Proof artifact traceability audit",
-              "purpose": "Verify that each implemented proof target is traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage.",
+              "purpose": "Verify target traceability and independently consume the exact 28-declaration ProofEnvelope lifecycle through one ten-event trace, eleven composition splits, 33 rejecting route cases, expiry, a thin-summary collision, and 19 complete-transport mutations.",
               "implementation_status": "implemented",
-              "result_status": "passes via proof artifact audit",
-              "status": "implemented; traceability and non-claim audit only"
+              "result_status": "passes via proof artifact audit and exact ProofEnvelope module compilation",
+              "status": "implemented; finite lifecycle, traceability, and non-claim audit only"
             },
             {
               "name": "Proof-depth surface synchronization",
@@ -21650,13 +21650,13 @@
             {
               "tag": "lean:proofs.envelope.operational_invariant",
               "module": "AsiStackProofs.ProofEnvelope",
-              "target": "Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build.",
+              "target": "An exact formal-artifact authority lease preserves target, proposition, verifier, consumer, implementation, environment, expiry, support, and effect custody over arbitrary runs; artifact versions increase only on explicit change; a ten-event witness invalidates, re-verifies, rebinds, reissues, and revokes.",
               "status": "implemented"
             },
             {
               "tag": "lean:proofs.envelope.failure_blocks_promotion",
               "module": "AsiStackProofs.ProofEnvelope",
-              "target": "The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification.",
+              "target": "Lease issuance rejects mismatched identity, missing artifact, adequacy, consumer, limitation, or non-claim boundaries, expiry, support promotion, or external-effect authority; rejected events are noninterfering, revoked states absorb suffixes, thin summaries cannot recover boundary-sensitive issue decisions, and complete transport preserves steps.",
               "status": "implemented"
             }
           ]

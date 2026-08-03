@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-03"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -22,8 +22,8 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "All twelve assigned sources have exact passage-reviewed mappings, but they support formalization and claim-boundary design only; no source-reported system, proof corpus, deployment, runtime, security, capability, or performance result is imported as ASI Stack evidence."
-  - "The frozen activation-baseline rationalization contains 298 targets and 1,151 declarations; the live surface contains 330 targets and 2,828 declarations. Neither denominator establishes semantic adequacy, implementation binding, independent reproduction, transfer, or system behavior."
-  - "The local ProofEnvelope module has five derived finite negative cases after retirement of two direct projections, and the semantic-depth harness has one blocked record plus ten rejecting mutations. Neither proves full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
+  - "The frozen activation-baseline rationalization contains 298 targets and 1,151 declarations; the live surface contains 330 targets and 2,871 declarations. Neither denominator establishes semantic adequacy, implementation binding, independent reproduction, transfer, or system behavior."
+  - "The local ProofEnvelope module has 28 finite declarations and an independent bounded lifecycle consumer. They establish authored lease transitions, custody, rejection, information-loss, and transport properties only; they do not prove artifact or source truth, full semantic adequacy, deployed enforcement, system safety, implementation refinement, empirical truth, support promotion, transfer, or SOTA."
 ---
 
 ## Chapter status
@@ -34,13 +34,13 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
+| Last updated | 2026-08-03 |
 | Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
 | Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
-| Test state | Proof manifest sync, local Lean build, `AsiStackProofs.ProofEnvelope`, protocol fixture validation, proof artifact/depth audits, and one formal semantic-depth record pass locally. Ten new mutations distinguish field presence, finite route, derived invariant, executable bridge, and absent implementation binding; no arbitrary theorem adequacy or deployed enforcement is established. |
+| Test state | Proof manifest sync, local Lean build, protocol fixtures, depth and adequacy audits, and the formal semantic-depth record pass locally. The proof-artifact audit independently recompiles the exact 28-declaration `AsiStackProofs.ProofEnvelope` surface, executes a ten-event authority-lease trace, checks eleven composition splits, rejects 33 route cases, exercises expiry and a thin-summary collision, and rejects 19 complete-transport mutations; no artifact truth, arbitrary theorem adequacy, implementation refinement, support movement, or deployed enforcement is established. |
 
 ## Drafting guardrail
 
@@ -86,7 +86,7 @@ Semantic proof drift is the proof-envelope risk. A finite predicate can be corre
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
 
-The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and no planned placeholders; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2848 theorem declarations, 1774 derived/decomposed, 433 direct/projection, 641 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
+The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and no planned placeholders; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2871 theorem declarations, 1787 derived/decomposed, 433 direct/projection, 651 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
 
 The proof-depth classifier is intentionally blunt. `derived/decomposed` means a theorem body uses structural proof steps such as unfolding, case analysis, rewriting, branching, contradiction handling, or comparable decomposition. `direct/projection` means the proof mostly projects an already-assumed field, implication, or equality. Direct/projection theorems can still be valuable traceability hooks, but the rendered chapter must preserve projection-only traceability language when safety-critical modules contain them. The classifier is not a proof of semantic adequacy; it is a guard against letting green builds sound broader than the predicates they actually check.
 
@@ -546,17 +546,21 @@ bridge, missing runtime exclusions, a runtime claim from an unbound
 implementation, and fixture-based support promotion.
 
 The exact current minimum is one proof-target schema and valid fixture; one
-generated 324-target proof manifest with 314 implemented and 10 planned
-targets; a 121-module Lean workspace with 1,578 theorem declarations classified
-as 1004 derived/decomposed, 250 direct/projection, and 324 unknown/mixed; one proof-readiness classification;
-one wiring-only proof artifact audit; one semantic-adequacy review surface; one
-blocked formal-semantic-depth record with ten rejecting mutations; and five
-local ProofEnvelope declarations, all derived finite negative cases after
-retirement of its two direct projections. The separate activation audit
-preserves its historical 298-target, 65-module, and 1,151-theorem baseline. This
-minimum provides no complete semantic formalization of the stack, deployed
-enforcement proof, general implementation refinement, independent formal
-reproduction, empirical result, chapter-core transition, or SOTA result.
+generated 330-target proof manifest with all 330 targets implemented; a
+130-module Lean workspace with 2,871 theorem declarations classified as 1,787
+derived/decomposed, 433 direct/projection, and 651 unknown/mixed;
+proof-readiness, traceability, depth, and semantic-adequacy review surfaces; one
+blocked formal-semantic-depth record with ten rejecting mutations; and an exact
+28-declaration `ProofEnvelope` surface. Five retained negative cases sit beside
+23 lifecycle and transport results. The independent consumer executes a
+ten-event issue/change/review/reissue/revoke trace, checks eleven composition
+splits, rejects 33 route cases, exercises expiry and a thin-summary collision,
+and rejects mutations to all 19 complete-transport fields. The separate
+activation audit preserves its historical 298-target, 65-module, and
+1,151-theorem baseline. This minimum provides no artifact or source truth,
+complete semantic formalization of the stack, deployed enforcement proof,
+general implementation refinement, independent formal reproduction, empirical
+result, chapter-core transition, or SOTA result.
 
 ## Mature Research Target
 
@@ -618,7 +622,7 @@ green builds are explicitly non-terminal.
 | Implemented-target envelope negative case | Reject an implemented proof-target record whose module-existence or build-passed field is false, while repository validators independently inspect current modules and imports. | implemented in `AsiStackProofs.ProofEnvelope` plus proof-artifact audit; no filesystem semantics inside Lean |
 | Non-operational target routing negative case | Exclude implemented status when the finite record is assumed non-operational and routed only to planned or blocked, while repository validators independently enforce current classification. | implemented in `AsiStackProofs.ProofEnvelope` plus proof-manifest and proof-artifact validation |
 | Proof target coverage summary | Classify proof targets by status, triage class, and recommended route. | implemented in generated Appendix E; checked by `python3 scripts/validate_proof_readiness.py` |
-| Proof artifact traceability audit | Verify that each implemented proof target is traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage. | implemented in `docs/proof_artifact_audit.md`; checked by `python3 scripts/validate_proof_artifact_audit.py` |
+| Proof artifact traceability and lease-lifecycle audit | Verify target traceability, recompile the exact 28-declaration module, reconstruct one ten-event issue/change/re-review/reissue/revoke trace, check eleven composition splits, reject 33 route cases, exercise expiry and a lossy-summary collision, and mutate all 19 complete-transport fields. | implemented in `docs/proof_artifact_audit.md`; checked by `python3 scripts/validate_proof_artifact_audit.py`; finite authored-record semantics only |
 | Proof-depth surface synchronization | Check that the chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction. | implemented by `python3 scripts/validate_proof_depth_surface.py`; this synchronizes proof-depth surface language and does not prove semantic adequacy |
 | Semantic proof adequacy audit | Review whether each finite-record predicate is the right formalization of its intended chapter boundary. | implemented in `docs/proof_adequacy_review.md`; checked by `python3 scripts/validate_proof_adequacy_review.py`; classification and no-promotion audit only |
 | Historical-project semantic-depth fixture | Distinguish field presence, finite route, derived invariant, executable-model bridge, and implementation binding while preserving abstraction losses, assumptions, runtime exclusions, and no-promotion boundaries. | implemented by `python3 scripts/validate_formal_semantic_depth.py`: one blocked record and ten expected-invalid mutations; no arbitrary adequacy or deployed-enforcement result |
@@ -627,28 +631,31 @@ green builds are explicitly non-terminal.
 
 | Tag | Module | Target | Status |
 |---|---|---|---|
-| `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | Independent registry and artifact validators require each implemented target to name an existing imported module, while the retained finite Lean negative case rejects an implemented target missing its module or passing build. | implemented |
-| `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | The retained finite Lean route excludes implemented status for a target assumed non-operational and routed only to planned or blocked, while independent validators enforce the current registry classification. | implemented |
+| `lean:proofs.envelope.operational_invariant` | `AsiStackProofs.ProofEnvelope` | An exact formal-artifact authority lease preserves target, proposition, verifier, consumer, implementation, environment, expiry, support, and effect custody over arbitrary runs; artifact versions increase only on explicit change; a ten-event witness invalidates, re-verifies, rebinds, reissues, and revokes. | implemented |
+| `lean:proofs.envelope.failure_blocks_promotion` | `AsiStackProofs.ProofEnvelope` | Lease issuance rejects mismatched identity, missing artifact, adequacy, consumer, limitation, or non-claim boundaries, expiry, support promotion, or external-effect authority; rejected events are noninterfering, revoked states absorb suffixes, thin summaries cannot recover boundary-sensitive issue decisions, and complete transport preserves steps. | implemented |
 
-These Lean hooks are implemented as local finite-record predicates for proof-target status discipline, proof-lane authority, promotion boundaries, and external-reference boundaries. They do not inspect the repository filesystem directly, discover missing proof opportunities, validate external theorem IDs, judge semantic adequacy, or promote any broad book claim beyond its recorded support state.
+These Lean hooks are implemented as authored finite-record predicates for
+proof-target status discipline and a reachable formal-artifact authority lease.
+They do not inspect the repository filesystem directly, discover missing proof
+opportunities, validate external theorem IDs, judge semantic adequacy, or
+promote any broad book claim beyond its recorded support state.
 
-The formal audit counts five declarations in `ProofEnvelope.lean`. The two
-direct projections, `implemented_target_has_module_and_passing_build` and
-`non_operational_target_remains_planned_or_blocked`, are retired. The public
-targets now bind the retained negative cases to independently implemented
-manifest, registry, and artifact validators instead of treating the projections
-as repository inspection. The five retained declarations are derived finite
-negative cases: non-operational targets cannot be implemented; implemented
-targets missing a module or build are rejected; non-Lean artifacts cannot claim
-Lean proof; support promotion without a transition and semantic boundaries is
-rejected; and external theorem references missing identifiers or non-claims are
-rejected. None discovers repository artifacts, proves semantic adequacy,
-establishes implementation refinement, checks runtime enforcement, validates
-external theorem applicability, proves system safety, measures capability or
-cost, or establishes reproduction and transfer. The declaration-level roadmap
-must retain only consumer-bearing projections and replace load-bearing record
-gates with richer semantics, countermodels, refinement, liveness, or executable
-and empirical evidence as their actual obligations require.
+The formal audit counts 28 declarations in `ProofEnvelope.lean`: five retained
+negative cases and 23 lifecycle and transport results. The lifecycle preserves
+target, proposition, verifier, consumer, implementation, environment, expiry,
+support, effect, version, and receipt custody over arbitrary successful runs.
+It includes reachable issuance, explicit artifact-version invalidation,
+re-verification, re-binding, reissuance, expiry, and reason-bound revocation;
+exact rejected-event noninterference; absorbing revocation; one summary
+collision proving that a thin view cannot recover boundary-sensitive issue
+decisions; and complete transport that round-trips, is injective, and preserves
+steps. The independent Python consumer recompiles the module, reconstructs the
+ten-event trace and all eleven prefix/suffix splits, checks 33 rejected routes,
+and rejects mutations to each of the 19 transported fields. None of those
+authored fields establishes artifact or source truth, filesystem discovery,
+semantic adequacy, implementation refinement, runtime enforcement, external
+theorem applicability, system safety, capability, cost, reproduction, transfer,
+or support-state movement.
 
 ## Source crosswalk
 
