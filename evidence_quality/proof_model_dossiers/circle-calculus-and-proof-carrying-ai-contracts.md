@@ -10,6 +10,28 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | semantically_reviewed | retain_load_bearing_semantic |
 | `lean:circle_contracts.public_consumer_gate.fixture_bridge` | terminally_dispositioned | replace_with_stronger_model |
 
+## Current refinement
+
+`AsiStackProofs.ProofCarryingContracts` now exposes 28 theorem declarations.
+The versioned transport model proves exact theorem, parent, consumer, support,
+and effect custody across arbitrary finite event lists; zero-authority and
+root/descendant revocation coherence; exact batch composition; persistent
+revoked-lineage containment across arbitrary suffixes; exclusion of descendant
+use after revocation; and preservation of unrelated-lineage availability. The
+existing closed trace consumes a descendant, revokes its root lineage, rejects
+later descendant use, and leaves the independent lineage available.
+
+`scripts/validate_circle_contract_pack_archive.py` recompiles the exact surface,
+checks the pinned nine-contract/four-policy archive, explores forty-five
+reachable states through 360 transitions, checks nine revoked-lineage states
+through seventy-two contained transitions, preserves all eight trace splits,
+and rejects sixteen lifecycle plus fifteen semantic mutations. These are
+authored finite-state and pinned-archive results. They do not establish external
+theorem resolution, statement equivalence, semantic refinement, authenticated
+or deployed transport, distributed invalidation, service liveness or recovery,
+downstream utility, support, safety, reproduction, transfer, or ASI. Chapter
+support remains `argument` and `support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |

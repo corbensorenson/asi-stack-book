@@ -2444,11 +2444,11 @@
       "tag": "lean:circle_contracts.versioned_transport.descendant_revocation",
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "The finite versioned transport state machine preserves theorem, parent, consumer, support, and external-effect fields; rejects invalid events without state change; composes traces; and makes root revocation persistently invalidate descendants while preserving unrelated-lineage availability.",
+      "formal_target": "The finite versioned transport state machine preserves theorem, parent, consumer, support, and external-effect custody plus zero-authority and revocation coherence across arbitrary event lists; rejects invalid events without state change; composes traces; confines revoked descendants across arbitrary suffixes; and preserves unrelated-lineage availability.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as an authored seven-transition lifecycle with exact rejected-event noninterference, protected identity and zero-authority fields, append composition, persistent descendant invalidation, reachable positive and negative witnesses, and an independent recompiling consumer with 16 rejecting mutations. It does not establish external theorem resolution, statement equivalence, semantic refinement, authenticated or deployed transport, concurrent/distributed revocation, liveness, recovery, support movement, utility, reproduction, or transfer."
+      "rationale": "Implemented as a 28-declaration authored lifecycle with exact rejected-event noninterference, arbitrary-run identity custody and zero-authority/revocation coherence, append composition, persistent descendant containment across arbitrary suffixes, unrelated-lineage availability across arbitrary suffixes, reachable positive and negative witnesses, and an independent recompiling consumer that explores 45 states through 360 transitions, checks 72 revoked-lineage transitions, and rejects 16 lifecycle plus 15 semantic mutations. It does not establish external theorem resolution, statement equivalence, semantic refinement, authenticated or deployed transport, concurrent/distributed revocation, liveness, recovery, support movement, utility, reproduction, or transfer."
     },
     {
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",

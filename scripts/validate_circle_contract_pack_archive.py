@@ -128,6 +128,16 @@ COMMON_SURFACE_FRAGMENTS = (
 LIFECYCLE_THEOREMS = {
     "contract_transport_rejected_event_is_noninterfering",
     "contract_transport_step_preserves_identity_and_authority",
+    "contract_transport_step_preserves_custody",
+    "contract_transport_custody_transitive",
+    "run_contract_transport_preserves_custody",
+    "contract_transport_step_preserves_invariant",
+    "run_contract_transport_preserves_invariant",
+    "root_lineage_containment_survives_one_step",
+    "root_lineage_containment_survives_arbitrary_suffix",
+    "revoked_root_excludes_descendant_use_after_any_suffix",
+    "independent_lineage_availability_survives_one_step",
+    "independent_lineage_availability_survives_arbitrary_suffix",
     "run_contract_transport_append",
     "root_revocation_invalidates_root_and_descendant",
     "descendant_unusable_after_root_revocation",
@@ -161,6 +171,8 @@ REFERENCE_EVENTS = (
     "consume_descendant",
     "revoke_root",
 )
+
+TRANSPORT_EVENTS = (*REFERENCE_EVENTS, "consume_independent")
 
 
 def rel(path: Path) -> str:
@@ -523,7 +535,53 @@ def run_transport(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, A
     return current
 
 
-def validate_lifecycle_model(errors: list[str]) -> tuple[int, int]:
+def transport_state_key(state: dict[str, Any]) -> tuple[Any, ...]:
+    return tuple(
+        state[field]
+        for field in (
+            "root_stage",
+            "descendant_stage",
+            "independent_stage",
+            *IDENTITY_AND_AUTHORITY_FIELDS,
+        )
+    )
+
+
+def explore_transport(roots: tuple[dict[str, Any], ...]) -> dict[tuple[Any, ...], dict[str, Any]]:
+    reachable = {transport_state_key(root): copy.deepcopy(root) for root in roots}
+    frontier = list(reachable.values())
+    while frontier:
+        state = frontier.pop()
+        for event in TRANSPORT_EVENTS:
+            _, next_state = transport_step(state, event)
+            key = transport_state_key(next_state)
+            if key not in reachable:
+                reachable[key] = next_state
+                frontier.append(next_state)
+    return reachable
+
+
+def transport_custody_preserved(before: dict[str, Any], after: dict[str, Any]) -> bool:
+    return all(before[field] == after[field] for field in IDENTITY_AND_AUTHORITY_FIELDS)
+
+
+def transport_invariant(state: dict[str, Any]) -> bool:
+    return (
+        state["support_assignments"] == 0
+        and state["external_effects"] == 0
+        and (state["root_stage"] != "revoked" or state["descendant_stage"] == "revoked")
+    )
+
+
+def root_lineage_contained(state: dict[str, Any]) -> bool:
+    return state["root_stage"] == "revoked" and state["descendant_stage"] == "revoked"
+
+
+def independent_lineage_available(state: dict[str, Any]) -> bool:
+    return state["independent_stage"] in {"ready", "consumed"}
+
+
+def validate_lifecycle_model(errors: list[str]) -> dict[str, int]:
     theorem_names = set(
         re.findall(
             r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
@@ -533,8 +591,8 @@ def validate_lifecycle_model(errors: list[str]) -> tuple[int, int]:
     missing = sorted(LIFECYCLE_THEOREMS - theorem_names)
     if missing:
         errors.append(f"Lean proof-contract lifecycle surface is missing: {missing}")
-    if len(theorem_names) != 18:
-        errors.append(f"Lean proof-contract theorem count must be 18, observed {len(theorem_names)}")
+    if len(theorem_names) != 28:
+        errors.append(f"Lean proof-contract theorem count must be 28, observed {len(theorem_names)}")
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/ProofCarryingContracts.lean"],
         cwd=LEAN_ROOT,
@@ -624,11 +682,101 @@ def validate_lifecycle_model(errors: list[str]) -> tuple[int, int]:
         else:
             rejected_count += 1
 
-    for event in (*REFERENCE_EVENTS, "consume_independent"):
+    for event in TRANSPORT_EVENTS:
         _, next_state = transport_step(current, event)
         if next_state["root_stage"] != "revoked":
             errors.append(f"event {event} reopened a revoked root")
-    return accepted_count, rejected_count
+
+    roots = [reference_transport_state()]
+    for field in (
+        "root_theorem_digest",
+        "descendant_theorem_digest",
+        "descendant_parent_digest",
+        "consumer_digest",
+    ):
+        root = reference_transport_state()
+        root[field] = 9999
+        roots.append(root)
+    reachable = explore_transport(tuple(roots))
+    transition_count = 0
+    rejected_transition_count = 0
+    contained_roots: list[dict[str, Any]] = []
+    for state in reachable.values():
+        if not transport_invariant(state):
+            errors.append(f"reachable transport state violates invariant: {state}")
+        if not independent_lineage_available(state):
+            errors.append(f"reachable transport state lost independent-lineage availability: {state}")
+        if root_lineage_contained(state):
+            contained_roots.append(state)
+        for event in TRANSPORT_EVENTS:
+            transition_count += 1
+            route, next_state = transport_step(state, event)
+            if not transport_custody_preserved(state, next_state):
+                errors.append(f"reachable transport {state['root_stage']}:{event} violated custody")
+            if transport_invariant(state) and not transport_invariant(next_state):
+                errors.append(f"reachable transport {state['root_stage']}:{event} violated invariant")
+            if independent_lineage_available(state) and not independent_lineage_available(next_state):
+                errors.append(f"reachable transport {state['root_stage']}:{event} lost independent availability")
+            if route != "accepted":
+                rejected_transition_count += 1
+                if next_state != state:
+                    errors.append(f"reachable rejection {state['root_stage']}:{event} changed state")
+
+    contained = explore_transport(tuple(contained_roots)) if contained_roots else {}
+    contained_transition_count = 0
+    for state in contained.values():
+        if not root_lineage_contained(state):
+            errors.append(f"revoked lineage escaped containment: {state}")
+        if state["descendant_stage"] in {"ready", "consumed"}:
+            errors.append(f"revoked lineage regained descendant usability: {state}")
+        for event in TRANSPORT_EVENTS:
+            contained_transition_count += 1
+            _, next_state = transport_step(state, event)
+            if not root_lineage_contained(next_state):
+                errors.append(f"revoked lineage escaped through {event}")
+
+    semantic_mutations = 0
+    before = reference_transport_state()
+    _, after = transport_step(before, "resolve_root")
+    for field in IDENTITY_AND_AUTHORITY_FIELDS:
+        mutated_state = copy.deepcopy(after)
+        mutated_state[field] += 1
+        if transport_custody_preserved(before, mutated_state):
+            errors.append(f"protected transport mutation was not detected for {field}")
+        else:
+            semantic_mutations += 1
+    semantic_cases = (
+        ("support authority", not transport_invariant(mutated(support_assignments=1))),
+        ("external effect authority", not transport_invariant(mutated(external_effects=1))),
+        (
+            "revoked root with live descendant",
+            not transport_invariant(mutated(root_stage="revoked", descendant_stage="ready")),
+        ),
+        (
+            "revoked lineage containment escape",
+            not root_lineage_contained(mutated(root_stage="revoked", descendant_stage="consumed")),
+        ),
+        (
+            "independent lineage revoked",
+            not independent_lineage_available(mutated(independent_stage="revoked")),
+        ),
+    )
+    for name, detected in semantic_cases:
+        if not detected:
+            errors.append(f"semantic transport mutation was not detected: {name}")
+        else:
+            semantic_mutations += 1
+
+    return {
+        "accepted_trace_transitions": accepted_count,
+        "rejecting_mutations": rejected_count,
+        "reachable_states": len(reachable),
+        "reachable_transitions": transition_count,
+        "reachable_rejections": rejected_transition_count,
+        "contained_states": len(contained),
+        "contained_transitions": contained_transition_count,
+        "semantic_mutations": semantic_mutations,
+    }
 
 
 def fail(errors: list[str]) -> None:
@@ -664,7 +812,7 @@ def main() -> None:
     validate_result(errors)
     validate_transition(errors)
     validate_surfaces(errors)
-    accepted_count, rejected_count = validate_lifecycle_model(errors)
+    lifecycle = validate_lifecycle_model(errors)
 
     if errors:
         fail(errors)
@@ -672,8 +820,13 @@ def main() -> None:
     print(
         "Circle contract-pack archive validation passed: "
         "9 archived contracts, 4 accepted policy receipts, 5 archive controls; "
-        f"18 Lean declarations, {accepted_count} accepted lifecycle transitions, "
-        f"8/8 trace splits, and {rejected_count}/{rejected_count} rejecting lifecycle mutations; "
+        f"28 Lean declarations, {lifecycle['accepted_trace_transitions']} accepted lifecycle transitions, "
+        f"8/8 trace splits, {lifecycle['reachable_states']} reachable states and "
+        f"{lifecycle['reachable_transitions']} checked transitions "
+        f"({lifecycle['reachable_rejections']} rejections), {lifecycle['contained_states']} "
+        f"revoked-lineage states and {lifecycle['contained_transitions']} contained transitions, "
+        f"{lifecycle['rejecting_mutations']}/16 rejecting lifecycle mutations, and "
+        f"{lifecycle['semantic_mutations']}/15 semantic mutations; "
         "descendant revocation is local modeled evidence only and has no support-state effect."
     )
 

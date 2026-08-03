@@ -373,6 +373,30 @@ structure ContractTransportState where
   externalEffects : Nat := 0
 deriving DecidableEq, Repr
 
+def ContractTransportCustody
+    (before after : ContractTransportState) : Prop :=
+  after.rootTheoremDigest = before.rootTheoremDigest ∧
+    after.expectedRootTheoremDigest = before.expectedRootTheoremDigest ∧
+    after.descendantTheoremDigest = before.descendantTheoremDigest ∧
+    after.expectedDescendantTheoremDigest = before.expectedDescendantTheoremDigest ∧
+    after.descendantParentDigest = before.descendantParentDigest ∧
+    after.expectedParentDigest = before.expectedParentDigest ∧
+    after.consumerDigest = before.consumerDigest ∧
+    after.expectedConsumerDigest = before.expectedConsumerDigest ∧
+    after.supportAssignments = before.supportAssignments ∧
+    after.externalEffects = before.externalEffects
+
+def ContractTransportInvariant (state : ContractTransportState) : Prop :=
+  state.supportAssignments = 0 ∧
+    state.externalEffects = 0 ∧
+      (state.rootStage = .revoked -> state.descendantStage = .revoked)
+
+def RootLineageContained (state : ContractTransportState) : Prop :=
+  state.rootStage = .revoked ∧ state.descendantStage = .revoked
+
+def IndependentLineageAvailable (state : ContractTransportState) : Prop :=
+  state.independentStage = .ready ∨ state.independentStage = .consumed
+
 def rootIdentityExact (state : ContractTransportState) : Bool :=
   state.rootTheoremDigest == state.expectedRootTheoremDigest
 
@@ -474,6 +498,103 @@ theorem contract_transport_step_preserves_identity_and_authority
   cases event <;>
     simp [contractTransportStep, revokeRootLineage] <;>
     repeat' first | split | simp_all
+
+theorem contract_transport_step_preserves_custody
+    (state : ContractTransportState) (event : ContractTransportEvent) :
+    ContractTransportCustody state (contractTransportStep state event).2 := by
+  exact contract_transport_step_preserves_identity_and_authority state event
+
+theorem contract_transport_custody_transitive
+    {initial middle final : ContractTransportState}
+    (h₁ : ContractTransportCustody initial middle)
+    (h₂ : ContractTransportCustody middle final) :
+    ContractTransportCustody initial final := by
+  unfold ContractTransportCustody at *
+  rcases h₁ with ⟨h₁a, h₁b, h₁c, h₁d, h₁e, h₁f, h₁g, h₁h, h₁i, h₁j⟩
+  rcases h₂ with ⟨h₂a, h₂b, h₂c, h₂d, h₂e, h₂f, h₂g, h₂h, h₂i, h₂j⟩
+  exact ⟨h₂a.trans h₁a, h₂b.trans h₁b, h₂c.trans h₁c,
+    h₂d.trans h₁d, h₂e.trans h₁e, h₂f.trans h₁f,
+    h₂g.trans h₁g, h₂h.trans h₁h, h₂i.trans h₁i, h₂j.trans h₁j⟩
+
+theorem run_contract_transport_preserves_custody
+    (state : ContractTransportState) (events : List ContractTransportEvent) :
+    ContractTransportCustody state (runContractTransport state events) := by
+  induction events generalizing state with
+  | nil => simp [runContractTransport, ContractTransportCustody]
+  | cons event rest ih =>
+      exact contract_transport_custody_transitive
+        (contract_transport_step_preserves_custody state event)
+        (ih (contractTransportStep state event).2)
+
+theorem contract_transport_step_preserves_invariant
+    (state : ContractTransportState) (event : ContractTransportEvent)
+    (h : ContractTransportInvariant state) :
+    ContractTransportInvariant (contractTransportStep state event).2 := by
+  cases event <;>
+    simp [ContractTransportInvariant, contractTransportStep,
+      revokeRootLineage, rootLineageRevoked] at * <;>
+    repeat' first | split | simp_all
+
+theorem run_contract_transport_preserves_invariant
+    (state : ContractTransportState) (events : List ContractTransportEvent)
+    (h : ContractTransportInvariant state) :
+    ContractTransportInvariant (runContractTransport state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (contractTransportStep state event).2
+        (contract_transport_step_preserves_invariant state event h)
+
+theorem root_lineage_containment_survives_one_step
+    (state : ContractTransportState) (event : ContractTransportEvent)
+    (h : RootLineageContained state) :
+    RootLineageContained (contractTransportStep state event).2 := by
+  rcases h with ⟨rootRevoked, descendantRevoked⟩
+  cases event <;>
+    simp [RootLineageContained, contractTransportStep, rootRevoked,
+      descendantRevoked, rootLineageRevoked] <;>
+    repeat' first | split | simp_all
+
+theorem root_lineage_containment_survives_arbitrary_suffix
+    (state : ContractTransportState) (events : List ContractTransportEvent)
+    (h : RootLineageContained state) :
+    RootLineageContained (runContractTransport state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (contractTransportStep state event).2
+        (root_lineage_containment_survives_one_step state event h)
+
+theorem revoked_root_excludes_descendant_use_after_any_suffix
+    (state : ContractTransportState) (events : List ContractTransportEvent)
+    (h : RootLineageContained state) :
+    descendantUsable (runContractTransport state events) = false := by
+  have contained := root_lineage_containment_survives_arbitrary_suffix state events h
+  simp [descendantUsable, rootLineageRevoked, contained.1]
+
+theorem independent_lineage_availability_survives_one_step
+    (state : ContractTransportState) (event : ContractTransportEvent)
+    (h : IndependentLineageAvailable state) :
+    IndependentLineageAvailable (contractTransportStep state event).2 := by
+  rcases h with ready | consumed
+  · cases event <;>
+      simp [IndependentLineageAvailable, contractTransportStep,
+        revokeRootLineage, ready] <;>
+      repeat' first | split | simp_all
+  · cases event <;>
+      simp [IndependentLineageAvailable, contractTransportStep,
+        revokeRootLineage, consumed] <;>
+      repeat' first | split | simp_all
+
+theorem independent_lineage_availability_survives_arbitrary_suffix
+    (state : ContractTransportState) (events : List ContractTransportEvent)
+    (h : IndependentLineageAvailable state) :
+    IndependentLineageAvailable (runContractTransport state events) := by
+  induction events generalizing state with
+  | nil => exact h
+  | cons event rest ih =>
+      exact ih (contractTransportStep state event).2
+        (independent_lineage_availability_survives_one_step state event h)
 
 theorem run_contract_transport_append
     (state : ContractTransportState)

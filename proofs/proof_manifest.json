@@ -2567,7 +2567,7 @@
       "chapter_title": "Circle Calculus and Proof-Carrying AI Contracts",
       "tag": "lean:circle_contracts.versioned_transport.descendant_revocation",
       "module": "AsiStackProofs.ProofCarryingContracts",
-      "formal_target": "The finite versioned transport state machine preserves theorem, parent, consumer, support, and external-effect fields; rejects invalid events without state change; composes traces; and makes root revocation persistently invalidate descendants while preserving unrelated-lineage availability.",
+      "formal_target": "The finite versioned transport state machine preserves theorem, parent, consumer, support, and external-effect custody plus zero-authority and revocation coherence across arbitrary event lists; rejects invalid events without state change; composes traces; confines revoked descendants across arbitrary suffixes; and preserves unrelated-lineage availability.",
       "status": "implemented",
       "outline_line": 5981,
       "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean"

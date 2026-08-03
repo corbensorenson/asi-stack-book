@@ -4938,11 +4938,28 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
+      "input_contract": "The exact ProofCarryingContracts Lean module, pinned public-safe Circle contract pack and acceptance report, no-change transition, chapter surfaces, and independently implemented transport-lifecycle consumer.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/ProofCarryingContracts.lean",
+        "scripts/validate_circle_contract_pack_archive.py",
+        "experiments/circle_contract_pack_archive/fixtures/circle_ai_contract_pack.63b0f511.json",
+        "experiments/circle_contract_pack_archive/fixtures/circle_ai_acceptance_policy_report.63b0f511.json",
+        "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+        "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json"
+      ],
+      "output_contract": "Verify pinned archive and policy digests; compile exactly 28 Lean declarations; check all reachable transitions from exact and four identity-mismatch roots, revoked-lineage suffix containment, unrelated-lineage availability, trace composition, and mutation controls.",
+      "output_assertions": [
+        "9 archived contracts and 4 policy receipts",
+        "28 exact Lean declarations",
+        "45 reachable states and 360 transitions",
+        "9 revoked-lineage states and 72 contained transitions",
+        "16 rejecting lifecycle mutations",
+        "15 semantic mutations",
+        "no support-state effect"
+      ],
+      "claim_scope": "Pinned archive integrity plus authored finite proof-contract transport, custody, revocation-containment, and unrelated-lineage availability semantics only.",
       "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "prohibited_inference": "Does not establish external theorem resolution, model-to-implementation refinement, authenticated or deployed transport, service availability, useful workload preservation, independent reproduction, transfer, safety, support movement, or ASI."
     },
     {
       "id": "validate_efficiency_route_search_probe:112",

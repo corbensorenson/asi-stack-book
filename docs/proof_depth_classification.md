@@ -14,9 +14,9 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2981 |
-| Direct/projection-style theorem declarations | 439 |
-| Derived/decomposed theorem declarations | 1869 |
+| Theorem declarations classified | 2991 |
+| Direct/projection-style theorem declarations | 440 |
+| Derived/decomposed theorem declarations | 1878 |
 | Unknown or mixed theorem declarations | 673 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
@@ -139,7 +139,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProceduralMemoryRefinement.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 21 | 10 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | unmapped | 0 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaimsRefinement.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 18 | 7 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 4 | 18 | 0 | 13 | 5 | manual review |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 4 | 28 | 1 | 22 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 28 | 0 | 18 | 10 | manual review |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | confidential-and-verifiable-ai-computation | 1 | 31 | 13 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
@@ -2150,19 +2150,29 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_promotion_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_readiness_alone_cannot_promote_downstream_claim` | derived_or_decomposed | no | uses cases, have, rw, unfold |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_transport_custody_transitive` | derived_or_decomposed | no | uses rcases, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_transport_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_transport_step_preserves_custody` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_transport_step_preserves_identity_and_authority` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_transport_step_preserves_invariant` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `descendant_unusable_after_root_revocation` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `downstream_ready_receipt_missing_boundary_field_rejected` | derived_or_decomposed | no | uses cases, contradiction, rw, unfold |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `independent_lineage_availability_survives_arbitrary_suffix` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `independent_lineage_availability_survives_one_step` | derived_or_decomposed | no | uses cases, rcases, simp, split |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `parent_mismatch_rejects_descendant_issue_noninterferingly` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `passing_replay_without_replay_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `promoted_downstream_claim_without_contract_ready_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `reference_contract_trace_consumes_then_revokes_lineage` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `revoked_descendant_consumer_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `revoked_root_excludes_descendant_use_after_any_suffix` | derived_or_decomposed | no | uses have, simp |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_identity_mismatch_rejects_resolution_noninterferingly` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_lineage_containment_survives_arbitrary_suffix` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_lineage_containment_survives_one_step` | derived_or_decomposed | no | uses cases, rcases, simp, split |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_revocation_invalidates_root_and_descendant` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `root_revocation_is_persistent` | derived_or_decomposed | no | uses cases, simp, split |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `run_contract_transport_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `run_contract_transport_preserves_custody` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `run_contract_transport_preserves_invariant` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `unrelated_lineage_remains_consumable_after_root_revocation` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `artifact_change_invalidates_active_lease` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | `complete_proof_lease_trace_reissues_changed_artifact_then_revokes` | unknown_or_mixed | no | no recognized depth pattern |

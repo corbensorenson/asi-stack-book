@@ -3255,6 +3255,118 @@ for theorem_name in (
         ),
     }
 
+_proof_contract_transport_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean/AsiStackProofs/ProofCarryingContracts.lean",
+        "scripts/validate_circle_contract_pack_archive.py",
+        "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+    ],
+}
+
+for theorem_name in (
+    "downstream_ready_receipt_missing_boundary_field_rejected",
+    "contract_readiness_alone_cannot_promote_downstream_claim",
+    "promoted_downstream_claim_without_contract_ready_rejected",
+    "consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected",
+    "passing_replay_without_replay_artifacts_rejected",
+    "circle_public_consumer_gate_promotion_overclaim_rejected",
+    "circle_public_consumer_gate_missing_mutation_control_rejected",
+    "revoked_descendant_consumer_is_rejected_without_state_change",
+    "root_identity_mismatch_rejects_resolution_noninterferingly",
+    "parent_mismatch_rejects_descendant_issue_noninterferingly",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofCarryingContracts.lean::{theorem_name}"
+    ] = {
+        **_proof_contract_transport_refinement_base,
+        "semantic_level": "P1",
+        "classification_basis": [
+            "one-step finite receipt, replay, consumer, identity, parent, or revocation rejection consequence"
+        ],
+        "rationale": (
+            "The theorem closes a local authored contract or transition guard; it does not establish external theorem truth or deployed transport."
+        ),
+    }
+
+for theorem_name in (
+    "reference_contract_trace_consumes_then_revokes_lineage",
+    "unrelated_lineage_remains_consumable_after_root_revocation",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofCarryingContracts.lean::{theorem_name}"
+    ] = {
+        **_proof_contract_transport_refinement_base,
+        "semantic_level": "P2",
+        "classification_basis": [
+            "closed reachable witness consumes a descendant, revokes its lineage, and preserves an unrelated consumer route"
+        ],
+        "rationale": (
+            "The theorem establishes bounded nonvacuity for the authored transport lifecycle, not service availability or useful transfer."
+        ),
+    }
+
+for theorem_name in (
+    "contract_transport_step_preserves_identity_and_authority",
+    "contract_transport_step_preserves_custody",
+    "contract_transport_step_preserves_invariant",
+    "run_contract_transport_append",
+    "root_revocation_invalidates_root_and_descendant",
+    "descendant_unusable_after_root_revocation",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofCarryingContracts.lean::{theorem_name}"
+    ] = {
+        **_proof_contract_transport_refinement_base,
+        "semantic_level": "P3",
+        "classification_basis": [
+            "implementation refinement for the executable finite transport runner, independently checked over its reachable graph"
+        ],
+        "rationale": (
+            "The theorem refines the exact authored transition semantics and is bound to the archive consumer; artifact identities and checks remain inputs."
+        ),
+    }
+
+for theorem_name in (
+    "contract_transport_rejected_event_is_noninterfering",
+    "contract_transport_custody_transitive",
+    "run_contract_transport_preserves_custody",
+    "run_contract_transport_preserves_invariant",
+    "root_lineage_containment_survives_one_step",
+    "root_revocation_is_persistent",
+    "independent_lineage_availability_survives_one_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofCarryingContracts.lean::{theorem_name}"
+    ] = {
+        **_proof_contract_transport_refinement_base,
+        "semantic_level": "P4",
+        "classification_basis": [
+            "finite noninterference or arbitrary-run safety composition over transport custody, authority, revocation, and unrelated-lineage state"
+        ],
+        "rationale": (
+            "The theorem prevents a named finite transport interference under authored inputs; authenticated cross-system enforcement remains unproved."
+        ),
+    }
+
+for theorem_name in (
+    "root_lineage_containment_survives_arbitrary_suffix",
+    "revoked_root_excludes_descendant_use_after_any_suffix",
+    "independent_lineage_availability_survives_arbitrary_suffix",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/ProofCarryingContracts.lean::{theorem_name}"
+    ] = {
+        **_proof_contract_transport_refinement_base,
+        "semantic_level": "P5",
+        "classification_basis": [
+            "arbitrary finite suffix containment or unrelated-lineage availability in the authored transport lifecycle"
+        ],
+        "rationale": (
+            "The theorem establishes bounded suffix safety or availability only; no unbounded liveness, distributed revocation, or service guarantee follows."
+        ),
+    }
+
 _coil_memory_refinement_base = {
     "disposition": "retain",
     "witness_refs": [

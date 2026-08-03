@@ -124,6 +124,29 @@ support, safety, deployment, reproduction, transfer, or ASI. Chapter support
 remains `argument` and `support_state_effect` remains `none`.
 
 """,
+    "circle-calculus-and-proof-carrying-ai-contracts": """## Current refinement
+
+`AsiStackProofs.ProofCarryingContracts` now exposes 28 theorem declarations.
+The versioned transport model proves exact theorem, parent, consumer, support,
+and effect custody across arbitrary finite event lists; zero-authority and
+root/descendant revocation coherence; exact batch composition; persistent
+revoked-lineage containment across arbitrary suffixes; exclusion of descendant
+use after revocation; and preservation of unrelated-lineage availability. The
+existing closed trace consumes a descendant, revokes its root lineage, rejects
+later descendant use, and leaves the independent lineage available.
+
+`scripts/validate_circle_contract_pack_archive.py` recompiles the exact surface,
+checks the pinned nine-contract/four-policy archive, explores forty-five
+reachable states through 360 transitions, checks nine revoked-lineage states
+through seventy-two contained transitions, preserves all eight trace splits,
+and rejects sixteen lifecycle plus fifteen semantic mutations. These are
+authored finite-state and pinned-archive results. They do not establish external
+theorem resolution, statement equivalence, semantic refinement, authenticated
+or deployed transport, distributed invalidation, service liveness or recovery,
+downstream utility, support, safety, reproduction, transfer, or ASI. Chapter
+support remains `argument` and `support_state_effect` remains `none`.
+
+""",
     "coil-attention-cyclic-memory-and-recurrence-contracts": """## Current refinement
 
 `AsiStackProofs.CoilAttentionMemory` now exposes 34 theorem declarations. The
