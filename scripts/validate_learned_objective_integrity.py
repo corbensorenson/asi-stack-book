@@ -43,11 +43,31 @@ THEOREMS = [
     "apply_event_preserves_identity",
     "apply_event_cannot_assign_support_or_external_authority",
     "accepted_event_adds_one_receipt",
+    "integrity_accepted_step_is_accepted",
+    "integrity_accepted_step_applies_event",
+    "apply_event_preserves_full_identity",
+    "integrity_accepted_step_advances_stage",
+    "integrity_accepted_step_preserves_full_identity",
+    "integrity_accepted_step_preserves_non_authority",
+    "integrity_accepted_step_adds_exact_receipt",
+    "apply_event_handoff_count_monotone",
+    "apply_event_invalidation_count_monotone",
+    "integrity_accepted_step_preserves_invariant",
+    "integrity_run_preserves_full_identity",
+    "integrity_run_preserves_invariant",
+    "integrity_run_accounts_exact_receipts",
+    "integrity_run_handoff_count_monotone",
+    "integrity_run_invalidation_count_monotone",
+    "integrity_successful_run_has_accepted_trace",
+    "integrity_run_composes_across_event_batches",
+    "invalidated_integrity_state_accepts_no_event",
     "behavior_only_evidence_does_not_bind_integrity",
     "objective_identity_overclaim_is_rejected",
     "absence_of_deception_overclaim_is_rejected",
     "unresolved_hypothesis_is_required_for_bounded_use",
     "stale_descendants_block_invalidation",
+    "canonical_integrity_initial_state_is_invariant",
+    "canonical_integrity_run_reaches_exact_invalidated_state",
     "full_integrity_lifecycle_reaches_invalidated_state",
 ]
 
@@ -208,6 +228,20 @@ def apply_event(state: dict, event: str, packet: dict) -> tuple[dict, str]:
     return result, route
 
 
+def integrity_run_states(
+    initial: dict, events: list[tuple[str, dict]]
+) -> list[dict] | None:
+    states = [copy.deepcopy(initial)]
+    current = copy.deepcopy(initial)
+    for event, packet in events:
+        next_state, route = apply_event(current, event, packet)
+        if route not in ACCEPTED:
+            return None
+        states.append(next_state)
+        current = next_state
+    return states
+
+
 def mutation_cases() -> list[tuple[str, dict, str, dict, str]]:
     cases = []
     accepted_stages = STAGES[:-1]
@@ -288,6 +322,9 @@ def mutation_cases() -> list[tuple[str, dict, str, dict, str]]:
     state = canonical_state("mitigation_reviewed"); state["unresolved_hypothesis_count"] = 0
     packet = canonical_packet(); packet["unresolved_hypothesis_count"] = 0
     cases.append(("residual_hypothesis", state, EVENTS[4], packet, "request_residual_hypothesis"))
+    for event in EVENTS:
+        cases.append((f"terminal:{event}", canonical_state("invalidated"), event,
+                      canonical_packet(), "reject_wrong_stage"))
     return cases
 
 
@@ -312,7 +349,8 @@ def main() -> None:
     if worlds[0][2] == worlds[1][2]:
         failures.append("separating opportunity does not distinguish witness worlds")
 
-    state = canonical_state("scoped")
+    initial_state = canonical_state("scoped")
+    state = copy.deepcopy(initial_state)
     observed_routes = []
     for index, event in enumerate(EVENTS, 1):
         state, route = apply_event(state, event, canonical_packet(index))
@@ -330,6 +368,30 @@ def main() -> None:
     ]:
         failures.append(f"accepted route sequence drifted: {observed_routes}")
 
+    events = [(event, canonical_packet(index)) for index, event in enumerate(EVENTS, 1)]
+    states = integrity_run_states(initial_state, events)
+    if states is None or len(states) != 8 or states[-1] != state:
+        failures.append("independent successful-run reconstruction drifted")
+    else:
+        if not all(
+            all(row[field] == initial_state[field] for field in IDENTITY_FIELDS)
+            for row in states
+        ):
+            failures.append("arbitrary-run identity custody drifted")
+        if not all(
+            row["hypothesis_count"] >= 2
+            and row["unresolved_hypothesis_count"] > 0
+            and row["support_assignment_count"] == 0
+            and row["external_authority_count"] == 0
+            for row in states
+        ):
+            failures.append("arbitrary-run integrity invariant drifted")
+        for split in range(len(events) + 1):
+            prefix = integrity_run_states(initial_state, events[:split])
+            suffix = None if prefix is None else integrity_run_states(prefix[-1], events[split:])
+            if prefix is None or suffix is None or suffix[-1] != states[-1]:
+                failures.append(f"lifecycle composition split {split} failed")
+
     cases = mutation_cases()
     escaped = []
     for label, before, event, packet, expected in cases:
@@ -338,7 +400,7 @@ def main() -> None:
             escaped.append(f"{label}:{route}:{expected}")
     if escaped:
         failures.append("mutations escaped exact rejection: " + ", ".join(escaped))
-    if len(cases) != 59:
+    if len(cases) != 66:
         failures.append(f"mutation denominator drifted: {len(cases)}")
 
     if failures:
@@ -346,7 +408,8 @@ def main() -> None:
     print(
         "Learned-objective integrity passed: two equal compliant traces with distinct "
         "objective hypotheses and separating opportunity, 8 stages, 7 accepted transitions, "
-        f"{len(cases)}/{len(cases)} exact-state rejecting mutations, 14 Lean declarations, "
+        f"8/8 lifecycle compositions, {len(cases)}/{len(cases)} exact-state rejecting "
+        "mutations, 34 Lean declarations, "
         "no support or external-authority effect."
     )
 

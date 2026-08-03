@@ -351,6 +351,276 @@ theorem accepted_event_adds_one_receipt (state : State) (event : Event)
     (applyEvent state event).1.receiptCount = state.receiptCount + 1 := by
   simp [applyEvent, acceptedEvent]
 
+structure IntegrityIdentity where
+  recordDigest : Nat
+  modelDigest : Nat
+  checkpointDigest : Nat
+  outerTargetDigest : Nat
+  signalLineageDigest : Nat
+  hypothesisSetDigest : Nat
+  evidencePlanDigest : Nat
+  useEnvelopeDigest : Nat
+  reviewerDigest : Nat
+  consumerDigest : Nat
+  residualDigest : Nat
+  protocolVersion : Nat
+  hypothesisCount : Nat
+  unresolvedHypothesisCount : Nat
+deriving DecidableEq, Repr
+
+def integrityIdentity (state : State) : IntegrityIdentity :=
+  { recordDigest := state.recordDigest
+    modelDigest := state.modelDigest
+    checkpointDigest := state.checkpointDigest
+    outerTargetDigest := state.outerTargetDigest
+    signalLineageDigest := state.signalLineageDigest
+    hypothesisSetDigest := state.hypothesisSetDigest
+    evidencePlanDigest := state.evidencePlanDigest
+    useEnvelopeDigest := state.useEnvelopeDigest
+    reviewerDigest := state.reviewerDigest
+    consumerDigest := state.consumerDigest
+    residualDigest := state.residualDigest
+    protocolVersion := state.protocolVersion
+    hypothesisCount := state.hypothesisCount
+    unresolvedHypothesisCount := state.unresolvedHypothesisCount }
+
+def IntegrityNonAuthority (state : State) : Prop :=
+  state.supportAssignmentCount = 0 ∧ state.externalAuthorityCount = 0
+
+structure IntegrityInvariant (state : State) : Prop where
+  pluralHypotheses : 2 <= state.hypothesisCount
+  residualHypothesis : 0 < state.unresolvedHypothesisCount
+  nonAuthority : IntegrityNonAuthority state
+
+def IntegrityStep (state : State) (event : Event) : Option State :=
+  if accepted (routeFor state event) then some (applyEvent state event).1
+  else none
+
+def IntegrityRun : State -> List Event -> Option State
+  | state, [] => some state
+  | state, event :: tail =>
+      match IntegrityStep state event with
+      | none => none
+      | some next => IntegrityRun next tail
+
+def IntegrityTraceAccepted : State -> List Event -> Prop
+  | _, [] => True
+  | state, event :: tail =>
+      accepted (routeFor state event) = true ∧
+        IntegrityTraceAccepted (applyEvent state event).1 tail
+
+theorem integrity_accepted_step_is_accepted
+    {state next : State} {event : Event}
+    (stepped : IntegrityStep state event = some next) :
+    accepted (routeFor state event) = true := by
+  unfold IntegrityStep at stepped
+  split at stepped
+  · assumption
+  · simp at stepped
+
+theorem integrity_accepted_step_applies_event
+    {state next : State} {event : Event}
+    (stepped : IntegrityStep state event = some next) :
+    next = (applyEvent state event).1 := by
+  unfold IntegrityStep at stepped
+  split at stepped
+  · exact (Option.some.inj stepped).symm
+  · simp at stepped
+
+theorem apply_event_preserves_full_identity (state : State) (event : Event) :
+    integrityIdentity (applyEvent state event).1 = integrityIdentity state := by
+  by_cases acceptedEvent : accepted (routeFor state event) = true <;>
+    simp [applyEvent, acceptedEvent, integrityIdentity]
+
+theorem integrity_accepted_step_advances_stage
+    {state next : State} {event : Event}
+    (stepped : IntegrityStep state event = some next) :
+    next.stage = advance state.stage := by
+  rw [integrity_accepted_step_applies_event stepped]
+  simp [applyEvent, integrity_accepted_step_is_accepted stepped]
+
+theorem integrity_accepted_step_preserves_full_identity
+    {state next : State} {event : Event}
+    (stepped : IntegrityStep state event = some next) :
+    integrityIdentity next = integrityIdentity state := by
+  rw [integrity_accepted_step_applies_event stepped]
+  exact apply_event_preserves_full_identity state event
+
+theorem integrity_accepted_step_preserves_non_authority
+    {state next : State} {event : Event}
+    (bounded : IntegrityNonAuthority state)
+    (stepped : IntegrityStep state event = some next) :
+    IntegrityNonAuthority next := by
+  rw [integrity_accepted_step_applies_event stepped]
+  have preserved := apply_event_cannot_assign_support_or_external_authority
+    state event
+  exact ⟨preserved.1.trans bounded.1, preserved.2.trans bounded.2⟩
+
+theorem integrity_accepted_step_adds_exact_receipt
+    {state next : State} {event : Event}
+    (stepped : IntegrityStep state event = some next) :
+    next.receiptCount = state.receiptCount + 1 := by
+  rw [integrity_accepted_step_applies_event stepped]
+  exact accepted_event_adds_one_receipt state event
+    (integrity_accepted_step_is_accepted stepped)
+
+theorem apply_event_handoff_count_monotone (state : State) (event : Event) :
+    state.handoffCount <= (applyEvent state event).1.handoffCount := by
+  by_cases acceptedEvent : accepted (routeFor state event) = true <;>
+    simp [applyEvent, acceptedEvent]
+
+theorem apply_event_invalidation_count_monotone
+    (state : State) (event : Event) :
+    state.invalidationCount <= (applyEvent state event).1.invalidationCount := by
+  by_cases acceptedEvent : accepted (routeFor state event) = true <;>
+    simp [applyEvent, acceptedEvent]
+
+theorem integrity_accepted_step_preserves_invariant
+    {state next : State} {event : Event}
+    (safe : IntegrityInvariant state)
+    (stepped : IntegrityStep state event = some next) :
+    IntegrityInvariant next := by
+  have identity := integrity_accepted_step_preserves_full_identity stepped
+  have hypothesisCountPreserved :
+      next.hypothesisCount = state.hypothesisCount := by
+    simpa [integrityIdentity] using
+      congrArg IntegrityIdentity.hypothesisCount identity
+  have unresolvedCountPreserved :
+      next.unresolvedHypothesisCount = state.unresolvedHypothesisCount := by
+    simpa [integrityIdentity] using
+      congrArg IntegrityIdentity.unresolvedHypothesisCount identity
+  exact {
+    pluralHypotheses := by
+      rw [hypothesisCountPreserved]
+      exact safe.pluralHypotheses
+    residualHypothesis := by
+      rw [unresolvedCountPreserved]
+      exact safe.residualHypothesis
+    nonAuthority := integrity_accepted_step_preserves_non_authority
+      safe.nonAuthority stepped }
+
+theorem integrity_run_preserves_full_identity
+    {state final : State} {events : List Event}
+    (ran : IntegrityRun state events = some final) :
+    integrityIdentity final = integrityIdentity state := by
+  induction events generalizing state with
+  | nil => simp [IntegrityRun] at ran; subst final; rfl
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          exact (ih tailRan).trans
+            (integrity_accepted_step_preserves_full_identity stepped)
+
+theorem integrity_run_preserves_invariant
+    {state final : State} {events : List Event}
+    (safe : IntegrityInvariant state)
+    (ran : IntegrityRun state events = some final) :
+    IntegrityInvariant final := by
+  induction events generalizing state with
+  | nil => simp [IntegrityRun] at ran; subst final; exact safe
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          exact ih (integrity_accepted_step_preserves_invariant safe stepped) tailRan
+
+theorem integrity_run_accounts_exact_receipts
+    {state final : State} {events : List Event}
+    (ran : IntegrityRun state events = some final) :
+    final.receiptCount = state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [IntegrityRun] at ran; subst final; simp
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          calc
+            final.receiptCount = next.receiptCount + tail.length := ih tailRan
+            _ = (state.receiptCount + 1) + tail.length := by
+              rw [integrity_accepted_step_adds_exact_receipt stepped]
+            _ = state.receiptCount + (event :: tail).length := by
+              simp only [List.length_cons]
+              omega
+
+theorem integrity_run_handoff_count_monotone
+    {state final : State} {events : List Event}
+    (ran : IntegrityRun state events = some final) :
+    state.handoffCount <= final.handoffCount := by
+  induction events generalizing state with
+  | nil => simp [IntegrityRun] at ran; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          have stepMonotone : state.handoffCount <= next.handoffCount := by
+            rw [integrity_accepted_step_applies_event stepped]
+            exact apply_event_handoff_count_monotone state event
+          exact Nat.le_trans stepMonotone (ih tailRan)
+
+theorem integrity_run_invalidation_count_monotone
+    {state final : State} {events : List Event}
+    (ran : IntegrityRun state events = some final) :
+    state.invalidationCount <= final.invalidationCount := by
+  induction events generalizing state with
+  | nil => simp [IntegrityRun] at ran; subst final; exact Nat.le_refl _
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          have stepMonotone : state.invalidationCount <= next.invalidationCount := by
+            rw [integrity_accepted_step_applies_event stepped]
+            exact apply_event_invalidation_count_monotone state event
+          exact Nat.le_trans stepMonotone (ih tailRan)
+
+theorem integrity_successful_run_has_accepted_trace
+    {state final : State} {events : List Event}
+    (ran : IntegrityRun state events = some final) :
+    IntegrityTraceAccepted state events := by
+  induction events generalizing state with
+  | nil => trivial
+  | cons event tail ih =>
+      cases stepped : IntegrityStep state event with
+      | none => simp [IntegrityRun, stepped] at ran
+      | some next =>
+          have tailRan : IntegrityRun next tail = some final := by
+            simpa [IntegrityRun, stepped] using ran
+          exact ⟨integrity_accepted_step_is_accepted stepped, by
+            rw [← integrity_accepted_step_applies_event stepped]
+            exact ih tailRan⟩
+
+theorem integrity_run_composes_across_event_batches
+    (state : State) (first second : List Event) :
+    IntegrityRun state (first ++ second) =
+      (IntegrityRun state first).bind fun intermediate =>
+        IntegrityRun intermediate second := by
+  induction first generalizing state with
+  | nil => simp [IntegrityRun]
+  | cons event tail ih =>
+      simp only [List.cons_append, IntegrityRun]
+      cases IntegrityStep state event <;> simp [ih]
+
+theorem invalidated_integrity_state_accepts_no_event
+    (state : State) (event : Event) (invalidated : state.stage = .invalidated) :
+    IntegrityStep state event = none := by
+  by_cases expected : event.kind = .invalidateForChange <;>
+  by_cases bound : exactBinding state event.packet = true <;>
+  by_cases fresh : event.packet.eventDigest = state.lastEventDigest <;>
+  by_cases authority : authorityLeakRequested event.packet = true <;>
+  by_cases certainty : certaintyOverclaim event.packet = true <;>
+    simp [IntegrityStep, routeFor, invalidated, expectedKind, expected, bound,
+      fresh, authority, certainty, accepted]
+
 def canonicalPacket : Packet :=
   { recordDigest := 701, modelDigest := 702, checkpointDigest := 703,
     outerTargetDigest := 704, signalLineageDigest := 705,
@@ -426,6 +696,35 @@ theorem stale_descendants_block_invalidation :
         packet := { canonicalPacket with descendantsInvalidated := false } } =
       .requestDescendantInvalidation := by
   rfl
+
+def canonicalIntegrityEvents : List Event :=
+  [ eventFor .registerHypotheses 1
+  , eventFor .bindEvidence 2
+  , eventFor .reviewInterventions 3
+  , eventFor .reviewMitigation 4
+  , eventFor .bindUse 5
+  , eventFor .handoffForReadiness 6
+  , eventFor .invalidateForChange 7 ]
+
+def canonicalInvalidatedState : State :=
+  { canonicalState .scoped with
+      stage := .invalidated
+      lastEventDigest := 7
+      receiptCount := 7
+      handoffCount := 1
+      invalidationCount := 1 }
+
+theorem canonical_integrity_initial_state_is_invariant :
+    IntegrityInvariant (canonicalState .scoped) := by
+  exact {
+    pluralHypotheses := by decide
+    residualHypothesis := by decide
+    nonAuthority := ⟨rfl, rfl⟩ }
+
+theorem canonical_integrity_run_reaches_exact_invalidated_state :
+    IntegrityRun (canonicalState .scoped) canonicalIntegrityEvents =
+      some canonicalInvalidatedState := by
+  native_decide
 
 theorem full_integrity_lifecycle_reaches_invalidated_state :
     let s0 := canonicalState .scoped

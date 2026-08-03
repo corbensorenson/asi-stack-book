@@ -218,6 +218,32 @@ transition, deployment, transfer, AGI, or ASI. Chapter support remains
 `argument` and `support_state_effect` remains `none`.
 
 """,
+    "inner-alignment-mesa-optimization-and-learned-objective-integrity": """## Current refinement
+
+`AsiStackProofs.LearnedObjectiveIntegrity` contains two authored policy worlds
+with the same compliant observation trace, distinct objective-hypothesis labels,
+and different actions under one separating opportunity. It proves that no
+deterministic function of the shared trace can identify both labels correctly.
+The labels are model inputs, not discovered facts about a trained system.
+
+The module also defines eight reachable stages from scoped record through
+descendant invalidation. Explicit step and run semantics prove full 14-field
+identity custody, plural and unresolved-hypothesis preservation, exact receipt
+accounting, monotone handoff and invalidation counts, accepted traces,
+event-batch composition, and absorbing invalidation over arbitrary successful
+finite runs. One seven-event run reaches the exact invalidated record. The
+independently encoded consumer checks all eight compositions and rejects 66/66
+mutations with exact state preservation.
+
+All identities, evidence lanes, evaluator and monitor independence, controls,
+interventions, mitigation outcomes, residuals, and custody fields remain
+authored. The model identifies no actual objective, mesa-optimizer, goal
+misgeneralization, deception, or gradient hacking and establishes no evaluator
+competence, mitigation efficacy, deployment behavior, alignment, safety,
+readiness, release, support, AGI, or ASI. Chapter support remains `argument`
+and `support_state_effect` remains `none`.
+
+""",
     "human-ai-organizations-delegation-and-accountability": """## Current refinement
 
 `AsiStackProofs.HumanAIOrganizations` implements a five-stage finite review
@@ -237,10 +263,19 @@ traces, compose across event batches, and stop at closure. One nine-event
 adverse-path witness closes with authority zero; the independent consumer
 reaches all 39 routes and rejects 156/156 lifecycle mutations.
 
-The model checks only authored Boolean fields. It proves no field truth,
-reviewer competence, practical human intervention, lawful or legitimate
-accountability, organizational effectiveness, worker welfare, fairness,
-resilience, support transition, external effect, deployment, AGI, or ASI.
+A third compositional model refines every accepted responsibility handoff to an
+accepted `AsiStackProofs.Authority` delegation step. Across arbitrary runs it
+keeps the accountable owner equal to the current delegate, preserves reviewer
+and evidence separation, retains prior owners as residuals, aligns receipts,
+and preserves zero support and external-effect authority. A two-hop witness,
+all three compositions, 50/50 rejected mutations, and one aggregate-summary
+accountability collision are independently checked.
+
+The models check only authored finite fields. They establish no identity,
+assignment, review, evidence, handoff, intervention, appeal, remedy, or
+residual-custody fact as authentic or usable; no lawful accountability; and no
+organizational effectiveness, worker welfare, fairness, resilience, support
+transition, external effect, deployment, AGI, or ASI.
 Chapter support remains `argument` and `support_state_effect` remains `none`.
 
 """,

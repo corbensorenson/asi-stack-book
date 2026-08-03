@@ -761,6 +761,68 @@ CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::accepte
     "rationale": "Accepted key revocation closes the modeled authority ceiling and records exact finite descendant-key coverage.",
 }
 
+for theorem_name in (
+    "integrity_accepted_step_is_accepted",
+    "integrity_accepted_step_applies_event",
+    "apply_event_preserves_full_identity",
+    "integrity_accepted_step_advances_stage",
+    "integrity_accepted_step_preserves_full_identity",
+    "integrity_accepted_step_preserves_non_authority",
+    "integrity_accepted_step_adds_exact_receipt",
+    "apply_event_handoff_count_monotone",
+    "apply_event_invalidation_count_monotone",
+    "integrity_accepted_step_preserves_invariant",
+    "invalidated_integrity_state_accepts_no_event",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LearnedObjectiveIntegrity.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P1",
+        "classification_basis": [
+            "a universal local transition, preservation, monotonicity, or terminal law constrains the finite authored lifecycle"
+        ],
+        "rationale": (
+            "The result constrains one finite learned-objective integrity transition. "
+            "All identities, evidence fields, reviews, and controls remain authored inputs."
+        ),
+    }
+
+for theorem_name in (
+    "compliant_trace_has_distinct_objective_witness",
+    "compliant_behavior_alone_cannot_identify_both_worlds",
+    "separating_opportunity_distinguishes_the_witness",
+    "integrity_run_preserves_full_identity",
+    "integrity_run_preserves_invariant",
+    "integrity_run_accounts_exact_receipts",
+    "integrity_run_handoff_count_monotone",
+    "integrity_run_invalidation_count_monotone",
+    "integrity_successful_run_has_accepted_trace",
+    "integrity_run_composes_across_event_batches",
+    "canonical_integrity_initial_state_is_invariant",
+    "canonical_integrity_run_reaches_exact_invalidated_state",
+    "full_integrity_lifecycle_reaches_invalidated_state",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/LearnedObjectiveIntegrity.lean::{theorem_name}"
+    ] = {
+        "disposition": "retain",
+        "semantic_level": "P2",
+        "witness_refs": [
+            "lean-theorem:canonical_integrity_run_reaches_exact_invalidated_state",
+            "lean-theorem:compliant_trace_has_distinct_objective_witness",
+            "scripts/validate_learned_objective_integrity.py",
+        ],
+        "classification_basis": [
+            "a bounded non-identification witness or arbitrary-run lifecycle consequence is exercised by the independent consumer"
+        ],
+        "rationale": (
+            "The result is nonvacuous over the two authored worlds or the exact seven-event "
+            "lifecycle. It does not identify a real objective, detect deception, prove mitigation, "
+            "or establish deployment behavior."
+        ),
+    }
+
 for theorem_name, rationale in {
     "valid_exploratory_registration_route_derived":
         "The closed trace derives an exploratory, planning-only disposition from exact authored inputs.",

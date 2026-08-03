@@ -17290,7 +17290,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The bounded learned-objective non-identification witness, eight-stage integrity lifecycle, exact chapter proof boundary, generated proof manifest, and reviewed triage record.",
+      "input_contract": "The bounded learned-objective non-identification witness, arbitrary-run eight-stage integrity lifecycle, exact chapter proof boundary, generated proof manifest, and reviewed triage record.",
       "input_artifacts": [
         "lean/AsiStackProofs/LearnedObjectiveIntegrity.lean",
         "scripts/validate_learned_objective_integrity.py",
@@ -17300,13 +17300,14 @@
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json"
       ],
-      "output_contract": "Reproduce the equal-compliant-trace counterexample and all seven accepted lifecycle transitions independently; reject wrong-stage, identity, replay, objective-certainty, missing-evidence, mitigation, use, and descendant-invalidation mutations with exact state preservation.",
+      "output_contract": "Reproduce the equal-compliant-trace counterexample and all seven accepted lifecycle transitions independently; check full identity and non-authority custody plus all eight lifecycle compositions; reject wrong-stage, identity, replay, objective-certainty, missing-evidence, mitigation, use, descendant-invalidation, and post-invalidation mutations with exact state preservation; verify all 34 Lean declarations.",
       "output_assertions": [
         "two equal compliant traces have distinct authored objective hypotheses",
         "a separating opportunity yields different actions",
         "eight lifecycle stages and seven accepted transitions",
-        "59 exact-state mutations reject",
-        "14 Lean declarations exist",
+        "all eight lifecycle compositions reach the same exact final state",
+        "66 exact-state mutations reject",
+        "34 Lean declarations exist",
         "zero support or external-authority effect"
       ],
       "claim_scope": "Finite non-identification and authored learned-objective integrity record discipline only.",

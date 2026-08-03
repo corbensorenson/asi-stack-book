@@ -811,12 +811,21 @@ monitor-independence and disagreement records; concealment and capability-damage
 review; unresolved-hypothesis custody; bounded authority, expiry, rollback, and
 descendant ownership; independent review; and a maximum-inference boundary.
 Rejected events preserve exact state. Accepted events cannot assign support or
-external authority.
+external authority. The lifecycle now has explicit accepted-step and finite-run
+semantics. Across every successful finite run, all 14 model, checkpoint,
+target, signal, hypothesis, evidence, use, reviewer, consumer, residual, and
+protocol identity fields remain fixed; plural and unresolved hypotheses remain
+present; receipts equal event count; handoff and invalidation counts are
+monotone; accepted traces can be recovered; event batches compose exactly; and
+an invalidated state accepts no further event. The seven-event witness reaches
+the exact invalidated record. The independent consumer checks all eight
+prefix/suffix compositions and rejects 66/66 mutations with exact state
+preservation.
 
 | Target | Exact mechanized result | Status |
 |---|---|---|
 | `lean:inner_alignment.behavior_does_not_identify_objective` | Equal compliant traces plus distinct authored hypotheses cannot both be identified by one trace-only inference; a separating opportunity distinguishes the concrete witnesses. | implemented |
-| `lean:inner_alignment.hypothesis_review_lifecycle` | Seven accepted transitions reach one bounded handoff and one descendant invalidation; 59 independently encoded mutations reject without changing state. | implemented |
+| `lean:inner_alignment.hypothesis_review_lifecycle` | Arbitrary successful runs preserve full identity, plural/residual hypotheses, non-authority, exact receipts, monotone handoff/invalidation counts, accepted traces, composition, and terminal invalidation; one seven-event witness reaches the exact final record and 66/66 independent mutations reject without changing state. | implemented |
 
 The formal result does not prove or identify a model objective, detect mesa-optimization
 or deception, establish evaluator or monitor independence, show that a

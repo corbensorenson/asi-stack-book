@@ -1528,7 +1528,7 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:inner_alignment.behavior_does_not_identify_objective` | `AsiStackProofs.LearnedObjectiveIntegrity` | Two finite worlds carry the same observed compliant trace and distinct authored objective hypotheses, so no deterministic trace-only inference can identify both; one separating opportunity produces different actions. | implemented |
-| `lean:inner_alignment.hypothesis_review_lifecycle` | `AsiStackProofs.LearnedObjectiveIntegrity` | An eight-stage lifecycle binds plural hypotheses, independent evidence lanes, sealed shift and opportunity interventions, concealment-aware mitigation review, residual uncertainty, bounded use, independent handoff, and descendant invalidation while preserving rejected state and minting no support or external authority. | implemented |
+| `lean:inner_alignment.hypothesis_review_lifecycle` | `AsiStackProofs.LearnedObjectiveIntegrity` | An eight-stage lifecycle binds plural hypotheses, independent evidence lanes, sealed shift and opportunity interventions, concealment-aware mitigation review, residual uncertainty, bounded use, independent handoff, and descendant invalidation. Arbitrary successful runs preserve 14-field identity, plural and unresolved hypotheses, non-authority, exact receipts, monotone handoff/invalidation counts, accepted traces, batch composition, and terminal invalidation; one seven-event witness reaches the exact final record, while an independent consumer checks all eight compositions and rejects 66/66 mutations with exact state preservation. | implemented |
 
 ### Moral Uncertainty, Value Conflict, and Contestable Governance
 
@@ -6255,7 +6255,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2922 theorem declarations, 1820 derived/decomposed, 436 direct/projection, 666 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2942 theorem declarations, 1838 derived/decomposed, 437 direct/projection, 667 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6271,8 +6271,8 @@ Draft deliverables:
   exclusions, implementation binding, and no-promotion boundaries.
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
-330-target live manifest; a 130-module Lean workspace with 2,922 declarations
-classified as 1,820 derived/decomposed, 436 direct/projection, and 666
+330-target live manifest; a 130-module Lean workspace with 2,942 declarations
+classified as 1,838 derived/decomposed, 437 direct/projection, and 667
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer
