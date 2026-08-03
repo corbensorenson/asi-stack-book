@@ -2471,6 +2471,16 @@
       "rationale": "Implemented in AsiStackProofs.CoilAttentionMemory as a derived finite negative case: promoted retrieval quality with sparse coverage, freshness, and no semantic-quality evidence contradicts the quality-promotion predicate."
     },
     {
+      "tag": "lean:coil_memory.versioned_freshness_and_recurrence.lifecycle",
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "module": "AsiStackProofs.CoilAttentionMemory",
+      "formal_target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective, classifies epoch, residue, or winding mismatch as stale, preserves memory/request identity and zero support/effect authority, rejects invalid events without state change, composes traces, routes stale aliases through fallback, and prevents recurrence beyond the declared budget.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as an authored finite lifecycle with exact address countermodels, freshness classification, rejected-event noninterference, identity and authority preservation, trace composition, bounded recurrence closure, stale fallback, and an independently implemented recompiling consumer covering all eight trace splits and eleven rejecting mutations. It does not establish deployed cache truth, recurrence utility, retrieval quality, support movement, reproduction, or transfer."
+    },
+    {
       "tag": "lean:cyclic_mixers.structural_not_quality.operational_invariant",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "module": "AsiStackProofs.CyclicMixers",
@@ -3301,5 +3311,5 @@
       "rationale": "The implemented eight-step finite review preserves exact compiler identity, typed roles, complete proposal denominators, seven lower-order rescue families, held-out qualification, fallback, contraction, and explicit non-authority. All 54 independently encoded mutations receive exact repairs; role and candidate identities compose over append, entity remapping preserves role IDs, omitted roles and candidates are rejected, an active descendant blocks contraction, seven scope changes invalidate receipts, two collision pairs prove signal insufficiency, and three existing consumers reject missing evidence. Authored fields remain assumptions, and no irreducibility, usefulness, efficiency, natural-task, bounded-arity, safe-adaptation, support, transfer, or external-effect claim follows."
     }
   ],
-  "record_count": 329
+  "record_count": 330
 }

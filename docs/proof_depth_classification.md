@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 329 |
+| Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2706 |
-| Direct/projection-style theorem declarations | 429 |
-| Derived/decomposed theorem declarations | 1696 |
-| Unknown or mixed theorem declarations | 581 |
+| Theorem declarations classified | 2719 |
+| Direct/projection-style theorem declarations | 431 |
+| Derived/decomposed theorem declarations | 1703 |
+| Unknown or mixed theorem declarations | 585 |
 | Safety-critical theorem declarations | 145 |
 | Safety-critical direct/projection declarations | 5 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -71,7 +71,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 27 | 0 | 15 | 12 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 33 | 2 | 22 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 4 | 0 | 4 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 3 | 17 | 2 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | human-ai-communication-persuasion-and-epistemic-security | 1 | 21 | 5 | 12 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -564,10 +564,23 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `target_substitution_at_accept_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `validator_pass_without_preservation_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | `widened_authority_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `fresh_trace_reaches_bounded_recurrence_closure` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `memory_lifecycle_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `memory_lifecycle_step_preserves_identity_and_authority` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `no_residue_only_decoder_recovers_every_cyclic_address` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `recurrence_at_budget_is_rejected_noninterferingly` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `recurrence_without_budget_exit_or_fallback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `residue_collision_addresses_are_distinct` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `residue_only_projection_collides` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `residue_only_projection_is_not_injective` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `reused_cyclic_slot_without_winding_or_residual_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `run_memory_lifecycle_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `same_residue_different_winding_is_not_fresh` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_alias_trace_uses_fallback_and_closes` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_classification_blocks_fresh_consumption` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `stale_read_admitted_as_fresh_without_residual_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | `structure_only_retrieval_quality_promotion_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | `third_recurrence_step_is_rejected_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/CommandContracts.lean` | `accepted_hidden_override_violates_explicit_constraint_precedence` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/CommandContracts.lean` | `complete_field_confidence_allows_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/CommandContracts.lean` | `inferred_authority_confidence_requires_authority_confidence` | derived_or_decomposed | no | uses simp, unfold |

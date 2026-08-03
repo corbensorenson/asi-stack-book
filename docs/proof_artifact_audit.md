@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 329 |
-| Manifest status counts | {"implemented": 329} |
-| Triage class counts | {"formal-invariant": 329} |
+| Proof targets audited | 330 |
+| Manifest status counts | {"implemented": 330} |
+| Triage class counts | {"formal-invariant": 330} |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -43,7 +43,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | 8 | 12 | 0 | 9 | 2 |
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | 4 | 27 | 0 | 14 | 2 |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | 3 | 33 | 0 | 23 | 2 |
-| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 4 | 0 | 4 | 4 |
+| `lean/AsiStackProofs/CoilAttentionMemory.lean` | 3 | 17 | 0 | 13 | 6 |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | 3 | 12 | 0 | 25 | 3 |
 | `lean/AsiStackProofs/CommunicationInfluenceReview.lean` | 1 | 21 | 0 | 27 | 7 |
 | `lean/AsiStackProofs/CompactGenerationRefinement.lean` | 9 | 35 | 0 | 15 | 4 |
@@ -146,7 +146,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `circle-calculus-and-proof-carrying-ai-contracts` | 4 | 4 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 4 | 4 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
-| `coil-attention-cyclic-memory-and-recurrence-contracts` | 2 | 2 | 0 | 0 |
+| `coil-attention-cyclic-memory-and-recurrence-contracts` | 3 | 3 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `confidential-and-verifiable-ai-computation` | 1 | 1 | 0 | 0 |
@@ -471,6 +471,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:circle_contracts.versioned_transport.descendant_revocation` | `circle-calculus-and-proof-carrying-ai-contracts` | `AsiStackProofs.ProofCarryingContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:coil_memory.alias_boundary.operational_invariant` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `AsiStackProofs.CoilAttentionMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:coil_attention.coverage_not_quality.failure_blocks_promotion` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `AsiStackProofs.CoilAttentionMemory` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:coil_memory.versioned_freshness_and_recurrence.lifecycle` | `coil-attention-cyclic-memory-and-recurrence-contracts` | `AsiStackProofs.CoilAttentionMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cyclic_mixers.structural_not_quality.operational_invariant` | `coilra-multicoil-rope-and-cyclic-mixers` | `AsiStackProofs.CyclicMixers` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cyclic_mixers.baseline_required.failure_blocks_promotion` | `coilra-multicoil-rope-and-cyclic-mixers` | `AsiStackProofs.CyclicMixers` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:proofs.envelope.operational_invariant` | `executable-specifications-and-lean-proof-envelope` | `AsiStackProofs.ProofEnvelope` | triage ok; module ok; chapter tag ok; limitation ok |

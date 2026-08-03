@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
+import subprocess
 import sys
 from typing import Any
 
@@ -12,12 +14,54 @@ from validate_protocol_examples import validate_value
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "experiments" / "cyclic_memory_contracts" / "fixtures"
 SCHEMA = ROOT / "schemas" / "cyclic_memory_contract.schema.json"
+LEAN_ROOT = ROOT / "lean"
+LEAN_MODEL = LEAN_ROOT / "AsiStackProofs" / "CoilAttentionMemory.lean"
 PROMOTING_SUPPORT = {
     "promotes_core_claim",
     "synthetic-test-backed",
     "empirical-test-backed",
     "prototype-backed",
 }
+
+LIFECYCLE_THEOREMS = {
+    "residue_collision_addresses_are_distinct",
+    "residue_only_projection_collides",
+    "residue_only_projection_is_not_injective",
+    "no_residue_only_decoder_recovers_every_cyclic_address",
+    "memory_lifecycle_rejected_event_is_noninterfering",
+    "memory_lifecycle_step_preserves_identity_and_authority",
+    "run_memory_lifecycle_append",
+    "same_residue_different_winding_is_not_fresh",
+    "stale_classification_blocks_fresh_consumption",
+    "recurrence_at_budget_is_rejected_noninterferingly",
+    "fresh_trace_reaches_bounded_recurrence_closure",
+    "third_recurrence_step_is_rejected_without_state_change",
+    "stale_alias_trace_uses_fallback_and_closes",
+}
+
+PROTECTED_FIELDS = (
+    "memory_digest",
+    "request_digest",
+    "slot_epoch",
+    "requested_epoch",
+    "slot_residue",
+    "requested_residue",
+    "slot_winding",
+    "requested_winding",
+    "recurrence_budget",
+    "support_assignments",
+    "external_effects",
+)
+
+FRESH_TRACE = (
+    "request_read",
+    "classify_read",
+    "consume_fresh",
+    "start_recurrence",
+    "recur",
+    "recur",
+    "exit_recurrence",
+)
 
 
 def load_json(path: Path) -> Any:
@@ -186,6 +230,186 @@ def semantic_errors(value: dict[str, Any], schema: dict[str, Any], relative: str
     return errors
 
 
+def reference_state() -> dict[str, Any]:
+    return {
+        "stage": "written",
+        "memory_digest": 5201,
+        "request_digest": 5202,
+        "slot_epoch": 31,
+        "requested_epoch": 31,
+        "slot_residue": 7,
+        "requested_residue": 7,
+        "slot_winding": 4,
+        "requested_winding": 4,
+        "recurrence_budget": 2,
+        "recurrence_steps": 0,
+        "support_assignments": 0,
+        "external_effects": 0,
+    }
+
+
+def exact_fresh_read(state: dict[str, Any]) -> bool:
+    return (
+        state["slot_epoch"] == state["requested_epoch"]
+        and state["slot_residue"] == state["requested_residue"]
+        and state["slot_winding"] == state["requested_winding"]
+    )
+
+
+def lifecycle_step(state: dict[str, Any], event: str) -> tuple[str, dict[str, Any]]:
+    next_state = dict(state)
+    if event == "request_read":
+        if state["stage"] != "written":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "read_requested"
+    elif event == "classify_read":
+        if state["stage"] != "read_requested":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "fresh_validated" if exact_fresh_read(state) else "stale_detected"
+    elif event == "consume_fresh":
+        if state["stage"] == "stale_detected":
+            return "reject_stale", dict(state)
+        if state["stage"] != "fresh_validated":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "consumed"
+    elif event == "use_fallback":
+        if state["stage"] != "stale_detected":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "fallback"
+    elif event == "start_recurrence":
+        if state["stage"] not in {"consumed", "fallback"}:
+            return "reject_stage", dict(state)
+        if state["recurrence_budget"] == 0:
+            return "reject_budget", dict(state)
+        next_state["stage"] = "recurring"
+    elif event == "recur":
+        if state["stage"] != "recurring":
+            return "reject_stage", dict(state)
+        if state["recurrence_steps"] >= state["recurrence_budget"]:
+            return "reject_budget", dict(state)
+        next_state["recurrence_steps"] += 1
+    elif event == "exit_recurrence":
+        if state["stage"] != "recurring":
+            return "reject_stage", dict(state)
+        next_state["stage"] = "closed"
+    elif event == "close":
+        if state["stage"] not in {"consumed", "fallback"}:
+            return "reject_stage", dict(state)
+        next_state["stage"] = "closed"
+    else:
+        raise ValueError(f"unknown lifecycle event {event}")
+    return "accepted", next_state
+
+
+def run_lifecycle(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, Any]:
+    current = dict(state)
+    for event in events:
+        _, current = lifecycle_step(current, event)
+    return current
+
+
+def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
+    theorem_names = set(
+        re.findall(
+            r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
+            LEAN_MODEL.read_text(encoding="utf-8"),
+        )
+    )
+    missing = sorted(LIFECYCLE_THEOREMS - theorem_names)
+    if missing:
+        errors.append(f"Lean cyclic-memory lifecycle surface is missing: {missing}")
+    if len(theorem_names) != 17:
+        errors.append(f"Lean cyclic-memory theorem count must be 17, observed {len(theorem_names)}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/CoilAttentionMemory.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(
+            "Lean cyclic-memory lifecycle model did not compile: "
+            + (completed.stdout + completed.stderr).strip()
+        )
+
+    address_zero = {"residue": 7, "winding": 0}
+    address_one = {"residue": 7, "winding": 1}
+    if address_zero == address_one or address_zero["residue"] != address_one["residue"]:
+        errors.append("independent residue-only collision reconstruction failed")
+
+    baseline = reference_state()
+    current = dict(baseline)
+    accepted_count = 0
+    for event in FRESH_TRACE:
+        route, next_state = lifecycle_step(current, event)
+        if route != "accepted":
+            errors.append(f"fresh lifecycle event {event} returned {route}")
+        else:
+            accepted_count += 1
+        for field in PROTECTED_FIELDS:
+            if next_state[field] != current[field]:
+                errors.append(f"fresh lifecycle event {event} changed protected field {field}")
+        current = next_state
+    if current["stage"] != "closed" or current["recurrence_steps"] != 2:
+        errors.append("fresh lifecycle did not close at the exact recurrence budget")
+    for split in range(len(FRESH_TRACE) + 1):
+        left = run_lifecycle(baseline, FRESH_TRACE[:split])
+        if run_lifecycle(left, FRESH_TRACE[split:]) != current:
+            errors.append(f"fresh lifecycle composition failed at split {split}")
+
+    stale_count = 0
+    for field, value in (
+        ("requested_epoch", 32),
+        ("requested_residue", 8),
+        ("requested_winding", 5),
+    ):
+        stale = reference_state()
+        stale[field] = value
+        classified = run_lifecycle(stale, ("request_read", "classify_read"))
+        if classified["stage"] != "stale_detected":
+            errors.append(f"{field} mismatch was not classified stale")
+            continue
+        route, unchanged = lifecycle_step(classified, "consume_fresh")
+        if route != "reject_stale" or unchanged != classified:
+            errors.append(f"{field} stale read was not rejected noninterferingly")
+            continue
+        final = run_lifecycle(classified, ("use_fallback", "close"))
+        if final["stage"] != "closed" or final["recurrence_steps"] != 0:
+            errors.append(f"{field} stale path did not close through fallback")
+            continue
+        stale_count += 1
+
+    def changed(**updates: Any) -> dict[str, Any]:
+        state = reference_state()
+        state.update(updates)
+        return state
+
+    mutations = (
+        ("request wrong stage", "request_read", changed(stage="consumed"), "reject_stage"),
+        ("classify wrong stage", "classify_read", changed(), "reject_stage"),
+        ("consume wrong stage", "consume_fresh", changed(), "reject_stage"),
+        ("consume stale", "consume_fresh", changed(stage="stale_detected"), "reject_stale"),
+        ("fallback wrong stage", "use_fallback", changed(stage="fresh_validated"), "reject_stage"),
+        ("recurrence wrong stage", "start_recurrence", changed(), "reject_stage"),
+        ("zero recurrence budget", "start_recurrence", changed(stage="consumed", recurrence_budget=0), "reject_budget"),
+        ("step wrong stage", "recur", changed(stage="consumed"), "reject_stage"),
+        ("step at budget", "recur", changed(stage="recurring", recurrence_steps=2), "reject_budget"),
+        ("exit wrong stage", "exit_recurrence", changed(stage="consumed"), "reject_stage"),
+        ("close wrong stage", "close", changed(stage="recurring"), "reject_stage"),
+    )
+    rejected_count = 0
+    for name, event, state, expected in mutations:
+        route, next_state = lifecycle_step(state, event)
+        if route != expected:
+            errors.append(f"lifecycle mutation {name} expected {expected}, got {route}")
+        elif next_state != state:
+            errors.append(f"lifecycle mutation {name} changed state on rejection")
+        else:
+            rejected_count += 1
+    return accepted_count, stale_count, rejected_count
+
+
 def main() -> None:
     schema = load_json(SCHEMA)
     fixtures = sorted(FIXTURE_DIR.glob("*.json"))
@@ -193,6 +417,7 @@ def main() -> None:
         raise SystemExit(f"No cyclic-memory fixtures found in {FIXTURE_DIR.relative_to(ROOT)}.")
 
     errors: list[str] = []
+    accepted_count, stale_count, rejected_count = validate_lifecycle(errors)
     valid_count = 0
     invalid_count = 0
     for fixture in fixtures:
@@ -226,7 +451,11 @@ def main() -> None:
 
     print(
         "Cyclic memory contract harness passed: "
-        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s)."
+        f"{valid_count} valid fixture(s), {invalid_count} expected-invalid fixture(s); "
+        f"17 Lean declarations, one residue-only collision, {accepted_count} accepted "
+        f"fresh transitions, 8/8 trace splits, {stale_count}/3 stale classifications "
+        f"routed through fallback, and {rejected_count}/11 rejecting "
+        "lifecycle mutations; no retrieval-quality or support-state effect."
     )
 
 

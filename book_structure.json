@@ -20648,7 +20648,7 @@
             "External recurrent-model results are imported as local cyclic-memory correctness, useful context, or compute benefit.",
             "Governance and structural checking cost exceed benefit, but cache or recurrence lock-in prevents retirement."
           ],
-          "minimal_implementation": "The exact current minimum is one schema-valid cyclic-memory record; three valid and six expected-invalid synthetic contract traces; five public-safe external Circle structural receipt slices for cyclic memory, KV-cache freshness, recurrence scheduling, sparse-attention gaps, and strided fanout, all with explicit no-promotion boundaries; and six finite local Lean theorem declarations. It proves no deployed cache, sparse attention, recurrence controller, useful memory, retrieval, reasoning, context-length, latency, memory, independent reproduction, transfer, or chapter-core result.",
+          "minimal_implementation": "The exact current minimum is one schema-valid cyclic-memory record; three valid and six expected-invalid synthetic contract traces; five public-safe external Circle structural receipt slices with explicit no-promotion boundaries; and a 17-declaration Lean surface whose independently implemented consumer reconstructs one residue-only collision, seven accepted fresh-lifecycle transitions, all eight trace splits, three stale mismatch/fallback paths, and eleven rejecting lifecycle mutations with exact state preservation. This is adequate only for the authored finite address, freshness, fallback, and recurrence semantics. It proves no deployed cache, sparse attention, recurrence controller, useful memory, retrieval, reasoning, context-length, latency, memory, independent reproduction, transfer, or chapter-core result.",
           "beyond_state_of_art": "The mature State-Carry and Recurrence Admission Layer runs natural long-context, retrieval, tool-state, streaming, and recurrent-reasoning workloads against full-attention, no-cache/recompute, FIFO/LRU, retrieval, Transformer-XL-style, compressed-memory, RetNet/state-space, Universal/Recurrent Transformer, fixed-depth, and direct controls under matched resources. It measures structural integrity, stale/alias/leakage events, coverage and repair, progress and overthinking, useful retrieval and task outcomes, calibration, latency/tails, memory, bandwidth, energy, verifier and human burden, fallback/recovery, safety, rights, and residuals jointly; identifies mechanisms through causal ablation; requires independent implementations and evaluators; and transfers across tasks, lengths, models, hardware, organizations, attacks, and time.",
           "codex_tests": [
             {
@@ -20782,6 +20782,12 @@
               "tag": "lean:coil_attention.coverage_not_quality.failure_blocks_promotion",
               "module": "AsiStackProofs.CoilAttentionMemory",
               "target": "A retrieval-quality record that promotes from sparse coverage and freshness while semantic-quality evidence is absent fails the finite quality-promotion predicate.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:coil_memory.versioned_freshness_and_recurrence.lifecycle",
+              "module": "AsiStackProofs.CoilAttentionMemory",
+              "target": "A finite cyclic-memory lifecycle proves residue-only addressing non-injective, classifies epoch, residue, or winding mismatch as stale, preserves memory/request identity and zero support/effect authority, rejects invalid events without state change, composes traces, routes stale aliases through fallback, and prevents recurrence beyond the declared budget.",
               "status": "implemented"
             }
           ],

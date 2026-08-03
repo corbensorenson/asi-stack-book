@@ -170,8 +170,8 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 80,
-    "P1": 927,
+    "P0": 86,
+    "P1": 934,
     "P2": 232,
     "P3": 1080,
     "P4": 177,
@@ -179,7 +179,7 @@ EXPECTED_LEVELS = {
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 2706,
+    "retain": 2719,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -799,7 +799,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 2706:
+    if summary.get("current_theorem_count") != 2719:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1015,8 +1015,26 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
         for action in actions
         if action["module_path"] == "lean/AsiStackProofs/CoilAttentionMemory.lean"
     }
-    if len(coil_rows) != 4:
-        out.append("CoilAttentionMemory must retain exactly four derived negative cases")
+    required_coil_names = {
+        "reused_cyclic_slot_without_winding_or_residual_rejected",
+        "structure_only_retrieval_quality_promotion_rejected",
+        "recurrence_without_budget_exit_or_fallback_rejected",
+        "stale_read_admitted_as_fresh_without_residual_rejected",
+        "residue_only_projection_is_not_injective",
+        "no_residue_only_decoder_recovers_every_cyclic_address",
+        "memory_lifecycle_rejected_event_is_noninterfering",
+        "memory_lifecycle_step_preserves_identity_and_authority",
+        "run_memory_lifecycle_append",
+        "same_residue_different_winding_is_not_fresh",
+        "stale_classification_blocks_fresh_consumption",
+        "recurrence_at_budget_is_rejected_noninterferingly",
+        "fresh_trace_reaches_bounded_recurrence_closure",
+        "third_recurrence_step_is_rejected_without_state_change",
+        "stale_alias_trace_uses_fallback_and_closes",
+    }
+    coil_names = {row["name"] for row in coil_rows}
+    if len(coil_rows) != 17 or not required_coil_names <= coil_names:
+        out.append("CoilAttentionMemory must retain the exact 17-declaration negative-case and lifecycle surface")
     if retired_coil_names & {row["name"] for row in coil_rows}:
         out.append("CoilAttentionMemory retained an executed premise projection")
 
@@ -1216,7 +1234,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 2706
+        status.get("theorem_count") != 2719
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0
