@@ -74,6 +74,7 @@ UNITS = [
             "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
             "docs/p4_c3_authority_effect_rollback_and_corrigibility_semantic_audit.md",
             "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+            "lean/AsiStackProofs/Authority.lean",
             "lean/AsiStackProofs/Replacement.lean",
             "lean/AsiStackProofs/Corrigibility.lean",
             "lean/AsiStackProofs/IntentExecutionRefinement.lean",
@@ -82,9 +83,9 @@ UNITS = [
             "chapters/constitutional-alignment-substrate.qmd",
             "chapters/intent-to-execution-contracts.qmd",
         ],
-        "input_contract": "A frozen four-module authority/effect/replacement/corrigibility/intent-execution cluster with eleven public targets and 125 theorem declarations.",
-        "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve four adequate bounded dispositions; execute six consumers and reject ten mutations.",
-        "output_assertions": ["4 modules", "11 public targets", "125 theorem declarations", "4 adequate dispositions", "6 consumers pass", "10 mutations reject", "support effect none"],
+        "input_contract": "A frozen five-module authority/effect/replacement/corrigibility/intent-execution cluster with thirteen public targets and 211 theorem declarations.",
+        "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve five adequate bounded dispositions; execute six consumers and reject ten mutations.",
+        "output_assertions": ["5 modules", "13 public targets", "211 theorem declarations", "5 adequate dispositions", "6 consumers pass", "10 mutations reject", "support effect none"],
         "claim_scope": "Bounded finite authority-to-effect, replacement, corrigibility-countermodel, and intent-execution semantics only.",
         "negative_controls": "validator_owned_ten_cluster_denominator_disposition_semantic_status_and_support_mutations",
         "negative_control_cases": ["module deletion", "corrigibility downgrade", "semantic-field erasure", "target inflation", "theorem inflation", "status reopening", "support laundering"],
@@ -109,6 +110,8 @@ def main() -> None:
             "input_artifacts": spec["artifacts"] + [REGISTER],
         })
         value["units"].append(unit)
+    for order, unit in enumerate(value["units"], start=1):
+        unit["order"] = order
     required = list(value["required_artifacts"])
     for spec in UNITS:
         for artifact in spec["artifacts"] + [REGISTER]:

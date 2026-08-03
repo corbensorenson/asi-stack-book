@@ -60,8 +60,16 @@ LIFECYCLE_THEOREMS = [
     "replacement_run_composes",
     "failed_monitor_cannot_commit_default",
     "accepted_rollback_restores_prior_implementation",
+    "accepted_replacement_step_preserves_state_invariant",
+    "successful_replacement_run_preserves_state_invariant",
+    "accepted_replacement_step_preserves_failure_containment",
+    "successful_replacement_run_preserves_failure_containment",
+    "successful_run_from_failed_monitor_cannot_activate_default",
+    "replacement_initial_state_satisfies_invariant",
     "clean_replacement_run_reaches_default",
     "failed_replacement_run_restores_prior",
+    "clean_replacement_run_satisfies_exact_commit_objective",
+    "failed_replacement_run_satisfies_exact_recovery_objective",
 ]
 REQUIRED_NON_CLAIMS = [
     "does not execute deployed or runtime replacement behavior",
@@ -332,14 +340,17 @@ def build_expected_result() -> dict[str, Any]:
         ],
         "identity_sequence_bridge": identity_sequence_summary(transactions),
         "formal_surface": {
-            "theorem_count": 52,
+            "theorem_count": 60,
             "lean_compile_exit_code": 0,
             "lifecycle_theorem_refs": LIFECYCLE_THEOREMS,
             "arbitrary_run_identity": True,
             "arbitrary_run_authority_bound": True,
             "batch_composition": True,
             "failed_monitor_blocks_default": True,
+            "failed_monitor_suffix_contained": True,
+            "state_invariant_preserved": True,
             "rollback_restores_prior": True,
+            "exact_commit_and_recovery_objectives": True,
         },
         "identity_sequence_control_count": 4,
         "identity_sequence_controls": [
@@ -490,8 +501,8 @@ def validate_result(expected: dict[str, Any], write_result: bool, errors: list[s
     elif not all(control.get("rejected") is True for control in sequence_controls):
         errors.append(f"{rel(RESULT)}: all identity sequence controls must be rejected.")
     formal = value.get("formal_surface", {})
-    if formal.get("theorem_count") != 52 or formal.get("lean_compile_exit_code") != 0:
-        errors.append(f"{rel(RESULT)}: formal surface must bind the exact 52-theorem compile.")
+    if formal.get("theorem_count") != 60 or formal.get("lean_compile_exit_code") != 0:
+        errors.append(f"{rel(RESULT)}: formal surface must bind the exact 60-theorem compile.")
     if formal.get("lifecycle_theorem_refs") != LIFECYCLE_THEOREMS:
         errors.append(f"{rel(RESULT)}: lifecycle theorem references drifted.")
     for key in (
@@ -499,7 +510,10 @@ def validate_result(expected: dict[str, Any], write_result: bool, errors: list[s
         "arbitrary_run_authority_bound",
         "batch_composition",
         "failed_monitor_blocks_default",
+        "failed_monitor_suffix_contained",
+        "state_invariant_preserved",
         "rollback_restores_prior",
+        "exact_commit_and_recovery_objectives",
     ):
         if formal.get(key) is not True:
             errors.append(f"{rel(RESULT)}: formal_surface.{key} must be true.")
@@ -534,8 +548,8 @@ def validate_manifest(errors: list[str]) -> None:
 def validate_lean(errors: list[str]) -> None:
     text = LEAN_FILE.read_text(encoding="utf-8", errors="ignore")
     theorem_names = set(re.findall(r"(?m)^theorem\s+([A-Za-z][A-Za-z0-9_]*)", text))
-    if len(theorem_names) != 52:
-        errors.append(f"{rel(LEAN_FILE)} must expose exactly 52 theorems, found {len(theorem_names)}.")
+    if len(theorem_names) != 60:
+        errors.append(f"{rel(LEAN_FILE)} must expose exactly 60 theorems, found {len(theorem_names)}.")
     for theorem in REQUIRED_THEOREMS + LIFECYCLE_THEOREMS:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", text):
             errors.append(f"{rel(LEAN_FILE)} missing theorem {theorem}.")
@@ -647,7 +661,7 @@ def main() -> None:
     if errors:
         fail(errors)
     print(
-        "Capability replacement trace probe validation passed: exact 52-theorem Lean "
+        "Capability replacement trace probe validation passed: exact 60-theorem Lean "
         "surface recompiled; two transactions and seven sequence/route controls checked."
     )
 

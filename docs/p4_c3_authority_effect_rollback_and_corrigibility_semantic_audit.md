@@ -7,9 +7,9 @@ Authority: `proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigi
 
 ## Terminal decision
 
-The frozen third cluster remains terminal at bounded scope: all four modules are
+The frozen third cluster remains terminal at bounded scope: all five modules are
 `adequate` for their exact finite semantics. The denominator
-is four modules, thirteen public proof targets, and 144 theorem
+is five modules, thirteen public proof targets, and 211 theorem
 declarations. No theorem, target, or module was counted as evidence merely
 because it compiles.
 
@@ -21,12 +21,14 @@ arbitrary runs, excludes approval and dispatch as well as effects under revoked
 IDs, gives rejected events no successor, and clears exact effect accounting on
 accepted rollback.
 `Replacement` earns its role from transaction and lifecycle routing plus a
-reachable canary/monitor/default-or-rollback model. Its exact 52-theorem surface
-preserves identity, non-authority, authority ceilings, trace validity, and batch
-composition over arbitrary accepted runs; excludes default commit after monitor
-failure; restores the prior implementation on rollback; reaches clean and
-failed terminal witnesses; and retains three fixture bridges consumed by
-separate validators. `IntentExecutionRefinement`
+reachable canary/monitor/default-or-rollback model. Its exact 60-theorem surface
+preserves one coherent stage/implementation/authority/support/effect invariant,
+identity, non-authority, authority ceilings, trace validity, and batch composition
+over arbitrary accepted runs; contains every successful failed-monitor suffix to
+failed or rolled-back states; excludes default activation after monitor failure;
+restores the prior implementation on rollback; reaches exact clean-commit and
+failed-recovery objectives; and retains three fixture bridges consumed by separate
+validators. `IntentExecutionRefinement`
 earns its role from exact root/parent and authority invariants over a reachable
 vertical plus an 89-event consumer and thirty mutations.
 

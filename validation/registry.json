@@ -3187,7 +3187,8 @@
     "scripts/validate_p7_1c_reader_prose_quality.py",
     "roadmap_records/p7_1c_reader_prose_quality_status.json",
     "schemas/p7_1c_reader_prose_quality_status.schema.json",
-    "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md"
+    "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
+    "lean/AsiStackProofs/Authority.lean"
   ],
   "units": [
     {
@@ -5274,12 +5275,41 @@
       "script": "validate_capability_replacement_trace_probe.py",
       "args": [],
       "execution_tier": "deep",
-      "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The exact sixty-theorem replacement lifecycle, deterministic clean and failed traces, two transaction records, seven route and sequence controls, replacement schema, chapter boundary, and proof-model dossier.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/Replacement.lean",
+        "scripts/validate_capability_replacement_trace_probe.py",
+        "schemas/replacement_transaction.schema.json",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+        "docs/capability_replacement_trace_probe.md",
+        "chapters/capability-replacement-and-rollback.qmd",
+        "evidence_quality/proof_model_dossiers/capability-replacement-and-rollback.md"
+      ],
+      "output_contract": "Recompile the exact Lean surface, reconstruct the clean/default and failed/rollback transactions, reject all route and identity-sequence controls, and preserve the no-promotion boundary.",
+      "output_assertions": [
+        "60 exact Lean theorem declarations",
+        "coherent state invariant across arbitrary accepted runs",
+        "failed-monitor suffix remains failed or rolled back",
+        "exact clean commit and failed recovery objectives",
+        "2 bounded replacement transactions",
+        "7 rejected route and identity-sequence controls",
+        "support-state and chapter-core effects remain none"
+      ],
+      "claim_scope": "Finite authored replacement identity, authority, non-authority, lifecycle-coherence, failure-containment, and exact clean/recovery semantics only.",
+      "negative_control_cases": [
+        "authority widening",
+        "failed regression",
+        "missing rollback dry run",
+        "field identity drift",
+        "default after failed monitor",
+        "prior implementation mismatch",
+        "missing residual owner"
+      ],
+      "negative_controls": "validator_owned_seven_route_and_identity_sequence_controls",
+      "prohibited_inference": "Does not establish event truth, evaluator or monitor competence, inventory completeness, semantic or effect-complete recovery, useful improvement, deployed replacement, production rollback, support, safety, transfer, AGI, or ASI.",
+      "contract_precision": "exact_module_theorem_trace_and_negative_control_surface",
+      "semantic_review_state": "checked_bounded_replacement_invariant_failure_containment_and_recovery_not_production_behavior"
     },
     {
       "id": "validate_self_improvement_boundaries:132",
@@ -7947,8 +7977,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -14444,148 +14474,6 @@
       ]
     },
     {
-      "script": "validate_white_box_evidence_contract.py",
-      "execution_tier": "pr",
-      "validation_class": "proof_or_evidence_gate",
-      "input_contract": "One typed record-shape fixture, a prospectively frozen but unexecuted two-method white-box campaign, and a finite admission/non-authority model.",
-      "output_contract": "Require exact model/method identity, controls, stability, residuals, expiry, non-authority, protected outcome closure, seven competence gates, and an N3 exact ceiling; compile eight Lean declarations and reject twelve semantic mutations.",
-      "output_assertions": [
-        "1 record-shape fixture",
-        "2 independently owned method families",
-        "7 competence gates",
-        "8 Lean declarations",
-        "12 mutations reject",
-        "empirical and support effects none"
-      ],
-      "claim_scope": "White-box packet shape, campaign custody, and finite governance-route semantics only.",
-      "negative_controls": "validator_owned_twelve_identity_control_custody_authority_and_support_mutations",
-      "negative_control_cases": [
-        "release grant",
-        "authority widening",
-        "completeness claim",
-        "control deletion",
-        "outcome opening",
-        "negative-scope inflation",
-        "P2 displacement",
-        "support laundering"
-      ],
-      "prohibited_inference": "The fixture and protocol do not establish any feature, circuit, interpretation, causal result, governance efficacy, support transition, release, AGI, or ASI claim.",
-      "contract_precision": "exact_record_protocol_and_finite_route_contract",
-      "semantic_review_state": "checked_white_box_record_custody_and_non_authority_semantics",
-      "id": "validate_white_box_evidence_contract.py:403",
-      "order": 400,
-      "args": [],
-      "input_artifacts": [
-        "scripts/validate_white_box_evidence_contract.py",
-        "schemas/white_box_evidence_packet.schema.json",
-        "tests/fixtures/protocol_records/white_box_evidence_packet.valid.json",
-        "experiments/white_box_argument_exit/preregistration.json",
-        "lean/AsiStackProofs/WhiteBoxEvidence.lean",
-        "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
-      ]
-    },
-    {
-      "script": "validate_p7_2_t1_white_box_reader_integration.py",
-      "execution_tier": "pr",
-      "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The admitted white-box chapter, eight exact source mappings, two implemented public proof targets, a closed protected campaign, and all adjacent reader surfaces.",
-      "output_contract": "Bind artifact digests, preserve source/role/proof denominators, require both handoffs and synthesis surfaces, keep protected outcomes closed, and reject twelve integration mutations.",
-      "output_assertions": [
-        "1 terminal argument-level chapter",
-        "8 source mappings",
-        "2 implemented proof targets",
-        "8 Lean declarations",
-        "12 integration mutations reject",
-        "support effect none"
-      ],
-      "claim_scope": "P7.2-T1 chapter necessity, argument-level integration, traceability, and reader continuity only.",
-      "negative_controls": "validator_owned_twelve_manifest_source_digest_proof_custody_role_and_support_mutations",
-      "negative_control_cases": [
-        "chapter deletion",
-        "source-target deletion",
-        "digest drift",
-        "proof-count reduction",
-        "outcome opening",
-        "P2 displacement",
-        "role deletion",
-        "support laundering"
-      ],
-      "prohibited_inference": "Terminal reader integration does not establish an interpretability result, mechanism completeness, empirical support, release, publication, AGI, or ASI.",
-      "contract_precision": "digest_bound_reader_and_evidence_custody",
-      "semantic_review_state": "checked_terminal_white_box_argument_chapter_integration",
-      "id": "validate_p7_2_t1_white_box_reader_integration.py:404",
-      "order": 401,
-      "args": [],
-      "input_artifacts": [
-        "scripts/validate_p7_2_t1_white_box_reader_integration.py",
-        "evidence_quality/p7_2_t1_white_box_reader_integration.json",
-        "docs/p7_2_t1_white_box_reader_integration.md",
-        "book_structure.json",
-        "sources/source_inventory.json",
-        "proofs/proof_manifest.json",
-        "lean/AsiStackProofs/GovernedOperationsRefinement.lean",
-        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
-        "index.qmd",
-        "docs/book_outline.md",
-        "appendices/B_glossary.qmd",
-        "appendices/C_claim_evidence_matrix.qmd",
-        "appendices/G_corben_source_corpus.qmd",
-        "appendices/H_external_sources.qmd",
-        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-        "chapters/capability-thresholds-and-deployment-commitments.qmd",
-        "chapters/integrated-reference-architecture.qmd",
-        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
-      ]
-    },
-    {
-      "script": "validate_p4_c3_semantic_proof_cluster.py",
-      "execution_tier": "pr",
-      "validation_class": "proof_or_evidence_gate",
-      "input_contract": "A frozen four-module authority/effect/replacement/corrigibility/intent-execution cluster with thirteen public targets and 144 theorem declarations.",
-      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve four adequate bounded dispositions; execute six consumers and reject ten mutations.",
-      "output_assertions": [
-        "4 modules",
-        "13 public targets",
-        "144 theorem declarations",
-        "4 adequate dispositions",
-        "6 consumers pass",
-        "10 mutations reject",
-        "support effect none"
-      ],
-      "claim_scope": "Bounded finite authority-to-effect, replacement, corrigibility-countermodel, and intent-execution semantics only.",
-      "negative_controls": "validator_owned_ten_cluster_denominator_disposition_semantic_status_and_support_mutations",
-      "negative_control_cases": [
-        "module deletion",
-        "corrigibility downgrade",
-        "semantic-field erasure",
-        "target inflation",
-        "theorem inflation",
-        "status reopening",
-        "support laundering"
-      ],
-      "prohibited_inference": "The audit proves no identity or receipt authentic, effect inventory complete, rollback effective, monitor valid, deployment safe, support transition, release, or publication.",
-      "contract_precision": "exact_module_target_theorem_and_semantic_disposition",
-      "semantic_review_state": "checked_terminal_bounded_authority_effect_replacement_and_corrigibility_semantics",
-      "id": "validate_p4_c3_semantic_proof_cluster.py:405",
-      "order": 402,
-      "args": [],
-      "input_artifacts": [
-        "scripts/validate_p4_c3_semantic_proof_cluster.py",
-        "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
-        "docs/p4_c3_authority_effect_rollback_and_corrigibility_semantic_audit.md",
-        "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
-        "lean/AsiStackProofs/Replacement.lean",
-        "lean/AsiStackProofs/Corrigibility.lean",
-        "lean/AsiStackProofs/IntentExecutionRefinement.lean",
-        "chapters/system-boundaries-and-authority.qmd",
-        "chapters/capability-replacement-and-rollback.qmd",
-        "chapters/constitutional-alignment-substrate.qmd",
-        "chapters/intent-to-execution-contracts.qmd",
-        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
-      ]
-    },
-    {
       "script": "validate_governed_world_model_contract.py",
       "input_contract": "One typed safe-hold record-shape fixture, a prospectively frozen but unexecuted six-arm world-model campaign, and a finite admission/residual/non-authority model.",
       "output_contract": "Require exact model/observation/rollout/residual custody, protected outcome closure, eight competence gates, seven rescue steps, an N3 exact ceiling, nine Lean declarations, and thirteen rejecting mutations.",
@@ -14614,7 +14502,7 @@
       "prohibited_inference": "The fixture, theorem, and protocol do not establish prediction quality, grounding, calibration, useful planning, safe control, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_world_model_packet_residual_and_non_authority_semantics",
       "id": "validate_governed_world_model_contract.py:406",
-      "order": 403,
+      "order": 400,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14658,7 +14546,7 @@
       "prohibited_inference": "Terminal reader integration does not establish a world-model, grounding, causal, control, safety, empirical, release, publication, AGI, or ASI result.",
       "semantic_review_state": "checked_terminal_governed_world_models_argument_chapter_integration",
       "id": "validate_p7_2_t2_governed_world_models_reader_integration.py:407",
-      "order": 404,
+      "order": 401,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14710,7 +14598,7 @@
       "prohibited_inference": "The audit proves no learning, forgetting, influence removal, privacy reduction, storage or backup erasure, legal compliance, rollback efficacy, deployment, support, release, or publication.",
       "semantic_review_state": "checked_terminal_bounded_learning_update_weight_context_and_unlearning_axis_semantics",
       "id": "validate_p4_c4_semantic_proof_cluster.py:408",
-      "order": 405,
+      "order": 402,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14763,7 +14651,7 @@
       "prohibited_inference": "The fixture, theorem, and protocol do not establish comprehension, workload calibration, consent, privacy adequacy, moral responsibility, intervention efficacy, meaningful control, safety, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_human_control_envelope_responsibility_privacy_and_non_authority_semantics",
       "id": "validate_human_oversight_control_contract.py:409",
-      "order": 406,
+      "order": 403,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14811,7 +14699,7 @@
       "prohibited_inference": "Terminal reader integration does not establish human comprehension, workload, trust, control efficacy, responsibility, privacy, meaningful control, safety, empirical support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_terminal_human_factors_argument_chapter_integration",
       "id": "validate_p7_2_t3_human_factors_reader_integration.py:410",
-      "order": 407,
+      "order": 404,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14863,7 +14751,7 @@
       "prohibited_inference": "The audit proves no legitimate objective, adaptive or open-ended improvement, capability threshold, effective safeguard or rollback, readiness, safety, deployment, transfer, support, release, or publication.",
       "semantic_review_state": "checked_terminal_bounded_self_improvement_campaign_threshold_and_readiness_semantics",
       "id": "validate_p4_c5_semantic_proof_cluster.py:411",
-      "order": 408,
+      "order": 405,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14925,7 +14813,7 @@
       "prohibited_inference": "The authored case and finite model do not establish natural incident behavior, detector quality, inventory completeness, effect reversal, fallback usefulness, recovery efficacy, safety, transfer, deployment, support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_governed_operations_authority_effect_recovery_and_non_authority_semantics",
       "id": "validate_governed_operations_control_contract.py:412",
-      "order": 409,
+      "order": 406,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -14995,7 +14883,7 @@
       "prohibited_inference": "Terminal reader integration does not establish operational efficacy, resilience, recovery, safety, NIST conformance, empirical support, release, publication, AGI, or ASI.",
       "semantic_review_state": "checked_terminal_governed_operations_argument_chapter_integration",
       "id": "validate_p7_2_t4_governed_operations_reader_integration.py:413",
-      "order": 410,
+      "order": 407,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15059,7 +14947,7 @@
       "prohibited_inference": "The audit proves no efficiency, optimal allocation, artifact truth or durability, ownership, competent stewardship, useful compression, lifecycle success, deployment, transfer, support, release, or publication.",
       "semantic_review_state": "checked_terminal_resource_artifact_steward_and_compression_semantics",
       "id": "validate_p4_c6_semantic_proof_cluster.py:414",
-      "order": 411,
+      "order": 408,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15077,7 +14965,7 @@
     },
     {
       "id": "validate_p7_1a_w3_inheritance_guard.py:412",
-      "order": 412,
+      "order": 409,
       "script": "validate_p7_1a_w3_inheritance_guard.py",
       "args": [],
       "execution_tier": "pr",
@@ -15122,7 +15010,7 @@
     },
     {
       "id": "validate_r16_b_current_reader_freshness.py:413",
-      "order": 413,
+      "order": 410,
       "script": "validate_r16_b_current_reader_freshness.py",
       "args": [],
       "execution_tier": "pr",
@@ -15175,7 +15063,7 @@
       "negative_controls": "validator_owned_twenty_six_party_purpose_authority_minimization_flow_derivative_privacy_attack_rights_residual_source_and_authority_mutations",
       "prohibited_inference": "No personal-data processing, privacy, lawful basis, compliance, attack absence, complete lineage, deletion, forgetting, influence removal, support, readiness, release, transfer, SOTA, AGI, or ASI follows.",
       "id": "validate_information_lifecycle_transaction.py:417",
-      "order": 414,
+      "order": 411,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15210,7 +15098,7 @@
       "negative_controls": "validator_owned_ten_decision_source_manifest_proof_campaign_outcome_competence_status_and_compliance_mutations",
       "prohibited_inference": "Reader integration and finite artifacts do not establish privacy, rights completion, legal compliance, deletion, forgetting, influence removal, support, readiness, release, transfer, or SOTA.",
       "id": "validate_p6_4_a2_privacy_information_flow_reader_integration.py:418",
-      "order": 415,
+      "order": 412,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -15233,7 +15121,7 @@
     },
     {
       "id": "validate_optimizer_policy_card.py:419",
-      "order": 416,
+      "order": 413,
       "script": "validate_optimizer_policy_card.py",
       "args": [],
       "execution_tier": "pr",
@@ -15288,7 +15176,7 @@
     },
     {
       "id": "validate_proof_semantic_depth_overlay.py:417",
-      "order": 417,
+      "order": 414,
       "script": "validate_proof_semantic_depth_overlay.py",
       "args": [],
       "execution_tier": "pr",
@@ -15343,7 +15231,7 @@
     },
     {
       "id": "validate_proof_semantic_rationalization_ledger.py:418",
-      "order": 418,
+      "order": 415,
       "script": "validate_proof_semantic_rationalization_ledger.py",
       "args": [],
       "execution_tier": "pr",
@@ -15517,7 +15405,7 @@
     },
     {
       "id": "validate_evidence_transition_refinement.py:422",
-      "order": 419,
+      "order": 416,
       "script": "validate_evidence_transition_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -15554,7 +15442,7 @@
     },
     {
       "id": "validate_post_activation_six_chapter_claim_atom_addendum.py:423",
-      "order": 420,
+      "order": 417,
       "script": "validate_post_activation_six_chapter_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -15603,7 +15491,7 @@
     },
     {
       "id": "validate_artifact_compression_refinement.py:422",
-      "order": 421,
+      "order": 418,
       "script": "validate_artifact_compression_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -15643,7 +15531,7 @@
     },
     {
       "id": "validate_p2_r3a_capacity_preflight.py:427",
-      "order": 422,
+      "order": 419,
       "script": "validate_p2_r3a_capacity_preflight.py",
       "args": [],
       "execution_tier": "pr",
@@ -15693,7 +15581,7 @@
     },
     {
       "id": "validate_c6_remaining_stronger_model_audit.py:428",
-      "order": 423,
+      "order": 420,
       "script": "validate_c6_remaining_stronger_model_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -15742,7 +15630,7 @@
     },
     {
       "id": "validate_theseus_t0a_architecture_closure_currentness_import:429",
-      "order": 424,
+      "order": 421,
       "script": "validate_theseus_t0a_architecture_closure_currentness_import.py",
       "args": [],
       "execution_tier": "deep",
@@ -15799,7 +15687,7 @@
     },
     {
       "id": "validate_p5_effect_complete_reference:430",
-      "order": 425,
+      "order": 422,
       "script": "validate_p5_effect_complete_reference.py",
       "args": [],
       "execution_tier": "deep",
@@ -15841,7 +15729,7 @@
     },
     {
       "id": "validate_p5_stateful_service_reference:431",
-      "order": 426,
+      "order": 423,
       "script": "validate_p5_stateful_service_reference.py",
       "args": [],
       "execution_tier": "deep",
@@ -15887,7 +15775,7 @@
     },
     {
       "id": "validate_p5_natural_publication_service_trace:432",
-      "order": 427,
+      "order": 424,
       "script": "validate_p5_natural_publication_service_trace.py",
       "args": [],
       "execution_tier": "deep",
@@ -15933,7 +15821,7 @@
     },
     {
       "id": "validate_round22_concept_linked_claim_atom_addendum.py:433",
-      "order": 428,
+      "order": 425,
       "script": "validate_round22_concept_linked_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -15976,7 +15864,7 @@
     },
     {
       "id": "validate_round20_four_chapter_claim_atom_addendum.py:434",
-      "order": 429,
+      "order": 426,
       "script": "validate_round20_four_chapter_claim_atom_addendum.py",
       "args": [],
       "execution_tier": "pr",
@@ -16016,7 +15904,7 @@
     },
     {
       "id": "validate_p6_9_raw_scaffold_ownership_audit.py:435",
-      "order": 430,
+      "order": 427,
       "script": "validate_p6_9_raw_scaffold_ownership_audit.py",
       "args": [],
       "execution_tier": "pr",
@@ -16065,7 +15953,7 @@
     },
     {
       "id": "validate_p6_9_proof_evidence_handoff.py:436",
-      "order": 431,
+      "order": 428,
       "script": "validate_p6_9_proof_evidence_handoff.py",
       "args": [],
       "execution_tier": "pr",
@@ -16120,7 +16008,7 @@
     },
     {
       "id": "validate_p5_natural_service_campaign_qualification.py:437",
-      "order": 432,
+      "order": 429,
       "script": "validate_p5_natural_service_campaign_qualification.py",
       "args": [],
       "execution_tier": "pr",
@@ -16188,7 +16076,7 @@
     },
     {
       "id": "validate_visual_edition.py:438",
-      "order": 433,
+      "order": 430,
       "script": "validate_visual_edition.py",
       "args": [],
       "execution_tier": "pr",
@@ -16965,7 +16853,7 @@
     },
     {
       "id": "sync_visual_edition_embeds.py:439",
-      "order": 434,
+      "order": 431,
       "script": "sync_visual_edition_embeds.py",
       "args": [],
       "execution_tier": "pr",
@@ -16993,7 +16881,7 @@
     },
     {
       "id": "validate_youtube_preview_bindings.py:440",
-      "order": 435,
+      "order": 432,
       "script": "validate_youtube_preview_bindings.py",
       "args": [],
       "execution_tier": "pr",
@@ -17035,7 +16923,7 @@
     },
     {
       "id": "validate_manim_toolchain.py:441",
-      "order": 436,
+      "order": 433,
       "script": "validate_manim_toolchain.py",
       "args": [],
       "execution_tier": "pr",
@@ -17074,7 +16962,7 @@
     },
     {
       "id": "validate_chapter_substance_contract.py:442",
-      "order": 437,
+      "order": 434,
       "script": "validate_chapter_substance_contract.py",
       "args": [],
       "execution_tier": "pr",
@@ -17128,7 +17016,7 @@
     },
     {
       "id": "validate_youtube_supersession_workflow.py:443",
-      "order": 438,
+      "order": 435,
       "script": "validate_youtube_supersession_workflow.py",
       "args": [],
       "execution_tier": "pr",
@@ -17180,7 +17068,7 @@
     },
     {
       "id": "validate_manim_v2_production_ledger.py:444",
-      "order": 439,
+      "order": 436,
       "script": "validate_manim_v2_production_ledger.py",
       "args": [],
       "execution_tier": "pr",
@@ -17247,7 +17135,7 @@
     },
     {
       "id": "validate_failure_recovery_refinement.py:445",
-      "order": 440,
+      "order": 437,
       "script": "validate_failure_recovery_refinement.py",
       "args": [],
       "execution_tier": "pr",
@@ -17285,7 +17173,7 @@
     },
     {
       "id": "validate_learned_objective_integrity.py:446",
-      "order": 441,
+      "order": 438,
       "script": "validate_learned_objective_integrity.py",
       "args": [],
       "execution_tier": "pr",
@@ -17332,7 +17220,7 @@
     },
     {
       "id": "validate_observation_trust.py:447",
-      "order": 442,
+      "order": 439,
       "script": "validate_observation_trust.py",
       "args": [],
       "execution_tier": "pr",
@@ -17380,7 +17268,7 @@
     },
     {
       "id": "validate_human_ai_organization_accountability.py:448",
-      "order": 443,
+      "order": 440,
       "script": "validate_human_ai_organization_accountability.py",
       "args": [],
       "execution_tier": "pr",
@@ -17427,7 +17315,7 @@
     },
     {
       "id": "validate_multi_agent_systemic_boundary.py:449",
-      "order": 444,
+      "order": 441,
       "script": "validate_multi_agent_systemic_boundary.py",
       "args": [],
       "execution_tier": "pr",
@@ -17471,7 +17359,7 @@
     },
     {
       "id": "validate_embodied_physical_safety.py:450",
-      "order": 445,
+      "order": 442,
       "script": "validate_embodied_physical_safety.py",
       "args": [],
       "execution_tier": "pr",
@@ -17520,7 +17408,7 @@
     },
     {
       "id": "validate_dangerous_capability_review.py:451",
-      "order": 446,
+      "order": 443,
       "script": "validate_dangerous_capability_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17564,7 +17452,7 @@
     },
     {
       "id": "validate_military_interaction_review.py:452",
-      "order": 447,
+      "order": 444,
       "script": "validate_military_interaction_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17610,7 +17498,7 @@
     },
     {
       "id": "validate_open_weight_release_review.py:453",
-      "order": 448,
+      "order": 445,
       "script": "validate_open_weight_release_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17654,7 +17542,7 @@
     },
     {
       "id": "validate_communication_influence_review.py:454",
-      "order": 449,
+      "order": 446,
       "script": "validate_communication_influence_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17695,7 +17583,7 @@
     },
     {
       "id": "validate_objective_lease_governance.py:455",
-      "order": 450,
+      "order": 447,
       "script": "validate_objective_lease_governance.py",
       "args": [],
       "execution_tier": "pr",
@@ -17739,7 +17627,7 @@
     },
     {
       "id": "validate_adversarial_model_security.py:456",
-      "order": 451,
+      "order": 448,
       "script": "validate_adversarial_model_security.py",
       "args": [],
       "execution_tier": "pr",
@@ -17784,7 +17672,7 @@
     },
     {
       "id": "validate_protected_computation_review.py:457",
-      "order": 452,
+      "order": 449,
       "script": "validate_protected_computation_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17829,7 +17717,7 @@
     },
     {
       "id": "validate_content_authenticity_review.py:458",
-      "order": 453,
+      "order": 450,
       "script": "validate_content_authenticity_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17875,7 +17763,7 @@
     },
     {
       "id": "validate_replication_containment_review.py:459",
-      "order": 454,
+      "order": 451,
       "script": "validate_replication_containment_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17920,7 +17808,7 @@
     },
     {
       "id": "validate_institutional_legitimacy_review.py:460",
-      "order": 455,
+      "order": 452,
       "script": "validate_institutional_legitimacy_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -17964,7 +17852,7 @@
     },
     {
       "id": "validate_societal_resilience_review.py:461",
-      "order": 456,
+      "order": 453,
       "script": "validate_societal_resilience_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18009,7 +17897,7 @@
     },
     {
       "id": "validate_durable_semantic_memory_review.py:462",
-      "order": 457,
+      "order": 454,
       "script": "validate_durable_semantic_memory_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18056,7 +17944,7 @@
     },
     {
       "id": "validate_physical_compute_infrastructure_review.py:463",
-      "order": 458,
+      "order": 455,
       "script": "validate_physical_compute_infrastructure_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18100,7 +17988,7 @@
     },
     {
       "id": "validate_learning_theory_forecast_review.py:464",
-      "order": 459,
+      "order": 456,
       "script": "validate_learning_theory_forecast_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18145,7 +18033,7 @@
     },
     {
       "id": "validate_scientific_experiment_review.py:465",
-      "order": 460,
+      "order": 457,
       "script": "validate_scientific_experiment_review.py",
       "args": [],
       "execution_tier": "pr",
@@ -18190,7 +18078,7 @@
     },
     {
       "id": "validate_deployment_transition_governance.py:466",
-      "order": 461,
+      "order": 458,
       "script": "validate_deployment_transition_governance.py",
       "args": [],
       "execution_tier": "pr",
@@ -18236,7 +18124,7 @@
     },
     {
       "id": "validate_human_ai_cognitive_sovereignty.py:467",
-      "order": 462,
+      "order": 459,
       "script": "validate_human_ai_cognitive_sovereignty.py",
       "args": [],
       "execution_tier": "pr",
@@ -18283,7 +18171,7 @@
     },
     {
       "id": "validate_relational_dimension_compiler.py:468",
-      "order": 463,
+      "order": 460,
       "script": "validate_relational_dimension_compiler.py",
       "args": [],
       "execution_tier": "pr",
@@ -18329,7 +18217,7 @@
     },
     {
       "id": "validate_p7_1c_reader_prose_quality.py:469",
-      "order": 464,
+      "order": 461,
       "script": "validate_p7_1c_reader_prose_quality.py",
       "args": [],
       "execution_tier": "deep",
@@ -18367,7 +18255,7 @@
     },
     {
       "id": "validate_claim_ledger_refinement:469",
-      "order": 465,
+      "order": 462,
       "script": "validate_claim_ledger_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -18411,7 +18299,7 @@
     },
     {
       "id": "validate_authority_effect_refinement:469",
-      "order": 466,
+      "order": 463,
       "script": "validate_authority_effect_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -18491,7 +18379,7 @@
       "negative_controls": "validator_owned_twenty_one_freeze_topology_batch_numeric_denominator_state_commit_resume_selection_qualification_source_and_authority_mutations",
       "prohibited_inference": "No model training, resume equivalence, distributed efficiency, fault tolerance, model quality, inventory completeness, support, readiness, release, transfer, SOTA, AGI, or ASI follows.",
       "id": "validate_training_run_transaction.py:468",
-      "order": 467,
+      "order": 464,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -18509,7 +18397,7 @@
     },
     {
       "id": "validate_intent_resolution_refinement:469",
-      "order": 468,
+      "order": 465,
       "script": "validate_intent_resolution_refinement.py",
       "args": [],
       "execution_tier": "deep",
@@ -18577,7 +18465,7 @@
       "negative_controls": "validator_owned_nine_decision_source_manifest_proof_campaign_competence_status_and_support_mutations",
       "prohibited_inference": "Reader integration and finite artifacts do not establish training integrity, exact resume, model quality, efficiency, fault tolerance, support, readiness, release, transfer, or SOTA.",
       "id": "validate_p6_4_a1_governed_model_training_reader_integration.py:469",
-      "order": 469,
+      "order": 466,
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
@@ -18596,10 +18484,152 @@
         "chapters/integrated-reference-architecture.qmd",
         "scripts/register_p6_4_a1_governed_model_training.py"
       ]
+    },
+    {
+      "script": "validate_white_box_evidence_contract.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "One typed record-shape fixture, a prospectively frozen but unexecuted two-method white-box campaign, and a finite admission/non-authority model.",
+      "output_contract": "Require exact model/method identity, controls, stability, residuals, expiry, non-authority, protected outcome closure, seven competence gates, and an N3 exact ceiling; compile eight Lean declarations and reject twelve semantic mutations.",
+      "output_assertions": [
+        "1 record-shape fixture",
+        "2 independently owned method families",
+        "7 competence gates",
+        "8 Lean declarations",
+        "12 mutations reject",
+        "empirical and support effects none"
+      ],
+      "claim_scope": "White-box packet shape, campaign custody, and finite governance-route semantics only.",
+      "negative_controls": "validator_owned_twelve_identity_control_custody_authority_and_support_mutations",
+      "negative_control_cases": [
+        "release grant",
+        "authority widening",
+        "completeness claim",
+        "control deletion",
+        "outcome opening",
+        "negative-scope inflation",
+        "P2 displacement",
+        "support laundering"
+      ],
+      "prohibited_inference": "The fixture and protocol do not establish any feature, circuit, interpretation, causal result, governance efficacy, support transition, release, AGI, or ASI claim.",
+      "contract_precision": "exact_record_protocol_and_finite_route_contract",
+      "semantic_review_state": "checked_white_box_record_custody_and_non_authority_semantics",
+      "id": "validate_white_box_evidence_contract.py:467",
+      "order": 467,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_white_box_evidence_contract.py",
+        "schemas/white_box_evidence_packet.schema.json",
+        "tests/fixtures/protocol_records/white_box_evidence_packet.valid.json",
+        "experiments/white_box_argument_exit/preregistration.json",
+        "lean/AsiStackProofs/WhiteBoxEvidence.lean",
+        "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p7_2_t1_white_box_reader_integration.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The admitted white-box chapter, eight exact source mappings, two implemented public proof targets, a closed protected campaign, and all adjacent reader surfaces.",
+      "output_contract": "Bind artifact digests, preserve source/role/proof denominators, require both handoffs and synthesis surfaces, keep protected outcomes closed, and reject twelve integration mutations.",
+      "output_assertions": [
+        "1 terminal argument-level chapter",
+        "8 source mappings",
+        "2 implemented proof targets",
+        "8 Lean declarations",
+        "12 integration mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "P7.2-T1 chapter necessity, argument-level integration, traceability, and reader continuity only.",
+      "negative_controls": "validator_owned_twelve_manifest_source_digest_proof_custody_role_and_support_mutations",
+      "negative_control_cases": [
+        "chapter deletion",
+        "source-target deletion",
+        "digest drift",
+        "proof-count reduction",
+        "outcome opening",
+        "P2 displacement",
+        "role deletion",
+        "support laundering"
+      ],
+      "prohibited_inference": "Terminal reader integration does not establish an interpretability result, mechanism completeness, empirical support, release, publication, AGI, or ASI.",
+      "contract_precision": "digest_bound_reader_and_evidence_custody",
+      "semantic_review_state": "checked_terminal_white_box_argument_chapter_integration",
+      "id": "validate_p7_2_t1_white_box_reader_integration.py:468",
+      "order": 468,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p7_2_t1_white_box_reader_integration.py",
+        "evidence_quality/p7_2_t1_white_box_reader_integration.json",
+        "docs/p7_2_t1_white_box_reader_integration.md",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_manifest.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "index.qmd",
+        "docs/book_outline.md",
+        "appendices/B_glossary.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/G_corben_source_corpus.qmd",
+        "appendices/H_external_sources.qmd",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd",
+        "chapters/integrated-reference-architecture.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
+    },
+    {
+      "script": "validate_p4_c3_semantic_proof_cluster.py",
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "A frozen five-module authority/effect/replacement/corrigibility/intent-execution cluster with thirteen public targets and 211 theorem declarations.",
+      "output_contract": "Require exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and ceilings; preserve five adequate bounded dispositions; execute six consumers and reject ten mutations.",
+      "output_assertions": [
+        "5 modules",
+        "13 public targets",
+        "211 theorem declarations",
+        "5 adequate dispositions",
+        "6 consumers pass",
+        "10 mutations reject",
+        "support effect none"
+      ],
+      "claim_scope": "Bounded finite authority-to-effect, replacement, corrigibility-countermodel, and intent-execution semantics only.",
+      "negative_controls": "validator_owned_ten_cluster_denominator_disposition_semantic_status_and_support_mutations",
+      "negative_control_cases": [
+        "module deletion",
+        "corrigibility downgrade",
+        "semantic-field erasure",
+        "target inflation",
+        "theorem inflation",
+        "status reopening",
+        "support laundering"
+      ],
+      "prohibited_inference": "The audit proves no identity or receipt authentic, effect inventory complete, rollback effective, monitor valid, deployment safe, support transition, release, or publication.",
+      "contract_precision": "exact_module_target_theorem_and_semantic_disposition",
+      "semantic_review_state": "checked_terminal_bounded_authority_effect_replacement_and_corrigibility_semantics",
+      "id": "validate_p4_c3_semantic_proof_cluster.py:469",
+      "order": 469,
+      "args": [],
+      "input_artifacts": [
+        "scripts/validate_p4_c3_semantic_proof_cluster.py",
+        "proofs/semantic_cluster_audits/authority_effect_rollback_and_corrigibility.json",
+        "docs/p4_c3_authority_effect_rollback_and_corrigibility_semantic_audit.md",
+        "lean/AsiStackProofs/AuthorityEffectRefinement.lean",
+        "lean/AsiStackProofs/Authority.lean",
+        "lean/AsiStackProofs/Replacement.lean",
+        "lean/AsiStackProofs/Corrigibility.lean",
+        "lean/AsiStackProofs/IntentExecutionRefinement.lean",
+        "chapters/system-boundaries-and-authority.qmd",
+        "chapters/capability-replacement-and-rollback.qmd",
+        "chapters/constitutional-alignment-substrate.qmd",
+        "chapters/intent-to-execution-contracts.qmd",
+        "scripts/register_p7_2_t1_and_p4_c3_tranche.py"
+      ]
     }
   ],
   "summary": {
-    "required_artifact_count": 3143,
+    "required_artifact_count": 3144,
     "unit_count": 469
   },
   "non_claims": [

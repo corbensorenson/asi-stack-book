@@ -1021,6 +1021,121 @@ theorem accepted_rollback_restores_prior_implementation
   subst next
   simp [applyReplacementEvent, rollback]
 
+def ReplacementStageCoherent (state : ReplacementState) : Prop :=
+  match state.stage with
+  | .baseline | .prepared =>
+      state.activeImplementation = state.priorImplementation ∧
+        state.activeAuthority = 0
+  | .canary | .monitoredClean | .monitoredFailed | .defaultActive =>
+      state.activeImplementation = state.candidateImplementation
+  | .rolledBack =>
+      state.activeImplementation = state.priorImplementation ∧
+        state.activeAuthority = 0
+
+instance replacementStageCoherentDecidable (state : ReplacementState) :
+    Decidable (ReplacementStageCoherent state) := by
+  unfold ReplacementStageCoherent
+  cases state.stage <;> infer_instance
+
+def ReplacementStateInvariant (state : ReplacementState) : Prop :=
+  state.activeAuthority ≤ state.authorityCeiling ∧
+    state.supportAssignmentCount = 0 ∧
+      state.externalEffectAuthorityCount = 0 ∧
+        ReplacementStageCoherent state
+
+instance replacementStateInvariantDecidable (state : ReplacementState) :
+    Decidable (ReplacementStateInvariant state) := by
+  unfold ReplacementStateInvariant
+  infer_instance
+
+theorem accepted_replacement_step_preserves_state_invariant
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (invariant : ReplacementStateInvariant state)
+    (stepped : ReplacementStep state event = some next) :
+    ReplacementStateInvariant next := by
+  have valid := accepted_replacement_step_is_valid stepped
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  rcases invariant with ⟨bounded, supportNone, effectNone, coherent⟩
+  cases hstage : state.stage <;> cases hkind : event.kind <;>
+    simp [ReplacementEventValid, hstage, hkind] at valid <;>
+    simp [ReplacementStateInvariant, ReplacementStageCoherent,
+      applyReplacementEvent, hstage, hkind] at coherent ⊢ <;>
+    simp_all
+
+theorem successful_replacement_run_preserves_state_invariant
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (invariant : ReplacementStateInvariant state)
+    (ran : ReplacementRun state events = some final) :
+    ReplacementStateInvariant final := by
+  induction events generalizing state with
+  | nil =>
+      simp [ReplacementRun] at ran
+      subst final
+      exact invariant
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          exact ih
+            (accepted_replacement_step_preserves_state_invariant invariant stepped)
+            tailRan
+
+def ReplacementFailureContained (state : ReplacementState) : Prop :=
+  state.stage = .monitoredFailed ∨ state.stage = .rolledBack
+
+instance replacementFailureContainedDecidable (state : ReplacementState) :
+    Decidable (ReplacementFailureContained state) := by
+  unfold ReplacementFailureContained
+  infer_instance
+
+theorem accepted_replacement_step_preserves_failure_containment
+    {state next : ReplacementState} {event : ReplacementEvent}
+    (contained : ReplacementFailureContained state)
+    (stepped : ReplacementStep state event = some next) :
+    ReplacementFailureContained next := by
+  have valid := accepted_replacement_step_is_valid stepped
+  have applies := accepted_replacement_step_applies_event stepped
+  subst next
+  rcases contained with failed | rolledBack
+  · cases hkind : event.kind <;>
+      simp [ReplacementEventValid, failed, hkind] at valid <;>
+      simp [ReplacementFailureContained, applyReplacementEvent, hkind]
+  · cases hkind : event.kind <;>
+      simp [ReplacementEventValid, rolledBack, hkind] at valid
+
+theorem successful_replacement_run_preserves_failure_containment
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (contained : ReplacementFailureContained state)
+    (ran : ReplacementRun state events = some final) :
+    ReplacementFailureContained final := by
+  induction events generalizing state with
+  | nil =>
+      simp [ReplacementRun] at ran
+      subst final
+      exact contained
+  | cons event tail ih =>
+      cases stepped : ReplacementStep state event with
+      | none => simp [ReplacementRun, stepped] at ran
+      | some next =>
+          have tailRan : ReplacementRun next tail = some final := by
+            simpa [ReplacementRun, stepped] using ran
+          exact ih
+            (accepted_replacement_step_preserves_failure_containment contained stepped)
+            tailRan
+
+theorem successful_run_from_failed_monitor_cannot_activate_default
+    {state final : ReplacementState} {events : List ReplacementEvent}
+    (failed : state.stage = .monitoredFailed)
+    (ran : ReplacementRun state events = some final) :
+    final.stage ≠ .defaultActive := by
+  intro defaultActive
+  have contained := successful_replacement_run_preserves_failure_containment
+    (state := state) (final := final) (events := events) (Or.inl failed) ran
+  simp [ReplacementFailureContained, defaultActive] at contained
+
 def replacementInitialState : ReplacementState := {
   stage := .baseline
   fieldId := 10
@@ -1071,6 +1186,10 @@ def failedReplacementFinalState : ReplacementState :=
     activeImplementation := 100
     receiptCount := 4 }
 
+theorem replacement_initial_state_satisfies_invariant :
+    ReplacementStateInvariant replacementInitialState := by
+  native_decide
+
 theorem clean_replacement_run_reaches_default :
     ∃ final, ReplacementRun replacementInitialState cleanReplacementEvents = some final ∧
       final.stage = .defaultActive ∧ final.activeImplementation = 200 := by
@@ -1083,6 +1202,21 @@ theorem failed_replacement_run_restores_prior :
       final.activeAuthority = 0 := by
   refine ⟨failedReplacementFinalState, ?_⟩
   native_decide
+
+theorem clean_replacement_run_satisfies_exact_commit_objective :
+    ReplacementRun replacementInitialState cleanReplacementEvents =
+        some cleanReplacementFinalState ∧
+      ReplacementStateInvariant cleanReplacementFinalState := by
+  constructor <;> native_decide
+
+theorem failed_replacement_run_satisfies_exact_recovery_objective :
+    ReplacementRun replacementInitialState failedReplacementEvents =
+        some failedReplacementFinalState ∧
+      ReplacementStateInvariant failedReplacementFinalState ∧
+        ReplacementFailureContained failedReplacementFinalState := by
+  constructor
+  · native_decide
+  · constructor <;> native_decide
 
 structure ReplacementTraceProbeSummary where
   traceStepCount : Nat

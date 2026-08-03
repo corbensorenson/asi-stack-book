@@ -3,11 +3,11 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3891,
+    "candidate_count": 3892,
     "review_state_counts": {
       "duplicate_of_atom": 1860,
       "editorial_or_question": 58,
-      "historical_or_source_report": 321,
+      "historical_or_source_report": 322,
       "material_atom": 3,
       "nonmaterial_explanation": 1649
     }
@@ -14444,12 +14444,11 @@
       "target_atom_id": "capability-replacement-and-rollback.beyond_sota.001"
     },
     {
-      "candidate_id": "capability-replacement-and-rollback.prose.a5f50c66998c",
+      "candidate_id": "capability-replacement-and-rollback.prose.551c2ef017f3",
       "chapter_id": "capability-replacement-and-rollback",
       "source": "chapters/capability-replacement-and-rollback.qmd:355",
-      "sentence": "The 52-theorem surface proves that arbitrary accepted replacement runs preserve exact field/prior/candidate/ceiling identity, zero support or external-effect authority, authority bounds, trace validity, and exact batch composition; a failed monitor cannot commit the candidate as default; accepted rollback restores the prior implementation with zero active authority; and separate clean and failed witnesses reach default activation and exact prior restoration.",
+      "sentence": "The 60-theorem surface proves one coherent state invariant linking lifecycle stage to active implementation, active authority, zero support assignment, and zero external-effect authority.",
       "cues": [
-        "cannot",
         "proves"
       ],
       "review_state": "historical_or_source_report",
@@ -14464,10 +14463,29 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "capability-replacement-and-rollback.prose.e0f1aa76f7ae",
+      "candidate_id": "capability-replacement-and-rollback.prose.e520c1952b9e",
       "chapter_id": "capability-replacement-and-rollback",
       "source": "chapters/capability-replacement-and-rollback.qmd:355",
-      "sentence": "These results trust the event fields and do not prove deployed replacement execution, regression-suite coverage or quality, monitor/evaluator truth, approval-service enforcement, parser behavior, effect-complete rollback, useful improvement, or production recovery.",
+      "sentence": "Every successful continuation from a failed monitor remains failed or rolled back and cannot activate the candidate as default; accepted rollback restores the prior implementation with zero active authority; and exact clean-commit and failed-recovery witnesses satisfy the invariant.",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Current finite Lean consequence report already owned by six formal targets.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "capability-replacement-and-rollback.prose.d7f21170af19",
+      "chapter_id": "capability-replacement-and-rollback",
+      "source": "chapters/capability-replacement-and-rollback.qmd:355",
+      "sentence": "These results trust the event fields and do not prove deployed replacement execution, regression-suite coverage or quality, monitor/evaluator truth, approval-service enforcement, parser behavior, inventory completeness, effect-complete rollback, useful improvement, or production recovery.",
       "cues": [
         "prove"
       ],

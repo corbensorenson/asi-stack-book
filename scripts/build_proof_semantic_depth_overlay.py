@@ -761,6 +761,161 @@ CURRENT_SEMANTIC_OVERRIDES["lean/AsiStackProofs/ModelWeightCustody.lean::accepte
     "rationale": "Accepted key revocation closes the modeled authority ceiling and records exact finite descendant-key coverage.",
 }
 
+_replacement_route_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "scripts/validate_capability_replacement.py",
+        "scripts/validate_capability_replacement_trace_probe.py",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the theorem is a one-step finite route or projection even though its module is independently consumed"
+    ],
+}
+
+for theorem_name in (
+    "replacement_commit_requires_evidence_and_rollback",
+    "failed_regression_blocks_replacement_promotion",
+    "missing_prior_artifact_rejects_replacement",
+    "authority_expansion_without_approval_routes_to_review",
+    "captured_evaluator_routes_replacement_to_review",
+    "failed_regression_routes_to_quarantine",
+    "missing_rollback_receipt_requires_precheck",
+    "failed_rollback_dry_run_routes_to_canary_only",
+    "monitor_incident_requires_rollback",
+    "complete_replacement_review_commits_default",
+    "lifecycle_missing_candidate_rejects_replacement",
+    "lifecycle_identity_mismatch_quarantines_candidate",
+    "lifecycle_authority_widening_without_governance_requests_review",
+    "lifecycle_stale_evidence_requires_fresh_evidence",
+    "lifecycle_failed_regression_floor_quarantines_candidate",
+    "lifecycle_missing_canary_scope_requires_precheck",
+    "lifecycle_failed_canary_stays_canary_only",
+    "lifecycle_missing_monitor_window_requires_precheck",
+    "lifecycle_monitor_incident_requires_rollback",
+    "lifecycle_missing_rollback_handle_requires_precheck",
+    "lifecycle_failed_rollback_dry_run_stays_canary_only",
+    "lifecycle_unowned_irreversible_effect_requires_residual_owner",
+    "lifecycle_missing_residual_owner_requires_owner",
+    "lifecycle_deprecation_without_notice_requires_notice",
+    "lifecycle_retirement_without_receipt_requires_receipt",
+    "lifecycle_missing_nonclaim_boundary_blocks_promotion",
+    "complete_replacement_lifecycle_commits_default",
+    "replacement_trace_probe_rejects_authority_widening",
+    "replacement_trace_probe_preserves_no_promotion_boundary",
+    "replacement_identity_sequence_bridge_preserves_identity",
+    "replacement_identity_sequence_bridge_blocks_default_after_failed_monitor",
+    "replacement_identity_sequence_bridge_preserves_no_promotion_boundary",
+    "intent_governed_replacement_bridge_rejects_authority_widening",
+    "intent_governed_replacement_bridge_preserves_no_promotion_boundary",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_route_base,
+        "semantic_level": "P1",
+        "rationale": "The result is a bounded one-step route, rejection, or fixture-field consequence over authored records.",
+    }
+
+for theorem_name in (
+    "replacement_trace_probe_fixture_valid",
+    "replacement_identity_sequence_bridge_fixture_valid",
+    "intent_governed_replacement_bridge_fixture_valid",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_route_base,
+        "semantic_level": "P0",
+        "rationale": "The theorem normalizes one authored summary record and does not itself prove lifecycle reachability or refinement.",
+    }
+
+_replacement_lifecycle_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:clean_replacement_run_satisfies_exact_commit_objective",
+        "lean-theorem:failed_replacement_run_satisfies_exact_recovery_objective",
+        "scripts/validate_capability_replacement_trace_probe.py",
+        "experiments/capability_replacement_trace/results/2026-07-02-local.json",
+    ],
+    "classification_basis": [
+        "the clean and failed replacement traces plus seven rejecting route/sequence controls are independently reconstructed by the replacement trace validator"
+    ],
+}
+
+for theorem_name in (
+    "accepted_replacement_step_is_valid",
+    "accepted_replacement_step_applies_event",
+    "accepted_replacement_step_adds_one_receipt",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_lifecycle_base,
+        "semantic_level": "P1",
+        "rationale": "The theorem exposes accepted-step admissibility, exact transition identity, or one-step receipt accounting for the bounded replacement lifecycle.",
+    }
+
+for theorem_name in (
+    "replacement_initial_state_satisfies_invariant",
+    "clean_replacement_run_reaches_default",
+    "failed_replacement_run_restores_prior",
+    "clean_replacement_run_satisfies_exact_commit_objective",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_lifecycle_base,
+        "semantic_level": "P2",
+        "rationale": "The theorem supplies a closed nonvacuity witness for the exact authored clean or failed replacement lifecycle.",
+    }
+
+for theorem_name in (
+    "apply_replacement_event_preserves_identity",
+    "accepted_replacement_step_preserves_non_authority",
+    "accepted_replacement_step_respects_authority_ceiling",
+    "accepted_replacement_step_preserves_state_invariant",
+    "failed_monitor_cannot_commit_default",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_lifecycle_base,
+        "semantic_level": "P3",
+        "rationale": "The theorem constrains one executable replacement step and is covered by the independently reconstructed accepted or rejecting trace surface.",
+    }
+
+for theorem_name in (
+    "successful_replacement_run_preserves_identity",
+    "successful_replacement_run_preserves_non_authority",
+    "successful_replacement_run_respects_authority_ceiling",
+    "successful_replacement_run_has_valid_trace",
+    "replacement_run_composes",
+    "successful_replacement_run_preserves_state_invariant",
+    "accepted_replacement_step_preserves_failure_containment",
+    "successful_replacement_run_preserves_failure_containment",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_lifecycle_base,
+        "semantic_level": "P4",
+        "rationale": "Structural induction or exact transition analysis proves arbitrary accepted replacement traces preserve identity, authority, non-authority, coherence, failure containment, or compose across batches.",
+    }
+
+for theorem_name in (
+    "accepted_rollback_restores_prior_implementation",
+    "successful_run_from_failed_monitor_cannot_activate_default",
+    "failed_replacement_run_satisfies_exact_recovery_objective",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/Replacement.lean::{theorem_name}"
+    ] = {
+        **_replacement_lifecycle_base,
+        "semantic_level": "P5",
+        "rationale": "The theorem proves a bounded rollback or post-failure recovery property while making no production or effect-complete recovery claim.",
+    }
+
 for theorem_name in (
     "integrity_accepted_step_is_accepted",
     "integrity_accepted_step_applies_event",

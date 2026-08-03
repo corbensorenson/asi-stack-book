@@ -6,7 +6,7 @@
   "scope": "bounded_finite_authority_delegation_effect_replacement_corrigibility_and_intent_execution_semantics",
   "module_count": 5,
   "public_target_count": 13,
-  "theorem_declaration_count": 203,
+  "theorem_declaration_count": 211,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.AuthorityEffectRefinement",
@@ -63,7 +63,7 @@
       "path": "lean/AsiStackProofs/Replacement.lean",
       "disposition": "adequate",
       "public_target_count": 6,
-      "theorem_declaration_count": 52,
+      "theorem_declaration_count": 60,
       "plain_language_proposition": "Finite replacement records route missing qualification, identity, fresh evidence, evaluator separation, regression floors, canary and monitor custody, rollback handles and dry runs, irreversible-effect and residual ownership, deprecation, retirement, non-claim, or approval fields away from default commit; a reachable lifecycle preserves identity, non-authority, and authority ceilings across arbitrary accepted runs, blocks default after monitor failure, restores the prior implementation on rollback, and retains three bounded fixture bridges.",
       "modeled_state": "Commit predicates, seven transaction routes, twelve lifecycle routes, a seven-stage preparation/canary/monitor/default-or-rollback transition model, immutable field/prior/candidate/ceiling identity, authority and receipt accounting, plus trace, identity-sequence, and intent-governed summary fixtures.",
       "assumptions": [
@@ -83,7 +83,7 @@
         "experiments/capability_replacement_trace/results/2026-07-02-local.json",
         "experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json"
       ],
-      "mutation_evidence": "The recompiling trace consumer binds the exact 52-theorem surface, checks two valid transactions, three rejecting controls, four identity-sequence controls, a monitor-triggered rollback, and no-promotion boundary; the transaction harness accepts five and rejects nine fixtures, and the intent-governed bridge checks two valid and six expected-invalid traces.",
+      "mutation_evidence": "The recompiling trace consumer binds the exact 60-theorem surface, checks the coherent state invariant, arbitrary-run failure containment, exact clean and recovery objectives, two valid transactions, three rejecting controls, four identity-sequence controls, a monitor-triggered rollback, and no-promotion boundary; the transaction harness accepts five and rejects nine fixtures, and the intent-governed bridge checks two valid and six expected-invalid traces.",
       "maximum_inference": "Adequate for the declared finite transaction/lifecycle routes, arbitrary-run sequential custody and composition, exact modeled rollback restoration, and three deterministic bridge summaries. It does not establish useful replacement, field or inventory completeness, evaluator or monitor validity, semantic or effect-complete recovery, irreversible-effect reversal, deployed canary behavior, production rollback, safety, transfer, or support movement."
     },
     {

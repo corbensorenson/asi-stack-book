@@ -197,7 +197,7 @@
     "weakening_condition": "The identity-under-replacement thesis weakens if a later replay can change field identity, accept default promotion after monitor failure, lose rollback ownership, widen authority, or restore a different prior artifact while still satisfying the replacement record shape."
   },
   "formal_surface": {
-    "theorem_count": 52,
+    "theorem_count": 60,
     "lean_compile_exit_code": 0,
     "lifecycle_theorem_refs": [
       "accepted_replacement_step_is_valid",
@@ -213,14 +213,25 @@
       "replacement_run_composes",
       "failed_monitor_cannot_commit_default",
       "accepted_rollback_restores_prior_implementation",
+      "accepted_replacement_step_preserves_state_invariant",
+      "successful_replacement_run_preserves_state_invariant",
+      "accepted_replacement_step_preserves_failure_containment",
+      "successful_replacement_run_preserves_failure_containment",
+      "successful_run_from_failed_monitor_cannot_activate_default",
+      "replacement_initial_state_satisfies_invariant",
       "clean_replacement_run_reaches_default",
-      "failed_replacement_run_restores_prior"
+      "failed_replacement_run_restores_prior",
+      "clean_replacement_run_satisfies_exact_commit_objective",
+      "failed_replacement_run_satisfies_exact_recovery_objective"
     ],
     "arbitrary_run_identity": true,
     "arbitrary_run_authority_bound": true,
     "batch_composition": true,
     "failed_monitor_blocks_default": true,
-    "rollback_restores_prior": true
+    "failed_monitor_suffix_contained": true,
+    "state_invariant_preserved": true,
+    "rollback_restores_prior": true,
+    "exact_commit_and_recovery_objectives": true
   },
   "identity_sequence_control_count": 4,
   "identity_sequence_controls": [
