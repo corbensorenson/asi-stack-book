@@ -816,7 +816,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "inner-alignment-mesa-optimization-and-learned-objective-integrity": {
-        "reviewed_sha256": "b780f1ad56abaf2e2995c932de4ffd1146fe583d6e74affcc25cc29c013f2bb7",
+        "reviewed_sha256": "fc5cda2b146be6925d70d287fc6f4e090910bdaa26ae9deb860d6592d1ed4b5c",
         "reviewed_date": "2026-08-02",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -830,7 +830,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-organizations-delegation-and-accountability": {
-        "reviewed_sha256": "40f174f80720b78fd630673248122b88906172ac58e813d39f5aa038da5fd394",
+        "reviewed_sha256": "c823a7200e51ca3cd9d53edf58c78673bb89a2208c92e518594fa54f378b2741",
         "reviewed_date": "2026-08-02",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,

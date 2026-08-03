@@ -32,8 +32,9 @@ accepted `AsiStackProofs.Authority` delegation step. Across arbitrary runs it
 keeps the accountable owner equal to the current delegate, preserves reviewer
 and evidence separation, retains prior owners as residuals, aligns receipts,
 and preserves zero support and external-effect authority. A two-hop witness,
-all three compositions, 50/50 rejected mutations, and one aggregate-summary
-accountability collision are independently checked.
+all three compositions, 50/50 bridge mutations rejected with state
+noninterference, and one aggregate delegation summary accountability collision
+are independently checked.
 
 The models check only authored finite fields. They establish no identity,
 assignment, review, evidence, handoff, intervention, appeal, remedy, or
