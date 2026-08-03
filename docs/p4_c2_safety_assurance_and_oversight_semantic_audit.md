@@ -6,7 +6,7 @@ Status: **terminal adequate** for
 ## Disposition
 
 All four modules are retained as semantically adequate for their exact bounded
-finite scopes. Together they expose 31 public proof targets and 55 Lean theorem
+finite scopes. Together they expose 29 public proof targets and 54 Lean theorem
 declarations. Their independent consumers exercise 16 accepted and 8 rejected
 safety-critical traces, 34 obligation-deletion countermodels, 10 effect-gate
 receipts, 21 reachable lifecycle stages, 144 authored routes, and 168 rejecting
@@ -20,6 +20,11 @@ validity or hazard completeness. `ScalableOversightRefinement` proves protocol
 record and bounded-use routing, not reviewer competence or protocol efficacy.
 `AdversarialEvaluationRefinement` proves observation, discrepancy, quarantine,
 and reevaluation custody, not deception or sandbagging detection.
+
+The two Governance Rights targets formerly routed through
+`SafetyCriticalLifecycle` now resolve to the chapter-owned
+`AsiStackProofs.GovernanceRights` exercise. They are therefore outside this
+cluster denominator; the global manifest denominator remains 330 targets.
 
 ## Exact authority
 

@@ -14,11 +14,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2783 |
+| Theorem declarations classified | 2822 |
 | Direct/projection-style theorem declarations | 432 |
-| Derived/decomposed theorem declarations | 1742 |
-| Unknown or mixed theorem declarations | 609 |
-| Safety-critical theorem declarations | 197 |
+| Derived/decomposed theorem declarations | 1760 |
+| Unknown or mixed theorem declarations | 630 |
+| Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
 | Validation errors | 0 |
@@ -32,7 +32,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 2 | 73 | 3 | 54 | 16 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 1 | 24 | 0 | 16 | 8 | manual review |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 46 | 0 | 25 | 21 | manual review |
 | `lean/AsiStackProofs/SelfImprovement.lean` | unmapped | 0 | 20 | 0 | 20 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 3 | 73 | 3 | 47 | 23 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
@@ -100,7 +100,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 46 | 0 | 25 | 21 | manual review |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 3 | 20 | 0 | 9 | 11 | manual review |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
@@ -157,7 +157,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 68 | 0 | 56 | 12 | manual review |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | safety-cases-and-structured-assurance | 8 | 10 | 6 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SafetyCases.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 8 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | constitutional-alignment-substrate, moral-uncertainty-and-value-conflict | 6 | 21 | 1 | 9 | 11 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ScalableOversight.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | scalable-oversight-and-adversarial-ai-control | 7 | 11 | 0 | 3 | 8 | manual review |
 | `lean/AsiStackProofs/ScientificExperimentReview.lean` | scientific-discovery-and-experimental-governance | 1 | 41 | 14 | 14 | 13 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1111,8 +1111,47 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | `verified_fast_lifecycle_reaches_closed_without_support_or_effect_authority` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `exact_reconstruction_claim_with_mismatched_repair_rejected` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | `failed_verification_with_exactness_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_audit_delivery_records_material_and_appealable_redaction` | derived_or_decomposed | yes | uses have, rcases, rw, simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_fork_binding_preserves_exact_rights_and_adds_obligation` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_fork_review_is_separate_and_records_safety_review` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_adds_exact_receipt` | derived_or_decomposed | yes | uses cases, rw, simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_is_admissible` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_is_exact_advance` | derived_or_decomposed | yes | uses simp, split, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_is_non_authorizing` | derived_or_decomposed | yes | uses cases, have, rcases, simp, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_never_erases_history` | derived_or_decomposed | yes | uses cases, rw, simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_event_preserves_custody` | derived_or_decomposed | yes | uses cases, rw, simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_governance_right_review_separates_roles` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_portable_export_requires_closed_appeal_and_recorded_check` | derived_or_decomposed | yes | uses have, rcases, rw |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_redaction_appeal_is_affected_party_held_and_separately_reviewed` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_redaction_redress_closes_appeal_and_adds_remedy` | derived_or_decomposed | yes | uses have, rcases, rw, simp, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `accepted_replacement_verification_adds_exact_receipt` | derived_or_decomposed | yes | uses have, rcases, rw, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `complete_governance_right_exercise_reaches_exact_closure` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_audit_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `constrained_fork_without_safety_obligations_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_action_authority_request_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_audit_without_material_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_authority_widening_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_captured_appeal_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_captured_fork_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_close_before_replacement_verification_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_closed_exercise_is_terminal` | derived_or_decomposed | yes | uses cases, rcases, rw, simp, split, unfold |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_export_before_redress_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_export_without_portability_check_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_fork_without_obligation_binding_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_fork_without_safety_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_legal_validation_request_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_outsider_appeal_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_redaction_without_appeal_path_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_redaction_without_reason_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_replacement_without_receipts_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_right_bundle_substitution_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_right_exercise_runs_compose` | derived_or_decomposed | yes | uses cases, induction, simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_right_run_never_erases_contestability_history` | derived_or_decomposed | yes | uses cases, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_right_run_preserves_custody_non_authority_and_narrowing` | derived_or_decomposed | yes | uses cases, induction, rcases, simp, subst |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_right_self_review_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_support_promotion_request_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `governance_unsustained_appeal_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `incomplete_governance_right_bundle_is_rejected` | unknown_or_mixed | yes | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `missing_exit_capability_preserves_exit_residual` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_path_routes_to_review` | derived_or_decomposed | yes | uses rw, simp, unfold |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | yes | uses simp |

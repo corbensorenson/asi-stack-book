@@ -503,22 +503,22 @@
     {
       "tag": "lean:governance.rights.operational_invariant",
       "chapter_id": "moral-uncertainty-and-value-conflict",
-      "module": "AsiStackProofs.SafetyCriticalLifecycle",
-      "formal_target": "A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant.",
+      "module": "AsiStackProofs.GovernanceRights",
+      "formal_target": "A nine-event authored governance-right exercise preserves exact case, right-holder, custodian, source/destination system, fork, and eight-field rights-bundle custody across arbitrary accepted runs; separates initial, appeal, and fork review; orders audit, appeal/redress, export, fork binding, replacement verification, and closure; keeps authority non-increasing; assigns no legal validity, support, or external effect; preserves monotone contestability history; composes exactly; and closes terminally.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "P2 replacement target implemented in the shared safety-critical lifecycle state machine with accepted-trace preservation, explicit readiness, rejecting transitions or deletion countermodels, and independent executable refinement. The result is bounded to the encoded model and does not establish normative adequacy, deployed enforcement, empirical safety, reproduction, transfer, or chapter-core support."
+      "rationale": "Implemented in AsiStackProofs.GovernanceRights as a reachable nine-event rights-exercise lifecycle. Arbitrary accepted runs preserve exact case, holder, custodian, source/destination, fork, and eight-field rights-bundle identity; separate initial, appeal, and fork reviewers; keep authority non-increasing; preserve monotone appeal/remedy/adverse/obligation/replacement history; compose exactly; and remain non-authorizing. The independent consumer recompiles the exact surface and reconstructs one nine-event closure across all ten splits. Authored fields do not establish legal validity, legitimate standing, reviewer competence or institutional independence, material audit/redress, export fidelity, fork safety, successor behavior, deployment, support, or safety."
     },
     {
       "tag": "lean:governance.rights.failure_blocks_promotion",
       "chapter_id": "moral-uncertainty-and-value-conflict",
-      "module": "AsiStackProofs.SafetyCriticalLifecycle",
-      "formal_target": "Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit.",
+      "module": "AsiStackProofs.GovernanceRights",
+      "formal_target": "The modeled exercise rejects incomplete rights, self or captured review, missing audit/redaction/appeal/portability/fork/replacement records, rights or destination substitution, premature closure, authority widening, legal-validation/action-authority/support requests, and every post-closure event without changing support state.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "P2 replacement target implemented in the shared safety-critical lifecycle state machine with accepted-trace preservation, explicit readiness, rejecting transitions or deletion countermodels, and independent executable refinement. The result is bounded to the encoded model and does not establish normative adequacy, deployed enforcement, empirical safety, reproduction, transfer, or chapter-core support."
+      "rationale": "Implemented in AsiStackProofs.GovernanceRights as twenty-one independently reconstructed lifecycle controls plus all nine terminal event rejections. The controls cover incomplete rights, role capture, missing audit/redaction/appeal/portability/fork/replacement records, exact rights and destination substitution, premature closure, authority widening, and forbidden legal/action/support requests. Rejection creates no support or effect authority and does not establish real rights, review quality, portability, fork safety, successor preservation, institutional adequacy, deployment, or safety."
     },
     {
       "tag": "lean:governance.rights.theseus_receipt_suite.fixture_bridge",

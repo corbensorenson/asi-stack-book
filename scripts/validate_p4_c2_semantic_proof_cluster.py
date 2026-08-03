@@ -41,7 +41,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("module denominator or order drifted")
     if status_cluster is None or status_cluster.get("state") != "adequate" or status_cluster.get("modules") != EXPECTED_MODULES:
         out.append("machine status does not record the terminal adequate cluster")
-    if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 31:
+    if sum(row.get("public_target_count", 0) for row in rows) != audit.get("public_target_count") or audit.get("public_target_count") != 29:
         out.append("public target denominator drifted")
 
     required = (
@@ -135,7 +135,7 @@ def main() -> None:
     if failures:
         raise SystemExit("P4-C2 semantic proof cluster failed:\n - " + "\n - ".join(failures))
     print(
-        "P4-C2 semantic proof cluster passed: 4 modules, 31 public targets, "
+        "P4-C2 semantic proof cluster passed: 4 modules, 29 public targets, "
         "4 adequate dispositions, 5 executable checks, 9 cluster mutations "
         "rejected, support effect none."
     )

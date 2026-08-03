@@ -64,7 +64,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 21 | 0 | 6 | 4 |
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 27 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
-| `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
+| `lean/AsiStackProofs/GovernanceRights.lean` | 3 | 46 | 0 | 28 | 6 |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | 3 | 20 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/GovernedOperations.lean` | 2 | 13 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | 1 | 13 | 0 | 13 | 2 |
@@ -110,7 +110,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/RoutingRefinement.lean` | 5 | 25 | 0 | 23 | 4 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 68 | 0 | 31 | 12 |
 | `lean/AsiStackProofs/SafetyCaseRefinement.lean` | 8 | 10 | 0 | 9 | 2 |
-| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 8 | 21 | 0 | 20 | 2 |
+| `lean/AsiStackProofs/SafetyCriticalLifecycle.lean` | 6 | 21 | 0 | 20 | 2 |
 | `lean/AsiStackProofs/ScalableOversightRefinement.lean` | 7 | 11 | 0 | 8 | 2 |
 | `lean/AsiStackProofs/ScientificExperimentReview.lean` | 1 | 41 | 0 | 28 | 8 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 19 | 0 | 22 | 5 |
@@ -271,8 +271,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:values.conflict.lifecycle_admission_route` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.contestability_example_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:values.conflict.aggregation_and_dissent_custody` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.ValueConflict` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.SafetyCriticalLifecycle` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.operational_invariant` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governance.rights.failure_blocks_promotion` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `moral-uncertainty-and-value-conflict` | `AsiStackProofs.GovernanceRights` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed-objective-formation-value-learning-and-goal-integrity.admission_boundary` | `governed-objective-formation-value-learning-and-goal-integrity` | `AsiStackProofs.ObjectiveLeaseGovernance` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:institutions-international-coordination-and-public-legitimacy.admission_boundary` | `institutions-international-coordination-and-public-legitimacy` | `AsiStackProofs.InstitutionalLegitimacyReview` | triage ok; module ok; chapter tag ok; limitation ok |

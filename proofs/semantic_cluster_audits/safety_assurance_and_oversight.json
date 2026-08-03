@@ -5,13 +5,13 @@
   "state": "adequate",
   "scope": "bounded_finite_safety_assurance_and_oversight_semantics",
   "module_count": 4,
-  "public_target_count": 31,
+  "public_target_count": 29,
   "module_dispositions": [
     {
       "module": "AsiStackProofs.SafetyCriticalLifecycle",
       "path": "lean/AsiStackProofs/SafetyCriticalLifecycle.lean",
       "disposition": "adequate",
-      "public_target_count": 8,
+      "public_target_count": 6,
       "theorem_declaration_count": 21,
       "plain_language_proposition": "Within a five-domain finite transition system, every accepted event preserves an initially recorded protected predicate and cannot increase numeric authority; an effect commits only after the selected domain's declared Boolean obligations are recorded, and support-promotion routing additionally requires a transition record, non-claim boundary, and durable receipt.",
       "modeled_state": "Five domains, seven phases, twenty-two Boolean evidence requirements, authority and ceiling naturals, ten event families, finite trace execution, five complete effect traces, five missing-obligation countermodels, rollback, revocation, and a bounded promotion route.",

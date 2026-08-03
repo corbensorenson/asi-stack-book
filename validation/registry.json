@@ -5070,10 +5070,23 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
+      "input_artifacts": [
+        "scripts/validate_governance_rights.py",
+        "lean/AsiStackProofs/GovernanceRights.lean",
+        "schemas/governance_right_record.schema.json",
+        "experiments/governance_rights/fixtures/invalid_audit_missing_receipts.json",
+        "experiments/governance_rights/fixtures/invalid_exit_unusable_path.json",
+        "experiments/governance_rights/fixtures/invalid_fork_missing_safety.json",
+        "experiments/governance_rights/fixtures/invalid_redaction_no_appeal.json",
+        "experiments/governance_rights/fixtures/invalid_self_attested_independence.json",
+        "experiments/governance_rights/fixtures/valid_audit_granted.json",
+        "experiments/governance_rights/fixtures/valid_exit_preserved.json",
+        "experiments/governance_rights/fixtures/valid_fork_safety_bounded.json"
+      ],
       "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
       "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
       "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "not_declared",
+      "negative_controls": "validator_owned",
       "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
     },
     {
@@ -14355,11 +14368,11 @@
       "script": "validate_p4_c2_semantic_proof_cluster.py",
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Frozen safety/assurance/oversight cluster of four modules and thirty-one public targets with exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and maximum inference.",
+      "input_contract": "Maintained safety/assurance/oversight cluster of four modules and twenty-nine current public targets after two Governance Rights targets migrated to their chapter-owned model, with exact propositions, modeled state, assumptions, countermodels, consumers, mutation evidence, and maximum inference.",
       "output_contract": "Require four terminal bounded dispositions, execute five independent consumers, preserve target/theorem denominators and chapter limitation surfaces, and reject nine semantic-cluster mutations.",
       "output_assertions": [
         "4 modules",
-        "31 public targets",
+        "29 public targets",
         "4 adequate bounded dispositions",
         "5 consumers pass",
         "9 mutations reject",

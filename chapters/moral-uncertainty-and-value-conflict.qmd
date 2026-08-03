@@ -23,7 +23,7 @@ evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "The consolidated contestability layer preserves value-conflict and governance-right mappings at argument support only; no moral-correctness, legal-rights, institutional-adequacy, reviewer-independence, export-usability, fork-safety, or deployed-governance claim is promoted."
-  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems, a versioned value-conflict decision-lease lifecycle, an integrated profiled-lease review/appeal lifecycle, value-conflict route checks, and governance-right lifecycle route checks remain bounded authored-record checks; stakeholder completeness or legitimate standing, review competence and institutional independence, moral grounding, runtime contestability, actual exit/fork usability, fork-safety review, redaction quality, and SCF replacement behavior remain open."
+  - "Synthetic value-conflict and governance-rights harnesses plus finite-record Lean theorems, a versioned value-conflict decision-lease lifecycle, an integrated profiled-lease review/appeal lifecycle, and a nine-event governance-right exercise lifecycle remain bounded authored-record checks; stakeholder completeness or legitimate standing, review competence and institutional independence, moral grounding, material audit/appeal/redress, runtime contestability, actual export/fork usability, fork-safety truth, redaction quality, and successor behavior remain open."
   - "External comparators for moral-uncertainty RL, contestable AI, Collective Constitutional AI, corrigibility, and off-switch reasoning are used for positioning only; no external experiment, legal process, or deployed governance result is reproduced here."
 ---
 
@@ -35,8 +35,8 @@ and governance-rights owner remains conceptual, with its core claim at `Design
 rationale` and `argument` support. Existing source notes,
 synthetic harnesses, finite-record Lean theorems, a versioned four-stage
 value-conflict decision-lease lifecycle, an integrated affected-party
-review/appeal lifecycle, and bounded value-conflict and
-governance-right routes make the idea
+review/appeal lifecycle, and a reachable audit-to-successor governance-right
+exercise lifecycle make the idea
 more inspectable, but they do not prove moral correctness, legal rights,
 stakeholder standing, institutional adequacy, reviewer independence or
 competence, real export usability, safe fork execution, redaction quality, SCF
@@ -591,8 +591,9 @@ rights harness with three valid and five expected-invalid cases, one synthetic
 care-memory contestability example with seven rejecting mutations, a bounded
 Theseus import covering four governance-right and four constitutional scenarios
 plus seven expected-invalid controls, chapter-local finite Lean route, lease,
-stakeholder-profile, and integrated contestable profiled-lease models, and a
-shared safety-critical lifecycle model with independently implemented trace checkers and downstream
+stakeholder-profile, integrated contestable profiled-lease, and governance-
+right exercise models, and a shared safety-critical lifecycle model with
+independently implemented trace checkers and downstream
 effect-admission consumer. The eight manifest proof
 targets now distinguish retained generic countermodels and the validator-backed
 Theseus import from operational trace preservation, protected-right rejection,
@@ -604,6 +605,13 @@ custody substitutions, and reconstructs a five-event profiled lease through
 independent review, bounded issuance, recorded affected-party appeal, separate
 appeal review, redress, and expiry. It checks all six batch splits, twelve
 contestability controls, and five terminal rejections.
+`AsiStackProofs.GovernanceRights` has 46 declarations. Its consumer preserves
+the record-fixture checks and independently reconstructs a nine-event path from
+review and audit delivery through affected-party redaction appeal, separate
+appeal review, redress, portable-state export, separate fork review, exact fork-
+obligation binding, replacement-receipt verification, and closure. It checks
+all ten batch splits, twenty-one rejecting lifecycle controls, and all nine
+terminal event kinds.
 The shared consumer independently replays five
 accepted and five rejected domain traces, commits five bounded fixture effects,
 denies five effects with residuals, and claims no support promotion; it is not a
@@ -675,7 +683,7 @@ succeeds.
 | Contestability worked example fixture | Check one synthetic care-memory export scenario across value-conflict residual, redacted audit packet, scoped exit path, safety-limited fork boundary, redaction appeal, replacement-preserved receipts, seven expected-invalid mutation controls, and non-claim boundaries. | implemented by `python3 scripts/validate_contestability_worked_example.py`; no moral-correctness, legal-rights, reviewer-independence, export-usability, fork-safety, deployed-governance, or support-state-promotion claim |
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
-| Governance rights lifecycle route envelope | Check that finite governance-right lifecycle records route missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, evidence-transition gaps, and complete contestable transitions to explicit outcomes. | implemented in `AsiStackProofs.GovernanceRights`; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
+| Governance rights exercise lifecycle | Check exact case, holder, custodian, system, fork, and rights-bundle custody through independent review, audit delivery, affected-party redaction appeal, separate appeal review, redress, portable-state export, separate fork review, exact obligation binding, replacement verification, and terminal closure; check non-increasing authority, no legal/support/effect assignment, monotone history, batch composition, and rejecting controls. | implemented by 46 declarations in `AsiStackProofs.GovernanceRights` and `python3 scripts/validate_governance_rights.py`: one nine-event trace, ten splits, twenty-one lifecycle controls, and nine terminal rejections; no legal-rights, legitimate-standing, reviewer-competence, material-audit/redress, export-fidelity, fork-safety, replacement-behavior, deployed-governance, or support-state-promotion claim |
 | Theseus governance-rights receipt suite import | Check a sanitized Project Theseus receipt-suite import for 4/4 governance-right fixtures, 4/4 constitutional-predicate fixtures, governance-right and constitutional-predicate record counts, public-safety boundaries, seven expected-invalid overclaim controls, and non-claims. | implemented by `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`; narrow claim `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import` is `prototype-backed`; no legal-rights, institutional-governance, moral-correctness, reviewer-independence, export-usability, fork-safety, deployed-governance, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | Replacement-preservation check | Check that capability replacement does not drop unresolved conflict residuals or rights receipts. | planned integration path; no deployed SCF replacement run is claimed |
 
@@ -688,8 +696,8 @@ succeeds.
 | `lean:values.conflict.lifecycle_admission_route` | `AsiStackProofs.ValueConflict` | Modeled value-conflict lifecycle admission routes missing conflict records, value axes, stakeholders, stakes, reversibility, authority boundaries, evidence requirements, review routes, high-stakes review, residual uncertainty, dissent preservation, authority narrowing, expiry/revisit records, evidence transitions, and non-claim boundaries to explicit outcomes; a contestable profiled-lease lifecycle separates proposal, independent review, bounded issuance, recorded affected-party appeal, independent appeal review, redress, and expiry while preserving exact profile and dissent custody, non-increasing authority, monotone appeal and adverse history, batch composition, and terminal closure. | implemented |
 | `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
 | `lean:values.conflict.aggregation_and_dissent_custody` | `AsiStackProofs.ValueConflict` | A scalar support count is non-injective over a finite authored stakeholder profile and no count-only decoder recovers every profile, while an accepted modeled bounded-lease receipt preserves the full supplied profile and dissent payload exactly and rejects aggregate-equivalent substitution or missing recorded standing. | implemented |
-| `lean:governance.rights.operational_invariant` | `AsiStackProofs.SafetyCriticalLifecycle` | A governance-rights effect commits only after protected-predicate, audit, appeal, exit/export, fork-safety, fork-obligation, dissent, receipt, and correction obligations are recorded, while accepted traces preserve the shared invariant. | implemented |
-| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.SafetyCriticalLifecycle` | Protected-right removal is rejected by construction and the missing-exit/export countermodel cannot commit. | implemented |
+| `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A nine-event authored governance-right exercise preserves exact case, right-holder, custodian, source/destination system, fork, and eight-field rights-bundle custody across arbitrary accepted runs; separates initial, appeal, and fork review; orders audit, appeal/redress, export, fork binding, replacement verification, and closure; keeps authority non-increasing; assigns no legal validity, support, or external effect; preserves monotone contestability history; composes exactly; and closes terminally. | implemented |
+| `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | The modeled exercise rejects incomplete rights, self or captured review, missing audit/redaction/appeal/portability/fork/replacement records, rights or destination substitution, premature closure, authority widening, legal-validation/action-authority/support requests, and every post-closure event without changing support state. | implemented |
 | `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
 
 The consolidated proof boundary preserves the limitation boundary from both
@@ -714,16 +722,23 @@ lease witnesses and rejects scalar-equivalent profile substitution,
 dissent/count substitution, forged self-review, outsider or unrecorded-standing
 appeal, captured appeal review, authority widening, open-appeal expiry,
 authority/settlement requests, and terminal reuse. The Governance Rights
-module also checks a finite
-lifecycle route for missing governance records, audit material, redaction
-appeal gaps, exit/export gaps, unsafe forks, missing fork obligations,
-protected-right removal, unrecorded dissent, replacement receipt loss, durable
-receipt gaps, evidence-transition requirements, and complete contestable
-transitions. These hooks do not prove moral correctness, automatic value
+module now joins its retained route countermodels and sanitized import bridge
+to a reachable nine-event exercise. Arbitrary accepted runs preserve exact
+case, right-holder, custodian, source/destination system, fork, and eight-field
+rights-bundle identity; separate initial, appeal, and fork reviewers; keep
+authority non-increasing; assign no legal validity, support, or external
+effect; preserve appeal, remedy, adverse, fork-obligation, and replacement-
+receipt history; compose across batches; and close only after audit,
+appeal/redress, export, fork review and obligation binding, and replacement
+verification. Its consumer reconstructs the trace and rejects incomplete
+rights, role capture, missing records, identity substitution, premature
+closure, authority widening, forbidden authority/support claims, and terminal
+reuse. These hooks do not prove moral correctness, automatic value
 classification, stakeholder completeness, legitimate standing or representative
-aggregation, reviewer competence or institutional independence, legal rights, actual
-export usability, safe forks, institutional contestability, real expiry or
-revisit delivery, redaction quality, SCF replacement behavior, or deployed
+aggregation, reviewer competence or institutional independence, legal rights,
+material audit, appeal, or redress, actual export fidelity, safe forks,
+institutional contestability, real expiry or revisit delivery, redaction
+quality, successor behavior, or deployed
 rights enforcement.
 
 ## Source crosswalk
