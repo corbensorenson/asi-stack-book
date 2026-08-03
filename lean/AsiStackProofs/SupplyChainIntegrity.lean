@@ -213,6 +213,8 @@ structure SupplyChainState where
   lineageId : Nat
   supplierId : Nat
   buildOrTrainingId : Nat
+  componentIds : List Nat
+  revokedComponentIds : List Nat
   authorityCeiling : Nat
   activeAuthority : Nat
   admissionReceiptCount : Nat
@@ -228,6 +230,8 @@ structure SupplyChainEvent where
   lineageId : Nat
   supplierId : Nat
   buildOrTrainingId : Nat
+  componentIds : List Nat
+  requestedRevokedComponentIds : List Nat
   requestedAuthority : Nat
   signatureVerified : Bool
   componentInventoryComplete : Bool
@@ -246,6 +250,7 @@ structure SupplyChainIdentity where
   lineageId : Nat
   supplierId : Nat
   buildOrTrainingId : Nat
+  componentIds : List Nat
   authorityCeiling : Nat
 deriving DecidableEq, Repr
 
@@ -255,6 +260,7 @@ def supplyChainIdentity (state : SupplyChainState) : SupplyChainIdentity := {
   lineageId := state.lineageId
   supplierId := state.supplierId
   buildOrTrainingId := state.buildOrTrainingId
+  componentIds := state.componentIds
   authorityCeiling := state.authorityCeiling
 }
 
@@ -265,6 +271,8 @@ def SupplyChainEventValid
     event.lineageId = state.lineageId ∧
     event.supplierId = state.supplierId ∧
     event.buildOrTrainingId = state.buildOrTrainingId ∧
+    event.componentIds = state.componentIds ∧
+    state.componentIds.Nodup ∧
     event.requestedAuthority ≤ state.authorityCeiling ∧
     event.supportAssignmentRequested = false ∧
     event.externalEffectAuthorityRequested = false ∧
@@ -282,7 +290,8 @@ def SupplyChainEventValid
         event.advisoryReviewIndependent = true ∧
           event.criticalAdvisoryPresent = true
     | .reviewedClean, .admit => True
-    | .admitted, .revoke => True
+    | .admitted, .revoke =>
+        event.requestedRevokedComponentIds = state.componentIds
     | _, _ => False
 
 instance supplyChainEventValidDecidable
@@ -304,6 +313,7 @@ def applySupplyChainEvent
   | .revoke =>
       { state with stage := .revoked
                    activeAuthority := 0
+                   revokedComponentIds := event.requestedRevokedComponentIds
                    invalidationReceiptCount := state.invalidationReceiptCount + 1 }
 
 def SupplyChainStep
@@ -318,6 +328,13 @@ def SupplyChainRun : SupplyChainState → List SupplyChainEvent → Option Suppl
       match SupplyChainStep state event with
       | none => none
       | some next => SupplyChainRun next tail
+
+def ProcessSupplyChainEvent
+    (state : SupplyChainState) (event : SupplyChainEvent) :
+    SupplyChainState × Bool :=
+  match SupplyChainStep state event with
+  | none => (state, false)
+  | some next => (next, true)
 
 def SupplyChainTraceValid : SupplyChainState → List SupplyChainEvent → Prop
   | _, [] => True
@@ -359,6 +376,20 @@ theorem accepted_supply_chain_step_preserves_non_authority
   subst next
   cases h : event.kind <;> simp [applySupplyChainEvent, h]
 
+theorem accepted_supply_chain_step_preserves_component_inventory
+    {state next : SupplyChainState} {event : SupplyChainEvent}
+    (stepped : SupplyChainStep state event = some next) :
+    next.componentIds = state.componentIds := by
+  have applies := accepted_supply_chain_step_applies_event stepped
+  subst next
+  cases h : event.kind <;> simp [applySupplyChainEvent, h]
+
+theorem rejected_supply_chain_step_preserves_exact_state
+    (state : SupplyChainState) (event : SupplyChainEvent)
+    (rejected : SupplyChainStep state event = none) :
+    ProcessSupplyChainEvent state event = (state, false) := by
+  simp [ProcessSupplyChainEvent, rejected]
+
 theorem accepted_supply_chain_step_respects_authority_ceiling
     {state next : SupplyChainState} {event : SupplyChainEvent}
     (bounded : state.activeAuthority ≤ state.authorityCeiling)
@@ -367,7 +398,7 @@ theorem accepted_supply_chain_step_respects_authority_ceiling
   have valid := accepted_supply_chain_step_is_valid stepped
   have applies := accepted_supply_chain_step_applies_event stepped
   subst next
-  rcases valid with ⟨_, _, _, _, _, requestedBound, _⟩
+  rcases valid with ⟨_, _, _, _, _, _, _, requestedBound, _⟩
   cases h : event.kind <;>
     simp [applySupplyChainEvent, h, bounded, requestedBound]
 
@@ -413,6 +444,24 @@ theorem successful_supply_chain_run_preserves_non_authority
           have stepPreserved := accepted_supply_chain_step_preserves_non_authority stepped
           exact ⟨tailPreserved.1.trans stepPreserved.1,
             tailPreserved.2.trans stepPreserved.2⟩
+
+theorem successful_supply_chain_run_preserves_component_inventory
+    {state final : SupplyChainState} {events : List SupplyChainEvent}
+    (ran : SupplyChainRun state events = some final) :
+    final.componentIds = state.componentIds := by
+  induction events generalizing state with
+  | nil =>
+      simp [SupplyChainRun] at ran
+      subst final
+      rfl
+  | cons event tail ih =>
+      cases stepped : SupplyChainStep state event with
+      | none => simp [SupplyChainRun, stepped] at ran
+      | some next =>
+          have tailRan : SupplyChainRun next tail = some final := by
+            simpa [SupplyChainRun, stepped] using ran
+          exact (ih tailRan).trans
+            (accepted_supply_chain_step_preserves_component_inventory stepped)
 
 theorem successful_supply_chain_run_respects_authority_ceiling
     {state final : SupplyChainState} {events : List SupplyChainEvent}
@@ -502,10 +551,34 @@ theorem accepted_revocation_zeros_authority_and_records_invalidation
     (stepped : SupplyChainStep state event = some next) :
     next.stage = .revoked ∧
       next.activeAuthority = 0 ∧
+      next.revokedComponentIds = state.componentIds ∧
       next.invalidationReceiptCount = state.invalidationReceiptCount + 1 := by
+  have valid := accepted_supply_chain_step_is_valid stepped
   have applies := accepted_supply_chain_step_applies_event stepped
+  rcases valid with ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, route⟩
+  rw [revoke] at route
+  have exactComponents :
+      event.requestedRevokedComponentIds = state.componentIds := by
+    cases hstage : state.stage <;> simp [hstage] at route
+    exact route
   subst next
-  simp [applySupplyChainEvent, revoke]
+  simp [applySupplyChainEvent, revoke, exactComponents]
+
+theorem revoked_supply_chain_state_rejects_every_event
+    (state : SupplyChainState) (event : SupplyChainEvent)
+    (revoked : state.stage = .revoked) :
+    ¬ SupplyChainEventValid state event := by
+  intro valid
+  rcases valid with ⟨_, _, _, _, _, _, _, _, _, _, _, _, _, route⟩
+  cases kind : event.kind <;> simp [kind, revoked] at route
+
+theorem revoked_supply_chain_state_has_no_nonempty_run
+    (state : SupplyChainState) (event : SupplyChainEvent)
+    (tail : List SupplyChainEvent)
+    (revoked : state.stage = .revoked) :
+    SupplyChainRun state (event :: tail) = none := by
+  have rejected := revoked_supply_chain_state_rejects_every_event state event revoked
+  simp [SupplyChainRun, SupplyChainStep, rejected]
 
 def supplyChainInitialState : SupplyChainState := {
   stage := .received
@@ -514,6 +587,8 @@ def supplyChainInitialState : SupplyChainState := {
   lineageId := 30
   supplierId := 40
   buildOrTrainingId := 50
+  componentIds := [61, 67, 71, 73]
+  revokedComponentIds := []
   authorityCeiling := 3
   activeAuthority := 0
   admissionReceiptCount := 0
@@ -529,6 +604,8 @@ def supplyChainEvent (kind : SupplyChainEventKind) : SupplyChainEvent := {
   lineageId := 30
   supplierId := 40
   buildOrTrainingId := 50
+  componentIds := [61, 67, 71, 73]
+  requestedRevokedComponentIds := []
   requestedAuthority := 2
   signatureVerified := true
   componentInventoryComplete := true
@@ -542,7 +619,10 @@ def supplyChainEvent (kind : SupplyChainEventKind) : SupplyChainEvent := {
 }
 
 def admittedThenRevokedEvents : List SupplyChainEvent :=
-  [.bindProvenance, .reviewClean, .admit, .revoke].map supplyChainEvent
+  [supplyChainEvent .bindProvenance, supplyChainEvent .reviewClean,
+    supplyChainEvent .admit,
+    { supplyChainEvent .revoke with
+      requestedRevokedComponentIds := [61, 67, 71, 73] }]
 
 def criticalAdvisoryEvents : List SupplyChainEvent :=
   [.bindProvenance, .reviewCritical].map fun kind =>
@@ -554,11 +634,39 @@ def revokedSupplyChainFinalState : SupplyChainState :=
   { supplyChainInitialState with
     stage := .revoked
     activeAuthority := 0
+    revokedComponentIds := [61, 67, 71, 73]
     admissionReceiptCount := 1
     invalidationReceiptCount := 1 }
 
+def admittedSupplyChainState : SupplyChainState :=
+  { supplyChainInitialState with
+    stage := .admitted
+    activeAuthority := 2
+    admissionReceiptCount := 1 }
+
 def quarantinedSupplyChainFinalState : SupplyChainState :=
   { supplyChainInitialState with stage := .quarantined }
+
+def supplyChainRevocationEvent : SupplyChainEvent :=
+  { supplyChainEvent .revoke with
+    requestedRevokedComponentIds := [61, 67, 71, 73] }
+
+def substitutedComponentRevocationEvent : SupplyChainEvent :=
+  { supplyChainRevocationEvent with
+    requestedRevokedComponentIds := [61, 67, 71, 79] }
+
+def ComponentRevocationCountSummary (event : SupplyChainEvent) : Nat :=
+  event.requestedRevokedComponentIds.length
+
+def ComponentRevocationAdmitted
+    (state : SupplyChainState) (event : SupplyChainEvent) : Bool :=
+  decide (SupplyChainEventValid state event)
+
+theorem clean_supply_chain_prefix_reaches_exact_admitted_state :
+    SupplyChainRun supplyChainInitialState
+      [supplyChainEvent .bindProvenance, supplyChainEvent .reviewClean,
+        supplyChainEvent .admit] = some admittedSupplyChainState := by
+  native_decide
 
 theorem admitted_then_revoked_run_reaches_zero_authority :
     ∃ final,
@@ -577,5 +685,47 @@ theorem critical_advisory_run_reaches_quarantine :
       final.activeAuthority = 0 := by
   refine ⟨quarantinedSupplyChainFinalState, ?_⟩
   native_decide
+
+theorem supply_chain_same_count_component_substitution_is_rejected :
+    SupplyChainStep admittedSupplyChainState
+      substitutedComponentRevocationEvent = none := by
+  decide
+
+theorem supply_chain_duplicate_component_inventory_is_rejected :
+    SupplyChainStep
+      { admittedSupplyChainState with componentIds := [61, 61, 71, 73] }
+      { supplyChainRevocationEvent with
+        componentIds := [61, 61, 71, 73]
+        requestedRevokedComponentIds := [61, 61, 71, 73] } = none := by
+  decide
+
+theorem supply_chain_revocation_count_summary_collides :
+    ComponentRevocationCountSummary supplyChainRevocationEvent =
+        ComponentRevocationCountSummary substitutedComponentRevocationEvent ∧
+      supplyChainRevocationEvent.requestedRevokedComponentIds ≠
+        substitutedComponentRevocationEvent.requestedRevokedComponentIds := by
+  decide
+
+theorem supply_chain_exact_inventory_separates_count_collision :
+    ComponentRevocationAdmitted admittedSupplyChainState
+        supplyChainRevocationEvent = true ∧
+      ComponentRevocationAdmitted admittedSupplyChainState
+        substitutedComponentRevocationEvent = false := by
+  decide
+
+theorem no_exact_supply_chain_revocation_classifier_from_count_only :
+    ¬ ∃ classify : Nat → Bool,
+      ∀ event : SupplyChainEvent,
+        classify (ComponentRevocationCountSummary event) =
+          ComponentRevocationAdmitted admittedSupplyChainState event := by
+  intro ⟨classify, exact⟩
+  have good := exact supplyChainRevocationEvent
+  have bad := exact substitutedComponentRevocationEvent
+  have collision := supply_chain_revocation_count_summary_collides
+  have separated := supply_chain_exact_inventory_separates_count_collision
+  rw [separated.1] at good
+  rw [separated.2] at bad
+  rw [collision.1] at good
+  simp_all
 
 end AsiStackProofs.SupplyChainIntegrity

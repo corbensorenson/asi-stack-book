@@ -17,14 +17,26 @@ VALID = ROOT / "tests" / "fixtures" / "protocol_records" / "supply_chain_affecte
 MUTATIONS = ROOT / "experiments" / "supply_chain_affected_paths" / "fixtures"
 EXPECTED_SOURCES = {"cca_project", "moecot_manifest_project", "corbens_trainer_project"}
 LEAN = ROOT / "lean" / "AsiStackProofs" / "SupplyChainIntegrity.lean"
+ROUTE_THEOREMS = {
+    "unresolved_critical_advisory_quarantines_requested_artifact",
+    "required_unverified_signature_quarantines_artifact",
+    "complete_requested_artifact_reaches_custody_review",
+    "missing_lineage_requires_repair",
+    "missing_component_inventory_requires_review",
+    "missing_revocation_path_requires_repair",
+    "missing_residual_owner_requires_review",
+}
 LIFECYCLE_THEOREMS = {
     "accepted_supply_chain_step_is_valid",
     "accepted_supply_chain_step_applies_event",
     "apply_supply_chain_event_preserves_identity",
     "accepted_supply_chain_step_preserves_non_authority",
+    "accepted_supply_chain_step_preserves_component_inventory",
+    "rejected_supply_chain_step_preserves_exact_state",
     "accepted_supply_chain_step_respects_authority_ceiling",
     "successful_supply_chain_run_preserves_identity",
     "successful_supply_chain_run_preserves_non_authority",
+    "successful_supply_chain_run_preserves_component_inventory",
     "successful_supply_chain_run_respects_authority_ceiling",
     "successful_supply_chain_run_has_valid_trace",
     "supply_chain_run_composes",
@@ -32,8 +44,16 @@ LIFECYCLE_THEOREMS = {
     "accepted_admission_requires_clean_review",
     "accepted_admission_records_authority_and_receipt",
     "accepted_revocation_zeros_authority_and_records_invalidation",
+    "revoked_supply_chain_state_rejects_every_event",
+    "revoked_supply_chain_state_has_no_nonempty_run",
+    "clean_supply_chain_prefix_reaches_exact_admitted_state",
     "admitted_then_revoked_run_reaches_zero_authority",
     "critical_advisory_run_reaches_quarantine",
+    "supply_chain_same_count_component_substitution_is_rejected",
+    "supply_chain_duplicate_component_inventory_is_rejected",
+    "supply_chain_revocation_count_summary_collides",
+    "supply_chain_exact_inventory_separates_count_collision",
+    "no_exact_supply_chain_revocation_classifier_from_count_only",
 }
 
 
@@ -156,11 +176,12 @@ def apply_mutation(base: dict[str, Any], mutation: dict[str, Any]) -> dict[str, 
 def validate_lean_surface() -> None:
     text = LEAN.read_text(encoding="utf-8")
     theorems = set(re.findall(r"^theorem\s+([A-Za-z0-9_]+)", text, re.MULTILINE))
-    if len(theorems) != 23:
-        raise SystemExit(f"Supply-chain Lean surface must contain exactly 23 theorems, found {len(theorems)}.")
-    missing = sorted(LIFECYCLE_THEOREMS - theorems)
-    if missing:
-        raise SystemExit(f"Supply-chain Lean lifecycle theorem(s) missing: {missing}")
+    expected = ROUTE_THEOREMS | LIFECYCLE_THEOREMS
+    if theorems != expected:
+        raise SystemExit(
+            "Supply-chain Lean theorem surface drifted: "
+            f"missing={sorted(expected - theorems)}, extra={sorted(theorems - expected)}."
+        )
     completed = subprocess.run(
         ["lake", "env", "lean", "AsiStackProofs/SupplyChainIntegrity.lean"],
         cwd=ROOT / "lean",
@@ -178,6 +199,10 @@ def validate_lean_surface() -> None:
 def lifecycle_step(state: dict[str, Any], event: dict[str, Any]) -> dict[str, Any] | None:
     identity_fields = ("artifact_id", "artifact_digest", "lineage_id", "supplier_id", "build_id")
     if any(event[field] != state[field] for field in identity_fields):
+        return None
+    if event["component_ids"] != state["component_ids"]:
+        return None
+    if len(state["component_ids"]) != len(set(state["component_ids"])):
         return None
     if event["requested_authority"] > state["authority_ceiling"]:
         return None
@@ -201,6 +226,8 @@ def lifecycle_step(state: dict[str, Any], event: dict[str, Any]) -> dict[str, An
     elif transition == ("reviewed_clean", "admit"):
         next_stage = "admitted"
     elif transition == ("admitted", "revoke"):
+        if event["requested_revoked_component_ids"] != state["component_ids"]:
+            return None
         next_stage = "revoked"
     else:
         return None
@@ -211,8 +238,16 @@ def lifecycle_step(state: dict[str, Any], event: dict[str, Any]) -> dict[str, An
         next_state["admission_receipts"] += 1
     if event["kind"] == "revoke":
         next_state["active_authority"] = 0
+        next_state["revoked_component_ids"] = deepcopy(event["requested_revoked_component_ids"])
         next_state["invalidation_receipts"] += 1
     return next_state
+
+
+def process_lifecycle_event(
+    state: dict[str, Any], event: dict[str, Any]
+) -> tuple[dict[str, Any], bool]:
+    next_state = lifecycle_step(state, event)
+    return (deepcopy(state), False) if next_state is None else (next_state, True)
 
 
 def validate_lifecycle_consumer() -> int:
@@ -223,6 +258,8 @@ def validate_lifecycle_consumer() -> int:
         "lineage_id": 30,
         "supplier_id": 40,
         "build_id": 50,
+        "component_ids": [61, 67, 71, 73],
+        "revoked_component_ids": [],
         "authority_ceiling": 3,
         "active_authority": 0,
         "admission_receipts": 0,
@@ -239,6 +276,8 @@ def validate_lifecycle_consumer() -> int:
             "lineage_id": 30,
             "supplier_id": 40,
             "build_id": 50,
+            "component_ids": [61, 67, 71, 73],
+            "requested_revoked_component_ids": [],
             "requested_authority": 2,
             "signature_verified": True,
             "inventory_complete": True,
@@ -258,7 +297,7 @@ def validate_lifecycle_consumer() -> int:
         event("bind_provenance"),
         event("review_clean"),
         event("admit"),
-        event("revoke"),
+        event("revoke", requested_revoked_component_ids=[61, 67, 71, 73]),
     ):
         state = lifecycle_step(state, item)
         if state is None:
@@ -268,6 +307,8 @@ def validate_lifecycle_consumer() -> int:
         raise SystemExit("Independent supply-chain lifecycle changed artifact or provenance identity.")
     if state["stage"] != "revoked" or state["active_authority"] != 0:
         raise SystemExit("Independent supply-chain lifecycle did not revoke authority.")
+    if state["revoked_component_ids"] != initial["component_ids"]:
+        raise SystemExit("Independent supply-chain lifecycle lost exact component revocation closure.")
     if state["admission_receipts"] != 1 or state["invalidation_receipts"] != 1:
         raise SystemExit("Independent supply-chain lifecycle lost admission or invalidation receipt accounting.")
     if state["support_count"] != 0 or state["external_effect_authority_count"] != 0:
@@ -289,15 +330,68 @@ def validate_lifecycle_consumer() -> int:
         (reviewed, event("review_critical", critical_advisory=False)),
         (critical, event("admit")),
         (reviewed, event("admit", revocation_path=False)),
+        (reviewed, event("admit", component_ids=[61, 67, 71, 79])),
     ]
-    if any(candidate is not None and lifecycle_step(candidate, item) is not None for candidate, item in controls):
-        raise SystemExit("Independent supply-chain lifecycle accepted a rejecting control.")
-    return len(controls)
+    admitted = lifecycle_step(reviewed, event("admit")) if reviewed else None
+    if admitted is None:
+        raise SystemExit("Independent supply-chain lifecycle did not reach admitted state.")
+    controls.extend([
+        (admitted, event("revoke", requested_revoked_component_ids=[61, 67, 71, 79])),
+        (
+            {**admitted, "component_ids": [61, 61, 71, 73]},
+            event(
+                "revoke",
+                component_ids=[61, 61, 71, 73],
+                requested_revoked_component_ids=[61, 61, 71, 73],
+            ),
+        ),
+    ])
+    for candidate, item in controls:
+        if candidate is None:
+            raise SystemExit("Independent supply-chain rejecting control lacked a source state.")
+        processed, accepted = process_lifecycle_event(candidate, item)
+        if accepted or processed != candidate:
+            raise SystemExit("Independent supply-chain lifecycle accepted or mutated a rejecting control.")
+
+    canonical = initial["component_ids"]
+    from itertools import permutations
+
+    permutations_checked = 0
+    accepted_permutations = 0
+    for ordering in permutations(canonical):
+        permutations_checked += 1
+        candidate = lifecycle_step(
+            admitted,
+            event("revoke", requested_revoked_component_ids=list(ordering)),
+        )
+        if candidate is not None:
+            accepted_permutations += 1
+            if list(ordering) != canonical:
+                raise SystemExit("Independent supply-chain lifecycle accepted reordered component identity.")
+    if permutations_checked != 24 or accepted_permutations != 1:
+        raise SystemExit("Independent supply-chain permutation denominator drifted.")
+
+    valid_revocation = event("revoke", requested_revoked_component_ids=canonical)
+    substituted = event("revoke", requested_revoked_component_ids=[61, 67, 71, 79])
+    if len(valid_revocation["requested_revoked_component_ids"]) != len(substituted["requested_revoked_component_ids"]):
+        raise SystemExit("Independent count-collision witness lost equal cardinality.")
+    if valid_revocation["requested_revoked_component_ids"] == substituted["requested_revoked_component_ids"]:
+        raise SystemExit("Independent count-collision witness lost identity separation.")
+    if lifecycle_step(admitted, valid_revocation) is None or lifecycle_step(admitted, substituted) is not None:
+        raise SystemExit("Exact component identity did not separate the count collision.")
+
+    revoked = lifecycle_step(admitted, valid_revocation)
+    if revoked is None:
+        raise SystemExit("Independent supply-chain lifecycle did not reach revoked state.")
+    event_kinds = ("bind_provenance", "review_clean", "review_critical", "admit", "revoke")
+    if any(lifecycle_step(revoked, event(kind)) is not None for kind in event_kinds):
+        raise SystemExit("Independent revoked supply-chain state accepted a terminal event.")
+    return len(controls), permutations_checked, len(event_kinds)
 
 
 def main() -> None:
     validate_lean_surface()
-    lifecycle_controls = validate_lifecycle_consumer()
+    lifecycle_controls, inventory_permutations, revoked_event_kinds = validate_lifecycle_consumer()
     schema = load(SCHEMA)
     valid = load(VALID)
     errors = validate_value(valid, schema, str(VALID.relative_to(ROOT))) + semantic_errors(valid)
@@ -313,9 +407,11 @@ def main() -> None:
         if not any(mutation["expected_error"] in error for error in found):
             raise SystemExit(f"{path.relative_to(ROOT)} did not produce {mutation['expected_error']!r}: {found}")
     print(
-        "Supply-chain affected-path harness passed: exact 23-theorem Lean surface recompiled; "
+        "Supply-chain affected-path harness passed: exact 34-theorem Lean surface recompiled; "
         f"1 quarantined three-project record, {len(mutations)} fixture mutations, and "
-        f"{lifecycle_controls} lifecycle controls rejected."
+        f"{lifecycle_controls} lifecycle controls rejected with exact state preservation, "
+        f"{inventory_permutations} component-inventory permutations checked, and "
+        f"{revoked_event_kinds} revoked-state event kinds rejected."
     )
 
 

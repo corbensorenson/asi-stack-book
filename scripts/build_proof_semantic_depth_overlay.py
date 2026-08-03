@@ -827,6 +827,57 @@ for theorem_name in (
         "rationale": "The theorem establishes exact canonical descendant-key revocation, terminal erasure, or the impossibility of exact admission from count alone.",
     }
 
+_supply_chain_inventory_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:admitted_then_revoked_run_reaches_zero_authority",
+        "scripts/validate_supply_chain_affected_paths.py",
+        "experiments/supply_chain_affected_paths/results/2026-07-13-local.json",
+    ],
+    "classification_basis": [
+        "the independent affected-path consumer recompiles all 34 declarations, rejects eleven lifecycle controls without state change, checks all twenty-four four-component inventory permutations, and rejects all five event kinds after revocation"
+    ],
+}
+
+for theorem_name in (
+    "clean_supply_chain_prefix_reaches_exact_admitted_state",
+    "supply_chain_revocation_count_summary_collides",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SupplyChainIntegrity.lean::{theorem_name}"] = {
+        **_supply_chain_inventory_base, "semantic_level": "P2",
+        "rationale": "The theorem supplies an exact reachable admitted-state witness or an explicit equal-count component-identity collision.",
+    }
+
+for theorem_name in (
+    "accepted_supply_chain_step_preserves_component_inventory",
+    "supply_chain_same_count_component_substitution_is_rejected",
+    "supply_chain_duplicate_component_inventory_is_rejected",
+    "supply_chain_exact_inventory_separates_count_collision",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SupplyChainIntegrity.lean::{theorem_name}"] = {
+        **_supply_chain_inventory_base, "semantic_level": "P3",
+        "rationale": "The theorem constrains exact component identity at one accepted or rejected lifecycle boundary covered by the independent consumer.",
+    }
+
+for theorem_name in (
+    "rejected_supply_chain_step_preserves_exact_state",
+    "successful_supply_chain_run_preserves_component_inventory",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SupplyChainIntegrity.lean::{theorem_name}"] = {
+        **_supply_chain_inventory_base, "semantic_level": "P4",
+        "rationale": "The theorem proves exact rejection noninterference or arbitrary-run component-inventory preservation for the bounded lifecycle.",
+    }
+
+for theorem_name in (
+    "revoked_supply_chain_state_rejects_every_event",
+    "revoked_supply_chain_state_has_no_nonempty_run",
+    "no_exact_supply_chain_revocation_classifier_from_count_only",
+):
+    CURRENT_SEMANTIC_OVERRIDES[f"lean/AsiStackProofs/SupplyChainIntegrity.lean::{theorem_name}"] = {
+        **_supply_chain_inventory_base, "semantic_level": "P5",
+        "rationale": "The theorem establishes terminal revocation for arbitrary nonempty suffixes or the impossibility of exact component revocation from count alone.",
+    }
+
 _replacement_route_base = {
     "disposition": "retain",
     "witness_refs": [

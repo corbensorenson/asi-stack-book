@@ -172,14 +172,14 @@ EXPECTED_ACTION_IDS.append(
 EXPECTED_LEVELS = {
     "P0": 47,
     "P1": 985,
-    "P2": 332,
-    "P3": 1210,
-    "P4": 264,
-    "P5": 261,
+    "P2": 334,
+    "P3": 1214,
+    "P4": 266,
+    "P5": 264,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 3099,
+    "retain": 3110,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -819,7 +819,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 3099:
+    if summary.get("current_theorem_count") != 3110:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1340,7 +1340,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 3099
+        status.get("theorem_count") != 3110
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

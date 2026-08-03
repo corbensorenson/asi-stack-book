@@ -2552,13 +2552,17 @@ Draft deliverables:
   Signing, and SPDX AI Profile comparators; none demonstrates local inventory,
   provenance, signing, supplier trust, integrity, safety, readiness, authority,
   or deployment.
-- Implemented proof-backed check: 23 declarations retain finite admission routes
+- Implemented proof-backed check: 34 declarations retain seven finite admission routes
   and add a reachable bind, clean-or-critical review, admit-or-quarantine, and
   revoke lifecycle. Arbitrary accepted finite runs preserve exact declared
-  artifact/provenance identity, authority ceilings, non-authority, trace validity,
-  composition, and admission/invalidation receipt accounting; critical review
-  quarantines, quarantine excludes admission, and accepted revocation returns
-  active authority to zero. This is authored transition semantics only, not a
+  artifact/provenance identity, canonical duplicate-free component identity,
+  authority ceilings, non-authority, trace validity, composition, and
+  admission/invalidation receipt accounting; rejected events preserve exact
+  state; critical review quarantines; quarantine excludes admission; and exact
+  component revocation returns active authority to zero and becomes terminal.
+  Duplicate and equal-cardinality substituted inventories reject, and a
+  universal impossibility result shows that component count alone cannot recover
+  exact revocation identity. This is authored transition semantics only, not a
   real advisory, signer, BOM, supplier, artifact, security, or safety result.
 - Implemented Codex test: one public-safe hand-authored three-project record and
   ten rejecting mutations for complete bounded path,
@@ -2566,9 +2570,11 @@ Draft deliverables:
   signer, changed derivative, revocation gap, and missing residual owner, using
   no real artifacts, supplier data, build inputs, models, or credentials. The
   test validates declared graph and record semantics only. The same validator
-  independently recompiles the exact 23-theorem surface, closes clean
-  admit-then-revoke and critical-advisory quarantine paths, and rejects eight
-  lifecycle controls without validating the truth of any modeled event field.
+  independently recompiles the exact 34-theorem surface, closes clean
+  admit-then-revoke and critical-advisory quarantine paths, rejects eleven
+  lifecycle controls with exact state preservation, checks all 24 permutations
+  of the four-component inventory, and rejects all five event kinds after
+  revocation without validating the truth of any modeled event field.
 
 Lean proof targets:
 
