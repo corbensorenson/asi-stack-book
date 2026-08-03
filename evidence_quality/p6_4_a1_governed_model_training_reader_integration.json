@@ -38,14 +38,17 @@
   "formalization": {
     "public_targets": [
       "lean:governed_training.run_admission_invariants",
-      "lean:governed_training.resume_and_handoff_separation"
+      "lean:governed_training.resume_and_handoff_separation",
+      "lean:governed_training.checkpoint_information_boundary"
     ],
-    "theorem_declaration_count": 13,
-    "ceiling": "finite authored record-route semantics only"
+    "theorem_declaration_count": 20,
+    "ceiling": "finite authored record-route and checkpoint-information semantics only"
   },
   "record_contract": {
     "required_state_class_count": 10,
     "semantic_mutation_count": 21,
+    "weight_only_collision_count": 7,
+    "complete_encoding_mutation_count": 9,
     "case_kind": "authored_argument_control_not_empirical_training_result"
   },
   "claim_bearing_empirical_lane": {
@@ -75,12 +78,12 @@
     "No model quality, optimizer superiority, distributed efficiency, exact resume, fault tolerance, safety, support, readiness, release, transfer, SOTA, AGI, or ASI claim follows."
   ],
   "artifact_sha256": {
-    "chapters/governed-model-training-distributed-optimization-and-scaling.qmd": "e38548fefd726c6d910e7de3eee419bcca251252f78b656b65f421c28006c9f5",
+    "chapters/governed-model-training-distributed-optimization-and-scaling.qmd": "df727b6acc753cfd9aff31c8d6dfad66cd4a6a8f7f35fa4176fff2f5237cc0d6",
     "docs/p6_4_a1_governed_model_training_adjudication.md": "a57555a142be20ffb43a2c38bed0bd7570f01c2112c7cdd099bb0fcb20ab74ff",
     "schemas/training_run_transaction.schema.json": "7a86ab741c6ccfefd74c98d07d1a8f985a088adf3becf0bce56ee006ba90b6ee",
     "tests/fixtures/protocol_records/training_run_transaction.valid.json": "1b3d66f48ca40e75aa4236c0215400d12f68919cbad7047b893aae1f7a775c0e",
-    "scripts/validate_training_run_transaction.py": "1b72a33499562da144a863e7b96e4a35abe48e346e1c09082a4b327b073f1962",
-    "lean/AsiStackProofs/GovernedModelTraining.lean": "335789f2aa58f0f3d16be5f80ec642a83ab2a01518cb0b2e28ff985424e0646f",
+    "scripts/validate_training_run_transaction.py": "6186749baedc67c868dc9a84a677c7a0d69a04b3e523c996990f39a262b5e71b",
+    "lean/AsiStackProofs/GovernedModelTraining.lean": "493a2063c1608a6ddff503522dc20f6bd5a956f831f2dc0ed327bc4efb8e0e00",
     "experiments/governed_model_training_argument_exit/preregistration.json": "bf2ee7ad6704eac826fe5e96955612ac14c5f8ac239c365c19873551dd8151d9"
   },
   "source_note_sha256": {

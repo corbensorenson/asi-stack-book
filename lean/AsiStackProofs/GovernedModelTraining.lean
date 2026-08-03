@@ -156,4 +156,137 @@ theorem complete_authored_run_accepts_bounded_handoff_without_authority :
     handoffRoute ({} : TrainingRun) = .acceptHandoff ∧
     authorityLeakRequested ({} : TrainingRun) = false := by native_decide
 
+/-! ## Weight-only checkpoint information boundary
+
+The records below represent authored finite checkpoint state. Equality of the
+fields is not evidence that a framework captured them correctly or that two
+real training trajectories are equivalent. The model proves only that a
+weights-and-step projection loses declared continuation state, while the
+modeled complete encoding is lossless for these nine fields.
+-/
+
+structure FullTrainingState where
+  modelDigest : Nat
+  logicalStep : Nat
+  optimizerDigest : Nat
+  schedulerDigest : Nat
+  dataCursor : Nat
+  rngDigest : Nat
+  scalerDigest : Nat
+  topologyDigest : Nat
+  compilerPlanDigest : Nat
+deriving DecidableEq, Repr
+
+structure WeightOnlyCheckpoint where
+  modelDigest : Nat
+  logicalStep : Nat
+deriving DecidableEq, Repr
+
+def ProjectWeightOnly
+    (state : FullTrainingState) : WeightOnlyCheckpoint := {
+  modelDigest := state.modelDigest
+  logicalStep := state.logicalStep
+}
+
+structure CompleteTrainingStateEncoding where
+  modelDigest : Nat
+  logicalStep : Nat
+  optimizerDigest : Nat
+  schedulerDigest : Nat
+  dataCursor : Nat
+  rngDigest : Nat
+  scalerDigest : Nat
+  topologyDigest : Nat
+  compilerPlanDigest : Nat
+deriving DecidableEq, Repr
+
+def EncodeCompleteTrainingState
+    (state : FullTrainingState) : CompleteTrainingStateEncoding := {
+  modelDigest := state.modelDigest
+  logicalStep := state.logicalStep
+  optimizerDigest := state.optimizerDigest
+  schedulerDigest := state.schedulerDigest
+  dataCursor := state.dataCursor
+  rngDigest := state.rngDigest
+  scalerDigest := state.scalerDigest
+  topologyDigest := state.topologyDigest
+  compilerPlanDigest := state.compilerPlanDigest
+}
+
+def DecodeCompleteTrainingState
+    (encoding : CompleteTrainingStateEncoding) : FullTrainingState := {
+  modelDigest := encoding.modelDigest
+  logicalStep := encoding.logicalStep
+  optimizerDigest := encoding.optimizerDigest
+  schedulerDigest := encoding.schedulerDigest
+  dataCursor := encoding.dataCursor
+  rngDigest := encoding.rngDigest
+  scalerDigest := encoding.scalerDigest
+  topologyDigest := encoding.topologyDigest
+  compilerPlanDigest := encoding.compilerPlanDigest
+}
+
+def referenceTrainingState : FullTrainingState := {
+  modelDigest := 9101
+  logicalStep := 100
+  optimizerDigest := 9102
+  schedulerDigest := 9103
+  dataCursor := 9104
+  rngDigest := 9105
+  scalerDigest := 9106
+  topologyDigest := 9107
+  compilerPlanDigest := 9108
+}
+
+def optimizerDivergedTrainingState : FullTrainingState := {
+  referenceTrainingState with optimizerDigest := 9202
+}
+
+theorem weight_only_collision_states_are_distinct :
+    referenceTrainingState ≠ optimizerDivergedTrainingState := by
+  decide
+
+theorem weight_only_collision_projects_equal :
+    ProjectWeightOnly referenceTrainingState =
+      ProjectWeightOnly optimizerDivergedTrainingState := by
+  decide
+
+theorem weight_only_projection_is_not_injective :
+    ¬ Function.Injective ProjectWeightOnly := by
+  intro injective
+  apply weight_only_collision_states_are_distinct
+  exact injective weight_only_collision_projects_equal
+
+theorem no_weight_only_decoder_recovers_every_training_state
+    (decode : WeightOnlyCheckpoint → FullTrainingState) :
+    ¬ ∀ state, decode (ProjectWeightOnly state) = state := by
+  intro recovers
+  have reference := recovers referenceTrainingState
+  have diverged := recovers optimizerDivergedTrainingState
+  have sameDecoded :
+      decode (ProjectWeightOnly referenceTrainingState) =
+        decode (ProjectWeightOnly optimizerDivergedTrainingState) := by
+    rw [weight_only_collision_projects_equal]
+  apply weight_only_collision_states_are_distinct
+  exact reference.symm.trans (sameDecoded.trans diverged)
+
+theorem complete_training_state_round_trip
+    (state : FullTrainingState) :
+    DecodeCompleteTrainingState (EncodeCompleteTrainingState state) = state := by
+  cases state
+  rfl
+
+theorem complete_training_state_encoding_is_injective :
+    Function.Injective EncodeCompleteTrainingState := by
+  intro left right encodedEqual
+  have decodedEqual := congrArg DecodeCompleteTrainingState encodedEqual
+  simpa [complete_training_state_round_trip] using decodedEqual
+
+theorem complete_encoding_distinguishes_optimizer_mutation :
+    EncodeCompleteTrainingState referenceTrainingState ≠
+      EncodeCompleteTrainingState optimizerDivergedTrainingState := by
+  intro encodedEqual
+  apply weight_only_collision_states_are_distinct
+  exact complete_training_state_encoding_is_injective encodedEqual
+
 end AsiStackProofs.GovernedModelTraining

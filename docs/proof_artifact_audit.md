@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 327 |
-| Manifest status counts | {"implemented": 327} |
-| Triage class counts | {"formal-invariant": 327} |
+| Proof targets audited | 328 |
+| Manifest status counts | {"implemented": 328} |
+| Triage class counts | {"formal-invariant": 328} |
 | Lean modules referenced | 96 |
 | Chapters with proof targets | 84 |
 | Validation errors | 0 |
@@ -65,7 +65,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FailureRecoveryRefinement.lean` | 1 | 27 | 0 | 15 | 4 |
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | 5 | 17 | 0 | 12 | 3 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 1 | 7 | 0 | 11 | 3 |
-| `lean/AsiStackProofs/GovernedModelTraining.lean` | 2 | 13 | 0 | 7 | 1 |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | 3 | 20 | 0 | 12 | 4 |
 | `lean/AsiStackProofs/GovernedOperations.lean` | 2 | 13 | 0 | 7 | 2 |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | 1 | 13 | 0 | 13 | 2 |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | 2 | 32 | 0 | 17 | 5 |
@@ -162,7 +162,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `failure-modes-of-ungoverned-intelligence` | 5 | 5 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
-| `governed-model-training-distributed-optimization-and-scaling` | 2 | 2 | 0 | 0 |
+| `governed-model-training-distributed-optimization-and-scaling` | 3 | 3 | 0 | 0 |
 | `governed-objective-formation-value-learning-and-goal-integrity` | 1 | 1 | 0 | 0 |
 | `governed-operations-incident-command-and-graceful-degradation` | 3 | 3 | 0 | 0 |
 | `governed-world-models-and-reality-grounding` | 2 | 2 | 0 | 0 |
@@ -412,6 +412,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:relational-dimension-compilation-and-polyadic-cognition.admission_boundary` | `relational-dimension-compilation-and-polyadic-cognition` | `AsiStackProofs.RelationalDimensionCompiler` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:governed_training.checkpoint_information_boundary` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.LearningTheoryForecastReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

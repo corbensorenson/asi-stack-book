@@ -53,8 +53,8 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Twenty-two primary or official records cover the distributed run lifecycle and optimizer landscape; the passage-reviewed BeastBrain family adds author-lineage pressure for governed idle-time replay and candidate updates. All cited results remain source-reported or conceptual. |
-| Test state | One authored transaction fixture, a JSON Schema, an independent semantic validator, and 21 rejecting mutations are implemented. The natural five-arm campaign is prospectively specified and unexecuted. |
-| Formal state | Two public targets are implemented in `AsiStackProofs.GovernedModelTraining` through thirteen theorem declarations. Their ceiling is finite record-route semantics. |
+| Test state | One authored transaction fixture, a JSON Schema, and an independent semantic validator check 21 transaction mutations, seven weight-only omitted-field collisions, and nine complete-encoding mutations. The natural five-arm campaign is prospectively specified and unexecuted. |
+| Formal state | Three public targets are implemented in `AsiStackProofs.GovernedModelTraining` through 20 theorem declarations. Their ceiling is finite record-route and checkpoint-information semantics. |
 
 ## Drafting guardrail
 
@@ -912,8 +912,8 @@ across seeds and timings. Otherwise the disposition is blocked or invalid, not
 
 | Test | Purpose | Status |
 |---|---|---|
-| Training-run transaction contract | Validate identity, topology/batch arithmetic, ten-class state closure, denominator, checkpoint family, qualification separation, sources, non-authorities, and 21 mutations. | implemented; authored record only |
-| Lean run-handoff semantics | Require exact declared identity, complete checkpoint, resume accounting, selection separation, and bounded handoff; reject eight concrete failures. | implemented; finite model only |
+| Training-run transaction contract | Validate identity, topology/batch arithmetic, ten-class state closure, denominator, checkpoint family, qualification separation, sources, non-authorities, 21 transaction mutations, seven weight-only omitted-field collisions, and nine complete-encoding mutations. | implemented; authored record only |
+| Lean run-handoff and checkpoint-information semantics | Require exact declared identity, complete checkpoint, resume accounting, selection separation, and bounded handoff; prove that the modeled weights-and-step projection is non-injective and admits no universal decoder while the modeled complete encoding round-trips and is injective. | implemented through 20 declarations; finite model only |
 | Natural distributed fault campaign | Compare five competent matched arms across 13 injected fault families, three or more seeds, multiple timings, hidden qualification, and joint costs. | prospectively specified; not run |
 | Independent replay | Reconstruct data order, topology plan, checkpoint state, selected candidate, and reported metrics from retained artifacts. | planned after a valid campaign |
 | Cross-substrate transfer | Repeat on at least one non-Transformer mutable-state architecture. | planned; dependent on prior evidence |
@@ -926,8 +926,14 @@ across seeds and timings. Otherwise the disposition is blocked or invalid, not
 |---|---|---|---|
 | `lean:governed_training.run_admission_invariants` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request. | implemented |
 | `lean:governed_training.resume_and_handoff_separation` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification. | implemented |
+| `lean:governed_training.checkpoint_information_boundary` | `AsiStackProofs.GovernedModelTraining` | A weights-and-step projection is non-injective over the modeled nine-field training state and no weight-only decoder recovers every state, while the complete encoding round-trips and is injective. | implemented |
 
-These finite-record theorems do not prove real training, distributed execution,
+The information-boundary target proves a structural fact that does not depend on
+training quality: two distinct modeled continuation states can carry the same
+weights and logical step, so no decoder from only those two fields can recover
+every modeled state. The complete nine-field encoding is lossless only for the
+fields the model declares. These finite-record theorems do not prove real
+training, framework-state completeness, distributed execution,
 resume equivalence, quality, efficiency, fault tolerance, inventory
 completeness, support, or release.
 

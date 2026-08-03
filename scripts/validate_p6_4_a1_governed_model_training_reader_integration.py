@@ -89,10 +89,10 @@ def errors(data: dict) -> list[str]:
             out.append(f"local implementation source audit missing: {source_id}")
 
     proofs = [row for row in data["proofs"]["records"] if row["chapter_id"] == CHAPTER_ID]
-    if len(proofs) != 2 or any(row.get("status") != "implemented" or row.get("module") != "AsiStackProofs.GovernedModelTraining" for row in proofs):
+    if len(proofs) != 3 or any(row.get("status") != "implemented" or row.get("module") != "AsiStackProofs.GovernedModelTraining" for row in proofs):
         out.append("A1 proof-target packet drifted")
     theorem_count = len(re.findall(r"^theorem\s+", (ROOT / "lean/AsiStackProofs/GovernedModelTraining.lean").read_text(), re.MULTILINE))
-    if theorem_count != 13 or audit.get("formalization", {}).get("theorem_declaration_count") != 13:
+    if theorem_count != 20 or audit.get("formalization", {}).get("theorem_declaration_count") != 20:
         out.append("A1 theorem denominator drifted")
 
     protocol = data["protocol"]
@@ -202,7 +202,7 @@ def main() -> None:
     transaction = subprocess.run(["python3", "scripts/validate_training_run_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if transaction.returncode:
         raise SystemExit(transaction.stdout + transaction.stderr)
-    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 2 targets/13 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations plus 9 integration mutations, 84-chapter reader reconciliation with the later relational-dimension owner interposed, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
+    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 3 targets/20 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations, 7 weight-only collisions, 9 complete-encoding mutations, and 9 integration mutations, 84-chapter reader reconciliation with the later relational-dimension owner interposed, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
 
 
 if __name__ == "__main__":

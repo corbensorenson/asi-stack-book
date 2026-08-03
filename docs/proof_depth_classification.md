@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 327 |
+| Proof targets in manifest | 328 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2681 |
+| Theorem declarations classified | 2688 |
 | Direct/projection-style theorem declarations | 429 |
-| Derived/decomposed theorem declarations | 1680 |
-| Unknown or mixed theorem declarations | 572 |
+| Derived/decomposed theorem declarations | 1685 |
+| Unknown or mixed theorem declarations | 574 |
 | Safety-critical theorem declarations | 145 |
 | Safety-critical direct/projection declarations | 5 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -101,7 +101,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGenerationRefinement.lean` | fast-generation-architectures | 5 | 17 | 12 | 3 | 2 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | unmapped | 0 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 1 | 7 | 0 | 7 | 0 | derived/decomposed by classifier |
-| `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 2 | 13 | 0 | 4 | 9 | manual review |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | governed-model-training-distributed-optimization-and-scaling | 3 | 20 | 0 | 9 | 11 | manual review |
 | `lean/AsiStackProofs/GovernedOperations.lean` | governed-operations-incident-command-and-graceful-degradation | 2 | 13 | 0 | 3 | 10 | manual review |
 | `lean/AsiStackProofs/GovernedOperationsRefinement.lean` | governed-operations-incident-command-and-graceful-degradation | 1 | 13 | 0 | 6 | 7 | manual review |
 | `lean/AsiStackProofs/GovernedWorldModels.lean` | governed-world-models-and-reality-grounding | 2 | 32 | 0 | 16 | 16 | manual review |
@@ -1072,14 +1072,21 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_requires_resume_accounting` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `accepted_handoff_separates_selection_and_qualification` | derived_or_decomposed | no | uses split, unfold |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `complete_authored_run_accepts_bounded_handoff_without_authority` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `complete_encoding_distinguishes_optimizer_mutation` | derived_or_decomposed | no | uses apply |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `complete_training_state_encoding_is_injective` | derived_or_decomposed | no | uses have, left, right |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `complete_training_state_round_trip` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `data_cursor_drift_rejects_resume` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `hidden_failed_run_rejects_selection` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `missing_state_class_requests_inventory` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `no_weight_only_decoder_recovers_every_training_state` | derived_or_decomposed | no | uses apply, have, rw |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `opened_qualification_requests_new_qualification` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `rng_drift_rejects_resume` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `support_laundering_requests_qualification` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `torn_checkpoint_rejects_handoff` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/GovernedModelTraining.lean` | `undurable_async_checkpoint_rejects_handoff` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `weight_only_collision_projects_equal` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `weight_only_collision_states_are_distinct` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedModelTraining.lean` | `weight_only_projection_is_not_injective` | derived_or_decomposed | no | uses apply |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `accepted_degradation_preserves_or_narrows_all_authority_dimensions` | derived_or_decomposed | no | uses cases |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `accepted_recovery_requires_complete_declared_state_effect_and_expiry` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/GovernedOperations.lean` | `active_emergency_lease_blocks_recovery` | unknown_or_mixed | no | no recognized depth pattern |

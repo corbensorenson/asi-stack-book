@@ -30,6 +30,11 @@ def canonical_body(value: dict[str, Any]) -> str:
     return json.dumps(value, indent=2, ensure_ascii=False) + "\n"
 
 
+def normalize_unit_orders(value: dict[str, Any]) -> None:
+    for order, unit in enumerate(value.get("units", []), start=1):
+        unit["order"] = order
+
+
 def authority_errors(value: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     if value.get("schema_version") != "asi_stack.validation_registry.v1":
@@ -53,6 +58,7 @@ def main() -> None:
     errors = authority_errors(value)
     if errors:
         raise SystemExit("Validation registry authority check failed:\n - " + "\n - ".join(errors))
+    normalize_unit_orders(value)
     body = canonical_body(value)
     if args.check:
         if OUTPUT.read_text(encoding="utf-8") != body:

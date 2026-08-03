@@ -6,12 +6,25 @@ from __future__ import annotations
 import copy
 import json
 from pathlib import Path
+import re
+import subprocess
 
 from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "schemas/training_run_transaction.schema.json"
 FIXTURE = ROOT / "tests/fixtures/protocol_records/training_run_transaction.valid.json"
+LEAN_ROOT = ROOT / "lean"
+LEAN_MODEL = LEAN_ROOT / "AsiStackProofs" / "GovernedModelTraining.lean"
+REQUIRED_INFORMATION_BOUNDARY_THEOREMS = {
+    "weight_only_collision_states_are_distinct",
+    "weight_only_collision_projects_equal",
+    "weight_only_projection_is_not_injective",
+    "no_weight_only_decoder_recovers_every_training_state",
+    "complete_training_state_round_trip",
+    "complete_training_state_encoding_is_injective",
+    "complete_encoding_distinguishes_optimizer_mutation",
+}
 EXPECTED_SOURCES = {
     "ext_llama3_herd_2024",
     "ext_megatron_distributed_training_2021",
@@ -88,10 +101,79 @@ def validate(record: dict, schema: dict) -> list[str]:
     return errors
 
 
+def checkpoint_information_boundary_errors() -> list[str]:
+    errors: list[str] = []
+    theorem_names = set(
+        re.findall(
+            r"(?m)^theorem\s+([A-Za-z_][A-Za-z0-9_']*)",
+            LEAN_MODEL.read_text(encoding="utf-8"),
+        )
+    )
+    missing = sorted(REQUIRED_INFORMATION_BOUNDARY_THEOREMS - theorem_names)
+    if missing:
+        errors.append(f"Lean checkpoint information-boundary surface is missing: {missing}")
+    completed = subprocess.run(
+        ["lake", "env", "lean", "AsiStackProofs/GovernedModelTraining.lean"],
+        cwd=LEAN_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(
+            "Lean checkpoint information-boundary model did not compile: "
+            + (completed.stdout + completed.stderr).strip()
+        )
+
+    fields = (
+        "model_digest",
+        "logical_step",
+        "optimizer_digest",
+        "scheduler_digest",
+        "data_cursor",
+        "rng_digest",
+        "scaler_digest",
+        "topology_digest",
+        "compiler_plan_digest",
+    )
+    reference = {field: 9101 + index for index, field in enumerate(fields)}
+
+    def weight_only(state: dict[str, int]) -> tuple[int, int]:
+        return state["model_digest"], state["logical_step"]
+
+    def complete(state: dict[str, int]) -> tuple[int, ...]:
+        return tuple(state[field] for field in fields)
+
+    omitted = fields[2:]
+    collision_count = 0
+    for index, field in enumerate(omitted, start=1):
+        changed = dict(reference)
+        changed[field] += 1000 + index
+        if changed == reference or weight_only(changed) != weight_only(reference):
+            errors.append(f"weight-only collision reconstruction failed for {field}")
+        else:
+            collision_count += 1
+        if complete(changed) == complete(reference):
+            errors.append(f"complete encoding missed omitted-field mutation {field}")
+
+    full_mutation_rejections = 0
+    for index, field in enumerate(fields, start=1):
+        changed = dict(reference)
+        changed[field] += 2000 + index
+        if complete(changed) == complete(reference):
+            errors.append(f"complete encoding accepted mutation {field}")
+        else:
+            full_mutation_rejections += 1
+    if collision_count != 7 or full_mutation_rejections != 9:
+        errors.append("checkpoint information-boundary denominators drifted")
+    return errors
+
+
 def main() -> None:
     schema = load(SCHEMA)
     record = load(FIXTURE)
     baseline = validate(record, schema)
+    baseline.extend(checkpoint_information_boundary_errors())
     if baseline:
         raise SystemExit("Baseline training-run transaction failed:\n- " + "\n- ".join(baseline))
 
@@ -133,7 +215,7 @@ def main() -> None:
     if missing_inventory or missing_notes:
         raise SystemExit(f"Source packet incomplete: inventory={missing_inventory}, notes={missing_notes}")
 
-    print("Training-run transaction passed: complete ten-class checkpoint closure, topology/batch reconciliation, full run denominator, validation-only checkpoint-family selection, qualification separation, seven-source role packet, eight non-authorities, and 21 rejecting mutations; no training, quality, support, or release claim.")
+    print("Training-run transaction passed: complete ten-class checkpoint closure, topology/batch reconciliation, full run denominator, validation-only checkpoint-family selection, qualification separation, seven-source role packet, eight non-authorities, 21 transaction mutations, seven weight-only collisions, and nine full-encoding mutation rejections; no training, resume-equivalence, quality, support, or release claim.")
 
 
 if __name__ == "__main__":

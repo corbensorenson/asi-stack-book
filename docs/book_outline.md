@@ -5026,8 +5026,11 @@ Draft deliverables:
   resource, custody, benchmark, and readiness owners.
 - Ten-class authored Training Run Transaction schema and fixture, independent
   topology/batch/denominator/selection validator, and 21 rejecting mutations.
-- Finite Lean model with thirteen theorem declarations and two public targets;
-  record-route semantics only.
+- Finite Lean model with 20 theorem declarations and three public targets:
+  record-route semantics plus a checkpoint-information boundary. The independent
+  consumer recompiles the module, rejects 21 transaction mutations, reconstructs
+  seven omitted-field collisions under a weights-and-step projection, and
+  rejects mutations to all nine fields of the modeled complete encoding.
 - Prospectively frozen five-arm natural campaign across thirteen fault families,
   at least three seeds, multiple timings, hidden independent qualification,
   complete run retention, and joint quality/integrity/resource/operator cost.
@@ -5042,9 +5045,12 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:governed_training.run_admission_invariants` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires exact declared identity, topology/numerical identity, complete committed checkpoint state, complete failure denominator, and no support or release request. | implemented |
 | `lean:governed_training.resume_and_handoff_separation` | `AsiStackProofs.GovernedModelTraining` | An accepted finite handoff requires accounted resume state, retained checkpoint and failure families, validation-only selection, and unopened independent qualification. | implemented |
+| `lean:governed_training.checkpoint_information_boundary` | `AsiStackProofs.GovernedModelTraining` | A weights-and-step projection is non-injective over the modeled nine-field training state and no weight-only decoder recovers every state, while the complete encoding round-trips and is injective. | implemented |
 
-The formal model and authored transaction do not train a model, execute a
-distributed run, establish complete state, prove resume equivalence, reproduce
+The formal model establishes that the thin modeled projection loses information;
+it does not establish that the nine-field encoding is complete for a real
+framework. The formal model and authored transaction do not train a model,
+execute a distributed run, prove resume equivalence, reproduce
 source results, or support any model-quality, efficiency, fault-tolerance,
 support, readiness, release, transfer, SOTA, AGI, or ASI claim.
 
@@ -6214,7 +6220,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 327 proof targets, 130 Lean modules, 2681 theorem declarations, 1680 derived/decomposed, 429 direct/projection, 572 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 328 proof targets, 130 Lean modules, 2688 theorem declarations, 1685 derived/decomposed, 429 direct/projection, 574 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
