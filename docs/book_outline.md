@@ -6255,7 +6255,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2950 theorem declarations, 1845 derived/decomposed, 437 direct/projection, 668 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 2964 theorem declarations, 1854 derived/decomposed, 437 direct/projection, 673 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6404,8 +6404,11 @@ Exact current minimum: one benchmark-ratchet schema and valid fixture; one
 metric-provenance schema with one valid blocked six-project-lineage record and
 ten rejecting mutations; a synthetic anti-Goodhart harness with two valid and
 five invalid records; one persisted executable fixture result; three proof
-targets; and three BenchmarkRatchets declarations proving input-general finite
-decision consequences. Executable fixture totals are not copied into Lean. No
+targets; and an exact 29-declaration `BenchmarkRatchets` surface with an
+independent lifecycle consumer. The consumer checks six clean transitions,
+seven trace splits, 19 reachable states through 114 transitions, 12 quarantine
+suffixes, and 15 lifecycle plus 11 semantic mutations. Executable fixture totals
+are not copied into Lean. No
 natural benchmark, hidden
 holdout, contamination audit,
 empirical baseline matrix, trained model or policy result, independent
@@ -6426,9 +6429,11 @@ heterogeneously. Narrow, null, proxy, refuted, contaminated, retired, and
 `blocked_after_full_attempt` outcomes are valid; scores and inventory growth
 are non-terminal.
 
-Formal audit: the six declarations comprise three derived finite decision cases
-for readiness, floor conversion, and contamination, plus three fixed fixture-
-normalization assertions for the two-valid/five-invalid bridge. They do not
+Formal audit: the 29 declarations comprise three retained finite decision cases
+plus lifecycle, arbitrary-run custody/coherence, exact receipt accounting and
+composition, reachability, quarantine-suffix persistence, Boolean
+correspondence, and aggregate-information-loss results. The former fixed
+fixture-normalization assertions remain retired. These declarations do not
 prove construct validity, target
 capacity, metric causality, benchmark adequacy, contamination resistance,
 hidden-holdout integrity, capability, policy quality, safety, unlearning,
@@ -6438,9 +6443,9 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | Every accepted finite ratchet-lifecycle step preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields, adds exactly one receipt, and composes across event batches; clean evidence can reach only a non-authorizing independent-review candidate. | implemented |
-| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | The finite ratchet lifecycle quarantines suspected contamination, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, and makes closed dispositions absorbing. | implemented |
-| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 15-declaration Lean surface, executes clean, saturated, and contaminated lifecycle witnesses, checks all seven clean-trace splits, and rejects 15 lifecycle mutations; executable totals remain separate from the quantified Lean semantics. | implemented |
+| `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | Every arbitrary finite ratchet run preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect custody plus stage/outcome coherence; every accepted trace accounts for exactly one receipt per event and composes across batches; clean evidence reaches only a non-authorizing independent-review candidate. | implemented |
+| `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | The finite ratchet lifecycle quarantines suspected contamination, preserves quarantine across arbitrary finite suffixes, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, makes closure absorbing, and proves that an aggregate pass count cannot exactly classify modeled promotion admissibility. | implemented |
+| `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 29-declaration Lean surface, executes clean, saturated, and contaminated witnesses, checks all seven clean-trace splits, explores 19 reachable states through 114 transitions, checks 12 quarantine suffixes, and rejects 15 lifecycle plus 11 semantic mutations; executable totals remain separate from quantified Lean semantics. | implemented |
 
 ### White-Box Evidence, Interpretability, and Activation Governance
 

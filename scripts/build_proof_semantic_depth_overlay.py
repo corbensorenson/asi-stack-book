@@ -916,6 +916,100 @@ for theorem_name in (
         "rationale": "The theorem proves a bounded rollback or post-failure recovery property while making no production or effect-complete recovery claim.",
     }
 
+_benchmark_ratchet_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean-theorem:clean_trace_reaches_closed_independent_review_candidate",
+        "lean-theorem:saturated_trace_reaches_closed_regression_floor",
+        "lean-theorem:contaminated_trace_quarantines_before_transfer",
+        "lean-theorem:aggregate_pass_count_cannot_identify_promotion_admissibility",
+        "scripts/validate_benchmark_fixture_bridge.py",
+        "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
+    ],
+    "classification_basis": [
+        "the exact 29-declaration module is independently recompiled and reconstructed over 19 bounded reachable states, 114 transitions, 12 quarantine suffixes, 11 semantic mutations, 15 lifecycle mutations, and one aggregate-score collision class"
+    ],
+}
+
+for theorem_name in (
+    "accepted_readiness_promotion_requires_transfer_negative_and_regression_records",
+    "accepted_saturated_floor_requires_regression_records",
+    "contaminated_review_cannot_promote_readiness",
+    "ratchet_rejected_event_is_noninterfering",
+    "ratchet_step_preserves_identity_and_authority",
+    "ratchet_step_preserves_custody",
+    "ratchet_custody_transitive",
+    "ratchet_accepted_step_adds_exactly_one_receipt",
+    "contaminated_decision_cannot_recommend_promotion",
+    "saturated_decision_routes_to_regression_floor",
+    "missing_transfer_check_rejected_noninterferingly",
+    "missing_preserved_evidence_rejects_disposition",
+    "ratchet_decision_accepted_bool_iff",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/BenchmarkRatchets.lean::{theorem_name}"
+    ] = {
+        **_benchmark_ratchet_base,
+        "semantic_level": "P1",
+        "rationale": "The result is an exact one-step route, custody, receipt, rejection, or Boolean/Prop correspondence over authored benchmark-review fields.",
+    }
+
+for theorem_name in (
+    "clean_trace_reaches_closed_independent_review_candidate",
+    "saturated_trace_reaches_closed_regression_floor",
+    "contaminated_trace_quarantines_before_transfer",
+    "clean_promotion_trace_is_accepted",
+    "saturated_promotion_trace_is_accepted",
+    "contaminated_quarantine_trace_is_accepted",
+    "aggregate_pass_count_cannot_identify_promotion_admissibility",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/BenchmarkRatchets.lean::{theorem_name}"
+    ] = {
+        **_benchmark_ratchet_base,
+        "semantic_level": "P2",
+        "rationale": "The theorem supplies a closed nonvacuity or information-loss witness for the clean, saturated, contaminated, or same-score benchmark-review case.",
+    }
+
+for theorem_name in (
+    "ratchet_step_preserves_stage_coherence",
+    "quarantine_containment_survives_one_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/BenchmarkRatchets.lean::{theorem_name}"
+    ] = {
+        **_benchmark_ratchet_base,
+        "semantic_level": "P3",
+        "rationale": "The theorem constrains one executable lifecycle step and is exercised across the independently enumerated transition surface.",
+    }
+
+for theorem_name in (
+    "run_ratchet_lifecycle_preserves_custody",
+    "run_ratchet_lifecycle_preserves_stage_coherence",
+    "accepted_ratchet_trace_accounts_for_every_event",
+    "run_ratchet_lifecycle_append",
+    "no_exact_aggregate_pass_count_promotion_classifier",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/BenchmarkRatchets.lean::{theorem_name}"
+    ] = {
+        **_benchmark_ratchet_base,
+        "semantic_level": "P4",
+        "rationale": "Structural induction, composition, or the explicit score collision proves arbitrary finite-run custody/coherence/accounting or bounded anti-Goodhart information-loss semantics.",
+    }
+
+for theorem_name in (
+    "closed_ratchet_is_absorbing",
+    "quarantine_containment_survives_arbitrary_suffix",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/BenchmarkRatchets.lean::{theorem_name}"
+    ] = {
+        **_benchmark_ratchet_base,
+        "semantic_level": "P5",
+        "rationale": "The theorem proves bounded terminal-state or quarantine persistence across an arbitrary finite event suffix without claiming deployed containment.",
+    }
+
 for theorem_name in (
     "integrity_accepted_step_is_accepted",
     "integrity_accepted_step_applies_event",

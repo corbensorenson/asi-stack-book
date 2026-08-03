@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 3892,
+    "candidate_count": 3895,
     "review_state_counts": {
       "duplicate_of_atom": 1860,
       "editorial_or_question": 58,
       "historical_or_source_report": 322,
       "material_atom": 3,
-      "nonmaterial_explanation": 1649
+      "nonmaterial_explanation": 1652
     }
   },
   "candidates": [
@@ -60896,9 +60896,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.cefd136cce59",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:760",
+      "sentence": "The Lean surface proves arbitrary-run custody and stage coherence,",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.226a564d4b77",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:762",
+      "sentence": "and that aggregate pass counts cannot exactly classify modeled promotion",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as the aggregate-information-loss result already owned by the formal target; it creates no independent promoted atom.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.8b0a7b3b1d16",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:765",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:769",
       "sentence": "transfer, unlearning result, chapter-core transition, or SOTA result.",
       "cues": [
         "transfer"
@@ -60917,7 +60955,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.7fb7b271f07c",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:771",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:775",
       "sentence": "Success would never move a claim by itself; it would open a promotion review that compares baselines, residuals, negative results, holdouts, transfer checks, mutation checks, public-calibration limits, and the exact claim being considered.",
       "cues": [
         "transfer"
@@ -60936,7 +60974,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c4f70fe63bb",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:777",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:781",
       "sentence": "Anti-Goodhart controls for contamination, hidden-transfer failure, benchmark-answer exposure, proxy drift, metric gaming, and over-optimization for speed or presentation.",
       "cues": [
         "transfer"
@@ -60955,7 +60993,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.53bd0a94c3eb",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:782",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:786",
       "sentence": "The benchmark operating system remains a target architecture until ratchet records, contamination reviews, transfer checks, regression-preservation tests, and accepted evidence transitions show that benchmark movement changed the permitted claim boundary.",
       "cues": [
         "show",
@@ -60975,7 +61013,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.98a4d00d5118",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:787",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:791",
       "sentence": "temporal, hidden, paraphrase, mutation, transfer, contamination, privacy, and",
       "cues": [
         "transfer"
@@ -60994,7 +61032,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.5f6dea3c5d93",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:801",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:805",
       "sentence": "organizations reproduce the result; and transfer covers tasks, models,",
       "cues": [
         "transfer"
@@ -61013,7 +61051,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.9db3b61ea7f0",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:806",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:810",
       "sentence": "Until the required lanes pass and an exact",
       "cues": [
         "required"
@@ -61032,7 +61070,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.a62c2e5d3bed",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:807",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:811",
       "sentence": "transition is accepted, the core remains `argument`; score increases, green",
       "cues": [
         "increases"
@@ -61051,7 +61089,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.34757cadfbeb",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:814",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:818",
       "sentence": "records prevents successor bias, but neither record by itself establishes the",
       "cues": [
         "establishes",
@@ -61071,7 +61109,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.5ff6aee52261",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:820",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:824",
       "sentence": "The benchmark must also target the right object.",
       "cues": [
         "must"
@@ -61090,7 +61128,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.cf3dbc214498",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:822",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:826",
       "sentence": "coordinate recovery can improve while route selection or downstream task",
       "cues": [
         "improve"
@@ -61109,7 +61147,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.6756d6895c4d",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:831",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:835",
       "sentence": "are partitioned by semantic object and graph lineage to prevent structural",
       "cues": [
         "prevent"
@@ -61128,7 +61166,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.6ccd43ab8a15",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:832",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:836",
       "sentence": "A passing deterministic fallback cannot mask a failed learned path,",
       "cues": [
         "cannot"
@@ -61147,7 +61185,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.1eccdf9963f4",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:833",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:837",
       "sentence": "and a stable optimization trace cannot substitute for held-out improvement.",
       "cues": [
         "cannot"
@@ -61164,10 +61202,10 @@
       "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
     },
     {
-      "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.13b628aa640e",
+      "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.654f8fcc208b",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:860",
-      "sentence": "Missing transfer or preserved evidence rejects without state change, suspected contamination quarantines, saturation routes to a regression floor, and a closed disposition is absorbing.",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:864",
+      "sentence": "Missing transfer or preserved evidence rejects without state change, suspected contamination remains quarantined across arbitrary suffixes, saturation routes to a regression floor, and a closed disposition is absorbing.",
       "cues": [
         "transfer"
       ],
@@ -61183,9 +61221,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c77d020e489",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:864",
+      "sentence": "A same-pass-count witness with opposite admissibility proves that no classifier using only the modeled aggregate pass count can recover the exact decision.",
+      "cues": [
+        "proves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as the explicit finite aggregate-classifier counterexample already owned by the formal target; it creates no independent promoted atom.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.7b2711e60508",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:860",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:864",
       "sentence": "These formal targets do not prove benchmark validity, transfer quality, contamination detection, regression-suite quality, anti-Goodhart effectiveness, policy quality, steward release safety, or empirical capability gains.",
       "cues": [
         "prove",
@@ -61205,7 +61262,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.d49b9ced5bca",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:867",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:872",
       "sentence": "quality, safety, unlearning, deployment, reproduction, or transfer.",
       "cues": [
         "transfer"
@@ -61224,7 +61281,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.6dafd6541eae",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:868",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:873",
       "sentence": "future formal work must constrain real lifecycle and inheritance semantics,",
       "cues": [
         "must"
@@ -61243,7 +61300,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.29bc21c6802b",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:899",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:904",
       "sentence": "Those failures prevent a semantic or model conclusion even though exact-object and byte-count submetrics were informative.",
       "cues": [
         "prevent"
@@ -61262,7 +61319,7 @@
     {
       "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.2df74bafcda7",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:954",
+      "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:959",
       "sentence": "The durable rule is that benchmarks should improve memory, not erase it.",
       "cues": [
         "improve",

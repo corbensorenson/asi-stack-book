@@ -2524,31 +2524,31 @@
       "tag": "lean:benchmarks.ratchet.operational_invariant",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "Every accepted finite ratchet-lifecycle step preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect fields, adds exactly one receipt, and composes across event batches; clean evidence can reach only a non-authorizing independent-review candidate.",
+      "formal_target": "Every arbitrary finite ratchet run preserves instrument, dataset, harness, claim, authority, evidence-policy, support, and effect custody plus stage/outcome coherence; every accepted trace accounts for exactly one receipt per event and composes across batches; clean evidence reaches only a non-authorizing independent-review candidate.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as a versioned registered-to-closed lifecycle with arbitrary-step identity and zero-authority preservation, exact accepted-event receipt accounting, batch composition, and a bounded clean witness. The outcome is only a recommendation; benchmark validity, capability, support, and release remain outside the model."
+      "rationale": "Implemented as a versioned registered-to-closed lifecycle with arbitrary-run custody and stage/outcome coherence, exact accepted-trace receipt accounting, batch composition, and clean, saturated, and contaminated witnesses. The outcome is only a recommendation; benchmark validity, capability, support, and release remain outside the model."
     },
     {
       "tag": "lean:benchmarks.ratchet.failure_blocks_promotion",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "The finite ratchet lifecycle quarantines suspected contamination, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, and makes closed dispositions absorbing.",
+      "formal_target": "The finite ratchet lifecycle quarantines suspected contamination, preserves quarantine across arbitrary finite suffixes, routes saturated clean instruments to regression-floor status, rejects missing transfer or preserved-evidence records without state change, makes closure absorbing, and proves that an aggregate pass count cannot exactly classify modeled promotion admissibility.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented as quantified finite lifecycle routes for contamination quarantine, saturation-to-floor disposition, missing-evidence rejection noninterference, and absorbing closure. Authored detection and evidence fields remain assumptions."
+      "rationale": "Implemented as quantified finite lifecycle routes for contamination quarantine and suffix persistence, saturation-to-floor disposition, missing-evidence rejection noninterference, absorbing closure, and a same-score/opposite-admissibility collision ruling out an exact pass-count classifier. Authored detection, evidence, and construct fields remain assumptions."
     },
     {
       "tag": "lean:benchmarks.ratchet.fixture_bridge",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "module": "AsiStackProofs.BenchmarkRatchets",
-      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 15-declaration Lean surface, executes clean, saturated, and contaminated lifecycle witnesses, checks all seven clean-trace splits, and rejects 15 lifecycle mutations; executable totals remain separate from the quantified Lean semantics.",
+      "formal_target": "An independent benchmark anti-Goodhart consumer computes two valid fixtures and five rejected controls, recompiles the exact 29-declaration Lean surface, executes clean, saturated, and contaminated witnesses, checks all seven clean-trace splits, explores 19 reachable states through 114 transitions, checks 12 quarantine suffixes, and rejects 15 lifecycle plus 11 semantic mutations; executable totals remain separate from quantified Lean semantics.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "The consumer keeps executable fixture outcomes separate from Lean semantics while independently reconstructing the lifecycle, exact split composition, and rejection noninterference. No fixture total, benchmark result, or support movement is imported as a theorem premise."
+      "rationale": "The consumer keeps executable fixture outcomes separate from Lean semantics while independently reconstructing the lifecycle, exact split composition, arbitrary-run custody/coherence obligations, quarantine persistence, rejecting state mutations, and aggregate-score collision. No fixture total, benchmark result, or support movement is imported as a theorem premise."
     },
     {
       "tag": "lean:white_box.evidence_never_grants_authority",

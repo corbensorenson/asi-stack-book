@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 2950 |
+| Theorem declarations classified | 2964 |
 | Direct/projection-style theorem declarations | 437 |
-| Derived/decomposed theorem declarations | 1845 |
-| Unknown or mixed theorem declarations | 668 |
+| Derived/decomposed theorem declarations | 1854 |
+| Unknown or mixed theorem declarations | 673 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -63,7 +63,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ArtifactStewardAgents.lean` | artifact-steward-agents-and-living-project-governance | 7 | 37 | 0 | 18 | 19 | manual review |
 | `lean/AsiStackProofs/Authority.lean` | unmapped | 0 | 59 | 2 | 45 | 12 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | system-boundaries-and-authority | 4 | 31 | 1 | 20 | 10 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 15 | 0 | 12 | 3 | manual review |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 29 | 0 | 21 | 8 | manual review |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CapabilityThresholdRefinement.lean` | capability-thresholds-and-deployment-commitments | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CapabilityThresholds.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
@@ -520,20 +520,34 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_preserves_revoked_grant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `successful_run_preserves_state_invariant` | derived_or_decomposed | no | uses cases, have, induction, simp, subst |
 | `lean/AsiStackProofs/AuthorityEffectRefinement.lean` | `two_use_trace_reaches_two_observations_and_exact_rollback` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_ratchet_trace_accounts_for_every_event` | derived_or_decomposed | no | uses have, induction, omega, simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_readiness_promotion_requires_transfer_negative_and_regression_records` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `accepted_saturated_floor_requires_regression_records` | derived_or_decomposed | no | uses rw, unfold |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `aggregate_pass_count_cannot_identify_promotion_admissibility` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `clean_promotion_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `clean_trace_reaches_closed_independent_review_candidate` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `closed_ratchet_is_absorbing` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_decision_cannot_recommend_promotion` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_quarantine_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_review_cannot_promote_readiness` | derived_or_decomposed | no | uses rw, simp, unfold |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `contaminated_trace_quarantines_before_transfer` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `missing_preserved_evidence_rejects_disposition` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `missing_transfer_check_rejected_noninterferingly` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `no_exact_aggregate_pass_count_promotion_classifier` | derived_or_decomposed | no | uses have, rw |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `quarantine_containment_survives_arbitrary_suffix` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `quarantine_containment_survives_one_step` | derived_or_decomposed | no | uses cases, rcases, simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_accepted_step_adds_exactly_one_receipt` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_custody_transitive` | derived_or_decomposed | no | uses left, rcases, right, simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_decision_accepted_bool_iff` | derived_or_decomposed | no | uses cases, constructor, have, simp |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses cases, split |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_step_preserves_custody` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_step_preserves_identity_and_authority` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `ratchet_step_preserves_stage_coherence` | derived_or_decomposed | no | uses cases, split |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `run_ratchet_lifecycle_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `run_ratchet_lifecycle_preserves_custody` | derived_or_decomposed | no | uses induction, simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `run_ratchet_lifecycle_preserves_stage_coherence` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_decision_routes_to_regression_floor` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_promotion_trace_is_accepted` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | `saturated_trace_reaches_closed_regression_floor` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `accepted_new_source_assignment_to_nonexistent_chapter_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |

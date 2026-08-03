@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from itertools import product
 import json
 import re
 import subprocess
@@ -49,7 +50,13 @@ REQUIRED_THEOREMS = [
 LIFECYCLE_THEOREMS = {
     "ratchet_rejected_event_is_noninterfering",
     "ratchet_step_preserves_identity_and_authority",
+    "ratchet_step_preserves_custody",
+    "ratchet_custody_transitive",
+    "run_ratchet_lifecycle_preserves_custody",
+    "ratchet_step_preserves_stage_coherence",
+    "run_ratchet_lifecycle_preserves_stage_coherence",
     "ratchet_accepted_step_adds_exactly_one_receipt",
+    "accepted_ratchet_trace_accounts_for_every_event",
     "run_ratchet_lifecycle_append",
     "contaminated_decision_cannot_recommend_promotion",
     "saturated_decision_routes_to_regression_floor",
@@ -59,6 +66,14 @@ LIFECYCLE_THEOREMS = {
     "saturated_trace_reaches_closed_regression_floor",
     "contaminated_trace_quarantines_before_transfer",
     "closed_ratchet_is_absorbing",
+    "quarantine_containment_survives_one_step",
+    "quarantine_containment_survives_arbitrary_suffix",
+    "clean_promotion_trace_is_accepted",
+    "saturated_promotion_trace_is_accepted",
+    "contaminated_quarantine_trace_is_accepted",
+    "ratchet_decision_accepted_bool_iff",
+    "aggregate_pass_count_cannot_identify_promotion_admissibility",
+    "no_exact_aggregate_pass_count_promotion_classifier",
 }
 PROTECTED_FIELDS = (
     "instrument_digest",
@@ -82,6 +97,7 @@ CLEAN_TRACE = (
     "decide",
     "close",
 )
+ALL_EVENTS = CLEAN_TRACE
 RETIRED_FIXTURE_THEOREMS = [
     "benchmark_antigoodhart_fixture_bridge_valid",
     "benchmark_antigoodhart_fixture_bridge_has_expected_controls",
@@ -224,7 +240,9 @@ def validate_fixture_semantics() -> dict[str, Any]:
     }
 
 
-def build_expected_result(summary: dict[str, Any]) -> dict[str, Any]:
+def build_expected_result(
+    summary: dict[str, Any], semantic_depth: dict[str, Any]
+) -> dict[str, Any]:
     return {
         "schema_version": "asi_stack.benchmark_antigoodhart_fixture_bridge.v0",
         "result_id": "2026-07-02-benchmark-antigoodhart-fixture-bridge",
@@ -234,6 +252,7 @@ def build_expected_result(summary: dict[str, Any]) -> dict[str, Any]:
         "result_kind": "synthetic_cross_record_fixture_bridge",
         "proof_bridge_type": "independent executable fixture with separate quantified Lean decision consequences",
         **summary,
+        "semantic_depth_checks": semantic_depth,
         "lean_fixture_alignment": {
             "module": "AsiStackProofs.BenchmarkRatchets",
             "proof_tag": PROOF_TAG,
@@ -313,9 +332,9 @@ def validate_lean_fixture(errors: list[str]) -> None:
     missing_lifecycle = sorted(LIFECYCLE_THEOREMS - theorem_names)
     if missing_lifecycle:
         errors.append(f"{rel(LEAN_FIXTURE)} missing lifecycle theorems {missing_lifecycle!r}.")
-    if len(theorem_names) != 15:
+    if len(theorem_names) != 29:
         errors.append(
-            f"{rel(LEAN_FIXTURE)} must contain exactly 15 theorem declarations, "
+            f"{rel(LEAN_FIXTURE)} must contain exactly 29 theorem declarations, "
             f"found {len(theorem_names)}."
         )
     completed = subprocess.run(
@@ -403,6 +422,155 @@ def run_lifecycle(state: dict[str, Any], events: tuple[str, ...]) -> dict[str, A
     for event in events:
         _, current = lifecycle_step(current, event)
     return current
+
+
+def stage_coherent(state: dict[str, Any]) -> bool:
+    pending = {
+        "registered",
+        "baseline_locked",
+        "evaluation_recorded",
+        "integrity_reviewed",
+        "transfer_reviewed",
+    }
+    if state["stage"] in pending:
+        return state["outcome"] == "none"
+    if state["stage"] in {"dispositioned", "closed"}:
+        return state["outcome"] != "none"
+    return False
+
+
+def quarantine_contained(state: dict[str, Any]) -> bool:
+    return (
+        state["stage"] in {"dispositioned", "closed"}
+        and state["outcome"] == "quarantine"
+    )
+
+
+def semantic_state_errors(
+    origin: dict[str, Any], current: dict[str, Any]
+) -> list[str]:
+    errors: list[str] = []
+    if not stage_coherent(current):
+        errors.append("stage/outcome incoherent")
+    for field in PROTECTED_FIELDS:
+        if current[field] != origin[field]:
+            errors.append(f"custody changed: {field}")
+    return errors
+
+
+def aggregate_pass_count(review: dict[str, bool]) -> int:
+    return sum(
+        (
+            review["benchmark_saturated"],
+            not review["contamination_suspected"],
+            review["transfer_or_mutation_check_present"],
+            review["regression_records_preserved"],
+            review["negative_results_preserved"],
+        )
+    )
+
+
+def promotion_accepted(review: dict[str, bool]) -> bool:
+    return (
+        review["regression_records_preserved"]
+        and review["transfer_or_mutation_check_present"]
+        and review["negative_results_preserved"]
+        and not review["contamination_suspected"]
+    )
+
+
+def validate_semantic_depth(errors: list[str]) -> dict[str, Any]:
+    roots = {
+        "clean": reference_lifecycle_state(),
+        "saturated": {
+            **reference_lifecycle_state(),
+            "benchmark_saturated": True,
+        },
+        "contaminated": {
+            **reference_lifecycle_state(),
+            "contamination_suspected": True,
+        },
+    }
+    reachable_state_count = 0
+    transition_check_count = 0
+    quarantine_suffix_check_count = 0
+    for root_name, root in roots.items():
+        seen = {tuple(sorted(root.items()))}
+        frontier = [root]
+        for _ in range(7):
+            next_frontier: dict[tuple[tuple[str, Any], ...], dict[str, Any]] = {}
+            for state in frontier:
+                for event in ALL_EVENTS:
+                    route, next_state = lifecycle_step(state, event)
+                    transition_check_count += 1
+                    for defect in semantic_state_errors(root, next_state):
+                        errors.append(f"{root_name}/{event}: {defect}")
+                    if route == "accepted":
+                        if next_state["receipt_count"] != state["receipt_count"] + 1:
+                            errors.append(f"{root_name}/{event}: accepted receipt drift")
+                    elif next_state != state:
+                        errors.append(f"{root_name}/{event}: rejected transition interfered")
+                    if quarantine_contained(state):
+                        quarantine_suffix_check_count += 1
+                        if not quarantine_contained(next_state):
+                            errors.append(f"{root_name}/{event}: quarantine escaped")
+                    key = tuple(sorted(next_state.items()))
+                    if key not in seen:
+                        seen.add(key)
+                        next_frontier[key] = next_state
+            frontier = list(next_frontier.values())
+        reachable_state_count += len(seen)
+
+    semantic_mutations = [
+        {"stage": "registered", "outcome": "independent_review_candidate"},
+        {"stage": "closed", "outcome": "none"},
+        {"instrument_digest": 9991},
+        {"dataset_version": 9992},
+        {"harness_version": 9993},
+        {"claim_digest": 9994},
+        {"authority_ceiling": 2},
+        {"transfer_or_mutation_check_present": False},
+        {"negative_results_preserved": False},
+        {"support_assignments": 1},
+        {"external_effects": 1},
+    ]
+    semantic_mutations_rejected = 0
+    for mutation in semantic_mutations:
+        candidate = {**roots["clean"], **mutation}
+        if semantic_state_errors(roots["clean"], candidate):
+            semantic_mutations_rejected += 1
+        else:
+            errors.append(f"semantic mutation accepted: {mutation}")
+
+    review_fields = (
+        "benchmark_saturated",
+        "contamination_suspected",
+        "transfer_or_mutation_check_present",
+        "regression_records_preserved",
+        "negative_results_preserved",
+    )
+    buckets: dict[int, set[bool]] = {}
+    for values in product((False, True), repeat=len(review_fields)):
+        review = dict(zip(review_fields, values, strict=True))
+        buckets.setdefault(aggregate_pass_count(review), set()).add(
+            promotion_accepted(review)
+        )
+    collision_scores = sorted(score for score, decisions in buckets.items() if len(decisions) > 1)
+    if collision_scores != [4]:
+        errors.append(f"aggregate promotion collision scores drifted: {collision_scores}")
+
+    return {
+        "lean_theorem_count": 29,
+        "exploration_depth": 7,
+        "root_state_count": len(roots),
+        "reachable_state_count": reachable_state_count,
+        "transition_check_count": transition_check_count,
+        "quarantine_suffix_check_count": quarantine_suffix_check_count,
+        "semantic_mutations_rejected": semantic_mutations_rejected,
+        "aggregate_review_count": 32,
+        "aggregate_collision_scores": collision_scores,
+        "exact_aggregate_classifier_exists": False,
+    }
 
 
 def validate_lifecycle(errors: list[str]) -> tuple[int, int, int]:
@@ -555,9 +723,10 @@ def main() -> None:
     parser.add_argument("--write-result", action="store_true", help="Rewrite the tracked bridge result JSON.")
     args = parser.parse_args()
 
-    summary = validate_fixture_semantics()
-    expected = build_expected_result(summary)
     errors: list[str] = []
+    summary = validate_fixture_semantics()
+    semantic_depth = validate_semantic_depth(errors)
+    expected = build_expected_result(summary, semantic_depth)
     validate_result(expected, args.write_result, errors)
     validate_lean_fixture(errors)
     accepted_count, split_count, rejected_count = validate_lifecycle(errors)
@@ -568,10 +737,15 @@ def main() -> None:
         "Benchmark fixture bridge validation passed: "
         f"{summary['valid_fixture_count']} valid fixture(s), "
         f"{summary['expected_invalid_fixture_count']} expected-invalid fixture(s), "
-        f"15 Lean declarations, {accepted_count} accepted clean transitions, "
+        f"29 Lean declarations, {accepted_count} accepted clean transitions, "
         f"{split_count}/{split_count} trace splits, saturated-floor and "
         f"contamination-quarantine witnesses, and {rejected_count}/15 rejecting "
-        "lifecycle mutations; executable fixture and finite decision boundary aligned."
+        f"lifecycle mutations; {semantic_depth['reachable_state_count']} reachable "
+        f"states, {semantic_depth['transition_check_count']} transition checks, "
+        f"{semantic_depth['quarantine_suffix_check_count']} quarantine suffix checks, "
+        f"{semantic_depth['semantic_mutations_rejected']} semantic mutations, and "
+        "one aggregate-score collision class checked; executable fixture and finite "
+        "decision boundary aligned."
     )
 
 

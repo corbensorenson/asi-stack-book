@@ -35,6 +35,20 @@
     "saturated_promotion_rejected": true,
     "release_without_approval_rejected": true
   },
+  "semantic_depth_checks": {
+    "lean_theorem_count": 29,
+    "exploration_depth": 7,
+    "root_state_count": 3,
+    "reachable_state_count": 19,
+    "transition_check_count": 114,
+    "quarantine_suffix_check_count": 12,
+    "semantic_mutations_rejected": 11,
+    "aggregate_review_count": 32,
+    "aggregate_collision_scores": [
+      4
+    ],
+    "exact_aggregate_classifier_exists": false
+  },
   "lean_fixture_alignment": {
     "module": "AsiStackProofs.BenchmarkRatchets",
     "proof_tag": "lean:benchmarks.ratchet.fixture_bridge",

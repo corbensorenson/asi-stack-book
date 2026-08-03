@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 112,
+    "prose_candidates_adjudicated": 115,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
@@ -13,11 +13,11 @@
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Named constructs, tasks, datasets, metrics, harnesses, models, checkpoints, output paths, evaluators, baselines, retry lineages, budgets, environments, claim axes, consumers, and times.",
-      "environment": "Twenty-nine exact mappings; two schemas; one blocked provenance record and ten mutations; two valid/five invalid synthetic ratchet records; one persisted bridge; three proof targets; and fifteen finite decision/lifecycle declarations with an independent six-transition, seven-split, fifteen-mutation consumer. No natural benchmark, hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
+      "environment": "Twenty-nine exact mappings; two schemas; one blocked provenance record and ten mutations; two valid/five invalid synthetic ratchet records; one persisted bridge; three proof targets; and 29 finite decision, lifecycle, persistence, and information-loss declarations with an independent six-transition, seven-split, 19-state, 114-transition, 12-suffix consumer rejecting 15 lifecycle plus 11 semantic mutations. No natural benchmark, hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
       "model": "A construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, selection-lineage-, budget-, environment-, claim-axis-, consumer-, and time-specific Benchmark Instrument Lease over validity, provenance, contamination, floors, uncertainty, costs, decisions, expiry, and residuals.",
       "authority": "This chapter owns benchmark-instrument admissibility only. Task/Construct, Data/Supply Chain, Runtime/Artifacts, Evaluator Governance, Routing/Training/Policy, Claims/Evidence, Readiness/Release, Security/Privacy/Rights, Resources, Proof Envelope, Unlearning/Continual Learning, and Living-Book/Change Governance retain their boundaries.",
       "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-      "artifact": "Chapter and manifest; twenty-nine mappings; two schemas; provenance and anti-Goodhart fixtures; persisted bridge; three targets; fifteen live declarations; independent lifecycle consumer; five benchmark-specific C6 retirements; semantic review; and future natural causal-transfer campaign."
+      "artifact": "Chapter and manifest; twenty-nine mappings; two schemas; provenance and anti-Goodhart fixtures; persisted bridge; three targets; 29 live declarations; independent lifecycle consumer; five benchmark-specific C6 retirements; semantic review; and future natural causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_synthetic_instrument_and_provenance_fixtures_no_core_effect_pending_natural_independent_benchmark_campaign",
     "assumptions": [
@@ -418,9 +418,21 @@
       "state": "historical_or_source_report",
       "rationale": "Reports the completed separation between executable fixture counts and quantified Lean decision consequences."
     },
-    "benchmark-ratchets-and-anti-goodhart-evidence.prose.13b628aa640e": {
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.cefd136cce59": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.226a564d4b77": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the aggregate-information-loss result already owned by the formal target; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.654f8fcc208b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c77d020e489": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the explicit finite aggregate-classifier counterexample already owned by the formal target; it creates no independent promoted atom."
     },
     "benchmark-ratchets-and-anti-goodhart-evidence.prose.7b2711e60508": {
       "state": "nonmaterial_explanation",

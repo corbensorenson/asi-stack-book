@@ -264,6 +264,42 @@ def runRatchetLifecycle :
   | state, event :: rest =>
       runRatchetLifecycle (ratchetLifecycleStep state event).2 rest
 
+def RatchetStageCoherent (state : RatchetLifecycleState) : Prop :=
+  match state.stage with
+  | .registered
+  | .baselineLocked
+  | .evaluationRecorded
+  | .integrityReviewed
+  | .transferReviewed => state.outcome = .none
+  | .dispositioned
+  | .closed => state.outcome ≠ .none
+
+def RatchetCustodyPreserved
+    (origin current : RatchetLifecycleState) : Prop :=
+  current.instrumentDigest = origin.instrumentDigest ∧
+    current.datasetVersion = origin.datasetVersion ∧
+    current.harnessVersion = origin.harnessVersion ∧
+    current.claimDigest = origin.claimDigest ∧
+    current.authorityCeiling = origin.authorityCeiling ∧
+    current.benchmarkSaturated = origin.benchmarkSaturated ∧
+    current.contaminationSuspected = origin.contaminationSuspected ∧
+    current.transferOrMutationCheckPresent = origin.transferOrMutationCheckPresent ∧
+    current.regressionRecordsPreserved = origin.regressionRecordsPreserved ∧
+    current.negativeResultsPreserved = origin.negativeResultsPreserved ∧
+    current.supportAssignments = origin.supportAssignments ∧
+    current.externalEffects = origin.externalEffects
+
+def RatchetTraceAccepted :
+    RatchetLifecycleState -> List RatchetEvent -> Bool
+  | _, [] => true
+  | state, event :: rest =>
+      (ratchetLifecycleStep state event).1 == .accepted &&
+        RatchetTraceAccepted (ratchetLifecycleStep state event).2 rest
+
+def QuarantineContained (state : RatchetLifecycleState) : Prop :=
+  (state.stage = .dispositioned ∨ state.stage = .closed) ∧
+    state.outcome = .quarantine
+
 theorem ratchet_rejected_event_is_noninterfering
     (state : RatchetLifecycleState) (event : RatchetEvent)
     (h : (ratchetLifecycleStep state event).1 ≠ .accepted) :
@@ -291,6 +327,66 @@ theorem ratchet_step_preserves_identity_and_authority
     simp [ratchetLifecycleStep] <;>
     repeat' first | split | simp_all
 
+theorem ratchet_step_preserves_custody
+    (state : RatchetLifecycleState) (event : RatchetEvent) :
+    RatchetCustodyPreserved state (ratchetLifecycleStep state event).2 := by
+  simpa [RatchetCustodyPreserved] using
+    ratchet_step_preserves_identity_and_authority state event
+
+theorem ratchet_custody_transitive
+    {origin middle current : RatchetLifecycleState}
+    (left : RatchetCustodyPreserved origin middle)
+    (right : RatchetCustodyPreserved middle current) :
+    RatchetCustodyPreserved origin current := by
+  simp only [RatchetCustodyPreserved] at left right ⊢
+  rcases left with
+    ⟨lInstrument, lDataset, lHarness, lClaim, lAuthority, lSaturated,
+      lContamination, lTransfer, lRegression, lNegative, lSupport, lEffects⟩
+  rcases right with
+    ⟨rInstrument, rDataset, rHarness, rClaim, rAuthority, rSaturated,
+      rContamination, rTransfer, rRegression, rNegative, rSupport, rEffects⟩
+  exact
+    ⟨rInstrument.trans lInstrument,
+      rDataset.trans lDataset,
+      rHarness.trans lHarness,
+      rClaim.trans lClaim,
+      rAuthority.trans lAuthority,
+      rSaturated.trans lSaturated,
+      rContamination.trans lContamination,
+      rTransfer.trans lTransfer,
+      rRegression.trans lRegression,
+      rNegative.trans lNegative,
+      rSupport.trans lSupport,
+      rEffects.trans lEffects⟩
+
+theorem run_ratchet_lifecycle_preserves_custody
+    (state : RatchetLifecycleState) (events : List RatchetEvent) :
+    RatchetCustodyPreserved state (runRatchetLifecycle state events) := by
+  induction events generalizing state with
+  | nil => simp [runRatchetLifecycle, RatchetCustodyPreserved]
+  | cons event rest ih =>
+      exact ratchet_custody_transitive
+        (ratchet_step_preserves_custody state event)
+        (ih (ratchetLifecycleStep state event).2)
+
+theorem ratchet_step_preserves_stage_coherence
+    (state : RatchetLifecycleState) (event : RatchetEvent)
+    (coherent : RatchetStageCoherent state) :
+    RatchetStageCoherent (ratchetLifecycleStep state event).2 := by
+  cases event <;> cases stageEq : state.stage <;>
+    simp_all [RatchetStageCoherent, ratchetLifecycleStep] <;>
+    repeat' first | split | simp_all
+
+theorem run_ratchet_lifecycle_preserves_stage_coherence
+    (state : RatchetLifecycleState) (events : List RatchetEvent)
+    (coherent : RatchetStageCoherent state) :
+    RatchetStageCoherent (runRatchetLifecycle state events) := by
+  induction events generalizing state with
+  | nil => exact coherent
+  | cons event rest ih =>
+      exact ih (ratchetLifecycleStep state event).2
+        (ratchet_step_preserves_stage_coherence state event coherent)
+
 theorem ratchet_accepted_step_adds_exactly_one_receipt
     (state : RatchetLifecycleState) (event : RatchetEvent)
     (h : (ratchetLifecycleStep state event).1 = .accepted) :
@@ -298,6 +394,24 @@ theorem ratchet_accepted_step_adds_exactly_one_receipt
   cases event <;>
     simp_all [ratchetLifecycleStep] <;>
     repeat' first | split | simp_all
+
+theorem accepted_ratchet_trace_accounts_for_every_event
+    (state : RatchetLifecycleState) (events : List RatchetEvent)
+    (accepted : RatchetTraceAccepted state events = true) :
+    (runRatchetLifecycle state events).receiptCount =
+      state.receiptCount + events.length := by
+  induction events generalizing state with
+  | nil => simp [runRatchetLifecycle]
+  | cons event rest ih =>
+      simp only [RatchetTraceAccepted, Bool.and_eq_true] at accepted
+      have acceptedRoute :
+          (ratchetLifecycleStep state event).1 = .accepted := by
+        simpa using accepted.1
+      have stepReceipt := ratchet_accepted_step_adds_exactly_one_receipt
+        state event acceptedRoute
+      have tailReceipt := ih (ratchetLifecycleStep state event).2 accepted.2
+      simp only [runRatchetLifecycle, List.length_cons]
+      omega
 
 theorem run_ratchet_lifecycle_append
     (state : RatchetLifecycleState) (left right : List RatchetEvent) :
@@ -384,5 +498,130 @@ theorem closed_ratchet_is_absorbing
     (event : RatchetEvent) :
     ratchetLifecycleStep state event = (.rejectStage, state) := by
   cases event <;> simp [ratchetLifecycleStep, h]
+
+theorem quarantine_containment_survives_one_step
+    (state : RatchetLifecycleState) (event : RatchetEvent)
+    (contained : QuarantineContained state) :
+    QuarantineContained (ratchetLifecycleStep state event).2 := by
+  rcases contained with ⟨stage, outcome⟩
+  rcases stage with dispositioned | closed
+  · cases event <;>
+      simp [QuarantineContained, ratchetLifecycleStep, dispositioned, outcome]
+  · cases event <;>
+      simp [QuarantineContained, ratchetLifecycleStep, closed, outcome]
+
+theorem quarantine_containment_survives_arbitrary_suffix
+    (state : RatchetLifecycleState) (events : List RatchetEvent)
+    (contained : QuarantineContained state) :
+    QuarantineContained (runRatchetLifecycle state events) := by
+  induction events generalizing state with
+  | nil => exact contained
+  | cons event rest ih =>
+      exact ih (ratchetLifecycleStep state event).2
+        (quarantine_containment_survives_one_step state event contained)
+
+theorem clean_promotion_trace_is_accepted :
+    RatchetTraceAccepted ({} : RatchetLifecycleState) cleanPromotionTrace = true := by
+  native_decide
+
+theorem saturated_promotion_trace_is_accepted :
+    RatchetTraceAccepted saturatedRatchetState cleanPromotionTrace = true := by
+  native_decide
+
+theorem contaminated_quarantine_trace_is_accepted :
+    RatchetTraceAccepted contaminatedRatchetState
+      [.lockBaseline, .recordEvaluation, .reviewIntegrity, .close] = true := by
+  native_decide
+
+def boolPass (value : Bool) : Nat :=
+  if value then 1 else 0
+
+def ratchetAggregatePassCount (review : RatchetDecisionReview) : Nat :=
+  boolPass review.benchmarkSaturated +
+    boolPass (!review.contaminationSuspected) +
+    boolPass review.transferOrMutationCheckPresent +
+    boolPass review.regressionRecordsPreserved +
+    boolPass review.negativeResultsPreserved
+
+def RatchetDecisionAcceptedBool (review : RatchetDecisionReview) : Bool :=
+  match review.decision with
+  | .promoteReadiness =>
+      review.regressionRecordsPreserved &&
+        review.transferOrMutationCheckPresent &&
+          review.negativeResultsPreserved &&
+            !review.contaminationSuspected
+  | .moveToRegressionFloor =>
+      review.benchmarkSaturated && review.regressionRecordsPreserved
+  | .quarantine => review.contaminationSuspected
+  | .blockPromotion => true
+  | .keepFrontier => true
+
+theorem ratchet_decision_accepted_bool_iff
+    (review : RatchetDecisionReview) :
+    RatchetDecisionAcceptedBool review = true ↔ RatchetDecisionAccepted review := by
+  cases decisionEq : review.decision with
+  | keepFrontier =>
+      simp [RatchetDecisionAcceptedBool, RatchetDecisionAccepted, decisionEq]
+  | promoteReadiness =>
+      simp only [RatchetDecisionAcceptedBool, RatchetDecisionAccepted, decisionEq,
+        Bool.and_eq_true]
+      constructor
+      · rintro ⟨⟨⟨regression, transfer⟩, negative⟩, clean⟩
+        have clean' : review.contaminationSuspected = false := by
+          cases contamination : review.contaminationSuspected with
+          | false => rfl
+          | true => simp [contamination] at clean
+        exact ⟨regression, transfer, negative, clean'⟩
+      · rintro ⟨regression, transfer, negative, clean⟩
+        have clean' : (!review.contaminationSuspected) = true := by
+          simp [clean]
+        exact ⟨⟨⟨regression, transfer⟩, negative⟩, clean'⟩
+  | moveToRegressionFloor =>
+      simp [RatchetDecisionAcceptedBool, RatchetDecisionAccepted, decisionEq,
+        Bool.and_eq_true]
+  | quarantine =>
+      simp [RatchetDecisionAcceptedBool, RatchetDecisionAccepted, decisionEq]
+  | blockPromotion =>
+      simp [RatchetDecisionAcceptedBool, RatchetDecisionAccepted, decisionEq]
+
+def cleanAggregatePromotionReview : RatchetDecisionReview :=
+  { lifecycle := .frontier,
+    benchmarkSaturated := false,
+    contaminationSuspected := false,
+    transferOrMutationCheckPresent := true,
+    regressionRecordsPreserved := true,
+    negativeResultsPreserved := true,
+    decision := .promoteReadiness }
+
+def contaminatedAggregatePromotionReview : RatchetDecisionReview :=
+  { lifecycle := .frontier,
+    benchmarkSaturated := true,
+    contaminationSuspected := true,
+    transferOrMutationCheckPresent := true,
+    regressionRecordsPreserved := true,
+    negativeResultsPreserved := true,
+    decision := .promoteReadiness }
+
+theorem aggregate_pass_count_cannot_identify_promotion_admissibility :
+    ratchetAggregatePassCount cleanAggregatePromotionReview =
+        ratchetAggregatePassCount contaminatedAggregatePromotionReview ∧
+      cleanAggregatePromotionReview ≠ contaminatedAggregatePromotionReview ∧
+      RatchetDecisionAcceptedBool cleanAggregatePromotionReview = true ∧
+      RatchetDecisionAcceptedBool contaminatedAggregatePromotionReview = false := by
+  native_decide
+
+theorem no_exact_aggregate_pass_count_promotion_classifier :
+    ¬ ∃ classifier : Nat -> Bool,
+      ∀ review : RatchetDecisionReview,
+        classifier (ratchetAggregatePassCount review) =
+          RatchetDecisionAcceptedBool review := by
+  rintro ⟨classifier, exactForEveryReview⟩
+  have clean := exactForEveryReview cleanAggregatePromotionReview
+  have contaminated := exactForEveryReview contaminatedAggregatePromotionReview
+  have collision := aggregate_pass_count_cannot_identify_promotion_admissibility
+  rw [collision.1] at clean
+  rw [collision.2.2.1] at clean
+  rw [collision.2.2.2] at contaminated
+  exact Bool.noConfusion (clean.symm.trans contaminated)
 
 end AsiStackProofs.BenchmarkRatchets

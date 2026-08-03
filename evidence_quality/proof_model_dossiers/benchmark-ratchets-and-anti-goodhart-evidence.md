@@ -10,6 +10,24 @@ Generated from the frozen activation-baseline inventory and semantic review over
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | terminally_dispositioned | replace_with_stronger_model |
 | `lean:benchmarks.ratchet.fixture_bridge` | semantically_reviewed | retain_refinement_or_executable_bridge |
 
+## Current refinement
+
+`AsiStackProofs.BenchmarkRatchets` now exposes 29 theorem declarations. The
+refined finite model proves exact custody and stage/outcome coherence across
+arbitrary runs, one receipt per accepted event, exact trace composition, clean,
+saturated, and contaminated witnesses, and quarantine persistence across an
+arbitrary suffix. A same-aggregate-pass-count witness has opposite promotion
+admissibility, ruling out any exact classifier that observes only that count.
+
+`scripts/validate_benchmark_fixture_bridge.py` recompiles the exact surface,
+explores 19 reachable states through 114 transitions, checks 12 quarantine
+suffixes, and rejects 15 lifecycle plus 11 semantic mutations. These are
+authored finite-state results. They do not establish construct validity, target
+capacity, benchmark quality, contamination detection, hidden-holdout integrity,
+model or policy capability, regression quality, anti-Goodhart effectiveness,
+support, safety, deployment, reproduction, transfer, or ASI. Chapter support
+remains `argument` and `support_state_effect` remains `none`.
+
 ## Baseline theorem declarations
 
 | Theorem | Syntax depth | Review state | Disposition |
