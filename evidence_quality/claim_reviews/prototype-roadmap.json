@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/prototype-roadmap.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 53,
+    "prose_candidates_adjudicated": 52,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, three proof targets, nine retained Lean declarations, phase-record fixture and gate harness, every manifest atom, and every prose candidate. Made the Evidence-Gated Phase Unlock Contract the distinct owner; expanded 18/12/18/18; preserved zero phase completion and zero core effect; froze the real-program matched-baseline causal reproduction and transfer campaign; and reconciled the 2026-07-26 projection retirement without changing support state."
+    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, three proof targets, the exact 37-declaration Lean surface, the independently encoded phase-execution lifecycle, the phase-record fixture and gate harness, every manifest atom, and every prose candidate. The Evidence-Gated Phase Unlock Contract remains the distinct owner; the finite formal tranche now covers strict dependency order, custody, gate coherence, integration/evidence-review separation, composition, terminal closure, countermodels, and lossy-summary insufficiency while preserving zero real phase completion, zero support/external-effect authority, and zero core effect."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Exact programs, roadmap versions, phases, dependencies, artifacts, gates, authorities, evaluators, evidence transitions, debt, residuals, rollback paths, reviewers, consumers, environments, and times.",
-      "environment": "Twenty-nine mappings; one phase-record schema/fixture; two valid and six invalid dependency-gate cases; one synthetic expired-evidence check; three targets; nine retained finite declarations. No real phase completion, deployed controller, natural workload, matched baseline, independent reproduction, or transfer.",
+      "environment": "Twenty-nine mappings; one phase-record schema/fixture; two valid and six invalid dependency-gate cases; one synthetic expired-evidence check; three targets; 37 Lean declarations; two complete traces; 33 reachable states through 1,023 transitions; eighteen terminal states through 558 absorbing transitions; and nineteen semantic mutations. No dependency truth, real phase completion or execution, evaluator competence, rollback execution, deployed controller, natural workload, matched baseline, independent reproduction, or transfer.",
       "model": "Evidence-Gated Phase Unlock Contract over phase state, typed dependencies, evidence-first order, authority, evaluation, debt, terminal decisions, correction, rollback, matched baselines, monitoring, and expiry.",
       "authority": "Owns phase-unlock sequencing only; intent, implementation, evaluation, evidence transition, capability, safety, readiness, release, rights, publication, and successor-roadmap authorities remain separate.",
-      "time": "Reviewed through 2026-07-15; material objective, dependency, interface, artifact, gate, evaluator, authority, threat, resource, consumer, environment, or time changes expire affected contracts.",
-      "artifact": "Chapter, manifest, twenty-nine mappings, phase record, fixtures, validator, three targets, nine retained declarations, semantic review, and future campaign."
+      "time": "Reviewed through 2026-08-03; material objective, dependency, interface, artifact, gate, evaluator, authority, threat, resource, consumer, environment, or time changes expire affected contracts.",
+      "artifact": "Chapter, manifest, twenty-nine mappings, phase record, fixtures, validator, three targets, exact 37-declaration Lean surface, independent lifecycle exploration, semantic review, and future campaign."
     },
     "current_disposition": "retain_argument_with_finite_dependency_gate_slice_no_phase_completion_and_no_core_effect",
     "assumptions": [
@@ -79,7 +79,7 @@
     "contrary_evidence": [
       "The current phase gate harness is synthetic and repository-local.",
       "No phase in the roadmap is accepted, complete, or executed as a controlled natural program.",
-      "The eleven declarations reduce hand-authored finite records, routes, and fixture summaries.",
+      "The 37 declarations prove only authored finite dependency, route, fixture, and transaction semantics; dependency truth, artifact quality, evaluator competence, rollback effects, and real program outcomes remain inputs or open work.",
       "The twenty-nine mappings include lineage, variants, source-note-only records, and unreproduced external results."
     ],
     "known_confounds": [
@@ -110,7 +110,7 @@
     "promotion_ceiling": "argument_until_natural_matched_multi_phase_campaign_with_causal_ablation_independent_reproduction_and_transfer",
     "reproduction": {
       "command": "python3 scripts/validate_protocol_examples.py && python3 scripts/validate_prototype_phase_gates.py && cd lean && lake build AsiStackProofs.PrototypeRoadmap",
-      "environment_lock": "Repository-local phase fixtures, validator, and module current through 2026-07-15; real-program campaign not run.",
+      "environment_lock": "Repository-local phase fixtures, independent lifecycle consumer, validator, and exact Lean module current through 2026-08-03; real-program campaign not run.",
       "artifact_digest": null,
       "evaluator_identity": "Repository-local; independent teams, reviewers, institutions, infrastructures, and transfer programs required."
     },
@@ -295,18 +295,6 @@
       "rationale": "Semantically reviewed as the terminal-record preservation obligation already atomized by the beyond-SOTA campaign.",
       "target_atom_id": "prototype-roadmap.beyond_sota.001"
     },
-    "prototype-roadmap.prose.03891f94ed19": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
-    },
-    "prototype-roadmap.prose.5ac2eb4ee393": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
-    },
-    "prototype-roadmap.prose.21c799165189": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
-    },
     "prototype-roadmap.prose.a5d371c245fc": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, lifecycle restatement, scanner fragment, finite-proof boundary, or explicit non-claim; material obligations are already atomized."
@@ -336,13 +324,21 @@
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped reader explanation already governed by structured chapter atoms; it adds no independent material claim."
     },
-    "prototype-roadmap.prose.e6753c448a95": {
+    "prototype-roadmap.prose.a3f0b31bc4b6": {
       "state": "historical_or_source_report",
-      "rationale": "Reports the retained declaration-family count and proof shapes after projection retirement; it does not create a new material architecture claim or support-state effect."
+      "rationale": "Reports the exact bounded theorem families and independent lifecycle-consumer results; it is not evidence that dependencies, gates, evaluators, rollback, or program outcomes are correct."
     },
-    "prototype-roadmap.prose.107d18617b04": {
+    "prototype-roadmap.prose.e615b367d6bb": {
       "state": "historical_or_source_report",
-      "rationale": "Enumerates the bounded outcomes of the retained formal route cases and fixture bridge; it is a proof-scope report, not evidence that any natural program phase is safe, complete, or effective."
+      "rationale": "Summarizes the implemented finite transaction semantics already governed by the three formal targets; it creates no separate architecture or support claim."
+    },
+    "prototype-roadmap.prose.17c5b605571f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit formal-proof non-claim preserving the boundary around dependency truth, evaluator competence, rollback effects, outcomes, and support."
+    },
+    "prototype-roadmap.prose.2fd911946a6f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit audit-boundary non-claim; the material obligations and open empirical lanes are already structured elsewhere in the chapter."
     }
   },
   "prose_review_lineage": [
@@ -364,7 +360,7 @@
   "non_claims": [
     "The chapter core remains argument and its support-state effect is none.",
     "No phase has been accepted or completed by this sweep.",
-    "Formal declarations enforce finite record boundaries and do not prove program outcomes.",
+    "Formal declarations enforce finite dependency and transaction boundaries and do not prove dependency truth, evaluator competence, rollback effects, or program outcomes.",
     "External sources are comparators and do not certify the roadmap."
   ]
 }

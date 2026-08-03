@@ -6821,11 +6821,34 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "behavioral_fixture",
-      "input_contract": "tracked fixtures, result records, executable probes, and negative controls named by the validator",
-      "output_contract": "exit status plus accepted/rejected case and reproducibility diagnostics",
-      "claim_scope": "the bounded fixture or local replay explicitly named by the validator",
-      "negative_controls": "validator_owned",
-      "prohibited_inference": "does not imply deployment, transfer, broad correctness, safety, or chapter-core promotion"
+      "input_contract": "The exact 37-declaration PrototypeRoadmap Lean surface, prototype phase-record schema, two valid and six expected-invalid fixtures, persisted fixture result, strict finite dependency checks, and independently encoded integration/evidence-review lifecycle.",
+      "output_contract": "Reject theorem drift, Lean compile failure, fixture-schema or route failure, dependency inversion, custody or gate-coherence failure, trace-composition failure, terminal reopening, thin-summary overclassification, or any of nineteen semantic mutations.",
+      "claim_scope": "Authored finite dependency-order, phase-gate record, and phase-execution transaction semantics only.",
+      "negative_controls": "validator_owned:6_fixture_controls+19_semantic_mutations",
+      "prohibited_inference": "Does not establish dependency truth or completeness, artifact quality, evaluator competence, rollback execution, real phase completion, deployed build control, benchmark benefit, support, safety, reproduction, transfer, AGI, or ASI.",
+      "input_artifacts": [
+        "lean/AsiStackProofs/PrototypeRoadmap.lean",
+        "scripts/validate_prototype_phase_gates.py",
+        "schemas/prototype_phase_record.schema.json",
+        "experiments/prototype_phase_gates/results/2026-07-02-local.json",
+        "experiments/prototype_phase_gates/fixtures/valid_phase_acceptance_infrastructure.json",
+        "experiments/prototype_phase_gates/fixtures/valid_research_only_phase_debt.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_dependency_inversion.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_missing_non_claim_boundary.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_missing_required_artifact.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_phase_debt_without_retirement.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_promotion_without_transition.json",
+        "experiments/prototype_phase_gates/fixtures/invalid_self_improvement_without_evaluator.json"
+      ],
+      "assertions": [
+        "exact 37-declaration PrototypeRoadmap theorem surface recompiles",
+        "two valid and six expected-invalid fixture routes remain distinct",
+        "both four-event reference traces compose across all 10 splits",
+        "33 reachable states preserve custody, gate coherence, zero support assignment, and zero external effects across 1,023 transitions",
+        "18 integrated, evidence-review, or rolled-back terminal states absorb all 558 tested suffix transitions",
+        "dependency count and receipt count alone do not determine integration",
+        "all 6 fixture controls and 19 semantic mutations reject"
+      ]
     },
     {
       "id": "validate_phase5_harness_registry:229",

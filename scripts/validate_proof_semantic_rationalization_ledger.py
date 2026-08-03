@@ -170,16 +170,16 @@ EXPECTED_ACTION_IDS.append(
     "C6-R160-rewrite-complete-failure-record-as-inverse-route-property"
 )
 EXPECTED_LEVELS = {
-    "P0": 48,
-    "P1": 980,
-    "P2": 315,
-    "P3": 1189,
-    "P4": 247,
-    "P5": 251,
+    "P0": 47,
+    "P1": 979,
+    "P2": 321,
+    "P3": 1200,
+    "P4": 255,
+    "P5": 256,
     "P6": 0,
 }
 EXPECTED_DISPOSITIONS = {
-    "retain": 3030,
+    "retain": 3058,
 }
 EXPECTED_TARGETS = {
     "lean:bibliography.plan.operational_invariant": (
@@ -376,12 +376,14 @@ EXPECTED_TARGETS = {
         "transport preserves steps."
     ),
     "lean:roadmap.phases.operational_invariant": (
-        "A finite prototype-phase route with declared prerequisites but failed "
-        "acceptance gates remains research-only rather than integrating."
+        "Strict finite dependency order and a dependency-aware execution lifecycle "
+        "preserve exact phase, plan, dependency, artifact, authority, and gate custody "
+        "across arbitrary runs; only a complete non-promoting trace reaches integration."
     ),
     "lean:roadmap.phases.failure_blocks_promotion": (
-        "A finite phase-promotion request without an evidence-transition record is "
-        "rejected, and a reached milestone with no evidence cannot promote."
+        "Missing dependency completion, rollback, evaluator, acceptance, debt-retirement, "
+        "evidence-transition, or non-claim gates reject without state change; integration, "
+        "evidence review, and rollback are terminal under arbitrary finite suffixes."
     ),
     "lean:security.scif.operational_invariant": (
         "The finite authority-use route denies secret substitution when the execution "
@@ -817,7 +819,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
 
     overlay = load(CURRENT_OVERLAY)
     summary = overlay.get("summary", {})
-    if summary.get("current_theorem_count") != 3030:
+    if summary.get("current_theorem_count") != 3058:
         out.append("current theorem denominator drifted")
     if summary.get("semantic_level_counts") != EXPECTED_LEVELS:
         out.append("current semantic-level counts drifted")
@@ -1239,11 +1241,17 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
             },
         ),
         "lean/AsiStackProofs/PrototypeRoadmap.lean": (
-            9,
+            37,
             {
                 "failed_acceptance_gates_keep_phase_research_only",
                 "phase_milestone_cannot_promote_claim_without_evidence_artifacts",
                 "support_promotion_without_evidence_transition_rejected",
+                "run_prototype_phase_execution_preserves_invariant",
+                "reference_prototype_phase_execution_reaches_integrated",
+                "reference_prototype_promotion_reaches_evidence_review",
+                "promotion_without_evidence_transition_rejects_review_handoff",
+                "integrated_prototype_phase_is_absorbing_for_any_suffix",
+                "no_prototype_phase_thin_summary_classifier_recovers_integration",
             },
         ),
         "lean/AsiStackProofs/SecurityKernel.lean": (
@@ -1330,7 +1338,7 @@ def validation_errors(ledger: dict[str, Any], *, check_files: bool = True) -> li
     if status.get("rationalization_ledger_path") != str(LEDGER.relative_to(ROOT)):
         out.append("status does not bind the cumulative rationalization ledger")
     if (
-        status.get("theorem_count") != 3030
+        status.get("theorem_count") != 3058
         or status.get("executed_retirement_count") != 157
         or status.get("executed_scope_rewrite_count") != 2
         or status.get("remaining_action_count") != 0

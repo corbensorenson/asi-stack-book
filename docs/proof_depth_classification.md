@@ -14,10 +14,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 |---|---:|
 | Proof targets in manifest | 330 |
 | Lean modules scanned | 130 |
-| Theorem declarations classified | 3030 |
-| Direct/projection-style theorem declarations | 442 |
-| Derived/decomposed theorem declarations | 1904 |
-| Unknown or mixed theorem declarations | 684 |
+| Theorem declarations classified | 3058 |
+| Direct/projection-style theorem declarations | 446 |
+| Derived/decomposed theorem declarations | 1919 |
+| Unknown or mixed theorem declarations | 693 |
 | Safety-critical theorem declarations | 236 |
 | Safety-critical direct/projection declarations | 6 |
 | Safety-critical chapter classifications present | 2/2 |
@@ -142,7 +142,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 4 | 28 | 1 | 22 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 28 | 0 | 18 | 10 | manual review |
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | confidential-and-verifiable-ai-computation | 1 | 31 | 13 | 14 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 37 | 4 | 24 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 24 | 13 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
@@ -2274,13 +2274,41 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProtectedComputationReview.lean` | `verifier_policy_change_invalidates_receipt` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_non_promoting_phase_integrates` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `accepted_prototype_phase_gate_fixture_bridge_preserves_non_claims` | derived_or_decomposed | no | uses cases, simp, unfold |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `adjacent_prototype_dependencies_compose_strict_order` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `complete_prototype_phase_gate_fixture_bridge_accepts` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `dependency_inversion_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `evidence_review_prototype_phase_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `evidence_review_prototype_phase_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `failed_acceptance_gates_keep_phase_research_only` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `failed_execution_acceptance_gates_reject_integration` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `incomplete_dependency_count_rejects_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `integrated_prototype_phase_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `integrated_prototype_phase_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_non_claim_boundary_rejects_prototype_fixture_bridge` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_rollback_plan_rejects_execution_without_state_change` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `missing_source_matrix_rejects_phase_route` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `no_prototype_phase_thin_summary_classifier_recovers_integration` | derived_or_decomposed | no | uses have, rcases, rw |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_debt_without_retirement_condition_rejects_integration` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `phase_milestone_cannot_promote_claim_without_evidence_artifacts` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `promotion_without_evidence_transition_rejects_review_handoff` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `prototype_phase_execution_step_preserves_custody` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `prototype_phase_execution_step_preserves_invariant` | derived_or_decomposed | no | uses cases, simp, split |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `prototype_phase_rejected_event_is_noninterfering` | derived_or_decomposed | no | uses by_cases, cases, have, simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `prototype_phase_thin_summary_collides_across_integration` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `reference_prototype_phase_execution_has_exact_receipt_count` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `reference_prototype_phase_execution_has_no_support_or_external_effect` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `reference_prototype_phase_execution_reaches_integrated` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `reference_prototype_promotion_has_no_support_or_external_effect` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `reference_prototype_promotion_reaches_evidence_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `rolled_back_prototype_phase_is_absorbing_for_any_suffix` | derived_or_decomposed | no | uses induction, rw |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `rolled_back_prototype_phase_is_absorbing_one_step` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `run_prototype_phase_execution_append` | derived_or_decomposed | no | uses induction, left, simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `run_prototype_phase_execution_preserves_custody` | derived_or_decomposed | no | uses induction |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `run_prototype_phase_execution_preserves_invariant` | derived_or_decomposed | no | uses induction |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `self_improvement_without_independent_evaluator_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `self_improvement_without_independent_execution_evaluator_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | `support_promotion_without_evidence_transition_rejected` | derived_or_decomposed | no | uses cases, simp |
+| `lean/AsiStackProofs/PrototypeRoadmap.lean` | `valid_prototype_dependency_cannot_be_self_referential` | derived_or_decomposed | no | uses rw, unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `accepted_stronger_transition_missing_required_record_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_authority_scope_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/ReadinessGates.lean` | `default_readiness_without_regression_floor_rejected` | derived_or_decomposed | no | uses cases, have, rw |

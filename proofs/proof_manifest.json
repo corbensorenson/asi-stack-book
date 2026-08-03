@@ -3307,7 +3307,7 @@
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.operational_invariant",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
+      "formal_target": "Strict finite dependency order and a dependency-aware execution lifecycle preserve exact phase, plan, dependency, artifact, authority, and gate custody across arbitrary runs; only a complete non-promoting trace reaches integration.",
       "status": "implemented",
       "outline_line": 7790,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
@@ -3317,7 +3317,7 @@
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.failure_blocks_promotion",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
+      "formal_target": "Missing dependency completion, rollback, evaluator, acceptance, debt-retirement, evidence-transition, or non-claim gates reject without state change; integration, evidence review, and rollback are terminal under arbitrary finite suffixes.",
       "status": "implemented",
       "outline_line": 7791,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
@@ -3327,7 +3327,7 @@
       "chapter_title": "Prototype Roadmap",
       "tag": "lean:roadmap.phases.fixture_gate_bridge",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
+      "formal_target": "The fixture bridge and independent consumer retain the public-safe route suite, reconstruct both transaction branches, and demonstrate that dependency and receipt counts alone cannot classify integration.",
       "status": "implemented",
       "outline_line": 7792,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"

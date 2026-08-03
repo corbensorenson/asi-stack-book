@@ -3693,6 +3693,118 @@ for theorem_name in (
         ),
     }
 
+_prototype_roadmap_refinement_base = {
+    "disposition": "retain",
+    "witness_refs": [
+        "lean/AsiStackProofs/PrototypeRoadmap.lean",
+        "scripts/validate_prototype_phase_gates.py",
+        "experiments/prototype_phase_gates/results/2026-07-02-local.json",
+    ],
+}
+
+for theorem_name in (
+    "incomplete_dependency_count_rejects_without_state_change",
+    "dependency_inversion_rejects_without_state_change",
+    "missing_rollback_plan_rejects_execution_without_state_change",
+    "self_improvement_without_independent_execution_evaluator_rejected",
+    "failed_execution_acceptance_gates_reject_integration",
+    "phase_debt_without_retirement_condition_rejects_integration",
+    "promotion_without_evidence_transition_rejects_review_handoff",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PrototypeRoadmap.lean::{theorem_name}"
+    ] = {
+        **_prototype_roadmap_refinement_base,
+        "semantic_level": "P1",
+        "classification_basis": [
+            "one-step finite dependency, evaluator, rollback, debt, or evidence-gate rejection consequence"
+        ],
+        "rationale": (
+            "The theorem rejects one named malformed phase event without establishing real phase execution or gate competence."
+        ),
+    }
+
+for theorem_name in (
+    "valid_prototype_dependency_cannot_be_self_referential",
+    "adjacent_prototype_dependencies_compose_strict_order",
+    "reference_prototype_phase_execution_reaches_integrated",
+    "reference_prototype_phase_execution_has_exact_receipt_count",
+    "reference_prototype_promotion_reaches_evidence_review",
+    "prototype_phase_thin_summary_collides_across_integration",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PrototypeRoadmap.lean::{theorem_name}"
+    ] = {
+        **_prototype_roadmap_refinement_base,
+        "semantic_level": "P2",
+        "classification_basis": [
+            "strict finite dependency-order result or closed reachable phase-lifecycle witness"
+        ],
+        "rationale": (
+            "The theorem establishes dependency-order structure or bounded nonvacuity for one authored phase transaction only."
+        ),
+    }
+
+for theorem_name in (
+    "prototype_phase_execution_step_preserves_custody",
+    "run_prototype_phase_execution_preserves_custody",
+    "prototype_phase_execution_step_preserves_invariant",
+    "run_prototype_phase_execution_preserves_invariant",
+    "run_prototype_phase_execution_append",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PrototypeRoadmap.lean::{theorem_name}"
+    ] = {
+        **_prototype_roadmap_refinement_base,
+        "semantic_level": "P3",
+        "classification_basis": [
+            "inductive implementation refinement for phase identity custody, gate coherence, or trace composition"
+        ],
+        "rationale": (
+            "The theorem refines the executable finite phase runner while dependency truth and evaluator competence remain authored inputs."
+        ),
+    }
+
+for theorem_name in (
+    "prototype_phase_rejected_event_is_noninterfering",
+    "reference_prototype_phase_execution_has_no_support_or_external_effect",
+    "reference_prototype_promotion_has_no_support_or_external_effect",
+    "integrated_prototype_phase_is_absorbing_one_step",
+    "evidence_review_prototype_phase_is_absorbing_one_step",
+    "rolled_back_prototype_phase_is_absorbing_one_step",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PrototypeRoadmap.lean::{theorem_name}"
+    ] = {
+        **_prototype_roadmap_refinement_base,
+        "semantic_level": "P4",
+        "classification_basis": [
+            "finite noninterference or terminal-safety property for rejected phase events, support authority, or external effects"
+        ],
+        "rationale": (
+            "The theorem constrains the local transaction but does not establish a deployed build controller, rollback, or safe execution."
+        ),
+    }
+
+for theorem_name in (
+    "integrated_prototype_phase_is_absorbing_for_any_suffix",
+    "evidence_review_prototype_phase_is_absorbing_for_any_suffix",
+    "rolled_back_prototype_phase_is_absorbing_for_any_suffix",
+    "no_prototype_phase_thin_summary_classifier_recovers_integration",
+):
+    CURRENT_SEMANTIC_OVERRIDES[
+        f"lean/AsiStackProofs/PrototypeRoadmap.lean::{theorem_name}"
+    ] = {
+        **_prototype_roadmap_refinement_base,
+        "semantic_level": "P5",
+        "classification_basis": [
+            "arbitrary finite suffix closure or impossibility of recovering integration from a lossy phase summary"
+        ],
+        "rationale": (
+            "The theorem establishes bounded terminal closure or information insufficiency only; it does not establish liveness or execution quality."
+        ),
+    }
+
 # Older validation-registry entries predate per-unit input_artifact indexing.
 # These explicit aliases recover only known, validator-owned module bindings;
 # they do not infer a binding from filename similarity.

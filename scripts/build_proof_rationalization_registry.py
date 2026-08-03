@@ -251,6 +251,31 @@ safety, reproduction, transfer, or ASI. Chapter support remains `argument` and
 `support_state_effect` remains `none`.
 
 """,
+    "prototype-roadmap": """## Current refinement
+
+`AsiStackProofs.PrototypeRoadmap` now exposes 37 theorem declarations. Nine
+retained route and fixture guards sit beside strict dependency-order results
+and a dependency-aware phase-execution lifecycle. The lifecycle separates
+ordinary integration from evidence-review handoff and proves rejected-event
+noninterference, exact phase, plan, dependency, artifact, and authority custody,
+gate coherence across arbitrary runs, exact composition, reachable integration
+and evidence-review witnesses, zero support and external-effect authority,
+terminal integrated, evidence-review, and rolled-back suffixes, and a lossy-
+summary collision that rules out exact integration classification from
+dependency count and receipt count alone.
+
+`scripts/validate_prototype_phase_gates.py` recompiles the exact surface,
+retains two valid and six expected-invalid phase-gate fixtures, checks both
+four-event traces across all ten splits, explores 33 reachable states through
+1,023 transitions, checks eighteen terminal states through 558 absorbing
+transitions, and rejects nineteen semantic mutations. These are authored
+finite dependency, gate, and transaction results. They do not establish
+dependency truth or completeness, artifact quality, evaluator competence,
+rollback execution, deployed build-controller behavior, benchmark benefit,
+support, safety, reproduction, transfer, AGI, or ASI. Chapter support remains
+`argument` and `support_state_effect` remains `none`.
+
+""",
     "runtime-adapters-tool-permissions-and-human-approval": """## Current refinement
 
 `AsiStackProofs.RuntimeAdapters` now adds a reachable prepare, approve,

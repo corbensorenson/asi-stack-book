@@ -1736,7 +1736,7 @@ def errors(data: dict) -> list[str]:
 
     expected_claim_ledger_contract = {
         "current_missing_or_changed_theorem_count":475,
-        "current_missing_or_changed_target_count":252,
+        "current_missing_or_changed_target_count":253,
         "current_live_theorem_declaration_count":1219,
         "current_live_proof_target_count":320,
         "claim_ledger_model_path":"lean/AsiStackProofs/ClaimLedgerRefinement.lean",

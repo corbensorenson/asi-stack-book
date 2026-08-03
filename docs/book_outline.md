@@ -6262,7 +6262,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3030 theorem declarations, 1904 derived/decomposed, 442 direct/projection, 684 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3058 theorem declarations, 1919 derived/decomposed, 446 direct/projection, 693 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6279,7 +6279,7 @@ Draft deliverables:
 
 Exact current minimum: one proof-target schema and valid fixture; one generated
 330-target live manifest; a 130-module Lean workspace with 3,030 declarations
-classified as 1,904 derived/decomposed, 442 direct/projection, and 684
+classified as 1,919 derived/decomposed, 446 direct/projection, and 693
 unknown/mixed; proof-readiness, traceability, depth, and adequacy-review
 surfaces; one blocked semantic-depth record with ten rejecting mutations; and
 an exact 28-declaration `ProofEnvelope` surface. Its independent consumer
@@ -7775,21 +7775,21 @@ Failure modes to cover:
 Draft deliverables:
 
 - A semantically reviewed Evidence-Gated Phase Unlock Contract with twenty-nine exact mappings, eighteen mechanisms, twelve interfaces, eighteen invariants, eighteen failure modes, three proof targets, seventy-four structured atoms, and no unowned material prose.
-- An exact minimum slice: one phase-record schema/fixture, two valid and six invalid dependency-gate cases, one synthetic expired-evidence check, and eleven finite Lean declarations; no real phase completion, deployed controller, natural matched program, or chapter-core effect.
+- An exact minimum slice: one phase-record schema/fixture, two valid and six invalid dependency-gate cases, one synthetic expired-evidence check, and 37 Lean declarations comprising nine retained route/fixture guards plus twenty-eight strict-dependency and phase-transaction results; no dependency truth, real phase completion or execution, evaluator competence, rollback execution, deployed controller, natural matched program, or chapter-core effect.
 - A frozen argument-exit campaign over a real prospectively specified program, matched calendar/backlog/milestone/stage-gate/no-gate baselines, natural and adversarial dependencies, joint usefulness and total cost, causal ablations, independent reproduction, and transfer.
 - Implemented repository-level fixture: `prototype_phase_record.valid.json` validates prototype-phase record shape only; no phase completion or capability unlock is implied.
-- Implemented Codex test: Prototype phase gate harness, via `python3 scripts/validate_prototype_phase_gates.py`, turns `Phase acceptance checklist` and `Dependency gate review` into a deterministic public-safe fixture set with 2 valid scenarios and 6 expected-invalid controls. Result: `prototype_phase_gates_2026_07_02_local` at `experiments/prototype_phase_gates/results/2026-07-02-local.json`.
+- Implemented Codex test: Prototype phase gate harness, via `python3 scripts/validate_prototype_phase_gates.py`, implements `Phase acceptance checklist` and `Dependency gate review`, retains 2 valid scenarios and 6 expected-invalid controls, recompiles the exact 37-declaration Lean surface, checks two complete traces across 10/10 splits, explores 33 reachable states through 1,023 transitions, checks 18 terminal states through 558 absorbing transitions, and rejects 19 semantic mutations. Result: `prototype_phase_gates_2026_07_02_local` at `experiments/prototype_phase_gates/results/2026-07-02-local.json`.
 - Implemented Codex test: Prototype evidence-state audit, via `python3 scripts/validate_readiness_residual_gates.py` over expired-evidence rerun/reject behavior; full phase acceptance audit remains unrun.
-- Implemented Lean follow-through: finite prototype phase-route envelope rejects missing source-matrix readiness, self-improvement without independent evaluation, and promotion requests without an evidence-transition record; it routes failed acceptance gates to research-only and routes accepted non-promoting phases to integration without claiming phase completion.
-- Implemented Lean fixture bridge: finite prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.
+- Implemented Lean follow-through: strict finite dependency order and a dependency-aware execution lifecycle preserve exact phase, plan, dependency, artifact, authority, and gate custody across arbitrary runs; only a complete non-promoting trace reaches integration, while a promotion request reaches evidence review only with evidence and transition records.
+- Implemented Lean fixture bridge and lifecycle consumer: the public-safe route suite remains distinct, invalid gates reject without state change, integration/evidence-review/rollback are terminal under arbitrary finite suffixes, and dependency plus receipt counts alone cannot classify integration.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating. | implemented |
-| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote. | implemented |
-| `lean:roadmap.phases.fixture_gate_bridge` | `AsiStackProofs.PrototypeRoadmap` | A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim. | implemented |
+| `lean:roadmap.phases.operational_invariant` | `AsiStackProofs.PrototypeRoadmap` | Strict finite dependency order and a dependency-aware execution lifecycle preserve exact phase, plan, dependency, artifact, authority, and gate custody across arbitrary runs; only a complete non-promoting trace reaches integration. | implemented |
+| `lean:roadmap.phases.failure_blocks_promotion` | `AsiStackProofs.PrototypeRoadmap` | Missing dependency completion, rollback, evaluator, acceptance, debt-retirement, evidence-transition, or non-claim gates reject without state change; integration, evidence review, and rollback are terminal under arbitrary finite suffixes. | implemented |
+| `lean:roadmap.phases.fixture_gate_bridge` | `AsiStackProofs.PrototypeRoadmap` | The fixture bridge and independent consumer retain the public-safe route suite, reconstruct both transaction branches, and demonstrate that dependency and receipt counts alone cannot classify integration. | implemented |
 
 ### Living Book Methodology
 

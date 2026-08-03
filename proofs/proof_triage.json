@@ -3184,21 +3184,21 @@
       "tag": "lean:roadmap.phases.operational_invariant",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A finite prototype-phase route with declared prerequisites but failed acceptance gates remains research-only rather than integrating.",
+      "formal_target": "Strict finite dependency order and a dependency-aware execution lifecycle preserve exact phase, plan, dependency, artifact, authority, and gate custody across arbitrary runs; only a complete non-promoting trace reaches integration.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite phase-unlock predicate: dependent phases require declared passing acceptance gates before unlock."
+      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite dependency-aware execution system with exact custody, append composition, reachable integration, and arbitrary-run preservation theorems."
     },
     {
       "tag": "lean:roadmap.phases.failure_blocks_promotion",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A finite phase-promotion request without an evidence-transition record is rejected, and a reached milestone with no evidence cannot promote.",
+      "formal_target": "Missing dependency completion, rollback, evaluator, acceptance, debt-retirement, evidence-transition, or non-claim gates reject without state change; integration, evidence review, and rollback are terminal under arbitrary finite suffixes.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite claim-promotion predicate: a phase milestone cannot promote a claim without evidence artifacts."
+      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap through exact rejection countermodels, noninterference, terminal-state absorption, and promotion-handoff guards."
     },
     {
       "tag": "lean:roadmap.phases.fixture_gate_bridge",
