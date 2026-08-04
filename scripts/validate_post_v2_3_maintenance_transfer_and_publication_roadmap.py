@@ -376,7 +376,7 @@ def errors(data: dict) -> list[str]:
         "frozen deterministic sequential replacement rule",
         "62 compressed arm logs",
         "ASI-THESEUS-FLAGSHIP-01",
-        "15–25% less repeated",
+        "120,000–180,000-word human technical book",
         "P7.1 — Narrative synthesis and editorial compression",
         "P2-Q1-D1",
         "ASI-THESEUS-Q2-D2",
@@ -403,7 +403,7 @@ def errors(data: dict) -> list[str]:
         "P4-C2-safety-assurance-and-oversight-semantic-audit",
         "P7.2-T1-white-box-evidence-interpretability-and-activation-governance",
         "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit",
-        "A blocked packet does not consume a slot",
+        "A blocked empirical packet does not consume a slot",
         "The structural window is therefore closed again",
         "P2-R3-storage-materialization-and-replacement-qualification",
         "P6.5-R16-A-six-chapter-atom-pack",
@@ -1171,10 +1171,10 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "p2_resource_blocked_p7_3_visual_edition_active":
-        out.append("execution board does not preserve the P2 resource block while activating P7.3 visual-edition work")
-    if execution_readiness.get("headline_priority") != "P2" or execution_readiness.get("headline_priority_state") != "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry":
-        out.append("execution board obscures the P2 headline or the current below-floor attempt requirement")
+    if execution_readiness.get("state") != "p4_1_composition_and_p7_1_narrative_active_p2_resource_blocked_p7_3_separately_owned":
+        out.append("execution board does not preserve active composition/narrative work, the P2 resource block, and separate P7.3 ownership")
+    if execution_readiness.get("headline_priority") != "P4.1" or execution_readiness.get("headline_priority_state") != "proof_rationalization_then_cross_owner_composition":
+        out.append("execution board obscures the active proof-rationalization and composition priority")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
@@ -1183,10 +1183,10 @@ def errors(data: dict) -> list[str]:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not make P2-R3 the operative empirical headline")
-    if execution_readiness.get("immediate_book_packet") != "P7.3-governed-manim-visual-edition":
-        out.append("execution board does not activate the governed Manim visual-edition packet")
-    if execution_readiness.get("immediate_formal_packet") != "P4-terminal-no-open-formal-packet":
-        out.append("execution board reopens terminal P4 formal work")
+    if execution_readiness.get("immediate_book_packet") != "P7.1-independent-22-unit-human-narrative":
+        out.append("execution board does not activate the independent 22-unit human narrative")
+    if execution_readiness.get("immediate_formal_packet") != "P4.1-cross-owner-composition-and-proof-rationalization":
+        out.append("execution board does not activate the bounded P4.1 composition amendment")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
         out.append("execution board permits a structural candidate during the freeze")
     expected_resume_gates = [
@@ -2611,12 +2611,12 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, active P2/M2; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, active P4.1/M4; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six semantic proof clusters are terminally adequate at bounded scope; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural freezing for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, targets a 22-unit reader route, and adds shared calculus, developmental-loop, minimal-kernel, bounded-liveness, P0-P6 proof-depth, and natural-flagship work without an external-human prepublication gate; P7.3 is the active owner-directed book packet with five pilots, an all-84 ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only dependency-safe proof rationalization and bounded connected-owner composition; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, an all-84 ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

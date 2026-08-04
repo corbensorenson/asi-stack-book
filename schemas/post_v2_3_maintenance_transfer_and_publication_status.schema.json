@@ -44,7 +44,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v24"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v25"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -53,7 +53,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-07-31"
+      "const": "2026-08-03"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -62,7 +62,7 @@
       "const": "active"
     },
     "current_priority": {
-      "const": "P2"
+      "const": "P4.1"
     },
     "execution_readiness": {
       "type": "object",
@@ -89,13 +89,13 @@
       ],
       "properties": {
         "state": {
-          "const": "p2_resource_blocked_p7_3_visual_edition_active"
+          "const": "p4_1_composition_and_p7_1_narrative_active_p2_resource_blocked_p7_3_separately_owned"
         },
         "headline_priority": {
-          "const": "P2"
+          "const": "P4.1"
         },
         "headline_priority_state": {
-          "const": "latest_exact_preflight_failed_capacity_and_docker_restore_both_before_retry"
+          "const": "proof_rationalization_then_cross_owner_composition"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -113,10 +113,10 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "const": "P7.3-governed-manim-visual-edition"
+          "const": "P7.1-independent-22-unit-human-narrative"
         },
         "immediate_formal_packet": {
-          "const": "P4-terminal-no-open-formal-packet"
+          "const": "P4.1-cross-owner-composition-and-proof-rationalization"
         },
         "structural_resume_requires": {
           "const": [
@@ -3478,7 +3478,7 @@
               "const": "P4"
             },
             "state": {
-              "const": "completed"
+              "const": "in_progress"
             }
           }
         }
@@ -3631,7 +3631,7 @@
               "const": "M4"
             },
             "state": {
-              "const": "completed"
+              "const": "in_progress"
             }
           }
         }
