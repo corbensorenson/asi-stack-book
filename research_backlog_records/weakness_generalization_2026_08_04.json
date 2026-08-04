@@ -1,0 +1,76 @@
+{
+  "backlog_id": "weakness-generalization-2026-08-04",
+  "triage_state": "integrated",
+  "source_or_gap": "The Learning Theory chapter treated compression and MDL as bounded lenses but lacked a direct formal comparator separating description length from extension-based hypothesis weakness.",
+  "access_state": "available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "learning-theory-generalization-and-scaling-science"
+  ],
+  "chapter_action_policy": "Update the existing Learning Theory owner with the paper's conditional weakness-versus-description-length distinction, assumptions, counterexample, evidence ceiling, and reproduction backlog. Do not create a new chapter.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/weakness_generalization_2026_08_04.json",
+    "sources/source_notes/ext_weakness_generalization_2023.md",
+    "chapters/learning-theory-generalization-and-scaling-science.qmd",
+    "docs/book_outline.md"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Learning Theory remains the exclusive owner. Compression chapters may consume the bounded distinction through handoff, but the paper does not own a separate stack interface, artifact lifecycle, or governance layer.",
+  "boundary_decision_rationale": "The source directly challenges one explanatory lens already owned by Learning Theory. A standalone weakness chapter would split the chapter's assumption ledger and generalization-proxy comparison without adding a distinct architectural boundary.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "complete",
+  "external_literature_need": [
+    "independent critiques or reproductions of the weakness theorem and arithmetic experiments",
+    "comparisons under nonuniform task priors and alternative representation languages",
+    "modern neural-network studies that operationalize extension-based weakness without proxy conflation"
+  ],
+  "proof_or_test_backlog": [
+    "mechanize the finite MDL-versus-weakness counterexample with explicit vocabulary and task prior",
+    "audit the necessity and sufficiency argument in Lean or an exact finite enumerator",
+    "reproduce the source arithmetic trials before treating their numerical ratios as locally confirmed",
+    "compare MDL, weakness, and task-weighted proxies under nonuniform priors and held-out task families"
+  ],
+  "evidence_transition_precondition": [
+    "exact theorem statement and assumptions are frozen",
+    "the formal argument or finite enumeration is independently checked",
+    "source code and experiment configuration are identified and reproduced",
+    "alternative task priors and vocabularies are tested",
+    "an accepted claim-specific evidence transition authorizes any narrow movement"
+  ],
+  "required_before_drafting": [
+    "completed: full v4 paper and arXiv metadata review",
+    "completed: existing-owner and new-chapter deduplication",
+    "completed: source-scoped theorem, experiment, limitation, and non-claim note",
+    "completed: manifest claim-source mapping and bounded chapter prose"
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "https://arxiv.org/abs/2301.12987",
+    "https://doi.org/10.1007/978-3-031-33469-6_5",
+    "sources/source_notes/ext_weakness_generalization_2023.md"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "the formal result is conditional on a finite enactive formalism and uniform task distribution",
+    "the repository has not mechanized or independently checked the propositions",
+    "the source-reported experiments are toy binary arithmetic and have not been reproduced locally",
+    "no evidence connects weakness maximization to modern neural-network generalization or safety",
+    "no accepted evidence transition exists"
+  ],
+  "residuals": [
+    "formal reproduction remains open",
+    "experiment reproduction remains open",
+    "nonuniform-prior and representation sensitivity remain open",
+    "modern neural operationalization remains speculative"
+  ],
+  "next_action": "Treat the integrated source as a bounded comparator. Schedule formal or empirical reproduction only when it can be coupled to the Learning Theory forecast-registry program without displacing higher-priority cross-owner composition work.",
+  "non_claims": [
+    "does not create a new chapter",
+    "does not establish that MDL is generally invalid",
+    "does not prove a neural-network generalization result",
+    "does not reproduce the paper's experiments",
+    "does not promote chapter support, readiness, safety, SOTA, AGI, or ASI"
+  ]
+}

@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1240 |
-| Exact claim-source mappings | 1050 |
+| Assigned source/chapter pairs | 1241 |
+| Exact claim-source mappings | 1051 |
 | Unmapped assigned pairs | 190 |
-| Source notes present for assigned pairs | 1240 |
-| Source notes listing assigned chapter | 1240 |
-| Passage-reviewed mappings recorded | 981 |
+| Source notes present for assigned pairs | 1241 |
+| Source notes listing assigned chapter | 1241 |
+| Passage-reviewed mappings recorded | 982 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -87,7 +87,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 49 | 39 | 49 | 49 | 39 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `governed-model-training-distributed-optimization-and-scaling` | 28 | 27 | 28 | 28 | 27 | argument | passage review required before source-derived promotion |
-| `learning-theory-generalization-and-scaling-science` | 10 | 8 | 10 | 10 | 0 | argument | passage review required before source-derived promotion |
+| `learning-theory-generalization-and-scaling-science` | 11 | 9 | 11 | 11 | 1 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 21 | 19 | 21 | 21 | 19 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 32 | 24 | 32 | 32 | 24 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
@@ -478,6 +478,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_muon_scalable_2025` | 1 | yes |
 | `ext_muon_spectral_norm_2026` | 1 | yes |
 | `ext_mdl_tutorial_2004` | 1 | yes |
+| `ext_weakness_generalization_2023` | 1 | yes |
 | `ext_information_bottleneck_2000` | 1 | yes |
 | `ext_valiant_theory_learnable_1984` | 1 | yes |
 | `ext_deep_double_descent_2020` | 1 | yes |
@@ -1279,6 +1280,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `simulation_scaling` | unmapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_scaling_laws_neural_language_models_2020` | mapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_mdl_tutorial_2004` | mapped | note present | chapter listed | not passage-reviewed |
+| `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_weakness_generalization_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_weak_to_strong_generalization_2023` | mapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_information_bottleneck_2000` | mapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_valiant_theory_learnable_1984` | mapped | note present | chapter listed | not passage-reviewed |

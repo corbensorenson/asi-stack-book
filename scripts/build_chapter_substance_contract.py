@@ -777,13 +777,13 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "learning-theory-generalization-and-scaling-science": {
-        "reviewed_sha256": "37a4a8ca6ceab5fb5bf75b2a1c203cd89c15849ae97f609dbe76e40f02443e8e",
-        "reviewed_date": "2026-08-01",
+        "reviewed_sha256": "f5b0c3ad207b6507bc210290c2f5cc7e8bd4545e750f712c7371691bd1fec0d9",
+        "reviewed_date": "2026-08-04",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts separate claim assumptions, conditional bounds, inductive bias, compression and information lenses, interpolation, scaling forecasts, emergence measurement, and transfer under regime change",
-            "PAC, MDL, information bottleneck, scaling-law, double-descent, emergence, weak-to-strong, and no-free-lunch sources remain conditional, theoretical, empirical, model-family, task, or explanatory comparators rather than a universal learning theory",
+            "PAC, MDL, weakness, information bottleneck, scaling-law, double-descent, emergence, weak-to-strong, and no-free-lunch sources remain conditional, theoretical, empirical, model-family, task, representation, prior, or explanatory comparators rather than a universal learning theory",
             "the chapter preserves failed runs, quantifiers, alternative explanations, prospective forecasts, uncertainty, metric artifacts, architecture and optimizer expiry, and no transfer or safety promotion",
             "the formalization is restricted to authored forecast-dossier admissibility, finite attempt and alternative custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and a Benchmark Ratchet rejection; it establishes no generalization, transfer, emergence, forecast accuracy, calibration, safety, deployment, support, or release result",
         ],

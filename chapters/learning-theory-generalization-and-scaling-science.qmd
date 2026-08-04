@@ -192,6 +192,38 @@ length on held-out data instead of using parameter count as a proxy.
 **Explicit non-claim.** Compression is evidence about a representation under a
 code, not proof of semantic understanding or generalization.
 
+Bennett (`ext_weakness_generalization_2023`) sharpens this boundary by
+separating description length from
+*weakness*, defined in the paper as the cardinality of a hypothesis's extension:
+a weaker hypothesis is less specific because it is compatible with more
+statements. In the paper's finite enactive-cognition formalism, under a uniform
+distribution over the defined task space, maximizing weakness is proved
+necessary and sufficient for maximizing the probability of generalizing from a
+child task to an unknown parent. A constructed counterexample then shows that a
+shortest valid hypothesis need not be the weakest valid hypothesis.
+
+That result is a conditional comparator, not a universal replacement for MDL.
+The vocabulary fixes which statements and extensions exist, and the uniform
+task prior does substantial work; under a nonuniform deployment distribution,
+another inductive bias can perform better on the tasks that matter. The
+source-reported experiments compare weakness and description length only on toy
+8-bit binary addition and multiplication. They do not test modern neural
+networks, natural task distributions, transfer, safety, or the paper's later
+speculations about hallucination and grokking.
+
+**Mechanism.** For every proposed simplicity or generalization proxy, record
+the representation language, task prior, extension semantics, tie-breaking
+rule, and target distribution; compare shortest, least-specific, and
+task-weighted hypotheses rather than treating them as synonyms.
+
+**Failure mode.** A theorem under a uniform task distribution is reported as a
+universal learning law, or the chosen vocabulary silently makes the preferred
+hypothesis look weak.
+
+**Explicit non-claim.** The paper does not show that maximizing weakness trains
+better neural networks or that description length is useless on structured,
+nonuniform real tasks.
+
 ### Scaling laws: forecast registries instead of retrospective straight lines
 
 **Mechanism.** Test apparent emergence with continuous and probabilistic metrics, denser checkpoints, uncertainty intervals, prompt and sampling variants, contamination controls, and prospective breakpoint predictions. **Failure mode.** Exact-match thresholds, floors, small samples, and retrospective task choice can create cliffs or hide consequential crossings. **Non-claim.** Showing a metric artifact in one task does not refute every phase transition. **Source grounding.** Emergent Abilities and the Mirage critique provide competing source-bounded interpretations, not a settled general law.
@@ -351,6 +383,7 @@ Two information-loss constructions show why equal retrospective-fit signals cann
 | `simulation_scaling` | Simulation Scaling Law | Corben-authored conceptual lineage for resource-constrained scope, clock speed, and fidelity. It motivates explicit scale and fidelity denominators, but it does not provide a validated neural scaling law, learning-theory bound, prospective forecast, emergence result, or transfer guarantee. |
 | `ext_scaling_laws_neural_language_models_2020` | Scaling Laws for Neural Language Models | Empirical study reporting power-law relationships between cross-entropy loss, model size, data, and compute in its model family. These fitted relations are source-reported, metric- and regime-bound, and do not automatically forecast downstream capabilities, safety, or other architectures. |
 | `ext_mdl_tutorial_2004` | A tutorial introduction to the minimum description length principle | External description-length source for model/data tradeoffs, compression as inductive discipline, and residual/error-accounting vocabulary. |
+| `ext_weakness_generalization_2023` | The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest | Conditional formal comparator that distinguishes extension-based weakness from description length under a finite language and uniform task distribution; its toy arithmetic trials and speculative neural-network discussion do not establish broad neural generalization. |
 | `ext_weak_to_strong_generalization_2023` | Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision | Primary weak-to-strong-supervision comparator for a capability-gap envelope, held-out outcome audit, ceiling comparison, and explicit disanalogies between current weak-model studies and superhuman oversight; it does not establish local supervision quality, reliable elicitation, alignment, safety, or an ASI Stack result. |
 | `ext_information_bottleneck_2000` | The information bottleneck method | External representation-compression source for relevance-preserving compression, bottleneck variables, mutual-information tradeoffs, and compression/utility separation. |
 | `ext_valiant_theory_learnable_1984` | A Theory of the Learnable | Foundational source for making learnability conditional on accuracy, confidence, resource, sampling, and concept-class assumptions; not a foundation-model guarantee. |

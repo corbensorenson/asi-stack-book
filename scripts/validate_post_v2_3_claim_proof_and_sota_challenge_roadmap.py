@@ -367,13 +367,16 @@ def errors(data: dict) -> list[str]:
         out.append("there must be exactly one active canonical roadmap and it must be the maintenance successor")
     successor_status = data["successor_status"]
     successor_frontier = successor_status.get("current_priority")
+    successor_priority_owner = (
+        str(successor_frontier).split(".", 1)[0] if successor_frontier is not None else None
+    )
     successor_priorities = {
         row.get("id"): row.get("state") for row in successor_status.get("priorities", [])
     }
     if (
         successor_status.get("status") != "active"
         or successor_status.get("roadmap_path") != SUCCESSOR
-        or successor_priorities.get(successor_frontier) != "in_progress"
+        or successor_priorities.get(successor_priority_owner) != "in_progress"
     ):
         out.append("maintenance successor must be active at its declared in-progress frontier")
     if status.get("predecessor", {}).get("path") != PREDECESSOR or data["predecessor_status"].get("status") != "completed":

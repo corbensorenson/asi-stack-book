@@ -123,7 +123,10 @@ def main() -> None:
         if observed != expected_count:
             errors.append(f"{chapter_id}: adequacy table has {observed} targets; expected {expected_count}.")
 
-    if row_class_counts != summary_counts:
+    normalized_summary_counts = Counter(
+        {adequacy_class: count for adequacy_class, count in summary_counts.items() if count}
+    )
+    if row_class_counts != normalized_summary_counts:
         errors.append(
             f"Summary adequacy counts {dict(summary_counts)} do not match chapter table totals {dict(row_class_counts)}."
         )

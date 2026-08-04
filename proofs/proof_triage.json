@@ -3204,11 +3204,11 @@
       "tag": "lean:roadmap.phases.fixture_gate_bridge",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
-      "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
+      "formal_target": "The fixture bridge and independent consumer retain the public-safe route suite, reconstruct both transaction branches, and demonstrate that dependency and receipt counts alone cannot classify integration.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite fixture-bridge route: the complete public-safe phase-gate fixture summary is accepted, missing non-claim boundaries reject the bridge, and accepted summaries preserve no support-state promotion and no phase-completion claim."
+      "rationale": "Implemented in AsiStackProofs.PrototypeRoadmap as a finite fixture bridge and independent consumer that retain the public-safe route suite, reconstruct both transaction branches, and prove that dependency and receipt counts alone do not classify integration."
     },
     {
       "tag": "lean:living_book.methodology.operational_invariant",

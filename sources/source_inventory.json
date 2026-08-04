@@ -3363,6 +3363,23 @@
     "doi": "10.48550/arXiv.math/0406077"
   },
   {
+    "id": "ext_weakness_generalization_2023",
+    "title": "The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest",
+    "priority": "external_literature",
+    "layer": "learning_theory_inductive_bias",
+    "chapter_targets": [
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://arxiv.org/abs/2301.12987",
+    "notes": "Bennett's finite enactive-cognition formalism separates extension-based hypothesis weakness from description length. Under a uniform distribution over its task space, the paper argues that maximizing weakness is necessary and sufficient for maximizing generalization probability and gives a counterexample to MDL as a universal proxy. Its theorem assumptions and toy 8-bit arithmetic experiments do not establish a general result for neural networks or real task distributions.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2301.12987",
+    "published": "2023",
+    "updated": "2024-04-11",
+    "citation_label": "Bennett (2023), Weakest Hypothesis",
+    "doi": "10.1007/978-3-031-33469-6_5"
+  },
+  {
     "id": "ext_codebleu_2020",
     "title": "CodeBLEU: a Method for Automatic Evaluation of Code Synthesis",
     "priority": "external_literature",

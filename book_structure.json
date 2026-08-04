@@ -16005,6 +16005,7 @@
             "simulation_scaling",
             "ext_scaling_laws_neural_language_models_2020",
             "ext_mdl_tutorial_2004",
+            "ext_weakness_generalization_2023",
             "ext_weak_to_strong_generalization_2023",
             "ext_information_bottleneck_2000",
             "ext_valiant_theory_learnable_1984",
@@ -16064,6 +16065,7 @@
             "primary": [
               "ext_scaling_laws_neural_language_models_2020",
               "ext_mdl_tutorial_2004",
+              "ext_weakness_generalization_2023",
               "ext_weak_to_strong_generalization_2023",
               "ext_information_bottleneck_2000",
               "ext_valiant_theory_learnable_1984",
@@ -16096,6 +16098,16 @@
                 "sources/source_notes/ext_mdl_tutorial_2004.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_weakness_generalization_2023",
+              "mapped_support": "Conditional formal comparator separating extension-based hypothesis weakness from description length, plus source-reported toy binary-arithmetic trials comparing the two proxies.",
+              "limits": "The theorem assumes the paper's finite enactive formalism and a uniform distribution over its task space; the experiments are toy 8-bit addition and multiplication. No neural-network, natural-task, distribution-transfer, local reproduction, support, safety, or ASI result follows.",
+              "passage_review_state": "complete",
+              "passage_refs": [
+                "sources/source_notes/ext_weakness_generalization_2023.md"
+              ],
+              "passage_review_note": "The v4 paper was reviewed for its definitions, propositions, counterexample, experiments, assumptions, and speculative neural-network discussion."
             },
             {
               "source_id": "ext_weak_to_strong_generalization_2023",

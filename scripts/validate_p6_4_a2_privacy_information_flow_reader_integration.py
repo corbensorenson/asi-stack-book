@@ -47,7 +47,7 @@ def errors(data: dict) -> list[str]:
         if not note.is_file() or CHAPTER_ID not in note.read_text(): out.append(f"local source note incomplete: {sid}")
     proofs = [r for r in data["proofs"]["records"] if r["chapter_id"] == CHAPTER_ID]
     if len(proofs) != 2 or any(r.get("status") != "implemented" or r.get("module") != "AsiStackProofs.PrivacyInformationFlow" for r in proofs): out.append("A2 proof packet drifted")
-    if len(re.findall(r"^theorem\s+", (ROOT / "lean/AsiStackProofs/PrivacyInformationFlow.lean").read_text(), re.M)) != 27: out.append("A2 theorem denominator drifted")
+    if len(re.findall(r"^theorem\s+", (ROOT / "lean/AsiStackProofs/PrivacyInformationFlow.lean").read_text(), re.M)) != 38: out.append("A2 theorem denominator drifted")
     protocol = data["protocol"]
     if protocol.get("state") != "prospectively_frozen_unexecuted" or protocol.get("protected_outcomes_opened") is not False or len(protocol.get("arms", [])) != 6 or len(protocol.get("failure_families", [])) != 13 or len(protocol.get("competence_gates", [])) != 15: out.append("A2 campaign custody drifted")
     second = data["status"]["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]
@@ -93,6 +93,6 @@ def main() -> None:
     if failures: raise SystemExit("P6.4-A2 reader integration failed:\n- " + "\n- ".join(failures))
     probe = subprocess.run(["python3", "scripts/validate_information_lifecycle_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if probe.returncode: raise SystemExit(probe.stdout + probe.stderr)
-    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/27 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 11 lifecycle controls and 10 integration mutations, 84-chapter reconciliation with the later confidential-computation owner interposed, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
+    print("P6.4-A2 reader integration passed: terminal argument chapter, nine-source four-role packet plus one bounded local implementation-pressure record, 2 targets/38 theorems, 6 arms/13 failures/15 competence gates unopened, 26 transaction mutations plus 11 lifecycle controls and 10 integration mutations, 84-chapter reconciliation with the later confidential-computation owner interposed, terminal no-queue admission and current evidence custody preserved, no compliance/support/release effect.")
 
 if __name__ == "__main__": main()

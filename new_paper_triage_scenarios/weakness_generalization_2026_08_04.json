@@ -1,0 +1,76 @@
+{
+  "scenario_id": "weakness-generalization-triage-2026-08-04",
+  "scenario_scope": "Intake of Bennett's The Optimal Choice of Hypothesis Is the Weakest, Not the Shortest as a conditional learning-theory comparator to MDL and compression-based generalization claims.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "weakness-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "learning-theory-generalization-and-scaling-science",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The existing chapter already owns generalization assumptions, inductive-bias lenses, compression/MDL limits, task distributions, and forecast validity. The paper adds a direct conditional comparator and counterexample without introducing a distinct architecture owner.",
+      "required_before_drafting": [
+        "full v4 paper review",
+        "explicit uniform-task and finite-language assumption record",
+        "toy-experiment and neural-speculation boundary",
+        "source-note and claim-mapping completion"
+      ],
+      "evidence_transition_preconditions": [
+        "formal reproduction or exact finite check",
+        "empirical reproduction with exact configuration",
+        "nonuniform-prior and vocabulary sensitivity tests",
+        "accepted claim-specific transition"
+      ],
+      "promotion_blockers": [
+        "conditional theorem assumptions",
+        "toy arithmetic evidence only",
+        "no local reproduction",
+        "no modern neural or safety result"
+      ],
+      "non_claims": [
+        "does not establish weakness as a universal learning objective",
+        "does not refute all MDL or compression-based methods",
+        "does not promote the chapter core"
+      ]
+    },
+    {
+      "case_id": "weakness-standalone-chapter-rejection",
+      "intake_kind": "new_source",
+      "access_state": "available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "reject_duplicate",
+      "chapter_manifest_action": "reject_duplicate",
+      "existing_chapter_id": "learning-theory-generalization-and-scaling-science",
+      "proposed_chapter_id": "weakness-and-generalization",
+      "decision_rationale": "The source supplies one formal lens and one narrow experiment family. It does not own a distinct interface, lifecycle, invariant family, or artifact type beyond the existing Learning Theory chapter.",
+      "required_before_drafting": [
+        "not applicable; integrate through the existing owner"
+      ],
+      "evidence_transition_preconditions": [
+        "a future distinct operational lifecycle would require fresh chapter-boundary adjudication"
+      ],
+      "promotion_blockers": [
+        "topic novelty is not an architectural boundary"
+      ],
+      "non_claims": [
+        "does not reserve or defer a future standalone chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records a source-note-backed existing-chapter integration and rejects a duplicate chapter. It does not validate the paper's proof, reproduce its experiments, establish a universal inductive bias, or promote support.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not add a proof target by itself",
+    "does not promote support",
+    "does not authorize an experiment, release, deployment, or publication"
+  ]
+}

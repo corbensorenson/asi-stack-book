@@ -438,7 +438,7 @@ The current minimum is a record-and-route scaffold:
 
 - plan-graph, PlanForge-DAG, command, job, and semantic-atom schemas;
 - three valid and ten invalid plan-execution fixtures;
-- two valid scheduler-state traces and seven rejecting mutations;
+- two valid synthetic scheduler traces and seven rejecting mutations;
 - two valid runtime-replan traces and nine rejecting mutations;
 - two accepted `no_change` transitions; and
 - 71 theorem declarations grouped under seven proof targets.
