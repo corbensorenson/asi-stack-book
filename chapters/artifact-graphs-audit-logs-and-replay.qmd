@@ -223,6 +223,31 @@ Artifacts should have stable IDs and versioned revisions. Audit logs should be a
 
 Replay should be graded rather than binary. Some artifacts can be reconstructed byte for byte from recorded inputs and deterministic tools. Some can be replayed semantically, where the same obligations are checked even if nondeterministic text differs. Some can only be partially replayed because an external service, source snapshot, human decision, context transaction, or environment state is missing. Some have not been replayed at all. A replay record names that grade and exposes the residual instead of treating partial replay as success.
 
+### The decision-to-regret artifact chain
+
+The Regret Engine source adds two linked artifact families. The pre-action
+**Decision Capsule** commits information, objective and authority versions,
+available alternatives, forecasts, uncertainty, resources, checks, and exact
+runtime identities. The later **Regret Packet** links actual outcome evidence,
+admitted and rejected comparators, counterfactual models, intervals, attribution,
+learning eligibility, recovery, repairs, appeal state, and retirement back to
+that immutable capsule.
+
+These records fit the event graph as typed transitions such as capsule creation,
+outcome observation, comparator adjudication, estimate production, recovery,
+repair proposal, update lease, promotion, rollback, supersession, redaction,
+and appeal. Large traces can remain content-addressed while the canonical graph
+retains hashes, producer identities, schema versions, access rules, and replay
+handles. The actor may contribute a reflection but cannot silently relabel it
+as independent adjudication.
+
+Append-only history does not mean permanent unrestricted payload retention. A
+lawful deletion can cryptographically erase protected content while leaving a
+tombstone that narrows reproducibility and invalidates affected conclusions or
+derived artifacts. The source defines this contract but does not establish
+record completeness, receipt faithfulness, privacy compliance, or successful
+unlearning.
+
 ### Semantic patches are governed artifact transactions
 
 GenesisCode's strongest change-management idea is to ask an AI for a
@@ -1062,6 +1087,7 @@ These rows keep Artifact Graphs, Audit Logs, and Replay's manifest assignments v
 | `ext_txfs_2018` | Passage-reviewed comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity. | TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Separates a plausible reasoning transcript from causal reliance by distinguishing sufficiency, completeness, and interventional necessity; this sharpens the artifact graph's private-reasoning, reported-rationale, action-trace, receipt, and authoritative-effect boundaries. | The paper's metrics and training interventions are model- and task-bounded; they do not make a chain of thought a receipt or prove local record-reality faithfulness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Supplies concrete source, repository, base-commit, solution-patch, test-patch, image, parser, and test-transition identities that a replayable repository task must bind. | Dataset records and image manifests do not prove local replay, independent evaluation, authority-to-effect linkage, or rollback completeness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result

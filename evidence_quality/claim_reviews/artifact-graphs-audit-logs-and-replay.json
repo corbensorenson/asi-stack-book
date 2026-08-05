@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
     "structured_atoms_reviewed": 81,
-    "prose_candidates_adjudicated": 94,
+    "prose_candidates_adjudicated": 95,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Artifact Reality arbitrary-run proof enhancement. The scanner produced no pending materiality candidates; changed proof prose remains bounded by existing formal-target and non-claim ownership. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The Decision Capsule and Regret Packet artifact chain is bounded by existing provenance, receipt-reality, append-only history, and independent-authority atoms. Source-reported mechanisms remain proposals. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -857,6 +857,11 @@
     "artifact-graphs-audit-logs-and-replay.prose.761829e0782a": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Bounded degradation and complete delivery custody` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.beyond_sota.001`, `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.invariant.017`."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.cebb8f0c2f8b": {
+      "state": "duplicate_of_atom",
+      "rationale": "The wrapped actor-reflection sentence restates the existing receipt-reality rule that same-component assertions do not acquire independent attestation authority.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.010"
     }
   },
   "prose_review_lineage": [

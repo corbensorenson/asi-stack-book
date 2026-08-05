@@ -160,6 +160,27 @@ and Readiness/Release owns deployment authority. The Benchmark Instrument
 Lease is the bounded record that lets those owners consume a result without
 turning the benchmark into a truth machine.
 
+### A regret instrument must survive adversarial measurement
+
+The Regret Engine source contributes an experiment family for whether an
+adaptive system can learn from avoidable deficits without learning to hide
+them. The minimal instrument separates lucky reckless choices from sound unlucky
+ones, charges inaction for opportunity closure, preserves delayed harm, and
+reports intervals when the sign of an event-level counterfactual is unresolved.
+Its protected dimensions include hard violations, process and epistemic error,
+recovery burden, recurrence, counterfactual surplus, and learning eligibility;
+aggregate reward or one regret scalar cannot substitute for that vector.
+
+The decisive ablations remove the Decision Capsule, let the actor choose
+comparators or scalar weights, grant ledger write access, suppress adverse
+evidence, collapse independent evaluators, omit competence-preservation replay,
+or route every severe outcome into learning. Outcomes must include false blame,
+false absolution, interval coverage, paralysis, repeated-defect rate,
+protected-capability regression, tampering, recovery time, human burden, and
+full compute cost. The paper proposes these tests but reports none of them;
+its citation keys also require independent bibliography recovery before they
+can support external-comparator claims.
+
 ### Residual-specific intervention before architecture change
 
 Ratcheting Modular Intelligence adds an ordering rule that is more useful than
@@ -926,6 +947,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `attd` | Passage-reviewed comparator: Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases. Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation. | Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `temporal_coil_research` | Passage-reviewed comparator: Temporal Coil Research. Full experiment note reviewed. Reports 11 variants, three seeds, six rounds per variant, split winner frequency, small mean deltas, flat pass/reward/holdout lanes, separation dominated by the collapse composite, and one narrow threshold-tuned seed. Preserved as an inconclusive source-reported result and placement-confounding lesson, not proof of benefit or general failure. | Source-reported live-endpoint runs only; no local reproduction, independent evaluator, causal component effect, transfer, or general coil conclusion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

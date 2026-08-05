@@ -546,6 +546,29 @@ component owner retain their own admission authority. This separation prevents
 urgent experience from contaminating training data, canonizing a mistaken
 postmortem, or turning emergency power into permanent policy.
 
+### Recovery regret and three clocks
+
+The Regret Engine source makes the incident-to-learning handoff temporal.
+**Reaction** operates in seconds or minutes: stop, contain, roll back, disable a
+route, preserve evidence, disclose, or escalate. **Adaptation** operates over
+episodes or days: replay, local repair, monitor revision, guarded procedure
+compilation, shadow, and canary qualification. **Constitutional review** changes
+objectives, rights, comparator policy, evaluator constitution, authority, or
+retention rules on a slower independently authorized clock. A reaction cannot
+smuggle in adaptation, and neither faster clock can amend the constitution.
+
+Recovery regret measures avoidable delay, propagation, failed containment, and
+missed mitigation after the initiating event. It is kept separate from initial
+severity and causal responsibility. A fast repair can reduce future burden but
+cannot erase the original event, comparator, responsibility, or uncertainty
+record. This **recovery non-erasure** rule blocks recovery theater: restoring a
+checkpoint, suppressing an alert, or rewriting a postmortem is not equivalent
+to repairing external effects.
+
+The source has no deployed incident evidence. The concepts refine the
+operational contract only; they do not validate detection, attribution,
+containment, recovery, or constitutional governance.
+
 Decommissioning is the terminal option when recovery cannot satisfy the
 operating envelope, recurrence remains unacceptable, dependencies cannot be
 trusted, or the service no longer justifies its operational burden. It revokes
@@ -1059,6 +1082,15 @@ nine limited records into empirical support. Source-note availability and
 manifest mapping justify disciplined use of the concepts while the chapter
 core remains at `argument`.
 
+### Manifest source assignment reconciliation
+
+These rows keep Governed Operations, Incident Command, and Graceful Degradation's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Evidence and non-claims
 
 The current evidence record supports the following narrow statements:

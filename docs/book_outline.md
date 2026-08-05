@@ -3063,12 +3063,13 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `coherence_exchange` | Use as source-note/connector context only unless raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. |
 
 
-| Manifest assignment reconciliation | `platonic_world_model`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after a contract is accepted, the stack must choose and revise obligation order, alternatives, observations, feasibility, capacity, and dispatch boundaries under uncertainty.
 - Insufficiency: an acyclic graph, solver optimum, workflow execution, selected route, or recorded replan does not establish decomposition adequacy, dependency truth, useful scheduling, safe control, or cost dominance.
 - Mechanism: freeze contract, consumer, environment, horizon, authority/rights, resources, epoch, and material-change triggers before comparing plans.
+- Mechanism: commit a decision-time capsule and admit retrospective comparators only under frozen information, authority, resources, continuation semantics, and causal feasibility; preserve inaction, bounded probes, rejected alternatives, uncertainty, and recommendation reversal conditions.
 - Mechanism: preserve multiple candidate decompositions plus clarification, deferral, human-plan, and no-plan options with complete selection history.
 - Mechanism: type nodes as obligations and dependencies as data, control, semantic, temporal, authority, rights, evidence, resource, state, or recovery relations with provenance and falsifiers.
 - Mechanism: record assumptions, observations, predictive-state versions, uncertainty, staleness, disagreement, feasibility, adequacy, verifier, recovery, and expected utility before scheduling.
@@ -3650,7 +3651,7 @@ Source loading queue:
 | External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020`, `ext_w3c_prov_o_2013` | Position the owner against formal belief revision, truth maintenance, assumption contexts, citation support, retrieval critique, behavioral testing, and interoperable provenance. Treat them as bounded comparators, not local result evidence. |
 | Semantic-addressing lineage | `qcsa_whitepaper` | Use for the separation among ontology, proposition, evidence, provenance, support, contradiction, address, and permitted use; preserve QCSA's mixed results and zero core support effect. |
 
-| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Claims can drift across paraphrases, assumptions, evidence changes, contradictions, ontologies, concurrent updates, and publication surfaces without a reconstructable identity or history.
@@ -3663,6 +3664,7 @@ Draft arc:
 - Mechanism 6: Build justification and dependency graphs preserving alternative reasons, cycles, contested edges, invalidations, and residuals.
 - Mechanism 7: Append every proposed and accepted mutation with prior digest, concurrency base, trigger, proposer, authority, evidence/review refs, before/after state, rationale, time, cost, and non-overwrite receipt.
 - Mechanism 8: Materialize current state from history while retaining time travel, superseded views, rejected proposals, conflicts, failed migrations, and replay checks.
+- Boundary: keep Regret Packets as model-conditioned incident-learning records that may propose claim revision; Claim Ledgers alone own proposition-level change, with monotone evidence history and defeasible conclusions in both ledgers.
 - Mechanism 9: Use typed map, challenge, contradiction, no-change, promotion-proposal, downgrade, split, merge, supersession, deprecation, retirement, expiry, dispute, quarantine, and residual transitions.
 - Mechanism 10: Require Evidence States to authorize support movement through accepted transition refs; the ledger cannot promote itself.
 - Mechanism 11: Apply stronger responses to stronger recorded contradictions only within a frozen severity model that preserves uncertainty and disagreement.
@@ -4100,12 +4102,13 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
 - Insufficiency: If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
 - Mechanism: Record artifacts as stable, versioned nodes with parent job, source/context/tool refs, claim/test links, audit events, replay metadata, environment assumptions, provenance status, and replay limits.
+- Mechanism: join immutable pre-action Decision Capsules to append-only Regret Packets containing outcomes, comparator adjudications, uncertainty, attribution, learning eligibility, recovery, appeals, supersession, and deletion-aware reproducibility limits.
 - Mechanism: Treat incomplete provenance as a residual while using verified and failed traces as inputs to evidence ledgers, regression suites, and procedural-memory candidates.
 - Mechanism: Distinguish storage identity from evidential continuity: a path records where bytes live, while an artifact node records role, provenance, replay grade, residuals, and claim/test relevance.
 - Mechanism: Treat replay as graded rather than binary: byte-for-byte replay, semantic replay, partial replay, and non-replayability must be declared before artifact reuse can affect evidence state.
@@ -4631,13 +4634,14 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `capability_ratchet_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `capability_ratchet_whitepaper`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
 - Insufficiency: Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
 - Ownership: Procedural Memory owns evidence-gated promotion from complete repeated execution traces into qualified reusable execution structure. Artifact truth, fact memory, belief support, semantic compilation, routing, effect authority, verification, readiness, human work, rights, and model-state learning remain separately owned.
 - Mechanism: Execute an eighteen-stage lifecycle covering prospective scope, complete trace inventory, memory-domain separation, receipt reality, comparability, failure retention, invariant and causal alternatives, parameter discovery, executable contract, synthesis, verification, matched baselines, hidden regressions and transfer, joint metrics, lifecycle qualification, scoped routing leases, drift monitoring, and rollback/quarantine/retirement with descendant invalidation.
+- Mechanism: require decision-time-comparable regret clusters and contrastive repair pairs before rule compilation; prioritize recurrence-weighted regret debt while retaining counterfactual-surplus and protected-competence cases against failure fixation.
 - Interfaces: Keep twelve explicit boundaries spanning artifacts, context memory, claim ledgers, cognitive compilation, routing, runtime effects, verification/evidence, benchmarks, capability/readiness, security/rights, labor/humans, and data/model learning.
 - Proof boundary: Twenty-eight live declarations comprise fourteen reachable-refinement theorems and fourteen retained negative cases; five assumption projections or fixture admissions were retired. There is no deployed-system refinement theorem.
 - Handoff: Verified procedural tools become routable candidates for Part III, while failed or uncertain loops remain residuals.
@@ -5176,12 +5180,13 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `rgs`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `rgs`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Every routable or replaceable capability needs a current consumer- and use-specific decision about shadow, canary, ordinary, diagnostic, quarantined, superseded, or retired operation and downstream residual ownership.
 - Insufficiency: Scores, source reports, schemas, proofs, green aggregates, route matches, model agreement, and prior qualifications can omit check state, freshness, evaluator dependence, floors, ceilings, recovery, residuals, lineage, load, delayed effects, and total cost.
 - Mechanism: Maintain lifecycle states and readiness gates that separate semantic fit from ordinary routability.
+- Mechanism: keep severity, causal contribution, learning eligibility, and readiness separate; route eligible repairs through evidence-bearing update leases into observe-only, shadow, advisory, constrained, residual, canary, qualified, fallback, or quarantine states without self-promotion.
 - Mechanism: Keep gate evidence, regression preservation, and residual escrow attached to modules through promotion, quarantine, split, merge, retirement, or retraining.
 - Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
 - Mechanism: expose allowed routes, blocked routes, fallback path, expiry, inherited residuals, and non-claims so canary or diagnostic permission cannot be mistaken for default readiness.
@@ -6363,12 +6368,13 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
 - Insufficiency: Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements.
 - Mechanism: Convert every benchmark result into a ratchet record with command/run refs, environment, baseline, frontier state, mastery threshold, saturation state, residual escrow, regression refs, anti-Goodhart checks, promotion decision, support-state effect, and negative results.
+- Mechanism: test regret instruments against hindsight, lucky-versus-unlucky decisions, opportunity paralysis, evidence suppression, actor-selected comparators or weights, evaluator monoculture, replay fixation, false blame/absolution, interval miscoverage, and full human/compute cost.
 - Mechanism: Generate regression floors, holdout checks, transfer checks, mutation checks, contamination checks, and public-calibration notes before using a benchmark to move readiness or claim support.
 - Mechanism: Move residual failures into escrow, convert saturated tasks into regression floors, and create harder frontier tasks only when the prior evidence boundary survives review.
 - Mechanism: Record source-reported, synthetic, empirical, negative, and inconclusive results as distinct evidence states rather than cleanup notes.
@@ -6893,6 +6899,8 @@ Source loading queue:
 | Supporting | `scf`, `theseus_operator_os`, `viea`, `talos` | Use for roles, command, operator controls, escalation, and receipts; design lineage does not prove incident performance. |
 | Variants | `deterministic_capability_compilation`, `platonic_world_model` | Use for release identity, revocation, state lineage, and model/reality residuals; neither reverses external effects. |
 
+
+| Manifest assignment reconciliation | `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a pre-deployment case can be overtaken by drift, dependency failure,
@@ -6917,6 +6925,7 @@ Draft arc:
 - Mechanism: recovery uses fresh independently checked evidence, staged canary,
   expired emergency power, reconciled descendants/effects, and a new decision;
   incident learning updates tests and controls without rewriting history.
+- Mechanism: separate reaction, adaptation, and constitutional clocks; measure recovery regret without erasing the initiating event, responsibility, external effects, uncertainty, or faster-clock authority limits.
 - Interfaces: Safety Cases and Readiness supply obligations, Runtime supplies
   telemetry and effect records, Human Factors supplies the operator envelope,
   Policy Optimization and Update Governance receive bounded residuals, and
@@ -7010,13 +7019,14 @@ Source loading queue:
 | Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
 
-| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
 - Insufficiency: RLHF, preference optimization, and verifier rewards are often framed as model fine-tuning recipes rather than stack-wide update mechanisms.
 - Mechanism: Classify the target policy: planner, VCM, router, generator, verifier, execution, governance, generation mode, or whole-stack policy.
 - Mechanism: Record update state, policy delta, feedback source/admissibility, reward/preference signal, reward boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packets, deployment scope, support-state effect, residuals, and non-claims.
+- Mechanism: consume typed Regret Packets only as protected feedback; preserve severity, contribution, foreseeability, feasibility, surplus, uncertainty, root cause, and learning eligibility, and forbid actor-only comparator admission, scalarization, adjudication, or promotion.
 - Mechanism: Choose a training/update family by the policy being optimized, the feedback available, and the failure mode that must be blocked.
 - Mechanism: Keep REINFORCE/RLOO/ReMax-style policy gradients, TRPO/PPO-style trust-region updates, GRPO/DAPO/GSPO-style group or sequence updates, DPO/IPO/ORPO/KTO/SimPO-style offline preference optimization, RLVR, reasoning-budget RL, router-policy RL, and context-policy RL as method families, not unsupported result claims.
 - Mechanism: treat policy updates as behavior-change leases with target layer, evaluation scope, drift bound, rollback condition, monitor window, and promotion gate.
@@ -7126,7 +7136,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -7145,6 +7155,7 @@ Draft arc:
 - Mechanism: Treat replacement, accumulation, replay, quarantine, and
   retraining as competing workload-specific policies with visible coverage,
   privacy, deletion, poisoning, freshness, cost, and utility trade-offs.
+- Mechanism: stratify regret-aware replay into hard-boundary, recurrent-avoidable, unresolved-novelty, competence/surplus, and retired lanes with quotas, diversity, retention, deletion, lineage, and protected-capability checks.
 - Mechanism: Represent deletion as a descendant-closure obligation, not a
   completed state inferred from a request; distinguish source removal,
   retraining, checkpoint and cache invalidation, retrieval deletion, withdrawal,
@@ -7517,13 +7528,14 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
 - Insufficiency: Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 - Mechanism: Represent the integrated stack as a Reference Trace Record that names trace state, execution boundary, intent, parent artifacts, authority chain/deltas, layer handoffs, emitted artifacts, evidence updates/deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims.
 - Mechanism: Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, compression/procedural loop closure, and SCF improvement gates without collapsing layer boundaries.
+- Mechanism: add the Regret Engine return path as a joined subsystem: Planning commits a capsule; Artifacts bind outcomes and comparators; assurance emits a typed packet; Data/Procedure owners propose repair; Policy Optimization leases any update; Readiness admits or quarantines; Operations and constitutional governance retain their distinct clocks and authority.
 - Mechanism: Show the artifact emitted by each layer: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, residual, or capability-field transition.
 - Mechanism: Identify where authority can stop, narrow, reroute, quarantine, rollback, or require review before downstream work proceeds.
 - Mechanism: Record positive and negative checkpoints so approved paths and blocked paths are both inspectable.

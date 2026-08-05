@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/policy-optimization-and-learning-from-feedback.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 45,
+    "prose_candidates_adjudicated": 50,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Protected Regret Packet consumption, independent comparator and promotion authority, uncertainty monotonicity, and bounded update leases are mapped to existing feedback, authority, evidence, and readiness atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -316,6 +316,28 @@
     "policy-optimization-and-learning-from-feedback.prose.d68d3d561410": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Portia and Spider: optimize the smallest learning contract first` and reviewed owner atoms `policy-optimization-and-learning-from-feedback.core`, `policy-optimization-and-learning-from-feedback.beyond_sota.001`, `policy-optimization-and-learning-from-feedback.minimum.001`."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.c2ece879593f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "This is a wrapped clause in the feedback-mode evidence ladder; the complete obligation is owned by the chapter's frozen-update and reward-validity atoms."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.e9374944e828": {
+      "state": "nonmaterial_explanation",
+      "rationale": "This is a wrapped list of safeguards required before direct objective shaping, not an independently supported efficacy claim."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.20d9783516a3": {
+      "state": "duplicate_of_atom",
+      "rationale": "The actor non-self-adjudication rule specializes the existing separation between training behavior and authority-bearing runtime, evidence, and promotion owners.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.invariant.005"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.daa975297103": {
+      "state": "nonmaterial_explanation",
+      "rationale": "This is the middle line of the actor non-self-adjudication sentence and creates no claim beyond its reviewed authority disposition."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.7fa61250dea3": {
+      "state": "duplicate_of_atom",
+      "rationale": "The missingness-monotonicity rule specializes the existing requirement that uncertainty and provenance travel with every update and claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.invariant.003"
     }
   },
   "non_claims": [

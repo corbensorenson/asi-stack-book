@@ -811,6 +811,20 @@ def validate_lean(errors: list[str]) -> None:
     for theorem in REQUIRED_PLANFORGE_THEOREMS:
         if not re.search(rf"\btheorem\s+{re.escape(theorem)}\b", planforge_text):
             errors.append(f"{rel(PLANFORGE_LEAN_FILE)} missing theorem {theorem}.")
+
+    dependency_build = subprocess.run(
+        ["lake", "build", "AsiStackProofs"],
+        cwd=ROOT / "lean",
+        capture_output=True,
+        text=True,
+    )
+    if dependency_build.returncode:
+        errors.append(
+            "Lean dependency build failed before planning source checks:\n"
+            f"{dependency_build.stdout}{dependency_build.stderr}"
+        )
+        return
+
     for path in (PLANFORGE_LEAN_FILE, LEAN_FILE):
         completed = subprocess.run(
             ["lake", "env", "lean", str(path.relative_to(ROOT / "lean"))],

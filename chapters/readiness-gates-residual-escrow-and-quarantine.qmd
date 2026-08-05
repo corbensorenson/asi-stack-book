@@ -211,6 +211,26 @@ flowchart LR
 
 Those inputs answer different questions and should not be collapsed into one readiness score. Gate evidence asks what was actually checked. Regression preservation asks what must remain true after change. Residual escrow asks what is still unresolved and who must carry it. A target can improve on new work while failing its old floor, or pass every measured case while a required check was never attempted. The lifecycle must preserve both distinctions before it changes routability.
 
+### Learning eligibility is not readiness
+
+The Regret Engine source inserts one additional separation before this gate.
+An incident packet may be severe enough for immediate containment, causally
+linked enough to justify investigation, and still too uncertain for direct
+learning or ordinary use. Its learning-eligibility matrix therefore routes
+high-severity/high-confidence defects toward bounded repair, high-severity/
+low-confidence cases toward mitigation and evidence escrow, recurrent
+low-severity defects toward efficient compilation, and low-confidence minor
+cases toward monitoring or retirement.
+
+Even a learning-eligible repair does not become ready. It arrives with packet
+clusters, protected capabilities and surplus cases, uncertainty, update-lease
+scope, tests, monitor window, rollback, and residuals. Readiness alone maps
+those artifacts into observe-only, shadow, advisory, constrained, residual,
+canary, qualified, fallback, or quarantine modes. The candidate cannot choose
+its comparator set, adjudicate its own packet, or promote itself. These are
+design constraints, not calibrated thresholds or evidence of effective
+promotion.
+
 ### Check lifecycle and monotone containment
 
 A gate-level state is too coarse unless each contributing check exposes how it reached that state. Every check therefore records applicability, requiredness, attempt, result, waiver, evidence identity, observation time, and expiry. These fields prevent three attractive substitutions: not applicable for not attempted, skipped for passed, and waived for satisfied. A required applicable check can support readiness only when it was attempted, passed, and carries fresh evidence. Unknown applicability is itself a blocker until resolved.
@@ -660,6 +680,7 @@ These rows keep Readiness Gates, Residual Escrow, and Quarantine's manifest assi
 | `ext_dont_hallucinate_abstain_2024` | Passage-reviewed comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence. | The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Adds concrete instrument-failure gates for missing images, broken setup, parser drift, implicit naming, external context, test coupling, emulation cost, and failed positive controls. | A failed instrument closes the denominator and cannot be laundered into negative evidence about a model, mechanism, or governance architecture. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Metadata-first comparator: The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation. Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 readiness calibration

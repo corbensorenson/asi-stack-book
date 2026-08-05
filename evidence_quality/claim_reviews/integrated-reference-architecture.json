@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 99,
+    "prose_candidates_adjudicated": 100,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The capsule-to-packet-to-update return path and its three non-transfers are mapped to existing cross-layer authority, evidence, readiness, and trace obligations. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -536,6 +536,11 @@
       "state": "duplicate_of_atom",
       "rationale": "Line-wrap fragment from the authored cross-model projection explanation; the complete finite-consumer proposition is already owned by the governed-trace target.",
       "target_atom_id": "integrated-reference-architecture.formal.reference-architecture-governed-trace-four-invariants"
+    },
+    "integrated-reference-architecture.prose.a9370c3f6418": {
+      "state": "duplicate_of_atom",
+      "rationale": "The three non-transfers restate the existing rule that learning and self-improvement remain downstream of separate evidence, authority, readiness, residual, and monitoring gates.",
+      "target_atom_id": "integrated-reference-architecture.invariant.013"
     }
   },
   "non_claims": [

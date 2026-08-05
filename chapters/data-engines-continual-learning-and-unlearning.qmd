@@ -244,6 +244,26 @@ support while preserving poisonous, private, stale, or revoked material.
 Replacement may limit retention while destroying coverage. A receipt makes the
 tradeoff inspectable instead of silently selecting one side.
 
+### Regret-aware replay without failure fixation
+
+The Regret Engine source gives replay a typed intake rather than a global
+priority score. Packets enter separate catastrophic or hard-boundary,
+recurrent-avoidable, unresolved-novelty, competence-and-surplus, and
+retired-or-superseded strata. Only packets with adequate causal and
+decision-time evidence enter direct learning; severe but unresolved events are
+retained for adjudication and information acquisition. Successful trajectories,
+rare skills, and recovery successes reserve capacity so repair does not become
+catastrophic fixation.
+
+Within a learning-eligible stratum, priority may depend on bounded severity,
+confidence, recurrence, transfer, and uncovered mitigation. Sampling still
+needs quotas, diversity, importance correction where appropriate, and the
+Data-and-Descendant Custody Lease: exact packet, evidence, affected cohort,
+retention, deletion, replay policy, training state, and descendants remain
+traceable. Retirement stops active influence through an append-only status
+change rather than erasing the record. This is a proposed scheduler, not a
+demonstrated forgetting, unlearning, privacy, or continual-learning result.
+
 Deletion and revocation are lifecycle events, not a completed state inferred
 from a request. The engine records the affected source and version, the method
 chosen, the declared downstream scope, the evaluation planned, and every
@@ -807,6 +827,7 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 | `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Shows why world-model data lineage must separate action-free pretraining, action-conditioned adaptation, predictor versions, and error/residual records. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_influence_functions_2017` | Passage-reviewed comparator: Understanding Black-box Predictions via Influence Functions. Provides an approximate training-point influence estimator that can prioritize candidate descendants and deletion impact checks. | Approximate influence is not proof of causal contribution, privacy leakage, legal erasure, storage erasure, or successful unlearning. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Shows that data order and difficulty schedules can be part of the learning mechanism rather than incidental loader state. | The source does not establish a universal curriculum, safe continual learning, or transfer to current foundation-model pipelines. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result

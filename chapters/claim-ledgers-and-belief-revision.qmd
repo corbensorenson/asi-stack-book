@@ -315,6 +315,24 @@ rejected proposals, collisions, unresolved nodes, and stale surfaces stay in the
 record beside the materialized current view. That continuity supplies an audit
 trail, while epistemic and operational authority stays outside the ledger.
 
+### Regret records and belief records must not collapse
+
+The Regret Engine source proposes a separate append-only history for decisions,
+outcomes, comparators, counterfactual estimates, attribution, recovery, and
+learning eligibility. A Regret Packet can refer to claim IDs and can propose a
+belief revision, but it is not itself a true claim about what would have
+happened. Counterfactual estimates remain model-conditioned, and root-cause
+conclusions remain defeasible.
+
+The clean join is **monotone evidence history with defeasible conclusions**.
+Decision capsules, observations, evaluator outputs, appeals, and prior packet
+versions remain append-only. A later causal model, invalid comparator,
+specification change, or evaluator defect may supersede the active conclusion
+through a typed edge without deleting the earlier record. The Claim Ledger then
+owns any proposition-level split, downgrade, supersession, or surface repair;
+the Regret Ledger owns the incident-learning history that motivated it. Neither
+ledger may promote its own support state.
+
 ### Monotone contradiction and bounded repair
 
 The historical-project packet separates four dimensions that are often
@@ -799,6 +817,7 @@ These rows keep Claim Ledgers and Belief Revision's manifest assignments visible
 | Source | Intake role | Boundary |
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -8059,5 +8059,32 @@
     "passage_review_limits": "No inspected codec implementation, independent decoder, round-trip artifact, corpus result, runtime measurement, compression advantage, or production claim.",
     "updated": "2026-07-31",
     "citation_label": "Sorenson (2026), ORCP–MoECOT"
+  },
+  {
+    "id": "regret_engine",
+    "title": "The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents",
+    "priority": "must_use",
+    "layer": "governed_counterfactual_learning_and_self_correction",
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "policy-optimization-and-learning-from-feedback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "data-engines-continual-learning-and-unlearning",
+      "artifact-graphs-audit-logs-and-replay",
+      "claim-ledgers-and-belief-revision",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "governed-operations-incident-command-and-graceful-degradation",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/corben_papers/regret_engine/regret_engine.md@sha256:6d609442cdbd2725e0109544f000e5255ff6850ce766efa87800fa63a74d1623",
+    "notes": "Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred.",
+    "source_type": "author_whitepaper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated.",
+    "published": "2026-08-04",
+    "updated": "2026-08-04",
+    "citation_label": "Sorenson (2026), The Regret Engine"
   }
 ]

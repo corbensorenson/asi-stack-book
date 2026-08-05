@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 115,
+    "prose_candidates_adjudicated": 117,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The vector-valued measurement and adversarial-ablation prose is mapped to existing construct, subgroup, independence, and non-causality obligations; the missing bibliography remains an explicit source limitation. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -589,6 +589,15 @@
       "state": "duplicate_of_atom",
       "rationale": "P6.10 section-level semantic review maps this complete proposition within `The Portia/Spider lineage is a benchmark-authenticity test` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
       "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3236ac834bd3": {
+      "state": "duplicate_of_atom",
+      "rationale": "The prohibition on replacing a typed measurement vector with one aggregate restates the existing no-hidden-regression and construct-ownership boundaries.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.invariant.011"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.101d163e740f": {
+      "state": "historical_or_source_report",
+      "rationale": "This wrapped sentence records the supplied paper bundle's missing bibliography and the resulting need for independent citation recovery; it asserts no benchmark result."
     }
   },
   "non_claims": [

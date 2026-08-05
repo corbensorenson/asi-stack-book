@@ -1,0 +1,91 @@
+{
+  "backlog_id": "regret-engine-2026-08-04",
+  "triage_state": "integrated",
+  "source_or_gap": "The book had planning counterfactuals, feedback leases, procedural ratchets, replay, readiness, and incident learning, but lacked one explicit decision-time-fair packet joining those owners without collapsing loss, blame, avoidability, learning priority, and authority into a scalar.",
+  "access_state": "available",
+  "source_storage_policy": "local_private_cache",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "planning-as-a-control-layer",
+    "policy-optimization-and-learning-from-feedback",
+    "procedural-memory-and-cognitive-loop-closure",
+    "data-engines-continual-learning-and-unlearning",
+    "artifact-graphs-audit-logs-and-replay",
+    "claim-ledgers-and-belief-revision",
+    "readiness-gates-residual-escrow-and-quarantine",
+    "governed-operations-incident-command-and-graceful-degradation",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "integrated-reference-architecture"
+  ],
+  "chapter_action_policy": "Update each existing owner only with its distinct Regret Engine responsibility: decision-time comparison, protected feedback, replay custody, procedural compilation, packet lineage, belief boundary, readiness routing, incident clocks, adversarial evaluation, or cross-layer join. Do not create a paper-shaped chapter.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/regret_engine_2026_08_04.json",
+    "sources/source_notes/regret_engine.md",
+    "docs/book_outline.md",
+    "book_structure.json"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Keep the paper as one source record and distribute bounded concepts across ten established owners. Reconsider a new chapter only after a distinct implemented counterfactual tribunal or evaluation-service lifecycle cannot be represented by those owners.",
+  "boundary_decision_rationale": "The Regret Engine is a cross-layer subsystem and protocol family, not a new stack layer. Its Decision Capsule belongs to Planning and Artifact Graphs; its feedback and update broker belong to Policy Optimization; its replay and rule compiler belong to Data Engines and Procedural Memory; its adjudication and modes belong to Readiness and Operations; its claim semantics remain separate from Claim Ledgers.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "complete",
+  "external_literature_need": [
+    "recover and verify every unresolved bibliography key from the paper against primary sources",
+    "compare the proposed comparator contract with causal inference, off-policy evaluation, regret minimization, and counterfactual-regret literature",
+    "compare the anti-tampering and protected-feedback design with reward-tampering and causal-incentive literature",
+    "compare regret-to-rule compilation with continual learning, process supervision, reflective memory, and program synthesis",
+    "find independent work on incident learning, safety cases, audit logs, and multi-agent causal attribution"
+  ],
+  "proof_or_test_backlog": [
+    "mechanize finite comparator admissibility and decision-time fairness",
+    "mechanize authority non-expansion, non-self-adjudication, and recovery non-erasure",
+    "encode the scalar-insufficiency counterexample for hard constraints and repair routing",
+    "run the deterministic coding-agent pilot with exact worktree replay and independent adjudication",
+    "run matched tampering, hindsight, paralysis, continual-replay, and protected-competence ablations"
+  ],
+  "evidence_transition_precondition": [
+    "the exact claim atom and consumer are frozen",
+    "the paper bibliography and external comparators are independently verified",
+    "the relevant formal model or preregistered experiment is executed",
+    "complete failures, costs, uncertainty, and evaluator dependencies are retained",
+    "an accepted claim-specific evidence transition authorizes any narrow movement"
+  ],
+  "required_before_drafting": [
+    "completed: full Markdown paper review",
+    "completed: DOCX topology and embedded-media inspection",
+    "completed: existing-owner and new-chapter deduplication",
+    "completed: source note, source inventory, and bounded chapter mapping",
+    "open: bibliography and external figure companion recovery"
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "sources/raw/corben_papers/regret_engine/regret_engine.md",
+    "sources/raw/corben_papers/regret_engine/regret_engine.docx",
+    "sources/source_notes/regret_engine.md"
+  ],
+  "support_state_effect": "argument_only",
+  "promotion_blockers": [
+    "conceptual paper with no implemented Regret Engine",
+    "no experiment or baseline was executed",
+    "no formal proposition was independently mechanized or checked",
+    "counterfactual and causal estimates remain assumption-dependent",
+    "the bibliography companion is absent and citation keys are unresolved",
+    "no accepted evidence transition exists"
+  ],
+  "residuals": [
+    "bibliography recovery",
+    "Markdown figure companion recovery",
+    "external novelty and comparator audit",
+    "formal target rationalization",
+    "coding-agent pilot and adversarial evaluation"
+  ],
+  "next_action": "Use the paper to sharpen existing prose and specifications now; defer proof-manifest expansion until candidate invariants are deduplicated against current Lean owners, then prioritize the deterministic coding-agent pilot because it offers exact replay and bounded comparator construction.",
+  "non_claims": [
+    "does not add a new chapter",
+    "does not establish causal identifiability or objective correctness",
+    "does not implement or validate a Regret Engine",
+    "does not reproduce cited work or paper experiments",
+    "does not promote support, readiness, safety, SOTA, AGI, or ASI"
+  ]
+}

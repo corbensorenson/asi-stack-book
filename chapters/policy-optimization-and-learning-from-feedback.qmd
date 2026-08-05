@@ -183,6 +183,32 @@ A policy update record separates:
 
 The core rule is simple: policy optimization may learn from feedback, but the book should never let a reward signal silently become evidence, authority, or readiness.
 
+### Regret packets are protected feedback, not actor rewards
+
+The Regret Engine source adds a typed feedback artifact between observed
+outcomes and this update lease. A **Regret Packet** binds the decision-time
+capsule, admitted and rejected comparators, actual outcome evidence,
+model-conditioned counterfactual intervals, hard violations, causal
+contribution, foreseeability, feasibility, recurrence, counterfactual surplus,
+root-cause hypotheses, and unresolved residuals. Severity, contribution, and
+learning eligibility remain separate: an incident can demand immediate
+containment while still being too uncertain for gradient exposure.
+
+The safest consumption mode is diagnostic. Replay priority or an auxiliary
+prediction target requires more evidence; constrained or direct objective
+shaping requires stronger independence, calibration, double-counting checks,
+and tampering probes. The actor may propose alternatives and self-critiques,
+but it cannot be the sole authority that admits comparators, chooses weights,
+assigns its own root cause, declares learning eligibility, or promotes the
+resulting update. Removing evidence must widen uncertainty or leave it
+unchanged, never earn a better audit classification.
+
+This packet does not replace the Governed Policy Update Lease. It supplies one
+candidate feedback input to a lease that still freezes update surface, replay
+policy, protected capabilities, drift and resource limits, monitor window,
+rollback, expiry, and independent promotion authority. No Regret Engine was
+implemented, and no policy improvement or anti-tampering effect is inferred.
+
 Every update should produce a policy-delta receipt. The receipt records what behavior changed, which feedback authorized the change, which probes tried to break the reward, which holdouts and regressions were checked, which authority boundary remained unchanged, what monitor window was opened, which evidence packet was produced, which deployment scope was allowed, and how rollback would restore the prior policy.
 
 ### Portia and Spider: optimize the smallest learning contract first
@@ -524,6 +550,7 @@ These rows keep Policy Optimization and Learning from Feedback's manifest assign
 | `ext_rlhf_limitations_2023` | Passage-reviewed comparator: Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback. Supports external risk framing for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards. | External survey/risk framing only; not proof of any local mitigation, reward-process safety, evaluator quality, or deployed safeguard. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Shows that reward improvement can coexist with shortcut use and under-verbalized reward hacking, and tests update-time interventions that change information flow without changing rollout rewards. | The intervention results are bounded to the reported arithmetic, code-repair, and DAPO-Math settings; they do not validate local policy optimization or eliminate reward hacking. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 real policy-update result

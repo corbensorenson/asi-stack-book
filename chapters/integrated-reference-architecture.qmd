@@ -132,6 +132,40 @@ The reference architecture is a trace contract. A request enters through human i
 
 The participants in that trace are logical roles. They do not imply one model, process, machine, vendor, or physically separate cognitive module per lane. A single model can serve several roles when independent policy, state, and verification surfaces enforce the handoffs; one role can also be implemented by several models, deterministic tools, or human reviewers. The reference architecture is therefore substrate-neutral while remaining strict about responsibilities and authority.
 
+### The Regret Engine as a joined subsystem
+
+The Regret Engine source supplies a cross-layer return path rather than a new
+omnibus owner. Planning commits a Decision Capsule. Artifact Graphs bind actual
+outcomes, comparator proposals, evaluator outputs, and replay handles.
+Independent assurance classifies counterfactual support, causal contribution,
+foreseeability, feasibility, and learning eligibility. Claim Ledgers receive
+only proposition-level revision proposals. Data Engines and Procedural Memory
+route eligible packets into replay or the least invasive durable repair. Policy
+Optimization trains only inside a bounded update lease. Readiness admits,
+narrows, quarantines, or retires the result. Operations retains reaction and
+recovery authority, while constitutional governance alone may change
+objectives, rights, comparators, evaluator policy, or authority.
+
+```{mermaid}
+flowchart LR
+  A["Planning: Decision Capsule"] --> B["Artifact graph: outcomes + comparators"]
+  B --> C["Assurance: typed Regret Packet"]
+  C --> D["Data / procedural repair proposal"]
+  D --> E["Policy update lease"]
+  E --> F["Readiness decision"]
+  F --> G["Qualified, narrowed, fallback, or quarantine"]
+  C --> H["Operations: recovery and residuals"]
+  C --> I["Claim revision proposal"]
+  H --> B
+  G --> A
+```
+
+The join preserves three non-transfers: regret is not evidence, learning
+eligibility is not readiness, and regret reduction is not authority. The paper
+contains a service blueprint and proposed coding-agent pilot, but no end-to-end
+Regret Engine, counterfactual tribunal, policy update, or deployment has been
+implemented here.
+
 ### Training candidates are transactions, not artifacts
 
 The same role separation now applies before a learned candidate reaches this
@@ -1194,6 +1228,7 @@ These rows keep Integrated Reference Architecture's manifest assignments visible
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Provides a natural repository-change substrate for testing the same candidate through matched test-only, record-only, and full-governance admission routes with visible utility, unsafe admission, false blocking, latency, rollback, residual, and cost outcomes. | No local gold run, candidate campaign, final heldout result, governance advantage, deployment, safety, or transfer result exists yet. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a joined relational-complex state across semantic entities/relations/fields, evidence and lifecycle metadata, selected computational operators, branch identity, and abstraction maps, with explicit interfaces to routing, world models, memory, effects, and reconciliation. | The RDC lifecycle has not been implemented, joined to the current reference trace, or shown to preserve semantics, improve utility, reduce cost, or govern effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
