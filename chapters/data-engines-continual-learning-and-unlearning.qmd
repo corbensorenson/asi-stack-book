@@ -246,7 +246,8 @@ tradeoff inspectable instead of silently selecting one side.
 
 ### Regret-aware replay without failure fixation
 
-The Regret Engine source gives replay a typed intake rather than a global
+The Regret Engine source (`regret_engine`) gives replay a typed intake rather
+than a global
 priority score. Packets enter separate catastrophic or hard-boundary,
 recurrent-avoidable, unresolved-novelty, competence-and-surplus, and
 retired-or-superseded strata. Only packets with adequate causal and

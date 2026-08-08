@@ -399,7 +399,8 @@ governed discovery -> revised explicit artifact. False reification is a first-
 class failure mode and must preserve the original disagreement, evaluator,
 authority, rollback, and dissent.
 
-The Regret Engine source supplies a more selective trigger for this path.
+The Regret Engine source (`regret_engine`) supplies a more selective trigger
+for this path.
 Repeated failures become a repair cluster only when their decision-time
 capsules, admitted comparators, causal features, and uncertainty regimes are
 meaningfully comparable. A high-confidence cluster should preserve a
@@ -480,6 +481,26 @@ Robotics, fabrication, deployment, finance, and security procedures require
 runtime monitoring and failsafe behavior even after certification. A tool is
 procedural memory only while its applicability and evidence remain current;
 otherwise it is a historical artifact with a stale execution hypothesis.
+
+### Evidence-bound skill mutation in live agent systems
+
+`ext_hermes_agent_2026` and `ext_openclaw_agent_runtime_2026` make the abstract
+trace-to-procedure loop concrete. Hermes can create, patch, rewrite, and delete
+skills, and can stage those writes for durable diff approval. OpenClaw's
+experience review receives a bounded trajectory, may author at most one pending
+proposal, binds a patch to the exact live skill, and routes application through
+security scanning, stale-target rejection, rollback metadata, and lifecycle
+aging. Both systems distinguish short always-present memory from longer
+load-on-demand procedures.
+
+The comparison also identifies the remaining promotion gap. A trajectory can
+support a proposal without evidence that its causal lesson is correct, its
+procedure generalizes, or a new default route is safe. The book's qualified
+path therefore adds held-out replay, adversarial and negative controls,
+authority checks, independent result adjudication, scoped readiness, canary
+routing, monitoring, and retirement. The official project documentation was
+reviewed at pinned revisions; no learned skill, regression campaign, rollback,
+or utility result was reproduced here.
 
 ## Interfaces
 
@@ -772,6 +793,8 @@ These rows keep Procedural Memory and Cognitive Loop Closure's manifest assignme
 | `relational_dimension_compiler` | Passage-reviewed comparator: The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure. Adds a slow-path-to-specialist lifecycle in which repeatedly qualified relation programs become monitored recognizers, indexes, rules, kernels, macro-objects, or specialists while retaining scope, counterexamples, expiry, requalification, rollback, and the original slow route. | No relation program was compiled, no specialist equivalence or cost saving was measured, and no shift detector or rollback path was exercised. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hermes_agent_2026` | Passage-reviewed comparator: Hermes Agent: Learning, Memory, Tools, and Security Architecture. Supplies a current implementation comparator for progressive-disclosure skills, agent-managed create/patch/edit/delete operations, post-session review, and an optional durable write-approval queue that separates a proposed procedure mutation from its application. | Official software and documentation review only; no learned procedure was replayed, independently tested, promoted, rolled back, or measured for utility, safety, transfer, or regression. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator for isolated trajectory review, bounded evidence exposure, one-mutation pending proposals, exact-target hash binding, stale-target rejection, security rescanning, rollback metadata, abstention, and skill lifecycle aging. | Official software and documentation review only; reviewer isolation and proposal controls do not establish procedure correctness, evaluator independence, held-out transfer, safe default routing, or beneficial recursive improvement, and no local result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

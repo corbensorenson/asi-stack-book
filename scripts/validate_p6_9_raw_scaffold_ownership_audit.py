@@ -42,8 +42,8 @@ def errors(value: dict[str, Any]) -> list[str]:
     if value.get("state") != "terminal_complete":
         out.append("audit is not terminal")
     if (
-        binding.get("raw_repeated_12_gram_count") != 905
-        or binding.get("raw_maximum_chapter_spread") != 65
+        binding.get("raw_repeated_12_gram_count") != 1032
+        or binding.get("raw_maximum_chapter_spread") != 67
         or binding.get("reader_facing_repeated_12_gram_count") != 0
         or binding.get("reader_facing_maximum_chapter_spread") != 0
     ):
@@ -65,8 +65,8 @@ def errors(value: dict[str, Any]) -> list[str]:
         if row.get("chapter_ids_sha256") != expected_ids:
             out.append("widest-block chapter-set fingerprint drifted")
         if (
-            row.get("chapter_spread") != 65
-            or len(chapter_ids) != 65
+            row.get("chapter_spread") != 67
+            or len(chapter_ids) != 67
             or row.get("word_tokens") != 12
         ):
             out.append("widest-block scope drifted")
@@ -118,7 +118,7 @@ def main() -> None:
     mutations: list[tuple[str, Callable[[dict[str, Any]], None]]] = [
         ("state", lambda item: item.__setitem__("state", "active")),
         ("raw denominator", lambda item: item["w3_binding"].__setitem__("raw_repeated_12_gram_count", 0)),
-        ("raw spread", lambda item: item["w3_binding"].__setitem__("raw_maximum_chapter_spread", 64)),
+        ("raw spread", lambda item: item["w3_binding"].__setitem__("raw_maximum_chapter_spread", 66)),
         ("W3 digest", lambda item: item["w3_binding"].__setitem__("sha256", "0" * 64)),
         ("record deletion", lambda item: item["widest_block_records"].pop()),
         ("fingerprint", lambda item: item["widest_block_records"][0].__setitem__("sha256", "0" * 64)),

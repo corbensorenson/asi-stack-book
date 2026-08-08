@@ -225,7 +225,8 @@ Replay should be graded rather than binary. Some artifacts can be reconstructed 
 
 ### The decision-to-regret artifact chain
 
-The Regret Engine source adds two linked artifact families. The pre-action
+The Regret Engine source (`regret_engine`) adds two linked artifact families.
+The pre-action
 **Decision Capsule** commits information, objective and authority versions,
 available alternatives, forecasts, uncertainty, resources, checks, and exact
 runtime identities. The later **Regret Packet** links actual outcome evidence,
@@ -1051,6 +1052,25 @@ into a receipt or require disclosure of sensitive private reasoning.
 
 | `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
+### Session, run, and harness identity in a live gateway
+
+`ext_openclaw_agent_runtime_2026` exposes a practical identity chain that an
+artifact graph must not flatten. A gateway request resolves a local session,
+returns a run identifier, serializes work through a session lane, and writes a
+transcript under a generation-checked lock. An ACP delegation then adds a local
+ACP session key and a harness-local resume identifier. The latter is not a
+channel session key, and authorization for loading it belongs to the external
+backend rather than to the gateway record alone.
+
+OpenClaw also projects lifecycle and tool terminal events into a bounded,
+metadata-only audit ledger. That is useful privacy-aware operational evidence,
+but it is intentionally not a replay-complete copy of prompts, arguments,
+results, or external effects. The artifact graph therefore records the
+projection as one view, links it to separately governed transcript and effect
+records, and retains an explicit gap when the external harness owns execution
+or observation. No OpenClaw run, transcript, ACP session, audit projection, or
+effect was reproduced here.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -1088,6 +1108,7 @@ These rows keep Artifact Graphs, Audit Logs, and Replay's manifest assignments v
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Separates a plausible reasoning transcript from causal reliance by distinguishing sufficiency, completeness, and interventional necessity; this sharpens the artifact graph's private-reasoning, reported-rationale, action-trace, receipt, and authoritative-effect boundaries. | The paper's metrics and training interventions are model- and task-bounded; they do not make a chain of thought a receipt or prove local record-reality faithfulness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Supplies concrete source, repository, base-commit, solution-patch, test-patch, image, parser, and test-transition identities that a replayable repository task must bind. | Dataset records and image manifests do not prove local replay, independent evaluation, authority-to-effect linkage, or rollback completeness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator for serialized per-session execution, session-generation-checked transcript writes, bounded lifecycle/tool audit projection, and the separation between OpenClaw session identity and external ACP harness resume identity. | Official software and documentation review only; metadata-only audit projection is not replay-complete, ACP execution is not wrapped by the OpenClaw sandbox, and no trace, effect, replay, reliability, or security result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result

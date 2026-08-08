@@ -317,7 +317,8 @@ trail, while epistemic and operational authority stays outside the ledger.
 
 ### Regret records and belief records must not collapse
 
-The Regret Engine source proposes a separate append-only history for decisions,
+The Regret Engine source (`regret_engine`) proposes a separate append-only
+history for decisions,
 outcomes, comparators, counterfactual estimates, attribution, recovery, and
 learning eligibility. A Regret Packet can refer to claim IDs and can propose a
 belief revision, but it is not itself a true claim about what would have

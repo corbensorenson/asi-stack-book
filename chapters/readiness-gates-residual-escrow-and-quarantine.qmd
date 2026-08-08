@@ -213,7 +213,8 @@ Those inputs answer different questions and should not be collapsed into one rea
 
 ### Learning eligibility is not readiness
 
-The Regret Engine source inserts one additional separation before this gate.
+The Regret Engine source (`regret_engine`) inserts one additional separation
+before this gate.
 An incident packet may be severe enough for immediate containment, causally
 linked enough to justify investigation, and still too uncertain for direct
 learning or ordinary use. Its learning-eligibility matrix therefore routes

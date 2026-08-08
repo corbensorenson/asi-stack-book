@@ -185,7 +185,8 @@ The core rule is simple: policy optimization may learn from feedback, but the bo
 
 ### Regret packets are protected feedback, not actor rewards
 
-The Regret Engine source adds a typed feedback artifact between observed
+The Regret Engine source (`regret_engine`) adds a typed feedback artifact
+between observed
 outcomes and this update lease. A **Regret Packet** binds the decision-time
 capsule, admitted and rejected comparators, actual outcome evidence,
 model-conditioned counterfactual intervals, hard violations, causal

@@ -3,7 +3,7 @@
 Status: **terminal complete**.
 
 The audit classifies every exact 12-token block at the current raw-QMD
-maximum spread of **65** chapters.
+maximum spread of **67** chapters.
 All **21** widest fingerprints occur only
 inside the marked manifest-source reconciliation projection, are owned by
 `scripts/sync_chapter_source_crosswalks.py`, and have the disposition

@@ -548,7 +548,8 @@ postmortem, or turning emergency power into permanent policy.
 
 ### Recovery regret and three clocks
 
-The Regret Engine source makes the incident-to-learning handoff temporal.
+The Regret Engine source (`regret_engine`) makes the incident-to-learning
+handoff temporal.
 **Reaction** operates in seconds or minutes: stop, contain, roll back, disable a
 route, preserve evidence, disclose, or escalate. **Adaptation** operates over
 episodes or days: replay, local repair, monitor revision, guarded procedure

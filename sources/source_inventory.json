@@ -8061,6 +8061,57 @@
     "citation_label": "Sorenson (2026), ORCP–MoECOT"
   },
   {
+    "id": "ext_elizaos_agent_runtime_2026",
+    "title": "elizaOS Agent Runtime and Scenario Runner",
+    "priority": "external_literature",
+    "layer": "modular_agent_runtime_and_evidence_qualification",
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://github.com/elizaOS/eliza/tree/1232c982c1594d2438a8a53b02e41a9ba86664aa",
+    "notes": "Pinned official implementation comparator for modular actions, providers, evaluators, services, runtime lifecycle, scenario execution, and the explicit distinction between in-process diagnostics and externally qualified provider evidence. No elizaOS execution, test reproduction, security assessment, performance result, or support transition is imported.",
+    "source_type": "official_software_and_documentation",
+    "published": "2024-07-09",
+    "updated": "2026-08-08",
+    "citation_label": "elizaOS contributors (2026), elizaOS Agent Runtime"
+  },
+  {
+    "id": "ext_hermes_agent_2026",
+    "title": "Hermes Agent: Learning, Memory, Tools, and Security Architecture",
+    "priority": "external_literature",
+    "layer": "procedural_memory_and_agent_runtime",
+    "chapter_targets": [
+      "procedural-memory-and-cognitive-loop-closure",
+      "durable-semantic-memory-and-knowledge-lattices",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://github.com/NousResearch/hermes-agent/tree/238351a60ce689e1c460fabf5b3f50e3b06b44bd",
+    "notes": "Pinned official implementation comparator for progressive-disclosure skills, agent-managed procedural memory, staged skill-write approval, bounded prompt memory, session search, tool backends, command approval, and isolation. No learning, memory, security, utility, or performance result was reproduced.",
+    "source_type": "official_software_and_documentation",
+    "published": "2025-07-22",
+    "updated": "2026-08-08",
+    "citation_label": "Nous Research (2026), Hermes Agent"
+  },
+  {
+    "id": "ext_openclaw_agent_runtime_2026",
+    "title": "OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture",
+    "priority": "external_literature",
+    "layer": "gateway_session_harness_and_procedural_learning_runtime",
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "procedural-memory-and-cognitive-loop-closure"
+    ],
+    "url": "https://github.com/openclaw/openclaw/tree/e4309e0cc7a74f0c82d572eb47befe78211c6be5",
+    "notes": "Pinned official implementation comparator for gateway and device identity, serialized session runs, bounded audit projection, ACP external-harness identity and authorization boundaries, separated sandbox/tool/elevation controls, and evidence-reviewed hash-bound skill proposals. Distinct from the Claw-SWE-Bench benchmark source; no implementation result was reproduced.",
+    "source_type": "official_software_and_documentation",
+    "published": "2025-11-24",
+    "updated": "2026-08-08",
+    "citation_label": "OpenClaw contributors (2026), OpenClaw Agent Runtime"
+  },
+  {
     "id": "regret_engine",
     "title": "The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents",
     "priority": "must_use",

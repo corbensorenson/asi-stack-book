@@ -333,6 +333,24 @@ consumer, and failure behavior for which two concepts are substitutable, then
 expires. This preserves interoperability and disagreement together; it does not
 establish identity, truth, authority, payment, or settlement.
 
+### External harness delegation is a protocol handoff
+
+`ext_openclaw_agent_runtime_2026` gives this chapter a concrete non-network
+handoff: a local gateway dispatches to an external coding harness through ACP.
+The local ACP session key, current conversation binding, target agent, selected
+working directory, permission profile, and timeout remain gateway-owned. The
+harness-local resume identifier and authorization to load its upstream history
+remain backend-owned. Values valid in one namespace are not substitutes for
+values in the other.
+
+This boundary is sharper than a generic tool call because the child runtime can
+retain history and execute outside the parent's sandbox. The exchange record
+therefore identifies both session namespaces, both authorization decisions,
+the selected execution root, confinement owner, cancellation and close
+semantics, result-delivery route, and unresolved effects. Gateway policy can
+deny dispatch without proving that an admitted harness is confined or that its
+result is correct. No ACP handoff was run in this repository.
+
 ## Interfaces
 
 The exchange boundary preserves a local division of labor. It can make a remote
@@ -695,6 +713,7 @@ These rows keep Inter-Stack Protocols, Identity, and Economic Exchange's manifes
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence. Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Supplies namespace-qualified stable identities, signed SACs, atlas epochs, mapping manifests, migration lineage, and uncertainty-preserving translation as candidate cross-stack semantic exchange records; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. No peer federation, trust, settlement, privacy, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator for typed gateway requests and events, device identity and pairing, idempotency keys, ACP session routing, and the explicit distinction between a local channel/session key and a harness-local resume identifier whose upstream loading authorization belongs to the external backend. | Official software and documentation review only; protocol shape, pairing, and policy checks do not establish peer trust, delegated authority correctness, harness confinement, delivery, settlement, or end-to-end effect safety, and no local run was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 :::

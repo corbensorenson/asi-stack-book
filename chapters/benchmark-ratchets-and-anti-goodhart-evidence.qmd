@@ -162,7 +162,8 @@ turning the benchmark into a truth machine.
 
 ### A regret instrument must survive adversarial measurement
 
-The Regret Engine source contributes an experiment family for whether an
+The Regret Engine source (`regret_engine`) contributes an experiment family
+for whether an
 adaptive system can learn from avoidable deficits without learning to hide
 them. The minimal instrument separates lucky reckless choices from sound unlucky
 ones, charges inaction for opportunity closure, preserves delayed harm, and
@@ -768,6 +769,26 @@ The bridge records 2 valid fixtures and 5 expected-invalid controls. The valid s
 
 The bridge makes the anti-Goodhart record discipline operational at the record boundary: a synthetic success path and five nearby failure paths are checked together instead of narrated separately. It is not a benchmark run, hidden-holdout validation, contamination detector, policy-training result, steward-agent execution, release-safety review, Theseus replay, model-quality result, or support-state transition.
 
+### Diagnostic scenarios and provider qualification
+
+`ext_elizaos_agent_runtime_2026` supplies a current implementation comparator
+for this boundary. Its scenario runner can drive a real runtime through message,
+action, API, and scheduler turns with deterministic or live-model paths and
+per-turn assertions. Its documentation explicitly distinguishes this useful
+in-process diagnostic lane from provider-qualified evidence. The qualification
+design adds an external controller, a closed content-hashed manifest,
+authenticated ingress, independent observers, durable readback, isolated
+trajectory hashing, and signed verdicts.
+
+That distinction is a valuable benchmark-ratchet pattern. A diagnostic can
+exercise real code while a separate qualification lane supplies the independent
+observation boundary needed for stronger evidence. The documented idempotency
+and readback mechanisms provide additional delivery evidence while the
+qualification record conservatively keeps exactly-once false. The book adopts this separation
+and keeps the effect denominator open when external reality is not observed.
+No elizaOS scenario, provider, observer signature, or qualification result was
+executed or reproduced here.
+
 The exact current minimum is one benchmark-ratchet schema and valid record
 fixture; one metric-provenance schema with one valid blocked six-project-
 lineage record and ten rejecting mutations; one synthetic anti-Goodhart harness
@@ -948,6 +969,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `attd` | Passage-reviewed comparator: Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases. Full authenticated connector text section-audited. Adds historical, vector-valued structural-debt governance: artifact-class separation, intrinsic assembly burden, reuse failure, role entropy, lineage, rolling residue, debt pressure, verified simplification credit, local caps, growth guards, deterministic GREEN/YELLOW/RED admission, bounded maintenance packets, abstention, and four-arm long-horizon evaluation. | Assembly theory is design inspiration; no universal debt law, analyzer, threshold calibration, causal ablation, long-horizon maintenance result, or safe self-modification claim. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `temporal_coil_research` | Passage-reviewed comparator: Temporal Coil Research. Full experiment note reviewed. Reports 11 variants, three seeds, six rounds per variant, split winner frequency, small mean deltas, flat pass/reward/holdout lanes, separation dominated by the collapse composite, and one narrow threshold-tuned seed. Preserved as an inconclusive source-reported result and placement-confounding lesson, not proof of benefit or general failure. | Source-reported live-endpoint runs only; no local reproduction, independent evaluator, causal component effect, transfer, or general coil conclusion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_elizaos_agent_runtime_2026` | Passage-reviewed comparator: elizaOS Agent Runtime and Scenario Runner. Supplies a current implementation comparator for deterministic and live runtime scenarios, per-turn and final assertions, trajectory export, and an explicit separation between in-process diagnostics and externally observed provider qualification. | Official software and documentation review only; no scenario, model, provider, observer signature, trajectory, benchmark, cost, failure, or qualification result was executed or reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

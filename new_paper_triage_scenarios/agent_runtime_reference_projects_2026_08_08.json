@@ -1,0 +1,114 @@
+{
+  "scenario_id": "agent-runtime-reference-projects-triage-2026-08-08",
+  "scenario_scope": "Primary-source intake of elizaOS, Nous Research Hermes Agent, and OpenClaw as external implementation comparators for modular agent runtimes, governed tool use, procedural memory, session identity, evidence capture, and runtime composition.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "elizaos-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "runtime-adapters-tool-permissions-and-human-approval; benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "elizaOS supplies a concrete modular runtime and scenario-runner comparator, while runtime authority, evidence qualification, and promotion already have explicit owners in the existing book.",
+      "required_before_drafting": [
+        "review the official repository at a pinned commit",
+        "review canonical core-runtime, scenario-runner, security, and sandbox documentation",
+        "separate implemented project surfaces from the shared ChatGPT review's unverified diagnoses"
+      ],
+      "evidence_transition_preconditions": [
+        "run a claim-specific local or independently reviewed comparison",
+        "retain exact version, configuration, failures, costs, and boundary conditions",
+        "accept a claim-specific evidence transition"
+      ],
+      "promotion_blockers": [
+        "documentation and source inspection only",
+        "no local elizaOS execution or scenario reproduction",
+        "no independent security or performance assessment"
+      ],
+      "non_claims": [
+        "does not import reported project behavior into the ASI Stack",
+        "does not establish runtime safety, readiness, or state of the art",
+        "does not justify a new paper-shaped chapter"
+      ]
+    },
+    {
+      "case_id": "hermes-agent-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "procedural-memory-and-cognitive-loop-closure; durable-semantic-memory-and-knowledge-lattices; runtime-adapters-tool-permissions-and-human-approval",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Hermes Agent provides a concrete skill-learning, persistent-memory, session-search, approval, and isolation comparator; those mechanisms fit established memory and runtime owners rather than a standalone product chapter.",
+      "required_before_drafting": [
+        "review the official repository at a pinned commit",
+        "review canonical skills, memory, security, and architecture documentation",
+        "distinguish agent-authored procedures from validated or promoted capabilities"
+      ],
+      "evidence_transition_preconditions": [
+        "execute a claim-specific procedure-learning or memory-integrity comparison",
+        "measure proposal quality, regression, rollback, poisoning, and human-review costs",
+        "accept a claim-specific evidence transition"
+      ],
+      "promotion_blockers": [
+        "documentation and source inspection only",
+        "no local Hermes Agent execution",
+        "no reproduced learning, memory, security, or utility result"
+      ],
+      "non_claims": [
+        "does not equate skill mutation with safe self-improvement",
+        "does not establish memory correctness or command safety",
+        "does not justify a new paper-shaped chapter"
+      ]
+    },
+    {
+      "case_id": "openclaw-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "runtime-adapters-tool-permissions-and-human-approval; artifact-graphs-audit-logs-and-replay; inter-stack-protocols-identity-and-economic-exchange; procedural-memory-and-cognitive-loop-closure",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "OpenClaw supplies concrete gateway, session, ACP harness, policy, audit, and governed self-learning surfaces. It complements rather than duplicates the existing Claw-SWE-Bench evaluation source and fits four established lifecycle owners.",
+      "required_before_drafting": [
+        "review the official repository at a pinned commit",
+        "review canonical gateway, agent-loop, ACP, sandbox-policy, memory, and self-learning documentation",
+        "keep the OpenClaw implementation source distinct from the Claw-SWE-Bench benchmark source"
+      ],
+      "evidence_transition_preconditions": [
+        "run a version-pinned claim-specific gateway, session, policy, or learning comparison",
+        "retain failures, policy configuration, identity joins, costs, and unresolved residuals",
+        "accept a claim-specific evidence transition"
+      ],
+      "promotion_blockers": [
+        "documentation and source inspection only",
+        "no local OpenClaw execution",
+        "no reproduced security, reliability, learning, or benchmark result"
+      ],
+      "non_claims": [
+        "does not transfer Claw-SWE-Bench results to OpenClaw or the ASI Stack",
+        "does not establish ACP harness confinement or end-to-end authority correctness",
+        "does not justify a new paper-shaped chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records a primary-source existing-owner routing decision for three public software projects. It does not reproduce the projects, validate their documentation, import their reported results, establish novelty, or move any claim support state.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not create a new chapter",
+    "does not add a Lean proof result",
+    "does not authorize deployment, release, or claim promotion"
+  ]
+}

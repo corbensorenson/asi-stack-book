@@ -608,7 +608,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "durable-semantic-memory-and-knowledge-lattices": {
-        "reviewed_sha256": "8c8d817c52c52111ccf66ef5e3f30e9868f1b860c45053f6f515bf52b1903b1c",
+        "reviewed_sha256": "d28b39b8af803bf4812505b0e67bfee378964062227b5d7e83ce9d94e1220cd8",
         "reviewed_date": "2026-08-01",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,

@@ -329,6 +329,24 @@ semantically isolated or deletion-complete.
 
 **Source grounding.** `ext_graphrag_2024`, `ext_hipporag_2024`, and `ext_mem0_2025` provide distinct graph, associative, and conversational retrieval comparators. `qcsa_whitepaper` contributes active, consumer-scoped semantic addressing. Their reported results are not local reproductions and do not establish this joined plan’s advantage.
 
+### Memory tiers are separate authority surfaces
+
+`ext_hermes_agent_2026` supplies a useful implementation comparison among three
+memory forms: bounded `MEMORY.md` and `USER.md` snapshots injected at session
+start, FTS5 search over stored historical messages, and longer procedural
+skills loaded on demand. Injection scanning on admitted prompt memory and exact
+message retrieval mitigate some obvious risks, but they do not supply proposition
+identity, temporal validity, contradiction, support, rights, or downstream-use
+custody.
+
+The lattice keeps these tiers separate because they fail differently. Compact
+prompt memory spends tokens and can remain stale; session search can return a
+real statement without making it current or true; a skill can preserve an
+effective procedure without making its explanation factual. Promotion between
+the tiers is an explicit event with source, transformation, authority,
+expiry, consumer, and rollback or deletion obligations. No Hermes memory or
+search behavior was executed or reproduced in this repository.
+
 ### Retention, forgetting, and deletion
 
 **Mechanism.** Model retention as separate authorities over storage, retrieval, use, training influence, behavioral expression, privacy, backups, and legal or audit preservation. A deletion event identifies the object, purpose, affected derivatives, indexes, caches, checkpoints, backups, and consumers; each returns a disposition and residual. Tombstones and minimal accountability records may remain where authorized so a forbidden object is not silently reintroduced, while content access is removed according to the governing duty.
@@ -516,6 +534,15 @@ Planned formalization route: `lean:durable-semantic-memory-and-knowledge-lattice
 | `ext_mem0_2025` | Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory | Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here. |
 | `ext_titans_2025` | Titans: Learning to Memorize at Test Time | Primary neural-memory comparator for test-time memorization and long-context sequence modeling. The paper motivates mutable-state provenance and rollback tests; no local model or benchmark result is reproduced. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Durable Semantic Memory and Knowledge Lattices's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_hermes_agent_2026` | Passage-reviewed comparator: Hermes Agent: Learning, Memory, Tools, and Security Architecture. Supplies a current implementation comparator that separates bounded always-present MEMORY/USER snapshots, on-demand FTS5 session search, and longer load-on-demand procedural skills, while scanning admitted prompt memory for injection and exfiltration patterns. | Official software and documentation review only; no memory fact, search result, poisoning control, session isolation, learning behavior, cost, utility, or deployment result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Durable semantic memory separates referents from names, evidence from derived

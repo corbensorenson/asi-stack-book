@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 84 |
-| Assigned source/chapter pairs | 1251 |
-| Exact claim-source mappings | 1051 |
+| Assigned source/chapter pairs | 1260 |
+| Exact claim-source mappings | 1060 |
 | Unmapped assigned pairs | 200 |
-| Source notes present for assigned pairs | 1251 |
-| Source notes listing assigned chapter | 1251 |
-| Passage-reviewed mappings recorded | 982 |
+| Source notes present for assigned pairs | 1260 |
+| Source notes listing assigned chapter | 1260 |
+| Passage-reviewed mappings recorded | 991 |
 | Support-state counts | {"argument": 84} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -68,7 +68,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governed-world-models-and-reality-grounding` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 20 | 17 | 20 | 20 | 17 | argument | passage review required before source-derived promotion |
 | `virtual-context-abi` | 31 | 24 | 31 | 31 | 24 | argument | passage review required before source-derived promotion |
-| `durable-semantic-memory-and-knowledge-lattices` | 8 | 8 | 8 | 8 | 4 | argument | passage review required before source-derived promotion |
+| `durable-semantic-memory-and-knowledge-lattices` | 9 | 9 | 9 | 9 | 5 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
 | `verification-bandwidth-and-context-adequacy` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
 | `claim-ledgers-and-belief-revision` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
@@ -77,12 +77,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `human-ai-organizations-delegation-and-accountability` | 9 | 6 | 9 | 9 | 6 | argument | passage review required before source-derived promotion |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `ai-deployment-transition-distribution-and-human-agency` | 4 | 2 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
-| `artifact-graphs-audit-logs-and-replay` | 22 | 19 | 22 | 22 | 19 | argument | passage review required before source-derived promotion |
-| `runtime-adapters-tool-permissions-and-human-approval` | 28 | 25 | 28 | 28 | 25 | argument | passage review required before source-derived promotion |
+| `artifact-graphs-audit-logs-and-replay` | 23 | 20 | 23 | 23 | 20 | argument | passage review required before source-derived promotion |
+| `runtime-adapters-tool-permissions-and-human-approval` | 31 | 28 | 31 | 31 | 28 | argument | passage review required before source-derived promotion |
 | `embodied-agency-real-time-control-and-physical-safety` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
-| `inter-stack-protocols-identity-and-economic-exchange` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
+| `inter-stack-protocols-identity-and-economic-exchange` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `procedural-memory-and-cognitive-loop-closure` | 25 | 19 | 25 | 25 | 19 | argument | passage review required before source-derived promotion |
+| `procedural-memory-and-cognitive-loop-closure` | 27 | 21 | 27 | 27 | 21 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 24 | 20 | 24 | 24 | 20 | argument | passage review required before source-derived promotion |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 49 | 39 | 49 | 49 | 39 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
@@ -101,7 +101,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `benchmark-ratchets-and-anti-goodhart-evidence` | 45 | 34 | 45 | 45 | 34 | argument | passage review required before source-derived promotion |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | 46 | 35 | 46 | 46 | 35 | argument | passage review required before source-derived promotion |
 | `white-box-evidence-interpretability-and-activation-governance` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
@@ -202,6 +202,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_nist_ai_rmf_1_0_2023` | 4 | yes |
 | `ext_claw_swe_bench_2026` | 4 | yes |
 | `ext_faithfulness_information_flow_2026` | 4 | yes |
+| `ext_openclaw_agent_runtime_2026` | 4 | yes |
 | `ext_inspect_ai_2024` | 4 | yes |
 | `spider_synapse` | 4 | yes |
 | `ext_universal_transformer_2019` | 4 | yes |
@@ -227,6 +228,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_dreamcoder_2020` | 3 | yes |
 | `ext_alce_2023` | 3 | yes |
 | `ext_pagedattention_vllm_2023` | 3 | yes |
+| `ext_hermes_agent_2026` | 3 | yes |
 | `ext_cap_theorem_gilbert_lynch_2002` | 3 | yes |
 | `ext_openai_prompt_caching_docs_2026` | 3 | yes |
 | `ext_anthropic_prompt_caching_docs_2026` | 3 | yes |
@@ -309,6 +311,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_constructive_interdependence_human_ai_2026` | 2 | yes |
 | `ext_human_ai_team_meta_analysis_2024` | 2 | yes |
 | `ext_human_ai_feedback_loops_2025` | 2 | yes |
+| `ext_elizaos_agent_runtime_2026` | 2 | yes |
 | `ext_neural_message_passing_2017` | 2 | yes |
 | `ext_test_time_training_2020` | 2 | yes |
 | `ext_llada_2025` | 2 | yes |
@@ -969,6 +972,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_hipporag_2024` | mapped | note present | chapter listed | not passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_mem0_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_titans_2025` | mapped | note present | chapter listed | not passage-reviewed |
+| `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `ext_hermes_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `context-transactions-snapshots-mounts-and-taint.core` | `context-transactions-snapshots-mounts-and-taint` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
@@ -1100,6 +1104,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_faithfulness_information_flow_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_swe_rebench_v2_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `regret_engine` | unmapped | note present | chapter listed | not passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1128,6 +1133,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_txfs_2018` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `reflexive_router_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_elizaos_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_hermes_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `embodied-agency-real-time-control-and-physical-safety.core` | `embodied-agency-real-time-control-and-physical-safety` | `ext_gemini_robotics_2025` | mapped | note present | chapter listed | passage-reviewed |
@@ -1148,6 +1156,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `inter-stack-protocols-identity-and-economic-exchange.core` | `inter-stack-protocols-identity-and-economic-exchange` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `inter-stack-protocols-identity-and-economic-exchange.core` | `inter-stack-protocols-identity-and-economic-exchange` | `ext_owasp_agentic_top_10_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `inter-stack-protocols-identity-and-economic-exchange.core` | `inter-stack-protocols-identity-and-economic-exchange` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `inter-stack-protocols-identity-and-economic-exchange.core` | `inter-stack-protocols-identity-and-economic-exchange` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk.core` | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `ext_multi_agent_risks_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk.core` | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `ext_cooperative_ai_foundations_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk.core` | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `ext_gradual_disempowerment_2025` | mapped | note present | chapter listed | passage-reviewed |
@@ -1179,6 +1188,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `relational_dimension_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `capability_ratchet_whitepaper` | unmapped | note present | chapter listed | not passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `regret_engine` | unmapped | note present | chapter listed | not passage-reviewed |
+| `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `ext_hermes_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
@@ -1569,6 +1580,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `attd` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `temporal_coil_research` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `regret_engine` | unmapped | note present | chapter listed | not passage-reviewed |
+| `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `ext_elizaos_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `kernel_english_residual_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |

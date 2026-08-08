@@ -1,0 +1,84 @@
+{
+  "backlog_id": "agent-runtime-reference-projects-2026-08-08",
+  "triage_state": "integrated",
+  "source_or_gap": "The book already specified governed runtime, memory, evidence, and self-improvement boundaries, but lacked direct implementation comparisons with three current open-source agent systems that expose those boundaries in different ways.",
+  "access_state": "available",
+  "source_storage_policy": "external_url_only",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "runtime-adapters-tool-permissions-and-human-approval",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "procedural-memory-and-cognitive-loop-closure",
+    "durable-semantic-memory-and-knowledge-lattices",
+    "artifact-graphs-audit-logs-and-replay",
+    "inter-stack-protocols-identity-and-economic-exchange"
+  ],
+  "chapter_action_policy": "Add each project only where its documented implementation supplies a distinct comparator: elizaOS for modular runtime and qualification boundaries, Hermes Agent for skill/memory governance, and OpenClaw for gateway/session/ACP identity, separated policy controls, audit projection, and evidence-bound skill proposals.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/agent_runtime_reference_projects_2026_08_08.json",
+    "sources/source_notes/ext_elizaos_agent_runtime_2026.md",
+    "sources/source_notes/ext_hermes_agent_2026.md",
+    "sources/source_notes/ext_openclaw_agent_runtime_2026.md",
+    "docs/book_outline.md",
+    "book_structure.json"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "Keep three source records because the projects have different maintainers, architectures, and evidentiary boundaries. Do not merge OpenClaw with Claw-SWE-Bench, and do not create product-shaped chapters.",
+  "boundary_decision_rationale": "These systems instantiate parts of the stack but do not own new architectural layers. The value lies in comparing concrete lifecycle choices and residual boundaries against the book's existing authority, evidence, memory, protocol, and promotion contracts.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "complete",
+  "external_literature_need": [
+    "track stable releases or archival design papers if the projects publish them",
+    "compare shared Agent Skills and ACP standards against their canonical specifications",
+    "find independent evaluations of security, reliability, procedural learning, and long-horizon operation"
+  ],
+  "proof_or_test_backlog": [
+    "build a version-pinned cross-runtime turn-spine fixture joining request, run, session, authority, effect, observation, and terminal disposition",
+    "test that external harness resume identifiers cannot substitute for local session or authority identity",
+    "test skill proposal hash binding, stale-target rejection, rollback custody, quarantine, and independent regression gates",
+    "compare sandbox location, tool availability policy, approval, and elevated execution as independent controls"
+  ],
+  "evidence_transition_precondition": [
+    "freeze the exact source revision, claim atom, workload, consumer, and comparison baseline",
+    "execute or independently inspect the relevant implementation path",
+    "retain configuration, failures, costs, limitations, and unresolved residuals",
+    "accept a claim-specific evidence transition"
+  ],
+  "required_before_drafting": [
+    "completed: official repository identity and revision check",
+    "completed: canonical architecture, runtime, memory, skill, security, session, ACP, and scenario documentation review",
+    "completed: existing-owner deduplication",
+    "completed: source notes, source inventory, manifest mappings, bounded chapter integration, and generated crosswalk refresh"
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "https://github.com/elizaOS/eliza",
+    "https://docs.elizaos.ai/",
+    "https://github.com/NousResearch/hermes-agent",
+    "https://hermes-agent.nousresearch.com/docs/",
+    "https://github.com/openclaw/openclaw",
+    "https://docs.openclaw.ai/"
+  ],
+  "support_state_effect": "argument_only",
+  "promotion_blockers": [
+    "the projects were inspected but not run in this repository",
+    "no reported behavior or test result was independently reproduced",
+    "no common workload, configuration, or version-pinned baseline has been executed",
+    "no accepted evidence transition exists"
+  ],
+  "residuals": [
+    "independent implementation evaluation",
+    "cross-runtime identity and authority fixture",
+    "procedure-learning regression campaign",
+    "security and operational cost comparison",
+    "release-to-release drift monitoring"
+  ],
+  "next_action": "Keep support unchanged and schedule the version-pinned cross-runtime identity, policy-separation, and procedure-promotion fixtures only when they outrank the active roadmap's current empirical and proof work.",
+  "non_claims": [
+    "does not establish that any reviewed project is safe, correct, state of the art, AGI, or ASI",
+    "does not claim feature parity or architectural equivalence",
+    "does not reproduce any repository test, benchmark, or production result",
+    "does not create a new chapter or promote support"
+  ]
+}

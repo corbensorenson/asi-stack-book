@@ -25,7 +25,9 @@ recovery because one external effect remains unknown. A development-only
 positive control completes the effect disposition and reaches recovery. Eighteen
 semantic mutations attack identity, every authority dimension, containment,
 state, effect, freshness, verifier separation, expiry, fallback, source
-custody, and authority laundering.
+custody, and authority laundering. Ten assigned sources now include the Regret
+Engine as a Corben-authored design input for prospective correction and
+decision-lineage handoff; it is not operational incident evidence.
 
 `AsiStackProofs.GovernedOperations` and
 `AsiStackProofs.GovernedOperationsRefinement` implement three public targets
@@ -58,7 +60,7 @@ The opening architecture now contains a non-promotional incident loop. Safety
 Cases hands live invalidations to Operations; Operations hands bounded
 residuals, never emergency authority, to Policy Optimization. The glossary and
 Integrated Reference Architecture preserve the operational-continuity and
-effect-complete-recovery boundaries. All nine assigned sources remain design
+effect-complete-recovery boundaries. All ten assigned sources remain design
 inputs or external comparators rather than local incident evidence.
 
 Support, release, and publication effects remain `none`. The four-chapter first

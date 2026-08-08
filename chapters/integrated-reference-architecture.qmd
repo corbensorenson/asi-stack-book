@@ -134,7 +134,8 @@ The participants in that trace are logical roles. They do not imply one model, p
 
 ### The Regret Engine as a joined subsystem
 
-The Regret Engine source supplies a cross-layer return path rather than a new
+The Regret Engine source (`regret_engine`) supplies a cross-layer return path
+rather than a new
 omnibus owner. Planning commits a Decision Capsule. Artifact Graphs bind actual
 outcomes, comparator proposals, evaluator outputs, and replay handles.
 Independent assurance classifies counterfactual support, causal contribution,

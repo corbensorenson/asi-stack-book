@@ -408,6 +408,36 @@ implements production enforcement. The source contains no deployed adapter,
 approval service, irreversible-effect campaign, or effect-complete rollback
 result; the runtime-adapter core remains at `argument`.
 
+### Three implementation comparators across one shared boundary
+
+Current agent runtimes expose the same boundary through different component
+shapes. `ext_elizaos_agent_runtime_2026` separates actions, providers,
+evaluators, services, memory, state, and scenario execution. Its action
+validation and handler split gives this chapter a concrete implementation
+anchor. The ASI Stack comparison then follows a wider transaction across
+principal, authority, actual effect, independent observation, and terminal
+custody; this broader join is outside the scope evaluated here, not a defect
+attributed to elizaOS. `ext_hermes_agent_2026` adds command approval, file-write
+controls, container backends, context scanning, and staged approval for skill
+mutations. Those concrete controls anchor a second part of the boundary, while
+complete mediation and reviewer correctness remain separate questions that
+were not evaluated in this review.
+
+`ext_openclaw_agent_runtime_2026` makes another distinction explicit: sandbox
+placement decides where a tool runs, tool policy decides which tools exist, and
+elevation changes an execution route. These are independent axes. A permitted
+shell can still perform broad effects, and an ACP external harness is not
+wrapped by the parent sandbox even though gateway, agent, session, and delivery
+policies still apply. The ASI Stack therefore records each axis separately and
+binds each effect receipt to the enforcement owner that actually mediated it.
+These are scope comparisons, not project grades. elizaOS's modular runtime and
+qualification design, Hermes Agent's memory and approval surfaces, and
+OpenClaw's identity and policy separation are valuable implementation anchors
+for practical agent infrastructure. Claims about local behavior await local
+execution or independent evaluation.
+Documentation review is the sole basis for this comparison; none of the three
+runtimes was executed in this repository.
+
 ## Interfaces
 
 Runtime work reaches tools through the Runtime Adapter Invocation.
@@ -796,6 +826,9 @@ These rows keep Runtime Adapters, Tool Permissions, and Human Approval's manifes
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_txfs_2018` | Passage-reviewed comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity. | TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Adds the hard capability-separation rule: semantic resolution, aliases, address confidence, and certificates never grant authority; the physical route must independently bind actor, target, operation, scope, policy, data, reversibility, approvals, and receipts. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and the active-question ablation is N2 proxy/regime evidence rather than an exact or broad refutation. One reversible local effect does not establish permission correctness, production safety, human-approval quality, chapter-core promotion, AGI, or ASI. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_elizaos_agent_runtime_2026` | Passage-reviewed comparator: elizaOS Agent Runtime and Scenario Runner. Supplies a current implementation comparator for modular actions, providers, evaluators, services, runtime lifecycle, guarded host access, and scenario execution with an explicit boundary between in-process diagnostics and externally qualified provider evidence. | Official software and documentation review only; no plugin, permission, sandbox, scenario, provider qualification, security, or production result was executed or reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hermes_agent_2026` | Passage-reviewed comparator: Hermes Agent: Learning, Memory, Tools, and Security Architecture. Supplies a current implementation comparator for dangerous-command approval, file-write restrictions, container isolation, credential filtering, context scanning, cross-session isolation, tool backends, and optional staged approval of agent-authored skill mutations. | Official software and documentation review only; no command, sandbox, tool, approval, skill-write, security, or deployment result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator that separates sandbox placement, tool availability policy, approval, and elevated execution, while documenting that ACP external harnesses retain their own execution authorization and are not wrapped by the parent sandbox. | Official software and documentation review only; no policy, sandbox, approval, elevation, ACP confinement, effect observation, or security result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 governed adapter boundary

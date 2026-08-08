@@ -9586,7 +9586,8 @@
             "ext_graphrag_2024",
             "ext_hipporag_2024",
             "ext_mem0_2025",
-            "ext_titans_2025"
+            "ext_titans_2025",
+            "ext_hermes_agent_2026"
           ],
           "problem": "Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.",
           "insufficient": "Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.",
@@ -9732,6 +9733,16 @@
                 "sources/source_notes/portia_synapse.md"
               ],
               "passage_review_note": "Reviewed the complete authenticated Drive paper, including architecture, phased training, traits, tests, limitations, and unresolved contradictions."
+            },
+            {
+              "source_id": "ext_hermes_agent_2026",
+              "mapped_support": "Supplies a current implementation comparator that separates bounded always-present MEMORY/USER snapshots, on-demand FTS5 session search, and longer load-on-demand procedural skills, while scanning admitted prompt memory for injection and exfiltration patterns.",
+              "limits": "Official software and documentation review only; no memory fact, search result, poisoning control, session isolation, learning behavior, cost, utility, or deployment result was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_hermes_agent_2026.md:1-76"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical memory, skills, security, and architecture documentation; the mapping is an implementation comparator and does not move support."
             }
           ],
           "proof_targets": [
@@ -12132,7 +12143,8 @@
             "ext_txfs_2018",
             "ext_faithfulness_information_flow_2026",
             "ext_swe_rebench_v2_2026",
-            "regret_engine"
+            "regret_engine",
+            "ext_openclaw_agent_runtime_2026"
           ],
           "source_queue": {
             "primary": [
@@ -12388,6 +12400,16 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
+            },
+            {
+              "source_id": "ext_openclaw_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator for serialized per-session execution, session-generation-checked transcript writes, bounded lifecycle/tool audit projection, and the separation between OpenClaw session identity and external ACP harness resume identity.",
+              "limits": "Official software and documentation review only; metadata-only audit projection is not replay-complete, ACP execution is not wrapped by the OpenClaw sandbox, and no trace, effect, replay, reliability, or security result was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical gateway, agent-loop, ACP, policy, memory, and self-learning documentation; this implementation source remains distinct from Claw-SWE-Bench."
             }
           ],
           "mechanism": [
@@ -12642,7 +12664,10 @@
             "ext_claw_swe_bench_2026",
             "ext_txfs_2018",
             "qcsa_whitepaper",
-            "reflexive_router_whitepaper"
+            "reflexive_router_whitepaper",
+            "ext_elizaos_agent_runtime_2026",
+            "ext_hermes_agent_2026",
+            "ext_openclaw_agent_runtime_2026"
           ],
           "source_queue": {
             "primary": [
@@ -12960,6 +12985,36 @@
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1393-1396"
               ],
               "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
+            },
+            {
+              "source_id": "ext_elizaos_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator for modular actions, providers, evaluators, services, runtime lifecycle, guarded host access, and scenario execution with an explicit boundary between in-process diagnostics and externally qualified provider evidence.",
+              "limits": "Official software and documentation review only; no plugin, permission, sandbox, scenario, provider qualification, security, or production result was executed or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_elizaos_agent_runtime_2026.md:1-81"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository plus core-runtime, scenario-runner, security, and sandbox documentation; the mapping does not establish complete mediation or move support."
+            },
+            {
+              "source_id": "ext_hermes_agent_2026",
+              "mapped_support": "Supplies a current implementation comparator for dangerous-command approval, file-write restrictions, container isolation, credential filtering, context scanning, cross-session isolation, tool backends, and optional staged approval of agent-authored skill mutations.",
+              "limits": "Official software and documentation review only; no command, sandbox, tool, approval, skill-write, security, or deployment result was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_hermes_agent_2026.md:1-76"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical security, skills, memory, and architecture documentation; documented controls remain partial implementation comparators."
+            },
+            {
+              "source_id": "ext_openclaw_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator that separates sandbox placement, tool availability policy, approval, and elevated execution, while documenting that ACP external harnesses retain their own execution authorization and are not wrapped by the parent sandbox.",
+              "limits": "Official software and documentation review only; no policy, sandbox, approval, elevation, ACP confinement, effect observation, or security result was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical gateway, agent-loop, ACP, and policy documentation; the mapping preserves the documented external-harness residual."
             }
           ],
           "mechanism": [
@@ -13383,7 +13438,8 @@
             "vcm_public",
             "tokenmana",
             "ext_owasp_agentic_top_10_2026",
-            "qcsa_whitepaper"
+            "qcsa_whitepaper",
+            "ext_openclaw_agent_runtime_2026"
           ],
           "source_queue": {
             "primary": [
@@ -13509,6 +13565,16 @@
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1463-1555"
               ],
               "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
+            },
+            {
+              "source_id": "ext_openclaw_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator for typed gateway requests and events, device identity and pairing, idempotency keys, ACP session routing, and the explicit distinction between a local channel/session key and a harness-local resume identifier whose upstream loading authorization belongs to the external backend.",
+              "limits": "Official software and documentation review only; protocol shape, pairing, and policy checks do not establish peer trust, delegated authority correctness, harness confinement, delivery, settlement, or end-to-end effect safety, and no local run was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical gateway, agent-loop, and ACP documentation; the mapping preserves separate identity and authorization owners."
             }
           ],
           "problem": "Local planning, context, artifact, and runtime contracts lose their binding when a request crosses to an independently operated protocol endpoint, agent, service, or value network without a record that separates peer identity, delegated authority, economic commitment, result evidence, revocation, and residual ownership.",
@@ -13874,7 +13940,9 @@
             "kernel_english_residual_compiler",
             "relational_dimension_compiler",
             "capability_ratchet_whitepaper",
-            "regret_engine"
+            "regret_engine",
+            "ext_hermes_agent_2026",
+            "ext_openclaw_agent_runtime_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14143,6 +14211,26 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete paper for relation compilation, cognitive reflex formation, specialist lifecycle, requalification, and explicit no-result boundaries."
+            },
+            {
+              "source_id": "ext_hermes_agent_2026",
+              "mapped_support": "Supplies a current implementation comparator for progressive-disclosure skills, agent-managed create/patch/edit/delete operations, post-session review, and an optional durable write-approval queue that separates a proposed procedure mutation from its application.",
+              "limits": "Official software and documentation review only; no learned procedure was replayed, independently tested, promoted, rolled back, or measured for utility, safety, transfer, or regression.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_hermes_agent_2026.md:1-76"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical skills, memory, security, and architecture documentation; skill mutation remains a procedural-memory comparator, not evidence of safe self-improvement."
+            },
+            {
+              "source_id": "ext_openclaw_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator for isolated trajectory review, bounded evidence exposure, one-mutation pending proposals, exact-target hash binding, stale-target rejection, security rescanning, rollback metadata, abstention, and skill lifecycle aging.",
+              "limits": "Official software and documentation review only; reviewer isolation and proposal controls do not establish procedure correctness, evaluator independence, held-out transfer, safe default routing, or beneficial recursive improvement, and no local result was reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository and canonical self-learning, skill, agent-loop, and policy documentation; the mapping remains bounded to the documented proposal lifecycle."
             }
           ],
           "mechanism": [
@@ -21755,7 +21843,8 @@
             "capability_ratchet_whitepaper",
             "attd",
             "temporal_coil_research",
-            "regret_engine"
+            "regret_engine",
+            "ext_elizaos_agent_runtime_2026"
           ],
           "source_queue": {
             "primary": [
@@ -22236,6 +22325,16 @@
                 "sources/source_notes/spider_synapse.md"
               ],
               "passage_review_note": "Reviewed the complete authenticated paper for architecture, reported metrics, failure analysis, recovery protocol, and causal uncertainty."
+            },
+            {
+              "source_id": "ext_elizaos_agent_runtime_2026",
+              "mapped_support": "Supplies a current implementation comparator for deterministic and live runtime scenarios, per-turn and final assertions, trajectory export, and an explicit separation between in-process diagnostics and externally observed provider qualification.",
+              "limits": "Official software and documentation review only; no scenario, model, provider, observer signature, trajectory, benchmark, cost, failure, or qualification result was executed or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_elizaos_agent_runtime_2026.md:1-81"
+              ],
+              "passage_review_note": "Reviewed the pinned official repository plus scenario-runner and core-runtime documentation; the explicit diagnostic-versus-qualified boundary is imported without any result."
             }
           ],
           "mechanism": [
