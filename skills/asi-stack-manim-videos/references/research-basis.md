@@ -4,8 +4,10 @@
 
 - Primary guidance
 - 3Blue1Brown code study
+- Published Manim authoring skills
+- Automated educational-video systems
 - ManimCE techniques
-- Narration guidance
+- Learning, narration, and TTS
 - Compatibility and licensing
 
 ## Primary guidance
@@ -58,6 +60,9 @@
 - [Fyfield et al., “Harnessing active engagement in educational videos”](https://doi.org/10.1103/PhysRevPhysEducRes.18.010148)
   reports a controlled physics-video study in which enhanced visuals and
   embedded questions were most effective together.
+- [Tversky, Morrison, and Betrancourt, “Animation: can it facilitate?”](https://doi.org/10.1207/S15326985EP3704_3)
+  argues that animation must satisfy congruence and apprehension: motion should
+  match the represented structure and remain perceptually understandable.
 - [YouTube: measure key moments for audience retention](https://support.google.com/youtube/answer/9314415)
   defines intro retention, top moments, spikes, and dips and explicitly notes
   that spikes can reflect either interest or confusion.
@@ -107,6 +112,59 @@ Useful transferable patterns include:
 The important pattern is a chain of small, semantically aligned state changes.
 The lesson is not to maximize movement or copy a particular effect.
 
+Also inspect domain-object patterns in recent public scenes such as
+[`_2026/cross_entropy/distribution.py`](https://github.com/3b1b/videos/blob/master/_2026/cross_entropy/distribution.py)
+and linked-representation patterns such as
+[`_2025/zeta/play.py`](https://github.com/3b1b/videos/blob/master/_2025/zeta/play.py).
+The transferable architecture is a persistent semantic object with operations
+that change its state, plus trackers or updaters that keep dependent views
+consistent. Exact code remains upstream-licensed pattern study.
+
+Grant's public workflow also treats Manim as a clip renderer within a broader
+editing process when that is the cleaner production choice. Do not force all
+audio editing, titles, and assembly into scene code.
+
+## Published Manim authoring skills
+
+Public skill repositories are implementation examples, not research evidence:
+
+- [Browser Use `video-use` Manim skill](https://github.com/browser-use/video-use/tree/main/skills/manim-video)
+  usefully emphasizes an “aha” before code, low-quality iteration, and rendered
+  frame inspection. Do not inherit its rigid pauses, palette prescriptions, or
+  scene-by-scene novelty targets.
+- [Yusuke710 `manim-skill`](https://github.com/Yusuke710/manim-skill)
+  reinforces planning, exact synchronization points, independent scene renders,
+  and low-resolution iteration. Its generic section/subtitle structure is not
+  an ASI Stack story standard.
+- [iart-ai `manim-skills`](https://github.com/iart-ai/manim-skills)
+  is useful for deterministic render/inspect loops, API references, and common
+  implementation failures; it does not replace pedagogical review.
+- [makefinks `manim-generator`](https://github.com/makefinks/manim-generator)
+  separates generation from review and supplies render evidence to a critic.
+  Keep execution repair separate from learning and aesthetic critique.
+
+Borrow tested process ideas, not surface templates. None of these sources
+justifies a claim that generated videos are educationally effective.
+
+## Automated educational-video systems
+
+- [Code2Video](https://github.com/showlab/Code2Video) separates planner, coder,
+  and visual critic roles and evaluates executable generation, aesthetics,
+  efficiency, and knowledge transfer. Its lecture-text layout is not the ASI
+  Stack visual model; retain the role separation and transfer evaluation.
+- [TheoremExplainAgent](https://aclanthology.org/2025.acl-long.332/) reports
+  that agentic planning helps long-form theorem videos and that multimodal
+  explanation can expose reasoning defects hidden in text, while layout issues
+  remain common.
+- [OmniManim / “See Before You Code”](https://arxiv.org/abs/2605.15585) motivates
+  shared scene state, sparse keyframe planning, interpolation-aware review,
+  post-render diagnostics, and localized repair. It is recent research; treat
+  reported benchmark gains as source claims until independently reproduced.
+- [ManimAgent](https://arxiv.org/abs/2606.30296) proposes separate memories of
+  successful patterns and validated pitfalls across tasks. Its code release and
+  broader replication status must be rechecked before adoption. The local
+  analogue stores only lessons demonstrated in completed ASI Stack reviews.
+
 ## ManimCE techniques
 
 Use the official ManimCE 0.20.1 APIs because the repository pins that runtime.
@@ -120,7 +178,7 @@ Especially useful families are:
 - moving and zoomed cameras for locality and scale; and
 - scene sections for rapid, bounded iteration.
 
-## Narration guidance
+## Learning, narration, and TTS
 
 Grant Sanderson's guidance supplies the pedagogical frame: concrete before
 abstract, do not open with definitions, and make pictures and words reinforce
@@ -130,6 +188,19 @@ deletion of unnecessary words.
 
 These are heuristics, not automatic quality guarantees. Full-speed listening
 and viewing remain required.
+
+The currently pinned Kokoro voice remains a qualified production choice, not a
+permanent winner. Relevant candidate sources include the
+[Kokoro-82M model card](https://huggingface.co/hexgrad/Kokoro-82M),
+[Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS), and other systems whose exact
+license, runtime, long-form continuity, pronunciation, alignment, and voice
+rights can be tested. Compare candidates on the same excerpt at matched
+loudness; do not select from demos or model size.
+
+[WhisperX](https://github.com/m-bain/whisperX) combines speech recognition,
+VAD, and forced phoneme alignment for word timestamps. Manim Voiceover offers
+duration trackers and bookmarks. Either can support phrase-level sync, but the
+chosen path must be version-pinned and manually checked around difficult terms.
 
 ## Compatibility and licensing
 

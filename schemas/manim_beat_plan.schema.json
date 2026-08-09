@@ -19,10 +19,10 @@
   "properties": {
     "schema_version": {"const": "asi_stack.manim_beat_plan.v2"},
     "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
-    "teaching_promise": {"type": "string", "minLength": 12},
+    "teaching_promise": {"type": "string", "minLength": 12, "maxLength": 240},
     "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "source_commit": {"type": "string", "minLength": 7},
-    "target_duration_seconds": {"type": "number", "minimum": 180},
+    "target_duration_seconds": {"type": "number", "minimum": 150},
     "story": {
       "type": "object",
       "required": ["concrete_case", "opening_question", "payoff", "transfer"],
@@ -113,7 +113,7 @@
     },
     "beats": {
       "type": "array",
-      "minItems": 15,
+      "minItems": 8,
       "items": {
         "type": "object",
         "required": [

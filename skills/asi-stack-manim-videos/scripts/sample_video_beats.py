@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract start/middle/end frames for every beat and build an HTML review sheet."""
+"""Extract interpolation-aware frames for every beat and build a review sheet."""
 
 from __future__ import annotations
 
@@ -12,19 +12,35 @@ import sys
 from pathlib import Path
 
 
-def sample_times(start: float, end: float) -> list[tuple[str, float]]:
+def sample_times(start: float, end: float, count: int = 5) -> list[tuple[str, float]]:
+    if count not in {3, 5}:
+        raise ValueError("sample count must be 3 or 5")
     duration = end - start
     inset = min(0.15, max(0.01, duration * 0.05))
-    return [
-        ("start", start + inset),
-        ("middle", start + duration / 2),
-        ("end", max(start + inset, end - inset)),
-    ]
+    if count == 3:
+        fractions = (("start", 0.0), ("middle", 0.5), ("end", 1.0))
+    else:
+        fractions = (
+            ("start", 0.0),
+            ("quarter", 0.25),
+            ("middle", 0.5),
+            ("three-quarter", 0.75),
+            ("end", 1.0),
+        )
+    low = start + inset
+    high = max(low, end - inset)
+    return [(label, min(high, max(low, start + duration * fraction))) for label, fraction in fractions]
 
 
 def self_test() -> None:
     values = sample_times(10.0, 14.0)
-    expected = [("start", 10.15), ("middle", 12.0), ("end", 13.85)]
+    expected = [
+        ("start", 10.15),
+        ("quarter", 11.0),
+        ("middle", 12.0),
+        ("three-quarter", 13.0),
+        ("end", 13.85),
+    ]
     if any(label != want_label or abs(value - want_value) > 1e-6 for (label, value), (want_label, want_value) in zip(values, expected)):
         raise AssertionError(f"unexpected sample times: {values}")
     print("Self-test passed.")
@@ -52,7 +68,7 @@ def extract(video: Path, time_seconds: float, output: Path) -> None:
         raise RuntimeError(process.stderr.strip() or "ffmpeg frame extraction failed")
 
 
-def build(video: Path, plan_path: Path, output_dir: Path) -> tuple[Path, int]:
+def build(video: Path, plan_path: Path, output_dir: Path, samples: int = 5) -> tuple[Path, int]:
     plan = json.loads(plan_path.read_text(encoding="utf-8"))
     beats = plan.get("beats")
     if not isinstance(beats, list) or not beats:
@@ -69,7 +85,7 @@ def build(video: Path, plan_path: Path, output_dir: Path) -> tuple[Path, int]:
         if not isinstance(start, (int, float)) or not isinstance(end, (int, float)) or end <= start:
             raise ValueError(f"{beat_id} has invalid timing")
         figures: list[str] = []
-        for position, timestamp in sample_times(float(start), float(end)):
+        for position, timestamp in sample_times(float(start), float(end), samples):
             # PNG avoids FFmpeg 8's refusal to emit non-full-range JPEG frames
             # from the usual limited-range H.264 YouTube/Manim source. Review
             # sheets are diagnostic artifacts, so predictable extraction is
@@ -92,9 +108,9 @@ def build(video: Path, plan_path: Path, output_dir: Path) -> tuple[Path, int]:
     style = """
 body{margin:0;background:#101820;color:#f4f6f7;font:16px system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:32px}
 section{background:#182630;border:1px solid #36505e;border-radius:16px;margin:24px 0;padding:20px}h1,h2{margin:.2em 0 .5em}p{color:#d9e1e5}
-.frames{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}figure{margin:0}img{width:100%;border-radius:8px;background:#000}figcaption{color:#aebbc2;margin-top:6px}
+.frames{display:grid;grid-template-columns:repeat(%d,minmax(0,1fr));gap:14px}figure{margin:0}img{width:100%;border-radius:8px;background:#000}figcaption{color:#aebbc2;margin-top:6px}
 @media(max-width:800px){.frames{grid-template-columns:1fr}main{padding:14px}}
-"""
+""" % samples
     title = html.escape(str(plan.get("chapter_id", "chapter")))
     document = f"<!doctype html><meta charset='utf-8'><title>{title} beat review</title><style>{style}</style><main><h1>{title} · beat review</h1>{''.join(cards)}</main>"
     index_path = output_dir / "index.html"
@@ -107,6 +123,7 @@ def main() -> None:
     parser.add_argument("video", type=Path, nargs="?")
     parser.add_argument("plan", type=Path, nargs="?")
     parser.add_argument("output_dir", type=Path, nargs="?")
+    parser.add_argument("--samples", type=int, choices=(3, 5), default=5)
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
@@ -117,7 +134,7 @@ def main() -> None:
     if shutil.which("ffmpeg") is None:
         raise SystemExit("required executable is unavailable: ffmpeg")
     try:
-        index_path, image_count = build(args.video, args.plan, args.output_dir)
+        index_path, image_count = build(args.video, args.plan, args.output_dir, args.samples)
     except (OSError, ValueError, json.JSONDecodeError, RuntimeError) as exc:
         raise SystemExit(f"Unable to build beat review sheet: {exc}") from exc
     print(f"Wrote {image_count} samples and {index_path}")

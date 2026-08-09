@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render non-pilot Manim release visuals with bounded CPU parallelism."""
+"""Render historical generation-one Manim visuals with bounded parallelism."""
 
 from __future__ import annotations
 
@@ -81,6 +81,11 @@ def render(slug: str, force: bool) -> tuple[str, str]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--historical-generation-one",
+        action="store_true",
+        help="Acknowledge that this bulk renderer uses deprecated generation-one scenes.",
+    )
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--force", action="store_true")
     parser.add_argument(
@@ -89,6 +94,11 @@ def main() -> None:
         help="Render only chapters already bound to exact narration timing.",
     )
     args = parser.parse_args()
+    if not args.historical_generation_one:
+        raise SystemExit(
+            "This bulk renderer is generation-one historical custody only. "
+            "Use the generation-two beat-plan workflow for current videos."
+        )
     selected = chapters(args.timed_only)
     failures = []
     with ThreadPoolExecutor(max_workers=args.workers) as pool:

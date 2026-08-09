@@ -1232,14 +1232,19 @@ def errors(data: dict) -> list[str]:
     ]
     if manim.get("id") != "P7.3-governed-manim-visual-edition":
         out.append("Manim visual-edition identity drifted")
-    if manim.get("state") != "active_generation_2_production_with_12_predecessor_previews_preserved":
-        out.append("Manim visual-edition state does not preserve active generation-2 production and 12 predecessor previews")
+    if manim.get("state") != "active_generation_2_production_with_private_generation_1_predecessors_preserved":
+        out.append("Manim visual-edition state does not preserve active generation-2 production and private predecessor history")
     visual_manifest = data["visual_edition_manifest"]
     if (
-        manim.get("canonical_chapter_count", 0) > visual_manifest.get("canonical_chapter_count", 0)
-        or manim.get("canonical_chapter_count", 0) > len(manifest_chapters)
+        manim.get("canonical_chapter_count") != visual_manifest.get("canonical_chapter_count")
+        or manim.get("canonical_chapter_count") != len(manifest_chapters)
     ):
-        out.append("Manim visual-edition chapter target does not match its derivative manifest or exceeds the canonical manifest")
+        out.append("Manim visual-edition chapter target does not exactly match the current manifests")
+    if manim.get("required_visual_abstract_duration_seconds") != {
+        "minimum": 150,
+        "maximum": 270,
+    }:
+        out.append("Manim normal visual-abstract duration contract drifted")
     if manim.get("pilot_chapter_ids") != expected_pilots:
         out.append("Manim five-pilot order drifted")
     missing_pilots = sorted(set(expected_pilots) - manifest_ids)
@@ -1275,6 +1280,7 @@ def errors(data: dict) -> list[str]:
     ):
         out.append("Manim repository and Pages binary boundary drifted")
     counts = manim.get("current_counts", {})
+    visual_counts = visual_manifest.get("counts", {})
     expected_counts = {
         "toolchain_contracts": 1,
         "candidate_visual_grammars": 0,
@@ -1282,17 +1288,16 @@ def errors(data: dict) -> list[str]:
         "pilot_packets_present": 5,
         "pilot_packets_rendered_local": 5,
         "pilot_packets_validated": 5,
-        "chapter_packets_validated": manim.get("canonical_chapter_count"),
-        "current_rendered_videos": manim.get("canonical_chapter_count"),
-        "youtube_videos_unlisted_preview": 12,
+        "chapter_packets_validated": visual_counts.get("packets_present"),
+        "current_rendered_videos": visual_counts.get("current_rendered_videos"),
+        "youtube_videos_unlisted_preview": visual_counts.get("youtube_videos_unlisted_preview"),
         "youtube_videos_published": 0,
-        "current_quarto_preview_embeds": 12,
+        "current_quarto_preview_embeds": visual_counts.get("current_quarto_preview_embeds"),
         "current_quarto_embeds": 0,
-        "stale_videos": 0,
+        "stale_videos": visual_counts.get("stale"),
     }
     if counts != expected_counts:
         out.append("Manim visual-edition foundation or production counts drifted")
-    visual_counts = visual_manifest.get("counts", {})
     if (
         manim.get("visual_manifest_path") != "visual_edition/manifest.json"
         or visual_manifest.get("canonical_chapter_count", 0) < manim.get("canonical_chapter_count", 0)
@@ -1311,7 +1316,10 @@ def errors(data: dict) -> list[str]:
         or visual_counts.get("validated") != 0
         or visual_counts.get("current_rendered_videos", 0) > counts.get("current_rendered_videos", 0)
         or visual_counts.get("youtube_videos_published") != counts.get("youtube_videos_published")
+        or visual_counts.get("youtube_videos_unlisted_preview") != counts.get("youtube_videos_unlisted_preview")
+        or visual_counts.get("current_quarto_preview_embeds") != counts.get("current_quarto_preview_embeds")
         or visual_counts.get("current_quarto_embeds") != counts.get("current_quarto_embeds")
+        or visual_counts.get("stale") != counts.get("stale_videos")
     ):
         out.append("Manim roadmap counts do not reconcile with the canonical visual-edition manifest")
     grammar = manim.get("visual_grammar", {})
@@ -1332,7 +1340,17 @@ def errors(data: dict) -> list[str]:
         or ratchet.get("production_ledger_path") != "visual_edition/manim_v2_production_ledger.json"
         or ratchet.get("production_ledger_schema_path") != "schemas/manim_v2_production_ledger.schema.json"
         or ratchet.get("production_validator_path") != "scripts/validate_manim_v2_production_ledger.py"
+        or ratchet.get("narration_toolchain_path") != "visual_edition/narration_toolchain.json"
+        or ratchet.get("narration_auditor_path") != "skills/asi-stack-manim-videos/scripts/audit_video_plan.py"
         or ratchet.get("target_generation") != 2
+        or ratchet.get("normal_visual_abstract_duration_seconds") != {"minimum": 150, "maximum": 270}
+        or ratchet.get("normal_narration_word_count") != {"minimum": 280, "maximum": 520}
+        or ratchet.get("long_form_rationale_required_above_words") != 600
+        or ratchet.get("maximum_narration_word_count") != 650
+        or ratchet.get("minimum_frame_samples_per_beat") != 5
+        or ratchet.get("forced_alignment_required_before_picture_and_sound_lock") is not True
+        or ratchet.get("cold_release_learning_check_required") is not True
+        or ratchet.get("legacy_generation_one_explicit_opt_in_required") is not True
         or ratchet.get("minimum_score_each_dimension") != 4
         or ratchet.get("averaging_may_hide_failure") is not False
         or ratchet.get("external_human_prepublication_gate_required") is not False
@@ -1342,14 +1360,14 @@ def errors(data: dict) -> list[str]:
         out.append("Manim pedagogical and aesthetic ratchet drifted")
     v2_ledger = data["manim_v2_ledger"]
     v2_entries = v2_ledger.get("entries", [])
-    v2_revision_count = sum(
-        row.get("target", {}).get("stage") == "animatic"
-        and row.get("target", {}).get("gates", {}).get("animatic") == "revise"
+    v2_beat_plan_revision_count = sum(
+        row.get("target", {}).get("gates", {}).get("beat_plan") == "revise"
         for row in v2_entries
     )
     expected_v2_counts = {
         "planned": v2_ledger.get("counts", {}).get("planned"),
-        "animatic_revision": v2_revision_count,
+        "scripted": v2_ledger.get("counts", {}).get("scripted"),
+        "beat_plan_revision": v2_beat_plan_revision_count,
         "animatic_passed": v2_ledger.get("counts", {}).get("animatic_passed"),
         "picture_and_sound_lock_passed": v2_ledger.get("counts", {}).get("picture_and_sound_lock_passed"),
         "release_candidate_passed": v2_ledger.get("counts", {}).get("release_candidate_passed"),
@@ -1363,17 +1381,27 @@ def errors(data: dict) -> list[str]:
     first_target = v2_entries[0].get("target", {}) if v2_entries else {}
     if (
         first_replacement.get("chapter_id") != "asi-is-a-stack-not-a-model"
+        or first_replacement.get("duration_seconds") is not None
+        or first_replacement.get("beat_count") is not None
         or first_replacement.get("stage") != first_target.get("stage")
         or first_replacement.get("gate_state") != first_target.get("gates", {}).get("animatic")
         or first_replacement.get("current_review_path") != first_target.get("experience_review_paths", {}).get("animatic")
-        or not isinstance(first_replacement.get("current_candidate_review_state"), str)
-        or not first_replacement.get("current_candidate_review_state")
+        or first_replacement.get("current_candidate_review_state") != "script_rewritten_downstream_artifacts_stale_beat_plan_requires_revision"
+        or first_replacement.get("narration_sha256") != first_target.get("narration_sha256")
+        or first_replacement.get("historical_review_paths") != [
+            "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
+            "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
+            "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r3.json",
+            "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/picture_and_sound_lock.json",
+        ]
         or first_replacement.get("support_state_effect") != "none"
         or first_replacement.get("publication_effect") != "none"
     ):
         out.append("Manim first generation-2 replacement checkpoint drifted or overclaimed")
     first_pilot = manim.get("first_pilot_checkpoint", {})
     if first_pilot != {
+        "generation": 1,
+        "historical": True,
         "chapter_id": "asi-is-a-stack-not-a-model",
         "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
         "lifecycle_state": "ready_not_published",
@@ -1395,6 +1423,8 @@ def errors(data: dict) -> list[str]:
     }:
         out.append("Manim first-pilot checkpoint drifted or overclaimed")
     if manim.get("five_pilot_checkpoint") != {
+        "generation": 1,
+        "historical": True,
         "state": "all_five_final_av_masters_validated",
         "packet_count": 5,
         "rendered_lifecycle_count": 5,
@@ -1410,7 +1440,10 @@ def errors(data: dict) -> list[str]:
     }:
         out.append("Manim five-pilot release-visual checkpoint drifted or overclaimed")
     if manim.get("all_chapter_checkpoint") != {
-        "state": "all_84_ready_not_published",
+        "generation": 1,
+        "historical": True,
+        "state": "generation_one_84_packet_archive_with_current_projection_withdrawn",
+        "current_projection_state": "zero_youtube_objects_zero_quarto_embeds",
         "publication_preflight_path": "visual_edition/youtube_publication_preflight.json",
         "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
         "mutation_scope_sha256": "3f901ca06169b3df555b6e8dbc6a327c6dab9e623b6712407cf0a9366eeb55f0",
@@ -1427,7 +1460,7 @@ def errors(data: dict) -> list[str]:
         "generation_history_derived_from_immutable_receipts": True,
         "supersession_negative_mutations_rejected": 12,
         "current_supersession_plan_count": 0,
-        "real_generation_two_exercise_state": "awaiting_generation_one_publication_and_author_feedback",
+        "real_generation_two_exercise_state": "active_predecessor_publication_not_required",
         "canonical_chapter_digest_excludes_managed_visual_block": True,
         "repository_reconciliation_rollback_complete": True,
         "published_receipt_set_all_or_nothing": True,
@@ -2617,7 +2650,7 @@ def main() -> None:
     mutate("book organization reopening", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_book_packet", "P7.2-T1-white-box-evidence-interpretability-and-activation-governance"))
     mutate("ManimGL substitution", lambda c: c["status"]["manim_visual_edition"]["toolchain"].__setitem__("manimgl_allowed", True))
     mutate("Manim global environment laundering", lambda c: c["status"]["manim_visual_edition"]["toolchain"].__setitem__("broken_global_environment_allowed", True))
-    mutate("Manim chapter denominator shrink", lambda c: c["status"]["manim_visual_edition"].__setitem__("canonical_chapter_count", 83))
+    mutate("Manim chapter denominator shrink", lambda c: c["status"]["manim_visual_edition"].__setitem__("canonical_chapter_count", 84))
     mutate("Manim Git video-binary admission", lambda c: c["status"]["manim_visual_edition"]["repository_boundary"].__setitem__("rendered_video_binary_tracked_in_git", True))
     mutate("Manim Pages video-binary admission", lambda c: c["status"]["manim_visual_edition"]["repository_boundary"].__setitem__("rendered_video_binary_in_pages_artifact", True))
     mutate("Manim non-YouTube host drift", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("canonical_binary_host", "GitHub Pages"))
@@ -2626,6 +2659,10 @@ def main() -> None:
     mutate("Manim local-completion denominator drift", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 83))
     mutate("Manim aesthetic floor weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_score_each_dimension", 3))
     mutate("Manim average laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("averaging_may_hide_failure", True))
+    mutate("Manim beat sampling weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_frame_samples_per_beat", 3))
+    mutate("Manim forced-alignment bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("forced_alignment_required_before_picture_and_sound_lock", False))
+    mutate("Manim cold-learning review bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_release_learning_check_required", False))
+    mutate("Manim legacy-lane silent reactivation", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("legacy_generation_one_explicit_opt_in_required", False))
     mutate("Manim external-human blocker", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("external_human_prepublication_gate_required", True))
     mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))
     mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
@@ -2649,7 +2686,7 @@ def main() -> None:
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only dependency-safe proof rationalization and bounded connected-owner composition; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the current 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, an all-84 ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only dependency-safe proof rationalization and bounded connected-owner composition; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the then-current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the historical 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, a current-manifest ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 

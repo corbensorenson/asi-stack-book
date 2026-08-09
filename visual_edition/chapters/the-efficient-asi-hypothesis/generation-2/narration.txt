@@ -1,43 +1,27 @@
-Four routes can read the same invoice. One costs one unit, one costs four, one costs nine, and one asks a human. Which route is efficient?
+Four routes can read the same invoice. A parser costs one unit. A specialist costs four. A frontier model costs nine. A human review costs more. Which route is efficient?
 
-Price alone cannot answer. The route must preserve the invoice total, vendor, date, and privacy rule under a fixed acceptance test.
+Price alone cannot answer. The invoice must preserve the total and the vendor. It must also obey the privacy rule. Efficiency begins with an acceptance test, not a model menu.
 
-So begin with a task ticket, not a model menu. The ticket names quality, authority, risk, deadline, and the cost classes we promise to count.
+Send a familiar invoice to the one-unit parser. It extracts every field and passes the test. For this case, the cheap route looks excellent.
 
-Now the candidate routes become comparable: a versioned parser, a small specialist, a frontier model, and human review. Each keeps its own fallback.
+Now damage one digit in the tax line. The parser still returns an answer, but the total is wrong. Repair costs eight units. Review costs three more.
 
-Always choosing the strongest route can preserve quality while spending nine units on every ordinary invoice. Useful work survives, but reuse never compounds.
+The one-unit route has become a twelve-unit route. The verified nine-unit route is now cheaper, even before the downstream error reaches accounting.
 
-Always choosing the cheapest route looks better until a damaged scan drops one tax digit. The one-unit answer creates repair, review, and downstream correction.
+That reversal is the Efficient ASI hypothesis in miniature. The efficient route is the least costly authorized route that satisfies the whole contract. It is not the route with the smallest visible meter.
 
-The Efficient ASI hypothesis asks for the lowest-cost authorized route that can satisfy the fixed predicate, not the lowest price on the menu.
+A router can learn this boundary. Familiar templates go to the parser. Uncertain scans escalate to the specialist. High-consequence cases may go directly to a stronger model or a person.
 
-A familiar template may enter the versioned parser. Its output earns acceptance only after the required checks pass and its assumptions remain current.
+The failed attempt stays on the bill. Otherwise a routing policy can appear efficient by hiding retries and repairs outside its own measurement window.
 
-The damaged scan fails that check. The failure stays attached to the task as a visible residual instead of becoming cheap success.
+Reuse can compound the gain. Repeated verified work may become a parser or a cached procedure. But the artifact keeps its assumptions. When the invoice format changes, the route expires until it is checked again.
 
-Fallback then escalates the same ticket to a stronger specialist or a human. The failed attempt remains on the bill and in the learning record.
+Now change the case. Suppose review becomes nearly free, but privacy risk rises sharply. Would the cheapest compute route still win?
 
-Total contract cost includes generation, context, routing, verification, repair, review, rollback preparation, maintenance, delayed failure, and displaced work.
+No single answer follows. The routing decision changes because the complete cost changed. Compute is only one term. Verification burden, failure risk, delay, human effort, and recovery all belong to the same causal bill.
 
-Now predict. If the cheap route costs one, repair costs eight, and review costs three, is it more efficient than a verified nine-unit route?
+A fair experiment would freeze a natural workload and compare several routing policies under matched access. It would count useful accepted work and every material burden created along the way.
 
-No. Twelve is greater than nine, and the hidden-cost win disappears. Efficiency belongs to the complete causal route, not its cheapest visible meter.
+That experiment has not been completed here. The invoice trace explains what must be counted and why selective routing could help. It does not establish a measured efficiency advantage or an ASI result.
 
-Repeated verified work can become a parser, cache, tool, memory, proof, or specialist. But the artifact carries a version, assumptions, tests, and renewal cost.
-
-When the invoice format changes, the cached route expires. Revalidation is not overhead added afterward; it prevents yesterday's saving from becoming tomorrow's debt.
-
-The routed resource can be model capacity, context, search, numerical precision, tools, or verification. Minimum viable intelligence is a candidate policy, not an axiom.
-
-For novel, uncertain, or high-consequence work, the strongest route plus broad verification may dominate. The architecture must be allowed to learn that selectivity has no value there.
-
-Scaling forecasts still matter, but a smooth loss curve is not a capability guarantee. Preserve forecast residuals and watch operational thresholds without declaring every jump real or illusory.
-
-A fair test freezes natural tasks, then compares always-cheapest, always-maximal, adaptive routing, and a strong monolith with tools under matched access and tuning.
-
-Score useful accepted work against total contract cost. Count unsafe effects, false refusals, recovery, latency, human burden, tail failures, and maintenance together.
-
-This chapter does not contain that result. Its support remains an argument; finite route fixtures organize accounting but prove no measured efficiency, transfer, safety, or ASI.
-
-Return to the invoice. Efficiency means the saving remains visible after quality, authority, verification, fallback, and repair are paid. Next, System Boundaries and Authority defines where permission stops.
+The practical test is simple: a saving is real only if it remains after quality, authority, verification, fallback, and repair have all been paid.

@@ -1,13 +1,31 @@
-This chapter asks a specific question: A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.
+Harborline has a route called "draft public notice." The team replaces its model and keeps the route name. Did the capability stay the same?
 
-The chapter's core claim is this: A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations.
+The new model writes better prose, but it refuses more Spanish requests and calls a different publishing tool. A stable label has concealed a changed contract.
 
-A concrete implementation trace makes the proposal testable. The current minimum is one public SCF schema with three valid and six expected-invalid records, one readiness/residual gate harness for synthetic route and rollback prerequisites, one deterministic lifecycle probe with two valid traces and six expected-invalid transition controls, and 18 theorem declarations in AsiStackProofs.StableCapabilityFields grouped under four manifest targets. These artifacts exercise record shape, scoped qualification fields, evaluator-separation declarations, authority ceilings, lifecycle routes, selected promotion and terminal-state predicates, regression and rollback prerequisites, fixture counts, and explicit no-promotion boundaries only.
+Names are useful for routing. They are not evidence of substitutability.
 
-The design can still fail. Identity laundering keeps the field name or compatible-looking version while observable behavior, failures, protected effects, or trust terms change. Interface theater treats matching signatures, schemas, or happy-path outputs as semantic substitutability. Qualification overreach generalizes one workload, consumer, evaluator, threat model, environment, or epoch to unrelated uses. Benchmark overfitting preserves the measured suite while degrading unmeasured obligations, rare failures, abstention quality, or downstream composition. The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+Turn the route into a Stable Capability Field. The field describes what a consumer may expect, including valid inputs and observable outputs. It also defines how the route can fail or abstain.
 
-This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. A lifecycle review with a mismatched field identity routes to explicit replacement rejection. A replacement that expands authority without a governance grant is rejected.
+Now bind one consumer: the Harborline communications workflow. The field promises a private draft, not publication. Its authority ceiling cannot rise when the implementation changes.
 
-No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+Qualification tests the old and new routes on the same versioned workload. The tests include the language case that exposed the regression.
 
-At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Capability Replacement and Rollback. It takes responsibility for A governed stack must change live models, prompts, tools, policies, data, evaluators, dependencies, state schemas. Read the live chapter for its complete source mappings, interfaces, invariants, failure modes, tests, and open evidence gaps.
+Suppose both routes return the same English draft. Is that enough to replace the old implementation?
+
+No. Matching one happy path says little about the failure behavior or the unmeasured consumers.
+
+The candidate enters a bounded canary. It can read the approved source and produce a private artifact. It cannot call the publishing tool.
+
+The Spanish regression appears. The field records which obligation failed and which consumers are affected. The candidate does not inherit the old route's qualification merely because it occupies the same slot.
+
+Now imagine the new model improves after repair. Replacement still needs state and recovery planning. Cached decisions may depend on the prior implementation. External effects may need compensation rather than rollback.
+
+The field therefore carries an expiry and invalidation triggers. A changed tool or evaluator can reopen qualification. So can a new audience.
+
+Composition needs care too. Two individually qualified fields may fail when joined. The output of one can violate the precondition of the next.
+
+The contract keeps that boundary visible. It names which composition was tested instead of granting a portable badge.
+
+Finite schemas and transition models can reject mismatched identity or unauthorized widening. They cannot prove that two real systems are equivalent in deployment.
+
+A stable route does not freeze one model forever. It preserves a consumer-visible promise while implementations change, and refuses replacement when the evidence no longer supports that promise.

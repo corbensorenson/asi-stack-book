@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mux and validate all non-pilot chapter masters with bounded parallelism."""
+"""Mux and validate historical generation-one chapter masters."""
 
 from __future__ import annotations
 
@@ -53,10 +53,20 @@ def finish(slug: str):
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--historical-generation-one",
+        action="store_true",
+        help="Acknowledge that this bulk mux operates on deprecated generation-one masters.",
+    )
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--chapter", action="append", default=[])
     parser.add_argument("--all-chapters", action="store_true")
     args = parser.parse_args()
+    if not args.historical_generation_one:
+        raise SystemExit(
+            "This bulk mux is generation-one historical custody only. "
+            "Use generation-two release receipts for current videos."
+        )
     selected = (
         chapter_ids(include_pilots=True)
         if args.all_chapters

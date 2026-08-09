@@ -3,9 +3,11 @@
 ## Contents
 
 - Pattern selection
+- Domain objects and shared scene state
 - Object continuity
 - Timing composition
 - Live relationships
+- Renderer-in-the-loop repair
 - Camera and focus
 - Text and equations
 - Anti-patterns
@@ -29,6 +31,25 @@ Select motion by meaning:
 | scale or locality | restrained `MovingCameraScene` pan/zoom |
 
 An animation should answer “what changed, and why does that change matter?”
+
+## Domain objects and shared scene state
+
+Model the mechanism in code before scripting individual effects. A
+chapter-specific mobject should expose semantic operations such as
+`set_authority`, `route_request`, `revoke_lease`, `restore_snapshot`,
+`highlight_range`, or `renormalize_distribution`. Each operation owns the
+geometry, labels, dependent arrows, and animation required to move between
+valid states.
+
+This is the most reusable lesson in recent 3Blue1Brown source: explanatory
+objects carry state and offer mechanism-level transformations. Scenes then
+compose those operations while preserving identity. Do not encode the lesson
+as a succession of unrelated `FadeIn` calls or as strings passed to a generic
+card factory.
+
+Keep one explicit scene-state model for objects that persist across sections.
+Record only meaningful state, not every pixel. This gives localized repair a
+stable boundary: fix one operation without reconstructing the whole scene.
 
 ## Object continuity
 
@@ -76,6 +97,22 @@ do not copy ManimGL or CC BY-NC-SA implementation code into this project.
 
 Use `Scene.next_section()` to make semantic beats independently renderable and
 reviewable. Give each section at least one animation.
+
+## Renderer-in-the-loop repair
+
+Treat successful Python execution as the first check, not the final result.
+Use a bounded loop:
+
+1. render the changed section at low quality;
+2. inspect renderer errors and repair API or geometry failures;
+3. inspect five or more frames across every changed transition;
+4. compare the frames with the planned attention target and object state;
+5. play the section at speed with narration; and
+6. localize the next repair to the responsible operation or beat.
+
+Consult the pinned ManimCE documentation when an API is uncertain. Do not
+guess from ManimGL examples. Code-level and rendered-visual checks are
+complementary: either can fail while the other passes.
 
 ## Live relationships
 
@@ -125,3 +162,6 @@ not admire a typographic effect.
 - A result visible before the question or input.
 - Tiny labels compensating for too many simultaneous objects.
 - Copying 3b1b ManimGL calls directly into ManimCE code.
+- Reaching correct keyframes through an overlapping, unreadable midpoint.
+- A scene method named for an effect (`show_card_3`) rather than the mechanism
+  (`revoke_lease`).

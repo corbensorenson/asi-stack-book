@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate chapter-specific P7.3 source packets for every non-pilot chapter."""
+"""Reproduce historical generation-one chapter packets.
+
+This seven-scene packet generator is retained for artifact custody only. New
+visual abstracts use the generation-two teaching-promise and beat-plan path.
+"""
 
 from __future__ import annotations
 
@@ -544,11 +548,22 @@ def write_chapter(chapter: dict, next_chapter: dict, index: int, source_commit: 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--historical-generation-one",
+        action="store_true",
+        help="Acknowledge that this command reproduces the deprecated generation-one template.",
+    )
+    parser.add_argument(
         "--thumbnails-only",
         action="store_true",
         help="Regenerate only non-pilot tracked SVG thumbnail sources.",
     )
     args = parser.parse_args()
+    if not args.historical_generation_one:
+        raise SystemExit(
+            "Generation-one packet synthesis is historical-only. "
+            "Use the generation-two Manim skill workflow, or pass "
+            "--historical-generation-one solely to reproduce a prior artifact."
+        )
     structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
     chapters = chapter_list(structure)
     source_commit = git_head()

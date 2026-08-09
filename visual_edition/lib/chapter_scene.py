@@ -1,4 +1,8 @@
-"""Reusable, data-driven scene grammar for ASI Stack chapter videos."""
+"""Historical generation-one seven-scene grammar.
+
+Retained so existing receipts remain reproducible. Do not subclass this card
+template for generation-two visual abstracts.
+"""
 
 from __future__ import annotations
 
@@ -80,7 +84,7 @@ def card(
 
 
 class AsiChapterScene(AsiScene):
-    """Seven-scene visual abstract driven by one tracked chapter specification."""
+    """Deprecated seven-scene renderer for generation-one custody."""
 
     SPEC_RELATIVE = ""
     TARGET_DURATION = 285.0

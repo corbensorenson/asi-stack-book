@@ -35,10 +35,17 @@ book as canonical and preserve every claim/evidence boundary.
 
 ## Choose one teaching promise
 
-State one sentence the viewer should understand or be able to predict after
-watching. Choose one concrete case that makes the promise visible. A chapter
-video is a selective visual abstract, not a compressed reading of every
-section.
+State one short sentence describing what the viewer should be able to predict,
+explain, or do after watching. Choose one concrete case that makes the promise
+visible. A chapter video is a selective visual abstract, not a compressed
+reading of every section. Coverage is not a video objective.
+
+Before drafting, generate several candidate promises and select the one with
+the strongest combination of consequence, visual mechanism, transfer value,
+and evidence fit. Reject promises joined by lists such as “trace X through A,
+B, C, and D.” The default selection budget is one case, one causal mechanism,
+one test or counterexample, one natural evidence boundary, and at most three
+new terms.
 
 Build around this order unless the chapter demands a better one:
 
@@ -47,7 +54,7 @@ Build around this order unless the chapter demands a better one:
 3. Manipulate the concrete case.
 4. Extract the general mechanism from what changed.
 5. Run one worked trace or counterexample.
-6. Show the evidence boundary and the next question.
+6. State what the example establishes and what remains open.
 
 Do not begin with a definition, chapter summary, taxonomy, or phrases such as
 “This chapter asks a specific question,” “the tempting shortcut,” or “the
@@ -82,18 +89,17 @@ contiguity, modality, and redundancy principles. Put a short label beside the
 object it names exactly when it matters. Pair spoken explanation with a
 complementary picture; do not make viewers read the same sentence they hear.
 
-## Write for speech and pictures
+## Pass the script before planning motion
 
-- Treat 3–6 minutes and roughly 350–700 spoken words as the default pacing
-  range, not a hard cap. Prefer a shorter video that lands one idea over a
-  dense synopsis, but allow a longer chapter-specific explanation when cutting
-  it would collapse load-bearing distinctions, evidence boundaries, or a
-  coherent worked trace. Record the reason in
-  `audio_direction.duration_rationale` whenever final audio exceeds six
-  minutes, then judge pacing, synchronized visual change, and viewer load at
-  the actual duration.
+- Treat roughly 2.5–4.5 minutes and 280–520 spoken words as the normal form.
+  This is a selection constraint, not a request to accelerate delivery.
+  Scripts above 600 words require a specific duration rationale and a second
+  editorial pass; scripts above 650 words fail the standard for a chapter
+  visual abstract and must become a series or return to selection.
 - Target roughly 110–145 spoken words per minute after synthesis. Do not speed
   up an overlong script to make it fit.
+- Organize the script into four to six narrative moves. Timed animation cues
+  may be more numerous, but they must not become extra topics.
 - Use active voice, concrete nouns, specific verbs, and one idea per sentence.
 - Put the actor and action early. Split sentences above roughly 24 words unless
   their rhythm is demonstrably clear when spoken.
@@ -107,10 +113,20 @@ complementary picture; do not make viewers read the same sentence they hear.
   explains relationships, causes, and consequences.
 - Preserve qualifiers. A visual example, implementation sketch, or source
   report must not become proof, generality, safety, or deployment evidence.
+- State the evidence boundary once, in ordinary language, at the point where a
+  viewer could otherwise overgeneralize. Do not speak claim IDs, support-state
+  labels, validator counts, file paths, chapter navigation, or publication
+  boilerplate.
 
 Read the draft aloud before synthesis. Rewrite any line that needs punctuation
 to be understood, contains multiple logical branches, or cannot be paired with
-a meaningful picture.
+a meaningful picture. Then run the narration-only audit. Do not create a beat
+plan, synthesize audio, or write scene code until the script passes.
+
+```bash
+python3 ~/.codex/skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --narration path/to/narration.txt --narration-only
+```
 
 ## Art-direct before animating
 
@@ -137,7 +153,8 @@ imitation of another creator's surface style.
 
 ## Design a beat-synchronized visual argument
 
-Create `beat_plan.json` before final scene code. Use the format in
+After the narration passes, create `beat_plan.json` before final scene code.
+Use the format in
 [asi-stack-pipeline.md](references/asi-stack-pipeline.md), then run:
 
 ```bash
@@ -145,11 +162,13 @@ python3 ~/.codex/skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
   path/to/beat_plan.json --narration path/to/narration.txt
 ```
 
-A semantic beat is one spoken idea plus the visual change that explains it.
-Most explanations naturally fall near 8–14 meaningful beats per minute, but
-this is a diagnostic range, not a motion quota. Most beats should last 3–8
-seconds. Split a beat longer than 12 seconds unless the viewer is tracing,
-comparing, predicting, or absorbing a deliberate result; record that purpose.
+A narrative move is a major change in the viewer's mental model. A timed beat
+is one spoken idea plus the visual state change that explains it. Do not confuse
+the two: a strong four-move story may contain many synchronized object changes
+without introducing many topics. Beat density is diagnostic, never a quota.
+Most timed beats last 3–10 seconds. Split a beat longer than 12 seconds unless
+the viewer is tracing, comparing, predicting, or absorbing a deliberate result;
+record that purpose.
 
 For every beat, specify:
 
@@ -206,16 +225,21 @@ Avoid:
 - an animation that finishes before the narration introduces its meaning; and
 - a fixed seven-scene template used regardless of chapter structure.
 
-Use 3Blue1Brown code as pattern study, not as a copy source. That repository
-uses ManimGL and CC BY-NC-SA code; the ASI Stack pipeline uses ManimCE 0.20.1.
-Translate the explanatory technique with ManimCE's documented API and original
-project code.
+Use 3Blue1Brown code as pattern study, not as a copy source. Study how recent
+scenes define domain objects with semantic state setters, preserve those
+objects across transformations, and link multiple representations through
+trackers and updaters. That repository uses ManimGL and CC BY-NC-SA code; the
+ASI Stack pipeline uses ManimCE 0.20.1. Translate the explanatory technique
+with ManimCE's documented API and original project code.
 
 ## Derive timing from final audio
 
-Synthesize or record the narration before final timing. Obtain word or phrase
-timestamps through the repository's pinned alignment path. Align each beat to
-its unique spoken anchor.
+Synthesize or record the narration in coherent performance blocks before final
+timing. Avoid sentence-by-sentence synthesis that resets prosody at every cut.
+Qualify and pin a forced-alignment path before final timing, then obtain word
+or phrase timestamps and align each beat to its unique spoken anchor. Until
+that path is qualified, timing estimates may support an animatic but cannot
+pass picture-and-sound lock.
 
 Use one of two timing strategies:
 
@@ -243,6 +267,15 @@ Work in three passes:
    narration, captions, music policy, and sound timing.
 3. **Release candidate:** render the pinned profile, run technical checks, and
    perform the complete experience review.
+
+Keep the work logically separated even when one agent performs every role:
+
+1. **Script editor:** selects and compresses the lesson; cannot approve visuals.
+2. **Visual director:** designs the persistent world and keyframes; cannot hide
+   a weak script with polish.
+3. **Renderer:** implements deterministic scene code and repairs execution.
+4. **Critic:** reviews rendered frames, motion, sound, transfer, and fidelity
+   against the promise rather than defending the implementation.
 
 Do not polish a transition while the story or visual world is still unstable.
 Use scene sections and low-resolution renders as the ManimCE equivalent of an
@@ -281,9 +314,9 @@ Do all of these before calling a revision ready:
 
 1. Run the beat-plan audit and repository validators.
 2. Render an animatic with final or near-final narration and exact beat timing.
-3. Sample the start, midpoint, and end of every beat, not only seven paragraph
-   midpoints. Inspect focal hierarchy, continuity, intermediate states, and
-   visual breathing room.
+3. Sample the start, quarter, midpoint, three-quarter, and end of every beat.
+   Inspect focal hierarchy, continuity, interpolation states, and visual
+   breathing room. Add targeted samples around fast or suspicious transitions.
 4. Watch the picture-and-sound lock once at 1× with audio. Mark any idea where
    the picture leads or lags
    the words, the viewer must read and listen simultaneously, or the visual
@@ -306,9 +339,12 @@ Do all of these before calling a revision ready:
 11. Compare the result with the teaching promise. Cut beats that do not serve it.
 12. Review the hook, prediction, reveal, and payoff as one loop. Reject a hook
    that is never resolved or a late payoff that should appear earlier.
-13. For a revision, compare predecessor and candidate at matched playback
+13. Ask a cold transfer question that changes one condition in the worked case.
+    The reviewer must predict the result without consulting the script. A
+    confident but wrong answer is a teaching failure, not a cosmetic note.
+14. For a revision, compare predecessor and candidate at matched playback
     volume and display size. Keep changes that solve a named problem.
-14. After publication has enough viewers, inspect first-30-second retention,
+15. After publication has enough viewers, inspect first-30-second retention,
     dips, spikes, and top moments. Treat these as diagnostic signals—not proof
     of learning—and record the revision hypothesis before changing the video.
 

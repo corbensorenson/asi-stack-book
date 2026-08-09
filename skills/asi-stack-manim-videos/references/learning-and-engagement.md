@@ -29,6 +29,12 @@ Use this loop:
 The loop creates narrative energy without turning a technical claim into a
 dramatic overclaim.
 
+Measure success against a transfer behavior, not coverage. Before production,
+write one cold question that changes a condition in the worked case. A viewer
+who understood the mechanism should be able to predict what changes and why.
+Use that question at script review and animatic review; do not teach to a trivia
+answer or disclose the exact test wording in the narration.
+
 ## Cognitive-load rules
 
 Working memory is limited. Use the visual and auditory channels to carry

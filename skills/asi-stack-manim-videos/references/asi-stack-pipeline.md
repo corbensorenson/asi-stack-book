@@ -11,17 +11,32 @@
 
 ## Current repository diagnosis
 
-The 2026-07-31 audit found that the first uploaded chapter is hand-authored,
-but videos 2–5 are 12-line wrappers around the shared `AsiChapterScene`. The
-shared class creates seven paragraph-level tableaux, performs a few short
-entrance animations, and waits until each narration paragraph ends. The scripts
-run near 119–127 words per minute, so the main defect is not speech speed. It is
-low semantic animation density, generic card layouts, and paragraph-level
-rather than idea-level synchronization.
+The 2026-08-08 baseline audit found 85 canonical chapters, 84 preserved
+generation-one packets, and 24 generation-two narration drafts. The newly added
+chapter has no legacy packet by design. Seventy-nine generation-one narrations
+use the same seven-paragraph chapter-summary template; generation one remains
+historical rather than an authoring source.
 
-Do not treat the current `ready_not_published` status as an aesthetic quality
-approval. Existing receipts establish technical identity and bounded review,
-not that the video meets this stronger teaching standard.
+The same-day editorial pass replaced all 24 generation-two narrations with
+case-first scripts under the revised standard. They now run from 364 to 436
+words and pass the narration-only audit without warnings. Their earlier beat
+plans, audio, captions, transcripts, scenes, renders, and reviews remain useful
+history, but no longer describe the current scripts and must be regenerated
+through the gates. The remaining 61 chapters enter generation two in canonical
+order as one-promise visual abstracts, including the chapter with no legacy
+predecessor.
+
+The main defect is selection, not speech speed: scripts summarize chapters,
+beats follow document sections, and visuals inherit card-like tableaux. The
+legacy packet generator is a historical reproducibility tool. Do not use it to
+author generation two or to fill a new chapter merely for count symmetry. Its
+packet, timing, bulk-render, mux, and production commands require the explicit
+`--historical-generation-one` acknowledgement.
+
+Do not treat `ready_not_published`, a successful render, or an earlier review
+as approval under the revised standard. Existing receipts preserve exact
+historical identity. Any script or standard change reopens downstream timing,
+captions, audio, scene, and experience gates without erasing those receipts.
 
 ## Beat-plan contract
 
@@ -112,24 +127,28 @@ punctuation normalization.
 ## Authoring sequence
 
 1. Read the chapter and evidence surfaces.
-2. Lock one teaching promise and one concrete case.
-3. Write the art-direction, audio, and accessibility briefs.
-4. Draft narration and beat plan together.
-5. Run `audit_video_plan.py`; resolve every error and inspect warnings.
-6. Synthesize narration and align words or phrases.
-7. Replace estimated beat times with audio-derived anchors.
-8. Implement a low-resolution animatic with chapter-specific objects.
-9. Review every beat and repair story, composition, continuity, and rhythm.
-10. Lock geometry, easing, camera, narration, captions, and sound.
-11. Run `audit_av_experience.py` for mechanical freeze, silence, and loudness
+2. Draft several teaching promises; select one outcome and one concrete case.
+3. Write four to six macro narrative moves and one cold transfer question.
+4. Draft narration, read it aloud, and pass the narration-only audit.
+5. Write the art-direction, audio, and accessibility briefs.
+6. Design sparse semantic keyframes and the persistent domain objects.
+7. Build the timed beat plan and run the complete plan audit.
+8. Synthesize narration in coherent blocks and force-align words or phrases.
+9. Replace estimated beat times with audio-derived anchors.
+10. Implement a low-resolution animatic with chapter-specific objects.
+11. Review five samples per beat plus complete playback; repair story,
+    composition, interpolation, continuity, synchronization, and rhythm.
+12. Run the cold comprehension and transfer checks.
+13. Lock geometry, easing, camera, narration, captions, and sound.
+14. Run `audit_av_experience.py` for mechanical freeze, silence, and loudness
     diagnostics; investigate every finding in playback.
-12. Render the pinned 1920×1080/30 release profile and mux exact audio.
-13. Run `build_caption_review_sheet.py` against the mux and final VTT; reject
+15. Render the pinned 1920×1080/30 release profile and mux exact audio.
+16. Run `build_caption_review_sheet.py` against the mux and final VTT; reject
     overlaps, sub-320-millisecond cues, overlong cues, or captions that obscure
     the active visual region in the representative exact-frame sheet.
-14. Run repository visual, caption, transcript, receipt, and publication
+17. Run repository visual, caption, transcript, receipt, and publication
     validators.
-15. Perform the complete experience review in `experience-review.md`.
+18. Perform the complete experience review in `experience-review.md`.
 
 ## Validation and review
 
@@ -140,8 +159,9 @@ exact narration agreement. Technique and beat-density counts remain warnings,
 not creative targets. The audit cannot judge whether the metaphor is
 insightful, motion is beautiful, voice is pleasant, or explanation is true.
 
-For contact sheets, sample at least three frames per beat. A scene-midpoint-only
-review can miss a late reveal, early mismatch, or long static interval.
+For contact sheets, sample at least five frames per beat. A start/middle/end
+review can still miss a broken quarter-state, crossing label, or abrupt late
+reveal.
 
 Record review outcomes by beat:
 
@@ -159,9 +179,12 @@ owner has supplied direct viewing feedback. Do not merely add motion to the
 generic card scenes. Rewrite each around a concrete case and beat plan. Preserve
 useful custom work from video 1, but apply the same narration and sync audit.
 
-After the cohort passes, revise the remaining seven uploaded previews before
-uploading more chapters. Then propagate the improved engine and review standard
-through all 84 local generations.
+After the cohort passes, revise the remaining uploaded previews before
+uploading more chapters. Then author generation two in current canonical order.
+New chapters enter automatically as planned targets with no fabricated
+generation-one predecessor. Generate public derivatives only when content and
+review gates justify the work; do not regenerate audio or publication bundles
+for routine manuscript edits.
 
 ## YouTube supersession
 

@@ -1,51 +1,31 @@
-A result card arrives with a confident headline: “The memory adapter improved retrieval by eighteen percent.” A green stamp lands on it: PROVEN. Stop there. What, exactly, was proven?
+A result card says, "The memory adapter improved retrieval by eighteen percent." A green stamp lands on the card: proven.
 
-The sentence is only a claim atom. Its wording, scope, and version must stay fixed while we ask what evidence actually touched it.
+Stop. What exactly did the evidence establish?
 
-Four identities must remain separate. The claim label says what kind of assertion this is. Support state says what backs it. Lifecycle state says where review stands. Disposition says what ultimately happened.
+Freeze the sentence. Name the adapter and the workload. Add the baseline and the metric. The broad headline becomes a specific claim that can survive review without changing shape.
 
-Now split the atom into three synchronized views: the proposition a reader sees, the obligation the architecture imposes, and the predicate a machine can check. Substituting any one creates a different claim.
+Now place three artifacts beside it. A paper explains why the adapter might work. A synthetic fixture shows that our code routes authored cases correctly. A held-out measurement would estimate the retrieval effect.
 
-Evidence enters with a role, not a halo. A citation can supply lineage or context. A proof can cover a formal predicate. A fixture can test one encoded behavior. A measurement can estimate an effect.
+Those artifacts are not interchangeable. The paper supports a rationale. The fixture checks encoded behavior. Only the held-out run could directly test the eighteen-percent result.
 
-Store those artifacts in a non-aggregating evidence cell. Independence, reproducibility, recency, coverage, adversarial strength, validity, artifact access, and transfer distance remain separate dimensions.
+Imagine seven quality indicators look excellent, but the evaluator is the same system that produced the answer. Should the strong indicators average away the missing independence?
 
-Imagine seven dimensions look excellent, but the evaluator is the same system that produced the answer. Independence remains weak. Seven bright bars cannot average that missing safeguard away.
+No. Evidence quality is a vector, not a single score. A failure on a load-bearing dimension can stop the transition even when other dimensions are strong.
 
-To move support, construct a transition packet. Bind the exact claim version, source passage or artifact, evidence role, scope, method, negative results, reviewer, blockers, downgrade triggers, limitations, and explicit non-claims.
+Move the claim toward an evidence gate. The gate is specific to this sentence. It asks for the artifact and method required by the stronger wording.
 
-The packet approaches an upward gate. It opens only when the target support state names its required evidence and every non-compensable requirement is present.
+The nearby citation does not open it. The source may never have tested this implementation. The fixture does not open it either. Correct behavior on authored examples is not a measured effect on held-out data.
 
-A nearby citation does not open it. The source may motivate the mechanism while saying nothing about this adapter, workload, effect size, or implementation.
+So the claim stays where it is. The ledger records the missing run rather than letting polished prose imply that it happened.
 
-A proof object does not open every gate either. It can establish the encoded theorem under its assumptions; it cannot silently become deployment, usefulness, or real-world enforcement evidence.
+Now suppose the held-out experiment runs, but its positive control fails. The instrument could not detect a known difference. That result does not prove no improvement. It weakens the test itself.
 
-A benchmark score is also scoped. It speaks for the frozen tasks, protocol, comparator, and measurement boundary—not every user, distribution, system state, or future revision.
+Evidence can move a claim in more than one direction. It can strengthen the wording or narrow its scope. It can also leave the claim unchanged, weaken it, or refute it.
 
-Return to the eighteen-percent headline. Version one claims a held-out retrieval gain for a named adapter, model, corpus, metric, baseline, and confidence procedure. The scope now fits on the card.
+Negative results stay attached to the lineage. A later revision may answer them, but it may not erase the failed control or contradiction that shaped the new claim.
 
-A passage-reviewed paper supports the adapter’s design rationale. Record that role. It does not measure our implementation, so the effect claim remains unmoved.
+Nor does one accepted result move every neighboring claim. A retrieval gain would not establish deployment safety. A formal proof would not establish that a runtime enforces its assumptions.
 
-A synthetic fixture verifies that the adapter routes the authored cases correctly. That earns narrow synthetic-test backing for the fixture claim, not an eighteen-percent empirical gain.
+The local schemas and finite checks show how records and transitions can be constrained. They do not validate the method in deployment or supply the missing retrieval measurement.
 
-The independent held-out run is still missing. The empirical gate remains closed, and the public ledger records the blocker instead of replacing it with optimistic prose.
-
-Then a positive control fails. The instrument could not detect a known retrieval difference. That result does not prove no improvement; it weakens the test and forces the inference downward.
-
-Transitions are not only promotions. Review may leave support unchanged, narrow scope, downgrade backing, refute the atom, or deprecate a superseded version.
-
-Negative evidence stays attached like a visible shadow. A cleaner revision may answer it, but it may not delete the failed control, contradiction, or abandoned inference from lineage.
-
-Appendix C is a public projection of this ledger. It shows current claim, support, transition, limitation, and residual. The projection is an interface—not another piece of evidence.
-
-Nor does one accepted transition move a whole claim family. Parent, sibling, and descendant claims keep their own identities and burdens unless separately reviewed.
-
-The decision record preserves reviewer independence, dissent, acceptance blockers, limitations, and the reason for no change or movement. Confidence changes through receipts, not mood.
-
-This is not a numeric confidence machine. Evidence dimensions answer different questions, and the public support state is a lossy summary chosen for a particular claim and reader.
-
-This chapter remains Design rationale at argument support. Its schemas, finite proofs, and synthetic mutation suites establish only their encoded record and transition behavior; they do not validate the method in deployment.
-
-The payoff is disciplined revision. Clearer prose may improve understanding, but only an accepted, claim-specific transition may strengthen what the book says the evidence supports.
-
-Next, Scalable Oversight and Adversarial AI Control asks whether a weaker supervisor can actually see enough of a stronger system’s work to judge it.
+The payoff is disciplined revision. The book can become clearer whenever prose improves. It becomes better supported only when evidence that matches a particular claim passes that claim's particular gate.

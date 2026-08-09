@@ -1,13 +1,33 @@
-This chapter asks a specific question: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure. The tempting shortcut is insufficient: Generic access control, one robustness score, static red teaming, accuracy on clean data, or a single defense cannot characterize a model attack.
+A toy image classifier performs well on clean test data. Add a small patterned patch, and one object is routed to the wrong class.
 
-The chapter's core claim is this: A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment. Version the threat model by model family, exact checkpoint, data and adaptation lineage, modality, lifecycle stage, access, attacker goal, knowledge, budget, and prohibited real-world effects. Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal, and agentic attack lanes with complete attempt denominators.
+Did the model become inaccurate, or did the threat model change?
 
-A concrete implementation trace makes the proposal testable. Implement a model-threat record and a safe evaluation harness over public toy or consented models. Include clean, random-noise, known-vulnerable, attack-aware, transfer, and adaptive controls; preserve query and tuning budgets; and report robustness with clean utility, false positives, recovery, latency, and residuals. No result transfers automatically to frontier models or production. Maintain separate evasion, poisoning, backdoor, safeguard-bypass, extraction, inversion, transfer, adaptive, multimodal, and agentic attack lanes with complete attempt denominators. Evaluate defenses against adaptive attacks and matched clean utility; distinguish empirical monitoring, recovery, and bounded certificates by their actual scope.
+Clean accuracy measured ordinary inputs. The patched case introduces an attacker who can alter the input while preserving the object's meaning.
 
-The design can still fail. evasion training-data poisoning clean-label poisoning backdoors and trojans The correct response is to stop, narrow, quarantine, compensate, or retain an owned residual rather than narrate uncertainty away.
+Security evaluation begins by naming that attacker. Record what the attacker can observe. Fix the attempt budget and identify which lifecycle stage can be influenced.
 
-This chapter remains Design rationale at argument support. Its contracts, examples, tests, or local artifacts establish only their encoded scope. The chapter names proof targets rather than pretending they are already closed. A finite Adversarial Machine Learning and the Model Attack Surface record may hand off only when identity, authority, version, required checks, and residual ownership are present; no theorem grants empirical effectiveness or release authority. A defense is evaluated against an attacker aware of that defense whenever the threat model permits. Clean utility, attacked utility, detection, false positives, recovery, and cost remain jointly visible.
+Freeze the exact model version and the attack budget. Now the result has a denominator.
 
-No chapter claim or evidence state is promoted by this visual. A named mechanism is not proof of correct implementation or useful deployment. A local check or formal model does not establish real-world enforcement. No safety, transfer, state-of-the-art, AGI, or ASI conclusion follows. These boundaries matter because an explanatory derivative is useful only if it preserves the evidence ceiling of its source.
+Apply a detector that blocks the first patch. The dashboard turns green. Is the model robust now?
 
-At most, this visual explains the chapter's design rationale at argument support; it adds no empirical, deployment, safety, transfer, state-of-the-art, AGI, or ASI result. The next chapter is Privacy, Data Rights, and Information-Flow Governance. It takes responsibility for A system can preserve confidentiality and pass access checks while authorized collection, linkage, inference, memory, training, sharing, retention, or derivatives violate purpose, minimization, privacy expectations, or executable rights.
+Not if the threat model allows adaptation. An attacker who can observe the defense may search for a different pattern. A static test can overstate protection by freezing the adversary while changing the defender.
+
+Run the adaptive challenge. Preserve failed attempts as well as the successful one. Otherwise a defense can appear cheap by hiding the search cost or appear strong by hiding the attack budget.
+
+Keep clean utility visible. A detector that rejects every image may stop the patch, but it has destroyed the service it was meant to protect.
+
+Recovery matters too. When an attack is detected, can the system isolate the affected route and restore a trusted model state? Detection without a response path may only produce a better incident report.
+
+Now move to training time. A poisoned example or hidden trigger enters through a different surface. The input-time result cannot automatically transfer.
+
+Extraction and privacy attacks differ again. They need their own objectives and observations. One overall robustness score would hide which surface was actually tested.
+
+The model-threat record therefore stays versioned by model and lifecycle stage. It also records the attacker's access and the effect that was observed.
+
+When the model or defense changes, the old result may expire. The same is true when the attacker receives more queries or tools.
+
+Public toy models can support safe evaluation of this machinery. They do not establish robustness for frontier systems or production environments.
+
+Formal certificates can be valuable inside a bounded perturbation model. They do not certify every attack surface or every downstream effect.
+
+The patch makes the useful lesson visible. No single defense simply wins. A security claim becomes meaningful only after the attacker and tested surface are explicit. Adaptation and utility must remain on the same ledger.

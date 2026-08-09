@@ -10,6 +10,7 @@
     "runtime",
     "synthesis",
     "verification",
+    "alignment",
     "tracked_inputs",
     "rights_and_disclosure",
     "storage_boundary",
@@ -87,6 +88,31 @@
         "required_checks": {"type": "array", "minItems": 6, "uniqueItems": true}
       },
       "additionalProperties": true
+    },
+    "alignment": {
+      "type": "object",
+      "required": [
+        "qualification_state",
+        "animatic_timing_source",
+        "picture_and_sound_lock_requirement",
+        "candidate_methods",
+        "admission_test"
+      ],
+      "properties": {
+        "qualification_state": {
+          "enum": ["not_yet_qualified", "qualified"]
+        },
+        "animatic_timing_source": {"type": "string", "minLength": 20},
+        "picture_and_sound_lock_requirement": {"type": "string", "minLength": 40},
+        "candidate_methods": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 3}
+        },
+        "admission_test": {"type": "string", "minLength": 60}
+      },
+      "additionalProperties": false
     },
     "tracked_inputs": {"type": "object"},
     "rights_and_disclosure": {

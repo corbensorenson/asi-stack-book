@@ -1,13 +1,33 @@
-A capable component is not a light bulb that can be unscrewed and replaced. It may carry model weights, optimizer and scheduler state, random-number state, caches, credentials, policies, routes, backups, descendants, and commitments already made outside the machine. A replacement can look successful while half of that world still belongs to the old version. This chapter therefore treats replacement as a governed transaction over one declared Stable Capability Field. The transaction names the prior implementation, candidate, consumers, authority, evidence, recovery objective, and every state or effect surface before the result is known.
+A planning service moves from route A to route B. The candidate passes prechecks and enters a five-percent canary. Hours later, a delayed monitor finds a critical regression.
 
-The first discipline is prospective identity. Before evaluation, freeze the field version, prior and candidate digests, dependency graph, change class, checkpoint authority, evaluator, monitor, canary scope, thresholds, owners, and expiry. Then inventory state and effects. Model parameters are only one row. Optimizer, scheduler, random-number generator, cache, backup, credential, policy, receipt, data, route, monitor, descendant, and external commitment need explicit rows too. Effects are classified as reversible, replayable, compensatable, forked, disclosure-like, externally owned, or irreversible. Anything omitted cannot later be called recovered.
+Can the system simply switch back?
 
-The candidate then moves through explicit states: proposed, precheck, isolated shadow, bounded canary, default candidate, committed, monitored, rolled back, compensated, quarantined, or retired. Shadow and canary routes have bounded data, tools, writes, network access, learning, and external effects. Qualification includes usefulness, historical regressions, critical-failure vetoes, adversarial cases, authority and rights preservation, state compatibility, complete cost, and transfer. The candidate cannot be its own sole proposer, evaluator, promoter, monitor, incident judge, and rollback authority. Shared dependencies are recorded because independence is a property to measure, not a label.
+A capable component is not a light bulb. It carries state and permissions. It may also have created effects outside the machine.
 
-Imagine replacing a planning kernel. The current route is version A. Version B passes prechecks and enters a five-percent canary without permission to train descendants or mutate the default cache. A delayed monitor detects a critical regression. The stop condition prevents default promotion. Recovery restores the prospectively chosen checkpoint and route A, then compares every declared state surface with its recovery objective. A changed remote copy cannot be reversed locally, so the transaction assigns compensation and an owner instead of announcing success. The terminal receipt records the failed candidate, the rollback, the unresolved external effect, cost, and every affected descendant.
+Before the canary begins, freeze the recovery point. Record the route and the candidate version. Inventory the state that must survive replacement.
 
-This example separates six commonly collapsed outcomes. Restoring artifact bytes is not restoring all state. Restarting a service is not recovering behavior. Digest equality is not privacy repair. Compensation is not reversal. A receipt is not independent observation. And one exact local inventory is not proof that the inventory was complete. The strongest failure modes follow directly: checkpoint hindsight, regression deletion, evaluator capture, canary contamination, monitor blindness, partial commit, forward-only migration, authority smuggling, rollback theater, irreversibility laundering, rollback cascades, and repeated promote-rollback trials that hide accumulated cost and residuals.
+The inventory includes the cache and policy. It also includes credentials and pending work. Each surface receives a recovery objective.
 
-The chapter has real but narrow evidence. One prospective local campaign restored fifteen of fifteen declared transaction trees exactly, while six best-versus-final checkpoint disagreements showed why checkpoint authority must be fixed in advance. Another attack-control campaign achieved exact rollback in thirty-two of thirty-six cases but admitted useful release in only two of thirty-six, below both release gates. A larger bounded inventory exercise restored thirty-five of thirty-five named local surfaces, while immutable corpus, feature, checkpoint, raw-evidence, simulated remote, and external-descendant surfaces remained unresolved by design. These are useful tests of record and recovery discipline, not proof of production usefulness or effect-complete rollback.
+Route B enters the canary without permission to train descendants or change the default cache. The boundary limits how far a bad replacement can spread.
 
-The core claim therefore remains Design rationale at argument support. The maximum justified inference is bounded local non-core governance effect only. This visual does not establish a useful replacement, production transfer, semantic recovery, privacy erasure, independent evaluator quality, safe self-improvement, or chapter-core promotion. The practical rule is simple: no replacement is complete until identity, evidence, state, effects, authority, recovery, residuals, descendants, and terminal disposition are all explicit. The next chapter, Security Kernel and Digital SCIFs, asks how privileged execution can remain isolated while those replacement and recovery obligations are enforced.
+When the regression appears, promotion stops. The system restores route A from the prospectively chosen point.
+
+Now compare each declared surface. The local cache matches. The policy matches. The pending queue can replay.
+
+One remote service already received a message from route B. Switching the model back cannot unsend it.
+
+This is the difference between rollback and compensation. Rollback restores a retained state. Compensation creates a new effect that addresses an irreversible one.
+
+The replacement receipt therefore cannot say only "restored." It records the failed candidate and the recovered surfaces. It also keeps the remote message as a residual with an owner.
+
+Suppose route B had been allowed to train a descendant during the canary. Would restoring route A remove that descendant?
+
+No. Replacement must reach every affected branch, or explicitly admit that the branch remains outside recovery.
+
+The evaluator and rollback authority should also be separated from the candidate. A component cannot be its own sole promoter and incident judge.
+
+Repeated promotion attempts have costs. A cycle that always returns to safety may still accumulate external effects and operator burden.
+
+Finite local campaigns can demonstrate exact restoration for a declared inventory. They cannot prove that the inventory was complete or that production behavior recovered.
+
+The delayed regression makes the recovery test concrete. The transaction succeeds only when it distinguishes what was restored from what was compensated, contained, or still unresolved. A green restart is not the same as complete recovery.

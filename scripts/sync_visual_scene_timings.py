@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bind scene transitions and descriptive documents to exact narration timing."""
+"""Bind historical generation-one scenes to seven paragraph boundaries."""
 
 from __future__ import annotations
 
@@ -107,9 +107,19 @@ def synchronize(slug: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--historical-generation-one",
+        action="store_true",
+        help="Acknowledge the deprecated seven-paragraph timing model.",
+    )
     parser.add_argument("--chapter", action="append", default=[])
     parser.add_argument("--all-non-pilots", action="store_true")
     args = parser.parse_args()
+    if not args.historical_generation_one:
+        raise SystemExit(
+            "Seven-paragraph timing synchronization is generation-one historical "
+            "custody only. Use audio-aligned generation-two beat plans instead."
+        )
     selected = chapter_ids() if args.all_non_pilots else args.chapter
     if not selected:
         raise SystemExit("Select --chapter or --all-non-pilots")

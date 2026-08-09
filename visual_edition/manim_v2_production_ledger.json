@@ -1,18 +1,20 @@
 {
-  "schema_version": "asi_stack.manim_v2_production_ledger.v1",
+  "schema_version": "asi_stack.manim_v2_production_ledger.v2",
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "30267f89b3d5936c97bb2e4a94f2379ce827a0788b86f145e48631ecd33c274c",
+  "book_structure_sha256": "869a3c405fc101f2676c5f29700fbe83d7b0e1e490f6c1d68e34916055b9fe67",
   "visual_manifest_path": "visual_edition/manifest.json",
-  "visual_manifest_sha256": "0d7fb3cf2b759d09f498602ff423ecf3d0781d615d93347ce71c150ec7c280b4",
+  "visual_manifest_sha256": "2ddc3900642eafadb995064df77bd2dff89b694340523ae9c509938060b8b145",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
-  "authoring_standard_sha256": "a38c72229e70e3cbb095552ef91cb2786b45f29dd7128ae036623e921e8e31b3",
+  "authoring_standard_sha256": "398333de78dd181f74bd105f71d71f994b4104c7eabaea02c9bf64e0751f4658",
   "beat_plan_schema_path": "schemas/manim_beat_plan.schema.json",
-  "beat_plan_schema_sha256": "a140c0c88fc1d4c1ab07f7f7cdb9d37da216b86f813db6d03b98813f478abcd1",
+  "beat_plan_schema_sha256": "4da0f13e5e77f675b69b29723c92f76fbf8f1083d75ac16f5b553f2ef47044e9",
   "experience_review_schema_path": "schemas/manim_experience_review.schema.json",
-  "experience_review_schema_sha256": "4ee38aca02ff810aff6d98105d66a720f060834fbbda4fde9180f323ca598350",
-  "canonical_chapter_count": 84,
+  "experience_review_schema_sha256": "07c08c863c66ac98fc496507c48891138788b2887ade8411dafdef10dd035597",
+  "narration_toolchain_path": "visual_edition/narration_toolchain.json",
+  "narration_toolchain_sha256": "f556e074840a81aae701352170505fe8c8f16466f9c1590b12b0b173202e9cf9",
+  "canonical_chapter_count": 85,
   "target_generation": 2,
   "cohorts": {
     "owner_reviewed_remediation": [
@@ -31,12 +33,7 @@
       "human-ai-communication-persuasion-and-epistemic-security",
       "constitutional-alignment-substrate"
     ],
-    "current_unlisted_previews": [
-      "capability-replacement-and-rollback",
-      "security-kernel-and-digital-scifs",
-      "privacy-data-rights-and-information-flow-governance",
-      "model-weight-custody-and-hardware-roots-of-trust"
-    ],
+    "current_unlisted_previews": [],
     "not_yet_uploaded": [
       "inner-alignment-mesa-optimization-and-learned-objective-integrity",
       "moral-uncertainty-and-value-conflict",
@@ -44,8 +41,12 @@
       "institutions-international-coordination-and-public-legitimacy",
       "societal-resilience-and-misuse-defense",
       "stable-capability-fields",
+      "capability-replacement-and-rollback",
+      "security-kernel-and-digital-scifs",
       "adversarial-machine-learning-and-model-attack-surface",
+      "privacy-data-rights-and-information-flow-governance",
       "confidential-and-verifiable-ai-computation",
+      "model-weight-custody-and-hardware-roots-of-trust",
       "open-weight-release-and-post-release-control",
       "ai-supply-chain-integrity-and-lifecycle-provenance",
       "recursive-self-improvement-boundaries",
@@ -63,6 +64,7 @@
       "claim-ledgers-and-belief-revision",
       "spinoza-verification-and-proof-carrying-claims",
       "labor-os-and-typed-jobs",
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "human-ai-organizations-delegation-and-accountability",
       "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "ai-deployment-transition-distribution-and-human-agency",
@@ -128,20 +130,23 @@
       "claim_fidelity"
     ],
     "minimum_score_each_dimension": 4,
+    "minimum_frame_samples_per_beat": 5,
     "average_may_hide_failure": false,
+    "forced_alignment_required": true,
+    "cold_release_learning_check_required": true,
     "independent_review_required": true,
     "external_human_prepublication_gate_required": false
   },
   "counts": {
-    "planned": 60,
+    "planned": 61,
     "briefed": 0,
-    "scripted": 1,
-    "animatic_passed": 18,
-    "picture_and_sound_lock_passed": 17,
+    "scripted": 24,
+    "animatic_passed": 0,
+    "picture_and_sound_lock_passed": 0,
     "release_candidate_passed": 0,
     "accepted_generation_2": 0,
     "youtube_predecessors": 12,
-    "youtube_generation_2_unlisted_preview": 4,
+    "youtube_generation_2_unlisted_preview": 0,
     "youtube_generation_2_current": 0,
     "quarto_generation_2_current": 0
   },
@@ -151,7 +156,7 @@
       "chapter_id": "asi-is-a-stack-not-a-model",
       "title": "ASI Is a Stack, Not a Model",
       "chapter_path": "chapters/asi-is-a-stack-not-a-model.qmd",
-      "chapter_sha256": "776e73ab1979d84f3bf9840c0fa7b87ed20ea7a1f2735a54e78480d1b2554c35",
+      "chapter_sha256": "df143985e10ff4a55ae627c49a30969f6520201566a26049ad772226037ca027",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -162,15 +167,16 @@
         "youtube_video_id": "cWl60lR6MFs",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/narration.txt",
+        "narration_sha256": "7636d52e4a0325843829a01029d491853e22dbe40e6b4f27397da7e3992169c8",
         "caption_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/thumbnail.svg",
@@ -178,15 +184,15 @@
         "master_sha256": null,
         "render_receipt_path": null,
         "experience_review_paths": {
-          "animatic": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r3.json",
+          "animatic": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic.json",
           "picture_and_sound_lock": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/picture_and_sound_lock.json",
           "release_candidate": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/release_candidate.json",
           "independent_release_candidate": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -203,7 +209,7 @@
       "chapter_id": "the-efficient-asi-hypothesis",
       "title": "The Efficient ASI Hypothesis",
       "chapter_path": "chapters/the-efficient-asi-hypothesis.qmd",
-      "chapter_sha256": "fdd19bf24768aa9d56c5e09d448d597287b5517a5cf6ad7bac4fba16668bdbee",
+      "chapter_sha256": "2f232b3a79a95ec50bb236cfed9f70f9abfd30d84500bdb63408b0213d4661e8",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -214,15 +220,16 @@
         "youtube_video_id": "Lmff438F8GI",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/narration.txt",
+        "narration_sha256": "162e1d154bf2400482e48702a2e8b4e4d0e0d2563d6afa395eb51c08e503d7d0",
         "caption_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/thumbnail.svg",
@@ -236,9 +243,9 @@
           "independent_release_candidate": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -255,7 +262,7 @@
       "chapter_id": "system-boundaries-and-authority",
       "title": "System Boundaries and Authority",
       "chapter_path": "chapters/system-boundaries-and-authority.qmd",
-      "chapter_sha256": "ce6c60464030280e3b90b558e6e10a7a115c471c6ba8ed73a4e6d05eb16701f0",
+      "chapter_sha256": "c0933e9fa513f3f25fddbeab8479f594c99cdbe6384d8b4f6a356c6a9f18c9b4",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -266,15 +273,16 @@
         "youtube_video_id": "lT2ftLM4erY",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/narration.txt",
+        "narration_sha256": "f25f2bc74cdb0ea87776cfc74be758266f11388bf85d468705e18c016a959486",
         "caption_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/thumbnail.svg",
@@ -288,9 +296,9 @@
           "independent_release_candidate": "visual_edition/chapters/system-boundaries-and-authority/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -307,7 +315,7 @@
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "title": "Failure Modes of Ungoverned Intelligence",
       "chapter_path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
-      "chapter_sha256": "2bc30f8ad8d196aac48e98711211887e349af2c7803899443da7a65cade32638",
+      "chapter_sha256": "93576bb6080e8627329fb0f14d12ca411d4bdb61991d51c4ddce4e7769675588",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -318,15 +326,16 @@
         "youtube_video_id": "egizj4oziKU",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/narration.txt",
+        "narration_sha256": "c970178f8912ee669b9d5aee5aa71991e19047d93cd68b916c375e309c7d7033",
         "caption_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/thumbnail.svg",
@@ -340,9 +349,9 @@
           "independent_release_candidate": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -370,15 +379,16 @@
         "youtube_video_id": "VY0Op_WudYo",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/narration.txt",
+        "narration_sha256": "29e3cf7bff00c021fbdbeecf43ca050ef3acf25fc8dc71617c9c8dd277ddb5ce",
         "caption_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/thumbnail.svg",
@@ -392,9 +402,9 @@
           "independent_release_candidate": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -422,15 +432,16 @@
         "youtube_video_id": "JcqI6B1ChmE",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/narration.txt",
+        "narration_sha256": "c08e5a6b851375c2ae1cbe8e129ddcd119c8d47e6a8b34a1bd7c4a9972b1d786",
         "caption_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/thumbnail.svg",
@@ -444,9 +455,9 @@
           "independent_release_candidate": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -474,15 +485,16 @@
         "youtube_video_id": "J3dvJWTEtsE",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/narration.txt",
+        "narration_sha256": "218719404f2f2bef0caac142477c3dac93e94ab3d5694d62107d3ad1a28fb822",
         "caption_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/thumbnail.svg",
@@ -496,9 +508,9 @@
           "independent_release_candidate": "visual_edition/chapters/evidence-states-and-claim-discipline/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -526,15 +538,16 @@
         "youtube_video_id": "WjC_-6bh8SY",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/narration.txt",
+        "narration_sha256": "75ad6649a0e71cc61df5e4e801be0f316f9f645d14541cdbbeaee3730889fbc1",
         "caption_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/thumbnail.svg",
@@ -548,9 +561,9 @@
           "independent_release_candidate": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -567,7 +580,7 @@
       "chapter_id": "human-intent-as-a-formal-input",
       "title": "Human Intent as a Formal Input",
       "chapter_path": "chapters/human-intent-as-a-formal-input.qmd",
-      "chapter_sha256": "11575bf4f47794b789b99a283a2fe08ebacaa6798dd2a575fe2a4ec6f7771572",
+      "chapter_sha256": "5d9eb9130b2c3f464e85d79f0a41f4c64604cafc5c7bfed802b50009838e2b9c",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -578,15 +591,16 @@
         "youtube_video_id": "OREj8zb27gQ",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/narration.txt",
+        "narration_sha256": "2cd96faee1d7e8bfa2754ef3ac252dc3ff3f55063208063bb2974a2af2a1b192",
         "caption_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/thumbnail.svg",
@@ -600,9 +614,9 @@
           "independent_release_candidate": "visual_edition/chapters/human-intent-as-a-formal-input/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -619,7 +633,7 @@
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
       "title": "Human Factors and Meaningful Control in Oversight",
       "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-      "chapter_sha256": "0872878109da2c44fdd07022d2848b3b9e140d09d52ea104ed21d3dfef979a40",
+      "chapter_sha256": "5596fe5818e3079c1a07afb3148167beff5a17bec0ac58bc5f419d6dd11c0553",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -630,15 +644,16 @@
         "youtube_video_id": "Y_SpmqMiFmk",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/narration.txt",
+        "narration_sha256": "3f107daf9e544fc3bd33a623f96ba62a61adfa557e129e9b3389ab60142745b4",
         "caption_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/thumbnail.svg",
@@ -652,9 +667,9 @@
           "independent_release_candidate": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -682,15 +697,16 @@
         "youtube_video_id": "Awj6jsC9iWI",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/narration.txt",
+        "narration_sha256": "f3d0a3d3f974c0f875da4d41573ba9b9e35bd8461b1167abb1cf5f3ac9a21653",
         "caption_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/thumbnail.svg",
@@ -704,9 +720,9 @@
           "independent_release_candidate": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -723,7 +739,7 @@
       "chapter_id": "constitutional-alignment-substrate",
       "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
       "chapter_path": "chapters/constitutional-alignment-substrate.qmd",
-      "chapter_sha256": "bc49079d433f4a1b98926c470f242423dcac924047398e2248a28fca630e804c",
+      "chapter_sha256": "a81428882fc1f303f5242677ef6a338c900c0892ce838417bff45ac4c3729a9f",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -734,15 +750,16 @@
         "youtube_video_id": "A8OymTCI9zA",
         "youtube_visibility": "private",
         "preserve_history": true,
-        "withdrawn_at_utc": "2026-07-31T04:29:01Z",
+        "withdrawn_at_utc": "2026-08-09T01:00:00Z",
         "history_record_path": "visual_edition/youtube_preview_history_2026-07-30.json"
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/narration.txt",
+        "narration_sha256": "08f4685bc6e0bd0f31f63ce59c90459b75d1c187665e5020da1c14127266f7ad",
         "caption_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/thumbnail.svg",
@@ -756,9 +773,9 @@
           "independent_release_candidate": "visual_edition/chapters/constitutional-alignment-substrate/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -775,7 +792,7 @@
       "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
       "title": "Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
       "chapter_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
-      "chapter_sha256": "af7d3d13dcfc3fe0887413dfd287e1b381d520e30b0c065eb2731e97bbea947e",
+      "chapter_sha256": "fc5cda2b146be6925d70d287fc6f4e090910bdaa26ae9deb860d6592d1ed4b5c",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -789,10 +806,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/narration.txt",
+        "narration_sha256": "3d7292840a94ece5dd1042e0999b5c994d08ed9a7ca33a303778a3a618a9ed15",
         "caption_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/thumbnail.svg",
@@ -806,9 +824,9 @@
           "independent_release_candidate": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -825,7 +843,7 @@
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
       "chapter_path": "chapters/moral-uncertainty-and-value-conflict.qmd",
-      "chapter_sha256": "aed2a93ad07fd7eb50d1924c69e459df51b899a5da76f0a1e781f15ae760647c",
+      "chapter_sha256": "5ab8dc888f3ea8398c6a27e7ac301d869ee58481abf370a5598a81b246397883",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -839,10 +857,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/narration.txt",
+        "narration_sha256": "4fbe4c6fb3496be48939459a9e76649e2a4c71f906788195e168f5e4598dd7ac",
         "caption_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/thumbnail.svg",
@@ -856,9 +875,9 @@
           "independent_release_candidate": "visual_edition/chapters/moral-uncertainty-and-value-conflict/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -889,10 +908,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/narration.txt",
+        "narration_sha256": "f3a714b0ea948e2a8e81bf36a8ef48a4338cb7a6a8864837aca57472d845b6a3",
         "caption_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/thumbnail.svg",
@@ -906,9 +926,9 @@
           "independent_release_candidate": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -939,10 +959,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/narration.txt",
+        "narration_sha256": "58f29168cbcb1aa776c40d5ba17829a9444ec2764622961c76461d7511ef8674",
         "caption_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/thumbnail.svg",
@@ -956,9 +977,9 @@
           "independent_release_candidate": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -989,10 +1010,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "picture_and_sound_lock",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/narration.txt",
+        "narration_sha256": "b74d9d71b4f8ad3f09f63b42d0ad899150b98f7c7a2ddcc9daca0cc064129fa9",
         "caption_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/thumbnail.svg",
@@ -1006,9 +1028,9 @@
           "independent_release_candidate": "visual_edition/chapters/societal-resilience-and-misuse-defense/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
-          "picture_and_sound_lock": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
           "technical": "not_started",
@@ -1025,7 +1047,7 @@
       "chapter_id": "stable-capability-fields",
       "title": "Stable Capability Fields",
       "chapter_path": "chapters/stable-capability-fields.qmd",
-      "chapter_sha256": "47497fadb7458bea6f2f8a7202da31b58a1fa3f2740fe5fb810147867f4b0bcf",
+      "chapter_sha256": "cf8282b26e41ca9cc84acb55b88e0cb2a6432bcdbd313760196f6c21dd8d973d",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1043,6 +1065,7 @@
         "beat_plan_path": "visual_edition/chapters/stable-capability-fields/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/stable-capability-fields/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/stable-capability-fields/generation-2/narration.txt",
+        "narration_sha256": "d81288c0375228f3d5225fd0d0bf7b072d36f6b14ecb43f83bcb86cad50525b5",
         "caption_path": "visual_edition/chapters/stable-capability-fields/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/stable-capability-fields/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/stable-capability-fields/generation-2/thumbnail.svg",
@@ -1056,7 +1079,7 @@
           "independent_release_candidate": "visual_edition/chapters/stable-capability-fields/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "not_started",
+          "beat_plan": "revise",
           "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
@@ -1075,24 +1098,25 @@
       "chapter_id": "capability-replacement-and-rollback",
       "title": "Capability Replacement and Rollback",
       "chapter_path": "chapters/capability-replacement-and-rollback.qmd",
-      "chapter_sha256": "041799111bf296ced6d15ef7536199eab28c0bf28ded2c97f05f1827bcc166f3",
-      "cohort": "current_unlisted_previews",
+      "chapter_sha256": "d57b5903308f253b70a1903538263e7740b8ab129f0e290837ab83b20540ca6d",
+      "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
         "packet_path": "visual_edition/chapters/capability-replacement-and-rollback/packet.json",
         "master_path": "build/visual_edition/final/capability-replacement-and-rollback.mp4",
         "master_sha256": "b75460dbf728227ff783206a872f3b0109c2fd8655d3c6aae515b5dab5918db9",
-        "custody_state": "unlisted_preview_bound",
-        "youtube_video_id": "_ZHn49UmO0w",
-        "youtube_visibility": "unlisted",
+        "custody_state": "local_only",
+        "youtube_video_id": null,
+        "youtube_visibility": "not_uploaded",
         "preserve_history": true
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/narration.txt",
+        "narration_sha256": "2bd529c20e71d8f931a201b7c9b6c0ee0ff42373386d1bc13c2f561e105497c3",
         "caption_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/thumbnail.svg",
@@ -1106,8 +1130,8 @@
           "independent_release_candidate": "visual_edition/chapters/capability-replacement-and-rollback/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "beat_plan": "pass",
-          "animatic": "pass",
+          "beat_plan": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1117,7 +1141,7 @@
         },
         "youtube_state": "not_ready",
         "youtube_video_id": null,
-        "quarto_embed_state": "predecessor_preview"
+        "quarto_embed_state": "absent"
       }
     },
     {
@@ -1125,24 +1149,25 @@
       "chapter_id": "security-kernel-and-digital-scifs",
       "title": "Security Kernel and Digital SCIFs",
       "chapter_path": "chapters/security-kernel-and-digital-scifs.qmd",
-      "chapter_sha256": "24df32d529172c77dc7c9a06b1521177ff850a11c8b4c72a52e50f37a7a0f99a",
-      "cohort": "current_unlisted_previews",
+      "chapter_sha256": "1344db6103bc3ebd670d59f9ec71fffd028e94a9ad3cadd3568d132eb5c5f712",
+      "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
         "packet_path": "visual_edition/chapters/security-kernel-and-digital-scifs/packet.json",
         "master_path": "build/visual_edition/final/security-kernel-and-digital-scifs.mp4",
         "master_sha256": "d815ea6dc14a15baf657d6f640809f33676da9f5388cea618272b5dadd42b73a",
-        "custody_state": "unlisted_preview_bound",
-        "youtube_video_id": "TtXAqUsAROs",
-        "youtube_visibility": "unlisted",
+        "custody_state": "local_only",
+        "youtube_video_id": null,
+        "youtube_visibility": "not_uploaded",
         "preserve_history": true
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/narration.txt",
+        "narration_sha256": "43855395b2c85d840ca47937339e9ad5f313ce5218d9363f83e710545a5a6140",
         "caption_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/security-kernel-and-digital-scifs/generation-2/thumbnail.svg",
@@ -1157,7 +1182,7 @@
         },
         "gates": {
           "beat_plan": "revise",
-          "animatic": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1167,7 +1192,7 @@
         },
         "youtube_state": "not_ready",
         "youtube_video_id": null,
-        "quarto_embed_state": "predecessor_preview"
+        "quarto_embed_state": "absent"
       }
     },
     {
@@ -1189,10 +1214,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/narration.txt",
+        "narration_sha256": "6cfb3053de8f0420af0adb9968e90065de1c9de6bcacc0e8faf8ce0d4b5c6651",
         "caption_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/generation-2/thumbnail.svg",
@@ -1207,7 +1233,7 @@
         },
         "gates": {
           "beat_plan": "revise",
-          "animatic": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1225,24 +1251,25 @@
       "chapter_id": "privacy-data-rights-and-information-flow-governance",
       "title": "Privacy, Data Rights, and Information-Flow Governance",
       "chapter_path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
-      "chapter_sha256": "8941bd2fd7c63a6f44c830591763af89ca7d76657feb282fc37037c3331f9370",
-      "cohort": "current_unlisted_previews",
+      "chapter_sha256": "8622b72e7fd27d69e8c2c0c23f4736cfaaa408f82bdf000e7055a91e10fee05f",
+      "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
         "packet_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/packet.json",
         "master_path": "build/visual_edition/final/privacy-data-rights-and-information-flow-governance.mp4",
         "master_sha256": "a91336d310e70ccd02298785b001940c43e88af760da90b90c8ed1ea157a7606",
-        "custody_state": "unlisted_preview_bound",
-        "youtube_video_id": "kGjOB-HFE2g",
-        "youtube_visibility": "unlisted",
+        "custody_state": "local_only",
+        "youtube_video_id": null,
+        "youtube_visibility": "not_uploaded",
         "preserve_history": true
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/narration.txt",
+        "narration_sha256": "a190879f42710533679a6bb110a3d6ad77c0ca048f8c3a6462868068d8caf109",
         "caption_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/generation-2/thumbnail.svg",
@@ -1257,7 +1284,7 @@
         },
         "gates": {
           "beat_plan": "revise",
-          "animatic": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1267,7 +1294,7 @@
         },
         "youtube_state": "not_ready",
         "youtube_video_id": null,
-        "quarto_embed_state": "predecessor_preview"
+        "quarto_embed_state": "absent"
       }
     },
     {
@@ -1289,10 +1316,11 @@
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/narration.txt",
+        "narration_sha256": "631b9b68f99c3839588b2d6f8a2637da93ef38df6f7154d585938d439618d0d3",
         "caption_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/generation-2/thumbnail.svg",
@@ -1307,7 +1335,7 @@
         },
         "gates": {
           "beat_plan": "revise",
-          "animatic": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1325,24 +1353,25 @@
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "title": "Model-Weight Custody and Hardware Roots of Trust",
       "chapter_path": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
-      "chapter_sha256": "ac7d72810f05d51b01eee9f4100cd8640fd72367ef9045a875a0be14d8f1f87a",
-      "cohort": "current_unlisted_previews",
+      "chapter_sha256": "30060613d897646768949c51441edadc29d9b49c0754b73339dfb408bac3d517",
+      "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
         "packet_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/packet.json",
         "master_path": "build/visual_edition/final/model-weight-custody-and-hardware-roots-of-trust.mp4",
         "master_sha256": "999aa13ac990940df69f0f70fb568fdac9c543b4de163d5445fb5e150026042d",
-        "custody_state": "unlisted_preview_bound",
-        "youtube_video_id": "FyZ3UP9PQ7g",
-        "youtube_visibility": "unlisted",
+        "custody_state": "local_only",
+        "youtube_video_id": null,
+        "youtube_visibility": "not_uploaded",
         "preserve_history": true
       },
       "target": {
         "generation": 2,
-        "stage": "animatic",
+        "stage": "scripted",
         "beat_plan_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/narration.txt",
+        "narration_sha256": "16c4ba23385aaa012327c28ecefb950850f256d3c1908ca7f389ea39e224ae41",
         "caption_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/generation-2/thumbnail.svg",
@@ -1357,7 +1386,7 @@
         },
         "gates": {
           "beat_plan": "revise",
-          "animatic": "revise",
+          "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
           "independent_release_candidate": "not_started",
@@ -1367,7 +1396,7 @@
         },
         "youtube_state": "not_ready",
         "youtube_video_id": null,
-        "quarto_embed_state": "predecessor_preview"
+        "quarto_embed_state": "absent"
       }
     },
     {
@@ -1393,6 +1422,7 @@
         "beat_plan_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/open-weight-release-and-post-release-control/generation-2/thumbnail.svg",
@@ -1425,7 +1455,7 @@
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
       "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
       "chapter_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-      "chapter_sha256": "3261ac4446ca458ea2d5e97a3c5e20c02005005d9d7f80a2be6eea99189c6cab",
+      "chapter_sha256": "9b4ea7877787f132bca307ef7b4c2d666e4cd43db5c47771c311142b5afe81cc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1443,6 +1473,7 @@
         "beat_plan_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/generation-2/thumbnail.svg",
@@ -1493,6 +1524,7 @@
         "beat_plan_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/recursive-self-improvement-boundaries/generation-2/thumbnail.svg",
@@ -1543,6 +1575,7 @@
         "beat_plan_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/open-ended-improvement-engines/generation-2/thumbnail.svg",
@@ -1593,6 +1626,7 @@
         "beat_plan_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/generation-2/thumbnail.svg",
@@ -1625,7 +1659,7 @@
       "chapter_id": "intent-to-execution-contracts",
       "title": "Command Contracts: From Intent to Executable Work",
       "chapter_path": "chapters/intent-to-execution-contracts.qmd",
-      "chapter_sha256": "862ffdd2910bd084e833f7987506e771b03bfe6678fe38b3419ec589c56c98a7",
+      "chapter_sha256": "6d1de5d8792862651352458ebb38d9cabee55faf6a757e11b01267d7d66e1e20",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1643,6 +1677,7 @@
         "beat_plan_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/intent-to-execution-contracts/generation-2/thumbnail.svg",
@@ -1675,7 +1710,7 @@
       "chapter_id": "perception-sensor-fusion-and-observation-trust",
       "title": "Perception, Sensor Fusion, and Observation Trust",
       "chapter_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-      "chapter_sha256": "1a9b261b86109d0ba82fac5c8ec6a737f1df80a91c19bf27b2bd0ef037cc924f",
+      "chapter_sha256": "5998d44d6fa3782750905e9c2472c47f21a5c4fab4a7b928dbd6dc7f7497279d",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1693,6 +1728,7 @@
         "beat_plan_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/generation-2/thumbnail.svg",
@@ -1725,7 +1761,7 @@
       "chapter_id": "planning-as-a-control-layer",
       "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "chapter_path": "chapters/planning-as-a-control-layer.qmd",
-      "chapter_sha256": "6483ac30a3d3e06a8c3d1ce9a4b57b1e497f9ed37745ad8c54e847b6c7c1d52e",
+      "chapter_sha256": "073f3c89b151a5a952a0bbddd9916504838640b8a48bec6cb193ea3c8c29d227",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1743,6 +1779,7 @@
         "beat_plan_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/planning-as-a-control-layer/generation-2/thumbnail.svg",
@@ -1775,7 +1812,7 @@
       "chapter_id": "governed-world-models-and-reality-grounding",
       "title": "Governed World Models and Reality Grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "chapter_sha256": "7d980e1a5020e96438933e60528accc6cf71a40f2134daef58f72b2635f75912",
+      "chapter_sha256": "9543073d78913b33726e8f9956f68062b858731a3d41d95b5923ec1dd7898528",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1793,6 +1830,7 @@
         "beat_plan_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/generation-2/thumbnail.svg",
@@ -1825,7 +1863,7 @@
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "title": "Cognitive Compilation and Semantic IR",
       "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "e4dac8b13e23f47e1c7d5e548ca1338948e754fde0726e286737bf1c11081211",
+      "chapter_sha256": "3be680f38c4d7da0901773651e937f2d79f1d9310d89535aaaed34de5795d294",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1843,6 +1881,7 @@
         "beat_plan_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/generation-2/thumbnail.svg",
@@ -1875,7 +1914,7 @@
       "chapter_id": "virtual-context-abi",
       "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
       "chapter_path": "chapters/virtual-context-abi.qmd",
-      "chapter_sha256": "a000bb3d1e5de373ef3335719f5e1bf79e2772f066ec35b5ebe1316389f01d11",
+      "chapter_sha256": "7c84447dc2e5cc6297a82567c5b8eb8b7a765abf344712fe63e1d8c6c9c98d2a",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1893,6 +1932,7 @@
         "beat_plan_path": "visual_edition/chapters/virtual-context-abi/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/virtual-context-abi/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/virtual-context-abi/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/virtual-context-abi/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/virtual-context-abi/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/virtual-context-abi/generation-2/thumbnail.svg",
@@ -1925,7 +1965,7 @@
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "title": "Durable Semantic Memory and Knowledge Lattices",
       "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-      "chapter_sha256": "8c8d817c52c52111ccf66ef5e3f30e9868f1b860c45053f6f515bf52b1903b1c",
+      "chapter_sha256": "d28b39b8af803bf4812505b0e67bfee378964062227b5d7e83ce9d94e1220cd8",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1943,6 +1983,7 @@
         "beat_plan_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/generation-2/thumbnail.svg",
@@ -1975,7 +2016,7 @@
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "title": "Context Transactions, Snapshots, Mounts, and Taint",
       "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-      "chapter_sha256": "a378aab697615018727457ee31a431c874d2dfe725f334184ae98822f1794c14",
+      "chapter_sha256": "b3567e653bd068781a75b50c2e7b3d222778a7d9766e83eee6978d519a7e3ff0",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1993,6 +2034,7 @@
         "beat_plan_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/generation-2/thumbnail.svg",
@@ -2025,7 +2067,7 @@
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "title": "Verification Bandwidth and Context Adequacy",
       "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-      "chapter_sha256": "8ff1cee91b7965e92bb7ca60c455aa8232587aed77fa6e774bb525b09fb57f2d",
+      "chapter_sha256": "5e3fc8e80a7f48319e7ce2b1b5150d087a5e515dc8beaeee1320f8ef898e199b",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2043,6 +2085,7 @@
         "beat_plan_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/generation-2/thumbnail.svg",
@@ -2075,7 +2118,7 @@
       "chapter_id": "claim-ledgers-and-belief-revision",
       "title": "Claim Ledgers and Belief Revision",
       "chapter_path": "chapters/claim-ledgers-and-belief-revision.qmd",
-      "chapter_sha256": "a84df30c316a100ba983ce18c62f00cd06cc627895437d5405e04d11d7fe3507",
+      "chapter_sha256": "ac7b8e2c4adebe2c391712f64cb8895bec4475144a26e8726a28af14d2f65b26",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2093,6 +2136,7 @@
         "beat_plan_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/generation-2/thumbnail.svg",
@@ -2125,7 +2169,7 @@
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "title": "Proof-Carrying Claims and Adversarial Review",
       "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
-      "chapter_sha256": "afdac731f8d8d64478946740d3a3f8aab37060020e0f026bf10d76b31d43f2a8",
+      "chapter_sha256": "f53780ab8950dfbdf4ac88b858735d15361079f46f255a06e3018b79592613bc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2143,6 +2187,7 @@
         "beat_plan_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/generation-2/thumbnail.svg",
@@ -2175,7 +2220,7 @@
       "chapter_id": "labor-os-and-typed-jobs",
       "title": "Labor OS and Typed Jobs",
       "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
-      "chapter_sha256": "a325796d533bf0c0cbd4e8e7a0122941cfe4a436eb2313ae63c5172f1c1f7745",
+      "chapter_sha256": "f7a64e0658f5545a7d35363880e5e42b9a9c32ba9ac33427e333d33cbe5fdf23",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2193,6 +2238,7 @@
         "beat_plan_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/labor-os-and-typed-jobs/generation-2/thumbnail.svg",
@@ -2222,10 +2268,52 @@
     },
     {
       "position": 42,
+      "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "title": "From Chat to Organizations: AI Work Surfaces and Agent Harnesses",
+      "chapter_path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+      "chapter_sha256": "a7730d636db361e3feb7aeb9afbd7c9a74199c6e3c4035695342de8f8521873b",
+      "cohort": "not_yet_uploaded",
+      "predecessor": null,
+      "target": {
+        "generation": 2,
+        "stage": "planned",
+        "beat_plan_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/beat_plan.json",
+        "scene_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/scene.py",
+        "narration_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/narration.txt",
+        "narration_sha256": null,
+        "caption_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/captions.vtt",
+        "transcript_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/transcript.md",
+        "thumbnail_path": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/thumbnail.svg",
+        "master_path": "build/visual_edition/generation-2/final/ai-work-surfaces-agent-harnesses-and-organizational-absorption.mp4",
+        "master_sha256": null,
+        "render_receipt_path": null,
+        "experience_review_paths": {
+          "animatic": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/reviews/animatic.json",
+          "picture_and_sound_lock": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/reviews/picture_and_sound_lock.json",
+          "release_candidate": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/reviews/release_candidate.json",
+          "independent_release_candidate": "visual_edition/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption/generation-2/reviews/independent_release_candidate.json"
+        },
+        "gates": {
+          "beat_plan": "not_started",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
+          "release_candidate": "not_started",
+          "independent_release_candidate": "not_started",
+          "technical": "not_started",
+          "claim_fidelity": "not_started",
+          "accepted": "not_started"
+        },
+        "youtube_state": "not_ready",
+        "youtube_video_id": null,
+        "quarto_embed_state": "absent"
+      }
+    },
+    {
+      "position": 43,
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
       "title": "Human-AI Organizations, Delegation, and Accountability",
       "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
-      "chapter_sha256": "b33d68ac2929bd25e425df9815b0298199128f14ac70412a736d9388cd71d2ce",
+      "chapter_sha256": "c823a7200e51ca3cd9d53edf58c78673bb89a2208c92e518594fa54f378b2741",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2243,6 +2331,7 @@
         "beat_plan_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/generation-2/thumbnail.svg",
@@ -2271,7 +2360,7 @@
       }
     },
     {
-      "position": 43,
+      "position": 44,
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "title": "Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty",
       "chapter_path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
@@ -2293,6 +2382,7 @@
         "beat_plan_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/generation-2/thumbnail.svg",
@@ -2321,7 +2411,7 @@
       }
     },
     {
-      "position": 44,
+      "position": 45,
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
       "title": "AI Deployment, Transition, Distribution, and Human Agency",
       "chapter_path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
@@ -2343,6 +2433,7 @@
         "beat_plan_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/generation-2/thumbnail.svg",
@@ -2371,11 +2462,11 @@
       }
     },
     {
-      "position": 45,
+      "position": 46,
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "title": "Artifact Graphs, Audit Logs, and Replay",
       "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "chapter_sha256": "f9fd6a07ac4ae37dd7d524f2e5e8df1887c6fb552049f8b1c5c91ef299a3aa2d",
+      "chapter_sha256": "b471ef4a7be319b5d61c4a0df74c59a5577cc3113517fec417f52202c5178f79",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2393,6 +2484,7 @@
         "beat_plan_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/generation-2/thumbnail.svg",
@@ -2421,11 +2513,11 @@
       }
     },
     {
-      "position": 46,
+      "position": 47,
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "chapter_sha256": "84b71f2940e7272f288c3fcce579fa81e216d8fb64800b192af9b4adbbac3bde",
+      "chapter_sha256": "19fb028b92e8e821d2b37e538d6d95bf90ac2f804f5c41d0f87bc58829fbd619",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2443,6 +2535,7 @@
         "beat_plan_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/generation-2/thumbnail.svg",
@@ -2471,11 +2564,11 @@
       }
     },
     {
-      "position": 47,
+      "position": 48,
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
       "title": "Embodied Agency, Real-Time Control, and Physical Safety",
       "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
-      "chapter_sha256": "04d3faefcf3592e6cf131139e7a8bdeb078c893377db66663d47758bb0b55418",
+      "chapter_sha256": "3c16b9e0fc82961b42f3bdf6d3e9bef25053aa489c6489d446b2e99fcbc20c1b",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2493,6 +2586,7 @@
         "beat_plan_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/generation-2/thumbnail.svg",
@@ -2521,11 +2615,11 @@
       }
     },
     {
-      "position": 48,
+      "position": 49,
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
-      "chapter_sha256": "b7c88752f839811d5d7fad8af4d560a7478800f2482861534a39be49b92a91f5",
+      "chapter_sha256": "3de33c27cfdffeafab2d6dfb034a459b117174f2c195301b3066f6ddd4b18f74",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2543,6 +2637,7 @@
         "beat_plan_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/generation-2/thumbnail.svg",
@@ -2571,11 +2666,11 @@
       }
     },
     {
-      "position": 49,
+      "position": 50,
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
       "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
       "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-      "chapter_sha256": "1e629163dfd8c74d8331c1550b747eb1509ad6eeb3c4e9449c11d07ba624e3ee",
+      "chapter_sha256": "0772fc007e4c8581856fbe950609301e72b0d154f120540f6847a57325e5190f",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2593,6 +2688,7 @@
         "beat_plan_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/generation-2/thumbnail.svg",
@@ -2621,11 +2717,11 @@
       }
     },
     {
-      "position": 50,
+      "position": 51,
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "title": "Procedural Memory and Cognitive Loop Closure",
       "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "chapter_sha256": "7b2b412bb1cb5f66a1ed000c0ffd70233a97750ffa5ded1ebb8d7fd5c18fcf5d",
+      "chapter_sha256": "ce22363fa369d7d7c72e5e85df9240cf060b5e9f1226bccc532ec9b4ccb41904",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2643,6 +2739,7 @@
         "beat_plan_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/generation-2/thumbnail.svg",
@@ -2671,11 +2768,11 @@
       }
     },
     {
-      "position": 51,
+      "position": 52,
       "chapter_id": "routing-heads-and-specialist-cores",
       "title": "Routing Heads and Specialist Cores",
       "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
-      "chapter_sha256": "75c2db7b5d113b952c5400fc69bb712baaeea7ebc78fff8cb35681a7d0670de1",
+      "chapter_sha256": "a30809752517f71d4529fefd3751145f9fef9b5083f5ef6b244cfad5f2103498",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2693,6 +2790,7 @@
         "beat_plan_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/routing-heads-and-specialist-cores/generation-2/thumbnail.svg",
@@ -2721,11 +2819,11 @@
       }
     },
     {
-      "position": 52,
+      "position": 53,
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
       "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-      "chapter_sha256": "a250821268bd98d468bb7595e638b936613e427cd01f0cb95b5a8497439c1cd4",
+      "chapter_sha256": "1dc356bdab8651db6e0b2644086ac0da38f03a4f4b8f0834de2660d507aae616",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2743,6 +2841,7 @@
         "beat_plan_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/generation-2/thumbnail.svg",
@@ -2771,7 +2870,7 @@
       }
     },
     {
-      "position": 53,
+      "position": 54,
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
       "title": "Relational Dimension Compilation and Polyadic Cognition",
       "chapter_path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
@@ -2793,6 +2892,7 @@
         "beat_plan_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/generation-2/thumbnail.svg",
@@ -2821,11 +2921,11 @@
       }
     },
     {
-      "position": 54,
+      "position": 55,
       "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
       "title": "Governed Model Training, Distributed Optimization, and Scaling",
       "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-      "chapter_sha256": "793d66a8e71aae4cbe5651d5d44c8891a86fa05c6ab158a896e1a49e13d422eb",
+      "chapter_sha256": "df727b6acc753cfd9aff31c8d6dfad66cd4a6a8f7f35fa4176fff2f5237cc0d6",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2843,6 +2943,7 @@
         "beat_plan_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/generation-2/thumbnail.svg",
@@ -2871,11 +2972,11 @@
       }
     },
     {
-      "position": 55,
+      "position": 56,
       "chapter_id": "learning-theory-generalization-and-scaling-science",
       "title": "Learning Theory, Generalization, and Scaling Science",
       "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-      "chapter_sha256": "37a4a8ca6ceab5fb5bf75b2a1c203cd89c15849ae97f609dbe76e40f02443e8e",
+      "chapter_sha256": "f5b0c3ad207b6507bc210290c2f5cc7e8bd4545e750f712c7371691bd1fec0d9",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2893,6 +2994,7 @@
         "beat_plan_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/generation-2/thumbnail.svg",
@@ -2921,11 +3023,11 @@
       }
     },
     {
-      "position": 56,
+      "position": 57,
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "title": "Readiness Gates, Residual Escrow, and Quarantine",
       "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "chapter_sha256": "8c9abf304368c85e4de9f3408a7a2e7c2c2bd4776a284a5b0790508bd8933490",
+      "chapter_sha256": "3b3a0f9ee5d0711b984c1e47fc6cf1142fef398d04a132435bd5c10ac4470133",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2943,6 +3045,7 @@
         "beat_plan_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/generation-2/thumbnail.svg",
@@ -2971,11 +3074,11 @@
       }
     },
     {
-      "position": 57,
+      "position": 58,
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
       "title": "Personal Compute Hives and Federated Edge Intelligence",
       "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-      "chapter_sha256": "f44162572b2d6f0bf143d3253fae0f6edaaf8fb67c9e0c469c9c6b00d25fe048",
+      "chapter_sha256": "827580a508b44575df2eda6d51131ddef10145e725f4f1460b759e5b3a9288cb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2993,6 +3096,7 @@
         "beat_plan_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/generation-2/thumbnail.svg",
@@ -3021,11 +3125,11 @@
       }
     },
     {
-      "position": 58,
+      "position": 59,
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
       "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
-      "chapter_sha256": "1a293b423b2b0e137e033c6223e49e60f8026fbccae56709e6c784cfd002affd",
+      "chapter_sha256": "59beb73d6e2190a7ce6fb077c5a655b6aa76367f2fc5757af5871ce4513f8acb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3043,6 +3147,7 @@
         "beat_plan_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/generation-2/thumbnail.svg",
@@ -3071,7 +3176,7 @@
       }
     },
     {
-      "position": 59,
+      "position": 60,
       "chapter_id": "fast-generation-architectures",
       "title": "Fast Generation Architectures",
       "chapter_path": "chapters/fast-generation-architectures.qmd",
@@ -3093,6 +3198,7 @@
         "beat_plan_path": "visual_edition/chapters/fast-generation-architectures/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/fast-generation-architectures/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/fast-generation-architectures/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/fast-generation-architectures/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/fast-generation-architectures/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/fast-generation-architectures/generation-2/thumbnail.svg",
@@ -3121,11 +3227,11 @@
       }
     },
     {
-      "position": 60,
+      "position": 61,
       "chapter_id": "governed-deliberation-and-test-time-scaling",
       "title": "Governed Deliberation and Test-Time Scaling",
       "chapter_path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-      "chapter_sha256": "1f8aed115bbe3c64b71fa428681d7fec8431e72fcd090bc8b8835e0463a9e80f",
+      "chapter_sha256": "5009873f1cf6f90fbb6908969cd552b06f08016f8f4f47a84c3c215e9ab68438",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3143,6 +3249,7 @@
         "beat_plan_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/generation-2/thumbnail.svg",
@@ -3171,11 +3278,11 @@
       }
     },
     {
-      "position": 61,
+      "position": 62,
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "title": "RankFold, NeuralFold, and Artifact Compression",
       "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-      "chapter_sha256": "decfa12c2c5e55e43fef1375474b2c926f773a71a8cc97d661b10fe69613ad3a",
+      "chapter_sha256": "6473fb1adbb01a93d281197b332da1ebd3905cc735003c7e6b3ec9187a9c16c7",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3193,6 +3300,7 @@
         "beat_plan_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/generation-2/thumbnail.svg",
@@ -3221,11 +3329,11 @@
       }
     },
     {
-      "position": 62,
+      "position": 63,
       "chapter_id": "resource-economics-and-token-budgets",
       "title": "Resource Economics and Token Budgets",
       "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
-      "chapter_sha256": "6ac351d0481a2d7ed7d320f41eb0f3b876b38321b5e98bb5eaf30992ff162fd6",
+      "chapter_sha256": "538001abf208e0d5c8bca5ecdbc62d329af1920e927081aaabb33244531dc039",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3243,6 +3351,7 @@
         "beat_plan_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/resource-economics-and-token-budgets/generation-2/thumbnail.svg",
@@ -3271,7 +3380,7 @@
       }
     },
     {
-      "position": 63,
+      "position": 64,
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
       "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
       "chapter_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
@@ -3293,6 +3402,7 @@
         "beat_plan_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/generation-2/thumbnail.svg",
@@ -3321,7 +3431,7 @@
       }
     },
     {
-      "position": 64,
+      "position": 65,
       "chapter_id": "mathematical-and-search-substrates",
       "title": "Mathematical and Search Substrates",
       "chapter_path": "chapters/mathematical-and-search-substrates.qmd",
@@ -3343,6 +3453,7 @@
         "beat_plan_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/mathematical-and-search-substrates/generation-2/thumbnail.svg",
@@ -3371,11 +3482,11 @@
       }
     },
     {
-      "position": 65,
+      "position": 66,
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "title": "Circle Calculus and Proof-Carrying AI Contracts",
       "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-      "chapter_sha256": "ae9975fd09503880b076041ed6ff94af97fd21a9d665fe151e9f121d768ee291",
+      "chapter_sha256": "f70bed2b98c23a215f55c33a1312d3f9cbfd03185974f54062dc601a8eebe118",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3393,6 +3504,7 @@
         "beat_plan_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/generation-2/thumbnail.svg",
@@ -3421,11 +3533,11 @@
       }
     },
     {
-      "position": 66,
+      "position": 67,
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
       "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "chapter_sha256": "dffef52d2ef064306a5e812257dfbcc78ab57c5cba0debff5fa955947b54d020",
+      "chapter_sha256": "3f7c1bbb463630ee2605541a3bb526410f31fa82c3c51943cb8a4ffbd4096493",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3443,6 +3555,7 @@
         "beat_plan_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/generation-2/thumbnail.svg",
@@ -3471,11 +3584,11 @@
       }
     },
     {
-      "position": 67,
+      "position": 68,
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
       "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-      "chapter_sha256": "5d3f17c772dc077b49551dc2d855f57f2fcc7683fccf0611c60b15145be159be",
+      "chapter_sha256": "6eb10b3ec9aea084511c96ea05b03551078d30f33b835b81ed5b0cafb7a9fd8a",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3493,6 +3606,7 @@
         "beat_plan_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/generation-2/thumbnail.svg",
@@ -3521,11 +3635,11 @@
       }
     },
     {
-      "position": 68,
+      "position": 69,
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "chapter_sha256": "378f99abf9f2cc0a0d4bad9ab0425236d7959c125dabd9472dfb306df21a1d17",
+      "chapter_sha256": "d9ab82cf0766ee75864e59fa81443917ff828313812f249c661e20ae888c8c09",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3543,6 +3657,7 @@
         "beat_plan_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/generation-2/thumbnail.svg",
@@ -3571,11 +3686,11 @@
       }
     },
     {
-      "position": 69,
+      "position": 70,
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "chapter_sha256": "afab6024cdd8fae959144ba124da9cb661f2ccbe7149ff76c0963c79b601528d",
+      "chapter_sha256": "e6651ca4fc35349f3722ef876c8999ba4464822cd30eee78499126405c65e05f",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3593,6 +3708,7 @@
         "beat_plan_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/generation-2/thumbnail.svg",
@@ -3621,11 +3737,11 @@
       }
     },
     {
-      "position": 70,
+      "position": 71,
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "title": "White-Box Evidence, Interpretability, and Activation Governance",
       "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-      "chapter_sha256": "70373ee45fd1ef9e2fd2ea31a1175284ee7cdcff4a93e8df14e66a0982e275c5",
+      "chapter_sha256": "4b24538b734e0ff06ef77fee68f2a9909bd7725c835a3e083e78d35785cddcf0",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3643,6 +3759,7 @@
         "beat_plan_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/generation-2/thumbnail.svg",
@@ -3671,7 +3788,7 @@
       }
     },
     {
-      "position": 71,
+      "position": 72,
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "title": "Capability Thresholds and Deployment Commitments",
       "chapter_path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
@@ -3693,6 +3810,7 @@
         "beat_plan_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/generation-2/thumbnail.svg",
@@ -3721,7 +3839,7 @@
       }
     },
     {
-      "position": 72,
+      "position": 73,
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
       "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
@@ -3743,6 +3861,7 @@
         "beat_plan_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/generation-2/thumbnail.svg",
@@ -3771,7 +3890,7 @@
       }
     },
     {
-      "position": 73,
+      "position": 74,
       "chapter_id": "safety-cases-and-structured-assurance",
       "title": "Safety Cases and Structured Assurance",
       "chapter_path": "chapters/safety-cases-and-structured-assurance.qmd",
@@ -3793,6 +3912,7 @@
         "beat_plan_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/safety-cases-and-structured-assurance/generation-2/thumbnail.svg",
@@ -3821,7 +3941,7 @@
       }
     },
     {
-      "position": 74,
+      "position": 75,
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
       "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
       "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
@@ -3843,6 +3963,7 @@
         "beat_plan_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/generation-2/thumbnail.svg",
@@ -3871,11 +3992,11 @@
       }
     },
     {
-      "position": 75,
+      "position": 76,
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "title": "Governed Operations, Incident Command, and Graceful Degradation",
       "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-      "chapter_sha256": "918fdd4e18cdd9cf6ed2cf48fdc8e8a3b6c1e608b4b5221195ec109b7de53a89",
+      "chapter_sha256": "115cfd1991612209cfeb9a22e6e365be7fe6d18f5d6bb105ab45458c2cde76dc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3893,6 +4014,7 @@
         "beat_plan_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/generation-2/thumbnail.svg",
@@ -3921,11 +4043,11 @@
       }
     },
     {
-      "position": 76,
+      "position": 77,
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "title": "Policy Optimization and Learning from Feedback",
       "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-      "chapter_sha256": "db013d12b27c3af42f75dbb2bc62049c16abbf3375dd3fc3728824ec8a03e1d2",
+      "chapter_sha256": "50f7c64f89f583c2d79eafd09b42f94dc9deaa55dcee618541a122b770958ccb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3943,6 +4065,7 @@
         "beat_plan_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/generation-2/thumbnail.svg",
@@ -3971,11 +4094,11 @@
       }
     },
     {
-      "position": 77,
+      "position": 78,
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "title": "Data Engines, Continual Learning, and Unlearning",
       "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-      "chapter_sha256": "01e6da10fc4e9dd700720adc9c4a26315746503dec4cfc4d307f36add9609280",
+      "chapter_sha256": "2967bfd7ce08a8994f5e43dcd0cf00ab5c721a66f9183fee75a28383c0db8ac3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3993,6 +4116,7 @@
         "beat_plan_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/generation-2/thumbnail.svg",
@@ -4021,7 +4145,7 @@
       }
     },
     {
-      "position": 78,
+      "position": 79,
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "title": "Scientific Discovery and Experimental Governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
@@ -4043,6 +4167,7 @@
         "beat_plan_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/generation-2/thumbnail.svg",
@@ -4071,7 +4196,7 @@
       }
     },
     {
-      "position": 79,
+      "position": 80,
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
@@ -4093,6 +4218,7 @@
         "beat_plan_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/generation-2/thumbnail.svg",
@@ -4121,11 +4247,11 @@
       }
     },
     {
-      "position": 80,
+      "position": 81,
       "chapter_id": "integrated-reference-architecture",
       "title": "Integrated Reference Architecture",
       "chapter_path": "chapters/integrated-reference-architecture.qmd",
-      "chapter_sha256": "03051a6aa2e3ae2c48abcb8593aab57c944a0688c35955386b28f477388d5f4f",
+      "chapter_sha256": "b695e29ef8836697484897c902713887582371045b0ab5ddcbf6088ef35761fe",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4143,6 +4269,7 @@
         "beat_plan_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/integrated-reference-architecture/generation-2/thumbnail.svg",
@@ -4171,7 +4298,7 @@
       }
     },
     {
-      "position": 81,
+      "position": 82,
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "title": "Project Theseus as Report-First Implementation Reference",
       "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
@@ -4193,6 +4320,7 @@
         "beat_plan_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/generation-2/thumbnail.svg",
@@ -4221,11 +4349,11 @@
       }
     },
     {
-      "position": 82,
+      "position": 83,
       "chapter_id": "prototype-roadmap",
       "title": "Prototype Roadmap",
       "chapter_path": "chapters/prototype-roadmap.qmd",
-      "chapter_sha256": "4f15115808adeed13a72386056e0cca260f69b2746b64def51399904a6bac60a",
+      "chapter_sha256": "8049dc5a3fab5e54fa9b438c2e4e6cca711a80c2e497390856a37b91857745b2",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4243,6 +4371,7 @@
         "beat_plan_path": "visual_edition/chapters/prototype-roadmap/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/prototype-roadmap/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/prototype-roadmap/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/prototype-roadmap/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/prototype-roadmap/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/prototype-roadmap/generation-2/thumbnail.svg",
@@ -4271,11 +4400,11 @@
       }
     },
     {
-      "position": 83,
+      "position": 84,
       "chapter_id": "living-book-methodology",
       "title": "Living Book Methodology",
       "chapter_path": "chapters/living-book-methodology.qmd",
-      "chapter_sha256": "8cf4666e9715767238557c712f3188289b90573c95bd4f9cd6fe668a84ac0905",
+      "chapter_sha256": "60af0af634141a12e49e7b0a995d0d46c617c9f70a82463b81b544d18a9e628b",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4293,6 +4422,7 @@
         "beat_plan_path": "visual_edition/chapters/living-book-methodology/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/living-book-methodology/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/living-book-methodology/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/living-book-methodology/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/living-book-methodology/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/living-book-methodology/generation-2/thumbnail.svg",
@@ -4321,7 +4451,7 @@
       }
     },
     {
-      "position": 84,
+      "position": 85,
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "title": "Open Research Agenda and Bibliography Plan",
       "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
@@ -4343,6 +4473,7 @@
         "beat_plan_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/beat_plan.json",
         "scene_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/scene.py",
         "narration_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/narration.txt",
+        "narration_sha256": null,
         "caption_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/captions.vtt",
         "transcript_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/transcript.md",
         "thumbnail_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/generation-2/thumbnail.svg",

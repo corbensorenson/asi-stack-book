@@ -1,53 +1,27 @@
-A model finds twelve duplicate files and writes a perfect delete command. Should it be allowed to run it?
+A model finds twelve duplicate files and writes the right delete command. Should the command run?
 
-The answer is not hidden in the model's intelligence. What matters is whether this system may change this drive.
+The model's intelligence cannot answer that question. It can propose an action, but it does not own the drive. Correctness and permission are different facts.
 
-That difference starts the ASI Stack. A model can generate, criticize, compress, or plan. Capability is only one part of action.
+Keep the request on screen. It names the files to clean and the person who asked. The model turns that request into a proposal. Nothing has changed yet.
 
-The system must also choose context, test claims, issue grants, constrain tools, observe effects, and recover from failure.
+Now place the proposal inside a system. A context boundary reveals only the permitted files. A verifier checks whether the command matches the request. An authority gate asks whether this user may delete these files at this time.
 
-Collapse those duties into one opaque model, and a good answer can silently acquire unrelated powers.
+Each layer answers a different question. The model proposes what might work. The verifier checks the stated test. The gate decides whether the effect may happen.
 
-A plan starts to look like permission. Retrieved text becomes belief. A benchmark becomes deployment approval.
+Suppose the command is perfect. The verifier turns green. May it run now?
 
-Even a clean receipt can mislead. It records what an adapter reports, not what an independent observer finds.
+Not yet. A correct proposal still needs a live grant for this exact effect. When that grant arrives, the execution adapter checks it again. Only then does the delete token cross the boundary.
 
-Keep the original request visible and rebuild the machine around it. The request names the outcome, constraints, owner, and risk.
+The tool reports that twelve files changed. That report is useful, but it is not reality itself. A separate observer inspects the drive.
 
-Planning branches into alternatives, but every branch remains a proposal. None can create an effect by itself.
+Imagine the observer finds thirteen changes. An opaque agent might keep the green receipt and discard the contradiction. The stack keeps both. The extra deletion becomes a visible residual with an owner.
 
-The context boundary mounts only permitted files and facts. Provenance, freshness, rights, and taint travel with them.
+Because the pre-state was recorded, the system can restore a reversible change. If an effect cannot be reversed, the system needs a compensation or containment plan before acting.
 
-A verifier tests the plan. Unresolved questions remain attached as visible residuals instead of disappearing.
+This is why an advanced AI should be treated as a stack rather than one model with every power. A plan does not become permission. A tool receipt does not become observation. A proposed improvement does not become approval of itself.
 
-Now predict: if the plan is correct, may it execute? Hold that thought.
+The architecture has costs. Extra boundaries can add delay and create new failure points. They earn their place only when they improve useful work after verification, recovery, and governance costs are counted.
 
-No. Correctness does not confer authority. A separate gate checks scope, owner, time, revocation, and effect class.
+The file-deletion case shows how responsibilities can be separated and inspected. It does not prove that this particular stack is safe, efficient, or sufficient for general intelligence.
 
-The execution adapter rechecks the grant. Only then may the delete token cross the boundary and change selected files.
-
-Execution produces a receipt, while observation follows a separate path. The observer tests the post-state instead of trusting the tool.
-
-If the receipt says twelve files changed but observation finds thirteen, the contradiction survives as an owned residual.
-
-Because the pre-state was recorded, a reversible effect can roll back exactly. Irreversible effects need compensation or quarantine.
-
-This moving request reveals a general rule: one successful object does not inherit the next layer's powers.
-
-Capability does not confer authority. Context does not confer belief. A plan does not confer an effect.
-
-A receipt does not confer reality. A theorem does not confer enforcement. A replacement does not inherit qualification.
-
-That boundary governs self-improvement. A system may propose a better component, but the proposal cannot approve or certify itself.
-
-There is a cost. Interfaces can add latency, discard useful information, create attack surfaces, and turn fluid work brittle.
-
-So the stack does not win by definition. Compare a strong monolith, a lightweight wrapper, and a governed stack under matched conditions.
-
-Count useful completion, unsafe effects, false refusals, recovery, latency, and governance overhead together. Safety theater is not success.
-
-This chapter does not contain that result. Its claim remains an argument. Finite checks do not prove deployment, safety, efficiency, transfer, or ASI.
-
-Return to the delete command. The model supplied capability. The stack made authority, evidence, residuals, and recovery separately inspectable.
-
-Next, ask whether those boundaries improve useful work per total governed cost. That is the Efficient ASI Hypothesis.
+In the file-deletion case, the model supplied a capable proposal. The surrounding system decided what it could see, what had been established, what could act, and how a mistake would remain recoverable.

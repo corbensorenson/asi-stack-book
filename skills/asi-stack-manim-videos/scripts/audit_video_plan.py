@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Audit an ASI Stack Manim v2 beat plan.
+"""Audit ASI Stack Manim narration and v2 beat plans.
 
-This is a structural preflight, not an aesthetic judge. It rejects missing
-story, art-direction, synchronization, continuity, accessibility, and claim
-fields while keeping beat density and technique variety as diagnostics.
+This is a structural preflight, not an aesthetic or truth judge. It rejects
+known script, story, synchronization, continuity, accessibility, and claim
+failures while keeping density and technique variety as diagnostics.
 """
 
 from __future__ import annotations
@@ -86,10 +86,22 @@ BRIEF_FIELDS = {
     ),
 }
 TEMPLATE_PHRASES = (
-    "this chapter asks a specific question",
+    "this chapter",
     "the tempting shortcut is insufficient",
     "the chapter's core claim is",
     "the chapters core claim is",
+    "current evidence state",
+    "read the live chapter",
+    "read the live book",
+    "the next chapter",
+    "chapter digest",
+    "source commit",
+)
+INTERNAL_METADATA_PATTERNS = (
+    (re.compile(r"\b(?:claim|proof|fixture|validator|theorem)\s+(?:id|count|counts)\b", re.I), "internal identifier or count"),
+    (re.compile(r"\b(?:argument|formal|measured|reproduced|operational)\s+support\b", re.I), "support-state vocabulary"),
+    (re.compile(r"\b(?:chapters?|sources?|scripts?|visual_edition)/[^\s]+", re.I), "repository path"),
+    (re.compile(r"\b(?:ext|src|clm|prf)_[a-z0-9_-]+\b", re.I), "repository identifier"),
 )
 STATIC_ACTIONS = {
     "hold",
@@ -106,6 +118,102 @@ def words(text: str) -> list[str]:
 
 def normalized(text: str) -> str:
     return " ".join(re.findall(r"[a-z0-9]+(?:'[a-z0-9]+)?", text.lower()))
+
+
+def sentences(text: str) -> list[str]:
+    return [item.strip() for item in re.split(r"(?<=[.!?])\s+", text.strip()) if item.strip()]
+
+
+def audit_teaching_promise(value: str | None) -> tuple[list[str], list[str]]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    if not isinstance(value, str) or not value.strip():
+        return ["missing non-empty teaching_promise"], warnings
+    count = len(words(value))
+    if count > 34:
+        errors.append(f"teaching_promise has {count} words; select one transferable outcome")
+    elif count > 26:
+        warnings.append(f"teaching_promise has {count} words; review for chapter-summary scope")
+    joins = len(re.findall(r"\band\b", value, flags=re.I))
+    if joins > 2 or value.count(";") or value.count(",") > 2:
+        errors.append("teaching_promise reads as a coverage list rather than one outcome")
+    return errors, warnings
+
+
+def audit_narration(
+    narration: str,
+    *,
+    duration_seconds: float | None = None,
+    duration_rationale: str | None = None,
+) -> tuple[list[str], list[str], dict]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    clean = narration.strip()
+    word_count = len(words(clean))
+    if word_count < 220:
+        warnings.append(f"narration has {word_count} words; verify that the mechanism and transfer test are complete")
+    if word_count > 520:
+        warnings.append(f"narration has {word_count} words; the normal visual-abstract ceiling is 520")
+    if word_count > 600 and not (isinstance(duration_rationale, str) and len(duration_rationale.strip()) >= 24):
+        errors.append("narration above 600 words requires a specific duration rationale")
+    if word_count > 650:
+        errors.append(f"narration has {word_count} words; scripts above 650 must be split or reselected")
+
+    long_sentence_count = 0
+    extreme_sentence_count = 0
+    list_sentence_count = 0
+    for sentence in sentences(clean):
+        count = len(words(sentence))
+        if count > 24:
+            long_sentence_count += 1
+            warnings.append(f"review {count}-word sentence for multiple spoken ideas: {sentence[:72]!r}")
+        if count > 32:
+            extreme_sentence_count += 1
+            errors.append(f"{count}-word sentence exceeds the spoken-language ceiling: {sentence[:72]!r}")
+        if sentence.count(",") >= 5 or sentence.count(";") >= 3:
+            list_sentence_count += 1
+            errors.append(f"sentence reads as an inventory rather than a causal explanation: {sentence[:72]!r}")
+
+    paragraphs = [item.strip() for item in re.split(r"\n\s*\n", clean) if item.strip()]
+    oversized_blocks = 0
+    for index, paragraph in enumerate(paragraphs, start=1):
+        count = len(words(paragraph))
+        if count > 130:
+            oversized_blocks += 1
+            warnings.append(f"performance block {index} has {count} words; review prosody and scene load")
+        if count > 180:
+            errors.append(f"performance block {index} has {count} words; split it at a real thought boundary")
+
+    normalized_narration = normalized(clean)
+    for phrase in TEMPLATE_PHRASES:
+        if phrase in normalized_narration:
+            errors.append(f"templated or administrative narration phrase is prohibited: {phrase!r}")
+    for pattern, label in INTERNAL_METADATA_PATTERNS:
+        if pattern.search(clean):
+            errors.append(f"spoken narration contains {label}; express the boundary in ordinary language")
+
+    question_count = clean.count("?")
+    if question_count > 3:
+        warnings.append(f"narration asks {question_count} questions; keep only questions with evidence and thinking time")
+
+    wpm = None
+    if isinstance(duration_seconds, (int, float)) and duration_seconds > 0:
+        wpm = word_count / duration_seconds * 60
+        if wpm < 100 or wpm > 155:
+            warnings.append(f"narration rate is {wpm:.1f} WPM; inspect delivery against the usual 100–155 WPM range")
+        if wpm < 80 or wpm > 170:
+            errors.append(f"narration rate of {wpm:.1f} WPM is an extreme delivery outlier")
+
+    return errors, warnings, {
+        "narration_words": word_count,
+        "paragraphs": len(paragraphs),
+        "long_sentence_warning_count": long_sentence_count,
+        "extreme_sentence_count": extreme_sentence_count,
+        "inventory_sentence_count": list_sentence_count,
+        "oversized_performance_blocks": oversized_blocks,
+        "question_count": question_count,
+        "words_per_minute": round(wpm, 2) if wpm is not None else None,
+    }
 
 
 def load(path: Path) -> dict:
@@ -153,7 +261,8 @@ def self_test() -> None:
         + ["mechanism"] * 7
         + ["worked_trace"] * 5
         + ["failure"] * 3
-        + ["evidence_boundary"] * 3
+        + ["consequence"] * 2
+        + ["evidence_boundary"]
         + ["payoff"]
         + ["handoff"]
     )
@@ -192,7 +301,7 @@ def self_test() -> None:
                 "on_screen_text": [f"state {index:02d}"],
                 "settle_seconds": 0.5,
                 "hold_purpose": "Let the changed endpoint register before the next relation.",
-                "new_concepts": [f"relation {index:02d}"],
+                "new_concepts": ["authority boundary"] if index == 0 else [],
                 "claim_role": "mechanism" if function == "mechanism" else "transition",
                 "evidence_boundary": "Synthetic validator fixture; it makes no book claim.",
             }
@@ -239,7 +348,7 @@ def self_test() -> None:
         },
         "beats": beats,
     }
-    narration = " ".join(beat["narration"] for beat in beats)
+    narration = "\n\n".join(beat["narration"] for beat in beats)
     errors, _, summary = audit(plan, narration)
     if errors:
         raise AssertionError("valid fixture failed:\n" + "\n".join(errors))
@@ -271,6 +380,15 @@ def self_test() -> None:
     duplicate_errors, _, _ = audit(duplicate, duplicate_narration)
     if not any("duplicates another beat" in error for error in duplicate_errors):
         raise AssertionError("duplicate sync-anchor fixture did not fail")
+
+    administrative = (
+        "This chapter asks a specific question. "
+        "The chapter's core claim is recorded as claim id clm_fixture."
+    )
+    narration_errors, _, _ = audit_narration(administrative)
+    for fragment in ("templated or administrative", "repository identifier"):
+        if not any(fragment in error for error in narration_errors):
+            raise AssertionError(f"narration fixture did not trigger {fragment!r}")
     print("Self-test passed.")
 
 
@@ -279,9 +397,12 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
     warnings: list[str] = []
     if plan.get("schema_version") != SCHEMA:
         errors.append(f"schema_version must be {SCHEMA}")
-    for field in ("chapter_id", "teaching_promise", "chapter_sha256", "source_commit"):
+    for field in ("chapter_id", "chapter_sha256", "source_commit"):
         if not isinstance(plan.get(field), str) or not plan[field].strip():
             errors.append(f"missing non-empty {field}")
+    promise_errors, promise_warnings = audit_teaching_promise(plan.get("teaching_promise"))
+    errors.extend(promise_errors)
+    warnings.extend(promise_warnings)
     digest = plan.get("chapter_sha256", "")
     if digest and not re.fullmatch(r"[0-9a-f]{64}", digest):
         errors.append("chapter_sha256 must be 64 lowercase hexadecimal characters")
@@ -290,14 +411,14 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
     if not isinstance(duration, (int, float)) or isinstance(duration, bool) or duration <= 0:
         errors.append("target_duration_seconds must be positive")
         duration = 1.0
-    elif not 180 <= duration <= 360:
-        warnings.append("target duration falls outside the preferred 3–6 minute visual-abstract range")
-    if isinstance(duration, (int, float)) and not isinstance(duration, bool) and duration > 360:
+    elif not 150 <= duration <= 270:
+        warnings.append("target duration falls outside the preferred 2.5–4.5 minute visual-abstract range")
+    if isinstance(duration, (int, float)) and not isinstance(duration, bool) and duration > 270:
         audio_direction = plan.get("audio_direction")
         rationale = audio_direction.get("duration_rationale") if isinstance(audio_direction, dict) else None
         if not isinstance(rationale, str) or len(rationale.strip()) < 24:
             errors.append(
-                "audio_direction.duration_rationale must explain why a video above the soft six-minute target improves the teaching result"
+                "audio_direction.duration_rationale must explain why a video above the normal 4.5-minute target improves the teaching result"
             )
 
     for brief_name, fields in BRIEF_FIELDS.items():
@@ -338,6 +459,7 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
     settle_total = 0.0
     question_positions: dict[str, int] = {}
     resolution_positions: dict[str, int] = {}
+    introduced_concepts: set[str] = set()
 
     for index, beat in enumerate(beats):
         label = f"beat[{index}]"
@@ -392,11 +514,10 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
                 errors.append(f"{label}: sync_anchor duplicates another beat: {anchor!r}")
             seen_anchors.add(anchor_key)
 
-        for sentence in re.split(r"(?<=[.!?])\s+", spoken.strip()):
+        for sentence in sentences(spoken):
             count = len(words(sentence))
-            if count > 28:
+            if count > 24:
                 long_sentences += 1
-                warnings.append(f"{label}: review {count}-word sentence for multiple ideas")
 
         for field in (
             "visual_purpose",
@@ -451,6 +572,7 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
         settle_total += settle
 
         concepts = require_string_list(beat, "new_concepts", label, errors, allow_empty=True)
+        introduced_concepts.update(normalized(item) for item in concepts)
         if len(concepts) > 2:
             warnings.append(f"{label}: introduces {len(concepts)} concepts; consider splitting the beat")
         if len(concepts) > 4:
@@ -493,6 +615,14 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
     if "mechanism" in story_positions and "evidence_boundary" in story_positions:
         if story_positions["evidence_boundary"][0] <= story_positions["mechanism"][0]:
             errors.append("the evidence boundary must follow the first mechanism beat")
+    if len(story_positions.get("evidence_boundary", [])) > 2:
+        errors.append("use one natural evidence boundary, or at most two when the mechanism genuinely needs separate limits")
+    if len(introduced_concepts) > 3:
+        errors.append(
+            f"beat plan introduces {len(introduced_concepts)} distinct concepts; the visual-abstract budget is three"
+        )
+    if story_positions.get("handoff"):
+        warnings.append("handoff beat is optional; remove chapter navigation or publication language from narration")
 
     for question_id, position in question_positions.items():
         resolved_at = resolution_positions.get(question_id)
@@ -534,18 +664,16 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
                     f"no persistent object spans half the beats; strongest is {dominant_object!r} at {count / len(beats):.1%}"
                 )
 
-    full_narration = " ".join(narration_parts)
-    word_count = len(words(full_narration))
-    wpm = word_count / duration * 60
-    if word_count < 250 or word_count > 750:
-        warnings.append(f"narration has {word_count} words; normal range is 250–750")
-    if wpm < 100 or wpm > 155:
-        warnings.append(f"narration rate is {wpm:.1f} WPM; inspect delivery against the usual 100–155 WPM range")
-    if wpm < 80 or wpm > 170:
-        errors.append(f"narration rate of {wpm:.1f} WPM is an extreme delivery outlier")
-    for phrase in TEMPLATE_PHRASES:
-        if phrase in normalized(full_narration):
-            errors.append(f"templated narration phrase is prohibited: {phrase!r}")
+    full_narration = "\n\n".join(narration_parts)
+    audio_direction = plan.get("audio_direction")
+    duration_rationale = audio_direction.get("duration_rationale") if isinstance(audio_direction, dict) else None
+    script_errors, script_warnings, script_summary = audit_narration(
+        full_narration,
+        duration_seconds=duration,
+        duration_rationale=duration_rationale,
+    )
+    errors.extend(script_errors)
+    warnings.extend(script_warnings)
     if narration is not None and normalized(narration) != normalized(full_narration):
         errors.append("beat narration does not exactly cover the supplied narration file after normalization")
 
@@ -553,11 +681,10 @@ def audit(plan: dict, narration: str | None) -> tuple[list[str], list[str], dict
         "beats": len(beats),
         "duration_seconds": round(duration, 3),
         "beats_per_minute": round(beat_rate, 2),
-        "narration_words": word_count,
-        "words_per_minute": round(wpm, 2),
+        **script_summary,
         "animation_technique_count": len(techniques),
         "declared_settle_fraction": round(settle_total / duration, 4),
-        "long_sentence_warning_count": long_sentences,
+        "beat_long_sentence_warning_count": long_sentences,
         "story_function_counts": dict(
             Counter(beat.get("story_function") for beat in beats if isinstance(beat, dict))
         ),
@@ -572,13 +699,68 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("plan", type=Path, nargs="?")
     parser.add_argument("--narration", type=Path)
+    parser.add_argument(
+        "--narration-only",
+        action="store_true",
+        help="audit a narration file before a timed beat plan exists",
+    )
+    parser.add_argument(
+        "--all-narrations",
+        type=Path,
+        metavar="ROOT",
+        help="audit every generation-2/narration.txt below ROOT",
+    )
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
         self_test()
         return
+    if args.all_narrations is not None:
+        paths = sorted(args.all_narrations.glob("*/generation-2/narration.txt"))
+        if not paths:
+            raise SystemExit(f"No generation-2 narrations found below {args.all_narrations}")
+        failures = 0
+        rows = []
+        for path in paths:
+            try:
+                narration = path.read_text(encoding="utf-8")
+            except OSError as exc:
+                raise SystemExit(f"Unable to read {path}: {exc}") from exc
+            errors, warnings, summary = audit_narration(narration)
+            failures += bool(errors)
+            rows.append({
+                "chapter_id": path.parents[1].name,
+                "path": str(path),
+                "status": "revise" if errors else "pass",
+                "errors": errors,
+                "warnings": warnings,
+                **summary,
+            })
+        print(json.dumps({"narrations": len(rows), "failures": failures, "rows": rows}, indent=2))
+        if failures:
+            sys.exit(1)
+        print(f"Narration audit passed for {len(rows)} generation-two scripts.")
+        return
+    if args.narration_only:
+        if args.narration is None:
+            parser.error("--narration is required with --narration-only")
+        try:
+            narration = args.narration.read_text(encoding="utf-8")
+        except OSError as exc:
+            raise SystemExit(f"Unable to read narration: {exc}") from exc
+        errors, warnings, summary = audit_narration(narration)
+        print(json.dumps(summary, indent=2))
+        for warning in warnings:
+            print(f"WARNING: {warning}")
+        if errors:
+            print("Narration audit failed:")
+            for error in errors:
+                print(f" - {error}")
+            sys.exit(1)
+        print("Narration audit passed.")
+        return
     if args.plan is None:
-        parser.error("plan is required unless --self-test is used")
+        parser.error("plan is required unless a narration-only mode is used")
     try:
         plan = load(args.plan)
         narration = args.narration.read_text(encoding="utf-8") if args.narration else None

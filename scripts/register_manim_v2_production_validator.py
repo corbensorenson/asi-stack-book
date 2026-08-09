@@ -15,6 +15,7 @@ ARTIFACTS = [
     "schemas/manim_v2_production_ledger.schema.json",
     "schemas/manim_beat_plan.schema.json",
     "schemas/manim_experience_review.schema.json",
+    "schemas/narration_toolchain.schema.json",
     "scripts/sync_manim_v2_production_ledger.py",
     "scripts/validate_manim_v2_production_ledger.py",
     "scripts/register_manim_v2_production_validator.py",
@@ -40,6 +41,7 @@ ARTIFACTS = [
     "book_structure.json",
     "visual_edition/manifest.json",
     "visual_edition/youtube_preview_bindings.json",
+    "visual_edition/narration_toolchain.json",
 ]
 
 
@@ -64,39 +66,45 @@ def main() -> None:
         "execution_tier": "pr",
         "validation_class": "publication_gate",
         "input_contract": (
-            "The exact 84-chapter manifest, preserved generation-one master and preview "
+            "The canonical manifest-driven chapter set, preserved generation-one master and preview "
             "identities, tracked generation-two authoring standard, beat-plan and "
             "experience-review schemas, chapter-specific production artifacts, and "
             "fail-closed YouTube and Quarto lifecycle states."
         ),
         "input_artifacts": ARTIFACTS,
         "output_contract": (
-            "Reject chapter/order/cohort drift, stale derived digests, narration and beat-plan "
-            "disagreement, review-score averaging, missing or nonpassing stage gates, master "
+            "Reject chapter/order/cohort drift, fabricated predecessors, stale chapter, narration, "
+            "toolchain, or authoring digests, narration and beat-plan disagreement, review-score "
+            "averaging, missing cold transfer or frame sampling, unqualified alignment, master "
             "or receipt identity gaps, premature YouTube/Quarto advancement, predecessor "
             "erasure, support movement, and publication invention."
         ),
         "output_assertions": [
-            "84 exact generation-two targets in canonical book order",
-            "five plus seven plus seventy-two remediation cohorts",
-            "twelve exact unlisted preview predecessors preserved",
+            "one generation-two target per canonical chapter in canonical order",
+            "all canonical targets partition exactly into four lifecycle cohorts",
+            "historical predecessors preserved and new chapters represented with null predecessors",
+            "material chapter, narration, standard, schema, or toolchain changes reopen downstream gates",
             "exact narration-to-beat-plan agreement for every passing beat plan",
             "all eleven experience dimensions individually at least four",
+            "five or more frame samples per beat and cold comprehension plus transfer at release",
+            "picture-and-sound lock remains closed until forced alignment is qualified",
             "no unresolved defects on a passing experience review",
             "accepted masters bind exact render receipts and digests",
             "YouTube and Quarto states cannot advance before acceptance and reconciliation",
             "support, release, and publication effects none until exact receipts exist",
-            "seven representative custody and lifecycle mutations reject",
+            "nine representative custody and lifecycle mutations reject",
         ],
         "claim_scope": (
             "Generation-two visual-derivative identity, production-stage custody, review-gate "
             "integrity, predecessor preservation, and publication sequencing only."
         ),
-        "negative_controls": "validator_owned_seven_identity_gate_score_and_publication_mutations",
+        "negative_controls": "validator_owned_nine_identity_script_alignment_gate_score_and_publication_mutations",
         "negative_control_cases": [
             "chapter deletion",
             "predecessor identity erasure",
+            "narration identity drift",
             "rejected sub-four review promoted to pass",
+            "picture-and-sound lock before alignment qualification",
             "acceptance before prerequisite gates",
             "YouTube advancement before acceptance",
             "Quarto advancement before public-current YouTube identity",
@@ -108,7 +116,7 @@ def main() -> None:
             "or authority for an unrecorded external mutation."
         ),
         "contract_precision": "exact",
-        "semantic_review_state": "tracked_v2_contract_first_rejected_animatic_and_fail_closed_84_chapter_ledger",
+        "semantic_review_state": "tracked_v2_manifest_dynamic_script_digest_alignment_learning_and_fail_closed_publication_contract",
     })
     for artifact in ARTIFACTS:
         if artifact not in registry["required_artifacts"]:

@@ -4,9 +4,11 @@
 
 - Define beauty operationally
 - Write an art-direction brief
+- Choose the right medium
 - Compose every frame
 - Choreograph attention
 - Give motion a grammar
+- Design keyframes and transitions
 - Build rhythm and continuity
 - Study 3Blue1Brown without imitation
 - Reject visual failure modes
@@ -59,6 +61,19 @@ Before writing scene code, define:
 The shared ASI Stack grammar supplies family resemblance. The chapter brief
 supplies identity. Do not solve chapter identity with a new arbitrary palette.
 
+## Choose the right medium
+
+Animation earns its cost only when change over time teaches the idea. Apply the
+congruence principle: motion should map to the concept's real structure. Apply
+the apprehension principle: the viewer must be able to notice, parse, and retain
+the change at playback speed.
+
+Use Manim for transformations, linked representations, spatial derivation,
+state machines, geometric reasoning, causal traces, and changing quantities.
+Use a still diagram, annotated bitmap, screen recording, or conventional edit
+when that medium explains the idea more directly. Manim may render modular
+clips; it does not have to own every title, cut, voice edit, or final assembly.
+
 ## Compose every frame
 
 - Establish one dominant focal point. If two objects compete, either group
@@ -101,6 +116,23 @@ Microsoft's Fluent motion guidance describes choreography as the order and
 arrangement of motion, with short offsets used to guide gaze and stronger
 emphasis reserved for higher-priority elements. Use that as a general design
 principle, not a request to mimic a product interface.
+
+## Design keyframes and transitions
+
+Plan sparse semantic keyframes before polishing motion. Each keyframe must make
+the active relationship legible as a still: setup, decisive precondition,
+transformation, result, and payoff. Then inspect the path between them. Correct
+endpoints do not guarantee correct interpolation; objects can overlap, labels
+can cross, and hierarchy can disappear halfway through a transform.
+
+- Reserve space in the earlier keyframe for the next relation.
+- State which object owns identity through the transition.
+- Keep dependent labels and arrows attached throughout motion.
+- Avoid transforms whose shortest geometric path communicates the wrong cause.
+- Sample at start, quarter, midpoint, three-quarter, and end, then add frames
+  around any rapid or crowded transition.
+- Localize repairs to the responsible object or beat when shared scene state is
+  otherwise correct.
 
 ## Give motion a grammar
 
@@ -156,6 +188,12 @@ Transfer these principles:
 - use checkpoints or scene sections for fast visual iteration; and
 - design one chapter-specific visual payoff.
 
+Recent public scenes also encapsulate mechanism-specific objects with semantic
+methods that update a distribution, highlight a range, renormalize a state, or
+link representations. Follow that architectural pattern: build a small visual
+model of the chapter's mechanism, then animate its state. Do not build a generic
+card renderer and feed it chapter nouns.
+
 Do not copy composition, voice, jokes, music, or implementation. The public
 3Blue1Brown scene repository uses ManimGL and CC BY-NC-SA code, while this
 project uses ManimCE and its own publication rights.
@@ -171,13 +209,17 @@ project uses ManimCE and its own publication rights.
   but no understanding;
 - tiny text created by preserving too many objects at once;
 - a signature frame that looks polished but cannot be explained in one
-  sentence; and
+  sentence;
+- correct keyframes joined by an unreadable or semantically false transition;
+- motion whose conceptual mapping is weak enough that a still would teach more;
+- chapter-specific labels attached to generic card choreography; and
 - aesthetic polish that broadens a claim beyond the chapter's evidence.
 
 ## Sources
 
 - [3Blue1Brown: About / video-making advice](https://www.3blue1brown.com/about/)
 - [3Blue1Brown video source repository](https://github.com/3b1b/videos)
+- [Tversky, Morrison, and Betrancourt: Animation: can it facilitate?](https://doi.org/10.1207/S15326985EP3704_3)
 - [ManimCE rate functions](https://docs.manim.community/en/stable/reference/manim.utils.rate_functions.html)
 - [ManimCE building blocks](https://docs.manim.community/en/stable/tutorials/building_blocks.html)
 - [Microsoft Fluent 2 motion](https://fluent2.microsoft.design/motion)

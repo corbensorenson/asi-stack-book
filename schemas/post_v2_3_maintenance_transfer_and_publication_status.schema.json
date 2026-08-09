@@ -2501,12 +2501,12 @@
     "manim_visual_edition": {
       "const": {
         "id": "P7.3-governed-manim-visual-edition",
-        "state": "active_generation_2_production_with_12_predecessor_previews_preserved",
+        "state": "active_generation_2_production_with_private_generation_1_predecessors_preserved",
         "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
-        "canonical_chapter_count": 84,
+        "canonical_chapter_count": 85,
         "required_visual_abstract_duration_seconds": {
-          "minimum": 180,
-          "maximum": 360
+          "minimum": 150,
+          "maximum": 270
         },
         "pilot_chapter_ids": [
           "asi-is-a-stack-not-a-model",
@@ -2543,12 +2543,29 @@
           "production_ledger_path": "visual_edition/manim_v2_production_ledger.json",
           "production_ledger_schema_path": "schemas/manim_v2_production_ledger.schema.json",
           "production_validator_path": "scripts/validate_manim_v2_production_ledger.py",
+          "narration_toolchain_path": "visual_edition/narration_toolchain.json",
+          "narration_auditor_path": "skills/asi-stack-manim-videos/scripts/audit_video_plan.py",
           "target_generation": 2,
+          "normal_visual_abstract_duration_seconds": {
+            "minimum": 150,
+            "maximum": 270
+          },
+          "normal_narration_word_count": {
+            "minimum": 280,
+            "maximum": 520
+          },
+          "long_form_rationale_required_above_words": 600,
+          "maximum_narration_word_count": 650,
+          "minimum_frame_samples_per_beat": 5,
+          "forced_alignment_required_before_picture_and_sound_lock": true,
+          "cold_release_learning_check_required": true,
+          "legacy_generation_one_explicit_opt_in_required": true,
           "generation_2_counts": {
-            "planned": 60,
-            "animatic_revision": 5,
-            "animatic_passed": 18,
-            "picture_and_sound_lock_passed": 17,
+            "planned": 61,
+            "scripted": 24,
+            "beat_plan_revision": 24,
+            "animatic_passed": 0,
+            "picture_and_sound_lock_passed": 0,
             "release_candidate_passed": 0,
             "accepted": 0,
             "youtube_current": 0,
@@ -2556,13 +2573,19 @@
           },
           "first_replacement": {
             "chapter_id": "asi-is-a-stack-not-a-model",
-            "duration_seconds": 230.23,
-            "beat_count": 27,
-            "stage": "picture_and_sound_lock",
-            "gate_state": "pass",
-            "rejected_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
-            "current_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r3.json",
-            "current_candidate_review_state": "picture_and_sound_lock_passed_release_candidate_not_started",
+            "duration_seconds": null,
+            "beat_count": null,
+            "stage": "scripted",
+            "gate_state": "not_started",
+            "historical_review_paths": [
+              "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
+              "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r2.json",
+              "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r3.json",
+              "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/picture_and_sound_lock.json"
+            ],
+            "current_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic.json",
+            "current_candidate_review_state": "script_rewritten_downstream_artifacts_stale_beat_plan_requires_revision",
+            "narration_sha256": "7636d52e4a0325843829a01029d491853e22dbe40e6b4f27397da7e3992169c8",
             "support_state_effect": "none",
             "publication_effect": "none"
           },
@@ -2573,15 +2596,20 @@
             "accessibility"
           ],
           "required_story_functions": [
-            "hook",
+            "teaching_promise",
+            "concrete_case",
             "mechanism",
-            "evidence_boundary",
+            "test_or_consequence",
+            "boundary",
             "payoff"
           ],
           "required_authoring_passes": [
+            "script_gate",
+            "beat_plan",
             "animatic",
             "picture_and_sound_lock",
-            "release_candidate"
+            "release_candidate",
+            "independent_release_candidate"
           ],
           "experience_dimensions": [
             "teaching_clarity",
@@ -2594,14 +2622,15 @@
             "sound_mix",
             "engagement",
             "accessibility",
-            "claim_fidelity"
+            "claim_fidelity",
+            "learning_and_transfer"
           ],
           "minimum_score_each_dimension": 4,
           "averaging_may_hide_failure": false,
           "external_human_prepublication_gate_required": false,
           "beat_density_and_technique_counts_are_diagnostic_only": true,
           "mechanical_diagnostic_is_aesthetic_verdict": false,
-          "first_master_diagnostic": {
+          "generation_one_first_master_diagnostic": {
             "chapter_id": "asi-is-a-stack-not-a-model",
             "duration_seconds": 305.6,
             "freeze_interval_count_at_least_six_seconds": 6,
@@ -2613,9 +2642,9 @@
             "interpretation": "confirms_visual_rhythm_defect_while_audio_meter_result_remains_acceptable_no_learning_or_beauty_claim"
           },
           "remediation_order": [
-            "videos_1_through_5",
-            "videos_6_through_12",
-            "videos_13_through_84"
+            "rewrite_and_replan_scripted_targets_1_through_24",
+            "qualify_alignment_and_complete_five_pilot_animatics",
+            "continue_in_current_manifest_order"
           ]
         },
         "hosting": {
@@ -2627,7 +2656,7 @@
           "authenticated_dashboard_access_verified": true,
           "canonical_playlist_required": true,
           "canonical_playlist_id": null,
-          "youtube_video_count_target": 84,
+          "youtube_video_count_target": 85,
           "quarto_embed_only_after_published_current": true,
           "action_time_authority_required": true,
           "external_publication_authorized_now": false
@@ -2678,16 +2707,18 @@
           "pilot_packets_rendered_local": 5,
           "pilot_packets_validated": 5,
           "chapter_packets_validated": 84,
-          "current_rendered_videos": 84,
-          "youtube_videos_unlisted_preview": 12,
+          "current_rendered_videos": 9,
+          "youtube_videos_unlisted_preview": 0,
           "youtube_videos_published": 0,
-          "current_quarto_preview_embeds": 12,
+          "current_quarto_preview_embeds": 0,
           "current_quarto_embeds": 0,
-          "stale_videos": 0
+          "stale_videos": 75
         },
         "visual_manifest_path": "visual_edition/manifest.json",
         "youtube_ledger_path": "visual_edition/youtube_ledger.json",
         "five_pilot_checkpoint": {
+          "generation": 1,
+          "historical": true,
           "state": "all_five_final_av_masters_validated",
           "packet_count": 5,
           "rendered_lifecycle_count": 5,
@@ -2702,6 +2733,8 @@
           "release_effect": "none"
         },
         "first_pilot_checkpoint": {
+          "generation": 1,
+          "historical": true,
           "chapter_id": "asi-is-a-stack-not-a-model",
           "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
           "lifecycle_state": "ready_not_published",
@@ -2722,7 +2755,10 @@
           "release_effect": "none"
         },
         "all_chapter_checkpoint": {
-          "state": "all_84_ready_not_published",
+          "generation": 1,
+          "historical": true,
+          "state": "generation_one_84_packet_archive_with_current_projection_withdrawn",
+          "current_projection_state": "zero_youtube_objects_zero_quarto_embeds",
           "publication_preflight_path": "visual_edition/youtube_publication_preflight.json",
           "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
           "mutation_scope_sha256": "3f901ca06169b3df555b6e8dbc6a327c6dab9e623b6712407cf0a9366eeb55f0",
@@ -2739,7 +2775,7 @@
           "generation_history_derived_from_immutable_receipts": true,
           "supersession_negative_mutations_rejected": 12,
           "current_supersession_plan_count": 0,
-          "real_generation_two_exercise_state": "awaiting_generation_one_publication_and_author_feedback",
+          "real_generation_two_exercise_state": "active_predecessor_publication_not_required",
           "canonical_chapter_digest_excludes_managed_visual_block": true,
           "repository_reconciliation_rollback_complete": true,
           "published_receipt_set_all_or_nothing": true,
@@ -2770,11 +2806,13 @@
           "release_effect": "none"
         },
         "completion_requires": [
-          "84_current_validated_derivative_packets",
-          "84_current_rendered_visual_abstracts",
-          "84_v2_beat_plans_with_story_art_audio_and_accessibility_briefs",
-          "84_chapter_specific_signature_visuals_and_persistent_state_change_sequences",
-          "84_per_beat_start_midpoint_end_review_sheets",
+          "all_current_manifest_chapters_have_validated_generation_2_derivative_packets",
+          "all_current_manifest_chapters_have_current_rendered_visual_abstracts",
+          "all_current_manifest_chapters_have_v2_beat_plans_with_story_art_audio_and_accessibility_briefs",
+          "all_current_manifest_chapters_have_chapter_specific_signature_visuals_and_persistent_state_change_sequences",
+          "all_current_manifest_chapters_have_five_sample_per_beat_review_sheets",
+          "all_current_manifest_chapters_pass_qualified_alignment_before_picture_and_sound_lock",
+          "all_release_candidates_pass_cold_comprehension_and_transfer_review",
           "minimum_four_of_five_on_every_experience_dimension_without_average_laundering",
           "reviewed_captions_and_descriptive_transcripts",
           "zero_stale_video_claim_surfaces",

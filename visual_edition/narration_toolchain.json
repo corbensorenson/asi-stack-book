@@ -52,10 +52,21 @@
       "no internal ASR omission spanning more than eight expected content tokens",
       "complete beginning and ending coverage",
       "finite mono samples with no digital clipping",
-      "minimum three-minute visual-edition duration with six minutes treated as a soft pacing target rather than an acceptance cap",
-      "caption timing derived from the exact narration receipt",
+      "normal visual-abstract duration of two-and-a-half to four-and-a-half minutes, with longer work requiring an explicit editorial rationale",
+      "animatic caption timing derived from the exact narration receipt and final timing withheld until a pinned aligner passes qualification",
       "final A/V codec, geometry, frame-rate, audio, and duration checks"
     ]
+  },
+  "alignment": {
+    "qualification_state": "not_yet_qualified",
+    "animatic_timing_source": "Exact synthesis-block durations recorded in the narration receipt.",
+    "picture_and_sound_lock_requirement": "A version-pinned word- or phrase-alignment route must pass difficult-term, pause, and regenerated-join checks before picture-and-sound lock.",
+    "candidate_methods": [
+      "WhisperX",
+      "Montreal Forced Aligner",
+      "stable-ts"
+    ],
+    "admission_test": "Compare candidate timestamps against manually marked anchors in a representative ASI Stack excerpt, record versions and failure cases, and reject any route that silently drops or misplaces a required anchor."
   },
   "tracked_inputs": {
     "requirements_lock": "visual_edition/narration_requirements.lock.txt",
@@ -82,11 +93,12 @@
     "ignored": "model weights, virtual environments, raw audio, ASR output, and final media under build/visual_edition",
     "pages_artifact_may_contain_media": false
   },
-  "upgrade_gate": "rerun terminology, intelligibility, loudness, caption, mux, and five-pilot visual review before adoption",
+  "upgrade_gate": "Run a matched-excerpt voice audition plus terminology, intelligibility, rights, compute, loudness, alignment, caption, mux, and five-pilot visual review before adoption.",
   "non_claims": [
     "Automated transcript agreement does not prove that every listener will prefer the voice.",
     "A qualified narration toolchain does not make an unvalidated chapter video publishable.",
     "Open-source licensing does not create a warranty or erase platform disclosure duties.",
-    "Synthetic narration does not change any book claim or evidence state."
+    "Synthetic narration does not change any book claim or evidence state.",
+    "ASR agreement and synthesis-block durations are not forced alignment and cannot close picture-and-sound lock."
   ]
 }

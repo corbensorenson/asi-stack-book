@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build the canonical 84-chapter Manim v2 production ledger."""
+"""Build the Manim v2 production ledger from canonical book structure.
+
+Chapters without a generation-one packet enter as planned generation-two
+targets with no predecessor. The ledger never fabricates a legacy packet for
+count symmetry.
+"""
 
 from __future__ import annotations
 
@@ -33,29 +38,51 @@ def canonical_chapters() -> list[dict]:
     return [chapter for part in structure["parts"] for chapter in part["chapters"]]
 
 
-def preserved_targets() -> dict[str, dict]:
+def preserved_state() -> tuple[dict[str, dict], dict[str, str | None]]:
     if not OUTPUT.is_file():
-        return {}
+        return {}, {}
     current = json.loads(OUTPUT.read_text(encoding="utf-8"))
-    return {
-        entry["chapter_id"]: entry["target"]
+    entries = {
+        entry["chapter_id"]: {
+            "chapter_sha256": entry.get("chapter_sha256"),
+            "target": entry["target"],
+        }
         for entry in current.get("entries", [])
         if isinstance(entry, dict) and isinstance(entry.get("target"), dict)
     }
+    metadata = {
+        key: current.get(key)
+        for key in (
+            "authoring_standard_sha256",
+            "beat_plan_schema_sha256",
+            "experience_review_schema_sha256",
+            "narration_toolchain_sha256",
+        )
+    }
+    return entries, metadata
 
 
 def target_for(
     chapter_id: str,
     has_current_preview: bool,
     prior: dict | None,
+    invalidate: bool,
 ) -> dict:
     base = f"visual_edition/chapters/{chapter_id}"
+    narration_path = ROOT / f"{base}/generation-2/narration.txt"
+    narration_sha256 = (
+        hashlib.sha256(narration_path.read_bytes()).hexdigest()
+        if narration_path.is_file()
+        else None
+    )
+    beat_plan_exists = (ROOT / f"{base}/generation-2/beat_plan.json").is_file()
     default = {
         "generation": 2,
-        "stage": "planned",
+        "stage": "scripted" if narration_sha256 else "planned",
         "beat_plan_path": f"{base}/generation-2/beat_plan.json",
         "scene_path": f"{base}/generation-2/scene.py",
         "narration_path": f"{base}/generation-2/narration.txt",
+        "narration_sha256": narration_sha256,
         "caption_path": f"{base}/generation-2/captions.vtt",
         "transcript_path": f"{base}/generation-2/transcript.md",
         "thumbnail_path": f"{base}/generation-2/thumbnail.svg",
@@ -69,7 +96,7 @@ def target_for(
             "independent_release_candidate": f"{base}/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-            "beat_plan": "not_started",
+            "beat_plan": "revise" if narration_sha256 and beat_plan_exists else "not_started",
             "animatic": "not_started",
             "picture_and_sound_lock": "not_started",
             "release_candidate": "not_started",
@@ -82,7 +109,11 @@ def target_for(
         "youtube_video_id": None,
         "quarto_embed_state": "predecessor_preview" if has_current_preview else "absent"
     }
-    if not prior:
+    if (
+        not prior
+        or invalidate
+        or prior.get("narration_sha256") != narration_sha256
+    ):
         return default
     merged = dict(default)
     merged.update(prior)
@@ -114,7 +145,20 @@ def build() -> dict:
         }
     withdrawn_at = binding.get("withdrawal", {}).get("withdrawn_at_utc")
     history_path = str(PREVIEW_HISTORY.relative_to(ROOT))
-    prior_targets = preserved_targets()
+    prior_entries, prior_metadata = preserved_state()
+    authoring_standard_sha256 = digest("skills/asi-stack-manim-videos/SKILL.md")
+    beat_plan_schema_sha256 = digest("schemas/manim_beat_plan.schema.json")
+    experience_review_schema_sha256 = digest("schemas/manim_experience_review.schema.json")
+    narration_toolchain_sha256 = digest("visual_edition/narration_toolchain.json")
+    standard_changed = bool(prior_metadata) and any(
+        prior_metadata.get(key) != current
+        for key, current in (
+            ("authoring_standard_sha256", authoring_standard_sha256),
+            ("beat_plan_schema_sha256", beat_plan_schema_sha256),
+            ("experience_review_schema_sha256", experience_review_schema_sha256),
+            ("narration_toolchain_sha256", narration_toolchain_sha256),
+        )
+    )
     entries = []
     cohorts = {
         "owner_reviewed_remediation": [],
@@ -122,23 +166,31 @@ def build() -> dict:
         "current_unlisted_previews": [],
         "not_yet_uploaded": []
     }
-    for position, chapter in enumerate(chapters, start=1):
+    for canonical_position, chapter in enumerate(chapters, start=1):
         chapter_id = chapter["id"]
-        if position <= 5:
+        packet_row = packets.get(chapter_id)
+        if not packet_row:
+            raise ValueError(f"visual manifest is missing canonical chapter {chapter_id}")
+        if canonical_position <= 5:
             cohort = "owner_reviewed_remediation"
-        elif position <= 12:
+        elif canonical_position <= 12:
             cohort = "withdrawn_predecessor_previews"
         elif chapter_id in previews:
             cohort = "current_unlisted_previews"
         else:
             cohort = "not_yet_uploaded"
         cohorts[cohort].append(chapter_id)
-        packet_path = packets[chapter_id]["packet_path"]
-        packet = load(packet_path)
-        receipt = packet["render_receipt"]
+        packet_path = packet_row.get("packet_path")
         preview = previews.get(chapter_id)
         historical = history_rows.get(chapter_id)
-        if preview:
+        if not packet_path and (preview or historical):
+            raise ValueError(f"{chapter_id}: YouTube custody exists without a visual packet")
+        if not packet_path:
+            predecessor = None
+        else:
+            packet = load(packet_path)
+            receipt = packet["render_receipt"]
+        if packet_path and preview:
             predecessor = {
                 "local_generation": 1,
                 "packet_path": packet_path,
@@ -149,7 +201,7 @@ def build() -> dict:
                 "youtube_visibility": "unlisted",
                 "preserve_history": True
             }
-        elif historical:
+        elif packet_path and historical:
             predecessor = {
                 "local_generation": 1,
                 "packet_path": packet_path,
@@ -162,7 +214,7 @@ def build() -> dict:
                 "withdrawn_at_utc": withdrawn_at or historical["observed_at_utc"],
                 "history_record_path": history_path
             }
-        else:
+        elif packet_path:
             predecessor = {
                 "local_generation": 1,
                 "packet_path": packet_path,
@@ -174,17 +226,22 @@ def build() -> dict:
                 "preserve_history": True
             }
         entries.append({
-            "position": position,
+            "position": canonical_position,
             "chapter_id": chapter_id,
             "title": chapter["title"],
             "chapter_path": chapter["file"],
-            "chapter_sha256": packets[chapter_id]["chapter_sha256"],
+            "chapter_sha256": packet_row["chapter_sha256"],
             "cohort": cohort,
             "predecessor": predecessor,
             "target": target_for(
                 chapter_id,
                 has_current_preview=preview is not None,
-                prior=prior_targets.get(chapter_id),
+                prior=prior_entries.get(chapter_id, {}).get("target"),
+                invalidate=(
+                    standard_changed
+                    or prior_entries.get(chapter_id, {}).get("chapter_sha256")
+                    != packet_row["chapter_sha256"]
+                ),
             )
         })
     counts = {
@@ -204,7 +261,7 @@ def build() -> dict:
     if OUTPUT.is_file():
         generated = json.loads(OUTPUT.read_text(encoding="utf-8")).get("generated_at_utc", generated)
     return {
-        "schema_version": "asi_stack.manim_v2_production_ledger.v1",
+        "schema_version": "asi_stack.manim_v2_production_ledger.v2",
         "edition_id": "asi-stack-p7.3-visual-edition",
         "generated_at_utc": generated,
         "book_structure_path": "book_structure.json",
@@ -212,19 +269,24 @@ def build() -> dict:
         "visual_manifest_path": "visual_edition/manifest.json",
         "visual_manifest_sha256": digest("visual_edition/manifest.json"),
         "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
-        "authoring_standard_sha256": digest("skills/asi-stack-manim-videos/SKILL.md"),
+        "authoring_standard_sha256": authoring_standard_sha256,
         "beat_plan_schema_path": "schemas/manim_beat_plan.schema.json",
-        "beat_plan_schema_sha256": digest("schemas/manim_beat_plan.schema.json"),
+        "beat_plan_schema_sha256": beat_plan_schema_sha256,
         "experience_review_schema_path": "schemas/manim_experience_review.schema.json",
-        "experience_review_schema_sha256": digest("schemas/manim_experience_review.schema.json"),
-        "canonical_chapter_count": 84,
+        "experience_review_schema_sha256": experience_review_schema_sha256,
+        "narration_toolchain_path": "visual_edition/narration_toolchain.json",
+        "narration_toolchain_sha256": narration_toolchain_sha256,
+        "canonical_chapter_count": len(chapters),
         "target_generation": 2,
         "cohorts": cohorts,
         "acceptance_contract": {
             "required_passes": ["animatic", "picture_and_sound_lock", "release_candidate"],
             "experience_dimensions": ["teaching_clarity", "composition", "motion_quality", "synchronization", "continuity", "pacing", "voice", "sound_mix", "engagement", "accessibility", "claim_fidelity"],
             "minimum_score_each_dimension": 4,
+            "minimum_frame_samples_per_beat": 5,
             "average_may_hide_failure": False,
+            "forced_alignment_required": True,
+            "cold_release_learning_check_required": True,
             "independent_review_required": True,
             "external_human_prepublication_gate_required": False
         },
@@ -245,7 +307,7 @@ def main() -> None:
     if args.check:
         if not OUTPUT.is_file() or OUTPUT.read_text(encoding="utf-8") != body:
             raise SystemExit("Manim v2 production ledger is stale; run without --check")
-        print("Manim v2 production ledger is current for all 84 chapters.")
+        print(f"Manim v2 production ledger is current for {len(value['entries'])} canonical chapters.")
         return
     OUTPUT.write_text(body, encoding="utf-8")
     print(f"Wrote {OUTPUT.relative_to(ROOT)} with {len(value['entries'])} entries.")

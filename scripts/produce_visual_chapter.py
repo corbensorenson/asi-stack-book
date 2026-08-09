@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Produce and locally validate one or more non-pilot chapter A/V masters."""
+"""Reproduce and validate historical generation-one A/V masters.
+
+Current visual abstracts are authored through generation-two scripts, beat
+plans, and experience gates; this command is retained for artifact custody.
+"""
 
 from __future__ import annotations
 
@@ -361,6 +365,11 @@ def produce(slug: str, phases: set[str], force: bool) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--historical-generation-one",
+        action="store_true",
+        help="Acknowledge that this command runs the deprecated generation-one pipeline.",
+    )
     parser.add_argument("--chapter", action="append", default=[])
     parser.add_argument("--all-non-pilots", action="store_true")
     parser.add_argument("--all-chapters", action="store_true")
@@ -371,6 +380,12 @@ def main() -> None:
     )
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
+    if not args.historical_generation_one:
+        raise SystemExit(
+            "Generation-one production is historical-only. Use the "
+            "generation-two Manim skill workflow, or pass "
+            "--historical-generation-one solely to reproduce a prior artifact."
+        )
     selected = (
         chapter_ids(include_pilots=args.all_chapters)
         if args.all_non_pilots or args.all_chapters

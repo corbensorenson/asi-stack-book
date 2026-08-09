@@ -3,9 +3,11 @@
 ## Contents
 
 - Teaching order
+- Promise selection
 - Narration structure
 - Sentence craft
 - Compression pass
+- Script acceptance
 - Read-aloud review
 - Failure patterns
 
@@ -31,6 +33,20 @@ The title and thumbnail make a promise. The opening should visibly begin
 delivering that promise before it introduces context. Use the first 15 seconds
 for the most concrete tension, not a logo, chapter number, agenda, or recap.
 
+## Promise selection
+
+Write at least three candidate teaching promises before choosing one. A strong
+promise describes one observable transfer: after watching, the viewer can
+predict a route, explain a failure, distinguish two states, or apply a mechanism
+to a changed case. Select for consequence, visual tractability, transfer value,
+and fit with the chapter's evidence ceiling.
+
+Reject a promise that is really a coverage list. “Trace the record through
+identity, authority, custody, recovery, cost, and residuals” describes chapter
+inventory, not learning. Keep one case, one causal mechanism, one test or
+counterexample, one evidence boundary, and at most three introduced terms.
+Everything else stays in the book or becomes another visual abstract.
+
 ## Narration structure
 
 Use a five-move arc as a starting point:
@@ -47,6 +63,12 @@ hear a coherent explanation, not metadata from a content pipeline.
 Write the opening and payoff as a pair. The final beat should resolve or
 complicate the exact object, prediction, or failure introduced at the start.
 If it does neither, the hook was probably decorative.
+
+Four to six macro moves are usually enough. Timed visual cues may split those
+moves into smaller synchronization beats, but a new cue must not quietly add a
+new topic. Name each macro move with a verb phrase such as “the copied sensor
+appears independent” or “lineage collapses two votes into one.” If a move can
+only be named as a category, it is probably still abstract.
 
 ## Sentence craft
 
@@ -67,6 +89,10 @@ Treat 24 words as a review trigger, not an automatic deletion rule. Split a
 sentence when it contains two causal claims, a list, nested qualifications, or
 more than one visual action.
 
+Write in coherent performance blocks of roughly one thought or 15–45 seconds.
+Paragraph breaks should direct a real change in pace, stance, or scene, not
+force the TTS engine to restart after every sentence.
+
 ## Compression pass
 
 Perform these passes in order:
@@ -79,9 +105,38 @@ Perform these passes in order:
 6. Remove adjectives that do not change a decision.
 7. Move necessary nuance into the exact beat where overgeneralization could
    occur.
+8. Replace evidence recitals with one plain-language boundary beside the
+   relevant inference.
+9. Remove claim IDs, support-state vocabulary, fixture and theorem counts,
+   validator results, paths, chapter navigation, and invitations to read the
+   next chapter.
 
 Do not compress by accelerating speech. Compress by choosing, sequencing, and
 showing.
+
+## Script acceptance
+
+The normal visual abstract is 280–520 spoken words at roughly 110–145 words per
+minute. A 520–600 word draft receives a mandatory compression review. A draft
+above 600 words needs a concrete `duration_rationale`; a draft above 650 words
+must be split or reselected. These limits govern the derivative video, not the
+chapter's depth.
+
+Before art direction or synthesis, require all of the following:
+
+- the teaching promise is one short transferable outcome, not a list;
+- the opening shows its consequence within 15 seconds;
+- one concrete object or case persists through the payoff;
+- no more than three new terms are required to follow the mechanism;
+- every paragraph changes the viewer's model rather than inventories coverage;
+- the evidence boundary is natural, local, and brief;
+- a cold reviewer can answer the planned transfer question; and
+- every spoken sentence has a picture, relationship, or intentional audio-only
+  purpose.
+
+Run the narration-only audit before a timed beat plan exists. A passing linter
+does not approve truth, taste, or pedagogy; it only prevents known structural
+failures from consuming animation and audio work.
 
 ## Read-aloud review
 
@@ -99,8 +154,11 @@ Read at the intended pace while tapping once for every visual beat. Revise when:
 - “This chapter asks…” foregrounds document structure instead of curiosity.
 - “The core claim is…” tells before showing.
 - A seven-item list gives equal weight to unequal ideas.
+- A teaching promise joined by repeated “and” clauses is a chapter synopsis.
 - Repeating problem/mechanism/trace/failure/evidence/non-claim/handoff wording
   makes different chapters feel identical.
+- Speaking evidence labels, proof counts, fixture names, source paths, or the
+  next chapter turns an explanation into an internal status report.
 - Dense spoken caveats at the end cannot repair an overbroad visual earlier.
 - Questions with no pause are decorative punctuation, not participation.
 - A sensational hook that the explanation never pays off breaks trust.

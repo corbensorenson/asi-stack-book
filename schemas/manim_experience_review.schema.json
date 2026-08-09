@@ -5,16 +5,59 @@
   "type": "object",
   "required": [
     "schema_version", "chapter_id", "generation", "pass", "reviewed_master_sha256",
-    "reviewed_at_utc", "viewing_passes", "dimensions", "open_defects", "verdict",
+    "reviewed_at_utc", "review_context", "frame_sampling", "learning_check",
+    "viewing_passes", "dimensions", "open_defects", "verdict",
     "support_state_effect", "non_claim"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.manim_experience_review.v1"},
+    "schema_version": {"const": "asi_stack.manim_experience_review.v2"},
     "chapter_id": {"type": "string"},
     "generation": {"type": "integer", "minimum": 1},
     "pass": {"enum": ["animatic", "picture_and_sound_lock", "release_candidate"]},
     "reviewed_master_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
     "reviewed_at_utc": {"type": "string"},
+    "review_context": {
+      "type": "object",
+      "required": ["reviewer_id", "script_author", "scene_implementer", "review_basis", "independence_notes"],
+      "properties": {
+        "reviewer_id": {"type": "string", "minLength": 3},
+        "script_author": {"type": "boolean"},
+        "scene_implementer": {"type": "boolean"},
+        "review_basis": {"enum": ["rendered_artifact", "rendered_artifact_and_source"]},
+        "independence_notes": {"type": "string", "minLength": 20}
+      },
+      "additionalProperties": false
+    },
+    "frame_sampling": {
+      "type": "object",
+      "required": ["samples_per_beat", "targeted_transition_samples", "contact_sheet_path", "interpolation_defects"],
+      "properties": {
+        "samples_per_beat": {"type": "integer", "minimum": 5},
+        "targeted_transition_samples": {"type": "integer", "minimum": 0},
+        "contact_sheet_path": {"type": "string", "minLength": 8},
+        "interpolation_defects": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "learning_check": {
+      "type": "object",
+      "required": [
+        "reviewer_prior_exposure", "comprehension_prompt", "comprehension_response_summary",
+        "comprehension_result", "transfer_prompt", "transfer_response_summary", "transfer_result",
+        "misconception_or_failure_action"
+      ],
+      "properties": {
+        "reviewer_prior_exposure": {"enum": ["cold", "familiar"]},
+        "comprehension_prompt": {"type": "string", "minLength": 20},
+        "comprehension_response_summary": {"type": "string", "minLength": 12},
+        "comprehension_result": {"enum": ["pass", "fail"]},
+        "transfer_prompt": {"type": "string", "minLength": 20},
+        "transfer_response_summary": {"type": "string", "minLength": 12},
+        "transfer_result": {"enum": ["pass", "fail"]},
+        "misconception_or_failure_action": {"type": ["string", "null"], "minLength": 12}
+      },
+      "additionalProperties": false
+    },
     "viewing_passes": {
       "type": "object",
       "required": ["normal_speed", "muted", "audio_only", "captions_on", "phone", "large_screen", "headphones", "speakers", "random_frames"],

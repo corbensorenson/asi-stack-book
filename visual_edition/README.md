@@ -1,495 +1,164 @@
 # ASI Stack Visual Edition
 
-This directory is the tracked source and accountability boundary for P7.3.
-The canonical book remains the Quarto manuscript. The visual edition projects
-each chapter into a Manim visual abstract, normally targeting three to six
-minutes while allowing justified longer treatments when clarity requires them,
-without changing the chapter's claim label, support state, maximum inference,
-or release scope.
+This directory contains the governed visual-abstract edition of *The ASI
+Stack*. The book remains canonical. A video may explain a bounded chapter idea;
+it cannot strengthen a claim, change an evidence state, or authorize its own
+publication.
 
-## Tracked
+## Start Here
 
-- the 84-entry derivative manifest;
-- the exact toolchain lock and dependency lock;
-- the candidate or ratified visual grammar;
-- the canonical YouTube channel contract and generated 84-chapter
-  publication/revision ledger;
-- the repository-local v2 authoring skill, beat-plan/review schemas, and
-  canonical generation-2 production ledger;
-- owner-authorized unlisted-preview bindings, kept separate from final
-  publication receipts, plus an explicit withdrawal record for superseded
-  predecessors;
-- immutable generation receipts and exact, non-authorizing replacement plans;
-- reusable Manim source;
-- per-chapter packet metadata, storyboard, scene code, narration, reviewed
-  captions, descriptive transcript, thumbnail, and render/platform receipts.
+Read these sources in order:
 
-## Not tracked
+1. `../skills/asi-stack-manim-videos/SKILL.md` - current authoring standard.
+2. `manim_v2_production_ledger.json` - canonical generation-two targets and
+   gates.
+3. `manifest.json` - generation-one packet custody and source freshness.
+4. `visual_grammar.json` - shared visual semantics.
+5. `narration_toolchain.json` - pinned TTS, verification, rights, and alignment
+   state.
+6. `youtube_ledger.json` and `youtube_preview_bindings.json` - platform custody
+   and current projection.
 
-Rendered video, narration audio, partial frames, and Manim caches belong under
-`build/visual_edition/`. Published binaries belong on YouTube. No upload,
-metadata change, playlist mutation, publication, replacement, or deletion is
-authorized merely because a local packet passes.
+Do not infer current state from old scene files, render receipts, or prose in a
+commit message. The generated ledgers are authoritative.
 
-## Local environment
+## Current State
 
-Create the isolated environment and install the pinned direct dependency:
+As of 2026-08-09:
+
+- The book has 85 canonical chapters.
+- Generation one preserves 84 historical packets: 9 are source-current and 75
+  are explicitly stale. The newest chapter has no fabricated predecessor.
+- Generation two has 24 case-first narration scripts and 61 planned targets.
+  The scripts are 364-436 words and pass the current narration audit.
+- Every pre-overhaul beat plan, audio file, caption file, transcript, scene,
+  render, and review is downstream of an obsolete script or standard. Those
+  artifacts remain historical, while all current acceptance gates are open.
+- No generation-two video is accepted or current in Quarto.
+- No YouTube preview is bound to the current projection, and no external
+  mutation is authorized.
+- Kokoro remains the pinned incumbent voice. Forced alignment is not yet
+  qualified, so synthesis-block timing may support animatics but cannot close
+  picture-and-sound lock.
+
+## Authoring Workflow
+
+For each chapter:
+
+1. Read the canonical chapter, packet, sources, evidence ceiling, and
+   non-claims.
+2. Select one transferable teaching promise, one concrete case, one mechanism,
+   one test or counterexample, and one natural evidence boundary.
+3. Write and audit `generation-2/narration.txt` before creating motion.
+4. Design four to six macro narrative moves, a persistent visual world, and
+   sparse semantic keyframes.
+5. Build an audio-timed `generation-2/beat_plan.json` whose narration exactly
+   covers the script.
+6. Synthesize coherent performance blocks. Use receipt timing only for an
+   animatic until a pinned aligner passes qualification.
+7. Implement a low-resolution animatic with chapter-specific domain objects.
+8. Review complete playback plus at least five frame samples per beat. Run a
+   cold comprehension and changed-condition transfer check.
+9. Qualify alignment, then complete picture-and-sound lock and the release
+   candidate gates.
+10. Reconcile platform and Quarto state only after local acceptance and exact
+    action-time authority.
+
+Use the tracked skill scripts:
 
 ```bash
-python3 -m venv build/visual_edition/venv
-build/visual_edition/venv/bin/python -m pip install "manim==0.20.1"
+python3 ../skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --narration chapters/<chapter-id>/generation-2/narration.txt \
+  --narration-only
+
+python3 ../skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  chapters/<chapter-id>/generation-2/beat_plan.json \
+  --narration chapters/<chapter-id>/generation-2/narration.txt
 ```
 
-Create the separate local narration and transcript-audit environment from the
-exact resolved lock:
+The paths above assume the shell is in `visual_edition/`. From the repository
+root, omit the leading `../` and prefix chapter paths with `visual_edition/`.
 
-```bash
-python3 -m venv build/visual_edition/tts_venv
-build/visual_edition/tts_venv/bin/python -m pip install \
-  -r visual_edition/narration_requirements.lock.txt
-```
+## Acceptance Gates
 
-The ignored model cache must contain the exact Kokoro synthesis and
-Whisper-small.en verification revisions and file digests recorded in
-`narration_toolchain.json`. The voice, model weights, virtual environments,
-raw narration, ASR JSON, and final media never enter Git or the Pages artifact.
+The production ledger fails closed. A later gate cannot pass before its
+prerequisites.
 
-Capture or verify the exact runtime:
+- **Script:** one promise, concrete case, spoken cadence, evidence fit, and
+  transfer question pass before TTS or scene code.
+- **Beat plan:** exact narration coverage, semantic state changes, object
+  continuity, audio-derived anchors, and a local evidence boundary.
+- **Animatic:** story, visual model, pacing, continuity, and payoff work at low
+  resolution.
+- **Picture and sound lock:** final geometry, timing, narration, captions, mix,
+  and qualified forced alignment.
+- **Release candidate:** pinned render profile, complete playback, accessibility,
+  five frame samples per beat, cold comprehension and transfer, and every
+  experience dimension at least 4/5.
+- **Acceptance:** independent release-candidate review, technical and claim
+  fidelity gates, exact master and receipt identity, and no open defects.
 
-```bash
-python3 scripts/capture_manim_toolchain.py --python build/visual_edition/venv/bin/python
-python3 scripts/validate_manim_toolchain.py
-python3 scripts/validate_manim_toolchain.py --probe-runtime \
-  --python build/visual_edition/venv/bin/python
-```
+Technical validity is never aesthetic or pedagogical acceptance.
 
-Generate the 84-entry manifest and validate the edition:
+## Validation
 
-```bash
-python3 scripts/build_visual_edition_manifest.py
-python3 scripts/build_youtube_ledger.py
-python3 scripts/render_youtube_thumbnails.py --all-chapters
-python3 scripts/build_youtube_thumbnail_review_sheets.py
-python3 scripts/build_youtube_upload_plan.py
-python3 scripts/build_youtube_publication_preflight.py
-python3 scripts/validate_youtube_publication_preflight.py
-python3 scripts/validate_youtube_preview_bindings.py
-python3 scripts/validate_youtube_supersession_workflow.py
-python3 scripts/validate_visual_edition.py
-python3 scripts/sync_visual_edition_embeds.py
-```
-
-Generate and validate the fail-closed generation-2 production state:
+Regenerate and validate the dynamic production ledger after chapter, script,
+standard, schema, or narration-toolchain changes:
 
 ```bash
 python3 scripts/sync_manim_v2_production_ledger.py
+python3 scripts/sync_manim_v2_production_ledger.py --check
 python3 scripts/validate_manim_v2_production_ledger.py
+python3 scripts/validate_visual_edition.py
 ```
 
-`manim_v2_production_ledger.json` is the current generation-2 authority. It
-derives all 84 targets in canonical book order, preserves every generation-one
-master and the twelve predecessor identities (now private historical custody), and prevents YouTube or
-Quarto advancement before the complete audiovisual acceptance chain passes.
-
-All counts are derived from current packets. A storyboard, scene stub, silent
-preview, unreviewed caption file, upload, or placeholder embed is not a
-completed chapter video.
-
-Current checkpoint: the 84-chapter generation-one baseline remains preserved
-as ignored local history, while generation two is the active quality lane.
-Generation-two chapters 1–17 have passed beat-plan, animatic, and
-picture-and-sound-lock gates; Chapter 18 is scripted with its custom scene,
-exact legacy-receipt captions, transcript, and thumbnail under revision;
-Chapter 19 has passed its beat-plan and animatic gates; Chapter 20 has a
-rendered animatic marked revise for narration refresh; Chapter 21 now has a
-rendered attack-surface animatic also marked revise for narration refresh;
-Chapter 22 now has a rendered rights-and-flow animatic marked revise for
-narration refresh; Chapter 23 now has a rendered confidential-computation
-animatic marked revise for narration refresh; Chapter 24 now has a rendered
-model-custody animatic marked revise for narration refresh; and chapters
-25–84 remain planned. Generation two
-does not yet have a release candidate, accepted video, YouTube-current video,
-or current Quarto embed. Chapter 14 is intentionally 06:41.90: the six-minute
-value is a preferred soft range, and shortening its allocation puzzle, standing
-repair, rights receipt, fork/export duties, evidence boundary, or handoff would
-collapse distinct teaching responsibilities. Narration uses the pinned
-Apache-2.0 Kokoro-82M bf16 model and `af_heart` voice through the MIT-licensed
-`kokoro-mlx` implementation. Exact narration receipts drive canonical caption
-timing; local AV diagnostics and receipt-derived beat reviews are evidence for
-the audiovisual derivative only, not for any book claim. Chapter 15 is
-intentionally 07:00.77: the six-minute value remains a preferred soft range,
-and compressing typed identities, affected-party standing, consumer leases,
-proxy interventions, ontology reopening, descendant retirement, or the public
-authority handoff would remove load-bearing teaching distinctions. Chapter 16
-is intentionally 08:44.63: the six-minute value is a soft target rather than a
-hard cap, and jurisdiction, public standing, representation, crosswalks,
-verification independence, commitments, capacity, capture, emergency expiry,
-remedy, competition, withdrawal, and the evidence ceiling must remain
-separate for the institutional case to be intelligible.
-
-The original technical visual grammar and narration path are `ratified` and
-`qualified_for_all_chapters`. All 84 packets are `ready_not_published`, with
-reviewed captions, descriptive transcripts, validated final masters, render
-and mux receipts, and seven exact scene-midpoint review frames. The local
-masters total 1,015,153,522 bytes outside Git and Pages. The first-generation
-twelve preview identities were withdrawn from the current projection and made
-private on YouTube; their exact custody remains in
-`youtube_preview_history_2026-07-30.json`. Generation-two candidates 19–24
-remain unlisted in the private canonical playlist. Four candidates (19, 20,
-22, and 24) are now linked as current unlisted previews; 21 and 23 are held
-out because their chapter digests drifted after upload and require a new
-render. Published-current videos, final platform receipts, and
-published-current Quarto embeds remain zero. A local validated master or an
-unlisted candidate is not a publication.
-
-Owner viewing of the first five previews exposed a stricter pedagogical
-failure that these technical receipts do not measure. Videos 2–5 are thin
-wrappers over a generic seven-tableau engine; their few entrance animations
-often finish well before the narrated idea. They are technically intact but
-not accepted for final publication. P7.3-F9 now requires a v2 beat-level plan;
-chapter-specific art direction, signature image, and persistent visual world;
-purposeful state change for every substantive spoken idea; semantic easing and
-camera rules; audio-derived clause-level anchors; directed narration and sound;
-integrated accessibility; and three-gate animatic, picture-and-sound-lock, and
-release-candidate review. Full experience review covers 1×, muted, audio-only,
-captions-on, phone/large-screen, headphone/speaker, and random-frame passes and
-requires at least 4/5 independently for clarity, composition, motion, sync,
-continuity, pacing, voice, mix, engagement, accessibility, and claim fidelity.
-The first five form the remediation cohort, the remaining seven previews
-followed, and chapters 13–84 were held until the revised method passed. Chapters
-13–17 are now through picture-and-sound lock under that method; Chapter 19 has
-cleared animatic; Chapter 20 has a rendered animatic marked revise because its
-inherited narration still needs a fresh voice/prose pass; Chapter 21 has a
-rendered attack-surface animatic marked revise for the same reason; Chapter 22
-has a rendered rights-and-flow animatic marked revise for the same reason; and
-chapters 18 and 25–84 remain gated behind the same production chain. Existing unlisted embeds remain
-historical review previews, not publication-quality acceptance.
-
-The generation-2 ledger currently has 60 planned chapters, one scripted chapter,
-one animatic-passed chapter, five animatics marked revise, and seventeen chapters
-through both animatic and picture-and-sound lock. The
-first seventeen
-replacements use chapter-specific persistent worlds, audio-derived beat timing,
-exhaustive caption-boundary review, and independent per-dimension scores without
-average laundering. Chapter 10, `human-factors-and-meaningful-control-in-oversight`,
-turns one synthetic transfer episode into a worked distinction among nominal
-approval, informed review, effective intervention, and meaningful control; it
-tests an eight-condition control envelope, exercises the safe-hold path, and
-keeps the task record separate from any score of the person. Rejected
-animatics remain preserved as generation history. Chapter 12,
-`constitutional-alignment-substrate`, follows Lina's threatened midnight
-housing-payment suspension through a noncompensating four-plane review,
-inaccessible-appeal failure, bounded pre-effect correction, self-weakening
-constitutional update, descendant-handle preservation, and explicitly finite
-proof envelope. Chapter 13, `inner-alignment-mesa-optimization-and-learned-objective-integrity`,
-uses an identical-trace sorting-lab puzzle, a sealed stripe intervention,
-camera-aware policy test, four evidence lanes, mitigation transfer, and a
-finite objective-integrity boundary. Chapter 14,
-`moral-uncertainty-and-value-conflict`, uses one emergency generator, two
-defensible obligations, a value-conflict record, a bounded decision lease, a
-linked rights receipt, fail-closed standing repair, custody separation,
-replacement/fork requalification, and an explicit non-claim boundary. Chapter
-15, `governed-objective-formation-value-learning-and-goal-integrity`, uses a
-Rivergate flood-harm charter to keep purpose, target property, evidence, proxy,
-signal, planner, affected-party standing, consumer leases, evaluator authority,
-and descendant retirement distinct; its sealed proxy intervention,
-hidden-neighborhood counterexample, finite registry, and public-authority
-handoff remain explicitly bounded. Chapter 16,
-`institutions-international-coordination-and-public-legitimacy`, uses a
-Northline cross-border flood-response corridor to keep jurisdiction, affected
-public, representation provenance, science/law/policy/standard crosswalks,
-verification independence, commitment lifecycle, capacity, capture, emergency
-expiry, remedy, competition, withdrawal custody, and legitimacy residuals
-typed. Its provider-paid assessor pause, missing-standing repair, hidden-
-settlement counterexample, finite tabletop, and evidence ceiling remain
-explicitly bounded. Chapter 17,
-`societal-resilience-and-misuse-defense`, uses a synthetic Harborline
-benefits-portal impersonation incident to keep resist, absorb, recover, and
-adapt distinct; its federated incident envelope, lawful-minimal privacy
-custody, coverage graph, correlated-detector failure, language-access false
-positive, affected-path inventory, authority handoff, correction propagation,
-residual ledger, and finite tabletop ceiling remain explicitly bounded. All
-seventeen delivery masters remain
-candidates only: no generation-2 video has passed release-candidate,
-independent, technical, claim-fidelity, or acceptance gates. Six candidates
-(chapters 19–24) are now present on YouTube only as unlisted uploads with
-platform receipts; none is YouTube-current or projected into Quarto.
-
-Chapter 18, `stable-capability-fields`, now has a bespoke qualification-desk
-scene: a field contract stays stable while candidate implementations,
-consumer leases, authority ceilings, evidence lanes, residuals, and
-effect-complete recovery remain separate. Its current 04:21.975 script uses
-the byte-identical pinned narration receipt from the prior local chapter
-render so captions remain exact while the host Metal runtime is unavailable;
-the v2 beat-plan lint still requires a fresh narration pass before animatic
-lock. It therefore remains scripted rather than accepted, and no support-state
-promotion is implied.
-
-Chapter 19, `capability-replacement-and-rollback`, now has a bespoke
-transaction-control-desk scene: a prior route, candidate route, full
-state/effect inventory, monitor-triggered stop, recovery/compensation path,
-terminal receipt, bounded campaign counters, and explicit nonclaim fan remain
-visible across 24 receipt-bound beats. Its 05:18.170 exact narration receipt,
-72 captions, descriptive transcript, thumbnail, low-resolution animatic, and
-mechanical A/V audit are complete at the animatic gate; picture-and-sound lock,
-release-candidate, independent review, publication, and Quarto reconciliation
-remain intentionally ungranted.
-
-Chapter 20, `security-kernel-and-digital-scifs`, now has a bespoke
-security-operations desk: an untrusted prompt fans across model, runtime,
-operator, vendor, and descendant boundaries; an exact principal/purpose/target/
-taint/budget/nonce lease admits minimized context into a graded SCIF; the
-effect gate, revocation lanes, confused-deputy failures, typed dispositions,
-bounded local counters, and media non-promotion boundary remain visible across
-22 receipt-bound beats. Its 04:57.030 exact legacy-receipt animatic, 64
-captions, descriptive transcript, thumbnail, low-resolution render, and
-mechanical A/V audit are complete, but the animatic is marked revise because
-the inherited narration contains legacy template framing; a fresh narration
-receipt is required before picture-and-sound lock. No publication, Quarto
-reconciliation, or support-state promotion is implied.
-
-Chapter 21, `adversarial-machine-learning-and-model-attack-surface`, now has a
-bespoke attack-surface lab: a checkpoint vault, versioned model-threat contract,
-separate attack-lane matrix, adaptive attacker, joint utility/recovery ledger,
-typed residual dispositions, and a bounded rights-handoff airlock remain visible
-across 18 provisional receipt-bound beats. Its 04:31.570 legacy-receipt
-animatic, 63 exact captions, descriptive transcript, custom thumbnail,
-low-resolution render, and mechanical A/V audit are complete at the animatic
-gate. The animatic is marked revise because its inherited narration still needs
-a fresh prose/voice pass; a new narration receipt is required before
-picture-and-sound lock. No publication, Quarto reconciliation, or support-state
-promotion is implied.
-
-Chapter 22, `privacy-data-rights-and-information-flow-governance`, now has a
-bespoke rights-and-flow control room: an affected-party register, prospective
-purpose contract, minimization sieve, lifecycle flow map, rights/remedy ledger,
-residual vault, and bounded handoff airlock remain visible across 17 provisional
-receipt-bound beats. Its 04:20.280 legacy-receipt animatic, 55 exact captions,
-descriptive transcript, custom thumbnail, low-resolution render, and mechanical
-A/V audit are complete at the animatic gate. The animatic is marked revise
-because its inherited narration still needs a fresh prose/voice pass; a new
-narration receipt is required before picture-and-sound lock. No publication,
-Quarto reconciliation, or support-state promotion is implied.
-
-Chapter 23, `confidential-and-verifiable-ai-computation`, now has a bespoke
-trust-boundary control room: an input capsule, model vault, compositional
-execution contract, seven-lane guarantee matrix, primitive rack, attestation
-receipt, independent verifier, and fallback airlock remain visible across 22
-provisional receipt-bound beats. Its 05:13.180 legacy-receipt animatic, 66 exact
-captions, descriptive transcript, custom thumbnail, low-resolution render, and
-mechanical A/V audit are complete at the animatic gate; a final-hold padding
-step reconciles the 15 fps render to the exact receipt duration. The animatic
-is marked revise because its inherited narration still needs a fresh
-prose/voice pass; a new narration receipt is required before picture-and-sound
-lock. No publication, Quarto reconciliation, or support-state promotion is
-implied.
-
-Chapter 24, `model-weight-custody-and-hardware-roots-of-trust`, now has a
-bespoke custody control room: a capability-bearing state fan, prospective
-custody contract, holder ledger, lifecycle-role lanes, finite deterministic
-router, formal-target chain, evidence ceiling, key-freshness gate, bounded-load
-airlock, media nonpromotion boundary, and irreversible post-release divergence
-remain visible across 20 provisional receipt-bound beats. Its 04:56.490
-legacy-receipt animatic, 64 exact captions, descriptive transcript, custom
-thumbnail, low-resolution render, and mechanical A/V audit are complete at the
-animatic gate. The animatic is marked revise because its inherited narration
-still needs a fresh prose/voice pass; a new narration receipt is required before
-picture-and-sound lock. No publication, Quarto reconciliation, or support-state
-promotion is implied.
-
-The six new generation-2 masters for chapters 19–24 are staged locally in
-`youtube_generation2_upload_candidates.json` with exact hashes, captions,
-transcripts, thumbnails, chapter digests, and playlist positions. Their upload
-privacy is intentionally `unlisted`; each now has a recorded YouTube video ID,
-saved title/description and Education metadata, a custom thumbnail, and a
-published English caption track. They remain revise-status candidates: none
-has been projected into Quarto or marked YouTube-current.
-
-The repository-local `skills/asi-stack-manim-videos/` authoring skill includes
-a structural v2 beat-plan audit,
-start/middle/end frame extraction for every beat, and mechanical A/V
-diagnostics for freezes, black intervals, silence, duration drift, loudness,
-and true peak. On the Chapter 14 picture-and-sound lock, the diagnostic found
-thirteen
-intentional 6.0–9.9-second reading holds while the audio measured -16.4 LUFS
-integrated, 3.1 LU loudness range, and -1.3 dBTP. Each hold is paired with
-narrated reasoning and a visible state transition; mechanical checks locate
-review risks and do not certify beauty, comfort, truth, or learning.
-
-The preview exception is narrow and explicit. A managed player may appear
-before full publication only when an exact row in
-`youtube_preview_bindings.json` binds the owner authorization, canonical
-position, YouTube identity, local master, chapter digest, source commit,
-caption, transcript, thumbnail state, and unlisted visibility. The player and
-landing-page roster must identify the incomplete denominator, and preview
-counts must remain separate from `published_current`. The current projection
-is **4/84** at canonical positions 19, 20, 22, and 24: the twelve
-generation-one predecessors were withdrawn from Quarto and the landing page
-on 2026-08-02, with their exact identities and digests preserved in
-`youtube_preview_history_2026-07-30.json`. Candidates 21 and 23 remain
-unlisted but are held out for chapter-digest re-rendering; chapters 1–18 and
-25–84 have no current YouTube preview link.
-
-Each packet keeps an editable SVG thumbnail source in Git. Upload preparation
-rasterizes it to an ignored 3840×2160 PNG, binds both source and output
-digests, rejects files above the YouTube Data API's 2 MB ceiling, and builds
-bounded contact sheets for visual review. The publication plan stages every
-first-generation upload as `unlisted`; the reconciled set becomes `public`
-only after video processing, metadata, captions, thumbnails, playlist order,
-receipts, and embeds all pass.
-
-`youtube_publication_preflight.json` proves that all 84 exact local master,
-caption, and thumbnail triples remain ready without claiming an upload. It
-binds `youtube_mutation_scope.json`, the immutable allowlist, prohibition list,
-stop conditions, channel identity, and exact upload-plan digest to which
-action-time approval and every platform receipt must refer. Preparing or
-hashing that scope is not authorization. The preflight also records two honest
-execution routes. YouTube Studio accepts at most 15
-files in one upload dialog, so the browser route uses batches of
-15/15/15/15/15/9 and stops cleanly on the channel-specific daily video or
-thumbnail limit. The Data API fallback uses resumable uploads, but its default
-100-video insert bucket and 10,000-unit general bucket require at least five
-quota days to attach 84 reviewed caption tracks, thumbnails, ordered playlist
-items, and final privacy transitions. An unverified API project also
-force-restricts uploads to private, so it is not a publication shortcut.
-
-Visual QA samples the midpoint of each exact narration scene from the mux
-receipt, not arbitrary fractions of total runtime. The 84-chapter review is 21
-bounded contact sheets covering 588 scene-midpoint frames. This sampling
-contract caught and replaced an earlier percentage-based reviewer that could
-land inside transitions and misrepresent scene completeness.
-
-Release renders use the exact 1920×1080/30-fps values in `manim.cfg` with no
-quality shortcut flag. In particular, `-qh` is not the release command because
-ManimCE 0.20.1 expands that shortcut to 1080p60 and would override the pinned
-frame-rate contract.
-
-The embed synchronizer is a no-write check by default. After an exact packet is
-`published_current`, run it with `--write` to place the
-`youtube-nocookie.com` player and the packet's full descriptive transcript
-next to one another in the canonical chapter. It removes managed blocks for
-videos that are no longer current and rejects unmanaged YouTube embeds.
-Chapter freshness is computed over canonical manuscript content with this
-managed block excluded. Consequently, inserting or replacing the generated
-player cannot make its own packet stale, while any material prose or source
-change outside the block still changes the bound digest.
-
-Not every digest change requires a new video. Source-assignment metadata,
-passage-review status, or added prose can change canonical chapter bytes while
-leaving the visual abstract's problem, mechanism, trace, failure boundary,
-evidence ceiling, non-claims, and handoff intact. In that case,
-`reconcile_visual_chapter_bindings.py` permits an identity-only rebind: all
-seven generated semantic fields must match byte for byte, or a hand-authored
-pilot must have an explicit reviewed rationale. The command preserves media,
-receipts, lifecycle, and support state and records every decision in
-`chapter_binding_revalidation.json`. Any semantic mismatch fails closed and
-requires regeneration.
-
-## YouTube identity and chapter updates
-
-`youtube_channel.json` binds this edition to the verified **corben sorenson**
-channel, ID `UCX7Tu67cGmKfT6O38xxiQFA`. Authentication proves access only; it
-does not authorize an upload or another mutation. The all-84 local validation
-prerequisite is satisfied, but the canonical playlist remains uncreated until
-exact action-time authority is given.
-
-`youtube_ledger.json` is generated in book order and provides one row for every
-canonical chapter, including chapters without packets. Each row preserves the
-stable internal identity `asi-video-<chapter-id>`, current chapter digest,
-packet and lifecycle state, YouTube channel/video/playlist identity, upload
-generation, uploaded render digest, bound chapter digest and source commit,
-publication receipt, predecessor video, and the next required action. Rebuild
-the ledger after any chapter, packet, publication, or playlist change.
-
-## P7.3-F10 — withdrawn predecessor preview (2026-08-02)
-
-The first-generation 1–12 previews are no longer allowed to project as the
-current visual edition. `youtube_preview_bindings.json` now records an
-explicit `owner_withdrew_partial_unlisted_preview` state with zero current
-entries and `next_upload_position: 1`; the previous twelve identities,
-master/chapter/source/caption digests, and platform observations are retained
-in `youtube_preview_history_2026-07-30.json`. The managed chapter players and
-landing-page roster were removed by the same reconciler, so the living book
-does not point at an old generation. The YouTube objects were changed to
-**private** historical custody at the same time and remain private until a
-successor is accepted; this is reversible and does not delete or rewrite
-platform history. No chapter claim, support state,
-published-current state, or generation-two candidate was promoted.
-
-## P7.3-F11 — current generation-two preview projection (2026-08-02)
-
-The owner-authorized current projection now links the four generation-two
-videos whose uploaded master and chapter digests still agree: positions 19,
-20, 22, and 24. Their YouTube rows are observed `unlisted`, with captions
-published and reviewed thumbnails applied; the managed chapter players and
-landing-page roster are reconciled to those exact identities. Candidates 21
-and 23 remain on YouTube as unlisted historical candidates but are not linked,
-because their chapters changed after upload and the candidate digests no
-longer match. This projection is preview-only: it changes no claim, support,
-publication, or public-current state.
-
-YouTube does not replace an uploaded binary at the same URL. A material chapter
-revision therefore creates a new video generation and new YouTube video ID.
-The prior generation and receipt remain historical; by default the prior video
-becomes unlisted and points to the current generation. In the same governed
-transaction, the new upload enters the canonical playlist position, its packet
-becomes `published_current`, the old packet generation becomes `superseded`,
-and the Quarto embed is reconciled to the new ID. The validator rejects a stale
-ledger, a mismatched uploaded/render digest, a missing platform receipt, a
-wrong channel, or an embed that does not match the current publication state.
-Regenerating a packet preserves any existing platform identity as `stale`
-instead of resetting it to an unpublished blank. The ledger derives its
-append-only `generations` history from immutable receipts under
-`visual_edition/platform_receipts/generation-N/`; it rejects gaps, duplicate
-video IDs, broken predecessor chains, or disagreement between the latest
-receipt and the packet's current platform projection.
-
-After a published chapter is materially revised and its new local derivative
-is validated, prepare its replacement transaction:
+Audit all current generation-two scripts:
 
 ```bash
-python3 scripts/prepare_youtube_supersession.py \
-  --chapter-id <chapter-id> \
-  --change-reason "<material revision>" \
-  --write
-python3 scripts/validate_youtube_supersession_workflow.py
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --all-narrations visual_edition/chapters
 ```
 
-The resulting `visual_edition/supersession_plans/<chapter-id>-gN.json` is the
-complete allowlist, ordering, rollback, stop-condition, predecessor, and
-replacement contract for that one generation. Its file SHA-256 is the only
-valid action-time authorization scope for that replacement. Generation-one
-publication authority cannot be reused, and preparing the plan is not
-authorization. After the exact platform steps have been performed and both
-the replacement and predecessor disposition have been observed, record and
-reconcile them:
+The manifest and YouTube builders derive counts from canonical structure and
+current packet state. Never restore fixed chapter-count assumptions.
 
-```bash
-python3 scripts/record_youtube_supersession_receipt.py \
-  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
-  --authorization-scope-sha256 <exact-plan-sha256> \
-  <observed-platform-arguments> \
-  --write
-python3 scripts/reconcile_youtube_supersession_receipt.py \
-  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
-  --receipt visual_edition/platform_receipts/generation-N/<chapter-id>.json
-python3 scripts/reconcile_youtube_supersession_receipt.py \
-  --plan visual_edition/supersession_plans/<chapter-id>-gN.json \
-  --receipt visual_edition/platform_receipts/generation-N/<chapter-id>.json \
-  --write
-```
+## Historical Generation One
 
-The reconciler verifies the new public video, exact master and metadata,
-caption and thumbnail, playlist position, predecessor pointer, predecessor
-`unlisted` state, and removal of only the predecessor playlist item. Its
-rollback restores tracked repository bytes and never deletes either YouTube
-generation. The no-write reconciliation command is the required preview.
+Generation one is preserved for custody and comparison. It is not an authoring
+template. Its seven-scene card renderer, packet generator, paragraph-timing
+sync, bulk renderer, producer, and mux require the explicit
+`--historical-generation-one` acknowledgement.
 
-After platform processing and public observation, use
-`record_youtube_platform_receipt.py` to bind the exact video, playlist item,
-metadata, reviewed caption, thumbnail, local master, chapter, source commit,
-authorization scope, and public observation. Once all 84 receipts exist,
-`reconcile_youtube_publication_receipts.py` validates the complete set before
-changing any tracked file. Its `--write` mode then updates all packets,
-channel/playlist identity, manifest, revision ledger, and managed Quarto
-blocks as one complete-edition reconciliation; it never calls YouTube itself.
+Do not use those commands to fill count symmetry, create a new chapter, or
+produce a current candidate. Do not overwrite historical receipts.
+
+## Storage Boundary
+
+Track compact, reviewable sources and contracts:
+
+- chapter scripts, beat plans, scene source, storyboards, captions,
+  transcripts, thumbnails, reviews, ledgers, schemas, and digest receipts;
+- the shared visual grammar, pronunciation lexicon, dependency locks, and
+  publication contracts.
+
+Keep large reproducible artifacts under ignored `build/visual_edition/`:
+
+- model weights and virtual environments;
+- raw or normalized narration audio;
+- Manim caches, partial renders, review frames, contact sheets, and final
+  masters;
+- ASR and alignment working output.
+
+Do not regenerate large media merely to refresh status. Render when a script or
+visual hypothesis is ready for its next review gate.
+
+## Publication Boundary
+
+YouTube IDs, visibility, captions, thumbnails, playlist position, predecessor
+state, Quarto embeds, and receipts form one governed transaction. A local
+render, passing review, upload plan, or prior browser session supplies no
+external mutation authority.
+
+Preserve predecessor history. Publish a successor only after exact local
+acceptance and action-time authorization, then reconcile the platform receipt
+and live-book projection together.

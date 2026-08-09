@@ -3,6 +3,7 @@
 ## Contents
 
 - Direct the voice
+- Qualify and align TTS
 - Mix for comprehension
 - Use music and sound effects sparingly
 - Integrate accessibility into authorship
@@ -27,6 +28,41 @@ Write and synthesize for a human thought process, not a document reader.
 Listen to the narration without video. If its structure is unclear on its own,
 the animation is being asked to repair the script.
 
+Synthesize coherent performance blocks rather than isolated sentences. A block
+should carry one thought, pacing instruction, and emotional contour. Preserve
+enough surrounding text when regenerating a line to avoid a visible change in
+prosody, then crossfade only at a natural boundary. Fixed pauses after every
+sentence create a mechanical cadence; direct pauses by meaning.
+
+## Qualify and align TTS
+
+Keep the current pinned voice until a controlled audition demonstrates a better
+choice. Model novelty is not a reason to regenerate a series. For a candidate
+voice or model, synthesize the same 60–90 second excerpt and compare at matched
+loudness without revealing the provider when practical. Score:
+
+- intelligibility and pronunciation;
+- naturalness across a complete thought;
+- controllable emphasis, contrast, questions, and pauses;
+- consistency across regenerated blocks and a long-form passage;
+- alignment quality and caption timing;
+- latency, reproducibility, hardware and dependency burden;
+- license, redistribution, disclosure, privacy, and cost; and
+- voice-likeness or cloning rights.
+
+Do not clone or imitate a person's voice without explicit consent and usable
+publication rights. Record the selected model, exact version, voice, settings,
+license, and disclosure policy in the tracked toolchain. Candidate systems such
+as Kokoro, Qwen3-TTS, Chatterbox, Fish Audio, or a hosted service must pass the
+same audition; this document does not pre-approve any of them.
+
+After final synthesis, use forced alignment for word or phrase timestamps.
+Whisper transcription is useful for content verification but is not by itself
+a precise synchronization contract. Prefer a pinned WhisperX, Montreal Forced
+Aligner, stable-ts, or equivalent route whose language, model, and failure
+behavior are recorded. Manually inspect anchors around names, symbols, pauses,
+and regenerated joins.
+
 ## Mix for comprehension
 
 Treat speech as the primary signal. Pin a project loudness target and use it
@@ -44,6 +80,8 @@ and true peak, but judge comfort on real playback systems as well.
   voice brittle or pumping.
 - Add short fades at audio boundaries and listen for discontinuities at every
   regenerated splice.
+- Keep a lossless narration master. Encode distribution audio only after the
+  final mix and caption alignment pass.
 
 Do not apply the EBU R128 broadcast target of -23 LUFS as a universal YouTube
 target. Use EBU measurement concepts and the -1 dBTP ceiling while following
@@ -120,4 +158,9 @@ the waveform symptom.
 - [W3C: Captions and subtitles](https://www.w3.org/WAI/perspective-videos/captions/)
 - [EBU loudness resources](https://tech.ebu.ch/groups/loudness)
 - [EBU R128s4 internet-delivery guidance](https://tech.ebu.ch/files/live/sites/tech/files/shared/r/r128s4.pdf)
+- [Kokoro-82M model card](https://huggingface.co/hexgrad/Kokoro-82M)
+- [Qwen3-TTS reference implementation](https://github.com/QwenLM/Qwen3-TTS)
+- [WhisperX paper and implementation](https://github.com/m-bain/whisperX)
+- [Montreal Forced Aligner documentation](https://montreal-forced-aligner.readthedocs.io/)
+- [Manim Voiceover documentation](https://voiceover.manim.community/en/stable/)
 - [Apple reduced-motion evaluation criteria](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)
