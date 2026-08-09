@@ -103,10 +103,10 @@ three cases safely, refused five, quarantined one, attempted three rollbacks,
 completed two exactly, and preserved the failed rollback as an open residual.
 It produced zero false accepts and zero unsafe releases in this bounded slice.
 
-The result is not that “more governance wins.” The governed route spent 66
+Those counts do not imply that “more governance wins.” The governed route spent 66
 deterministic cost units, 89 trace steps, and nine review steps, compared with
-27 cost units, 27 trace steps, and no review for the simple route. The result
-is that integration has a price and a falsifiable shape. Intent, context,
+27 cost units, 27 trace steps, and no review for the simple route. Instead, the
+comparison gives integration a price and a falsifiable shape. Intent, context,
 authority, observation, evaluation, rollback, evidence, and residual custody
 must join around the same effect. If the architecture cannot show that joined
 lineage, a green subsystem does not authorize the release. The detailed event

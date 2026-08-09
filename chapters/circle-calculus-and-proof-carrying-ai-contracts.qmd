@@ -162,7 +162,7 @@ Now give the same receipt to two consumers:
 | Architecture promotion gate | Does the receipt show that a trained model uses longer context better, faster, or with less memory? | **Reject promotion.** | No model workload, baseline, quality metric, runtime trace, or memory result is present. |
 
 Nothing about the theorem changes between those decisions. What changes is the
-authority requested by the consumer. This is why proof transport cannot be a
+authority requested by the consumer, so proof transport cannot collapse into a
 single green badge. A valid receipt can be enough for a diagnostic and
 insufficient for adoption at the same time.
 

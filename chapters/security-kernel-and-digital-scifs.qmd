@@ -147,7 +147,7 @@ payload and handle still do not leave.
 Six nearby controls make the boundary concrete. A literal secret, a live
 handle, missing zeroization, overbroad context, an inactive approval aimed at
 `external://public-web`, or a missing residual boundary all block before
-commit. The result is useful precisely because it distinguishes “safe to write
+commit. This bounded verdict distinguishes “safe to write
 this sanitized record” from “the whole system is secure.” No network, private
 source, deployed vault, deployed sandbox, publication, or dispatched job was
 involved. The probe validates transaction shape and denial behavior; it does
