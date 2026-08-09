@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import platform
 import re
 import subprocess
 from pathlib import Path
@@ -99,21 +100,31 @@ def errors(value: dict) -> list[str]:
         failures.append("Manim configuration digest drift")
     if value.get("visual_grammar_sha256") != digest(GRAMMAR):
         failures.append("visual grammar digest drift")
-    for name, binding in value.get("media_tools", {}).items():
-        path = Path(binding.get("path", ""))
-        if not path.is_file() or digest(path) != binding.get("sha256"):
-            failures.append(f"{name} executable identity drift")
-            continue
-        try:
-            version_line = subprocess.check_output(
-                [str(path), "-version"], text=True, stderr=subprocess.STDOUT,
-                timeout=30,
-            ).splitlines()[0]
-        except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
-            failures.append(f"{name} executable version probe failed")
-        else:
-            if not version_line.startswith(f"{name} version {binding.get('version')} "):
-                failures.append(f"{name} executable version drift")
+    captured_host = value.get("host", {})
+    on_captured_host_class = (
+        platform.system() == "Darwin"
+        and platform.machine() == captured_host.get("architecture")
+    )
+    # The schema is the cross-platform lock for the exact qualified macOS/ARM
+    # binaries.  Only dereference and execute those absolute paths on the host
+    # class that can actually own them; Linux CI validates the lock, not a
+    # fictitious local render runtime.
+    if on_captured_host_class:
+        for name, binding in value.get("media_tools", {}).items():
+            path = Path(binding.get("path", ""))
+            if not path.is_file() or digest(path) != binding.get("sha256"):
+                failures.append(f"{name} executable identity drift")
+                continue
+            try:
+                version_line = subprocess.check_output(
+                    [str(path), "-version"], text=True, stderr=subprocess.STDOUT,
+                    timeout=30,
+                ).splitlines()[0]
+            except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                failures.append(f"{name} executable version probe failed")
+            else:
+                if not version_line.startswith(f"{name} version {binding.get('version')} "):
+                    failures.append(f"{name} executable version drift")
     grammar = json.loads(GRAMMAR.read_text(encoding="utf-8"))
     failures.extend(visual_grammar_errors(grammar))
     typography = grammar.get("typography", {})

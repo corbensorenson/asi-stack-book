@@ -88,8 +88,28 @@
       "type": "object",
       "required": ["ffmpeg", "ffprobe"],
       "properties": {
-        "ffmpeg": {"$ref": "#/$defs/media_tool"},
-        "ffprobe": {"$ref": "#/$defs/media_tool"}
+        "ffmpeg": {
+          "allOf": [
+            {"$ref": "#/$defs/media_tool"},
+            {
+              "properties": {
+                "path": {"const": "/opt/homebrew/bin/ffmpeg"},
+                "sha256": {"const": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"}
+              }
+            }
+          ]
+        },
+        "ffprobe": {
+          "allOf": [
+            {"$ref": "#/$defs/media_tool"},
+            {
+              "properties": {
+                "path": {"const": "/opt/homebrew/bin/ffprobe"},
+                "sha256": {"const": "6057aa35c4dc2686b5368680c36fe39df2ea82e8adca509d2b04994c65280642"}
+              }
+            }
+          ]
+        }
       },
       "additionalProperties": false
     },
