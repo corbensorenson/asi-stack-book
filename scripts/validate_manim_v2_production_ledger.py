@@ -438,7 +438,7 @@ def sandbox_policy_receipt_errors(
         "unlisted_repository_content_access": False,
         "repository_content_mode": "explicit_inputs_plus_build",
         "system_content_roots": [
-            str(path) for path in runner_module.SYSTEM_READ_ROOTS if path.exists()
+            str(path) for path in runner_module.SYSTEM_READ_ROOTS
         ],
         "rationale": (
             "The macOS Python launcher and native dependencies require the "
@@ -2508,7 +2508,7 @@ def sandbox_receipt_negative_control_failures() -> tuple[list[str], int]:
         value, schema, ledger, entry, {}, final_receipt, runner, check_files=False
     )
     if baseline:
-        return ["valid sandbox receipt fixture failed: " + "; ".join(baseline)], 17
+        return ["valid sandbox receipt fixture failed: " + "; ".join(baseline)], 22
     controls = (
         ("network declaration", lambda row: row.__setitem__("network_access", True), "network_access"),
         ("credential inheritance", lambda row: row.__setitem__("credential_environment_inherited", True), "credential_environment_inherited"),
