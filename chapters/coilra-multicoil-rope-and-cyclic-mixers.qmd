@@ -164,7 +164,7 @@ The decision is therefore split rather than vaguely “promising”:
    or restore the ordinary substrate.
 
 The simpler parameter-count baseline would declare a 16× reduction and stop.
-This chapter treats that reduction as one ledger entry. Adoption remains
+The adoption ledger records that reduction as one entry. Adoption remains
 blocked because a small parameter tensor can still be slower on real hardware,
 harder to optimize, or worse for the target workload.
 

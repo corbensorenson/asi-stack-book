@@ -127,7 +127,7 @@ No repeated first-sentence stems were detected with the current eight-word heuri
 | `mathematical-and-search-substrates` | 4,829 | 62 | 95 | 0 | 1 | 0 | 1 | medium |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 2,724 | 43 | 107 | 0 | 1 | 0 | 0 | medium |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 3,445 | 55 | 54 | 0 | 1 | 0 | 0 | low |
-| `coilra-multicoil-rope-and-cyclic-mixers` | 4,551 | 68 | 157 | 0 | 1 | 0 | 0 | medium |
+| `coilra-multicoil-rope-and-cyclic-mixers` | 4,551 | 68 | 158 | 0 | 1 | 0 | 0 | medium |
 | `executable-specifications-and-lean-proof-envelope` | 2,794 | 51 | 125 | 0 | 1 | 0 | 0 | medium |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 7,128 | 101 | 162 | 21 | 2 | 0 | 0 | high |
 | `white-box-evidence-interpretability-and-activation-governance` | 4,901 | 69 | 28 | 50 | 2 | 0 | 0 | high |

@@ -254,18 +254,28 @@ def main() -> None:
         review["semantic_sweep"]["prose_candidates_adjudicated"] = current_count
         review["semantic_sweep"]["unowned_material_claims"] = 0
         prior_review_note = str(review["semantic_sweep"].get("review_note", "")).rstrip()
-        review["semantic_sweep"]["review_note"] = prior_review_note + (
-            " The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, "
-            "operational rule, concrete lens, worked-scene proposition, "
-            "line-wrap fragment, and explicit inference limit is bound to the current chapter and "
-            "digest-bound editorial packet. Complete propositions map to existing reviewed atoms; "
-            "fixture reports and fragments remain separately classified. No support-state, evidence, "
-            "release, SOTA, AGI, or ASI promotion is introduced."
+        note_addendum = (
+            "The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, "
+            "operational rule, concrete lens, worked-scene proposition, line-wrap fragment, "
+            "and explicit inference limit against the current chapter and digest-bound editorial "
+            "packet. Complete propositions map to existing reviewed atoms; fixture reports and "
+            "fragments remain separately classified. No support-state, evidence, release, SOTA, "
+            "AGI, or ASI promotion is introduced."
+        )
+        review["semantic_sweep"]["review_note"] = (
+            prior_review_note
+            if "The 2026-08-09 P7.1c pass" in prior_review_note
+            else f"{prior_review_note} {note_addendum}".strip()
         )
         prior_time = str(review["chapter_defaults"]["scope"].get("time", "")).rstrip()
-        review["chapter_defaults"]["scope"]["time"] = prior_time + (
-            " Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; "
+        time_addendum = (
+            "Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; "
             "later material changes to those surfaces or their section ownership require reauthorization."
+        )
+        review["chapter_defaults"]["scope"]["time"] = (
+            prior_time
+            if "Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09" in prior_time
+            else f"{prior_time} {time_addendum}".strip()
         )
         dump(review_path, review)
         chapter_records.append({
