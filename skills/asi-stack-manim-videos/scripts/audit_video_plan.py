@@ -15,6 +15,7 @@ import re
 import subprocess
 import sys
 from collections import Counter
+from itertools import combinations
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
@@ -85,6 +86,23 @@ STATIC_ACTIONS = {
     "show card",
     "fade in card",
 }
+TRANSFER_ACTION_RE = re.compile(
+    r"\b(?:apply|choose|construct|decide|diagnose|distinguish|explain|identify|"
+    r"predict|reason|recognize|test|trace)\b",
+    re.I,
+)
+SCOPE_LIMIT_RE = re.compile(
+    r"\b(?:can(?:not|'t)|do(?:es)? not|doesn't|is not evidence|not prove|"
+    r"not establish|not guarantee|not demonstrate)\b",
+    re.I,
+)
+CONTENT_STOPWORDS = {
+    "a", "an", "and", "are", "as", "at", "be", "before", "but", "by",
+    "can", "could", "for", "from", "has", "have", "how", "in", "into",
+    "is", "it", "its", "may", "must", "not", "of", "on", "or", "should",
+    "that", "the", "their", "then", "this", "to", "viewer", "when", "which",
+    "will", "with",
+}
 
 
 def words(text: str) -> list[str]:
@@ -103,6 +121,31 @@ def sentences(text: str) -> list[str]:
     return [item.strip() for item in re.split(r"(?<=[.!?])\s+", text.strip()) if item.strip()]
 
 
+def content_tokens(text: str) -> list[str]:
+    return [token for token in normalized(text).split() if token not in CONTENT_STOPWORDS]
+
+
+def token_jaccard(left: str, right: str) -> float:
+    left_tokens = set(content_tokens(left))
+    right_tokens = set(content_tokens(right))
+    if not left_tokens or not right_tokens:
+        return 0.0
+    return len(left_tokens & right_tokens) / len(left_tokens | right_tokens)
+
+
+def near_duplicate_pairs(values: list[str], threshold: float = 0.72) -> list[dict]:
+    pairs = []
+    for left_index, right_index in combinations(range(len(values)), 2):
+        score = token_jaccard(values[left_index], values[right_index])
+        if score >= threshold:
+            pairs.append({
+                "left": left_index,
+                "right": right_index,
+                "content_token_jaccard": round(score, 3),
+            })
+    return pairs
+
+
 def audit_teaching_promise(value: str | None) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -116,6 +159,11 @@ def audit_teaching_promise(value: str | None) -> tuple[list[str], list[str]]:
     joins = len(re.findall(r"\band\b", value, flags=re.I))
     if joins > 2 or value.count(";") or value.count(",") > 2:
         errors.append("teaching_promise reads as a coverage list rather than one outcome")
+    if not TRANSFER_ACTION_RE.search(value):
+        warnings.append(
+            "teaching_promise does not name an observable transfer action such as "
+            "predict, explain, distinguish, apply, or diagnose"
+        )
     return errors, warnings
 
 
@@ -138,10 +186,17 @@ def audit_narration(
     if word_count > 650:
         errors.append(f"narration has {word_count} words; scripts above 650 must be split or reselected")
 
+    script_sentences = sentences(clean)
     long_sentence_count = 0
     extreme_sentence_count = 0
     list_sentence_count = 0
-    for sentence in sentences(clean):
+    sentence_start_counts: Counter[str] = Counter()
+    sentence_stem_counts: Counter[str] = Counter()
+    for sentence in script_sentences:
+        sentence_words = normalized(sentence).split()
+        if sentence_words:
+            sentence_start_counts[sentence_words[0]] += 1
+            sentence_stem_counts[" ".join(sentence_words[:2])] += 1
         count = len(words(sentence))
         if count > 24:
             long_sentence_count += 1
@@ -155,13 +210,58 @@ def audit_narration(
 
     paragraphs = [item.strip() for item in re.split(r"\n\s*\n", clean) if item.strip()]
     oversized_blocks = 0
+    micro_blocks = 0
     for index, paragraph in enumerate(paragraphs, start=1):
         count = len(words(paragraph))
+        if count < 8:
+            micro_blocks += 1
         if count > 130:
             oversized_blocks += 1
             warnings.append(f"performance block {index} has {count} words; review prosody and scene load")
         if count > 180:
             errors.append(f"performance block {index} has {count} words; split it at a real thought boundary")
+
+    if micro_blocks >= 2:
+        warnings.append(
+            f"narration has {micro_blocks} performance blocks below eight words; "
+            "verify that emphasis justifies the likely prosody reset"
+        )
+
+    dominant_start = sentence_start_counts.most_common(1)
+    if dominant_start and len(script_sentences) >= 12:
+        start, count = dominant_start[0]
+        share = count / len(script_sentences)
+        if count >= 10 and share >= 0.30:
+            warnings.append(
+                f"{count} of {len(script_sentences)} sentences begin with {start!r}; "
+                "listen for a mechanically repeated sentence shape"
+            )
+    repeated_stems = [
+        (stem, count) for stem, count in sentence_stem_counts.most_common()
+        if count >= 5 and count / max(len(script_sentences), 1) >= 0.12
+    ]
+    if repeated_stems:
+        stem, count = repeated_stems[0]
+        warnings.append(
+            f"sentence stem {stem!r} appears {count} times; review cadence without "
+            "replacing precise recurring terminology"
+        )
+
+    scope_limit_count = sum(bool(SCOPE_LIMIT_RE.search(item)) for item in script_sentences)
+    tail_size = max(3, (len(script_sentences) + 3) // 4)
+    tail_scope_limit_count = sum(
+        bool(SCOPE_LIMIT_RE.search(item)) for item in script_sentences[-tail_size:]
+    )
+    if scope_limit_count >= 5 and scope_limit_count / max(len(script_sentences), 1) >= 0.15:
+        warnings.append(
+            f"{scope_limit_count} sentences use limitation language; keep distinct "
+            "boundaries local and merge repeated disclaimers"
+        )
+    if tail_scope_limit_count >= 3:
+        warnings.append(
+            f"{tail_scope_limit_count} limitation sentences cluster in the final quarter; "
+            "check whether late caveats are repairing earlier overbreadth"
+        )
 
     normalized_narration = normalized(clean)
     for phrase in TEMPLATE_PHRASES:
@@ -190,8 +290,140 @@ def audit_narration(
         "extreme_sentence_count": extreme_sentence_count,
         "inventory_sentence_count": list_sentence_count,
         "oversized_performance_blocks": oversized_blocks,
+        "micro_performance_blocks": micro_blocks,
+        "dominant_sentence_start": dominant_start[0][0] if dominant_start else None,
+        "dominant_sentence_start_count": dominant_start[0][1] if dominant_start else 0,
+        "repeated_sentence_stems": [
+            {"stem": stem, "count": count} for stem, count in repeated_stems
+        ],
+        "scope_limit_sentence_count": scope_limit_count,
+        "tail_scope_limit_sentence_count": tail_scope_limit_count,
         "question_count": question_count,
         "words_per_minute": round(wpm, 2) if wpm is not None else None,
+    }
+
+
+def opening_shape(narration: str) -> str:
+    items = sentences(narration)
+    if not items:
+        return "empty"
+    first = items[0].lstrip()
+    tokens = normalized(first).split()
+    if first.startswith(('"', "'", "“")):
+        return "quoted_state"
+    if first.endswith("?"):
+        return "direct_question"
+    if not tokens:
+        return "other"
+    if tokens[0] in {"imagine", "suppose", "consider", "watch", "picture"}:
+        return "viewer_invitation"
+    if tokens[0] in {
+        "a", "an", "one", "two", "three", "four", "five", "six", "seven",
+        "eight", "nine", "ten",
+    } or tokens[0].isdigit():
+        return "counted_case_declaration"
+    if tokens[0] in {"you", "your"}:
+        return "direct_address"
+    return "declaration"
+
+
+def phrase_owners(rows: list[tuple[str, str]], size: int) -> dict[str, set[str]]:
+    owners: dict[str, set[str]] = {}
+    for chapter_id, narration in rows:
+        tokens = normalized(narration).split()
+        phrases = {
+            " ".join(tokens[index:index + size])
+            for index in range(max(0, len(tokens) - size + 1))
+        }
+        for phrase in phrases:
+            if len(content_tokens(phrase)) >= 2:
+                owners.setdefault(phrase, set()).add(chapter_id)
+    return owners
+
+
+def duplicate_edge_stems(
+    rows: list[tuple[str, str]], *, opening: bool, size: int = 5
+) -> list[dict]:
+    owners: dict[str, set[str]] = {}
+    for chapter_id, narration in rows:
+        items = sentences(narration)
+        if not items:
+            continue
+        tokens = normalized(items[0] if opening else items[-1]).split()
+        if len(tokens) < size:
+            continue
+        stem = " ".join(tokens[:size] if opening else tokens[-size:])
+        owners.setdefault(stem, set()).add(chapter_id)
+    return [
+        {"stem": stem, "chapters": sorted(chapters)}
+        for stem, chapters in sorted(owners.items())
+        if len(chapters) > 1
+    ]
+
+
+def audit_series_narrations(rows: list[tuple[str, str]]) -> dict:
+    """Locate possible series templating without treating novelty as quality."""
+
+    shape_counts = Counter(opening_shape(narration) for _, narration in rows)
+    six_word_owners = phrase_owners(rows, 6)
+    eight_word_owners = phrase_owners(rows, 8)
+    shared_six_word_phrases = [
+        {"phrase": phrase, "chapters": sorted(chapters)}
+        for phrase, chapters in sorted(
+            six_word_owners.items(), key=lambda item: (-len(item[1]), item[0])
+        )
+        if len(chapters) > 1
+    ][:30]
+    material_reuse_phrases = [
+        {"phrase": phrase, "chapters": sorted(chapters)}
+        for phrase, chapters in sorted(
+            eight_word_owners.items(), key=lambda item: (-len(item[1]), item[0])
+        )
+        if len(chapters) > 1
+    ][:20]
+    duplicate_openings = duplicate_edge_stems(rows, opening=True)
+    duplicate_closings = duplicate_edge_stems(rows, opening=False)
+    word_counts = [len(words(narration)) for _, narration in rows]
+    paragraph_counts = [
+        len([item for item in re.split(r"\n\s*\n", narration.strip()) if item.strip()])
+        for _, narration in rows
+    ]
+
+    warnings = []
+    if rows:
+        dominant_shape, dominant_count = shape_counts.most_common(1)[0]
+        if len(rows) >= 8 and dominant_count / len(rows) >= 0.75:
+            warnings.append(
+                f"opening shape {dominant_shape!r} appears in {dominant_count} of "
+                f"{len(rows)} scripts; compare openings for noun-swapped templating"
+            )
+    if material_reuse_phrases:
+        warnings.append(
+            f"{len(material_reuse_phrases)} exact eight-word phrase(s) recur across scripts; "
+            "retain only intentional terminology or callbacks"
+        )
+    if duplicate_openings:
+        warnings.append(
+            f"{len(duplicate_openings)} exact five-word opening stem(s) recur across scripts"
+        )
+    if duplicate_closings:
+        warnings.append(
+            f"{len(duplicate_closings)} exact five-word closing stem(s) recur across scripts"
+        )
+
+    return {
+        "scope": "diagnostic_not_quality_score",
+        "narrations": len(rows),
+        "review_triggers": warnings,
+        "opening_shape_counts": dict(shape_counts),
+        "word_count_range": [min(word_counts), max(word_counts)] if word_counts else None,
+        "paragraph_count_range": (
+            [min(paragraph_counts), max(paragraph_counts)] if paragraph_counts else None
+        ),
+        "shared_six_word_phrases": shared_six_word_phrases,
+        "material_reuse_phrases": material_reuse_phrases,
+        "duplicate_opening_stems": duplicate_openings,
+        "duplicate_closing_stems": duplicate_closings,
     }
 
 
@@ -442,6 +674,8 @@ def audit_treatment(
     candidates = treatment.get("promise_candidates")
     selected_candidates: list[str] = []
     candidate_promises: list[str] = []
+    candidate_promise_texts: list[str] = []
+    candidate_mechanisms: list[str] = []
     if not isinstance(candidates, list) or not 3 <= len(candidates) <= 5:
         errors.append("treatment.promise_candidates must contain three to five compared candidates")
     else:
@@ -459,14 +693,37 @@ def audit_treatment(
                 "rationale",
             ):
                 require_text(candidate, field, label, errors)
-            value = normalized(str(candidate.get("promise", "")))
+            promise_text = str(candidate.get("promise", "")).strip()
+            value = normalized(promise_text)
             candidate_promises.append(value)
+            candidate_promise_texts.append(promise_text)
+            candidate_mechanisms.append(str(candidate.get("visual_mechanism", "")).strip())
             if candidate.get("disposition") == "selected":
                 selected_candidates.append(value)
             elif candidate.get("disposition") != "rejected":
                 errors.append(f"{label}.disposition must be selected or rejected")
         if len(set(candidate_promises)) != len(candidate_promises):
             errors.append("treatment.promise_candidates must be meaningfully distinct")
+        near_promises = near_duplicate_pairs(candidate_promise_texts)
+        if near_promises:
+            warnings.append(
+                "promise candidates share most content words at pairs "
+                + ", ".join(
+                    f"{row['left'] + 1}/{row['right'] + 1}"
+                    for row in near_promises
+                )
+                + "; compare genuinely different viewer outcomes"
+            )
+        near_mechanisms = near_duplicate_pairs(candidate_mechanisms)
+        if near_mechanisms:
+            warnings.append(
+                "candidate visual mechanisms are near-duplicates at pairs "
+                + ", ".join(
+                    f"{row['left'] + 1}/{row['right'] + 1}"
+                    for row in near_mechanisms
+                )
+                + "; sketch materially different explanatory mechanisms"
+            )
         if selected_candidates != [selected_promise]:
             errors.append("exactly one candidate must select the exact teaching_promise")
 
@@ -1407,6 +1664,57 @@ def self_test() -> None:
         if not any(fragment in error for error in narration_errors):
             raise AssertionError(f"narration fixture did not trigger {fragment!r}")
 
+    _, weak_promise_warnings = audit_teaching_promise(
+        "The authority boundary remains visible throughout the example."
+    )
+    if not any("observable transfer action" in warning for warning in weak_promise_warnings):
+        raise AssertionError("non-transfer teaching promise did not trigger a review warning")
+    near_pairs = near_duplicate_pairs([
+        "The viewer can predict when a route must stop.",
+        "The viewer can predict exactly when this route must stop.",
+        "The viewer can distinguish observation from a tool receipt.",
+    ])
+    if not near_pairs or near_pairs[0]["left"] != 0 or near_pairs[0]["right"] != 1:
+        raise AssertionError(f"near-duplicate promises were not located: {near_pairs}")
+
+    mechanical = "\n\n".join([
+        "The system reveals one visible state.",
+        "The system moves the request left.",
+        "The system reveals the authority key.",
+        "The system moves the request right.",
+        "The system reveals a second state.",
+        "The system moves the request again.",
+        "The system reveals the final route.",
+        "The system cannot establish deployment safety.",
+        "The system does not prove general reliability.",
+        "The system cannot guarantee outside behavior.",
+        "The system does not establish human learning.",
+        "The system cannot prove the wider claim.",
+    ])
+    _, mechanical_warnings, mechanical_summary = audit_narration(mechanical)
+    for fragment in (
+        "performance blocks below eight words",
+        "mechanically repeated sentence shape",
+        "limitation language",
+        "final quarter",
+    ):
+        if not any(fragment in warning for warning in mechanical_warnings):
+            raise AssertionError(
+                f"mechanical narration did not trigger {fragment!r}: {mechanical_warnings}"
+            )
+    if mechanical_summary["micro_performance_blocks"] != 12:
+        raise AssertionError(f"unexpected micro-block summary: {mechanical_summary}")
+
+    repeated_phrase = "A retained request crosses the same narrow authority boundary today."
+    series_summary = audit_series_narrations([
+        ("one", repeated_phrase + " The observer records the result."),
+        ("two", repeated_phrase + " The operator checks the result."),
+    ])
+    if not series_summary["material_reuse_phrases"]:
+        raise AssertionError(f"cross-script phrase reuse was not located: {series_summary}")
+    if series_summary["scope"] != "diagnostic_not_quality_score":
+        raise AssertionError("series audit lost its inference boundary")
+
     root = find_repository_root()
     if root is not None and (root / ".git").exists():
         commit = subprocess.check_output(
@@ -1519,6 +1827,7 @@ def main() -> None:
             raise SystemExit(f"No generation-2 narrations found below {args.all_narrations}")
         failures = 0
         rows = []
+        series_rows: list[tuple[str, str]] = []
         for path in paths:
             try:
                 narration = path.read_text(encoding="utf-8")
@@ -1526,20 +1835,30 @@ def main() -> None:
                 raise SystemExit(f"Unable to read {path}: {exc}") from exc
             errors, warnings, summary = audit_narration(narration)
             failures += bool(errors)
+            chapter_id = path.parents[1].name
+            series_rows.append((chapter_id, narration))
             rows.append({
-                "chapter_id": path.parents[1].name,
+                "chapter_id": chapter_id,
                 "path": str(path),
                 "status": "revise" if errors else "structurally_clean",
                 "errors": errors,
                 "warnings": warnings,
                 **summary,
             })
-        print(json.dumps({"narrations": len(rows), "failures": failures, "rows": rows}, indent=2))
+        series_diagnostics = audit_series_narrations(series_rows)
+        print(json.dumps({
+            "narrations": len(rows),
+            "failures": failures,
+            "series_diagnostics": series_diagnostics,
+            "rows": rows,
+        }, indent=2))
         if failures:
             sys.exit(1)
         print(
             f"Structural narration lint found no prohibited patterns in {len(rows)} drafts; "
-            "this does not approve their truth, voice, or visualizability."
+            f"series diagnostics raised {len(series_diagnostics['review_triggers'])} "
+            "manual review trigger(s). This does not approve truth, voice, "
+            "visualizability, or distinctiveness."
         )
         return
     if args.narration_only:

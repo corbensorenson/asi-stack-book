@@ -4,6 +4,7 @@
 
 - Define beauty operationally
 - Write an art-direction brief
+- Compare visual mechanisms
 - Choose the right medium
 - Compose every frame
 - Choreograph attention
@@ -69,6 +70,23 @@ During treatment and before writing detailed scene code, define:
 
 The shared ASI Stack grammar supplies family resemblance. The chapter brief
 supplies identity. Do not solve chapter identity with a new arbitrary palette.
+
+## Compare visual mechanisms
+
+Before detailed keyframes or scene code, sketch two or three materially
+different ways to make the selected promise visible. Keep them cheap: a few
+frames or a rough timed board is enough. Useful alternatives might include a
+literal state trace, linked concrete and abstract representations, a controlled
+comparison, a geometric construction, or a counterexample that preserves the
+same objects.
+
+Choose by causal fidelity, perceptual apprehensibility at playback speed,
+object continuity, changed-case transfer, accessibility, and production risk.
+Reject a candidate when narration must explain what its motion supposedly
+means, when the visual metaphor imports an unsupported inference, or when the
+same generic card or route choreography would fit unrelated chapters. Record
+the winning rationale in the treatment's medium rationale and visual thesis.
+Do not choose the least familiar mechanism merely for novelty.
 
 ## Choose the right medium
 

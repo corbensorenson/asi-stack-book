@@ -118,6 +118,14 @@ pauses, questions, contrasts, and pronunciation before synthesis. Listen for
 flat cadence, repeated sentence shapes, and identical scene openings. If the
 voice cannot make a sentence sound natural, rewrite the sentence.
 
+Calibrate at series scale as well as chapter scale. Consistent terminology,
+accessibility, and visual grammar help viewers; identical hooks, paragraph
+rhythm, question placement, case structure, and caveat endings make the work
+feel generated and weaken attention. Use the corpus audit to locate possible
+reuse, then decide by listening and watching. Do not trade a precise recurring
+term for a decorative synonym or vary a proven explanation merely to satisfy a
+metric.
+
 ## Measurement and inference limits
 
 Use YouTube audience retention after publication to find moments worth

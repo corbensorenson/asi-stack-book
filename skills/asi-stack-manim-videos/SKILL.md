@@ -5,24 +5,24 @@ description: Design, write, art-direct, implement, synchronize, caption, audit, 
 
 # ASI Stack Manim Videos
 
-Make an original visual explanation whose pictures and words change the same
-mental model at the same time. The canonical chapter and its evidence surfaces
-remain authoritative. A derivative video never strengthens a book claim.
+Make an original visual explanation whose pictures and words change the same mental
+model at the same time. The canonical chapter and evidence surfaces remain
+authoritative; a derivative video never strengthens a book claim.
 
 ## Non-negotiable contract
 
-1. **One transferable promise.** A short video selects one consequential idea;
-   it does not summarize the chapter.
-2. **Standalone audience.** Default to a curious adult interested in AI, with
-   no research background and no prior-chapter context. Record different
-   assumptions when the request names a different audience.
+1. **One transferable promise.** A short video selects one consequential idea, not
+   a chapter summary. Its case, representation bridge, and signature change must
+   earn chapter-specific identity rather than reuse a noun-swapped series template.
+2. **Standalone audience.** Default to a curious adult interested in AI, with no
+   research background or prior-chapter context. Record any different assumptions.
 3. **Source-bound truth.** Bind every spoken or visual inference to chapter
    claim IDs or verified source IDs. Record assumptions, non-claims, notation,
    units, simplifications, and truth checks. Do not speak repository metadata
    unless repository mechanics are themselves the teaching subject.
-4. **Co-design before production.** Iterate narration, rough semantic
-   keyframes, and the concrete case together. Do not lock a script whose ideas
-   cannot earn pictures, and do not build polished scenes for an unstable story.
+4. **Co-design before production.** Iterate narration, rough keyframes, and the
+   concrete case together. Do not lock ideas that cannot earn pictures or polish
+   scenes for an unstable story.
 5. **Audio owns final time.** Editorial estimates support planning only;
    synthesis-block timing supports an animatic; manually reviewed forced
    alignment is required for picture-and-sound lock.
@@ -63,20 +63,17 @@ remain authoritative. A derivative video never strengthens a book claim.
 - Research rationale, upstream examples, compatibility, or licensing:
   [research-basis.md](references/research-basis.md).
 
-In the book repository, also read the complete chapter, its packet and source
-notes, `visual_edition/README.md`, `visual_edition/visual_grammar.json`, the
-generation-two ledger, the narration toolchain, and the chapter's current
-generation directory. Generation one and superseded generation-two artifacts
-are history, not automatic authoring inputs.
+In the book repository, also read the complete chapter, packet, source notes,
+`visual_edition/README.md`, `visual_edition/visual_grammar.json`, generation-two
+ledger, narration toolchain, and current generation directory. Generation one and
+superseded generation-two artifacts are history, not automatic authoring inputs.
 
-Bind the treatment to the ledger's exact chapter digest and source-context
-digest. That context digest covers every assigned source note plus its source
-inventory record; a remembered source list or stale visual packet is not the
-current authority surface.
+Bind the treatment to the ledger's exact chapter and source-context digests. The
+latter covers every assigned source note and inventory record; memory or a stale
+visual packet is not the current authority surface.
 
-Run bundled commands from the book repository root. When discovery cannot use
-the working directory, set `ASI_STACK_BOOK_ROOT` to that root. Accepted renders
-must execute the tracked repository runner; the installed skill copy supplies
+Run bundled commands from the repository root; otherwise set `ASI_STACK_BOOK_ROOT`.
+Accepted renders must execute the tracked runner. The installed skill copy supplies
 instructions and diagnostics, not a substitute executable identity.
 
 ## Artifacts and state
@@ -103,18 +100,16 @@ generation-2/
 ```
 
 The state order is `planned -> narration_draft -> treated -> script_passed ->
-beat_planned -> animatic -> picture_and_sound_lock -> release_candidate ->
-accepted`. A clean narration linter result is not `script_passed`. A rendered
-file is not an accepted video.
+beat_planned -> animatic -> picture_and_sound_lock -> release_candidate -> accepted`.
+A clean narration linter result is not `script_passed`; a render is not acceptance.
 
 ## Workflow
 
 ### 1. Establish truth, audience, and medium
 
-Read the whole chapter and evidence surfaces. Extract only claims needed for a
-single visual argument. Record what the video must not imply. Verify every
-external source at source-note depth; do not promote a search snippet or paper
-abstract into evidence.
+Read the whole chapter and evidence surfaces. Extract only claims needed for one
+visual argument and record what it must not imply. Verify external sources at
+source-note depth; a search snippet or abstract is not evidence.
 
 Write the audience assumptions and standalone context. Decide whether the
 teaching mechanism is best served by Manim, a hybrid, stills, screen recording,
@@ -141,6 +136,10 @@ exactly one. Use one concrete case, one central mechanism, relationship, or
 tradeoff, one discriminating test or counterexample, one local evidence
 boundary, and at most three introduced terms.
 
+Make the bridge explicit: concrete object -> causal change -> earned abstraction ->
+changed case. Preserve a visible mapping and state where any analogy stops. A
+closing disclaimer cannot repair an overbroad picture.
+
 Do not force a misconception, naive shortcut, prediction prompt, joke, or
 failure when the chapter supplies no honest basis for it. Record whether the
 tension comes from an observed failure, documented misconception, design
@@ -155,6 +154,11 @@ a sparse semantic keyframe and state what remains invariant. Write narration
 in coherent performance blocks while revising the keyframes. Let a strong
 picture replace words; use narration for relationships, causes, consequences,
 and qualifications that the picture cannot safely carry alone.
+
+Before detailed keyframes or code, compare two or three cheap visual-mechanism
+sketches. Choose by causal fidelity, apprehensibility, continuity, transfer,
+accessibility, and production risk, not novelty. Compare the winner with current
+generation-two work so series consistency does not become episode templating.
 
 The treatment must record:
 
@@ -178,25 +182,26 @@ Retain failed or uncertain truth checks with their resolution path while
 drafting. They block script approval; they must not be deleted to make Gate 0
 look clean.
 
-Normal form is roughly 2.5-4.5 minutes and 280-520 spoken words. Treat those as
-selection diagnostics, not quotas; never add words to enter the range, and let
-a shorter treatment stand when it delivers and tests the promise. Above 600
-words requires a specific duration rationale; above 650 must be split or
-reselected. Do not accelerate a badly selected script. Read it aloud at the
-intended pace. Reject inventory,
-paper signposting, internal status language, unexplained jargon, late
-qualifiers, or any sentence that has neither a meaningful picture nor a
-deliberate audio-only purpose.
+Normal form is roughly 2.5-4.5 minutes and 280-520 spoken words. These are selection
+diagnostics, not quotas; never pad a short complete treatment. Above 600 words needs
+a duration rationale; above 650 must be split or reselected. Do not accelerate a
+bad script. Read it aloud. Reject inventory, paper signposting, internal status,
+unexplained jargon, late qualifiers, or any sentence without a meaningful picture,
+relationship, or deliberate audio-only purpose.
 
 Structural lint can run during drafting:
 
 ```bash
 python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
   --narration path/to/narration.txt --narration-only
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --all-narrations visual_edition/chapters
 ```
 
-It does not approve truth, voice, or visualizability. Record all three manual
-reviews in the treatment, bind the exact narration digest, and then run Gate 0:
+The corpus diagnostics locate possible cadence and language reuse; they do not
+reward arbitrary variation. Neither command approves truth, voice, or
+visualizability. Record all three manual reviews in the treatment, bind the
+exact narration digest, and then run Gate 0:
 
 ```bash
 python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \

@@ -4,7 +4,9 @@
 
 - Teaching order
 - Promise selection
+- Representation bridge
 - Narration structure
+- Series identity
 - Sentence craft
 - Compression pass
 - Script acceptance
@@ -52,6 +54,28 @@ tradeoff, one discriminating test or counterexample, one evidence boundary, and
 at most three introduced terms. Everything else stays in the book or becomes
 another visual abstract.
 
+## Representation bridge
+
+Build a visible bridge between the worked case and the general idea. The normal
+sequence is concrete object -> causal change -> named relationship -> changed
+case. Introduce an abstraction only after the viewer has seen the relation it
+compresses. Preserve at least one object, coordinate, color role, or motion path
+across the bridge so the mapping can be recovered without narration.
+
+For every analogy or spatial encoding, state privately what maps, what does not,
+and where the mapping stops. If a gate stands for authorization, crossing may
+mean permission in the toy system; it must not also imply safety, truth, or
+successful execution. Put the limitation beside the first inference that needs
+it. Do not rely on a disclaimer pile at the end to repair an overbroad picture.
+
+Test the bridge in both directions before script approval:
+
+1. Given the concrete event, can the viewer name the relationship?
+2. Given the relationship, can the viewer predict the changed case?
+
+If either direction requires a paragraph of verbal rescue, redesign the visual
+model or narrow the promise.
+
 ## Narration structure
 
 Choose the story form that matches the explanation rather than imposing one
@@ -93,6 +117,31 @@ Merge or delete it when it merely restates narration, changes decoration,
 introduces a synonym, or exists to keep the screen busy. A hold cannot smuggle
 in a new term or relation.
 
+## Series identity
+
+The series needs a recognizable standard, not a repeated episode template.
+Before Gate 0, compare the draft with current generation-two narrations and the
+nearest accepted treatments. Inspect the opening situation, story form,
+persistent object, signature transformation, sentence cadence, question
+placement, evidence boundary, and closing move.
+
+Revise accidental repetition when another video could keep the same structure
+after swapping nouns. Reuse a gate, token, route, or comparison only when that
+visual grammar is the clearest truthful representation of this mechanism. Do
+not add a different palette, joke, camera move, or story form merely to make a
+diversity count rise. Chapter identity must come from the idea's behavior.
+
+Run the corpus narration audit as a diagnostic:
+
+```bash
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --all-narrations visual_edition/chapters
+```
+
+Review shared phrases, concentrated sentence stems, tiny performance blocks,
+and stacked limitation language in context. A warning asks for judgment; it is
+not permission to replace clear recurring terminology with synonyms.
+
 ## Sentence craft
 
 - Keep one main idea per sentence.
@@ -128,8 +177,8 @@ Perform these passes in order:
 6. Remove adjectives that do not change a decision.
 7. Move necessary nuance into the exact beat where overgeneralization could
    occur.
-8. Replace evidence recitals with one plain-language boundary beside the
-   relevant inference.
+8. Replace evidence recitals with the fewest plain-language boundaries needed,
+   each beside the inference it limits; merge a repeated caveat tail.
 9. Remove claim IDs, support-state vocabulary, fixture and theorem counts,
    validator results, paths, chapter navigation, and invitations to read the
    next chapter.
@@ -177,6 +226,9 @@ Read at the intended pace while tapping once for every visual beat. Revise when:
 - a pronoun could name two objects;
 - a qualifier arrives after the viewer has already formed a broader claim;
 - the sentence sounds like an abstract, roadmap, or validator report; or
+- several sentences begin with the same grammatical shape without purpose;
+- a one-line performance block would make synthesis sound chopped rather than
+  emphatic; or
 - tapping reveals ten seconds of new ideas with no visual state change.
 
 ## Failure patterns
