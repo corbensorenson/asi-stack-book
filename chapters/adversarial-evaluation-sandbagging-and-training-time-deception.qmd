@@ -50,6 +50,8 @@ a capability, safety, or deployment conclusion.
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** Adding more tests is the simpler baseline, but test count cannot resolve a shared monitor, reward proxy, selection pressure, or scorer dependency; the observation contract makes those dependencies inspectable.
+
 An evaluation answers a narrower question than people often want it to answer.
 It tells us what a system did with a particular prompt, monitor, reward, task
 distribution, time budget, and consequence. It does not automatically reveal

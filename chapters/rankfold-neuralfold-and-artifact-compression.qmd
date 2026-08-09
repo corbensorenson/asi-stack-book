@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-31"
+last_updated: "2026-08-09"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -48,6 +48,8 @@ Compression therefore becomes an evidential firewall, not a storage trick. The s
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The ratio baseline promotes the compact form after exact replay. The consumer lease tests the real random-access workload and rejects it.
+
 After fast generation, the stack returns to stored artifacts and retrieval. RankFold and NeuralFold are treated as compression-architecture ideas: ways to represent large artifacts more cheaply while preserving routes back to the full object when needed.
 
 A compressed artifact is not automatically a source of truth. Compression needs fallback, probes, residual coding, decoder discipline, and utility boundaries so a smaller representation does not quietly replace the thing it only approximates.
@@ -84,6 +86,16 @@ The artifact layer therefore needs admission states, not just ratios. A compress
 ## Core Claim
 
 [rankfold-neuralfold-and-artifact-compression.core, label: Design rationale, support: argument] A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific admission lease that preserves the full source, separates representation, reconstruction, ratio, utility, latency, and evidentiary-authority claims, counts every byte and operation, exercises probes and fallback, and expires or quarantines on drift; RankFold/NeuralFold remains a bounded candidate implementation, and no compact form inherits the source artifact's authority.
+
+**Reader claim.** A compact artifact can be smaller and exactly reconstructable yet still be worse for the consumer because decoding, random access, latency, or failure recovery changed.
+
+**Operational rule.** Preserve the full source, count all bytes and operations, bind decoder and platform, test the actual access pattern and required probes, and maintain fallback. Admit only the exact consumer use that passes; reconstruction success never transfers source authority.
+
+### Worked compression lease: exact replay, failed random access
+
+A large theorem index compresses to one tenth of its original storage and reconstructs byte-for-byte in a sequential replay. A verifier, however, needs low-latency random lookup of individual theorem records. The compressed representation requires decoding a long prefix for each lookup, exceeding the consumer’s latency budget. The admission lease therefore allows archival storage and batch reconstruction but rejects interactive verification use, which falls back to the full artifact.
+
+This is not a contradiction: representation ratio, reconstruction accuracy, access utility, and latency are different claims. A later decoder or index may qualify the random-access route, but it must receive a new platform- and time-specific lease. The finite admission model checks source preservation, manifests, use envelopes, access patterns, decoder determinism, replay, probes, fallback, residuals, utility evidence, and support boundaries. It does not establish real compression ratio, decoder speed, utility, or NeuralFold superiority.
 
 The distinct owner here is the **Compressed Artifact Admission Lease**: the record that decides whether a cheaper stored or transmitted representation may serve one named consumer use. Artifact Graph retains source custody and lineage; Context determines transaction adequacy; Routing selects the route; Verification judges reconstruction and probes; Resource Economics accounts for burden; Claim Ledgers control support; Security controls decoder risk; Rights controls transformation and retention; Readiness qualifies and expires; Runtime executes; and Human review retains consequential judgment. None of those owners is collapsed here.
 

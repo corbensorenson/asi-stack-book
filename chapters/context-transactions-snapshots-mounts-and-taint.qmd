@@ -4,7 +4,7 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-09"
 primary_sources:
   - "vcm_public"
   - "platonic_world_model"
@@ -74,6 +74,8 @@ At this boundary, context stops being a bag of retrieved text and becomes state.
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The rollback-flag baseline marks the whole action reversed. The transaction path separates restored context from the recipient's unchanged copy.
+
 Typed context cells still need runtime semantics before use in memory. Context becomes a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, declassified, or denied. Without those semantics, even well-labeled memory can become stale, mixed across incompatible tasks, or derived from material that should no longer be used.
 
 The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface. Each transition should leave a receipt.
@@ -135,6 +137,16 @@ as successful commits.
 ## Core Claim
 
 [context-transactions-snapshots-mounts-and-taint.core, label: Design rationale, support: argument] Context Transactions should own the dynamic, versioned state-transition contract for durable context memory. Each accepted transaction binds principal, consumer, purpose, operation, base snapshot, branch, mounts, actual read/write/derive/delete/revoke sets, isolation and conflict policy, authority and rights, taint and declassification, durability and recovery model, budget, horizon, and support ceiling to an observed pre-state and a causally ordered attempted, applied, durable, visible, replayed, or recovered post-state. Commit, branch, merge, abort, retry, compaction, deletion, revocation, and recovery must preserve exact identities, obligations, faults, costs, and residuals. The transaction layer may change durable context state, but it does not own static packet materialization, semantic truth, belief revision, model/optimizer state, external effects, artifact correctness, verification adequacy, support, or release.
+
+**Reader claim.** Rolling back memory state does not roll back an email, payment, publication, or other external effect that already escaped the transaction.
+
+**Operational rule.** Record attempted, applied, durable, visible, and externally consumed state separately. Abort or restore the exact context snapshot, invalidate descendants, and create compensation records for irreversible effects; never label compensation as reversal.
+
+### Worked rollback: the context restores, the email remains sent
+
+A transaction reads a customer record, derives a summary, stores it on a working branch, and sends the summary through an external adapter. A later taint check reveals that one source lacked the required declassification. The context store can restore the base snapshot, delete or revoke the derived cell, invalidate cached descendants, and record the failed merge. It cannot unsend the email.
+
+The transaction therefore closes in two lanes: exact modeled context rollback and an open external-effect compensation record owned by the runtime and incident paths. A naive rollback flag would hide the recipient’s copy and falsely imply full reversal. The local transaction model checks snapshot, branch, mount, read-set, taint, deletion, replay, and support-boundary routes. It can prove finite state ordering for authored records; it does not prove semantic truth, unknown-copy discovery, external compensation, artifact correctness, or effect reversal.
 
 The claim remains at `argument`. Current artifacts establish record shape,
 finite routing, authored failure rejection, and explicit non-claim boundaries.

@@ -1,9 +1,10 @@
 # Round 23 reader-prose quality reconciliation
 
-Status: **active editorial remediation**
+Status: **complete editorial remediation (2026-08-09)**
 Authority: Corben Sorenson
 Canonical roadmap: `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`
 Machine status: `roadmap_records/p7_1c_reader_prose_quality_status.json`
+Detailed chapter triage: `docs/chapter_content_triage_2026_08_08.md`
 
 ## Why this packet exists
 
@@ -44,17 +45,52 @@ digest-bound semantic re-review because its existing concept contract is
 active; the review records the new prose as editorial substance with
 `support_state_effect: none`.
 
-This tranche is a calibration pass, not the 84-chapter closure. The machine
-status therefore records `active_calibration_tranche_complete_packet_contract_ready`
-while the per-chapter packet count remains zero until the packet writer and
-adversarial fixtures are applied to the tranche. The remaining chapters still
-require their own scenes, traces, caveat dispositions, and digest-bound
-packets.
+At that calibration point, this was still an active pass rather than the
+85-chapter closure. Forty-four chapters then had schema-validated,
+digest-bound packets: the three narrative anchors plus
+Adversarial ML, CoilRA, Circle Calculus, Compact Generative Systems, Autonomous
+Replication, the Open Research Agenda reference owner, the five previously
+edited calibration chapters, nine chapters whose existing substantive scenes
+now have explicit packet custody, and four newly surfaced machine-evidence
+decisions in Multi-Agent Dynamics, Personal Compute Hives, Stable Capability
+Fields, and Artifact Steward Agents. Five further weak-score chapters now use
+their existing artifacts directly: Content Authenticity's unbound composite,
+Durable Semantic Memory's lossy ontology migration, Security Kernel's
+sanitized-summary and sanitized-refusal commit boundary, Societal Resilience's
+three still-open incident paths after provider restoration, and Capability
+Replacement's monitor-triggered rollback with an irreversible trace residual.
+Human-AI Communication now holds wording fixed while audience, repetition,
+expiry, and personalization scope change; Mathematical and Search Substrates
+walks one candidate through four axis-specific adoption states; and Governed
+Objective Formation shows why matching proxy or preference signals cannot
+recover missing authority.
+Human-AI Symbiosis now rejects a combined score of 8 when the stronger AI-only
+arm scores 9; Military AI holds the approval interface fixed while decision
+time and off-ramps determine simulation eligibility; and Perception holds
+declared roots 7 and 9 fixed while a hidden global common cause reverses the
+observation disposition.
+AI Deployment now preserves one unremedied cohort behind a positive aggregate;
+Data Engines joins fifteen exact 24-surface rollbacks to a no-useful-update,
+zero-storage-erasure disposition; and Governed Operations follows one tested
+artifact into a no-rebuild public deployment and separate observation while
+retaining its retrospective, non-causal boundary.
+Physical Compute now places two workloads exactly at all six declared capacity
+ceilings and keeps backup energy inside impact accounting; Prototype Roadmap
+distinguishes integrate, research-only, and reject dispositions; and
+Scientific Discovery preserves positive, null, and inconclusive attempts under
+an unopened confirmatory branch.
+The packet
+validator checks current chapter digest, role, narrative unit, concrete scene,
+worked trace, readable/formal claim projections, caveat preservation, and
+linked artifacts, and rejects stale, generic, misrouted, caveat-erasing, and
+missing-heading mutations. The 2026-08-09 closure completes all 85 chapters,
+adds 85 unique Concrete lenses to the Human Reading Paths, and records the
+audited disposition in `docs/reader_prose_quality_closure_2026_08_09.md`.
 
 ## Diagnosis and disposition
 
 This is a prose and reader-model defect, not a reason to add chapters. The
-84-chapter manifest, source crosswalk, atom registry, proof ledgers, and
+85-chapter manifest, source crosswalk, atom registry, proof ledgers, and
 evidence ceilings remain canonical. P7.1c therefore modifies existing owners
 and their reader projections only. It does not promote support, rehabilitate a
 negative result, create a new empirical result, or change the scientific P2
@@ -93,7 +129,7 @@ The remedy is a bounded editorial ratchet:
 
 ## Packet contract
 
-Each of the 84 chapters gets one digest-bound packet under
+Each of the 85 chapters gets one digest-bound packet under
 `evidence_quality/reader_prose_quality_packets/`. A packet records:
 
 - chapter identity, current QMD digest, role, and reader-spine unit;
@@ -118,13 +154,13 @@ chapter for review.
 
 P7.1c is complete only when all of the following are true:
 
-1. 84/84 current chapter packets exist, validate, and bind to the current
+1. 85/85 current chapter packets exist, validate, and bind to the current
    manifest and reader-spine crosswalk.
-2. 84/84 chapters contain a concrete scene, a worked trace, a failure or
+2. 85/85 chapters contain a concrete scene, a worked trace, a failure or
    counterexample boundary, and a chapter-specific handoff. Thin reference or
    speculative chapters may use a bounded domain vignette, but may not satisfy
    the gate with a generic schema restatement.
-3. 84/84 core claims have a readable short form plus a separately addressable
+3. 85/85 core claims have a readable short form plus a separately addressable
    formal binding. No atom, source, proof, equation, protocol, or non-claim is
    lost in the split.
 4. The pinned prose audit reports disclaimer density by chapter role and
@@ -137,7 +173,7 @@ P7.1c is complete only when all of the following are true:
    reachable through stable appendix/detail links rather than repeated inline
    tables.
 6. A semantic diff, link audit, Quarto render, browser Human-view check, and
-   accessibility-tree smoke pass cover all 84 chapters. The result preserves
+   accessibility-tree smoke pass cover all 85 chapters. The result preserves
    exact source, claim, proof, evidence, release, and non-claim identities.
 7. An adversarial editorial fixture rejects copied generic scenes, invented
    outcomes, deleted caveats, broken atom links, stale chapter digests, and
@@ -154,13 +190,13 @@ Run the thesis spine and three representative mechanism chapters first to
 calibrate the packet and phrase taxonomy. Then process chapters by reader role
 (thesis-bearing, load-bearing reference, implementation case,
 speculative/research), with the same semantic diff and adversarial fixtures for
-each tranche. Regenerate the 84-chapter reader derivative only after packet
+each tranche. Regenerate the 85-chapter reader derivative only after packet
 digests are current. Reconcile the landing page, README, synopsis, Appendix C,
 source crosswalk, and video narration briefs only after the prose packet closes;
 video scripts must inherit the concrete scenes and traces rather than preserve
 the old paragraph-tableau style.
 
-No external prepublication reader is required. The packet is reviewed by the
+No external prepublication reader was required. The packet was reviewed by the
 author-directed Codex workflow, with all decisions and residuals recorded for
 later owner feedback. The final public release still requires the existing
 exact-`main`, render, deploy, accessibility, rights, and platform gates.

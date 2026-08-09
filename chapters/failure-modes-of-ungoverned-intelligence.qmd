@@ -58,6 +58,8 @@ The operating rule is that a failure is not only an outcome. It is a missed or t
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** A flat incident log can preserve timestamps and messages but cannot by itself identify the failed boundary, protected invariant, containment decision, residual owner, or recurrence route.
+
 Once the architecture has named boundaries and authority, it has to say what happens when those boundaries fail. The failure model is not a catalog of disasters. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
 
 The need is diagnostic clarity. If a system cannot say whether a failure came from authority creep, memory contamination, hidden optimization pressure, weak evidence, or ungoverned replacement, then it cannot learn from the failure without creating new ambiguity. A failure mode matters when the architecture gives it somewhere to go.

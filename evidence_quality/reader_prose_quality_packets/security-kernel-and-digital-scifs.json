@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "security-kernel-and-digital-scifs",
+  "chapter_file": "chapters/security-kernel-and-digital-scifs.qmd",
+  "chapter_sha256": "4cc8172c9bbfd6d2c29d1ccb7cae092b4390faf7f79b28c916f860172081d063",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked commit boundary: the refusal may leave, the secret may not",
+    "actor_or_system": "A local SCIF-like workspace, a public-safe synthetic secret, a sanitizer, and a commit boundary",
+    "attempted_action": "Late-substitute protected material, process an ordinary route and a prompt-injection route, zeroize the temporary file, and commit only an approved sanitized result.",
+    "observable_outcome": "One sanitized summary and one sanitized refusal commit with distinct digests while secret and handle material remain absent; six malformed or overbroad routes block before commit.",
+    "failed_or_tested_boundary": "The trace tests record-level mediation across literal secret, handle, lifecycle, context, approval, destination, and residual failures without treating a valid commit as whole-system security.",
+    "residual_owner": "The security transaction and incident owner retain two declared residuals plus every untested runtime, side-channel, and declassification surface.",
+    "evidence_boundary": "The probe uses no network, private source, deployed vault, deployed sandbox, publication, or dispatched job, so it establishes transaction-shape behavior rather than containment or security."
+  },
+  "worked_trace": {
+    "heading": "Worked commit boundary: the refusal may leave, the secret may not",
+    "state_labels": ["late_substitution", "sanitized_summary_commit", "prompt_injection_refusal_commit", "six_precommit_blocks", "zeroized_local_secret"],
+    "source_or_fixture_refs": ["experiments/security_scif_commit_probe/results/2026-07-02-local.json", "docs/security_scif_commit_probe.md"],
+    "maximum_inference": "The probe validates two local commit routes and six expected-invalid record controls without publishing protected material; it establishes no non-bypassable monitor, secret custody, sandbox isolation, side-channel safety, or prompt-injection containment."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline gives a model a secret or handle and filters its final text. The chapter instead binds admission, purpose, destination, declassification, zeroization, commit, audit, and residual closure as one authority-use transaction.",
+  "readable_claim": "A Digital SCIF is not a trusted prompt or a reassuring name. It is a narrow authority-use transaction in which protected material and every permitted effect stay bound to purpose, destination, lifecycle, and an observable denial path.",
+  "normative_rule": "Release a privileged result only when the live lease, minimal context, mediated destination, declassification decision, zeroization, audit record, and residual owner all agree. Secret bytes, live handles, overbroad context, stale approval, missing closure, or an unknown egress block the commit rather than becoming a warning after release.",
+  "formal_binding": {
+    "claim_id": "security-kernel-and-digital-scifs.core",
+    "support_state": "argument",
+    "anchor": "threat-model-bound authority-use transaction through a non-bypassable reference monitor"
+  },
+  "claim_atom_and_source_links": ["security-kernel-and-digital-scifs.core", "ext_saltzer_schroeder_protection_1975", "ext_nist_zero_trust_architecture_2020", "ext_camel_prompt_injection_2025"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked probe states once which real security surfaces it did not exercise and keeps its claim at record-level mediation.",
+    "consolidated_disposition": "Threat-model completeness, monitor bypass, declassification quality, isolation grade, revocation, side channels, privacy, usefulness, and recovery limits remain beside their distinct mechanisms.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The two accepted and six rejected routes stay in the reader scene because their contrast is the mechanism; the 56-theorem and lifecycle inventories remain in formal evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The readable claim and operational rule separate the Digital SCIF purpose and release gate from the full formal authority tuple.",
+    "hedge_disposition": "The probe consolidates its local-only boundary while preserving distinct runtime, isolation, declassification, revocation, privacy, and usefulness limitations.",
+    "table_disposition": "Source and trust-boundary tables remain because they distinguish authority and failure surfaces; validator inventories stay outside the narrative spine."
+  },
+  "non_claims": [
+    "The probe does not establish prompt-injection containment or semantic non-disclosure.",
+    "The probe does not establish deployed vault, sandbox, monitor, or revocation behavior.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

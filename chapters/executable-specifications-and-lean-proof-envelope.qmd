@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-03"
+last_updated: "2026-08-09"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -53,6 +53,8 @@ The proof envelope is a translation layer. It translates prose claims into proof
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The green-build baseline calls the deployed adapter proven. The envelope limits the theorem to its encoded transition until conformance is bound.
+
 Elegant substrates and structural receipts alone do not prove broad capability. The evidence envelope makes that warning operational before claims harden into confidence. Some claims should become schemas, some tests, some Lean predicates, and some should remain open research questions.
 
 This is the architecture's proof etiquette. Formal language earns authority only when the artifact exists, the verifier passes, and the claim boundary is narrow enough to understand. A proof envelope should clarify what is checked, what is not checked, and what would still fail outside the finite predicate. It should not decorate an argument with borrowed certainty.
@@ -85,6 +87,16 @@ Semantic proof drift is the proof-envelope risk. A finite predicate can be corre
 ## Core Claim
 
 [executable-specifications-and-lean-proof-envelope.core, label: Design rationale, support: argument] Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
+
+**Reader claim.** A theorem proves exactly its proposition under its assumptions; it does not automatically prove that the implementation, environment, or world matches the formal model.
+
+**Operational rule.** Bind every formal artifact to operational semantics, abstraction map, losses, assumptions, dependencies, verifier, implementation version, consumer statement, expiry, and revocation. If the binding is absent or stale, downgrade to a formal-model result rather than a deployed-system claim.
+
+### Worked proof envelope: the theorem holds, the adapter differs
+
+A Lean theorem shows that an allowed transition never exceeds an encoded authority ceiling. The proof compiles, and its finite record model is internally valid. The production adapter, however, maps one permission class to a broader operation than the formal abstraction. The theorem remains true; the implementation-binding claim fails. The proof envelope therefore permits the statement “the encoded transition preserves the encoded ceiling” and blocks “the deployed adapter enforces least authority.”
+
+Repair requires an explicit abstraction map, a conformance test against the actual adapter version, and a new consumer binding. A green theorem build cannot supply those facts. The chapter’s finite target and rejection checks distinguish implemented Lean artifacts, non-Lean artifacts, external theorems, and unsupported promotion requests. They establish proof and claim custody, not source correctness, semantic adequacy, implementation conformance, empirical truth, enforcement, or safety.
 
 The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and 3 planned targets without claimed theorems; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 333 proof targets, 131 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
 

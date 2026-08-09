@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+  "chapter_file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+  "chapter_sha256": "3fb9b6fe5ac453b214e5d92ffd40e238a8dc8e26a9ecf81b57e746132d806144",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-15-labor-and-artifacts",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked allocation counterexample: identical local permission, opposite concentration",
+    "actor_or_system": "A finite three-party population allocating three resource units through locally authorized events",
+    "attempted_action": "Infer whether the population breaches a systemic concentration limit from an all-true summary of local permission for each allocation.",
+    "observable_outcome": "Trace [systemA, systemA, systemA] breaches the limit while [systemA, systemB, systemB] does not, despite identical local-authorization summaries.",
+    "failed_or_tested_boundary": "The counterexample proves inside the authored model that pairwise or local validity cannot recover resource concentration, lineage diversity, bystander coverage, human exit, recovery, and residual custody.",
+    "residual_owner": "The population evaluator owns multiplex dependency mapping, resource control, effective diversity, human influence, externalities, temporal dynamics, and intervention spillovers.",
+    "evidence_boundary": "The result is a formal non-inference boundary over finite authored data, not an observed market, society, coalition, collusion event, or collective-intelligence outcome."
+  },
+  "worked_trace": {"heading": "Worked allocation counterexample: identical local permission, opposite concentration", "state_labels": ["locally_authorized_events", "same_pairwise_summary", "opposite_concentration_outcomes", "broader_inference_blocked"], "source_or_fixture_refs": ["tests/fixtures/proof_models/multi_agent_population.json", "scripts/validate_multi_agent_systemic_boundary.py", "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd"], "maximum_inference": "The finite proof and independent validator establish that identical local authorization can hide opposite modeled concentration outcomes; they establish no real cooperation, collusion, welfare, systemic safety, or human-agency result."},
+  "counterexample_or_simpler_baseline": "A pairwise authorization matrix is the simpler baseline, but two records can share all six permitted edges and require opposite campaign-readiness decisions because the systemic axes differ.",
+  "readable_claim": "Local permission and pairwise cooperation do not determine whether a population is diverse, non-collusive, resilient, or compatible with continued human influence.",
+  "normative_rule": "Evaluate the population graph, shared dependencies, resource concentration, affected parties, temporal dynamics, and intervention spillovers in addition to each authorized edge. When those views disagree, preserve the disagreement and block the broader population conclusion.",
+  "formal_binding": {"claim_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core", "support_state": "argument", "anchor": "versioned population contract"},
+  "claim_atom_and_source_links": ["multi-agent-dynamics-collective-intelligence-and-systemic-risk.core", "ext_multi_agent_risks_2025", "ext_cooperative_ai_foundations_2023", "ext_gradual_disempowerment_2025"],
+  "caveat_consolidation": {"local_caveat": "The scene names its exact finite formal scope and refuses to generalize from authored concentration states to real society.", "consolidated_disposition": "Simulation, evaluator, topology, incentive, collusion, welfare, externality, institution, human-agency, transfer, and social-prediction limits remain in dedicated sections.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The two traces remain in prose because their identical input and opposite output are the proof idea; theorem and mutation inventories remain in formal surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule separate local, population, and human-agency views before the comprehensive formal claim.", "hedge_disposition": "The real-world non-inference boundary is retained because it is logically essential, not editorial filler.", "table_disposition": "No new bookkeeping table was added; the exact counterexample is narrated."},
+  "non_claims": ["The formal counterexample does not model or predict a real society or market.", "The result does not establish cooperation, non-collusion, welfare, or retained human agency.", "The editorial revision does not move support or release state."]
+}

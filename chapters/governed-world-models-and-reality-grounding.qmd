@@ -4,7 +4,7 @@ chapter_id: "governed-world-models-and-reality-grounding"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "platonic_world_model"
   - "deterministic_capability_compilation"
@@ -57,6 +57,8 @@ real-world grounding, safe deployment, or support-state movement.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The model-first planner discounts the pallet to preserve its rollout. The reconciliation path makes current observation authoritative for action and retains the miss.
 
 An intelligent system can rehearse many futures and still misunderstand the situation it inhabits. The danger begins when an internal trajectory is treated as an observation, when a planner exploits a prediction error, or when an updated model gains permission to drive actions.
 
@@ -185,6 +187,16 @@ consequence classes, or rejected for that regime.
 ## Core Claim
 
 [governed-world-models-and-reality-grounding.core, label: Design rationale, support: argument] A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.
+
+**Reader claim.** A world-model prediction is a branch-local hypothesis until current observation reconciles it with reality; fluent imagination cannot overwrite a contradictory sensor state.
+
+**Operational rule.** Bind every rollout to model version, observation basis, branch, intervention, horizon, uncertainty, calibration, provenance, disagreement, authority, expiry, and fallback. Before consequential action, compare predicted and observed state; material mismatch stops or replans and preserves both records.
+
+### Worked reconciliation: the imagined aisle is clear, the sensor sees a pallet
+
+A warehouse world model predicts that aisle `A7` will remain clear for the next five seconds and proposes a fast route. At dispatch time, a current depth sensor observes an unregistered pallet inside the stopping envelope. The planner may keep the forecast as a failed prediction for calibration, but it cannot relabel the sensor reading as noise merely because the imagined branch is coherent. The action route stops, the observed state becomes actuality for the next plan, and the prediction error enters the model’s ledger.
+
+If sensor trust is itself disputed, the system routes to a conservative hold or independent observation rather than choosing whichever state enables progress. A model update may improve future forecasts but cannot erase this miss or widen motion authority. This architectural scene explains repeated reconciliation; it does not establish sensor truth, world-model accuracy, causal fidelity, calibration, safe control, or an advantage over model-free or rule-based baselines.
 
 The service returns hypotheses and branch-local state, not facts about
 actuality. Consequential admission depends on a current observation basis,

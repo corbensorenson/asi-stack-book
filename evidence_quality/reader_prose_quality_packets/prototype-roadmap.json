@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "prototype-roadmap",
+  "chapter_file": "chapters/prototype-roadmap.qmd",
+  "chapter_sha256": "16e5a06fa20df377c2d9645251ff2ac65dbd6ee825a2a3fc61ff32ca4f4054be",
+  "chapter_role": "implementation-case",
+  "reader_spine_unit": "unit-21-recursive-integration-and-prototype",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked phase gate: useful research is not an integrated milestone",
+    "actor_or_system": "An infrastructure phase, a research-only phase with debt, their typed predecessors, artifacts, evaluator, rollback, and six adversarial controls",
+    "attempted_action": "Unlock later prototype work by classifying one complete infrastructure record for integration and one debt-bearing artifact for research-only use.",
+    "observable_outcome": "The infrastructure record integrates, the debt-bearing phase stays research-only, and dependency inversion, missing artifacts, self-evaluation, unsupported promotion, unretired debt, or missing non-claims reject the unlock.",
+    "failed_or_tested_boundary": "The trace tests whether usefulness, a green fixture, or a simple dependency and receipt count can substitute for typed dependency meaning and an authorized terminal decision; they cannot.",
+    "residual_owner": "The roadmap and phase owners retain dependency uncertainty, evaluator dependence, phase debt, rollback, retirement, evidence effect, and every consumer still blocked.",
+    "evidence_boundary": "The gate suite contains finite authored records and does not establish that any prototype phase, artifact, evaluator, rollback, build controller, benchmark, or milestone is complete or deployed."
+  },
+  "worked_trace": {
+    "heading": "Worked phase gate: useful research is not an integrated milestone",
+    "state_labels": ["phase_proposed", "dependencies_bound", "infrastructure_integrated", "debt_research_only", "invalid_unlock_rejected"],
+    "source_or_fixture_refs": ["experiments/prototype_phase_gates/results/2026-07-02-local.json", "scripts/validate_prototype_phase_gates.py"],
+    "maximum_inference": "The finite gate model distinguishes integrate, research-only, and reject routes and preserves dependency-aware lifecycle custody; it establishes no real phase completion, evaluator competence, rollback execution, deployment, benchmark benefit, or milestone."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline treats a finished artifact or green milestone as permission for all later work. The chapter issues consumer-specific unlocks and lets useful research continue without integration or promotion.",
+  "readable_claim": "A prototype phase is not complete because its artifact is impressive or its checklist is green. It is complete only for the exact consumer and authority unlocked by current dependencies, observed gates, and an explicit terminal decision.",
+  "normative_rule": "Bind every phase to typed predecessors, required artifacts, commands, environment, resource bounds, evaluator, acceptance gates, phase debt, rollback, retirement, evidence effect, and forbidden claims. A dependency inversion, missing artifact, self-evaluation, or promotion without an evidence transition rejects the unlock.",
+  "formal_binding": {"claim_id": "prototype-roadmap.core", "support_state": "argument", "anchor": "Evidence-Gated Phase Unlock Contract"},
+  "claim_atom_and_source_links": ["prototype-roadmap.core", "project_theseus_whitepaper", "ext_nist_ai_rmf_1_0_2023", "ext_swe_bench_2023"],
+  "caveat_consolidation": {"local_caveat": "The worked phase gate states once that its two valid and six invalid records are authored finite semantics rather than milestone evidence.", "consolidated_disposition": "Dependency truth, artifact quality, evaluator independence, phase debt, rollback, throughput, false unlocks and blocks, deployment, capability, transfer, and milestone limits remain distinct.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The integrate, research-only, and six reject routes remain because they are the build-order argument; exhaustive state and transition counts remain in formal evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The short claim and rule separate phase meaning, typed gates, and rejection logic from the full contract bundle.", "hedge_disposition": "The finite-record limit is consolidated while dependency, evaluator, debt, rollback, capability, and deployment boundaries remain explicit.", "table_disposition": "The phase and gate tables remain because dependency direction and terminal route are the argument rather than a progress dashboard."},
+  "non_claims": ["The gate suite does not prove any prototype phase complete.", "The finite model does not establish evaluator competence, rollback execution, deployment, or benchmark benefit.", "The editorial revision does not move chapter-core support or release state."]
+}

@@ -3795,19 +3795,100 @@ requires a pinned phrase taxonomy and role-normalized baseline before any
 number is used as an acceptance target. Its machine status is
 `roadmap_records/p7_1c_reader_prose_quality_status.json`.
 
-The 2026-08-02 calibration tranche has now edited the canonical live sources
+Claude's later chapter-by-chapter scan is preserved at
+`docs/chapter_content_triage_2026_08_08.md`. It covers all 85 chapter files and
+supplies a reproducible five-signal ranking plus a named suggestion for every
+chapter. P7.1c accepts its semantic findings but not its raw score as closure:
+phrase markers may miss real traces, source-count and prose-ratio thresholds
+are diagnostic rather than normative, and distinct caveats may not be deleted
+to lower hedge density. Digest-bound editorial review remains the authority.
+
+The 2026-08-02 calibration tranche edited the canonical live sources
 for `asi-is-a-stack-not-a-model`, `the-efficient-asi-hypothesis`,
 `failure-modes-of-ungoverned-intelligence`,
 `inner-alignment-mesa-optimization-and-learned-objective-integrity`, and
 `claim-ledgers-and-belief-revision`. Each adds an illustrative opening failure,
 a state-labelled trace, and a simpler baseline or counterexample. These are
 reader aids, not empirical results; the inner-alignment digest was re-reviewed
-under the existing concept contract with no support effect. The tranche is
-intentionally not called 84/84 completion: the remaining chapters still need
-their own digest-bound packets and adversarial editorial checks.
+under the existing concept contract with no support effect. At that point the
+tranche was intentionally not called 85/85 completion. The 2026-08-09 closure
+below supersedes that intermediate state.
+
+The 2026-08-08 anchor, weak-score, and calibrated-scene tranche began with forty-four digest-bound packets under
+`evidence_quality/reader_prose_quality_packets/`. Project Theseus now walks an
+actual public-safe artifact-retention validation; Integrated Reference
+Architecture opens with the executed nine-scenario repository-change failure;
+Resource Economics walks its four-route synthetic cost ledger; adversarial ML
+compares three source-reported attack outcomes without inventing a scalar;
+CoilRA carries one 128-channel block-cyclic receipt from diagnostic acceptance
+to adoption refusal; Circle gives one proof receipt to two consumers; Compact
+Generation exposes the KERC `714.0`-versus-`73.25`-byte negative result and its
+competence boundary; Autonomous Replication shows why a complete authored
+dossier authorizes only a campaign; and the Open Research Agenda records an
+explicit reference-chapter intake trace. All nine separate readable and
+normative projections from their retained formal claim.
+The five previously edited calibration chapters—Stack Thesis, Efficient ASI,
+Failure Modes, Inner Alignment, and Claim Ledgers—now also have current packets
+that bind their existing illustrative scenes, state traces, simpler baselines,
+reader rules, and formal anchors without adding support.
+Nine additional chapters with already substantive reader scenes now have the
+same custody: Adversarial Evaluation, Capability Commitments, Governed
+Deliberation, Fast Generation, Inter-Stack Exchange, Model-Weight Custody,
+Moral Uncertainty, Open-Ended Improvement, and Scalable Oversight. Their packets
+distinguish illustrative scenes from the real P4/M6 deliberation result and
+other bounded fixture evidence rather than laundering all examples into one
+evidence class.
+The next substantive pass adds four reader-visible decisions from existing
+machine evidence: identical local multi-agent permissions with opposite
+concentration outcomes; a three-minute rented GPU rejected in favor of an
+eligible fifteen-minute home device; an SCF candidate qualified for canary but
+blocked from default; and an artifact steward probe whose valid routes prepare
+work, release review, or sunset without executing protected effects.
+The following five weak-score owners now carry the same treatment from their
+existing evidence: an unbound composite that preserves one credentialed
+ingredient without authenticating the whole asset; a lossy ontology migration
+that invalidates its memory consumers; a SCIF commit probe that permits a
+sanitized refusal while blocking six malformed routes; a societal incident
+whose provider service is restored while three affected paths stay open; and a
+model canary whose passed prechecks give way to monitor-triggered rollback with
+irreversible trace residuals.
+The next three turn one communication lease, one substrate-adoption trace, and
+one objective lease into reader-facing decisions: unchanged wording is blocked
+when audience or repetition exceeds its lease; the same coil candidate moves
+through exploratory, structural-only, blocked, and retired dispositions by
+claim axis; and the same preference or proxy signal cannot manufacture
+objective authority when the consumer or version scope changes.
+Three human-and-world boundary chapters follow: a 5/9/8 human-AI comparator
+rejects one-sided synergy before longitudinal custody begins; a public-safe
+military simulation loses meaningful judgment when time or off-ramps shrink
+even though its approval interface remains; and two agreeing sensor roots
+receive opposite global dispositions when an unrepresented common cause is
+present.
+The next three expose result non-cancellation across social, learning, and
+operational layers: a positive-90 deployment aggregate remains blocked by one
+unremedied cohort; fifteen inventory-exact rollbacks coexist with no useful
+update and zero storage erasures; and one commit-bound Pages deployment joins
+source, tested artifact, public effect, and post-deploy observation without
+becoming a prospective incident-control result.
+Three evidence-admission owners follow: two workloads exactly exhaust six
+physical capacity axes while hidden backup energy invalidates impact
+accounting; a useful prototype artifact stays research-only until typed
+dependencies and gates authorize integration; and positive, null, and
+inconclusive scientific attempts remain in one denominator under an unopened
+confirmatory branch.
+The 2026-08-09 closure extends that contract to all 85 canonical chapters.
+Every chapter now has a current reader claim, operational rule, worked scene or
+justified existing trace, simpler baseline, formal binding, caveat disposition,
+and maximum-inference boundary. All 85 Human Reading Path blocks also carry a
+unique Concrete lens; the audit records 85 unique lenses and zero exact block
+duplicates. The packet validator rejects stale digests, generic scenes, wrong
+reader roles, erased limitations, unsupported examples, and headings absent
+from the chapter. This is 85/85 editorial custody with no support or release
+movement. The closure audit is
+`docs/reader_prose_quality_closure_2026_08_09.md`.
 
 P7.1c is an existing-owner editorial repair, not a chapter-admission lane. It
-does not reopen the 84-chapter manifest, change support, or displace P2. Each
+does not reopen the 85-chapter manifest, change support, or displace P2. Each
 chapter receives a digest-bound prose-quality packet with five obligations:
 
 1. Open with a 150–250 word chapter-specific failure, decision, or discovery
@@ -3832,7 +3913,7 @@ chapter receives a digest-bound prose-quality packet with five obligations:
    into the main argument. A paragraph should normally say who or what acts,
    what changes, and why it matters before introducing the schema.
 
-The acceptance gate is **all current-manifest chapters** with digest-bound packets; concrete scene,
+The acceptance gate is **all 85 current-manifest chapters** with digest-bound packets; concrete scene,
 worked trace, counterexample, readable/formal claim projections, role-normalized
 caveat audit, reader-surface audit, semantic diff, link/render/browser/
 accessibility checks, and adversarial editorial fixtures must all pass. No

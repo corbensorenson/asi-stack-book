@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "cognitive_compilation"
   - "planforge_compiler_arch"
@@ -58,6 +58,8 @@ The compiler is the first layer where a plan stops being merely plausible and be
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The syntax-only compiler accepts valid HTML. The semantic compiler checks the target against both required output and preserved non-goals.
 
 A scheduled plan is still too loose unless each unit of work has an artifact language. Cognitive compilation gives the stack that language: semantic atoms, obligations, validators, repairs, and target outputs that can be inspected before they become code, prose, schemas, proofs, or tool jobs.
 
@@ -149,6 +151,16 @@ execute effects, self-certify semantic adequacy, or move support or release
 state. The claim remains at `argument`: the current evidence establishes exact
 synthetic records, mixed bounded QCSA findings, and finite route consequences,
 not a natural cognitive compiler.
+
+**Reader claim.** Compilation succeeds only when every obligation and non-goal survives lowering into the actual target artifact; syntactic validity is not semantic preservation.
+
+**Operational rule.** Give each obligation a stable semantic identity, bind every compiler pass and declared loss, validate the produced target independently, and compute dependency closure after repair. Missing atoms, authority escape, cyclic dependencies, failed validators, or lost obligations block lowering.
+
+### Worked lowering: “publish the summary, expose no private paths”
+
+An accepted plan requires a public summary and carries a non-goal: no local filesystem path may appear. The semantic IR assigns separate stable IDs to the required summary, source citations, privacy boundary, output format, and verifier. A target compiler produces HTML that renders correctly but includes an absolute path inside a citation tooltip. Syntactic validation passes; the semantic validator traces the output field to the privacy non-goal and rejects the artifact.
+
+Repair changes the tooltip generator, records the observed mutation set, rebuilds dependent outputs, and reruns both format and privacy checks. The compiler cannot simply delete the failed obligation or claim the user intended publication at any cost. The finite route model checks source-plan, atom, dependency, authority, validator, receipt, obligation-loss, repair-ledger, and residual boundaries. It does not prove arbitrary semantic equivalence, compiler correctness, natural-language understanding, or independent evaluator competence.
 
 ### Claim-source mapping status
 

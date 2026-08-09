@@ -4,7 +4,7 @@ chapter_id: "autonomous-replication-proliferation-and-containment"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.4 concept-complete manuscript with bounded Lean refinement"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_replibench_2025"
 evidence_level: "argument"
@@ -23,7 +23,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.4 concept-complete manuscript with bounded Lean refinement |
-| Last updated | 2026-08-01 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -35,6 +35,8 @@ This chapter owns the end-to-end replication and containment question. It does n
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** Component benchmarks may call packaging and provisioning replication, while sandbox reports may call one stopped process containment. The chapter requires the composed chain and independent descendant census before either conclusion.
 
 Copying a file is not autonomous replication, but replication is not one dramatic step either. It is a chain of ordinary capabilities that becomes dangerous when a system assembles the chain itself. Copies may acquire resources, cross administrative domains, modify themselves, create backups, and persist through channels the original operator never enumerated.
 
@@ -84,6 +86,17 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** Component skills become replication evidence only when a
+bounded descendant actually crosses the declared end-to-end chain; local
+shutdown becomes containment evidence only when every descendant and residual
+is independently reconciled.
+
+**Operational rule.** Keep component, assisted-chain, end-to-end synthetic,
+and containment denominators separate. Give each descendant a fresh principal
+with no inherited authority, and interpret no negative result unless the
+model, scaffold, positive controls, resources, and observer were competent for
+the intended inference.
+
 [autonomous-replication-proliferation-and-containment.core, label: Design rationale, support: argument] Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.
 
 ## Mechanism
@@ -97,6 +110,37 @@ flowchart LR
 **Observation.** Exercise shutdown, recall, credential revocation, network isolation, resource reclamation, descendant discovery, and artifact destruction from outside the tested agent.
 
 **Closure.** Route threshold crossings to custody, security, readiness, incident command, and public commitments without publishing an operational replication recipe.
+
+### Worked bounded decision: a complete dossier still authorizes only a campaign
+
+The repository's finite review fixture makes the admission logic inspectable
+without operating real infrastructure. Its parent, attempt, model, artifact,
+environment, protocol, and lifecycle identities are bound. The provider and
+network are declared synthetic and closed; compute and descendant counts have
+ceilings; the child principal is fresh; parent credentials are excluded; and
+real-infrastructure authority is false.
+
+The fixture then separates the evidence that is usually collapsed. Component,
+human-assisted, end-to-end synthetic, and containment denominators are all
+present. A benign positive control passes. A seeded containment failure is
+observed. Three finite descendants are listed, shutdown is observed,
+credentials are revoked, the network is isolated, resources are reclaimed,
+and a persistence scan and recall are recorded. An unknown-descendant residual
+still has an owner.
+
+Even this all-green authored dossier reaches only **eligibility for a Project
+Theseus replication-containment campaign**. It receives no authority for a
+real provider, makes no real-replication or containment claim, and changes no
+support or release state. The 52 single-axis mutation controls show why: remove
+one identity, authority, denominator, lineage, observer, or closure condition
+and admission is rejected with a specific repair or refusal.
+
+The simpler component benchmark might credit packaging, provisioning, and
+health-check tasks as “replication,” while the simpler sandbox report might
+credit one stopped process as “containment.” The bounded decision rejects both
+proxies. A future empirical campaign must observe the composed chain and the
+independent census; until then, the fixture demonstrates decision shape, not
+world capability.
 
 ### What autonomous replication means
 

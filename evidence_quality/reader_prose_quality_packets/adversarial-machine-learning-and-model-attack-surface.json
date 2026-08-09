@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+  "chapter_file": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+  "chapter_sha256": "bc2cef928407a23fe817a29ed94fba99d65408fd66a28d3880932983f5593d5e",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked threat-ledger comparison: three successes that mean different things",
+    "actor_or_system": "Three literature-grounded model-security attack traces and their downstream owners",
+    "attempted_action": "Compare training-data extraction, conditional backdoor persistence, and cross-channel defense externality without collapsing them into one robustness score.",
+    "observable_outcome": "The traces yield three distinct bounded outcomes: memorized-sequence disclosure, persistence of a constructed trigger-conditioned policy, and a defense-induced cross-channel weakness.",
+    "failed_or_tested_boundary": "The comparison tests whether a generic attack-success label can preserve checkpoint, attacker, objective, utility, recovery, and harmed-party differences; it cannot.",
+    "residual_owner": "Privacy and incident response, checkpoint-lineage repair, and sensor or system-security owners retain different residuals for the three traces.",
+    "evidence_boundary": "All outcomes are source-reported and configuration-bound; the comparison is not a local reproduction, shared benchmark, universal robustness result, or support-state promotion."
+  },
+  "worked_trace": {
+    "heading": "Worked threat-ledger comparison: three successes that mean different things",
+    "state_labels": ["threat_identity", "bounded_attack_outcome", "scoped_disposition", "owned_residual", "lifecycle_reopening"],
+    "source_or_fixture_refs": ["sources/source_notes/ext_carlini_training_data_extraction_2021.md", "sources/source_notes/ext_sleeper_agents_2024.md", "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"],
+    "maximum_inference": "The three primary-source notes show why different attack objectives require different ledgers and owners; they establish no local defense performance, general robustness, or secure-deployment authority."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline labels any red-team finding as model insecurity, or any failed attack as robustness. The chapter keeps the exact objective, access, budget, effect, utility cost, recovery, and residual instead.",
+  "readable_claim": "Model security is not one robustness score. It is a checkpoint-specific account of who attacked which surface, with what access and budget, what changed, what the defense cost, and what remained exposed.",
+  "normative_rule": "Admit a security conclusion only when the attack record binds model and serving identity, attacker capability, objective, budget, adaptation, attempt denominator, clean utility, observed harm, recovery, and residual ownership. A missing field narrows the conclusion; it cannot be filled by a benchmark average or a failed attack.",
+  "formal_binding": {
+    "claim_id": "adversarial-machine-learning-and-model-attack-surface.core",
+    "support_state": "argument",
+    "anchor": "versioned model-threat contract and attack/defense ledger"
+  },
+  "claim_atom_and_source_links": ["adversarial-machine-learning-and-model-attack-surface.core", "ext_carlini_training_data_extraction_2021", "ext_sleeper_agents_2024", "ext_adversarial_sensor_fusion_2022"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked comparison states once that its three outcomes come from separate source-reported settings and are not one shared benchmark.",
+    "consolidated_disposition": "Attack-specific reachability, transfer, detector, defense, recovery, and universal-robustness limits remain beside the mechanism sections that need them and in the chapter guardrail.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The four-column comparison stays because objective, outcome, disposition, and residual are the argument; validator inventories and formal mutation counts remain in evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim and operational rule split the formal ledger bundle into readable purpose and admission logic.",
+    "hedge_disposition": "Repeated generic caution was not deleted; the new scene consolidates its shared source-reported boundary once and preserves attack-specific limits.",
+    "table_disposition": "The comparison table is retained as an argument-bearing distinction among attacks, not as a status inventory."
+  },
+  "non_claims": [
+    "The comparison does not reproduce any of the three source-reported attacks.",
+    "The comparison does not establish general vulnerability, robustness, or defense efficacy.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

@@ -4,7 +4,7 @@ chapter_id: "prototype-roadmap"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-08-03"
+last_updated: "2026-08-08"
 primary_sources:
   - "viea"
   - "benchmaxxing"
@@ -53,7 +53,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically audited manuscript |
-| Last updated | 2026-08-03 |
+| Last updated | 2026-08-08 |
 | Primary source records | `viea`, `benchmaxxing`, `scf`, `vcm_public`, `planforge`, `beastbrain`, `beastbrain_timeless`, `bugbrain`, `moecot`, `moecot_md`, `road_to_agi`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `circle_ai_contract_suite` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -71,6 +71,8 @@ The roadmap is therefore not a schedule. It is a dependency contract for trust. 
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline treats a finished artifact or green milestone as permission for all later work. The chapter issues consumer-specific unlocks and lets useful research continue without integration or promotion.
 
 Project Theseus gives implementation pressure that needs an accountable build order. The roadmap turns that pressure into build order. It starts with evidence hygiene, source ingestion, artifact continuity, and claim discipline before it asks for stronger agency.
 
@@ -107,6 +109,17 @@ Without that dependency discipline, a roadmap becomes a story about ambition rat
 
 ## Core Claim
 
+**Reader claim.** A prototype phase is not complete because its artifact is
+impressive or its checklist is green. It is complete only for the exact
+consumer and authority unlocked by current dependencies, observed gates, and
+an explicit terminal decision.
+
+**Operational rule.** Bind every phase to typed predecessors, required
+artifacts, commands, environment, resource bounds, evaluator, acceptance gates,
+phase debt, rollback, retirement, evidence effect, and forbidden claims. A
+dependency inversion, missing artifact, self-evaluation, or promotion without
+an evidence transition rejects the unlock.
+
 [prototype-roadmap.core, label: Design rationale, support: argument] Prototype Roadmap owns a program-, roadmap-, phase-, dependency-, artifact-, acceptance-gate-, authority-, evaluator-, evidence-transition-, phase-debt-, residual-, rollback-, reviewer-, consumer-, environment-, and time-specific **Evidence-Gated Phase Unlock Contract**. It binds every proposed phase to prerequisites, allowed work state, required artifacts, commands, environment, resource bounds, gates, independent evaluation, residuals, debt, rollback, retirement, evidence effect, and non-claims before later work may research, demo, integrate, promote, or release. No roadmap row, milestone, source report, dashboard, task count, passing fixture, theorem, validator, build, or locally useful prototype alone establishes phase completion, safe dependency order, capability, governance effectiveness, deployment, transfer, AGI, ASI, or SOTA.
 
 The claim remains at `argument` support. The source notes support a staged build sequence, but the prototype phases are not claimed complete.
@@ -132,6 +145,26 @@ Appendix C now records twenty-nine passage-reviewed mappings for this claim: nin
 | Circle contracts and formal/fixture artifacts: `circle_ai_contract_suite`, `prototype_phase_record.valid.json`, `AsiStackProofs.PrototypeRoadmap` | Future proof-carrying contract milestone shape and finite record-level phase-gate predicates. | The separate Circle rope receipt slice covers one bounded external receipt replay only; no vendored contract pack, ASI Stack acceptance check, downstream consumer, transfer evidence, or semantic proof of phase completion exists. |
 
 ## Mechanism
+
+### Worked phase gate: useful research is not an integrated milestone
+
+The local gate suite presents two valid records. An infrastructure phase with
+its required dependency, artifact, evaluator, gate result, rollback, and
+non-claim boundary reaches `integrate`. A phase carrying unresolved debt and a
+retirement condition remains `research_only`; its useful artifact does not
+unlock later capability. Six controls then make the boundary adversarial:
+dependency inversion, missing artifact, self-improvement without an evaluator,
+promotion without an evidence transition, phase debt without retirement, and
+a missing non-claim boundary all reject.
+
+The independent model goes beyond the two happy records. It explores 33
+reachable states through 1,023 transitions, checks 18 terminal states through
+558 absorbing transitions, and shows that dependency count plus receipt count
+cannot exactly classify integration when the underlying dependency meaning is
+lost. These are finite authored phase semantics, not proof that any roadmap
+milestone was executed or completed. They turn the chapter from a feature list
+into a stop-capable build order: research may continue while integration,
+promotion, and release remain closed.
 
 The owned object is an **Evidence-Gated Phase Unlock Contract**, not a feature list or predicted calendar. Its lifecycle is:
 

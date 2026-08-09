@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+  "chapter_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+  "chapter_sha256": "428ca1d393481edfaed2293024ec7678027c0a0339b42f75566e8c73f6fd44b7",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-20-resource-and-recovery-economics",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked hive placement: the three-minute rented GPU loses",
+    "actor_or_system": "A policy-first hive scheduler choosing between a fifteen-minute home desktop and a three-minute rented GPU",
+    "attempted_action": "Render and validate a private draft under local-only data policy, phone approval, zero external spend, and a dropout residual.",
+    "observable_outcome": "The faster rented node is rejected for private-data and tool-policy mismatch, while the home desktop receives a job-scoped local render approval.",
+    "failed_or_tested_boundary": "The trace tests whether reachability, high compute fit, or lower estimated latency licenses work placement; policy eligibility must be established first.",
+    "residual_owner": "The hive decision retains unexecuted dropout recovery, audit replay, approval expiry, device revocation, energy budget, and no-private-export obligations.",
+    "evidence_boundary": "The two valid and eight invalid records are synthetic admission fixtures; no scheduler, registry, network, approval service, guardian policy, sandbox, federation, energy measure, or dropout recovery ran."
+  },
+  "worked_trace": {"heading": "Worked hive placement: the three-minute rented GPU loses", "state_labels": ["job_contract", "device_bids", "policy_filter", "scoped_approval", "selected_local_node", "owned_dropout_residual"], "source_or_fixture_refs": ["experiments/hive_admission/fixtures/valid_local_private_policy_filtered_dispatch.json", "experiments/hive_admission/results/2026-07-01-local.md", "scripts/validate_hive_admission.py"], "maximum_inference": "The fixture validates policy-first admission and eight typed rejection boundaries only; it establishes no runtime scheduling quality, privacy, security, energy, recovery, federation, or useful-work result."},
+  "counterexample_or_simpler_baseline": "Latency-first scheduling selects the three-minute rented GPU, but that route violates local-only private-data and tool boundaries; policy filtering makes it ineligible before optimization begins.",
+  "readable_claim": "A hive chooses the fastest eligible device, not the fastest reachable device.",
+  "normative_rule": "Filter every node by principal, data, tool, approval, secret, locality, energy, federation, dropout, and residual policy before comparing latency or price. A partition or stale grant routes high-impact work to denial, quarantine, or fresh approval rather than available-but-unauthorized execution.",
+  "formal_binding": {"claim_id": "personal-compute-hives-and-federated-edge-intelligence.core", "support_state": "argument", "anchor": "policy-before-optimization"},
+  "claim_atom_and_source_links": ["personal-compute-hives-and-federated-edge-intelligence.core", "beastbrain", "ext_cap_theorem_2002", "ext_ray_2018"],
+  "caveat_consolidation": {"local_caveat": "The trace states that it validates admission records and does not execute the represented scheduler or recovery paths.", "consolidated_disposition": "Device trust, network, approval, guardian, privacy, security, rented-node, federation, energy, dropout, usefulness, transfer, and deployment limits remain in dedicated evidence surfaces.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The narrative carries only two device cards and the decisive rejection; the full bids, approvals, policy fields, and invalid controls remain in fixture artifacts.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The short fastest-eligible rule gives a clear entry into the comprehensive hive admission contract.", "hedge_disposition": "The non-runtime boundary remains once near the trace while distinct policy and recovery limits remain actionable.", "table_disposition": "No new table duplicates the full fixture; the placement decision is narrated."},
+  "non_claims": ["The fixture does not execute a deployed hive, scheduler, network, or approval service.", "The fixture does not establish privacy, security, energy, recovery, or useful-work performance.", "The editorial revision does not move support or release state."]
+}

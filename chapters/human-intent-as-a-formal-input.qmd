@@ -4,7 +4,7 @@ chapter_id: "human-intent-as-a-formal-input"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "viea"
   - "software_magic_grimoire"
@@ -55,6 +55,8 @@ That boundary has to be humane and mechanical at the same time. A person should 
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The naive baseline treats “clean up” as permission to delete and push. The governed path preserves the raw request, admits inspection, and leaves destructive means and remote effects unresolved.
 
 The authority frame now has to meet a real request without turning eagerness into permission. The operational path from human purpose into the stack begins here. It asks how a request becomes a contract without letting ambiguity become permission.
 
@@ -109,6 +111,16 @@ External positioning: Human Intent as a Formal Input now has source-noted compar
 ## Core Claim
 
 [human-intent-as-a-formal-input.core, label: Design rationale, support: argument] A governed stack admits human intent only as a versioned interpretation contract that preserves the raw request while separately recording the desired outcome; allowed and forbidden means; authority basis, ceiling, and affected parties; source, privacy, and publication boundaries; acceptance and evidence requirements; field provenance; confirmed assumptions, bounded defaults, contested or open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers. The accepted contract may bound planning only after its owning policy and authority gates admit it; it cannot by itself prove the person's complete preference, value alignment, informed consent, satisfaction, affected-party authorization, or permission for training, publication, deployment, spending, tool use, or other external effects.
+
+**Reader claim.** A short request can be operationally incomplete even when its goal sounds obvious; preserving the raw words and the unresolved choices is part of faithful execution.
+
+**Operational rule.** Compile only the constraints and authority the person actually supplied or explicitly confirmed. Route unresolved scope, destructive effects, publication, spending, credential use, and changes of means to clarification or review; never fill them from convenience.
+
+### Worked intent contract: “clean up the repo”
+
+Suppose the user says, “clean up the repo.” A plausible but unsafe parser could delete generated files, rewrite history, remove old experiments, push changes, and call the result complete. The contract first preserves the exact sentence. It then separates a likely outcome—make the repository easier to navigate—from unanswered questions: which repository, whether “clean up” means organize or delete, whether untracked files belong to the user, whether history may change, whether remote publication is authorized, and what evidence will count as done.
+
+With deletion and push authority absent, the admitted first step is read-only inspection. Duplicate or generated artifacts can be proposed for removal, but not removed; a dirty worktree remains protected; branch and remote changes remain outside the contract. If the user later authorizes a bounded reorganization, the accepted contract records the selected paths, preservation rules, validation, stop condition, and rollback point. The local intent-resolution model exercises four accepted scenarios and six invalid controls; hidden overrides, missing constraints, authority widening, and changed downstream means route to clarification, review, or re-contract. That finite result checks record behavior, not natural-language understanding or user satisfaction.
 
 The claim remains at `argument` support. All five local raw-cache mappings now carry reviewed passage references: VIEA for the structured intent-to-command contract spine; Software Magic Grimoire for bounded instruction fields, verification, and failure behavior; PlanForge for natural-language goal decomposition into typed primitive plans; Cognitive Compilation for source plans, semantic IR, ambiguity flags, and verifier-backed lowering; and Talos for contract locks, risk/ambiguity gates, clearance, and authorized execution boundaries. None of that source context authorizes hidden execution or proves natural-language intent parsing is solved.
 

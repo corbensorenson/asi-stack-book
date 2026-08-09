@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "data-engines-continual-learning-and-unlearning",
+  "chapter_file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+  "chapter_sha256": "a1e22e7cb03d394d259fd50a74bb626111d2154903379201a3bb2a2d839df6d3",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-18-developmental-learning",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked result: fifteen exact rollbacks and zero storage erasures",
+    "actor_or_system": "A five-arm, three-seed small-network update campaign with a prospectively frozen 24-surface state inventory",
+    "attempted_action": "Compare governed update and unlearning routes while restoring model, optimizer, scheduler, RNG, cache, checkpoint, backup, lineage, and descendant state under prospective checkpoint authority.",
+    "observable_outcome": "All 15 transactions roll back the declared inventory exactly, but no arm meets the target gain, deletion behavior changes 4/0/1, influence remains proxy-only, and storage erasure remains zero.",
+    "failed_or_tested_boundary": "The result tests whether exact recovery can launder update utility or whether behavioral cohort change can launder influence, privacy, lineage, storage, or backup erasure claims; it cannot.",
+    "residual_owner": "The data custodian, trainer, privacy evaluator, storage verifier, and descendant owners retain the separate unresolved unlearning and external-erasure axes.",
+    "evidence_boundary": "The campaign is a small synthetic local result with internal evaluation; it does not establish foundation-model learning, causal influence removal, privacy protection, legal compliance, external descendant closure, or transfer."
+  },
+  "worked_trace": {
+    "heading": "Worked result: fifteen exact rollbacks and zero storage erasures",
+    "state_labels": ["24_surfaces_frozen", "15_of_15_exact_rollback", "target_gain_not_met", "influence_proxy_only", "storage_erasure_zero"],
+    "source_or_fixture_refs": ["experiments/data_engine_full_state_bridge/results/2026-07-13-local.json", "docs/data_engine_lifecycle_refinement.md"],
+    "maximum_inference": "The local bridge establishes exact restoration over its declared 24-surface inventory and separates bounded deletion-related signals; it establishes no useful update, forgetting, privacy, storage erasure, external descendant closure, or production rollback."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline restores weights and reports a deleted cohort's behavioral change as unlearning. The chapter requires full-state recovery and keeps behavioral, causal, privacy, lineage, storage, backup, and descendant axes separate.",
+  "readable_claim": "Restoring every declared training-state surface does not show that an update helped, and changing a deleted cohort's behavior does not show that its influence, privacy exposure, backups, or descendants are gone.",
+  "normative_rule": "Bind data admission, checkpoint authority, model, optimizer, scheduler, RNG, cache, backup, lineage, descendants, and deletion scope before learning. Report behavioral change, causal influence, privacy, lineage, legal status, storage, backups, and external descendants as separate axes that cannot promote one another.",
+  "formal_binding": {"claim_id": "data-engines-continual-learning-and-unlearning.core", "support_state": "argument", "anchor": "Data-and-Descendant Custody Lease"},
+  "claim_atom_and_source_links": ["data-engines-continual-learning-and-unlearning.core", "ext_bourtoule_machine_unlearning_2021", "ext_shumailov_model_collapse_2023", "ext_gerstgrasser_data_accumulation_2024"],
+  "caveat_consolidation": {"local_caveat": "The worked result states once that it is a small local synthetic campaign with internal evaluation.", "consolidated_disposition": "Source truth, rights, contamination, utility, checkpoint authority, full-state scope, sequential deletion, influence, privacy, storage, backups, descendants, and transfer limits remain distinct.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The 24/15/15 and 4/0/1/0 values remain because they prevent claim-axis laundering; exhaustive lifecycle and theorem inventories remain in evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule separate full-state rollback from the seven unlearning axes before the formal lease.", "hedge_disposition": "The local-campaign boundary is consolidated while rights, utility, influence, privacy, storage, backup, descendant, and transfer limits remain explicit.", "table_disposition": "Comparator and axis tables remain because their non-equivalence is the argument rather than a progress inventory."},
+  "non_claims": ["Exact local rollback does not establish a useful continual-learning update.", "Behavioral cohort change does not establish influence, privacy, storage, backup, or descendant erasure.", "The editorial revision does not move chapter-core support or release state."]
+}

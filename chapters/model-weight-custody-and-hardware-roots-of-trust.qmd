@@ -56,6 +56,8 @@ deployment deserves trust.
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** A valid-signature-plus-attestation gate is the simpler baseline, but it can release the correct key for an unreviewed derivative because it does not join artifact lineage to policy authority.
+
 A model's weights make a trained capability portable across backups,
 deployment images, and recipient environments. A runtime may correctly refuse
 a tool call even after the artifact that generated it has escaped the intended

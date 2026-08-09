@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "moral-uncertainty-and-value-conflict",
+  "chapter_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
+  "chapter_sha256": "1b875aa8110964665b7b5a73d0cff769211f1c0713e27d14bf7abca8c61bd396",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-05-constitutional-objective-governance",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked contestability example",
+    "actor_or_system": "A user, care team, affected third party, and memory-governance system contesting an audit, exit, export, and fork request",
+    "attempted_action": "Return decision evidence and portable user material without exposing third-party private context or unreviewed safety notes, while preserving a challenge and fork route.",
+    "observable_outcome": "The system emits a redacted audit packet and scoped exit export, withholds bounded private material for review, narrows the fork, and keeps redaction appeal and residual uncertainty open.",
+    "failed_or_tested_boundary": "The example tests whether one value can silently dominate privacy, safety, autonomy, and accountability or whether export and fork are unconditional rights; the lease keeps conflict explicit.",
+    "residual_owner": "The contestability owner retains withheld boundaries, redaction appeal, fork safety obligations, revisit conditions, replacement preservation, and portability residuals.",
+    "evidence_boundary": "The synthetic fixture validates cross-record decision shape and seven rejection controls; it establishes no moral correctness, legal right, reviewer independence, usable export, safe fork, or deployed governance."
+  },
+  "worked_trace": {"heading": "Worked contestability example", "state_labels": ["contested_request", "plural_value_record", "redacted_audit", "scoped_exit_and_fork", "appeal_and_revisit"], "source_or_fixture_refs": ["docs/contestability_worked_example.md", "experiments/contestability_worked_example/results/2026-07-02-local.json", "chapters/moral-uncertainty-and-value-conflict.qmd"], "maximum_inference": "The synthetic contestability fixture validates record shape and rejection controls only; it does not settle moral truth, legal rights, material contestability, export utility, fork safety, or governance legitimacy."},
+  "counterexample_or_simpler_baseline": "A single precedence rule such as privacy-always-wins or safety-always-wins is the simpler baseline, but it erases standing, stakes, reversibility, dissent, appeal, exit, and residual uncertainty.",
+  "readable_claim": "The conflict is not \"privacy wins\" or \"safety wins.\" The record keeps privacy, safety, autonomy, and accountability as separate axes, names the requesting user, care team, and affected third party, and treats the decision as a bounded lease with residual uncertainty.",
+  "normative_rule": "The allowed path is a redacted audit packet plus a scoped exit export: the user receives decision receipts, a source-memory inventory digest, user-authored notes, and a portable preference summary.",
+  "formal_binding": {"claim_id": "moral-uncertainty-and-value-conflict.core", "support_state": "argument", "anchor": "versioned decision lease plus a linked rights receipt"},
+  "claim_atom_and_source_links": ["moral-uncertainty-and-value-conflict.core", "ethica_mechanica", "alignment_field", "coherence_exchange"],
+  "caveat_consolidation": {"local_caveat": "The example states its synthetic record-shape boundary and preserves unresolved conflict instead of presenting the route as morally correct.", "consolidated_disposition": "Moral truth, consensus, consent, legal rights, standing, reviewer independence, audit, exit, export, fork, replacement, legitimacy, and deployment limits remain in dedicated sections.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The scene narrates one contested decision; the linked lease, receipt, mutation, and replacement fields remain in machine and evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The plural-value scene provides a concrete reader projection before the comprehensive lease-and-rights formal claim.", "hedge_disposition": "Uncertainty and non-resolution are the mechanism, not filler, and remain explicitly owned.", "table_disposition": "No new status table was added; the contestability path remains prose-led."},
+  "non_claims": ["The fixture does not settle moral truth, legal rights, or governance legitimacy.", "The fixture does not establish reviewer independence, usable export, or safe forking.", "The editorial packet does not move support or release state."]
+}

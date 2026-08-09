@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "scf"
   - "rmi"
@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-08 |
 | Primary source records | The manifest owns the exact source list, including `capability_ratchet_whitepaper` alongside the existing replacement, corrigibility, rollout, MLOps, and transaction comparators. |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -58,6 +58,8 @@ The replacement transaction is the stack's version of a high-risk write. It chan
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline promotes after a benchmark or precheck pass and calls restoring one model alias rollback. The chapter prospectively freezes gates and distinguishes restored inventory from irreversible external effects.
 
 Stable Capability Fields define the boundary that replacement must cross under review. Replacement is a controlled crossing with compatibility checks, canary scope, monitoring, rollback, and residual ownership. The field says what must remain true; the transaction says whether the candidate earned the right to become ordinary infrastructure.
 
@@ -96,6 +98,17 @@ That one-way framing also hides who owns the risk. If a replacement fails, someo
 
 ## Core Claim
 
+**Reader claim.** Replacement is not “put the better model in production.” It
+is a prospective change transaction that must say which state and effects may
+change, what monitor stops the canary, what rollback can restore, and what
+cannot be reversed.
+
+**Operational rule.** Freeze field identity, prior and candidate artifacts,
+gates, checkpoint authority, monitor, exposure, and recovery objective before
+observing results. A failed monitor routes to rollback or quarantine, and a
+rollback may claim success only for restored inventory while preserving every
+irreversible effect as an owned residual.
+
 [capability-replacement-and-rollback.core, label: Design rationale, support: argument] Capability replacement should be a prospectively authorized, phase-gated transaction over a declared Stable Capability Field. It binds exact prior/candidate identity, change class, checkpoint authority, state/effect inventory, scoped evidence and authority, evaluator and monitor dependencies, staged exposure, commit, recovery or compensation, descendants, residuals, and terminal receipts. It cannot make irreversible effects reversible, prove its own observers, grant authority, establish useful improvement, or generalize inventory-exact local restoration to production.
 
 The core claim remains `argument`. The source set supplies design lineage and comparators. The repository adds exact synthetic and finite proof results plus narrow empirical outcomes: 15/15 local rollback equality on a prospective 24-surface inventory, but no eligible utility gain; 32/36 exact attack-control rollback and 2/36 useful release in a different campaign, below both gates. These results strengthen the inventory-specific subclaim and refute any implication that governance or rollback already yields useful, complete replacement.
@@ -120,6 +133,27 @@ Appendix C maps all assigned sources. Five project sources have reviewed raw pas
 | `ext_txfs_2018` | Bounded ACID filesystem transaction, isolation, conflict, journal, and crash-consistency comparator. | TxFS was not reproduced; local snapshots do not establish filesystem transactions, crash safety, services, or external-effect atomicity. |
 
 ## Mechanism
+
+### Worked rollback: a passed precheck does not survive the canary
+
+The synthetic transaction
+`replacement://model-rollout-monitor-rollback` begins with three passed
+prechecks—data validation, schema validation, and serving integration—and a
+candidate that preserves the field and authority ceiling of
+`field://prediction-service-risk-model`. The canary then fails its baseline
+regression-floor monitor while serving latency remains within threshold. The
+independent rollout reviewer routes the transaction to rollback, restores the
+alias to `impl://risk-model-v1`, and drives the candidate route weight to zero.
+
+That is not complete erasure. The receipt restores the model alias, route
+weight, and canary exposure, but explicitly retains logged prediction traces
+as an irreversible audit residual. The harness accepts this record and four
+other valid synthetic transactions while rejecting nine controls, including
+authority widening, failed-regression commit, missing rollback rehearsal,
+missing data or schema gates, an unowned irreversible effect, and a
+self-evaluator. It demonstrates the chapter's state distinction—precheck pass,
+monitor failure, bounded rollback, open residual—without claiming that a real
+deployment, monitor, or production rollback worked.
 
 A replacement transaction is the moment an SCF becomes an accountable state change. It is allowed to fail, roll back only partially, require compensation, or establish that no useful improvement occurred. What it cannot do is choose its rules after the outcome, hide an affected surface, or narrate a partial recovery as complete.
 

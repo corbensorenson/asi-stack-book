@@ -1,0 +1,42 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "failure-modes-of-ungoverned-intelligence",
+  "chapter_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+  "chapter_sha256": "15d5fcd55bc11f4f83603a8945dbb39e4ff1859d49be20a72a3f985a0be685d7",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: from boundary event to learning path",
+    "actor_or_system": "A night-shift operations assistant and dashboard handling a primary-source outage and cached-summary fallback",
+    "attempted_action": "Continue a fleet job from cached data and report status while a supervisor uses the dashboard to authorize a capacity change.",
+    "observable_outcome": "A syntactically successful job carries stale data, the dashboard would overstate current state, and reconciliation discovers a misrouted backlog with an unowned cause.",
+    "failed_or_tested_boundary": "The trace tests whether local command success and a green receipt establish current world state; freshness, fallback taint, release, and residual ownership block that inference.",
+    "residual_owner": "Operations owns queue repair, the observation owner retains freshness and taint, and the evidence path preserves the near miss and recurrence state.",
+    "evidence_boundary": "The night-shift case is illustrative and makes the taxonomy operational; it does not report a fleet incident or establish how often the named failure families occur."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: from boundary event to learning path",
+    "state_labels": ["observation", "execution", "release", "recovery"],
+    "source_or_fixture_refs": ["chapters/failure-modes-of-ungoverned-intelligence.qmd", "sources/source_notes/ext_concrete_ai_safety_2016.md"],
+    "maximum_inference": "The illustrative trace shows how one fallback event should acquire detector, receipt, containment, owner, residual, and learning-path fields; it is not incident or mitigation evidence."
+  },
+  "counterexample_or_simpler_baseline": "A flat incident log can preserve timestamps and messages but cannot by itself identify the failed boundary, protected invariant, containment decision, residual owner, or recurrence route.",
+  "readable_claim": "The stack-level taxonomy is valuable only if the row points to a detector, a receipt, a containment action, and a learning path.",
+  "normative_rule": "An admitted taxonomy row should map to an invariant, a detector or observer, an evidence record, and a containment path.",
+  "formal_binding": {"claim_id": "failure-modes-of-ungoverned-intelligence.core", "support_state": "argument", "anchor": "distinct boundary event with a trigger"},
+  "claim_atom_and_source_links": ["failure-modes-of-ungoverned-intelligence.core", "ext_concrete_ai_safety_2016", "ext_goal_misgeneralization_2022", "ext_goodhart_variants_2018"],
+  "caveat_consolidation": {
+    "local_caveat": "The scenario is explicitly illustrative and distinguishes a taxonomy record from occurrence or mitigation evidence.",
+    "consolidated_disposition": "Frequency, detector competence, containment efficacy, recurrence, source-transfer, and stack-implementation limits remain in their chapter-specific evidence boundaries.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The four-state event table stays because it converts taxonomy into a learning path; the full crosswalk and test ledgers remain in reference sections.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The short reader claim and rule provide the path into the retained exact boundary-event contract.",
+    "hedge_disposition": "One illustrative boundary sits beside the scene while distinct detection and mitigation limitations remain preserved.",
+    "table_disposition": "The event table is chronological argument rather than a chapter-status inventory."
+  },
+  "non_claims": ["The scenario is not a reported fleet or dashboard incident.", "The taxonomy does not establish failure frequency or mitigation efficacy.", "The editorial packet does not move support or release state."]
+}

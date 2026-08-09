@@ -4,7 +4,7 @@ chapter_id: "confidential-and-verifiable-ai-computation"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_nist_privacy_enhancing_cryptography_2026"
   - "ext_zkllm_2024"
@@ -40,6 +40,8 @@ privacy, production security, or safe deployment.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The enclave-only baseline treats valid attestation as end-to-end protection. The compositional contract includes fallback, metadata, purpose, authorization, leakage, and disclosure.
 
 Use this layer to separate what protected computation establishes from
 properties that still require policy, custody, testing, and judgment.
@@ -114,6 +116,16 @@ system should retain the simpler governed route.
 ## Core Claim
 
 [confidential-and-verifiable-ai-computation.core, label: Design rationale, support: argument] Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.
+
+**Reader claim.** An attested enclave can prove which code ran while the overall service still leaks through inputs, outputs, metadata, fallback, or an unauthorized purpose.
+
+**Operational rule.** Compose confidentiality, integrity, proof statement, trust anchors, freshness, leakage channels, verifier policy, authorization, observable fallback, revocation, and cost at the transaction boundary. Reject any unprotected fallback unless separately authorized and disclosed; never let attestation imply semantic correctness or end-to-end privacy.
+
+### Worked protected computation: the enclave is valid, the fallback leaks
+
+A service attests that the expected model code ran inside a protected environment and returns a valid proof about the encoded computation. Under load, the protected path exceeds its latency budget and silently falls back to an ordinary worker. The answer remains correct, but the prompt and intermediate state now cross a boundary the consumer did not authorize. The compositional contract rejects the transaction because fallback protection and disclosure are part of the guarantee, not operational trivia.
+
+Even on the protected path, output length and timing may exceed the declared leakage allowance, and a valid attestation says nothing about whether the user’s purpose was legitimate. The finite review gives exact repair or refusal dispositions to 48 admission-axis mutations, tracks arbitrary leakage-channel lists, invalidates receipts under five scope changes, rejects two unprotected fallbacks, and preserves non-substitution between evidence types. It does not establish cryptographic soundness, hardware trust, side-channel resistance, leakage measurement, authorization, privacy, or acceptable cost.
 
 ## Start with a guarantee vector, not a security adjective
 

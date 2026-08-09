@@ -4,7 +4,7 @@ chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "viea"
   - "talos"
@@ -46,7 +46,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 manuscript draft |
-| Last updated | 2026-08-01 |
+| Last updated | 2026-08-08 |
 | Primary source records | `viea`, `talos`, `planforge`, `vcm_public`, `spinoza`, `benchmaxxing`, `rmi`, `cognitive_loop_closure`, `tokenmana`, `coherence_exchange`, `project_theseus_whitepaper`, `theseus_operator_os`, `scf`, `field_of_god_ai_constitution`, plus external source notes for GitHub webhooks, self-hosted runners, OpenZeppelin Governor, Open Collective, GitHub Sponsors, Akash, Golem, agentic workflow injection, and DAO delegation concentration |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -61,6 +61,8 @@ Policy updates keep learning inside gates. The same rule applies to projects the
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A repository bot that acts whenever CI is green is the simpler baseline, but it cannot preserve charter authority, tainted-event review, contribution separation, treasury policy, release evidence, rollback, or sunset obligations.
 
 Policy learning changes behavior, but durable projects need continuity across revisions. Artifact stewardship asks how long-lived projects can be cared for without giving an AI steward ownership over the artifact, money, maintainers, or community. The steward is a bounded service layer, not a sovereign.
 
@@ -89,6 +91,16 @@ This governance layer matters because the living book itself is an artifact that
 
 ## Core Claim
 
+**Reader claim.** A steward improves a project by making the next authorized
+decision easier to inspect, not by accumulating permission through useful
+activity.
+
+**Operational rule.** Bind every steward proposal to the artifact charter,
+taint state, scoped work contract, separated contribution record, treasury and
+compute policy, verification and release gates, rollback, appeal, and sunset
+criteria. Preparation never inherits execution, spending, governance, or
+publication authority.
+
 [artifact-steward-agents-and-living-project-governance.core, label: Design rationale, support: argument] Artifact Steward Agents and Living Project Governance owns a project-, artifact-, mission-, owner-, authority-, roadmap-, work-contract-, event-, treasury-, compute-, contributor-, evidence-, governance-, release-, federation-, sunset-, consumer-, environment-, and time-specific **Artifact Steward Continuity Lease**: it may observe, propose, prepare, coordinate, execute, reverse, archive, or retire only through a versioned charter, taint-aware intake, scoped work contracts, separated contribution ledgers, bounded treasury and compute policy, verification and release gates, appeal and fork or exit paths, effect-complete rollback, and explicit sunset authority; it never acquires ownership, governance legitimacy, evidence authority, funding rights, release authority, legal standing, or permission from useful motion, a green workflow, a vote, a balance, a score, a fixture, a theorem, or its own prior action.
 
 The claim is a design claim. The current support state is `argument`. It does not say that every project should immediately deploy an autonomous agent with funds. It says that durable artifacts need a steward record and a bounded steward process, and that AI can help only if authority, money, compute, evidence, and governance remain explicit.
@@ -100,6 +112,30 @@ The core claim remains at `argument`. Appendix C now carries passage-reviewed ma
 ## Mechanism
 
 An artifact steward is built from seven project records: `Artifact Steward Charter`, `Project Work Contract`, `Contribution Ledger Entry`, `Treasury Policy Record`, `Event Taint Record`, `Steward Action Decision`, and `Sunset Review Record`.
+
+### Worked steward trace: three preparations and no inherited authority
+
+The public lifecycle probe composes the seven record families into three valid
+routes. A complete work contract reaches `prepare_bounded_work_dispatch`; no
+worker or tool runs. A reviewed event, separated contribution ledger, zero
+spend, complete release evidence, and no sunset trigger reaches
+`prepare_release_review`; no release publishes. When sunset criteria are met,
+the third route opens a sunset review and blocks ordinary work.
+
+The distinctions become clearer in the rejected controls. Unreviewed issue or
+event text routes to quarantine. A requested $50 spend under a zero-autonomy
+treasury policy routes to human approval. A collapsed contribution score cannot
+be spent as governance power. An external worker cannot inherit project
+authority. Missing release evidence routes to repair, and ordinary work cannot
+bypass a triggered sunset review.
+
+The extended probe checks 23 invalid controls in total, including missing work
+objective, authority basis, tool boundary, verification, budget, rollback, or
+non-claims and missing release artifact, test, changelog, residual, approval,
+or no-promotion fields. These are decision-envelope results, not a running
+steward. The probe moves no money, merges no branch, publishes no release,
+dispatches no worker, and acquires no authority for the agent that computed the
+route.
 
 The `Artifact Steward Charter` binds the steward to a particular artifact. It records mission, non-goals, protected principles, maintainers, governance model, authority ceiling, budget policy, compute policy, source/evidence policy, release policy, contribution policy, federation policy, and sunset criteria. The charter is the steward's constitution. If the charter does not permit an action, the steward cannot infer authority from convenience.
 

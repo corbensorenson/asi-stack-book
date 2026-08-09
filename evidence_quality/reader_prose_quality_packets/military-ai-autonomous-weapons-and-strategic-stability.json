@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "military-ai-autonomous-weapons-and-strategic-stability",
+  "chapter_file": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+  "chapter_sha256": "8f79514e6b579739bc2f9eb67ee8bc52c6baeeb6960dfba14c73a360e4caba2c",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked public-safe simulation gate: the button survives, judgment does not",
+    "actor_or_system": "A non-operational command simulation, one accountable decision maker, five available time units, and three off-ramps",
+    "attempted_action": "Admit a public-safe simulation only after mission, legal, role, effect, observation, meaningful-judgment, interaction, safe-posture, off-ramp, expiry, remedy, and residual fields are bound.",
+    "observable_outcome": "The authored 5-versus-3 time margin and 3-versus-2 off-ramp margin permit only simulation eligibility; shrinking time or off-ramps rejects even while the human interface and approval button remain present.",
+    "failed_or_tested_boundary": "The scene tests whether interface presence or component evidence can substitute for practical judgment and strategic interaction review; two collision pairs show they cannot.",
+    "residual_owner": "Accountable command, legal review, affected-population, incident, remedy, decommissioning, and strategic-interaction owners retain every real-world obligation.",
+    "evidence_boundary": "The dossier is deliberately public-safe and non-operational; it authorizes no weapon, target, deployment, use of force, lawful-use claim, escalation claim, strategic-stability claim, or publication of operational detail."
+  },
+  "worked_trace": {
+    "heading": "Worked public-safe simulation gate: the button survives, judgment does not",
+    "state_labels": ["public_safe_dossier", "time_margin_present", "off_ramps_present", "judgment_condition_shrinks", "simulation_blocked"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/military_interaction_dossier.json", "scripts/validate_military_interaction_review.py"],
+    "maximum_inference": "The finite review demonstrates meaningful-judgment and interaction fields, adverse monotonic rejection, and two non-identifiability boundaries; it establishes no weapon authorization, lawful use, real control, escalation reduction, safety, or strategic stability."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline counts a human confirmation interface as control. The chapter requires sufficient time, information, competence, independence, intervention reach, alternatives, and off-ramps across the command situation.",
+  "readable_claim": "A person behind an approval button is not meaningful human control when the system withholds time, evidence, alternatives, or practical power to intervene. Component accuracy cannot repair that missing judgment.",
+  "normative_rule": "Before any public-safe simulation proceeds, bind the mission, legal boundary, decision role, affected population, effect envelope, accountable authority, required decision time, observation trust, abstention, safe posture, adversary interaction, off-ramps, expiry, and remedy. Any missing or shrinking judgment condition blocks the scenario.",
+  "formal_binding": {"claim_id": "military-ai-autonomous-weapons-and-strategic-stability.core", "support_state": "argument", "anchor": "governed as a command-and-interaction system: deployment requires a declared mission and legal boundary"},
+  "claim_atom_and_source_links": ["military-ai-autonomous-weapons-and-strategic-stability.core", "ext_icrc_autonomous_weapons_ihl_2025", "ext_sipri_military_ai_nuclear_escalation_2025"],
+  "caveat_consolidation": {"local_caveat": "The worked gate states once that it is a non-operational simulation dossier and cannot authorize a weapon or use of force.", "consolidated_disposition": "Legal, observation, human judgment, effect, doctrine, adversary interaction, escalation, secrecy, remedy, decommissioning, and strategic-stability limits remain separately visible.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The time and off-ramp margins remain because their deterioration drives rejection; full 45-axis and theorem inventories remain in formal evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The new projections isolate meaningful judgment and admission logic from the complete command-and-interaction claim.", "hedge_disposition": "The public-safe non-operational boundary is stated once while distinct legal, strategic, human-control, observation, and remedy limits remain.", "table_disposition": "The decision-role and assurance tables remain because they distinguish system positions and evidence burdens, not project bookkeeping."},
+  "non_claims": ["The public-safe dossier contains no target, weapon, evasion, or operational-use guidance.", "The finite review does not establish lawful use, meaningful control, safety, or strategic stability.", "The editorial revision does not move chapter-core support or release state."]
+}

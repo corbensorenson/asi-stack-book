@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "system-boundaries-and-authority",
+  "chapter_file": "chapters/system-boundaries-and-authority.qmd",
+  "chapter_sha256": "2810ea7b079a9da1270a9556ec1e3ce91764170f94884c14b4557f7c86e37347",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked authority check: a scope widens between plan and effect",
+    "actor_or_system": "A maintenance agent, one scoped publication grant, two repository targets, an effect adapter, and a grant owner",
+    "attempted_action": "Use one credential to update the authorized publication directory and opportunistically repair a neighboring repository.",
+    "observable_outcome": "The exact first edit receives an effect receipt; the widened second target is denied without mutation and requires a new grant.",
+    "failed_or_tested_boundary": "The scene tests whether technical capability, helpfulness, shared credentials, or planning context can widen authority; none can.",
+    "residual_owner": "The grant owner retains authorization of the second target; the authority and runtime owners retain denial, effect, observer, and revocation evidence.",
+    "evidence_boundary": "Finite effect traces trust their recorded identity and receipt fields and do not establish deployed enforcement, credential security, or complete effect observation."
+  },
+  "worked_trace": {
+    "heading": "Worked authority check: a scope widens between plan and effect",
+    "state_labels": ["grant_active", "first_target_matched", "first_effect_receipted", "second_target_mismatched", "second_effect_denied"],
+    "source_or_fixture_refs": ["experiments/authority_effect_refinement/results/2026-07-15-local.json", "evidence_quality/proof_model_dossiers/system-boundaries-and-authority.md"],
+    "maximum_inference": "The finite model preserves ceiling and refusal behavior across authored traces; deployed enforcement, authentic grants, secure credentials, and complete observation remain unproven."
+  },
+  "counterexample_or_simpler_baseline": "The ambient-capability baseline reuses one credential for both helpful edits. The authority-tuple path allows only the operation whose principal, target, scope, ceiling, and time match.",
+  "readable_claim": "Being able to call a tool is not permission to use it; the exact principal, operation, target, scope, ceiling, and time must still match an active grant.",
+  "normative_rule": "Recheck the full authority tuple immediately before effect execution and bind the decision to an effect or denial receipt. Missing, expired, revoked, over-ceiling, or scope-mismatched authority produces no effect and cannot be repaired by model confidence.",
+  "formal_binding": {"claim_id": "system-boundaries-and-authority.core", "support_state": "argument", "anchor": "versioned, revocable tuple binding principal"},
+  "claim_atom_and_source_links": ["system-boundaries-and-authority.core", "talos", "genesiscode"],
+  "caveat_consolidation": {"local_caveat": "The worked trace states once that recorded grants and effects are trusted finite inputs.", "consolidated_disposition": "Identity, grant authenticity, credential isolation, enforcement, observation, rollback, deployment, and security remain distinct limits.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The two-target scene stays in reader prose; the complete authority-tuple lifecycle and mutation inventory remain in formal evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The short reader claim separates capability from authority before the complete tuple.", "hedge_disposition": "The finite-input limitation is consolidated without weakening enforcement and security boundaries.", "table_disposition": "The source lineage table remains because it distinguishes convergent design support from independent deployed evidence."},
+  "non_claims": ["The authority trace is not deployed effect enforcement.", "Recorded principals, grants, observers, and receipts are trusted inputs.", "The editorial revision does not move support or release state."]
+}

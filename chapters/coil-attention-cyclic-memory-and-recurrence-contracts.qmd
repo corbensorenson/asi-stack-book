@@ -4,7 +4,7 @@ chapter_id: "coil-attention-cyclic-memory-and-recurrence-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-03"
+last_updated: "2026-08-09"
 primary_sources:
   - "coil_attention_memory"
   - "circle_ai_contract_suite"
@@ -58,6 +58,8 @@ The chapter is therefore about admission control for memory structures. A cyclic
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The simpler cache checks only residue and returns fluent stale content. The governed path binds winding and request version, contains every suffix after stale detection, and preserves fallback.
+
 Proof-carrying receipts become especially important for memory and recurrence, where structural language can sound like semantic understanding. Cyclic memory, sparse coverage, freshness, lag, and recurrence schedules need records before anyone treats them as reasoning quality.
 
 A fresh slot is not a true belief, and a covered lag is not a solved task. Recurrence contracts should preserve structural facts, authority limits, and fallback paths while leaving semantic claims to verification and evidence.
@@ -92,6 +94,16 @@ External positioning: Coil Attention now has source-noted recurrence and long-co
 ## Core Claim
 
 [coil-attention-cyclic-memory-and-recurrence-contracts.core, label: Design rationale, support: argument] Coil Attention, Cyclic Memory, and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, and time-specific State-Carry and Recurrence Admission Lease: a slot read, cyclic address, KV reuse, sparse edge, fanout schedule, or recurrent step may be admitted only when authority, provenance, residue and winding, freshness, coverage, alias and collision state, active work, progress, exit, fallback, expiry, and residuals satisfy the exact consumer contract; structural validity, synthetic fixtures, receipt replay, cache presence, or reduced scheduled work alone confers no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer, support, or SOTA authority.
+
+**Reader claim.** A cache hit is safe to reuse only when it names the same state, request, version, and freshness boundary; matching a ring-buffer slot is not enough.
+
+**Operational rule.** Record residue and winding, test freshness and coverage, cap recurrent work, and keep a working fallback. A missing winding, stale suffix, uncovered lag, or exhausted recurrence budget rejects reuse rather than silently degrading the answer.
+
+### Worked stale-cache trace: the fluent answer that must be rejected
+
+Consider a long-context request whose live memory has wrapped around a finite ring. The requested token maps to residue slot `7`, but events at logical addresses `7`, `15`, `23`, and `31` all share that residue. A residue-only lookup returns fluent text from the wrong winding. The contract therefore binds the winding and request version before reuse; after stale detection, every suffix is barred from being relabeled fresh and is sent through the declared fallback.
+
+The local finite model makes this boundary inspectable. It contains 40 reachable states and 320 checked transitions, including 24 stale-suffix states and 192 containment transitions. Three mismatch paths reach fallback, while 11 lifecycle mutations and 17 semantic mutations reject attempts to hide aliasing, omit exit or budget state, promote structural coverage to retrieval quality, or admit a stale read as fresh. These are authored finite-state checks, not a long-context quality result. They show why a cache entry needs custody metadata even when its content looks plausible.
 
 The distinct owner is structural admission of a named carried state or recurrent
 step. VCM retains semantic object and authority truth; Runtime and Serving retain

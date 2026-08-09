@@ -1,0 +1,42 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "claim-ledgers-and-belief-revision",
+  "chapter_file": "chapters/claim-ledgers-and-belief-revision.qmd",
+  "chapter_sha256": "c8ad2cf4df24ab4374933b31f9b64a7c2c5336718343565d4da651d9c6d0b726",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-14-claim-and-proof-review",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: revise the claim without erasing the trail",
+    "actor_or_system": "An operations assistant, reviewer, dispatcher, briefing, playbook, and cached prompt carrying a policy claim across surfaces",
+    "attempted_action": "Update a hazardous-shipment rule from policy version 17 to version 18 and prevent the older exception from continuing to authorize action downstream.",
+    "observable_outcome": "The ledger registers the exact proposition, attaches the new source and scope challenge, downgrades the old claim through its owner, marks stale surfaces, and publishes a bounded replacement without erasing history.",
+    "failed_or_tested_boundary": "The trace tests whether changed bytes and a confident citation preserve semantic claim identity, support authority, and propagation closure; they do not.",
+    "residual_owner": "The evidence owner decides the support transition while surface owners repair the briefing and prompt; the ledger retains rejected proposals, stale refs, and the append-only trail.",
+    "evidence_boundary": "The scenario is illustrative and demonstrates ledger semantics only; it does not establish natural-language equivalence, source truth, correct belief revision, complete propagation, or action authority."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: revise the claim without erasing the trail",
+    "state_labels": ["candidate", "challenge", "downgrade", "surface_propagation", "closure"],
+    "source_or_fixture_refs": ["chapters/claim-ledgers-and-belief-revision.qmd", "sources/source_notes/ext_w3c_prov_o_2013.md", "sources/source_notes/ext_agm_belief_revision_1985.md"],
+    "maximum_inference": "The illustrative trace shows separation among claim identity, evidence-owned transition, and surface synchronization; it does not validate semantic equivalence, evidence, truth, or complete belief revision."
+  },
+  "counterexample_or_simpler_baseline": "Version control is the strongest simpler baseline and may be enough for a small manual system, but it records changed bytes rather than fallible semantic identity, dependency closure, or stale downstream authority.",
+  "readable_claim": "The ledger therefore needs two simultaneous properties: a stable reference for the claim and an honest record of uncertainty about its boundaries.",
+  "normative_rule": "It must reconstruct every accepted and rejected change without becoming the authority that decides evidence validity, truth, review competence, action, or release.",
+  "formal_binding": {"claim_id": "claim-ledgers-and-belief-revision.core", "support_state": "argument", "anchor": "durable identity and append-only state-transition history"},
+  "claim_atom_and_source_links": ["claim-ledgers-and-belief-revision.core", "spinoza", "ext_w3c_prov_o_2013", "ext_agm_belief_revision_1985"],
+  "caveat_consolidation": {
+    "local_caveat": "The policy scene is explicitly illustrative and distinguishes ledger recording from evidence, truth, equivalence, action, and release authority.",
+    "consolidated_disposition": "Natural identity resolution, source validity, contradiction, reviewer competence, dependency completeness, propagation, usefulness, and transfer limits remain in their exact mechanism and evidence sections.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The five-state ledger table stays because transition sequence and ownership are the mechanism; exhaustive record fields and route inventories remain in reference surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The existing readable claim and normative reconstruction rule provide a clear entry into the retained comprehensive formal claim.",
+    "hedge_disposition": "The scene keeps one explicit illustrative and non-authority boundary while preserving distinct semantic and evidence limits.",
+    "table_disposition": "The state table remains because it shows the append-only transition and surface repair path rather than status bookkeeping."
+  },
+  "non_claims": ["The trace does not establish natural-language semantic equivalence or source truth.", "The ledger does not authorize evidence transitions, actions, or release by itself.", "The editorial packet does not move support or release state."]
+}

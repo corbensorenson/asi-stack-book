@@ -4,7 +4,7 @@ chapter_id: "system-boundaries-and-authority"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "viea"
   - "scf"
@@ -53,6 +53,8 @@ It follows the efficiency chapter because the cheapest adequate route is useful 
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The ambient-capability baseline reuses one credential for both helpful edits. The authority-tuple path allows only the operation whose principal, target, scope, ceiling, and time match.
+
 The stack now has an identity and an efficiency claim to govern the work ahead. The authority boundary prevents efficiency from turning into ambient permission. A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.
 
 Here, "can" and "may" separate. The architecture can contain very capable components, but the system remains governed only if each transition carries an explicit boundary, grant, denial path, and audit trail. That separation lets the stack stay useful while still treating refusal as a successful control outcome.
@@ -89,6 +91,16 @@ Permission collapse becomes more dangerous when the system improves itself. A re
 ## Core Claim
 
 [system-boundaries-and-authority.core, label: Design rationale, support: argument] External-effect authority should be represented as a versioned, revocable tuple binding principal, execution domain, operation, target, permission class, scope, ceiling, grant state, delegation, expiry or revocation epoch, and receipt obligations; capability, context access, route quality, or ambient process power alone confers none of it.
+
+**Reader claim.** Being able to call a tool is not permission to use it; the exact principal, operation, target, scope, ceiling, and time must still match an active grant.
+
+**Operational rule.** Recheck the full authority tuple immediately before effect execution and bind the decision to an effect or denial receipt. Missing, expired, revoked, over-ceiling, or scope-mismatched authority produces no effect and cannot be repaired by model confidence.
+
+### Worked authority check: a scope widens between plan and effect
+
+A maintenance agent is granted permission to update generated HTML under one repository’s publication directory. During execution it discovers a stale link in a neighboring repository and proposes to repair both sites with the same credential. The second edit is technically possible and arguably helpful, but its target is outside the active grant. The authority layer allows the first exact operation, emits its effect receipt, and denies the widened target without mutating it. If broader work is desirable, a new principal-approved grant must name that repository and operation.
+
+The local refinement exercises six authority fixtures, three effect traces containing 20 events, and a two-event delegation trace. It checks 26 batch compositions, rejects 67 state-interfering mutations and 20 missing or altered transport fields, and preserves the caller ceiling across allowed and denied paths. Those checks show the intended finite refusal behavior. They trust the recorded principal, grant, observer, and receipt fields, so they do not establish deployed enforcement, credential security, or complete observation.
 
 The claim remains at `argument` support. VIEA, SCF, Talos, Ladon/Manhattan, and GenesisCode all push toward typed boundaries and effect control, and those five mappings now have reviewed local raw-cache passage references in the manifest. Synthetic denial, permission-separation, adapter-level confused-deputy, and revoked-receipt probes now exercise narrow record behavior; the public claim strengthens beyond architectural argument only when deployed enforcement artifacts, live adapter traces, or accepted narrower evidence-transition records exist.
 

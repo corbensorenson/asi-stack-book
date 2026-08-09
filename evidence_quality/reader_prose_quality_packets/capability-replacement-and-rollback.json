@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "capability-replacement-and-rollback",
+  "chapter_file": "chapters/capability-replacement-and-rollback.qmd",
+  "chapter_sha256": "64cfd8f624fcf3a64b0f401af49570211b10fdec5ce20edf16b09f03ccc07661",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-06-capability-fields-and-replacement",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked rollback: a passed precheck does not survive the canary",
+    "actor_or_system": "A prediction-service risk-model field, prior model v1, candidate model v2, canary monitor, and independent rollout reviewer",
+    "attempted_action": "Replace the prior implementation after data, schema, serving, and model-quality prechecks while preserving the field identity and authority ceiling through canary exposure.",
+    "observable_outcome": "The baseline regression-floor monitor fails despite acceptable latency, so the reviewer restores the v1 alias and zero candidate route weight while retaining logged prediction traces as an irreversible residual.",
+    "failed_or_tested_boundary": "The trace tests whether passed prechecks or partial state restoration can be narrated as accepted replacement or complete reversal; monitor failure and the residual prevent both claims.",
+    "residual_owner": "The model rollout governance reviewer owns the failed monitor event and irreversible logged prediction traces after bounded rollback.",
+    "evidence_boundary": "The accepted record and nine rejected controls are synthetic transaction evidence, not a deployed rollout, validated production monitor, natural utility result, or production rollback."
+  },
+  "worked_trace": {
+    "heading": "Worked rollback: a passed precheck does not survive the canary",
+    "state_labels": ["prechecks_pass", "bounded_canary", "regression_monitor_fail", "prior_alias_restored", "irreversible_trace_residual"],
+    "source_or_fixture_refs": ["experiments/capability_replacement/fixtures/valid_model_rollout_rollback_after_monitor_trigger.json", "experiments/capability_replacement/results/2026-07-01-local.md"],
+    "maximum_inference": "The harness shows that an authored transaction can distinguish precheck, monitor failure, bounded rollback, and irreversible residuals; it establishes no real model improvement, monitor validity, deployed rollback, production recovery, or transfer."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline promotes after a benchmark or precheck pass and calls restoring one model alias rollback. The chapter prospectively freezes gates and distinguishes restored inventory from irreversible external effects.",
+  "readable_claim": "Replacement is not “put the better model in production.” It is a prospective change transaction that must say which state and effects may change, what monitor stops the canary, what rollback can restore, and what cannot be reversed.",
+  "normative_rule": "Freeze field identity, prior and candidate artifacts, gates, checkpoint authority, monitor, exposure, and recovery objective before observing results. A failed monitor routes to rollback or quarantine, and a rollback may claim success only for restored inventory while preserving every irreversible effect as an owned residual.",
+  "formal_binding": {
+    "claim_id": "capability-replacement-and-rollback.core",
+    "support_state": "argument",
+    "anchor": "prospectively authorized, phase-gated transaction over a declared Stable Capability Field"
+  },
+  "claim_atom_and_source_links": ["capability-replacement-and-rollback.core", "scf", "ext_argo_rollouts_docs", "ext_google_cloud_mlops_cd"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked rollback states once that its fields and outcomes are synthetic rather than a deployed model transaction.",
+    "consolidated_disposition": "Checkpoint authority, evaluator and monitor validity, full-state inventory, descendants, external effects, privacy, compensation, useful improvement, and transfer limits remain beside their mechanisms.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The precheck, monitor, rollback, and residual sequence stays because it is the chapter's causal story; exhaustive fixture and theorem inventories remain in evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim and operational rule split the replacement purpose, prospective gate, monitor response, and recovery boundary before the formal bundle.",
+    "hedge_disposition": "The scene consolidates its synthetic-evidence limit while preserving distinct state, effect, monitor, evaluator, usefulness, privacy, and transfer boundaries.",
+    "table_disposition": "The source, state, and test tables remain where they compare mechanisms or evidence; the narrative now carries an actual transaction instead of status alone."
+  },
+  "non_claims": [
+    "The synthetic transaction does not establish a useful or safe real-model replacement.",
+    "The rollback record does not establish monitor quality or effect-complete production recovery.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

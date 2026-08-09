@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+  "chapter_file": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
+  "chapter_sha256": "05f99f2d00bd68447aae3b06aef9d84888c401d31537859dcd6cb6d9314c5a01",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-20-resource-and-recovery-economics",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked capacity edge: two workloads consume every declared margin",
+    "actor_or_system": "Two workloads sharing one site, interval, hardware configuration, six capacity axes, and an impact ledger",
+    "attempted_action": "Admit both workloads under one physical-capacity lease while separating requested, nameplate, available, delivered, useful, energy, overhead, backup, cooling, and community-impact claims.",
+    "observable_outcome": "Their sums exactly consume compute 10, memory 8, network 5, storage 9, power 15, and cooling 5; one extra unit overruns the lease, and hidden backup energy rejects impact accounting.",
+    "failed_or_tested_boundary": "The scene tests whether spare nameplate compute or an energy headline can substitute for simultaneous bottleneck capacity and complete attributed impact; neither summary is sufficient.",
+    "residual_owner": "The workload and infrastructure owners retain metering uncertainty, grid, water, cooling, land, community, resilience, rebound, maintenance, demand-response, and retirement residuals.",
+    "evidence_boundary": "The numbers are authored finite arithmetic and not a facility, grid, water, emissions, community, resilience, or sustainability measurement."
+  },
+  "worked_trace": {
+    "heading": "Worked capacity edge: two workloads consume every declared margin",
+    "state_labels": ["two_workloads", "six_axes_exactly_full", "one_unit_overrun", "backup_energy_visible", "lease_rejected_on_hidden_impact"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/physical_compute_infrastructure_dossier.json", "evidence_quality/proof_model_dossiers/physical-compute-infrastructure-energy-and-environmental-constraints.md"],
+    "maximum_inference": "The finite review demonstrates multi-axis capacity arithmetic, scoped receipt invalidation, and information loss in energy and unit-efficiency summaries; it establishes no delivered performance, meter accuracy, sustainability, resilience, or community acceptability."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline schedules from accelerator count or FLOPs and reports a facility average. The chapter admits only the joint bottlenecked workload and keeps backup, cooling, grid, water, and community burdens visible.",
+  "readable_claim": "Purchased accelerators are not delivered capability, and lower energy per unit is not lower total impact. A workload becomes eligible only where compute, memory, network, storage, power, cooling, and local impact fit at the same place and time.",
+  "normative_rule": "Bind the workload, site, interval, hardware, topology, meter version, useful-work target, every capacity axis, energy and impact attribution, degradation, demand response, retirement, and residual owner. Any overrun, hidden backup energy, stale scope, or missing community burden blocks the capacity lease.",
+  "formal_binding": {"claim_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core", "support_state": "argument", "anchor": "workload-to-capacity contract that binds location and time, hardware and interconnect"},
+  "claim_atom_and_source_links": ["physical-compute-infrastructure-energy-and-environmental-constraints.core", "ext_iea_energy_and_ai_2025", "ext_lbnl_data_center_energy_2024", "ext_oecd_ai_infrastructure_competition_2025"],
+  "caveat_consolidation": {"local_caveat": "The worked capacity edge states once that its demand and impact values are authored rather than metered from a facility.", "consolidated_disposition": "Useful work, memory, network, storage, grid, energy attribution, water, materials, land, community, resilience, rebound, concentration, maintenance, and retirement limits remain distinct.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The six exact capacity totals and two impact totals remain because their joint saturation drives the decision; exhaustive mutation and concept inventories remain in evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The projections separate physical eligibility and admission logic from the complete lifecycle contract.", "hedge_disposition": "The authored-arithmetic limit is consolidated while performance, metering, sustainability, resilience, community, and rebound boundaries remain explicit.", "table_disposition": "Capacity and impact tables remain because simultaneous bottlenecks and attribution are the argument rather than status bookkeeping."},
+  "non_claims": ["The capacity values are authored arithmetic, not facility measurements.", "The finite review does not establish delivered performance, sustainability, resilience, or community acceptability.", "The editorial revision does not move chapter-core support or release state."]
+}

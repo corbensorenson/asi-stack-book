@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-03"
+last_updated: "2026-08-08"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-08-03 |
+| Last updated | 2026-08-08 |
 | Primary source records | `coilra_multicoil_rope`, `rope_position_certifier`, `circle_ai_contract_suite`, `theseus_circle_transfer`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -48,6 +48,8 @@ The adoption object is a tradeoff packet. A cyclic proposal should say which str
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A parameter-count-only baseline would declare a 16-fold reduction and stop. The chapter keeps structural, resource, and empirical ledgers separate and refuses adoption while the latter two are incomplete.
 
 The same discipline now moves inside model mechanisms under review: cyclic adapters, phase banks, RoPE variants, route heads, and mixers. These may become useful substrate candidates, but the stack treats them as candidates until baselines, diagnostics, and failure cases exist.
 
@@ -80,6 +82,15 @@ Cross-ledger spending is the cyclic-substrate adoption failure. A substrate wins
 External positioning: CoilRA and cyclic mixers now have source-noted comparator families through `ext_roformer_rope_2021`, `ext_lora_2021`, `ext_mamba_2023`, and `ext_retnet_2023`. RoFormer grounds ordinary RoPE as the position-encoding baseline. LoRA grounds low-rank adapter comparison. Mamba grounds state-space sequence-substrate comparison. RetNet grounds recurrence/attention and recurrent-computation tradeoffs. These records make the required baseline set explicit, but they do not reproduce any baseline matrix here and they do not support a CoilRA model-quality, context-length, runtime, memory, training-stability, hardware-efficiency, or deployment claim.
 
 ## Core Claim
+
+**Reader claim.** A cyclic mechanism becomes an architectural option only when
+its structural receipt, workload behavior, hardware cost, and fallback decision
+can be inspected separately.
+
+**Operational rule.** Spend proof or receipt evidence only on the structural
+axis it checks. Require matched ordinary baselines, quality and cost measures,
+failure cases, and a tested fallback before a cyclic candidate can change a
+route or enter a canary.
 
 [coilra-multicoil-rope-and-cyclic-mixers.core, label: Design rationale, support: argument] CoilRA, MultiCoil RoPE, and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-, hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter, phase bank, rotary scheme, route head, circulant operator, or block-cyclic mixer may enter a canary only when exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting, numerical error, kernel availability, complete cost, quality, failure, fallback, and rights evidence is matched against strong ordinary controls; equivariance, finite proofs, receipt validity, parameter reduction, or structural parity alone confers no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support, or SOTA authority.
 
@@ -123,6 +134,39 @@ A cyclic-substrate adoption record makes three ledgers visible at once. The stru
 A RoPE or cyclic-mixer receipt should also name its consumer policy. Some consumers may accept a structural receipt for diagnostic use, reject it for quality promotion, or require a benchmark before canary routing. Without consumer policy, a receipt can be technically valid and operationally misused.
 
 The mechanism therefore routes cyclic evidence through a consumer decision before it reaches adoption. A diagnostic consumer may accept a receipt because it wants to know whether a declared position-bookkeeping boundary is internally coherent. A routing consumer should ask for workload evidence before using the same receipt to change model selection, memory policy, or substrate defaults. A release consumer should ask for baselines, negative controls, hardware notes, regression behavior, and rollback before calling the mechanism ready. Those consumers can share the same receipt while refusing different claims, which is the point of keeping structural, resource, and empirical ledgers separate.
+
+### Worked receipt-to-refusal trace: the 128-channel block-cyclic candidate
+
+The recorded Circle mixer fixture begins with a concrete candidate, not a
+promise of a better model. For a period-eight circulant operator, the dense
+reference and circulant implementation produced the same eight-element output,
+with `max_abs_dense_delta=0`. For a 128-channel adapter with block size eight,
+the receipt counted 2,048 dense parameters, 576 LoRA parameters, and 128
+block-cyclic parameters. The block-cyclic-to-dense parameter ratio was
+`0.0625`.
+
+Those facts clear a structural diagnostic gate: the declared finite operator
+matched its dense reference on the fixture, and its parameter accounting was
+internally coherent. Seven theorem IDs and the receipt fingerprints make that
+bounded statement portable. They do not clear the next gate. No trained-model
+quality comparison, kernel benchmark, memory trace, optimization study, or
+fallback execution accompanies the receipt.
+
+The decision is therefore split rather than vaguely “promising”:
+
+1. **Accept for diagnostic use:** preserve the parity and parameter receipt.
+2. **Reject for route or canary authority:** workload and hardware ledgers are
+   empty.
+3. **Name the next comparison:** dense, LoRA, ordinary RoPE or learned-position,
+   and nonperiodic controls under the same model, layer, data, kernel, and
+   budget.
+4. **Retain the fallback:** if quality, stability, or actual cost loses, keep
+   or restore the ordinary substrate.
+
+The simpler parameter-count baseline would declare a 16× reduction and stop.
+This chapter treats that reduction as one ledger entry. Adoption remains
+blocked because a small parameter tensor can still be slower on real hardware,
+harder to optimize, or worse for the target workload.
 
 ### Recorded RoPE Receipt Boundary
 

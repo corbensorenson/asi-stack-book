@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+  "chapter_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+  "chapter_sha256": "e61c136b6b30f5be647d6b786e0e71ef38fa518b9bd997f0508c12aa5567b8c1",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-17-routing-and-substrates",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked stale-cache trace: the fluent answer that must be rejected",
+    "actor_or_system": "A long-context consumer, a finite cyclic memory, a request-version check, and a declared fallback route",
+    "attempted_action": "Reuse residue slot 7 after the memory ring has wrapped through logical addresses 7, 15, 23, and 31.",
+    "observable_outcome": "Residue alone aliases four events; winding and request identity disambiguate the live record, and stale suffixes route to fallback rather than being relabeled fresh.",
+    "failed_or_tested_boundary": "The scene tests whether cache presence, slot equality, structural coverage, or fluent output can establish freshness or retrieval quality; none can.",
+    "residual_owner": "The memory and recurrence owners retain stale-state, alias, uncovered-lag, exhausted-budget, fallback, retrieval-quality, and workload-evidence residuals.",
+    "evidence_boundary": "The 40-state finite model and its mutations check authored structural behavior, not deployed caching, memory savings, context length, retrieval quality, or model quality."
+  },
+  "worked_trace": {
+    "heading": "Worked stale-cache trace: the fluent answer that must be rejected",
+    "state_labels": ["residue_alias_visible", "winding_bound", "stale_detected", "fallback_selected", "quality_unproven"],
+    "source_or_fixture_refs": ["experiments/cyclic_memory_contracts/results/2026-06-30-local.md", "evidence_quality/proof_model_dossiers/coil-attention-cyclic-memory-and-recurrence-contracts.md"],
+    "maximum_inference": "Finite custody and rejection behavior is coherent for the authored model; retrieval quality, long-context utility, speed, memory savings, deployment, and transfer remain unestablished."
+  },
+  "counterexample_or_simpler_baseline": "The simpler cache checks only residue and returns fluent stale content. The governed path binds winding and request version, contains every suffix after stale detection, and preserves fallback.",
+  "readable_claim": "A cache hit is safe to reuse only when it names the same state, request, version, and freshness boundary; matching a ring-buffer slot is not enough.",
+  "normative_rule": "Record residue and winding, test freshness and coverage, cap recurrent work, and keep a working fallback. A missing winding, stale suffix, uncovered lag, or exhausted recurrence budget rejects reuse rather than silently degrading the answer.",
+  "formal_binding": {"claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core", "support_state": "argument", "anchor": "State-Carry and Recurrence Admission Lease"},
+  "claim_atom_and_source_links": ["coil-attention-cyclic-memory-and-recurrence-contracts.core", "coil_attention_memory", "ext_recurrent_transformer_2026"],
+  "caveat_consolidation": {"local_caveat": "The worked trace states once that its finite checks are structural rather than a long-context quality result.", "consolidated_disposition": "Aliasing, freshness, coverage, recurrence, cache behavior, retrieval, quality, resources, deployment, and transfer remain distinct limits.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "Exact transition and mutation counts remain because they make stale-suffix containment auditable; the complete lifecycle inventory remains in formal evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and rule split cache identity from the full formal lease.", "hedge_disposition": "One local boundary preserves the distinction between structural checks and semantic performance.", "table_disposition": "Structural source tables remain because they separate source roles and evidence ceilings."},
+  "non_claims": ["The stale-cache trace is not a deployed KV-cache or long-context experiment.", "Finite state checks do not establish retrieval quality, model quality, speed, memory savings, or safety.", "The editorial revision does not move support or release state."]
+}

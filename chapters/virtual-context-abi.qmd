@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -84,6 +84,8 @@ adequacy, lease, fault, and residual information must survive?
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The best-effort summary baseline silently omits the old restriction. The ABI exposes the frontier and returns a mandatory-field fault for release use.
 
 A model can sound as if it remembers everything across a long conversation. A
 governed system has to be able to say what it actually gave the model.
@@ -169,6 +171,16 @@ usefulness, safety, or support. The ABI may deny, ask, abstain, refresh,
 broaden, narrow, or return a typed fault. It does not update durable memory,
 own transactions, infer execution authority, adjudicate claims, execute
 effects, or move support or release state.
+
+**Reader claim.** A context summary may be faithful enough for one consumer and still be unsafe for another because omissions, authority, freshness, purpose, and adequacy are part of the interface.
+
+**Operational rule.** Resolve stable object and snapshot references into a packet whose certificate names exact sources, fields, transformations, omissions, loss, taint, authority, rights, uses, freshness, lease, selection frontier, adequacy state, cost, faults, and residuals. Missing mandatory context returns a typed fault, never best-effort silence.
+
+### Worked materialization: the summary omits the one blocking fact
+
+A planner requests a compact project-status packet for release planning. The materializer selects recent build and test records but omits an older unresolved rights restriction because it falls outside the default recency window. The resulting prose is fluent and factually consistent with its selected fields, yet it is inadequate for release use. The certificate exposes the omitted frontier and the request’s mandatory rights field, so admission fails with a typed context-miss fault.
+
+A diagnostic consumer that asked only for recent build health could admit the same representation under a different purpose and support ceiling. The summary’s authority cannot exceed its sources, and a new materialization cannot silently erase taint or revocation. The local fixture families check admission, resolver, and certificate routes, but they do not establish natural source-to-packet fidelity, truth, useful model use, verification adequacy, or cross-store transfer.
 
 The claim remains at `argument`. The source corpus supplies architecture and
 comparator vocabulary. The current schemas, 3/5 admission fixtures, 2/9

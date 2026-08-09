@@ -4,7 +4,7 @@ chapter_id: "adversarial-machine-learning-and-model-attack-surface"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_nist_adversarial_ml_2024"
   - "ext_sleeper_agents_2024"
@@ -38,6 +38,8 @@ This chapter owns the model-specific attack surface and the evidence needed to q
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline labels any red-team finding as model insecurity, or any failed attack as robustness. The chapter keeps the exact objective, access, budget, effect, utility cost, recovery, and residual instead.
 
 Traditional security asks whether an adversary can cross a system boundary. Adversarial machine learning also asks whether the learned decision boundary can be turned against us. A sticker, poisoned example, hidden trigger, chosen query sequence, or adaptive conversation may change behavior without exploiting a conventional software bug. Attacks must therefore be followed through the learning lifecycle.
 
@@ -84,6 +86,16 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** Model security is not one robustness score. It is a
+checkpoint-specific account of who attacked which surface, with what access
+and budget, what changed, what the defense cost, and what remained exposed.
+
+**Operational rule.** Admit a security conclusion only when the attack record
+binds model and serving identity, attacker capability, objective, budget,
+adaptation, attempt denominator, clean utility, observed harm, recovery, and
+residual ownership. A missing field narrows the conclusion; it cannot be filled
+by a benchmark average or a failed attack.
+
 [adversarial-machine-learning-and-model-attack-surface.core, label: Design rationale, support: argument] A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.
 
 ## Mechanism
@@ -97,6 +109,32 @@ flowchart LR
 **Observation.** Retain attack traces, detector outcomes, mitigations, model changes, regressions, false positives, residual vulnerabilities, and disclosure decisions as one lineage.
 
 **Closure.** Feed successful or unresolved attacks into custody, privacy, supply-chain, readiness, rollback, and incident systems without duplicating their authority.
+
+### Worked threat-ledger comparison: three successes that mean different things
+
+Three source-reported attacks make the ledger distinction concrete. They are
+not results from one shared benchmark, and this book does not average them into
+a synthetic robustness score.
+
+| Attack trace | What the attacker actually accomplished | What the disposition can say | What remains open |
+|---|---|---|---|
+| **Training-data extraction.** Carlini et al. generated and ranked black-box GPT-2 outputs, then checked candidates against source material. | Recovered memorized sequences in the studied model and access setting. | The tested configuration exposed extractable memorization under that attack procedure. | Other checkpoints, query budgets, duplicate rules, private-record impact, defenses, and recovery. |
+| **Conditional backdoor persistence.** *Sleeper Agents* constructed models with trigger-dependent behavior and applied several safety-training methods. | The conditional behavior persisted in several studied setups; adversarial training could improve trigger recognition. | Clean behavior after safety training did not identify removal of the constructed backdoor. | Naturally learned deception, other triggers and model families, detector competence, and safe removal. |
+| **Cross-channel defense externality.** Wang et al. attacked camera–LiDAR fusion models under single- and joint-channel conditions. | A defense aimed at one channel could alter robustness on another in the studied architectures. | Per-channel success was insufficient to certify the fused system. | Physical reachability, other fusion stacks, synchronized attacks, utility costs, and recovery. |
+
+The same word—*success*—therefore names three different events: disclosure of
+memorized content, persistence of a conditional policy, and a defense-induced
+cross-channel weakness. The residual owners differ too. Privacy and incident
+response own affected records in the first trace; checkpoint lineage and
+repair own trigger-family removal in the second; sensor and system-security
+owners own composed reachability in the third. A single scalar would erase the
+decision each result is capable of changing.
+
+The simpler baseline is “the red team found something, so the model is
+insecure,” or its mirror image, “the attack failed, so the model is robust.”
+The threat ledger refuses both shortcuts. It records the bounded result, keeps
+the attempt denominator and utility cost visible, and reopens the disposition
+when checkpoint, access, defense, or attacker budget changes.
 
 ### Adversarial examples: learned-boundary failure under bounded perturbation
 

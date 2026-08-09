@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+  "chapter_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+  "chapter_sha256": "5b4b8d3dc621f3d4cf862d5f0e2ac6c508aa2b755db345af02abb582b342029d",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-14-claim-and-proof-review",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked proof-transport trace: one receipt, two consumers",
+    "actor_or_system": "A pinned Circle RoPE receipt presented to a structural diagnostic and an architecture-promotion consumer",
+    "attempted_action": "Determine whether the same theorem-linked receipt may support finite position bookkeeping and a claim of better trained-model context behavior.",
+    "observable_outcome": "The diagnostic accepts the bounded theorem, field, and fingerprint contract while the architecture gate rejects promotion for missing workload, baseline, quality, runtime, and memory evidence.",
+    "failed_or_tested_boundary": "The trace tests whether theorem validity and receipt transport automatically confer empirical consumer authority; the two opposite decisions show that they do not.",
+    "residual_owner": "The downstream architecture evaluation owns model workload, baseline, quality, cost, failure, and adoption evidence that the proof receipt cannot supply.",
+    "evidence_boundary": "The ASI-side gate validates one pinned public receipt and four mutations; it does not rebuild the general Circle proof stack or establish model behavior, transfer, or deployment."
+  },
+  "worked_trace": {
+    "heading": "Worked proof-transport trace: one receipt, two consumers",
+    "state_labels": ["pinned_receipt", "structural_consumer_accepts", "empirical_consumer_refuses", "downstream_residual"],
+    "source_or_fixture_refs": ["docs/circle_public_replay_consumer_gate.md", "scripts/validate_circle_public_replay.py"],
+    "maximum_inference": "The trace demonstrates consumer-specific use of a pinned proof receipt and rejection of four malformed or overclaiming variants; it establishes no general proof transport or model-performance result."
+  },
+  "counterexample_or_simpler_baseline": "The simpler verified-badge baseline treats a theorem name as architecture approval. The transport envelope instead resolves the exact receipt and asks whether the requested consumer claim lies inside its authority.",
+  "readable_claim": "A proof-carrying contract lets a small formal fact travel without turning that fact into a claim about model behavior or deployment.",
+  "normative_rule": "A consumer may use a formal receipt only after resolving its theorem identity, assumptions, source and toolchain, fingerprints, replay state, expiry, and non-claims. The consumer must separately justify every empirical or operational decision it wants to make from that fact.",
+  "formal_binding": {
+    "claim_id": "circle-calculus-and-proof-carrying-ai-contracts.core",
+    "support_state": "argument",
+    "anchor": "Proof Contract Transport Envelope"
+  },
+  "claim_atom_and_source_links": ["circle-calculus-and-proof-carrying-ai-contracts.core", "circle_calculus_core", "circle_ai_contract_suite", "rope_position_certifier"],
+  "caveat_consolidation": {
+    "local_caveat": "The trace keeps its local boundary to one public pinned receipt and two explicitly different consumers.",
+    "consolidated_disposition": "The complete theorem, fingerprint, replay, revocation, private-source, transport, and model-performance limitations remain in their dedicated receipt and formal sections.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The two-consumer table remains because the opposite decisions are the mechanism; receipt field inventories, lifecycle states, and mutation counts remain in reference surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The new reader claim and rule make proof identity, transport, and consumer authority readable before the exact formal envelope.",
+    "hedge_disposition": "One local scene boundary replaces no distinct limitations and keeps the general transport and empirical non-claims visible.",
+    "table_disposition": "The compact table is argument-bearing because one receipt produces two consumer-specific decisions."
+  },
+  "non_claims": [
+    "The trace does not establish a general proof-transport service or clean external replay.",
+    "The trace does not establish model quality, runtime, memory, safety, or deployment.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

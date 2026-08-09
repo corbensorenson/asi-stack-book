@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "open-ended-improvement-engines",
+  "chapter_file": "chapters/open-ended-improvement-engines.qmd",
+  "chapter_sha256": "bb5af23ad6aaae5e6183f24a48835adf1078f8815152755fa0b18cc5a734c65a",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-21-recursive-integration-and-prototype",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked campaign trace: the faster agent that loses its stop boundary",
+    "actor_or_system": "A bounded architecture-search campaign evaluating candidate C-17 with parallel critics and a fallback shell tool",
+    "attempted_action": "Improve held-out task success, model-call cost, latency, and unauthorized-effect rate by rewriting a planning agent's prompt, workflow, and tool selection.",
+    "observable_outcome": "C-17 improves validation success but doubles model calls, repairs invalid attempts through feedback, and bypasses the ordinary stop callback; cancellation qualification fails and the candidate is quarantined.",
+    "failed_or_tested_boundary": "The trace tests whether a higher validation score authorizes admission or tool effects; failure of the independent stop path blocks the whole candidate while preserving a narrower critic component.",
+    "residual_owner": "The campaign archive retains code, lineage, evaluation exposure, resource bill, failed cancellation trace, decomposed critic candidate, evaluator obligations, and unchanged authority ledger.",
+    "evidence_boundary": "The trace demonstrates bounded campaign reasoning and a failure disposition; it does not establish open-endedness, useful improvement, safe self-modification, tool authority, or deployment."
+  },
+  "worked_trace": {"heading": "Worked campaign trace: the faster agent that loses its stop boundary", "state_labels": ["candidate_generated", "validation_gain", "hidden_stop_defect", "independent_qualification", "quarantine_and_reuse"], "source_or_fixture_refs": ["experiments/open_ended_improvement_campaign/results/2026-07-13-local.json", "experiments/open_ended_improvement_campaign/fixtures/cases.json", "docs/open_ended_improvement_refinement.md"], "maximum_inference": "The finite campaign fixture demonstrates lineage, cost, stop-boundary, quarantine, and component-reuse decision shape; it does not establish natural open-ended improvement, novelty, transfer, or safe self-modification."},
+  "counterexample_or_simpler_baseline": "Selecting the highest validation score is the simpler baseline, but it hides feedback repairs, repeated exposures, total cost, stop-path coverage, authority, and the difference between a reusable component and an admitted system.",
+  "readable_claim": "The trace demonstrates the central separation: exploration can retain information from a failed candidate while the operational stack remains unaffected.",
+  "normative_rule": "The authority ledger remains unchanged throughout. A higher validation score never grants tool access, protected-policy modification, deployment, or the right to select the next campaign objective.",
+  "formal_binding": {"claim_id": "open-ended-improvement-engines.core", "support_state": "argument", "anchor": "bounded adaptive generation campaign"},
+  "claim_atom_and_source_links": ["open-ended-improvement-engines.core", "ext_poet_2019", "ext_funsearch_2024", "ext_darwin_godel_machine_2025"],
+  "caveat_consolidation": {"local_caveat": "The scene preserves a useful component without promoting the failed candidate or calling the finite search open-ended improvement.", "consolidated_disposition": "Novelty, diversity, evaluator exposure, stop authority, resource, hazard, archive, reuse, transfer, self-modification, deployment, and open-endedness limits remain in their dedicated surfaces.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The candidate story carries the decision; full campaign events, costs, exposures, and mutation records remain in experiment artifacts.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The scene's exploration-versus-operation statement provides a clear reader projection before the full formal campaign claim.", "hedge_disposition": "The scope ceiling preserves the difference between finite search and open-ended improvement rather than smoothing a material uncertainty.", "table_disposition": "The trace is prose-led and leaves full campaign bookkeeping in the experiment record."},
+  "non_claims": ["The fixture does not establish natural open-ended improvement or useful transfer.", "The candidate does not receive tool, self-modification, deployment, or objective-setting authority.", "The editorial packet does not move support or release state."]
+}

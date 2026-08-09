@@ -4,7 +4,7 @@ chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-08-03"
+last_updated: "2026-08-09"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -63,6 +63,8 @@ This chapter is also the reflexive application of the governed-cognition pattern
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The filename-order baseline renumbers neighbors and breaks derivatives. The manifest compiler derives order while preserving stable identities.
+
 The prototype roadmap explains how the system should be built over time. The manuscript itself needs the same discipline so it can keep changing without losing its evidence controls. The manuscript is part of the architecture, not a static brochure about it. If the architecture is living, its written form must also have controlled change, reviewable lineage, and a visible boundary between aspiration and evidence.
 
 Trust comes through process. The manuscript should remain readable, but it also has to show how parts move, how sources enter, how claims change state, how proofs and tests are recorded, and how reader editions are derived without becoming a separate truth. That makes the manuscript a demonstration of the governance discipline it argues for.
@@ -95,6 +97,16 @@ The audience split makes this stricter, not looser. AI assistants need structure
 ## Core Claim
 
 [living-book-methodology.core, label: Design rationale, support: argument] Living Book Methodology owns a book-, edition-, change-, source-, claim-, proof-, test-, render-, audience-, derivative-, release-, rights-, reviewer-, consumer-, environment-, and time-specific **Evidence-Preserving Publication Transaction**. It binds every substantive intake, structural edit, claim change, proof or test change, render, reader or audio projection, release, correction, rollback, and successor handoff to canonical source state, provenance, authority, validation, evidence effect, residuals, non-claims, and immutable lineage. Generated scaffolds, green validators, theorem builds, successful renders, local format artifacts, publication activity, or a polished release never by themselves establish source interpretation, editorial quality, accessibility, reader approval, chapter truth, capability, safety, external reproduction, transfer, AGI, ASI, or SOTA.
+
+**Reader claim.** A living book stays trustworthy when edits can change order, prose, evidence, and presentation without changing chapter identity or silently promoting claims.
+
+**Operational rule.** Drive structure from one canonical manifest, keep chapter IDs stable, derive display order, bind each editorial and publication change to current digests, and record its evidence and release effects separately. A green build is necessary but never sufficient for editorial acceptance or public truth.
+
+### Worked structural edit: insert a chapter without renaming its neighbors
+
+A new chapter is inserted between display positions 20 and 21. The manifest compiler assigns contiguous display ordinals, but the stable IDs and file identities of every existing chapter remain unchanged. Cross-references, evidence packets, videos, and citations continue to address those IDs rather than old ordinal numbers. A thin summary containing only the new manifest digest and chapter count cannot decide whether all required editorial, render, rights, and release gates passed.
+
+The local change-packet harness checks three valid and six invalid packets, a middle insertion, five trace splits, nine reachable states through 162 transitions, and five terminal states through 90 absorbing transitions. It rejects fifteen semantic mutations. These repository-process checks establish deterministic structure and custody for the authored workflow; they do not establish source interpretation, prose quality, accessibility, public availability, reader approval, or chapter truth.
 
 The claim remains at `argument` support. The repository demonstrates the method in part through generated scaffolds, validators, proof manifests, schema fixtures, changelog entries, commits, and GitHub Pages renders. Those artifacts support release discipline, not the truth of every chapter claim.
 

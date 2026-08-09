@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 temporal-access integration"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "tokenmana"
   - "planforge"
@@ -64,7 +64,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.4 temporal-access integration |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-08 |
 | Primary source records | 41 assigned records spanning local resource and simulation lineage, serving and heterogeneous-memory comparators, current provider cache contracts, exact and modular prefix reuse, disaggregated and non-prefix KV state, semantic response caching, and benchmark context |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -86,6 +86,8 @@ Resource economics is the cost counterpart to the security kernel. Least exposur
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A scalar cost sort chooses the 2.3-unit route and calls it efficient. The accepted selector rejects it for failed verification and compares the 14.2 route with a 43.0 adequate baseline.
 
 Governed routing, compression, faster generation, richer representations, and synthetic experiments can look locally cheap. Resource economics asks whether they still save anything after verification, repair, fallback, memory pressure, fidelity limits, and risk are counted.
 
@@ -114,7 +116,47 @@ TokenMana contributes the regenerative-capacity idea: bounded capacity accumulat
 
 Budget records should therefore include the cost of not acting, too. Deferral, rejection, escalation, and scope reduction are not failures if they preserve higher-value capacity or prevent unverifiable high-risk work. The ledger should make those choices visible instead of rewarding only dispatch.
 
+### Worked cost comparison: the cheapest route is not the economical route
+
+The tracked costed-route fixture begins with one bounded transformation task
+and four ways to handle it. A cheap unverified transform costs 2.3 synthetic
+units. A hidden-residual auto-merge costs 8.2. A bounded transform plus a
+verifier costs 14.2. A manual-review baseline costs 43.0. If the scheduler
+sorts one number, it selects 2.3 and appears efficient.
+
+The ledger changes the decision. The 2.3 route fails verification, leaves a
+`cheap_brittle` outcome, and cannot become a promotion candidate. The 8.2
+route passes a shallow surface check but loses residual ownership and the
+reviewer handoff. Both become `residualized`, not dispatchable successes. The
+43.0 route remains adequate but spends more tokens, time, and tool units than
+the 14.2 route. The selector therefore chooses the lowest-cost *eligible*
+route, not the lowest number.
+
+```text
+2.3  cheap-unverified-transform       -> reject: verification failed
+8.2  hidden-residual-auto-merge       -> reject: residual and reviewer lost
+14.2 bounded-transform-plus-verifier  -> select: adequate and fully owned
+43.0 frontier-manual-review           -> retain: adequate overkill baseline
+```
+
+Under the fixture's frozen formula—tokens per thousand, seconds per minute,
+and five units per tool-cost unit—the selected route is 66.98 percent cheaper
+than the adequate baseline. That percentage is a synthetic arithmetic result,
+not a production saving. Its useful lesson is the denominator: generation,
+verification, fallback, residual custody, non-claims, and review eligibility
+all determine whether a route is allowed into the cost comparison. The same
+accounting later expands to caches, paging, energy, latency tails, human work,
+and recovery.
+
 ## Core Claim
+
+**Readable claim.** Resource efficiency means the lowest complete cost for a
+qualified useful outcome—not the fewest tokens, fastest local step, highest
+cache-hit rate, or cheapest route before verification and repair.
+
+**Normative rule.** Protected safety, rights, verification, recovery, and
+residual costs enter the ledger before selection. A route that omits them is
+ineligible, not inexpensive.
 
 [resource-economics-and-token-budgets.core, label: Design rationale, support: argument] Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalates, or rejects work only after protected safety and rights floors, complete direct and displaced costs, uncertainty, useful outcome value, verification capacity, load and tail stability, simulation-transfer limits, recovery, and residual ownership are explicit; throughput, low token count, synthetic success, or a cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority.
 

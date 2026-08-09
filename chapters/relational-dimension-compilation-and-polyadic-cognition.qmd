@@ -4,7 +4,7 @@ chapter_id: "relational-dimension-compilation-and-polyadic-cognition"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-31"
+last_updated: "2026-08-09"
 primary_sources:
   - "relational_dimension_compiler"
   - "ext_neural_message_passing_2017"
@@ -39,6 +39,8 @@ retain, or retire production structure by itself.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline stores pairwise edges and drops the joint condition. The candidate compiler must first show that matched pairwise, sequence, retrieval, tool, and ordinary-model rescues fail on held-out structure.
 
 Begin with [Replaceable Cognitive Substrates Beyond Transformer
 Monoculture](replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd),
@@ -95,6 +97,16 @@ system may have paid an unbounded search bill upstream.
 ## Core Claim
 
 [relational-dimension-compilation-and-polyadic-cognition.core, label: Design rationale, support: argument] Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.
+
+**Reader claim.** Higher-order structure earns a place only when typed joint roles solve a held-out relation that strong lower-order representations cannot solve as well.
+
+**Operational rule.** Preserve every candidate and lower-order rescue in the denominator, address roles by identity rather than position, and compile on the slow path. Missing roles, hidden candidates, unmatched budgets, active descendants, or failed held-out qualification force fallback.
+
+### Worked ternary compilation: three roles, one qualified candidate
+
+Take the relation “Alice gives Bob the key if Carol releases the file.” The compiler binds three required role IDs—giver `1`, recipient `2`, and condition-holder `3`—to entities `101`, `102`, and `103`. It tests three candidate representations, IDs `201`, `202`, and `203`, while retaining all three outcomes. Only candidate `202` qualifies; the other two remain visible rather than disappearing from the denominator. Pairwise edges, message passing, sequence, retrieval, tool, reified-node, and ordinary-model rescues receive matched budgets before the higher-order candidate is eligible.
+
+The finite review then tracks two descendants of relation `202`: artifact `301` is invalidated and artifact `302` is recompiled. An active descendant blocks contraction, and seven scope changes invalidate the receipt. All 54 admission-axis mutations receive exact repair or refusal dispositions. The exercise proves that typed roles, candidate custody, fallback, and invalidation can be modeled coherently; it does not prove that the ternary representation is irreducible, useful, efficient, or superior on natural tasks.
 
 ## What “dimension” means here
 

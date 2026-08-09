@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+  "chapter_file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+  "chapter_sha256": "1b8155f6bf7683ee6f5a513623a1a6e9c9d6245a3f55f84d79c51ff20e75f9bf",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-04-evidence-and-noninheritance",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: a selectively reported update",
+    "actor_or_system": "A stronger proposer model, smaller critic model, human operator, and independent outcome auditor reviewing specialist replacement",
+    "attempted_action": "Approve a high-risk specialist replacement from an aggregate gain and short regression summary while the critic initially lacks the proposer’s cohort and lineage evidence.",
+    "observable_outcome": "After evidence access is repaired, the critic finds an omitted high-impact cohort and the auditor detects two unsafe releases; the candidate and arguments are preserved but the route is quarantined.",
+    "failed_or_tested_boundary": "The trace tests whether adversarial roles, debate, or aggregate score establish independent reliable oversight; shared model family, missing evidence access, and outcome audit remain decisive.",
+    "residual_owner": "The oversight protocol retains the omitted cohort, unsafe outcomes, shared-family dependence, operator time, model calls, rerun obligation, escalation route, and release authority separation.",
+    "evidence_boundary": "The scene explains an oversight protocol and direct-review baseline; it does not establish reviewer independence, reliable supervision, debate superiority, replacement safety, or deployment authority."
+  },
+  "worked_trace": {"heading": "Worked trace: a selectively reported update", "state_labels": ["replacement_proposal", "evidence_access_repair", "adversarial_claims", "independent_outcome_audit", "quarantine"], "source_or_fixture_refs": ["experiments/scalable_oversight_protocol/results/2026-07-13-local.json", "experiments/scalable_oversight_protocol/fixtures/cases.json", "docs/scalable_oversight_refinement.md"], "maximum_inference": "The finite protocol fixtures and worked trace demonstrate evidence-view, dependency, outcome-audit, abstention, and quarantine record logic; they do not establish real oversight accuracy, independence, safety, or release readiness."},
+  "counterexample_or_simpler_baseline": "The direct-review baseline is a human reading the complete frozen report without model assistance; the assisted protocol earns credit only if it improves omission detection or quarantine under the same evidence and cost envelope.",
+  "readable_claim": "This trace separates four achievements that are often collapsed. The protocol can expose a defect; the auditor can verify it; the evidence system can record it; and the authority layer can block release.",
+  "normative_rule": "The assisted path is credited only if it finds the omission or reaches the correct quarantine decision more reliably under the same evidence and cost envelope.",
+  "formal_binding": {"claim_id": "scalable-oversight-and-adversarial-ai-control.core", "support_state": "argument", "anchor": "versioned, consumer-bound protocol receipt"},
+  "claim_atom_and_source_links": ["scalable-oversight-and-adversarial-ai-control.core", "ext_weak_to_strong_generalization_2023", "ext_scalable_oversight_weak_llms_2024", "ext_ai_safety_debate_2018"],
+  "caveat_consolidation": {"local_caveat": "The trace refuses to call the roles independent until evidence access and dependency conditions are explicit, and still requires outcome audit and authority.", "consolidated_disposition": "Capability envelope, evidence view, persuasion, correlation, reviewer dependence, outcome audit, abstention, cost, training, safety, readiness, and transfer limits remain in their exact sections.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The scene remains prose-led because evidence asymmetry and cohort omission are the argument; protocol fields, dependency graphs, and fixture matrices remain in reference surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The four-achievement projection separates discovery, verification, evidence recording, and authority before the comprehensive protocol claim.", "hedge_disposition": "Dependence and non-transfer caveats are mechanism-critical and remain rather than being reduced mechanically.", "table_disposition": "No new status table was added; the direct-review comparison stays inside the worked trace."},
+  "non_claims": ["The trace does not establish reviewer independence or reliable scalable supervision.", "The trace does not prove debate superiority, replacement safety, or release readiness.", "The editorial packet does not move support or release state."]
+}

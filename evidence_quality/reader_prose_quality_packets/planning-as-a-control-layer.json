@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "planning-as-a-control-layer",
+  "chapter_file": "chapters/planning-as-a-control-layer.qmd",
+  "chapter_sha256": "a5bc0119e074205c3918b8d246ea183c65b4036072b1181d536fc343341ab6ad",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-08-planning",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked replan: a dependency fails after dispatch",
+    "actor_or_system": "A repository-release planner, a completed render node, a blocked deployment node, and a public verification node",
+    "attempted_action": "Complete a render, deployment, and public-route verification plan after the hosting credential becomes unavailable.",
+    "observable_outcome": "The deploy node blocks, its dependent verification does not masquerade as executed, and a later authorized deployment route creates a scoped new plan version.",
+    "failed_or_tested_boundary": "The scene tests whether retrying, rewriting the goal, or hiding the residual can substitute for feedback-before-replan, authority preservation, and downstream blocking; none can.",
+    "residual_owner": "Credential authority stays with its owner; the planner retains the blocked node, skipped verification, changed dependency, and replan evidence.",
+    "evidence_boundary": "The seven-event witness checks finite ordering and custody, not decomposition quality, dependency truth, scheduler optimality, or deployed replanning."
+  },
+  "worked_trace": {
+    "heading": "Worked replan: a dependency fails after dispatch",
+    "state_labels": ["render_complete", "deploy_blocked", "descendant_frozen", "feedback_recorded", "scoped_replan_admitted"],
+    "source_or_fixture_refs": ["experiments/planning_scheduler_state/results/2026-07-02-local.json", "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json"],
+    "maximum_inference": "The authored traces preserve ordering, authority ceilings, stops, and residuals; they do not establish planner quality, optimal scheduling, natural-task utility, or deployment behavior."
+  },
+  "counterexample_or_simpler_baseline": "The simpler planner retries or declares local completion after deployment fails. The control-layer plan blocks descendants, records the missing authority, and replaces only the failed scope.",
+  "readable_claim": "A plan is a revisable control record, not a confident list of future steps. Its value appears when reality disagrees with it and the system changes course without losing authority, evidence, or stop conditions.",
+  "normative_rule": "Dispatch only ready nodes whose dependencies, context, authority, verifier, and receipt requirements pass. On failure, freeze affected descendants, record the observation, and admit a scoped replacement graph only if it preserves the parent ceiling and every unresolved residual.",
+  "formal_binding": {"claim_id": "planning-as-a-control-layer.core", "support_state": "argument", "anchor": "versioned, consumer-relative plan policy"},
+  "claim_atom_and_source_links": ["planning-as-a-control-layer.core", "planforge", "cognitive_compilation"],
+  "caveat_consolidation": {"local_caveat": "The worked replan states once that ordering and custody do not imply planner optimality.", "consolidated_disposition": "Decomposition, dependency, context, routing, authority, scheduling, execution, utility, and transfer remain separate evidence obligations.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The three-node scene stays in reader prose; exhaustive lifecycle and countermodel inventories stay in formal evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule separate replanning behavior from the full plan-policy schema.", "hedge_disposition": "The finite-trace limitation is consolidated without weakening distinct planning-quality exclusions.", "table_disposition": "Source tables remain because they separate conceptual planning vocabulary from local trace evidence."},
+  "non_claims": ["The worked plan is not a deployed scheduler run.", "Finite ordering checks do not establish decomposition quality or scheduler optimality.", "The editorial revision does not move support or release state."]
+}

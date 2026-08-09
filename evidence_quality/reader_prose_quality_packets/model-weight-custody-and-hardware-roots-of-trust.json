@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+  "chapter_file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+  "chapter_sha256": "d9e46c503dd51a0bf75c1300eee120b7944d99c4c6edd4595df6b34c535593a8",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-03-authority-and-failure",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked custody trace: a valid token for the wrong artifact",
+    "actor_or_system": "A managed deployment requesting a decryption lease for model artifact W-17 under custody policy P-4 and measurement M-22",
+    "attempted_action": "Release a key after receiving valid environment attestation and a valid signature for derivative bundle W-17b.",
+    "observable_outcome": "The custody route detects that W-17b lacks an approved lineage edge, keeps the key unreleased, records the recipient and request, and sends the derivative to repair.",
+    "failed_or_tested_boundary": "The trace tests whether valid attestation and signature identify the approved artifact and confer load or release authority; cryptographic validity does not repair lineage or policy scope.",
+    "residual_owner": "Custody repair owns derivative lineage, policy review, key state, recipient state, load receipts, plaintext exposure, distribution non-recall, and sanitization residuals.",
+    "evidence_boundary": "The scenario demonstrates a custody decision and narrow load receipt only; it does not prove trustworthy hardware, confidentiality, non-exfiltration, model safety, runtime authority, or release merit."
+  },
+  "worked_trace": {"heading": "Worked custody trace: a valid token for the wrong artifact", "state_labels": ["approved_artifact", "valid_attestation", "lineage_mismatch", "key_withheld", "custody_repair"], "source_or_fixture_refs": ["experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json", "experiments/model_weight_custody_lifecycle/fixtures/cases.json", "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd"], "maximum_inference": "The finite custody result and trace show artifact-identity, lineage, and load-authority separation; they establish no real hardware trust, confidentiality, sanitization completeness, release merit, or deployment safety."},
+  "counterexample_or_simpler_baseline": "A valid-signature-plus-attestation gate is the simpler baseline, but it can release the correct key for an unreviewed derivative because it does not join artifact lineage to policy authority.",
+  "readable_claim": "The requesting host returns a cryptographically valid attestation for `M-22`. That favorable fact is insufficient.",
+  "normative_rule": "The local load receipt is not reusable as release authority. The distribution record must name the recipient, permitted derivatives, security property and attacker model, revocation feasibility, expected uncontrolled copies, incident path, and authority accepting the non-recall residual.",
+  "formal_binding": {"claim_id": "model-weight-custody-and-hardware-roots-of-trust.core", "support_state": "argument", "anchor": "governed model-family custody transition"},
+  "claim_atom_and_source_links": ["model-weight-custody-and-hardware-roots-of-trust.core", "ext_ietf_rats_architecture_2023", "ext_nist_key_management_2020", "ext_provable_model_weight_release_2025"],
+  "caveat_consolidation": {"local_caveat": "The block is attributed to missing policy lineage rather than an unsupported claim that the environment or recipient is compromised.", "consolidated_disposition": "Attestation, verifier, key, plaintext, output, backup, derivative, revocation, sanitization, irreversibility, confidentiality, safety, and release limits remain in their dedicated surfaces.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The narrative follows one artifact across request, mismatch, repair, load, and release; full derivative and custody inventories remain in artifact and evidence records.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The valid-but-insufficient attestation gives a short reader projection before the comprehensive custody claim.", "hedge_disposition": "Distinct cryptographic, hardware, behavioral, and release boundaries remain because they answer different security questions.", "table_disposition": "The worked trace is prose-led; derivative and state inventories stay in reference surfaces."},
+  "non_claims": ["The trace does not prove trustworthy hardware, confidentiality, or sanitization completeness.", "The load receipt does not establish model safety, runtime authority, or release merit.", "The editorial packet does not move support or release state."]
+}

@@ -4,7 +4,7 @@ chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-07-27 |
+| Last updated | 2026-08-08 |
 | Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -62,6 +62,8 @@ remain work to do.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline treats green source tests as proof of the live service. The trace requires the tested artifact to remain identical through deployment and then observes the public graph as a separate effect surface.
 
 A system does not stop being governed when it leaves a test environment. Its
 models, policies, data, tools, and dependencies keep changing. A release that
@@ -200,6 +202,16 @@ narrows authority, names its expiry, and exposes which service obligations it
 can no longer meet.
 
 ## Core Claim
+
+**Reader claim.** Restarting a service is not recovering governed operation.
+Recovery must reconnect the exact source, tested artifact, deployed state,
+authority, effects, residuals, and post-restoration observation.
+
+**Operational rule.** When the live envelope is uncertain, narrow authority
+before changing the story. Every incident signal receives a disposition,
+every emergency lease expires, every degraded route preserves non-negotiable
+constraints, and restoration waits for state-and-effect reconciliation plus an
+independent-enough observation.
 
 [governed-operations-incident-command-and-graceful-degradation.core, label: Design rationale, support: argument] Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.
 

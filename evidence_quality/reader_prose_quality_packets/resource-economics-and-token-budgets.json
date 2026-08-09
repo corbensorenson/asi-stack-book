@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "resource-economics-and-token-budgets",
+  "chapter_file": "chapters/resource-economics-and-token-budgets.qmd",
+  "chapter_sha256": "bdd5b3e3e2bad8d5b098dc1e18116fe6776be2ede095915aaf1ab27272106f96",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-20-resource-and-recovery-economics",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked cost comparison: the cheapest route is not the economical route",
+    "actor_or_system": "The bounded costed-route selector and four matched route records",
+    "attempted_action": "Choose a route for one transformation task while counting tokens, time, tool cost, verification, fallback, residual custody, and reviewer handoff.",
+    "observable_outcome": "The selector rejects routes costing 2.3 and 8.2 units, selects the eligible 14.2 route, and retains the 43.0 manual route as the adequate baseline.",
+    "failed_or_tested_boundary": "Raw cheapness fails when verification, residual ownership, or reviewer handoff is missing from the route record.",
+    "residual_owner": "The Resource Budget Record owns rejected-route residualization while Verification and reviewer owners retain their independent gates.",
+    "evidence_boundary": "The 66.98 percent difference is arithmetic inside one tracked synthetic fixture, not production economics, scheduler superiority, or a chapter-core result."
+  },
+  "worked_trace": {
+    "heading": "Worked cost comparison: the cheapest route is not the economical route",
+    "state_labels": ["candidate_routes", "eligibility_checks", "residualized_controls", "selected_eligible_route", "bounded_cost_result"],
+    "source_or_fixture_refs": ["docs/costed_route_resource_slice.md", "scripts/validate_costed_route_resource_slice.py"],
+    "maximum_inference": "A bounded selector can reject cheaper ineligible routes and select the lowest-cost adequate route in the tracked synthetic fixture; no production or chapter-core economic conclusion follows."
+  },
+  "counterexample_or_simpler_baseline": "A scalar cost sort chooses the 2.3-unit route and calls it efficient. The accepted selector rejects it for failed verification and compares the 14.2 route with a 43.0 adequate baseline.",
+  "readable_claim": "Resource efficiency means the lowest complete cost for a qualified useful outcome—not the fewest tokens, fastest local step, highest cache-hit rate, or cheapest route before verification and repair.",
+  "normative_rule": "Protected safety, rights, verification, recovery, and residual costs enter the ledger before selection. A route that omits them is ineligible, not inexpensive.",
+  "formal_binding": {
+    "claim_id": "resource-economics-and-token-budgets.core",
+    "support_state": "argument",
+    "anchor": "Resource Allocation Lease"
+  },
+  "claim_atom_and_source_links": ["resource-economics-and-token-budgets.core", "tokenmana", "planforge", "ext_pagedattention_vllm_2023"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked comparison labels every number synthetic and denies production, scheduler, and chapter-core inference.",
+    "consolidated_disposition": "Provider, paging, cache, energy, human-cost, and simulation-transfer limitations remain at the sections where those distinct decisions arise.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The four-line route ledger remains because eligibility is the argument; the full field schema and validation inventory stay in the linked costed-route record and canonical evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "A readable claim and one-sentence normative rule now precede the retained exact composite claim.",
+    "hedge_disposition": "The worked trace carries one scoped synthetic-result limit while distinct cost-domain limits remain local.",
+    "table_disposition": "The compact route ledger is retained as a decision comparison, not as repeated status bookkeeping."
+  },
+  "non_claims": [
+    "The synthetic route comparison does not establish production savings or economic optimality.",
+    "The fixture does not establish deployed routing, model quality, or safety performance.",
+    "The editorial revision does not move the resource-economics chapter-core support state."
+  ]
+}

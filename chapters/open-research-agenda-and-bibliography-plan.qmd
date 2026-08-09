@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-22"
+last_updated: "2026-08-08"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -52,7 +52,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically audited manuscript |
-| Last updated | 2026-07-22 |
+| Last updated | 2026-08-08 |
 | Primary source records | 31 assigned records with 29 exact mappings, including `relational_dimension_compiler` and its completed 2026-07-25 chapter-boundary adjudication |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -70,6 +70,8 @@ The agenda is also admission control for future enthusiasm. A new paper, benchma
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A static bibliography keeps every title and encourages inference from source count. The admission gate instead records the owner, direct-review state, deduplication result, blockers, and exact route before prose changes.
 
 The research agenda prevents the architecture from hiding its unfinished work after the argument reaches its end. It names what remains missing: sources to load, literature to normalize, experiments to run, proofs to refine, schemas to harden, and claims that must not rise above their current support state. A serious architecture needs that backlog to be public enough that future work cannot quietly skip it.
 
@@ -98,6 +100,15 @@ The research agenda is the matching map of ignorance. It names the work the book
 The book therefore needs more than bibliography management. It needs state management for knowledge work: unread, inventoried, cached, source-noted, mapped to claims, passage-reviewed, integrated into chapter prose, tested, mechanized, reproduced, deprecated, or refuted. Those states are not decoration. They are the difference between a living book and a confident scrapbook.
 
 ## Core Claim
+
+**Reader claim.** The research agenda is the book's admission desk: it decides
+whether new material updates an owner, creates a genuinely new boundary, waits
+for direct inspection, or is rejected as a duplicate.
+
+**Operational rule.** No source changes prose or support until its identity,
+access and publication boundary, direct review state, chapter owner, claim
+mapping, deduplication decision, required work, blockers, and closure condition
+are recorded.
 
 [open-research-agenda-and-bibliography-plan.core, label: Design rationale, support: argument] Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific **Research Backlog Admission and Closure Contract**. Every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support. No title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.
 
@@ -172,6 +183,31 @@ integrations do not erase the paper's distinctive conjunction or create nine
 competing RDC chapters.
 
 ## Mechanism
+
+### Reference-use trace: four ways a source can enter without becoming evidence
+
+This chapter is a reference owner, so its concrete unit is an intake decision
+rather than an invented anecdote. The public fixture
+`new-paper-triage-demo-001` sends four synthetic cases through the same gate:
+
+| Intake condition | Decision | Why |
+|---|---|---|
+| A source refines context-adequacy vocabulary but introduces no new owner, invariant, or failure boundary. | **Update the existing chapter.** | Create the source record and exact claim mapping; do not multiply chapters for new terminology. |
+| A source appears to own a distinct interface, invariant, artifact, and failure mode. | **Propose a new manifest chapter.** | First prove that no current owner can absorb the boundary and define its source and test queues. |
+| A secondary source names an external paper that has not been retrieved. | **Defer.** | A title is not support. Retrieve and directly inspect the work before citing or drafting from it. |
+| A new export repeats an inventoried source without new claims or artifacts. | **Reject the duplicate.** | Preserve only version differences; do not duplicate evidence or prose. |
+
+All four outcomes leave support unchanged. That is the point of the reference
+chapter: it turns “we found something interesting” into a reproducible routing
+decision. The simpler bibliography baseline stores every title and lets later
+writers infer importance from source count. This gate instead records why the
+item may change one existing chapter, justify a new boundary, remain unread, or
+close without action.
+
+The fixture validates decision shape only; it does not claim these hypothetical
+sources were read or that the four decisions are universally correct. A real
+intake closes only after the named source, mapping, drafting, validation, and
+evidence-transition work has been performed.
 
 The owned object is a **Research Backlog Admission and Closure Contract**, not a source list. Its lifecycle is:
 

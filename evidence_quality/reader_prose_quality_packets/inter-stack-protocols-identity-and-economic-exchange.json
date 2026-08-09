@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+  "chapter_file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+  "chapter_sha256": "f301146d98d0e0fa4d8162f6c04e49fb5b50269fab9d672eced64c29fb0fcc9c",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-15-labor-and-artifacts",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: the translated analysis with a disputed receipt",
+    "actor_or_system": "Stack North and Stack South exchanging a safety-analysis artifact through identity, translation, budget, receipt, and revocation gates",
+    "attempted_action": "Translate a namespace-qualified artifact under a 40-credit reservation and a human approval that permits translation but not deployment.",
+    "observable_outcome": "South returns a syntactically valid mapping that drops a prohibited-use facet, so North disputes the receipt, quarantines the artifact, preserves the reservation, and grants no effect lease.",
+    "failed_or_tested_boundary": "The trace tests whether message success, peer identity, semantic mapping, reserved payment, receipt, and local authority are one transition; the disputed facet and revocation race separate them.",
+    "residual_owner": "The exchange owner retains the disputed mapping and reservation while the semantic owner repairs the missing restriction and the authority owner re-reviews revoked in-flight work.",
+    "evidence_boundary": "The trace is a governed exchange example and not evidence that A2A, MCP, identity credentials, semantic mapping, settlement, or inter-stack trust works correctly in deployment."
+  },
+  "worked_trace": {"heading": "Worked trace: the translated analysis with a disputed receipt", "state_labels": ["request_and_reservation", "remote_translation", "independent_artifact_check", "receipt_dispute", "revocation_re_review"], "source_or_fixture_refs": ["experiments/inter_stack_exchange_contract/results/2026-07-13-local.json", "experiments/inter_stack_exchange_contract/fixtures/cases.json", "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd"], "maximum_inference": "The bounded fixture and reader trace validate exchange decision shape and disputed-route handling; they do not establish peer trustworthiness, semantic truth, settlement, economic fairness, authorization correctness, or deployment."},
+  "counterexample_or_simpler_baseline": "A signed request-response message is the simpler baseline, but it cannot by itself preserve semantic facets, local effect authority, reservation versus settlement, revocation races, dispute, and residual custody.",
+  "readable_claim": "Message success, identity verification, semantic translation, economic reservation, artifact acceptance, and local authority remain separate transitions.",
+  "normative_rule": "An absent epoch, invalid signature, stale migration, prohibited facet, or uncertainty above the consumer threshold blocks dispatch or routes accountable negotiation.",
+  "formal_binding": {"claim_id": "inter-stack-protocols-identity-and-economic-exchange.core", "support_state": "argument", "anchor": "versioned exchange contract"},
+  "claim_atom_and_source_links": ["inter-stack-protocols-identity-and-economic-exchange.core", "ext_a2a_protocol_1_0_0", "ext_w3c_did_core_1_0_2022", "ext_interledger_protocol_v4"],
+  "caveat_consolidation": {"local_caveat": "The trace distinguishes a disputed receipt from maliciousness, artifact falsity, payment settlement, and local authority.", "consolidated_disposition": "Protocol, identity, credential, semantic mapping, revocation, budget, settlement, legal, privacy, fairness, and deployment limits remain in dedicated sections.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The exchange sequence remains prose because the dispute and revocation race are the mechanism; full schema and protocol field inventories stay in machine surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The separate-transition sentence offers a readable projection before the exact exchange contract.", "hedge_disposition": "The trace preserves distinct trust, truth, and authority boundaries rather than deleting them to reduce disclaimer density.", "table_disposition": "No new bookkeeping table was added; the dispute is narrated as a state transition."},
+  "non_claims": ["The trace does not establish peer trustworthiness, semantic truth, or settlement.", "The trace does not validate authorization, economic fairness, privacy, or deployment.", "The editorial packet does not move support or release state."]
+}

@@ -4,7 +4,7 @@ chapter_id: "procedural-memory-and-cognitive-loop-closure"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -62,6 +62,8 @@ That makes procedural memory different from habit. A habit repeats because it wo
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The repetition baseline compiles the most common action. The governed closure retains negative cases and quarantines the overbroad shortcut.
+
 Repeated work creates a question the execution layer cannot avoid: what should the stack learn from traces that keep recurring? Procedural memory is the path from comparable traces to a reusable tool, checklist, workflow, or capability candidate, after the evidence and boundaries are mature enough.
 
 Automation should be earned. A repeated reasoning loop should not be improvised forever, but it also should not become default behavior just because it worked once. Promotion gates let memory become capability without becoming unchecked habit. That is how self-improvement starts as operational memory rather than as a vague urge to automate everything.
@@ -98,6 +100,16 @@ Current agent systems often blur those modes. A workflow gets repeated because i
 ## Core Claim
 
 [procedural-memory-and-cognitive-loop-closure.core, label: Design rationale, support: argument] Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
+
+**Reader claim.** Repetition becomes procedural memory only when the repeated reasoning can be parameterized, verified, challenged with negative examples, monitored, and retired as a tool.
+
+**Operational rule.** Preserve source traces and failures, extract explicit parameters and preconditions, verify the generated tool against strong baselines and negative cases, and give it a readiness lease, fallback, monitor, residual owner, and retirement trigger. A failed regression quarantines it.
+
+### Worked loop closure: the shortcut fails outside its precondition
+
+An agent repeatedly repairs broken chapter links by replacing an old filename with a new canonical slug. After several successful traces it proposes a reusable repair tool. Positive examples pass, but a negative case contains the old filename inside a quoted historical passage where replacement would corrupt the text. The first generated tool performs a global substitution and fails that regression, so it remains quarantined rather than becoming a routable reflex.
+
+The repaired procedure parses links, restricts edits to link targets, records changed locations, preserves a dry-run diff, and falls back to review on ambiguous markup. Its source traces, parameters, closure artifact, verifier result, benchmark floor, readiness state, monitor, and retirement trigger remain linked. The finite route checks distinguish routable, quarantined, and retired procedural records; they do not establish that the extracted procedure is complete, useful on natural workloads, secure, or better than fresh reasoning.
 
 The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution. The complete authenticated `moecot` connector text is passage-reviewed; its runtime artifacts remain unimported and unreproduced.
 

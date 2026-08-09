@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "societal-resilience-and-misuse-defense",
+  "chapter_file": "chapters/societal-resilience-and-misuse-defense.qmd",
+  "chapter_sha256": "b7cc4330b429d615591a7070ab4f1505721e62e8eb841db56fb279c1569bd248",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-05-constitutional-objective-governance",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked incident boundary: the service is restored, three paths remain",
+    "actor_or_system": "A provider response team, three enumerated affected paths, harmed parties, partner organizations, and a residual owner",
+    "attempted_action": "Contain an incident, restore provider service, observe harmed-party recovery activity, and determine whether those provider-level outcomes justify closing the societal incident.",
+    "observable_outcome": "Containment and both recovery observations are recorded, but all three incident paths remain open, so the dossier preserves provider success without claiming population recovery.",
+    "failed_or_tested_boundary": "The scene tests whether a green service dashboard, takedown, or fast response can substitute for cross-organization path closure and equitable remedy; the broader claim remains blocked.",
+    "residual_owner": "The federated incident owner retains each open path, correction route, recurrence check, missing participant, and harmed-party obligation.",
+    "evidence_boundary": "The record is a finite authored dossier and not an operated network, victim outcome, legal determination, causal harm-reduction result, or population-resilience measurement."
+  },
+  "worked_trace": {
+    "heading": "Worked incident boundary: the service is restored, three paths remain",
+    "state_labels": ["provider_containment", "service_recovery", "harmed_party_recovery_observed", "three_open_paths", "population_claim_blocked"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/societal_resilience_dossier.json", "scripts/validate_societal_resilience_review.py"],
+    "maximum_inference": "The finite review separates provider outcomes from population recovery and closure over enumerated paths; it establishes no deployed coordination, lawful remedy, acceptable residual harm, population resilience, or external effect."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline closes the incident after a model is stopped, an account is removed, or provider service returns. The chapter tracks affected people, copies, institutions, correction, remedy, and open paths separately.",
+  "readable_claim": "Stopping one model, account, or upload is not societal recovery. Resilience begins where provider control ends: with affected people, copied artifacts, other institutions, public correction, service continuity, remedy, and unresolved harm.",
+  "normative_rule": "Keep resistance, absorption, service restoration, harmed-party recovery, correction, and adaptation as separate outcomes. Close an incident only when every known affected path is closed or assigned to an authorized owner as a visible residual; provider-level success cannot stand in for population recovery.",
+  "formal_binding": {
+    "claim_id": "societal-resilience-and-misuse-defense.core",
+    "support_state": "argument",
+    "anchor": "resist-absorb-recover-adapt network with shared incident identity"
+  },
+  "claim_atom_and_source_links": ["societal-resilience-and-misuse-defense.core", "ext_singapore_consensus_2026", "ext_nist_incident_response_2025", "ext_international_ai_safety_report_2026"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked incident states once that its paths and observations are authored fields rather than measured victim or population outcomes.",
+    "consolidated_disposition": "Privacy, due process, authority transfer, jurisdiction, information hazards, false intervention, burden, recovery, remedy, and legitimacy limits remain at their mechanism-specific boundaries.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The three open paths remain in the scene because they defeat the provider-success shortcut; mutation counts and exhaustive lifecycle checks remain in formal evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader projection separates the social outcome from the formal federation and lifecycle bundle.",
+    "hedge_disposition": "The scene consolidates its authored-dossier boundary once while preserving distinct institutional, rights, privacy, remedy, and population limits.",
+    "table_disposition": "The four-stage and actor-role tables remain because they expose different obligations rather than repeat status bookkeeping."
+  },
+  "non_claims": [
+    "The dossier does not establish that a real harmed party recovered or received remedy.",
+    "The finite review does not establish population resilience or causal harm reduction.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

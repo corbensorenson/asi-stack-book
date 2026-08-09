@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-26"
+last_updated: "2026-08-09"
 primary_sources:
   - "talos"
   - "viea"
@@ -77,6 +77,8 @@ The runtime-adapter layer sits after artifact graphs so the reader already has t
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The approval-token baseline reuses an old receipt. The adapter path rechecks lease epoch at dispatch and observes the effect afterward.
+
 Artifact graphs record work, but runtime adapters create external effects under authority. The adapter is the boundary where a typed job may touch tools, files, networks, deployments, payments, credentials, hardware, or external systems under permission and approval.
 
 This is the stack's narrow waist for action. A plan can be brilliant and a job well typed, but external effect still needs an authority envelope, approval scope, effect lease, pre/post state, incident path, and residual record. The promise is action whose authority, evidence, and rollback surface are visible before harm compounds.
@@ -121,6 +123,16 @@ The distributed version of the same problem is partitioned authority. If an adap
 ## Core Claim
 
 [runtime-adapters-tool-permissions-and-human-approval.core, label: Design rationale, support: argument] Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
+
+**Reader claim.** A tool adapter is the last place to stop an unauthorized effect and the first place to record what actually happened; planning-time approval is not enough.
+
+**Operational rule.** Immediately before dispatch, recheck caller identity, active lease, target, operation, permission, approval, epoch, secret handle, sandbox, and rollback pre-state. After dispatch, independently observe the effect; revocation blocks later events and rollback must name what it restored and what remains.
+
+### Worked adapter trace: approval is valid, then the lease is revoked
+
+A repository adapter receives approval to update one generated file. Before dispatch it confirms the exact caller, target, permission, active epoch, secret handle, pre-state digest, and rollback path. The write commits and an independent read binds the observed post-state. The grant is then revoked. A queued second write carries the old approval receipt, but its lease epoch is stale, so the adapter denies it without mutation. Rollback of the first write restores the recorded baseline and preserves the effect and observer receipts.
+
+The local model contains a six-event witness to exact modeled baseline restoration and eleven countermodels covering permission, identity, authority, expiry, secrets, dispatch, pre-state, revocation, and rollback failures. The harness also checks two valid and seven expected-invalid fixtures. It trusts its OS, sandbox, secret, service, and observer fields, so the trace does not establish hardware enforcement, reviewer competence, distributed revocation, target-service truth, or effect-complete rollback.
 
 The claim remains at `argument` support. Talos supplies adapter and approval discipline; VIEA supplies intent-to-runtime and feedback boundaries; Ladon/Manhattan supplies handle-mediated secret use; GenesisCode supplies capability-mediated effects and replay logs; Software Magic Grimoire and Theseus Operator OS supply workflow and operator-surface pressure. MoECOT remains a connector implementation-reference route, not local execution evidence.
 

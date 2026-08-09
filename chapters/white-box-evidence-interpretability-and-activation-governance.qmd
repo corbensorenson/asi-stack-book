@@ -4,7 +4,7 @@ chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -52,6 +52,8 @@ until the exact artifacts are reproduced or independently challenged.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The probe baseline names the correlated activation and treats ablation as causal confirmation. The packet adds matched controls, side effects, stability, and unexplained residuals.
 
 Behavioral evaluation asks what a system did and whether that behavior survives
 challenge. White-box work asks what internal state helped produce it.
@@ -139,6 +141,16 @@ or proof that an activation intervention is safe.
 ## Core Claim
 
 [white-box-evidence-interpretability-and-activation-governance.core, label: Design rationale, support: argument] White-Box Evidence, Interpretability, and Activation Governance owns a model-, checkpoint-, substrate-, tokenizer-, population-, capture-, method-, feature-or-circuit-, label-, intervention-, comparator-, evaluator-, authority-, and time-specific Internal Evidence Packet: internal observations may influence scrutiny or activation policy only when their lineage, assumptions, reconstruction error, stability, causal status, behavioral cross-check, side effects, unexplained residual, uncertainty, expiry, and maximum inference survive review; no activation, probe, feature, label, attribution graph, steering result, source-reported mechanism, or formal record check alone establishes semantic truth, causal completeness, model safety, release readiness, support, transfer, AGI, or ASI.
+
+**Reader claim.** An activation correlated with a behavior is a lead for scrutiny, not proof that the feature means what its label says or causes the behavior.
+
+**Operational rule.** Bind each internal observation to exact model, checkpoint, tokenizer, population, capture, method, label source, reconstruction error, stability, intervention, comparator, behavioral cross-check, side effects, uncertainty, and expiry. Use it to route scrutiny unless causal evidence and residual analysis justify more.
+
+### Worked activation packet: a “deception feature” that tracks topic
+
+An interpretability method finds one activation that is higher on a deception benchmark and labels it “deception.” Ablating the feature reduces deceptive answers, but it also suppresses discussion of hypothetical agents across both deceptive and honest examples. A matched topic-control set reveals that the activation tracks the subject matter more broadly than the behavioral label. The packet therefore routes those cases to extra review but blocks the claim that a deception mechanism was isolated.
+
+The result keeps the capture population, feature identity, label provenance, reconstruction error, intervention, comparator, output changes, side effects, and unexplained residuals together. A later circuit-level intervention may strengthen or refute the hypothesis, but it receives a new packet. The record discipline does not establish semantic truth, causal completeness, whole-model safety, or readiness from an activation, attribution graph, or steering result.
 
 The claim remains at `argument`. It states the governance burden for white-box
 evidence; it does not assert that present methods can meet that burden broadly.

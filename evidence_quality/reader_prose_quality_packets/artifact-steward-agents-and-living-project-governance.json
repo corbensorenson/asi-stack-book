@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "artifact-steward-agents-and-living-project-governance",
+  "chapter_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+  "chapter_sha256": "aed464ac7e256a8035757e4e8779a6418c91fd3e637b01aa422f9e5ab658bdee",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-15-labor-and-artifacts",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked steward trace: three preparations and no inherited authority",
+    "actor_or_system": "A public-safe Artifact Steward lifecycle probe routing work, release, treasury, federation, tainted events, and sunset decisions",
+    "attempted_action": "Prepare bounded dispatch, release review, or sunset review without letting record completeness confer worker execution, spending, governance, or publication authority.",
+    "observable_outcome": "Three valid scenarios stop at preparation, while twenty-three invalid controls route to quarantine, repair, refusal, approval, or sunset rather than protected action.",
+    "failed_or_tested_boundary": "The trace tests whether useful motion, a green record, contribution score, balance, external worker, or completed review lets the steward accumulate authority; none does.",
+    "residual_owner": "Project governance retains taint review, work contract repair, treasury approval, contribution separation, federation scope, release evidence, rollback, sunset, appeal, and ownership.",
+    "evidence_boundary": "The probe computes decision envelopes only; it does not run a steward, spend funds, merge branches, publish releases, dispatch workers, establish governance correctness, or move support."
+  },
+  "worked_trace": {"heading": "Worked steward trace: three preparations and no inherited authority", "state_labels": ["charter_bound_intake", "prepare_dispatch_or_review", "protected_effect_not_executed", "typed_invalid_route", "sunset_blocks_ordinary_work"], "source_or_fixture_refs": ["docs/artifact_steward_lifecycle_probe.md", "experiments/artifact_steward_lifecycle_probe/results/2026-07-02-local.json", "scripts/validate_artifact_steward_lifecycle_probe.py"], "maximum_inference": "The deterministic probe validates bounded lifecycle decision routes and twenty-three invalid controls; it establishes no steward autonomy, treasury safety, contributor fairness, capture resistance, release safety, or governance legitimacy."},
+  "counterexample_or_simpler_baseline": "A repository bot that acts whenever CI is green is the simpler baseline, but it cannot preserve charter authority, tainted-event review, contribution separation, treasury policy, release evidence, rollback, or sunset obligations.",
+  "readable_claim": "A steward improves a project by making the next authorized decision easier to inspect, not by accumulating permission through useful activity.",
+  "normative_rule": "Bind every steward proposal to the artifact charter, taint state, scoped work contract, separated contribution record, treasury and compute policy, verification and release gates, rollback, appeal, and sunset criteria. Preparation never inherits execution, spending, governance, or publication authority.",
+  "formal_binding": {"claim_id": "artifact-steward-agents-and-living-project-governance.core", "support_state": "argument", "anchor": "Artifact Steward Continuity Lease"},
+  "claim_atom_and_source_links": ["artifact-steward-agents-and-living-project-governance.core", "viea", "talos", "ext_github_actions_2026"],
+  "caveat_consolidation": {"local_caveat": "The scene states that valid routes are preparation states and that no protected external action is executed.", "consolidated_disposition": "Mission, ownership, authority, taint, labor, contributor, treasury, compute, release, federation, sunset, legal, fairness, capture, safety, and autonomy limits remain in dedicated surfaces.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The prose keeps three valid and representative invalid routes; the full twenty-three-control matrix and digests remain in the probe report.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and rule separate useful stewardship, preparation, and authority before the comprehensive continuity lease.", "hedge_disposition": "The no-execution boundary is stated once beside the result while distinct governance limits remain preserved.", "table_disposition": "No new record inventory table was added; the route decisions are narrated and full control data stays off the reading path."},
+  "non_claims": ["The probe does not run a steward, spend funds, merge work, publish, or dispatch workers.", "The probe does not establish governance correctness, contributor fairness, capture resistance, or release safety.", "The editorial revision does not move support or release state."]
+}

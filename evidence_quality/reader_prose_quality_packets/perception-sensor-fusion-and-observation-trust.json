@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "perception-sensor-fusion-and-observation-trust",
+  "chapter_file": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+  "chapter_sha256": "9bdb0d968085218bfb0b07050e3473fe4436d10776d8364a266d4dc51e42a50e",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-09-world-models",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked fusion boundary: roots 7 and 9 still share one hidden cause",
+    "actor_or_system": "Two agreeing sensor channels with declared roots 7 and 9, a pairwise classifier, and a global common-cause review",
+    "attempted_action": "Count agreeing channels as independent evidence for a bounded observation use while preserving identity, calibration, clock, pose, dependence, hypothesis, consumer, and residual custody.",
+    "observable_outcome": "Distinct roots count as two only inside the pair model; the same root pair is admitted without a global common cause and rejected when a hidden shared cause exists, so the root summary cannot decide the global case.",
+    "failed_or_tested_boundary": "The trace tests whether sensor count or pairwise root diversity proves global independence; twelve same-summary/opposite-common-cause controls reject that compression.",
+    "residual_owner": "The observation and downstream consumer owners retain unknown dependence, calibration, synchronization, environmental truth, active-sensing, and invalidation residuals.",
+    "evidence_boundary": "The model trusts every channel and dependence field; it does not discover a real cause, validate calibration, identify environmental truth, measure fusion quality, detect spoofing, or authorize physical action."
+  },
+  "worked_trace": {
+    "heading": "Worked fusion boundary: roots 7 and 9 still share one hidden cause",
+    "state_labels": ["two_agreeing_channels", "distinct_pair_roots", "global_cause_absent_or_present", "opposite_admission", "receipt_invalidated"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/observation_trust.json", "scripts/validate_observation_trust.py"],
+    "maximum_inference": "The finite model demonstrates pair classification, lifecycle custody, terminal invalidation, and information loss from pairwise dependence summaries; it establishes no sensor truth, causal independence, robustness, safety, or useful fusion."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline treats two agreeing modalities or distinct declared roots as two votes. The chapter keeps per-channel evidence and a global dependence residual because the same pair summary can hide a shared cause.",
+  "readable_claim": "Two sensors that agree are not automatically two pieces of evidence. Their clocks, pose, calibration, environment, training, and attack surface may reduce apparent diversity to one shared cause.",
+  "normative_rule": "Preserve channel-local hypotheses and dependence roots before fusion. Count agreement as additional evidence only for the named use and reviewed dependence model; disagreement stays plural, and a material identity, calibration, clock, pose, dependence, or environment change invalidates the observation receipt.",
+  "formal_binding": {"claim_id": "perception-sensor-fusion-and-observation-trust.core", "support_state": "argument", "anchor": "versioned observation contract binds the task and required evidence"},
+  "claim_atom_and_source_links": ["perception-sensor-fusion-and-observation-trust.core", "ext_multimodal_machine_learning_taxonomy_2019", "ext_adversarial_sensor_fusion_2022", "ext_3d_detection_corruptions_2023"],
+  "caveat_consolidation": {"local_caveat": "The worked fusion boundary states once that dependence roots and common-cause fields are authored rather than discovered from sensors.", "consolidated_disposition": "Calibration, synchronization, pose, coverage, missingness, dependence, corruption, spoofing, fusion, active sensing, downstream authority, and physical-safety limits remain distinct.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "Roots 7 and 9 and the opposite common-cause dispositions remain because they prove the information-loss point; complete mutation and theorem inventories remain in evidence surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule separate the independence failure and admission rule from the full observation-contract bundle.", "hedge_disposition": "The finite-model limit is consolidated once while sensor, calibration, dependence, corruption, action, and safety boundaries remain explicit.", "table_disposition": "The adjacent-owner and observation-need tables remain because they distinguish consumers and evidence requirements rather than repeat status."},
+  "non_claims": ["The root-pair example does not identify a real environmental or attack cause.", "The finite model does not establish calibration, robustness, useful fusion, physical safety, or action authority.", "The editorial revision does not move chapter-core support or release state."]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "human-intent-as-a-formal-input",
+  "chapter_file": "chapters/human-intent-as-a-formal-input.qmd",
+  "chapter_sha256": "6d1bbc0e19b5b68967a8325bdbb8419a64cf585f3f9e69ab0a7994c4827ea12f",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-07-intent-and-command",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked intent contract: “clean up the repo”",
+    "actor_or_system": "A user, an intent compiler, a protected dirty repository, and downstream planning and authority gates",
+    "attempted_action": "Interpret and execute the terse request “clean up the repo.”",
+    "observable_outcome": "Read-only inspection is admissible, while deletion, history rewriting, remote publication, and credentialed effects remain unresolved until explicitly contracted.",
+    "failed_or_tested_boundary": "The scene tests whether a plausible desired outcome permits the system to invent scope, destructive means, authority, or completion evidence; it does not.",
+    "residual_owner": "The intent owner retains ambiguity and acceptance criteria; authority, planning, execution, and publication owners retain their independent gates.",
+    "evidence_boundary": "The local resolution model checks authored route and transport behavior, not natural-language understanding, complete preference inference, consent, or satisfaction."
+  },
+  "worked_trace": {
+    "heading": "Worked intent contract: “clean up the repo”",
+    "state_labels": ["raw_request_preserved", "scope_unresolved", "read_only_admitted", "effects_blocked", "recontract_required"],
+    "source_or_fixture_refs": ["experiments/intent_resolution_refinement/results/2026-07-15-local.json", "evidence_quality/proof_model_dossiers/human-intent-as-a-formal-input.md"],
+    "maximum_inference": "The modeled contract can preserve declared fields and route gaps; it does not establish semantic completeness, legitimate consent, user satisfaction, or execution authority."
+  },
+  "counterexample_or_simpler_baseline": "The naive baseline treats “clean up” as permission to delete and push. The governed path preserves the raw request, admits inspection, and leaves destructive means and remote effects unresolved.",
+  "readable_claim": "A short request can be operationally incomplete even when its goal sounds obvious; preserving the raw words and the unresolved choices is part of faithful execution.",
+  "normative_rule": "Compile only the constraints and authority the person actually supplied or explicitly confirmed. Route unresolved scope, destructive effects, publication, spending, credential use, and changes of means to clarification or review; never fill them from convenience.",
+  "formal_binding": {"claim_id": "human-intent-as-a-formal-input.core", "support_state": "argument", "anchor": "versioned interpretation contract that preserves the raw request"},
+  "claim_atom_and_source_links": ["human-intent-as-a-formal-input.core", "viea", "cognitive_compilation"],
+  "caveat_consolidation": {"local_caveat": "The scene consolidates the parser, preference, consent, and satisfaction boundary in one evidence sentence.", "consolidated_disposition": "Intent interpretation, planning, authority, consent, effects, training rights, publication, and satisfaction remain independently governed.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "Concrete unanswered questions remain in reader prose; exhaustive contract fields and mutation families remain in the formal surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The readable claim and rule project the long formal intake contract into two short sentences.", "hedge_disposition": "The finite-model boundary is stated once without deleting consent, authority, or semantic-completeness limits.", "table_disposition": "The source-role table remains because it distinguishes intent vocabulary from implementation evidence."},
+  "non_claims": ["The scene does not prove natural-language intent understanding.", "The modeled route does not infer consent, satisfaction, or hidden authority.", "The editorial revision does not move support or release state."]
+}

@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "octopus_router"
   - "rmi"
@@ -84,6 +84,8 @@ The route is a lease, not a preference. It grants a specialist a task-local enve
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The confidence-only router selects the familiar deployment specialist. The governed router abstains because local deletion and public withdrawal require different authority.
+
 Repeated work can become procedural memory records only after evidence matures. That creates the operational routing question: which bounded capability should handle the next piece of work, and why is it allowed to do so?
 
 A route is assignment under constraint, not just a recommendation or a load-balancing choice. It is a temporary lease that should carry scope, readiness, authority, context, tools, fallback, residual burden, and a reason why this specialist is adequate for this task right now. The route should also remember what it refused: stale specialists, missing evidence, excess authority, unsafe tools, or cheaper paths that would lose traceability.
@@ -114,6 +116,16 @@ Route opacity is the immediate routing failure. A system may choose a good speci
 ## Core Claim
 
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
+
+**Reader claim.** A router should choose the least capable qualified route that meets the task, and it should abstain when ambiguity makes specialist selection unsafe.
+
+**Operational rule.** Bind the request, candidate denominator, capability need, authority ceiling, readiness lease, context, cost-quality record, fallback, rejected candidates, and residual owner. Authority mismatch or failed readiness blocks selection; unresolved ambiguity routes to clarification or a safe generalist.
+
+### Worked ambiguous route: “remove the old release”
+
+A request says, “remove the old release.” One specialist manages local build artifacts; another controls public releases. The phrase does not identify whether “old release” means a generated directory, a Git tag, a hosted page, or a published binary. A confidence-only router selects the public-release specialist because similar phrases appeared in deployment tasks. The governed router sees that the candidates require different authority and effects, so it abstains and asks for the target.
+
+If the answer is “delete the local generated preview,” the least-authority local specialist can proceed under a file-scoped lease. If it is “withdraw the public binary,” a separate release workflow and approval are required. Candidate and fallback records retain the rejected routes and their costs. The finite routing model checks registry, readiness, authority, freshness, overprivilege, evidence, fallback, and residual states; it does not establish learned routing accuracy, calibration, useful throughput, or specialist quality.
 
 The claim remains at `argument` support. The reviewed passages justify discussion of router heads, specialist arms, permission envelopes, memory routing, residual-aware routing, runtime evidence packets, and arm lifecycle, but they do not by themselves prove that a particular router is safe, empirically superior, or implemented through MoECOT. MoECOT and the Markdown variant supply implementation-reference context only until usable runtime artifacts, replay records, benchmark packets, or reproduced runs are imported.
 

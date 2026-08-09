@@ -4,7 +4,7 @@ chapter_id: "open-weight-release-and-post-release-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_international_ai_safety_report_2026"
   - "ext_openai_worst_case_open_weight_risks_2025"
@@ -42,6 +42,8 @@ can later be recalled.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The official-channel baseline calls withdrawal revocation. The post-release model distinguishes control of official distribution from unseen public copies.
 
 Weight custody asks who may access a model while the owner controls the
 artifact. Open-weight release asks what happens when that control is
@@ -132,6 +134,16 @@ benefit and access distribution, downstream safeguard portability, derivative
 lineage, incident channels, post-release measurement, and residual ownership;
 after release, governance may inform, patch, coordinate, and support safer
 derivatives, but it must not claim revocation authority it no longer possesses.
+
+**Reader claim.** Open-weight release is an irreversible custody change: after one uncontrolled copy exists, governance can coordinate safer use but cannot truthfully promise universal recall.
+
+**Operational rule.** Before release, freeze the exact artifact, accessible-frontier comparison, misuse and fine-tuning stress tests, benefit and risk distribution, safer access alternatives, derivative safeguards, incident channels, and residual owners. After release, report patch and coordination reach without claiming control of unseen copies.
+
+### Worked release boundary: one public copy defeats universal recall
+
+A harmless test artifact completes a release-case review and is copied once outside the official channel. The official publisher later revokes the release and patches its own repository. Those actions may reduce future official distribution, but the public copy count remains positive and cannot be made universally zero by an internal state transition. The post-release record therefore says “official distribution withdrawn; universal recall unavailable” rather than “artifact revoked everywhere.”
+
+The finite review gives exact dispositions to 36 admission-axis mutations and proves the public-copy incompatibility is monotone as copies do not decrease. It also shows that official lineage does not identify universal copy control and default evaluation does not identify downstream safeguard state. These results clarify irreversibility; they do not perform a release, observe real copies, enforce a license, erase derivatives, establish safety, or prove benefit and risk claims.
 
 ## Mechanism
 

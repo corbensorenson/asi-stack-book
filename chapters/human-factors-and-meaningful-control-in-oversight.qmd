@@ -4,7 +4,7 @@ chapter_id: "human-factors-and-meaningful-control-in-oversight"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 terminal structural draft"
-last_updated: "2026-07-19"
+last_updated: "2026-08-09"
 primary_sources:
   - "viea"
   - "talos"
@@ -57,6 +57,8 @@ whether the resulting action was safe.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The checkbox baseline records a late acknowledgment as approval. The control-envelope path requires a timely, comprehensible, authoritative, and effective intervention opportunity.
 
 Formal authority becomes fragile when a real person must exercise it under
 pressure.
@@ -185,6 +187,16 @@ insufficient evidence on their own.
 ## Core Claim
 
 [human-factors-and-meaningful-control-in-oversight.core, label: Design rationale, support: argument] Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.
+
+**Reader claim.** A human approval is not meaningful control when the reviewer lacks time, comprehension, alternatives, authority, or an effective way to stop the system.
+
+**Operational rule.** Before requesting approval, verify reviewer identity, workload, briefing freshness, comprehension opportunity, decision time, independent challenge, authority ceiling, override path, and observable response. If any necessary condition fails, hold or abstain instead of converting silence or lateness into consent.
+
+### Worked oversight episode: approval arrives after control has vanished
+
+A reviewer is assigned a high-consequence action and receives a briefing, but the queue already exceeds the declared workload ceiling. The system’s execution deadline falls before the reviewer’s minimum decision time, and the only visible button records “acknowledged” after the action would have occurred. Treating that late click as approval creates the appearance of human control without a control opportunity.
+
+The governed route enters safe hold. It preserves the intended reviewer, refuses substitution by an unassigned operator, and records overload and lateness as residuals. A new attempt requires a fresh briefing, a reachable override, sufficient decision time, and authority that covers the available action. The finite oversight model contains a five-event path to accountability closure and countermodels for overload, lateness, missing comprehension, missing challenge, absent override, authority widening, and premature observation. Those records can rule out known defeaters; they cannot prove actual comprehension, calibrated workload, intervention efficacy, responsibility, or meaningful control.
 
 "Meaningful" carries both operational and normative content. This chapter does
 not collapse the normative content into a score. Its narrower architectural

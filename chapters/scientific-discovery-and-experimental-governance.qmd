@@ -4,7 +4,7 @@ chapter_id: "scientific-discovery-and-experimental-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_autonomous_lab_materials_2023"
 evidence_level: "argument"
@@ -23,7 +23,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -35,6 +35,8 @@ This chapter owns the evidence-producing scientific loop from hypothesis ancestr
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline publishes the positive attempt and calls repeated execution replication. The chapter preserves null and inconclusive attempts and asks whether the confirmatory and replication paths were actually independent.
 
 Science is not one act of generation followed by one act of verification. Question choice, design, instruments, stopping rules, exclusions, analysis, and publication all shape what appears known. Automation can accelerate this loop, but it can also repeat bias, conceal failed attempts, and hide discretionary choices behind a seamless pipeline. The entire evidence-producing lifecycle therefore needs governance.
 
@@ -89,9 +91,38 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** A positive experiment is not a discovery when the null and
+inconclusive attempts disappeared, the confirmatory branch saw the outcome, or
+the replication shares the same hidden dependency.
+
+**Operational rule.** Freeze hypothesis ancestry, exploratory or confirmatory
+status, outcomes, sampling, stopping, exclusions, analysis, instrument scope,
+and claim ceiling before protected results open. Preserve every attempt and
+require independently qualified replication; omitted attempts or outcome
+exposed confirmation block the claim.
+
 [scientific-discovery-and-experimental-governance.core, label: Design rationale, support: argument] An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
 
 ## Mechanism
+
+### Worked attempt ledger: positive, null, and inconclusive stay together
+
+The authored experiment dossier records three attempts under one hypothesis:
+attempt 21 is positive, attempt 22 is null, and attempt 23 is inconclusive.
+All three remain in the denominator. The confirmatory branch is marked
+confirmatory and preregistered before outcome, while its protected outcome
+remains unopened. Publishing only attempt 21 would turn search into a
+retrospective success story; opening the outcome before freezing the branch
+would turn confirmation back into exploration.
+
+The eight-transition review rejects both failures, along with 52 other single-
+axis mutations. It preserves attempt identity across arbitrary finite lists,
+keeps null results inside benchmark handoff, invalidates receipts after seven
+scope changes, and distinguishes replication count from replication
+independence. The record does not establish that any hypothesis is true or any
+instrument accurate. It demonstrates the custody condition that lets a later
+reader tell the difference between a result that survived a declared test and
+one selected by the pipeline that produced it.
 
 The scientific packet is a dependency graph from research question to bounded
 claim. Hypotheses retain ancestry to observations, theories, prior searches,

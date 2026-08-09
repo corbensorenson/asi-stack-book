@@ -4,7 +4,7 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "talos"
   - "viea"
@@ -76,6 +76,8 @@ The key distinction is between storage and evidential continuity. A file path sa
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The hash-only baseline calls matching bytes reproduced. The graph records tool and environment lineage and preserves the missing dependency.
+
 Typed jobs become trustworthy when their outputs remain traceable after action. Artifact graphs make those outputs durable: artifacts, logs, traces, receipts, replay records, source links, context links, and claim or test links. Without that graph, work disappears into conversation history.
 
 The reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits. The artifact graph turns memory from a pile of outputs into an accountable work history.
@@ -110,6 +112,16 @@ Ordinary repositories, chat transcripts, and build directories only partially so
 ## Core Claim
 
 [artifact-graphs-audit-logs-and-replay.core, label: Design rationale, support: argument] Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
+
+**Reader claim.** An artifact is trustworthy only to the extent that its exact parents, inputs, tools, context, tests, observations, and unresolved differences can be followed and challenged.
+
+**Operational rule.** Bind every produced artifact to its parent job, source and context versions, transaction, compiler, tool, claim, test, audit, environment, and replay grade. Replay creates a new observation; it never overwrites the original or turns matching bytes into proof of causal completeness.
+
+### Worked replay: matching output, different tool lineage
+
+A chapter PDF is rebuilt from the same source digest and happens to match the earlier output bytes. The replay used a different renderer build and lacked the original font-cache receipt. A hash-only audit calls the artifact reproduced. The graph instead links both outputs to their distinct tool and environment nodes, records the byte equality, and marks causal replay incomplete until the missing dependency is resolved or explicitly residualized.
+
+If a later reader challenges a claim tied to the figure, the graph can identify which source, renderer, test, and observation supported each edition without rewriting history. Receipt-faithfulness and repository-challenge fixtures exercise this record boundary, but they trust the recorded events and dependencies. The example shows why replay needs lineage and grade; it does not establish that the graph is complete, the receipts are true, the tool is deterministic, or the artifact is correct.
 
 The claim remains at `argument` support. Talos supplies execution evidence and replay pressure; VIEA supplies artifact and feedback ledgers; Cognitive Compilation supplies build-graph and repair-locality pressure; Spinoza Composer supplies state/history preservation patterns; GenesisCode supplies effect logs, provenance hashes, and obligations; Cognitive Loop Closure explains why traces become procedural memory. Those six mappings now point to reviewed local raw-cache passages. MoECOT remains implementation-reference context until its runtime artifacts, ledgers, logs, or benchmark records are imported and inspected.
 

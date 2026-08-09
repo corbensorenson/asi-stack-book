@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+  "chapter_file": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+  "chapter_sha256": "582e2ab5d654b3637ca386e8424105f4ab9662305311ef1467a5c704d6476852",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-12-memory-and-consolidation",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked revision: a lossy ontology migration reaches its consumers",
+    "actor_or_system": "A versioned semantic lattice, two parent objects, one retrieval consumer, and an ontology migration",
+    "attempted_action": "Migrate both used objects into ontology version 3 while preserving provenance, rights, contradiction state, purpose, and the exact basis recorded by the consumer receipt.",
+    "observable_outcome": "Object 1 maps exactly; object 2 is explicitly lossy, records that loss, and invalidates affected consumers instead of allowing a rebuilt index to make the old decision basis look current.",
+    "failed_or_tested_boundary": "The scene tests whether storage and retrieval continuity can substitute for semantic compatibility across an ontology change; the lossy mapping blocks that substitution.",
+    "residual_owner": "The lattice migration owner retains the unmapped semantic loss, and each invalidated consumer owns re-resolution before reuse.",
+    "evidence_boundary": "The dossier and validator check finite authored records only; they establish neither the truth of stored objects nor useful retrieval, complete memory, or deployed forgetting."
+  },
+  "worked_trace": {
+    "heading": "Worked revision: a lossy ontology migration reaches its consumers",
+    "state_labels": ["two_used_objects", "exact_object_migration", "lossy_object_migration", "consumer_invalidation", "history_preserved"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/durable_semantic_memory_dossier.json", "scripts/validate_durable_semantic_memory_review.py"],
+    "maximum_inference": "The finite review shows how a versioned dossier can preserve history and invalidate a dependent receipt after a lossy mapping; it establishes no semantic truth, retrieval quality, complete memory, behavioral forgetting, or deployment result."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline rebuilds an embedding or graph index and treats successful retrieval as continuity. The chapter requires ontology-loss records and invalidation of every known consumer that used the changed relation.",
+  "readable_claim": "Durable memory is not a larger context window. It is a revision system that lets a consumer recover which semantic object it used, under which ontology, evidence, time, rights, and contradiction state.",
+  "normative_rule": "Admit and retrieve memory only through stable object identity, versioned provenance, temporal and rights checks, explicit contradictions, and a use receipt. A correction must invalidate affected consumers without erasing the historical basis of earlier decisions.",
+  "formal_binding": {
+    "claim_id": "durable-semantic-memory-and-knowledge-lattices.core",
+    "support_state": "argument",
+    "anchor": "versioned knowledge-lattice contract that binds object and relation identity"
+  },
+  "claim_atom_and_source_links": ["durable-semantic-memory-and-knowledge-lattices.core", "portia_synapse", "ext_graphrag_2024", "ext_mem0_2025"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked migration states once that the object contents and dossier fields are authored rather than observed deployment facts.",
+    "consolidated_disposition": "Identity, poisoning, ontology, contradiction, privacy, forgetting, learned influence, backup resurrection, and restart limits remain at their mechanism-specific boundaries.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The two-object fixture and four receipt-invalidating changes remain in reader prose because they expose the causal mechanism; exhaustive theorem and mutation inventories stay in formal surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The new projections separate the reader purpose, admission rule, and formal list of lattice obligations.",
+    "hedge_disposition": "One local finite-record boundary replaces repeated generic caution while semantic truth, privacy, forgetting, and deployment limits remain distinct.",
+    "table_disposition": "No argument-bearing chapter table was removed; status inventories remain confined to the status and evidence sections."
+  },
+  "non_claims": [
+    "The migration fixture does not establish that either stored semantic object is true.",
+    "The local review does not establish useful retrieval, complete memory, or behavioral forgetting.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

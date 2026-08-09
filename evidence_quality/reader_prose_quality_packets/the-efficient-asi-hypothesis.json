@@ -1,0 +1,42 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "chapter_file": "chapters/the-efficient-asi-hypothesis.qmd",
+  "chapter_sha256": "622a34a6aafa101f0ed7569d57f8fad36ce1392ff088ada1cc2e5ebda3c579ec",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-02-efficient-asi",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: useful work per total contract cost",
+    "actor_or_system": "A route selector processing supplier invoices through cache, small-model, and larger-verifier options",
+    "attempted_action": "Lower average latency by routing familiar-looking invoices to a cached template while preserving currency, tax, and supplier-identity quality predicates.",
+    "observable_outcome": "A novel decimal separator exposes hidden repair and review work, so the routed policy must verify the novel format and count fallback, regression, and residual costs.",
+    "failed_or_tested_boundary": "The scenario tests whether visible route latency alone identifies efficiency; delayed rechecking and repair show that the total-contract denominator is required.",
+    "residual_owner": "The route and compilation owners retain unresolved invoices, repair work, regression tests, rollback preparation, and any uncovered novel-layout burden.",
+    "evidence_boundary": "The invoice case is illustrative rather than a reported benchmark, and the chapter's efficiency claim remains conditional on repeated workloads, route diversity, and a fixed quality predicate."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: useful work per total contract cost",
+    "state_labels": ["contract", "route_proposal", "verification", "accepted_work", "compiled_update"],
+    "source_or_fixture_refs": ["chapters/the-efficient-asi-hypothesis.qmd", "sources/source_notes/ext_frugalgpt_2023.md", "sources/source_notes/ext_routellm_2024.md"],
+    "maximum_inference": "The scenario explains total-contract accounting and route eligibility; it is not evidence that the proposed stack beats always-maximal or always-cheapest policies on a measured workload."
+  },
+  "counterexample_or_simpler_baseline": "Always-maximal routing is the strongest simpler baseline and may win on small or novel workloads. Always-cheapest routing may win only by weakening quality or moving repair outside the accounting boundary.",
+  "readable_claim": "spend the expensive route where the contract needs it, and make every saved unit of work carry its remaining burden.",
+  "normative_rule": "compare routes on accepted quality, total contract cost, and residuals together.",
+  "formal_binding": {"claim_id": "the-efficient-asi-hypothesis.core", "support_state": "argument", "anchor": "useful-task success per total contract cost"},
+  "claim_atom_and_source_links": ["the-efficient-asi-hypothesis.core", "rmi", "ext_frugalgpt_2023", "ext_routellm_2024"],
+  "caveat_consolidation": {
+    "local_caveat": "The invoice failure is explicitly illustrative and keeps the hypothesis conditional rather than turning it into a measured route result.",
+    "consolidated_disposition": "Workload, quality-predicate, cost-boundary, route-diversity, verification, human-review, transfer, and implementation limits remain in the chapter's evidence surfaces.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The five-state route table remains because it exposes costs as they enter the denominator; external-source and test inventories remain outside the narrative trace.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The chapter already separates a plain-language claim, normative route comparison, and compact formal hypothesis.",
+    "hedge_disposition": "The scenario states its illustrative boundary once while preserving distinct conditionality and evidence limits.",
+    "table_disposition": "The table remains as an argument-bearing total-cost sequence rather than a status summary."
+  },
+  "non_claims": ["The invoice scenario is not a measured routing benchmark.", "The chapter does not claim that smaller or cheaper routes always win.", "The editorial packet does not move support or release state."]
+}

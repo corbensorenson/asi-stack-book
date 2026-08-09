@@ -4,7 +4,7 @@ chapter_id: "ai-work-surfaces-agent-harnesses-and-organizational-absorption"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "integrated argument chapter"
-last_updated: "2026-08-08"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_github_copilot_work_surfaces_2026"
   - "ext_augment_code_agent_2026"
@@ -51,6 +51,8 @@ every role will or should be automated.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The model-centric baseline treats the same weights as the same product. The absorption transition audits the expanded harness and unit of work.
 
 AI moved from a browser answer box into autocomplete, editor sidebars, coding
 agents, and persistent runtimes. Each step did more than change the interface:
@@ -163,6 +165,16 @@ must remain visible without pretending that one of them is destiny.
 ## Core Claim
 
 [ai-work-surfaces-agent-harnesses-and-organizational-absorption.core, label: Design rationale, support: argument] Every expansion of an AI work surface should be governed as a versioned abstraction-absorption transition that binds capability, context, state, tools, authority, effects, verification, human control, accountability, and residuals before project-, role-, team-, or organization-scale autonomy is accepted.
+
+**Reader claim.** An agent becomes more consequential when its harness absorbs a larger unit of work, even if the underlying model does not change.
+
+**Operational rule.** For every work-surface expansion, diff the absorbed tasks, context, durable state, tools, permissions, effects, verification, human control budget, accountability, and fallback. Qualify the new surface as a new system version; never inherit readiness from the smaller harness.
+
+### Worked absorption: from code suggestion to repository steward
+
+An IDE assistant begins with one bounded surface: suggest code inside an open file, with a human applying every edit. The same model is then wrapped in a repository harness that can read issues, edit many files, run tests, commit, and prepare deployment artifacts. Model capability may be unchanged, but the absorbed unit now includes planning, durable state, tool selection, cross-file effects, evidence production, and coordination over hours rather than seconds.
+
+The transition packet therefore does not ask only whether code quality improved. It names which tasks left the human, which context became persistent, which tools gained write authority, how failed tests block progress, who reviews commits, what cannot be deployed, how the person can intervene, and who owns stale branches and external effects. A benchmark score from the IDE surface does not qualify the steward surface. The example is an architectural transition, not evidence that the harness is useful, safe, or organizationally beneficial.
 
 The claim remains at `argument`. The nine implementation sources show that
 current systems already occupy multiple work surfaces and expose some of the

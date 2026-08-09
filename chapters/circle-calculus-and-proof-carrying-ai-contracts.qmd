@@ -4,7 +4,7 @@ chapter_id: "circle-calculus-and-proof-carrying-ai-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-03"
+last_updated: "2026-08-08"
 primary_sources:
   - "circle_calculus_core"
   - "circle_ai_contract_suite"
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-08-08 |
 | Primary source records | `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `circle_ai_architectures` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -47,6 +47,8 @@ The receipt is a passport for a structural fact, not a promotion ticket for a su
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler verified-badge baseline treats a theorem name as architecture approval. The transport envelope instead resolves the exact receipt and asks whether the requested consumer claim lies inside its authority.
 
 Optional substrates need baselines before their structure can travel safely into contracts. Circle Calculus narrows that idea to proof-carrying structural facts: finite claims that can move through the stack with receipt references, deterministic fields, and replay expectations. The target is not grand certainty, but portable restraint. It is small certified structure that other layers can consume without guessing what was checked.
 
@@ -74,6 +76,14 @@ The key insufficiency is theorem laundering: a finite structural result gets rep
 Another insufficiency is stale proof reference drift. The text may preserve a theorem name while the external project changes the declaration, proof policy, sidecar schema, or generated artifact. A contract needs version, hash, resolver status, validation command, and failure behavior so staleness becomes visible.
 
 ## Core Claim
+
+**Reader claim.** A proof-carrying contract lets a small formal fact travel
+without turning that fact into a claim about model behavior or deployment.
+
+**Operational rule.** A consumer may use a formal receipt only after resolving
+its theorem identity, assumptions, source and toolchain, fingerprints, replay
+state, expiry, and non-claims. The consumer must separately justify every
+empirical or operational decision it wants to make from that fact.
 
 [circle-calculus-and-proof-carrying-ai-contracts.core, label: Design rationale, support: argument] Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority.
 
@@ -133,6 +143,33 @@ Operationally, the layer should produce artifacts that can be inspected without 
 The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: receipt state, finite-model scope, proof boundary, proof status, source version, content fingerprint, fingerprint status, resolver status, replay status, consumer permissions, consumer state, staleness policy, failure behavior, source refs, support-state effect, and evidence references. The Circle consumer-gate validator applies those fields to the pinned `CC-AI-CONTRACT-ROPE-001` receipt and rejects malformed or overclaimed uses, while remaining silent about unrun Circle commands in this repository.
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
+
+### Worked proof-transport trace: one receipt, two consumers
+
+The public Circle lane carries one exact object through both layers. Receipt
+`CC-AI-CONTRACT-ROPE-001` names the `rope_position_distinguishability`
+contract at Circle commit `63b0f511`, requested margin `1/328459`, seven
+required theorem IDs, deterministic evidence fields, and four content
+fingerprints. The ASI-side validator accepts that pinned record and rejects four
+mutations: a digest mismatch, a missing theorem, a stale contract fingerprint,
+and an attempt to use the receipt for unsupported transfer authority.
+
+Now give the same receipt to two consumers:
+
+| Consumer | Question | Decision | Reason |
+|---|---|---|---|
+| Position-bookkeeping diagnostic | Does this declared finite RoPE contract carry the required theorem identities and exact/discretized collision fields? | **Accept the bounded structural receipt.** | The pinned identity, theorem set, deterministic fields, and fingerprints satisfy that consumer's narrow contract. |
+| Architecture promotion gate | Does the receipt show that a trained model uses longer context better, faster, or with less memory? | **Reject promotion.** | No model workload, baseline, quality metric, runtime trace, or memory result is present. |
+
+Nothing about the theorem changes between those decisions. What changes is the
+authority requested by the consumer. This is why proof transport cannot be a
+single green badge. A valid receipt can be enough for a diagnostic and
+insufficient for adoption at the same time.
+
+The simpler baseline is to paste a theorem name into an architecture proposal
+and call the proposal “verified.” The transport envelope instead makes the
+requested downstream claim explicit, checks whether the receipt actually owns
+that claim, and leaves the missing workload evidence as an open residual.
 
 ### Concrete Circle Receipt Boundary
 

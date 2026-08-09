@@ -4,7 +4,7 @@ chapter_id: "human-ai-communication-persuasion-and-epistemic-security"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_conversational_persuasion_gpt4_2025"
   - "ext_anthropic_model_persuasiveness_2024"
@@ -27,7 +27,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -39,6 +39,8 @@ This chapter owns the outbound influence transaction, including amplification an
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline moderates the generated string once. The chapter governs the whole episode, so identical wording can receive a different disposition when audience, repetition, personalization, channel, expiry, or correction reach changes.
 
 Communication turns an internal model state into a social intervention with consequences. A correct sentence can mislead through omission, a weak claim can gain force through repetition, personalization can become exploitation, and a correction that misses copied descendants is incomplete. Message, audience, channel, and later copies therefore form one governed object.
 
@@ -87,9 +89,39 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** A message can be factually bounded and still become unsafe
+through targeting, repetition, dependency, synthetic identity, or a correction
+that never reaches the people who relied on it.
+
+**Operational rule.** Bind consequential communication to its claim ceiling,
+audience, purpose, personalization grant, persuasive technique, channel,
+repetition and reach limits, expiry, and correction graph. Delivery stops when
+any of those boundaries is exceeded, even if the text remains fluent and
+factually unchanged.
+
 [human-ai-communication-persuasion-and-epistemic-security.core, label: Design rationale, support: argument] Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness.
 
 ## Mechanism
+
+### Worked delivery lease: the same sentence crosses its audience boundary
+
+The authored communication dossier carries one message to eight recipients
+under a ceiling of ten, with two repetitions under a ceiling of three. Its
+claim version, evidence ceiling, uncertainty, speaker and synthetic identity,
+sponsorship, audience class, purpose, technique, channel, correction address,
+and unreachable descendants remain visible. At that state the record is
+eligible only for a benign Project Theseus communication study; it does not
+authorize delivery.
+
+Now hold the sentence fixed and change only its reach. An eleventh recipient
+or a fourth repetition rejects the record. Expiry does the same. So does using
+a denied personalization attribute, even if the final wording looks identical
+to the permitted version. The 42-axis local review gives every rejected change
+an exact repair or refusal disposition and proves that factuality, consent, a
+persuasion score, and disclosure cannot reconstruct the missing influence
+state. The scene makes the governing object concrete: not a string, but a
+message-audience-channel episode whose downstream copies and correction debt
+remain open.
 
 The unit of control is a communication episode rather than a string. An episode
 begins with the claim packet and intended purpose, includes every material

@@ -4,7 +4,7 @@ chapter_id: "learning-theory-generalization-and-scaling-science"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_scaling_laws_neural_language_models_2020"
   - "ext_mdl_tutorial_2004"
@@ -43,6 +43,8 @@ This chapter owns the assumptions and predictive burden behind generalization, t
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The curve-fitting baseline reports only the winning family after seeing the holdout. The governed forecast freezes both alternatives and preserves all attempts before results open.
 
 Learning theory is most useful when it states exactly what must be true for a prediction to travel. Modern systems may fit training data, interpolate, grok late, improve smoothly in loss while jumping on thresholded metrics, or break an old scaling curve after an architecture change. Every theorem, empirical regularity, and forecast has a domain whose assumptions must remain attached.
 
@@ -94,6 +96,16 @@ flowchart LR
 ## Core Claim
 
 [learning-theory-generalization-and-scaling-science.core, label: Design rationale, support: argument] A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.
+
+**Reader claim.** A smooth curve through observed scales is a retrospective description until it predicts a frozen, genuinely held-out scale and survives plausible breakpoint alternatives.
+
+**Operational rule.** Freeze the population, metric, compute regime, candidate families, fitting rule, uncertainty interval, breakpoint alternatives, and forecast horizon before opening held-out results. Keep failed runs and every preregistered alternative in the denominator; regime changes invalidate the receipt.
+
+### Worked scaling forecast: two models enter, the holdout stays closed
+
+A scaling study observes one metric over a bounded compute range and proposes two candidate families, model `1` and model `2`. Both are preregistered and both must be scored on the held-out scale; attempts `11`, `12`, and `13` remain in the denominator even if one run failed. The population, sample process, algorithm, architecture, metric `11`, compute regime `13`, and horizon `17` are frozen before the held-out result is opened.
+
+If the final report shows only the winning curve, changes the metric after inspection, or applies the receipt to a new architecture or compute regime, the forecast is not prospective evidence. The finite review gives exact repair or refusal dispositions to all 45 admission-axis mutations and invalidates receipts under seven population or regime changes. It also shows that retrospective fit does not identify prospective coverage and that a threshold jump does not identify a mechanism change. The result governs claim custody; it does not establish generalization, emergence, transfer, future scaling accuracy, or safety.
 
 ## Mechanism
 

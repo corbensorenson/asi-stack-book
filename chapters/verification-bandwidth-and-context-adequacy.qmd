@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -74,6 +74,8 @@ It follows transactions because a coherent, authorized context view can still be
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The context-size baseline calls a large packet adequate. The verification contract requires the exact negative, contradiction, boundary, counterexample, and transfer checks for the claim.
+
 A coherent memory view can still be insufficient for verification work. The stack has to separate having context from being able to verify with it. It needs to know when the available context, attention, time, tools, comparison method, and reviewer capacity are adequate for the claim being made.
 
 This is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, split, or escalate instead of sounding certain. The honest output may be an adequacy label, not a more confident answer. Adequacy is a budgeted property, not a mood.
@@ -137,6 +139,16 @@ obligation denominator and mode-specific ceilings across all of these routes.
 ## Core Claim
 
 [verification-bandwidth-and-context-adequacy.core, label: Design rationale, support: argument] Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt. Before outcomes, it binds target proposition and scope, population and environment, risk and consequence, requested support effect, required positive, negative, boundary, contradiction, counterexample, and transfer obligations, available source units, verification modes, tools, evaluator-dependency graph, authority and rights, budget, horizon, stop rule, and escalation path. After execution, it records every attempted, passed, failed, disputed, unknown, infeasible, and unattempted obligation plus actual artifacts, costs, disagreement, residuals, expiry, and causal-use observations. Adequacy means only that the declared verification program was sufficient for its exact purpose under stated premises; it does not establish claim truth, model cognition, source correctness, formal-model fidelity, useful outcomes, safety, support promotion, or release.
+
+**Reader claim.** More context does not guarantee adequate verification; adequacy depends on whether the available evidence and checking capacity cover the exact claim and its most dangerous failure modes.
+
+**Operational rule.** Before outcomes, freeze the proposition, scope, risk, positive, negative, contradiction, counterexample, and transfer obligations, source units, evaluator dependencies, budget, stop rule, and escalation path. Record unattempted and infeasible checks alongside passes; one contradiction blocks verified support.
+
+### Worked adequacy decision: abundant context, one missing contradiction check
+
+A high-risk claim arrives with a large context packet, several supporting sources, and a passing formal check. Its adequacy contract also requires an independent contradiction search against a named negative source unit. The budget expires before that obligation is attempted. The packet is context-rich but verification-inadequate, so it may remain a draft or disputed claim; it cannot receive the requested verified-support route.
+
+If the contradiction search later finds a conflict, adding more positive sources does not cancel it. The five-stage refinement checks twelve routes, including three of five admission cases, two of seven contradiction cases, and three of five capacity cases, and rejects 87 mutations. This finite behavior preserves attempt denominators and escalation. It does not establish claim truth, source correctness, evaluator competence, formal-model fidelity, useful outcomes, or safety.
 
 The claim remains at `argument`. Current evidence establishes authored record
 checks, finite route behavior, a conservative obligation-count example, and

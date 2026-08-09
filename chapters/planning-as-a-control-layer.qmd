@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "planforge"
   - "viea"
@@ -57,6 +57,8 @@ Planning is therefore the stack's first refusal-friendly layer after command int
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler planner retries or declares local completion after deployment fails. The control-layer plan blocks descendants, records the missing authority, and replaces only the failed scope.
 
 Once a command is structured, the stack has to decide what work should exist and what kind of intelligence each piece deserves. Planning turns intent into obligations: dependencies, budgets, context needs, capability tiers, route choices, adequacy contracts, review points, and stop conditions.
 
@@ -134,6 +136,16 @@ the contract or produce a scoped re-contract or residual. The plan policy does
 not grant authority, perform semantic compilation, choose a worker, execute an
 effect, validate its own predictions, or prove that a decomposition is useful,
 optimal, safe, or transferable by itself.
+
+**Reader claim.** A plan is a revisable control record, not a confident list of future steps. Its value appears when reality disagrees with it and the system changes course without losing authority, evidence, or stop conditions.
+
+**Operational rule.** Dispatch only ready nodes whose dependencies, context, authority, verifier, and receipt requirements pass. On failure, freeze affected descendants, record the observation, and admit a scoped replacement graph only if it preserves the parent ceiling and every unresolved residual.
+
+### Worked replan: a dependency fails after dispatch
+
+A repository-release plan has three ordered obligations: render the book, deploy the rendered artifact, then verify the public route. Rendering succeeds and produces a digest-bound artifact. Deployment then fails because the hosting credential is unavailable. A naive planner retries unrelated commands or rewrites the goal as “local build complete.” The control layer instead marks the deploy node blocked, prevents the public-route check from pretending it ran, and records the missing credential as a residual owned outside the planner.
+
+When a later observation supplies an authorized artifact-only deployment path, replanning creates a new plan version. It reuses the completed render receipt, replaces only the blocked deploy node, and keeps public verification downstream. The local seven-event witness reaches a second lowered job only after feedback and scoped replanning. Eleven closed countermodels reject authority widening, incomplete decomposition, missing context, premature feedback, stop erasure, unscoped repair, and missing residuals. This demonstrates finite ordering and custody; it does not show that the chosen decomposition or scheduler is optimal.
 
 The claim remains at `argument` support. PlanForge supplies decomposition, dependency, tier, scheduler, and intelligence-arbitrage vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; TokenMana broadens the budget surface beyond token count; Coherence Exchange remains speculative connector context for intelligence-arbitrage language; MoECOT remains an implementation-reference route rather than local evidence for planning behavior.
 

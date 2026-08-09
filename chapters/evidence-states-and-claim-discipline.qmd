@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-08-09"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -57,6 +57,8 @@ The reachable transition lifecycle freezes three views of the same claim atom be
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The result-label baseline reads “refuted” upward through the claim hierarchy. The transition ledger keeps the raw failure but narrows its usable scope after competence review.
+
 After naming failure modes, the architecture needs a discipline for how strong each sentence is allowed to sound. The evidence layer makes a simple promise: a claim's wording, label, and support state should not drift apart.
 
 That promise is central to the living-book format. The manuscript can improve every day, but clearer prose must not silently become stronger evidence. If a claim is only an argument, it should read as an argument. If later evidence raises it, the record must move with it, so the reader can distinguish better exposition from stronger support. Better wording should invite better testing, not smuggle in stronger certainty.
@@ -95,6 +97,16 @@ Scope drift is the evidence failure this layer blocks. A source may support term
 ## Core Claim
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Each material claim should have a stable identity, versioned text and scope, claim label, support state, non-aggregating evidence-quality vector, and transition ledger; upward movement is allowed only through an accepted claim-specific transition whose artifacts and evidence roles meet declared gates, while contradiction, failed verification, missing support, and scope mismatch remain eligible to narrow, downgrade, refute, or deprecate the claim.
+
+**Reader claim.** Evidence changes a claim only through a scoped transition; a failed implementation can refute that implementation without refuting the architecture it attempted to test.
+
+**Operational rule.** Give every claim stable identity, exact scope, support state, evidence-role vector, prospective transition gate, negative-evidence trigger, and immutable history. Record raw failures first, then audit implementation competence and narrow the affected scope before assigning refuted, downgraded, or untested states.
+
+### Worked evidence transition: KERC fails, then the refutation narrows
+
+The KERC campaign prospectively asked whether a configured complete packet could beat a simple total-description baseline at tied task quality. The result was unfavorable: task quality was `0.500000`, complete packets averaged `714.0` bytes, and the best simple representation averaged `73.25` bytes. The repository correctly retained the raw result and its historical `refuted` transition rather than hiding the failure.
+
+A later competence audit examined what the run could actually test. Chance-level task performance, a missing adversarial-polarity training class, small linear cores, a jointly authored compiler and verifier, redundant residual storage, and uncalibrated energy meant the implementation was inadequate for a mechanism- or architecture-level refutation. The usable conclusion narrowed to N1: this frozen implementation failed its configured broad-efficiency test; Kernel English, learned compilation, hierarchical residuals, and the broader architecture remain untested. The transition history does not change, but the maximum inference does. That is claim discipline working, not failure laundering.
 
 The claim remains at `argument` support. Appendix C records claim-level source-note mappings for the original sources and for the six historical projects as one related local implementation lineage. Those mappings make the evidence bridge more inspectable, but they do not promote the claim. Promotion still requires an accepted evidence transition with evidence whose method, independence, causal effect, and scope match the claim.
 

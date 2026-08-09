@@ -4,7 +4,7 @@ chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-03"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_multi_agent_risks_2025"
   - "ext_cooperative_ai_foundations_2023"
@@ -41,6 +41,8 @@ appears valid.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A pairwise authorization matrix is the simpler baseline, but two records can share all six permitted edges and require opposite campaign-readiness decisions because the systemic axes differ.
 
 Two agents can each follow their local rules while their population creates a
 bad outcome. They can coordinate too little and fail to solve a shared problem,
@@ -152,6 +154,15 @@ not evidence about real society.
 
 ## Core Claim
 
+**Reader claim.** Local permission and pairwise cooperation do not determine
+whether a population is diverse, non-collusive, resilient, or compatible with
+continued human influence.
+
+**Operational rule.** Evaluate the population graph, shared dependencies,
+resource concentration, affected parties, temporal dynamics, and intervention
+spillovers in addition to each authorized edge. When those views disagree,
+preserve the disagreement and block the broader population conclusion.
+
 [multi-agent-dynamics-collective-intelligence-and-systemic-risk.core, label:
 Design rationale, support: argument] A multi-agent population is eligible for
 expanded interaction only when a versioned population contract binds agent,
@@ -187,6 +198,32 @@ release, transfer, nor SOTA.
    quarantine or stop where necessary.
 8. **Trace displaced effects.** An intervention that solves one metric can
    create exclusion, evasion, concentration, or another externality.
+
+### Worked allocation counterexample: identical local permission, opposite concentration
+
+The chapter's finite temporal model follows three resource units through two
+allocation traces. Every event in both traces is locally authorized. Both
+therefore collapse to the same all-true local-permission summary.
+
+The first trace allocates `[systemA, systemA, systemA]`. It concentrates all
+three units under one controller and breaches the authored systemic limit. The
+second allocates `[systemA, systemB, systemB]`. It preserves the same local
+authorization summary but does not breach that limit. No classifier that sees
+only the local summary can return the correct systemic decision for both.
+
+The static population fixture makes the same point from another angle. Two
+records can expose the same six directed authorized edges while differing in
+model-lineage diversity, compute and capital control, bystander coverage,
+human exit, recovery, or residual custody. A pairwise-only record routes to
+dependency mapping; the complete record reaches only eligibility for a
+Project Theseus population campaign.
+
+This is a formal counterexample over authored finite data, not an observed
+market or society. Its reader value is exact: “every interaction was allowed”
+cannot answer “did the population concentrate power?” The residual belongs to
+the population evaluator, which must inspect lineage, multiplex dependencies,
+resource control, human influence, externalities, and time before admitting a
+collective claim.
 
 The population graph is multiplex. Communication, ownership, model lineage,
 data, compute, finance, reputation, evaluation, control, and human dependence

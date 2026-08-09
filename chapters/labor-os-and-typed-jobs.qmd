@@ -4,7 +4,7 @@ chapter_id: "labor-os-and-typed-jobs"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-08-09"
 primary_sources:
   - "talos"
   - "viea"
@@ -59,6 +59,8 @@ separate evidence decision, not proof that the work is useful, safe, or true.
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The process baseline calls exit code zero complete. The typed-job path requires identity, permission, artifact, verification, delivery, residual, and acknowledgment closure.
+
 After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, parentage, inputs, outputs, approvals, isolation, logs, failure behavior, and completion criteria.
 
 This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, which gate can stop them, what evidence they must return, and how their work can be audited or replayed later. A job is small enough to govern and durable enough to inspect.
@@ -101,6 +103,16 @@ The same failure can happen in a single-agent workflow. A model may create files
 ## Core Claim
 
 [labor-os-and-typed-jobs.core, label: Design rationale, support: argument] The execution layer should convert plans into typed jobs managed by a governed labor operating system.
+
+**Reader claim.** A job is not complete because a worker stopped running; completion requires the right contract, authority, artifact, verification, receipts, residuals, and acknowledgment to close together.
+
+**Operational rule.** Lower each plan node into a versioned job with explicit inputs, permissions, lease, idempotency key, cancellation behavior, evidence requirements, and terminal states. Refuse execution or closure when any required identity or receipt is missing, and make terminal states absorbing.
+
+### Worked job lifecycle: output exists, acknowledgment does not
+
+A worker receives a typed job to render one chapter. The contract names the plan node, input digest, renderer version, output path, authority ceiling, scheduler lease, cancellation token, verifier, idempotency key, and expected completion receipt. The render succeeds and the output file exists, but the artifact digest has not been verified and the consumer has not acknowledged delivery. A process-based baseline would mark the job complete when the command exits `0`; the labor OS keeps it in delivered-but-unacknowledged state.
+
+After verification binds the output digest and the consumer acknowledges the exact job version, the six-event modeled run reaches closure. A retry with the same idempotency key cannot create a second logical completion, and cancellation or mutation after closure is rejected. The refinement checks 29 routes and rejects 42 mutations across approval, lease, retry, cancellation, evidence, identity, replay, authority, receipts, and residuals. These finite records do not prove scheduler behavior, useful work, effect truth, recovery, or deployed idempotence.
 
 The claim remains at `argument` support. Talos supplies the labor-OS frame, contract-lock discipline, job pipeline, evidence-bound artifact, audit, replay, and explicit non-claim boundaries. VIEA supplies the intent-to-artifact-to-runtime trace, permission envelopes, approval roles, side-effect classes, runtime-adapter maturity levels, and feedback loop. GenesisCode supplies the proposal/effect separation, host-provided capability boundary, deterministic effect logs, replay semantics, obligations, provenance, and semantic patch discipline. Software Magic Grimoire supplies workflow guard vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, and gated spell stacks. The Markdown Talos release remains a variant context; the complete authenticated MoECOT connector text is passage-reviewed, but neither supplies reproduced runtime evidence.
 

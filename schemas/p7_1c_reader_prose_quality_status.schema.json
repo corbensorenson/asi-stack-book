@@ -11,6 +11,7 @@
     "snapshot_date",
     "roadmap_path",
     "review_packet_path",
+    "chapter_triage_path",
     "canonical_chapter_count",
     "state",
     "scope",
@@ -23,19 +24,20 @@
   "properties": {
     "schema_version": {"const": "asi_stack.p7_1c_reader_prose_quality_status.v1"},
     "packet_id": {"const": "P7.1c-reader-concreteness-and-prose-quality"},
-    "status": {"const": "active"},
+    "status": {"const": "complete"},
     "authority": {"const": "Corben Sorenson"},
     "snapshot_date": {"type": "string", "format": "date"},
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
     "review_packet_path": {"const": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md"},
-    "canonical_chapter_count": {"const": 84},
-    "state": {"const": "active_calibration_tranche_complete_packet_contract_ready"},
+    "chapter_triage_path": {"const": "docs/chapter_content_triage_2026_08_08.md"},
+    "canonical_chapter_count": {"const": 85},
+    "state": {"const": "complete_85_chapter_reader_prose_quality_validated"},
     "scope": {
       "type": "object",
       "additionalProperties": false,
       "required": ["chapters", "new_chapters_authorized", "support_state_effect", "release_effect", "external_prepublication_human_required"],
       "properties": {
-        "chapters": {"const": 84},
+        "chapters": {"const": 85},
         "new_chapters_authorized": {"const": 0},
         "support_state_effect": {"const": "none"},
         "release_effect": {"const": "none"},
@@ -64,9 +66,9 @@
       "properties": {
         "directory": {"const": "evidence_quality/reader_prose_quality_packets"},
         "required_fields": {"type": "array", "minItems": 16, "uniqueItems": true, "items": {"type": "string"}},
-        "required_chapter_packets": {"const": 84},
-        "current_packets": {"const": 0},
-        "current_digest_bound_packets": {"const": 0}
+        "required_chapter_packets": {"const": 85},
+        "current_packets": {"type": "integer", "minimum": 0, "maximum": 85},
+        "current_digest_bound_packets": {"type": "integer", "minimum": 0, "maximum": 85}
       }
     },
     "acceptance_gates": {"type": "array", "minItems": 7, "items": {"type": "string"}},

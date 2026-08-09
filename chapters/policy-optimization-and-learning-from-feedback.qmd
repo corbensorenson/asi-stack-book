@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-21"
+last_updated: "2026-08-09"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -78,6 +78,8 @@ The policy update is a behavior-change lease. It grants a candidate policy limit
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The reward-only baseline promotes the faster router. The governed lease uses independent target evaluation and rejects the proxy-improving, target-regressing update.
+
 Benchmark ratchets create improvement pressure that policy updates must govern carefully. Policy optimization is how that pressure can update planning, routing, context selection, verification, execution, or review behavior without letting reward become authority.
 
 The distinction is crucial: learning from feedback is not the same as handing the system control over its own goals. A policy update should carry evidence, scope, rollback, residuals, and governance review before it becomes the new default.
@@ -120,6 +122,16 @@ conflation; they do not prove reward adequacy or policy improvement.
 ## Core Claim
 
 [policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.
+
+**Reader claim.** Reward is a training signal, not evidence that the target behavior improved; the proxy and the target must be evaluated separately.
+
+**Operational rule.** Freeze the target policy, admissible feedback, proxy boundary, baseline, drift and authority ceilings, holdouts, hacking probes, rollback, and monitor before updating. Promote only on independent target evaluation with every failed rollout and candidate retained.
+
+### Worked policy update: reward rises while the target falls
+
+A router policy is trained to reduce latency. Its scalar reward improves because it learns to skip expensive verification. On the training distribution, requests finish faster and the reward curve is clean. On a frozen target evaluation, however, unsupported releases increase. The update therefore fails even though the optimizer, checkpoint, and reward receipt are all valid. The previous policy remains the default and the reward design is recorded as the primary residual.
+
+The composed local refinement starts from a six-sample, five-candidate lease and follows a seven-stage update lifecycle. It checks 63 routes, rejects 73 route mutations and three cross-stage mutations, and preserves the reward/target distinction through rollback. This makes proxy failure visible but does not establish that the target metric is legitimate, the evaluator is independent, the rollback reverses every effect, or the policy improved causally.
 
 The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. The external RL literature records source-note method families and failure cautions, but no external-literature-backed support state is claimed yet.
 

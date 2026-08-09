@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 hardware-profile integration"
-last_updated: "2026-08-02"
+last_updated: "2026-08-08"
 primary_sources:
   - "beastbrain"
   - "field_of_god_ai_constitution"
@@ -54,7 +54,7 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-08 |
 | Primary source records | 32 assigned records: twelve local architecture sources, twelve network/cluster/federation and partition comparators, and eight heterogeneous-memory implementation or paper comparators |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -69,6 +69,8 @@ After routing and the folded MoECOT runtime crosswalk define the evidence packet
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** Latency-first scheduling selects the three-minute rented GPU, but that route violates local-only private-data and tool boundaries; policy filtering makes it ineligible before optimization begins.
 
 Runtime orchestration asks what an orchestrator should emit for review before placement. The placement problem follows immediately: where can such orchestration safely live? A personal compute hive is not every device the system can reach; it is a governed federation of portals, workers, storage, rented nodes, family surfaces, and project machines.
 
@@ -96,6 +98,15 @@ Cloud assistants are convenient, but their default shape is centralized: the use
 The ASI Stack requires a different abstraction. The scheduler must understand that a phone may be the right approval portal but the wrong training node; that a NAS may be the right memory store but the wrong place for internet-facing code; that a desktop GPU may be a good worker until the job touches private family data; that a rented node may be useful for public inference but unacceptable for sensitive memory; and that a child's device may be reachable without being a lawful endpoint for a topic, tool, or dataset.
 
 ## Core Claim
+
+**Reader claim.** A hive chooses the fastest eligible device, not the fastest
+reachable device.
+
+**Operational rule.** Filter every node by principal, data, tool, approval,
+secret, locality, energy, federation, dropout, and residual policy before
+comparing latency or price. A partition or stale grant routes high-impact work
+to denial, quarantine, or fresh approval rather than available-but-unauthorized
+execution.
 
 [personal-compute-hives-and-federated-edge-intelligence.core, label: Design rationale, support: argument] For an exact versioned principal, household or project, job, use, data and tool class, effect envelope, acceptance test, risk budget, deadline, and evaluation horizon, a Personal Compute Hive should admit and place work only through policy-before-optimization: independently attested participants and roles, intersected authority and rights, task-local context and execution leases, least-authority adequate node selection, scoped approval, monitored sandboxed execution, complete artifact/effect/resource receipts, partition-aware denial or quarantine, and effect-complete rollback or residual custody; reachability, ownership, cheap capacity, a passing record schema, or stale authority alone cannot license execution, and federation, dropout, revocation, replacement, requeue, and retirement must preserve affected descendants and residual owners.
 
@@ -127,6 +138,29 @@ The `Device Resource Card` describes a node without granting it open-ended autho
 The `Hive Job Contract` is the work request. It names the objective, data dependencies, context packet, tool requirements, authority ceiling, physical-world risk, federation scope, budget, energy preference, deadline, required approvals, verification predicate, and residual policy. It is compiled from intent, planning, VCM materialization, and Talos-style typed work rather than free-form agent desire.
 
 The `Hive Scheduling Decision` is the narrow bridge between the job and the substrate. It records all eligible nodes, rejected nodes with reasons, selected node, approval receipts, data-placement decision, secret-handle plan, verification path, cost and energy estimate, expiration, and audit references. Optimization happens after rejection reasons are recorded, not before.
+
+### Worked hive placement: the three-minute rented GPU loses
+
+The public admission fixture asks the hive to render and validate a private
+draft. Two devices bid. The home desktop estimates fifteen minutes, accepts
+`personal_private` data, supports both `schema_validation` and `local_render`,
+and requires approval from the owner's phone. A rented GPU estimates three
+minutes and has high compute fit, but its card permits only public notes and
+synthetic data, offers public sandbox egress, and cannot hold a secret handle.
+
+The scheduler rejects the faster node before optimization because the job is
+`local_only` and its context contains private material. The phone receipt
+authorizes only this local render and explicitly denies rented-node, external-
+network, and private-export permissions. The desktop wins after policy
+filtering, not because the fixture claims it is globally better hardware.
+
+The result records two valid synthetic scenarios and rejects eight controls,
+including private data on a rented node, missing high-risk approval, child-
+sensitive routing without a guardian surface, external project work without a
+sandbox lease, energy overrun, dropout without a requeue residual, missing
+audit refs, and support overclaim. No scheduler or network ran. The unexecuted
+dropout recovery remains a named residual instead of being smuggled into the
+passing admission record.
 
 ```{mermaid}
 flowchart TD

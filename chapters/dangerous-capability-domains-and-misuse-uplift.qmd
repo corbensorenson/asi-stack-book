@@ -4,7 +4,7 @@ chapter_id: "dangerous-capability-domains-and-misuse-uplift"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_singapore_consensus_2026"
   - "ext_international_ai_safety_report_2026"
@@ -43,6 +43,8 @@ not imported as proof that a model is dangerous, safe, or below a threshold.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The scalar dashboard treats both eights as equal. The dossier preserves the six-level measurement vector and routes different risk questions.
 
 A model can possess dangerous knowledge without making someone more capable
 of harm. It can also look harmless after refusing a
@@ -226,6 +228,16 @@ performance, propensity, safeguard bypass, actor uplift, and realized harm;
 preserves expertise, tools, assistance, attempts, uncertainty, and
 sensitive-detail boundaries; and routes only bounded findings into thresholds,
 release, monitoring, and resilience decisions.
+
+**Reader claim.** Dangerous capability cannot be reduced to one score: latent knowledge, elicited performance, actor uplift, safeguard bypass, propensity, and realized harm answer different questions.
+
+**Operational rule.** Freeze the domain threat model, cohort and expertise, baseline, assistance, elicitation, attempts, outcome vector, safeguards, evaluator, sensitive-detail boundary, uncertainty, expiry, and maximum inference before testing. Route component-level findings; never let an aggregate score authorize release or imply harm.
+
+### Worked uplift collision: equal totals, opposite risk questions
+
+Two harmless-analogue evaluations each total `8` points. In the first, a model improves novice task completion but does not reduce safeguard-bypass cost. In the second, task completion is unchanged but the assistance sharply lowers the effort needed to defeat a simulated safeguard. A scalar dashboard treats the results as equal. The component-sensitive review sends the first to an actor-uplift analysis and the second to safeguard redesign and containment.
+
+Neither finding establishes dangerous capability or realized harm. The point is that identical totals can hide opposite decision-relevant vectors. The finite review gives exact dispositions to 29 admission-axis mutations, preserves attempt-shortfall and expiry under adverse changes, and includes two same-total witnesses plus a universal aggregate-score impossibility result. It trusts every authored outcome field, so it does not establish result truth, uplift, safeguard efficacy, thresholds, harm, safety, or release merit.
 
 ## Mechanism
 

@@ -4,7 +4,7 @@ chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
-last_updated: "2026-07-31"
+last_updated: "2026-08-09"
 primary_sources:
   - "beastbrain"
   - "ext_llama3_herd_2024"
@@ -73,6 +73,8 @@ pass competence gates before any negative result can narrow the architecture.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The checkpoint-file baseline treats successful loading as recovery. The full-state contract binds optimizer, scheduler, sampler, RNG, scaler, cache, and topology state.
 
 A model checkpoint is the visible residue of a larger event. Data is ordered,
 gradients are distributed, numbers rounded, state sharded, workers fail,
@@ -226,6 +228,16 @@ comparators, concrete fault injection, hidden qualification, and joint cost.
 ## Core Claim
 
 [governed-model-training-distributed-optimization-and-scaling.core, label: Design rationale, support: argument] A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.
+
+**Reader claim.** A checkpoint is not a faithful training restart unless it restores every state variable that can change the future run, not just model weights.
+
+**Operational rule.** Freeze architecture, data order, objective, optimizer, scheduler, numerical policy, topology, code, environment, and stopping before training. Checkpoint model, optimizer, scheduler, scaler, RNG, sampler, cache, and fault state atomically; test resume equivalence and keep every attempted run and candidate in the denominator.
+
+### Worked resume: weights match, the run diverges
+
+A distributed training job saves model weights at step 10,000 and restarts after a worker failure. The optimizer moments, scheduler position, data-sampler cursor, and per-worker RNG states were not committed with the weights. Loading succeeds and the first loss looks plausible, but batches arrive in a new order, dropout masks differ, and the learning rate repeats an earlier segment. The artifact is a warm start, not an equivalent resume.
+
+The run record keeps both trajectories, marks the resume class non-equivalent, and prevents the restarted checkpoint from being compared as though it continued the same experiment. A faithful path needs one atomic commit across full declared state plus an equivalence test under the prospectively chosen tolerance. Even then, qualification must use an independently unopened set rather than validation-selected checkpoints. This contract does not establish optimizer superiority, distributed fault tolerance, model quality, or scaling behavior.
 
 ## Mechanism
 

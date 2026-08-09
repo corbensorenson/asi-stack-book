@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "chapter_file": "chapters/asi-is-a-stack-not-a-model.qmd",
+  "chapter_sha256": "98ec4a959aceceddd6b242ede9fed1049c46b62559ca8a8b135d5687429175bb",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-01-stack-thesis",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: three projections, one denied effect",
+    "actor_or_system": "An operations assistant handling an inventory request through intent, planning, admission, and evidence boundaries",
+    "attempted_action": "Use a cleanup script proposed for review to perform an inventory task after a stale write credential from a prior maintenance window remains available.",
+    "observable_outcome": "The effect boundary rejects the expired write lease, preserves the proposed script for review, and emits a denial receipt rather than reporting task completion.",
+    "failed_or_tested_boundary": "The trace tests whether model capability, a syntactically valid plan, or a once-valid credential may silently confer current mutation authority; none may.",
+    "residual_owner": "The authority and execution owners retain the stale permission and unverified destructive-effect residual until the credential and requested state are reconciled.",
+    "evidence_boundary": "The scenario is explicitly illustrative and shows stack decision structure only; it does not report a real incident, prove that this decomposition is optimal, or move support."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: three projections, one denied effect",
+    "state_labels": ["intent", "plan", "admission", "denial_receipt"],
+    "source_or_fixture_refs": ["chapters/asi-is-a-stack-not-a-model.qmd", "sources/source_notes/ext_drexler_cais_2019.md"],
+    "maximum_inference": "The illustrative trace demonstrates the intended separation of capability, plan, authority, effect, and receipt projections; it is not empirical evidence that the ASI Stack outperforms a monolith."
+  },
+  "counterexample_or_simpler_baseline": "One model call followed by a shell command is the strongest simpler baseline and may be adequate in a genuinely read-only sandbox; the stack must earn each extra boundary through a distinct decision or failure owner.",
+  "readable_claim": "The stack earns its name only when it gives each transition a separate owner and a visible denial path.",
+  "normative_rule": "A new mechanism belongs in the stack only when it lowers confusion at a boundary: it clarifies who owns a decision, what artifact crosses the interface, which authority is available, which evidence state is possible, and what rollback path exists if the mechanism fails.",
+  "formal_binding": {
+    "claim_id": "asi-is-a-stack-not-a-model.core",
+    "support_state": "argument",
+    "anchor": "governed stack of cooperating layers"
+  },
+  "claim_atom_and_source_links": ["asi-is-a-stack-not-a-model.core", "viea", "ext_drexler_cais_2019", "ext_mrkl_systems_2022"],
+  "caveat_consolidation": {
+    "local_caveat": "The failure and trace are explicitly identified as illustrative rather than a real incident or comparative result.",
+    "consolidated_disposition": "Architecture-comparator, implementation, efficiency, model-capability, deployment, and evidence limitations remain in the chapter's source and claim boundaries.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The four-state table remains because capability, plan, admission, and evidence are the thesis; broader layer inventories stay in the architecture and appendix surfaces.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The existing short thesis is already readable and remains separate from the richer boundary rule and worked trace.",
+    "hedge_disposition": "The scenario carries one local illustrative boundary while distinct architecture and evidence limits remain elsewhere.",
+    "table_disposition": "The table is chronological argument, not duplicated chapter-status bookkeeping."
+  },
+  "non_claims": ["The scenario is not a reported operations incident.", "The trace does not prove superiority over every monolithic or simpler system.", "The editorial packet does not move support or release state."]
+}

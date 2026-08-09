@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack P7.1c Chapter Prose Quality Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "chapter_file",
+    "chapter_sha256",
+    "chapter_role",
+    "reader_spine_unit",
+    "review_state",
+    "concrete_scene",
+    "worked_trace",
+    "counterexample_or_simpler_baseline",
+    "readable_claim",
+    "normative_rule",
+    "formal_binding",
+    "claim_atom_and_source_links",
+    "caveat_consolidation",
+    "bookkeeping_surface_disposition",
+    "semantic_diff",
+    "editorial_diagnostics",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p7_1c_reader_prose_quality_packet.v1"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$"},
+    "chapter_file": {"type": "string", "pattern": "^chapters/[a-z0-9-]+\\.qmd$"},
+    "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "chapter_role": {"enum": ["thesis-bearing", "load-bearing-reference", "implementation-case", "speculative-research"]},
+    "reader_spine_unit": {"type": "string", "pattern": "^unit-[0-9]{2}-[a-z0-9-]+$"},
+    "review_state": {"const": "digest_bound_editorial_pass"},
+    "concrete_scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading", "actor_or_system", "attempted_action", "observable_outcome", "failed_or_tested_boundary", "residual_owner", "evidence_boundary"],
+      "properties": {
+        "heading": {"type": "string", "minLength": 20},
+        "actor_or_system": {"type": "string", "minLength": 12},
+        "attempted_action": {"type": "string", "minLength": 30},
+        "observable_outcome": {"type": "string", "minLength": 30},
+        "failed_or_tested_boundary": {"type": "string", "minLength": 30},
+        "residual_owner": {"type": "string", "minLength": 20},
+        "evidence_boundary": {"type": "string", "minLength": 40}
+      }
+    },
+    "worked_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["heading", "state_labels", "source_or_fixture_refs", "maximum_inference"],
+      "properties": {
+        "heading": {"type": "string", "minLength": 20},
+        "state_labels": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string", "minLength": 3}},
+        "source_or_fixture_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 5}},
+        "maximum_inference": {"type": "string", "minLength": 50}
+      }
+    },
+    "counterexample_or_simpler_baseline": {"type": "string", "minLength": 60},
+    "readable_claim": {"type": "string", "minLength": 60},
+    "normative_rule": {"type": "string", "minLength": 60},
+    "formal_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "support_state", "anchor"],
+      "properties": {
+        "claim_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]+$"},
+        "support_state": {"const": "argument"},
+        "anchor": {"type": "string", "minLength": 20}
+      }
+    },
+    "claim_atom_and_source_links": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 3}},
+    "caveat_consolidation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["local_caveat", "consolidated_disposition", "distinct_limitations_preserved"],
+      "properties": {
+        "local_caveat": {"type": "string", "minLength": 40},
+        "consolidated_disposition": {"type": "string", "minLength": 50},
+        "distinct_limitations_preserved": {"const": true}
+      }
+    },
+    "bookkeeping_surface_disposition": {"type": "string", "minLength": 60},
+    "semantic_diff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["unique_claims_preserved", "sources_preserved", "proof_boundaries_preserved", "non_claims_preserved", "support_state_effect", "release_effect"],
+      "properties": {
+        "unique_claims_preserved": {"const": true},
+        "sources_preserved": {"const": true},
+        "proof_boundaries_preserved": {"const": true},
+        "non_claims_preserved": {"const": true},
+        "support_state_effect": {"const": "none"},
+        "release_effect": {"const": "none"}
+      }
+    },
+    "editorial_diagnostics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mega_sentence_disposition", "hedge_disposition", "table_disposition"],
+      "properties": {
+        "mega_sentence_disposition": {"type": "string", "minLength": 30},
+        "hedge_disposition": {"type": "string", "minLength": 30},
+        "table_disposition": {"type": "string", "minLength": 30}
+      }
+    },
+    "non_claims": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"type": "string", "minLength": 30}}
+  }
+}

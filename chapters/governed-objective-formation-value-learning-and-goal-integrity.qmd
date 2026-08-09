@@ -4,7 +4,7 @@ chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_cooperative_inverse_rl_2016"
   - "ext_goal_misgeneralization_2022"
@@ -26,7 +26,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-08-01 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -38,6 +38,8 @@ This chapter owns the conversion from authorized purpose and contested evidence 
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline promotes the latest preference prediction, reward, evaluator score, or constitutional phrase into a persistent objective. The chapter makes every such signal evidence under an external, expiring consumer lease.
 
 An optimizer is literal about its signal, while people are often imprecise, divided, or mistaken about what they mean. Danger begins before reward hacking, when a request, preference sample, constitutional phrase, proxy metric, or evaluator judgment becomes an apparently settled target that persists across tasks, users, and versions. That conversion requires an explicit, revisable governance transaction.
 
@@ -85,9 +87,38 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** A preference prediction, reward, evaluator score, or
+constitutional phrase is evidence about an objective—not authority to create a
+durable goal. The conversion must remain inspectable and reversible.
+
+**Operational rule.** Separate authorized purpose, target property, proxy,
+reward, evaluator, planner criterion, and consumer lease. Invalidate the lease
+when its consumer, ontology, authority, population, or time scope changes, and
+retire every known descendant binding before claiming the objective is gone.
+
 [governed-objective-formation-value-learning-and-goal-integrity.core, label: Design rationale, support: argument] A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.
 
 ## Mechanism
+
+### Worked objective lease: the proxy agrees, the authority does not
+
+The authored objective dossier binds target version 7 to consumer 41, ontology
+12, authority version 5, population version 3, and an expiry at tick 20. It
+keeps preference evidence, reward, evaluator, and planner roles separately
+typed; preserves alternatives, dissent, unrepresented parties, and rights
+ceilings; and indexes three active descendant bindings. The optimizing system,
+reward model, and evaluator are explicitly denied the power to ratify the
+objective that governs them.
+
+Now imagine two records with the same preference prediction. In one, the
+principal authorizes the lease; in the other, authority has changed or the
+consumer is different. The local model proves that the shared prediction
+cannot recover the missing authorization. It likewise shows that an identical
+proxy observation can accompany opposite movement in the target property.
+Consumer transfer, expiry, ontology drift, and authority drift each invalidate
+use, while retirement walks every member of the finite descendant list. The
+46-axis review tests the record logic; it does not discover a correct value or
+show that the external world contains no forgotten descendant.
 
 Objective formation begins by separating five objects that implementations
 often collapse: the principal's authorized purpose, the underlying property

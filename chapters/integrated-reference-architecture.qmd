@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "viea"
   - "scf"
@@ -54,7 +54,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-27 |
+| Last updated | 2026-08-08 |
 | Primary source records | 36 assigned records with 32 exact passage-reviewed mappings spanning the stack sources, local implementation lineage, external comparators, and a typed relational-complex integration packet |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -73,6 +73,8 @@ The reference architecture is therefore not an orchestration diagram with more b
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The simpler route treats a passing smoke test as release authority. It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.
+
 After every major layer is named, the machine has to come back together. Intent, planning, memory, routing, verification, execution, evidence, benchmarks, and improvement should cooperate in one inspectable flow.
 
 This is the synthesis checkpoint. The question is not whether every implementation exists yet. The question is whether a future implementation could produce a trace clear enough to show what happened, why it was allowed, what evidence changed, which residuals remained, and where the system stopped. A reference architecture earns trust only when the blocked path is as visible as the happy path.
@@ -87,6 +89,29 @@ The whole stack is credible only when its combined behavior stays explainable un
 ## Problem
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
+
+### Concrete integration failure: the patch that passed and still could not ship
+
+The local governed repository-change slice gives this chapter an executed
+failure scene. Nine matched change requests reached a public smoke test. A
+simple route treated that green signal as sufficient and released all nine;
+eight were false accepts. The governed route joined the request to an allowed
+path, quarantined instructions recovered from untrusted context, rechecked
+authority immediately before effect, separated claimed file hashes from bytes
+observed by another process, and probed rollback descendants. It released
+three cases safely, refused five, quarantined one, attempted three rollbacks,
+completed two exactly, and preserved the failed rollback as an open residual.
+It produced zero false accepts and zero unsafe releases in this bounded slice.
+
+The result is not that “more governance wins.” The governed route spent 66
+deterministic cost units, 89 trace steps, and nine review steps, compared with
+27 cost units, 27 trace steps, and no review for the simple route. The result
+is that integration has a price and a falsifiable shape. Intent, context,
+authority, observation, evaluation, rollback, evidence, and residual custody
+must join around the same effect. If the architecture cannot show that joined
+lineage, a green subsystem does not authorize the release. The detailed event
+log and its four invariants appear later in this chapter; the fixture-only
+showpiece trace below shows the same ownership pattern one artifact at a time.
 
 The end-to-end integration point receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. The job is to show how those pieces compose without pretending that composition is already implemented or proven.
 
@@ -107,6 +132,15 @@ The integrated reference architecture therefore has to be explicit about handoff
 A single all-purpose agent loop can make this worse by turning every boundary into hidden prompt state. The ASI Stack should resist that collapse. The planner should not silently become the verifier; the memory compiler should not silently become the authority source; the execution OS should not silently decide that a failed residual is acceptable; and the benchmark ratchet should not silently promote a candidate whose regression floor moved.
 
 ## Core Claim
+
+**Readable claim.** The stack is integrated only when a reader or verifier can
+follow one request across every participating layer without losing artifact
+identity, authority scope, observed effects, evaluation, rollback state, or
+residual ownership.
+
+**Normative rule.** A successful component, green service, or valid theorem may
+advance its own bounded record. It may not stand in for the missing joins of a
+whole-stack run.
 
 [integrated-reference-architecture.core, label: Design rationale, support: argument] Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-, material-effect-, terminal-receipt-, evaluator-, evidence-, residual-, rollback-, consumer-, environment-, and time-specific **Cross-Layer Trace Join Contract**: it proves integration only when every participating owner remains distinct and its typed input, output, authority delta, state identity, observed effect, acknowledgement, evaluation, evidence delta, residual, stop, repair, rollback, and non-claim remain joinable across approved, blocked, failed, revoked, rolled-back, and quarantined paths; a diagram, shared prompt, interface name, projection, green service, replay, fixture, theorem, or locally successful slice cannot establish whole-stack execution, semantic preservation, governance enforcement, safety, capability, deployment, transfer, or SOTA.
 

@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "open-research-agenda-and-bibliography-plan",
+  "chapter_file": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+  "chapter_sha256": "cf61c6ed3ee1779369f04d56daffcbd1e71a98409e013501336280c4fb86f2ab",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-22-living-book-and-agenda",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Reference-use trace: four ways a source can enter without becoming evidence",
+    "actor_or_system": "The living-book intake gate routing four synthetic new-source and source-variant cases",
+    "attempted_action": "Decide whether each item should update an existing chapter, propose a new boundary, wait for direct inspection, or close as a duplicate before prose changes.",
+    "observable_outcome": "The fixture produces four distinct no-promotion decisions with named prerequisites and blockers: update, propose, defer, and reject duplicate.",
+    "failed_or_tested_boundary": "The trace tests whether title discovery, novelty language, an indirect citation, or an extra export can by itself authorize prose, chapter creation, or support; none can.",
+    "residual_owner": "The research-backlog item retains the missing source record, direct review, boundary audit, claim mapping, drafting, validation, or closure work for its selected route.",
+    "evidence_boundary": "This is the explicit reference-chapter exemption: a synthetic intake trace demonstrates how to use the chapter, but it does not adjudicate a real paper or establish literature completeness."
+  },
+  "worked_trace": {
+    "heading": "Reference-use trace: four ways a source can enter without becoming evidence",
+    "state_labels": ["intake", "deduplication_and_boundary_check", "routing_decision", "required_work", "no_support_change"],
+    "source_or_fixture_refs": ["tests/fixtures/protocol_records/new_paper_triage_scenario.valid.json", "scripts/validate_protocol_examples.py"],
+    "maximum_inference": "The fixture validates four synthetic source-routing decision shapes and their blockers; it does not evaluate a real source, add a chapter, prove citation accuracy, or change support."
+  },
+  "counterexample_or_simpler_baseline": "A static bibliography keeps every title and encourages inference from source count. The admission gate instead records the owner, direct-review state, deduplication result, blockers, and exact route before prose changes.",
+  "readable_claim": "The research agenda is the book's admission desk: it decides whether new material updates an owner, creates a genuinely new boundary, waits for direct inspection, or is rejected as a duplicate.",
+  "normative_rule": "No source changes prose or support until its identity, access and publication boundary, direct review state, chapter owner, claim mapping, deduplication decision, required work, blockers, and closure condition are recorded.",
+  "formal_binding": {
+    "claim_id": "open-research-agenda-and-bibliography-plan.core",
+    "support_state": "argument",
+    "anchor": "Research Backlog Admission and Closure Contract"
+  },
+  "claim_atom_and_source_links": ["open-research-agenda-and-bibliography-plan.core", "verification_bandwidth", "benchmaxxing", "ext_lean4_theorem_proving"],
+  "caveat_consolidation": {
+    "local_caveat": "The scene explicitly identifies itself as a synthetic reference-use trace rather than a real paper review.",
+    "consolidated_disposition": "Citation accuracy, source access, permission, direct passage review, chapter-boundary, reproduction, and support limitations remain in the relevant agenda and source-crosswalk surfaces.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The four-row routing table stays because it is the chapter's user interface; large source inventories and backlog fields remain in the appendices and machine records.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim and rule present the route before the retained exact admission-and-closure contract.",
+    "hedge_disposition": "The reference-use exemption states its synthetic boundary once and preserves distinct source and evidence limits elsewhere.",
+    "table_disposition": "The routing table is retained as the primary reference interaction, while exhaustive backlog bookkeeping remains off the narrative path."
+  },
+  "non_claims": [
+    "The reference trace does not evaluate or cite a real new paper.",
+    "The reference trace does not establish literature completeness or research quality.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

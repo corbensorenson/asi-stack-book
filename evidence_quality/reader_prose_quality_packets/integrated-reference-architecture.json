@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "integrated-reference-architecture",
+  "chapter_file": "chapters/integrated-reference-architecture.qmd",
+  "chapter_sha256": "2237be94e0985d0b57cd8a65236da1adfd39032ba3729ed53c7925881deddcda",
+  "chapter_role": "implementation-case",
+  "reader_spine_unit": "unit-21-recursive-integration-and-prototype",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Concrete integration failure: the patch that passed and still could not ship",
+    "actor_or_system": "The matched baseline and governed repository-change routes",
+    "attempted_action": "Evaluate and release nine bounded repository changes after each reached a public smoke-test surface.",
+    "observable_outcome": "The simple route released nine with eight false accepts; the governed route released three safely, refused five, quarantined one, and preserved one failed rollback residual.",
+    "failed_or_tested_boundary": "A green subsystem result cannot authorize release when authority, independent observation, rollback descendants, or residual custody fail to join.",
+    "residual_owner": "The governed trace and incident/recovery owners retain the failed rollback and its undisposed descendant effects.",
+    "evidence_boundary": "The scene reports a bounded deterministic repository slice, not a deployed multi-service runtime, production safety result, or whole-stack support transition."
+  },
+  "worked_trace": {
+    "heading": "Worked showpiece trace: one request through the stack",
+    "state_labels": ["intent", "command_contract", "plan", "context", "route", "verification", "work_and_audit", "evidence", "no_promotion_gate"],
+    "source_or_fixture_refs": ["docs/governed_repository_change_slice.md", "scripts/validate_governed_repository_change_slice.py", "scripts/validate_reference_trace.py"],
+    "maximum_inference": "The executed slice and fixture trace show joined finite artifact discipline; they do not establish a deployed integrated runtime, general safety, capability, transfer, or chapter-core support."
+  },
+  "counterexample_or_simpler_baseline": "The simpler route treats a passing smoke test as release authority. It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.",
+  "readable_claim": "The stack is integrated only when a reader or verifier can follow one request across every participating layer without losing artifact identity, authority scope, observed effects, evaluation, rollback state, or residual ownership.",
+  "normative_rule": "A successful component, green service, or valid theorem may advance its own bounded record. It may not stand in for the missing joins of a whole-stack run.",
+  "formal_binding": {
+    "claim_id": "integrated-reference-architecture.core",
+    "support_state": "argument",
+    "anchor": "Cross-Layer Trace Join Contract"
+  },
+  "claim_atom_and_source_links": ["integrated-reference-architecture.core", "viea", "scf", "project_theseus_whitepaper"],
+  "caveat_consolidation": {
+    "local_caveat": "The scene distinguishes deterministic fixture cost and effect accounting from production economics and deployed enforcement.",
+    "consolidated_disposition": "The drafting guardrail, claim boundary, worked-trace limits, and evidence reconciliation retain every distinct implementation and support limitation.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The existing hop table remains because it teaches the cross-layer join; validator inventories and support ceilings remain in their canonical status and evidence sections.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "A short readable claim and normative rule now orient the retained composite formal claim.",
+    "hedge_disposition": "The new scene keeps one immediate bounded-slice caveat while leaving exact residual limits in existing evidence surfaces.",
+    "table_disposition": "The hop table is retained as the synthesis walkthrough; status and proof inventories are not expanded."
+  },
+  "non_claims": [
+    "The repository slice does not establish a deployed integrated runtime.",
+    "The zero unsafe releases in the bounded slice do not establish general system safety.",
+    "The editorial revision does not move chapter-core support or authorize release."
+  ]
+}

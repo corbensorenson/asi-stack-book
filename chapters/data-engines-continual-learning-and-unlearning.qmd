@@ -4,7 +4,7 @@ chapter_id: "data-engines-continual-learning-and-unlearning"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_bourtoule_machine_unlearning_2021"
   - "ext_shumailov_model_collapse_2023"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-08 |
 | Primary source records | 11 assigned, 11 passage-reviewed mappings, including SISA, model-collapse and accumulation work, Theseus, W3C PROV-O, Croissant, MUSE, OpenUnlearning, the benchmark critique, QCSA, and V-JEPA 2 |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -55,6 +55,8 @@ data quality, privacy compliance, safe synthetic data, or verified forgetting.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline restores weights and reports a deleted cohort's behavioral change as unlearning. The chapter requires full-state recovery and keeps behavioral, causal, privacy, lineage, storage, backup, and descendant axes separate.
 
 Learning systems depend on decisions about what gets to count as experience.
 Those decisions can disappear inside an import script, replay buffer, or
@@ -148,6 +150,16 @@ one is favorable and another remains false or unmeasured.
 
 ## Core Claim
 
+**Reader claim.** Restoring every declared training-state surface does not show
+that an update helped, and changing a deleted cohort's behavior does not show
+that its influence, privacy exposure, backups, or descendants are gone.
+
+**Operational rule.** Bind data admission, checkpoint authority, model,
+optimizer, scheduler, RNG, cache, backup, lineage, descendants, and deletion
+scope before learning. Report behavioral change, causal influence, privacy,
+lineage, legal status, storage, backups, and external descendants as separate
+axes that cannot promote one another.
+
 [data-engines-continual-learning-and-unlearning.core, label: Design rationale, support: argument] Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-, retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-, and time-specific **Data-and-Descendant Custody Lease**: before learning or deletion, it binds admissible use, evaluation exclusions, synthetic and transformation lineage, coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority, retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody; behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation, legal compliance, and storage or backup erasure remain separate claims, and no receipt, checksum, exclusion, invalidation, benchmark score, rollback match, or synthetic campaign alone establishes model quality, forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA.
 
 The claim remains at `argument` support. The in-prose external anchors
@@ -159,6 +171,25 @@ receipt, proof, or source note turns an intake decision into evidence of model
 quality, privacy, safety, deletion completeness, or capability improvement.
 
 ## Mechanism
+
+### Worked result: fifteen exact rollbacks and zero storage erasures
+
+The P3 full-state bridge froze 24 surfaces before training, ran five arms across
+three seeds, and recorded 15 transactions. All 15 restored the declared state
+inventory exactly, including model, optimizer, scheduler, RNG, cache,
+checkpoint, backup, and descendant surfaces. The campaign also exposed six
+best-versus-final checkpoint disagreements, confirming why checkpoint
+authority had to be prospective rather than selected after outcomes.
+
+The favorable rollback result did not rescue the learning claim. No arm met
+the target gain. Deletion-aware behavior changed on four, zero, and one cases
+across the three seeds; lineage propagation was recorded three times;
+influence reduction remained a true-confidence proxy rather than an
+established result; and storage erasure was zero. The terminal disposition was
+`no_change_update_narrow_rollback_and_unlearning`. This is the distinction the
+chapter needs readers to retain: inventory-exact recovery earned a narrow
+positive result while update utility and the several meanings of unlearning
+remained negative, unmeasured, or unresolved.
 
 The data engine begins with a data-admission receipt before a candidate may
 enter a declared learning or evaluation lane. The receipt identifies the

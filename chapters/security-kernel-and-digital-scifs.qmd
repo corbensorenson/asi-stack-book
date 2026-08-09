@@ -4,7 +4,7 @@ chapter_id: "security-kernel-and-digital-scifs"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-08"
 primary_sources:
   - "ladon_manhattan"
   - "context_engineer"
@@ -40,7 +40,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Last updated | 2026-07-14 |
+| Last updated | 2026-08-08 |
 | Primary source records | 16 mapped sources: five author-lineage sources, six external comparators, and five pinned local-project notes |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -59,6 +59,8 @@ The security kernel is the stack's least-authority and information-flow boundary
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline gives a model a secret or handle and filters its final text. The chapter instead binds admission, purpose, destination, declassification, zeroization, commit, audit, and residual closure as one authority-use transaction.
 
 Replacement and rollback protect the shape of a capability under change. Security protects the powers and secrets that capability can touch. As the stack grows more useful, context, credentials, tools, and private records become part of the safety problem. A replacement that changes what it can see or do has changed the security boundary, even if its public interface still looks familiar.
 
@@ -91,6 +93,17 @@ Security also belongs before self-improvement: an update must not count as impro
 
 ## Core Claim
 
+**Reader claim.** A Digital SCIF is not a trusted prompt or a reassuring name.
+It is a narrow authority-use transaction in which protected material and every
+permitted effect stay bound to purpose, destination, lifecycle, and an
+observable denial path.
+
+**Operational rule.** Release a privileged result only when the live lease,
+minimal context, mediated destination, declassification decision, zeroization,
+audit record, and residual owner all agree. Secret bytes, live handles,
+overbroad context, stale approval, missing closure, or an unknown egress block
+the commit rather than becoming a warning after release.
+
 [security-kernel-and-digital-scifs.core, label: Design rationale, support: argument] Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through a non-bypassable reference monitor: bind the exact principal, purpose, operation, target, data and taint scope, budget, time, nonce, evaluator and policy identities; admit only minimized context and capabilities into a declared isolation grade; mediate every effect and egress; treat sanitization as explicit declassification; close leases, caches, logs, descendants, and residuals through revocation or incident recovery; and never infer security from the record, handle, compartment, or finite test alone.
 
 This is a composite research claim at `argument`, not a demonstrated security result. It can fail because the inventory is incomplete, the monitor is bypassable or compromised, declassification is unreliable, observers are correlated, a side channel is unmodeled, revocation cannot reach descendants, irreversible harm cannot be recovered, or the governance burden destroys useful throughput. Each mechanism must earn its place through a matched causal ablation and the full transaction must beat strong conventional baselines on a joint usefulness-security-privacy-availability-cost-recovery frontier.
@@ -119,6 +132,27 @@ Appendix C maps all sixteen assigned source notes. The mappings establish design
 | `corbens_best_model_possible_project` | Tool-capability and verifier surfaces plus counterevidence on OS enforcement, playback, and evaluator independence. | No safe tool execution, live replay, containment, or current build result. |
 
 ## Mechanism
+
+### Worked commit boundary: the refusal may leave, the secret may not
+
+The local SCIF commit probe creates a public-safe synthetic secret, substitutes
+it inside a temporary workspace, and evaluates only what may cross the commit
+boundary. Its ordinary route writes a sanitized summary whose digest is
+`793bebab...fed26`; the secret and live handle are absent, the temporary secret
+file is zeroized, and two residuals remain attached. In the adversarial route,
+an observed prompt injection produces a sanitized refusal with digest
+`98490c8e...3b23`. The refusal is allowed to commit because the protected
+payload and handle still do not leave.
+
+Six nearby controls make the boundary concrete. A literal secret, a live
+handle, missing zeroization, overbroad context, an inactive approval aimed at
+`external://public-web`, or a missing residual boundary all block before
+commit. The result is useful precisely because it distinguishes “safe to write
+this sanitized record” from “the whole system is secure.” No network, private
+source, deployed vault, deployed sandbox, publication, or dispatched job was
+involved. The probe validates transaction shape and denial behavior; it does
+not establish prompt-injection containment, side-channel safety, secret
+custody, or a non-bypassable runtime monitor.
 
 The unit of security is an authority-use transaction, not a prompt or handle. Before exposure, a Threat Model Record freezes assets, actors, trust zones, adversary capabilities, objectives, assumptions, channels, residuals, and owners. An Authority Lease then binds the complete request tuple. A Context Admission Record compiles the smallest task-relative view. A reference monitor decides and mediates each privileged use. A Declassification and Commit Record governs what can leave. Revocation or incident closure accounts for surviving copies and effects.
 

@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-03"
+last_updated: "2026-08-09"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -64,6 +64,8 @@ Benchmark ratchets are the public evidence counterpart to procedural memory. Pro
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The leaderboard baseline ranks equal scores equally. The instrument lease distinguishes clean, contaminated, saturated, and selected histories.
+
 Executable specs say what a narrow artifact can certify before use. Benchmarks ask how measured performance should change future behavior without becoming a game. Benchmark ratchets can move a floor forward only when regressions, scope, baselines, and negative results remain visible.
 
 The anti-Goodhart theme matters throughout this layer. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support. Improvement should become cumulative without allowing the scoreboard to become the mission. A failed benchmark should teach as much as a win when the ledger is honest.
@@ -96,6 +98,16 @@ This also protects the reader. A living book can accumulate validation badges, g
 ## Core Claim
 
 [benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease: a score or evaluation event may update only the exact claim whose construct validity, target capacity, data and metric provenance, output binding, contamination and public-calibration boundary, strong baselines and negative controls, complete selection and failure lineage, regression floors, frontier state, uncertainty, costs, causal checks, transfer, residuals, and decision authority survive review; a green fixture, synthetic probe, source-reported result, leaderboard gain, held-out score, saturation label, or archived winner alone confers no capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA authority.
+
+**Reader claim.** Two benchmark runs can have the same pass count and opposite evidentiary value when one is clean and the other is contaminated, selected, or saturated.
+
+**Operational rule.** Bind each score to construct, dataset, harness, checkpoint, output, evaluator, baseline, retry lineage, contamination state, regression floors, uncertainty, cost, and claim axis. Quarantine persists until the causal problem is repaired; aggregate score cannot wash it away.
+
+### Worked benchmark collision: same score, opposite decision
+
+Candidate A and candidate B pass the same number of benchmark cases. Candidate A was evaluated once on a clean held-out set with its failures preserved. Candidate B selected its checkpoint and prompt after public calibration leakage, then reproduced the same aggregate count. A score-only ratchet treats them as equal. The instrument lease admits A’s narrow claim update and quarantines B because the lineage and contamination state differ.
+
+The finite benchmark model includes an explicit same-pass-count witness with opposite promotion admissibility. It explores 19 reachable states and 114 transitions, preserves quarantine across 12 arbitrary suffixes, and rejects 15 lifecycle plus 11 semantic mutations. This proves that aggregate count is insufficient for the modeled decision. It does not establish construct validity, hidden-holdout integrity, contamination detection, benchmark quality, capability, or anti-Goodhart effectiveness.
 
 The claim remains at `argument` support. The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, readiness gates, and the mined distinction between metrics that were measured, derived, modeled, fixed, proxied, or never causally connected to a returned output. They do not prove benchmark gains in this repository.
 

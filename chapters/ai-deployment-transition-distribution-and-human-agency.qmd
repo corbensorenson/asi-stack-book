@@ -4,7 +4,7 @@ chapter_id: "ai-deployment-transition-distribution-and-human-agency"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_generative_ai_at_work_2025"
   - "ext_ilo_genai_jobs_index_2025"
@@ -25,7 +25,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-07-28 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -37,6 +37,8 @@ This chapter owns the social transition created by deployment: who gains capacit
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline reports the aggregate gain of 90. The chapter keeps each cohort and remedy state visible, so the positive total cannot erase the worker cohort's unresolved burden.
 
 The same AI system can make one worker faster, eliminate another role, create customer dependence, enrich an owner, and make a public service cheaper but harder to contest. These outcomes are different positions inside one transition. They must stay visible before an efficiency story dominates and reversible experiments harden into arrangements that affected people cannot leave.
 
@@ -86,9 +88,38 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** A deployment can raise total output while harming a worker,
+removing a practical alternative, and concentrating the gain elsewhere.
+Productivity is therefore one transition outcome, not a verdict on welfare or
+agency.
+
+**Operational rule.** Freeze the nondeployment baseline and every affected
+cohort before rollout. Track gain, burden, remedy, access, ownership,
+continuity, refusal, exit, and delayed effects separately; one unremedied
+harmed cohort blocks a successful-transition claim even when the aggregate is
+positive.
+
 [ai-deployment-transition-distribution-and-human-agency.core, label: Design rationale, support: argument] Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition.
 
 ## Mechanism
+
+### Worked distribution ledger: positive total, unresolved worker harm
+
+The authored transition dossier contains two cohorts. Cohort 1 receives a gain
+of 100 with no recorded burden. Cohort 2 receives no gain, bears a burden of
+10, and has received no remedy. Both remain in the denominator, so the
+aggregate is positive 90. An average-only report would call the transition a
+success and erase the second cohort behind the first.
+
+The transition contract refuses that move. Its finite-list rule preserves
+every expected cohort and lets one unremedied harmed member block acceptance.
+Fifty-four single-axis mutations test the surrounding obligations: baseline,
+worker, customer and community denominators, attrition, task/role/skill
+separation, compensation and ownership, service continuity, practical refusal,
+training and redeployment, delayed follow-up, remedy funding, pause,
+withdrawal, and residual ownership. The numbers are an authored counterexample,
+not a field estimate, but they make the book's distribution claim impossible
+to misread: a positive sum does not cancel an unresolved person.
 
 The transition contract starts with a causal map rather than an adoption plan.
 It identifies the unit of deployment, the plausible nondeployment path,

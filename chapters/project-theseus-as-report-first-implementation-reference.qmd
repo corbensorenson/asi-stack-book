@@ -4,7 +4,7 @@ chapter_id: "project-theseus-as-report-first-implementation-reference"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-07-29"
+last_updated: "2026-08-08"
 primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_plan_compiler"
@@ -35,7 +35,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically audited manuscript |
-| Last updated | 2026-07-29 |
+| Last updated | 2026-08-08 |
 | Primary source records | `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer`, `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_factsheets_ai_services_2019`, `ext_ml_reproducibility_program_2021` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -54,6 +54,8 @@ The Project Theseus reference also closes a loop opened in Part I. Human intent 
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The simpler dashboard-only baseline sees GREEN and answers the broad question. The accepted route instead follows the digest-bound import, rejects private copying and promotion, and returns one narrow conclusion.
+
 Integrated architecture remains a design target until Project Theseus can serve as a report-first implementation reference: a way to think about what dashboards, ledgers, configs, gates, and work-board records should look like when a system tries to make itself inspectable.
 
 The boundary matters. Theseus can guide the prototype path without becoming public empirical proof. A report-first implementation earns evidence status when relevant reports and artifacts are available, reviewed, and mapped to specific claims.
@@ -70,6 +72,45 @@ The implementation-reference lane shows how the ASI stack can be operated as rep
 The boundary is just as important as the reference. A report-first architecture can guide this book, but the public repo cannot claim current Theseus benchmark performance, training readiness, or self-evolution safety unless the relevant reports, commands, environment notes, and publication permissions are present here.
 
 The implementation-reference role is therefore narrower and more useful than a prototype success story. Theseus gives the book a vocabulary for operating local machinery: pressure, attempt, residual, diagnosis, report, gate, work board, checkpoint, and smallest safe intervention. The living book can adopt that vocabulary while still refusing to launder private or source-reported status into public evidence.
+
+### Worked implementation-reference trace: one retained artifact under pressure
+
+A maintainer has a narrow question: *does one retained Theseus artifact still
+decode to the bytes named by its custody record?* The tempting shortcut is to
+open a GREEN dashboard, see that retention once passed, and answer yes. The
+report-first route compiles a smaller request: inspect the public-safe import,
+replay its validator, and decide only the claim that the retained evidence can
+actually carry.
+
+The route is deliberately local and non-generative. It runs:
+
+```bash
+python3 scripts/validate_theseus_artifact_retention_replay_import.py
+```
+
+The command validates a sanitized fixture bound to source-report digest
+`a3d35452ec3a8f0db233f5985d5d0824a1d9f571ee9012970d52303bfece9759`.
+The underlying Theseus report records 41,943,527 decoded payload bytes,
+2,389,576 archived bytes, and equality between the observed payload digest and
+`5d26d57612479e1b5a0547af49e34d8ae779aef41e91b3eb2e676ad415a99da3`.
+The public import also records the pointer check, JSON parse, defeater check,
+artifact-graph row, proof-contract receipt, and storage evidence transition.
+Private paths and payload bytes remain outside the book repository.
+
+| Trace stage | Concrete record | Decision |
+|---|---|---|
+| Goal | Verify one retained payload identity. | Do not ask whether Theseus “works.” |
+| Compiled request | Public-safe digest-and-count import only. | Exclude private paths, prompts, model artifacts, and task payloads. |
+| Route and work | One deterministic validator; zero public training rows and zero external inference calls. | Reject seven mutations, including hash drift, payload copying, and chapter-core promotion. |
+| Emitted report | Exact hash match, 41,943,527 replayed bytes, one resolved storage defeater. | Accept the bounded retention-replay fact. |
+| Evidence decision | `artifact_retention_replay_gate_import`: `argument` → `prototype-backed`. | Keep the chapter core at `argument`. |
+| Residual | No clean live whole-project replay, current board, capability result, or deployment result. | Preserve the missing work instead of inheriting authority from GREEN. |
+
+This is a real report-first pass, but not the end-to-end Theseus run the mature
+chapter ultimately demands. Its value is the shape of the decision: a broad
+question becomes a bounded command, a private result becomes a sanitized
+receipt, seven attractive overclaims are rejected, and one narrow conclusion
+survives with its residual attached.
 
 The architecture-and-lineage handoff makes that distinction concrete. The
 2026-07-29 public-safe import binds published Theseus `main` commit
@@ -104,6 +145,16 @@ A report-first implementation is especially important for self-improving systems
 External positioning: Project Theseus remains a local implementation-reference case, but its report-first boundary now has source-noted reporting and reproducibility comparators. Model cards (`ext_model_cards_2019`), dataset datasheets (`ext_datasheets_datasets_2021`), AI service FactSheets (`ext_factsheets_ai_services_2019`), and the NeurIPS/JMLR reproducibility-program account (`ext_ml_reproducibility_program_2021`) show adjacent disciplines for structured disclosure, provenance, intended use, artifact review, and reproducibility checklists. Theseus report packets are broader than any one of those formats because they also need gates, residuals, work-board items, replay state, publication boundaries, and non-claims. The comparison does not assert that Theseus has produced model cards, datasheets, FactSheets, checklist-reviewed artifacts, or reproduced external results.
 
 ## Core Claim
+
+**Readable claim.** A Theseus report supports only the exact behavior, artifact
+identity, environment, and time window that its replay packet can join. A
+dashboard or GREEN gate can point to that packet; it cannot inherit the
+packet's authority.
+
+**Normative rule.** Before the book treats any Theseus result as evidence, bind
+the source revision, command, environment, inputs, outputs, digests, missing
+artifacts, review state, and maximum inference. If any required identity is
+missing or stale, narrow or block the claim and preserve the residual.
 
 [project-theseus-as-report-first-implementation-reference.core, label: Design rationale, support: argument] Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific **Implementation-Reference Evidence Packet**. It binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to `source_note_only`, `imported`, `replay_ready`, `replay_failed`, `locally_reproduced`, `stale`, `runtime_blocked`, or `archived_lineage`. Dashboards and latest files are projections only. No GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA.
 

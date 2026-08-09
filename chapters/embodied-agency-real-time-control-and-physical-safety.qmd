@@ -4,7 +4,7 @@ chapter_id: "embodied-agency-real-time-control-and-physical-safety"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-09"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -43,6 +43,8 @@ human injury may be irreversible.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler controller executes the same command because the plan is unchanged. The lease path rechecks current timing and stopping margin and degrades when either fails.
 
 A plan can be valid and an API call authorized while the physical action is
 still unsafe. A robot has mass, force, timing, contact, blind spots, wear, and a
@@ -165,6 +167,16 @@ Simulation success, an end-to-end model demonstration, a barrier certificate,
 a safe-RL label, a software rollback, or a schema-valid receipt alone
 establishes neither physical safety, human safety, effect reversal, support,
 readiness, release, transfer, nor SOTA.
+
+**Reader claim.** A physically safe command is time-dependent: the same action can become inadmissible when its observation is stale, its deadline slips, or its stopping margin shrinks.
+
+**Operational rule.** Recheck plant identity, observation age, latency, state envelope, actuator limit, and stopping distance every control period. A deadline miss or lost margin immediately narrows the lease to the independent hold or stop path; the learned controller cannot vote itself more time.
+
+### Worked control period: miss the deadline, enter the safe state
+
+A controller receives a bounded move command at tick `5`. Its plant lease expires at tick `8`; the state was observed at tick `4` with maximum age `2`; worst-case latency is `2` inside a control period of `3`. The estimated state interval `[4, 7]` lies within the declared safe interval `[2, 10]`, the requested magnitude `4` is below actuator limit `6`, and stopping distance upper bound `3` fits inside remaining margin `5`. With fallback ready and an independent stop armed, the modeled lease admits one bounded period.
+
+Now increase worst-case latency beyond the period or shrink remaining margin below stopping distance. The advanced action is no longer eligible even if its symbolic plan is unchanged. The route degrades to the independent fallback and records the failed timing or margin predicate. The local review rejects 13 admission-axis mutations and 105 lifecycle mutations, but it trusts the authored plant, estimator, and fallback fields. It therefore checks lease logic, not real deadline satisfaction, safe-set truth, braking effectiveness, or physical safety.
 
 ## Mechanism
 

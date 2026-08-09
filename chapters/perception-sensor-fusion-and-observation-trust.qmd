@@ -4,7 +4,7 @@ chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-03"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
@@ -41,6 +41,8 @@ world model, or that a calibrated detector makes physical action safe.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline treats two agreeing modalities or distinct declared roots as two votes. The chapter keeps per-channel evidence and a global dependence residual because the same pair summary can hide a shared cause.
 
 The stack cannot begin with “the camera saw a person” as if that sentence were
 raw reality. A camera emitted time-stamped measurements through a lens,
@@ -154,6 +156,16 @@ operator burden.
 
 ## Core Claim
 
+**Reader claim.** Two sensors that agree are not automatically two pieces of
+evidence. Their clocks, pose, calibration, environment, training, and attack
+surface may reduce apparent diversity to one shared cause.
+
+**Operational rule.** Preserve channel-local hypotheses and dependence roots
+before fusion. Count agreement as additional evidence only for the named use
+and reviewed dependence model; disagreement stays plural, and a material
+identity, calibration, clock, pose, dependence, or environment change
+invalidates the observation receipt.
+
 [perception-sensor-fusion-and-observation-trust.core, label: Design rationale,
 support: argument] A sensor-derived claim is eligible to update a consequential
 world model or controller only when a versioned observation contract binds the
@@ -169,6 +181,25 @@ environmental truth, causal grounding, physical safety, support, readiness,
 release, transfer, nor SOTA.
 
 ## Mechanism
+
+### Worked fusion boundary: roots 7 and 9 still share one hidden cause
+
+The local observation fixture starts with two agreeing channels whose declared
+dependence roots are 7 and 9. Inside the pairwise classifier, distinct roots
+count as two independent items; matching roots would count as one, and
+different hypotheses would remain disagreement. That is already stricter than
+sensor-count voting, but it is not enough.
+
+The fixture then constructs two cases with the same visible root pair. In the
+first, no global common cause is present and the pair is admitted. In the
+second, a shared common cause is present and the pair is rejected. Because the
+pair summary is identical, no exact classifier over roots 7 and 9 alone can
+recover the global decision. The six-transition lifecycle binds identities,
+dependence, review, use, and handoff, then invalidates the receipt for material
+change; 46 mutations and every post-invalidation event are rejected without
+changing state. The model does not discover real causes or sensor truth. It
+demonstrates why fusion must preserve an explicit unknown when its dependence
+inventory is too shallow.
 
 **Mechanism.** Preserve event time, acquisition time, processing time, pose time, and delivery time separately, then align channels only inside declared tolerance and uncertainty envelopes. **Failure mode.** A spatially plausible fusion can join measurements from different physical moments and manufacture agreement. **Non-claim.** Clock synchronization does not establish semantic correspondence or causal grounding. **Source grounding.** The multimodal taxonomy supports separating alignment from fusion, while the remaining timing and pose requirements are engineering proposals awaiting a natural campaign.
 

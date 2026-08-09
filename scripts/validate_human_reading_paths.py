@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HUMAN_CLASS = "asi-human-only"
 HUMAN_HEADING = "## Human Reading Path"
 MIN_BRIDGE_WORDS = 170
-MAX_BRIDGE_WORDS = 180
+MAX_BRIDGE_WORDS = 230
 MIN_OPENING_SENTENCE_WORDS = 11
 MIN_CLOSING_SENTENCE_WORDS = 11
 SHORT_SENTENCE_WORDS = 13
@@ -157,6 +157,28 @@ def reader_bridge_text(block_text: str) -> str:
     return normalize_text("\n".join(lines))
 
 
+def reader_narrative_text(block_text: str) -> str:
+    """Return the original bridge prose without its chapter-specific lens.
+
+    Sentence-shape and meta-language checks apply to the narrative itself. The
+    Concrete lens is separately required and uniqueness-checked; folding it into
+    the opening-sentence probe would make the label, rather than the prose,
+    determine the result.
+    """
+
+    lines = [
+        line
+        for line in block_text.splitlines()
+        if line.strip() != HUMAN_HEADING and not line.strip().startswith("**Concrete lens.**")
+    ]
+    return normalize_text("\n".join(lines))
+
+
+def concrete_lens(block_text: str) -> str:
+    matches = re.findall(r"^\*\*Concrete lens\.\*\*\s+(.+)$", block_text, flags=re.MULTILINE)
+    return normalize_text(matches[0]) if len(matches) == 1 else ""
+
+
 def heading_line(text: str, heading: str) -> int | None:
     for index, line in enumerate(text.splitlines(), start=1):
         if line.strip() == heading:
@@ -192,12 +214,15 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
         block = reading_blocks[0]
         block_text = str(block["text"])
         bridge_text = reader_bridge_text(block_text)
+        narrative_text = reader_narrative_text(block_text)
+        lens = concrete_lens(block_text)
         words = word_count(bridge_text)
         record = {
             "chapter_id": chapter_id,
             "file": relative,
             "start_line": block["start"],
             "word_count": words,
+            "concrete_lens": lens,
         }
         records.append(record)
 
@@ -211,7 +236,9 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
             errors.append(f"{relative}: Human Reading Path has {words} words; minimum is {MIN_BRIDGE_WORDS}.")
         if words > MAX_BRIDGE_WORDS:
             errors.append(f"{relative}: Human Reading Path has {words} words; maximum is {MAX_BRIDGE_WORDS}.")
-        bridge_sentences = sentences(bridge_text)
+        if not lens:
+            errors.append(f"{relative}: Human Reading Path requires exactly one non-empty Concrete lens.")
+        bridge_sentences = sentences(narrative_text)
         if bridge_sentences:
             opening_words = word_count(bridge_sentences[0])
             if opening_words < MIN_OPENING_SENTENCE_WORDS:
@@ -236,16 +263,16 @@ def validate_source_chapters(chapters: list[dict]) -> tuple[list[dict[str, objec
                 )
         if "::: " in block_text or f".{HUMAN_CLASS}" in block_text:
             errors.append(f"{relative}: Human Reading Path text contains a nested fenced-div marker.")
-        normalized_block = block_text.lower()
+        normalized_block = narrative_text.lower()
         for phrase in BANNED_BRIDGE_PHRASES:
             if phrase.lower() in normalized_block:
                 errors.append(f"{relative}: Human Reading Path uses meta-reader phrase {phrase!r}.")
-        normalized_bridge = bridge_text.lower()
+        normalized_bridge = narrative_text.lower()
         for phrase in BANNED_TEMPLATE_BRIDGE_PHRASES:
             if phrase.lower() in normalized_bridge:
                 errors.append(f"{relative}: Human Reading Path uses repeated bridge formula {phrase!r}.")
         for pattern, label in BANNED_BRIDGE_PATTERNS:
-            if pattern.search(block_text):
+            if pattern.search(narrative_text):
                 errors.append(f"{relative}: Human Reading Path uses {label}.")
         for forbidden in ("## Chapter status", "## Drafting guardrail", "## Codex test plan", "## Source crosswalk"):
             if forbidden in block_text:
@@ -277,16 +304,23 @@ def validate_generated_reader(chapters: list[dict]) -> list[str]:
                 if HUMAN_HEADING in str(block["text"])
             ]
             if len(source_blocks) == 1:
-                expected_bridge = reader_bridge_text(str(source_blocks[0]["text"]))
+                expected_bridge = reader_narrative_text(str(source_blocks[0]["text"]))
                 snippet = expected_bridge[:120]
                 if snippet and snippet not in normalize_text(text):
                     errors.append(f"{relative}: generated reader chapter lost Human Reading Path bridge prose.")
+                lens = concrete_lens(str(source_blocks[0]["text"]))
+                projected_lens, _ = build_reader_edition.humanize_reader_chapter_meta_terms(lens)
+                if projected_lens and projected_lens not in normalize_text(text):
+                    errors.append(f"{relative}: generated reader chapter lost its Concrete lens.")
     return errors
 
 
 def main() -> None:
     chapters = flatten_chapters(load_structure())
     records, errors = validate_source_chapters(chapters)
+    lenses = [str(record.get("concrete_lens", "")) for record in records]
+    if len(lenses) != len(set(lenses)):
+        errors.append("Human Reading Path Concrete lenses must be unique across canonical chapters.")
     errors.extend(validate_generated_reader(chapters))
 
     if errors:
@@ -296,9 +330,11 @@ def main() -> None:
         sys.exit(1)
 
     min_words = min((int(record["word_count"]) for record in records), default=0)
+    max_words = max((int(record["word_count"]) for record in records), default=0)
     print(
         "Human Reading Path validation passed: "
-        f"{len(records)} chapters, minimum bridge words {min_words}."
+        f"{len(records)} chapters, {len(set(lenses))} unique Concrete lenses, "
+        f"bridge range {min_words}-{max_words} words."
     )
 
 

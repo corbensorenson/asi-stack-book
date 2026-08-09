@@ -4,7 +4,7 @@ chapter_id: "physical-compute-infrastructure-energy-and-environmental-constraint
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-07-28"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_iea_energy_and_ai_2025"
   - "ext_lbnl_data_center_energy_2024"
@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Last updated | 2026-08-08 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Assigned source notes support mechanism and boundary discussion; all reported outcomes remain source-reported. |
@@ -40,6 +40,8 @@ This chapter owns the physical eligibility of compute, including dependencies an
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline schedules from accelerator count or FLOPs and reports a facility average. The chapter admits only the joint bottlenecked workload and keeps backup, cooling, grid, water, and community burdens visible.
 
 Compute is physical before it becomes an abstract scheduler resource budget. A model can be efficient per token while demand rises, a data center can hold renewable contracts while stressing its grid at another hour, a workload can fit accelerator arithmetic but stall on memory or network, and retired hardware can retain sensitive state. Every allocation has an infrastructure lifecycle.
 
@@ -88,9 +90,39 @@ flowchart LR
 
 ## Core Claim
 
+**Reader claim.** Purchased accelerators are not delivered capability, and
+lower energy per unit is not lower total impact. A workload becomes eligible
+only where compute, memory, network, storage, power, cooling, and local impact
+fit at the same place and time.
+
+**Operational rule.** Bind the workload, site, interval, hardware, topology,
+meter version, useful-work target, every capacity axis, energy and impact
+attribution, degradation, demand response, retirement, and residual owner.
+Any overrun, hidden backup energy, stale scope, or missing community burden
+blocks the capacity lease.
+
 [physical-compute-infrastructure-energy-and-environmental-constraints.core, label: Design rationale, support: argument] A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact.
 
 ## Mechanism
+
+### Worked capacity edge: two workloads consume every declared margin
+
+The authored infrastructure dossier places two workloads at one site and
+interval. Their combined demands are compute 10, memory 8, network 5, storage
+9, power 15, and cooling 5—exactly the declared capacity on every axis. A
+single extra unit on any dimension breaks eligibility even if the accelerator's
+nameplate FLOPs remain unchanged. The impact ledger separately attributes
+totals of 12 and 15, including facility overhead, backup energy, and cooling;
+hiding backup energy rejects the accounting claim.
+
+The six-transition review also invalidates the receipt when workload, site,
+interval, hardware, or meter version changes. Its counterexamples show why two
+popular summaries fail: the same energy headline can accompany opposite useful
+delivery, and better unit efficiency can accompany greater total impact after
+demand changes. The values are authored capacity arithmetic, not a facility
+measurement. They make the physical boundary legible without pretending that
+the book measured a grid, water system, community burden, or sustainable
+service.
 
 The workload-to-capacity compiler translates a model request into a physical
 bill of requirements. It includes useful-output and quality targets, precision,

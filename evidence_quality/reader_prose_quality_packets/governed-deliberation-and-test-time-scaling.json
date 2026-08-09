@@ -1,0 +1,34 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "governed-deliberation-and-test-time-scaling",
+  "chapter_file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+  "chapter_sha256": "f772e44714b0e6673f02438793979538c384d70c63186f36803d4ee62efaae58",
+  "chapter_role": "speculative-research",
+  "reader_spine_unit": "unit-20-resource-and-recovery-economics",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked trace: the polished patch that lost the correct first answer",
+    "actor_or_system": "A fixed three-candidate maintenance deliberator and correlated self-verifier evaluating a database migration",
+    "attempted_action": "Decide whether a legacy column can be deleted after the first candidate correctly notices an old rollback dependency and later candidates omit it.",
+    "observable_outcome": "The self-verifier selects the polished but wrong consensus, an independent repository check restores the missing dependency, and execution remains blocked with an owned residual.",
+    "failed_or_tested_boundary": "The trace tests whether more candidates and self-scoring monotonically improve correctness; a correlated verifier can turn an initially correct answer into a wrong final choice.",
+    "residual_owner": "Planning retains the bounded recommendation while the migration owner must update the rollback script or retain the column; Runtime receives no execution authority.",
+    "evidence_boundary": "The chapter also reports a real authored held-out run where fixed deliberation scored 11/32 and direct or adaptive routes scored 12/32; that result rejects usefulness on this corpus, not all test-time compute."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: the polished patch that lost the correct first answer",
+    "state_labels": ["initial_candidate_correct", "fixed_extra_compute", "correlated_selection_error", "independent_check", "blocked_handoff"],
+    "source_or_fixture_refs": ["experiments/p4_routing_deliberation/results/confirmatory_result.json", "experiments/p4_routing_deliberation/preregistration.json", "chapters/governed-deliberation-and-test-time-scaling.qmd"],
+    "maximum_inference": "The held-out authored corpus rejects useful gain from the tested extra-compute and stopping policies while preserving corruption accounting; it does not refute every deliberation method, verifier, model, or task."
+  },
+  "counterexample_or_simpler_baseline": "Direct generation is the strongest simpler baseline and matched adaptive stopping at 12/32 while beating fixed deliberation's 11/32; more compute must earn admission after corruption, verification, and total cost.",
+  "readable_claim": "The contribution is not a superior search algorithm. It is the transaction boundary around any such algorithm: a policy may allocate computation and emit candidates, but its own score cannot settle their truth or authority.",
+  "normative_rule": "The system may branch, revise, compare, or stop. It must keep the cost, rejected candidates, verifier limits, and residual questions visible.",
+  "formal_binding": {"claim_id": "governed-deliberation-and-test-time-scaling.core", "support_state": "argument", "anchor": "resource-, and time-specific inference lease"},
+  "claim_atom_and_source_links": ["governed-deliberation-and-test-time-scaling.core", "ext_tree_of_thoughts_2023", "ext_test_time_compute_scaling_2024", "ext_deepseek_r1_2025"],
+  "caveat_consolidation": {"local_caveat": "The trace binds its concrete failure to the tested policy and authored corpus and distinguishes corruption from failure to repair.", "consolidated_disposition": "Candidate, verifier, stopping, trace-faithfulness, difficulty, task, model, resource, safety, and transfer limits remain in their dedicated evidence sections.", "distinct_limitations_preserved": true},
+  "bookkeeping_surface_disposition": "The narrative trace and four-arm result remain because candidate-history corruption is the argument; detailed raw candidate and scorer records stay in experiment artifacts.",
+  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
+  "editorial_diagnostics": {"mega_sentence_disposition": "The readable transaction-boundary statement and short rule lead into the retained exact inference-lease claim.", "hedge_disposition": "The tested-corpus ceiling is preserved because it prevents a local negative result from becoming a universal refutation.", "table_disposition": "The result table and candidate trace are argument-bearing; raw bookkeeping remains in the experiment directory."},
+  "non_claims": ["The result does not refute every test-time compute or deliberation strategy.", "The trace does not establish verifier truth, planning correctness, or execution authority.", "The editorial packet does not move support or release state."]
+}

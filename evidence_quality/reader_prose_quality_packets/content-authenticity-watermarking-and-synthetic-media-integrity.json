@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+  "chapter_file": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
+  "chapter_sha256": "743e60268b3c0771ff4238fb93f5fcbf522fd082ef8b7bf0b3566f71a6f85e43",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-19-readiness-and-liveness",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked transformation: a valid ingredient enters an unbound composite",
+    "actor_or_system": "An editor, a credentialed photograph, a generated region, and an export tool without region binding",
+    "attempted_action": "Crop the signed ingredient, combine it with generated media, and export a composite while preserving only claims that remain bound to the new rendition.",
+    "observable_outcome": "The output receives a new identity, the signed photograph remains a supported ingredient, and the unsupported region relationship becomes an explicit lineage break rather than a whole-image badge.",
+    "failed_or_tested_boundary": "The scene tests whether one valid ingredient can authenticate an unbound composite or whether missing provenance can identify synthetic origin; both shortcuts are rejected.",
+    "residual_owner": "The editor or distributing platform owns the unresolved region lineage, disclosure, and any later correction route.",
+    "evidence_boundary": "The local artifact supplies finite authored-field and mutation checks only; it does not test a real signer, editor, watermark, detector, platform transformation, or viewer comprehension."
+  },
+  "worked_trace": {
+    "heading": "Worked transformation: a valid ingredient enters an unbound composite",
+    "state_labels": ["credentialed_ingredient", "new_rendition_identity", "unsupported_region_binding", "explicit_lineage_break", "bounded_downstream_use"],
+    "source_or_fixture_refs": ["tests/fixtures/proof_models/content_authenticity_envelope.json", "scripts/validate_content_authenticity_review.py"],
+    "maximum_inference": "The finite review demonstrates evidence-type separation, transformation accounting, and rejection of truth or origin inference from authored signals; it establishes no real provenance correctness, detector robustness, compliance, or social effect."
+  },
+  "counterexample_or_simpler_baseline": "The simpler baseline carries one green badge from a signed ingredient to the whole composite. The chapter instead binds each claim to its rendition or region and exposes unsupported transformations.",
+  "readable_claim": "Authenticity evidence can show who asserted what about an asset and how its bytes changed. It cannot, by itself, show that the depicted event is true or that missing provenance means the asset is synthetic.",
+  "normative_rule": "Preserve provenance, watermark, fingerprint, detector, disclosure, and contextual evidence as separately typed signals. After every transformation, either verify the lineage, record a derivation, expose a break, or retain an unresolved relationship; never turn absence or signature validity into a truth verdict.",
+  "formal_binding": {
+    "claim_id": "content-authenticity-watermarking-and-synthetic-media-integrity.core",
+    "support_state": "argument",
+    "anchor": "layered authenticity envelope that binds asset identity"
+  },
+  "claim_atom_and_source_links": ["content-authenticity-watermarking-and-synthetic-media-integrity.core", "ext_c2pa_specification_2_3_2025", "ext_international_ai_safety_report_2026"],
+  "caveat_consolidation": {
+    "local_caveat": "The worked scene states once that its executable checks concern authored fields rather than a deployed media ecosystem.",
+    "consolidated_disposition": "Signer honesty, transformation retention, detector calibration, accessibility, regulation, consent, remedy, and semantic-truth limits remain where their distinct mechanisms require them.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The 42-axis mutation count remains beside the worked trace because it makes the narrow local boundary auditable; detailed validator inventories remain in formal and evidence surfaces.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The readable claim and operational rule split origin, transformation, evidence, and truth boundaries before the formal bundle.",
+    "hedge_disposition": "The scene consolidates its finite-model limit once while preserving distinct modality, trust, consent, regulatory, and remedy limits.",
+    "table_disposition": "The transformation table remains because its rows compare concrete lineage and auxiliary-signal questions rather than report project status."
+  },
+  "non_claims": [
+    "The worked composite is an explanatory trace, not an observed platform incident.",
+    "The finite review does not establish provenance correctness, content truth, origin, or compliance.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
+}

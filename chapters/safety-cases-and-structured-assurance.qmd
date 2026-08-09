@@ -4,7 +4,7 @@ chapter_id: "safety-cases-and-structured-assurance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_gsn_community_standard_2011"
   - "ext_evaluations_safety_cases_scheming_2024"
@@ -43,6 +43,8 @@ correct, that a control works, that a system is safe, or that anyone may deploy.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The connected-graph baseline treats compilation as acceptance. The assurance packet separates compilation, challenge, review, and decision.
 
 Complex systems can accumulate evidence far faster than they accumulate understanding.
 There may be test results, model cards, policy documents, proof files, incident
@@ -143,6 +145,10 @@ underlying scientific uncertainty remains.
 ## Core Claim
 
 [safety-cases-and-structured-assurance.core, label: Design rationale, support: argument] Safety Cases and Structured Assurance owns a deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet: it compiles exact governed references and bounded support or challenge relations, preserves alternatives, dissent, staleness, countercases, conflicts, overrides, costs, lineage, and downstream invalidation, and routes only a scoped case status to existing decision owners; a connected, rendered, notation-conformant, reviewed, accepted, or synthetically complete case alone establishes neither hazard completeness, evidence adequacy, argument validity, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, nor SOTA.
+
+**Reader claim.** A safety case is a structured argument and challenge surface, not a certificate that the system is safe or permission to deploy it.
+
+**Operational rule.** Bind each claim to exact deployment context, evidence version, assumptions, countercases, defeaters, safeguards, thresholds, reviewers, and residual owners. Stale evidence or an unresolved defeater blocks only the affected route and can advance at most to readiness review, never directly to release.
 
 ## Mechanism
 

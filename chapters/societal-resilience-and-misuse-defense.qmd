@@ -4,7 +4,7 @@ chapter_id: "societal-resilience-and-misuse-defense"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_singapore_consensus_2026"
   - "ext_international_ai_safety_report_2026"
@@ -26,6 +26,7 @@ open_evidence_gaps:
 | Claim label / support | Design rationale / `argument` |
 | Evidence available | current international taxonomies, incident-response standard, worked misuse-safety-case method |
 | Evidence absent | deployed network, causal harm reduction, universal coverage, or public legitimacy result |
+| Last updated | 2026-08-08 |
 
 Source loading state for resilience material: review covers the current taxonomies, incident-response
 lifecycle, and worked misuse-safeguard case. None reports a deployment or
@@ -42,6 +43,8 @@ but does not excuse, prevention.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline closes the incident after a model is stopped, an account is removed, or provider service returns. The chapter tracks affected people, copies, institutions, correction, remedy, and open paths separately.
 
 Even a strong model safeguard can fail under adaptive pressure, stolen access,
 distribution shift, or a new toolchain. Harm may also begin outside the model
@@ -207,6 +210,17 @@ cross-jurisdictional privacy and due-process conflicts.
 
 ## Core Claim
 
+**Reader claim.** Stopping one model, account, or upload is not societal
+recovery. Resilience begins where provider control ends: with affected people,
+copied artifacts, other institutions, public correction, service continuity,
+remedy, and unresolved harm.
+
+**Operational rule.** Keep resistance, absorption, service restoration,
+harmed-party recovery, correction, and adaptation as separate outcomes. Close
+an incident only when every known affected path is closed or assigned to an
+authorized owner as a visible residual; provider-level success cannot stand in
+for population recovery.
+
 [societal-resilience-and-misuse-defense.core, label: Design rationale, support: argument]
 Societal misuse defense should be operated as a domain-specific
 resist-absorb-recover-adapt network with shared incident identity, lawful
@@ -216,6 +230,27 @@ residual ownership; prevention metrics alone establish neither resilience nor
 acceptable harm.
 
 ## Mechanism
+
+### Worked incident boundary: the service is restored, three paths remain
+
+The authored dossier in
+`tests/fixtures/proof_models/societal_resilience_dossier.json` deliberately
+separates containment, service recovery, and harmed-party recovery from path
+closure. It records all three as observed, yet its three enumerated incident
+paths remain open. The packet can therefore preserve a successful provider
+response without promoting the stronger sentence “the population recovered.”
+An owned residual and recurrence plan remain necessary even after the service
+dashboard is green.
+
+The local review makes this boundary adversarial. It rejects 45 single-axis
+mutations, keeps response authority from transferring automatically to another
+organization, and proves closure only over the paths actually enumerated. Two
+collision pairs show why the distinction matters: the same provider signals
+can accompany opposite population-recovery states, and the same response speed
+can accompany opposite false-intervention and remedy outcomes. These are
+finite authored records, not evidence that a real victim received remedy or a
+cross-organization network reduced harm. They prevent the narrower provider
+result from laundering the broader societal claim.
 
 ### The four-stage resilience contract
 

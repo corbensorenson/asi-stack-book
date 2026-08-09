@@ -4,7 +4,7 @@ chapter_id: "content-authenticity-watermarking-and-synthetic-media-integrity"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 primary_sources:
   - "ext_c2pa_specification_2_3_2025"
   - "ext_eu_article_50_transparency_guidelines_2026"
@@ -26,6 +26,7 @@ open_evidence_gaps:
 | Claim label / support | Design rationale / `argument` |
 | Current regulatory context | EU Article 50 transparency obligations are stated by the Commission to apply from 2 August 2026, subject to scope and transition details |
 | Local evidence | architecture and planned transformation harness only |
+| Last updated | 2026-08-08 |
 
 Source loading state for authenticity material: review covers C2PA 2.3, current EU transparency guidance, and the 2026
 international risk synthesis. Standard conformance, legal interpretation, and
@@ -41,6 +42,8 @@ machine oracle for truth, consent, legality, or social meaning.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The simpler baseline carries one green badge from a signed ingredient to the whole composite. The chapter instead binds each claim to its rendition or region and exposes unsupported transformations.
 
 Supply-chain provenance tracks where models, code, data, and releases came
 from. Media integrity follows a different object: the text, image, audio,
@@ -314,6 +317,16 @@ platform, or verifier as complete or unbiased.
 
 ## Core Claim
 
+**Reader claim.** Authenticity evidence can show who asserted what about an
+asset and how its bytes changed. It cannot, by itself, show that the depicted
+event is true or that missing provenance means the asset is synthetic.
+
+**Operational rule.** Preserve provenance, watermark, fingerprint, detector,
+disclosure, and contextual evidence as separately typed signals. After every
+transformation, either verify the lineage, record a derivation, expose a break,
+or retain an unresolved relationship; never turn absence or signature validity
+into a truth verdict.
+
 [content-authenticity-watermarking-and-synthetic-media-integrity.core, label: Design rationale, support: argument]
 Synthetic-media integrity should use a layered authenticity envelope that
 binds asset identity, generator and editor claims, signed provenance, content
@@ -323,6 +336,29 @@ every signal retains its own semantics, and no missing or valid signal becomes
 a universal truth judgment.
 
 ## Mechanism
+
+### Worked transformation: a valid ingredient enters an unbound composite
+
+Suppose an editor imports a photograph with a valid signed provenance chain,
+crops it, places generated material beside it, and exports through a tool that
+cannot bind regions in the composite. A one-badge design carries the green
+credential forward and makes the whole image look endorsed. The envelope does
+something less convenient and more honest: it assigns the export a new
+rendition identity, retains the photograph as a credentialed ingredient,
+records the crop and composite actions, and marks the region-to-output link as
+unsupported. The generated region receives only the signals actually attached
+to it. The result is neither “verified image” nor “fake image”; it is a mixed
+artifact with one supported ingredient and one explicit lineage break.
+
+The repository tests that distinction with the authored envelope in
+`tests/fixtures/proof_models/content_authenticity_envelope.json`. Its review
+separates the evidence types, accounts for four declared transformations, and
+rejects 42 single-axis mutations with an exact repair or refusal disposition.
+It also proves two deliberately uncomfortable boundaries: identical technical
+signals can coexist with opposite semantic truth, and missing signals cannot
+identify human or synthetic origin. Those are finite consequences of authored
+fields—not a test of a real signer, editor, watermark, detector, platform, or
+viewer—but they make the reader-facing rule executable and falsifiable.
 
 ### The authenticity envelope
 

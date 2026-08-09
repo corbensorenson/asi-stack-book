@@ -4,7 +4,7 @@ chapter_id: "privacy-data-rights-and-information-flow-governance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_nist_privacy_framework_2020"
   - "ext_eu_gdpr_2016"
@@ -56,6 +56,8 @@ failed defense can narrow an architectural claim.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The root-store baseline deletes one row and closes the ticket. The lifecycle path separately dispositions four known copies and preserves unknown-copy and learned-influence residuals.
 
 A system can keep every secret from intruders and still violate privacy. It can
 collect more than needed, reuse data for another purpose, combine it with other
@@ -188,6 +190,16 @@ attacks, positive controls, derivative propagation, and joint cost.
 ## Core Claim
 
 [privacy-data-rights-and-information-flow-governance.core, label: Design rationale, support: argument] An information use is eligible for bounded execution only when a prospectively declared record binds the affected person or group, data categories and sources, exact purpose and processing operation, claimed authority and jurisdiction, recipients, retention, minimization decision, complete-enough flow and derivative graph, cross-user boundary, privacy unit, adjacency relation, accountant and budget where applicable, threat model and attack plan, rights state, requested remedy, exceptions, residual copies and influence, costs, and non-authorities; authorized access, consent text, a privacy label, a low observed attack rate, one deleted record, a changed model response, a completed rights ticket, a formal record proof, or a source-reported result alone establishes neither purpose compatibility, privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, nor SOTA.
+
+**Reader claim.** Deleting one row is not the same as removing every copy, derivative, model influence, or future disclosure; each outcome needs its own receipt and residual.
+
+**Operational rule.** For each access, correction, export, restriction, or deletion request, bind the governed root, known-copy identities, recipients, derivatives, backups, exceptions, learned influence, and response owners. Revoke use first, record exact dispositions, and never call known-copy closure total erasure.
+
+### Worked deletion request: four known copies, unknown influence
+
+A person requests deletion of a training record. The lifecycle inventory names four known copies: the source row, a curated shard, a backup, and a derived feature table. Revocation first removes modeled authority for further ordinary use. The transaction then records a separate disposition for each exact copy; all 24 permutations of the four-copy inventory must lead to the same canonical identity set. Once deletion is recorded, later lifecycle events cannot reopen ordinary use.
+
+The request can close only with explicit residuals: unknown copies may exist, recipient systems may retain lawful exceptions, prior checkpoints may carry learned influence, and a changed model response would not prove forgetting. The finite transaction rejects fourteen lifecycle controls and all eight event kinds after terminal recording. It proves duplicate-free known-copy custody, not inventory completeness, deletion in fact, total erasure, privacy, legal compliance, behavioral forgetting, or influence removal.
 
 ## Mechanism
 

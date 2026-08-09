@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "rmi"
   - "rgs"
@@ -60,6 +60,8 @@ Readiness is therefore an obligation state, not a score. A target is ready only 
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The badge baseline carries readiness across a minor version. The lease path binds evidence to the exact executable target and expires on change.
+
 Routing can identify a plausible specialist, but plausibility is not readiness. The readiness gate asks when a route, model, tool, memory packet, procedure, runtime lane, or replacement is allowed to become ordinary execution and when it must stay in shadow, canary, escrow, quarantine, diagnostic use, or review. The gate is where evidence becomes permission, and where missing evidence becomes an explicit operating mode instead of a hidden exception.
 
 Uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should keep the residual, expiry, fallback path, and next review condition visible until the evidence catches up. That makes improvement less dramatic but more durable: new capability can approach production without being treated as already safe.
@@ -92,6 +94,16 @@ The missing primitive is a transition record. A lifecycle move should say what c
 ## Core Claim
 
 [readiness-gates-residual-escrow-and-quarantine.core, label: Design rationale, support: argument] For an exact versioned target, consumer, use, workload family, authority and rights envelope, and evaluation horizon, readiness should issue an expiring routability lease only from independently owned gate evidence, complete per-check state, preserved regression floors, inherited residual custody, allowed and blocked routes, monitoring, rollback and fallback obligations, and review triggers; failed, stale, waived, quarantined, superseded, retired, or lineage-invalidated targets cannot enter ordinary use, and split, merge, retrain, replace, rollback, and retirement transitions must preserve affected descendants, artifacts, effects, and residual owners.
+
+**Reader claim.** Readiness is an expiring permission for one target and use, not a permanent badge attached to a model name.
+
+**Operational rule.** Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. Any target change or stale gate blocks ordinary use until rerun; quarantine always carries a working fallback and residual owner.
+
+### Worked stale gate: the model changed after qualification
+
+Model version `v7` passes its required gates for a read-only coding workload and receives a bounded ordinary-use lease. A tokenizer patch produces version `v7.1` without changing the marketing name. The prior functional score still looks relevant, but the target identity and some downstream artifacts changed. Reusing the old lease would detach evidence from the executable target, so `v7.1` enters diagnostic-only quarantine until affected gates and regression floors rerun.
+
+The fallback returns traffic to `v7`; the residual escrow names the tokenizer change, dependent caches, unrerun checks, and owners. If `v7.1` later qualifies, it receives a new expiring lease rather than inheriting the old badge. The finite lifecycle rejects stale-gate reuse, ordinary routing from quarantine, missing regression floors, unsupported supersession, and retirement without receipts. These checks preserve readiness state; they do not establish gate adequacy, evaluator independence, natural-workload safety, monitoring efficacy, or deployment merit.
 
 The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but no particular module is claimed to currently pass those gates.
 

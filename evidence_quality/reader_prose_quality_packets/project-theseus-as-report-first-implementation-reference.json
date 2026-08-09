@@ -1,0 +1,57 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "project-theseus-as-report-first-implementation-reference",
+  "chapter_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+  "chapter_sha256": "8ba383e3ba2b37a32a30a2e6fe0ae3bc3d374dace00b25b12c52c00dc83a8a2b",
+  "chapter_role": "implementation-case",
+  "reader_spine_unit": "unit-21-recursive-integration-and-prototype",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked implementation-reference trace: one retained artifact under pressure",
+    "actor_or_system": "A maintainer auditing one retained Theseus artifact",
+    "attempted_action": "Determine whether the retained payload still matches its recorded identity without importing private payloads into the public book.",
+    "observable_outcome": "The sanitized report records 41,943,527 decoded bytes, an exact payload digest match, and seven rejected overclaim mutations.",
+    "failed_or_tested_boundary": "A historical GREEN projection cannot substitute for current artifact identity, exact replay scope, or chapter-core evidence.",
+    "residual_owner": "The Project Theseus argument-exit campaign owns clean live replay, current-board, capability, and deployment residuals.",
+    "evidence_boundary": "This is a validated public-safe import of a source-report replay fact, not a clean live whole-project replay or model-quality result."
+  },
+  "worked_trace": {
+    "heading": "Worked implementation-reference trace: one retained artifact under pressure",
+    "state_labels": ["goal", "compiled_request", "deterministic_validation", "bounded_evidence_transition", "open_residual"],
+    "source_or_fixture_refs": ["docs/theseus_artifact_retention_replay_import.md", "scripts/validate_theseus_artifact_retention_replay_import.py"],
+    "maximum_inference": "Only the bounded artifact-retention replay-gate import moves to prototype-backed; the chapter core and all runtime, capability, safety, deployment, and transfer claims remain at their prior states."
+  },
+  "counterexample_or_simpler_baseline": "The simpler dashboard-only baseline sees GREEN and answers the broad question. The accepted route instead follows the digest-bound import, rejects private copying and promotion, and returns one narrow conclusion.",
+  "readable_claim": "A Theseus report supports only the exact behavior, artifact identity, environment, and time window that its replay packet can join.",
+  "normative_rule": "Before the book treats any Theseus result as evidence, bind the source revision, command, environment, inputs, outputs, digests, missing artifacts, review state, and maximum inference. If any required identity is missing or stale, narrow or block the claim and preserve the residual.",
+  "formal_binding": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.core",
+    "support_state": "argument",
+    "anchor": "Implementation-Reference Evidence Packet"
+  },
+  "claim_atom_and_source_links": ["project-theseus-as-report-first-implementation-reference.core", "project_theseus_whitepaper", "theseus_architecture_gate", "ext_ml_reproducibility_program_2021"],
+  "caveat_consolidation": {
+    "local_caveat": "The trace explicitly says it is a real report-first pass but not the mature end-to-end Theseus run.",
+    "consolidated_disposition": "Existing source, replay, capability, deployment, and publication limits remain in the chapter guardrail, AI-only evidence note, and open-evidence-gap surface.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The six-stage table remains because the decision sequence is the argument; large validator inventories remain in the status and evidence surfaces rather than being duplicated in the new prose.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The new reader claim and normative rule precede the retained exact formal binding.",
+    "hedge_disposition": "One local maximum-inference boundary is kept beside the trace; distinct limitations remain in canonical boundary surfaces.",
+    "table_disposition": "The trace table is retained as a chronological decision aid rather than status bookkeeping."
+  },
+  "non_claims": [
+    "The trace does not establish a clean live whole-project Theseus replay.",
+    "The trace does not establish model quality, capability, safety, or deployment readiness.",
+    "The editorial revision does not move the chapter-core support or release state."
+  ]
+}

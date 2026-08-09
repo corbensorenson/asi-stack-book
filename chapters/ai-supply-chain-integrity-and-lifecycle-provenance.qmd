@@ -4,7 +4,7 @@ chapter_id: "ai-supply-chain-integrity-and-lifecycle-provenance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "ext_nist_cscrm_2022"
   - "ext_slsa_build_track_1_2"
@@ -50,6 +50,8 @@ unrecorded path, unsafe, illegally distributed, or unauthorized for deployment.
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** The BOM baseline records the vulnerable component but misses an indirect build-image descendant. The affected-path controller follows exact lineage and blocks all three consumers.
 
 An AI system is assembled from models, datasets, tokenizers, libraries,
 training jobs, cloud services, policy files, and derivatives. A familiar name
@@ -156,6 +158,16 @@ invalidation reaches declared downstream decisions without rewriting history.
 ## Core Claim
 
 [ai-supply-chain-integrity-and-lifecycle-provenance.core, label: Design rationale, support: argument] Every governed AI supply-chain decision should bind a prospectively frozen consumer, requested use, threat and assurance model, materiality policy, and relation-specific asset closure to exact subject/content and lineage identity; typed data, code, model, prompt/policy, dependency, build/training/evaluation, environment, hardware/firmware, supplier/service, signer, advisory, transformation, release, recipient, descendant, retention, and retirement state; issuer, verifier, policy, freshness, trust and dependency boundaries; observed artifact and lifecycle effects; append-only invalidation and acknowledged affected-path propagation; restoration, compensation, disclosure, privacy/rights, availability, cost, and terminal residual ownership. Missing, inconsistent, stale, unverifiable, revoked, compromised, materially incomplete, or unresolved-critical predicates should route each affected consumer to a named non-ordinary state, while no graph, BOM, checksum, signature, provenance statement, SLSA level, layout, supplier claim, advisory, quarantine, conformance result, or finite proof by itself establishes world-complete lineage, assertion truth, artifact correctness, absence of compromise, data fitness or rights, model safety, legal compliance, readiness, release merit, or deployment authority.
+
+**Reader claim.** Provenance matters only if a compromised ancestor can find and stop every affected descendant; a signed bill of materials that cannot drive response is documentation, not control.
+
+**Operational rule.** Bind every artifact to exact lineage and consumer scope, append invalidations rather than overwriting history, compute relation-specific descendant closure, and require acknowledgment from each response owner. Stale inventories, incomplete closure, or ordinary use after revocation force quarantine.
+
+### Worked revocation: one component reaches three projects
+
+A critical advisory revokes one dependency used by three projects. The current component inventory identifies the exact artifact digest and its three affected paths. The supply-chain controller appends the advisory and revocation, moves all three consumers out of ordinary use, assigns response owners, and keeps them quarantined until rebuilt, replaced, retired, or explicitly residualized. One project cannot clear the incident merely because its direct package list omits the dependency; lineage through a build image still counts.
+
+The local affected-path harness preserves one quarantined three-project record. It rejects ten fixture mutations and eleven lifecycle controls, checks 24 component-inventory permutations, and refuses five event kinds after revocation. Removing a descendant, substituting the digest, overwriting history, admitting a stale bill of materials, or recording custody after invalidation all fail without changing accepted state. These checks show finite propagation behavior, not world-complete lineage, signature truth, absence of compromise, model safety, or legal compliance.
 
 This composite proposition remains at `argument`. It is refuted for a frozen
 scope by any ordinary-use route that violates the declared identity, closure,

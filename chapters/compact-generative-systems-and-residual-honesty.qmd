@@ -4,7 +4,7 @@ chapter_id: "compact-generative-systems-and-residual-honesty"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-07-31"
+last_updated: "2026-08-08"
 primary_sources:
   - "cgs"
   - "rgs"
@@ -41,7 +41,7 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-08-08 |
 | Primary source records | Exact mapped records include `cgs`, `rgs`, `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `bbvca_v9`, `bbvca_main`, `rankfold_neuralfold`, `treellm`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope`, `ext_raptor_2024`, `qcsa_whitepaper`, and `orcp_moecot` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -59,6 +59,8 @@ Compactness is therefore a state claim, not a word-count claim. A representation
 
 ::: {.asi-human-only}
 ## Human Reading Path
+
+**Concrete lens.** A naive response would hide the failure or declare the whole idea dead. Residual honesty retains the 714.0-versus-73.25 observation, refutes the frozen claim, and limits the causal conclusion to an inadequate implementation.
 
 Once the stack has routed work onto governed compute, compactness becomes tempting. Smaller seeds, summaries, procedures, generators, and generated reconstructions matter only when the remaining burden is honest.
 
@@ -92,6 +94,16 @@ Compactness also does not imply interpretability or safety. A compressed rule ca
 Another insufficiency is evaluator capture. A compact generator can appear efficient when it also decides whether its own outputs are adequate. Residual honesty requires an external or at least separately governed verifier whenever the generated result affects claims, tools, memory, or self-improvement.
 
 ## Core Claim
+
+**Reader claim.** A representation is compact only after reconstruction,
+verification, repair, fallback, and residual costs are counted beside its seed
+or payload.
+
+**Operational rule.** Compare the complete transmitted and reconstructed
+system against strong literal and standard-compression baselines under the same
+quality contract. If the compact route loses, preserve the negative result,
+diagnose implementation competence, and fall back without hiding the unpaid
+burden.
 
 [compact-generative-systems-and-residual-honesty.core, label: Design rationale, support: argument] For an exact versioned source artifact or state, consumer and use, reconstruction or semantic-adequacy contract, allowed loss, authority and rights envelope, workload distribution, cost boundary, and evaluation horizon, a compact representation should be admitted only when its generator, search, metadata, semantic lease, verifier, repair, fallback, interface, human, governance, recovery, and residual burdens are fully attributed; exactness or scoped loss is independently checked against the consumer contract; source lineage, supersession, and fallback remain executable; and the selected representation improves a preregistered joint utility-and-total-burden frontier over strong matched literal, standard codec, model-compression, retrieval, and semantic baselines. Smaller storage, tokens, parameters, or a finite fixture alone establishes neither useful compression nor semantic adequacy, and any hidden, moved, deferred, or discharged burden must retain state, evidence, owner, due condition, descendants, and reopening triggers.
 
@@ -134,6 +146,45 @@ Appendix C carries exact reviewed mappings for all 17 assigned sources. RAPTOR i
 Compression begins before bytes. The ASI Stack first asks whether a smaller structure can generate, govern, predict, reconstruct, or coordinate a larger target without hiding the burden it fails to carry. CGS supplies the seed/rule/memory/residual/governance tuple, BBVCA supplies the stricter generate/verify/repair exactness receipt, RGS and RMI supply ratchet pressure, BugBrain and Simulation Scaling keep local resource limits visible, and Project Theseus keeps the evidence-before-growth discipline attached to implementation work.
 
 Compact generation's local delta is residual custody. The common governed-cognition pattern can require a record and a receipt; compact generation adds the conservation rule for compressed representations: a smaller seed, generator, semantic node, or repaired reconstruction is not adequate until reconstruction burden, verification burden, repair burden, fallback burden, consumer policy, and owner of any remaining residual are still visible. Compactness earns no architectural credit when it merely moves work into another layer's unpriced future.
+
+### Worked negative result: when the compact core made the packet larger
+
+The KERC campaign gives this chapter the negative example it needs. Before the
+confirmatory run, the project froze a broad efficiency claim and a falsifier:
+the complete Kernel representation had to preserve task quality while beating
+simple total-description baselines after packet overhead and residuals were
+counted. The authored corpus contained 192 bilingual templated records, with a
+64-record held-out partition, five seeds, eight baseline families, 13
+ablations, and 20 attacks.
+
+The result did not merely miss by a little. Held-out Kernel, surface, and
+simple-handle cores all scored `0.5`, while the complete Kernel packets averaged
+`714.0` bytes. The best simple total-description representation averaged
+`73.25` bytes. One of the twenty attacks also escaped, and the energy estimate
+was uncalibrated. Under the preregistered rule, the broad efficiency claim was
+refuted for that frozen implementation and corpus.
+
+The disposition matters as much as the numbers. A later competence audit found
+chance-level task performance, a missing adversarial-polarity training class,
+small linear cores, a compiler and verifier authored together, redundant
+residual storage, and uncalibrated energy. The observation remains real, but
+its causal reach is narrower: this implementation was inadequate. It does not
+show that every learned compiler, hierarchical residual scheme, language,
+model family, or exact-handle design must fail.
+
+The honest route therefore has four steps:
+
+1. retain the `714.0` versus `73.25` byte result and tied `0.5` quality;
+2. classify the tested implementation as an N1 inadequate attempt;
+3. refuse the broad architecture claim while preserving two separately bounded
+   finite observations;
+4. require a competent replacement implementation and the same total-system
+   accounting before reopening the question.
+
+A naive benchmark would either bury the failure or declare the whole idea dead.
+Residual honesty does neither. It records what failed, why the test cannot bear
+a universal conclusion, and which stronger attempt would be capable of
+changing the claim.
 
 After the runtime reference records what was routed, executed, replayed, and left residual, compact generation asks whether any part of that burden can be represented by a smaller lawful structure. The answer is useful only when the record still exposes the generation cost, verification cost, correction channel, fallback path, and authority boundary.
 

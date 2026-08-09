@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-02"
+last_updated: "2026-08-09"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -80,6 +80,8 @@ verification event, not a truth machine.
 ::: {.asi-human-only}
 ## Human Reading Path
 
+**Concrete lens.** The status-label baseline copies “accepted” forward. The proof-carrying envelope binds verdict to artifact, evidence, interpretation, probes, dissent, and expiry.
+
 Some claims are cheap enough to remain drafts while evidence matures. Other claims shape plans,
 permissions, releases, or safety boundaries. Those claims need more than a
 well-written paragraph.
@@ -150,6 +152,16 @@ before a claim receives stronger standing?
 ## Core Claim
 
 [spinoza-verification-and-proof-carrying-claims.core, label: Design rationale, support: argument] Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects.
+
+**Reader claim.** A passing verifier result belongs to one interpretation, evidence set, artifact version, and claim scope; changed evidence or unresolved dissent prevents silent reuse.
+
+**Operational rule.** Bind every verdict to exact claim semantics, evidence digest, verifier and reviewer identities, probes, failed attempts, dissent, constraints, required actions, expiry, and ledger effect. Negative results cannot promote, and changed evidence requires a new review rather than editing the old verdict.
+
+### Worked tribunal reuse: the evidence changed after acceptance
+
+A high-risk artifact receives an accepted tribunal verdict after independent review and adversarial probes. The verdict records one unresolved dissent but constrains use to a narrow read-only environment. A later artifact version changes its tool interface and adds new evidence. A status-only system reuses the old “accepted” label. The proof-carrying envelope instead detects the artifact and evidence digest changes, preserves the prior verdict, and routes the successor to new probes and review.
+
+If the dissent was never recorded, the route cannot call the earlier review complete. If the new verdict requires actions, those actions need explicit constraints and owners before any downstream ledger change. The finite record model rejects passed verifiers without artifacts, negative results with promotion, high-risk acceptance without probes or independence, changed-evidence reuse, missing dissent, and unconstrained action verdicts. It does not prove verifier correctness, reviewer independence, semantic mapping, evidence truth, or artifact safety.
 
 The claim remains at `argument` support. Spinoza supplies the central
 discipline: neural systems may propose, but structured verifiers decide; formal
