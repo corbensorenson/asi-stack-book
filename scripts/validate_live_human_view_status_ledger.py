@@ -30,6 +30,10 @@ STYLES_ASSET = ROOT / "assets" / "styles.scss"
 
 WORD_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9'_-]*")
 HUMAN_BLOCK_RE = re.compile(r"::: \{\.asi-human-only\}\n## Human Reading Path\n\n(.*?)\n:::", re.DOTALL)
+CONCRETE_LENS_RE = re.compile(
+    r"^\*\*Concrete lens\.\*\*\s+.*?(?:\n\s*\n|\Z)",
+    re.DOTALL,
+)
 OVERLAY_ASSET_RE = re.compile(
     r'<script\s+type="application/json"\s+id="asi-reader-overlays">\s*(.*?)\s*</script>',
     re.DOTALL,
@@ -114,7 +118,9 @@ def bridge_metrics(chapters: list[dict[str, Any]]) -> tuple[int, int, int, int, 
         if len(matches) != 1:
             missing.append(str(chapter.get("id", chapter.get("file", ""))))
             continue
-        bridge_text = re.sub(r"\s+", " ", matches[0].strip())
+        raw_bridge = matches[0].strip()
+        bridge_text = re.sub(r"\s+", " ", raw_bridge)
+        narrative_text = re.sub(r"\s+", " ", CONCRETE_LENS_RE.sub("", raw_bridge, count=1).strip())
         normalized_bridge = bridge_text.lower()
         template_phrase_hits += sum(
             normalized_bridge.count(phrase.lower()) for phrase in TEMPLATE_BRIDGE_PHRASES
@@ -122,7 +128,7 @@ def bridge_metrics(chapters: list[dict[str, Any]]) -> tuple[int, int, int, int, 
         values.append(len(WORD_RE.findall(bridge_text)))
         sentences = [
             sentence.strip()
-            for sentence in re.split(r"(?<=[.!?])\s+", bridge_text)
+            for sentence in re.split(r"(?<=[.!?])\s+", narrative_text)
             if sentence.strip()
         ]
         if sentences:

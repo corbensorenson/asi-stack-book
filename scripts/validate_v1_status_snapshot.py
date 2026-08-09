@@ -184,11 +184,21 @@ def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int, int, int]:
         match = HUMAN_BLOCK_RE.search(text)
         if not match:
             continue
-        bridge_text = re.sub(r"\s+", " ", match.group(1).strip())
+        raw_bridge = match.group(1).strip()
+        bridge_text = re.sub(r"\s+", " ", raw_bridge)
+        narrative_text = re.sub(
+            r"\s+",
+            " ",
+            live_human_ledger.CONCRETE_LENS_RE.sub("", raw_bridge, count=1).strip(),
+        )
         normalized_bridge = bridge_text.lower()
         template_phrase_hits += sum(normalized_bridge.count(phrase.lower()) for phrase in TEMPLATE_BRIDGE_PHRASES)
         values.append(len(WORD_RE.findall(bridge_text)))
-        sentences = [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+", bridge_text) if sentence.strip()]
+        sentences = [
+            sentence.strip()
+            for sentence in re.split(r"(?<=[.!?])\s+", narrative_text)
+            if sentence.strip()
+        ]
         if sentences:
             opening_values.append(len(WORD_RE.findall(sentences[0])))
             closing_values.append(len(WORD_RE.findall(sentences[-1])))
