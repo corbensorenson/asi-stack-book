@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4054,
+    "candidate_count": 4063,
     "review_state_counts": {
-      "duplicate_of_atom": 1964,
+      "duplicate_of_atom": 1966,
       "editorial_or_question": 58,
-      "historical_or_source_report": 333,
+      "historical_or_source_report": 336,
       "material_atom": 3,
-      "nonmaterial_explanation": 1696
+      "nonmaterial_explanation": 1700
     }
   },
   "candidates": [
@@ -42961,9 +42961,66 @@
       "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
     },
     {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.87f78626edb1",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:267",
+      "sentence": "A result cannot silently replace one with another because both",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped continuation of the learner-identity explanation. Its substance is already owned by the core requirement to bind the hypothesis and algorithm.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4b6eead6a719",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:274",
+      "sentence": "It does not prove that the estimator finds a globally",
+      "cues": [
+        "prove"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit limit on the EGGROLL source analysis: estimator consistency is not global optimization, superiority, or nonlinear-regime transport. It narrows rather than promotes a claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "learning-theory-generalization-and-scaling-science.prose.45866ce86418",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:278",
+      "sentence": "small-scale experiments are not a generalization theory for foundation models.",
+      "cues": [
+        "scale"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Explicit Forward-Forward evidence boundary: preliminary small-scale experiments are not imported as foundation-model generalization theory.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8e2d6e7ac923",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:263",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:290",
       "sentence": "**Mechanism.** Challenge transfer under natural and targeted distribution shift, new task structure, weak supervision, architecture replacement, optimizer change, data contamination, and resource constraints, with source-domain and target-domain denominators kept separate.",
       "cues": [
         "transfer"
@@ -42982,7 +43039,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.30cb95f11ff0",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:263",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:290",
       "sentence": "**Failure mode.** Shared pretraining, leaked labels, easy target metrics, or one model family can simulate transfer.",
       "cues": [
         "transfer"
@@ -43001,7 +43058,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.f768cd47e96b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:263",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:290",
       "sentence": "**Source grounding.** The weak-to-strong paper is a bounded proof of concept; the broader transfer contract remains untested.",
       "cues": [
         "transfer"
@@ -43020,7 +43077,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.c797e8d79493",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:271",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:298",
       "sentence": "not settled by naming “emergence.” A claim should be tested under continuous",
       "cues": [
         "should"
@@ -43039,7 +43096,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ced7f6379766",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:275",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:302",
       "sentence": "decision threshold changed, or whether the available data cannot distinguish",
       "cues": [
         "cannot"
@@ -43058,7 +43115,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.ce4c8947ff2b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:279",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:306",
       "sentence": "genuine-breakpoint model; score all three on held-out scales and tasks.",
       "cues": [
         "scales"
@@ -43077,7 +43134,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8d198e8dfead",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:284",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:311",
       "sentence": "**Explicit non-claim.** metric artifacts do not prove that every capability is",
       "cues": [
         "prove"
@@ -43096,7 +43153,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4c29f66760e3",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:285",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:312",
       "sentence": "smooth; an apparent breakpoint does not prove a new internal algorithm.",
       "cues": [
         "prove"
@@ -43115,7 +43172,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.26dcb492aef3",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:311",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:338",
       "sentence": "Under the , quantifiers remain explicit, interpolation is not transfer, metric transformation cannot manufacture emergence, retrospective fit is not prospective prediction, and each new scale or distribution can invalidate the record.",
       "cues": [
         "cannot",
@@ -43136,7 +43193,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.26dff41cdcbc",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:329",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:356",
       "sentence": "Evaluation must compare multiple plausible functional forms and simpler baselines, reserve future scales or tasks, expose selection and correction, and measure calibration as well as point error.",
       "cues": [
         "measure",
@@ -43157,7 +43214,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.97a3e999b24a",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:329",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:356",
       "sentence": "Positive controls use synthetic regimes with known breakpoints; an underpowered scale range cannot refute discontinuity or generalization mechanisms.",
       "cues": [
         "cannot",
@@ -43177,7 +43234,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.bf98b29439b4",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:333",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:360",
       "sentence": "The notebook should emit an immutable forecast card before opening each held-out",
       "cues": [
         "should"
@@ -43196,7 +43253,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2a49ae648aea",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:340",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:367",
       "sentence": "Freeze candidate curve families and explanatory lenses, hold out scale points and task families, record failed runs and tuning, test breakpoint alternatives, and compare prediction intervals for loss, calibration, and downstream tasks.",
       "cues": [
         "scale"
@@ -43215,7 +43272,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.932a76315cd7",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:346",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:373",
       "sentence": "Argument exit requires repeated prospective forecasts across model families, task families, compute regimes, and distribution shifts, with preregistered alternatives, held-out scales, calibration, breakpoint sensitivity, and independent reanalysis.",
       "cues": [
         "requires",
@@ -43235,7 +43292,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.706cc8b030c9",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:354",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:381",
       "sentence": "calibration across new scales, tasks, data regimes, optimizers, and",
       "cues": [
         "scales"
@@ -43254,7 +43311,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.4d6375611e87",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:359",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:386",
       "sentence": "campaigns isolate or factorially vary the suspected causes.",
       "cues": [
         "causes"
@@ -43273,7 +43330,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.1acfbb1c6d17",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:360",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:387",
       "sentence": "thresholded metrics, in-distribution and transfer tasks, average and subgroup",
       "cues": [
         "transfer"
@@ -43292,7 +43349,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.eee218d0073e",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:366",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:393",
       "sentence": "extrapolation, constant elasticity, nearest-neighbor scale, or no forecast.",
       "cues": [
         "scale"
@@ -43311,7 +43368,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.68cd692a529d",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:367",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:394",
       "sentence": "Useful science should improve interval coverage, resource planning, experiment",
       "cues": [
         "improve",
@@ -43331,7 +43388,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d81471708d9b",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:372",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:399",
       "sentence": "A mature scaling science says not merely that performance rose, but which assumptions generated a forecast, where it failed, what changed at the boundary, and how much confidence survives transfer.",
       "cues": [
         "transfer"
@@ -43350,7 +43407,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.cda620fe973f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:387",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:414",
       "sentence": "The mechanized core proves forecast custody rather than forecast truth.",
       "cues": [
         "proves"
@@ -43369,7 +43426,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.8b06c333ab13",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:387",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:414",
       "sentence": "A complete denominator must count each attempt, while an omitted attempt or unscored preregistered alternative rejects completeness.",
       "cues": [
         "must"
@@ -43388,7 +43445,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.eda788983be2",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:389",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:416",
       "sentence": "Two information-loss constructions show why equal retrospective-fit signals cannot determine prospective held-out coverage and why equal threshold-metric signals cannot determine whether an underlying mechanism changed.",
       "cues": [
         "cannot",
@@ -43408,7 +43465,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2ae627879bed",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:389",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:416",
       "sentence": "These are theorems about encoded records and transitions; the model does not prove generalization, transfer, emergence, scaling accuracy, calibration, safety, deployment readiness, support, or release.",
       "cues": [
         "prove",
@@ -43428,7 +43485,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.84423a796f77",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:389",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:416",
       "sentence": "Those claims require the Project Theseus prospective forecast campaign across model, task, data, optimizer, architecture, metric, scale, and distribution-shift families.",
       "cues": [
         "require",
@@ -43448,7 +43505,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.e3f84310e420",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:469",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:498",
       "sentence": "corrections, allowing transfer to broaden only through prospective evidence",
       "cues": [
         "transfer"
@@ -43467,7 +43524,7 @@
     {
       "candidate_id": "learning-theory-generalization-and-scaling-science.prose.dce3227e0a8f",
       "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:472",
+      "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:501",
       "sentence": "The forecast discipline keeps bounds, fits, simplicity lenses, interpolation, emergence, compute, metrics, uncertainty, alternatives, and transfer limits visible so retrospective regularity cannot become destiny or acquire unwarranted authority over future architectures and safety decisions.",
       "cues": [
         "cannot",
@@ -53255,9 +53312,66 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "resource-economics-and-token-budgets.prose.e8d3cb79d10a",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:631",
+      "sentence": "population required roughly 180 times the GPU-hours of the reported",
+      "cues": [
+        "required"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Bounded EGGROLL source report. The roughly 180-times GPU-hour observation is explicitly attributed to the paper and does not become a local efficiency, architecture, or training result.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "resource-economics-and-token-budgets.prose.bac9fb83c56d",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:643",
+      "sentence": "Population parallelism can improve time-to-result while worsening total",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped first clause of the section's already reviewed wall-time-versus-total-resource explanation; it is not a complete independent proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "resource-economics-and-token-budgets.prose.7d5895bbd3cf",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:644",
+      "sentence": "resource consumption; low memory can enable a model that otherwise cannot run;",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped continuation listing distinct resource benefits. It explains the existing complete-cost contract and creates no independent support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "resource-economics-and-token-budgets.prose.926b84a78b46",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:633",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:662",
       "sentence": "\\(C_l\\) lookup, transfer, validation, eviction, and governance cost.",
       "cues": [
         "transfer"
@@ -53276,7 +53390,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.87a3f88bd7ff",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:662",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:691",
       "sentence": "The official contracts inspected on 2026-07-23 show why the ledger needs",
       "cues": [
         "show"
@@ -53295,7 +53409,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0db53d1d4c56",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:677",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:706",
       "sentence": "prefill while consuming CPU hashing, DRAM or SSD capacity, network transfer,",
       "cues": [
         "transfer"
@@ -53314,7 +53428,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d7eeb3d6bbc4",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:704",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:733",
       "sentence": "lookup and transfer; cache lifetime; output generation; verification and",
       "cues": [
         "transfer"
@@ -53333,7 +53447,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.dace4c3c3542",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:717",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:746",
       "sentence": "cache-build, hashing, lookup, transfer, storage-time, eviction,",
       "cues": [
         "transfer"
@@ -53352,7 +53466,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d7ae406f6973",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:731",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:760",
       "sentence": "local recomputation wins when transfer or validation dominates.",
       "cues": [
         "transfer"
@@ -53371,7 +53485,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.5a0653ebfc29",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:750",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:779",
       "sentence": "the opportunity cost of memory occupied by codebooks, scales, residuals, or a",
       "cues": [
         "scales"
@@ -53390,7 +53504,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.9bcb6f9c6d2e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:755",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:784",
       "sentence": "in storage and expensive in random I/O; a higher-precision kernel may reduce",
       "cues": [
         "reduce"
@@ -53409,7 +53523,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.743ff19c80ad",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:785",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:814",
       "sentence": "A Transformer's projection/feed-forward term may scale approximately linearly",
       "cues": [
         "scale"
@@ -53428,7 +53542,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.9aaab62313ac",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:802",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:831",
       "sentence": "Three controls prevent token laundering: equal underlying raw bytes, equal",
       "cues": [
         "prevent"
@@ -53447,7 +53561,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.031187078b8f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:808",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:837",
       "sentence": "count is a mechanism diagnostic until this complete frontier improves.",
       "cues": [
         "improves"
@@ -53466,7 +53580,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.26597e8fa397",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:862",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:891",
       "sentence": "A proposed improvement should say whether it saves tokens, verifier time, human review, memory, or latency, and whether those savings preserve quality and protected gates.",
       "cues": [
         "should"
@@ -53485,7 +53599,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.595a930fba81",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:864",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:893",
       "sentence": "They can block wasteful architecture churn, but they can also block supposedly efficient changes that reduce the verifier, security kernel, rollback, or human-review budget below the risk class.",
       "cues": [
         "reduce"
@@ -53504,7 +53618,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.082456ccb72f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:869",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:898",
       "sentence": "High-risk work receives required verification and review or routes to reduction, escalation, deferral, fallback, or refusal.",
       "cues": [
         "required"
@@ -53523,7 +53637,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e0f3469ed0bd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:877",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:906",
       "sentence": "Low-risk volume cannot consume protected verifier or reviewer capacity reserved for blocked high-risk work.",
       "cues": [
         "cannot"
@@ -53542,7 +53656,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.65f3efc363d2",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:879",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:908",
       "sentence": "Simulation scope, fidelity, temporal semantics, resources, bottlenecks, omissions, instrumentation, and transfer are prospective.",
       "cues": [
         "transfer"
@@ -53561,7 +53675,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ac7d69aceec5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:880",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:909",
       "sentence": "Synthetic results do not transfer beyond their declared support boundary by default.",
       "cues": [
         "transfer"
@@ -53580,7 +53694,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.09a678d1c94b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:884",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:913",
       "sentence": "Support changes require an accepted transition for the exact claim and scope.",
       "cues": [
         "require"
@@ -53599,7 +53713,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.1d45b43da9cf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:885",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:914",
       "sentence": "Every shortfall, variance, overload, protected-capacity conflict, failed transfer, and undisclosed cost has an owner and reopening condition.",
       "cues": [
         "transfer"
@@ -53618,7 +53732,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.b8140443d8b7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:889",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:918",
       "sentence": "Budgets can force escalation or deferral, but they cannot erase the requirement.",
       "cues": [
         "cannot"
@@ -53637,7 +53751,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ffc94c7d8cf3",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:906",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:935",
       "sentence": "Sandbox-to-world transfer occurs without fidelity, resource, instrumentation, and rights contracts.",
       "cues": [
         "transfer"
@@ -53656,7 +53770,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.e8bc53d97424",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "Cost-cut verification should block or escalate.",
       "cues": [
         "should"
@@ -53675,7 +53789,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.368b7a54b64d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "Load synchronization should trigger capacity smoothing or scheduling changes.",
       "cues": [
         "should"
@@ -53694,7 +53808,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3ee0ebf35532",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "Resource hoarding should be visible in the ledger.",
       "cues": [
         "should"
@@ -53713,7 +53827,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.47af695cd307",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "Human repair burden should count as cost.",
       "cues": [
         "should"
@@ -53732,7 +53846,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.a15a56850bc9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:912",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
       "sentence": "Speculative market language should remain optional until executable records and tests exist.",
       "cues": [
         "should"
@@ -53751,7 +53865,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.21337d1d04bf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:914",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:943",
       "sentence": "The budget record should count those displaced costs as residuals rather than letting the route appear efficient.",
       "cues": [
         "should"
@@ -53770,7 +53884,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.319e1e3c29ca",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:920",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:949",
       "sentence": "The repository fixture records contract version, claim class, scope, fidelity state, temporal semantics, assumptions, demand, resource bill, bottlenecks, omitted variables, approximation liberties, instrumentation effects, supported and observed-result boundaries, transfer decision, support-state effect, failure behavior, residual risks, evidence references, and non-claims.",
       "cues": [
         "transfer"
@@ -53789,7 +53903,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aa7d5b6621c5",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:922",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:951",
       "sentence": "These are finite repository, timing, and accounting results—not deployed scheduling, real verification-tax measurement, economic optimality, production stability, human productivity, model quality, welfare, physical feasibility, or open-world transfer.",
       "cues": [
         "transfer"
@@ -53808,7 +53922,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.c683ceec497d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:924",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:953",
       "sentence": "The simulation-transfer boundary harness checks synthetic contract wrappers for declared fidelity, resource bills, bottlenecks, omitted variables, approximation liberties, instrumentation effects, transfer decisions, residual or downgrade behavior, and support-state non-promotion.",
       "cues": [
         "transfer"
@@ -53827,7 +53941,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.75f392debb95",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:926",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:955",
       "sentence": "The simulation-contract fixture and transfer harness do not establish feasibility or open-world transfer.",
       "cues": [
         "transfer"
@@ -53846,7 +53960,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3b0fd1dde579",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:930",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:959",
       "sentence": "A first budget ledger shows the rejected route alongside the chosen route, because hidden savings are not governed savings.",
       "cues": [
         "shows"
@@ -53865,7 +53979,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.bb261f38b3e8",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:930",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:959",
       "sentence": "The first simulation-transfer fixture suite now covers one unit-invariant transfer, one benchmark result downgraded to reduced scope, one scenario-only blocker, and expected-invalid cases for missing fidelity, unbounded world transfer, missing resource bills, missing bottleneck residuals, ignored instrumentation, and support-state promotion.",
       "cues": [
         "transfer"
@@ -53884,7 +53998,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3efb0228e9c9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:938",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:967",
       "sentence": "The fixture shows two modeled cases where full-cost",
       "cues": [
         "shows"
@@ -53903,7 +54017,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aacb7a6d9baf",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:940",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:969",
       "sentence": "It does not measure real verification tax, prove deployed scheduler",
       "cues": [
         "measure",
@@ -53923,7 +54037,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.4bd41581e21e",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:941",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:970",
       "sentence": "behavior, prove economic optimality, promote the Resource Economics chapter",
       "cues": [
         "prove"
@@ -53942,7 +54056,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.22f8fbbec0f7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:948",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:977",
       "sentence": "Cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden.",
       "cues": [
         "cannot"
@@ -53961,7 +54075,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.66b2eb4a62b9",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:950",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:979",
       "sentence": "Planning allocates budget and defers or scopes work, routing chooses costed specialists, runtime adapters report actual spend, evidence measures cost-quality tradeoffs, serving infrastructure reports KV-cache and throughput economics without promoting quality claims, and governance protects gates that budgets cannot erase.",
       "cues": [
         "cannot",
@@ -53981,7 +54095,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.445248c6799f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:952",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:981",
       "sentence": "Verification cost-cutting, load-synchronized degradation, low-value resource hoarding, protected-overhead deletion, review-capacity capture, token optimization that increases human repair, and aggregate-throughput overclaim become blocked dispatches, escalations, residual-cost records, or budget-policy updates.",
       "cues": [
         "increases"
@@ -54000,7 +54114,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.57abc4280e78",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:954",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:983",
       "sentence": "Synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models can be used aggressively, but their outputs travel only through a contract that names scope, fidelity, resources, omissions, instrumentation, and transfer.",
       "cues": [
         "transfer"
@@ -54019,7 +54133,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d195b8e2e933",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:954",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:983",
       "sentence": "Failed transfers reduce claim scope, missing bottlenecks become residuals, instrumentation costs force downgrades, and approximate worlds stay useful for narrow tests instead of becoming borrowed reality.",
       "cues": [
         "reduce",
@@ -54039,7 +54153,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.f6bf1df7cfb7",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:956",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:985",
       "sentence": "Resource economics should remain `argument` until budget ledgers, verification-budget checks, load/friction tests, value-of-computation comparisons, scarce-resource scheduler traces, rejected-saving records, simulation-fidelity declarations, physical-constraint reviews, transfer checks, and negative simulation results show that resource discipline improves the stack without hiding risk.",
       "cues": [
         "improves",
@@ -54061,7 +54175,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.6db4bdcf545b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:958",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:987",
       "sentence": "It measures useful accepted throughput, unsafe release, false refusal, missed help, fairness, queue and tail latency, compute, memory, network, energy, tool and reviewer use, governance work, displaced work, incidents, recovery, and residuals together.",
       "cues": [
         "measures"
@@ -54080,7 +54194,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.afb68e68caa0",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:958",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:987",
       "sentence": "Independent schedulers, meters, evaluators, simulators, and organizations must reproduce predicted signatures, followed by transfer across workloads, models, hardware, prices, organizations, rights regimes, attacks, updates, and time.",
       "cues": [
         "must",
@@ -54100,7 +54214,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.96cb5b38e3dd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:963",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:992",
       "sentence": "required defect IDs, but every defect extractor omitted requested-check IDs and",
       "cues": [
         "required"
@@ -54119,7 +54233,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.46df4c752377",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:967",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:996",
       "sentence": "budget record must price admissible checks and escalation work rather than count",
       "cues": [
         "must"
@@ -54138,7 +54252,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.81fb25d8c911",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1002",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1031",
       "sentence": "The implemented rows validate fixture/schema consistency, deterministic record-accounting behavior, toy capacity traces, deterministic workflow traces, local command replay, CI publication metadata, finite serving-memory separation, and synthetic simulation-transfer boundaries only.",
       "cues": [
         "transfer"
@@ -54157,7 +54271,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7a15c3fd9365",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1002",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1031",
       "sentence": "The remaining rows require deployed scheduler behavior, live risk-policy checks, a real load model, KV-cache or serving-memory measurement, physical-feasibility review, measured simulation outputs, resource estimates, and human review harnesses; they are not reported results.",
       "cues": [
         "require"
@@ -54176,7 +54290,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.9f3f69a1f190",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1002",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1031",
       "sentence": "Future resource-economics or simulation-audit tests should link to the command, fixture, environment notes, assumptions, and result summary, and Appendix E should be regenerated or updated accordingly.",
       "cues": [
         "should"
@@ -54195,7 +54309,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.704d72bf7b8b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "These Lean hooks are implemented as finite-record predicates and negative-case theorems over required gates, risk class, verification-budget sufficiency, budget decision fields, costed-route fixture eligibility, capacity-smoothing reviewer traces, finite load-smoothing workload summaries, serving-memory separation, aggregate flagship replay accounting, simulation claim fields, and declared support levels.",
       "cues": [
         "required"
@@ -54214,7 +54328,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7668a70e2fe6",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "They prove only record-level gates: required safety and verification gates cannot be disabled, a disabled required safety gate rejects the preservation predicate, high-risk work with insufficient verification budget must route away from ordinary dispatch, a high-risk insufficient-budget dispatch rejects the validity predicate, the four-route costed selector bridge rejects the failed-verification and hidden-residual controls while proving the bounded transform route is lowest-cost among modeled eligible routes, and the finite selector-state replay ends with the selected route after seeing two eligible routes and two cheaper rejected controls.",
       "cues": [
         "cannot",
@@ -54236,7 +54350,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.aeee4fb06e86",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "The finite serving-memory guard requires KV-cache budget, batching scope, and single-request verified-output separation for aggregate throughput claims, and rejects throughput-to-quality overclaims.",
       "cues": [
         "requires"
@@ -54255,7 +54369,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.cbd594eb3cee",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "Simulation claims used as evidence include scope/fidelity/resource fields, simulation evidence without declared scope is invalid, promoted experiment results cannot exceed declared fidelity support, and fidelity overclaim rejects promotion validity.",
       "cues": [
         "cannot"
@@ -54274,7 +54388,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.1326f5ef8e24",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "The costed-route, workflow, load-stability, aggregate flagship, and Theseus import validators now require the tracked result records to expose their Python/Lean fixture-equivalence fields: route constructors, per-route costs and eligibility booleans, selector-trace expectations, workflow summary fields, finite workload summary fields, aggregate replay counts, export format and field counts, checked theorem names, expected-invalid control names, and no-promotion boundaries.",
       "cues": [
         "require"
@@ -54293,7 +54407,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.88518878d784",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1022",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1051",
       "sentence": "They do not prove real load stability, economic optimality, welfare effects, scheduler quality, KV-cache behavior, serving throughput, single-request quality, TokenMana performance, reviewer-capacity optimization, protected-overhead adequacy, displaced-cost measurement, physical feasibility, simulator adequacy, RLDS dataset correctness, Minari dataset quality, external physics assumptions, clean live Theseus replay, or open-world transfer.",
       "cues": [
         "prove",
@@ -54313,7 +54427,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.bf2cbb67da23",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1024",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1053",
       "sentence": "The semantic audit must retain only declarations with a named claim consumer, classify direct predicate/projection consequences separately from derived negatives and authored fixture-summary bridges, and replace any assumption-restating or unconsumed count proof with stronger transition, trace, conservation, liveness, countermodel, or runtime-refinement semantics.",
       "cues": [
         "must"
@@ -54332,7 +54446,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2fbe36c935e2",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1024",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1053",
       "sentence": "None of the current declarations proves scheduler optimality, real load stability, welfare, serving quality, simulator adequacy, physical feasibility, or transfer.",
       "cues": [
         "proves",
@@ -54352,7 +54466,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.d34985968bce",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1048",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1077",
       "sentence": "Campaign 6 demonstrates why token count is not the budget.",
       "cues": [
         "demonstrates"
@@ -54371,7 +54485,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.28ddb24d2eca",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1104",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1136",
       "sentence": "Its outcomes show why compute totals",
       "cues": [
         "show"
@@ -54390,7 +54504,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.b9f531d3983f",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1105",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1137",
       "sentence": "must be joined to utility: the governed arm's safety gain accompanies only",
       "cues": [
         "must"
@@ -54409,7 +54523,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.2245ef90354b",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1133",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1165",
       "sentence": "throughput nor unsafe-release reduction is estimable, so the campaign cannot",
       "cues": [
         "cannot"
@@ -54428,7 +54542,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.7e0e37b37bcd",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1155",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1187",
       "sentence": "This establishes a bounded local governance-policy effect, but not an economic",
       "cues": [
         "establishes"
@@ -54447,7 +54561,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.3b623ec81253",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1156",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1188",
       "sentence": "The primary gate did not require a latency, energy, dollar, human-",
       "cues": [
         "require"
@@ -54466,7 +54580,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.0abcfb64c08d",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1166",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1198",
       "sentence": "A system that cannot account for tokens, verification, latency, human review, risk, fidelity, transfer limits, and quality cannot honestly claim efficiency.",
       "cues": [
         "cannot",
@@ -54486,7 +54600,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ab8162931b44",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1168",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1200",
       "sentence": "Simulation pressure becomes an explicit record so synthetic success cannot outrun scope, fidelity, resources, omissions, or transfer.",
       "cues": [
         "cannot",
@@ -54506,7 +54620,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.ee610cc56d17",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1172",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1204",
       "sentence": "A system may not call itself more efficient by moving verification, security, or human repair cost out of sight.",
       "cues": [
         "more efficient"
@@ -54525,7 +54639,7 @@
     {
       "candidate_id": "resource-economics-and-token-budgets.prose.5fb9400c6762",
       "chapter_id": "resource-economics-and-token-budgets",
-      "source": "chapters/resource-economics-and-token-budgets.qmd:1212",
+      "source": "chapters/resource-economics-and-token-budgets.qmd:1244",
       "sentence": "required place and time through hardware, memory, network, power, cooling,",
       "cues": [
         "required"
@@ -67234,7 +67348,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.e9fe9e5e573e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:269",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:270",
       "sentence": "Policy optimization should not become an acronym catalog.",
       "cues": [
         "should"
@@ -67251,9 +67365,66 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.cc3fd54c86ed",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:277",
+      "sentence": "A learner can improve an outcome score without differentiating through",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The complete outcome-score-without-action-gradient proposition instantiates the already reviewed update-family and target-policy boundary in the chapter core; it adds a method family without promoting a new claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+    },
+    {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.987ae2c12222",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:286",
+      "sentence": "policy, perturbation scale and rank, data and environment exposure, invalid-run",
+      "cues": [
+        "scale"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Line-wrapped field list continuing the complete population-search record; it is not an independently testable proposition.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.797847e97a2e",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:288",
+      "sentence": "A result cannot discard low-fitness or crashed members",
+      "cues": [
+        "cannot"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "The prohibition on censoring crashed or low-fitness candidates is a concrete restatement of the core's complete evaluation and failure denominator.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+    },
+    {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c30ed64f60ab",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:273",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:293",
       "sentence": "The target policy should be explicit before an optimizer is named.",
       "cues": [
         "should"
@@ -67272,7 +67443,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.bb23960b1063",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:286",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:306",
       "sentence": "The training mode should match the available feedback and risk.",
       "cues": [
         "should"
@@ -67291,7 +67462,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.527ba1dfdf20",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:318",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:338",
       "sentence": "Generator policy: reward verified answer quality, concise reasoning when sufficient, and repairable uncertainty.",
       "cues": [
         "sufficient"
@@ -67310,7 +67481,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7ca8d8d2f6c1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:337",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:357",
       "sentence": "Policy updates cannot expand authority by training side effect.",
       "cues": [
         "cannot"
@@ -67329,7 +67500,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.06a3a8140167",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:342",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:362",
       "sentence": "A policy update may improve route choice, context selection, or reasoning length, but it cannot create permission to act outside the authority envelope that governed the original policy.",
       "cues": [
         "cannot",
@@ -67349,7 +67520,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.3ef01e704b35",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:344",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:364",
       "sentence": "Optimizing a proxy cannot promote the target claim unless target-specific evaluation, residuals, and failure probes are recorded.",
       "cues": [
         "cannot"
@@ -67368,7 +67539,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.020d65d43693",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:346",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:366",
       "sentence": "The full invariant set additionally requires legitimate-objective and consumer",
       "cues": [
         "requires"
@@ -67387,7 +67558,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4e283d992af7",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:352",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:372",
       "sentence": "reproduction and transfer, and the rule that finite artifacts prove no causal",
       "cues": [
         "prove",
@@ -67407,7 +67578,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.974173375c40",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:363",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:383",
       "sentence": "If the update improves one metric while harming regressions, benchmark ratchets preserve the regression floor rather than celebrating the local gain.",
       "cues": [
         "improves"
@@ -67426,7 +67597,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c99bea034b8e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:365",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:385",
       "sentence": "The policy improves the reward, then the writeup describes it as improving the underlying task while reward hacks, preference bias, verifier blind spots, or regression losses remain unexamined.",
       "cues": [
         "improves"
@@ -67445,7 +67616,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9086c91e10f7",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:389",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:409",
       "sentence": "rollback, causal improvement, independent reproduction, or transfer ran.",
       "cues": [
         "transfer"
@@ -67464,7 +67635,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7ca6b9f5046c",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:392",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:412",
       "sentence": "Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture, one deterministic policy-update lease probe, and a finite Lean module.",
       "cues": [
         "should"
@@ -67483,7 +67654,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.5b3570b5ec18",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:418",
       "sentence": "It binds model and candidate checkpoints together with optimizer, scheduler, RNG, cache, backup, descendant, evaluator, rollback, consumer, authority, and version identities; it also requires target evaluation, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety and rights checks, uncertainty, monitoring, effect-complete rollback, and descendant invalidation.",
       "cues": [
         "requires"
@@ -67502,7 +67673,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.cd2cbe254e31",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:418",
       "sentence": "All 73 route mutations and three cross-stage mutations reject: missing causal ablation prevents adjudication, lease, and readmission; support-authority laundering prevents lease and readmission; and incomplete effect rollback prevents readmission after the bounded lease.",
       "cues": [
         "prevents"
@@ -67521,7 +67692,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.85b5f33655be",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:418",
       "sentence": "These are authored record consequences, not evidence that any field is true or effective: no training, learning, reward validation, causal improvement, live rollback, monitoring, reproduction, transfer, release, or support transition occurred.",
       "cues": [
         "transfer"
@@ -67540,7 +67711,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.a03409688abc",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:400",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:420",
       "sentence": "A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.",
       "cues": [
         "should"
@@ -67559,7 +67730,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4ed3119afde0",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:417",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:437",
       "sentence": "energy, human burden, opportunity cost, and residuals jointly; then require",
       "cues": [
         "require"
@@ -67578,7 +67749,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9da811c22645",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:436",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:456",
       "sentence": "Failure closure that blocks reward laundering: proxy improvement cannot become task improvement unless target-specific evaluations and residuals support that transition.",
       "cues": [
         "cannot"
@@ -67597,7 +67768,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.79f6e0f62688",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:438",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:458",
       "sentence": "The system could improve its policies while preserving authority conservation, rollback, evidence review, and human/governance control.",
       "cues": [
         "improve"
@@ -67616,7 +67787,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.1ef7c33963d4",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:438",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:458",
       "sentence": "The learning actuator remains a target architecture until local policy-update harnesses, reward-quality studies, rollout records, rollback dry runs, and accepted evidence transitions show that improvement is governed instead of merely optimized.",
       "cues": [
         "show"
@@ -67635,7 +67806,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.49a283e55433",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:463",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:483",
       "sentence": "The remaining tests require executable training or simulation harnesses.",
       "cues": [
         "require"
@@ -67654,7 +67825,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7bc9fef89b8a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:474",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:494",
       "sentence": "These checks prove only finite authored record and transition consequences.",
       "cues": [
         "prove"
@@ -67673,7 +67844,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.11983fcfc93e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:474",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:494",
       "sentence": "They do not prove reward quality, evaluator validity, RL convergence, benchmark improvement, causal policy improvement, retained capability, forgetting control, policy safety, route quality, reward-hacking resistance, hidden-holdout or contamination quality, approval quality, effect-complete runtime rollback, live monitoring, reproduction, or transfer.",
       "cues": [
         "prove",
@@ -67693,7 +67864,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.aff9dc861c04",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:507",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:528",
       "sentence": "shows the sharper failure: visible-test reward can rise while a code-repair",
       "cues": [
         "shows"
@@ -67712,7 +67883,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4a1fedfb372a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:579",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:602",
       "sentence": "This establishes local checkpoint/output causality and preserves modest gains,",
       "cues": [
         "establishes"
@@ -67731,7 +67902,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c131c11353d5",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:604",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:627",
       "sentence": "A steward agent may coordinate work and preserve memory, but it cannot turn feedback loops into ownership, treasury authority, or silent governance change.",
       "cues": [
         "cannot"
@@ -67750,7 +67921,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.8958c7f00ed1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:650",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:673",
       "sentence": "Policy updates decide how behavior responds to feedback, but they still require a",
       "cues": [
         "require"
@@ -67769,7 +67940,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.346b1c43b827",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:662",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:685",
       "sentence": "policy optimization must not manufacture for itself before the book turns to",
       "cues": [
         "must"

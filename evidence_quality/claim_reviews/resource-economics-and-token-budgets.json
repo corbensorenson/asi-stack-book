@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/resource-economics-and-token-budgets.qmd",
     "structured_atoms_reviewed": 82,
-    "prose_candidates_adjudicated": 145,
+    "prose_candidates_adjudicated": 148,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The later EGGROLL/MeZO cost section was reviewed as one bounded source report plus two line-wrapped explanations of already owned total-cost distinctions. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -145,6 +145,18 @@
     }
   },
   "prose_candidate_dispositions": {
+    "resource-economics-and-token-budgets.prose.e8d3cb79d10a": {
+      "state": "historical_or_source_report",
+      "rationale": "Bounded EGGROLL source report. The roughly 180-times GPU-hour observation is explicitly attributed to the paper and does not become a local efficiency, architecture, or training result."
+    },
+    "resource-economics-and-token-budgets.prose.bac9fb83c56d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped first clause of the section's already reviewed wall-time-versus-total-resource explanation; it is not a complete independent proposition."
+    },
+    "resource-economics-and-token-budgets.prose.7d5895bbd3cf": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped continuation listing distinct resource benefits. It explains the existing complete-cost contract and creates no independent support-bearing atom."
+    },
     "resource-economics-and-token-budgets.prose.2c9d1d4cb42c": {
       "state": "nonmaterial_explanation",
       "rationale": "Ledger-measure list elaborates the existing plural resource-accounting atoms."

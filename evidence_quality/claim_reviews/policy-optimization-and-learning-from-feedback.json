@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/policy-optimization-and-learning-from-feedback.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 54,
+    "prose_candidates_adjudicated": 57,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Protected Regret Packet consumption, independent comparator and promotion authority, uncertainty monotonicity, and bounded update leases are mapped to existing feedback, authority, evidence, and readiness atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Protected Regret Packet consumption, independent comparator and promotion authority, uncertainty monotonicity, and bounded update leases are mapped to existing feedback, authority, evidence, and readiness atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The later ES/EGGROLL material was reviewed against the existing target-policy, feedback, evaluator, complete-denominator, and promotion-authority core rather than admitted as a new claim. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -137,6 +137,20 @@
     }
   },
   "prose_candidate_dispositions": {
+    "policy-optimization-and-learning-from-feedback.prose.cc3fd54c86ed": {
+      "state": "duplicate_of_atom",
+      "rationale": "The complete outcome-score-without-action-gradient proposition instantiates the already reviewed update-family and target-policy boundary in the chapter core; it adds a method family without promoting a new claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.987ae2c12222": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Line-wrapped field list continuing the complete population-search record; it is not an independently testable proposition."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.797847e97a2e": {
+      "state": "duplicate_of_atom",
+      "rationale": "The prohibition on censoring crashed or low-fitness candidates is a concrete restatement of the core's complete evaluation and failure denominator.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+    },
     "policy-optimization-and-learning-from-feedback.prose.7dcd0a75aaef": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
