@@ -8,9 +8,8 @@ bounded, challenged, and carried into the next objective decision.
 from __future__ import annotations
 
 from manim import (
-    AnimationGroup, Arrow, Circle, Create, Cross, DashedLine, FadeIn, FadeOut,
-    GrowArrow, Indicate, LaggedStart, LEFT, Line, ORIGIN, Rectangle,
-    RoundedRectangle, RIGHT, Text, TransformFromCopy, UP, DOWN, VGroup,
+    Arrow, Create, Cross, DashedLine, FadeIn, FadeOut,
+    GrowArrow, Indicate, LaggedStart, LEFT, Line, ORIGIN, RoundedRectangle, RIGHT, Text, UP, DOWN, VGroup,
 )
 
 from visual_edition.lib.asi_visuals import (
@@ -368,9 +367,9 @@ class MoralUncertaintyGeneration2(AsiScene):
         frame28 = self.frame("OPEN EVIDENCE LANES", BLUE)
         lanes28 = self.list_badges(["LEGAL", "REVIEW", "EXPORT", "FORK", "INSTITUTION", "DEPLOYMENT"], [RED, BLUE, GREEN, VIOLET, GOLD, RED], x=-2.3, y=0.0, width=2.2, scale=0.64)
         unknown28 = self.list_badges(["OPEN", "OPEN", "OPEN", "OPEN", "OPEN", "OPEN"], [MUTED] * 6, x=2.4, y=0.0, width=1.45, scale=0.64)
-        edges28 = VGroup(*[Arrow(l.get_right(), u.get_left(), color=MUTED, stroke_width=2, buff=0.1) for l, u in zip(lanes28, unknown28)])
+        edges28 = VGroup(*[Arrow(lane.get_right(), unknown.get_left(), color=MUTED, stroke_width=2, buff=0.1) for lane, unknown in zip(lanes28, unknown28)])
         scene28 = VGroup(frame28, lanes28, unknown28, edges28)
-        self.play_beat(28, FadeOut(scene27), LaggedStart(*[FadeIn(l) for l in lanes28], lag_ratio=0.1), LaggedStart(*[GrowArrow(e) for e in edges28], lag_ratio=0.1), LaggedStart(*[FadeIn(u) for u in unknown28], lag_ratio=0.1), settle=0.9)
+        self.play_beat(28, FadeOut(scene27), LaggedStart(*[FadeIn(lane) for lane in lanes28], lag_ratio=0.1), LaggedStart(*[GrowArrow(edge) for edge in edges28], lag_ratio=0.1), LaggedStart(*[FadeIn(unknown) for unknown in unknown28], lag_ratio=0.1), settle=0.9)
 
         # 29 — handoff to objective formation
         frame29 = self.frame("CONTESTABILITY · NARROW RESULT", GOLD)
@@ -393,7 +392,3 @@ class MoralUncertaintyGeneration2(AsiScene):
         self.play_beat(30, FadeOut(scene29), FadeIn(scene30), LaggedStart(*[GrowArrow(e) for e in edges30], lag_ratio=0.14), FadeIn(receipt30), FadeIn(clock30), Indicate(homes30, color=VIOLET), settle=1.0)
 
         self.wait_until(self.TARGET_DURATION)
-
-
-if __name__ == "__main__":
-    MoralUncertaintyGeneration2().render()

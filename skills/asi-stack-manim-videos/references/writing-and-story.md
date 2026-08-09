@@ -18,20 +18,24 @@ viewer can hold in working memory. Let an abstraction earn its name by solving
 that case. This follows Grant Sanderson's advice to put concrete examples
 before general frameworks and to avoid starting with definitions.
 
-The opening should create a useful information gap within 15 seconds. Favor a
-specific situation:
+The opening should make the promise and its consequence visible within 15
+seconds. Use an information gap only when it is honest. Favor a specific
+situation:
 
 - a model update passes tests but breaks rollback;
 - two routes return the same answer at very different governance cost;
 - a permission label allows an effect its owner did not intend; or
 - a memory system retrieves the right fact from the wrong authority domain.
 
-Then ask the viewer to predict what should happen. Resolve the question by
-changing objects on screen, not by announcing a thesis.
+When the visible evidence makes a prediction useful, ask what should happen
+and allow time to reason. Resolve it by changing objects on screen, not by
+announcing a thesis. Do not manufacture a misconception or question merely to
+fit a preferred story shape.
 
 The title and thumbnail make a promise. The opening should visibly begin
 delivering that promise before it introduces context. Use the first 15 seconds
-for the most concrete tension, not a logo, chapter number, agenda, or recap.
+for the most concrete goal, relation, decision, or tension, not a logo, chapter
+number, agenda, or recap.
 
 ## Promise selection
 
@@ -43,22 +47,34 @@ and fit with the chapter's evidence ceiling.
 
 Reject a promise that is really a coverage list. “Trace the record through
 identity, authority, custody, recovery, cost, and residuals” describes chapter
-inventory, not learning. Keep one case, one causal mechanism, one test or
-counterexample, one evidence boundary, and at most three introduced terms.
-Everything else stays in the book or becomes another visual abstract.
+inventory, not learning. Keep one case, one central mechanism, relationship, or
+tradeoff, one discriminating test or counterexample, one evidence boundary, and
+at most three introduced terms. Everything else stays in the book or becomes
+another visual abstract.
 
 ## Narration structure
 
-Use a five-move arc as a starting point:
+Choose the story form that matches the explanation rather than imposing one
+house arc:
 
-1. **Concrete tension:** show one object, decision, or failure.
-2. **Naive move:** show the plausible shortcut and why it fails here.
-3. **Mechanism:** build the minimum additional structure needed.
-4. **Test:** run the same case, a counterexample, or a boundary condition.
-5. **Consequence:** state what the mechanism establishes and what it does not.
+- **Failure diagnosis:** visible symptom -> tempting diagnosis -> hidden cause
+  -> intervention -> retest.
+- **Comparison:** common input -> route A -> route B -> shared accounting
+  boundary -> decision.
+- **Construction:** concrete goal -> binding constraint -> minimum added
+  structure -> preserved invariant -> stress test.
+- **Counterexample:** plausible rule -> matched cases -> opposite outcomes ->
+  missing variable -> narrower rule.
+- **Visual proof or derivation:** objects and assumptions -> invariant -> legal
+  transformations -> conclusion -> formal scope.
+- **Open question:** observation -> competing explanations -> discriminating
+  test -> current evidence -> unresolved residual.
 
-Do not force every chapter into identical section names. The listener should
-hear a coherent explanation, not metadata from a content pipeline.
+These are reusable grammars, not mandatory beat counts. Combine forms only when
+the handoff itself teaches something. Do not force a failure, question, reveal,
+or identical section sequence onto a chapter that does not warrant it. The
+listener should hear a coherent explanation, not metadata from a content
+pipeline.
 
 Write the opening and payoff as a pair. The final beat should resolve or
 complicate the exact object, prediction, or failure introduced at the start.
@@ -66,9 +82,16 @@ If it does neither, the hook was probably decorative.
 
 Four to six macro moves are usually enough. Timed visual cues may split those
 moves into smaller synchronization beats, but a new cue must not quietly add a
-new topic. Name each macro move with a verb phrase such as “the copied sensor
-appears independent” or “lineage collapses two votes into one.” If a move can
-only be named as a category, it is probably still abstract.
+new topic. Record each move as the viewer's current model, the visible event
+that changes it, and the resulting model. Name the event with a verb phrase
+such as “the copied sensor appears independent” or “lineage collapses two votes
+into one.” If the event can only be named as a category, it is still abstract.
+
+Keep a beat only when it changes a named viewer belief, tests a prediction,
+delivers a necessary qualifier, or gives processing time after a real change.
+Merge or delete it when it merely restates narration, changes decoration,
+introduces a synonym, or exists to keep the screen busy. A hold cannot smuggle
+in a new term or relation.
 
 ## Sentence craft
 
@@ -117,12 +140,14 @@ showing.
 ## Script acceptance
 
 The normal visual abstract is 280–520 spoken words at roughly 110–145 words per
-minute. A 520–600 word draft receives a mandatory compression review. A draft
-above 600 words needs a concrete `duration_rationale`; a draft above 650 words
-must be split or reselected. These limits govern the derivative video, not the
-chapter's depth.
+minute. This is a diagnostic range, never a fill target; a shorter script is
+valid when its transfer test still passes. A 520–600 word draft receives a
+mandatory compression review. A draft above 600 words needs a concrete
+`duration_rationale`; a draft above 650 words must be split or reselected.
+These limits govern the derivative video, not the chapter's depth.
 
-Before art direction or synthesis, require all of the following:
+Before synthesis or detailed scene work, co-design sparse semantic keyframes
+with the narration and require all of the following:
 
 - the teaching promise is one short transferable outcome, not a list;
 - the opening shows its consequence within 15 seconds;
@@ -130,13 +155,18 @@ Before art direction or synthesis, require all of the following:
 - no more than three new terms are required to follow the mechanism;
 - every paragraph changes the viewer's model rather than inventories coverage;
 - the evidence boundary is natural, local, and brief;
-- a cold reviewer can answer the planned transfer question; and
+- the changed-case transfer question has predeclared success criteria; and
 - every spoken sentence has a picture, relationship, or intentional audio-only
   purpose.
 
 Run the narration-only audit before a timed beat plan exists. A passing linter
 does not approve truth, taste, or pedagogy; it only prevents known structural
 failures from consuming animation and audio work.
+
+Record the full treatment and bind the narration digest. The script passes
+only after read-aloud, truth, and visualizability reviews pass with no open
+defect. A cold audience proxy belongs at release, where it can see the actual
+artifact without leaked answers.
 
 ## Read-aloud review
 

@@ -1,124 +1,78 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_beat_plan.schema.json",
-  "title": "ASI Stack Manim Semantic Beat Plan",
+  "title": "ASI Stack Manim Audio-Timed Semantic Beat Plan",
   "type": "object",
   "required": [
     "schema_version",
     "chapter_id",
-    "teaching_promise",
     "chapter_sha256",
     "source_commit",
+    "treatment_path",
+    "treatment_sha256",
+    "narration_path",
+    "narration_sha256",
     "target_duration_seconds",
-    "story",
-    "art_direction",
-    "audio_direction",
-    "accessibility",
+    "timing",
     "beats"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.manim_beat_plan.v2"},
+    "schema_version": {"const": "asi_stack.manim_beat_plan.v4"},
     "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
-    "teaching_promise": {"type": "string", "minLength": 12, "maxLength": 240},
     "chapter_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "source_commit": {"type": "string", "minLength": 7},
-    "target_duration_seconds": {"type": "number", "minimum": 150},
-    "story": {
-      "type": "object",
-      "required": ["concrete_case", "opening_question", "payoff", "transfer"],
-      "properties": {
-        "concrete_case": {"type": "string", "minLength": 8},
-        "opening_question": {"type": "string", "minLength": 8},
-        "payoff": {"type": "string", "minLength": 8},
-        "transfer": {"type": "string", "minLength": 8}
-      },
-      "additionalProperties": false
-    },
-    "art_direction": {
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "treatment_path": {"type": "string", "minLength": 8},
+    "treatment_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "narration_path": {"type": "string", "minLength": 8},
+    "narration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "target_duration_seconds": {"type": "number", "minimum": 1},
+    "timing": {
       "type": "object",
       "required": [
-        "visual_thesis",
-        "signature_image",
-        "visual_world",
-        "persistent_objects",
-        "composition_rule",
-        "palette_rule",
-        "typography_rule",
-        "motion_character",
-        "camera_rule",
-        "surface_rule",
-        "ending_image"
+        "state",
+        "source",
+        "receipt_path",
+        "receipt_sha256",
+        "narration_receipt_path",
+        "narration_receipt_sha256",
+        "narration_verification_report_path",
+        "narration_verification_report_sha256",
+        "aligner_id",
+        "manual_anchor_review_path",
+        "manual_anchor_review_sha256",
+        "manual_anchor_reviewer_id",
+        "manual_anchor_count",
+        "manual_anchor_failures"
       ],
       "properties": {
-        "visual_thesis": {"type": "string", "minLength": 8},
-        "signature_image": {"type": "string", "minLength": 8},
-        "visual_world": {"type": "string", "minLength": 8},
-        "persistent_objects": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {"type": "string", "minLength": 2}
-        },
-        "composition_rule": {"type": "string", "minLength": 8},
-        "palette_rule": {"type": "string", "minLength": 8},
-        "typography_rule": {"type": "string", "minLength": 8},
-        "motion_character": {"type": "string", "minLength": 8},
-        "camera_rule": {"type": "string", "minLength": 8},
-        "surface_rule": {"type": "string", "minLength": 8},
-        "ending_image": {"type": "string", "minLength": 8}
-      },
-      "additionalProperties": false
-    },
-    "audio_direction": {
-      "type": "object",
-      "required": [
-        "narration_style",
-        "pacing_arc",
-        "music_policy",
-        "sound_effect_policy",
-        "review_devices"
-      ],
-      "properties": {
-        "narration_style": {"type": "string", "minLength": 8},
-        "pacing_arc": {"type": "string", "minLength": 8},
-        "music_policy": {"type": "string", "minLength": 8},
-        "sound_effect_policy": {"type": "string", "minLength": 8},
-        "duration_rationale": {"type": "string", "minLength": 24},
-        "review_devices": {
-          "type": "array",
-          "minItems": 2,
-          "uniqueItems": true,
-          "items": {"type": "string", "minLength": 2}
-        }
-      },
-      "additionalProperties": false
-    },
-    "accessibility": {
-      "type": "object",
-      "required": [
-        "color_redundancy",
-        "motion_redundancy",
-        "integrated_description",
-        "caption_plan",
-        "reduced_motion_assessment"
-      ],
-      "properties": {
-        "color_redundancy": {"type": "string", "minLength": 8},
-        "motion_redundancy": {"type": "string", "minLength": 8},
-        "integrated_description": {"type": "string", "minLength": 8},
-        "caption_plan": {"type": "string", "minLength": 8},
-        "reduced_motion_assessment": {"type": "string", "minLength": 8}
+        "state": {"enum": ["estimated", "block_timed", "forced_aligned"]},
+        "source": {"enum": ["editorial_estimate", "synthesis_receipt", "forced_alignment_receipt"]},
+        "receipt_path": {"type": ["string", "null"], "minLength": 8},
+        "receipt_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "narration_receipt_path": {"type": ["string", "null"], "minLength": 8},
+        "narration_receipt_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "narration_verification_report_path": {"type": ["string", "null"], "minLength": 8},
+        "narration_verification_report_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "aligner_id": {"type": ["string", "null"], "minLength": 3},
+        "manual_anchor_review_path": {"type": ["string", "null"], "minLength": 8},
+        "manual_anchor_review_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "manual_anchor_reviewer_id": {"type": ["string", "null"], "minLength": 3},
+        "manual_anchor_count": {"type": ["integer", "null"], "minimum": 1},
+        "manual_anchor_failures": {"type": ["integer", "null"], "minimum": 0}
       },
       "additionalProperties": false
     },
     "beats": {
       "type": "array",
-      "minItems": 8,
+      "minItems": 3,
       "items": {
         "type": "object",
         "required": [
           "id",
+          "macro_move_id",
+          "performance_block_id",
           "story_function",
+          "mode",
           "start_seconds",
           "end_seconds",
           "narration",
@@ -137,19 +91,33 @@
           "on_screen_text",
           "settle_seconds",
           "hold_purpose",
-          "new_concepts",
+          "introduced_terms",
           "claim_role",
+          "source_refs",
+          "visual_inference",
           "evidence_boundary"
         ],
         "properties": {
           "id": {"type": "string", "pattern": "^b[0-9]{2,3}$"},
+          "macro_move_id": {"type": "string", "pattern": "^m[0-9]{2}$"},
+          "performance_block_id": {"type": "string", "pattern": "^p[0-9]{2}$"},
           "story_function": {
             "enum": [
-              "hook", "setup", "prediction", "construction", "mechanism",
-              "worked_trace", "comparison", "counterexample", "failure",
-              "consequence", "evidence_boundary", "payoff", "handoff"
+              "hook",
+              "setup",
+              "prediction",
+              "construction",
+              "mechanism",
+              "worked_trace",
+              "comparison",
+              "counterexample",
+              "failure",
+              "consequence",
+              "evidence_boundary",
+              "payoff"
             ]
           },
+          "mode": {"enum": ["change", "hold"]},
           "start_seconds": {"type": "number", "minimum": 0},
           "end_seconds": {"type": "number", "exclusiveMinimum": 0},
           "narration": {"type": "string", "minLength": 2},
@@ -163,9 +131,17 @@
             "uniqueItems": true,
             "items": {
               "enum": [
-                "identity", "relation", "causality", "sequence", "quantity",
-                "uncertainty", "contrast", "containment", "authority",
-                "rollback", "attention"
+                "identity",
+                "relation",
+                "causality",
+                "sequence",
+                "quantity",
+                "uncertainty",
+                "contrast",
+                "containment",
+                "authority",
+                "rollback",
+                "attention"
               ]
             }
           },
@@ -182,29 +158,42 @@
           "camera_action": {"type": "string", "minLength": 8},
           "animation_techniques": {
             "type": "array",
-            "minItems": 1,
             "uniqueItems": true,
             "items": {"type": "string", "minLength": 2}
           },
           "on_screen_text": {
             "type": "array",
+            "maxItems": 4,
             "uniqueItems": true,
-            "items": {"type": "string", "minLength": 1}
+            "items": {"type": "string", "minLength": 1, "maxLength": 48}
           },
           "settle_seconds": {"type": "number", "minimum": 0},
-          "hold_purpose": {"type": "string"},
-          "new_concepts": {
+          "hold_purpose": {"type": ["string", "null"], "minLength": 8},
+          "introduced_terms": {
             "type": "array",
-            "maxItems": 4,
+            "maxItems": 3,
             "uniqueItems": true,
             "items": {"type": "string", "minLength": 1}
           },
           "claim_role": {
             "enum": [
-              "question", "concrete_example", "mechanism", "transition",
-              "counterexample", "evidence", "boundary", "connective"
+              "question",
+              "concrete_example",
+              "mechanism",
+              "transition",
+              "counterexample",
+              "evidence",
+              "boundary",
+              "connective"
             ]
           },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 3}
+          },
+          "visual_inference": {"type": "string", "minLength": 8},
           "evidence_boundary": {"type": "string", "minLength": 8},
           "question_id": {"type": "string", "minLength": 1},
           "reasoning_pause_seconds": {"type": "number", "minimum": 0},

@@ -8,6 +8,7 @@
 - Automated educational-video systems
 - ManimCE techniques
 - Learning, narration, and TTS
+- Execution security
 - Compatibility and licensing
 
 ## Primary guidance
@@ -32,6 +33,9 @@
   show saved frame state, purposeful pan/zoom, graph following, and restoration.
 - [ManimCE scene sections](https://docs.manim.community/en/stable/tutorials/output_and_config.html#sections)
   make semantic units separately renderable for iteration and review.
+- [ManimCE testing guidance](https://docs.manim.community/en/stable/contributing/testing.html)
+  documents graphical frame-comparison tests. Use them for shared deterministic
+  primitives, not as substitutes for playback or pedagogy review.
 - [ManimCE rate functions](https://docs.manim.community/en/stable/reference/manim.utils.rate_functions.html)
   documents easing families and custom rate functions. Select a curve for its
   physical or semantic meaning rather than using one default everywhere.
@@ -63,6 +67,14 @@
 - [Tversky, Morrison, and Betrancourt, “Animation: can it facilitate?”](https://doi.org/10.1207/S15326985EP3704_3)
   argues that animation must satisfy congruence and apprehension: motion should
   match the represented structure and remain perceptually understandable.
+- [The transient-information effect and learner control](https://pubmed.ncbi.nlm.nih.gov/36320667/)
+  supports treating pause and replay control as part of animated-explanation
+  design rather than assuming continuous presentation is harmless. Preserve
+  the study and task boundaries when applying it.
+- [Recent signaling/redundancy boundary research](https://pubmed.ncbi.nlm.nih.gov/42253593/)
+  is a reminder that multimedia principles interact with material and learner
+  conditions. Do not turn “avoid redundancy” into a universal ban on concise,
+  accessibility-serving labels.
 - [YouTube: measure key moments for audience retention](https://support.google.com/youtube/answer/9314415)
   defines intro retention, top moments, spikes, and dips and explicitly notes
   that spikes can reflect either interest or confusion.
@@ -93,6 +105,9 @@
   Use these measurements while pinning a project-appropriate online-delivery
   target; do not transplant the -23 LUFS broadcast target into YouTube by
   default.
+- [W3C Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold)
+  defines frequency, area, luminance, and saturated-red conditions. A generic
+  frame-difference or FFmpeg warning is not equivalent to that analysis.
 
 ## 3Blue1Brown code study
 
@@ -164,6 +179,32 @@ justifies a claim that generated videos are educationally effective.
   successful patterns and validated pitfalls across tasks. Its code release and
   broader replication status must be rechecked before adoption. The local
   analogue stores only lessons demonstrated in completed ASI Stack reviews.
+- [LLM2Manim](https://arxiv.org/abs/2604.05266) proposes an audience/background
+  brief, assumption/symbol/unit ledger, storyboard frames, local repair,
+  regression scenes, and build manifest. These have strong process affinity
+  with the local treatment and receipt design. It is a recent preprint; its
+  reported system performance is not local evidence.
+- [“When Should Teachers Control AI Generation for Mathematics Visuals?”](https://arxiv.org/abs/2605.10672)
+  reports a 24-teacher study of stage-dependent control, including direct
+  post-generation correction. Use it to preserve editable checkpoints and
+  localized repair, not to infer that one control pattern fits every author or
+  domain. It is recent research and should be rechecked as the record matures.
+- [LAVES](https://arxiv.org/abs/2602.11790) decomposes solution, illustration,
+  narration, orchestration, semantic critique, rule checks, and executable
+  compilation. That separation supports the local treatment/scene/review
+  boundaries; its throughput, cost, and acceptance claims remain source claims,
+  not ASI Stack results.
+- [SGA](https://arxiv.org/abs/2607.18116) adds partial-execution geometric
+  verification to code-centric educational-video generation. It motivates a
+  future scene-graph and constraint-verification adapter. The current project
+  has sparse keyframes, primitive regressions, frame samples, and human review,
+  not formal symbolic geometry verification.
+- [VCEval](https://arxiv.org/abs/2407.12005) argues for multi-dimensional rather
+  than surface-only educational-video evaluation. Its automated judgments can
+  inform diagnostics, but they cannot certify learning or source fidelity here.
+- [PhyEduVideo](https://arxiv.org/abs/2601.00943) reports that visually smooth,
+  coherent generated video can still be conceptually unreliable. This is a
+  direct reason to keep truth review independent from visual polish.
 
 ## ManimCE techniques
 
@@ -202,6 +243,38 @@ VAD, and forced phoneme alignment for word timestamps. Manim Voiceover offers
 duration trackers and bookmarks. Either can support phrase-level sync, but the
 chosen path must be version-pinned and manually checked around difficult terms.
 
+## Execution security
+
+Manim scene source is executable Python, so code review and rendering are
+different security layers. The local AST audit catches a narrow, explicit set
+of imports, dynamic execution, effects, assets, and randomness before launch;
+it is not an operating-system boundary.
+
+- [Anthropic's experimental sandbox runtime](https://github.com/anthropic-experimental/sandbox-runtime)
+  documents the need for both filesystem and network isolation around
+  untrusted code. Treat it as an implementation reference, not a pinned local
+  dependency.
+- [OpenAI Codex's macOS Seatbelt implementation](https://github.com/openai/codex/blob/main/codex-rs/sandboxing/src/seatbelt.rs)
+  is another primary implementation reference for constrained process
+  execution. The current tracked adapter uses macOS Seatbelt; its receipt
+  records enforced properties so a future container or CI adapter must meet
+  the same contract rather than inheriting trust by name.
+- [Apple's `setrlimit(2)` manual](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/getrlimit.2.html)
+  distinguishes hard limits from advisory resident-set behavior and describes
+  `RLIMIT_NPROC` as user-wide. The local receipt therefore names the limits it
+  actually applies and discloses that its macOS adapter has no hard memory cap.
+
+For accepted renders, deny network access, remove credential-bearing
+environment variables, constrain repository writes to the build tree, bind the
+exact scene digest, and preserve the runner-produced policy receipt. A static
+pass or hand-written declaration alone is insufficient.
+
+The narration runtime has a narrower threat surface because it receives prose
+and digest-bound local JSON/Safetensors/NPZ rather than generated Python, but it
+is still trusted local dependency code. Its virtual environment and offline
+library flags are not the Manim runner's Seatbelt boundary. Preserve that
+distinction until an audio-runtime adapter emits equivalent enforced receipts.
+
 ## Compatibility and licensing
 
 Manim Community Edition and 3b1b's ManimGL are related but incompatible
@@ -211,3 +284,7 @@ ManimCE and its official example-gallery snippets are MIT-licensed. The
 3b1b/videos repository is CC BY-NC-SA 4.0. Study its explanatory patterns, but
 do not copy its scene implementation into the ASI Stack's differently licensed
 publication pipeline without an explicit rights and compatibility review.
+Likewise, citing a paper, repository, or media source does not grant permission
+to reuse its figures, audio, characters, or code. Record the license and exact
+asset provenance; generated imagery also needs model/prompt provenance and a
+factual inspection before it can enter a scene.

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_frame_sample_manifest.schema.json",
+  "title": "ASI Stack Manim Frame Sample Manifest",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "media_tool": {
+      "type": "object",
+      "required": ["path", "version", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "version": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "sample": {
+      "type": "object",
+      "required": ["position", "timestamp_seconds", "path", "sha256"],
+      "properties": {
+        "position": {
+          "enum": ["start", "quarter", "middle", "three-quarter", "end"]
+        },
+        "timestamp_seconds": {"type": "number", "minimum": 0},
+        "path": {"type": "string", "pattern": "^build/visual_edition/review-samples/.+\\.png$"},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "targeted_sample": {
+      "type": "object",
+      "required": ["beat_id", "timestamp_seconds", "path", "sha256"],
+      "properties": {
+        "beat_id": {"type": "string", "minLength": 1},
+        "timestamp_seconds": {"type": "number", "minimum": 0},
+        "path": {"type": "string", "pattern": "^build/visual_edition/review-samples/.+\\.png$"},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "sample_set",
+    "sampler",
+    "media_tools",
+    "video_path",
+    "video_sha256",
+    "beat_plan_path",
+    "beat_plan_sha256",
+    "expected_beat_count",
+    "sampled_beat_count",
+    "samples_per_beat",
+    "beats",
+    "targeted_transition_samples",
+    "interpretation",
+    "support_state_effect",
+    "publication_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_frame_sample_manifest.v1"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "sample_set": {"enum": ["animatic", "final"]},
+    "sampler": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"const": "skills/asi-stack-manim-videos/scripts/sample_video_beats.py"}
+      }
+    },
+    "media_tools": {
+      "type": "object",
+      "required": ["ffmpeg"],
+      "properties": {"ffmpeg": {"$ref": "#/$defs/media_tool"}},
+      "additionalProperties": false
+    },
+    "video_path": {
+      "type": "string",
+      "pattern": "^build/visual_edition/.+\\.mp4$"
+    },
+    "video_sha256": {"$ref": "#/$defs/digest"},
+    "beat_plan_path": {
+      "type": "string",
+      "pattern": "^visual_edition/chapters/[a-z0-9]+(?:-[a-z0-9]+)*/generation-2/beat_plan\\.json$"
+    },
+    "beat_plan_sha256": {"$ref": "#/$defs/digest"},
+    "expected_beat_count": {"type": "integer", "minimum": 1},
+    "sampled_beat_count": {"type": "integer", "minimum": 1},
+    "samples_per_beat": {"const": 5},
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["beat_id", "start_seconds", "end_seconds", "samples"],
+        "properties": {
+          "beat_id": {"type": "string", "minLength": 1},
+          "start_seconds": {"type": "number", "minimum": 0},
+          "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+          "samples": {
+            "type": "array",
+            "minItems": 5,
+            "maxItems": 5,
+            "prefixItems": [
+              {"allOf": [{"$ref": "#/$defs/sample"}], "properties": {"position": {"const": "start"}}},
+              {"allOf": [{"$ref": "#/$defs/sample"}], "properties": {"position": {"const": "quarter"}}},
+              {"allOf": [{"$ref": "#/$defs/sample"}], "properties": {"position": {"const": "middle"}}},
+              {"allOf": [{"$ref": "#/$defs/sample"}], "properties": {"position": {"const": "three-quarter"}}},
+              {"allOf": [{"$ref": "#/$defs/sample"}], "properties": {"position": {"const": "end"}}}
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "targeted_transition_samples": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/targeted_sample"}
+    },
+    "interpretation": {
+      "const": "Frame samples diagnose composition and interpolation; full-speed motion and sound review remain required."
+    },
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 60}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_review_context_manifest.schema.json",
+  "title": "ASI Stack Manim Review Context Manifest",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "generation",
+    "review_pass",
+    "review_session_id",
+    "prepared_at_utc",
+    "environment_class",
+    "isolated_from_prior_artifact_context",
+    "answer_key_included",
+    "prior_review_included",
+    "material_bindings",
+    "prompt_binding",
+    "support_state_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_review_context_manifest.v1"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "generation": {"const": 2},
+    "review_pass": {
+      "enum": ["animatic", "picture_and_sound_lock", "release_candidate", "independent_release_candidate"]
+    },
+    "review_session_id": {"type": "string", "minLength": 8},
+    "prepared_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "environment_class": {
+      "enum": ["implementation_session", "fresh_isolated_ai_task", "independent_human_session"]
+    },
+    "isolated_from_prior_artifact_context": {"type": "boolean"},
+    "answer_key_included": {"const": false},
+    "prior_review_included": {"type": "boolean"},
+    "material_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "path", "sha256"],
+        "properties": {
+          "kind": {
+            "enum": [
+              "rendered_video", "captions", "descriptive_transcript", "chapter",
+              "source_notes", "narration_script", "treatment", "beat_plan",
+              "scene_code", "render_receipt", "sandbox_policy_receipt",
+              "av_diagnostics", "sample_manifest"
+            ]
+          },
+          "path": {"type": "string", "minLength": 3},
+          "sha256": {"$ref": "#/$defs/digest"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "prompt_binding": {"$ref": "#/$defs/binding"},
+    "support_state_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": false
+}

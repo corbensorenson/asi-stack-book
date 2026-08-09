@@ -358,7 +358,7 @@ remain closed while other work proceeds.
 | Existing-book depth recovery — terminal historical packet with current-manifest admission | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter R21 packet remains immutable history. Current chapter growth is manifest-driven but requires the full admission and debt-reconciliation path; current atom custody is 85/85, while the new work-surfaces owner remains one visible diagnostic concept-contract item rather than rewriting the historical receipt. | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff remains terminal. New owners must gain exact atom or bounded formal-target custody at birth and cannot inherit completion from the historical packet. |
 | Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
 | Independent human narrative — active book packet | `P7.1-independent-22-unit-human-narrative` | Generated current-manifest status truth and the 22-unit claim/conclusion crosswalk are current; reference-only contracts remain in the reference | Maintain a 120,000–180,000-word human source organized by the 22-unit spine, one continuing repository-change trace, chapter-specific objections, and readable transitions. Preserve major conclusions and claim identity without reproducing every local status block. Defer the primer until this manuscript is stable. |
-| Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical, but 75 are stale and only nine local renders match the current chapter digests; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 85 chapters. Twenty-four scripts pass the tightened narration gate, while their inherited beat plans, renders, reviews, captions, and publication states have been reopened. The current ledger therefore reports 61 planned, 24 scripted, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete script, beat-plan, animatic, qualified-alignment, picture-and-sound-lock, cold-learning, technical, accessibility, and publication gates in that order. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
+| Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical, but 75 are stale and only nine local renders match the current chapter digests; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 85 chapters. Twenty-four case-first narration drafts pass structural lint, but none has the source-bound v3 treatment, truth/read-aloud/visualizability verdict, or exact digest binding required for script approval. Their treatment-free v2 beat plans, renders, reviews, captions, and publication states are historical. The current ledger therefore reports 61 planned, 24 narration drafts, zero approved scripts, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
 | Formal slot — C6 rationalization then connected composition active | `P4.1-cross-owner-composition-and-proof-rationalization` | The original C6 residual estate is reduced under exact dependency and consumer custody; new work requires the seven-field family admission rule plus maximum inference | Finish dependency-safe retire/generalize work, then implement the eight global invariants and ten distributed-fault cases in one explicitly bounded connected-owner model. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -4588,27 +4588,70 @@ outputs are good. The ASI Stack admits a borrowed technique only after it
 survives a local pilot and records both the successful conditions and failure
 mode.
 
-**Current execution checkpoint — 2026-08-08.** The repository-local skill,
-narration auditor, five-sample beat reviewer, experience-review schema,
-narration-toolchain contract, and manifest-derived production ledger now form
-one fail-closed generation-two system. The ledger derives 85 targets in
-canonical order. Twenty-four narration scripts have been rewritten to
-364–436 words and pass the narration-only audit with zero warnings; 61 targets
-remain planned. Because those scripts changed, all 24 inherited beat plans,
-scene timing, captions, renders, and experience reviews are stale: their
-current stage is `scripted`, all acceptance and publication counts are zero,
-and the old generation-one artifacts remain private historical predecessors.
-The alignment route is deliberately `not_yet_qualified`; no picture-and-sound
-lock may pass until that admission test succeeds. Legacy generation-one
-generation, timing, render, mux, and packet commands now require explicit
-historical opt-in so they cannot silently repopulate the current lane.
+**Current execution checkpoint — 2026-08-09.** The repository-local skill,
+narration/treatment/beat auditors, source preflight, shared-primitive graphical
+regression, isolated render/mux runner, A/V and caption diagnostics, v3
+treatment/review schemas, a v4 beat-plan schema,
+pinned toolchains, and manifest-derived production ledger now form one
+fail-closed generation-two system. This v3 checkpoint supersedes earlier v2
+procedural language in this subsection wherever the two conflict. The ledger
+derives 85 targets in canonical order. Twenty-four narration drafts have been
+rewritten to 364–436 words and pass structural narration lint with zero
+warnings; 61 targets remain planned. None of the drafts is an approved script:
+no source-bound treatment yet binds its exact chapter, source-note/inventory
+context, claims, non-claims, truth checks, semantic keyframes, accessibility
+plan, or read-aloud and visualizability verdict. Their earlier treatment-free
+plans and all downstream artifacts remain history. Current state is therefore
+24 `narration_draft`, zero treated, zero script-passed, and zero accepted or
+published.
 
-The next production action is one end-to-end pilot: revise its beat plan from
-the accepted script, build and inspect the animatic, qualify alignment, reach
-picture-and-sound lock, conduct cold comprehension and transfer review, and
-only then decide whether the authoring system transfers to the other four
-pilots. No audio was regenerated, no video was rendered, and no YouTube or
-Quarto publication state moved in this checkpoint.
+The hardening pass binds every gate to exact scene, caption, transcript,
+thumbnail, toolchain, visual-grammar, primitive-library, receipt, and review
+context identities. All 24 existing generation-two scenes pass a static
+allowlist preflight after removing five direct-run entrypoints and one dynamic
+import; local imports are now limited to the separately digest-bound and
+graphically tested `visual_edition.lib.asi_visuals` helper. Accepted rendering
+uses a tracked macOS Seatbelt runner that constructs both Manim and FFmpeg
+commands, narrows repository reads, denies network access, strips inherited
+credentials, confines writes to `build/visual_edition`, enforces resource
+limits, and emits a schema-valid policy receipt. Its live deny/read/write
+controls and disposable real Manim-render plus FFmpeg-mux smoke test pass; the
+source audit is explicitly not called a sandbox. A tracked compiler now derives
+the final render receipt from the exact policy receipt, ledger-owned inputs,
+forced-aligned plan, warning-free A/V diagnostic, and probed release metadata;
+the final receipt is not hand-authored. Two reviewed Cairo reference frames
+cover every public shared visual factory and caught a real evidence-badge
+collision before baseline acceptance. The portable registry gate checks the
+exact reviewed-baseline digest, frame contract, source preflight, and
+public-factory coverage without claiming that Linux CI replayed a macOS render;
+the full graphical comparison remains a separate pinned-host qualification
+command. Release now requires
+separate fresh-session source-aware and cold-proxy reviews, with frozen context
+and prompt manifests and raw responses preserved before assessment. An AI
+proxy remains artifact diagnosis rather than human-learning evidence. The
+ledger validator rejects 91 representative identity, source, geometry,
+sandbox, narration-custody, final-receipt, media-metadata, timing, review, sampling, and
+publication mutations.
+
+Timed plans now bind the canonical narration-render receipt and a passing
+digest-bound ASR/content report. The receipt must reproduce the exact narration
+with the pinned renderer, model, voice, speed, segmentation, lexicon, audio,
+and treatment performance-block boundaries; the ASR transcript additionally
+binds its runner, model revision, model-file identities, and source audio.
+Duration ranges remain diagnostics, so the gate does not reward padding.
+
+The ledger retains a whole-skill provenance digest but uses component-scoped
+invalidation: story-contract changes reopen treatment, scene or shared-visual
+changes reopen animatic, and caption/A/V helper changes reopen lock rather than
+needlessly restarting editorial work. The alignment route remains
+`not_yet_qualified`; no lock may pass until that admission test succeeds. The
+next production action is one source-bound treatment and approved script,
+followed by a block-timed pilot animatic, qualified alignment, picture-and-sound
+lock, both isolated release reviews, and only then transfer to the other four
+pilots. No chapter audio or chapter video was regenerated, no platform object
+was mutated, and no Quarto publication state moved; only the two compact
+primitive regression frames and an automatically deleted render/mux policy
+smoke fixture were executed.
 
 **Superseded execution checkpoint — 2026-07-31.** The v2 standard is now repository-local at
 `skills/asi-stack-manim-videos/`, and
@@ -4665,17 +4708,22 @@ generation-2 chapters have passed
 release candidate, independent review, technical, claim-fidelity, or
 acceptance, and zero generation-2 YouTube or Quarto identities are current.
 
-**P7.3-F9 completion gate.** Close only when the reusable skill and tracked v2
-beat-plan schema/validator pass positive and adversarial fixtures; the
-mechanical A/V diagnostic and per-beat review-sheet generator pass their tests;
+**P7.3-F9 completion gate.** Close only when the reusable skill and tracked v3
+treatment, beat-plan, review-context, render-receipt, and experience-review
+schemas and validators pass positive and adversarial fixtures; every existing
+scene passes source preflight; every public shared visual factory remains in
+the visually inspected graphical baseline; the mechanical A/V diagnostic,
+caption reviewer, and per-beat sampler pass their tests;
 the five pilots pass the full revised workflow before wider rollout; every
-current-manifest target passes the narration-only gate and has
+current-manifest target passes treatment and script gates and has
 art/audio/accessibility briefs, an exact beat plan, chapter-specific signature
 visuals and persistent state changes, qualified word- or phrase-level
 alignment before picture-and-sound lock, and five-sample-per-beat review
-sheets; every release candidate scores at least 4/5 on every experience
-dimension and passes cold comprehension and transfer without a critical
-residual; the complete technical/accessibility suite passes again; and the
+sheets; every release candidate passes an independent source-aware review and
+a context-isolated cold comprehension and changed-condition transfer check,
+with each owned dimension at least 4/5 and no material residual; every accepted
+render has a network-denied, credential-free, constrained-write execution
+receipt; the complete technical/accessibility suite passes again; and the
 roadmap, manifest, ledger, landing page, README, and live embeds report the
 same manifest-derived denominator. Private predecessors remain historical
 until newly authorized replacement transactions reconcile accepted successors.

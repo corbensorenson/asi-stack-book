@@ -2,200 +2,300 @@
 
 ## Contents
 
-- Current repository diagnosis
-- Beat-plan contract
+- Current baseline
+- Contract files
+- Artifact topology
+- State and gates
+- Timing states
+- Review lanes
 - Authoring sequence
-- Validation and review
-- Existing-video revision
-- YouTube supersession
+- Invalidation
+- Historical revisions and publication
 
-## Current repository diagnosis
+## Current baseline
 
-The 2026-08-08 baseline audit found 85 canonical chapters, 84 preserved
-generation-one packets, and 24 generation-two narration drafts. The newly added
-chapter has no legacy packet by design. Seventy-nine generation-one narrations
-use the same seven-paragraph chapter-summary template; generation one remains
-historical rather than an authoring source.
+As of 2026-08-09, the canonical structure contains 85 chapters. Generation one
+preserves 84 historical packets; the later chapter correctly has no fabricated
+predecessor. Generation two contains 24 case-first narration drafts and 61
+planned chapters. No current v3 treatment or approved script exists yet.
 
-The same-day editorial pass replaced all 24 generation-two narrations with
-case-first scripts under the revised standard. They now run from 364 to 436
-words and pass the narration-only audit without warnings. Their earlier beat
-plans, audio, captions, transcripts, scenes, renders, and reviews remain useful
-history, but no longer describe the current scripts and must be regenerated
-through the gates. The remaining 61 chapters enter generation two in canonical
-order as one-promise visual abstracts, including the chapter with no legacy
-predecessor.
+Those 24 drafts pass structural narration lint, but lint does not establish
+truth, voice, or visualizability. Their earlier treatment-free beat plans,
+audio, scenes, captions, renders, and reviews predate the current contract and
+remain history. The v3 ledger truthfully reports the drafts as
+`narration_draft`, with downstream gates closed.
 
-The main defect is selection, not speech speed: scripts summarize chapters,
-beats follow document sections, and visuals inherit card-like tableaux. The
-legacy packet generator is a historical reproducibility tool. Do not use it to
-author generation two or to fill a new chapter merely for count symmetry. Its
-packet, timing, bulk-render, mux, and production commands require the explicit
-`--historical-generation-one` acknowledgement.
+Do not use the legacy packet generator for new authorship. Its commands require
+the explicit `--historical-generation-one` acknowledgement. Do not create
+generation-one files merely to make counts symmetrical.
 
-Do not treat `ready_not_published`, a successful render, or an earlier review
-as approval under the revised standard. Existing receipts preserve exact
-historical identity. Any script or standard change reopens downstream timing,
-captions, audio, scene, and experience gates without erasing those receipts.
+## Contract files
 
-## Beat-plan contract
+- `schemas/manim_treatment.schema.json`: audience, evidence, story, packaging,
+  art/audio/accessibility direction, assets, semantic keyframes, and script
+  gate.
+- `schemas/manim_beat_plan.schema.json`: exact treatment and narration bindings,
+  timing state, macro/performance ownership, and per-beat visual argument.
+- `schemas/manim_experience_review.schema.json`: exact artifact bindings,
+  reviewer context, sample manifest, raw learning checks, viewing passes,
+  timestamped dimensions, defects, and verdict.
+- `schemas/manim_review_context_manifest.schema.json`: exact material and prompt
+  custody for each isolated review session.
+- `schemas/manim_frame_sample_manifest.schema.json`: tracked sampler and FFmpeg
+  identity, exact media/plan custody, five samples per beat, and targeted risky
+  transitions.
+- `schemas/manim_av_diagnostics.schema.json`: pinned FFmpeg/FFprobe identity,
+  exact detection thresholds, stream and loudness fields, and diagnostic state.
+- `schemas/manim_render_receipt.schema.json`: exact release inputs, sandboxed
+  execution conditions, technical output, and A/V-diagnostic binding.
+- `schemas/manim_sandbox_policy_receipt.schema.json`: runner, source-preflight,
+  explicit repository inputs plus disclosed system-content roots, denied
+  network/credentials, constrained writes, resource limits and their live
+  self-tests, explicit macOS memory-bound residual, exact command sequence, and
+  output identity.
+- `skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py`:
+  deterministic final-receipt compiler. It binds the policy receipt, ledger,
+  forced-aligned plan, audio, master metadata, and warning-free A/V diagnostic;
+  do not substitute a hand-authored release declaration.
+- `schemas/manim_toolchain.schema.json`: pinned ManimCE runtime, renderer,
+  native dependencies, fonts, render profiles, and the exact ratified visual
+  grammar whose palette contrast and redundant encodings are computed.
+- `schemas/manim_primitive_regression.schema.json`: content-addressed shared
+  visual-factory coverage and manually inspected reference frames.
+- `schemas/manim_v2_production_ledger.schema.json`: manifest-driven chapter
+  identity, production state, gates, predecessor custody, and publication
+  lifecycle.
+- `visual_edition/narration_toolchain.json`: pinned voice, synthesis, alignment,
+  audio, and disclosure policy. A candidate mentioned in a reference is not
+  qualified until this file records a passing comparison.
 
-Create a per-chapter `beat_plan.json` with this shape:
+The semantic auditors enforce relationships that JSON Schema cannot express.
+Schema validity alone is never a passing gate.
 
-```json
-{
-  "schema_version": "asi_stack.manim_beat_plan.v2",
-  "chapter_id": "example-chapter",
-  "teaching_promise": "The viewer can predict when a route must abstain.",
-  "target_duration_seconds": 240.0,
-  "chapter_sha256": "<64 lowercase hex characters>",
-  "source_commit": "<Git commit>",
-  "story": {
-    "concrete_case": "Two routes agree, but only one has authority.",
-    "opening_question": "Which answer may act?",
-    "payoff": "Agreement cannot grant authority.",
-    "transfer": "Apply the same test to tools, memory, and model updates."
-  },
-  "art_direction": {
-    "visual_thesis": "An answer travels farther than its authority token.",
-    "signature_image": "Two equal answers at one gate, only one holding a key.",
-    "visual_world": "A persistent request flowing through two routes and one gate.",
-    "persistent_objects": ["request token", "route A", "route B", "authority key", "gate"],
-    "composition_rule": "Flow left to right; gate is the fixed decision axis.",
-    "palette_rule": "Accent marks active flow; warning marks blocked authority; uncertainty uses pattern plus label.",
-    "typography_rule": "Object labels only; qualifiers remain adjacent to the gate.",
-    "motion_character": "Precise routing with a firm stop at the boundary.",
-    "camera_rule": "Reframe only to compare both routes or isolate the gate.",
-    "surface_rule": "Flat field, restrained glow only at the active gate.",
-    "ending_image": "Both answers remain equal while only the keyed path crosses."
-  },
-  "audio_direction": {
-    "narration_style": "Warm, deliberate, with a pause before the gate test.",
-    "pacing_arc": "Fast setup, slower prediction, crisp reveal, quiet evidence boundary.",
-    "music_policy": "Rights-cleared bed only in setup and payoff; duck under the mechanism.",
-    "sound_effect_policy": "One quiet semantic gate sound; no per-motion effects.",
-    "review_devices": ["headphones", "earbuds", "laptop speakers", "phone speakers"]
-  },
-  "accessibility": {
-    "color_redundancy": "Route state uses key shape, label, and color.",
-    "motion_redundancy": "Crossing and blocking end in distinct stable positions.",
-    "integrated_description": "Narration names the key and visible stop.",
-    "caption_plan": "Exact narration plus the meaningful gate sound.",
-    "reduced_motion_assessment": "No parallax, flash, spin, shake, or continuous zoom."
-  },
-  "beats": [
-    {
-      "id": "b01",
-      "story_function": "hook",
-      "start_seconds": 0.0,
-      "end_seconds": 5.2,
-      "narration": "Two routes return the same answer, but only one may act.",
-      "sync_anchor": "only one may act",
-      "visual_purpose": "Contrast output equality with authority inequality.",
-      "visual_action": "split_path_and_block_unauthorized_token",
-      "attention_target": "the blocked token at the gate",
-      "semantic_encodings": ["relation", "authority", "contrast"],
-      "object_before": "one request and two untested routes",
-      "object_after": "two equal answers with one path stopped at an authority gate",
-      "continuity_objects": ["request token", "gate"],
-      "composition": "Equal routes share a baseline; the gate divides the right third.",
-      "motion_curve": "ease-out split, linear travel, ease-in stop",
-      "camera_action": "static; the full comparison is already legible",
-      "animation_techniques": ["TransformFromCopy", "MoveAlongPath"],
-      "on_screen_text": ["same answer", "different authority"],
-      "settle_seconds": 0.4,
-      "hold_purpose": "Let the unequal endpoints register before narration continues.",
-      "new_concepts": ["authority differs from agreement"],
-      "claim_role": "concrete_example",
-      "evidence_boundary": "illustrative mechanism, not deployment evidence"
-    }
-  ]
-}
+## Artifact topology
+
+```text
+visual_edition/chapters/<chapter-id>/generation-2/
+  treatment.json
+  narration.txt
+  beat_plan.json
+  scene.py
+  captions.vtt
+  transcript.md
+  thumbnail.svg | thumbnail.png
+  av_diagnostics.json
+  render_receipt.json
+  receipts/
+    animatic-sample-manifest.json
+    final-sample-manifest.json
+    caption-overlay.png
+    caption-diagnostics.json
+  reviews/
+    animatic.json
+    animatic.context.json
+    animatic.prompt.md
+    animatic.raw.md
+    picture_and_sound_lock.json
+    picture_and_sound_lock.context.json
+    picture_and_sound_lock.prompt.md
+    picture_and_sound_lock.raw.md
+    release_candidate.json
+    release_candidate.context.json
+    release_candidate.prompt.md
+    release_candidate.raw.md
+    independent_release_candidate.json
+    independent_release_candidate.context.json
+    independent_release_candidate.prompt.md
+    independent_release_candidate.raw.md
 ```
 
-Each beat uses one story function from `hook`, `setup`, `prediction`,
-`construction`, `mechanism`, `worked_trace`, `comparison`, `counterexample`,
-`failure`, `consequence`, `evidence_boundary`, `payoff`, or `handoff`. Every
-video needs a hook, mechanism, evidence boundary, and payoff. Other functions
-depend on the chapter. The first beat must hook and the payoff must follow the
-mechanism, but do not force every chapter into the same seven-part sequence.
+Do not create speculative files. Add an artifact only when its gate is being
+worked or a prior generation must be preserved. Build intermediates belong in
+ignored build directories, not the source tree. Sample PNGs and their HTML
+sheet live under `build/visual_edition/review-samples/`; only their compact
+digest manifest is tracked with the chapter.
 
-Use exact timestamps from final narration alignment, not word-count estimates.
-The concatenated beat narration must equal `narration.txt` after whitespace and
-punctuation normalization.
+## State and gates
+
+The stage describes the furthest artifact that exists. A gate describes what
+has been reviewed and accepted. Existence never implies acceptance.
+
+| Stage | Meaning |
+|---|---|
+| `planned` | no generation-two narration |
+| `narration_draft` | narration exists; no approved treatment/script |
+| `treated` | treatment exists; script gate is not passed |
+| `script_passed` | treatment binds an approved narration digest |
+| `beat_planned` | current v4 beat plan exists |
+| `animatic` | bound animatic review passes |
+| `picture_and_sound_lock` | forced-aligned picture/sound review passes |
+| `release_candidate` | pinned master and source-aware review pass |
+| `accepted` | cold-proxy, technical, claim-fidelity, and all prior gates pass |
+
+Gate prerequisites are fail-closed:
+
+```text
+treatment -> script -> beat_plan -> animatic
+animatic -> picture_and_sound_lock -> release_candidate
+release_candidate -> independent_release_candidate
+all above + technical + claim_fidelity -> accepted
+```
+
+The independent release review depends on the exact release candidate but does
+not inherit the source-aware critic's context.
+
+## Treatment and script gate
+
+`treatment.json` is the source of truth for the derivative's editorial design.
+It contains three to five compared promises with one exact selection, a
+standalone audience contract, content and non-claim boundaries, assumptions,
+notation and units, retained truth checks, normally four to six macro moves
+with viewer-before/visible-event/viewer-after states, normally four to eight
+semantic keyframes, packaging, asset provenance, performance blocks, and
+accessibility plans.
+
+Narration and keyframes co-evolve. The treatment may record `not_reviewed` or
+`revise` while drafting. It may record `pass` only when:
+
+- its narration digest and word count match the supplied file;
+- read-aloud, truth, and visualizability reviews each pass;
+- a reviewer ID is recorded; and
+- no open script defect remains.
+
+The narration-only auditor reports structural lint. Only the complete treatment
+audit can pass the script gate.
+
+Failed or uncertain truth checks remain in the treatment with a resolution
+path and block the gate. Do not erase an adverse check from the record.
+
+## Timing states
+
+The beat plan binds exact treatment and narration files. It uses one of three
+timing states:
+
+| State | Required source | Eligible work |
+|---|---|---|
+| `estimated` | `editorial_estimate`, no receipt | rough planning only |
+| `block_timed` | exact synthesis receipt plus passing bound ASR/content verification | animatic |
+| `forced_aligned` | synthesis and verification custody plus alignment receipt, aligner ID, manual anchor review and digests | picture/sound lock and release |
+
+Do not infer word timing by distributing block duration. Synthesis-block timing
+is exact only at block boundaries. A plan can pass structural audit while
+estimated, but the production ledger cannot pass its beat-plan gate until at
+least `block_timed`, and cannot pass lock until `forced_aligned` under a
+qualified toolchain.
+
+Each beat must map to one treatment macro move and its performance block. Macro
+moves appear once, contiguously, and in story order. `source_refs` must stay
+inside the treatment's claim/source set. `introduced_terms` must stay inside
+the audience contract. `mode: change` requires a real before/after state
+change; `mode: hold` requires identical states, an explicit purpose, and no new
+term.
+
+## Review lanes
+
+Every review binds the exact media, treatment, plan, narration, captions,
+transcript, scene, thumbnail, visual contracts, receipt, and sample-manifest
+identities relevant to its gate. An animatic binds its draft sandbox receipt
+and narration-bearing animatic mux while final captions, transcript, thumbnail, A/V diagnostic,
+and render receipt remain explicitly null. Lock binds the exact release mux,
+captions, transcript, sandbox receipt, A/V diagnostic, and final receipt while
+thumbnail remains null. Release reviews additionally bind the thumbnail.
+Before launching a review, freeze a context
+manifest and prompt, start a fresh AI task or independent human session when
+the lane requires independence, and preserve the raw response before
+assessment. The manifest must exactly enumerate what the reviewer received.
+
+- **Implementation diagnostic:** animatic and lock. May be familiar with the
+  implementation. Finds story, composition, motion, sync, continuity, pacing,
+  voice, mix, and accessibility defects.
+- **Source-aware critic:** release candidate. Must not be the script author or
+  scene implementer. Receives the chapter, source notes, treatment, beat plan,
+  and rendered candidate. Owns claim fidelity.
+- **Cold audience proxy:** independent release candidate. Must not be author or
+  implementer and must have no prior exposure. Receives only rendered video,
+  captions, and optionally the descriptive transcript. Receives no answer key.
+  Owns raw comprehension and changed-case transfer responses, not source truth.
+
+A release pass needs both latter lanes. An AI proxy result remains a diagnostic
+of one artifact under one prompt, not evidence of human learning or population
+generalization.
 
 ## Authoring sequence
 
-1. Read the chapter and evidence surfaces.
-2. Draft several teaching promises; select one outcome and one concrete case.
-3. Write four to six macro narrative moves and one cold transfer question.
-4. Draft narration, read it aloud, and pass the narration-only audit.
-5. Write the art-direction, audio, and accessibility briefs.
-6. Design sparse semantic keyframes and the persistent domain objects.
-7. Build the timed beat plan and run the complete plan audit.
-8. Synthesize narration in coherent blocks and force-align words or phrases.
-9. Replace estimated beat times with audio-derived anchors.
-10. Implement a low-resolution animatic with chapter-specific objects.
-11. Review five samples per beat plus complete playback; repair story,
-    composition, interpolation, continuity, synchronization, and rhythm.
-12. Run the cold comprehension and transfer checks.
-13. Lock geometry, easing, camera, narration, captions, and sound.
-14. Run `audit_av_experience.py` for mechanical freeze, silence, and loudness
-    diagnostics; investigate every finding in playback.
-15. Render the pinned 1920×1080/30 release profile and mux exact audio.
-16. Run `build_caption_review_sheet.py` against the mux and final VTT; reject
-    overlaps, sub-320-millisecond cues, overlong cues, or captions that obscure
-    the active visual region in the representative exact-frame sheet.
-17. Run repository visual, caption, transcript, receipt, and publication
-    validators.
-18. Perform the complete experience review in `experience-review.md`.
+1. Read the full canonical chapter, packet, claims, proofs, source notes,
+   non-claims, evidence ceiling, and current visual custody.
+2. Record audience assumptions; compare teaching promises; select one case and
+   medium.
+3. Co-design macro moves, semantic keyframes, narration, packaging, assets,
+   performance, and accessibility in the treatment.
+4. Run structural narration lint throughout drafting.
+5. Complete truth, read-aloud, and visualizability reviews; pass Gate 0.
+6. Synthesize coherent performance blocks and record exact receipts.
+7. Run pinned ASR/content verification, build a block-timed beat plan, and pass
+   its semantic audit. ASR content agreement is not forced alignment.
+8. Implement semantic objects and a low-resolution animatic.
+9. Run scene-source preflight, then execute the passing scene through the
+   tracked network-denied, credential-free, constrained-write runner. If shared
+   primitives changed, pass the manually inspected graphical regression before
+   using them. The animatic runner input includes the canonical narration
+   master; a silent visual track cannot pass this stage.
+   The portable registry gate verifies baseline identity, frame contract,
+   source safety, and factory coverage only. It must not be reported as a
+   graphical replay; run that comparison on the pinned macOS host.
+10. Create the bound animatic sample set, inspect full-speed playback in every
+    required mode, and pass animatic review.
+11. Qualify forced alignment, manually review anchors, and update the plan.
+12. Finish scene, narration, captions, transcript, camera, easing, voice, and
+    mix to candidate quality.
+13. Render and mux the pinned release profile through the tracked runner, sync
+    the ledger to the ignored-build master, run A/V diagnostics, and compile
+    the final receipt with the tracked compiler. Sync again; do not hand-author
+    either execution or final custody.
+14. Create one final sample set, run actual caption-overlay review,
+    accessibility checks, device playback, and picture/sound lock against that
+    exact candidate and receipt. Bind the same final samples into both release
+    reviews unless an input or required targeted sample changes. Repair and
+    repeat candidate custody when the review finds a defect.
+15. Run the source-aware review, then the context-isolated cold proxy review.
+16. Pass technical and claim-fidelity gates; accept locally.
+17. Publish only with action-time authority and reconcile all external identity.
 
-## Validation and review
+## Invalidation
 
-The structural audit is necessary, not sufficient. It enforces story-function
-coverage, timing, narration bounds, art/audio/accessibility briefs,
-visual-state declarations, short labels, persistent-object declarations, and
-exact narration agreement. Technique and beat-density counts remain warnings,
-not creative targets. The audit cannot judge whether the metaphor is
-insightful, motion is beautiful, voice is pleasant, or explanation is true.
+| Changed input | Reopen |
+|---|---|
+| chapter, claim, source, or evidence ceiling | treatment and all downstream gates |
+| treatment or narration | script and all downstream gates |
+| voice, model, settings, block audio, or pronunciation | timing, captions, mix, reviews |
+| alignment method or anchors | beat timing, captions, lock, reviews |
+| beat plan or scene | render, samples, reviews, acceptance |
+| captions or transcript | picture-and-sound lock and all downstream gates |
+| thumbnail/title/description/source card | packaging review and publication receipt |
+| story, treatment guidance, treatment schema, or chapter/source context | treatment and all downstream gates |
+| scene audit, Manim patterns, primitive regression, visual grammar, or visual toolchain | animatic and all downstream gates |
+| sampling or experience-review contract | owning review and all downstream gates |
+| caption/A/V diagnostic contract | picture-and-sound lock and downstream gates |
+| isolated runner | animatic and all downstream gates |
+| sandbox-receipt schema | animatic and all downstream gates |
+| render-receipt contract or final-receipt compiler | picture-and-sound lock and downstream gates |
 
-For contact sheets, sample at least five frames per beat. A start/middle/end
-review can still miss a broken quarter-state, crossing label, or abrupt late
-reveal.
+The ledger records the whole skill-bundle digest for provenance and separate
+component digests for invalidation. Do not reopen treatment because an
+unrelated caption or sampling helper changed.
 
-Record review outcomes by beat:
+Preserve old receipts and artifacts as historical identity. Reopening a gate is
+not deletion and does not imply the earlier artifact never existed.
 
-- sync: visual onset and resolution match the spoken idea;
-- comprehension: the visual reduces explanation cost;
-- continuity: object identity remains legible;
-- load: reading does not compete with listening;
-- claim boundary: the picture is no broader than the chapter; and
-- action: keep, revise, split, merge, or cut.
+## Historical revisions and publication
 
-## Existing-video revision
+Compare a replacement to its predecessor at matched playback level and display
+size. Keep a change only when it solves a named viewer problem or satisfies a
+new contract. “More animated” is not a rationale.
 
-Treat the first five uploaded videos as the initial revision cohort because the
-owner has supplied direct viewing feedback. Do not merely add motion to the
-generic card scenes. Rewrite each around a concrete case and beat plan. Preserve
-useful custom work from video 1, but apply the same narration and sync audit.
-
-After the cohort passes, revise the remaining uploaded previews before
-uploading more chapters. Then author generation two in current canonical order.
-New chapters enter automatically as planned targets with no fabricated
-generation-one predecessor. Generate public derivatives only when content and
-review gates justify the work; do not regenerate audio or publication bundles
-for routine manuscript edits.
-
-## YouTube supersession
-
-YouTube cannot replace a video's binary in place. Follow the repository's
-supersession workflow:
-
-- keep stable internal chapter identity;
-- create generation N+1 and an exact replacement plan;
-- obtain action-time authority for that plan;
-- upload the replacement with reviewed metadata, caption, and thumbnail;
-- preserve the prior generation and normally make it unlisted;
-- update playlist position, receipt, packet, ledger, and Quarto embed together;
-- verify the live public or unlisted state; and
-- never infer support-state movement from media quality.
+YouTube cannot replace a binary in place. Preserve stable internal chapter
+identity, create generation N+1, obtain exact authority, upload and verify the
+replacement, normally unlist or privately preserve its predecessor, and update
+video ID, visibility, captions, thumbnail, description, source delivery,
+playlist, receipt, ledger, packet, and Quarto embed together. No local review
+authorizes an external mutation by implication.

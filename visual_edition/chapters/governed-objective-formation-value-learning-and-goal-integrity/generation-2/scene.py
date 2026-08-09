@@ -10,12 +10,12 @@ from __future__ import annotations
 
 from manim import (
     Arrow, Create, Cross, DashedLine, FadeIn, FadeOut, GrowArrow, Indicate,
-    LaggedStart, LEFT, Line, ORIGIN, Rectangle, RoundedRectangle, RIGHT, Text,
-    TransformFromCopy, UP, DOWN, VGroup,
+    LaggedStart, LEFT, Line, ORIGIN, RoundedRectangle, RIGHT, Text,
+    UP, DOWN, VGroup,
 )
 
 from visual_edition.lib.asi_visuals import (
-    AUTHORITY, BOUNDARY, COPPER, INK, MUTED, RESIDUAL, ROLLBACK, SURFACE,
+    BOUNDARY, COPPER, INK, MUTED, RESIDUAL, ROLLBACK, SURFACE,
     AsiScene, text,
 )
 
@@ -399,11 +399,6 @@ class GovernedObjectiveGeneration2(AsiScene):
         public29 = self.badge("PUBLIC AUTHORITY", BLUE, 2.5).shift(RIGHT * 3.7 + DOWN * 1.4)
         edge29 = Arrow(packet29.get_right(), lease29.get_left(), color=GREEN, stroke_width=3, buff=0.1)
         edge29b = Arrow(lease29.get_right(), public29.get_left(), color=BLUE, stroke_width=3, buff=0.1)
-        scene29 = VGroup(frame29, packet29, lease29, dissent29, public29, edge29, edge29b)
         self.play_beat(29, FadeOut(scene28), FadeIn(frame29), FadeIn(packet29), GrowArrow(edge29), FadeIn(lease29), FadeIn(dissent29), GrowArrow(edge29b), FadeIn(public29), Indicate(public29, color=BLUE), settle=1.0)
 
         self.wait_until(self.TARGET_DURATION)
-
-
-if __name__ == "__main__":
-    GovernedObjectiveGeneration2().render()

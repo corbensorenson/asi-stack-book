@@ -1,0 +1,56 @@
+{
+  "schema_version": "asi_stack.manim_primitive_regression.v1",
+  "toolchain": {
+    "path": "visual_edition/toolchain.json",
+    "sha256": "b724ca0696d7cf0f85e8cd682c6a1431a2443213bbf32c0811ccc2fba3e28448"
+  },
+  "visual_grammar": {
+    "path": "visual_edition/visual_grammar.json",
+    "sha256": "82c028280c5d66bdff5e067f2c2932b002c88d864b1e5a8fba9c6fbc4a9049f1"
+  },
+  "primitive_library": {
+    "path": "visual_edition/lib/asi_visuals.py",
+    "sha256": "dd46d9911bd2c6b4afea9ef8e1b8257f9988037b9432d64587e30c5c82a7fe2d"
+  },
+  "regression_scenes": {
+    "path": "visual_edition/tests/primitive_regression_scenes.py",
+    "sha256": "8a258a3d778b5b7097d5c9916dde908b7a16983040418649162fbc65bc2b8a00"
+  },
+  "scene_classes": [
+    "PrimitiveSymbolsRegression",
+    "PrimitiveFramingRegression"
+  ],
+  "covered_factory_symbols": [
+    "authority_gate",
+    "evidence_badge",
+    "layer_card",
+    "proof_boundary",
+    "residual_marker",
+    "rollback_arrow",
+    "source_end_card",
+    "text",
+    "title_card"
+  ],
+  "frame_contract": {
+    "renderer": "cairo",
+    "pixel_width": 854,
+    "pixel_height": 480,
+    "channels": 4,
+    "background_color": "#101820"
+  },
+  "baseline": {
+    "path": "visual_edition/tests/control_data/asi_visuals_v1.npz",
+    "sha256": "39d403d6146cded9ba0390e6d807e0fe767da0d3b601825bf2e626c6d62f2951",
+    "frame_count": 2
+  },
+  "comparison": {
+    "absolute_channel_tolerance": 1.01,
+    "maximum_mismatch_ratio": 0.00001
+  },
+  "accepted_at_utc": "2026-08-08T00:00:00Z",
+  "accepted_by": "codex-hostile-skill-audit",
+  "review_state": "manually_inspected",
+  "review_rationale": "Both candidate frames were inspected at original resolution after repairing the evidence-badge collision; labels are legible, hierarchy is clear, and no clipping or overlap remains.",
+  "support_state_effect": "none",
+  "non_claim": "A passing static frame comparison detects bounded visual regressions but does not establish motion quality, synchronization, accessibility, or learning."
+}

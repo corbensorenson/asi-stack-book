@@ -2,84 +2,456 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_experience_review.schema.json",
   "title": "ASI Stack Manim Experience Review",
+  "$defs": {
+    "artifact_binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 8},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "nullable_artifact_binding": {
+      "anyOf": [
+        {"$ref": "#/$defs/artifact_binding"},
+        {"type": "null"}
+      ]
+    },
+    "viewing_result": {
+      "type": "object",
+      "required": ["result", "notes"],
+      "properties": {
+        "result": {"enum": ["pass", "fail", "not_applicable"]},
+        "notes": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "dimension": {
+      "type": "object",
+      "required": ["score", "rationale", "evidence_timestamps"],
+      "properties": {
+        "score": {"type": ["integer", "null"], "minimum": 1, "maximum": 5},
+        "rationale": {"type": "string", "minLength": 16},
+        "evidence_timestamps": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "number", "minimum": 0}
+        }
+      },
+      "additionalProperties": false
+    },
+    "artifact_grounding": {
+      "type": "object",
+      "required": ["timestamp_seconds", "observed_cue", "response_excerpt", "causal_relevance"],
+      "properties": {
+        "timestamp_seconds": {"type": "number", "minimum": 0},
+        "observed_cue": {"type": "string", "minLength": 12},
+        "response_excerpt": {"type": "string", "minLength": 12},
+        "causal_relevance": {"type": "string", "minLength": 20}
+      },
+      "additionalProperties": false
+    }
+  },
   "type": "object",
   "required": [
-    "schema_version", "chapter_id", "generation", "pass", "reviewed_master_sha256",
-    "reviewed_at_utc", "review_context", "frame_sampling", "learning_check",
-    "viewing_passes", "dimensions", "open_defects", "verdict",
-    "support_state_effect", "non_claim"
+    "schema_version",
+    "chapter_id",
+    "generation",
+    "pass",
+    "review_role",
+    "reviewed_at_utc",
+    "artifact_bindings",
+    "review_context",
+    "frame_sampling",
+    "learning_check",
+    "viewing_passes",
+    "dimensions",
+    "open_defects",
+    "verdict",
+    "support_state_effect",
+    "non_claim"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.manim_experience_review.v2"},
-    "chapter_id": {"type": "string"},
+    "schema_version": {"const": "asi_stack.manim_experience_review.v3"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "generation": {"type": "integer", "minimum": 1},
-    "pass": {"enum": ["animatic", "picture_and_sound_lock", "release_candidate"]},
-    "reviewed_master_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
-    "reviewed_at_utc": {"type": "string"},
+    "pass": {
+      "enum": [
+        "animatic",
+        "picture_and_sound_lock",
+        "release_candidate",
+        "independent_release_candidate"
+      ]
+    },
+    "review_role": {
+      "enum": ["implementation_diagnostic", "source_aware_critic", "cold_audience_proxy"]
+    },
+    "reviewed_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "artifact_bindings": {
+      "type": "object",
+      "required": [
+        "reviewed_master",
+        "chapter",
+        "treatment",
+        "beat_plan",
+        "scene",
+        "narration",
+        "captions",
+        "transcript",
+        "thumbnail",
+        "visual_grammar",
+        "visual_toolchain",
+        "primitive_library",
+        "scene_source_auditor",
+        "isolated_render_runner",
+        "sandbox_policy_receipt_schema",
+        "primitive_regression_manifest",
+        "narration_toolchain",
+        "sandbox_policy_receipt",
+        "render_receipt",
+        "av_diagnostics"
+      ],
+      "properties": {
+        "reviewed_master": {"$ref": "#/$defs/artifact_binding"},
+        "chapter": {"$ref": "#/$defs/artifact_binding"},
+        "treatment": {"$ref": "#/$defs/artifact_binding"},
+        "beat_plan": {"$ref": "#/$defs/artifact_binding"},
+        "scene": {"$ref": "#/$defs/artifact_binding"},
+        "narration": {"$ref": "#/$defs/artifact_binding"},
+        "captions": {"$ref": "#/$defs/nullable_artifact_binding"},
+        "transcript": {"$ref": "#/$defs/nullable_artifact_binding"},
+        "thumbnail": {"$ref": "#/$defs/nullable_artifact_binding"},
+        "visual_grammar": {"$ref": "#/$defs/artifact_binding"},
+        "visual_toolchain": {"$ref": "#/$defs/artifact_binding"},
+        "primitive_library": {"$ref": "#/$defs/artifact_binding"},
+        "scene_source_auditor": {"$ref": "#/$defs/artifact_binding"},
+        "isolated_render_runner": {"$ref": "#/$defs/artifact_binding"},
+        "sandbox_policy_receipt_schema": {"$ref": "#/$defs/artifact_binding"},
+        "primitive_regression_manifest": {"$ref": "#/$defs/artifact_binding"},
+        "narration_toolchain": {"$ref": "#/$defs/artifact_binding"},
+        "sandbox_policy_receipt": {"$ref": "#/$defs/artifact_binding"},
+        "render_receipt": {"$ref": "#/$defs/nullable_artifact_binding"},
+        "av_diagnostics": {"$ref": "#/$defs/nullable_artifact_binding"}
+      },
+      "additionalProperties": false
+    },
     "review_context": {
       "type": "object",
-      "required": ["reviewer_id", "script_author", "scene_implementer", "review_basis", "independence_notes"],
+      "required": [
+        "reviewer_id",
+        "review_session_id",
+        "reviewer_type",
+        "prior_exposure",
+        "script_author",
+        "scene_implementer",
+        "allowed_materials",
+        "context_manifest_path",
+        "context_manifest_sha256",
+        "raw_review_path",
+        "raw_review_sha256",
+        "independence_notes"
+      ],
       "properties": {
         "reviewer_id": {"type": "string", "minLength": 3},
+        "review_session_id": {"type": "string", "minLength": 8},
+        "reviewer_type": {"enum": ["ai_proxy", "human_owner", "external_human"]},
+        "prior_exposure": {"enum": ["cold", "familiar"]},
         "script_author": {"type": "boolean"},
         "scene_implementer": {"type": "boolean"},
-        "review_basis": {"enum": ["rendered_artifact", "rendered_artifact_and_source"]},
-        "independence_notes": {"type": "string", "minLength": 20}
+        "allowed_materials": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "rendered_video",
+              "captions",
+              "descriptive_transcript",
+              "chapter",
+              "source_notes",
+              "narration_script",
+              "treatment",
+              "beat_plan",
+              "scene_code",
+              "render_receipt",
+              "sandbox_policy_receipt",
+              "av_diagnostics",
+              "sample_manifest",
+              "answer_key"
+            ]
+          }
+        },
+        "context_manifest_path": {"type": "string", "minLength": 8},
+        "context_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "raw_review_path": {"type": "string", "minLength": 8},
+        "raw_review_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "independence_notes": {"type": "string", "minLength": 24}
       },
       "additionalProperties": false
     },
     "frame_sampling": {
       "type": "object",
-      "required": ["samples_per_beat", "targeted_transition_samples", "contact_sheet_path", "interpolation_defects"],
+      "required": [
+        "samples_per_beat",
+        "expected_beat_count",
+        "sampled_beat_count",
+        "targeted_transition_samples",
+        "sample_manifest_path",
+        "sample_manifest_sha256",
+        "unresolved_interpolation_defects"
+      ],
       "properties": {
         "samples_per_beat": {"type": "integer", "minimum": 5},
+        "expected_beat_count": {"type": "integer", "minimum": 1},
+        "sampled_beat_count": {"type": "integer", "minimum": 1},
         "targeted_transition_samples": {"type": "integer", "minimum": 0},
-        "contact_sheet_path": {"type": "string", "minLength": 8},
-        "interpolation_defects": {"type": "integer", "minimum": 0}
+        "sample_manifest_path": {"type": "string", "minLength": 8},
+        "sample_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "unresolved_interpolation_defects": {"type": "integer", "minimum": 0}
       },
       "additionalProperties": false
     },
     "learning_check": {
       "type": "object",
       "required": [
-        "reviewer_prior_exposure", "comprehension_prompt", "comprehension_response_summary",
-        "comprehension_result", "transfer_prompt", "transfer_response_summary", "transfer_result",
-        "misconception_or_failure_action"
+        "status",
+        "reviewer_received_answer_key",
+        "comprehension_prompt",
+        "comprehension_raw_response",
+        "comprehension_success_criteria",
+        "comprehension_result",
+        "transfer_prompt",
+        "transfer_raw_response",
+        "transfer_success_criteria",
+        "transfer_result",
+        "artifact_grounding",
+        "artifact_grounding_result",
+        "assessor_id",
+        "misconception_or_failure_action",
+        "proxy_limit"
       ],
       "properties": {
-        "reviewer_prior_exposure": {"enum": ["cold", "familiar"]},
-        "comprehension_prompt": {"type": "string", "minLength": 20},
-        "comprehension_response_summary": {"type": "string", "minLength": 12},
-        "comprehension_result": {"enum": ["pass", "fail"]},
-        "transfer_prompt": {"type": "string", "minLength": 20},
-        "transfer_response_summary": {"type": "string", "minLength": 12},
-        "transfer_result": {"enum": ["pass", "fail"]},
-        "misconception_or_failure_action": {"type": ["string", "null"], "minLength": 12}
+        "status": {"enum": ["not_run", "pass", "fail"]},
+        "reviewer_received_answer_key": {"const": false},
+        "comprehension_prompt": {"type": ["string", "null"], "minLength": 20},
+        "comprehension_raw_response": {"type": ["string", "null"], "minLength": 12},
+        "comprehension_success_criteria": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 8}
+        },
+        "comprehension_result": {"enum": ["not_run", "pass", "fail"]},
+        "transfer_prompt": {"type": ["string", "null"], "minLength": 20},
+        "transfer_raw_response": {"type": ["string", "null"], "minLength": 12},
+        "transfer_success_criteria": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 8}
+        },
+        "transfer_result": {"enum": ["not_run", "pass", "fail"]},
+        "artifact_grounding": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/artifact_grounding"}
+        },
+        "artifact_grounding_result": {"enum": ["not_run", "pass", "fail"]},
+        "assessor_id": {"type": ["string", "null"], "minLength": 3},
+        "misconception_or_failure_action": {"type": ["string", "null"], "minLength": 12},
+        "proxy_limit": {"type": "string", "minLength": 24}
       },
       "additionalProperties": false
     },
     "viewing_passes": {
       "type": "object",
-      "required": ["normal_speed", "muted", "audio_only", "captions_on", "phone", "large_screen", "headphones", "speakers", "random_frames"],
-      "additionalProperties": {"enum": ["pass", "fail", "not_applicable"]}
+      "required": [
+        "normal_speed",
+        "muted",
+        "audio_only",
+        "captions_on",
+        "phone",
+        "large_screen",
+        "headphones",
+        "speakers",
+        "random_frames"
+      ],
+      "properties": {
+        "normal_speed": {"$ref": "#/$defs/viewing_result"},
+        "muted": {"$ref": "#/$defs/viewing_result"},
+        "audio_only": {"$ref": "#/$defs/viewing_result"},
+        "captions_on": {"$ref": "#/$defs/viewing_result"},
+        "phone": {"$ref": "#/$defs/viewing_result"},
+        "large_screen": {"$ref": "#/$defs/viewing_result"},
+        "headphones": {"$ref": "#/$defs/viewing_result"},
+        "speakers": {"$ref": "#/$defs/viewing_result"},
+        "random_frames": {"$ref": "#/$defs/viewing_result"}
+      },
+      "additionalProperties": false
     },
     "dimensions": {
       "type": "object",
-      "required": ["teaching_clarity", "composition", "motion_quality", "synchronization", "continuity", "pacing", "voice", "sound_mix", "engagement", "accessibility", "claim_fidelity"],
-      "additionalProperties": {
+      "required": [
+        "teaching_clarity",
+        "composition",
+        "motion_quality",
+        "synchronization",
+        "continuity",
+        "pacing",
+        "voice",
+        "sound_mix",
+        "engagement",
+        "accessibility",
+        "claim_fidelity"
+      ],
+      "properties": {
+        "teaching_clarity": {"$ref": "#/$defs/dimension"},
+        "composition": {"$ref": "#/$defs/dimension"},
+        "motion_quality": {"$ref": "#/$defs/dimension"},
+        "synchronization": {"$ref": "#/$defs/dimension"},
+        "continuity": {"$ref": "#/$defs/dimension"},
+        "pacing": {"$ref": "#/$defs/dimension"},
+        "voice": {"$ref": "#/$defs/dimension"},
+        "sound_mix": {"$ref": "#/$defs/dimension"},
+        "engagement": {"$ref": "#/$defs/dimension"},
+        "accessibility": {"$ref": "#/$defs/dimension"},
+        "claim_fidelity": {"$ref": "#/$defs/dimension"}
+      },
+      "additionalProperties": false
+    },
+    "open_defects": {
+      "type": "array",
+      "items": {
         "type": "object",
-        "required": ["score", "rationale"],
+        "required": ["severity", "timestamp_or_beat", "problem", "owner", "disposition"],
         "properties": {
-          "score": {"type": "integer", "minimum": 1, "maximum": 5},
-          "rationale": {"type": "string", "minLength": 12}
+          "severity": {"enum": ["critical", "major", "minor"]},
+          "timestamp_or_beat": {"type": "string", "minLength": 2},
+          "problem": {"type": "string", "minLength": 8},
+          "owner": {"type": "string", "minLength": 2},
+          "disposition": {"enum": ["open", "resolved", "accepted_with_rationale"]},
+          "rationale": {"type": ["string", "null"], "minLength": 12}
         },
         "additionalProperties": false
       }
     },
-    "open_defects": {"type": "array", "items": {"type": "string", "minLength": 3}},
     "verdict": {"enum": ["pass", "revise"]},
     "support_state_effect": {"const": "none"},
-    "non_claim": {"type": "string", "minLength": 30}
+    "non_claim": {"type": "string", "minLength": 40}
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"pass": {"const": "animatic"}},
+        "required": ["pass"]
+      },
+      "then": {
+        "properties": {
+          "artifact_bindings": {
+            "properties": {
+              "captions": {"type": "null"},
+              "transcript": {"type": "null"},
+              "thumbnail": {"type": "null"},
+              "render_receipt": {"type": "null"},
+              "av_diagnostics": {"type": "null"}
+            }
+          },
+          "viewing_passes": {
+            "properties": {
+              "captions_on": {
+                "properties": {
+                  "result": {"const": "not_applicable"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "artifact_bindings": {
+            "properties": {
+              "captions": {"$ref": "#/$defs/artifact_binding"},
+              "transcript": {"$ref": "#/$defs/artifact_binding"},
+              "render_receipt": {"$ref": "#/$defs/artifact_binding"},
+              "av_diagnostics": {"$ref": "#/$defs/artifact_binding"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "pass": {"enum": ["release_candidate", "independent_release_candidate"]}
+        },
+        "required": ["pass"]
+      },
+      "then": {
+        "properties": {
+          "artifact_bindings": {
+            "properties": {
+              "thumbnail": {"$ref": "#/$defs/artifact_binding"}
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "artifact_bindings": {
+            "properties": {
+              "thumbnail": {"type": "null"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"pass": {"const": "independent_release_candidate"}},
+        "required": ["pass"]
+      },
+      "then": {
+        "properties": {
+          "learning_check": {
+            "properties": {
+              "status": {"const": "pass"},
+              "comprehension_prompt": {"type": "string", "minLength": 20},
+              "comprehension_raw_response": {"type": "string", "minLength": 12},
+              "comprehension_success_criteria": {"minItems": 1},
+              "comprehension_result": {"const": "pass"},
+              "transfer_prompt": {"type": "string", "minLength": 20},
+              "transfer_raw_response": {"type": "string", "minLength": 12},
+              "transfer_success_criteria": {"minItems": 1},
+              "transfer_result": {"const": "pass"},
+              "artifact_grounding": {"minItems": 1},
+              "artifact_grounding_result": {"const": "pass"},
+              "assessor_id": {"type": "string", "minLength": 3}
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "learning_check": {
+            "properties": {
+              "status": {"const": "not_run"},
+              "comprehension_prompt": {"type": "null"},
+              "comprehension_raw_response": {"type": "null"},
+              "comprehension_success_criteria": {"maxItems": 0},
+              "comprehension_result": {"const": "not_run"},
+              "transfer_prompt": {"type": "null"},
+              "transfer_raw_response": {"type": "null"},
+              "transfer_success_criteria": {"maxItems": 0},
+              "transfer_result": {"const": "not_run"},
+              "artifact_grounding": {"maxItems": 0},
+              "artifact_grounding_result": {"const": "not_run"},
+              "assessor_id": {"type": "null"},
+              "misconception_or_failure_action": {"type": "null"}
+            }
+          }
+        }
+      }
+    }
+  ],
   "additionalProperties": false
 }

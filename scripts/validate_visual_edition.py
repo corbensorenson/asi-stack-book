@@ -17,6 +17,7 @@ from build_youtube_ledger import build as build_expected_youtube_ledger
 from prepare_youtube_supersession import semantic_failures as supersession_plan_failures
 from visual_chapter_source import canonical_chapter_sha256, canonicalize_chapter_source
 from validate_youtube_preview_bindings import semantic_errors as preview_errors
+from validate_manim_toolchain import visual_grammar_errors
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,7 +38,6 @@ YOUTUBE_PLATFORM_RECEIPT_SCHEMA = ROOT / "schemas/youtube_platform_receipt.schem
 YOUTUBE_SUPERSESSION_SCHEMA = ROOT / "schemas/youtube_supersession_plan.schema.json"
 YOUTUBE_SUPERSESSION_ROOT = ROOT / "visual_edition/supersession_plans"
 GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
-GRAMMAR_SCHEMA = ROOT / "schemas/visual_grammar.schema.json"
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
 NARRATION_TOOLCHAIN = ROOT / "visual_edition/narration_toolchain.json"
 NARRATION_TOOLCHAIN_SCHEMA = ROOT / "schemas/narration_toolchain.schema.json"
@@ -109,7 +109,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     failures = schema_errors(manifest, MANIFEST_SCHEMA, "manifest")
     failures.extend(preview_errors(load(ROOT / "visual_edition/youtube_preview_bindings.json")))
     grammar = grammar or load(GRAMMAR)
-    failures.extend(schema_errors(grammar, GRAMMAR_SCHEMA, "grammar"))
+    failures.extend(visual_grammar_errors(grammar))
     channel = load(YOUTUBE_CHANNEL)
     ledger = load(YOUTUBE_LEDGER)
     upload_plan = load(YOUTUBE_UPLOAD_PLAN)
@@ -147,6 +147,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         ("requirements_lock", "requirements_lock_sha256"),
         ("pronunciation_lexicon", "pronunciation_lexicon_sha256"),
         ("renderer", "renderer_sha256"),
+        ("transcription_runner", "transcription_runner_sha256"),
         ("caption_builder", "caption_builder_sha256"),
         ("narration_validator", "narration_validator_sha256"),
         ("visual_master_validator", "visual_master_validator_sha256"),
@@ -896,6 +897,7 @@ def main() -> None:
         (grammar_mutation_label, "grammar", grammar_mutation),
         ("motion-only meaning", "grammar", lambda d: d["motion"].__setitem__("meaning_must_survive_motion_disabled", False)),
         ("caption deletion", "grammar", lambda d: d["accessibility"].__setitem__("reviewed_captions_required", False)),
+        ("low-contrast accent", "grammar", lambda d: d["palette"].__setitem__("accent", d["palette"]["background"])),
     ):
         manifest_candidate = copy.deepcopy(manifest)
         grammar_candidate = copy.deepcopy(grammar)
@@ -913,7 +915,7 @@ def main() -> None:
         f"{counts['current_rendered_videos']} validated render(s), "
         f"{counts['youtube_videos_published']} YouTube publication(s), "
         f"{counts['youtube_videos_unlisted_preview']} unlisted preview(s), "
-        "zero tracked/Pages media binaries, 8/8 mutations rejected, support effect none."
+        "zero tracked/Pages media binaries, 9/9 mutations rejected, support effect none."
     )
 
 

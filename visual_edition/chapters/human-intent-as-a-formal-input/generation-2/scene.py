@@ -7,11 +7,12 @@ and versioned contracts keep publication authority behind an explicit gate.
 
 from __future__ import annotations
 
+from math import cos, sin
+
 from manim import (
-    AnimationGroup, ArcBetweenPoints, Arrow, Circle, Create, Cross, DashedLine,
+    ArcBetweenPoints, Arrow, Circle, Create, Cross, DashedLine,
     Dot, FadeIn, FadeOut, GrowArrow, GrowFromCenter, Indicate, LaggedStart,
-    LEFT, Line, MoveAlongPath, Polygon, Rectangle, ReplacementTransform,
-    RIGHT, RoundedRectangle, Succession, Text, Transform, TransformFromCopy,
+    LEFT, Line, MoveAlongPath, Polygon, RIGHT, RoundedRectangle, Succession, Text, TransformFromCopy,
     UP, VGroup, Write,
 )
 
@@ -363,7 +364,7 @@ class HumanIntentGeneration2(AsiScene):
         spokes = VGroup()
         for i, (name, color) in enumerate(zip(metric_names, metric_colors)):
             angle = i * 6.283185307 / len(metric_names)
-            point = RIGHT * (4.8 * __import__("math").cos(angle)) + UP * (2.75 * __import__("math").sin(angle))
+            point = RIGHT * (4.8 * cos(angle)) + UP * (2.75 * sin(angle))
             metric = self.badge(name, color, 1.95, 0.46).move_to(point)
             metrics.add(metric)
             spokes.add(Line(receipt_core.get_boundary_point(point), metric.get_boundary_point(-point), color=color, stroke_width=2.5))
@@ -429,7 +430,6 @@ class HumanIntentGeneration2(AsiScene):
         path_to_v2 = Arrow(final_v1.get_bottom(), final_v2.get_top(), color=COPPER, buff=0.1)
         path_to_publish = Arrow(final_v2.get_right(), final_gate.get_left(), color=AUTHORITY, buff=0.08)
         corrigible = self.badge("CORRIGIBLE BOUNDARY · NOT AMBIENT POWER", AUTHORITY, 4.6).shift(RIGHT * 2.8 + UP * -0.2)
-        scene26 = VGroup(final_request, final_v1, final_draft, final_v2, final_gate, final_publish, path_to_v1, path_to_draft, path_to_v2, path_to_publish, corrigible)
         self.play_beat(26, FadeOut(scene25), FadeIn(final_request), GrowArrow(path_to_v1), FadeIn(final_v1), GrowArrow(path_to_draft), FadeIn(final_draft), Indicate(final_draft, color=EVIDENCE, scale_factor=1.04), GrowArrow(path_to_v2), FadeIn(final_v2), GrowArrow(path_to_publish), FadeIn(final_gate), FadeIn(final_publish), Indicate(final_gate, color=AUTHORITY, scale_factor=1.04), FadeIn(corrigible), settle=0.5)
 
         # 27 — meaningful-control handoff retains the resolved world

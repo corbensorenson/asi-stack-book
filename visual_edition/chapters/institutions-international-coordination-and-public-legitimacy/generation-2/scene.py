@@ -11,11 +11,11 @@ from __future__ import annotations
 from manim import (
     Arrow, Create, Cross, DashedLine, FadeIn, FadeOut, GrowArrow, Indicate,
     LaggedStart, LEFT, Line, ORIGIN, RoundedRectangle, RIGHT, Text,
-    TransformFromCopy, UP, DOWN, VGroup,
+    UP, DOWN, VGroup,
 )
 
 from visual_edition.lib.asi_visuals import (
-    AUTHORITY, BOUNDARY, COPPER, INK, MUTED, RESIDUAL, ROLLBACK, SURFACE,
+    BOUNDARY, INK, MUTED, ROLLBACK, SURFACE,
     AsiScene, text,
 )
 
@@ -413,11 +413,6 @@ class InstitutionalLegitimacyGeneration2(AsiScene):
         remedy31 = self.badge("REMEDY CLOCK OPEN", GREEN, 2.5).shift(RIGHT * 0.1 + DOWN * 1.2)
         custody31 = self.badge("WITHDRAWAL CUSTODY", RED, 2.7).shift(RIGHT * 3.6 + DOWN * 0.9)
         e31 = VGroup(Arrow(north31.get_right(), community31.get_left(), color=VIOLET, stroke_width=3, buff=0.1), Arrow(north31.get_right(), verifier31.get_left(), color=BLUE, stroke_width=3, buff=0.1), Arrow(north31.get_right(), remedy31.get_left(), color=GREEN, stroke_width=3, buff=0.1), Arrow(verifier31.get_right(), custody31.get_left(), color=RED, stroke_width=3, buff=0.1))
-        scene31 = VGroup(frame31, north31, community31, verifier31, remedy31, custody31, e31)
         self.play_beat(31, FadeOut(scene30), FadeIn(frame31), FadeIn(north31), GrowArrow(e31[0]), FadeIn(community31), GrowArrow(e31[1]), FadeIn(verifier31), GrowArrow(e31[2]), FadeIn(remedy31), GrowArrow(e31[3]), FadeIn(custody31), Indicate(community31, color=VIOLET), settle=1.0)
 
         self.wait_until(self.TARGET_DURATION)
-
-
-if __name__ == "__main__":
-    InstitutionalLegitimacyGeneration2().render()

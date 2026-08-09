@@ -6,7 +6,7 @@
     "operating_system": "macOS",
     "architecture": "arm64",
     "python": "3.12.5",
-    "environment_class": "isolated_ignored_build_venv",
+    "environment_class": "ignored_build_venv_not_os_sandbox",
     "canonical_relative_path": "build/visual_edition/tts_venv/bin/python"
   },
   "synthesis": {
@@ -19,6 +19,7 @@
     "upstream_model_repository": "hexgrad/Kokoro-82M",
     "model_license": "Apache-2.0",
     "model_url": "https://huggingface.co/mlx-community/Kokoro-82M-bf16",
+    "model_directory": "build/visual_edition/models/Kokoro-82M-bf16",
     "config_sha256": "5abb01e2403b072bf03d04fde160443e209d7a0dad49a423be15196b9b43c17f",
     "weights_sha256": "4e9ecdf03b8b6cf906070390237feda473dc13327cb8d56a43deaa374c02acd8",
     "voice": "af_heart",
@@ -34,7 +35,11 @@
     "loudness_range_target": 11.0,
     "sentence_pause_seconds": 0.22,
     "paragraph_pause_seconds": 0.48,
-    "maximum_segment_characters": 300
+    "maximum_segment_characters": 300,
+    "normalizer_implementation": "ffmpeg_loudnorm_single_pass",
+    "normalizer_path": "/opt/homebrew/bin/ffmpeg",
+    "normalizer_version": "8.0.1",
+    "normalizer_sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
   },
   "verification": {
     "implementation": "mlx-whisper",
@@ -74,11 +79,13 @@
     "pronunciation_lexicon": "visual_edition/narration_pronunciations.json",
     "pronunciation_lexicon_sha256": "bfcd892ebb6fd0e9bf6ea23cdf533713ee1145601920e519af624ab4ea109ce2",
     "renderer": "scripts/render_visual_narration.py",
-    "renderer_sha256": "8669fb74e90714f35ffb1f1410f4a5607156aa92aeeae21b3daecca2b6b73396",
+    "renderer_sha256": "b2357fb7a7f1a9709dacd7215077944829c586f0bd9ae2d2255358ebda5981a3",
+    "transcription_runner": "scripts/transcribe_visual_narrations.py",
+    "transcription_runner_sha256": "6356a4480daf62261efa0564da32ce971c41ed6f6d549be14482ed93ed692b9b",
     "caption_builder": "scripts/build_visual_captions_from_narration_receipt.py",
     "caption_builder_sha256": "b5166f5017e1a9cddd01880eea5eb518eaf7e20bc26f152dcfd389939f8c8612",
     "narration_validator": "scripts/validate_visual_narration.py",
-    "narration_validator_sha256": "70544caf54109032652efbc8229c8cf1196ac9790b5e69b1577670e6f8034f11",
+    "narration_validator_sha256": "a0d1cc7c71dd1b32c050166fc00c626c9e3dbbadf27bedfda8f6047884580518",
     "visual_master_validator": "scripts/validate_visual_master.py",
     "visual_master_validator_sha256": "058dcdd7ce45f1c8941b82b996014488c28e63db1c02e809bde828d3bed40ae5"
   },
@@ -87,6 +94,15 @@
     "required_video_description_disclosure": "Narration is synthetic and generated locally with Kokoro-82M using the af_heart voice.",
     "human_voice_impersonation_claimed": false,
     "warranty_claimed": false
+  },
+  "execution_boundary": {
+    "trust_model": "pinned_local_runtime_is_part_of_the_trusted_computing_base",
+    "model_serialization": "digest_bound_json_safetensors_and_npz",
+    "remote_code_loading": false,
+    "network_isolation": "offline_library_hints_only_not_os_enforced",
+    "credential_isolation": "not_claimed",
+    "acceptance_scope": "audio_identity_content_agreement_and_recorded_rights_only",
+    "residual_risk": "The local TTS and ASR dependencies are pinned and receive local model paths, but the current adapter is not an operating-system sandbox."
   },
   "storage_boundary": {
     "tracked": "scripts, locks, lexicon, contracts, captions, and digest receipts",
@@ -99,6 +115,7 @@
     "A qualified narration toolchain does not make an unvalidated chapter video publishable.",
     "Open-source licensing does not create a warranty or erase platform disclosure duties.",
     "Synthetic narration does not change any book claim or evidence state.",
-    "ASR agreement and synthesis-block durations are not forced alignment and cannot close picture-and-sound lock."
+    "ASR agreement and synthesis-block durations are not forced alignment and cannot close picture-and-sound lock.",
+    "A virtual environment and offline library hints are not operating-system network or credential isolation."
   ]
 }

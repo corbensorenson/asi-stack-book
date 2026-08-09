@@ -11,12 +11,15 @@
     "python",
     "manim",
     "native_dependencies",
+    "media_tools",
     "font_contract",
     "render_profiles",
     "requirements_lock_path",
     "requirements_lock_sha256",
     "configuration_path",
     "configuration_sha256",
+    "visual_grammar_path",
+    "visual_grammar_sha256",
     "broken_global_environment_allowed",
     "upgrade_gate",
     "support_state_effect",
@@ -81,17 +84,80 @@
       },
       "additionalProperties": false
     },
-    "font_contract": {"type": "object"},
-    "render_profiles": {"type": "object"},
+    "media_tools": {
+      "type": "object",
+      "required": ["ffmpeg", "ffprobe"],
+      "properties": {
+        "ffmpeg": {"$ref": "#/$defs/media_tool"},
+        "ffprobe": {"$ref": "#/$defs/media_tool"}
+      },
+      "additionalProperties": false
+    },
+    "font_contract": {
+      "type": "object",
+      "required": ["primary", "fallback", "monospace", "math_strategy_until_latex_qualification"],
+      "properties": {
+        "primary": {"const": "Avenir Next"},
+        "fallback": {"const": "Arial"},
+        "monospace": {"const": "Menlo"},
+        "math_strategy_until_latex_qualification": {"const": "pango_unicode_and_prevalidated_svg_only"}
+      },
+      "additionalProperties": false
+    },
+    "render_profiles": {
+      "type": "object",
+      "required": ["draft", "release"],
+      "properties": {
+        "draft": {
+          "type": "object",
+          "required": ["pixel_width", "pixel_height", "frame_rate", "quality_flag"],
+          "properties": {
+            "pixel_width": {"const": 854},
+            "pixel_height": {"const": 480},
+            "frame_rate": {"const": 15},
+            "quality_flag": {"const": "-ql"}
+          },
+          "additionalProperties": false
+        },
+        "release": {
+          "type": "object",
+          "required": ["pixel_width", "pixel_height", "frame_rate", "quality_flag", "video_codec", "pixel_format"],
+          "properties": {
+            "pixel_width": {"const": 1920},
+            "pixel_height": {"const": 1080},
+            "frame_rate": {"const": 30},
+            "quality_flag": {"const": "none_use_exact_config"},
+            "video_codec": {"const": "h264"},
+            "pixel_format": {"const": "yuv420p"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
     "requirements_lock_path": {"const": "visual_edition/requirements.lock.txt"},
     "requirements_lock_sha256": {"pattern": "^[0-9a-f]{64}$"},
     "configuration_path": {"const": "visual_edition/manim.cfg"},
     "configuration_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "visual_grammar_path": {"const": "visual_edition/visual_grammar.json"},
+    "visual_grammar_sha256": {"pattern": "^[0-9a-f]{64}$"},
     "broken_global_environment_allowed": {"const": false},
     "upgrade_gate": {"type": "string", "minLength": 20},
     "support_state_effect": {"const": "none"},
     "release_effect": {"const": "none"},
     "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "$defs": {
+    "media_tool": {
+      "type": "object",
+      "required": ["path", "version", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "version": {"const": "8.0.1"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": false
 }

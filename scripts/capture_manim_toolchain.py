@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,10 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "visual_edition/toolchain.json"
 LOCK = ROOT / "visual_edition/requirements.lock.txt"
 CONFIG = ROOT / "visual_edition/manim.cfg"
+GRAMMAR = ROOT / "visual_edition/visual_grammar.json"
 
 
 def run(*args: str) -> str:
-    return subprocess.check_output(args, cwd=ROOT, text=True, stderr=subprocess.STDOUT).strip()
+    return subprocess.check_output(
+        args, cwd=ROOT, text=True, stderr=subprocess.STDOUT, timeout=120
+    ).strip()
 
 
 def digest(path: Path) -> str:
@@ -29,10 +33,22 @@ def digest(path: Path) -> str:
 def first_version(command: str, *args: str) -> str:
     try:
         output = run(command, *args)
-    except (FileNotFoundError, subprocess.CalledProcessError):
+    except (FileNotFoundError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
         return "absent"
     match = re.search(r"\d+(?:\.\d+){1,3}", output)
     return match.group(0) if match else output.splitlines()[0][:120]
+
+
+def media_tool_identity(name: str) -> dict[str, str]:
+    discovered = shutil.which(name, path="/opt/homebrew/bin:/usr/bin:/bin")
+    if discovered is None:
+        raise SystemExit(f"required media executable is unavailable: {name}")
+    path = Path(discovered)
+    return {
+        "path": str(path),
+        "version": first_version(str(path), "-version"),
+        "sha256": digest(path),
+    }
 
 
 def main() -> None:
@@ -47,10 +63,10 @@ def main() -> None:
         python,
         "-c",
         (
-            "import json,manim,numpy,platform,sys;"
+            "import json,manim,manimpango,numpy,platform,sys;"
             "print(json.dumps({'machine':platform.machine(),'python':platform.python_version(),"
             "'implementation':platform.python_implementation(),'manim':manim.__version__,"
-            "'numpy':numpy.__version__}))"
+            "'numpy':numpy.__version__,'fonts':sorted(manimpango.list_fonts())}))"
         ),
     ).splitlines()[-1])
     if probe["machine"] != "arm64":
@@ -69,6 +85,14 @@ def main() -> None:
         raise SystemExit("requirements.lock.txt does not exactly match the isolated runtime")
 
     value = json.loads(OUT.read_text(encoding="utf-8"))
+    grammar_fonts = json.loads(GRAMMAR.read_text(encoding="utf-8"))["typography"]
+    expected_fonts = {
+        role: grammar_fonts[role] for role in ("primary", "fallback", "monospace")
+    }
+    missing_fonts = sorted(set(expected_fonts.values()) - set(probe["fonts"]))
+    if missing_fonts:
+        raise SystemExit(f"Refusing toolchain capture with unavailable project fonts: {missing_fonts}")
+    value["font_contract"].update(expected_fonts)
     value["captured_at_utc"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     value["host"].update({
         "operating_system_version": run("sw_vers", "-productVersion"),
@@ -88,9 +112,16 @@ def main() -> None:
         "latex": first_version("latex", "--version"),
         "dvisvgm": first_version("dvisvgm", "--version"),
     })
+    value["media_tools"] = {
+        name: media_tool_identity(name) for name in ("ffmpeg", "ffprobe")
+    }
     value["requirements_lock_sha256"] = digest(LOCK)
     value["configuration_sha256"] = digest(CONFIG)
-    OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    value["visual_grammar_path"] = "visual_edition/visual_grammar.json"
+    value["visual_grammar_sha256"] = digest(GRAMMAR)
+    pending = OUT.with_suffix(".tmp.json")
+    pending.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    pending.replace(OUT)
     print(
         f"Captured {value['toolchain_id']}: Python {probe['python']} {probe['machine']}, "
         f"ManimCE {probe['manim']}, NumPy {probe['numpy']}, FFmpeg {value['native_dependencies']['ffmpeg']}."

@@ -8,14 +8,13 @@ evidence custody, opportunity expansion, mitigation ambiguity, and finite proof.
 from __future__ import annotations
 
 from manim import (
-    AnimationGroup, Arrow, Circle, Create, Cross, DashedLine, Dot, FadeIn, FadeOut, GrowArrow,
-    GrowFromCenter, Indicate, LaggedStart, LEFT, Line, MoveAlongPath, ORIGIN,
-    Rectangle, ReplacementTransform, RIGHT, RoundedRectangle, Text, Transform,
-    TransformFromCopy, UP, DOWN, VGroup, Write,
+    AnimationGroup, Arrow, Circle, Create, Cross, DashedLine, FadeIn, FadeOut, GrowArrow,
+    Indicate, LaggedStart, LEFT, Line, ORIGIN,
+    RIGHT, RoundedRectangle, Text, UP, DOWN, VGroup,
 )
 
 from visual_edition.lib.asi_visuals import (
-    ACCENT, AUTHORITY, BOUNDARY, COPPER, EVIDENCE, INK, MUTED, RESIDUAL,
+    AUTHORITY, BOUNDARY, COPPER, INK, MUTED, RESIDUAL,
     ROLLBACK, SURFACE, AsiScene, text,
 )
 
@@ -300,7 +299,7 @@ class InnerAlignmentGeneration2(AsiScene):
         roots18 = VGroup(self.badge("SHARED DATA", RED, 2.0), self.badge("SHARED MONITOR", RED, 2.25)).arrange(RIGHT, buff=0.4).shift(DOWN * 1.55)
         dep18 = VGroup(*[DashedLine(root.get_top(), lane.get_bottom(), color=RED, stroke_width=2) for root in roots18 for lane in lanes18[:2]])
         scene18 = VGroup(frame18, lanes18, roots18, dep18)
-        self.play_beat(18, FadeOut(scene17), LaggedStart(*[FadeIn(l) for l in lanes18], lag_ratio=0.12), FadeIn(roots18), LaggedStart(*[Create(x) for x in dep18], lag_ratio=0.12), Indicate(lanes18, color=BLUE), settle=0.9)
+        self.play_beat(18, FadeOut(scene17), LaggedStart(*[FadeIn(lane) for lane in lanes18], lag_ratio=0.12), FadeIn(roots18), LaggedStart(*[Create(x) for x in dep18], lag_ratio=0.12), Indicate(lanes18, color=BLUE), settle=0.9)
 
         # 19 — white-box feature with attached limitations
         frame19 = self.lab_frame("WHITE-BOX EVIDENCE · LIMITED", VIOLET)
@@ -317,7 +316,7 @@ class InnerAlignmentGeneration2(AsiScene):
         limits19 = self.matrix(["APPROXIMATION", "POLYSEMANTIC", "EVALUATOR", "SHIFT"], [RED, RESIDUAL, COPPER, MUTED], x=3.0, y=0.0)
         edge19 = Arrow(feature19.get_right(), supports19.get_left(), color=GREEN, stroke_width=4, buff=0.1)
         scene19 = VGroup(frame19, feature19, activation19, activation_label19, supports19, limits19, edge19)
-        self.play_beat(19, AnimationGroup(FadeOut(scene18), FadeIn(feature19), lag_ratio=0.0), LaggedStart(*[FadeIn(dot) for dot in activation19], lag_ratio=0.08), FadeIn(activation_label19), GrowArrow(edge19), FadeIn(supports19), LaggedStart(*[FadeIn(l) for l in limits19], lag_ratio=0.12), Indicate(limits19, color=RED), settle=0.8)
+        self.play_beat(19, AnimationGroup(FadeOut(scene18), FadeIn(feature19), lag_ratio=0.0), LaggedStart(*[FadeIn(dot) for dot in activation19], lag_ratio=0.08), FadeIn(activation_label19), GrowArrow(edge19), FadeIn(supports19), LaggedStart(*[FadeIn(limit) for limit in limits19], lag_ratio=0.12), Indicate(limits19, color=RED), settle=0.8)
 
         # 20 — training history preserves possibilities
         frame20 = self.lab_frame("TRAINING-SIGNAL LINEAGE", COPPER)
@@ -440,11 +439,6 @@ class InnerAlignmentGeneration2(AsiScene):
         moral32 = self.panel("MORAL UNCERTAINTY", VIOLET, 3.0, 1.7).shift(RIGHT * 4.1 + DOWN * 1.0)
         handoff32 = Arrow(envelope32.get_right(), moral32.get_left(), color=VIOLET, stroke_width=4, buff=0.12)
         unknown32 = self.label("OBJECTIVE ?", 20, INK, "BOLD").move_to(moral32[0])
-        scene32 = VGroup(frame32, envelope32, lane_a32, lane_b32, narrow32, test32, moral32, handoff32, unknown32)
-        self.play_beat(32, FadeOut(scene31), Create(envelope32), FadeIn(lane_a32), FadeIn(lane_b32), FadeIn(narrow32), FadeIn(test32), FadeIn(moral32), GrowArrow(handoff32), FadeIn(unknown32), Indicate(narrow32, color=RED), settle=1.0)
+        self.play_beat(32, FadeOut(scene31), FadeIn(frame32), Create(envelope32), FadeIn(lane_a32), FadeIn(lane_b32), FadeIn(narrow32), FadeIn(test32), FadeIn(moral32), GrowArrow(handoff32), FadeIn(unknown32), Indicate(narrow32, color=RED), settle=1.0)
 
         self.wait_until(self.TARGET_DURATION)
-
-
-if __name__ == "__main__":
-    InnerAlignmentGeneration2().render()

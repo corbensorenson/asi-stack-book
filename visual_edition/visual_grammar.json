@@ -52,7 +52,19 @@
   "contrast": {
     "normal_text_minimum_ratio": 4.5,
     "large_text_minimum_ratio": 3.0,
-    "non_text_boundary_minimum_ratio": 3.0
+    "non_text_boundary_minimum_ratio": 3.0,
+    "background_roles": ["background", "surface"],
+    "normal_text_roles": [
+      "ink",
+      "muted",
+      "accent",
+      "copper",
+      "authority",
+      "evidence",
+      "residual",
+      "rollback",
+      "boundary"
+    ]
   },
   "reusable_components": [
     "stack",

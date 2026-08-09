@@ -10,6 +10,7 @@
 - Renderer-in-the-loop repair
 - Camera and focus
 - Text and equations
+- Toolchain and regression checks
 - Anti-patterns
 
 ## Pattern selection
@@ -84,9 +85,9 @@ do not copy ManimGL or CC BY-NC-SA implementation code into this project.
   or flow. Use easing for attention and object manipulation.
 - Use ease-out for arrival and settling, ease-in for departure or removal, and
   ease-in-out for state transformation or deliberate camera reframing.
-- Reserve anticipation, overshoot, bounce, shake, spin, and flash for cases
-  where that physical quality encodes the concept. They are not generic
-  emphasis controls.
+- Reserve anticipation and overshoot for cases where that physical quality
+  encodes the concept. Bounce, shake, and spin are not generic emphasis
+  controls; named flash effects remain blocked by the accepted source gate.
 - Give the primary transformation greater duration or contrast than secondary
   motions. Stagger supporting changes in the same direction as the logical or
   spatial flow.
@@ -95,8 +96,9 @@ do not copy ManimGL or CC BY-NC-SA implementation code into this project.
 - Let a dense result settle briefly before the next construction begins. Vary
   durations by semantic weight instead of repeating one metronomic cadence.
 
-Use `Scene.next_section()` to make semantic beats independently renderable and
-reviewable. Give each section at least one animation.
+Use `Scene.next_section()` to make semantic beats or coherent beat groups
+independently renderable and reviewable. A section may contain an intentional
+hold; do not add decorative motion merely to satisfy an animation count.
 
 ## Renderer-in-the-loop repair
 
@@ -134,7 +136,7 @@ Avoid continuous drift.
 To control attention without moving the camera:
 
 - fade unrelated objects;
-- use `Indicate`, `Circumscribe`, or a passing flash once;
+- use a restrained `Indicate`, `Circumscribe`, edge-weight, or opacity change;
 - raise the active object in z-order;
 - animate edge width or opacity together with a label; and
 - restore the context after the local explanation.
@@ -146,11 +148,85 @@ Never encode meaning with color or motion alone.
 Use text for names, states, small quantities, and boundaries. Keep labels short.
 Do not put narration paragraphs on screen.
 
-Use `TransformMatchingTex` for mathematical derivations where matching symbols
-retain identity. Split TeX into stable semantic pieces and use a key map only
-when the intended correspondence differs. For prose transformations, use
-matching shapes sparingly; viewers should understand the conceptual mapping,
-not admire a typographic effect.
+The current pinned toolchain has no qualified LaTeX or `dvisvgm`; source
+preflight therefore rejects `Tex`, `MathTex`, `SingleStringMathTex`, and
+`TexTemplate`. Use Pango Unicode text or a provenance-bound, prevalidated SVG
+until both dependencies and their graphical regressions are admitted. Only
+after that qualification may `TransformMatchingTex` carry symbol identity.
+Split admitted TeX into stable semantic pieces and use a key map only when the
+intended correspondence differs. For prose transformations, use matching
+shapes sparingly; viewers should understand the conceptual mapping, not admire
+a typographic effect.
+
+Every equation, symbol, and unit must appear in the treatment notation ledger.
+Check algebraic or formal steps against the cited chapter statement, Lean
+artifact, executable model, or recorded manual derivation before animating
+them. Visual continuity is not mathematical validity.
+
+## Toolchain and regression checks
+
+Preflight the exact ManimCE runtime, renderer, fonts, LaTeX engine and packages,
+FFmpeg/codecs, external assets, random seeds, resolution, and frame rate before
+expensive rendering. Fail explicitly when a required font or TeX dependency is
+missing; silent fallback can invalidate layout review.
+
+Run the repository-owned live probe before a render:
+
+```bash
+python3 scripts/validate_manim_toolchain.py --probe-runtime
+python3 skills/asi-stack-manim-videos/scripts/audit_scene_source.py \
+  path/to/scene.py --treatment path/to/treatment.json
+python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py --self-test
+```
+
+Manim scene files execute arbitrary Python. Inspect downloaded or generated
+code before execution; do not expose credentials or unrelated writable paths;
+reject unexpected network, subprocess, dynamic-import, or filesystem behavior;
+and bind every adopted dependency or asset by source, license, and digest. A
+popular public skill or scene repository is not a trust boundary.
+
+The static source audit rejects imports outside the narrow numerical and
+ManimCE allowlist and permits exactly one local helper,
+`visual_edition.lib.asi_visuals`, whose digest and graphical contract are bound
+separately. It also rejects module-scope execution, dynamic imports;
+filesystem, subprocess, and network effects; dynamic media paths; and unseeded
+randomness. It cannot prove that an allowed dependency is harmless.
+
+On macOS, `render_scene_isolated.py` constructs the release Manim and FFmpeg
+commands, denies network access, strips the inherited environment, narrows
+repository reads, restricts writes to `build/visual_edition`, limits resources,
+and emits a schema-validated policy receipt. Run its live self-test outside an
+already nested sandbox, then use it for every chapter render. Treat a new
+container or CI backend as unqualified until a tracked adapter enforces and
+records the same properties.
+
+The current macOS adapter enforces wall, CPU, file-size, open-file,
+process-count, and core-dump limits, but not a hard resident-memory ceiling;
+its receipt records that residual. Do not convert an advisory memory setting or
+successful smoke render into a hard memory-isolation claim.
+
+Use ManimCE's graphical frame-comparison test support for shared primitives and
+high-risk deterministic geometry. Bind a deliberate reference frame and review
+every accepted update. Keep these tests narrow: they detect geometry, style,
+and renderer regressions, not pacing, synchronization, accessibility, or
+learning. Chapter scenes still need sample manifests and full-speed playback.
+
+The repository's bounded equivalent is:
+
+```bash
+python3 skills/asi-stack-manim-videos/scripts/audit_primitive_regression.py
+```
+
+It renders two pinned Cairo reference frames, requires every public factory in
+`visual_edition/lib/asi_visuals.py` to appear in the regression scenes, and
+compares pixels using ManimCE's documented tolerance. Its regression scene must
+pass the same static source preflight, and its hidden render worker refuses to
+run unless the macOS filesystem/network sandbox is active; candidate capture
+does not bypass those checks. To change the baseline,
+capture a candidate and contact sheet, inspect both frames at original
+resolution, repair unintended drift, and record the acceptance rationale. A
+baseline update is a reviewed visual-contract change, not an automatic test
+rewrite.
 
 ## Anti-patterns
 

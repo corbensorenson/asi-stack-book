@@ -15,10 +15,25 @@ import soundfile as sf
 
 
 ROOT = Path(__file__).resolve().parents[1]
+AUDIO_ROOT = (ROOT / "build/visual_edition/audio").resolve()
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def checked_audio_path(value: str, *, label: str, must_exist: bool) -> Path:
+    candidate = Path(value)
+    if candidate.is_absolute():
+        raise ValueError(f"{label} must be repository-relative")
+    path = (ROOT / candidate).resolve()
+    try:
+        path.relative_to(AUDIO_ROOT)
+    except ValueError as exc:
+        raise ValueError(f"{label} escapes build/visual_edition/audio") from exc
+    if must_exist and not path.is_file():
+        raise ValueError(f"{label} is missing")
+    return path
 
 
 def tokens(text: str) -> list[str]:
@@ -201,12 +216,30 @@ def main() -> None:
     parser.add_argument("--maximum-wer", type=float, default=0.03)
     args = parser.parse_args()
 
-    audio_path = ROOT / args.audio
-    receipt_path = ROOT / args.receipt
-    asr_path = ROOT / args.asr
-    report_path = ROOT / args.report
+    audio_path = checked_audio_path(args.audio, label="audio", must_exist=True)
+    receipt_path = checked_audio_path(args.receipt, label="receipt", must_exist=True)
+    asr_path = checked_audio_path(args.asr, label="ASR transcript", must_exist=True)
+    report_path = checked_audio_path(args.report, label="validation report", must_exist=False)
+    stem = audio_path.name.removesuffix(".wav")
+    expected_siblings = {
+        receipt_path: f"{stem}.receipt.json",
+        asr_path: f"{stem}.json",
+        report_path: f"{stem}.validation.json",
+    }
+    for path, expected_name in expected_siblings.items():
+        if path.name != expected_name or path.parent != audio_path.parent:
+            raise ValueError("narration validation artifacts do not share one canonical audio identity")
     receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
     asr = json.loads(asr_path.read_text(encoding="utf-8"))
+    toolchain = json.loads(
+        (ROOT / "visual_edition/narration_toolchain.json").read_text(encoding="utf-8")
+    )
+    verification = toolchain["verification"]
+    synthesis = toolchain["synthesis"]
+    tracked_inputs = toolchain["tracked_inputs"]
+    if args.maximum_wer != verification["maximum_content_normalized_word_error_rate"]:
+        raise ValueError("--maximum-wer cannot weaken or alter the pinned toolchain threshold")
+    asr_receipt = asr.get("_asi_stack_receipt", {})
     audio, sample_rate = sf.read(audio_path, always_2d=True)
     duration = len(audio) / sample_rate
     peak = float(np.max(np.abs(audio)))
@@ -245,11 +278,82 @@ def main() -> None:
     checks = {
         "renderer_digest_matches_current": (
             receipt.get("renderer_sha256")
+            == tracked_inputs["renderer_sha256"]
             == sha256(ROOT / "scripts/render_visual_narration.py")
         ),
+        "synthesis_toolchain_identity_matches": (
+            receipt.get("toolchain_id") == toolchain["toolchain_id"]
+            and receipt.get("implementation") == synthesis["implementation"]
+            and receipt.get("implementation_version") == synthesis["version"]
+            and receipt.get("model_repository") == synthesis["model_repository"]
+            and receipt.get("model_revision") == synthesis["model_revision"]
+            and receipt.get("voice") == synthesis["voice"]
+            and receipt.get("speed") == synthesis["speed"]
+            and receipt.get("sample_rate") == synthesis["sample_rate"]
+        ),
+        "synthesis_model_files_match_toolchain": (
+            receipt.get("model_file_sha256") == {
+                f"{synthesis['model_directory']}/config.json": synthesis["config_sha256"],
+                f"{synthesis['model_directory']}/kokoro-v1_0.safetensors": synthesis["weights_sha256"],
+                f"{synthesis['model_directory']}/voices/{synthesis['voice']}.safetensors": synthesis["voice_sha256"],
+            }
+        ),
+        "normalizer_identity_matches_toolchain": (
+            receipt.get("normalization", {}).get("filter")
+            == synthesis["normalizer_implementation"]
+            and receipt.get("normalization", {}).get("ffmpeg_path")
+            == synthesis["normalizer_path"]
+            and receipt.get("normalization", {}).get("ffmpeg_version")
+            == synthesis["normalizer_version"]
+            and receipt.get("normalization", {}).get("ffmpeg_sha256")
+            == synthesis["normalizer_sha256"]
+            and Path(synthesis["normalizer_path"]).is_file()
+            and sha256(Path(synthesis["normalizer_path"]))
+            == synthesis["normalizer_sha256"]
+        ),
+        "normalization_settings_match_toolchain": (
+            receipt.get("normalization", {}).get("integrated_lufs_target")
+            == synthesis["integrated_lufs_target"]
+            and receipt.get("normalization", {}).get("true_peak_dbtp_target")
+            == synthesis["true_peak_dbtp_target"]
+            and receipt.get("normalization", {}).get("loudness_range_target")
+            == synthesis["loudness_range_target"]
+        ),
+        "audio_path_matches_receipt": (
+            receipt.get("output_path") == args.audio
+        ),
         "audio_digest_matches_receipt": sha256(audio_path) == receipt["output_sha256"],
+        "asr_receipt_schema_current": (
+            asr_receipt.get("schema_version") == "asi_stack.local_asr_transcript.v1"
+        ),
+        "asr_runner_bound_and_current": (
+            asr_receipt.get("runner_path") == tracked_inputs["transcription_runner"]
+            and asr_receipt.get("runner_sha256")
+            == tracked_inputs["transcription_runner_sha256"]
+            == sha256(ROOT / tracked_inputs["transcription_runner"])
+        ),
+        "asr_toolchain_identity_matches": (
+            asr_receipt.get("toolchain_id") == toolchain["toolchain_id"]
+            and asr_receipt.get("implementation") == verification["implementation"]
+            and asr_receipt.get("implementation_version") == verification["version"]
+            and asr_receipt.get("model_repository") == verification["model_repository"]
+            and asr_receipt.get("model_revision") == verification["model_revision"]
+        ),
+        "asr_model_files_match_toolchain": (
+            asr_receipt.get("model_file_sha256") == {
+                "build/visual_edition/models/whisper-small.en-mlx/config.json":
+                    verification["model_config_sha256"],
+                "build/visual_edition/models/whisper-small.en-mlx/weights.npz":
+                    verification["model_weights_sha256"],
+            }
+        ),
+        "asr_audio_identity_matches": (
+            asr_receipt.get("audio_path") == args.audio
+            and asr_receipt.get("audio_sha256") == sha256(audio_path)
+            and asr_receipt.get("language") == "en"
+        ),
         "duration_matches_receipt": abs(duration - receipt["duration_seconds"]) <= 0.001,
-        "duration_within_visual_edition_contract": duration >= 180,
+        "duration_is_positive": duration > 0,
         "sample_rate_matches_receipt": sample_rate == receipt["sample_rate"],
         "mono": audio.shape[1] == 1,
         "finite_samples": bool(np.isfinite(audio).all()),
@@ -286,16 +390,19 @@ def main() -> None:
         "audio_sha256": sha256(audio_path),
         "duration_seconds": round(duration, 6),
         "duration_guidance": {
-            "preferred_minimum_seconds": 180,
-            "soft_target_maximum_seconds": 360,
+            "normal_minimum_seconds": 150,
+            "normal_maximum_seconds": 270,
             "position": (
-                "below_preferred_range"
-                if duration < 180
-                else "above_soft_target"
-                if duration > 360
-                else "within_preferred_range"
+                "below_normal_range"
+                if duration < 150
+                else "above_normal_range"
+                if duration > 270
+                else "within_normal_range"
             ),
-            "over_soft_target_seconds": round(max(0.0, duration - 360), 6),
+            "outside_normal_range_seconds": round(
+                max(150 - duration, duration - 270, 0.0), 6
+            ),
+            "gate_effect": "diagnostic_only_no_minimum_duration",
         },
         "sample_rate": sample_rate,
         "channels": audio.shape[1],
@@ -315,7 +422,9 @@ def main() -> None:
         "checks": checks,
     }
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    report_temp = report_path.with_suffix(".tmp.json")
+    report_temp.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    report_temp.replace(report_path)
     print(json.dumps(report, indent=2))
     if report["validation_state"] != "pass":
         raise SystemExit(1)

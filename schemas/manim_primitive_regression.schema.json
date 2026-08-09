@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_primitive_regression.schema.json",
+  "title": "ASI Stack Manim Primitive Graphical Regression Manifest",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version", "toolchain", "visual_grammar", "primitive_library",
+    "regression_scenes", "scene_classes", "covered_factory_symbols",
+    "frame_contract", "baseline", "comparison", "accepted_at_utc",
+    "accepted_by", "review_state", "review_rationale", "support_state_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_primitive_regression.v1"},
+    "toolchain": {"$ref": "#/$defs/binding"},
+    "visual_grammar": {"$ref": "#/$defs/binding"},
+    "primitive_library": {"$ref": "#/$defs/binding"},
+    "regression_scenes": {"$ref": "#/$defs/binding"},
+    "scene_classes": {
+      "const": ["PrimitiveSymbolsRegression", "PrimitiveFramingRegression"]
+    },
+    "covered_factory_symbols": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}
+    },
+    "frame_contract": {
+      "type": "object",
+      "required": ["renderer", "pixel_width", "pixel_height", "channels", "background_color"],
+      "properties": {
+        "renderer": {"const": "cairo"},
+        "pixel_width": {"const": 854},
+        "pixel_height": {"const": 480},
+        "channels": {"const": 4},
+        "background_color": {"const": "#101820"}
+      },
+      "additionalProperties": false
+    },
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "path": {"const": "visual_edition/tests/control_data/asi_visuals_v1.npz"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "frame_count": {"const": 2}
+      },
+      "required": ["path", "sha256", "frame_count"],
+      "additionalProperties": false
+    },
+    "comparison": {
+      "type": "object",
+      "required": ["absolute_channel_tolerance", "maximum_mismatch_ratio"],
+      "properties": {
+        "absolute_channel_tolerance": {"const": 1.01},
+        "maximum_mismatch_ratio": {"const": 0.00001}
+      },
+      "additionalProperties": false
+    },
+    "accepted_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "accepted_by": {"type": "string", "minLength": 3},
+    "review_state": {"const": "manually_inspected"},
+    "review_rationale": {"type": "string", "minLength": 40},
+    "support_state_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": false
+}

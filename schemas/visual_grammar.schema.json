@@ -25,14 +25,47 @@
     "grammar_id": {"type": "string", "minLength": 12},
     "state": {"enum": ["candidate_until_five_pilots_pass", "ratified"]},
     "aspect_ratio": {"const": "16:9"},
-    "canvas": {"type": "object"},
+    "canvas": {
+      "type": "object",
+      "required": [
+        "release_width",
+        "release_height",
+        "safe_area_fraction",
+        "minimum_text_height_pixels",
+        "minimum_caption_safe_bottom_pixels"
+      ],
+      "properties": {
+        "release_width": {"const": 1920},
+        "release_height": {"const": 1080},
+        "safe_area_fraction": {"type": "number", "minimum": 0.8, "maximum": 0.95},
+        "minimum_text_height_pixels": {"type": "integer", "minimum": 38},
+        "minimum_caption_safe_bottom_pixels": {"type": "integer", "minimum": 150}
+      },
+      "additionalProperties": false
+    },
     "palette": {
       "type": "object",
       "required": ["background", "surface", "ink", "muted", "accent", "copper", "authority", "evidence", "residual", "rollback", "boundary"],
-      "additionalProperties": {"pattern": "^#[0-9A-Fa-f]{6}$"}
+      "propertyNames": {
+        "enum": ["background", "surface", "ink", "muted", "accent", "copper", "authority", "evidence", "residual", "rollback", "boundary"]
+      },
+      "additionalProperties": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"}
     },
     "semantic_symbols": {"type": "object", "minProperties": 7},
-    "typography": {"type": "object"},
+    "typography": {
+      "type": "object",
+      "required": ["primary", "fallback", "monospace", "title_weight", "body_weight", "maximum_lines_per_card", "maximum_words_per_line"],
+      "properties": {
+        "primary": {"const": "Avenir Next"},
+        "fallback": {"const": "Arial"},
+        "monospace": {"const": "Menlo"},
+        "title_weight": {"const": "demi_bold"},
+        "body_weight": {"const": "regular"},
+        "maximum_lines_per_card": {"type": "integer", "minimum": 1, "maximum": 5},
+        "maximum_words_per_line": {"type": "integer", "minimum": 1, "maximum": 11}
+      },
+      "additionalProperties": false
+    },
     "motion": {
       "type": "object",
       "required": ["default_transition_seconds", "minimum_hold_seconds", "maximum_camera_motion_degrees_per_second", "maximum_flashes_per_second", "meaning_must_survive_motion_disabled"],
@@ -43,9 +76,31 @@
         "maximum_flashes_per_second": {"const": 0},
         "meaning_must_survive_motion_disabled": {"const": true},
         "reduced_motion_derivative_required_before_publication": {"type": "boolean"}
-      }
+      },
+      "additionalProperties": false
     },
-    "contrast": {"type": "object"},
+    "contrast": {
+      "type": "object",
+      "required": [
+        "normal_text_minimum_ratio",
+        "large_text_minimum_ratio",
+        "non_text_boundary_minimum_ratio",
+        "background_roles",
+        "normal_text_roles"
+      ],
+      "properties": {
+        "normal_text_minimum_ratio": {"const": 4.5},
+        "large_text_minimum_ratio": {"const": 3.0},
+        "non_text_boundary_minimum_ratio": {"const": 3.0},
+        "background_roles": {
+          "const": ["background", "surface"]
+        },
+        "normal_text_roles": {
+          "const": ["ink", "muted", "accent", "copper", "authority", "evidence", "residual", "rollback", "boundary"]
+        }
+      },
+      "additionalProperties": false
+    },
     "reusable_components": {
       "type": "array",
       "minItems": 13,

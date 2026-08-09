@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_render_receipt.schema.json",
+  "title": "ASI Stack Generation-Two Final Render Receipt",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "chapter_id",
+    "generation",
+    "rendered_at_utc",
+    "source_commit",
+    "render",
+    "execution_security",
+    "input_bindings",
+    "output",
+    "av_diagnostics",
+    "unresolved_material_warnings",
+    "asset_rights_state",
+    "support_state_effect",
+    "publication_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_render_receipt.v1"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "generation": {"const": 2},
+    "rendered_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "render": {
+      "type": "object",
+      "required": ["render_steps", "toolchain_id", "random_seed", "timezone", "cache_policy"],
+      "properties": {
+        "render_steps": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "prefixItems": [
+            {
+              "type": "object",
+              "required": ["phase", "command_argv", "exit_code"],
+              "properties": {
+                "phase": {"const": "scene_render"},
+                "command_argv": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {"type": "string", "minLength": 1}
+                },
+                "exit_code": {"const": 0}
+              },
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": ["phase", "command_argv", "exit_code"],
+              "properties": {
+                "phase": {"const": "audio_mux"},
+                "command_argv": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {"type": "string", "minLength": 1}
+                },
+                "exit_code": {"const": 0}
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "toolchain_id": {"type": "string", "minLength": 12},
+        "random_seed": {"type": "integer", "minimum": 0},
+        "timezone": {"const": "UTC"},
+        "cache_policy": {"enum": ["clean", "verified_reuse"]}
+      },
+      "additionalProperties": false
+    },
+    "execution_security": {
+      "type": "object",
+      "required": [
+        "isolation_mode", "network_access", "credential_environment_inherited",
+        "repository_writable_roots", "sandbox_policy_receipt",
+        "source_preflight_scene_sha256", "source_preflight_verdict",
+        "source_preflight_finding_count"
+      ],
+      "properties": {
+        "isolation_mode": {
+          "enum": ["macos_sandbox_exec", "container_no_network", "restricted_ci_runner"]
+        },
+        "network_access": {"const": false},
+        "credential_environment_inherited": {"const": false},
+        "repository_writable_roots": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^build/visual_edition(?:/|$)"}
+        },
+        "sandbox_policy_receipt": {"$ref": "#/$defs/binding"},
+        "source_preflight_scene_sha256": {"$ref": "#/$defs/digest"},
+        "source_preflight_verdict": {"const": "pass"},
+        "source_preflight_finding_count": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "input_bindings": {
+      "type": "object",
+      "required": [
+        "chapter",
+        "treatment",
+        "beat_plan",
+        "scene",
+        "narration",
+        "visual_grammar",
+        "visual_toolchain",
+        "primitive_library",
+        "scene_source_auditor",
+        "isolated_render_runner",
+        "final_receipt_compiler",
+        "av_auditor",
+        "av_diagnostics_schema",
+        "sandbox_policy_receipt_schema",
+        "primitive_regression_manifest",
+        "narration_toolchain",
+        "timing_receipt",
+        "narration_render_receipt",
+        "narration_verification_report",
+        "audio_master"
+      ],
+      "properties": {
+        "chapter": {"$ref": "#/$defs/binding"},
+        "treatment": {"$ref": "#/$defs/binding"},
+        "beat_plan": {"$ref": "#/$defs/binding"},
+        "scene": {"$ref": "#/$defs/binding"},
+        "narration": {"$ref": "#/$defs/binding"},
+        "visual_grammar": {"$ref": "#/$defs/binding"},
+        "visual_toolchain": {"$ref": "#/$defs/binding"},
+        "primitive_library": {"$ref": "#/$defs/binding"},
+        "scene_source_auditor": {"$ref": "#/$defs/binding"},
+        "isolated_render_runner": {"$ref": "#/$defs/binding"},
+        "final_receipt_compiler": {"$ref": "#/$defs/binding"},
+        "av_auditor": {"$ref": "#/$defs/binding"},
+        "av_diagnostics_schema": {"$ref": "#/$defs/binding"},
+        "sandbox_policy_receipt_schema": {"$ref": "#/$defs/binding"},
+        "primitive_regression_manifest": {"$ref": "#/$defs/binding"},
+        "narration_toolchain": {"$ref": "#/$defs/binding"},
+        "timing_receipt": {"$ref": "#/$defs/binding"},
+        "narration_render_receipt": {"$ref": "#/$defs/binding"},
+        "narration_verification_report": {"$ref": "#/$defs/binding"},
+        "audio_master": {"$ref": "#/$defs/binding"}
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "path", "sha256", "duration_seconds", "pixel_width", "pixel_height",
+        "frame_rate", "video_codec", "pixel_format", "audio_codec",
+        "audio_channels", "audio_sample_rate_hz"
+      ],
+      "properties": {
+        "path": {"type": "string", "pattern": "^build/visual_edition/generation-2/final/.+\\.mp4$"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "pixel_width": {"const": 1920},
+        "pixel_height": {"const": 1080},
+        "frame_rate": {"const": 30},
+        "video_codec": {"const": "h264"},
+        "pixel_format": {"const": "yuv420p"},
+        "audio_codec": {"enum": ["aac", "aac-lc"]},
+        "audio_channels": {"enum": [1, 2]},
+        "audio_sample_rate_hz": {"const": 48000}
+      },
+      "additionalProperties": false
+    },
+    "av_diagnostics": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/av_diagnostics\\.json$"}
+      }
+    },
+    "unresolved_material_warnings": {"const": 0},
+    "asset_rights_state": {"enum": ["no_external_assets", "cleared"]},
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 40}
+  },
+  "additionalProperties": false
+}

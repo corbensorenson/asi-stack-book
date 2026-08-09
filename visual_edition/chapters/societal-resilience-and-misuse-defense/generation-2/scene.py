@@ -15,7 +15,7 @@ from manim import (
 )
 
 from visual_edition.lib.asi_visuals import (
-    BOUNDARY, INK, MUTED, RESIDUAL, ROLLBACK, SURFACE, AsiScene, text,
+    BOUNDARY, INK, MUTED, RESIDUAL, SURFACE, AsiScene, text,
 )
 
 
@@ -379,11 +379,6 @@ class SocietalResilienceGeneration2(AsiScene):
         harbor29 = self.panel("HARBORLINE", GOLD, 2.6, 1.7).shift(LEFT * 3.4)
         outcomes29 = self.list_badges(["RESIST", "SERVICE AVAILABLE", "REPAIR", "LEARN", "OWNER", "NEXT: CAPABILITY FIELDS"], [GOLD, BLUE, GREEN, VIOLET, RESIDUAL, RED], x=1.2, y=0.2, width=2.6, scale=0.58)
         e29 = VGroup(*[Arrow(harbor29.get_right(), x.get_left(), color=[GOLD, BLUE, GREEN, VIOLET, RESIDUAL, RED][i], stroke_width=2, buff=0.1) for i, x in enumerate(outcomes29)])
-        s29 = VGroup(f29, harbor29, outcomes29, e29)
         self.play_beat(29, FadeOut(s28), FadeIn(f29), FadeIn(harbor29), LaggedStart(*[FadeIn(x) for x in outcomes29], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e29], lag_ratio=0.07), Indicate(outcomes29[-1], color=RED), settle=1.0)
 
         self.wait_until(self.TARGET_DURATION)
-
-
-if __name__ == "__main__":
-    SocietalResilienceGeneration2().render()

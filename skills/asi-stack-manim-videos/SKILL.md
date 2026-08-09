@@ -1,369 +1,492 @@
 ---
 name: asi-stack-manim-videos
-description: Art-direct, write, animate, mix, revise, audit, render, and maintain beautiful ManimCE visual abstracts for chapters of Corben Sorenson's living book The ASI Stack. Use for chapter-video narration, beat sheets, storyboards, composition, motion design, Manim scene code, audio/visual synchronization, sound and accessibility review, captions, YouTube replacement planning, or diagnosing videos that are wordy, static, generic, visually monotonous, uncomfortable, or out of sync.
+description: Design, write, art-direct, implement, synchronize, caption, audit, review, revise, render, and maintain ManimCE or Manim-composited hybrid visual abstracts for chapters of Corben Sorenson's living book The ASI Stack. Use for treatment and teaching-promise selection, narration, semantic keyframes, storyboards, beat plans, Manim scene code, TTS and forced alignment, audiovisual review, accessibility, thumbnails, YouTube supersession, or diagnosing videos that are inaccurate, wordy, static, generic, visually monotonous, uncomfortable, inaccessible, or out of sync.
 ---
 
 # ASI Stack Manim Videos
 
-Build each video as a visual explanation, not a narrated slide deck. Make the
-animation and narration teach the same idea at the same moment. Preserve the
-book as canonical and preserve every claim/evidence boundary.
+Make an original visual explanation whose pictures and words change the same
+mental model at the same time. The canonical chapter and its evidence surfaces
+remain authoritative. A derivative video never strengthens a book claim.
 
-## Read the right context
+## Non-negotiable contract
 
-1. Read the complete canonical chapter, its packet, source notes, core claim,
-   evidence ceiling, non-claims, and handoff.
-2. Read `visual_edition/README.md`, `visual_edition/visual_grammar.json`, the
-   YouTube ledger, and the chapter's current visual packet when working in the
-   ASI Stack repository.
-3. Read [writing-and-story.md](references/writing-and-story.md) before drafting
-   narration.
-4. Read [learning-and-engagement.md](references/learning-and-engagement.md)
-   before choosing the hook, questions, pacing, or entertainment devices.
-5. Read [art-direction-and-motion.md](references/art-direction-and-motion.md)
-   before storyboarding, selecting a visual world, or judging beauty.
-6. Read [manim-patterns.md](references/manim-patterns.md) before designing or
-   coding visuals.
-7. Read [audio-and-accessibility.md](references/audio-and-accessibility.md)
-   before synthesizing, mixing, captioning, or reviewing final narration.
-8. Read [experience-review.md](references/experience-review.md) before accepting
-   an animatic, picture-and-sound lock, or release candidate.
-9. Read [asi-stack-pipeline.md](references/asi-stack-pipeline.md) before
-   modifying an existing chapter video or any publication state.
-10. Read [research-basis.md](references/research-basis.md) when checking the
-   rationale, upstream examples, compatibility, or licensing boundary.
+1. **One transferable promise.** A short video selects one consequential idea;
+   it does not summarize the chapter.
+2. **Standalone audience.** Default to a curious adult interested in AI, with
+   no research background and no prior-chapter context. Record different
+   assumptions when the request names a different audience.
+3. **Source-bound truth.** Bind every spoken or visual inference to chapter
+   claim IDs or verified source IDs. Record assumptions, non-claims, notation,
+   units, simplifications, and truth checks. Do not speak repository metadata
+   unless repository mechanics are themselves the teaching subject.
+4. **Co-design before production.** Iterate narration, rough semantic
+   keyframes, and the concrete case together. Do not lock a script whose ideas
+   cannot earn pictures, and do not build polished scenes for an unstable story.
+5. **Audio owns final time.** Editorial estimates support planning only;
+   synthesis-block timing supports an animatic; manually reviewed forced
+   alignment is required for picture-and-sound lock.
+6. **Motion carries meaning.** Motion may encode identity, relation, causality,
+   sequence, quantity, uncertainty, contrast, containment, authority,
+   rollback, or attention. Intentional stillness is valid when it gives time to
+   predict, compare, read, or absorb; declare it as a hold and introduce
+   nothing new during it.
+7. **Two release reviews.** A source-aware critic checks claim fidelity. A
+   separate cold audience proxy checks comprehension and changed-condition
+   transfer without source, script, code, or answer-key access. An AI proxy is
+   diagnostic evidence about the artifact, not evidence of human learning.
+8. **Accessibility and rights are design inputs.** Meaning must survive color
+   loss, motion reduction, captions, and ordinary playback. Every external
+   asset, font, voice, music cue, and effect needs provenance and usable rights.
+   Citation is not permission, and generated media is not factual evidence.
+9. **Receipts over declarations.** Every passing gate binds exact artifact
+   digests and review evidence. A material upstream edit reopens every dependent
+   gate.
+10. **No false superlatives.** Report observed strengths, passed checks, known
+    defects, and untested conditions. Never call a video optimal, proven to
+    teach, or “best possible.”
 
-## Choose one teaching promise
+## Load only the needed references
 
-State one short sentence describing what the viewer should be able to predict,
-explain, or do after watching. Choose one concrete case that makes the promise
-visible. A chapter video is a selective visual abstract, not a compressed
-reading of every section. Coverage is not a video objective.
+- Narration, promise, or story work: [writing-and-story.md](references/writing-and-story.md)
+  and [learning-and-engagement.md](references/learning-and-engagement.md).
+- Treatment, composition, keyframes, motion, or visual critique:
+  [art-direction-and-motion.md](references/art-direction-and-motion.md).
+- Manim architecture, scene implementation, or reusable primitives:
+  [manim-patterns.md](references/manim-patterns.md).
+- TTS, alignment, captions, mix, or motion comfort:
+  [audio-and-accessibility.md](references/audio-and-accessibility.md).
+- Any production-state or repository change:
+  [asi-stack-pipeline.md](references/asi-stack-pipeline.md).
+- Any animatic, lock, or release decision:
+  [experience-review.md](references/experience-review.md).
+- Research rationale, upstream examples, compatibility, or licensing:
+  [research-basis.md](references/research-basis.md).
 
-Before drafting, generate several candidate promises and select the one with
-the strongest combination of consequence, visual mechanism, transfer value,
-and evidence fit. Reject promises joined by lists such as “trace X through A,
-B, C, and D.” The default selection budget is one case, one causal mechanism,
-one test or counterexample, one natural evidence boundary, and at most three
-new terms.
+In the book repository, also read the complete chapter, its packet and source
+notes, `visual_edition/README.md`, `visual_edition/visual_grammar.json`, the
+generation-two ledger, the narration toolchain, and the chapter's current
+generation directory. Generation one and superseded generation-two artifacts
+are history, not automatic authoring inputs.
 
-Build around this order unless the chapter demands a better one:
+Bind the treatment to the ledger's exact chapter digest and source-context
+digest. That context digest covers every assigned source note plus its source
+inventory record; a remembered source list or stale visual packet is not the
+current authority surface.
 
-1. Pose a concrete puzzle, failure, or decision.
-2. Let the viewer make a prediction.
-3. Manipulate the concrete case.
-4. Extract the general mechanism from what changed.
-5. Run one worked trace or counterexample.
-6. State what the example establishes and what remains open.
+Run bundled commands from the book repository root. When discovery cannot use
+the working directory, set `ASI_STACK_BOOK_ROOT` to that root. Accepted renders
+must execute the tracked repository runner; the installed skill copy supplies
+instructions and diagnostics, not a substitute executable identity.
 
-Do not begin with a definition, chapter summary, taxonomy, or phrases such as
-“This chapter asks a specific question,” “the tempting shortcut,” or “the
-chapter's core claim is.” Avoid repeating a seven-part verbal template across
-chapters.
+## Artifacts and state
 
-## Make attention serve understanding
+For each chapter, use this generation-two topology:
 
-Treat entertainment as sustained, useful attention—not decoration. Build a
-small curiosity loop: expose a concrete mismatch, let the viewer predict an
-outcome, reveal the mechanism progressively, and pay off the opening question.
-Use surprise only when the surprising result teaches the chapter's mechanism
-or defeats a plausible shortcut.
+```text
+generation-2/
+  treatment.json       # source, audience, story, keyframes, assets, script gate
+  narration.txt        # exact approved words after the script gate passes
+  beat_plan.json       # exact narration split into audio-timed semantic beats
+  scene.py             # deterministic chapter-specific implementation
+  captions.vtt         # derived from qualified alignment, then manually edited
+  transcript.md        # narration plus consequential visual description
+  thumbnail.*          # honest promise with alt text and provenance
+  av_diagnostics.json  # mechanical A/V findings bound to master and beat plan
+  render_receipt.json  # compiler-derived exact release custody; never hand-authored
+  receipts/            # timing, alignment, samples, and sandbox-policy evidence
+  reviews/
+    <pass>.json         # assessed review record
+    <pass>.context.json # exact isolated material and prompt bindings
+    <pass>.prompt.md    # prompt delivered in that review session
+    <pass>.raw.md       # response preserved before assessment
+```
 
-- Make the first 15 seconds deliver the title-and-thumbnail promise through a
-  visible problem or consequence.
-- Create micro-suspense with an unresolved route, hidden state, competing
-  prediction, or impending failure. Resolve it within the same visual world.
-- Give important objects agency: tokens move, gates decide, ledgers change,
-  backups restore, and branches visibly win or fail.
-- Use one or two genuine prediction prompts in a short video. Pause long
-  enough to think, then make the answer visible before explaining it.
-- Vary the explanatory form across chapters—trace, puzzle, counterexample,
-  comparison, construction, diagnosis—while preserving the visual grammar.
-- Use an energetic, conversational delivery with real changes in emphasis.
-  Do not manufacture excitement with hype, exaggerated certainty, or speed.
-- Cut jokes, music, backgrounds, visual flourishes, and side facts that do not
-  strengthen curiosity, orientation, mechanism, consequence, or recall.
+The state order is `planned -> narration_draft -> treated -> script_passed ->
+beat_planned -> animatic -> picture_and_sound_lock -> release_candidate ->
+accepted`. A clean narration linter result is not `script_passed`. A rendered
+file is not an accepted video.
 
-Apply coherence, signaling, segmenting, spatial contiguity, temporal
-contiguity, modality, and redundancy principles. Put a short label beside the
-object it names exactly when it matters. Pair spoken explanation with a
-complementary picture; do not make viewers read the same sentence they hear.
+## Workflow
 
-## Pass the script before planning motion
+### 1. Establish truth, audience, and medium
 
-- Treat roughly 2.5–4.5 minutes and 280–520 spoken words as the normal form.
-  This is a selection constraint, not a request to accelerate delivery.
-  Scripts above 600 words require a specific duration rationale and a second
-  editorial pass; scripts above 650 words fail the standard for a chapter
-  visual abstract and must become a series or return to selection.
-- Target roughly 110–145 spoken words per minute after synthesis. Do not speed
-  up an overlong script to make it fit.
-- Organize the script into four to six narrative moves. Timed animation cues
-  may be more numerous, but they must not become extra topics.
-- Use active voice, concrete nouns, specific verbs, and one idea per sentence.
-- Put the actor and action early. Split sentences above roughly 24 words unless
-  their rhythm is demonstrably clear when spoken.
-- Introduce jargon only after a viewer has seen the problem it names. Define a
-  term once and use it consistently.
-- Write conversational transitions that express causality: “because,” “so,”
-  “but,” and “therefore.” Remove paper-like signposting and throat-clearing.
-- Ask questions only when the visual gives the viewer time and evidence to
-  answer.
-- Never narrate visible text verbatim. On-screen text labels; narration
-  explains relationships, causes, and consequences.
-- Preserve qualifiers. A visual example, implementation sketch, or source
-  report must not become proof, generality, safety, or deployment evidence.
-- State the evidence boundary once, in ordinary language, at the point where a
-  viewer could otherwise overgeneralize. Do not speak claim IDs, support-state
-  labels, validator counts, file paths, chapter navigation, or publication
-  boilerplate.
+Read the whole chapter and evidence surfaces. Extract only claims needed for a
+single visual argument. Record what the video must not imply. Verify every
+external source at source-note depth; do not promote a search snippet or paper
+abstract into evidence.
 
-Read the draft aloud before synthesis. Rewrite any line that needs punctuation
-to be understood, contains multiple logical branches, or cannot be paired with
-a meaningful picture. Then run the narration-only audit. Do not create a beat
-plan, synthesize audio, or write scene code until the script passes.
+Write the audience assumptions and standalone context. Decide whether the
+teaching mechanism is best served by Manim, a hybrid, stills, screen recording,
+or conventional editing. Manim is preferred for state, geometry, derivation,
+flow, and persistent identity, not because this is a Manim series. Record the
+medium rationale and every planned external asset in `treatment.json`.
+Use code-native diagrams for evidence-bearing geometry, quantities, labels, and
+system state. A generated bitmap may supply an original illustrative object or
+texture only when its prompt/model provenance, rights, digest, and factual
+inspection are recorded; it must not silently invent evidence or tiny text.
+
+The current accepted final compositor is the tracked ManimCE Cairo runner.
+`hybrid` means rights-cleared, digest-bound media enters that audited Manim
+scene as an asset; it does not authorize an unreceipted external final edit.
+A still-, screen-recording-, or conventional-edit-primary treatment may be
+explored, but its script gate and release path remain blocked until a tracked
+adapter emits equivalent schema-validated execution and final-custody receipts.
+
+### 2. Select the teaching promise
+
+Generate three to five genuinely different candidate promises. Compare each on
+consequence, visual mechanism, changed-case transfer, and evidence fit. Select
+exactly one. Use one concrete case, one central mechanism, relationship, or
+tradeoff, one discriminating test or counterexample, one local evidence
+boundary, and at most three introduced terms.
+
+Do not force a misconception, naive shortcut, prediction prompt, joke, or
+failure when the chapter supplies no honest basis for it. Record whether the
+tension comes from an observed failure, documented misconception, design
+tradeoff, open question, or counterexample. A useful question must be
+answerable from the visual and receive thinking time; zero questions is valid.
+
+### 3. Co-design treatment, narration, and keyframes
+
+Draft normally four to six macro changes in the viewer's mental model; use
+three or seven when the explanation genuinely needs it. For each, sketch
+a sparse semantic keyframe and state what remains invariant. Write narration
+in coherent performance blocks while revising the keyframes. Let a strong
+picture replace words; use narration for relationships, causes, consequences,
+and qualifications that the picture cannot safely carry alone.
+
+The treatment must record:
+
+- audience, promise candidates, selection rationale, and transfer criterion;
+- chapter claims, source IDs, non-claims, assumptions, visual simplifications,
+  notation/symbol/unit ledger, and retained truth checks;
+- concrete case, selected story form and authority basis, normally four to six
+  macro moves expressed as viewer-before -> visible event -> viewer-after,
+  opening, payoff, and predeclared comprehension and changed-case
+  transfer prompts with success criteria;
+- honest working title, thumbnail promise and alt text, first-15-second
+  delivery, source end-card/description plan;
+- medium, visual thesis, signature and ending images, persistent objects,
+  invariants, normally four to eight semantic keyframes, and asset provenance;
+- performance blocks, pronunciation items, music/effect policy, playback
+  devices, caption-safe composition, description, contrast, and motion plan;
+  and
+- the narration path, digest, word count, reviews, defects, and gate verdict.
+
+Retain failed or uncertain truth checks with their resolution path while
+drafting. They block script approval; they must not be deleted to make Gate 0
+look clean.
+
+Normal form is roughly 2.5-4.5 minutes and 280-520 spoken words. Treat those as
+selection diagnostics, not quotas; never add words to enter the range, and let
+a shorter treatment stand when it delivers and tests the promise. Above 600
+words requires a specific duration rationale; above 650 must be split or
+reselected. Do not accelerate a badly selected script. Read it aloud at the
+intended pace. Reject inventory,
+paper signposting, internal status language, unexplained jargon, late
+qualifiers, or any sentence that has neither a meaningful picture nor a
+deliberate audio-only purpose.
+
+Structural lint can run during drafting:
 
 ```bash
-python3 ~/.codex/skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
   --narration path/to/narration.txt --narration-only
 ```
 
-## Art-direct before animating
-
-Write a compact art-direction brief before scene code. Define the visual
-thesis, signature image, persistent visual world, core objects, composition
-rule, palette roles, typography roles, motion character, camera rule, surface
-rule, and ending image. Store it in `beat_plan.json`.
-
-Make the shared ASI Stack grammar recognizable without making every chapter
-look the same. Give each chapter one visual idea that belongs to its mechanism,
-not a generic stack of cards wearing a new title. Use the repository palette
-semantically and preserve consistent type, stroke, radius, arrow, spacing, and
-depth conventions.
-
-Compose for immediate hierarchy. Maintain one dominant focal point, leave
-negative space for the next relation, place labels beside their objects, and
-reserve maximum contrast for the current teaching target. Inspect the work at
-phone size as well as full resolution.
-
-Create beauty through coherent composition, object continuity, meaningful
-easing, varied rhythm, and a clean visual payoff. Do not pursue beauty through
-effect count, constant motion, gradients, glow, particles, camera drift, or
-imitation of another creator's surface style.
-
-## Design a beat-synchronized visual argument
-
-After the narration passes, create `beat_plan.json` before final scene code.
-Use the format in
-[asi-stack-pipeline.md](references/asi-stack-pipeline.md), then run:
+It does not approve truth, voice, or visualizability. Record all three manual
+reviews in the treatment, bind the exact narration digest, and then run Gate 0:
 
 ```bash
-python3 ~/.codex/skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
-  path/to/beat_plan.json --narration path/to/narration.txt
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  --treatment path/to/treatment.json \
+  --narration path/to/narration.txt --treatment-only
 ```
 
-A narrative move is a major change in the viewer's mental model. A timed beat
-is one spoken idea plus the visual state change that explains it. Do not confuse
-the two: a strong four-move story may contain many synchronized object changes
-without introducing many topics. Beat density is diagnostic, never a quota.
-Most timed beats last 3–10 seconds. Split a beat longer than 12 seconds unless
-the viewer is tracing, comparing, predicting, or absorbing a deliberate result;
-record that purpose.
+### 4. Produce audio and the timed visual argument
 
-For every beat, specify:
+After Gate 0, synthesize coherent performance blocks with the pinned local TTS. Preserve
+prosody across regenerated lines. Record model/version, voice, settings,
+license, disclosure, block digests, durations, and pronunciation results.
+Audition the voice alone.
 
-- the exact narration and a unique spoken sync anchor;
-- the viewer's attention target and the relation being encoded;
-- the relationship being taught;
-- the object state before and after the beat;
-- the purposeful visual action;
-- the intended composition, easing, camera behavior, and settling time;
-- the persistent objects that must remain trackable;
-- the exact audio-derived start and end time;
-- the few words, if any, shown on screen; and
-- its claim role and evidence boundary.
+The current TTS and ASR virtual environment is a pinned local trusted-computing
+base, not an OS sandbox. It loads only digest-bound local JSON, Safetensors, and
+NPZ model files, uses offline library hints, and binds the exact FFmpeg
+normalizer. Do not enable remote code, arbitrary model paths, escaped output
+paths, or a different executable. Do not describe this boundary as network or
+credential isolation; a future adapter must earn those claims with receipts.
 
-Do not use movement merely to satisfy a density target. Each motion must encode
-at least one of: identity, relation, causality, sequence, quantity, uncertainty,
-contrast, containment, authority, rollback, or attention. Conversely, do not
-leave the screen static while narration introduces a new relationship.
+Human-recorded narration may be auditioned, but the current acceptance contract
+does not ingest it. It remains blocked until a tracked recording adapter binds
+the performer or consent basis, session and edit provenance, exact audio,
+processing chain, rights, and an equivalent content-verification receipt.
 
-Technique-count and retention metrics are diagnostics, not targets. A scene
-using three techniques coherently is better than a scene using six to satisfy
-a checklist. Add a new technique only when it makes a distinct relationship or
-state change easier to understand.
+For the pinned local toolchain, preserve paragraph boundaries as performance
+blocks and use its exact speed and canonical ignored-build filename. Then run
+the pinned ASR/content validator. This establishes audio identity and content
+agreement, not final word timing or voice quality:
 
-## Prefer continuity over card replacement
+```bash
+build/visual_edition/tts_venv/bin/python scripts/render_visual_narration.py \
+  --text visual_edition/chapters/<chapter>/generation-2/narration.txt \
+  --output build/visual_edition/audio/<chapter>-narration-master.wav \
+  --speed 1.08
+build/visual_edition/tts_venv/bin/python scripts/transcribe_visual_narrations.py \
+  --chapter <chapter>
+build/visual_edition/tts_venv/bin/python scripts/validate_visual_narration.py \
+  --audio build/visual_edition/audio/<chapter>-narration-master.wav \
+  --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --asr build/visual_edition/audio/<chapter>-narration-master.json \
+  --report build/visual_edition/audio/<chapter>-narration-master.validation.json
+```
 
-Choose one persistent visual world—a stack, graph, state machine, constrained
-flow, geometric field, timeline, or worked artifact. Grow and transform it as
-understanding changes. Reuse object identity across beats so the viewer can see
-what persisted and what changed.
+The transcriber invokes that validator automatically; the explicit command is
+the reproducible replay. Both must pass on current digests. Neither establishes
+word timing, naturalness, or listener preference.
 
-Prefer:
+Create `beat_plan.json` by splitting the exact narration at semantic and audio
+anchors. Each beat binds its treatment macro move, performance block, source
+references, claim role, visual inference, evidence boundary, attention target,
+object state, composition, motion, text, and timing state.
 
-- `Transform`, `ReplacementTransform`, `TransformFromCopy`, and matching-part
-  transforms for identity and derivation;
-- `LaggedStart`, `LaggedStartMap`, `AnimationGroup`, and `Succession` for
-  legible sequence and hierarchy;
-- `ValueTracker`, mobject updaters, `always_redraw`, and moving dots or traces
-  for changing quantities and live relationships;
-- graph vertex movement, animated edges, path traversal, counters, gates, and
-  state changes for mechanisms;
-- focus isolation—dim context, emphasize the active objects, then restore;
-- restrained camera movement when a zoom or pan reveals scale, locality, or
-  hierarchy; and
-- concrete counterexamples that visibly break the proposed shortcut.
+- `estimated`: editorial estimate; no fake receipt; planning only.
+- `block_timed`: exact synthesis-block receipt plus its passing, digest-bound
+  ASR/content verification report; eligible for an animatic.
+- `forced_aligned`: version-pinned alignment plus bound manual anchor review;
+  required for picture-and-sound lock.
 
-Avoid:
+Read the current narration toolchain before timing work. If its aligner remains
+unqualified, stop the governed progression at animatic; never relabel block
+timing or raw ASR timestamps as forced alignment.
 
-- card grids that appear once and remain static under a long paragraph;
-- clearing the entire scene after every paragraph when object continuity would
-  teach more;
-- decorative floating, spinning, pulsing, or camera motion;
-- long lists, prose blocks, duplicated captions, and reading equations aloud;
-- an animation that finishes before the narration introduces its meaning; and
-- a fixed seven-scene template used regardless of chapter structure.
+Use `mode: change` when an object or relation changes. Use `mode: hold` only
+when before and after states match, the purpose is explicit, and no term or
+relationship is introduced. A brief post-motion settle can be shorter than the
+visual grammar's 1.2-second material hold; do not mislabel settling as a new
+teaching beat. Beat density and technique count are diagnostics, never targets.
 
-Use 3Blue1Brown code as pattern study, not as a copy source. Study how recent
-scenes define domain objects with semantic state setters, preserve those
-objects across transformations, and link multiple representations through
-trackers and updaters. That repository uses ManimGL and CC BY-NC-SA code; the
-ASI Stack pipeline uses ManimCE 0.20.1. Translate the explanatory technique
-with ManimCE's documented API and original project code.
+```bash
+python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
+  path/to/beat_plan.json \
+  --treatment path/to/treatment.json \
+  --narration path/to/narration.txt
+```
 
-## Derive timing from final audio
+### 5. Implement semantic objects, not slides
 
-Synthesize or record the narration in coherent performance blocks before final
-timing. Avoid sentence-by-sentence synthesis that resets prosody at every cut.
-Qualify and pin a forced-alignment path before final timing, then obtain word
-or phrase timestamps and align each beat to its unique spoken anchor. Until
-that path is qualified, timing estimates may support an animatic but cannot
-pass picture-and-sound lock.
+Use one persistent visual world and preserve object identity across changes.
+Create chapter-specific objects with meaningful state setters; use transforms,
+trackers, updaters, graph movement, matching parts, and focus isolation when
+they reveal the mechanism. Keep labels adjacent to objects and short enough to
+scan without competing with speech.
 
-Use one of two timing strategies:
+Before rendering, preflight the pinned ManimCE runtime, fonts, LaTeX/packages,
+codecs, external assets, licenses, random seeds, resolution, frame rate, and
+audio tools. Do not assume ManimGL examples are API-compatible with ManimCE.
+Use `Scene.next_section()` at semantic boundaries and render low-resolution
+sections during iteration.
 
-1. For the existing external-audio pipeline, store exact beat timestamps and
-   drive `self.play` calls to those anchors. Do not animate only at paragraph
-   entry and call `wait_until` once at paragraph end.
-2. If Manim Voiceover is intentionally adopted, use voiceover blocks and
-   bookmarks so animation durations derive from the audio tracker.
+```bash
+python3 scripts/validate_manim_toolchain.py --probe-runtime
+python3 skills/asi-stack-manim-videos/scripts/audit_scene_source.py \
+  path/to/scene.py --treatment path/to/treatment.json
+# Portable custody check; this does not claim a graphical replay.
+python3 skills/asi-stack-manim-videos/scripts/audit_primitive_regression.py --static-only
+# Full graphical replay on the pinned macOS runtime.
+python3 skills/asi-stack-manim-videos/scripts/audit_primitive_regression.py
+python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py --self-test
+python3 skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py --self-test
+```
 
-Keep animation onset within roughly half a second of the phrase it explains.
-Finish the explanatory change near the end of that idea, not at the start of a
-much longer paragraph. Regenerate timing after any narration edit.
+Treat every downloaded scene, plugin, model, font, media file, and build command
+as untrusted until its provenance, license, digest, and behavior are reviewed.
+Manim scenes are arbitrary Python: never execute copied or generated code just
+because it renders in an example repository. Keep network access and secrets
+out of render execution, reject unexpected subprocess or filesystem behavior,
+and vendor only the smallest reviewed dependency needed.
 
-## Implement and iterate in sections
+The source audit is a narrow static preflight, not a security boundary. It
+permits only the digest-bound `visual_edition.lib.asi_visuals` local helper;
+adding another helper requires extending its audit, digest, and regression
+contract first. Execute even a passing scene under an OS, container, CI, or
+Codex sandbox that denies network access, strips credential-bearing environment
+variables, and restricts repository writes to `build/visual_edition/`.
 
-Use `Scene.next_section()` at semantic beats or coherent beat groups. Render
-low-resolution sections during iteration, then render the complete pinned
-release profile. Keep random seeds deterministic.
+On the pinned macOS toolchain, use the tracked runner instead of a direct Manim
+command. Its live policy self-test must pass in a non-nested shell before use:
 
-Work in three passes:
+```bash
+python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py \
+  visual_edition/chapters/<chapter>/generation-2/scene.py <SceneClass> \
+  --treatment visual_edition/chapters/<chapter>/generation-2/treatment.json \
+  --audio-master build/visual_edition/audio/<chapter>-narration-master.wav \
+  --profile draft \
+  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/animatic-sandbox.json
+python3 skills/asi-stack-manim-videos/scripts/sample_video_beats.py \
+  build/visual_edition/isolated-renders/<chapter>/draft/<chapter>-animatic.mp4 \
+  visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --sample-set animatic
+```
 
-1. **Animatic:** use rough objects with final or near-final narration to solve
-   story, visual thesis, continuity, timing, and payoff.
-2. **Picture-and-sound lock:** finalize geometry, easing, camera, typography,
-   narration, captions, music policy, and sound timing.
-3. **Release candidate:** render the pinned profile, run technical checks, and
-   perform the complete experience review.
+The runner enforces network, read, write, executable, wall-time, CPU-time,
+file-size, open-file, process-count, environment, and core-dump boundaries and
+emits the exact policy, command sequence, preflight identity, and outputs.
+Its receipt lists the broad system-content roots required by Python, Manim, and
+native libraries while denying unlisted repository file contents.
+macOS does not provide this adapter a hard resident-memory bound; the receipt
+must retain that explicit non-claim. Preserve and validate the runner-produced
+receipt. Do not hand-author an isolation declaration or run a direct
+unsandboxed Manim or mux command for an accepted artifact. A container or CI
+backend is not accepted until it emits an equivalently schema-validated receipt
+and gains a tracked adapter.
 
-Keep the work logically separated even when one agent performs every role:
+Put a primitive in `visual_edition/lib/` only after at least two chapters share
+the behavior. Add a Manim graphical frame-comparison regression test for every
+shared primitive and for high-risk deterministic geometry. Chapter scenes
+still require rendered playback review; a snapshot cannot judge teaching,
+motion, or synchronization.
 
-1. **Script editor:** selects and compresses the lesson; cannot approve visuals.
-2. **Visual director:** designs the persistent world and keyframes; cannot hide
-   a weak script with polish.
-3. **Renderer:** implements deterministic scene code and repairs execution.
-4. **Critic:** reviews rendered frames, motion, sound, transfer, and fidelity
-   against the promise rather than defending the implementation.
+Never update a graphical baseline merely to make a failure disappear. Capture
+candidate frames, inspect them at original resolution for geometry, typography,
+clipping, overlap, and hierarchy, record the reason for accepting the change,
+then update the content-addressed baseline and rerun the regression.
 
-Do not polish a transition while the story or visual world is still unstable.
-Use scene sections and low-resolution renders as the ManimCE equivalent of an
-interactive checkpoint workflow.
+### 6. Iterate at the cheapest valid gate
 
-Build original reusable primitives in `visual_edition/lib/` only when at least
-two chapters genuinely share the visual behavior. Keep chapter-specific
-metaphors and transformations in chapter code. A short wrapper over a generic
-scene is insufficient unless the generic engine consumes a complete beat plan
-and produces chapter-specific transformations.
+1. **Animatic:** rough geometry, near-final audio, at least block-timed beats.
+   Repair promise, story, keyframes, continuity, and pacing before polish.
+2. **Picture-and-sound lock:** final geometry, narration, manually reviewed
+   forced alignment, captions, transcript, easing, camera, voice, mix, and the
+   exact release-profile mux and receipts that will be reviewed.
+3. **Release candidate:** pinned 1920x1080/30 master, exact receipts,
+   descriptive transcript, thumbnail, source delivery, and complete checks.
 
-## Choreograph motion and sound
+Once the scene, audio, captions, transcript, and alignment are ready for lock,
+render the release-profile candidate through the tracked runner. Sync the
+ledger so it owns the ignored-build master, run the A/V diagnostic against
+that master and the forced-aligned beat plan, compile `render_receipt.json`
+from those exact artifacts, and sync again. Run picture-and-sound lock review
+against this exact candidate and its receipt; any resulting edit creates a new
+candidate and reopens the review. Never hand-author the final receipt.
 
-Use motion to guide the eye. Group simultaneous changes that express one
-relation; stagger changes when order matters; give the central transformation
-more duration, distance, or contrast than supporting motion; and let the frame
-briefly settle after a dense reveal. Avoid unrelated simultaneous movement.
+```bash
+python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py \
+  visual_edition/chapters/<chapter>/generation-2/scene.py <SceneClass> \
+  --treatment visual_edition/chapters/<chapter>/generation-2/treatment.json \
+  --audio-master build/visual_edition/audio/<chapter>-narration-master.wav --profile release \
+  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json
+python3 scripts/sync_manim_v2_production_ledger.py
+python3 skills/asi-stack-manim-videos/scripts/audit_av_experience.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  --plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --target-lufs -16 --json-out visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json
+python3 skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py \
+  --sandbox-receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json \
+  --av-diagnostics visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json \
+  --output visual_edition/chapters/<chapter>/generation-2/render_receipt.json
+python3 skills/asi-stack-manim-videos/scripts/sample_video_beats.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --sample-set final
+python3 skills/asi-stack-manim-videos/scripts/build_caption_review_sheet.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  visual_edition/chapters/<chapter>/generation-2/captions.vtt \
+  visual_edition/chapters/<chapter>/generation-2/receipts/caption-overlay.png \
+  --report-json visual_edition/chapters/<chapter>/generation-2/receipts/caption-diagnostics.json
+python3 scripts/sync_manim_v2_production_ledger.py
+python3 scripts/validate_manim_v2_production_ledger.py
+```
 
-Choose easing by meaning. Use linear motion only for uniform time, rate, scan,
-or flow; ease-out for arrival; ease-in for departure; and ease-in-out for state
-transformation or deliberate reframing. Use bounce, shake, flash, spin,
-overshoot, or continuous camera motion only when that physical quality teaches
-the idea. Encode essential meaning redundantly so it survives pause and
-reduced-motion viewing.
+Sample at least start, quarter, midpoint, three-quarter, and end of every beat,
+plus risky interpolations. Store the sample manifest and digest. Watch motion
+at 1x; contact sheets cannot judge easing or sync. Use
+`sample_video_beats.py`, `audit_av_experience.py`, and
+`build_caption_review_sheet.py` as diagnostics, not aesthetic judges.
+Generate one final sample set per exact master/plan identity and bind that same
+set into lock, source-aware, and cold reviews. Regenerate only when the media,
+plan, sampler, FFmpeg identity, or required targeted samples change.
 
-Treat narration as the primary audio signal. Direct emphasis, pause, pace, and
-pronunciation; remove awkward synthesized splices; and audition the complete
-voice without video. Use only original or rights-cleared music and effects.
-Keep them well below speech, duck them under dense ideas, and remove them when
-silence improves concentration. Measure loudness and true peak, but never
-mistake a compliant meter for a pleasant mix.
+Caption review must use the exact final VTT and mux. The sheet can flag timing,
+line, and reading-load risks; it cannot automatically prove that captions do
+not cover the active mechanism. Inspect the actual caption overlay at normal
+playback and phone size. Derive final cue timing only from qualified alignment,
+not synthesis-block interpolation.
 
-## Review the experience, not just artifact validity
+The static source gate blocks Manim's named flash effects. Deliberate flashing
+remains release-blocking until a qualified full-frame WCAG flash-threshold
+analyzer and manual review are bound; FFmpeg's photosensitivity diagnostic is
+not a conformance proof.
 
-Do all of these before calling a revision ready:
+### 7. Run both release reviews
 
-1. Run the beat-plan audit and repository validators.
-2. Render an animatic with final or near-final narration and exact beat timing.
-3. Sample the start, quarter, midpoint, three-quarter, and end of every beat.
-   Inspect focal hierarchy, continuity, interpolation states, and visual
-   breathing room. Add targeted samples around fast or suspicious transitions.
-4. Watch the picture-and-sound lock once at 1× with audio. Mark any idea where
-   the picture leads or lags
-   the words, the viewer must read and listen simultaneously, or the visual
-   stops teaching.
-5. Watch once muted. Confirm that the mechanism, state change, and failure are
-   still legible.
-6. Listen once without video. Remove dense clauses, template language, and
-   unexplained terms.
-7. Check captions, pronunciation, contrast, safe areas, text size, redundant
-   encodings, motion comfort, and the descriptive transcript.
-8. Audition voice and mix on headphones, earbuds, laptop or phone speakers,
-   and captions-on playback. Check loudness consistency, true peak, silence,
-   music ducking, and every regenerated audio splice.
-9. Inspect the result at phone size and large-screen size. Scrub random frames
-   for accidental states and poorly composed transitions.
-10. Score every dimension in [experience-review.md](references/experience-review.md).
-    Require at least 4/5 for teaching clarity, composition, motion quality,
-    synchronization, continuity, pacing, voice, mix, engagement,
-    accessibility, and claim fidelity. Do not average away a weak dimension.
-11. Compare the result with the teaching promise. Cut beats that do not serve it.
-12. Review the hook, prediction, reveal, and payoff as one loop. Reject a hook
-   that is never resolved or a late payoff that should appear earlier.
-13. Ask a cold transfer question that changes one condition in the worked case.
-    The reviewer must predict the result without consulting the script. A
-    confident but wrong answer is a teaching failure, not a cosmetic note.
-14. For a revision, compare predecessor and candidate at matched playback
-    volume and display size. Keep changes that solve a named problem.
-15. After publication has enough viewers, inspect first-30-second retention,
-    dips, spikes, and top moments. Treat these as diagnostic signals—not proof
-    of learning—and record the revision hypothesis before changing the video.
+Follow [experience-review.md](references/experience-review.md) and the v3
+review schema. A passing review must bind the exact master, treatment, beat
+plan, narration, captions, transcript, receipt, sample manifest, and digests;
+pass every required viewing mode; score every applicable dimension at least
+4/5 with timestamped evidence; and retain no unresolved material defect.
 
-Reject the video when any substantive spoken beat lacks an aligned visual;
-when a long hold lacks recorded pedagogical purpose; when on-screen prose
-competes with speech; when the composition has no clear focal hierarchy; when
-motion, flashes, camera movement, or audio are uncomfortable; when the voice
-or mix fails on an ordinary playback device; or when the scene is chiefly a
-sequence of labeled cards. Technical validity is never aesthetic acceptance.
+Create each release review in a fresh task or independent human session.
+Before review, freeze a context manifest and prompt that enumerate the exact
+allowed files and digests. Preserve the raw response before adding criteria,
+scores, defect dispositions, or a verdict. A reviewer assertion of freshness
+without the bound context, prompt, and raw response cannot pass.
+If that independent context cannot be obtained, leave the gate blocked; the
+authoring agent must not review its own work and relabel the result independent.
 
-## Maintain the living edition
+- **Source-aware release critic:** did not author the script or implement the
+  scene; may read chapter, sources, treatment, and beat plan; must score claim
+  fidelity and inspect every visual inference and qualifier.
+- **Cold audience proxy:** did not author or implement anything and had no
+  prior exposure; receives only rendered video plus captions or descriptive
+  transcript; receives no answer key; records raw responses to comprehension
+  and changed-condition transfer prompts against predeclared criteria. A pass
+  binds an exact raw-response excerpt to a timestamped cue or causal transition
+  in the artifact; generic prior-knowledge answers fail. This lane must not
+  score claim fidelity.
 
-Treat visual quality revisions as material media revisions. Keep the stable
-chapter video identity, create a new local generation, preserve the previous
-YouTube generation, and follow the repository's supersession plan and
-action-time authorization rules. Never overwrite receipts or imply that a new
-video changes the chapter's support state.
+An external human is welcome but is not an invented prepublication blocker.
+When no human study exists, say so. Retention, proxy answers, and reviewer
+scores are revision signals, not proof of human learning.
 
-When improving an existing uploaded preview, revise and validate the local
-generation first. Upload only after exact platform authority exists. Reconcile
-the new video ID, captions, thumbnail, playlist position, predecessor state,
-packet, ledger, and Quarto embed as one governed transaction.
+### 8. Accept, publish, and learn conservatively
+
+Accept only after treatment, script, beat plan, animatic, lock, both release
+reviews, technical checks, and claim-fidelity gates pass. Preserve prior
+generations and receipts. Never overwrite an uploaded video in project
+history, infer authorization, or claim that media acceptance changes chapter
+support.
+
+YouTube replacement requires action-time authority. Reconcile new video ID,
+visibility, captions, thumbnail, source description, playlist position,
+predecessor state, packet, ledger, and Quarto embed as one governed mutation.
+After enough viewers exist, use retention dips/spikes only to form a recorded
+revision hypothesis. Do not optimize for engagement at the expense of truth or
+understanding.
+
+## Invalidation and stopping rule
+
+Reopen downstream work whenever its input identity changes:
+
+- chapter/source/claim change -> treatment, script, timing, scene, captions,
+  transcript, reviews, and acceptance;
+- treatment or narration change -> script gate and everything after it;
+- TTS/settings/audio change -> timing, captions, mix, playback reviews;
+- beat plan or scene change -> render, samples, reviews, acceptance;
+- caption/transcript/thumbnail change -> accessibility or packaging review and
+  any release binding that includes it;
+- skill/schema/toolchain change -> every gate affected by that contract.
+- final-receipt compiler change -> release candidate and downstream gates.
+
+Use component-scoped invalidation: a caption diagnostic change reopens caption
+and lock review, a scene-audit or primitive-regression change reopens animatic
+work, and a story or treatment-contract change reopens treatment. Preserve the
+whole skill-bundle digest for provenance, but do not restart editorial work
+solely because an unrelated helper changed.
+
+Stop polishing only when the promise is delivered, every creative choice has a
+teaching or accessibility rationale, all required gates bind current artifacts,
+no material defect remains, and further change lacks a named viewer problem.
+Report residual risks: no human-learning evidence, untested devices or
+audiences, toolchain limitations, or any accepted minor defect.

@@ -21,7 +21,6 @@ from manim import (
     Triangle,
     UP,
     VGroup,
-    WHITE,
     Write,
 )
 
@@ -91,7 +90,7 @@ def authority_gate(label: str = "AUTHORITY") -> VGroup:
 
 def evidence_badge(label: str = "EVIDENCE") -> VGroup:
     ledger = RoundedRectangle(
-        width=1.55,
+        width=1.8,
         height=0.72,
         corner_radius=0.08,
         color=EVIDENCE,
@@ -101,8 +100,8 @@ def evidence_badge(label: str = "EVIDENCE") -> VGroup:
     check = VGroup(
         Line(LEFT * 0.18, ORIGIN + UP * -0.15, color=EVIDENCE, stroke_width=5),
         Line(ORIGIN + UP * -0.15, RIGHT * 0.28 + UP * 0.18, color=EVIDENCE, stroke_width=5),
-    ).move_to(ledger.get_center() + LEFT * 0.42)
-    label_mob = text(label, size=17, color=EVIDENCE, weight="BOLD").move_to(ledger.get_center() + RIGHT * 0.24)
+    ).move_to(ledger.get_center() + LEFT * 0.56)
+    label_mob = text(label, size=16, color=EVIDENCE, weight="BOLD").move_to(ledger.get_center() + RIGHT * 0.3)
     return VGroup(ledger, check, label_mob)
 
 

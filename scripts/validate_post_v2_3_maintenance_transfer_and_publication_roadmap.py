@@ -1240,7 +1240,7 @@ def errors(data: dict) -> list[str]:
         or manim.get("canonical_chapter_count") != len(manifest_chapters)
     ):
         out.append("Manim visual-edition chapter target does not exactly match the current manifests")
-    if manim.get("required_visual_abstract_duration_seconds") != {
+    if manim.get("normal_visual_abstract_duration_seconds") != {
         "minimum": 150,
         "maximum": 270,
     }:
@@ -1332,16 +1332,25 @@ def errors(data: dict) -> list[str]:
     ratchet = manim.get("pedagogical_and_aesthetic_ratchet", {})
     if (
         ratchet.get("id") != "P7.3-F9"
-        or ratchet.get("state") != "active_repository_tracked_v2_production"
+        or ratchet.get("state") != "active_repository_tracked_v3_treatment_production"
         or ratchet.get("skill_path") != "skills/asi-stack-manim-videos/SKILL.md"
-        or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v2"
+        or ratchet.get("treatment_schema_version") != "asi_stack.manim_treatment.v1"
+        or ratchet.get("treatment_schema_path") != "schemas/manim_treatment.schema.json"
+        or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v4"
         or ratchet.get("beat_plan_schema_path") != "schemas/manim_beat_plan.schema.json"
+        or ratchet.get("experience_review_schema_version") != "asi_stack.manim_experience_review.v3"
         or ratchet.get("experience_review_schema_path") != "schemas/manim_experience_review.schema.json"
+        or ratchet.get("review_context_schema_path") != "schemas/manim_review_context_manifest.schema.json"
+        or ratchet.get("render_receipt_schema_path") != "schemas/manim_render_receipt.schema.json"
+        or ratchet.get("sandbox_policy_receipt_schema_path") != "schemas/manim_sandbox_policy_receipt.schema.json"
         or ratchet.get("production_ledger_path") != "visual_edition/manim_v2_production_ledger.json"
         or ratchet.get("production_ledger_schema_path") != "schemas/manim_v2_production_ledger.schema.json"
         or ratchet.get("production_validator_path") != "scripts/validate_manim_v2_production_ledger.py"
         or ratchet.get("narration_toolchain_path") != "visual_edition/narration_toolchain.json"
         or ratchet.get("narration_auditor_path") != "skills/asi-stack-manim-videos/scripts/audit_video_plan.py"
+        or ratchet.get("scene_source_auditor_path") != "skills/asi-stack-manim-videos/scripts/audit_scene_source.py"
+        or ratchet.get("isolated_render_runner_path") != "skills/asi-stack-manim-videos/scripts/render_scene_isolated.py"
+        or ratchet.get("final_render_receipt_compiler_path") != "skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py"
         or ratchet.get("target_generation") != 2
         or ratchet.get("normal_visual_abstract_duration_seconds") != {"minimum": 150, "maximum": 270}
         or ratchet.get("normal_narration_word_count") != {"minimum": 280, "maximum": 520}
@@ -1349,9 +1358,17 @@ def errors(data: dict) -> list[str]:
         or ratchet.get("maximum_narration_word_count") != 650
         or ratchet.get("minimum_frame_samples_per_beat") != 5
         or ratchet.get("forced_alignment_required_before_picture_and_sound_lock") is not True
-        or ratchet.get("cold_release_learning_check_required") is not True
+        or ratchet.get("source_aware_release_review_required") is not True
+        or ratchet.get("cold_independent_proxy_required") is not True
+        or ratchet.get("cold_proxy_is_human_learning_evidence") is not False
+        or ratchet.get("isolated_render_execution_required") is not True
+        or ratchet.get("isolated_render_live_policy_controls_pass") is not True
+        or ratchet.get("isolated_render_real_manim_and_ffmpeg_smoke_pass") is not True
+        or ratchet.get("isolated_render_negative_control_count") != 9
+        or ratchet.get("production_validator_rejecting_control_count") != 91
+        or ratchet.get("local_scene_helper_import_contract") != "visual_edition.lib.asi_visuals_only"
         or ratchet.get("legacy_generation_one_explicit_opt_in_required") is not True
-        or ratchet.get("minimum_score_each_dimension") != 4
+        or ratchet.get("minimum_score_each_scored_dimension") != 4
         or ratchet.get("averaging_may_hide_failure") is not False
         or ratchet.get("external_human_prepublication_gate_required") is not False
         or ratchet.get("beat_density_and_technique_counts_are_diagnostic_only") is not True
@@ -1360,17 +1377,16 @@ def errors(data: dict) -> list[str]:
         out.append("Manim pedagogical and aesthetic ratchet drifted")
     v2_ledger = data["manim_v2_ledger"]
     v2_entries = v2_ledger.get("entries", [])
-    v2_beat_plan_revision_count = sum(
-        row.get("target", {}).get("gates", {}).get("beat_plan") == "revise"
-        for row in v2_entries
-    )
     expected_v2_counts = {
         "planned": v2_ledger.get("counts", {}).get("planned"),
-        "scripted": v2_ledger.get("counts", {}).get("scripted"),
-        "beat_plan_revision": v2_beat_plan_revision_count,
+        "narration_draft": v2_ledger.get("counts", {}).get("narration_draft"),
+        "treated": v2_ledger.get("counts", {}).get("treated"),
+        "script_passed": v2_ledger.get("counts", {}).get("script_passed"),
+        "beat_planned": v2_ledger.get("counts", {}).get("beat_planned"),
         "animatic_passed": v2_ledger.get("counts", {}).get("animatic_passed"),
         "picture_and_sound_lock_passed": v2_ledger.get("counts", {}).get("picture_and_sound_lock_passed"),
         "release_candidate_passed": v2_ledger.get("counts", {}).get("release_candidate_passed"),
+        "independent_release_candidate_passed": v2_ledger.get("counts", {}).get("independent_release_candidate_passed"),
         "accepted": v2_ledger.get("counts", {}).get("accepted_generation_2"),
         "youtube_current": v2_ledger.get("counts", {}).get("youtube_generation_2_current"),
         "quarto_current": v2_ledger.get("counts", {}).get("quarto_generation_2_current"),
@@ -1386,7 +1402,7 @@ def errors(data: dict) -> list[str]:
         or first_replacement.get("stage") != first_target.get("stage")
         or first_replacement.get("gate_state") != first_target.get("gates", {}).get("animatic")
         or first_replacement.get("current_review_path") != first_target.get("experience_review_paths", {}).get("animatic")
-        or first_replacement.get("current_candidate_review_state") != "script_rewritten_downstream_artifacts_stale_beat_plan_requires_revision"
+        or first_replacement.get("current_candidate_review_state") != "narration_draft_requires_source_bound_treatment_and_script_gate_old_v2_plan_is_historical"
         or first_replacement.get("narration_sha256") != first_target.get("narration_sha256")
         or first_replacement.get("historical_review_paths") != [
             "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
@@ -2657,11 +2673,15 @@ def main() -> None:
     mutate("Manim premature publication authority", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("external_publication_authorized_now", True))
     mutate("Manim upload-before-validation", lambda c: c["status"]["manim_visual_edition"]["hosting"].__setitem__("quarto_embed_only_after_published_current", False))
     mutate("Manim local-completion denominator drift", lambda c: c["status"]["manim_visual_edition"]["current_counts"].__setitem__("chapter_packets_validated", 83))
-    mutate("Manim aesthetic floor weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_score_each_dimension", 3))
+    mutate("Manim aesthetic floor weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_score_each_scored_dimension", 3))
     mutate("Manim average laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("averaging_may_hide_failure", True))
     mutate("Manim beat sampling weakening", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("minimum_frame_samples_per_beat", 3))
     mutate("Manim forced-alignment bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("forced_alignment_required_before_picture_and_sound_lock", False))
-    mutate("Manim cold-learning review bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_release_learning_check_required", False))
+    mutate("Manim source-aware review bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("source_aware_release_review_required", False))
+    mutate("Manim cold-proxy review bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_independent_proxy_required", False))
+    mutate("Manim proxy learning laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_proxy_is_human_learning_evidence", True))
+    mutate("Manim isolated-render bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("isolated_render_execution_required", False))
+    mutate("Manim sandbox-control laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("production_validator_rejecting_control_count", 90))
     mutate("Manim legacy-lane silent reactivation", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("legacy_generation_one_explicit_opt_in_required", False))
     mutate("Manim external-human blocker", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("external_human_prepublication_gate_required", True))
     mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))

@@ -17,23 +17,31 @@ prediction, progressive reveal, surprising consequence, or elegant visual
 compression. Motion, jokes, music, or novelty that does not support the
 teaching promise is extraneous material, not engagement.
 
-Use this loop:
+Use this loop when the chapter supplies an honest, answerable tension:
 
 1. **Expectation:** show a familiar object or plausible shortcut.
 2. **Tension:** reveal a mismatch, hidden constraint, or pending consequence.
-3. **Prediction:** ask what will happen and allow a real thinking pause.
+3. **Prediction:** when useful, ask what will happen and allow a real thinking pause.
 4. **Mechanism:** change the relevant objects in causal order.
 5. **Payoff:** make the result visible, then name the general idea.
 6. **Transfer:** alter one condition and let the viewer predict again.
 
 The loop creates narrative energy without turning a technical claim into a
-dramatic overclaim.
+dramatic overclaim. It is optional: a construction, comparison, visual proof,
+or diagnosis may work better without a prediction prompt.
 
 Measure success against a transfer behavior, not coverage. Before production,
 write one cold question that changes a condition in the worked case. A viewer
 who understood the mechanism should be able to predict what changes and why.
-Use that question at script review and animatic review; do not teach to a trivia
-answer or disclose the exact test wording in the narration.
+Use the criterion to design the treatment, then quarantine the exact release
+prompt and answer criteria from the cold proxy. Do not teach to a trivia answer
+or disclose the exact test wording in the narration.
+
+Require the response to engage a specific cue or causal transition visible in
+the artifact. A fluent answer that could have been supplied from generic prior
+knowledge does not diagnose the video's explanation. Bind the cited cue to a
+timestamp and an excerpt preserved in the raw response, while retaining the
+limit that this is artifact diagnosis rather than causal evidence of learning.
 
 ## Cognitive-load rules
 
@@ -60,8 +68,9 @@ density with low irrelevant density.
 ## Curiosity and story
 
 Open with value, not administration. Within 15 seconds, the viewer should see
-the title's promise embodied as a decision, puzzle, failure, or change. A good
-hook is honest: it introduces the same question the video will answer.
+the title's promise embodied as a decision, puzzle, relation, construction,
+failure, or change. A good hook is honest: it introduces the same issue the
+video will resolve or bound.
 
 Prefer chapter-specific story forms:
 
@@ -79,15 +88,16 @@ of unrelated slides.
 
 ## Active-viewing prompts
 
-Prompts should make the viewer use the model being taught. In a normally
-3–6-minute video, one or two strong prediction prompts are usually better than frequent
+Prompts should make the viewer use the model being taught. In a short visual
+abstract, zero to two strong prediction prompts are preferable to frequent
 decorative questions.
 
 For each prompt:
 
 1. Put enough evidence on screen to answer it.
 2. Ask one specific question.
-3. Hold for roughly 1–3 seconds, scaled to difficulty.
+3. Hold long enough for the intended audience and difficulty; verify the pause
+   in full-speed playback rather than enforcing one universal duration.
 4. Animate the consequence.
 5. Explain why, using the same objects.
 

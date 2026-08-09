@@ -50,6 +50,16 @@ loudness without revealing the provider when practical. Score:
 - license, redistribution, disclosure, privacy, and cost; and
 - voice-likeness or cloning rights.
 
+Keep production and audition custody separate. The production renderer accepts
+only the canonical chapter narration path, ignored-build audio root, pinned
+local model directory, pronunciation lexicon, settings, and digest-bound
+FFmpeg normalizer. The local TTS/ASR virtual environment is part of the trusted
+computing base; offline library flags are not an OS network sandbox and do not
+prove credential isolation. A candidate that requires remote code, an online
+download during synthesis, pickle-style model execution, or an arbitrary
+normalizer remains outside the production route until a separately reviewed
+adapter can bind and constrain it.
+
 Do not clone or imitate a person's voice without explicit consent and usable
 publication rights. Record the selected model, exact version, voice, settings,
 license, and disclosure policy in the tracked toolchain. Candidate systems such
@@ -62,6 +72,55 @@ a precise synchronization contract. Prefer a pinned WhisperX, Montreal Forced
 Aligner, stable-ts, or equivalent route whose language, model, and failure
 behavior are recorded. Manually inspect anchors around names, symbols, pauses,
 and regenerated joins.
+
+Keep three states distinct. Editorial timing is a planning estimate.
+Synthesis-block durations are exact only at block boundaries and may time an
+animatic. Final beat and caption timing requires a qualified aligner plus a
+bound manual anchor review. Never create apparent word precision by evenly
+distributing a block duration.
+
+Qualifying an aligner requires a tracked adapter and receipt schema, not a
+toolchain label edited by hand. Bind the implementation, version, acoustic
+model, lexicon, language, exact transcript and audio, settings, runner digest,
+and output digest. Freeze a human-reviewed fixture that covers ordinary prose,
+coined terms, acronyms, numbers, pauses, questions, and regenerated joins.
+Predeclare the scoring method before running candidates. At 30 fps, require at
+least 95% of reviewed cue-onset anchors within two frames of the gold anchor;
+permit no consequential name, symbol, pause, join, beat boundary, or question
+anchor beyond four frames after recorded manual correction. Require monotonic
+complete token custody, exact paragraph order, stable repeated output, and no
+beat crossing. Reject corrupted audio, transcript, model, lexicon, runner,
+settings, non-monotonic timestamps, missing tokens, duplicated tokens, and
+out-of-range boundaries in negative controls. Preserve corrections as a bound
+manual review; never silently edit the VTT and retain the old alignment receipt.
+
+The two-frame cue-onset target follows Netflix's published 30 fps timing
+allowance; the 95% qualification rule and four-frame corrected-anchor ceiling
+are this project's explicit operational criteria, not universal learning or
+accessibility guarantees.
+
+Use the repository's pinned route rather than relying on script defaults:
+
+```bash
+build/visual_edition/tts_venv/bin/python scripts/render_visual_narration.py \
+  --text visual_edition/chapters/<chapter>/generation-2/narration.txt \
+  --output build/visual_edition/audio/<chapter>-narration-master.wav \
+  --speed 1.08
+build/visual_edition/tts_venv/bin/python scripts/transcribe_visual_narrations.py \
+  --chapter <chapter>
+build/visual_edition/tts_venv/bin/python scripts/validate_visual_narration.py \
+  --audio build/visual_edition/audio/<chapter>-narration-master.wav \
+  --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --asr build/visual_edition/audio/<chapter>-narration-master.json \
+  --report build/visual_edition/audio/<chapter>-narration-master.validation.json
+```
+
+The transcription runner invokes the validator; the explicit command replays
+the same digest-bound check without retranscribing. It is not a forced aligner.
+The ASR validator treats duration ranges as diagnostics. A short explanation
+does not fail merely for being short; never pad narration to satisfy a clock.
+The synthesis receipt can seed block-timed animatic captions, but it cannot
+produce a final forced-aligned caption track.
 
 ## Mix for comprehension
 
@@ -119,14 +178,38 @@ For every release:
 - keep captions from covering the active mechanism; and
 - verify captions, transcript, and media all describe the same generation.
 
+Preserve intentional caption line breaks in the VTT. The project's default
+review thresholds (two lines, 42 characters per line, and 180 words per minute)
+are conservative diagnostics, not universal accessibility laws; tighten them
+for a younger or less technical audience and override only with a recorded
+playback rationale. Risk-sample the fastest, shortest, longest, first, and last
+cues as well as distributed coverage.
+
+A generated caption contact sheet simulates one overlay style. It cannot prove
+how YouTube or another target player renders the cue, and it cannot infer the
+active teaching region from pixels. Review the exact final VTT in the actual
+player at normal speed and phone size. Check synchronization, authored line
+breaks, reading comfort, speaker changes, meaningful sound labels, and whether
+the overlay covers the active mechanism.
+
 Narration need not describe every decorative detail. It must convey any visual
 fact required to understand the teaching promise.
 
+Use WCAG 2.2 contrast ratios as conservative design floors for the rendered
+pixels: 4.5:1 for ordinary text, 3:1 for genuinely large text, and 3:1 for
+meaningful graphical boundaries. Measure the worst adjacent frame when a
+background moves or changes. These checks improve video legibility; they do not
+by themselves establish web-player conformance.
+
 ## Review motion comfort
 
-Avoid rapid flashes and flag any sequence approaching three flashes per
-second. Review parallax, spinning, multi-axis movement, vortex-like movement,
-continuous zoom, shake, and large-field motion for discomfort.
+Do not use Manim's `Flash` or `ShowPassingFlash` effects in the accepted route.
+Avoid deliberate flashing altogether unless a qualified full-frame analyzer
+tests the general and saturated-red WCAG thresholds at the largest expected
+viewing scale and a manual reviewer passes the sequence. FFmpeg's
+`photosensitivity` filter is an imperfect diagnostic, not a medical or WCAG
+conformance test. Review parallax, spinning, multi-axis movement, vortex-like
+movement, continuous zoom, shake, and large-field motion for discomfort.
 
 When motion carries meaning, preserve that meaning through a label, change of
 state, dissolve, highlight, or positional endpoint. Apple recommends replacing
@@ -156,6 +239,9 @@ the waveform symptom.
 - [W3C: Low or no background audio](https://www.w3.org/WAI/WCAG21/Understanding/low-or-no-background-audio)
 - [W3C: Audio and video media guidance](https://www.w3.org/WAI/media/av/av-content/)
 - [W3C: Captions and subtitles](https://www.w3.org/WAI/perspective-videos/captions/)
+- [W3C: Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold)
+- [W3C: WCAG 2.2 contrast criteria](https://www.w3.org/TR/WCAG22/#distinguishable)
+- [Netflix: Subtitle Timing Guidelines](https://partnerhelp.netflixstudios.com/hc/en-us/articles/360051554394-Timed-Text-Style-Guide-Subtitle-Timing-Guidelines)
 - [EBU loudness resources](https://tech.ebu.ch/groups/loudness)
 - [EBU R128s4 internet-delivery guidance](https://tech.ebu.ch/files/live/sites/tech/files/shared/r/r128s4.pdf)
 - [Kokoro-82M model card](https://huggingface.co/hexgrad/Kokoro-82M)

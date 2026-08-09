@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.manim_toolchain.v1",
   "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
-  "captured_at_utc": "2026-07-29T03:34:29Z",
+  "captured_at_utc": "2026-08-09T08:39:52Z",
   "qualification_state": "qualified_for_all_non_latex_chapters",
   "host": {
     "operating_system": "macOS",
@@ -29,9 +29,21 @@
     "latex": "absent",
     "dvisvgm": "absent"
   },
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    },
+    "ffprobe": {
+      "path": "/opt/homebrew/bin/ffprobe",
+      "version": "8.0.1",
+      "sha256": "6057aa35c4dc2686b5368680c36fe39df2ea82e8adca509d2b04994c65280642"
+    }
+  },
   "font_contract": {
     "primary": "Avenir Next",
-    "fallback": "DejaVu Sans",
+    "fallback": "Arial",
     "monospace": "Menlo",
     "math_strategy_until_latex_qualification": "pango_unicode_and_prevalidated_svg_only"
   },
@@ -55,6 +67,8 @@
   "requirements_lock_sha256": "320706fbc5ab11b29227e832324a819ab9c0a7ccb069339db91a33f299da0088",
   "configuration_path": "visual_edition/manim.cfg",
   "configuration_sha256": "89fa7834195319a2cf7d9bb24d28f2832dbb30f93747c50e46a4151686307e8d",
+  "visual_grammar_path": "visual_edition/visual_grammar.json",
+  "visual_grammar_sha256": "82c028280c5d66bdff5e067f2c2932b002c88d864b1e5a8fba9c6fbc4a9049f1",
   "broken_global_environment_allowed": false,
   "upgrade_gate": "rerender_all_reusable_primitives_and_five_pilots_before_adoption",
   "support_state_effect": "none",

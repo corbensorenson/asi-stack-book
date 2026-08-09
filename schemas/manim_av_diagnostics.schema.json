@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_av_diagnostics.schema.json",
+  "title": "ASI Stack Manim Audiovisual Diagnostics",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "media_tool": {
+      "type": "object",
+      "required": ["path", "version", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "version": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "interval": {
+      "type": "object",
+      "required": ["start", "end", "duration"],
+      "properties": {
+        "start": {"type": "number", "minimum": 0},
+        "end": {"type": "number", "exclusiveMinimum": 0},
+        "duration": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "declared_interval": {
+      "type": "object",
+      "required": ["start", "end", "duration", "declared_by_beat_id"],
+      "properties": {
+        "start": {"type": "number", "minimum": 0},
+        "end": {"type": "number", "exclusiveMinimum": 0},
+        "duration": {"type": "number", "minimum": 0},
+        "declared_by_beat_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "validation_state",
+    "auditor",
+    "media_tools",
+    "video",
+    "video_sha256",
+    "beat_plan",
+    "beat_plan_sha256",
+    "detection_contract",
+    "duration_seconds",
+    "plan_duration_seconds",
+    "video_stream_count",
+    "audio_stream_count",
+    "freezes",
+    "declared_freezes",
+    "undeclared_freezes",
+    "black_intervals",
+    "silences",
+    "declared_silences",
+    "undeclared_silences",
+    "loudness",
+    "warnings",
+    "errors",
+    "interpretation",
+    "support_state_effect",
+    "publication_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.av_experience_diagnostics.v1"},
+    "generated_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "validation_state": {"enum": ["pass", "needs_review", "fail"]},
+    "auditor": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"const": "skills/asi-stack-manim-videos/scripts/audit_av_experience.py"}
+      }
+    },
+    "media_tools": {
+      "type": "object",
+      "required": ["ffmpeg", "ffprobe"],
+      "properties": {
+        "ffmpeg": {"$ref": "#/$defs/media_tool"},
+        "ffprobe": {"$ref": "#/$defs/media_tool"}
+      },
+      "additionalProperties": false
+    },
+    "video": {
+      "type": "string",
+      "pattern": "^build/visual_edition/generation-2/final/[a-z0-9]+(?:-[a-z0-9]+)*\\.mp4$"
+    },
+    "video_sha256": {"$ref": "#/$defs/digest"},
+    "beat_plan": {
+      "type": "string",
+      "pattern": "^visual_edition/chapters/[a-z0-9]+(?:-[a-z0-9]+)*/generation-2/beat_plan\\.json$"
+    },
+    "beat_plan_sha256": {"$ref": "#/$defs/digest"},
+    "detection_contract": {
+      "type": "object",
+      "required": [
+        "freeze_filter",
+        "black_filter",
+        "silence_filter",
+        "loudness_filter",
+        "target_integrated_lufs",
+        "lufs_tolerance",
+        "true_peak_ceiling_dbtp",
+        "maximum_plan_duration_drift_seconds",
+        "declared_interval_boundary_tolerance_seconds"
+      ],
+      "properties": {
+        "freeze_filter": {"const": "freezedetect=n=-50dB:d=6"},
+        "black_filter": {"const": "blackdetect=d=1:pix_th=0.10"},
+        "silence_filter": {"const": "silencedetect=n=-45dB:d=3"},
+        "loudness_filter": {"const": "ebur128=peak=true"},
+        "target_integrated_lufs": {"const": -16.0},
+        "lufs_tolerance": {"const": 1.5},
+        "true_peak_ceiling_dbtp": {"const": -1.0},
+        "maximum_plan_duration_drift_seconds": {"const": 0.25},
+        "declared_interval_boundary_tolerance_seconds": {"const": 0.15}
+      },
+      "additionalProperties": false
+    },
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "plan_duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "video_stream_count": {"const": 1},
+    "audio_stream_count": {"const": 1},
+    "freezes": {"type": "array", "items": {"$ref": "#/$defs/interval"}},
+    "declared_freezes": {"type": "array", "items": {"$ref": "#/$defs/declared_interval"}},
+    "undeclared_freezes": {"type": "array", "items": {"$ref": "#/$defs/interval"}},
+    "black_intervals": {"type": "array", "items": {"$ref": "#/$defs/interval"}},
+    "silences": {"type": "array", "items": {"$ref": "#/$defs/interval"}},
+    "declared_silences": {"type": "array", "items": {"$ref": "#/$defs/declared_interval"}},
+    "undeclared_silences": {"type": "array", "items": {"$ref": "#/$defs/interval"}},
+    "loudness": {
+      "type": "object",
+      "required": ["integrated_lufs", "loudness_range_lu", "true_peak_dbtp"],
+      "properties": {
+        "integrated_lufs": {"type": "number"},
+        "loudness_range_lu": {"type": "number", "minimum": 0},
+        "true_peak_dbtp": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "warnings": {"type": "array", "items": {"type": "string", "minLength": 8}},
+    "errors": {"type": "array", "items": {"type": "string", "minLength": 8}},
+    "interpretation": {
+      "const": "Mechanical diagnostics only; complete playback and experience scoring remain required."
+    },
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 60}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"validation_state": {"const": "pass"}}, "required": ["validation_state"]},
+      "then": {
+        "properties": {
+          "warnings": {"maxItems": 0},
+          "errors": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validation_state": {"const": "needs_review"}}, "required": ["validation_state"]},
+      "then": {
+        "properties": {
+          "warnings": {"minItems": 1},
+          "errors": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"validation_state": {"const": "fail"}}, "required": ["validation_state"]},
+      "then": {"properties": {"errors": {"minItems": 1}}}
+    }
+  ],
+  "additionalProperties": false
+}

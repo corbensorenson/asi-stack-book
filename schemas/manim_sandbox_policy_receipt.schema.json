@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/manim_sandbox_policy_receipt.schema.json",
+  "title": "ASI Stack Isolated Manim Execution Receipt",
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binding": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "media_tool": {
+      "type": "object",
+      "required": ["path", "version", "sha256"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^/"},
+        "version": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"}
+      },
+      "additionalProperties": false
+    },
+    "step": {
+      "type": "object",
+      "required": ["phase", "command_argv", "exit_code", "wall_seconds"],
+      "properties": {
+        "phase": {"enum": ["scene_render", "audio_mux"]},
+        "command_argv": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "exit_code": {"const": 0},
+        "wall_seconds": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "type": "object",
+      "required": ["role", "path", "sha256", "size_bytes"],
+      "properties": {
+        "role": {"enum": ["visual_track", "muxed_master"]},
+        "path": {"type": "string", "pattern": "^build/visual_edition/.+\\.mp4$"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "size_bytes": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "created_at_utc",
+    "chapter_id",
+    "profile",
+    "isolation_mode",
+    "runner",
+    "policy",
+    "scene",
+    "treatment",
+    "audio_master",
+    "toolchain_id",
+    "media_tools",
+    "network_access",
+    "credential_environment_inherited",
+    "repository_writable_roots",
+    "filesystem_read_scope",
+    "resource_limits",
+    "policy_self_test",
+    "resource_limit_self_test",
+    "source_preflight",
+    "render_steps",
+    "outputs",
+    "support_state_effect",
+    "publication_effect",
+    "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_sandbox_policy_receipt.v1"},
+    "created_at_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "profile": {"enum": ["draft", "release"]},
+    "isolation_mode": {"const": "macos_sandbox_exec"},
+    "runner": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"const": "skills/asi-stack-manim-videos/scripts/render_scene_isolated.py"}
+      }
+    },
+    "policy": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/receipts/.+\\.sb$"}
+      }
+    },
+    "scene": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/scene\\.py$"}
+      }
+    },
+    "treatment": {
+      "allOf": [{"$ref": "#/$defs/binding"}],
+      "properties": {
+        "path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/treatment\\.json$"}
+      }
+    },
+    "audio_master": {"$ref": "#/$defs/binding"},
+    "toolchain_id": {"type": "string", "minLength": 12},
+    "media_tools": {
+      "type": "object",
+      "required": ["ffmpeg", "ffprobe"],
+      "properties": {
+        "ffmpeg": {"$ref": "#/$defs/media_tool"},
+        "ffprobe": {"$ref": "#/$defs/media_tool"}
+      },
+      "additionalProperties": false
+    },
+    "network_access": {"const": false},
+    "credential_environment_inherited": {"const": false},
+    "repository_writable_roots": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "prefixItems": [{"const": "build/visual_edition"}]
+    },
+    "filesystem_read_scope": {
+      "type": "object",
+      "required": [
+        "global_metadata_lookup", "unlisted_repository_content_access",
+        "repository_content_mode", "system_content_roots", "rationale"
+      ],
+      "properties": {
+        "global_metadata_lookup": {"const": true},
+        "unlisted_repository_content_access": {"const": false},
+        "repository_content_mode": {"const": "explicit_inputs_plus_build"},
+        "system_content_roots": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^/"},
+          "not": {
+            "contains": {"enum": ["/Library", "/private/etc", "/private/var/db"]}
+          }
+        },
+        "rationale": {"type": "string", "minLength": 60}
+      },
+      "additionalProperties": false
+    },
+    "resource_limits": {
+      "type": "object",
+      "required": [
+        "wall_seconds", "cpu_seconds", "max_file_size_bytes",
+        "max_open_files", "max_processes", "max_resident_memory_bytes",
+        "memory_limit_status", "core_dump_bytes"
+      ],
+      "properties": {
+        "wall_seconds": {"type": "integer", "minimum": 1, "maximum": 14400},
+        "cpu_seconds": {"type": "integer", "minimum": 1, "maximum": 14400},
+        "max_file_size_bytes": {"type": "integer", "minimum": 1048576, "maximum": 8589934592},
+        "max_open_files": {"const": 256},
+        "max_processes": {"const": 256},
+        "max_resident_memory_bytes": {"type": "null"},
+        "memory_limit_status": {"const": "not_enforced_macos"},
+        "core_dump_bytes": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "policy_self_test": {
+      "type": "object",
+      "required": [
+        "allowed_write", "denied_write", "denied_read",
+        "symlink_escape_denied", "symlink_read_escape_denied",
+        "hardlink_escape_denied", "unlisted_exec_denied",
+        "network_denied", "credentials_stripped"
+      ],
+      "properties": {
+        "allowed_write": {"const": "pass"},
+        "denied_write": {"const": "pass"},
+        "denied_read": {"const": "pass"},
+        "symlink_escape_denied": {"const": "pass"},
+        "symlink_read_escape_denied": {"const": "pass"},
+        "hardlink_escape_denied": {"const": "pass"},
+        "unlisted_exec_denied": {"const": "pass"},
+        "network_denied": {"const": "pass"},
+        "credentials_stripped": {"const": "pass"}
+      },
+      "additionalProperties": false
+    },
+    "resource_limit_self_test": {
+      "type": "object",
+      "required": [
+        "memory_bound", "core_dump_bytes", "cpu_seconds",
+        "max_file_size_bytes", "max_open_files", "max_processes"
+      ],
+      "properties": {
+        "memory_bound": {"const": "not_enforced_macos"},
+        "core_dump_bytes": {"const": "pass"},
+        "cpu_seconds": {"const": "pass"},
+        "max_file_size_bytes": {"const": "pass"},
+        "max_open_files": {"const": "pass"},
+        "max_processes": {"const": "pass"}
+      },
+      "additionalProperties": false
+    },
+    "source_preflight": {
+      "type": "object",
+      "required": ["verdict", "finding_count", "scene_sha256", "auditor"],
+      "properties": {
+        "verdict": {"const": "pass"},
+        "finding_count": {"const": 0},
+        "scene_sha256": {"$ref": "#/$defs/digest"},
+        "auditor": {
+          "allOf": [{"$ref": "#/$defs/binding"}],
+          "properties": {
+            "path": {"const": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py"}
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "render_steps": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/step"}], "properties": {"phase": {"const": "scene_render"}}},
+        {"allOf": [{"$ref": "#/$defs/step"}], "properties": {"phase": {"const": "audio_mux"}}}
+      ]
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"allOf": [{"$ref": "#/$defs/output"}], "properties": {"role": {"const": "visual_track"}}},
+        {"allOf": [{"$ref": "#/$defs/output"}], "properties": {"role": {"const": "muxed_master"}}}
+      ]
+    },
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 60}
+  },
+  "additionalProperties": false
+}

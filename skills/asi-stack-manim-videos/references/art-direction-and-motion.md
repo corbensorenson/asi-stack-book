@@ -36,7 +36,7 @@ Judge the work on five independent qualities:
 
 ## Write an art-direction brief
 
-Before writing scene code, define:
+During treatment and before writing detailed scene code, define:
 
 - **visual thesis:** one sentence describing what the viewer will see become
   true;
@@ -45,6 +45,7 @@ Before writing scene code, define:
 - **visual world:** the persistent stack, field, graph, machine, timeline,
   geometric construction, or worked artifact;
 - **persistent objects:** the few entities whose identity carries the lesson;
+- **visual invariants:** facts that must remain visibly true while state changes;
 - **composition rule:** the spatial logic used to express hierarchy and
   causality;
 - **palette rule:** semantic roles for accent, success, warning, uncertainty,
@@ -57,6 +58,14 @@ Before writing scene code, define:
 - **surface rule:** how depth, line weight, texture, shadows, and glow are used
   or withheld; and
 - **ending image:** how the signature image changes to pay off the opening.
+- **semantic keyframes:** four to eight sparse states tied to the macro moves;
+  and
+- **asset plan:** source, role, repository-local path, provenance, license,
+  digest, security review, status, and visual integration for every external
+  bitmap, clip, font, dataset, code fragment, or audio asset. A planned URL is
+  not a cleared render input. For generated media, provenance includes model,
+  prompt or edit instruction, generation date, inputs, and manual factual and
+  rights review.
 
 The shared ASI Stack grammar supplies family resemblance. The chapter brief
 supplies identity. Do not solve chapter identity with a new arbitrary palette.
@@ -72,7 +81,15 @@ Use Manim for transformations, linked representations, spatial derivation,
 state machines, geometric reasoning, causal traces, and changing quantities.
 Use a still diagram, annotated bitmap, screen recording, or conventional edit
 when that medium explains the idea more directly. Manim may render modular
-clips; it does not have to own every title, cut, voice edit, or final assembly.
+clips. In the current accepted repository path, however, the tracked ManimCE
+runner must own final visual composition; other final-assembly backends remain
+blocked until a tracked adapter emits equivalent execution and custody receipts.
+
+Use generated raster media only where illustration adds explanatory value that
+code-native geometry cannot. Never ask a bitmap generator to supply equations,
+small labels, measured geometry, evidence-bearing charts, or a factual system
+state. Build those deterministically in Manim; treat generated imagery as an
+illustrated asset, not a source.
 
 ## Compose every frame
 
@@ -105,9 +122,11 @@ the eye reaches an object just before its spoken meaning arrives.
   its supporting motions.
 - Avoid unrelated simultaneous movement. Background motion must not compete
   with the current teaching target.
-- Let the frame settle after a dense transformation. A short visual breath of
-  roughly 0.3–1.5 seconds is often enough; longer reasoning pauses must have an
-  explicit purpose.
+- Let the frame settle after a dense transformation. A brief post-motion settle
+  may be shorter than the visual grammar's 1.2-second material-hold default.
+  A teaching beat whose state remains unchanged is a material hold: give it at
+  least the grammar default unless playback demonstrates a better duration,
+  and record its prediction, comparison, reading, or absorption purpose.
 - Reframe the camera after the relation warrants it, not merely to create
   energy. One motivated camera move is better than several object-level
   animations fighting a pan or zoom.
@@ -126,6 +145,8 @@ endpoints do not guarantee correct interpolation; objects can overlap, labels
 can cross, and hierarchy can disappear halfway through a transform.
 
 - Reserve space in the earlier keyframe for the next relation.
+- Bind each keyframe to a treatment macro move and state its visible invariant
+  and unresolved question, if any.
 - State which object owns identity through the transition.
 - Keep dependent labels and arrows attached throughout motion.
 - Avoid transforms whose shortest geometric path communicates the wrong cause.
@@ -211,6 +232,8 @@ project uses ManimCE and its own publication rights.
 - a signature frame that looks polished but cannot be explained in one
   sentence;
 - correct keyframes joined by an unreadable or semantically false transition;
+- visually attractive shorthand whose symbol, unit, or spatial inference is
+  absent from the treatment's truth contract;
 - motion whose conceptual mapping is weak enough that a still would teach more;
 - chapter-specific labels attached to generic card choreography; and
 - aesthetic polish that broadens a claim beyond the chapter's evidence.
