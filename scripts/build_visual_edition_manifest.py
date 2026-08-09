@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the canonical 84-entry P7.3 visual-edition manifest."""
+"""Build the manifest-driven P7.3 visual-edition manifest."""
 
 from __future__ import annotations
 
@@ -59,6 +59,7 @@ def main() -> None:
     for part_index, part in enumerate(structure["parts"], start=1):
         for chapter_index, chapter in enumerate(part["chapters"], start=1):
             chapter_id = chapter["id"]
+            chapter_path = ROOT / chapter["file"]
             packet_rel = f"visual_edition/chapters/{chapter_id}/packet.json"
             packet_path = ROOT / packet_rel
             state = "planned"
@@ -68,15 +69,35 @@ def main() -> None:
                 state = packet["lifecycle_state"]
                 packet_pointer = packet_rel
                 packet_count += 1
+                # A rendered derivative is current only while both its
+                # canonical chapter digest and source assignment still match
+                # the live manuscript.  Keep stale packets addressable for
+                # history, but never expose them as ready for publication.
+                if (
+                    packet.get("chapter_sha256")
+                    != canonical_chapter_sha256(chapter_path)
+                    or set(packet.get("assigned_source_ids", []))
+                    != set(chapter.get("source_ids", []))
+                ):
+                    state = "stale"
                 receipt = packet.get("render_receipt")
-                if receipt and receipt.get("validation_state") == "validated":
+                if (
+                    state != "stale"
+                    and receipt
+                    and receipt.get("validation_state") == "validated"
+                ):
                     rendered_count += 1
-                if packet["youtube"]["publication_state"] == "published_current":
+                if (
+                    state != "stale"
+                    and packet["youtube"]["publication_state"] == "published_current"
+                ):
                     youtube_count += 1
-                if packet["quarto_embed"]["state"] == "published_current":
+                if (
+                    state != "stale"
+                    and packet["quarto_embed"]["state"] == "published_current"
+                ):
                     embed_count += 1
             state_counts[state] += 1
-            chapter_path = ROOT / chapter["file"]
             rows.append({
                 "chapter_id": chapter_id,
                 "title": chapter["title"],
@@ -135,8 +156,6 @@ def main() -> None:
         "support_state_effect": "none",
         "release_effect": "none",
     }
-    if len(rows) != 84:
-        raise SystemExit(f"Expected 84 canonical chapters, found {len(rows)}")
     OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     print(
         f"Built visual-edition manifest: {len(rows)} chapters, {packet_count} packets, "

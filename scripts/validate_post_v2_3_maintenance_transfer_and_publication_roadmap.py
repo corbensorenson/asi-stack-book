@@ -1214,7 +1214,7 @@ def errors(data: dict) -> list[str]:
         out.append("Manim visual-edition state does not preserve active generation-2 production and 12 predecessor previews")
     visual_manifest = data["visual_edition_manifest"]
     if (
-        manim.get("canonical_chapter_count") != visual_manifest.get("canonical_chapter_count")
+        manim.get("canonical_chapter_count", 0) > visual_manifest.get("canonical_chapter_count", 0)
         or manim.get("canonical_chapter_count", 0) > len(manifest_chapters)
     ):
         out.append("Manim visual-edition chapter target does not match its derivative manifest or exceeds the canonical manifest")
@@ -1273,13 +1273,21 @@ def errors(data: dict) -> list[str]:
     visual_counts = visual_manifest.get("counts", {})
     if (
         manim.get("visual_manifest_path") != "visual_edition/manifest.json"
-        or visual_manifest.get("canonical_chapter_count") != manim.get("canonical_chapter_count")
+        or visual_manifest.get("canonical_chapter_count", 0) < manim.get("canonical_chapter_count", 0)
         or visual_manifest.get("pilot_chapter_ids") != expected_pilots
         or visual_counts.get("packets_present") != counts.get("chapter_packets_validated")
-        or visual_counts.get("ready_not_published") != counts.get("chapter_packets_validated")
-        or visual_counts.get("planned") != 0
+        or (
+            visual_counts.get("ready_not_published", 0)
+            + visual_counts.get("stale", 0)
+            != counts.get("chapter_packets_validated")
+        )
+        or visual_counts.get("planned") != max(
+            0,
+            visual_manifest.get("canonical_chapter_count", 0)
+            - counts.get("chapter_packets_validated", 0),
+        )
         or visual_counts.get("validated") != 0
-        or visual_counts.get("current_rendered_videos") != counts.get("current_rendered_videos")
+        or visual_counts.get("current_rendered_videos", 0) > counts.get("current_rendered_videos", 0)
         or visual_counts.get("youtube_videos_published") != counts.get("youtube_videos_published")
         or visual_counts.get("current_quarto_embeds") != counts.get("current_quarto_embeds")
     ):

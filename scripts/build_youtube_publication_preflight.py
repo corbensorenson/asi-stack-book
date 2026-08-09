@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the exact non-authorizing preflight for the 84-video publication."""
+"""Build the exact non-authorizing preflight for ready visual packets."""
 
 from __future__ import annotations
 
@@ -19,6 +19,10 @@ MAX_CAPTION_BYTES = 100 * 1024 * 1024
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def batches(count: int, width: int = 15) -> list[int]:
+    return [min(width, count - start) for start in range(0, count, width)]
 
 
 def build() -> dict:
@@ -73,8 +77,54 @@ def build() -> dict:
             "thumbnail_bytes": thumbnail.stat().st_size,
             "ready": True,
         })
-    if len(rows) != 84:
-        raise SystemExit(f"Expected 84 publication rows, found {len(rows)}")
+    if len(rows) != len(plan.get("entries", [])):
+        raise SystemExit(
+            "Publication rows do not match upload-plan entries: "
+            f"{len(rows)} != {len(plan.get('entries', []))}"
+        )
+    count = len(rows)
+    batch_sizes = batches(count)
+    first_day_captions = min(3, count)
+    remaining_captions = max(0, count - first_day_captions)
+    caption_days = [
+        min(25, remaining_captions - start)
+        for start in range(0, remaining_captions, 25)
+    ]
+    quota_schedule = [
+        {
+            "day": 1,
+            "video_insert_calls": count,
+            "other_units": 50 + count * 50 + count * 50 + first_day_captions * 400,
+            "operations": [
+                "create one private playlist",
+                f"upload {count} private or unlisted masters",
+                f"insert {count} ordered playlist items",
+                f"set {count} thumbnails",
+                f"insert {first_day_captions} caption tracks",
+            ],
+        }
+    ]
+    for day, caption_count in enumerate(caption_days, start=2):
+        quota_schedule.append(
+            {
+                "day": day,
+                "video_insert_calls": 0,
+                "other_units": caption_count * 400,
+                "operations": [f"insert {caption_count} caption tracks"],
+            }
+        )
+    final_day = len(quota_schedule) + 1
+    quota_schedule.append(
+        {
+            "day": final_day,
+            "video_insert_calls": 0,
+            "other_units": count * 50 + 50,
+            "operations": [
+                f"set {count} videos public",
+                "set canonical playlist public",
+            ],
+        }
+    )
     return {
         "schema_version": "asi_stack.youtube_publication_preflight.v1",
         "generated_at_utc": datetime.now(timezone.utc).replace(
@@ -95,8 +145,8 @@ def build() -> dict:
             "adapter": "youtube_studio_signed_in_browser",
             "signed_in_channel_recheck_required_at_execution": True,
             "maximum_files_per_upload_dialog": 15,
-            "batch_count": 6,
-            "batch_sizes": [15, 15, 15, 15, 15, 9],
+            "batch_count": len(batch_sizes),
+            "batch_sizes": batch_sizes,
             "daily_video_upload_limit_is_channel_specific": True,
             "daily_thumbnail_limit_is_channel_specific": True,
             "resume_policy": (
@@ -119,40 +169,8 @@ def build() -> dict:
                 "videos_update": 50,
                 "playlists_update": 50,
             },
-            "minimum_quota_days_for_complete_batch": 5,
-            "quota_schedule": [
-                {
-                    "day": 1,
-                    "video_insert_calls": 84,
-                    "other_units": 9650,
-                    "operations": [
-                        "create one private playlist",
-                        "upload 84 private or unlisted masters",
-                        "insert 84 ordered playlist items",
-                        "set 84 thumbnails",
-                        "insert 3 caption tracks",
-                    ],
-                },
-                *[
-                    {
-                        "day": day,
-                        "video_insert_calls": 0,
-                        "other_units": 10000,
-                        "operations": ["insert 25 caption tracks"],
-                    }
-                    for day in (2, 3, 4)
-                ],
-                {
-                    "day": 5,
-                    "video_insert_calls": 0,
-                    "other_units": 6650,
-                    "operations": [
-                        "insert final 6 caption tracks",
-                        "set 84 videos public",
-                        "set canonical playlist public",
-                    ],
-                },
-            ],
+            "minimum_quota_days_for_complete_batch": len(quota_schedule),
+            "quota_schedule": quota_schedule,
         },
         "entries": rows,
         "official_platform_sources": [
@@ -176,7 +194,7 @@ def main() -> None:
     OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     print(
         "Built YouTube publication preflight: "
-        f"{value['ready_entry_count']}/84 exact inputs ready, "
+        f"{value['ready_entry_count']}/{value['entry_count']} exact inputs ready, "
         f"{value['local_master_total_bytes']} master bytes, no mutation authorized."
     )
 

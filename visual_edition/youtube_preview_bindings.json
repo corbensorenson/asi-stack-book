@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.youtube_preview_bindings.v1",
-  "state": "owner_authorized_partial_unlisted_preview",
+  "state": "owner_withdrew_partial_unlisted_preview",
   "edition_id": "asi-stack-p7.3-visual-edition",
   "authorized_at_utc": "2026-08-02T04:36:14Z",
   "authority_statement": "i feel like we should have everything we can fully uploaded and linked to the live book. all chapters we have should be uploaded and properly linked to the live book.",
@@ -9,10 +9,11 @@
   "playlist_id": "PLFBbJWCCrseo",
   "playlist_title": "The ASI Stack — Visual Abstracts",
   "playlist_visibility": "private",
-  "edition_chapter_count": 84,
-  "preview_entry_count": 4,
+  "edition_chapter_count": 85,
+  "preview_entry_count": 0,
   "next_upload_position": 1,
-  "entries": [
+  "entries": [],
+  "withdrawn_entries": [
     {
       "position": 19,
       "chapter_id": "capability-replacement-and-rollback",
@@ -98,8 +99,16 @@
       "observed_at_utc": "2026-08-02T04:36:14Z"
     }
   ],
+  "withdrawal": {
+    "withdrawn_at_utc": "2026-08-09T01:00:00Z",
+    "reason": "The four unlisted previews were bound to chapter revisions that are no longer source-current. They remain preserved as withdrawn custody while replacement visuals are regenerated.",
+    "historical_record_path": "visual_edition/youtube_preview_history_2026-07-30.json",
+    "current_projection": "none",
+    "youtube_disposition": "private_historical_until_successor_accepted",
+    "successor_policy": "A replacement may enter the current projection only after its source digest, audiovisual packet, accessibility artifacts, claim-fidelity review, and platform receipt all reconcile against the current 85-chapter manuscript."
+  },
   "support_state_effect": "none",
-  "release_effect": "preview_projection_only_no_published_current_transition",
+  "release_effect": "preview_withdrawal_only_no_published_current_transition",
   "non_claims": [
     "These four objects are unlisted generation-two previews, not a completed public visual edition.",
     "The previews do not promote any chapter claim or support state.",

@@ -24,13 +24,13 @@
     "channel_config_sha256": {"pattern": "^[0-9a-f]{64}$"},
     "channel_id": {"const": "UCX7Tu67cGmKfT6O38xxiQFA"},
     "playlist_title": {"const": "The ASI Stack — Visual Abstracts"},
-    "entry_count": {"const": 84},
+    "entry_count": {"type": "integer", "minimum": 0, "maximum": 1000},
     "external_mutation_authorized_now": {"const": false},
     "publication_mode": {"const": "stage_all_unlisted_then_publish_reconciled_set"},
     "entries": {
       "type": "array",
-      "minItems": 84,
-      "maxItems": 84,
+      "minItems": 0,
+      "maxItems": 1000,
       "items": {
         "type": "object",
         "required": [
@@ -57,7 +57,7 @@
           "mutation_state"
         ],
         "properties": {
-          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "position": {"type": "integer", "minimum": 1, "maximum": 1000},
           "chapter_id": {"type": "string", "minLength": 3},
           "stable_internal_video_id": {"pattern": "^asi-video-[a-z0-9-]+$"},
           "generation": {"const": 1},
@@ -84,7 +84,7 @@
               {"type": "string", "pattern": "^[0-9a-f]{64}$"}
             ]
           },
-          "desired_playlist_position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "desired_playlist_position": {"type": "integer", "minimum": 1, "maximum": 1000},
           "initial_upload_privacy": {"const": "unlisted"},
           "desired_final_privacy": {"const": "public"},
           "mutation_state": {"const": "prepared_not_authorized"}

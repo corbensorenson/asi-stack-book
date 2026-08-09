@@ -30,16 +30,16 @@
     "channel_display_name": {"const": "corben sorenson"},
     "upload_plan_path": {"const": "visual_edition/youtube_upload_plan.json"},
     "upload_plan_sha256": {"pattern": "^[0-9a-f]{64}$"},
-    "chapter_count": {"const": 84},
+    "chapter_count": {"type": "integer", "minimum": 0, "maximum": 1000},
     "playlist_title": {"const": "The ASI Stack — Visual Abstracts"},
     "allowed_platform_mutations": {
       "const": [
-        "create one canonical playlist for the 84 chapter visual abstracts",
+        "create one canonical playlist for the 9 source-current visual abstracts",
         "upload each exact digest-bound master once with initial visibility unlisted",
         "apply the exact planned title description tags category and audience setting",
         "attach the reviewed English caption track and reviewed thumbnail",
-        "insert each video into the canonical playlist in positions 1 through 84",
-        "after all checks pass set all 84 videos and the canonical playlist public",
+        "insert each video into the canonical playlist in positions 1 through 9",
+        "after all checks pass set all 9 videos and the canonical playlist public",
         "read processing metadata accessibility playlist and public watch-page state for receipts"
       ]
     },

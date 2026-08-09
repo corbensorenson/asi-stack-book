@@ -59,17 +59,18 @@
       "const": "private"
     },
     "edition_chapter_count": {
-      "const": 84
+      "type": "integer",
+      "minimum": 1
     },
     "preview_entry_count": {
       "type": "integer",
       "minimum": 0,
-      "maximum": 84
+      "maximum": 1000
     },
     "next_upload_position": {
       "type": "integer",
       "minimum": 1,
-      "maximum": 85
+      "maximum": 1001
     },
     "entries": {
       "type": "array",
@@ -102,7 +103,7 @@
           "position": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 84
+            "maximum": 1000
           },
           "chapter_id": {
             "pattern": "^[a-z0-9-]+$"
@@ -126,7 +127,7 @@
           "playlist_position": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 84
+            "maximum": 1000
           },
           "video_visibility": {
             "const": "unlisted"
@@ -170,6 +171,12 @@
           }
         },
         "additionalProperties": false
+      }
+    },
+    "withdrawn_entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/properties/entries/items"
       }
     },
     "withdrawal": {

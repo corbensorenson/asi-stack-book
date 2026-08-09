@@ -78,8 +78,9 @@ def main() -> None:
         )
     print(
         "YouTube publication preflight passed: "
-        f"{value['ready_entry_count']}/84 masters, captions, and thumbnails exact; "
-        "six bounded Studio batches; five-day default API-quota route; "
+        f"{value['ready_entry_count']}/{value['entry_count']} masters, captions, and thumbnails exact; "
+        f"{value['studio_browser_route']['batch_count']} bounded Studio batches; "
+        f"{value['data_api_route']['minimum_quota_days_for_complete_batch']}-day default API-quota route; "
         "10/10 mutations rejected; no platform mutation authorized."
     )
 

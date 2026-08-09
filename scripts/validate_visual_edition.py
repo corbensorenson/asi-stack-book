@@ -180,7 +180,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     if (
         mutation_scope.get("upload_plan_sha256") != digest(YOUTUBE_UPLOAD_PLAN)
         or mutation_scope.get("channel_id") != upload_plan.get("channel_id")
-        or mutation_scope.get("chapter_count") != 84
+        or mutation_scope.get("chapter_count") != len(upload_plan.get("entries", []))
         or mutation_scope.get("external_mutation_authorized_now") is not False
     ):
         failures.append("YouTube exact mutation scope drift or authority overclaim")
@@ -200,8 +200,8 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         youtube_preflight.get("upload_plan_sha256") != digest(YOUTUBE_UPLOAD_PLAN)
         or youtube_preflight.get("mutation_scope_sha256")
         != digest(YOUTUBE_MUTATION_SCOPE)
-        or youtube_preflight.get("entry_count") != 84
-        or youtube_preflight.get("ready_entry_count") != 84
+        or youtube_preflight.get("entry_count") != len(upload_plan.get("entries", []))
+        or youtube_preflight.get("ready_entry_count") != len(upload_plan.get("entries", []))
         or youtube_preflight.get("external_mutation_authorized_now") is not False
     ):
         failures.append("tracked YouTube publication preflight binding drift")
@@ -271,13 +271,27 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append("manuscript change does not change canonical chapter binding")
     rows = manifest.get("chapters", [])
     upload_entries = upload_plan.get("entries", [])
-    if len(canonical) != 84 or len(rows) != 84:
+    if (
+        len(rows) != len(canonical)
+        or manifest.get("canonical_chapter_count") != len(canonical)
+    ):
         failures.append(f"canonical/manifest count mismatch: {len(canonical)}/{len(rows)}")
         return failures
     if manifest.get("pilot_chapter_ids") != PILOTS:
         failures.append("five-pilot identity or order drift")
-    if len(upload_entries) != len(canonical):
-        failures.append("YouTube upload-plan chapter count drift")
+    canonical_ids = [chapter[3]["id"] for chapter in canonical]
+    upload_by_id = {entry.get("chapter_id"): entry for entry in upload_entries}
+    if len(upload_by_id) != len(upload_entries):
+        failures.append("YouTube upload-plan chapter IDs are not unique")
+    if not set(upload_by_id).issubset(set(canonical_ids)):
+        failures.append("YouTube upload-plan contains a non-canonical chapter")
+    if len(upload_entries) > len(canonical):
+        failures.append("YouTube upload-plan exceeds canonical chapter count")
+    if len(preflight_entries) != len(upload_entries):
+        failures.append("YouTube publication preflight entry count drift")
+    preflight_by_id = {
+        entry.get("chapter_id"): entry for entry in preflight_entries
+    }
 
     lifecycle_counts = {state: 0 for state in (
         "planned", "storyboarded", "scripted", "rendered", "validated",
@@ -290,16 +304,13 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     published_playlist_ids = set()
     published_playlist_item_ids = set()
     published_playlist_positions = set()
-    for manifest_position, (expected, row, upload_entry) in enumerate(
-        zip(canonical, rows, upload_entries),
+    for manifest_position, (expected, row) in enumerate(
+        zip(canonical, rows),
         start=1,
     ):
-        preflight_entry = (
-            preflight_entries[manifest_position - 1]
-            if manifest_position <= len(preflight_entries)
-            else {}
-        )
         part_index, part, chapter_index, chapter = expected
+        upload_entry = upload_by_id.get(chapter["id"], {})
+        preflight_entry = preflight_by_id.get(chapter["id"], {})
         path = ROOT / chapter["file"]
         exact = {
             "chapter_id": chapter["id"],
@@ -314,12 +325,6 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         for key, value in exact.items():
             if row.get(key) != value:
                 failures.append(f"{chapter['id']}: manifest {key} drift")
-        if upload_entry.get("position") != manifest_position:
-            failures.append(f"{chapter['id']}: YouTube upload-plan order drift")
-        if upload_entry.get("chapter_id") != chapter["id"]:
-            failures.append(f"{chapter['id']}: YouTube upload-plan identity drift")
-        if upload_entry.get("desired_playlist_position") != upload_entry.get("position"):
-            failures.append(f"{chapter['id']}: YouTube upload-plan playlist order drift")
         state = row.get("lifecycle_state")
         if state in lifecycle_counts:
             lifecycle_counts[state] += 1
@@ -336,6 +341,31 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
         packet = load(packet_path)
         packets.append(packet)
         failures.extend(schema_errors(packet, PACKET_SCHEMA, chapter["id"]))
+        current_digest = canonical_chapter_sha256(path)
+        identity_drift = (
+            packet.get("chapter_sha256") != current_digest
+            or set(packet.get("assigned_source_ids", []))
+            != set(chapter.get("source_ids", []))
+        )
+        if state == "stale":
+            if not identity_drift:
+                failures.append(
+                    f"{chapter['id']}: stale visual row has no source identity drift"
+                )
+            if packet.get("youtube", {}).get("publication_state") == "published_current":
+                failures.append(f"{chapter['id']}: stale packet remains published-current")
+            if packet.get("quarto_embed", {}).get("state") == "published_current":
+                failures.append(f"{chapter['id']}: stale packet retains a current embed")
+            # Stale packets remain historical custody only. They are not part
+            # of the current render, upload, or embed denominator.
+            continue
+        if not upload_entry:
+            failures.append(f"{chapter['id']}: packet is ready but absent from YouTube upload plan")
+            continue
+        if upload_entry.get("chapter_id") != chapter["id"]:
+            failures.append(f"{chapter['id']}: YouTube upload-plan identity drift")
+        if upload_entry.get("desired_playlist_position") != upload_entry.get("position"):
+            failures.append(f"{chapter['id']}: YouTube upload-plan playlist order drift")
         youtube_projection = packet.get("youtube", {})
         publication_entry = upload_entry
         publication_master_bytes = preflight_entry.get("master_bytes")
@@ -447,7 +477,7 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append(f"{chapter['id']}: packet identity mismatch")
         if packet.get("chapter_path") != chapter["file"]:
             failures.append(f"{chapter['id']}: packet path mismatch")
-        if packet.get("chapter_sha256") != canonical_chapter_sha256(path):
+        if packet.get("chapter_sha256") != current_digest:
             failures.append(f"{chapter['id']}: packet is stale against chapter bytes")
         if packet.get("lifecycle_state") != state:
             failures.append(f"{chapter['id']}: packet/manifest lifecycle mismatch")
@@ -735,9 +765,9 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             failures.append(f"{chapter['id']}: lifecycle publication mismatch")
 
     if youtube_count:
-        if youtube_count != 84:
+        if youtube_count != len(upload_entries):
             failures.append(
-                "published visual edition must reconcile as zero or all 84 videos"
+                "published visual edition must reconcile as zero or all ready videos"
             )
         if len(published_authority_digests) != 1:
             failures.append(
@@ -769,8 +799,10 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
     validated_pilots = {
         packet["chapter_id"]
         for packet in packets
-        if packet.get("pilot") and packet.get("lifecycle_state") in {
-            "validated", "ready_not_published", "published_current"
+        if packet.get("pilot")
+        and packet.get("render_receipt", {}).get("validation_state") == "validated"
+        and packet.get("lifecycle_state") in {
+            "validated", "ready_not_published", "published_current", "stale"
         }
     }
     all_pilots_validated = validated_pilots == set(PILOTS)
@@ -842,7 +874,7 @@ def main() -> None:
     counts = manifest["counts"]
     print(
         "Visual-edition validation passed: "
-        f"84 chapters, {counts['packets_present']} packet(s), "
+        f"{manifest.get('canonical_chapter_count')} chapters, {counts['packets_present']} packet(s), "
         f"{counts['current_rendered_videos']} validated render(s), "
         f"{counts['youtube_videos_published']} YouTube publication(s), "
         f"{counts['youtube_videos_unlisted_preview']} unlisted preview(s), "

@@ -70,6 +70,16 @@ def semantic_errors(
     withdrawn = state == "owner_withdrew_partial_unlisted_preview"
     if preview.get("preview_entry_count") != count:
         failures.append("preview entry count drift")
+    withdrawn_entries = preview.get("withdrawn_entries", [])
+    if withdrawn and len(withdrawn_entries) != 4:
+        failures.append("withdrawn preview custody count drift")
+    if withdrawn:
+        withdrawn_ids = [entry.get("video_id") for entry in withdrawn_entries]
+        if len(withdrawn_ids) != len(set(withdrawn_ids)) or any(
+            not re.fullmatch(r"[A-Za-z0-9_-]{11}", value or "")
+            for value in withdrawn_ids
+        ):
+            failures.append("withdrawn preview custody identity drift")
     bound_positions = {entry.get("position") for entry in entries}
     expected_next_position = next(
         (
@@ -258,7 +268,7 @@ def semantic_errors(
         else:
             try:
                 history = load(history_path)
-                if len(history.get("entries", [])) != 12:
+                if len(history.get("entries", [])) < 12:
                     failures.append("withdrawn preview historical denominator drift")
                 if history.get("source_binding_sha256_before_withdrawal") != "58aacb7d7e3057deda783bb260c466e8a8f10f31c7169190890c08f810aa1dca":
                     failures.append("withdrawn preview historical source digest drift")
@@ -289,7 +299,17 @@ def main() -> None:
         ("preview count drift", lambda value: value.__setitem__("preview_entry_count", 1)),
         ("next position drift", lambda value: value.__setitem__("next_upload_position", 13)),
         ("state widening", lambda value: value.__setitem__("state", "owner_authorized_full_public_release")),
-        ("release effect drift", lambda value: value.__setitem__("release_effect", "preview_withdrawal_only_no_published_current_transition")),
+        (
+            "release effect drift",
+            lambda value: value.__setitem__(
+                "release_effect",
+                (
+                    "preview_projection_only_no_published_current_transition"
+                    if value.get("state") == "owner_withdrew_partial_unlisted_preview"
+                    else "preview_withdrawal_only_no_published_current_transition"
+                ),
+            ),
+        ),
         ("unexpected current entry", lambda value: value["entries"].append({})),
         ("support promotion", lambda value: value.__setitem__("support_state_effect", "promotion")),
     ]

@@ -1,16 +1,16 @@
 {
   "schema_version": "asi_stack.youtube_ledger.v1",
-  "generated_at_utc": "2026-08-02T04:42:08Z",
+  "generated_at_utc": "2026-08-09T00:56:54Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "30267f89b3d5936c97bb2e4a94f2379ce827a0788b86f145e48631ecd33c274c",
+  "book_structure_sha256": "869a3c405fc101f2676c5f29700fbe83d7b0e1e490f6c1d68e34916055b9fe67",
   "visual_manifest_path": "visual_edition/manifest.json",
-  "visual_manifest_sha256": "24f1aa82bbd9d2ea7f1991b5d6e0ff2a920a5854c8834cab8fd74e72ec52abdf",
+  "visual_manifest_sha256": "2ddc3900642eafadb995064df77bd2dff89b694340523ae9c509938060b8b145",
   "channel_config_path": "visual_edition/youtube_channel.json",
   "channel_config_sha256": "bd7fd9655396dc117d335b85386222faef75d48184528e3e1c3a90dd92967dc3",
   "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
   "playlist_id": null,
   "counts": {
-    "total_chapters": 84,
+    "total_chapters": 85,
     "packets_present": 84,
     "youtube_objects": 0,
     "published_current": 0,
@@ -24,11 +24,11 @@
       "position": 1,
       "chapter_id": "asi-is-a-stack-not-a-model",
       "chapter_path": "chapters/asi-is-a-stack-not-a-model.qmd",
-      "chapter_sha256": "776e73ab1979d84f3bf9840c0fa7b87ed20ea7a1f2735a54e78480d1b2554c35",
+      "chapter_sha256": "df143985e10ff4a55ae627c49a30969f6520201566a26049ad772226037ca027",
       "stable_internal_video_id": "asi-video-asi-is-a-stack-not-a-model",
       "packet_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -44,17 +44,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 2,
       "chapter_id": "the-efficient-asi-hypothesis",
       "chapter_path": "chapters/the-efficient-asi-hypothesis.qmd",
-      "chapter_sha256": "fdd19bf24768aa9d56c5e09d448d597287b5517a5cf6ad7bac4fba16668bdbee",
+      "chapter_sha256": "2f232b3a79a95ec50bb236cfed9f70f9abfd30d84500bdb63408b0213d4661e8",
       "stable_internal_video_id": "asi-video-the-efficient-asi-hypothesis",
       "packet_path": "visual_edition/chapters/the-efficient-asi-hypothesis/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -70,17 +70,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 3,
       "chapter_id": "system-boundaries-and-authority",
       "chapter_path": "chapters/system-boundaries-and-authority.qmd",
-      "chapter_sha256": "ce6c60464030280e3b90b558e6e10a7a115c471c6ba8ed73a4e6d05eb16701f0",
+      "chapter_sha256": "c0933e9fa513f3f25fddbeab8479f594c99cdbe6384d8b4f6a356c6a9f18c9b4",
       "stable_internal_video_id": "asi-video-system-boundaries-and-authority",
       "packet_path": "visual_edition/chapters/system-boundaries-and-authority/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -96,17 +96,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 4,
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "chapter_path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
-      "chapter_sha256": "2bc30f8ad8d196aac48e98711211887e349af2c7803899443da7a65cade32638",
+      "chapter_sha256": "93576bb6080e8627329fb0f14d12ca411d4bdb61991d51c4ddce4e7769675588",
       "stable_internal_video_id": "asi-video-failure-modes-of-ungoverned-intelligence",
       "packet_path": "visual_edition/chapters/failure-modes-of-ungoverned-intelligence/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -122,7 +122,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 5,
@@ -131,8 +131,8 @@
       "chapter_sha256": "711807c566dbffff0b6ce61e705ddaad9bef70ac0d0c0eb46216ff67292e42c5",
       "stable_internal_video_id": "asi-video-dangerous-capability-domains-and-misuse-uplift",
       "packet_path": "visual_edition/chapters/dangerous-capability-domains-and-misuse-uplift/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -148,7 +148,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 6,
@@ -157,8 +157,8 @@
       "chapter_sha256": "cb73c0e8487c237626cff1adb9be1dcb7cab671497649b4dfe965c8d1791eaa3",
       "stable_internal_video_id": "asi-video-military-ai-autonomous-weapons-and-strategic-stability",
       "packet_path": "visual_edition/chapters/military-ai-autonomous-weapons-and-strategic-stability/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -174,7 +174,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 7,
@@ -209,8 +209,8 @@
       "chapter_sha256": "02ce5aa5f3dabb7504dbfdb9362b58000c858f5cfddc4259dc016bd7dc22ac8f",
       "stable_internal_video_id": "asi-video-scalable-oversight-and-adversarial-ai-control",
       "packet_path": "visual_edition/chapters/scalable-oversight-and-adversarial-ai-control/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -226,17 +226,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 9,
       "chapter_id": "human-intent-as-a-formal-input",
       "chapter_path": "chapters/human-intent-as-a-formal-input.qmd",
-      "chapter_sha256": "11575bf4f47794b789b99a283a2fe08ebacaa6798dd2a575fe2a4ec6f7771572",
+      "chapter_sha256": "5d9eb9130b2c3f464e85d79f0a41f4c64604cafc5c7bfed802b50009838e2b9c",
       "stable_internal_video_id": "asi-video-human-intent-as-a-formal-input",
       "packet_path": "visual_edition/chapters/human-intent-as-a-formal-input/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -252,17 +252,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 10,
       "chapter_id": "human-factors-and-meaningful-control-in-oversight",
       "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-      "chapter_sha256": "0872878109da2c44fdd07022d2848b3b9e140d09d52ea104ed21d3dfef979a40",
+      "chapter_sha256": "5596fe5818e3079c1a07afb3148167beff5a17bec0ac58bc5f419d6dd11c0553",
       "stable_internal_video_id": "asi-video-human-factors-and-meaningful-control-in-oversight",
       "packet_path": "visual_edition/chapters/human-factors-and-meaningful-control-in-oversight/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -278,7 +278,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 11,
@@ -287,8 +287,8 @@
       "chapter_sha256": "21cf5dac20a4fd6b5a5bbca1cac073d412ab4557233ed9d9b2b9a19417da52bc",
       "stable_internal_video_id": "asi-video-human-ai-communication-persuasion-and-epistemic-security",
       "packet_path": "visual_edition/chapters/human-ai-communication-persuasion-and-epistemic-security/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -304,17 +304,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 12,
       "chapter_id": "constitutional-alignment-substrate",
       "chapter_path": "chapters/constitutional-alignment-substrate.qmd",
-      "chapter_sha256": "bc49079d433f4a1b98926c470f242423dcac924047398e2248a28fca630e804c",
+      "chapter_sha256": "a81428882fc1f303f5242677ef6a338c900c0892ce838417bff45ac4c3729a9f",
       "stable_internal_video_id": "asi-video-constitutional-alignment-substrate",
       "packet_path": "visual_edition/chapters/constitutional-alignment-substrate/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -330,17 +330,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 13,
       "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
       "chapter_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
-      "chapter_sha256": "af7d3d13dcfc3fe0887413dfd287e1b381d520e30b0c065eb2731e97bbea947e",
+      "chapter_sha256": "fc5cda2b146be6925d70d287fc6f4e090910bdaa26ae9deb860d6592d1ed4b5c",
       "stable_internal_video_id": "asi-video-inner-alignment-mesa-optimization-and-learned-objective-integrity",
       "packet_path": "visual_edition/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -356,17 +356,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 14,
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "chapter_path": "chapters/moral-uncertainty-and-value-conflict.qmd",
-      "chapter_sha256": "aed2a93ad07fd7eb50d1924c69e459df51b899a5da76f0a1e781f15ae760647c",
+      "chapter_sha256": "5ab8dc888f3ea8398c6a27e7ac301d869ee58481abf370a5598a81b246397883",
       "stable_internal_video_id": "asi-video-moral-uncertainty-and-value-conflict",
       "packet_path": "visual_edition/chapters/moral-uncertainty-and-value-conflict/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -382,7 +382,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 15,
@@ -391,8 +391,8 @@
       "chapter_sha256": "e30a84e62b284472c358e9fdded16d40a6f8cf08414bfc82ab353d1b8c5df33e",
       "stable_internal_video_id": "asi-video-governed-objective-formation-value-learning-and-goal-integrity",
       "packet_path": "visual_edition/chapters/governed-objective-formation-value-learning-and-goal-integrity/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -408,7 +408,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 16,
@@ -417,8 +417,8 @@
       "chapter_sha256": "096dcf01a032690b74a86e9a4fc08699860d70d5e91705e3483457a62a84c7d4",
       "stable_internal_video_id": "asi-video-institutions-international-coordination-and-public-legitimacy",
       "packet_path": "visual_edition/chapters/institutions-international-coordination-and-public-legitimacy/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -434,7 +434,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 17,
@@ -443,8 +443,8 @@
       "chapter_sha256": "daae642364909b1ce34f2b9b8ec6a5b88be078182b8cf0f123c503a00b6dd82d",
       "stable_internal_video_id": "asi-video-societal-resilience-and-misuse-defense",
       "packet_path": "visual_edition/chapters/societal-resilience-and-misuse-defense/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -460,17 +460,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 18,
       "chapter_id": "stable-capability-fields",
       "chapter_path": "chapters/stable-capability-fields.qmd",
-      "chapter_sha256": "47497fadb7458bea6f2f8a7202da31b58a1fa3f2740fe5fb810147867f4b0bcf",
+      "chapter_sha256": "cf8282b26e41ca9cc84acb55b88e0cb2a6432bcdbd313760196f6c21dd8d973d",
       "stable_internal_video_id": "asi-video-stable-capability-fields",
       "packet_path": "visual_edition/chapters/stable-capability-fields/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -486,17 +486,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 19,
       "chapter_id": "capability-replacement-and-rollback",
       "chapter_path": "chapters/capability-replacement-and-rollback.qmd",
-      "chapter_sha256": "041799111bf296ced6d15ef7536199eab28c0bf28ded2c97f05f1827bcc166f3",
+      "chapter_sha256": "d57b5903308f253b70a1903538263e7740b8ab129f0e290837ab83b20540ca6d",
       "stable_internal_video_id": "asi-video-capability-replacement-and-rollback",
       "packet_path": "visual_edition/chapters/capability-replacement-and-rollback/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -512,17 +512,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 20,
       "chapter_id": "security-kernel-and-digital-scifs",
       "chapter_path": "chapters/security-kernel-and-digital-scifs.qmd",
-      "chapter_sha256": "24df32d529172c77dc7c9a06b1521177ff850a11c8b4c72a52e50f37a7a0f99a",
+      "chapter_sha256": "1344db6103bc3ebd670d59f9ec71fffd028e94a9ad3cadd3568d132eb5c5f712",
       "stable_internal_video_id": "asi-video-security-kernel-and-digital-scifs",
       "packet_path": "visual_edition/chapters/security-kernel-and-digital-scifs/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -538,7 +538,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 21,
@@ -547,8 +547,8 @@
       "chapter_sha256": "5327345ae90479f457faede91c29518edb99f219956e1c45c917bff4e782ad86",
       "stable_internal_video_id": "asi-video-adversarial-machine-learning-and-model-attack-surface",
       "packet_path": "visual_edition/chapters/adversarial-machine-learning-and-model-attack-surface/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -564,17 +564,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 22,
       "chapter_id": "privacy-data-rights-and-information-flow-governance",
       "chapter_path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
-      "chapter_sha256": "8941bd2fd7c63a6f44c830591763af89ca7d76657feb282fc37037c3331f9370",
+      "chapter_sha256": "8622b72e7fd27d69e8c2c0c23f4736cfaaa408f82bdf000e7055a91e10fee05f",
       "stable_internal_video_id": "asi-video-privacy-data-rights-and-information-flow-governance",
       "packet_path": "visual_edition/chapters/privacy-data-rights-and-information-flow-governance/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -590,7 +590,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 23,
@@ -599,8 +599,8 @@
       "chapter_sha256": "9d3953fe336005493726584f76af4ecc50effdaf7068d5160f74cb1564d7d657",
       "stable_internal_video_id": "asi-video-confidential-and-verifiable-ai-computation",
       "packet_path": "visual_edition/chapters/confidential-and-verifiable-ai-computation/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -616,17 +616,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 24,
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "chapter_path": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
-      "chapter_sha256": "ac7d72810f05d51b01eee9f4100cd8640fd72367ef9045a875a0be14d8f1f87a",
+      "chapter_sha256": "30060613d897646768949c51441edadc29d9b49c0754b73339dfb408bac3d517",
       "stable_internal_video_id": "asi-video-model-weight-custody-and-hardware-roots-of-trust",
       "packet_path": "visual_edition/chapters/model-weight-custody-and-hardware-roots-of-trust/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -642,7 +642,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 25,
@@ -651,8 +651,8 @@
       "chapter_sha256": "ce241d33e2547997fcc7c020011dbcc1c16437f5bfd632490c79da161a373097",
       "stable_internal_video_id": "asi-video-open-weight-release-and-post-release-control",
       "packet_path": "visual_edition/chapters/open-weight-release-and-post-release-control/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -668,17 +668,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 26,
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
       "chapter_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-      "chapter_sha256": "3261ac4446ca458ea2d5e97a3c5e20c02005005d9d7f80a2be6eea99189c6cab",
+      "chapter_sha256": "9b4ea7877787f132bca307ef7b4c2d666e4cd43db5c47771c311142b5afe81cc",
       "stable_internal_video_id": "asi-video-ai-supply-chain-integrity-and-lifecycle-provenance",
       "packet_path": "visual_edition/chapters/ai-supply-chain-integrity-and-lifecycle-provenance/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -694,7 +694,7 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 27,
@@ -755,8 +755,8 @@
       "chapter_sha256": "afaa2ec42f0cef8a907ef79808d0e391b9c967367d94fcb884cfcf36bb0e732b",
       "stable_internal_video_id": "asi-video-autonomous-replication-proliferation-and-containment",
       "packet_path": "visual_edition/chapters/autonomous-replication-proliferation-and-containment/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -772,17 +772,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 30,
       "chapter_id": "intent-to-execution-contracts",
       "chapter_path": "chapters/intent-to-execution-contracts.qmd",
-      "chapter_sha256": "862ffdd2910bd084e833f7987506e771b03bfe6678fe38b3419ec589c56c98a7",
+      "chapter_sha256": "6d1de5d8792862651352458ebb38d9cabee55faf6a757e11b01267d7d66e1e20",
       "stable_internal_video_id": "asi-video-intent-to-execution-contracts",
       "packet_path": "visual_edition/chapters/intent-to-execution-contracts/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -798,17 +798,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 31,
       "chapter_id": "perception-sensor-fusion-and-observation-trust",
       "chapter_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-      "chapter_sha256": "1a9b261b86109d0ba82fac5c8ec6a737f1df80a91c19bf27b2bd0ef037cc924f",
+      "chapter_sha256": "5998d44d6fa3782750905e9c2472c47f21a5c4fab4a7b928dbd6dc7f7497279d",
       "stable_internal_video_id": "asi-video-perception-sensor-fusion-and-observation-trust",
       "packet_path": "visual_edition/chapters/perception-sensor-fusion-and-observation-trust/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -824,17 +824,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 32,
       "chapter_id": "planning-as-a-control-layer",
       "chapter_path": "chapters/planning-as-a-control-layer.qmd",
-      "chapter_sha256": "f7d1ce7a9815939815f4a2c90838792326971f6b778c3fbda11f76ceeb993087",
+      "chapter_sha256": "073f3c89b151a5a952a0bbddd9916504838640b8a48bec6cb193ea3c8c29d227",
       "stable_internal_video_id": "asi-video-planning-as-a-control-layer",
       "packet_path": "visual_edition/chapters/planning-as-a-control-layer/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -850,17 +850,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 33,
       "chapter_id": "governed-world-models-and-reality-grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "chapter_sha256": "7d980e1a5020e96438933e60528accc6cf71a40f2134daef58f72b2635f75912",
+      "chapter_sha256": "9543073d78913b33726e8f9956f68062b858731a3d41d95b5923ec1dd7898528",
       "stable_internal_video_id": "asi-video-governed-world-models-and-reality-grounding",
       "packet_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -876,17 +876,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 34,
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "e4dac8b13e23f47e1c7d5e548ca1338948e754fde0726e286737bf1c11081211",
+      "chapter_sha256": "3be680f38c4d7da0901773651e937f2d79f1d9310d89535aaaed34de5795d294",
       "stable_internal_video_id": "asi-video-cognitive-compilation-and-semantic-ir",
       "packet_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -902,17 +902,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 35,
       "chapter_id": "virtual-context-abi",
       "chapter_path": "chapters/virtual-context-abi.qmd",
-      "chapter_sha256": "a000bb3d1e5de373ef3335719f5e1bf79e2772f066ec35b5ebe1316389f01d11",
+      "chapter_sha256": "7c84447dc2e5cc6297a82567c5b8eb8b7a765abf344712fe63e1d8c6c9c98d2a",
       "stable_internal_video_id": "asi-video-virtual-context-abi",
       "packet_path": "visual_edition/chapters/virtual-context-abi/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -928,17 +928,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 36,
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-      "chapter_sha256": "8c8d817c52c52111ccf66ef5e3f30e9868f1b860c45053f6f515bf52b1903b1c",
+      "chapter_sha256": "d28b39b8af803bf4812505b0e67bfee378964062227b5d7e83ce9d94e1220cd8",
       "stable_internal_video_id": "asi-video-durable-semantic-memory-and-knowledge-lattices",
       "packet_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -954,17 +954,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 37,
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-      "chapter_sha256": "a378aab697615018727457ee31a431c874d2dfe725f334184ae98822f1794c14",
+      "chapter_sha256": "b3567e653bd068781a75b50c2e7b3d222778a7d9766e83eee6978d519a7e3ff0",
       "stable_internal_video_id": "asi-video-context-transactions-snapshots-mounts-and-taint",
       "packet_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -980,17 +980,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 38,
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-      "chapter_sha256": "8ff1cee91b7965e92bb7ca60c455aa8232587aed77fa6e774bb525b09fb57f2d",
+      "chapter_sha256": "5e3fc8e80a7f48319e7ce2b1b5150d087a5e515dc8beaeee1320f8ef898e199b",
       "stable_internal_video_id": "asi-video-verification-bandwidth-and-context-adequacy",
       "packet_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1006,17 +1006,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 39,
       "chapter_id": "claim-ledgers-and-belief-revision",
       "chapter_path": "chapters/claim-ledgers-and-belief-revision.qmd",
-      "chapter_sha256": "a84df30c316a100ba983ce18c62f00cd06cc627895437d5405e04d11d7fe3507",
+      "chapter_sha256": "ac7b8e2c4adebe2c391712f64cb8895bec4475144a26e8726a28af14d2f65b26",
       "stable_internal_video_id": "asi-video-claim-ledgers-and-belief-revision",
       "packet_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1032,17 +1032,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 40,
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
-      "chapter_sha256": "afdac731f8d8d64478946740d3a3f8aab37060020e0f026bf10d76b31d43f2a8",
+      "chapter_sha256": "f53780ab8950dfbdf4ac88b858735d15361079f46f255a06e3018b79592613bc",
       "stable_internal_video_id": "asi-video-spinoza-verification-and-proof-carrying-claims",
       "packet_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1058,17 +1058,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 41,
       "chapter_id": "labor-os-and-typed-jobs",
       "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
-      "chapter_sha256": "a325796d533bf0c0cbd4e8e7a0122941cfe4a436eb2313ae63c5172f1c1f7745",
+      "chapter_sha256": "f7a64e0658f5545a7d35363880e5e42b9a9c32ba9ac33427e333d33cbe5fdf23",
       "stable_internal_video_id": "asi-video-labor-os-and-typed-jobs",
       "packet_path": "visual_edition/chapters/labor-os-and-typed-jobs/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1084,17 +1084,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 42,
-      "chapter_id": "human-ai-organizations-delegation-and-accountability",
-      "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
-      "chapter_sha256": "b33d68ac2929bd25e425df9815b0298199128f14ac70412a736d9388cd71d2ce",
-      "stable_internal_video_id": "asi-video-human-ai-organizations-delegation-and-accountability",
-      "packet_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "chapter_path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+      "chapter_sha256": "a7730d636db361e3feb7aeb9afbd7c9a74199c6e3c4035695342de8f8521873b",
+      "stable_internal_video_id": "asi-video-ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "packet_path": null,
+      "lifecycle_state": "planned",
+      "staleness_state": "not_yet_derived",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1110,17 +1110,43 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "create_derivative_packet"
     },
     {
       "position": 43,
+      "chapter_id": "human-ai-organizations-delegation-and-accountability",
+      "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+      "chapter_sha256": "c823a7200e51ca3cd9d53edf58c78673bb89a2208c92e518594fa54f378b2741",
+      "stable_internal_video_id": "asi-video-human-ai-organizations-delegation-and-accountability",
+      "packet_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 44,
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "chapter_path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
       "chapter_sha256": "be04aceb66555879a25adfb637603a453666a37dc2910e6990abf8598eb8737a",
       "stable_internal_video_id": "asi-video-human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "packet_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1136,17 +1162,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 44,
+      "position": 45,
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
       "chapter_path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
       "chapter_sha256": "95f59853cd1b785d6ec2b586bf776476f9b53659925be6f145ae8dfb711fdfa3",
       "stable_internal_video_id": "asi-video-ai-deployment-transition-distribution-and-human-agency",
       "packet_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1162,43 +1188,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 45,
-      "chapter_id": "artifact-graphs-audit-logs-and-replay",
-      "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "chapter_sha256": "f9fd6a07ac4ae37dd7d524f2e5e8df1887c6fb552049f8b1c5c91ef299a3aa2d",
-      "stable_internal_video_id": "asi-video-artifact-graphs-audit-logs-and-replay",
-      "packet_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 46,
-      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
-      "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "chapter_sha256": "78c2ac057693889f0ecfecb4421dffa3dce5c8c53010a958fb66f9b5b4126fdd",
-      "stable_internal_video_id": "asi-video-runtime-adapters-tool-permissions-and-human-approval",
-      "packet_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "chapter_sha256": "b471ef4a7be319b5d61c4a0df74c59a5577cc3113517fec417f52202c5178f79",
+      "stable_internal_video_id": "asi-video-artifact-graphs-audit-logs-and-replay",
+      "packet_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1214,17 +1214,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 47,
-      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
-      "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
-      "chapter_sha256": "04d3faefcf3592e6cf131139e7a8bdeb078c893377db66663d47758bb0b55418",
-      "stable_internal_video_id": "asi-video-embodied-agency-real-time-control-and-physical-safety",
-      "packet_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "chapter_sha256": "19fb028b92e8e821d2b37e538d6d95bf90ac2f804f5c41d0f87bc58829fbd619",
+      "stable_internal_video_id": "asi-video-runtime-adapters-tool-permissions-and-human-approval",
+      "packet_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1240,17 +1240,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 48,
-      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
-      "chapter_sha256": "b7c88752f839811d5d7fad8af4d560a7478800f2482861534a39be49b92a91f5",
-      "stable_internal_video_id": "asi-video-inter-stack-protocols-identity-and-economic-exchange",
-      "packet_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+      "chapter_sha256": "3c16b9e0fc82961b42f3bdf6d3e9bef25053aa489c6489d446b2e99fcbc20c1b",
+      "stable_internal_video_id": "asi-video-embodied-agency-real-time-control-and-physical-safety",
+      "packet_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1266,17 +1266,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 49,
-      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
-      "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-      "chapter_sha256": "1e629163dfd8c74d8331c1550b747eb1509ad6eeb3c4e9449c11d07ba624e3ee",
-      "stable_internal_video_id": "asi-video-multi-agent-dynamics-collective-intelligence-and-systemic-risk",
-      "packet_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+      "chapter_sha256": "3de33c27cfdffeafab2d6dfb034a459b117174f2c195301b3066f6ddd4b18f74",
+      "stable_internal_video_id": "asi-video-inter-stack-protocols-identity-and-economic-exchange",
+      "packet_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1292,17 +1292,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 50,
-      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
-      "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "chapter_sha256": "7b2b412bb1cb5f66a1ed000c0ffd70233a97750ffa5ded1ebb8d7fd5c18fcf5d",
-      "stable_internal_video_id": "asi-video-procedural-memory-and-cognitive-loop-closure",
-      "packet_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+      "chapter_sha256": "0772fc007e4c8581856fbe950609301e72b0d154f120540f6847a57325e5190f",
+      "stable_internal_video_id": "asi-video-multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "packet_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1318,17 +1318,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 51,
-      "chapter_id": "routing-heads-and-specialist-cores",
-      "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
-      "chapter_sha256": "75c2db7b5d113b952c5400fc69bb712baaeea7ebc78fff8cb35681a7d0670de1",
-      "stable_internal_video_id": "asi-video-routing-heads-and-specialist-cores",
-      "packet_path": "visual_edition/chapters/routing-heads-and-specialist-cores/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "chapter_sha256": "ce22363fa369d7d7c72e5e85df9240cf060b5e9f1226bccc532ec9b4ccb41904",
+      "stable_internal_video_id": "asi-video-procedural-memory-and-cognitive-loop-closure",
+      "packet_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1344,17 +1344,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 52,
-      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
-      "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-      "chapter_sha256": "a250821268bd98d468bb7595e638b936613e427cd01f0cb95b5a8497439c1cd4",
-      "stable_internal_video_id": "asi-video-replaceable-cognitive-substrates-beyond-transformer-monoculture",
-      "packet_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
+      "chapter_sha256": "a30809752517f71d4529fefd3751145f9fef9b5083f5ef6b244cfad5f2103498",
+      "stable_internal_video_id": "asi-video-routing-heads-and-specialist-cores",
+      "packet_path": "visual_edition/chapters/routing-heads-and-specialist-cores/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1370,17 +1370,43 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 53,
+      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+      "chapter_sha256": "1dc356bdab8651db6e0b2644086ac0da38f03a4f4b8f0834de2660d507aae616",
+      "stable_internal_video_id": "asi-video-replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "packet_path": "visual_edition/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 54,
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
       "chapter_path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
       "chapter_sha256": "a47cf574a3f29be4705bc56db72899d1dbc88f63e9d3b5abf8c123a4f9ed14c7",
       "stable_internal_video_id": "asi-video-relational-dimension-compilation-and-polyadic-cognition",
       "packet_path": "visual_edition/chapters/relational-dimension-compilation-and-polyadic-cognition/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1396,43 +1422,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 54,
-      "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
-      "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-      "chapter_sha256": "793d66a8e71aae4cbe5651d5d44c8891a86fa05c6ab158a896e1a49e13d422eb",
-      "stable_internal_video_id": "asi-video-governed-model-training-distributed-optimization-and-scaling",
-      "packet_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 55,
-      "chapter_id": "learning-theory-generalization-and-scaling-science",
-      "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-      "chapter_sha256": "37a4a8ca6ceab5fb5bf75b2a1c203cd89c15849ae97f609dbe76e40f02443e8e",
-      "stable_internal_video_id": "asi-video-learning-theory-generalization-and-scaling-science",
-      "packet_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+      "chapter_sha256": "df727b6acc753cfd9aff31c8d6dfad66cd4a6a8f7f35fa4176fff2f5237cc0d6",
+      "stable_internal_video_id": "asi-video-governed-model-training-distributed-optimization-and-scaling",
+      "packet_path": "visual_edition/chapters/governed-model-training-distributed-optimization-and-scaling/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1448,17 +1448,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 56,
-      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
-      "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "chapter_sha256": "8c9abf304368c85e4de9f3408a7a2e7c2c2bd4776a284a5b0790508bd8933490",
-      "stable_internal_video_id": "asi-video-readiness-gates-residual-escrow-and-quarantine",
-      "packet_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
+      "chapter_sha256": "f5b0c3ad207b6507bc210290c2f5cc7e8bd4545e750f712c7371691bd1fec0d9",
+      "stable_internal_video_id": "asi-video-learning-theory-generalization-and-scaling-science",
+      "packet_path": "visual_edition/chapters/learning-theory-generalization-and-scaling-science/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1474,17 +1474,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 57,
-      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
-      "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-      "chapter_sha256": "f44162572b2d6f0bf143d3253fae0f6edaaf8fb67c9e0c469c9c6b00d25fe048",
-      "stable_internal_video_id": "asi-video-personal-compute-hives-and-federated-edge-intelligence",
-      "packet_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "chapter_sha256": "3b3a0f9ee5d0711b984c1e47fc6cf1142fef398d04a132435bd5c10ac4470133",
+      "stable_internal_video_id": "asi-video-readiness-gates-residual-escrow-and-quarantine",
+      "packet_path": "visual_edition/chapters/readiness-gates-residual-escrow-and-quarantine/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1500,17 +1500,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 58,
-      "chapter_id": "compact-generative-systems-and-residual-honesty",
-      "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
-      "chapter_sha256": "1a293b423b2b0e137e033c6223e49e60f8026fbccae56709e6c784cfd002affd",
-      "stable_internal_video_id": "asi-video-compact-generative-systems-and-residual-honesty",
-      "packet_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "chapter_sha256": "827580a508b44575df2eda6d51131ddef10145e725f4f1460b759e5b3a9288cb",
+      "stable_internal_video_id": "asi-video-personal-compute-hives-and-federated-edge-intelligence",
+      "packet_path": "visual_edition/chapters/personal-compute-hives-and-federated-edge-intelligence/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1526,10 +1526,36 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 59,
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "chapter_sha256": "59beb73d6e2190a7ce6fb077c5a655b6aa76367f2fc5757af5871ce4513f8acb",
+      "stable_internal_video_id": "asi-video-compact-generative-systems-and-residual-honesty",
+      "packet_path": "visual_edition/chapters/compact-generative-systems-and-residual-honesty/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 60,
       "chapter_id": "fast-generation-architectures",
       "chapter_path": "chapters/fast-generation-architectures.qmd",
       "chapter_sha256": "9d6956ce6427f97deccf4caa386fc81784883b25e21066ebac52281dc647d9d3",
@@ -1555,14 +1581,14 @@
       "required_action": "obtain_action_time_upload_authority"
     },
     {
-      "position": 60,
+      "position": 61,
       "chapter_id": "governed-deliberation-and-test-time-scaling",
       "chapter_path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-      "chapter_sha256": "1f8aed115bbe3c64b71fa428681d7fec8431e72fcd090bc8b8835e0463a9e80f",
+      "chapter_sha256": "5009873f1cf6f90fbb6908969cd552b06f08016f8f4f47a84c3c215e9ab68438",
       "stable_internal_video_id": "asi-video-governed-deliberation-and-test-time-scaling",
       "packet_path": "visual_edition/chapters/governed-deliberation-and-test-time-scaling/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1578,43 +1604,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 61,
-      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-      "chapter_sha256": "decfa12c2c5e55e43fef1375474b2c926f773a71a8cc97d661b10fe69613ad3a",
-      "stable_internal_video_id": "asi-video-rankfold-neuralfold-and-artifact-compression",
-      "packet_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 62,
-      "chapter_id": "resource-economics-and-token-budgets",
-      "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
-      "chapter_sha256": "6ac351d0481a2d7ed7d320f41eb0f3b876b38321b5e98bb5eaf30992ff162fd6",
-      "stable_internal_video_id": "asi-video-resource-economics-and-token-budgets",
-      "packet_path": "visual_edition/chapters/resource-economics-and-token-budgets/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "chapter_sha256": "6473fb1adbb01a93d281197b332da1ebd3905cc735003c7e6b3ec9187a9c16c7",
+      "stable_internal_video_id": "asi-video-rankfold-neuralfold-and-artifact-compression",
+      "packet_path": "visual_edition/chapters/rankfold-neuralfold-and-artifact-compression/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1630,17 +1630,43 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 63,
+      "chapter_id": "resource-economics-and-token-budgets",
+      "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
+      "chapter_sha256": "538001abf208e0d5c8bca5ecdbc62d329af1920e927081aaabb33244531dc039",
+      "stable_internal_video_id": "asi-video-resource-economics-and-token-budgets",
+      "packet_path": "visual_edition/chapters/resource-economics-and-token-budgets/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 64,
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
       "chapter_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
       "chapter_sha256": "1e2a0bc56d932526ff3fbe67d9e41b9e8e212e19b8ac32fdf9b67f3e369ffcbe",
       "stable_internal_video_id": "asi-video-physical-compute-infrastructure-energy-and-environmental-constraints",
       "packet_path": "visual_edition/chapters/physical-compute-infrastructure-energy-and-environmental-constraints/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1656,17 +1682,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 64,
+      "position": 65,
       "chapter_id": "mathematical-and-search-substrates",
       "chapter_path": "chapters/mathematical-and-search-substrates.qmd",
       "chapter_sha256": "3b88938f96a474792a94ea96edc03d9d18ee3d1875b944fe5fc78572c2f32070",
       "stable_internal_video_id": "asi-video-mathematical-and-search-substrates",
       "packet_path": "visual_edition/chapters/mathematical-and-search-substrates/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1682,43 +1708,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 65,
-      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
-      "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-      "chapter_sha256": "ae9975fd09503880b076041ed6ff94af97fd21a9d665fe151e9f121d768ee291",
-      "stable_internal_video_id": "asi-video-circle-calculus-and-proof-carrying-ai-contracts",
-      "packet_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 66,
-      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
-      "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "chapter_sha256": "dffef52d2ef064306a5e812257dfbcc78ab57c5cba0debff5fa955947b54d020",
-      "stable_internal_video_id": "asi-video-coil-attention-cyclic-memory-and-recurrence-contracts",
-      "packet_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "chapter_sha256": "f70bed2b98c23a215f55c33a1312d3f9cbfd03185974f54062dc601a8eebe118",
+      "stable_internal_video_id": "asi-video-circle-calculus-and-proof-carrying-ai-contracts",
+      "packet_path": "visual_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1734,17 +1734,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 67,
-      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
-      "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-      "chapter_sha256": "5d3f17c772dc077b49551dc2d855f57f2fcc7683fccf0611c60b15145be159be",
-      "stable_internal_video_id": "asi-video-coilra-multicoil-rope-and-cyclic-mixers",
-      "packet_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "chapter_sha256": "3f7c1bbb463630ee2605541a3bb526410f31fa82c3c51943cb8a4ffbd4096493",
+      "stable_internal_video_id": "asi-video-coil-attention-cyclic-memory-and-recurrence-contracts",
+      "packet_path": "visual_edition/chapters/coil-attention-cyclic-memory-and-recurrence-contracts/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1760,17 +1760,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 68,
-      "chapter_id": "executable-specifications-and-lean-proof-envelope",
-      "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "chapter_sha256": "f71fd4fa74ca588a997ded1e5a94d6a4a9c7c484742aa5c955010c641227c0f8",
-      "stable_internal_video_id": "asi-video-executable-specifications-and-lean-proof-envelope",
-      "packet_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "chapter_sha256": "6eb10b3ec9aea084511c96ea05b03551078d30f33b835b81ed5b0cafb7a9fd8a",
+      "stable_internal_video_id": "asi-video-coilra-multicoil-rope-and-cyclic-mixers",
+      "packet_path": "visual_edition/chapters/coilra-multicoil-rope-and-cyclic-mixers/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1786,17 +1786,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 69,
-      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-      "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "chapter_sha256": "afab6024cdd8fae959144ba124da9cb661f2ccbe7149ff76c0963c79b601528d",
-      "stable_internal_video_id": "asi-video-benchmark-ratchets-and-anti-goodhart-evidence",
-      "packet_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "chapter_sha256": "d9ab82cf0766ee75864e59fa81443917ff828313812f249c661e20ae888c8c09",
+      "stable_internal_video_id": "asi-video-executable-specifications-and-lean-proof-envelope",
+      "packet_path": "visual_edition/chapters/executable-specifications-and-lean-proof-envelope/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1812,17 +1812,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 70,
-      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
-      "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-      "chapter_sha256": "70373ee45fd1ef9e2fd2ea31a1175284ee7cdcff4a93e8df14e66a0982e275c5",
-      "stable_internal_video_id": "asi-video-white-box-evidence-interpretability-and-activation-governance",
-      "packet_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "chapter_sha256": "e6651ca4fc35349f3722ef876c8999ba4464822cd30eee78499126405c65e05f",
+      "stable_internal_video_id": "asi-video-benchmark-ratchets-and-anti-goodhart-evidence",
+      "packet_path": "visual_edition/chapters/benchmark-ratchets-and-anti-goodhart-evidence/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1838,10 +1838,36 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 71,
+      "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+      "chapter_sha256": "4b24538b734e0ff06ef77fee68f2a9909bd7725c835a3e083e78d35785cddcf0",
+      "stable_internal_video_id": "asi-video-white-box-evidence-interpretability-and-activation-governance",
+      "packet_path": "visual_edition/chapters/white-box-evidence-interpretability-and-activation-governance/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 72,
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "chapter_path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
       "chapter_sha256": "ac99a39eec04cb67c51c81516edc55ecf9c22161958a0ce027abdfb788d71d71",
@@ -1867,7 +1893,7 @@
       "required_action": "obtain_action_time_upload_authority"
     },
     {
-      "position": 72,
+      "position": 73,
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
       "chapter_sha256": "6ff746ce6d02e566eda1532d1735a3891c4cf4c3b00ddaac265c87ad9461bc73",
@@ -1893,7 +1919,7 @@
       "required_action": "obtain_action_time_upload_authority"
     },
     {
-      "position": 73,
+      "position": 74,
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_path": "chapters/safety-cases-and-structured-assurance.qmd",
       "chapter_sha256": "a74a75e18bb7f17baa663fb386d3d599eaed48a6674fb7f2e1513d273736083f",
@@ -1919,14 +1945,14 @@
       "required_action": "obtain_action_time_upload_authority"
     },
     {
-      "position": 74,
+      "position": 75,
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
       "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
       "chapter_sha256": "6f0bed529f8776b24f33bc2d688d52b73652fd4aa288a8e9b17ab558885fb138",
       "stable_internal_video_id": "asi-video-content-authenticity-watermarking-and-synthetic-media-integrity",
       "packet_path": "visual_edition/chapters/content-authenticity-watermarking-and-synthetic-media-integrity/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1942,43 +1968,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 75,
-      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
-      "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-      "chapter_sha256": "918fdd4e18cdd9cf6ed2cf48fdc8e8a3b6c1e608b4b5221195ec109b7de53a89",
-      "stable_internal_video_id": "asi-video-governed-operations-incident-command-and-graceful-degradation",
-      "packet_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 76,
-      "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-      "chapter_sha256": "db013d12b27c3af42f75dbb2bc62049c16abbf3375dd3fc3728824ec8a03e1d2",
-      "stable_internal_video_id": "asi-video-policy-optimization-and-learning-from-feedback",
-      "packet_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+      "chapter_sha256": "115cfd1991612209cfeb9a22e6e365be7fe6d18f5d6bb105ab45458c2cde76dc",
+      "stable_internal_video_id": "asi-video-governed-operations-incident-command-and-graceful-degradation",
+      "packet_path": "visual_edition/chapters/governed-operations-incident-command-and-graceful-degradation/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -1994,17 +1994,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 77,
-      "chapter_id": "data-engines-continual-learning-and-unlearning",
-      "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-      "chapter_sha256": "01e6da10fc4e9dd700720adc9c4a26315746503dec4cfc4d307f36add9609280",
-      "stable_internal_video_id": "asi-video-data-engines-continual-learning-and-unlearning",
-      "packet_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "chapter_sha256": "50f7c64f89f583c2d79eafd09b42f94dc9deaa55dcee618541a122b770958ccb",
+      "stable_internal_video_id": "asi-video-policy-optimization-and-learning-from-feedback",
+      "packet_path": "visual_edition/chapters/policy-optimization-and-learning-from-feedback/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -2020,17 +2020,43 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 78,
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+      "chapter_sha256": "2967bfd7ce08a8994f5e43dcd0cf00ab5c721a66f9183fee75a28383c0db8ac3",
+      "stable_internal_video_id": "asi-video-data-engines-continual-learning-and-unlearning",
+      "packet_path": "visual_edition/chapters/data-engines-continual-learning-and-unlearning/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 79,
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
       "chapter_sha256": "7105890fc550a748e37cc17e9a67e14168c89c6c2656be147ef25ae2b3a8a066",
       "stable_internal_video_id": "asi-video-scientific-discovery-and-experimental-governance",
       "packet_path": "visual_edition/chapters/scientific-discovery-and-experimental-governance/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -2046,17 +2072,17 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 79,
+      "position": 80,
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "chapter_sha256": "7417ac5edb3aa9ce61e1a38de4549dc6cf3b9048be9eba6aec46da1e2fc2f779",
       "stable_internal_video_id": "asi-video-artifact-steward-agents-and-living-project-governance",
       "packet_path": "visual_edition/chapters/artifact-steward-agents-and-living-project-governance/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -2072,36 +2098,36 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 80,
-      "chapter_id": "integrated-reference-architecture",
-      "chapter_path": "chapters/integrated-reference-architecture.qmd",
-      "chapter_sha256": "03051a6aa2e3ae2c48abcb8593aab57c944a0688c35955386b28f477388d5f4f",
-      "stable_internal_video_id": "asi-video-integrated-reference-architecture",
-      "packet_path": "visual_edition/chapters/integrated-reference-architecture/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 81,
+      "chapter_id": "integrated-reference-architecture",
+      "chapter_path": "chapters/integrated-reference-architecture.qmd",
+      "chapter_sha256": "b695e29ef8836697484897c902713887582371045b0ab5ddcbf6088ef35761fe",
+      "stable_internal_video_id": "asi-video-integrated-reference-architecture",
+      "packet_path": "visual_edition/chapters/integrated-reference-architecture/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 82,
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "chapter_sha256": "86235b3a38aebe2270d8d876f54f9dc32c530123d87bf014968d755f9b95cbe4",
@@ -2127,14 +2153,14 @@
       "required_action": "obtain_action_time_upload_authority"
     },
     {
-      "position": 82,
+      "position": 83,
       "chapter_id": "prototype-roadmap",
       "chapter_path": "chapters/prototype-roadmap.qmd",
-      "chapter_sha256": "4f15115808adeed13a72386056e0cca260f69b2746b64def51399904a6bac60a",
+      "chapter_sha256": "8049dc5a3fab5e54fa9b438c2e4e6cca711a80c2e497390856a37b91857745b2",
       "stable_internal_video_id": "asi-video-prototype-roadmap",
       "packet_path": "visual_edition/chapters/prototype-roadmap/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
       "youtube": {
         "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
         "video_id": null,
@@ -2150,36 +2176,36 @@
         "supersedes_video_id": null
       },
       "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
-    },
-    {
-      "position": 83,
-      "chapter_id": "living-book-methodology",
-      "chapter_path": "chapters/living-book-methodology.qmd",
-      "chapter_sha256": "8cf4666e9715767238557c712f3188289b90573c95bd4f9cd6fe668a84ac0905",
-      "stable_internal_video_id": "asi-video-living-book-methodology",
-      "packet_path": "visual_edition/chapters/living-book-methodology/packet.json",
-      "lifecycle_state": "ready_not_published",
-      "staleness_state": "current",
-      "youtube": {
-        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
-        "video_id": null,
-        "watch_url": null,
-        "playlist_id": null,
-        "generation": 0,
-        "publication_state": "not_authorized",
-        "uploaded_output_sha256": null,
-        "bound_chapter_sha256": null,
-        "bound_source_commit": null,
-        "published_at_utc": null,
-        "platform_receipt_path": null,
-        "supersedes_video_id": null
-      },
-      "generations": [],
-      "required_action": "obtain_action_time_upload_authority"
+      "required_action": "regenerate_stale_derivative"
     },
     {
       "position": 84,
+      "chapter_id": "living-book-methodology",
+      "chapter_path": "chapters/living-book-methodology.qmd",
+      "chapter_sha256": "60af0af634141a12e49e7b0a995d0d46c617c9f70a82463b81b544d18a9e628b",
+      "stable_internal_video_id": "asi-video-living-book-methodology",
+      "packet_path": "visual_edition/chapters/living-book-methodology/packet.json",
+      "lifecycle_state": "stale",
+      "staleness_state": "stale",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "regenerate_stale_derivative"
+    },
+    {
+      "position": 85,
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
       "chapter_sha256": "1854624a2058b7b66f34468844218fececdee43291e40ea7c64944252e4b7249",

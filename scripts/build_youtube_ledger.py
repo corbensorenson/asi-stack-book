@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the exact 84-chapter YouTube publication and revision ledger."""
+"""Build the canonical-chapter YouTube publication and revision ledger."""
 
 from __future__ import annotations
 
@@ -181,6 +181,8 @@ def build() -> dict:
             if youtube["publication_state"] in {"stale", "superseded"}:
                 counts["stale_or_superseded"] += 1
             action = required_action(packet)
+            if row.get("lifecycle_state") == "stale":
+                action = "regenerate_stale_derivative"
             if action == "prepare_supersession_plan":
                 counts["replacement_required"] += 1
             entries.append({
@@ -194,7 +196,11 @@ def build() -> dict:
                 "packet_path": packet_path,
                 "lifecycle_state": row["lifecycle_state"],
                 "staleness_state": (
-                    packet["staleness"]["state"] if packet else "not_yet_derived"
+                    "stale"
+                    if row.get("lifecycle_state") == "stale"
+                    else packet["staleness"]["state"]
+                    if packet
+                    else "not_yet_derived"
                 ),
                 "youtube": youtube,
                 "generations": generations,

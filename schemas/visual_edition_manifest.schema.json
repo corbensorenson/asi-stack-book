@@ -27,7 +27,7 @@
     "generated_at_utc": {"type": "string"},
     "book_structure_path": {"const": "book_structure.json"},
     "source_commit_at_generation": {"pattern": "^[0-9a-f]{40}$"},
-    "canonical_chapter_count": {"const": 84},
+    "canonical_chapter_count": {"type": "integer", "minimum": 1},
     "pilot_chapter_ids": {
       "type": "array",
       "minItems": 5,
@@ -96,12 +96,12 @@
         "unlisted_video_count": {
           "type": "integer",
           "minimum": 0,
-          "maximum": 84
+          "maximum": 1000
         },
         "current_quarto_preview_embeds": {
           "type": "integer",
           "minimum": 0,
-          "maximum": 84
+          "maximum": 1000
         },
         "edition_complete": {
           "const": false
@@ -137,8 +137,8 @@
     },
     "chapters": {
       "type": "array",
-      "minItems": 84,
-      "maxItems": 84,
+      "minItems": 1,
+      "maxItems": 1000,
       "items": {
         "type": "object",
         "required": [

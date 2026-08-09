@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Build deterministic, non-authorizing YouTube metadata for all 84 videos."""
+"""Build deterministic, non-authorizing YouTube metadata for ready packets.
+
+The canonical book may contain planned chapters without a rendered derivative.
+Those chapters remain in the visual manifest and ledger, but are intentionally
+absent from this executable upload plan until their packet and local inputs
+exist. This keeps the 84-video authorization scope honest.
+"""
 
 from __future__ import annotations
 
@@ -32,6 +38,10 @@ def youtube_title(position: int, title: str) -> str:
 
 def main() -> None:
     structure = json.loads((ROOT / "book_structure.json").read_text(encoding="utf-8"))
+    manifest = json.loads(
+        (ROOT / "visual_edition/manifest.json").read_text(encoding="utf-8")
+    )
+    manifest_rows = {row["chapter_id"]: row for row in manifest["chapters"]}
     channel = json.loads(
         (ROOT / "visual_edition/youtube_channel.json").read_text(encoding="utf-8")
     )
@@ -41,6 +51,12 @@ def main() -> None:
         for chapter in part["chapters"]:
             position += 1
             packet_path = ROOT / f"visual_edition/chapters/{chapter['id']}/packet.json"
+            if (
+                not packet_path.is_file()
+                or manifest_rows.get(chapter["id"], {}).get("lifecycle_state")
+                != "ready_not_published"
+            ):
+                continue
             packet = json.loads(packet_path.read_text(encoding="utf-8"))
             thumbnail_path = (
                 ROOT / f"build/visual_edition/thumbnails/{chapter['id']}.png"
@@ -71,8 +87,12 @@ def main() -> None:
                 f"Chapter digest: {packet['chapter_sha256']}",
                 f"Source commit: {packet['source_commit']}",
             ])
+            # Playlist positions are compact over the currently ready packet
+            # set; a planned chapter does not create a hole in the authorized
+            # 84-video playlist.
+            publication_position = len(entries) + 1
             entries.append({
-                "position": position,
+                "position": publication_position,
                 "chapter_id": chapter["id"],
                 "stable_internal_video_id": packet["video_id"],
                 "generation": 1,
@@ -104,7 +124,7 @@ def main() -> None:
                     and packet["render_receipt"].get("validation_state") == "validated"
                     else None
                 ),
-                "desired_playlist_position": position,
+                "desired_playlist_position": publication_position,
                 "initial_upload_privacy": "unlisted",
                 "desired_final_privacy": "public",
                 "mutation_state": "prepared_not_authorized",
@@ -123,10 +143,10 @@ def main() -> None:
         "support_state_effect": "none",
         "release_effect": "none",
     }
-    if len(entries) != 84 or any(len(item["title"]) > 100 for item in entries):
+    if any(len(item["title"]) > 100 for item in entries):
         raise SystemExit("YouTube upload-plan count or title-length contract failed")
     OUT.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print("Built non-authorizing YouTube upload plan for 84 chapter videos.")
+    print(f"Built non-authorizing YouTube upload plan for {len(entries)} source-current chapter videos.")
 
 
 if __name__ == "__main__":

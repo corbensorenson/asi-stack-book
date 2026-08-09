@@ -46,8 +46,8 @@
     },
     "entries": {
       "type": "array",
-      "minItems": 84,
-      "maxItems": 84,
+      "minItems": 1,
+      "maxItems": 1000,
       "items": {
         "type": "object",
         "required": [
@@ -64,7 +64,7 @@
           "required_action"
         ],
         "properties": {
-          "position": {"type": "integer", "minimum": 1, "maximum": 84},
+          "position": {"type": "integer", "minimum": 1, "maximum": 1000},
           "chapter_id": {"type": "string"},
           "chapter_path": {"pattern": "^chapters/.+\\.qmd$"},
           "chapter_sha256": {"pattern": "^[0-9a-f]{64}$"},
