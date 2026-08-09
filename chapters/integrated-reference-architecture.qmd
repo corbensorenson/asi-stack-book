@@ -92,7 +92,7 @@ Readers need to see how the layers operate as one machine from intent to governe
 
 ### Concrete integration failure: the patch that passed and still could not ship
 
-The local governed repository-change slice gives this chapter an executed
+The local governed repository-change slice provides an executed
 failure scene. Nine matched change requests reached a public smoke test. A
 simple route treated that green signal as sufficient and released all nine;
 eight were false accepts. The governed route joined the request to an allowed
@@ -110,7 +110,7 @@ is that integration has a price and a falsifiable shape. Intent, context,
 authority, observation, evaluation, rollback, evidence, and residual custody
 must join around the same effect. If the architecture cannot show that joined
 lineage, a green subsystem does not authorize the release. The detailed event
-log and its four invariants appear later in this chapter; the fixture-only
+log and its four invariants follow below; the fixture-only
 showpiece trace below shows the same ownership pattern one artifact at a time.
 
 The end-to-end integration point receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. The job is to show how those pieces compose without pretending that composition is already implemented or proven.

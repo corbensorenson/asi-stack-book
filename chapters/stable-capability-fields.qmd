@@ -123,8 +123,8 @@ An SCF is not a registry row. It separates three decisions that a mutable compon
 
 ### Worked replacement decision: canary qualified, default still blocked
 
-The current fixture replaces a context-adequacy implementation only for public
-manuscript checks. The field requires assigned sources to remain visible,
+In the canary qualification record, a context-adequacy implementation is
+replaceable only for public manuscript checks. The field requires assigned sources to remain visible,
 support-state language to stay conservative, and residual risk not to be
 erased. Candidate `impl://context-adequacy-v1-canary` satisfies the authored
 record checks, so it receives `canary_only` permission.
