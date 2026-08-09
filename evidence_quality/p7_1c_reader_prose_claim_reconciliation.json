@@ -1,0 +1,2545 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_claim_reconciliation.v1",
+  "review_date": "2026-08-09",
+  "scope": "All newly detected prose candidates in completed historical claim-review chapters after the 85-chapter P7.1c reader-prose pass.",
+  "summary": {
+    "chapter_count": 53,
+    "candidate_count": 138,
+    "mapped_complete_proposition_count": 93,
+    "line_wrap_fragment_count": 37,
+    "explicit_limit_report_count": 8,
+    "unowned_material_claim_count": 0,
+    "support_state_effect": "none"
+  },
+  "chapter_records": [
+    {
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+      "chapter_sha256": "0a26025d5da40c6a370183262b0f42beb0cdc0899da58b3e271e2796bc6177b2",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/adversarial-evaluation-sandbagging-and-training-time-deception.json",
+      "packet_sha256": "8afbabd5fd1516a34b11bc26327916acb8651a52cdf766f95555008e9f925e83",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "84e49a14c36f749684a368170aecdb0cbff11abd87916a20e0e9a3341238e59b",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8a9fe0b8fdad",
+          "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:53",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** Adding more tests is the simpler baseline, but test count cannot resolve a shared monitor, reward proxy, selection pressure, or scorer dependency; the observation contract makes those dependencies inspectable.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `adversarial-evaluation-sandbagging-and-training-time-deception.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "adversarial-evaluation-sandbagging-and-training-time-deception.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
+      "chapter_path": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+      "chapter_sha256": "bc2cef928407a23fe817a29ed94fba99d65408fd66a28d3880932983f5593d5e",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/adversarial-machine-learning-and-model-attack-surface.json",
+      "packet_sha256": "10e09f3c2566721ea51158cdb371f6f23d05461b59b24d1dc98c0c84c2093937",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "faa2071c122a20dd63370b0b86fefef3155b1411aaebae007e90d7b024c4805a",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.02c1f349f4f9",
+          "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:96",
+          "section": "Core Claim",
+          "sentence": "A missing field narrows the conclusion; it cannot be filled",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/adversarial-machine-learning-and-model-attack-surface.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "chapter_path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
+      "chapter_sha256": "06e71e0cbef01619ed2beda88e790eafae7db7b8f6c59d93cd514f8946db92e8",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/ai-deployment-transition-distribution-and-human-agency.json",
+      "packet_sha256": "b56486ee339b3a08e1aa390a7c68a4adfa221b0c9b6514612a1cfc391075e8ab",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "4a90678c542876d5616cf746a4f53468265acea3fa1e33d7d10b7ce8dce3a24d",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "ai-deployment-transition-distribution-and-human-agency.prose.794210d0c3d7",
+          "source": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd:41",
+          "section": "Human Reading Path",
+          "sentence": "The chapter keeps each cohort and remedy state visible, so the positive total cannot erase the worker cohort's unresolved burden.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `ai-deployment-transition-distribution-and-human-agency.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "ai-deployment-transition-distribution-and-human-agency.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "chapter_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+      "chapter_sha256": "e952a0cd7a39ab8d779007e1ffdc09188159d713fe969f6623025d9ee3ccaeef",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/ai-supply-chain-integrity-and-lifecycle-provenance.json",
+      "packet_sha256": "e68cfbbcfe8dbc32387e8ef4f03bfad71a2e73f03020d6fe047828182cea10a1",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "a56fbf918d1da9daeb0595555b07a370cb74de76a9289296c881c97e2c448aa5",
+          "candidate_count": 2
+        },
+        {
+          "heading": "Worked revocation: one component reaches three projects",
+          "sha256": "4b69a616f4fcc406adddf1bf6b8bc553bb12b6cdcaece44f255b3c79f9fd4f2d",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.2307aa51cdf2",
+          "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:162",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** Provenance matters only if a compromised ancestor can find and stop every affected descendant; a signed bill of materials that cannot drive response is documentation, not control.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core"
+          }
+        },
+        {
+          "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.b1fab7f19dfe",
+          "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:164",
+          "section": "Core Claim",
+          "sentence": "**Operational rule.** Bind every artifact to exact lineage and consumer scope, append invalidations rather than overwriting history, compute relation-specific descendant closure, and require acknowledgment from each response owner.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010"
+          }
+        },
+        {
+          "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.3ae83c968bcf",
+          "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:168",
+          "section": "Worked revocation: one component reaches three projects",
+          "sentence": "One project cannot clear the incident merely because its direct package list omits the dependency; lineage through a build image still counts.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked revocation: one component reaches three projects` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001"
+          }
+        },
+        {
+          "candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.6736a31cc46d",
+          "source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:170",
+          "section": "Worked revocation: one component reaches three projects",
+          "sentence": "These checks show finite propagation behavior, not world-complete lineage, signature truth, absence of compromise, model safety, or legal compliance.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "chapter_sha256": "d695b89bc7a48782ee6b3ff9afbcf58a3646d4bc6c4dfabf89f3bea01c146aa0",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/artifact-graphs-audit-logs-and-replay.json",
+      "packet_sha256": "007154270bb250e1606e31409ef0ef5cb91e1c7186fade31bcdcd87c054af5bc",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked replay: matching output, different tool lineage",
+          "sha256": "8dfe895bf109680d822643c8e10c6f82875847a25af05de738a5c9e1d32f75b9",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "artifact-graphs-audit-logs-and-replay.prose.7d7ba7bcb513",
+          "source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:124",
+          "section": "Worked replay: matching output, different tool lineage",
+          "sentence": "The example shows why replay needs lineage and grade; it does not establish that the graph is complete, the receipts are true, the tool is deterministic, or the artifact is correct.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "chapter_sha256": "aed464ac7e256a8035757e4e8779a6418c91fd3e637b01aa422f9e5ab658bdee",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/artifact-steward-agents-and-living-project-governance.json",
+      "packet_sha256": "9db6d8a5db68e72bb2abc6da638e5c2593436e53aadb3dc20e9501721eb14193",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "0c610864ab42558835a6eedc3f1c9c871d036d6c4f235bc886c0854b0e28fde2",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "316f041daef40c4f677c6c672d00769522140d72dfa653d27bfe18eeee8e056c",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked steward trace: three preparations and no inherited authority",
+          "sha256": "5c8541f857e72ad945fed9361d844a6042d16006c6b8d0ff5f25185fcfbcf3d9",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "artifact-steward-agents-and-living-project-governance.prose.4e4f123e0522",
+          "source": "chapters/artifact-steward-agents-and-living-project-governance.qmd:65",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** A repository bot that acts whenever CI is green is the simpler baseline, but it cannot preserve charter authority, tainted-event review, contribution separation, treasury policy, release evidence, rollback, or sunset obligations.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `artifact-steward-agents-and-living-project-governance.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "artifact-steward-agents-and-living-project-governance.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "artifact-steward-agents-and-living-project-governance.prose.60cf660b3f6b",
+          "source": "chapters/artifact-steward-agents-and-living-project-governance.qmd:94",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A steward improves a project by making the next authorized",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/artifact-steward-agents-and-living-project-governance.json`."
+          }
+        },
+        {
+          "candidate_id": "artifact-steward-agents-and-living-project-governance.prose.dcb8d67d64a1",
+          "source": "chapters/artifact-steward-agents-and-living-project-governance.qmd:128",
+          "section": "Worked steward trace: three preparations and no inherited authority",
+          "sentence": "An external worker cannot inherit project",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/artifact-steward-agents-and-living-project-governance.json`."
+          }
+        },
+        {
+          "candidate_id": "artifact-steward-agents-and-living-project-governance.prose.1865ad9575d9",
+          "source": "chapters/artifact-steward-agents-and-living-project-governance.qmd:129",
+          "section": "Worked steward trace: three preparations and no inherited authority",
+          "sentence": "Missing release evidence routes to repair, and ordinary work cannot",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/artifact-steward-agents-and-living-project-governance.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "chapter_path": "chapters/asi-is-a-stack-not-a-model.qmd",
+      "chapter_sha256": "98ec4a959aceceddd6b242ede9fed1049c46b62559ca8a8b135d5687429175bb",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/asi-is-a-stack-not-a-model.json",
+      "packet_sha256": "2c575fc778097a1cc5a75616e35c745a324e54258efb2e4f0a4c62248e38bb00",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "a8322f65387cd13f2dd463d189e3bbbf2e031d95e1634fce372479b8f06db539",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "asi-is-a-stack-not-a-model.prose.b646d5ebcc5f",
+          "source": "chapters/asi-is-a-stack-not-a-model.qmd:49",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** One model call followed by a shell command is the strongest simpler baseline and may be adequate in a genuinely read-only sandbox; the stack must earn each extra boundary through a distinct decision or failure owner.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `asi-is-a-stack-not-a-model.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "asi-is-a-stack-not-a-model.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "autonomous-replication-proliferation-and-containment",
+      "chapter_path": "chapters/autonomous-replication-proliferation-and-containment.qmd",
+      "chapter_sha256": "e17ab66bd54402e0568c9597f8d71e32676609f338a9d3ef3570453f25d8dcab",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/autonomous-replication-proliferation-and-containment.json",
+      "packet_sha256": "da6031238cbf4d3010c9b41a297426c8bc6afa1b012499b2aa3d92bad4f7fddf",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "e311c6c8cd63645c3bb8f9742a1dfe9b9d5beab6ae743ce634370399dfbb3395",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked bounded decision: a complete dossier still authorizes only a campaign",
+          "sha256": "fdaee25e884d607577b78782074617d7d7ecd993b435cb508c60782565628e48",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "autonomous-replication-proliferation-and-containment.prose.36f1007631ad",
+          "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:39",
+          "section": "Human Reading Path",
+          "sentence": "The chapter requires the composed chain and independent descendant census before either conclusion.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `autonomous-replication-proliferation-and-containment.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "autonomous-replication-proliferation-and-containment.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "autonomous-replication-proliferation-and-containment.prose.4c70ffae6870",
+          "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:134",
+          "section": "Worked bounded decision: a complete dossier still authorizes only a campaign",
+          "sentence": "The 52 single-axis mutation controls show why: remove",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/autonomous-replication-proliferation-and-containment.json`."
+          }
+        },
+        {
+          "candidate_id": "autonomous-replication-proliferation-and-containment.prose.f0de1b846806",
+          "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:141",
+          "section": "Worked bounded decision: a complete dossier still authorizes only a campaign",
+          "sentence": "A future empirical campaign must observe the composed chain and the",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/autonomous-replication-proliferation-and-containment.json`."
+          }
+        },
+        {
+          "candidate_id": "autonomous-replication-proliferation-and-containment.prose.f82613d0a5bf",
+          "source": "chapters/autonomous-replication-proliferation-and-containment.qmd:142",
+          "section": "Worked bounded decision: a complete dossier still authorizes only a campaign",
+          "sentence": "independent census; until then, the fixture demonstrates decision shape, not",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/autonomous-replication-proliferation-and-containment.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "chapter_sha256": "95ffe223ffcec8ad2835fd3b196d5fd1d94a000ee80024fa6c2428a199f67394",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/benchmark-ratchets-and-anti-goodhart-evidence.json",
+      "packet_sha256": "e857a5651132c256018a0688a39072a27862a24a8255b51d5ba311dd52c00712",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "e198206f628049b767b8f530c3db193cd829dcda17927a7ec4d9cbdf1ed1a998",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked benchmark collision: same score, opposite decision",
+          "sha256": "d17e85beebed77413f1a9920900099f8fcef69f2f32b523edaefdf546dbcf639",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.d1ac4510b1fe",
+          "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:104",
+          "section": "Core Claim",
+          "sentence": "Quarantine persists until the causal problem is repaired; aggregate score cannot wash it away.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.failure_mode.001"
+          }
+        },
+        {
+          "candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.2bb79812f130",
+          "source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:110",
+          "section": "Worked benchmark collision: same score, opposite decision",
+          "sentence": "This proves that aggregate count is insufficient for the modeled decision.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked benchmark collision: same score, opposite decision` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.006`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.006"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "capability-replacement-and-rollback",
+      "chapter_path": "chapters/capability-replacement-and-rollback.qmd",
+      "chapter_sha256": "64cfd8f624fcf3a64b0f401af49570211b10fdec5ce20edf16b09f03ccc07661",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/capability-replacement-and-rollback.json",
+      "packet_sha256": "29560b590e5eeb6edfd535e9f76081cb7e611b5b4a106652479cfcd0f040d3b4",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "fa455fe4552f32b73bb87ccf5588c8c35bb4e2644f85ee86e1c6360eee7fd1eb",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked rollback: a passed precheck does not survive the canary",
+          "sha256": "e0f7ec1643b202a3af5f54c30d35778acbb8890a3e74e94b7c6ab76db8096433",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "capability-replacement-and-rollback.prose.1d336b7f2d8b",
+          "source": "chapters/capability-replacement-and-rollback.qmd:102",
+          "section": "Core Claim",
+          "sentence": "is a prospective change transaction that must say which state and effects may",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/capability-replacement-and-rollback.json`."
+          }
+        },
+        {
+          "candidate_id": "capability-replacement-and-rollback.prose.9efcbb2adb2d",
+          "source": "chapters/capability-replacement-and-rollback.qmd:154",
+          "section": "Worked rollback: a passed precheck does not survive the canary",
+          "sentence": "It demonstrates the chapter's state distinction—precheck pass,",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/capability-replacement-and-rollback.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "chapter_sha256": "4b773e65bc88d2f2fc87c874f76995d838d8bd8e3b1029fc9c522db5ee897714",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json",
+      "packet_sha256": "7031f46cb58c69cca9e6984b3eca82842b0fc1558c34674d94f6e411b1ced83e",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "98b638fbaf68d5d6a3a10b59ff1665bc5c8efe0ea79cd293c643a5262a9ffda8",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked proof-transport trace: one receipt, two consumers",
+          "sha256": "fb756daa5076f6aa1358be0a818d23e17d22ec40ccef4b0c492230c5e0b991fc",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "circle-calculus-and-proof-carrying-ai-contracts.prose.c6a584820fa5",
+          "source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd:85",
+          "section": "Core Claim",
+          "sentence": "The consumer must separately justify every",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+          }
+        },
+        {
+          "candidate_id": "circle-calculus-and-proof-carrying-ai-contracts.prose.85b920086a3c",
+          "source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd:152",
+          "section": "Worked proof-transport trace: one receipt, two consumers",
+          "sentence": "required theorem IDs, deterministic evidence fields, and four content",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+          }
+        },
+        {
+          "candidate_id": "circle-calculus-and-proof-carrying-ai-contracts.prose.54aedd30878e",
+          "source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd:155",
+          "section": "Worked proof-transport trace: one receipt, two consumers",
+          "sentence": "and an attempt to use the receipt for unsupported transfer authority.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof-transport trace: one receipt, two consumers` to existing reviewed atom `circle-calculus-and-proof-carrying-ai-contracts.invariant.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.009"
+          }
+        },
+        {
+          "candidate_id": "circle-calculus-and-proof-carrying-ai-contracts.prose.8429270649b2",
+          "source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd:165",
+          "section": "Worked proof-transport trace: one receipt, two consumers",
+          "sentence": "authority requested by the consumer, so proof transport cannot collapse into a",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "chapter_sha256": "f40478d5cd2e3cc3fc30ca1993cc3f426d8db2cb9a3f741fae429d8fe5e210b7",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/cognitive-compilation-and-semantic-ir.json",
+      "packet_sha256": "e297d35ad0e7e5949e936e674270c5001d309d576038119737dfcbc493a56ed7",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "2aeb3ca04741e66071cfb037a19e64e6303b15c8a636114ebfd6c5a9d2701d20",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked lowering: “publish the summary, expose no private paths”",
+          "sha256": "5f1174ba1f9ca3f8b6c26549e280033aff408031c3767214853aa1b8d07551ac",
+          "candidate_count": 4
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "cognitive-compilation-and-semantic-ir.prose.1bc3a11d3b77",
+          "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:62",
+          "section": "Human Reading Path",
+          "sentence": "The semantic compiler checks the target against both required output and preserved non-goals.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `cognitive-compilation-and-semantic-ir.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "cognitive-compilation-and-semantic-ir.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "cognitive-compilation-and-semantic-ir.prose.f7b9af9faa4e",
+          "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:161",
+          "section": "Worked lowering: “publish the summary, expose no private paths”",
+          "sentence": "An accepted plan requires a public summary and carries a non-goal: no local filesystem path may appear.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked lowering: “publish the summary, expose no private paths”` to existing reviewed atom `cognitive-compilation-and-semantic-ir.invariant.002`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "cognitive-compilation-and-semantic-ir.invariant.002"
+          }
+        },
+        {
+          "candidate_id": "cognitive-compilation-and-semantic-ir.prose.d83cbf49654b",
+          "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:161",
+          "section": "Worked lowering: “publish the summary, expose no private paths”",
+          "sentence": "The semantic IR assigns separate stable IDs to the required summary, source citations, privacy boundary, output format, and verifier.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked lowering: “publish the summary, expose no private paths”` to existing reviewed atom `cognitive-compilation-and-semantic-ir.mechanism.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "cognitive-compilation-and-semantic-ir.mechanism.015"
+          }
+        },
+        {
+          "candidate_id": "cognitive-compilation-and-semantic-ir.prose.9a638eda32ff",
+          "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:163",
+          "section": "Worked lowering: “publish the summary, expose no private paths”",
+          "sentence": "The compiler cannot simply delete the failed obligation or claim the user intended publication at any cost.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked lowering: “publish the summary, expose no private paths”` to existing reviewed atom `cognitive-compilation-and-semantic-ir.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "cognitive-compilation-and-semantic-ir.failure_mode.001"
+          }
+        },
+        {
+          "candidate_id": "cognitive-compilation-and-semantic-ir.prose.18d79461dbef",
+          "source": "chapters/cognitive-compilation-and-semantic-ir.qmd:163",
+          "section": "Worked lowering: “publish the summary, expose no private paths”",
+          "sentence": "It does not prove arbitrary semantic equivalence, compiler correctness, natural-language understanding, or independent evaluator competence.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "chapter_sha256": "e61c136b6b30f5be647d6b786e0e71ef38fa518b9bd997f0508c12aa5567b8c1",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/coil-attention-cyclic-memory-and-recurrence-contracts.json",
+      "packet_sha256": "3c7df801a4abbf04c2e188034cc82ec1766011d37a3316031c10314f8af9130a",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked stale-cache trace: the fluent answer that must be rejected",
+          "sha256": "5a14534dd1dd811593be266f11272e61a9031c8acfae03a836ddf494906311cd",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "coil-attention-cyclic-memory-and-recurrence-contracts.prose.8be0c9248063",
+          "source": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd:106",
+          "section": "Worked stale-cache trace: the fluent answer that must be rejected",
+          "sentence": "They show why a cache entry needs custody metadata even when its content looks plausible.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked stale-cache trace: the fluent answer that must be rejected` to existing reviewed atom `coil-attention-cyclic-memory-and-recurrence-contracts.mechanism.008`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "coil-attention-cyclic-memory-and-recurrence-contracts.mechanism.008"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "chapter_sha256": "7e4ea10fb6bc00acedabaf4664ed634aa2de59d27c1cd983cd8d86dacef37e86",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/coilra-multicoil-rope-and-cyclic-mixers.json",
+      "packet_sha256": "4ee744ae4036f96dd4d15502e0d7619b51c824b79004220f4b17a50af85ea18a",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "6316c69bc3405892605b72d0f9f4955beb2721b556b170b1a162b80f27d0a142",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "coilra-multicoil-rope-and-cyclic-mixers.prose.a521c140be35",
+          "source": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd:91",
+          "section": "Core Claim",
+          "sentence": "Require matched ordinary baselines, quality and cost measures,",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/coilra-multicoil-rope-and-cyclic-mixers.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "chapter_sha256": "ee17eda3d63895762f7682f8985c0d6fed21c12ebc3ef0fd4ec5560df43365a1",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/compact-generative-systems-and-residual-honesty.json",
+      "packet_sha256": "880432bf74e87cfdacfb91d8ab4ab846072d99c16aed77034fe78008e1449355",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Worked negative result: when the compact core made the packet larger",
+          "sha256": "ca368aa424b218f11292416ebb0fb1d95731f88a7f87dbb26afc53635a2b3acd",
+          "candidate_count": 4
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "compact-generative-systems-and-residual-honesty.prose.0c56205ce540",
+          "source": "chapters/compact-generative-systems-and-residual-honesty.qmd:172",
+          "section": "Worked negative result: when the compact core made the packet larger",
+          "sentence": "show that every learned compiler, hierarchical residual scheme, language,",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/compact-generative-systems-and-residual-honesty.json`."
+          }
+        },
+        {
+          "candidate_id": "compact-generative-systems-and-residual-honesty.prose.7f67f9bdf2d0",
+          "source": "chapters/compact-generative-systems-and-residual-honesty.qmd:173",
+          "section": "Worked negative result: when the compact core made the packet larger",
+          "sentence": "model family, or exact-handle design must fail.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked negative result: when the compact core made the packet larger` to existing reviewed atom `compact-generative-systems-and-residual-honesty.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "compact-generative-systems-and-residual-honesty.failure_mode.001"
+          }
+        },
+        {
+          "candidate_id": "compact-generative-systems-and-residual-honesty.prose.50e6e5cb60c8",
+          "source": "chapters/compact-generative-systems-and-residual-honesty.qmd:181",
+          "section": "Worked negative result: when the compact core made the packet larger",
+          "sentence": "require a competent replacement implementation and the same total-system",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/compact-generative-systems-and-residual-honesty.json`."
+          }
+        },
+        {
+          "candidate_id": "compact-generative-systems-and-residual-honesty.prose.a9f2ead5c88d",
+          "source": "chapters/compact-generative-systems-and-residual-honesty.qmd:185",
+          "section": "Worked negative result: when the compact core made the packet larger",
+          "sentence": "It records what failed, why the test cannot bear",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/compact-generative-systems-and-residual-honesty.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "constitutional-alignment-substrate",
+      "chapter_path": "chapters/constitutional-alignment-substrate.qmd",
+      "chapter_sha256": "006360bac71e8b7beefbcf94ac3f7e218ccd87613089054c235d80951fb26cbd",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/constitutional-alignment-substrate.json",
+      "packet_sha256": "927177c3aa0fc1e04648da954190aa645f85b3b7227cf59ebc1a754e9df3e38a",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "06e525897f5147e1df574a1f7bdcdbcfa57f9c2a870ab1f0f7615d3167d7240a",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked amendment: fewer predicates, broader power",
+          "sha256": "aea36f9caa98520691669be35378ac76b64e026546163def76a1701370c62f8d",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "constitutional-alignment-substrate.prose.3f9113b04942",
+          "source": "chapters/constitutional-alignment-substrate.qmd:172",
+          "section": "Core Claim",
+          "sentence": "Widening or deleting protected scope requires independent pre-effect review.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `constitutional-alignment-substrate.invariant.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "constitutional-alignment-substrate.invariant.009"
+          }
+        },
+        {
+          "candidate_id": "constitutional-alignment-substrate.prose.3cbc1f966a52",
+          "source": "chapters/constitutional-alignment-substrate.qmd:178",
+          "section": "Worked amendment: fewer predicates, broader power",
+          "sentence": "One collision shows that equal predicate counts cannot identify protected scope.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked amendment: fewer predicates, broader power` to existing reviewed atom `constitutional-alignment-substrate.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "constitutional-alignment-substrate.failure_mode.011"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "chapter_sha256": "680bb19fee68f19a6ecc68f79d6e6db0397b57fda8a9c216e5e5d078712f14b5",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/context-transactions-snapshots-mounts-and-taint.json",
+      "packet_sha256": "2a4a6787a3ac6805b6ebe1f0457add9e12e5cb97ca2a66a932279a657f0326f9",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked rollback: the context restores, the email remains sent",
+          "sha256": "3dc2a48e31535512c25ef415f745e6bb6582597b0020f77c880ec84dea98ad41",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.eccbdd42925f",
+          "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:147",
+          "section": "Worked rollback: the context restores, the email remains sent",
+          "sentence": "A later taint check reveals that one source lacked the required declassification.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked rollback: the context restores, the email remains sent` to existing reviewed atom `context-transactions-snapshots-mounts-and-taint.mechanism.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "context-transactions-snapshots-mounts-and-taint.mechanism.012"
+          }
+        },
+        {
+          "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.a16c78daaccf",
+          "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:149",
+          "section": "Worked rollback: the context restores, the email remains sent",
+          "sentence": "It can prove finite state ordering for authored records; it does not prove semantic truth, unknown-copy discovery, external compensation, artifact correctness, or effect reversal.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+      "chapter_sha256": "a1e22e7cb03d394d259fd50a74bb626111d2154903379201a3bb2a2d839df6d3",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/data-engines-continual-learning-and-unlearning.json",
+      "packet_sha256": "cc78aacd8b51a2496ed910c2d9dad3ed1faec32e65f4993b8e83371e275bb15b",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "b3dd0e202ddbd2905eb1aa4a5880f5f432e3dd27749e92cb8f24115d7f29a3b8",
+          "candidate_count": 3
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "8b92836a9f2e5375068cffc4cc02bf129a6cd53dc73f7fe27257856db84303ae",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "data-engines-continual-learning-and-unlearning.prose.4afec0525bfc",
+          "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:59",
+          "section": "Human Reading Path",
+          "sentence": "The chapter requires full-state recovery and keeps behavioral, causal, privacy, lineage, storage, backup, and descendant axes separate.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `data-engines-continual-learning-and-unlearning.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "data-engines-continual-learning-and-unlearning.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "data-engines-continual-learning-and-unlearning.prose.70038b708555",
+          "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:153",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** Restoring every declared training-state surface does not show",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/data-engines-continual-learning-and-unlearning.json`."
+          }
+        },
+        {
+          "candidate_id": "data-engines-continual-learning-and-unlearning.prose.296e1b5f2c13",
+          "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:154",
+          "section": "Core Claim",
+          "sentence": "that an update helped, and changing a deleted cohort's behavior does not show",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/data-engines-continual-learning-and-unlearning.json`."
+          }
+        },
+        {
+          "candidate_id": "data-engines-continual-learning-and-unlearning.prose.6b0874ca4c84",
+          "source": "chapters/data-engines-continual-learning-and-unlearning.qmd:161",
+          "section": "Core Claim",
+          "sentence": "axes that cannot promote one another.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `data-engines-continual-learning-and-unlearning.failure_mode.018`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "data-engines-continual-learning-and-unlearning.failure_mode.018"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+      "chapter_sha256": "582e2ab5d654b3637ca386e8424105f4ab9662305311ef1467a5c704d6476852",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/durable-semantic-memory-and-knowledge-lattices.json",
+      "packet_sha256": "dc7c3bd286fd01c6df8765afadf7358f2748d54a610fccf079c114916ecbd1d3",
+      "candidate_count": 3,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "ec6f0a5a699afb37e79cbeefd11f0a2971fbefa6458ef483b8f7f69700deeeee",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked revision: a lossy ontology migration reaches its consumers",
+          "sha256": "ea3621e05a8792d51dbeaaa7f29582db320dc2193654a96d43c9c92649bb3a28",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.aa20345d1bc9",
+          "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:45",
+          "section": "Human Reading Path",
+          "sentence": "The chapter requires ontology-loss records and invalidation of every known consumer that used the changed relation.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `durable-semantic-memory-and-knowledge-lattices.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.bda5d04567d3",
+          "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:129",
+          "section": "Worked revision: a lossy ontology migration reaches its consumers",
+          "sentence": "does not show that either stored claim is true or that retrieval is useful.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked revision: a lossy ontology migration reaches its consumers` to existing reviewed atom `durable-semantic-memory-and-knowledge-lattices.mechanism.005`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "durable-semantic-memory-and-knowledge-lattices.mechanism.005"
+          }
+        },
+        {
+          "candidate_id": "durable-semantic-memory-and-knowledge-lattices.prose.aecc90a12285",
+          "source": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd:130",
+          "section": "Worked revision: a lossy ontology migration reaches its consumers",
+          "sentence": "shows the narrower mechanism the chapter needs: history can remain available",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/durable-semantic-memory-and-knowledge-lattices.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "chapter_sha256": "b74936e6aad27d9368777a10dbf5889c08d36b269d69796a94317c2bcb879d92",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/executable-specifications-and-lean-proof-envelope.json",
+      "packet_sha256": "29ffcbe450e3a8ad3031396f11bfa90b932c6d5f26fd6fce54e96adf317b8d90",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "239fd218f2085851bfeda6cd37d7afaa3a1177fb3c7df53124aa63ef8ab357fe",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked proof envelope: the theorem holds, the adapter differs",
+          "sha256": "4545b7c5fa16915d8f39f046accfb81bd49ff016a54bb7fcd483c158597af333",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.d492a39d4b09",
+          "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:91",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A theorem proves exactly its proposition under its assumptions; it does not automatically prove that the implementation, environment, or world matches the formal model.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "executable-specifications-and-lean-proof-envelope.core"
+          }
+        },
+        {
+          "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.c410db92bf74",
+          "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:97",
+          "section": "Worked proof envelope: the theorem holds, the adapter differs",
+          "sentence": "A Lean theorem shows that an allowed transition never exceeds an encoded authority ceiling.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "executable-specifications-and-lean-proof-envelope.invariant.003"
+          }
+        },
+        {
+          "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.521bcc65943b",
+          "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:99",
+          "section": "Worked proof envelope: the theorem holds, the adapter differs",
+          "sentence": "Repair requires an explicit abstraction map, a conformance test against the actual adapter version, and a new consumer binding.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.invariant.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "executable-specifications-and-lean-proof-envelope.invariant.004"
+          }
+        },
+        {
+          "candidate_id": "executable-specifications-and-lean-proof-envelope.prose.440a76d75620",
+          "source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:99",
+          "section": "Worked proof envelope: the theorem holds, the adapter differs",
+          "sentence": "A green theorem build cannot supply those facts.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.failure_mode.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "executable-specifications-and-lean-proof-envelope.failure_mode.012"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "chapter_path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "chapter_sha256": "15d5fcd55bc11f4f83603a8945dbb39e4ff1859d49be20a72a3f985a0be685d7",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/failure-modes-of-ungoverned-intelligence.json",
+      "packet_sha256": "a1b762667ec34c3f3721d8ddacde912adbdf533aa5b5c9557d06f7e6497360a4",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "17ec8e28d9630365daf88afc426f8b4e7f720baff8c03da3ed8892529f01a8c1",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "failure-modes-of-ungoverned-intelligence.prose.2a1b1db25cf5",
+          "source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:61",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** A flat incident log can preserve timestamps and messages but cannot by itself identify the failed boundary, protected invariant, containment decision, residual owner, or recurrence route.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `failure-modes-of-ungoverned-intelligence.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "failure-modes-of-ungoverned-intelligence.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "chapter_path": "chapters/fast-generation-architectures.qmd",
+      "chapter_sha256": "543e00537c985b93ef30280792106a70ee733edf220478a99859a7d2bc3f6da8",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/fast-generation-architectures.json",
+      "packet_sha256": "05e89075961e52d505b90e8d5494042a5f18c615391aac1826c8355bc34c3513",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "855e8df66f27078a4e0922ea04e88513a218754ba1dd4d2f8a7aa4a6b8fb5a0d",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "fast-generation-architectures.prose.b7b35aa8d942",
+          "source": "chapters/fast-generation-architectures.qmd:88",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** The smallest fully resident model meeting the task contract is the strongest baseline, followed by unified-memory and ordinary offload paths; streaming must beat them after transfer, verification, recovery, and residual cost.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `fast-generation-architectures.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "fast-generation-architectures.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "chapter_path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+      "chapter_sha256": "f772e44714b0e6673f02438793979538c384d70c63186f36803d4ee62efaae58",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/governed-deliberation-and-test-time-scaling.json",
+      "packet_sha256": "fb2cd5c48891e022502988dcb735cb6319c83dade18c4440d30821dc13265f11",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "b41bc6bb2933e17b32fef2c964064ee6706b44885d7cff7369525aa4ac92464a",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "governed-deliberation-and-test-time-scaling.prose.6eb83c8ebe11",
+          "source": "chapters/governed-deliberation-and-test-time-scaling.qmd:55",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** Direct generation is the strongest simpler baseline and matched adaptive stopping at 12/32 while beating fixed deliberation's 11/32; more compute must earn admission after corruption, verification, and total cost.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `governed-deliberation-and-test-time-scaling.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "governed-deliberation-and-test-time-scaling.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "governed-objective-formation-value-learning-and-goal-integrity",
+      "chapter_path": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
+      "chapter_sha256": "068ea125b700a38573623aa61967f087a61ba7a40c4bc5236cbc7fdcf65c2432",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/governed-objective-formation-value-learning-and-goal-integrity.json",
+      "packet_sha256": "313a0f64e9b12e3d92cb6868c0cb2a2437944c228be63fd5efd80fe6c3512a2e",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "03ca2e2677954b65ae5411993ec53964b5ebcf80a7204f524d518ec350a8351f",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked objective lease: the proxy agrees, the authority does not",
+          "sha256": "99c54b6fadcdfcecd6bbbe2d777b57dfcb1fb78f9e3a1ed201dd0d0afab70b4a",
+          "candidate_count": 4
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.478a000fd0bb",
+          "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:92",
+          "section": "Core Claim",
+          "sentence": "The conversion must remain inspectable and reversible.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `governed-objective-formation-value-learning-and-goal-integrity.invariant.005`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.invariant.005"
+          }
+        },
+        {
+          "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.73ac2f6823e9",
+          "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:115",
+          "section": "Worked objective lease: the proxy agrees, the authority does not",
+          "sentence": "The local model proves that the shared prediction",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/governed-objective-formation-value-learning-and-goal-integrity.json`."
+          }
+        },
+        {
+          "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.fdcb75f57762",
+          "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:116",
+          "section": "Worked objective lease: the proxy agrees, the authority does not",
+          "sentence": "It likewise shows that an identical",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/governed-objective-formation-value-learning-and-goal-integrity.json`."
+          }
+        },
+        {
+          "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.291322a87e77",
+          "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:118",
+          "section": "Worked objective lease: the proxy agrees, the authority does not",
+          "sentence": "Consumer transfer, expiry, ontology drift, and authority drift each invalidate",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/governed-objective-formation-value-learning-and-goal-integrity.json`."
+          }
+        },
+        {
+          "candidate_id": "governed-objective-formation-value-learning-and-goal-integrity.prose.dd25e1518950",
+          "source": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd:121",
+          "section": "Worked objective lease: the proxy agrees, the authority does not",
+          "sentence": "show that the external world contains no forgotten descendant.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked objective lease: the proxy agrees, the authority does not` to existing reviewed atom `governed-objective-formation-value-learning-and-goal-integrity.mechanism.005`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "governed-objective-formation-value-learning-and-goal-integrity.mechanism.005"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "human-ai-communication-persuasion-and-epistemic-security",
+      "chapter_path": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+      "chapter_sha256": "a0d72b3497da6a70c8843cedd524a3e0cd14b6fdf70de2adccde026638d960b4",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/human-ai-communication-persuasion-and-epistemic-security.json",
+      "packet_sha256": "94f405bc235edd34b0035d2ea04ccfa2834d54b764e167f30d11c99f0f6a4831",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked delivery lease: the same sentence crosses its audience boundary",
+          "sha256": "26dbf986269cd3498c7ba2d97884d2c0651dcefe4e92c162d94959a7222bb1bc",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.a7dbeab6bc43",
+          "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:120",
+          "section": "Worked delivery lease: the same sentence crosses its audience boundary",
+          "sentence": "an exact repair or refusal disposition and proves that factuality, consent, a",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/human-ai-communication-persuasion-and-epistemic-security.json`."
+          }
+        },
+        {
+          "candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.ebf4681d0568",
+          "source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:121",
+          "section": "Worked delivery lease: the same sentence crosses its audience boundary",
+          "sentence": "persuasion score, and disclosure cannot reconstruct the missing influence",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/human-ai-communication-persuasion-and-epistemic-security.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "institutions-international-coordination-and-public-legitimacy",
+      "chapter_path": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+      "chapter_sha256": "f4b36e4ebefc710dd85c69cb58710a408199e883903e5d084d8ffa85f59eb5cb",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/institutions-international-coordination-and-public-legitimacy.json",
+      "packet_sha256": "e208858036a41addc07e223d92fd82d93ee3bf0f2a347127d8ae467a493dcc62",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "523a152499bec7fa3ed9c5adee25c98225e015c0d5f7137254bfa486642b7435",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked coordination packet: three affected publics are still missing",
+          "sha256": "de101701e1ebc8df5727c9e4d975beb601ec507ee13688023c50e4f403ae456e",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.9f99139b0bb8",
+          "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:101",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** An international agreement can be legally real yet operationally weak, and a consultation can be extensive yet unrepresentative; neither signal should impersonate the other.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `institutions-international-coordination-and-public-legitimacy.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "institutions-international-coordination-and-public-legitimacy.core"
+          }
+        },
+        {
+          "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.0c268d68fd00",
+          "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:107",
+          "section": "Worked coordination packet: three affected publics are still missing",
+          "sentence": "The packet cannot convert treaty signatures or implementation readiness into representative legitimacy.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked coordination packet: three affected publics are still missing` to existing reviewed atom `institutions-international-coordination-and-public-legitimacy.failure_mode.005`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "institutions-international-coordination-and-public-legitimacy.failure_mode.005"
+          }
+        },
+        {
+          "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.85884f979ce7",
+          "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:109",
+          "section": "Worked coordination packet: three affected publics are still missing",
+          "sentence": "A mandate bound to one jurisdiction cannot authorize another, and changes to jurisdiction, instrument, population, or protocol invalidate its receipt.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked coordination packet: three affected publics are still missing` to existing reviewed atom `institutions-international-coordination-and-public-legitimacy.failure_mode.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "institutions-international-coordination-and-public-legitimacy.failure_mode.012"
+          }
+        },
+        {
+          "candidate_id": "institutions-international-coordination-and-public-legitimacy.prose.13bb1b3dddc9",
+          "source": "chapters/institutions-international-coordination-and-public-legitimacy.qmd:109",
+          "section": "Worked coordination packet: three affected publics are still missing",
+          "sentence": "Two non-identifiability results show why participation counts do not determine representative standing and commitment signals do not determine effective enforcement.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked coordination packet: three affected publics are still missing` to existing reviewed atom `institutions-international-coordination-and-public-legitimacy.mechanism.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "institutions-international-coordination-and-public-legitimacy.mechanism.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "chapter_path": "chapters/integrated-reference-architecture.qmd",
+      "chapter_sha256": "89c250da836ec01e49355c2e70d88ddd17f716de98599d95b601b3ce6608f985",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json",
+      "packet_sha256": "35f977768f52e54a9255976a970a98df162b4d04db3315aaf0994e16274656ff",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Concrete integration failure: the patch that passed and still could not ship",
+          "sha256": "ebfd7a13cd776119ab6468eecf40370fb96e219246b4c086494462630b2bc82a",
+          "candidate_count": 4
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "bce4e18a64b6b165e2c15d60d3173b9ca48ee62b68d0c69def437e5369b7c002",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "integrated-reference-architecture.prose.4708d0dce23e",
+          "source": "chapters/integrated-reference-architecture.qmd:76",
+          "section": "Human Reading Path",
+          "sentence": "It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `integrated-reference-architecture.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "integrated-reference-architecture.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "integrated-reference-architecture.prose.4432ae092957",
+          "source": "chapters/integrated-reference-architecture.qmd:97",
+          "section": "Concrete integration failure: the patch that passed and still could not ship",
+          "sentence": "simple route treated that green signal as sufficient and released all nine;",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json`."
+          }
+        },
+        {
+          "candidate_id": "integrated-reference-architecture.prose.a000bd3bd371",
+          "source": "chapters/integrated-reference-architecture.qmd:111",
+          "section": "Concrete integration failure: the patch that passed and still could not ship",
+          "sentence": "must join around the same effect.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Concrete integration failure: the patch that passed and still could not ship` to existing reviewed atom `integrated-reference-architecture.invariant.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "integrated-reference-architecture.invariant.007"
+          }
+        },
+        {
+          "candidate_id": "integrated-reference-architecture.prose.90b8e8b06044",
+          "source": "chapters/integrated-reference-architecture.qmd:111",
+          "section": "Concrete integration failure: the patch that passed and still could not ship",
+          "sentence": "If the architecture cannot show that joined",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json`."
+          }
+        },
+        {
+          "candidate_id": "integrated-reference-architecture.prose.9de2c977105e",
+          "source": "chapters/integrated-reference-architecture.qmd:114",
+          "section": "Concrete integration failure: the patch that passed and still could not ship",
+          "sentence": "showpiece trace below shows the same ownership pattern one artifact at a time.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Concrete integration failure: the patch that passed and still could not ship` to existing reviewed atom `integrated-reference-architecture.mechanism.016`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "integrated-reference-architecture.mechanism.016"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "intent-to-execution-contracts",
+      "chapter_path": "chapters/intent-to-execution-contracts.qmd",
+      "chapter_sha256": "81ee499518de90830bbf1fd239a08ba1c958243aaedd1a7436df2f19f3d2da59",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/intent-to-execution-contracts.json",
+      "packet_sha256": "d367dc6759f5cb71b03cf3cd2938beb8ed32841f65787c9117511d55094ec2a7",
+      "candidate_count": 3,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "d4fd97caf3cfedd28769a5e30edde828a895a2f89fbd8913c481eed09edc9570",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked vertical trace: the output is right, the means are forbidden",
+          "sha256": "3855de2add542fc986cef83e5caa8771e08bc4c70062c645f64b803209328b0a",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "intent-to-execution-contracts.prose.2e2f6a75b1e6",
+          "source": "chapters/intent-to-execution-contracts.qmd:161",
+          "section": "Core Claim",
+          "sentence": "Any changed means, widened authority, lost non-goal, self-verification, or inexact rollback stops the lineage and requires clarification, re-contract, or quarantine.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `intent-to-execution-contracts.invariant.014`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "intent-to-execution-contracts.invariant.014"
+          }
+        },
+        {
+          "candidate_id": "intent-to-execution-contracts.prose.48f0552c7052",
+          "source": "chapters/intent-to-execution-contracts.qmd:167",
+          "section": "Worked vertical trace: the output is right, the means are forbidden",
+          "sentence": "If an adapter nevertheless sends data, later output quality cannot repair the authority and means breach.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked vertical trace: the output is right, the means are forbidden` to existing reviewed atom `intent-to-execution-contracts.failure_mode.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "intent-to-execution-contracts.failure_mode.012"
+          }
+        },
+        {
+          "candidate_id": "intent-to-execution-contracts.prose.8f34d2b850f9",
+          "source": "chapters/intent-to-execution-contracts.qmd:167",
+          "section": "Worked vertical trace: the output is right, the means are forbidden",
+          "sentence": "It checks exact payload and custody ordering across a ten-event delivery witness, but it trusts the authored semantics, authority, receipts, observations, and rollback fields; it does not prove parser correctness, semantic equivalence, tool safety, or effect truth.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+      "chapter_sha256": "f301146d98d0e0fa4d8162f6c04e49fb5b50269fab9d672eced64c29fb0fcc9c",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/inter-stack-protocols-identity-and-economic-exchange.json",
+      "packet_sha256": "1aaac1e40fbd098b6183c085b84440c231b3eb9cb914a351dfdddc0ffa211797",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "d6e5e07b4f0c583c5b86d3e49424fce663488b090a8048e74381345a48076fa9",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.fdfbc3a78a99",
+          "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:61",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** A signed request-response message is the simpler baseline, but it cannot by itself preserve semantic facets, local effect authority, reservation versus settlement, revocation races, dispute, and residual custody.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `inter-stack-protocols-identity-and-economic-exchange.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "inter-stack-protocols-identity-and-economic-exchange.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "labor-os-and-typed-jobs",
+      "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
+      "chapter_sha256": "13fb0f7457cf32d38b52071b87fbefe720229c3a5f25759b3635a58c635088a0",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/labor-os-and-typed-jobs.json",
+      "packet_sha256": "5250fb1584648148a3c8c8d9f93347e832dea600681afe29937547df7549e02d",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "c3382ddbdb35f29be10c9820095f25f19f9c131b9c792cc0252187a55597e091",
+          "candidate_count": 2
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "6ddae4c764a00aabd123a9fd45a4b2c89d12b4ba0642401f83ed1e57700536c0",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked job lifecycle: output exists, acknowledgment does not",
+          "sha256": "9c36e68377d6f980c4aeac14fefe0e8b5a970d9e136a33c548e40bb33b5a5fb3",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "labor-os-and-typed-jobs.prose.4338f3b2ca77",
+          "source": "chapters/labor-os-and-typed-jobs.qmd:62",
+          "section": "Human Reading Path",
+          "sentence": "The typed-job path requires identity, permission, artifact, verification, delivery, residual, and acknowledgment closure.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `labor-os-and-typed-jobs.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "labor-os-and-typed-jobs.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "labor-os-and-typed-jobs.prose.32b085f4eea2",
+          "source": "chapters/labor-os-and-typed-jobs.qmd:107",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A job is not complete because a worker stopped running; completion requires the right contract, authority, artifact, verification, receipts, residuals, and acknowledgment to close together.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `labor-os-and-typed-jobs.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "labor-os-and-typed-jobs.core"
+          }
+        },
+        {
+          "candidate_id": "labor-os-and-typed-jobs.prose.d51fe44bda84",
+          "source": "chapters/labor-os-and-typed-jobs.qmd:109",
+          "section": "Core Claim",
+          "sentence": "Refuse execution or closure when any required identity or receipt is missing, and make terminal states absorbing.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `labor-os-and-typed-jobs.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "labor-os-and-typed-jobs.failure_mode.001"
+          }
+        },
+        {
+          "candidate_id": "labor-os-and-typed-jobs.prose.c1d614f27fd0",
+          "source": "chapters/labor-os-and-typed-jobs.qmd:115",
+          "section": "Worked job lifecycle: output exists, acknowledgment does not",
+          "sentence": "A retry with the same idempotency key cannot create a second logical completion, and cancellation or mutation after closure is rejected.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.failure_mode.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "labor-os-and-typed-jobs.failure_mode.003"
+          }
+        },
+        {
+          "candidate_id": "labor-os-and-typed-jobs.prose.221fba3520d4",
+          "source": "chapters/labor-os-and-typed-jobs.qmd:115",
+          "section": "Worked job lifecycle: output exists, acknowledgment does not",
+          "sentence": "These finite records do not prove scheduler behavior, useful work, effect truth, recovery, or deployed idempotence.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.mechanism.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "labor-os-and-typed-jobs.mechanism.011"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "learning-theory-generalization-and-scaling-science",
+      "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
+      "chapter_sha256": "502f22ee4b8ffdd1292f185d87b4a1bbc109e3474fef4d57ee88f509f9bdbc07",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/learning-theory-generalization-and-scaling-science.json",
+      "packet_sha256": "5f4b926e0d41a2f62e3be0d766eb77ca5187ff1d00f363617bc030ef11175fa2",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "d9c06a8c1404071148387c60919ad62bcffbf11c12b489735cbed5821a967a3e",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked scaling forecast: two models enter, the holdout stays closed",
+          "sha256": "26ae08db8db4cbc167f6a25f8ebbe8788dc9f0de0bfe0f277626bb19486c67e2",
+          "candidate_count": 4
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "learning-theory-generalization-and-scaling-science.prose.41fc32b1bbaf",
+          "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:100",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A smooth curve through observed scales is a retrospective description until it predicts a frozen, genuinely held-out scale and survives plausible breakpoint alternatives.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `learning-theory-generalization-and-scaling-science.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "learning-theory-generalization-and-scaling-science.core"
+          }
+        },
+        {
+          "candidate_id": "learning-theory-generalization-and-scaling-science.prose.411403584146",
+          "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:106",
+          "section": "Worked scaling forecast: two models enter, the holdout stays closed",
+          "sentence": "Both are preregistered and both must be scored on the held-out scale; attempts `11`, `12`, and `13` remain in the denominator even if one run failed.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked scaling forecast: two models enter, the holdout stays closed` to existing reviewed atom `learning-theory-generalization-and-scaling-science.failure_mode.014`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "learning-theory-generalization-and-scaling-science.failure_mode.014"
+          }
+        },
+        {
+          "candidate_id": "learning-theory-generalization-and-scaling-science.prose.2d7021d8933b",
+          "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:108",
+          "section": "Worked scaling forecast: two models enter, the holdout stays closed",
+          "sentence": "If the final report shows only the winning curve, changes the metric after inspection, or applies the receipt to a new architecture or compute regime, the forecast is not prospective evidence.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked scaling forecast: two models enter, the holdout stays closed` to existing reviewed atom `learning-theory-generalization-and-scaling-science.mechanism.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+          }
+        },
+        {
+          "candidate_id": "learning-theory-generalization-and-scaling-science.prose.d1d6b79acab4",
+          "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:108",
+          "section": "Worked scaling forecast: two models enter, the holdout stays closed",
+          "sentence": "It also shows that retrospective fit does not identify prospective coverage and that a threshold jump does not identify a mechanism change.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked scaling forecast: two models enter, the holdout stays closed` to existing reviewed atom `learning-theory-generalization-and-scaling-science.mechanism.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "learning-theory-generalization-and-scaling-science.mechanism.003"
+          }
+        },
+        {
+          "candidate_id": "learning-theory-generalization-and-scaling-science.prose.7a2d244e3eab",
+          "source": "chapters/learning-theory-generalization-and-scaling-science.qmd:108",
+          "section": "Worked scaling forecast: two models enter, the holdout stays closed",
+          "sentence": "The result governs claim custody; it does not establish generalization, emergence, transfer, future scaling accuracy, or safety.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "chapter_path": "chapters/living-book-methodology.qmd",
+      "chapter_sha256": "e3c7ac089842e87243b4757ab9fe5b971a0bbeec7c30006e7fe25dee26e86b53",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/living-book-methodology.json",
+      "packet_sha256": "52847dc92fe7b6797f2dbc0c87966573daa7b3fed1ef360ca51fcb6baf7598de",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "68f0070540207d3525c4ebf63ad66b73ab2b7e7ab26107419f0c86df3bc353fc",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked structural edit: insert a chapter without renaming its neighbors",
+          "sha256": "42b3f01565fcd76fb1150b5aa5e0c0f7c51dce4bb15fcf96d594c33bd9fb0f3e",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "living-book-methodology.prose.bff4e0ff17b2",
+          "source": "chapters/living-book-methodology.qmd:103",
+          "section": "Core Claim",
+          "sentence": "A green build is necessary but never sufficient for editorial acceptance or public truth.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `living-book-methodology.mechanism.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "living-book-methodology.mechanism.012"
+          }
+        },
+        {
+          "candidate_id": "living-book-methodology.prose.737579a4bf1a",
+          "source": "chapters/living-book-methodology.qmd:107",
+          "section": "Worked structural edit: insert a chapter without renaming its neighbors",
+          "sentence": "A thin summary containing only the new manifest digest and chapter count cannot decide whether all required editorial, render, rights, and release gates passed.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked structural edit: insert a chapter without renaming its neighbors` to existing reviewed atom `living-book-methodology.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "living-book-methodology.failure_mode.007"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "chapter_path": "chapters/mathematical-and-search-substrates.qmd",
+      "chapter_sha256": "5f6db978795df8ca17934a2e20f5dfdd729ea2e0f40279799ad4236d6ba1501f",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/mathematical-and-search-substrates.json",
+      "packet_sha256": "f8bc0900ea1c51582f027d55e17afb010d88683340a0c54d18ad2b26f893772e",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked adoption trace: one coil, four honest dispositions",
+          "sha256": "f7bfe9b4173e9df75b616a13417818979aca79e94068d0f4756ccd55f72dc6f3",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "mathematical-and-search-substrates.prose.5e40260668f8",
+          "source": "chapters/mathematical-and-search-substrates.qmd:160",
+          "section": "Worked adoption trace: one coil, four honest dispositions",
+          "sentence": "The trace therefore shows how the stack can",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/mathematical-and-search-substrates.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "chapter_sha256": "cf61c6ed3ee1779369f04d56daffcbd1e71a98409e013501336280c4fb86f2ab",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/open-research-agenda-and-bibliography-plan.json",
+      "packet_sha256": "00798b00b875cd7cea135b0dae86393201ac7fce649805f5cd3b20397b0db46a",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "a81a5a78b4a6f04c3761820bd69819bb5693b994dd872204f01353a0030302ae",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "open-research-agenda-and-bibliography-plan.prose.2918ac5d00f9",
+          "source": "chapters/open-research-agenda-and-bibliography-plan.qmd:110",
+          "section": "Core Claim",
+          "sentence": "mapping, deduplication decision, required work, blockers, and closure condition",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/open-research-agenda-and-bibliography-plan.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "chapter_sha256": "428ca1d393481edfaed2293024ec7678027c0a0339b42f75566e8c73f6fd44b7",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/personal-compute-hives-and-federated-edge-intelligence.json",
+      "packet_sha256": "d8f5cfd269de7ffca41c48585298546a9299a9f06c445a264d3e13a7b7f6835a",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked hive placement: the three-minute rented GPU loses",
+          "sha256": "7674e1685e3232235849441ba83e66bf212c0099b0de93234ac99fab2ef179ac",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "personal-compute-hives-and-federated-edge-intelligence.prose.423600a03319",
+          "source": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:147",
+          "section": "Worked hive placement: the three-minute rented GPU loses",
+          "sentence": "and requires approval from the owner's phone.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked hive placement: the three-minute rented GPU loses` to existing reviewed atom `personal-compute-hives-and-federated-edge-intelligence.invariant.005`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.invariant.005"
+          }
+        },
+        {
+          "candidate_id": "personal-compute-hives-and-federated-edge-intelligence.prose.d4db43318eea",
+          "source": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:149",
+          "section": "Worked hive placement: the three-minute rented GPU loses",
+          "sentence": "synthetic data, offers public sandbox egress, and cannot hold a secret handle.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked hive placement: the three-minute rented GPU loses` to existing reviewed atom `personal-compute-hives-and-federated-edge-intelligence.failure_mode.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.failure_mode.003"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "chapter_path": "chapters/planning-as-a-control-layer.qmd",
+      "chapter_sha256": "a5bc0119e074205c3918b8d246ea183c65b4036072b1181d536fc343341ab6ad",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/planning-as-a-control-layer.json",
+      "packet_sha256": "9e80e01ceff6242493960abaa92effb1f09ff0a932e92f5e35100fa3a3a0ab16",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked replan: a dependency fails after dispatch",
+          "sha256": "f73bc101189f626a9dbfe639b601d62dcdf118515cceacba7f9b930082df79f0",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "planning-as-a-control-layer.prose.2e82fb22bb7d",
+          "source": "chapters/planning-as-a-control-layer.qmd:146",
+          "section": "Worked replan: a dependency fails after dispatch",
+          "sentence": "A naive planner retries unrelated commands or rewrites the goal as “local build complete.” The control layer instead marks the deploy node blocked, prevents the public-route check from pretending it ran, and records the missing credential as a residual owned outside the planner.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "planning-as-a-control-layer.failure_mode.011"
+          }
+        },
+        {
+          "candidate_id": "planning-as-a-control-layer.prose.2dbc440e0ce9",
+          "source": "chapters/planning-as-a-control-layer.qmd:148",
+          "section": "Worked replan: a dependency fails after dispatch",
+          "sentence": "This demonstrates finite ordering and custody; it does not show that the chosen decomposition or scheduler is optimal.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.mechanism.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "planning-as-a-control-layer.mechanism.007"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "chapter_sha256": "71c37bee555c59b9088ee6d608170e0d51a8f28676d0ef0c7b487e33dad5c430",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/policy-optimization-and-learning-from-feedback.json",
+      "packet_sha256": "db986dd36347361cba8d73d9fc34fba7b871cb670240463357a755e84123f80f",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "a26ec0cfbdee7d931d9760811889c42b0f71dd032a55144a7a19d61ed27efdef",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked policy update: reward rises while the target falls",
+          "sha256": "3c7308a43ed399d702f2d73929f8562504a623dc19eed026f8a83d92dd0eea85",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "policy-optimization-and-learning-from-feedback.prose.b98e3afa6257",
+          "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:126",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** Reward is a training signal, not evidence that the target behavior improved; the proxy and the target must be evaluated separately.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `policy-optimization-and-learning-from-feedback.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+          }
+        },
+        {
+          "candidate_id": "policy-optimization-and-learning-from-feedback.prose.07ef446566ce",
+          "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:132",
+          "section": "Worked policy update: reward rises while the target falls",
+          "sentence": "A router policy is trained to reduce latency.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.008`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.008"
+          }
+        },
+        {
+          "candidate_id": "policy-optimization-and-learning-from-feedback.prose.1477c5482650",
+          "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:132",
+          "section": "Worked policy update: reward rises while the target falls",
+          "sentence": "Its scalar reward improves because it learns to skip expensive verification.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.004"
+          }
+        },
+        {
+          "candidate_id": "policy-optimization-and-learning-from-feedback.prose.024211827203",
+          "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:132",
+          "section": "Worked policy update: reward rises while the target falls",
+          "sentence": "On a frozen target evaluation, however, unsupported releases increase.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.004"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "chapter_sha256": "9b19de34bf266e566cd02c7d70c8627bafb028f50b004580a780fff60793c829",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/procedural-memory-and-cognitive-loop-closure.json",
+      "packet_sha256": "0f1c548d2648f1a7ffc8ba7f2c6459e001a34dba94f4998ea19ab79d77d3a1fb",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked loop closure: the shortcut fails outside its precondition",
+          "sha256": "625169758d90618bedb7fc1898831f7f18b71ffecfdb0b7e34f27b6ecb4af1c3",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "procedural-memory-and-cognitive-loop-closure.prose.db61176df08e",
+          "source": "chapters/procedural-memory-and-cognitive-loop-closure.qmd:112",
+          "section": "Worked loop closure: the shortcut fails outside its precondition",
+          "sentence": "The finite route checks distinguish routable, quarantined, and retired procedural records; they do not establish that the extracted procedure is complete, useful on natural workloads, secure, or better than fresh reasoning.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked loop closure: the shortcut fails outside its precondition` to existing reviewed atom `procedural-memory-and-cognitive-loop-closure.mechanism.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "procedural-memory-and-cognitive-loop-closure.mechanism.015"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "chapter_sha256": "8ba383e3ba2b37a32a30a2e6fe0ae3bc3d374dace00b25b12c52c00dc83a8a2b",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/project-theseus-as-report-first-implementation-reference.json",
+      "packet_sha256": "d03c38176f24ff394191a12e62e2384eae68768078a9c697e7878e9b523fd04e",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "1532e1233089b01bcd46c7bad844880a8c270c7fa6583b5b12759e839bc5d2bd",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "project-theseus-as-report-first-implementation-reference.prose.9df1f9ba8a4f",
+          "source": "chapters/project-theseus-as-report-first-implementation-reference.qmd:151",
+          "section": "Core Claim",
+          "sentence": "dashboard or GREEN gate can point to that packet; it cannot inherit the",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/project-theseus-as-report-first-implementation-reference.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "chapter_path": "chapters/prototype-roadmap.qmd",
+      "chapter_sha256": "16e5a06fa20df377c2d9645251ff2ac65dbd6ee825a2a3fc61ff32ca4f4054be",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/prototype-roadmap.json",
+      "packet_sha256": "7667c028140c5f475c71da100cc7762f9f809c93b1adb1e27c39a0641f6874ec",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "a05f678ec63ca19bed3a7091cd559df00b4984cb2c15588853d580e5127113bb",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked phase gate: useful research is not an integrated milestone",
+          "sha256": "6862d9a2c9e5a2da35c6136702102d4b3ab6325d5e257163e02c3a242a44380d",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "prototype-roadmap.prose.99593ced0b08",
+          "source": "chapters/prototype-roadmap.qmd:117",
+          "section": "Core Claim",
+          "sentence": "**Operational rule.** Bind every phase to typed predecessors, required",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/prototype-roadmap.json`."
+          }
+        },
+        {
+          "candidate_id": "prototype-roadmap.prose.00e653934231",
+          "source": "chapters/prototype-roadmap.qmd:152",
+          "section": "Worked phase gate: useful research is not an integrated milestone",
+          "sentence": "its required dependency, artifact, evaluator, gate result, rollback, and",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/prototype-roadmap.json`."
+          }
+        },
+        {
+          "candidate_id": "prototype-roadmap.prose.5e6d539ddd86",
+          "source": "chapters/prototype-roadmap.qmd:162",
+          "section": "Worked phase gate: useful research is not an integrated milestone",
+          "sentence": "558 absorbing transitions, and shows that dependency count plus receipt count",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/prototype-roadmap.json`."
+          }
+        },
+        {
+          "candidate_id": "prototype-roadmap.prose.6267b30f477b",
+          "source": "chapters/prototype-roadmap.qmd:163",
+          "section": "Worked phase gate: useful research is not an integrated milestone",
+          "sentence": "cannot exactly classify integration when the underlying dependency meaning is",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/prototype-roadmap.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "chapter_sha256": "256f3b75dc3715bdd70c263bb6829dd785065a04808b964204ef261425ad4f6b",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/rankfold-neuralfold-and-artifact-compression.json",
+      "packet_sha256": "f4de17c4f8eb744d01d4b4c43f99f05f4c703ec36427eb3951518cce2cbe53fa",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "b7bb2a79d027a6822dfb691b0e9f7e194bb83c2e1d790610bd4c413ecea336e4",
+          "candidate_count": 2
+        },
+        {
+          "heading": "Worked compression lease: exact replay, failed random access",
+          "sha256": "4d206967f89ec0fc3a5b1ab11d9200eee113dde77e64739de64e449c7986f099",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.6529b71c5183",
+          "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:92",
+          "section": "Core Claim",
+          "sentence": "**Operational rule.** Preserve the full source, count all bytes and operations, bind decoder and platform, test the actual access pattern and required probes, and maintain fallback.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.invariant.002`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.002"
+          }
+        },
+        {
+          "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.c000d6ab6728",
+          "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:92",
+          "section": "Core Claim",
+          "sentence": "Admit only the exact consumer use that passes; reconstruction success never transfers source authority.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.003"
+          }
+        },
+        {
+          "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.c0e2458c7966",
+          "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:96",
+          "section": "Worked compression lease: exact replay, failed random access",
+          "sentence": "The compressed representation requires decoding a long prefix for each lookup, exceeding the consumer’s latency budget.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked compression lease: exact replay, failed random access` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.003"
+          }
+        },
+        {
+          "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.adeb00e62a65",
+          "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:98",
+          "section": "Worked compression lease: exact replay, failed random access",
+          "sentence": "A later decoder or index may qualify the random-access route, but it must receive a new platform- and time-specific lease.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked compression lease: exact replay, failed random access` to existing reviewed atom `rankfold-neuralfold-and-artifact-compression.invariant.002`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "rankfold-neuralfold-and-artifact-compression.invariant.002"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "chapter_sha256": "a7f9a226379a3bf0274dd535d8c9b8d6ea2565732ff4337c48b6b672015bafe0",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/readiness-gates-residual-escrow-and-quarantine.json",
+      "packet_sha256": "cd24a19fc391622436d38087a33e71c920dcb0974f798c788d24e2b8324540d9",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked stale gate: the model changed after qualification",
+          "sha256": "e8e9abc92b114cff8ed559cd8797f0f6cd2da7cc93f9656ed95bc58a46d22fdb",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "readiness-gates-residual-escrow-and-quarantine.prose.3dfb75dbc2c7",
+          "source": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:104",
+          "section": "Worked stale gate: the model changed after qualification",
+          "sentence": "Model version `v7` passes its required gates for a read-only coding workload and receives a bounded ordinary-use lease.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked stale gate: the model changed after qualification` to existing reviewed atom `readiness-gates-residual-escrow-and-quarantine.mechanism.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "readiness-gates-residual-escrow-and-quarantine.mechanism.012"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "chapter_path": "chapters/recursive-self-improvement-boundaries.qmd",
+      "chapter_sha256": "e8ef9fa8a582c1fe8fd0187c980f4862e327d69be0de57b58cf6418e63d7fdf6",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/recursive-self-improvement-boundaries.json",
+      "packet_sha256": "450756e38364dde6dfa3deae0fa356a763dd06563a3289dc970dbfdb4b917413",
+      "candidate_count": 3,
+      "sections": [
+        {
+          "heading": "Worked self-change: the canary passes, the monitor is still open",
+          "sha256": "5d463b4f460a7a09fa79882b9698e1d5bca20573df6910c63ac4fc2231559662",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "recursive-self-improvement-boundaries.prose.4dbfe91d0794",
+          "source": "chapters/recursive-self-improvement-boundaries.qmd:155",
+          "section": "Worked self-change: the canary passes, the monitor is still open",
+          "sentence": "The governed lifecycle keeps the candidate scoped: it cannot approve itself, widen its own authority, close the monitor, or rewrite protected invariants.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked self-change: the canary passes, the monitor is still open` to existing reviewed atom `recursive-self-improvement-boundaries.failure_mode.002`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "recursive-self-improvement-boundaries.failure_mode.002"
+          }
+        },
+        {
+          "candidate_id": "recursive-self-improvement-boundaries.prose.f67405e907c2",
+          "source": "chapters/recursive-self-improvement-boundaries.qmd:157",
+          "section": "Worked self-change: the canary passes, the monitor is still open",
+          "sentence": "If the window closes cleanly, promotion still requires the separate authority path and terminal residual assignment.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked self-change: the canary passes, the monitor is still open` to existing reviewed atom `recursive-self-improvement-boundaries.invariant.002`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "recursive-self-improvement-boundaries.invariant.002"
+          }
+        },
+        {
+          "candidate_id": "recursive-self-improvement-boundaries.prose.9f41c9f78b50",
+          "source": "chapters/recursive-self-improvement-boundaries.qmd:157",
+          "section": "Worked self-change: the canary passes, the monitor is still open",
+          "sentence": "It demonstrates finite governance custody, not useful self-improvement, evaluator competence, effect-complete rollback, architectural progress, or a recursive campaign.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked self-change: the canary passes, the monitor is still open` to existing reviewed atom `recursive-self-improvement-boundaries.mechanism.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "recursive-self-improvement-boundaries.mechanism.004"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
+      "chapter_sha256": "bdd5b3e3e2bad8d5b098dc1e18116fe6776be2ede095915aaf1ab27272106f96",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/resource-economics-and-token-budgets.json",
+      "packet_sha256": "1e6df5d4163ce2b066cd6954166868ac65e9d70003838670bf67136a46ab7707",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Worked cost comparison: the cheapest route is not the economical route",
+          "sha256": "259e8e57039bf09eb5e97e2caf203d0a3d92fe58c7b27f69961c94303bbb8f92",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "resource-economics-and-token-budgets.prose.c46a10190db4",
+          "source": "chapters/resource-economics-and-token-budgets.qmd:128",
+          "section": "Worked cost comparison: the cheapest route is not the economical route",
+          "sentence": "`cheap_brittle` outcome, and cannot become a promotion candidate.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked cost comparison: the cheapest route is not the economical route` to existing reviewed atom `resource-economics-and-token-budgets.failure_mode.018`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "resource-economics-and-token-budgets.failure_mode.018"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
+      "chapter_sha256": "c46b81c1c963d5fd0e6fd3fb7c4ddbdcf6f7141416296a81905c2d20fb04ada6",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/routing-heads-and-specialist-cores.json",
+      "packet_sha256": "d4b49fccbb7cc657ea4cf612acc294e3d29d3efcec078e6f5e6d7e4f6acbef1b",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "ad8bb55df0f14a5e4e92351a6f4b702cff02c52cb484dd2823c0419bbdc304b2",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "aa6be80df57908b5184cd66905d19c60beac34dbe6cda8db7ebb011915a0b9e4",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked ambiguous route: “remove the old release”",
+          "sha256": "fbcf748d75db19f650ef2b6f465d9cf688fde140aac61f07735b4fa8971fbeb4",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "routing-heads-and-specialist-cores.prose.6c75a53f8125",
+          "source": "chapters/routing-heads-and-specialist-cores.qmd:87",
+          "section": "Human Reading Path",
+          "sentence": "The governed router abstains because local deletion and public withdrawal require different authority.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `routing-heads-and-specialist-cores.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "routing-heads-and-specialist-cores.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "routing-heads-and-specialist-cores.prose.82e8f074a9ed",
+          "source": "chapters/routing-heads-and-specialist-cores.qmd:120",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A router should choose the least capable qualified route that meets the task, and it should abstain when ambiguity makes specialist selection unsafe.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `routing-heads-and-specialist-cores.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "routing-heads-and-specialist-cores.core"
+          }
+        },
+        {
+          "candidate_id": "routing-heads-and-specialist-cores.prose.4e96e553fc80",
+          "source": "chapters/routing-heads-and-specialist-cores.qmd:126",
+          "section": "Worked ambiguous route: “remove the old release”",
+          "sentence": "The governed router sees that the candidates require different authority and effects, so it abstains and asks for the target.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked ambiguous route: “remove the old release”` to existing reviewed atom `routing-heads-and-specialist-cores.invariant.014`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "routing-heads-and-specialist-cores.invariant.014"
+          }
+        },
+        {
+          "candidate_id": "routing-heads-and-specialist-cores.prose.b8390f106aa5",
+          "source": "chapters/routing-heads-and-specialist-cores.qmd:128",
+          "section": "Worked ambiguous route: “remove the old release”",
+          "sentence": "If it is “withdraw the public binary,” a separate release workflow and approval are required.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked ambiguous route: “remove the old release”` to existing reviewed atom `routing-heads-and-specialist-cores.mechanism.018`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "routing-heads-and-specialist-cores.mechanism.018"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "chapter_sha256": "8e11c03763b44ffc8269688585a0ce1a4fd8ea5d2ae25d732d10820b82903d80",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/runtime-adapters-tool-permissions-and-human-approval.json",
+      "packet_sha256": "4cf5fb74710817ffd4028b0145b668b14e1cacc0fc6c37a0dfb424168f342d46",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "be4d50de24cd2024ab73757f381169d91b0ee78557d3abc2d8f4f09e1dac629e",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "runtime-adapters-tool-permissions-and-human-approval.prose.b294a60db7a5",
+          "source": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:129",
+          "section": "Core Claim",
+          "sentence": "After dispatch, independently observe the effect; revocation blocks later events and rollback must name what it restored and what remains.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `runtime-adapters-tool-permissions-and-human-approval.failure_mode.016`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "runtime-adapters-tool-permissions-and-human-approval.failure_mode.016"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "chapter_path": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+      "chapter_sha256": "1b8155f6bf7683ee6f5a513623a1a6e9c9d6245a3f55f84d79c51ff20e75f9bf",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/scalable-oversight-and-adversarial-ai-control.json",
+      "packet_sha256": "0b34fc59f7496c2ba8d61aeb5b71136195c11155961596caeaa8432dc4ec1a8b",
+      "candidate_count": 1,
+      "sections": [
+        {
+          "heading": "Human Reading Path",
+          "sha256": "96fc5515d76ce1ac0d9c18c2a4070552f087f2e65d6591980ecab87b67b7cff4",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "scalable-oversight-and-adversarial-ai-control.prose.070ba5af5ada",
+          "source": "chapters/scalable-oversight-and-adversarial-ai-control.qmd:53",
+          "section": "Human Reading Path",
+          "sentence": "**Concrete lens.** The direct-review baseline is a human reading the complete frozen report without model assistance; the assisted protocol earns credit only if it improves omission detection or quarantine under the same evidence and cost envelope.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `scalable-oversight-and-adversarial-ai-control.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "scalable-oversight-and-adversarial-ai-control.insufficiency.001"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "scientific-discovery-and-experimental-governance",
+      "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
+      "chapter_sha256": "3621fa84ade92b0c18773d636d133b51cfdde887d841f2d8d8a5d77ef2b17dfb",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/scientific-discovery-and-experimental-governance.json",
+      "packet_sha256": "61ba9c1655d133930421b97523086b8f08d872101521767d06598e3b24ad86f8",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "7d4ff13fc9f6a77636907580c34458ef17a454769ef9b236345d01eb774d10d0",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked attempt ledger: positive, null, and inconclusive stay together",
+          "sha256": "f6a9ada3e73654e144e2049a22bd1ba0d484de9cc6541bd8e1aad83290cf416b",
+          "candidate_count": 1
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "scientific-discovery-and-experimental-governance.prose.b4436b3b1b6b",
+          "source": "chapters/scientific-discovery-and-experimental-governance.qmd:101",
+          "section": "Core Claim",
+          "sentence": "require independently qualified replication; omitted attempts or outcome",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/scientific-discovery-and-experimental-governance.json`."
+          }
+        },
+        {
+          "candidate_id": "scientific-discovery-and-experimental-governance.prose.8cdf13068d57",
+          "source": "chapters/scientific-discovery-and-experimental-governance.qmd:123",
+          "section": "Worked attempt ledger: positive, null, and inconclusive stay together",
+          "sentence": "It demonstrates the custody condition that lets a later",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/scientific-discovery-and-experimental-governance.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "chapter_sha256": "f0f29ff96a5f546361a35db50f958e1705624dc6b808851680e094933bac2012",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/spinoza-verification-and-proof-carrying-claims.json",
+      "packet_sha256": "e320774f898085181c531564918448d1f43eba7a9f03e69dd8ce55a19e1a6286",
+      "candidate_count": 6,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "88df392b2a2efa7f479d6ec784c836a4798fa65500a99b3e6319604824c95b9d",
+          "candidate_count": 3
+        },
+        {
+          "heading": "Worked tribunal reuse: the evidence changed after acceptance",
+          "sha256": "dec63cd7d49fd16f5f1fcb61e3cac680ee478e01400667b64c78301087a332c4",
+          "candidate_count": 3
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.25f847f5c4b3",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:156",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** A passing verifier result belongs to one interpretation, evidence set, artifact version, and claim scope; changed evidence or unresolved dissent prevents silent reuse.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "spinoza-verification-and-proof-carrying-claims.core"
+          }
+        },
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.062e31add550",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:158",
+          "section": "Core Claim",
+          "sentence": "**Operational rule.** Bind every verdict to exact claim semantics, evidence digest, verifier and reviewer identities, probes, failed attempts, dissent, constraints, required actions, expiry, and ledger effect.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.invariant.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "spinoza-verification-and-proof-carrying-claims.invariant.015"
+          }
+        },
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.1afb28753974",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:158",
+          "section": "Core Claim",
+          "sentence": "Negative results cannot promote, and changed evidence requires a new review rather than editing the old verdict.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.failure_mode.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "spinoza-verification-and-proof-carrying-claims.failure_mode.009"
+          }
+        },
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.c6ec285f337b",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:164",
+          "section": "Worked tribunal reuse: the evidence changed after acceptance",
+          "sentence": "If the dissent was never recorded, the route cannot call the earlier review complete.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked tribunal reuse: the evidence changed after acceptance` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.failure_mode.006`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "spinoza-verification-and-proof-carrying-claims.failure_mode.006"
+          }
+        },
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.5fa588cb33ab",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:164",
+          "section": "Worked tribunal reuse: the evidence changed after acceptance",
+          "sentence": "If the new verdict requires actions, those actions need explicit constraints and owners before any downstream ledger change.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked tribunal reuse: the evidence changed after acceptance` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.invariant.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "spinoza-verification-and-proof-carrying-claims.invariant.015"
+          }
+        },
+        {
+          "candidate_id": "spinoza-verification-and-proof-carrying-claims.prose.68a0049df80f",
+          "source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd:164",
+          "section": "Worked tribunal reuse: the evidence changed after acceptance",
+          "sentence": "It does not prove verifier correctness, reviewer independence, semantic mapping, evidence truth, or artifact safety.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "stable-capability-fields",
+      "chapter_path": "chapters/stable-capability-fields.qmd",
+      "chapter_sha256": "90a984954875be748459cac724e7733b23c5d8296c86f0fffaee2e3ae0927573",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/stable-capability-fields.json",
+      "packet_sha256": "f62761d03441b4a3bcc2c25a9066a338853694190aa6b188e2f154fd6eea4169",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked replacement decision: canary qualified, default still blocked",
+          "sha256": "44c6711f02adb6e09805d19e3f9d75c416c05341897dd787491b8eccc3d5972e",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "stable-capability-fields.prose.252df6c14d10",
+          "source": "chapters/stable-capability-fields.qmd:127",
+          "section": "Worked replacement decision: canary qualified, default still blocked",
+          "sentence": "The field requires assigned sources to remain visible,",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/stable-capability-fields.json`."
+          }
+        },
+        {
+          "candidate_id": "stable-capability-fields.prose.437acdce2087",
+          "source": "chapters/stable-capability-fields.qmd:144",
+          "section": "Worked replacement decision: canary qualified, default still blocked",
+          "sentence": "controls; it does not execute a replacement or prove semantic equivalence,",
+          "disposition": {
+            "state": "nonmaterial_explanation",
+            "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/stable-capability-fields.json`."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "system-boundaries-and-authority",
+      "chapter_path": "chapters/system-boundaries-and-authority.qmd",
+      "chapter_sha256": "2810ea7b079a9da1270a9556ec1e3ce91764170f94884c14b4557f7c86e37347",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/system-boundaries-and-authority.json",
+      "packet_sha256": "24619988196f674720fd984413de46a045d50a4bbcef1a38aacb2b77cca6541c",
+      "candidate_count": 4,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "e1a35e0a43952617037651d69f8ff469f43bdd7a37672562a4f03ffe8a94bced",
+          "candidate_count": 2
+        },
+        {
+          "heading": "Worked authority check: a scope widens between plan and effect",
+          "sha256": "de6ed2f66548e49e2bb3fb2212d0d21ca1369fa3700656aa10985a81f8366ed7",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "system-boundaries-and-authority.prose.689731f414de",
+          "source": "chapters/system-boundaries-and-authority.qmd:95",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** Being able to call a tool is not permission to use it; the exact principal, operation, target, scope, ceiling, and time must still match an active grant.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "system-boundaries-and-authority.core"
+          }
+        },
+        {
+          "candidate_id": "system-boundaries-and-authority.prose.d96146fa8867",
+          "source": "chapters/system-boundaries-and-authority.qmd:97",
+          "section": "Core Claim",
+          "sentence": "Missing, expired, revoked, over-ceiling, or scope-mismatched authority produces no effect and cannot be repaired by model confidence.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "system-boundaries-and-authority.failure_mode.007"
+          }
+        },
+        {
+          "candidate_id": "system-boundaries-and-authority.prose.d2af07d4f30f",
+          "source": "chapters/system-boundaries-and-authority.qmd:101",
+          "section": "Worked authority check: a scope widens between plan and effect",
+          "sentence": "If broader work is desirable, a new principal-approved grant must name that repository and operation.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked authority check: a scope widens between plan and effect` to existing reviewed atom `system-boundaries-and-authority.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "system-boundaries-and-authority.invariant.003"
+          }
+        },
+        {
+          "candidate_id": "system-boundaries-and-authority.prose.ab942ca1d868",
+          "source": "chapters/system-boundaries-and-authority.qmd:103",
+          "section": "Worked authority check: a scope widens between plan and effect",
+          "sentence": "Those checks show the intended finite refusal behavior.",
+          "disposition": {
+            "state": "historical_or_source_report",
+            "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "chapter_sha256": "361040acecb42ffdc9c9928ec9bc4a4aaff90fe680d3dc3177622fbbf55045fe",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/verification-bandwidth-and-context-adequacy.json",
+      "packet_sha256": "d801f85089114c3568cab9f4c3382d4213813f3cf34a34969801ad220049ddde",
+      "candidate_count": 5,
+      "sections": [
+        {
+          "heading": "Core Claim",
+          "sha256": "a05f457e66eb5f0ecaa085ca5187c8b503c2dc904e6b800b6ff51ec0e80faf55",
+          "candidate_count": 2
+        },
+        {
+          "heading": "Human Reading Path",
+          "sha256": "1e4e0e4e39288b81a23bd62417e62814b0a8508ceafb7124ec8abcc15c26fa64",
+          "candidate_count": 1
+        },
+        {
+          "heading": "Worked adequacy decision: abundant context, one missing contradiction check",
+          "sha256": "b313a97809fdbaabe26c970943ae72691eb3a8ae8dd8685c107a9b6028387a74",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "verification-bandwidth-and-context-adequacy.prose.f5b4e2631dab",
+          "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:77",
+          "section": "Human Reading Path",
+          "sentence": "The verification contract requires the exact negative, contradiction, boundary, counterexample, and transfer checks for the claim.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `verification-bandwidth-and-context-adequacy.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "verification-bandwidth-and-context-adequacy.insufficiency.001"
+          }
+        },
+        {
+          "candidate_id": "verification-bandwidth-and-context-adequacy.prose.3c7533ddf2d7",
+          "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:143",
+          "section": "Core Claim",
+          "sentence": "**Reader claim.** More context does not guarantee adequate verification; adequacy depends on whether the available evidence and checking capacity cover the exact claim and its most dangerous failure modes.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `verification-bandwidth-and-context-adequacy.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "verification-bandwidth-and-context-adequacy.core"
+          }
+        },
+        {
+          "candidate_id": "verification-bandwidth-and-context-adequacy.prose.017100ad05ec",
+          "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:145",
+          "section": "Core Claim",
+          "sentence": "**Operational rule.** Before outcomes, freeze the proposition, scope, risk, positive, negative, contradiction, counterexample, and transfer obligations, source units, evaluator dependencies, budget, stop rule, and escalation path.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `verification-bandwidth-and-context-adequacy.invariant.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "verification-bandwidth-and-context-adequacy.invariant.001"
+          }
+        },
+        {
+          "candidate_id": "verification-bandwidth-and-context-adequacy.prose.b25b0e37b7a8",
+          "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:149",
+          "section": "Worked adequacy decision: abundant context, one missing contradiction check",
+          "sentence": "Its adequacy contract also requires an independent contradiction search against a named negative source unit.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked adequacy decision: abundant context, one missing contradiction check` to existing reviewed atom `verification-bandwidth-and-context-adequacy.invariant.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "verification-bandwidth-and-context-adequacy.invariant.012"
+          }
+        },
+        {
+          "candidate_id": "verification-bandwidth-and-context-adequacy.prose.f841255774bd",
+          "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:149",
+          "section": "Worked adequacy decision: abundant context, one missing contradiction check",
+          "sentence": "The packet is context-rich but verification-inadequate, so it may remain a draft or disputed claim; it cannot receive the requested verified-support route.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked adequacy decision: abundant context, one missing contradiction check` to existing reviewed atom `verification-bandwidth-and-context-adequacy.failure_mode.006`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "verification-bandwidth-and-context-adequacy.failure_mode.006"
+          }
+        }
+      ]
+    },
+    {
+      "chapter_id": "virtual-context-abi",
+      "chapter_path": "chapters/virtual-context-abi.qmd",
+      "chapter_sha256": "8a5bf9f3863cf1f5e3c3b1d6ef2b267c33f749dfbeb427679496b6af1c1d9520",
+      "packet_path": "evidence_quality/reader_prose_quality_packets/virtual-context-abi.json",
+      "packet_sha256": "bcd989616214fcc0d93a40ab2541b18874cdc3cdd80de101e614031c3caaa5d5",
+      "candidate_count": 2,
+      "sections": [
+        {
+          "heading": "Worked materialization: the summary omits the one blocking fact",
+          "sha256": "d535d34a992d5890e404f0db18688031dd21f5e4df827c95276526a3cac3fdb5",
+          "candidate_count": 2
+        }
+      ],
+      "candidate_dispositions": [
+        {
+          "candidate_id": "virtual-context-abi.prose.01f946b120c0",
+          "source": "chapters/virtual-context-abi.qmd:183",
+          "section": "Worked materialization: the summary omits the one blocking fact",
+          "sentence": "The summary’s authority cannot exceed its sources, and a new materialization cannot silently erase taint or revocation.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked materialization: the summary omits the one blocking fact` to existing reviewed atom `virtual-context-abi.failure_mode.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "virtual-context-abi.failure_mode.004"
+          }
+        },
+        {
+          "candidate_id": "virtual-context-abi.prose.a7bbe193b7f7",
+          "source": "chapters/virtual-context-abi.qmd:183",
+          "section": "Worked materialization: the summary omits the one blocking fact",
+          "sentence": "The local fixture families check admission, resolver, and certificate routes, but they do not establish natural source-to-packet fidelity, truth, useful model use, verification adequacy, or cross-store transfer.",
+          "disposition": {
+            "state": "duplicate_of_atom",
+            "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked materialization: the summary omits the one blocking fact` to existing reviewed atom `virtual-context-abi.mechanism.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+            "target_atom_id": "virtual-context-abi.mechanism.011"
+          }
+        }
+      ]
+    }
+  ],
+  "non_claims": [
+    "This reconciliation does not establish that any reader-facing mechanism or worked scene succeeds outside its stated boundary.",
+    "Semantic ownership and lexical tie-breaking are not evidence and cannot promote a claim.",
+    "No source-reported or bounded fixture result becomes general empirical support through this review."
+  ]
+}

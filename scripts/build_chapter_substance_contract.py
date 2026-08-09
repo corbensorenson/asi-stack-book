@@ -558,7 +558,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "content-authenticity-watermarking-and-synthetic-media-integrity": {
-        "reviewed_sha256": "743e60268b3c0771ff4238fb93f5fcbf522fd082ef8b7bf0b3566f71a6f85e43",
+        "reviewed_sha256": "ff711d28d9af577fbe984260a526a4d1e0b6af8a1de72d8dc2f0f3f19ae78084",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,

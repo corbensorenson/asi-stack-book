@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
     "structured_atoms_reviewed": 81,
-    "prose_candidates_adjudicated": 95,
+    "prose_candidates_adjudicated": 96,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The Decision Capsule and Regret Packet artifact chain is bounded by existing provenance, receipt-reality, append-only history, and independent-authority atoms. Source-reported mechanisms remain proposals. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The Decision Capsule and Regret Packet artifact chain is bounded by existing provenance, receipt-reality, append-only history, and independent-authority atoms. Source-reported mechanisms remain proposals. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Eighteen reviewed assigned sources; two public schemas; 2/6 replay, 1/10 projection-revocation, 1/4 record-reality, 3/6 receipt-faithfulness, four-surface repository-audit, four-challenge, one-live-artifact, four-sampled-artifact, and 3/6 epistemic-TCB records; two historical service observations; eight no-promotion decisions; fifty-six finite Lean theorems across the refinement and legacy modules; and a future natural multi-repository campaign. No deployed graph, complete event collector, open-world observer, reverse-closure service, privacy/deletion runtime, natural causal result, or transfer result is represented.",
       "model": "A versioned artifact-evidence relation over stable content identity, locations, producers, parent work, observed and asserted lineage, transformations, events, canonical state, projections, forward and reverse dependencies, quarantine and revocation, alternate derivations, replay grades and locks, asynchronous terminal receipts, receipt-reality challenges, epistemic trusted computing bases, rights and deletion duties, claim/test consumers, impact closure, cost, and residuals; current implementations are authored records, repository-local observations, service records, and finite consequences rather than a deployed plane.",
       "authority": "Labor OS owns job lifecycle; Context owners own input views; Runtime Adapters own effects; source, data, weight, and supply-chain owners own admission; Verification owns mode-specific validity; Security, Privacy, Rights, Licensing, and accountable humans own access and obligations; Evidence States and Claim Ledgers own support; Procedural Memory owns learned reuse; Replacement, Readiness, and Publication own deployment and release. Artifact Graphs owns durable artifact identity, derivation, record-reality custody, replay grade, and impact closure only.",
-      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; eighteen bounded source mappings; schemas/artifact_graph_record.schema.json and schemas/artifact_projection_revocation_record.schema.json; ten validator/observation families and their retained results; eight accepted no-promotion records; GitHub Actions and public-site observations; twenty-one theorems in lean/AsiStackProofs/ArtifactRealityRefinement.lean plus thirty-five retained consequences in lean/AsiStackProofs/ArtifactGraph.lean; future natural lineage labels, observer records, fault traces, ablations, reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_repository_causal_reproduction_and_transfer_campaign",
@@ -862,6 +862,10 @@
       "state": "duplicate_of_atom",
       "rationale": "The wrapped actor-reflection sentence restates the existing receipt-reality rule that same-component assertions do not acquire independent attestation authority.",
       "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.010"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.7d7ba7bcb513": {
+      "state": "historical_or_source_report",
+      "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
     }
   },
   "prose_review_lineage": [

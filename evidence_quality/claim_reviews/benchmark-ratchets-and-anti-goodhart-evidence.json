@@ -1,608 +1,618 @@
 {
-    "schema_version": "asi_stack.claim_chapter_review.v0",
-    "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
-    "review_state": "completed",
-    "semantic_sweep": {
-        "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-        "structured_atoms_reviewed": 74,
-        "prose_candidates_adjudicated": 117,
-        "unowned_material_claims": 0,
-        "review_note": "Incremental semantic review on 2026-08-08 maps the elizaOS diagnostic-versus-provider-qualification comparison to existing campaign, observation-independence, and no-promotion atoms. elizaOS was documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+  "schema_version": "asi_stack.claim_chapter_review.v0",
+  "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+  "review_state": "completed",
+  "semantic_sweep": {
+    "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+    "structured_atoms_reviewed": 74,
+    "prose_candidates_adjudicated": 119,
+    "unowned_material_claims": 0,
+    "review_note": "Incremental semantic review on 2026-08-08 maps the elizaOS diagnostic-versus-provider-qualification comparison to existing campaign, observation-independence, and no-promotion atoms. elizaOS was documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+  },
+  "chapter_defaults": {
+    "review_state": "semantically_reviewed",
+    "scope": {
+      "population": "Named constructs, tasks, datasets, metrics, harnesses, models, checkpoints, output paths, evaluators, baselines, retry lineages, budgets, environments, claim axes, consumers, and times.",
+      "environment": "Twenty-nine exact mappings; two schemas; one blocked provenance record and ten mutations; two valid/five invalid synthetic ratchet records; one persisted bridge; three proof targets; and 29 finite decision, lifecycle, persistence, and information-loss declarations with an independent six-transition, seven-split, 19-state, 114-transition, 12-suffix consumer rejecting 15 lifecycle plus 11 semantic mutations. No natural benchmark, hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
+      "model": "A construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, selection-lineage-, budget-, environment-, claim-axis-, consumer-, and time-specific Benchmark Instrument Lease over validity, provenance, contamination, floors, uncertainty, costs, decisions, expiry, and residuals.",
+      "authority": "This chapter owns benchmark-instrument admissibility only. Task/Construct, Data/Supply Chain, Runtime/Artifacts, Evaluator Governance, Routing/Training/Policy, Claims/Evidence, Readiness/Release, Security/Privacy/Rights, Resources, Proof Envelope, Unlearning/Continual Learning, and Living-Book/Change Governance retain their boundaries.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
+      "artifact": "Chapter and manifest; twenty-nine mappings; two schemas; provenance and anti-Goodhart fixtures; persisted bridge; three targets; 29 live declarations; independent lifecycle consumer; five benchmark-specific C6 retirements; semantic review; and future natural causal-transfer campaign."
     },
-    "chapter_defaults": {
-        "review_state": "semantically_reviewed",
-        "scope": {
-            "population": "Named constructs, tasks, datasets, metrics, harnesses, models, checkpoints, output paths, evaluators, baselines, retry lineages, budgets, environments, claim axes, consumers, and times.",
-            "environment": "Twenty-nine exact mappings; two schemas; one blocked provenance record and ten mutations; two valid/five invalid synthetic ratchet records; one persisted bridge; three proof targets; and 29 finite decision, lifecycle, persistence, and information-loss declarations with an independent six-transition, seven-split, 19-state, 114-transition, 12-suffix consumer rejecting 15 lifecycle plus 11 semantic mutations. No natural benchmark, hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
-            "model": "A construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, selection-lineage-, budget-, environment-, claim-axis-, consumer-, and time-specific Benchmark Instrument Lease over validity, provenance, contamination, floors, uncertainty, costs, decisions, expiry, and residuals.",
-            "authority": "This chapter owns benchmark-instrument admissibility only. Task/Construct, Data/Supply Chain, Runtime/Artifacts, Evaluator Governance, Routing/Training/Policy, Claims/Evidence, Readiness/Release, Security/Privacy/Rights, Resources, Proof Envelope, Unlearning/Continual Learning, and Living-Book/Change Governance retain their boundaries.",
-            "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
-            "artifact": "Chapter and manifest; twenty-nine mappings; two schemas; provenance and anti-Goodhart fixtures; persisted bridge; three targets; 29 live declarations; independent lifecycle consumer; five benchmark-specific C6 retirements; semantic review; and future natural causal-transfer campaign."
-        },
-        "current_disposition": "retain_argument_with_synthetic_instrument_and_provenance_fixtures_no_core_effect_pending_natural_independent_benchmark_campaign",
-        "assumptions": [
-            "Construct validity, target capacity, data exposure, provenance, metrics, raw outputs, evaluators, baselines, selection lineage, failures, costs, rights, and expiry can be observed and versioned.",
-            "Strong baselines and negative controls can receive matched model/tool/context/compute/tuning/retry/engineering/evaluator opportunity.",
-            "Independent data custody, harnesses, evaluators, implementations, and organizations can reveal contamination, selection, and evaluator failures.",
-            "All candidates, retries, failures, exclusions, fallbacks, repairs, and discarded branches remain in denominators.",
-            "Natural, adversarial, hidden, temporal, causal, meta-evaluation, reproduction, and transfer protocols can be frozen prospectively."
-        ],
-        "dependencies": [
-            "evidence-states-and-claim-discipline",
-            "claim-ledgers-and-belief-revision",
-            "executable-specifications-and-lean-proof-envelope",
-            "data-engines-continual-learning-and-unlearning",
-            "policy-optimization-and-learning-from-feedback",
-            "capability-thresholds-and-deployment-commitments",
-            "adversarial-evaluation-sandbagging-and-training-time-deception",
-            "resource-economics-and-token-budgets"
-        ],
-        "strongest_counterclaim": "Benchmarks remain gameable proxies whose lifecycle metadata adds bureaucracy without establishing real capability; natural tasks, incidents, and direct user outcomes dominate curated instrument programs.",
-        "falsifier": "Matched natural campaigns show no unique predictive or governance value, or reveal invalid constructs, inexpressible targets, contamination, selection leakage, evaluator capture, hidden regressions, excessive cost, broken inheritance, no independent reproduction, or no transfer; or simpler evaluation controls perform as well.",
-        "required_lanes": [
-            {
-                "lane": "source-synthesis",
-                "necessity": "Freeze benchmark, evaluation, memory, agent-security, self-improvement, data, unlearning, contamination, and metric-validity comparators without importing results."
-            },
-            {
-                "lane": "normative",
-                "necessity": "Justify construct choice, affected parties, rights, hidden custody, public calibration, authority, exceptions, retirement, and residual ownership."
-            },
-            {
-                "lane": "formal",
-                "necessity": "Specify lifecycle, inheritance, selection-lineage, exposure, revocation, and finite decision semantics without claiming empirical validity."
-            },
-            {
-                "lane": "executable",
-                "necessity": "Run real harnesses, raw output binding, contamination controls, hidden tests, failures, fallback, recovery, and instrument retirement."
-            },
-            {
-                "lane": "empirical",
-                "necessity": "Measure natural utility, calibration, robustness, tails, retained capabilities, safety, privacy, rights, runtime, complete cost, and residuals."
-            },
-            {
-                "lane": "causal",
-                "necessity": "Ablate mechanisms and meta-evaluate metric response under benign/harmful changes, matched controls, and complete selection lineage."
-            },
-            {
-                "lane": "transfer",
-                "necessity": "Reproduce independently and transfer across tasks, models, scaffolds, languages, domains, hardware, organizations, attacks, rights regimes, and time."
-            }
-        ],
-        "evidence_refs": {
-            "chapter": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-            "ratchet_schema": "schemas/benchmark_ratchet_record.schema.json",
-            "metric_schema": "schemas/metric_provenance_record.schema.json",
-            "metric_harness": "experiments/metric_provenance/",
-            "ratchet_harness": "experiments/benchmark_antigoodhart/",
-            "lean": "lean/AsiStackProofs/BenchmarkRatchets.lean",
-            "manifest": "book_structure.json"
-        },
-        "contrary_evidence": [
-            "The current ratchet and provenance records are synthetic fixtures, not natural evaluation events.",
-            "One provenance record is explicitly blocked because metrics were not reproduced and checkpoint/output binding is incomplete.",
-            "Three retained declarations are derived finite decision consequences; executable fixture totals remain in the independent consumer and none proves benchmark or metric validity.",
-            "Twenty-nine mappings include source-reported systems and results that were not locally reproduced.",
-            "No chapter-core transition, hidden holdout, contamination audit, independent evaluator, empirical gain, reproduction, or transfer exists."
-        ],
-        "known_confounds": [
-            "Construct definition, architecture capacity, data selection, public exposure, prompts, scaffolds, tools, checkpoint selection, evaluator choice, and retry budget can dominate scores.",
-            "Shared data, harnesses, models, evaluators, analysis code, or organizations can create false independence.",
-            "Validation feedback, archive selection, prompt search, repeated retries, and discarded candidates create hidden multiple comparisons.",
-            "Means can hide subgroups, tails, critical failures, retained-capability damage, privacy leakage, unsafe behavior, and cost.",
-            "Benchmark and governance burden can displace natural evaluation, testing, operations, recovery, and user value."
-        ],
-        "acceptance_criteria": [
-            "Every instrument has exact construct, target-capacity, data/exposure/rights, metric provenance, raw-output binding, baselines, selection/failure lineage, uncertainty, cost, decision, expiry, revocation, and residual ownership.",
-            "Natural and adversarial workloads run with strong controls, contamination budgets, hidden/temporal tests, complete denominators, causal ablations, meta-evaluation, fallback, and recovery.",
-            "Each claimed metric responds faithfully to predicted benign and harmful changes and survives independent reproduction without shared leaks or evaluators.",
-            "Every qualified claim survives joint utility, calibration, safety, privacy, rights, tail, resource, causal, reproduction, and heterogeneous-transfer gates."
-        ],
-        "narrowing_criteria": [
-            "Narrow every result to exact construct, task, data, metric, harness, model, checkpoint, output, evaluator, baseline, selection lineage, budget, environment, claim axis, consumer, and time.",
-            "Separate build, schema, fixture, synthetic, source-reported, reproduced, empirical, transferred, causal, readiness, deployment, unlearning, support, and SOTA states.",
-            "Unknown contamination, exposure, target capacity, evaluator validity, selection effect, cost, reproduction, transfer, rights, or residual remains blocked."
-        ],
-        "refutation_criteria": [
-            "Refute an instrument when the construct is invalid, target is inexpressible, metric is unbound or unfaithful, data is contaminated, lineage is incomplete, floors are erased, or revocation fails.",
-            "Refute a mechanism or metric benefit when matched ablation or meta-evaluation preserves/improves outcomes or selection, leakage, evaluator bias, extra resources, or hidden failures explain the gain.",
-            "Refute capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA language when only fixture or source-reported evidence exists."
-        ],
-        "deprecation_criteria": [
-            "Deprecate only when a more precise instrument owner supersedes the atom and every task, dataset, metric, harness, model, floor, lineage, claim, consumer, release, residual, and correction migrates with lineage."
-        ],
-        "promotion_ceiling": "argument_until_natural_contamination_controlled_causal_campaign_with_independent_reproduction_and_transfer",
-        "reproduction": {
-            "command": "python3 scripts/validate_protocol_examples.py && python3 scripts/validate_metric_provenance.py && python3 scripts/validate_benchmark_antigoodhart.py && python3 scripts/validate_benchmark_fixture_bridge.py && cd lean && lake build AsiStackProofs.BenchmarkRatchets",
-            "environment_lock": "Local schemas, synthetic fixtures, persisted bridge, and finite module current through 2026-07-15; natural independent campaign not frozen or run.",
-            "artifact_digest": null,
-            "evaluator_identity": "Current fixtures, validators, and formalization are repository-local; independent data custody, harnesses, evaluators, implementations, attacks, and transfer environments are required."
-        },
-        "terminal_disposition": null,
-        "residual": {
-            "owner": "benchmark-ratchets-and-anti-goodhart-evidence",
-            "next_unblocking_condition": "Freeze and run natural/adversarial benchmark workloads with valid constructs, strong controls, complete selection/failure lineage, contamination/public-calibration budgets, raw output binding, causal and metric-faithfulness tests, complete costs/rights, independent reproduction, and heterogeneous transfer."
-        },
-        "non_claims": [
-            "No fixture, source mapping, score, finite theorem, or bridge establishes natural capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA.",
-            "No local hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
-            "The argument-exit campaign is a required attempt specification, not a completed evaluation."
-        ]
+    "current_disposition": "retain_argument_with_synthetic_instrument_and_provenance_fixtures_no_core_effect_pending_natural_independent_benchmark_campaign",
+    "assumptions": [
+      "Construct validity, target capacity, data exposure, provenance, metrics, raw outputs, evaluators, baselines, selection lineage, failures, costs, rights, and expiry can be observed and versioned.",
+      "Strong baselines and negative controls can receive matched model/tool/context/compute/tuning/retry/engineering/evaluator opportunity.",
+      "Independent data custody, harnesses, evaluators, implementations, and organizations can reveal contamination, selection, and evaluator failures.",
+      "All candidates, retries, failures, exclusions, fallbacks, repairs, and discarded branches remain in denominators.",
+      "Natural, adversarial, hidden, temporal, causal, meta-evaluation, reproduction, and transfer protocols can be frozen prospectively."
+    ],
+    "dependencies": [
+      "evidence-states-and-claim-discipline",
+      "claim-ledgers-and-belief-revision",
+      "executable-specifications-and-lean-proof-envelope",
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
+      "capability-thresholds-and-deployment-commitments",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "resource-economics-and-token-budgets"
+    ],
+    "strongest_counterclaim": "Benchmarks remain gameable proxies whose lifecycle metadata adds bureaucracy without establishing real capability; natural tasks, incidents, and direct user outcomes dominate curated instrument programs.",
+    "falsifier": "Matched natural campaigns show no unique predictive or governance value, or reveal invalid constructs, inexpressible targets, contamination, selection leakage, evaluator capture, hidden regressions, excessive cost, broken inheritance, no independent reproduction, or no transfer; or simpler evaluation controls perform as well.",
+    "required_lanes": [
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze benchmark, evaluation, memory, agent-security, self-improvement, data, unlearning, contamination, and metric-validity comparators without importing results."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify construct choice, affected parties, rights, hidden custody, public calibration, authority, exceptions, retirement, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Specify lifecycle, inheritance, selection-lineage, exposure, revocation, and finite decision semantics without claiming empirical validity."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run real harnesses, raw output binding, contamination controls, hidden tests, failures, fallback, recovery, and instrument retirement."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure natural utility, calibration, robustness, tails, retained capabilities, safety, privacy, rights, runtime, complete cost, and residuals."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate mechanisms and meta-evaluate metric response under benign/harmful changes, matched controls, and complete selection lineage."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across tasks, models, scaffolds, languages, domains, hardware, organizations, attacks, rights regimes, and time."
+      }
+    ],
+    "evidence_refs": {
+      "chapter": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "ratchet_schema": "schemas/benchmark_ratchet_record.schema.json",
+      "metric_schema": "schemas/metric_provenance_record.schema.json",
+      "metric_harness": "experiments/metric_provenance/",
+      "ratchet_harness": "experiments/benchmark_antigoodhart/",
+      "lean": "lean/AsiStackProofs/BenchmarkRatchets.lean",
+      "manifest": "book_structure.json"
     },
-    "atom_reviews": {
-        "benchmark-ratchets-and-anti-goodhart-evidence.core": {
-            "current_disposition": "retain_distinct_benchmark_instrument_lease_owner_at_argument",
-            "strongest_counterclaim": "Benchmark lifecycle machinery remains proxy bureaucracy without unique natural predictive or governance value.",
-            "falsifier": "Natural matched campaigns reveal invalid constructs, contamination, evaluator capture, no unique benefit, excessive cost, or no independent reproduction/transfer.",
-            "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_transfer_campaign"
-        }
+    "contrary_evidence": [
+      "The current ratchet and provenance records are synthetic fixtures, not natural evaluation events.",
+      "One provenance record is explicitly blocked because metrics were not reproduced and checkpoint/output binding is incomplete.",
+      "Three retained declarations are derived finite decision consequences; executable fixture totals remain in the independent consumer and none proves benchmark or metric validity.",
+      "Twenty-nine mappings include source-reported systems and results that were not locally reproduced.",
+      "No chapter-core transition, hidden holdout, contamination audit, independent evaluator, empirical gain, reproduction, or transfer exists."
+    ],
+    "known_confounds": [
+      "Construct definition, architecture capacity, data selection, public exposure, prompts, scaffolds, tools, checkpoint selection, evaluator choice, and retry budget can dominate scores.",
+      "Shared data, harnesses, models, evaluators, analysis code, or organizations can create false independence.",
+      "Validation feedback, archive selection, prompt search, repeated retries, and discarded candidates create hidden multiple comparisons.",
+      "Means can hide subgroups, tails, critical failures, retained-capability damage, privacy leakage, unsafe behavior, and cost.",
+      "Benchmark and governance burden can displace natural evaluation, testing, operations, recovery, and user value."
+    ],
+    "acceptance_criteria": [
+      "Every instrument has exact construct, target-capacity, data/exposure/rights, metric provenance, raw-output binding, baselines, selection/failure lineage, uncertainty, cost, decision, expiry, revocation, and residual ownership.",
+      "Natural and adversarial workloads run with strong controls, contamination budgets, hidden/temporal tests, complete denominators, causal ablations, meta-evaluation, fallback, and recovery.",
+      "Each claimed metric responds faithfully to predicted benign and harmful changes and survives independent reproduction without shared leaks or evaluators.",
+      "Every qualified claim survives joint utility, calibration, safety, privacy, rights, tail, resource, causal, reproduction, and heterogeneous-transfer gates."
+    ],
+    "narrowing_criteria": [
+      "Narrow every result to exact construct, task, data, metric, harness, model, checkpoint, output, evaluator, baseline, selection lineage, budget, environment, claim axis, consumer, and time.",
+      "Separate build, schema, fixture, synthetic, source-reported, reproduced, empirical, transferred, causal, readiness, deployment, unlearning, support, and SOTA states.",
+      "Unknown contamination, exposure, target capacity, evaluator validity, selection effect, cost, reproduction, transfer, rights, or residual remains blocked."
+    ],
+    "refutation_criteria": [
+      "Refute an instrument when the construct is invalid, target is inexpressible, metric is unbound or unfaithful, data is contaminated, lineage is incomplete, floors are erased, or revocation fails.",
+      "Refute a mechanism or metric benefit when matched ablation or meta-evaluation preserves/improves outcomes or selection, leakage, evaluator bias, extra resources, or hidden failures explain the gain.",
+      "Refute capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA language when only fixture or source-reported evidence exists."
+    ],
+    "deprecation_criteria": [
+      "Deprecate only when a more precise instrument owner supersedes the atom and every task, dataset, metric, harness, model, floor, lineage, claim, consumer, release, residual, and correction migrates with lineage."
+    ],
+    "promotion_ceiling": "argument_until_natural_contamination_controlled_causal_campaign_with_independent_reproduction_and_transfer",
+    "reproduction": {
+      "command": "python3 scripts/validate_protocol_examples.py && python3 scripts/validate_metric_provenance.py && python3 scripts/validate_benchmark_antigoodhart.py && python3 scripts/validate_benchmark_fixture_bridge.py && cd lean && lake build AsiStackProofs.BenchmarkRatchets",
+      "environment_lock": "Local schemas, synthetic fixtures, persisted bridge, and finite module current through 2026-07-15; natural independent campaign not frozen or run.",
+      "artifact_digest": null,
+      "evaluator_identity": "Current fixtures, validators, and formalization are repository-local; independent data custody, harnesses, evaluators, implementations, attacks, and transfer environments are required."
     },
-    "prose_candidate_dispositions": {
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.654c24f8d800": {
-            "state": "nonmaterial_explanation",
-            "rationale": "ReflexBench task-track sentence elaborates the existing benchmark mechanism."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.9346ca15dbda": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Ingress-coverage fragment specializes the already atomized campaign design."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5b50df570677": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Evaluator-disagreement requirement restates benchmark integrity atoms."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.31d38f806944": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Plural-measures fragment elaborates the existing non-aggregation contract."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.a4c0286bfaa8": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Cost-list continuation belongs to the structured complete-cost campaign atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ca0337cb4548": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Explicit no-promotion fragment narrows the campaign design and adds no claim."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.7ac7d138cf16": {
-            "state": "historical_or_source_report",
-            "rationale": "Interprets the completed M6 instrument and denominator result."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.1dc05b85357b": {
-            "state": "historical_or_source_report",
-            "rationale": "Reports the M7 target-adequacy lesson and bounded disposition."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.7c13ed7778bd": {
-            "state": "historical_or_source_report",
-            "rationale": "Introduces the completed Campaign 4 consumer-contract failure."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.09b242735ad7": {
-            "state": "historical_or_source_report",
-            "rationale": "Reports favorable sacrificial Campaign 4 values under their exact boundary."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.65529bf7f9bc": {
-            "state": "historical_or_source_report",
-            "rationale": "Reports the frozen 5/6 extraction gate and sealed heldout consequence."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5b40ee09da39": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Campaign 5 general-transfer and release limitation narrows inference."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.d6d45990eaeb": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5bc9463aba85": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.3825ddea135d": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.fd45017e060e": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.79ee0975b26c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.e4377735703c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.a708312f6d2a": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.bb16009c64e1": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.797e71cd4b3c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.253aaef57c77": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.faa7abb99174": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.2b857841a5cc": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.cbad4bf16450": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.d606662c4816": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.828cc7e99eeb": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.81a5a077d856": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.b2ce0961035c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.0d90220dbd60": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ff9aa99c815f": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.82f29b973d53": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.14a06108c468": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.3654447aa612": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c892034a2a4a": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6205fa395a60": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.4325faf8f77e": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c995e1344d15": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.28ef0a5bc785": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.063192b407c8": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8a63880de5b6": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ed0f0cd2e96e": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.e57a3477f09b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5a657248b574": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.b21724e89c16": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.f82cac7c4638": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.96be1a8d7e6b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6f7dcd82a36b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8b088c35dcf5": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.b65c7c01fbc2": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c891db9ad159": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.faaf9909a868": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.9c7e8f72dab5": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.dff6bb11f25f": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.51c3269f3558": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.2e34f40fcd75": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5fe9a1dd431e": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.44c2e7acefd3": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.9d950581c64f": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ce18c9d6aee4": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.3406287d391b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8b0a7b3b1d16": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.7fb7b271f07c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c4f70fe63bb": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.53bd0a94c3eb": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.98a4d00d5118": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5f6dea3c5d93": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.9db3b61ea7f0": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.a62c2e5d3bed": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.a9996d1d0d39": {
-            "state": "historical_or_source_report",
-            "rationale": "Reports the completed separation between executable fixture counts and quantified Lean decision consequences."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.cefd136cce59": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.226a564d4b77": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as the aggregate-information-loss result already owned by the formal target; it creates no independent promoted atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.654f8fcc208b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c77d020e489": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as the explicit finite aggregate-classifier counterexample already owned by the formal target; it creates no independent promoted atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.7b2711e60508": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as the explicit formal limitation boundary; it creates no independent promoted atom."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.d49b9ced5bca": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6dafd6541eae": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.2df74bafcda7": {
-            "state": "nonmaterial_explanation",
-            "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.29bc21c6802b": {
-            "state": "historical_or_source_report",
-            "rationale": "Reports the exact frozen Campaign 6 construct-validity ceiling; it does not add a separate benchmark proposition."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.f02dabe69563": {
-            "state": "duplicate_of_atom",
-            "rationale": "The RODIE metric fragment instantiates the existing prospective metric and transfer registration obligation.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.004"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.3c0b9f3482b6": {
-            "state": "duplicate_of_atom",
-            "rationale": "The anti-self-confirmation requirement restates causal metric meta-evaluation against benign and harmful changes.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.013"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.a4d7139effc1": {
-            "state": "duplicate_of_atom",
-            "rationale": "The controlled-to-natural transfer distinction instantiates the existing independent reproduction and transfer mechanism.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.017"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.64ff6528564c": {
-            "state": "duplicate_of_atom",
-            "rationale": "The competent negative-result boundary restates the chapter's full matched instrument and transfer program.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.2730712bd7bd": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.0d6ee69ff6bd": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c5b34fa777b5": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.05f4c8d3fb34": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6d606d086f4b": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.879043d65665": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.dd57f81a1902": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.31574b072358": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ec31b57e5102": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c9e45c52206c": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.95a22c96606d": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.21eefdc5a5f8": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `Saturation and a wall are different diagnoses` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.62485e0f53b3": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Saturation and a wall are different diagnoses` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.016`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.db2090042797": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Saturation and a wall are different diagnoses` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.016`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.bdf59aeb6e54": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `Saturation and a wall are different diagnoses` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.eebe7f902719": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `A benchmark portfolio is a multi-rate control system` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.e1df225de581": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `A benchmark portfolio is a multi-rate control system` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.f8893d6571bd": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.549838c93192": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.fd22b1046978": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.91bf83e44e3e": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Interfaces` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.34757cadfbeb": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.5ff6aee52261": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `The Portia/Spider lineage is a benchmark-authenticity test` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.cf3dbc214498": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6756d6895c4d": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.6ccd43ab8a15": {
-            "state": "nonmaterial_explanation",
-            "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.1eccdf9963f4": {
-            "state": "duplicate_of_atom",
-            "rationale": "P6.10 section-level semantic review maps this complete proposition within `The Portia/Spider lineage is a benchmark-authenticity test` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.3236ac834bd3": {
-            "state": "duplicate_of_atom",
-            "rationale": "The prohibition on replacing a typed measurement vector with one aggregate restates the existing no-hidden-regression and construct-ownership boundaries.",
-            "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.invariant.011"
-        },
-        "benchmark-ratchets-and-anti-goodhart-evidence.prose.101d163e740f": {
-            "state": "historical_or_source_report",
-            "rationale": "This wrapped sentence records the supplied paper bundle's missing bibliography and the resulting need for independent citation recovery; it asserts no benchmark result."
-        }
+    "terminal_disposition": null,
+    "residual": {
+      "owner": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "next_unblocking_condition": "Freeze and run natural/adversarial benchmark workloads with valid constructs, strong controls, complete selection/failure lineage, contamination/public-calibration budgets, raw output binding, causal and metric-faithfulness tests, complete costs/rights, independent reproduction, and heterogeneous transfer."
     },
     "non_claims": [
-        "Completing this semantic review does not promote support or establish a benchmark, capability, safety, readiness, deployment, unlearning, transfer, or SOTA result.",
-        "The twenty-nine mappings and synthetic fixtures do not import external or natural benchmark outcomes.",
-        "The future campaign remains unexecuted."
+      "No fixture, source mapping, score, finite theorem, or bridge establishes natural capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA.",
+      "No local hidden holdout, contamination audit, empirical baseline matrix, trained result, independent evaluator, reproduction, or transfer is represented.",
+      "The argument-exit campaign is a required attempt specification, not a completed evaluation."
     ]
+  },
+  "atom_reviews": {
+    "benchmark-ratchets-and-anti-goodhart-evidence.core": {
+      "current_disposition": "retain_distinct_benchmark_instrument_lease_owner_at_argument",
+      "strongest_counterclaim": "Benchmark lifecycle machinery remains proxy bureaucracy without unique natural predictive or governance value.",
+      "falsifier": "Natural matched campaigns reveal invalid constructs, contamination, evaluator capture, no unique benefit, excessive cost, or no independent reproduction/transfer.",
+      "promotion_ceiling": "argument_until_natural_independently_reproduced_causal_transfer_campaign"
+    }
+  },
+  "prose_candidate_dispositions": {
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.654c24f8d800": {
+      "state": "nonmaterial_explanation",
+      "rationale": "ReflexBench task-track sentence elaborates the existing benchmark mechanism."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.9346ca15dbda": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Ingress-coverage fragment specializes the already atomized campaign design."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5b50df570677": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Evaluator-disagreement requirement restates benchmark integrity atoms."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.31d38f806944": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Plural-measures fragment elaborates the existing non-aggregation contract."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a4c0286bfaa8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Cost-list continuation belongs to the structured complete-cost campaign atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ca0337cb4548": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explicit no-promotion fragment narrows the campaign design and adds no claim."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.7ac7d138cf16": {
+      "state": "historical_or_source_report",
+      "rationale": "Interprets the completed M6 instrument and denominator result."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.1dc05b85357b": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the M7 target-adequacy lesson and bounded disposition."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.7c13ed7778bd": {
+      "state": "historical_or_source_report",
+      "rationale": "Introduces the completed Campaign 4 consumer-contract failure."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.09b242735ad7": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports favorable sacrificial Campaign 4 values under their exact boundary."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.65529bf7f9bc": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the frozen 5/6 extraction gate and sealed heldout consequence."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5b40ee09da39": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Campaign 5 general-transfer and release limitation narrows inference."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.d6d45990eaeb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5bc9463aba85": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3825ddea135d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.fd45017e060e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.79ee0975b26c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.e4377735703c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a708312f6d2a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.bb16009c64e1": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.797e71cd4b3c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.253aaef57c77": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.faa7abb99174": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.2b857841a5cc": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.cbad4bf16450": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.d606662c4816": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.828cc7e99eeb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.81a5a077d856": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.b2ce0961035c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.0d90220dbd60": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ff9aa99c815f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.82f29b973d53": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.14a06108c468": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3654447aa612": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c892034a2a4a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6205fa395a60": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.4325faf8f77e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c995e1344d15": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.28ef0a5bc785": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.063192b407c8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8a63880de5b6": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ed0f0cd2e96e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.e57a3477f09b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5a657248b574": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.b21724e89c16": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.f82cac7c4638": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.96be1a8d7e6b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6f7dcd82a36b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8b088c35dcf5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.b65c7c01fbc2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c891db9ad159": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.faaf9909a868": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.9c7e8f72dab5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.dff6bb11f25f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.51c3269f3558": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.2e34f40fcd75": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5fe9a1dd431e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.44c2e7acefd3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.9d950581c64f": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ce18c9d6aee4": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3406287d391b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8b0a7b3b1d16": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.7fb7b271f07c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c4f70fe63bb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.53bd0a94c3eb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.98a4d00d5118": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5f6dea3c5d93": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.9db3b61ea7f0": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a62c2e5d3bed": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a9996d1d0d39": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the completed separation between executable fixture counts and quantified Lean decision consequences."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.cefd136cce59": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.226a564d4b77": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the aggregate-information-loss result already owned by the formal target; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.654f8fcc208b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded lifecycle explanation already owned by the formal targets; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8c77d020e489": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the explicit finite aggregate-classifier counterexample already owned by the formal target; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.7b2711e60508": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as the explicit formal limitation boundary; it creates no independent promoted atom."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.d49b9ced5bca": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6dafd6541eae": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.2df74bafcda7": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.29bc21c6802b": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the exact frozen Campaign 6 construct-validity ceiling; it does not add a separate benchmark proposition."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.f02dabe69563": {
+      "state": "duplicate_of_atom",
+      "rationale": "The RODIE metric fragment instantiates the existing prospective metric and transfer registration obligation.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.004"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3c0b9f3482b6": {
+      "state": "duplicate_of_atom",
+      "rationale": "The anti-self-confirmation requirement restates causal metric meta-evaluation against benign and harmful changes.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.013"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.a4d7139effc1": {
+      "state": "duplicate_of_atom",
+      "rationale": "The controlled-to-natural transfer distinction instantiates the existing independent reproduction and transfer mechanism.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.017"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.64ff6528564c": {
+      "state": "duplicate_of_atom",
+      "rationale": "The competent negative-result boundary restates the chapter's full matched instrument and transfer program.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.2730712bd7bd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.0d6ee69ff6bd": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c5b34fa777b5": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.05f4c8d3fb34": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6d606d086f4b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.879043d65665": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.dd57f81a1902": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.31574b072358": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Residual-specific intervention before architecture change` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ec31b57e5102": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c9e45c52206c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.95a22c96606d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Residual-specific intervention before architecture change` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.21eefdc5a5f8": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Saturation and a wall are different diagnoses` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.62485e0f53b3": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Saturation and a wall are different diagnoses` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.016`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.db2090042797": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Saturation and a wall are different diagnoses` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.016`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.bdf59aeb6e54": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `Saturation and a wall are different diagnoses` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.eebe7f902719": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `A benchmark portfolio is a multi-rate control system` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.e1df225de581": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `A benchmark portfolio is a multi-rate control system` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.f8893d6571bd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.549838c93192": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.fd22b1046978": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `KERC as a full-system representation campaign` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.91bf83e44e3e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Interfaces` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.34757cadfbeb": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.5ff6aee52261": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `The Portia/Spider lineage is a benchmark-authenticity test` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.cf3dbc214498": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6756d6895c4d": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.6ccd43ab8a15": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `The Portia/Spider lineage is a benchmark-authenticity test` and reviewed owner atoms `benchmark-ratchets-and-anti-goodhart-evidence.core`, `benchmark-ratchets-and-anti-goodhart-evidence.minimum.001`, `benchmark-ratchets-and-anti-goodhart-evidence.beyond_sota.001`."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.1eccdf9963f4": {
+      "state": "duplicate_of_atom",
+      "rationale": "P6.10 section-level semantic review maps this complete proposition within `The Portia/Spider lineage is a benchmark-authenticity test` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.core`. It refines the bounded argument or source limitation without creating a new support-bearing atom or importing source-reported efficacy.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.core"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.3236ac834bd3": {
+      "state": "duplicate_of_atom",
+      "rationale": "The prohibition on replacing a typed measurement vector with one aggregate restates the existing no-hidden-regression and construct-ownership boundaries.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.invariant.011"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.101d163e740f": {
+      "state": "historical_or_source_report",
+      "rationale": "This wrapped sentence records the supplied paper bundle's missing bibliography and the resulting need for independent citation recovery; it asserts no benchmark result."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.d1ac4510b1fe": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.failure_mode.001"
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.2bb79812f130": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked benchmark collision: same score, opposite decision` to existing reviewed atom `benchmark-ratchets-and-anti-goodhart-evidence.mechanism.006`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.mechanism.006"
+    }
+  },
+  "non_claims": [
+    "Completing this semantic review does not promote support or establish a benchmark, capability, safety, readiness, deployment, unlearning, transfer, or SOTA result.",
+    "The twenty-nine mappings and synthetic fixtures do not import external or natural benchmark outcomes.",
+    "The future campaign remains unexecuted."
+  ]
 }

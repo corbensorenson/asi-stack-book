@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 51,
+    "prose_candidates_adjudicated": 57,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Proof-Carrying Claims formal refinement. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Proof-Carrying Claims formal refinement. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Eighteen inspected assigned sources; 3 valid/5 rejecting authored proof-carrying fixtures; 3 valid/5 rejecting tribunal fixtures; 2 valid/7 rejecting authored dossier cases; one bounded five-project method/independence record and eleven rejecting mutations; a related 3 valid/6 rejecting epistemic-TCB fixture owned by Artifact Graphs; forty-four live finite Lean declarations across the proof-carrying and Tribunal family, including exact eighteen- and nineteen-theorem refinement surfaces; and a future frozen natural cross-domain, multi-model, multi-evaluator campaign. No natural verifier-quality or tribunal-quality result is represented.",
       "model": "A prospective route-and-verdict contract over frozen targets, eligible modes, interpretation mappings, artifacts, trusted verifier roots, complete attempts, dossiers, reviewer dependence, adversarial probes, stop rules, ignorance, dissent, appeal, verdicts, constraints, expiry, writeback requests, costs, outcomes, and residuals; current implementations are schemas, authored validators, and finite predicates/routes rather than a deployed verification operating system.",
       "authority": "Claim Ledgers owns identity/history; Verification Bandwidth owns obligation adequacy; mode-specific formal, source, procedure, replay, benchmark, and empirical evaluators own exact validity; Artifact Graphs owns lineage and receipt faithfulness; Scalable Oversight and accountable humans own competence, appeal, adjudication, and legitimacy; Evidence States owns support; execution owns action; Security, Privacy, Rights, and Licensing own access and use; Resource Economics owns cost; Readiness and Publication own release. This layer owns route execution and bounded verdict custody only and grants no support, action, disclosure, training, or release authority.",
-      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; eighteen bounded source mappings; three public schemas; proof-carrying, tribunal, adversarial-dossier, historical method/independence, and related epistemic-TCB fixtures; forty-four live declarations across ProofCarryingClaims, ProofCarryingClaimsRefinement, Tribunal, and TribunalRefinement, including exact eighteen- and nineteen-theorem refinement surfaces and their independent recompiling consumers; future natural target corpus, mappings, proof/source/procedure/replay/benchmark outputs, dossiers, dependence graphs, independent labels, action and appeal traces, delayed outcomes, reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_route_multi_model_multi_evaluator_campaign",
@@ -548,6 +548,35 @@
     "spinoza-verification-and-proof-carrying-claims.prose.c3732d529d42": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `What a bounded verification loop converges to` and reviewed owner atoms `spinoza-verification-and-proof-carrying-claims.beyond_sota.001`, `spinoza-verification-and-proof-carrying-claims.invariant.017`, `spinoza-verification-and-proof-carrying-claims.minimum.001`."
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.25f847f5c4b3": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.core"
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.062e31add550": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.invariant.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.invariant.015"
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.1afb28753974": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.failure_mode.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.failure_mode.009"
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.c6ec285f337b": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked tribunal reuse: the evidence changed after acceptance` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.failure_mode.006`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.failure_mode.006"
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.5fa588cb33ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked tribunal reuse: the evidence changed after acceptance` to existing reviewed atom `spinoza-verification-and-proof-carrying-claims.invariant.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "spinoza-verification-and-proof-carrying-claims.invariant.015"
+    },
+    "spinoza-verification-and-proof-carrying-claims.prose.68a0049df80f": {
+      "state": "historical_or_source_report",
+      "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
     }
   },
   "prose_review_lineage": [

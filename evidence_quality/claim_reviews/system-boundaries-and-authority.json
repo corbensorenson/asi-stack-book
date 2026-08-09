@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/system-boundaries-and-authority.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 46,
+    "prose_candidates_adjudicated": 50,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state."
+    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Controlled ASI Stack reference slices, six synthetic authority fixtures, one sandboxed local effect with exact rollback, two pre-effect denials, five replayable revocation entries, nine bounded governed repository scenarios, one two-hop delegation trace, 67 semantic mutations, one summary collision, and 20 transport-field mutations; production identity providers, operating-system isolation, concurrent/distributed delegation or revocation, hardware roots, and open-world deployments are outside current evidence.",
       "model": "A substrate-neutral logical authority system with complementary reachable sequential grant-to-effect and delegation-chain refinements binding abstract root/parent/child grant, principal/delegate, operation, target, scope, ceiling, epoch, expiry, remaining-use, receipt, approval, dispatch, observation, revocation, non-authority, and rollback state; identities and receipts remain trusted finite inputs rather than authenticated enforcement facts.",
       "authority": "A prospectively named issuer and revocation authority controls each grant; author, model, process, tool, or session capability does not create runtime permission, and trust in issuer identity or enforcement is an explicit assumption.",
-      "time": "Semantic review current through 2026-08-03; policies, grant versions, clocks, revocation epochs, adapter versions, and threat models must be frozen for outcome-bearing campaigns.",
+      "time": "Semantic review current through 2026-08-03; policies, grant versions, clocks, revocation epochs, adapter versions, and threat models must be frozen for outcome-bearing campaigns. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "chapters/system-boundaries-and-authority.qmd, authority-transition and authority-tuple records, permission and revocation harnesses, `AsiStackProofs.AuthorityEffectRefinement`, `AsiStackProofs.Authority`, the independent authority-effect consumer result/receipt/dossier, raw public-safe traces, campaign records, and evidence-transition decisions"
     },
     "current_disposition": "retain_argument_pending_promotion_or_refutation_campaign",
@@ -1372,6 +1372,25 @@
     "system-boundaries-and-authority.prose.cb57367916f3": {
       "state": "nonmaterial_explanation",
       "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+    },
+    "system-boundaries-and-authority.prose.689731f414de": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.d96146fa8867": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "system-boundaries-and-authority.failure_mode.007"
+    },
+    "system-boundaries-and-authority.prose.d2af07d4f30f": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked authority check: a scope widens between plan and effect` to existing reviewed atom `system-boundaries-and-authority.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "system-boundaries-and-authority.invariant.003"
+    },
+    "system-boundaries-and-authority.prose.ab942ca1d868": {
+      "state": "historical_or_source_report",
+      "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
     }
   },
   "non_claims": [

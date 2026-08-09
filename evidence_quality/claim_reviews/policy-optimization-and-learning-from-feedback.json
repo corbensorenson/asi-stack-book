@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/policy-optimization-and-learning-from-feedback.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 50,
+    "prose_candidates_adjudicated": 54,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Protected Regret Packet consumption, independent comparator and promotion authority, uncertainty monotonicity, and bounded update leases are mapped to existing feedback, authority, evidence, and readiness atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Protected Regret Packet consumption, independent comparator and promotion authority, uncertainty monotonicity, and bounded update leases are mapped to existing feedback, authority, evidence, and readiness atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Twenty-nine exact mappings; one schema and valid fixture; one persisted deterministic result over six synthetic samples, two holdouts, five policies, three invalid candidates, one experimental canary, and fixture rollback; four targets; eleven useful legacy declarations plus one lifecycle theorem; seven reachable stages, 63 routes, and 73/73 rejecting mutations. No optimizer, model, live router, natural workload, reward model, real canary, deployed rollback, reproduction, or transfer is represented.",
       "model": "A scoped Governed Policy Update Lease over target behavior, admissible feedback and proxy boundaries, matched baselines, update method and budget, drift and authority ceilings, evaluation, attacks, complete lineage, causal checks, lifecycle, full-state rollback, monitoring, expiry, and joint outcomes.",
       "authority": "This chapter owns the bounded update lease only. Benchmark, observation, evidence/review, target-layer, data/supply chain, artifact, runtime/security, capability/readiness, threshold/assurance, resource, formal, incident/release, and publication owners retain their boundaries.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter and manifest; twenty-nine mappings; schema and fixture; persisted synthetic probe; seven-stage lifecycle result, validator, schema, receipt, and adequacy dossier; four targets; eleven useful legacy declarations plus one lifecycle theorem; semantic review; and future natural causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_synthetic_policy_lease_probe_no_core_effect_pending_natural_independent_causal_update_campaign",
@@ -338,6 +338,26 @@
       "state": "duplicate_of_atom",
       "rationale": "The missingness-monotonicity rule specializes the existing requirement that uncertainty and provenance travel with every update and claim.",
       "target_atom_id": "policy-optimization-and-learning-from-feedback.invariant.003"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.b98e3afa6257": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `policy-optimization-and-learning-from-feedback.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.core"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.07ef446566ce": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.008`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.008"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.1477c5482650": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.004"
+    },
+    "policy-optimization-and-learning-from-feedback.prose.024211827203": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked policy update: reward rises while the target falls` to existing reviewed atom `policy-optimization-and-learning-from-feedback.mechanism.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "policy-optimization-and-learning-from-feedback.mechanism.004"
     }
   },
   "non_claims": [

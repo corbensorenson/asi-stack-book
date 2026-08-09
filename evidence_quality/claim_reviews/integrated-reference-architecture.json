@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 100,
+    "prose_candidates_adjudicated": 105,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The capsule-to-packet-to-update return path and its three non-transfers are mapped to existing cross-layer authority, evidence, readiness, and trace obligations. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The capsule-to-packet-to-update return path and its three non-transfers are mapped to existing cross-layer authority, evidence, readiness, and trace obligations. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Thirty mappings; one schema/fixture; three valid and six invalid trace fixtures; thirteen-artifact replay; blocked lineage plus eight mutations; nine-scenario/eight-attack disposable slice with baseline false accepts 8 versus governed 0, zero unsafe releases, three rollback attempts; finite invariants; a 45-theorem cross-layer and concurrent-effect model; 108/108 and 62/62 independent consumer mutations. No deployed services, natural workload, independent evaluator, reproduction, or transfer.",
       "model": "Cross-Layer Trace Join Contract over owner-preserving handoffs, authority, identities, canonical state, material effects, receipts, evaluators, evidence, residuals, lifecycle, matched baselines, correction, rollback, monitoring, and expiry.",
       "authority": "Owns cross-layer joinability only; every layer retains intent, planning, context, computation, evidence, runtime, artifact, data, evaluation, update, readiness, resource, governance, incident, release, and publication authority.",
-      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-07-31; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter, manifest, thirty mappings, records, fixtures, replay, slice, invariant results, validators, three targets, 45 theorem declarations, review, and future campaign."
     },
     "current_disposition": "retain_argument_with_local_join_slices_no_core_effect_pending_natural_independent_multi_service_campaign",
@@ -541,6 +541,29 @@
       "state": "duplicate_of_atom",
       "rationale": "The three non-transfers restate the existing rule that learning and self-improvement remain downstream of separate evidence, authority, readiness, residual, and monitoring gates.",
       "target_atom_id": "integrated-reference-architecture.invariant.013"
+    },
+    "integrated-reference-architecture.prose.4708d0dce23e": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `integrated-reference-architecture.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "integrated-reference-architecture.insufficiency.001"
+    },
+    "integrated-reference-architecture.prose.4432ae092957": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json`."
+    },
+    "integrated-reference-architecture.prose.a000bd3bd371": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Concrete integration failure: the patch that passed and still could not ship` to existing reviewed atom `integrated-reference-architecture.invariant.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "integrated-reference-architecture.invariant.007"
+    },
+    "integrated-reference-architecture.prose.90b8e8b06044": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json`."
+    },
+    "integrated-reference-architecture.prose.9de2c977105e": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Concrete integration failure: the patch that passed and still could not ship` to existing reviewed atom `integrated-reference-architecture.mechanism.016`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "integrated-reference-architecture.mechanism.016"
     }
   },
   "non_claims": [

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/living-book-methodology.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 63,
+    "prose_candidates_adjudicated": 65,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete Living Book Methodology chapter on 2026-08-03 after adding the 39-declaration dynamic-numbering and structural-change lifecycle. The changed prose refines the existing minimum-implementation and publication-boundary atoms; no new material atom, support, release, or publication movement was introduced."
+    "review_note": "Re-reviewed the complete Living Book Methodology chapter on 2026-08-03 after adding the 39-declaration dynamic-numbering and structural-change lifecycle. The changed prose refines the existing minimum-implementation and publication-boundary atoms; no new material atom, support, release, or publication movement was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Sixteen mappings; release-record fixture; three valid/six invalid change packets; blocked reader candidate plus three valid and eleven invalid routes; synchronized publication surfaces; four targets; 39 Lean declarations; five trace splits; nine reachable lifecycle states through 162 transitions; five terminal states through ninety absorbing transitions; and fifteen semantic mutations. No source-truth, manuscript-quality, accessibility-approval, reader-value, public-release, future-maintainer, external-reproduction, or transfer result.",
       "model": "Evidence-Preserving Publication Transaction over canonical source, provenance, lane separation, claim and proof scope, change packets, regeneration, validation, typed derivatives, release identity, correction, successor continuity, and expiry.",
       "authority": "Owns publication-state integrity only; author intent, source truth, claim evidence, editorial quality, accessibility approval, rights, release approval, external publication, and reader judgment remain separate.",
-      "time": "Semantic review current through 2026-08-03; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization.",
+      "time": "Semantic review current through 2026-08-03; material changes to evidence, authority, population, model, environment, ontology, or consumer require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter, manifest, sixteen mappings, release/change/reader fixtures and validators, publication surfaces, four targets, 39-declaration Lean surface, semantic review, and future campaign."
     },
     "current_disposition": "retain_argument_with_repository_release_and_derivative_discipline_no_core_effect",
@@ -399,6 +399,16 @@
     "living-book-methodology.prose.fef318b53b35": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source report, publication-lifecycle restatement, finite-proof boundary, scanner fragment, or explicit non-claim; material obligations are already atomized."
+    },
+    "living-book-methodology.prose.bff4e0ff17b2": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `living-book-methodology.mechanism.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "living-book-methodology.mechanism.012"
+    },
+    "living-book-methodology.prose.737579a4bf1a": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked structural edit: insert a chapter without renaming its neighbors` to existing reviewed atom `living-book-methodology.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "living-book-methodology.failure_mode.007"
     }
   },
   "prose_review_lineage": [

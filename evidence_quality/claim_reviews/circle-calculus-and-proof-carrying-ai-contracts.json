@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 52,
+    "prose_candidates_adjudicated": 56,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all five exact source mappings, both protocol records, the external rope slice and narrow non-core transition, the one-valid/four-invalid public consumer gate, the nine-contract/four-policy-receipt/five-invalid archive and no-change decision, all four proof targets, all 28 current ProofCarryingContracts theorem declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep keeps the theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope as the distinct owner; records arbitrary-run custody, revocation coherence, revoked-lineage containment, and unrelated-lineage availability without converting them into deployed transport evidence; preserves the exact current evidence and non-claim boundaries; and leaves the natural multi-consumer, semantic-refinement, adversarial, causal, independent-reproduction, and heterogeneous-transfer campaign with zero chapter-core effect."
+    "review_note": "Reviewed the complete chapter, all five exact source mappings, both protocol records, the external rope slice and narrow non-core transition, the one-valid/four-invalid public consumer gate, the nine-contract/four-policy-receipt/five-invalid archive and no-change decision, all four proof targets, all 28 current ProofCarryingContracts theorem declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep keeps the theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope as the distinct owner; records arbitrary-run custody, revocation coherence, revoked-lineage containment, and unrelated-lineage availability without converting them into deployed transport evidence; preserves the exact current evidence and non-claim boundaries; and leaves the natural multi-consumer, semantic-refinement, adversarial, causal, independent-reproduction, and heterogeneous-transfer campaign with zero chapter-core effect. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Five exact mappings; two schema-valid records; one external Circle rope replay with one narrow non-core prototype-backed transition; one-valid/four-invalid ASI gate; one nine-contract/four-policy-receipt/five-invalid archive with no-change decision; four proof targets; 28 finite declarations; eight reference-trace splits; 45 reachable states through 360 transitions; 72 transitions from nine revoked-lineage states; 16 rejecting lifecycle mutations; and 15 semantic mutations. No general local resolver, multi-consumer service, semantic refinement proof, deployed revocation, independent reproduction, or transfer campaign exists.",
       "model": "A theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, environment-, and time-specific envelope over source/toolchain pinning, build, resolution, refinement, canonicalization, deterministic recomputation, non-claims, replay, consumer authority, transport, invalidation, fallback, recovery, reproduction, transfer, expiry, and residuals.",
       "authority": "This chapter owns exact proof-contract transport only. Formal Methods, Executable Specifications, Artifacts, Supply Chain, Runtime, structural consumers, Verification, Security, Privacy, Rights, Resources, Claims, Evidence, Readiness, Incident, and Release retain their boundaries.",
-      "time": "Semantic review current through 2026-08-03; theorem, statement, assumption, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, organization, or time change expires affected envelopes.",
+      "time": "Semantic review current through 2026-08-03; theorem, statement, assumption, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, organization, or time change expires affected envelopes. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
       "artifact": "Chapter and manifest contract; five mappings; two record fixtures; external rope slice and transition; public consumer gate; contract-pack archive and no-change decision; four targets; 28 declarations; arbitrary-run local transport invariants; independent exhaustive consumer; semantic review; and future natural transport campaign."
     },
     "current_disposition": "retain_argument_with_one_narrow_noncore_external_transition_and_no_core_effect_pending_natural_multiconsumer_transport_campaign",
@@ -43,13 +43,34 @@
     "strongest_counterclaim": "Signed manifests, hashes, schemas, ordinary tests, provenance attestations, and versioned APIs already transport all useful engineering facts; theorem-linked envelopes add fragile tooling and authority theater without improving consumer correctness or recovery.",
     "falsifier": "Under matched natural multi-consumer transport, the envelope fails to improve unique resolution, statement and semantic-refinement defect detection, false accept/refuse, replay, tamper/staleness detection, revocation, liveness, recovery, rights, misuse, or total-cost frontiers; or shared defects, weak controls, inaccessible artifacts, private-result inference, or failed reproduction and transfer explain the result.",
     "required_lanes": [
-      {"lane": "source-synthesis", "necessity": "Freeze current formal-proof, provenance, attestation, signed-manifest, schema, and versioned-API comparators without importing authority."},
-      {"lane": "normative", "necessity": "Justify least authority, non-claim preservation, public/private separation, revocation, rights, expiry, and residual ownership."},
-      {"lane": "formal", "necessity": "Prove resolver soundness, statement identity, transport transitions, descendant invalidation, fallback liveness, and implementation refinement beyond record projections."},
-      {"lane": "executable", "necessity": "Run independent producers, resolvers, clean builders, canonicalizers, transport, consumers, mutations, revocation, fallback, repair, replay, and recovery."},
-      {"lane": "empirical", "necessity": "Measure resolution, refinement detection, false decisions, replay, tamper/staleness, revocation, liveness, costs, rights, misuse, and residuals jointly."},
-      {"lane": "causal", "necessity": "Ablate resolution, refinement, fingerprints, non-claims, consumer specificity, provenance, expiry, revocation, and replay under matched controls."},
-      {"lane": "transfer", "necessity": "Reproduce independently and transfer across theorem families, provers, artifacts, consumers, organizations, rights regimes, attacks, and time."}
+      {
+        "lane": "source-synthesis",
+        "necessity": "Freeze current formal-proof, provenance, attestation, signed-manifest, schema, and versioned-API comparators without importing authority."
+      },
+      {
+        "lane": "normative",
+        "necessity": "Justify least authority, non-claim preservation, public/private separation, revocation, rights, expiry, and residual ownership."
+      },
+      {
+        "lane": "formal",
+        "necessity": "Prove resolver soundness, statement identity, transport transitions, descendant invalidation, fallback liveness, and implementation refinement beyond record projections."
+      },
+      {
+        "lane": "executable",
+        "necessity": "Run independent producers, resolvers, clean builders, canonicalizers, transport, consumers, mutations, revocation, fallback, repair, replay, and recovery."
+      },
+      {
+        "lane": "empirical",
+        "necessity": "Measure resolution, refinement detection, false decisions, replay, tamper/staleness, revocation, liveness, costs, rights, misuse, and residuals jointly."
+      },
+      {
+        "lane": "causal",
+        "necessity": "Ablate resolution, refinement, fingerprints, non-claims, consumer specificity, provenance, expiry, revocation, and replay under matched controls."
+      },
+      {
+        "lane": "transfer",
+        "necessity": "Reproduce independently and transfer across theorem families, provers, artifacts, consumers, organizations, rights regimes, attacks, and time."
+      }
     ],
     "evidence_refs": {
       "chapter": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
@@ -116,8 +137,16 @@
       "support_state": "prototype-backed",
       "current_disposition": "promoted_at_bounded_scope",
       "terminal_disposition": "promoted_at_bounded_scope",
-      "reproduction": {"command": "python3 scripts/validate_p5_terminal_batch.py", "environment_lock": "One pinned Circle rope target and finite local consumer, 2026-07-16", "artifact_digest": "experiments/p5_terminal_batch/results/result.json", "evaluator_identity": "separate local P5 terminal-batch evaluator"},
-      "residual": {"owner": "circle-calculus-and-proof-carrying-ai-contracts", "next_unblocking_condition": "Independent multi-producer, multi-consumer semantic transport, revocation, recovery, cost, and transfer campaign."}
+      "reproduction": {
+        "command": "python3 scripts/validate_p5_terminal_batch.py",
+        "environment_lock": "One pinned Circle rope target and finite local consumer, 2026-07-16",
+        "artifact_digest": "experiments/p5_terminal_batch/results/result.json",
+        "evaluator_identity": "separate local P5 terminal-batch evaluator"
+      },
+      "residual": {
+        "owner": "circle-calculus-and-proof-carrying-ai-contracts",
+        "next_unblocking_condition": "Independent multi-producer, multi-consumer semantic transport, revocation, recovery, cost, and transfer campaign."
+      }
     },
     "circle-calculus-and-proof-carrying-ai-contracts.core": {
       "current_disposition": "retain_distinct_proof_contract_transport_envelope_owner_at_argument",
@@ -127,58 +156,263 @@
     }
   },
   "prose_candidate_dispositions": {
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.6f0cbe9107a1": {"state": "duplicate_of_atom", "rationale": "Explains the distinct transport rather than adoption owner.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.0b857f325298": {"state": "nonmaterial_explanation", "rationale": "Reader explanation of portable structural guarantees."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.9b79f5f0eb63": {"state": "duplicate_of_atom", "rationale": "Summarizes envelope identity and non-claims.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.8f1aaa411334": {"state": "nonmaterial_explanation", "rationale": "Reader-facing explanation of trust and refusal."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.17ed3f6d576b": {"state": "nonmaterial_explanation", "rationale": "Introduces the chapter's authority-transfer problem."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.f58506d04752": {"state": "duplicate_of_atom", "rationale": "Explains proof and evidence state separation.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.003"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.956b4ef1b733": {"state": "duplicate_of_atom", "rationale": "Is the rendered core claim itself.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.988b352662d0": {"state": "duplicate_of_atom", "rationale": "Fragment of the distinct-owner boundary.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.7f73e0a3d85b": {"state": "historical_or_source_report", "rationale": "States the external slice and gate evidence limit."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.9a0629c046f5": {"state": "duplicate_of_atom", "rationale": "Fragment of state-separation discipline.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.003"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.614f47e4d9a8": {"state": "historical_or_source_report", "rationale": "Reports conservative fixture scope and non-claims."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.63fb067cfd64": {"state": "duplicate_of_atom", "rationale": "Captions formal versus empirical separation.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.5d413543ff18": {"state": "duplicate_of_atom", "rationale": "Explains inspectable transport artifacts.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.014"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.39d3909b58fc": {"state": "duplicate_of_atom", "rationale": "Lists envelope inspection requirements.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.6fd5e472f8f9": {"state": "historical_or_source_report", "rationale": "Reports current finite boundary checks."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.fcd1d0368377": {"state": "nonmaterial_explanation", "rationale": "Introduces proof and consumer layers."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.ad7e4b2b6667": {"state": "duplicate_of_atom", "rationale": "Restates proof insufficiency for empirical use.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.8145303031ac": {"state": "historical_or_source_report", "rationale": "Introduces the bounded public Circle evidence."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.97459f87170e": {"state": "historical_or_source_report", "rationale": "States the narrow non-core transition boundary."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.0beabc75e823": {"state": "historical_or_source_report", "rationale": "Enumerates the external receipt non-claims."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.ee9b2722082b": {"state": "duplicate_of_atom", "rationale": "Restates comprehensive non-claim attachment.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.008"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.1237dbbfa758": {"state": "duplicate_of_atom", "rationale": "Restates the separate empirical gate.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.013"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.9ca63c4e2a3e": {"state": "duplicate_of_atom", "rationale": "Restates independent reproduction and transfer.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.017"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.3e54d9a94305": {"state": "duplicate_of_atom", "rationale": "Is the Release owner boundary.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.interface.011"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.e142da31ee85": {"state": "duplicate_of_atom", "rationale": "Is the private/public boundary.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.interface.012"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.7730aaf93fcd": {"state": "duplicate_of_atom", "rationale": "Restates separate empirical support requirements.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.6ce90a2d825f": {"state": "duplicate_of_atom", "rationale": "Restates fail-closed missing fields.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.011"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.0c3bbe095f2e": {"state": "duplicate_of_atom", "rationale": "Summarizes receipt invariants.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.ecfc4981ddb4": {"state": "duplicate_of_atom", "rationale": "Is the separate natural workload invariant.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.5cfa59045032": {"state": "duplicate_of_atom", "rationale": "Restates non-claim preservation in descendants.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.008"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.1460ae96fccf": {"state": "duplicate_of_atom", "rationale": "Restates consumer specificity.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.009"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.d224208a8581": {"state": "duplicate_of_atom", "rationale": "Is the rope-result generalization failure.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.failure_mode.017"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.d574587c3c92": {"state": "duplicate_of_atom", "rationale": "Restates exact transition authority.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.016"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.5f3954da18ff": {"state": "duplicate_of_atom", "rationale": "Restates fail-closed theorem resolution.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.002"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.233644cc6a92": {"state": "duplicate_of_atom", "rationale": "Restates the downstream empirical gate.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.4c552fc731c3": {"state": "duplicate_of_atom", "rationale": "Restates exact-to-real separation.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.failure_mode.004"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.78a4569162e0": {"state": "historical_or_source_report", "rationale": "Reports the current finite Lean checks."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.9abea0fa002e": {"state": "historical_or_source_report", "rationale": "Reports the one-valid/four-invalid public gate."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.520fb8451582": {"state": "historical_or_source_report", "rationale": "States archive integrity value and non-claims."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.0422da7a4184": {"state": "duplicate_of_atom", "rationale": "Restates proof versus empirical authority.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.6724a12b2ea1": {"state": "duplicate_of_atom", "rationale": "Explains stale, replay, and workload-blocked consequences.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.011"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.d420aac1b049": {"state": "duplicate_of_atom", "rationale": "Fragment of separate downstream campaigns.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.3354cb033a52": {"state": "duplicate_of_atom", "rationale": "Fragment of argument-exit gates.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.beyond_sota.001"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.137c60c0d47c": {"state": "historical_or_source_report", "rationale": "States planned-test rather than result status."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.c7d3ecb6248a": {"state": "editorial_or_question", "rationale": "Is a future documentation maintenance instruction."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.f99d75c68d63": {"state": "historical_or_source_report", "rationale": "Reports the bounded lifecycle result and its deployed-revocation non-claim."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.2dfa00049ba2": {"state": "historical_or_source_report", "rationale": "States the exact authored finite transition-system boundary."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.e03a51aebfa9": {"state": "historical_or_source_report", "rationale": "States the unresolved semantic, deployment, reproduction, and transfer boundaries."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.43064389a348": {"state": "duplicate_of_atom", "rationale": "Restates structural-only consumption.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.fa4ef8f87e07": {"state": "duplicate_of_atom", "rationale": "Restates downstream evidence obligations.", "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.013"},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.022b7ed379fa": {"state": "nonmaterial_explanation", "rationale": "Reader-facing statement of the contract's purpose."},
-    "circle-calculus-and-proof-carrying-ai-contracts.prose.38a5b2f2ec21": {"state": "nonmaterial_explanation", "rationale": "Explains the practical value of narrow attachments."}
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.6f0cbe9107a1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains the distinct transport rather than adoption owner.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.0b857f325298": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Reader explanation of portable structural guarantees."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.9b79f5f0eb63": {
+      "state": "duplicate_of_atom",
+      "rationale": "Summarizes envelope identity and non-claims.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.8f1aaa411334": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Reader-facing explanation of trust and refusal."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.17ed3f6d576b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Introduces the chapter's authority-transfer problem."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.f58506d04752": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains proof and evidence state separation.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.003"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.956b4ef1b733": {
+      "state": "duplicate_of_atom",
+      "rationale": "Is the rendered core claim itself.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.988b352662d0": {
+      "state": "duplicate_of_atom",
+      "rationale": "Fragment of the distinct-owner boundary.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.7f73e0a3d85b": {
+      "state": "historical_or_source_report",
+      "rationale": "States the external slice and gate evidence limit."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.9a0629c046f5": {
+      "state": "duplicate_of_atom",
+      "rationale": "Fragment of state-separation discipline.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.003"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.614f47e4d9a8": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports conservative fixture scope and non-claims."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.63fb067cfd64": {
+      "state": "duplicate_of_atom",
+      "rationale": "Captions formal versus empirical separation.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.5d413543ff18": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains inspectable transport artifacts.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.014"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.39d3909b58fc": {
+      "state": "duplicate_of_atom",
+      "rationale": "Lists envelope inspection requirements.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.6fd5e472f8f9": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports current finite boundary checks."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.fcd1d0368377": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Introduces proof and consumer layers."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.ad7e4b2b6667": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates proof insufficiency for empirical use.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.8145303031ac": {
+      "state": "historical_or_source_report",
+      "rationale": "Introduces the bounded public Circle evidence."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.97459f87170e": {
+      "state": "historical_or_source_report",
+      "rationale": "States the narrow non-core transition boundary."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.0beabc75e823": {
+      "state": "historical_or_source_report",
+      "rationale": "Enumerates the external receipt non-claims."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.ee9b2722082b": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates comprehensive non-claim attachment.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.008"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.1237dbbfa758": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the separate empirical gate.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.013"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.9ca63c4e2a3e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates independent reproduction and transfer.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.017"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.3e54d9a94305": {
+      "state": "duplicate_of_atom",
+      "rationale": "Is the Release owner boundary.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.interface.011"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.e142da31ee85": {
+      "state": "duplicate_of_atom",
+      "rationale": "Is the private/public boundary.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.interface.012"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.7730aaf93fcd": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates separate empirical support requirements.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.6ce90a2d825f": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates fail-closed missing fields.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.011"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.0c3bbe095f2e": {
+      "state": "duplicate_of_atom",
+      "rationale": "Summarizes receipt invariants.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.core"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.ecfc4981ddb4": {
+      "state": "duplicate_of_atom",
+      "rationale": "Is the separate natural workload invariant.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.5cfa59045032": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates non-claim preservation in descendants.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.008"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.1460ae96fccf": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates consumer specificity.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.009"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.d224208a8581": {
+      "state": "duplicate_of_atom",
+      "rationale": "Is the rope-result generalization failure.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.failure_mode.017"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.d574587c3c92": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates exact transition authority.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.016"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.5f3954da18ff": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates fail-closed theorem resolution.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.002"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.233644cc6a92": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the downstream empirical gate.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.4c552fc731c3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates exact-to-real separation.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.failure_mode.004"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.78a4569162e0": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the current finite Lean checks."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.9abea0fa002e": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the one-valid/four-invalid public gate."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.520fb8451582": {
+      "state": "historical_or_source_report",
+      "rationale": "States archive integrity value and non-claims."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.0422da7a4184": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates proof versus empirical authority.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.6724a12b2ea1": {
+      "state": "duplicate_of_atom",
+      "rationale": "Explains stale, replay, and workload-blocked consequences.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.011"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.d420aac1b049": {
+      "state": "duplicate_of_atom",
+      "rationale": "Fragment of separate downstream campaigns.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.3354cb033a52": {
+      "state": "duplicate_of_atom",
+      "rationale": "Fragment of argument-exit gates.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.beyond_sota.001"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.137c60c0d47c": {
+      "state": "historical_or_source_report",
+      "rationale": "States planned-test rather than result status."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.c7d3ecb6248a": {
+      "state": "editorial_or_question",
+      "rationale": "Is a future documentation maintenance instruction."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.f99d75c68d63": {
+      "state": "historical_or_source_report",
+      "rationale": "Reports the bounded lifecycle result and its deployed-revocation non-claim."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.2dfa00049ba2": {
+      "state": "historical_or_source_report",
+      "rationale": "States the exact authored finite transition-system boundary."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.e03a51aebfa9": {
+      "state": "historical_or_source_report",
+      "rationale": "States the unresolved semantic, deployment, reproduction, and transfer boundaries."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.43064389a348": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates structural-only consumption.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.010"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.fa4ef8f87e07": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates downstream evidence obligations.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.013"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.022b7ed379fa": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Reader-facing statement of the contract's purpose."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.38a5b2f2ec21": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Explains the practical value of narrow attachments."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.c6a584820fa5": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.85b920086a3c": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.54aedd30878e": {
+      "state": "duplicate_of_atom",
+      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof-transport trace: one receipt, two consumers` to existing reviewed atom `circle-calculus-and-proof-carrying-ai-contracts.invariant.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+      "target_atom_id": "circle-calculus-and-proof-carrying-ai-contracts.invariant.009"
+    },
+    "circle-calculus-and-proof-carrying-ai-contracts.prose.8429270649b2": {
+      "state": "nonmaterial_explanation",
+      "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/circle-calculus-and-proof-carrying-ai-contracts.json`."
+    }
   },
   "non_claims": [
     "Completing this sweep does not establish general proof transport, model quality, runtime, memory, safety, deployment, transfer, or SOTA.",

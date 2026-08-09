@@ -52,6 +52,28 @@ simpler baseline. The current audit reports:
 The lens is not a new claim. It is a reader orientation that points into the
 chapter's digest-bound worked scene and evidence ceiling.
 
+## Claim-ownership reconciliation
+
+The claim scanner detected 138 newly introduced reader-facing candidates in
+53 of the 64 chapters covered by the historical claim-review registry. They
+were not suppressed to preserve an old denominator. The reconciliation in
+`evidence_quality/p7_1c_reader_prose_claim_reconciliation.json` records every
+candidate, source line, owning section, disposition, current chapter digest,
+and P7.1c packet digest:
+
+- 93 complete propositions map to existing semantically reviewed atoms;
+- 37 line-wrapped scanner fragments remain explicitly nonmaterial;
+- 8 bounded-fixture or maximum-inference reports remain explicit evidence-limit
+  records;
+- 0 material candidates remain unowned; and
+- 0 support states move.
+
+`scripts/reconcile_p7_1c_reader_prose_claim_reviews.py` accepts only the exact
+reader claim, operational rule, Human Reading Path, concrete-scene, and
+worked-trace surfaces named by each digest-bound packet. A candidate outside
+that boundary, a stale packet, or a changed denominator fails rather than being
+silently classified.
+
 ## Caveat and bookkeeping disposition
 
 The remediation does not optimize for fewer caveat phrases. Every packet states
@@ -68,6 +90,9 @@ fallback or residual, and maximum inference before returning to formal detail.
 ## Machine checks
 
 - `python3 scripts/validate_p7_1c_reader_prose_quality.py`
+- `python3 scripts/reconcile_p7_1c_reader_prose_claim_reviews.py`
+- `python3 scripts/build_claim_atom_registry.py`
+- `python3 scripts/validate_claim_atom_registry.py`
 - `python3 scripts/build_chapter_substance_contract.py`
 - `python3 scripts/validate_chapter_substance_contract.py`
 - `python3 scripts/validate_human_reading_paths.py`
