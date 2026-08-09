@@ -796,7 +796,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "learning-theory-generalization-and-scaling-science": {
-        "reviewed_sha256": "502f22ee4b8ffdd1292f185d87b4a1bbc109e3474fef4d57ee88f509f9bdbc07",
+        "reviewed_sha256": "f9a5df92d7615bf7b29f80bb1d597f5a02a4acafd923e362924ef20ff4e479ba",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -804,6 +804,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the eight concepts separate claim assumptions, conditional bounds, inductive bias, compression and information lenses, interpolation, scaling forecasts, emergence measurement, and transfer under regime change",
             "PAC, MDL, weakness, information bottleneck, scaling-law, double-descent, emergence, weak-to-strong, and no-free-lunch sources remain conditional, theoretical, empirical, model-family, task, representation, prior, or explanatory comparators rather than a universal learning theory",
             "the chapter preserves failed runs, quantifiers, alternative explanations, prospective forecasts, uncertainty, metric artifacts, architecture and optimizer expiry, and no transfer or safety promotion",
+            "the added EGGROLL and Forward-Forward discussion treats the learner and update rule as part of the bound claim identity, keeps linearized estimator analysis and preliminary small-scale results inside their source scopes, and does not infer global optimization, foundation-model transfer, or superiority to backpropagation",
             "the formalization is restricted to authored forecast-dossier admissibility, finite attempt and alternative custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and a Benchmark Ratchet rejection; it establishes no generalization, transfer, emergence, forecast accuracy, calibration, safety, deployment, support, or release result",
             "the two-model prospective forecast scene preserves three attempts, frozen regime identity, held-out timing, alternatives, and invalidation without converting a curve fit into generalization or emergence evidence",
         ],
