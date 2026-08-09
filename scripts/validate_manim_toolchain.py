@@ -7,7 +7,6 @@ import argparse
 import copy
 import hashlib
 import json
-import platform
 import re
 import subprocess
 from pathlib import Path
@@ -100,31 +99,12 @@ def errors(value: dict) -> list[str]:
         failures.append("Manim configuration digest drift")
     if value.get("visual_grammar_sha256") != digest(GRAMMAR):
         failures.append("visual grammar digest drift")
-    captured_host = value.get("host", {})
-    on_captured_host_class = (
-        platform.system() == "Darwin"
-        and platform.machine() == captured_host.get("architecture")
-    )
-    # The schema is the cross-platform lock for the exact qualified macOS/ARM
-    # binaries.  Only dereference and execute those absolute paths on the host
-    # class that can actually own them; Linux CI validates the lock, not a
-    # fictitious local render runtime.
-    if on_captured_host_class:
-        for name, binding in value.get("media_tools", {}).items():
-            path = Path(binding.get("path", ""))
-            if not path.is_file() or digest(path) != binding.get("sha256"):
-                failures.append(f"{name} executable identity drift")
-                continue
-            try:
-                version_line = subprocess.check_output(
-                    [str(path), "-version"], text=True, stderr=subprocess.STDOUT,
-                    timeout=30,
-                ).splitlines()[0]
-            except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
-                failures.append(f"{name} executable version probe failed")
-            else:
-                if not version_line.startswith(f"{name} version {binding.get('version')} "):
-                    failures.append(f"{name} executable version drift")
+    native_ffmpeg_version = value.get("native_dependencies", {}).get("ffmpeg")
+    for name, binding in value.get("media_tools", {}).items():
+        if Path(binding.get("path", "")).name != name:
+            failures.append(f"{name} executable role/path mismatch")
+        if binding.get("version") != native_ffmpeg_version:
+            failures.append(f"{name} declared version disagrees with native dependency")
     grammar = json.loads(GRAMMAR.read_text(encoding="utf-8"))
     failures.extend(visual_grammar_errors(grammar))
     typography = grammar.get("typography", {})
@@ -157,6 +137,27 @@ def errors(value: dict) -> list[str]:
         native = value.get("native_dependencies", {})
         if native.get("latex") == "absent" or native.get("dvisvgm") == "absent":
             failures.append("all-pilot qualification requires LaTeX and dvisvgm")
+    return failures
+
+
+def media_tool_runtime_errors(value: dict) -> list[str]:
+    """Probe exact binaries only on the explicitly qualified render runtime."""
+    failures = []
+    for name, binding in value.get("media_tools", {}).items():
+        path = Path(binding.get("path", ""))
+        if not path.is_file() or digest(path) != binding.get("sha256"):
+            failures.append(f"{name} executable identity drift")
+            continue
+        try:
+            version_line = subprocess.check_output(
+                [str(path), "-version"], text=True, stderr=subprocess.STDOUT,
+                timeout=30,
+            ).splitlines()[0]
+        except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
+            failures.append(f"{name} executable version probe failed")
+        else:
+            if not version_line.startswith(f"{name} version {binding.get('version')} "):
+                failures.append(f"{name} executable version drift")
     return failures
 
 
@@ -204,6 +205,7 @@ def probe_runtime(value: dict, python: str) -> list[str]:
             continue
         if font not in installed_fonts:
             failures.append(f"required {role} font is unavailable to Manim/Pango: {font}")
+    failures.extend(media_tool_runtime_errors(value))
     return failures
 
 
@@ -227,8 +229,8 @@ def main() -> None:
         ("silent font substitution", lambda d: d["font_contract"].__setitem__("fallback", "DejaVu Sans")),
         ("1080p60 shortcut substitution", lambda d: d["render_profiles"]["release"].__setitem__("quality_flag", "-qh")),
         ("support promotion", lambda d: d.__setitem__("support_state_effect", "promotion")),
-        ("FFmpeg executable drift", lambda d: d["media_tools"]["ffmpeg"].__setitem__("sha256", "0" * 64)),
-        ("FFprobe executable drift", lambda d: d["media_tools"]["ffprobe"].__setitem__("sha256", "0" * 64)),
+        ("FFmpeg declared-version mismatch", lambda d: d["media_tools"]["ffmpeg"].__setitem__("version", "7.1.1")),
+        ("FFprobe role/path substitution", lambda d: d["media_tools"]["ffprobe"].__setitem__("path", "/opt/homebrew/bin/ffmpeg")),
         ("visual grammar identity drift", lambda d: d.__setitem__("visual_grammar_sha256", "0" * 64)),
     ):
         candidate = copy.deepcopy(value)
