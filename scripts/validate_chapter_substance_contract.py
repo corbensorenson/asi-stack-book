@@ -8,13 +8,14 @@ import json
 
 from build_canonical_public_status import validate_against_schema
 from build_chapter_substance_contract import (
+    CHAPTER_GROWTH_AUTHORITY,
     CONCEPT_SPECS,
-    MANIFEST_FREEZE,
     OUTPUT,
     REQUIRED_ELEMENTS,
     ROOT,
     SEMANTIC_REVIEW_DISPOSITION,
     build,
+    manifest_chapters,
 )
 
 
@@ -71,8 +72,13 @@ def errors(contract: dict, *, check_freshness: bool = True) -> list[str]:
         out.append("tracked substance contract is stale against current chapters and atom sources")
     records = contract.get("chapter_records", [])
     ids = [row.get("chapter_id") for row in records]
-    if len(ids) != MANIFEST_FREEZE or len(set(ids)) != MANIFEST_FREEZE:
-        out.append("chapter denominator is not the exact frozen 84-owner manifest")
+    expected_ids = [row["id"] for row in manifest_chapters()]
+    if ids != expected_ids or len(set(ids)) != len(expected_ids):
+        out.append("chapter identities or order do not exactly match the current manifest")
+    if contract.get("manifest_chapter_count_freeze") != len(expected_ids):
+        out.append("chapter snapshot denominator does not match the current manifest")
+    if contract.get("chapter_growth_authority") != CHAPTER_GROWTH_AUTHORITY:
+        out.append("chapter-growth admission authority drifted")
     if any(not row.get("atom_refs") for row in records):
         out.append("at least one manifest chapter has no exact atom source")
     for row in records:
@@ -82,8 +88,12 @@ def errors(contract: dict, *, check_freshness: bool = True) -> list[str]:
             continue
         out.extend(concept_errors(row, specs))
     summary = contract.get("summary", {})
-    if summary.get("atom_covered_chapter_count") != 84 or summary.get("atom_uncovered_chapter_count") != 0:
-        out.append("unified atom-at-birth coverage is not 84/84")
+    if (
+        summary.get("chapter_count") != len(expected_ids)
+        or summary.get("atom_covered_chapter_count") != len(expected_ids)
+        or summary.get("atom_uncovered_chapter_count") != 0
+    ):
+        out.append("unified atom-at-birth coverage does not match the current manifest")
     if summary.get("active_concepts_passing_count") != summary.get("active_concept_count"):
         out.append("not every priority concept contract passes")
     if summary.get("concept_complete_semantic_reviewed_chapter_count") != len(CONCEPT_SPECS):
@@ -111,7 +121,7 @@ def main() -> None:
             out.append(f"negative control accepted: {label}")
 
     reject("chapter deletion", lambda c: c["chapter_records"].pop())
-    reject("manifest freeze widening", lambda c: c.__setitem__("manifest_chapter_count_freeze", 85))
+    reject("manifest snapshot widening", lambda c: c.__setitem__("manifest_chapter_count_freeze", len(c["chapter_records"]) + 1))
     reject("word trigger weakening", lambda c: c.__setitem__("word_trigger", 1000))
     reject("atom source deletion", lambda c: c["chapter_records"][0].__setitem__("atom_refs", []))
     reject("concept deletion", lambda c: c["chapter_records"][4]["concept_contracts"].pop())
@@ -145,8 +155,8 @@ def main() -> None:
     summary = contract["summary"]
     print(
         "Chapter substance contract passed: "
-        f"{summary['chapter_count']} frozen chapters, "
-        f"{summary['atom_covered_chapter_count']}/84 atom-covered, "
+        f"{summary['chapter_count']} manifest-bound chapters, "
+        f"{summary['atom_covered_chapter_count']}/{summary['chapter_count']} atom-covered, "
         f"{summary['active_concepts_passing_count']}/{summary['active_concept_count']} "
         f"priority concepts, {summary['thin_chapter_count']} chapters below the diagnostic trigger, "
         f"{summary['current_semantic_review_count']} current semantic reviews, "

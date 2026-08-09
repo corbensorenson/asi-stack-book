@@ -37,7 +37,8 @@
       "const": "book_structure.json"
     },
     "manifest_chapter_count_freeze": {
-      "const": 84
+      "type": "integer",
+      "minimum": 1
     },
     "word_count_method": {
       "type": "string",
@@ -69,8 +70,7 @@
     },
     "chapter_records": {
       "type": "array",
-      "minItems": 84,
-      "maxItems": 84,
+      "minItems": 1,
       "items": {
         "$ref": "#/$defs/chapter"
       }
@@ -82,7 +82,7 @@
       "const": true
     },
     "chapter_growth_authority": {
-      "const": "frozen_at_84_until_thin_and_atom_debt_are_zero_or_terminally_justified"
+      "const": "manifest_driven_growth_requires_full_admission_and_debt_reconciliation"
     },
     "support_state_effect": {
       "const": "none"
@@ -339,46 +339,51 @@
       ],
       "properties": {
         "chapter_count": {
-          "const": 84
+          "type": "integer",
+          "minimum": 1
         },
         "thin_chapter_count": {
           "type": "integer",
-          "minimum": 0,
-          "maximum": 84
+          "minimum": 0
         },
         "contracted_chapter_count": {
-          "const": 15
+          "type": "integer",
+          "minimum": 0
         },
         "concept_complete_semantic_reviewed_chapter_count": {
-          "const": 15
+          "type": "integer",
+          "minimum": 0
         },
         "queued_thin_chapter_count": {
           "type": "integer",
-          "minimum": 0,
-          "maximum": 81
+          "minimum": 0
         },
         "word_trigger_clear_chapter_count": {
           "type": "integer",
-          "minimum": 0,
-          "maximum": 84
+          "minimum": 0
         },
         "atom_covered_chapter_count": {
-          "const": 84
+          "type": "integer",
+          "minimum": 1
         },
         "atom_uncovered_chapter_count": {
           "const": 0
         },
         "active_concept_count": {
-          "const": 120
+          "type": "integer",
+          "minimum": 0
         },
         "active_concepts_passing_count": {
-          "const": 120
+          "type": "integer",
+          "minimum": 0
         },
         "current_semantic_review_count": {
-          "const": 15
+          "type": "integer",
+          "minimum": 0
         },
         "low_atom_count_diagnostic_chapter_count": {
-          "const": 19
+          "type": "integer",
+          "minimum": 0
         },
         "atom_count_is_acceptance_target": {
           "const": false

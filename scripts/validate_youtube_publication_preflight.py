@@ -58,9 +58,17 @@ def main() -> None:
         edit(candidate)
         mutations.append((label, candidate))
 
-    add("entry deletion", lambda d: d["entries"].pop())
-    add("master digest substitution", lambda d: d["entries"][0].__setitem__("master_sha256", "0" * 64))
-    add("thumbnail oversize", lambda d: d["entries"][0].__setitem__("thumbnail_bytes", 2 * 1024 * 1024 + 1))
+    if value["entries"]:
+        add("entry deletion", lambda d: d["entries"].pop())
+        add("master digest substitution", lambda d: d["entries"][0].__setitem__("master_sha256", "0" * 64))
+        add("thumbnail oversize", lambda d: d["entries"][0].__setitem__("thumbnail_bytes", 2 * 1024 * 1024 + 1))
+    else:
+        # A clean checkout has no ignored local masters, captions, or
+        # thumbnails. Keep the negative-control count meaningful without
+        # manufacturing a fake entry just to exercise an index mutation.
+        add("empty-plan entry insertion", lambda d: d["entries"].append({"chapter_id": "unprepared"}))
+        add("empty-plan denominator", lambda d: d.__setitem__("entry_count", 1))
+        add("empty-plan readiness", lambda d: d.__setitem__("ready_entry_count", 1))
     add("premature authority", lambda d: d.__setitem__("external_mutation_authorized_now", True))
     add("mutation scope substitution", lambda d: d.__setitem__("mutation_scope_sha256", "0" * 64))
     add("playlist title substitution", lambda d: d.__setitem__("playlist_title", "Ambiguous playlist"))

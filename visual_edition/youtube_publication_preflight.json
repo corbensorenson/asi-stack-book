@@ -1,25 +1,23 @@
 {
   "schema_version": "asi_stack.youtube_publication_preflight.v1",
-  "generated_at_utc": "2026-08-09T00:56:55Z",
+  "generated_at_utc": "2026-08-09T02:40:50Z",
   "state": "ready_not_authorized",
   "upload_plan_path": "visual_edition/youtube_upload_plan.json",
-  "upload_plan_sha256": "e211c0484e387a3b2783015b433e321f95830c54a820d9d243dfb9aa95cba7ed",
+  "upload_plan_sha256": "ee9f6e5954ad18e0422a39f2d9746d6e72dc9323201e29b3d379210ab368d6ac",
   "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
-  "mutation_scope_sha256": "48f6f97d15b7a6de0b4d5fe6cfa5e54302195bc9edd440e519ad5442a8a54f75",
+  "mutation_scope_sha256": "0aa816e66586230a9a8743af26ad08c233531028dd9e2fbbd115dce6054dbfc2",
   "scope_id": "p7.3-generation-1-complete-edition-publication",
   "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
   "playlist_title": "The ASI Stack \u2014 Visual Abstracts",
-  "entry_count": 9,
-  "ready_entry_count": 9,
-  "local_master_total_bytes": 114068653,
+  "entry_count": 0,
+  "ready_entry_count": 0,
+  "local_master_total_bytes": 0,
   "studio_browser_route": {
     "adapter": "youtube_studio_signed_in_browser",
     "signed_in_channel_recheck_required_at_execution": true,
     "maximum_files_per_upload_dialog": 15,
-    "batch_count": 1,
-    "batch_sizes": [
-      9
-    ],
+    "batch_count": 0,
+    "batch_sizes": [],
     "daily_video_upload_limit_is_channel_specific": true,
     "daily_thumbnail_limit_is_channel_specific": true,
     "resume_policy": "stop on a platform limit or unresolved check; preserve completed unlisted identities and resume without duplicate upload"
@@ -39,167 +37,10 @@
       "videos_update": 50,
       "playlists_update": 50
     },
-    "minimum_quota_days_for_complete_batch": 3,
-    "quota_schedule": [
-      {
-        "day": 1,
-        "video_insert_calls": 9,
-        "other_units": 2150,
-        "operations": [
-          "create one private playlist",
-          "upload 9 private or unlisted masters",
-          "insert 9 ordered playlist items",
-          "set 9 thumbnails",
-          "insert 3 caption tracks"
-        ]
-      },
-      {
-        "day": 2,
-        "video_insert_calls": 0,
-        "other_units": 2400,
-        "operations": [
-          "insert 6 caption tracks"
-        ]
-      },
-      {
-        "day": 3,
-        "video_insert_calls": 0,
-        "other_units": 500,
-        "operations": [
-          "set 9 videos public",
-          "set canonical playlist public"
-        ]
-      }
-    ]
+    "minimum_quota_days_for_complete_batch": 0,
+    "quota_schedule": []
   },
-  "entries": [
-    {
-      "position": 1,
-      "chapter_id": "evidence-states-and-claim-discipline",
-      "master_path": "build/visual_edition/final/evidence-states-and-claim-discipline.mp4",
-      "master_sha256": "60340dde3ae2b13d26f0580b42be58b76db06b172745e4f029ab2ceaf47bc89d",
-      "master_bytes": 10061269,
-      "caption_path": "visual_edition/chapters/evidence-states-and-claim-discipline/captions.vtt",
-      "caption_sha256": "bc65bfd07c642745f471e297b35a51a240058d30f94dbc4d16c09f373590ed75",
-      "caption_bytes": 5632,
-      "thumbnail_path": "build/visual_edition/thumbnails/evidence-states-and-claim-discipline.png",
-      "thumbnail_sha256": "411029e274f1d9e50bcc704b730ca05bb06521c69a745587e27c5884ac0c5056",
-      "thumbnail_bytes": 274071,
-      "ready": true
-    },
-    {
-      "position": 2,
-      "chapter_id": "recursive-self-improvement-boundaries",
-      "master_path": "build/visual_edition/final/recursive-self-improvement-boundaries.mp4",
-      "master_sha256": "9aa6af772ae392bc5cf8aba1ca1f0f82f984f9588b7b94d481ece92652d90666",
-      "master_bytes": 13192599,
-      "caption_path": "visual_edition/chapters/recursive-self-improvement-boundaries/captions.vtt",
-      "caption_sha256": "d81fb7fbe16bc23c3929b4535fe5b0e94e61514292c16fd9b76109ab42c52ec2",
-      "caption_bytes": 6981,
-      "thumbnail_path": "build/visual_edition/thumbnails/recursive-self-improvement-boundaries.png",
-      "thumbnail_sha256": "4c19b245488ac3ad7219f1a9226373b7094874132ab694cde225489c644b3b36",
-      "thumbnail_bytes": 272256,
-      "ready": true
-    },
-    {
-      "position": 3,
-      "chapter_id": "open-ended-improvement-engines",
-      "master_path": "build/visual_edition/final/open-ended-improvement-engines.mp4",
-      "master_sha256": "2591c7bb61784a84f891c1028e3d1b9d3a1427fb1b3bfe581c47d6d1493be4fc",
-      "master_bytes": 12700325,
-      "caption_path": "visual_edition/chapters/open-ended-improvement-engines/captions.vtt",
-      "caption_sha256": "6352c35d380f3229a90c460090f414e1f75e7ec9cf61ed8d3bacfb57d9f0f4bb",
-      "caption_bytes": 6659,
-      "thumbnail_path": "build/visual_edition/thumbnails/open-ended-improvement-engines.png",
-      "thumbnail_sha256": "c387c6ae9368a9c2cfbb961b89e2bd11880750866db7ece0463711cf34edf116",
-      "thumbnail_bytes": 255066,
-      "ready": true
-    },
-    {
-      "position": 4,
-      "chapter_id": "fast-generation-architectures",
-      "master_path": "build/visual_edition/final/fast-generation-architectures.mp4",
-      "master_sha256": "35a55e18888b38dd8f8a1fd6a2392297a1efa364f1d89ca7fa82a21134c1e346",
-      "master_bytes": 13200414,
-      "caption_path": "visual_edition/chapters/fast-generation-architectures/captions.vtt",
-      "caption_sha256": "ad8e95074fde038e9d6a45c5f037aef7d592d4d2b07e5980ddc05077801731c2",
-      "caption_bytes": 7123,
-      "thumbnail_path": "build/visual_edition/thumbnails/fast-generation-architectures.png",
-      "thumbnail_sha256": "0e19e927add5a9b3f421d6bafdcd760275869b339420a8ca30fbd0a56fe1f00c",
-      "thumbnail_bytes": 260223,
-      "ready": true
-    },
-    {
-      "position": 5,
-      "chapter_id": "capability-thresholds-and-deployment-commitments",
-      "master_path": "build/visual_edition/final/capability-thresholds-and-deployment-commitments.mp4",
-      "master_sha256": "e715414381052811ecd3d14a9111424dd84db76de9a7b6b8b7e1121f4a235939",
-      "master_bytes": 13336115,
-      "caption_path": "visual_edition/chapters/capability-thresholds-and-deployment-commitments/captions.vtt",
-      "caption_sha256": "073f7d692b2c179248ff8207fb8927e4dd56899c05f14c22124b740806b0dab2",
-      "caption_bytes": 7052,
-      "thumbnail_path": "build/visual_edition/thumbnails/capability-thresholds-and-deployment-commitments.png",
-      "thumbnail_sha256": "22fb4f4bb2a792176511afcdf7d8e5b8d03443b96098ee66293cabe9103de413",
-      "thumbnail_bytes": 284463,
-      "ready": true
-    },
-    {
-      "position": 6,
-      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "master_path": "build/visual_edition/final/adversarial-evaluation-sandbagging-and-training-time-deception.mp4",
-      "master_sha256": "52165e1eb15fdcade0e7259a5f1a3b73db43b000c67c315176cd3d0682a26a84",
-      "master_bytes": 13572877,
-      "caption_path": "visual_edition/chapters/adversarial-evaluation-sandbagging-and-training-time-deception/captions.vtt",
-      "caption_sha256": "e8159196cc74b22c4894116d085b41ad0fcf12853f2376a85a7908a25fb0bf5f",
-      "caption_bytes": 7078,
-      "thumbnail_path": "build/visual_edition/thumbnails/adversarial-evaluation-sandbagging-and-training-time-deception.png",
-      "thumbnail_sha256": "b73b60d99af350c3a1140cbda702fc4646e981384a53ee6f581acd5c474ec5de",
-      "thumbnail_bytes": 308165,
-      "ready": true
-    },
-    {
-      "position": 7,
-      "chapter_id": "safety-cases-and-structured-assurance",
-      "master_path": "build/visual_edition/final/safety-cases-and-structured-assurance.mp4",
-      "master_sha256": "6ef64380fb36766cad1db6efaf775403850aa35cce9cefe83960dfcedf6e31fa",
-      "master_bytes": 12666144,
-      "caption_path": "visual_edition/chapters/safety-cases-and-structured-assurance/captions.vtt",
-      "caption_sha256": "0580cba1094a9eb50787b48f54e0c7da92f23d935eaf4e1b3dc2d4a374355cdd",
-      "caption_bytes": 6920,
-      "thumbnail_path": "build/visual_edition/thumbnails/safety-cases-and-structured-assurance.png",
-      "thumbnail_sha256": "0a99eb1dfc15714f5952601ad711d120a067fafa48a129e8efece1355069de87",
-      "thumbnail_bytes": 267221,
-      "ready": true
-    },
-    {
-      "position": 8,
-      "chapter_id": "project-theseus-as-report-first-implementation-reference",
-      "master_path": "build/visual_edition/final/project-theseus-as-report-first-implementation-reference.mp4",
-      "master_sha256": "dcabfc71fed682e8994fd591b314416f2822f1cca25b51ae2bb87ca332d0cc18",
-      "master_bytes": 12992589,
-      "caption_path": "visual_edition/chapters/project-theseus-as-report-first-implementation-reference/captions.vtt",
-      "caption_sha256": "eb7c7a86c1eb80ae1ac34f9f447af9281cf1bbcac0445c820ab336dc1d155aad",
-      "caption_bytes": 7007,
-      "thumbnail_path": "build/visual_edition/thumbnails/project-theseus-as-report-first-implementation-reference.png",
-      "thumbnail_sha256": "8d035562090eb79426d8b5418684a08e08904c11526c4836a225a6f5cc6095e7",
-      "thumbnail_bytes": 273904,
-      "ready": true
-    },
-    {
-      "position": 9,
-      "chapter_id": "open-research-agenda-and-bibliography-plan",
-      "master_path": "build/visual_edition/final/open-research-agenda-and-bibliography-plan.mp4",
-      "master_sha256": "b3859885094d06c8ca5e813395b3c82446e8f1bfcb2e1c32a0008873c2020eb0",
-      "master_bytes": 12346321,
-      "caption_path": "visual_edition/chapters/open-research-agenda-and-bibliography-plan/captions.vtt",
-      "caption_sha256": "cdba9b207de2c152a5ca0244f514397781d8ade9cfc180bb46d5ccba4e9c422e",
-      "caption_bytes": 6598,
-      "thumbnail_path": "build/visual_edition/thumbnails/open-research-agenda-and-bibliography-plan.png",
-      "thumbnail_sha256": "680d14fe780510de7c2d4a7ad9ee616d63958072a2ddcbf21192ab7da1b1b7ad",
-      "thumbnail_bytes": 280304,
-      "ready": true
-    }
-  ],
+  "entries": [],
   "official_platform_sources": [
     "https://support.google.com/youtube/answer/57407?hl=en",
     "https://support.google.com/youtube/answer/2734796?hl=en-EN",

@@ -587,19 +587,41 @@ def errors(data: dict) -> list[str]:
         or handoff.get("support_state_effect") != "none"
     ):
         out.append("P6.9 proof/evidence handoff terminal receipt drifted")
+    substance_records = substance.get("chapter_records", [])
+    current_manifest_chapters = [
+        chapter
+        for part in data["book_manifest"].get("parts", [])
+        for chapter in part.get("chapters", [])
+    ]
+    current_manifest_count = len(current_manifest_chapters)
     if (
-        substance.get("manifest_chapter_count_freeze") != 84
-        or substance_summary.get("thin_chapter_count") != 11
-        or substance_summary.get("atom_covered_chapter_count") != 84
+        substance.get("manifest_chapter_count_freeze") != current_manifest_count
+        or [row.get("chapter_id") for row in substance_records] != [
+            row.get("id") for row in current_manifest_chapters
+        ]
+        or substance_summary.get("chapter_count") != current_manifest_count
+        or substance_summary.get("thin_chapter_count") != sum(
+            row.get("word_count", 0) < substance.get("word_trigger", 0)
+            for row in substance_records
+        )
+        or substance_summary.get("atom_covered_chapter_count") != current_manifest_count
         or substance_summary.get("atom_uncovered_chapter_count") != 0
         or substance_summary.get("active_concept_count") != 184
         or substance_summary.get("active_concepts_passing_count") != 184
         or substance_summary.get("concept_complete_semantic_reviewed_chapter_count") != 23
         or substance_summary.get("current_semantic_review_count") != 23
-        or substance_summary.get("low_atom_count_diagnostic_chapter_count") != 6
+        or substance_summary.get("low_atom_count_diagnostic_chapter_count") != sum(
+            len(row.get("atom_refs", [])) <= 5 for row in substance_records
+        )
+        or substance_summary.get("queued_thin_chapter_count") != sum(
+            row.get("depth_state") == "queued_thin_chapter_for_manual_concept_contract"
+            for row in substance_records
+        )
         or substance_summary.get("atom_count_is_acceptance_target") is not False
         or substance_summary.get("word_trigger_is_completion_gate") is not False
         or substance.get("manual_semantic_review_required") is not True
+        or substance.get("chapter_growth_authority")
+        != "manifest_driven_growth_requires_full_admission_and_debt_reconciliation"
         or substance.get("support_state_effect") != "none"
     ):
         out.append("Round 20 chapter-substance contract drifted from the terminal concept queue")

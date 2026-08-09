@@ -34,13 +34,7 @@
     "playlist_title": {"const": "The ASI Stack — Visual Abstracts"},
     "allowed_platform_mutations": {
       "const": [
-        "create one canonical playlist for the 9 source-current visual abstracts",
-        "upload each exact digest-bound master once with initial visibility unlisted",
-        "apply the exact planned title description tags category and audience setting",
-        "attach the reviewed English caption track and reviewed thumbnail",
-        "insert each video into the canonical playlist in positions 1 through 9",
-        "after all checks pass set all 9 videos and the canonical playlist public",
-        "read processing metadata accessibility playlist and public watch-page state for receipts"
+        "No platform mutation is in scope until an explicit local-artifact opt-in produces a non-empty upload plan"
       ]
     },
     "allowed_repository_reconciliation": {

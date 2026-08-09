@@ -90,41 +90,43 @@ def build() -> dict:
         min(25, remaining_captions - start)
         for start in range(0, remaining_captions, 25)
     ]
-    quota_schedule = [
-        {
-            "day": 1,
-            "video_insert_calls": count,
-            "other_units": 50 + count * 50 + count * 50 + first_day_captions * 400,
-            "operations": [
-                "create one private playlist",
-                f"upload {count} private or unlisted masters",
-                f"insert {count} ordered playlist items",
-                f"set {count} thumbnails",
-                f"insert {first_day_captions} caption tracks",
-            ],
-        }
-    ]
-    for day, caption_count in enumerate(caption_days, start=2):
+    quota_schedule = []
+    if count:
+        quota_schedule = [
+            {
+                "day": 1,
+                "video_insert_calls": count,
+                "other_units": 50 + count * 50 + count * 50 + first_day_captions * 400,
+                "operations": [
+                    "create one private playlist",
+                    f"upload {count} private or unlisted masters",
+                    f"insert {count} ordered playlist items",
+                    f"set {count} thumbnails",
+                    f"insert {first_day_captions} caption tracks",
+                ],
+            }
+        ]
+        for day, caption_count in enumerate(caption_days, start=2):
+            quota_schedule.append(
+                {
+                    "day": day,
+                    "video_insert_calls": 0,
+                    "other_units": caption_count * 400,
+                    "operations": [f"insert {caption_count} caption tracks"],
+                }
+            )
+        final_day = len(quota_schedule) + 1
         quota_schedule.append(
             {
-                "day": day,
+                "day": final_day,
                 "video_insert_calls": 0,
-                "other_units": caption_count * 400,
-                "operations": [f"insert {caption_count} caption tracks"],
+                "other_units": count * 50 + 50,
+                "operations": [
+                    f"set {count} videos public",
+                    "set canonical playlist public",
+                ],
             }
         )
-    final_day = len(quota_schedule) + 1
-    quota_schedule.append(
-        {
-            "day": final_day,
-            "video_insert_calls": 0,
-            "other_units": count * 50 + 50,
-            "operations": [
-                f"set {count} videos public",
-                "set canonical playlist public",
-            ],
-        }
-    )
     return {
         "schema_version": "asi_stack.youtube_publication_preflight.v1",
         "generated_at_utc": datetime.now(timezone.utc).replace(

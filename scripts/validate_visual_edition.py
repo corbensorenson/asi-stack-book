@@ -359,6 +359,41 @@ def errors(manifest: dict, grammar: dict | None = None) -> list[str]:
             # Stale packets remain historical custody only. They are not part
             # of the current render, upload, or embed denominator.
             continue
+        if (
+            not upload_entry
+            and not upload_entries
+            and youtube_preflight.get("entry_count") == 0
+        ):
+            # A clean checkout deliberately has no ignored MP4/PNG inputs, so
+            # the upload plan is empty. Keep validating the packet, narration,
+            # scene, receipt, and claim bindings with a non-publication
+            # projection instead of treating the absent local binary as a
+            # manifest or evidence failure.
+            thumbnail_source = ROOT / packet.get("artifacts", {}).get("thumbnail", "")
+            thumbnail_output = ROOT / f"build/visual_edition/thumbnails/{chapter['id']}.png"
+            receipt = packet.get("render_receipt") or {}
+            upload_entry = {
+                "position": manifest_position,
+                "chapter_id": chapter["id"],
+                "stable_internal_video_id": packet.get("video_id"),
+                "generation": packet.get("youtube", {}).get("generation", 1),
+                "thumbnail_source_path": packet.get("artifacts", {}).get("thumbnail"),
+                "thumbnail_source_sha256": (
+                    digest(thumbnail_source) if thumbnail_source.is_file() else None
+                ),
+                "thumbnail_path": f"build/visual_edition/thumbnails/{chapter['id']}.png",
+                "thumbnail_sha256": (
+                    digest(thumbnail_output) if thumbnail_output.is_file() else None
+                ),
+                "caption_path": packet.get("artifacts", {}).get("captions"),
+                "local_master_path": f"build/visual_edition/final/{chapter['id']}.mp4",
+                "local_master_sha256": receipt.get("output_sha256"),
+                "desired_playlist_position": manifest_position,
+                "description": (
+                    f"{packet.get('chapter_sha256', '')} "
+                    f"{packet.get('source_commit', '')} Narration is synthetic"
+                ),
+            }
         if not upload_entry:
             failures.append(f"{chapter['id']}: packet is ready but absent from YouTube upload plan")
             continue

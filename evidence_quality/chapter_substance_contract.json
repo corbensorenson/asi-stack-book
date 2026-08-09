@@ -3,7 +3,7 @@
   "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy",
   "recorded_date": "2026-07-28",
   "manifest_path": "book_structure.json",
-  "manifest_chapter_count_freeze": 84,
+  "manifest_chapter_count_freeze": 85,
   "word_count_method": "Unicode text split on whitespace over canonical chapter source with the generated visual projection removed; diagnostic trigger only",
   "word_trigger": 5000,
   "concept_contract_rule": "An active concept section must be named, contain at least 150 words, and separately state mechanism, failure mode, non-claim, and source grounding. It must also map to one or more existing owner atoms with an explicit many-to-one ownership rationale. Completion additionally requires a digest-bound chapter-specific semantic review. The diagnostic word trigger does not participate in concept completion, and passing remains editorial preparation rather than evidence.",
@@ -16,7 +16,8 @@
     "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
     "evidence_quality/round_18_breadth_completion_claim_atoms.json",
     "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
-    "evidence_quality/round22_concept_linked_claim_atom_addendum.json"
+    "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
+    "proofs/proof_manifest.json"
   ],
   "chapter_records": [
     {
@@ -4470,7 +4471,7 @@
       "chapter_id": "security-kernel-and-digital-scifs",
       "chapter_title": "Security Kernel and Digital SCIFs",
       "path": "chapters/security-kernel-and-digital-scifs.qmd",
-      "sha256": "a0c4737179ed0c519d14331887970a3ea2c6fcab6cc0a3058f2134ffcabb5841",
+      "sha256": "1344db6103bc3ebd670d59f9ec71fffd028e94a9ad3cadd3568d132eb5c5f712",
       "word_count": 8410,
       "word_trigger": 5000,
       "depth_state": "word_trigger_clear_semantic_certification_not_implied",
@@ -10618,8 +10619,8 @@
       "chapter_id": "labor-os-and-typed-jobs",
       "chapter_title": "Labor OS and Typed Jobs",
       "path": "chapters/labor-os-and-typed-jobs.qmd",
-      "sha256": "e35a9bc9e982071317cafbdb253cf088d5a29fea29fc7fdfb1f7520c99806633",
-      "word_count": 7138,
+      "sha256": "f7a64e0658f5545a7d35363880e5e42b9a9c32ba9ac33427e333d33cbe5fdf23",
+      "word_count": 7151,
       "word_trigger": 5000,
       "depth_state": "word_trigger_clear_semantic_certification_not_implied",
       "short_reference_exception": false,
@@ -10928,6 +10929,33 @@
         {
           "atom_id": "labor-os-and-typed-jobs.formal.jobs-lifecycle-durable-lifecycle-probe-bridge",
           "source_path": "evidence_quality/claim_atom_registry.json"
+        }
+      ],
+      "concept_contracts": [],
+      "semantic_review": null
+    },
+    {
+      "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "chapter_title": "From Chat to Organizations: AI Work Surfaces and Agent Harnesses",
+      "path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+      "sha256": "a7730d636db361e3feb7aeb9afbd7c9a74199c6e3c4035695342de8f8521873b",
+      "word_count": 4884,
+      "word_trigger": 5000,
+      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "short_reference_exception": false,
+      "short_reference_justification": null,
+      "atom_refs": [
+        {
+          "atom_id": "lean:work_surface.transition.authority_nonexpansion",
+          "source_path": "proofs/proof_manifest.json"
+        },
+        {
+          "atom_id": "lean:work_surface.transition.rejection_noninterference",
+          "source_path": "proofs/proof_manifest.json"
+        },
+        {
+          "atom_id": "lean:work_surface.summary.non_equivalence",
+          "source_path": "proofs/proof_manifest.json"
         }
       ],
       "concept_contracts": [],
@@ -18849,8 +18877,8 @@
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "chapter_title": "Executable Specifications and Lean Proof Envelope",
       "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "sha256": "bf938cca622c0ff7967aec8493d8610d4ded362877468216def260d64750406f",
-      "word_count": 8751,
+      "sha256": "d9ab82cf0766ee75864e59fa81443917ff828313812f249c661e20ae888c8c09",
+      "word_count": 8754,
       "word_trigger": 5000,
       "depth_state": "word_trigger_clear_semantic_certification_not_implied",
       "short_reference_exception": false,
@@ -23754,24 +23782,24 @@
     }
   ],
   "summary": {
-    "chapter_count": 84,
-    "thin_chapter_count": 11,
+    "chapter_count": 85,
+    "thin_chapter_count": 12,
     "contracted_chapter_count": 23,
     "concept_complete_semantic_reviewed_chapter_count": 23,
-    "queued_thin_chapter_count": 0,
+    "queued_thin_chapter_count": 1,
     "word_trigger_clear_chapter_count": 73,
-    "atom_covered_chapter_count": 84,
+    "atom_covered_chapter_count": 85,
     "atom_uncovered_chapter_count": 0,
     "active_concept_count": 184,
     "active_concepts_passing_count": 184,
     "current_semantic_review_count": 23,
-    "low_atom_count_diagnostic_chapter_count": 6,
+    "low_atom_count_diagnostic_chapter_count": 7,
     "atom_count_is_acceptance_target": false,
     "word_trigger_is_completion_gate": false,
     "support_state_effect": "none"
   },
   "manual_semantic_review_required": true,
-  "chapter_growth_authority": "frozen_at_84_until_thin_and_atom_debt_are_zero_or_terminally_justified",
+  "chapter_growth_authority": "manifest_driven_growth_requires_full_admission_and_debt_reconciliation",
   "support_state_effect": "none",
   "release_effect": "none",
   "non_claims": [

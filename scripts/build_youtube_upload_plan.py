@@ -4,13 +4,14 @@
 The canonical book may contain planned chapters without a rendered derivative.
 Those chapters remain in the visual manifest and ledger, but are intentionally
 absent from this executable upload plan until their packet and local inputs
-exist. This keeps the 84-video authorization scope honest.
+exist. This keeps the current-manifest authorization scope honest.
 """
 
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -47,6 +48,11 @@ def main() -> None:
     )
     entries = []
     position = 0
+    # Rendered masters and thumbnails intentionally live outside Git/Pages.
+    # Keep the committed plan reproducible on a clean CI checkout; an operator
+    # must explicitly opt in when the ignored local artifacts are present and
+    # publication preparation is actually intended.
+    include_local_inputs = os.environ.get("ASI_STACK_INCLUDE_LOCAL_PUBLICATION_INPUTS") == "1"
     for part in structure["parts"]:
         for chapter in part["chapters"]:
             position += 1
@@ -55,6 +61,7 @@ def main() -> None:
                 not packet_path.is_file()
                 or manifest_rows.get(chapter["id"], {}).get("lifecycle_state")
                 != "ready_not_published"
+                or not include_local_inputs
             ):
                 continue
             packet = json.loads(packet_path.read_text(encoding="utf-8"))
