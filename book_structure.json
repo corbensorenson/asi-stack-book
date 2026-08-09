@@ -15183,7 +15183,10 @@
             "ext_photonic_neuromorphic_2024",
             "ext_quantum_ml_shadows_2024",
             "ext_organoid_intelligence_2023",
-            "ext_kimi_k3_2026"
+            "ext_kimi_k3_2026",
+            "ext_eggroll_hyperscale_es_2026",
+            "ext_mezo_2023",
+            "ext_forward_forward_2022"
           ],
           "source_queue": {
             "primary": [
@@ -15232,7 +15235,10 @@
               "ext_test_time_training_2020",
               "ext_llada_2025",
               "ext_scaling_dllms_2026",
-              "ext_kimi_k3_2026"
+              "ext_kimi_k3_2026",
+              "ext_eggroll_hyperscale_es_2026",
+              "ext_mezo_2023",
+              "ext_forward_forward_2022"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -15244,6 +15250,30 @@
           "insufficient": "An architecture catalog, parameter-count comparison, asymptotic complexity claim, single benchmark, synthetic recall result, source-reported win, or tiny central model with hidden retrieval/search/tool burden does not establish a simpler, better, safer, or replaceable cognitive substrate.",
           "core_claim": "For an exact task family, consumer, modality, model and state version, memory contract, hardware/runtime, authority and rights envelope, resource budget, evaluator, fallback, rollback, and time horizon, learned cognition should be supplied through a typed Cognitive Kernel ABI whose implementations are admitted only by matched strong baselines, exact state and memory semantics, proposal-versus-effect separation, evaluator independence, complete lifecycle cost, failure and residual retention, checkpoint compatibility, and causal ablation.",
           "claim_source_mappings": [
+            {
+              "source_id": "ext_eggroll_hyperscale_es_2026",
+              "mapped_support": "Shows that the substrate ABI must include the learning rule and its population, perturbation, RNG, fitness, aggregate-update, and total-cost state, including recurrent and integer-valued cases.",
+              "limits": "Source-reported architecture and learning results are coupled and unreproduced; neither ES nor a recurrent/int8 substrate is established as superior.",
+              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_review_note": "Reviewed for architecture--learning-rule coupling and checkpoint-state obligations.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mezo_2023",
+              "mapped_support": "Provides a forward-only zeroth-order update comparator for a differentiable language model under backward-memory pressure.",
+              "limits": "Reported memory and GPU-hour results are setting-bound and do not establish a preferred substrate or learning rule.",
+              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_review_note": "Reviewed for forward-only learning ABI and resource boundaries.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_forward_forward_2022",
+              "mapped_support": "Provides a preliminary local forward-only credit-assignment comparator to a universal reverse-mode ABI.",
+              "limits": "Small-scale preliminary investigations do not establish foundation-model parity, efficiency, or biological plausibility.",
+              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_review_note": "Reviewed as a bounded mechanism counterexample.",
+              "passage_review_state": "reviewed"
+            },
             {
               "source_id": "ext_test_time_training_2020",
               "mapped_support": "Provides an input-conditioned adaptation comparator in which a model updates on a self-supervised objective at inference time.",
@@ -15864,7 +15894,11 @@
             "ext_proof_of_learning_2021",
             "ext_test_time_training_2020",
             "ext_curriculum_learning_2009",
-            "ext_kimi_k3_2026"
+            "ext_kimi_k3_2026",
+            "ext_eggroll_hyperscale_es_2026",
+            "ext_openai_es_2017",
+            "ext_mezo_2023",
+            "ext_forward_forward_2022"
           ],
           "source_queue": {
             "primary": [
@@ -15880,7 +15914,8 @@
               "ext_shampoo_2018",
               "ext_schedule_free_2024",
               "ext_mup_2022",
-              "ext_muon_scalable_2025"
+              "ext_muon_scalable_2025",
+              "ext_eggroll_hyperscale_es_2026"
             ],
             "supporting": [
               "beastbrain",
@@ -15895,7 +15930,10 @@
               "ext_proof_of_learning_2021",
               "ext_test_time_training_2020",
               "ext_curriculum_learning_2009",
-              "ext_kimi_k3_2026"
+              "ext_kimi_k3_2026",
+              "ext_openai_es_2017",
+              "ext_mezo_2023",
+              "ext_forward_forward_2022"
             ],
             "variants": [
               "ext_amsgrad_2018",
@@ -15910,6 +15948,38 @@
           "insufficient": "Code, data, weights, final loss, peak throughput, a framework save call, successful restart, or one retained checkpoint does not identify the full stateful distributed run or separate candidate selection from independent qualification.",
           "core_claim": "A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.",
           "claim_source_mappings": [
+            {
+              "source_id": "ext_eggroll_hyperscale_es_2026",
+              "mapped_support": "Supplies the primary systems case for low-rank batched evolution strategies, counter-based perturbation reconstruction, discrete objectives, and source-reported recurrent/int8/reasoning studies.",
+              "limits": "Kernel throughput, quality, theory, and total-cost results are configuration-bound and unreproduced; the largest reported int8 population has a severe GPU-hour denominator.",
+              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_review_note": "Reviewed for learning-rule identity, complete state, source-scoped results, and total-cost boundary.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openai_es_2017",
+              "mapped_support": "Provides the foundational modern distributed ES comparator using parameter perturbations, scalar fitness, and shared-seed reconstruction.",
+              "limits": "The studied control results do not establish foundation-model sample efficiency or total-compute advantage.",
+              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_review_note": "Reviewed for ES mechanisms, population denominators, and communication-versus-compute separation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mezo_2023",
+              "mapped_support": "Provides a seed-reconstructed forward-only zeroth-order fine-tuning comparator with inference-like memory use.",
+              "limits": "Source-reported savings are task- and baseline-bound; query cost and estimator variance remain.",
+              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_review_note": "Reviewed for forward-only update identity and total-resource accounting.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_forward_forward_2022",
+              "mapped_support": "Provides a preliminary positive/negative forward-pass and local-objective alternative to global reverse-mode credit.",
+              "limits": "Does not establish large-scale performance, generalization, efficiency, or biological plausibility.",
+              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_review_note": "Reviewed as a mechanism family and evidence-boundary case.",
+              "passage_review_state": "reviewed"
+            },
             {
               "source_id": "beastbrain",
               "mapped_support": "Passage-reviewed version-family lineage for separating idle scheduling from update authority: later Nocturne drafts propose replaying failed interactions, searching alternative strategies, constructing preference data, optimizing traces, caching repeated work, and mutating memory or policy state during low-contention windows. The book retains the temporal scheduling idea while splitting compaction, replay, search, dataset construction, and model mutation into separately governed operations.",
@@ -16304,7 +16374,9 @@
             "ext_deep_double_descent_2020",
             "ext_emergent_abilities_llms_2022",
             "ext_emergent_abilities_mirage_2023",
-            "ext_no_free_lunch_inductive_bias_2024"
+            "ext_no_free_lunch_inductive_bias_2024",
+            "ext_eggroll_hyperscale_es_2026",
+            "ext_forward_forward_2022"
           ],
           "problem": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
           "insufficient": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
@@ -16365,12 +16437,31 @@
               "ext_emergent_abilities_llms_2022",
               "ext_emergent_abilities_mirage_2023"
             ],
-            "supporting": [],
+            "supporting": [
+              "ext_eggroll_hyperscale_es_2026",
+              "ext_forward_forward_2022"
+            ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
           },
           "claim_source_mappings": [
+            {
+              "source_id": "ext_eggroll_hyperscale_es_2026",
+              "mapped_support": "Supplies a bounded consistency analysis for low-rank population updates approaching Gaussian ES under declared high-dimensional assumptions.",
+              "limits": "The result is not global convergence, backpropagation superiority, nonlinear-regime transport, or a local reproduction.",
+              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_review_note": "Reviewed for estimator assumptions and theorem-transport limits.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_forward_forward_2022",
+              "mapped_support": "Supplies a distinct local-credit learning architecture that changes the scope of learning and generalization claims.",
+              "limits": "Preliminary small-scale feasibility is not a foundation-model generalization theory.",
+              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_review_note": "Reviewed for learner-identity and evidence-transport boundaries.",
+              "passage_review_state": "reviewed"
+            },
             {
               "source_id": "ext_scaling_laws_neural_language_models_2020",
               "mapped_support": "Empirical study reporting power-law relationships between cross-entropy loss, model size, data, and compute in its model family. These fitted relations are source-reported, metric- and regime-bound, and do not automatically forecast downstream capabilities, safety, or other architectures.",
@@ -19382,6 +19473,9 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "tokenmana",
+            "ext_eggroll_hyperscale_es_2026",
+            "ext_openai_es_2017",
+            "ext_mezo_2023",
             "planforge",
             "coherence_exchange",
             "simulation_scaling",
@@ -19444,6 +19538,9 @@
               "precision_contract"
             ],
             "variants": [
+              "ext_eggroll_hyperscale_es_2026",
+              "ext_openai_es_2017",
+              "ext_mezo_2023",
               "ext_pagedattention_vllm_2023",
               "ext_reluplex_2017",
               "ext_mlperf_training_v6_2026",
@@ -19781,6 +19878,30 @@
             }
           ],
           "claim_source_mappings": [
+            {
+              "source_id": "ext_eggroll_hyperscale_es_2026",
+              "mapped_support": "Supplies the explicit contrast between inference-like population-kernel throughput and total learning cost, including the reported large-population GPU-hour denominator.",
+              "limits": "All throughput and cost observations are source-scoped and configuration-bound; no local population run or economic advantage is established.",
+              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_review_note": "Reviewed for total population, evaluator, accelerator-hour, and energy accounting.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openai_es_2017",
+              "mapped_support": "Shows how scalar communication and large worker populations can improve wall-clock scaling while leaving rollout and total-resource denominators intact.",
+              "limits": "Source-reported worker scaling is not universal sample, energy, or cost efficiency.",
+              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_review_note": "Reviewed for wall-clock versus total-work accounting.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mezo_2023",
+              "mapped_support": "Provides a countercase in which forward-only estimation can reduce memory and, in selected settings, GPU-hours.",
+              "limits": "Reported savings are task-, baseline-, and estimator-bound and do not erase query count or variance.",
+              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_review_note": "Reviewed for joint memory, query, quality, and GPU-hour accounting.",
+              "passage_review_state": "reviewed"
+            },
             {
               "source_id": "tokenmana",
               "mapped_support": "Supports resource-economics framing through regenerative bounded capacity, burst controls, load signals, convex infrastructure-cost comparisons, load variance, renewal clustering, nocturnal usage, cognitive friction, and privacy/opt-in study constraints.",
@@ -24117,12 +24238,30 @@
             "ext_faithfulness_information_flow_2026",
             "portia_synapse",
             "spider_synapse",
-            "regret_engine"
+            "regret_engine",
+            "ext_eggroll_hyperscale_es_2026",
+            "ext_openai_es_2017"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
           "core_claim": "Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.",
           "claim_source_mappings": [
+            {
+              "source_id": "ext_eggroll_hyperscale_es_2026",
+              "mapped_support": "Provides a batched low-rank evolution-strategy case for optimizing outcome-level, discrete, and nondifferentiable fitness without action-level gradients.",
+              "limits": "Outcome-only fitness remains gameable and source-reported reasoning/control results do not validate local policy improvement, evaluator quality, safety, or total efficiency.",
+              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_review_note": "Reviewed for policy-learning mechanism, fitness authority boundary, and population denominator.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openai_es_2017",
+              "mapped_support": "Provides a foundational outcome-only parameter-search comparator to temporal policy-gradient credit assignment.",
+              "limits": "The studied control tasks and distributed scaling do not establish universal policy quality, sample efficiency, or governance safety.",
+              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_review_note": "Reviewed for scalar-fitness policy search and rollout-denominator obligations.",
+              "passage_review_state": "reviewed"
+            },
             {
               "source_id": "benchmaxxing",
               "mapped_support": "Supports treating feedback as benchmark pressure that must preserve ledgers, baselines, residuals, regressions, holdouts, anti-Goodhart checks, and conservative support-state effects before any policy update is promoted.",
@@ -24701,7 +24840,9 @@
               "ext_gspo_2025",
               "ext_s_grpo_2025",
               "ext_longrlvr_2026",
-              "ext_rlhf_limitations_2023"
+              "ext_rlhf_limitations_2023",
+              "ext_eggroll_hyperscale_es_2026",
+              "ext_openai_es_2017"
             ],
             "connector_or_recovery": [
               "moecot"

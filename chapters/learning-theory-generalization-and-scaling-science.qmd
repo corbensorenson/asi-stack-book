@@ -258,6 +258,33 @@ bar while failed runs and hyperparameter changes disappear.
 **Explicit non-claim.** predictable loss scaling is not predictable deployment
 behavior.
 
+### Changing the learner changes the claim
+
+A learning-theory statement is scoped not only to a model class and data
+distribution but also to the credit estimator. Reverse-mode empirical-risk
+minimization, score-function policy gradients, evolution strategies, and local
+forward objectives expose different noise, bias, dependence, and sample-cost
+structures. A result cannot silently replace one with another because both
+eventually change weights.
+
+EGGROLL's analysis is a useful example of disciplined transport. It studies
+when aggregated low-rank perturbations approach a Gaussian evolution-strategy
+update in a high-dimensional linearized regime, with explicit noise scaling,
+rank dependence, and smoothness conditions. That supports a bounded consistency
+story for its estimator. It does not prove that the estimator finds a globally
+good solution, beats backpropagation, or retains the approximation after large
+nonlinear updates. Forward-Forward provides an even sharper evidence boundary:
+it proposes a different local credit architecture, but its preliminary
+small-scale experiments are not a generalization theory for foundation models.
+
+Every theoretical learning claim therefore records at least: hypothesis and
+parameter class; objective and evaluator; perturbation or gradient estimator;
+population/query dependence; data reuse; initialization; update regime;
+asymptotic variable; constants and scaling assumptions; and the observable to
+which the conclusion applies. When the architecture, quantization, learning
+rule, or evaluator changes, the claim returns to assumption review instead of
+inheriting authority by vocabulary.
+
 ### Emergence: distinguish a system transition from a measurement threshold
 
 **Mechanism.** Challenge transfer under natural and targeted distribution shift, new task structure, weak supervision, architecture replacement, optimizer change, data contamination, and resource constraints, with source-domain and target-domain denominators kept separate. **Failure mode.** Shared pretraining, leaked labels, easy target metrics, or one model family can simulate transfer. **Non-claim.** Weak-to-strong improvement does not establish honest elicitation, alignment, or superhuman oversight. **Source grounding.** The weak-to-strong paper is a bounded proof of concept; the broader transfer contract remains untested.
@@ -402,6 +429,8 @@ Two information-loss constructions show why equal retrospective-fit signals cann
 | `ext_deep_double_descent_2020` | Deep Double Descent | Configuration-bound evidence that generalization can be non-monotone across model, sample, and training-time regimes; not a universal larger-is-better or larger-is-worse law. |
 | `ext_emergent_abilities_llms_2022` | Emergent Abilities of Large Language Models | Frames reported sharp task changes under scaling as a forecast and measurement problem; not proof of a mechanistic phase transition. |
 | `ext_emergent_abilities_mirage_2023` | Are Emergent Abilities of Large Language Models a Mirage? | Supplies the competing metric-artifact explanation and continuous-measurement requirement; does not prove that all emergence is illusory. |
+| `ext_eggroll_hyperscale_es_2026` | Evolution Strategies at the Hyperscale | Supplies a bounded high-dimensional consistency analysis under its declared linearization, smoothness, noise-scaling, and rank assumptions; not a global convergence or superiority theorem. |
+| `ext_forward_forward_2022` | The Forward-Forward Algorithm | Supplies a preliminary local-credit architecture whose evidence boundary prevents small-scale feasibility from becoming a large-model generalization claim. |
 
 ### Manifest source assignment reconciliation
 

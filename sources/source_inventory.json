@@ -8210,6 +8210,84 @@
     "citation_label": "Oh My Pi contributors (2026), Oh My Pi"
   },
   {
+    "id": "ext_eggroll_hyperscale_es_2026",
+    "title": "Evolution Strategies at the Hyperscale",
+    "priority": "external_literature",
+    "layer": "zeroth_order_population_learning",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "policy-optimization-and-learning-from-feedback",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "resource-economics-and-token-budgets",
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://eshyperscale.github.io/",
+    "notes": "Primary EGGROLL project and paper source for low-rank, batched evolution strategies, counter-based perturbation reconstruction, nondifferentiable and discrete objectives, recurrent/int8 training, and outcome-reward fine-tuning. Throughput, quality, and theory claims are source-scoped; total population evaluations and GPU-hours remain required denominators.",
+    "source_type": "arxiv_and_official_project",
+    "arxiv_id": "2511.16652",
+    "published": "2026",
+    "updated": "2026-08-09",
+    "citation_label": "Rybkin et al. (2026), Evolution Strategies at the Hyperscale",
+    "doi": "10.48550/arXiv.2511.16652"
+  },
+  {
+    "id": "ext_openai_es_2017",
+    "title": "Evolution Strategies as a Scalable Alternative to Reinforcement Learning",
+    "priority": "external_literature",
+    "layer": "evolution_strategies_and_black_box_policy_search",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "policy-optimization-and-learning-from-feedback",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/1703.03864",
+    "notes": "Foundational modern large-population ES comparator using parameter perturbations, scalar fitness, seed reconstruction, and distributed evaluation. Source-reported MuJoCo/Atari results and worker scaling do not establish universal sample or total-compute efficiency.",
+    "source_type": "arxiv",
+    "arxiv_id": "1703.03864",
+    "published": "2017-03-09",
+    "updated": "2026-08-09",
+    "citation_label": "Salimans et al. (2017), Evolution Strategies as a Scalable Alternative to Reinforcement Learning",
+    "doi": "10.48550/arXiv.1703.03864"
+  },
+  {
+    "id": "ext_mezo_2023",
+    "title": "Fine-Tuning Language Models with Just Forward Passes",
+    "priority": "external_literature",
+    "layer": "memory_efficient_zeroth_order_fine_tuning",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/abs/2305.17333",
+    "notes": "Primary MeZO source for inference-footprint zeroth-order language-model fine-tuning and nondifferentiable objectives. Reported memory and GPU-hour savings are configuration-bound and do not erase objective-query count or estimator variance.",
+    "source_type": "arxiv",
+    "arxiv_id": "2305.17333",
+    "published": "2023-05-27",
+    "updated": "2026-08-09",
+    "citation_label": "Malladi et al. (2023), Fine-Tuning Language Models with Just Forward Passes",
+    "doi": "10.48550/arXiv.2305.17333"
+  },
+  {
+    "id": "ext_forward_forward_2022",
+    "title": "The Forward-Forward Algorithm: Some Preliminary Investigations",
+    "priority": "external_literature",
+    "layer": "local_forward_only_credit_assignment",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "learning-theory-generalization-and-scaling-science"
+    ],
+    "url": "https://arxiv.org/abs/2212.13345",
+    "notes": "Primary preliminary source for positive/negative forward passes and local layer objectives as an alternative to reverse-mode backpropagation. The evidence is small-scale and does not establish foundation-model parity or biological plausibility.",
+    "source_type": "arxiv",
+    "arxiv_id": "2212.13345",
+    "published": "2022-12-27",
+    "updated": "2026-08-09",
+    "citation_label": "Hinton (2022), The Forward-Forward Algorithm",
+    "doi": "10.48550/arXiv.2212.13345"
+  },
+  {
     "id": "regret_engine",
     "title": "The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents",
     "priority": "must_use",

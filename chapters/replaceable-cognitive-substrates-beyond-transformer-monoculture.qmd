@@ -459,6 +459,43 @@ critic. The route receipt must preserve which component contributed what, so the
 system cannot credit a tiny model for an answer actually supplied by retrieval or
 a deterministic solver.
 
+## The learning rule is part of the substrate ABI
+
+Substrate pluralism is incomplete if every candidate must expose the same
+backward graph. The Cognitive Kernel ABI should state whether a candidate learns
+through reverse-mode gradients, policy gradients, zeroth-order perturbations,
+population selection, local objectives, or a composition. It must also expose
+the mutable state needed to reproduce, pause, resume, compare, and roll back
+that route.
+
+EGGROLL makes the architecture--learning-rule coupling concrete. Its recurrent
+language-model cases do not maintain a Transformer KV cache, leaving memory for
+a large population of low-rank candidates. Its pure-int8 case can search unit
+parameter changes even though ordinary gradients through integer weights are
+not the natural update path. Those are useful affordances, not evidence that a
+recurrent int8 kernel or ES is generally superior: the largest reported
+population also carries a severe GPU-hour denominator.
+
+MeZO adds a different ABI point: a large differentiable model can still be
+updated with forward-only perturbation estimates when backward activation
+memory is the binding constraint. Forward-Forward goes further by proposing
+local positive/negative objectives rather than a global backward pass, but its
+large-model evidence remains preliminary. The stack therefore negotiates a
+learning capability rather than assuming one implementation:
+
+```text
+learning_rule = family + credit_signal + mutable_state + evaluator
+              + candidate_denominator + resource_ledger + resume_equivalence
+```
+
+A replacement is conformant only when its checkpoint includes that state. For
+an ES route, weights without population lineage, counter-based RNG identity,
+perturbation policy, fitness normalization, and aggregate-optimizer state are
+not a complete checkpoint. For a local learner, weights without local-objective
+and phase state may be equally incomplete. Architectural RSI means the stack
+can replace both computation and learning while keeping qualification and
+authority above them.
+
 ## What architectural RSI actually means
 
 Changing weights inside a frozen architecture is optimization, not the whole of
@@ -960,6 +997,9 @@ interchangeable, safe, or suitable for deployment.
 | `corben_chatgpt_kiss_irreducible_intelligence_2026` | KISS versus Irreducible Intelligence (author-supplied design conversation) | Planned use from inventory/manifest: Corben-supplied design conversation for search-verify-compile, exact-latent separation, a compact recursive kernel, and total-system KISS accounting. Author intent only; not independent evidence or a reproduced architecture. |
 | `corben_chatgpt_onecell_theseus_2026` | OneCell and Theseus Architecture Handoff (author-supplied design conversation) | Planned use from inventory/manifest: Corben-supplied design conversation for a Cognitive Kernel ABI, typed state lanes, inner recurrence, outer exact search, verified abstraction, and Theseus-governed architecture tournaments. Author intent only; OneCell remains an unimplemented falsifiable candidate. |
 | `ext_attention_is_all_you_need_2017` | Attention Is All You Need | Planned use from inventory/manifest: Primary Transformer paper and dense-attention baseline. It supports the historical architecture and parallel sequence-processing comparison, not a claim that Transformers are universally optimal or locally reproduced. |
+| `ext_eggroll_hyperscale_es_2026` | Evolution Strategies at the Hyperscale | Makes learning-rule and population/RNG/fitness state part of the substrate ABI; no architecture or ES superiority is imported. |
+| `ext_mezo_2023` | Fine-Tuning Language Models with Just Forward Passes | Supplies a forward-only, inference-memory-footprint update comparator whose costs and quality remain setting-bound. |
+| `ext_forward_forward_2022` | The Forward-Forward Algorithm | Supplies a preliminary local-credit alternative to reverse-mode backpropagation; it does not establish large-model parity. |
 | `ext_s4_2022` | Efficiently Modeling Long Sequences with Structured State Spaces | Planned use from inventory/manifest: Foundational S4 comparator for structured state-space sequence models and the lineage preceding selective SSMs. Its reported long-range, generation, and benchmark results are not reproduced and do not establish exact recall or governed substitutability. |
 | `ext_mamba2_ssd_2024` | Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality | Planned use from inventory/manifest: Primary Mamba-2/structured-state-space-duality comparator connecting SSM and attention-like formulations. No local model, kernel, quality, scaling, or hardware result is reproduced. |
 | `ext_mamba3_2026` | Mamba-3: Improved Sequence Modeling using State Space Principles | Planned use from inventory/manifest: Current 2026 selective-SSM comparator for complex-valued state updates, discretization, and multi-input/multi-output formulation. Recent source-reported results are not locally reproduced and must not set the chapter conclusion by recency. |

@@ -454,6 +454,59 @@ algorithm. Schedule-free AdamW changes the temporal policy around a familiar
 base update. A run record must describe the composition rather than forcing one
 marketing label.
 
+### Learning-rule pluralism: backpropagation is one route
+
+The optimizer table begins *after* a gradient exists. That is an important
+boundary, not the definition of learning. A complete training architecture must
+also admit methods that estimate improvement from outcomes, perturbations, or
+local objectives without reverse-mode differentiation.
+
+| Learning route | Credit signal | What it can reach | State and denominator that must not disappear |
+|---|---|---|---|
+| Reverse-mode first order | Parameter gradient through a differentiable computation | Large differentiable models and composite losses | Activations, gradients, optimizer/scheduler state, examples and tokens |
+| Score-function / policy gradient | Sampled actions weighted by return or advantage | Stochastic policies and nondifferentiable environments | Rollouts, behavior policy, baseline/critic, rewards, rejected samples |
+| Zeroth-order / evolution strategy | Fitness differences across parameter perturbations | Black-box, discrete, quantized, recurrent, and hybrid systems | Population, seeds, perturbation scale/rank, candidate evaluations, fitness normalization |
+| Population and meta-search | Selection, mutation, recombination, novelty, or quality-diversity score | Parameters, programs, modules, rules, and architectures | Genealogy, archive, evaluator versions, attempted candidates, search compute |
+| Local or forward-only credit | Layer-local goodness, synthetic target, equilibrium, or other non-global signal | Systems where backward transport is undesirable or unavailable | Local objectives, positive/negative construction, update order, inference conversion |
+
+These routes can compose. A population method can estimate an update that Adam
+then applies; an evolved architecture can later be trained by backpropagation;
+a policy-gradient objective can be executed through an ordinary optimizer.
+Therefore the Training Run Contract records both the **learning rule** that
+constructs credit and the **update rule** that transforms that credit.
+
+EGGROLL is the clearest current systems case. Each population member receives a
+low-rank perturbation. The fitness-weighted sum can still yield a rich aggregate
+update, while shared base activations, batched low-rank branches, and
+counter-based regeneration make the population much friendlier to accelerators
+than naive full-parameter ES. The same route can score a pure-int8 recurrent
+model, a control policy, or a reasoning answer with an outcome-only objective;
+none needs a differentiable path through the task.
+
+That flexibility does not make the evaluation free. The paper's headline
+kernel result reaches up to 91% of batch-inference throughput in one large
+bfloat16 matrix setting, or 69% with noise regeneration included. Yet its
+largest pure-int8 language-model population consumed roughly 180 times the
+GPU-hours of the reported backpropagation baseline. Both facts belong together.
+Inference-like arithmetic intensity is not inference-like training efficiency.
+
+An auditable EGGROLL-style run therefore binds the base checkpoint; population
+size; rank; perturbation distribution, scale, antithetic pairing, and RNG
+counter scheme; candidate-to-data assignment; fitness definition, clipping,
+ranking, and normalization; aggregate estimator and its downstream optimizer;
+failed and invalid candidates; architecture-specific memory advantages; and
+total forward evaluations, data exposure, wall time, accelerator-hours, energy,
+and evaluator cost. Changing any one can change the method.
+
+Two neighboring counterexamples prevent EGGROLL from becoming a new
+monoculture. MeZO reconstructs two-sided perturbations from seeds to fine-tune
+language models with a forward-only, inference-footprint estimator. The
+Forward-Forward proposal uses positive and negative forward passes with local
+layer objectives. MeZO's reported memory savings are setting-bound, while
+Forward-Forward remains explicitly preliminary and small-scale. The governing
+principle is not “replace gradients.” It is: admit any competent learning route
+that exposes its complete state, cost, evidence, and rollback surface.
+
 ### AdamW is the reference, not the default winner
 
 Adam estimates a bias-corrected first moment and a coordinate-wise second
@@ -953,6 +1006,10 @@ completeness, support, or release.
 
 | Source ID | Role | Use and limit |
 |---|---|---|
+| `ext_eggroll_hyperscale_es_2026` | learning-rule systems case | Grounds low-rank batched ES, counter-based perturbation reconstruction, discrete/outcome objectives, and source-reported recurrent/int8/reasoning studies. Total-population and GPU-hour caveats remain; no result is reproduced. |
+| `ext_openai_es_2017` | distributed ES baseline | Grounds scalar-fitness parameter search and seed-based communication. Sample and total-compute costs remain in scope. |
+| `ext_mezo_2023` | forward-only zeroth-order comparator | Grounds inference-memory-footprint language-model fine-tuning; not a universal speed or quality result. |
+| `ext_forward_forward_2022` | local-credit comparator | Supplies a preliminary forward-only counterexample to reverse-mode monoculture; not foundation-model evidence. |
 | `ext_llama3_herd_2024` | mechanism + limitation case | Supplies a provider-reported 4D topology, numerical-stability interventions, checkpoint infrastructure, interruption denominator, and effective-time case. No result is locally reproduced; exact resume is not established. |
 | `ext_megatron_distributed_training_2021` | mechanism | Grounds interacting tensor, pipeline, and data parallelism, strict optimizer semantics, microbatch and communication tradeoffs. Its scale and throughput results remain configuration-bound and unreproduced. |
 | `ext_zero_optimizer_2019` | competing design | Grounds progressive sharding of optimizer, gradient, parameter, activation, and residual state. It does not prove universal superiority or complete application checkpoint state. |

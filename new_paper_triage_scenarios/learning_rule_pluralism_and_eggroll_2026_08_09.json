@@ -1,0 +1,73 @@
+{
+  "scenario_id": "learning-rule-pluralism-and-eggroll-triage-2026-08-09",
+  "scenario_scope": "Coordinated intake of EGGROLL and three primary comparators spanning population evolution strategies, forward-only zeroth-order language-model fine-tuning, and local forward-only credit assignment.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "learning-rule-existing-owner-integration",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The chapter already owns update algorithms, run state, topology, checkpointing, and qualification. The new literature expands the learning-rule family above gradient optimizer selection without creating another executable boundary.",
+      "required_before_drafting": [
+        "completed primary source notes",
+        "completed learning-rule taxonomy",
+        "source-scoped performance and theory claims",
+        "total-compute and architecture-coupling caveats"
+      ],
+      "evidence_transition_preconditions": [
+        "competent matched implementations",
+        "method-specific rescue and positive controls",
+        "complete population and cost denominators",
+        "independent evaluator and accepted transition"
+      ],
+      "promotion_blockers": [
+        "no local campaign",
+        "no independent reproduction",
+        "learning-rule and architecture effects remain coupled"
+      ],
+      "non_claims": [
+        "does not establish that gradients are obsolete",
+        "does not establish an alternative-learning winner"
+      ]
+    },
+    {
+      "case_id": "alternative-learning-standalone-chapter-rejection",
+      "intake_kind": "source_variant",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "reject_duplicate",
+      "chapter_manifest_action": "reject_duplicate",
+      "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "proposed_chapter_id": "alternative-learning-systems",
+      "decision_rationale": "A separate chapter would split one Training Run Contract and encourage method labels to escape their state, evaluator, checkpoint, resource, and evidence obligations.",
+      "required_before_drafting": [
+        "not applicable; update the existing owner and bounded consumers"
+      ],
+      "evidence_transition_preconditions": [
+        "a future distinct stack interface would require fresh chapter-boundary adjudication"
+      ],
+      "promotion_blockers": [
+        "method diversity alone is not a chapter boundary"
+      ],
+      "non_claims": [
+        "does not reserve or defer a future chapter"
+      ]
+    }
+  ],
+  "validation_boundary": "Records existing-chapter integration and rejects a duplicate chapter. It does not validate any learning implementation, source benchmark, theorem outside its assumptions, transfer claim, or training policy.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not promote support",
+    "does not authorize a model-training campaign or release"
+  ]
+}

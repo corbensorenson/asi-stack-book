@@ -261,6 +261,7 @@ The external literature named in the browser packet is best organized by what th
 |---|---|---|
 | Foundational policy gradients | Minimal reward-learning substrate: REINFORCE-style estimators, baselines, RLOO, ReMax-like critic-free simplifications. | Source-noted via `ext_reinforce_style_rlhf_2024` and `ext_remax_2023`; no local trainer |
 | Trust-region and clipped online RL | Bounded online exploration with update-size control: TRPO, PPO, PPO-RLHF, GRPO, and descendants. | Source-noted via `ext_trpo_2015`, `ext_ppo_2017`, `ext_dapo_2025`, and `ext_gspo_2025`; no local online RL run |
+| Zeroth-order and evolution strategies | Optimize outcome-level fitness through parameter perturbations when action-level gradients, critics, or differentiable objectives are unavailable. | Source-noted via `ext_openai_es_2017` and `ext_eggroll_hyperscale_es_2026`; no local ES run |
 | Offline preference optimization | Stable updates from static preference or binary feedback data: DPO, IPO, ORPO, KTO, SimPO. | Source-noted via `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, and `ext_simpo_2024`; no local preference baseline |
 | Verifier-based RL / RLVR | Learn from exact, process, tool, context, governance, or efficiency verifiers. | Source-noted via `ext_longrlvr_2026`; process-reward sources beyond this remain queued |
 | Reasoning-budget and latency-aware RL | Learn when to think, stop, retrieve, verify, use tools, or switch generation modes. | Source-noted via `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, and `ext_rlhf_limitations_2023`; no local reasoning-budget run |
@@ -269,6 +270,25 @@ The external literature named in the browser packet is best organized by what th
 Policy optimization should not become an acronym catalog. Acronyms change quickly; the architectural question remains stable: what policy is being updated, what reward is admissible, and what gate decides whether the update survives?
 
 The method-family list is therefore subordinate to governance. PPO-like, DPO-like, GRPO-like, RLVR-like, or custom control-policy updates all need the same record: target policy, reward boundary, drift limit, evaluation suite, failure probes, rollback, and promotion gate.
+
+### Fitness is feedback, not authority
+
+Evolution strategies clarify a distinction that policy-gradient vocabulary can
+hide. A learner can improve an outcome score without differentiating through
+the environment or assigning credit to individual actions. OpenAI ES returns
+scalar fitness from distributed perturbation rollouts; EGGROLL batches low-rank
+parameter perturbations and can optimize discrete rewards. This enlarges the
+mechanism set, but not the reward's authority.
+
+A nondifferentiable reward can still reward shortcuts, exploit an evaluator,
+collapse diversity, or omit safety constraints. Before population search, the
+record freezes the fitness function and evaluator version, population and seed
+policy, perturbation scale and rank, data and environment exposure, invalid-run
+handling, selection/normalization rule, total candidate denominator, and final
+independent evaluation. A result cannot discard low-fitness or crashed members
+and then describe only the surviving lineage. The reward proposes an update;
+the normal drift, regression, rights, safety, cost, and promotion gates decide
+whether it survives.
 
 The target policy should be explicit before an optimizer is named.
 
@@ -499,6 +519,7 @@ The following sources were added as stable external-literature records with prim
 | Reasoning RL and sequence-level variants | `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025` | Compare reasoning-RL, reproducibility pressure, sequence-level objectives, and overthinking control. |
 | Verifier reward and long context | `ext_longrlvr_2026` | Connect long-context reward design to VCM grounding and context adequacy. |
 | RLHF limitations | `ext_rlhf_limitations_2023` | Feed reward-hacking probes, evaluator-limit warnings, and disclosure/audit requirements. |
+| Outcome-only population learning | `ext_openai_es_2017`, `ext_eggroll_hyperscale_es_2026` | Add black-box scalar-fitness optimization while preserving full rollout/population denominators, evaluator risk, and total cost. |
 
 ## A rationale reward is not trace faithfulness
 
@@ -564,6 +585,8 @@ These rows keep Policy Optimization and Learning from Feedback's manifest assign
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Shows that reward improvement can coexist with shortcut use and under-verbalized reward hacking, and tests update-time interventions that change information flow without changing rollout rewards. | The intervention results are bounded to the reported arithmetic, code-repair, and DAPO-Math settings; they do not validate local policy optimization or eliminate reward hacking. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents. Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_eggroll_hyperscale_es_2026` | Passage-reviewed comparator: Evolution Strategies at the Hyperscale. Provides a batched low-rank evolution-strategy case for optimizing outcome-level, discrete, and nondifferentiable fitness without action-level gradients. | Outcome-only fitness remains gameable and source-reported reasoning/control results do not validate local policy improvement, evaluator quality, safety, or total efficiency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openai_es_2017` | Passage-reviewed comparator: Evolution Strategies as a Scalable Alternative to Reinforcement Learning. Provides a foundational outcome-only parameter-search comparator to temporal policy-gradient credit assignment. | The studied control tasks and distributed scaling do not establish universal policy quality, sample efficiency, or governance safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 real policy-update result

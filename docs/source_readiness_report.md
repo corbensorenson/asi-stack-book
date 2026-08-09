@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 40
 - `connector_readable`: 7
-- `source_note_available_public_project`: 20
-- `source_note_available_uncached`: 402
+- `source_note_available_public_project`: 27
+- `source_note_available_uncached`: 409
 
 ## Records
 
@@ -484,3 +484,17 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `capability_ratchet_whitepaper` | The Capability Ratchet | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `attd` | Assembly-Theoretic Technical Debt: A Deterministic Outer Loop for Self-Improving Codebases | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `orcp_moecot` | ORCP–MoECOT: A Governed Oscillating Rail Cascade Codec | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_elizaos_agent_runtime_2026` | elizaOS Agent Runtime and Scenario Runner | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_hermes_agent_2026` | Hermes Agent: Learning, Memory, Tools, and Security Architecture | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_openclaw_agent_runtime_2026` | OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_github_copilot_work_surfaces_2026` | GitHub Copilot Product and Work-Surface Documentation | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_augment_code_agent_2026` | Augment Code Agent Documentation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_openai_codex_work_surfaces_2026` | OpenAI Codex CLI, IDE, Cloud, and Agent Documentation | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_anthropic_claude_code_2026` | Claude Code Agentic Harness Documentation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_opencode_agent_2026` | OpenCode Open-Source Coding Agent | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_oh_my_pi_agent_2026` | Oh My Pi Terminal Coding Agent and Tool Harness | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_eggroll_hyperscale_es_2026` | Evolution Strategies at the Hyperscale | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_openai_es_2017` | Evolution Strategies as a Scalable Alternative to Reinforcement Learning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mezo_2023` | Fine-Tuning Language Models with Just Forward Passes | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_forward_forward_2022` | The Forward-Forward Algorithm: Some Preliminary Investigations | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `regret_engine` | The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

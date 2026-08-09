@@ -617,6 +617,35 @@ the cost model. The ASI Stack should adopt a method only after its own measured
 bundle shows a better qualified-useful frontier for a named consumer—not merely
 lower peak VRAM or the ability to emit a token.
 
+### Inference-like throughput is not inference-like training cost
+
+Forward-only and population methods create a particularly tempting accounting
+error. EGGROLL reports up to 91% of batch-inference throughput for a specific
+large bfloat16 matrix case, or 69% when perturbation regeneration is included.
+That is an impressive kernel result. It does not say that a useful parameter
+update costs one inference pass. An update consumes a population of candidate
+forwards, fitness evaluations, aggregation, optimizer work, synchronization,
+and often repeated tuning.
+
+The paper itself supplies the corrective: its largest pure-int8 language-model
+population required roughly 180 times the GPU-hours of the reported
+backpropagation baseline. Conversely, MeZO reports settings where avoiding
+backward activations lowers both memory and GPU-hours. Neither headline can be
+transported without the regime. A fair ledger records:
+
+- forward evaluations per accepted update and total attempted candidates;
+- population parallelism, rank, data reuse, evaluator calls, and invalid runs;
+- peak and persistent memory, wall time, accelerator-hours, energy, and money;
+- communication, noise regeneration, aggregate-update, checkpoint, and tuning
+  overhead; and
+- useful held-out outcomes at matched data and authority boundaries.
+
+Population parallelism can improve time-to-result while worsening total
+resource consumption; low memory can enable a model that otherwise cannot run;
+black-box fitness can solve a task for which no reliable gradient exists. These
+are different benefits. The economic verdict names which one occurred instead
+of collapsing them into “training efficiency.”
+
 ## Cache-hit economics and honest inference pricing
 
 Reusable inference state can lower marginal cost, so offering cached input more
@@ -1053,6 +1082,9 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `ext_eggroll_hyperscale_es_2026` | Passage-reviewed comparator: Evolution Strategies at the Hyperscale. Supplies the explicit contrast between inference-like population-kernel throughput and total learning cost, including the reported large-population GPU-hour denominator. | All throughput and cost observations are source-scoped and configuration-bound; no local population run or economic advantage is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openai_es_2017` | Passage-reviewed comparator: Evolution Strategies as a Scalable Alternative to Reinforcement Learning. Shows how scalar communication and large worker populations can improve wall-clock scaling while leaving rollout and total-resource denominators intact. | Source-reported worker scaling is not universal sample, energy, or cost efficiency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mezo_2023` | Passage-reviewed comparator: Fine-Tuning Language Models with Just Forward Passes. Provides a countercase in which forward-only estimation can reduce memory and, in selected settings, GPU-hours. | Reported savings are task-, baseline-, and estimator-bound and do not erase query count or variance. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `kernel_english_residual_compiler` | Metadata-first comparator: Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning. Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mlperf_training_v6_2026` | Metadata-first comparator: MLPerf Training v6.0. Official current measurement comparator for fixed datasets and quality targets, repeated time-to-quality, system metadata, divisions, variance, and corrected results. No MLPerf run is performed and the benchmark does not establish safety or complete run integrity. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
