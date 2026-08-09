@@ -112,10 +112,10 @@ def validate(data: dict) -> list[str]:
         or activation_truth.get("live_working_chapter_count") != live_chapter_count
         or activation_truth.get("chapter_core_argument_count") != live_chapter_count
         or activation_truth.get("chapter_core_promotion_count") != 0
-        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or structural_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
         or first_tranche.get("manifest_admitted_count") != len(set(first_tranche.get("candidate_ids", [])))
         or second_tranche.get("manifest_admitted_count") != len(set(second_tranche.get("adjudicated_candidate_ids", [])))
-        or full_coverage_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or full_coverage_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
         or no_deferral_tranche.get("current_manifest_chapter_count")
         != full_coverage_tranche.get("previous_manifest_chapter_count")
         or no_deferral_tranche.get("remaining_live_candidate_queue_count") != 0

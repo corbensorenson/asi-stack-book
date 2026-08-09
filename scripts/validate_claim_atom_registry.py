@@ -26,6 +26,7 @@ QUEUE_SCHEMA = ROOT / "schemas/prose_claim_candidate_queue.schema.json"
 REVIEWS_SCHEMA = ROOT / "schemas/claim_atom_reviews.schema.json"
 CHAPTER_REVIEW_SCHEMA = ROOT / "schemas/claim_chapter_review.schema.json"
 POST_ACTIVATION_EXPANSION_IDS = {
+    "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
     "replaceable-cognitive-substrates-beyond-transformer-monoculture",
     "human-factors-and-meaningful-control-in-oversight",
     "governed-world-models-and-reality-grounding",

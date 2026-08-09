@@ -1,6 +1,6 @@
 {
   "scenario_id": "agent-runtime-reference-projects-triage-2026-08-08",
-  "scenario_scope": "Primary-source intake of elizaOS, Nous Research Hermes Agent, and OpenClaw as external implementation comparators for modular agent runtimes, governed tool use, procedural memory, session identity, evidence capture, and runtime composition.",
+  "scenario_scope": "Primary-source intake of coding-assistant work surfaces and freestanding agent runtimes as external implementation comparators for the evolution from bounded conversational help through agent harnesses to project, role, team, and organizational work.",
   "case_validity_state": "reviewed",
   "cases": [
     {
@@ -101,13 +101,78 @@
         "does not establish ACP harness confinement or end-to-end authority correctness",
         "does not justify a new paper-shaped chapter"
       ]
+    },
+    {
+      "case_id": "coding-harness-family-comparative-integration",
+      "intake_kind": "external_literature",
+      "access_state": "available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "distinct_owner_needed",
+      "candidate_decision": "create_new_chapter",
+      "chapter_manifest_action": "add_new_chapter",
+      "existing_chapter_id": "not_applicable",
+      "proposed_chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "decision_rationale": "GitHub Copilot, Augment, Codex, Claude Code, OpenCode, and Oh My Pi provide dated implementation landmarks for a distinct architectural question: how AI systems absorb progressively larger work surfaces by acquiring context, persistence, tools, execution custody, and review loops. Existing runtime and organizational chapters govern effects and delegation but do not own this transition model.",
+      "required_before_drafting": [
+        "review each official product or repository source at an identified revision or access date",
+        "separate product documentation from reproduced behavior",
+        "use products as representative landmarks rather than a leaderboard or exhaustive market history"
+      ],
+      "evidence_transition_preconditions": [
+        "freeze one work-surface transition and matched workload",
+        "measure context transfer, completion, intervention, authority, effect, recovery, and cost outcomes",
+        "accept a claim-specific evidence transition"
+      ],
+      "promotion_blockers": [
+        "documentation and source inspection only",
+        "no common harness workload or organizational deployment",
+        "no causal evidence that one surface or stage is generally superior"
+      ],
+      "non_claims": [
+        "does not claim a universal linear chronology",
+        "does not predict that every role will be automated",
+        "does not rank the named products"
+      ]
+    },
+    {
+      "case_id": "agent-runtime-family-new-owner-crosswalk",
+      "intake_kind": "architecture_synthesis",
+      "access_state": "available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "crosscuts_existing_chapters",
+      "candidate_decision": "create_new_chapter",
+      "chapter_manifest_action": "add_sources_to_new_and_existing_chapters",
+      "existing_chapter_id": "runtime-adapters-tool-permissions-and-human-approval; human-ai-organizations-delegation-and-accountability; ai-deployment-transition-distribution-and-human-agency",
+      "proposed_chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "decision_rationale": "Hermes Agent, OpenClaw, and elizaOS remain mapped to their mechanism owners but also mark the move from repository-bound harnesses toward persistent, channel-connected, modular, and freestanding agents. The new chapter owns the cross-stage transition; the established chapters retain memory, effects, accountability, and societal deployment.",
+      "required_before_drafting": [
+        "preserve existing source limits and constructive project-specific language",
+        "state that stages branch and coexist rather than replace one another",
+        "treat organization-wide autonomy as a governed design space and stress case"
+      ],
+      "evidence_transition_preconditions": [
+        "execute a bounded cross-surface or cross-runtime comparison",
+        "retain exact identities, permissions, effects, interventions, failures, and residuals",
+        "accept a claim-specific evidence transition"
+      ],
+      "promotion_blockers": [
+        "no reviewed project was executed for this intake",
+        "no role-level or organization-level substitution result exists",
+        "future pathways are architectural branches, not forecasts"
+      ],
+      "non_claims": [
+        "does not transfer project claims into the ASI Stack",
+        "does not equate persistence with accountability",
+        "does not establish autonomous organizations as desirable or inevitable"
+      ]
     }
   ],
-  "validation_boundary": "Records a primary-source existing-owner routing decision for three public software projects. It does not reproduce the projects, validate their documentation, import their reported results, establish novelty, or move any claim support state.",
+  "validation_boundary": "Records primary-source routing for nine public software and product comparators plus one distinct cross-family chapter owner. It does not reproduce the products, import reported results, establish a universal history, forecast role replacement, or move any claim support state.",
   "support_state_effect": "backlog_only",
   "non_claims": [
-    "does not change chapter order",
-    "does not create a new chapter",
+    "does not treat chapter creation as evidence",
     "does not add a Lean proof result",
     "does not authorize deployment, release, or claim promotion"
   ]

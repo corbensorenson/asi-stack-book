@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 84 |
-| Assigned source/chapter pairs | 1260 |
-| Exact claim-source mappings | 1060 |
+| Chapters audited | 85 |
+| Assigned source/chapter pairs | 1269 |
+| Exact claim-source mappings | 1069 |
 | Unmapped assigned pairs | 200 |
-| Source notes present for assigned pairs | 1260 |
-| Source notes listing assigned chapter | 1260 |
-| Passage-reviewed mappings recorded | 991 |
-| Support-state counts | {"argument": 84} |
+| Source notes present for assigned pairs | 1269 |
+| Source notes listing assigned chapter | 1269 |
+| Passage-reviewed mappings recorded | 1000 |
+| Support-state counts | {"argument": 85} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -74,6 +74,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `claim-ledgers-and-belief-revision` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
 | `spinoza-verification-and-proof-carrying-claims` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
 | `labor-os-and-typed-jobs` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `human-ai-organizations-delegation-and-accountability` | 9 | 6 | 9 | 9 | 6 | argument | passage review required before source-derived promotion |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `ai-deployment-transition-distribution-and-human-agency` | 4 | 2 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
@@ -181,6 +182,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_graphrag_2024` | 5 | yes |
 | `ext_hipporag_2024` | 5 | yes |
 | `portia_synapse` | 5 | yes |
+| `ext_openclaw_agent_runtime_2026` | 5 | yes |
 | `ext_swe_rebench_v2_2026` | 5 | yes |
 | `rgs` | 5 | yes |
 | `octopus_router` | 5 | yes |
@@ -199,10 +201,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_darwin_godel_machine_2025` | 4 | yes |
 | `ext_adas_2024` | 4 | yes |
 | `ext_raptor_2024` | 4 | yes |
+| `ext_hermes_agent_2026` | 4 | yes |
 | `ext_nist_ai_rmf_1_0_2023` | 4 | yes |
 | `ext_claw_swe_bench_2026` | 4 | yes |
 | `ext_faithfulness_information_flow_2026` | 4 | yes |
-| `ext_openclaw_agent_runtime_2026` | 4 | yes |
 | `ext_inspect_ai_2024` | 4 | yes |
 | `spider_synapse` | 4 | yes |
 | `ext_universal_transformer_2019` | 4 | yes |
@@ -228,7 +230,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_dreamcoder_2020` | 3 | yes |
 | `ext_alce_2023` | 3 | yes |
 | `ext_pagedattention_vllm_2023` | 3 | yes |
-| `ext_hermes_agent_2026` | 3 | yes |
 | `ext_cap_theorem_gilbert_lynch_2002` | 3 | yes |
 | `ext_openai_prompt_caching_docs_2026` | 3 | yes |
 | `ext_anthropic_prompt_caching_docs_2026` | 3 | yes |
@@ -237,6 +238,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_azure_llm_semantic_cache_2026` | 3 | yes |
 | `ext_dont_hallucinate_abstain_2024` | 3 | yes |
 | `ext_checklist_2020` | 3 | yes |
+| `ext_elizaos_agent_runtime_2026` | 3 | yes |
 | `moecot_md` | 3 | yes |
 | `ext_kimi_k3_2026` | 3 | yes |
 | `coilmoecot` | 3 | yes |
@@ -311,7 +313,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_constructive_interdependence_human_ai_2026` | 2 | yes |
 | `ext_human_ai_team_meta_analysis_2024` | 2 | yes |
 | `ext_human_ai_feedback_loops_2025` | 2 | yes |
-| `ext_elizaos_agent_runtime_2026` | 2 | yes |
 | `ext_neural_message_passing_2017` | 2 | yes |
 | `ext_test_time_training_2020` | 2 | yes |
 | `ext_llada_2025` | 2 | yes |
@@ -414,6 +415,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_airflow_dag_docs` | 1 | yes |
 | `ext_bpmn_2_0_2_spec` | 1 | yes |
 | `ext_kubernetes_jobs_docs` | 1 | yes |
+| `ext_github_copilot_work_surfaces_2026` | 1 | yes |
+| `ext_augment_code_agent_2026` | 1 | yes |
+| `ext_openai_codex_work_surfaces_2026` | 1 | yes |
+| `ext_anthropic_claude_code_2026` | 1 | yes |
+| `ext_opencode_agent_2026` | 1 | yes |
+| `ext_oh_my_pi_agent_2026` | 1 | yes |
 | `ext_moral_crumple_zones_2019` | 1 | yes |
 | `ext_ai_decision_authority_2020` | 1 | yes |
 | `ext_oecd_neuro_ai_convergence_2025` | 1 | yes |
@@ -1065,6 +1072,15 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `ext_airflow_dag_docs` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `ext_bpmn_2_0_2_spec` | mapped | note present | chapter listed | passage-reviewed |
 | `labor-os-and-typed-jobs.core` | `labor-os-and-typed-jobs` | `ext_kubernetes_jobs_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_github_copilot_work_surfaces_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_augment_code_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_openai_codex_work_surfaces_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_anthropic_claude_code_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_opencode_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_oh_my_pi_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_hermes_agent_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `ext_elizaos_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `human-ai-organizations-delegation-and-accountability.core` | `human-ai-organizations-delegation-and-accountability` | `ext_nist_ai_rmf_1_0_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `human-ai-organizations-delegation-and-accountability.core` | `human-ai-organizations-delegation-and-accountability` | `ext_moral_crumple_zones_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `human-ai-organizations-delegation-and-accountability.core` | `human-ai-organizations-delegation-and-accountability` | `ext_ai_decision_authority_2020` | mapped | note present | chapter listed | passage-reviewed |

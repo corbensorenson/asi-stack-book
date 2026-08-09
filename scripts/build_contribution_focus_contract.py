@@ -71,6 +71,7 @@ GROUPS = {
         "planning-as-a-control-layer", "cognitive-compilation-and-semantic-ir",
         "virtual-context-abi", "durable-semantic-memory-and-knowledge-lattices",
         "labor-os-and-typed-jobs",
+        "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
         "human-ai-organizations-delegation-and-accountability",
         "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
         "ai-deployment-transition-distribution-and-human-agency",

@@ -63,6 +63,7 @@ different controls.
 
 ## Book Chapters Supported
 
+- `ai-work-surfaces-agent-harnesses-and-organizational-absorption`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `artifact-graphs-audit-logs-and-replay`
 - `inter-stack-protocols-identity-and-economic-exchange`

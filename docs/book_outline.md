@@ -8,8 +8,12 @@ full-coverage admission, and 22-unit three-projection reconciliation.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
-The manifest now contains **84 chapters**, which is the sole current chapter
-count. The taxonomy and structural-maturity reconciliation admitted four
+The manifest now contains **85 chapters**, which is the sole current chapter
+count. The 2026-08-08 work-surface intake added one Part II owner for the
+transition from answer and suggestion through task, project, role, team,
+organization, and network; earlier 84-chapter audit and narrative-product
+counts remain frozen historical denominators until their owning workflows are
+prospectively refreshed. The taxonomy and structural-maturity reconciliation admitted four
 distinct owners for dangerous-capability domains, societal misuse resilience,
 open-weight release, and content authenticity; the subsequent full-coverage
 pass admitted four additional owners for real-world evaluation, hardware-
@@ -155,7 +159,7 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 ### Current reader-role classification
 
 P7.1a-W2 assigns every chapter in its historical 60-chapter scope one primary
-reader role. The current 84-entry projection is
+reader role. The current 85-entry projection is
 `evidence_quality/current_chapter_role_map.json`; the frozen W2 machine record
 remains `evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis
 and navigation only. They do
@@ -189,7 +193,7 @@ publication status.
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`, plus
   `relational-dimension-compilation-and-polyadic-cognition`.
-- **Load-bearing reference (54):** every remaining manifest chapter, including
+- **Load-bearing reference (55):** every remaining manifest chapter, including
   `governed-model-training-distributed-optimization-and-scaling` and
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
@@ -291,7 +295,7 @@ natural evaluation, reproduction, and transfer remain open.
 
 ## Full-Coverage Admission Overlay — 2026-07-25
 
-The current manifest contains **84 chapters**. The full audit in
+The current manifest contains **85 chapters**. The full audit in
 `docs/full_coverage_gap_audit_2026_07_25.md` admitted four distinct owners:
 
 | Chapter | Exclusive job |
@@ -3881,6 +3885,74 @@ Lean proof targets:
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/seven-invalid typed-job delivery suite without treating delivery or verification fields as task success, output truth, support, or external effects. | implemented |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `AsiStackProofs.TypedJobRefinement` | The versioned lifecycle consumer preserves the exact two-valid/nine-invalid durable retry and lease suite without treating declared idempotence, recovery, enforcement, receipt, or replay fields as real service behavior. | implemented |
 
+### From Chat to Organizations: AI Work Surfaces and Agent Harnesses
+
+Stable ID: `ai-work-surfaces-agent-harnesses-and-organizational-absorption`
+
+Chapter job: Own the architecture and history of work-surface expansion from
+answer and suggestion through task, project, role, team, organization, and
+inter-organizational network. Treat every expansion as a transfer of context,
+persistence, tools, execution custody, authority, review, accountability, and
+residuals. Do not own typed-job execution, runtime effect mediation,
+organizational legitimacy, social distribution, or multi-agent population
+dynamics.
+
+Core claim: Every expansion of an AI work surface should be governed as a versioned abstraction-absorption transition that binds capability, context, state, tools, authority, effects, verification, human control, accountability, and residuals before project-, role-, team-, or organization-scale autonomy is accepted.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Suggestion and IDE-agent landmarks | `ext_github_copilot_work_surfaces_2026`, `ext_augment_code_agent_2026` | Use official current documentation to distinguish suggestion, chat, read-only, approval-paused, and agent-execution surfaces. Do not infer a complete product chronology or reproduced productivity result. |
+| Purpose-built coding harnesses | `ext_openai_codex_work_surfaces_2026`, `ext_anthropic_claude_code_2026`, `ext_opencode_agent_2026`, `ext_oh_my_pi_agent_2026` | Compare the harness around the model: context, tools, environment, persistence, permissions, review, subagents, provider selection, automation, and collaboration. Use pinned revisions where recorded; do not rank products or import reported outcomes. |
+| Freestanding and persistent agent runtimes | `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`, `ext_elizaos_agent_runtime_2026` | Use as constructive landmarks for memory, skills, channels, devices, gateways, plugins, services, evaluators, external harnesses, and governed procedure proposals. Preserve existing mechanism-owner mappings and source limits. |
+
+Draft arc:
+
+- Problem: Product histories and generic autonomy labels conceal the transfer of context, persistence, tool reach, execution custody, authority, review burden, accountability, and residuals.
+- Insufficiency: Interface shape, model identity, task completion, or one autonomy score cannot recover the system boundary or justify role- and organization-scale authority.
+- Mechanisms 1–2: Define a versioned `WorkSurfaceContract`; classify the absorbed unit as answer, suggestion, task, project, role, team, organization, or network without treating the sequence as inevitable or monotonic.
+- Mechanisms 3–4: Compile an `AbstractionAbsorptionTransition` with exact parent/candidate deltas; compare capability, authority, and observed-effect envelopes so technical reach cannot mint permission.
+- Mechanisms 5–6: Preserve identity and custody across local, IDE, cloud, asynchronous, remote, gateway, and external-harness surfaces; treat broader harness composition as trusted-computing-base growth as well as leverage.
+- Mechanisms 7–8: Budget meaningful human review and intervention; govern cross-organization feedback for provenance, diversity, common-mode dependency, concentration, collusion, and epistemic lock-in.
+- Implementation landmarks: Copilot and Augment show multi-mode assistance and agent work; Codex, Claude Code, OpenCode, and Oh My Pi show purpose-built harness composition; Hermes Agent, OpenClaw, and elizaOS show persistent, channel-connected, or modular freestanding runtimes. These are dated non-ranking comparators.
+- Future pathways: sovereign personal agents; artifact and project stewards; typed organizational roles; coordinated teams and departments; agent-native organizations; inter-organizational networks; embodied and infrastructure agents; recursive research and improvement ecosystems.
+- Handoff: Repeated role- and team-scale custody flows to Human-AI Organizations for delegation, competence, decision rights, accountability, appeal, remedy, succession, and dissolution.
+- Interfaces: Labor OS supplies typed jobs; Runtime Adapters owns tool/effect mediation; Artifact Graphs owns durable lineage; Human-AI Organizations owns recurring delegation/accountability; Deployment Transition owns social distribution and human agency; Inter-Stack Protocols and Multi-Agent Dynamics own network exchange and population behavior.
+
+Primary invariants:
+
+- A wider work surface inherits no undeclared authority; silence never means permission inheritance.
+- Model capability and harness capability remain separately identified and versioned.
+- Interface convenience, task success, or adoption does not establish effect completeness, role competence, team fitness, organizational legitimacy, or support.
+- Local, cloud, gateway, external-harness, task, project, role, and organization identities cannot substitute for one another.
+- Changed context, state, tool, environment, authority, or accountable ownership invalidates dependent approvals and evidence.
+- Accountability cannot transfer to a person without practical information, intervention, stop, appeal, and remedy capacity.
+- Older and narrower surfaces can coexist, narrow, regress, or retire; maximum autonomy is not the objective.
+- Organization-to-organization agreement or feedback cannot promote a claim without independent evidence.
+
+Failure modes to cover:
+
+- Interface-driven authority laundering; hidden durable state; context loss on migration; tool reach without effect observation; review-budget collapse.
+- Autonomy theater; metric substitution from task to role; deskilling; option-value loss; model/provider/vendor lock-in.
+- Shared-model or shared-evaluator monoculture; collusion; common-mode failure; concentration; epistemic lock-in; orphaned responsibility.
+
+Draft deliverables:
+
+- Integrated 4,700-word argument chapter with separate Human Reading Path, one Mermaid transition diagram, nine source mappings, explicit product limits, minimum implementation, mature target, future-pathway portfolio, and adjacent handoffs.
+- Nine official product or repository source notes: six new coding-harness records plus the previously reviewed Hermes Agent, OpenClaw, and elizaOS implementation records.
+- Updated source inventory, Appendix A, Appendix C, Appendix H, Quarto manifest, triage scenario, and research backlog record.
+- Next minimum: one frozen repository workload executed through answer, suggestion, and bounded agent-task surfaces with exact context, identity, tools, permissions, effects, interventions, costs, failures, rollback, artifacts, and residual custody.
+- Promotion gates: matched usefulness and total-cost outcomes; effect completeness; authority and identity integrity; intervention and recovery; longitudinal project/role competence; human skill and option value; independent reproduction; and transfer across harnesses, models, environments, organizations, and time.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:work_surface.transition.authority_nonexpansion` | `AsiStackProofs.WorkSurfaceTransitions` | Accepted abstraction-absorption transitions preserve exact principal, work, context, environment, authority, review, effect, receipt, and residual identities and cannot widen authority beyond the parent surface. | planned |
+| `lean:work_surface.transition.rejection_noninterference` | `AsiStackProofs.WorkSurfaceTransitions` | Missing custody, approval, effect observation, rollback, or accountable ownership rejects a transition without mutating the accepted surface state or assigning support. | planned |
+| `lean:work_surface.summary.non_equivalence` | `AsiStackProofs.WorkSurfaceTransitions` | An aggregate autonomy or completion score cannot recover the transition record's authority, identity, effect, review, and residual fields. | planned |
+
 ### Human-AI Organizations, Delegation, and Accountability
 
 Stable ID: `human-ai-organizations-delegation-and-accountability`
@@ -6277,7 +6349,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 330 proof targets, 130 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 131 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -7841,7 +7913,7 @@ Draft arc:
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
 - Mechanism: Treat chapter and part numbers as generated presentation data over stable manifest IDs; derive contiguous ordinals from current manifest order so insertion, removal, movement, or merge requires no stored-number rewrite and cannot change evidence identity.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
-- Mechanism: Compress the 84-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
+- Mechanism: Compress the 85-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
 - Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
@@ -7890,7 +7962,7 @@ and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
 That historical working manifest contained 59 entries; the current manifest
-contains 84. White-Box Evidence is terminally
+contains 85. White-Box Evidence is terminally
 integrated as an argument-level reader chapter with its packet, formal route,
 resource-isolated claim-bearing protocol, source crosswalk, and non-claim
 boundary complete; its empirical campaign remains deliberately unexecuted and

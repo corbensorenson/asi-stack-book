@@ -1,7 +1,7 @@
 {
   "actual_command_record": {
     "command": "python3 scripts/validate_resource_flagship_lane.py",
-    "elapsed_ms": 2051.571,
+    "elapsed_ms": 1914.653,
     "exit_code": 0,
     "output_excerpt": [
       "Resource flagship lane validation passed: 10 command replay(s), 26 tracked artifact digest(s), support-state effect none."
@@ -43,7 +43,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "reference_trace_replay",
-  "recorded_at_utc": "2026-08-05T00:21:03Z",
+  "recorded_at_utc": "2026-08-09T00:25:12Z",
   "reference_trace_record": {
     "artifacts": [
       "command://validate-resource-flagship-lane",
@@ -155,10 +155,10 @@
       "sha256": "5842ee2279d136593590f81502454efcb88f73b2e2351b4dab0a93a77dc78fbc"
     },
     {
-      "bytes": 22864,
+      "bytes": 22866,
       "lines": 500,
       "path": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
-      "sha256": "99037c5d567665614f3fbabddb44bc25ca2551dc66331efeedc2d2065d8f6bdf"
+      "sha256": "a2336ff73c07c553de0d2417a8fbc5b3e38d22ed9139569974d37c083ff7c664"
     },
     {
       "bytes": 19625,
@@ -215,10 +215,10 @@
       "sha256": "b477f1e0544119a39c76f4aca54c20f096f9e6fbdb5f755b3e0e9d4552de2806"
     },
     {
-      "bytes": 118795,
-      "lines": 1279,
+      "bytes": 118813,
+      "lines": 1280,
       "path": "chapters/integrated-reference-architecture.qmd",
-      "sha256": "6372dd87c9cb181272f308b7613c3c48e96252311e6d02b1baf5cfbd0d554f4d"
+      "sha256": "b695e29ef8836697484897c902713887582371045b0ab5ddcbf6088ef35761fe"
     }
   ]
 }

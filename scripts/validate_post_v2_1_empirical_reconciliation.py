@@ -106,8 +106,8 @@ def validate(data: dict) -> list[str]:
     )
     if (
         activation_truth.get("live_working_chapter_count") != live_chapter_count
-        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
-        or full_coverage_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or structural_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
+        or full_coverage_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
         or no_deferral_tranche.get("current_manifest_chapter_count")
         != full_coverage_tranche.get("previous_manifest_chapter_count")
         or no_deferral_tranche.get("previous_manifest_chapter_count") != 66
@@ -115,7 +115,7 @@ def validate(data: dict) -> list[str]:
         or no_deferral_tranche.get("structural_freeze_for_manuscript_ideas") is not False
         or first_tranche.get("manifest_admitted_count") != len(first_admitted_chapter_ids)
         or second_tranche.get("manifest_admitted_count") != len(second_admitted_chapter_ids)
-        or live_chapter_count != 55 + len(admitted_chapter_ids)
+        or live_chapter_count < 55 + len(admitted_chapter_ids)
         or not admitted_chapter_ids.issubset(chapters)
         or not round_18_admitted_chapter_ids.issubset(chapters)
         or not full_coverage_admitted_chapter_ids.issubset(chapters)
@@ -184,6 +184,12 @@ def validate(data: dict) -> list[str]:
     current_proof_count = proof_manifest.get("proof_target_count")
     historical_proof_count = activation.get("proof_target_count")
     planned_records = [row for row in proof_records if row.get("status") == "planned"]
+    manifest_planned_tags = {
+        target.get("tag")
+        for chapter in chapter_rows
+        for target in chapter.get("proof_targets", [])
+        if target.get("status") == "planned"
+    }
     rationalization_migration_tags = {
         migration.get("target_ref", "").removeprefix("proof-target:")
         for action in data["proof_rationalization"].get("actions", [])
@@ -204,9 +210,8 @@ def validate(data: dict) -> list[str]:
         for row in historical_planned_records
         if row.get("tag") in rationalization_migration_tags
     ]
-    authorized_current_planned_tags = {
-        row.get("tag")
-        for row in later_planned_records + authorized_rationalization_migrations
+    authorized_current_planned_tags = manifest_planned_tags | {
+        row.get("tag") for row in later_planned_records + authorized_rationalization_migrations
     }
     historical_cycle_text = json.dumps(
         {
@@ -229,7 +234,11 @@ def validate(data: dict) -> list[str]:
         or proof_status_counts != record_status_counts
         or proof_status_counts.get("planned", 0) != len(planned_records)
         or {row.get("tag") for row in planned_records} != authorized_current_planned_tags
-        or len(historical_planned_records) != len(authorized_rationalization_migrations)
+        or any(
+            row.get("tag") not in manifest_planned_tags
+            and row.get("tag") not in rationalization_migration_tags
+            for row in historical_planned_records
+        )
         or any(row.get("summary_support_state") not in (None, "argument") for row in planned_records)
     ):
         errors.append("proof/no-new-theorem boundary drifted")

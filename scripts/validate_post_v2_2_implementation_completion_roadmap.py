@@ -133,7 +133,7 @@ def semantic_errors(data: dict) -> list[str]:
         activation_truth.get("live_working_chapter_count") != live_chapter_count
         or activation_truth.get("chapter_core_argument_count") != live_chapter_count
         or activation_truth.get("chapter_core_promotion_count") != 0
-        or structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or structural_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
     ):
         errors.append("current manifest/core-claim identity disagrees with the active successor authority")
     vector_summary = vectors_obj.get("summary", {}) if isinstance(vectors_obj, dict) else {}

@@ -12,8 +12,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 330 |
-| Lean modules scanned | 130 |
+| Proof targets in manifest | 333 |
+| Lean modules scanned | 131 |
 | Theorem declarations classified | 3153 |
 | Direct/projection-style theorem declarations | 447 |
 | Derived/decomposed theorem declarations | 1978 |
@@ -182,6 +182,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/VirtualContextABI.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/VirtualContextRefinement.lean` | virtual-context-abi | 3 | 39 | 5 | 17 | 17 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/WhiteBoxEvidence.lean` | white-box-evidence-interpretability-and-activation-governance | 2 | 36 | 4 | 27 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/WorkSurfaceTransitions.lean` | ai-work-surfaces-agent-harnesses-and-organizational-absorption | 3 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 
 ## Theorem Classification
 

@@ -55,6 +55,7 @@ itself evidence of correctness or safe self-improvement.
 
 ## Book Chapters Supported
 
+- `ai-work-surfaces-agent-harnesses-and-organizational-absorption`
 - `procedural-memory-and-cognitive-loop-closure`
 - `durable-semantic-memory-and-knowledge-lattices`
 - `runtime-adapters-tool-permissions-and-human-approval`

@@ -23,7 +23,7 @@ def errors(data: dict) -> list[str]:
     if set(roles) != {"mechanism_or_capability", "limitation_or_failure", "competing_design", "measurement_or_evaluation"}: out.append("four-role vocabulary drifted")
     if {s for values in roles.values() for s in values} != SOURCE_IDS: out.append("nine-source role packet incomplete")
     chapters = [c for p in data["structure"]["parts"] for c in p["chapters"]]; ids = [c["id"] for c in chapters]
-    if len(ids) != 84 or ids.count(CHAPTER_ID) != 1: out.append("84-chapter manifest or A2 uniqueness drifted")
+    if len(ids) != data["status"].get("activation_truth", {}).get("live_working_chapter_count") or len(ids) != len(set(ids)) or ids.count(CHAPTER_ID) != 1: out.append("current manifest or A2 uniqueness drifted")
     i = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
     if (
         i < 1

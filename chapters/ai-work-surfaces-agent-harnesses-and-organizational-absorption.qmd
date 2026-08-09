@@ -1,0 +1,625 @@
+---
+title: "From Chat to Organizations: AI Work Surfaces and Agent Harnesses"
+chapter_id: "ai-work-surfaces-agent-harnesses-and-organizational-absorption"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "integrated argument chapter"
+last_updated: "2026-08-08"
+primary_sources:
+  - "ext_github_copilot_work_surfaces_2026"
+  - "ext_augment_code_agent_2026"
+  - "ext_openai_codex_work_surfaces_2026"
+  - "ext_anthropic_claude_code_2026"
+  - "ext_opencode_agent_2026"
+  - "ext_oh_my_pi_agent_2026"
+  - "ext_hermes_agent_2026"
+  - "ext_openclaw_agent_runtime_2026"
+  - "ext_elizaos_agent_runtime_2026"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No named product or runtime was executed for this chapter intake."
+  - "No matched cross-harness or cross-surface workload has been run."
+  - "No role-, team-, organization-, or inter-organization transition has been implemented or evaluated."
+  - "The future pathways are design branches and stress cases, not forecasts."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Status | conceptual |
+| Manuscript maturity | integrated argument chapter |
+| Last updated | 2026-08-08 |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Nine official product or repository source notes reviewed at their documented boundaries; three open-source comparators are pinned to exact revisions. |
+| Test state | No product execution or matched cross-surface experiment was run. Four chapter-specific test families remain planned. |
+
+## Drafting guardrail
+
+This chapter is an architectural history and design space, not a product
+leaderboard. Product names are dated implementation landmarks. Their features,
+interfaces, maintainers, and maturity can change. Official documentation
+supports only the bounded descriptions in the source crosswalk; it does not
+establish superiority, safety, correctness, productivity, or organizational
+replacement. The progression described here branches, overlaps, and sometimes
+reverses. Organization-scale agency is an ASI stress case, not a forecast that
+every role will or should be automated.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+AI moved from a browser answer box into autocomplete, editor sidebars, coding
+agents, and persistent runtimes. Each step did more than change the interface:
+it transferred context, state, tools, execution, and review from the person to
+the system. Codex, Claude Code, OpenCode, Oh My Pi, GitHub Copilot, and Augment
+make this transfer visible in software work. Hermes Agent, OpenClaw, and
+elizaOS show how the same design space widens beyond one editor or request.
+
+The next step is not necessarily a single march toward autonomy. Systems may
+become personal agents, project stewards, typed organizational roles,
+specialist teams, scientific loops, market participants, or federated hives.
+Several forms may coexist. The governing question is therefore not how
+autonomous an agent appears, but what moved when its work surface widened.
+
+Every expansion should become a versioned transition. A larger work
+surface is justified only when capability, authority, evidence, human control,
+accountability, recovery, and unresolved residuals move together. The goal is
+not maximum autonomy. It is the largest unit of work the system can accept
+without losing rights, responsibility, or the ability to recover.
+:::
+
+## Problem
+
+AI deployment is commonly narrated as a product chronology: browser chat,
+autocomplete, sidebar assistant, agentic editor, terminal agent, background
+worker, personal agent, team, and autonomous organization. That chronology is
+useful but shallow. It treats the visible interface as the system boundary and
+conceals what actually changed.
+
+Each expansion can transfer some combination of:
+
+- **context**, from a prompt to a file, repository, project, organization, or world state;
+- **persistence**, from one response to resumable sessions, memory, schedules, and durable obligations;
+- **tool reach**, from suggestion to file mutation, shell execution, network access, messaging, purchasing, or physical action;
+- **execution custody**, from “the user applies this” to “the system completes and returns this”;
+- **coordination**, from one model turn to subagents, teams, services, markets, and institutions;
+- **verification**, from informal reading to tests, independent evaluators, evidence ledgers, and release gates;
+- **authority**, from advisory influence to bounded decisions or external effects;
+- **accountability**, which often fails to move with the practical ability to act;
+- **residuals**, including unresolved errors, rights claims, security exposure, maintenance debt, and downstream dependence.
+
+These transfers need a designated owner. Labor OS governs a typed unit
+of work. Runtime Adapters govern tool permissions and effects. Human-AI
+Organizations govern roles, delegation, accountability, and remedy. Deployment
+Transition governs social distribution and human agency. None of those chapters
+owns the change in work surface itself: how an answer becomes a task, how a
+task becomes a project, or how a project becomes a role that participates in
+an organization.
+
+## Why existing approaches are insufficient
+
+### Product timelines hide architecture
+
+A timeline can show that one interface appeared after another. It cannot show
+whether context became more complete, whether state became durable, whether
+effects are observed, whether a reviewer can still intervene, or whether
+responsibility followed authority. Products also mix modes. GitHub Copilot's
+current documentation spans inline suggestions, chat, command-line help,
+context spaces, pull-request work, and agent-driven development. Augment
+distinguishes chat, read-only Quick Ask, approval-paused Agent, and more
+independent Agent Auto within one IDE panel. A window shape is not an authority
+class.
+
+### “Agent” collapses the model and the harness
+
+Claude Code's documentation usefully names the harness: tools, context
+management, and the execution environment around the model. Codex, Claude Code,
+OpenCode, and Oh My Pi all make this distinction concrete in different ways.
+Their surfaces join project instructions, file operations, command execution,
+code intelligence, memory, provider selection, subagents, review, permissions,
+or automation. Two systems using the same model can therefore have materially
+different capabilities and risks. Two versions of one harness can as well.
+
+Calling both systems “the model” loses the component that actually holds file
+access, credentials, network reach, checkpoints, session state, and approval
+logic. Calling both “agents” loses almost as much.
+
+### Autonomy scores hide non-substitutable dimensions
+
+A single autonomy level cannot distinguish a system that acts broadly but
+forgets everything from one that acts narrowly with durable memory; a system
+that requires approval for every command from one that operates inside a
+strict sandbox; or a system that prepares a patch from one that merges,
+deploys, and monitors it. Completion rate cannot recover identity custody,
+effect scope, reviewer workload, rollback, or accountable ownership.
+
+### Software is an unusually favorable first domain
+
+Coding advanced quickly because much of the work is already digitally legible.
+Repositories hold artifacts and history. Version control supports comparison
+and rollback. Build systems and tests offer partial oracles. Tools are invoked
+through machine-readable interfaces. Work can often be sandboxed and replayed.
+
+Other roles may depend more heavily on tacit knowledge, embodiment, social
+trust, legal standing, scarce physical access, institutional legitimacy, or
+outcomes that appear only after long delays. The movement from coding task to
+coding project does not prove that medicine, diplomacy, caregiving, management,
+or public administration will follow the same curve.
+
+### “Every role” is not a requirement or a prediction
+
+An ASI architecture must be able to reason about the stress case in which AI
+systems can perform every technically expressible role. That does not make
+universal substitution desirable, economical, lawful, legitimate, or likely.
+Some roles should remain human by right or institutional design. Others should
+be decomposed so AI handles parts while people retain judgment, relationship,
+representation, or final authority. The relevant pathways and their contracts
+must remain visible without pretending that one of them is destiny.
+
+## Core Claim
+
+[ai-work-surfaces-agent-harnesses-and-organizational-absorption.core, label: Design rationale, support: argument] Every expansion of an AI work surface should be governed as a versioned abstraction-absorption transition that binds capability, context, state, tools, authority, effects, verification, human control, accountability, and residuals before project-, role-, team-, or organization-scale autonomy is accepted.
+
+The claim remains at `argument`. The nine implementation sources show that
+current systems already occupy multiple work surfaces and expose some of the
+named controls. They do not establish that the proposed transition contract is
+sufficient, that later stages are superior, or that organization-scale agency
+is safe or feasible.
+
+### Strongest objection
+
+The proposed transition layer may be bureaucratic description wrapped around
+ordinary software deployment. Teams already use access control, tickets,
+version control, tests, audit logs, and organizational policy. A separate
+abstraction-absorption record could duplicate those systems, add review burden,
+and become stale while products change faster than the taxonomy.
+
+The objection has teeth. The layer is justified only when it composes existing
+records rather than replacing them, detects transfers that component systems do
+not see, and prevents a wider surface from inheriting authority by implication.
+Its minimum form should be a small transition receipt compiled from existing
+job, permission, artifact, evidence, identity, and accountability records. If
+it cannot change an admission, rollback, or review decision, it is paperwork and
+should be removed.
+
+## Mechanism
+
+```{mermaid}
+flowchart LR
+    A["Answer"] --> B["Suggestion"]
+    B --> C["Bounded task"]
+    C --> D["Persistent project"]
+    D --> E["Typed role"]
+    E --> F["Coordinated team"]
+    F --> G["Organization"]
+    G --> H["Inter-organizational network"]
+
+    T["Versioned transition contract"] -. "admits or rejects" .-> C
+    T -. "admits or rejects" .-> D
+    T -. "admits or rejects" .-> E
+    T -. "admits or rejects" .-> F
+    T -. "admits or rejects" .-> G
+    T -. "admits or rejects" .-> H
+
+    R["Evidence, rights, authority, review, rollback, residuals"] --> T
+```
+
+**How to read this diagram:** The horizontal arrows show increasing custody,
+not guaranteed progress. The transition contract may admit or reject each
+widening only when evidence, rights, authority, review, rollback, and residual
+custody are explicit. Any surface can
+coexist with, narrow to, or retire into an earlier one.
+
+### 1. Define the work surface as a contract
+
+A work surface is the bounded environment in which an AI system receives
+context, holds state, proposes or performs work, communicates, and returns
+artifacts or effects. Its identity includes the harness, model/provider,
+environment, principal, project or organizational scope, tool set, memory,
+permission profile, review mode, and terminal-custody rule.
+
+The same visual interface can expose several work surfaces. Read-only inquiry,
+approval-paused execution, and automatic tool use are different contracts even
+when selected from one dropdown.
+
+### 2. Classify the absorbed unit
+
+The ladder is a comparison vocabulary, not a mandatory maturity model:
+
+| Unit | System custody | Characteristic boundary |
+|---|---|---|
+| answer | produces language | human transfers context and applies result |
+| suggestion | proposes inside an artifact | human accepts each local mutation |
+| task | executes a bounded objective | system holds tools and returns a result |
+| project | maintains multi-task state | system preserves goals, artifacts, dependencies, and residuals |
+| role | performs a recurring function | competence, mandate, workload, escalation, and accountability become persistent |
+| team | coordinates differentiated roles | delegation, communication, conflict, and shared resources become first-class |
+| organization | pursues a charter across functions | governance, rights, capital, liability, succession, and public effects enter scope |
+| network | interacts across organizations | protocols, markets, institutions, concentration, and systemic risk dominate |
+
+One system may occupy several rows at once. A persistent project steward may
+still require line-by-line approval for a security-sensitive file. A team agent
+may only advise on budgets. A freestanding personal agent may have broad
+communication reach but no organizational authority.
+
+### 3. Record the transition delta
+
+An `AbstractionAbsorptionTransition` should identify the parent and candidate
+surface and record exactly what changes in:
+
+1. principal and accountable owner;
+2. model, harness, and environment identity;
+3. context sources and disclosure rights;
+4. memory, persistence, retention, and deletion;
+5. tools, credentials, network, and external effects;
+6. task, project, role, team, or charter scope;
+7. planning and subdelegation depth;
+8. verification and independent review;
+9. intervention points and human attention budget;
+10. cost, resource, and rate limits;
+11. rollback, compensation, and graceful degradation;
+12. terminal artifacts, residuals, and custody.
+
+Fields that do not change should be carried by exact reference. Fields that do
+change invalidate dependent approvals and evidence. Silence never means
+inheritance.
+
+### 4. Separate capability from authority
+
+A harness may technically be able to run a command, contact a service, or spawn
+a subagent. That does not mean the current principal authorized the action. A
+model may demonstrate a task in evaluation without holding a durable role. A
+team may depend on an AI-generated plan without granting the system decision
+rights.
+
+The transition compiler must therefore compare a **capability envelope** with
+an **authority envelope** and an **observed-effect envelope**. Any effect outside
+the intersection is blocked or quarantined. Any unobserved effect leaves the
+transition incomplete.
+
+### 5. Preserve custody across surfaces
+
+Local terminal, IDE, hosted cloud, remote control, asynchronous worker,
+external harness, and channel-connected gateway are different custody modes.
+Moving among them can change who stores prompts, where code executes, which
+credentials are reachable, how cancellation works, and who can reconstruct the
+result.
+
+Codex and Claude Code document multiple execution and interaction surfaces.
+OpenCode separates plan and build modes across terminal, desktop, and IDE.
+OpenClaw explicitly joins a local session namespace to an external harness
+namespace. These examples motivate an invariant: a resume ID, chat ID, run ID,
+job ID, and organizational role ID cannot substitute for one another. The
+transition needs explicit translation records.
+
+### 6. Treat broader harnesses as larger trusted bases
+
+Oh My Pi illustrates the leverage of absorbing editing, code intelligence,
+shell, browser, memory, provider switching, subagents, review, and collaboration
+into one harness. Hermes Agent, OpenClaw, and elizaOS widen the runtime in other
+directions through persistent memory, channels, devices, plugins, services, and
+skills. Each addition can reduce human handoffs. Each addition can also enlarge
+the trusted computing base and create new identity, privacy, poisoning, and
+effect paths.
+
+The correct response is not hostility toward feature growth. It is explicit
+composition: which component supplies context, which proposes action, which
+authorizes, which executes, which observes, which evaluates, and which can
+promote a learned procedure. Constructive projects become more useful as
+comparators when their documented strengths and residual boundaries are both
+represented accurately.
+
+### 7. Measure the human control budget
+
+Wider work surfaces often reduce the number of approvals while increasing the
+scope of each approval. That can be rational, but only if review remains
+meaningful. Record expected and measured attention, interruption frequency,
+decision latency, rejected actions, sampled work, undetected failures, and the
+operator's ability to understand and reverse the system.
+
+When review load exceeds available attention, the surface must narrow, slow,
+add independent verification, or transfer work to a lower-risk lane. Removing
+prompts does not remove oversight cost; it can merely hide it until failure.
+
+### 8. Govern the feedback loop
+
+As more organizations adopt agent harnesses, their outputs become one another's
+inputs. Agents write software used by agents, publish documentation read by
+agents, generate evaluations that select agents, negotiate through shared
+protocols, and produce training or memory artifacts that affect future runs.
+
+This can accelerate improvement and diffusion. It can also amplify common
+errors, reward-hacked metrics, security monocultures, vendor concentration,
+collusion, dependency, persuasion, and epistemic lock-in. The feedback loop
+therefore needs diversity records, independent observers, provenance,
+counterfactual baselines, circuit breakers, antitrust and institutional review,
+and a ban on support promotion merely because many linked systems agree.
+
+## Representative implementation landmarks
+
+The following grouping is deliberately non-ranking and time-bounded.
+
+| Surface family | Representative sources | Architectural lesson |
+|---|---|---|
+| suggestion through agent work | GitHub Copilot; Augment | one product can span several custody and approval modes |
+| purpose-built coding harness | Codex; Claude Code; OpenCode; Oh My Pi | harness tools, context, environment, persistence, permissions, and review materially shape agency |
+| persistent or freestanding agent runtime | Hermes Agent; OpenClaw; elizaOS | memory, channels, plugins, services, skills, and external harnesses widen the work surface beyond one repository task |
+
+Codex and Claude Code are best described here as purpose-built coding-agent
+surfaces available in several interfaces, not simply as editors. Agentic editors
+remain another branch of the same design space. OpenCode and Oh My Pi add open
+implementation comparators. Hermes, OpenClaw, and elizaOS extend the comparison
+toward persistent or channel-connected agents. The categories overlap because
+the underlying architecture is converging faster than product labels.
+
+## Future pathways
+
+### Sovereign personal agents
+
+A personal agent may hold user-selected memory, preferences, communications,
+finances, devices, and local tools. Its central requirements are user ownership,
+portable identity, disclosure control, revocation, local or federated options,
+provider substitutability, and protection against the agent becoming a
+persuasive gatekeeper over its principal.
+
+### Project stewards
+
+An artifact steward maintains one repository, research program, dataset, model,
+or living book across many sessions. It owns continuity and residual closure,
+not the author's intent or release authority. This is a likely near-term bridge
+because projects already have durable artifacts, tests, history, and issue
+queues.
+
+### Typed organizational roles
+
+A role agent carries a recurring mandate, competence envelope, service-level
+expectations, budget, escalation path, conflicts, and review schedule. It is not
+just a task agent with a longer prompt. Role admission requires longitudinal
+evidence and accountability that survives individual task success.
+
+### Teams and departments
+
+Specialist agents can divide work, challenge one another, share artifacts, and
+route exceptions. The architecture must prevent delegation depth from hiding
+authority, one evaluator from approving its own work, or apparent consensus
+from replacing evidence. Human teams should be able to enter, steer, inspect,
+and dissolve the composition.
+
+### Agent-native organizations
+
+An agent-native organization could coordinate finance, operations, research,
+legal work, procurement, support, and production around a charter. At this
+scale, technical capability is no longer the primary missing layer. Rights,
+liability, capital control, labor effects, legitimacy, externalities,
+succession, dissolution, and public oversight become load-bearing. This book
+treats that organization as a design stress case, not a present capability or
+recommended default.
+
+### Inter-organizational networks
+
+Agents may transact across supply chains, markets, standards bodies, scientific
+collaborations, governments, and public infrastructure. Typed protocols and
+receipts are necessary but not sufficient. Population dynamics, competition,
+collusion, concentration, gradual disempowerment, systemic liquidity, and
+common-mode security become first-order concerns.
+
+### Embodied and infrastructure agents
+
+When the work surface includes robots, laboratories, vehicles, energy systems,
+manufacturing, or biological processes, rollback becomes partial or impossible.
+Simulation, hardware attestation, physical interlocks, geofencing, real-time
+monitoring, environmental constraints, and accountable emergency authority must
+enter before the transition.
+
+### Recursive research and improvement ecosystems
+
+Agents that improve models, tools, harnesses, evaluations, chips, or scientific
+methods can accelerate the very stack that enables them. This is the strongest
+form of the feedback loop. It requires immutable baselines, independent
+evaluation, provenance, bounded optimization leases, diverse challenge
+systems, resource governance, rollback, and explicit prevention of self-issued
+authority or self-promoted evidence.
+
+## Interfaces
+
+The transition needs more than a product setting labeled “agent mode.” Its
+interfaces must make the widening legible to people and machines that did not
+participate in the original session. The work-surface contract says what the
+system can see and do now. The absorption transition says exactly what changed
+from the narrower surface and which earlier approvals no longer apply. The
+custody map follows identity and durable state when work crosses a laptop,
+hosted environment, gateway, external harness, or organization. The effect
+envelope separates actions that are merely permitted from those that are also
+observable, reversible, or compensable.
+
+The remaining interfaces keep technical reach connected to human control. A
+control budget records whether a person has enough information, time, and
+intervention power to remain meaningfully responsible. A feedback register
+exposes shared dependencies before many agents or organizations fail together.
+A migration receipt prevents the new surface from declaring success while
+leaving errors, security exposure, or maintenance debt behind. Finally, a
+pathway portfolio preserves alternatives. It lets the system choose a smaller
+surface, retain a human-led process, or retire an unsafe expansion instead of
+treating autonomy as a one-way destination.
+
+| Interface | Required contents |
+|---|---|
+| `WorkSurfaceContract` | surface identity, unit of work, principal, model, harness, environment, context, state, tools, permissions, review, terminal custody |
+| `AbstractionAbsorptionTransition` | parent and candidate versions, exact field delta, invalidated approvals/evidence, admission decision, expiry |
+| `CustodyMap` | local, cloud, external, organizational, and durable-state owners plus identity translations |
+| `EffectEnvelope` | permitted, observable, reversible, compensable, irreversible, and prohibited effects |
+| `HumanControlBudget` | available attention, intervention points, sampled work, escalation, stop, appeal, and remedy |
+| `FeedbackLoopRegister` | upstream and downstream agents, shared dependencies, diversity, common-mode risks, circuit breakers |
+| `MigrationReceipt` | artifacts, checks, unresolved residuals, rollback target, accountable owner, terminal disposition |
+| `FuturePathwayPortfolio` | alternative branches, evidence gates, rights constraints, option value, and retirement conditions |
+
+## Invariants
+
+These invariants constrain the transition as a whole. A candidate surface does
+not mature by satisfying most of them or by compensating for lost authority
+custody with higher task performance. Identity, control, evidence, effect, and
+residual obligations must remain jointly visible; otherwise the system has
+changed the work contract without admitting that it did so.
+
+1. A wider surface inherits no undeclared authority.
+2. Model capability and harness capability remain separately identified.
+3. Interface convenience does not establish complete effect mediation.
+4. Local, cloud, gateway, and external-harness identities are not interchangeable.
+5. Task success does not establish role competence, team fitness, or organizational legitimacy.
+6. Accountability never transfers to a person who lacks practical information and control.
+7. Changed context, state, tool, environment, or authority invalidates dependent approval and evidence.
+8. A transition without rollback, compensation, or declared irreversibility is incomplete.
+9. Older and narrower surfaces remain available when they are safer or more ergonomic.
+10. Cross-organization agreement or adoption cannot promote a claim without independent evidence.
+
+## Formal proof route
+
+The planned Lean module is `AsiStackProofs.WorkSurfaceTransitions`. It is not
+implemented, and this chapter claims no theorem result from it.
+
+| Proof target | Intended finite obligation | Current state |
+|---|---|---|
+| `lean:work_surface.transition.authority_nonexpansion` | An accepted transition preserves exact identity and cannot widen authority beyond its parent surface. | planned; no module or theorem |
+| `lean:work_surface.transition.rejection_noninterference` | Missing custody, approval, effect observation, rollback, or accountable ownership rejects without mutating accepted state or assigning support. | planned; no module or theorem |
+| `lean:work_surface.summary.non_equivalence` | An aggregate autonomy or completion score cannot recover identity, authority, effect, review, and residual fields. | planned; no module or theorem |
+
+These targets can establish properties of a finite authored transition model
+only. Even after implementation, they would not show that a named harness
+enforces the model, that a task succeeded, that a person retained meaningful
+control, or that organization-scale delegation is legitimate or effective.
+
+## Failure modes
+
+Most failures begin as a mismatch between the surface people believe they are
+using and the custody the system actually accepts. A convenient interface can
+hide durable memory, remote execution, inherited credentials, or review work
+that has shifted silently onto someone else. At larger scales, the same
+mismatch becomes institutional: a task metric stands in for role competence,
+shared infrastructure creates correlated failure, or nominal human
+accountability survives after practical control has disappeared. These modes
+must therefore be diagnosed as transfer failures, not dismissed as isolated
+model errors.
+
+- **Interface-driven authority laundering:** a feature or mode toggle grants practical reach without an explicit authority decision.
+- **Context loss:** migration to another surface omits constraints, dissent, private context, or prior failures.
+- **Hidden durable state:** memory or scheduled work survives after the user believes the interaction ended.
+- **Tool reach without observation:** the harness can act through channels the evidence system cannot reconstruct.
+- **Review collapse:** human attention is too scarce to inspect the widened scope meaningfully.
+- **Autonomy theater:** the system appears independent while humans silently repair, route, or absorb failures.
+- **Metric substitution:** task completion is treated as role competence or organizational performance.
+- **Deskilling and dependency:** short-term throughput erodes human capability, exit, and bargaining power.
+- **Model or vendor lock-in:** state, memory, skills, or identity cannot move without losing function or control.
+- **Monoculture:** many organizations depend on shared models, harnesses, evaluators, or data and fail together.
+- **Collusion or coordination failure:** agent populations develop harmful market or institutional dynamics.
+- **Responsibility orphaning:** no actor owns residuals after a handoff, model change, merger, shutdown, or dissolution.
+
+## Minimum Viable Implementation
+
+Start with one repository workflow that can be performed in three modes:
+
+1. conversational answer with no direct mutation;
+2. inline or reviewable suggestion applied by a person;
+3. bounded agent task that edits files and runs declared checks.
+
+Freeze the same issue, repository revision, environment, acceptance tests, and
+time budget. For each mode, record context supplied, context discovered, model
+and harness identity, tools, permissions, approvals, commands, file mutations,
+observed effects, interventions, elapsed time, compute or monetary cost,
+failures, rollback, final artifacts, and unresolved residuals. Require an
+accountable owner and terminal receipt.
+
+The transition validator should reject:
+
+- permission widening without a new authorization;
+- identity substitution between local and hosted runs;
+- missing effect observation;
+- stale project instructions or environment identity;
+- lost dissent, constraints, or prior failure context;
+- absent rollback or declared irreversibility;
+- a completion score used as evidence for role or organization competence;
+- closure without residual ownership.
+
+The first implementation need not integrate every product named here. A small
+schema and fixture suite over one real workflow is more useful than a broad but
+unverifiable harness survey.
+
+## Mature Research Target
+
+A mature control plane would compile governed transitions from personal agent
+through project steward, typed role, coordinated team, organization, and
+inter-organizational network. It would preserve rights, authority ceilings,
+evidence lineage, human exit, model and harness substitutability, graceful
+degradation, and responsibility across every boundary.
+
+Before admitting a larger work surface, it would simulate alternative
+allocations: keep work human-led, use suggestion mode, delegate one task,
+install a project steward, assign a bounded role, or compose a team. It would
+compare quality, latency, cost, human workload, option value, security,
+fairness, accessibility, concentration, environmental burden, failure
+propagation, and recovery. It would select the smallest sufficient surface,
+not the largest available one.
+
+At organization and network scale, the control plane would also monitor shared
+dependencies, collusion, labor and distributional effects, institutional
+legitimacy, public externalities, and gradual loss of human influence. It would
+support centralized, decentralized, federated, personal, civic, commercial,
+and non-agentic configurations rather than assuming one organizational form.
+
+No current source establishes this target. It is beyond the reviewed state of
+the art and remains bounded by the chapter's `argument` support state. Its
+value is to make the destination inspectable before any system is allowed to
+move toward it in practice.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Work-surface transition schema and mutation suite | Reject authority widening, identity loss, missing observation, stale context, absent rollback, and orphaned residuals. | planned; not run |
+| Cross-harness identity and authority non-substitution fixture | Show that chat, run, job, gateway, external-harness, and role identities cannot authorize one another by equality or reuse. | planned; not run |
+| Matched answer-suggestion-task workload | Compare useful outcome, intervention, effect completeness, recovery, and total cost over one frozen repository task. | planned; not run |
+| Organizational feedback common-mode stress test | Inject shared evaluator, provider, memory, dependency, and policy failures across multiple simulated organizations. | planned; not run |
+
+## Source crosswalk
+
+| Source ID | Chapter use | Limit |
+|---|---|---|
+| `ext_github_copilot_work_surfaces_2026` | One product family spanning suggestion, chat, terminal, pull-request, desktop, and agent work. | Current official documentation; no complete history or reproduced result. |
+| `ext_augment_code_agent_2026` | IDE surface with chat, read-only, approval-paused, and more independent agent modes plus review and checkpoints. | Documentation only; no control reproduced. |
+| `ext_openai_codex_work_surfaces_2026` | Local, IDE, cloud, automation, permissions, instructions, skills, plugins, and integration comparator. | Official docs and one pinned CLI revision; no hosted implementation or outcome reproduced. |
+| `ext_anthropic_claude_code_2026` | Explicit model-versus-harness distinction and gather, act, verify loop across multiple surfaces. | Documentation only; no task, mediation, or organization result. |
+| `ext_opencode_agent_2026` | Pinned open-source, provider-flexible terminal, desktop, and IDE harness with plan/build and recovery. | No execution, provider parity, privacy, or quality result. |
+| `ext_oh_my_pi_agent_2026` | Pinned integrated terminal harness with editing, LSP, shell, browser, memory, subagents, review, providers, and collaboration. | Reported performance and security claims were not reproduced. |
+| `ext_hermes_agent_2026` | Persistent memory, searchable history, skills, tools, and staged procedure mutation as freestanding-agent landmarks. | No learning, memory, utility, or security result reproduced. |
+| `ext_openclaw_agent_runtime_2026` | Gateway, channels, sessions, devices, external harnesses, policy dimensions, and governed skill proposals. | No gateway, harness, reliability, security, learning, or benchmark result reproduced. |
+| `ext_elizaos_agent_runtime_2026` | Constructive modular-runtime comparator for context, action, evaluation, services, events, routes, tests, and views. | No elizaOS execution, test reproduction, security assessment, or performance result. |
+
+## Summary
+
+AI work surfaces are expanding from answers toward artifacts, tasks, projects,
+roles, teams, organizations, and networks. The important variable is not the
+interface or the autonomy label. It is the set of abstractions the system has
+absorbed and the custody it now holds.
+
+Each expansion should be admitted as a versioned transition. The transition
+must state what context, persistence, tools, authority, effects, verification,
+human control, accountability, and residuals moved; it must preserve identity,
+evidence, rollback, and exit; and it must refuse to infer role or organizational
+fitness from local task success. This discipline lets the field continue
+building ambitious harnesses and freestanding agents without treating feature
+growth as evidence that the next social or organizational boundary is already
+solved.
+
+It also keeps narrower, human-led surfaces available when they preserve better
+judgment, control, dignity, or resilience.
+
+## Handoff
+
+The work-surface contract explains how increasingly large units of work enter
+AI custody. **Human-AI Organizations, Delegation, and Accountability** takes
+over when that custody becomes a recurring role: who may delegate, who can
+intervene, who bears consequences, and how appeal, remedy, succession, and
+dissolution remain real.

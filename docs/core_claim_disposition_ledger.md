@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 84 |
+| Manifest chapter core claims | 85 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 62 |
+| Accepted no-promotion dispositions | 63 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 84 |
+| Core claims remaining at `argument` | 85 |
 
 ## Dispositions
 
@@ -60,6 +60,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `claim-ledgers-and-belief-revision.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/claim_ledgers_no_change.json` | Contradictory evidence changes ledger state without silent promotion. |
 | `spinoza-verification-and-proof-carrying-claims.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/spinoza_no_change.json` | Invalid proof artifact, missing tribunal review, captured reviewer path, or evidence-thin verdict blocks claim tier escalation or accepted review. |
 | `labor-os-and-typed-jobs.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Job cannot dispatch without requirements, permissions, and receipt path. |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A bounded transition may advance only when exact identity, authority, effect, review, accountability, rollback, and residual obligations are preserved; task success cannot establish role competence, organizational legitimacy, harness superiority, safety, or general transfer. |
 | `human-ai-organizations-delegation-and-accountability.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Preregistered representative workflows with real participants and strong manual, automation-first, and nominal-human-review baselines improve joint task outcomes without worse error, rubber-stamping, workload, deskilling, inequitable burden, inaccessible appeal, or accountability mismatch; effects persist longitudinally and reproduce independently without implying legitimacy beyond the studied setting. |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Durable complementarity beats the strongest component without unacceptable deskilling, dependence, mental-data misuse, inequity, or exit loss and reproduces independently; no clinical, stimulation, enhancement, or universal synergy claim. |
 | `ai-deployment-transition-distribution-and-human-agency.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Useful gains persist without unacceptable subgroup harm, deskilling, dependency, access loss, or agency loss; no economy-wide welfare or ASI-transition forecast. |

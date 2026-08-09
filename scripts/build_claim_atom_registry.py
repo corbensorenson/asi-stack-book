@@ -28,6 +28,7 @@ QUEUE = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 REPORT = ROOT / "docs/claim_atom_registry.md"
 DOSSIERS = ROOT / "evidence_quality/claim_dossiers"
 POST_ACTIVATION_EXPANSION_IDS = {
+    "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
     "replaceable-cognitive-substrates-beyond-transformer-monoculture",
     "human-factors-and-meaningful-control-in-oversight",
     "governed-world-models-and-reality-grounding",

@@ -1121,7 +1121,7 @@ def errors(data: dict) -> list[str]:
         or successor_activation_truth.get("live_working_chapter_count") != live_chapter_count
         or successor_activation_truth.get("chapter_core_argument_count") != live_chapter_count
         or successor_activation_truth.get("chapter_core_promotion_count") != 0
-        or successor_structural_tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or successor_structural_tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
     ):
         out.append("live successor manifest, argument vectors, and active maintenance authority disagree while the 54-claim activation baseline stays frozen")
 

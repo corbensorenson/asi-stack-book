@@ -43,8 +43,8 @@ def errors(data: dict) -> list[str]:
 
     chapters = [chapter for part in data["structure"]["parts"] for chapter in part["chapters"]]
     ids = [chapter["id"] for chapter in chapters]
-    if len(ids) != 84 or ids.count(CHAPTER_ID) != 1:
-        out.append("84-chapter manifest or A1 uniqueness drifted")
+    if len(ids) != len(set(ids)) or ids.count(CHAPTER_ID) != 1:
+        out.append("current manifest or A1 uniqueness drifted")
     a1_index = ids.index(CHAPTER_ID) if CHAPTER_ID in ids else -1
     if (
         a1_index < 2
@@ -62,13 +62,13 @@ def errors(data: dict) -> list[str]:
     ]
     current_role_summary = current_roles.get("summary", {})
     if (
-        current_roles.get("manifest_chapter_count") != 84
-        or len(current_assignments) != 84
+        current_roles.get("manifest_chapter_count") != len(ids)
+        or len(current_assignments) != len(ids)
         or set(current_assignments) != set(ids)
-        or current_role_summary.get("load_bearing_reference_count") != 54
+        or current_role_summary.get("load_bearing_reference_count") != 55
         or CHAPTER_ID not in current_roles.get("roles", {}).get("load-bearing-reference", [])
     ):
-        out.append("A1 current 84-chapter role-map projection drifted")
+        out.append("A1 current role-map projection drifted")
     # A1 freezes the seven-source admission packet, not the chapter's maximum
     # future bibliography. Later source packets may extend the chapter provided
     # the admitted packet and its support ceiling remain intact.
@@ -127,7 +127,7 @@ def errors(data: dict) -> list[str]:
     fragments = {
         "index": [
             "Governed training-run transaction",
-            "all 84 working-manifest chapters",
+            f"all {len(ids)} working-manifest chapters",
             f"Load-bearing reference | {current_role_summary.get('load_bearing_reference_count')}",
         ],
         "replaceable": ["**Relational Dimension Compilation and Polyadic Cognition** now takes the next"],

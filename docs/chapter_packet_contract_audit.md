@@ -47,6 +47,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `claim-ledgers-and-belief-revision` | pass | explicit heading | complete packet surface |
 | `spinoza-verification-and-proof-carrying-claims` | pass | explicit heading | complete packet surface |
 | `labor-os-and-typed-jobs` | pass | explicit heading | complete packet surface |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | pass | explicit heading | complete packet surface |
 | `human-ai-organizations-delegation-and-accountability` | pass | explicit heading | complete packet surface |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | pass | explicit heading | complete packet surface |
 | `ai-deployment-transition-distribution-and-human-agency` | pass | bounded in insufficiency section | complete packet surface |
@@ -91,6 +92,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 84 of 84 active chapters pass; 0 remain open.
+Summary: 85 of 85 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

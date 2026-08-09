@@ -51,7 +51,14 @@ def ngrams(value: str) -> set[tuple[str, ...]]:
 
 def build() -> dict[str, Any]:
     structure = load(STRUCTURE)
-    rows = [chapter for part in structure["parts"] for chapter in part["chapters"]]
+    w3 = load(W3)
+    historical_ids = set(w3["corpus"]["chapter_ids"])
+    rows = [
+        chapter
+        for part in structure["parts"]
+        for chapter in part["chapters"]
+        if chapter["id"] in historical_ids
+    ]
     if len(rows) != 84:
         raise ValueError(f"expected 84 manifest chapters, found {len(rows)}")
     chapters = {
@@ -132,7 +139,6 @@ def build() -> dict[str, Any]:
             }
         )
 
-    w3 = load(W3)
     raw = w3["measurements"]["raw_complete_qmd"]["current"]
     editorial = w3["measurements"]["editorial_narrative"]["current"]
     chapter_digest_rows = [

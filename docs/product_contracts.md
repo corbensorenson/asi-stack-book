@@ -16,7 +16,7 @@ forbidden inference.
 
 The narrative product answers: what is the architecture, why does it matter,
 and how do its pieces fit together? Its generated entry is a 22-unit
-thesis-to-method route over the complete 84-chapter reference, and each
+thesis-to-method route over the complete 85-chapter reference, and each
 representative chapter opens in Human view. Every
 selected chapter has three deliberately separate claim projections—a
 plain-language thesis, normative engineering rule, and bounded machine
@@ -44,7 +44,7 @@ and format-specific review plus an edition release record.
 
 The reference product answers: what are the responsibilities, interfaces,
 states, invariants, failure routes, and implementation horizons? Its generated
-84-chapter index preserves canonical order and routes to each chapter in
+85-chapter index preserves canonical order and routes to each chapter in
 AI/research view, supported by protocol schemas, implementation horizons,
 glossary terms, formal hooks, and executable test plans.
 

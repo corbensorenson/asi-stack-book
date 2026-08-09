@@ -19,11 +19,12 @@ ADEQUACY = ROOT / "docs" / "proof_adequacy_review.md"
 VALIDATION = ROOT / "validation" / "registry.json"
 STATUS = ROOT / "roadmap_records" / "post_v2_3_claim_proof_and_sota_challenge_status.json"
 MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_and_publication_status.json"
+STRUCTURE = ROOT / "book_structure.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 330
+CURRENT_PROOF_TARGET_COUNT = 333
 CURRENT_IMPLEMENTED_TARGET_COUNT = 330
-CURRENT_PLANNED_TARGET_COUNT = 0
+CURRENT_PLANNED_TARGET_COUNT = 3
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -36,7 +37,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 272,
     "useful but too narrow": 40,
-    "needs executable tests first": 3,
+    "needs executable tests first": 6,
     "needs empirical or baseline tests first": 15,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {
@@ -188,6 +189,25 @@ def current_proof_errors(
         if row.get("tag") in rationalization_migration_tags
         and row.get("chapter_id") not in PLANNED_CHAPTERS
     ]
+    structure = load(STRUCTURE)
+    manifest_declared_planned_tags = {
+        target.get("tag")
+        for part in structure.get("parts", [])
+        for chapter in part.get("chapters", [])
+        for target in chapter.get("proof_targets", [])
+        if target.get("status") == "planned"
+    }
+    live_manifest_planned_targets = [
+        row for row in planned_targets if row.get("tag") in manifest_declared_planned_tags
+    ]
+    authorized_planned_tags = {
+        row.get("tag")
+        for row in (
+            structural_planned_targets
+            + rationalization_planned_targets
+            + live_manifest_planned_targets
+        )
+    }
     activation_truth = maintenance_status.get("activation_truth", {})
     first_tranche = (
         maintenance_status.get("quality_uplift_program", {})
@@ -254,8 +274,7 @@ def current_proof_errors(
         != Counter({chapter_id: 1 for chapter_id in PLANNED_CHAPTERS})
         or len(rationalization_planned_targets)
         != CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT
-        or len(structural_planned_targets) + len(rationalization_planned_targets)
-        != len(planned_targets)
+        or {row.get("tag") for row in planned_targets} != authorized_planned_tags
     ):
         out.append(
             "admitted-chapter proof inventory loses tranche custody or misstates "

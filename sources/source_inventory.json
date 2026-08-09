@@ -8066,6 +8066,7 @@
     "priority": "external_literature",
     "layer": "modular_agent_runtime_and_evidence_qualification",
     "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "runtime-adapters-tool-permissions-and-human-approval",
       "benchmark-ratchets-and-anti-goodhart-evidence"
     ],
@@ -8082,6 +8083,7 @@
     "priority": "external_literature",
     "layer": "procedural_memory_and_agent_runtime",
     "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "procedural-memory-and-cognitive-loop-closure",
       "durable-semantic-memory-and-knowledge-lattices",
       "runtime-adapters-tool-permissions-and-human-approval"
@@ -8099,6 +8101,7 @@
     "priority": "external_literature",
     "layer": "gateway_session_harness_and_procedural_learning_runtime",
     "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "runtime-adapters-tool-permissions-and-human-approval",
       "artifact-graphs-audit-logs-and-replay",
       "inter-stack-protocols-identity-and-economic-exchange",
@@ -8110,6 +8113,101 @@
     "published": "2025-11-24",
     "updated": "2026-08-08",
     "citation_label": "OpenClaw contributors (2026), OpenClaw Agent Runtime"
+  },
+  {
+    "id": "ext_github_copilot_work_surfaces_2026",
+    "title": "GitHub Copilot Product and Work-Surface Documentation",
+    "priority": "external_literature",
+    "layer": "ai_work_surface_evolution",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption"
+    ],
+    "url": "https://docs.github.com/en/copilot/get-started/what-is-github-copilot",
+    "notes": "Official current-product comparator spanning inline suggestions, chat, command line, contextual spaces, pull-request work, and agent-driven development. No workflow, productivity, safety, or comparative result was reproduced.",
+    "source_type": "official_product_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "GitHub Documentation (2026), GitHub Copilot"
+  },
+  {
+    "id": "ext_augment_code_agent_2026",
+    "title": "Augment Code Agent Documentation",
+    "priority": "external_literature",
+    "layer": "ide_agent_modes_and_review",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://docs.augmentcode.com/using-augment/agent",
+    "notes": "Official comparator for the transition among chat, read-only inquiry, approval-paused agent work, and more independent agent execution with diffs and checkpoints. No product execution or control claim was reproduced.",
+    "source_type": "official_product_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "Augment Documentation (2026), Using Agent"
+  },
+  {
+    "id": "ext_openai_codex_work_surfaces_2026",
+    "title": "OpenAI Codex CLI, IDE, Cloud, and Agent Documentation",
+    "priority": "external_literature",
+    "layer": "coding_agent_harness_and_distributed_work_surfaces",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://github.com/openai/codex/tree/dd43a9967ff19ce2b96282d2fd5cbdd2022a9b11",
+    "notes": "Official documentation and pinned CLI comparator for repository inspection, editing, tool execution, permissions, local and cloud work, automation, and extensibility across multiple surfaces. No benchmark, correctness, safety, or productivity result was imported.",
+    "source_type": "official_software_and_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "OpenAI (2026), Codex Documentation and CLI"
+  },
+  {
+    "id": "ext_anthropic_claude_code_2026",
+    "title": "Claude Code Agentic Harness Documentation",
+    "priority": "external_literature",
+    "layer": "agentic_harness_and_execution_loop",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://code.claude.com/docs/en/how-claude-code-works",
+    "notes": "Official comparator that explicitly separates model from harness and describes gather-context, act, and verify loops across terminal, IDE, desktop, web, remote, and automation surfaces. No implementation result was reproduced.",
+    "source_type": "official_product_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "Anthropic (2026), Claude Code Documentation"
+  },
+  {
+    "id": "ext_opencode_agent_2026",
+    "title": "OpenCode Open-Source Coding Agent",
+    "priority": "external_literature",
+    "layer": "open_source_coding_agent_harness",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://github.com/anomalyco/opencode/tree/38e10eb1408feb700021b8e8766fb0ab41bf84e2",
+    "notes": "Pinned official comparator for a provider-flexible coding agent with terminal, desktop, and IDE surfaces, project instructions, plan/build modes, tool execution, recovery, and opt-in sharing. No runtime or provider-parity claim was reproduced.",
+    "source_type": "official_software_and_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "OpenCode contributors (2026), OpenCode"
+  },
+  {
+    "id": "ext_oh_my_pi_agent_2026",
+    "title": "Oh My Pi Terminal Coding Agent and Tool Harness",
+    "priority": "external_literature",
+    "layer": "integrated_terminal_agent_harness",
+    "chapter_targets": [
+      "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://github.com/can1357/oh-my-pi/tree/896bf5f33e0b67bdd0cf951c82739a28e75d0823",
+    "notes": "Pinned official comparator for an integrated terminal harness with hash-anchored edits, LSP, shell, browser, subagents, memory, provider switching, review, and collaboration. Reported performance or security claims were not reproduced.",
+    "source_type": "official_software_and_documentation",
+    "published": "unknown",
+    "updated": "2026-08-08",
+    "citation_label": "Oh My Pi contributors (2026), Oh My Pi"
   },
   {
     "id": "regret_engine",

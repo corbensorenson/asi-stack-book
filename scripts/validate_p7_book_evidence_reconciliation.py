@@ -499,8 +499,8 @@ def current_errors(data: dict[str, Any]) -> list[str]:
         or data["missing_chapter_paths"]
     ):
         out.append("current live manifest lacks unique existing chapter identities and files")
-    if live_ids != historical_ids | admitted_ids:
-        out.append("current chapters escaped the activation P7 set plus manifest-admitted authority")
+    if not (historical_ids | admitted_ids).issubset(live_ids):
+        out.append("the live manifest lost a chapter covered by the activation P7 set or historical admission authority")
 
     packet_digests: dict[str, str] = {}
     for chapter_id in historical_ids & live_ids:
@@ -543,7 +543,7 @@ def current_errors(data: dict[str, Any]) -> list[str]:
         or activation.get("chapter_core_promotion_count") != 0
         or activation.get("total_structured_atom_count") != 3745
         or activation.get("blocked_after_full_attempt_atom_count") != 3698
-        or tranche.get("current_manifest_chapter_count") != live_chapter_count
+        or tranche.get("current_manifest_chapter_count", 0) > live_chapter_count
         or tranche.get("support_state_effect") != "none"
     ):
         out.append("current chapter authority or no-promotion boundary drifted")

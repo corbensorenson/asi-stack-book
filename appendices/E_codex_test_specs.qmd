@@ -282,6 +282,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job delivery and evidence-readiness probe | implemented | passes via deterministic synthetic typed-job delivery fixture at experiments/typed_job_delivery/results/2026-07-02-local.json: two valid synthetic typed-job traces and seven expected-invalid controls; no deployed scheduler, permission-enforcement, approval-service, runtime-adapter, replay-correctness, support-state-promotion, or evidence-transition claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed job durable lifecycle probe | implemented | passes via deterministic synthetic durable lifecycle fixture at experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json: two valid synthetic durable lifecycle traces and nine expected-invalid controls; no deployed scheduler, durable workflow recovery, permission-enforcement, approval-service, replay-correctness, support-state-promotion, or evidence-transition claim |
 | `labor-os-and-typed-jobs` | Labor OS and Typed Jobs | Typed-job versioned execution and closure refinement | implemented | passes exact 32-declaration Lean surface, arbitrary-run lifecycle and custody invariants, exact 2/7 delivery and 2/9 durable suites, 29 routes, seven reachable stages, and 42/42 rejecting mutations; support-state effect none; no deployed scheduler, enforcement, recovery, task-success, truth, usefulness, safety, reproduction, or transfer claim |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | From Chat to Organizations: AI Work Surfaces and Agent Harnesses | work-surface transition schema and mutation suite | planned | not run |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | From Chat to Organizations: AI Work Surfaces and Agent Harnesses | cross-harness identity and authority non-substitution fixture | planned | not run |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | From Chat to Organizations: AI Work Surfaces and Agent Harnesses | matched answer-suggestion-task workload comparison | planned | not run |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | From Chat to Organizations: AI Work Surfaces and Agent Harnesses | organizational feedback common-mode stress test | planned | not run |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Decision-right and crumple-zone mutations | implemented | passed |
 | `human-ai-organizations-delegation-and-accountability` | Human-AI Organizations, Delegation, and Accountability | Competence workload and interdependence campaign | planned | not_run |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty | Layer claim falsification test | planned | not run |
@@ -707,16 +711,18 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 330 |
+| Proof targets covered by triage | 333 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 330 |
+| planned | 3 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 330 |
+| planned | formal-invariant | lean-candidate | 3 |

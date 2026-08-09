@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 84 |
+| Manifest chapter core claims | 85 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 62 |
+| Accepted explicit no-promotion decisions | 63 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -51,6 +51,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `adversarial-machine-learning-and-model-attack-surface.core` | Adversarial Machine Learning and the Model Attack Surface | `argument_only` | no accepted chapter-core empirical result; no independent reproduction or transfer result; prose, source synthesis, schemas, and planned tests do not promote support |
 | `ai-deployment-transition-distribution-and-human-agency.core` | AI Deployment, Transition, Distribution, and Human Agency | `argument_only` | no accepted chapter-core empirical result; no independent reproduction or transfer result; prose, source synthesis, schemas, and planned tests do not promote support |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | AI Supply-Chain Integrity and Lifecycle Provenance | `argument_only` | no local AI BOM, supplier assessment, build or training provenance, signer, verifier, advisory feed, derivative graph, revocation action, or model artifact admission; no reproducible rebuild, supplier review, incident exercise, vulnerability/advisory evaluation, or inventory-completeness assessment; finite theorems do not establish artifact correctness, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or generality |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption.core` | From Chat to Organizations: AI Work Surfaces and Agent Harnesses | `argument_only` | no implemented WorkSurfaceTransitions module or executable transition fixture; no cross-harness or cross-surface outcome evidence; no organization-scale custody, accountability, or feedback-loop result |
 | `artifact-graphs-audit-logs-and-replay.core` | Artifact Graphs, Audit Logs, and Replay | `argument_only` | no deployed artifact graph implementation; no replay validation over real historical-project outputs; no audit reconstruction or revocation-completeness benchmark |
 | `artifact-steward-agents-and-living-project-governance.core` | Artifact Steward Agents and Living Project Governance | `argument_only` | no steward-agent runtime; no governed treasury action; no release-gate execution over a real artifact |
 | `asi-is-a-stack-not-a-model.core` | ASI Is a Stack, Not a Model | `argument_only` | no deployed or replayed stack run; finite proofs do not establish whole-stack behavior; no independent architecture review |

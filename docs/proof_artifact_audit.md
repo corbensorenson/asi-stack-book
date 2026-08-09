@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 330 |
-| Manifest status counts | {"implemented": 330} |
-| Triage class counts | {"formal-invariant": 330} |
+| Proof targets audited | 333 |
+| Manifest status counts | {"implemented": 330, "planned": 3} |
+| Triage class counts | {"formal-invariant": 333} |
 | Lean modules referenced | 95 |
-| Chapters with proof targets | 84 |
+| Chapters with proof targets | 85 |
 | Validation errors | 0 |
 | Warnings | 0 |
 | ProofEnvelope theorem declarations | 28 |
@@ -156,6 +156,7 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `adversarial-machine-learning-and-model-attack-surface` | 1 | 1 | 0 | 0 |
 | `ai-deployment-transition-distribution-and-human-agency` | 1 | 1 | 0 | 0 |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 6 | 0 | 0 |
+| `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | 3 | 0 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
@@ -391,6 +392,9 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `lean:jobs.lifecycle.execution_route_envelope` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.delivery_probe_fixture_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:jobs.lifecycle.durable_lifecycle_probe_bridge` | `labor-os-and-typed-jobs` | `AsiStackProofs.TypedJobRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:work_surface.transition.authority_nonexpansion` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `AsiStackProofs.WorkSurfaceTransitions` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:work_surface.transition.rejection_noninterference` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `AsiStackProofs.WorkSurfaceTransitions` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:work_surface.summary.non_equivalence` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `AsiStackProofs.WorkSurfaceTransitions` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:human_ai_org.accountability_requires_authority` | `human-ai-organizations-delegation-and-accountability` | `AsiStackProofs.HumanAIOrganizations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.admission_boundary` | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | `AsiStackProofs.HumanAICognitiveSovereignty` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai-deployment-transition-distribution-and-human-agency.admission_boundary` | `ai-deployment-transition-distribution-and-human-agency` | `AsiStackProofs.DeploymentTransitionGovernance` | triage ok; module ok; chapter tag ok; limitation ok |

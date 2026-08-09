@@ -62,6 +62,7 @@ failure.
 
 ## Book Chapters Supported
 
+- `ai-work-surfaces-agent-harnesses-and-organizational-absorption`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 

@@ -1,11 +1,12 @@
 {
   "backlog_id": "agent-runtime-reference-projects-2026-08-08",
   "triage_state": "integrated",
-  "source_or_gap": "The book already specified governed runtime, memory, evidence, and self-improvement boundaries, but lacked direct implementation comparisons with three current open-source agent systems that expose those boundaries in different ways.",
+  "source_or_gap": "The book specified runtime, typed work, delegation, and deployment boundaries but lacked a chapter owning the progression of AI work surfaces from conversational answer and inline suggestion through repository harness, project steward, role, team, organization, and inter-organizational network.",
   "access_state": "available",
   "source_storage_policy": "external_url_only",
   "public_safety_state": "public_safe",
   "assigned_chapters": [
+    "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
     "runtime-adapters-tool-permissions-and-human-approval",
     "benchmark-ratchets-and-anti-goodhart-evidence",
     "procedural-memory-and-cognitive-loop-closure",
@@ -13,18 +14,24 @@
     "artifact-graphs-audit-logs-and-replay",
     "inter-stack-protocols-identity-and-economic-exchange"
   ],
-  "chapter_action_policy": "Add each project only where its documented implementation supplies a distinct comparator: elizaOS for modular runtime and qualification boundaries, Hermes Agent for skill/memory governance, and OpenClaw for gateway/session/ACP identity, separated policy controls, audit projection, and evidence-bound skill proposals.",
+  "chapter_action_policy": "Use Copilot, Augment, Codex, Claude Code, OpenCode, and Oh My Pi as dated coding-harness landmarks; use Hermes Agent, OpenClaw, and elizaOS as freestanding-runtime landmarks; compare custody and authority dimensions rather than ranking products. Retain each project's existing mechanism-owner mappings.",
   "chapter_decision_refs": [
     "new_paper_triage_scenarios/agent_runtime_reference_projects_2026_08_08.json",
     "sources/source_notes/ext_elizaos_agent_runtime_2026.md",
     "sources/source_notes/ext_hermes_agent_2026.md",
     "sources/source_notes/ext_openclaw_agent_runtime_2026.md",
+    "sources/source_notes/ext_github_copilot_work_surfaces_2026.md",
+    "sources/source_notes/ext_augment_code_agent_2026.md",
+    "sources/source_notes/ext_openai_codex_work_surfaces_2026.md",
+    "sources/source_notes/ext_anthropic_claude_code_2026.md",
+    "sources/source_notes/ext_opencode_agent_2026.md",
+    "sources/source_notes/ext_oh_my_pi_agent_2026.md",
     "docs/book_outline.md",
     "book_structure.json"
   ],
-  "deduplication_state": "overlaps_existing_chapter",
-  "merge_or_split_policy": "Keep three source records because the projects have different maintainers, architectures, and evidentiary boundaries. Do not merge OpenClaw with Claw-SWE-Bench, and do not create product-shaped chapters.",
-  "boundary_decision_rationale": "These systems instantiate parts of the stack but do not own new architectural layers. The value lies in comparing concrete lifecycle choices and residual boundaries against the book's existing authority, evidence, memory, protocol, and promotion contracts.",
+  "deduplication_state": "distinct_cross_family_owner_with_existing_mechanism_overlap",
+  "merge_or_split_policy": "Keep separate source records because the products have different maintainers, surfaces, and evidentiary boundaries. Create one comparative architecture chapter, not one chapter per product, and preserve the existing mechanism owners.",
+  "boundary_decision_rationale": "No existing chapter owns the transfer of work surface itself: what context, persistence, tools, state, authority, review, and accountability move as AI expands from an answer to a project, role, team, organization, or network. Runtime Adapters owns effects; Human-AI Organizations owns delegation; Deployment Transition owns social distribution. The new chapter owns the transition model and its future branches.",
   "source_note_state": "available",
   "claim_mapping_state": "complete",
   "passage_review_state": "complete",
@@ -48,10 +55,11 @@
   "required_before_drafting": [
     "completed: official repository identity and revision check",
     "completed: canonical architecture, runtime, memory, skill, security, session, ACP, and scenario documentation review",
-    "completed: existing-owner deduplication",
-    "completed: source notes, source inventory, manifest mappings, bounded chapter integration, and generated crosswalk refresh"
+    "completed: ownership and adjacency test",
+    "completed: nine source notes and inventory records",
+    "completed: comparative chapter and existing-owner crosswalk"
   ],
-  "insertion_decision": "update_existing_chapter",
+  "insertion_decision": "create_new_chapter_and_update_existing_crosswalks",
   "source_refs": [
     "https://github.com/elizaOS/eliza",
     "https://docs.elizaos.ai/",
@@ -59,6 +67,12 @@
     "https://hermes-agent.nousresearch.com/docs/",
     "https://github.com/openclaw/openclaw",
     "https://docs.openclaw.ai/"
+    ,"https://docs.github.com/en/copilot/get-started/what-is-github-copilot"
+    ,"https://docs.augmentcode.com/using-augment/agent"
+    ,"https://learn.chatgpt.com/docs/codex/cli"
+    ,"https://code.claude.com/docs/en/how-claude-code-works"
+    ,"https://opencode.ai/docs"
+    ,"https://github.com/can1357/oh-my-pi"
   ],
   "support_state_effect": "argument_only",
   "promotion_blockers": [
@@ -79,6 +93,6 @@
     "does not establish that any reviewed project is safe, correct, state of the art, AGI, or ASI",
     "does not claim feature parity or architectural equivalence",
     "does not reproduce any repository test, benchmark, or production result",
-    "does not create a new chapter or promote support"
+    "creates a comparative chapter at argument support and does not promote support"
   ]
 }

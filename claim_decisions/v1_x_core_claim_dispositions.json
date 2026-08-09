@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-24",
-  "scope_boundary": "Standing per-chapter disposition record for the 84 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 85 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 84,
+    "manifest_chapter_core_claims": 85,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 62,
+    "accepted_no_promotion_dispositions": 63,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 84
+    "chapter_core_claims_remaining_at_argument": 85
   },
   "dispositions": [
     {
@@ -1878,6 +1878,44 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json"
       ]
+    },
+    {
+      "claim_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption.core",
+      "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "chapter_title": "From Chat to Organizations: AI Work Surfaces and Agent Harnesses",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Every expansion of an AI work surface should be governed as a versioned abstraction-absorption transition that binds capability, context, state, tools, authority, effects, verification, human control, accountability, and residuals before project-, role-, team-, or organization-scale autonomy is accepted.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "implemented finite work-surface transition model with authority-nonexpansion, rejection-noninterference, and summary-non-equivalence checks",
+        "matched answer-suggestion-task workload with context, permission, effect, intervention, recovery, cost, and residual accounting",
+        "representative project- or role-scale trace, independent reproduction, and an accepted scope-bounded evidence transition"
+      ],
+      "blockers": [
+        "no implemented WorkSurfaceTransitions module or executable transition fixture",
+        "no cross-harness or cross-surface outcome evidence",
+        "no organization-scale custody, accountability, or feedback-loop result"
+      ],
+      "promotion_burden": "The chapter has nine bounded implementation-source mappings and a versioned work-surface transition design, but no named harness was executed, no matched answer-suggestion-task workload was run, and no project-, role-, team-, organization-, or network-scale transition was implemented or evaluated.",
+      "limitations": [],
+      "non_claims": [
+        "does not establish a linear or inevitable product evolution, harness superiority, productivity, safety, or organizational replacement",
+        "does not establish role competence, organization-scale legitimacy, deployment readiness, transfer, SOTA, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Lean work-surface transition model plus matched answer-suggestion-task workload and one Project Theseus project- or role-scale custody trace",
+      "formal_or_prototype_work": "Implement authority-nonexpansion, rejection-noninterference, and summary-non-equivalence controls; freeze one repository task across three surfaces; record context, permissions, effects, interventions, recovery, cost, and residuals; then test one larger custody transition with independent evaluation.",
+      "human_reader_focus": "Let readers see what actually moves as AI advances from answering toward owning tasks, projects, and roles, without turning a product history into an inevitability claim.",
+      "what_would_move_this": "A bounded transition may advance only when exact identity, authority, effect, review, accountability, rollback, and residual obligations are preserved; task success cannot establish role competence, organizational legitimacy, harness superiority, safety, or general transfer.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "human-ai-organizations-delegation-and-accountability.core",

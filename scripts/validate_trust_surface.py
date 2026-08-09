@@ -387,7 +387,7 @@ def main() -> None:
         roles = role_map.get("roles", {})
         expected_role_counts = {
             "thesis-bearing": 11,
-            "load-bearing-reference": 54,
+            "load-bearing-reference": 55,
             "implementation-case": 7,
             "speculative-research": 12,
         }
@@ -407,7 +407,7 @@ def main() -> None:
             or len(flattened) != len(set(flattened))
             or set(flattened) != set(manifest_chapter_ids)
         ):
-            errors.append("current chapter roles are not an exact 84-chapter partition")
+            errors.append(f"current chapter roles are not an exact {chapters}-chapter partition")
         summary = role_map.get("summary", {})
         if (
             summary.get("total_count") != chapters
@@ -421,7 +421,7 @@ def main() -> None:
         }.items():
             for role_label, expected_count in (
                 ("Thesis-bearing", 11),
-                ("Load-bearing reference", 54),
+                ("Load-bearing reference", 55),
                 ("Implementation case", 7),
                 ("Speculative research", 12),
             ):

@@ -255,8 +255,11 @@ def semantic_reviews(
 def build() -> dict[str, Any]:
     current_structure = load(STRUCTURE)
     baseline_structure = json.loads(git_text(BASELINE_COMMIT, "book_structure.json"))
-    current_manifest = manifest_rows(current_structure)
     baseline_manifest = manifest_rows(baseline_structure)
+    baseline_ids = {row["id"] for row in baseline_manifest}
+    current_manifest = [
+        row for row in manifest_rows(current_structure) if row["id"] in baseline_ids
+    ]
     current_rows = {row["id"]: row for row in current_manifest}
     baseline_rows = {row["id"]: row for row in baseline_manifest}
     current = {

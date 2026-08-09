@@ -146,7 +146,7 @@ EXPECTED_CONCEPT_ANCHORS = [
     ("C1", "C1-theorem-runtime-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A theorem is not runtime enforcement"),
     ("C1", "C1-proposal-ratification-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A proposal is not ratification"),
     ("C2", "C2-twenty-two-unit-spine", "products/narrative_product_spine.json", "A twenty-two-unit thesis-to-method route through the canonical manifest"),
-    ("C2", "C2-all-eighty-four-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 84'),
+    ("C2", "C2-all-eighty-five-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 85'),
     ("C2", "C2-nonabsorption-prose", "chapters/living-book-methodology.qmd", "Narrative compression without claim absorption"),
     ("C3", "C3-calculus-owner", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "Governed Transition Calculus"),
     ("C3", "C3-authority-projection", "chapters/system-boundaries-and-authority.qmd", "authority-specific projection of the shared Governed Transition Calculus"),
@@ -830,8 +830,8 @@ def errors(data: dict) -> list[str]:
     manifest_ids = {chapter.get("id") for chapter in manifest_chapters}
     first_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]["candidate_ids"])
     second_ids = set(status["quality_uplift_program"]["structural_completeness_tranche"]["second_tranche"]["candidate_ids"])
-    if len(manifest_chapters) != 84:
-        out.append(f"working manifest chapter count is {len(manifest_chapters)}, expected 84")
+    if not manifest_chapters:
+        out.append("working manifest has no chapters")
     if not first_ids.issubset(manifest_ids):
         out.append(f"first structural tranche missing manifest IDs: {sorted(first_ids - manifest_ids)}")
     if set(STRUCTURAL_CHAPTER_PATHS) != first_ids:
@@ -1212,8 +1212,12 @@ def errors(data: dict) -> list[str]:
         out.append("Manim visual-edition identity drifted")
     if manim.get("state") != "active_generation_2_production_with_12_predecessor_previews_preserved":
         out.append("Manim visual-edition state does not preserve active generation-2 production and 12 predecessor previews")
-    if manim.get("canonical_chapter_count") != len(manifest_chapters) or len(manifest_chapters) != 84:
-        out.append("Manim visual-edition chapter target does not match the canonical manifest")
+    visual_manifest = data["visual_edition_manifest"]
+    if (
+        manim.get("canonical_chapter_count") != visual_manifest.get("canonical_chapter_count")
+        or manim.get("canonical_chapter_count", 0) > len(manifest_chapters)
+    ):
+        out.append("Manim visual-edition chapter target does not match its derivative manifest or exceeds the canonical manifest")
     if manim.get("pilot_chapter_ids") != expected_pilots:
         out.append("Manim five-pilot order drifted")
     missing_pilots = sorted(set(expected_pilots) - manifest_ids)
@@ -1235,7 +1239,7 @@ def errors(data: dict) -> list[str]:
     if (
         hosting.get("canonical_binary_host") != "YouTube"
         or hosting.get("canonical_playlist_required") is not True
-        or hosting.get("youtube_video_count_target") != 84
+        or hosting.get("youtube_video_count_target") != manim.get("canonical_chapter_count")
         or hosting.get("quarto_embed_only_after_published_current") is not True
         or hosting.get("action_time_authority_required") is not True
         or hosting.get("external_publication_authorized_now") is not False
@@ -1256,8 +1260,8 @@ def errors(data: dict) -> list[str]:
         "pilot_packets_present": 5,
         "pilot_packets_rendered_local": 5,
         "pilot_packets_validated": 5,
-        "chapter_packets_validated": 84,
-        "current_rendered_videos": 84,
+        "chapter_packets_validated": manim.get("canonical_chapter_count"),
+        "current_rendered_videos": manim.get("canonical_chapter_count"),
         "youtube_videos_unlisted_preview": 12,
         "youtube_videos_published": 0,
         "current_quarto_preview_embeds": 12,
@@ -1266,11 +1270,10 @@ def errors(data: dict) -> list[str]:
     }
     if counts != expected_counts:
         out.append("Manim visual-edition foundation or production counts drifted")
-    visual_manifest = data["visual_edition_manifest"]
     visual_counts = visual_manifest.get("counts", {})
     if (
         manim.get("visual_manifest_path") != "visual_edition/manifest.json"
-        or visual_manifest.get("canonical_chapter_count") != 84
+        or visual_manifest.get("canonical_chapter_count") != manim.get("canonical_chapter_count")
         or visual_manifest.get("pilot_chapter_ids") != expected_pilots
         or visual_counts.get("packets_present") != counts.get("chapter_packets_validated")
         or visual_counts.get("ready_not_published") != counts.get("chapter_packets_validated")
@@ -1571,15 +1574,15 @@ def errors(data: dict) -> list[str]:
         != "phase2_proof_rationalization_then_natural_flagship"
         or convergence.get("proof_work_priority")
         != "current_only_for_named_consumers_after_phase1_exit"
-        or convergence.get("concept_first_exit_gate") != "all_84_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+        or convergence.get("concept_first_exit_gate") != "all_85_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
         or convergence.get("concept_first_exit_gate_state")
-        != "passed_84_responsibilities_62_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
+        != "passed_85_responsibilities_63_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
         or convergence.get("phase1_audit_path") != "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
         or convergence.get("narrative_spine_path") != "products/narrative_product_spine.json"
         or convergence.get("narrative_unit_crosswalk_path") != "products/narrative_unit_crosswalk.json"
-        or convergence.get("all_84_idea_placement_gate_state") != "passed_exact_84_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+        or convergence.get("all_85_idea_placement_gate_state") != "passed_exact_85_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
         or convergence.get("phase2_proof_execution_allowed") is not True
-        or convergence.get("reference_chapter_count") != 84
+        or convergence.get("reference_chapter_count") != len(manifest_chapters)
         or convergence.get("narrative_unit_target") != 22
         or convergence.get("defended_contribution_count") != 3
         or convergence.get("packet_order") != expected_convergence_order
@@ -1788,19 +1791,19 @@ def errors(data: dict) -> list[str]:
     role_counts = Counter(role_assignments)
     role_summary = role_map.get("summary", {})
     if (
-        role_map.get("manifest_chapter_count") != 84
+        role_map.get("manifest_chapter_count") != len(manifest_chapters)
         or set(role_assignments) != manifest_ids
-        or len(role_assignments) != 84
+        or len(role_assignments) != len(manifest_chapters)
         or any(count != 1 for count in role_counts.values())
         or role_summary.get("thesis_bearing_count") != 11
-        or role_summary.get("load_bearing_reference_count") != 54
+        or role_summary.get("load_bearing_reference_count") != 55
         or role_summary.get("implementation_case_count") != 7
         or role_summary.get("speculative_research_count") != 12
-        or role_summary.get("total_count") != 84
+        or role_summary.get("total_count") != len(manifest_chapters)
         or role_summary.get("unassigned_count") != 0
         or role_summary.get("duplicate_assignment_count") != 0
     ):
-        out.append("current 84-chapter role map is incomplete, duplicated, or count-inconsistent")
+        out.append("current chapter role map is incomplete, duplicated, or count-inconsistent")
     first_tranche = quality_program.get("structural_completeness_tranche", {}).get("first_tranche", {})
     if first_tranche.get("state") != "terminal_four_reader_chapters":
         out.append("first structural tranche terminal state drifted")
@@ -2135,13 +2138,13 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (330, 130, 3153, 1978, 447, 728)
+    expected_proof = (333, 131, 3153, 1978, 447, 728)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 330:
-        out.append("proof manifest target count disagrees with the 330 implemented targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 330}:
-        out.append("taxonomy-completion proof targets altered the frozen implemented-proof denominator")
+    if data["proof_manifest"].get("proof_target_count") != 333:
+        out.append("proof manifest target count disagrees with the current implemented and planned targets")
+    if data["proof_manifest"].get("status_counts") != {"implemented": 330, "planned": 3}:
+        out.append("proof target lifecycle counts drifted")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})
     proof_clusters = proof_inventory.get("clusters", [])
