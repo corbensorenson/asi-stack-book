@@ -1,27 +1,13 @@
-A model finds twelve duplicate files and writes the right delete command. Should the command run?
+Read only. An AI has one job: inventory a data warehouse, list the tables, and flag stale rows. It finds stale rows that should probably go and writes a flawless delete command. Every row is still untouched. The verifier turns green. Should the command run?
 
-The model's intelligence cannot answer that question. It can propose an action, but it does not own the drive. Correctness and permission are different facts.
+No. The green check answers a narrow question: does the command match the cleanup rule? But the request says change nothing. A good plan is still a proposal. So the command reaches an authority boundary. The system checks who asked, what effect they allowed, which data it covers, and whether permission is still live. A write credential from last week's maintenance window doesn't count. The gate stays shut, and the system records a denial, not a completed inventory.
 
-Keep the request on screen. It names the files to clean and the person who asked. The model turns that request into a proposal. Nothing has changed yet.
+Now change one fact. The table owner approves deleting exactly those twelve rows for ten minutes. Same command. The model did not become wiser, and the verifier learned nothing new. The contract changed. At the effect boundary, the fresh grant and the proposal meet. The executor can act because both are present. Intelligence supplied the candidate; the surrounding contract supplied permission.
 
-Now place the proposal inside a system. A context boundary reveals only the permitted files. A verifier checks whether the command matches the request. An authority gate asks whether this user may delete these files at this time.
+The database reports twelve deletions. Are we done? Not quite. A receipt says what the tool reported. A separate observer checks what changed. If it finds thirteen deletions, the stack keeps the contradiction visible. It doesn't let a green receipt overwrite the world. The recorded pre-state gives recovery a target, while the unexplained extra deletion stays assigned to an owner.
 
-Each layer answers a different question. The model proposes what might work. The verifier checks the stated test. The gate decides whether the effect may happen.
+Now the pattern has earned a name: noninheritance. Capability does not inherit authority. A plan does not inherit an effect. A receipt does not inherit reality. And a proposed self-improvement does not inherit approval just because its tests pass.
 
-Suppose the command is perfect. The verifier turns green. May it run now?
+Try the same question on a model that writes a perfect security patch. The patch can pass every test and still lack permission to deploy. Passing the tests belongs to verification. Production access belongs to authority. What actually changed belongs to observation.
 
-Not yet. A correct proposal still needs a live grant for this exact effect. When that grant arrives, the execution adapter checks it again. Only then does the delete token cross the boundary.
-
-The tool reports that twelve files changed. That report is useful, but it is not reality itself. A separate observer inspects the drive.
-
-Imagine the observer finds thirteen changes. An opaque agent might keep the green receipt and discard the contradiction. The stack keeps both. The extra deletion becomes a visible residual with an owner.
-
-Because the pre-state was recorded, the system can restore a reversible change. If an effect cannot be reversed, the system needs a compensation or containment plan before acting.
-
-This is why an advanced AI should be treated as a stack rather than one model with every power. A plan does not become permission. A tool receipt does not become observation. A proposed improvement does not become approval of itself.
-
-The architecture has costs. Extra boundaries can add delay and create new failure points. They earn their place only when they improve useful work after verification, recovery, and governance costs are counted.
-
-The file-deletion case shows how responsibilities can be separated and inspected. It does not prove that this particular stack is safe, efficient, or sufficient for general intelligence.
-
-In the file-deletion case, the model supplied a capable proposal. The surrounding system decided what it could see, what had been established, what could act, and how a mistake would remain recoverable.
+This is what it means to treat advanced AI as a governed stack rather than one model with every power. The boundaries don't prove safety or efficiency; they add cost and can fail. Each one earns its place only by owning a distinct question that remains inspectable from outside the model. Intelligence may propose. It cannot promote its own output into a different kind of fact.

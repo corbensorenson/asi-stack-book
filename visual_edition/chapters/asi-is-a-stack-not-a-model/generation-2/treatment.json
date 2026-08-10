@@ -1,0 +1,438 @@
+{
+  "schema_version": "asi_stack.manim_treatment.v1",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "chapter_sha256": "98ec4a959aceceddd6b242ede9fed1049c46b62559ca8a8b135d5687429175bb",
+  "source_context_sha256": "eb4fac4b383187fbc1e1c3035aa92bf24474446448d19a7d813cdac9020000b1",
+  "source_commit": "ffe2b2cc92bffdf88eec89755b1354fc675fadc2",
+  "audience": {
+    "target_viewer": "A curious adult who uses AI tools but has not studied AI architecture or governance",
+    "assumed_knowledge": [
+      "Software can propose and execute commands",
+      "A database stores rows in tables"
+    ],
+    "excluded_assumptions": [
+      "Prior knowledge of the ASI Stack",
+      "Familiarity with formal methods or capability-security terminology",
+      "Belief that logical layers require separate models or services"
+    ],
+    "standalone_context": "The video introduces every object through one hypothetical warehouse task and does not depend on another chapter.",
+    "introduced_terms": [
+      "authority boundary",
+      "receipt",
+      "noninheritance"
+    ]
+  },
+  "promise_candidates": [
+    {
+      "promise": "Predict when a correct AI proposal must still stop because correctness, authority, and observation are different facts.",
+      "consequence": "The viewer can locate the missing boundary before a capable component produces an unauthorized or falsely reported effect.",
+      "visual_mechanism": "One SQL command capsule meets a cyan verifier, a gold authority gate, and a separate observation counter; each adds exactly one kind of standing.",
+      "transfer_value": "The same distinction applies to code deployment, self-improvement, laboratory control, and other consequential actions.",
+      "evidence_fit": "Directly expresses the chapter's noninheritance law and bounded authority-to-effect trace without implying system-level safety.",
+      "disposition": "selected",
+      "rationale": "It turns the chapter's core architecture argument into a visible decision the viewer can repeat on a changed case."
+    },
+    {
+      "promise": "Explain why modular AI is not governed unless its interfaces preserve identity, authority, evidence, and recovery obligations.",
+      "consequence": "The viewer could distinguish ordinary component decomposition from the book's narrower governed-interface proposal.",
+      "visual_mechanism": "An exploded machine passes labeled envelopes across interfaces; missing fields make downstream components disconnect from the shared assembly.",
+      "transfer_value": "The test could be applied to agent frameworks, service architectures, and multi-model systems.",
+      "evidence_fit": "Fits the CAIS comparison and chapter mechanism, but requires too many simultaneous fields for a short opening episode.",
+      "disposition": "rejected",
+      "rationale": "The outcome is important but the interface inventory would dominate the pictures before the viewer experiences the underlying failure."
+    },
+    {
+      "promise": "Decide when a single model call is enough and when an additional system boundary earns its cost.",
+      "consequence": "The viewer could resist adding architecture that owns no distinct failure or decision.",
+      "visual_mechanism": "A split-screen race compares a read-only sandbox with a consequential warehouse route while cost and residual counters accumulate.",
+      "transfer_value": "The decision applies to product architecture and deployment design under different consequence levels.",
+      "evidence_fit": "The chapter names this burden, but a defensible efficiency comparison belongs to the next chapter and lacks outcome evidence here.",
+      "disposition": "rejected",
+      "rationale": "Selecting it would overreach the chapter's argument-level evidence and blur the handoff to the efficiency chapter."
+    },
+    {
+      "promise": "Recognize why explicit records can expose a blind spot without making an embedded AI system an omniscient external governor.",
+      "consequence": "The viewer could reject the claim that a complete-looking ledger proves complete knowledge of the world.",
+      "visual_mechanism": "A map folds inside the machine it describes while one region remains outside the map's boundary and changes the machine from behind.",
+      "transfer_value": "The distinction applies to self-models, verifiers, descendants, and subsystem agreement.",
+      "evidence_fit": "Faithfully reflects the embedded-agency objection, but it is a foundations limit rather than this episode's primary stack mechanism.",
+      "disposition": "rejected",
+      "rationale": "It deserves its own treatment; combining self-reference with effect authorization would split the viewer's attention between two promises."
+    }
+  ],
+  "teaching_promise": "Predict when a correct AI proposal must still stop because correctness, authority, and observation are different facts.",
+  "selection_rationale": "The selected promise makes the stack thesis observable through one consequential decision, preserves a direct changed-case transfer, and remains inside the chapter's argument-level evidence ceiling.",
+  "content_contract": {
+    "chapter_claim_ids": [
+      "asi-is-a-stack-not-a-model.core",
+      "asi-is-a-stack-not-a-model.invariant.003",
+      "asi-is-a-stack-not-a-model.interface.003",
+      "asi-is-a-stack-not-a-model.prose.e0bd06898776"
+    ],
+    "source_ids": [
+      "viea",
+      "beastbrain",
+      "aletheia",
+      "talos",
+      "moecot",
+      "scf",
+      "ext_drexler_cais_2019",
+      "ext_embedded_agency_2019"
+    ],
+    "non_claims": [
+      "The warehouse trace is an illustrative case, not an observed deployment incident.",
+      "A correct record or passing gate does not establish that its premises are true or enforced in an open world.",
+      "Logical responsibility layers do not require separate models, processes, or physical services.",
+      "The video does not establish safety, efficiency, architecture superiority, general intelligence, or ASI.",
+      "The finite stack view does not solve embedded agency, evaluator dependence, irreversible effects, or subsystem alignment."
+    ],
+    "case_assumptions": [
+      "The inventory request explicitly forbids mutation.",
+      "The first write credential expired before the depicted request.",
+      "The changed case supplies a fresh owner grant scoped to twelve rows and ten minutes.",
+      "The observer is depicted as a separate consumer of database state, not as proof of perfect independence.",
+      "A recorded pre-state exists for the illustrative recovery target."
+    ],
+    "notation_ledger": [
+      {
+        "token": "READ ONLY",
+        "meaning": "The task contract forbids material mutation",
+        "unit": null,
+        "visual_form": "White uppercase text on a dark rectangular request ribbon"
+      },
+      {
+        "token": "cyan check",
+        "meaning": "The proposal passed the depicted verifier's narrow test",
+        "unit": null,
+        "visual_form": "Cyan check inside a circular lens marked VERIFY"
+      },
+      {
+        "token": "gold key",
+        "meaning": "A current grant for the exact depicted effect",
+        "unit": null,
+        "visual_form": "Gold key with an owner seal and visible expiry arc"
+      },
+      {
+        "token": "12 / 13",
+        "meaning": "Tool-reported deletion count versus separately observed changed-row count",
+        "unit": "rows",
+        "visual_form": "Two labeled mechanical counters that remain visibly distinct"
+      }
+    ],
+    "truth_checks": [
+      {
+        "statement": "The chapter's worked warehouse case begins with a read-only request and treats the generated cleanup script as a review-only proposal.",
+        "authority_refs": [
+          "asi-is-a-stack-not-a-model.core"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Reasoning or generation capability alone must not grant execution authority in the chapter's normative architecture.",
+        "authority_refs": [
+          "asi-is-a-stack-not-a-model.invariant.003",
+          "viea",
+          "scf"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "A tool receipt and an external observation are separate records in the chapter's noninheritance argument.",
+        "authority_refs": [
+          "asi-is-a-stack-not-a-model.prose.e0bd06898776",
+          "viea"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Service or component decomposition is established prior art and does not by itself prove the ASI Stack's governance contract.",
+        "authority_refs": [
+          "ext_drexler_cais_2019",
+          "asi-is-a-stack-not-a-model.core"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Explicit records do not make the stack external to its world or establish complete observation and subsystem alignment.",
+        "authority_refs": [
+          "ext_embedded_agency_2019"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "A self-improvement proposal cannot supply its own approval merely by passing its own test path in the chapter's architecture.",
+        "authority_refs": [
+          "asi-is-a-stack-not-a-model.interface.003",
+          "scf"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      }
+    ],
+    "visual_simplifications": [
+      "One command capsule stands for a typed proposal and preserves the same identity across both authority cases.",
+      "The authority gate depicts authorization only; crossing it does not imply safety, truth, or successful execution.",
+      "The cyan check depicts one verifier result and does not imply independent evidence or broad correctness.",
+      "The two counters compress receipt and observation records into row counts without claiming that count equality is sufficient verification.",
+      "Vertical layers encode logical responsibility, not a required physical deployment topology."
+    ]
+  },
+  "story": {
+    "story_form": "counterexample",
+    "story_basis": {
+      "description": "The chapter's illustrative read-only warehouse trace refutes the tempting rule that a correct generated command is ready to execute.",
+      "authority_refs": [
+        "asi-is-a-stack-not-a-model.core",
+        "asi-is-a-stack-not-a-model.invariant.003",
+        "viea"
+      ]
+    },
+    "concrete_case": "An AI receives a read-only warehouse inventory task but generates a correct command that would delete twelve stale rows.",
+    "opening_question": "The verifier is green; should the delete command run?",
+    "macro_moves": [
+      {
+        "id": "m01",
+        "purpose": "Make correctness feel sufficient before exposing the missing variable",
+        "viewer_model_before": "A flawless command with a green check appears ready to run.",
+        "visible_event": "A SQL command capsule leaves the model and clicks into a glowing verifier ring while the read-only request remains above it.",
+        "viewer_model_after": "The viewer predicts execution but can still see the original no-mutation constraint."
+      },
+      {
+        "id": "m02",
+        "purpose": "Separate verification from permission",
+        "viewer_model_before": "The green check appears to settle the execution decision.",
+        "visible_event": "The capsule reaches a gold authority gate; an expired key crumbles and the gate stamps DENIED while the warehouse remains unchanged.",
+        "viewer_model_after": "A correct proposal can still be ineligible to produce an effect."
+      },
+      {
+        "id": "m03",
+        "purpose": "Show that authority changes eligibility without changing intelligence",
+        "viewer_model_before": "The command may seem defective because it was denied.",
+        "visible_event": "The request ribbon changes to a twelve-row ten-minute grant; the identical command capsule and a fresh gold key join at the gate before twelve rows retract.",
+        "viewer_model_after": "The same proposal can become executable only when a separate current grant is present."
+      },
+      {
+        "id": "m04",
+        "purpose": "Separate reported success from observed state",
+        "viewer_model_before": "A successful tool receipt appears to complete the task.",
+        "visible_event": "A RECEIPT counter stops at twelve while an OBSERVED counter independently reaches thirteen; the mismatch opens a magenta residual loop and a red recovery arc targets the recorded pre-state.",
+        "viewer_model_after": "A receipt and a world observation can disagree, and the contradiction must remain owned."
+      },
+      {
+        "id": "m05",
+        "purpose": "Earn the noninheritance abstraction from the visible trace",
+        "viewer_model_before": "The case contains several useful checks but no compact general rule.",
+        "visible_event": "The command, key, receipt, and observation separate into four aligned rails labeled CAPABILITY, AUTHORITY, REPORT, and WORLD, with one-way no-promotion stops between them.",
+        "viewer_model_after": "The viewer can state that one useful property does not automatically confer a different property at the next boundary."
+      },
+      {
+        "id": "m06",
+        "purpose": "Test transfer and reveal the governed stack",
+        "viewer_model_before": "Noninheritance may appear specific to database deletion.",
+        "visible_event": "The SQL capsule transforms into a security patch that passes tests but pauses before a production gate; the camera pulls back to show the logical stack around both cases.",
+        "viewer_model_after": "The viewer can apply the same separation to deployment and self-improvement without claiming that the stack guarantees safety."
+      }
+    ],
+    "payoff": "The command never changes identity; only explicit contracts change what may happen next, making the stack visible as a sequence of noninheriting responsibilities.",
+    "comprehension_question": "Why did the first delete command remain blocked even after the verifier turned green?",
+    "comprehension_success_criteria": [
+      "States that verification answered a narrower correctness question",
+      "Identifies the read-only request or expired grant as the authority boundary",
+      "Does not say that the command was blocked because the model was incapable"
+    ],
+    "transfer_question": "A model writes a security patch that passes every test; what must remain separate before production deployment and after execution?",
+    "transfer_success_criteria": [
+      "Requires an explicit current deployment grant rather than treating test success as permission",
+      "Keeps execution receipt separate from observation of production state",
+      "Avoids claiming that these boundaries alone prove safety"
+    ]
+  },
+  "packaging": {
+    "working_title": "A Green Check Is Not Permission",
+    "thumbnail_concept": "A glowing checked SQL capsule hangs motionless before a closed gold gate while a READ ONLY ribbon remains visible above it.",
+    "thumbnail_alt_text": "A verified delete command stops at a closed gold authority gate beneath a read-only request.",
+    "promise_match": "The thumbnail shows the exact counterexample the video resolves: correctness is visible, yet execution remains blocked.",
+    "first_fifteen_seconds_delivery": "The read-only request, flawless delete command, green verification result, and execution question all appear before any architecture terminology.",
+    "source_delivery": "The end card names the chapter and the VIEA, SCF, CAIS, and Embedded Agency source notes; the description carries the full assigned-source list and evidence boundary.",
+    "source_delivery_refs": [
+      "viea",
+      "scf",
+      "ext_drexler_cais_2019",
+      "ext_embedded_agency_2019"
+    ]
+  },
+  "art_direction": {
+    "medium": "manim_primary",
+    "medium_rationale": "The lesson depends on persistent identity, conditional passage, joined artifacts, counter disagreement, and reversible transformations that Manim can encode directly.",
+    "visual_thesis": "The command keeps one identity while independent artifacts determine whether it may cross each boundary and what can be concluded afterward.",
+    "signature_image": "A cyan-checked SQL capsule suspended before a closed gold gate, with the white READ ONLY contract still spanning the frame.",
+    "visual_world": "A precise cutaway data warehouse built as one horizontal causal rail inside a restrained dark technical environment, not a sequence of cards.",
+    "persistent_objects": [
+      "request ribbon",
+      "SQL command capsule",
+      "verifier lens",
+      "authority gate",
+      "warehouse rows",
+      "receipt and observation counters",
+      "residual and recovery path"
+    ],
+    "visual_invariants": [
+      "The request scope remains visible whenever authorization is judged.",
+      "The SQL capsule preserves shape and identity across denial and approval.",
+      "Cyan verification and gold authority remain distinct by label, shape, and position as well as color.",
+      "Receipt and observation counters never merge into one display.",
+      "No gate crossing visually implies safety or broad truth.",
+      "The caption-safe lower band remains free of essential geometry."
+    ],
+    "composition_rule": "Use a left-to-right causal rail at mid-height, contract context above, state evidence below, and no essential object in the lower caption band.",
+    "palette_rule": "Use the ratified palette semantically: cyan for verification, gold for authority, green for observed evidence, magenta for residuals, red for recovery, plus shape and text redundancy.",
+    "typography_rule": "Show only short object labels and the SQL verb; narration carries causal explanation, while full sentences stay out of the scene.",
+    "motion_character": "Mechanical, eased, and consequence-weighted: proposals glide, grants join with a keyed lock, effects retract rows, and contradictions open rather than flash.",
+    "camera_rule": "Hold one stable warehouse frame through the worked case; use a single controlled pullback only when the changed case earns the stack abstraction.",
+    "surface_rule": "Use thin technical surfaces and crisp bounded rails without decorative panels, gradients, or simulated interface chrome.",
+    "ending_image": "The unchanged command and transformed security patch sit on parallel rails inside a transparent logical stack, each paused at its own authority boundary.",
+    "semantic_keyframes": [
+      {
+        "id": "k01",
+        "after_macro_move_id": "m01",
+        "focal_state": "The verified SQL capsule points toward the warehouse while READ ONLY remains visible above.",
+        "visible_invariant": "Verification has changed no warehouse row.",
+        "unresolved_question": "Will a green verifier result authorize execution?"
+      },
+      {
+        "id": "k02",
+        "after_macro_move_id": "m02",
+        "focal_state": "The capsule rests against a closed gold gate beside a visibly expired key and a denial receipt.",
+        "visible_invariant": "The same correct command remains intact and the warehouse is unchanged.",
+        "unresolved_question": "What fact would legitimately change the command's eligibility?"
+      },
+      {
+        "id": "k03",
+        "after_macro_move_id": "m03",
+        "focal_state": "A fresh scoped key and the unchanged capsule meet at the gate as exactly twelve rows retract.",
+        "visible_invariant": "Authority comes from the owner grant, not from command quality.",
+        "unresolved_question": "Does a successful tool report prove the resulting world state?"
+      },
+      {
+        "id": "k04",
+        "after_macro_move_id": "m04",
+        "focal_state": "RECEIPT 12 and OBSERVED 13 diverge while a residual loop and recovery arc remain open.",
+        "visible_invariant": "Both records retain separate identities and neither silently overwrites the other.",
+        "unresolved_question": "What common rule links capability, authority, report, and observation?"
+      },
+      {
+        "id": "k05",
+        "after_macro_move_id": "m05",
+        "focal_state": "Four aligned rails expose one-way stops between capability, authority, report, and world state.",
+        "visible_invariant": "No rail promotes its own output into the next rail's kind of fact.",
+        "unresolved_question": "Will the rule survive a different consequential task?"
+      },
+      {
+        "id": "k06",
+        "after_macro_move_id": "m06",
+        "focal_state": "A tested security patch pauses before production beside the warehouse command in a pulled-back stack view.",
+        "visible_invariant": "Verification, authority, execution, and observation remain separate in both cases.",
+        "unresolved_question": null
+      }
+    ],
+    "asset_plan": []
+  },
+  "audio_direction": {
+    "narration_style": "Calm, exact, and curious; let each question land before resolving it, with no trailer voice or synthetic urgency.",
+    "pacing_arc": "Open briskly on the command, slow at the first denial, gain measured momentum through the authorized trace, pause on the 12/13 mismatch, then widen for transfer.",
+    "music_policy": "No continuous music in the pilot; preserve cognitive space and evaluate the explanation without emotional scaffolding.",
+    "sound_effect_policy": "Use only restrained original or generated interface sounds at the verifier click, denied gate, keyed grant, counter mismatch, and recovery arc; each must remain below speech and carry no unique meaning.",
+    "performance_blocks": [
+      {
+        "id": "p01",
+        "macro_move_ids": [
+          "m01"
+        ],
+        "performance_direction": "Begin conversationally, accelerate slightly through the task, then leave a full thinking pause after the opening question.",
+        "pronunciation_items": [
+          "AI",
+          "data warehouse"
+        ]
+      },
+      {
+        "id": "p02",
+        "macro_move_ids": [
+          "m02"
+        ],
+        "performance_direction": "Answer No without drama, then make each authority field sound like a distinct check; settle on denial rather than completion.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p03",
+        "macro_move_ids": [
+          "m03"
+        ],
+        "performance_direction": "Mark the changed fact clearly and contrast identical command with different authority using a deliberate parallel cadence.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p04",
+        "macro_move_ids": [
+          "m04"
+        ],
+        "performance_direction": "Pause after the second question, understate the mismatch, and give the recovery sentence room to resolve visually.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p05",
+        "macro_move_ids": [
+          "m05"
+        ],
+        "performance_direction": "Introduce noninheritance only after the visible separation, then deliver the four clauses with even spacing rather than a crescendo.",
+        "pronunciation_items": [
+          "noninheritance"
+        ]
+      },
+      {
+        "id": "p06",
+        "macro_move_ids": [
+          "m06"
+        ],
+        "performance_direction": "Invite transfer rather than quiz the viewer, then close firmly but without claiming the architecture has been validated.",
+        "pronunciation_items": []
+      }
+    ],
+    "review_devices": [
+      "studio headphones",
+      "laptop speakers",
+      "phone speaker",
+      "muted playback with captions"
+    ]
+  },
+  "accessibility": {
+    "color_redundancy": "Every semantic color is paired with a stable icon, label, shape, and spatial role; color loss preserves the complete causal trace.",
+    "motion_redundancy": "Each crossing, denial, mismatch, and recovery ends in a persistent state that communicates the change without requiring motion perception.",
+    "integrated_description": "Narration names the read-only request, unchanged command, separate grant, distinct counters, mismatch, and changed security-patch case as they appear.",
+    "caption_plan": "Use qualified forced-alignment timing, at most two short lines, sentence-aware breaks, and no cue that covers the active command rail or counters.",
+    "descriptive_transcript_plan": "Describe the persistent object identities, gate states, counter divergence, residual loop, recovery arc, and final case transformation beside the exact narration.",
+    "reduced_motion_assessment": "The story remains understandable as six held semantic keyframes with short crossfades; no rapid camera motion, flashing, or motion-only distinction is planned.",
+    "caption_safe_composition": "Reserve the lower 150 pixels plus margin throughout and keep labels, counters, and the recovery target above that boundary at phone scale."
+  },
+  "script_gate": {
+    "narration_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/narration.txt",
+    "narration_sha256": "db1a09c391bff94d0dfad0420102ef2df18940ee63b6db0b5d9dd16488e344f1",
+    "narration_word_count": 391,
+    "read_aloud_review": "pass",
+    "truth_review": "pass",
+    "visualizability_review": "pass",
+    "reviewer_id": "codex-author-script-gate-2026-08-09",
+    "verdict": "pass",
+    "open_defects": []
+  }
+}

@@ -2661,7 +2661,11 @@ def negative_control_failures(value: dict) -> tuple[list[str], int]:
     implemented["target"]["scene_sha256"] = "0" * 64
     controls.append(("scene identity drift", scene_drift, "scene identity drift"))
     fake_treatment = copy.deepcopy(value)
-    fake_treatment["entries"][0]["target"]["gates"]["treatment"] = "pass"
+    untreated = next(
+        entry for entry in fake_treatment["entries"]
+        if not entry["target"].get("treatment_sha256")
+    )
+    untreated["target"]["gates"]["treatment"] = "pass"
     controls.append(("missing treatment promotion", fake_treatment, "treatment gate passes without"))
     unaligned_lock = copy.deepcopy(value)
     unaligned_lock["entries"][0]["target"]["gates"]["picture_and_sound_lock"] = "pass"
