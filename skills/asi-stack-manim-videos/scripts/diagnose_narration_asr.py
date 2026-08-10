@@ -5,12 +5,17 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import hashlib
 import importlib.util
 import json
 import os
 from pathlib import Path
 from types import ModuleType
 from typing import Any
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def repository_root() -> Path:
@@ -79,18 +84,24 @@ def build_report(
     raw_recognized = validator.tokens(recognized_text)
     normalized_expected = validator.normalize_content_tokens(raw_expected)
     normalized_recognized = validator.normalize_content_tokens(raw_recognized)
+    raw_blocks = edit_blocks(raw_expected, raw_recognized)
+    normalized_blocks = edit_blocks(normalized_expected, normalized_recognized)
     return {
         "schema_version": "asi_stack.narration_asr_diagnostic.v1",
         "gate_effect": "diagnostic_only",
         "raw": {
             "expected_token_count": len(raw_expected),
             "recognized_token_count": len(raw_recognized),
-            "edit_blocks": edit_blocks(raw_expected, raw_recognized),
+            "exact_match": not raw_blocks,
+            "edit_block_count": len(raw_blocks),
+            "edit_blocks": raw_blocks,
         },
         "content_normalized": {
             "expected_token_count": len(normalized_expected),
             "recognized_token_count": len(normalized_recognized),
-            "edit_blocks": edit_blocks(normalized_expected, normalized_recognized),
+            "exact_match": not normalized_blocks,
+            "edit_block_count": len(normalized_blocks),
+            "edit_blocks": normalized_blocks,
         },
         "interpretation": (
             "Use these blocks to localize a speech or recognition defect. This report "
@@ -148,8 +159,18 @@ def main() -> None:
         raise ValueError("ASR transcript has no text")
 
     report = build_report(expected_text, recognized_text, validator)
-    report["receipt_path"] = receipt_path.relative_to(root).as_posix()
-    report["asr_path"] = asr_path.relative_to(root).as_posix()
+    diagnostic_path = Path(__file__).resolve()
+    validator_path = root / "scripts/validate_visual_narration.py"
+    report["custody"] = {
+        "diagnostic_path": diagnostic_path.relative_to(root).as_posix(),
+        "diagnostic_sha256": sha256(diagnostic_path),
+        "canonical_validator_path": validator_path.relative_to(root).as_posix(),
+        "canonical_validator_sha256": sha256(validator_path),
+        "receipt_path": receipt_path.relative_to(root).as_posix(),
+        "receipt_sha256": sha256(receipt_path),
+        "asr_path": asr_path.relative_to(root).as_posix(),
+        "asr_sha256": sha256(asr_path),
+    }
     print(json.dumps(report, indent=2))
 
 

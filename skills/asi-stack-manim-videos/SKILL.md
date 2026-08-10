@@ -394,33 +394,8 @@ from those exact artifacts, and sync again. Run picture-and-sound lock review
 against this exact candidate and its receipt; any resulting edit creates a new
 candidate and reopens the review. Never hand-author the final receipt.
 
-```bash
-python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py \
-  visual_edition/chapters/<chapter>/generation-2/scene.py <SceneClass> \
-  --treatment visual_edition/chapters/<chapter>/generation-2/treatment.json \
-  --audio-master build/visual_edition/audio/<chapter>-narration-master.wav --profile release \
-  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json
-python3 scripts/sync_manim_v2_production_ledger.py
-python3 skills/asi-stack-manim-videos/scripts/audit_av_experience.py \
-  build/visual_edition/generation-2/final/<chapter>.mp4 \
-  --plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
-  --target-lufs -16 --json-out visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json
-python3 skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py \
-  --sandbox-receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json \
-  --av-diagnostics visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json \
-  --output visual_edition/chapters/<chapter>/generation-2/render_receipt.json
-python3 skills/asi-stack-manim-videos/scripts/sample_video_beats.py \
-  build/visual_edition/generation-2/final/<chapter>.mp4 \
-  visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
-  --sample-set final
-python3 skills/asi-stack-manim-videos/scripts/build_caption_review_sheet.py \
-  build/visual_edition/generation-2/final/<chapter>.mp4 \
-  visual_edition/chapters/<chapter>/generation-2/captions.vtt \
-  visual_edition/chapters/<chapter>/generation-2/receipts/caption-overlay.png \
-  --report-json visual_edition/chapters/<chapter>/generation-2/receipts/caption-diagnostics.json
-python3 scripts/sync_manim_v2_production_ledger.py
-python3 scripts/validate_manim_v2_production_ledger.py
-```
+Use the exact [release candidate command sequence](references/asi-stack-pipeline.md#release-candidate-command-sequence);
+do not reconstruct it from memory or omit either ledger synchronization.
 
 Sample at least start, quarter, midpoint, three-quarter, and end of every beat,
 plus risky interpolations. Store the sample manifest and digest. Watch motion

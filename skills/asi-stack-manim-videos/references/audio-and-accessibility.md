@@ -134,8 +134,9 @@ signal validation, and still listen to the result. Zero content error is strong
 custody evidence, not proof of natural cadence or correct emphasis.
 
 Use `diagnose_narration_asr.py` to print the exact raw and content-normalized
-edit blocks. It is read-only and diagnostic: it neither changes the canonical
-normalization contract nor passes the content gate.
+edit blocks with exact input, validator, and diagnostic digests. It is read-only
+and diagnostic: it neither changes the canonical normalization contract nor
+passes the content gate.
 
 ## Mix for comprehension
 

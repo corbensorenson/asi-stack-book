@@ -9,21 +9,23 @@
 - Timing states
 - Review lanes
 - Authoring sequence
+- Release candidate command sequence
 - Invalidation
 - Historical revisions and publication
 
 ## Current baseline
 
-As of 2026-08-09, the canonical structure contains 85 chapters. Generation one
-preserves 84 historical packets; the later chapter correctly has no fabricated
-predecessor. Generation two contains 24 case-first narration drafts and 61
-planned chapters. No current v3 treatment or approved script exists yet.
+Derive the chapter count, predecessor inventory, generation-two state
+distribution, and open gates from `book_structure.json` and
+`visual_edition/manim_v2_production_ledger.json` at the start of every run.
+Never copy a dated count into a production decision or fabricate a predecessor
+to make generations symmetrical.
 
-Those 24 drafts pass structural narration lint, but lint does not establish
-truth, voice, or visualizability. Their earlier treatment-free beat plans,
-audio, scenes, captions, renders, and reviews predate the current contract and
-remain history. The v3 ledger truthfully reports the drafts as
-`narration_draft`, with downstream gates closed.
+Structural narration lint does not establish truth, voice, or visualizability.
+Any treatment-free beat plan, audio, scene, caption, render, or review that
+predates the current treatment and review contracts remains history. The
+canonical ledger must report only the furthest state earned by current bound
+artifacts, with every downstream gate closed.
 
 Do not use the legacy packet generator for new authorship. Its commands require
 the explicit `--historical-generation-one` acknowledgement. Do not create
@@ -260,6 +262,41 @@ generalization.
 15. Run the source-aware review, then the context-isolated cold proxy review.
 16. Pass technical and claim-fidelity gates; accept locally.
 17. Publish only with action-time authority and reconcile all external identity.
+
+## Release candidate command sequence
+
+Run the complete sequence from the repository root. It renders through the
+tracked runner, binds the ignored-build master into the ledger, compiles rather
+than hand-authors final custody, samples the exact candidate, builds the caption
+review surface, and validates the resulting ledger.
+
+```bash
+python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py \
+  visual_edition/chapters/<chapter>/generation-2/scene.py <SceneClass> \
+  --treatment visual_edition/chapters/<chapter>/generation-2/treatment.json \
+  --audio-master build/visual_edition/audio/<chapter>-narration-master.wav --profile release \
+  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json
+python3 scripts/sync_manim_v2_production_ledger.py
+python3 skills/asi-stack-manim-videos/scripts/audit_av_experience.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  --plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --target-lufs -16 --json-out visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json
+python3 skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py \
+  --sandbox-receipt visual_edition/chapters/<chapter>/generation-2/receipts/release-sandbox.json \
+  --av-diagnostics visual_edition/chapters/<chapter>/generation-2/av_diagnostics.json \
+  --output visual_edition/chapters/<chapter>/generation-2/render_receipt.json
+python3 skills/asi-stack-manim-videos/scripts/sample_video_beats.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --sample-set final
+python3 skills/asi-stack-manim-videos/scripts/build_caption_review_sheet.py \
+  build/visual_edition/generation-2/final/<chapter>.mp4 \
+  visual_edition/chapters/<chapter>/generation-2/captions.vtt \
+  visual_edition/chapters/<chapter>/generation-2/receipts/caption-overlay.png \
+  --report-json visual_edition/chapters/<chapter>/generation-2/receipts/caption-diagnostics.json
+python3 scripts/sync_manim_v2_production_ledger.py
+python3 scripts/validate_manim_v2_production_ledger.py
+```
 
 ## Invalidation
 
