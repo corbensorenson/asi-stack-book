@@ -1,0 +1,184 @@
+{
+  "schema_version": "asi_stack.manim_sandbox_policy_receipt.v1",
+  "created_at_utc": "2026-08-10T02:59:43Z",
+  "chapter_id": "system-boundaries-and-authority",
+  "profile": "draft",
+  "isolation_mode": "macos_sandbox_exec",
+  "runner": {
+    "path": "skills/asi-stack-manim-videos/scripts/render_scene_isolated.py",
+    "sha256": "e2095058a0d74b378af9ec37514b07f898c86b5442d6481a8590e1af27062321"
+  },
+  "policy": {
+    "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/receipts/animatic-sandbox.sb",
+    "sha256": "333ccddcab8d03529f0bf9a6bd2c3d6317cece625a95160154c35e543bf8bbe8"
+  },
+  "scene": {
+    "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/scene.py",
+    "sha256": "17666ac60db94a55bed5db478ae8b9935296a00f4a9183f1448288be3aa14691"
+  },
+  "treatment": {
+    "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/treatment.json",
+    "sha256": "eb978aad814332b7596db29acc79f5a888c6c015c8cbdc6818a6a3ad3a35c53d"
+  },
+  "audio_master": {
+    "path": "build/visual_edition/audio/system-boundaries-and-authority-narration-master.wav",
+    "sha256": "83fd0075c5836da698e823e2d98cd86f9f8787c21d240d5e681b90a78b4424cf"
+  },
+  "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    },
+    "ffprobe": {
+      "path": "/opt/homebrew/bin/ffprobe",
+      "version": "8.0.1",
+      "sha256": "6057aa35c4dc2686b5368680c36fe39df2ea82e8adca509d2b04994c65280642"
+    }
+  },
+  "network_access": false,
+  "credential_environment_inherited": false,
+  "repository_writable_roots": [
+    "build/visual_edition"
+  ],
+  "filesystem_read_scope": {
+    "global_metadata_lookup": true,
+    "unlisted_repository_content_access": false,
+    "repository_content_mode": "explicit_inputs_plus_build",
+    "system_content_roots": [
+      "/System",
+      "/Library/ColorSync",
+      "/Library/Fonts",
+      "/Library/Frameworks",
+      "/usr",
+      "/bin",
+      "/sbin",
+      "/opt/homebrew"
+    ],
+    "rationale": "The macOS Python launcher and native dependencies require the listed system content roots plus global metadata; unlisted repository file contents remain denied."
+  },
+  "resource_limits": {
+    "wall_seconds": 900,
+    "cpu_seconds": 1800,
+    "max_file_size_bytes": 4294967296,
+    "max_open_files": 256,
+    "max_processes": 256,
+    "max_resident_memory_bytes": null,
+    "memory_limit_status": "not_enforced_macos",
+    "core_dump_bytes": 0
+  },
+  "policy_self_test": {
+    "allowed_write": "pass",
+    "credentials_stripped": "pass",
+    "denied_read": "pass",
+    "denied_write": "pass",
+    "hardlink_escape_denied": "pass",
+    "network_denied": "pass",
+    "symlink_escape_denied": "pass",
+    "symlink_read_escape_denied": "pass",
+    "unlisted_exec_denied": "pass"
+  },
+  "resource_limit_self_test": {
+    "core_dump_bytes": "pass",
+    "cpu_seconds": "pass",
+    "max_file_size_bytes": "pass",
+    "max_open_files": "pass",
+    "max_processes": "pass",
+    "memory_bound": "not_enforced_macos"
+  },
+  "source_preflight": {
+    "verdict": "pass",
+    "finding_count": 0,
+    "scene_sha256": "17666ac60db94a55bed5db478ae8b9935296a00f4a9183f1448288be3aa14691",
+    "auditor": {
+      "path": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py",
+      "sha256": "f2508e1dc096c633d904121a6d05025b8b04548172e8e39bf34cdb1236dbbfcb"
+    }
+  },
+  "render_steps": [
+    {
+      "phase": "scene_render",
+      "command_argv": [
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/venv/bin/python",
+        "-m",
+        "manim",
+        "render",
+        "--config_file",
+        "/Users/corbensorenson/Documents/AI_book/visual_edition/manim.cfg",
+        "--renderer",
+        "cairo",
+        "--format",
+        "mp4",
+        "--resolution",
+        "854,480",
+        "--fps",
+        "15",
+        "--seed",
+        "0",
+        "--disable_caching",
+        "--progress_bar",
+        "none",
+        "--media_dir",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/media",
+        "--output_file",
+        "system-boundaries-and-authority-visual.mp4",
+        "/Users/corbensorenson/Documents/AI_book/visual_edition/chapters/system-boundaries-and-authority/generation-2/scene.py",
+        "SystemBoundariesAuthorityGeneration2"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 52.105
+    },
+    {
+      "phase": "audio_mux",
+      "command_argv": [
+        "/opt/homebrew/bin/ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-i",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/media/videos/scene/480p15/system-boundaries-and-authority-visual.mp4",
+        "-i",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/audio/system-boundaries-and-authority-narration-master.wav",
+        "-map",
+        "0:v:0",
+        "-map",
+        "1:a:0",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "15",
+        "-c:a",
+        "aac",
+        "-ar",
+        "48000",
+        "-b:a",
+        "192k",
+        "-movflags",
+        "+faststart",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/.system-boundaries-and-authority-animatic.draft.pending.mp4"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 4.666
+    }
+  ],
+  "outputs": [
+    {
+      "role": "visual_track",
+      "path": "build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/media/videos/scene/480p15/system-boundaries-and-authority-visual.mp4",
+      "sha256": "5ee471cb34a9b66bc88d560d6223b1d1bd0d0af5511ba76ef5dcb4cae933a78b",
+      "size_bytes": 1447968
+    },
+    {
+      "role": "muxed_master",
+      "path": "build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/system-boundaries-and-authority-animatic.mp4",
+      "sha256": "0e7494790e5d6482c3e4e05e0c62c6470c383e7404497cf07b3a7c597001ba4f",
+      "size_bytes": 4775922
+    }
+  ],
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "This receipt records one constrained execution and does not prove scene safety, teaching effectiveness, chapter truth, or publication authority."
+}

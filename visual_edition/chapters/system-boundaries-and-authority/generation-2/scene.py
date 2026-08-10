@@ -1,37 +1,39 @@
-"""Generation-2 visual abstract for “System Boundaries and Authority.”
+"""Generation-two animatic for ``System Boundaries and Authority``.
 
-A refund token moves inside a typed authority envelope through accounting,
-approval, external-effect, and observation boundaries. Capability stays cyan;
-authority stays amber; the visual never lets one silently become the other.
+One refund instruction remains visually invariant while operation class and
+grant lifecycle state determine whether it can cross an external-effect gate.
 """
 
 from __future__ import annotations
+
+from math import pi
 
 from manim import (
     AnimationGroup,
     ArcBetweenPoints,
     Arrow,
     Circle,
+    Circumscribe,
     Create,
-    Cross,
     DashedLine,
-    Dot,
+    DOWN,
     FadeIn,
     FadeOut,
     GrowArrow,
+    GrowFromCenter,
     Group,
     Indicate,
     LaggedStart,
     LEFT,
     Line,
     MoveAlongPath,
-    ORIGIN,
+    Polygon,
     Rectangle,
+    RegularPolygon,
     ReplacementTransform,
     RIGHT,
     RoundedRectangle,
     Succession,
-    Text,
     Transform,
     TransformFromCopy,
     UP,
@@ -42,8 +44,8 @@ from manim import (
 from visual_edition.lib.asi_visuals import (
     ACCENT,
     AUTHORITY,
+    BACKGROUND,
     BOUNDARY,
-    COPPER,
     EVIDENCE,
     INK,
     MUTED,
@@ -56,12 +58,22 @@ from visual_edition.lib.asi_visuals import (
 
 
 class SystemBoundariesAuthorityGeneration2(AsiScene):
-    TARGET_DURATION = 279.630
+    TARGET_DURATION = 176.790
     ENDS = [
-        8.355, 20.910, 35.265, 45.520, 56.900, 70.005,
-        80.785, 91.765, 103.620, 115.425, 130.455, 142.760,
-        157.440, 171.220, 184.300, 195.655, 207.235, 212.575,
-        224.165, 237.820, 251.650, 257.300, 267.055, 279.630,
+        11.155,
+        21.085,
+        34.740,
+        46.970,
+        60.575,
+        76.205,
+        90.385,
+        102.040,
+        113.395,
+        125.475,
+        135.205,
+        148.035,
+        160.890,
+        176.790,
     ]
 
     def wait_until(self, target: float) -> None:
@@ -69,10 +81,12 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         if remaining > 0:
             self.wait(remaining)
 
-    def play_beat(self, index: int, *animations, settle: float = 0.35) -> None:
+    def beat(self, index: int, *animations, settle: float = 0.42) -> None:
+        """Schedule one audio-authoritative beat without overlapping exits."""
         self.next_section(f"b{index:02d}")
         end = self.ENDS[index - 1]
         remaining = max(0.05, end - self.renderer.time)
+        run_time = max(0.05, remaining - min(settle, remaining * 0.24))
         fade_prefix = []
         for animation in animations:
             if isinstance(animation, FadeOut):
@@ -80,391 +94,528 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             else:
                 break
         content = animations[len(fade_prefix):]
-        active = None
         if fade_prefix and content:
-            anchor_count = min(2, len(content))
-            crossfade = AnimationGroup(
-                AnimationGroup(*fade_prefix, lag_ratio=0),
-                AnimationGroup(*content[:anchor_count], lag_ratio=0),
-                lag_ratio=0,
-                run_time=min(0.8, remaining * 0.12),
+            fade_time = min(0.75, run_time * 0.14)
+            self.play(
+                Succession(
+                    AnimationGroup(*fade_prefix, lag_ratio=0, run_time=fade_time),
+                    LaggedStart(
+                        *content,
+                        lag_ratio=0.16,
+                        run_time=max(0.05, run_time - fade_time),
+                    ),
+                )
             )
-            tail = content[anchor_count:]
-            active = Succession(
-                crossfade,
-                LaggedStart(*tail, lag_ratio=0.2, run_time=max(0.05, remaining - 1.15)),
-            ) if tail else crossfade
         elif animations:
-            active = LaggedStart(*animations, lag_ratio=0.2)
-        run_time = max(0.05, remaining - min(settle, remaining * 0.22))
-        if active is not None:
-            self.play(active, run_time=run_time)
+            self.play(LaggedStart(*animations, lag_ratio=0.16, run_time=run_time))
         self.wait_until(end)
 
     @staticmethod
-    def label(value: str, size: int = 20, color: str = INK, weight: str = "NORMAL") -> Text:
+    def label(value: str, size: int = 20, color: str = INK, weight: str = "NORMAL"):
         return text(value, size=size, color=color, weight=weight)
 
-    def badge(self, value: str, color: str, width: float = 1.6, height: float = 0.55) -> VGroup:
-        shell = RoundedRectangle(
-            width=width, height=height, corner_radius=0.11,
-            stroke_color=color, stroke_width=2.4,
-            fill_color=SURFACE, fill_opacity=1,
-        )
-        return VGroup(shell, self.label(value, 14, color, "BOLD").move_to(shell))
+    def title(self, value: str, color: str = INK) -> VGroup:
+        words = self.label(value, 24, color, "BOLD").shift(UP * 3.38)
+        rule = Line(LEFT * 2.0, RIGHT * 2.0, color=color, stroke_width=2).next_to(words, DOWN, buff=0.10)
+        return VGroup(words, rule)
 
-    def refund(self, *, compact: bool = False) -> VGroup:
-        w, h = (2.2, 1.25) if compact else (3.0, 2.25)
-        shell = RoundedRectangle(
-            width=w, height=h, corner_radius=0.13,
-            stroke_color=ACCENT, stroke_width=3,
-            fill_color="#142b37", fill_opacity=1,
+    def ticket(self, *, compact: bool = False) -> VGroup:
+        width, height = (2.18, 1.34) if compact else (2.72, 2.08)
+        page = RoundedRectangle(
+            width=width,
+            height=height,
+            corner_radius=0.09,
+            color=BOUNDARY,
+            stroke_width=2.8,
+            fill_color=SURFACE,
+            fill_opacity=1,
         )
-        title = self.label("REFUND 47", 19 if compact else 24, ACCENT, "BOLD").shift(UP * (0.28 if compact else 0.72))
+        identity = Circle(radius=0.075, color=ACCENT, fill_color=ACCENT, fill_opacity=1)
+        identity.move_to(page.get_corner(UP + LEFT) + RIGHT * 0.22 + DOWN * 0.20)
+        heading = self.label("REFUND", 18 if compact else 22, ACCENT, "BOLD")
+        heading.move_to(page.get_center() + UP * (0.34 if compact else 0.69))
+        amount = self.label("$240", 18 if compact else 23, INK, "BOLD")
+        amount.move_to(page.get_center() + DOWN * (0.28 if compact else 0.50))
+        account = self.label("ACCOUNT 47", 11 if compact else 14, MUTED, "BOLD")
+        account.move_to(page.get_center() + (UP * 0.05 if compact else UP * 0.12))
         if compact:
-            amount = self.label("$240", 16, INK, "BOLD").shift(UP * -0.24)
-            return VGroup(shell, title, amount)
-        rows = VGroup(
-            self.label("ACCOUNT  47   ✓", 15, EVIDENCE),
-            self.label("AMOUNT   $240 ✓", 15, EVIDENCE),
-            self.label("COMMAND  ISSUE ✓", 15, EVIDENCE),
-        ).arrange(UP * -1, buff=0.16).shift(UP * -0.25)
-        return VGroup(shell, title, rows)
+            return VGroup(page, identity, heading, account, amount)
+        checks = VGroup(
+            self.check("", ACCENT),
+            self.check("", ACCENT),
+            self.check("", ACCENT),
+        ).arrange(RIGHT, buff=0.28).move_to(page.get_center() + DOWN * 0.72)
+        check_label = self.label("ACCOUNT / AMOUNT / COMMAND", 8, ACCENT, "BOLD")
+        check_label.move_to(page.get_center() + DOWN * 0.97)
+        return VGroup(page, identity, heading, account, amount, checks, check_label)
 
-    def membrane(self, title: str, x: float, color: str = AUTHORITY) -> VGroup:
-        line = Line(UP * 3.0, UP * -3.0, color=color, stroke_width=5).shift(RIGHT * x)
-        ticks = VGroup(*[
-            Line(LEFT * 0.12, RIGHT * 0.12, color=color, stroke_width=3).move_to([x, y, 0])
-            for y in (-2.2, -1.1, 0, 1.1, 2.2)
+    def check(self, value: str, color: str) -> VGroup:
+        ring = Circle(radius=0.16, color=color, stroke_width=2.2)
+        tick = VGroup(
+            Line(LEFT * 0.07, DOWN * 0.07, color=color, stroke_width=3),
+            Line(DOWN * 0.07, RIGHT * 0.10 + UP * 0.10, color=color, stroke_width=3),
+        ).move_to(ring)
+        if not value:
+            return VGroup(ring, tick)
+        tag = self.label(value, 9, color, "BOLD").next_to(ring, DOWN, buff=0.06)
+        return VGroup(ring, tick, tag)
+
+    def bank_gate(self, *, open_gate: bool = False, color: str = AUTHORITY) -> VGroup:
+        posts = VGroup(
+            Line(LEFT * 0.55 + UP * 1.10, LEFT * 0.55 + DOWN * 1.10, color=BOUNDARY, stroke_width=5),
+            Line(RIGHT * 0.55 + UP * 1.10, RIGHT * 0.55 + DOWN * 1.10, color=BOUNDARY, stroke_width=5),
+        )
+        crossbar = Line(LEFT * 0.55 + UP * 0.88, RIGHT * 0.55 + UP * 0.88, color=BOUNDARY, stroke_width=4)
+        gate = Line(LEFT * 0.46 + DOWN * 0.38, RIGHT * 0.46 + DOWN * 0.38, color=color, stroke_width=7)
+        if open_gate:
+            gate.rotate(pi / 2, about_point=gate.get_left())
+        aperture_shape = RegularPolygon(4, radius=0.34, color=color, stroke_width=3).rotate(pi / 4)
+        aperture_shape.move_to(UP * 0.30)
+        name = self.label("REFUND", 12, color, "BOLD").next_to(posts, DOWN, buff=0.08)
+        return VGroup(posts, crossbar, gate, aperture_shape, name)
+
+    def bank(self, *, amount: str = "$0") -> VGroup:
+        shell = Circle(radius=1.06, color=BOUNDARY, stroke_width=3, fill_color=SURFACE, fill_opacity=1)
+        roof = Polygon(LEFT * 0.72 + UP * 0.34, UP * 0.82, RIGHT * 0.72 + UP * 0.34, color=BOUNDARY, stroke_width=3)
+        columns = VGroup(*[
+            Line(UP * 0.24 + RIGHT * x, DOWN * 0.46 + RIGHT * x, color=BOUNDARY, stroke_width=3)
+            for x in (-0.46, 0, 0.46)
         ])
-        tag = self.label(title, 13, color, "BOLD").rotate(1.5708).next_to(line, RIGHT, buff=0.12)
-        return VGroup(line, ticks, tag)
+        balance = self.label(amount, 17, EVIDENCE if amount != "$0" else MUTED, "BOLD").move_to(DOWN * 0.72)
+        return VGroup(shell, roof, columns, balance)
 
-    def stamp(self, name: str, value: str, color: str = AUTHORITY, width: float = 1.65) -> VGroup:
+    def state_chip(self, value: str, color: str, width: float = 1.54) -> VGroup:
         shell = RoundedRectangle(
-            width=width, height=0.64, corner_radius=0.08,
-            stroke_color=color, stroke_width=2,
-            fill_color=SURFACE, fill_opacity=1,
+            width=width,
+            height=0.46,
+            corner_radius=0.07,
+            color=color,
+            stroke_width=2.2,
+            fill_color=SURFACE,
+            fill_opacity=1,
         )
-        labels = VGroup(
-            self.label(name, 10, MUTED, "BOLD"),
-            self.label(value, 13, color, "BOLD"),
-        ).arrange(UP * -1, buff=0.02).move_to(shell)
-        return VGroup(shell, labels)
+        label = self.label(value, 11, color, "BOLD").move_to(shell)
+        return VGroup(shell, label)
 
-    def envelope(self, *, missing: str | None = None) -> VGroup:
+    def sleeve(self, *, state: str = "UNBOUND", uses: str = "-", color: str = AUTHORITY) -> VGroup:
         shell = RoundedRectangle(
-            width=5.55, height=3.25, corner_radius=0.18,
-            stroke_color=AUTHORITY, stroke_width=3,
-            fill_color="#181f21", fill_opacity=0.96,
+            width=3.18,
+            height=2.46,
+            corner_radius=0.15,
+            color=color,
+            stroke_width=3,
+            fill_color=BACKGROUND,
+            fill_opacity=0.20,
         )
-        flap = VGroup(
-            Line(shell.get_corner(UP + LEFT), ORIGIN + UP * -0.25, color=AUTHORITY, stroke_width=2),
-            Line(shell.get_corner(UP + RIGHT), ORIGIN + UP * -0.25, color=AUTHORITY, stroke_width=2),
-        ).move_to(shell)
-        fields = [
-            ("PRINCIPAL", "USER 12"), ("DOMAIN", "ACCOUNTING"), ("OPERATION", "READ"),
-            ("TARGET", "RECORD 47"), ("CLASS", "READ"), ("SCOPE", "ONE RECORD"),
-            ("CEILING", "CALLER"), ("EPOCH", "7"), ("EXPIRY", "14:05"),
-            ("RECEIPTS", "REQUIRED"),
-        ]
-        stamps = VGroup()
-        for i, (name, value) in enumerate(fields):
-            color = ROLLBACK if missing == name else AUTHORITY
-            shown = "MISSING" if missing == name else value
-            item = self.stamp(name, shown, color, width=1.0).scale(0.72)
-            item.move_to([-2.15 + (i % 5) * 1.08, 1.12 - (i // 5) * 2.22, 0])
-            stamps.add(item)
-        return VGroup(shell, flap, stamps)
+        state_tag = self.state_chip(state, color, 1.42).move_to(shell.get_top() + DOWN * 0.24)
+        use_label = "1 USE" if uses == "1" else f"{uses} USES"
+        use_tag = self.state_chip(use_label, color, 1.10).move_to(shell.get_bottom() + UP * 0.25)
+        return VGroup(shell, state_tag, use_tag)
 
-    def receipt(self, name: str, detail: str, color: str = EVIDENCE) -> VGroup:
-        shell = RoundedRectangle(
-            width=1.85, height=0.86, corner_radius=0.08,
-            stroke_color=color, stroke_width=2.2,
-            fill_color=SURFACE, fill_opacity=1,
-        )
-        notch = Circle(radius=0.08, color=color, fill_color=color, fill_opacity=1).move_to(shell.get_left() + RIGHT * 0.18)
-        labels = VGroup(
-            self.label(name, 13, color, "BOLD"), self.label(detail, 10, MUTED),
-        ).arrange(UP * -1, buff=0.04).move_to(shell).shift(RIGHT * 0.08)
-        return VGroup(shell, notch, labels)
+    def field(self, name: str, color: str = AUTHORITY) -> VGroup:
+        notch = RoundedRectangle(width=1.12, height=0.38, corner_radius=0.05, color=color, stroke_width=2)
+        tag = self.label(name, 9, color, "BOLD").move_to(notch)
+        return VGroup(notch, tag)
 
-    def permission(self, name: str, color: str, sides: int = 0) -> VGroup:
-        if sides == 0:
-            shape = Circle(radius=0.38, color=color, stroke_width=3, fill_color=SURFACE, fill_opacity=1)
+    def key(self, kind: str, color: str) -> VGroup:
+        if kind == "READ":
+            head = Circle(radius=0.36, color=color, stroke_width=3, fill_color=SURFACE, fill_opacity=1)
         else:
-            from manim import RegularPolygon
-            shape = RegularPolygon(sides, radius=0.43, color=color, stroke_width=3, fill_color=SURFACE, fill_opacity=1)
-        tag = self.label(name, 12, color, "BOLD").next_to(shape, UP * -1, buff=0.08)
-        return VGroup(shape, tag)
+            head = RegularPolygon(4, radius=0.47, color=color, stroke_width=3, fill_color=SURFACE, fill_opacity=1).rotate(pi / 4)
+        shaft = Line(RIGHT * 0.28, RIGHT * 1.33, color=color, stroke_width=6)
+        tooth_a = Line(RIGHT * 0.94, RIGHT * 0.94 + DOWN * 0.30, color=color, stroke_width=5)
+        tooth_b = Line(RIGHT * 1.22, RIGHT * 1.22 + DOWN * 0.22, color=color, stroke_width=5)
+        label = self.label(kind, 11, color, "BOLD").move_to(head)
+        return VGroup(head, shaft, tooth_a, tooth_b, label)
+
+    def receipt(self, kind: str, detail: str, color: str) -> VGroup:
+        if kind == "REQUEST":
+            shell = Rectangle(width=1.82, height=0.72, color=color, stroke_width=2.2, fill_color=SURFACE, fill_opacity=1)
+        elif kind == "EFFECT":
+            shell = RoundedRectangle(width=1.82, height=0.72, corner_radius=0.16, color=color, stroke_width=2.2, fill_color=SURFACE, fill_opacity=1)
+        elif kind == "OBSERVE":
+            shell = RegularPolygon(6, radius=0.66, color=color, stroke_width=2.2, fill_color=SURFACE, fill_opacity=1).stretch(1.45, 0)
+        else:
+            shell = Polygon(
+                LEFT * 0.92 + UP * 0.36,
+                RIGHT * 0.72 + UP * 0.36,
+                RIGHT * 0.92,
+                RIGHT * 0.72 + DOWN * 0.36,
+                LEFT * 0.92 + DOWN * 0.36,
+                color=color,
+                stroke_width=2.2,
+                fill_color=SURFACE,
+                fill_opacity=1,
+            )
+        title = self.label(kind, 11, color, "BOLD").move_to(shell.get_center() + UP * 0.11)
+        note = self.label(detail, 9, MUTED, "BOLD").move_to(shell.get_center() + DOWN * 0.15)
+        return VGroup(shell, title, note)
+
+    def proof_socket(self, value: str, color: str = RESIDUAL) -> VGroup:
+        socket = RoundedRectangle(width=2.10, height=0.54, corner_radius=0.08, color=color, stroke_width=2.3)
+        label = self.label(value, 11, color, "BOLD").move_to(socket)
+        return VGroup(socket, label)
+
+    def clear(self):
+        return FadeOut(Group(*self.mobjects))
 
     def construct(self) -> None:
-        self.camera.background_color = "#14262F"
-        # 1 — correctness is complete, authority is unresolved.
-        refund = self.refund().shift(LEFT * 3.5)
-        boundary = self.membrane("EFFECT", 1.45, ROLLBACK)
-        bank = VGroup(
-            Circle(radius=0.9, color=BOUNDARY, stroke_width=3, fill_color=SURFACE, fill_opacity=1),
-            self.label("BANK", 22, INK, "BOLD"),
-        ).shift(RIGHT * 4.15)
-        effect_arrow = Arrow(refund.get_right(), boundary[0].get_center() + LEFT * 0.12, color=ACCENT, buff=0.15, stroke_width=5)
-        question = self.badge("SHOULD IT RUN?", ROLLBACK, 2.5).shift(UP * 3.25)
-        self.play_beat(1, FadeIn(refund), Create(effect_arrow), Create(boundary), FadeIn(bank), FadeIn(question), settle=0.7)
+        self.camera.background_color = BACKGROUND
 
-        # 2 — one artifact occupies unequal CAN and MAY coordinates.
-        old = Group(*self.mobjects)
-        x_axis = Arrow(LEFT * 4.7, RIGHT * 4.7, color=ACCENT, buff=0, stroke_width=3).shift(UP * -0.8)
-        y_axis = Arrow(UP * -2.8, UP * 2.8, color=AUTHORITY, buff=0, stroke_width=3).shift(LEFT * 2.6)
-        axes = VGroup(
-            x_axis, y_axis,
-            self.label("CAN", 18, ACCENT, "BOLD").next_to(x_axis, RIGHT),
-            self.label("MAY", 18, AUTHORITY, "BOLD").next_to(y_axis, UP),
+        # b01: correctness is complete before authority appears.
+        ticket = self.ticket().shift(LEFT * 4.65 + UP * 0.58)
+        gate = self.bank_gate().shift(RIGHT * 0.55 + UP * 0.58)
+        bank = self.bank().shift(RIGHT * 4.55 + UP * 0.58)
+        path = DashedLine(ticket.get_right(), gate.get_left(), color=ACCENT, dash_length=0.13)
+        heading = self.title("SHOULD THE BANK EXECUTE IT?", ROLLBACK)
+        self.beat(
+            1,
+            FadeIn(ticket, shift=RIGHT * 0.20),
+            Create(path),
+            Create(gate),
+            FadeIn(bank),
+            Write(heading),
+            settle=0.70,
         )
-        capable = self.badge("CAPABLE", ACCENT, 1.7).move_to([2.7, -0.8, 0])
-        not_authorized = self.badge("NOT YET AUTHORIZED", ROLLBACK, 2.75).move_to([2.7, 0.15, 0])
-        token = self.refund(compact=True).scale(0.72).move_to([2.7, -0.25, 0])
-        delta = DashedLine([2.7, -0.8, 0], [2.7, 1.8, 0], color=AUTHORITY, dash_length=0.13)
-        self.play_beat(2, FadeOut(old), Create(axes), FadeIn(capable), Create(delta), FadeIn(not_authorized), FadeIn(token), settle=0.45)
 
-        # 3 — typed authority envelope is assembled around the refund.
+        # b02: CAN and MAY become separate questions in the same workbench.
+        can = self.state_chip("CAN: COMPLETE", ACCENT, 2.05).shift(LEFT * 4.65 + UP * 2.45)
+        may = self.state_chip("MAY: CLOSED", AUTHORITY, 1.88).shift(RIGHT * 0.55 + UP * 2.45)
+        divider = DashedLine(UP * 2.72, DOWN * 0.76, color=BOUNDARY, dash_length=0.12).shift(LEFT * 1.80)
+        not_yet = self.label("NOT YET", 24, ROLLBACK, "BOLD").move_to(LEFT * 1.0 + UP * 1.45)
+        self.beat(
+            2,
+            FadeOut(heading),
+            FadeIn(can, shift=DOWN * 0.12),
+            FadeIn(may, shift=DOWN * 0.12),
+            Create(divider),
+            Write(not_yet),
+            Indicate(gate[2], color=AUTHORITY),
+            settle=0.55,
+        )
+
+        # b03: authority is visible state around the unchanged ticket.
         old = Group(*self.mobjects)
-        env = self.envelope().scale(0.94)
-        inner_refund = self.refund(compact=True).scale(0.64).move_to(env).shift(UP * -0.02)
-        title = self.badge("AUTHORITY ENVELOPE", AUTHORITY, 2.8).shift(UP * 3.2)
-        self.play_beat(3, FadeOut(old), FadeIn(title), Create(env[0]), Create(env[1]), FadeIn(inner_refund), LaggedStart(*[FadeIn(s) for s in env[2]], lag_ratio=0.1), settle=0.5)
+        compact_ticket = self.ticket(compact=True).shift(LEFT * 3.72 + UP * 0.58)
+        sleeve = self.sleeve().move_to(compact_ticket)
+        fields = VGroup(
+            self.field("REQUESTER"),
+            self.field("EFFECT"),
+            self.field("TARGET"),
+            self.field("LIMIT"),
+            self.field("DEADLINE"),
+            self.field("RECEIPTS"),
+        ).arrange_in_grid(rows=2, cols=3, buff=(0.16, 0.18)).scale(0.82)
+        fields.move_to(RIGHT * 0.18 + UP * 0.62)
+        confidence = self.state_chip("CONFIDENCE != AUTHORITY", ACCENT, 2.78).shift(RIGHT * 3.60 + UP * 2.32)
+        open_slot = self.proof_socket("MISSING FIELD", ROLLBACK).shift(RIGHT * 3.60 + UP * 0.58)
+        connector = DashedLine(fields.get_right(), open_slot.get_left(), color=AUTHORITY, dash_length=0.12)
+        self.beat(
+            3,
+            FadeOut(old),
+            FadeIn(compact_ticket),
+            Create(sleeve),
+            LaggedStart(*[FadeIn(field) for field in fields], lag_ratio=0.12),
+            Create(connector),
+            FadeIn(open_slot),
+            FadeIn(confidence),
+            settle=0.72,
+        )
 
-        # 4 — capability proxies fail to mint a missing permission.
-        proxies = VGroup(
-            self.badge("GOOD ANSWER", ACCENT, 1.8), self.badge("TRUSTED MODEL", ACCENT, 1.9),
-            self.badge("TOOL READY", ACCENT, 1.65), self.badge("ROUTE 0.94", ACCENT, 1.65),
-        ).arrange(RIGHT, buff=0.24).shift(UP * 3.15)
-        missing_socket = VGroup(
-            Circle(radius=0.45, color=ROLLBACK, stroke_width=3),
-            self.label("PERMISSION\nMISSING", 11, ROLLBACK, "BOLD").move_to([0, -0.02, 0]),
-        ).shift(RIGHT * 4.95 + UP * -0.1)
-        path = ArcBetweenPoints(env.get_right(), missing_socket.get_left(), angle=-0.35)
-        self.play_beat(4, FadeOut(title), FadeIn(proxies), Create(path), FadeIn(missing_socket), Indicate(missing_socket, color=ROLLBACK), env.animate.shift(LEFT * 0.85), inner_refund.animate.shift(LEFT * 0.85), settle=0.35)
-
-        # 5 — scoped read authority opens one record and returns one receipt.
+        # b04: READ reaches the right account and the wrong operation socket.
         old = Group(*self.mobjects)
-        accounting = RoundedRectangle(width=9.2, height=5.2, corner_radius=0.2, stroke_color=BOUNDARY, stroke_width=3, fill_color="#12242c", fill_opacity=0.65)
-        account_tag = self.badge("ACCOUNTING DOMAIN", BOUNDARY, 2.7).shift(UP * 3.15)
-        records = VGroup(*[
-            self.receipt(f"CUSTOMER {i}", "LOCKED", MUTED) for i in (45, 46, 47, 48, 49)
-        ]).arrange(RIGHT, buff=0.24).shift(UP * 0.35)
-        records[2] = self.receipt("CUSTOMER 47", "IN SCOPE", EVIDENCE).move_to(records[2])
-        small_env = self.badge("READ · USER 12 · RECORD 47", AUTHORITY, 3.4).shift(LEFT * 3.5 + UP * -1.5)
-        read_receipt = self.receipt("READ", "RECEIPT 01").shift(RIGHT * 3.6 + UP * -1.5)
-        rail = Line(LEFT * 4.5, RIGHT * 4.5, color=BOUNDARY, stroke_width=2).shift(UP * -2.35)
-        self.play_beat(5, FadeOut(old), Create(accounting), FadeIn(account_tag), LaggedStart(*[FadeIn(r) for r in records], lag_ratio=0.12), FadeIn(small_env), Create(rail), TransformFromCopy(records[2], read_receipt), settle=0.35)
+        ticket_read = self.ticket(compact=True).shift(LEFT * 4.35 + UP * 0.62)
+        sleeve_read = self.sleeve(state="READ", uses="-", color=ACCENT).move_to(ticket_read)
+        read_key = self.key("READ", ACCENT).scale(0.82).shift(LEFT * 1.35 + UP * 0.42)
+        gate_read = self.bank_gate().shift(RIGHT * 1.38 + UP * 0.62)
+        account = self.bank(amount="VISIBLE").scale(0.84).shift(RIGHT * 4.65 + UP * 0.62)
+        account_line = DashedLine(ticket_read.get_right(), account.get_left(), color=ACCENT, dash_length=0.14)
+        mismatch = self.state_chip("NO FIT", ROLLBACK, 1.18).shift(RIGHT * 1.38 + UP * 2.36)
+        self.beat(
+            4,
+            FadeOut(old),
+            FadeIn(ticket_read),
+            Create(sleeve_read),
+            Create(account_line),
+            FadeIn(account),
+            FadeIn(gate_read),
+            FadeIn(read_key),
+            read_key.animate.move_to(gate_read[3].get_center() + LEFT * 1.08),
+            FadeIn(mismatch),
+            Circumscribe(gate_read[3], color=ROLLBACK),
+            settle=0.82,
+        )
 
-        # 6 — transform is a new permission class, not ambient read power.
-        read_stamp = self.badge("READ", ACCENT, 1.4).shift(LEFT * 1.7 + UP * -0.8)
-        transform_stamp = self.badge("TRANSFORM", AUTHORITY, 1.9).shift(RIGHT * 0.1 + UP * -0.8)
-        summary = self.receipt("SUMMARY 47", "TAX + TOTAL", ACCENT).shift(RIGHT * 2.4 + UP * 0.35)
-        transform_receipt = self.receipt("TRANSFORM", "RECEIPT 02").shift(RIGHT * 1.4 + UP * -2.35)
-        not_equal = self.label("≠", 42, ROLLBACK, "BOLD").move_to([-0.75, -0.8, 0])
-        self.play_beat(6, FadeIn(read_stamp), FadeIn(not_equal), FadeIn(transform_stamp), TransformFromCopy(records[2], summary), TransformFromCopy(transform_stamp, transform_receipt), settle=0.4)
+        # b05: denial is an inspectable successful outcome.
+        rail = Line(LEFT * 4.85 + UP * 2.18, RIGHT * 4.85 + UP * 2.18, color=BOUNDARY, stroke_width=2)
+        denial = self.receipt("DENIED", "READ != REFUND", ROLLBACK).shift(RIGHT * 3.45 + UP * 2.18)
+        cause = ArcBetweenPoints(gate_read[3].get_top(), denial.get_bottom(), angle=-0.35, color=ROLLBACK)
+        refusal = self.label("SUCCESSFUL REFUSAL", 23, ROLLBACK, "BOLD").shift(LEFT * 1.45 + UP * 2.82)
+        self.beat(
+            5,
+            FadeOut(mismatch),
+            Create(rail),
+            Create(cause),
+            TransformFromCopy(gate_read[3], denial),
+            Write(refusal),
+            Indicate(gate_read[2], color=ROLLBACK),
+            settle=0.76,
+        )
 
-        # 7 — external target changes class to DISCLOSE.
+        # b06: a narrow one-shot refund key is assembled around fixed command bytes.
         old = Group(*self.mobjects)
-        accounting_box = RoundedRectangle(width=5.5, height=5.5, corner_radius=0.2, stroke_color=BOUNDARY, stroke_width=3, fill_color="#12242c", fill_opacity=0.65).shift(LEFT * 3.2)
-        vendor_box = RoundedRectangle(width=4.5, height=5.5, corner_radius=0.2, stroke_color=COPPER, stroke_width=3, fill_color="#241e19", fill_opacity=0.5).shift(RIGHT * 3.75)
-        external = self.membrane("EXTERNAL", 0.45, AUTHORITY)
-        summary2 = self.receipt("SUMMARY 47", "READY", ACCENT).shift(LEFT * 3.3)
-        class_swap = VGroup(self.badge("TRANSFORM", MUTED, 1.9), Arrow(LEFT * 0.4, RIGHT * 0.4, color=AUTHORITY), self.badge("DISCLOSE", AUTHORITY, 1.8)).arrange(RIGHT, buff=0.18).shift(UP * 2.55)
-        route = Arrow(summary2.get_right(), external[0].get_center() + LEFT * 0.15, color=ACCENT, stroke_width=5, buff=0.15)
-        self.play_beat(7, FadeOut(old), Create(accounting_box), Create(vendor_box), Create(external), FadeIn(summary2), FadeIn(class_swap), GrowArrow(route), settle=0.6)
+        ticket_active = self.ticket(compact=True).shift(LEFT * 4.45 + UP * 0.62)
+        sleeve_active = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).move_to(ticket_active)
+        refund_key = self.key("REFUND", AUTHORITY).scale(0.86).shift(LEFT * 0.60 + UP * 0.44)
+        gate_active = self.bank_gate().shift(RIGHT * 2.08 + UP * 0.62)
+        key_teeth = VGroup(
+            self.state_chip("USER 12", AUTHORITY, 1.18),
+            self.state_chip("ACCOUNT 47", AUTHORITY, 1.42),
+            self.state_chip("<= $240", AUTHORITY, 1.20),
+            self.state_chip("1 USE", AUTHORITY, 1.05),
+            self.state_chip("2:05", AUTHORITY, 0.94),
+            self.state_chip("EFFECT + OBSERVE", AUTHORITY, 2.05),
+        ).arrange_in_grid(rows=2, cols=3, buff=(0.13, 0.16)).scale(0.80).shift(RIGHT * 1.0 + UP * 2.33)
+        self.beat(
+            6,
+            FadeOut(old),
+            FadeIn(ticket_active),
+            Create(sleeve_active),
+            LaggedStart(*[FadeIn(chip, shift=DOWN * 0.10) for chip in key_teeth], lag_ratio=0.12),
+            FadeIn(refund_key),
+            Create(gate_active),
+            refund_key.animate.move_to(gate_active[3].get_center() + LEFT * 0.98),
+            Indicate(sleeve_active[1], color=AUTHORITY),
+            settle=0.92,
+        )
 
-        # 8 — disclosure is missing, denial becomes an owned artifact.
-        disclose_missing = self.badge("DISCLOSE: MISSING", ROLLBACK, 2.7).shift(UP * 0.55)
-        denial = self.receipt("DENIED", "POLICY v7", ROLLBACK).shift(RIGHT * 2.2 + UP * -0.9)
-        owner = self.badge("OWNER · APPROVAL SERVICE", RESIDUAL, 3.0).shift(RIGHT * 3.2 + UP * -2.2)
-        stop_dot = Dot(radius=0.16, color=ROLLBACK).move_to(external[0].get_center())
-        self.play_beat(8, FadeIn(disclose_missing), FadeIn(stop_dot), FadeIn(denial), GrowArrow(Arrow(denial.get_bottom(), owner.get_top(), color=RESIDUAL, buff=0.12)), FadeIn(owner), settle=0.55)
-
-        # 9 — escalation narrows instead of widening ambient authority.
+        # b07: dispatch consumes the use and produces distinct effect/observation paths.
         old = Group(*self.mobjects)
-        narrow_shell = RoundedRectangle(width=8.8, height=4.8, corner_radius=0.18, stroke_color=AUTHORITY, stroke_width=3, fill_color="#191f21", fill_opacity=0.95)
-        narrow_title = self.badge("NARROW APPROVAL GRANT", AUTHORITY, 2.8).shift(UP * 3.05)
-        narrow_stamps = VGroup(
-            self.stamp("TARGET", "VENDOR 47"), self.stamp("CONTENT", "SUMMARY SHA"),
-            self.stamp("USES", "1"), self.stamp("EXPIRY", "14:05"),
-            self.stamp("EFFECT", "RECEIPT"), self.stamp("OBSERVE", "REQUIRED"),
-        ).arrange_in_grid(rows=2, cols=3, buff=(0.28, 0.55)).move_to(narrow_shell)
-        approval_key = VGroup(Circle(radius=0.45, color=AUTHORITY, stroke_width=4), Line(RIGHT * 0.35, RIGHT * 1.5, color=AUTHORITY, stroke_width=5), Line(RIGHT * 1.1, RIGHT * 1.1 + UP * -0.35, color=AUTHORITY, stroke_width=5)).shift(LEFT * 4.8)
-        self.play_beat(9, FadeOut(old), Create(narrow_shell), FadeIn(narrow_title), FadeIn(approval_key), LaggedStart(*[FadeIn(s) for s in narrow_stamps], lag_ratio=0.12), settle=0.35)
+        gate_open = self.bank_gate(open_gate=True, color=EVIDENCE).shift(RIGHT * 0.40 + UP * 0.56)
+        trace_ticket = self.ticket(compact=True).scale(0.84).shift(LEFT * 4.70 + UP * 0.56)
+        trace_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.84).move_to(trace_ticket)
+        trace = VGroup(trace_ticket, trace_sleeve)
+        spent_ticket = self.ticket(compact=True).scale(0.84).shift(RIGHT * 2.70 + UP * 0.56)
+        spent_sleeve = self.sleeve(state="CONSUMED", uses="0", color=ROLLBACK).scale(0.84).move_to(spent_ticket)
+        spent_trace = VGroup(spent_ticket, spent_sleeve)
+        path_cross = Line(trace.get_center(), spent_trace.get_center(), color=EVIDENCE)
+        bank_changed = self.bank(amount="-$240").scale(0.82).shift(RIGHT * 5.45 + UP * 0.56)
+        counter_zero = self.state_chip("1 -> 0", ROLLBACK, 1.28).shift(LEFT * 1.65 + UP * 2.50)
+        effect = self.receipt("EFFECT", "REFUND RAN", EVIDENCE).shift(RIGHT * 1.00 + UP * 2.50)
+        observe = self.receipt("OBSERVE", "DELTA -$240", ACCENT).shift(RIGHT * 3.65 + UP * 2.50)
+        observer_line = DashedLine(observe.get_bottom(), bank_changed.get_top(), color=ACCENT, dash_length=0.12)
+        self.beat(
+            7,
+            FadeOut(old),
+            FadeIn(trace),
+            Create(gate_open),
+            Create(path_cross),
+            FadeIn(bank_changed),
+            Succession(
+                MoveAlongPath(trace, path_cross),
+                AnimationGroup(FadeOut(trace), FadeIn(spent_trace), lag_ratio=0),
+            ),
+            FadeIn(counter_zero),
+            FadeIn(effect),
+            Create(observer_line),
+            FadeIn(observe),
+            settle=0.88,
+        )
 
-        # 10 — request, dispatch, effect, and observation remain separate.
+        # b08: custody records answer three different questions.
         old = Group(*self.mobjects)
-        membrane2 = self.membrane("AUTHORIZED EFFECT", 0.0, EVIDENCE)
-        refund2 = self.refund(compact=True).scale(0.78).shift(LEFT * 4.6 + UP * 1.4)
-        approved = self.badge("APPROVED · ONE USE", AUTHORITY, 2.5).shift(LEFT * 4.3 + UP * 2.65)
-        effect = VGroup(Circle(radius=0.75, color=EVIDENCE, stroke_width=4), self.label("$240\nSENT", 18, EVIDENCE, "BOLD")).shift(RIGHT * 4.55 + UP * 1.4)
-        receipts = VGroup(
-            self.receipt("DISPATCH", "REQUESTED"), self.receipt("EFFECT", "RAN"), self.receipt("OBSERVE", "MATCHED"),
-        ).arrange(RIGHT, buff=0.6).shift(UP * -1.9)
-        crossing = ArcBetweenPoints(refund2.get_center(), effect.get_center(), angle=-0.25)
-        self.play_beat(10, FadeOut(old), Create(membrane2), FadeIn(refund2), FadeIn(approved), Create(crossing), MoveAlongPath(refund2, crossing), FadeOut(refund2), FadeIn(effect), LaggedStart(*[FadeIn(r) for r in receipts], lag_ratio=0.25), settle=0.45)
+        request = self.receipt("REQUEST", "REFUND $240", ACCENT).shift(LEFT * 3.40 + UP * 0.76)
+        effect_2 = self.receipt("EFFECT", "ADAPTER REPORT", EVIDENCE).shift(UP * 0.76)
+        observe_2 = self.receipt("OBSERVE", "ACCOUNT DELTA", AUTHORITY).shift(RIGHT * 3.40 + UP * 0.76)
+        custody_rail = Line(LEFT * 4.70 + UP * 2.28, RIGHT * 4.70 + UP * 2.28, color=BOUNDARY, stroke_width=2.2)
+        source_marks = VGroup(
+            self.state_chip("INSTRUCTION", ACCENT, 1.58).shift(LEFT * 3.40 + UP * 2.28),
+            self.state_chip("ADAPTER", EVIDENCE, 1.34).shift(UP * 2.28),
+            self.state_chip("OTHER PATH", AUTHORITY, 1.55).shift(RIGHT * 3.40 + UP * 2.28),
+        )
+        links = VGroup(
+            DashedLine(source_marks[0].get_bottom(), request.get_top(), color=ACCENT, dash_length=0.10),
+            DashedLine(source_marks[1].get_bottom(), effect_2.get_top(), color=EVIDENCE, dash_length=0.10),
+            DashedLine(source_marks[2].get_bottom(), observe_2.get_top(), color=AUTHORITY, dash_length=0.10),
+        )
+        separate = self.label("SEPARATE CLAIMS", 25, INK, "BOLD").shift(DOWN * 0.58)
+        self.beat(
+            8,
+            FadeOut(old),
+            Create(custody_rail),
+            LaggedStart(*[FadeIn(mark) for mark in source_marks], lag_ratio=0.16),
+            LaggedStart(FadeIn(request), FadeIn(effect_2), FadeIn(observe_2), lag_ratio=0.22),
+            LaggedStart(*[Create(link) for link in links], lag_ratio=0.18),
+            Write(separate),
+            settle=0.76,
+        )
 
-        # 11 — the deputy tries to substitute its broader credential.
+        # b09: identical bytes meet consumed authority state.
         old = Group(*self.mobjects)
-        caller = VGroup(self.refund(compact=True).scale(0.65), self.badge("CALLER · LOW", RESIDUAL, 1.9).shift(UP * -1.0)).shift(LEFT * 4.5 + UP * 0.6)
-        deputy = VGroup(
-            RoundedRectangle(width=3.0, height=2.4, corner_radius=0.15, stroke_color=ACCENT, stroke_width=3, fill_color=SURFACE, fill_opacity=1),
-            self.label("POWERFUL\nDEPUTY", 22, ACCENT, "BOLD"), self.badge("BROAD KEY", AUTHORITY, 1.8).shift(UP * -0.75),
-        ).shift(UP * 0.6)
-        protected = VGroup(Circle(radius=0.9, color=ROLLBACK, stroke_width=4), self.label("PROTECTED\nEFFECT", 17, ROLLBACK, "BOLD")).shift(RIGHT * 4.6 + UP * 0.6)
-        borrow_path = ArcBetweenPoints(caller.get_right(), deputy.get_left(), angle=0.3)
-        effect_path = ArcBetweenPoints(deputy.get_right(), protected.get_left(), angle=-0.25)
-        self.play_beat(11, FadeOut(old), FadeIn(caller), FadeIn(deputy), FadeIn(protected), Create(borrow_path), Create(effect_path), Indicate(deputy[2], color=AUTHORITY), settle=0.55)
+        first_ticket = self.ticket(compact=True).scale(0.78).shift(LEFT * 4.55 + UP * 1.52)
+        first_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.78).move_to(first_ticket)
+        replay_ticket = first_ticket.copy().shift(DOWN * 1.90)
+        replay_sleeve = self.sleeve(state="CONSUMED", uses="0", color=ROLLBACK).scale(0.78).move_to(replay_ticket)
+        gate_pair = VGroup(
+            self.bank_gate(open_gate=True, color=EVIDENCE).scale(0.82).shift(RIGHT * 1.42 + UP * 1.52),
+            self.bank_gate(open_gate=False, color=ROLLBACK).scale(0.82).shift(RIGHT * 1.42 + DOWN * 0.38),
+        )
+        identical = self.state_chip("IDENTICAL BYTES", ACCENT, 1.92).shift(LEFT * 4.55 + UP * 2.74)
+        acted = self.receipt("ACTED", "ACTIVE 1", EVIDENCE).shift(RIGHT * 4.20 + UP * 1.52)
+        refused = self.receipt("REFUSED", "CONSUMED 0", ROLLBACK).shift(RIGHT * 4.20 + DOWN * 0.38)
+        top_path = Arrow(first_ticket.get_right(), gate_pair[0].get_left(), color=EVIDENCE, buff=0.14, stroke_width=3)
+        bottom_path = Arrow(replay_ticket.get_right(), gate_pair[1].get_left(), color=ROLLBACK, buff=0.14, stroke_width=3)
+        self.beat(
+            9,
+            FadeOut(old),
+            FadeIn(first_ticket),
+            Create(first_sleeve),
+            TransformFromCopy(first_ticket, replay_ticket),
+            Create(replay_sleeve),
+            FadeIn(identical),
+            GrowArrow(top_path),
+            GrowArrow(bottom_path),
+            FadeIn(gate_pair),
+            FadeIn(acted),
+            FadeIn(refused),
+            settle=0.92,
+        )
 
-        # 12 — tuple comparison reveals substitution and preserves the caller ceiling.
-        ceiling = Line(LEFT * 5.8, RIGHT * 5.8, color=AUTHORITY, stroke_width=4).shift(UP * 2.75)
-        ceiling_label = self.badge("CALLER CEILING", AUTHORITY, 2.2).shift(UP * 3.25)
-        mismatches = VGroup(
-            self.stamp("PRINCIPAL", "≠", ROLLBACK), self.stamp("GRANT", "≠", ROLLBACK),
-            self.stamp("TARGET", "≠", ROLLBACK), self.stamp("DELEGATION", "≠", ROLLBACK),
-        ).arrange(RIGHT, buff=0.25).shift(UP * -1.7)
-        deny2 = self.badge("SUBSTITUTION DENIED", ROLLBACK, 2.8).shift(UP * -2.85)
-        self.play_beat(12, FadeIn(ceiling), FadeIn(ceiling_label), LaggedStart(*[FadeIn(m) for m in mismatches], lag_ratio=0.18), Indicate(caller, color=RESIDUAL), Indicate(deputy, color=ROLLBACK), FadeIn(deny2), settle=0.4)
-
-        # 13 — authority is a lifecycle; identical replay meets closed gates.
+        # b10: lifecycle changes close MAY while CAN remains stable.
         old = Group(*self.mobjects)
-        timeline = Arrow(LEFT * 5.4, RIGHT * 5.4, color=BOUNDARY, stroke_width=3, buff=0).shift(UP * 0.9)
-        states = VGroup(
-            self.badge("VALID", EVIDENCE), self.badge("EXPIRED", COPPER),
-            self.badge("REVOKED", ROLLBACK), self.badge("USED", RESIDUAL),
-        ).arrange(RIGHT, buff=0.85).shift(UP * 0.9)
-        replay = self.refund(compact=True).scale(0.58).shift(LEFT * 4.7 + UP * -1.35)
-        replay_line = Arrow(LEFT * 4.1, RIGHT * 4.9, color=ACCENT, stroke_width=4, buff=0).shift(UP * -1.35)
-        closed = VGroup(*[
-            Cross(Circle(radius=0.28, color=ROLLBACK), stroke_color=ROLLBACK).move_to([x, -1.35, 0]) for x in (-0.7, 1.65, 4.0)
+        command = self.ticket(compact=True).scale(0.48).shift(LEFT * 5.62 + UP * 2.48)
+        can_line = Line(LEFT * 5.82 + DOWN * 0.75, RIGHT * 5.82 + DOWN * 0.75, color=ACCENT, stroke_width=5)
+        can_tag = self.state_chip("CAN UNCHANGED", ACCENT, 1.92).shift(LEFT * 4.62 + DOWN * 0.75)
+        state_names = [
+            ("CONSUMED", "0", "0 USES", -3.55),
+            ("EXPIRED", "1", "AFTER 2:05", 0.0),
+            ("REVOKED", "1", "BEFORE SEND", 3.55),
+        ]
+        states = VGroup(*[
+            VGroup(
+                self.sleeve(state=name, uses=uses, color=ROLLBACK).scale(0.52).move_to(RIGHT * (x - 0.62) + UP * 0.78),
+                self.bank_gate(color=ROLLBACK).scale(0.46).move_to(RIGHT * (x + 1.00) + UP * 0.78),
+                self.label(detail, 10, MUTED, "BOLD").move_to(RIGHT * x + DOWN * 0.45),
+                self.ticket(compact=True).scale(0.38).move_to(RIGHT * (x - 0.62) + UP * 0.78),
+            )
+            for name, uses, detail, x in state_names
         ])
-        self.play_beat(13, FadeOut(old), Create(timeline), FadeIn(states), FadeIn(replay), GrowArrow(replay_line), LaggedStart(*[Create(c) for c in closed], lag_ratio=0.22), FadeIn(self.badge("IDENTICAL REPLAY · DENIED", ROLLBACK, 2.8).shift(UP * -2.55)), settle=0.45)
-
-        # 14 — capability replacement does not inherit authority handles.
-        old = Group(*self.mobjects)
-        slot = RoundedRectangle(width=4.0, height=3.4, corner_radius=0.18, stroke_color=BOUNDARY, stroke_width=3, fill_color=SURFACE, fill_opacity=1).shift(LEFT * 2.2)
-        model_a = self.badge("MODEL A", MUTED, 1.7).shift(LEFT * 2.2).set_z_index(3)
-        model_b = self.badge("MODEL B ↑", ACCENT, 1.9).shift(LEFT * 2.2).set_z_index(3)
-        slot_tag = self.badge("CAPABILITY SLOT", BOUNDARY, 2.3).shift(LEFT * 2.2 + UP * 2.25)
-        handles = VGroup(
-            self.stamp("SECRET", "LOCKED", ROLLBACK), self.stamp("APPROVAL", "LOCKED", ROLLBACK), self.stamp("LIVE GRANT", "LOCKED", ROLLBACK),
-        ).arrange(UP * -1, buff=0.45).shift(RIGHT * 3.35)
-        divider = self.membrane("AUTHORITY", 0.65, AUTHORITY)
-        self.add(model_a)
-        self.play_beat(14, FadeOut(old), Create(slot), FadeIn(slot_tag), ReplacementTransform(model_a, model_b), Create(divider), LaggedStart(*[FadeIn(h) for h in handles], lag_ratio=0.2), FadeIn(self.badge("NOT INHERITED", ROLLBACK, 2.2).shift(RIGHT * 3.35 + UP * -2.7)), settle=0.5)
-
-        # 15 — six permission classes resist role-label collapse.
-        old = Group(*self.mobjects)
-        permissions = VGroup(
-            self.permission("READ", ACCENT, 0), self.permission("TRANSFORM", AUTHORITY, 3),
-            self.permission("DISCLOSE", RESIDUAL, 4), self.permission("WRITE", COPPER, 5),
-            self.permission("EXECUTE", EVIDENCE, 6), self.permission("APPROVE", "#B78CFF", 8),
-        ).arrange_in_grid(rows=2, cols=3, buff=(1.15, 0.9)).shift(UP * -0.2)
-        role = self.badge("ROLE: ALL ACCESS", ROLLBACK, 2.8).shift(UP * 3.0)
-        slash = Cross(role[0], stroke_color=ROLLBACK, stroke_width=4)
-        self.play_beat(15, FadeOut(old), LaggedStart(*[FadeIn(p) for p in permissions], lag_ratio=0.15), FadeIn(role), Create(slash), settle=0.45)
-
-        # 16 — denial compiles into a useful machine-visible record.
-        old = Group(*self.mobjects)
-        denied_env = self.envelope(missing="CLASS").scale(0.72).shift(LEFT * 3.8)
-        denial_receipt = RoundedRectangle(width=5.0, height=4.7, corner_radius=0.18, stroke_color=RESIDUAL, stroke_width=3, fill_color=SURFACE, fill_opacity=1).shift(RIGHT * 2.8)
-        denial_fields = VGroup(
-            self.stamp("MISSING", "DISCLOSE", ROLLBACK, 2.0), self.stamp("POLICY", "v7", AUTHORITY, 2.0),
-            self.stamp("OWNER", "APPROVER", RESIDUAL, 2.0), self.stamp("ESCALATE", "LAWFUL PATH", EVIDENCE, 2.0),
-        ).arrange_in_grid(rows=2, cols=2, buff=(0.35, 0.55)).move_to(denial_receipt)
-        compile_arrow = Arrow(denied_env.get_right(), denial_receipt.get_left(), color=RESIDUAL, stroke_width=4, buff=0.2)
-        self.play_beat(16, FadeOut(old), FadeIn(denied_env), GrowArrow(compile_arrow), Create(denial_receipt), LaggedStart(*[FadeIn(f) for f in denial_fields], lag_ratio=0.18), settle=0.4)
-
-        # 17 — accepted refusal survives three capability successes.
-        old = Group(*self.mobjects)
-        checks = VGroup(
-            self.badge("PLAN ✓", ACCENT, 1.65), self.badge("SOURCE ✓", ACCENT, 1.8), self.badge("CAPABILITY ✓", ACCENT, 2.1),
-        ).arrange(RIGHT, buff=0.45).shift(UP * 1.7)
-        may_gate = VGroup(Circle(radius=0.75, color=AUTHORITY, stroke_width=4), self.label("MAY?", 20, AUTHORITY, "BOLD")).shift(UP * -0.1)
-        refuse = self.badge("REFUSE · ACCEPTED", EVIDENCE, 2.7).shift(UP * -2.2)
-        flows = VGroup(*[Arrow(c.get_bottom(), may_gate.get_top(), color=ACCENT, stroke_width=3, buff=0.15) for c in checks])
-        self.play_beat(17, FadeOut(old), LaggedStart(*[FadeIn(c) for c in checks], lag_ratio=0.18), LaggedStart(*[GrowArrow(a) for a in flows], lag_ratio=0.12), FadeIn(may_gate), FadeIn(refuse), settle=0.55)
-
-        # 18 — declare the local finite evidence boundary before counts.
-        old = Group(*self.mobjects)
-        board = RoundedRectangle(width=10.8, height=5.4, corner_radius=0.2, stroke_color=BOUNDARY, stroke_width=3, fill_color="#12242c", fill_opacity=0.65)
-        board_tag = self.badge("LOCAL · FINITE · EXACT COUNTS", BOUNDARY, 3.7).shift(UP * 3.15)
-        sockets = VGroup(*[
-            RoundedRectangle(width=2.2, height=1.1, corner_radius=0.1, stroke_color=MUTED, stroke_width=2, fill_color=SURFACE, fill_opacity=1)
-            for _ in range(7)
-        ]).arrange_in_grid(rows=2, cols=4, buff=(0.35, 0.45)).shift(UP * -0.2)
-        self.play_beat(18, FadeOut(old), Create(board), FadeIn(board_tag), LaggedStart(*[Create(s) for s in sockets], lag_ratio=0.1), settle=0.35)
-
-        # 19 — exact denominators fill the bounded board.
-        counter_values = [("6", "FIXTURES"), ("2", "DENIALS"), ("1", "EFFECT"), ("1", "OBSERVED"), ("1", "ROLLBACK"), ("5", "REVOKED"), ("38", "REJECTED")]
-        counters = VGroup()
-        for socket, (number, label) in zip(sockets, counter_values):
-            counter = VGroup(self.label(number, 28, EVIDENCE, "BOLD"), self.label(label, 12, MUTED, "BOLD")).arrange(UP * -1, buff=0.05).move_to(socket)
-            counters.add(counter)
-        self.play_beat(19, LaggedStart(*[FadeIn(c) for c in counters], lag_ratio=0.14), settle=0.4)
-
-        # 20 — reachable modeled transitions remain below the caller ceiling.
-        old = Group(*self.mobjects)
-        ceiling2 = Line(LEFT * 5.7, RIGHT * 5.7, color=AUTHORITY, stroke_width=4).shift(UP * 2.35)
-        ceiling_tag2 = self.badge("CALLER CEILING", AUTHORITY, 2.2).shift(UP * 3.0)
-        rail2 = Line(LEFT * 5.0, RIGHT * 4.0, color=BOUNDARY, stroke_width=3).shift(UP * -0.25)
-        names = ["ISSUE", "DISPATCH", "EFFECT", "REVOKE", "ONE-SHOT", "ROLLBACK"]
-        nodes = VGroup(*[
-            VGroup(Circle(radius=0.36, color=EVIDENCE, stroke_width=3, fill_color=SURFACE, fill_opacity=1), self.label(str(i + 1), 15, EVIDENCE, "BOLD"), self.label(name, 10, MUTED, "BOLD").shift(UP * -0.65))
-            for i, name in enumerate(names)
-        ]).arrange(RIGHT, buff=0.75).shift(UP * -0.25)
-        support = self.badge("BOUNDED SUPPORT", EVIDENCE, 2.5).shift(UP * -2.45)
-        self.play_beat(20, FadeOut(old), Create(ceiling2), FadeIn(ceiling_tag2), Create(rail2), LaggedStart(*[FadeIn(n) for n in nodes], lag_ratio=0.16), FadeIn(support), settle=0.4)
-
-        # 21 — production obligations remain across an evidence line.
-        old = Group(*self.mobjects)
-        evidence_line = self.membrane("EVIDENCE CEILING", 0.0, ROLLBACK)
-        current = VGroup(self.badge("FINITE MODEL", EVIDENCE, 2.1), self.badge("38/38 REJECTED", EVIDENCE, 2.2), self.badge("EXACT ROLLBACK", EVIDENCE, 2.2)).arrange(UP * -1, buff=0.45).shift(LEFT * 3.5)
-        open_work = VGroup(
-            self.badge("AUTHENTIC ID", MUTED, 2.0), self.badge("COMPLETE MEDIATION", MUTED, 2.6),
-            self.badge("CONCURRENT REVOCATION", MUTED, 3.0), self.badge("SECURE WRAPPERS", MUTED, 2.4),
-            self.badge("PRODUCTION ADAPTERS", MUTED, 2.7), self.badge("OPEN-WORLD OBSERVATION", MUTED, 3.0),
-        ).arrange_in_grid(rows=3, cols=2, buff=(0.35, 0.45)).shift(RIGHT * 3.4)
-        not_deployed = self.badge("NOT DEPLOYED AUTHORIZATION", ROLLBACK, 3.6).shift(UP * 3.15)
-        self.play_beat(21, FadeOut(old), Create(evidence_line), FadeIn(not_deployed), LaggedStart(*[FadeIn(c) for c in current], lag_ratio=0.15), LaggedStart(*[FadeIn(o) for o in open_work], lag_ratio=0.1), settle=0.55)
-
-        # 22 — restore the signature envelope under its argument ceiling.
-        old = Group(*self.mobjects)
-        final_env = self.envelope().scale(0.82).shift(UP * -0.2)
-        final_refund = self.refund(compact=True).scale(0.58).move_to(final_env).shift(UP * -0.02)
-        support_label = self.badge("DESIGN RATIONALE · SUPPORT: ARGUMENT", AUTHORITY, 4.6).shift(UP * 3.2)
-        self.play_beat(22, FadeOut(old), FadeIn(support_label), Create(final_env[0]), FadeIn(final_refund), FadeIn(final_env[2]), settle=0.35)
-
-        # 23 — four design properties pass; broad claims remain below the bar.
-        properties = VGroup(
-            self.badge("EXPLICIT", AUTHORITY, 1.7), self.badge("VERSIONED", AUTHORITY, 1.9),
-            self.badge("REVOCABLE", AUTHORITY, 1.9), self.badge("RECEIPT-BEARING", AUTHORITY, 2.5),
-        ).arrange(RIGHT, buff=0.35).shift(UP * -2.25)
-        claim_bar = Line(LEFT * 5.5, RIGHT * 5.5, color=ROLLBACK, stroke_width=4).shift(UP * -3.05)
-        nonclaims = self.label("NO SAFETY   ·   NO TRANSFER   ·   NO ASI CLAIM", 15, ROLLBACK, "BOLD").shift(UP * -3.42)
-        self.play_beat(23, LaggedStart(*[FadeIn(p) for p in properties], lag_ratio=0.18), Create(claim_bar), FadeIn(nonclaims), settle=0.55)
-
-        # 24 — both outcomes retain an inspectable trail; the residual moves on.
-        old = Group(*self.mobjects)
-        allowed = VGroup(self.refund(compact=True).scale(0.58), self.badge("ALLOWED", EVIDENCE, 1.6).shift(UP * -1.05)).shift(LEFT * 4.35 + UP * 0.65)
-        denied_final = VGroup(self.refund(compact=True).scale(0.58), self.badge("DENIED", ROLLBACK, 1.6).shift(UP * -1.05)).shift(LEFT * 1.25 + UP * 0.65)
-        trail = Line(LEFT * 5.1, RIGHT * 1.1, color=BOUNDARY, stroke_width=3).shift(UP * -1.45)
-        receipts_final = VGroup(*[Dot(radius=0.12, color=EVIDENCE) for _ in range(5)]).arrange(RIGHT, buff=0.8).move_to(trail)
-        next_membrane = self.membrane("NEXT", 2.45, COPPER)
-        cracks = VGroup(
-            Line([3.1, 1.8, 0], [3.55, 1.25, 0], color=ROLLBACK, stroke_width=4),
-            Line([3.55, 1.25, 0], [3.25, 0.7, 0], color=ROLLBACK, stroke_width=4),
-            Line([3.55, 1.25, 0], [4.05, 0.95, 0], color=ROLLBACK, stroke_width=4),
+        self.beat(
+            10,
+            FadeOut(old),
+            FadeIn(command),
+            Create(can_line),
+            FadeIn(can_tag),
+            LaggedStart(*[FadeIn(state, shift=DOWN * 0.12) for state in states], lag_ratio=0.24),
+            LaggedStart(*[Indicate(state[1][2], color=ROLLBACK) for state in states], lag_ratio=0.26),
+            settle=0.86,
         )
-        residual = self.badge("OWNED RESIDUAL", RESIDUAL, 2.2).shift(LEFT * 0.6 + UP * -2.5)
-        next_title = VGroup(
-            self.label("FAILURE MODES OF", 14, MUTED, "BOLD"),
-            self.label("UNGOVERNED INTELLIGENCE", 17, INK, "BOLD"),
-        ).arrange(UP * -1, buff=0.08).shift(RIGHT * 4.45 + UP * -1.35)
-        residual_path = ArcBetweenPoints(residual.get_center(), [3.15, -2.7, 0], angle=0.2)
-        self.play_beat(24, FadeOut(old), FadeIn(allowed), FadeIn(denied_final), Create(trail), FadeIn(receipts_final), FadeIn(residual), Create(next_membrane), Create(cracks), MoveAlongPath(residual, residual_path), FadeIn(next_title), settle=0.8)
 
-        self.wait_until(self.TARGET_DURATION)
+        # b11: stronger capability cannot move the fixed authority ceiling.
+        old = Group(*self.mobjects)
+        can_rail = Line(LEFT * 4.70 + DOWN * 0.20, RIGHT * 1.25 + DOWN * 0.20, color=ACCENT, stroke_width=8)
+        extension = Line(RIGHT * 1.25 + DOWN * 0.20, RIGHT * 4.70 + DOWN * 0.20, color=ACCENT, stroke_width=8)
+        can_label = self.label("CAN", 28, ACCENT, "BOLD").next_to(can_rail, LEFT, buff=0.18)
+        may_ceiling = Line(LEFT * 4.70 + UP * 1.62, RIGHT * 4.70 + UP * 1.62, color=AUTHORITY, stroke_width=6)
+        may_gate = self.bank_gate(color=AUTHORITY).scale(0.70).shift(RIGHT * 1.60 + UP * 1.62)
+        ceiling_label = self.label("MAY: CALLER CEILING", 22, AUTHORITY, "BOLD").shift(LEFT * 2.90 + UP * 2.18)
+        stronger = self.state_chip("STRONGER MODEL", ACCENT, 2.02).shift(RIGHT * 3.50 + DOWN * 0.82)
+        delta = DashedLine(RIGHT * 3.50 + DOWN * 0.10, RIGHT * 3.50 + UP * 1.52, color=RESIDUAL, dash_length=0.12)
+        dead = self.state_chip("DEAD GRANT", ROLLBACK, 1.54).shift(RIGHT * 3.50 + UP * 2.30)
+        self.beat(
+            11,
+            FadeOut(old),
+            Create(can_rail),
+            FadeIn(can_label),
+            Create(may_ceiling),
+            FadeIn(ceiling_label),
+            FadeIn(may_gate),
+            Create(extension),
+            FadeIn(stronger),
+            Create(delta),
+            FadeIn(dead),
+            Indicate(may_ceiling, color=AUTHORITY),
+            settle=0.82,
+        )
+
+        # b12: the finite Lean claim stays inside its encoded boundary.
+        old = Group(*self.mobjects)
+        proof_box = RoundedRectangle(width=8.10, height=3.88, corner_radius=0.16, color=EVIDENCE, stroke_width=3, fill_color=BACKGROUND, fill_opacity=0.18).shift(LEFT * 1.30 + UP * 0.62)
+        proof_title = self.state_chip("LEAN: FINITE MODEL", EVIDENCE, 2.28).move_to(proof_box.get_top() + DOWN * 0.25)
+        locks = VGroup(
+            self.proof_socket("CALLER CEILING", EVIDENCE),
+            self.proof_socket("ACTIVE GRANT", EVIDENCE),
+            self.proof_socket("DISPATCH", EVIDENCE),
+            self.proof_socket("EFFECT CUSTODY", EVIDENCE),
+        ).arrange(RIGHT, buff=0.30).scale(0.84).move_to(proof_box.get_center() + UP * 0.22)
+        trace = VGroup(*[
+            Arrow(locks[i].get_right(), locks[i + 1].get_left(), color=EVIDENCE, buff=0.08, stroke_width=2.5)
+            for i in range(3)
+        ])
+        accepted = self.state_chip("ACCEPTED WITHIN CEILING", EVIDENCE, 2.62).move_to(proof_box.get_bottom() + UP * 0.40)
+        miniature = self.ticket(compact=True).scale(0.46).shift(RIGHT * 5.10 + UP * 0.62)
+        authored = self.label("AUTHORED TRACE", 13, MUTED, "BOLD").next_to(miniature, DOWN, buff=0.10)
+        self.beat(
+            12,
+            FadeOut(old),
+            Create(proof_box),
+            FadeIn(proof_title),
+            LaggedStart(*[FadeIn(lock) for lock in locks], lag_ratio=0.18),
+            LaggedStart(*[GrowArrow(arrow) for arrow in trace], lag_ratio=0.20),
+            FadeIn(accepted),
+            FadeIn(miniature),
+            FadeIn(authored),
+            settle=0.92,
+        )
+
+        # b13: production obligations remain explicitly outside the theorem.
+        proof_group = VGroup(proof_box, proof_title, locks, trace, accepted)
+        compact_proof = proof_group.copy().scale(0.72).shift(LEFT * 2.05 + UP * 0.05)
+        outside = VGroup(
+            self.proof_socket("FORGED ID"),
+            self.proof_socket("BYPASSED WRAPPER"),
+            self.proof_socket("REVOCATION RACE"),
+            self.proof_socket("MISSED EFFECT"),
+        ).arrange(DOWN, buff=0.22).scale(0.92).shift(RIGHT * 4.30 + UP * 0.66)
+        open_label = self.label("NOT\nESTABLISHED", 19, RESIDUAL, "BOLD").shift(RIGHT * 4.30 + UP * 2.58)
+        boundary_line = DashedLine(UP * 2.72, DOWN * 1.30, color=BOUNDARY, dash_length=0.15).shift(RIGHT * 1.58)
+        self.beat(
+            13,
+            FadeOut(Group(*self.mobjects)),
+            FadeIn(compact_proof),
+            Create(boundary_line),
+            Write(open_label),
+            LaggedStart(*[FadeIn(socket, shift=LEFT * 0.12) for socket in outside], lag_ratio=0.20),
+            Indicate(boundary_line, color=BOUNDARY),
+            settle=0.92,
+        )
+
+        # b14: the signature image binds both outcomes to exact authority state.
+        old = Group(*self.mobjects)
+        left_ticket = self.ticket(compact=True).scale(0.72).shift(LEFT * 3.75 + UP * 0.62)
+        right_ticket = self.ticket(compact=True).scale(0.72).shift(RIGHT * 3.75 + UP * 0.62)
+        active_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.72).shift(LEFT * 3.75 + UP * 0.62)
+        consumed_sleeve = self.sleeve(state="CONSUMED", uses="0", color=ROLLBACK).scale(0.72).shift(RIGHT * 3.75 + UP * 0.62)
+        acted_receipt = self.receipt("ACTED", "ACTIVE 1", EVIDENCE).shift(LEFT * 3.75 + UP * 2.42)
+        refused_receipt = self.receipt("REFUSED", "CONSUMED 0", ROLLBACK).shift(RIGHT * 3.75 + UP * 2.42)
+        identity = self.state_chip("IDENTICAL COMMAND", ACCENT, 1.92).shift(UP * 0.62)
+        left_link = Arrow(identity.get_left(), active_sleeve.get_right(), color=AUTHORITY, buff=0.14, stroke_width=3)
+        right_link = Arrow(identity.get_right(), consumed_sleeve.get_left(), color=ROLLBACK, buff=0.14, stroke_width=3)
+        close = self.label("CAPABLE IS NOT AUTHORIZED", 28, INK, "BOLD").shift(DOWN * 0.86)
+        why = self.label("SHOW WHY IT ACTED OR REFUSED", 16, MUTED, "BOLD").next_to(close, DOWN, buff=0.16)
+        self.beat(
+            14,
+            FadeOut(old),
+            FadeIn(identity),
+            FadeIn(left_ticket),
+            FadeIn(right_ticket),
+            FadeIn(active_sleeve, shift=RIGHT * 0.16),
+            FadeIn(consumed_sleeve, shift=LEFT * 0.16),
+            GrowArrow(left_link),
+            GrowArrow(right_link),
+            TransformFromCopy(active_sleeve, acted_receipt),
+            TransformFromCopy(consumed_sleeve, refused_receipt),
+            Write(close),
+            FadeIn(why),
+            settle=1.50,
+        )

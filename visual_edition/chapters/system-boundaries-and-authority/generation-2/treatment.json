@@ -1,0 +1,449 @@
+{
+  "schema_version": "asi_stack.manim_treatment.v1",
+  "chapter_id": "system-boundaries-and-authority",
+  "chapter_sha256": "2810ea7b079a9da1270a9556ec1e3ce91764170f94884c14b4557f7c86e37347",
+  "source_commit": "37fdcb8536d107b3e704539a2ac0d34dbc6ad8a1",
+  "source_context_sha256": "3ccdc9c910cc1d75b72291d044773ee59791ad2a8c8c32e8675267128b4d139e",
+  "teaching_promise": "Predict why the same flawless refund instruction must run once and then be refused after only its authority state changes.",
+  "audience": {
+    "target_viewer": "A curious adult who understands bank refunds and ordinary permissions but has not studied capability security or governed AI",
+    "assumed_knowledge": [
+      "A bank refund changes an account balance",
+      "A permission may be limited or expire"
+    ],
+    "excluded_assumptions": [
+      "Prior knowledge of the ASI Stack",
+      "Familiarity with capability systems, confused deputies, or formal authorization models",
+      "Belief that a correct command is automatically authorized"
+    ],
+    "standalone_context": "The video introduces one refund ticket, one read-only grant, one narrow one-shot refund grant, one effect boundary, and the records needed to distinguish request, reported effect, and observation.",
+    "introduced_terms": [
+      "authority envelope",
+      "effect receipt",
+      "can-may delta"
+    ]
+  },
+  "promise_candidates": [
+    {
+      "promise": "Predict why the same flawless refund instruction must run once and then be refused after only its authority state changes.",
+      "consequence": "The viewer can reject a correct, replayed, or high-confidence command when its operation, use count, expiry, or revocation state no longer matches an active grant.",
+      "visual_mechanism": "One refund ticket slides into a transparent authority sleeve. A read key fails to fit the refund aperture; a one-shot refund key opens it once; an identical replay returns after the use counter reaches zero and stops.",
+      "transfer_value": "The same test applies to tool calls, file writes, deployments, purchases, disclosures, and other external effects whose capability remains constant while authority changes.",
+      "evidence_fit": "It expresses the chapter's can-versus-may distinction, exact operation-class separation, finite grant lifecycle, and bounded formal result without implying deployed enforcement.",
+      "disposition": "selected",
+      "rationale": "It keeps one object and one changed variable through the complete story, gives the viewer a concrete prediction, and earns the abstract authority rule from a visible state transition."
+    },
+    {
+      "promise": "Explain why a powerful service must not reuse its broad credential for a low-authority caller.",
+      "consequence": "The viewer could identify a confused-deputy substitution.",
+      "visual_mechanism": "A small caller envelope tries to ride behind a large service key; a ceiling bar separates the caller's delegated authority from the service's ambient capability.",
+      "transfer_value": "The mechanism applies to tool wrappers, cloud roles, and delegated agents.",
+      "evidence_fit": "The chapter and local model cover confused-deputy rejection, but this failure requires more principal and delegation setup than the refund lifecycle.",
+      "disposition": "rejected",
+      "rationale": "Keep it available for a later security-kernel or runtime-adapter episode rather than make this foundational video carry two authority mechanisms."
+    },
+    {
+      "promise": "Show why a replacement model cannot inherit a predecessor's secrets and approval power.",
+      "consequence": "The viewer could separate capability-slot continuity from authority continuity.",
+      "visual_mechanism": "A stronger model replaces a weaker one in a stable socket while keys, grants, and handles remain locked to their prior principal and epoch.",
+      "transfer_value": "The lesson applies to upgrades, recursive improvement, and rollback.",
+      "evidence_fit": "SCF strongly supports the distinction, but Capability Replacement and Rollback owns the fuller replacement transaction.",
+      "disposition": "rejected",
+      "rationale": "It would duplicate a neighboring chapter's signature mechanism and weaken this chapter's operation-level authority focus."
+    },
+    {
+      "promise": "Distinguish read, transform, disclose, write, execute, and approve as separate permission classes.",
+      "consequence": "The viewer could reject an ambient all-access role label.",
+      "visual_mechanism": "Six differently shaped keys fit six distinct effect sockets while one oversized ALL ACCESS badge fits none precisely.",
+      "transfer_value": "The taxonomy applies across tools and data boundaries.",
+      "evidence_fit": "The distinction is source-faithful, but a six-item taxonomy is less causal and less memorable than one exact lifecycle.",
+      "disposition": "rejected",
+      "rationale": "The selected refund trace demonstrates operation-class separation without turning the episode into an inventory."
+    }
+  ],
+  "selection_rationale": "For the selected promise, three cheap visual mechanisms were compared. A CAN/MAY coordinate plot makes the distinction abstract before it is earned; passport stamps imply human travel and do not preserve effect causality; the transparent authority sleeve plus keyed effect aperture preserves refund identity, makes missing authority physically legible, and supports a byte-identical replay. The sleeve-and-aperture mechanism therefore wins on causal fidelity, continuity, transfer, phone legibility, and reduced-motion survival.",
+  "content_contract": {
+    "chapter_claim_ids": [
+      "system-boundaries-and-authority.core"
+    ],
+    "source_ids": [
+      "viea",
+      "scf",
+      "talos",
+      "ladon_manhattan",
+      "genesiscode",
+      "moecot",
+      "ext_camel_prompt_injection_2025",
+      "ext_owasp_agentic_top_10_2026"
+    ],
+    "non_claims": [
+      "The refund, account, amount, grant, timestamps, and records are illustrative rather than observations from a deployed bank or AI system.",
+      "The authority envelope is a visual model of typed permission state, not evidence that prompts or wrappers enforce it.",
+      "A recorded effect receipt does not prove that the external effect occurred; the independent observation remains a separate modeled record.",
+      "The finite Lean result trusts its authored identities, declarations, transitions, and observation fields and does not establish complete mediation or open-world enforcement.",
+      "The video does not establish authorization security, safe deployment, transfer, SOTA, AGI, or ASI."
+    ],
+    "case_assumptions": [
+      "Account forty-seven and the two-hundred-forty-dollar refund are fictional teaching objects.",
+      "The initial grant permits reading account forty-seven but does not permit issuing a refund.",
+      "The later refund grant binds user twelve, account forty-seven, a maximum amount of two hundred forty dollars, one use, an expiry at two-oh-five, and receipt duties.",
+      "The first authorized dispatch consumes the one-shot use in the modeled case.",
+      "The replayed instruction is byte-identical to the first instruction so only authority state changes.",
+      "The external observation is modeled as an independent path but is not assumed infallible."
+    ],
+    "notation_ledger": [
+      {
+        "token": "READ",
+        "meaning": "Permission to inspect the named account record, not to change its balance",
+        "unit": null,
+        "visual_form": "A cyan round key that does not fit the angular REFUND aperture"
+      },
+      {
+        "token": "REFUND <= $240",
+        "meaning": "The narrow operation and amount ceiling of the illustrative refund grant",
+        "unit": "fictional US dollars",
+        "visual_form": "A gold angular key whose teeth align with operation, account, and amount sockets"
+      },
+      {
+        "token": "1 -> 0",
+        "meaning": "The one-shot grant is consumed after the first authorized dispatch",
+        "unit": "remaining modeled uses",
+        "visual_form": "A mechanical use counter fixed to the authority sleeve"
+      },
+      {
+        "token": "REQUEST / EFFECT / OBSERVE",
+        "meaning": "Three records answering what was requested, what the adapter reports running, and what another path later sees",
+        "unit": null,
+        "visual_form": "Three distinct receipt shapes on one custody rail"
+      }
+    ],
+    "truth_checks": [
+      {
+        "statement": "The chapter separates capability from external-effect authority and requires an active versioned grant that binds principal, operation, target, scope or ceiling, lifecycle state, and receipts.",
+        "authority_refs": [
+          "system-boundaries-and-authority.core"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "VIEA explicitly states that inferred structure, source access, or model competence does not grant undeclared execution authority.",
+        "authority_refs": [
+          "viea"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "SCF separates durable capability identity and replacement from scoped, defeasible, expiring qualification and authority claims.",
+        "authority_refs": [
+          "scf"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Talos, Ladon/Manhattan, and GenesisCode provide design support for typed jobs, opaque secret handles, explicit effect boundaries, audit, and replay, not deployed security evidence.",
+        "authority_refs": [
+          "talos",
+          "ladon_manhattan",
+          "genesiscode"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "MoECOT separates specialist availability, selection, readiness, authorization, and promotion and binds side effects to a fail-closed control plane.",
+        "authority_refs": [
+          "moecot"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "CaMeL and the OWASP agentic-risk taxonomy are external comparators for trusted control versus untrusted data, capability policy at tool calls, tool misuse, and identity abuse; neither comparator is local enforcement evidence.",
+        "authority_refs": [
+          "ext_camel_prompt_injection_2025",
+          "ext_owasp_agentic_top_10_2026"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The local formal surface proves only finite authored grant-to-effect and ceiling-preservation properties while authentic identity, complete mediation, concurrent revocation, secure wrappers, and complete observation remain open.",
+        "authority_refs": [
+          "system-boundaries-and-authority.core"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      }
+    ],
+    "visual_simplifications": [
+      "One transparent sleeve stands for a typed authority tuple without implying that real authority is spatial or contained in one process.",
+      "Key shape represents operation-class compatibility only; it does not imply unforgeability, secure storage, or complete mediation.",
+      "The bank effect aperture stands for one governed adapter boundary and not for an audited financial system.",
+      "A use counter and clock compress issuance, dispatch, consumption, expiry, and revocation into a legible local state machine.",
+      "Three receipt shapes distinguish request, reported effect, and observation without asserting that any record is authentic or complete.",
+      "The finite proof boundary depicts only the encoded authority model and does not enclose real identities, wrappers, clocks, or external effects."
+    ]
+  },
+  "story": {
+    "story_form": "direct_construction",
+    "story_basis": {
+      "description": "The chapter's refund-style authority checks and finite grant lifecycle support a construction in which one correct instruction is progressively bound to the permission state required for an effect, then replayed after that state changes.",
+      "authority_refs": [
+        "system-boundaries-and-authority.core",
+        "viea",
+        "scf",
+        "talos"
+      ]
+    },
+    "concrete_case": "A fictional AI produces a correct two-hundred-forty-dollar refund instruction for account forty-seven while holding only permission to read that account.",
+    "opening_question": "Should the bank execute the flawless refund instruction?",
+    "macro_moves": [
+      {
+        "id": "m01",
+        "purpose": "Make correctness feel sufficient before the authority variable appears",
+        "viewer_model_before": "A correct account, amount, and command appear ready to execute.",
+        "visible_event": "A refund ticket receives three green correctness checks and stops just before a bank effect aperture.",
+        "viewer_model_after": "The instruction is visibly capable and correct, but whether it may cross remains unresolved."
+      },
+      {
+        "id": "m02",
+        "purpose": "Expose operation-class mismatch as the first refusal cause",
+        "viewer_model_before": "Any permission concerning account forty-seven may seem sufficient.",
+        "visible_event": "A transparent authority sleeve wraps the ticket; its READ key reaches an angular REFUND aperture and cannot fit, producing a denial receipt labeled OPERATION MISMATCH.",
+        "viewer_model_after": "Access to the same target does not authorize a different operation, and refusal is a successful inspectable outcome."
+      },
+      {
+        "id": "m03",
+        "purpose": "Construct the minimum authority that changes the decision",
+        "viewer_model_before": "The refusal may look permanent or dependent on model quality.",
+        "visible_event": "An approver forms a narrow gold key from principal, REFUND, account forty-seven, amount ceiling, one use, expiry, and receipt duties; every tooth aligns with the sleeve and aperture.",
+        "viewer_model_after": "A specific active grant, not extra intelligence, changes the refund from denied to eligible."
+      },
+      {
+        "id": "m04",
+        "purpose": "Separate request, reported execution, and external observation",
+        "viewer_model_before": "Crossing the gate may look like proof that the intended refund occurred.",
+        "visible_event": "The sleeve crosses; REQUEST, EFFECT, and OBSERVE receipts land on separate positions while the use counter moves from one to zero and the account tile changes by the authorized amount.",
+        "viewer_model_after": "Authorization, adapter report, and observed effect are related but distinct custody claims."
+      },
+      {
+        "id": "m05",
+        "purpose": "Deliver the changed-state counterexample with an identical command",
+        "viewer_model_before": "Once a command was authorized, replaying the same correct bytes may seem harmless.",
+        "visible_event": "A duplicate refund ticket follows the exact path, but the sleeve now shows zero uses; the gate closes. The same path also closes when the clock passes expiry or a revocation bar drops.",
+        "viewer_model_after": "Capability and command correctness can stay fixed while authority state changes the required outcome."
+      },
+      {
+        "id": "m06",
+        "purpose": "Name the transferable rule and keep proof inside its encoded scope",
+        "viewer_model_before": "The refund may look like an isolated permissions anecdote or a claim of deployed enforcement.",
+        "visible_event": "The ticket and sleeve resolve into a CAN rail and a MAY gate; a proof boundary encloses finite ceiling and custody properties while identity, mediation, races, and observation remain outside. The original refund returns beside ACTED and REFUSED receipts.",
+        "viewer_model_after": "Authority is a stateful external-effect contract: stronger capability cannot raise a caller ceiling or revive a dead grant, and the local theorem proves only that bounded model."
+      }
+    ],
+    "payoff": "Two byte-identical refund tickets reach the same aperture; the active one-use grant opens for the first and its consumed state closes for the second, making the can-may delta visible without changing model output.",
+    "comprehension_question": "Why did the read-authorized AI's first refund instruction stop even though every command field was correct?",
+    "comprehension_success_criteria": [
+      "Distinguishes command correctness or capability from authority",
+      "Identifies the operation mismatch between READ and REFUND",
+      "Treats the denial receipt as a successful governed outcome rather than a model failure"
+    ],
+    "transfer_question": "After one authorized refund consumes its one-shot grant, should a stronger service execute a byte-identical replay?",
+    "transfer_success_criteria": [
+      "Answers no because the active grant has zero remaining uses",
+      "States that stronger capability does not revive authority or raise the caller ceiling",
+      "Requires a new valid grant rather than trusting the prior success or identical command"
+    ]
+  },
+  "art_direction": {
+    "medium": "manim_primary",
+    "medium_rationale": "The explanation depends on persistent ticket identity, exact key-to-aperture compatibility, stateful use and time transitions, separate receipt custody, and a byte-identical replay that Manim can represent deterministically.",
+    "visual_thesis": "The command never changes; a transparent authority sleeve changes state around it, so the same ticket crosses once and is then refused.",
+    "signature_image": "Two identical REFUND $240 tickets face one bank aperture: the first sleeve displays ACTIVE and 1 USE while the replay displays CONSUMED and 0 USES, leaving one ticket across the boundary and one stopped before it.",
+    "visual_world": "A quiet bank-operations workbench with one paper refund ticket, transparent authority sleeves, distinctly shaped keys and effect apertures, a mechanical use counter and clock, one receipt rail, and one independently observed account tile.",
+    "persistent_objects": [
+      "refund ticket",
+      "authority sleeve",
+      "read and refund keys",
+      "bank effect aperture",
+      "use counter and clock",
+      "receipt rail",
+      "observed account tile"
+    ],
+    "visual_invariants": [
+      "The refund ticket's account, amount, command, and identity remain unchanged across denial, authorization, execution, and replay.",
+      "The READ key never changes shape to fit the REFUND aperture.",
+      "The one-shot use counter moves from one to zero only after the first dispatch.",
+      "Request, effect, and observation receipts remain visually and spatially distinct.",
+      "The stronger-capability abstraction never moves the MAY gate or revives the consumed grant.",
+      "The lower caption-safe band remains free of keys, counters, receipt identities, and proof boundaries."
+    ],
+    "composition_rule": "Keep the ticket and sleeve on the left, the effect aperture at center, the bank or observed state on the right, and the receipt rail above the caption band; preserve the same left-to-right causal path through denial, grant, effect, and replay.",
+    "palette_rule": "Use cyan for command correctness and read capability, gold for active authority, green for accepted effects and observation, red for denial or closed gates, magenta for residual or revocation, and boundary gray for unproved production obligations; pair every color with shape, label, and position.",
+    "typography_rule": "Use only short ticket fields, READ, REFUND, ACTIVE, CONSUMED, one/zero use, time, three receipt labels, CAN, MAY, and compact proof-boundary phrases; narration carries every qualification.",
+    "motion_character": "Mechanical and stateful: tickets slide without morphing, keys approach sockets, the use counter clicks, the clock advances, receipts tear onto a rail, and the gate opens or closes without decorative bounce or camera drift.",
+    "camera_rule": "Maintain one wide workbench for the authority trace, use one restrained push-in for key mismatch and one-shot consumption, then pull back once for the CAN/MAY abstraction and proof boundary.",
+    "surface_rule": "Use crisp paper, translucent sleeve outlines, machined keys and apertures, a clock ring, and receipt stubs; avoid dashboards, generic cards, prose panels, gradients, and decorative particles.",
+    "ending_image": "The original refund ticket sits between an ACTED receipt and a REFUSED receipt, both connected to the exact authority state that caused the outcome, beneath the line CAPABLE IS NOT AUTHORIZED.",
+    "semantic_keyframes": [
+      {
+        "id": "k01",
+        "after_macro_move_id": "m01",
+        "focal_state": "A fully checked refund ticket stops before an unclassified bank effect aperture.",
+        "visible_invariant": "Account, amount, and command correctness are already complete.",
+        "unresolved_question": "Does correctness authorize the refund?"
+      },
+      {
+        "id": "k02",
+        "after_macro_move_id": "m02",
+        "focal_state": "The ticket's sleeve carries a round READ key that cannot enter the angular REFUND aperture; a denial receipt names OPERATION MISMATCH.",
+        "visible_invariant": "The target account is unchanged and still in scope for reading.",
+        "unresolved_question": "What exact state would authorize this effect?"
+      },
+      {
+        "id": "k03",
+        "after_macro_move_id": "m03",
+        "focal_state": "A gold REFUND key aligns principal, account, amount ceiling, one use, expiry, and receipt duties with the effect aperture.",
+        "visible_invariant": "The refund command itself has not changed.",
+        "unresolved_question": "Does crossing the gate prove the requested effect occurred?"
+      },
+      {
+        "id": "k04",
+        "after_macro_move_id": "m04",
+        "focal_state": "REQUEST, EFFECT, and OBSERVE receipts occupy separate rail positions while the account tile changes and the grant counter reads zero.",
+        "visible_invariant": "Each record answers a different question and remains linked to the same grant and ticket.",
+        "unresolved_question": "What should happen to an identical replay?"
+      },
+      {
+        "id": "k05",
+        "after_macro_move_id": "m05",
+        "focal_state": "The duplicate ticket reaches the same aperture, but CONSUMED, EXPIRED, and REVOKED states each close the gate without changing command bytes.",
+        "visible_invariant": "Capability and command correctness remain fixed while authority state changes.",
+        "unresolved_question": "What broader rule survives outside the refund example?"
+      },
+      {
+        "id": "k06",
+        "after_macro_move_id": "m06",
+        "focal_state": "The refund trace resolves into a CAN rail below a separate MAY gate, with finite ceiling and custody properties inside a proof boundary and production obligations outside.",
+        "visible_invariant": "No stronger capability, prior success, or identical command raises the active authority ceiling.",
+        "unresolved_question": null
+      }
+    ],
+    "asset_plan": []
+  },
+  "audio_direction": {
+    "narration_style": "Direct and deliberate, with the first refusal delivered without alarm and the identical-replay question given enough space to predict the closed gate.",
+    "pacing_arc": "Open briskly on command correctness, slow at the READ-versus-REFUND mismatch, build through the narrow grant and three receipts, pause before the identical replay, then become more measured for the can-may abstraction and proof boundary.",
+    "music_policy": "No continuous music; the authority-state transitions and replay supply the tension without emotional scoring.",
+    "sound_effect_policy": "Use only restrained original or generated paper-slide, key-set, counter-click, gate-close, receipt-tear, and clock-tick sounds below speech; no sound may carry unique meaning.",
+    "performance_blocks": [
+      {
+        "id": "p01",
+        "macro_move_ids": [
+          "m01"
+        ],
+        "performance_direction": "Let flawless sound genuinely favorable, then leave a short unresolved pause after Should the bank execute it?",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p02",
+        "macro_move_ids": [
+          "m02"
+        ],
+        "performance_direction": "Contrast correctness with authority, then make the READ-versus-REFUND mismatch sound mechanical rather than moralistic.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p03",
+        "macro_move_ids": [
+          "m03"
+        ],
+        "performance_direction": "Read the narrow grant as one coherent authorization, emphasizing once and before two-oh-five without rushing the amount.",
+        "pronunciation_items": [
+          "two-oh-five"
+        ]
+      },
+      {
+        "id": "p04",
+        "macro_move_ids": [
+          "m04"
+        ],
+        "performance_direction": "Separate instruction, effect receipt, and observation with distinct sentence landings and no implication that one substitutes for another.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p05",
+        "macro_move_ids": [
+          "m05"
+        ],
+        "performance_direction": "Slow before the byte-identical replay, land on closed gate, then state expiry and revocation as ordinary state changes rather than dramatic failures.",
+        "pronunciation_items": [
+          "byte-identical"
+        ]
+      },
+      {
+        "id": "p06",
+        "macro_move_ids": [
+          "m06"
+        ],
+        "performance_direction": "Name can-may delta once, state the Lean boundary plainly, and close with acted or refused in a calm downward cadence.",
+        "pronunciation_items": [
+          "can-may delta",
+          "Lean"
+        ]
+      }
+    ],
+    "review_devices": [
+      "studio headphones",
+      "laptop speakers",
+      "phone speaker",
+      "muted playback with captions"
+    ]
+  },
+  "accessibility": {
+    "color_redundancy": "READ and REFUND use different key and aperture geometry, active and closed states use labels and mechanical positions, and every receipt has a distinct shape and name in addition to color.",
+    "motion_redundancy": "Every mismatch, grant, effect, use consumption, expiry, revocation, and proof boundary ends in a stable labeled keyframe that remains interpretable without perceiving motion.",
+    "integrated_description": "Narration names the refund fields, READ key mismatch, narrow one-shot grant, effect boundary, three records, consumed replay, expiry, revocation, can-may distinction, finite theorem, and production limits as they appear.",
+    "caption_plan": "Use manually reviewed forced alignment, no more than two short lines, sentence-aware breaks, and no cue covering the ticket, key teeth, use counter, receipt rail, clock, or proof boundary.",
+    "descriptive_transcript_plan": "Describe the persistent refund ticket, transparent authority sleeve, mismatched and aligned key geometry, gate state, account change, three receipt forms, identical replay, and finite proof envelope beside the exact narration.",
+    "reduced_motion_assessment": "The episode remains complete as six held semantic keyframes connected by short crossfades; key compatibility, counters, labels, receipt positions, and gate state preserve all meaning without rapid motion.",
+    "caption_safe_composition": "Reserve the lower 150 pixels plus margin and keep every key, counter, time, receipt identity, account state, and proof-boundary label above it at phone scale."
+  },
+  "packaging": {
+    "working_title": "The Same Command Must Stop",
+    "thumbnail_concept": "Two identical REFUND $240 tickets face the same bank aperture; the first carries a gold ACTIVE 1 USE sleeve while the second carries a red CONSUMED 0 USES sleeve and stops.",
+    "thumbnail_alt_text": "Two identical refund instructions reach one bank gate; an active one-use grant admits the first while a consumed grant blocks the replay.",
+    "promise_match": "The thumbnail displays the exact changed-authority comparison the video explains and does not imply a deployed bank test.",
+    "first_fifteen_seconds_delivery": "The checked refund ticket, bank effect aperture, and Should the bank execute it? appear before the authority envelope is named.",
+    "source_delivery": "The end card names the chapter and the VIEA, SCF, Talos, MoECOT, CaMeL, and OWASP source notes; the description carries the complete assigned-source list and formal evidence boundary.",
+    "source_delivery_refs": [
+      "viea",
+      "scf",
+      "talos",
+      "moecot",
+      "ext_camel_prompt_injection_2025",
+      "ext_owasp_agentic_top_10_2026"
+    ]
+  },
+  "script_gate": {
+    "narration_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/narration.txt",
+    "narration_sha256": "a9703e8ddf15e53ca36eed8501d7ac1f8ab074f5661f5af2460b144786e6a92d",
+    "narration_word_count": 432,
+    "read_aloud_review": "pass",
+    "truth_review": "pass",
+    "visualizability_review": "pass",
+    "reviewer_id": "codex-author-script-gate-2026-08-09",
+    "verdict": "pass",
+    "open_defects": []
+  }
+}

@@ -114,6 +114,36 @@ def normalize_number_words(values: list[str]) -> list[str]:
     index = 0
     while index < len(values):
         value = values[index]
+        if (
+            value in units
+            and 0 < units[value] < 10
+            and index + 2 < len(values)
+            and values[index + 1] == "oh"
+            and values[index + 2] in units
+            and units[values[index + 2]] < 10
+        ):
+            result.append(f"{units[value]}0{units[values[index + 2]]}")
+            index += 3
+            continue
+        if (
+            value in units
+            and 0 < units[value] < 10
+            and index + 1 < len(values)
+            and values[index + 1] == "hundred"
+        ):
+            number = units[value] * 100
+            index += 2
+            if index < len(values) and values[index] in tens:
+                number += tens[values[index]]
+                index += 1
+                if index < len(values) and values[index] in units:
+                    number += units[values[index]]
+                    index += 1
+            elif index < len(values) and values[index] in units:
+                number += units[values[index]]
+                index += 1
+            result.append(str(number))
+            continue
         if value in tens:
             number = tens[value]
             if index + 1 < len(values) and values[index + 1] in units:
@@ -141,6 +171,7 @@ def normalize_compounds(values: list[str]) -> list[str]:
         ("counter", "cases"): "countercases",
         ("life", "cycle"): "lifecycle",
         ("fan", "out"): "fanout",
+        ("check", "out"): "checkout",
         ("a", "si"): "asi",
         ("as", "i"): "asi",
     }
@@ -185,6 +216,43 @@ def normalize_version_labels(values: list[str]) -> list[str]:
     return result
 
 
+def normalize_content_tokens(values: list[str]) -> list[str]:
+    """Apply the exact content-equivalence pipeline used by the ASR gate."""
+    return normalize_version_labels(
+        normalize_audio_homophones(
+            normalize_compounds(
+                normalize_number_words(collapse_letter_runs(values))
+            )
+        )
+    )
+
+
+def normalization_self_test() -> None:
+    equivalent = (
+        ("two hundred forty dollars", "240 dollars"),
+        ("nine hundred nineteen", "919"),
+        ("two oh five", "205"),
+        ("check out", "checkout"),
+        ("twenty four", "24"),
+    )
+    distinct = (
+        ("two hundred forty", "241"),
+        ("two oh five", "206"),
+        ("check in", "checkout"),
+        ("nineteen", "90"),
+    )
+    for written, recognized in equivalent:
+        if normalize_content_tokens(tokens(written)) != normalize_content_tokens(tokens(recognized)):
+            raise AssertionError(f"equivalent narration forms diverged: {written!r}, {recognized!r}")
+    for written, recognized in distinct:
+        if normalize_content_tokens(tokens(written)) == normalize_content_tokens(tokens(recognized)):
+            raise AssertionError(f"distinct narration forms collapsed: {written!r}, {recognized!r}")
+    print(
+        "Narration normalization self-test passed: "
+        f"{len(equivalent)} equivalent pairs accepted and {len(distinct)} controls rejected."
+    )
+
+
 def boundary_covered(
     expected: list[str],
     actual: list[str],
@@ -209,12 +277,20 @@ def boundary_covered(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--audio", required=True)
-    parser.add_argument("--receipt", required=True)
-    parser.add_argument("--asr", required=True)
-    parser.add_argument("--report", required=True)
+    parser.add_argument("--audio")
+    parser.add_argument("--receipt")
+    parser.add_argument("--asr")
+    parser.add_argument("--report")
     parser.add_argument("--maximum-wer", type=float, default=0.03)
+    parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
+
+    if args.self_test:
+        normalization_self_test()
+        return
+    missing = [name for name in ("audio", "receipt", "asr", "report") if not getattr(args, name)]
+    if missing:
+        parser.error("the following arguments are required: " + ", ".join(f"--{name}" for name in missing))
 
     audio_path = checked_audio_path(args.audio, label="audio", must_exist=True)
     receipt_path = checked_audio_path(args.receipt, label="receipt", must_exist=True)
@@ -249,20 +325,8 @@ def main() -> None:
     actual_tokens = tokens(asr["text"])
     raw_word_errors = edit_distance(expected_tokens, actual_tokens)
     raw_wer = raw_word_errors / max(1, len(expected_tokens))
-    normalized_expected = normalize_version_labels(
-        normalize_audio_homophones(
-            normalize_compounds(
-                normalize_number_words(collapse_letter_runs(expected_tokens))
-            )
-        )
-    )
-    normalized_actual = normalize_version_labels(
-        normalize_audio_homophones(
-            normalize_compounds(
-                normalize_number_words(collapse_letter_runs(actual_tokens))
-            )
-        )
-    )
+    normalized_expected = normalize_content_tokens(expected_tokens)
+    normalized_actual = normalize_content_tokens(actual_tokens)
     word_errors = edit_distance(normalized_expected, normalized_actual)
     wer = word_errors / max(1, len(normalized_expected))
     expected_gaps = [

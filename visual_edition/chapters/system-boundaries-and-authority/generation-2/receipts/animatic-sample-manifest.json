@@ -1,0 +1,573 @@
+{
+  "schema_version": "asi_stack.manim_frame_sample_manifest.v1",
+  "chapter_id": "system-boundaries-and-authority",
+  "sample_set": "animatic",
+  "sampler": {
+    "path": "skills/asi-stack-manim-videos/scripts/sample_video_beats.py",
+    "sha256": "bd2b0d104030fb1f56dd388d9d90b791acca0a5d1e4f44c18ea875f23b14b5aa"
+  },
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    }
+  },
+  "video_path": "build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/system-boundaries-and-authority-animatic.mp4",
+  "video_sha256": "0e7494790e5d6482c3e4e05e0c62c6470c383e7404497cf07b3a7c597001ba4f",
+  "beat_plan_path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/beat_plan.json",
+  "beat_plan_sha256": "9c9849e11e20e281a3b51d2f1b2fc66d3da60b41c64274fd679877ca9f47180f",
+  "expected_beat_count": 14,
+  "sampled_beat_count": 14,
+  "samples_per_beat": 5,
+  "beats": [
+    {
+      "beat_id": "b01",
+      "start_seconds": 0.0,
+      "end_seconds": 11.155,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 0.15,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/001_b01_start.png",
+          "sha256": "8b55ed68d961fd1a60fb236abfda972356077df8729026ebb8b5d8c5b255faaf"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 2.789,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/001_b01_quarter.png",
+          "sha256": "87d8d9ff6c9459376ab346ffcf94a349ee9e841a6834d0e7fa2766a63ef6ec51"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 5.577,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/001_b01_middle.png",
+          "sha256": "26cd437c161b639aa7e4dedfdbf6ec57bfbdc4838e236a201fffe26376b24171"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 8.366,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/001_b01_three-quarter.png",
+          "sha256": "af3b61a69529873c7a686f94418e595d40d5890eaa1476aed55fac34285f0b6f"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 11.005,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/001_b01_end.png",
+          "sha256": "8a324ab2a275d95595a0f22307de110d8213feb5a49b77d83f55fbc7ed92b1cc"
+        }
+      ]
+    },
+    {
+      "beat_id": "b02",
+      "start_seconds": 11.155,
+      "end_seconds": 21.085,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 11.305,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/002_b02_start.png",
+          "sha256": "8a785f8ed791eed17fc943d901d91eba2e75ec38bb02a278654e2b94633c6129"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 13.637,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/002_b02_quarter.png",
+          "sha256": "cd423d0690985d032d62d8eb459b10aa33e9ea0de8c2850ffac5c50fbc8c4f92"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 16.12,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/002_b02_middle.png",
+          "sha256": "1652ed50e13f535ea19a9f2e5c1a1afce1d1cb8b9e7595bf7257724e7969ec47"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 18.602,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/002_b02_three-quarter.png",
+          "sha256": "076ad9d15afbc890e1b18fc66b18878c175c37ede413bb9f7a35b86e8ecd4836"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 20.935,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/002_b02_end.png",
+          "sha256": "2fcc153bdbca1dcc3c04893a14eb4ef030c5b21ef3d76f7d2f991ba5d9704f08"
+        }
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "start_seconds": 21.085,
+      "end_seconds": 34.74,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 21.235,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/003_b03_start.png",
+          "sha256": "f2e0a31ebbfdef89c532402af3b64e4018740aeba0f12a6672d00bba301f4517"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 24.499,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/003_b03_quarter.png",
+          "sha256": "62aec5ed7f2886189c0e6705efdc6118e98ddc677532ce8601b56a49c0687cbf"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 27.913,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/003_b03_middle.png",
+          "sha256": "f92e35e06fc19ade40e9cbb6a0d2f3aa340ef3044f2b87bf1c890529b069d8b8"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 31.326,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/003_b03_three-quarter.png",
+          "sha256": "0a80fdc89d6646dd13f71e33aa4daeb933ccde3a556d18dd63037a864e309c62"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 34.59,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/003_b03_end.png",
+          "sha256": "0e6e6e8c907f48a723850dce5784a5af4c3f9f37f98349e4ebf4733f8ad453e8"
+        }
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "start_seconds": 34.74,
+      "end_seconds": 46.97,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 34.89,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/004_b04_start.png",
+          "sha256": "6f396faba507fbaab342d4c194ed9fcabc6b87305ddc4dee2dbb5251116cece0"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 37.797,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/004_b04_quarter.png",
+          "sha256": "cc2f9dde6b00eff8a8de842c0426953bb734725c18939c6d28b712be0a8db4a0"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 40.855,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/004_b04_middle.png",
+          "sha256": "e3853d65095313d7cdb7b195c83bbde4e9a555efcb39709e1ac9d245df1e8f7c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 43.913,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/004_b04_three-quarter.png",
+          "sha256": "10a397f166af9f055f0401b0cf48156cbb1df7ed1ff3f6aad493e03e46a849ee"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 46.82,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/004_b04_end.png",
+          "sha256": "7834408ba91931b440f2a53a1c971acfa910035e7c8e2d3acedd1685083c5aae"
+        }
+      ]
+    },
+    {
+      "beat_id": "b05",
+      "start_seconds": 46.97,
+      "end_seconds": 60.575,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 47.12,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/005_b05_start.png",
+          "sha256": "24b86e3ce1b109fe4efd526f7df4dd36ececd05a785e8ae85a2528958d669222"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 50.371,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/005_b05_quarter.png",
+          "sha256": "427447f993ff40018971589ba57748689b8d0416a340cc1748472eb473ec40f3"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 53.773,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/005_b05_middle.png",
+          "sha256": "5614b963a767e84eb183899c5765d7d977327b14b8a97bc12df09a57a4c9ad59"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 57.174,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/005_b05_three-quarter.png",
+          "sha256": "aab20533feb9956d9f50334b1c4bb536cf1c219ec26d44b94ba846d8c6120567"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 60.425,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/005_b05_end.png",
+          "sha256": "bbae497cbed1c10cd4b32b6b1d3d8f88af6a9f533cd888c0c954a27eeeea1d78"
+        }
+      ]
+    },
+    {
+      "beat_id": "b06",
+      "start_seconds": 60.575,
+      "end_seconds": 76.205,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 60.725,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/006_b06_start.png",
+          "sha256": "bd0fb1996835a4a6dd401225b0c0aa0c5e21990cba31de387f589d09f7067850"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 64.483,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/006_b06_quarter.png",
+          "sha256": "b65704099368e7a2478bdf57d0da5306b818fe86d2f5d3d21a0f5a7717ad46a3"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 68.39,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/006_b06_middle.png",
+          "sha256": "209272fb9b8e811105650ed3925388a3209427eb4cab08fda2fb386e6728b80c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 72.297,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/006_b06_three-quarter.png",
+          "sha256": "1a8ede5fd0ff1df2eb376ffa58da114f62094dff3b7eb9a1c27be5a02ff7135b"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 76.055,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/006_b06_end.png",
+          "sha256": "5db046a1c71a798c4e55cdaa4b3d07800ac28d7b24a5711b15379105a1b89ea0"
+        }
+      ]
+    },
+    {
+      "beat_id": "b07",
+      "start_seconds": 76.205,
+      "end_seconds": 90.385,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 76.355,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/007_b07_start.png",
+          "sha256": "5b4b088f4c1303d679fe786942b21ade67bf81c06dbb67ef52189af775bbebb0"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 79.75,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/007_b07_quarter.png",
+          "sha256": "c3441c07ade59b563ee97d2fb87c678113f3689b8e403119146241e0d609c875"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 83.295,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/007_b07_middle.png",
+          "sha256": "328586550367cd01cd98ba69fc4d50aaffa6a7f0bdef29afead4dc06bdf30b14"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 86.84,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/007_b07_three-quarter.png",
+          "sha256": "1dbe051fe9ebfd3aea684a9693ac9e8111c1e5d12783fe38dd14f3471ac0eba0"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 90.235,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/007_b07_end.png",
+          "sha256": "444ffc61b2f7094ef8f661e3d165d0dc7b033f31b145594bf893dac769ab126d"
+        }
+      ]
+    },
+    {
+      "beat_id": "b08",
+      "start_seconds": 90.385,
+      "end_seconds": 102.04,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 90.535,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/008_b08_start.png",
+          "sha256": "af86ecbc8279c6cea758b31f34e1911c51ce12a2b1b8a8b99e7e51ece9d3c164"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 93.299,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/008_b08_quarter.png",
+          "sha256": "b98a3573de5ab81eb0724ec3c79d50a2599e1e882e931f7387253f7532fcb947"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 96.213,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/008_b08_middle.png",
+          "sha256": "de03c4f861eb2bf321b61e695df26dcc9268c41f17e643f93c4a4bdf2d1015c4"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 99.126,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/008_b08_three-quarter.png",
+          "sha256": "1c6a8cbbfc47141d19b0487cebfbcada987c699fff376edca581d5e3948332c4"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 101.89,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/008_b08_end.png",
+          "sha256": "5e03c78e1ad4f5696cadbc90e28855bd73c4c43e28e6d7c3c0f6aebd93247502"
+        }
+      ]
+    },
+    {
+      "beat_id": "b09",
+      "start_seconds": 102.04,
+      "end_seconds": 113.395,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 102.19,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/009_b09_start.png",
+          "sha256": "289175267d9e65a0de1f0be1ffead27a2cf1f15d7b83470a9695c692ebea7ab4"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 104.879,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/009_b09_quarter.png",
+          "sha256": "c38eaf3ea9f66b8d9c14dc8c0898ec2af8f36f101f8fc63555dea2bf08d5428d"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 107.718,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/009_b09_middle.png",
+          "sha256": "a929866bcf1696e974f132e5e5f63cc92fecbae73be57ffd982a0c3f68595747"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 110.556,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/009_b09_three-quarter.png",
+          "sha256": "8c81bfa21110b9c4aad032c5aed8466ada57ddcab6365b2d4e8a62ac1b7f7666"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 113.245,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/009_b09_end.png",
+          "sha256": "f77685b9536104e317200a3a10b2521d0e9c999500669f7d2773a43ba47c3fb0"
+        }
+      ]
+    },
+    {
+      "beat_id": "b10",
+      "start_seconds": 113.395,
+      "end_seconds": 125.475,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 113.545,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/010_b10_start.png",
+          "sha256": "ae9e1762481512eb39deaad91c60085c02096954809cc83970a17cf9ae633673"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 116.415,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/010_b10_quarter.png",
+          "sha256": "995d797900a8a036f3d07b9b7c72f45e750df7507364d37a5e8e58ba7ec1e7e8"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 119.435,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/010_b10_middle.png",
+          "sha256": "824ad3d814b0a9e17de50a01a162b053b8dd64b49cb82af214ecd6ca312f5de3"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 122.455,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/010_b10_three-quarter.png",
+          "sha256": "166ccf7f37978fc01224f19f6632c999ae8aa8f7754fd586fe0ac10b943805f7"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 125.325,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/010_b10_end.png",
+          "sha256": "2bb7cdfda364e428af3b262949be4a5877ebc06a51633ded25c7e2f55c33eacf"
+        }
+      ]
+    },
+    {
+      "beat_id": "b11",
+      "start_seconds": 125.475,
+      "end_seconds": 135.205,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 125.625,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/011_b11_start.png",
+          "sha256": "168edac1856785056ff8c16b72867af2553b5ef25604172eb280e773541cac57"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 127.907,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/011_b11_quarter.png",
+          "sha256": "cd965c8031bf260edab2ddf14c3e89f6e8f97c51bd5f5bdc880d3bdc3593a0c1"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 130.34,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/011_b11_middle.png",
+          "sha256": "46d3bdd0880abe4c22c70367cd48ef2e0402fca958598d62120efadd8ea4eabd"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 132.773,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/011_b11_three-quarter.png",
+          "sha256": "11582fa4d302b15be67e8ba6714c43298d56ec8dc43adcd46911b6f1e53ea826"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 135.055,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/011_b11_end.png",
+          "sha256": "84e09b80ec2c94ed9bcb8f114073bfae1fd4c40a623409a901b4d798b29ccf03"
+        }
+      ]
+    },
+    {
+      "beat_id": "b12",
+      "start_seconds": 135.205,
+      "end_seconds": 148.035,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 135.355,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/012_b12_start.png",
+          "sha256": "19a13ed23e9c9db95a385bfa73974cc8348a73f05daa7aa11b9903b46933281e"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 138.413,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/012_b12_quarter.png",
+          "sha256": "013fabf75def4fb9d2af3faf3ace3e0a98f7bf0beb3ba96b7834fd297c9d9ddb"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 141.62,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/012_b12_middle.png",
+          "sha256": "121f47626463bd89b2b2bc647e25df26978662bed52e443b288e82efd2ee97c2"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 144.827,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/012_b12_three-quarter.png",
+          "sha256": "756bebfbb6ada8e4599d2f3a28dca002fb7eb9d22b17bd0ab333ab4a457e56cf"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 147.885,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/012_b12_end.png",
+          "sha256": "2eece075999366bdc9282f77d0bbd531bd1d1d4d1c791cb94c2aaf7993013c1d"
+        }
+      ]
+    },
+    {
+      "beat_id": "b13",
+      "start_seconds": 148.035,
+      "end_seconds": 160.89,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 148.185,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/013_b13_start.png",
+          "sha256": "b1e42d758bb98e06f94808b734ccbc07b70b5f481bf1d69689eb372039e95c82"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 151.249,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/013_b13_quarter.png",
+          "sha256": "ce0c7c68093efc65d5c35e042e44dfca4c84972cf7f9761e3df212805b20e95a"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 154.462,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/013_b13_middle.png",
+          "sha256": "91f58059bdf8bcdd3abc64cb252799785e4f1fd9a3888b18a3d80c836901ffab"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 157.676,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/013_b13_three-quarter.png",
+          "sha256": "ce742594d880992d4da67bd8a96013abfb0649b77a9b68db606d0ed8d271257b"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 160.74,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/013_b13_end.png",
+          "sha256": "3e7db2ed3d3043cd397b8fc0db4e804127004d9ee3a569d16299fa564f5d665b"
+        }
+      ]
+    },
+    {
+      "beat_id": "b14",
+      "start_seconds": 160.89,
+      "end_seconds": 176.79,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 161.04,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/014_b14_start.png",
+          "sha256": "3caf65837ffce86357b5d294cd318c468b375a431d651104267e29274f361dca"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 164.865,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/014_b14_quarter.png",
+          "sha256": "7115165fa23a30fa0a1c552aff3b60c24a90b096ce740b27c14e26934384a4bd"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 168.84,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/014_b14_middle.png",
+          "sha256": "ca08c1361e84367b5a54734763e2d3eff5f80ff1929f13ac77824dcbb99858c0"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 172.815,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/014_b14_three-quarter.png",
+          "sha256": "c883627d99df0ee6930d19a0941c5e8291921fe44b68f9ae105c80531645a054"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 176.64,
+          "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/014_b14_end.png",
+          "sha256": "c6902773c80b4d35288d006cab668ed059a1b2c7b155b8924b70438e2ae2ab01"
+        }
+      ]
+    }
+  ],
+  "targeted_transition_samples": [
+    {
+      "beat_id": "b07",
+      "timestamp_seconds": 84.0,
+      "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/targeted_001_b07_84.000.png",
+      "sha256": "951b3dbb5d2e92af0c9b6c60f0c11dda8cb1ddce11e9f63bceacb8937b87b8c8"
+    },
+    {
+      "beat_id": "b09",
+      "timestamp_seconds": 108.0,
+      "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/targeted_002_b09_108.000.png",
+      "sha256": "590f65d3c8dc6f9e15fe1f6d2e48678660729601e6254d815da23d62b2fa7755"
+    },
+    {
+      "beat_id": "b10",
+      "timestamp_seconds": 121.0,
+      "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/targeted_003_b10_121.000.png",
+      "sha256": "3e93d9a0e1059025b0366bf0121b4fe9dac76322f42707ecdafc46bd9aaeab56"
+    },
+    {
+      "beat_id": "b14",
+      "timestamp_seconds": 171.0,
+      "path": "build/visual_edition/review-samples/system-boundaries-and-authority/animatic/targeted_004_b14_171.000.png",
+      "sha256": "0211b24a16cefdee36abcf3106ec2f1c33bfcc684f88ca8e5162e407ecb54159"
+    }
+  ],
+  "interpretation": "Frame samples diagnose composition and interpolation; full-speed motion and sound review remain required.",
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "These deterministic frame samples support visual review only; they do not establish motion quality, synchronization, human learning, or chapter truth."
+}

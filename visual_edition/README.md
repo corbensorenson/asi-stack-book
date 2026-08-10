@@ -32,10 +32,12 @@ As of 2026-08-09:
 - The book has 85 canonical chapters.
 - Generation one preserves 84 historical packets: 9 are source-current and 75
   are explicitly stale. The newest chapter has no fabricated predecessor.
-- Generation two has 24 case-first narration drafts and 61 planned targets.
-  The drafts are 364-436 words and pass structural narration lint. None is an
-  approved script until its source-bound treatment passes read-aloud, truth,
-  and visualizability review against the exact narration digest.
+- Generation two has 61 planned targets, 21 case-first narration drafts, and
+  three block-timed pilots. The opening, Efficient ASI, and System Boundaries
+  pilots have source-bound treatments and exact beat plans; their local
+  animatics and sampled-frame receipts do not close the animatic review gate.
+  The remaining drafts are not approved scripts until a source-bound treatment
+  passes read-aloud, truth, and visualizability review against the exact digest.
 - Every pre-overhaul beat plan, audio file, caption file, transcript, scene,
   render, and review is downstream of an obsolete script or standard. Those
   artifacts remain historical, while all current acceptance gates are open.
