@@ -55,7 +55,9 @@ experiments. A neat graph is not an outcome.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Imagine eight GPUs. In one run, each GPU holds a replica, computes gradients on
+**Concrete lens.** Eight identical GPUs can still realize one persistent learner, four competing lineages, or hundreds of proposal workers feeding one central learner.
+
+In one run, each GPU holds a replica, computes gradients on
 a different minibatch, and contributes to one synchronized update. There are
 eight workers but one persistent learner. In a second run, four model lineages
 adapt locally for hours, see different environments, and are later evaluated
