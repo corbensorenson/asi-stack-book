@@ -10,7 +10,7 @@
 | Canonical manuscript | `sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.md`; SHA-256 `4fd869f01f4c0782e6e2f1d657b6c84e87ced82e652126aae395123a04fac712`; 129,274 bytes |
 | Presentation copy | `sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.docx`; SHA-256 `ded442614e647cfbc885c83f52edf5b530aebccada503e588e654bf17b300501` |
 | Preparation report | `supplement/lct_prep_v0_1/PREP_REPORT.md`; SHA-256 `22500dccfbb8369abfecc0cf7826030ec6547b82fb7ec72ae1b82548c4e46f92` |
-| Tree-shaking memo | `supplement/lct_prep_v0_1/TREE_SHAKING_MEMO.md`; SHA-256 `9db0b71598bb39037bbb2f3a5b4ae31e2051329cf64104fe196a45ab8424105d` |
+| Tree-shaking memo | `supplement/lct_prep_v0_1/tree_shaking/TREE_SHAKING_MEMO.md`; SHA-256 `9db0b71598bb39037bbb2f3a5b4ae31e2051329cf64104fe196a45ab8424105d` |
 | Package integrity | All 127 files named by `MANIFEST_SHA256.txt` matched their recorded SHA-256 digests. Archive paths were checked before extraction; no absolute or parent-traversal member was present. |
 | Executable check | `python3 -m unittest discover -s tests -v` in `supplement/lct_prep_v0_1` passed 11 of 11 tests on 2026-08-09. This checks only the bounded reference package. |
 | Ingestion basis | Complete local archive: paper, 13 figures, bibliography, claims map, reproducibility guide, formal specifications, executable examples, normalized outputs, schedules, tests, toy/analytical data, quality reports, and auxiliary design memos. |
@@ -126,7 +126,10 @@ LCT-IR separates nine store classes: `adaptive`, `evidence`, `judgement`,
 operator vocabulary includes instantiate, observe, evaluate, assign-credit,
 update, fork, aggregate, synchronize, select, merge, distill, compose,
 transfer, archive, restore, retire, route, allocate, rewire, checkpoint, emit,
-and pure computation. The validator enforces explicit adaptive versions,
+and pure computation. The paper specifies `decompose` and `externalize` as v0.2
+additions and adds reversibility and retained-knowledge-destination
+declarations; these are not fully demonstrated by the v0.1 reference compiler.
+The validator enforces explicit adaptive versions,
 producers, identity creation, integration operators, delayed feedback,
 held-out-evidence use, authority for sensitive writes, and declared compute
 guarantees.
@@ -136,8 +139,8 @@ expand hidden adaptive state; make evidence, judgement, and credit paths
 explicit; split generic integration into a typed operator; expose lifecycle and
 feedback; collapse only interface-sufficient subgraphs; canonicalize names and
 ordering; and emit a provenance-bearing normal form. Its equivalence hierarchy
-keeps graph isomorphism, trace equivalence, distributional equivalence,
-behavioral equivalence, and task-equivalence distinct.
+keeps structural, lineage, trace, stochastic, behavioral, learning, execution,
+resource, deployment, and authority equivalence distinct.
 
 The semantic compiler maps an LCT program to execution operations and then to
 physical placement. A **semantic firewall** prevents the compute planner from
@@ -164,6 +167,26 @@ increasing branch count alone cannot overcome a weak evaluator or lossy
 integrator. This motivates causal-identity refinement, typed synchronization,
 higher-order integration forests, commitment annealing, knowledge placement,
 salvage-before-retirement, and diverse anchored evaluator ecologies.
+
+The second-pass review recovered several ideas that the first chapter draft had
+compressed too aggressively. The core paper supplies causally identifiable
+topology interventions, topology-conditioned scaling, the morphology
+conjecture, and stratified reflexive control. The tree-shaking memo separately
+extends the design space with joint Candidate–Evaluator–Integrator allocation,
+semantic compute placement, topology portfolios with stateful migration,
+topology distillation, a topology atlas and learned topology prior, and
+proof-carrying topology rewrites. The latter set is retained as a lower-
+confidence research program: it is not part of the tested v0.1 compiler and
+must not be reported as a result of the formal propositions.
+
+The chapter now also preserves the paper's six-axis scientific object
+(topology, operational geometry, dynamics, semantics, schedule, and substrate),
+four process views (template, active, realized trace, and counterfactual rewrite
+space), A–E conformance ladder, ten-way equivalence hierarchy, and proposed
+dimensionless control coordinates. These details matter because each blocks a
+specific false substitution: connectivity for dynamics, template for history,
+parsing for synthesis, task behavior for lineage or authority, and a formula
+for a calibrated control signal.
 
 ## Interfaces, Artifacts, and State Machines
 
@@ -245,10 +268,11 @@ LCT-IR document
 -> normalized IR, schedule, trace, and diagnostic receipts
 ```
 
-The package reports conformance mainly at levels A–C, with selected dynamic
-rewrite behavior approaching D. It does not implement a neural backend,
-distributed runtime, compiler correctness proof, online controller, learned
-topology search, production authority system, or real hardware cost model.
+The package reports bounded conformance at levels A–C, with selected checks
+from D; it does not implement E-level synthesis. It also lacks a neural
+backend, distributed runtime, compiler correctness proof, online controller,
+learned topology search, production authority system, and real hardware cost
+model.
 
 The experimental program correctly separates two questions that are often
 confounded: hold learning topology constant while changing physical compute,
@@ -458,6 +482,24 @@ reported with capability results.
 | Coverage/novelty matrices | New chapter scoped comparison; independent coding remains open. |
 | Tree-shaking memo | Derived-idea integration and explicit rejection of redundant labels. |
 | Quality reports and visual QA | Custody context only; they do not validate scientific claims. |
+
+### Second-pass completeness audit
+
+| Previously compressed item | Reader-facing disposition after audit | Evidence boundary |
+|---|---|---|
+| Six-axis process description and four temporal views | Added beside the four-topology distinction. | Definitions only. |
+| v0.2 `decompose` / `externalize`, reversibility, knowledge destination | Added to LCT-IR with an explicit v0.1 implementation boundary. | Specified, not fully compiled. |
+| Conformance A–E | Added as a graded capability table. | Package is bounded A–C plus selected D checks. |
+| Ten equivalence relations | Restored in the LCNF section. | A declared comparison vocabulary, not verified equivalence. |
+| Dimensionless control coordinates | Added with the decision question for each coordinate. | Proposed estimators; no calibrated controller. |
+| Causally identifiable topology experiments | Added to the derived-design section. | Experimental method, not a causal result. |
+| Candidate–Evaluator–Integrator allocation | Added as a supplement-derived active-design hypothesis. | Tree-shaking memo; unimplemented. |
+| Semantic compute placement | Added with matched fault-injection tests. | Tree-shaking memo; unimplemented. |
+| Topology-conditioned scaling and morphology | Added as a falsifiable frontier and morphology conjecture. | No fitted scaling law. |
+| Portfolio migration, topology distillation, atlas/prior, proof-carrying rewrites | Added as a lower-confidence long-horizon program. | Supplemental concepts, not paper results. |
+| Stratified reflexive control | Added with levels 0–3 and slower authority at higher levels. | Governance design, not a safety guarantee. |
+| Six phase studies | Added as a table of regime questions and missing natural evidence. | Toy or analytical values only. |
+| Twelve proposed experiments | Preserved as four preregistered experiment families. | Research program only. |
 
 Every substantive family terminates in chapter prose, an adjacent-chapter
 upgrade, a preserved source boundary, or a named research obligation. No family

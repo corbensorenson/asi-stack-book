@@ -16368,7 +16368,7 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-          "draft_maturity": "v0.1 integrated argument chapter",
+          "draft_maturity": "v0.2 source-complete integrated argument chapter",
           "source_ids": [
             "learning_compute_topology",
             "ext_megatron_distributed_training_2021",
@@ -16402,7 +16402,7 @@
                 "sources/source_notes/learning_compute_topology.md",
                 "papers/learning_compute_topology.qmd"
               ],
-              "passage_review_note": "Reviewed the complete paper and archive, including claims map, references, figures, reproducibility files, formal specifications, grammar/schema, implementation, examples, normalized outputs, schedules, tests, phase data, novelty and coverage matrices, tree-shaking memo, and quality reports. Every substantive section family is assigned or bounded in the source note.",
+              "passage_review_note": "Reviewed the complete paper and archive twice, including claims map, references, figures, reproducibility files, formal specifications, grammar/schema, implementation, examples, normalized outputs, schedules, tests, phase data, novelty and coverage matrices, tree-shaking memo, and quality reports. The second-pass completeness audit restores the six-axis object, four temporal views, v0.2 specification boundary, A–E conformance, ten equivalence relations, control coordinates, causal interventions, topology-conditioned scaling, phase studies, and lower-confidence supplemental research directions without promoting their evidence state.",
               "passage_review_state": "reviewed"
             },
             {
@@ -16454,6 +16454,9 @@
             "Compile declared learning semantics into execution and physical placement through a semantic firewall that records approximation, staleness, compression, numerical order, failure, and information leakage.",
             "Measure causal, adaptive, epistemic, evaluator, commitment, and deployment width; effective breadth; learning bandwidth; integration retention; topological regret; and full lifecycle resource cost.",
             "Treat retained learning as a capacity-matched discovery–evaluation–integration pipeline and allocate branches, evaluators, integration capacity, archives, and reversibility to the current bottleneck.",
+            "Estimate topology credit through matched structural interventions; treat candidate subsets, evaluators, fidelities, and integration plans as a joint experimental-design problem rather than scaling candidates alone.",
+            "Constrain physical placement by semantic independence, failure-domain, archive, and authority requirements where they matter, then charge their cost and test whether they improve fault discovery or recovery.",
+            "Test topology-conditioned scaling, process morphology, portfolio migration, topology distillation, learned topology priors, proof-carrying rewrites, and stratified reflexive control as distinct hypotheses with progressively stronger authority boundaries.",
             "Propose topology synthesis, adaptive causal refinement, higher-order integration, knowledge placement, salvage, and ABVI only through preregistered matched experiments, independent evaluation, adverse controls, and rollback."
           ],
           "interfaces": [

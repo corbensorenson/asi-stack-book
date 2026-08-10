@@ -7,10 +7,10 @@
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "review_packet_path": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
   "chapter_triage_path": "docs/chapter_content_triage_2026_08_08.md",
-  "canonical_chapter_count": 85,
-  "state": "complete_85_chapter_reader_prose_quality_validated",
+  "canonical_chapter_count": 86,
+  "state": "complete_86_chapter_reader_prose_quality_validated",
   "scope": {
-    "chapters": 85,
+    "chapters": 86,
     "new_chapters_authorized": 0,
     "support_state_effect": "none",
     "release_effect": "none",
@@ -46,14 +46,14 @@
       "editorial_diagnostics",
       "non_claims"
     ],
-    "required_chapter_packets": 85,
-    "current_packets": 85,
-    "current_digest_bound_packets": 85
+    "required_chapter_packets": 86,
+    "current_packets": 86,
+    "current_digest_bound_packets": 86
   },
   "acceptance_gates": [
-    "85/85 digest-bound chapter packets validate",
-    "85/85 chapters contain a concrete scene, worked trace, counterexample boundary, and handoff",
-    "85/85 core claims have readable and formal projections with stable atom/source identity",
+    "86/86 digest-bound chapter packets validate",
+    "86/86 chapters contain a concrete scene, worked trace, counterexample boundary, and handoff",
+    "86/86 core claims have readable and formal projections with stable atom/source identity",
     "role-normalized disclaimer audit has no unjustified outlier",
     "direct/agentive prose and off-surface bookkeeping audit passes",
     "semantic diff, render, browser Human-view, accessibility-tree, and link gates pass",
@@ -61,7 +61,7 @@
   ],
   "execution_order": [
     "calibrate on thesis and representative mechanism chapters",
-    "process all 85 chapters by reader role",
+    "process all 86 chapters by reader role",
     "regenerate and audit the reader derivative",
     "reconcile synopsis, source crosswalk, Appendix C, landing page, and video briefs",
     "run final main/render/deploy/public-surface attestation"

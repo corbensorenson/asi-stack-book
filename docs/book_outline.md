@@ -5192,13 +5192,14 @@ Source loading queue:
 
 Draft arc:
 
-- Separate model, learning-process, execution, and physical-compute topology.
+- Separate model, learning-process, execution, and physical-compute topology; then distinguish topology, operational geometry, dynamics, semantics, schedule, and substrate within the scientific object.
 - Define adaptive identity through identity, divergence, persistence, and consequence tests; distinguish fork from decomposition.
-- Type adaptive state, evidence, judgement, credit, artifacts, resources, control, and authority in a multiplex open hypergraph.
-- Introduce LCT-IR, LCNF, the equivalence ladder, coarse-graining contracts, seven bounded propositions, and the semantic compiler firewall.
-- Measure effective breadth, learning bandwidth, integration retention, topological regret, semantic cuts, complete lifecycle resources, and realization leakage.
-- Derive adaptive causal refinement, typed synchronization, integration forests, reversible integration, knowledge placement, salvage, evaluator ecologies, and ABVI as hypotheses.
-- Close with the exact package receipt, 11 passing bounded tests, attack surfaces, non-claims, and a matched natural argument-exit campaign.
+- Type adaptive state, evidence, judgement, credit, artifacts, resources, control, and authority in a multiplex open hypergraph; keep template, active, realized-trace, and counterfactual-rewrite views distinct.
+- Introduce LCT-IR, the v0.1/v0.2 implementation boundary, A–E conformance, LCNF, ten equivalence relations, coarse-graining contracts, seven bounded propositions, and the semantic compiler firewall.
+- Measure effective breadth, learning bandwidth, integration retention, topological regret, semantic cuts, dimensionless control coordinates, complete lifecycle resources, and realization leakage.
+- Derive adaptive causal refinement, typed synchronization, integration forests, reversible integration, knowledge placement, salvage, evaluator ecologies, causally identifiable topology experiments, topology-conditioned scaling, morphology, and ABVI as hypotheses.
+- Preserve lower-confidence supplemental directions—joint Candidate–Evaluator–Integrator allocation, semantic placement, topology portfolios, topology distillation, atlas/prior learning, proof-carrying rewrites, and stratified reflexive control—as explicit research programs rather than results.
+- Close with the exact package receipt, 11 passing bounded tests, six toy/analytical phase studies, twelve proposed experiments, attack surfaces, non-claims, and a matched natural argument-exit campaign.
 
 Primary invariants:
 
@@ -5214,7 +5215,7 @@ Failure modes to cover:
 
 Draft deliverables:
 
-- One complete reader chapter with a four-topology worked example, adaptive-identity test, typed LCT-IR/LCNF explanation, proposition scope table, semantic compiler receipt, topology metrics, ABVI trace, security section, and falsification campaign.
+- One source-complete reader chapter with a four-topology worked example, adaptive-identity test, typed LCT-IR/LCNF explanation, conformance and equivalence tables, proposition scope table, semantic compiler receipt, topology metrics and control coordinates, derived-design evidence boundaries, ABVI trace, phase-study and experiment-family tables, security section, and falsification campaign.
 - Public exact-source paper page with all 13 supplied figures and a detailed source note covering every paper and supplement section family.
 - Targeted non-duplicative upgrades to training, substrates, routing, open-ended improvement, policy learning, continual learning, resource economics, multi-agent dynamics, adversarial evaluation, and the integrated architecture.
 - No empirical usefulness, independent formalization, transfer, safety, SOTA, AGI, or ASI result.

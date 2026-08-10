@@ -3,8 +3,8 @@ title: "Learning–Compute Topology and Adaptive Process Architecture"
 chapter_id: "learning-compute-topology-and-adaptive-process-architecture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
-draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-08-09"
+draft_maturity: "v0.2 source-complete integrated argument chapter"
+last_updated: "2026-08-10"
 primary_sources:
   - "learning_compute_topology"
   - "ext_megatron_distributed_training_2021"
@@ -28,8 +28,8 @@ open_evidence_gaps:
 | Chapter ID | `learning-compute-topology-and-adaptive-process-architecture` |
 | Part | Part III — Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Manuscript maturity | integrated argument with bounded formal and executable artifacts |
-| Last updated | 2026-08-09 |
+| Manuscript maturity | source-complete integrated argument with bounded formal and executable artifacts |
+| Last updated | 2026-08-10 |
 | Primary source | Corben Sorenson's version 1.0 *Learning–Compute Topology* paper and complete preparation package |
 | External comparators | Megatron distributed training, GSPMD, Population Based Training, and scalable evolution strategies |
 | Claim label | Design rationale |
@@ -44,9 +44,12 @@ This chapter names a layer that ordinary model diagrams and cluster diagrams
 both omit. It does not claim that every learning process needs a complicated
 graph, that Learning Causal Normal Form is uniquely canonical, that the supplied
 primitive set is complete, or that a topology controller improves learning.
-The paper's five evidence states remain separate: bounded proposition,
-implemented prototype, manual scoped comparison, toy or analytical
-illustration, and open hypothesis.
+The paper-and-package material is tracked here in five evidence states: bounded
+proposition, implemented prototype, manual scoped comparison, toy or analytical
+illustration, and open hypothesis. The paper itself names the first, second,
+fourth, and fifth classes; the package's manually coded coverage and novelty
+matrices receive their own book-level state so they cannot masquerade as either
+proof or an independent literature review.
 
 The chapter's job is to make a process **representable and challengeable**.
 Whether a proposed process is useful must be decided later by matched natural
@@ -114,7 +117,7 @@ composed system.
 
 ### Four topologies, not one
 
-The stack should distinguish four objects.
+Four objects need separate names.
 
 | Object | Governing question | Example |
 |---|---|---|
@@ -128,6 +131,25 @@ have several physical realizations. One cluster may execute several learning
 processes. A compiler can change placement, fusion, communication, or schedule
 without permission to change identity, evaluator, credit, or integration
 semantics.
+
+Nor is a learning process fully described by its connectivity. LCT separates
+six coordinates that ordinary graph drawings often collapse: **topology** says
+what may influence what; **operational geometry** records delay, capacity,
+fidelity, trust, similarity, compatibility, and frequency; **dynamics** names
+the local update rules; **semantics** says what stores, messages, and joins
+mean; **schedule** records which enabled events execute and when; and
+**substrate** records processors, memory, links, storage, and failure domains.
+Two systems can share an unweighted graph while using different update rules or
+join semantics. Two semantically equivalent processes can run under different
+schedules and costs.
+
+A process also has four time-sensitive views. The **template topology** states
+the recurring relations that are allowed. The **active topology** records the
+identities and edges that exist now. The **realized trace** is the versioned
+causal history that actually occurred. The **counterfactual rewrite space**
+records permitted but unchosen branches and structural actions. Topological
+regret is unintelligible without that last object: one cannot compare a chosen
+rewrite with alternatives that were never represented.
 
 ```{mermaid}
 flowchart LR
@@ -160,6 +182,11 @@ nodes. Population methods expose candidates but use method-specific language
 that does not directly compare with federation, distillation, modularity,
 actor–learner systems, or ordinary synchronized SGD.
 
+The name should not be confused with topological data analysis or topological
+machine learning, where topology commonly refers to mathematical structure in
+data, representations, or model spaces. Here the object is the typed causal
+organization of adaptation and its realization on compute.
+
 No one of those abstractions is defective for its original job. The failure is
 using it outside that job. A computation graph cannot decide whether two model
 copies are two learners. A device mesh cannot say whether a timeout changed
@@ -176,6 +203,19 @@ useful comparisons, or generate testable process designs. The argument-exit
 campaign therefore treats annotation agreement, predictive value, controller
 benefit, and total burden as outcomes rather than assuming the formalism pays
 for itself.
+
+## Core Claim
+
+[learning-compute-topology-and-adaptive-process-architecture.core, label: Design rationale, support: argument] For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.
+
+**Reader claim.** Hardware parallelism and learning plurality are different.
+Count persistent adaptive histories, not devices, and name the evidence,
+judgement, credit, integration, and authority that connect them.
+
+**Operational rule.** Freeze a resolution contract; type every adaptive store
+and consequential edge; compile through a semantic firewall; return a
+realization receipt; and test topology changes against competent matched
+baselines with reversible integration and complete cost.
 
 ## Mechanism
 
@@ -292,8 +332,14 @@ The bounded LCT-IR vocabulary includes nine store classes and explicit
 operators for instantiate, observe, evaluate, assign credit, update, fork,
 aggregate, synchronize, select, merge, distill, compose, transfer, archive,
 restore, retire, route, allocate, rewire, checkpoint, emit, and pure
-computation. A generic “combine” operator is deliberately absent. Its semantics
-are exactly where many learning systems differ.
+computation. The paper specifies two v0.2 additions: `decompose`, for creating
+specialized parts that remain jointly composed, and `externalize`, for placing
+accepted knowledge outside the originating adaptive state. It also requires
+identity-destroying events to declare recovery state and accepted discoveries
+to declare their retained destination. Those additions are specification
+targets, not capabilities already demonstrated by the bounded v0.1 compiler.
+A generic “combine” operator is deliberately absent. Its semantics are exactly
+where many learning systems differ.
 
 #### Minimal conformance rules
 
@@ -312,9 +358,25 @@ An admitted program should at least satisfy these constraints:
 - topology rewrites and sensitive writes require authority;
 - compute mappings declare exact, approximate, distributional,
   bounded-staleness, behavioral, or best-effort guarantees.
+- identity-destroying or integration events declare reversibility and recovery;
+- accepted discoveries declare their retained knowledge destination.
 
 These are not sufficient for a good learning system. They are the grammar that
 makes a process inspectable.
+
+Implementations can also be graded without pretending that parsing is
+synthesis:
+
+| Conformance | Required capability | Present package state |
+|---|---|---|
+| A — descriptive | Typed static representation | bounded support |
+| B — normalizable | Deterministic LCNF extraction | bounded support |
+| C — executable | Operational semantics and traces | bounded support |
+| D — verifiable | Equivalence, authority, and compiler checks | selected checks only |
+| E — synthesizable | Search or online control over topology programs | not implemented |
+
+The package therefore demonstrates a bounded A–C vertical slice plus selected
+D checks. It is not an E-level topology learner.
 
 ### Learning Causal Normal Form
 
@@ -329,13 +391,21 @@ collapsing only interface-sufficient subgraphs, canonicalizing identifiers and
 ordering, and retaining provenance for every rewrite.
 
 LCNF does not promise one metaphysically true graph. It promises a declared
-resolution and explicit losses. Its equivalence ladder must remain ordered:
+resolution and explicit losses. Its equivalence ladder keeps different
+scientific questions separate:
 
-1. graph isomorphism;
-2. trace equivalence over protected events;
-3. distributional equivalence over declared stochastic traces;
-4. behavioral equivalence at an interface;
-5. task-equivalence under a specified evaluator and environment.
+| Equivalence claim | What must be preserved |
+|---|---|
+| Structural | typed adaptive incidence structure |
+| Lineage | identity creation and ancestry |
+| Trace | allowed labeled causal histories |
+| Stochastic | distribution over declared outcomes |
+| Behavioral | outputs on a specified intervention or test family |
+| Learning | adaptive-history distribution at a declared resolution |
+| Execution | operation dependencies and schedule constraints |
+| Resource | work, span, memory, communication, or energy class |
+| Deployment | the retained inference system |
+| Authority | permissions and trust boundaries |
 
 A pair of systems may be task-equivalent on one benchmark while differing in
 lineage, cost, privacy, rollback, or attack surface. A compiler may preserve
@@ -438,6 +508,24 @@ Every metric needs an estimator, uncertainty, cost, manipulation analysis, and
 consumer. Otherwise the controller will optimize a proxy such as nominal branch
 count and create Sybil breadth.
 
+The paper proposes dimensionless control coordinates to make bottlenecks
+comparable across scales. They are research instruments, not universal
+constants:
+
+| Coordinate | Question answered |
+|---|---|
+| Evaluation adequacy, $\eta_E$ | How much uncertainty about the consequential choice does evaluator evidence remove? |
+| Integration adequacy, $\eta_I$ | Is available integration capacity sufficient for the distinctions that must survive? |
+| Diversity efficiency, $\eta_B$ | How much nominal breadth remains after correlation is discounted? |
+| Learning–compute mismatch, $\chi_{LC}$ | Does required semantic traffic exceed the physical cut capacity of its placement? |
+| Commitment retention, $\kappa$ | What fraction of generated alternatives remains recoverable? |
+| Refinement pressure, $\pi_R$ | Is the value of exposing a hidden distinction worth the cost of splitting an identity? |
+| Channel-specific synchronization value, $\pi_{S,k}$ | Is one more synchronization on semantic channel $k$ worth its delay, cost, and homogenization? |
+
+Each coordinate needs an operational estimator and decision rule before a
+controller may consume it. Writing a ratio is not evidence that its numerator
+or denominator can be measured reliably.
+
 ### Derived process designs
 
 The paper's derived designs are useful because they show what a generative
@@ -494,6 +582,88 @@ More evaluators can improve coverage but also multiply one shared proxy. An
 ecology should declare evaluator identities, training data, incentives,
 correlations, domains, calibration, disagreement policy, and authority. Some
 anchors should remain outside the topology controller's update authority.
+
+#### Causal topology credit and active integration experiments
+
+A controller cannot learn which structural decision helped if branch count,
+evaluator pool, synchronization, allocation, and integration all change at
+once. Topology credit therefore needs matched interventions: temporarily
+isolate one rewrite, randomize or stagger its activation, preserve a shadow
+counterfactual, delay synchronization long enough to retain treatment contrast,
+and log the evidence, authority, and integration history. Fast sharing and
+causal identifiability can conflict; immediate homogenization may erase the
+very contrast needed to learn whether a fork or evaluator actually mattered.
+
+The supplement extends this into **Candidate–Evaluator–Integrator active
+allocation**. The integration plan is itself a candidate. Testing effort can be
+allocated across branch subsets, evaluators, fidelities, and integration
+operators according to expected reduction in deployment-decision uncertainty
+per unit cost. That is stronger than asking which candidate should receive the
+next evaluation: it asks whether the next useful experiment is a new candidate,
+an independent judge, a compatibility test, a different join, or no further
+search. It is a promising experimental-design principle from the tree-shaking
+memo, not an implemented controller or demonstrated optimum.
+
+#### Semantic compute placement
+
+Makespan is not the only placement objective. A counterfactual branch placed on
+the same failure domain, numerical stack, data path, and cache hierarchy as its
+control may share the failure it was meant to detect. Validators that share a
+runtime defect with the candidate are not independent merely because they use
+different process IDs. Archives co-located with the update path do not provide
+credible rollback against that path's corruption.
+
+Semantic placement attaches requirements such as failure-domain separation,
+numerical diversity, data-path independence, communication isolation, archive
+durability, and authority separation to process roles. The physical planner
+then optimizes latency and throughput within those constraints and returns the
+cost and leakage. This can be expensive and sometimes unnecessary. Its value
+must be tested by comparing throughput-only placement with matched semantic
+placement under injected faults, correlated errors, and recovery events.
+
+#### Topology-conditioned scaling and morphology
+
+A conventional scaling curve holds the learning process approximately fixed.
+LCT instead treats utility as a surface $U(C,\mathcal{T})$ over total budget
+$C$ and learning-process topology $\mathcal{T}$. The relevant frontier is the
+best *feasible* process at each budget, not the extrapolation of one recipe.
+Low budgets may favor one lineage because branching overhead dominates.
+Candidate-limited regimes may favor exploration; evaluation-limited regimes
+may favor better or more independent judges; integration-limited regimes may
+favor modularity, externalization, or more retained capacity; coordination-
+limited regimes may favor islands and artifact transfer.
+
+This yields a deliberately falsifiable morphology conjecture. Under
+heterogeneous tasks, imperfect evaluators, finite communication, and nontrivial
+integration interference, strong processes may tend to be hierarchical and
+multiscale, dense locally and sparse globally, multiplex across semantic
+channels, modular where fusion interferes, asymmetric between incumbents and
+experiments, reversible while uncertainty is high, increasingly committed as
+evidence accumulates, archive-backed under change, and capacity-matched across
+discovery, evaluation, credit, and integration. It is an empirical hypothesis,
+not a theorem or a blueprint that every system should copy.
+
+#### Long-horizon topology transformation and stratified control
+
+The supplement sketches a longer research horizon. A controller could maintain
+a small **topology portfolio** and migrate state among process organizations as
+the bottleneck changes. **Topology distillation** could compress a successful,
+expensive learning process into a simpler process while testing which behavior,
+lineage, rollback, and authority properties survive. A shared **topology atlas**
+could store normalized motifs, regimes, costs, failures, and transfer evidence,
+supporting a learned prior over process designs rather than unconstrained search
+over code. **Proof-carrying rewrites** could require every proposed topology
+change to ship with machine-checkable type, authority, preservation, budget,
+and rollback obligations.
+
+These ideas are lower-confidence program directions, not results from the
+paper's executable core. If pursued, they need stratified reflexive control:
+level 0 changes model or memory state; level 1 changes learning topology; level
+2 changes the topology controller; and level 3 constrains authority and
+constitutional invariants. No single unobserved transition should rewrite the
+controller, its evaluator, and its authority. The more reflexive the level, the
+slower, more independently checked, and more reversible the transition should
+be.
 
 ### Adaptive Branch–Validate–Integrate
 
@@ -624,6 +794,22 @@ rules. It does not show stable independent normalization, compiler correctness,
 faithful real execution, predictive metrics, useful adaptive rewrites, or safer
 learning.
 
+The six supplied phase studies are best read as executable hypotheses, not
+measurements of real systems:
+
+| Study | Regime question made explicit | Missing evidence |
+|---|---|---|
+| Search topology | When should one lineage, branching, or population search win as landscape structure and evaluator quality change? | natural tasks, competent tuning, and measured costs |
+| Synchronization | When do heterogeneous learners benefit from immediate sharing, sparse synchronization, or islands as communication cost changes? | deployed communication and learning traces |
+| Integration operator | When should compatible or conflicting branches be selected, merged, distilled, or composed under a deployment-capacity limit? | real capability-retention measurements |
+| Retained-learning bottleneck | Does discovery, evaluation, or integration become the limiting semantic cut as budget moves? | calibrated estimators for each cut |
+| Adaptive causal refinement | When does splitting or coarsening an adaptive identity improve prediction enough to repay complexity? | prospective identity interventions |
+| Reversible integration | When does carrying alternatives through shift outperform immediate commitment after storage and recovery costs? | longitudinal distribution-shift campaigns |
+
+Their value is that they state crossover questions precisely enough to attack.
+Their numerical regions are toy or analytical and must not be cited as observed
+phase boundaries.
+
 ## Mature Research Target
 
 The first serious campaign should be factorial rather than promotional.
@@ -663,6 +849,20 @@ appear canonical when one author controls examples, normalization, and tests.
 Transfer across tasks, hardware, institutions, and time is required before a
 topology rule becomes a stack default.
 
+The source's twelve proposed experiments can be organized into four
+pre-registered families so none disappears inside a generic “test LCT” task:
+
+| Family | Required contrasts |
+|---|---|
+| Semantic fidelity | same learning topology on different compute; same graph silhouette with different join semantics; typed joins against generic combination |
+| Process prediction | effective breadth against raw branch count; evaluator scaling and correlation; pairwise against higher-order integration planning; semantic-cut bottlenecks |
+| Adaptive organization | fixed against adaptive identity resolution; candidate-only against bottleneck-aware allocation; fixed against adaptive knowledge placement and salvage |
+| Lifecycle and realization | multiplex against one-topology synchronization; throughput-only against semantic placement; immediate against reversible integration under surprise shift |
+
+Each family needs a strong simple baseline, a competent mechanism-specific
+baseline, equal opportunity budgets, prospective falsifiers, and a decision
+about what a null result narrows. This grouping is bookkeeping, not evidence.
+
 Two proof targets are intentionally planned rather than claimed as implemented:
 
 - `lean:learning_compute_topology.semantic_firewall_nonexpansion` will model a
@@ -689,18 +889,22 @@ Success requires both positive and negative transfer: the system should improve
 retained learning in preregistered regimes and decline to add complexity where
 strong fixed baselines are better.
 
-## Core Claim
+## Codex test plan
 
-[learning-compute-topology-and-adaptive-process-architecture.core, label: Design rationale, support: argument] For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.
+| Test | Purpose | Status |
+|---|---|---|
+| Package integrity and bounded executable suite | Verify the 127-file checksum manifest and rerun all 11 supplied IR, normalization, compilation, scheduling, simulation, and example tests. | implemented; package custody and finite reference behavior only |
+| Independent normalization and equivalence challenge | Have independent implementations encode hidden natural mechanisms, compare all ten declared equivalence relations, and measure disagreement, annotation cost, protected-trace retention, and analyst discretion. | planned; no independent encoder exists |
+| Semantic-firewall realization campaign | Hold learning topology fixed while varying schedules and substrates; inject staleness, compression, numerical-order, dropped-work, failure-domain, and placement changes and test protected observables against realization receipts. | planned; no runtime campaign exists |
+| Topology intervention and bottleneck campaign | Hold total resources fixed while varying identity resolution, candidate/evaluator/integrator allocation, synchronization, knowledge placement, and reversible integration against competent fixed baselines. | planned; the phase studies are toy or analytical |
+| Topology-conditioned scaling and transfer campaign | Estimate conditional frontiers across budgets, tasks, model families, optimizers, hardware, institutions, and time, including regimes where the simple single-lineage baseline wins. | planned; no fitted law or transfer result exists |
+| Adversarial reflexive-control campaign | Attack Sybil breadth, evaluator monoculture, merge order, provenance, starvation, archives, held-outs, semantic placement, controller reward, and authority levels while measuring useful throughput and governance cost. | planned; no safety or controller result exists |
 
-**Reader claim.** Hardware parallelism and learning plurality are different.
-Count persistent adaptive histories, not devices, and name the evidence,
-judgement, credit, integration, and authority that connect them.
-
-**Operational rule.** Freeze a resolution contract; type every adaptive store
-and consequential edge; compile through a semantic firewall; return a
-realization receipt; and test topology changes against competent matched
-baselines with reversible integration and complete cost.
+The first row is a repository and source-package check. Every later row is an
+argument-exit obligation. Passing the first cannot substitute for any natural
+campaign, and a negative result is interpretable only after mechanism-specific
+baselines, resource equality, fault activation, evaluator competence, and
+implementation fidelity are established prospectively.
 
 ## Non-claims
 
@@ -721,7 +925,7 @@ baselines with reversible integration and complete cost.
 
 | Source | What enters this chapter | Boundary retained |
 |---|---|---|
-| [`learning_compute_topology`](../papers/learning_compute_topology.html) | Four-topology distinction, adaptive identity, multiplex semantic channels, LCT-IR, LCNF, seven propositions, compiler firewall, metrics, derived designs, ABVI, reference package, phase studies, falsifiers, and attack surfaces. | Corben-authored primary source; bounded formal and executable artifacts do not establish empirical benefit, novelty, safety, transfer, SOTA, AGI, or ASI. |
+| [`learning_compute_topology`](../papers/learning_compute_topology.html) | Four-topology and six-axis distinctions; four temporal views; adaptive identity; multiplex semantic channels; LCT-IR and its v0.2 boundary; LCNF and ten equivalence relations; seven propositions; compiler firewall; metrics and control coordinates; derived designs; ABVI; six phase studies; twelve-experiment program; falsifiers; and attack surfaces. | Corben-authored primary source; bounded formal and executable artifacts do not establish empirical benefit, novelty, safety, transfer, SOTA, AGI, or ASI. The topology portfolio, distillation, atlas/prior, proof-carrying rewrites, and joint Candidate–Evaluator–Integrator allocation come from a lower-confidence supplemental design memo. |
 | `ext_megatron_distributed_training_2021` | Concrete composed data, tensor, and pipeline parallel execution comparator. | Worker and device parallelism do not establish persistent adaptive plurality. |
 | `ext_gspmd_2021` | Concrete compiler/partitioning comparator from tensor computation to device mesh. | Execution compilation does not authorize changes to learning identity, evaluation, credit, integration, or authority. |
 | `ext_pbt_2017` | Persistent population members, interim evaluation, copying, perturbation, and online schedule adaptation. | One population method does not validate the general LCT primitive set, normal form, metrics, or ABVI. |
@@ -740,9 +944,10 @@ Learning–Compute Topology supplies the missing contract between model design a
 distributed execution. It counts persistent adaptive histories instead of
 devices, types the semantic channels that change them, makes integration and
 lifecycle operations explicit, and requires physical realization to return a
-leakage receipt. LCT-IR, LCNF, seven bounded propositions, and the passing
-reference package make the proposal concrete, but they do not establish that
-the representation is complete or that adaptive topology improves learning.
+leakage receipt. LCT-IR, its A–E conformance ladder, LCNF's ten distinct
+equivalence claims, seven bounded propositions, and the passing reference
+package make the proposal concrete, but they do not establish that the
+representation is complete or that adaptive topology improves learning.
 
 The practical discipline is to separate what the process means from how it is
 scheduled, then test both. A self-improving stack needs permissioned topology
