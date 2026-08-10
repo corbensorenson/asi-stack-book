@@ -1395,14 +1395,18 @@ def errors(data: dict) -> list[str]:
         out.append("Manim generation-2 roadmap counts drifted from the canonical production ledger")
     first_replacement = ratchet.get("first_replacement", {})
     first_target = v2_entries[0].get("target", {}) if v2_entries else {}
+    first_plan_path = first_target.get("beat_plan_path")
+    first_plan = {}
+    if isinstance(first_plan_path, str) and (ROOT / first_plan_path).is_file():
+        first_plan = json.loads((ROOT / first_plan_path).read_text(encoding="utf-8"))
     if (
         first_replacement.get("chapter_id") != "asi-is-a-stack-not-a-model"
-        or first_replacement.get("duration_seconds") is not None
-        or first_replacement.get("beat_count") is not None
+        or first_replacement.get("duration_seconds") != first_plan.get("target_duration_seconds")
+        or first_replacement.get("beat_count") != len(first_plan.get("beats", []))
         or first_replacement.get("stage") != first_target.get("stage")
         or first_replacement.get("gate_state") != first_target.get("gates", {}).get("animatic")
         or first_replacement.get("current_review_path") != first_target.get("experience_review_paths", {}).get("animatic")
-        or first_replacement.get("current_candidate_review_state") != "narration_draft_requires_source_bound_treatment_and_script_gate_old_v2_plan_is_historical"
+        or first_replacement.get("current_candidate_review_state") != "source_bound_treatment_and_script_passed_block_timed_animatic_rendered_playback_review_pending"
         or first_replacement.get("narration_sha256") != first_target.get("narration_sha256")
         or first_replacement.get("historical_review_paths") != [
             "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",

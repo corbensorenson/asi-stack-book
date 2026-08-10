@@ -4596,14 +4596,14 @@ pinned toolchains, and manifest-derived production ledger now form one
 fail-closed generation-two system. This v3 checkpoint supersedes earlier v2
 procedural language in this subsection wherever the two conflict. The ledger
 derives 85 targets in canonical order. Twenty-four narration drafts have been
-rewritten to 364–436 words and pass structural narration lint with zero
-warnings; 61 targets remain planned. None of the drafts is an approved script:
-no source-bound treatment yet binds its exact chapter, source-note/inventory
-context, claims, non-claims, truth checks, semantic keyframes, accessibility
-plan, or read-aloud and visualizability verdict. Their earlier treatment-free
+rewritten to 364–436 words; the opening chapter has since advanced through a
+source-bound treatment and script gate, leaving 23 narration drafts and 61
+planned targets. Its exact chapter and source context, claims, non-claims,
+truth checks, semantic keyframes, accessibility plan, and read-aloud and
+visualizability verdict are bound in the treatment. Earlier treatment-free
 plans and all downstream artifacts remain history. Current state is therefore
-24 `narration_draft`, zero treated, zero script-passed, and zero accepted or
-published.
+23 `narration_draft`, one script-passed and `beat_planned` pilot, zero
+animatic-passed, and zero accepted or published.
 
 The hardening pass binds every gate to exact scene, caption, transcript,
 thumbnail, toolchain, visual-grammar, primitive-library, receipt, and review
@@ -4645,13 +4645,16 @@ invalidation: story-contract changes reopen treatment, scene or shared-visual
 changes reopen animatic, and caption/A/V helper changes reopen lock rather than
 needlessly restarting editorial work. The alignment route remains
 `not_yet_qualified`; no lock may pass until that admission test succeeds. The
-next production action is one source-bound treatment and approved script,
-followed by a block-timed pilot animatic, qualified alignment, picture-and-sound
-lock, both isolated release reviews, and only then transfer to the other four
-pilots. No chapter audio or chapter video was regenerated, no platform object
-was mutated, and no Quarto publication state moved; only the two compact
-primitive regression frames and an automatically deleted render/mux policy
-smoke fixture were executed.
+opening pilot now has a 153.035-second, 21-beat block-timed animatic rendered
+through the isolated runner and sampled at five frames per beat plus targeted
+transition frames. That mechanical custody and frame sampling do not constitute
+the missing observed full-speed audiovisual review, so the beat-plan verdict
+remains `revise` and the animatic gate remains `not_started`. The next action is
+that playback review and any resulting repair, followed by qualified alignment,
+picture-and-sound lock, both isolated release reviews, and only then transfer
+to the other four pilots. The opening narration and local animatic were
+regenerated; no platform object was mutated and no Quarto publication state
+moved.
 
 **Superseded execution checkpoint — 2026-07-31.** The v2 standard is now repository-local at
 `skills/asi-stack-manim-videos/`, and

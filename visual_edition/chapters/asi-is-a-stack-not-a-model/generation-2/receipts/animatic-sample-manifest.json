@@ -1,0 +1,856 @@
+{
+  "schema_version": "asi_stack.manim_frame_sample_manifest.v1",
+  "chapter_id": "asi-is-a-stack-not-a-model",
+  "sample_set": "animatic",
+  "sampler": {
+    "path": "skills/asi-stack-manim-videos/scripts/sample_video_beats.py",
+    "sha256": "bd2b0d104030fb1f56dd388d9d90b791acca0a5d1e4f44c18ea875f23b14b5aa"
+  },
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    }
+  },
+  "video_path": "build/visual_edition/isolated-renders/asi-is-a-stack-not-a-model/draft/asi-is-a-stack-not-a-model-animatic.mp4",
+  "video_sha256": "be83f087592eabe627b24a362962961521589a4ed51dffa82f721b1ca9a56423",
+  "beat_plan_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/beat_plan.json",
+  "beat_plan_sha256": "6bfffb88b005315b2cf35b4f697639c1efa12e6b67b3844f3091920e2509c1b3",
+  "expected_beat_count": 21,
+  "sampled_beat_count": 21,
+  "samples_per_beat": 5,
+  "beats": [
+    {
+      "beat_id": "b01",
+      "start_seconds": 0.0,
+      "end_seconds": 6.0,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 0.15,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/001_b01_start.png",
+          "sha256": "21aeb6f2e8c6ec33e36350daa2ab477dbbe2464a6cd5f4e393a41ddb5a23ab71"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 1.5,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/001_b01_quarter.png",
+          "sha256": "dec24a7aa00999f0e6bf308439fa3b00067efce4615f35e46d51326201e24309"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 3.0,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/001_b01_middle.png",
+          "sha256": "0beabe0f57660f08836fd7c54d77f9a9789d2f9e5efd770cfbe26ef58314e52b"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 4.5,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/001_b01_three-quarter.png",
+          "sha256": "e4bcd6111e08c3b647228a282d03310acc2383c60a8e5ee4d140b6db6b684fe2"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 5.85,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/001_b01_end.png",
+          "sha256": "298097a8b427c1082f298efd56bd494b3e313f8e4ea5f5ec9df1a47722e7ea86"
+        }
+      ]
+    },
+    {
+      "beat_id": "b02",
+      "start_seconds": 6.0,
+      "end_seconds": 12.08,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 6.15,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/002_b02_start.png",
+          "sha256": "e9989220032738d2e4795c511edef1b1190e65bb7f30a288476f93e768343225"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 7.52,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/002_b02_quarter.png",
+          "sha256": "887d1eaa74a053df43b8499cda3dafd7904e1be317bb7f6bc8a81f0e858dc233"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 9.04,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/002_b02_middle.png",
+          "sha256": "5546b96f2ffbfc64a9858b6b4024ed8df8e9d0a2d60919694eca17712e134d0c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 10.56,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/002_b02_three-quarter.png",
+          "sha256": "786582953f5355c6e51641677f559cdcb3dd241859da3203eda0a04512e84a96"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 11.93,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/002_b02_end.png",
+          "sha256": "32c9a4c44bfbfe1f0278d85dbb5f152aa1080aac4a23e0320de6475719d379cf"
+        }
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "start_seconds": 12.08,
+      "end_seconds": 17.53,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 12.23,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/003_b03_start.png",
+          "sha256": "88291c91f049b26cad32c08bfb1f99aeb2d01ef0ffbc879abb8c62a83c3cf917"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 13.443,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/003_b03_quarter.png",
+          "sha256": "01a5b4c19db302967e4eb805f04d344b0fc4382f504e2dfbc538190f89ccd8ba"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 14.805,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/003_b03_middle.png",
+          "sha256": "1c9f3e5d5e75fb84afc170c8493284b22a7946e0991214f78f01a94f695cfe2d"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 16.168,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/003_b03_three-quarter.png",
+          "sha256": "40981bf5a2f24e4351e1291b1d45aae42a6a02b7d1760a556fe6a76f9671c366"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 17.38,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/003_b03_end.png",
+          "sha256": "6ce7a8b2b1f119ccafa63c838ac224ef099891bcc126d983e259883701d2d556"
+        }
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "start_seconds": 17.53,
+      "end_seconds": 23.1,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 17.68,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/004_b04_start.png",
+          "sha256": "bab37ec73b57a4686da2ed79054b82f379748820fc69f78e16a9e5ec965f287d"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 18.922,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/004_b04_quarter.png",
+          "sha256": "ff0133031cad67ee0025f26d74903bb2da40bdbef3dcc16b306887722c31b2dc"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 20.315,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/004_b04_middle.png",
+          "sha256": "0bb4f0eea7b55bc873c1478eb180dc40988ae947ec1a12a5cda173f3ee263bd4"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 21.708,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/004_b04_three-quarter.png",
+          "sha256": "4042dc197fb6e3e1dcf7482c15f4f0dc6d9ac22699440dfcc44782f6e755dd37"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 22.95,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/004_b04_end.png",
+          "sha256": "03e269fc239526c911845eaf4c74576fcfb1e5985b4b1561cd983f85cd5d1105"
+        }
+      ]
+    },
+    {
+      "beat_id": "b05",
+      "start_seconds": 23.1,
+      "end_seconds": 29.78,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 23.25,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/005_b05_start.png",
+          "sha256": "2a1308e1723ff6a07ac580e03d63836dfa77896a601f79a215353ca066c4c3fb"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 24.77,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/005_b05_quarter.png",
+          "sha256": "789edc5e2dfeb67ced1dadf4b98aff35011d84240ae7ead2bd104d63f1aa5c4f"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 26.44,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/005_b05_middle.png",
+          "sha256": "bc47dc39b792114fed2c7b023e438b75c6cc74801f39aab87bb9b9b48ed024f4"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 28.11,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/005_b05_three-quarter.png",
+          "sha256": "58ee4fdc3c1aa46196de10e50cf98ab142b4ddcf7329b745a1592fb09d67d15b"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 29.63,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/005_b05_end.png",
+          "sha256": "d0120592f3bee977fa25fff4d1afa40f71f5b7ea943787a9da24b93ce3d0b010"
+        }
+      ]
+    },
+    {
+      "beat_id": "b06",
+      "start_seconds": 29.78,
+      "end_seconds": 37.22,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 29.93,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/006_b06_start.png",
+          "sha256": "0ea79a86223e46ade2ca2a320894b3ecc0e3748e386eb1d1fcbccea3799d980a"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 31.64,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/006_b06_quarter.png",
+          "sha256": "56cf84140da9183588ce819d3a9d20cd20da9f7c76b26be4d4c9ec345e006d2a"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 33.5,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/006_b06_middle.png",
+          "sha256": "4ad59c54e39d87663818002b31cc1f105c1cf1c7ece9f8048d6e80ea7919a40e"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 35.36,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/006_b06_three-quarter.png",
+          "sha256": "be7f9b663f40eefd43db222f6f96b06d82b078aa1a9e9c6385b81c0ec8331363"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 37.07,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/006_b06_end.png",
+          "sha256": "49186771914746b5b7fd2f69c16badf2d91f463234a1d10710c6e17ffc132b34"
+        }
+      ]
+    },
+    {
+      "beat_id": "b07",
+      "start_seconds": 37.22,
+      "end_seconds": 46.605,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 37.37,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/007_b07_start.png",
+          "sha256": "96dff2daabb834c8a3b769fa3db14c1fb718b0675537a5051398617a09843029"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 39.566,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/007_b07_quarter.png",
+          "sha256": "d2869e7613d7a7c4435ebb6ac3674ce1e5c189f1879563fb03bc3ab98eb2e687"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 41.912,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/007_b07_middle.png",
+          "sha256": "64ed5935922230d0025d946d47c9bb4a92a031b77a309935fbd1a1338db10dab"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 44.259,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/007_b07_three-quarter.png",
+          "sha256": "4f6e4a466a5ffc8429093199c0ec2063e8166efe843be1219c40a896078078b3"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 46.455,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/007_b07_end.png",
+          "sha256": "93d9f0579425e4b26d8e04deb7807cfba22ccad5f879666b6bb473de17e86a78"
+        }
+      ]
+    },
+    {
+      "beat_id": "b08",
+      "start_seconds": 46.605,
+      "end_seconds": 53.18,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 46.755,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/008_b08_start.png",
+          "sha256": "fb794c3a30621b6a02f84d74346c2204faf32f0c9d462045d92572ed686258c7"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 48.249,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/008_b08_quarter.png",
+          "sha256": "35ade7333ed21f31feacdcb4dbba4fb42ac32b667b68f4fb2967be99787f5b99"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 49.892,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/008_b08_middle.png",
+          "sha256": "b0e0d84cc76257ff74710a7a02e7ff7fb9c680bcfd57cfcb56d0e675e7d33e34"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 51.536,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/008_b08_three-quarter.png",
+          "sha256": "2402fd48aa851c46217cc4bae016539e5bbb583d03b2d03eb6b987a369291184"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 53.03,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/008_b08_end.png",
+          "sha256": "fdcb1d2d5d0d1f0e9a72c4ca4c7892b3c1dfb27b90e5fca6553c0f6a3b46b596"
+        }
+      ]
+    },
+    {
+      "beat_id": "b09",
+      "start_seconds": 53.18,
+      "end_seconds": 59.3,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 53.33,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/009_b09_start.png",
+          "sha256": "e61ca6a82dc7833faf6ab7024f8789daec1b6299f4a08e99e8e6cad237a7bd8e"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 54.71,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/009_b09_quarter.png",
+          "sha256": "5f41557759cf201492f34cdbf64be9b6e161f066940a9b9bea2d0f26d855a4c4"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 56.24,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/009_b09_middle.png",
+          "sha256": "80e9475e2a32c9eab6b088721103a85c746b0a554ee1365d05a2cada0df9a619"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 57.77,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/009_b09_three-quarter.png",
+          "sha256": "693b94540176ea5c732a97775b2d0690e88baf17ad25cd9b6971e2a8da8e6cd8"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 59.15,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/009_b09_end.png",
+          "sha256": "b062302faa6abed13352223a635a0b0ea40605b8adb5f553b53abc3837abf708"
+        }
+      ]
+    },
+    {
+      "beat_id": "b10",
+      "start_seconds": 59.3,
+      "end_seconds": 72.13,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 59.45,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/010_b10_start.png",
+          "sha256": "732bbca463ff0eb8a00e7d6928fb8cf5c310e31ff8a5c5a312fab76b16b10edb"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 62.507,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/010_b10_quarter.png",
+          "sha256": "3e9cdd873b59cd0d4c827943a89e0ab299e797080197ab7e9c991d5a3f963dae"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 65.715,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/010_b10_middle.png",
+          "sha256": "b46c230a372a20b453deb6981190269441319e87557d58c7d6a2b6ff1d42af24"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 68.922,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/010_b10_three-quarter.png",
+          "sha256": "a382e4edca4b49e46ff3f12adff602b4232ece6d29d55a9e435a1367839a298e"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 71.98,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/010_b10_end.png",
+          "sha256": "b86489da3ab1a9f4d71c56f7ee6f9edd276681b75a9cd5d59fb353563b715a12"
+        }
+      ]
+    },
+    {
+      "beat_id": "b11",
+      "start_seconds": 72.13,
+      "end_seconds": 77.06,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 72.28,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/011_b11_start.png",
+          "sha256": "f2a35cb59837e779c9a924fe84d545ec521a0780f862cd52728d288dc7ed9f88"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 73.362,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/011_b11_quarter.png",
+          "sha256": "a4deed7403107f3f145e1f2001d69eab85c1e5a9eb96d5d88f4bd6a6f726a690"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 74.595,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/011_b11_middle.png",
+          "sha256": "9951fcfeae78002b5a3f640d4cc7e34bdecb6373b9dc203b89037297b7437a5c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 75.828,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/011_b11_three-quarter.png",
+          "sha256": "6773d659de94d46646a52182b04cac627afba875563d7dd496dbe3c974012551"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 76.91,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/011_b11_end.png",
+          "sha256": "35a9e5ee8833a473ba2ff7f30b913b3e918b2a6690d78cb099dd57ecac18ce24"
+        }
+      ]
+    },
+    {
+      "beat_id": "b12",
+      "start_seconds": 77.06,
+      "end_seconds": 84.58,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 77.21,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/012_b12_start.png",
+          "sha256": "8b74ff50985149d2e9ea6eec7e83f3821754768149a16fde47b9179ad1f7f300"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 78.94,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/012_b12_quarter.png",
+          "sha256": "4be5e6c742ed605448d168d2970986e815e61cbd709a1e20012d9faeb1fbe9f1"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 80.82,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/012_b12_middle.png",
+          "sha256": "7df85f379bdc110c018301f05137e420889af9a7fbd94db921a5dd4cb39c9e95"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 82.7,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/012_b12_three-quarter.png",
+          "sha256": "c37012883c62a42510298386c1eeee96d78b7b4a0dd56514e2ef1731eb261112"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 84.43,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/012_b12_end.png",
+          "sha256": "ee342d7cc5f25113bc565115fd4682ac977c5299185a3f259ec691c87543aab6"
+        }
+      ]
+    },
+    {
+      "beat_id": "b13",
+      "start_seconds": 84.58,
+      "end_seconds": 96.305,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 84.73,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/013_b13_start.png",
+          "sha256": "f2386f3c3e88715487fe1060ee95d2cb4442a1799e08d1dfec0c83d3c3474291"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 87.511,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/013_b13_quarter.png",
+          "sha256": "9252b032802fb338f380d08b035aa9629fa4f8883d7eace83f92c35700350b1d"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 90.442,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/013_b13_middle.png",
+          "sha256": "0eda81d66a19b5a140bceb0d7eaf56dc0ea0d396cd4322c63d868475452bf188"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 93.374,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/013_b13_three-quarter.png",
+          "sha256": "456f3cff8834242790f620252a38d74008d872e0fa4e0c2c8057e3c80b8f3f60"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 96.155,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/013_b13_end.png",
+          "sha256": "6b479a9fa26f2e2503c882f650a621433c72d0373cfbdcb406c94fa1c2062e6f"
+        }
+      ]
+    },
+    {
+      "beat_id": "b14",
+      "start_seconds": 96.305,
+      "end_seconds": 102.66,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 96.455,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/014_b14_start.png",
+          "sha256": "37adea607af2ad3a29de92d2f402ced25d8dce49216287008c1e14b1aed2f083"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 97.894,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/014_b14_quarter.png",
+          "sha256": "cee7e670f78f01ee434e0c36840e46b3ab176ed49c30a95326c83b4c5c72706a"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 99.483,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/014_b14_middle.png",
+          "sha256": "da5496325cd825b92c7c1fd609851cf1910affdf40b10621ddb9a2516d0dfa06"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 101.071,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/014_b14_three-quarter.png",
+          "sha256": "5fa95186f5619b9806f8480d01e0229dfc1a65c9e4108a3e9eafe74a000059a8"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 102.51,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/014_b14_end.png",
+          "sha256": "a5d15dfb65229b518c3fad343a594e1426aafa08afff63e3de5d46c2266710e9"
+        }
+      ]
+    },
+    {
+      "beat_id": "b15",
+      "start_seconds": 102.66,
+      "end_seconds": 107.3,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 102.81,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/015_b15_start.png",
+          "sha256": "64756a745731f119b004759513772743d8c969286f78f2256cd0e4b592b7252f"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 103.82,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/015_b15_quarter.png",
+          "sha256": "607c0d099a1da6adc6312d59ce5f225acee63bf770be7c751206feb21e166ca2"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 104.98,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/015_b15_middle.png",
+          "sha256": "6dee79457e13927a6d25ba33d38a58f189c2935b00b2821dc12eea1be548df0a"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 106.14,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/015_b15_three-quarter.png",
+          "sha256": "82aa1aae8c18ec230cf54a89ff8f29c7a4f45fbbb11336da65affa2f00aad0c5"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 107.15,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/015_b15_end.png",
+          "sha256": "bd5909d1f19d664a6b62f0d0df6d16a8d01e42317a1e68ca85c0a1650cf56c7d"
+        }
+      ]
+    },
+    {
+      "beat_id": "b16",
+      "start_seconds": 107.3,
+      "end_seconds": 112.61,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 107.45,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/016_b16_start.png",
+          "sha256": "c60e57dad10bbf8005f8e2db7cd8f3cc3c82cc76d7966f74cc425e2982c6e658"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 108.627,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/016_b16_quarter.png",
+          "sha256": "6aad2b148c44ab8004988bb5395d31cc4470f2100d3b1a49886386103b8c7e1c"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 109.955,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/016_b16_middle.png",
+          "sha256": "d5b36a4b0455cda5b208825bf3dd46341e5790c9ac3f47e840b095e3da897583"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 111.282,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/016_b16_three-quarter.png",
+          "sha256": "1a87251778ffd8711960df76ad2117eb691c181df98534c878c5b9b1cd4dccb0"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 112.46,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/016_b16_end.png",
+          "sha256": "e3d8c7012caee50b8e6289ab117750290fd4a5274fc85b9ae7c34a35b47a76ec"
+        }
+      ]
+    },
+    {
+      "beat_id": "b17",
+      "start_seconds": 112.61,
+      "end_seconds": 118.3,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 112.76,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/017_b17_start.png",
+          "sha256": "649d6273fd4eda233b7207bb11dc975d9d74d23248d67c0afc08b04f47b0f1ce"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 114.032,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/017_b17_quarter.png",
+          "sha256": "db0d734b6dd64361835679c4681f66b4533e7c2fd0ad34bcc3a2375c1bea65c6"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 115.455,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/017_b17_middle.png",
+          "sha256": "a57a123b61e65cf4ee822ae741c1c7eb5adaba1100ca3b355033e8bcb2259e6a"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 116.877,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/017_b17_three-quarter.png",
+          "sha256": "6793ab9d3e30c41973ea1a7baf584b6406dfc519bdd092bda91d8621ad766541"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 118.15,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/017_b17_end.png",
+          "sha256": "724af6f0c8119e21ec6715b91b283fad1a5278de47287b019d93cac691f6b05a"
+        }
+      ]
+    },
+    {
+      "beat_id": "b18",
+      "start_seconds": 118.3,
+      "end_seconds": 129.415,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 118.45,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/018_b18_start.png",
+          "sha256": "a21206966abf206253df49d8351e2b8085cc3189d585c64c58180e31f4d1bcb4"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 121.079,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/018_b18_quarter.png",
+          "sha256": "ca2a21c89dc6402e50090a0eca90da3f6befc68613340849c55139aee9fc3670"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 123.857,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/018_b18_middle.png",
+          "sha256": "87e0e702045573a192d70a3ab708c34eff80e5d8ac30520b3bdfcadcf319ca4c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 126.636,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/018_b18_three-quarter.png",
+          "sha256": "101e753931de7416f2e12db4602f713049e2adf41f0a63dee24030f1f9203a65"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 129.265,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/018_b18_end.png",
+          "sha256": "b8c7922d01c833173aaacc6c4e9f127a26ba4d93aeeb2b86ee1c9301fd24bdd2"
+        }
+      ]
+    },
+    {
+      "beat_id": "b19",
+      "start_seconds": 129.415,
+      "end_seconds": 136.14,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 129.565,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/019_b19_start.png",
+          "sha256": "14ce2d4bf4a43efb397c37baa0937f0de3cf2b3b2ab554f781b8618c543fd49f"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 131.096,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/019_b19_quarter.png",
+          "sha256": "35519776a0697f7690fa45b8d68239b26b319f520f352f04d3f2bd42860b54a4"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 132.777,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/019_b19_middle.png",
+          "sha256": "33c8c754a4c53a366d3a6016e813cd7027318caac6079f00ed92b0c2f293153c"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 134.459,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/019_b19_three-quarter.png",
+          "sha256": "3073048f0370e41a42ee1bb2e867e113f7f1b672195a3d01e7a1d10d41b81df0"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 135.99,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/019_b19_end.png",
+          "sha256": "ca682de52b095fd6a8876bfaee7e4544d92ef4559d081472ddb2ae40939b1f9b"
+        }
+      ]
+    },
+    {
+      "beat_id": "b20",
+      "start_seconds": 136.14,
+      "end_seconds": 147.335,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 136.29,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/020_b20_start.png",
+          "sha256": "ccc6610b0e4fcd87a2dba9459df3a0e49515aa2ea63e56f0fc8a167da32e4578"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 138.939,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/020_b20_quarter.png",
+          "sha256": "5dd97b0d3dd2850dd2424e9de02740273e64b2e8752c5c3001c6431b8441e8bb"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 141.738,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/020_b20_middle.png",
+          "sha256": "9eadedad95140bd2780f5b00b7a8e4437d4b72e7c6aa5c8f11b0853f6fd5c9eb"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 144.536,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/020_b20_three-quarter.png",
+          "sha256": "05f5745224cd89ea5430959ab80b1e6a708f1713153e7a43c02d9ed8ef3bce69"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 147.185,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/020_b20_end.png",
+          "sha256": "aad829dcc8fe4319d702f004fbf708952cb6079c4b39b63f08e69c6755aa09f8"
+        }
+      ]
+    },
+    {
+      "beat_id": "b21",
+      "start_seconds": 147.335,
+      "end_seconds": 153.035,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 147.485,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/021_b21_start.png",
+          "sha256": "8bdf67e772276043535848a2e8d861e6bde5615ff1d193ef726d83600016ee85"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 148.76,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/021_b21_quarter.png",
+          "sha256": "cb82043e10491e9c9cb5a660fed1f9b66ed4793c6b8000ff6b6cdc19aedf69c6"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 150.185,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/021_b21_middle.png",
+          "sha256": "7de30cac772ad232c8b7bb3db61d0a92fb7955bb65d06c78e82bc2c8103d61ed"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 151.61,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/021_b21_three-quarter.png",
+          "sha256": "4bfaf3bb15212b7a900c3bb129c7763c712285efb96daf4cf5b8125d202574e9"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 152.885,
+          "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/021_b21_end.png",
+          "sha256": "8dd7b2de70bf66641eeb3948a388dcea036c71d0e025fc1ca7fd6c5062d3e833"
+        }
+      ]
+    }
+  ],
+  "targeted_transition_samples": [
+    {
+      "beat_id": "b03",
+      "timestamp_seconds": 14.4,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_001_b03_14.400.png",
+      "sha256": "b584cb347c3a71ce0d23965ff3c11ca70fda092fd5740434bb3fb9137b5d0e14"
+    },
+    {
+      "beat_id": "b03",
+      "timestamp_seconds": 16.4,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_002_b03_16.400.png",
+      "sha256": "765b3cffa64825b56d9446c066e355389116beeec48a61ccc1bb2ee6a9e075d7"
+    },
+    {
+      "beat_id": "b05",
+      "timestamp_seconds": 26.0,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_003_b05_26.000.png",
+      "sha256": "d699d2da70b9869db6159a907b83955984d6548a95d7802a004ef21f0d865189"
+    },
+    {
+      "beat_id": "b09",
+      "timestamp_seconds": 55.8,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_004_b09_55.800.png",
+      "sha256": "283fdf27e96959db9bd8e406b51fdc9c5c1adf62c599d10775dba0f03c254a79"
+    },
+    {
+      "beat_id": "b12",
+      "timestamp_seconds": 80.5,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_005_b12_80.500.png",
+      "sha256": "e756a5bda49aeb2965ae9c815bf13755f4c4051aacb63f40e23768147a786f2e"
+    },
+    {
+      "beat_id": "b19",
+      "timestamp_seconds": 132.0,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_006_b19_132.000.png",
+      "sha256": "5544fce07edcaf4105693a96aed0034adf43720cc2e2f93eaecb3e5d216f2a01"
+    },
+    {
+      "beat_id": "b20",
+      "timestamp_seconds": 143.0,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_007_b20_143.000.png",
+      "sha256": "c401a031616c5d7b6762c0520e85a910c560c3b5f2f0f5bb7a3090c2b846d2be"
+    },
+    {
+      "beat_id": "b21",
+      "timestamp_seconds": 151.0,
+      "path": "build/visual_edition/review-samples/asi-is-a-stack-not-a-model/animatic/targeted_008_b21_151.000.png",
+      "sha256": "9a91a582c0b5f7094b7eea910547a1f1fc5b66628017cc52f68df8737c7edeee"
+    }
+  ],
+  "interpretation": "Frame samples diagnose composition and interpolation; full-speed motion and sound review remain required.",
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "These deterministic frame samples support visual review only; they do not establish motion quality, synchronization, human learning, or chapter truth."
+}

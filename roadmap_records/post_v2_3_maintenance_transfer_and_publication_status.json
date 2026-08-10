@@ -1795,10 +1795,10 @@
       "legacy_generation_one_explicit_opt_in_required": true,
       "generation_2_counts": {
         "planned": 61,
-        "narration_draft": 24,
+        "narration_draft": 23,
         "treated": 0,
-        "script_passed": 0,
-        "beat_planned": 0,
+        "script_passed": 1,
+        "beat_planned": 1,
         "animatic_passed": 0,
         "picture_and_sound_lock_passed": 0,
         "release_candidate_passed": 0,
@@ -1809,9 +1809,9 @@
       },
       "first_replacement": {
         "chapter_id": "asi-is-a-stack-not-a-model",
-        "duration_seconds": null,
-        "beat_count": null,
-        "stage": "narration_draft",
+        "duration_seconds": 153.035,
+        "beat_count": 21,
+        "stage": "beat_planned",
         "gate_state": "not_started",
         "historical_review_paths": [
           "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic-r1.json",
@@ -1820,8 +1820,8 @@
           "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/picture_and_sound_lock.json"
         ],
         "current_review_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/animatic.json",
-        "current_candidate_review_state": "narration_draft_requires_source_bound_treatment_and_script_gate_old_v2_plan_is_historical",
-        "narration_sha256": "7636d52e4a0325843829a01029d491853e22dbe40e6b4f27397da7e3992169c8",
+        "current_candidate_review_state": "source_bound_treatment_and_script_passed_block_timed_animatic_rendered_playback_review_pending",
+        "narration_sha256": "db1a09c391bff94d0dfad0420102ef2df18940ee63b6db0b5d9dd16488e344f1",
         "support_state_effect": "none",
         "publication_effect": "none"
       },

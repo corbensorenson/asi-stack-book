@@ -196,6 +196,7 @@ def sanitized_environment(home: Path, temp: Path) -> dict[str, str]:
         "PATH": "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin",
         "PYTHONHASHSEED": "0",
         "PYTHONNOUSERSITE": "1",
+        "PYTHONPATH": str(ROOT),
         "PYTHONSAFEPATH": "1",
         "TMPDIR": str(temp),
         "TZ": "UTC",
@@ -802,6 +803,39 @@ def self_test() -> list[str]:
             }
             if results != expected_resource_results:
                 failures.append(f"resource controls did not all pass: {results}")
+        helper = ROOT / "visual_edition/lib/asi_visuals.py"
+        policy.write_text(
+            build_policy(
+                [
+                    ROOT / "visual_edition/__init__.py",
+                    ROOT / "visual_edition/lib/__init__.py",
+                    helper,
+                ]
+            ),
+            encoding="utf-8",
+        )
+        helper_log = work_root / "shared-helper-import.log"
+        try:
+            code, _ = run_guarded(
+                [
+                    str(VENV_PYTHON),
+                    "-c",
+                    "from visual_edition.lib.asi_visuals import AsiScene; print(AsiScene.__name__)",
+                ],
+                policy_path=policy,
+                environment=environment,
+                log_path=helper_log,
+                timeout_seconds=30,
+                cpu_seconds=30,
+                file_size_bytes=10 * 1024 * 1024,
+            )
+            helper_output = helper_log.read_text(encoding="utf-8", errors="replace").strip()
+            if code != 0 or helper_output != "AsiScene":
+                failures.append(
+                    f"isolated shared-helper import failed with exit {code}: {helper_output[-500:]}"
+                )
+        except Exception as exc:
+            failures.append(f"isolated shared-helper import failed: {exc}")
         scene = work_root / "sandbox_smoke.py"
         scene.write_text(
             "from manim import Circle, Scene\n\n"
