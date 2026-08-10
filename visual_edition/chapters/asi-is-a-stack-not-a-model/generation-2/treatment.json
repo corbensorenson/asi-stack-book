@@ -238,10 +238,17 @@
       },
       {
         "id": "m06",
-        "purpose": "Test transfer and reveal the governed stack",
+        "purpose": "Test transfer on a changed consequential task",
         "viewer_model_before": "Noninheritance may appear specific to database deletion.",
-        "visible_event": "The SQL capsule transforms into a security patch that passes tests but pauses before a production gate; the camera pulls back to show the logical stack around both cases.",
-        "viewer_model_after": "The viewer can apply the same separation to deployment and self-improvement without claiming that the stack guarantees safety."
+        "visible_event": "The SQL capsule transforms into a security patch that passes tests but pauses before a production gate.",
+        "viewer_model_after": "The viewer can apply the same verification-authority-observation separation to deployment."
+      },
+      {
+        "id": "m07",
+        "purpose": "Reveal the governed stack and close on the noninheritance rule",
+        "viewer_model_before": "The changed case transfers the rule, but the larger unit of analysis remains implicit.",
+        "visible_event": "The camera pulls back around model, verification, authorization, production, and observation, then resolves warehouse and patch traces into parallel no-promotion paths.",
+        "viewer_model_after": "The viewer treats the model as one component of a governed stack without mistaking decomposition for a safety guarantee."
       }
     ],
     "payoff": "The command never changes identity; only explicit contracts change what may happen next, making the stack visible as a sequence of noninheriting responsibilities.",
@@ -341,7 +348,14 @@
       {
         "id": "k06",
         "after_macro_move_id": "m06",
-        "focal_state": "A tested security patch pauses before production beside the warehouse command in a pulled-back stack view.",
+        "focal_state": "A tested security patch pauses before a separate production authority boundary.",
+        "visible_invariant": "Test success still does not confer deployment authority.",
+        "unresolved_question": "What larger system owns the distinct facts around the model?"
+      },
+      {
+        "id": "k07",
+        "after_macro_move_id": "m07",
+        "focal_state": "Warehouse command and security patch resolve into parallel paths inside a pulled-back governed stack.",
         "visible_invariant": "Verification, authority, execution, and observation remain separate in both cases.",
         "unresolved_question": null
       }
@@ -404,7 +418,15 @@
         "macro_move_ids": [
           "m06"
         ],
-        "performance_direction": "Invite transfer rather than quiz the viewer, then close firmly but without claiming the architecture has been validated.",
+        "performance_direction": "Invite transfer rather than quiz the viewer, and keep the security-patch comparison concrete.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p07",
+        "macro_move_ids": [
+          "m07"
+        ],
+        "performance_direction": "Widen to the stack, state its evidence boundary without apology, then close firmly on the noninheritance rule.",
         "pronunciation_items": []
       }
     ],
@@ -426,12 +448,12 @@
   },
   "script_gate": {
     "narration_path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/narration.txt",
-    "narration_sha256": "db1a09c391bff94d0dfad0420102ef2df18940ee63b6db0b5d9dd16488e344f1",
-    "narration_word_count": 391,
+    "narration_sha256": "afcffea62fd59b212508ab18b33b8830d9360e7a138879c553581d64990aa23d",
+    "narration_word_count": 398,
     "read_aloud_review": "pass",
     "truth_review": "pass",
     "visualizability_review": "pass",
-    "reviewer_id": "codex-author-script-gate-2026-08-09",
+    "reviewer_id": "codex-author-script-gate-2026-08-10",
     "verdict": "pass",
     "open_defects": []
   }

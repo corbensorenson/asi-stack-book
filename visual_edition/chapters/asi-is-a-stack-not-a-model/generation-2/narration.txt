@@ -1,4 +1,4 @@
-Read only. An AI has one job: inventory a data warehouse, list the tables, and flag stale rows. It finds stale rows that should probably go and writes a flawless delete command. Every row is still untouched. The verifier turns green. Should the command run?
+Read only. An AI has one job: inventory a data warehouse, list the tables, and flag stale rows. It finds stale rows that should probably go and writes a flawless delete command. Every row is still untouched. The verifier turns green. Should the command run? Hold your answer against the read-only request.
 
 No. The green check answers a narrow question: does the command match the cleanup rule? But the request says change nothing. A good plan is still a proposal. So the command reaches an authority boundary. The system checks who asked, what effect they allowed, which data it covers, and whether permission is still live. A write credential from last week's maintenance window doesn't count. The gate stays shut, and the system records a denial, not a completed inventory.
 

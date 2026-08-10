@@ -57,29 +57,29 @@ from visual_edition.lib.asi_visuals import (
 
 
 class AsiIsAStackNotAModelGeneration2(AsiScene):
-    TARGET_DURATION = 153.035
+    TARGET_DURATION = 156.480
     ENDS = [
         6.000,
         12.080,
-        17.530,
-        23.100,
-        29.780,
-        37.220,
-        46.605,
-        53.180,
-        59.300,
-        72.130,
-        77.060,
-        84.580,
-        96.305,
-        102.660,
-        107.300,
-        112.610,
-        118.300,
-        129.415,
-        136.140,
-        147.335,
-        153.035,
+        20.975,
+        26.545,
+        33.225,
+        40.665,
+        50.050,
+        56.625,
+        62.745,
+        75.575,
+        80.505,
+        88.025,
+        99.750,
+        106.105,
+        110.745,
+        116.055,
+        121.745,
+        132.860,
+        139.585,
+        150.780,
+        156.480,
     ]
 
     def wait_until(self, target: float) -> None:
@@ -244,7 +244,7 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
                 self.command.animate.move_to(LEFT * 0.5 + DOWN * 0.15),
                 AnimationGroup(FadeIn(self.verifier), FadeIn(run_question)),
             ),
-            settle=0.48,
+            settle=3.925,
         )
 
         rule_card = VGroup(
@@ -520,21 +520,47 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
             settle=0.45,
         )
 
-        update = self.capsule("UPDATE", ACCENT, 1.7).scale(0.72).shift(LEFT * 2.8 + UP * 2.75)
-        update_check = self.verifier.copy().scale(0.55).move_to(LEFT * 0.65 + UP * 2.75)
-        approval = self.gate("APPROVAL").scale(0.72).shift(RIGHT * 2.0 + UP * 2.75)
-        update_path = Arrow(update.get_right(), approval.get_left(), color=ACCENT, stroke_width=2.2, buff=0.1)
+        self_improvement_title = self.label("SELF-IMPROVEMENT", 22, INK, "BOLD").shift(UP * 2.25)
+        update = self.capsule("UPDATE", ACCENT, 1.9).shift(LEFT * 3.0)
+        tests_pass = VGroup(
+            RoundedRectangle(
+                width=2.2,
+                height=0.9,
+                corner_radius=0.1,
+                color=ACCENT,
+                fill_color=SURFACE,
+                fill_opacity=1,
+            ),
+            self.label("TESTS PASS", 17, ACCENT, "BOLD"),
+        )
+        approval = self.gate("APPROVAL").scale(0.9).shift(RIGHT * 3.0)
+        update_paths = VGroup(
+            Arrow(update.get_right(), tests_pass.get_left(), color=ACCENT, stroke_width=2.6, buff=0.12),
+            Arrow(tests_pass.get_right(), approval.get_left(), color=AUTHORITY, stroke_width=2.6, buff=0.12),
+        )
+        abstract_state = VGroup(
+            abstract_rails,
+            stops,
+            self.command,
+            self.receipt,
+            self.observed,
+            report_world_stop,
+            report_world_label,
+        )
 
         # b16: a tested self-improvement still stops at external approval.
         self.beat(
             16,
             Succession(
-                TransformFromCopy(self.command, update),
-                update.animate.move_to(approval.get_left() + LEFT * 0.62),
+                FadeOut(abstract_state),
+                AnimationGroup(
+                    FadeIn(self_improvement_title),
+                    FadeIn(update),
+                    FadeIn(tests_pass),
+                    FadeIn(approval),
+                ),
+                LaggedStart(*[GrowArrow(path) for path in update_paths], lag_ratio=0.25),
             ),
-            FadeIn(update_check),
-            GrowArrow(update_path),
-            FadeIn(approval),
             settle=0.55,
         )
 
@@ -551,15 +577,13 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         # b17: changed-case transfer preserves the learned coordinates.
         self.beat(
             17,
-            FadeOut(update),
-            FadeOut(update_check),
-            FadeOut(update_path),
+            FadeOut(self_improvement_title),
+            FadeOut(tests_pass),
+            FadeOut(update_paths),
             FadeOut(approval),
-            FadeOut(self.receipt),
-            FadeOut(self.observed),
-            FadeOut(report_world_stop),
-            FadeOut(report_world_label),
-            ReplacementTransform(self.command, patch),
+            FadeIn(abstract_rails),
+            FadeIn(stops),
+            ReplacementTransform(update, patch),
             FadeIn(servers),
             FadeIn(production),
             Circumscribe(stops[0], color=AUTHORITY),
@@ -633,12 +657,20 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
             ),
         )
         cost = VGroup(
-            Line(DOWN * 1.7, UP * 1.7, color=BOUNDARY, stroke_width=2.5),
-            self.label("COST", 14, MUTED, "BOLD").shift(UP * 1.95),
-            self.label("latency", 12, MUTED).shift(UP * 0.7),
-            self.label("failure", 12, RESIDUAL).shift(DOWN * 0.1),
-            self.label("burden", 12, MUTED).shift(DOWN * 0.9),
-        ).shift(RIGHT * 5.65)
+            RoundedRectangle(
+                width=1.55,
+                height=3.15,
+                corner_radius=0.1,
+                color=BOUNDARY,
+                fill_color=SURFACE,
+                fill_opacity=1,
+            ),
+            self.label("BOUNDARY", 13, MUTED, "BOLD").shift(UP * 1.18),
+            self.label("COST", 17, INK, "BOLD").shift(UP * 0.86),
+            self.label("LATENCY", 13, MUTED, "BOLD").shift(UP * 0.25),
+            self.label("FAILURE", 13, RESIDUAL, "BOLD").shift(DOWN * 0.35),
+            self.label("BURDEN", 13, MUTED, "BOLD").shift(DOWN * 0.95),
+        ).shift(RIGHT * 5.85)
 
         # b19: name the stack and keep cost and failure outside the victory frame.
         self.beat(
@@ -711,7 +743,7 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
             self.label("OBSERVE", 15, EVIDENCE, "BOLD").shift(RIGHT * 2.85 + UP * 1.45),
         )
         closing_title = self.label("ASI IS A STACK, NOT A MODEL", 23, INK, "BOLD").next_to(stack_frame, UP, buff=0.1)
-        source_line = self.label("Argument support | Sources and transcript in the live chapter", 15, MUTED).shift(DOWN * 2.55)
+        source_line = self.label("Sources and transcript: live chapter", 17, MUTED).shift(DOWN * 2.55)
 
         # b21: both domains resolve to the same noninheritance structure.
         self.beat(

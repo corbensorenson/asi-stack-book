@@ -4669,16 +4669,16 @@ invalidation: story-contract changes reopen treatment, scene or shared-visual
 changes reopen animatic, and caption/A/V helper changes reopen lock rather than
 needlessly restarting editorial work. The alignment route remains
 `not_yet_qualified`; no lock may pass until that admission test succeeds. The
-opening pilot now has a 153.035-second, 21-beat block-timed animatic rendered
+opening pilot now has a 156.480-second, 21-beat block-timed animatic rendered
 through the isolated runner and sampled at five frames per beat plus targeted
 transition frames. That mechanical custody and frame sampling do not constitute
-the missing observed full-speed audiovisual review, so the beat-plan verdict
-remains `revise` and the animatic gate remains `not_started`. The next action is
-that playback review and any resulting repair, followed by qualified alignment,
-picture-and-sound lock, both isolated release reviews, and only then transfer
-to the other four pilots. The opening narration and local animatic were
-regenerated; no platform object was mutated and no Quarto publication state
-moved.
+the missing observed full-speed audiovisual review. The current treatment,
+script, and block-timed beat plan pass their exact gates, while the animatic
+gate remains `not_started`. The next action is that playback review and any
+resulting repair, followed by qualified alignment, picture-and-sound lock, both
+isolated release reviews, and only then transfer to the other four pilots. The
+opening narration and local animatic were regenerated; no platform object was
+mutated and no Quarto publication state moved.
 
 **Superseded execution checkpoint — 2026-07-31.** The v2 standard is now repository-local at
 `skills/asi-stack-manim-videos/`, and
