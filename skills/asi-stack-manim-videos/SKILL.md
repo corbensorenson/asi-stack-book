@@ -433,7 +433,7 @@ not a conformance proof.
 
 ### 7. Run both release reviews
 
-Follow [experience-review.md](references/experience-review.md) and the v3
+Follow [experience-review.md](references/experience-review.md) and the v4
 review schema. A passing review must bind the exact master, treatment, beat
 plan, narration, captions, transcript, receipt, sample manifest, and digests;
 pass every required viewing mode; score every applicable dimension at least
