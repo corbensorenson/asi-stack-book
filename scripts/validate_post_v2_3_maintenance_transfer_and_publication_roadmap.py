@@ -62,6 +62,8 @@ PRECISION_CONTRACT_BACKLOG = ROOT / "research_backlog_records/precision_contract
 PRECISION_CONTRACT_TRIAGE = ROOT / "new_paper_triage_scenarios/precision_contract_2026_07_24.json"
 SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
+NARRATIVE_PRODUCT_SPINE = ROOT / "products/narrative_product_spine.json"
+NARRATIVE_UNIT_CROSSWALK = ROOT / "products/narrative_unit_crosswalk.json"
 VISUAL_EDITION_MANIFEST = ROOT / "visual_edition/manifest.json"
 MANIM_V2_LEDGER = ROOT / "visual_edition/manim_v2_production_ledger.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
@@ -252,6 +254,8 @@ def inputs() -> dict:
         "precision_contract_triage": load(PRECISION_CONTRACT_TRIAGE),
         "source_inventory": load(SOURCE_INVENTORY),
         "book_manifest": load(BOOK_MANIFEST),
+        "narrative_product_spine": load(NARRATIVE_PRODUCT_SPINE),
+        "narrative_unit_crosswalk": load(NARRATIVE_UNIT_CROSSWALK),
         "visual_edition_manifest": load(VISUAL_EDITION_MANIFEST),
         "manim_v2_ledger": load(MANIM_V2_LEDGER),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
@@ -1195,8 +1199,8 @@ def errors(data: dict) -> list[str]:
     execution_readiness = status.get("execution_readiness", {})
     if status.get("current_priority") != "P5-U1":
         out.append("roadmap status does not expose P5-U1 as the current object-level priority")
-    if execution_readiness.get("state") != "p5_u1_utility_and_p7_1_narrative_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
-        out.append("execution board does not preserve active utility/narrative work, consumer-gated P4.1, the P2 resource block, and separate P7.3 ownership")
+    if execution_readiness.get("state") != "p5_u1_utility_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
+        out.append("execution board does not preserve active utility/editorial-migration work, consumer-gated P4.1, the P2 resource block, and separate P7.3 ownership")
     if execution_readiness.get("headline_priority") != "P5-U1" or execution_readiness.get("headline_priority_state") != "minimal_useful_governed_vertical_slice":
         out.append("execution board obscures the active minimal useful governed vertical slice")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -1209,8 +1213,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board does not activate the minimal useful governed vertical slice")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
-    if execution_readiness.get("immediate_book_packet") != "P7.1-independent-22-unit-human-narrative":
-        out.append("execution board does not activate the independent 22-unit human narrative")
+    if execution_readiness.get("immediate_book_packet") != "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration":
+        out.append("execution board does not activate the metadata-first editorial migration and independent 26-unit narrative")
     if execution_readiness.get("immediate_formal_packet") != "P4.1-consumer-gated-cross-owner-composition":
         out.append("execution board does not keep P4.1 composition consumer-gated")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1229,6 +1233,8 @@ def errors(data: dict) -> list[str]:
     yield_amendment = status.get("object_level_yield_amendment", {})
     if yield_amendment.get("headline_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
         out.append("object-level yield amendment lost its headline packet")
+    if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration":
+        out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
         out.append("object-level yield amendment confuses exit ladders with promotion quotas")
     if yield_amendment.get("reference_chapter_count") != 86 or yield_amendment.get("new_chapter_authorized") is not False:
@@ -1239,6 +1245,122 @@ def errors(data: dict) -> list[str]:
         out.append("object-level yield amendment introduced an external-human prepublication blocker")
     if yield_amendment.get("support_state_effect") != "none" or yield_amendment.get("release_effect") != "none":
         out.append("object-level yield amendment moved support or release state")
+
+    editorial = status.get("editorial_product_migration", {})
+    expected_merge_map = {
+        "adversarial-machine-learning-and-model-attack-surface": "security-kernel-and-digital-scifs",
+        "confidential-and-verifiable-ai-computation": "privacy-data-rights-and-information-flow-governance",
+        "ai-supply-chain-integrity-and-lifecycle-provenance": "model-weight-custody-and-hardware-roots-of-trust",
+        "human-ai-communication-persuasion-and-epistemic-security": "human-factors-and-meaningful-control-in-oversight",
+        "moral-uncertainty-and-value-conflict": "constitutional-alignment-substrate",
+        "societal-resilience-and-misuse-defense": "institutions-international-coordination-and-public-legitimacy",
+        "human-intent-as-a-formal-input": "intent-to-execution-contracts",
+        "context-transactions-snapshots-mounts-and-taint": "virtual-context-abi",
+        "white-box-evidence-interpretability-and-activation-governance": "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "human-ai-organizations-delegation-and-accountability": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "inter-stack-protocols-identity-and-economic-exchange",
+        "artifact-steward-agents-and-living-project-governance": "living-book-methodology",
+        "open-weight-release-and-post-release-control": "model-weight-custody-and-hardware-roots-of-trust",
+        "fast-generation-architectures": "resource-economics-and-token-budgets",
+        "governed-deliberation-and-test-time-scaling": "resource-economics-and-token-budgets",
+        "rankfold-neuralfold-and-artifact-compression": "compact-generative-systems-and-residual-honesty",
+        "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
+        "prototype-roadmap": "project-theseus-as-report-first-implementation-reference",
+    }
+    expected_profile_map = {
+        "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
+        "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
+        "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": "neurotechnology-and-cognitive-sovereignty",
+        "ai-deployment-transition-distribution-and-human-agency": "ai-deployment-distribution-and-human-agency",
+        "scientific-discovery-and-experimental-governance": "scientific-discovery-and-experimental-governance",
+        "content-authenticity-watermarking-and-synthetic-media-integrity": "content-authenticity-and-synthetic-media-integrity",
+        "personal-compute-hives-and-federated-edge-intelligence": "personal-and-federated-edge-intelligence",
+    }
+    expected_dossier_map = {
+        "relational-dimension-compilation-and-polyadic-cognition": "experimental-mathematical-and-relational-substrates",
+        "mathematical-and-search-substrates": "experimental-mathematical-and-relational-substrates",
+        "circle-calculus-and-proof-carrying-ai-contracts": "cyclic-and-proof-carrying-substrates",
+        "coil-attention-cyclic-memory-and-recurrence-contracts": "cyclic-and-proof-carrying-substrates",
+        "coilra-multicoil-rope-and-cyclic-mixers": "cyclic-and-proof-carrying-substrates",
+    }
+    expected_back_map = {
+        "open-research-agenda-and-bibliography-plan": "generated-open-research-registry"
+    }
+    if editorial.get("merge_map") != expected_merge_map:
+        out.append("editorial migration merge map drifted")
+    if editorial.get("profile_map") != expected_profile_map:
+        out.append("editorial migration profile map drifted")
+    if editorial.get("dossier_map") != expected_dossier_map:
+        out.append("editorial migration dossier map drifted")
+    if editorial.get("back_matter_map") != expected_back_map:
+        out.append("editorial migration back-matter map drifted")
+    moved_sets = [
+        set(expected_merge_map), set(expected_profile_map),
+        set(expected_dossier_map), set(expected_back_map),
+    ]
+    if any(left & right for index, left in enumerate(moved_sets) for right in moved_sets[index + 1:]):
+        out.append("editorial migration disposition classes overlap")
+    moved_ids = set().union(*moved_sets)
+    retained_ids = manifest_ids - moved_ids
+    implementation_ids = set(editorial.get("implementation_method_ids", []))
+    if not moved_ids.issubset(manifest_ids):
+        out.append(f"editorial migration names unknown legacy IDs: {sorted(moved_ids - manifest_ids)}")
+    if not set(expected_merge_map.values()).issubset(retained_ids):
+        out.append("editorial migration points a merge at a nonretained parent")
+    expected_counts = {
+        "current_reference_chapter_count": len(manifest_ids),
+        "target_main_book_chapter_count": len(retained_ids),
+        "target_primary_architecture_chapter_count": len(retained_ids - implementation_ids),
+        "target_implementation_method_chapter_count": len(implementation_ids),
+        "target_merge_count": len(expected_merge_map),
+        "target_profile_count": len(expected_profile_map),
+        "target_dossier_owner_count": len(expected_dossier_map),
+        "target_visible_dossier_count": len(set(expected_dossier_map.values())),
+        "target_back_matter_owner_count": len(expected_back_map),
+    }
+    for field, expected in expected_counts.items():
+        if editorial.get(field) != expected:
+            out.append(f"editorial migration count drift: {field}")
+    if editorial.get("current_narrative_unit_count") != data["narrative_unit_crosswalk"].get("narrative_unit_count"):
+        out.append("editorial migration current narrative-unit count drifted")
+    if editorial.get("target_narrative_unit_count") != 26:
+        out.append("editorial migration lost the 26-unit narrative target")
+    if editorial.get("canonical_graph_owner") != "book_structure.json" or editorial.get("new_hand_maintained_source_of_truth_allowed") is not False:
+        out.append("editorial migration permits a parallel hand-maintained source of truth")
+    if editorial.get("legacy_ids_preserved") is not True or editorial.get("legacy_urls_preserved") is not True:
+        out.append("editorial migration does not preserve legacy identity and URLs")
+    if editorial.get("support_inheritance_allowed") is not False:
+        out.append("editorial migration permits support inheritance")
+    if editorial.get("support_state_effect") != "none" or editorial.get("release_effect") != "none":
+        out.append("editorial migration moved support or release state")
+    active_product_text = json.dumps(
+        {
+            "spine": data["narrative_product_spine"],
+            "crosswalk": data["narrative_unit_crosswalk"],
+        },
+        sort_keys=True,
+    )
+    stale_product_count_literals = len(
+        re.findall(r"\b(?:84|85)[ -]chapter", active_product_text, flags=re.IGNORECASE)
+    )
+    if editorial.get("stale_active_product_count_literal_count") != stale_product_count_literals:
+        out.append("editorial migration does not report the exact active stale-count debt")
+    if editorial.get("em0_count_reconciliation_complete") is not (stale_product_count_literals == 0):
+        out.append("editorial migration EM0 count-reconciliation state is dishonest")
+    if data["narrative_unit_crosswalk"].get("canonical_chapter_count") != len(manifest_ids):
+        out.append("narrative crosswalk chapter count does not derive from the canonical manifest")
+    required_editorial_phrases = [
+        "## 2026-08-10 editorial product architecture and semantic-migration amendment",
+        "retire standalone peer status, not the research",
+        "P7.1-EM",
+        "Local delta beyond the governed-cognition pattern",
+        "53+2/18/7/5/1",
+        "26 narrative units",
+    ]
+    roadmap_casefold = " ".join(data["roadmap"].split()).casefold()
+    for phrase in required_editorial_phrases:
+        if phrase.casefold() not in roadmap_casefold:
+            out.append(f"roadmap missing editorial-migration boundary: {phrase}")
 
     manim = status.get("manim_visual_edition", {})
     expected_pilots = [

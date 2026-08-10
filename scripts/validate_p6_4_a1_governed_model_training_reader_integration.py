@@ -50,7 +50,7 @@ def errors(data: dict) -> list[str]:
         a1_index < 2
         or ids[a1_index - 2] != "replaceable-cognitive-substrates-beyond-transformer-monoculture"
         or ids[a1_index - 1] != "relational-dimension-compilation-and-polyadic-cognition"
-        or ids[a1_index + 1] != "learning-theory-generalization-and-scaling-science"
+        or ids[a1_index + 1] != "learning-compute-topology-and-adaptive-process-architecture"
     ):
         out.append("A1 Part III placement drifted")
     chapter = next((row for row in chapters if row["id"] == CHAPTER_ID), {})
@@ -65,7 +65,7 @@ def errors(data: dict) -> list[str]:
         current_roles.get("manifest_chapter_count") != len(ids)
         or len(current_assignments) != len(ids)
         or set(current_assignments) != set(ids)
-        or current_role_summary.get("load_bearing_reference_count") != 55
+        or current_role_summary.get("load_bearing_reference_count") != 56
         or CHAPTER_ID not in current_roles.get("roles", {}).get("load-bearing-reference", [])
     ):
         out.append("A1 current role-map projection drifted")
@@ -202,7 +202,7 @@ def main() -> None:
     transaction = subprocess.run(["python3", "scripts/validate_training_run_transaction.py"], cwd=ROOT, capture_output=True, text=True)
     if transaction.returncode:
         raise SystemExit(transaction.stdout + transaction.stderr)
-    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 3 targets/20 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations, 7 weight-only collisions, 9 complete-encoding mutations, and 9 integration mutations, 84-chapter reader reconciliation with the later relational-dimension owner interposed, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
+    print("P6.4-A1 reader integration passed: terminal argument chapter, seven-source four-role packet, 3 targets/20 theorems, 5 arms/13 faults/12 competence gates unopened, 21 transaction mutations, 7 weight-only collisions, 9 complete-encoding mutations, and 9 integration mutations, current reader reconciliation with the later relational-dimension and learning-compute-topology owners interposed, A1 terminal under no-deferral no-queue custody and the current evidence packet, no support/release effect.")
 
 
 if __name__ == "__main__":

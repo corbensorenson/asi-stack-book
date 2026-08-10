@@ -368,7 +368,9 @@ def errors(data: dict) -> list[str]:
     successor_status = data["successor_status"]
     successor_frontier = successor_status.get("current_priority")
     successor_priority_owner = (
-        str(successor_frontier).split(".", 1)[0] if successor_frontier is not None else None
+        re.split(r"[.-]", str(successor_frontier), maxsplit=1)[0]
+        if successor_frontier is not None
+        else None
     )
     successor_priorities = {
         row.get("id"): row.get("state") for row in successor_status.get("priorities", [])

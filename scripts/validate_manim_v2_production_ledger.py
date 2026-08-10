@@ -3063,7 +3063,7 @@ def negative_control_failures(value: dict) -> tuple[list[str], int]:
     controls.append(("missing treatment promotion", fake_treatment, "treatment gate passes without"))
     unaligned_lock = copy.deepcopy(value)
     unaligned_lock["entries"][0]["target"]["gates"]["picture_and_sound_lock"] = "pass"
-    controls.append(("unaligned picture lock", unaligned_lock, "forced alignment is qualified"))
+    controls.append(("unaligned picture lock", unaligned_lock, "forced-aligned beat plan"))
     premature_acceptance = copy.deepcopy(value)
     premature_acceptance["entries"][0]["target"]["gates"]["accepted"] = "pass"
     controls.append(("premature acceptance", premature_acceptance, "accepted without passing"))

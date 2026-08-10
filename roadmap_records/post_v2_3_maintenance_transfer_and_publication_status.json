@@ -1,5 +1,5 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v26",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v27",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-08-10",
@@ -7,7 +7,7 @@
   "status": "active",
   "current_priority": "P5-U1",
   "execution_readiness": {
-    "state": "p5_u1_utility_and_p7_1_narrative_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned",
+    "state": "p5_u1_utility_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned",
     "headline_priority": "P5-U1",
     "headline_priority_state": "minimal_useful_governed_vertical_slice",
     "work_in_progress_limit": 2,
@@ -16,7 +16,7 @@
     "structural_admission_freeze": false,
     "immediate_object_level_packet": "P5-U1-minimal-useful-governed-vertical-slice",
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
-    "immediate_book_packet": "P7.1-independent-22-unit-human-narrative",
+    "immediate_book_packet": "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration",
     "immediate_formal_packet": "P4.1-consumer-gated-cross-owner-composition",
     "structural_resume_requires": [
       "P2-pool-materialization-terminal-receipt",
@@ -86,7 +86,7 @@
       "external_human_prepublication_review"
     ],
     "headline_packet": "P5-U1-minimal-useful-governed-vertical-slice",
-    "concurrent_book_packet": "P7.1-independent-22-unit-human-narrative",
+    "concurrent_book_packet": "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration",
     "formal_packet_state": "consumer_gated",
     "governance_rent_fields": [
       "object_level_consumer",
@@ -104,6 +104,99 @@
     "fifteen_minute_route_required": true,
     "task_recipe_count": 3,
     "external_human_prepublication_required": false,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_product_migration": {
+    "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
+    "state": "active_metadata_first_public_cutover_pending",
+    "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
+    "current_reference_chapter_count": 86,
+    "target_main_book_chapter_count": 55,
+    "target_primary_architecture_chapter_count": 53,
+    "target_implementation_method_chapter_count": 2,
+    "target_merge_count": 18,
+    "target_profile_count": 7,
+    "target_dossier_owner_count": 5,
+    "target_visible_dossier_count": 2,
+    "target_back_matter_owner_count": 1,
+    "current_narrative_unit_count": 22,
+    "target_narrative_unit_count": 26,
+    "stale_active_product_count_literal_count": 3,
+    "em0_count_reconciliation_complete": false,
+    "count_is_editorial_target_not_quality_metric": true,
+    "canonical_graph_owner": "book_structure.json",
+    "new_hand_maintained_source_of_truth_allowed": false,
+    "legacy_ids_preserved": true,
+    "legacy_urls_preserved": true,
+    "support_inheritance_allowed": false,
+    "merge_map": {
+      "adversarial-machine-learning-and-model-attack-surface": "security-kernel-and-digital-scifs",
+      "confidential-and-verifiable-ai-computation": "privacy-data-rights-and-information-flow-governance",
+      "ai-supply-chain-integrity-and-lifecycle-provenance": "model-weight-custody-and-hardware-roots-of-trust",
+      "human-ai-communication-persuasion-and-epistemic-security": "human-factors-and-meaningful-control-in-oversight",
+      "moral-uncertainty-and-value-conflict": "constitutional-alignment-substrate",
+      "societal-resilience-and-misuse-defense": "institutions-international-coordination-and-public-legitimacy",
+      "human-intent-as-a-formal-input": "intent-to-execution-contracts",
+      "context-transactions-snapshots-mounts-and-taint": "virtual-context-abi",
+      "white-box-evidence-interpretability-and-activation-governance": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "human-ai-organizations-delegation-and-accountability": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "inter-stack-protocols-identity-and-economic-exchange",
+      "artifact-steward-agents-and-living-project-governance": "living-book-methodology",
+      "open-weight-release-and-post-release-control": "model-weight-custody-and-hardware-roots-of-trust",
+      "fast-generation-architectures": "resource-economics-and-token-budgets",
+      "governed-deliberation-and-test-time-scaling": "resource-economics-and-token-budgets",
+      "rankfold-neuralfold-and-artifact-compression": "compact-generative-systems-and-residual-honesty",
+      "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
+      "prototype-roadmap": "project-theseus-as-report-first-implementation-reference"
+    },
+    "profile_map": {
+      "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
+      "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
+      "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": "neurotechnology-and-cognitive-sovereignty",
+      "ai-deployment-transition-distribution-and-human-agency": "ai-deployment-distribution-and-human-agency",
+      "scientific-discovery-and-experimental-governance": "scientific-discovery-and-experimental-governance",
+      "content-authenticity-watermarking-and-synthetic-media-integrity": "content-authenticity-and-synthetic-media-integrity",
+      "personal-compute-hives-and-federated-edge-intelligence": "personal-and-federated-edge-intelligence"
+    },
+    "dossier_map": {
+      "relational-dimension-compilation-and-polyadic-cognition": "experimental-mathematical-and-relational-substrates",
+      "mathematical-and-search-substrates": "experimental-mathematical-and-relational-substrates",
+      "circle-calculus-and-proof-carrying-ai-contracts": "cyclic-and-proof-carrying-substrates",
+      "coil-attention-cyclic-memory-and-recurrence-contracts": "cyclic-and-proof-carrying-substrates",
+      "coilra-multicoil-rope-and-cyclic-mixers": "cyclic-and-proof-carrying-substrates"
+    },
+    "back_matter_map": {
+      "open-research-agenda-and-bibliography-plan": "generated-open-research-registry"
+    },
+    "implementation_method_ids": [
+      "project-theseus-as-report-first-implementation-reference",
+      "living-book-methodology"
+    ],
+    "migration_phases": [
+      "EM0-structural-truth",
+      "EM1-metadata-only-disposition",
+      "EM2-semantic-ownership-migration",
+      "EM3-independent-26-unit-human-narrative",
+      "EM4-redirect-validate-and-release"
+    ],
+    "chapter_retention_tests": [
+      "owned_object",
+      "owned_transition",
+      "irreducible_failure",
+      "broad_reuse",
+      "distinct_neighbor_boundary",
+      "falsifiable_exit"
+    ],
+    "required_primary_chapter_fields": [
+      "local_delta",
+      "owned_object",
+      "owned_transition",
+      "unique_invariants",
+      "unique_failure_modes",
+      "strongest_neighbor",
+      "exit_test"
+    ],
     "support_state_effect": "none",
     "release_effect": "none"
   },
@@ -2144,7 +2237,7 @@
     {
       "id": "P7",
       "state": "in_progress",
-      "purpose": "compose the independent 22-unit human narrative while preserving separately owned reader and visual derivatives without overclaim"
+      "purpose": "preserve all 86 research identities while completing the metadata-first 55-chapter architecture, seven-profile, two-dossier, one-registry, and independent 26-unit narrative migration without overclaim"
     },
     {
       "id": "P8",
