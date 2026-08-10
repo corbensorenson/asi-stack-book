@@ -193,7 +193,7 @@
         "duration_seconds", "instant_word_count"
       ],
       "properties": {
-        "beat_id": {"type": "string", "pattern": "^b[0-9]{2}$"},
+        "beat_id": {"type": "string", "pattern": "^b[0-9]{2,3}$"},
         "phrase": {"type": "string", "minLength": 3},
         "start_seconds": {"type": "number", "minimum": 0},
         "end_seconds": {"type": "number", "exclusiveMinimum": 0},

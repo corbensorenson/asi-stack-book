@@ -36,17 +36,17 @@
           "onset_enclosed", "offset_enclosed", "clipped", "verdict"
         ],
         "properties": {
-          "beat_id": {"type": "string", "pattern": "^b[0-9]{2}$"},
+          "beat_id": {"type": "string", "pattern": "^b[0-9]{2,3}$"},
           "phrase": {"type": "string", "minLength": 3},
           "start_seconds": {"type": "number", "minimum": 0},
           "end_seconds": {"type": "number", "exclusiveMinimum": 0},
           "pre_roll_seconds": {"type": "number", "minimum": 0.25},
           "post_roll_seconds": {"type": "number", "minimum": 0.25},
-          "content_match": {"const": true},
-          "onset_enclosed": {"const": true},
-          "offset_enclosed": {"const": true},
-          "clipped": {"const": false},
-          "verdict": {"const": "pass"}
+          "content_match": {"type": "boolean"},
+          "onset_enclosed": {"type": "boolean"},
+          "offset_enclosed": {"type": "boolean"},
+          "clipped": {"type": "boolean"},
+          "verdict": {"enum": ["pass", "fail"]}
         },
         "additionalProperties": false
       }
@@ -56,8 +56,8 @@
       "required": ["reviewed_anchor_count", "failure_count", "verdict"],
       "properties": {
         "reviewed_anchor_count": {"type": "integer", "minimum": 1},
-        "failure_count": {"const": 0},
-        "verdict": {"const": "pass"}
+        "failure_count": {"type": "integer", "minimum": 0},
+        "verdict": {"enum": ["pass", "revise"]}
       },
       "additionalProperties": false
     },

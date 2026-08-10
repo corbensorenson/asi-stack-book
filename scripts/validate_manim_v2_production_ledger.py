@@ -39,7 +39,7 @@ ALL_VIEWING_PASSES = (
     "normal_speed", "muted", "audio_only", "captions_on", "phone",
     "large_screen", "headphones", "speakers", "random_frames",
 )
-EXPECTED_REJECTING_CONTROL_COUNT = 106
+EXPECTED_REJECTING_CONTROL_COUNT = 107
 
 
 def digest(path: Path) -> str:
@@ -364,14 +364,34 @@ def alignment_review_errors(
 
     summary = review.get("summary", {})
     observed_failures = sum(
-        row.get("verdict") != "pass"
+        not (
+            row.get("content_match") is True
+            and row.get("onset_enclosed") is True
+            and row.get("offset_enclosed") is True
+            and row.get("clipped") is False
+            and row.get("verdict") == "pass"
+        )
         for row in review.get("anchors", [])
         if isinstance(row, dict)
     )
+    for row in review.get("anchors", []):
+        if not isinstance(row, dict):
+            continue
+        mechanical_pass = (
+            row.get("content_match") is True
+            and row.get("onset_enclosed") is True
+            and row.get("offset_enclosed") is True
+            and row.get("clipped") is False
+        )
+        if row.get("verdict") == "pass" and not mechanical_pass:
+            errors.append("manual anchor review launders a failed phrase check as pass")
     if summary.get("reviewed_anchor_count") != len(observed_anchors):
         errors.append("manual anchor review summary count drift")
     if summary.get("failure_count") != observed_failures:
         errors.append("manual anchor review summary failure-count drift")
+    expected_verdict = "pass" if observed_failures == 0 else "revise"
+    if summary.get("verdict") != expected_verdict:
+        errors.append("manual anchor review summary verdict drift")
     if timing.get("manual_anchor_count") != len(observed_anchors):
         errors.append("manual anchor review timing count drift")
     if timing.get("manual_anchor_failures") != observed_failures:
@@ -392,7 +412,7 @@ def alignment_review_negative_control_failures() -> tuple[list[str], int]:
         review, receipt, timing, "stable-capability-fields", receipt_sha256
     )
     if baseline:
-        return ["valid alignment review fixture failed: " + "; ".join(baseline)], 5
+        return ["valid alignment review fixture failed: " + "; ".join(baseline)], 6
 
     controls = (
         (
@@ -421,6 +441,11 @@ def alignment_review_negative_control_failures() -> tuple[list[str], int]:
                 "reviewed_anchor_count", row["summary"]["reviewed_anchor_count"] + 1
             ),
             "summary count drift",
+        ),
+        (
+            "failed check laundering",
+            lambda row: row["anchors"][0].__setitem__("clipped", True),
+            "launders a failed phrase check",
         ),
     )
     failures: list[str] = []
