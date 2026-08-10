@@ -16,6 +16,8 @@ BUILD_REQUIRED = (
     "python3 scripts/run_validation_registry.py --tier deep",
     "cd lean && lake build",
     "quarto render --to html",
+    "quarto render papers --to html",
+    "python3 scripts/validate_paper_library.py --site _site",
     "python3 scripts/build_tested_site_bundle.py --site _site --output build/pages-tested",
     'python3 scripts/validate_tested_site_bundle.py --bundle build/pages-tested --expected-commit "$GITHUB_SHA"',
     "name: pages-tested-${{ github.sha }}",
@@ -67,6 +69,8 @@ def negative_controls(build: str, deploy: str) -> list[str]:
     failures: list[str] = []
     controls = {
         "deploy rebuild": (build, deploy + "\n      - run: quarto render\n"),
+        "missing paper-library render": (build.replace("          quarto render papers --to html\n", "", 1), deploy),
+        "missing rendered paper validation": (build.replace("          python3 scripts/validate_paper_library.py --site _site\n", "", 1), deploy),
         "current-run artifact": (build, deploy.replace("run-id: ${{ github.event.workflow_run.id }}", "run-id: ${{ github.run_id }}", 1)),
         "unbound commit": (build, deploy.replace("--expected-commit \"${{ github.event.workflow_run.head_sha }}\"", "", 1)),
     }
@@ -88,7 +92,7 @@ def main() -> None:
     errors.extend(validate_text(build, deploy))
     errors.extend(negative_controls(build, deploy))
     fail(errors)
-    print("Tested-artifact deployment validation passed: successful-run handoff, commit binding, no deploy rebuild, and 3 rejecting negative controls.")
+    print("Tested-artifact deployment validation passed: successful-run handoff, commit binding, no deploy rebuild, and 5 rejecting negative controls.")
 
 
 def fail(errors: list[str]) -> None:

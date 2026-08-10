@@ -66,6 +66,8 @@ jobs:
         run: |
           rm -rf _site
           quarto render --to html
+          quarto render papers --to html
+          python3 scripts/validate_paper_library.py --site _site
 
       - name: Build and validate canonical public status
         run: |

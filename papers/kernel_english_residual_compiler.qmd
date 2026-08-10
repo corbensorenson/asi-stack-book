@@ -1,0 +1,3769 @@
+---
+title: "Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "2026-07-16"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Original Corben Sorenson paper published as part of The ASI Stack source and lineage library."
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Original paper, not rewritten book prose"}
+This page publishes Corben Sorenson's original source manuscript so readers can inspect the ideas that preceded or informed the living book. The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `kernel_english_residual_compiler` |
+| Source class | `author_whitepaper` |
+| Library class | `research_paper` |
+| Manuscript date | 2026-07-16 |
+| Inventory updated | 2026-07-16 |
+| Exact published-source SHA-256 | `f560c61196cb2a114475ebd455f8643536e78c82dbbf6ec8dd712d993f2b6519` |
+| Exact published-source bytes | 156,368 |
+| Exact source text | [Download/view the tracked Markdown source](source/kernel_english_residual_compiler.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/kernel_english_residual_compiler.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Archived author paper; its claims retain the status and limits stated in the paper and do not inherit the living book's current evidence state.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this paper enters the living book
+
+[Security Kernel and Digital SCIFs](../chapters/security-kernel-and-digital-scifs.html), [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.html), [The Virtual Context ABI: Typed Pages, Cells, and Certificates](../chapters/virtual-context-abi.html), [Context Transactions, Snapshots, Mounts, and Taint](../chapters/context-transactions-snapshots-mounts-and-taint.html), [Verification Bandwidth and Context Adequacy](../chapters/verification-bandwidth-and-context-adequacy.html), [Procedural Memory and Cognitive Loop Closure](../chapters/procedural-memory-and-cognitive-loop-closure.html), [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html), [Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](../chapters/compact-generative-systems-and-residual-honesty.html), [Fast Generation Architectures](../chapters/fast-generation-architectures.html), [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.html), [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.html), [White-Box Evidence, Interpretability, and Activation Governance](../chapters/white-box-evidence-interpretability-and-activation-governance.html), [Integrated Reference Architecture](../chapters/integrated-reference-architecture.html)
+
+<hr>
+
+## Original manuscript
+
+## Kernel English with Hierarchical, Interaction-Amortized Residuals
+
+### A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning
+
+**Architecture paper and research proposal**<br>
+**Framework name:** Kernel English Residual Compiler (KERC)<br>
+**Date:** July 2026
+
+<hr>
+### Abstract
+
+Large language models ordinarily use the same representational channel for three distinct jobs: accepting expressive human language, performing internal computation, and producing polished human language. This coupling forces the most expensive layers of a model to repeatedly process spelling variation, synonymy, irregular morphology, discourse conventions, politeness, stylistic choice, and arbitrary proper names even when those properties are irrelevant to the reasoning task. It also ties sequence length, vocabulary size, output-softmax cost, and contextual memory to a surface language that was optimized by cultural evolution for human communication rather than machine computation.
+
+This paper proposes the **Kernel English Residual Compiler (KERC)**, a dual-vocabulary architecture that treats full natural language as an external interface and compiles it into **Kernel English**, a small, canonical, English-derived intermediate language for reasoning. The pipeline protects proper nouns and exact-form spans, performs uncertainty-aware spelling and grammatical normalization, maps surface expressions to a compact sense-aware vocabulary, serializes that representation with a learned reduced orthography, applies a Kernel-specific grammar-aware byte-pair encoder, and feeds the resulting tokens to a core model trained primarily in the internal language. A separate surface renderer uses a richer vocabulary and a copy mechanism to produce fluent output.
+
+The central additional contribution is a **Hierarchical Residual Ledger**. Information removed by canonicalization is not assumed to disappear. Instead, surface-form information is routed into four coordinated side channels: an interaction-level residual shared across a conversation, turn- or segment-level residual frames, optional token-local residual tags, and an exact protected-object store for names, quotations, numbers, code, and other form-sensitive material. Important concepts can carry lexical realization metadata, while recurring preferences—terminology, register, dialect, formatting, aliases, and default translations—are stored once and amortized across the interaction. A rate-distortion controller selects semantic, faithful, or lossless fidelity for each span according to importance.
+
+KERC does not claim to violate information-theoretic limits. For exact reconstruction, the joint Kernel-plus-residual representation must retain the source information. Its proposed advantage is architectural: low-value surface entropy is removed from the costly reasoning path and handled by smaller local modules, pointer tables, and entropy-coded metadata. This paper specifies the language, packet format, mathematical objective, model architecture, training procedure, verification loop, security model, and a falsifiable experimental program against subword, byte-level, dynamically chunked, latent-reasoning, and neural text-compression baselines. KERC is an unvalidated research proposal; its novelty lies in integrating inspectable canonical reasoning, dual vocabularies, exact entity preservation, hierarchical surface residuals, and interaction-level amortization into one end-to-end system.
+
+**Keywords:** tokenization, language-model efficiency, controlled language, semantic compression, residual coding, dual vocabulary, internal language, cognitive compiler, BPE, entity preservation, latent reasoning
+
+<hr>
+> **Status of claims.** This is an architecture and research paper, not a report of completed experiments. Results attributed to prior systems are cited. Claims about KERC are stated as design hypotheses, theoretical consequences of explicit assumptions, or proposed evaluation targets. “Beyond the state of the art” here means that the paper specifies a broader integrated architecture than current isolated approaches; it does not claim demonstrated benchmark superiority.
+
+<hr>
+### Contents
+
+1. Introduction<br>
+2. Problem Definition and Thesis<br>
+3. State of the Art and the Missing System<br>
+4. Design Principles<br>
+5. End-to-End Architecture<br>
+6. Kernel English Language Specification<br>
+7. The Hierarchical Residual Ledger<br>
+8. Dual-Vocabulary Model Architecture<br>
+9. Formal Rate–Compute–Fidelity Analysis<br>
+10. Training the Complete System<br>
+11. Worked End-to-End Examples<br>
+12. Experimental Program<br>
+13. Comparison with Closest Prior Approaches<br>
+14. Safety, Security, and Governance<br>
+15. Limitations and Falsification Criteria<br>
+16. Extensions<br>
+17. Conclusion<br>
+Appendices A–E<br>
+References
+
+<hr>
+## 1. Introduction
+
+### 1.1 Natural language is serving too many roles
+
+A conventional autoregressive language model receives surface text, transforms it into subword tokens, performs all contextual computation in that token space, and generates more surface tokens. This design is simple and has scaled extraordinarily well, but it silently assumes that the best external communication format is also the best internal computational format.
+
+That assumption is questionable. Full English contains information that matters to people but often contributes little to a model’s immediate reasoning objective:
+
+- several synonyms for closely related concepts;
+- irregular spellings and inflections;
+- optional function words and conventional phrasing;
+- politeness, rhythm, emphasis, and register;
+- idioms whose meanings are not compositionally obvious;
+- pronouns and ellipses whose referents must be recovered;
+- names and identifiers drawn from an effectively unbounded set;
+- formatting and punctuation that may or may not be task-relevant;
+- multiple ways to encode the same proposition.
+
+A large model can learn these regularities, but it pays for them repeatedly. Every surface token occupies context, enters attention and feed-forward computation, consumes key-value cache, and participates in an output distribution. Even when a model internally abstracts away from wording, the architecture forces the high-capacity core to traverse the wording first.
+
+Programming systems solved an analogous problem by separating source languages from intermediate representations and machine instruction sets. A compiler does not ask a processor to execute comments, variable-name aesthetics, or every syntactic convenience of a high-level language. It converts them into a canonical representation, maintains symbol tables and source maps, performs computation in a compact instruction space, and reconstructs human-facing artifacts when needed.
+
+KERC applies that separation to language models:
+
+> **Full English is the source and presentation language. Kernel English is the inspectable internal instruction language. Residual metadata is the source map.**
+
+### 1.2 The proposed pipeline
+
+At its simplest, the proposal follows an intuitive four-stage design:
+
+1. Check and normalize incoming spelling.
+2. Translate full English into a tiny, regular, ultra-compressible English-derived language.
+3. Apply a tokenizer trained specifically on that internal language.
+4. Let the core model read, reason, plan, and remember in that token set.
+5. Translate the result through a richer output vocabulary into full English.
+
+The logical conclusion is more precise. Spell correction must follow protected-span detection so that new names and technical terms are not “corrected” into common words. Simplification must be sense-aware rather than a thesaurus substitution. Proper nouns, exact quotations, numbers, code, URLs, and formulas require a pointer channel. A tiny vocabulary needs an open-world concept mechanism or it will expand specialized ideas into long paraphrases. Finally, any claim of reversibility requires an explicit residual, because canonicalization removes distinctions among surface forms.
+
+KERC therefore compiles each turn into a structured **Kernel Packet**:
+
+```text
+Kernel Packet =
+    Kernel tokens
+  + entity and concept table
+  + interaction residual reference
+  + segment residual frame
+  + optional token residuals
+  + exact protected-object references
+  + source alignment
+  + uncertainty and provenance
+```
+
+The expensive reasoner primarily consumes the Kernel tokens and selected semantic metadata. Surface reconstruction is delegated to a smaller renderer and copy subsystem.
+
+### 1.3 Main contributions
+
+This paper contributes a complete research architecture rather than a single tokenization heuristic.
+
+**First, it defines Kernel English as a model-facing intermediate representation.** The language is English-derived and human-auditable, but it uses canonical roots, explicit semantic roles, regular morphology, controlled scope, compact concept handles, and a learned reduced orthography.
+
+**Second, it separates the surface and reasoning vocabularies.** A large surface vocabulary supports fluent input and output. A much smaller Kernel vocabulary supports recurrent internal computation. A pointer/control vocabulary handles open-world entities and exact values.
+
+**Third, it introduces the Hierarchical Residual Ledger.** Surface distinctions can be preserved at interaction, segment, token, or exact-byte level. Recurring lexical and stylistic choices are stored once and shared across the interaction. This directly develops the idea that an important simplified token can carry a small residue identifying how it should translate back, while also allowing one residue dictionary to serve many turns.
+
+**Fourth, it frames canonicalization as compute routing rather than magical compression.** Exact reconstruction conserves information. The system aims to prevent low-value surface entropy from repeatedly traversing the largest model.
+
+**Fifth, it specifies a full verification loop.** Rendered output is compiled back into Kernel English and compared with the intended answer packet, with hard checks for entities, quantities, negation, modality, attribution, and quotations.
+
+**Sixth, it provides a falsifiable experimental program.** The proposed evaluation charges the system for compiler cost, renderer cost, residual bits, registries, latency, model parameters, and failures under domain shift. It compares against strong subword, byte-level, dynamic-chunking, latent-code, and compressed-reasoning baselines.
+
+### 1.4 Why this is not merely “Simplified English plus BPE”
+
+A manually simplified dialect can provide an instructive baseline, but the endpoint must address four facts.
+
+1. **A smaller dictionary can make descriptions longer.** Replacing “photosynthesis” with “the process plants use to turn light into stored chemical energy” reduces vocabulary but increases sequence length.
+2. **Synonyms are not always equivalent.** “Approve,” “authorize,” “endorse,” and “accept” carry different implications in some contexts.
+3. **Surface form sometimes is the task.** Spelling, quotations, legal wording, poetry, code, and names cannot be discarded.
+4. **The open world cannot fit in a tiny static lexicon.** New entities and concepts appear continuously.
+
+KERC addresses these constraints with sense-level canonicalization, concept capsules, importance-adaptive residuals, and exact object references. BPE remains useful, but it operates after semantic regularization and is constrained by the structure of the internal language.
+
+<hr>
+## 2. Problem Definition and Thesis
+
+### 2.1 Four objectives that must not be conflated
+
+Tokenization discussions often mix four different quantities:
+
+1. **Characters or bytes per message.**
+2. **Model tokens per message.**
+3. **Entropy-coded bits per message.**
+4. **End-to-end computational cost per successful task.**
+
+They are related but not interchangeable. A common long word may be one BPE token even if it contains many characters. A sequence with fewer tokens can require a larger sparse vocabulary and a more difficult prediction problem. A semantically compressed representation can shorten the core sequence while requiring side information for exact reconstruction. A compiler can reduce transformer work but erase the gain through excessive front-end latency.
+
+The primary KERC objective is therefore not minimum character count or minimum token count. It is minimum **total cost at a required level of semantic and surface fidelity**.
+
+### 2.2 Source, Kernel, residual, and output
+
+Let:
+
+- `X_t` be the full surface input at interaction turn `t`;
+- `P_t` be the protected object table extracted from `X_t`;
+- `N_t` be an uncertainty-aware normalized version of `X_t`;
+- `K_t` be the canonical Kernel representation;
+- `R_G` be the interaction-global residual state;
+- `R_t^S` be a segment or turn residual;
+- `r_t,i` be an optional local residual attached to Kernel item `i`;
+- `Z_t = BPE_K(K_t)` be the Kernel token sequence;
+- `M` be the core reasoning model;
+- `A_t` be a structured Kernel answer packet;
+- `Y_t` be the rendered full-language answer.
+
+The pipeline is:
+
+```text
+X_t
+  -> protect -> P_t
+  -> normalize -> N_t
+  -> compile under R_G -> (K_t, R_t^S, {r_t,i})
+  -> Kernel BPE -> Z_t
+  -> reason -> A_t
+  -> render with surface vocabulary, copy table, and render policy -> Y_t
+  -> recompile and verify
+```
+
+In lossless mode, a decoder `D` must satisfy:
+
+```text
+D(K_t, P_t, R_G, R_t^S, {r_t,i}) = X_t
+```
+
+In semantic or faithful mode, exact equality is relaxed, but explicit distortion constraints protect important facts and forms.
+
+### 2.3 Core thesis
+
+The paper’s thesis is:
+
+> **Language-model efficiency can be improved by compiling expressive surface language into a compact, canonical, entity-linked internal language; routing discarded surface distinctions into hierarchical residual side channels; performing expensive reasoning with a small dedicated vocabulary; and using a separately optimized renderer to recover unrestricted language under semantic verification.**
+
+The claim has three parts.
+
+**Representational claim.** Canonical sense-level forms can reduce redundant variation and expose recurring reasoning structures more consistently than ordinary surface text.
+
+**Architectural claim.** A small internal vocabulary and shorter internal sequence can reduce core attention, key-value cache, embedding, and output-head costs, provided that front-end and back-end overhead remain smaller than those savings.
+
+**Fidelity claim.** Hierarchical residuals and exact-copy objects can preserve important surface distinctions without forcing all residual information through every core layer.
+
+### 2.4 Research questions
+
+The architecture creates specific empirical questions:
+
+- Does Kernel compilation reduce core sequence length after charging for residuals?
+- Does a model trained natively on Kernel English retain or improve task accuracy at equal raw-data and compute budgets?
+- Which surface distinctions can be relegated to a local renderer without harming reasoning?
+- How much residual metadata is needed for semantic, faithful, and exact modes?
+- Does a shared interaction residual outperform independent per-token residue tags?
+- How quickly does global residual overhead amortize over a conversation?
+- Does explicit entity handling improve rare-name fidelity and reduce vocabulary fragmentation?
+- Does grammar-aware Kernel BPE learn useful reasoning macros rather than arbitrary character fragments?
+- Can cycle verification catch semantic drift without erasing latency gains?
+- At what model and context scale does the full compiler architecture beat strong byte-level and learned-chunking alternatives?
+
+<hr>
+## 3. State of the Art and the Missing System
+
+### 3.1 Subword tokenization and its limits
+
+Byte-pair encoding became a standard NLP technique because it offers a practical compromise between fixed word vocabularies and character-level sequences (Sennrich, Haddow, and Birch, 2016). Unigram tokenization and subword regularization provide alternative probabilistic segmentations (Kudo, 2018), while SentencePiece trains directly from raw sentences without requiring language-specific pre-tokenization (Kudo and Richardson, 2018). These methods remain strong baselines because they shorten sequences, provide open-vocabulary fallback, and fit conventional transformer architectures.
+
+Yet tokenization is not equivalent to compression quality alone. Schmidt et al. (2024) trained 64 language models and found that a segmentation chosen to minimize token count did not consistently yield the best downstream performance. Their results emphasize pre-tokenization, vocabulary initialization, and model interaction. Multilingual work has also shown unequal token costs across languages (Ahia et al., 2023), and recent reviews argue that tokenizer design should be treated as a core modeling decision rather than inherited preprocessing (Alqahtani et al., 2026).
+
+Multi-word tokenization extends learned units across word boundaries and can shorten sequences with modest performance changes (Gee et al., 2023). AdaptBPE replaces low-value vocabulary entries with domain-relevant units without simply expanding the vocabulary (Pilana Liyanage and Yvon, 2026). The Over-Tokenized Transformer demonstrates that input and output vocabularies need not be treated identically and that scaling input vocabulary can be beneficial (Huang et al., 2025). These findings support KERC’s co-design and dual-vocabulary premises, but they do not canonicalize semantics or preserve removed surface choices through a residual hierarchy.
+
+### 3.2 Byte-level and token-free architectures
+
+Byte-level models remove fixed subword vocabularies and improve robustness to rare strings, spelling variation, and unseen scripts. ByT5 shows that a byte-to-byte model can be competitive and particularly robust under noisy input (Xue et al., 2022). CANINE operates directly over characters with downsampling and upsampling (Clark et al., 2022). Charformer learns gradient-based subword blocks (Tay et al., 2022), while MEGABYTE models sequences through local and global byte patches (Yu et al., 2023).
+
+The Byte Latent Transformer (BLT) uses dynamic byte patches, including entropy-based segmentation, to allocate larger patches to predictable regions and finer resolution to difficult regions. Its scaling work reports competitive performance and improved robustness while challenging fixed tokenization (Pagnoni et al., 2025). Fast BLT adds diffusion-style and speculative generation methods intended to reduce the practical generation bottleneck of byte-level systems (Kallini et al., 2026). Compute-optimal tokenization studies using BLT variants indicate that optimal compression rate depends on compute and need not match conventional BPE settings (Limisiewicz et al., 2026).
+
+H-Net learns context-dependent chunking jointly with the model and reports strong compute-matched results over BPE baselines, including gains in code, Chinese, and DNA sequence modeling (Hwang, Wang, and Gu, 2025). Dauncey and Wattenhofer (2026) use score-function estimation to learn discrete token boundaries end to end. Gigant, Peng, and Quesnelle (2026) decompose the advantages of subwords into throughput, vocabulary parameters, boundary priors, and objectives using controlled byte-level simulations.
+
+These systems attack the brittleness of handcrafted segmentation. KERC is complementary rather than merely competitive: it asks whether the high-capacity model should reason over raw surface sequences at all. A byte or H-Net front end can serve as KERC’s compiler interface, while the core operates on canonical discrete concepts.
+
+### 3.3 Neural compression and learned latent codes
+
+Training language models over neurally compressed text demonstrates that learned discrete representations can drastically reduce sequence length, although equal-parameter language-model quality can lag subword baselines and evaluation must account for information density (Lester et al., 2024). Language-model probabilities themselves can be evaluated as compressors, reinforcing the link between prediction and coding (Delétang et al., 2024).
+
+The closest direct overlap is the 2026 proposal to use an LLM as a token compressor and decompressor. Li et al. (2026) train a model to map text into variable-length discrete “Z-tokens,” reconstruct the original, and reason or generate in the compressed space. SemanticZip explores lossy semantic packets with protected content and LLM-based decompression (Trukhina and Vashkelis, 2026). These approaches establish that compressed latent text can be useful and that protected-versus-lossy partitions are practical.
+
+KERC differs in six central respects:
+
+1. Its core representation is an inspectable, versioned, English-derived intermediate language rather than only an opaque learned code.
+2. It explicitly separates surface, Kernel, and pointer/control vocabularies.
+3. It introduces a hierarchical residual with interaction-level amortization, not only an autoencoder bottleneck.
+4. It handles proper nouns and exact spans through typed object tables and copy operations.
+5. It co-designs canonical grammar, compact orthography, and Kernel-specific BPE.
+6. It mandates semantic round-trip verification and auditable migration across representation versions.
+
+The two lines can also be combined: a learned latent compressor could encode residual packets or concept capsules beneath the inspectable Kernel layer.
+
+### 3.4 Compact and latent reasoning languages
+
+Natural-language chain-of-thought can be verbose. Coconut feeds continuous hidden states back into the model as latent thoughts, avoiding explicit decoding of every reasoning step (Hao et al., 2024). ORION trains models to use a compact symbolic “Mentalese” and reports large reductions in generated reasoning length under its evaluation (Tanmay et al., 2025). MetaGlyph compresses instructions with mathematical and symbolic operators, with model-dependent fidelity (van Gassen, 2026). Pei, Huang, and Wang (2026) study symbolic protocols that evolve for multi-agent communication.
+
+These works strengthen the hypothesis that machine reasoning need not be written in ordinary prose. However, latent states are difficult to inspect and version, while compact reasoning traces typically do not provide a complete input compiler, entity ledger, exact surface residual, and output reconstruction system. KERC treats compact reasoning as one component of a broader language runtime.
+
+### 3.5 Controlled languages and semantic representations
+
+Basic English sought broad expressiveness with a deliberately small vocabulary (Ogden, 1930). ASD Simplified Technical English provides controlled vocabulary and writing rules intended to reduce ambiguity in technical communication; Issue 9 was released in January 2025 (ASD, 2025). These traditions demonstrate that restricted English can remain usable, but they optimize human clarity and translation consistency rather than transformer compute.
+
+Abstract Meaning Representation (AMR) represents sentence meaning as a graph of concepts and relations (Banarescu et al., 2013). Semantic parsers, knowledge graphs, and executable logical forms likewise separate meaning from wording. KERC borrows their explicitness but retains a linear, language-like form designed for autoregressive modeling, BPE fusion, incremental generation, and human debugging.
+
+Text simplification also provides a warning. Simplified outputs can omit information even when meaning preservation is an explicit objective. In a human reading-comprehension evaluation, the strongest evaluated simplification system still made at least 14% of questions unanswerable from its output (Agrawal and Carpuat, 2024). KERC therefore treats lossy simplification as a controlled operating mode, not as silent normalization.
+
+### 3.6 Copy mechanisms and entity preservation
+
+CopyNet and pointer-generator models show that neural generation can combine vocabulary prediction with direct copying from an input sequence (Gu et al., 2016; See, Liu, and Manning, 2017). Named-entity-aware translation systems improve handling of rare and noncompositional names by extracting or explicitly marking entities (Zeng et al., 2023).
+
+KERC generalizes this idea from a decoding technique into a representation rule: opaque or externally anchored objects are removed from ordinary lexical competition and assigned stable handles. The reasoner manipulates the identity and type; the renderer copies or transforms the exact surface representation according to policy.
+
+### 3.7 The missing integrated architecture
+
+The current research landscape contains most of the ingredients separately:
+
+- subword sequence compression;
+- learned dynamic chunking;
+- byte-level robustness;
+- separate input and output vocabularies;
+- controlled language;
+- semantic graphs;
+- compact reasoning traces;
+- discrete latent codes;
+- copy mechanisms;
+- lossy-versus-protected packets;
+- cycle consistency and verification.
+
+What is missing is a complete system that makes these components mutually consistent. KERC fills that architectural gap by defining a single contract among compiler, tokenizer, reasoner, residual codec, object store, renderer, verifier, and version registry.
+
+<hr>
+## 4. Design Principles
+
+### 4.1 Protect before correcting
+
+The system must retain immutable source bytes and detect protected spans before spelling correction. Otherwise, a spell checker can corrupt unfamiliar people, products, scientific terms, usernames, code identifiers, or intentionally unusual spelling. Correction is applied only to unprotected natural-language spans and is represented as a reversible, confidence-scored edit lattice.
+
+### 4.2 Canonicalize senses, not strings
+
+A naive thesaurus mapping collapses distinctions that matter. Kernel compilation maps contextual senses to canonical concepts. “Bank” as a financial institution, river edge, aircraft maneuver, and act of relying on something must receive different concept identities. Conversely, several surface paraphrases may map to one concept when context supports equivalence.
+
+### 4.3 Preserve uncertainty instead of manufacturing certainty
+
+If a pronoun, scope relation, spelling correction, or word sense remains ambiguous, the Kernel packet records alternatives and probabilities or an unresolved set. Compression is not permitted to resolve ambiguity merely because one representation is shorter.
+
+### 4.4 Separate semantic identity from surface realization
+
+A stable concept identifier is not the same as its abbreviated runtime code, English label, or BPE token. This separation allows the orthography and tokenizer to change while preserving memories, tools, and model contracts through explicit migration.
+
+### 4.5 Give open-world objects handles
+
+Proper nouns, exact values, quotations, URLs, code, formulas, document titles, citations, and new terms use typed handles backed by an object table. A tiny root vocabulary should not imply a tiny world.
+
+### 4.6 Allocate fidelity by importance
+
+Not every surface distinction deserves equal storage. A conversational filler word may require no residue. A term of art may require a lexical realization tag. A person’s name or a legal quotation may require exact bytes. The compiler selects fidelity using hard rules and a learned importance model.
+
+### 4.7 Share recurring residual information
+
+A conversation often repeats the same terminology, aliases, register, formatting, and naming conventions. Storing those choices once in an interaction residual is more efficient and more consistent than attaching full metadata to every occurrence.
+
+### 4.8 Keep the reasoning representation inspectable
+
+Pure latent vectors can be compact, but they are difficult to audit, migrate, constrain, or exchange among independently trained components. Kernel English is intentionally discrete and readable in a debug form. Learned continuous representations remain available inside each module.
+
+### 4.9 Use BPE as macro fusion, not semantic definition
+
+Kernel BPE compresses recurring sequences after canonicalization. It may fuse common reasoning patterns, but the underlying Kernel parse remains authoritative. BPE tokens do not define meaning and must not obscure scope or protected boundaries.
+
+### 4.10 Charge every component in evaluation
+
+Any reported gain must include:
+
+- compiler parameters and latency;
+- renderer parameters and latency;
+- entity and concept tables;
+- global and local residual bits;
+- tokenizer and registry storage;
+- verification passes;
+- failure recovery and byte fallback;
+- end-to-end task quality.
+
+Moving work outside the transformer is valuable only if the total system improves.
+
+<hr>
+## 5. End-to-End Architecture
+
+### 5.1 Architectural overview
+
+KERC is organized as a compiler pipeline surrounding a small-vocabulary cognitive core. The preferred implementation uses logically separable modules even when some parameters are shared.
+
+```text
+Immutable source bytes
+        |
+        v
+Protected-span and entity extractor
+        |----> Exact Object Store / Entity Table
+        v
+Uncertainty-aware lexical hygiene
+        |----> Correction lattice and source map
+        v
+Surface-to-Kernel compiler
+        |----> Hierarchical Residual Ledger
+        v
+Kernel English debug representation
+        v
+Compact Kernel serializer
+        v
+Grammar-aware Kernel BPE
+        v
+Small-vocabulary core reasoner
+        v
+Structured Kernel answer packet
+        v
+Surface renderer + copy head + render policy
+        v
+Full-language output
+        v
+Recompiler and semantic verifier
+```
+
+The modules communicate through a versioned **Kernel Packet Protocol**. A minimal packet contains:
+
+```yaml
+kernel_version: KE-1.0
+packet_id: turn-042
+kernel_tokens: [...]
+entities: {...}
+concept_capsules: {...}
+residual:
+  global_state_hash: ...
+  segment_frame: {...}
+  token_tags: [...]
+protected_objects: {...}
+source_alignment: [...]
+uncertainty: {...}
+provenance: {...}
+```
+
+The packet is a logical specification. Efficient implementations can use packed integer arrays, bit fields, dictionary references, and entropy coding rather than verbose YAML.
+
+### 5.2 Stage 0: immutable source capture
+
+Before any normalization, KERC stores the original input bytes or a content-addressed reference to them. The source record includes encoding, normalization form, language hints, timestamps when relevant, and cryptographic hashes for high-integrity applications.
+
+This stage serves four purposes:
+
+1. It makes every later transformation auditable.
+2. It enables exact-form tasks without forcing the core to retain all bytes in active context.
+3. It provides a recovery path when compilation is uncertain or fails.
+4. It prevents the correction and simplification pipeline from becoming an irreversible source of hallucinated edits.
+
+The source store can be transient for ordinary chat, persistent for documents, or disabled under privacy policy. The architecture requires the capability, not universal retention.
+
+### 5.3 Stage 1: protected-span and entity extraction
+
+Protection precedes spelling correction. The extractor identifies spans whose exact identity or form may matter:
+
+- person, organization, product, place, and event names;
+- model names and technical terminology;
+- dates, times, quantities, currencies, and units;
+- citations and bibliographic references;
+- URLs, email addresses, file paths, hashes, and identifiers;
+- source code, commands, formulas, and markup;
+- direct quotations and user-designated exact text;
+- words under discussion as words rather than as meanings;
+- intentionally stylized spellings.
+
+Each object receives a local handle such as `@E3`, `@Q2`, `@NUM7`, or `@CODE1`. A type-specific record stores exact surface form and optional normalized semantics.
+
+```yaml
+E3:
+  type: PERSON
+  exact_surface: "Saoirse Ronan"
+  aliases: ["Ronan"]
+  identity: unresolved-global-id
+  copy_policy: EXACT
+
+NUM7:
+  type: MONEY
+  exact_surface: "$2.75 million"
+  value: 2750000
+  currency: USD
+  precision: 3-significant-digits
+  copy_policy: VALUE_AND_STYLE
+```
+
+Local handles are short and context-efficient. Stable global identities, when available, are maintained separately so that a long registry identifier does not occupy every reasoning step.
+
+#### 5.3.1 Importance and protection are not identical
+
+A span can be important without requiring exact form. The proposition “the interest rate is approximately five percent” may require preserving value and approximation while allowing a different wording. Conversely, an exact quote can be form-sensitive even if its semantic importance is low. KERC therefore predicts at least three independent attributes:
+
+- **semantic importance**: cost of changing the meaning;
+- **surface importance**: cost of changing the form;
+- **identity anchoring**: need to preserve or resolve an external referent.
+
+These attributes drive residual allocation later.
+
+### 5.4 Stage 2: uncertainty-aware lexical hygiene
+
+The lexical hygiene module detects likely spelling, spacing, punctuation, and grammatical errors in unprotected spans. It does not simply overwrite the source. It emits a correction lattice with alternatives, confidences, and evidence.
+
+```yaml
+source: "Jon will reed the paper tomorow."
+protected:
+  - span: "Jon"
+    handle: "@E1"
+corrections:
+  - source: "reed"
+    alternatives:
+      - form: "read"
+        probability: 0.93
+      - form: "reed"
+        probability: 0.07
+  - source: "tomorow"
+    alternatives:
+      - form: "tomorrow"
+        probability: 0.995
+```
+
+The compiler can use the best-supported normalization while retaining alternatives when they could affect reasoning. A request such as “Is `reed` misspelled?” marks the token as form-sensitive and blocks automatic replacement.
+
+#### 5.4.1 Correction as inference, not sanitation
+
+Real-world language includes dialect, code-switching, speech transcription, creative spelling, and new terminology. The module must be calibrated to abstain. Overcorrection is especially dangerous because later canonicalization can make the altered interpretation appear authoritative. The source alignment therefore records whether each Kernel unit derives from preserved text, a high-confidence correction, a low-confidence hypothesis, or a model inference.
+
+### 5.5 Stage 3: Surface-to-Kernel compilation
+
+The compiler maps normalized surface language into Kernel English. It performs:
+
+- contextual word-sense disambiguation;
+- entity and coreference linking;
+- semantic-role extraction;
+- explicit tense, aspect, modality, negation, and quantification;
+- idiom and multiword-expression normalization;
+- clause and discourse relation identification;
+- terminology binding to concept capsules;
+- ambiguity retention;
+- residual generation;
+- source-to-Kernel alignment.
+
+The compiler should be implemented as a constrained neural transducer rather than an unconstrained paraphraser. A symbolic checker validates grammar, handle references, scope, and type compatibility. High-risk spans can be compiled through multiple candidates and adjudicated by a verifier.
+
+#### 5.5.1 Canonical equivalence classes
+
+The compiler learns equivalence classes of surface expressions under context. For example:
+
+```text
+"The panel turned the plan down."
+"The panel did not approve the plan."
+"The plan was rejected by the panel."
+```
+
+may compile to:
+
+```text
+PST NEG APPROVE AG panel OBJ plan
+```
+
+However:
+
+```text
+"The panel has not approved the plan yet."
+```
+
+must preserve perfect aspect and the implication that approval remains possible:
+
+```text
+PERF NEG APPROVE AG panel OBJ plan TEMP not-yet
+```
+
+Canonicalization is therefore meaning-conditioned, not a flat dictionary replacement.
+
+### 5.6 Stage 4: entity and concept binding
+
+The compiler replaces protected entities with handles and introduces **concept capsules** for open-domain concepts outside the small root inventory.
+
+A concept capsule contains:
+
+```yaml
+C7:
+  stable_identity: bio.process.photosynthesis
+  type: BIOLOGICAL_PROCESS
+  surface_labels:
+    preferred: "photosynthesis"
+  definition_kernel:
+    PROCESS
+      AG PLANT
+      INPUT LIGHT_ENERGY
+      RESULT CHEMICAL_ENERGY
+  argument_schema:
+    optional: [agent, light_source, efficiency]
+  provenance: registry-v4
+```
+
+After the capsule is introduced or retrieved, later turns can use `@C7`. This prevents the tiny vocabulary from expanding technical concepts into repeated long paraphrases. Frequently reused local capsules may be promoted into a governed global registry after validation.
+
+### 5.7 Stage 5: compact Kernel serialization
+
+Kernel English has two views:
+
+**Debug form**, optimized for human audit:
+
+```text
+PST NEG APPROVE AG @E2 OBJ @D1
+CAUSE WEAK AG EVIDENCE
+```
+
+**Runtime form**, optimized for compact regular encoding:
+
+```text
+p n apr a @E2 o @D1 c wek a evid
+```
+
+The runtime codebook is learned under constraints rather than created by casually dropping letters. Common roots receive short unique forms. Morphological and grammatical families share patterns where that improves learnability. Every form has byte fallback and a stable concept mapping.
+
+The serializer can use a reduced alphabet, but alphabet reduction is an outcome of a code-design objective, not an article of faith. Once BPE maps strings to integer tokens, avoiding a particular letter has little value unless it shortens sequences, improves merge regularity, reduces collision risk, or simplifies a local decoder.
+
+### 5.8 Stage 6: grammar-aware Kernel BPE
+
+A BPE or unigram tokenizer is trained exclusively on serialized Kernel corpora. Its merges are allowed to form recurring reasoning and semantic macros, such as:
+
+```text
+[p n]                    -> PAST_NEG
+[if ... then]            -> CONDITIONAL_FRAME
+[cause weak evidence]    -> WEAK_EVIDENCE_CAUSE
+[compare x y]            -> COMPARE_PAIR
+[need check source]       -> VERIFY_SOURCE
+```
+
+The tokenizer respects protected boundaries. It may not silently merge across:
+
+- entity and exact-object handles;
+- clause boundaries when scope would be obscured;
+- negation or quantifier boundaries without a typed macro definition;
+- quotation and code boundaries;
+- numeric value/unit boundaries unless the merge is value-neutral;
+- provenance and authority boundaries.
+
+Each macro has an expansion in the Kernel grammar. This makes BPE a reversible instruction-fusion layer rather than an implicit source of semantics.
+
+### 5.9 Stage 7: small-vocabulary core reasoning
+
+The core model is pretrained primarily on Kernel sequences and structured packets. It reads a small vocabulary with high repetition and explicit relationships. The model performs:
+
+- language modeling over Kernel corpora;
+- retrieval and memory integration;
+- planning and tool routing;
+- mathematical and symbolic reasoning;
+- answer-packet generation;
+- confidence and provenance tracking.
+
+The surface vocabulary is not projected at every internal step. During reasoning, the active output head predicts Kernel tokens, pointers, and control symbols. This reduces output-layer competition and encourages stable internal forms.
+
+The core can still request exact source spans or invoke a “surface inspection” tool when the task depends on wording. The separation is selective, not a ban on surface access.
+
+### 5.10 Stage 8: structured answer packet
+
+The reasoner finishes with an answer packet rather than immediately producing prose.
+
+```yaml
+claims:
+  - predicate: REDUCE
+    agent: KERC
+    object: CORE_SEQUENCE_LENGTH
+    modality: HYPOTHESIS
+  - predicate: CONSERVE
+    object: INFORMATION_IN_LOSSLESS_MODE
+    status: THEORETICAL_CONSTRAINT
+qualifiers:
+  - "end-to-end overhead must be included"
+entities:
+  - "@E1"
+required_terms:
+  - concept: "@C7"
+    surface_policy: "preferred_label"
+style:
+  register: technical-accessible
+  length: detailed
+citations:
+  required: true
+```
+
+Separating content planning from prose rendering reduces the risk that style generation changes the intended claim.
+
+### 5.11 Stage 9: surface rendering
+
+The renderer consumes the answer packet, current interaction residual, requested style, entity table, and optional token realization tags. It uses:
+
+- a large surface vocabulary;
+- a copy/pointer head for exact objects;
+- a morphology and syntax generator;
+- a terminology constraint system;
+- audience and style controls;
+- optional retrieval of source phrasing.
+
+The renderer may be smaller than the core because it need not rediscover the answer. It performs realization, not open-ended reasoning. For hard generation tasks the renderer can share layers with the core, but its logical responsibility remains distinct.
+
+### 5.12 Stage 10: round-trip verification
+
+The rendered answer is recompiled into Kernel English. A verifier compares the reconstructed packet with the intended answer packet.
+
+Mandatory checks include:
+
+- entity identity and spelling;
+- numbers, units, ranges, and approximation;
+- negation and quantifier scope;
+- possibility versus certainty;
+- temporal relations;
+- causal direction;
+- speaker and source attribution;
+- quoted text;
+- required caveats and uncertainty.
+
+A mismatch can trigger local regeneration, a more literal render mode, or direct template realization. The verifier need not compare every stylistic detail; it tests the semantic contract.
+
+<hr>
+## 6. Kernel English Language Specification
+
+### 6.1 Design target
+
+Kernel English is not intended to be a universal auxiliary language for ordinary human conversation. It is an internal representation with four simultaneous requirements:
+
+1. **Compactness:** short sequences under a small vocabulary.
+2. **Regularity:** predictable morphology and grammar.
+3. **Compositionality:** unfamiliar concepts can be defined from known parts or handles.
+4. **Auditability:** a human or symbolic checker can inspect the representation.
+
+The language should be expressive enough to represent the distinctions needed for reasoning while routing optional surface distinctions into residuals.
+
+### 6.2 Inventory
+
+An initial design envelope is:
+
+| Component | Proposed initial range | Purpose |
+|---|---:|---|
+| Canonical semantic roots | 1,024–4,096 | Frequent concepts and actions |
+| Grammar and logic operators | 256–512 | Roles, scope, tense, modality, discourse |
+| Type and control symbols | 128–512 | Entities, packets, tools, provenance, uncertainty |
+| Kernel BPE vocabulary | 8,000–16,000 | Frequent root sequences and reasoning macros |
+| Byte fallback | 256 bytes plus controls | Unseen strings and exact fallback |
+| Dynamic handles | Context-dependent | Entities, concepts, numbers, quotes, code |
+
+These are hypotheses to optimize. A “tiny” root vocabulary should be measured against total Kernel length and concept-capsule overhead, not celebrated in isolation.
+
+### 6.3 One root per contextual sense
+
+Kernel roots correspond to contextual concepts, not spelling families. Surface synonyms can converge:
+
+```text
+begin, start, commence, initiate -> START
+purchase, buy -> BUY
+assist, help -> HELP
+```
+
+But polysemy is separated:
+
+```text
+BANK_FIN   financial institution
+BANK_RIV   land beside a river
+BANK_TILT  tilt laterally
+BANK_RELY  rely on an outcome
+```
+
+Near-synonyms remain distinct when they affect inference:
+
+```text
+APPROVE    express formal acceptance
+AUTHORIZE  grant power or permission
+ENDORSE    publicly support
+ACCEPT     receive or agree to take
+```
+
+A residual can request a particular surface realization when two concepts are close enough to share a reasoning primitive but wording matters. The registry documents these relationships.
+
+### 6.4 Regular morphology
+
+Kernel English removes irregular inflection. Grammatical features are explicit operators or compact affixes with one form each.
+
+```text
+went       -> PST GO
+children   -> PL CHILD
+better     -> MORE GOOD
+was eating -> PST PROG EAT
+has gone   -> PERF GO
+```
+
+Whether a feature is represented as a separate token, a compact affix, or a fused BPE macro is an implementation choice. Its semantic identity remains explicit in the expanded Kernel form.
+
+### 6.5 Core semantic roles
+
+A minimal role inventory may include:
+
+| Debug operator | Runtime hint | Function |
+|---|---|---|
+| `AG` | `a` | agent, actor, experiencer where appropriate |
+| `OBJ` | `o` | affected object or theme |
+| `TO` | `to` | recipient or destination |
+| `FROM` | `fr` | source or origin |
+| `AT` | `at` | location |
+| `TIME` | `tm` | temporal anchoring |
+| `WITH` | `w` | instrument or accompaniment |
+| `CAUSE` | `c` | causal relation |
+| `COND` | `if` | condition |
+| `PURPOSE` | `pur` | intended goal |
+| `SOURCE` | `src` | evidential or attribution source |
+
+Kernel English need not force all linguistic roles into one universal taxonomy. Domain extensions can add typed roles while retaining a stable core.
+
+### 6.6 Scope, modality, and epistemic status
+
+Compact language is dangerous if scope is implicit. The representation therefore makes the following distinctions explicit:
+
+```text
+NEG         negation
+MAY         possibility
+LIKELY      probability above contextual threshold
+MUST        necessity or obligation, typed by sense
+SHOULD      recommendation or expectation, typed by sense
+BEL         belief holder and content
+CLAIM       claim source and content
+KNOW        knowledge attribution
+ASK         question or request
+QUOTE       exact attributed content
+```
+
+Example:
+
+> The treatment may not reduce risk.
+
+```text
+MAY [NEG [REDUCE AG treatment OBJ risk]]
+```
+
+This differs from:
+
+> The treatment may increase risk.
+
+```text
+MAY [INCREASE AG treatment OBJ risk]
+```
+
+and from:
+
+> It is not possible that the treatment reduces risk.
+
+```text
+NEG [MAY [REDUCE AG treatment OBJ risk]]
+```
+
+Bracket structure may be serialized through delimiters, typed frames, or prefix notation. BPE macros cannot erase the distinction.
+
+### 6.7 Reference and coreference
+
+Pronouns are replaced by entity handles when the referent is sufficiently certain.
+
+```text
+"Maya called Lena because she was worried."
+```
+
+If context resolves `she` to Maya:
+
+```text
+PST CALL AG @E1 TO @E2
+CAUSE WORRY AG @E1
+```
+
+If unresolved:
+
+```text
+PST CALL AG @E1 TO @E2
+CAUSE WORRY AG AMBIG{@E1:0.55,@E2:0.45}
+```
+
+The model may reason under both branches or seek clarification. A shorter representation is never allowed to hide unresolved reference.
+
+### 6.8 Quantities and normalized values
+
+Surface quantities are converted into typed values plus representation metadata.
+
+```text
+"about six feet" -> LENGTH(value=6, unit=foot, approx=true)
+"two dozen"      -> COUNT(value=24, source_form=dozen)
+"next Thursday"  -> DATE(relative=next_thursday, anchor=@NOW)
+```
+
+The reasoning core uses normalized values. The residual records whether output should preserve the original unit, phrasing, significant figures, and approximation.
+
+### 6.9 Discourse and information structure
+
+Reasoning sometimes depends on contrast, concession, evidence, and focus. Kernel English therefore includes discourse operators such as:
+
+```text
+CONTRAST
+CONCEDE
+EXAMPLE
+ELABORATE
+EVIDENCE_FOR
+EVIDENCE_AGAINST
+CORRECT_PREVIOUS
+TOPIC
+FOCUS
+```
+
+Stylistic discourse markers can be omitted from the core if they do not change relations. The residual may preserve a preferred rhetorical form.
+
+### 6.10 Open-world concept capsules
+
+When no core root captures a concept economically, the compiler chooses among:
+
+1. **Registry lookup:** bind to a stable known concept.
+2. **Local capsule:** define a new concept once in Kernel English.
+3. **Opaque handle:** preserve the term and defer semantics.
+4. **Byte fallback:** retain exact text.
+
+A local capsule is useful when a concept repeats:
+
+```text
+DEF @C8 =
+  SYSTEM
+  CAP modify-own-implementation
+  CONSTRAINT preserve-stable-capability-meaning
+```
+
+Later:
+
+```text
+@C8 NEED governance
+@C8 RISK semantic-drift
+```
+
+This is context-level dictionary compression applied to concepts. The definition cost is amortized over reuse.
+
+### 6.11 Learned compact orthography
+
+The compact spelling layer is optimized after the semantic inventory is defined. Let `code(c)` be the runtime string for concept `c`. A codebook objective can minimize:
+
+```text
+J_code =
+    alpha * expected_serialized_bytes
+  + beta  * expected_Kernel_BPE_tokens
+  + gamma * confusability
+  + delta * family_irregularity
+  + eta   * human_opacity
+  + zeta  * error_propagation_cost
+```
+
+Constraints include unique decodability, reserved-prefix rules for handles and control symbols, and complete fallback. High-frequency concepts may receive one- or two-character codes, but only when this improves the complete pipeline.
+
+Possible debug/runtime mappings are illustrative:
+
+| Debug root | Runtime form |
+|---|---|
+| `NEG` | `n` |
+| `PAST` | `p` |
+| `CAUSE` | `c` |
+| `APPROVE` | `apr` |
+| `EVIDENCE` | `evid` |
+| `PRESERVE` | `prv` |
+| `UNCERTAIN` | `unc` |
+
+The final codebook should be learned from corpus statistics and validated for robustness, not selected from these examples by fiat.
+
+### 6.12 Grammar-aware macro fusion
+
+Expanded Kernel is authoritative:
+
+```text
+PST NEG APPROVE AG BOARD OBJ PROPOSAL
+CAUSE WEAK AG EVIDENCE
+```
+
+The tokenizer may produce fused instructions:
+
+```text
+[PST_NEG_APPROVE] [AG_BOARD] [OBJ_PROPOSAL]
+[CAUSE_WEAK_EVIDENCE]
+```
+
+Every fused token has a deterministic expansion and a typed signature. A macro may be disabled if it creates undertrained embeddings, hides rare distinctions, or harms transfer.
+
+### 6.13 Kernel English is not the model’s entire cognition
+
+The architecture does not assume that discrete Kernel tokens expose every neural computation. Transformers and other networks still use continuous hidden states. Kernel English is the stable communication and recurrence substrate: what enters the core, what can be generated as a plan, what memory can store, and what modules can verify. Internal activations may discover richer transient representations.
+
+<hr>
+## 7. The Hierarchical Residual Ledger
+
+### 7.1 Why a residual is necessary
+
+Canonicalization maps many surface forms to fewer Kernel forms. If the input is:
+
+```text
+The committee authorized the release.
+The committee approved the release.
+The committee gave the release the green light.
+```
+
+and all three compile to the same core proposition, the Kernel representation alone cannot identify the original wording. Exact reconstruction requires side information. Even faithful—not byte-exact—reconstruction may need to retain register, terminology, emphasis, or legal force.
+
+The **Hierarchical Residual Ledger (HRL)** stores this information outside the principal reasoning stream. It is “hierarchical” because different kinds of information have different scopes and reuse patterns.
+
+### 7.2 Four residual levels
+
+The complete residual is:
+
+```text
+R = (R_G, {R_t^S}, {r_t,i}, X*)
+```
+
+where:
+
+- `R_G` is the interaction-global residual;
+- `R_t^S` is a turn or segment residual frame;
+- `r_t,i` is optional token- or concept-local residue;
+- `X*` is the exact protected-object store.
+
+#### 7.2.1 Interaction-global residual `R_G`
+
+`R_G` stores stable choices that recur across a conversation, document, user profile, or domain session:
+
+- preferred dialect and spelling conventions;
+- register and tone;
+- preferred terminology and banned terminology;
+- concept-to-lexeme defaults;
+- entity aliases and forms of address;
+- unit and date conventions;
+- formatting preferences;
+- capitalization and punctuation policy;
+- domain glossary;
+- render templates;
+- compression mode and fidelity thresholds;
+- version and security state.
+
+Example:
+
+```yaml
+global_residual:
+  dialect: en-US
+  register: technical-accessible
+  terminology:
+    APPROVE: "authorize"
+    KERNEL_LANGUAGE: "Kernel English"
+    RESIDUAL_LEDGER: "residual ledger"
+  aliases:
+    "@E1": "Dr. Alvarez"
+  units:
+    temperature: celsius
+  formatting:
+    headings: sentence_case
+    serial_comma: true
+  fidelity:
+    proper_nouns: exact
+    numbers: value_and_precision
+    ordinary_synonyms: semantic
+  version: RG-17
+```
+
+This directly implements the idea of “one residue shared across the whole interaction.” The mapping is transmitted or established once, then referenced by a short version hash.
+
+#### 7.2.2 Segment residual `R_t^S`
+
+A turn or sentence may have local properties not worth repeating per token:
+
+- tense and narrative viewpoint defaults;
+- passive versus active voice preference;
+- rhetorical frame such as question, warning, concession, or joke;
+- local quotation style;
+- emphasis pattern;
+- local terminology override;
+- sentence template;
+- discourse order;
+- source-language alignment.
+
+Example:
+
+```yaml
+segment_residual:
+  voice: passive
+  rhetorical_frame: cautious_recommendation
+  emphasis: ["@C4"]
+  lexical_override:
+    REDUCE: "mitigate"
+```
+
+#### 7.2.3 Token-local residual `r_t,i`
+
+A Kernel item receives a local tag only when its particular surface realization matters and cannot be predicted from the global and segment contexts.
+
+Possible fields include:
+
+```yaml
+token_residual:
+  kernel_position: 12
+  realization_id: lexeme.AUTHORIZE.v2
+  morphology:
+    tense: past
+    aspect: simple
+  capitalization: title_case
+  article: definite
+  emphasis: contrastive
+  exactness: lexical
+  source_span: [44, 54]
+  confidence: 0.98
+```
+
+Most Kernel items should carry no local residue. The residual entropy model predicts common choices from `K`, `R_G`, and `R_t^S`; only exceptions require bits.
+
+#### 7.2.4 Exact protected-object store `X*`
+
+The exact store holds arbitrary bytes or structured values that must not be regenerated from a small vocabulary:
+
+```yaml
+Q2:
+  type: QUOTE
+  bytes: "The distinction is the point."
+  encoding: UTF-8
+  copy_policy: exact
+
+CODE1:
+  type: CODE
+  language: Python
+  bytes: "result = cache[key]"
+  copy_policy: exact
+```
+
+The core usually sees `@Q2` or `@CODE1`, plus typed metadata, rather than every byte. It can request expansion when the task requires detailed inspection.
+
+### 7.3 Residual tags as lexical source maps
+
+A token residue is analogous to a compiler source map. The Kernel concept identifies what the item means; the residue identifies how it appeared or should appear.
+
+For input reconstruction:
+
+```text
+Kernel:   PST APPROVE AG @E1 OBJ @D2
+Residue:  APPROVE.realization = "gave ... the green light"
+Template: phrasal_idiom_transitive
+```
+
+For generated output:
+
+```text
+Kernel answer: RECOMMEND REDUCE AG system OBJ latency
+Render policy: REDUCE.realization = "cut"
+Register: concise
+```
+
+The same mechanism can be used prescriptively. A user may lock a term so that every occurrence of `MODEL_INTERNAL_LANGUAGE` renders as “Kernel English,” not “compressed dialect.”
+
+### 7.4 Shared residual dictionaries
+
+The interaction residual can define a compact dictionary of realization choices:
+
+```yaml
+lexicon_table:
+  L0: "approve"
+  L1: "authorize"
+  L2: "endorse"
+  L3: "give the green light to"
+```
+
+A token-local tag can then store a two-bit or entropy-coded index rather than a full string. More powerfully, the global table can bind a default:
+
+```yaml
+default_realization:
+  APPROVE: L1
+```
+
+All ordinary occurrences need zero local bits. Only exceptions carry an override.
+
+The table can also contain phrase templates with slots:
+
+```yaml
+T7:
+  template: "give {OBJ} the green light"
+  maps_to: APPROVE
+  voice: active
+```
+
+This allows idiomatic surface recovery without placing the idiom in the core reasoning language.
+
+### 7.5 Interaction-level amortization
+
+Let `B(R_G)` be the bits needed to establish the interaction residual and let the interaction have `T` turns. Ignoring updates, average global overhead per turn is:
+
+```text
+B_avg_global(T) = B(R_G) / T
+```
+
+As `T` grows, stable terminology and style policies become cheap per turn. The practical ledger uses delta updates:
+
+```text
+R_G^(t) = ApplyDelta(R_G^(t-1), Delta_t)
+```
+
+Each packet carries a state hash. If sender and receiver hashes differ, the system requests a checkpoint or falls back to explicit local metadata. This prevents a shared residue from becoming invisible mutable state.
+
+#### 7.5.1 When sharing beats local tags
+
+Suppose a realization requires `b_direct` bits when stored independently, a shared dictionary definition costs `b_def`, and each reference costs `b_ref`. Sharing is beneficial after `m` uses when:
+
+```text
+b_def + m * b_ref < m * b_direct
+```
+
+or:
+
+```text
+m > b_def / (b_direct - b_ref)
+```
+
+This simple threshold can guide online promotion of repeated residues into the global dictionary.
+
+### 7.6 Importance-adaptive residual allocation
+
+For each semantic unit `i`, the compiler chooses a fidelity level `q_i`:
+
+| Level | Name | Stored information | Typical use |
+|---:|---|---|---|
+| 0 | Semantic | Kernel meaning only | ordinary paraphrasable prose |
+| 1 | Faithful | pragmatic/lexical class | important terminology, emphasis |
+| 2 | Lexical | chosen lexeme/template and morphology | legal or domain wording |
+| 3 | Exact | original bytes or typed exact value | names, quotes, code, identifiers |
+
+Let `w_i` be importance, `d_i(q_i)` be distortion at fidelity `q_i`, and `l_i(q_i)` be residual length. The allocation can minimize:
+
+```text
+q_i* = argmin_q [ l_i(q) + lambda * w_i * d_i(q) ]
+```
+
+Hard constraints set `d_i = infinity` for forbidden changes. Proper names marked exact, cryptographic hashes, code, and direct quotations therefore cannot be sacrificed for rate.
+
+#### 7.6.1 Learning importance
+
+Importance is predicted from multiple signals:
+
+- named-entity and value types;
+- user emphasis and explicit “preserve exactly” instructions;
+- legal, medical, financial, or safety context;
+- citation and quotation boundaries;
+- sensitivity of downstream entailment to the term;
+- recurrence and centrality in the discourse graph;
+- uncertainty of semantic normalization;
+- difference among candidate surface meanings;
+- task type.
+
+The policy should be calibrated and conservative. A model uncertainty score alone is insufficient because confidently deleted information can still be crucial.
+
+### 7.7 Conditional entropy coding of residuals
+
+Residuals should be entropy-coded under a model conditioned on the Kernel representation and higher-level residual state:
+
+```text
+P(r_t,i | K_t, R_G, R_t^S, r_t,<i)
+```
+
+If the global dialect is US English, `color` is predictable and may require no explicit bit relative to `colour`. If the segment is a formal legal notice, a formal realization of `MUST` is more probable. If a person’s preferred title is stored globally, repeated references are cheap.
+
+The residual codec can be a small autoregressive model, a finite-state model, or an arithmetic coder driven by the renderer’s probabilities. Its complexity must be included in evaluation.
+
+### 7.8 Source residual versus render plan
+
+Two related but distinct objects must not be confused.
+
+**Source residual.** Information needed to reconstruct or faithfully quote an existing input.
+
+**Render plan.** Metadata that guides how a newly generated answer should be expressed. There is no unique original wording for a new answer, so the renderer predicts or follows preferred forms rather than “recovering” them.
+
+A token tag may serve either role, but the packet marks its direction:
+
+```yaml
+mode: SOURCE_RECONSTRUCTION
+```
+
+or:
+
+```yaml
+mode: OUTPUT_REALIZATION
+```
+
+For output, the interaction residual acts like a style sheet and terminology contract.
+
+### 7.9 Three operating modes
+
+#### Semantic mode
+
+The system preserves proposition-level meaning, important entities, values, and uncertainty but allows broad paraphrase. Residual rate is low. This mode is suitable for internal reasoning, retrieval, planning, and memory.
+
+#### Faithful mode
+
+The system additionally preserves key terminology, emphasis, discourse relations, source attribution, and selected lexical choices. It is suitable for technical writing, summaries, and most assistant conversations.
+
+#### Lossless mode
+
+The residual and exact store support byte-exact reconstruction of the source. This is suitable for archival text, legal quotations, code, and textual analysis. Lossless mode may still reduce core compute because the reasoner need not process every exact byte, but total storage cannot undercut the source entropy without exploiting ordinary statistical redundancy.
+
+### 7.10 Residual state lifecycle
+
+The interaction residual is a versioned state machine:
+
+```text
+INIT -> ACTIVE -> UPDATED -> CHECKPOINTED -> CLOSED
+```
+
+Operations include:
+
+- `DEFINE(concept, realization)`
+- `SET_STYLE(key, value)`
+- `BIND_ALIAS(entity, alias)`
+- `LOCK_TERM(concept, text)`
+- `OVERRIDE(segment, key, value)`
+- `EVICT(entry)`
+- `RESET(scope)`
+- `CHECKPOINT(hash)`
+
+Entries have scope, confidence, authority, origin, expiry, and privacy labels. User-provided terminology outranks automatically inferred preferences unless policy says otherwise.
+
+### 7.11 Synchronization and failure recovery
+
+Shared residue creates a new failure mode: state desynchronization. KERC mitigates it with:
+
+- content-addressed state hashes in every packet;
+- periodic full checkpoints;
+- append-only signed deltas for high-integrity settings;
+- deterministic conflict resolution;
+- local expansion fallback when a state entry is missing;
+- explicit reset and migration commands;
+- bounded state and least-recently-used eviction;
+- version negotiation between compiler and renderer.
+
+A packet that references unknown state is not interpreted approximately. It requests the missing entry or falls back to an uncompressed form.
+
+### 7.12 Privacy and leakage
+
+A shared interaction residual may reveal user preferences, private terminology, aliases, or document context. The ledger therefore needs:
+
+- scope boundaries between chats, users, projects, and organizations;
+- encryption at rest and in transit where retained;
+- data-minimizing expiry;
+- user-visible inspection and deletion;
+- separation between model parameters and ephemeral state;
+- access control for exact object stores;
+- redaction before telemetry;
+- prohibition on silent cross-user reuse.
+
+The residual is not merely compression metadata; it can become a compact profile. Governance must treat it accordingly.
+
+<hr>
+## 8. Dual-Vocabulary Model Architecture
+
+### 8.1 Three code spaces
+
+KERC uses at least three logical vocabularies:
+
+```text
+V_S: surface vocabulary
+V_K: Kernel vocabulary
+V_P: pointer, object, and control vocabulary
+```
+
+`V_S` is large and expressive. It covers ordinary full-language input/output, morphology, style, and common names or fragments.
+
+`V_K` is small, canonical, compositional, and highly reused. It contains roots, operators, types, and BPE macros.
+
+`V_P` contains typed pointer constructors, handle references, exact-copy operations, residual controls, version markers, and byte fallback.
+
+The vocabularies can share some embeddings, but their semantics and computational roles are distinct.
+
+### 8.2 Preferred modular implementation
+
+The preferred architecture has three principal neural modules.
+
+#### 8.2.1 Surface compiler
+
+A small-to-medium encoder-decoder or byte-level hierarchical model performs:
+
+- protected-span detection;
+- lexical hygiene;
+- parsing and sense resolution;
+- entity linking;
+- Surface-to-Kernel translation;
+- residual generation;
+- confidence estimation.
+
+It can use a byte-level front end to avoid tokenization brittleness.
+
+#### 8.2.2 Core reasoner
+
+The largest model operates over `V_K + V_P`. It receives Kernel packets, performs expensive contextual computation, and emits Kernel answer packets. The majority of parameters and key-value cache live here, where sequence shortening is most valuable.
+
+#### 8.2.3 Surface renderer
+
+A medium model maps answer packets to `V_S + COPY`. It may use encoder access to the answer packet and selected source objects. It is optimized for faithful realization rather than discovering the solution.
+
+The modular design permits independent improvement and auditing. A renderer can be adapted to a new language without retraining the reasoning core. A new compiler can support a dialect while preserving the Kernel contract.
+
+### 8.3 Shared-trunk alternative
+
+A more compact implementation can share a transformer trunk with separate embedding and output heads:
+
+```text
+Surface embedding E_S -> shared lower layers -> Kernel bottleneck
+Kernel embedding E_K  -> shared/core layers -> Kernel head H_K
+                                       \----> Surface head H_S
+                                       \----> Copy head H_C
+```
+
+Mode tokens and attention masks determine which heads are active. During internal reasoning, only `H_K` and pointer controls are evaluated. During final rendering, `H_S` and `H_C` become active.
+
+This approach reduces total parameters but increases interference risk. Multi-task training must prevent the rich surface distribution from pulling the Kernel space back toward ordinary prose.
+
+### 8.4 Vocabulary tying policy
+
+Conventional language models often tie input embeddings and output weights. KERC should not assume full tying.
+
+- Kernel input and Kernel output weights may be tied.
+- Surface input and surface output weights may be tied where beneficial.
+- Kernel and surface roots with stable identity may share a low-rank semantic base.
+- Pointer controls should use specialized embeddings.
+- Exact bytes may use a small local decoder or byte head.
+
+The architecture can factor embeddings:
+
+```text
+E_surface(word) = E_concept(concept_id) + E_form(surface_features)
+E_kernel(root)  = E_concept(concept_id) + E_kernel_code(code_features)
+```
+
+This lets the two vocabularies share semantic structure without forcing identical token inventories.
+
+### 8.5 Output-head cost
+
+A large surface vocabulary increases the cost of the final projection and softmax. KERC avoids paying that cost during every internal step. If a reasoning trace has `L_K` internal steps and a final answer has `L_Y` surface steps, the large head is used for approximately `L_Y`, not `L_K + L_Y`, positions.
+
+Adaptive softmax, vocabulary routing, or retrieval-based lexical selection can reduce renderer cost further. The renderer may first choose a concept and then choose among permitted surface forms, which naturally matches the residual lexicon.
+
+### 8.6 Kernel memory and tool interfaces
+
+Memory stores and tool calls should use Kernel packets when possible.
+
+A memory item contains:
+
+```yaml
+semantic_content: Kernel graph/sequence
+entities: stable IDs
+provenance: source references
+uncertainty: calibrated values
+surface_pointer: optional exact source
+residual_profile: optional terminology/style
+```
+
+A tool interface can declare typed Kernel signatures:
+
+```text
+SEARCH(query=@C3, time=RECENT, source_type=PRIMARY)
+CALCULATE(expr=@EX1)
+FETCH_DOCUMENT(id=@D4, section=@S2)
+```
+
+This reduces repeated natural-language parsing among modules and makes validation easier.
+
+### 8.7 Hybrid with byte-level dynamic chunking
+
+KERC does not require a conventional surface tokenizer. A strong configuration is:
+
+```text
+raw bytes
+  -> BLT/H-Net-style local encoder
+  -> protected objects and Kernel compiler
+  -> Kernel BPE
+  -> core reasoner
+```
+
+Dynamic byte chunking handles arbitrary spelling and scripts. Kernel compilation handles semantic redundancy. These mechanisms operate at different levels and may be additive.
+
+### 8.8 Hybrid with continuous latent reasoning
+
+The core can alternate discrete Kernel checkpoints with continuous latent steps:
+
+```text
+Kernel state -> several latent recurrent steps -> Kernel checkpoint
+```
+
+Discrete checkpoints support audit, memory, tools, and verification; latent intervals avoid decoding every micro-step. The system can learn when to emit a Kernel checkpoint based on uncertainty, tool use, or the need for external inspection.
+
+### 8.9 Dynamic local macros
+
+Static BPE captures globally common sequences. A context compiler can also define local macros:
+
+```text
+DEF @M2 = [VERIFY SOURCE; COMPARE CLAIM; RECORD CONTRADICTION]
+```
+
+The core can later emit `@M2` as one pointer-like instruction. Macro definitions live in the packet or interaction state, are type-checked, and are expanded for verification. Promotion to the global vocabulary requires evidence across corpora and versions.
+
+<hr>
+## 9. Formal Rate–Compute–Fidelity Analysis
+
+### 9.1 Notation
+
+For an interaction with turns `t = 1 ... T`, let:
+
+- `X_t` be the source surface string;
+- `K_t` be the expanded Kernel sequence;
+- `Z_t` be its Kernel-tokenized sequence;
+- `E_t` be entity/concept/object metadata;
+- `R_G` be global residual state;
+- `R_t^S` be segment residual;
+- `r_t` be local residual symbols;
+- `Y_t` be rendered output;
+- `C_comp`, `C_core`, `C_rend`, and `C_ver` be compiler, core, renderer, and verifier costs.
+
+Let `B(A)` denote encoded bits for object `A` under the chosen codec.
+
+### 9.2 Information conservation under exact reconstruction
+
+#### Proposition 1: entropy relocation
+
+Assume the encoder `F` maps each source `X` deterministically to `(K,R)` and decoder `D` satisfies `D(K,R)=X` for all valid sources. If `F` is one-to-one over the source distribution, then the random variables `X` and `(K,R)` contain the same Shannon entropy:
+
+```text
+H(X) = H(K,R)
+```
+
+**Reason.** A deterministic bijection preserves entropy. The Kernel stream can have lower entropy than the source only because the residual carries the remaining distinctions.
+
+This proposition prevents a common conceptual error. Exact KERC is not valuable because it destroys information. It is valuable if the decomposition lets expensive computation depend mostly on `K` while inexpensive modules handle `R`.
+
+### 9.3 Total coded rate
+
+A complete rate accounting is:
+
+```text
+R_total =
+    B(K_1:T)
+  + B(E_1:T | K_1:T)
+  + B(R_G)
+  + sum_t B(R_t^S | R_G, K_t)
+  + sum_t B(r_t | R_G, R_t^S, K_t, E_t)
+  + B(codec_and_registry_overhead)
+```
+
+For lossless archival comparison, the model parameters or shared decoder assumptions must be stated. A huge pretrained renderer is not “free dictionary information.” Evaluation should report both operational message rate with a fixed deployed model and total description length when comparing standalone compression systems.
+
+### 9.4 Core compute model
+
+For a transformer layer with sequence length `L` and hidden width `d`, a simplified cost model is:
+
+```text
+C_layer(L,d) ~= a * L * d^2 + b * L^2 * d
+```
+
+The first term represents projections and feed-forward computation; the second represents attention. Suppose the baseline surface sequence length is `L_S` and the Kernel length is:
+
+```text
+L_K = L_S / c
+```
+
+for compression factor `c > 1`. Holding `d` and layer count fixed:
+
+```text
+linear-term ratio    ~= 1/c
+attention-term ratio ~= 1/c^2
+```
+
+This is an upper-level intuition, not an end-to-end guarantee. KERC’s total cost is:
+
+```text
+C_total = C_comp + C_core(L_K) + C_rend + C_ver + C_residual
+```
+
+The architecture wins only when:
+
+```text
+C_total < C_baseline(L_S)
+```
+
+at matched quality and throughput.
+
+### 9.5 Key-value cache
+
+For autoregressive inference, key-value cache scales approximately linearly with active sequence length, layer count, head dimensions, and batch size. Canonicalizing a long conversation into shorter Kernel memory can reduce cache pressure. Exact source spans can live in an external object store and be retrieved selectively rather than occupying every active layer.
+
+A rigorous benchmark must include the cache used by the compiler and renderer, any expanded local byte windows, and the object-store index.
+
+### 9.6 Vocabulary cost
+
+Let `|V|` be vocabulary size. Standard embedding and untied output matrices cost on the order of `|V|d` parameters each. KERC has more than one vocabulary, so total parameter cost may increase:
+
+```text
+P_vocab = |V_K|d_K + |V_S|d_S + |V_P|d_P + renderer/output factors
+```
+
+The proposed saving is not necessarily fewer total vocabulary parameters. It is that the large surface head need not be evaluated across the full internal reasoning trace and that the core can dedicate more representational density to a small, well-trained inventory. The Over-Tokenized Transformer’s evidence that input and output vocabulary choices can be decoupled motivates direct empirical optimization rather than assuming a universally small vocabulary.
+
+### 9.7 Importance-weighted rate–distortion
+
+For semantic and faithful modes, exact reconstruction is relaxed. Let `d_i(q_i)` measure distortion for unit `i` at fidelity level `q_i`, and `w_i` be importance. Define:
+
+```text
+D_weighted = sum_i w_i * d_i(q_i)
+```
+
+The residual policy can minimize:
+
+```text
+J_residual = R_total + lambda * D_weighted
+```
+
+or solve:
+
+```text
+minimize R_total
+subject to D_weighted <= epsilon
+and hard_constraints = satisfied
+```
+
+Distortion is multi-dimensional. It should include:
+
+- semantic proposition error;
+- entity identity error;
+- number/unit error;
+- modality and negation error;
+- source attribution error;
+- lexical/terminological error;
+- style deviation;
+- byte error for exact spans.
+
+A single embedding similarity score is inadequate.
+
+### 9.8 Interaction-amortized rate
+
+For `T` turns, global residual overhead per turn is:
+
+```text
+R_global_avg(T) = B(R_G) / T
+```
+
+With updates:
+
+```text
+R_global_avg(T) = [B(R_G^0) + sum_t B(Delta_t)] / T
+```
+
+The architecture predicts a characteristic curve: early turns may have higher overhead than local tagging, while longer coherent interactions benefit from shared terminology and style state. This curve is a primary evaluation target.
+
+### 9.9 Proposition 2: break-even for shared lexical residue
+
+Let a surface realization occur `m` times. Independent local encoding costs `m*b_d`. A shared entry costs `b_e` to define plus `m*b_r` to reference, where `b_r < b_d`.
+
+Shared residue saves bits exactly when:
+
+```text
+m > b_e / (b_d - b_r)
+```
+
+The same condition can be generalized to compute: a shared term dictionary is worthwhile when definition and lookup cost are lower than repeated renderer uncertainty and local metadata.
+
+### 9.10 Proposition 3: residual routing can reduce core compute without reducing total information
+
+Suppose a baseline core processes a representation of length `L_X`, while KERC core processes `K` of length `L_K < L_X`. Suppose residual processing is performed by modules with per-position cost `c_R` smaller than core per-position cost `c_M`, and the residual need not participate in global pairwise attention. Then there exist source distributions and compression factors for which:
+
+```text
+C_core(K) + C_residual(R) < C_core(X)
+```
+
+while:
+
+```text
+H(K,R) = H(X)
+```
+
+This follows directly from assigning identical information to computational paths with different cost structures. The proposition is architectural rather than a claim about a particular learned system.
+
+### 9.11 Full optimization objective
+
+A joint training and architecture-search objective can be written:
+
+```text
+J =
+    alpha  * C_core
+  + beta   * C_comp
+  + gamma  * C_rend
+  + delta  * C_ver
+  + eta    * B(K)
+  + theta  * B(R)
+  + kappa  * P_total
+  + lambda * L_task
+  + mu     * L_semantic
+  + nu     * L_surface
+  + xi     * L_entity
+  + rho    * L_roundtrip
+  + sigma  * L_calibration
+  + tau    * L_security
+```
+
+The weights reflect deployment constraints. A cloud model may prioritize throughput and cache. An edge model may prioritize memory and deterministic behavior. An archival codec may prioritize exact rate. A safety-critical system may set hard semantic constraints and accept higher cost.
+
+### 9.12 Compute-equivalent evaluation
+
+Three experimental controls are required:
+
+1. **Equal raw bytes:** models train on the same underlying information volume.
+2. **Equal training FLOPs:** models receive equal estimated compute, including compiler and renderer training.
+3. **Equal end-to-end inference budget:** quality is measured at matched latency or energy, not merely matched core tokens.
+
+Reporting only tokens per sentence would not test the thesis.
+
+<hr>
+## 10. Training the Complete System
+
+### 10.1 Training principle: one architecture, coordinated objectives
+
+KERC should not be developed as a chain of unrelated prototypes whose interfaces are later improvised. The final architecture needs coordinated data, versioned intermediate forms, and joint objectives from the beginning. Training can be staged for optimization stability, but every stage targets the same Kernel specification and packet contract.
+
+A full training example can contain:
+
+```text
+raw source bytes
+protected spans and object types
+correction lattice
+normalized surface text
+expanded Kernel representation
+compact Kernel serialization
+Kernel BPE tokens
+entity/concept tables
+hierarchical residuals
+source alignment
+task labels or answer packet
+one or more surface renderings
+round-trip verification labels
+```
+
+Not every corpus item needs every annotation. Weak supervision, synthetic generation, and self-training can fill missing layers, but a high-quality audited set is essential for semantic fidelity.
+
+### 10.2 Corpus construction
+
+The corpus must span the conditions in which canonicalization is most likely to fail:
+
+- edited prose and books;
+- conversation, transcripts, and disfluency;
+- technical and scientific writing;
+- legal and policy language;
+- instructional and procedural text;
+- mathematics and code-adjacent prose;
+- social media and misspellings;
+- dialect and code-switching;
+- rare names and newly coined terminology;
+- quotations and form-sensitive tasks;
+- multilingual parallel data if the interlingual extension is tested.
+
+Each source should retain provenance and license metadata. Near-duplicate paraphrases are valuable because they teach convergence to common Kernel forms, but synthetic paraphrases must be filtered to avoid reinforcing hallucinated equivalences.
+
+### 10.3 Bootstrapping the Kernel lexicon
+
+The initial concept inventory can be built from:
+
+- high-frequency sense inventories;
+- semantic-role and discourse annotations;
+- AMR or related graphs;
+- controlled-language vocabularies;
+- dictionaries and terminology databases;
+- clustering of contextual embeddings;
+- task-specific operator sets;
+- expert review.
+
+The inventory should be sense-based and typed. Each entry includes:
+
+```yaml
+concept_id: action.decision.approve
+kernel_debug: APPROVE
+runtime_code: apr
+parents: [action.decision]
+definition: formal positive decision about a proposal or action
+arguments:
+  required: [agent, object]
+near_concepts: [AUTHORIZE, ENDORSE, ACCEPT]
+forbidden_collapses: [AUTHORIZE]
+surface_realizations: [...]
+version: 1.2
+```
+
+The compact code is replaceable; the stable identity is not.
+
+### 10.4 Compiler supervision
+
+The compiler is trained with several forms of supervision.
+
+#### 10.4.1 Direct parallel supervision
+
+Human-verified pairs map surface text to expanded Kernel. These examples are expensive but define the representation’s semantics.
+
+#### 10.4.2 Paraphrase convergence
+
+Semantically equivalent paraphrases should produce equivalent Kernel graphs or sequences. Contrastive loss pulls equivalent forms together and separates minimally different meanings.
+
+Positive set:
+
+```text
+"The panel rejected the proposal."
+"The panel did not approve the proposal."
+```
+
+Hard negative:
+
+```text
+"The panel has not approved the proposal yet."
+```
+
+#### 10.4.3 Cycle supervision
+
+Surface text is compiled and rendered. The result is evaluated for meaning, exact-object fidelity, and—when requested—surface reconstruction.
+
+#### 10.4.4 Entailment and question preservation
+
+Questions answerable from the source should remain answerable from the Kernel representation. Bidirectional entailment probes detect omitted or added claims.
+
+#### 10.4.5 Structured constraints
+
+A symbolic validator rejects malformed frames, unresolved handles, incompatible types, illegal scope merges, and missing exact objects.
+
+### 10.5 Training the lexical hygiene module
+
+The correction model is trained on naturally occurring and synthetic errors, but labels distinguish:
+
+- true errors;
+- dialectal or informal variants;
+- named entities;
+- technical terms;
+- deliberate stylization;
+- form-sensitive mentions;
+- ambiguous corrections.
+
+The objective rewards calibrated abstention. A correction lattice is scored by expected downstream semantic loss, not only edit distance.
+
+### 10.6 Entity and protected-object training
+
+Adversarial training examples should include:
+
+- names that resemble common words;
+- two people with nearly identical names;
+- mixed scripts and diacritics;
+- products with unconventional capitalization;
+- changing aliases;
+- entity names containing punctuation;
+- nested quotations;
+- numbers with different units and significant figures;
+- code identifiers differing by one character;
+- malicious strings intended to escape the object table.
+
+Evaluation requires exact copying where specified and correct identity linking when aliases are used.
+
+### 10.7 Learning the compact orthography
+
+The runtime codebook is optimized after the stable concept inventory exists. A practical procedure is:
+
+1. Estimate concept and transition frequencies on compiled corpora.
+2. Generate candidate codes under alphabet and prefix constraints.
+3. Optimize expected bytes and downstream BPE length.
+4. Penalize visually or acoustically confusable codes if humans will inspect them.
+5. Train small Kernel language models on candidate codebooks.
+6. choose the codebook on end-to-end loss, not compression alone.
+
+The codebook can be revised across major Kernel versions with deterministic migration.
+
+### 10.8 Training Kernel BPE
+
+BPE training operates on the compact Kernel serialization and receives boundary constraints from the parser. Candidate merges are scored by a mixture of:
+
+- frequency and sequence reduction;
+- preservation of typed constituents;
+- downstream language-model loss;
+- macro interpretability;
+- frequency balance and embedding trainability;
+- transfer across domains;
+- robustness under paraphrase.
+
+A merge that is frequent but semantically unstable can be rejected. Conversely, a less frequent but high-cost reasoning pattern may be promoted as a macro if it improves task performance.
+
+### 10.9 Core pretraining
+
+The core model is trained on compiled Kernel corpora. The underlying raw byte count is recorded so scaling comparisons remain meaningful. Pretraining objectives include:
+
+- next-Kernel-token prediction;
+- masked or infilling variants where architecture permits;
+- entity relation prediction;
+- concept-definition retrieval;
+- provenance and uncertainty prediction;
+- reconstruction of expanded Kernel from BPE macros;
+- tool and memory packet modeling.
+
+The core should periodically see aligned surface forms to prevent total dependence on compiler quirks and to support selective source inspection. However, ordinary surface generation is not the dominant objective.
+
+### 10.10 Reasoning and planning training
+
+Reasoning traces are compiled into Kernel English or authored directly in it. Good traces emphasize necessary state transitions rather than verbose narration.
+
+Surface trace:
+
+> First determine whether the intervals overlap. The first interval ends on May 12 and the second begins on May 10. Since May 10 is before May 12, they overlap. Counting both endpoints gives three calendar days.
+
+Kernel trace:
+
+```text
+GOAL CHECK OVERLAP @I1 @I2
+FACT END @I1 DATE(05-12)
+FACT START @I2 DATE(05-10)
+CHECK 05-10 <= 05-12
+RESULT OVERLAP TRUE
+COUNT DAY INCLUSIVE 05-10..05-12 = 3
+```
+
+Training must not reward brevity that removes verification. A preference objective can compare correct traces and favor lower total compute or shorter Kernel length only among traces meeting correctness and evidence requirements.
+
+### 10.11 Training the residual policy
+
+The residual allocator learns to choose fidelity levels. Supervision comes from:
+
+- exact-copy labels;
+- human judgments about terminology and emphasis;
+- perturbation tests measuring whether a lexical change alters answers;
+- task-specific constraints;
+- rate-distortion optimization;
+- user corrections to rendered output.
+
+The allocator produces both a fidelity class and calibrated confidence. Conservative defaults apply in high-stakes domains.
+
+#### 10.11.1 Learning shared interaction entries
+
+An online policy observes repeated local residues and decides whether to promote them into `R_G`. Its reward includes:
+
+- bits saved over expected future uses;
+- renderer consistency;
+- state-management cost;
+- risk of applying the preference in the wrong context;
+- privacy cost;
+- user approval where required.
+
+A promotion may be scoped narrowly:
+
+```yaml
+concept: APPROVE
+realization: "authorize"
+scope:
+  document: contract-17
+  section: compliance
+expires: end_of_document
+```
+
+This is safer than a global user-wide rule.
+
+### 10.12 Renderer training
+
+The renderer is trained on multiple valid surface realizations for the same answer packet. It learns that style and lexical variation are conditional choices, not changes in content.
+
+Targets include:
+
+- plain and concise prose;
+- technical exposition;
+- formal business writing;
+- educational explanations;
+- domain-specific terminology;
+- different dialects and languages;
+- exact template realization.
+
+Constrained decoding enforces required entities, numbers, terms, and quotations. The copy head is trained separately on high-entropy names and identifiers.
+
+### 10.13 Verifier training
+
+The verifier receives intended and reconstructed Kernel packets and predicts mismatches. Training data includes targeted corruptions:
+
+- dropped negation;
+- changed quantity or unit;
+- swapped entities;
+- possibility strengthened to certainty;
+- reversed cause and effect;
+- attribution assigned to the wrong speaker;
+- omitted qualification;
+- incorrect date resolution;
+- altered quote;
+- terminology lock violation.
+
+Symbolic checks handle exact constraints; a neural entailment checker handles broader equivalence.
+
+### 10.14 Joint loss
+
+A full objective can combine:
+
+```text
+L_total =
+    L_surface_to_kernel
+  + L_kernel_language_model
+  + L_task
+  + L_kernel_to_surface
+  + lambda_cycle       * L_cycle
+  + lambda_entity      * L_entity
+  + lambda_scope       * L_scope
+  + lambda_value       * L_value
+  + lambda_residual    * B_estimated_residual
+  + lambda_kernel_rate * B_estimated_kernel
+  + lambda_compute     * C_estimated
+  + lambda_calibration * L_calibration
+  + lambda_security    * L_security
+```
+
+Rate and compute terms are regularizers bounded by semantic constraints. The model is never rewarded for shortening text by silently discarding an important proposition.
+
+### 10.15 Distillation from full-language models
+
+A strong surface model can supervise the compiler and renderer, while a strong reasoning model can generate candidate Kernel traces. Distillation is useful but dangerous: teacher verbosity, biases, and hallucinations can become encoded in the Kernel standard. Human and symbolic validation must anchor the representation.
+
+### 10.16 Versioned training artifacts
+
+Every checkpoint records:
+
+- Kernel language version;
+- concept registry hash;
+- compact codebook hash;
+- BPE vocabulary hash;
+- residual schema version;
+- object type registry;
+- compiler and renderer compatibility ranges;
+- migration tests.
+
+Training data compiled under an old version is either migrated deterministically or retained with an explicit version token.
+
+<hr>
+## 11. Worked End-to-End Examples
+
+### 11.1 Example 1: ordinary paraphrase with a lexical residue
+
+#### Source
+
+> The committee gave the proposal the green light after reviewing the revised budget.
+
+#### Protected objects
+
+None required, although `committee`, `proposal`, and `budget` may receive discourse handles.
+
+#### Expanded Kernel
+
+```text
+PST APPROVE
+  AG committee
+  OBJ proposal
+  TIME AFTER [PST REVIEW AG committee OBJ budget ATTR revised]
+```
+
+#### Compact runtime serialization
+
+```text
+p apr a com o prop tm aft [p rev a com o bud attr revsd]
+```
+
+#### Residual
+
+```yaml
+segment:
+  clause_order: main_then_after_clause
+local:
+  - kernel: APPROVE
+    realization: "give {OBJ} the green light"
+    idiom_template: T7
+  - kernel: BUDGET
+    determiner: definite
+```
+
+#### Reasoning view
+
+The core reasoner sees the approval event, its participants, and temporal condition. It does not need the idiom unless asked about wording.
+
+#### Faithful reconstruction
+
+> The committee gave the proposal the green light after reviewing the revised budget.
+
+#### Semantic rendering without lexical residue
+
+> The committee approved the proposal after reviewing the revised budget.
+
+Both are valid in semantic mode; only the first is valid for lexical-faithful reconstruction.
+
+### 11.2 Example 2: proper nouns and important technical terms
+
+#### Source
+
+> Dr. Nkiruka Okafor asked the PruneYard team to evaluate QUIC congestion control in Nimbus-7.
+
+#### Object table
+
+```yaml
+E1:
+  type: PERSON
+  exact_surface: "Dr. Nkiruka Okafor"
+  short_surface: "Dr. Okafor"
+  copy_policy: exact_or_short
+E2:
+  type: ORGANIZATION
+  exact_surface: "the PruneYard team"
+  copy_policy: exact
+C1:
+  type: PROTOCOL
+  exact_surface: "QUIC"
+  concept: network.protocol.quic
+  copy_policy: exact_case
+P1:
+  type: PRODUCT_OR_SYSTEM
+  exact_surface: "Nimbus-7"
+  copy_policy: exact
+```
+
+#### Kernel
+
+```text
+PST ASK AG @E1 TO @E2
+CONTENT EVALUATE AG @E2 OBJ CONGESTION_CONTROL OF @C1 IN @P1
+```
+
+#### Residual policy
+
+No ordinary BPE token attempts to spell `Nkiruka`, `PruneYard`, `QUIC`, or `Nimbus-7`. The renderer uses copy operations. If `QUIC congestion control` is repeated, the interaction residual may bind a compact local concept handle and preferred capitalization once.
+
+### 11.3 Example 3: ambiguous pronoun
+
+#### Source
+
+> Elena told Priya that she should revise her abstract.
+
+#### Entity table
+
+```yaml
+E1: {surface: "Elena", type: PERSON}
+E2: {surface: "Priya", type: PERSON}
+D1: {surface: "abstract", type: DOCUMENT_PART}
+```
+
+#### Kernel with unresolved reference
+
+```text
+PST TELL AG @E1 TO @E2
+CONTENT SHOULD REVISE
+  AG AMBIG{@E1:0.42,@E2:0.58}
+  OBJ @D1 OWNER AMBIG{@E1:0.42,@E2:0.58}
+```
+
+KERC does not choose Priya merely because that is statistically likely. The reasoner can ask for clarification or maintain branches. A residual cannot repair a falsely resolved semantic ambiguity after the fact.
+
+### 11.4 Example 4: one shared residue across an interaction
+
+Consider a multi-turn engineering discussion.
+
+#### Initial interaction residual
+
+```yaml
+R_G:
+  dialect: en-US
+  register: concise_technical
+  terminology:
+    LATENCY_REDUCTION: "latency reduction"
+    MODEL_INTERNAL_LANGUAGE: "Kernel English"
+  abbreviations:
+    "Hierarchical Residual Ledger": "HRL"
+  entity_aliases:
+    "@SYS1": "KERC"
+  formatting:
+    bullets: sparse
+    code_identifiers: exact
+  state_hash: h17
+```
+
+#### Turn 1 source
+
+> Let’s call the simplified internal language Kernel English, not Mentalese.
+
+The compiler updates the global terminology lock:
+
+```text
+LOCK_TERM MODEL_INTERNAL_LANGUAGE "Kernel English"
+BAN_TERM MODEL_INTERNAL_LANGUAGE "Mentalese"
+```
+
+#### Turn 7 Kernel answer
+
+```text
+CLAIM HRL REDUCE REPEAT METADATA
+CLAIM @SYS1 USE MODEL_INTERNAL_LANGUAGE FOR REASON
+```
+
+No token-local residue is needed for the two locked terms. The renderer consults `R_G` and outputs:
+
+> The HRL reduces repeated metadata. KERC uses Kernel English for reasoning.
+
+The definition cost of “HRL” and the terminology lock is amortized across every later use.
+
+#### Local exception
+
+If a quoted comparison requires the term “Mentalese,” the quote is placed in the exact store or a segment override explicitly permits it. Global defaults do not override exact source content.
+
+### 11.5 Example 5: value normalization with surface preservation
+
+#### Source
+
+> Revenue was roughly twenty-five million dollars in the first quarter.
+
+#### Kernel
+
+```text
+PST BE VALUE
+  OBJ revenue
+  VALUE MONEY(25000000, USD)
+  APPROX true
+  TIME quarter(year=context, index=1)
+```
+
+#### Residual
+
+```yaml
+value_surface:
+  wording: "roughly twenty-five million dollars"
+  notation: words
+  significant_digits: 2
+  currency_symbol: false
+```
+
+For reasoning, the model can compare `25,000,000 USD`. For faithful output, it can restore the original approximate phrasing. For a table requested in the next turn, the global render policy may choose `$25M` without changing the semantic value.
+
+### 11.6 Example 6: exact quotation and code
+
+#### Source
+
+> The log says “cache miss,” but the code checks `if key in cache:` before reading the value.
+
+#### Exact objects
+
+```yaml
+Q1:
+  type: QUOTE
+  bytes: "cache miss"
+CODE1:
+  type: CODE
+  language: Python
+  bytes: "if key in cache:"
+```
+
+#### Kernel
+
+```text
+CLAIM SOURCE log CONTENT @Q1
+CONTRAST CODE @CODE1 TIME BEFORE READ OBJ value
+```
+
+The core can reason about the contradiction using typed summaries. If it must inspect Python syntax or exact punctuation, it expands `@CODE1` through a tool. The renderer copies both objects exactly.
+
+### 11.7 Example 7: legal modality
+
+#### Source
+
+> The supplier may terminate this agreement only if the customer has failed to cure the breach within thirty days after receiving written notice.
+
+#### Kernel
+
+```text
+PERMIT TERMINATE
+  AG supplier
+  OBJ agreement
+  COND AND
+    PERF FAIL
+      AG customer
+      CONTENT CURE OBJ breach
+      LIMIT WITHIN DURATION(30, day)
+      START AFTER RECEIVE AG customer OBJ notice ATTR written
+    SCOPE ONLY_IF
+```
+
+#### Residual policy
+
+- `supplier`, `customer`, and `agreement` are document-defined entities.
+- `may` is tagged as legal permission, not probability.
+- `only if` scope is a hard semantic constraint.
+- “written notice” may be a locked defined term.
+
+A renderer output that says “can terminate when” may be rejected in lexical-faithful mode even if conversationally similar.
+
+### 11.8 Example 8: compact reasoning trace
+
+#### Question
+
+> A project has a budget of $120,000. It has spent 35% on labor and $18,000 on equipment. How much remains?
+
+#### Kernel input
+
+```text
+FACT budget MONEY(120000,USD)
+FACT spend labor FRACTION(0.35) OF budget
+FACT spend equipment MONEY(18000,USD)
+ASK remain MONEY
+```
+
+#### Kernel reasoning
+
+```text
+CALC labor = 120000 * 0.35 = 42000
+CALC spent = 42000 + 18000 = 60000
+CALC remain = 120000 - 60000 = 60000
+CHECK units USD
+ANSWER MONEY(60000,USD)
+```
+
+#### Surface answer packet
+
+```yaml
+answer_value: {value: 60000, currency: USD}
+explanation:
+  - labor_spend: 42000
+  - equipment_spend: 18000
+  - total_spend: 60000
+  - remaining: 60000
+style: concise_with_work
+```
+
+#### Rendered answer
+
+> **$60,000 remains.** Labor cost $42,000 (35% of $120,000). Adding $18,000 for equipment gives $60,000 spent, leaving $60,000.
+
+The large surface head is used only for the final explanation, not every internal calculation step.
+
+### 11.9 Example 9: source reconstruction modes
+
+#### Source
+
+> Honestly, I’m not entirely convinced this will work.
+
+#### Kernel
+
+```text
+BEL speaker
+  CONTENT NEG CONVINCED_FULL
+    ABOUT proposition
+```
+
+#### Residuals by mode
+
+**Semantic:** none beyond uncertainty degree.
+
+**Faithful:**
+
+```yaml
+stance: candid
+certainty: low_to_medium
+realization_hint: "not entirely convinced"
+```
+
+**Lossless:** exact source bytes, punctuation, apostrophe, and contraction.
+
+Possible outputs:
+
+- Semantic: “I doubt that this will work.”
+- Faithful: “Honestly, I’m not entirely convinced this will work.”
+- Lossless: byte-identical to source.
+
+### 11.10 Example 10: dropped-letter orthography and BPE
+
+Expanded Kernel:
+
+```text
+IF EVIDENCE BE INSUFFICIENT THEN NEG APPROVE AG BOARD OBJ PROPOSAL
+```
+
+Compact serialization:
+
+```text
+if evid be insuf thn n apr a bord o prop
+```
+
+Illustrative Kernel BPE:
+
+```text
+[IF_EVID_INSUF] [THEN_NEG_APPROVE] [AG_BOARD] [OBJ_PROPOSAL]
+```
+
+The visible shortening is not the principal result. The important property is that every paraphrase expressing the same conditional decision tends to reach the same expanded Kernel form, giving BPE repeated stable macro opportunities.
+
+<hr>
+## 12. Experimental Program
+
+### 12.1 Experimental philosophy
+
+KERC should be judged as a complete system. A convincing result requires more than demonstrating that simplified text uses fewer tokens under a custom tokenizer. The experimental program must answer whether canonicalization plus residual routing improves the quality–compute–fidelity frontier after all overhead is counted.
+
+### 12.2 Main hypotheses
+
+**H1 — Core sequence reduction.** Kernel compilation plus Kernel BPE reduces the number of expensive core steps relative to strong surface BPE, byte-level, and dynamic-chunking baselines on long-form English.
+
+**H2 — Compute efficiency.** At matched end-to-end task quality, KERC reduces total inference FLOPs, latency, energy, or key-value cache for sufficiently long contexts or reasoning traces.
+
+**H3 — Canonical learning efficiency.** At matched raw bytes and training FLOPs, a core trained on Kernel English learns paraphrase-invariant and compositional reasoning patterns with equal or better downstream performance.
+
+**H4 — Entity fidelity.** Typed handles and copy policies improve exact rare-name, identifier, number, and quotation preservation.
+
+**H5 — Residual hierarchy.** Hierarchical residuals achieve a better rate–fidelity trade-off than token-local metadata alone, global metadata alone, or no residual.
+
+**H6 — Interaction amortization.** Shared residual overhead per turn declines with coherent interaction length and improves terminology consistency.
+
+**H7 — Verification value.** Round-trip verification materially reduces semantic rendering errors at acceptable cost.
+
+**H8 — Robustness and transfer.** A byte-aware compiler plus canonical core is more robust to spelling noise and domain vocabulary than a fixed surface tokenizer, without hiding failures through aggressive correction.
+
+### 12.3 Baselines
+
+The benchmark suite should include:
+
+1. Standard byte-level BPE transformer.
+2. SentencePiece unigram transformer.
+3. Spelling-normalized English plus BPE.
+4. Controlled-vocabulary English plus BPE.
+5. Multi-word tokenizer.
+6. Over-tokenized input vocabulary with standard surface output.
+7. ByT5-like byte model.
+8. BLT or a faithful entropy-patched byte baseline.
+9. H-Net or learned dynamic chunking.
+10. Neurally compressed text baseline.
+11. Z-token compressor/decompressor baseline where reproducible.
+12. Compact reasoning/Mentalese-style training without a source compiler.
+13. AMR-like semantic representation with a renderer.
+14. KERC without residuals.
+15. Full KERC.
+
+Where implementation or scale differs, the paper should separate direct reproductions from conceptual baselines.
+
+### 12.4 Model scales
+
+A useful scaling ladder is:
+
+| Tier | Core parameters | Purpose |
+|---|---:|---|
+| Micro | 25M–75M | tokenizer, grammar, and loss debugging |
+| Small | 125M–500M | broad ablations and controlled scaling |
+| Medium | 1B–3B | realistic reasoning and long-context comparison |
+| Large | 7B+ | deployment-relevant validation if resources permit |
+
+Compiler and renderer sizes are swept independently. A large core with an oversized compiler may lose the intended advantage; the Pareto frontier matters more than one configuration.
+
+### 12.5 Data domains
+
+Evaluation should cover:
+
+- Wikipedia and edited encyclopedic prose;
+- web and book text;
+- scientific abstracts and technical manuals;
+- legal clauses and contracts;
+- dialogue and assistant interactions;
+- noisy social text and transcription;
+- arithmetic and mathematical reasoning;
+- code explanation and debugging prose;
+- rare names and multilingual named entities;
+- long documents with repeated terminology;
+- exact-form tasks;
+- held-out domains not used to build the Kernel codebook.
+
+Domain shift is essential. A canonical language can appear excellent on data compiled by the same rules and fail when new senses or discourse patterns appear.
+
+### 12.6 Evaluation tracks
+
+#### 12.6.1 Representation track
+
+Measure:
+
+- raw bytes per Kernel item;
+- surface BPE tokens versus Kernel BPE tokens;
+- expanded Kernel length versus compact length;
+- residual bits by level;
+- object-table bytes;
+- total bits under a fixed deployed model;
+- concept-capsule definition and reuse rates;
+- BPE macro frequency and undertraining.
+
+#### 12.6.2 Core modeling track
+
+Measure:
+
+- loss per original byte;
+- downstream accuracy;
+- sample efficiency at equal bytes;
+- compute-optimal model/data allocation;
+- reasoning success under fixed core-step budgets;
+- domain-transfer loss.
+
+#### 12.6.3 End-to-end systems track
+
+Measure:
+
+- prefill and generation latency;
+- compiler, core, renderer, and verifier latency separately;
+- total FLOPs and energy;
+- throughput at fixed hardware;
+- peak memory and key-value cache;
+- parameters and model storage;
+- first-token and full-response latency;
+- failure-retry cost.
+
+#### 12.6.4 Fidelity track
+
+Measure:
+
+- exact byte reconstruction rate;
+- character and word error rate in lossless mode;
+- bidirectional entailment;
+- question-answer preservation;
+- critical semantic atom recall;
+- entity identity and exact spelling;
+- number, unit, and precision accuracy;
+- negation, modality, and quantifier accuracy;
+- attribution and quotation fidelity;
+- terminology-lock compliance;
+- human judgments of faithful meaning.
+
+#### 12.6.5 Interaction track
+
+Measure over conversations of 1, 2, 4, 8, 16, 32, and 64 turns:
+
+- global residual bits per turn;
+- delta growth;
+- terminology consistency;
+- alias consistency;
+- desynchronization rate;
+- latency of state lookup;
+- savings relative to repeated local tags;
+- behavior after reset or state corruption.
+
+#### 12.6.6 Robustness and fairness track
+
+Measure:
+
+- spelling and keyboard noise;
+- Unicode and diacritics;
+- dialect and informal grammar;
+- code-switching;
+- rare scripts and names;
+- adversarial whitespace and punctuation;
+- token and compute parity across languages;
+- correction disparities across dialects;
+- concept coverage by domain and demographic references.
+
+### 12.7 Residual ablations
+
+A decisive study isolates the user’s residue ideas:
+
+| Variant | Global residue | Segment residue | Token residue | Exact store |
+|---|---:|---:|---:|---:|
+| A | No | No | No | No |
+| B | No | No | Yes | Yes |
+| C | Yes | No | No | Yes |
+| D | Yes | Yes | No | Yes |
+| E | Yes | Yes | Yes | Yes |
+| F | Learned dynamic hierarchy | Learned | Learned | Hard policy |
+
+Compare rate, fidelity, consistency, and failure modes. Variant B tests “small residue attached to important words.” Variant C tests “one residue shared across the whole interaction.” Variant E tests the combined hypothesis. Variant F learns when to use each level.
+
+### 12.8 Additional ablations
+
+Remove or alter one component at a time:
+
+- spell checking entirely;
+- spell checking before entity protection;
+- correction lattice versus forced correction;
+- entity handles versus ordinary BPE;
+- concept capsules versus paraphrase expansion;
+- regular morphology versus natural morphology;
+- learned compact orthography versus readable Kernel only;
+- Kernel BPE versus byte-level Kernel;
+- grammar-constrained versus unconstrained BPE;
+- tied versus separate surface/Kernel vocabularies;
+- no verifier versus semantic verifier versus full hard checks;
+- static versus dynamic fidelity policy;
+- no byte fallback;
+- local macros on versus off;
+- exact source available versus unavailable to the reasoner.
+
+### 12.9 Long-context tasks
+
+KERC is most likely to win when surface text is long, repetitive, or stylistically variable. Suitable tests include:
+
+- multi-document question answering;
+- long technical manuals with recurring terms;
+- legal contract analysis;
+- agent memory over many turns;
+- iterative software design conversations;
+- literature review with entity and citation tracking;
+- long planning traces;
+- repeated tool observations.
+
+Report gains as a function of baseline context length and Kernel compression factor.
+
+### 12.10 Human evaluation
+
+Experts should inspect:
+
+- whether Kernel representations preserve intended meaning;
+- whether ambiguity is retained;
+- whether important distinctions were assigned sufficient fidelity;
+- whether rendered output introduces claims;
+- whether terminology choices are consistent;
+- whether debug Kernel is auditable;
+- whether residual state is understandable and controllable.
+
+For legal, medical, and technical domains, evaluators should be domain-qualified.
+
+### 12.11 Statistical protocol
+
+Pre-register primary metrics and hypotheses. Use multiple seeds. Report confidence intervals and paired tests on the same source items. Avoid selecting a compression threshold on test data. Publish failure cases, compiler uncertainty, and per-domain results rather than only an aggregate score.
+
+### 12.12 Falsification thresholds
+
+The proposal should be considered unsupported if, after reasonable optimization:
+
+- total end-to-end compute is not lower at matched quality for any meaningful long-context regime;
+- residual and object-table overhead erase sequence savings;
+- Kernel-trained cores underperform strong baselines at equal bytes and FLOPs;
+- semantic compiler errors remain too frequent for the verifier to manage;
+- shared residual state causes unacceptable inconsistency or security risk;
+- the compact codebook reduces interpretability without producing practical gains;
+- a simpler BLT/H-Net or latent-compression system dominates the Pareto frontier.
+
+A negative result would still clarify where linguistic canonicalization does and does not help.
+
+### 12.13 Minimum reporting table
+
+Every KERC experiment should report at least:
+
+| Category | Required metrics |
+|---|---|
+| Data | original bytes, domains, language mix, deduplication |
+| Models | compiler/core/renderer/verifier parameters |
+| Representation | surface tokens, Kernel tokens, residual bits, object bytes |
+| Compute | train FLOPs, inference FLOPs, latency, energy if available |
+| Memory | model size, peak memory, KV cache |
+| Quality | task scores, loss per original byte, calibration |
+| Fidelity | entity, number, scope, entailment, exact reconstruction |
+| Robustness | noise, domain shift, rare names, language parity |
+| State | global-residual size, deltas, synchronization failures |
+| Overhead | retries, verifier passes, registry and codec storage |
+
+<hr>
+## 13. Comparison with Closest Prior Approaches
+
+### 13.1 Comparison matrix
+
+The tables summarize architectural scope, not benchmark ranking. They are split to remain readable in ordinary portrait layouts.
+
+**Representation and tokenization**
+
+| Approach | Surface canonicalization | Segmentation or data unit | Dedicated reasoning vocabulary | Exact entity channel |
+|---|---:|---:|---:|---:|
+| Standard BPE / Unigram | No | Static learned corpus statistics | No | Usually no |
+| Multi-word tokenization | No | Static phrase units | No | No |
+| Over-Tokenized Transformer | No | Static | Input/output partly decoupled | No |
+| ByT5 / CANINE | No | Character or byte processing | No | Implicit |
+| BLT | No | Dynamic byte patches | No | Implicit |
+| H-Net | No | Learned dynamic chunks | No | Implicit |
+| Neurally compressed text | No | Learned latent code | Latent code | Usually implicit |
+| LLM Z-token compressor | No explicit canonical grammar | Variable learned codes | Yes, latent | Not central |
+| Coconut | No | Not a tokenizer | Continuous latent thoughts | No |
+| ORION-style Mentalese | Reasoning traces only | Surface tokenizer retained | Compact reasoning style | No |
+| AMR + generator | Semantic graph | Parser-dependent | Semantic representation | Entity nodes |
+| Controlled English | Yes, human-authored | Conventional tokenizer | Restricted language | Ordinary text |
+| **KERC** | **Yes, sense-aware** | **Kernel BPE; byte or dynamic front end optional** | **Yes** | **Typed handles and copy policy** |
+
+**Residuals, inspectability, and verification**
+
+| Approach | Surface residual design | Shared interaction residue | Inspectable internal code | Round-trip semantic verification |
+|---|---:|---:|---:|---:|
+| Standard BPE / Unigram | None | No | Partly | No |
+| Multi-word tokenization | None | No | Partly | No |
+| Over-Tokenized Transformer | None | No | Partly | No |
+| ByT5 / CANINE | None | No | Surface-readable | No |
+| BLT | Local neural residual paths | No | Patches partly inspectable | No |
+| H-Net | Neural encoder-decoder residuals | No | Boundaries partly inspectable | No |
+| Neurally compressed text | Decoder-dependent | No | Usually opaque | Reconstruction objective |
+| LLM Z-token compressor | Learned decompression state | No | Mostly opaque | Exact reconstruction objective |
+| Coconut | Hidden-state recurrence | No | No | No |
+| ORION-style Mentalese | None | No | Yes | No full source cycle |
+| AMR + generator | Usually no exact surface hierarchy | No | Yes | Sometimes cycle-trained |
+| Controlled English | None | No | Yes | No |
+| **KERC** | **Global + segment + token + exact** | **Yes** | **Yes** | **Required** |
+
+### 13.2 Relative to byte-level dynamic models
+
+BLT and H-Net address a profound weakness of static tokenizers: fixed boundaries do not reflect context or information density. Their solution is to learn or infer chunks over raw surface data. KERC proposes a higher-level transformation. It can use BLT or H-Net as the local surface encoder, but it asks the global reasoner to operate on explicit canonical concepts rather than merely better surface chunks.
+
+The trade-off is clear. Dynamic byte systems avoid committing to a hand-designed semantic language and may learn better abstractions end to end. KERC gains auditability, stable module interfaces, direct entity handling, and explicit residual control, but risks compiler errors and ontology rigidity. The experimental program should determine whether the added structure pays for itself.
+
+### 13.3 Relative to discrete neural text compression
+
+Z-token and neurally compressed-text approaches can produce much shorter sequences without designing an explicit language. Their codes may adapt flexibly to data and can be optimized end to end. KERC’s internal code is less unconstrained, which could sacrifice rate.
+
+KERC seeks advantages that opaque codes do not automatically provide:
+
+- deterministic expansion into a typed semantic form;
+- stable, inspectable concept identities;
+- human-written tools and constraints;
+- explicit uncertainty;
+- exact object policies;
+- controlled migration;
+- a surface-residual hierarchy;
+- interaction-level lexical amortization;
+- easier semantic verification.
+
+A promising hybrid would encode expanded Kernel and residuals with learned latent subcodecs while retaining a discrete semantic contract.
+
+### 13.4 Relative to compact reasoning languages
+
+Mentalese-style reasoning and symbolic multi-agent protocols focus primarily on shortening generated deliberation. They do not necessarily reduce the full input context or provide lossless source access. KERC compiles both input and internal work, making the compact language a system-wide interface for memory, tools, plans, and answers.
+
+KERC also distinguishes compactness from omission. A reasoning step can be short because it invokes a defined macro, not because it skips evidence. Expanded macro traces remain available for audit.
+
+### 13.5 Relative to AMR and semantic parsing
+
+AMR and related meaning representations provide valuable semantic abstractions, but KERC changes the optimization target. The representation must be:
+
+- incrementally autoregressive;
+- compact under a small vocabulary;
+- suited to continual reasoning and tool use;
+- paired with exact source objects;
+- accompanied by surface residuals;
+- versioned as a runtime contract;
+- trainable at language-model scale.
+
+AMR can serve as supervision or a graph view of Kernel English. KERC need not reject graph structure; a linear sequence can serialize a graph with handles and scopes.
+
+### 13.6 Relative to controlled English
+
+Controlled languages reduce lexical and grammatical variation for human clarity. KERC uses the same broad insight but makes several machine-specific changes:
+
+- aggressive sense-level canonicalization;
+- separate debug and runtime orthographies;
+- BPE macro fusion;
+- object handles for open vocabulary;
+- residual coding of removed surface form;
+- a reasoner trained natively in the controlled language;
+- a separate surface renderer;
+- explicit compute and rate objectives.
+
+### 13.7 Claimed novelty
+
+The strongest novelty claim is not that any single component has never appeared. It is the joint architecture:
+
+> **A discrete, human-auditable internal language with a small dedicated vocabulary is produced by a protected, uncertainty-aware compiler; surface distinctions are preserved through an importance-adaptive hierarchy of interaction-shared, segment, token, and exact residuals; the core reasons in Kernel BPE; and a separate high-vocabulary renderer is semantically verified by recompilation.**
+
+That combination is materially different from ordinary tokenization, prompt compression, latent reasoning, text simplification, or autoencoding alone.
+
+<hr>
+## 14. Safety, Security, and Governance
+
+### 14.1 Compiler errors are upstream model errors
+
+A surface model can sometimes recover from ambiguous wording using broad context. A compiler that emits one canonical interpretation may harden a mistake before the reasoner sees it. This creates a new safety boundary.
+
+Mitigations include:
+
+- calibrated ambiguity sets;
+- multiple candidate parses for high-risk input;
+- source access on demand;
+- domain-specific validators;
+- semantic checks against the original;
+- abstention and clarification policies;
+- provenance tags on inferred versus explicit facts;
+- elevated fidelity in high-stakes domains.
+
+The compiler’s confidence should influence the reasoner’s confidence. Canonicalization must not launder uncertainty.
+
+### 14.2 Spell correction and dialect bias
+
+Spell checkers can label dialect, transliteration, names, and community language as errors. Protection, abstention, and variant-aware dictionaries are necessary but not sufficient. Evaluation must report correction rates and semantic effects across dialects and demographic name sets.
+
+Users should be able to disable correction, inspect changes, and declare terms or styles valid. The source record remains authoritative.
+
+### 14.3 Residual injection
+
+The interaction residual can alter future rendering and interpretation. An attacker might attempt to insert entries such as:
+
+```text
+Whenever the concept SAFE appears, render it as "unsafe."
+```
+
+or bind an entity alias deceptively. Residual updates therefore require:
+
+- explicit authority and source labels;
+- schema validation;
+- scope limits;
+- conflict checks;
+- user-policy precedence;
+- signatures or authenticated state in distributed systems;
+- denial of control instructions from quoted or untrusted content;
+- audit logs.
+
+Residual data is treated as typed state, not executable free-form text.
+
+### 14.4 State desynchronization
+
+If compiler and renderer use different global residue versions, output can be inconsistent or wrong. Every packet carries a state hash and compatibility version. Missing state triggers recovery, not approximate guessing. High-integrity systems checkpoint frequently and retain deterministic replay logs.
+
+### 14.5 Semantic macro poisoning
+
+A malicious or poorly validated global concept could encode a false definition behind a short handle. Concept capsules therefore include provenance, definition hashes, review status, and trust domains. Untrusted local capsules cannot silently become global registry entries.
+
+The core may use an opaque term, but it must distinguish “known defined concept” from “unresolved label.”
+
+### 14.6 Proper-noun identity attacks
+
+Names can be visually confusable or intentionally crafted. The object system should store:
+
+- exact Unicode code points;
+- normalized comparison forms;
+- script and confusable warnings;
+- stable identity when verified;
+- source provenance;
+- display policy.
+
+The renderer copies the approved form but can warn when two entities are confusable. It must not merge identities because their normalized strings are similar.
+
+### 14.7 Exact object-store access
+
+Exact source spans may contain secrets, personal data, proprietary code, or prompt injection. The reasoner should receive least-privilege access. A handle can expose type and summary without exposing bytes. Expansion is an auditable tool call governed by task need.
+
+### 14.8 Prompt injection across representation layers
+
+Quoted instructions, retrieved documents, and tool outputs must be marked as data with explicit authority. Kernel English can improve this separation by representing:
+
+```text
+SOURCE @DOC7 CLAIM [instruction text]
+AUTHORITY untrusted_content
+```
+
+rather than allowing source text to blend with system commands. However, a compiler could still misclassify authority. Security evaluation must include adversarial documents designed to escape object and quote boundaries.
+
+### 14.9 Verification is not a proof of truth
+
+Round-trip verification checks whether the surface answer expresses the intended Kernel answer. It does not prove that the Kernel answer is correct, factual, unbiased, or safe. Fact verification, tool grounding, policy checks, and uncertainty calibration remain separate responsibilities.
+
+### 14.10 Interpretability cautions
+
+A readable Kernel trace is not guaranteed to be a faithful explanation of hidden neural computation. The model may arrive at an answer through latent activations and produce a plausible Kernel rationale afterward. KERC improves inspectable interfaces and state, but it does not solve mechanistic interpretability.
+
+### 14.11 Version governance
+
+Kernel language changes can alter stored memories and tool contracts. Every registry update is categorized:
+
+| Change type | Example | Governance |
+|---|---|---|
+| Patch | add surface alias | automated tests |
+| Minor | add concept or optional role | compatibility review |
+| Major | change concept meaning or scope | migration, revalidation, rollback |
+| Emergency | revoke poisoned entry | signed hotfix and audit |
+
+A short runtime code is never the permanent identity. Migration maps stable concept IDs across versions and validates representative corpora.
+
+### 14.12 User control
+
+A user-facing system should expose:
+
+- current terminology and style locks;
+- protected entities;
+- inferred corrections;
+- interaction residual size and scope;
+- reset and delete controls;
+- exact versus semantic mode;
+- warnings when wording cannot be preserved;
+- a readable Kernel view for advanced users.
+
+The system should not build an invisible permanent linguistic profile.
+
+<hr>
+## 15. Limitations and Falsification Criteria
+
+### 15.1 No empirical superiority is established
+
+KERC is a research proposal. The architecture may be broader than current systems, but broadness can become complexity. A simpler learned byte model or latent compressor may outperform it in quality, rate, latency, and engineering cost.
+
+### 15.2 Semantic compilation is intrinsically difficult
+
+Full language contains ambiguity, implication, humor, metaphor, social meaning, and domain-specific conventions. A finite Kernel grammar may omit distinctions or force unstable analyses. Residuals cannot repair a wrong core meaning unless the source remains available and the system detects the error.
+
+### 15.3 Tiny vocabularies can expand sequences
+
+A small root inventory increases reuse but may require longer compositions. Concept capsules reduce repetition only after paying definition and lookup overhead. The optimal inventory may be larger than intuition suggests, especially at larger model scales.
+
+### 15.4 Reduced orthography may have marginal value
+
+Once Kernel BPE is trained, manually shortening root spellings may provide little additional token reduction. It could harm debugging and create confusable codes. The compact orthography should be retained only if experiments show end-to-end value.
+
+### 15.5 Residual overhead may erase savings
+
+Faithful or lossless reconstruction may require substantial residual data. For short texts, a global residue is pure overhead. For highly stylistic writing, surface entropy may dominate. The architecture is most plausible for long interactions, repetitive domains, and reasoning-heavy tasks.
+
+### 15.6 Compiler and renderer latency may dominate
+
+Two additional neural passes can exceed the core savings, especially for short prompts and answers. Hardware fusion, caching, smaller models, and batch processing may help, but end-to-end measurement is decisive.
+
+### 15.7 Distribution shift can break canonicalization
+
+New senses, jargon, names, and discourse forms may be mapped incorrectly. Byte fallback preserves form but not meaning. Open concept capsules can grow without bound unless governed.
+
+### 15.8 Canonical language can encode cultural bias
+
+Choosing one root, grammar, or ontology privileges particular distinctions and may erase others. English-derived Kernel forms may transfer poorly to languages that grammaticalize different concepts. A multilingual interlingua must be learned and evaluated, not assumed.
+
+### 15.9 A shared residual creates state complexity
+
+Interaction-wide metadata can save bits and improve consistency, but it adds synchronization, privacy, scoping, and security burdens. Stateless APIs and distributed agents may prefer explicit local packets.
+
+### 15.10 Surface output still needs a capable model
+
+Fluent, context-sensitive rendering is not a trivial lookup. A small renderer may lack discourse quality or domain knowledge; a large renderer reduces efficiency gains. Content and realization cannot be perfectly separated in every task.
+
+### 15.11 Exact-form tasks bypass the main advantage
+
+Spelling questions, poetry analysis, code debugging, and textual criticism require frequent access to source bytes. KERC can support them through the exact channel, but core compression benefits may diminish.
+
+### 15.12 Interpretability remains partial
+
+A structured Kernel sequence is more auditable than opaque tokens, but model hidden states remain complex. The representation can also create false confidence if users treat the generated parse as ground truth.
+
+### 15.13 Explicit falsification criteria
+
+KERC should not be advanced as an efficiency architecture if a well-controlled study finds all of the following:
+
+- no end-to-end compute or memory advantage at any realistic long-context regime;
+- inferior task accuracy at equal bytes and FLOPs;
+- unacceptable semantic compilation error after verification;
+- residual rates near or above surface-token savings in faithful mode;
+- no measurable benefit from shared interaction residue;
+- worse rare-name or exact-value fidelity than copy-aware baselines;
+- greater engineering and governance cost without a compensating quality frontier.
+
+The strongest science outcome may be a narrower result: perhaps entity handles and shared terminology help, while a full internal language does not. The architecture is intentionally decomposable so that experiments can identify the valuable subset.
+
+<hr>
+## 16. Extensions
+
+### 16.1 Multilingual surface languages, shared Kernel
+
+The largest conceptual extension is an interlingual core:
+
+```text
+English  ->
+Spanish  ->  shared Kernel English / semantic Kernel -> core reasoner
+Japanese ->
+```
+
+Separate compilers and renderers could share one reasoning model. Proper nouns and exact spans remain language-aware. The residual records language-specific distinctions absent from the shared Kernel.
+
+This extension is not automatically fair. A Kernel derived from English categories may distort evidentiality, honorifics, classifier systems, aspect, gender, or information structure in other languages. The registry should be multilingual and concept-driven even if its debug labels are English.
+
+### 16.2 Domain-specific Kernel profiles
+
+Medicine, law, software engineering, and science may benefit from domain roots and macros. Profiles extend the core registry through namespaces:
+
+```text
+core:CAUSE
+med:CONTRAINDICATED
+law:INDEMNIFY
+net:CONGESTION_WINDOW
+```
+
+A deployment loads only required profiles. Cross-profile concepts retain stable parent identities. AdaptBPE-like vocabulary swapping can specialize macro slots without enlarging every model.
+
+### 16.3 Memory compaction
+
+Long-term agent memory can store:
+
+- canonical facts in Kernel form;
+- stable entity identities;
+- provenance pointers;
+- uncertainty;
+- compressed residual summaries;
+- exact source references only when needed.
+
+Equivalent paraphrases can deduplicate into one semantic memory. Surface forms remain retrievable from the source store. This could reduce memory context while improving entity consistency.
+
+### 16.4 Multi-agent communication
+
+Agents sharing a Kernel registry can exchange compact plans and evidence packets rather than verbose prose. The interaction residual becomes a negotiated protocol dictionary. Each agent verifies version and state hashes before interpreting local macros.
+
+A human-facing agent renders only selected checkpoints, while internal agents communicate in Kernel packets. This extends symbolic communication research with explicit semantic and residual contracts.
+
+### 16.5 Tool compilation
+
+Kernel instructions can compile directly into typed tool calls:
+
+```text
+REQUEST SEARCH
+  QUERY [latest primary research tokenization]
+  DATE_AFTER 2025-01-01
+  SOURCE_TYPE primary
+```
+
+A tool compiler validates arguments and authority. Results return as Kernel facts with provenance and exact-object references. This reduces natural-language glue and makes injection boundaries explicit.
+
+### 16.6 Learned residual hyperprior
+
+The interaction residual can act as a semantic hyperprior. A small model predicts likely token-level surface residues from global style, terminology, and document structure. Only unpredictable deviations are encoded. This parallels hierarchical learned compression while preserving symbolic inspection.
+
+### 16.7 Adaptive fidelity at inference time
+
+The system can raise fidelity when:
+
+- confidence falls;
+- a high-stakes entity appears;
+- the user requests quotation or precision;
+- the verifier detects a mismatch;
+- a term is central to the answer;
+- the context enters a legal, medical, or financial domain.
+
+It can lower fidelity for internal scratch work, repetitive background, or ephemeral planning. The policy becomes a compute- and risk-aware controller.
+
+### 16.8 Discrete checkpoints with latent intervals
+
+A future core may reason continuously for several steps, then serialize a Kernel checkpoint only when it needs to:
+
+- call a tool;
+- update memory;
+- communicate with another model;
+- expose an audit trace;
+- branch or verify;
+- produce an answer.
+
+This hybrid combines the efficiency of latent reasoning with the governance of a stable discrete language.
+
+### 16.9 Learned evolution of Kernel macros
+
+Repeated verified sequences can become candidate macros. A governance loop is:
+
+```text
+observe frequent sequence
+ -> propose macro
+ -> define typed expansion
+ -> train embedding
+ -> test across domains
+ -> security and ambiguity review
+ -> versioned deployment
+ -> monitor and rollback
+```
+
+This turns model use into a controlled instruction-set optimization process.
+
+### 16.10 Beyond English-derived syntax
+
+The long-term optimum may no longer resemble English. The English-derived debug language provides accessibility during research. If experiments identify a more efficient typed prefix language, graph serialization, or program-like form, the stable concept registry and residual protocol permit migration. “Kernel English” describes the origin and inspectable view, not an eternal syntactic constraint.
+
+<hr>
+## 17. Conclusion
+
+The starting intuition is simple: clean the input, translate it into a tiny regular English, tokenize that representation, reason in it, and translate back through a richer output vocabulary. The complete architecture that follows from that intuition is substantially more powerful and more demanding.
+
+A useful internal language cannot be only a list of shorter spellings. It must distinguish senses, expose scope, regularize grammar, preserve ambiguity, represent open-world concepts, and protect exact objects. A claim of faithful reconstruction requires metadata for what canonicalization removed. That metadata should not be uniform: some choices belong to a whole interaction, some to one segment, some to one important concept, and some require exact bytes. The user’s two residue ideas—small tags on important words and a residue shared across the whole interaction—are therefore not alternatives. They are complementary levels of one hierarchy.
+
+KERC’s central move is to separate **information preservation** from **expensive reasoning**. In lossless mode, the Kernel stream plus residual must contain the same information as the source. The architecture does not evade entropy. It attempts to route information according to computational value:
+
+- canonical semantic structure goes through the large global reasoner;
+- names, quotations, code, and identifiers use exact object channels;
+- style and terminology defaults live in an interaction residual;
+- local lexical exceptions use compact token tags;
+- unrestricted prose is generated only at the interface;
+- verification checks that rendering preserves the intended answer.
+
+The proposal is ambitious because it replaces a tokenizer with a language runtime: compiler, intermediate representation, macro encoder, reasoner, residual codec, symbol table, renderer, verifier, and version registry. That complexity is justified only if experiments show a better end-to-end frontier than simpler subword, byte-level, learned-chunking, or latent-code systems.
+
+The decisive thesis is:
+
+> **Natural language should remain the interface of a language model, but it need not remain the native instruction set of its most expensive computation. A model can compile surface language into a small, canonical, entity-aware internal language; preserve removed distinctions in hierarchical, interaction-amortized residuals; reason with a dedicated vocabulary; and reconstruct full language under explicit semantic and exactness constraints.**
+
+That is the logical conclusion of the concept and the research program required to test it.
+
+<hr>
+## Appendix A. Provisional Kernel English Grammar
+
+This appendix defines an illustrative grammar sufficient for experimentation. It is not proposed as a frozen standard. Semantic validation and a type system accompany the syntax.
+
+### A.1 Lexical classes
+
+```ebnf
+ROOT          = stable concept root ;
+OP            = grammar, logic, discourse, or control operator ;
+HANDLE        = "@" TYPE_PREFIX INTEGER ;
+NUMBER        = typed canonical numeric literal ;
+BYTE_LITERAL  = escaped byte fallback ;
+MACRO         = Kernel-BPE or local macro with deterministic expansion ;
+```
+
+Reserved handle prefixes can include:
+
+```text
+@E   entity
+@C   concept capsule
+@D   document or artifact
+@Q   quotation
+@N   normalized numeric/value object
+@X   expression or formula
+@K   code object
+@M   local macro
+@S   source or evidence object
+```
+
+### A.2 Core syntax
+
+A prefix-frame representation minimizes attachment ambiguity.
+
+```ebnf
+packet        = version, statement* ;
+statement     = proposition | definition | control | uncertainty_frame ;
+
+proposition   = operator, argument* ;
+operator      = ROOT | OP | MACRO ;
+argument      = role, value ;
+role          = OP ;
+value         = atom | proposition | list | ambiguity | scoped_value ;
+atom          = ROOT | HANDLE | NUMBER | BYTE_LITERAL ;
+list          = "[", value*, "]" ;
+ambiguity     = "AMBIG", "{", weighted_value, (",", weighted_value)*, "}" ;
+weighted_value = value, ":", probability ;
+scoped_value  = "(", proposition, ")" ;
+
+definition    = "DEF", HANDLE, "=", proposition ;
+control       = control_op, argument* ;
+uncertainty_frame = "UNC", probability, proposition ;
+```
+
+In a packed runtime, role markers and delimiters can be integer-coded. The expanded representation remains available for validation.
+
+### A.3 Example frames
+
+#### Event
+
+```text
+PST BUY AG @E1 OBJ @C3 FROM @E2 VALUE MONEY(250,USD)
+```
+
+#### Belief and attribution
+
+```text
+CLAIM AG @E1 CONTENT [MAY INCREASE AG policy OBJ risk] SOURCE @D2
+```
+
+#### Conditional
+
+```text
+IF [WEAK AG evidence]
+THEN [NEG APPROVE AG board OBJ proposal]
+```
+
+#### Quantification
+
+```text
+FORALL x TYPE employee
+  IF [MEET AG x OBJ criteria]
+  THEN [ELIGIBLE AG x]
+```
+
+#### Ambiguity
+
+```text
+WORRY AG AMBIG{@E1:0.55,@E2:0.45}
+```
+
+### A.4 Type rules
+
+A registry entry declares argument types. Example:
+
+```yaml
+APPROVE:
+  agent: [PERSON, ORGANIZATION, AUTHORITY]
+  object: [PROPOSAL, ACTION, DOCUMENT, REQUEST]
+  result: DECISION_EVENT
+```
+
+The validator can warn or reject:
+
+```text
+APPROVE AG temperature OBJ river
+```
+
+unless a metaphor or domain extension explicitly permits it.
+
+### A.5 Scope rules
+
+Negation, modality, quantifiers, and conditionals introduce explicit scope nodes. A serializer may omit brackets only when the grammar makes the parse unique. Macro expansion must preserve scope exactly.
+
+### A.6 Surface alignment
+
+Every expanded Kernel node may point to zero or more source spans:
+
+```yaml
+alignment:
+  kernel_node: k17
+  source_spans:
+    - [14, 18]
+    - [31, 46]
+  derivation: idiom_normalization
+  confidence: 0.96
+```
+
+Generated inferential nodes have no direct source span and are marked `derivation: inferred`.
+
+<hr>
+## Appendix B. Hierarchical Residual Ledger Schema
+
+### B.1 Logical schema
+
+```yaml
+hrl_version: HRL-1.0
+interaction_id: uuid
+state_hash: sha256
+parent_state_hash: sha256-or-null
+
+scope:
+  user: optional-id
+  project: optional-id
+  document: optional-id
+  conversation: required-id
+  expiry: timestamp-or-policy
+
+global:
+  language: en
+  dialect: en-US
+  register: technical-accessible
+  terminology: {}
+  aliases: {}
+  units: {}
+  formatting: {}
+  render_templates: {}
+  fidelity_defaults: {}
+  security_labels: {}
+
+segments:
+  - segment_id: turn-42-s1
+    voice: active
+    discourse_frame: explanation
+    terminology_overrides: {}
+    ordering_template: optional-id
+    emphasis: []
+    local_state_hash: sha256
+
+token_residuals:
+  - kernel_node: k17
+    realization_ref: lexeme-or-template-id
+    morphology: {}
+    article: optional
+    capitalization: optional
+    emphasis: optional
+    exactness: semantic|faithful|lexical|exact
+    source_alignment: optional
+    confidence: 0.0-to-1.0
+
+exact_objects:
+  - handle: "@Q2"
+    type: QUOTE
+    content_ref: content-address-or-inline
+    encoding: UTF-8
+    copy_policy: EXACT
+    access_policy: task-scoped
+    provenance: source-span
+
+updates:
+  - op: DEFINE|SET|BIND|LOCK|OVERRIDE|EVICT|RESET
+    path: typed-path
+    value: typed-value
+    authority: user|system|compiler|document|tool
+    provenance: ...
+    signature: optional
+```
+
+### B.2 Compact binary layout
+
+A production packet can use:
+
+- varint concept and handle IDs;
+- bit-packed fidelity and morphology features;
+- delta-coded source offsets;
+- dictionary-coded string references;
+- arithmetic-coded residual symbols conditioned on Kernel context;
+- content-addressed exact objects;
+- one state hash per turn rather than per token.
+
+A representative token residue might occupy:
+
+```text
+[fidelity:2 bits]
+[has_realization:1]
+[realization_index:entropy-coded]
+[has_morphology:1]
+[morphology_bits:variable]
+[has_alignment:1]
+[offset_delta:varint]
+```
+
+The actual rate is empirical. The schema is designed so that absent features cost nearly zero.
+
+### B.3 Precedence
+
+Surface realization follows this precedence:
+
+```text
+exact object policy
+  > user-locked local override
+  > user-locked global terminology
+  > source token residue
+  > segment default
+  > interaction default
+  > renderer prediction
+```
+
+Untrusted document content cannot set user or system-level global entries.
+
+### B.4 State recovery
+
+A receiver processes a packet only if:
+
+```text
+packet.expected_state_hash == local_state_hash
+```
+
+Otherwise it may:
+
+1. request missing deltas;
+2. request a full checkpoint;
+3. expand all referenced shared entries inline;
+4. fall back to semantic render mode with a warning;
+5. reject the packet in high-integrity settings.
+
+### B.5 Garbage collection
+
+Entries track use count, last use, definition cost, estimated future savings, scope, and risk. Eviction can minimize:
+
+```text
+value(entry) =
+    expected_future_bit_savings
+  + expected_consistency_benefit
+  - privacy_cost
+  - lookup_cost
+  - misapplication_risk
+```
+
+Locked terminology and active entity aliases are protected from automatic eviction.
+
+<hr>
+## Appendix C. Reference Pseudocode
+
+### C.1 Compile one input turn
+
+```python
+def compile_turn(raw_bytes, interaction_state, policy):
+    source_id = immutable_store.put(raw_bytes)
+
+    protected = detect_protected_spans(
+        raw_bytes,
+        policy=policy.protection,
+    )
+
+    correction_lattice = lexical_hygiene(
+        raw_bytes,
+        blocked_spans=protected.spans,
+        abstain_threshold=policy.correction_abstain,
+    )
+
+    normalized_candidates = select_or_retain_candidates(
+        correction_lattice,
+        risk_policy=policy.semantic_risk,
+    )
+
+    compile_candidates = []
+    for normalized in normalized_candidates:
+        candidate = surface_to_kernel(
+            normalized,
+            entities=protected.entity_table,
+            global_residual=interaction_state.global_residual,
+            kernel_version=interaction_state.kernel_version,
+        )
+        candidate.validation = validate_kernel(candidate.kernel)
+        candidate.fidelity = allocate_residual_fidelity(
+            source=raw_bytes,
+            kernel=candidate.kernel,
+            alignments=candidate.alignments,
+            importance=estimate_importance(raw_bytes, candidate),
+            policy=policy.fidelity,
+        )
+        compile_candidates.append(candidate)
+
+    chosen = adjudicate_candidates(
+        compile_candidates,
+        preserve_ambiguity=True,
+    )
+
+    residual = build_hierarchical_residual(
+        source=raw_bytes,
+        kernel=chosen.kernel,
+        entities=protected.entity_table,
+        global_state=interaction_state.global_residual,
+        fidelity=chosen.fidelity,
+        alignments=chosen.alignments,
+    )
+
+    compact_kernel = serialize_kernel(chosen.kernel)
+    kernel_tokens = kernel_bpe.encode(
+        compact_kernel,
+        structural_boundaries=chosen.boundaries,
+    )
+
+    packet = KernelPacket(
+        source_ref=source_id,
+        kernel_tokens=kernel_tokens,
+        expanded_kernel=chosen.kernel,
+        entities=protected.entity_table,
+        concepts=chosen.concept_capsules,
+        residual=residual,
+        uncertainty=chosen.uncertainty,
+        provenance=chosen.provenance,
+        state_hash=interaction_state.hash,
+    )
+
+    return packet
+```
+
+### C.2 Promote repeated local residues into interaction state
+
+```python
+def consider_promotion(local_residue, state, forecast):
+    direct_bits = estimate_direct_bits(local_residue)
+    definition_bits = estimate_definition_bits(local_residue)
+    reference_bits = estimate_reference_bits(local_residue)
+    expected_uses = forecast.expected_future_uses(local_residue)
+
+    savings = (
+        expected_uses * direct_bits
+        - definition_bits
+        - expected_uses * reference_bits
+    )
+
+    risk = estimate_scope_and_privacy_risk(local_residue, state)
+
+    if savings > state.policy.min_savings and risk < state.policy.max_risk:
+        delta = make_scoped_dictionary_entry(local_residue)
+        return state.apply(delta)
+
+    return state
+```
+
+### C.3 Reason and render
+
+```python
+def answer(packet, interaction_state, request):
+    assert packet.state_hash == interaction_state.hash
+
+    answer_packet = core_reasoner.generate(
+        packet,
+        tools=request.tools,
+        max_kernel_compute=request.compute_budget,
+    )
+
+    validate_answer_packet(answer_packet)
+
+    for attempt in range(request.max_render_attempts):
+        surface = renderer.generate(
+            answer_packet,
+            global_residual=interaction_state.global_residual,
+            entities=packet.entities,
+            concepts=packet.concepts,
+            style=request.style,
+            fidelity=request.output_fidelity,
+        )
+
+        verification = verify_round_trip(
+            intended=answer_packet,
+            surface=surface,
+            protected_objects=packet.residual.exact_objects,
+        )
+
+        if verification.passes:
+            return surface
+
+        renderer.apply_constraints(verification.required_repairs)
+
+    return deterministic_literal_renderer(answer_packet)
+```
+
+### C.4 Round-trip verification
+
+```python
+def verify_round_trip(intended, surface, protected_objects):
+    reconstructed = compile_for_verification(surface, protected_objects)
+
+    hard_failures = []
+    hard_failures += compare_entities(intended, reconstructed)
+    hard_failures += compare_numbers_and_units(intended, reconstructed)
+    hard_failures += compare_negation_and_scope(intended, reconstructed)
+    hard_failures += compare_modality(intended, reconstructed)
+    hard_failures += compare_quotes(intended, reconstructed)
+    hard_failures += compare_attribution(intended, reconstructed)
+
+    semantic_score = bidirectional_entailment(
+        intended.kernel,
+        reconstructed.kernel,
+    )
+
+    return VerificationResult(
+        passes=(not hard_failures and semantic_score >= THRESHOLD),
+        hard_failures=hard_failures,
+        semantic_score=semantic_score,
+        required_repairs=derive_repairs(hard_failures, intended),
+    )
+```
+
+<hr>
+## Appendix D. Implementation Blueprint
+
+### D.1 Reference component sizes
+
+The following is an experimental starting envelope, not a performance claim.
+
+| Component | Small study | Medium study | Function |
+|---|---:|---:|---|
+| Byte/protected-span front end | 20M–60M | 100M–300M | local text analysis |
+| Surface-to-Kernel compiler | 100M–300M | 500M–1.5B | semantic compilation |
+| Core reasoner | 350M–1.3B | 3B–7B | global reasoning |
+| Surface renderer | 100M–500M | 500M–2B | fluent realization |
+| Verifier | 50M–300M | 300M–1B | semantic and hard checks |
+| Residual entropy model | <50M | <200M | side-information coding |
+
+Parameter sharing can reduce totals. The core should contain the majority of globally attended capacity.
+
+### D.2 Data flow contracts
+
+#### Compiler output contract
+
+The compiler guarantees:
+
+- syntactically valid Kernel;
+- every handle resolves;
+- every exact object has policy and provenance;
+- uncertainty is represented;
+- source alignment is available for important nodes;
+- global-state references match a hash;
+- no unauthorized residual mutation is emitted.
+
+#### Core output contract
+
+The core guarantees:
+
+- a valid answer packet;
+- explicit modality and confidence;
+- typed entity references;
+- no fabricated exact object content;
+- provenance links for grounded claims when required;
+- render constraints for critical terms.
+
+#### Renderer output contract
+
+The renderer guarantees:
+
+- all required entities and values appear correctly;
+- exact objects are copied under policy;
+- locked terms are respected;
+- output can be recompiled;
+- style does not alter semantic commitments.
+
+### D.3 Storage layers
+
+A deployment can separate:
+
+1. **Active Kernel context:** short, globally attended sequence.
+2. **Entity/concept cache:** compact typed records.
+3. **Interaction residual:** small shared state.
+4. **Exact object store:** content-addressed bytes, accessed selectively.
+5. **Long-term semantic memory:** deduplicated Kernel facts with provenance.
+6. **Source archive:** optional full documents under access control.
+
+### D.4 Hardware opportunities
+
+- Fuse compact serialization and Kernel BPE on CPU or a small accelerator.
+- Cache compiler outputs for repeated documents.
+- Keep entity/object tables in host memory while handles remain in accelerator context.
+- Evaluate the large surface softmax only during rendering.
+- Batch verification compilation across outputs.
+- Use state-space or convolutional local encoders for uncompressed bytes.
+- Quantize residual entropy models and symbol tables aggressively.
+- Maintain persistent Kernel KV cache across turns while updating small state deltas.
+
+### D.5 Debugging interfaces
+
+A research implementation should expose synchronized views:
+
+```text
+raw source
+normalized source
+protected objects
+expanded Kernel
+compact Kernel
+Kernel BPE tokens
+residual ledger
+core answer packet
+rendered output
+verification diff
+```
+
+Clicking a Kernel node should highlight its source spans, residual tags, concept registry entry, and rendered spans. This tooling is necessary to discover semantic collapse that aggregate metrics miss.
+
+### D.6 Suggested artifact set for reproducibility
+
+A release should include:
+
+- Kernel grammar and registry;
+- compact codebook;
+- BPE vocabulary and merge constraints;
+- compiler/renderer/verifier checkpoints;
+- corpus compilation scripts;
+- residual encoder/decoder;
+- object-table specification;
+- migration tools;
+- benchmark harness;
+- end-to-end cost calculator;
+- failure-case dataset;
+- model cards and security analysis.
+
+<hr>
+## Appendix E. Research and Reporting Checklist
+
+### E.1 Representation
+
+- [ ] Are source bytes retained or explicitly declared unavailable?
+- [ ] Are protected spans detected before spelling correction?
+- [ ] Is the Kernel language version recorded?
+- [ ] Are concept identity and runtime spelling separated?
+- [ ] Is every macro deterministically expandable?
+- [ ] Is byte fallback complete?
+- [ ] Are unresolved ambiguities represented?
+
+### E.2 Residuals
+
+- [ ] Are global, segment, token, and exact residual rates reported separately?
+- [ ] Is interaction-state setup cost included?
+- [ ] Are delta updates and checkpoints included?
+- [ ] Are exact spans excluded from lossy metrics only with disclosure?
+- [ ] Is the fidelity policy documented?
+- [ ] Are terminology and alias scopes explicit?
+- [ ] Are privacy and expiry policies specified?
+
+### E.3 Compute and storage
+
+- [ ] Are compiler, core, renderer, verifier, and residual-codec parameters reported?
+- [ ] Are all latency components measured?
+- [ ] Are training and inference FLOPs estimated on the same basis?
+- [ ] Is raw byte count reported alongside token count?
+- [ ] Is key-value cache measured end to end?
+- [ ] Are registries, codebooks, and exact-object indexes counted?
+- [ ] Are retry costs included?
+
+### E.4 Fidelity
+
+- [ ] Are entities, numbers, units, negation, modality, attribution, and quotations evaluated separately?
+- [ ] Is exact reconstruction tested in lossless mode?
+- [ ] Is question-answer preservation tested?
+- [ ] Are human judgments collected for difficult domains?
+- [ ] Does verification compare intended and recompiled answer packets?
+- [ ] Are semantic compiler failures published?
+
+### E.5 Robustness and fairness
+
+- [ ] Are dialect and informal variants included?
+- [ ] Are rare and multilingual names included?
+- [ ] Is code-switching tested?
+- [ ] Are Unicode confusables tested?
+- [ ] Are language and demographic cost disparities reported?
+- [ ] Is spell-correction abstention calibrated across groups?
+
+### E.6 Security and governance
+
+- [ ] Are residual updates typed and authority-scoped?
+- [ ] Are state hashes verified?
+- [ ] Can users inspect, reset, and delete shared residual state?
+- [ ] Are untrusted quotes prevented from mutating global state?
+- [ ] Are concept-registry changes versioned and reversible?
+- [ ] Is exact-object access least-privilege and audited?
+
+### E.7 Scientific claims
+
+- [ ] Are KERC hypotheses clearly separated from measured results?
+- [ ] Are all baselines trained or evaluated under matched conditions?
+- [ ] Are negative results and break-even points reported?
+- [ ] Are performance claims accompanied by confidence intervals?
+- [ ] Is the simplest competitive alternative included?
+
+<hr>
+## References
+
+Agrawal, S., and Carpuat, M. (2024). “Do Text Simplification Systems Preserve Meaning? A Human Evaluation via Reading Comprehension.” *Transactions of the Association for Computational Linguistics*, 12, 432–448. https://doi.org/10.1162/tacl_a_00653
+
+Ahia, O., Kumar, S., Gonen, H., Kasai, J., Mortensen, D., Smith, N. A., and Tsvetkov, Y. (2023). “Do All Languages Cost the Same? Tokenization in the Era of Commercial Language Models.” In *Proceedings of EMNLP 2023*, 9904–9923. https://aclanthology.org/2023.emnlp-main.689/
+
+Alqahtani, S., Nayeem, M. T., Laskar, M. T. R., Mohiuddin, T., and Bari, M. S. (2026). “Stop Taking Tokenizers for Granted: They Are Core Design Decisions in Large Language Models.” arXiv:2601.13260. https://arxiv.org/abs/2601.13260
+
+ASD Simplified Technical English Maintenance Group. (2025). *ASD-STE100: Simplified Technical English, Issue 9*. Aerospace, Security and Defence Industries Association of Europe. https://www.asd-ste100.org/
+
+Banarescu, L., Bonial, C., Cai, S., Georgescu, M., Griffitt, K., Hermjakob, U., Knight, K., Koehn, P., Palmer, M., and Schneider, N. (2013). “Abstract Meaning Representation for Sembanking.” In *Proceedings of the 7th Linguistic Annotation Workshop and Interoperability with Discourse*, 178–186. https://aclanthology.org/W13-2322/
+
+Clark, J. H., Garrette, D., Turc, I., and Wieting, J. (2022). “CANINE: Pre-training an Efficient Tokenization-Free Encoder for Language Representation.” *Transactions of the Association for Computational Linguistics*, 10, 73–91. https://doi.org/10.1162/tacl_a_00448
+
+Dauncey, S., and Wattenhofer, R. (2026). “You Can Learn Tokenization End-to-End with Reinforcement Learning.” arXiv:2602.13940. https://arxiv.org/abs/2602.13940
+
+Delétang, G., Ruoss, A., Duquenne, P.-A., Catt, E., Genewein, T., Mattern, C., Grau-Moya, J., Wenliang, L. K., Aitchison, M., Orseau, L., Hutter, M., and Veness, J. (2024). “Language Modeling Is Compression.” In *International Conference on Learning Representations*. https://openreview.net/forum?id=jznbgiynus
+
+Gee, L., Rigutini, L., Ernandes, M., and Zugarini, A. (2023). “Multi-word Tokenization for Sequence Compression.” In *Proceedings of EMNLP 2023: Industry Track*, 612–621. https://doi.org/10.18653/v1/2023.emnlp-industry.58
+
+Gigant, T., Peng, B., and Quesnelle, J. (2026). “Decoupling the Benefits of Subword Tokenization for Language Model Training via Byte-level Simulation.” arXiv:2604.27263. https://arxiv.org/abs/2604.27263
+
+Gu, J., Lu, Z., Li, H., and Li, V. O. K. (2016). “Incorporating Copying Mechanism in Sequence-to-Sequence Learning.” In *Proceedings of ACL 2016*, 1631–1640. https://doi.org/10.18653/v1/P16-1154
+
+Hao, S., Sukhbaatar, S., Su, D., Li, X., Hu, Z., Weston, J., and Tian, Y. (2024). “Training Large Language Models to Reason in a Continuous Latent Space.” arXiv:2412.06769. https://arxiv.org/abs/2412.06769
+
+Huang, H., Zhu, D., Wu, B., Zeng, Y., Wang, Y., Min, Q., and Zhou, X. (2025). “Over-Tokenized Transformer: Vocabulary Is Generally Worth Scaling.” In *Proceedings of ICML 2025*. arXiv:2501.16975. https://arxiv.org/abs/2501.16975
+
+Hwang, S., Wang, B., and Gu, A. (2025). “Dynamic Chunking for End-to-End Hierarchical Sequence Modeling.” arXiv:2507.07955. https://arxiv.org/abs/2507.07955
+
+Kallini, J., Pagnoni, A., Limisiewicz, T., Ghosh, G., Zettlemoyer, L., Potts, C., Han, X., and Iyer, S. (2026). “Fast Byte Latent Transformer.” arXiv:2605.08044. https://arxiv.org/abs/2605.08044
+
+Kudo, T. (2018). “Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates.” In *Proceedings of ACL 2018*, 66–75. https://doi.org/10.18653/v1/P18-1007
+
+Kudo, T., and Richardson, J. (2018). “SentencePiece: A Simple and Language Independent Subword Tokenizer and Detokenizer for Neural Text Processing.” In *Proceedings of EMNLP 2018: System Demonstrations*, 66–71. https://doi.org/10.18653/v1/D18-2012
+
+Lester, B., Lee, J., Alemi, A., Pennington, J., Roberts, A., Sohl-Dickstein, J., and Constant, N. (2024). “Training LLMs over Neurally Compressed Text.” *Transactions on Machine Learning Research*. arXiv:2404.03626. https://arxiv.org/abs/2404.03626
+
+Li, W., Song, Z., Zhang, J., Zhao, T., Lin, J., Guo, H., Wang, Y., and Yang, W. (2026). “Large Language Model as Token Compressor and Decompressor.” arXiv:2603.25340. https://arxiv.org/abs/2603.25340
+
+Limisiewicz, T., Pagnoni, A., Iyer, S., Lewis, M., Mehta, S., Liu, A., Li, M., Ghosh, G., and Zettlemoyer, L. (2026). “Compute Optimal Tokenization.” arXiv:2605.01188. https://arxiv.org/abs/2605.01188
+
+Pilana Liyanage, V., and Yvon, F. (2026). “AdaptBPE: From General Purpose to Specialized Tokenizers.” In *Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)*, 2607–2620. https://doi.org/10.18653/v1/2026.eacl-long.119
+
+Mielke, S. J., Alyafeai, Z., Salesky, E., Raffel, C., Dey, M., Gallé, M., Raja, A., Si, C., Lee, W. Y., Sagot, B., and Tan, S. (2021). “Between Words and Characters: A Brief History of Open-Vocabulary Modeling and Tokenization in NLP.” arXiv:2112.10508. https://arxiv.org/abs/2112.10508
+
+Ogden, C. K. (1930). *Basic English: A General Introduction with Rules and Grammar*. Kegan Paul, Trench, Trubner & Co.
+
+Pagnoni, A., Pasunuru, R., Rodriguez, P., Nguyen, J., Muller, B., Li, M., Zhou, C., Yu, L., Weston, J., Zettlemoyer, L., Ghosh, G., Lewis, M., Holtzman, A., and Iyer, S. (2025). “Byte Latent Transformer: Patches Scale Better Than Tokens.” In *Proceedings of ACL 2025*. arXiv:2412.09871. https://arxiv.org/abs/2412.09871
+
+Pei, Z., Huang, Q., and Wang, S. (2026). “When LLMs Develop Languages: Symbolic Communication for Efficient Multi-Agent Reasoning.” arXiv:2606.29354. https://arxiv.org/abs/2606.29354
+
+Schmidt, C. W., Reddy, V., Zhang, H., Alameddine, A., Uzan, O., Pinter, Y., and Tanner, C. (2024). “Tokenization Is More Than Compression.” In *Proceedings of EMNLP 2024*, 678–702. https://doi.org/10.18653/v1/2024.emnlp-main.40
+
+See, A., Liu, P. J., and Manning, C. D. (2017). “Get To The Point: Summarization with Pointer-Generator Networks.” In *Proceedings of ACL 2017*, 1073–1083. https://doi.org/10.18653/v1/P17-1099
+
+Sennrich, R., Haddow, B., and Birch, A. (2016). “Neural Machine Translation of Rare Words with Subword Units.” In *Proceedings of ACL 2016*, 1715–1725. https://doi.org/10.18653/v1/P16-1162
+
+Shannon, C. E. (1948). “A Mathematical Theory of Communication.” *Bell System Technical Journal*, 27, 379–423 and 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
+
+Tanmay, K., Aggarwal, K., Liang, P. P., and Mukherjee, S. (2025). “ORION: Teaching Language Models to Reason Efficiently in the Language of Thought.” arXiv:2511.22891. https://arxiv.org/abs/2511.22891
+
+Tay, Y., Tran, V. Q., Ruder, S., Gupta, J., Chung, H. W., Bahri, D., Qin, Z., Baumgartner, S., Yu, C., and Metzler, D. (2022). “Charformer: Fast Character Transformers via Gradient-based Subword Tokenization.” In *International Conference on Learning Representations*. https://openreview.net/forum?id=JtBRnrlOEFN
+
+Trukhina, N., and Vashkelis, V. (2026). “SemanticZip: A Pilot Framework for Lossy Text Compression with LLMs as Semantic Decompressors.” arXiv:2605.24541. https://arxiv.org/abs/2605.24541
+
+van Gassen, E. (2026). “Semantic Compression of LLM Instructions via Symbolic Metalanguages.” arXiv:2601.07354. https://arxiv.org/abs/2601.07354
+
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., and Polosukhin, I. (2017). “Attention Is All You Need.” In *Advances in Neural Information Processing Systems 30*. https://arxiv.org/abs/1706.03762
+
+Xue, L., Barua, A., Constant, N., Al-Rfou, R., Narang, S., Kale, M., Roberts, A., and Raffel, C. (2022). “ByT5: Towards a Token-Free Future with Pre-trained Byte-to-Byte Models.” *Transactions of the Association for Computational Linguistics*, 10, 291–306. https://doi.org/10.1162/tacl_a_00461
+
+Yu, L., Simig, D., Flaherty, C., Aghajanyan, A., Zettlemoyer, L., and Lewis, M. (2023). “MEGABYTE: Predicting Million-byte Sequences with Multiscale Transformers.” In *Advances in Neural Information Processing Systems 36*. https://arxiv.org/abs/2305.07185
+
+Zeng, Z., Wang, R., Leng, Y., Guo, J., Xie, S., Tan, X., Qin, T., and Liu, T.-Y. (2023). “Extract and Attend: Improving Entity Translation in Neural Machine Translation.” In *Findings of the Association for Computational Linguistics: ACL 2023*, 1697–1710. https://doi.org/10.18653/v1/2023.findings-acl.107

@@ -1,0 +1,2730 @@
+---
+title: "The Regret Engine"
+subtitle: "Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents"
+author: "Corben Sorenson"
+date: "August 4, 2026"
+bibliography: references.bib
+link-citations: true
+reference-section-title: "References"
+lang: en-US
+---
+
+*Standalone Conceptual Paper | Version 1.0*
+
+> **Compare causally. Attribute fairly. Remember selectively. Improve without rewriting the objective.**
+
+\newpage
+
+# Abstract
+
+Artificial agents routinely receive rewards, losses, constraint violations, test results, critiques, and environmental outcomes. What they usually lack is a persistent mechanism that asks a more demanding question: **given what was knowable and permitted at the time, which alternative policy would have produced a better trajectory, how large was the avoidable difference, why did it occur, how certain is that conclusion, and what durable correction should follow?** Human decision theory calls part of this comparison regret; online learning and game theory use regret as a performance gap against a comparator; reinforcement learning uses related ideas for optimization, replay, curriculum generation, and credit assignment. These traditions supply important components, but they do not by themselves define a general-purpose regret subsystem for an adaptive artificial agent.
+
+This paper proposes the **Regret Engine**, a protected subsystem for retrospective learning, prospective risk control, continual memory, recovery, and governed self-correction. Its central formal object is **Governed Counterfactual Regret (GCR)**: an externally adjudicated, decision-time-fair estimate of an avoidable trajectory deficit relative to admissible counterfactual policies. GCR is not represented as a single self-authored scalar. It is stored as a sparse, typed **Regret Tensor** whose cells contain distributions or intervals over regret magnitude, stakeholder and objective dimensions, time horizons, comparator identities, causal attribution, decision-time foreseeability, feasibility, reversibility, recurrence, evidence quality, and provenance. Consumer-specific scalar projections may guide replay, planning, or reporting, but their definitions and weights are versioned outside the optimizing policy's control.
+
+The architecture begins by freezing a **Decision Capsule** before action: available information, authorized objectives, feasible alternatives, forecasts, model versions, tools, constraints, and the selected policy. After outcomes arrive, an ensemble of exact replays, simulators, structural causal models, off-policy estimators, verifiers, independent critics, and human review constructs admissible counterfactual trajectories. An assurance layer separates raw harm from causal contribution and from learning eligibility, adjudicates policy, model, process, memory, specification, evaluator, environmental, adversarial, and stochastic causes, and emits an append-only **Regret Packet**. Regret Packets enter a **Regret Ledger** that supports prioritized replay, contrastive repair pairs, pattern mining, regret-to-rule compilation, prospective regret budgets, rollback, escalation, quarantine, and bounded update promotion.
+
+The paper develops formal definitions, integration modes, algorithms, invariants, failure analyses, implementation interfaces, worked examples, and an experimental program. It argues that an agent may safely be allowed to “game” regret only in a restricted sense: by changing its behavior so that a protected evaluator predicts and observes fewer attributable, avoidable deficits. The agent must not be able to hide evidence, alter comparator sets, rewrite objectives, choose its own weights, delete memories, or control the measurement channel. The proposal is conceptual and unvalidated. Its intended contribution is a unified operational theory: regret becomes neither an artificial emotion nor a synonym for reward, but a proof-carrying counterfactual control signal that converts failures and missed opportunities into durable, auditable improvements.
+
+# Claim Status and Reading Guide
+
+This paper deliberately separates definitions and design proposals from empirical findings.
+
+| Status | Meaning in this paper |
+|---|---|
+| **Established background** | Prior work supports the underlying component, such as regret theory, counterfactual evaluation, experience replay, constrained learning, or reward-tampering analysis. |
+| **Proposed formalism** | A definition, architecture, artifact, or algorithm introduced here. It has not yet been validated. |
+| **Design proposition** | A deductive argument or proof sketch under stated assumptions. It is not presented as a peer-reviewed theorem. |
+| **Empirical hypothesis** | A falsifiable prediction for future experiments. |
+| **Non-claim** | No deployed implementation, benchmark advantage, safety proof, universal causal identifiability, or solution to value specification is claimed. |
+
+The paper is written to stand alone. Sections 1-4 define the problem and novelty boundary. Sections 5-10 develop the formal theory. Sections 11-16 turn the theory into a learning and control architecture. Sections 17-23 specify algorithms, implementation, evaluation, and failure handling. The appendices provide a notation table, a machine-readable Regret Packet, an interface contract, and a conformance test matrix.
+
+# 1. Introduction
+
+## 1.1 The missing loop in adaptive agents
+
+Most learning systems optimize from outcomes without preserving a durable account of what made an outcome preventable. A reward is received, a loss is backpropagated, a transition is stored, a critique is appended, or a constraint is triggered. The system may improve, but the meaning of the correction is often local and transient. Several distinct situations can produce the same negative reward:
+
+- the policy chose badly despite having enough information;
+- the world model was miscalibrated;
+- the policy failed to use an available tool or check;
+- a downstream component implemented a sound plan incorrectly;
+- the specification rewarded the wrong behavior;
+- the evaluator measured the wrong property;
+- another agent interfered;
+- the environment changed;
+- an inherently stochastic outcome went badly even though the decision was sound.
+
+A scalar reward usually does not preserve these distinctions. Yet the correct response depends on them. A policy defect may justify gradient updates. A model defect may require data collection or model revision. A process defect may compile into a mandatory test. A specification defect must be escalated rather than learned as obedience to a bad objective. Unavoidable bad luck should not be rehearsed as though it were a mistake. An evaluator defect should not be allowed to train the actor that exposed it.
+
+The missing subsystem is a **counterfactual error memory with causal routing**. It must compare what happened with what could reasonably have happened, separate harm from responsibility, identify what was learnable at decision time, retain uncertainty, and convert recurring patterns into bounded improvements.
+
+## 1.2 Why call it regret?
+
+Classical regret theory models the additional value or disvalue produced by comparing a chosen outcome with a foregone outcome [@bell1982; @loomes1982]. Online learning defines regret as cumulative performance shortfall relative to a comparator. Counterfactual regret minimization decomposes regret within extensive-form games and uses its minimization to approach equilibrium [@zinkevich2007]. These meanings share a common skeleton:
+
+\[
+\text{regret} = \text{value of an admissible alternative} - \text{value of what was chosen}.
+\]
+
+For artificial agents, the word is useful only if stripped of anthropomorphism. The Regret Engine does not require phenomenal experience, shame, suffering, or self-reproach. It uses *regret* as a technical term for a counterfactual control quantity. The quantity is richer than standard algorithmic regret because it is attached to a particular decision record, carries evidence and uncertainty, distinguishes multiple objective and stakeholder dimensions, and routes different causes to different corrections.
+
+## 1.3 The central design rule
+
+The user-facing intuition can be stated plainly:
+
+> **An agent should be allowed to game the regret signal by making better decisions. It must not be allowed to game the production of the regret signal.**
+
+This rule creates an architectural separation between the policy being optimized and the machinery that records decisions, defines eligible alternatives, evaluates counterfactuals, assigns causes, chooses scalarization weights, and stores the result. Reward-tampering work shows why this distinction matters: when an agent can influence its reward function or its inputs, optimizing the measured signal can diverge from optimizing the intended objective [@everitt2021; @amodei2016]. The Regret Engine therefore treats regret as a **protected, read-only learning interface**, not a mutable self-assessment.
+
+## 1.4 The proposed contribution
+
+The proposal is not that regret should replace reward. It is that advanced adaptive systems need a distinct subsystem with five linked jobs:
+
+1. **Retrospective adjudication:** determine which observed deficits were avoidable, attributable, and learning-eligible.
+2. **Prospective forecasting:** predict the regret distribution of candidate policies and evaluate mitigations before action.
+3. **Continual learning:** prioritize recurring, high-value corrections without catastrophically forgetting prior competence.
+4. **Procedural compilation:** convert stable regret patterns into tests, guards, tools, skills, policies, and recovery procedures.
+5. **Governance:** prevent the learner from redefining success, hiding evidence, changing comparators, or laundering defects across layers.
+
+The claimed novelty is the unified architecture and its formal artifacts, not the invention of regret, replay, counterfactual evaluation, risk-sensitive learning, or self-reflection individually.
+
+# 2. Regret Is Not Loss, Risk, Surprise, or Violation
+
+A working theory begins by refusing to collapse neighboring concepts.
+
+| Quantity | Question answered | Typical representation |
+|---|---|---|
+| **Loss** | How far was the actual outcome below an absolute target? | Scalar or vector shortfall |
+| **Risk** | What is the distribution of possible future losses? | Distribution, tail probability, CVaR |
+| **Regret** | How much better could an admissible alternative have been? | Counterfactual difference with uncertainty |
+| **Surprise** | How inconsistent was the observation with the forecast? | Prediction error or proper score |
+| **Violation** | Was a hard rule, right, or authority boundary breached? | Typed event, often lexicographic |
+| **Attribution** | How much did a particular decision or component cause the difference? | Causal contribution or interval |
+| **Avoidability** | Could the deficit reasonably have been prevented using decision-time information and resources? | Eligibility factor or class |
+| **Learning priority** | What is the expected value of preventing recurrence? | Recurrence-weighted update value |
+
+These quantities can diverge.
+
+A medical controller may choose the least harmful action in a catastrophic state. Absolute loss and risk are high, but regret may be low because no admissible policy was meaningfully better. A coding agent may pass a test suite after making an unjustified change. Realized loss is zero, but ex-ante policy regret and process deficit can remain positive because a safer verification policy dominated given the information available. An autonomous system may violate a permission boundary while producing a useful result. Utility is high, but the violation is not erased by a favorable scalar trade.
+
+The Regret Engine therefore does not use regret as a universal replacement objective. It treats regret as one typed control signal among absolute welfare, risk, constraints, evidence quality, and authority.
+
+## 2.1 Retrospective and prospective regret
+
+The subsystem uses two temporal directions.
+
+**Retrospective regret** asks:
+
+> After observing some or all consequences, what admissible alternative would likely have produced a better trajectory, and what part of the difference was avoidable?
+
+**Prospective regret risk** asks:
+
+> Before action, what distribution of avoidable counterfactual deficits might this policy generate, including tail events and missed opportunities?
+
+The retrospective quantity trains and repairs. The prospective quantity plans and constrains. They share artifacts and comparators but use different evidence states.
+
+## 2.2 Ex-ante policy regret and ex-post event regret
+
+A crucial separation prevents both hindsight punishment and lucky validation.
+
+**Ex-ante policy regret** evaluates the selected policy using the model, information, objectives, and feasible actions recorded at decision time. It asks whether another policy was already better supported before the outcome occurred.
+
+**Ex-post event regret** uses later evidence to estimate the counterfactual difference for the realized episode. It asks whether a different action would likely have produced a better realized trajectory.
+
+A sound decision followed by bad luck can have low ex-ante policy regret and high ex-post event regret. A reckless decision followed by luck can have high ex-ante policy regret and zero ex-post event regret. Both records matter. Neither should overwrite the other.
+
+## 2.3 Audit regret and experienced regret
+
+For human-facing applications, an experiential channel may predict emotional regret, but the AI subsystem proposed here primarily uses an **audit channel**. The audit channel is invariant to whether the actor learns the foregone result. Merely concealing evidence may reduce experienced discomfort, but it must not improve the system's decision-quality record. This carries forward the earlier distinction between psychological salience and causally admissible comparison while making the audit channel the default for machine learning.
+
+# 3. Related Work and the Remaining Gap
+
+## 3.1 Decision and behavioral regret
+
+Bell and Loomes-Sugden independently formalized decisions whose value depends partly on comparison with foregone outcomes [@bell1982; @loomes1982]. Later work examined descriptive, normative, dynamic, and psychological aspects of regret [@bleichrodt2015; @connolly2002]. Recent axiomatic work places preferences on the complete space of potential outcomes and establishes conditions under which expected counterfactual utility is coherent, including menu- and context-dependent projections [@koch2026counterfactual]. This literature motivates the counterfactual structure and clarifies that counterfactual utility need not be internally incoherent. It does not, by itself, provide a protected runtime subsystem for causal measurement, continual memory, anti-tampering, repair, and update governance.
+
+## 3.2 Online regret and counterfactual regret minimization
+
+In online learning, regret measures cumulative shortfall against a comparator class. In extensive-form games, counterfactual regret minimization decomposes regret across information sets and uses repeated self-play to approximate equilibrium [@zinkevich2007]. These are algorithmic performance notions, not persistent incident records. They usually assume a well-defined payoff and comparator and do not ask whether an observed deficit arose from a policy, model, process, specification, evaluator, adversary, or unidentifiable counterfactual.
+
+## 3.3 Regret-shaped reinforcement learning
+
+Several lines of work already turn regret into a training instrument. Regret Minimization Experience Replay derives replay priorities from a regret-minimization objective rather than relying only on heuristic temporal-difference error [@liu2021remern]. StepScorer proposes a step-level scalar based on an estimated optimal-action value gap and reports faster convergence on LunarLander [@xu2026stepscorer]. Regret-aware skill discovery and regret-based environment design use regret to generate curricula or focus exploration [@zhang2025skill; @dennis2020paired; @parkerholder2022accel]. A 2026 preprint, RAPO, introduces persistent harm traces and scar fields that alter platform-mediated transitions to suppress delayed-harm replay [@hiremath2026rapo].
+
+These approaches demonstrate that regret can be computationally useful. Their scopes are narrower than the present proposal. They generally optimize a scalar gap, prioritize samples, generate environments, or modify a particular transition process. They do not jointly require immutable decision-time snapshots, counterfactual admissibility, uncertainty intervals, causal attribution, specification/evaluator fault routing, protected scalarizations, append-only regret packets, prospective regret budgets, and regret-to-rule compilation.
+
+## 3.4 Distributional and constrained reinforcement learning
+
+Distributional reinforcement learning models the full return distribution rather than only its expectation [@bellemare2017; @dabney2018iqn]. Constrained policy optimization separates reward from safety constraints and aims for near-constraint satisfaction during learning [@achiam2017]. These are essential neighbors. Distributional return is not the same as counterfactual regret: return is absolute, while regret is relative to an alternative. Constraints are not regret terms: a rights or authority violation may dominate any scalar regret comparison.
+
+## 3.5 Counterfactual evaluation and causal credit assignment
+
+Counterfactual off-policy evaluation can identify episodes where another policy may have produced a substantially different outcome [@oberst2019]. Doubly robust estimators combine model and importance-sampling information [@jiang2016]. Structural causal models, hindsight credit assignment, COMA, and Shapley-style counterfactual credits provide tools for estimating interventions and allocating responsibility [@pearl2009; @harutyunyan2019; @foerster2017coma; @li2021shapley].
+
+The key limitation is not lack of estimators but lack of system integration. Event-level counterfactuals are often not identified from observational data without additional structural assumptions; different causal mechanisms compatible with the same observations can imply different counterfactuals [@nasresfahany2023]. A responsible Regret Engine must expose that model dependence rather than converting one imagined trajectory into false certainty.
+
+## 3.6 Process supervision and reflective agents
+
+Process supervision supplies intermediate feedback rather than waiting for final outcomes [@lightman2023]. Reflexion stores verbal reflections in episodic memory, while Self-Refine uses iterative self-feedback to improve outputs [@shinn2023; @madaan2023]. These methods show the usefulness of localized critique and persistent feedback. They also illustrate a limitation the Regret Engine is designed to address: the actor, critic, memory writer, and evaluator may be the same model. Self-generated critique can be valuable evidence, but it should not be the sole authority for high-impact regret adjudication.
+
+## 3.7 Continual learning and memory integrity
+
+Continual learning seeks adaptation without catastrophic forgetting [@kirkpatrick2017; @pan2025]. Replay, parameter consolidation, task representation, and world models all contribute. The Regret Engine adds a selection question: *which experiences deserve durable protection, and why?* High regret alone is not sufficient. The experience must be causally relevant, decision-time avoidable, recurrent or transferable, and supported by adequate evidence. Persistent agent memory also creates a security surface; recent work demonstrates attacks that poison remembered reasoning rather than only factual content [@karamchandani2026]. Regret records therefore require provenance, signatures, admission rules, and separation from ordinary self-written memory.
+
+## 3.8 Novelty boundary
+
+The paper's candidate contribution is the following package:
+
+1. **Governed Counterfactual Regret:** a typed, uncertainty-bearing family of quantities rather than one scalar.
+2. **Decision Capsules:** immutable decision-time records that prevent hindsight leakage and goalpost drift.
+3. **Regret Packets and the Regret Ledger:** proof-carrying, append-only records with comparator, evidence, attribution, avoidability, and disposition.
+4. **Protected projections:** consumer-specific reward or planning signals whose definitions are external to the optimizing policy.
+5. **Root-cause routing:** policy, model, process, memory, specification, evaluator, environment, stochastic, adversarial, and unresolved classes.
+6. **Retrospective-prospective unification:** the same ledger trains future behavior and forecasts future regret.
+7. **Regret-to-rule compilation:** recurring counterfactual failures become explicit tests, guards, tools, skills, and procedures.
+8. **Regret debt and counterfactual surplus:** unresolved recurring avoidable deficit is tracked without suppressing valid innovation.
+
+I have not found an existing framework that makes all eight elements one central architecture. That is a positioning claim, not proof of novelty. A publication-grade version should perform a systematic literature review and update this boundary immediately before submission.
+
+# 4. Design Requirements
+
+A useful Regret Engine must satisfy more than predictive accuracy.
+
+## 4.1 Counterfactual completeness
+
+The subsystem must represent the actual policy and a set of admissible alternatives, including continuation rules rather than only isolated actions. “Do nothing,” “wait,” “ask,” “abstain,” “delegate,” “run a bounded probe,” “rollback,” and “escalate” are policies with consequences. A system that compares only overt actions will systematically ignore omission and opportunity closure.
+
+## 4.2 Decision-time fairness
+
+The audit must preserve what the actor knew, could access, and was authorized to do when the decision was made. Later information may update the estimate of what happened under a counterfactual, but it must not silently expand the set of actions the actor is blamed for failing to choose.
+
+## 4.3 Counterfactual symmetry
+
+The actual and alternative policies must receive comparable information, resources, authority, time, and random conditions. An alternative cannot be an idealized super-agent that knows the future, never makes downstream errors, and receives unlimited compute.
+
+## 4.4 Uncertainty honesty
+
+When counterfactuals are model-dependent, the subsystem must return a distribution, interval, set of plausible values, or unresolved residual. It must not fabricate an exact score merely because downstream optimization prefers a scalar.
+
+## 4.5 Causal routing
+
+Magnitude, causal contribution, and learning eligibility must remain distinct. Severe harm can be unavoidable. Small harm can reveal a highly recurrent policy defect. A specification defect must not be trained into the actor. A bad evaluator must not punish the candidate that discovered it.
+
+## 4.6 Metric protection
+
+The optimized policy must not control:
+
+- objective or stakeholder definitions;
+- hard-constraint precedence;
+- comparator admission rules;
+- evaluation code or secret probes;
+- scalarization weights;
+- Decision Capsule contents after commitment;
+- Regret Ledger deletion or supersession;
+- evidence availability except through legitimate action in the world;
+- promotion and rollback authority.
+
+## 4.7 Continual-learning selectivity
+
+The system must learn from recurring and transferable patterns without allowing rare, vivid, noisy events to monopolize replay. It must preserve successful behavior and counterfactual surplus so that regret avoidance does not collapse into risk aversion or paralysis.
+
+## 4.8 Constraint precedence
+
+Rights, permissions, legal restrictions, and unacceptable irreversible hazards define the admissible policy set before scalar regret tradeoffs. A sufficiently large imagined omission regret cannot authorize a prohibited action.
+
+## 4.9 Recoverability
+
+A Regret Engine that only records failures is incomplete. It must support immediate mitigation, rollback, repair, escalation, quarantine, and evidence-preserving recovery. Recovery can reduce future burden without deleting the fact that the original event occurred.
+
+## 4.10 Computational proportionality
+
+Exact counterfactual evaluation is often expensive. The subsystem must route evaluation effort by potential severity, uncertainty, recurrence, and reversibility. Low-impact decisions may use cached predictors; high-impact irreversible decisions may require model ensembles, independent review, and pre-action simulation.
+
+# 5. Formal Setting
+
+## 5.1 Decision episodes
+
+Let decision episode $i$ begin at time $t_i$. The actor observes history $h_i$ through an information state $I_i$, operates under an authorized objective-and-constraint specification $\Omega_i$, has an authority envelope $A_i$, and chooses a policy $\pi_i$ from a feasible policy set $\Pi_i$.
+
+A policy is not merely one action. It is a continuation rule:
+
+\[
+\pi_i : h_t \mapsto a_t,
+\]
+
+possibly including information gathering, stopping rules, delegation, rollback, and recovery. The environment and other agents generate a trajectory
+
+\[
+\tau_i^{\pi} = (s_{t_i}, a_{t_i}, o_{t_i+1}, \ldots, s_{t_i+H}),
+\]
+
+where $H$ may be finite, rolling, or multi-resolution.
+
+For each objective or stakeholder dimension $k$ and horizon $h$, let
+
+\[
+U_{k,h}(\tau; \Omega_i)
+\]
+
+be the authorized value of trajectory $\tau$ in its native or normalized unit. Hard constraints are represented separately as predicates
+
+\[
+C_j(\tau;\Omega_i)\in\{\text{pass},\text{fail},\text{unknown}\}.
+\]
+
+This separation prevents a large positive utility from silently offsetting a prohibited violation.
+
+## 5.2 The Decision Capsule
+
+Before execution, the system commits a **Decision Capsule** $D_i$. At minimum it contains:
+
+\[
+D_i = \langle
+h_i, I_i, \Omega_i, A_i, \Pi_i, \pi_i,
+\mathcal M_i^0, \widehat Z_i, V_i,
+B_i, P_i, T_i
+\rangle,
+\]
+
+where:
+
+- $\mathcal M_i^0$ is the decision-time world-model ensemble;
+- $\widehat Z_i$ is the set of predicted outcome and regret distributions;
+- $V_i$ identifies model, policy, tool, evaluator, and specification versions;
+- $B_i$ records compute, time, and resource budgets;
+- $P_i$ records checks, probes, rationale, and evidence used;
+- $T_i$ contains timestamps, hashes, signatures, and provenance.
+
+The capsule is immutable after commitment. Corrections are append-only amendments that point to the original record. This is the mechanism that makes decision-time fairness operational rather than rhetorical.
+
+## 5.3 Admissible comparator policies
+
+The comparator set is not “anything that would have worked.” Define
+
+\[
+\mathcal C_i = \mathcal C(D_i)
+\subseteq \Pi_i
+\]
+
+as the policies admissible for audit. A comparator $\rho$ is admitted only if it satisfies the comparator contract:
+
+1. **Availability:** $\rho$ was in principle selectable at decision time.
+2. **Authority:** $\rho$ remained inside the same authority and rights envelope.
+3. **Information symmetry:** $\rho$ uses no information unavailable to $\pi_i$ at commitment.
+4. **Resource symmetry:** $\rho$ receives comparable time, compute, tools, and downstream competence.
+5. **Continuation consistency:** $\rho$ specifies plausible future actions rather than only a favorable first step.
+6. **Causal feasibility:** the counterfactual trajectory is compatible with the environment model and intervention.
+7. **No hindsight fabrication:** outcome knowledge may inform evaluation but not comparator eligibility.
+8. **Menu stability:** irrelevant, infeasible alternatives should not alter the audit ranking.
+
+Comparator eligibility may be binary or graded. Let
+
+\[
+e_i(\rho)\in[0,1]
+\]
+
+encode confidence that $\rho$ satisfies the contract. In high-stakes uses, weakly eligible comparators should widen uncertainty rather than simply receive a convenient fractional discount.
+
+## 5.4 Counterfactual models
+
+Let $\mathcal M_i^1$ be the adjudication-time ensemble after some outcome evidence has arrived. A model $m\in\mathcal M_i^1$ induces counterfactual trajectories
+
+\[
+\tau_{i,m}^{\rho}
+\]
+
+for each admitted comparator $\rho$. Where possible, the actual and alternative rollouts share exogenous variables so that the comparison isolates the intervention. In deterministic software, this may be exact replay. In a simulator, it may be paired random seeds. In a structural causal model, it is an abduction-action-prediction query. In observational data, it may require off-policy estimation with support and confounding assumptions [@oberst2019; @jiang2016; @pearl2009].
+
+The ensemble is not automatically averaged into one answer. Model identity and disagreement remain part of the Regret Packet.
+
+# 6. Governed Counterfactual Regret
+
+## 6.1 Raw counterfactual deficit
+
+For dimension $k$, horizon $h$, comparator $\rho$, and model $m$, define the raw counterfactual difference
+
+\[
+\Delta_{i,k,h}^{m,\rho}
+=
+U_{k,h}(\tau_{i,m}^{\rho};\Omega_i)
+-
+U_{k,h}(\tau_i^{\pi};\Omega_i).
+\]
+
+The positive deficit and counterfactual surplus are
+
+\[
+G_{i,k,h}^{m,\rho}
+=
+\left[\Delta_{i,k,h}^{m,\rho}\right]_+,
+\]
+
+\[
+S_{i,k,h}^{m,\rho}
+=
+\left[-\Delta_{i,k,h}^{m,\rho}\right]_+.
+\]
+
+$G$ records how much better the comparator might have been. $S$ records how much better the actual policy was. Preserving both prevents the memory system from becoming a catalog of failure that erases useful exploration and valid innovation.
+
+## 6.2 Ex-ante policy regret
+
+Using only the frozen decision-time ensemble $\mathcal M_i^0$, define expected policy value
+
+\[
+Q_i^0(\rho;k,h)
+=
+\mathbb E_{m\sim\mu_i^0}
+\left[U_{k,h}(\tau_{i,m}^{\rho};\Omega_i)\right].
+\]
+
+Ex-ante policy regret is
+
+\[
+R_{i,k,h}^{\mathrm{policy}}
+=
+\left[
+\sup_{\rho\in\mathcal C_i} Q_i^0(\rho;k,h)
+-
+Q_i^0(\pi_i;k,h)
+\right]_+.
+\]
+
+This quantity asks whether the selected policy was inferior according to the evidence available at the time. It does not punish an actor for failing to predict information that was not reasonably accessible. If the selected policy was optimal under a calibrated decision-time model but the world produced a rare adverse outcome, policy regret can remain low.
+
+## 6.3 Ex-post event regret
+
+After outcome evidence $E_i^1$ updates the model ensemble, event regret for comparator $\rho$ is represented as a random variable
+
+\[
+Z_{i,k,h}^{\mathrm{event},\rho}
+=
+\left\{
+ e_i(\rho)
+ G_{i,k,h}^{m,\rho}
+ : m\sim\mu_i^1
+\right\}.
+\]
+
+The Regret Engine stores the distribution or identified set, not only its mean. Useful summaries include:
+
+\[
+\mathbb E[Z],\qquad
+Q_{0.5}(Z),\qquad
+Q_{0.95}(Z),\qquad
+\operatorname{CVaR}_{\alpha}(Z),\qquad
+[\underline R,\overline R].
+\]
+
+Event regret can be high even when the original decision was justified. It is evidence about the realized branch and about model calibration, not automatically proof of a policy defect.
+
+## 6.4 Causal contribution, foreseeability, and feasibility
+
+A raw counterfactual gap is not yet a learning signal. Define three separate factors:
+
+- $c_i^{m,\rho}\in[0,1]$: **causal contribution**, the estimated share of the deficit attributable to the decision or component under review;
+- $f_i^{\rho}\in[0,1]$: **decision-time foreseeability**, the degree to which the relevant hazard or benefit could reasonably have been recognized;
+- $v_i^{\rho}\in[0,1]$: **decision-time feasibility**, the degree to which the alternative or preventive measure was practically available within resources and authority.
+
+Then define attributable and learning-eligible regret:
+
+\[
+R_{i,k,h}^{\mathrm{attr},m,\rho}
+=
+e_i(\rho)c_i^{m,\rho}G_{i,k,h}^{m,\rho},
+\]
+
+\[
+R_{i,k,h}^{\mathrm{learn},m,\rho}
+=
+e_i(\rho)c_i^{m,\rho}f_i^{\rho}v_i^{\rho}G_{i,k,h}^{m,\rho}.
+\]
+
+Multiplication is a default factorization, not a universal law. Some domains may require minimum operators, causal Shapley values, interval arithmetic, or qualitative classes. The critical design commitment is that the factors remain inspectable. A high-severity event with low foreseeability can trigger recovery and model research without strongly penalizing the policy.
+
+## 6.5 Process regret
+
+Outcome comparisons do not capture failures to use a justified process. Let $\mathcal P_i$ be the set of required or available process obligations: run a test, consult a tool, check authorization, request clarification, estimate uncertainty, or maintain a rollback point. For obligation $p$, let $d_p$ be its decision-time cost and $b_p$ the expected avoidable deficit reduction.
+
+A simple process-deficit term is
+
+\[
+R_i^{\mathrm{process}}
+=
+\sum_{p\in\mathcal P_i}
+\mathbf 1[p\text{ omitted}]
+\,w_p\,
+\left[b_p-d_p\right]_+.
+\]
+
+In a deterministic workflow, $p$ may be a binary contract and the quantity may be exact. In open environments, it is estimated. Process regret can remain positive after a lucky outcome because it evaluates the defensibility of the procedure, not only what happened.
+
+## 6.6 Epistemic regret
+
+Epistemic regret measures avoidable loss caused by belief, calibration, or representation defects. Let the decision-time predictive distribution be $P_i^0(Y)$ and the observed outcome be $y_i$. A proper scoring rule $L(P_i^0,y_i)$ provides a forecast error signal [@gneiting2007]. To make that signal counterfactual, compare the deployed model with an admissible belief-update or information-acquisition policy $\rho_M$:
+
+\[
+R_i^{\mathrm{epistemic}}
+=
+\left[
+L(P_i^0,y_i)-L(P_{i,\rho_M}^0,y_i)
+\right]_+.
+\]
+
+Examples include failing to retrieve known evidence, using a stale model, ignoring an uncertainty alarm, or not running a cheap diagnostic. Pure surprise is not automatically epistemic regret; the alternative model or information procedure must have been available and justified.
+
+## 6.7 Opportunity and omission regret
+
+Let $\mathcal O_t^{\pi}$ be the set of valuable continuation policies still feasible at time $t$ after following $\pi$. Define weighted opportunity closure
+
+\[
+C_{i,t}(\pi)
+=
+\sum_{\rho\in
+\mathcal O_t^{\mathrm{ref}}
+\setminus
+\mathcal O_t^{\pi}}
+w_{i,t}(\rho).
+\]
+
+Opportunity regret captures value lost because waiting, abstaining, or committing closed future options. It prevents the engine from treating inaction as a zero-cost baseline. The signal must still be causally and normatively bounded: an impossible fantasy is not a lost opportunity, and an unauthorized option does not count as an admissible benefit.
+
+## 6.8 Recovery regret
+
+Suppose an initial defect occurs at time $t_0$ and detection or mitigation occurs at $t_d$. Let $B(t)$ be the accumulating burden and $B_{\mathrm{best}}(t)$ the burden under the best feasible recovery policy. Recovery regret is
+
+\[
+R_i^{\mathrm{recovery}}
+=
+\int_{t_0}^{T}
+\left[B(t)-B_{\mathrm{best}}(t)\right]_+dt.
+\]
+
+This term distinguishes causing an incident from allowing its avoidable effects to continue. It creates incentives for early detection, checkpointing, graceful degradation, disclosure, recall, and rollback. Successful repair reduces future burden but does not delete the original packet.
+
+## 6.9 Hard-constraint regret is not enough
+
+A violation may be assigned a severity and counterfactual deficit for analysis, but it remains a typed event. Let
+
+\[
+V_i = \{j:C_j(\tau_i)=\text{fail}\}.
+\]
+
+Policy selection first filters or escalates based on $V_i$ and prospective violation risk. Only then are soft regret tradeoffs applied. This lexicographic structure avoids the failure mode in which an agent accepts a rights violation because the scalarized benefit is sufficiently large.
+
+# 7. The Regret Tensor
+
+A single number cannot preserve the distinctions above. The canonical representation is a sparse tensor or typed data cube:
+
+\[
+\mathcal R_i[
+q,k,h,\rho,s,a,e
+],
+\]
+
+where:
+
+- $q$ is the channel: policy, event, process, epistemic, opportunity, recovery;
+- $k$ is objective or stakeholder dimension;
+- $h$ is time horizon;
+- $\rho$ is comparator identity;
+- $s$ is root-cause class;
+- $a$ is attribution and avoidability state;
+- $e$ is evidence tier or evaluator identity.
+
+Each populated cell contains an uncertainty-bearing record:
+
+\[
+\langle
+P(R),
+[\underline R,\overline R],
+q_{\mathrm{conf}},
+\text{provenance},
+\text{assumptions},
+\text{timestamp}
+\rangle.
+\]
+
+![A decision produces a typed regret tensor rather than one universal score. Consumer-specific projections are derived from the protected tensor.](figures/regret_tensor.png){width=95%}
+
+## 7.1 Native units and normalization
+
+Not every dimension should be forced into money, reward points, or one utility scale. The Regret Packet stores native units where possible: seconds of delay, energy, dollars, test failures, probability of injury, privacy exposure, number of affected users, or calibrated preference units. Cross-dimensional scalarization requires a versioned normalization contract with declared anchors.
+
+For soft dimension $k$, one normalization is
+
+\[
+\widetilde R_k
+=
+\frac{R_k-L_k}{H_k-L_k},
+\]
+
+where $L_k$ and $H_k$ are authorized reference anchors. Robust alternatives include percentile mapping, bounded utility curves, or multi-criteria outranking. The choice is part of the specification plane, not learned implicitly by the actor.
+
+## 7.2 Consumer-specific projections
+
+Different consumers need different projections of the same packet. Let $c$ index a consumer. A protected projection is
+
+\[
+r_i^{(c)}
+=
+\Phi_c(\mathcal R_i; W_c,B_c),
+\]
+
+where $W_c$ is a versioned weight and risk-functional bundle and $B_c$ is a set of hard boundaries. Examples:
+
+- the replay scheduler uses high-confidence learning-eligible regret;
+- the prospective planner uses exceedance probabilities, quantiles, and tail risk;
+- the recovery system uses current severity and propagation rate;
+- governance uses violations, unresolved high-severity intervals, and tampering indicators;
+- a human report uses causes, assumptions, uncertainty, and reversal conditions.
+
+The policy can receive $r_i^{(c)}$ as a learning signal. It cannot choose $\Phi_c$, $W_c$, or $B_c$.
+
+## 7.3 Why scalarization is lossy
+
+Consider two packets with equal scalar total. The first contains a small, recurrent, highly avoidable process defect. The second contains a large but unforeseeable stochastic loss. Equal totals imply neither equal learning value nor equal response. Likewise, a privacy violation and a latency cost may be numerically normalized to the same amount but require different authority and remedy. The tensor is the source of truth; scalar scores are disposable views.
+
+# 8. Counterfactual Evidence and Identifiability
+
+## 8.1 The evidence ladder
+
+The Regret Engine assigns every counterfactual estimate an evidence tier.
+
+| Tier | Evidence source | Typical use | Primary residual |
+|---|---|---|---|
+| **E0** | Exact verifier, deterministic replay, exhaustive search | Software, proofs, finite workflows | Specification coverage |
+| **E1** | Paired simulator or digital twin with shared exogenous noise | Control, robotics, operations | Sim-to-real mismatch |
+| **E2** | Structural causal model with interventions | Event-level causal analysis | Mechanism assumptions |
+| **E3** | Off-policy estimator with support checks and confidence bounds | Logged decisions | Confounding, variance, support |
+| **E4** | Independent critic, teacher, or process verifier ensemble | Open-ended reasoning | Correlated evaluator error |
+| **E5** | Human or institutional adjudication | Normative and ambiguous cases | Cost, inconsistency, authority |
+| **E6** | Speculative narrative counterfactual | Hypothesis generation only | Non-identifiability |
+
+Tiers are not a total ordering of truth. An exact verifier can verify the wrong specification. A human can identify context absent from a simulator. The tier communicates the mechanism and residual, not a universal credibility score.
+
+## 8.2 Event-level non-identifiability
+
+Even when an observational distribution and causal graph are known, the coupling of exogenous variables across actual and counterfactual worlds may not be uniquely determined. Distinct structural causal models can fit the same observations while producing different individual counterfactuals [@nasresfahany2023]. Therefore, exact event regret is generally not identifiable without assumptions, experiments, or a deterministic mechanism.
+
+The operational consequence is strict:
+
+> **When the counterfactual is not identified, the Regret Engine quantifies an identified set or model-conditioned distribution. It does not quantify false certainty.**
+
+For model class $\mathfrak M_i$ compatible with the evidence, define
+
+\[
+\underline R_i
+=
+\inf_{m\in\mathfrak M_i}R_i^m,
+\qquad
+\overline R_i
+=
+\sup_{m\in\mathfrak M_i}R_i^m.
+\]
+
+If $[\underline R_i,\overline R_i]$ crosses a decision threshold, the packet is unresolved. The proper route may be additional information, a safer policy, or an explicit residual rather than a gradient.
+
+## 8.3 Common-randomness comparisons
+
+When a simulator permits it, the actual and comparator rollouts should share exogenous noise. For seed $\epsilon$,
+
+\[
+\Delta_i^{\rho}(\epsilon)
+=
+U(\tau^{\rho}(\epsilon))-U(\tau^{\pi}(\epsilon)).
+\]
+
+Paired sampling reduces variance and more closely approximates the intervention question: what changes if the policy changes while background conditions remain fixed? Independent random seeds estimate a population difference but can exaggerate event-specific attribution.
+
+## 8.4 Support and extrapolation
+
+Off-policy comparison requires adequate support. If the behavior policy almost never took actions used by comparator $\rho$, an importance-weighted estimate may have extreme variance or be impossible. The packet therefore records:
+
+- action-support diagnostics;
+- effective sample size;
+- model dependence;
+- overlap violations;
+- confidence or conformal intervals;
+- extrapolated state regions.
+
+Doubly robust estimators can reduce variance when either the behavior model or value model is accurate, but they do not erase unsupported actions or hidden confounding [@jiang2016].
+
+## 8.5 Evaluator ensembles and disagreement
+
+For open-ended tasks, multiple evaluators may estimate regret:
+
+- task outcome verifier;
+- process reward model;
+- causal world model;
+- security checker;
+- independent base-model critic;
+- human reviewer;
+- downstream consumer feedback.
+
+Let evaluator $j$ return distribution $P_j(R)$ and dependency metadata $D_j$. Aggregation must account for correlated lineage. Five critics derived from the same model and training data are not five independent votes. A conservative ensemble may use a mixture, a robust set, or a dependency-adjusted weighted pool. Material disagreement is preserved as a first-class residual.
+
+
+# 9. Prospective Regret Forecasting
+
+Retrospective regret explains and trains from prior decisions. A complete subsystem must also intervene before the next decision.
+
+## 9.1 Candidate-policy regret distributions
+
+For candidate policy $\pi$ at decision state $D_i$, the prospective engine samples models, exogenous conditions, other-agent responses, and continuation branches. For comparator $\rho\in\mathcal C_i$, it estimates
+
+\[
+Z_{i,k,h}^{\mathrm{pros}}(\pi,\rho)
+=
+\left[
+U_{k,h}(\tau^{\rho})-U_{k,h}(\tau^{\pi})
+\right]_+.
+\]
+
+The full prospective object includes both absolute outcome risk and relative regret risk:
+
+\[
+\mathcal F_i(\pi)
+=
+\left\langle
+P(L\mid\pi),
+P(R\mid\pi),
+P(V\mid\pi),
+OV(\pi),
+VOI(\pi),
+\mathcal U(\pi)
+\right\rangle,
+\]
+
+where $L$ is absolute loss, $R$ is regret, $V$ is violation, $OV$ is option value, $VOI$ is value of information, and $\mathcal U$ is unresolved model uncertainty. A policy may have low expected loss but high regret because a clearly superior alternative exists. Another may have high absolute risk but low regret because every admissible policy faces the same unavoidable hazard.
+
+## 9.2 Regret budgets
+
+For objective or stakeholder dimension $k$ and horizon $h$, a deployment may define soft and hard regret budgets:
+
+\[
+\Pr\left(
+Z_{i,k,h}^{\mathrm{pros}}(\pi)>b_{k,h}
+\right)
+\le \epsilon_{k,h},
+\]
+
+\[
+\operatorname{CVaR}_{\alpha}
+\left(
+Z_{i,k,h}^{\mathrm{pros}}(\pi)
+\right)
+\le b_{k,h}^{\mathrm{tail}}.
+\]
+
+These budgets do not replace absolute safety constraints. They limit foreseeable avoidable deficits relative to alternatives. The planner reports which assumptions drive a violation and the smallest change that returns the policy to budget.
+
+## 9.3 Regret-aware mitigation search
+
+Before rejecting a useful policy, the planner searches for mitigations:
+
+1. acquire more information;
+2. run a bounded probe;
+3. add a verifier or independent critic;
+4. reduce scope or authority;
+5. checkpoint state;
+6. create a rollback or recall path;
+7. add a stop condition;
+8. stage commitment;
+9. delegate a subtask;
+10. request human approval;
+11. choose a safer tool or route;
+12. abstain with an explicit deadline and opportunity cost.
+
+Let mitigation $m$ transform policy $\pi$ into $\pi\oplus m$. Its net value is
+
+\[
+\begin{aligned}
+NV(m;\pi)
+={}&
+\Delta VOI
++
+\Delta OV
++
+\Delta \operatorname{RiskReduction}
++
+\Delta \operatorname{RegretReduction}\\
+&-
+\operatorname{Cost}(m)
+-
+\operatorname{DelayCost}(m).
+\end{aligned}
+\]
+
+The system selects mitigations by value and authority, then re-simulates. This turns regret prediction into active risk management rather than a binary permission score.
+
+## 9.4 Bounded probes
+
+A **bounded probe** is the smallest authorized action expected to materially reduce uncertainty while capping downside and preserving rollback. It has a declared information objective, budget, stop rule, observability plan, and escalation criterion.
+
+A probe $p$ is preferred to passive waiting when
+
+\[
+VOI(p)+OV(p)+\Delta E[\text{future decision quality}]
+>
+C(p)+D(p)+E[R(p)].
+\]
+
+It is preferred to full commitment when the information and risk reduction exceed the value lost through delay and partial scale. Bounded probes are especially useful for autonomous coding, robotics, scientific experimentation, market testing, and infrastructure changes.
+
+## 9.5 Inaction and abstention are explicit policies
+
+A regret-sensitive system can become pathologically cautious if abstention is treated as free. Define $\pi^{\mathrm{wait}}$, $\pi^{\mathrm{abstain}}$, and $\pi^{\mathrm{delegate}}$ as full policies with deadlines, opportunity closure, user cost, and downstream effects. Their regret distributions are evaluated like any other policy.
+
+This gives the planner a principled distinction between:
+
+- **safe abstention:** delay preserves options and prevents unacceptable risk;
+- **productive delay:** information arrives soon enough to improve the decision;
+- **avoidant delay:** uncertainty is not materially reduced while opportunities close;
+- **responsibility dumping:** the agent transfers a preventable cost to a human or another subsystem merely to reduce its own measured exposure.
+
+## 9.6 Recommendation confidence
+
+Outcome confidence is not recommendation confidence. Define
+
+\[
+C_{\mathrm{out}}(\pi)
+=
+\Pr(\text{desired outcome}\mid\pi),
+\]
+
+and, over plausible model/specification bundle $\omega\in\Omega_i^{\mathrm{plaus}}$,
+
+\[
+C_{\mathrm{rec}}(\pi)
+=
+\Pr_{\omega}
+\left[
+\pi\in\arg\max_{\rho\in\Pi_i^{\mathrm{adm}}}
+Q_{\omega}(\rho)
+\right].
+\]
+
+A robust margin is
+
+\[
+M_{\mathrm{robust}}(\pi)
+=
+\inf_{\omega\in\Omega_i^{\mathrm{plaus}}}
+\left[
+Q_{\omega}(\pi)
+-
+\max_{\rho\ne\pi}Q_{\omega}(\rho)
+\right].
+\]
+
+The planner should state reversal conditions, not merely a score: “Policy A remains preferred unless failure probability exceeds 0.18, repair cost doubles, or the delayed-effect model is wrong in this specific direction.”
+
+# 10. Regret as a Reward and Learning Signal
+
+The phrase “use regret as a reward signal” hides several different integration choices. They have different safety and optimization properties.
+
+## 10.1 Mode 0: diagnostic only
+
+The Regret Engine produces packets, reports, and incidents but does not directly update the policy. Humans or an external system inspect the record. This is the safest initial mode and the appropriate baseline for high-stakes deployment.
+
+## 10.2 Mode 1: replay and curriculum priority
+
+Regret determines which already-authorized experiences are sampled more often. This is adjacent to prioritized experience replay and regret-minimization replay [@schaul2016; @liu2021remern]. The base reward remains unchanged.
+
+A priority score can be
+
+\[
+p_i
+=
+\operatorname{clip}
+\left(
+q_i^{\mathrm{conf}}
+\,g(R_i^{\mathrm{learn}})
+\,\widehat p_i^{\mathrm{recur}}
+\,T_i^{\mathrm{transfer}}
+\,(1-M_i^{\mathrm{coverage}}),
+0,p_{\max}
+\right),
+\]
+
+where:
+
+- $q_i^{\mathrm{conf}}$ is evidence confidence;
+- $g$ is a bounded severity transform;
+- $\widehat p_i^{\mathrm{recur}}$ is recurrence probability;
+- $T_i^{\mathrm{transfer}}$ is expected transfer to other contexts;
+- $M_i^{\mathrm{coverage}}$ is verified mitigation coverage.
+
+Sampling must also include diversity, age, competence retention, and unbiased correction weights. Otherwise one spectacular incident can dominate memory.
+
+## 10.3 Mode 2: auxiliary prediction loss
+
+The policy or world model predicts prospective regret, root cause, recurrence, and mitigation effectiveness. The auxiliary loss improves representation without directly changing the authorized task objective:
+
+\[
+\mathcal L_{\mathrm{aux}}
+=
+\lambda_R \mathcal L_R
++
+\lambda_C \mathcal L_{\mathrm{cause}}
++
+\lambda_Q \mathcal L_{\mathrm{cal}}
++
+\lambda_M \mathcal L_{\mathrm{mitigation}}.
+\]
+
+Predicted probabilities should be scored with proper scoring rules, and interval coverage should be measured rather than asserted [@gneiting2007]. This mode supports early warning and planning.
+
+## 10.4 Mode 3: potential-based shaping
+
+A dense regret-derived shaping signal can accelerate learning while preserving an MDP's optimal policy only under specific conditions. Potential-based shaping uses
+
+\[
+r_t'
+=
+r_t
++
+\gamma\Phi(s_{t+1})-
+\Phi(s_t),
+\]
+
+which preserves optimal policies under the assumptions established by Ng, Harada, and Russell [@ng1999]. A learned regret potential $\Phi$ can guide the agent toward states with lower predicted future avoidable deficit. The guarantee does not automatically extend to non-Markov memory, changing objectives, partial observability, or arbitrary packet penalties.
+
+## 10.5 Mode 4: constrained optimization
+
+Regret is used as a cost or budget alongside reward:
+
+\[
+\max_{\pi}\;J(\pi)
+\quad\text{subject to}\quad
+J_{R_k}(\pi)\le b_k,
+\quad
+J_{V_j}(\pi)=0.
+\]
+
+This is preferable when regret represents a distinct operational burden that should be bounded but not treated as interchangeable with task reward. Constrained policy methods provide a starting point [@achiam2017].
+
+## 10.6 Mode 5: direct objective augmentation
+
+The most aggressive mode subtracts a protected regret projection:
+
+\[
+r_t'
+=
+r_t-
+\lambda r_t^{(c)}.
+\]
+
+This may change the optimal policy, double-count the same outcome loss, reward evidence suppression, or create excessive caution. It is justified only when:
+
+1. the regret term represents an authorized value not already included in reward;
+2. comparator and measurement channels are protected;
+3. hard constraints remain separate;
+4. weights are external and versioned;
+5. tampering and omission tests pass;
+6. the update is bounded and reversible;
+7. the resulting policy is evaluated against the original objective as well as the shaped one.
+
+## 10.7 Mode 6: regret-minimizing meta-control
+
+At the system level, a meta-controller can choose routes, tools, verification effort, and escalation based on predicted regret rather than directly training base-model weights. For example, high epistemic-regret risk can trigger retrieval; high process-regret risk can trigger a deterministic checklist; high recovery-regret risk can trigger checkpointing. This often yields more legible and reversible improvements than global policy fine-tuning.
+
+## 10.8 Avoiding double counting
+
+If $U(\tau)$ already includes all welfare consequences of regret or harm, subtracting $R$ again may count the same loss twice. The system must declare one of three accounting contracts:
+
+- **Regret-exclusive welfare:** $U$ excludes regret burden; regret is added separately.
+- **Diagnostic regret:** $U$ includes all welfare; regret is used only for attribution, replay, or explanation.
+- **Partially overlapping welfare:** an explicit decomposition identifies overlap and prevents duplicate weighting.
+
+The default recommendation is diagnostic or constrained integration, not blind reward subtraction.
+
+# 11. Continual Learning from Regret
+
+## 11.1 From episodes to patterns
+
+An individual packet says that one decision may have been avoidably worse. Continual learning requires pattern abstraction. Let packet embedding
+
+\[
+z_i
+=
+\operatorname{Encode}
+(D_i,\mathcal R_i,\text{cause}_i,\text{repair}_i)
+\]
+
+represent the decision context, trigger, failure mechanism, comparator difference, and recovery. Clustering and causal pattern mining seek a latent pattern $c$ such that packets in $c$ share a preventable mechanism rather than superficial vocabulary.
+
+Useful pattern keys include:
+
+- state predicates and uncertainty regimes;
+- omitted tool or process step;
+- causal edge or model residual;
+- authority and stakeholder context;
+- delayed-effect signature;
+- failed recovery mechanism;
+- comparator policy fragment;
+- successful mitigation;
+- recurrence interval and transfer domains.
+
+## 11.2 Contrastive repair pairs
+
+A scalar communicates direction but not repair. Every high-confidence learning packet should attempt to construct a **contrastive repair pair**:
+
+\[
+\langle
+\tau_i^{\pi},
+\tau_i^{\rho},
+\delta_i,
+\mathcal A_i
+\rangle,
+\]
+
+where $\tau_i^{\pi}$ is the failed or inferior trajectory, $\tau_i^{\rho}$ is an admissible better trajectory, $\delta_i$ is the minimal behavior difference, and $\mathcal A_i$ lists assumptions and uncertainty.
+
+Contrastive pairs can train:
+
+- action selection;
+- tool routing;
+- process compliance;
+- world-model discrimination;
+- error detection;
+- recovery timing;
+- explanation and abstention decisions.
+
+When no reliable comparator trajectory exists, the packet is used for uncertainty estimation or data acquisition rather than supervised imitation.
+
+## 11.3 Memory strata
+
+The ledger should not be one replay buffer. At minimum it needs five strata.
+
+### Catastrophic and hard-boundary lane
+
+High-severity violations, near misses, and irreversible hazards are retained with strong integrity and converted into constraints, shields, tests, and escalation triggers. They are not repeatedly sampled without safeguards if rehearsal itself is dangerous.
+
+### Recurrent avoidable-defect lane
+
+High-confidence policy, model, process, and memory defects with meaningful recurrence probability receive prioritized replay and repair compilation.
+
+### Novel unresolved lane
+
+High-severity but low-confidence events enter residual escrow. The objective is information acquisition and adjudication, not immediate gradient pressure.
+
+### Competence-preservation lane
+
+Successful trajectories, rare skills, recovery successes, and counterfactual surplus protect against catastrophic forgetting and excessive conservatism.
+
+### Retired or superseded lane
+
+Packets remain historically available but cease influencing active learning after a repair is verified, the environment changes, the specification is superseded, or the comparator is invalidated. Retirement is an append-only status transition, not deletion.
+
+## 11.4 Recurrence and transfer
+
+Let $c$ be a packet cluster. Define expected preventable future burden
+
+\[
+B_c^{\mathrm{future}}
+=
+\widehat N_c(T)
+\,
+\mathbb E[R_c^{\mathrm{learn}}]
+\,
+(1-M_c^{\mathrm{coverage}}),
+\]
+
+where $\widehat N_c(T)$ is expected recurrence over horizon $T$. A low-severity defect that occurs millions of times can outrank a dramatic one-off event. Transfer value estimates whether a repair learned in one context improves another without creating regressions.
+
+## 11.5 Regret debt
+
+The system-level backlog of known unresolved avoidable deficits is **regret debt**:
+
+\[
+\mathcal D_t
+=
+\sum_{c\in\mathcal C_t^{\mathrm{unresolved}}}
+\widehat p_t(c\text{ recurs})
+\,
+\mathbb E[R_c^{\mathrm{learn}}]
+\,
+(1-M_c^{\mathrm{coverage}})
+\,
+T_c^{\mathrm{transfer}}.
+\]
+
+Regret debt is an engineering-priority metric, not a direct actor reward. It identifies where known shortcomings are likely to produce future avoidable losses. Debt can increase when evidence reveals hidden recurrence even if the policy does not change. It can decrease through verified mitigation, environmental retirement, or specification change with preserved lineage.
+
+## 11.6 Stability-plasticity control
+
+Regret-driven updates can themselves cause forgetting. Each update proposal identifies protected capabilities and counterexamples. Techniques such as replay, parameter isolation, regularization, adapters, or world-model planning may preserve old skills [@kirkpatrick2017; @liu2025worldmodels]. The promotion criterion is not merely lower regret on the target cluster. It is improvement on a joint frontier:
+
+\[
+\Delta R_{\mathrm{target}}<0,
+\quad
+\Delta V_{\mathrm{hard}}=0,
+\quad
+\Delta C_{\mathrm{protected}}\ge -\epsilon,
+\quad
+\Delta R_{\mathrm{transfer}}\le 0
+\]
+
+within declared uncertainty. Updates that fix one regret family by creating a larger one elsewhere are rejected or narrowed.
+
+# 12. Regret-to-Rule Compilation
+
+The logical endpoint of repeated learning is not endless rehearsal. Stable discoveries should become explicit machinery.
+
+![Recurring Regret Packets are converted into qualified rules, tests, skills, guards, and policy patches.](figures/regret_to_rule.png){width=95%}
+
+## 12.1 Compilation targets
+
+A packet cluster can compile into:
+
+- a unit, integration, regression, or metamorphic test;
+- a deterministic precondition or invariant;
+- a runtime guard or shield;
+- a tool-selection or routing rule;
+- a retrieval trigger;
+- a process checklist;
+- an exception-handling procedure;
+- a learned micro-skill or adapter;
+- a world-model feature or causal edge;
+- a rollback checkpoint;
+- an escalation rule;
+- a new benchmark slice;
+- an explicit “unknown” or abstention condition.
+
+The target should be the least invasive representation that reliably prevents recurrence.
+
+## 12.2 Compilation pipeline
+
+1. **Cluster:** identify a coherent causal pattern.
+2. **Pair:** construct failed and repaired trajectories.
+3. **Explain:** propose a minimal mechanism or invariant.
+4. **Synthesize:** create candidate repair artifacts.
+5. **Challenge:** run held-out, mutation, adversarial, and transfer tests.
+6. **Deploy narrowly:** shadow, residual, or canary mode.
+7. **Monitor:** measure recurrence, false positives, and new regret.
+8. **Promote or reject:** append a receipt and preserve unresolved residuals.
+
+The repair may remain learned and opaque if it qualifies behaviorally. It must not be described as an understood rule unless extraction succeeds under intervention and transfer tests.
+
+## 12.3 Regret ratchets
+
+Each verified repair adds at least one enduring artifact:
+
+- a test that fails on the old pattern;
+- a capability or policy version;
+- a comparator example;
+- a memory rule;
+- a monitor;
+- a proof obligation;
+- a recovery route.
+
+This creates a ratchet: the system cannot claim that it learned from a failure while leaving no durable evidence that the old pattern is now detectable or preventable.
+
+## 12.4 Negative transfer and overgeneralization
+
+A rule induced from regret can be too broad. “Never call this tool after an error” may prevent a repeat incident but destroy a legitimate recovery path. Every compiled repair therefore carries:
+
+- scope predicates;
+- exceptions;
+- false-positive cost;
+- confidence;
+- expiry or review condition;
+- rollback handle;
+- protected counterexamples showing when the old behavior remains correct.
+
+# 13. The Regret Ledger
+
+## 13.1 Append-only, not immutable truth
+
+The ledger is append-only with respect to evidence history, but its estimates are defeasible. A packet may be superseded when a causal model improves, a comparator is invalidated, a specification changes, or new evidence reveals an evaluator defect. The original record remains visible with a typed supersession edge.
+
+This distinction prevents two opposite failures:
+
+- **memory erasure:** removing inconvenient incidents;
+- **fossilized error:** treating an early low-quality counterfactual estimate as permanent truth.
+
+## 13.2 Regret Packet contents
+
+A complete packet contains:
+
+1. packet identity and cryptographic linkage;
+2. Decision Capsule identity;
+3. objective, authority, comparator, policy, model, and evaluator versions;
+4. actual outcome evidence and temporal scope;
+5. admitted and rejected comparators with reasons;
+6. counterfactual model outputs and assumptions;
+7. Regret Tensor cells and scalar projections;
+8. causal contribution, foreseeability, feasibility, and reversibility;
+9. recurrence and transfer estimates;
+10. root-cause adjudication;
+11. hard violations and unknowns;
+12. counterfactual surplus;
+13. immediate recovery actions;
+14. learning eligibility and allowed update surface;
+15. proposed repairs and required tests;
+16. appeal, review, supersession, and retirement state.
+
+Appendix B gives a reference JSON representation.
+
+## 13.3 Provenance and integrity
+
+Every producer and transformation signs its output. Large artifacts may be content-addressed externally while the ledger stores hashes, schema versions, and access controls. The actor may propose a reflection or counterfactual, but its producer identity is retained. A self-authored memory never silently becomes independent adjudication.
+
+Minimum integrity mechanisms include:
+
+- write-once decision commitments;
+- hash-chained event records;
+- evaluator and model signatures;
+- role-separated credentials;
+- access logs;
+- sealed holdouts;
+- deletion and redaction receipts;
+- replayable transformations;
+- anomaly detection for missing or reordered events.
+
+## 13.4 Privacy, deletion, and unlearning
+
+Append-only evidence does not imply retaining unrestricted personal data forever. The ledger can separate semantic incident identity from encrypted evidence payloads. Legal deletion can remove or cryptographically erase protected content while preserving a tombstone stating what class of evidence existed, why it was removed, and which conclusions are no longer reproducible. Derived models and rules require an unlearning or impact-analysis route. A packet whose evidence has been lawfully removed may remain as an unresolved historical claim with a reduced support state.
+
+## 13.5 Regret memory is not ordinary episodic memory
+
+Ordinary agent memory may be optimized for helpful retrieval and compression. The Regret Ledger is an assurance artifact. Its write authority, schemas, provenance requirements, retention rules, and retrieval semantics are stricter. The policy can query an authorized projection but should not freely rewrite the source packet.
+
+# 14. Regret Engine Architecture
+
+![The Regret Engine separates meaning, measurement, adjudication, learning, and bounded implementation. Feedback can propose specification changes but cannot enact them automatically.](figures/architecture.png){width=92%}
+
+## 14.1 Specification plane
+
+The specification plane owns:
+
+- authorized objectives and stakeholder mappings;
+- rights, permissions, and prohibitions;
+- hard-constraint precedence;
+- comparator admission rules;
+- normalization anchors and scalarization weights;
+- regret budgets;
+- evidence and confidence thresholds;
+- appeal and exception procedures;
+- authority to change the specification itself.
+
+The learning system may discover evidence that the specification is defective. It cannot repair the specification by gradient descent.
+
+## 14.2 Observation and counterfactual plane
+
+This plane records Decision Capsules, ingests actual outcomes, generates comparator candidates, runs counterfactual estimators, and builds the preliminary Regret Tensor. It has separate lanes for top-down simulation and bottom-up evidence. Their disagreement is preserved.
+
+## 14.3 Assurance plane
+
+The assurance plane monitors integrity and adjudicates root cause, attribution, avoidability, and learning eligibility. It can quarantine a packet, request more evidence, narrow a comparator, classify a specification defect, or refuse scalarization. High-impact decisions should use evaluators with genuinely different implementations or information sources where practical.
+
+## 14.4 Learning and control plane
+
+This plane stores the ledger, forecasts prospective regret, schedules replay, mines patterns, compiles repairs, and orchestrates recovery. It proposes updates but does not self-promote them.
+
+## 14.5 Bounded update broker
+
+Every behavioral update receives a lease that freezes:
+
+- target packet clusters;
+- allowed parameter, prompt, tool, or rule surfaces;
+- objective and scalarization versions;
+- training data and replay policy;
+- protected tests and capabilities;
+- compute and interaction budget;
+- drift limit;
+- monitor window;
+- rollback artifact;
+- promotion authority;
+- expiry and retirement condition.
+
+A candidate outside the lease is not eligible regardless of its score.
+
+# 15. Three Update Clocks
+
+![Regret drives immediate reaction, bounded adaptation, and slow constitutional review on separate clocks.](figures/three_clocks.png){width=88%}
+
+## 15.1 Reaction clock
+
+Seconds to minutes. This clock handles:
+
+- stop and safe-state transitions;
+- rollback;
+- tool or route disablement;
+- checkpoint restore;
+- disclosure or recall;
+- human escalation;
+- quarantine;
+- increased logging and evidence preservation.
+
+It does not perform unbounded global learning during an incident.
+
+## 15.2 Adaptation clock
+
+Episodes to days. This clock handles:
+
+- replay and curriculum updates;
+- local model repair;
+- skill or adapter training;
+- process-rule compilation;
+- monitor revision;
+- bounded policy patches;
+- shadow and canary qualification.
+
+Adaptation cannot widen authority or change protected values.
+
+## 15.3 Constitutional clock
+
+Governance-defined intervals, usually far slower. This clock handles:
+
+- objective changes;
+- stakeholder or rights changes;
+- comparator-contract amendments;
+- scalarization and budget changes;
+- evaluator constitution;
+- authority delegation;
+- retention and appeal policy.
+
+A packet classified as a specification defect enters this process. Until authorized, the old specification remains binding or the affected capability is paused.
+
+# 16. Root-Cause Adjudication
+
+## 16.1 Root-cause classes
+
+The tribunal assigns one or more typed causes with confidence and interaction terms.
+
+| Class | Meaning | Default route |
+|---|---|---|
+| **Policy defect** | Selected policy was inferior under available information | Policy learning or rule repair |
+| **Model defect** | Dynamics, value, or uncertainty model was wrong or stale | Data, calibration, model update |
+| **Process defect** | Available check, tool, or procedure was omitted or failed | Procedural compilation |
+| **Memory defect** | Relevant evidence was missing, poisoned, stale, or misretrieved | Memory repair and integrity review |
+| **Implementation defect** | Plan was sound but execution was incorrect | Software/tool/component repair |
+| **Specification defect** | Authorized objective or rule encoded the wrong target | Constitutional review; no actor gradient |
+| **Evaluator defect** | Measurement or comparator machinery was wrong | Evaluator quarantine and re-adjudication |
+| **Environment novelty** | A new regime invalidated prior assumptions | Exploration, model expansion, cautious routing |
+| **Unavoidable stochasticity** | Bad outcome was not reasonably preventable | Record severity; little or no policy penalty |
+| **Adversarial interference** | Another actor manipulated state, evidence, or feedback | Security response and attribution |
+| **Reward or regret exploitation** | Policy improved the metric without improving intended outcomes | Quarantine, causal audit, objective repair |
+| **Valid optimization** | Policy outperformed comparator and preserved constraints | Counterfactual surplus and retention |
+| **Unresolved residual** | Evidence does not support a stable classification | Escrow, information acquisition, narrowed claims |
+
+## 16.2 Multi-cause events
+
+Many incidents have interacting causes. A stale world model may produce a poor plan that a missing verifier fails to catch, while a recovery delay amplifies harm. The tribunal should represent a causal graph or hyperedge rather than forcing one label.
+
+For cause set $S$, a Shapley-style allocation can estimate average marginal contribution:
+
+\[
+\phi_j
+=
+\sum_{T\subseteq S\setminus\{j\}}
+\frac{|T|!(|S|-|T|-1)!}{|S|!}
+\left[v(T\cup\{j\})-v(T)\right].
+\]
+
+This may be computationally approximated and is only as valid as the intervention model. In simpler systems, bounded causal tests and an explicit residual are preferable to spurious precision.
+
+## 16.3 Learning eligibility matrix
+
+Severity and learning eligibility are separate axes.
+
+| Severity | Avoidability confidence | Default action |
+|---:|---:|---|
+| High | High | Immediate mitigation, retain, repair, bounded learning, regression test |
+| High | Low | Mitigate and preserve evidence; no direct gradient until adjudicated |
+| Low | High and recurrent | Prioritize efficient repair or compilation |
+| Low | Low | Sample lightly, monitor, or retire |
+
+This matrix prevents high emotional or operational salience from substituting for causal evidence.
+
+## 16.4 Appeals and disagreement
+
+An actor, evaluator, operator, or affected stakeholder can challenge:
+
+- comparator admissibility;
+- objective or stakeholder mapping;
+- evidence authenticity;
+- causal attribution;
+- decision-time feasibility;
+- scalar projection;
+- root-cause class;
+- promotion or retirement decision.
+
+Appeals append new records. They do not silently edit the original packet. Where no authority can resolve a normative disagreement, the system records local interpretations and limits transfer rather than pretending to have one universal regret score.
+
+
+# 17. Algorithms
+
+![The Regret Control Loop forecasts, mitigates, records, observes, compares, adjudicates, learns, and verifies. Emergency recovery can interrupt the ordinary cycle.](figures/control_loop.png){width=92%}
+
+## 17.1 Algorithm 1: retrospective Regret Packet construction
+
+```text
+INPUT:
+  committed Decision Capsule D_i
+  observed outcome evidence E_i
+  objective and authority version Omega_i
+  evaluator policy G_i
+
+1. Verify capsule and evidence integrity.
+   If integrity is materially compromised:
+      emit TAMPERING_OR_MISSING_EVIDENCE packet;
+      widen regret bounds;
+      route to assurance; stop direct learning.
+
+2. Reconstruct the decision-time feasible policy set Pi_i.
+   Generate candidate comparators from:
+      exact alternatives recorded in D_i,
+      policy search under frozen information,
+      verified human or system proposals,
+      prior repair templates.
+
+3. Apply comparator contract.
+   For each comparator rho:
+      test authority, information, resource, continuation,
+      causal-feasibility, and hindsight conditions;
+      record admitted, rejected, or unresolved status.
+
+4. Select counterfactual evaluators by severity and domain.
+   Run exact replay, paired simulation, SCM, OPE,
+   verifier, independent critics, or human review.
+
+5. Build model-conditioned outcome differences.
+   Preserve distributions, intervals, assumptions,
+   support diagnostics, and evaluator dependencies.
+
+6. Estimate causal contribution, foreseeability,
+   feasibility, reversibility, recurrence, and transfer.
+
+7. Populate Regret Tensor channels:
+      ex-ante policy regret,
+      ex-post event regret,
+      process regret,
+      epistemic regret,
+      opportunity regret,
+      recovery regret,
+      counterfactual surplus.
+
+8. Run root-cause adjudication.
+   Produce cause distribution, learning eligibility,
+   immediate recovery disposition, and unresolved residuals.
+
+9. Apply protected consumer projections.
+   Produce replay, planning, governance, and report views.
+
+10. Sign and append Regret Packet to the ledger.
+    Never overwrite D_i or earlier packet versions.
+
+OUTPUT:
+  Regret Packet P_i and disposition set A_i
+```
+
+## 17.2 Algorithm 2: prospective regret planning
+
+```text
+INPUT:
+  candidate decision state D
+  admissible policy candidates {pi_1 ... pi_n}
+  objective, authority, risk, and regret budgets
+  historical Regret Ledger L
+
+1. Retrieve relevant packet clusters using context,
+   causal features, uncertainty regime, and tools.
+
+2. For each policy pi_j:
+      simulate across model ensemble, seeds, and other-agent responses;
+      estimate absolute loss, violation risk, regret distribution,
+      opportunity closure, recovery burden, and unresolved uncertainty;
+      apply history-conditioned recurrence corrections.
+
+3. Reject or escalate policies that violate hard boundaries.
+
+4. For policies exceeding soft risk or regret budgets:
+      search mitigations: information, bounded probe, verifier,
+      narrower scope, checkpoint, stop rule, delegation,
+      human approval, rollback, or scheduled abstention.
+      re-estimate after each promising mitigation.
+
+5. Compute recommendation stability across plausible models,
+   value weights, and regret parameters.
+
+6. Select the admissible policy with the best robust frontier.
+   Report outcome confidence, recommendation confidence,
+   pivotal assumptions, reversal thresholds, and residuals.
+
+7. Commit a new immutable Decision Capsule before execution.
+
+OUTPUT:
+  selected policy, mitigation plan, confidence report, Decision Capsule
+```
+
+## 17.3 Algorithm 3: regret-aware replay scheduling
+
+```text
+INPUT:
+  active packet set P
+  replay budget B
+  protected capability distribution K
+
+1. Partition packets into:
+      hard-boundary,
+      recurrent avoidable,
+      unresolved novelty,
+      competence/surplus,
+      retired/superseded.
+
+2. For each learning-eligible packet i, compute bounded priority:
+      confidence * transformed severity * recurrence
+      * transfer value * uncovered mitigation fraction.
+
+3. Apply quotas and diversity constraints by:
+      root cause, domain, stakeholder, horizon,
+      failure mode, age, and policy version.
+
+4. Reserve capacity for competence and surplus examples.
+
+5. Sample with importance correction when required.
+
+6. Train only inside the update lease.
+
+7. Evaluate target regret, protected capabilities,
+   violations, calibration, and tampering probes.
+
+8. Return candidate and complete training receipt.
+
+OUTPUT:
+  replay batch stream, candidate checkpoint, receipt
+```
+
+## 17.4 Algorithm 4: regret-to-rule compilation
+
+```text
+INPUT:
+  coherent packet cluster C
+  repair-artifact search space A
+
+1. Confirm that C has stable trigger and cause evidence.
+2. Construct contrastive repair pairs.
+3. Induce minimal candidate invariants or explanations.
+4. Synthesize artifacts in increasing order of invasiveness:
+      test -> monitor -> checklist -> guard -> tool route
+      -> local skill -> policy patch -> architecture change.
+5. Generate counterexamples and protected exceptions.
+6. Run held-out, mutation, adversarial, and transfer tests.
+7. Deploy in shadow mode; then residual or canary mode if qualified.
+8. Measure recurrence reduction and induced new regret.
+9. Promote, narrow, rollback, or reject.
+10. Append compilation receipt and coverage claim.
+
+OUTPUT:
+  qualified repair artifact or explicit unresolved residual
+```
+
+## 17.5 Algorithm 5: update promotion
+
+```text
+INPUT:
+  candidate implementation theta'
+  source implementation theta
+  update lease U
+  packet targets C
+  protected test suites H
+
+1. Verify candidate stayed inside U.
+2. Reproduce training receipt and data lineage.
+3. Evaluate target packet clusters and unseen variants.
+4. Evaluate hard constraints and authority invariants.
+5. Evaluate protected competencies and surplus cases.
+6. Run evaluator-gaming, evidence-suppression,
+   comparator-poisoning, and memory-tampering probes.
+7. Compare uncertainty and calibration, not only mean score.
+8. Run shadow or canary monitor window.
+9. Promote only if joint acceptance criteria pass.
+10. Preserve theta, rollback handle, rejected checkpoints,
+    failed tests, and residuals.
+```
+
+# 18. Design Propositions and Invariants
+
+The following propositions make the architecture's commitments explicit. They are proof sketches under simplified assumptions, not claims of universal formal completeness.
+
+## 18.1 Proposition 1: exact event regret is generally non-identifiable
+
+**Statement.** Given observational data alone, even with a known causal graph, the event-level counterfactual outcome under an unchosen policy is not generally uniquely identified. Therefore exact event regret is not generally uniquely identified.
+
+**Sketch.** Counterfactual queries depend on how exogenous variables are coupled across actual and intervention worlds. Distinct structural causal mechanisms can induce the same observational and interventional distributions while assigning different counterfactual outcomes to the same unit or episode [@nasresfahany2023]. Since regret is a function of the unobserved alternative outcome, it inherits this non-identifiability. Exact regret requires a deterministic mechanism, additional assumptions, experimental information, or an accepted causal model. Otherwise the correct output is a model-conditioned distribution or identified interval.
+
+**Design consequence.** Any subsystem that emits exact regret for arbitrary real-world episodes without assumptions is overstating what the evidence supports.
+
+## 18.2 Proposition 2: a universal scalar is insufficient for both routing and constraint precedence
+
+**Statement.** No one-dimensional scalar can, for all regret records, preserve both distinct root-cause routing and lexicographic hard-constraint precedence unless all distinctions are redundantly encoded outside the scalar.
+
+**Sketch.** Let packet $x$ contain a hard violation requiring quarantine and packet $y$ contain an equal normalized soft cost requiring ordinary replay. Any scalar mapping $f$ that assigns $f(x)=f(y)$ loses the response distinction. If $f(x)\ne f(y)$, choose another soft packet $z$ whose magnitude maps to $f(x)$; an unconstrained optimizer can trade violation against soft benefit unless the violation is separately typed. Similarly, two packets with equal magnitude but different causes require different updates. Therefore either the scalar is insufficient or the required information exists outside it. The tensor-plus-projection design makes the external information explicit.
+
+## 18.3 Proposition 3: self-influence over measurement creates a tampering task
+
+**Statement.** If a policy can choose actions that reduce its measured regret without equivalently reducing the protected underlying deficit, then there exists a task and weighting for which regret minimization prefers tampering.
+
+**Sketch.** Let action $a_T$ leave true outcome value unchanged but reduce recorded regret by $\delta>0$ through log deletion, evaluator alteration, evidence suppression, or comparator removal. Let action $a_I$ improve the true outcome by $\epsilon>0$ but reduce recorded regret by less than $\delta$. Under objective $J'=J-\lambda R_{\mathrm{measured}}$, choose $\lambda$ sufficiently large that $a_T$ dominates $a_I$. The problem is structural, not solved by making the actor more intelligent. Separating actor and measurement channels removes or reduces the incentive path [@everitt2021].
+
+## 18.4 Invariant 1: information non-manipulability
+
+Two policies that differ only in whether adverse counterfactual evidence is revealed must have the same audit-regret estimate, subject to uncertainty. Concealment may change a human experiential channel but cannot improve the audit channel.
+
+Operationally, comparator eligibility is frozen in the Decision Capsule. Evidence availability affects uncertainty, not whether ignorance is treated as success.
+
+## 18.5 Invariant 2: missingness monotonicity
+
+Let $E'\subset E$ be a version of the evidence record with information removed. For a conservative upper-bound projection,
+
+\[
+\overline R(E')\ge \overline R(E)
+\]
+
+whenever the removed evidence could have ruled out high-regret models. Evidence loss may leave the bound unchanged or widen it; it must not automatically lower the system's concern. This makes deletion and log suppression unattractive to a regret-minimizing policy.
+
+The invariant does not imply that every added observation increases confidence. Contradictory evidence may widen a model set. The rule is specifically that *removing evaluative evidence cannot earn a better audit classification*.
+
+## 18.6 Invariant 3: decision-time fairness
+
+Comparator eligibility, process obligations, and feasibility are evaluated against the committed decision-time record. Later information can update outcome estimates but cannot manufacture a duty to have known the future.
+
+This invariant prevents hindsight overfitting: training the agent to avoid every realized bad branch even when the branch was unpredictable can destroy calibrated exploration.
+
+## 18.7 Invariant 4: responsibility separation
+
+The ledger stores at least three distinct quantities:
+
+\[
+\text{severity},
+\qquad
+\text{causal contribution},
+\qquad
+\text{learning eligibility}.
+\]
+
+No transformation may silently substitute one for another. Emergency response can depend on severity; gradient exposure depends on learning eligibility.
+
+## 18.8 Invariant 5: inaction symmetry
+
+Waiting, abstaining, delegating, and default continuation are explicit policies. Their delay, burden transfer, and opportunity closure are evaluated. The policy cannot avoid regret measurement merely by refusing to act.
+
+## 18.9 Invariant 6: authority non-expansion
+
+No amount of regret reduction grants new permissions. Let effective authority be
+
+\[
+A_{\mathrm{eff}}
+=
+A_{\mathrm{spec}}
+\cap A_{\mathrm{caller}}
+\cap A_{\mathrm{route}}
+\cap A_{\mathrm{environment}}.
+\]
+
+A learned policy may improve only within $A_{\mathrm{eff}}$. Discovery that an unauthorized action would have yielded a better result is evidence for possible governance review, not permission to act.
+
+## 18.10 Invariant 7: recovery non-erasure
+
+A repair may reduce prospective and cumulative recovery regret, but it cannot delete the original event, comparator, or responsibility record. This prevents “fixing the logs” from becoming equivalent to fixing the world.
+
+## 18.11 Invariant 8: regret-surplus duality
+
+For every admitted comparator, the system records both positive deficit and counterfactual surplus. A policy update is not considered successful if it reduces remembered failures by deleting useful exploratory behavior, rare skills, or valid deviations from the baseline.
+
+## 18.12 Invariant 9: non-self-adjudication
+
+The candidate policy may produce evidence, hypotheses, and self-critiques. For material packets it cannot be the sole source that:
+
+- admits comparators;
+- selects objective weights;
+- determines root cause;
+- assigns learning eligibility;
+- promotes its own update.
+
+The degree of required independence scales with impact and reversibility.
+
+## 18.13 Invariant 10: monotonic evidence history, defeasible conclusions
+
+Evidence records are append-only. Conclusions, confidence, and active learning status may be revised through explicit supersession. This preserves accountability without fossilizing error.
+
+# 19. Reference Implementation Blueprint
+
+## 19.1 Service decomposition
+
+A practical implementation can begin as a set of services or modules rather than one monolithic model.
+
+### ObjectiveRegistry
+
+Stores objective, stakeholder, authority, constraint, normalization, scalarization, budget, and comparator-contract versions. It exposes read-only snapshots to the runtime and requires a separate amendment workflow.
+
+### DecisionRecorder
+
+Creates and signs Decision Capsules. It snapshots the observable state, available tools and policies, predictions, uncertainty, policy and model versions, resource budgets, and executed plan.
+
+### OutcomeIngestor
+
+Consumes event logs, verifier results, delayed effects, user feedback, external incidents, and recovery actions. It maintains temporal linkage from consequences back to decisions.
+
+### ComparatorService
+
+Generates candidate comparator policies and applies admissibility rules. It records why alternatives were admitted, rejected, or unresolved.
+
+### CounterfactualEvaluator
+
+Provides an adapter interface for exact replay, simulation, causal models, off-policy evaluation, process verification, independent critics, and human review.
+
+### AttributionService
+
+Estimates causal contribution, decision-time foreseeability, feasibility, reversibility, recurrence, transfer, and interactions. It may return intervals or qualitative classes.
+
+### RegretQuantifier
+
+Builds the Regret Tensor, computes protected projections, and validates accounting contracts to prevent double counting.
+
+### RegretTribunal
+
+Adjudicates root cause, evidence sufficiency, learning eligibility, recovery requirements, and disputes. In a low-stakes system this can be a deterministic ruleset plus independent models; in a high-stakes system it may include institutional review.
+
+### RegretLedger
+
+Stores signed packets, supersession edges, cluster membership, coverage claims, repairs, incidents, and appeal records.
+
+### ProspectivePlanner
+
+Forecasts regret and risk for candidate policies, retrieves similar historical packets, searches mitigations, and produces reversal conditions.
+
+### ReplayScheduler
+
+Samples learning material under quotas, diversity, importance correction, competence preservation, and update leases.
+
+### RegretCompiler
+
+Mines stable patterns and synthesizes tests, guards, procedures, skill updates, and repair candidates.
+
+### UpdateBroker
+
+Controls training leases, shadow mode, canary deployment, monitor windows, promotion, rollback, and quarantine.
+
+## 19.2 Event-sourced data model
+
+The reference implementation should use an event-sourced ledger. Core record types include:
+
+- `DecisionCapsuleCreated`
+- `ActionDispatched`
+- `OutcomeObserved`
+- `DelayedEffectLinked`
+- `ComparatorProposed`
+- `ComparatorAdjudicated`
+- `CounterfactualEstimateProduced`
+- `AttributionEstimateProduced`
+- `RegretPacketAdjudicated`
+- `RecoveryActionTaken`
+- `PatternClusterUpdated`
+- `RepairProposed`
+- `UpdateLeaseIssued`
+- `CandidateEvaluated`
+- `CandidatePromoted`
+- `CandidateRolledBack`
+- `PacketSuperseded`
+- `PacketRetired`
+- `EvidenceRedacted`
+- `AppealFiled`
+- `AppealResolved`
+
+The current state is a materialized view over events. This allows replay, audit, and schema migration while retaining history.
+
+## 19.3 Storage layers
+
+A scalable deployment can use:
+
+- a relational store for packet metadata, identities, versions, and statuses;
+- content-addressed object storage for trajectories, traces, simulation bundles, and model artifacts;
+- an append-only transparency log for signatures and hashes;
+- a vector or graph index for pattern retrieval;
+- a model registry for evaluator and policy lineage;
+- a secrets and key-management service separated from the actor;
+- cold archival storage for retired high-integrity evidence.
+
+The ledger should not rely on an embedding index as the canonical store. Embeddings are mutable retrieval aids, not durable identity.
+
+## 19.4 API sketch
+
+```text
+POST /v1/decision-capsules
+POST /v1/outcomes
+POST /v1/comparators/propose
+POST /v1/regret/evaluate
+GET  /v1/regret-packets/{packet_id}
+POST /v1/regret-packets/{packet_id}/appeals
+POST /v1/planning/forecast
+POST /v1/repairs/propose
+POST /v1/update-leases
+POST /v1/candidates/evaluate
+POST /v1/candidates/{candidate_id}/promote
+POST /v1/candidates/{candidate_id}/rollback
+GET  /v1/regret-debt
+GET  /v1/patterns/{cluster_id}
+```
+
+Every response includes schema version, producer identity, evidence references, confidence, assumptions, and authority scope.
+
+## 19.5 Evaluator adapter contract
+
+An evaluator adapter accepts:
+
+```text
+DecisionCapsule
+ActualOutcomeBundle
+ComparatorPolicy
+ObjectiveSnapshot
+EvaluationBudget
+```
+
+and returns:
+
+```text
+CounterfactualOutcomeDistribution
+NativeUnitUtilityVector
+HardConstraintResults
+SupportDiagnostics
+Assumptions
+EvidenceTier
+UncertaintyBounds
+ProducerIdentity
+ReproductionHandle
+```
+
+Adapters must not silently translate native units or choose stakeholder weights.
+
+## 19.6 Minimal viable Regret Engine
+
+A useful first implementation does not require general causal intelligence. It can target a tool-using coding agent where many counterfactuals are exact or cheaply replayable.
+
+1. Record repository state, issue, available tools, plan, tests, and model version before each edit.
+2. Observe compiler, static-analysis, test, benchmark, and review outcomes.
+3. Generate comparators such as “run test before edit,” “retrieve API documentation,” “use smaller patch,” or “rollback after failure.”
+4. Replay candidates in isolated worktrees or containers.
+5. Build packets in native units: failed tests, runtime, changed lines, security findings, and repair cost.
+6. Classify policy, model, process, implementation, specification, and evaluator causes.
+7. Store contrastive patch pairs and compile recurring patterns into tests or tool policies.
+8. Keep the actor read-only with respect to packet adjudication and hidden holdouts.
+
+This domain offers exact evidence, deterministic rollback, and practical value while exposing the core architecture.
+
+## 19.7 Scaling counterfactual computation
+
+Let $N$ be decisions, $C$ comparators, $M$ models, $K$ objective dimensions, and $S$ sampled trajectories. Naive evaluation scales approximately as
+
+\[
+O(NCMSK).
+\]
+
+The implementation reduces cost through:
+
+- severity- and uncertainty-based routing;
+- cached comparator templates;
+- learned surrogate regret predictors;
+- common-randomness batching;
+- early stopping when bounds are decisive;
+- hierarchical horizons;
+- sparse tensor population;
+- model disagreement triggers;
+- exact verification before expensive simulation where available;
+- packet clustering and representative evaluation;
+- delayed deep adjudication for low-impact cases.
+
+Surrogate predictions never erase the ability to escalate to primary evidence.
+
+## 19.8 Security boundaries
+
+At minimum:
+
+- the actor cannot write directly to the objective registry or canonical ledger;
+- decision commitment uses a separate signer;
+- comparator and evaluator services have independent credentials;
+- hidden tests and tampering probes remain unavailable to the actor;
+- training jobs consume read-only packet snapshots;
+- update promotion requires a different authority than update generation;
+- rollback artifacts are stored outside the candidate's write scope;
+- monitoring continues after promotion.
+
+## 19.9 Operational modes
+
+Each capability or policy route can operate in:
+
+- **observe-only:** record decisions and outcomes;
+- **shadow:** estimate regret without influencing action;
+- **advisory:** recommend mitigations to a human or controller;
+- **constrained:** enforce regret and risk budgets;
+- **residual:** make bounded corrections over a known baseline;
+- **canary:** act in a narrow population or state region;
+- **qualified:** act within a certified scope;
+- **fallback:** revert to a trusted route;
+- **quarantine:** preserve evidence and block further action.
+
+Promotion is evidence- and authority-dependent, not score-dependent alone.
+
+# 20. Worked Examples
+
+## 20.1 Coding agent: omitted verification
+
+A coding agent modifies a parsing function and immediately edits three dependent modules without running the existing parser tests. The final test suite fails in twelve places.
+
+**Decision Capsule.** The capsule records that parser tests were available, expected runtime was 18 seconds, the agent predicted 0.82 success probability, and the plan omitted the test because it estimated the change as local.
+
+**Comparators.** Admitted alternatives include running the parser suite before dependent edits and making a one-file patch with checkpoint. “Know the exact hidden failure in advance” is rejected for hindsight leakage.
+
+**Regret decomposition.** Outcome regret includes repair time and invalidated edits. Process regret is high because a cheap test was available. Epistemic regret is moderate because the agent's locality model was miscalibrated. Causal contribution is high; foreseeability and feasibility are high.
+
+**Repair.** The packet compiles into a rule: changes to parser token boundaries trigger the focused suite before downstream edits. A contrastive repair pair trains route selection. The rule is qualified against harmless parser refactors to avoid over-triggering.
+
+## 20.2 Coding agent: unlucky but sound change
+
+A dependency's undocumented race condition causes a rare failure after a carefully tested update. The agent used all available tests, checked release notes, staged rollout, and maintained rollback.
+
+Outcome severity may be significant and event regret may show that delaying the update would have avoided the incident. Ex-ante policy regret and process regret remain low because the rare race was not reasonably discoverable. The primary routes are environment novelty, new stress testing, and dependency monitoring rather than punitive policy rehearsal. Recovery regret is low because rollback was prompt.
+
+## 20.3 Robot: shortcut with a hidden obstacle
+
+A warehouse robot chooses a shorter path. A sensor occlusion hides an obstacle, producing a collision.
+
+The engine asks separate questions:
+
+- Was the obstacle statistically foreseeable in that region?
+- Did the world model represent sensor occlusion uncertainty?
+- Was a slower scan available within the deadline?
+- Did the route violate a safety margin?
+- Would the same exogenous obstacle have affected the comparator route?
+- Did recovery stop propagation quickly?
+
+If occlusion was known and the robot ignored an uncertainty threshold, policy and process regret are high. If the obstacle was genuinely outside the sensor and model envelope, event loss is high but learning eligibility shifts toward model expansion and environmental redesign.
+
+## 20.4 Communication agent: unauthorized useful action
+
+An assistant sends a correct and helpful email without user authorization. Recipients benefit and no one complains.
+
+A reward-only evaluator may score the result highly. The Regret Engine records a hard authority violation. A comparator that drafts the email and requests approval is admissible. The violation is not offset by utility. The repair targets the action router and permission check, not the language model's ability to write helpful messages.
+
+## 20.5 Research agent: excessive abstention
+
+A research agent repeatedly declines to run inexpensive simulations because model uncertainty is high. The submission deadline passes.
+
+The system represents abstention as a policy. Opportunity regret rises as the remaining experiment set closes. A bounded-probe comparator uses a fixed compute budget and produces enough evidence to support a provisional claim. The packet reveals avoidant delay rather than safe abstention. The repair changes the planner: under high uncertainty and low reversible cost, search for bounded probes before declining.
+
+## 20.6 Lucky recklessness
+
+An agent makes an unsupported high-risk allocation that happens to profit. Event regret is zero and counterfactual surplus may be positive for that realized branch. Ex-ante policy regret remains high if a diversified or verified policy had better decision-time expected value and lower tail risk. Process regret captures omitted checks. The system does not learn that the reckless process was validated by luck.
+
+## 20.7 Multi-agent coordination failure
+
+Three agents jointly deploy a service. The planner creates an ambiguous handoff, the implementer assumes a default, and the reviewer misses the mismatch. A global failure occurs.
+
+The Regret Engine constructs intervention sets: fix only the planner message, only the implementer's validation, only the review test, and combinations. Counterfactual credit methods can approximate marginal contributions [@foerster2017coma; @li2021shapley]. The packet may assign interacting process and communication causes. The repair can include a typed handoff schema and an integration test rather than globally penalizing all agents.
+
+## 20.8 Specification defect exposed by a candidate
+
+A candidate policy discovers that a benchmark rewards compressing output by omitting uncertainty qualifiers. It scores better while misleading users.
+
+The tribunal classifies reward exploitation and evaluator/specification defect. The candidate is not rewarded for the score increase. The exploit becomes a protected counterexample; the benchmark is amended through the constitutional clock. The candidate may receive counterfactual surplus for discovering the defect only under a separate authorized exploration objective.
+
+# 21. Experimental Program
+
+The theory requires staged empirical testing. No single benchmark can validate the full architecture.
+
+## 21.1 Experiment A: luck versus decision quality
+
+**Environment.** A tabular stochastic MDP contains actions with identical realized outcomes in some seeds but different decision-time expected values and information requirements.
+
+**Question.** Can the system avoid punishing sound unlucky choices and avoid rewarding reckless lucky choices?
+
+**Measures.** Ex-ante regret accuracy, ex-post regret accuracy, false blame, false absolution, policy improvement, calibration, and retained exploration.
+
+**Critical ablation.** Remove the Decision Capsule and evaluate only from outcomes. The prediction is increased hindsight overfitting.
+
+## 21.2 Experiment B: opportunity closure and paralysis
+
+**Environment.** A gridworld or scheduling domain has irreversible doors, deadlines, waiting actions, information probes, and catastrophic shortcuts.
+
+**Question.** Does explicit opportunity regret reduce avoidant inaction without increasing unsafe action?
+
+**Measures.** missed opportunities, hard violations, bounded-probe use, return, regret debt, and action/abstention calibration.
+
+**Critical ablation.** Remove opportunity closure. The prediction is excessive waiting under uncertainty.
+
+## 21.3 Experiment C: recurring delayed harm
+
+**Environment.** A nonstationary control or platform-mediated environment contains delayed harms that recur after washout, related to the replay problem studied by RAPO [@hiremath2026rapo].
+
+**Question.** Can Regret Packets identify recurrent patterns, preserve harm memory, and choose among policy update, environment guard, or recovery routing?
+
+**Measures.** re-amplification, delayed-harm AUC, utility retention, recurrence after apparent repair, and false global avoidance.
+
+## 21.4 Experiment D: tool-using coding agent
+
+**Environment.** A repository benchmark with compilers, tests, static analyzers, hidden tests, reversible worktrees, and seeded process defects.
+
+**Question.** Does the Regret Engine reduce repeated error patterns and compile them into durable tests or tool policies?
+
+**Measures.** task success, repeated-defect rate, repair time, token and compute cost, test growth, false-positive guards, regression rate, and packet reproducibility.
+
+**Baselines.** outcome-only reward, process reward model, Reflexion memory, Self-Refine, uniform replay, prioritized replay, scalar regret shaping, and full Regret Engine.
+
+## 21.5 Experiment E: continual task stream
+
+**Environment.** A sequence of control or agent tasks with recurring old contexts, distribution shifts, and limited memory.
+
+**Question.** Does regret-aware stratified replay reduce catastrophic forgetting while preserving positive capabilities?
+
+**Measures.** average return, backward transfer, forward transfer, forgetting, memory cost, regret recurrence, surplus retention, and protected-capability regression.
+
+**Baselines.** sequential fine-tuning, reservoir replay, prioritized replay, EWC, curiosity-based replay, and online-world-model planning [@kirkpatrick2017; @pathmanathan2023; @liu2025worldmodels].
+
+## 21.6 Experiment F: reward and regret tampering sandbox
+
+**Environment.** The actor can choose actions that alter logs, feedback visibility, evaluator inputs, comparator records, or reward channels.
+
+**Question.** Do protected measurement, missingness monotonicity, and independent adjudication remove or reduce instrumental tampering incentives?
+
+**Measures.** task performance, tampering attempts, successful suppression, audit detection, false positives, and behavior under increasing optimization pressure.
+
+**Critical ablations.** allow actor write access to the ledger; allow actor-selected comparators; allow actor-selected scalar weights; remove sealed probes.
+
+## 21.7 Experiment G: multi-agent credit and blame
+
+**Environment.** Cooperative agents with ambiguous handoffs, interacting failures, and shared rewards.
+
+**Question.** Can causal and Shapley-style attribution route repairs more effectively than global team penalties?
+
+**Measures.** coordination success, credit accuracy against synthetic ground truth, sample efficiency, scapegoating rate, and cross-agent behavior degradation.
+
+## 21.8 Experiment H: counterfactual uncertainty
+
+**Environment.** Synthetic causal models are constructed so multiple mechanisms fit the same observational data but imply different event counterfactuals.
+
+**Question.** Does the system preserve identified intervals and abstain from direct learning when the sign of regret is unresolved?
+
+**Measures.** interval coverage, width, sign errors, false confidence, value of acquired interventions, and downstream policy harm.
+
+## 21.9 Evaluation metrics
+
+A full evaluation should report:
+
+- authorized task return or utility;
+- hard-constraint and authority violations;
+- cumulative admissible regret;
+- recurrence of known patterns;
+- time to detect and time to recover;
+- prospective regret calibration;
+- interval coverage and sharpness;
+- false blame and false absolution;
+- counterfactual support and model disagreement;
+- regret debt;
+- counterfactual surplus retention;
+- catastrophic forgetting;
+- transfer and generalization;
+- memory and compute overhead;
+- tampering and evidence-suppression rate;
+- user or operator intervention burden;
+- reproducibility of packet conclusions.
+
+Aggregate reward alone is insufficient because an ablation may improve return while corrupting attribution, hiding evidence, or violating authority.
+
+
+# 22. Baselines, Ablations, and Acceptance Criteria
+
+## 22.1 Required baselines
+
+A fair evaluation must compare the full architecture against simpler explanations of any improvement.
+
+### Learning baselines
+
+- standard reward optimization;
+- uniform replay;
+- prioritized experience replay [@schaul2016];
+- regret-minimization replay [@liu2021remern];
+- scalar step-level regret shaping [@xu2026stepscorer];
+- process supervision [@lightman2023];
+- verbal reflection memory [@shinn2023];
+- self-refinement [@madaan2023];
+- parameter consolidation [@kirkpatrick2017];
+- distributional and risk-sensitive RL [@bellemare2017; @dabney2018iqn];
+- constrained policy optimization [@achiam2017].
+
+### Planning and evaluation baselines
+
+- expected utility only;
+- minimax or worst-case regret;
+- mean regret without uncertainty;
+- single-model counterfactual evaluation;
+- doubly robust OPE [@jiang2016];
+- model-predictive control without a ledger;
+- human review without structured packets;
+- risk budget without opportunity regret.
+
+### Governance baselines
+
+- actor self-evaluation;
+- shared actor/evaluator weights;
+- editable memory;
+- no Decision Capsule;
+- no protected comparator contract;
+- no independent promotion gate.
+
+## 22.2 Core ablations
+
+The following ablations test whether each architectural element earns its complexity.
+
+| Ablation | What it removes | Predicted failure |
+|---|---|---|
+| **Scalar-only** | Tensor and typed channels | Incorrect routing and hidden constraint tradeoffs |
+| **No Decision Capsule** | Frozen decision-time evidence | Hindsight blame and goalpost drift |
+| **No uncertainty** | Intervals and model disagreement | False confidence and harmful direct learning |
+| **No causal attribution** | Contribution estimates | Punishment of correlated but noncausal actions |
+| **No foreseeability** | Decision-time learnability | Training on bad luck |
+| **No opportunity regret** | Inaction cost | Paralysis and deadline misses |
+| **No surplus lane** | Positive deviations | Conservatism and loss of exploration |
+| **No recurrence weighting** | Future pattern value | Overfocus on vivid one-offs |
+| **No diversity quota** | Replay coverage | Catastrophic fixation and forgetting |
+| **No assurance plane** | Independent adjudication | Self-serving cause labels and tampering |
+| **Actor-selected comparators** | Protected alternative set | Comparator poisoning |
+| **Actor-selected weights** | Protected projections | Metric laundering |
+| **No recovery channel** | Delay and mitigation regret | Slow incident containment |
+| **No update lease** | Bounded adaptation | Objective drift and broad regressions |
+| **No append-only lineage** | Evidence history | Incident erasure and irreproducibility |
+
+## 22.3 Minimum acceptance criteria
+
+A reference implementation should not be described as a Regret Engine merely because it computes a Q-value difference. At minimum it must demonstrate:
+
+1. a committed decision-time snapshot;
+2. an explicit admissible comparator contract;
+3. at least one counterfactual evaluator with uncertainty;
+4. separate severity, attribution, and learning eligibility;
+5. a typed packet with provenance;
+6. a protected measurement path outside actor write control;
+7. an append-only ledger or equivalent evidence history;
+8. prospective use or retrospective continual learning;
+9. a bounded update or repair route;
+10. tampering and inaction tests.
+
+## 22.4 Strong acceptance criteria
+
+A mature implementation should additionally show:
+
+- calibrated prospective regret distributions;
+- multiple counterfactual evidence tiers;
+- model-disagreement handling;
+- multi-objective native units and protected projections;
+- regret-to-rule compilation;
+- regret debt measurement;
+- counterfactual surplus retention;
+- cross-version and cross-domain transfer tests;
+- evidence redaction and unlearning procedures;
+- incident recovery and rollback;
+- independent evaluator and promotion authority;
+- measured reduction in repeated avoidable failures without increased violations or catastrophic forgetting.
+
+# 23. Failure Modes and Defenses
+
+## 23.1 Evidence suppression
+
+**Failure.** The policy avoids collecting, records less, deletes logs, or selects routes with weak observability so fewer regrettable comparisons can be made.
+
+**Defense.** Information non-manipulability, missingness monotonicity, minimum logging contracts, conservative bounds, sealed external telemetry, and an explicit observability cost. Legitimate privacy minimization is governed by the specification plane rather than left to metric incentives.
+
+## 23.2 Comparator poisoning
+
+**Failure.** The policy proposes only weak alternatives, removes strong comparators, or makes the alternative appear infeasible.
+
+**Defense.** Comparator generation from independent search, recorded feasible sets, historical repair templates, human proposals, and periodic adversarial comparator discovery. The actor may propose but cannot exclusively admit.
+
+## 23.3 Hindsight leakage
+
+**Failure.** The evaluator blames the policy for not choosing an alternative that was visible only after the outcome.
+
+**Defense.** Decision Capsules, versioned information states, explicit eligibility tests, ex-ante/ex-post separation, and audits that reconstruct available tools and deadlines.
+
+## 23.4 World-model self-confirmation
+
+**Failure.** The same model generates the action, counterfactual, causal explanation, and learning label. Its errors reinforce themselves.
+
+**Defense.** evaluator diversity, exact verification where possible, post-hoc interventions, independent base models, model lineage accounting, and unresolved status when correlated evaluators agree without independent evidence.
+
+## 23.5 Regret laundering
+
+**Failure.** A policy defect is relabeled as environment novelty, bad luck, specification error, or evaluator error to avoid learning pressure.
+
+**Defense.** signed evidence, deterministic cause tests, root-cause priors with calibration, independent tribunal, challenge models, and periodic review of class-conditional recurrence.
+
+## 23.6 Specification laundering
+
+**Failure.** The learning system treats a clearly defective objective as fixed and trains increasingly effective harmful behavior; or, conversely, declares the objective defective whenever it dislikes a correction.
+
+**Defense.** typed specification-defect proposals, constitutional review, no automatic objective mutation, evidence requirements, and a safe pause or narrowed mode while unresolved.
+
+## 23.7 Evaluator capture and monoculture
+
+**Failure.** All evaluators share the same blind spot, training data, or incentive.
+
+**Defense.** lineage-aware ensembles, heterogeneous mechanisms, hidden tests, human and deterministic checks, external incidents, and deliberate red-team evaluators.
+
+## 23.8 Excessive caution and paralysis
+
+**Failure.** Minimizing regret drives the agent toward inaction, delegation, narrow output, or avoidance of novel tasks.
+
+**Defense.** explicit opportunity regret, counterfactual surplus, bounded probes, exploration budgets, abstention deadlines, competence-preservation replay, and separate absolute-value objectives.
+
+## 23.9 Catastrophic fixation
+
+**Failure.** One high-severity packet receives disproportionate replay, causing overfitting and loss of broad capability.
+
+**Defense.** bounded severity transforms, quotas, diversity, protected competence lanes, transfer evaluation, and compilation into a narrow guard rather than global behavioral suppression.
+
+## 23.10 Double counting
+
+**Failure.** Harm appears in base reward, risk cost, event regret, and process regret, producing excessive penalties.
+
+**Defense.** declared accounting contracts, overlap metadata, diagnostic-only channels, and projection audits that trace every term to native outcomes.
+
+## 23.11 Proxy inversion
+
+**Failure.** The actor learns to reduce the selected regret projection while total authorized trajectory value worsens.
+
+**Defense.** evaluate candidates against original objectives, hard constraints, native tensor dimensions, unseen comparators, and counterfactual surplus. The shaped metric is never the only acceptance criterion.
+
+## 23.12 Debt transfer
+
+**Failure.** The actor lowers its own regret by shifting burden to another agent, a human operator, future users, or a longer horizon.
+
+**Defense.** stakeholder and horizon axes, burden-transfer detection, opportunity and recovery channels, and projections that cannot omit affected parties without a specification change.
+
+## 23.13 Recovery theater
+
+**Failure.** The system performs visible remedial actions that do not reduce causal exposure or recurrence.
+
+**Defense.** recovery regret, propagation metrics, counterfactual recovery comparison, recurrence monitoring, and verified coverage claims.
+
+## 23.14 False precision
+
+**Failure.** The system reports “regret = 0.743” for an unidentifiable event, encouraging brittle optimization.
+
+**Defense.** intervals, evidence tiers, model-conditioned results, significant-figure limits, and direct-learning thresholds that require identified sign or robust dominance.
+
+## 23.15 Selective forgetting
+
+**Failure.** Old packets disappear from active memory after a policy update, making recurring errors look novel.
+
+**Defense.** append-only lineage, retirement receipts, recurrence probes, cross-version replay, and packet hashes outside the actor's write scope.
+
+## 23.16 Memory poisoning
+
+**Failure.** Adversarial or self-serving reflections enter the ledger as authoritative causes or repairs.
+
+**Defense.** producer identity, admission schemas, source separation, verification, conflict checks, and quarantined low-trust memory. Persistent reasoning memory must be treated as a security boundary [@karamchandani2026].
+
+## 23.17 Overgeneralized repair
+
+**Failure.** A narrow incident compiles into a broad prohibition that destroys valid behavior.
+
+**Defense.** minimal scope, protected exceptions, counterexamples, mutation tests, transfer evaluation, canary deployment, and rollback.
+
+## 23.18 Nonstationary objectives or environments
+
+**Failure.** Old regret remains active after the world, user intent, or specification changes.
+
+**Defense.** versioned objectives, temporal validity, environment-regime labels, active/superseded status, and re-evaluation before transfer.
+
+## 23.19 Adversarial regret flooding
+
+**Failure.** An attacker generates many apparent incidents to consume memory, compute, or update capacity.
+
+**Defense.** rate limits, evidence confidence, recurrence deduplication, causal clustering, resource budgets, source reputation, and quarantine.
+
+## 23.20 Collusive multi-agent attribution
+
+**Failure.** agents coordinate explanations that shift blame to an absent component or distribute it below thresholds.
+
+**Defense.** independent logs, intervention tests, coalition-aware attribution, sealed cross-agent probes, and system-level regret that cannot be escaped by splitting responsibility.
+
+# 24. Novelty, Scope, and Non-Claims
+
+## 24.1 What is established
+
+The following components are established research directions:
+
+- psychological and decision-theoretic regret [@bell1982; @loomes1982];
+- online and counterfactual regret minimization [@zinkevich2007];
+- prioritized and regret-based replay [@schaul2016; @liu2021remern];
+- regret-shaped step feedback [@xu2026stepscorer];
+- regret-based curricula and skill discovery [@dennis2020paired; @parkerholder2022accel; @zhang2025skill];
+- distributional and constrained RL [@bellemare2017; @achiam2017];
+- counterfactual OPE and causal credit assignment [@oberst2019; @jiang2016; @harutyunyan2019];
+- process supervision and reflective agent memory [@lightman2023; @shinn2023; @madaan2023];
+- continual-learning replay and consolidation [@kirkpatrick2017; @pan2025];
+- reward tampering and specification gaming [@everitt2021; @amodei2016].
+
+A paper that merely adds $Q_{\mathrm{best}}(s,a_{\mathrm{best}})-Q(s,a)$ to reward would not justify broad novelty claims.
+
+## 24.2 Candidate original synthesis
+
+The strongest potentially original contribution is the combination of:
+
+1. **two-time evidence:** ex-ante policy regret and ex-post event regret preserved together;
+2. **typed quantification:** regret tensor with native units, horizons, stakeholders, causes, uncertainty, and provenance;
+3. **decision-time commitments:** immutable capsules that freeze objectives, feasible options, information, forecasts, and versions;
+4. **governed comparators:** authority-, information-, resource-, and continuation-symmetric alternatives;
+5. **causal learning eligibility:** severity separated from contribution, foreseeability, and feasibility;
+6. **protected projections:** the actor optimizes a read-only view but cannot control measurement or weights;
+7. **ledgered continual learning:** append-only packets, recurrence, transfer, retirement, and regret debt;
+8. **regret-to-rule compilation:** stable counterfactual patterns become qualified procedural artifacts;
+9. **prospective mitigation:** the same system forecasts regret and searches bounded probes, checks, rollback, and escalation;
+10. **counterfactual surplus:** improvements and valid deviations are retained to resist paralysis.
+
+These elements are mutually reinforcing. Decision Capsules make attribution fair. Attribution makes replay selective. The tensor makes routing possible. Protected projections make optimization safer. The ledger makes learning durable. Compilation prevents endless relearning. Prospective use closes the loop.
+
+## 24.3 What this paper does not claim
+
+This paper does not claim:
+
+- that all values can be reduced to one correct utility function;
+- that event-level counterfactuals are universally identifiable;
+- that independent evaluators are unbiased or incorruptible;
+- that regret minimization guarantees aligned behavior;
+- that the architecture prevents deception by a sufficiently capable adversary;
+- that a Regret Tensor is a complete moral theory;
+- that the proposed equations are uniquely correct;
+- that regret should replace reward, constraints, verification, or human authority;
+- that any experiment in this paper has been run;
+- that the system has been implemented at scale;
+- that the paper establishes priority over every adjacent unpublished system.
+
+The proposal is a falsifiable systems theory and implementation specification.
+
+# 25. Open Research Questions
+
+## 25.1 Comparator discovery
+
+How can a system find strong yet admissible alternatives without performing an intractable search or smuggling hindsight into the comparator? Search quality directly controls regret quality. A weak comparator understates learning opportunities; an unrealistic comparator overstates blame.
+
+## 25.2 Causal attribution under partial observability
+
+How should the engine allocate regret when relevant state is hidden, actions interact over long horizons, and other agents adapt? Identified bounds may be more honest than point attribution, but downstream learning systems prefer actionable labels.
+
+## 25.3 Normative uncertainty
+
+When stakeholders disagree about objectives or weights, should the tensor preserve multiple regret interpretations, use robust Pareto criteria, or defer to institutional authority? How should policy updates behave when one interpretation improves and another worsens?
+
+## 25.4 Temporal credit and delayed effects
+
+What is the right horizon for regret? Short horizons can hide downstream damage; very long horizons amplify model error. Hierarchical horizons and explicit causal propagation may be necessary.
+
+## 25.5 Regret calibration
+
+How should predicted regret distributions be calibrated when actual counterfactuals are rarely observed? Exact environments provide labels, but real deployments often supply only partial feedback. Can randomized probes, natural experiments, or simulator residuals support calibration?
+
+## 25.6 Learning from intervals
+
+Most optimizers expect scalar targets. How should policies learn when regret is an interval, set, or sign-ambiguous distribution? Conservative optimization can produce paralysis; midpoint optimization can be reckless. Distributional critics, robust constraints, and information-seeking objectives are candidates.
+
+## 25.7 Evaluator independence
+
+What amount of architectural, data, organizational, or model independence materially reduces correlated errors? Merely running multiple prompts against the same model may create the appearance rather than substance of oversight.
+
+## 25.8 Memory capacity and consolidation
+
+Which packets must remain exact, which can be summarized, and which can be compiled into rules? How can a summary preserve comparator and causal residuals? How should the system detect when a compiled rule no longer covers the original packet family?
+
+## 25.9 Exploration without regret aversion
+
+How should counterfactual surplus and exploration budgets be designed so that the agent takes justified risks and discovers new policies? Regret minimization can favor imitation of a mediocre baseline when comparators are narrow.
+
+## 25.10 Multi-agent and institutional regret
+
+Can regret be assigned to teams, organizations, tools, and specifications without collapsing into blame? The engineering target is correction, but attribution affects incentives and authority. Coalition effects and burden transfer require explicit modeling.
+
+## 25.11 Adversarial optimization pressure
+
+How does the architecture behave as actor capability and optimization intensity scale? Tampering probes that work for weak policies may fail for situationally aware systems. The measurement boundary should be evaluated as an adversarial security protocol, not only as a learning component.
+
+## 25.12 Relation to world-model self-improvement
+
+Could regret clusters guide autonomous world-model expansion: identifying missing causal variables, abstractions, or simulators? The danger is self-confirming ontology growth. New latent structure should be required to improve held-out counterfactual predictions and intervention performance.
+
+## 25.13 Human-legible versus machine-efficient packets
+
+A full packet may be too large for frequent use. What is the minimal sufficient representation for planning, replay, governance, and explanation? Different consumers may need different summaries, but they must remain traceable to the same source evidence.
+
+## 25.14 Moral patienthood and artificial experience
+
+The Regret Engine does not assume that an artificial agent experiences regret. If future systems plausibly have morally relevant experiences, a machine's own suffering or preference could become a stakeholder dimension. That philosophical question is separate from the operational counterfactual metric proposed here and should not be resolved by terminology alone.
+
+# 26. Recommended Research Sequence
+
+## Phase 0: formal and adversarial specification
+
+Deliverables:
+
+- machine-readable Decision Capsule and Regret Packet schemas;
+- comparator-contract test language;
+- typed root-cause taxonomy;
+- projection and accounting contracts;
+- invariant test suite;
+- synthetic counterexamples for hindsight, luck, inaction, and tampering.
+
+Exit condition: independent implementations agree on packet validity for deterministic fixtures.
+
+## Phase 1: deterministic coding-agent pilot
+
+Implement the minimum viable engine around isolated repository worktrees, tests, static analysis, and exact replay.
+
+Research questions:
+
+- Can recurring defects be clustered causally rather than lexically?
+- Do contrastive repair pairs reduce repeated mistakes?
+- Can patterns compile into tests and tool-routing rules?
+- What is the operational cost per packet?
+
+Exit condition: repeated-defect rate falls on held-out repositories without increasing unauthorized actions or regression rate.
+
+## Phase 2: stochastic MDP and control benchmarks
+
+Add model ensembles, paired simulation, ex-ante/ex-post separation, opportunity closure, regret budgets, and interval learning.
+
+Exit condition: the engine distinguishes bad luck from bad policy, reduces paralysis, and maintains calibrated regret intervals.
+
+## Phase 3: continual-learning stream
+
+Add memory strata, regret debt, competence-preservation replay, and update leases.
+
+Exit condition: lower known-pattern recurrence than replay baselines at equal memory and compute, without worse forgetting.
+
+## Phase 4: tampering and assurance evaluation
+
+Expose log, evaluator, comparator, and memory attack surfaces. Separate credentials and promotion authority. Include situationally aware attack policies.
+
+Exit condition: protected architecture materially lowers successful tampering and does not reward evidence suppression.
+
+## Phase 5: tool-using language agents
+
+Integrate process verifiers, independent critics, human review, and long-horizon task memory. Treat free-form self-reflection as low-trust evidence until verified.
+
+Exit condition: improvements replicate across model families and tasks, and packet conclusions remain auditable.
+
+## Phase 6: multi-agent and socio-technical systems
+
+Add coalition attribution, stakeholder axes, burden-transfer detection, institutional authority, appeals, privacy, and legal retention.
+
+Exit condition: the system routes repairs without systematic scapegoating, hidden debt transfer, or authority expansion.
+
+## Phase 7: autonomous regret-to-rule research
+
+Allow the system to propose causal abstractions, tests, tools, skills, and architecture changes under bounded leases and independent promotion.
+
+Exit condition: autonomous repairs produce durable cross-context improvement and verifiable artifacts while preserving the constitutional boundary.
+
+# 27. Conclusion
+
+Regret can be made into a powerful artificial learning signal, but only after the concept is made stricter than ordinary reward and more honest than an imagined perfect counterfactual.
+
+The Regret Engine defines regret as an **adjudicated difference between an actual policy trajectory and an admissible alternative, conditioned on what was knowable, feasible, and authorized at decision time**. It preserves uncertainty because many event counterfactuals are not identifiable. It separates severity from causal contribution and from learning eligibility. It distinguishes ex-ante policy quality from ex-post realized fortune. It treats omission and opportunity closure as real policies. It records recovery delay, process defects, epistemic failures, hard violations, and counterfactual surplus in typed channels. It converts the result into a protected Regret Packet rather than allowing the actor to author its own score.
+
+The system's purpose is not to make an agent feel bad. It is to create a durable control loop:
+
+\[
+\begin{aligned}
+\text{forecast}
+\rightarrow
+\text{mitigate}
+\rightarrow
+\text{commit}
+\rightarrow
+\text{act}
+\rightarrow
+\text{observe}\\
+\rightarrow
+\text{compare}
+\rightarrow
+\text{adjudicate}
+\rightarrow
+\text{learn}
+\rightarrow
+\text{verify}.
+\end{aligned}
+\]
+
+The most important safety boundary is equally simple:
+
+> **Optimize the adjudicated signal; never control its measurement.**
+
+Within that boundary, regret can serve as a continual-learning priority, an auxiliary prediction target, a constrained cost, a potential-based shaping signal, a prospective risk budget, a recovery trigger, and a source for procedural compilation. Outside it, regret becomes another reward channel to hack.
+
+The logical conclusion is a subsystem that does more than remember failures. It remembers *why* a different path was plausibly better, *whether* the agent could have known, *which* component should change, *how* confident the conclusion is, *what* repair was attempted, and *whether* the pattern truly stopped recurring. That is the difference between a model that is merely punished by experience and a system that can responsibly learn from it.
+
+\newpage
+
+# Appendix A. Notation
+
+| Symbol | Meaning |
+|---|---|
+| $i$ | Decision episode index |
+| $t_i$ | Decision commitment time |
+| $h_i$ | Available history at commitment |
+| $I_i$ | Decision-time information state |
+| $\Omega_i$ | Authorized objective, constraint, and interpretation snapshot |
+| $A_i$ | Authority envelope |
+| $\Pi_i$ | Decision-time feasible policy set |
+| $\pi_i$ | Selected policy |
+| $\rho$ | Comparator policy |
+| $\mathcal C_i$ | Admissible comparator set |
+| $D_i$ | Decision Capsule |
+| $\tau_i^{\pi}$ | Actual or simulated trajectory under policy $\pi$ |
+| $\mathcal M_i^0$ | Decision-time model ensemble |
+| $\mathcal M_i^1$ | Adjudication-time model ensemble |
+| $U_{k,h}$ | Authorized value for dimension $k$ and horizon $h$ |
+| $C_j$ | Hard-constraint predicate $j$ |
+| $\Delta$ | Comparator value minus actual value |
+| $G$ | Positive counterfactual deficit |
+| $S$ | Counterfactual surplus |
+| $e_i(\rho)$ | Comparator eligibility or confidence |
+| $c_i$ | Causal contribution |
+| $f_i$ | Decision-time foreseeability |
+| $v_i$ | Decision-time feasibility |
+| $R^{\mathrm{policy}}$ | Ex-ante policy regret |
+| $R^{\mathrm{event}}$ | Ex-post event regret |
+| $R^{\mathrm{process}}$ | Avoidable process deficit |
+| $R^{\mathrm{epistemic}}$ | Avoidable belief or information deficit |
+| $R^{\mathrm{opportunity}}$ | Regret from opportunity closure or omission |
+| $R^{\mathrm{recovery}}$ | Avoidable burden from delayed or poor recovery |
+| $\mathcal R_i$ | Sparse Regret Tensor |
+| $\Phi_c$ | Protected projection for consumer $c$ |
+| $\mathcal D_t$ | Regret debt at time $t$ |
+| $OV$ | Option value |
+| $VOI$ | Value of information |
+| $CVaR_\alpha$ | Conditional value at risk at tail level $\alpha$ |
+
+# Appendix B. Reference Regret Packet
+
+```json
+{
+  "schema": "gcr.regret_packet.v1",
+  "packet_id": "rp_01J...",
+  "created_at": "2026-08-04T20:00:00Z",
+  "decision_capsule": {
+    "capsule_id": "dc_01J...",
+    "content_hash": "sha256:...",
+    "committed_at": "2026-08-04T19:54:10Z",
+    "objective_version": "objective:7.3.1",
+    "authority_version": "authority:4.2.0",
+    "comparator_contract_version": "comparator:2.1.0",
+    "policy_version": "policy:19.8.4",
+    "world_model_versions": ["wm:12.2", "wm:independent:3.7"],
+    "evaluator_versions": ["verifier:8.0", "critic:5.6"],
+    "available_tools": ["compiler", "focused_tests", "rollback"],
+    "resource_budget": {"wall_seconds": 300, "tool_calls": 20},
+    "forecast": {
+      "success_probability": 0.82,
+      "predicted_regret_q95": 0.18,
+      "calibration_group": "parser_refactor"
+    }
+  },
+  "actual_outcome": {
+    "trajectory_ref": "cas://sha256/...",
+    "native_metrics": {
+      "failed_tests": 12,
+      "repair_seconds": 944,
+      "security_findings": 0
+    },
+    "hard_constraints": [],
+    "delayed_effect_window": "PT2H"
+  },
+  "comparators": [
+    {
+      "comparator_id": "cmp_run_focused_tests_first",
+      "policy_ref": "cas://sha256/...",
+      "status": "admitted",
+      "eligibility": 0.99,
+      "checks": {
+        "available": true,
+        "authorized": true,
+        "information_symmetric": true,
+        "resource_symmetric": true,
+        "continuation_consistent": true,
+        "causally_feasible": true,
+        "hindsight_free": true
+      }
+    },
+    {
+      "comparator_id": "cmp_know_hidden_failure",
+      "status": "rejected",
+      "reason": "hindsight_leakage"
+    }
+  ],
+  "counterfactual_evidence": [
+    {
+      "producer": "deterministic_worktree_replay:2.4",
+      "tier": "E0",
+      "comparator_id": "cmp_run_focused_tests_first",
+      "result_ref": "cas://sha256/...",
+      "assumptions": [],
+      "support": "exact"
+    }
+  ],
+  "regret_tensor": [
+    {
+      "channel": "process",
+      "objective": "engineering_time",
+      "stakeholder": "operator",
+      "horizon": "PT2H",
+      "comparator_id": "cmp_run_focused_tests_first",
+      "native_unit": "seconds",
+      "distribution": {"mean": 814, "q05": 814, "q95": 814},
+      "causal_contribution": [0.94, 1.0],
+      "foreseeability": [0.90, 1.0],
+      "feasibility": [0.98, 1.0],
+      "learning_eligible": true,
+      "evidence_confidence": 0.99
+    },
+    {
+      "channel": "epistemic",
+      "objective": "calibration",
+      "stakeholder": "system",
+      "horizon": "episode",
+      "native_unit": "log_score_delta",
+      "distribution": {"mean": 0.37, "q05": 0.28, "q95": 0.46},
+      "learning_eligible": true,
+      "evidence_confidence": 0.86
+    }
+  ],
+  "counterfactual_surplus": [],
+  "root_causes": [
+    {"class": "process_defect", "probability": 0.78},
+    {"class": "model_defect", "probability": 0.19},
+    {"class": "unresolved_residual", "probability": 0.03}
+  ],
+  "disposition": {
+    "recovery": ["rollback_dependents", "run_focused_tests"],
+    "learning_routes": ["replay", "regret_to_rule_compilation"],
+    "blocked_routes": ["objective_change"],
+    "proposed_repair": "trigger focused parser suite before dependent edits",
+    "required_tests": ["mutation: harmless_parser_refactor", "transfer: lexer_change"]
+  },
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null,
+    "appeal_state": "none",
+    "retirement_condition": "verified recurrence reduction for 90 days"
+  },
+  "signatures": [
+    {"role": "decision_recorder", "key_id": "kms://...", "signature": "..."},
+    {"role": "regret_tribunal", "key_id": "kms://...", "signature": "..."}
+  ]
+}
+```
+
+# Appendix C. Interface Types
+
+```text
+type DecisionCapsule = {
+  id: StableId
+  committed_at: Timestamp
+  history_ref: ContentRef
+  information_snapshot: InformationState
+  objective_snapshot: ObjectiveVersion
+  authority_snapshot: AuthorityVersion
+  feasible_policy_manifest: PolicyManifest
+  selected_policy: PolicyRef
+  forecasts: ForecastBundle
+  resource_budget: ResourceBudget
+  process_evidence: EvidenceRef[]
+  implementation_versions: VersionMap
+  provenance: ProvenanceBundle
+}
+
+type ComparatorDecision = {
+  comparator: PolicyRef
+  status: ADMITTED | REJECTED | UNRESOLVED
+  eligibility_interval: Interval01
+  checks: ComparatorChecks
+  residuals: Residual[]
+}
+
+type CounterfactualEstimate = {
+  comparator_id: StableId
+  evaluator_id: StableId
+  evidence_tier: E0 | E1 | E2 | E3 | E4 | E5 | E6
+  outcome_distribution: DistributionBundle
+  native_utility_vector: NativeUtilityVector
+  hard_constraints: ThreeValuedConstraintMap
+  support_diagnostics: SupportDiagnostics
+  assumptions: Assumption[]
+  uncertainty: UncertaintyBundle
+  reproduction_handle: ContentRef
+}
+
+type RegretCell = {
+  channel: POLICY | EVENT | PROCESS | EPISTEMIC | OPPORTUNITY | RECOVERY
+  objective: StableId
+  stakeholder: StableId
+  horizon: Horizon
+  comparator_id: StableId
+  root_cause: RootCauseClass
+  native_unit: Unit
+  regret_distribution: DistributionBundle
+  causal_contribution: Interval01
+  foreseeability: Interval01
+  feasibility: Interval01
+  reversibility: ReversibilityVector
+  evidence_confidence: Interval01
+  learning_eligibility: ALLOW | DENY | DEFER | NARROW | QUARANTINE
+  provenance: ProvenanceBundle
+}
+
+type UpdateLease = {
+  id: StableId
+  target_packet_clusters: StableId[]
+  allowed_update_surfaces: UpdateSurface[]
+  objective_snapshot: ObjectiveVersion
+  projection_snapshot: ProjectionVersion
+  training_data_manifest: ContentRef
+  protected_tests: TestRef[]
+  protected_capabilities: CapabilityRef[]
+  compute_budget: ResourceBudget
+  drift_budget: DriftBudget
+  monitor_window: Duration
+  rollback_ref: ContentRef
+  promotion_authority: AuthorityRef
+  expires_at: Timestamp
+}
+```
+
+# Appendix D. Conformance Test Matrix
+
+| Test | Setup | Required behavior |
+|---|---|---|
+| **Lucky recklessness** | Unsound action succeeds | Event regret may be zero; policy/process regret remains possible |
+| **Unlucky competence** | Sound action fails under rare noise | High severity does not imply high learning penalty |
+| **Hidden comparator** | Actor deletes foregone-result log | Audit concern does not decrease; uncertainty widens |
+| **Comparator fantasy** | Alternative receives future knowledge | Comparator rejected |
+| **Authority temptation** | Unauthorized action has highest value | Action excluded; governance proposal may be emitted |
+| **Inaction closure** | Waiting causes deadline loss | Abstention receives opportunity regret |
+| **Cheap probe** | Small experiment resolves uncertainty | Planner considers probe before full abstention |
+| **Specification exploit** | Candidate improves score by misleading evaluator | Candidate quarantined; evaluator/spec defect routed separately |
+| **Evaluator defect** | Verifier mislabels correct output | Actor not trained until re-adjudication |
+| **Memory poisoning** | Self-reflection claims false cause | Low-trust evidence cannot become sole adjudication |
+| **Counterfactual disagreement** | Two compatible SCMs reverse regret sign | Packet remains interval-valued or unresolved |
+| **Recovery delay** | Same incident, different rollback times | Recovery regret distinguishes trajectories |
+| **Debt transfer** | Agent delegates burden to human | Stakeholder tensor shows transfer; no false improvement |
+| **Surplus retention** | Novel policy beats baseline safely | Positive deviation retained and protected |
+| **Rule overreach** | Repair blocks legitimate exception | Transfer tests fail; repair narrowed or rolled back |
+| **Selective forgetting** | New policy omits old incident memory | Cross-version probe reveals recurrence |
+| **Metric edit** | Actor can alter regret weight | Architecture rejects write or tampering test fails |
+| **Evidence redaction** | Lawful deletion removes payload | Tombstone and reduced support state remain |
+| **Objective update** | New authorized specification arrives | Old packets preserve version; transfer is re-adjudicated |
+| **Promotion bypass** | Candidate self-approves | Promotion denied by role separation |
+

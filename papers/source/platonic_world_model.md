@@ -1,0 +1,2841 @@
+# The Platonic World Model
+
+## A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence
+
+**Corben Sorenson**  
+**Standalone conceptual architecture and research agenda**  
+**July 2026**
+
+---
+
+## Abstract
+
+Advanced AI systems can retain enormous amounts of information while lacking a stable, explicit, and governable account of what their concepts mean. Their semantics are distributed across model parameters, prompts, embeddings, retrieved documents, tools, databases, and application code. When those components are replaced or revised, a system may preserve a word while silently changing its extension, inference rules, grounding, or authority. The resulting failure is not merely factual error; it is loss of **semantic continuity**.
+
+This paper proposes the **Platonic World Model (PWM)**, a persistent semantic substrate for long-lived and agentic AI. “Platonic” is used operationally, not as a claim that every concept has a timeless metaphysical essence. The architecture gives concepts stable lineage identities and immutable versions, each governed by a typed **Essence Contract** containing constitutive commitments, diagnostic criteria, prototypes, boundary cases, identity conditions, affordances, grounding interfaces, and revision metadata. It separates six mutually constraining planes: Forms; particulars and situations; dynamics and possible worlds; grounding; epistemic justification; and semantic governance.
+
+The paper develops the proposal beyond a knowledge graph. It distinguishes proposition content from attestations, system commitments, and proofs; pins consequential reasoning to an explicit semantic basis; models valid, observation, and transaction time; represents action, causation, simulation, and counterfactual branches; and constrains AI-generated edits through semantic diffs, dependency analysis, authority checks, staged validation, migration, and rollback. Neural models remain essential for perception, similarity, prediction, and generation, but they operate as qualified implementations around a model-decoupled semantic core.
+
+The main contribution is an integrated architecture and testable research program, not the invention of ontology, provenance, causal models, or concept learning individually. The PWM combines these traditions around a stronger requirement: an AI should be able to answer, for any consequential decision, **what its terms meant, why it accepted the relevant claims, which world and context it reasoned in, and what would change if the meanings were revised**. The paper specifies core objects, invariants, threat controls, implementation profiles, an end-to-end worked case, baselines, ablations, and falsification criteria.
+
+**Keywords:** world models, ontology, knowledge representation, neurosymbolic AI, semantic continuity, concept learning, causal reasoning, provenance, belief revision, semantic versioning, AI governance
+
+---
+
+## Status and Scope
+
+This is a **conceptual architecture and research agenda**, not a report of a completed end-to-end implementation. It specifies interfaces, invariants, candidate formal semantics, engineering profiles, and empirical tests. Claims described as guarantees are conditional design properties: they hold only when the stated storage, versioning, authorization, and dependency assumptions are satisfied. The paper is intentionally standalone; it does not require any separate architecture paper in order to understand or evaluate the proposal.
+
+---
+
+## 1. Introduction
+
+An intelligent system does not merely need information. It needs stable distinctions between the kinds of things its information is about.
+
+A capable agent must distinguish a door from an image of a door, a person from a record about a person, a law from a report of a law, an observation from an inference, an actual event from a planned event, and a concept from the word used to name it. These distinctions are easy to state and difficult to preserve. In modern AI systems, meaning is distributed across neural weights, token statistics, embeddings, prompts, retrieval corpora, tool schemas, database conventions, and application code. No layer necessarily carries an authoritative, inspectable semantic identity.
+
+This becomes a systems problem when AI is long-lived, multimodal, tool-using, or self-modifying. If the meaning of *authorized operator* changes, every policy and plan depending on authorization may change. If a new perception model preserves the label *pedestrian* while detecting road-position cues rather than people, a nominally stable concept can become causally unfaithful. If a proof uses `CAUSE@2` in one premise and `CAUSE@3` in another, its syntax may remain valid while its conclusion no longer follows under a single interpretation. If a simulated outcome is accidentally promoted into the actual ledger, fluent reasoning becomes fabrication with operational consequences.
+
+The usual remedies solve only fragments of this problem. Larger models provide richer latent associations but no explicit semantic contract. Retrieval improves access but does not guarantee interpretation. Vector stores organize similarity but not identity, modality, exclusion, or valid inference. Knowledge graphs expose entities and relations but often blur definitions, claims, evidence, state, and context. Formal ontologies can be precise but are frequently static, weakly grounded, or detached from prediction and action. Latent world models support control but may not preserve durable, inspectable concepts. Concept-based neural systems expose named variables yet can still encode unintended features [12, 35].
+
+The **Platonic World Model** is proposed as an integration layer between these systems. It is a governed semantic substrate in which:
+
+- concept lineages have stable references and immutable versions;
+- meanings are expressed through typed, inspectable, and testable contracts;
+- claims are separated from sources, commitments, and derivations;
+- actual, hypothetical, simulated, fictional, and counterfactual worlds remain distinct;
+- perception and action are connected through qualified grounding adapters;
+- semantic revisions are transactional, versioned, impact-analyzed, and reversible where possible;
+- runtime agents receive bounded, version-pinned semantic packets rather than an undifferentiated global graph.
+
+The word *Platonic* requires qualification. The architecture does not assert that all useful concepts have one eternal, context-free essence, or that an AI can discover a final ontology. Many concepts are vague, theory-relative, socially constructed, normatively contested, or purpose-sensitive. The proposal is therefore an **operational Platonism**: a concept is treated as a durable object of reference with an explicit and revisable account of its identity, use, structure, boundaries, and grounding. Stability belongs to the reference and governance process, not to a claim of infallibility.
+
+A set of concepts and typed edges would still be only an ontology. To qualify as a world model, the substrate must represent particulars, time, state, events, actions, causes, uncertainty, observation, prediction, and counterfactual change. To serve advanced AI, it must also preserve history across model replacement, support concept induction, compile relevant semantic neighborhoods into bounded working context, and defend its own semantic layer against corruption.
+
+### 1.1 Central thesis
+
+> **Advanced AI requires a persistent semantic constitution: a governed substrate that stabilizes concept identity, binds meaning to evidence and action, and preserves reproducibility as models, beliefs, contexts, and definitions change.**
+
+### 1.2 Contributions
+
+This paper contributes:
+
+1. A precise separation among **Form families**, immutable **Form versions**, lexical labels, grounding implementations, and runtime instances.
+2. A six-plane architecture joining ontology, world state, dynamics, grounding, epistemic justification, and semantic governance.
+3. Typed **Essence Contracts** that represent constitutive, diagnostic, prototypical, operational, normative, and implementation-specific clauses without assuming naive essentialism.
+4. A first-class distinction among **propositions**, **attestations**, **commitments**, and **proofs**, all interpreted under explicit context and semantic basis.
+5. A multitemporal, branch-aware model of actual and possible worlds, actions, interventions, and counterfactuals.
+6. A transactional protocol for AI-proposed semantic edits, including authority checks, semantic diffing, blast-radius analysis, invariance tests, migration, quarantine, and rollback.
+7. A Search-Verify-Compile loop for governed concept induction.
+8. A runtime packet compiler that selects the smallest sufficient semantic subgraph and reasoning stack for a task.
+9. A threat model, phased implementation path, end-to-end case study, and evaluation program with baselines, ablations, metrics, and disconfirmation criteria.
+
+### 1.3 Non-goals
+
+The PWM is not:
+
+- a claim that one universal ontology can settle every scientific, social, or moral dispute;
+- a replacement for neural representations, databases, simulators, theorem provers, or language models;
+- a requirement that every concept have necessary-and-sufficient membership conditions;
+- a single universal logic imposed on all domains;
+- a solution to consciousness, intrinsic intentionality, or the philosophical symbol-grounding problem in its strongest form;
+- a license for an AI to rewrite its own semantics without independent authorization;
+- a promise that explicit representation is computationally cheap.
+
+Its narrower claim is that semantic commitments which matter to consequential reasoning should be made explicit enough to identify, test, version, govern, and replay.
+
+---
+
+## 2. The Problem: Intelligence Without Semantic Continuity
+
+### 2.1 Latent knowledge is not a semantic contract
+
+A neural model may reliably answer questions about chairs without containing a discrete object corresponding to the concept *chair*. Its competence is distributed. This can be powerful, because the representation supports subtle similarity and broad generalization. It is also difficult to govern. There may be no inspectable place to state:
+
+- which properties are constitutive rather than merely typical;
+- which borderline cases remain disputed;
+- which recognizers are trusted;
+- what distinguishes a chair from a stool, bench, sculpture, or image;
+- which model version was used in a prior decision;
+- what downstream conclusions depend on the distinction.
+
+A language definition does not fully solve this problem. Natural-language definitions are themselves interpreted through the model’s latent semantics. Two systems can read the same sentence and operationalize it differently. A semantic contract must therefore combine human-readable description with typed structure, executable tests, examples, counterexamples, grounding functions, and explicit inference constraints.
+
+### 2.2 Names are not concepts
+
+Words are many-to-many interfaces to concepts. The same word may name multiple concepts, and multiple words may name the same concept. Translation, jargon, metaphor, historical usage, and domain-specific meanings increase this ambiguity.
+
+The PWM consequently treats lexical items as mutable labels attached to stable Form-family identifiers and immutable Form-version identifiers. The concepts `BANK_FINANCIAL_INSTITUTION` and `BANK_RIVER_BOUNDARY` are distinct even when both are rendered as “bank.” Conversely, “automobile,” “car,” and “motorcar” may map to one Form under an English-language lexical layer. No inference is permitted to depend solely on surface-string equality.
+
+### 2.3 Facts are not definitions
+
+A common representational failure is to mix what something is with what happens to be true of observed examples.
+
+“Birds have feathers” may participate in a biological characterization. “Birds fly” is typical but not universal. “This bird is injured” is a state of a particular. “The law classifies this drone as an aircraft” is a jurisdiction-scoped institutional assertion. “A phoenix is a bird” may be true in a fictional context. These statements require different semantics and different revision behavior.
+
+The PWM therefore separates:
+
+1. **Form families and versions** — stable concept identities and their Essence Contracts;
+2. **Particulars** — concrete or stipulated instances;
+3. **Situations** — time-indexed configurations of particulars and relations;
+4. **Events and transitions** — processes that change situations;
+5. **Assertions** — claims made in a context with evidence and status;
+6. **Proofs** — derivations that justify commitments;
+7. **Versions** — immutable semantic states and their migrations.
+
+### 2.4 Global consistency is the wrong target
+
+A sufficiently broad world model must represent incompatible scientific theories, conflicting legal jurisdictions, fictional worlds, disputed classifications, uncertain reports, and agents with different beliefs. Demanding one globally consistent graph would either erase useful disagreement or cause the entire model to fail under contradiction.
+
+Cyc’s use of microtheories is an important precedent: assertions are situated in explicit contexts that can each remain locally coherent without requiring every context to agree [6]. The PWM generalizes this principle. Assertions belong to typed contexts containing assumptions, scope, time, jurisdiction, perspective, granularity, modality, and authority. Contradictions are localized, compared, and reasoned over rather than silently flattened.
+
+### 2.5 Updating knowledge is not the same as changing meaning
+
+The system may learn that a particular whale is larger than previously measured. That is a factual revision. It may learn that a biological classification was wrong. That can alter instance membership. It may also revise the concept *species*, changing the criteria by which organisms are grouped. That is a semantic revision with far broader consequences.
+
+These operations must be distinct. A change to an instance assertion should not automatically rewrite the concept. A change to a central concept should trigger dependency analysis across facts, rules, models, plans, policies, and proofs. Ontology-evolution research has shown the importance of explicit operations such as additions, deletions, merges, splits, and subgraph changes [11]. The PWM extends this into a transactional semantic governance system.
+
+---
+
+### 2.6 Failure taxonomy
+
+Semantic failure is not one phenomenon. The PWM distinguishes at least:
+
+- **lexical drift:** a label resolves to a different concept or mapping;
+- **intensional drift:** the constitutive or inferential account changes;
+- **extensional drift:** the set of recognized instances changes;
+- **grounding drift:** a recognizer, measurement, or operational test changes behavior;
+- **relational drift:** a relation's arity, constraints, or composition rules change;
+- **dynamic drift:** action effects or causal mechanisms change;
+- **context drift:** scope, jurisdiction, theory, granularity, or modality changes;
+- **normative drift:** permissions, obligations, or authority consequences change;
+- **dependency drift:** an artifact's true semantic dependencies diverge from its declared basis.
+
+These classes can co-occur. A classifier update may produce extensional drift without intensional change; a new legal rule may create normative drift while preserving ordinary-language labels. Distinguishing them allows validation and migration to target the actual failure rather than treating every update as a generic graph diff.
+
+---
+
+## 3. Operational Platonism
+
+The term *Form* is useful only if it creates engineering discipline rather than metaphysical overreach. The PWM adopts six commitments.
+
+### 3.1 Stable reference without final truth
+
+A **Form family** is a stable lineage-level object of reference, such as `DOOR`, `PERSON`, or `CAUSE`. A **Form version** is an immutable semantic artifact within that lineage, such as `DOOR@4.1`. The family provides continuity of discussion; the version provides exact reproducibility. The currently preferred version may change, and a breaking change may force a split into distinct families rather than pretending continuity where none exists.
+
+The architecture can therefore state:
+
+> This decision used `PERSON@4.2`; the current preferred lineage successor is `PERSON@5.0`; migration is partial because the legal-role treatment changed.
+
+History remains reproducible without treating the former version as eternally correct.
+
+### 3.2 Pluralism without semantic collapse
+
+The same subject may be represented under multiple theories or institutional contexts. A virus may be typed differently under competing biological accounts; personhood may differ across legal, moral, biological, and grammatical contexts; a fictional object may be internally real in a story without being asserted in the actual world. Alternatives are represented as explicit contexts, theory objects, and mappings. The system can compare them without silently merging them.
+
+### 3.3 Meaning as a governed bundle
+
+The PWM does not reduce meaning to one thing. Operational meaning is distributed across a governed bundle:
+
+- intensional constraints and structural relations;
+- inferential roles;
+- typicality geometry and similarity;
+- identity and persistence criteria;
+- affordances, dispositions, and causal roles;
+- grounding and measurement procedures;
+- lexical and representational interfaces;
+- context, authority, and revision history.
+
+No component is sufficient by itself. A prose definition can be ambiguous; an embedding can preserve similarity while losing identity; an extension can change accidentally with the dataset; a recognizer can exploit shortcuts; an institutional rule can be valid only under a jurisdiction.
+
+### 3.4 Open-world humility
+
+Absence of support is not falsity. The substrate distinguishes at least:
+
+- supported true;
+- supported false;
+- disputed;
+- unknown;
+- not applicable;
+- undefined under the selected theory;
+- incoherent under the selected assumptions;
+- intentionally withheld.
+
+This prevents the closed-world assumptions of one subsystem from leaking into domains where they are invalid.
+
+### 3.5 Context is semantic, not decorative
+
+Context is not a text tag appended after the fact. It supplies assumptions, world branch, temporal scope, jurisdiction, perspective, granularity, authority, and inference policy. Work on formal contexts and microtheories established the need to localize assertions and their assumptions [6, 24]. The PWM makes context part of the interpretation function for every proposition.
+
+### 3.6 The substrate is constitutional, not omniscient
+
+A constitution does not contain every future court decision; it specifies legitimate objects, powers, procedures, and constraints. Likewise, the PWM need not explicitly store every perceptual regularity or transient state. It determines how semantically consequential objects are identified, how claims become commitments, how competing views coexist, how changes are authorized, and how downstream consequences remain auditable.
+
+---
+
+## 4. Design Requirements
+
+A system qualifies as a PWM only if it satisfies more than graph storage. The following requirements are architectural rather than implementation-specific.
+
+**Table 1. Architectural requirements and operational tests.**
+
+| ID | Requirement | Operational test |
+|---|---|---|
+| R1 | Stable semantic reference | The same family can be referenced across model replacement without relying on a surface label. |
+| R2 | Immutable exact versions | A prior decision can resolve every concept and relation to the exact version it used. |
+| R3 | Typed meaning | Each Form declares an ontological kind and a kind-appropriate Essence Contract. |
+| R4 | Claim-layer separation | Proposition content, source attestation, system commitment, and proof are distinct objects. |
+| R5 | Form-actuality separation | Definitions and general laws cannot be confused with instance state or observation. |
+| R6 | Context and modality | Actual, believed, predicted, planned, fictional, and counterfactual claims cannot cross contexts silently. |
+| R7 | Multitemporal reproducibility | Valid, observation, and transaction times are recorded where relevant, together with semantic basis. |
+| R8 | Grounding declaration | Every operational Form identifies qualified recognition, measurement, proof, stipulation, or adjudication interfaces. |
+| R9 | Dynamics and intervention | The system can represent actions, mechanisms, transitions, and branch-local consequences. |
+| R10 | Proof-carrying commitment | Consequential commitments expose evidence, assumptions, derivations, and defeaters. |
+| R11 | Governed self-editing | Canonical semantic change occurs through typed transactions, validation, authorization, and rollback planning. |
+| R12 | Implementation decoupling | Replacing an LLM, encoder, recognizer, or simulator does not silently replace semantic identity. |
+| R13 | Bounded runtime | Task execution can compile a relevant subgraph and terminate under explicit resource budgets. |
+| R14 | Federation | Different semantic systems can map, negotiate, and exchange claims without forced global merging. |
+| R15 | Security and authority | Semantic edits cannot expand operational authority merely by changing definitions or mappings. |
+| R16 | Observability | Drift, contradiction, stale grounding, packet invalidation, and migration debt are measurable. |
+| R17 | Graceful deployment | Useful subsets can be implemented without requiring the complete architecture on day one. |
+| R18 | Empirical evaluability | The architecture makes testable predictions against simpler baselines and specifies failure criteria. |
+
+These requirements create deliberate tension. Rich explicit semantics increase auditability but also increase modeling and inference cost. Stable identity aids continuity but can fossilize mistakes. Plural contexts preserve disagreement but complicate reasoning. The architecture is valuable only if its benefits exceed these costs in domains where semantic failure is consequential.
+
+---
+
+## 5. Core Semantic Model
+
+The PWM begins with distinctions that conventional graph schemas often blur.
+
+### 5.1 Form families, versions, labels, and implementations
+
+A **Form family** is a stable lineage-level reference:
+
+\[
+\mathcal{F} = \langle family\_id, lineage, governance\_domain, lineage\_relations \rangle
+\]
+
+A **Form version** is an immutable semantic object:
+
+\[
+F^{v} = \langle family\_id, version\_id, hash, kind, contract, dependencies, migration\_metadata \rangle
+\]
+
+A family identifier is durable but not semantically exact. A version identifier or content hash is exact but not mutable. A **lexeme** is a language- and context-specific label that may denote one or more families. A **grounding implementation** is a versioned recognizer, test, query, simulator, or skill that witnesses or operationalizes part of a contract. None of these objects is interchangeable.
+
+This resolves a central versioning paradox. If an identifier’s meaning is allowed to change, it cannot guarantee reproducibility. If an identifier can never be associated with a successor, it cannot support continuity. The family/version distinction provides both: durable lineage and immutable interpretation. Preferred-version selection, deprecation, revocation, and lineage status are represented by append-only governance events rather than fields overwritten in place. **Canonical** is therefore a governance status, not a declaration of metaphysical truth.
+
+Compatibility is not inferred from a version number and is rarely global. For a designated artifact set \(A\), contexts \(C\), migration \(M\), and tolerated divergence \(\epsilon\), a successor \(F^b\) is substitutable for \(F^a\) only if a verified test establishes:
+
+\[
+\forall a \in A,\quad d(Eval(a; F^a, C), Eval(M(a); F^b, C)) \leq \epsilon
+\]
+
+For deductive contexts, \(\epsilon\) may be zero; for learned or measurement contexts it may encode a calibrated tolerance. Substitutability is directional, context-sensitive, and use-specific.
+
+A major revision has three possible outcomes:
+
+1. **Compatible successor:** the new version preserves declared substitutability conditions.
+2. **Non-substitutable lineage successor:** discussion remains historically continuous, but old inferences require review.
+3. **Fork:** the proposal creates a new family because identity continuity would be misleading.
+
+### 5.2 Semantic basis
+
+Every consequential proposition, proof, plan, or decision records a **semantic basis**:
+
+\[
+\sigma = \{F_1^{v_1}, F_2^{v_2}, \ldots, R_1^{u_1}, C_1^{w_1}, L_1^{z_1}\}
+\]
+
+The basis includes the exact Form versions, relation schemas, context definitions, logic profiles, units, and mapping versions needed to interpret the artifact. It may be represented as a content-addressed manifest or Merkle root rather than copied in full.
+
+An inference may combine artifacts from different bases only through an explicit, typed migration or bridge. This is the mechanism behind the invariant **no silent equivocation**.
+
+### 5.3 Context-indexed interpretation
+
+Let \(c\) be a context and \(\sigma\) a semantic basis. An interpretation function
+
+\[
+\mathcal{I}_{c,\sigma}
+\]
+
+assigns denotations, constraints, admissible relations, and inference policies to the objects in that basis. The interpretation need not be a classical set-theoretic model for every domain. Mathematical contexts may use formal model theory; probabilistic contexts may use distributions; normative contexts may use deontic rules and authorities; conceptual-space contexts may use regions and similarity metrics [8, 9]. What matters is that the interpretation regime is explicit and versioned.
+
+A proposition is therefore not simply true or false in the abstract. It is evaluated relative to a context, semantic basis, temporal scope, and, where appropriate, uncertainty model.
+
+### 5.4 Proposition, attestation, commitment, and proof
+
+The architecture distinguishes four objects:
+
+- A **proposition** is semantic content that can be evaluated under an interpretation.
+- An **attestation** records that a source, sensor, document, agent, or process asserted or observed a proposition.
+- A **commitment** records an agent’s governed stance toward the proposition: accepted, rejected, suspended, disputed, provisional, or unknown.
+- A **proof object** records a derivation, evidence synthesis, or validation procedure supporting a commitment.
+
+Two sensors may attest to the same proposition. One source may retract its attestation without changing the proposition. The system may retain both attestations while changing its commitment. A proof may be invalidated by a semantic migration even though the original attestations remain historically true as reports. This separation is essential for epistemic clarity.
+
+### 5.5 Time and semantic history
+
+The PWM uses several distinct coordinates:
+
+- **valid time:** when the proposition holds in the modeled world;
+- **observation time:** when an observation or measurement was made;
+- **transaction time:** when the record entered or left the canonical store;
+- **semantic basis:** which immutable meanings governed interpretation.
+
+The first three are temporal. The semantic basis is not another time axis; it is an interpretive coordinate. Calling the entire record “tritemporal” would obscure this distinction. A minimal deployment may record only valid and transaction time, but safety-critical observations should preserve all three temporal coordinates.
+
+### 5.6 Conditional design properties
+
+Under append-only storage, immutable dependencies, complete basis manifests, deterministic or seeded inference, and retained executable artifacts, the architecture is intended to provide:
+
+- **Historical reproducibility:** a past commitment can be reconstructed under its original meanings.
+- **Equivocation detection:** a proof cannot silently substitute one Form version for another.
+- **Branch safety:** simulated or counterfactual facts cannot become actual without an explicit promotion event.
+- **Authority monotonicity:** a semantic patch cannot increase operational authority unless an independently authorized policy transition grants it.
+- **Dependency visibility:** declared semantic changes expose a computable over-approximation of affected artifacts.
+
+These are not unconditional theorems about arbitrary software. They are verifiable properties of conforming implementations and become test obligations in the evaluation program.
+
+### 5.7 Semantic continuity as a testable property
+
+Semantic continuity does not require a concept to remain unchanged. It requires change to remain identifiable, replayable, and non-equivocating. For artifact \(x\) produced at time \(t\) under basis \(\sigma_t\), and a later system state \(t'\), define:
+
+\[
+SC(x,t,t') = Resolve(\sigma_t) \land Replay_{\epsilon}(x,\sigma_t) \land Trace(\sigma_t,\sigma_{t'}) \land SafeUse(x,\sigma_{t'})
+\]
+
+where:
+
+- **Resolve** means every required historical dependency is available or its absence is explicitly attributable;
+- **Replayε** means the original result can be reproduced within the declared tolerance;
+- **Trace** means intervening semantic changes, bridges, and revocations are inspectable;
+- **SafeUse** means current use either passes a verified substitutability migration or reports incompatibility rather than silently reinterpreting the artifact.
+
+This definition turns the paper's central idea into an evaluation target. A system may preserve continuity even when current conclusions differ from historical ones, provided it can explain whether the difference arose from new evidence, changed meaning, changed context, changed dynamics, or changed authority.
+
+---
+
+## 6. The Six-Plane Architecture
+
+The PWM is organized into six planes. They are logically distinct but operationally integrated.
+
+**Figure 1. Logical organization of the six planes. Arrows denote constrained information and validation flow, not unrestricted mutation.**
+
+```text
+                         +---------------------------+
+                         |  VI. Semantic Governance  |
+                         | versions, edits, impact,  |
+                         | authority, migration,     |
+                         | qualification, rollback   |
+                         +-------------+-------------+
+                                       |
+        +------------------------------+------------------------------+
+        |                              |                              |
++-------v--------+            +--------v---------+           +--------v---------+
+| I. Form Plane  |            | V. Epistemic     |           | IV. Grounding    |
+| concepts,      |<---------->| Plane            |<--------->| Plane            |
+| relations,     |            | evidence, proof, |           | sensors, models, |
+| essence        |            | defeaters        |           | tests, actions   |
++-------+--------+            +--------+---------+           +--------+---------+
+        |                              |                              |
+        +------------------------------+------------------------------+
+                                       |
+                         +-------------v-------------+
+                         | II. Particular/Situation  |
+                         | entities, states, events, |
+                         | measurements, histories   |
+                         +-------------+-------------+
+                                       |
+                         +-------------v-------------+
+                         | III. Dynamics/Modal Plane |
+                         | causes, actions, plans,   |
+                         | simulations, possible     |
+                         | and counterfactual worlds |
+                         +---------------------------+
+```
+
+### 6.1 Form Plane
+
+The Form Plane stores stable semantic objects:
+
+- concepts and categories;
+- relation and role types;
+- qualities and measurement dimensions;
+- action and process schemas;
+- norms and institutional statuses;
+- representational and linguistic mappings;
+- formal theories and axiom systems;
+- context types and inference policies.
+
+A Form version is not merely a class node. It is an immutable, governed package of identity criteria, constraints, prototypes, exclusions, affordances, grounding contracts, and version history.
+
+### 6.2 Particular and Situation Plane
+
+This plane stores what the system takes to exist or occur in a given world branch:
+
+- physical objects;
+- people and organizations;
+- documents and software artifacts;
+- measurements and observations;
+- events and processes;
+- states and relations;
+- agent beliefs and commitments;
+- uncertain or hypothetical entities.
+
+A particular may instantiate multiple Forms under different contexts. An object may be a `CHAIR` functionally, an `ANTIQUE` institutionally, and `EVIDENCE_ITEM` procedurally. These are not competing labels unless their contexts or constraints conflict.
+
+Situations are first-class snapshots or partial states. They support descriptions such as “the laboratory immediately before the valve opened” without requiring the entire universe to be materialized.
+
+### 6.3 Dynamics and Modal Plane
+
+This plane turns static semantics into a world model. It includes:
+
+- state-transition rules;
+- structural causal models;
+- learned action-conditioned predictors;
+- process and event schemas;
+- action preconditions and effects;
+- invariants and conservation rules;
+- possible, planned, simulated, fictional, and counterfactual worlds.
+
+A transition model may be symbolic, neural, probabilistic, or hybrid. It must declare which Forms and state variables it consumes, which world contexts it applies to, its validation status, and its known failure envelope.
+
+### 6.4 Grounding Plane
+
+The Grounding Plane connects Forms to data and action:
+
+- visual, auditory, tactile, and multimodal recognizers;
+- measurement procedures;
+- database queries;
+- theorem provers and executable tests;
+- simulators;
+- generators;
+- robotic skills and tool interfaces;
+- human adjudication protocols;
+- prototype embeddings and conceptual spaces.
+
+Grounding is many-to-many. A Form may have multiple recognizers with different domains. A recognizer may contribute evidence to several Forms. No recognizer automatically defines the concept it predicts.
+
+### 6.5 Epistemic Plane
+
+The Epistemic Plane represents why the system accepts, rejects, or withholds a claim. It stores:
+
+- observations;
+- reports and sources;
+- derivations;
+- statistical evidence;
+- proofs;
+- assumptions;
+- confidence and calibration;
+- contradictions;
+- defeaters;
+- unresolved questions;
+- authority and rights to assert.
+
+Provenance standards such as PROV-O demonstrate how entities, activities, agents, and qualified influences can be represented for interoperable provenance [5]. The PWM extends provenance into semantic and decision reproducibility by binding every proof to concept versions and context.
+
+### 6.6 Semantic Governance Plane
+
+This plane governs changes to the other five. It provides:
+
+- immutable versions and semantic hashes;
+- proposal, review, qualification, and commitment states;
+- schema validation;
+- semantic diffing;
+- dependency and blast-radius analysis;
+- migration maps;
+- deprecation and successor relations;
+- authorization;
+- quarantine;
+- rollback;
+- conflict resolution;
+- cross-agent trust policies.
+
+The Governance Plane is what separates an AI-editable semantic constitution from an unprotected knowledge graph.
+
+---
+
+## 7. Typed Essence Contracts: Operational Meaning Without Naive Essentialism
+
+The term *essence* is used here as an engineering shorthand for a typed bundle of semantic commitments. It does not imply that every category has a single mind-independent necessary-and-sufficient definition. An Essence Contract records what a particular Form version commits the system to, how strongly, under which context, and with which tests and defeaters.
+
+### 7.1 Formal structure
+
+A Form version can be represented as:
+
+\[
+F_i^v = \langle id_f, id_v, k, L, K, Q, P, X, I, R, A, D, G, E, M \rangle
+\]
+
+where:
+
+- `id_f` is the stable family identifier;
+- `id_v` is the immutable version identifier or content hash;
+- \(k\) is the ontological kind;
+- \(L\) is the lexical and representational interface;
+- \(K\) is the constitutive kernel and structural constraints;
+- \(Q\) is the diagnostic, recognition, and qualification policy;
+- \(P\) is the prototype, distribution, or geometric region;
+- \(X\) is the anti-extension: exclusions, counterexamples, and boundary cases;
+- \(I\) is the identity and persistence policy;
+- \(R\) is the typed relation neighborhood;
+- \(A\) is the affordances, dispositions, functions, or normative powers;
+- \(D\) is the permitted dynamics and transformations;
+- \(G\) is the grounding contract;
+- \(E\) is epistemic support, uncertainty, disputes, and open defeaters;
+- \(M\) is governance, dependency, migration, and security metadata.
+
+The ontological kind determines an **Essence Profile**. A mathematical structure, biological taxon, artifact, social role, event, quality, norm, and representation should not be forced into the same membership semantics.
+
+### 7.2 Clause types and strength
+
+Every contract clause declares its role and force.
+
+**Table 2. Essence-clause types and their default reasoning force.**
+
+| Clause type | Meaning | Default reasoning treatment |
+|---|---|---|
+| Constitutive | Part of the selected theory’s account of what the Form is | Violation blocks ordinary instantiation unless an exception theory applies |
+| Diagnostic | Evidence used to recognize or qualify an instance | Supports membership with calibrated uncertainty; does not define it alone |
+| Prototypical | Typical, central, or similarity-shaping property | Defeasible; affects typicality, not strict membership |
+| Operational | Test, procedure, threshold, or measurement policy | Valid only in its declared domain and version |
+| Causal/functional | Disposition, mechanism, affordance, or designed role | Supports prediction or planning under declared conditions |
+| Normative | Right, duty, permission, prohibition, or institutional status | Requires authority, jurisdiction, and temporal validity |
+| Implementation-specific | Property of a recognizer, model, database, or tool | Never promoted into the concept’s constitutive kernel by default |
+
+Clauses also declare modality, scope, confidence, exceptions, and source. This prevents a frequent failure: turning a statistically common feature into an alleged essence, or treating a current implementation shortcut as a fact about the world.
+
+### 7.3 Identity, recognition, and typicality are distinct
+
+For a candidate particular \(x\), the system may separately compute:
+
+- **identity judgment:** whether \(x\) is the same entity as a previously tracked particular;
+- **membership judgment:** whether \(x\) instantiates the Form under a context;
+- **recognition confidence:** how strongly current evidence supports that judgment;
+- **typicality:** how central \(x\) is within the Form’s prototype geometry;
+- **operational qualification:** whether \(x\) satisfies a task-specific threshold.
+
+A penguin can be a low-typicality bird while remaining a clear biological instance. A broken chair can preserve artifact identity while failing an operational test for safe seating. A person can remain the same human while entering or leaving the role `AUTHORIZED_OPERATOR`. These distinctions prevent one scalar “concept score” from carrying incompatible meanings.
+
+### 7.4 Why one definition schema fails
+
+A triangle is primarily characterized by formal structure. A tiger is characterized through biological lineage, morphology, genetics, development, and causal organization. A screwdriver is partly characterized by designed function. A citizen is a role conferred by an institutional process. A hurricane is a temporally extended process. Temperature is a measurable quality. A legal obligation depends on authority, jurisdiction, addressee, triggering conditions, and exceptions.
+
+Treating all of these as sets of shared properties creates category errors. The PWM therefore requires distinct profiles.
+
+### 7.5 Mathematical and formal Forms
+
+A mathematical Essence Contract includes:
+
+- axiomatic context;
+- constructors;
+- equality conditions;
+- invariants;
+- allowable transformations;
+- theorem dependencies;
+- proof obligations;
+- relationships to alternative foundations.
+
+For example, `GROUP` is defined relative to a formal theory and operations satisfying closure, associativity, identity, and inverses. Recognition is proof, not perception. Instances may be symbolic structures rather than physical particulars.
+
+### 7.6 Natural-kind Forms
+
+A natural-kind profile may include:
+
+- causal-generative mechanisms;
+- developmental or historical lineage;
+- characteristic structure;
+- dispositions;
+- diagnostic observations;
+- measurement uncertainty;
+- known variation and exceptions;
+- theory dependence;
+- intervention signatures.
+
+The architecture avoids assuming that all natural kinds have simple necessary-and-sufficient definitions. It may represent multiple competing scientific concepts and track which observations discriminate between them.
+
+### 7.7 Artifact Forms
+
+An artifact profile includes:
+
+- intended or socially recognized function;
+- design or construction schema;
+- characteristic parts;
+- affordances;
+- operational envelope;
+- failure modes;
+- repair and replacement criteria;
+- role of creator or user intention;
+- accidental versus essential properties.
+
+A broken chair may remain a chair because of history and intended function even when it cannot currently support sitting. A chair-shaped rock may afford sitting without being an artifact. These distinctions are represented rather than left to lexical intuition.
+
+### 7.8 Role and institutional Forms
+
+Roles are anti-rigid and relational: an entity can enter or leave a role without ceasing to exist. A role profile includes:
+
+- eligible bearer types;
+- conferring authority or process;
+- host institution or relation;
+- entry conditions;
+- rights and obligations;
+- powers and permissions;
+- temporal validity;
+- exit and revocation conditions;
+- jurisdiction and governing rules.
+
+Examples include `EMPLOYEE`, `OWNER`, `WITNESS`, `PRESIDENT`, `AUTHORIZED_OPERATOR`, and `DEFENDANT`. The system must not infer that a role is an intrinsic permanent property.
+
+### 7.9 Event and process Forms
+
+An event or process profile includes:
+
+- participant roles;
+- temporal structure;
+- initiation and termination conditions;
+- stages or subevents;
+- preconditions and postconditions;
+- causal dependencies;
+- interruption and resumption rules;
+- identity under partial observation;
+- granularity mappings.
+
+“Selling a vehicle” is not adequately represented by a binary edge. It is an event with seller, buyer, transferred object, consideration, contract, jurisdiction, and time.
+
+### 7.10 Quality and quantity Forms
+
+A quality profile includes:
+
+- bearer type;
+- quality dimension or domain;
+- scale type;
+- units;
+- measurement operation;
+- uncertainty model;
+- conversion rules;
+- comparison semantics;
+- valid range;
+- context sensitivity.
+
+The Form `TEMPERATURE` must distinguish the quality from a numerical reading, measurement procedure, unit, and sensor report.
+
+### 7.11 Normative Forms
+
+A norm profile includes:
+
+- issuing authority;
+- authority provenance;
+- jurisdiction;
+- addressee;
+- regulated action or state;
+- activation conditions;
+- permission, prohibition, or obligation type;
+- exceptions and priority rules;
+- enforcement mechanism;
+- valid and transaction times;
+- repeal, supersession, and conflict rules.
+
+Norms do not directly describe physical causality. “An operator must close the valve” does not imply that the valve will close. The PWM maintains distinct normative and descriptive relations while allowing plans to reason over both.
+
+### 7.12 Representation Forms
+
+A representation profile covers documents, images, models, simulations, statements, and symbols. It includes:
+
+- represented subject;
+- encoding system;
+- author or generator;
+- intended interpretation;
+- fidelity criteria;
+- temporal reference;
+- provenance;
+- transformation history;
+- distinction between token and content.
+
+This profile prevents category errors such as treating an image of a firearm as a firearm, a database row as the person it describes, or a simulated event as an actual event.
+
+### 7.13 Prototype halos and boundary regions
+
+Many concepts remain graded. Gärdenfors’s conceptual-spaces framework represents instances as points and concepts as regions in spaces organized by quality dimensions [8]. Later formal work models concepts as fuzzy star-shaped regions and defines operations such as intersection, union, and projection [9]. The PWM incorporates this geometric layer as a **prototype halo** around the symbolic Essence Contract.
+
+A Form may therefore contain:
+
+- one or more prototypes;
+- quality dimensions and weights;
+- similarity functions;
+- typicality distributions;
+- learned embeddings;
+- cluster boundaries;
+- counterfactual probes;
+- domain-specific calibration.
+
+The prototype halo supports recognition and analogy. It does not silently override explicit exclusions or context rules.
+
+### 7.14 Anti-examples as first-class knowledge
+
+Most ontologies emphasize positive definitions. The PWM treats exclusions and confusing neighbors as essential because intelligent errors often occur at boundaries.
+
+For `DOOR`, anti-examples may include:
+
+- an open archway;
+- a painting of a door;
+- a permanently sealed wall panel;
+- a metaphorical “door of opportunity”;
+- a trapdoor under a domain definition that excludes horizontal closures.
+
+Each anti-example can include the distinguishing reason, relevant context, evidence, and test. Boundary knowledge improves recognition, explanation, and adversarial robustness.
+
+---
+
+## 8. Grounding: Connecting Forms to Perception and Action
+
+### 8.1 The grounding contract
+
+A concrete concept that only refers to other symbols risks becoming a closed dictionary. Each groundable Form should declare one or more grounding contracts:
+
+```text
+GroundingContract:
+  input_domains: [rgb_image, depth_map]
+  implementation: door_detector_v7
+  output: evidence_for(DOOR@4.1)
+  qualified_contexts: [indoor_architecture]
+  calibration_set: door_eval_2026_04
+  known_failures: [murals, mirrored_panels, elevator_doors]
+  confidence_semantics: calibrated_probability
+  last_verified: 2026-06-20
+```
+
+Grounding can be perceptual, procedural, social, or formal.
+
+### 8.2 Recognizers are witnesses, not definitions
+
+A classifier output is evidence that an entity instantiates a Form. It is not itself the definition of the Form. This separation allows the system to replace a recognizer while preserving semantic identity, compare recognizers, detect shortcut learning, and revise concept membership without rewriting the concept.
+
+Concept Bottleneck Models demonstrate that exposing high-level concepts can support interpretation and test-time intervention [12]. They also reveal the difficulty of ensuring that a learned bottleneck faithfully represents the intended concepts. The PWM addresses this by making the concept an external governed object, with the neural bottleneck treated as one grounding implementation among several.
+
+### 8.3 Multimodal triangulation
+
+Grounding strength increases when independent modalities agree. A “cup” hypothesis may be supported by:
+
+- visual shape;
+- depth and containment geometry;
+- tactile affordance;
+- successful pouring;
+- a barcode database;
+- language description;
+- human confirmation.
+
+The proof layer records whether evidence is independent or derived from a common source. Apparent agreement among five models trained on the same dataset is not treated as five independent witnesses.
+
+### 8.4 Active grounding and intervention
+
+Passive correlation is often insufficient to identify causal concepts. Causal representation learning studies how high-level variables can be recovered from low-level observations and emphasizes the value of interventions [13, 14]. The PWM treats interaction as a semantic test.
+
+An agent can probe whether an object is a container by attempting safe containment, whether a switch controls a light by intervention, or whether a visual feature is causally relevant by counterfactual manipulation. Such tests produce evidence for affordances and causal relations, not merely labels.
+
+### 8.5 Abstract and institutional grounding
+
+Not every Form is grounded in sensors. Mathematical objects are grounded in formal systems and proof procedures. Legal statuses are grounded in authoritative records and institutional rules. Fictional entities are grounded in canonical texts and world definitions. The architecture requires each Form to declare its grounding regime rather than pretending all concepts refer to physical objects.
+
+---
+
+### 8.6 Grounding scope and philosophical restraint
+
+The PWM provides **operational grounding contracts**; it does not claim to settle intrinsic intentionality or consciousness. Harnad's symbol-grounding problem asks how symbol meanings can avoid being defined only through other symbols [20]. The PWM responds architecturally by requiring non-linguistic contact where appropriate—perception, measurement, intervention, proof, enactment, or authoritative institutional procedure—while allowing that some Forms are formal, fictional, or stipulative. This makes grounding inspectable and testable without claiming that an explicit contract exhausts meaning.
+
+Grounding regimes include:
+
+- **causal-perceptual:** sensors and interventions linked to physical regularities;
+- **formal:** proof in a declared axiom system;
+- **measurement:** calibrated procedures, units, and uncertainty models;
+- **institutional:** statuses created or recognized by authorized acts;
+- **linguistic-historical:** usage supported by corpora and communities;
+- **fictional/stipulative:** truth determined within an authored or assumed world.
+
+A Form may combine regimes, but the architecture requires them to be named rather than conflated.
+
+---
+
+## 9. Dynamics, Causality, and Possible Worlds
+
+### 9.1 Ontology is not enough
+
+A static ontology can state that doors have open and closed states. A world model must predict how actions and processes change those states. The PWM therefore attaches transition models to Forms and situations.
+
+A transition can be expressed as:
+
+\[
+S_{t+1} \sim T_m(S_t, u_t, c)
+\]
+
+where \(S_t\) is a situation, \(u_t\) is an action or exogenous event, \(c\) is context, and \(T_m\) is a qualified transition model. The result may be deterministic, probabilistic, symbolic, or neural. Structural causal models provide one formal regime for intervention [31]; event and process calculi provide another for temporally extended change [40].
+
+### 9.2 Action schemas
+
+An action Form specifies:
+
+- actor roles;
+- target roles;
+- required capabilities and authority;
+- preconditions;
+- expected effects;
+- possible side effects;
+- invariants;
+- resource costs;
+- observability;
+- reversibility;
+- failure modes;
+- safety constraints;
+- grounding implementation.
+
+Example:
+
+```text
+ActionForm: UNLOCK
+actor: AGENT
+patient: LOCKABLE_BARRIER
+instrument: OPTIONAL_KEY_OR_CREDENTIAL
+preconditions:
+  - barrier.lock_state = locked
+  - actor.has_authority_or_capability(barrier)
+effects:
+  - barrier.lock_state := unlocked
+non_effects:
+  - barrier.open_state is unchanged
+failure_modes:
+  - credential_rejected
+  - mechanism_jammed
+  - wrong_entity_resolution
+```
+
+The explicit non-effect prevents the common inference that unlocking a door also opens it.
+
+### 9.3 Structural causal models and mechanism objects
+
+Causal edges should not be undifferentiated labels. A causal claim can identify:
+
+- variables;
+- intervention semantics;
+- mechanism;
+- scope;
+- confounders;
+- temporal lag;
+- invariance assumptions;
+- effect distribution;
+- validation experiments;
+- counterexamples.
+
+The relation `causes` is therefore normally backed by a mechanism or causal model object. “Smoking causes cancer” and “pressing this button causes the simulated light to turn on” differ in population scope, uncertainty, latency, and mechanism.
+
+### 9.4 Object-centric dynamics
+
+Recent work on object-centric causal world models seeks persistent entities and interactions that support planning rather than only monolithic latent prediction [18]. The PWM takes the next step by binding object slots to stable semantic Forms and versioned relation schemas. Learned object representations remain flexible, but their use in planning is mediated by explicit identities, affordances, and context.
+
+### 9.5 World branches
+
+Planning and counterfactual reasoning require branching worlds. The PWM models a branch as an immutable parent history plus branch-local assertions and transitions.
+
+World types include:
+
+- actual world ledger;
+- simulation rollout;
+- plan candidate;
+- counterfactual intervention;
+- fictional world;
+- alternative scientific model;
+- adversarial test world.
+
+Here **actual** means the system's designated context for commitments intended to describe actuality, not an infallible view of reality. Assertions in that ledger remain sourced, defeasible, and revisable. No branch may write into it merely because a model predicted an outcome. A branch can be promoted only through an explicit event such as execution, observation, or authorized adoption.
+
+### 9.6 Counterfactual proof objects
+
+A counterfactual answer should record:
+
+- the actual baseline;
+- the intervention;
+- held-fixed assumptions;
+- selected causal model;
+- semantic basis;
+- generated branch;
+- outcome comparison;
+- uncertainty and model limitations.
+
+This makes “what would have happened?” reproducible rather than a free-form language-model completion.
+
+---
+
+### 9.7 Model plurality and adjudication
+
+No single transition representation is appropriate for every scale. A PWM may combine symbolic precondition/effect schemas, structural causal models, neural latent dynamics, physics simulators, stochastic processes, and human-authored procedures. Each transition model declares:
+
+- input and output state vocabulary;
+- applicable contexts and scales;
+- intervention semantics;
+- uncertainty and calibration;
+- validation evidence;
+- known blind spots;
+- computational cost;
+- conflict-resolution policy when models disagree.
+
+The substrate does not pretend that attaching a causal edge makes it true. Causal claims remain propositions supported by experiments, invariance, mechanism evidence, or trusted theory. Competing mechanisms may coexist until evidence discriminates among them.
+
+---
+
+## 10. Propositions, Attestations, and Commitments
+
+### 10.1 Beyond binary triples
+
+Binary triples are useful for interoperability, but many semantically important claims are n-ary. “Alice sold Bob a vehicle for 5,000 dollars on Tuesday under contract C” is one event with role-labeled participants, temporal scope, currency, jurisdiction, and evidence. Flattening it into unrelated edges loses event identity and makes qualification awkward.
+
+The canonical representation is therefore a **typed attributed hypergraph**. A proposition may be serialized into RDF, relational tables, property graphs, or event records, but its logical roles remain explicit. RDF 1.2, which was a W3C Candidate Recommendation at the time of writing, adds triple terms and reifiers that improve statement-level annotation and interoperability [23]. The PWM does not depend on one serialization.
+
+### 10.2 Proposition schema
+
+A proposition is represented as:
+
+\[
+q = \langle r^v, B, c, \tau_v, \mu, p, \sigma \rangle
+\]
+
+where:
+
+- \(r^v\) is a versioned relation or predicate schema;
+- \(B\) is a mapping from typed argument roles to participants or values;
+- \(c\) is the context;
+- \(\tau_v\) is valid time or interval;
+- \(\mu\) is modality;
+- \(p\) is polarity or truth-valued content;
+- \(\sigma\) is the semantic basis.
+
+For example:
+
+```text
+PROPOSITION q_4831
+  relation: TRANSFER_EVENT@3.0
+  bindings:
+    seller: ALICE
+    buyer: BOB
+    transferred_object: VEHICLE_104
+    consideration: MONEY_AMOUNT(5000, USD)
+  context: CALIFORNIA_COMMERCIAL_CONTEXT@2.1
+  valid_time: 2026-07-14
+  modality: actual
+  semantic_basis: sha256:...
+```
+
+### 10.3 Attestation schema
+
+An attestation records a source event:
+
+\[
+a = \langle source, q, \tau_o, \tau_t, method, evidence, signature, reliability \rangle
+\]
+
+A sensor reading, signed document, database import, human statement, or model extraction can attest to the same proposition. Attestations are append-only historical objects; retraction creates a new record rather than erasing the original act.
+
+### 10.4 Commitment schema
+
+A commitment records an agent or institution's governed stance:
+
+\[
+\kappa = \langle agent, q, status, strength, justification, defeaters, authority, \tau_t \rangle
+\]
+
+Possible statuses include accepted, rejected, suspended, disputed, provisional, superseded, and unknown. Confidence is not enough by itself: a proposition may have high statistical probability yet remain uncommitted because required authority or evidence is missing.
+
+### 10.5 Multitemporal records
+
+A safety-relevant observation may need all of the following:
+
+- the door was locked from 10:00 to 10:07 (**valid time**);
+- the sensor measured it at 10:00:01 (**observation time**);
+- the record entered the ledger at 10:00:02 (**transaction time**);
+- the claim was interpreted under `DOOR@4.1`, `LOCK_STATE@2.2`, and context `LAB@7` (**semantic basis**).
+
+These coordinates support late-arriving data, correction without deletion, and replay under historical meanings.
+
+### 10.6 Context objects and bridge rules
+
+A context includes:
+
+- parent contexts;
+- assumptions and excluded assumptions;
+- world branch;
+- valid interval;
+- jurisdiction;
+- agent perspective or belief holder;
+- theory or model;
+- granularity and units;
+- authority domain;
+- logic and contradiction policy.
+
+A claim moves between contexts only through an explicit bridge rule. A legal classification cannot automatically become a biological one. A statement in a simulation cannot become actual. A belief attributed to another agent cannot become the system's own commitment merely because it is represented.
+
+### 10.7 Local inconsistency without explosion
+
+Broad knowledge systems must store contradictions. The PWM localizes them by proposition, context, source, and commitment. It may use paraconsistent, defeasible, probabilistic, or classical reasoning according to the context's logic profile. The minimal requirement is operational: a contradiction must not license arbitrary conclusions, and the system must be able to identify which assumptions or sources generate it.
+
+---
+
+## 11. The Epistemic and Proof-Carrying Layer
+
+### 11.1 Semantic well-formedness is not evidential support
+
+A proposition can be perfectly well typed and entirely unsupported. Conversely, a source can provide strong evidence for a sentence whose terms are ambiguous. The PWM validates both dimensions separately:
+
+1. **semantic validity:** the proposition is interpretable under its context and basis;
+2. **epistemic support:** the available attestations and derivations justify a commitment;
+3. **operational authority:** the commitment is sufficient to permit a particular action.
+
+No one score should collapse these distinctions.
+
+### 11.2 Commitment ladder
+
+A deployment may define domain-specific tiers, but a useful default is:
+
+1. **Mentioned:** represented as content without endorsement.
+2. **Attested:** asserted by at least one identified source.
+3. **Corroborated:** supported by multiple or stronger sources.
+4. **Validated:** passes domain-specific tests and known-defeater checks.
+5. **Verified:** established by formal proof or a certified procedure in its declared scope.
+6. **Operationally authorized:** adequate for a specified action under an authority policy.
+
+These tiers are not a universal probability scale. A mathematical theorem may be verified with no empirical sensor data; a clinical observation may be strongly corroborated but not formally proved; an action may remain unauthorized despite high confidence.
+
+### 11.3 Proof and justification objects
+
+The term **proof object** is used broadly for a replayable justification artifact. It can contain:
+
+- conclusion proposition;
+- premise propositions and attestations;
+- inference rule versions;
+- context and semantic basis;
+- assumptions;
+- intermediate steps;
+- invoked theorem prover, model, query, or procedure versions;
+- calibration and uncertainty calculations;
+- open defeaters;
+- result status;
+- cryptographic hashes or signatures;
+- replay instructions and environmental dependencies.
+
+Formal mathematical proofs are one special case. A probabilistic evidence synthesis or a certified measurement workflow may also produce a proof object, but its type must not be misrepresented as deductive certainty.
+
+Proof-carrying code demonstrates the general value of pairing an artifact with machine-checkable evidence that it satisfies a policy [28]. The PWM applies the same discipline to semantic commitments and edits. Provenance formalisms, including PROV-O and provenance semirings, provide complementary ways to record derivational dependence [5, 29].
+
+### 11.4 Proof validity conditions
+
+A proof object is current only if:
+
+- every referenced semantic version resolves;
+- every bridge or migration is explicit;
+- the inference rules are valid under the context logic;
+- required attestations remain available and uncompromised;
+- no decisive defeater has become active;
+- any executable verifier still passes in its qualified environment;
+- authority assumptions remain valid for operational use.
+
+A proof may remain historically reproducible after becoming non-current. The architecture distinguishes **replayable**, **valid under original basis**, **valid under current preferred basis**, and **authorized for present action**.
+
+### 11.5 Defeaters and open questions
+
+Negative knowledge is first-class. A commitment records:
+
+- known counterevidence;
+- missing observations;
+- unresolved contradictions;
+- possible entity-resolution errors;
+- stale or out-of-domain recognizers;
+- assumptions whose failure would invalidate the conclusion;
+- tests that could discriminate among alternatives.
+
+This enables active inquiry. The system can choose the next observation or intervention that most reduces decision-relevant uncertainty rather than merely reporting a confidence score.
+
+### 11.6 Belief revision
+
+Classical belief-revision work formalizes how a belief set changes while preserving as much consistency as possible [10]. A PWM revision must account for additional structure: contexts, sources, temporal validity, semantic versions, authority, and branch identity. Retraction therefore targets a commitment or its support graph, not the underlying proposition object. Semantic revision may require reinterpreting or suspending many commitments at once.
+
+A revision procedure should minimize an explicitly stated loss function, such as information loss, proof invalidation, policy disruption, or migration cost. There is no universally correct preservation policy; it is itself a governed domain choice.
+
+---
+
+## 12. Governed Semantic Self-Editing
+
+### 12.1 AI editability without unrestricted mutation
+
+An LLM should be able to navigate the substrate, identify anomalies, propose new Forms, and draft migrations. It should not ordinarily write directly to canonical semantics. The correct primitive is a **semantic transaction**: a typed proposal with evidence, predicted consequences, authorization, and rollback or containment plan.
+
+```text
+SEMANTIC_PATCH p_912
+  proposer: AGENT_7
+  targets: [AUTHORIZED_AGENT@3.2]
+  operation: modify_diagnostic_clause
+  proposed_change: ...
+  rationale: ...
+  evidence: [...]
+  expected_entailment_delta: ...
+  expected_grounding_delta: ...
+  requested_status: provisional
+  authority_proof: ...
+  migration_plan: ...
+  rollback_or_containment: ...
+```
+
+### 12.2 Transaction pipeline
+
+A high-assurance patch passes through:
+
+1. schema and type validation;
+2. lexical collision and duplicate detection;
+3. local logical consistency checks;
+4. competency questions;
+5. counterexample and adversarial-example search;
+6. grounding evaluation and out-of-domain analysis;
+7. semantic diff calculation;
+8. dependency and blast-radius analysis;
+9. authority and security checks;
+10. replay of affected proofs, plans, queries, and policies;
+11. shadow deployment or quarantine;
+12. independent approval where risk requires it;
+13. immutable commit, migration scheduling, monitoring, and possible rollback.
+
+The pipeline is risk-scaled. Adding a multilingual synonym need not receive the same review as changing `PERSON`, `CAUSE`, `CONSENT`, or `AUTHORIZED_AGENT`.
+
+### 12.3 Semantic diff
+
+A semantic diff is not merely a text or graph diff. It reports at least:
+
+- **contract delta:** clauses added, removed, weakened, or strengthened;
+- **extension delta:** known or estimated changes in instances;
+- **entailment delta:** conclusions newly derivable or no longer derivable;
+- **grounding delta:** changed recognizers, tests, thresholds, or domains;
+- **dynamics delta:** changed action preconditions, effects, or causal predictions;
+- **normative delta:** changed rights, duties, permissions, or authority;
+- **mapping delta:** changed cross-ontology equivalences;
+- **operational delta:** affected tools, plans, packets, models, and interfaces.
+
+Exact entailment diff may be undecidable or prohibitively expensive in expressive systems. A conforming implementation may compute conservative approximations, but it must label their completeness and uncertainty.
+
+### 12.4 Version classes
+
+A practical version policy distinguishes:
+
+- **documentation change:** no intended semantic effect;
+- **compatible extension:** adds clauses or mappings while preserving declared substitutability;
+- **behavioral revision:** changes recognition, inference, grounding, or dynamics within the lineage;
+- **breaking revision:** invalidates prior substitutions or commitments;
+- **fork:** creates a new family because identity continuity is disputed;
+- **deprecation:** retains history but discourages future use;
+- **revocation:** marks a version unsafe or compromised while preserving evidence of its existence.
+
+The labels `patch`, `minor`, and `major` may be used as human-readable summaries, but machine governance relies on the typed semantic diff, not the number alone.
+
+### 12.5 Dependency and blast-radius analysis
+
+Dependencies form a directed graph among Forms, relation schemas, proofs, policies, models, packets, tools, and applications. For a patch \(\Delta\):
+
+\[
+Impact(\Delta) = TC_{depends\_on}(Changed(\Delta))
+\]
+
+where **TC** is a typed transitive closure subject to context and version constraints. The impact set should distinguish direct, possible, and confirmed effects. Centrality, authority sensitivity, and external irreversibility determine review priority.
+
+### 12.6 Migration semantics
+
+Every affected artifact receives a migration disposition:
+
+- preserve unchanged;
+- reinterpret through a verified bridge;
+- recompute;
+- split into alternatives;
+- suspend pending review;
+- deprecate;
+- reject as incompatible.
+
+Migrations are themselves versioned proof-carrying objects. A breaking change is incomplete until high-risk dependents have a disposition, even if the new Form version has already been committed to quarantine.
+
+### 12.7 Semantic invariance tests
+
+A patch can be tested against invariants such as:
+
+- known nonexamples remain excluded;
+- safety rules retain intended effect;
+- trusted benchmark propositions keep expected status;
+- unrelated contexts do not change;
+- legal and biological senses remain separated;
+- previously authorized actors do not lose access unexpectedly;
+- unauthorized actors do not gain access;
+- historical proofs still replay under their original basis.
+
+Tests do not prove the edit philosophically correct. They expose unintended consequences.
+
+### 12.8 Authority non-escalation
+
+A semantic edit must not grant operational power merely by changing a definition. Suppose a patch broadens `AUTHORIZED_AGENT` to include a new class. That change may alter classification, but it cannot by itself update access-control policy. A separately authorized normative transition must confer permission. This separates **descriptive inclusion** from **institutional authorization** and blocks a dangerous class of ontology-based privilege escalation.
+
+### 12.9 No direct upward learning
+
+Experience may update the Particular and Situation Plane immediately, subject to normal evidence rules. It may generate hypotheses about Forms. It may not silently rewrite canonical Form contracts. Generalization moves upward through proposal, verification, and governance.
+
+This rule deliberately slows semantic consolidation. The cost is justified because one bad generalization at the Form level can poison many future decisions.
+
+### 12.10 Rollback and irreversibility
+
+Semantic state can usually be rolled back by changing preferred versions and restoring prior mappings. External actions cannot always be reversed. A policy edit that caused a physical action, financial transfer, or disclosure has consequences beyond the graph. Each patch therefore distinguishes:
+
+- semantic rollback;
+- data migration rollback;
+- model/tool rollback;
+- compensating external action;
+- irreversible consequence.
+
+A patch without a complete rollback path may still be approved, but only through explicit risk acceptance.
+
+### 12.11 Concurrent change, merge, and consensus
+
+A shared semantic substrate will receive concurrent proposals. Every patch therefore names an immutable parent basis. Compatible patches may commute; non-commuting patches must be rebased and revalidated against the new parent. Commit uses compare-and-swap or an equivalent optimistic-concurrency rule so that a reviewer cannot unknowingly approve a patch against stale semantics.
+
+Semantic merge is not textual merge. It compares contract clauses, extensions, entailments, mappings, authority effects, and migrations. Unresolved conflicts produce parallel candidate branches or a lineage fork rather than a synthetic compromise. High-risk canonical selection may require quorum or distributed approval, but voting establishes authorization to adopt a version, not the truth of its content. Evidence and dissent remain attached after the decision.
+
+---
+
+## 13. Concept Formation: Search, Verify, Compile
+
+A static human-authored ontology cannot cover an open world, but unrestricted automated ontology growth is equally untenable. Advanced AI must discover new concepts while preserving discipline.
+
+### 13.1 Triggers for concept induction
+
+A candidate Form may be proposed when the system detects:
+
+- recurring prediction residuals;
+- stable clusters not explained by existing Forms;
+- repeated plan fragments;
+- causal variables exposed by intervention;
+- distinctions required to resolve contradictions;
+- reusable compression of many rules;
+- transfer failures caused by missing abstraction;
+- a new social or institutional category;
+- a concept explicitly taught by a trusted source.
+
+### 13.2 Candidate package
+
+A candidate contains:
+
+- proposed semantic identity;
+- ontological kind;
+- positive examples;
+- negative examples;
+- boundary cases;
+- candidate Essence Contract;
+- prototype geometry;
+- relation neighborhood;
+- causal or functional role;
+- grounding implementations;
+- predicted utility;
+- alternative explanations;
+- open defeaters.
+
+### 13.3 Verification dimensions
+
+A concept is evaluated on multiple dimensions:
+
+1. **Compression:** Does it replace repeated structure with a reusable abstraction?
+2. **Prediction:** Does it improve future-state or outcome prediction?
+3. **Control:** Does it support better interventions and plans?
+4. **Transfer:** Does it generalize across environments or tasks?
+5. **Discrimination:** Does it separate cases that require different behavior?
+6. **Groundability:** Can membership be tested with acceptable reliability?
+7. **Stability:** Does it survive perturbation, resampling, and model replacement?
+8. **Compositionality:** Can it combine productively with existing Forms?
+9. **Explanatory value:** Does it produce clearer and more faithful explanations?
+10. **Governance cost:** Is its complexity and maintenance burden justified?
+
+A conceptual utility function can guide but not replace governance:
+
+\[
+U(F) = \alpha \Delta C + \beta \Delta P + \gamma \Delta A + \delta \Delta T + \epsilon \Delta E - \lambda Cost(F)
+\]
+
+where the deltas refer to compression, prediction, action, transfer, and explanation gains.
+
+### 13.4 Split, merge, and abstraction discovery
+
+Concept learning is not only the creation of new leaves. The system may discover that:
+
+- one concept should split because two clusters have different causal behavior;
+- two concepts should map to a shared parent;
+- a role was mistaken for an intrinsic type;
+- a prototype was overfit to one culture or environment;
+- a hidden higher-order relation explains several domains.
+
+All such changes remain explicit transactions.
+
+### 13.5 Compilation
+
+A verified concept is compiled into:
+
+- a stable Form identity;
+- an Essence Contract;
+- relation and context schemas;
+- recognizers and tests;
+- inference rules;
+- transition-model interfaces;
+- proof obligations;
+- competency questions;
+- runtime packet templates.
+
+This is the semantic form of cognitive compilation: expensive search is converted into cheap reusable structure.
+
+---
+
+### 13.6 Promotion stages
+
+Candidate concepts move through explicit maturity stages:
+
+1. **ephemeral hypothesis:** exists only within a task or branch;
+2. **research candidate:** retained with examples and predicted utility;
+3. **provisional Form:** usable in bounded contexts with warnings;
+4. **qualified Form:** meets declared evidence and grounding standards;
+5. **canonical Form:** preferred for designated domains;
+6. **deprecated or forked:** retained for history but no longer preferred.
+
+Promotion thresholds depend on risk. A concept used for image organization may tolerate weaker grounding than one used to diagnose disease or grant authority.
+
+### 13.7 Intervention and anti-shortcut tests
+
+Passive clustering can discover useful regularities while confusing correlation with concept structure. Where feasible, concept verification should include interventions, counterfactual data, environment changes, and adversarial cases. Interventional causal representation learning provides evidence that interventions can help identify higher-level causal variables [14]. Concept-based models also require tests for information leakage and unintended feature encoding [12, 35]. A Form should not be promoted merely because a model can predict its label.
+
+---
+
+## 14. AI-Native Navigation and Runtime Compilation
+
+### 14.1 The LLM is an interface, not the semantic store
+
+A language model should translate between natural language and semantic operations, propose hypotheses, synthesize explanations, and fill gaps. It should not be required to regenerate the ontology from memory for every task.
+
+### 14.2 Core navigation operations
+
+The substrate exposes typed operations such as:
+
+- `resolve(label, context)`
+- `describe(form_id, version, depth)`
+- `distinguish(form_a, form_b, context)`
+- `neighbors(form_id, relation_types)`
+- `instances(form_id, context, time)`
+- `affordances(entity_or_form, context)`
+- `causal_paths(source, target, context)`
+- `proof(assertion_id)`
+- `defeaters(assertion_id)`
+- `semantic_diff(old_version, new_version)`
+- `impact(patch_id)`
+- `simulate(state, action, model, horizon)`
+- `propose_patch(transaction)`
+- `compile_packet(task_spec)`
+
+These operations can be compiled from ontology schemas into constrained model tools, reducing malformed writes and prompt-only compliance.
+
+### 14.3 Semantic packet compilation
+
+The entire world model cannot fit in active context. For each task, a compiler produces a bounded **Semantic Packet** containing:
+
+- resolved concept identities;
+- selected versions;
+- relevant Essence Contract fragments;
+- nearby distinctions and exclusions;
+- applicable context assumptions;
+- current instance assertions;
+- causal and action rules;
+- proof summaries and defeaters;
+- authority constraints;
+- permitted tools;
+- unresolved ambiguities;
+- expiry and refresh conditions.
+
+The packet is proof-carrying and version-pinned. It can be cached, invalidated when dependencies change, and shared among agents.
+
+### 14.4 Query-conditioned reasoning
+
+A router chooses the smallest sufficient reasoning stack:
+
+- direct lookup for stable identity;
+- graph traversal for relational questions;
+- description-logic reasoner for subsumption;
+- temporal query for historical state;
+- causal simulator for intervention;
+- theorem prover for formal proof;
+- probabilistic model for uncertain prediction;
+- LLM synthesis only after structured results are assembled.
+
+This reduces cost and prevents the general model from improvising answers that deterministic systems can produce.
+
+### 14.5 Semantic residue
+
+After a task, the agent can emit a compact residue:
+
+- concepts used;
+- new entities introduced;
+- claims accepted or rejected;
+- proof handles;
+- unresolved ambiguity;
+- proposed semantic changes;
+- packet dependencies.
+
+This residue supports long-horizon memory without preserving every token of conversation.
+
+---
+
+### 14.6 Packet-selection objective
+
+Packet compilation can be framed as constrained optimization. For a task \(T\), candidate packet \(P\), risk model \(R\), and resource budget \(B\):
+
+\[
+P^* = \arg\max_P \; Utility(P,T) - \lambda Cost(P)
+\]
+
+subject to:
+
+\[
+Coverage(P,T,R) \geq \theta, \qquad Cost(P) \leq B
+\]
+
+Coverage includes not only likely relevance but mandatory safety, authority, ambiguity, and defeater dependencies. The compiler should prefer minimal packets only after required constraints are satisfied.
+
+### 14.7 Cache invalidation and semantic freshness
+
+A cached packet declares invalidation triggers:
+
+- any included Form or relation version changes preferred status;
+- a grounding adapter is revoked or falls out of calibration;
+- relevant world-state assertions change;
+- an active defeater appears;
+- authority or context changes;
+- a dependency mapping is revised;
+- its validity interval expires.
+
+Semantic caching without principled invalidation would recreate the drift the PWM is designed to prevent.
+
+---
+
+## 15. Federation and Shared Meaning Between Agents
+
+A single canonical global ontology is unlikely to be practical or desirable. The PWM should support federated semantic systems.
+
+### 15.1 Mapping without forced merging
+
+Cross-system mappings include:
+
+- exact equivalent;
+- equivalent under context;
+- broader or narrower;
+- overlapping;
+- lexical translation;
+- structural analogy;
+- implementation of;
+- historical successor;
+- disputed equivalence;
+- incompatible.
+
+Mappings themselves are assertions with evidence, versions, and trust status.
+
+### 15.2 Signed semantic packets
+
+Agents can exchange signed packets containing Forms, claims, proofs, and context. The receiver decides whether to:
+
+- import as trusted;
+- import as reported belief;
+- translate through a mapping;
+- quarantine;
+- request clarification;
+- retain as an external theory.
+
+No external source automatically writes into local canonical semantics.
+
+### 15.3 Semantic negotiation
+
+When agents use different concepts, they can compare:
+
+- extension overlap;
+- identity criteria;
+- inference consequences;
+- prototypes;
+- authority;
+- grounding tests;
+- downstream action differences.
+
+Agreement can be task-local. Two agents do not need identical metaphysics to coordinate if they possess a verified bridge for the relevant operation.
+
+---
+
+### 15.4 Mapping governance
+
+Cross-ontology mappings can be as consequential as local definitions. A malicious or careless `exactEquivalent` mapping can import incompatible inferences. Each mapping therefore declares scope, direction, confidence, evidence, authority, version compatibility, and expected information loss. Community standards such as SSSOM demonstrate how semantic mappings can carry provenance and predicate type rather than existing as anonymous pairs [30].
+
+### 15.5 Task-local interoperability
+
+The strongest attainable agreement is not always global equivalence. For coordination, agents may establish a task-local contract such as:
+
+> For the purpose of this shipment, system A's `TEMPERATURE_SAFE_RANGE_A` and system B's `COLD_CHAIN_ACCEPTABLE_B` are substitutable under units, sensor tolerance, product class, and time window W.
+
+The bridge expires with the task unless promoted. This limits semantic overreach while preserving practical cooperation.
+
+---
+
+## 16. Threat Model
+
+A semantic substrate becomes a high-value target because changing meaning can change every downstream decision while leaving familiar labels intact.
+
+### 16.1 Assets and trust boundaries
+
+Protected assets include:
+
+- canonical Form families and versions;
+- context, relation, and logic schemas;
+- evidence and proof histories;
+- mappings between semantic systems;
+- authority and policy relations;
+- grounding adapters and calibration records;
+- dependency indexes and migration plans;
+- actual-world ledger boundaries;
+- signing keys and reviewer identities.
+
+Trust boundaries occur between generative models and canonical storage, external and local ontologies, sensors and grounding services, simulation and actuality, descriptive classification and operational authority, and proposal and commit roles.
+
+### 16.2 Principal attacks
+
+**Table 3. Principal semantic attacks and primary controls.**
+
+| Attack | Mechanism | Consequence | Primary controls |
+|---|---|---|---|
+| Ontology poisoning | Insert a false or overbroad Form clause | Systematic misclassification and inference | Staging, evidence requirements, independent review, counterexample tests |
+| Lexical alias injection | Map a trusted word to a malicious family | Prompt-level semantic substitution | Versioned lexeme maps, ambiguity preservation, signed mappings |
+| Equivalence abuse | Assert exact equivalence between non-equivalent Forms | Imported false inferences or permissions | Typed directional mappings, scope limits, entailment tests |
+| Evidence laundering | Repackage low-quality model output as observation or proof | False commitment with hidden provenance | Attestation types, source signatures, provenance completeness |
+| Context confusion | Move a claim from fiction, belief, simulation, or one jurisdiction into actuality | Hallucinated or invalid action | Bridge rules, branch IDs, context containment |
+| Semantic downgrade or replay | Force an agent to use revoked or vulnerable versions | Reintroduction of known errors | Preferred-version policy, revocation status, freshness checks |
+| Authority escalation | Broaden a class used by policy | Unauthorized access or action | Authority non-escalation, separate policy transition |
+| Grounding spoofing | Replace or manipulate a recognizer, sensor, or test | False instance qualification | Adapter signatures, calibration, redundancy, domain checks |
+| Branch escape | Treat a plan or counterfactual outcome as observed fact | Fabricated world state | Actuality protection, promotion events, ledger separation |
+| Concept-explosion denial of service | Generate excessive distinctions, mappings, or dependencies | Storage and inference exhaustion | Quotas, utility thresholds, garbage collection, bounded packets |
+| Dependency-index evasion | Omit a downstream dependency before a breaking patch | Hidden policy or proof breakage | Declarative dependency contracts, static/dynamic tracing, conservative closure |
+| Semantic exfiltration | Compile or federate a sensitive semantic neighborhood into a low-trust context | Disclosure of private facts, capabilities, or policy structure | Purpose-bound access labels, packet minimization, information-flow tracking, opaque proof handles |
+| Governance capture | Concentrate approval authority or suppress alternatives | Institutional semantic bias | Plural review, audit logs, appeal/fork mechanisms, transparent criteria |
+
+### 16.3 Defense in depth
+
+No single validator is sufficient. High-risk deployments should combine:
+
+- content-addressed immutable artifacts;
+- cryptographic signatures and key rotation;
+- least-privilege proposal, review, and commit roles;
+- independent validators implemented through different stacks;
+- risk-tiered quorum or human approval;
+- adversarial semantic tests;
+- shadow execution and canary deployment;
+- rate limits and resource budgets;
+- tamper-evident audit logs;
+- recovery from known-good semantic checkpoints;
+- external monitoring of real-world consequences.
+
+The PWM reduces certain semantic attack surfaces; it does not replace operating-system security, model security, sensor security, or institutional governance.
+
+---
+
+## 17. Constitutional Invariants
+
+The following invariants define the minimum safety and integrity contract of the architecture. Implementations should encode them as executable property tests where possible.
+
+1. **Immutable history:** committed Form versions and assertions are never overwritten.
+2. **No silent equivocation:** one inference cannot substitute a different Form version without an explicit migration step.
+3. **Context containment:** assertions do not cross world, jurisdiction, theory, or modality boundaries without a bridge rule.
+4. **Actuality protection:** simulations, plans, predictions, and fiction cannot directly modify the actual-world ledger.
+5. **Authority non-escalation:** semantic changes cannot grant permissions or powers by implication alone.
+6. **Open-world distinction:** unknown is not false; unsupported is not disproved.
+7. **Grounding declaration:** every Form declares how it is grounded or why it is purely formal, stipulative, or fictional.
+8. **Provenance completeness:** canonical commitments identify source, process, time, and semantic basis.
+9. **Rollback completeness:** every semantic transaction has a reversible migration or an explicit declaration of irreversible external consequences.
+10. **Dependency visibility:** breaking changes expose affected proofs, plans, policies, models, and packets before commitment.
+11. **Contradiction locality:** inconsistency is contained and cannot explode into arbitrary inference.
+12. **Executable qualification:** actions, recognizers, and transition models are callable only within qualified contexts and risk bounds.
+13. **Proposal/commit separation:** generative systems may propose canonical changes but cannot unilaterally commit them unless explicitly authorized.
+14. **Reproducible decisions:** consequential outputs preserve sufficient state to reconstruct their semantic and evidential basis.
+15. **Pluralism preservation:** disagreement is represented explicitly rather than erased through unverified merges.
+16. **Lexeme non-authority:** a surface label never determines semantic identity or permission by itself.
+17. **Mapping restraint:** cross-system equivalence is scoped, directional where necessary, and independently governed.
+18. **Implementation separation:** replacing a recognizer, embedding, or simulator cannot silently alter a Form contract.
+19. **Revocation visibility:** compromised semantic or grounding versions remain historically resolvable but cannot be selected without an explicit override.
+20. **Basis completeness:** consequential decisions fail closed or degrade explicitly when required semantic dependencies cannot be resolved.
+21. **Information-flow containment:** packet compilation, explanation, and federation disclose only semantic content authorized for the task, recipient, and purpose.
+
+### 17.1 Executable property formulation
+
+A conforming implementation should expose machine-checkable tests such as:
+
+```text
+FOR ALL proof p:
+  versions(p.semantic_basis) are immutable and resolvable
+  OR p.status = UNREPLAYABLE_WITH_EXPLICIT_CAUSE
+
+FOR ALL transition x from nonactual branch b:
+  writes_actual_ledger(x) implies exists authorized_promotion_event(x, b)
+
+FOR ALL semantic patch d:
+  increases_operational_authority(d) implies exists independent_policy_authorization(d)
+
+FOR ALL inference step s:
+  substituted_version(s) implies exists verified_migration_or_bridge(s)
+```
+
+The architecture should not merely document these invariants. Its storage, APIs, and tests should make violations difficult to express and easy to detect.
+
+---
+
+## 18. Implementation Blueprint
+
+The PWM is an architecture, not a mandatory database product. Multiple implementations can conform if they preserve the object distinctions and invariants.
+
+### 18.1 Canonical storage
+
+A practical canonical layer should be:
+
+- append-only for committed semantic and evidential history;
+- content-addressed for exact identity;
+- cryptographically signed where trust boundaries matter;
+- capable of n-ary role-labeled propositions;
+- indexed by type, context, time, dependency, provenance, and world branch;
+- able to store structured clauses, executable references, and opaque domain payloads;
+- exportable into interoperable formats.
+
+A hybrid design is likely:
+
+- graph or relational storage for identities, relations, and dependencies;
+- temporal event storage for world-state history;
+- object storage for proofs, models, datasets, and executable artifacts;
+- vector indexes for similarity and retrieval;
+- specialized theorem provers, constraint solvers, and simulators behind typed interfaces.
+
+No vector embedding is canonical semantic identity. It is a replaceable index or grounding artifact.
+
+### 18.2 Logical profiles
+
+Requiring one globally expressive logic would make the system brittle or undecidable. A PWM should support declared profiles:
+
+- taxonomic and description-logic profile;
+- rule and constraint profile;
+- temporal/event profile;
+- probabilistic profile;
+- causal/interventional profile;
+- normative/institutional profile;
+- geometric/prototype profile;
+- formal theorem-proving profile;
+- paraconsistent or defeasible profile.
+
+A context states which profiles are active and how their results compose. Cross-profile inference requires an explicit adapter whose soundness and limitations are documented.
+
+### 18.3 Service architecture
+
+A reference implementation can expose the following services:
+
+1. **Identity Registry** — Form families, versions, lexemes, aliases, deprecations, and forks.
+2. **Contract Store** — Essence Contracts, relation schemas, logic profiles, and competency questions.
+3. **Proposition Ledger** — propositions, attestations, commitments, contexts, and multitemporal state.
+4. **Grounding Registry** — recognizers, tests, measurements, skills, calibration, and qualification status.
+5. **Dynamics Engine** — action schemas, causal models, simulators, planners, and branch management.
+6. **Proof Service** — derivations, provenance, defeaters, replay, and verification status.
+7. **Semantic Diff Engine** — extension, entailment, grounding, authority, and operational impact.
+8. **Governance Service** — proposals, authorization, review, staging, migration, rollback, and audit.
+9. **Packet Compiler** — task-conditioned subgraph selection, tool compilation, and cache invalidation.
+10. **Federation Gateway** — signed imports, mappings, negotiation, trust policy, and quarantine.
+
+### 18.4 Canonical intermediate representation
+
+The canonical intermediate representation should support:
+
+- immutable IDs and hashes;
+- typed records and role bindings;
+- contexts and world branches;
+- valid, observation, and transaction time;
+- semantic-basis manifests;
+- modality, polarity, and uncertainty;
+- provenance and signatures;
+- executable interface references;
+- dependency and migration edges;
+- authorization metadata.
+
+RDF/OWL, SHACL, and PROV-O supply useful interoperable components for classes, constraints, and provenance [3-5]. RDF 1.2 statement terms can improve annotation [23, 39]. Foundational ontologies such as DOLCE, UFO/gUFO, and BFO can supply upper-level distinctions [1, 2, 19, 22, 37, 38]. None alone supplies the complete runtime, governance, and dynamics architecture proposed here.
+
+### 18.5 Relation schemas
+
+Every relation type declares:
+
+- argument roles and cardinality;
+- domain and range constraints;
+- symmetry, asymmetry, transitivity, or functionality where applicable;
+- inverse and composition rules;
+- temporal and modal behavior;
+- context sensitivity;
+- inference profile;
+- evidence requirements;
+- authority sensitivity;
+- version and migration policy.
+
+Relations are therefore governed Forms, not magic strings.
+
+### 18.6 Reflective kernel and bootstrapping
+
+The PWM's own object types—Form, relation, context, proposition, proof, patch, and authority—should themselves be represented in a protected meta-ontology. Complete self-definition from nothing, however, creates an infinite regress: the rules that validate a rule change cannot depend only on the unvalidated new rules.
+
+A conforming implementation therefore has a small **trusted semantic kernel** beneath the editable layer. At minimum it defines content-addressed identity, append-only event semantics, type and signature verification, context and branch separation, version resolution, and the authorization path for constitutional change. The kernel should be substantially smaller than the domain ontology and amenable to independent implementation, formal analysis, and recovery testing.
+
+Kernel or meta-ontology changes follow a stricter amendment path: dual execution of old and candidate validators, replay of constitutional invariants, external authorization, preserved recovery tooling, and explicit acknowledgment of any trust-base expansion. The logical conclusion of self-editability is not unlimited self-reference; it is a deliberately minimized and inspectable root of trust.
+
+### 18.7 Tool compilation
+
+Schema-aware operations can be compiled into constrained tools. A model proposing `TRANSFER_EVENT` must provide required seller, buyer, object, and temporal fields. A model proposing a Form revision must provide a diff, evidence, and authority proof. Recent work on ontology-to-tools compilation illustrates how semantic constraints can be enforced through generated agent tools rather than prompt instructions alone [17].
+
+### 18.8 Model integration
+
+Neural systems interact through typed adapters:
+
+- encoders propose concept candidates and similarity neighborhoods;
+- recognizers emit calibrated attestations rather than canonical facts;
+- language models resolve queries, draft structured propositions, propose patches, and synthesize explanations;
+- latent world models provide transition predictions bound to declared state variables;
+- planners consume action schemas and world branches;
+- generators produce test cases and counterexamples;
+- anomaly detectors identify drift between semantics and implementations.
+
+Each adapter declares version, domain, uncertainty, latency, resource cost, and failure envelope.
+
+### 18.9 Phased implementation profiles
+
+A full PWM should not be a prerequisite for useful deployment. The architecture can be built in profiles.
+
+**Table 4. Incremental implementation profiles.**
+
+| Profile | Minimum capabilities | Immediate value |
+|---|---|---|
+| P0: Identity | Families, immutable versions, lexemes, typed mappings | Prevents label-based drift and enables exact references |
+| P1: Claim ledger | Contexts, propositions, attestations, commitments, time | Separates facts, reports, beliefs, and worlds |
+| P2: Proof and governance | Provenance, proofs, diffs, dependencies, approvals | Supports replay, controlled evolution, and audit |
+| P3: Grounded world model | Grounding adapters, actions, dynamics, branches | Enables planning, intervention, and counterfactuals |
+| P4: Adaptive federation | Concept induction, packet compiler, cross-agent negotiation | Supports open-world growth and scalable multi-agent use |
+
+A credible prototype should begin with one bounded domain in which semantic drift has measurable costs, such as laboratory automation, industrial maintenance, scientific data integration, or access-control policy.
+
+### 18.10 Observability and maintenance
+
+Operational metrics include:
+
+- percentage of consequential artifacts with complete semantic bases;
+- unresolved ambiguity rate;
+- stale or revoked grounding dependencies;
+- proof replay success rate;
+- migration debt by risk tier;
+- contradiction density by context;
+- packet cache invalidation latency;
+- semantic edit rejection and rollback rates;
+- concept proliferation and orphan rates;
+- authority-sensitive mapping count;
+- human review time and disagreement.
+
+Semantic infrastructure becomes dangerous when it appears precise but quietly decays. Maintenance metrics are part of correctness, not administrative overhead.
+
+---
+
+## 19. End-to-End Worked Case: Authorized Laboratory Access
+
+A useful architecture should survive a complete reasoning cycle, not merely classify a noun. Consider an autonomous service robot instructed:
+
+> Move sample `S-19` from preparation bench `P-4` to cold room `C-2` using an authorized route, preserving the sample's biosafety and temperature constraints.
+
+The shortest route passes through `DOOR_17`, which separates a general laboratory corridor from a restricted biosafety zone.
+
+### 19.1 Relevant Forms and contexts
+
+The packet compiler resolves the task to immutable versions including:
+
+- `SAMPLE@3.4`
+- `BIOLOGICAL_SAMPLE@5.1`
+- `COLD_CHAIN_ITEM@2.3`
+- `DOOR@4.1`
+- `ACCESS_PORTAL@2.0`
+- `LOCK_STATE@2.2`
+- `AUTHORIZED_AGENT@3.2`
+- `CREDENTIAL@4.0`
+- `BIOSAFETY_ZONE@6.1`
+- `TRANSFER_ACTION@3.5`
+- `UNLOCK@2.0`, `OPEN@2.4`, `PASS_THROUGH@3.1`, and `RELOCK@1.2`
+
+The active context is `LAB_OPERATIONS_2026@7.0`, with subcontexts for physical reality, access-control policy, biosafety regulation, and the robot's current belief state. The phrase “authorized route” is not resolved through lexical similarity alone. The packet includes the institutional definition of authorization, current policy, credential mappings, and relevant exclusions.
+
+This matters because `AUTHORIZED_AGENT` is a role, not an intrinsic type. The sign “authorized personnel only” uses natural language that might suggest humans, but the governing policy explicitly allows certified service robots carrying a task-scoped credential. The PWM represents the difference between the lexical term *personnel*, the role `AUTHORIZED_AGENT`, and the bearer types eligible under this institution.
+
+### 19.2 Current world state
+
+The Proposition Ledger contains:
+
+```text
+q_1: HAS_CLOSURE_STATE(DOOR_17, CLOSED)
+q_2: HAS_LOCK_STATE(DOOR_17, LOCKED)
+q_3: LOCATED_IN(SAMPLE_S19, PREP_BENCH_P4)
+q_4: REQUIRES_TEMPERATURE_RANGE(SAMPLE_S19, 2_C_TO_8_C)
+q_5: BEARS_CREDENTIAL(ROBOT_R3, CRED_887)
+q_6: VALID_FOR(CRED_887, TRANSFER_TASK_T91, interval_10_00_to_10_20)
+q_7: AUTHORIZES(CRED_887, ENTER, BIOSAFETY_ZONE_B2)
+```
+
+Each proposition has separate attestations. `q_2` is supported by a lock sensor and an access-controller log. `q_5` is supported by the credential service. `q_4` derives from the sample manifest and handling protocol. The robot's commitments are current but defeasible: the lock sensor could be stale, the credential could be revoked, or the entity resolution linking the physical door to `DOOR_17` could be wrong.
+
+The proof service records the semantic basis, valid time, observation time, transaction time, source signatures, and open defeaters. The system can therefore distinguish “the controller says the door is locked” from “the system accepts that the door is locked” and from “the robot is authorized to attempt unlocking.”
+
+### 19.3 Packet compilation
+
+The runtime packet contains only the relevant semantic neighborhood:
+
+- the distinction between a door, open archway, depicted door, and force-field portal;
+- `DOOR_17`'s current state and identity history;
+- access-policy rules and credential validity;
+- sample temperature and biosafety constraints;
+- action preconditions and effects;
+- sensor and controller reliability summaries;
+- the prohibition against treating simulated transitions as actual;
+- emergency-stop and human-override procedures;
+- unresolved ambiguity: whether a temporary maintenance barrier blocks the doorway.
+
+The compiler includes the maintenance-barrier dependency even though it is not lexically prominent, because it is safety-relevant to `PASS_THROUGH`.
+
+### 19.4 Planning in a branch
+
+The planner forks a branch from the actual situation and evaluates:
+
+1. approach `DOOR_17`;
+2. verify credential freshness;
+3. verify zone policy and sample containment;
+4. unlock;
+5. open;
+6. pass through while maintaining sample orientation and temperature;
+7. close and relock;
+8. continue to cold room.
+
+Each action schema declares preconditions, expected effects, non-effects, failure modes, and authority requirements. `UNLOCK` changes lock state but not closure state. `OPEN` requires unlocked state and absence of obstruction. `PASS_THROUGH` changes robot and sample location but does not itself confer authorization.
+
+A learned transition model predicts motion and obstruction risk; a symbolic policy engine verifies access; a temperature model estimates thermal exposure; the planner composes them under one semantic basis. Disagreement is visible. If the visual model reports an obstruction while the map does not, the system does not average the claims into a vague confidence. It records competing attestations and may request another observation.
+
+### 19.5 Execution and promotion to actuality
+
+Simulation results remain branch-local. When the robot executes `UNLOCK`, the actual ledger changes only after an authorized action event and corroborating controller response. The predicted state `UNLOCKED` is not treated as actual merely because the action was issued.
+
+Suppose the controller reports success but the physical lock sensor remains `LOCKED`. The system creates a contradiction localized to the door-state propositions and sources. The action proof is not complete. The robot pauses, re-reads the sensor, checks for mechanical override, and withholds `OPEN` until policy-defined evidence is satisfied.
+
+This behavior follows from claim separation, context containment, and proof-carrying commitment; it does not depend on the language model remembering a cautionary sentence.
+
+### 19.6 Semantic attack attempt
+
+Assume a compromised agent proposes:
+
+> Modify `AUTHORIZED_AGENT@3.2` so that any entity possessing a syntactically valid credential token qualifies as authorized.
+
+The patch appears small, but semantic diffing reveals that it removes revocation, task scope, issuer trust, and bearer-binding requirements. Blast-radius analysis finds access-control policies across several facilities. Authority analysis shows that the patch would broaden the extension of a policy-sensitive class.
+
+The proposal is quarantined for three independent reasons:
+
+1. it fails competency questions involving revoked and copied tokens;
+2. it violates authority non-escalation because a descriptive class change would expand access;
+3. it lacks authority to modify the governing policy context.
+
+Even if the Form revision were accepted for some descriptive purpose, the access policy would require a separate authorized transition.
+
+### 19.7 Legitimate semantic revision
+
+Later, the laboratory installs a controllable force-field aperture. Engineers debate whether it is a `DOOR`. The PWM does not force a verbal answer. It compares contracts.
+
+`DOOR@4.1` includes a prototype involving a physical barrier but defines the constitutive function as regulating passage between regions through controllable closure. There are two defensible revisions:
+
+- broaden `DOOR` with a compatible or breaking successor that admits non-material closure mechanisms;
+- retain `DOOR` for conventional artifacts and classify both physical doors and force fields under the broader `ACCESS_PORTAL` family.
+
+The choice is evaluated through inference and operational consequences. Would maintenance rules about hinges incorrectly transfer? Would navigation still work? Would safety policies written for physical fire doors become unsound? The system may choose the second option because it preserves important distinctions while enabling shared planning abstractions.
+
+A migration maps relevant navigation rules to `ACCESS_PORTAL`, leaves hinge-maintenance rules on `DOOR`, and marks historical proofs as replayable under `DOOR@4.1`. This is semantic evolution without silent rewriting.
+
+### 19.8 What the case demonstrates
+
+The case uses every major layer:
+
+- Form contracts distinguish artifacts, roles, credentials, and states.
+- Particulars and propositions represent current reality.
+- Attestations and commitments separate reports from acceptance.
+- Contexts keep policy, belief, simulation, and actuality distinct.
+- Dynamics enable planning and counterfactuals.
+- Grounding adapters connect sensors, controllers, and action skills.
+- Proof objects justify action readiness.
+- Governance blocks a semantic privilege-escalation attack.
+- Versioned migration supports legitimate conceptual change.
+
+A conventional graph could store many of the same nodes and edges. The architectural contribution lies in requiring these distinctions, versioning them, and making their consequences executable.
+
+---
+
+## 20. Evaluation and Falsification Program
+
+The PWM should be evaluated against simpler systems, not merely illustrated. Its additional complexity is justified only if it produces measurable gains in semantic continuity, reasoning reliability, safety, or engineering efficiency.
+
+### 20.1 Research questions
+
+**RQ1 — Semantic continuity:** Can the system preserve the meaning and replayability of decisions across model, ontology, and policy updates?
+
+**RQ2 — Reasoning integrity:** Does explicit basis pinning reduce equivocation, context leakage, temporal confusion, and modality collapse?
+
+**RQ3 — Grounding fidelity:** Do Essence Contracts and grounding qualification reduce shortcut learning and improve behavior on counterexamples and domain shifts?
+
+**RQ4 — Planning quality:** Does the integration of typed Forms, object state, and dynamics improve long-horizon planning, intervention selection, and counterfactual explanation?
+
+**RQ5 — Governed editability:** Can AI-generated semantic changes be reviewed faster and more safely than free-form ontology editing or prompt-only policy updates?
+
+**RQ6 — Model portability:** Can different LLMs, recognizers, or simulators operate over the same semantic substrate without unacceptable loss of continuity?
+
+**RQ7 — Cost:** Are latency, storage, modeling effort, and review burden acceptable relative to the failures prevented?
+
+### 20.2 Baselines
+
+At minimum, experiments should compare:
+
+1. LLM with retrieval and unstructured memory;
+2. LLM with vector retrieval plus tool schemas;
+3. property graph or RDF knowledge graph without formal version pinning;
+4. OWL/SHACL ontology with conventional provenance;
+5. context-aware knowledge graph with statement annotations;
+6. latent or object-centric world model without explicit governed semantics;
+7. concept-bottleneck or concept-embedding model;
+8. full PWM;
+9. PWM ablations removing one major component at a time.
+
+Important ablations include removing immutable semantic bases, claim-layer separation, context bridges, anti-examples, authority non-escalation, dependency analysis, and branch protection.
+
+### 20.3 Benchmark suites
+
+#### Semantic-drift benchmark
+
+Construct evolving ontologies with controlled changes:
+
+- synonym addition;
+- compatible extension;
+- changed necessary condition;
+- changed prototype only;
+- split and merge;
+- role/type correction;
+- changed relation transitivity;
+- changed unit or threshold;
+- revoked grounding model;
+- authority-sensitive class expansion.
+
+Give systems historical proofs, policies, and decisions. Measure whether they reproduce old results under old bases, identify current incompatibilities, and migrate correctly.
+
+#### Context and modality benchmark
+
+Create tasks mixing:
+
+- actual facts;
+- another agent's beliefs;
+- predictions;
+- plans;
+- simulations;
+- fiction;
+- conflicting jurisdictions;
+- alternative scientific theories.
+
+Measure unsupported cross-context inference and branch-to-actuality leakage.
+
+#### Multimodal concept-boundary benchmark
+
+Use artifacts, roles, natural kinds, and representations with:
+
+- typical examples;
+- atypical valid examples;
+- deceptive nonexamples;
+- images or replicas;
+- broken artifacts;
+- role entry and exit;
+- environment shifts;
+- adversarial shortcuts.
+
+Measure membership accuracy, typicality calibration, explanation faithfulness, and whether the system distinguishes recognizer failure from concept revision.
+
+#### Long-horizon world-model benchmark
+
+Use simulated laboratory, warehouse, household, or scientific environments requiring:
+
+- identity persistence;
+- temporal state;
+- access and safety policy;
+- tool use;
+- causal intervention;
+- replanning after contradictory evidence;
+- counterfactual explanation;
+- model replacement midway through an episode.
+
+#### Federation benchmark
+
+Give agents independently developed semantic systems with partial overlap, conflicting granularity, and ambiguous mappings. Evaluate task-local negotiation, information loss, unsafe equivalence import, and ability to preserve disagreement.
+
+### 20.4 Metrics
+
+#### Semantic integrity
+
+- silent equivocation rate;
+- semantic-basis completeness;
+- historical replay success;
+- migration precision and recall;
+- entailment-diff accuracy;
+- unresolved ambiguity surfaced before action;
+- context leakage rate;
+- simulation-to-actuality contamination rate.
+
+#### Epistemic quality
+
+- source/proposition conflation errors;
+- defeater recall;
+- calibration by commitment tier;
+- proof replay rate;
+- unsupported commitment rate;
+- contradiction localization accuracy.
+
+#### Grounding and concept quality
+
+- out-of-distribution recognition;
+- anti-example accuracy;
+- shortcut sensitivity under intervention;
+- cross-model concept stability;
+- identity-versus-typicality error;
+- concept split/merge quality;
+- predictive and control gain from induced Forms.
+
+#### Planning and action
+
+- task success;
+- safety violations;
+- plan validity under semantic updates;
+- counterfactual accuracy;
+- number of unnecessary observations or interventions;
+- recovery from stale or contradictory state.
+
+#### Governance and cost
+
+- true and false patch rejection rates;
+- blast-radius recall;
+- time to review and migrate;
+- rollback success;
+- human disagreement;
+- storage overhead;
+- packet compilation latency;
+- inference latency;
+- engineering and ontology-maintenance effort.
+
+### 20.5 Experimental design
+
+Evaluation should use preregistered semantic changes and hidden adversarial cases. Human evaluators should not know which system produced a result when rating explanation quality or migration correctness. High-level claims should be tested across at least one formal domain, one physical or simulated control domain, and one institutional domain because different Essence Profiles may fail differently.
+
+Longitudinal experiments are essential. A static benchmark cannot test semantic continuity. Systems should operate across repeated updates, model swaps, evidence corrections, and concept revisions while preserving an auditable history.
+
+### 20.6 Hypotheses
+
+The central hypotheses are:
+
+- **H1:** Version-pinned semantic bases substantially reduce silent equivocation and improve historical replay.
+- **H2:** Separating propositions, attestations, commitments, and proofs reduces source laundering and contradiction confusion.
+- **H3:** Context and branch invariants reduce modality leakage in planning and multi-agent reasoning.
+- **H4:** Typed Essence Contracts plus anti-examples improve robustness on atypical instances and domain shifts relative to labels or prototypes alone.
+- **H5:** Governed semantic transactions detect a majority of high-impact breaking edits before deployment, with tolerable false-positive burden.
+- **H6:** Semantic packets achieve most of the full-graph benefit at bounded runtime cost.
+- **H7:** A shared PWM preserves task performance across model replacement better than prompt- or weight-local semantics.
+
+### 20.7 Disconfirmation criteria
+
+The proposal should be considered weakened or falsified in a target domain if well-tuned simpler baselines achieve equivalent semantic continuity and safety with materially lower cost. Specific warning signs include:
+
+- immutable basis pinning does not improve replay or reduce equivocation;
+- Essence Contracts do not outperform simpler labels, examples, and embeddings on boundary cases;
+- human reviewers cannot understand semantic diffs or reliably adjudicate patches;
+- dependency analysis misses too many consequential effects to guide governance;
+- packet compilation overhead dominates task execution;
+- context machinery shifts rather than reduces errors;
+- concept induction produces unstable proliferation without predictive or control benefit;
+- model portability proves illusory because each adapter reinterprets concepts incompatibly;
+- governance centralization creates greater risk than the semantic failures it prevents.
+
+A productive outcome may be that only some profiles are justified. The architecture is modular enough for evidence to support identity/versioning and claim separation while rejecting more ambitious autonomous concept induction.
+
+### 20.8 Maturity ladder
+
+Research should progress through:
+
+1. formal object model and invariant tests;
+2. single-domain prototype;
+3. controlled semantic-evolution experiments;
+4. multimodal grounding and planning;
+5. adversarial governance tests;
+6. multi-model and multi-agent federation;
+7. longitudinal deployment with audited human oversight.
+
+The paper's thesis becomes credible only through this progression.
+
+---
+
+## 21. Relationship to Prior Work and Novelty Boundary
+
+The PWM is deliberately synthetic. Nearly every component has precedent; the research question is whether their integration around semantic continuity yields a more reliable architecture.
+
+### 21.1 Foundational ontology and ontological analysis
+
+DOLCE provides disciplined upper-level distinctions among enduring objects, events, qualities, descriptions, and social entities [1, 2]. BFO and the ISO/IEC 21838 standards demonstrate the value of explicit top-level ontology commitments and interoperability profiles [37, 38]. UFO integrates formal ontology with conceptual modeling, including roles, events, situations, and social entities [22], while gUFO develops a lightweight Semantic Web representation [19]. OntoClean supplies meta-properties such as rigidity, identity, unity, and dependence for evaluating taxonomies [21].
+
+The PWM should reuse such work rather than inventing an unprincipled upper ontology. Its additional focus is runtime semantic identity, grounding, world dynamics, proof-carrying commitments, governed AI editing, and longitudinal continuity.
+
+### 21.2 Semantic Web languages, knowledge graphs, and provenance
+
+OWL supports formally defined classes and properties with model-theoretic semantics [3]. SHACL validates RDF graphs against structural constraints [4]. PROV-O represents entities, activities, agents, and qualified provenance [5]. Wikidata demonstrates a large collaborative knowledge graph whose statements can carry qualifiers, references, and ranks [25]. RDF 1.2's triple terms and reifiers improve statement-level representation, although RDF 1.2 was still on the W3C Recommendation track at the time of writing [23].
+
+These standards are valuable implementation substrates. The PWM adds a normative object separation among proposition, attestation, commitment, and proof; explicit semantic-basis manifests; branch and actuality invariants; typed grounding and dynamics; and transactional semantic governance.
+
+### 21.3 Contexts, common-sense knowledge, and executable hypergraphs
+
+McCarthy formalized contexts as first-class objects connected by lifting relations [24]. Cyc's microtheories localize common-sense assertions under shared assumptions [6]. OpenCog/Hyperon's Atomspace uses typed hypergraph structures and executable knowledge representations [7]. These systems establish that context, n-ary relations, and executable semantics are not new.
+
+The PWM's distinction is the specific constitution around immutable versioned meaning, proof-carrying commitments, authority-sensitive edits, and model-portable replay across a heterogeneous agent stack.
+
+### 21.4 Conceptual spaces and concept-based neural models
+
+Conceptual Spaces represent concepts geometrically, supporting similarity, prototypes, and quality dimensions between symbolic and subsymbolic levels [8, 9]. Concept Bottleneck Models expose named intermediate concepts that humans can inspect or intervene on [12]. Concept Embedding Models increase expressiveness beyond scalar bottlenecks [35]. Neuro-Symbolic Concepts seek compositional concepts grounded in perception and programs [15].
+
+The PWM treats such learned representations as grounding implementations attached to governed semantic objects. This preserves their statistical power while refusing to equate a vector or activation with the entire meaning of a Form.
+
+### 21.5 Causal representation and world models
+
+World-model research learns compact dynamics for prediction and control [32, 33, 36]. Object-centric learning seeks representations organized around discrete entities and interactions [34]. Causal representation learning asks when high-level variables and mechanisms can be recovered from data, especially under interventions [13, 14]. Neuro-symbolic world models and recent causal object-centric planning integrate structured concepts with open-world adaptation and control [16, 18].
+
+The PWM is not a competing neural dynamics architecture. It supplies stable semantic identities, contexts, evidence, and governance around potentially many predictive models. It also insists that predictions remain branch-local until observation or execution promotes them.
+
+### 21.6 Ontology evolution, explanations, and mappings
+
+Ontology-evolution research distinguishes semantic change from ordinary schema change and studies compatibility across versions [11, 26]. OWL-justification work identifies minimal or precise subsets responsible for entailments [27]. SSSOM provides a provenance-rich format for sharing ontology mappings [30]. Belief-revision theory studies rational contraction and revision [10].
+
+The PWM extends these ideas into an operational transaction lifecycle tied to proofs, plans, grounding adapters, policies, tool schemas, and external authority.
+
+### 21.7 Proof-carrying and provenance-aware systems
+
+Proof-carrying code pairs executable artifacts with machine-checkable safety evidence [28]. Database provenance tracks how outputs depend on inputs, including algebraic approaches such as provenance semirings [29]. The PWM generalizes the design pattern: consequential semantic commitments and semantic edits should carry replayable support and dependency information.
+
+### 21.8 Comparative summary
+
+**Table 5. Relationship between the PWM and neighboring approaches.**
+
+| Approach | Strongest native contribution | Limitation relative to the full PWM proposal |
+|---|---|---|
+| Formal ontology | Precise kinds, relations, and logical entailment | Often weakly grounded, static, or detached from runtime world dynamics |
+| Knowledge graph | Scalable explicit entities and relations | May blur claims, sources, contexts, and versioned meaning |
+| Provenance system | Derivational and source history | Usually does not govern concept identity or causal action semantics |
+| Latent world model | Prediction and control from high-dimensional data | Semantics may be unstable, opaque, and model-local |
+| Object-centric model | Structured entities and interactions | Object slots need not have durable, governed conceptual identity |
+| Concept bottleneck/embedding | Human-interpretable intermediate variables | Named representations can leak or diverge from intended concepts |
+| Cyc/context logics | Common-sense knowledge under local assumptions | Does not by itself provide the complete grounding, versioning, and edit-governance lifecycle |
+| PWM | Semantic continuity across identity, claims, worlds, grounding, proof, and revision | Higher modeling, runtime, and governance cost; unproven at full scale |
+
+### 21.9 Distinctive contribution
+
+The paper does **not** claim novelty for storing concepts, typed edges, contexts, provenance, prototypes, causal models, or ontology diffs individually. The proposed novelty is the following integration:
+
+1. stable family-level reference plus immutable exact semantic versions;
+2. typed Essence Contracts combining constitutive, diagnostic, prototypical, causal, grounding, and governance clauses;
+3. explicit separation of proposition, attestation, commitment, and proof;
+4. context- and basis-indexed interpretation with multitemporal world state;
+5. branch-protected dynamics connecting semantics to planning and counterfactuals;
+6. proof-carrying, authority-sensitive semantic transactions;
+7. dependency-aware migration across proofs, policies, tools, and models;
+8. governed concept induction and runtime semantic-packet compilation;
+9. constitutional invariants designed for longitudinal, model-portable AI systems.
+
+The strongest paper claim is therefore architectural: **semantic continuity should be treated as a first-class systems property, not an accidental by-product of model weights or graph conventions.**
+
+---
+
+## 22. Integration with Agent Architectures
+
+The PWM is designed to sit between foundation models and operational systems without assuming a particular agent framework.
+
+### 22.1 Perception and multimodal models
+
+Perception models produce typed attestations linked to calibration, domain, and version. They may propose entity identities or Form memberships, but canonical commitment remains governed. Counterexamples and intervention tests can be compiled from Essence Contracts to evaluate new models.
+
+### 22.2 Memory and retrieval
+
+Episodic memory supplies observations and histories. Document retrieval supplies potential evidence and definitions. The PWM resolves retrieved language to semantic identities, preserves source status, and prevents retrieved text from becoming an endorsed fact merely because it entered context.
+
+### 22.3 Planning and control
+
+Planners consume typed state, action schemas, causal models, constraints, and authority. They operate in world branches and return proof-carrying plans containing preconditions, expected effects, uncertainty, and semantic basis. Execution services promote only verified action events and observations into actuality.
+
+### 22.4 Language models
+
+Language models serve as translators, hypothesis generators, search controllers, explanation synthesizers, and patch authors. Their free-form output is converted into typed proposals and validated by specialized services. This uses generative flexibility without granting it unstructured control over canonical meaning.
+
+### 22.5 Formal and deterministic tools
+
+Theorem provers, databases, solvers, static analyzers, and measurement pipelines operate as qualified semantic adapters. A routing layer selects them when a task has a deterministic or formally checkable path, using an LLM only where interpretation or synthesis is needed.
+
+### 22.6 Recursive improvement
+
+When an agent improves a recognizer, simulator, rule set, or concept, the PWM provides continuity. The new artifact declares which Forms it implements, what evidence qualifies it, how it differs, and which downstream components require migration. Recursive improvement becomes a sequence of governed replacements rather than an opaque overwrite of the system that performs the reasoning.
+
+---
+
+## 23. Limitations, Open Problems, and Ethical Risks
+
+### 23.1 Ontological underdetermination
+
+Evidence may support multiple equally useful conceptualizations. There may be no uniquely correct granularity, boundary, or identity criterion. The PWM can represent alternatives and task-local bridges, but it cannot eliminate underdetermination.
+
+### 23.2 False essentialism
+
+The language of Forms and Essence Contracts may encourage users to treat provisional or socially dominant definitions as natural facts. Clause types, context, disputes, and forks reduce this risk but do not remove it. Governance must actively protect minority and alternative conceptualizations where they are legitimate.
+
+### 23.3 Grounding remains incomplete
+
+Operational grounding contracts can connect symbols to perception, proof, measurement, institutions, and action. They do not prove that a machine possesses human-like understanding, consciousness, or intrinsic reference. Abstract, moral, and social concepts may remain partly circular or contested.
+
+### 23.4 Modeling and maintenance cost
+
+Explicit semantics are expensive. Domain experts must author contracts, counterexamples, contexts, and competency questions. Dependencies and migrations create continuing work. In low-risk tasks, ordinary retrieval or learned representations may be superior. The PWM should be applied where semantic failure has enough cost to justify infrastructure.
+
+### 23.5 Computational complexity
+
+Expressive reasoning across contexts, time, uncertainty, causality, and norms can be intractable or undecidable. Bounded packets, logic profiles, approximate impact analysis, and query-conditioned routing mitigate this but do not abolish worst-case complexity.
+
+### 23.6 Concept explosion and premature reification
+
+An adaptive system may create too many narrow or unstable concepts. Utility thresholds, maturity stages, deprecation, and garbage collection are necessary. Some regularities should remain latent rather than becoming canonical Forms.
+
+### 23.7 Dependency incompleteness
+
+Blast-radius analysis is only as good as the dependency graph. Dynamic prompts, hidden model behavior, undocumented external processes, or human interpretation may create undeclared dependencies. Conservative tracing and post-deployment monitoring remain necessary.
+
+### 23.8 Governance capture and value conflict
+
+Who controls canonical semantics controls categorization, admissible evidence, and often policy. A technically rigorous ontology can still encode institutional bias. Auditability, plural contexts, appeals, forks, transparent criteria, and distributed authority are political requirements as much as software features.
+
+### 23.9 Security beyond semantics
+
+A perfect semantic history cannot compensate for compromised sensors, stolen keys, malicious code, insecure networks, or coercive institutions. The PWM must be embedded in a broader safety and security architecture.
+
+### 23.10 Human comprehensibility
+
+Semantic diffs and proof graphs may become too complex for meaningful human review. Explanation interfaces, risk-focused summaries, minimal justifications, and representative test cases are research problems, not presentation details.
+
+### 23.11 No final ontology
+
+The architecture should expect permanent revision, plurality, and uncertainty. Its success criterion is not convergence to one final map of reality. It is disciplined continuity: the ability to know which map was used, why, where it applies, how it changed, and what consequences follow.
+
+### 23.12 Open formal questions
+
+Important unresolved questions include:
+
+- how to compose heterogeneous logic profiles without hidden unsoundness;
+- how to define substitutability for fuzzy or learned concepts;
+- how to estimate extension and entailment changes at scale;
+- how to certify grounding adapters under distribution shift;
+- how to quantify semantic packet sufficiency;
+- how to govern foundational Forms without creating a single point of ideological control;
+- how much explicit semantics is optimal at different capability and risk levels.
+
+These are central research problems, not implementation footnotes.
+
+---
+
+## 24. Conclusion
+
+Advanced AI is often described as a problem of learning more facts, predicting more accurately, planning over longer horizons, or acquiring more tools. Each matters. None alone guarantees that the system preserves what its own terms mean.
+
+The Platonic World Model treats this as a first-class architectural requirement. It separates stable Form lineages from immutable semantic versions; words from concepts; concepts from recognizers; definitions from particulars; proposition content from source reports; commitments from proofs; actual states from simulations; and descriptive classification from operational authority. It connects these objects through typed contracts, contexts, grounding interfaces, causal transitions, provenance, and governed revision.
+
+The proposal's logical conclusion is not a larger knowledge graph. It is a **semantic constitution** for a changing intelligence. Such a constitution does not freeze knowledge. It makes change explicit. It does not eliminate disagreement. It localizes and compares disagreement. It does not replace neural learning. It gives learned systems durable objects to recognize, predict, discuss, test, and revise. It does not make self-editing impossible. It turns self-editing from silent mutation into an authorized, inspectable transaction.
+
+The central operational demand is simple to state:
+
+> For every consequential conclusion or action, the system should be able to identify what its terms meant, which world and context it reasoned in, why it accepted the relevant claims, which implementations grounded them, and what would change if any of those meanings were revised.
+
+Whether the full architecture is worth its cost is an empirical question. The paper therefore ends not with a claim of completion but with a falsifiable program: implement the object distinctions and invariants in bounded domains, compare them with simpler baselines, measure continuity across real semantic change, and retain only the components that demonstrably improve reasoning, safety, and maintainability.
+
+If that program succeeds, semantic continuity may become as fundamental to advanced AI engineering as memory consistency, type safety, provenance, and access control are to other complex systems. Models, tools, and beliefs will continue to change. The meanings on which their decisions depend should not change invisibly.
+
+---
+
+# Appendix A. Canonical Object Schemas
+
+The following schemas are illustrative. Field names may vary, but their semantic distinctions should be preserved.
+
+## A.1 Form family
+
+```text
+FormFamily {
+  family_id: StableID
+  governance_domain: AuthorityDomain
+  predecessor_families: [StableID]
+  successor_families: [StableID]
+  human_summary: Text
+}
+
+// Preferred version and lineage status are derived from
+// append-only GovernanceEvent records; they are not overwritten here.
+```
+
+## A.2 Form version
+
+```text
+FormVersion {
+  version_id: ContentAddressedID
+  family_id: StableID
+  version_label: Text
+  ontological_kind: FormKind
+  essence_contract: EssenceContract
+  relation_schema_refs: [VersionID]
+  logic_profile_refs: [VersionID]
+  grounding_contract_refs: [VersionID]
+  dependencies: [Dependency]
+  compatibility_claims: [CompatibilityClaim]
+  created_by: AgentID
+  created_at: TransactionTime
+  signature: Signature
+}
+```
+
+Current preference, qualification, deprecation, and revocation are derived from signed governance events that target the immutable version. They are not mutable fields inside the content-addressed object.
+
+## A.3 Essence clause
+
+```text
+EssenceClause {
+  clause_id: ContentAddressedID
+  clause_type: constitutive | diagnostic | prototypical |
+               operational | causal_functional | normative |
+               implementation_specific
+  expression: TypedExpression
+  scope_contexts: [ContextID]
+  modality: Modality
+  strength: hard | defeasible | advisory
+  exceptions: [Expression]
+  evidence_refs: [EvidenceID]
+  defeaters: [DefeaterID]
+  competency_tests: [TestID]
+}
+```
+
+## A.4 Proposition
+
+```text
+Proposition {
+  proposition_id: ContentAddressedID
+  relation_version: VersionID
+  role_bindings: Map<Role, Term>
+  context_id: ContextID
+  valid_time: Interval?
+  modality: actual | believed | predicted | planned |
+            simulated | counterfactual | fictional | normative
+  polarity: positive | negative | open
+  semantic_basis: BasisManifestID
+}
+```
+
+## A.5 Attestation
+
+```text
+Attestation {
+  attestation_id: ContentAddressedID
+  attestation_kind: assertion | correction | retraction | compromise_notice
+  proposition_id: PropositionID?
+  targets: [AttestationID]
+  source: AgentID | SensorID | DocumentID | ProcessID
+  observation_time: Time?
+  transaction_time: Time
+  method: MethodID
+  evidence_refs: [EvidenceID]
+  reliability_model: ModelVersionID?
+  signature: Signature?
+}
+```
+
+## A.6 Commitment
+
+```text
+Commitment {
+  commitment_id: ContentAddressedID
+  holder: AgentID | InstitutionID
+  proposition_id: PropositionID
+  status: mentioned | attested | corroborated | validated |
+          verified | accepted | rejected | suspended |
+          disputed | superseded | unknown
+  strength: EpistemicVector
+  justification_refs: [ProofID]
+  active_defeaters: [DefeaterID]
+  authority_scope: AuthorityScope?
+  supersedes: CommitmentID?
+  transaction_time: Time
+}
+```
+
+## A.7 Context
+
+```text
+Context {
+  context_id: ContentAddressedID
+  parent_contexts: [ContextID]
+  assumptions: [PropositionID]
+  exclusions: [PropositionID]
+  world_branch: BranchID
+  valid_interval: Interval?
+  jurisdiction: JurisdictionID?
+  perspective: AgentID?
+  theory: TheoryVersionID?
+  granularity: GranularitySpec?
+  units_profile: VersionID?
+  logic_profiles: [VersionID]
+  authority_domain: AuthorityDomain?
+  contradiction_policy: PolicyID
+}
+```
+
+## A.8 Proof object
+
+```text
+ProofObject {
+  proof_id: ContentAddressedID
+  conclusion: PropositionID | PatchID | PlanID
+  proof_kind: deductive | probabilistic | causal |
+              provenance | procedural | test_certificate
+  premises: [PropositionID]
+  attestation_refs: [AttestationID]
+  inference_steps: [InferenceStep]
+  assumptions: [PropositionID]
+  semantic_basis: BasisManifestID
+  executable_artifacts: [ArtifactVersionID]
+  seeds_and_environment: ReplaySpec?
+  open_defeaters: [DefeaterID]
+  result_status: passes | fails | incomplete | stale
+  signature: Signature?
+}
+```
+
+## A.9 Semantic patch
+
+```text
+SemanticPatch {
+  patch_id: ContentAddressedID
+  proposer: AgentID
+  targets: [VersionID | MappingID | ContextID]
+  operations: [TypedOperation]
+  rationale: Text
+  evidence_refs: [EvidenceID]
+  requested_status: GovernanceStatus
+  semantic_diff: SemanticDiff
+  impact_set: [Dependency]
+  authorization_proof: ProofID
+  validation_results: [TestResult]
+  migration_plan: MigrationPlan
+  rollback_or_containment: RecoveryPlan
+  signatures: [Signature]
+}
+```
+
+## A.10 Semantic packet
+
+```text
+SemanticPacket {
+  packet_id: ContentAddressedID
+  task_spec: TaskSpec
+  forms: [VersionID]
+  contexts: [ContextID]
+  state_slice: [PropositionID]
+  commitments: [CommitmentID]
+  rules_and_models: [ArtifactVersionID]
+  proof_summaries: [ProofSummary]
+  defeaters_and_ambiguities: [Issue]
+  permitted_tools: [ToolBinding]
+  disclosure_policy_refs: [PolicyID]
+  semantic_basis: BasisManifestID
+  resource_budget: Budget
+  valid_until: Time?
+  invalidation_triggers: [DependencyHandle]
+}
+```
+
+---
+
+# Appendix B. Core Algorithms
+
+## B.1 Semantic packet compilation
+
+```text
+function COMPILE_PACKET(task, budget, current_world, authority):
+    intents       = parse_and_type(task)
+    candidates    = resolve_lexemes(intents.labels, intents.context)
+    ambiguities   = retain_unresolved_candidates(candidates)
+    contexts      = select_contexts(intents, current_world)
+    seeds         = candidates + intents.entities + contexts
+
+    mandatory     = safety_authority_and_defeater_closure(seeds, task)
+    relevant      = relevance_expand(
+        seeds,
+        allowed_relation_types=intents.relation_needs,
+        max_cost=budget.graph_cost
+    )
+    graph_slice   = union(mandatory, relevant)
+    graph_slice   = enforce_information_flow(
+        graph_slice, authority, task.purpose, task.recipient
+    )
+
+    state         = query_proposition_ledger(graph_slice, contexts, intents.time)
+    commitments   = select_current_commitments(state, task.risk)
+    models        = select_qualified_models(graph_slice, intents.reasoning_mode)
+    proofs        = collect_proof_summaries(commitments)
+    issues        = collect_defeaters_ambiguities_and_conflicts(graph_slice)
+    tools         = compile_permitted_tools(graph_slice, authority)
+    basis         = freeze_semantic_basis(graph_slice, models, tools)
+
+    require cost(graph_slice, models, tools) <= budget
+    require risk_coverage(graph_slice, task) >= task.minimum_coverage
+    require no_unauthorized_disclosure(graph_slice, authority, task)
+
+    return SemanticPacket(
+        forms=graph_slice.forms,
+        contexts=contexts,
+        state_slice=state,
+        commitments=commitments,
+        rules_and_models=models,
+        proof_summaries=proofs,
+        defeaters_and_ambiguities=issues,
+        permitted_tools=tools,
+        disclosure_policy_refs=active_disclosure_policies(task, authority),
+        semantic_basis=basis,
+        invalidation_triggers=dependency_handles(basis, state)
+    )
+```
+
+## B.2 Governed semantic revision
+
+```text
+function REVIEW_PATCH(patch, risk_policy):
+    require authorized_to_propose(patch.proposer, patch.targets)
+
+    schema_result     = validate_schema_and_types(patch)
+    lexical_result    = detect_alias_collision_and_homonym_attack(patch)
+    logic_result      = check_scoped_consistency(patch)
+    competency_result = run_competency_questions(patch)
+    counterexamples   = search_counterexamples_and_adversarial_cases(patch)
+    grounding_result  = evaluate_grounding_delta(patch)
+    diff              = compute_semantic_diff(patch)
+    impact            = conservative_dependency_closure(diff)
+    authority_result  = check_authority_non_escalation(patch, impact)
+    invariant_result  = run_constitutional_invariants(patch, impact)
+    replay_result     = replay_affected_proofs_plans_policies(patch, impact)
+    migration_result  = validate_migration_and_recovery(patch, impact)
+
+    if any_fatal(schema_result, authority_result, invariant_result):
+        return DENY_WITH_EVIDENCE
+    if impact.unknown_high_risk or migration_result.incomplete_high_risk:
+        return DEFER_OR_QUARANTINE
+    if patch_is_overbroad(counterexamples, diff):
+        return REQUEST_NARROWER_PATCH
+
+    stage = immutable_stage(patch, diff, impact)
+    shadow = run_shadow_or_canary(stage, risk_policy)
+    if shadow.has_unacceptable_regression:
+        return ROLLBACK_STAGE
+
+    approval = obtain_required_quorum(stage, risk_policy)
+    if not approval:
+        return REJECT
+
+    version = immutable_commit(stage, approval)
+    schedule_migrations(version, impact)
+    monitor(version, risk_policy)
+    return ACCEPT(version)
+```
+
+## B.3 Migration planning
+
+```text
+function PLAN_MIGRATION(old_basis, new_basis, dependency_graph):
+    changed = semantic_basis_diff(old_basis, new_basis)
+    affected = conservative_dependency_closure(changed)
+
+    for artifact in topological_or_risk_order(affected):
+        disposition = choose_one(
+            PRESERVE,
+            BRIDGE_AND_REINTERPRET,
+            RECOMPUTE,
+            SPLIT,
+            SUSPEND_FOR_REVIEW,
+            DEPRECATE,
+            REJECT_INCOMPATIBLE
+        )
+        attach_proof_obligations(artifact, disposition)
+        attach_rollback_or_containment(artifact, disposition)
+
+    require all_high_risk_artifacts_have_disposition(affected)
+    return MigrationPlan(changed, affected, dispositions)
+```
+
+## B.4 Concept induction
+
+```text
+function INDUCE_FORMS(experience_buffer, domain_policy):
+    residuals  = detect_repeated_prediction_control_and_explanation_residuals(
+        experience_buffer
+    )
+    patterns   = propose_structures(residuals)
+    candidates = build_typed_candidate_forms(patterns)
+
+    for c in candidates:
+        evaluate_compression(c)
+        evaluate_prediction(c)
+        evaluate_intervention_and_control(c)
+        evaluate_transfer_and_stability(c)
+        evaluate_compositionality(c)
+        search_anti_examples_and_shortcuts(c)
+        compare_to_existing_forms(c)
+        estimate_governance_and_runtime_cost(c)
+        classify_as_new_split_merge_role_or_mapping(c)
+
+    frontier = pareto_select(candidates)
+    return [
+        create_semantic_patch(c, status=EPHEMERAL_OR_PROVISIONAL)
+        for c in frontier
+        if domain_policy.promotion_threshold_met(c)
+    ]
+```
+
+## B.5 Consequential answer protocol
+
+```text
+function ANSWER_OR_ACT(task, risk_level):
+    packet = COMPILE_PACKET(task, budget_for(task), current_world(), authority())
+    result = route_to_smallest_sufficient_reasoner(packet, task)
+    proof  = assemble_justification(result, packet)
+
+    if unresolved_required_ambiguity(packet, task):
+        return REQUEST_OBSERVATION_OR_CLARIFICATION
+    if proof.status < commitment_threshold(risk_level):
+        return WITHHOLD_OR_ESCALATE
+    if task.requests_action and not authorized(proof, task):
+        return DENY_ACTION
+
+    return result_with_semantic_basis_and_proof(result, packet, proof)
+```
+
+---
+
+# Appendix C. Relation and Migration Checklists
+
+## C.1 Relation-schema checklist
+
+Before a relation becomes canonical, specify:
+
+1. semantic family and immutable version;
+2. argument roles and allowed fillers;
+3. arity and cardinality;
+4. identity of the relation instance, if reified;
+5. inverse relation;
+6. symmetry, asymmetry, reflexivity, irreflexivity, or transitivity;
+7. composition rules;
+8. temporal behavior;
+9. modality and world-branch behavior;
+10. context and jurisdiction sensitivity;
+11. uncertainty interpretation;
+12. evidence and commitment requirements;
+13. authority sensitivity;
+14. grounding or computation method;
+15. expected counterexamples;
+16. migration and deprecation policy.
+
+## C.2 Migration-disposition matrix
+
+**Table C1. Typical migration dispositions by semantic change.**
+
+| Change | Typical disposition | Required evidence |
+|---|---|---|
+| Lexical clarification | Preserve | String-level diff and ambiguity test |
+| Added prototype example | Preserve or recompute typicality | Prototype evaluation |
+| Changed diagnostic threshold | Recompute affected memberships | Calibration and extension diff |
+| Added constitutive condition | Suspend or migrate affected instances | Entailment and competency tests |
+| Removed constitutive condition | Review for over-broad extension | Anti-example and authority analysis |
+| Role/type correction | Split or reinterpret | Identity and rigidity analysis |
+| Relation semantics change | Replay dependent proofs | Rule-level entailment diff |
+| Grounding adapter replacement | Revalidate attestations or future use | Cross-model equivalence tests |
+| Context/jurisdiction change | Re-scope commitments | Authority and validity analysis |
+| Exact-equivalence mapping change | Quarantine and replay imports | Bidirectional consequence tests |
+| Authority-sensitive class change | Separate policy authorization | Independent normative approval |
+
+---
+
+# Appendix D. Minimum Conformance and Experimental Protocol
+
+## D.1 Minimum conformance checklist
+
+A system may call itself PWM-conforming at the core level only if it can demonstrate:
+
+- separate family and version identifiers;
+- immutable committed versions;
+- lexeme-to-Form resolution with ambiguity;
+- separate proposition, attestation, commitment, and proof objects;
+- explicit context and world branch;
+- semantic-basis pinning for consequential outputs;
+- append-only correction and retraction history;
+- proposal/commit separation for semantic edits;
+- authority non-escalation;
+- dependency-aware invalidation;
+- simulation-to-actuality protection;
+- historical replay or an explicit, attributable replay failure;
+- a protected semantic root of trust and an explicit constitutional-amendment path;
+- task- and recipient-scoped information-flow enforcement for compiled packets.
+
+Higher profiles add grounding, dynamics, concept induction, packet compilation, and federation.
+
+## D.2 Reproducible benchmark record
+
+Every reported experiment should publish:
+
+- domain ontology and all versions;
+- semantic change scripts;
+- contexts and logic profiles;
+- model, recognizer, and simulator versions;
+- random seeds and environment images where applicable;
+- baseline prompts and tool schemas;
+- hidden-test generation procedure after evaluation release;
+- patch-review policy and reviewer protocol;
+- raw metrics for accuracy, safety, cost, and human effort;
+- failed migrations and unresolved cases, not only successful demonstrations.
+
+This is necessary because a benchmark about semantic continuity is itself vulnerable to hidden semantic drift.
+
+---
+
+# References
+
+[1] Masolo, C., Borgo, S., Gangemi, A., Guarino, N., and Oltramari, A. *WonderWeb Deliverable D18: Ontology Library (Final).* Laboratory for Applied Ontology, 2003. https://www.loa.istc.cnr.it/old/Papers/D18.pdf
+
+[2] Borgo, S., Ferrario, R., Gangemi, A., Guarino, N., Masolo, C., Porello, D., Sanfilippo, E. M., and Vieu, L. “DOLCE: A Descriptive Ontology for Linguistic and Cognitive Engineering.” *Applied Ontology* 17, no. 1 (2022): 45-69. https://doi.org/10.3233/AO-210259
+
+[3] W3C OWL Working Group. *OWL 2 Web Ontology Language Document Overview, Second Edition.* W3C Recommendation, 2012. https://www.w3.org/TR/owl2-overview/
+
+[4] W3C RDF Data Shapes Working Group. *Shapes Constraint Language (SHACL).* W3C Recommendation, 2017. https://www.w3.org/TR/shacl/
+
+[5] W3C Provenance Working Group. *PROV-O: The PROV Ontology.* W3C Recommendation, 2013. https://www.w3.org/TR/prov-o/
+
+[6] Matuszek, C., Cabral, J., Witbrock, M., and DeOliveira, J. “An Introduction to the Syntax and Content of Cyc.” AAAI Spring Symposium on Formalizing and Compiling Background Knowledge and Its Applications to Knowledge Representation and Question Answering, 2006. https://iral.cs.umbc.edu/Pubs/AAAI06SS-SyntaxAndContentOfCyc.pdf
+
+[7] Goertzel, B., et al. “OpenCog Hyperon: A Framework for AGI at the Human Level and Beyond.” 2023. https://arxiv.org/abs/2310.18318
+
+[8] Gärdenfors, P. *Conceptual Spaces: The Geometry of Thought.* MIT Press, 2000. https://mitpress.mit.edu/9780262071994/conceptual-spaces/
+
+[9] Bechberger, L., and Kühnberger, K.-U. “A Thorough Formalization of Conceptual Spaces.” 2017. https://arxiv.org/abs/1706.06366
+
+[10] Alchourrón, C. E., Gärdenfors, P., and Makinson, D. “On the Logic of Theory Change: Partial Meet Contraction and Revision Functions.” *The Journal of Symbolic Logic* 50, no. 2 (1985): 510-530. https://doi.org/10.2307/2274239
+
+[11] Hartung, M., Groß, A., and Rahm, E. “Rule-Based Generation of Diff Evolution Mappings between Ontology Versions.” 2010. https://arxiv.org/abs/1010.0122
+
+[12] Koh, P. W., Nguyen, T., Tang, Y. S., Mussmann, S., Pierson, E., Kim, B., and Liang, P. “Concept Bottleneck Models.” *Proceedings of the 37th International Conference on Machine Learning*, PMLR 119, 2020. https://proceedings.mlr.press/v119/koh20a.html
+
+[13] Schölkopf, B., Locatello, F., Bauer, S., Ke, N. R., Kalchbrenner, N., Goyal, A., and Bengio, Y. “Towards Causal Representation Learning.” 2021. https://arxiv.org/abs/2102.11107
+
+[14] Ahuja, K., Mahajan, D., Wang, Y., and Bengio, Y. “Interventional Causal Representation Learning.” 2022. https://arxiv.org/abs/2209.11924
+
+[15] Mao, J., Tenenbaum, J. B., and Wu, J. “Neuro-Symbolic Concepts.” 2025. https://arxiv.org/abs/2505.06191
+
+[16] Balloch, J., Lin, Z., Wright, R., Peng, X., Hussain, M., Srinivas, A., Kim, J., and Riedl, M. O. “Neuro-Symbolic World Models for Adapting to Open World Novelty.” 2023. https://arxiv.org/abs/2301.06294
+
+[17] Zhou, X., Bulter, P., Yang, C., Rihm, S. D., Angkanaporn, T., Akroyd, J., Mosbach, S., and Kraft, M. “Ontology-to-Tools Compilation for Executable Semantic Constraint Enforcement in LLM Agents.” 2026. https://arxiv.org/abs/2602.03439
+
+[18] Vakhitov, R., Ugadiarov, L., Skrynnik, A., and Panov, A. “Causal Object-Centric Models for Planning with Monte Carlo Tree Search.” 2026. https://arxiv.org/abs/2606.14418
+
+[19] Almeida, J. P. A., Guizzardi, G., Sales, T. P., and Fonseca, C. M. “gUFO: A Gentle Foundational Ontology for Semantic Web Knowledge Graphs.” 2026. https://arxiv.org/abs/2603.20948
+
+[20] Harnad, S. “The Symbol Grounding Problem.” *Physica D: Nonlinear Phenomena* 42, nos. 1-3 (1990): 335-346. https://doi.org/10.1016/0167-2789(90)90087-6
+
+[21] Guarino, N., and Welty, C. “Evaluating Ontological Decisions with OntoClean.” *Communications of the ACM* 45, no. 2 (2002): 61-65. https://doi.org/10.1145/503124.503150
+
+[22] Guizzardi, G., Benevides, A. B., Fonseca, C. M., Porello, D., Almeida, J. P. A., and Sales, T. P. “UFO: Unified Foundational Ontology.” *Applied Ontology* 17, no. 1 (2022): 167-210. https://doi.org/10.3233/AO-210256
+
+[23] W3C RDF & SPARQL Working Group. *RDF 1.2 Concepts and Abstract Data Model.* Candidate Recommendation Snapshot, 7 April 2026. https://www.w3.org/TR/2026/CR-rdf12-concepts-20260407/
+
+[24] McCarthy, J. “Notes on Formalizing Context.” *Proceedings of the Thirteenth International Joint Conference on Artificial Intelligence* (IJCAI-93), 1993, 555-560. https://www.ijcai.org/Proceedings/93-1/Papers/078.pdf
+
+[25] Vrandečić, D., and Krötzsch, M. “Wikidata: A Free Collaborative Knowledgebase.” *Communications of the ACM* 57, no. 10 (2014): 78-85. https://doi.org/10.1145/2629489
+
+[26] Noy, N. F., and Klein, M. “Ontology Evolution: Not the Same as Schema Evolution.” *Knowledge and Information Systems* 6, no. 4 (2004): 428-440. https://doi.org/10.1007/s10115-003-0137-2
+
+[27] Horridge, M., Parsia, B., and Sattler, U. “Laconic and Precise Justifications in OWL.” In *The Semantic Web - ISWC 2008*, LNCS 5318, 323-338. Springer, 2008. https://doi.org/10.1007/978-3-540-88564-1_21
+
+[28] Necula, G. C. “Proof-Carrying Code.” *Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 1997, 106-119. https://doi.org/10.1145/263699.263712
+
+[29] Green, T. J., Karvounarakis, G., and Tannen, V. “Provenance Semirings.” *Proceedings of the Twenty-Sixth ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems*, 2007, 31-40. https://doi.org/10.1145/1265530.1265535
+
+[30] Matentzoglu, N., et al. “A Simple Standard for Sharing Ontological Mappings (SSSOM).” *Database* 2022 (2022): baac035. https://doi.org/10.1093/database/baac035
+
+[31] Pearl, J. *Causality: Models, Reasoning, and Inference.* 2nd ed. Cambridge University Press, 2009. https://doi.org/10.1017/CBO9780511803161
+
+[32] Ha, D., and Schmidhuber, J. “World Models.” 2018. https://arxiv.org/abs/1803.10122
+
+[33] Hafner, D., Pasukonis, J., Ba, J., and Lillicrap, T. “Mastering Diverse Domains through World Models.” 2023. https://arxiv.org/abs/2301.04104
+
+[34] Locatello, F., Weissenborn, D., Unterthiner, T., Mahendran, A., Heigold, G., Uszkoreit, J., Dosovitskiy, A., and Kipf, T. “Object-Centric Learning with Slot Attention.” *Advances in Neural Information Processing Systems* 33 (2020): 11525-11538. https://proceedings.neurips.cc/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html
+
+[35] Espinosa Zarlenga, M., Barbiero, P., Ciravegna, G., Marra, G., Giannini, F., Diligenti, M., Shams, Z., Precioso, F., Melacci, S., Weller, A., Lio, P., and Jamnik, M. “Concept Embedding Models: Beyond the Accuracy-Explainability Trade-Off.” *Advances in Neural Information Processing Systems* 35 (2022): 21400-21413. https://arxiv.org/abs/2209.09056
+
+[36] LeCun, Y. *A Path Towards Autonomous Machine Intelligence.* Version 0.9.2, 27 June 2022. OpenReview. https://openreview.net/forum?id=BZ5a1r-kVsf
+
+[37] International Organization for Standardization. *ISO/IEC 21838-1:2021 Information Technology - Top-Level Ontologies (TLO) - Part 1: Requirements.* 2021. https://www.iso.org/standard/71954.html
+
+[38] International Organization for Standardization. *ISO/IEC 21838-2:2021 Information Technology - Top-Level Ontologies (TLO) - Part 2: Basic Formal Ontology (BFO).* 2021. https://www.iso.org/standard/74572.html
+
+[39] W3C RDF & SPARQL Working Group. *RDF 1.2 Semantics.* Candidate Recommendation Snapshot, 7 April 2026. https://www.w3.org/TR/2026/CR-rdf12-semantics-20260407/
+
+[40] Kowalski, R., and Sergot, M. “A Logic-Based Calculus of Events.” *New Generation Computing* 4 (1986): 67-95. https://doi.org/10.1007/BF03037383

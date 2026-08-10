@@ -1,0 +1,1500 @@
+---
+title: "Octopus Router Architecture"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "Date not normalized"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Original Corben Sorenson paper published as part of The ASI Stack source and lineage library."
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Original paper, not rewritten book prose"}
+This page publishes Corben Sorenson's original source manuscript so readers can inspect the ideas that preceded or informed the living book. The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `octopus_router` |
+| Source class | `author paper` |
+| Library class | `architecture_whitepaper` |
+| Manuscript date | Date not normalized |
+| Inventory updated | Not separately recorded |
+| Exact published-source SHA-256 | `6b0ae00f09f47b9ae36c7b5ced0086388d58e8baecf8dbd82b7b8c929f400bb5` |
+| Exact published-source bytes | 49,310 |
+| Exact source text | [Download/view the tracked Markdown source](source/octopus_router.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/octopus_router.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Archived author paper; its claims retain the status and limits stated in the paper and do not inherit the living book's current evidence state.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this paper enters the living book
+
+[Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.html), [Readiness Gates, Residual Escrow, and Quarantine](../chapters/readiness-gates-residual-escrow-and-quarantine.html), [Personal Compute Hives and Federated Edge Intelligence](../chapters/personal-compute-hives-and-federated-edge-intelligence.html), [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.html), [Integrated Reference Architecture](../chapters/integrated-reference-architecture.html)
+
+<hr>
+
+## Original manuscript
+
+Octopus Router Architecture
+Dynamically Loaded Modular Intelligence with Independently Ratcheted Specialists
+White Paper
+ Public Release v1.0 — May 2026
+ Author: Corben Sorenson
+Status: Conceptual Framework + AI Systems Architecture Proposal
+________________
+
+
+TL;DR / Executive Abstract
+Modern AI systems often scale as monoliths: one large model is expected to absorb every capability, domain, tool, memory, safety constraint, and interaction style. This works surprisingly well, but it creates serious problems. Monolithic systems are expensive to keep fully resident in memory, difficult to specialize cleanly, hard to quarantine by domain or permission, and prone to becoming opaque “capability blobs” where unrelated skills interfere.
+This paper proposes the Octopus Router Architecture, or ORA: a modular AI architecture in which a lightweight learned head/router dynamically selects, loads, coordinates, verifies, and composes outputs from many specialized standalone modules called arms.
+The informal metaphor is:
+Goblins in a trenchcoat.
+Externally, the system appears to be one coherent agent. Internally, it is a society of specialized critters coordinated by a head.
+The biological metaphor is the octopus. Octopus arms are not passive sticks controlled entirely by a central brain. They contain rich local nervous systems, and more neurons are distributed across the arms than in the brain. Octopus arms also face a complex control problem because they are flexible muscular hydrostats with many degrees of freedom and chemotactile suckers. This makes the octopus a useful metaphor for distributed intelligence: one organism, many semi-autonomous limbs, local specialization, global coordination.
+The central thesis is:
+Do not scale one undifferentiated blob for every capability. Build a lightweight router that composes specialized, dynamically loaded, independently improving modules.
+In the Octopus Router Architecture:
+* the head/router stays resident;
+* specialist arms load on demand;
+* each arm has its own tools, memory, benchmarks, residuals, permissions, and verification contracts;
+* arms can be added, split, merged, retired, or upgraded independently;
+* the head composes arm outputs into one coherent user-facing response or action;
+* high-risk domains can be logically quarantined;
+* memory and compute are routed only where needed.
+The core loop is:
+task arrives
+   ↓
+head/router interprets intent, risk, budget, and context
+   ↓
+router selects candidate arms
+   ↓
+selected arms load dynamically
+   ↓
+arms execute within local permissions and runtime constraints
+   ↓
+arms return structured outputs, confidence, residuals, and provenance
+   ↓
+head composes, verifies, resolves conflicts, and responds
+   ↓
+performance logs update arm benchmarks, residuals, and routing policy
+ORA is related to Mixture-of-Experts, Mixture-of-Agents, tool use, skill libraries, modular software systems, and multi-agent orchestration. However, it is not identical to any of these.
+A neural Mixture-of-Experts routes tokens or examples to sparse expert subnetworks. The sparsely-gated MoE paper introduced conditional computation to increase model capacity without proportional compute, and Switch Transformers later simplified sparse expert routing to scale large sparse models. ORA moves this idea up one level: it is a system-level mixture of specialists rather than only a token-level neural layer.
+Mixture-of-Agents systems combine outputs from multiple LLM agents, often in layered proposer/aggregator patterns. ORA generalizes this into a full operating architecture: each arm is not merely a response proposer, but a governed subsystem with local memory, tools, permissions, benchmarks, residual escrow, runtime tier, and lifecycle.
+The core novelty is:
+A system-level routed architecture in which specialized standalone modules are dynamically loaded, independently ratcheted, domain-quarantined, benchmarked, split or merged based on bloat and residuals, and composed by a learned head/router into one coherent external agent.
+The result is a path to scaling capability without scaling one monolithic blob. The system becomes more like an organism, team, or operating system:
+one identity
+many specialists
+explicit routing
+bounded permissions
+local memory
+local verification
+global composition
+continuous ratcheting
+That is the Octopus Router Architecture.
+________________
+
+
+Abstract
+The dominant path for AI scaling has often treated capability as something to be absorbed into increasingly large, increasingly general models. This paper proposes a complementary architecture: Octopus Router Architecture, a dynamically loaded modular AI system in which a lightweight learned head/router coordinates a collection of specialized standalone modules called arms.
+Each arm is a domain-specific subsystem with its own tools, memory, benchmarks, residuals, runtime tier, permissions, and verification contracts. The head/router interprets user intent and context, selects relevant arms, loads them on demand, allocates budget and risk constraints, composes their outputs, resolves conflicts, and produces a coherent response or action. Arms can be independently ratcheted upward through their own benchmark frontiers, split when they become bloated, merged when redundant, retired when stale, and spawned when new recurring domains appear.
+The architecture is inspired by octopus nervous systems and the metaphor of “goblins in a trenchcoat.” An octopus acts as one animal while relying on highly distributed arm-level neural control. Likewise, ORA presents as one agent while internally operating as a modular society of specialists. Recent octopus neurobiology emphasizes that octopus arms are packed with local neural structures and that more neurons are distributed across the arms than in the brain, making the animal an evocative biological analogy for distributed, locally capable, globally coordinated intelligence.
+ORA is related to Mixture-of-Experts, Mixture-of-Agents, tool-using language models, executable skill libraries, and modular software architectures. Sparsely-gated MoE and Switch Transformers show the power of sparse expert activation inside neural networks; Mixture-of-Agents explores collaborative multi-model response generation; Toolformer shows that language models can learn when and how to use external tools; Voyager demonstrates an embodied agent with an executable skill library and self-verification.
+ORA’s contribution is to combine these directions into a system-level architecture for composable AI: one coherent external agent, many dynamically loaded internal specialists, independent capability ratchets, explicit quarantine, and head-level synthesis.
+The paper defines the head/router, arms, arm registry, routing modes, dynamic loading, memory partitioning, domain quarantine, arm lifecycle, local ratcheting, split/merge rules, safety layers, evaluation metrics, failure modes, and implementation roadmap.
+The central claim is:
+The next stage of AI scaling should not only be larger models, but better-organized modular systems whose capabilities can be routed, composed, bounded, verified, and evolved independently.
+________________
+
+
+1. Introduction
+1.1 The monolith problem
+Modern AI systems are often asked to be everything at once:
+* coder;
+* researcher;
+* planner;
+* mathematician;
+* visual reasoner;
+* data analyst;
+* writer;
+* tutor;
+* operator;
+* safety monitor;
+* memory manager;
+* tool user;
+* long-horizon agent.
+A single general-purpose model can perform many of these roles surprisingly well. But as capability demands grow, the monolithic approach creates pressure in several directions:
+Problem
+	Why it matters
+	Memory pressure
+	A large system may need many capabilities represented or loaded even when only one is needed.
+	Capability interference
+	Training or prompting for one domain can degrade behavior in another.
+	Poor quarantine
+	Sensitive domains may share memory, tools, or permissions too freely.
+	Opaque specialization
+	It becomes difficult to know which part of the system is responsible for which capability.
+	Difficult upgrading
+	Improving one capability may require retraining or changing the whole model.
+	Tool bloat
+	Tools accumulate without clean domain ownership.
+	Evaluation ambiguity
+	When the system fails, it is unclear whether the router, domain knowledge, tool use, memory, or architecture failed.
+	The Octopus Router Architecture proposes a different scaling path:
+Scale by adding and improving specialists, not by forcing every capability into one undifferentiated blob.
+________________
+
+
+1.2 The octopus metaphor
+The octopus is a useful metaphor because it is one organism with highly distributed capability.
+Its arms are not merely passive appendages. They are sensor-rich, locally capable structures. Recent work on cephalopod arms describes the octopus arm as a muscular hydrostat with near infinite degrees of freedom and hundreds of chemotactile suckers, and notes that more neurons are distributed across the arms than in the brain.
+This matters architecturally.
+An octopus does not solve every local motor problem by routing every detail through one central controller. Its arms have local nervous systems and local sensorimotor structure.
+That suggests a design principle for AI:
+Global coherence does not require total centralization.
+An AI system can present as one agent while distributing work across specialized modules.
+________________
+
+
+1.3 The trenchcoat metaphor
+The “goblins in a trenchcoat” metaphor captures the user-facing side.
+To the user, the system appears to be one entity. But internally, it may be composed of many distinct critters:
+* one critter for coding;
+* one for math;
+* one for citations;
+* one for diagrams;
+* one for safety;
+* one for tool execution;
+* one for memory retrieval;
+* one for planning;
+* one for skepticism;
+* one for final writing.
+The head coordinates them so the external behavior is coherent.
+This is not a defect. It is the architecture.
+The system is one identity built from many specialists.
+________________
+
+
+2. Core Thesis
+The central thesis of the Octopus Router Architecture is:
+A capable AI system should behave like one coherent agent while internally routing work across many specialized, dynamically loaded, independently ratcheted subsystems.
+This thesis has six parts.
+________________
+
+
+2.1 One identity, many specialists
+The user should not need to manually manage specialists. The user interacts with one system.
+Internally, however, the system can route work to many arms.
+external interface: one agent
+internal structure: many specialists
+The head/router preserves coherence.
+________________
+
+
+2.2 The router should stay lightweight
+The head does not need to know everything.
+It needs to know:
+* what the user wants;
+* what context matters;
+* what risks apply;
+* what arms exist;
+* which arm should handle what;
+* when to compose multiple arms;
+* when to abstain or ask for clarification;
+* when to trigger safety review;
+* when no existing arm is sufficient.
+The router’s job is not to be the best expert in every domain.
+Its job is to allocate expertise.
+________________
+
+
+2.3 Arms should be specific and bounded
+Each arm should have a clear scope.
+A good arm is:
+* specialized;
+* lightweight relative to a monolith;
+* locally benchmarked;
+* locally permissioned;
+* locally auditable;
+* locally improvable.
+If an arm becomes too broad, it should split.
+If two arms overlap too much, they may merge.
+If an arm becomes stale, it should retire.
+________________
+
+
+2.4 Dynamic loading reduces active footprint
+The system should not keep every capability fully resident.
+Instead:
+head/router stays resident
+arms load on demand
+This enables:
+* lower memory footprint;
+* cheaper inference;
+* selective specialization;
+* hardware-specific deployment;
+* sensitive-domain isolation;
+* rare-skill cold storage;
+* local updating without global retraining.
+This is system-level sparse activation.
+________________
+
+
+2.5 Capabilities should be independently ratcheted
+Each arm should have its own improvement loop:
+arm benchmark frontier
+   ↓
+arm attempts tasks
+   ↓
+arm residuals logged
+   ↓
+arm improves data / tools / inference / architecture
+   ↓
+arm preserves regression suite
+   ↓
+arm frontier advances
+The whole system improves because each arm improves.
+A coding arm can improve without retraining the medical arm.
+A citation arm can improve without changing the math arm.
+A safety arm can update policies without affecting the writing arm.
+________________
+
+
+2.6 Domain quarantine should be explicit
+A modular system can enforce boundaries that a monolith often blurs.
+Examples:
+* the coding arm may read repositories but cannot send emails;
+* the finance arm may calculate but not approve transactions;
+* the medical arm may provide general information but cannot access unrelated personal memory;
+* the deployment arm may run dry-runs but requires approval for production changes;
+* the safety arm can veto high-risk actions.
+The architecture should route not only compute, but also permissions.
+________________
+
+
+3. Relationship to Existing Work
+ORA is related to several existing directions but combines them at a different level.
+________________
+
+
+3.1 Mixture-of-Experts
+Mixture-of-Experts systems route examples or tokens to expert subnetworks. The sparsely-gated MoE paper introduced a trainable gating network that selects a sparse combination of expert networks, increasing model capacity without proportional compute. Switch Transformers simplified sparse expert routing and scaled sparse models further.
+ORA borrows the sparse-routing intuition but moves it from the neural-layer level to the system level.
+Neural MoE
+	Octopus Router Architecture
+	Routes tokens/examples
+	Routes tasks/subtasks
+	Experts are subnetworks
+	Arms are standalone specialist systems
+	Router is internal layer
+	Head/router is system-level coordinator
+	Usually trained end-to-end
+	Can mix trained models, tools, memory, policies, and services
+	Experts are mostly hidden
+	Arms are inspectable and governable
+	ORA can be described as:
+System-level mixture of experts with lifecycle governance.
+________________
+
+
+3.2 Mixture-of-Agents
+Mixture-of-Agents systems combine multiple LLM agents, often by having agents produce responses and later agents or aggregators refine them. A 2024 MoA paper proposes a layered architecture in which each layer contains multiple LLM agents and each agent uses prior-layer outputs as auxiliary information.
+ORA is broader.
+It does not merely ask several agents to answer and aggregate their outputs. It defines:
+* arm registry;
+* dynamic loading;
+* local benchmarks;
+* local residuals;
+* local permissions;
+* local runtime tiers;
+* split/merge/retire lifecycle;
+* safety routing;
+* memory partitioning;
+* head-level composition and verification.
+MoA is a collaboration pattern. ORA is a system architecture.
+________________
+
+
+3.3 Tool-using language models
+Toolformer showed that language models can learn when and how to call external APIs such as calculators, search engines, translation systems, and calendars.
+ORA uses tools, but an arm is more than a tool.
+An arm may contain:
+* model;
+* local memory;
+* tools;
+* local evaluation suite;
+* permission boundary;
+* residual ledger;
+* runtime;
+* output schema;
+* self-improvement process.
+Tools are actions. Arms are governed capability modules.
+________________
+
+
+3.4 Skill libraries and lifelong agents
+Voyager is an LLM-powered Minecraft agent with an automatic curriculum, an executable skill library, and self-verification through environment feedback. Its learned skills are described as temporally extended, interpretable, and compositional.
+ORA generalizes the idea of a skill library into a modular architecture where each domain can have its own specialist arm and each arm can maintain its own local skill library.
+Voyager demonstrates that executable skills can compound. ORA asks how many such skill systems can be organized behind one coherent router.
+________________
+
+
+3.5 Modular software and least privilege
+ORA also resembles good software architecture: separate modules, explicit interfaces, local responsibilities, versioning, permissions, tests, and retirement.
+This matters because AI systems are increasingly deployed as software systems rather than isolated models.
+A modular AI architecture should inherit software-engineering virtues:
+* separation of concerns;
+* interface contracts;
+* permission boundaries;
+* runtime isolation;
+* versioned dependencies;
+* regression testing;
+* observability;
+* graceful degradation.
+Sandboxed execution environments such as WebAssembly are relevant because they are designed to isolate modules from the host runtime, while Rust’s ownership model is relevant for memory-safe systems components.
+________________
+
+
+4. Architecture Overview
+The Octopus Router Architecture consists of five primary layers:
+User / Environment
+       ↓
+Head Router
+       ↓
+Arm Registry + Memory Router + Permission Router
+       ↓
+Dynamically Loaded Arms
+       ↓
+Verification / Composition / Response
+A more detailed view:
+                 ┌───────────────────────┐
+                 │ User / Environment     │
+                 └───────────┬───────────┘
+                             ↓
+                 ┌───────────────────────┐
+                 │ Head / Router          │
+                 │ intent, risk, budget,  │
+                 │ decomposition, routing │
+                 └───────────┬───────────┘
+                             ↓
+       ┌─────────────────────┼─────────────────────┐
+       ↓                     ↓                     ↓
+┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+│ Arm Registry   │   │ Memory Router   │   │ Permission     │
+│ capabilities   │   │ context grants  │   │ Router         │
+└───────┬────────┘   └───────┬────────┘   └───────┬────────┘
+       ↓                    ↓                    ↓
+┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+│ Coding Arm     │   │ Research Arm   │   │ Safety Arm     │
+│ tools, evals   │   │ memory, tools  │   │ veto, policies │
+└────────────────┘   └────────────────┘   └────────────────┘
+       ↓                    ↓                    ↓
+                 ┌───────────────────────┐
+                 │ Head Composition +     │
+                 │ Verification           │
+                 └───────────┬───────────┘
+                             ↓
+                 ┌───────────────────────┐
+                 │ Response / Action      │
+                 └───────────────────────┘
+________________
+
+
+5. Formal Model
+Let the system be:
+O=(H,A,R,M,P,V,G)\mathcal{O} = (H, \mathcal{A}, \mathcal{R}, \mathcal{M}, \mathcal{P}, \mathcal{V}, \mathcal{G})O=(H,A,R,M,P,V,G)
+where:
+Symbol
+	Meaning
+	HHH
+	Head/router.
+	A\mathcal{A}A
+	Set of arms.
+	R\mathcal{R}R
+	Routing policy.
+	M\mathcal{M}M
+	Memory system.
+	P\mathcal{P}P
+	Permission and runtime policy.
+	V\mathcal{V}V
+	Verification and safety layer.
+	G\mathcal{G}G
+	Growth process: add, split, merge, retire, ratchet.
+	Given task xxx, context ccc, budget BBB, and risk profile rrr, the head selects a subset of arms:
+Sx=RH(x,c,B,r)S_x = \mathcal{R}_H(x, c, B, r)Sx​=RH​(x,c,B,r)
+where:
+Sx⊆AS_x \subseteq \mathcal{A}Sx​⊆A
+Each selected arm AiA_iAi​ receives a scoped task and context:
+yi=Ai(xi,ci,pi)y_i = A_i(x_i, c_i, p_i)yi​=Ai​(xi​,ci​,pi​)
+where pip_ipi​ is the permission and resource envelope granted to that arm.
+The head composes outputs:
+y=Hcompose(y1,y2,…,yk)y = H_{\text{compose}}(y_1, y_2, \dots, y_k)y=Hcompose​(y1​,y2​,…,yk​)
+The verification layer evaluates:
+V(y,x,c,r)→{accept,revise,route more,fallback,refuse}\mathcal{V}(y, x, c, r) \rightarrow \{\text{accept}, \text{revise}, \text{route more}, \text{fallback}, \text{refuse}\}V(y,x,c,r)→{accept,revise,route more,fallback,refuse}
+A successful run updates:
+* routing memory;
+* arm reliability scores;
+* residual ledgers;
+* benchmark ledgers;
+* tool registries;
+* split/merge signals.
+________________
+
+
+6. The Head Router
+6.1 Role
+The head/router is the always-available coordinator.
+It handles:
+* user interaction;
+* intent recognition;
+* task decomposition;
+* arm selection;
+* dynamic loading;
+* budget allocation;
+* risk assessment;
+* memory routing;
+* permission routing;
+* conflict resolution;
+* output composition;
+* verification orchestration;
+* deciding when arms should be added, split, merged, or retired.
+The head is the global nervous system.
+But it is not responsible for every domain detail.
+________________
+
+
+6.2 Router intelligence
+The router should know enough to answer:
+* What is the user asking?
+* Which domain or domains are involved?
+* Which arms are qualified?
+* Is the task low-risk or high-risk?
+* Does it need one arm or many?
+* Should arms run in parallel or sequence?
+* Are there conflicts between arms?
+* Is a safety arm needed?
+* Is no existing arm sufficient?
+* Should a new arm be proposed?
+The router is a meta-reasoner.
+Its intelligence is not domain mastery. Its intelligence is allocation.
+________________
+
+
+6.3 Head should not become the new monolith
+There is a failure mode where the head absorbs too much.
+If the router starts doing all domain reasoning itself, ORA collapses back into monolithic design.
+The head should remain focused on:
+* routing;
+* composition;
+* verification orchestration;
+* escalation;
+* global coherence.
+Domain-specific reasoning belongs in arms.
+________________
+
+
+7. Arms
+7.1 Definition
+An arm is a standalone specialist subsystem that receives scoped tasks from the head/router and returns structured outputs.
+An arm may be:
+* a small language model;
+* a domain-specific model;
+* a tool bundle;
+* a workflow engine;
+* a verifier;
+* a memory system;
+* a symbolic reasoner;
+* a code execution environment;
+* a retrieval system;
+* a safety monitor;
+* a physical controller;
+* a hybrid of these.
+The key is not implementation type. The key is bounded specialization.
+________________
+
+
+7.2 Arm anatomy
+Each arm should include:
+Component
+	Purpose
+	Capability description
+	What the arm does.
+	Input schema
+	What it accepts.
+	Output schema
+	What it returns.
+	Local tools
+	APIs, commands, functions, or environments.
+	Local memory
+	Domain-specific state and history.
+	Local benchmarks
+	Evaluation frontier for that arm.
+	Regression suite
+	Capabilities the arm must preserve.
+	Residual escrow
+	Unsolved cases and failure clusters.
+	Permission boundary
+	What the arm can access or change.
+	Runtime tier
+	Where and how the arm executes.
+	Reliability metrics
+	Historical performance.
+	Lifecycle status
+	Active, probationary, stale, split candidate, retired.
+	An arm is a governed subsystem, not a prompt.
+________________
+
+
+7.3 Example arms
+Possible arms include:
+Arm
+	Scope
+	Coding Arm
+	Repository analysis, code edits, tests.
+	Rust Arm
+	Rust-specific compiler errors, ownership, Cargo, crates.
+	Research Arm
+	Literature search, citation mapping, related work.
+	Math Arm
+	Formal calculation, derivations, proofs.
+	Data Arm
+	Tables, spreadsheets, normalization, analysis.
+	Writing Arm
+	Tone, structure, public release polish.
+	Skeptic Arm
+	Overclaim detection, flaw finding, adversarial critique.
+	Safety Arm
+	Risk review, permissions, vetoes.
+	Memory Arm
+	Retrieval, user preferences, project history.
+	Vision Arm
+	Image/video interpretation.
+	Operations Arm
+	Deployments, incidents, monitoring.
+	Reflex Arm
+	Immediate safety behavior in hard-latency contexts.
+	The system can start small and add arms as demand emerges.
+________________
+
+
+8. Arm Registry
+The head needs a registry of arms.
+Without a registry, ORA becomes a pile of agents. With a registry, it becomes an operating system.
+8.1 Arm card
+Each arm should have an arm card.
+Field
+	Meaning
+	Arm name
+	Identifier.
+	Capability scope
+	What the arm handles.
+	Input schema
+	Accepted inputs.
+	Output schema
+	Returned outputs.
+	Local tools
+	Tools or APIs available.
+	Memory access
+	What memory it can read or write.
+	Permission tier
+	What actions it may perform.
+	Runtime tier
+	Text, workflow, sandbox, systems runtime, real-time controller.
+	Cost profile
+	Latency, compute, memory, financial cost.
+	Benchmark frontier
+	Current local benchmark target.
+	Regression suite
+	Capabilities to preserve.
+	Residual escrow
+	Unsolved local failures.
+	Reliability score
+	Success/failure history.
+	Freshness
+	Last validation/update.
+	Dependencies
+	Other arms/tools required.
+	Lifecycle status
+	Active, probationary, split candidate, retired.
+	The arm card allows the router to select specialists intelligently.
+________________
+
+
+8.2 Capability descriptions
+An arm’s capability description should be precise.
+Bad:
+“This arm does coding.”
+Better:
+“This arm handles Rust compiler errors, Cargo dependency resolution, ownership-related diagnostics, and test execution in Rust repositories. It may read repository files and run tests in a sandbox, but cannot push commits or modify production systems.”
+Precise scope improves routing, safety, and evaluation.
+________________
+
+
+9. Dynamic Loading
+9.1 Always-loaded head, on-demand arms
+ORA’s memory model is:
+head/router remains loaded
+arms load on demand
+This is one of the architecture’s main practical benefits.
+The system need not keep every specialist resident in memory at all times. Rarely used arms can remain cold until needed.
+________________
+
+
+9.2 Benefits
+Benefit
+	Explanation
+	Lower active memory
+	Only relevant arms need to load.
+	Specialized compute
+	Use small modules for narrow tasks.
+	Cold storage of rare skills
+	Infrequent arms do not consume active resources.
+	Domain quarantine
+	Sensitive arms remain isolated until explicitly invoked.
+	Independent deployment
+	Update one arm without changing the whole system.
+	Hardware flexibility
+	Some arms run locally, some remotely, some on GPU, some on CPU.
+	Fault containment
+	Failure in one arm does not necessarily corrupt the whole system.
+	This is system-level sparse activation.
+________________
+
+
+9.3 Dynamic loading metrics
+The architecture should measure:
+* cold-start latency;
+* warm-cache hit rate;
+* active arm count;
+* memory saved per task;
+* load/unload overhead;
+* arm prefetch accuracy;
+* cost per routed task;
+* failure due to unloaded or unavailable arms.
+Dynamic loading is valuable only if it improves cost, latency, or isolation without undermining quality.
+________________
+
+
+10. Routing Patterns
+The head can route work in several patterns.
+________________
+
+
+10.1 Single-arm routing
+One arm handles the task.
+Example:
+Task: “Fix this Rust lifetime error.”
+Route: Rust Arm
+________________
+
+
+10.2 Parallel routing
+Multiple arms work independently.
+Example:
+Task: “Evaluate this proposed AI architecture.”
+Routes:
+- Systems Arm
+- Related Work Arm
+- Skeptic Arm
+- Safety Arm
+The head then composes their outputs.
+________________
+
+
+10.3 Sequential routing
+One arm’s output feeds another.
+Example:
+Data Arm → Statistics Arm → Report Arm
+________________
+
+
+10.4 Debate routing
+Arms disagree or critique each other.
+Example:
+Architecture Arm proposes
+Skeptic Arm attacks
+Safety Arm audits
+Head synthesizes
+________________
+
+
+10.5 Verification routing
+One arm produces; another verifies.
+Example:
+Code Arm writes patch
+Test Arm runs tests
+Security Arm audits permissions
+Head decides whether to accept
+________________
+
+
+10.6 Reflex routing
+Safety-critical arms bypass slow reasoning.
+Example:
+Drone near collision → Emergency Control Arm
+Production deployment risk → Deployment Hold Arm
+________________
+
+
+11. Head-Level Composition
+11.1 Composition is not concatenation
+The head should not simply paste arm outputs together.
+It must:
+* compare claims;
+* resolve conflicts;
+* track confidence;
+* preserve provenance;
+* request missing information;
+* trigger verifiers;
+* enforce safety constraints;
+* produce one coherent user-facing answer or action.
+________________
+
+
+11.2 Structured arm outputs
+Each arm should return structured output.
+Example fields:
+Field
+	Meaning
+	Claim/result
+	What the arm concludes.
+	Confidence
+	How confident it is.
+	Evidence
+	Why it believes this.
+	Required assumptions
+	What must be true.
+	Residuals
+	What remains unresolved.
+	Risk flags
+	Possible hazards.
+	Suggested next arms
+	Who should verify or continue.
+	Cost
+	Time, compute, memory used.
+	Structured outputs make composition auditable.
+________________
+
+
+11.3 Conflict resolution
+When arms conflict, the head can:
+* ask a verifier arm;
+* reroute to another specialist;
+* ask the user;
+* expose disagreement;
+* choose the lower-risk path;
+* run an experiment;
+* defer action.
+A strong system should not hide internal disagreement when the disagreement matters.
+________________
+
+
+12. Domain Quarantine and Permissions
+12.1 Why quarantine matters
+Different domains require different permissions.
+A coding arm should not send emails.
+A finance arm should not deploy code.
+A writing arm should not access medical memory.
+A research arm should not approve financial transactions.
+A safety arm should be able to veto high-risk actions.
+ORA makes these boundaries explicit.
+________________
+
+
+12.2 Quarantine types
+Quarantine type
+	Purpose
+	Memory quarantine
+	Arms access only relevant memory.
+	Tool quarantine
+	Arms call only approved tools.
+	Runtime quarantine
+	Risky arms run in sandboxes.
+	Domain quarantine
+	Domain policies differ by arm.
+	Failure quarantine
+	One arm’s failure is contained.
+	Safety quarantine
+	High-risk actions require verifier or safety arm approval.
+	________________
+
+
+12.3 Permission envelopes
+When the head invokes an arm, it grants a permission envelope:
+pi=(memory,tools,runtime,side effects,budget,risk)p_i = (\text{memory}, \text{tools}, \text{runtime}, \text{side effects}, \text{budget}, \text{risk})pi​=(memory,tools,runtime,side effects,budget,risk)
+The arm may operate only inside that envelope.
+This prevents “specialist” from meaning “unbounded agent.”
+________________
+
+
+13. Memory Architecture
+Memory should be routed like compute.
+13.1 Memory layers
+Memory type
+	Description
+	Global memory
+	User preferences, persistent identity, global goals.
+	Arm-local memory
+	Domain-specific cases, tools, failures, and preferences.
+	Shared task memory
+	Temporary working context for multi-arm collaboration.
+	Routing memory
+	Which arms worked for which tasks.
+	Safety memory
+	Incidents, vetoes, approvals, risk history.
+	Residual memory
+	Unresolved failures and edge cases.
+	________________
+
+
+13.2 Memory routing principle
+Do not expose all memory to all arms. Route memory according to task, permission, and need.
+This reduces:
+* context bloat;
+* privacy risk;
+* domain leakage;
+* irrelevant retrieval;
+* tool misuse.
+________________
+
+
+13.3 Local memory improves specialization
+A Rust arm should remember Rust-specific compiler patterns.
+A research arm should remember citation patterns.
+A finance arm should remember policy constraints.
+A safety arm should remember incidents.
+Local memory allows arms to become experts without making the head enormous.
+________________
+
+
+14. Arm Ratcheting
+Each arm should improve independently.
+14.1 Local ratchet loop
+For each arm AiA_iAi​:
+local benchmark frontier
+   ↓
+arm attempts tasks
+   ↓
+local residuals logged
+   ↓
+local tools improved
+   ↓
+local memory updated
+   ↓
+local regression preserved
+   ↓
+local frontier advances
+Formally:
+Ai=(Mi,Ti,Bi,Ri,Ei,Pi)A_i = (M_i, T_i, B_i, R_i, E_i, P_i)Ai​=(Mi​,Ti​,Bi​,Ri​,Ei​,Pi​)
+where:
+Symbol
+	Meaning
+	MiM_iMi​
+	Local model/procedure.
+	TiT_iTi​
+	Local tools/skills.
+	BiB_iBi​
+	Local benchmark frontier.
+	RiR_iRi​
+	Local regression suite.
+	EiE_iEi​
+	Local residual escrow.
+	PiP_iPi​
+	Permissions and policies.
+	________________
+
+
+14.2 Local benchmark examples
+Arm
+	Local benchmark frontier
+	Rust Arm
+	Compiler error resolution, cargo tests, ownership diagnostics.
+	Research Arm
+	Citation support, related-work mapping, claim verification.
+	Data Arm
+	Schema normalization, missing-value handling, analysis correctness.
+	Safety Arm
+	Risk classification, veto accuracy, policy compliance.
+	Router
+	Correct arm selection, cost/risk-aware routing, composition quality.
+	The head can improve while arms improve. Arms can improve while the head stays stable.
+________________
+
+
+15. Adding, Splitting, Merging, and Retiring Arms
+The system should evolve its modular anatomy.
+________________
+
+
+15.1 Adding arms
+Create a new arm when a recurring domain deserves its own specialist.
+Signals:
+* repeated routing failures;
+* repeated requests in a new domain;
+* high cost from using a generalist;
+* recurring residual cluster;
+* repeated loop closures in the same domain;
+* existing arm lacks necessary permissions or tools;
+* new benchmark frontier requires a distinct capability.
+Spawn rule:
+Spawn⁡(Anew)=[Fd⋅Vd⋅Cd>Kspawn+Kmaintain]\operatorname{Spawn}(A_{\text{new}})= \left[ F_d \cdot V_d \cdot C_d > K_{\text{spawn}} + K_{\text{maintain}} \right]Spawn(Anew​)=[Fd​⋅Vd​⋅Cd​>Kspawn​+Kmaintain​]
+where:
+Term
+	Meaning
+	FdF_dFd​
+	Frequency of domain demand.
+	VdV_dVd​
+	Value of specialization.
+	CdC_dCd​
+	Cost reduction or reliability gain.
+	KspawnK_{\text{spawn}}Kspawn​
+	Cost to create the arm.
+	KmaintainK_{\text{maintain}}Kmaintain​
+	Cost to maintain the arm.
+	________________
+
+
+15.2 Splitting bloated arms
+An arm should split when it becomes too broad.
+Signals:
+* high internal tool count;
+* rising latency;
+* broad unrelated task scope;
+* growing memory footprint;
+* declining reliability;
+* conflicting subskills;
+* separate residual clusters;
+* router confusion;
+* frequent internal branching;
+* distinct risk domains.
+Example:
+Coding Arm
+   ↓
+Rust Arm
+Python Arm
+Frontend Arm
+DevOps Arm
+Test/CI Arm
+Security Review Arm
+Splitting prevents arms from becoming hidden monoliths.
+________________
+
+
+15.3 Merging redundant arms
+Merge arms when specialization adds little value.
+Signals:
+* overlapping tools;
+* same memory;
+* same benchmark frontier;
+* same outputs;
+* low usage;
+* redundant failures;
+* router cannot distinguish them;
+* maintenance overhead exceeds value.
+________________
+
+
+15.4 Retiring stale arms
+Retire an arm when:
+* it is unused;
+* stale;
+* unsafe;
+* superseded;
+* too expensive;
+* failing regression;
+* no longer aligned with system goals.
+A healthy system adds, splits, merges, and retires.
+It does not only grow.
+________________
+
+
+16. Head Training and Evaluation
+The head/router needs its own benchmarks.
+16.1 Router metrics
+Metric
+	Meaning
+	Selection accuracy
+	Did the router choose the right arm?
+	Abstention quality
+	Did it avoid routing when no arm fit?
+	Cost efficiency
+	Did it avoid unnecessary arms?
+	Latency compliance
+	Did it respect time budgets?
+	Risk routing
+	Did high-risk tasks trigger safety arms?
+	Composition quality
+	Did it synthesize outputs coherently?
+	Conflict resolution
+	Did it handle disagreement well?
+	Arm discovery
+	Did it detect when a new arm was needed?
+	Split/merge recommendation
+	Did it notice arm bloat or redundancy?
+	The router should be evaluated as a component, not treated as magic.
+________________
+
+
+16.2 Routing residuals
+When the system fails, ask:
+* Did the router choose the wrong arm?
+* Did it choose too few arms?
+* Did it over-route and waste cost?
+* Did it miss a safety arm?
+* Did it compose outputs incorrectly?
+* Did it fail to detect that no arm was sufficient?
+This makes failures more diagnosable than monolithic failures.
+________________
+
+
+17. Execution Tiers and Safety
+17.1 Runtime tiers
+Tier
+	Environment
+	Appropriate for
+	E0
+	Text-only prompt/procedure
+	Low-risk drafting.
+	E1
+	Structured workflow
+	Human-reviewed tasks.
+	E2
+	Typed deterministic function
+	Data transformations, parsing, formatting.
+	E3
+	Sandboxed runtime
+	Generated code or untrusted actions.
+	E4
+	Memory-safe systems runtime
+	Higher-assurance digital tools.
+	E5
+	Real-time embedded/reflex runtime
+	Safety-critical physical or operational actions.
+	Execution tier should be part of every arm card.
+________________
+
+
+17.2 Risk tiers
+Tier
+	Example
+	Required control
+	Low
+	Formatting, summarizing, drafting
+	Automated execution acceptable.
+	Medium
+	Data transformation, code refactor
+	Verification and rollback.
+	High
+	Deployment, finance, legal, security
+	Human approval or constrained dry run.
+	Critical
+	Physical safety, irreversible action
+	Certified runtime, reflex/failsafe layer, strict containment.
+	________________
+
+
+17.3 Safety arm
+A Safety Arm may:
+* classify risk;
+* enforce policies;
+* veto actions;
+* require human approval;
+* trigger reflex/failsafe mode;
+* audit permissions;
+* monitor incidents;
+* manage safety regression tests.
+The Safety Arm should not be optional for high-risk tasks.
+________________
+
+
+18. Evaluation Metrics
+18.1 System metrics
+* end-to-end task success;
+* cost per task;
+* latency;
+* memory loaded per task;
+* arms used per task;
+* user satisfaction;
+* public benchmark calibration;
+* regression preservation;
+* safety incident rate.
+________________
+
+
+18.2 Router metrics
+* correct arm selection;
+* unnecessary routing rate;
+* missed specialist rate;
+* risk routing accuracy;
+* abstention quality;
+* conflict resolution quality;
+* composition faithfulness.
+________________
+
+
+18.3 Arm metrics
+* local benchmark performance;
+* local regression preservation;
+* residual escrow trend;
+* tool success rate;
+* memory footprint;
+* latency;
+* cost;
+* failure rate;
+* bloat index.
+________________
+
+
+18.4 Dynamic loading metrics
+* cold-start latency;
+* warm-cache hit rate;
+* active arm count;
+* memory savings;
+* load/unload overhead;
+* prefetch success;
+* unavailable-arm failures.
+________________
+
+
+18.5 Quarantine metrics
+* unauthorized access attempts;
+* permission violations;
+* over-granted permissions;
+* cross-domain leakage;
+* safety arm veto accuracy;
+* sensitive memory exposure rate.
+________________
+
+
+19. Failure Modes
+19.1 Bad routing
+The router chooses the wrong arm.
+Mitigations:
+* router benchmarks;
+* arm confidence scores;
+* fallback routing;
+* multi-arm verification;
+* routing residuals.
+________________
+
+
+19.2 Arm bloat
+A specialist becomes too broad.
+Mitigations:
+* bloat metrics;
+* split thresholds;
+* subdomain clustering;
+* local benchmark separation.
+________________
+
+
+19.3 Goblin chaos
+Too many arms produce incoherent outputs.
+Mitigations:
+* structured outputs;
+* head composition rules;
+* provenance tracking;
+* conflict resolution;
+* response synthesis benchmarks.
+________________
+
+
+19.4 Arm staleness
+A specialist becomes outdated.
+Mitigations:
+* freshness checks;
+* regression tests;
+* scheduled revalidation;
+* retirement policy.
+________________
+
+
+19.5 Over-quarantine
+Arms cannot access enough information to solve tasks.
+Mitigations:
+* controlled memory grants;
+* temporary access tokens;
+* head-mediated retrieval;
+* explicit escalation.
+________________
+
+
+19.6 Under-quarantine
+Arms access too much.
+Mitigations:
+* least-privilege permission envelopes;
+* runtime sandboxing;
+* audit logs;
+* safety arm review.
+________________
+
+
+19.7 Router monolith
+The head becomes too large and starts doing all domain work.
+Mitigations:
+* router scope limits;
+* head benchmarks;
+* delegated reasoning;
+* split head subfunctions if needed.
+________________
+
+
+19.8 Composition hallucination
+The head misrepresents arm outputs.
+Mitigations:
+* structured outputs;
+* provenance;
+* verification arms;
+* citation requirements;
+* disagreement disclosure.
+________________
+
+
+20. Implementation Roadmap
+Phase 1 — Manual arm registry
+Start with a small set of arms.
+Deliver:
+* arm cards;
+* input/output schemas;
+* permissions;
+* local benchmarks;
+* routing rules.
+Goal:
+Make modular capability explicit.
+________________
+
+
+Phase 2 — Basic router
+Build a router that selects arms using:
+* task classification;
+* arm descriptions;
+* cost budgets;
+* risk tier;
+* user intent.
+Goal:
+Route simple tasks to the right specialist.
+________________
+
+
+Phase 3 — Structured arm outputs
+Require every arm to return:
+* result;
+* confidence;
+* evidence;
+* assumptions;
+* residuals;
+* suggested verifiers;
+* cost.
+Goal:
+Enable faithful head composition.
+________________
+
+
+Phase 4 — Dynamic loading
+Implement on-demand arm loading.
+Measure:
+* cold-start latency;
+* memory savings;
+* routing accuracy;
+* active arm count.
+Goal:
+Prove sparse system-level activation.
+________________
+
+
+Phase 5 — Local arm ratchets
+Give each arm:
+* local benchmark frontier;
+* regression suite;
+* residual escrow;
+* improvement process.
+Goal:
+Improve specialists independently.
+________________
+
+
+Phase 6 — Split/merge/retire lifecycle
+Add bloat detection and lifecycle governance.
+Goal:
+Keep the arm ecosystem healthy.
+________________
+
+
+Phase 7 — Safety and quarantine
+Add:
+* permission router;
+* safety arm;
+* runtime tiers;
+* memory access controls;
+* audit logs.
+Goal:
+Prevent modularity from becoming unbounded automation.
+________________
+
+
+Phase 8 — Multi-arm composition
+Add:
+* parallel routing;
+* sequential routing;
+* debate routing;
+* verification routing;
+* conflict resolution.
+Goal:
+Let the system do more than any single arm can do alone.
+________________
+
+
+21. Claims and Non-Claims
+21.1 Claims
+This paper claims:
+1. Monolithic scaling is not the only path to greater AI capability.
+2. A lightweight head/router can coordinate specialized dynamically loaded modules.
+3. Specialist arms should have local tools, memory, benchmarks, permissions, residuals, and lifecycle management.
+4. Arms can be added, split, merged, retired, and ratcheted independently.
+5. System-level sparse activation can reduce active memory and improve modular governance.
+6. Domain quarantine is easier when capabilities live in bounded modules.
+7. A routed modular system can behave as one coherent agent while internally operating as many specialists.
+8. ORA provides a framework for scaling capability through organization, not only parameter count.
+________________
+
+
+21.2 Non-claims
+This paper does not claim:
+1. Monolithic models are obsolete.
+2. Routing is easy.
+3. More arms always improve performance.
+4. Specialist modules are automatically safe.
+5. Dynamic loading always reduces latency.
+6. The head/router can be weak or untrained.
+7. Quarantine eliminates all risk.
+8. Modular systems cannot become bloated.
+9. ORA replaces all Mixture-of-Experts or multi-agent methods.
+10. One architecture fits every deployment.
+ORA is a systems architecture proposal, not a proof that modular routing always outperforms dense generalism.
+________________
+
+
+22. Conclusion
+The Octopus Router Architecture proposes a different path for AI scaling.
+Instead of forcing every capability into one monolithic blob, build a coherent agent out of many bounded specialists.
+Let the head route.
+Let arms specialize.
+Let arms load only when needed.
+Let arms have their own tools, memory, benchmarks, residuals, and permissions.
+Let bloated arms split.
+Let redundant arms merge.
+Let stale arms retire.
+Let sensitive domains be quarantined.
+Let the head compose many outputs into one coherent response.
+The system should look like one entity from the outside.
+Inside, it may be many critters in a trenchcoat.
+That is not a weakness.
+That is the design.
+The future of AI scaling may not be only:
+make one model larger
+It may also be:
+make the system better organized
+The octopus does not centralize every motion into one brain.
+The company does not scale by making one person do every job.
+The operating system does not put every responsibility in one process.
+AI systems should learn the same lesson.
+One identity. Many specialists. Dynamic routing. Independent ratchets. Explicit quarantine. Coherent composition.
+That is the Octopus Router Architecture.
+________________
+
+
+Appendix A — Arm Card Template
+Field
+	Description
+	Arm name
+	Identifier.
+	Capability scope
+	What the arm handles.
+	Input schema
+	Accepted task/context format.
+	Output schema
+	Returned result format.
+	Local tools
+	Tools, APIs, execution environments.
+	Local memory
+	Domain-specific memory.
+	Permission tier
+	Allowed actions.
+	Runtime tier
+	Execution environment.
+	Cost profile
+	Latency, compute, memory, money.
+	Benchmark frontier
+	Current local capability frontier.
+	Regression suite
+	Capabilities to preserve.
+	Residual escrow
+	Current unresolved failures.
+	Reliability score
+	Success/failure history.
+	Dependencies
+	Other arms or tools.
+	Lifecycle status
+	Active, probationary, split candidate, retired.
+	Retirement criteria
+	When to disable or replace.
+	________________
+
+
+Appendix B — Router Decision Checklist
+For every task, the head/router should ask:
+1. What is the user asking?
+2. What domains are involved?
+3. What risk tier applies?
+4. What arms are qualified?
+5. Is one arm enough?
+6. Should arms run in parallel, sequence, debate, or verification mode?
+7. What memory should each arm receive?
+8. What permissions should each arm receive?
+9. What runtime tier is required?
+10. How should outputs be composed?
+11. What should be verified?
+12. What residuals remain?
+________________
+
+
+Appendix C — One-Paragraph Public Summary
+Octopus Router Architecture is a modular AI architecture in which a lightweight learned head/router dynamically coordinates many specialized standalone modules called arms. The system presents as one coherent agent, but internally routes work across specialists with local tools, memory, benchmarks, residuals, permissions, and runtime boundaries. Arms can be dynamically loaded, independently improved, split when bloated, merged when redundant, retired when stale, and quarantined by domain or risk. Inspired by octopus distributed control and the metaphor of “goblins in a trenchcoat,” ORA offers a path to scaling AI capability through organization rather than one ever-larger monolithic blob.
+________________
+
+
+Appendix D — Compact Manifesto
+Do not make one model hold every skill.
+Give the system a head.
+Give it arms.
+Let the head route.
+Let the arms specialize.
+Load only what is needed.
+Quarantine what is dangerous.
+Split what is bloated.
+Merge what is redundant.
+Retire what is stale.
+Verify what matters.
+Compose what is useful.
+The user sees one agent.
+Inside, the goblins get to work.
+________________
+
+
+Selected References
+1. Olson, Schulz, and Ragsdale, Neuronal segmentation in cephalopod arms.
+2. Shazeer et al., Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer.
+3. Fedus, Zoph, and Shazeer, Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity.
+4. Wang et al., Mixture-of-Agents Enhances Large Language Model Capabilities.
+5. Schick et al., Toolformer: Language Models Can Teach Themselves to Use Tools.
+6. Wang et al., Voyager: An Open-Ended Embodied Agent with Large Language Models.
+7. WebAssembly Project, Security model and sandboxing documentation.
+8. The Rust Project, The Rust Programming Language: Ownership.

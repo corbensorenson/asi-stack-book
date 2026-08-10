@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/paper_library.schema.json",
+  "title": "ASI Stack public paper library",
+  "type": "object",
+  "required": ["schema_version", "publication_boundary", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "asi_stack.paper_library.v1"},
+    "publication_boundary": {"type": "string", "minLength": 1},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "document_class"],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "document_class": {
+            "enum": [
+              "research_paper", "technical_whitepaper", "architecture_whitepaper",
+              "technical_specification", "philosophical_treatise", "project_paper_lineage"
+            ]
+          },
+          "canonical_source": {"type": "string", "pattern": "^sources/raw/"},
+          "source_note": {"type": "string", "pattern": "^sources/source_notes/[a-z0-9_]+\\.md$"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "bytes": {"type": "integer", "minimum": 1},
+          "status_note": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+$font-size-root: 17px;
+$line-height-base: 1.65;
+
+/*-- scss:rules --*/
+.quarto-title-block .quarto-title-banner,
+.quarto-title-block.default .quarto-title-meta {
+  border-radius: 0.35rem;
+}
+
+main.content {
+  max-width: 920px;
+}
+
+table {
+  font-size: 0.92rem;
+}
+
+.callout-important {
+  margin-top: 1.25rem;
+}
+
+code {
+  overflow-wrap: anywhere;
+}

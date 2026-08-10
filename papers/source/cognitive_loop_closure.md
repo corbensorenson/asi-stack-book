@@ -1,0 +1,2236 @@
+﻿Cognitive Loop Closure
+Compiling Repeated AI Reasoning Trajectories into Verified Parameterized Tools
+White Paper
+Public Release v1.0 — May 2026
+Author: Corben Sorenson
+Status: Conceptual Framework + Agent Architecture Proposal
+________________
+
+
+TL;DR / Executive Abstract
+Modern AI agents repeatedly perform similar chains of reasoning, tool use, retrieval, editing, verification, and correction. Yet most agents still treat each task as a blank-slate reasoning problem. They re-infer the same procedures again and again, wasting inference compute, increasing behavioral variability, hiding failure modes, and failing to accumulate durable procedural skill.
+This paper proposes Cognitive Loop Closure: a metacognitive architecture in which an AI agent reviews its own execution history, detects recurring reasoning/action trajectories, abstracts their invariant structure, identifies parameters, synthesizes deterministic or semi-deterministic tools, verifies those tools against prior and synthetic cases, and routes future matching tasks through the resulting procedural memory.
+The core thesis is:
+Repeated cognition should become procedural memory.
+Or more formally:
+Cognitive Loop Closure is the process by which an AI system converts repeated reasoning/action trajectories into verified, parameterized tools that can be invoked automatically in future matching contexts.
+The motivating analogy is stair climbing. A person does not consciously reason through every stair step. The mind has compiled a general “use stairs” procedure. Specific staircases become parameterized variants: steep steps, slippery surface, weak railing, low light, unusual final step. The person does not re-solve locomotion from first principles; they call a procedural skill and adjust parameters.
+AI agents should do the same. If an agent repeatedly performs a workflow, it should eventually stop reasoning through the whole chain and call a verified tool with the right parameters.
+This reframes tool creation as reasoning compression:
+$$
+{\tau_1, \tau_2, \dots, \tau_n} \rightarrow T_\phi(p)
+$$
+where many repeated trajectories (\tau_i) are compressed into one callable tool (T_\phi) with parameters (p).
+Cognitive Loop Closure is not simple caching. A cache stores answers for repeated inputs. Loop Closure stores reusable procedures for families of tasks. It is not merely prompt templating. A prompt template still asks the model to improvise. A closed loop tool is typed, testable, versioned, monitored, and governed. It is not fine-tuning. Fine-tuning hides acquired skill in model weights; Loop Closure externalizes skill into inspectable tools.
+The proposed architecture has ten major components:
+1. Trajectory logger — records safe execution traces.
+2. Loop detector — finds recurring task/action patterns.
+3. Abstraction engine — separates invariant structure from variable parameters.
+4. Active parameter discovery — probes candidate tools to reveal hidden assumptions.
+5. Tool synthesizer — creates deterministic or bounded procedures.
+6. Verifier — tests the candidate tool against prior, held-out, synthetic, adversarial, and sandbox cases.
+7. Tool registry — stores tool cards, schemas, tests, risk tiers, provenance, and metrics.
+8. Router — chooses between reasoning, compiled-tool execution, or reflex/failsafe execution.
+9. Runtime monitor — checks live behavior, drift, and residuals.
+10. Revision/retirement manager — updates, merges, disables, or retires tools as environments change.
+The architecture introduces a critical three-mode execution model:
+Mode
+	Purpose
+	Interpreter mode
+	Slow, flexible reasoning for novel or ambiguous tasks.
+	Compiled-tool mode
+	Verified tool execution for repeated, well-understood tasks.
+	Reflex/failsafe mode
+	Immediate safety behavior for real-time or high-stakes settings where reasoning is too slow.
+	This distinction matters. In a digital workflow, falling back to fresh reasoning may be acceptable. In a drone, robot, vehicle, factory system, or high-speed physical environment, falling back to a full language-model reasoning loop may be too slow. Such systems need reflexive safety controllers, runtime monitors, control barriers, or hard-coded safe-stop policies that bypass both slow reasoning and ordinary compiled tools when safety boundaries are approached. Runtime verification studies monitors that analyze execution traces against formal specifications, and control barrier functions are used to verify or enforce safety properties in safety-critical controllers. (Springer)
+Cognitive Loop Closure connects to existing work in reinforcement-learning options, process mining, robotic process automation, programming by demonstration, tool-using language models, LLM-generated tools, embodied skill libraries, human procedural learning, runtime verification, and safety-critical control. The options framework introduced temporally extended actions in reinforcement learning; process mining extracts process models from event logs; Toolformer showed language models can learn when and how to call APIs; CREATOR explored LLM tool creation; Voyager demonstrated an LLM-powered embodied agent with an executable skill library and self-verification. (ScienceDirect)
+The novelty is the full metacognitive lifecycle:
+An AI agent uses its own execution history to discover recurring loops, actively probes those loops for hidden parameters, compiles them into verified tools, routes future work through them when appropriate, and monitors residuals over time.
+Within the broader Compact Generative Systems framework, a closed loop tool is a compact generative structure distilled from repeated behavior. It compresses many executions into one verified procedure that governs future action.
+________________
+
+
+Abstract
+Modern AI agents repeatedly perform similar chains of reasoning and tool use, yet most systems re-infer these procedures from scratch each time. We propose Cognitive Loop Closure: a metacognitive architecture in which agents review their execution logs, detect recurring trajectories, abstract invariant structure, synthesize deterministic parameterized tools, verify them against prior, synthetic, adversarial, and sandbox cases, and route future tasks through the resulting procedural memory.
+Loop Closure reframes tool creation as reasoning compression. Repeated trajectories become callable, testable, versioned procedures. This can reduce inference cost, improve consistency, increase interpretability, and allow AI systems to accumulate procedural skill without modifying base-model weights.
+The paper defines the Loop Closure lifecycle, formal model, abstraction engine, active parameter discovery process, tool-card structure, verification contract, routing mechanism, execution environment, runtime-monitoring layer, high-bandwidth embodied logging strategy, evaluation metrics, failure modes, governance requirements, and research agenda.
+Cognitive Loop Closure is related to reinforcement-learning options, process mining, robotic process automation, programming by demonstration, LLM tool use, LLM tool creation, embodied skill libraries, human proceduralization, runtime verification, and safety-critical control. Its contribution is the synthesis of these pieces into a general-purpose architecture for agent procedural memory:
+detect repeated cognition, compile it into tools, verify it, route through it, and monitor it.
+The framework is not a claim that all reasoning should be automated. Instead, it proposes a disciplined division of labor:
+$$
+\text{reason when novel}
+$$
+$$
+\text{execute when closed}
+$$
+$$
+\text{reflex when safety-critical}
+$$
+The mature AI agent is not merely a thinker and not merely a tool user. It is a system that can recognize when thinking has become routine enough to compile.
+________________
+
+
+1. Introduction
+1.1 The problem: agents keep rethinking the same stairs
+AI agents are increasingly capable of planning, tool use, file editing, code generation, information retrieval, workflow execution, and multi-step problem solving. Yet many agents remain wasteful in a very specific way: they repeatedly reason through similar workflows from scratch.
+A coding agent may repeatedly:
+1. inspect a repository;
+2. infer its package manager;
+3. discover its test command;
+4. run tests;
+5. parse errors;
+6. patch files;
+7. rerun tests;
+8. summarize the diff;
+9. prepare a pull-request message.
+A research assistant may repeatedly:
+1. expand rough notes into a paper;
+2. add a thesis;
+3. clarify novelty;
+4. create a related-work section;
+5. add non-claims;
+6. pressure-test objections;
+7. prepare a public-release draft.
+A business assistant may repeatedly:
+1. extract invoice fields;
+2. normalize vendor-specific data;
+3. check policy exceptions;
+4. flag anomalies;
+5. generate a report;
+6. route missing information to a human.
+A personal assistant may repeatedly:
+1. summarize weekly notes;
+2. infer priorities;
+3. format tasks;
+4. prepare an agenda;
+5. preserve user preferences.
+These agents are not always solving new problems. Often, they are walking familiar paths.
+Humans do not handle routine paths this way. Practice can improve speed, reduce cognitive load, and change how behavior is generated; this family of effects is often discussed under automaticity, skill, habit, and reduced cognitive control. (PMC)
+A person does not consciously reason through every stair step. The mind has compiled a general “use stairs” procedure. Specific staircases become parameterized variants: steepness, lighting, slipperiness, load carried, weak railing, unusual final step.
+AI agents need an analogous mechanism.
+They need to notice:
+“I have done this kind of thing before. I should not reason through the whole chain again. I should call the tool we made for it.”
+That mechanism is Cognitive Loop Closure.
+________________
+
+
+1.2 From reasoning to procedural memory
+Most current agents have some combination of:
+* a base model;
+* context window;
+* tool access;
+* retrieval;
+* memory store;
+* planning loop;
+* evaluator;
+* execution environment.
+But many lack a robust mechanism for turning repeated successful behavior into durable, explicit, verified procedural memory.
+Memory alone is not enough. A memory may recall that the agent did something before, but it does not necessarily produce a reusable procedure.
+Tool use alone is not enough. Tool use assumes tools already exist.
+Fine-tuning is not always appropriate. Fine-tuning can hide a skill inside weights, making it harder to inspect, version, test, or retire.
+Cognitive Loop Closure fills the gap:
+$$
+\text{experience}
+\rightarrow
+\text{trajectory logs}
+\rightarrow
+\text{loop candidates}
+\rightarrow
+\text{parameterized tools}
+\rightarrow
+\text{verified procedural memory}
+$$
+The agent becomes more capable not by merely remembering more text, and not necessarily by updating model weights, but by building an inspectable library of closed loops.
+________________
+
+
+1.3 Definition
+Cognitive Loop Closure is the process by which an AI system converts repeated reasoning/action trajectories into deterministic or semi-deterministic, parameterized, verified tools that can be invoked automatically in future matching contexts.
+A trajectory is a record of what the agent did:
+$$
+\tau_i = (x_i, c_i, a_{0:n}, o_{0:n}, y_i, v_i)
+$$
+where:
+Symbol
+	Meaning
+	(x_i)
+	Initial task or request.
+	(c_i)
+	Context.
+	(a_{0:n})
+	Actions, tool calls, edits, searches, decisions, or summarized reasoning steps.
+	(o_{0:n})
+	Observations, tool results, intermediate artifacts, or feedback.
+	(y_i)
+	Final output.
+	(v_i)
+	Verification outcome.
+	A closed loop tool is:
+$$
+T_\phi(p) \rightarrow y
+$$
+where:
+Symbol
+	Meaning
+	(T_\phi)
+	Tool with definition (\phi).
+	(p)
+	Parameter vector.
+	(y)
+	Output or action result.
+	The loop closure transformation is:
+$$
+{\tau_1, \tau_2, \dots, \tau_n} \rightarrow T_\phi(p)
+$$
+A proposed tool is accepted only if it satisfies a verification threshold:
+$$
+\operatorname{Verify}(T_\phi(p_i), y_i) \geq \theta
+$$
+Future tasks are routed by:
+$$
+\operatorname{Route}(x,c)=
+\begin{cases}
+T_\phi(p), & \text{if match, preconditions, risk, and verification pass} \
+\operatorname{Reason}(x,c), & \text{if task is novel, ambiguous, or unsafe for tool use} \
+\operatorname{Reflex}(x,c), & \text{if safety-critical latency constraints dominate}
+\end{cases}
+$$
+This creates a mature execution stack:
+Situation
+	Execution mode
+	Novel, ambiguous, underspecified, or creative problem
+	Interpreter mode
+	Repeated, parameterized, verified workflow
+	Compiled-tool mode
+	Safety-critical, real-time, or hard-latency edge
+	Reflex/failsafe mode
+	________________
+
+
+1.4 The three-mode execution model
+Cognitive Loop Closure should not be understood as “tools replace reasoning.” The point is to allocate the right kind of cognition to the right kind of situation.
+Interpreter mode
+Interpreter mode uses flexible reasoning. It is appropriate when the task is novel, ambiguous, high-level, creative, high-stakes without a certified tool, or outside known preconditions.
+Interpreter mode is slow but adaptable.
+Compiled-tool mode
+Compiled-tool mode uses a verified closed loop tool. It is appropriate when the task matches a known loop, parameters are available, preconditions pass, verification is sufficient, and the risk tier allows automation.
+Compiled-tool mode is faster, more consistent, and more auditable.
+Reflex/failsafe mode
+Reflex/failsafe mode bypasses both slow reasoning and ordinary compiled-tool execution. It is appropriate when time is too short for deliberation or when safety boundaries are approached.
+Examples include:
+* emergency hover or landing for a drone;
+* robot arm freeze near a human;
+* vehicle braking envelope;
+* production deployment hold;
+* financial transaction hold;
+* network isolation on suspicious behavior.
+Reflex/failsafe mode is not “smarter reasoning.” It is immediate protection.
+________________
+
+
+2. Core Thesis
+The central thesis of Cognitive Loop Closure is:
+Repeated cognition should become procedural memory.
+This thesis contains six claims.
+________________
+
+
+2.1 Repeated trajectories contain latent procedures
+When an agent repeatedly solves similar tasks, its execution traces contain structure. Across many runs, some parts remain stable and some vary.
+Stable parts may include:
+* task interpretation;
+* workflow ordering;
+* tool-call sequence;
+* validation steps;
+* output structure;
+* error-correction pattern;
+* human approval points.
+Variable parts may include:
+* file paths;
+* schema names;
+* user preferences;
+* environment configuration;
+* output format;
+* data source;
+* risk level;
+* domain-specific exceptions.
+Cognitive Loop Closure asks:
+What compact procedure explains this family of successful trajectories?
+________________
+
+
+2.2 Parameters preserve variation
+A closed loop tool should not blindly hard-code the first few successful examples. It must distinguish invariant structure from parameters.
+The stair analogy illustrates the difference.
+Bad closure:
+“These exact stairs have 12 steps. Execute 12-step routine.”
+Good closure:
+“Use general stair procedure with parameters for step height, lighting, surface, railing, load, and known defects.”
+For AI workflows, the same principle applies.
+Bad closure:
+“Always run this exact command.”
+Good closure:
+“Run the repository’s test workflow using parameters for package manager, test scope, environment setup, known flaky tests, timeout, and changed files.”
+Parameter discovery is therefore one of the hardest and most important parts of the system.
+________________
+
+
+2.3 Verification separates skill from brittle automation
+Not every repeated pattern should close.
+A loop should close only if the proposed tool can be tested against:
+* prior successful trajectories;
+* held-out prior trajectories;
+* synthetic variants;
+* adversarial cases;
+* schema constraints;
+* environment changes;
+* known edge cases;
+* safety requirements.
+Without verification, Loop Closure becomes premature automation.
+________________
+
+
+2.4 Routing is as important as synthesis
+A tool is only as good as the system’s ability to decide when to use it.
+The router must answer:
+* Does this task match the tool?
+* Are required parameters known?
+* Are preconditions satisfied?
+* Is the environment within the tool’s validated domain?
+* Is the risk acceptable?
+* Is verification available?
+* Has the tool failed recently?
+* Is fallback reasoning safe?
+* Is latency too constrained for reasoning?
+A bad router turns useful tools into brittle scripts.
+________________
+
+
+2.5 Closed tools are procedural memory
+A closed loop tool is a form of memory.
+It records:
+* what the agent learned to do;
+* what context it applies to;
+* what parameters matter;
+* how to execute the skill;
+* how to check the skill;
+* where it fails;
+* when to fall back.
+This is procedural memory externalized into an inspectable registry.
+________________
+
+
+2.6 The highest-value loops are governed loops
+The goal is not simply automation. It is governed automation.
+A closed loop should have:
+* preconditions;
+* postconditions;
+* tests;
+* risk tier;
+* provenance;
+* monitoring;
+* fallback;
+* retirement conditions.
+The system should not merely execute faster. It should execute with clearer boundaries.
+________________
+
+
+3. Relationship to Existing Work
+Cognitive Loop Closure is a synthesis. The novelty is not any single ingredient, but the full lifecycle.
+________________
+
+
+3.1 Reinforcement-learning options
+The reinforcement-learning options framework introduced temporally extended actions: policies that execute over multiple primitive steps. Sutton, Precup, and Singh describe options as closed-loop policies for taking action over a period of time, extending the usual notion of action in reinforcement learning. (ScienceDirect)
+Cognitive Loop Closure is related, but broader.
+An option might be:
+Navigate to the door.
+A closed loop tool might be:
+Process this vendor invoice according to vendor schema, currency policy, exception rules, approval thresholds, and output format.
+Options are usually learned policies in an environment. Loop Closure generalizes the idea to cognitive and digital workflows:
+Loop Closure is option discovery for reasoning and tool-use trajectories, with explicit parameterization, verification, registration, routing, and monitoring.
+________________
+
+
+3.2 Process mining
+Process mining extracts process models from event logs. Workflow-mining work by van der Aalst, Weijters, and Maruster presents algorithms for extracting process models from logs that describe how workflows are actually executed. (Wil van der Aalst)
+Cognitive Loop Closure borrows the log-to-process idea but changes the subject.
+Traditional process mining often studies organizational or enterprise workflows.
+Loop Closure mines the AI agent’s own execution traces:
+$$
+\text{agent logs} \rightarrow \text{loop candidate} \rightarrow \text{tool}
+$$
+Process mining discovers how work is done. Cognitive Loop Closure uses that discovery to create verified procedural memory.
+________________
+
+
+3.3 Robotic process automation
+Robotic Process Automation automates repetitive digital tasks. SmartRPA, for example, analyzes UI logs of past routine executions to generate software robots capable of handling intermediate user inputs. (ScienceDirect)
+Cognitive Loop Closure is similar in spirit, but the automation subject is the AI agent itself.
+Instead of only observing humans using software, the system observes the agent’s own repeated workflow and asks:
+Should this become a tool?
+________________
+
+
+3.4 Programming by demonstration
+Programming by Demonstration teaches systems from demonstrations. In robotics, PbD is a long-standing approach for teaching robots tasks through human demonstrations, and surveys describe it as spanning human-robot interaction, machine learning, machine vision, and motor control. (Neuroscience)
+Loop Closure can be viewed as self-demonstration.
+The agent’s own successful trajectories become demonstrations from which it derives a procedure.
+The human may still approve or edit the procedure, but the source examples are the agent’s own repeated behavior.
+________________
+
+
+3.5 Tool use in language models
+Toolformer showed that language models can learn to decide which APIs to call, when to call them, what arguments to pass, and how to incorporate the results into future prediction. (arXiv)
+Toolformer addresses tool use.
+Cognitive Loop Closure addresses tool formation.
+Toolformer: learn when and how to use tools.
+Cognitive Loop Closure: learn when repeated cognition should become a tool.
+________________
+
+
+3.6 LLM tool creation
+CREATOR explores LLM-based tool creation, separating abstract tool creation from concrete decision execution and emphasizing the limitations of relying only on pre-existing APIs. (arXiv)
+Recent work on LLM agents making tools also argues that tool-using agents are powerful but limited when tools must be implemented in advance by humans, motivating autonomous tool creation for specialized domains. (arXiv)
+Cognitive Loop Closure agrees that agents need tool creation, but adds a recurrence-driven trigger:
+A new tool should be created when repeated trajectories reveal a stable, parameterizable, verifiable loop.
+Tool creation is not only creative synthesis. It is the closure of recurrence.
+________________
+
+
+3.7 Skill libraries in embodied agents
+Voyager demonstrates an LLM-powered embodied agent in Minecraft with an automatic curriculum, an ever-growing skill library of executable code, and iterative prompting that uses environment feedback and self-verification. The paper describes Voyager’s learned skills as temporally extended, interpretable, and compositional. (arXiv)
+Cognitive Loop Closure generalizes the skill-library concept across domains:
+* coding agents;
+* research assistants;
+* personal assistants;
+* enterprise agents;
+* robotics;
+* operations;
+* governance workflows.
+Voyager shows one powerful instance. Loop Closure proposes a general lifecycle for procedural memory formation.
+________________
+
+
+3.8 Human procedural learning and automaticity
+Human practice can reduce cognitive load and change how behavior is generated. Research on practice, skill, habit, and automaticity emphasizes that repeated practice can increase speed, make behavior more habitual, and reduce required cognitive control. (PMC)
+Cognitive Loop Closure is not a literal model of the human brain, but it borrows the high-level transition:
+$$
+\text{deliberation} \rightarrow \text{procedure}
+$$
+The system keeps reasoning for novelty and compiles repetition into governed skill.
+________________
+
+
+3.9 Runtime verification and safety-critical control
+Runtime verification studies the dynamic analysis of execution traces against formal specifications, often by creating monitors that evaluate system behavior during execution. (Springer)
+Control barrier functions provide a framework for verifying or enforcing safety properties in safety-critical controllers, including robotic systems. (Ames Research Center)
+These areas matter because Cognitive Loop Closure is not only about creating tools. It is about creating tools that can be monitored, bounded, and prevented from acting outside their safe operating region.
+________________
+
+
+4. Architecture Overview: The Ten Components
+Cognitive Loop Closure comprises ten major components. This section gives the complete architectural map. Later sections expand the most difficult pieces: active parameter discovery, verification, execution environments, routing, high-bandwidth embodied logging, lifecycle management, and governance.
+________________
+
+
+4.1 Trajectory Logger
+The trajectory logger records safe, structured traces of agent behavior.
+It should record:
+* task intent;
+* context summary;
+* actions and tool calls;
+* input/output objects;
+* intermediate artifacts;
+* verification results;
+* failures and retries;
+* human corrections;
+* cost metrics;
+* latency;
+* environment metadata;
+* risk classification.
+It should not require storing private chain-of-thought. A safe trace can capture:
+$$
+\text{intent} \rightarrow \text{steps} \rightarrow \text{tools} \rightarrow \text{artifacts} \rightarrow \text{verification}
+$$
+rather than raw hidden reasoning.
+The purpose is to preserve enough procedural structure to detect recurrence without unnecessarily exposing private reasoning.
+________________
+
+
+4.2 Loop Detector
+The loop detector searches logs for repeated procedural structure.
+Signals include:
+* repeated task families;
+* repeated action graphs;
+* repeated tool-call sequences;
+* repeated input/output schemas;
+* repeated verification steps;
+* repeated failure/correction patterns;
+* repeated user corrections;
+* repeated high-cost reasoning;
+* repeated successful workflows.
+The detector produces loop candidates:
+$$
+\mathcal{L} = {\tau_1, \tau_2, \dots, \tau_n}
+$$
+A candidate is promising when trajectories are similar in intent, structure, and outcome, even if surface details differ.
+________________
+
+
+4.3 Abstraction Engine
+The abstraction engine converts a cluster of trajectories into a generalized procedure.
+It must identify:
+* invariant steps;
+* parameters;
+* optional branches;
+* preconditions;
+* postconditions;
+* hidden assumptions;
+* verification points;
+* edge cases;
+* failure modes;
+* risk tier.
+The key question is:
+Which parts of the observed trajectory are essential structure, and which parts are accidental context?
+This is historically difficult in program synthesis and process discovery. If the system observes only a few successful runs, it may incorrectly treat a parameter as an invariant simply because the environment did not change during those examples.
+Therefore, the abstraction engine must not rely only on passive historical log analysis. It needs active parameter discovery.
+________________
+
+
+4.4 Active Parameter Discovery
+Active parameter discovery probes the proposed abstraction to expose hidden assumptions and accidental constants.
+It asks:
+* What changes if file paths vary?
+* What changes if schemas vary?
+* What changes if the environment changes?
+* What if units, currency, time zone, permissions, or project structure differ?
+* What if a prior “constant” was merely unobserved variation?
+This stage prevents brittle hard-coding.
+________________
+
+
+4.5 Tool Synthesizer
+The tool synthesizer creates a deterministic or semi-deterministic tool.
+The tool may be:
+* a function;
+* a workflow graph;
+* an API wrapper;
+* a database query;
+* a repository-specific command;
+* a document transformation;
+* a validation routine;
+* a browser automation;
+* a physical control primitive;
+* a runtime monitor;
+* a reflex/failsafe behavior.
+The strongest tools are deterministic. Tools that use a model internally should still be bounded, typed, and verified.
+________________
+
+
+4.6 Verifier
+The verifier tests the proposed tool before registration.
+Verification sources include:
+* prior successful trajectories;
+* held-out prior trajectories;
+* synthetic cases;
+* adversarial cases;
+* schema checks;
+* invariant checks;
+* sandbox execution;
+* human review for high-risk actions;
+* runtime monitoring.
+Verification should produce a grade, not merely a pass/fail label.
+________________
+
+
+4.7 Tool Registry
+The tool registry stores procedural memory.
+It records:
+* tool definitions;
+* tool cards;
+* schemas;
+* tests;
+* provenance;
+* risk tiers;
+* verification grades;
+* runtime tiers;
+* latency classes;
+* performance metrics;
+* dependencies;
+* version history;
+* failure reports;
+* retirement conditions.
+Without a registry, tool creation becomes chaotic.
+________________
+
+
+4.8 Router
+The router chooses the execution mode.
+It decides whether to:
+* reason in interpreter mode;
+* execute a compiled tool;
+* invoke reflex/failsafe behavior;
+* ask the user for clarification;
+* refuse or escalate due to risk.
+The router is safety-critical because a good tool can still be dangerous if invoked in the wrong context.
+________________
+
+
+4.9 Runtime Monitor
+The runtime monitor observes live tool execution.
+It tracks:
+* precondition status;
+* postcondition status;
+* output validity;
+* runtime anomalies;
+* latency;
+* drift;
+* residuals;
+* environment changes;
+* safety-boundary violations.
+Runtime monitoring lets the system detect when a closed loop is no longer behaving as expected.
+________________
+
+
+4.10 Revision and Retirement Manager
+The revision/retirement manager keeps procedural memory healthy.
+It can:
+* add parameters;
+* tighten preconditions;
+* update tests;
+* split tools;
+* merge tools;
+* downgrade verification grade;
+* retire stale tools;
+* trigger human review;
+* move tools back to probationary status.
+This prevents skill libraries from becoming ungovernable clutter.
+________________
+
+
+5. Active Parameter Discovery
+5.1 Why passive abstraction is insufficient
+Suppose an agent runs the same command three times in one repository. It may conclude that the command is invariant.
+But perhaps the true invariant is:
+“Run the project’s test command.”
+The observed command was merely one repository-specific parameter.
+Likewise, if every invoice in the observed logs is in USD, the system might hard-code USD as invariant. But currency may be a hidden parameter that did not vary in the training examples.
+This is the core abstraction risk:
+The absence of variation in logs is not evidence that a factor is invariant.
+A strong Loop Closure system must discover hidden parameters before finalizing a tool.
+________________
+
+
+5.2 Parameter discovery methods
+Active parameter discovery uses several complementary methods.
+Method 1 — Historical variance analysis
+The system first looks for observed variation across trajectories.
+If values change while the structure remains stable, those values are parameter candidates.
+Observed variation
+	Parameter candidate
+	Different file paths
+	target_path
+	Different output formats
+	output_format
+	Different project types
+	project_profile
+	Different vendors
+	vendor_schema
+	Different user preferences
+	style_profile
+	Historical variance is useful but incomplete. It only reveals parameters that have already varied.
+Method 2 — Counterfactual replay
+The system replays prior trajectories with controlled substitutions in a sandbox.
+Question:
+If this value changes, does the procedure still work?
+Examples:
+* swap output format;
+* change file location;
+* use different schema;
+* perturb command arguments;
+* simulate missing dependency;
+* alter environment variable;
+* introduce known edge case.
+If the tool breaks, the changed factor may be a parameter, precondition, or hidden assumption.
+Method 3 — Synthetic case generation
+The system generates synthetic variants of the task family.
+Examples:
+* invoice with missing field;
+* repository with different package manager;
+* paper with no related-work section;
+* spreadsheet with extra column;
+* API response with pagination;
+* staircase with a missing railing.
+Synthetic cases are then used to test whether the proposed procedure generalizes.
+Method 4 — Adversarial edge-case probing
+The system deliberately searches for cases where the proposed abstraction fails.
+Examples:
+* malformed inputs;
+* ambiguous instructions;
+* partial data;
+* schema drift;
+* conflicting preferences;
+* environment mismatch;
+* stale tool assumptions.
+The purpose is not to prove perfection. It is to discover the boundaries of safe use.
+Method 5 — Environment interrogation
+The tool checks its environment before execution.
+Examples:
+* inspect repository config;
+* detect package manager;
+* check API version;
+* validate schema;
+* confirm permissions;
+* check dependency versions;
+* check data units;
+* check runtime platform.
+This prevents the tool from assuming the world is unchanged.
+Method 6 — Human or supervisory questioning
+For ambiguous parameters, the agent may ask:
+“This loop appears to depend on the output format. Should that be a parameter?”
+or:
+“This workflow has only been observed for USD invoices. Should currency be hard-coded or parameterized?”
+Human correction can accelerate abstraction.
+________________
+
+
+5.3 Parameter states
+The abstraction engine should classify variables into four states.
+State
+	Meaning
+	Invariant
+	Should not change across valid uses.
+	Parameter
+	Expected to vary and should be exposed.
+	Precondition
+	Must hold before tool execution.
+	Unknown assumption
+	Suspected dependency requiring more evidence.
+	This is more robust than a binary invariant/parameter split.
+A mature tool should not hide unknown assumptions. It should carry them forward into testing and monitoring.
+________________
+
+
+5.4 Parameter validation rule
+A parameter should be accepted only if:
+1. it explains variation across examples;
+2. it can be represented in the input schema;
+3. it affects execution or verification;
+4. it can be bounded or validated;
+5. changing it in sandbox tests does not invalidate the whole tool unexpectedly.
+If a factor cannot be safely represented, it should become a precondition or an abstention trigger.
+________________
+
+
+6. High-Bandwidth Trajectory Logging for Embodied Agents
+6.1 The embodied logging problem
+Digital agents can often log discrete actions: tool calls, file edits, messages, command outputs, and verification results. Embodied agents face a harder problem.
+A drone, robot, vehicle, or sensor platform may produce:
+* 60fps camera frames;
+* depth maps;
+* IMU readings;
+* motor commands;
+* lidar scans;
+* GPS updates;
+* force readings;
+* battery telemetry;
+* object detections;
+* localization estimates;
+* controller states.
+If the trajectory logger naively stores everything at full fidelity, memory costs explode. If it stores too little, the loop detector cannot discover useful patterns.
+Therefore, embodied Cognitive Loop Closure needs a hierarchical logging strategy.
+________________
+
+
+6.2 Separate telemetry logs from cognitive logs
+The first principle is separation:
+Log type
+	Purpose
+	Raw telemetry log
+	High-fidelity sensor/control data for replay, debugging, and safety analysis.
+	Cognitive trajectory log
+	Compressed semantic/action trace used for loop detection.
+	Event log
+	Discrete events such as obstacle detected, gate passed, slip detected, emergency stop triggered.
+	Residual log
+	Surprises, errors, monitor violations, failed predictions, or recovery events.
+	The loop detector should usually operate on the cognitive and event logs, not raw video or raw telemetry.
+Raw telemetry should be retained selectively: around failures, anomalies, safety events, and representative successful examples.
+________________
+
+
+6.3 Multi-resolution logging
+Embodied Loop Closure should log at multiple resolutions.
+Resolution
+	Stored information
+	Continuous low-level buffer
+	Short rolling window of raw sensor/control data.
+	Event-level trace
+	Detected events, state transitions, monitor triggers.
+	Semantic summary
+	Objects, landmarks, task state, environment labels.
+	Skill-level trace
+	Which tool, controller, or reflex/failsafe behavior was active.
+	Outcome trace
+	Success, failure, residual, verification result.
+	This is similar to a flight recorder: most raw detail can be discarded unless it becomes relevant, while critical windows are retained.
+________________
+
+
+6.4 Triggered retention
+The system should retain high-bandwidth data when something important happens.
+Triggers include:
+* near collision;
+* obstacle detection;
+* controller saturation;
+* high uncertainty;
+* unexpected object;
+* reflex/failsafe activation;
+* tool failure;
+* human override;
+* verification failure;
+* large prediction residual;
+* environment mismatch.
+For routine successful execution, the system may retain only compressed summaries and occasional samples.
+For failure or edge cases, it should preserve a richer window:
+$$
+[t_{\text{event}} - \Delta t_{\text{pre}}, ; t_{\text{event}} + \Delta t_{\text{post}}]
+$$
+This supports later debugging and loop refinement.
+________________
+
+
+6.5 Semantic eventization
+High-bandwidth continuous streams should be transformed into event streams.
+Examples:
+Raw signal
+	Eventized representation
+	Camera feed
+	obstacle appeared, gate centered, line lost
+	IMU
+	slip detected, yaw drift, rapid acceleration
+	Motor telemetry
+	actuator saturation, thrust imbalance
+	Depth map
+	corridor narrowing, obstacle approaching
+	Localization
+	drift spike, map mismatch
+	Controller output
+	emergency correction, reflex triggered
+	The loop detector can then search over event/action structure rather than raw frames.
+________________
+
+
+6.6 Feature compression
+For embodied loop detection, the system may store compressed features instead of raw frames:
+* object detections;
+* scene embeddings;
+* optical-flow summaries;
+* keyframes;
+* pose graphs;
+* occupancy summaries;
+* controller state;
+* uncertainty estimates;
+* anomaly scores.
+The goal is not to compress away safety evidence. The goal is to give the loop detector the right abstraction level.
+________________
+
+
+6.7 Reflex/failsafe data policy
+When reflex/failsafe mode triggers, the logger should preserve:
+* pre-event sensor window;
+* control outputs;
+* active tool or controller;
+* safety monitor state;
+* trigger condition;
+* latency measurements;
+* post-event outcome;
+* human intervention if any.
+This lets the system answer:
+Did the reflex/failsafe trigger correctly?
+Did a compiled tool enter an unsafe state?
+Was the router too slow?
+Was the safety boundary too loose?
+Should the tool be revised or retired?
+________________
+
+
+6.8 Memory-budget principle
+For embodied systems, the logging policy should satisfy:
+$$
+B_{\text{raw}} + B_{\text{events}} + B_{\text{features}} + B_{\text{residuals}} \leq B_{\text{budget}}
+$$
+where:
+Term
+	Meaning
+	(B_{\text{raw}})
+	Raw retained telemetry budget.
+	(B_{\text{events}})
+	Event log budget.
+	(B_{\text{features}})
+	Compressed feature budget.
+	(B_{\text{residuals}})
+	Failure/anomaly retention budget.
+	(B_{\text{budget}})
+	Total memory budget.
+	The design goal is:
+Log enough structure to discover loops, enough detail to debug failures, and enough safety evidence to audit reflex/failsafe behavior — without storing the entire world.
+________________
+
+
+7. Tool Synthesis
+7.1 What counts as a tool?
+A closed loop tool may be:
+* a function;
+* a workflow graph;
+* an API wrapper;
+* a database query;
+* a repository-specific command;
+* a document transformation;
+* a validation routine;
+* a browser automation;
+* a physical control primitive;
+* a runtime monitor;
+* a reflex/failsafe behavior.
+Not every tool has to be pure code. The essential requirements are that it be:
+* parameterized;
+* bounded;
+* verifiable;
+* routable;
+* monitorable.
+________________
+
+
+7.2 Deterministic vs. semi-deterministic tools
+The strongest closed tools are deterministic.
+However, some tools may still call models internally. These should be treated as semi-deterministic and require stronger verification boundaries.
+Tool type
+	Model role
+	Deterministic parser
+	None
+	Test runner
+	None
+	Formatter
+	None
+	Repository analyzer
+	Mostly deterministic
+	Document drafter
+	Model may generate text
+	Claim auditor
+	Model may classify or critique
+	Research summarizer
+	Model may synthesize
+	When a closed tool uses a model internally, its model call should be constrained by:
+* input schema;
+* output schema;
+* verifier;
+* confidence threshold;
+* fallback;
+* audit log.
+The closure is not “the model will think better.” The closure is “the model is used only inside a bounded, verified procedure.”
+________________
+
+
+7.3 Tool assurance levels
+Closed loop tools should be assigned assurance levels.
+Level
+	Name
+	Description
+	A0
+	Template
+	Reusable prompt or checklist; not fully automated.
+	A1
+	Assisted procedure
+	Structured workflow with human review.
+	A2
+	Verified tool
+	Typed inputs/outputs, tests, low-risk automation.
+	A3
+	Sandboxed tool
+	Runs in restricted environment with capability limits.
+	A4
+	Certified tool
+	Strong tests, runtime monitoring, high reliability requirements.
+	A5
+	Reflex/failsafe tool
+	Hard real-time or safety-critical behavior; must not depend on slow LLM reasoning.
+	This avoids treating all tools as equal.
+________________
+
+
+8. Verification
+8.1 Verification is not optional
+A closed loop without verification is merely automation.
+Verification should test:
+* does the tool solve prior cases?
+* does it solve held-out cases?
+* does it handle synthetic variation?
+* does it fail safely?
+* are preconditions sufficient?
+* are parameters complete?
+* are postconditions checkable?
+* does it preserve invariants?
+* does it abstain when it should?
+Runtime verification is relevant because pre-deployment testing alone is insufficient in open environments; monitors can observe traces during execution and evaluate whether behavior conforms to specified properties. (Springer)
+________________
+
+
+8.2 Verification sources
+A tool should be tested against multiple sources.
+Source
+	Purpose
+	Prior successful trajectories
+	Confirm it reproduces known behavior.
+	Held-out trajectories
+	Test generalization.
+	Synthetic cases
+	Explore unobserved variation.
+	Adversarial cases
+	Find failure boundaries.
+	Schema tests
+	Validate inputs and outputs.
+	Invariant tests
+	Ensure rules are preserved.
+	Sandbox runs
+	Check behavior before deployment.
+	Human review
+	Required for high-risk closure.
+	Runtime monitoring
+	Detect drift after deployment.
+	________________
+
+
+8.3 Verification grades
+Verification should produce a grade, not only pass/fail.
+Grade
+	Meaning
+	Unverified
+	Candidate tool; cannot route automatically.
+	Replay-passed
+	Matches prior examples only.
+	Held-out-passed
+	Handles unseen prior examples.
+	Synthetic-passed
+	Handles generated variants.
+	Adversarial-tested
+	Known failure boundaries explored.
+	Runtime-monitored
+	Live execution monitored.
+	Human-approved
+	Approved for specified risk tier.
+	Certified
+	Meets domain-specific assurance requirements.
+	A tool should not be used beyond its verification grade.
+________________
+
+
+8.4 Verification cannot be absolute in open worlds
+In open-ended environments, verification is rarely absolute. It is bounded by:
+* available tests;
+* formal specification quality;
+* environment coverage;
+* risk model accuracy;
+* monitoring strength;
+* runtime constraints.
+Therefore, this paper does not claim that verification makes tools perfectly safe.
+The stronger claim is:
+Loop Closure makes procedural skill more verifiable than unconstrained repeated reasoning.
+That is a defensible and important claim.
+________________
+
+
+9. Execution Environments
+9.1 Why execution environment matters
+If synthesized tools are merely flexible scripts, hidden assumptions and unsafe behavior can creep in. The tool’s behavior may diverge from the schema. It may access resources it should not. It may fail silently. It may mutate state outside its intended scope.
+Therefore, tool execution must be governed by environment design.
+A closed loop tool should run in the least powerful environment sufficient for its task.
+________________
+
+
+9.2 Execution tiers
+Tier
+	Environment
+	Appropriate for
+	E0
+	Text template
+	Low-risk drafting and formatting.
+	E1
+	Structured workflow
+	Human-reviewed procedures.
+	E2
+	Typed function
+	Deterministic digital transformations.
+	E3
+	Sandboxed runtime
+	Untrusted or generated code.
+	E4
+	Memory-safe systems runtime
+	Higher-assurance tools.
+	E5
+	Real-time embedded/reflex runtime
+	Safety-critical embodied agents.
+	________________
+
+
+9.3 Typed schemas
+Every tool should define:
+* input schema;
+* output schema;
+* parameter schema;
+* preconditions;
+* postconditions;
+* permission requirements;
+* allowed side effects.
+The schema is not documentation only. It should be enforced by the runtime wherever possible.
+________________
+
+
+9.4 Memory-safe and sandboxed execution
+For tools that execute generated or semi-generated code, the runtime should restrict capabilities.
+Rust is relevant because its ownership system governs how programs manage memory, with rules checked by the compiler. (Rust Documentation)
+WebAssembly is relevant because it is designed as a portable compilation target and provides a sandboxed execution model; its security documentation describes memory safety and isolation goals. (WebAssembly)
+This suggests a practical hierarchy:
+* low-risk tools may be structured workflows;
+* medium-risk tools may run as typed functions;
+* generated code should run in a sandbox;
+* high-assurance tools should be compiled, capability-limited, and monitored;
+* safety-critical tools should be separated from slow LLM reasoning entirely.
+________________
+
+
+9.5 Capability restrictions
+A tool should receive only the permissions it needs.
+Examples:
+* read-only filesystem access;
+* write access to a specific directory;
+* no network access;
+* access only to a specific API;
+* no shell execution;
+* limited execution time;
+* memory limits;
+* rate limits;
+* dry-run mode.
+This prevents a closed loop from becoming an unbounded automation hazard.
+________________
+
+
+10. Routing and Execution Modes
+10.1 The router is a safety-critical component
+The router decides whether to use a tool, reason freshly, ask for clarification, or trigger reflex/failsafe behavior.
+It must evaluate:
+* task match;
+* parameter availability;
+* tool confidence;
+* precondition satisfaction;
+* risk tier;
+* verification grade;
+* environment stability;
+* user permissions;
+* latency constraints;
+* recent failure rate;
+* novelty score.
+A mature agent should be able to say:
+“This resembles a known loop, but the preconditions are not satisfied. I will not use the tool.”
+________________
+
+
+10.2 Interpreter mode
+Use slow, flexible reasoning.
+Appropriate when:
+* task is novel;
+* tool confidence is low;
+* parameters are missing;
+* user intent is ambiguous;
+* stakes are high and tool is not certified;
+* environment differs from validated domain.
+Interpreter mode preserves adaptability.
+________________
+
+
+10.3 Compiled-tool mode
+Use a verified closed loop tool.
+Appropriate when:
+* task matches known loop;
+* preconditions pass;
+* parameters are available;
+* risk is acceptable;
+* tool is fresh;
+* verification grade is sufficient;
+* runtime monitor is active if needed.
+Compiled-tool mode saves cost and improves consistency.
+________________
+
+
+10.4 Reflex/failsafe mode
+Use immediate safety behavior.
+Appropriate when:
+* latency ceiling is tight;
+* physical safety is at stake;
+* environment is unstable;
+* tool fails during execution;
+* system approaches a safety boundary;
+* reasoning fallback is too slow.
+Examples:
+* drone emergency hover or land;
+* robot stop motion;
+* vehicle braking envelope;
+* factory arm freeze;
+* financial transaction hold;
+* production deployment halt;
+* network isolation on suspicious behavior.
+In embodied systems, reflex/failsafe mode should be implemented as a fast controller, safety monitor, or barrier mechanism rather than an LLM call. Control barrier functions provide one established approach for enforcing safety constraints in safety-critical controllers. (arXiv)
+________________
+
+
+10.5 Latency classes
+Every tool should declare a latency class.
+Class
+	Example
+	L0
+	No urgency; minutes or hours acceptable.
+	L1
+	Interactive; seconds acceptable.
+	L2
+	Operational; sub-second preferred.
+	L3
+	Real-time; milliseconds matter.
+	L4
+	Safety-critical reflex; reasoning fallback too slow.
+	The router must respect latency class.
+For L3/L4 contexts, fallback to LLM reasoning is often not a valid safety response. The fallback must be reflexive, precomputed, or controller-level.
+________________
+
+
+11. Tool Registry and Tool Cards
+11.1 The registry as procedural memory
+The tool registry is the agent’s externalized procedural memory.
+It stores:
+* tool definitions;
+* schemas;
+* tests;
+* provenance;
+* risk tiers;
+* verification grades;
+* runtime tiers;
+* latency classes;
+* performance metrics;
+* dependencies;
+* version history;
+* failure reports;
+* retirement conditions.
+Without a registry, tool creation becomes chaotic.
+________________
+
+
+11.2 Tool card fields
+Every closed tool should have a card.
+Field
+	Purpose
+	Tool name
+	Human-readable identifier.
+	Purpose
+	What the tool does.
+	Task family
+	What class of tasks it covers.
+	Inputs
+	Required input objects.
+	Outputs
+	Expected output objects.
+	Parameters
+	Variables that customize execution.
+	Preconditions
+	Conditions required before execution.
+	Postconditions
+	Conditions that must hold after execution.
+	Verification grade
+	Level of confidence/testing.
+	Runtime tier
+	Execution environment.
+	Latency class
+	Timing requirement.
+	Risk tier
+	Consequence of failure.
+	Allowed side effects
+	What the tool may change.
+	Permissions
+	Capabilities granted.
+	Known edge cases
+	Situations requiring caution.
+	Failure modes
+	Known ways it can fail.
+	Fallback
+	What to do when it should not run.
+	Provenance
+	Source trajectories used to derive it.
+	Metrics
+	Success rate, cost savings, failures.
+	Version
+	Current tool version.
+	Retirement criteria
+	When to disable or replace it.
+	The tool card is what turns a procedure into a governable artifact.
+________________
+
+
+11.3 Example: public whitepaper preparation
+A repeated workflow might close into:
+Field
+	Example
+	Tool name
+	Public Whitepaper Preparation
+	Purpose
+	Convert concept notes into a public-release whitepaper.
+	Inputs
+	Concept notes, target audience, desired tone, citation policy.
+	Outputs
+	Structured paper with TL;DR, abstract, sections, conclusion, references.
+	Parameters
+	Verbosity, formality, include objections, include non-claims, citation depth.
+	Preconditions
+	Source concept exists; audience is known or inferable.
+	Postconditions
+	Paper has thesis, novelty, limitations, failure modes, and release structure.
+	Verification
+	Claim audit, repetition audit, citation audit, novelty check.
+	Runtime tier
+	E1/E2 structured workflow with model-assisted drafting.
+	Latency class
+	L0/L1.
+	Risk tier
+	Low to medium, depending on public claims.
+	Fallback
+	General writing workflow with human review.
+	This is the kind of loop a long-lived assistant should notice.
+________________
+
+
+11.4 Example: repository-specific test runner
+A coding agent might close a loop around a repository:
+Field
+	Example
+	Tool name
+	Run Repository Tests
+	Purpose
+	Execute the correct project-specific test sequence.
+	Inputs
+	Repository path, changed files, test scope.
+	Outputs
+	Test results and parsed failure summary.
+	Parameters
+	Package manager, environment variables, known flaky tests, timeout.
+	Preconditions
+	Repo profile exists; environment initialized.
+	Postconditions
+	Test results are summarized and linked to changed files.
+	Verification
+	Test command exits successfully or failure is parsed.
+	Runtime tier
+	E2/E3 typed or sandboxed command runner.
+	Latency class
+	L1/L2.
+	Risk tier
+	Medium if write operations are disabled; higher if mutation is allowed.
+	Fallback
+	Inspect repo manually and reason through setup.
+	This is the AI equivalent of “I know how to use these stairs.”
+________________
+
+
+11.5 Example: emergency hover for drone
+A safety-critical embodied agent might have a reflex/failsafe tool card:
+Field
+	Example
+	Tool name
+	Emergency Hover
+	Purpose
+	Stabilize drone immediately when obstacle proximity or localization uncertainty exceeds safety threshold.
+	Inputs
+	IMU state, velocity, altitude, obstacle distance, controller status.
+	Outputs
+	Stabilized hover or controlled descent.
+	Parameters
+	Maximum deceleration, safe altitude band, obstacle threshold, battery threshold.
+	Preconditions
+	Flight controller responsive; hover mode available.
+	Postconditions
+	Drone is stable, slowed, or landing under control.
+	Verification
+	Simulation, hardware-in-loop tests, runtime monitor, safety envelope checks.
+	Runtime tier
+	E5 real-time embedded/reflex runtime.
+	Latency class
+	L4.
+	Risk tier
+	Critical.
+	Fallback
+	Emergency land or motor cutoff depending on safety policy.
+	Retirement criteria
+	Any unexplained failure, repeated false trigger, or controller drift.
+	This illustrates why reflex/failsafe behavior must not depend on slow model reasoning.
+________________
+
+
+11.6 Example: production deployment hold
+A software operations agent might use:
+Field
+	Example
+	Tool name
+	Production Deployment Hold
+	Purpose
+	Stop or pause deployment when preflight or runtime checks detect a dangerous condition.
+	Inputs
+	Deployment status, test results, error budget, incident flags, dependency health.
+	Outputs
+	Deployment paused, rollback requested, or human approval required.
+	Parameters
+	Risk threshold, affected service, rollback policy, escalation channel.
+	Preconditions
+	Deployment pipeline exposes hold/rollback interface.
+	Postconditions
+	No further production mutation occurs until verification or approval.
+	Verification
+	CI invariants, canary metrics, incident monitor, audit log.
+	Runtime tier
+	E3/E4 sandboxed or memory-safe systems runtime.
+	Latency class
+	L2/L3.
+	Risk tier
+	High to critical.
+	Fallback
+	Human incident commander escalation.
+	This shows that reflex/failsafe mode is not only for robotics. It applies to software systems when fast containment is safer than continued reasoning.
+________________
+
+
+12. Lifecycle
+A closed loop tool should move through a lifecycle:
+$$
+\text{Candidate}
+\rightarrow
+\text{Proposed}
+\rightarrow
+\text{Probed}
+\rightarrow
+\text{Tested}
+\rightarrow
+\text{Probationary}
+\rightarrow
+\text{Active}
+\rightarrow
+\text{Monitored}
+\rightarrow
+\text{Revised}
+\rightarrow
+\text{Retired}
+$$
+________________
+
+
+12.1 Candidate
+A loop candidate is detected from repeated traces.
+Criteria:
+* enough recurrence;
+* structural similarity;
+* meaningful cost;
+* likely parameterization;
+* acceptable risk;
+* possible verification.
+________________
+
+
+12.2 Proposed
+The system drafts a tool specification.
+The proposal includes:
+* purpose;
+* task family;
+* invariant steps;
+* candidate parameters;
+* preconditions;
+* postconditions;
+* verification plan;
+* risk tier;
+* expected savings.
+________________
+
+
+12.3 Probed
+The system actively probes the proposed abstraction.
+It asks:
+* What hidden parameters may exist?
+* What happens if observed constants change?
+* Does the tool survive synthetic variants?
+* Where does it fail?
+* Which assumptions need to become preconditions?
+This stage is a major improvement over naive closure.
+________________
+
+
+12.4 Tested
+The tool is evaluated against:
+* replay cases;
+* held-out cases;
+* synthetic cases;
+* adversarial cases;
+* schema constraints;
+* runtime constraints.
+________________
+
+
+12.5 Probationary
+The tool may run in limited mode.
+Examples:
+* dry-run only;
+* require human approval;
+* low-risk cases only;
+* high monitoring;
+* automatic fallback.
+________________
+
+
+12.6 Active
+The router can invoke the tool automatically within its validated scope.
+Activation is not permanent.
+________________
+
+
+12.7 Monitored
+Every execution produces evidence:
+* success/failure;
+* residuals;
+* latency;
+* cost savings;
+* user corrections;
+* environment drift;
+* violation of assumptions.
+________________
+
+
+12.8 Revised
+Failures may trigger:
+* parameter addition;
+* precondition tightening;
+* verifier expansion;
+* runtime restriction;
+* tool splitting;
+* tool merging;
+* version update.
+________________
+
+
+12.9 Retired
+A tool should be retired when:
+* it is stale;
+* it fails too often;
+* it is unused;
+* it overlaps better tools;
+* its risk changed;
+* its maintenance cost exceeds value.
+Tool retirement prevents procedural clutter.
+________________
+
+
+13. Loop Closure Decision Rule
+Not every loop should close.
+The system should close a loop only when expected value exceeds total lifecycle cost:
+$$
+\operatorname{Close}(T)
+\left[
+F \cdot \Delta C \cdot Q \cdot A
+C_T + M_T + R_T + V_T + D_T
+\right]
+$$
+where:
+Symbol
+	Meaning
+	(F)
+	Expected recurrence frequency.
+	(\Delta C)
+	Expected cost reduction per use.
+	(Q)
+	Expected quality/reliability improvement.
+	(A)
+	Automation appropriateness.
+	(C_T)
+	Tool creation cost.
+	(M_T)
+	Maintenance cost.
+	(R_T)
+	Risk cost.
+	(V_T)
+	Verification cost.
+	(D_T)
+	Drift and depreciation cost.
+	In plain language:
+Close loops when they recur often, save meaningful effort, improve quality, can be verified, and are safe enough to automate.
+This guards against tool bloat.
+________________
+
+
+14. Distinctions
+14.1 Loop Closure is not caching
+Caching stores the answer to the same input.
+Loop Closure stores the procedure for a family of inputs.
+Mechanism
+	Reuses
+	Cache
+	Same input → same output
+	Template
+	Similar form → filled output
+	Tool
+	Parameterized action procedure
+	Loop Closure
+	Repeated trajectory family → verified tool
+	Caching says:
+“I have seen this exact thing.”
+Loop Closure says:
+“I know this kind of thing.”
+________________
+
+
+14.2 Loop Closure is not prompt templating
+A prompt template still relies on model improvisation.
+A closed tool should have:
+* typed inputs;
+* explicit parameters;
+* preconditions;
+* postconditions;
+* verification;
+* monitoring;
+* versioning;
+* fallback.
+Prompt templates may be part of a closed loop, but they are not sufficient by themselves.
+________________
+
+
+14.3 Loop Closure is not fine-tuning
+Fine-tuning updates weights.
+Loop Closure externalizes skill.
+Fine-tuning
+	Loop Closure
+	Hidden in model weights
+	Externalized in tools
+	Hard to inspect
+	Tool cards and tests
+	Hard to undo
+	Versioned and retirable
+	Broad behavior change
+	Specific procedural skill
+	Expensive
+	Often cheap
+	Hard to verify locally
+	Verifiable per tool
+	Loop Closure is especially attractive when a task is narrow, repeated, and testable.
+________________
+
+
+14.4 Loop Closure is not ordinary tool use
+Ordinary tool use assumes the tool already exists.
+Loop Closure asks:
+When should the agent create a tool from its own repeated behavior?
+This moves from tool use to tool formation.
+________________
+
+
+15. Cognitive Loop Closure as a Compact Generative System
+Within the Compact Generative Systems framework, a closed loop tool is a compact generative system.
+CGS component
+	Loop Closure equivalent
+	Seed
+	Recurring task pattern.
+	Rule system
+	Deterministic or semi-deterministic tool.
+	Memory/state
+	Prior trajectories, tool registry, learned parameters.
+	Residual
+	Failures, edge cases, user corrections, drift.
+	Verification
+	Tests, schemas, runtime monitors, human approvals.
+	Governance
+	Future routing through the tool instead of fresh reasoning.
+	The transformation is:
+$$
+\text{many repeated executions}
+\rightarrow
+\text{one compact verified procedure}
+$$
+This is procedural compression.
+The tool governs future behavior by replacing improvisation with verified procedure when appropriate.
+Thus:
+Loop Closure is the CGS mechanism by which repeated agent behavior becomes reusable procedural structure.
+________________
+
+
+16. Evaluation Metrics
+A Loop Closure system should be evaluated with concrete metrics.
+________________
+
+
+16.1 Loop detection quality
+Measures whether the system finds the right recurring patterns.
+Metrics:
+* precision of loop candidates;
+* recall of useful loops;
+* false positive rate;
+* false negative rate;
+* cluster coherence;
+* time-to-detection;
+* storage overhead.
+________________
+
+
+16.2 Abstraction quality
+Measures whether the synthesized tool captures the right invariants and parameters.
+Metrics:
+* prior trajectory coverage;
+* held-out trajectory success;
+* parameter sufficiency;
+* hidden assumption discovery rate;
+* missing precondition rate;
+* synthetic case success;
+* adversarial case survival.
+________________
+
+
+16.3 Verification quality
+Measures whether the system can determine when a tool works.
+Metrics:
+* test pass rate;
+* verifier false positive rate;
+* verifier false negative rate;
+* schema compliance;
+* invariant preservation;
+* sandbox success;
+* adversarial failure discovery;
+* runtime monitor detection rate.
+________________
+
+
+16.4 Routing quality
+Measures whether the router chooses the right mode.
+Metrics:
+* correct tool invocation rate;
+* inappropriate tool invocation rate;
+* missed closure opportunity rate;
+* fallback success rate;
+* novelty detection accuracy;
+* risk-weighted routing accuracy;
+* reflex/failsafe trigger correctness.
+________________
+
+
+16.5 Efficiency gains
+Measures resource savings.
+Metrics:
+* token reduction;
+* latency reduction;
+* tool-call reduction;
+* compute reduction;
+* human-intervention reduction;
+* cost per task;
+* throughput.
+________________
+
+
+16.6 Reliability gains
+Measures whether closure improves outcomes.
+Metrics:
+* success rate;
+* retry count;
+* error rate;
+* output consistency;
+* user correction rate;
+* incident rate;
+* residual growth or shrinkage.
+________________
+
+
+16.7 Tool ecosystem health
+Measures whether the registry remains useful.
+Metrics:
+* active tool count;
+* stale tool count;
+* retired tool count;
+* tool overlap;
+* dependency complexity;
+* maintenance burden;
+* average failure rate by risk tier;
+* value delivered per tool.
+________________
+
+
+17. Safety and Governance
+17.1 Risk tiers
+Closed tools should be classified by consequence.
+Tier
+	Examples
+	Required control
+	Low
+	Formatting, summarization, report layout
+	Automated execution acceptable.
+	Medium
+	Data transformation, code refactor, workflow routing
+	Automated with verification and rollback.
+	High
+	Financial, legal, security, deployment actions
+	Human approval, dry run, or constrained execution.
+	Critical
+	Irreversible or safety-critical physical actions
+	Certified runtime, reflex/failsafe layer, strict containment.
+	________________
+
+
+17.2 Human approval
+Human approval should be required for:
+* high-risk tool creation;
+* high-impact tool execution;
+* production modifications;
+* financial transfers;
+* external communications;
+* legal or medical workflows;
+* security-sensitive actions;
+* irreversible physical actions.
+________________
+
+
+17.3 Audit logs
+Every execution should record:
+* tool ID;
+* version;
+* inputs;
+* parameters;
+* output;
+* precondition result;
+* verification result;
+* runtime environment;
+* permission grants;
+* fallback behavior;
+* user approvals;
+* observed residuals.
+Auditability makes procedural memory accountable.
+________________
+
+
+17.4 Sandboxing and containment
+New tools should run in sandbox or dry-run mode before full activation.
+Sandboxing is especially important for:
+* generated code;
+* browser automation;
+* shell commands;
+* repository mutation;
+* enterprise workflow agents;
+* robotic or embedded systems.
+WebAssembly is one candidate execution target for sandboxed tools because it is designed as a portable compilation target with security and isolation properties. Rust is one candidate implementation language for higher-assurance tools because its ownership system constrains memory management at compile time. (WebAssembly)
+________________
+
+
+18. Failure Modes
+18.1 Premature closure
+The agent closes a loop before understanding variability.
+Result:
+The tool works on early examples but fails on normal variation.
+Mitigations:
+* require enough examples;
+* use held-out cases;
+* synthetic perturbation;
+* active parameter discovery;
+* probationary deployment;
+* fallback reasoning.
+________________
+
+
+18.2 Overgeneralization
+The tool fires outside its valid scope.
+Result:
+Automation happens when fresh reasoning was required.
+Mitigations:
+* strict preconditions;
+* novelty detection;
+* risk scoring;
+* router abstention;
+* environment checks.
+________________
+
+
+18.3 Hidden assumptions
+The tool depends on context not encoded as a parameter or precondition.
+Mitigations:
+* assumption registry;
+* sandbox perturbation;
+* environment interrogation;
+* runtime monitors;
+* human review.
+________________
+
+
+18.4 Stale tools
+The environment changes.
+Examples:
+* API version changes;
+* repository layout changes;
+* user preferences change;
+* data schema changes;
+* policy changes.
+Mitigations:
+* expiration;
+* revalidation;
+* drift monitoring;
+* versioning;
+* retirement.
+________________
+
+
+18.5 Tool bloat
+The system creates too many tools.
+Mitigations:
+* closure threshold;
+* tool consolidation;
+* usage statistics;
+* retirement rules;
+* hierarchical tool organization.
+________________
+
+
+18.6 Unsafe automation
+The tool performs consequential actions without sufficient safeguards.
+Mitigations:
+* risk tiers;
+* permission boundaries;
+* dry-run mode;
+* human approval;
+* sandboxing;
+* runtime monitoring;
+* rollback.
+________________
+
+
+18.7 Reflex gap
+The system assumes it can fall back to reasoning, but the environment requires immediate action.
+Examples:
+* drone at high speed;
+* robot arm near human;
+* vehicle near obstacle;
+* deployment about to overwrite production;
+* financial transaction about to execute.
+Mitigations:
+* reflex/failsafe mode;
+* hard safety envelope;
+* runtime monitor;
+* certified low-latency controller;
+* emergency stop/hold/land/isolate behavior.
+________________
+
+
+19. Research Agenda
+19.1 Loop detection
+Questions:
+* How should trajectory similarity be measured?
+* How can action graphs be clustered?
+* How can privacy-safe traces preserve enough procedural structure?
+* How can multimodal or physical trajectories be represented?
+* How can recurrence be detected without storing raw hidden reasoning?
+________________
+
+
+19.2 Active parameter discovery
+Questions:
+* How can hidden parameters be discovered efficiently?
+* Which perturbations are safe?
+* How can the system distinguish invariant, parameter, precondition, and unknown assumption?
+* How can synthetic edge cases be generated?
+* How can active probing avoid unsafe exploration?
+________________
+
+
+19.3 Tool synthesis
+Questions:
+* What tool representation is best for each domain?
+* When should a tool be code, workflow, policy, checklist, or controller?
+* How deterministic must a tool be?
+* How should model calls be bounded inside semi-deterministic tools?
+________________
+
+
+19.4 Verification generation
+Questions:
+* How can tests be synthesized from trajectories?
+* How can replay and synthetic testing be combined?
+* How can verifier false positives be minimized?
+* What verification grade is sufficient for each risk tier?
+* How can runtime monitoring complement pre-deployment testing?
+________________
+
+
+19.5 Routing and abstention
+Questions:
+* When should the agent use a tool?
+* When should it reason?
+* When should it trigger reflex/failsafe behavior?
+* How should latency constraints affect routing?
+* How should the router learn from failures?
+________________
+
+
+19.6 High-bandwidth embodied logging
+Questions:
+* How should camera, lidar, IMU, and motor telemetry be compressed into event logs?
+* Which raw windows should be retained?
+* How can semantic eventization avoid losing safety-relevant data?
+* How can raw telemetry, event logs, cognitive traces, and residual logs remain aligned?
+* How can memory budgets be enforced without erasing rare edge cases?
+________________
+
+
+19.7 Tool ecosystem management
+Questions:
+* How many tools should an agent maintain?
+* How should tools compose?
+* When should tools merge?
+* When should tools retire?
+* How should dependencies be tracked?
+* How should users inspect and edit procedural memory?
+________________
+
+
+20. Implementation Roadmap
+Phase 1 — Logging and replay
+Deliver:
+* safe trajectory logs;
+* tool-call traces;
+* artifact records;
+* verification outcomes;
+* replay harness.
+Goal:
+Know what the agent actually does.
+________________
+
+
+Phase 2 — Manual loop closure
+Humans mark repeated workflows and create tool cards.
+Deliver:
+* tool cards;
+* registry;
+* preconditions;
+* postconditions;
+* tests;
+* routing rules.
+Goal:
+Establish the lifecycle before automating closure.
+________________
+
+
+Phase 3 — Assisted loop detection
+The system proposes candidate loops.
+Deliver:
+* recurrence reports;
+* trajectory clusters;
+* savings estimates;
+* risk estimates;
+* candidate tool specs.
+Goal:
+Let the system suggest closure opportunities.
+________________
+
+
+Phase 4 — Active abstraction and parameter discovery
+The system probes candidate tools.
+Deliver:
+* parameter candidates;
+* hidden assumption reports;
+* synthetic tests;
+* adversarial cases;
+* precondition refinements.
+Goal:
+Avoid brittle hard-coding of accidental invariants.
+________________
+
+
+Phase 5 — Tool synthesis and verification
+The system synthesizes candidate tools.
+Deliver:
+* executable or structured tools;
+* schemas;
+* tests;
+* verification grades;
+* sandbox results.
+Goal:
+Convert repeated trajectories into verified procedural memory.
+________________
+
+
+Phase 6 — Verified routing
+The system routes future tasks.
+Deliver:
+* router;
+* abstention logic;
+* risk tiers;
+* fallback modes;
+* monitoring.
+Goal:
+Use tools only when appropriate.
+________________
+
+
+Phase 7 — Reflex/failsafe integration
+For embodied or high-stakes domains, add reflex behavior.
+Deliver:
+* safety monitor;
+* emergency controller;
+* latency classes;
+* barrier/failsafe logic;
+* runtime verification.
+Goal:
+Never rely on slow reasoning when immediate safety action is required.
+________________
+
+
+Phase 8 — Tool ecosystem management
+Manage procedural memory over time.
+Deliver:
+* versioning;
+* consolidation;
+* dependency graph;
+* retirement;
+* drift monitoring;
+* user-editable tool cards.
+Goal:
+Prevent skill libraries from becoming ungovernable clutter.
+________________
+
+
+21. Public Claims and Non-Claims
+21.1 Claims
+This paper claims:
+1. AI agents often repeat reasoning/action trajectories.
+2. Repeated trajectories can be compressed into parameterized tools.
+3. Tool creation should be driven by recurrence, parameterizability, value, risk, and verification.
+4. Closed tools can reduce cost, improve consistency, and increase interpretability.
+5. The abstraction engine must actively probe for hidden parameters.
+6. The router must know when not to use a tool.
+7. Real-time or high-stakes agents need reflex/failsafe modes, not only reasoning fallback.
+8. Tool execution environments should enforce schemas, permissions, runtime boundaries, and monitoring.
+9. High-bandwidth embodied agents require hierarchical logging rather than raw-stream-only logging.
+10. Cognitive Loop Closure is a concrete mechanism for AI procedural memory.
+11. Loop Closure is a practical instantiation of Compact Generative Systems.
+________________
+
+
+21.2 Non-claims
+This paper does not claim:
+1. Every repeated action should be automated.
+2. Deterministic tools should replace reasoning.
+3. Closed tools are automatically safe.
+4. Verification is absolute in open worlds.
+5. Prompt templates are sufficient.
+6. Fine-tuning is obsolete.
+7. Tool synthesis is easy.
+8. Current agents already implement the full lifecycle.
+9. Human approval is unnecessary.
+10. Physical systems can safely fall back to slow LLM reasoning under all conditions.
+11. Raw embodied telemetry can always be compressed without loss of safety-relevant information.
+The proposal is an architecture and research program, not a claim that autonomy is solved.
+________________
+
+
+22. Conclusion
+Cognitive Loop Closure proposes that AI agents should not repeatedly reason through stable, recurring workflows forever.
+They should notice repetition.
+They should abstract it.
+They should discover parameters.
+They should synthesize tools.
+They should verify those tools.
+They should route future tasks through them.
+They should monitor failures.
+They should revise or retire tools when the world changes.
+The central idea is simple:
+Repeated cognition should become procedural memory.
+This turns agent behavior into a learning loop that does not require modifying base-model weights. The agent becomes better by building an explicit library of verified procedures.
+Within Compact Generative Systems, a closed loop tool is a compact generative structure distilled from repeated trajectories. It governs future behavior by replacing improvisation with verified procedure when appropriate.
+The mature AI agent is therefore not merely a thinker and not merely a tool user.
+It is a system that can recognize when thinking has become routine enough to compile.
+It can move between three modes:
+$$
+\text{reason when novel}
+$$
+$$
+\text{execute when closed}
+$$
+$$
+\text{reflex when safety-critical}
+$$
+That is the path from improvisation to skill.
+That is Cognitive Loop Closure.
+________________
+
+
+Appendix A — Cognitive Loop Closure Specification Template
+Use this template for any proposed closed loop.
+1. Loop name
+What recurring workflow has been detected?
+2. Source trajectories
+Which prior executions produced this candidate?
+3. Task family
+What class of tasks does the loop cover?
+4. Invariant steps
+Which steps remain stable across executions?
+5. Parameters
+What varies across executions?
+6. Hidden assumptions
+What may be accidentally hard-coded?
+7. Active probes
+What perturbations or synthetic cases were used to test the abstraction?
+8. Preconditions
+When is the tool allowed to run?
+9. Postconditions
+What must be true after execution?
+10. Verification grade
+How well has the tool been tested?
+11. Runtime tier
+Where does the tool execute?
+12. Latency class
+How quickly must it respond?
+13. Risk tier
+What is the consequence of failure?
+14. Fallback mode
+Reasoning, alternative tool, human review, or reflex/failsafe?
+15. Monitoring plan
+What metrics determine whether the tool remains active?
+16. Retirement condition
+When should the tool be disabled?
+________________
+
+
+Appendix B — One-Paragraph Public Summary
+Cognitive Loop Closure is a framework for converting repeated AI reasoning and tool-use trajectories into verified, parameterized tools. Instead of reasoning through the same workflow from scratch every time, an agent logs safe execution traces, detects recurring loops, abstracts invariant structure, actively probes for hidden parameters, synthesizes deterministic or bounded tools, verifies them against prior and synthetic cases, and routes future matching tasks through those tools. Loop Closure is reasoning compression: many trajectories become one callable procedure. It gives AI systems procedural memory without weight updates and makes repeated behavior cheaper, more reliable, and more inspectable.
+________________
+
+
+Appendix C — Compact Manifesto
+An AI should not think through the same staircase forever.
+If a path is walked often enough, the path should become a tool.
+If the tool works, verify it.
+If it fails, expose the residual.
+If the residual repeats, revise the tool.
+If the world changes, retire it.
+If the situation is novel, reason.
+If the loop is closed, execute.
+If safety is at stake and time is short, reflex.
+The goal is not to remove reasoning.
+The goal is to reserve reasoning for what is still genuinely novel.
+________________
+
+
+Selected References
+1. Sutton, Precup, and Singh, A Framework for Temporal Abstraction in Reinforcement Learning. (ScienceDirect)
+2. van der Aalst, Weijters, and Maruster, Workflow Mining: Discovering Process Models from Event Logs. (Eindhoven University Research Portal)
+3. Schick et al., Toolformer: Language Models Can Teach Themselves to Use Tools. (arXiv)
+4. Qian et al., CREATOR: Tool Creation for Disentangling Abstract and Concrete Reasoning of Large Language Models. (arXiv)
+5. Wölflein et al., LLM Agents Making Agent Tools. (arXiv)
+6. Wang et al., Voyager: An Open-Ended Embodied Agent with Large Language Models. (arXiv)
+7. Agostinelli et al., SmartRPA: Generating Software Robots from User Interface Logs. (ScienceDirect)
+8. Billard et al., Robot Programming by Demonstration. (Neuroscience)
+9. Haith and Krakauer, The Multiple Effects of Practice: Skill, Habit, and Reduced Cognitive Load. (PMC)
+10. Rust Project, The Rust Programming Language: Ownership. (Rust Documentation)
+11. WebAssembly Project, WebAssembly Overview and Security Model. (WebAssembly)
+12. Sánchez et al., A Survey of Challenges for Runtime Verification from Advanced Application Domains. (Springer)
+13. Ames et al., Control Barrier Functions: Theory and Applications. (arXiv)

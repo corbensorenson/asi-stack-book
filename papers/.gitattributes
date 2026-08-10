@@ -1,0 +1,4 @@
+# Exact publication copies are digest-bound historical source bytes. Their
+# original whitespace is evidence, so generic Git whitespace diagnostics do
+# not rewrite or reject it. Generated reader projections remain fully checked.
+source/** -whitespace

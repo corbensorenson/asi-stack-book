@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
+PAPER_LIBRARY = ROOT / "papers" / "paper_library.json"
 BLOCK_RE = re.compile(
     r"(?ms)^### Manifest source assignment reconciliation\n.*?^<!-- manifest-source-reconciliation:end -->\n?"
 )
@@ -37,7 +38,21 @@ def load_records() -> tuple[list[dict], dict[str, dict]]:
     return records, by_id
 
 
+def paper_ids() -> set[str]:
+    if not PAPER_LIBRARY.exists():
+        return set()
+    data = json.loads(PAPER_LIBRARY.read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or not isinstance(data.get("records"), list):
+        raise TypeError("papers/paper_library.json must contain an object with a records array")
+    return {
+        str(record["source_id"])
+        for record in data["records"]
+        if isinstance(record, dict) and record.get("source_id")
+    }
+
+
 def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict) -> str:
+    readable_papers = paper_ids()
     mappings = {
         str(row.get("source_id")): row
         for row in chapter.get("claim_source_mappings", [])
@@ -55,6 +70,8 @@ def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict
     for source_id in source_ids:
         record = inventory.get(source_id, {})
         title = qmd_escape(record.get("title", "Inventory record"))
+        if source_id in readable_papers:
+            title = f"[{title}](../papers/{source_id}.html)"
         notes = qmd_escape(record.get("notes", "Metadata-first source intake; consult the public source note."))
         mapping = mappings.get(source_id, {})
         mapping_reviewed = mapping.get("passage_review_state") == "reviewed"

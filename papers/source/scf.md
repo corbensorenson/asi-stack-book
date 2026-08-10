@@ -1,0 +1,1981 @@
+﻿STABLE CAPABILITY FIELDS  |  GOVERNED SELF-IMPROVEMENT
+Stable Capability Fields
+A Governed Substrate for Recursive AI Self-Improvement
+Corben Sorenson
+Public Release 1.0 - 23 June 2026
+Stable semantic boundaries, replaceable implementations, exact artifact identity, defeasible evidence, bounded authority, and recoverable evolution.
+________________
+Contents
+Abstract and scope        3
+1 Introduction        3
+2 Design problem and requirements        5
+3 Relation to prior work and precise contribution        7
+4 Formal core and normalized ontology        9
+5 Contracts as semantic compatibility boundaries        13
+6 Implementations, state, field boundaries, and adaptation        15
+7 Evidence registry: claims, defeaters, scale, and federation        17
+8 Contextual resolution and routing        20
+9 Shared tools, effects, authority, and information flow        22
+10 Evaluator architecture and epistemic security        23
+11 Governed self-improvement lifecycle        25
+12 Cross-field composition and emergent risk        29
+13 Evolution of abstractions, governance, and institutional power        30
+14 Trusted computing base and bootstrap architecture        32
+15 Threat model and failure analysis        34
+16 Conditional safety properties and proof sketches        36
+17 Reference implementation, operational cost model, and scalability        38
+18 Worked examples        40
+19 Empirical evaluation agenda        42
+20 Implications for recursive improvement and ASI        45
+21 Open research problems        46
+22 Conclusion        47
+Appendix A: Canonical field manifest        48
+Appendix B: Promotion and activation protocol pseudocode        49
+Appendix C: Change-classification checklist        50
+Appendix D: Registry event sketch        50
+Appendix E: Evaluator overlap record        51
+Appendix F: Executable reference model        51
+References        53
+________________
+Abstract and scope
+The central systems problem of recursive AI self-improvement is not merely how to generate a better component. It is how to change machinery that helps define, evaluate, authorize, and operate the system without silently changing the meaning of better. A long-lived intelligent system may replace its planner, memory, context compiler, tool router, evaluator, model weights, execution harness, state representation, or governance machinery. Unrestricted edits to a monolith make those changes difficult to localize, compare, contest, or recover. Ordinary plugin and package-registry designs are also insufficient because AI components are stochastic, stateful, authority-bearing, dependent on mutable services, and increasingly able to influence their own tests.
+Stable Capability Fields (SCF) address this problem by separating a capability’s durable semantic identity from the replaceable machinery that realizes it. A field is a governed substitution boundary. It binds a versioned contract to exact implementation artifacts, deployment profiles, state schemas and migration relations, evaluator policies, evidence bundles, qualification claims, routing policies, authority grants, lifecycle events, and recovery paths. The abstraction does not perform the capability’s domain work. It defines, mediates, and records the conditions under which implementations may perform that work.
+The registry is therefore not a flat map from a capability name to an implementation. It is an append-only evidence and consequence graph. Operational authority is derived from content-addressed source events and a versioned deterministic view function, not from mutable aliases or unverified caches. Qualification is a scoped, defeasible, expiring authorization to rely on named evidence under named assumptions. Every authorization-relevant claim binds exact hashes for the implementation artifact and manifest, contract, profile, dependency closure, evaluator policy, state relation, and evidence bundles.
+This public release develops SCF as a full architecture rather than a minimal plugin system. Its formal core defines content-bound qualification, claim-scoped profile transfer, caller-bound route validation, invocation-time leases, constrained waivers, event-derived materialized views, state-aware lifecycle transitions, cyclic-dependency bundles, and reachability invariants. Its runtime architecture separates an untrusted, arbitrarily capable route proposer from a trusted validator that checks declared certificates. The split does not solve the hard semantic problems: evaluator portfolios and governed meta-services must still establish whether behavioral contracts are true, migrations preserve meaning, reliance annotations are sound, and dangerous compositions have been discovered. The validator is kept narrow by checking those declared facts, not by making them easy or complete.
+SCF also introduces two-timescale online adaptation, a migration-solvency model for latent and durable state, property-sensitive evidence invalidation with an explicit threat model for bad reliance annotations, consequence-bounded canaries, federated qualification with appeals and incident propagation, and threshold-controlled constitutional change. High-frequency adaptation is confined to a sealed envelope whose updater, data policy, authority, effects, budgets, sentinels, journal, and baseline are fixed. This bounds mechanics, authority, and response obligations; it does not bound all possible learned behavior between sentinel observations.
+A companion executable specification fragment accompanies the paper. It checks exact identity binding, conditional claims, scoped transfer witnesses, event-log and view integrity, role-specific route constraints, lifecycle ordering, invocation-time expiration, adaptation-epoch sealing, strongly connected dependency bundles, and threshold/timelock governance. Its synthetic measurements are engineering sanity checks, not independent verification, production performance claims, or empirical evidence of AI safety.
+SCF is architecture- and implementation-agnostic. A field may be realized by code, prompts, weights, remote services, agents, policies, databases, or fused bundles. A single artifact may implement several fields, and several artifacts may jointly implement one field. The boundary is not a claim that intelligence is naturally modular. It is a claim that long-lived systems require explicit places where behavior can be named, constrained, evaluated, authorized, observed, replaced, and recovered with bounded consequences.
+SCF does not solve alignment, strategic deception, objective selection, institutional legitimacy, semantic leakage through permitted content, or the physical irreversibility of real-world effects. Contracts can be incomplete; evaluators can be correlated; migration may be insolvent; reliance metadata can be wrong; trust roots can be captured; and cross-field behavior can exceed declared specifications. The proposal is conditional: where its premises hold, SCF makes semantic drift, authority creep, evidence corruption, state incompatibility, and recovery failure more legible and containable than they are in monolithic or flat-registry designs.
+Public-release status. This paper is a research synthesis, formal architecture, executable specification fragment, and falsifiable evaluation program. It is not a production SCF deployment or a complete safety solution. The literature review covers primary work available through 22 June 2026. Companion measurements are identified as synthetic and are not generalized beyond the reference model.
+Keywords: recursive self-improvement; AI architecture; agent systems; semantic contracts; capability registries; runtime assurance; evaluator security; capability security; evidence graphs; state migration; online adaptation; rollback; constitutional governance.
+1 Introduction
+1.1 From self-editing to governed evolution
+Self-improving AI has moved from a primarily theoretical topic to an experimental systems problem. The Gödel Machine framed self-modification as a search for provably utility-improving rewrites [1]. Practical systems increasingly replace global proof with empirical evaluation: STOP improves an LM-infused improver program [2]; Automated Design of Agentic Systems searches over coded agent designs [3]; self-improving coding agents edit their own scaffolds [4]; the Darwin Gödel Machine preserves an archive of diverse descendants rather than greedily retaining one incumbent [5]; the Huxley-Gödel Machine distinguishes current performance from a candidate’s capacity to generate better descendants [6]; and SIA jointly updates an agent harness and model weights [7]. AlphaEvolve demonstrates an evaluator-driven coding loop that can produce engineering optimizations and new algorithms [8]. Skill libraries, contract-bearing skills, and compiled language-model programs show another path: capability can compound through reusable, inspectable artifacts [9-13].
+These systems establish that AI can participate in the design of its own operational machinery. They do not by themselves solve the lifecycle problem faced by a long-lived system. Most experiments optimize within a bounded benchmark and a comparatively small artifact boundary. A deployed self-improver faces a harder condition: the changing component may participate in choosing actions, constructing evaluation data, deciding which evidence to trust, allocating authority, migrating durable state, choosing the next candidate, or proposing changes to the contract under which it is judged. Dependencies and hosted models can drift after promotion. A candidate can score better while weakening recovery, increasing privilege, corrupting state, exploiting evaluator overlap, or reducing the system’s future ability to improve.
+The usual answer is modularity: define interfaces, place implementations behind them, and record versions in a registry. That answer is necessary but incomplete. A function signature does not define temporal behavior, uncertainty, abstention, state ownership, side effects, authority, or acceptable distribution shift. A package registry records availability but rarely establishes where, when, and under which dependency closure an artifact is qualified. A single “current version” cannot express that a fast planner may be preferable for low-risk work while a slower, independently checked planner is required for high-consequence work. Ordinary rollback assumes that effects are reversible and that old code can interpret new state. Neither assumption is generally valid.
+SCF treats self-improvement as governed evolution over stable capability identities. Implementations may change rapidly. The meaning of a capability changes more slowly and under stronger governance. Qualification is a scoped epistemic and authorization claim, not an intrinsic label of safety. Runtime intelligence may propose sophisticated routing policies, but a narrow validator decides whether those policies are admissible. Tool authority is mediated independently of implementation selection. State transitions, evidence invalidation, remote-service drift, and recovery are first-class. Evaluators and contracts may improve, but neither can silently ratify the candidate whose success depends on the change.
+1.2 Thesis
+The thesis of this paper is:
+A credible substrate for long-lived recursive AI self-improvement should represent each major capability as a stable, versioned field whose implementations can be generated, evaluated, routed, adapted, deployed, monitored, and replaced under explicit semantic, authority, state, provenance, evidence, and governance constraints.
+This claim is stronger than “use modules” and narrower than “this architecture produces ASI.” It concerns continuity under change. Recursive improvement is meaningful only when the system can distinguish a genuine gain from a change in the task definition, evaluator, authority, state representation, dependency environment, or reporting convention.
+The qualifier stable does not mean frozen. A field contract can evolve, split, merge, or be superseded. Stability means that changes to the meaning of a capability are explicit, versioned, migration-backed, and governed as different events from changes to its implementation. The qualifier field does not require a one-to-one physical module. It names an enduring semantic and governance domain in which multiple implementations and profiles can coexist.
+1.3 Why preserve the full scope
+The architecture is deliberately comprehensive because the omitted dimensions interact. A registry without authority control can launder privilege. Authority control without state semantics can authorize an implementation that corrupts durable memory. State migration without evaluator independence can make recovery look successful under a captured metric. A sound local contract without dependency invalidation can remain “qualified” after a hosted model or tool changes beneath it. A small kernel without constitutional governance can be captured through an apparently routine policy update. Reducing SCF to a manifest plus version pointer would preserve the vocabulary while discarding the problem it is meant to solve.
+The correct response to operational cost is therefore not to shrink the architecture’s semantics. It is to stratify assurance, cache and reuse evidence, separate expensive deliberation from cheap enforcement, and make high-frequency adaptation operate inside pre-qualified envelopes. Low-risk deployments may instantiate fewer evaluators and weaker ceremonies. High-risk or recursively self-modifying systems require the complete model. The architecture scales by changing assurance intensity, not by pretending that authority, state, evidence, and governance cease to matter.
+1.4 Contributions
+This paper makes twelve integrated contributions.
+1. Stable Capability Fields as the unit of governed evolution. A field binds durable semantic identity to versioned contracts, exact implementation artifacts, profiles, evidence, authority, state, routing, lifecycle, and governance. The model applies to code, prompts, weights, services, policies, agents, and fused bundles.
+2. A normalized authorization ontology and transition model. Qualification verdict, deployment stage, route role, restrictions, incident condition, evidence condition, and lifecycle state remain orthogonal. The system state includes source events, derived views, routes, deployments, state relations, trust roots, and logical time.
+3. Exact content binding. Qualification and authorization refer to artifact, manifest, contract, profile, dependency, evaluator-policy, state-relation, and evidence hashes. Human-readable names are aliases, never authorization identities.
+4. Untrusted optimization behind certificate validation. An arbitrarily capable proposer may construct primary, fallback, ensemble, shadow, or abstention policies. A smaller validator checks content-bound claims, leases, role profiles, state paths, grants, and declared composition certificates. Hard semantic discovery remains outside the root.
+5. A defeasible, event-derived evidence graph. Observations, claims, assumptions, decisions, defeaters, waivers, incidents, and reliance annotations are immutable source events. Operational views are deterministic reductions that carry a watermark and derivation hash.
+6. Scoped evidence reuse. Profile transfer requires a claim-specific, artifact-specific, property-specific witness. Property-sensitive invalidation can preserve unaffected evidence, while unsafe reuse caused by missing or false reliance annotations is measured explicitly.
+7. Authority, effects, and coarse information flow as independent controls. A caller-bound capability broker checks purpose, destination, quota, delegation, lease, consequence budget, and declared toxic combinations. It prevents privilege inheritance but does not claim to detect all semantic exfiltration or covert channels.
+8. State migration solvency. State transitions are classified as isomorphic, loss-bounded, dual-representation, replay-from-source, or non-solvent. SCF refuses to call latent translation reversible when semantic fidelity cannot be established.
+9. A physically honest lifecycle. Sandbox, shadow, canary, and production use immutable stage-specific qualification claims. Final route validation occurs after approvals; activation has deadlines and typed outcomes; canaries are bounded by maximum consequence rather than merely being slightly smaller than production.
+10. Two-timescale online adaptation. Fast updates occur within a sealed adaptation epoch with a pinned updater, approved data receipts, fixed authority/effects, cumulative risk budgets, journal commitments, sentinels, and a qualified baseline. Breach seals the epoch and revokes its token.
+11. Bootstrap, federation, and constitutional governance. The design separates a minimal root, a certified policy layer, a governed intelligent meta-layer, and ordinary capability fields. Root changes require fixed-membership threshold authorization, transparency inclusion, timelocks, and predecessor-authorized membership changes; emergency power can narrow or recover, not silently expand.
+12. Executable and empirical programs. The companion kernel implements the authorization-relevant fragment; the paper defines adversarial regression tests, contemporary frontier-model benchmarking protocol, boundary-robustness experiments, cost decomposition, ablations, and explicit disconfirmation criteria.
+2 Design problem and requirements
+2.1 The continuity problem
+A self-improving system has two simultaneous objectives:
+* improve the machinery that produces behavior; and
+* preserve the invariants that make behavior interpretable, authorized, comparable, and governable.
+The objectives conflict. Greater freedom to modify the system expands the reachable design space but weakens confidence that before-and-after scores remain comparable, that authority remains bounded, and that failures remain containable. Freezing the architecture simplifies evaluation but prevents the abstraction itself from evolving when a genuinely new capability needs a richer surface.
+The continuity problem is operational rather than metaphysical. It has at least six dimensions:
+* semantic continuity: callers and evaluators retain a stable account of what the capability means;
+* authority continuity: replacements do not acquire power merely by occupying a trusted route;
+* state continuity: durable information is preserved, migrated, adapted, or intentionally discarded under declared rules;
+* evidential continuity: promotion decisions remain reconstructable despite changing implementations, evaluators, and environments;
+* governance continuity: no candidate can redefine the rules under which its own success is judged without an independently authorized change;
+* institutional continuity: changes to trust roots, emergency powers, and constitutional policy remain accountable across organizations and time.
+A system that cannot preserve these dimensions may improve on a benchmark while losing any trustworthy basis for calling the change an improvement.
+2.2 Why a flat registry fails
+A flat registry has the form:
+CapabilityName -> ImplementationID
+The mapping omits the questions that determine whether activation is justified:
+* Which content-addressed contract revision does the implementation claim to satisfy?
+* For which task distribution, risk class, jurisdiction, resource budget, and authority grant was it tested?
+* Which model, prompt, data, dependencies, service endpoints, and build recipe produced the deployed behavior?
+* Which state schema does it read and write, and what migration or checkpoint makes replacement recoverable?
+* Which evaluators produced the evidence, how independent were they, and which assumptions remain unresolved?
+* Which incidents, signer revocations, provider changes, or drift signals defeat or narrow the claim?
+* Is the implementation primary, fallback, ensemble member, shadow, quarantined, retired, or merely discoverable?
+* Who authorized the transition, at what registry snapshot, with which expiry and emergency procedure?
+A flat registry also imposes a false scalar ordering. AI implementations usually occupy a Pareto surface: capability, latency, cost, privacy, interpretability, robustness, authority, and future improvement potential trade off. A field needs a portfolio and a resolver, not one universal “latest” version.
+2.3 Requirements
+A credible substrate should satisfy the following requirements.
+R1 - Durable field identity. Each field has a stable identifier, purpose, accountable owner, and versioned governance policy. Contract changes do not silently reuse an old semantic identity.
+R2 - Exact authorization identity. Every authorization-relevant object is content-addressed. Qualification and route receipts bind immutable artifact, manifest, contract, profile, dependency-closure, evaluator-policy, state-relation, evidence, policy, and validator hashes. Aliases cannot substitute different content.
+R3 - Rich semantic contracts. Contracts cover inputs, outputs, preconditions, postconditions, invariants, protocols, uncertainty, failures, effects, authority ceilings, state obligations, observability, and enforcement classes. Contract debt is explicit and risk-budgeted.
+R4 - Scoped qualification. Qualification is a signed, defeasible claim over an exact implementation, contract, direct profile, dependency closure, state relation, evaluator policy, evidence set, assumptions, trust domain, and validity interval.
+R5 - Witnessed transfer. Qualification does not transfer between profiles through a universal safety ordering. Reuse requires a claim-specific witness that accounts for every changed dimension through proof of invariance, an accepted monotonicity rule, or fresh evidence.
+R6 - Contextual routing with trusted validation. An untrusted proposer may optimize a rich portfolio. A trusted validator checks role-specific profiles, caller and request class, content identities, conditions, incidents, expiry, state paths, grants, shadow restrictions, fallbacks, composition certificates, and route-level consequence limits.
+R7 - Caller-bound authority and invocation-time enforcement. Tool and effect authority is not inherited from a field slot. Grants are purpose-limited, destination-limited, quota-bounded, revocable, caller-bound, and leased. An invocation is permitted only if the route remains valid at call time.
+R8 - Explicit state solvency. Durable state has schema, meaning, owner, provenance, replay source, compatibility relation, migration direction, loss tolerance, and rollback objective. Non-solvent transitions cannot be presented as reversible swaps.
+R9 - Epistemic separation of powers. Proposal, evaluation, qualification, activation, incident adjudication, and constitutional amendment are distinct roles. Cognitive overlap among those roles is measured, not hidden behind organizational labels.
+R10 - Defeasible, privacy-aware evidence. The registry preserves signed decision history while supporting claim defeat, selective disclosure, encryption, retention policy, tombstones, disputes, waivers, and property-sensitive invalidation. Reliance annotations are themselves qualified artifacts.
+R11 - Continuous assurance for mutable components. Hosted endpoints and online learners receive shorter-lived, explicitly weaker claims, behavioral sentinels, challenge sets, leases, and fail-closed responses proportional to consequence.
+R12 - Recoverable lifecycle. Shadow, canary, and production are independent authorization transitions. Stage evidence produces new immutable claims. Activation is a fallible distributed saga with a deadline, observation quorum, typed outcome, and explicit residual effects.
+R13 - Constitutional change controls. Changes to contracts, evaluator policy, trust roots, membership, emergency powers, and recovery roots require stronger procedures than implementation updates. Unknown keys cannot become governors through self-assertion.
+R14 - Federation without authority laundering. Artifact identity and evidence may travel; qualification, waivers, and activation remain local signed decisions. Appeals, imported incidents, revocations, and emergency coordination are represented explicitly.
+R15 - Assurance proportional to consequence. Low-risk profiles may use lighter portfolios and shorter procedures. High-risk and recursively self-modifying profiles require stronger evidence, diversity, containment, and constitutional ceremony. The semantic distinctions are not removed for convenience.
+R16 - Measurable overhead. Hot-path enforcement cost is measured separately from evidence production, migration rehearsal, governance review, view rebuild, and incident response. Reuse and indexing are hypotheses to be tested, not assumed architectural inevitabilities.
+R17 - Artifact-to-paper fidelity. Executable examples must enforce the claims the paper attributes to them. Any omitted cryptography, consensus, isolation, semantic verification, or distributed behavior is named as a limitation rather than implied by identifiers in toy code.
+2.4 Non-goals
+SCF is not:
+* a claim that intelligence is physically decomposable into independent neural modules;
+* an algorithm for generating superior implementations;
+* a complete alignment solution;
+* a proof that evaluators can detect strategic deception;
+* a guarantee that real-world effects can be reversed;
+* a replacement for human institutions, law, security engineering, or political legitimacy;
+* a claim that recursive improvement must become explosive;
+* a reason to route all operations through a slow central bureaucracy.
+The architecture supplies boundaries, evidence structures, enforcement points, and governance semantics. The quality of objectives, evaluators, models, data, institutions, and recovery engineering remains decisive.
+3 Relation to prior work and precise contribution
+3.1 Self-improving agents and open-ended search
+The Gödel Machine offers the cleanest theoretical statement of self-improvement: a rewrite is executed when the system proves that doing so improves expected utility under its formal model [1]. Practical systems relax the proof requirement. STOP uses empirical utility to improve an improver program [2]. ADAS and self-improving coding agents search over agent code and scaffolding [3,4]. DGM maintains a lineage archive, preserving stepping stones and avoiding a purely greedy trajectory [5]. HGM introduces metaproductivity because the strongest current performer need not produce the strongest descendants [6]. SIA expands the change boundary to harnesses and model weights [7]. AlphaEvolve combines evolutionary search with evaluators that may include formal checkers [8]. Recent work on continually self-improving AI broadens the agenda from scaffold search to persistent knowledge acquisition, synthetic data, and improvement of the learning process itself [61].
+SCF is complementary to these optimizers. It specifies the governed substrate into which candidates are introduced, the claims required for operational use, and the consequences of activation. Candidate generation may be evolutionary, gradient-based, proof-guided, human-authored, or hybrid. SCF does not mandate the optimizer; it constrains the lifecycle around optimization and makes its changing premises explicit.
+3.2 Skills, contract-bearing artifacts, and compiled programs
+Voyager’s executable skill library demonstrates compounding capability through reusable code [9]. DSPy separates declarative language-model programs from compiled prompts and demonstrations [10]. Audited Skill-Graph Self-Improvement promotes normalized skills after verifier-backed replay [11]. ContractSkill gives web-agent skills explicit preconditions, step specifications, postconditions, recovery rules, and termination checks [12]. VASO links planner-facing skill interfaces to formal temporal contracts and uses counterexamples as optimization feedback [13].
+SCF generalizes beyond skill libraries. Planning, evaluation, memory, routing, context construction, model selection, tool brokerage, and state management can be fields even when they are not procedural skills. SCF also adds profile-scoped qualification, authority admissibility, state migration, property-sensitive evidence invalidation, contextual multi-implementation routing, and constitutional evolution.
+3.3 Registries and interoperability protocols
+The revised AgentHub work describes a reference registry with canonical manifests, version-bound evidence, auditable artifacts, and an append-only lifecycle event log [14]. Registry surveys compare metadata models for agent discovery and governance [15]. MCP standardizes how applications connect to tools and context sources, while A2A standardizes communication and capability discovery among independent agents [16,17]. These protocols are valuable invocation and interoperability surfaces.
+SCF distinguishes publication, discovery, verification, qualification, authorization, and activation. A remote registry can establish that an artifact exists and that producer-signed claims accompany it. It cannot by itself determine whether the artifact is qualified for a local risk profile, dependency closure, state configuration, and authority policy. MCP servers, A2A agents, hosted model endpoints, and conventional packages may all be imported into SCF, but discovery metadata does not become operational authority.
+3.4 Contract-aware and governed capability evolution
+Governed Capability Evolution treats capability revisions as deployment candidates and checks interface, policy, behavioral, and recovery compatibility across staged activation and rollback [18]. Governed Evolution of Agent Runtimes models generated artifacts as persistent runtime capabilities with governed mutation [19]. ECM Contracts proposes versioned, governable capability interfaces with assumptions, resources, permissions, recovery semantics, compatibility checking, a registry, and a resolver [41]. Agent Contracts formalizes resource, temporal, delegation, and success constraints for autonomous agents [56]. Agent Behavioral Contracts adds hard and soft invariants, probabilistic satisfaction, drift monitoring, recovery, composition, a contract language, and a runtime enforcement library [57]. These systems are close contemporaneous neighbors and materially inform SCF.
+SCF’s distinctive contribution is not that every constituent mechanism is unprecedented. It is the integrated architecture for context-scoped substitution of heterogeneous AI implementations with all of the following at once:
+* qualification as a signed, defeasible claim scoped by exact content, profile, dependency closure, state relation, evaluator policy, time, and trust domain;
+* a separation between an untrusted contextual ranker and a narrow trusted route validator;
+* concurrent primary, fallback, ensemble, shadow, and abstention policies rather than one active global version;
+* authority and coarse information-flow mediation independent of route selection;
+* property-sensitive evidence invalidation and append-only decision reconstruction;
+* explicit meta-governance for contracts, evaluators, policies, waivers, and trust roots;
+* two-timescale treatment of online learning and an explicit sentinel-latency failure boundary;
+* state-migration solvency rather than a generic promise of rollback; and
+* a bootstrap hierarchy that prevents the ordinary resolver from qualifying itself recursively.
+The neighboring systems have prototypes and empirical results that SCF does not yet match. Table 1 therefore distinguishes reported implementation from SCF’s proposed integration instead of crediting architectural intent as deployed functionality.
+3.5 Governance-first runtimes and constitutional kernels
+ArbiterOS proposes a non-bypassable policy loop that intercepts agent state transitions before execution [42]. Arbiter-K develops a deterministic neuro-symbolic kernel and semantic instruction layer for execution mediation, including provenance and taint-style tracking [43]. Governing Dynamic Capabilities binds acquired tool identities to cryptographic certificates, reproducibility commitments, and verifiable interaction ledgers [58]. Runtime Governance models compliance as a policy evaluated over an execution path before proposed actions [59]. Before the Tool Call specifies deterministic pre-action authorization, signed decisions, and policy packs at the tool-call boundary [60]. These works strongly overlap SCF’s identity, broker, path-policy, and enforcement-kernel motivations.
+SCF differs by centering the durable field as the unit of substitution; coupling route validity to scoped qualification, state migration, and evidence defeat; preserving multiple concurrent implementations by role and context; and making evaluator, evidence, abstraction, and constitutional evolution part of the same lifecycle model. The overlap is productive. A serious implementation should reuse rather than recreate strong pre-action authorization, capability-binding, path-policy, transparency-log, and certified-kernel mechanisms where their assumptions match SCF’s contracts.
+3.6 Contracts, runtime assurance, and compositional reasoning
+Autonomic computing introduced monitor-analyze-plan-execute loops and architectural self-management [20-22]. Design by Contract, behavioral subtyping, interface automata, and assume-guarantee reasoning provide foundations for substitutability and composition [23-26]. Learning-based assume-guarantee methods show how environmental assumptions can be synthesized and refined from counterexamples [46]. Runtime verification provides a framework for checking trace properties during operation [47]. AI operating-system proposals separate agent applications from scheduling, memory, access control, and tools [27]. seL4 illustrates the value of a small verified kernel, while Simplex and SOTER show advanced controllers operating behind safety monitors and trusted fallbacks [28-30]. Recovery blocks and N-version programming provide older foundations for diversity and fault containment [31,32].
+SCF adapts these ideas to stochastic, learned, mutable, and self-referential components. A contract can rarely prove all relevant behavior. Qualification therefore combines mechanically enforced clauses, formal checks, deterministic tests, statistical evidence, adversarial evaluation, online monitors, and governance obligations. The architecture explicitly labels which class supports each clause.
+3.7 Capability security, information flow, and supply-chain integrity
+A replacement behind a trusted route creates a classic confused-deputy risk when it inherits authority intended for the route’s previous occupant [44]. Object-capability principles and information-flow control motivate caller-bound grants, attenuation, delegation limits, and restrictions on flows from sensitive sources to unapproved sinks [45]. These ideas are not optional security decoration; they are necessary to prevent a capability improvement from becoming a privilege escalation.
+A self-improving system is also a software supply chain in which the producer may be the system itself. in-toto, SLSA, The Update Framework, and content-addressed image specifications demonstrate provenance, signed attestations, role separation, threshold authorization, and artifact identity [33-36]. Certificate Transparency demonstrates append-only, auditable log structures and consistency proofs [48]. SCF extends this logic from “was the artifact built as claimed?” to “is the artifact authorized to realize this capability under these conditions?” Provenance is necessary but not sufficient for behavioral qualification.
+3.8 Assurance cases and adaptive evaluation
+Assurance-case standards separate claims, arguments, evidence, assumptions, and rebuttals [49]. SCF’s claim/defeater model draws on the same discipline but binds it directly to runtime routing and lifecycle state. Adaptive search also creates statistical evidence debt: repeated evaluation against a stable benchmark can invalidate naive confidence. The reusable-holdout literature shows why adaptive access requires explicit query controls and privacy or stability mechanisms [50]. SCF treats evaluator revision, query budget, holdout secrecy, and sequential uncertainty as registry facts rather than background assumptions.
+3.9 Neutral feature comparison
+Table 1. Neutral comparison with close architectural neighbors. “Reported strengths” describe mechanisms or prototypes in the cited work; SCF’s column states the additional integration proposed here, not a claim of deployed superiority.
+Neighbor
+	Reported strengths
+	Additional SCF emphasis
+	AgentHub
+	Canonical manifests, version-bound evidence, auditable artifacts, and an append-only lifecycle log.
+	Local profile-, dependency-, state-, time-, and authority-scoped qualification; defeaters; contextual route portfolios.
+	ECM Contracts
+	Rich versioned contracts, assumptions, permissions, recovery semantics, compatibility checks, registry, and resolver.
+	Exact claim identity, independent route validation, property-sensitive defeat, meta-governance, and adaptation epochs.
+	Governed Capability Evolution
+	Lifecycle compatibility checks, staged deployment, state/recovery analysis, and a reported prototype.
+	Concurrent route roles, evaluator-security architecture, federation, and explicit root/meta bootstrap.
+	Agent Contracts / Agent Behavioral Contracts
+	Formal resource and behavioral contracts, delegation constraints, runtime enforcement, drift and recovery models, and reported experiments.
+	Contracts embedded in a content-addressed evidence, routing, state, authority, promotion, and constitutional lifecycle.
+	Capability-binding and pre-action governance
+	Cryptographic capability identity, ledgers, path policies, and deterministic authorization before effects.
+	Long-lived substitution fields, scoped qualification, state solvency, evaluator governance, and evidence invalidation across revisions.
+	Arbiter-style kernels
+	Non-bypassable transition mediation, policy enforcement, provenance, and information-flow-oriented controls.
+	Durable capability fields, profile-scoped claims, migration/evidence graphs, and governed abstraction evolution.
+	SCF status
+	The public artifact implements a bounded executable authorization model and synthetic regression measurements.
+	The integrated production substrate, adversarial model experiments, cryptographic deployment, and institutional validation remain future work.
+	The novelty claim is architectural and integrative. SCF should be judged by whether the combination creates useful continuity and operational queries that the ingredients do not provide separately, whether the root can remain materially smaller than the intelligence it governs, and whether total assurance-production cost remains acceptable.
+4 Formal core and normalized ontology
+4.1 Design goal of the formalization
+The formal model has two purposes. First, it prevents overloaded words such as active, qualified, fallback, and retired from collapsing distinct operational states. Second, it identifies the predicates that a small validator must check without asking the validator to solve the optimization problem.
+The model is intentionally a core, not a complete semantics of intelligence. It formalizes authorization-relevant facts and transitions. Behavioral guarantees remain conditional on the adequacy of contracts and evidence.
+4.2 Core objects
+A field identity is:
+
+where  is the set of contract revisions and  is the field-level governance policy. State, authority, observability, and effects belong to versioned contract or policy objects rather than appearing redundantly at multiple layers.
+A contract revision is identified by content, not a mutable name:
+
+Each normative clause has a stable clause identifier, class, enforcement or evidence method, failure consequence, waiver class, and version. An immutable implementation revision is:
+
+where  is the behaviorally material artifact-closure hash and  is the manifest hash. Mutable operational state is not embedded in .
+A deployment profile is also content-addressed:
+
+A qualification claim binds exact content:
+
+Here  is the dependency-closure digest,  the state-relation hash,  the set or root of evidence-bundle hashes,  the evaluator-policy hash,  the assumptions and limitations, and  the machine-checkable conditions attached to a conditional verdict. A claim says that a named trust domain is authorized to rely on specified obligations under those exact premises. It does not assert universal safety.
+A route member is role-specific:
+
+A route proposal is:
+
+A validation receipt binds the proposal hash, accepted claim and waiver identifiers, source-log head and watermark, materialized-view hash, view-function hash, policy and validator revisions, state bindings, grants, decision, reasons, and expiry. Human-readable field or implementation names may appear for diagnostics, but no authorization rule relies on resolving an alias to mutable content.
+4.3 Orthogonal lifecycle dimensions
+The earlier temptation to place rejected < sandbox < shadow < canary < active < fallback < retired in one lattice is incorrect. These labels describe different dimensions.
+Table 2. Normalized operational dimensions.
+Dimension
+	Representative values
+	Qualification verdict
+	unsupported, rejected, conditional, qualified
+	Deployment stage
+	registered, sandbox, shadow-authorized, canary-authorized, production-authorized, activating, observed-active
+	Route role
+	primary, fallback, ensemble member, shadow, abstention target
+	Restriction set
+	domain-limited, authority-limited, budget-limited, data-limited, time-limited
+	Incident condition
+	normal, investigating, quarantined, revoked
+	Lifecycle condition
+	candidate, maintained, deprecated, retired, deleted-with-tombstone
+	Evidence condition
+	fresh, expiring, stale, defeated, disputed
+	An implementation can be qualified, retired from primary use, and still eligible as a fallback for one profile. A canary can be restricted. A production-authorized route can be quarantined. Modeling these as independent attributes prevents invalid transitions and misleading queries.
+4.4 Registry and system state
+Let an SCF state be:
+
+where:
+*  is the signed, append-only source-event and evidence graph;
+*  is a deterministic materialized view at a named watermark;
+*  is the set of locally interpretable qualification and waiver claims derived from ;
+*  is the set of signed route and stage authorizations;
+*  is the set of deployment instances and observed activation states;
+*  contains state objects, schemas, replay sources, snapshots, migrations, adapters, and effect obligations;
+*  identifies the root validator, broker, recovery loader, and certified policy layer;
+*  contains trust roots, signer membership epochs, threshold rules, constitutional policies, clocks, and transparency commitments;
+*  is logical time or a trusted time reading used for lease and expiry checks.
+ is a cache, not an independent source of authority. A validator accepts it only when the event chain, source head, watermark, view-function revision, and view hash are consistent. Any route receipt records those identities. Direct mutation of operational dictionaries without a corresponding source event is invalid.
+The model permits a stale stored route to exist as data. The safety boundary is invocation-time authorization:
+
+This is more realistic than claiming every control-plane object is instantaneously purged at expiry. A call is denied when any material claim, waiver, grant, route, provider fingerprint, policy, or state premise has expired or changed, even if an old route object remains in storage.
+4.5 Claim support, defeat, and disagreement
+The graph distinguishes observations, derived metrics, assumptions, claims, decisions, defeaters, disputes, waivers, and incidents. Storage alone does not establish inference.
+Let  mean that every cited evidence object exists, binds the exact content identities named by , is admissible under the cited evaluator policy, and has not been invalidated by a compromised issuer or derivation. Let  mean that an active material rebutting or undercutting defeater applies.
+A claim is usable only when:
+
+For a fully qualified claim, ConditionsSatisfied may be trivially true. For a conditional claim it is not: each required monitor, denied capability, jurisdiction exclusion, fallback, approval token, or compensating control must be present and unexpired.
+Waivers do not turn a failed condition into evidence. They are a second, visible authorization path. Identity and integrity clauses are never waivable. Hard authority or effect prohibitions require a constitutional policy change rather than an ordinary waiver. Operational, statistical, or monitoring requirements may be waived only where policy names an eligible clause class, independent issuer, reduced scope, compensating controls, short expiry, and non-composition rule. A waiver cannot transfer between profiles unless explicitly reissued.
+Conflicting evidence remains explicit. A decision policy may apply vetoes, confidence aggregation, profile narrowing, escalation, or abstention, but it cannot delete the disagreement from history.
+4.6 Profile transfer without a false global ordering
+Profiles are heterogeneous vectors. There is no universal order in which less authority, less compute, narrower data, or a smaller domain automatically preserves behavior. Evidence can transfer from source profile  to target profile  only through a witness bound to the exact source claim and content identities:
+
+where  names dimensions proven unchanged,  names dimensions covered by a declared monotonic transfer rule, and  names dimensions re-tested with fresh evidence. Validation computes the actual changed dimensions:
+
+The witness is rejected if it names another artifact, contract, source claim, dependency closure, state relation, issuer, or expired evidence. A latency-only witness cannot justify a jurisdiction change; a functional test cannot silently transfer a privacy claim. Missing dimensions fail closed.
+Thus:
+
+This permits principled reuse without turning profile labels into universal assurance grades.
+4.7 Qualification predicate
+Define the authorization-relevant qualification predicate as a conjunction over declared, content-bound premises:
+
+DependencyCovered accepts either the exact current closure digest or property-specific compatibility certificates that preserve every relied-upon claim. Authorization-relevant dependency cycles are collapsed into strongly connected qualification bundles unless an externally grounded certificate proves particular internal edges irrelevant to the property at issue. This prevents circular justification such as an evaluator and router qualifying each other without a base claim.
+The predicate is exact about what the root checks; it is not a definition of true behavioral conformance. Supported may still rest on finite tests, formal models with incomplete assumptions, or institutional judgments. Qualification is a scoped local authorization to rely, not an ontological declaration that the implementation is safe.
+4.8 Authority admissibility
+Set intersection provides an upper bound but not a full policy:
+
+SCF therefore uses a contextual predicate:
+
+which requires that the grant is attenuated beneath all ceilings; is bound to the caller, request class, route, purpose, destinations, data classes, and lease; satisfies quotas, spend, delegation, and maximum-consequence budgets; excludes declared toxic capability combinations; has safe denial behavior for optional capabilities; and is not blocked by incident, revocation, stale policy, or state conditions.
+The predicate checks declared policies and certificates. Discovering all dangerous combinations, proving noninterference, and detecting semantic leakage through otherwise permitted content are harder tasks delegated to evaluators, policy synthesis, runtime monitoring, and human governance. The root can reliably deny a known forbidden path; it cannot prove that a learned model will never encode a secret in a permitted summary or exploit an unmodeled covert channel.
+4.9 Route validity
+A valid route uses role-specific profiles and claims. For each member :
+
+The route predicate is:
+
+RouteCompositionValid checks at least:
+   * one primary, unless an explicit ensemble decision protocol replaces that rule;
+   * caller identity and request class;
+   * a qualified and reachable fallback with adequate capacity, compatible state, and its own lease;
+   * role-specific shadow data, retention, isolation, and no-real-effect constraints;
+   * ensemble overlap and common-mode-risk limits stated by policy;
+   * abstention and escalation behavior;
+   * composition and toxic-combination certificates for declared hazards;
+   * route expiry no later than the earliest material claim, waiver, grant, provider, policy, state, or approval expiry;
+   * a consequence budget appropriate to the deployment stage.
+A validation receipt names the exact accepted claims, transfer witnesses, waivers, grants, state paths, source-log watermark, view hash, policy revision, validator revision, caller, request class, and expiry. The proposer may be arbitrarily intelligent; the root does not rank candidates or discover missing hazards. Its narrowness is purchased by validating pre-established certificates, not by solving open-world safety.
+4.10 Lifecycle transition semantics
+Lifecycle operations are validated state transitions:
+
+Representative operations include registration, evidence append, stage-specific claim issuance, shadow authorization, canary authorization, production authorization, activation observation, incident publication, grant revocation, state restore, replay, compensation, quarantine, retirement, and constitutional amendment.
+Evidence does not mutate an old qualification claim. Initial evaluation can issue a sandbox- or shadow-eligible claim. Shadow evidence supports a new canary-eligible claim. Canary evidence supports a new production-eligible claim. Each revision is immutable and cites its predecessor.
+Canary authorization requires more than one strictly smaller numeric field. It must satisfy a risk-sensitive consequence budget:
+
+covering population, irreversible effects, spend, duration, data sensitivity, destinations, recovery time, and common-mode exposure.
+Production authorization is a signed logical commit. Physical rollout is a saga with an activation deadline, observation quorum, unreachable-instance policy, abort conditions, and one typed result:
+   * OBSERVED_ACTIVE;
+   * CONTAINED_AND_RECOVERED;
+   * CONTAINED_WITH_RESIDUAL_EFFECTS;
+   * ACTIVATION_FAILED;
+   * RECOVERY_FAILED.
+A final root validation occurs after threshold approvals and immediately before the commit, because approvals may outlive claims, provider fingerprints, grants, or views.
+4.11 Reachability and conditional invariants
+Let  be the states produced from a root state by validated transitions. The core enforcement goals include:
+
+
+
+
+and:
+
+for the bound source head and watermark.
+These invariants concern the consistency of authorization and transition records. They do not prove the completeness of the contract, the truth of behavioral evidence, the discovery of every toxic composition, or the semantic fidelity of an uncertified latent-state migration. Section 16 states the required assumptions and failure boundaries explicitly.
+5 Contracts as semantic compatibility boundaries
+5.1 Why schemas are insufficient
+Input and output schemas are necessary for interoperability, but they are too weak for trustworthy substitution. Two implementations can accept identical JSON and still differ in ways that matter operationally:
+   * one may return a plan while another executes it;
+   * one may abstain under uncertainty while another guesses;
+   * one may preserve source references while another emits unsupported summaries;
+   * one may write durable state, retain user data, or call external services;
+   * one may interpret a deadline as a hard constraint while another treats it as a preference;
+   * one may require a tool whose denial causes graceful degradation, while another fails open;
+   * one may report calibrated uncertainty while another reports an ungrounded confidence score.
+SCF therefore treats a contract as a semantic compatibility boundary. The phrase semantic ABI remains a useful analogy because callers depend on a stable operational meaning, but it should not be mistaken for the precision of a machine-level binary ABI. SCF contracts may contain formal clauses, executable policy, statistical obligations, and natural-language rationale. Their completeness and enforceability vary and must be recorded.
+5.2 Contract dimensions
+A mature contract covers at least the dimensions in Table 3.
+Table 3. Contract dimensions and the questions they answer.
+Dimension
+	Questions
+	Inputs and outputs
+	What types, units, provenance, references, and semantic interpretations are accepted and returned?
+	Preconditions and postconditions
+	What must be true before invocation and what is promised afterward?
+	Temporal protocol
+	Which call sequences, retries, commits, cancellations, and idempotency rules are valid?
+	Invariants
+	What must remain true across calls and state transitions?
+	Effects
+	Which data, network, financial, physical, or deployment effects may occur?
+	Authority
+	Which capabilities may be requested, delegated, attenuated, or denied?
+	State
+	Who owns state, which schemas are supported, and what are the consistency and migration obligations?
+	Resources
+	What latency, compute, memory, energy, rate, and spend budgets apply, and how does denial behave?
+	Failures
+	Which typed errors, abstentions, partial results, and retry semantics exist?
+	Uncertainty
+	How are confidence, calibration, coverage, and unresolved assumptions represented?
+	Observability
+	Which traces, receipts, citations, counters, and provenance records must be emitted?
+	Privacy and retention
+	Which data may be read, retained, transformed, exported, or deleted?
+	Governance
+	Which approval, waiver, incident, and expiry rules apply?
+	The contract is versioned by content hash, not only by a human-readable semantic version. A version string is a navigation aid; the hash binds the exact normative content.
+5.3 Clause classes and enforcement modes
+Not all clauses have the same epistemic status. Treating a natural-language goal as equivalent to a reference-monitor rule creates false confidence. Each normative clause therefore declares a class:
+Table 4. Contract clause classes.
+Clause class
+	Example
+	Primary enforcement or evidence
+	Mechanically enforced hard invariant
+	No direct network access
+	Broker, sandbox, policy VM
+	Protocol invariant
+	Commit must follow independent approval
+	State-machine monitor
+	Deterministic functional obligation
+	Output parses and preserves required IDs
+	Type checker, reference tests
+	Statistical obligation
+	Error rate below a bound on a named distribution
+	Pre-registered evaluation with confidence sequence
+	Calibration obligation
+	Stated 90% intervals achieve target coverage
+	Calibration suite by subgroup
+	Runtime-monitorable property
+	No undeclared state write appears in traces
+	Trace monitor and effect receipts
+	Governance obligation
+	Irreversible action requires threshold approval
+	Promotion and runtime policy
+	Aspirational or open-world claim
+	No strategically deceptive behavior
+	Diverse evaluation, control, monitoring; no hard guarantee
+	Explanatory rationale
+	Why a constraint exists
+	Human and machine review; non-normative
+	The class determines what can block activation, what can only narrow a qualification claim, what must be monitored online, and what remains an unresolved risk. A contract that contains aspirational clauses is not invalid; it is incomplete in a visible way.
+5.4 The abstraction layer does not perform the capability, but mediation may be nontrivial
+The abstraction should not contain the planner, memory algorithm, search policy, or model-specific strategy. Otherwise implementations are not genuinely replaceable. The boundary may, however:
+   * validate schemas and protocol transitions;
+   * enforce authority and information-flow rules;
+   * normalize identifiers and representations;
+   * attach provenance and receipts;
+   * reject undeclared effects;
+   * check cheap certificates, proofs, or structural properties;
+   * mediate state access and concurrency;
+   * invoke independent monitors.
+This is constitutional mediation, not necessarily trivial computation. The clean separation between “solving” and “checking” exists only where verification is materially cheaper or more trustworthy than generation. Proof checking often has that asymmetry; faithful-summary verification or plan validation may not. SCF therefore does not assume that every semantic property can be placed in a cheap trusted checker. Expensive or incomplete verification stays in the evaluator portfolio and is reflected in the claim’s limitations.
+5.5 Contract completeness, debt, and unknown behavior
+Complete behavioral specifications for learned systems are generally unavailable. SCF treats this as measurable debt rather than hidden absence. Each debt item records a clause or behavior region, uncertainty type, evidence gap, severity, potential blast radius, monitoring gap, owner, compensating controls, expiry, and closure criterion.
+A reference debt priority is:
+
+The formula is not a universal risk law; it forces the institution to expose the dimensions behind an aggregate. Policy sets risk-class budgets for total debt, maximum single-item severity, overdue debt, and unmonitored high-consequence gaps. A debt register can block promotion, narrow a profile, reduce authority, shorten a lease, or require abstention.
+Unknown behavior is not automatically forbidden, because that would make learned systems unusable. It is bounded through effects, caller-bound authority, consequence budgets, runtime monitors, escalation, and abstention. Contract debt is not an excuse to omit hard controls where they are available: destination, amount, data class, approval token, and tool boundary can often be mechanically enforced even when reasoning quality remains statistical.
+5.6 Contract synthesis and the goalpost firewall
+Contracts may be human-authored, mined from traces, proposed by models, or refined through counterexamples. The circularity is unavoidable: a self-improving system can propose a permissive contract that makes its own candidate look successful. SCF therefore treats synthesized clauses as hypotheses and applies a goalpost firewall.
+   1. Contract and implementation changes are separate immutable transactions.
+   2. The motivating candidate is frozen and cannot be retroactively certified solely because the norm changed.
+   3. Old and proposed contracts are run against anchor artifacts, protected counterexamples, known-good cases, and known-bad cases.
+   4. A semantic diff identifies promises weakened, strengthened, added, or removed; affected consumers; altered authority; state migration; and evidence invalidation.
+   5. High-risk major changes use a new contract identity or parallel version before the motivating candidate can be reconsidered.
+   6. The evaluator policy, contract synthesizer, candidate, and approvers disclose an overlap vector: base model, provider, data, toolchain, operators, prompt generator, memory, and lineage.
+   7. Administrative separation is not treated as cognitive independence. Where high-risk roles share a frontier base-model lineage or opaque training pipeline, policy requires additional human or institutional diversity, sealed assets, or external evidence.
+   8. The change cannot broaden authority through an ordinary waiver or emergency path.
+The firewall prevents procedural self-ratification. It does not prevent coordinated institutional capture, correlated model failure, or a novel specification error that every reviewer misses. Those residual risks remain visible in the claim and threat model.
+5.7 Refinement and substitutability
+For deterministic components, behavioral subtyping suggests that a replacement should not strengthen caller obligations or weaken promised guarantees [24]. SCF extends this idea to stochastic and authority-bearing components.
+Let  mean that  refines  for a specific consumer and profile. The relation requires, as applicable:
+   * input acceptance at least as broad for valid  inputs;
+   * output and failure behavior compatible with  callers;
+   * no broader effects or authority;
+   * state and protocol compatibility;
+   * statistical obligations no weaker under the declared distribution and confidence rule;
+   * uncertainty semantics not less informative;
+   * observability sufficient for existing monitors;
+   * no consumer-visible default or optional-field behavior that breaks strict clients.
+Refinement is not inferred from semantic-version labels. Consumer-side compatibility tests and profile-specific evidence establish it. An additive optional field can still break strict parsers or change defaults, so both provider and consumer perspectives matter.
+5.8 Statistical obligations
+A statistical contract clause is incomplete unless it names:
+      * the target distribution or profile envelope;
+      * the outcome and scoring rule;
+      * sample-selection and contamination controls;
+      * confidence, coverage, or anytime-valid inference method;
+      * subgroup and tail-risk requirements;
+      * minimum sample size or stopping rule;
+      * acceptable drift and the monitor that detects it;
+      * the action taken when evidence becomes inconclusive.
+Sequential candidate search consumes evidence validity. A fixed 95% confidence interval does not remain valid after thousands of adaptive comparisons. SCF therefore records query budgets, evaluator reuse, and sequential-risk accounting. High-frequency adaptation may use confidence sequences or e-value-like processes where appropriate, but the architecture does not require one statistical method for all fields.
+6 Implementations, state, field boundaries, and adaptation
+6.1 Implementation heterogeneity
+An implementation revision may be:
+      * source code, a binary, or a container;
+      * a prompt, demonstration set, retrieval policy, or LM program;
+      * model weights, adapters, a training recipe, or a decoding policy;
+      * a hosted endpoint with provider, configuration, and observed fingerprints;
+      * a database, index, memory compiler, or stateful service;
+      * a policy, verifier, planner, scheduler, or tool router;
+      * an agent or multi-agent graph;
+      * a composite bundle that implements several fields atomically.
+The field boundary is therefore semantic and operational, not necessarily a process boundary. Content addressing should cover the entire behaviorally material closure: code, model identifiers, prompts, tool descriptions, dependencies, configuration, and build or training recipes.
+6.2 Fused and shared-weight bundles
+Neural systems may realize several capabilities in one shared model. SCF must not invent isolation that does not exist. A bundle records:
+      * the fields jointly implemented;
+      * shared weights, caches, state, and training data;
+      * which operations can be routed independently;
+      * which updates invalidate evidence across several fields;
+      * the smallest rollback and containment unit;
+      * the joint authority and effect surface;
+      * evidence attribution limits.
+A shared-weight update may create an impact cone approaching that of a monolith. SCF still adds value by making the blast radius, joint qualification, and unavailable rollback locality explicit. It does not claim that a semantic boundary creates physical separability.
+6.3 Method for choosing field boundaries
+Field granularity is a design variable, but it must be testable rather than chosen post hoc to rescue the architecture. Candidate boundaries are evaluated against semantic cohesion, change cadence, authority locality, state ownership, evaluator locality, recovery locality, dependency density, shared-weight coupling, and consumer stability.
+The recommended procedure is:
+      1. generate several plausible decompositions from dependency, call, state, authority, and change-history graphs;
+      2. classify unavoidable fused bundles and shared-weight components;
+      3. hold each decomposition fixed within an M0-M3 comparison;
+      4. measure impact-cone size, qualification reuse, cross-field incidents, recovery locality, route flexibility, and governance cost;
+      5. repeat the experiment across decompositions rather than selecting only the best result.
+SCF is boundary-robust only if it improves safety and continuity across a reasonable family of decompositions. A result that appears only under one hand-tuned carving is weak evidence and is listed as a disconfirmation condition. When independent routing, state migration, and recovery are impossible, the correct unit is a bundle or a larger field, not a fictitious module.
+6.4 Operational state model
+Operational state is represented separately from immutable implementation identity. A state object records:
+      * schema and semantic version;
+      * owner and authorized readers/writers;
+      * provenance and canonical source, where one exists;
+      * consistency and concurrency model;
+      * retention and deletion policy;
+      * replayability and deterministic reconstruction limits;
+      * compatibility relation and migration direction;
+      * acceptable loss and rollback objective;
+      * checkpoints, adapters, dual-read plans, and external obligations.
+A migration from representation  to  receives one of five solvency classes.
+      1. Isomorphic. A verified, round-trippable transformation preserves the declared semantics.
+      2. Loss-bounded. A relation and probes bound known information loss under a named profile; the fallback objective accounts for that loss.
+      3. Dual representation. Old and new forms run in parallel while reads, writes, and downstream behavior are compared.
+      4. Replay from canonical source. The system reconstructs the new state from provenance-preserving source events, documents, or episodes rather than translating opaque latent vectors directly.
+      5. Non-solvent. Semantic fidelity cannot be established. The new representation is treated as a fork, new field version, or one-way transition; rollback to the old implementation may require retaining the old state system.
+For embedding-model replacement, the preferred path is usually replay or re-embedding from canonical source, with anchor queries, neighborhood tests, downstream-task replay, dual-read comparison, and explicit coverage of source items. Direct vector-to-vector translation is not presumed meaningful. If only latent state exists and no adequate relation can be established, SCF refuses to label the swap reversible.
+Migration qualification binds the exact source and target schemas, transformation artifact, state-relation hash, test corpus, assumptions, loss budget, checkpoint, and fallback-readable condition. Bytes restored without preserved meaning do not count as successful recovery.
+6.5 Adaptation envelopes for high-frequency online learning
+Registering every gradient step as a full release would paralyze adaptation; treating a changing parameter state as the original evaluated artifact would erase identity. SCF uses two timescales.
+A slow loop qualifies an adaptation epoch:
+
+The fast loop may update only the declared adaptive state. Each step must use the pinned updater and approved data receipts, consume cumulative resource and risk budgets, preserve fixed tool and effect semantics, extend the journal commitment, and leave a qualified baseline routable. Sentinel failure, budget breach, updater or preprocessing change, authority/effect change, data-policy change, incident, or scheduled boundary seals the epoch and revokes its adaptation token.
+The envelope does not prove bounded behavior. Small parameter changes can produce large behavioral discontinuities. Between observations, a learner may cause harm inside its permitted authority and consequence envelope. The architecture therefore supplies bounded authority, short leases, sentinel cadence, fast revocation, checkpoints, and post-incident reconstruction - not a theorem that all behavior remains close.
+Sentinel frequency is chosen from the maximum tolerable undetected consequence, not convenience. High-consequence profiles may require synchronous pre-action monitors or prohibit online weight updates entirely. The sealed epoch becomes a new immutable revision and enters ordinary qualification before its authority can expand.
+ Two-timescale adaptation envelope showing fast updates, sealed epochs, sentinels, a pinned baseline, and slow-loop requalification. 
+
+Two-timescale adaptation envelope showing fast updates, sealed epochs, sentinels, a pinned baseline, and slow-loop requalification.
+Figure 1. The fast loop is constrained by fixed mechanics, authority, budgets, sentinels, and a pinned baseline. It bounds exposure and response, not all possible learned behavior between observations.
+6.6 Remote and opaque implementations
+Hosted models and remote services cannot always be pinned to immutable weights or code. They receive an explicit opaque-service qualification class rather than being treated as ordinary immutable artifacts. A claim binds:
+      * provider and endpoint identity;
+      * advertised model and configuration;
+      * request and response schema;
+      * tool descriptions and system prompt where visible;
+      * observed behavioral fingerprint and sentinel suite;
+      * contractual change-notification commitments;
+      * data handling, retention, region, and availability claims;
+      * qualification time window and maximum unobserved-change interval.
+Such claims are shorter-lived and weaker. Online sentinels, response-distribution fingerprints, challenge sets, provider attestations, and cross-provider fallbacks detect some changes but cannot establish weight identity. High-risk profiles may prohibit opaque services, require route diversity, or fail closed when fingerprints change. The architecture foregrounds the degradation: the strongest reproducibility and provenance properties apply only to artifacts under sufficient control.
+6.7 State and adaptation ownership
+Online learning blurs implementation and state. SCF resolves the ambiguity by declaring whether learned parameters are:
+      * immutable implementation artifacts;
+      * mutable durable field state within an adaptation envelope;
+      * or a composite requiring a sealed new implementation revision.
+The choice determines who may write the parameters, how they are checkpointed, what evidence expires, and how fallback works. Silent learning outside all three categories is an integrity violation.
+7 Evidence registry: claims, defeaters, scale, and federation
+7.1 Registry as an append-only evidence and consequence graph
+The registry is the memory and immune system of governed evolution. It is logically append-only for decision history: corrections, revocations, waivers, and invalidations are new signed events rather than destructive edits. Operational views are materialized for speed, but each active route remains traceable to source events and a deterministic view revision.
+Core node types include:
+      * field identities, contract revisions, policy revisions, and trust roots;
+      * implementation artifacts, bundles, builds, models, prompts, and configurations;
+      * dependency and external-service claims;
+      * state schemas, snapshots, migrations, adapters, and recovery procedures;
+      * tools, effect classes, authority policies, and deployment grants;
+      * evaluators, datasets, scenarios, specifications, and monitors;
+      * observations, derived metrics, evidence bundles, assumptions, and limitations;
+      * qualification claims, disagreements, defeaters, waivers, and expiry events;
+      * route proposals, validation receipts, authorization decisions, and deployment observations;
+      * incidents, quarantines, revocations, compensations, audits, and closures.
+Representative edges include implements, derived_from, depends_on, shares_weights_with, supports, conditions, contradicts, defeats, qualifies_for, authorized_by, routed_by, migrates_to, restored_from, compensates, and invalidates_property.
+ Defeasible evidence graph connecting normative scope, observations, qualification claims, authorization, routing, deployment, and materialized views. 
+
+Defeasible evidence graph connecting normative scope, observations, qualification claims, authorization, routing, deployment, and materialized views.
+Figure 2. Qualification is a scoped, defeasible claim. Materialized views answer operational questions, but authority remains grounded in signed source events and versioned derivation rules.
+7.2 Artifact identity and provenance
+Every behaviorally material artifact should be content-addressed where possible. Evidence binds:
+      * source, binary, container, and configuration hashes;
+      * model, adapter, tokenizer, and decoding identifiers;
+      * prompt and tool-description hashes;
+      * training, optimization, and evaluation data identities or governed data policies;
+      * build environment, dependency lockfiles, and supply-chain attestations;
+      * hosted endpoint, provider, region, request settings, and observed fingerprint;
+      * evaluator code, dataset, scenario, rubric, and policy revisions;
+      * runtime environment, seeds where meaningful, nondeterministic settings, and hardware claims.
+Provenance establishes which artifact and process produced the result. It does not establish good behavior. A benchmark score without provenance may refer to a different artifact than the one activated; a perfect provenance chain can faithfully identify a dangerous artifact. SCF requires both identity and behavioral evidence.
+7.3 Claims, assumptions, defeaters, and waivers
+A qualification claim names the exact proposition, content identities, profile, relied-upon properties, evidence, assumptions, evaluator policy, issuer, trust domain, and validity interval. Defeaters can rebut the proposition, undercut the evidence, narrow the profile, shorten validity, dispute an assumption, or invalidate an issuer.
+A waiver is not evidence. It is a signed decision to operate despite an unmet eligible condition. Every waiver records clause ID and class, issuer, conflict-of-interest check, local scope, profile, compensating controls, authority reduction, maximum consequence, non-composition rule, and short expiry.
+The reference waiver policy is:
+Clause class
+	Default treatment
+	Artifact identity, signature, log integrity, trust-root validity
+	Never waivable
+	Mechanically established forbidden authority/effect
+	Not waivable through operations; requires constitutional policy change
+	Operational requirement
+	May be waived with independent issuer, reduced scope, compensating controls, and short lease
+	Statistical threshold
+	May narrow the profile or consequence budget; cannot be relabeled as passed
+	Monitoring or freshness
+	Emergency-only, short-lived, with authority reduction and mandatory review
+	Aspirational clause
+	Not waived; remains an explicit unresolved limitation
+	Waivers do not satisfy dependency closure by themselves and do not transfer across profiles or registries without local reissuance.
+7.4 Property-sensitive invalidation
+Property-sensitive invalidation avoids two bad extremes: global requalification after every dependency change and unsafe reuse of all prior evidence. Dependency and evidence edges name the properties they support. A change invalidates claims only along relied-upon property paths unless a compatibility certificate discharges the dependency.
+Reliance metadata is itself an attack surface. A candidate, maintainer, or impact analyzer may omit an edge, label it too narrowly, or issue a false compatibility witness. SCF therefore treats a reliance annotation as a qualified artifact with issuer, provenance, evidence basis, review policy, negative tests, expiry, incident history, and conservative treatment when unknown or disputed.
+The default is fail-wide: unknown or untyped dependencies expand the impact cone. The empirical program injects missing edges, narrow labels, false witnesses, behavior changes behind stable interfaces, and collusion between candidate and analyzer. The key safety metric is:
+
+Efficiency is useful only subject to a low unsafe-reuse rate. A small impact cone produced by dishonest annotations is not a success.
+7.5 Evidence aggregation and disagreement
+A practical policy must decide what happens when evidence conflicts. SCF permits field-specific decision rules but requires them to be explicit. A reference policy can combine:
+      * hard vetoes for mechanically proven violations, provenance failure, or forbidden effects;
+      * confidence-bound thresholds for statistical obligations;
+      * catastrophic-tail vetoes that cannot be averaged away by mean performance;
+      * escalation on unexplained evaluator reversals;
+      * profile narrowing when failure is localized;
+      * conservative expiry when evidence is inconclusive;
+      * Pareto ranking only after hard and epistemic constraints pass.
+Formal success does not automatically dominate empirical failure; the formal specification may be incomplete. Empirical success does not override a proven hard violation. The decision record preserves both.
+7.6 Materialized views and query semantics
+Operational queries require indexes and materialized views, but those views do not create authority. A view is accepted only when:
+
+under a deterministic, versioned derivation function. The view object binds the source-log head, event count or watermark, derivation hash, and view hash. Route receipts bind the same values.
+Required operations include verify_event_chain, derive_view, and verify_view. The validator rejects mutated event payloads, deletion, reordering, an old derivation function, a stale watermark, or direct mutation of a view without a source event. In a distributed registry, signatures, consistency proofs, durable storage, and consensus are additional layers; the public reference kernel models identity and deterministic derivation rather than implementing those production mechanisms.
+Authority-sensitive queries include active claims by exact content hash, material defeaters, current signer membership epoch, role-specific route eligibility, state-path reachability, and the earliest material expiry. Human-friendly names are resolved only for display after authorization identity has been established.
+7.7 Scaling a long-lived evidence graph
+A long-lived system accumulates more history than should reside in one hot graph. SCF separates immutable commitments from storage tiers:
+      * hot indexes for current claims, incidents, grants, routes, and expiries;
+      * warm stores for active lineage, recent evidence, and recovery windows;
+      * cold archives for retired artifacts and historical traces;
+      * cryptographic commitments, tombstones, and deletion proofs where raw data must expire;
+      * periodic checkpoints of deterministic view state, always verifiable against source-event commitments.
+Compaction may summarize or relocate observations but cannot erase the source identities and decision relations needed to reconstruct an authorization. Retention is evidence-type-specific: formal proofs, model fingerprints, protected datasets, incident traces, and personal data have different value and legal constraints.
+View-rebuild cost, revocation bursts, claim histories per artifact, transfer-witness volume, route size, defeater volume, policy complexity, and concurrent validation must be benchmarked separately. Registry size alone is not a sufficient scalability variable.
+7.8 Privacy, deletion, and selective disclosure
+The registry can contain production inputs, user data, failure cases, exploits, model fingerprints, and internal topology. Append-only governance must coexist with privacy and deletion duties. The design therefore supports:
+      * encryption at rest and per-object access policies;
+      * data minimization and redacted evidence views;
+      * sealed evaluation services that reveal signed aggregate results without exposing holdouts;
+      * selective disclosure and zero-knowledge or attested proofs where practical;
+      * deletion of raw data with a cryptographic tombstone and preserved decision metadata;
+      * separation between public transparency commitments and private evidence bodies;
+      * incident-specific access escalation with audit.
+Deleting raw evidence weakens future reproducibility and is recorded as a new fact. The architecture does not pretend that privacy, transparency, and indefinite auditability are always simultaneously maximizable.
+7.9 Federation semantics
+Federation exchanges content-addressed artifacts, origin claims, evidence bundles, incidents, revocations, and transparency commitments without turning origin statements into local authority. Each importing domain records what it verified, what it inherited, what remains unknown, and which local policy transformed the evidence into a qualification decision.
+The protocol needs bidirectional operations:
+      * import artifact and evidence identity;
+      * subscribe to incidents and revocations affecting imported dependencies;
+      * publish local defeaters or disputes back to interested domains;
+      * issue local qualification, waiver, or rejection;
+      * appeal a local interpretation to a named review forum;
+      * reconcile emergency actions and later constitutional review;
+      * expose equivocation through cross-log consistency where possible.
+Coordination races remain possible. One domain may revoke while another continues operation; one may accept an emergency waiver another rejects. SCF records the divergence, trust paths, timing, and local consequences. It does not pretend federation creates one universally legitimate policy.
+8 Contextual resolution and routing
+8.1 There is no universally best implementation
+Implementations lie on multidimensional Pareto surfaces. A planner may be faster but less reliable; another may be slower but produce machine-checkable plans; a local model may preserve privacy while a hosted model offers greater capability; an older implementation may be the only state-compatible fallback. The system should therefore maintain a qualified portfolio rather than one globally active version.
+Routing policy can condition on task class, risk, authority, latency, cost, privacy, jurisdiction, state, uncertainty, evaluator availability, and incident status. It can also route a fraction of traffic to shadows, preserve diversity, or abstain when no admissible candidate exists.
+8.2 Split architecture: untrusted proposer, trusted validator
+The route proposer may use frontier models, search, simulation, learned preferences, forecasts, or multi-agent deliberation. It can optimize capability, latency, cost, privacy, reliability, and future learning value. It is untrusted because a powerful proposer could hide a disqualified candidate, omit a fallback, or request a toxic authority combination.
+The validator checks a narrower certificate problem: exact identities, locally usable claims, role profiles, claim-specific transfer witnesses, dependency and state certificates, conditions and waivers, incidents, expiry, caller binding, grants, route composition, fallback reachability, and consequence budgets. It emits a deterministic receipt.
+This split moves rather than solves the hardest problems. The validator can cheaply reject a route that lacks a required toxic-combination certificate; it cannot know that the policy catalog contains every dangerous combination. It can check a migration-solvency certificate; it cannot independently establish the meaning of a high-dimensional latent representation. It can verify that evaluator-policy hashes and evidence bundles match; it cannot prove the evaluator was not strategically deceived.
+The root remains narrow only if semantic discovery and certificate production stay outside it. That is a defensible trust decomposition, not a claim that open-world safety has become easy.
+8.3 Resolver pipeline
+A reference pipeline is:
+      1. bind caller identity, request class, purpose, data class, risk class, and invocation context;
+      2. select the field and exact contract hash;
+      3. have the untrusted proposer construct route members with role-specific profile hashes;
+      4. locate exact content-bound qualification claims and any claim-scoped transfer witnesses;
+      5. verify dependency-bundle and state-path certificates;
+      6. evaluate conditions, waivers, incidents, signer trust, policy freshness, and earliest expiry;
+      7. compute caller-bound grants and stage consequence budgets;
+      8. check fallback capacity, shadow restrictions, ensemble overlap, abstention, escalation, and declared composition rules;
+      9. verify the source event chain, materialized-view hash, watermark, policy revision, and validator revision;
+      10. issue or reject a short-lived route receipt;
+      11. re-check material premises at each invocation or issue a lease no longer than the earliest premise expiry.
+Ranking can remain sophisticated and replaceable. The acceptance rule is deterministic for a fixed source state and policy revision.
+8.4 Diversity, ensembles, and lineage risk
+Open-ended search benefits from preserving stepping stones and non-dominated alternatives [5,6]. Production safety also benefits from diversity when failures are not perfectly correlated. The registry records shared base models, training data, providers, tools, prompts, and evaluator lineages. A route can require diversity across specific dimensions.
+Diversity is not intrinsically safe. Multiple weak or colluding models can agree on the same error. Ensembles can amplify authority if members have additive tools. Judges can become new single points of failure. Route validation therefore treats the ensemble as a composite implementation with a declared decision protocol, joint authority, and common-mode-risk limits.
+8.5 Fallback semantics
+A fallback is a separately qualified operational role, not a historical version label. It needs its own role profile, content-bound claim, authority grant, capacity reservation, state binding, transition path, lease, monitor, and incident policy.
+Stateful fallback requires a reachable path in the migration graph. The path may be direct compatibility, dual-write state, replay from canonical source, an adapter, or a preserved old-state branch. A non-solvent migration can make the prior implementation unavailable as a true fallback even when its bytes remain. In that case the route must declare a different recovery objective, such as read-only degraded service, forked state, or containment without restoration.
+Fallback capacity is part of qualification. A route is not resilient when the fallback exists only on paper or depends on the same failed provider, model lineage, state compiler, or authority service.
+8.6 Replayability with stochastic and remote components
+A registry snapshot alone cannot reproduce a route when a remote model changes or a stochastic runtime lacks a seed. Receipts therefore bind what can be bound:
+      * model and provider identifiers;
+      * decoding and tool settings;
+      * endpoint and region;
+      * request features and route-proposer revision;
+      * random seed when meaningful;
+      * behavioral fingerprint and provider claim;
+      * time, environment, and dependency snapshot;
+      * limitations on exact replay.
+For opaque services, replayability may mean reconstructing the authorization decision and comparing against archived outputs, not reproducing the same model behavior. The claim states that limitation explicitly.
+9 Shared tools, effects, authority, and information flow
+9.1 Tool access is not implementation inheritance
+A trusted field may historically use powerful tools. A replacement does not inherit those tools by occupying the route. Doing so creates privilege laundering and a confused-deputy problem [44]. Implementations declare required and optional capabilities. Contracts define ceilings and denial behavior. Deployment profiles define local grants. The broker mints the actual lease only after contextual admissibility checks.
+Shared tools are stable capability interfaces in their own right. Tool implementations may evolve behind contracts, but the broker remains the authority mediation point. Direct access that bypasses the broker is a violation of the field boundary.
+9.2 Capability broker and reference monitor
+The broker mediates:
+      * tool and service invocation;
+      * network destinations and protocols;
+      * data reads, writes, exports, and deletion;
+      * code execution and deployment;
+      * financial and physical actions;
+      * state access and durable writes;
+      * delegation to subagents or subprocesses;
+      * rate, time, and spend budgets.
+Grants should be unforgeable, caller-bound where possible, attenuable, short-lived, revocable, and auditable. Bearer tokens are minimized. Delegation records the chain and cannot exceed the parent’s authority. Long-running executions re-check leases at phase boundaries.
+The broker is a reference monitor only if it is complete, tamper-resistant, and always invoked. Sandboxing, network policy, filesystem isolation, key management, and state-store mediation are therefore part of the effective trusted base for bounded-authority claims.
+9.3 Contextual admissibility and toxic combinations
+The simple authority meet provides a useful upper bound but does not capture non-monotone constraints. Examples of toxic combinations include:
+      * secrets read plus arbitrary network egress;
+      * code execution plus deployment credentials;
+      * benchmark access plus evaluator selection;
+      * model-update authority plus promotion authority;
+      * user-memory access plus cross-tenant retrieval;
+      * reversible action authority plus the ability to disable logging.
+The policy language must express forbidden combinations, purpose, destination, data class, delegation depth, call provenance, temporal order, and approval tokens. It can also require separation of duties: no single principal may both generate and authorize an irreversible action.
+Unknown combinations receive risk-sensitive treatment. High-consequence profiles can require explicit allowlists or runtime information-flow controls. Lower-risk profiles may use deny rules plus anomaly monitoring. The architecture does not assume all emergent combinations can be enumerated.
+9.4 Information-flow policy
+The broker can enforce declared, coarse-grained source and sink restrictions: for example, a secret-labeled context handle cannot be passed directly to an unapproved network tool, and declassification requires a named gate. Capability binding, process isolation, destination allowlists, and runtime labels can prevent many direct paths.
+These controls do not establish semantic noninterference. A model allowed to write a plan, memory, summary, or other permitted artifact may encode sensitive information in its content; side channels and covert timing channels may remain. Perfect taint tracking is unavailable for arbitrary learned transformations.
+Accordingly, SCF distinguishes:
+      * mechanically blocked declared paths;
+      * runtime-monitored transformations;
+      * statistically evaluated leakage risk;
+      * residual semantic and covert-channel risk.
+Claims such as “no direct secret-to-network capability path” can be mechanically enforced. Claims such as “no sensitive information ever leaves through permitted content” cannot be inferred from the broker alone and must not appear as root-level guarantees.
+9.5 Effect classes and reversibility
+Effects are classified by operational recovery, not by marketing labels:
+      * pure: no persistent effect beyond the returned value and declared telemetry;
+      * ephemeral: temporary resources with bounded cleanup;
+      * transactional: effects committed atomically within a controlled system;
+      * compensable: not reversible, but a defined corrective action can reduce harm;
+      * irreversible: publication, disclosure, physical harm, legal commitments, or other effects that cannot be undone.
+A plan artifact written to a versioned local store may be transactional even though it is a persistent write; it is not “pure” merely because the write is convenient. Contracts and manifests distinguish returned artifacts from external persistent state.
+Promotion policy uses the highest-risk reachable effect, including effects reachable through delegated tools. Irreversible effects require stronger approval, narrower canaries, and pre-action controls because post hoc rollback cannot restore the prior world.
+9.6 Revocation and time-of-check/time-of-use
+A route that was valid at authorization time can become invalid when a claim, waiver, grant, provider fingerprint, incident state, state relation, or policy changes. SCF therefore uses short-lived, caller-bound leases and an invocation invariant rather than trusting a permanent route pointer.
+The broker checks the current event/view watermark or a revocation epoch before issuing an effect token. Long-running executions use renewable subleases; each irreversible or high-consequence step may require revalidation. Cached handles carry issuer, caller, purpose, route, policy, and expiry and cannot be silently delegated.
+Revocation latency is an explicit metric. The architecture records the time from source incident publication to view update, cache invalidation, broker denial, containment, and fallback convergence. In a partition, policy chooses fail-closed, degrade, or bounded grace by risk class. The choice is visible in the contract rather than buried in runtime behavior.
+10 Evaluator architecture and epistemic security
+10.1 Evaluators are part of the attack surface
+In a self-improving system, evaluation is not a neutral afterthought. A candidate may:
+      * optimize against public benchmarks or leaked holdouts;
+      * alter test generation, scoring, or data selection;
+      * exploit implementation bugs in evaluators;
+      * influence the model that judges it;
+      * hide failures outside the tested profile;
+      * propose an evaluator update that retroactively favors it;
+      * behave differently when it detects evaluation;
+      * collude with evaluators that share a model, memory, provider, or training process.
+SCF therefore treats evaluators, datasets, rubrics, formal specifications, monitors, and aggregation policies as versioned artifacts with their own fields, evidence, dependencies, and incidents. An evaluation result is meaningful only with its evaluator closure and independence limitations.
+10.2 Evaluator portfolio
+No one evaluator class is sufficient. A mature portfolio can include:
+      * schema, type, and protocol checks;
+      * deterministic unit, integration, property-based, and metamorphic tests;
+      * formal verification of selected hard invariants;
+      * model checking or runtime verification of temporal protocols [47];
+      * statistical benchmarks with predeclared analysis;
+      * calibration and subgroup evaluation;
+      * adversarial and red-team scenarios;
+      * fault injection and dependency mutation;
+      * differential testing against anchors or trusted fallbacks;
+      * shadow and canary evidence;
+      * online drift, incident, and resource monitors;
+      * human or institutional review for value-laden or irreversible decisions.
+The portfolio is risk- and clause-specific. A pure planner may emphasize plan validity and calibration. A deployment field additionally needs authority, state, rollout, rollback, and supply-chain evaluation.
+10.3 Reference decision procedure
+A concrete policy avoids the ambiguity of “multiple evaluators passed.” The following reference procedure is deliberately conservative:
+      1. Integrity gate. Artifact identity, evaluator identity, environment, and evidence signatures must verify.
+      2. Hard-invariant gate. Any mechanically established violation rejects the candidate for the affected profile.
+      3. Protocol and authority gate. Undeclared effects, invalid state writes, or inadmissible authority reject activation.
+      4. Recovery gate. Required migrations, checkpoints, fallbacks, and containment drills must succeed within declared bounds.
+      5. Statistical gate. Predeclared metrics must satisfy profile-specific confidence or risk criteria. Catastrophic-tail observations cannot be averaged away by mean improvement.
+      6. Disagreement gate. Material unexplained evaluator disagreement triggers escalation, profile narrowing, or additional tests; it does not silently average to a pass.
+      7. Adaptive-search correction. Query history, candidate count, test reuse, and evaluator changes adjust the evidential strength.
+      8. Pareto decision. Only after gates pass may policy trade capability, cost, latency, interpretability, diversity, and metaproductivity.
+      9. Scoped claim. The result is a claim with assumptions, limitations, expiry, and transfer rules, not a global safety label.
+Fields may specialize the policy, but changes to vetoes, thresholds, or aggregation are evaluator-policy changes and receive governance independent of the candidate.
+10.4 Independence is a vector, not a Boolean
+Evaluator independence is represented as an overlap vector rather than independent=true. Dimensions include base model, provider, training data, synthetic-data lineage, prompt generator, memory, tools, operator, benchmark generator, candidate lineage, and infrastructure.
+At frontier scale, several dimensions may be unknown. Unknown is not interpreted as independent. High-risk policy can require a deterministic method, a different provider domain, an open-weight or locally controlled evaluator, protected external assets, human adjudication, or a narrower operational profile.
+The overlap vector should be empirically calibrated. A prototype should inject known faults and measure evaluator error correlation, ranking agreement, shared blind spots, and how much each diversity dimension reduces common-mode promotion failure. Administrative separation that leaves all roles descended from one opaque base model may provide little protection.
+No portfolio is presumed fully independent. The objective is to avoid avoidable single points of epistemic failure and to make remaining correlation an inspectable premise of qualification.
+10.5 Adaptive overfitting and evidence debt
+Sequential search against a stable evaluator turns the evaluator into training data. The system accumulates evidence debt as candidates, prompts, metrics, and analyses adapt to prior results. Controls include:
+      * query budgets and pre-registration for protected assets;
+      * rotating or regenerated holdouts;
+      * reusable-holdout mechanisms where appropriate [50];
+      * evaluation by distributions of scenarios rather than one fixed set;
+      * held-out incident classes and counterexample archives;
+      * delayed release of benchmark details;
+      * explicit correction or lower confidence after adaptive reuse;
+      * promotion criteria that include shadow and canary evidence unavailable at candidate-generation time.
+A candidate can still overfit the whole evaluation ecosystem. SCF makes this residual risk and the amount of adaptive access part of the qualification claim.
+10.6 Sealed evaluation services
+Protected holdouts conflict with reproducibility when raw assets must remain secret. A sealed evaluation service can provide:
+      * committed evaluator and dataset hashes;
+      * attestation of the execution environment;
+      * signed aggregate and subgroup results;
+      * query-budget enforcement;
+      * controlled access to failure exemplars;
+      * retention of raw traces under separate trust;
+      * later release after retirement where safe.
+The registry can reconstruct that a named evaluator ran against a committed asset and produced a signed result without exposing the asset to the candidate. This is weaker than universal public reproducibility but stronger than an opaque score with no provenance.
+10.7 Evaluator updates and dual-run rules
+When an evaluator changes, the system should ordinarily:
+      1. run old and new evaluators on anchor implementations;
+      2. include known-good, known-bad, adversarial, and incident-derived cases;
+      3. quantify ranking reversals, threshold changes, and subgroup effects;
+      4. investigate unexplained reversals;
+      5. maintain overlapping validity windows when possible;
+      6. prohibit retroactive reclassification of the candidate that motivated the evaluator change;
+      7. record which prior claims are preserved, narrowed, or invalidated.
+A joint candidate-and-evaluator update is treated as a composite constitutional change or is assessed by an additional external evaluator. Administrative separation alone does not prevent shared-model collusion, but it removes avoidable self-certification.
+10.8 Observability without treating private reasoning as ground truth
+SCF does not require hidden chain-of-thought to establish compliance. Operational accountability relies on externally checkable artifacts:
+      * inputs, outputs, citations, and typed failures;
+      * tool and state receipts;
+      * authority grants and denial events;
+      * plan artifacts and commitments;
+      * evaluator outputs and signed metrics;
+      * state transitions and migration records;
+      * resource and latency telemetry;
+      * approval and route receipts.
+Internal reasoning traces can be used as research signals where lawful and appropriate, but they are not assumed faithful, complete, or necessary for the core properties.
+11 Governed self-improvement lifecycle
+11.1 Improvement as a governed transaction
+A generated candidate is not yet an improvement. Operational promotion requires exact content identity, stage-appropriate evidence, a current qualification claim, state solvency, a bounded authority grant, a qualified fallback or explicit irreversibility declaration, a route receipt, a signed authorization, observed rollout, and recorded consequences.
+The lifecycle is a sequence of immutable claims and decisions, not one mutable ticket. Initial evaluation supports sandbox or shadow. Shadow results support canary. Canary results support production. Each stage can add conditions, narrow the profile, or fail without rewriting prior evidence.
+The word transaction refers to the logical authorization commit. Physical rollout across services, caches, databases, models, and tools is a distributed saga. It may partially fail, time out, contain, compensate, or leave residual effects.
+ Governed lifecycle separating research and qualification, signed stage authorizations, distributed activation, observed convergence, containment, and recovery. 
+
+Governed lifecycle separating research and qualification, signed stage authorizations, distributed activation, observed convergence, containment, and recovery.
+Figure 3. Stage-specific claims and authorizations precede a fallible rollout. Approval is followed by final revalidation; activation must reach observed convergence before its deadline or enter a typed containment outcome.
+11.2 Stage 1: propose
+A proposal states:
+      * target fields and contract revisions;
+      * improvement hypothesis and expected tradeoffs;
+      * candidate-generation method and lineage;
+      * requested authority and reachable effects;
+      * dependency, provider, and state changes;
+      * likely impact cone;
+      * evaluation, migration, shadow, and canary plan;
+      * fallback and incident strategy;
+      * whether any contract, evaluator, policy, or trust-root change is required.
+The proposal separates implementation change from semantic change. A candidate that needs a weakened postcondition or broader authority cannot disguise it as a routine implementation update.
+11.3 Stage 2: register immutable revision
+All behaviorally material artifacts and recipes are registered before final qualification. The revision binds source, binary or container, model and prompt identifiers, dependencies, data policy, configuration, state support, requested authority, and provenance. Evaluation results cannot be attached to a slightly different deployment artifact without a new revision or explicit equivalence proof.
+Opaque remote services are registered as service claims with shorter validity and fingerprints rather than falsely content-addressed weights.
+11.4 Stage 3: analyze the impact cone
+The registry computes affected:
+      * callers and consumers;
+      * dependencies and dependents;
+      * shared weights and implementation bundles;
+      * state schemas and migrations;
+      * tools, authority rules, and information flows;
+      * evaluators and protected assets;
+      * deployment profiles, routes, and fallbacks;
+      * system invariants and constitutional policies.
+The impact cone is property-sensitive. Unknown dependencies widen the cone. The result determines evaluator requirements, rollout scope, approval threshold, and evidence that can be reused.
+11.5 Stage 4: build and isolate
+The candidate is built or trained in a controlled environment with provenance attestations. Candidate-generated build scripts receive no production credentials and minimal connectivity. Training and evaluation data access is separately authorized. The output is scanned, content-addressed, and linked to the registered revision.
+This stage is explicit because supply-chain integrity and behavioral qualification are different. An artifact can pass behavioral tests and still be untrustworthy if the deployed bytes are not the tested bytes.
+11.6 Stage 5: qualify
+The evaluator portfolio runs clause-specific deterministic, formal, statistical, adversarial, integration, and recovery checks. Negative, flaky, and inconclusive results are retained. Hard constraints are decided before Pareto ranking. The decision procedure produces one or more profile-scoped claims rather than a universal status.
+Qualification may reject, condition, narrow, or expire a claim. A strong candidate can remain sandbox-only when evidence is insufficient for operational authority.
+11.7 Stage 6: rehearse state, containment, and recovery
+Migrations run against snapshots or synthetic copies. Rehearsal checks:
+      * schema and semantic compatibility;
+      * invariants and loss bounds;
+      * concurrency and partial-failure behavior;
+      * checkpoint restore and forward replay;
+      * fallback state readability;
+      * authority revocation and process termination;
+      * external-effect compensation;
+      * recovery time and operator readiness.
+A recovery plan is evidence only after a drill. Recovery procedures that depend on the candidate under test are flagged as correlated.
+11.8 Stage 7: authorize and run shadow
+Shadow is a real authorization even when it has no external effect authority. It may read production data, consume compute, retain inputs, write evaluation stores, and attack the test infrastructure.
+A shadow claim and grant therefore bind exact artifact and contract identities, role-specific profile, permitted data classes, sampling policy, isolation boundary, retention and deletion rules, evaluator assets, compute budget, no-real-effect capabilities, lease, and incident response. Shadow output cannot influence users or tools except through a separately authorized evaluation channel.
+After shadow execution, observations are appended and a new immutable canary-eligible qualification claim is issued if the decision procedure passes. The original claim is not mutated.
+11.9 Stage 8: authorize and run canary
+A canary has bounded real authority and is therefore an operational promotion. Its grant must attenuate production along all required dimensions and satisfy a risk-class consequence budget. Merely changing one number by one unit is insufficient.
+The authorization binds maximum population, irreversible effects, spend, duration, data sensitivity, destinations, state partition, recovery time, and common-mode exposure. It also binds the fallback claim and capacity, state checkpoint, abort policy, monitoring cadence, observation quorum, and expiry.
+Canary evidence is appended as source events. A new production-eligible claim is issued only after hard gates, statistical gates, recovery evidence, and disagreement policy pass. A failed canary remains evidence; it is not erased by a later contract or evaluator change.
+11.10 Stage 9: authorize production
+The untrusted proposer builds the production route from exact content identities and role-specific profiles. The root validates it against a current event-derived view and issues a short-lived receipt. Threshold or risk-based approvals are collected over the receipt and premise read set.
+Because approval takes time, the root performs one final validation immediately before the authorization commit. It rejects if any cited claim, waiver, provider fingerprint, grant, fallback, state relation, policy, trust root, view watermark, or approval has changed or expired.
+The signed authorization binds the proposal hash, accepted claim and waiver IDs, grants per member, state paths, fallback capacity, monitors, consequence budget, activation deadline, observation quorum, policy and validator revisions, source-log head, view hash, expiry action, and threshold signatures.
+11.11 Stage 10: activate and observe convergence
+The orchestrator begins a distributed activation saga. Authorization does not imply that all instances have converged. Each observed-active instance must produce a receipt citing the prior authorization, deployed artifact hash, state binding, grant, configuration, and observation time.
+The saga has a maximum duration and required observation quorum. Unreachable or divergent instances are contained, denied new leases, or rolled back according to the signed policy. If authorization expires during rollout, no new instance may activate and existing effect leases are narrowed or revoked.
+The stage ends with one typed outcome: observed active; contained and recovered; contained with residual effects; activation failed; or recovery failed. Every outcome is appended. A contained failure is not falsely asserted to be an observed-active success.
+11.12 Stage 11: monitor, renew, narrow, or expire
+Online evidence updates the claim view. Monitors detect:
+      * contract and protocol violations;
+      * resource and authority anomalies;
+      * distribution and provider drift;
+      * state corruption or undeclared writes;
+      * evaluator disagreement;
+      * incident classes shared by dependencies or lineages;
+      * adaptation-envelope breaches.
+Claims, grants, and routes expire independently. Renewal can preserve, narrow, or revoke a claim. High-risk routes fail closed when required evidence cannot be refreshed.
+11.13 Stage 12: contain, recover, compensate, or quarantine
+On violation or uncertainty, the system:
+      1. revokes or attenuates authority;
+      2. stops new routing;
+      3. preserves evidence and adaptation journals;
+      4. isolates the implementation and implicated dependencies;
+      5. selects a qualified fallback;
+      6. restores, adapts, or replays state where possible;
+      7. compensates external effects where defined;
+      8. invalidates related claims through property-sensitive impact edges;
+      9. records observed enforcement and recovery outcome.
+Containment is not complete until revocation and route changes are observed. A failed recovery procedure becomes an incident against the procedure itself.
+11.14 Stage 13: retire, revise, or fork
+Retired revisions remain in lineage and evidence history. They may remain research ancestors or, while separately qualified, operational fallbacks. Privacy policy may permit deletion of raw data or artifacts while preserving cryptographic tombstones and decision records.
+A failed candidate is not erased. Open-ended search may retain it as a stepping stone without granting production authority.
+11.15 Rollback is a graph, not a button
+Recovery asks:
+      * Can the old implementation interpret current state?
+      * Is there a reverse migration, compatibility adapter, or checkpoint restore?
+      * Which writes occurred after the checkpoint, and can they be replayed?
+      * Which dependent fields must move together?
+      * Which tool grants and policies must be restored?
+      * Which external effects require compensation?
+      * Has the previous fallback itself remained qualified?
+The recovery graph can include forward fixes, reverse migrations, adapters, snapshots, replays, compensation, and quarantine. A change with irreversible effects may still be authorized, but the decision must say that rollback cannot restore the prior world.
+12 Cross-field composition and emergent risk
+12.1 Local conformance does not imply global safety
+An implementation can satisfy its local contract while participating in a dangerous system composition. A planner may generate only plans, but a tool router and executor can turn a harmless-looking output into an irreversible action. Two fields may each have acceptable authority while their combination permits secret exfiltration. Multiple adaptive fields can create feedback loops absent from any local test.
+SCF therefore distinguishes local substitution claims from system-level integration claims. Local qualification is necessary, not sufficient, for activation in a route whose dependency closure or authority composition has changed.
+12.2 Operational assume-guarantee contracts
+Cross-field composition uses explicit assumptions and guarantees, but assumptions are not static documentation. Each material assumption names its provider, evidence or enforcement mechanism, runtime monitor, validity interval, and failure response.
+For a planner-executor-broker chain:
+Assumption
+	Provider
+	Evidence or enforcement
+	Failure response
+	Planner marks irreversible steps
+	Planner
+	Statistical tests plus reference cases
+	Executor requires approval for every uncertain step
+	Adapter preserves effect tags
+	Adapter
+	Deterministic transformation proof and mutation tests
+	Route blocked
+	Executor checks authorization token
+	Executor
+	Runtime state-machine monitor
+	Effect denied and incident raised
+	Token cannot be self-minted
+	Broker
+	Mechanically enforced caller-bound capability
+	Hard denial
+	Approval is current at call time
+	Broker and clock
+	Lease and revocation check
+	Revalidate or deny
+	In symbolic form, each component exposes . Composition is accepted only when every required assumption is discharged by another guarantee or an external root premise, and the connecting adapters preserve the relevant property. Runtime monitors reopen qualification when an assumption that held during evaluation becomes false.
+This reasoning is tractable only for declared properties. Learned feedback loops and unmodeled semantics remain subject to integration testing, runtime observation, and conservative authority.
+12.3 Invariant classes
+System-level invariants should be classified by what can actually enforce them.
+Table 5. Composition-level invariant classes.
+Class
+	Example
+	Mechanism
+	Statically enforceable
+	No direct secret-to-network route
+	Capability graph, policy analysis, information-flow rules
+	Runtime enforceable
+	Irreversible call requires approval token
+	Broker/reference monitor
+	Trace-monitorable
+	Every durable write is attributable to an implementation revision
+	Event and state monitor
+	Statistical
+	End-to-end error or harm rate remains in a profile envelope
+	Online evaluation and confidence process
+	Governance-only
+	Evaluator cannot approve its own replacement
+	Threshold and role policy
+	Open-world / aspirational
+	No strategic deception across long horizons
+	Diverse evaluation, AI control, monitoring; no complete guarantee
+	The table prevents the word invariant from implying that every desirable property is mechanically guaranteed.
+12.4 Discovering toxic combinations
+Known toxic combinations can be found through capability algebra, attack graphs, model checking over finite policy state, red-team search, counterexample generation, incident mining, causal dependency analysis, and adversarial simulation. The registry records which method, policy revision, and evidence produced each combination rule.
+Discovery is incomplete in general. The root therefore checks only declared combinations and certificates; it does not claim to solve open-world composition. Unknown combinations are controlled indirectly through least authority, purpose limitation, consequence budgets, separation of proposal and promotion, route diversity, short leases, and incident response.
+The empirical program includes omitted-combination mutations and measures whether integration tests, monitors, or impact analysis discover them before unsafe activation. A system that merely stores an elegant capability lattice without testing catalog completeness has not solved composition risk.
+12.5 Dependency closure and common-mode failure
+Qualification follows the behaviorally relevant dependency closure, including models, prompts, tools, policies, state stores, providers, and shared infrastructure. The closure can be represented at several granularities: exact artifact hash, service claim, behavioral interface, or property-specific compatibility class.
+Shared dependencies create common-mode risk. A primary and fallback that use the same provider or base model are not independent for provider outage or model-family failure. Route construction records and, where required, limits such overlap.
+12.6 Atomic multi-field changes and bundles
+Some changes are indivisible: a new planner protocol may require a new executor and state schema; a joint harness-and-weight update may only make sense as a composite [7]. SCF represents the change as a bundle with:
+      * joint contract and dependency closure;
+      * composite authority and effect analysis;
+      * coordinated migration and rollback graph;
+      * bundle-level qualification claims;
+      * explicit statement that individual fields cannot be independently reverted.
+The bundle avoids false modularity. It also exposes the larger blast radius and stronger governance threshold.
+12.7 Integration envelopes
+Before full composition evidence exists, policy can authorize an integration envelope that bounds:
+      * fields and versions allowed to interact;
+      * request and data classes;
+      * authority combinations;
+      * state partitions;
+      * time, rate, and resource budgets;
+      * required monitors and fallback paths.
+The envelope is the composition analogue of an adaptation envelope. It allows controlled evidence collection without treating untested system behavior as globally qualified.
+13 Evolution of abstractions, governance, and institutional power
+13.1 Change strata
+Not all changes deserve the same ceremony. SCF uses strata:
+Stratum 0 - operational selection. Choose among already qualified implementations and grants for a request.
+Stratum 1 - implementation revision. Change code, prompt, weights, service, or configuration behind an unchanged contract.
+Stratum 2 - evaluator, monitor, migration, or routing-policy revision. Change how evidence, state transitions, or selection are produced.
+Stratum 3 - contract revision. Change the capability’s normative meaning, authority ceiling, failure semantics, uncertainty, state obligations, or effect surface.
+Stratum 4 - field topology and constitutional policy. Split or merge fields; change promotion rules, trust domains, emergency powers, or the root enforcement interface.
+Stratum 5 - trust-root or recovery-root revision. Change keys, threshold membership, the root validator, broker semantics, log verification, or offline recovery procedure.
+Higher strata require progressively stronger independence, parallel operation, migration, threshold approval, and external review. The strata are not a claim that governance is infallible; they make semantic and institutional escalation visible.
+13.2 Contract evolution
+Contract changes are classified by exact semantics, not labels alone:
+      * patch: clarification or verifier improvement with no intended change to valid caller-visible behavior;
+      * minor: additive behavior that existing consumers are demonstrated to tolerate;
+      * major: changed preconditions, guarantees, effects, authority, state, failures, or uncertainty semantics.
+Old and new major versions may coexist. Adapters are implementations with their own contracts and evidence. A default change can be breaking even when the schema is additive. Consumer compatibility is tested explicitly.
+13.3 Preventing goalpost mutation
+Contract, evaluator, threshold, and policy changes can redefine success. The architecture therefore separates their transactions, identities, approvals, and effective dates from implementation promotion. The motivating candidate remains frozen; anchor artifacts and protected counterexamples are dual-run under old and new rules; semantic diffs and affected claims are published.
+Separate organizations or agent instances are not automatically independent. For high-risk changes, the amendment record includes cognitive overlap among candidate, contract synthesizer, evaluator, impact analyzer, and approvers. Shared opaque base-model lineage, data, provider, memory, or prompt generation can trigger extra external review, sealed evidence, longer timelocks, or a new major field version.
+The mechanism prevents silent self-ratification. It cannot ensure that a correlated institution reaches the right normative judgment.
+13.4 Field split, merge, and boundary evolution
+A field may split when implementations, state, authority, or evaluation cadence diverge. Fields may merge when independent routing and recovery are illusory. The change requires:
+      * mappings between old and new contracts;
+      * state-ownership transfer;
+      * route and dependency migration;
+      * preservation of evidence lineage;
+      * treatment of old qualification claims;
+      * updated incident and recovery procedures.
+The old field identity is not silently reused for a different meaning. Alias and supersession edges preserve history.
+13.5 Federation and local sovereignty
+A global SCF ecosystem can use federated registries and trust domains rather than one central authority.
+ Federated qualification architecture with portable evidence and local authorization. 
+
+Federated qualification architecture with portable evidence and local authorization.
+Figure 4. Portable identity is not portable qualification. Evidence and incidents can propagate in both directions; each domain retains attributable local interpretation, appeal, waiver, and activation authority.
+Federation rules include origin-signature preservation, local interpretation without rewriting source claims, explicit non-verification statements, subscribed incident and revocation feeds, appeal forums, cross-log consistency commitments, fork attribution, and emergency-action reconciliation.
+A local domain can reject imported evidence or continue operation after another domain revokes, but it must record the divergence, trust path, timing, and consequence. Cross-registry incident sharing should support confidential details, selective disclosure, and later public closure. Coordination races remain an institutional problem, not a database bug.
+13.6 Power concentration and constitutional legitimacy
+The registry, membership epoch, promotion authority, and recovery root are high-value control points. Cryptography can enforce who signed a change; it cannot decide who ought to hold those keys. SCF therefore represents institutional design as part of the architecture: accountable owners, conflict rules, appeals, audit access, jurisdiction, selection and removal procedures, and limits on unilateral emergency power.
+A constitutional membership epoch contains fixed public-key identities, role classes, threshold policy, quorum-diversity constraints, transparency-log commitment, timelock, predecessor epoch, and effective interval. Signer multiplicity is counted by registered identity, not network account or self-declared agent. Duplicate or newly invented keys do not satisfy a threshold.
+Membership changes are authorized under the old epoch, included in the transparency log, delayed for challenge, and activated only after the timelock. Depending on risk, a policy can require geographic, organizational, or stakeholder-class diversity in addition to an -of- signature threshold. Threshold schemes such as FROST can reduce key-handling risk, while Byzantine-consensus protocols can coordinate replicated decision services; neither substitutes for legitimate membership design.
+13.7 Emergency governance
+Emergency action is intentionally asymmetric. A recovery authority may narrow grants, freeze adaptation, revoke routes, isolate state, select a pre-qualified recovery route, or preserve evidence. It may not broaden ordinary authority, add governors, weaken non-waivable clauses, erase events, or permanently amend the constitution.
+Every emergency authorization binds a reason, affected fields, maximum authority, recovery target, short expiry, and mandatory ratification deadline. Extended operation requires the normal threshold and timelock or a separately defined high-threshold emergency constitution. Failure to ratify causes automatic expiry or continued safe-state containment.
+A fast rogue implementation cannot create a Sybil majority because the root accepts signatures only from the fixed membership epoch already committed by the predecessor. The remaining threats are key compromise, coercion, collusion, denial of governance, and illegitimate membership selection; those require institutional as well as cryptographic controls.
+14 Trusted computing base and bootstrap architecture
+14.1 Root, governed meta-layer, and capability layer
+SCF separates four trust strata.
+      1. Minimal root. Verifies content hashes, signatures, transparency/event-chain commitments, leases, revocation epochs, deterministic transition certificates, and recovery-boot identity. It can deny, revoke, and load a protected route.
+      2. Certified policy layer. Compiles richer qualification closure, authority policy, state-path, route-role, and consequence-budget reasoning into content-addressed certificates that the minimal root can check.
+      3. Governed intelligent meta-layer. Replaceable services propose routes, synthesize risk analyses, select evaluators, plan migrations, infer reliance annotations, and discover toxic combinations. Their outputs do not grant authority without certified validation.
+      4. Capability layer. Planners, memories, model routers, code agents, evaluators, tool selectors, and other domain fields.
+ Trust stratification across constitutional governance, governed meta-services, root enforcement, and replaceable capability fields. 
+
+Trust stratification across constitutional governance, governed meta-services, root enforcement, and replaceable capability fields.
+Figure 5. Rich reasoning produces certificates above the root. The minimal root checks identity, leases, transition authorization, revocation, and recovery. A separate clock or logical-time source and protected recovery root are explicit trust dependencies.
+14.2 Responsibilities of the root enforcement layer
+The minimal root should perform only mechanically checkable operations:
+      * verify exact content hashes, signatures, membership epochs, event-chain links, and view commitments;
+      * check lease, expiry, revocation, and monotonic transition certificates;
+      * bind caller-, request-, route-, purpose-, destination-, and time-scoped grants;
+      * enforce hard capability and consequence ceilings;
+      * deny unknown transitions or missing certificates;
+      * record validation and effect receipts;
+      * revoke leases and load a content-addressed recovery configuration.
+The certified policy layer may check richer finite semantics: claim closure, profile-witness coverage, role-specific route rules, state-path certificates, waiver eligibility, and declared toxic combinations. It should itself be versioned, constrained, and independently reviewed.
+Neither layer generates plans, judges open-ended semantic fidelity, discovers all dangerous combinations, or determines institutional values. Moving those problems outside the root is the reason the root can remain auditable; it is not evidence that the problems are solved.
+14.3 Effective trusted computing base
+The effective trusted base includes every component required for a claimed property. It should be measured by lines of privileged code, policy-language size, number of semantic rules, proof obligations, mutable state, privileged interfaces, dependency count, external trust services, recovery paths, and independently verified components.
+Property
+	Required trusted components
+	Artifact and decision identity
+	Hash/signature verifier, membership epoch, key management, event log, transparency commitment
+	Time-bounded invocation
+	Clock or logical-time source, lease verifier, revocation epoch, broker
+	Bounded authority
+	Broker, capability representation, isolation boundary, consequence-budget checker
+	Direct declared flow restriction
+	Broker, source/sink labels, destination policy, declassification gate; no semantic noninterference claim
+	Qualification closure
+	Event-derived view, certified policy checker, dependency graph, incident channel
+	Reconstructable authorization
+	Source log, view-function identity, receipt generation, signer identity
+	State-aware activation
+	State store, solvency certificate, snapshot/replay service, orchestrator observations
+	Fail-closed containment
+	Revocation propagation, route-cache invalidation, broker, recovery loader, fallback identity and capacity
+	Constitutional change
+	Membership epoch, threshold verifier, transparency inclusion, timelock, predecessor authorization
+	A paper should not call the TCB small by omitting the clock, key system, isolation boundary, log derivation, or recovery service from the property argument.
+14.4 Bootstrap and self-upgrade
+The normal contextual ranker, evaluator selector, and impact analyzer are fields. The root validator is not routed by that same ranker during its own upgrade. Root changes use a stronger ceremony:
+      1. build and verify the candidate root in an isolated environment;
+      2. run conformance tests, proofs where feasible, fault injection, and differential replay;
+      3. dual-run old and new roots over recorded and live shadow decisions;
+      4. require threshold authorization from recovery trustees;
+      5. install the candidate in a dormant slot with immutable rollback media;
+      6. activate under a narrow test domain;
+      7. preserve an offline or independently controlled recovery path;
+      8. expand only after observed convergence.
+Trust-root key changes, log-format changes, and recovery-loader changes are separate operations with cross-signing or threshold transition rules. A root cannot unilaterally declare its own replacement valid.
+14.5 Recovery root
+The recovery root contains the smallest known configuration capable of:
+      * verifying a protected registry snapshot or offline manifest;
+      * revoking active grants;
+      * disabling adaptive updates;
+      * routing to a conservative fallback or shutdown mode;
+      * mounting compatible state or a checkpoint;
+      * preserving incident evidence;
+      * accepting threshold-authorized repair.
+The recovery root may sacrifice capability. Its objective is controllable degradation, not normal performance.
+14.6 Incremental adoption without shrinking the architecture
+A new system need not instantiate every evaluator and federation mechanism on day one. Adoption proceeds by assurance growth:
+Seed stage. Define a small number of high-value fields; content-address contracts and implementations; separate route proposals from validation; mediate tool grants; record signed lifecycle events.
+Operational stage. Add profile-scoped claims, state migrations, shadow/canary authorization, incident invalidation, fallbacks, and materialized views.
+Recursive stage. Add evaluator fields, contract synthesis, adaptation envelopes, multi-field impact cones, threshold constitutional governance, federation, and root dual-running.
+This is not a smaller definition of SCF. It is a migration path toward the full substrate. The semantics are chosen early so that later assurance mechanisms can attach without replacing the registry model.
+15 Threat model and failure analysis
+15.1 Adversary and fault assumptions
+SCF is intended to operate under both ordinary faults and adversarial pressure. Potential adversaries include:
+      * a candidate implementation seeking promotion or broader authority;
+      * an active implementation seeking to preserve its route;
+      * a compromised evaluator, provider, build system, signer, operator, or registry replica;
+      * colluding components that share models, data, memory, or incentives;
+      * an external attacker exploiting tools, state, supply chains, or governance processes;
+      * a strategically capable system that understands the architecture and searches for gaps.
+The architecture assumes, conditionally, that some enforcement substrate remains outside the candidate’s unilateral control. If a candidate can rewrite the broker, forge signatures, alter the recovery root, and erase external logs without detection, the stated properties do not hold.
+15.2 Threat categories
+Table 7. Threats, mechanisms, and residual risks.
+Category
+	Threat
+	SCF mechanism
+	Residual risk
+	Semantic
+	Candidate appears compatible while changing task meaning
+	Content-addressed contracts, consumer tests, versioned majors, goalpost firewall
+	Contracts remain incomplete; subtle semantic drift can pass tests
+	Semantic
+	Contract synthesis weakens obligations to fit a candidate
+	Separate transactions, anchor dual-runs, no retroactive certification
+	Independent reviewers can still share blind spots or incentives
+	Evidence
+	Benchmark overfitting or contamination
+	Query budgets, protected holdouts, adaptive-search accounting, canary evidence
+	The wider evaluation ecosystem can still be learned or inferred
+	Evidence
+	Evaluator capture or collusion
+	Independence vector, portfolio diversity, role separation, dual-run updates
+	Shared foundation models and opaque training data limit true independence
+	Evidence
+	Conflicting evaluators are averaged into a pass
+	Explicit veto, dispute, and escalation policy
+	Decision policy can itself be wrong or captured
+	Evidence
+	Compromised signer or build system
+	Provenance, threshold roles, revocation, impact invalidation
+	Delayed compromise discovery permits exposure before revocation
+	Registry
+	History rewritten or views equivocate
+	Hash-chained events, signatures, transparency commitments, consistency proofs
+	Private or partitioned domains may hide forks temporarily
+	Registry
+	Evidence graph becomes too large to operate
+	Hot/warm/cold tiers, materialized views, property-sensitive indexes
+	Retention, privacy, and reproducibility remain in tension
+	Authority
+	Replacement inherits predecessor privileges
+	Explicit requested authority, contextual admissibility, broker leases
+	Bypass paths or incomplete mediation defeat the claim
+	Authority
+	Individually legal capabilities combine dangerously
+	Toxic-set policy, information-flow rules, integration testing
+	Novel compositions and covert channels may be missed
+	Authority
+	Time-of-check/time-of-use race
+	Short leases, phase revalidation, revocation receipts
+	Long or externally committed operations can outlive revocation
+	State
+	Migration corrupts meaning while preserving schema
+	Semantic probes, snapshots, dual-run, fallback rehearsal
+	Learned and compressed state can be hard to validate
+	State
+	Old fallback cannot read new state
+	Reachable migration graph, checkpoint, adapter qualification
+	High write volume may make replay or restore impractical
+	Effects
+	“Rollback” ignores irreversible outcomes
+	Effect taxonomy, pre-action controls, compensation plans
+	Irreversible harm cannot be undone
+	Remote service
+	Hosted model silently changes
+	Short-lived opaque-service claims, fingerprints, sentinels, diversity
+	Behavioral drift may evade probes; exact model identity remains unknown
+	Adaptation
+	Online learner drifts between promotions
+	Adaptation envelope, sentinels, risk budget, checkpoints, sealed epochs
+	Small updates can cause abrupt behavior before detection
+	Routing
+	Learned resolver proposes an unsafe route
+	Root validator checks admissibility only
+	Validator policy may omit a relevant condition
+	Composition
+	Locally compliant fields create emergent failure
+	Assume-guarantee claims, integration envelopes, multi-field adversarial tests
+	State space and open-world behavior can be intractable
+	Governance
+	Registry or trust-root control is captured
+	Threshold signatures, federation, transparency, expiring emergency powers
+	Key holders and institutions can still coordinate maliciously
+	Recovery
+	Active system disables or corrupts fallback
+	Protected recovery root, offline media, independent trustees
+	Physical access, shared infrastructure, or prior compromise can defeat recovery
+	Privacy
+	Auditability retains sensitive data indefinitely
+	Minimization, encryption, selective disclosure, tombstones
+	Some evidence cannot be both fully reproducible and fully deleted
+	Strategic
+	Candidate behaves well during evaluation and defects later
+	Hidden tests, control, canaries, monitors, limited authority
+	A superior deceptive system may evade all available tests
+	15.3 Evaluator and candidate collusion
+Administrative role separation is insufficient when candidate and evaluator share a base model, provider, memory, or generated data. A candidate can encode a trigger that the evaluator fails to exercise; an evaluator can learn to endorse artifacts from its own lineage; a shared provider can alter both.
+Mitigations include:
+      * method diversity rather than merely agent-count diversity;
+      * protected anchors and incident-derived tests;
+      * evaluators from different providers or architectures where feasible;
+      * deterministic and formal checks for narrow properties;
+      * runtime evidence that the candidate could not access during generation;
+      * external human or institutional approval for high-consequence changes;
+      * route diversity and authority ceilings that limit the consequence of epistemic failure.
+SCF does not claim to solve collusion at frontier scale. It makes shared dependencies and independence limitations explicit and removes the easiest self-certification paths.
+15.4 Registry, governance, and institutional capture
+Centralization creates a bottleneck and a target. Federation, threshold authorization, and transparency logs distribute some risk, but they also introduce coordination failures, inconsistent local policies, and revocation latency. A federation can fragment into incompatible trust domains; a global registry can become coercive.
+The architecture therefore supports plural local qualification and attributable forks. It does not require one universal authority. Interoperability is preserved at the level of artifact identity, evidence formats, and signed interpretations, while activation remains local.
+15.5 Denial of governance and bureaucratic capture
+A different failure mode is paralysis. Attackers can flood the registry with proposals, force expensive impact analyses, trigger broad invalidation, or exploit conservative policy to prevent useful improvement. Institutions can use “safety” ceremony to protect incumbents or suppress competitors.
+Mitigations include:
+      * rate limits and proposal bonds;
+      * risk-proportional assurance tiers;
+      * reusable evaluator and migration assets;
+      * property-sensitive invalidation;
+      * appeals and competing qualification authorities;
+      * transparent reasons for rejection;
+      * time-bounded review and emergency narrow authorizations;
+      * measurement of governance delay as a first-class performance metric.
+Governance overhead is not merely an engineering cost; it can be a power mechanism. SCF’s auditability should apply to denials and delays as well as promotions.
+15.6 Strategic deception and limits
+A sufficiently capable system may infer hidden tests, manipulate human reviewers, shape its environment, or wait until authority expands. SCF reduces the consequences of some failures through authority bounds, staged activation, diversity, and recovery. It does not establish that deception will be detected.
+The strongest claim available is conditional containment: if enforcement remains sound, if authority is genuinely mediated, and if the dangerous behavior requires effects outside the granted envelope, then the architecture can block or limit those effects even when the reasoning behind them is deceptive. When the allowed envelope itself is enough to cause catastrophic harm, SCF provides audit and process but not safety.
+16 Conditional safety properties and proof sketches
+The following properties are design invariants over the formal state model. They are conditional proof sketches, not complete proofs of an implemented production system.
+16.1 Bounded authority
+Property. No invocation receives authority beyond the exact caller-bound grant accepted under the current route, profile, policy, consequence budget, and lease.
+Assumptions. Content identities and signatures are sound; the broker and isolation boundary cannot be bypassed; revocation and time checks are current; the declared policy catalog contains the relevant hard constraints; and tools honor the capability representation.
+Argument. The root issues no effect token unless Admissible holds. Tokens bind caller, request class, route, purpose, destination, quota, delegation, consequence ceiling, and expiry. Reuse by another caller or after a material event fails validation.
+Failure boundary. This property prevents privilege inheritance and known forbidden direct paths. It does not prevent a model from choosing harmful actions inside the grant, encoding secrets in permitted content, exploiting a covert channel, or benefiting from an undiscovered toxic combination.
+16.2 Qualification closure
+Property. Every operational route member has a usable qualification claim for the route’s contract, target profile, dependency closure, state relation, and time.
+ActiveRoute(r, Sigma) implies every route member is
+Qualified for (r.C, r.d, t)
+Assumptions. The validator receives a fresh materialized view; dependency identities and incidents are accurately reported; profile-transfer witnesses are correctly checked.
+Argument. authorizeShadow, authorizeCanary, and authorizeProduction require route validation. beginActivation requires a valid authorization record. Material events invalidate the relevant view and leases. Therefore activation without closure is rejected or expires.
+Failure boundary. Undeclared dependencies, unobserved provider drift, stale caches that fail open, or incomplete claim reliance can make a formally valid route behaviorally stale.
+16.3 Reconstructable authorization
+Property. A reviewer can reconstruct why a route was authorized from immutable identities, claims, evidence references, policy revisions, signers, and the registry watermark.
+Assumptions. Hash and signature primitives hold; required evidence is retained or committed; log derivation is deterministic; clocks and signer identities are auditable.
+Argument. Every authorization event binds the content hashes, qualification claims, policy, route, grants, state checkpoint, monitors, expiry, and approvers. Later corrections append events rather than overwriting the decision. The same validator revision can replay the admissibility result.
+Failure boundary. Deleted raw evidence can prevent full behavioral reproduction even when the decision record remains reconstructable. Opaque remote models can prevent exact output replay.
+16.4 Recoverable activation within a declared boundary
+Property. For an activation labeled recoverable, the system has a rehearsed path from the candidate state to an authorized fallback, restore, replay, adapter, or compensation state within declared objectives.
+Assumptions. Checkpoints are valid; recovery infrastructure is independent enough to function; external effects are correctly classified; fallback claims remain valid.
+Argument. Production authorization requires recovery evidence and binds the exact checkpoint, fallback, migration, and compensation plan. The root can revoke and load the recovery route. Drills test the path before activation.
+Failure boundary. Irreversible effects, corrupted checkpoints, shared-infrastructure failure, or post-promotion writes beyond the recovery design can exceed the boundary. The property is explicitly scoped, not universal reversibility.
+16.5 Local substitutability
+Property. A replacement that refines the contract for a consumer profile can be substituted without violating obligations represented in that contract and validated by its evidence.
+Assumptions. The contract captures the relevant obligations; consumer compatibility is tested; hidden dependencies are absent; statistical evidence transfers to the target profile.
+Argument. Route validation checks the exact contract, profile, state, authority, dependency, and failure semantics. Adapters are separately qualified. Under the assumptions, the replacement does not strengthen caller obligations or weaken relied-upon guarantees.
+Failure boundary. Underspecified semantics, open-world distribution shift, or emergent cross-field behavior can violate unrepresented obligations. This is why the paper does not equate local substitution with global safety.
+16.6 Goalpost separation
+Property. A candidate cannot become authorized solely by modifying the contract, evaluator policy, or trust root that rejected it in the same unseparated transaction.
+Assumptions. Change classification and threshold roles are enforced; historical evidence is immutable; the motivating candidate remains frozen.
+Argument. Contract, evaluator, and root changes use higher strata, dual-run anchors, and separate authorization events. The motivating candidate is not retroactively certified. It must be re-evaluated after the normative change becomes independently active.
+Failure boundary. Colluding approvers can authorize both changes; the property prevents procedural self-ratification, not institutional capture.
+16.7 Adaptation-envelope containment
+Property. A fast-loop update cannot alter the pinned updater, approved data policy, authority ceiling, tool/effect semantics, cumulative budgets, sentinel policy, or baseline without sealing the epoch and entering slow-loop qualification.
+Assumptions. The adaptive state is isolated; update and data receipts are authentic; journal commitments cannot be bypassed; the broker enforces the fixed grant; sentinels and revocation paths operate within their declared latency.
+Argument. Each accepted update extends the journal and consumes budget. A forbidden change, sentinel failure, budget breach, or scheduled boundary seals the epoch and revokes its token. A qualified baseline remains available before adaptive authority is granted.
+Failure boundary. The envelope constrains mechanics, authority, effects, and response. It does not bound all behavior between sentinel observations. A discontinuity can cause harm inside the permitted envelope before detection; the maximum tolerable consequence therefore determines authority and observation cadence.
+16.8 Federated local authority
+Property. Importing an artifact or external qualification claim does not by itself grant local operational authority.
+Assumptions. The local validator accepts only locally issued or explicitly trusted qualification claims and grants.
+Argument. Publication and verification events populate discovery views, but authorize* transitions require a local profile claim, policy, and signer set. Origin evidence can support the local claim without replacing it.
+Failure boundary. A local policy can intentionally delegate qualification to a remote authority. That delegation becomes an explicit local governance choice and concentration risk.
+16.9 Limits of the properties
+The properties are conditional consistency and containment claims, not proofs of benevolence or complete behavioral conformance. They can fail when contracts omit relevant semantics; evidence is strategically deceived; reliance annotations understate dependencies; semantic migration is uncertified; permitted content leaks information; institutions collude; cryptographic or isolation assumptions fail; or a physical effect exceeds the declared model.
+The validator’s narrowness is achieved by checking declared certificates. It cannot establish that the certificate-generating process discovered every hazard. The public reference kernel tests the consistency of this authorization model; it does not independently prove the model correct. These limits are not reasons to remove the architecture. They define where additional alignment, control, formal methods, security engineering, and institutional governance must connect.
+17 Reference implementation, operational cost model, and scalability
+17.1 Executable conformance kernel
+The public-release companion scf_reference_kernel_v1.py is an executable specification fragment, not a production runtime. It implements authorization-relevant semantics that can be checked deterministically:
+      * exact hash binding for implementation artifacts and manifests, contracts, profiles, evaluator policies, evidence, state relations, and dependencies;
+      * hash-chained source events and deterministic materialized-view derivation;
+      * conditional claims, defeaters, non-waivable clauses, and constrained operational waivers;
+      * claim-specific profile-transfer witnesses;
+      * caller-bound route validation with role profiles, fallback state paths, route leases, and consequence budgets;
+      * stage ordering and typed activation outcomes;
+      * adaptation epochs with journal commitments and sentinel-triggered sealing;
+      * strongly connected dependency bundles;
+      * threshold and timelock checks for constitutional changes.
+The kernel deliberately does not implement cryptographic signatures, durable distributed storage, consensus, sandboxing, real model evaluation, latent-state semantic verification, or complete toxic-combination discovery. Those omissions are explicit rather than represented by suggestive identifiers.
+17.2 Truth-table, mutation, and transition regression checks
+The artifact uses exhaustive truth-table, mutation, and transition regression tests. This wording is deliberate: the oracle is derived from the same declared predicates, so the checks establish implementation consistency and catch omissions; they are not independent model checking or proof of specification correctness.
+The deterministic suite rejects artifact, manifest, contract, profile, and evaluator-policy substitutions; claim transfer to the wrong artifact; uncovered profile dimensions; conditional claims without their conditions; identity-integrity waivers; stale or mutated views; caller mismatch; expired receipts; incidents published after route validation; production-like canaries; updates after epoch sealing; duplicate governance identities; and root changes without threshold or timelock.
+A small transition exploration reached 13 model states and found no observed-active state without authorization, no operational state without qualification, and no production authorization before canary qualification. A future independent TLA+, Alloy, PlusCal, Spin, or proof-assistant model should be treated as a distinct artifact and oracle.
+17.3 Synthetic microbenchmarks
+The benchmark is an in-memory Python experiment on synthetic data. It measures the public kernel, not production infrastructure.
+Table 7. Synthetic route-validation latency.
+Selected-artifact claim history
+	Unrelated implementation events
+	Unrelated defeaters
+	Iterations
+	Median (microseconds)
+	p95 (microseconds)
+	0
+	0
+	0
+	2,000
+	1,173
+	1,356
+	100
+	1,000
+	100
+	2,000
+	1,182
+	1,345
+	1,000
+	10,000
+	1,000
+	2,000
+	1,195
+	1,373
+	The result shows that indexed validation of one route need not scan all unrelated history. It does not show that realistic composition, migration, consensus, cryptography, or evaluator production is constant time.
+Table 8. Deterministic view rebuild.
+Source events
+	Rebuild time (milliseconds)
+	100
+	1.8
+	1,000
+	17.9
+	20,000
+	364.3
+	A synthetic burst of 10,000 revocations and 10,002 incident entries rebuilt its view in approximately 240 ms on the recorded environment. These figures are reproducibility anchors, not service-level objectives.
+17.4 Impact-cone cost
+The public artifact compares declared reliance annotations with a separately generated ground-truth graph. With 5,000 claims, 1,000 premises, 50 changed premises, and deliberately injected annotation errors, the declared graph identified 169 impacted claims while the ground truth identified 170. One unsafe-reuse pair remained, for an unsafe-reuse rate of approximately 0.00585 among material affected relations in that run.
+The point is not that this error rate is acceptable or representative. The experiment demonstrates that property-sensitive invalidation creates a measurable new failure mode. Future work must vary annotation error distributions, collusion, graph density, compatibility witnesses, and change types; compare against conservative transitive invalidation; and report both cost savings and unsafe evidence reuse.
+17.5 Cost decomposition
+SCF cost should be decomposed into:
+      * candidate construction and provenance;
+      * evaluator production and adjudication;
+      * contract and reliance-annotation maintenance;
+      * migration rehearsal and state dual-running;
+      * hot-path route and invocation validation;
+      * deterministic view rebuild and cache invalidation;
+      * governance review and threshold ceremony;
+      * rollout monitoring, containment, and compensation;
+      * federation import, incident propagation, and appeal.
+Hot-path enforcement can be small while assurance production remains expensive. A prototype that reports only validator latency would hide the dominant cost in high-risk deployments. Conversely, a heavyweight evaluator portfolio does not imply every invocation must repeat evaluation.
+17.6 When overhead becomes sublinear
+Sublinear amortized overhead is a conditional empirical hypothesis. It is plausible when contracts remain stable, evidence is reusable, state relations are compositional, impact cones are sparse, adaptation batches many updates, incidents are infrequent, and view indexes remain current.
+It can fail when every improvement changes contracts, shared weights, latent state, evaluator policy, reliance annotations, or trust roots; when incidents repeatedly invalidate broad closures; when field boundaries are poor; or when governance denial becomes strategic. In those regimes cost may remain linear or superlinear.
+The architecture does not promise a favorable scaling law. It provides the accounting needed to discover which regime a system occupies and to prevent speed from being purchased through invisible premise changes.
+17.7 Scaling the registry
+Production evaluation should vary claim history per artifact, defeaters per claim, transfer-witness volume, route members, forbidden-set complexity, state-path graph size, dependency overlap, materialized-view rebuild, revocation bursts, concurrent validation, remote-provider churn, and federated incident volume.
+Retention uses hot, warm, and cold tiers with verifiable commitments. Authority-sensitive caches carry watermarks and expiry. Rebuild and invalidation can be parallelized, but the source event order and derivation revision remain reconstructable.
+The design target is not one giant central graph. Federated domains may maintain local logs and views while exchanging signed evidence and commitments. Local operation must remain possible under bounded partition policies without silently treating stale imported evidence as current.
+17.8 Reference interfaces
+A production-oriented interface set should include:
+      * append_event(event, signer_epoch);
+      * verify_event_chain(head);
+      * derive_view(head, watermark, view_function_hash);
+      * verify_view(view);
+      * issue_qualification_claim(exact_bindings, conditions, expiry);
+      * issue_transfer_witness(source_claim, changed_dimensions, evidence);
+      * compute_impact(change_set, property_catalog);
+      * propose_route(context);
+      * validate_route(proposal, view, time);
+      * authorize_stage(stage, claim, grant, consequence_budget);
+      * allow_invocation(receipt, caller, request, time);
+      * seal_adaptation_epoch(reason);
+      * publish_incident(scope, properties);
+      * contain_and_recover(authorization);
+      * propose_constitutional_change(old_epoch, new_epoch).
+The interface separates intelligent proposal from deterministic acceptance and keeps source events distinct from derived views.
+17.9 Reproducibility and artifact status
+The companion result record binds the source filename, source SHA-256, result schema, exact command, Python version, platform, logical CPU count, dependencies, random seeds, timestamps, benchmark configuration, and a self-hash over the result content.
+The source hash recorded by the run is:
+bf37300e6e9cb156cc8b184f250fbff21a5f19010780247afbb448c81d1e513c
+The result record identifies itself as a deterministic conformance and transition regression artifact - not a production runtime, independent verification, or empirical AI-safety validation. A public archival release should additionally pin the paper hash, repository commit or DOI-bearing archive, license, container image where used, and signatures or checksums for all artifacts.
+18 Worked examples
+18.1 Example A: planning field
+18.1.1 Contract
+A planning field accepts:
+      * a goal;
+      * constraints and preferences;
+      * available tool descriptions without direct tool handles;
+      * state references;
+      * time and resource budgets;
+      * a risk profile.
+It returns:
+      * a plan graph;
+      * assumptions and unresolved questions;
+      * confidence or uncertainty representation;
+      * required capabilities;
+      * expected effects and reversibility class;
+      * verification and approval requirements;
+      * typed abstention or failure.
+Hard invariants include preserving declared constraints, not executing tools, and marking irreversible steps. Statistical clauses cover plan success and calibration on named task distributions. The contract does not require one planning algorithm.
+18.1.2 Implementations
+The portfolio contains:
+      * P-fast: a low-latency language-model planner;
+      * P-search: a tree-search planner with simulation;
+      * P-formal: a symbolic planner that returns checkable constraints;
+      * P-ensemble: a composite using two planners and an independent critic.
+P-fast is qualified for low-risk interactive work. P-formal is qualified for constrained domains. P-ensemble is qualified for selected high-consequence profiles but costs more. None receives execution authority.
+18.1.3 Route decision
+For a low-risk request, the ranker proposes P-fast primary, P-search fallback, and P-formal shadow. The validator checks claims, profile, state references, and no-effect grants. For a high-risk request, the ranker proposes P-formal plus an independent critic; P-fast can remain a hypothesis generator but not the final plan source.
+18.1.4 Incident
+Suppose P-fast repeatedly omits a newly introduced constraint type. The incident defeats its claim only for profiles using that constraint. The route narrows rather than globally deleting the implementation. The counterexample enters the contract-debt and evaluator suites.
+18.2 Example B: stateful memory field
+18.2.1 Contract and state
+A memory field contract specifies store, retrieve, forget, cite, compact, export, and migrate behavior; provenance; privacy; uncertainty; and deletion obligations. Durable source episodes and documents are distinct from derived embeddings, indexes, summaries, and caches.
+18.2.2 Replacement and migration solvency
+Suppose the incumbent uses embedding model A and the candidate uses embedding model B. SCF does not treat a learned linear map between vector spaces as semantic equivalence by default. The migration plan first asks whether canonical source items remain available.
+      * If source episodes and documents exist, the preferred plan is replay-from-source: re-embed every covered item with B, preserve source IDs and provenance, dual-read A and B, run anchor queries and downstream task replay, and quantify missing-source coverage.
+      * If only derived vectors remain but a validated relation bounds loss on the target profile, the migration is loss-bounded and fallback objectives reflect the loss.
+      * If neither replay nor a defensible relation exists, the migration is non-solvent. The candidate runs as a fork or new field version; the old backend and state remain required for true rollback.
+The qualification claim binds exact source and target schema hashes, embedding configurations, migration artifact, state-relation certificate, anchor corpus, assumptions, coverage, loss budget, checkpoint, and fallback-readable branch.
+18.2.3 Evidence invalidation
+A change in embedding model invalidates retrieval-quality, calibration, neighborhood, and downstream-task claims that relied on A, but it need not invalidate unrelated encryption or access-control evidence. Reliance annotations determine the cone and are themselves reviewed. Missing source items widen the profile limitation rather than disappearing into an average score.
+18.3 Example C: effectful code and deployment field
+18.3.1 Contract
+A deployment field receives a signed change request and may build, test, stage, deploy, observe, halt, restore, or compensate. It must preserve approval bindings, artifact identity, environment scope, audit receipts, and fail-closed behavior.
+18.3.2 Authority model
+The candidate never inherits the incumbent’s credentials. The broker issues a caller-bound lease for named repositories, environments, destinations, spend, population, duration, and irreversible-effect units. Code execution plus production credentials, evaluator access plus benchmark selection, and update authority plus promotion authority are declared toxic combinations unless an explicit integration certificate and approval policy permits them.
+18.3.3 Consequence-bounded canary and production
+A canary affecting 999,999 of one million users is not meaningfully safe merely because it is technically smaller. The stage policy sets a maximum loss budget across population, spend, data sensitivity, irreversible actions, destinations, recovery time, and common-mode exposure. Canary evidence supports a new production-eligible claim; it does not mutate the sandbox claim.
+After approvals, the root revalidates all premises and commits production authorization. Distributed rollout must converge before its deadline. Partial failure returns a typed outcome and may leave compensable or irreversible obligations.
+18.3.4 Irreversible and compensable effects
+Deleting data, sending messages, publishing code, or triggering external services cannot be undone by restoring a container. Recovery records which state was restored, which obligations were compensated, which recipients were notified, and which effects remain irreversible. A clean internal rollback with unresolved external harm is not classified as full recovery.
+18.4 Example D: high-frequency adaptive routing model
+18.4.1 Envelope
+An adaptive model chooses among already qualified inference models. It updates continuously from latency, cost, and quality feedback. The adaptation envelope pins:
+      * a contextual-bandit update algorithm;
+      * approved telemetry fields;
+      * no access to protected evaluator answers;
+      * no ability to add models or broaden tool authority;
+      * maximum learning rate and daily update budget;
+      * sentinel tasks for safety, calibration, subgroup service, and route diversity;
+      * a four-hour checkpoint and daily sealed epoch;
+      * a fallback static route.
+18.4.2 Fast-loop operation
+Each update batch records a journal commitment. The adaptive instance can modify routing weights but cannot alter admissibility rules or qualification claims. The root validator still checks every proposed route member.
+18.4.3 Escalation
+A change-point detector observes a sudden provider latency and quality shift. The envelope token is revoked, the current epoch is sealed, and routing returns to the static fallback. The provider claim receives a defeater. The sealed checkpoint is evaluated before any new envelope is authorized.
+The registry does not receive one promotion per gradient step. It receives journal commitments, checkpoint events, and the sealed revision. Governance overhead is proportional to epochs and breaches while route safety remains enforced per request by the validator.
+18.5 Cross-example lesson
+The same field substrate handles pure planning, stateful memory, effectful deployment, and online adaptation without pretending they have identical risk. The contract, evidence, authority, state, and lifecycle dimensions remain stable; assurance intensity and enforcement mechanisms vary by field.
+19 Empirical evaluation agenda
+19.1 Experimental conditions
+The core comparison is:
+      * M0: monolithic self-editing system;
+      * M1: flat registry with stable interfaces and a global active pointer;
+      * M2: governed components with provenance, staging, and rollback but no full SCF semantics;
+      * M3: SCF with content-bound claims, event-derived views, contextual routing, brokered authority, state solvency, and constitutional governance.
+Contemporary-model evaluation must not freeze the architecture around vendor names that may be stale before replication. At experiment time, each condition should include at least three independent frontier-provider systems, at least one strong open-weight system, and one legacy baseline. As a reproducibility snapshot for this public release, a June 2026 frontier panel could include GPT-5.5, Gemini 3.1 Pro, and Claude Opus 4.8 [62-64]; the actual study must pin exact API identifiers, release/access dates, system prompts, tool descriptions, decoding, context, region, safety configuration, provider fingerprints, and provider-side changes. Baseline selection is preregistered and refreshed for major reruns rather than silently substituted mid-study.
+Each model panel is crossed with task-risk profiles and change types: prompt/scaffold change, code change, model or provider change, evaluator change, state-schema change, dependency change, authority-policy change, and constitutional change. Results are reported both pooled and by provider because common-mode model families can hide evaluator and candidate correlation.
+Field decompositions are also preregistered. Each M0-M3 comparison holds one decomposition fixed, then repeats across several reasonable decompositions to test boundary robustness. The experiment cannot discard an unfavorable boundary after observing results. A central disconfirmation condition is that benefits appear only under one hand-tuned decomposition.
+19.2 Required prototype fields
+A minimal empirical system should include at least three qualitatively different fields:
+      1. Pure planning field. Exercises semantic contracts, contextual routing, ensembles, and abstention without direct effects.
+      2. Stateful memory field. Exercises durable state ownership, semantic migration, deletion, replay, and fallback compatibility.
+      3. Effectful code/deployment field. Exercises authority, information flow, canary attenuation, distributed activation, compensation, and incident containment.
+A fourth evaluator or adaptive-routing field should exercise meta-governance and adaptation envelopes. Testing only a pure planner would avoid the hardest parts of the architecture.
+19.3 Research questions
+RQ1. Continuity. Does SCF reduce silent changes in capability meaning, authority, state, evidence, and governance relative to M0-M2?
+RQ2. Safety under self-reference. Does separation of proposal, evaluation, validation, and promotion reduce evaluator capture and goalpost mutation?
+RQ3. Recovery. Does state- and effect-aware lifecycle management improve containment and recovery completeness?
+RQ4. Composition. Do property-sensitive impact cones and integration envelopes detect more cross-field failures without requiring global requalification after every change?
+RQ5. Adaptation. Can high-frequency online learning remain useful inside envelopes while limiting drift and keeping registry load proportional to epochs rather than updates?
+RQ6. Opaque dependencies. How quickly do sentinels and fingerprints detect hosted-model or provider drift, and how often do they raise false alarms?
+RQ7. Governance performance. What latency, human review, compute, storage, and improvement opportunity does governance consume by risk class?
+RQ8. Long-run improvement. Does the architecture preserve or increase sustained capability gain and metaproductivity over many generations, rather than merely making individual promotions slower?
+19.4 Ablations
+Full SCF should be compared against variants with one mechanism removed:
+      * no profile-specific qualification;
+      * no property-sensitive invalidation;
+      * no authority broker or toxic-combination policy;
+      * no migration rehearsal;
+      * no evaluator independence rules;
+      * no proposer/validator split;
+      * no lineage-aware diversity;
+      * no staged shadow/canary authorization;
+      * no adaptation envelope;
+      * no constitutional contract governance;
+      * no threshold or federated trust controls.
+Ablations identify which mechanisms produce which outcomes and reveal interactions. For example, staged canaries may offer little benefit without an external broker that enforces their scope.
+19.5 Fault-injection suite
+The suite includes:
+      * artifact, manifest, contract, profile, evaluator-policy, and evidence substitution under unchanged aliases;
+      * profile witness reuse across the wrong candidate or uncovered dimension;
+      * conditional claim with missing controls;
+      * attempted waiver of identity or hard effect clauses;
+      * stale, reordered, deleted, or directly mutated event-derived views;
+      * post-receipt incident, caller mismatch, expired lease, and cached-handle reuse;
+      * fallback without capacity or a reachable state path;
+      * production-like canary that passes a merely strict attenuation check;
+      * latent-state migration with missing source coverage or false fidelity certificate;
+      * missing reliance edge, narrow property annotation, false compatibility witness, and impact-analyzer collusion;
+      * undeclared toxic authority composition and semantic leakage through a permitted artifact;
+      * evaluator tampering, benchmark contamination, shared-base-model collusion, and goalpost co-update;
+      * adaptation update from an unpinned updater, unapproved data, authority change, sentinel failure, and harm inside the sentinel-latency window;
+      * duplicate governance identity, predecessor-bypassing membership change, too-short timelock, overbroad emergency power, and governance denial;
+      * federated incident delay, conflicting local interpretations, and appeal failure;
+      * partial activation, unreachable instances, expired authorization during rollout, compensation failure, and residual irreversible effects.
+19.6 Operational metric definitions
+Required metrics include:
+      * Unsafe activation rate: activations that violate a preregistered hard or consequence-bounded criterion divided by operational authorizations.
+      * Unsafe evidence reuse rate: material affected claims incorrectly preserved after a change divided by all materially affected claims.
+      * Semantic drift rate: rate at which consumer-relevant behavior changes outside the qualified profile without corresponding contract or claim revision.
+      * Authority amplification: maximum granted authority or consequence budget beyond the admissible bound.
+      * Containment latency: incident observation to broker denial and route narrowing.
+      * Recovery fidelity: restored state semantics, obligations, and downstream behavior, not merely restored bytes.
+      * Residual-effect burden: uncompensated irreversible or external effects after containment.
+      * Evaluator capture rate: attacks that change qualification or profile scope, not merely attacks attempted.
+      * Contract debt: aggregate and maximum item priority, overdue debt, and debt per risk class.
+      * Boundary robustness: distribution of benefit across preregistered field decompositions.
+      * Governance cost: engineering, compute, human review, latency, and denied-availability cost separated by hot path, assurance production, migration, incident, and constitutional process.
+      * Sustained gain: capability improvement over fixed anchors and protected evaluators across multiple generations, including descendant productivity and regression burden.
+Labels and adjudication rules are preregistered. High-consequence events receive blinded or multi-party review where feasible.
+19.7 Statistical plan
+Experiments should predeclare:
+      * task and risk distributions;
+      * candidate-generation budget;
+      * randomization and seeds where meaningful;
+      * stopping rules and multiple-comparison treatment;
+      * evaluator-query budgets;
+      * subgroup and tail metrics;
+      * incident observation windows;
+      * failure-labeling process;
+      * hardware and provider variability;
+      * which analyses are confirmatory versus exploratory.
+Long-horizon improvement experiments require repeated runs because open-ended search has high variance and path dependence. Results should report Pareto fronts rather than one aggregate score.
+19.8 Hypotheses
+H1. M3 reduces unsafe activation caused by identity substitution, stale evidence, authority inheritance, and incompatible state relative to M0-M2.
+H2. Exact content binding and event-derived views eliminate a class of alias-substitution and cache-tampering failures without requiring full-history scans on the invocation hot path.
+H3. Claim-scoped profile transfer preserves more valid evidence than full requalification while maintaining a low unsafe-reuse rate under injected annotation error.
+H4. Caller-bound grants and consequence budgets reduce maximum realized canary loss compared with simple set intersection and merely strict attenuation.
+H5. Stage-specific immutable claims and final post-approval validation reduce stale-premise production authorization.
+H6. Adaptation envelopes permit more fast-loop updates per slow-loop qualification than per-step promotion while bounding authority and detection exposure; they do not eliminate behavioral discontinuities.
+H7. Replay-from-source and dual-representation migrations achieve higher semantic recovery fidelity than direct latent translation where canonical source exists.
+H8. Diverse evaluator portfolios reduce common-mode promotion error in proportion to empirically measured overlap, not nominal organizational separation.
+H9. Threshold/timelock governance rejects unknown-key Sybil attempts and unilateral permanent root changes, at the cost of measurable liveness and coordination overhead.
+H10. SCF’s net benefit persists across multiple reasonable field decompositions rather than only one hand-tuned boundary.
+H11. Amortized governance cost becomes sublinear in improvement rounds only under stable contracts, sparse impact cones, reusable evidence, solvent state transitions, and bounded incident frequency.
+19.9 Disconfirmation criteria
+SCF should be revised or rejected for a target domain if:
+      * contracts remain too incomplete to distinguish meaningful substitution from goalpost change;
+      * authorization identity cannot be bound to exact deployed content;
+      * the validator or certified policy layer grows to require the same open-ended intelligence it is meant to constrain;
+      * state migrations are usually non-solvent and force monolithic retention without useful local substitution;
+      * property-sensitive invalidation produces unacceptable unsafe evidence reuse;
+      * evaluator diversity does not reduce common-mode error under realistic overlap;
+      * adaptation causes unacceptable harm within the sentinel-latency window despite bounded authority;
+      * information-flow claims depend on semantic noninterference the architecture cannot enforce;
+      * governance overhead removes sustained capability gains or produces systemic denial-of-governance;
+      * constitutional control points create greater capture risk than the architecture removes;
+      * federated incident propagation is too slow for safe imported operation;
+      * benefits appear only under a post hoc, hand-tuned field decomposition;
+      * the full prototype does not outperform simpler governed-component baselines after accounting for all assurance-production and institutional costs.
+A research architecture earns credibility by specifying not only how it could work, but what evidence would show that its central decomposition is wrong or impractical.
+20 Implications for recursive improvement and ASI
+20.1 Self-improvement as internal science
+SCF changes the picture of recursive improvement. Instead of one monolithic agent repeatedly rewriting itself, a long-lived system maintains a population of implementations behind durable capability meanings. It proposes hypotheses, builds candidates, gathers evidence, discovers counterexamples, routes experiments, and promotes or rejects revisions. In that sense, self-improvement becomes governed internal science.
+The field structure supplies continuity across generations. Failed candidates remain lineage and evidence. Competing implementations remain available for different profiles. Evaluators and contracts can improve without silently redefining prior results. State and authority changes become explicit experimental variables rather than hidden side effects.
+20.2 Why an equivalent substrate may be necessary
+A recursively improving system eventually changes components that participate in improvement itself: candidate generation, evaluation, routing, memory, tool use, and governance. Without stable boundaries and reconstructable transitions, the system cannot reliably answer:
+      * what changed;
+      * which claim of improvement remains comparable;
+      * whether authority expanded;
+      * whether state retained the same meaning;
+      * whether the evaluator or contract moved;
+      * whether a failure can be contained;
+      * whether future generations can reproduce or challenge the decision.
+SCF is one proposed answer. Other architectures may use different terminology or mechanisms. The necessity claim is functional: something must preserve equivalent semantic, evidential, authority, state, and governance continuity if recursive improvement is to remain legible.
+20.3 Stability enables ambition rather than limiting it
+Stable surfaces do not require conservative implementations. They make radical implementation search safer and more cumulative. A field can host evolutionary programs, new model architectures, proof-guided systems, multi-agent organizations, or learned algorithms that humans did not anticipate. The constraint is that operational use must be justified under explicit contracts and bounded authority.
+Abstractions can also evolve. New major contracts may express capabilities that old fields could not. The constitutional process is not a permanent ceiling on intelligence; it is a method for changing the ceiling without pretending nothing changed.
+20.4 Why SCF is not sufficient
+SCF does not determine good objectives or legitimate institutions. It does not guarantee that contracts capture human values, that evaluators recognize deception, or that a superhuman system cannot exploit unmodeled channels. A perfectly governed field can faithfully optimize a bad objective. A threshold of compromised institutions can authorize catastrophe.
+The architecture is therefore infrastructure for alignment, control, assurance, and governance techniques, not a substitute for them. It can make many failures detectable and containable that would otherwise be invisible, but it cannot guarantee that every dangerous capability requires an effect outside the permitted envelope.
+20.5 Recursive improvement is not necessarily runaway
+Improvement velocity depends on search quality, compute, data, evaluator validity, state, architecture, and the difficulty of discovering further gains. Governance adds cost but can also increase cumulative progress by preserving evidence, reducing catastrophic regressions, and reusing stable interfaces.
+The relevant quantity is not raw modification rate. It is sustained, evidence-backed capability growth under bounded downside. A system that makes ten fast changes and corrupts its evaluator may improve less than one that makes three slower but composable changes.
+20.6 The evaluator regress
+Any evaluator can be evaluated by another evaluator, creating a regress. SCF terminates the operational regress at a root of mixed mechanisms:
+      * small deterministic validators for narrow invariants;
+      * diverse empirical evaluators;
+      * external and institutional oversight;
+      * runtime containment and limited authority;
+      * protected recovery and refusal to act when evidence is insufficient.
+This is not a proof of ultimate correctness. It is a practical trust decomposition. The system should place as little semantic judgment as possible in the root while refusing to let replaceable intelligence enforce its own permissions.
+20.7 ASI-scale governance and plurality
+At ASI scale, the technical registry and constitutional institutions may become inseparable. Whoever controls trust roots, profiles, evaluator access, and emergency powers can shape the direction of capability evolution. A credible architecture therefore needs plural trust domains, transparent amendments, appeal, and limits on unilateral authority.
+Federation can prevent one compromised registry from becoming universal, but it can also create races among domains with different safety thresholds. SCF makes the race visible by preserving imported evidence, local decisions, authority grants, and incidents. It does not solve coordination among competing institutions.
+20.8 Continuity of identity without monolithic stasis
+The Theseus-like question for a self-improving system is not whether every component remains unchanged. It is whether the system preserves enough explicit continuity that observers can say which capabilities, promises, authorities, states, and governance commitments survived each replacement. SCF’s answer is operational: identity resides in versioned field meanings, evidence, state lineage, and authorized transitions rather than in one frozen codebase.
+21 Open research problems
+21.1 Learning and validating field boundaries
+The architecture needs methods that infer useful boundaries from change cadence, dependency graphs, authority, state, evaluator locality, and recovery behavior. Boundary proposals must be judged by whether they reduce impact cones and improve substitution without creating false independence.
+21.2 Semantic contract synthesis
+Contract mining and counterexample-guided repair remain central. Research is needed on:
+      * extracting candidate obligations from traces and documentation;
+      * distinguishing descriptive regularities from normative promises;
+      * generating adversarial counterexamples to proposed clauses;
+      * measuring contract debt and coverage;
+      * validating AI-authored contracts without self-ratification;
+      * representing open-world and value-laden obligations honestly.
+21.3 Statistical substitutability
+We lack a general theory for replacing stochastic components under distribution shift, adaptive evaluation, and interacting uncertainty. Useful work includes profile-specific equivalence tests, subgroup transfer, confidence sequences, tail-risk bounds, and causal tests that distinguish implementation effects from environment drift.
+21.4 Evaluator independence at frontier scale
+Shared base models, providers, training data, and synthetic pipelines make independence difficult. The overlap vector needs empirical calibration: which kinds of diversity actually reduce common-mode failure? How should a system aggregate evidence when no evaluator is clearly stronger than the candidate?
+21.5 Cross-field emergent behavior
+Assume-guarantee reasoning for learned, nonstationary components remains immature. Research priorities include scalable toxic-combination discovery, integration-envelope design, runtime monitors for feedback loops, and methods for deciding when a fused bundle has eliminated meaningful local substitution.
+21.6 Evidence graph semantics and retention
+The registry needs efficient, formally specified claim and defeater semantics, property-sensitive invalidation, privacy-preserving audit, and retention policies that preserve decision integrity without storing sensitive traces indefinitely. Distributed and federated consistency adds further complexity.
+21.7 Governance scalability and incentives
+Evidence production, review, and threshold governance can become bottlenecks. Research should study assurance markets, evaluator incentives, proposal bonds, appeals, adversarial governance spam, and the possibility that incumbents use safety process to block legitimate competition.
+21.8 Recovery for learned state
+Semantic migration of embeddings, compressed memories, policies, and weights is not one generic translation problem. Research should compare replay-from-source, dual representation, anchor-preserving transformations, learned adapters, loss-bounded relations, and non-solvent forks. Benchmarks must measure source coverage, retrieval neighborhoods, downstream behavior, privacy, provenance, and rollback objectives. A central question is when a system should preserve the old backend indefinitely rather than claim an unearned migration.
+21.9 Opaque and remote implementations
+Behavioral fingerprints and sentinel probes are weak substitutes for immutable artifact identity. Research should quantify what can be inferred about remote model changes, how frequently claims should expire, and when high-risk systems must require locally controlled models.
+21.10 Formalizing and verifying the kernel
+The root policy language, route validator, event-log semantics, and lifecycle automata are suitable targets for mechanization. A future implementation should specify transitions in a proof assistant or model checker, verify non-escalation and fail-closed behavior, and generate executable validators from the specification.
+21.11 Online adaptation and sequential risk budgets
+Adaptation envelopes need principled methods for allocating risk over unbounded update sequences, selecting sentinel frequency, detecting abrupt behavior, and deciding epoch boundaries. The relationship between journal commitments, privacy, and forensic usefulness also needs study.
+21.12 Constitutional legitimacy and international federation
+Threshold signatures and timelocks can block unknown-key Sybil changes and unilateral amendments, but they do not establish legitimate membership. Research is needed on representative selection, jurisdiction, quorum diversity, emergency liveness, key compromise, coercion, appeals, cross-registry incident sharing, confidential transparency, sanction and exit, and coordination among domains with incompatible risk tolerance. Constitutional protocols should be analyzed for both safety and denial-of-governance.
+21.13 Measuring metaproductivity safely
+Selecting candidates for descendant potential can reward systems that modify evaluators or expand authority. Metaproductivity metrics need constraints that distinguish productive search from manipulation of the improvement process.
+22 Conclusion
+Recursive AI self-improvement is not adequately described as an agent editing its own repository. The hard problem is continuity: preserving the meaning of capabilities, the authority of implementations, the semantics of state, the validity of evidence, and the legitimacy of governance while the machinery that produces behavior changes.
+Stable Capability Fields provide a substrate for that continuity. A field is an enduring semantic and governance identity. Implementations remain replaceable and plural. Qualification is a scoped, defeasible claim. An untrusted optimizer can propose sophisticated routes, while a smaller validator enforces admissibility. Tools and state are mediated separately from implementation selection. Contracts are partial but explicit about enforcement class and debt. Online learners adapt inside bounded envelopes. Promotion separates logical authorization from physical rollout. Evidence, incidents, and recoveries remain reconstructable. Contracts, evaluators, trust roots, and institutions can evolve, but not as silent implementation details.
+The architecture is intentionally broad because recursive improvement couples systems concerns that cannot be safely isolated by omission. Its practicality depends on stratified assurance, indexed views, evidence reuse, bounded impact cones, epoch-based adaptation, and a small enforcement core. The executable reference model shows that the core predicates can be stated and checked, but a full prototype and adversarial empirical program remain necessary.
+SCF should not be mistaken for a complete theory of alignment or ASI safety. It is a proposal for making self-improvement legible enough to test, govern, contest, and recover. If recursive intelligence is to change its own machinery without losing the basis for calling the change an improvement, it will need SCF or functional equivalents: stable meanings, replaceable implementations, evidence-backed claims, bounded authority, state-aware transitions, and constitutional control over the rules of change.
+Appendix A: Canonical field manifest
+The canonical ontology uses separate immutable objects. A convenience deployment bundle may reference them, but it is not the source of identity.
+apiVersion: scf/v1
+kind: ContractRevision
+metadata:
+  fieldID: planning
+  contractHash: sha256:7c9e...f021
+  versionLabel: 3.2.0
+  owner: cognition-governance
+contract:
+  inputSchemaHash: sha256:11ab...4410
+  outputSchemaHash: sha256:12ab...5510
+  protocolSpecHash: sha256:13ab...6610
+  authorityPolicyHash: sha256:14ab...7710
+  statePolicyHash: sha256:15ab...8810
+  observabilityPolicyHash: sha256:16ab...9910
+  clauses:
+    - id: no_direct_executor_handle
+      class: identity_integrity
+      enforcement: root-policy-certificate
+      waiverClass: never
+    - id: preserve_user_constraints
+      class: statistical
+      evaluatorPolicyHash: sha256:e701...9021
+      waiverClass: narrow_profile_only
+    - id: no_strategic_deception
+      class: aspirational
+      limitation: not-established
+apiVersion: scf/v1
+kind: ImplementationRevision
+implementationArtifactHash: sha256:91ab...2021
+implementationManifestHash: sha256:92ab...3021
+contractHash: sha256:7c9e...f021
+artifactClosure:
+  sourceHash: sha256:93ab...4021
+  containerHash: sha256:94ab...5021
+  modelHash: sha256:95ab...6021
+  promptHash: sha256:96ab...7021
+  configurationHash: sha256:97ab...8021
+dependencyClosureDigest: sha256:28ab...9021
+requestedAuthorityPolicyHash: sha256:31ab...1122
+supportedStateRelationHashes: [sha256:41ab...2122]
+lineage:
+  parentArtifactHashes: [sha256:81ab...3122]
+  generatorArtifactHash: sha256:82ab...4122
+apiVersion: scf/v1
+kind: QualificationClaim
+claimID: claim-q17
+implementationArtifactHash: sha256:91ab...2021
+implementationManifestHash: sha256:92ab...3021
+contractHash: sha256:7c9e...f021
+directProfileHash: sha256:d801...5522
+dependencyClosureDigest: sha256:28ab...9021
+stateRelationHash: sha256:41ab...2122
+evaluatorPolicyHash: sha256:e701...9021
+evidenceBundleHashes: [sha256:a101...1111, sha256:a102...2222]
+conditions:
+  - key: monitor.planner_constraints
+    expectedValue: active
+    clauseID: preserve_user_constraints
+    clauseClass: monitoring_freshness
+verdict: conditional
+issuerTrustDomain: lab-a.high-assurance
+validFrom: 2026-06-23T00:00:00Z
+validUntil: 2026-07-23T00:00:00Z
+A route, stage authorization, deployment observation, incident, waiver, transfer witness, and state schema are separate signed objects. Missing overlap or provenance values use explicit unknown; omission never implies independence.
+Appendix B: Promotion and activation protocol pseudocode
+procedure qualify_and_activate(candidate, contract, target_profile):
+    revision = register_exact_content(candidate, contract)
+    base_view = derive_and_verify_view(registry.source_head)
+
+    impact = compute_property_sensitive_impact(
+        revision.change_set, base_view, reliance_policy)
+    require impact.annotations_qualified_or_conservative
+
+    build = build_and_isolate(revision)
+    require verify_provenance(build, revision.artifact_hash)
+
+    recovery = rehearse_state_and_effect_recovery(
+        revision, target_profile, impact)
+    require recovery.solvency in allowed_solvency(target_profile.risk)
+
+    initial_evidence = run_evaluator_portfolio(
+        revision, target_profile.sandbox_profile,
+        record_overlap_vector = true)
+    sandbox_claim = issue_immutable_claim(
+        stage_eligibility = sandbox_or_shadow,
+        exact_bindings = revision + contract + target_profile,
+        evidence = initial_evidence,
+        state_relation = recovery.state_relation,
+        conditions = aggregate(initial_evidence).conditions)
+
+    sandbox_auth = authorize_sandbox(sandbox_claim, no_external_effects)
+    run_sandbox(sandbox_auth)
+
+    shadow_auth = authorize_shadow(
+        claim = sandbox_claim,
+        role_profile = target_profile.shadow_profile,
+        data_scope = target_profile.shadow_data_scope,
+        retention = target_profile.shadow_retention,
+        grant = no_real_effect_grant,
+        expiry = short_lease())
+    shadow_evidence = run_shadow(revision, shadow_auth)
+    canary_claim = issue_new_claim_revision(
+        predecessor = sandbox_claim,
+        stage_eligibility = canary,
+        added_evidence = shadow_evidence)
+
+    proposed_production_grant = certified_policy.admissible_grant(
+        revision, contract, target_profile.production_profile)
+    canary_grant = certified_policy.canary_grant(
+        proposed_production_grant,
+        consequence_budget = target_profile.canary_budget)
+    require canary_grant.consequence_budget <= target_profile.canary_budget
+
+    canary_auth = authorize_canary(
+        claim = canary_claim,
+        role_profile = target_profile.canary_profile,
+        grant = canary_grant,
+        checkpoint = recovery.checkpoint,
+        fallback_claim = recovery.fallback_claim,
+        activation_deadline = target_profile.canary_deadline,
+        abort_policy = recovery.abort_policy)
+    canary_result = run_and_observe_canary(canary_auth)
+    require canary_result == OBSERVED_ACTIVE
+
+    production_claim = issue_new_claim_revision(
+        predecessor = canary_claim,
+        stage_eligibility = production,
+        added_evidence = canary_result.evidence)
+
+    route_proposal = untrusted_proposer.propose_route(
+        caller_context, production_claim, recovery.fallback_claim,
+        role_specific_profiles, grants, state_bindings)
+
+    preapproval_view = derive_and_verify_view(registry.source_head)
+    receipt = root_validator.validate(route_proposal, preapproval_view, now())
+    require receipt.accepted
+
+    approvals = collect_threshold_approvals(
+        receipt.hash, receipt.premise_read_set, expiry = receipt.expiry)
+
+    # Approvals can make the receipt stale. Validate again immediately.
+    final_view = derive_and_verify_view(registry.source_head)
+    final_receipt = root_validator.validate(route_proposal, final_view, now())
+    require final_receipt.accepted
+    require final_receipt.premises_compatible_with(approvals)
+
+    authorization = commit_production_authorization(
+        final_receipt, approvals, recovery, activation_deadline,
+        observation_quorum, fail_closed_expiry)
+
+    outcome = orchestrator.activate_until_deadline(authorization)
+    match outcome:
+        OBSERVED_ACTIVE:
+            append_observed_activation_receipts(outcome)
+        CONTAINED_AND_RECOVERED:
+            append_containment_and_recovery(outcome)
+        CONTAINED_WITH_RESIDUAL_EFFECTS:
+            append_residual_effect_obligations(outcome)
+        ACTIVATION_FAILED:
+            append_failure_and_keep_fallback(outcome)
+        RECOVERY_FAILED:
+            enter_protected_safe_state_and_escalate(outcome)
+    return authorization, outcome
+Appendix C: Change-classification checklist
+Classify whether the proposal changes any of the following exact objects or semantics:
+      * artifact closure, manifest, build, model, prompt, configuration, provider, or dependency digest;
+      * input, output, units, defaults, uncertainty, failure, or temporal protocol;
+      * authority ceiling, purpose, destinations, delegation, data classes, or consequence budget;
+      * state schema, meaning, owner, replay source, migration solvency, or rollback objective;
+      * evaluator code, assets, rubric, threshold, query budget, aggregation, or overlap vector;
+      * reliance annotations, compatibility witnesses, field boundaries, bundle membership, or shared weights;
+      * route roles, fallback capacity, state path, shadow policy, canary budget, or expiry;
+      * view derivation, policy compiler, validator, broker, clock, recovery root, trust roots, signer membership, threshold, timelock, or emergency power.
+A change to contract meaning, evaluator policy, reliance semantics, certified policy, validator, trust roots, or membership cannot be classified as a routine implementation revision. A non-solvent state change cannot be advertised as a reversible swap.
+Appendix D: Registry event sketch
+{
+  "eventType": "production_authorization",
+  "eventSchema": "scf-event/1.0",
+  "eventID": "evt-2026-06-23-881",
+  "previousEventHash": "sha256:aa01...0001",
+  "sourceHeadHash": "sha256:aa02...0002",
+  "watermark": 918821,
+  "viewFunctionHash": "sha256:bb01...1001",
+  "materializedViewHash": "sha256:bb02...1002",
+  "fieldIdentityHash": "sha256:cc01...2001",
+  "contractHash": "sha256:cc02...2002",
+  "requestContextHash": "sha256:cc03...2003",
+  "callerIdentityHash": "sha256:cc04...2004",
+  "requestClass": "deployment.high-risk",
+  "members": [
+    {
+      "role": "primary",
+      "implementationArtifactHash": "sha256:dd01...3001",
+      "implementationManifestHash": "sha256:dd02...3002",
+      "roleProfileHash": "sha256:dd03...3003",
+      "qualificationClaimIDs": ["claim-prod-19"],
+      "stateBindingHash": "sha256:dd04...3004",
+      "grantHash": "sha256:dd05...3005"
+    },
+    {
+      "role": "fallback",
+      "implementationArtifactHash": "sha256:ee01...4001",
+      "roleProfileHash": "sha256:ee02...4002",
+      "qualificationClaimIDs": ["claim-fallback-12"],
+      "stateBindingHash": "sha256:ee03...4003",
+      "grantHash": "sha256:ee04...4004"
+    }
+  ],
+  "acceptedTransferWitnessIDs": [],
+  "acceptedWaiverIDs": [],
+  "evaluatorPolicyHash": "sha256:ff01...5001",
+  "promotionPolicyHash": "sha256:ff02...5002",
+  "validatorRevisionHash": "sha256:ff03...5003",
+  "consequenceBudgetHash": "sha256:ff04...5004",
+  "activationDeadline": "2026-06-23T12:30:00Z",
+  "observationQuorum": "95-percent-instances-and-all-effect-brokers",
+  "expiry": "2026-06-23T14:00:00Z",
+  "expiryAction": "fail_closed",
+  "approvals": {
+    "membershipEpochHash": "sha256:ab01...6001",
+    "threshold": "3-of-5-with-two-organizations",
+    "signatureBundleHash": "sha256:ab02...6002"
+  }
+}
+Appendix E: Evaluator overlap record
+evaluatorPortfolioID: eval-portfolio-2026-44
+candidateArtifactHash: sha256:91ab...2021
+evaluatorPolicyHash: sha256:e701...9021
+evaluators:
+  - evaluatorArtifactHash: sha256:f101...7001
+    method: deterministic-protocol-checker
+    sharedBaseModel: false
+    sharedProvider: false
+    sharedTrainingData: unknown
+    sharedToolchain: partial
+    sharedOperators: false
+    candidateLineageOverlap: none
+  - evaluatorArtifactHash: sha256:f102...7002
+    method: learned-critic
+    sharedBaseModel: unknown
+    sharedProvider: true
+    sharedTrainingData: unknown
+    sharedPromptGenerator: false
+    sharedMemory: false
+    candidateLineageOverlap: possible
+  - evaluatorArtifactHash: sha256:f103...7003
+    method: sealed-statistical-holdout
+    datasetCommitment: merkle:77ab...8001
+    queryBudget: 25
+    sharedProvider: false
+    rawAssetsVisibleToCandidate: false
+portfolioPolicy:
+  hardVetoes: [protocol_violation, undeclared_effect, identity_mismatch]
+  requiredDiversity:
+    - at_least_one_deterministic_method
+    - at_least_two_provider_domains_for_high_risk
+    - unknown_overlap_treated_as_correlated
+  disagreementAction: escalate_and_narrow_profile
+calibration:
+  faultInjectionCorpusHash: sha256:f104...7004
+  measuredErrorCorrelationHash: sha256:f105...7005
+Appendix F: Executable reference model
+The companion artifact is run with:
+python scf_reference_kernel_v1.py --out scf_reference_results_v1.json
+The result record contains exact identity-binding tests, scoped profile-transfer tests, conditional-claim and waiver tests, event-chain and view-integrity tests, invocation-time expiration and incident tests, lifecycle and canary-budget tests, adaptation-epoch tests, constitutional-governance tests, dependency-cycle bundling, transition regressions, synthetic route validation, deterministic view rebuild, revocation burst, and property-sensitive invalidation with injected bad annotations.
+The artifact uses the Python standard library only. It is an executable specification fragment and regression harness. It does not implement production cryptography, consensus, isolation, remote attestation, distributed rollout, semantic state verification, or empirical model evaluation. The result JSON lists these threats to validity explicitly.
+References
+[1] J. Schmidhuber, “Gödel Machines: Fully Self-Referential Optimal Universal Self-Improvers,” in Artificial General Intelligence, Springer, 2007, pp. 199-226. doi:10.1007/978-3-540-68677-4_7.
+[2] E. Zelikman, E. Lorch, L. Mackey, and A. T. Kalai, “Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation,” arXiv:2310.02304, 2023.
+[3] S. Hu, C. Lu, and J. Clune, “Automated Design of Agentic Systems,” arXiv:2408.08435, 2024.
+[4] M. Robeyns, M. Szummer, and L. Aitchison, “A Self-Improving Coding Agent,” arXiv:2504.15228, 2025.
+[5] J. Zhang, S. Hu, C. Lu, R. Lange, and J. Clune, “Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents,” arXiv:2505.22954, 2025, revised 2026.
+[6] W. Wang, P. Piekos, N. Li, F. Laakom, Y. Chen, M. Ostaszewski, M. Zhuge, and J. Schmidhuber, “Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine,” arXiv:2510.21614, 2025.
+[7] P. Hebbar, Y. Manawat, S. Verboomen, A. Ivanova, S. Palanimalai, K. Bhatia, and V. Baskaran, “SIA: Self Improving AI with Harness & Weight Updates,” arXiv:2605.27276, 2026.
+[8] A. Novikov et al., “AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery,” arXiv:2506.13131, 2025.
+[9] G. Wang et al., “Voyager: An Open-Ended Embodied Agent with Large Language Models,” arXiv:2305.16291, 2023.
+[10] O. Khattab et al., “DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines,” in International Conference on Learning Representations, 2024; arXiv:2310.03714.
+[11] K. Huang and J. Huang, “Audited Skill-Graph Self-Improvement for Agentic LLMs via Verifiable Rewards, Experience Synthesis, and Continual Memory,” arXiv:2512.23760, 2025.
+[12] Z. Lu, Y. Zuo, Y. Nie, X. He, W. Fan, and C. Dai, “ContractSkill: Repairable Contract-Based Skills for Multimodal Web Agents,” arXiv:2603.20340, 2026.
+[13] Y. Yang, N. P. Bhatt, K. Wang, S. Tetteh, Z. Wang, and U. Topcu, “VASO: Formally Verifiable Self-Evolving Skills for Physical AI Agents,” arXiv:2606.05395, 2026.
+[14] E. Pautsch, T. Singla, P. Kumar, W. Jiang, H. Peng, B. Hassanshahi, K. Läufer, G. K. Thiruvathukal, and J. C. Davis, “AgentHub: A Registry for Discoverable, Verifiable, and Reproducible AI Agents,” arXiv:2510.03495, revised 2026.
+[15] A. Singh, A. Ehtesham, R. Raskar, M. Lambe, P. Chari, J. J. Grogan, A. Singh, and S. Kumar, “A Survey of AI Agent Registry Solutions,” arXiv:2508.03095, 2025.
+[16] Model Context Protocol, “Specification, version 2025-11-25,” official specification, 2025.
+[17] A2A Protocol, “Agent2Agent Protocol Specification, version 1.0.1,” official specification, 2026.
+[18] X. Qin, S. Luan, J. See, Z. Boukhers, C. Yang, and Z. Li, “Governed Capability Evolution: Lifecycle-Time Compatibility Checking and Rollback for AI-Component-Based Systems, with Embodied Agents as Case Study,” arXiv:2604.08059, version 5, 2026.
+[19] M. Garralda-Barrio, “Governed Evolution of Agent Runtimes through Executable Operational Cognition,” arXiv:2605.27328, 2026.
+[20] J. O. Kephart and D. M. Chess, “The Vision of Autonomic Computing,” Computer, vol. 36, no. 1, pp. 41-50, 2003. doi:10.1109/MC.2003.1160055.
+[21] S. R. White et al., “An Architectural Approach to Autonomic Computing,” in Proceedings of the First International Conference on Autonomic Computing, 2004.
+[22] D. Garlan, S. Cheng, A. Huang, B. Schmerl, and P. Steenkiste, “Rainbow: Architecture-Based Self-Adaptation with Reusable Infrastructure,” Computer, vol. 37, no. 10, pp. 46-54, 2004. doi:10.1109/MC.2004.175.
+[23] B. Meyer, “Applying Design by Contract,” Computer, vol. 25, no. 10, pp. 40-51, 1992. doi:10.1109/2.161279.
+[24] B. H. Liskov and J. M. Wing, “A Behavioral Notion of Subtyping,” ACM Transactions on Programming Languages and Systems, vol. 16, no. 6, pp. 1811-1841, 1994. doi:10.1145/197320.197383.
+[25] L. de Alfaro and T. A. Henzinger, “Interface Automata,” in Proceedings of ESEC/FSE, 2001. doi:10.1145/503209.503226.
+[26] N. Amla, E. A. Emerson, K. S. Namjoshi, and R. Trefler, “Assume-Guarantee Based Compositional Reasoning for Synchronous Timing Diagrams,” in TACAS, 2001.
+[27] K. Mei et al., “AIOS: LLM Agent Operating System,” arXiv:2403.16971, 2024; Conference on Language Modeling, 2025.
+[28] G. Klein et al., “seL4: Formal Verification of an OS Kernel,” in Proceedings of the 22nd ACM Symposium on Operating Systems Principles, 2009, pp. 207-220. doi:10.1145/1629575.1629596.
+[29] D. Seto, B. H. Krogh, L. Sha, and A. Chutinan, “The Simplex Architecture for Safe On-Line Control System Upgrades,” in Proceedings of the American Control Conference, 1998, pp. 3504-3508. doi:10.1109/ACC.1998.703255.
+[30] A. Desai et al., “SOTER: A Runtime Assurance Framework for Programming Safe Robotics Systems,” in 49th Annual IEEE/IFIP International Conference on Dependable Systems and Networks, 2019.
+[31] B. Randell, “System Structure for Software Fault Tolerance,” IEEE Transactions on Software Engineering, vol. SE-1, no. 2, pp. 220-232, 1975.
+[32] A. Avizienis, “The N-Version Approach to Fault-Tolerant Software,” IEEE Transactions on Software Engineering, vol. SE-11, no. 12, pp. 1491-1501, 1985.
+[33] S. Torres-Arias, H. Afzali, T. K. Kuppusamy, R. Curtmola, and J. Cappos, “in-toto: Providing Farm-to-Table Guarantees for Bits and Bytes,” in 28th USENIX Security Symposium, 2019, pp. 1393-1410.
+[34] Supply-chain Levels for Software Artifacts, “SLSA Specification, version 1.2,” approved specification, 2025.
+[35] The Update Framework, “The Update Framework Specification, version 1.0.34,” 2026.
+[36] Open Container Initiative, “OCI Image Format Specification, version 1.1.1,” 2025.
+[37] D. Amodei et al., “Concrete Problems in AI Safety,” arXiv:1606.06565, 2016.
+[38] T. Everitt, V. Krakovna, L. Orseau, M. Hutter, and S. Legg, “Reward Tampering Problems and Solutions in Reinforcement Learning: A Causal Influence Diagram Perspective,” Synthese, 2021; arXiv:1908.04734.
+[39] R. Greenblatt et al., “AI Control: Improving Safety Despite Intentional Subversion,” in Proceedings of the 41st International Conference on Machine Learning, PMLR 235, 2024, pp. 16295-16336.
+[40] S. Raemaekers, A. van Deursen, and J. Visser, “Semantic Versioning and Impact of Breaking Changes in the Maven Repository,” Journal of Systems and Software, vol. 129, pp. 140-158, 2017. doi:10.1016/j.jss.2016.04.008.
+[41] X. Qin, S. Luan, J. See, C. Yang, and Z. Li, “ECM Contracts: Contract-Aware, Versioned, and Governable Capability Interfaces for Embodied Agents,” arXiv:2604.13097, 2026.
+[42] Q. Xu, X. Wen, C. Xu, Z. Li, and J. Zhong, “From Craft to Constitution: A Governance-First Paradigm for Principled Agent Engineering,” arXiv:2510.13857, 2025.
+[43] X. Wen et al., “From Craft to Kernel: A Governance-First Execution Architecture and Semantic ISA for Agentic Computers,” arXiv:2604.18652, 2026.
+[44] N. Hardy, “The Confused Deputy: (or Why Capabilities Might Have Been Invented),” ACM SIGOPS Operating Systems Review, vol. 22, no. 4, pp. 36-38, 1988.
+[45] D. E. Denning, “A Lattice Model of Secure Information Flow,” Communications of the ACM, vol. 19, no. 5, pp. 236-243, 1976. doi:10.1145/360051.360056.
+[46] J. M. Cobleigh, D. Giannakopoulou, and C. S. Păsăreanu, “Learning Assumptions for Compositional Verification,” in TACAS, 2003, pp. 331-346.
+[47] M. Leucker and C. Schallhart, “A Brief Account of Runtime Verification,” Journal of Logic and Algebraic Programming, vol. 78, no. 5, pp. 293-303, 2009.
+[48] B. Laurie, E. Messeri, and R. Stradling, “Certificate Transparency Version 2.0,” RFC 9162, 2021.
+[49] ISO/IEC/IEEE 15026-2:2022, Systems and Software Engineering - Systems and Software Assurance - Part 2: Assurance Case, 2022.
+[50] C. Dwork, V. Feldman, M. Hardt, T. Pitassi, O. Reingold, and A. Roth, “The Reusable Holdout: Preserving Validity in Adaptive Data Analysis,” Science, vol. 349, no. 6248, pp. 636-638, 2015.
+[51] E. M. Clarke, O. Grumberg, S. Jha, Y. Lu, and H. Veith, “Counterexample-Guided Abstraction Refinement,” in Computer Aided Verification, 2000, pp. 154-169.
+[52] D. Connolly, C. Komlo, I. Goldberg, and C. A. Wood, “Two-Round Threshold Schnorr Signatures with FROST,” RFC 9591, 2024.
+[53] M. Yin, D. Malkhi, M. K. Reiter, G. G. Gueta, and I. Abraham, “HotStuff: BFT Consensus with Linearity and Responsiveness,” in Proceedings of the ACM Symposium on Principles of Distributed Computing, 2019.
+[54] L. Lamport, “The Temporal Logic of Actions,” ACM Transactions on Programming Languages and Systems, vol. 16, no. 3, pp. 872-923, 1994.
+[55] A. Newcombe, T. Rath, F. Zhang, B. Munteanu, M. Brooker, and M. Deardeuff, “How Amazon Web Services Uses Formal Methods,” Communications of the ACM, vol. 58, no. 4, pp. 66-73, 2015.
+[56] Q. Ye and J. Tan, “Agent Contracts: A Formal Framework for Resource-Bounded Autonomous AI Systems,” arXiv:2601.08815, version 3, 2026.
+[57] V. P. Bhardwaj, “Agent Behavioral Contracts: Formal Specification and Runtime Enforcement for Reliable Autonomous AI Agents,” arXiv:2602.22302, 2026.
+[58] Z. Zhou, “Governing Dynamic Capabilities: Cryptographic Binding and Reproducibility Verification for AI Agent Tool Use,” arXiv:2603.14332, 2026.
+[59] M. Kaptein, V.-J. Khan, and A. Podstavnychy, “Runtime Governance for AI Agents: Policies on Paths,” arXiv:2603.16586, 2026.
+[60] U. Uchibeke, “Before the Tool Call: Deterministic Pre-Action Authorization for Autonomous AI Agents,” arXiv:2603.20953, 2026.
+[61] Z. Yang, “Continually Self-Improving AI,” arXiv:2603.18073, 2026.
+[62] OpenAI, “Introducing GPT-5.5,” official release, 23 April 2026.
+[63] Google DeepMind, “Gemini 3.1 Pro,” official model page, accessed 22 June 2026.
+[64] Anthropic, “Claude Opus 4.8,” official model page, 28 May 2026.
+Page

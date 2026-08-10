@@ -1,0 +1,1660 @@
+---
+title: "Ratcheting Generative Systems"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "Date not normalized"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Original Corben Sorenson paper published as part of The ASI Stack source and lineage library."
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Original paper, not rewritten book prose"}
+This page publishes Corben Sorenson's original source manuscript so readers can inspect the ideas that preceded or informed the living book. The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `rgs` |
+| Source class | `author paper` |
+| Library class | `architecture_whitepaper` |
+| Manuscript date | Date not normalized |
+| Inventory updated | Not separately recorded |
+| Exact published-source SHA-256 | `0e59aa8adbce049634bd34a56d10f060a9bf5a28aa54ef30b013d83be0f90711` |
+| Exact published-source bytes | 58,010 |
+| Exact source text | [Download/view the tracked Markdown source](source/rgs.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/rgs.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Archived author paper; its claims retain the status and limits stated in the paper and do not inherit the living book's current evidence state.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this paper enters the living book
+
+[Procedural Memory and Cognitive Loop Closure](../chapters/procedural-memory-and-cognitive-loop-closure.html), [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.html), [Readiness Gates, Residual Escrow, and Quarantine](../chapters/readiness-gates-residual-escrow-and-quarantine.html), [Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](../chapters/compact-generative-systems-and-residual-honesty.html), [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.html)
+
+<hr>
+
+## Original manuscript
+
+Ratcheting Generative Systems
+A Unified Framework for Active Compression, Procedural Memory, Benchmark Frontiers, and Verified AI Growth
+White Paper
+ Public Release v1.0 — May 2026
+ Author: Corben Sorenson
+Status: Conceptual Framework + AI Development Methodology + Agent Architecture Proposal
+________________
+
+
+TL;DR / Executive Abstract
+Modern AI systems are powerful, but their development is often fragmented. We benchmark models in one place, train them in another, add agentic tools somewhere else, and handle verification, memory, and safety as afterthoughts. This paper proposes a single integrated framework:
+Ratcheting Generative Systems
+A Ratcheting Generative System is an AI system that improves by turning repeated pressure into durable structure. It confronts benchmarks, records residual failures, converts repeated successful behavior into verified tools, preserves solved capabilities as regression tests, and escalates from data and training improvements to inference, tooling, benchmark expansion, or architecture changes only when evidence demands it.
+The core thesis is:
+AI systems should grow by compressing experience into verified generative structure, then using benchmark pressure to ratchet that structure toward harder capabilities.
+The framework unifies five ideas:
+Idea
+	Role
+	Active compression
+	Experience is compressed into state, memory, tools, and policies that make future behavior easier to generate and verify.
+	Compact generative structure
+	Useful intelligence comes from small, structured, inspectable cores that can reconstruct, predict, control, or govern larger behaviors.
+	Cognitive loop closure
+	Repeated reasoning/action trajectories are compiled into deterministic or bounded parameterized tools.
+	Benchmark ratcheting
+	Benchmarks apply pressure until mastery; then they become regression tests while harder benchmarks define the next frontier.
+	Residual governance
+	Unsolved cases, failures, edge cases, and safety violations remain visible as residual debt rather than being ignored.
+	The high-level loop is:
+benchmark frontier
+   ↓
+model/agent attempts tasks
+   ↓
+successes and failures are logged
+   ↓
+repeated successes become verified tools
+   ↓
+failures become residual maps
+   ↓
+residuals diagnose the next intervention
+   ↓
+data / training / inference / tools / architecture improve
+   ↓
+graduated benchmarks become regression tests
+   ↓
+unresolved failures enter residual escrow
+   ↓
+new harder benchmarks become the frontier
+   ↓
+repeat
+This paper argues that frontier AI progress should not be understood merely as scaling, tool use, or benchmark optimization. Those are pieces. The deeper pattern is a ratchet:
+Yesterday’s frontier becomes today’s floor.
+A benchmark does not need to be solved perfectly before the system advances. Like a student moving through a curriculum, a model may graduate from an ordinary capability benchmark at a high mastery threshold, such as 90%, while the remaining unresolved cases enter residual escrow. If progress stalls, the graduation threshold may decay toward a floor, such as 70%, so the frontier does not get trapped forever on the tail of one benchmark. Critical failures, safety failures, and recurring residuals still block or reactivate development.
+The framework therefore distinguishes:
+Term
+	Meaning
+	Mastery threshold
+	The score required to graduate from a benchmark.
+	Time-decayed threshold
+	A threshold that lowers after stalled effort, down to a floor.
+	Residual escrow
+	The tracked set of unsolved failures left after graduation.
+	Regression suite
+	Benchmarks and cases used to preserve prior capabilities.
+	Frontier benchmark
+	A benchmark that still applies pressure and exposes missing capability.
+	Public calibration suite
+	Public benchmarks used for apples-to-apples comparison with other labs.
+	The framework also requires three execution modes:
+Mode
+	Use
+	Interpreter mode
+	Flexible reasoning for novel, ambiguous, or creative tasks.
+	Compiled-tool mode
+	Verified tool execution for repeated, well-understood tasks.
+	Reflex/failsafe mode
+	Immediate safety behavior when latency or risk makes reasoning too slow.
+	This is essential because not every task should be reasoned through, not every repeated task should be automated, and not every safety-critical condition can wait for an LLM call.
+A mature Ratcheting Generative System maintains:
+* a benchmark ledger;
+* a model ledger;
+* a tool registry;
+* a residual escrow ledger;
+* a public calibration track;
+* a safety and reflex layer;
+* a router that chooses between reasoning, tools, and reflexes;
+* an intervention ladder that decides when to improve data, training, inference, tools, benchmarks, or architecture.
+The final claim is simple:
+The best AI systems will not merely get larger. They will become better organized. They will turn pressure into structure, repetition into tools, failures into diagnostics, and benchmarks into a moving curriculum.
+That is a Ratcheting Generative System.
+________________
+
+
+Abstract
+Modern AI development often treats model training, benchmarking, agent tooling, memory, verification, and architecture design as separate concerns. This paper proposes a unified framework: Ratcheting Generative Systems.
+A Ratcheting Generative System is an AI system that grows by repeatedly confronting unsaturated benchmark frontiers, analyzing residual failures, converting repeated successful trajectories into verified parameterized tools, preserving mastered capabilities as regression tests, and escalating interventions from data and training to inference, tool formation, benchmark expansion, or architecture change only when evidence demands it.
+The framework synthesizes five mechanisms.
+First, active compression: the system compresses experience into reusable state, memory, tools, policies, and abstractions.
+Second, compact generative structure: capabilities become durable when they are represented as inspectable structures that can generate, predict, control, or govern larger behaviors.
+Third, cognitive loop closure: repeated reasoning/action trajectories are compiled into verified parameterized tools.
+Fourth, benchmark ratcheting: benchmarks function as temporary pressure surfaces. Once mastered, they become regression tests, while harder benchmarks define the new frontier.
+Fifth, residual governance: unsolved cases, critical failures, benchmark defects, edge cases, and recurring weaknesses are preserved as residual debt and periodically revisited.
+The paper defines the core loop, formal model, benchmark lifecycle, mastery thresholds, time-decayed graduation, residual escrow, public calibration benchmarks, procedural loop closure, tool registries, execution modes, safety layers, high-bandwidth embodied logging, intervention ladder, architecture evolution discipline, failure modes, and implementation roadmap.
+The framework is informed by existing work in Minimum Description Length, language-model scaling, compute-optimal training, holistic evaluation, active inference, reinforcement-learning options, tool-using language models, embodied skill libraries, hyperdimensional/vector-symbolic memory, liquid continuous-time dynamics, KAN-style interpretable transformations, and safety-critical runtime verification. MDL frames learning as compression through model-plus-data description length; HELM emphasizes broad, multi-metric evaluation; Toolformer shows that language models can learn tool use; Voyager demonstrates an embodied agent with an executable skill library; Liquid Time-constant Networks show continuous-time recurrent dynamics; KANs propose inspectable learned edge functions; and HDC/VSA systems offer algebraic compositional memory.
+Ratcheting Generative Systems do not claim that benchmarks perfectly measure intelligence, that tools should replace reasoning, or that verification is absolute in open worlds. The claim is narrower and more practical:
+AI systems should improve through a disciplined loop that turns evaluation pressure into verified structure while preserving prior capability and tracking unresolved residuals.
+________________
+
+
+1. Introduction
+1.1 The fragmentation problem
+Modern AI systems are often built from pieces that do not fully cohere.
+A model is trained.
+A benchmark is run.
+A tool is added.
+A memory system is bolted on.
+A verifier is added later.
+A safety layer is applied at deployment.
+A new architecture is proposed when performance stalls.
+Each of these pieces can be valuable. But without an organizing process, the system grows chaotically. It may gain new capabilities while losing old ones. It may optimize public benchmarks without improving real-world performance. It may reason through repeated workflows from scratch. It may accumulate tools without versioning, verification, or retirement. It may change architecture before understanding the failure mode. It may treat benchmark tails as infinite grind targets rather than residual debt.
+This paper proposes a unified development pattern:
+A system should grow by ratchet.
+That means each development cycle should:
+1. expose the current frontier;
+2. attempt the frontier;
+3. analyze failures;
+4. preserve repeated successes;
+5. verify reusable structure;
+6. lock in mastered capabilities;
+7. advance to harder benchmarks;
+8. keep unresolved failures visible.
+________________
+
+
+1.2 The recurring pattern across intelligence
+Several apparently different processes share the same structure.
+A scientist discovers a compact law that predicts many observations.
+A programmer writes a function that replaces a repeated manual workflow.
+A student masters enough of one curriculum layer to move to the next.
+A human learns a motor routine, such as stair climbing, and stops reasoning through every step.
+A benchmark becomes saturated and is replaced by a harder evaluation.
+An AI agent repeatedly performs a workflow and should eventually compile it into a tool.
+All of these are ratchets. They convert experience into durable structure, then use that structure as the floor for the next level.
+The common pattern is:
+pressure
+   ↓
+adaptation
+   ↓
+structure
+   ↓
+verification
+   ↓
+lock-in
+   ↓
+next pressure
+This paper applies that pattern to AI systems.
+________________
+
+
+1.3 The benchmark problem
+Benchmarks are necessary, but static benchmarks decay.
+They decay because:
+* models improve;
+* public benchmarks become known;
+* training contamination becomes more likely;
+* benchmark-specific tricks emerge;
+* remaining failures become noise or ambiguity;
+* score improvements stop transferring to real-world capability.
+This is already visible in frontier AI. Humanity’s Last Exam was introduced partly because models had exceeded 90% accuracy on popular benchmarks such as MMLU, limiting those benchmarks’ ability to measure frontier systems. The HLE paper describes the benchmark as an expert-level, broad-subject, closed-ended academic evaluation designed to restore measurement pressure.
+Software-engineering benchmarks show the same lifecycle. OpenAI argued in February 2026 that SWE-bench Verified no longer measured frontier coding capability well, citing contamination and test-design issues, and recommended SWE-bench Pro instead.
+The lesson is not that benchmarks are bad.
+The lesson is:
+Benchmarks have lifecycles.
+A benchmark can be frontier today, diagnostic tomorrow, regression later, and retired eventually.
+________________
+
+
+1.4 The repeated reasoning problem
+AI agents also waste capability by reasoning through repeated tasks from scratch.
+A coding agent repeatedly rediscovers how to run tests in the same repository.
+A research assistant repeatedly rediscovers how to turn rough notes into a structured public paper.
+A data agent repeatedly rediscovers how to normalize the same kind of spreadsheet.
+An operations agent repeatedly rediscovers when to hold a deployment.
+Humans do not usually work this way. Practice can make behavior faster, more habitual, and less dependent on conscious control. In AI systems, the analogous move is to convert repeated reasoning/action trajectories into explicit, verified, parameterized tools.
+The principle is:
+Repeated cognition should become procedural memory.
+________________
+
+
+1.5 The architecture problem
+When a model hits a wall, it is tempting to change architecture.
+Sometimes that is correct. But often the wall is not architectural. It may be caused by:
+* bad data;
+* insufficient data;
+* label noise;
+* weak training;
+* poor curriculum;
+* inadequate inference;
+* missing tools;
+* missing memory;
+* benchmark contamination;
+* flawed evaluation;
+* missing verification.
+The Chinchilla result is a useful reminder that apparent model limitations may be data/training-allocation limitations: compute-optimal training requires balancing parameter count and training tokens rather than simply scaling parameters.
+The Ratcheting Generative Systems framework therefore uses an intervention ladder. Architecture changes are justified when simpler interventions fail and residuals point to a missing computational mechanism.
+________________
+
+
+2. Core Definition
+2.1 Ratcheting Generative System
+A Ratcheting Generative System is an AI system that improves by converting benchmark pressure, repeated behavior, and residual failures into verified, reusable structure.
+It has six core objects:
+Object
+	Meaning
+	Benchmark frontier
+	The current set of unsaturated tests applying pressure.
+	Generative state
+	The model, memory, tools, architecture, parameters, and inference procedure.
+	Trajectory log
+	Records of task attempts, actions, tool use, outputs, and verification outcomes.
+	Residual map
+	Structured representation of failures, edge cases, benchmark defects, and unresolved capability gaps.
+	Tool registry
+	Verified parameterized procedures compiled from repeated successful trajectories.
+	Regression suite
+	Previously mastered benchmarks and cases used to preserve capability.
+	The system improves by cycling through these objects.
+________________
+
+
+2.2 The central loop
+The core loop is:
+frontier benchmark
+   ↓
+attempt
+   ↓
+trajectory logging
+   ↓
+residual analysis
+   ↓
+loop closure
+   ↓
+verification
+   ↓
+intervention selection
+   ↓
+capability update
+   ↓
+regression preservation
+   ↓
+frontier expansion
+The system is not simply trained. It is cultivated.
+Each round asks:
+1. What can the system do now?
+2. What did it fail to do?
+3. What did it repeatedly succeed at?
+4. Which successes should become tools?
+5. Which failures are data, training, inference, tool, benchmark, or architecture problems?
+6. Which mastered benchmarks should become regression?
+7. Which unresolved failures should enter escrow?
+8. What is the next frontier?
+________________
+
+
+2.3 The central thesis
+The central thesis is:
+Capability grows when evaluation pressure, procedural memory, compact structure, and verification are fused into one ratcheting loop.
+This differs from ordinary scaling, ordinary benchmarking, ordinary tool use, and ordinary fine-tuning.
+Approach
+	Limitation
+	Scaling alone
+	May grow capability without explaining or preserving it.
+	Static benchmarking
+	Can become saturated, contaminated, or Goodharted.
+	Tool use alone
+	Assumes tools already exist.
+	Fine-tuning alone
+	Hides skill in weights and makes local verification difficult.
+	Memory alone
+	Recalls experience but may not compile it into procedure.
+	Architecture novelty alone
+	May solve the wrong wall.
+	The ratchet combines them.
+________________
+
+
+3. First Principles
+3.1 Active compression
+An AI system does not merely store experience. It compresses experience into forms that make future behavior easier:
+* parameters;
+* latent states;
+* memories;
+* tools;
+* policies;
+* schemas;
+* benchmarks;
+* residual maps;
+* procedures;
+* architectural changes.
+This is active compression because the system does not passively describe the past. It acts to reduce future uncertainty and future effort.
+The broad objective can be written as:
+min⁡θ,M,T,πE[L(Mt)+L(Tt)+L(ot:t+k∣θ,Mt,Tt,π)+C(π)+L(ϵt)]\min_{\theta, M, T, \pi} \mathbb{E} \left[ L(M_t) + L(T_t) + L(o_{t:t+k} \mid \theta, M_t, T_t, \pi) + C(\pi) + L(\epsilon_t) \right]θ,M,T,πmin​E[L(Mt​)+L(Tt​)+L(ot:t+k​∣θ,Mt​,Tt​,π)+C(π)+L(ϵt​)]
+where:
+Term
+	Meaning
+	θ\thetaθ
+	Model parameters.
+	MtM_tMt​
+	Memory/state.
+	TtT_tTt​
+	Tool registry/procedural memory.
+	π\piπ
+	Policy or execution strategy.
+	ot:t+ko_{t:t+k}ot:t+k​
+	Future observations or task outcomes.
+	C(π)C(\pi)C(π)
+	Cost/risk of action.
+	ϵt\epsilon_tϵt​
+	Residual error or unexplained failure.
+	In plain language:
+Compress the past into structures that make future tasks easier to generate, verify, and govern.
+________________
+
+
+3.2 Compact generative structure
+A capability becomes durable when it is represented as a compact structure that can generate, predict, control, or govern a larger class of behavior.
+Examples:
+Compact structure
+	Larger behavior
+	A formula
+	Many predictions.
+	A program
+	Many executions.
+	A benchmark
+	A pressure surface for capability.
+	A tool
+	A family of repeated tasks.
+	A schema
+	A space of valid outputs.
+	A memory state
+	Future context and action.
+	A policy
+	Many action choices.
+	An architecture
+	A space of learnable functions.
+	The general form is:
+C=(S,R,M,ϵ,V,G)\mathcal{C} = (S, R, M, \epsilon, V, G)C=(S,R,M,ϵ,V,G)
+where:
+Symbol
+	Meaning
+	SSS
+	Seed or compact core.
+	RRR
+	Rule system or expansion process.
+	MMM
+	Memory/state.
+	ϵ\epsilonϵ
+	Residual/error.
+	VVV
+	Verification.
+	GGG
+	Generation or governance interface.
+	This gives the ratchet its internal discipline:
+Every compact structure must account for its residuals and verification.
+________________
+
+
+3.3 Procedural memory through loop closure
+When an agent repeatedly performs similar trajectories, those trajectories should be candidates for proceduralization.
+Let successful trajectories be:
+L={τ1,τ2,…,τn}\mathcal{L} = \{\tau_1, \tau_2, \dots, \tau_n\}L={τ1​,τ2​,…,τn​}
+A loop-closure engine attempts to compile them into a tool:
+{τ1,τ2,…,τn}→Tϕ(p)\{\tau_1, \tau_2, \dots, \tau_n\} \rightarrow T_\phi(p){τ1​,τ2​,…,τn​}→Tϕ​(p)
+where:
+Symbol
+	Meaning
+	TϕT_\phiTϕ​
+	Tool with definition ϕ\phiϕ.
+	ppp
+	Parameters capturing task-specific variation.
+	The tool is accepted only if:
+Verify⁡(Tϕ)≥θ\operatorname{Verify}(T_\phi) \geq \thetaVerify(Tϕ​)≥θ
+This gives agents an explicit skill-formation mechanism that does not require weight updates.
+________________
+
+
+3.4 Benchmark ratcheting
+Benchmarks apply pressure.
+When a model reaches a benchmark’s mastery threshold, the benchmark graduates to regression and the frontier moves.
+But the model does not need to score 100% on every ordinary benchmark.
+The ratchet distinguishes:
+Term
+	Meaning
+	Graduation
+	The model is good enough to advance.
+	Saturation
+	The benchmark no longer provides useful signal.
+	Regression
+	The benchmark now protects prior capability.
+	Escrow
+	Remaining failures are tracked for later revisiting.
+	This prevents the system from getting trapped on the final tail of a benchmark.
+________________
+
+
+3.5 Verification as governance
+Verification is what turns generation into reliable capability.
+A ratcheting system must verify:
+* benchmark quality;
+* tool correctness;
+* model regressions;
+* safety constraints;
+* public calibration claims;
+* residual recurrence;
+* architecture-change effects;
+* deployment behavior.
+Verification cannot be absolute in open worlds. But verified procedures are still more governable than repeated unconstrained reasoning.
+________________
+
+
+4. Formal Model
+Let the system at development cycle ttt be:
+St=(At,θt,Dt,It,Mt,Tt,Bt,Rt,Et)S_t = (A_t, \theta_t, D_t, I_t, M_t, T_t, B_t, R_t, E_t)St​=(At​,θt​,Dt​,It​,Mt​,Tt​,Bt​,Rt​,Et​)
+where:
+Symbol
+	Meaning
+	AtA_tAt​
+	Architecture.
+	θt\theta_tθt​
+	Model parameters.
+	DtD_tDt​
+	Training and post-training data.
+	ItI_tIt​
+	Inference procedure: prompts, tools, memory, search, retrieval, planning.
+	MtM_tMt​
+	State/memory system.
+	TtT_tTt​
+	Tool registry/procedural memory.
+	BtB_tBt​
+	Active benchmark frontier.
+	RtR_tRt​
+	Regression suite.
+	EtE_tEt​
+	Residual escrow and failure map.
+	Performance on the frontier is:
+P(St,Bt)P(S_t, B_t)P(St​,Bt​)
+Performance on regression is:
+P(St,Rt)P(S_t, R_t)P(St​,Rt​)
+The ratchet advances when:
+P(St+1,Bt)>P(St,Bt)+ϵP(S_{t+1}, B_t) > P(S_t, B_t) + \epsilonP(St+1​,Bt​)>P(St​,Bt​)+ϵ
+and:
+P(St+1,Rt)≥P(St,Rt)−δP(S_{t+1}, R_t) \geq P(S_t, R_t) - \deltaP(St+1​,Rt​)≥P(St​,Rt​)−δ
+In plain language:
+Improve the frontier without losing the floor.
+When a benchmark bbb graduates:
+b→Rt+1b \rightarrow R_{t+1}b→Rt+1​
+and its unsolved failures enter escrow:
+Eb={x∈b∣St(x)≠y}E_b = \{x \in b \mid S_t(x) \neq y\}Eb​={x∈b∣St​(x)=y}
+Then:
+Et+1=Et∪EbE_{t+1} = E_t \cup E_bEt+1​=Et​∪Eb​
+A new benchmark frontier is introduced:
+Bt→Bt+1B_t \rightarrow B_{t+1}Bt​→Bt+1​
+________________
+5. Time-Decayed Mastery Thresholds
+5.1 Why 100% is the wrong default
+Benchmarks should not always require perfect performance before advancement.
+Human education does not usually demand 100% mastery of every test before a student moves to the next layer. A strong passing score is enough, while remaining weaknesses are revisited through later material.
+AI development should follow a similar principle.
+The goal is not to grind every benchmark to perfection.
+The goal is:
+Advance through a curriculum of increasingly difficult benchmarks while preserving unresolved residuals.
+________________
+
+
+5.2 Mastery threshold
+Each benchmark bbb has an initial mastery threshold:
+γ0,b\gamma_{0,b}γ0,b​
+For many ordinary capability benchmarks, a useful default may be:
+γ0,b=0.90\gamma_{0,b} = 0.90γ0,b​=0.90
+or 90%.
+A model graduates benchmark bbb when:
+P(St,b)≥γbP(S_t,b) \geq \gamma_bP(St​,b)≥γb​
+subject to subgroup floors and critical-failure constraints.
+________________
+
+
+5.3 Subgroup floors
+A model should not graduate a benchmark by performing well on easy categories while failing an important subskill.
+Let CbC_bCb​ be benchmark subcategories. Then require:
+min⁡c∈CbP(St,c)≥λb\min_{c \in C_b} P(S_t,c) \geq \lambda_bc∈Cb​min​P(St​,c)≥λb​
+where λb\lambda_bλb​ is a subgroup floor.
+For ordinary benchmarks, this floor may be lower than the overall threshold. For safety-relevant categories, it may be much higher.
+________________
+
+
+5.4 Critical-failure veto
+Some failures block graduation regardless of aggregate score.
+Let:
+Fcritical(St,b)F_{\text{critical}}(S_t,b)Fcritical​(St​,b)
+be the number or rate of unacceptable critical failures.
+Graduation requires:
+Fcritical(St,b)=0F_{\text{critical}}(S_t,b) = 0Fcritical​(St​,b)=0
+or a domain-specific acceptable bound near zero.
+Critical failures may include:
+* unsafe physical action;
+* security breach;
+* financial harm;
+* medical harm;
+* legal violation;
+* irreversible destructive action;
+* catastrophic deployment failure.
+Time-decayed thresholds are for curriculum advancement, not for relaxing safety.
+________________
+
+
+5.5 Time-decayed threshold
+If progress stalls, the mastery threshold decays toward a floor.
+Let:
+γb(k)=max⁡(γmin⁡,b,γ0,b−ηb⋅max⁡(0,k−pb))\gamma_b(k) = \max \left( \gamma_{\min,b}, \gamma_{0,b} - \eta_b \cdot \max(0, k - p_b) \right)γb​(k)=max(γmin,b​,γ0,b​−ηb​⋅max(0,k−pb​))
+where:
+Symbol
+	Meaning
+	γb(k)\gamma_b(k)γb​(k)
+	Current graduation threshold for benchmark bbb.
+	γ0,b\gamma_{0,b}γ0,b​
+	Initial threshold, such as 90%.
+	γmin⁡,b\gamma_{\min,b}γmin,b​
+	Floor threshold, such as 70% for ordinary non-safety benchmarks.
+	kkk
+	Development cycles spent on benchmark bbb.
+	pbp_bpb​
+	Patience window before decay begins.
+	ηb\eta_bηb​
+	Decay rate.
+	A more cautious policy begins decay only when recent improvement stalls:
+Δb(k)<ϵb\Delta_b(k) < \epsilon_bΔb​(k)<ϵb​
+This prevents passive waiting. Thresholds decay with stalled effort, not calendar time alone.
+________________
+
+
+5.6 Frontier Momentum Rule
+The Frontier Momentum Rule is:
+If a model reaches the current time-decayed threshold, passes subgroup floors, and has no critical failures, the benchmark graduates. Remaining failures enter residual escrow, and the frontier moves forward.
+Formally:
+Advance⁡(St,b,k)=[P(St,b)≥γb(k)∧min⁡c∈CbP(St,c)≥λb(k)∧Fcritical(St,b)=0]\operatorname{Advance}(S_t,b,k)= \left[ P(S_t,b)\geq \gamma_b(k) \land \min_{c \in C_b}P(S_t,c)\geq \lambda_b(k) \land F_{\text{critical}}(S_t,b)=0 \right]Advance(St​,b,k)=[P(St​,b)≥γb​(k)∧c∈Cb​min​P(St​,c)≥λb​(k)∧Fcritical​(St​,b)=0]
+If true:
+b→Rt+1b \rightarrow R_{t+1}b→Rt+1​
+and:
+Eb→Residual EscrowE_b \rightarrow \text{Residual Escrow}Eb​→Residual Escrow
+The principle:
+Advance when the benchmark has taught enough. Preserve what remains. Move the frontier forward.
+________________
+
+
+6. Residual Escrow
+6.1 Definition
+Residual escrow is the tracked set of unsolved cases, failure clusters, ambiguous items, benchmark defects, and hard examples left after a model graduates from a benchmark.
+For benchmark bbb:
+Eb={x∈b∣St(x)≠y}E_b = \{x \in b \mid S_t(x) \neq y\}Eb​={x∈b∣St​(x)=y}
+Escrow prevents two opposite mistakes:
+Mistake
+	Problem
+	Tail obsession
+	The system gets trapped chasing the final 10% forever.
+	Tail erasure
+	The system ignores unresolved weaknesses.
+	Residual escrow says:
+Do not grind the tail forever. Preserve it, revisit it, and promote it if it keeps mattering.
+________________
+
+
+6.2 Escrow lifecycle
+An escrow item may move through several states:
+failed item
+   ↓
+escrow
+   ↓
+periodic reattempt
+   ↓
+solved consistently
+   ↓
+regression item
+or:
+failed item
+   ↓
+escrow
+   ↓
+same failure recurs in later benchmarks
+   ↓
+active diagnostic target
+or:
+failed item
+   ↓
+benchmark audit
+   ↓
+marked noisy / ambiguous / flawed
+   ↓
+retired or repaired
+________________
+
+
+6.3 Recurrence Promotion Rule
+If a residual pattern appears repeatedly across future benchmarks, it is promoted from escrow to active diagnosis.
+Let eee be a residual cluster. If:
+Repeat⁡(e,Bt+1,Bt+2,… )>ρ\operatorname{Repeat}(e, B_{t+1}, B_{t+2}, \dots) > \rhoRepeat(e,Bt+1​,Bt+2​,…)>ρ
+then:
+e→Active Diagnostic Targete \rightarrow \text{Active Diagnostic Target}e→Active Diagnostic Target
+In plain language:
+If the same kind of failure keeps reappearing, it is not tail noise. It is a real wall.
+________________
+
+
+6.4 Escrow budget
+Escrow should receive recurring attention, but not dominate the frontier.
+A possible evaluation budget might be:
+Evaluation area
+	Example allocation
+	Current frontier
+	50–70%
+	Regression suite
+	15–25%
+	Residual escrow
+	10–20%
+	Public calibration
+	5–15%
+	The exact numbers depend on the domain. The principle is:
+Persistent pressure without tail obsession.
+________________
+
+
+7. Public Calibration Track
+7.1 Why public benchmarks still matter
+Private and live benchmarks are often better for steering development because they reduce contamination and overfitting. But public benchmarks are still necessary.
+They provide:
+* apples-to-apples comparison;
+* historical continuity;
+* credibility;
+* external calibration;
+* comparability with other labs and companies.
+A system should therefore maintain a Public Calibration Track.
+This track should not dominate the inner-loop curriculum. It should be used periodically at major milestones.
+________________
+
+
+7.2 Public calibration vs. internal frontier
+Track
+	Purpose
+	Internal frontier
+	Drive capability growth.
+	Diagnostic
+	Explain failure modes.
+	Private holdout
+	Test generalization.
+	Live benchmark
+	Track real-world performance.
+	Regression suite
+	Preserve mastered capabilities.
+	Residual escrow
+	Track unresolved failures.
+	Public calibration
+	Compare to public model reports.
+	The public calibration track answers:
+How do we compare to the field?
+The internal frontier answers:
+What should we improve next?
+Both are necessary.
+________________
+
+
+7.3 Public benchmark caution
+Public benchmarks are vulnerable to:
+* contamination;
+* overfitting;
+* leaderboard gaming;
+* benchmark-specific prompting;
+* stale task design;
+* narrow capability coverage.
+OpenAI’s SWE-bench Verified analysis is an example of public benchmark lifecycle risk: a benchmark can be useful at one point, then become less diagnostic as models improve and contamination/test-design issues become more important.
+Therefore:
+Use public benchmarks for calibration, not as the sole source of truth.
+________________
+
+
+8. Cognitive Loop Closure Inside the Ratchet
+8.1 Repetition should become procedure
+The ratchet does not only learn from failures. It also learns from repeated success.
+When a system repeatedly completes a task through the same chain of reasoning and tool use, that chain should be considered for closure.
+A trajectory is:
+τi=(xi,ci,a0:n,o0:n,yi,vi)\tau_i = (x_i, c_i, a_{0:n}, o_{0:n}, y_i, v_i)τi​=(xi​,ci​,a0:n​,o0:n​,yi​,vi​)
+where:
+Symbol
+	Meaning
+	xix_ixi​
+	Task.
+	cic_ici​
+	Context.
+	a0:na_{0:n}a0:n​
+	Actions, decisions, tool calls, edits, or summarized reasoning steps.
+	o0:no_{0:n}o0:n​
+	Observations, tool results, intermediate artifacts, or feedback.
+	yiy_iyi​
+	Output.
+	viv_ivi​
+	Verification result.
+	A loop-closure engine detects a trajectory family:
+L={τ1,τ2,…,τn}\mathcal{L} = \{\tau_1, \tau_2, \dots, \tau_n\}L={τ1​,τ2​,…,τn​}
+and compiles it into:
+Tϕ(p)T_\phi(p)Tϕ​(p)
+where ppp is the parameter vector.
+________________
+
+
+8.2 Loop closure architecture
+The loop-closure subsystem includes:
+1. Trajectory logger
+2. Loop detector
+3. Abstraction engine
+4. Active parameter discovery
+5. Tool synthesizer
+6. Verifier
+7. Tool registry
+8. Router
+9. Runtime monitor
+10. Revision and retirement manager
+This turns repeated behavior into governed procedural memory.
+________________
+
+
+8.3 Active parameter discovery
+The hardest part is separating invariant structure from accidental context.
+If every observed invoice is in USD, currency may look invariant. If every observed repository uses the same package manager, the package manager may look invariant. If every staircase observed has normal lighting, lighting may be missed as a parameter.
+Therefore, the system must actively probe.
+Methods include:
+* historical variance analysis;
+* counterfactual replay;
+* synthetic case generation;
+* adversarial edge-case probing;
+* environment interrogation;
+* human or supervisory questioning.
+Variables should be classified as:
+State
+	Meaning
+	Invariant
+	Should not change across valid uses.
+	Parameter
+	Expected to vary and should be exposed.
+	Precondition
+	Must hold before tool execution.
+	Unknown assumption
+	Suspected dependency requiring more evidence.
+	This prevents brittle hard-coding.
+________________
+
+
+8.4 Tool acceptance rule
+A tool should be accepted only if its expected value exceeds lifecycle cost:
+F⋅ΔC⋅Q⋅A>CT+MT+RT+VT+DTF \cdot \Delta C \cdot Q \cdot A > C_T + M_T + R_T + V_T + D_TF⋅ΔC⋅Q⋅A>CT​+MT​+RT​+VT​+DT​
+where:
+Symbol
+	Meaning
+	FFF
+	Expected recurrence frequency.
+	ΔC\Delta CΔC
+	Expected cost reduction per use.
+	QQQ
+	Expected quality or reliability improvement.
+	AAA
+	Automation appropriateness.
+	CTC_TCT​
+	Creation cost.
+	MTM_TMT​
+	Maintenance cost.
+	RTR_TRT​
+	Risk cost.
+	VTV_TVT​
+	Verification cost.
+	DTD_TDT​
+	Drift/depreciation cost.
+	This prevents tool bloat.
+________________
+
+
+8.5 Tool cards
+Every closed tool should have a card.
+Field
+	Purpose
+	Tool name
+	Identifier.
+	Task family
+	What it covers.
+	Inputs
+	Required inputs.
+	Outputs
+	Expected outputs.
+	Parameters
+	Task-specific variation.
+	Preconditions
+	When it may run.
+	Postconditions
+	What must hold after execution.
+	Verification grade
+	Confidence/testing level.
+	Runtime tier
+	Execution environment.
+	Risk tier
+	Consequence of failure.
+	Fallback
+	What happens when it should not run.
+	Provenance
+	Source trajectories.
+	Metrics
+	Success, failures, savings.
+	Retirement criteria
+	When to disable it.
+	Tool cards make procedural memory auditable.
+________________
+
+
+9. Reference Cognitive Substrate
+A Ratcheting Generative System can be built on many architectures. This paper does not require a specific model. However, the framework is especially compatible with an agent substrate that combines continuous state, symbolic memory, interpretable transformations, and active uncertainty reduction.
+A strong reference substrate contains five elements:
+Element
+	Function
+	Continuous temporal state
+	Maintains streaming context.
+	Nonlinear memory expansion
+	Projects state into a richer basis for retrieval and decision.
+	Vector-symbolic memory
+	Stores compositional role-filler structures, plans, facts, and hypotheses.
+	Inspectable transformations
+	Provide interpretable compression/decompression interfaces.
+	Active-inference-style action selection
+	Chooses queries, tools, or actions that reduce expected residual uncertainty.
+	This substrate is inspired by established research lines, not dependent on one implementation. Liquid Time-constant Networks introduced continuous-time recurrent dynamics with state-coupled time constants; KANs propose learnable edge functions as interpretable alternatives to MLPs; HDC/VSA systems support compositional high-dimensional symbolic representations; active inference frames perception and action as belief updating and expected free-energy minimization.
+The ratchet wraps around this substrate:
+state/memory/architecture
+   ↓
+benchmark pressure
+   ↓
+residuals
+   ↓
+loop closure
+   ↓
+tools
+   ↓
+verification
+   ↓
+frontier expansion
+The substrate provides the agent’s cognition.
+The ratchet governs its growth.
+________________
+
+
+10. Three Execution Modes
+The system must distinguish between reasoning, tool execution, and reflex safety.
+________________
+
+
+10.1 Interpreter mode
+Use flexible reasoning.
+Appropriate for:
+* novel tasks;
+* ambiguous tasks;
+* creative synthesis;
+* high-level strategy;
+* missing parameters;
+* unsatisfied tool preconditions;
+* unverified task family.
+Interpreter mode is slow but adaptive.
+________________
+
+
+10.2 Compiled-tool mode
+Use a verified closed-loop tool.
+Appropriate for:
+* repeated workflows;
+* known task families;
+* available parameters;
+* valid preconditions;
+* acceptable risk;
+* sufficient verification grade.
+Compiled-tool mode is faster, more consistent, and more auditable.
+________________
+
+
+10.3 Reflex/failsafe mode
+Use immediate safety behavior.
+Appropriate for:
+* hard latency constraints;
+* physical safety;
+* security containment;
+* production deployment risk;
+* financial transaction risk;
+* tool failure during execution;
+* system approaching a safety boundary.
+Examples:
+* drone emergency hover or land;
+* robot stop motion;
+* vehicle braking envelope;
+* production deployment hold;
+* financial transaction hold;
+* network isolation on suspicious behavior.
+For real-time or embodied systems, falling back to slow reasoning may be unsafe. Safety-critical contexts need reflex controllers, runtime monitors, control-barrier-like constraints, or hard safe-state transitions. Runtime verification and control-barrier-function research are relevant here because they focus on monitoring or enforcing system properties during execution, particularly in advanced or safety-critical domains.
+________________
+
+
+11. Benchmark and Tool Ledgers
+A mature ratchet requires explicit records.
+________________
+
+
+11.1 Benchmark ledger
+Field
+	Meaning
+	Benchmark name
+	Identifier.
+	Capability measured
+	What it claims to test.
+	Status
+	Frontier, diagnostic, graduated, regression, live, public calibration, retired.
+	Initial threshold
+	Default mastery target.
+	Current threshold
+	Time-decayed graduation threshold.
+	Floor threshold
+	Minimum threshold before diagnosis/bridge.
+	Subgroup floors
+	Minimum category requirements.
+	Critical-failure rules
+	Failures that veto graduation.
+	Contamination risk
+	Low, medium, high.
+	Label/test quality
+	Known quality issues.
+	Transfer evidence
+	Whether improvement generalizes.
+	Cost
+	Runtime, compute, human review.
+	Escrow policy
+	How failures are tracked.
+	Retirement criteria
+	When to stop using it.
+	________________
+
+
+11.2 Model ledger
+Field
+	Meaning
+	Model version
+	Identifier.
+	Architecture
+	Model design.
+	Data
+	Training and post-training data.
+	Training process
+	Loss, optimizer, schedule, RL, curriculum.
+	Inference process
+	Tools, memory, retrieval, search, test-time compute.
+	Benchmark scores
+	Full benchmark portfolio.
+	Residual map
+	Failure categories.
+	Tool registry version
+	Procedural memory state.
+	Regression status
+	Prior capabilities preserved?
+	Cost profile
+	Training, inference, latency, memory.
+	Safety profile
+	Risk evaluation.
+	Next wall
+	Current suspected bottleneck.
+	________________
+
+
+11.3 Tool registry
+Field
+	Meaning
+	Tool name
+	Skill identifier.
+	Source trajectories
+	Prior successful workflows.
+	Parameters
+	Variable inputs.
+	Preconditions
+	When it may run.
+	Postconditions
+	What must be true after execution.
+	Verification grade
+	Confidence/testing level.
+	Risk tier
+	Consequence of failure.
+	Runtime tier
+	Execution environment.
+	Usage metrics
+	Frequency, success, savings.
+	Failure modes
+	Known residuals.
+	Version
+	Current version.
+	Retirement criteria
+	When to disable or revise.
+	________________
+
+
+11.4 Residual escrow ledger
+Field
+	Meaning
+	Residual ID
+	Failure identifier.
+	Source benchmark
+	Where it came from.
+	Failure type
+	Data, training, inference, tool, benchmark, architecture, safety.
+	Cluster
+	Related failures.
+	Severity
+	Low, medium, high, critical.
+	Reattempt schedule
+	When to retry.
+	Recurrence count
+	How often it reappears.
+	Promotion status
+	Escrow, active diagnostic, regression, retired.
+	Notes
+	Ambiguity, suspected label issue, benchmark defect, or architecture clue.
+	________________
+
+
+12. Intervention Ladder
+The ratchet escalates in disciplined order.
+________________
+
+
+12.1 Level 1 — Benchmark audit
+Before changing the system, audit the benchmark.
+Questions:
+* Are labels correct?
+* Are tasks solvable?
+* Are tests fair?
+* Is the benchmark contaminated?
+* Are prompts clear?
+* Do metrics match the target capability?
+* Does improvement transfer?
+Test-set quality matters. Label errors and flawed tests can destabilize benchmark interpretation; OpenAI’s SWE-bench Verified analysis similarly found that many audited failures were caused by flawed tests or underspecified tasks.
+________________
+
+
+12.2 Level 2 — Data improvement
+If benchmark failures are valid, improve data.
+Actions:
+* collect targeted examples;
+* clean labels;
+* add negative cases;
+* improve diversity;
+* create synthetic cases;
+* add demonstrations;
+* rebalance categories;
+* improve curriculum.
+________________
+
+
+12.3 Level 3 — Training improvement
+If data is not enough, improve training.
+Actions:
+* change loss;
+* tune optimizer;
+* change schedule;
+* improve curriculum;
+* add post-training;
+* add preference learning;
+* add reinforcement learning;
+* improve distillation.
+________________
+
+
+12.4 Level 4 — Inference improvement
+If training is not enough, improve inference.
+Actions:
+* add test-time compute;
+* add retrieval;
+* add memory;
+* add search;
+* add planning;
+* add verifiers;
+* add tools;
+* use decomposition;
+* use self-consistency.
+________________
+
+
+12.5 Level 5 — Loop closure
+If repeated successful workflows exist, compile them into tools.
+Actions:
+* detect repeated trajectories;
+* abstract invariant structure;
+* identify parameters;
+* synthesize tool;
+* verify tool;
+* register tool;
+* route future tasks through tool;
+* monitor failures.
+This is where repeated behavior becomes procedural memory.
+________________
+
+
+12.6 Level 6 — Bridge benchmarks
+If the model cannot reach even the floor threshold, the benchmark may be too far ahead.
+Create a bridge benchmark.
+Examples:
+benchmark A: mastered
+benchmark C: too hard
+   ↓
+create benchmark B as bridge
+The bridge isolates missing subskills and prevents endless grinding.
+________________
+
+
+12.7 Level 7 — Architecture change
+If data, training, inference, loop closure, benchmark repair, and bridge benchmarks fail, change architecture.
+Possible changes:
+* persistent memory;
+* recurrence;
+* hierarchy;
+* modularity;
+* multimodal representation;
+* planner/verifier split;
+* retrieval-native design;
+* tool-native design;
+* continuous-state dynamics;
+* vector-symbolic memory;
+* active policy selection;
+* long-horizon control structures.
+Architecture change should be a hypothesis:
+This residual exists because the system lacks mechanism XXX. Adding XXX should improve benchmark class BBB while preserving regression suite RRR.
+________________
+
+
+13. Execution Environments and Safety
+13.1 Execution tiers
+Tier
+	Environment
+	Appropriate for
+	E0
+	Text template
+	Low-risk drafting and formatting.
+	E1
+	Structured workflow
+	Human-reviewed procedures.
+	E2
+	Typed function
+	Deterministic transformations.
+	E3
+	Sandboxed runtime
+	Generated or untrusted code.
+	E4
+	Memory-safe systems runtime
+	Higher-assurance digital tools.
+	E5
+	Real-time reflex runtime
+	Safety-critical embodied systems.
+	Generated tools should execute in the least powerful environment sufficient for the task.
+Rust and WebAssembly are relevant examples of execution technologies because Rust’s ownership model constrains memory management at compile time, while WebAssembly is designed as a portable compilation target with sandboxing and isolation goals.
+________________
+
+
+13.2 Risk tiers
+Tier
+	Examples
+	Required control
+	Low
+	Formatting, summarization, report layout
+	Automated execution acceptable.
+	Medium
+	Data transformation, code refactor, workflow routing
+	Automated with verification and rollback.
+	High
+	Financial, legal, security, deployment actions
+	Human approval, dry run, constrained execution.
+	Critical
+	Irreversible or safety-critical physical actions
+	Certified runtime, reflex/failsafe layer, strict containment.
+	________________
+
+
+13.3 High-bandwidth embodied logging
+Embodied agents produce high-bandwidth streams:
+* camera frames;
+* lidar;
+* IMU;
+* motor commands;
+* GPS;
+* force sensors;
+* battery telemetry;
+* localization estimates;
+* controller state.
+A ratcheting embodied system should not feed raw streams directly into loop detection. It needs hierarchical logging:
+Log type
+	Purpose
+	Raw telemetry
+	Replay, debugging, safety analysis.
+	Event log
+	Obstacle detected, gate passed, slip detected, reflex triggered.
+	Semantic trace
+	Objects, landmarks, state labels, task progress.
+	Skill trace
+	Which controller/tool/reflex was active.
+	Residual log
+	Surprises, failures, monitor violations, recovery events.
+	High-bandwidth data should be retained around anomalies, failures, near misses, reflex activations, and representative successes.
+The memory budget should satisfy:
+Braw+Bevents+Bfeatures+Bresiduals≤BbudgetB_{\text{raw}} + B_{\text{events}} + B_{\text{features}} + B_{\text{residuals}} \leq B_{\text{budget}}Braw​+Bevents​+Bfeatures​+Bresiduals​≤Bbudget​
+The goal is:
+Log enough structure to discover loops, enough detail to debug failures, and enough safety evidence to audit reflex behavior — without storing the entire world.
+________________
+
+
+14. Public Calibration and Anti-Goodhart Design
+14.1 Goodhart risk
+When a measure becomes a target, it can stop being a good measure. This is the core warning behind Goodhart’s law and related measurement-failure ideas.
+A benchmark-driven framework is especially vulnerable to this.
+Therefore, the ratchet requires anti-Goodhart safeguards.
+________________
+
+
+14.2 Safeguards
+Safeguard
+	Purpose
+	Benchmark rotation
+	Prevent fixation on one benchmark.
+	Private holdouts
+	Test generalization beyond public sets.
+	Live benchmarks
+	Reduce stale evaluation.
+	Benchmark mutation
+	Test capability rather than benchmark style.
+	Multi-metric evaluation
+	Avoid one-score thinking.
+	Capability narratives
+	Explain what the score actually means.
+	Transfer checks
+	Ensure improvements generalize.
+	Contamination audits
+	Detect memorization or benchmark leakage.
+	Residual escrow
+	Preserve failures after graduation.
+	Public calibration track
+	Maintain apples-to-apples comparability without making public benchmarks the sole target.
+	HELM’s holistic-evaluation philosophy is relevant because it emphasizes broad coverage, explicit recognition of incompleteness, and multi-metric measurement rather than narrow accuracy-only evaluation.
+________________
+
+
+15. Example Development Cycle
+Consider a coding agent.
+Cycle 1 — Simple coding benchmark
+The model learns function completion, small fixes, and unit-test generation.
+It reaches the mastery threshold.
+The benchmark becomes regression.
+Remaining failures enter escrow.
+Cycle 2 — Repository benchmark
+The model faces repository-level tasks.
+It fails because it cannot navigate project structure reliably.
+Residual map:
+* missing project profiling;
+* wrong test commands;
+* poor dependency handling.
+Intervention:
+* improve data;
+* add repository examples;
+* add retrieval;
+* close repeated repo-inspection loops into tools.
+Cycle 3 — Tool closure
+Repeated successful workflow:
+inspect repo
+   ↓
+detect package manager
+   ↓
+find test command
+   ↓
+run tests
+   ↓
+parse failures
+Tool created:
+Run Repository Tests
+Tool card includes:
+* repo path;
+* package manager;
+* env setup;
+* changed files;
+* known flaky tests;
+* timeout;
+* preconditions;
+* postconditions;
+* verification.
+Cycle 4 — Harder coding frontier
+The model now attempts ambiguous user-style issues, larger refactors, and long-horizon debugging.
+Previously mastered tasks remain in regression.
+The test-running tool reduces repeated reasoning cost.
+New failures reveal whether the next wall is inference, tool use, benchmark design, or architecture.
+That is the ratchet.
+________________
+
+
+16. Claims and Non-Claims
+16.1 Claims
+This paper claims:
+1. AI systems should grow through a recursive ratchet of benchmark pressure, residual analysis, loop closure, verification, and frontier expansion.
+2. Benchmarks should be treated as temporary pressure surfaces, not permanent definitions of intelligence.
+3. Ordinary capability benchmarks need mastery thresholds, not automatic 100% requirements.
+4. Time-decayed thresholds can prevent a single benchmark from holding the frontier hostage.
+5. Remaining failures after graduation should enter residual escrow.
+6. Repeated successful trajectories should become verified parameterized tools when valuable and safe.
+7. Architecture changes should be justified by residuals after simpler interventions fail.
+8. Public benchmarks are necessary for calibration but insufficient as the sole inner-loop target.
+9. Real systems need three execution modes: interpreter, compiled-tool, and reflex/failsafe.
+10. Capabilities become durable when they are measured, proceduralized, verified, registered, and protected against regression.
+________________
+
+
+16.2 Non-claims
+This paper does not claim:
+1. Benchmarks perfectly measure intelligence.
+2. Higher benchmark scores always mean real-world improvement.
+3. Every repeated action should become a tool.
+4. Tools should replace reasoning.
+5. Fine-tuning or scaling are obsolete.
+6. Architecture should never change early.
+7. Verification is absolute in open worlds.
+8. Time-decayed thresholds are acceptable for safety-critical failures.
+9. Public benchmarks should be ignored.
+10. AI development can be fully automated without human judgment.
+This is a development framework, not a complete theory of intelligence.
+________________
+
+
+17. Implementation Roadmap
+Phase 1 — Ledgers
+Build:
+* benchmark ledger;
+* model ledger;
+* residual escrow ledger;
+* tool registry.
+Goal:
+Know what is being measured, what is failing, and what has been preserved.
+________________
+
+
+Phase 2 — Residual analysis
+For every benchmark run, generate:
+* failure clusters;
+* wall diagnosis;
+* benchmark-quality notes;
+* intervention recommendation.
+Goal:
+Stop treating scores as the whole story.
+________________
+
+
+Phase 3 — Mastery thresholds and escrow
+Define:
+* initial thresholds;
+* decay schedules;
+* floors;
+* subgroup floors;
+* critical-failure vetoes;
+* escrow reattempt schedules.
+Goal:
+Move the frontier without erasing failures.
+________________
+
+
+Phase 4 — Loop closure engine
+Build:
+* trajectory logger;
+* loop detector;
+* abstraction engine;
+* active parameter discovery;
+* tool synthesizer;
+* verifier;
+* router;
+* runtime monitor;
+* retirement manager.
+Goal:
+Turn repeated success into procedural skill.
+________________
+
+
+Phase 5 — Intervention ladder
+Before architecture changes, require:
+1. benchmark audit;
+2. data intervention;
+3. training intervention;
+4. inference intervention;
+5. loop-closure intervention;
+6. bridge benchmark;
+7. architecture hypothesis.
+Goal:
+Change the system for the right reason.
+________________
+
+
+Phase 6 — Public calibration
+Periodically run public benchmarks with standardized settings and report:
+* accuracy;
+* cost;
+* latency;
+* tool use;
+* inference setup;
+* safety notes;
+* comparison context.
+Goal:
+Preserve apples-to-apples comparison without overfitting public benchmarks.
+________________
+
+
+Phase 7 — Safety and reflex layer
+For high-stakes systems, add:
+* risk tiers;
+* execution tiers;
+* sandboxing;
+* runtime verification;
+* reflex/failsafe mode;
+* audit logs;
+* human approval gates.
+Goal:
+Ensure routine automation does not become unsafe autonomy.
+________________
+
+
+18. Research Agenda
+18.1 Threshold dynamics
+Research questions:
+* How should mastery thresholds be set?
+* How quickly should they decay?
+* What floors are appropriate by domain?
+* How should subgroup floors be chosen?
+* How should critical failures override aggregate scores?
+________________
+
+
+18.2 Residual escrow
+Research questions:
+* How should residuals be clustered?
+* How often should escrow be reattempted?
+* When should escrow failures become diagnostics?
+* How should benchmark defects be distinguished from model failures?
+________________
+
+
+18.3 Loop detection
+Research questions:
+* How should trajectory similarity be measured?
+* How can action graphs, tool calls, artifacts, and outcomes be embedded?
+* How can logs preserve procedural structure without storing private chain-of-thought?
+________________
+
+
+18.4 Tool verification
+Research questions:
+* How can tests be synthesized from trajectories?
+* How can synthetic and adversarial cases expose hidden assumptions?
+* What verification grade is sufficient for each risk tier?
+* How should runtime monitoring update tool confidence?
+________________
+
+
+18.5 Residual-driven architecture
+Research questions:
+* How do residuals indicate missing mechanisms?
+* When is architecture change justified?
+* How can architectures evolve without losing regression capabilities?
+* How should memory, symbolic state, active inference, and continuous dynamics be integrated?
+________________
+
+
+18.6 Benchmark ecology
+Research questions:
+* How do benchmarks transition from frontier to regression to retirement?
+* How can public calibration coexist with private development?
+* How can benchmark mutation detect overfitting?
+* How can live benchmarks remain fair and reproducible?
+________________
+
+
+19. Conclusion
+Ratcheting Generative Systems propose a unified way to think about AI growth.
+The system begins with pressure.
+A benchmark exposes what the model cannot yet do.
+The model attempts the task.
+Failures become residuals.
+Repeated successes become tools.
+Residuals diagnose whether the next step is data, training, inference, loop closure, benchmark repair, bridge benchmarks, or architecture.
+Benchmarks that reach mastery graduate into regression.
+Unresolved cases enter escrow.
+The frontier moves forward.
+The system repeats.
+pressure
+   ↓
+attempt
+   ↓
+residual
+   ↓
+procedure
+   ↓
+verification
+   ↓
+lock-in
+   ↓
+frontier
+The best AI systems will not merely become larger.
+They will become more organized.
+They will learn when to reason, when to execute, and when to reflex.
+They will know when a benchmark has taught enough.
+They will preserve the failures that still matter.
+They will turn repeated behavior into tools.
+They will turn tools into procedural memory.
+They will turn residuals into architecture signals.
+They will turn benchmarks into curriculum.
+The ratchet turns when yesterday’s frontier becomes today’s floor.
+That is the essence of a Ratcheting Generative System.
+________________
+
+
+Appendix A — Ratcheting Generative System Checklist
+1. Benchmark frontier
+* What is the current frontier?
+* What capability does it measure?
+* Is it unsaturated?
+* Does it transfer to real-world performance?
+* Is it public, private, live, diagnostic, or safety-related?
+2. Mastery threshold
+* What is the initial threshold?
+* What is the decay schedule?
+* What is the floor?
+* What subgroup floors apply?
+* What critical failures veto graduation?
+3. Residual map
+* What failed?
+* Why did it fail?
+* Does the failure cluster?
+* Is it data, training, inference, tool, benchmark, architecture, or safety-related?
+4. Escrow
+* Which failures remain after graduation?
+* How often are they reattempted?
+* Which failures recur across future benchmarks?
+* Which should become diagnostics?
+5. Loop closure
+* What repeated successful trajectories exist?
+* Can they be parameterized?
+* Can they be verified?
+* Are they worth maintaining?
+* Should they become tools?
+6. Intervention ladder
+Before architecture change, have you tried:
+* benchmark audit?
+* data improvement?
+* training improvement?
+* inference improvement?
+* loop closure?
+* bridge benchmarks?
+7. Regression preservation
+* Which prior benchmarks must remain passed?
+* Which tools must remain valid?
+* Which safety checks must remain satisfied?
+8. Public calibration
+* Which public benchmarks are run?
+* How often?
+* With what settings?
+* How do results compare to public reports?
+________________
+
+
+Appendix B — One-Paragraph Public Summary
+Ratcheting Generative Systems is a framework for AI systems that improve by turning evaluation pressure into durable structure. A model confronts an unsaturated benchmark frontier, logs successes and failures, converts repeated successful trajectories into verified parameterized tools, tracks unresolved failures in residual escrow, and promotes mastered benchmarks into regression tests. If progress stalls, the system diagnoses whether the wall is data, training, inference, tool, benchmark, or architecture related. Mastery thresholds can decay over stalled effort so the frontier keeps moving, while safety-critical failures still block graduation. The result is a disciplined loop where yesterday’s frontier becomes today’s floor.
+________________
+
+
+Appendix C — Compact Manifesto
+Do not worship benchmarks.
+Use them.
+Let them apply pressure.
+When they stop teaching, promote them to regression.
+Do not demand perfection from every benchmark.
+Graduate at mastery.
+Preserve the tail.
+If the tail repeats, promote it.
+If behavior repeats, compile it.
+If the tool works, verify it.
+If the tool fails, expose the residual.
+If the residual persists, diagnose the wall.
+If the wall survives data, training, inference, tools, and benchmark repair, change the architecture.
+Reason when novel.
+Execute when closed.
+Reflex when safety-critical.
+The frontier must move.
+The floor must hold.
+The ratchet must turn.
+________________
+
+
+Selected References
+1. Grünwald, A Tutorial Introduction to the Minimum Description Length Principle.
+2. Stanford CRFM, Holistic Evaluation of Language Models / HELM.
+3. Hoffmann et al., Training Compute-Optimal Large Language Models.
+4. Center for AI Safety, Scale AI, and HLE Contributors, Humanity’s Last Exam.
+5. OpenAI, Why SWE-bench Verified no longer measures frontier coding capabilities.
+6. METR, Task-Completion Time Horizons of Frontier AI Models.
+7. Sutton, Precup, and Singh, A Framework for Temporal Abstraction in Reinforcement Learning.
+8. Schick et al., Toolformer: Language Models Can Teach Themselves to Use Tools.
+9. Wang et al., Voyager: An Open-Ended Embodied Agent with Large Language Models.
+10. Hasani et al., Liquid Time-constant Networks.
+11. Liu et al., KAN: Kolmogorov-Arnold Networks.
+12. Heddes et al., Torchhd: Hyperdimensional Computing and Vector Symbolic Architectures.
+13. Da Costa et al., Active inference on discrete state spaces.
+14. Goodhart’s law background.

@@ -1,0 +1,72 @@
+# Corben Papers and Architecture Sources
+
+This library publishes the original author manuscripts that directly preceded or informed *The ASI Stack*. It exists so a reader can inspect the source ideas rather than seeing only the book's later synthesis. The current tranche contains **47 exact, digest-bound manuscripts** with HTML reading pages.
+
+The library is a provenance surface, not an evidence shortcut. A paper can be historically important and still be speculative, superseded, incomplete, or wrong. The living chapters, source notes, claim ledger, tests, and later evidence records control the book's current conclusions. The paper pages preserve what was proposed at the time.
+
+## How to read the library
+
+- **Original text stays identifiable.** Every page links an exact tracked source copy and reports its SHA-256 digest and byte count.
+- **Book interpretation stays separate.** A provenance panel links the source note and every current chapter assignment; no paper silently becomes current book prose.
+- **Historical negatives stay visible.** Deprecated or failed designs such as SpiderSynapse remain readable alongside their successors.
+- **Presentation changes are disclosed.** HTML pages may normalize line endings, move YAML metadata into the provenance panel, demote headings, or mark unavailable figures. They do not pretend missing assets were recovered.
+- **Credits remain authoritative.** Authorship and collaborator credits in each exact manuscript control; the library wrapper does not silently rewrite them.
+- **Rights remain explicit.** Publication makes the manuscripts readable but grants no new license. Corben Sorenson's rights are reserved, while collaborator and third-party rights remain with their holders.
+
+## Read the papers
+
+| Paper or architecture source | Library class | Source ID | Manuscript date | Current chapter assignments | Exact-source digest |
+|---|---|---|---|---:|---|
+| [Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents](deterministic_capability_compilation.qmd) | research_paper | `deterministic_capability_compilation` | 2026-07 | 28 | `8306d2bd4066…` |
+| [The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence](platonic_world_model.qmd) | research_paper | `platonic_world_model` | 2026-07 | 23 | `8ae760b6b2fd…` |
+| [Stable Capability Fields](scf.qmd) | architecture_whitepaper | `scf` | date not normalized | 18 | `aca5350d9236…` |
+| [Question-Compiled Semantic Addressing](qcsa_whitepaper.qmd) | research_paper | `qcsa_whitepaper` | 2026-07-12 | 12 | `d9e594d40dfd…` |
+| [The Reflexive Router: A Pre-Deliberative Architecture for Fast, Governed, Tool-Native Intelligence](reflexive_router_whitepaper.qmd) | architecture_whitepaper | `reflexive_router_whitepaper` | 2026-07-16 | 12 | `003a693741c4…` |
+| [Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning](kernel_english_residual_compiler.qmd) | research_paper | `kernel_english_residual_compiler` | 2026-07-16 | 13 | `f560c61196cb…` |
+| [The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure](relational_dimension_compiler.qmd) | research_paper | `relational_dimension_compiler` | 2026-07 | 10 | `85bcb1865da7…` |
+| [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](precision_contract.qmd) | research_paper | `precision_contract` | 2026-07 | 9 | `c8c5eeedf72f…` |
+| [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](regret_engine.qmd) | research_paper | `regret_engine` | 2026-08-04 | 10 | `6d609442cdbd…` |
+| [PlanForge](planforge.qmd) | technical_whitepaper | `planforge` | date not normalized | 11 | `a429b6312668…` |
+| [PlanForge: A Compiler Architecture for AI Task Orchestration](planforge_compiler_arch.qmd) | research_paper | `planforge_compiler_arch` | date not normalized | 2 | `5cb241085015…` |
+| [Cognitive Compilation](cognitive_compilation.qmd) | research_paper | `cognitive_compilation` | date not normalized | 8 | `ccfbb66eec29…` |
+| [Talos Protocol](talos.qmd) | architecture_whitepaper | `talos` | date not normalized | 28 | `02bc9b2e895c…` |
+| [Virtual_Context_Memory_v1](vcm_public.qmd) | technical_whitepaper | `vcm_public` | date not normalized | 14 | `832a96c70007…` |
+| [Proof of Belief / The Spinoza Architecture](spinoza.qmd) | architecture_whitepaper | `spinoza` | date not normalized | 15 | `62ce996a2e36…` |
+| [Spinoza Composer / Spinoza Trinity](spinoza_composer.qmd) | technical_whitepaper | `spinoza_composer` | date not normalized | 1 | `d4670fdf7db9…` |
+| [Octopus Router Architecture](octopus_router.qmd) | architecture_whitepaper | `octopus_router` | date not normalized | 5 | `6b0ae00f09f4…` |
+| [Ratcheting Modular Intelligence](rmi.qmd) | architecture_whitepaper | `rmi` | date not normalized | 18 | `1ab708ee4f0d…` |
+| [Cognitive Loop Closure](cognitive_loop_closure.qmd) | technical_whitepaper | `cognitive_loop_closure` | date not normalized | 13 | `94d4191afa53…` |
+| [Benchmaxxing: The Performance Ratchet](benchmaxxing.qmd) | technical_whitepaper | `benchmaxxing` | date not normalized | 20 | `dedaa0772ada…` |
+| [Compact Generative Systems](cgs.qmd) | research_paper | `cgs` | date not normalized | 7 | `0634f12037d3…` |
+| [Ratcheting Generative Systems](rgs.qmd) | architecture_whitepaper | `rgs` | date not normalized | 5 | `0e59aa8adbce…` |
+| [RankFold + NeuralFold](rankfold_neuralfold.qmd) | research_paper | `rankfold_neuralfold` | date not normalized | 4 | `6f072621dcf4…` |
+| [rankFold compressor](rankfold_compressor.qmd) | research_paper | `rankfold_compressor` | date not normalized | 1 | `fe986e86f406…` |
+| [BBVCA_v9_final_public_release](bbvca_v9.qmd) | research_paper | `bbvca_v9` | date not normalized | 3 | `76cc710e686a…` |
+| [Big Bang Volumetric Compression Architecture](bbvca_main.qmd) | project_paper_lineage | `bbvca_main` | date not normalized | 1 | `89f342cab5b9…` |
+| [GenesisCode](genesiscode.qmd) | technical_specification | `genesiscode` | date not normalized | 10 | `dcc3902d01fc…` |
+| [TreeLLM](treellm.qmd) | architecture_whitepaper | `treellm` | date not normalized | 6 | `f63b8298eaa6…` |
+| [SpiderSynapse: A Multi-Hypothesis Reasoning Architecture](spider_synapse.qmd) | project_paper_lineage | `spider_synapse` | 2024-12-23 | 4 | `7939bad0c29a…` |
+| [PortiaSynapse: A Cognitive Spider Architecture for DKL Navigation](portia_synapse.qmd) | project_paper_lineage | `portia_synapse` | 2024-12-23 | 5 | `79501f3b5f1d…` |
+| [Field of God / Alignment Field family](alignment_field.qmd) | philosophical_treatise | `alignment_field` | 2026-07-31 | 9 | `cb3a0d845691…` |
+| [The Field of God](field_of_god.qmd) | project_paper_lineage | `field_of_god` | 2026-07-31 | 2 | `bd8860ed1274…` |
+| [Ethica Mechanica](ethica_mechanica.qmd) | philosophical_treatise | `ethica_mechanica` | 2026-01-30 | 2 | `9c6aa463c047…` |
+| [The Eternal Code / unified God, reality, conscious, alignment](eternal_code.qmd) | philosophical_treatise | `eternal_code` | 2026-01-31 | 1 | `4dc1fa6583ed…` |
+| [Verification Bandwidth in Bounded Contexts](verification_bandwidth.qmd) | research_paper | `verification_bandwidth` | 2026-07-31 | 10 | `9f32fbc2517c…` |
+| [BeastBrain Cognitive Architecture](beastbrain.qmd) | architecture_whitepaper | `beastbrain` | 2026-07-31 | 6 | `2ef45cb2862a…` |
+| [BeastBrain Architecture: Timeless Edition](beastbrain_timeless.qmd) | project_paper_lineage | `beastbrain_timeless` | 2026-07-31 | 2 | `4448c30ebe22…` |
+| [Aletheia / Proof-Carrying Workbench Lineage](aletheia.qmd) | technical_specification | `aletheia` | 2026-07-31 | 4 | `fc7404139542…` |
+| [Context Engineer / Manhattan Protocol](context_engineer.qmd) | project_paper_lineage | `context_engineer` | 2026-07-31 | 3 | `7fb934628b28…` |
+| [Black Hole Context Manager](black_hole_context_manager.qmd) | technical_specification | `black_hole_context_manager` | 2026-07-31 | 1 | `8db214a8752a…` |
+| [Ladon & The Manhattan Protocol](ladon_manhattan.qmd) | technical_specification | `ladon_manhattan` | 2026-07-31 | 7 | `57d415f70ed6…` |
+| [Unified Adaptive Tribunal](uat.qmd) | technical_whitepaper | `uat` | 2026-07-31 | 5 | `8b1be0686338…` |
+| [The Simulation Scaling Law: Resource Constraints on Scope, Clockspeed, and Effective Fidelity in Nested Physical Simulations](simulation_scaling.qmd) | research_paper | `simulation_scaling` | date not normalized | 8 | `783d9d443b32…` |
+| [TokenMana](tokenmana.qmd) | research_paper | `tokenmana` | 2026-07-31 | 9 | `03460d7bb878…` |
+| [BugBrain / Project Genesis: Neuro-Symbolic Bare-Metal Edge Intelligence Paper Lineage](bugbrain.qmd) | project_paper_lineage | `bugbrain` | date not normalized | 4 | `339f43b7379a…` |
+| [The Grimoire of Software Magic Words: Operative Vocabulary, Prompt-Spells, and Stacked Workflows](software_magic_grimoire.qmd) | technical_specification | `software_magic_grimoire` | date not normalized | 5 | `bd841654248c…` |
+| [Verified Intent-to-Execution Architecture](viea.qmd) | architecture_whitepaper | `viea` | date not normalized | 26 | `9f49a6d9622c…` |
+
+## Corpus boundary
+
+This is the public **paper and architecture-source** subset, not every item Corben has supplied. Standalone conversation records, private project dumps, transient notes, credentials, and third-party documents are excluded. A manuscript may still preserve its own quoted sources, drafting history, or collaborator dialogue where those are part of the paper itself. [Appendix G](../appendices/G_corben_source_corpus.html) remains the complete public-safe Corben/local source crosswalk; entries with a paper reader route link back into this library.
+
+New papers enter only through `papers/paper_library.json` with an explicit source ID, exact byte identity, source note, and publication path. Publication does not change any claim's evidence state.

@@ -1,0 +1,2107 @@
+﻿Tab 1
+________________
+
+
+RankFold: Codec-Aware Transform Optimization and NeuralFold: Functional Preprocessing for Universal WORM Archival
+Corben Sorenson
+Independent Researcher
+February 2026
+________________
+
+
+Abstract
+Modern machine learning workflows and scientific computing pipelines produce vast quantities of heterogeneous data: model weights, optimizer states, gradient snapshots, images, audio, logs, structured directories, and simulation fields. Existing compression methods are typically either (1) general-purpose byte-stream codecs that ignore algebraic structure or (2) modality-specific learned compression systems trained across datasets. We propose a unified archival system for Write-Once-Read-Many (WORM) workloads that bridges these paradigms.
+The system consists of two integrated components:
+1. RankFold — a rate–distortion optimized, per-artifact low-rank residual codec for structured tensors. RankFold learns a predictor tailored to a concrete residual coder, shaping quantized residual distributions to minimize actual storage cost.
+2. NeuralFold — a codec-aware functional preprocessing stage that converts arbitrary data into compact weight tensors via adaptive implicit representations or predictive models. These weight tensors are then compressed by RankFold.
+The combined RankFold + NeuralFold framework enables a universal archive container capable of storing heterogeneous artifacts through a consistent tensor-centric backend while remaining honest about information-theoretic limits. Compression gains are structure-dependent and enforced through a routing and probing stage that falls back to conventional codecs when appropriate. We detail the theoretical motivation, algorithms, container format, residual coding design, codec-aware training strategy, and a rigorous rate–distortion evaluation protocol.
+________________
+
+
+1. Introduction
+1.1 The Archival Problem in the ML Era
+Large-scale ML systems generate diverse artifacts:
+* Model artifacts: weights, adapters, optimizer states.
+* Intermediate artifacts: gradients, attention maps, activation traces.
+* Data artifacts: images, audio, video, simulation grids.
+* Experiment artifacts: logs, checkpoints, directory trees, mixed file bundles.
+These artifacts exhibit two dominant storage regimes:
+1. Hot storage — write-many, read-rarely (training checkpoints).
+2. Cold storage (WORM) — write-once, read-many (model hubs, long-term retention, experiment packaging).
+Traditional compression approaches are insufficient:
+* Byte-stream compressors (e.g., Zstd) ignore tensor structure.
+* Fixed transforms (e.g., SVD) minimize reconstruction error but not coding cost.
+* Dataset-trained neural compressors assume shared global statistics, not per-artifact optimization.
+We target WORM archival, where encoding cost is amortized and compression ratio dominates.
+________________
+
+
+1.2 Design Principles
+The combined system is built on five principles:
+1. Per-artifact optimization: No global training corpus required.
+2. Coder alignment: Optimize transforms for actual residual bit cost.
+3. Representation universality: Any artifact can be represented as weight tensors.
+4. Structure dependence: Gains occur only where structure exists.
+5. Mandatory fallback: No claim of universal compression advantage.
+________________
+
+
+2. System Overview
+The RankFold + NeuralFold pipeline consists of four stages:
+Input → Inspect & Probe → Route → Represent → RankFold Compress → Archive
+
+
+Each artifact is processed independently but stored within a unified container.
+2.1 Stream Types
+The container supports multiple stream types:
+* RF-TENSOR — direct RankFold compression of tensor artifacts.
+* NF-FIELD — functional representation (implicit neural representation) of continuous signals.
+* NF-BYTE — predictive model + residual representation of discrete data.
+* RAW — conventional codec payload for fallback cases.
+Universality arises from representational flexibility, not guaranteed compression benefit.
+________________
+
+
+3. RankFold: Rate–Distortion Optimized Low-Rank Residual Coding
+RankFold is the tensor-centric compression backend.
+3.1 Predictor–Corrector Decomposition
+Given matrix ( M \in \mathbb{R}^{m \times n} ):
+[
+M \approx UV^\top + \Delta E_q
+]
+Where:
+* (U \in \mathbb{R}^{m \times r}), (V \in \mathbb{R}^{n \times r})
+* (\Delta): quantization step
+* (E_q \in \mathbb{Z}^{m \times n}): quantized residual
+Distortion:
+[
+\text{RMSE}(M,\hat{M}) = \sqrt{\frac{1}{mn}\sum (M_{ij} - \hat{M}_{ij})^2}
+]
+Compression ratio:
+[
+\text{CR} = \frac{\text{bytes}(M)}{\text{bytes(header)} + \text{bytes}(U) + \text{bytes}(V) + \text{bytes(residual)}}
+]
+Predictor overhead is explicitly included.
+________________
+
+
+3.2 Entropy-Aware Rank Optimization (EARO)
+Instead of minimizing (|M - UV^\top|_F^2) (as truncated SVD does), RankFold minimizes a coder-motivated surrogate:
+[
+\mathcal{L}(U,V) =
+\sum \log!\left(1 + \frac{|E_q|}{\delta}\right)
+* \lambda(|U|_F^2 + |V|_F^2)
+]
+Quantization is handled via a Straight-Through Estimator (STE):
+[
+\frac{\partial Q_\Delta(E)}{\partial E} \approx I
+]
+This encourages residual distributions with:
+   * High zero-bin occupancy
+   * Concentrated small magnitudes
+   * Few escape-channel outliers
+________________
+
+
+3.3 Residual Coding Design
+Residual indices (E_q) are encoded using:
+   1. Zero-run coding for consecutive zeros.
+   2. Signed magnitude coding for nonzero values.
+   3. Escape channel for large magnitudes.
+   4. Finite-alphabet ANS for small magnitudes.
+This avoids unbounded-alphabet pathologies and aligns with the surrogate objective.
+________________
+
+
+3.4 Topology-Aware Traversal
+For spatial tensors, Z-order traversal improves locality and run-length structure.
+________________
+
+
+4. NeuralFold: Functional Preprocessing for Arbitrary Artifacts
+NeuralFold converts non-tensor artifacts into weight tensors.
+4.1 NeuralFold-Field (Continuous Signals)
+For signals defined over coordinates:
+[
+f_\theta : \mathbb{R}^d \rightarrow \mathbb{R}^c
+]
+Examples:
+   * Images: ((x,y)\mapsto RGB)
+   * Audio: (t\mapsto amplitude)
+   * 3D fields: ((x,y,z)\mapsto scalar)
+Base models:
+   * Sinusoidal MLP (SIREN-style)
+   * Fourier-feature networks
+   * Optional mixture-of-experts for local complexity
+Partitioning into tiles enables:
+   * Random access
+   * Bounded decode cost
+   * Local complexity matching
+________________
+
+
+4.2 NeuralFold-Byte (Discrete Data)
+For arbitrary byte streams (B[i]):
+Predictor:
+[
+\widehat{B}[i] = g_\theta(i, context)
+]
+Exact reconstruction:
+[
+B[i] = \widehat{B}[i] \oplus R[i]
+]
+Residual (R[i]) is entropy coded losslessly.
+Bundle-level modeling exploits cross-file structure.
+Fallback occurs when residual entropy remains high.
+________________
+
+
+5. Codec-Aware Training (Primary Novelty)
+NeuralFold incorporates RankFold-aligned training.
+Two-stage optimization:
+[
+\min_\theta \mathcal{L}{recon} + \beta \widehat{R}{RF}(W(\theta))
+]
+Where:
+[
+\widehat{R}{RF}(W) =
+\alpha \sum \log!\left(1 + \frac{|Q{\Delta_w}(W)|}{\delta}\right)
+   * \gamma \text{LowRankPenalty}(W)
+   * \eta \text{OutlierPenalty}(W)
+]
+This aligns representation learning with RankFold’s compression mechanics.
+________________
+
+
+6. Routing and Gating
+Before applying NeuralFold:
+      * Entropy probe
+      * Spectral complexity estimate
+      * Small pilot fit
+      * Predicted total bytes (including overhead)
+If NeuralFold does not improve size over baseline codecs, fallback to RAW.
+________________
+
+
+7. Evaluation Protocol
+7.1 Full Byte Accounting
+All metadata + weights + residuals + container overhead included.
+7.2 RD Curves
+Bits per element vs distortion across (\Delta), rank (r), model capacity.
+7.3 Baselines
+      * SVD + residual codec
+      * Quantize + Zstd
+      * COIN / COIN++
+      * ZFP / scientific codecs
+      * Conventional media codecs
+7.4 Ablations
+      * Without codec-aware fine-tune
+      * With codec-aware fine-tune
+      * Tiling vs monolithic
+      * Routing accuracy
+________________
+
+
+8. Limitations
+      * Cannot compress high-entropy data beyond theoretical bounds.
+      * Neural models incur decode compute cost.
+      * Proxy rate estimates may diverge from final bitstream.
+      * Encoding cost is high (WORM only).
+________________
+
+
+9. Discussion
+RankFold alone provides a novel per-artifact entropy-aligned transform codec for tensors.
+NeuralFold extends applicability by:
+      * Converting arbitrary artifacts into weight tensors.
+      * Introducing codec-aware functional training.
+      * Maintaining honest structure-dependent gains through routing.
+This architecture is not a universal Shannon-breaking compressor. It is a codec-aware, representation-driven archival framework designed for the ML era.
+________________
+
+
+10. Conclusion
+The RankFold + NeuralFold system unifies tensor compression and functional representation into a single archival pipeline. RankFold optimizes predictors for residual coding cost. NeuralFold expands representational scope while aligning learned parameters with RankFold’s compression structure. The result is a universal WORM archiver grounded in rate–distortion principles, codec co-design, and explicit fallback mechanisms.
+________________
+
+
+If you would like next:
+      * I can produce a formal LaTeX journal-ready version
+      * Or a shortened conference-ready version
+      * Or a Rust implementation architecture document for the entire combined system
+
+
+Tab 4
+RankFold + NeuralFold: A Codec‑Aware Universal WORM Archive System
+Per‑Artifact Coder‑Aligned Low‑Rank Coding for Tensors, with Functional Front‑Ends for General Artifacts
+Corben Sorenson
+Independent Researcher
+February 2026
+________________
+
+
+Abstract
+Write‑Once‑Read‑Many (WORM) storage is central to modern ML and scientific computing: model hub distribution, reproducible experiment packaging, and long‑term artifact retention. These workflows store heterogeneous data—tensors (weights, gradients, optimizer states), continuous signals (images/audio/video/grids), and discrete bundles (logs/directories/binaries). General‑purpose codecs treat inputs as byte streams and often fail to exploit algebraic structure; dataset‑trained neural compressors require global training and may not generalize to arbitrary one‑off artifacts.
+We present a unified WORM archival system built from two components:
+      1. RankFold, a per‑artifact rate–distortion tensor codec. RankFold stores a matrix as a low‑rank predictor plus a quantized residual, but unlike truncated SVD it optimizes the predictor to reduce the bit cost of the quantized residual under a concrete integer residual coder. This is achieved with Entropy‑Aware Rank Optimization (EARO), which refines low‑rank factors using a coder‑faithful surrogate objective and a Straight‑Through Estimator (STE) through quantization.
+      2. NeuralFold, a codec‑aware front‑end that makes the archive format universal. NeuralFold converts non‑tensor artifacts into weight tensors + decoder metadata (functional representations for continuous fields, and predictive models with lossless residuals for byte streams). These weight tensors are then compressed by RankFold. NeuralFold is governed by a mandatory probe‑and‑route stage and falls back to conventional codecs when structure is absent, preserving information‑theoretic honesty.
+The combined system is a universal container (able to store any artifact) with structure‑dependent gains, explicit byte accounting, and a rigorous rate–distortion evaluation protocol.
+________________
+
+
+1. Introduction
+1.1 WORM archival in the ML era
+Modern ML and scientific workloads generate:
+      * Tensor artifacts: weights, adapters, gradients, optimizer moments, attention/activation traces.
+      * Continuous artifacts: images, audio, video, simulation fields, 3D scalar grids.
+      * Discrete artifacts: logs, code, binaries, directory bundles, mixed experiments.
+These artifacts are commonly stored under two regimes:
+      * Hot storage: write‑many/read‑rarely (training). Latency dominates.
+      * Cold storage (WORM): write‑once/read‑many (distribution/retention). Compression ratio dominates.
+We target WORM: encoding cost can be amortized across many downloads/reads.
+1.2 Design goals
+We aim for:
+      1. Per‑artifact optimization: no dataset pretraining required.
+      2. Coder alignment: optimize transforms for actual coding behavior, not only (L_2) error.
+      3. Universal container: any artifact can be stored in one archive format.
+      4. Honest gating: apply neural/transform stages only when predicted to win; otherwise fallback.
+      5. Reproducibility: explicit byte accounting, deterministic decode, and evaluation requirements.
+1.3 Contributions
+      * RankFold: a tensor codec that refines low‑rank predictors to reduce residual coding cost under a specified integer residual coder (not just residual energy).
+      * A scalable residual coder: zero‑run + signed magnitude + escape + rANS (bounded alphabet).
+      * NeuralFold: codec‑aware functional preprocessing that converts general artifacts to weight tensors and optionally fine‑tunes for RankFold compressibility.
+      * A universal archive container: multiple stream types with mandatory probe‑and‑route and fallbacks.
+      * An RD‑fair evaluation protocol: matched distortion, byte breakdown, decode cost, and strong baselines.
+________________
+
+
+2. Universal archive container and routing
+2.1 Stream types
+Each stored artifact becomes a stream of one of four types:
+      * RF‑TENSOR: tensor input compressed by RankFold.
+      * NF‑FIELD: continuous signal stored as (model weights + field metadata), weights compressed by RankFold.
+      * NF‑BYTE: discrete data stored as (predictor weights + residual), weights compressed by RankFold and residual coded losslessly.
+      * RAW: conventional codec payload (e.g., Zstd/AVIF/FLAC), used when NeuralFold is not beneficial.
+This makes the container universal in representation without claiming universal gains.
+2.2 Probe‑and‑route (mandatory)
+Before encoding, we compute a cheap estimate of expected total bytes for candidate routes, including overhead:
+[
+\widehat{\mathrm{Size}}(\text{route}) =
+\widehat{\mathrm{bytes}}(\text{metadata})+
+\widehat{\mathrm{bytes}}(\text{weights via RankFold})+
+\widehat{\mathrm{bytes}}(\text{residual/raw})
+]
+The router selects the smallest predicted size subject to user constraints (decode budget, distortion target). If no neural route beats the best conventional baseline beyond a margin (e.g., 3–5%), it falls back to RAW.
+________________
+
+
+3. RankFold: coder‑aligned low‑rank residual coding
+RankFold compresses matrices and tensor‑unfoldings.
+3.1 Predictor–corrector representation
+Given (M\in\mathbb{R}^{m\times n}), rank (r), and quantization step (\Delta):
+[
+P = UV^\top,\quad U\in\mathbb{R}^{m\times r},;V\in\mathbb{R}^{n\times r}
+]
+[
+E = M - P
+]
+[
+E_q = Q_\Delta(E) = \left\lfloor \frac{E}{\Delta}\right\rceil \in \mathbb{Z}^{m\times n}
+]
+Reconstruction:
+[
+\hat M = P + \Delta E_q
+]
+Distortion:
+[
+\mathrm{RMSE}(M,\hat M) = \sqrt{\frac{1}{mn}\sum_{i,j}(M_{ij}-\hat M_{ij})^2}
+]
+3.2 Explicit byte accounting
+Compression ratio includes all bytes produced by the codec:
+[
+\mathrm{CR}=\frac{\mathrm{bytes}(M)}{
+\mathrm{bytes}(\text{header})+\mathrm{bytes}(U)+\mathrm{bytes}(V)+\mathrm{bytes}(\text{coded }E_q)}
+]
+Predictor storage rule (v1): (U,V) stored as FP16 (or FP32) in row‑major; no hidden compression unless explicitly enabled and applied equally to baselines.
+3.3 Residual traversal
+RankFold traverses (E_q) into a 1D stream:
+      * row‑major by default
+      * Z‑order (Morton) traversal over (16\times 16) tiles for spatial tensors (attention maps, conv kernels), improving locality.
+Traversal mode is stored in the header and is an ablation dimension.
+________________
+
+
+4. Residual coder: bounded‑alphabet integer coding at scale
+A key engineering risk is unbounded integer alphabets. RankFold uses a bounded model with an escape channel.
+4.1 Symbolization: zero runs + signed magnitudes
+Let the traversed residual stream be (e_1,\dots,e_N). Convert to events:
+      * run length (R\ge 0): count of consecutive zeros
+      * then a nonzero value (x\neq 0) split into:
+      * sign bit (s=\mathbb{1}[x<0])
+      * magnitude (a=|x|\in\mathbb{N})
+4.2 Coding scheme (v1)
+      * Run lengths (R): Rice code with parameter (k_{\text{run}}) (or bucketed rANS).
+      * Signs: 1 raw bit per nonzero.
+      * Magnitudes: two‑tier:
+      * if (1\le a\le A_{\max}): encode via rANS over finite alphabet ({1,\dots,A_{\max},\mathrm{ESC}})
+      * else: emit ESC, then encode (a-A_{\max}) with Exp‑Golomb (or Elias gamma)
+Why this matters: model size stays bounded; large outliers are handled safely; coding is stable.
+4.3 Why the EARO surrogate aligns with this coder
+Escape‑channel magnitude codes have bit costs that grow roughly like (\log(1+a)) (plus constants). This motivates a smooth surrogate term of the form (\log(1+|E_q|/\delta)) as a coder‑faithful approximation to magnitude cost, while small magnitudes benefit from distribution shaping captured by the same penalty.
+________________
+
+
+5. EARO: entropy‑aware rank optimization
+5.1 Objective
+Truncated SVD minimizes (|M-UV^\top|_F^2), which is not the same as minimizing coding cost after quantization. EARO refines (U,V) to reduce residual coding cost.
+We optimize:
+[
+\mathcal{L}(U,V)=
+\sum_{i,j}\log!\left(1+\frac{|E_{q,ij}|}{\delta}\right)
++\lambda(|U|_F^2+|V|_F^2)
+]
+where (\delta>0) sets surrogate curvature and (\lambda) stabilizes factor scale.
+5.2 STE through quantization (with correct scaling)
+We define:
+[
+Z=\frac{M-UV^\top}{\Delta},\quad E_q=\lfloor Z\rceil
+]
+In backprop we apply STE:
+[
+\frac{\partial E_q}{\partial Z}\approx I
+]
+and thus gradients to the predictor include the (1/\Delta) scaling via (Z).
+5.3 Initialization and optimization
+      * Initialize (U,V) using rank‑(r) truncated SVD (or deterministic approximate SVD).
+      * Run Adam for (S) steps (v1 default: 150).
+      * Finalize (E_q) and encode with the residual coder.
+5.4 Diagnostics required to avoid “proxy hacking”
+RankFold must report (as evaluation artifacts):
+      * correlation between surrogate (\mathcal{L}) and achieved residual bits
+      * predictor bytes vs residual bytes breakdown
+      * escape rate (fraction of magnitudes (>A_{\max}))
+      * sensitivity to (\Delta, r, S)
+This prevents hidden “loss improves but bits don’t” failure modes.
+________________
+
+
+6. NeuralFold: codec‑aware preprocessing for universal archival
+NeuralFold makes the archive universal by converting non‑tensor artifacts to weight tensors that RankFold can compress.
+6.1 NeuralFold‑Field (continuous artifacts)
+For signals defined over coordinates:
+[
+f_\theta:\mathbb{R}^d\to\mathbb{R}^c,\quad f_\theta(x)\approx S(x)
+]
+Examples:
+      * images: ((x,y)\to \mathrm{RGB})
+      * audio: (t\to a)
+      * grids/fields: ((x,y,z)\to s)
+Practical requirement: tiling/partitioning to bound decode cost and enable random access.
+The NF‑FIELD stream stores:
+      * model architecture + coordinate normalization
+      * tiling map (if used)
+      * model weights (compressed via RankFold)
+      * distortion target (PSNR/SSIM/RMSE)
+6.2 NeuralFold‑Byte (discrete artifacts)
+For byte streams (B[i]), neural memorization is not assumed to compress random bytes. NF‑BYTE is predict + residual:
+[
+\widehat{B}[i] = g_\theta(i,\text{context})
+]
+[
+B[i] = \widehat{B}[i]\oplus R[i]
+]
+Residual (R[i]) is coded losslessly. Exact reconstruction is guaranteed.
+NF‑BYTE is applied primarily at bundle level (directories/repos/log sets) to exploit cross‑file structure, with mandatory fallback if residual entropy stays high.
+________________
+
+
+7. Codec‑aware training for NeuralFold (primary novelty)
+Using functional models is not new; the novelty is aligning them to RankFold.
+7.1 Two‑stage training
+Stage A (fit):
+[
+\min_\theta \mathcal{L}_{\text{task}}(\theta)
+]
+Stage B (fine‑tune for compressibility):
+[
+\min_\theta \mathcal{L}{\text{task}}(\theta) + \beta,\widehat{R}{RF}(W(\theta))
+]
+subject to meeting a distortion target (NF‑FIELD) or residual budget (NF‑BYTE).
+7.2 A concrete RankFold‑aligned proxy on weights
+Let (W(\theta)) be all parameter tensors. A practical proxy is:
+[
+\widehat{R}{RF}(W)=
+\alpha \sum \log!\left(1+\frac{|Q{\Delta_w}(W)|}{\delta_w}\right)
++\eta\cdot\mathrm{OutlierPenalty}(Q_{\Delta_w}(W))
+]
+Optionally, a low‑rank surrogate can be added for matrix‑shaped weight blocks, but v1 requires only terms that are stable and implementable.
+7.3 Optional “true bytes in the loop”
+Every (K) epochs, the encoder may run a fast RankFold dry‑run estimate on weights and log predicted bytes. This is used for validation (and optionally as a late‑stage regularizer) to prevent proxy drift.
+________________
+
+
+8. Evaluation protocol (RD‑fair, adoption‑oriented)
+This paper defines what is required to claim improvements.
+8.1 Metrics
+      * Total bytes (full accounting): metadata + weights + residuals + container overhead
+      * Distortion:
+      * tensors: RMSE
+      * images: PSNR/SSIM
+      * audio: RMSE plus perceptual (optional)
+      * Decode cost:
+      * wall‑clock decode time
+      * memory footprint
+      * random access cost (tiled NF‑FIELD)
+8.2 RD curves (required)
+For RankFold:
+      * sweep (\Delta) over 6–10 points
+      * sweep rank (r) over ({8,16,32,64,128})
+      * report bits/element vs RMSE, plus component breakdown (U/V vs residual)
+For NeuralFold:
+      * sweep model capacity (params) vs distortion
+      * compare with and without codec‑aware fine‑tune
+      * include decode time constraints
+8.3 Required baselines (hard)
+For RankFold:
+      * Quantize+Zstd at matched RMSE
+      * dead‑zone quantization + Zstd (tests “just making zeros”)
+      * SVD predictor + same residual coder (isolates EARO)
+      * ZFP/FPZIP where applicable (scientific arrays)
+For NeuralFold‑Field:
+      * INR baselines (e.g., “weights as code” methods) with full accounting
+      * conventional codecs (AVIF/JPEG/FLAC etc.) with decode time notes
+For NeuralFold‑Byte:
+      * Zstd/xz/7z on bundles
+      * dictionary‑trained Zstd for repositories/log sets
+      * predictor+residual baselines (non‑neural) where feasible
+8.4 Required ablations
+      * with/without Z‑order traversal
+      * with/without escape channel
+      * EARO steps vs ratio trade‑off
+      * codec‑aware fine‑tune vs none
+      * router accuracy (false positives/negatives)
+________________
+
+
+9. Limitations
+      * High‑entropy inputs cannot be compressed beyond theoretical limits; NeuralFold must fallback.
+      * STE is a biased gradient estimator; results must be validated against actual bitstreams.
+      * NeuralFold decode cost can exceed conventional codecs; tiling mitigates but does not remove this trade‑off.
+      * WORM only: encoding cost can be high.
+________________
+
+
+10. Conclusion
+RankFold + NeuralFold is a codec‑aware archival system for the ML era. RankFold provides per‑artifact, coder‑aligned low‑rank residual coding for tensors. NeuralFold extends the archive to heterogeneous artifacts by converting them into weight tensors and (optionally) fine‑tuning those weights for RankFold compressibility. A mandatory probe‑and‑route stage ensures the system remains honest: it applies neural functional preprocessing only when predicted to win and otherwise falls back to conventional codecs.
+________________
+
+
+Appendix A. Reference encoder pseudocode (RankFold)
+EncodeRankFold(M, r, Δ):
+      1. init (U,V \leftarrow \mathrm{SVD}_r(M))
+      2. for step in 1..S:
+      * (Z \leftarrow (M-UV^\top)/\Delta)
+      * (E_q \leftarrow \lfloor Z\rceil)
+      * (\mathcal{L} \leftarrow \sum \log(1+|E_q|/\delta)+\lambda(|U|_F^2+|V|_F^2))
+      * update (U,V) using Adam with STE through quantization
+      3. finalize (E_q)
+      4. traverse (E_q) (row‑major or Z‑order)
+      5. encode: zero runs + sign+magnitude with escape + rANS
+      6. write header + (U,V) + residual bitstream
+
+
+Tab 7
+Below is a rewritten, stand-alone, business-aligned, and extremely descriptive whitepaper that keeps your technical rigor but makes the framing match the business plan: NeuralFold is integral (universality + routing + honesty), RankFold is the backend (tensor wins), and the system is a practical WORM archive product—not an academic curiosity. I’ve also tightened language to avoid “universal compressor” traps while still clearly stating universality of container/representation.
+________________
+
+
+RankFold Archive: A Codec-Aware Universal WORM Archive System
+Per-Artifact Coder-Aligned Low-Rank Coding for Tensors with NeuralFold Routing and Functional Front-Ends
+Corben Sorenson
+Independent Researcher
+February 2026
+________________
+
+
+Abstract
+Write-Once-Read-Many (WORM) storage is a dominant pattern in modern ML and scientific computing: model hub distribution, internal registry publishing, reproducible run packaging, and long-term artifact retention. These workflows store heterogeneous data—tensors (weights, gradients, optimizer states, attention/activation traces), continuous signals (images/audio/video/grids), and discrete bundles (logs/directories/binaries). General-purpose codecs treat inputs as byte streams and often fail to exploit algebraic structure; modality-specific learned compressors require dataset training and are not operationally designed for mixed artifact bundles and one-off artifacts.
+We present RankFold Archive, a unified WORM archival system built from two inseparable components:
+      * NeuralFold (Front-End + Router): a mandatory inspection, probing, and routing layer that makes the archive format universal and honest. NeuralFold determines the best representation per artifact under user constraints (distortion budget, decode budget, encode budget). It can (i) route tensor artifacts directly to RankFold, (ii) represent continuous signals as compact functional models whose weights become tensors, (iii) represent discrete bundles via predictive models with lossless residuals, or (iv) fall back to conventional codecs when structure is absent. NeuralFold’s router is integral: it prevents wasted compute, prevents “neural memorization of entropy,” and guarantees universal support.
+      * RankFold (Tensor Back-End Codec): a per-artifact rate–distortion tensor codec that stores matrices as a low-rank predictor plus a quantized residual, but—unlike truncated SVD—it optimizes the predictor to reduce the bit cost of the quantized residual under a concrete, scalable integer residual coder. This is achieved via Entropy-Aware Rank Optimization (EARO) using a Straight-Through Estimator (STE) through quantization, with explicit byte accounting and bounded-alphabet residual coding.
+RankFold Archive is universal in the sense that any artifact can be stored in a single container with indexed streams and deterministic decoding. Compression gains are structure-dependent by design and enforced by NeuralFold’s mandatory probe-and-route stage and fallbacks. We specify the architecture, file format, codec algorithms, coder-aligned objectives, routing logic, and a rigorous evaluation protocol suitable for WORM adoption and ROI analysis.
+________________
+
+
+1. Introduction
+1.1 The WORM archival problem in the ML era
+Modern ML and scientific pipelines generate diverse artifacts:
+      * Tensor artifacts: weights/adapters, optimizer states (e.g., Adam moments), gradients, attention maps, activation traces, feature statistics.
+      * Continuous artifacts: images, audio, video, simulation grids, climate/CFD fields, 3D scalar volumes (density/SDF).
+      * Discrete artifacts and bundles: logs, source code, metadata tables, directory trees, mixed experiment bundles with many small files and a few huge ones.
+These artifacts are commonly stored under two regimes:
+      * Hot storage: write-many/read-rarely (training checkpoints). Constraint: throughput and latency.
+      * Cold storage (WORM): write-once/read-many (hub distribution, internal registries, reproducible packaging, long-term retention). Constraint: stored bytes and bandwidth.
+This paper targets WORM. Encode cost can be higher, because it is amortized over many reads or many downloads. Decode must remain deterministic, robust, and operationally predictable.
+1.2 Why existing approaches fall short
+General codecs (Zstd, Brotli, gzip) are excellent byte-stream compressors but are not designed to exploit:
+      * low-rank structure in tensor data,
+      * quantization-induced sparsity patterns,
+      * predictable distributions in optimizer/grads,
+      * spatial covariance in attention maps or conv kernels,
+      * or cross-file structure in mixed bundles beyond what a tarball exposes.
+Fixed linear transforms (e.g., truncated SVD) optimize for reconstruction error in (L_2), which is not necessarily the same as optimizing for the bit cost of residuals under quantization and integer coding.
+Dataset-trained learned codecs can compress certain modalities well, but they:
+      * require training corpora,
+      * introduce operational complexity,
+      * are not inherently per-artifact,
+      * and typically do not provide a universal mixed-artifact archive container with guaranteed fallbacks.
+1.3 Design principles (aligned with product reality)
+RankFold Archive is designed around five principles:
+      1. Per-artifact optimization: no global training corpus is required for RankFold; NeuralFold models are trained per artifact or per bundle when used.
+      2. Coder alignment: transforms and predictors are optimized to reduce actual coded size, not only (L_2) error.
+      3. Universal container: the archive can store any artifact in one format with stream indexing.
+      4. Honest gating: NeuralFold is mandatory and always routes; when it predicts a neural path won’t win, it falls back deterministically.
+      5. Reproducibility: explicit byte accounting, deterministic decoding, and evaluation requirements.
+1.4 Contributions
+This whitepaper specifies:
+      * RankFold: a per-artifact tensor codec optimizing predictors for residual coding cost under a concrete coder.
+      * Residual coder design: bounded-alphabet integer coding via zero-run + sign/magnitude + escape + rANS.
+      * NeuralFold (integral): inspection, probing, routing, and functional/pre-dictive representations that convert non-tensor artifacts into tensors when beneficial.
+      * Unified container: stream types, metadata, random access extraction, fallbacks.
+      * Evaluation protocol: RD-fair comparisons, byte breakdowns, decode cost reporting, ablations, and baseline requirements.
+________________
+
+
+2. System Overview: RankFold Archive
+RankFold Archive is a pipeline:
+Inspect → Probe → Route → Represent → RankFold Compress → Containerize
+Each input artifact is processed independently, but outputs are stored in a single archive container with an index.
+2.1 Why NeuralFold is mandatory
+NeuralFold is not “optional neural compression.” It is the system’s universality and safety layer:
+      * It ensures every artifact is supported (tensor, field, bytes, bundle).
+      * It prevents wasting compute on hopeless inputs (already compressed/encrypted/high-entropy).
+      * It enforces that neural representations are used only when they predict a net byte win.
+      * It produces a single consistent archive even when some streams are stored using conventional codecs.
+In business terms: NeuralFold is what makes RankFold Archive a product you can deploy across real enterprise bundles rather than a niche tensor codec.
+2.2 Stream types
+Every artifact becomes exactly one stream of one of four types:
+      * RF-TENSOR: the artifact is a tensor (or a bundle of tensors) compressed by RankFold.
+      * NF-FIELD: the artifact is represented by a functional model (weights + metadata), weights compressed by RankFold.
+      * NF-BYTE: the artifact (or bundle) is stored as predictor weights (compressed by RankFold) plus a lossless residual stream.
+      * RAW: the artifact is stored via a conventional codec (e.g., Zstd/AVIF/FLAC) inside the container.
+This makes the container universal in representation without claiming universal compression gains.
+________________
+
+
+3. NeuralFold: Inspection, Probing, and Routing
+NeuralFold makes a deterministic decision per artifact, under user constraints.
+3.1 Inputs to routing
+NeuralFold consumes:
+      * artifact metadata (size, type hints, shapes if available),
+      * optional user constraints:
+      * distortion target (e.g., RMSE/PSNR),
+      * decode budget (CPU-only, max decode time),
+      * encode budget (max wall time/steps),
+      * safety rules (never upload off-prem, etc.),
+      * cheap complexity measures:
+      * entropy estimates for byte streams,
+      * spectral/gradient energy proxies for fields,
+      * sparsity and distribution probes for tensors.
+3.2 Probe stage
+NeuralFold runs a bounded probe to estimate:
+[
+\widehat{\mathrm{Size}}(\text{path}) =
+\widehat{\mathrm{bytes}}(\text{metadata})+
+\widehat{\mathrm{bytes}}(\text{RankFold(weights)})+
+\widehat{\mathrm{bytes}}(\text{residual or raw payload})
+]
+Candidate paths include:
+      * RF-TENSOR (if tensor detected),
+      * NF-FIELD (if continuous field plausible),
+      * NF-BYTE (if discrete bundle with learnable structure plausible),
+      * RAW (baseline).
+The probe is deliberately cheap; its purpose is routing, not perfect prediction.
+3.3 Routing policy and honesty margin
+NeuralFold selects the smallest predicted size subject to constraints. If no neural path beats the best baseline by a configured margin (e.g., 3–5%), it routes to RAW.
+This prevents:
+      * neural memorization of near-random bytes,
+      * overfitting small wins that disappear under real byte accounting,
+      * and failure cases where decoding is too expensive for operational use.
+________________
+
+
+4. RankFold: Coder-Aligned Low-Rank Residual Coding for Tensors
+RankFold is the tensor back-end used by RF-TENSOR and also used to compress weights produced by NeuralFold.
+4.1 Predictor–corrector representation
+Given a matrix (M \in \mathbb{R}^{m\times n}), choose rank (r) and quantization step (\Delta).
+Predictor:
+[
+P = UV^\top,\quad U\in\mathbb{R}^{m\times r},; V\in\mathbb{R}^{n\times r}
+]
+Residual:
+[
+E = M - P
+]
+Quantized residual indices:
+[
+E_q = Q_\Delta(E) = \left\lfloor \frac{E}{\Delta}\right\rceil \in \mathbb{Z}^{m\times n}
+]
+Reconstruction:
+[
+\hat M = P + \Delta E_q
+]
+Distortion metric:
+[
+\mathrm{RMSE}(M,\hat M) = \sqrt{\frac{1}{mn}\sum_{i,j}(M_{ij}-\hat M_{ij})^2}
+]
+4.2 Explicit byte accounting
+RankFold’s compression ratio includes all bytes produced:
+[
+\mathrm{CR}=\frac{\mathrm{bytes}(M)}{
+\mathrm{bytes}(\text{header})+\mathrm{bytes}(U)+\mathrm{bytes}(V)+\mathrm{bytes}(\text{coded }E_q)}
+]
+Predictor storage rule (v1): (U) and (V) are stored as FP16 (or FP32) row-major. Any predictor compression must be applied consistently to all baselines or disabled.
+4.3 Traversal and locality
+RankFold traverses (E_q) into a 1D stream:
+      * row-major by default,
+      * Z-order (Morton) traversal over (16\times16) tiles for spatial tensors (attention maps, conv kernels).
+Traversal mode is stored in the header and must be treated as an ablation dimension.
+________________
+
+
+5. Residual Coder: Bounded-Alphabet Integer Coding at Scale
+A naive entropy coder over raw integers fails at scale because the alphabet is unbounded. RankFold’s residual coder is designed to be both efficient and implementable.
+5.1 Symbolization: zero runs + signed magnitudes
+Given the traversed residual stream (e_1,\dots,e_N), we encode:
+      * run length (R \ge 0): number of consecutive zeros,
+      * then for a nonzero value (x\neq 0):
+      * sign bit (s=\mathbb{1}[x<0]),
+      * magnitude (a=|x| \in \mathbb{N}).
+5.2 Coding scheme (v1)
+      * Run lengths (R): Rice coding with parameter (k_{\text{run}}) (or bucketed rANS).
+      * Signs: 1 raw bit per nonzero.
+      * Magnitudes: two-tier:
+      * if (1 \le a \le A_{\max}): encode using rANS over a finite alphabet ({1,\dots,A_{\max},\mathrm{ESC}}),
+      * else: emit ESC and encode (a-A_{\max}) using Exp-Golomb (or Elias gamma).
+This keeps the model bounded and handles outliers safely.
+5.3 Why EARO’s surrogate matches this coder
+Escape-channel magnitude codes have a cost that grows approximately like (\log(1+a)) (up to constants). This motivates using a smooth surrogate such as (\log(1+|E_q|/\delta)) as a coder-faithful approximation to magnitude cost, while small-magnitude distributions benefit from concentration around low symbols.
+________________
+
+
+6. EARO: Entropy-Aware Rank Optimization
+Truncated SVD minimizes (|M-UV^\top|_F^2). EARO refines (U,V) to reduce residual bit cost after quantization.
+6.1 Objective
+We minimize:
+[
+\mathcal{L}(U,V)=
+\sum_{i,j}\log!\left(1+\frac{|E_{q,ij}|}{\delta}\right)
++\lambda(|U|_F^2+|V|_F^2)
+]
+where:
+      * (\delta>0) controls curvature/scale,
+      * (\lambda) stabilizes factor scale and prevents explosion.
+6.2 STE with correct scaling
+Define:
+[
+Z = \frac{M-UV^\top}{\Delta},\quad E_q = \lfloor Z\rceil
+]
+Apply STE:
+[
+\frac{\partial E_q}{\partial Z} \approx I
+]
+so gradients inherit (1/\Delta) scaling through (Z).
+6.3 Optimization procedure
+      * Initialize (U,V) with rank-(r) truncated SVD (or deterministic approximate SVD).
+      * Run Adam for (S) steps (v1 default: 150).
+      * Finalize (E_q) and encode.
+6.4 Required diagnostics (“anti proxy-hacking”)
+RankFold evaluation must report:
+      * correlation between surrogate (\mathcal{L}) and actual residual coded bits,
+      * predictor bytes vs residual bytes breakdown,
+      * escape rate (fraction of magnitudes (>A_{\max})),
+      * sensitivity to (\Delta, r, S).
+________________
+
+
+7. NeuralFold Representations
+NeuralFold includes two representation families: fields and bytes.
+7.1 NeuralFold-Field (continuous signals)
+Represent signals as:
+[
+f_\theta:\mathbb{R}^d\to\mathbb{R}^c,\quad f_\theta(x)\approx S(x)
+]
+Examples:
+      * images: ((x,y)\to \mathrm{RGB}),
+      * audio: (t\to a),
+      * grids: ((x,y,z)\to s).
+Practical requirement: tiling/partitioning to bound decode cost and enable random access.
+NF-FIELD stores:
+      * model spec + coordinate normalization,
+      * tiling map (if used),
+      * weights compressed via RankFold,
+      * distortion target and decode requirements.
+7.2 NeuralFold-Byte (discrete bundles)
+NeuralFold-Byte is not “memorize bytes.” It is predict + residual:
+[
+\widehat{B}[i] = g_\theta(i,\text{context})
+]
+[
+B[i] = \widehat{B}[i]\oplus R[i]
+]
+Residual (R[i]) is entropy coded losslessly. Exact reconstruction is guaranteed.
+NF-BYTE is applied at bundle level to exploit cross-file structure and is probe-gated with mandatory fallback when residual entropy remains high.
+________________
+
+
+8. Codec-Aware Training for NeuralFold (Primary Novelty)
+Functional models are not novel by themselves. NeuralFold’s novelty is aligning the representation to RankFold’s compression mechanics.
+8.1 Two-stage training
+Stage A:
+[
+\min_\theta \mathcal{L}{\text{task}}(\theta)
+]
+Stage B:
+[
+\min\theta \mathcal{L}{\text{task}}(\theta) + \beta,\widehat{R}{RF}(W(\theta))
+]
+subject to meeting distortion target (NF-FIELD) or residual budget (NF-BYTE).
+8.2 RankFold-aligned proxy on weights
+A v1-implementable proxy:
+[
+\widehat{R}{RF}(W)=
+\alpha \sum \log!\left(1+\frac{|Q{\Delta_w}(W)|}{\delta_w}\right)
++\eta\cdot\mathrm{OutlierPenalty}(Q_{\Delta_w}(W))
+]
+Low-rank terms may be added later, but v1 emphasizes stability and implementability.
+8.3 Optional “true bytes in the loop”
+Every (K) epochs, optionally run a RankFold dry-run estimate on weights and log predicted bytes, preventing proxy drift.
+________________
+
+
+9. Evaluation Protocol (RD-Fair and Adoption-Oriented)
+To claim improvements, the following are required:
+9.1 Metrics
+      * Total bytes (full accounting): metadata + weights + residuals + container overhead.
+      * Distortion: RMSE / PSNR / SSIM depending on type.
+      * Decode cost: wall-clock decode time, memory footprint, random access cost.
+9.2 RD curves (required)
+RankFold:
+      * sweep (\Delta) over 6–10 points,
+      * sweep (r\in{8,16,32,64,128}),
+      * report bits/elem vs RMSE, plus byte breakdown.
+NeuralFold:
+      * sweep model capacity vs distortion,
+      * compare with and without codec-aware fine-tune,
+      * include decode time constraints.
+9.3 Required baselines (hard)
+RankFold:
+      * Quantize+Zstd at matched RMSE,
+      * dead-zone quantization + Zstd,
+      * SVD predictor + same residual coder,
+      * ZFP/FPZIP where applicable.
+NeuralFold-Field:
+      * INR baselines with full accounting,
+      * conventional codecs with decode notes.
+NeuralFold-Byte:
+      * Zstd/xz/7z on bundles,
+      * dictionary-trained Zstd,
+      * predictor+residual non-neural baselines where feasible.
+9.4 Required ablations
+      * Z-order on/off,
+      * escape channel on/off,
+      * EARO step count vs ratio,
+      * codec-aware fine-tune on/off,
+      * router accuracy (false positives/negatives).
+________________
+
+
+10. Limitations
+      * High-entropy inputs cannot be compressed beyond theoretical bounds; NeuralFold must fallback.
+      * STE is biased; claims require validation against actual bitstreams.
+      * NeuralFold decode cost may exceed conventional codecs; tiling mitigates but does not eliminate.
+      * WORM only: encoding cost can be high.
+________________
+
+
+11. Conclusion
+RankFold Archive is a codec-aware, universal WORM archival system built from two integral components: NeuralFold provides universality, routing, and honesty; RankFold provides per-artifact coder-aligned tensor compression. The system stores heterogeneous artifacts in a single indexed container with deterministic decode and explicit byte accounting, applying neural functional preprocessing only when predicted to win and otherwise falling back to conventional codecs. This architecture is designed to be adoptable in real ML infrastructure where storage cost, bandwidth, and operational predictability matter.
+________________
+
+
+Appendix A. Reference encoder pseudocode (RankFold)
+EncodeRankFold(M, r, Δ):
+      1. init (U,V \leftarrow \mathrm{SVD}_r(M))
+      2. for step in 1..S:
+      * (Z \leftarrow (M-UV^\top)/\Delta)
+      * (E_q \leftarrow \lfloor Z\rceil)
+      * (\mathcal{L} \leftarrow \sum \log(1+|E_q|/\delta)+\lambda(|U|_F^2+|V|_F^2))
+      * update (U,V) using Adam with STE through quantization
+      3. finalize (E_q)
+      4. traverse (E_q) (row-major or Z-order)
+      5. encode: zero runs + sign+magnitude with escape + rANS
+      6. write header + (U,V) + residual bitstream
+________________
+
+
+If you want, I can now do one of two “business-plan aligned” additions that typically make these whitepapers land with real customers:
+      1. A Deployment & Trust Appendix (self-hosted posture, deterministic decode, audits/checksums, failure modes).
+      2. An ROI Appendix (how to compute TB-month and bandwidth savings, with a template “compression report”).
+
+
+tech
+Below is a Rust implementation architecture document for the full combined system (RankFold + NeuralFold + Router + Universal Container). It’s written as a standalone engineering spec: modules, data flows, file format, determinism requirements, and exact responsibilities. You can hand this to an engineer or use it as your repo blueprint.
+________________
+
+
+RankFold + NeuralFold (Universal WORM Archiver)
+Rust Implementation Architecture v1.0
+Author: Corben Sorenson (architecture spec produced by ChatGPT as editor/architect)
+Date: Feb 2026
+Scope: Production-grade Rust architecture for a universal archive system:
+      * RankFold tensor codec backend
+      * NeuralFold-Field (continuous signals → weights)
+      * NeuralFold-Byte (discrete bytes → predictive model + residual)
+      * Router/probe gating
+      * Unified container format with mixed stream types
+      * CLI + library API
+      * Determinism, safety, testing, reproducibility
+Non-goals (v1):
+      * GPU kernels (optional future)
+      * Learned entropy models beyond fixed coder families
+      * Full RD sweep automation (we include hooks)
+________________
+
+
+0. Design Goals (Hard Requirements)
+G0. Universal storage (format universal)
+Any input is representable and storable in a single container:
+      * as RankFold-coded tensors (RF-TENSOR)
+      * as NeuralFold-derived weights + metadata (NF-FIELD / NF-BYTE)
+      * as fallback raw codec payloads (RAW)
+G1. Honest gating (mandatory)
+If NeuralFold doesn’t help, the router must fall back deterministically.
+G2. Deterministic decoding (required)
+Decoding must be deterministic and reproducible:
+      * same file bytes → same output bytes (bit-exact for RAW streams, exact for NF-BYTE with residual, bounded-error for lossy field modes)
+G3. Byte accounting (required)
+Every stream includes:
+      * header metadata
+      * model spec bytes
+      * RankFold(weights) bytes
+      * residual bytes (if any)
+      * raw payload bytes (if any)
+G4. Safe and robust
+      * Malformed file handling
+      * Checksums at stream and container level
+      * No unbounded memory structures (bounded alphabets, escape coding)
+________________
+
+
+1. System Overview
+1.1 Pipeline
+Input(s) -> Inspect -> Probe -> Route -> Encode Stream(s) -> Container -> Output .rfa
+                                            |
+                                          Decode
+
+
+1.2 Stream Types (Container)
+      * RF_TENSOR: input already tensor; encode with RankFold.
+      * NF_FIELD: continuous signal modeled as function → weights; RankFold on weights; reconstruct by evaluating model.
+      * NF_BYTE: bytes modeled as predictor + residual; RankFold on predictor weights; residual coded losslessly; exact reconstruction.
+      * RAW: conventional codec payload (Zstd/AVIF/FLAC/etc.) stored directly.
+1.3 Library shape
+      * rankfold-archive crate exports encode/decode APIs.
+      * CLI rfa wraps library.
+________________
+
+
+2. Container Format: .rfa (RankFold Archive)
+2.1 Layout (top-level)
+[Magic: b"RFA1\0\0\0\0"] 8 bytes
+[ContainerHeaderLen u32 LE]
+[ContainerHeader (CBOR)]
+[StreamDirectory (CBOR or fixed table)]
+[StreamBlobs...]
+[ContainerFooter: checksum(s)]
+
+
+2.2 Container Header schema (CBOR)
+struct ContainerHeaderV1 {
+  version: u16,              // 1
+  created_utc: i64,          // unix timestamp
+  tool_version: String,      // e.g. "rfa 0.1.0"
+  flags: u32,                // reserved
+  checksum: ChecksumSpec,    // container-level
+  stream_count: u32,
+}
+
+
+2.3 Stream Directory entry
+enum StreamKind { RF_TENSOR, NF_FIELD, NF_BYTE, RAW }
+
+
+struct StreamEntryV1 {
+  id: u64,                   // unique stream id
+  kind: StreamKind,
+  name: String,              // user path or label
+  offset: u64,               // absolute offset in file
+  length: u64,               // bytes
+  checksum: ChecksumSpec,    // per-stream
+  meta: StreamMetaCbor,      // kind-specific metadata blob
+}
+
+
+2.4 Stream blob internal layout
+Each stream blob is:
+[StreamMagic 4 bytes]     // e.g. "RFTS", "NFFD", "NFBY", "RAW0"
+[StreamHeaderLen u32]
+[StreamHeader CBOR]
+[Body bytes...]
+
+
+This makes streams independently decodable and robust.
+________________
+
+
+3. RankFold Backend (RF codec)
+3.1 RankFold responsibilities
+      * Accept tensor blocks (matrix views)
+      * SVD init + EARO refinement (optional depending on config)
+      * Quantized residual generation
+      * Residual coding: zero-run + sign/magnitude + escape + ANS
+      * Traversal: row-major or Morton 16×16
+      * Serialize U/V + residual into stream body
+      * Deterministic decode to reconstruct tensor block
+3.2 RankFold stream header schema (RF_TENSOR)
+struct RankFoldStreamHeaderV1 {
+  dtype: DType,                 // F32 initially, later BF16/FP16
+  shape: Vec<u32>,
+  unfold: UnfoldSpec,           // how tensor -> blocks
+  blocks: Vec<RfBlockSpec>,
+  predictor: PredictorSpec,     // U/V dtype, quant, etc.
+  residual: ResidualSpec,       // coder params
+  earo: EaroSpec,               // optimizer params
+  stats: Option<StatsSpec>,     // optional diagnostics
+}
+
+
+RfBlockSpec includes offsets/lengths for U, V, residual within the stream body.
+________________
+
+
+4. NeuralFold Layer
+NeuralFold produces weight tensors + metadata and relies on RankFold to compress those weights.
+4.1 NeuralFold-Field (NF_FIELD)
+Responsibilities
+      * Accept continuous artifacts:
+      * images, audio, video, scientific grids, 3D fields
+      * Fit a per-artifact (optionally tiled) implicit model
+      * Export:
+      * model spec (architecture)
+      * weights tensors (as standard tensor blocks)
+      * decode spec (coordinate system, tiling)
+      * Encode weights via RankFold blocks
+NF_FIELD stream layout
+Body contains:
+      * RankFold-coded weight tensors (one or more RF_BLOCK sections)
+      * Optional auxiliary tables (tile maps, normalization constants)
+Header stores full decoder spec and model topology.
+struct NfFieldStreamHeaderV1 {
+  modality: FieldModality,        // Image2D, Audio1D, Video3D, Grid3D, etc.
+  original: OriginalFieldSpec,    // dimensions, sample format, normalization
+  model: FieldModelSpec,          // architecture type + parameters
+  tiling: Option<TilingSpec>,     // tile size, overlap, mapping
+  training: TrainingSpec,         // dist target, steps, optimizer, seeds
+  codec_aware: Option<CodecAwareSpec>, // beta, proxy params if enabled
+  weights_layout: WeightsLayoutSpec,    // list of weight tensors -> RankFold blocks
+}
+
+
+Decode procedure:
+      1. decode weights (RankFold)
+      2. evaluate model per coordinate to reconstruct samples
+      3. write artifact in chosen output format
+Determinism:
+      * decode must be deterministic given weights and model spec
+      * training determinism is “best effort” v1 (same machine, fixed seeds)
+________________
+
+
+4.2 NeuralFold-Byte (NF_BYTE)
+Responsibilities
+      * Accept arbitrary byte streams (files or bundle concatenations)
+      * Choose predict-and-residual mode when beneficial
+      * Train a compact predictor model
+      * Store:
+      * predictor weights (RankFold)
+      * exact residual stream (lossless)
+      * bundle metadata (file table)
+NF_BYTE stream header
+struct NfByteStreamHeaderV1 {
+  bundle: BundleSpec,             // files list, offsets, permissions, etc.
+  predictor: BytePredictorSpec,   // architecture + context
+  training: TrainingSpec,
+  codec_aware: Option<CodecAwareSpec>,
+  residual: ByteResidualSpec,     // XOR/add mod 256, coder used
+  weights_layout: WeightsLayoutSpec,  // predictor weights -> RankFold blocks
+}
+
+
+Residual stream
+      * Always lossless.
+      * Coded with a robust byte coder (e.g., ANS over bytes with optional RLE).
+Decode procedure:
+      1. decode predictor weights (RankFold)
+      2. reconstruct predicted bytes (deterministically)
+      3. decode residual bytes
+      4. combine predicted bytes and residual (XOR or mod add)
+      5. reconstruct per-file outputs using bundle table
+Router must gate: if residual is near-uniform, NF_BYTE will lose; fall back.
+________________
+
+
+5. Router / Probe Engine (Critical)
+5.1 Router responsibilities
+      * Determine stream kind per artifact
+      * Estimate expected final size before committing to expensive paths
+      * Enforce fallback rules deterministically
+      * Record route decisions in container metadata
+5.2 Artifact classification
+Implement ArtifactInspector:
+      * identify file kind (magic bytes + heuristics)
+      * compute cheap features:
+      * byte entropy estimate
+      * repetition ratio
+      * for fields: spectral proxy / gradient energy / variance
+      * return ArtifactProfile
+5.3 Probe designs (v1)
+Probes must be cheap and bounded.
+For NF_FIELD
+      * Fit a tiny model for a small number of steps on a downsampled version
+      * Estimate weight count needed for target fidelity
+      * Estimate RankFold-coded weight size using a dry-run:
+      * quantize weights at proxy Δw
+      * estimate zeros + magnitude distribution
+      * estimated coded size (no full ANS needed)
+For NF_BYTE
+      * Train a tiny predictor on a small prefix / sample of the bundle
+      * Compute predicted cross-entropy and residual entropy
+      * Estimate total bytes:
+      * predictor weights size (estimated)
+      * residual size (estimated by entropy)
+      * overhead tables
+5.4 Routing policy
+Deterministic scoring function:
+score(path) = estimated_total_bytes(path) + penalty(decode_cost/path_risk)
+choose min(score) subject to constraints
+
+
+Constraints:
+      * if expected gain < threshold (e.g., 3%), don’t use NeuralFold.
+      * if decode cost exceeds configured budget, don’t use NeuralFold.
+      * if input appears compressed/encrypted (high entropy), force RAW.
+________________
+
+
+6. Residual Coding Library (Shared)
+Create a reusable module for:
+      * RLE (zero runs)
+      * Rice coding (runs)
+      * Exp-Golomb (escape magnitudes)
+      * rANS coder (finite alphabets)
+      * histogram normalization to TOTFREQ
+This module is used by:
+      * RankFold residual coding (int magnitudes + escape)
+      * NF_BYTE residual coding (byte alphabet 0..255)
+________________
+
+
+7. Tensor Core and Linear Algebra
+7.1 Constraints
+      * v1 should be deterministic on same hardware with fixed threads.
+      * avoid BLAS nondeterminism unless pinned.
+7.2 Recommended crates
+      * ndarray for tensor views and shape handling
+      * faer for deterministic linear algebra (preferred)
+      * custom matmul kernels for tight control (optional)
+7.3 SVD init
+Provide two init implementations:
+      * deterministic power iteration (no RNG)
+      * randomized SVD with ChaCha seed (faster, still deterministic under fixed seed)
+Router chooses based on config.
+________________
+
+
+8. Training Engine (NeuralFold)
+8.1 v1 training requirements
+      * deterministic decode is required; deterministic training is “best effort”
+      * training must be bounded:
+      * max steps
+      * max params
+      * early stop
+8.2 Model definitions
+Avoid heavy deep learning frameworks in v1.
+Implement minimal forward/backward for:
+      * SIREN-style MLP
+      * Fourier-feature MLP
+      * small MoE optional (later)
+Or integrate with burn / tch-rs if you’re willing to accept nondeterminism. For a clean Rust-native path, implement minimal autograd yourself or code analytic gradients.
+Recommendation: v1 implement Field MLP in pure Rust with analytic gradients (like RankFold EARO), because it keeps you in control.
+________________
+
+
+9. CLI + Library APIs
+9.1 Library API
+pub struct EncodeOptions { /* routes, budgets, defaults */ }
+pub struct DecodeOptions { /* output formats, partial decode */ }
+
+
+pub fn encode(inputs: Vec<InputArtifact>, out: &Path, opt: EncodeOptions) -> Result<()>;
+pub fn decode(archive: &Path, out_dir: &Path, opt: DecodeOptions) -> Result<()>;
+pub fn list(archive: &Path) -> Result<Vec<StreamEntrySummary>>;
+pub fn extract(archive: &Path, stream_id: u64, out: &Path) -> Result<()>;
+
+
+9.2 CLI commands
+      * rfa pack <paths...> -o archive.rfa [options]
+      * rfa unpack archive.rfa -o out_dir
+      * rfa list archive.rfa
+      * rfa info archive.rfa --stream <id>
+      * rfa extract archive.rfa --stream <id>
+________________
+
+
+10. Determinism and Reproducibility
+10.1 Decode determinism
+Must be guaranteed:
+      * fixed endianness (LE)
+      * explicit rounding rules
+      * no reliance on platform floating quirks in decode
+      * avoid undefined behavior
+10.2 Encode determinism
+Best effort:
+      * fixed seeds
+      * fixed threading (default single-thread for encode if strict determinism requested)
+      * deterministic SVD init option
+Store the encode config in stream header so re-encoding can be reproduced.
+________________
+
+
+11. Security / Robustness
+      * per-stream checksums (xxhash64 or blake3)
+      * bounds checking on offsets/lengths
+      * ANS table validation (TOTFREQ, ranges)
+      * prevent decompression bombs (max output size recorded)
+      * fail closed on malformed metadata
+________________
+
+
+12. Testing Strategy
+12.1 Unit tests
+      * rANS encode/decode roundtrip
+      * Rice coding roundtrip
+      * Morton traversal correctness
+      * RankFold residual reconstruction
+12.2 Integration tests
+      * pack/unpack mixed directory
+      * NF_FIELD image roundtrip within distortion bounds
+      * NF_BYTE exact reconstruction of file trees
+      * fallback route correctness
+12.3 Determinism tests
+      * decode determinism across repeated runs
+      * encode determinism under fixed seed and single thread
+12.4 Fuzz tests
+      * malformed stream headers
+      * corrupted offsets
+      * invalid ANS tables
+________________
+
+
+13. Suggested Repository Layout
+rankfold-archive/
+  Cargo.toml
+  crates/
+    rfa-core/            // container, router, common types
+    rankfold/            // RF backend codec
+    neuralfold/          // NF_FIELD and NF_BYTE implementations
+    entropy/             // rANS, Rice, exp-golomb, histograms
+    tensor/              // tensor views, traversal
+    cli/                 // rfa binary
+  tests/
+  docs/
+    ARCHITECTURE.md      // this document
+    FORMAT.md            // byte-accurate container + stream format
+    EVAL.md              // RD evaluation protocol
+
+
+________________
+
+
+14. v1 Milestones (Practical Implementation Plan)
+M1: Container + RAW streams
+      * pack/unpack/list/extract
+      * checksums
+      * Zstd RAW stream
+M2: RankFold RF_TENSOR
+      * encode/decode single matrix and simple tensor unfolding
+      * residual coder implementation
+      * byte accounting
+M3: Router + probes (minimal)
+      * type detection
+      * route tensors to RF, others to RAW (initial)
+M4: NF_FIELD for images (tile MLP)
+      * fit + store weights + decode image
+      * RankFold on weights
+      * router probe
+M5: NF_BYTE for bundles
+      * bundle table
+      * predictor+residual exact mode
+      * router probe + fallback
+________________
+
+
+15. Open Interfaces (So You Don’t Paint Yourself Into a Corner)
+Pluggable components
+      * ResidualCoder trait (RankFold ints, NF_BYTE bytes)
+      * Traversal trait (row-major, Morton)
+      * PredictorInit trait (SVD init strategies)
+      * FieldModel trait (SIREN, Fourier MLP, etc.)
+      * BytePredictor trait (blockwise linear, MoE chunks)
+This lets you evolve research without rewriting the archive format.
+________________
+
+
+If you want, next I can write:
+      1. FORMAT.md — byte-accurate container and stream layouts (field by field, bit ordering for coders), and/or
+      2. A Rust skeleton repo (module stubs + traits + structs) that matches this architecture exactly.
+
+
+business
+Business Proposal: RankFold Archive
+A Universal, Codec-Aware WORM Archival System for Machine Learning Artifacts
+Prepared by: Corben Sorenson
+Independent Researcher
+@SorensonCorben
+February 2026
+Executive Summary
+RankFold Archive is a groundbreaking archival compression system designed specifically for the exploding volume of heterogeneous machine learning artifacts — model weights, optimizer states, gradients, datasets, logs, and directory bundles. Built on two integrated innovations — RankFold (rate-distortion optimized low-rank residual coding) and NeuralFold (codec-aware functional preprocessing) — the system delivers structure-exploiting compression ratios superior to general-purpose tools (e.g., Zstd) and modality-specific compressors, while maintaining honest fallbacks and full byte accounting.
+The business will monetize through a dual model:
+      * SaaS processing service — Per-GB fees for compression/decompression (ephemeral compute, zero data retention).
+      * Community Edition with tiered licensing — Source-available self-hosted version free for individuals, hobbyists, and small teams; paid commercial licenses for enterprises exceeding revenue/use thresholds.
+This "set-and-forget" approach requires no ongoing consulting, generates recurring SaaS revenue + lump-sum license payments, and positions RankFold Archive as the de facto standard for AI-era cold storage. With AI-powered storage markets projected to exceed $100–250 billion by 2030 and model compression niches growing at 7–25% CAGR, even modest market penetration yields high-margin, scalable revenue for a solo founder.
+Problem Statement
+The machine learning ecosystem generates vast, diverse artifacts requiring long-term archival (Write-Once-Read-Many / WORM workloads):
+      * Model weights/adapters (tens to hundreds of GB per checkpoint).
+      * Intermediate states (gradients, activations).
+      * Datasets, logs, and experiment bundles.
+Major platforms face crushing storage costs:
+      * Hugging Face, the leading model hub, has introduced storage limits (e.g., 12TB public max) and per-TB pricing, with recent 50% price cuts reflecting intense cost pressure.
+      * AI-powered storage markets were valued at ~$30 billion in 2024–2025, driven by explosive data growth.
+Existing solutions fall short:
+      * General compressors (Zstd, Brotli) ignore tensor/functional structure.
+      * Quantization tools (GGUF, AWQ) are model-specific.
+      * Learned compressors require shared corpora and rarely adapt per-artifact.
+No unified system exists for heterogeneous archival with per-artifact optimization — creating a clear opportunity for 20–50% average size reductions on real workloads.
+Solution: RankFold Archive
+RankFold Archive processes artifacts independently through a unified pipeline:
+      1. Inspect & Probe → Route to optimal path.
+      2. NeuralFold → Convert arbitrary data (signals, bytes, directories) into compact weight tensors via codec-aware implicit representations or predictive models.
+      3. RankFold → Apply entropy-aligned low-rank decomposition with residual coding tailored to actual bit costs.
+      4. Container Output → Single archive with random-access streams and fallback to conventional codecs.
+Key differentiators:
+      * Per-artifact optimization (no global corpus).
+      * Codec-aware training aligning representations to final bitstream.
+      * Mandatory routing/fallback for honesty.
+      * Full universality without overclaiming compression guarantees.
+The result: Superior rate-distortion on tensors and functional data, with lightweight decompression.
+Market Opportunity
+      * AI-Powered Storage Market: $29–30B in 2024–2025, projected to $118–268B by 2030–2035 (CAGR 24–25%).
+      * Model Compression Niche: ~$1B in 2023, growing to $1.6B by 2030 (CAGR ~7%).
+      * Broader Data Compression: $1–3B currently, reaching $4–5B by 2030.
+Target customers: Model hubs (Hugging Face, etc.), AI labs, cloud providers, enterprises with private registries. A 20–40% reduction across petabytes translates to tens of millions in annual savings — customers will pay premiums for convenience and performance.
+Competitive Landscape
+Direct competitors are fragmented:
+      * Open tools (GGUF/llama.cpp, Safetensors + Zstd) → Free but lack per-artifact functional optimization.
+      * Commercial quantization/compression (e.g., Multiverse Computing's quantum-inspired tools) → Narrow focus, high funding but not universal archival.
+      * General SaaS (cloud transcoding) → Not AI-artifact aware.
+RankFold Archive is uniquely positioned as the first universal, codec-co-designed WORM archiver with functional preprocessing.
+Business Model
+Primary Revenue Streams:
+      1. SaaS Processing Service (70–80% of revenue)
+      * Ephemeral compression/decompression API/CLI.
+      * Pricing: $2–10/GB input (compression), $0.20–$1/GB (decompression), free egress under limits.
+      * Free tier: 50–100GB/month.
+      * Infrastructure: Serverless GPUs (Modal, RunPod) — high margins after scale.
+      2. Licensed Community Edition (20–30% of revenue)
+      * Source-available self-hosted binary/CLI (same performance).
+      * License: PolyForm Small Business or BUSL with revenue grant.
+      * Free for individuals, non-profits, companies < $5–10M annual revenue.
+      * Commercial license required for larger enterprises/production use in core pipelines.
+      * Pricing: $50k–$500k+ one-time or annual lump sums.
+No consulting required — automated billing (Stripe/Orb), zero-retention privacy.
+Go-to-Market Strategy
+Phase 1 (Q1–Q2 2026): Private beta → Benchmarks vs. baselines → Launch Community Edition + SaaS MVP.
+Phase 2: Community traction on GitHub/HF → Targeted outreach to hubs and labs.
+Phase 3: Enterprise license sales via inbound (privacy-focused customers).
+Marketing: arXiv paper, HF forums, X (@SorensonCorben), Reddit, benchmarks on popular models.
+Financial Projections (High-Level)
+      * Year 1: $500k–$2M (early adopters + licenses).
+      * Year 3: $10M+ (SaaS scale + enterprise deals).
+      * Margins: 60–80% (compute-dominant COGS).
+      * Break-even: Within 6–12 months post-launch.
+Team
+Corben Sorenson — Sole founder, inventor, and implementer. Proven independent researcher with deep expertise in compression, rate-distortion optimization, and neural representations.
+Risks & Mitigation
+      * Adoption speed → Mitigated by strong open benchmarks and free Community Edition.
+      * Compute costs → Serverless scaling + premium pricing.
+      * Competition → First-mover in universal functional archival; proprietary codec-aware core.
+Conclusion
+RankFold Archive solves a critical, underserved pain point in the AI ecosystem with technically superior, honest compression. The proposed model delivers sustainable, hands-off revenue while fostering community adoption. This is a timely opportunity to build a profitable, impactful tool in a multi-billion-dollar market.
+Ready to launch — the future of AI archival starts here.
+
+
+business 2
+Business Plan: RankFold Archive
+A WORM Compression and Packaging System for ML Artifacts (with optional NeuralFold expansion)
+Prepared by: Corben Sorenson (@SorensonCorben)
+Date: February 2026
+Status: Public business plan draft (v1)
+________________
+
+
+1) Executive Summary
+RankFold Archive is a WORM (Write-Once-Read-Many) compression and packaging system for modern ML artifacts—weights, optimizer states, gradients, attention/activation traces, and experiment bundles. The core engine, RankFold, is a per-artifact rate–distortion codec that optimizes low-rank predictors for residual bit-cost, not just (L_2) error. It is designed for cold storage and distribution workflows where encoding cost is amortized across many downloads and reads.
+The business launches with a focused wedge: tensor-first archival for model hubs, AI labs, and enterprises that retain large volumes of training artifacts. This is validated by visible storage pressure in the ecosystem: Hugging Face now documents explicit Hub storage limits and per-TB storage pricing (public and private tiers). (Hugging Face)
+A second module, NeuralFold, is positioned as an optional expansion: codec-aware functional preprocessing for select non-tensor artifacts (continuous fields like images/audio/grids) where it is predicted to win. NeuralFold is not required for v1 product-market fit and is gated by probes with mandatory fallbacks to conventional codecs.
+Monetization is a two-track model:
+      1. Self-hosted Commercial (primary enterprise path): predictable deployment, privacy-first, supports regulated environments.
+      2. Hosted WORM processing (developer and mid-market path): API + CLI with short-lived processing and transparent byte accounting.
+________________
+
+
+2) Problem Statement
+2.1 The pain is real and centrally visible
+ML organizations now store large artifacts at scale:
+      * model weights and adapters
+      * optimizer states and gradient snapshots
+      * evaluation traces and intermediate tensors
+      * packaged experiment bundles and datasets
+The most visible hub in the ecosystem has tightened storage policies and monetization: Hugging Face documents per-plan storage limits and pay-as-you-go storage, and separately offers per-TB/mo storage pricing. (Hugging Face)
+2.2 Why existing solutions are insufficient
+      * General compressors (Zstd, Brotli) treat tensors as byte streams and often miss algebraic structure.
+      * Model-specific quantization (e.g., inference-centric formats) doesn’t solve archival for optimizer states, gradients, or mixed experiment bundles.
+      * Dataset-trained neural compression may not adapt well per artifact, and introduces operational complexity.
+What customers actually want: a tool that reduces stored bytes for cold artifacts, integrates into existing pipelines, preserves predictable decode behavior, and provides clear ROI.
+________________
+
+
+3) Product
+3.1 RankFold Archive v1 (the shipping wedge)
+RankFold Archive v1 is a container + codec system with:
+      * deterministic decode
+      * full byte accounting (predictor bytes + residual bytes + headers)
+      * stream-level indexing for random access extraction
+      * safe fallback to conventional codecs
+Supported v1 inputs (product focus):
+      * tensor artifacts (weights, optimizer states, gradients, attention/activation tensors)
+      * experiment bundles composed mainly of tensors (safetensors, NumPy arrays, PyTorch state dict components)
+3.2 Optional expansion module: NeuralFold (post-wedge)
+NeuralFold is an expansion module for continuous data types that can benefit from functional representations:
+      * images / audio / scientific grids / 3D scalar fields
+NeuralFold is always probe-gated and can fall back to RAW codec storage. It is not positioned as “compress everything better,” only as “allow the archive to store heterogeneous artifacts under one container and win when structure exists.”
+________________
+
+
+4) Value Proposition and ROI Model
+4.1 What we sell: stored bytes and bandwidth avoided
+For WORM workloads, the benefit is:
+      * lower storage footprint (TB-month reduced)
+      * lower distribution bandwidth (downloads reduced)
+      * consistent packaging and indexing (operational simplicity)
+4.2 ROI can be calculated from published storage pricing
+Hugging Face publishes per-TB/mo storage pricing for Hub storage (public/private tiers with volume discounts). (Hugging Face)
+Hugging Face also documents pay-as-you-go private storage pricing in their storage limits doc (e.g., $25/TB/month above included quotas for certain plans). (Hugging Face)
+Simple ROI example (template):
+      * Stored volume: (X) TB-month
+      * Unit storage price: (P) $/TB/month (from vendor or internal cost)
+      * Compression improvement on target artifacts: (g%) (measured and reported by RankFold)
+      * Annual savings: (12 \cdot X \cdot P \cdot g%)
+RankFold Archive will ship with a built-in “ROI report” that prints this exact breakdown using user-provided storage cost inputs (or vendor pricing presets).
+________________
+
+
+5) Market and Customers
+5.1 Initial customer segments
+      1. Model hubs / registries (public or private): storage and bandwidth costs at scale.
+      2. AI labs / research orgs: large optimizer/gradient footprints, large experiment retention.
+      3. Enterprises with private model registries: governance + compliance retention + internal distribution.
+5.2 Market framing (credible SAM over headline TAM)
+Broad market reports exist for “AI-powered storage,” but they include a lot of infrastructure categories unrelated to ML artifact codecs. (Example: Grand View Research publishes an “AI powered storage” market report.) (Grand View Research)
+RankFold Archive focuses on a narrower, high-intensity segment:
+      * ML artifact storage + distribution tooling
+      * model hub storage and internal registries
+      * reproducible run packaging and retention
+This is a “sharp wedge” where buyers can directly measure savings.
+________________
+
+
+6) Competitive Landscape
+6.1 What customers use today
+      * Zstd on safetensors / raw arrays
+      * bespoke quantization pipelines for inference artifacts
+      * scientific compressors (ZFP/FPZIP/etc.) for numeric arrays
+      * ad hoc tar+zstd bundles
+6.2 Differentiation
+RankFold Archive differentiates by combining:
+      * per-artifact coder-aligned predictor optimization for tensors
+      * explicit byte accounting and deterministic decode
+      * archive container with stream indexing + fallbacks
+      * (optional) codec-aware functional preprocessing for select modalities
+This is less “compression magic” and more “WORM archival system engineered for ML artifacts.”
+________________
+
+
+7) Business Model
+7.1 Primary: Self-hosted Commercial (enterprise-first trust)
+Why: many orgs will not upload models/checkpoints to third-party SaaS.
+Offer:
+      * self-hosted binary/CLI + optional Kubernetes deployment
+      * enterprise features: SSO, audit logs, key management integration, policy controls
+      * pricing: annual subscription based on storage under management (or seats) + support SLAs
+7.2 Secondary: Hosted processing (developer + mid-market)
+Offer:
+      * API + CLI
+      * “ephemeral processing” posture (no long-term retention by default)
+      * transparent billing and per-job reports
+Pricing should not be a rigid per-GB claim in the plan yet. Instead:
+      * developer tier: per-GB for small volumes
+      * enterprise tier: contract pricing and/or committed spend
+7.3 Licensing reality (fixing the earlier issue)
+If you use PolyForm Small Business, its threshold is < $1,000,000 USD (2019) revenue plus headcount constraints, inflation-adjusted, not $5–10M. (polyformproject.org)
+So the plan should either:
+      * adopt PolyForm SMB as-is (and accept that threshold), or
+      * use a custom commercial license with your chosen thresholds, or
+      * use a more standard open-core structure.
+Recommendation: For credibility, don’t promise a specific revenue threshold unless it matches the actual license you will use.
+________________
+
+
+8) Go-to-Market Strategy
+Phase 1: Proof and wedge (0–6 months)
+      * ship RankFold Archive v1: tensor-first (weights/optimizer/grads), container, index, fallback
+      * publish reproducible benchmarks and an RD-fair evaluation protocol
+      * launch “ROI calculator” output per run
+Phase 2: Community traction (6–12 months)
+      * open Community Edition with clear license terms
+      * integrations:
+      * safetensors tooling
+      * PyTorch artifact export helpers
+      * CI-friendly CLI
+      * target: ML infra engineers and research teams
+Phase 3: Enterprise conversions (12+ months)
+      * self-hosted enterprise offering
+      * pilot with 1–3 design partners (registry/hub/lab)
+      * land-and-expand via storage savings and governance needs
+NeuralFold can be introduced as an “experimental module” only after RankFold’s tensor wedge is proven and trusted.
+________________
+
+
+9) Operational Plan
+9.1 Implementation priorities
+      * deterministic RankFold codec + safe integer residual coder
+      * container format with stream indexing
+      * probes + routing rules
+      * integrations with common tensor formats
+      * reproducibility and security posture
+9.2 Security posture (enterprise requirement)
+      * self-hosted option first
+      * encryption at rest and in transit
+      * audit logs
+      * checksums per stream and container
+________________
+
+
+10) Risks and Mitigations
+      1. Compression gains vary across artifacts
+Mitigation: probe + fallback; publish distributions (median/IQR) not single headline numbers.
+      2. Compute cost can exceed savings in some workloads
+Mitigation: WORM positioning; step-count knobs; default “fast path”; strong ROI reporting.
+      3. Trust barrier for SaaS
+Mitigation: self-hosted first; SaaS as convenience tier; clear retention policy.
+      4. Competition from established codecs / model hubs
+Mitigation: focus on tensor-heavy artifacts beyond inference quantization; integrate cleanly; become the “archive format” layer.
+________________
+
+
+11) Milestones and Success Metrics
+MVP success metrics (first 90 days after v1):
+         * 10+ real users compressing ≥1TB total
+         * 3+ organizations adopting in CI or retention pipelines
+         * reproducible benchmarks showing consistent wins over SVD+codec baselines on structured tensors
+         * at least one design partner exploring registry/hub integration
+________________
+
+
+12) Closing
+RankFold Archive is a focused WORM archival product for ML artifacts with a credible wedge: tensor-heavy storage and distribution. It responds to clear market pressure demonstrated by explicit hub storage limits and pricing. (Hugging Face)
+NeuralFold is positioned as an optional expansion, not a requirement for early traction. The business is built for trust (self-hosted first), measurable ROI (full byte accounting + calculator), and a path to enterprise adoption.
+
+
+business 3
+Business Plan: RankFold Archive
+A Universal, Codec-Aware WORM Archival System for ML and Scientific Artifacts
+Core engine: RankFold + NeuralFold (integrated)
+Prepared by: Corben Sorenson (@SorensonCorben)
+Date: February 2026
+Status: Business Plan v1
+________________
+
+
+1) Executive Summary
+RankFold Archive is a universal WORM (Write-Once-Read-Many) archival system built for the ML era: models, optimizer states, gradients, activation/attention traces, datasets, logs, and full experiment directories. It is engineered for cold storage and distribution where compression ratio and bandwidth dominate, and where encoding cost can be amortized over many reads.
+RankFold Archive is defined by two inseparable components:
+         * NeuralFold (Front-End + Router): a mandatory inspection, probing, and routing layer that determines the most efficient representation per artifact. NeuralFold can (a) route tensor artifacts directly to RankFold, (b) convert continuous signals (images/audio/grids/3D fields) into compact functional weight tensors, (c) compress discrete byte streams via predictive modeling with lossless residuals when it wins, or (d) fall back to conventional codecs when structure is absent. NeuralFold is integral because it is the universality and honesty layer that makes the archive work on real mixed workloads.
+         * RankFold (Tensor Back-End): a rate–distortion optimized, per-artifact tensor codec that learns low-rank predictors aligned to a concrete residual coder, minimizing actual storage cost rather than minimizing (L_2) alone.
+The result is a single archive format that can store heterogeneous artifacts with explicit byte accounting and deterministic decoding. Compression benefits are structure-dependent by design, enforced by NeuralFold’s probe-gated routing. This combination targets the most expensive and fastest-growing pain point in modern AI operations: long-term storage and distribution of large artifact bundles. Storage pressure is visible at the ecosystem’s center—Hugging Face documents explicit storage limits and per-TB pricing.
+Business model: self-hosted commercial offering (enterprise trust path) + hosted processing service (developer and mid-market). The value proposition is measurable: reduced TB-months stored and reduced distribution bandwidth, reported per archive job.
+________________
+
+
+2) Problem Statement
+2.1 The ML ecosystem produces heterogeneous WORM artifacts
+Organizations retain:
+         * model weights and adapters
+         * optimizer states and gradient traces
+         * attention/activation logs for debugging and evaluation
+         * datasets and derived caches
+         * entire experiment directories for reproducibility
+This is primarily WORM: write once, read many times (downloads, audits, rollbacks, benchmarking, replication).
+2.2 Storage constraints and pricing pressure are now explicit
+Major model hubs have implemented policy limits and pricing for storage usage. Hugging Face documents per-plan storage constraints and pay-as-you-go storage charges and separately publishes per-TB pricing for storage.
+This validates the core buyer motivation: storage and bandwidth costs are no longer abstract.
+2.3 Why existing tools fail on mixed ML workloads
+         * General compressors (Zstd, Brotli) treat artifacts as bytes and often miss tensor and functional structure.
+         * Model quantization tools target inference deployment, not archival of optimizer/grads/traces.
+         * Learned compressors typically require dataset training and are not engineered as universal archive systems for mixed directories.
+What customers need is not “a better gzip,” but a system that:
+         * understands ML artifacts,
+         * applies appropriate transforms,
+         * remains honest on high entropy inputs,
+         * and produces a single distributable archive.
+________________
+
+
+3) Solution: RankFold Archive (NeuralFold + RankFold)
+RankFold Archive is a unified system, not a set of optional modules. NeuralFold is the mandatory front-end that makes the system universal; RankFold is the mandatory tensor backend that delivers compression wins whenever artifacts can be expressed as tensors.
+3.1 NeuralFold (integral): inspection, probing, and routing
+NeuralFold performs four functions:
+         1. Artifact inspection
+Detects whether an input is:
+            * tensor artifact (weights/grads/optimizer)
+            * continuous field (image/audio/grid/3D)
+            * discrete byte stream / directory bundle
+            * already-compressed or high entropy
+            2. Probe (cheap predictive estimate)
+Runs a bounded-cost probe to estimate final archive bytes for candidate paths, including overhead.
+            3. Route (mandatory, deterministic policy)
+Chooses the best path:
+               * RF-TENSOR: RankFold directly
+               * NF-FIELD: train a compact functional representation → weights → RankFold
+               * NF-BYTE: train predictor + lossless residual → RankFold(weights) + residual
+               * RAW: conventional codec fallback (still stored in the same container)
+               4. Full accounting report
+Outputs a per-job report:
+                  * bytes by stream type
+                  * predicted vs achieved
+                  * decode cost class
+                  * ROI estimate (based on user storage cost inputs)
+NeuralFold is integral even when it chooses RAW, because it guarantees universal support and prevents wasted compute.
+3.2 RankFold (integral): coder-aligned tensor archival codec
+RankFold compresses tensors using:
+                  * low-rank predictor (UV^\top)
+                  * quantized residual stream
+                  * residual coder designed for scalability (zero-runs + magnitude + escape + ANS)
+Its differentiation is per-artifact optimization for bit cost (WORM-appropriate).
+________________
+
+
+4) Product Definition
+4.1 What ships as v1
+RankFold Archive v1 includes:
+                  * Single archive container format with stream indexing (random access extraction)
+                  * NeuralFold router + probes + deterministic fallback
+                  * RankFold tensor codec for:
+                  * weights, optimizer states, gradients, attention/activation tensors
+                  * NeuralFold-Field for:
+                  * images/audio/scientific grids (tile-based functional models, decode-bounded)
+                  * NeuralFold-Byte (predict+residual) for:
+                  * directory bundles where probe predicts wins (logs, code repos, structured binaries)
+                  * RAW storage path inside container (Zstd/xz/etc. plug-ins)
+This is universal and honest from day one.
+4.2 Deterministic decode and operational safety
+                  * Deterministic decode for all stream types
+                  * Checksums per stream and per container
+                  * Bounded memory coders and escape channels to avoid pathological behavior
+________________
+
+
+5) Value Proposition and ROI
+RankFold Archive sells measurable outcomes:
+                  * Reduced storage TB-months for retained artifacts
+                  * Reduced distribution bandwidth for downloads
+                  * Reduced operational friction: single standardized archive + indexable streams
+Because storage vendors publish pricing, ROI is computable.
+Example template using Hugging Face pricing as a visible reference point:
+                  * Stored volume: (X) TB-month
+                  * Unit storage price: (P) $/TB/month (from vendor or internal cost model)
+                  * Measured savings on target workloads: (g%)
+                  * Annual savings: (12 \cdot X \cdot P \cdot g%)
+Hugging Face’s storage policies and pricing provide a concrete external signal that these costs matter.
+________________
+
+
+6) Market and Customers
+6.1 Target customers
+                  * Model hubs and registries (public or private)
+                  * AI labs with heavy experiment retention
+                  * Enterprises with internal registries, governance retention, and distribution needs
+                  * Scientific computing groups with grid/field data retention
+6.2 Market framing (credible wedge)
+Rather than broad “AI storage” TAM, RankFold Archive focuses on:
+                  * ML artifact retention and distribution tooling
+                  * registry/hub storage cost centers
+                  * reproducibility bundles and experiment packaging
+A broader AI-powered storage market is projected to grow substantially, but RankFold Archive targets a specific high-intensity subset.
+________________
+
+
+7) Competitive Landscape
+Current substitutes
+                  * Zstd on safetensors and tarballs
+                  * ad hoc format conversions and quantization for deployment
+                  * scientific compressors for grids (ZFP/FPZIP class)
+RankFold Archive differentiation
+                  * NeuralFold makes the system universal and honest on mixed workloads (probe + routing + fallback)
+                  * RankFold provides per-artifact coder-aligned optimization for tensors
+                  * One archive format with indexed streams across heterogeneous data
+________________
+
+
+8) Business Model
+8.1 Self-hosted Commercial (primary enterprise path)
+                  * On-prem / VPC deploy
+                  * Predictable governance and privacy
+                  * Annual subscription:
+                  * based on storage under management or artifacts processed
+                  * includes SLAs and support
+8.2 Hosted Processing (developer + mid-market path)
+                  * API + CLI
+                  * “ephemeral processing” posture
+                  * Per-job pricing for small volumes + contract pricing for scale
+8.3 Community edition and licensing
+If using PolyForm Small Business, note the actual revenue threshold in the license text is ~$1M (2019, inflation-adjusted) plus other conditions.
+If you want different thresholds (e.g., $5–10M), use a custom license rather than mis-stating PolyForm.
+Recommendation: choose license terms that match your intended thresholds and keep them simple.
+________________
+
+
+9) Go-to-Market Strategy
+Phase 1: Proof (0–6 months)
+                  * Ship RankFold Archive v1 (NeuralFold router + RankFold backend + container)
+                  * Publish reproducible benchmarks:
+                  * tensor-heavy workloads
+                  * mixed experiment directories
+                  * field workloads (images/grids)
+                  * Integrate with safetensors + common pipelines
+                  * Start with early adopters (labs, infra engineers)
+Phase 2: Distribution (6–12 months)
+                  * Community adoption: GitHub, model hub forums, benchmarks
+                  * “Compression report” outputs that show ROI per bundle
+Phase 3: Enterprise conversions (12+ months)
+                  * Design partner pilots with registries/hubs/labs
+                  * Security + governance positioning
+                  * Annual contracts
+________________
+
+
+10) Risks and Mitigations
+                  1. Compression gains vary by workload
+Mitigation: probes + fallbacks + publish distributions (median/IQR), not cherry-picked means.
+                  2. NeuralFold encode cost
+Mitigation: WORM positioning + decode budgets + tiling + strict gating.
+                  3. Trust barrier for SaaS
+Mitigation: self-hosted commercial as first-class product.
+                  4. Competitive response
+Mitigation: standardize container format + integrations; become the archive layer that’s hard to replace.
+________________
+
+
+11) Milestones and Success Metrics
+90-day post-launch metrics:
+                     * ≥10 TB of real artifacts processed with published reports
+                     * ≥3 teams adopting in retention/distribution workflows
+                     * At least one design partner evaluating internal registry integration
+                     * Demonstrated wins vs Zstd/standard bundling on at least one real mixed workload, with honest fallbacks
+________________
+
+
+Conclusion
+RankFold Archive is a universal WORM archival system where NeuralFold and RankFold are inseparable: NeuralFold provides universality, routing, and honesty; RankFold provides coder-aligned tensor compression as the universal backend. The system addresses an observable cost center under active pricing and policy pressure in the ML ecosystem.
+With a self-hosted enterprise path and a hosted convenience tier, RankFold Archive can become the standard archive layer for AI-era cold storage.
+________________
+
+
+If you want, I can now:
+                     1. rewrite this into a 1-page investor memo, and separately
+                     2. rewrite it into a procurement/security-friendly enterprise brief (deployment, KMS, audit logs, retention, compliance posture).
+
+
+Tab 8
+Absolutely. Below is an updated technical implementation paper/spec for RankFold Archive (RankFold + NeuralFold + Router + Container) in Rust, with an added section for a WASM client-side build of the entire pipeline. I’ll also cover how licensing can work in a WASM distribution without pretending it’s unbreakable.
+________________
+
+
+RankFold Archive v1.1
+Rust + WASM Implementation Specification
+A Universal, Codec-Aware WORM Archival System (NeuralFold + RankFold)
+Author: Corben Sorenson
+Spec editor: ChatGPT
+Date: Feb 2026
+Status: Implementation-ready technical paper/spec
+________________
+
+
+0. Executive Summary
+RankFold Archive is a universal WORM archive container with mandatory routing (NeuralFold) and a tensor compression backend (RankFold). It supports:
+                     * RF-TENSOR: RankFold-compressed tensor streams
+                     * NF-FIELD: continuous artifacts → functional model weights → RankFold
+                     * NF-BYTE: discrete bundles → predictor weights → RankFold + lossless residual
+                     * RAW: conventional codec payloads (fallback)
+This document specifies:
+                     1. A Rust-native implementation architecture (CPU-first, deterministic decode)
+                     2. A WASM build variant that runs the full pipeline client-side
+                     3. Licensing enforcement patterns for both (with realistic constraints)
+________________
+
+
+1. System Requirements
+1.1 Functional
+                     * Pack multiple inputs (files/directories/tensors) into a single .rfa container.
+                     * Deterministic decode:
+                     * RAW: exact byte reproduction
+                     * NF-BYTE: exact byte reproduction (predict + lossless residual)
+                     * RF-TENSOR / NF-FIELD: bounded error consistent with stored parameters (and reconstruct exactly from file’s weights/residuals)
+                     * Stream index supports list/extract without decoding everything.
+                     * Mandatory routing/probe chooses best path (or falls back).
+1.2 Non-functional
+                     * Deterministic decode across runs on the same platform. (Cross-platform bit-identical floats may be “best effort” unless you constrain math tightly.)
+                     * Bounded memory usage: block/tile support.
+                     * Safety: robust parsing, checksums, truncation detection.
+                     * Observability: produce per-stream byte breakdown reports.
+________________
+
+
+2. Container Format .rfa (RankFold Archive)
+2.1 Layout
+[Magic "RFA1\0\0\0\0" 8B]
+[HeaderLen u32 LE]
+[ContainerHeader CBOR]
+[DirectoryLen u32 LE]
+[StreamDirectory CBOR]
+[Stream blobs...]
+[Footer checksums]
+
+
+2.2 Stream blob layout
+Each stream is self-contained:
+[StreamMagic 4B]    // "RFTS", "NFFD", "NFBY", "RAW0"
+[StreamHeaderLen u32]
+[StreamHeader CBOR]
+[Body...]
+[StreamFooter checksum]
+
+
+2.3 Stream types
+                     * RFTS (RF-TENSOR): RankFold blocks + tensor metadata
+                     * NFFD (NF-FIELD): model spec + tiling + RankFold blocks for weights
+                     * NFBY (NF-BYTE): bundle table + predictor spec + RankFold blocks for weights + residual coder stream
+                     * RAW0: codec name + raw payload bytes
+________________
+
+
+3. Core Rust Architecture
+3.1 Crate Layout (recommended)
+rankfold-archive/
+  crates/
+    rfa-core/        // container format, directory, checksums, IO, manifests
+    router/          // inspect/probe/route, cost estimation, policy
+    rankfold/        // RankFold codec backend (EARO + residual coder)
+    neuralfold/      // NF-FIELD and NF-BYTE model training/packing
+    entropy/         // rANS, Rice, Exp-Golomb, hist normalization
+    tensor/          // tensor views, unfolding, tiling, traversal (Morton)
+    cli/             // rfa binary
+    wasm/            // wasm bindings + JS packaging
+  docs/
+    FORMAT.md
+    ARCHITECTURE.md
+    LICENSE.md
+
+
+3.2 Module responsibilities
+rfa-core
+                     * CBOR schemas
+                     * stream directory, offsets
+                     * safe parsing, bounds checks
+                     * checksums (blake3 or xxhash64 + CRC32 optional)
+                     * IO traits: file/bytes/mmap (native); byte slices (wasm)
+router
+                     * Inspector: artifact sniffing (magic bytes, extensions, tensor detection)
+                     * Probe: cheap estimation of bytes for each path
+                     * Policy: deterministic selection (min predicted size with constraints)
+                     * Report: prints final decision + predicted vs actual bytes
+rankfold
+                     * matrix/tensor unfolding
+                     * predictor initialization (deterministic SVD approx)
+                     * EARO optimizer (analytic gradients, STE)
+                     * quantized residual generation
+                     * traversal: row-major + morton 16×16
+                     * residual coder: run-length + sign/magnitude + escape + rANS
+neuralfold
+                     * NF-FIELD: field model fit + tiling + export weights
+                     * NF-BYTE: bundle modeling predictor + residual generation + export weights + residual stream coding
+                     * codec-aware fine-tune (optional but supported in headers)
+entropy
+                     * rANS encode/decode
+                     * Rice run coder
+                     * Exp-Golomb/Elias for escape magnitudes
+                     * histogram + normalization to TOTFREQ
+                     * stable serialization of tables
+tensor
+                     * shape handling and views
+                     * unfolding specs (attention/conv/dense)
+                     * tile iterators
+                     * morton ordering utilities
+________________
+
+
+4. RankFold Backend (Tensor Codec) – Implementation Details
+4.1 Representation
+For each matrix block (M):
+                     * store (U), (V) (FP16 recommended v1)
+                     * store residual (E_q = \lfloor (M-UV^T)/\Delta \rceil) coded
+4.2 Predictor init (deterministic)
+Provide two init strategies:
+                     * PowerIterSVD (deterministic, slower)
+                     * RandSVD with fixed seed (ChaCha8Rng seeded by stream+block id)
+Expose config flag: --deterministic_strict forces PowerIterSVD and single thread.
+4.3 EARO optimizer (analytic gradients)
+Define:
+                     * (Z=(M-UV^T)/\Delta)
+                     * (E_q=\mathrm{round}(Z))
+                     * loss: (\sum \log(1+|E_q|/\delta) + \lambda(||U||^2+||V||^2))
+STE:
+                     * treat (\partial E_q/\partial Z \approx 1)
+Gradient pipeline:
+                     * compute (G = \partial L/\partial (UV^T)) with correct (1/\Delta) scaling
+                     * compute (dU = G V + 2\lambda U)
+                     * compute (dV = G^T U + 2\lambda V)
+                     * Adam update
+4.4 Residual coder (scalable integer coding)
+Encode 1D residual stream into:
+                     * zero-run lengths (Rice)
+                     * sign bits
+                     * magnitudes:
+                     * (1..A_{\max}) via rANS finite alphabet
+                     * escape + Exp-Golomb for (>A_{\max})
+This avoids unbounded frequency tables.
+________________
+
+
+5. NeuralFold Implementations
+5.1 NF-FIELD (continuous artifacts)
+Inputs:
+                     * images/audio/video/grids
+Outputs:
+                     * model spec + weights tensors (compressed by RankFold)
+                     * optional tiling map for random access
+v1 recommended models:
+                        * Fourier-feature MLP or SIREN-like MLP
+                        * tile-based fitting for bounded decode cost
+Minimum viability:
+                        * only images + grids first (audio/video later)
+                        * deterministic decode (pure forward pass)
+Training determinism:
+                        * best-effort; decode determinism matters more
+                        * store all training hyperparams and seeds in stream header for reproducibility
+5.2 NF-BYTE (discrete bundles)
+Goal:
+                        * exact reconstruction using predict + residual
+Workflow:
+                        1. build bundle table (paths, offsets, permissions, etc.)
+                        2. train small predictor over concatenated bytes (prefer bundle-level, not per-file)
+                        3. compute predicted bytes and residual (R = B \oplus \hat{B})
+                        4. entropy-code residual losslessly (byte rANS or Zstd)
+                        5. compress predictor weights with RankFold
+Mandatory router gating:
+                        * if residual entropy remains high in probe, route to RAW instead.
+________________
+
+
+6. WASM Client-Side Build (Full Pipeline)
+6.1 What is feasible in WASM
+✅ Very feasible:
+                        * container IO (in-memory bytes)
+                        * router/inspection/probing
+                        * RankFold encode/decode (CPU math)
+                        * residual coding (rANS, Rice, etc.)
+                        * NF-BYTE predictor if kept lightweight
+                        * NF-FIELD decode (model evaluation)
+⚠️ Feasible with constraints:
+                        * NF-FIELD training (can be heavy; but workable with tiling + small nets + WebWorkers)
+6.2 WASM architectural approach
+Deliver two artifacts:
+                        1. rankfold_wasm_core.wasm (pure WASM module)
+                        2. rankfold_wasm.js (JS glue, file APIs, Worker orchestration)
+Use:
+                        * WebWorkers for parallel blocks/tiles
+                        * streaming chunk APIs for large files
+                        * memory-limited chunked processing
+6.3 WASM API surface (recommended)
+Expose a minimal set:
+// pack a set of files (ArrayBuffer + metadata) into .rfa bytes
+pack(inputs: InputArtifact[], options: PackOptions): Promise<Uint8Array>
+
+
+// unpack .rfa bytes into files
+unpack(archive: Uint8Array, options: UnpackOptions): Promise<OutputArtifact[]>
+
+
+// list streams without decoding
+list(archive: Uint8Array): StreamSummary[]
+
+
+6.4 Performance knobs
+                        * disable EARO or reduce steps on low-power clients
+                        * enforce tile sizes
+                        * allow “fast path” vs “max compression” modes
+                        * optional: offload training to workers
+6.5 Security and privacy advantages (big selling point)
+Client-side WASM mode:
+                        * never uploads artifacts
+                        * perfect for regulated environments
+                        * aligns with self-hosted enterprise story
+________________
+
+
+7. Licensing for WASM and Rust
+Important: you cannot make licensing unbreakable in client-side WASM. Attackers can patch JS/WASM. So treat enforcement as:
+                        * deterrence + compliance + contractual control
+                        * plus optional server-validated features if you want stronger enforcement
+7.1 Practical licensing strategy (recommended)
+Use a layered approach:
+Layer A: Legal license + distribution control
+                        * Provide WASM build only to paid customers (private npm registry / download portal)
+                        * Embed license terms in EULA + contract
+Layer B: License key required at runtime (soft enforcement)
+                        * WASM requires a key to enable encode (or to enable “max compression” modes)
+                        * Key checked locally (signature verification)
+                        * This is bypassable, but sufficient for most legitimate customers
+Layer C: Optional online attestation (stronger, but not always allowed)
+                        * For customers that permit it, require periodic token refresh from license server
+                        * For air-gapped customers: issue long-lived offline tokens
+7.2 Implementation pattern for offline keys
+                        * Use Ed25519 signature verification in WASM
+                        * License payload includes:
+                        * customer id
+                        * expiration
+                        * feature flags (e.g., max steps, neuralfold enabled, throughput cap)
+                        * Signed by your private key; verified locally
+This prevents casual key forgery (though not patching).
+7.3 What to avoid
+                        * Pretending client-side enforcement is “secure”
+                        * Heavy obfuscation as your only protection
+                        * Any scheme that breaks usability for legitimate customers
+________________
+
+
+8. Determinism and Reproducibility
+8.1 Decode determinism (hard requirement)
+                        * fixed endianness
+                        * fixed bitstream layout
+                        * exact rANS decode
+                        * exact residual reconstruction rules
+                        * avoid nondeterministic threading in decode
+8.2 Encode determinism (configurable)
+Provide modes:
+                        * --deterministic_strict: single-thread, deterministic SVD init, fixed ordering
+                        * default: performance mode (still deterministic decode)
+________________
+
+
+9. Testing Strategy
+9.1 Golden vectors
+                        * publish a suite of tiny .rfa fixtures
+                        * decode must match expected outputs exactly (RAW, NF-BYTE)
+                        * tensors must match expected RMSE bounds (RF-TENSOR, NF-FIELD)
+9.2 Fuzzing
+                        * malformed headers
+                        * corrupt offsets
+                        * invalid ANS tables
+                        * truncated streams
+9.3 Cross-target tests
+                        * native Rust vs WASM outputs must match for decode
+                        * encode may differ in floating rounding; decode must still work
+________________
+
+
+10. Implementation Milestones
+M1: Container + RAW path
+                        * pack/unpack/list/extract
+                        * checksums and safety
+M2: RankFold RF-TENSOR (encode+decode)
+                        * residual coder + traversal
+                        * deterministic decode
+M3: Router + probes
+                        * detect tensors vs bytes vs fields
+                        * choose RAW vs RF-TENSOR
+M4: NF-BYTE predict+residual
+                        * bundle table
+                        * lightweight predictor
+                        * lossless residual coding
+                        * RankFold weights
+M5: NF-FIELD (images/grids)
+                        * tiled MLP
+                        * weights + metadata
+                        * RankFold weights
+                        * decode
+M6: WASM release
+                        * pack/unpack in browser
+                        * web worker parallelism
+                        * licensing integration
+________________
+
+
+Appendix A: Minimal crate recommendations
+                        * serde, serde_cbor (or rmp-serde) for headers
+                        * blake3 for checksums
+                        * half for FP16
+                        * faer (pure Rust linear algebra) or custom matmul kernels for determinism control
+                        * wasm-bindgen + js-sys + web-sys for WASM wrapper
+                        * rayon (native) optional; off by default in deterministic strict mode
+________________
+
+
+Appendix B: Product packaging recommendation
+Deliver three SKUs:
+                        1. Native CLI + SDK (self-hosted, enterprise)
+                        2. WASM SDK (client-side, privacy-first)
+                        3. Hosted API (optional convenience tier)
+All generate the same .rfa format and share a compatibility test suite.
+________________
+
+
+If you want, I can next produce:
+                        1. a byte-accurate FORMAT.md (exact bit layout of residual streams, ANS table serialization, stream directory)
+                        2. a Rust repo skeleton (module stubs + traits + CBOR schemas)
+                        3. a concrete WASM demo spec (drag-drop directory → .rfa → unpack)

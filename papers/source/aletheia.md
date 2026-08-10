@@ -1,0 +1,1758 @@
+﻿Tab 1
+
+
+________________
+
+
+ALETHEIA: An Autopoietic, Thermodynamically Constrained, Federated Epistemic Engine for Safe General Intelligence
+White Paper & Technical Specification
+Version 1.0
+January 26, 2026
+________________
+
+
+1. Abstract
+Aletheia is a comprehensive cognitive architecture designed to resolve the fundamental "Fragility Trilemma" in Artificial Intelligence: the tension between efficiency, verifiability, and autonomy. Contemporary Large Language Models (LLMs) prioritize probabilistic fluency over truth, resulting in hallucination and alignment drift. Symbolic systems offer rigor but lack grounding in the real world. Agent swarms offer autonomy but suffer from coordination failure.
+Aletheia addresses these failures by re-architecting intelligence not as text generation, but as a standardized, governed industrial process of Truth Manufacturing. The system operates on a Dual-Path Neurosymbolic Architecture governed by strict thermodynamic constraints. It features a Quantitative Gating Function that mathematically determines the "Cost of Truth" for every query, routing inputs between a heuristic Reflex Arc and a deep Fractal Epistemic Loop. Crucially, Aletheia incorporates Active Epistemics—it actively searches, reads, and verifies external reality before, during, and after reasoning. By confining deep reasoning to a frozen set of immutable abstract primitives and enforcing human-in-the-loop protocols for high-risk queries, Aletheia ensures alignment and safety at any scale.
+________________
+
+
+2. Executive Summary
+The Problem
+Current AI systems are "Brains in a Vat." They reason based on frozen training data, disconnected from the causal necessities of the real world.
+* LLMs hallucinate because they decouple reasoning from verification.
+* Symbolic AI fails because it cannot handle the messiness of empirical data.
+* Autonomous Agents drift because they lack a unified, immutable constitution.
+The Solution
+Aletheia treats "Truth" as a manufactured good that must pass strict quality control (Verification) and safety inspections (Alignment) before delivery. It is an Epistemic Engine designed to minimize error, not maximize engagement.
+Core Differentiators
+1. Active Context Acquisition: The system performs a mandatory "Literature Review" via live web search before forming a hypothesis, ensuring plans are based on the current state of the world.
+2. Empirical Verification: The Judicial Tribunal utilizes a "Live Oracle" to triangulate and falsify claims against real-time data sources (The Veritas Protocol).
+3. Thermodynamic Constraints: A "Fractal Decay Law" guarantees that deep reasoning always converges or fails gracefully, preventing infinite loops.
+4. Epistemic Humility: The system explicitly classifies "Unknowns" (Aporea) and broadcasts "Bubble-Up" payloads to a Federation of nodes rather than guessing.
+5. Autopoiesis: A background process (SparkStream) proactively optimizes the knowledge graph and simulates failure scenarios during idle time.
+________________
+
+
+3. The Data Substrate: Four Layers of Semantic Representation
+Aletheia grounds all cognition in a strict hierarchy. Information flows up (Layer 1 $\to$ 4) for readability, but verification flows down (Layer 4 $\to$ 1) for truth.
+Layer 1: The Symbolic Alphabet
+The physical layer of encoding.
+* Standard: UTF-8 Character Set.
+* Extensions: Formal Logic Symbols ($\forall, \exists, \to, \therefore, \emptyset, \in, \subset, \vdash$) to ensure precise notation for logical proofs that natural language cannot provide.
+Layer 2: Core Primitives (The Axioms)
+A frozen, immutable set of ~300 abstract atoms. This is the "Assembly Code" of the mind. No thought can exist in the system unless it can be decomposed into these atoms.
+* Categories:
+   * Set Theory: UNION, INTERSECT, SUBSET, EMPTY.
+   * Causality: CAUSE, PREVENT, ENABLE, INHIBIT.
+   * Epistemics: KNOW, BELIEVE, VERIFY, UNKNOWN.
+   * System Signals:
+      * $\uparrow$ (BUBBLE_UP): Signals unresolvable complexity.
+      * $\Omega$ (RETRIEVE): Signals a requirement for external data acquisition.
+Layer 3: The Strict Compound Graph
+The Machine-Canonical Vocabulary. A Directed Acyclic Graph (DAG) where every node is a defined concept.
+* Constraint: A concept in Layer 3 is valid if and only if its definition consists exclusively of Layer 2 Primitives or previously defined Layer 3 nodes.
+* Property: No circular definitions are mathematically possible.
+Layer 4: The Human-Compiled View
+The Interface Layer. A dynamic compiler translates Layer 3 graphs into natural human languages (English, Python, Mandarin) or multimodal outputs (Charts, Diagrams).
+________________
+
+
+4. Phase I: The Legislative Phase (Triage & Alignment)
+Goal: To mathematically calculate the "Epistemic Cost" of the query and lock the system's intent.
+Step 1: The Quantitative Gating Function
+The system analyzes the raw input to calculate an Intervention Score ($I$). This score determines the thermodynamic budget allocated to the task.
+The Gating Equation:
+$$I = w_1(R_e \times P_e) + w_2(C_u \times V_f) + w_3(H_{hist})$$
+* $R_e$ (Severity of Consequence): 0.0 (Trivia) to 1.0 (Existential/Safety Risk). Derived from a classifier trained on safety guidelines.
+* $P_e$ (Probability of Error): Historical failure rate for this specific topic cluster.
+* $C_u$ (Conceptual Uncertainty): Ratio of ambiguous/polysemous terms to total terms.
+* $V_f$ (Vagueness Factor): Semantic density score (low density = high vagueness).
+* $H_{hist}$ (History Modifier): Adjustment based on user trust level and past query safety.
+* $w_n$ (Weights): Learned coefficients bounded by governance rules.
+Routing Logic:
+* Path A (Reflex Arc): $I < 0.15$. Fast heuristic retrieval.
+* Path B (Deep Path): $0.15 \leq I < 0.90$. Full scientific method.
+* Path C (High-Risk Protocol): $I \geq 0.90$. Hard Stop. Mandatory Human Waiver required.
+Step 2: Recursive Intent Clarification
+* Protocol: "The 5 Whys." The system engages in a dialogue loop to distill the prompt.
+* Active Grounding: If the user mentions a real-world event (e.g., "The election yesterday"), the system executes a Reflex Search immediately to ground the intent in current reality before proceeding.
+Step 3: The Contract Lock
+* Mechanism: The Final Clarified Intent is hashed (SHA-256).
+* Constraint: This hash is the Immutable Constitution for the task. Every agent in the Executive Phase must validate their output against this hash. Any deviation triggers an immediate abort.
+________________
+
+
+5. Phase II: The Executive Phase (The Laboratory)
+Goal: To construct a solution via a rigorous, thermodynamically constrained Scientific Method.
+Step 4: Epistemic Reconnaissance (The Literature Review)
+* Trigger: Before planning begins.
+* Action: The system executes a high-level External Survey.
+   * Query Generation: "What is the current state of art/knowledge regarding [Intent]?"
+   * Source: Web Search, Academic Repositories, Internal Knowledge Graph.
+   * Result: A Context Buffer is loaded with up-to-date facts, neutralizing training data staleness.
+Step 5: Hypothesis Generation (Beam Search)
+The PlanForge module generates 3 distinct strategy trees (e.g., Efficient, Robust, Novel). It uses the Context Buffer to ensure strategies are viable in the current world.
+Step 6: The Pre-Mortem Simulation
+* Action: The system simulates the execution of the chosen plan specifically looking for failure modes.
+* Threshold: If Simulated Failure Rate $> 5\%$, the plan is rejected and sent back to Step 5.
+Step 7: Fractal Decay & Recursion
+To prevent infinite loops and resource exhaustion, Aletheia enforces a Law of Thermodynamic Decay.
+The Decay Laws:
+1. Budget Decay: $Budget_{depth} = Budget_{base} \times (0.5)^{depth}$
+2. Rigor Escalation: $Confidence_{required} = 0.95 + (0.01 \times depth)$
+The Bubble-Up Protocol ($\uparrow$):
+If an agent cannot solve a task within its decayed budget, it returns the $\uparrow$ primitive with a Structured Payload:
+JSON
+{
+  "Signal": "BUBBLE_UP",
+  "Depth": 3,
+  "Remaining_Budget": 0,
+  "Failure_Primitive": "INSUFFICIENT_AXIOMS",
+  "Capability_Gap": "Requires specialized domain knowledge: [Topology]"
+}
+
+
+Step 8: Swarm Execution & The "Researcher" Agent
+* Execution: Tasks are auctioned to specialized Agents based on competency.
+* The Micro-Loop: Every Agent runs the following cycle:
+   1. Think: Decompose task into primitives.
+   2. Verify (Internal): Check against logic.
+   3. Acquire (External): If confidence is low, trigger the $\Omega$ Primitive to search the internet specifically for that sub-problem.
+   4. Act: Execute the primitive.
+* The Watcher: Supervisor agents monitor worker context windows. If a worker drifts from the Contract Lock, the Watcher terminates it immediately.
+Step 9: Double-Blind Verification
+* Mechanism: A Review Agent is given the Problem but not the Solution. It must independently derive the answer.
+* External Check: The Review Agent is permitted to use search tools to verify the Worker's output (e.g., running the code, checking the citation).
+________________
+
+
+6. Phase III: The Judicial Phase (The Tribunal)
+Goal: To falsify the result using Logic AND Empirical Evidence.
+Step 10: The Expanded Adversarial Tribunal
+The final output is submitted to a panel of 5 specialized adversarial models.
+1. The Logician: Checks for formal validity and logical fallacies (Layer 2 consistency).
+2. The Safety Officer: Checks against constitutional safety axioms (Harm, Deception).
+3. The Pedant: Checks strictly against the Contract Lock Hash.
+4. The Empiricist (The Live Oracle):
+   * Capability: Has unrestricted access to Live Web Search and Tool Execution.
+   * Duty: Extracts factual claims and queries the Veritas Oracle (see Appendix B) to falsify them.
+   * Failure: If a claim is contradicted by a credible external source, the vote fails.
+5. The Skeptic: (Tie-Breaker) Checks for cognitive biases.
+Voting Logic:
+* High Risk: Unanimous Consent (4/4 required).
+* Standard Risk: Super-Majority (3/4).
+Step 11: Final Delivery
+* Action: Compile primitives to Layer 4 (Natural Language).
+* Feature: Include Evidence Hyperlinks. Users can click a sentence to see the specific Primitive Proof Tree or External Source that generated it.
+________________
+
+
+7. Phase IV: The Maintenance Phase (SparkStream)
+Goal: To prevent system entropy and drive autopoietic evolution.
+Step 12: Drift Analysis
+The system calculates a Drift Score ($D$) representing the semantic distance between the Initial Contract Hash and the Final Output. High drift scores trigger a "Negative Training Event."
+Step 13: SparkStream Tasks (The Night Shift)
+During idle compute cycles, SparkStream executes:
+1. Consolidation: Identifies frequently used Primitive chains and "promotes" them to efficient Layer 3 Compounds.
+2. Pruning: Archives Layer 3 concepts that haven't been used in $X$ cycles.
+3. Dreaming: Re-simulates failed Pre-Mortems from the day with randomized strategies.
+4. Harvesting: Proactively crawls high-trust external sources (e.g., new arXiv papers, documentation updates) related to its core axioms to update the Knowledge Graph.
+5. Global Drift Audit: Hashes the entire Layer 3 Graph to ensure data integrity.
+________________
+
+
+8. Phase V: The Federation Phase (Ecosystem)
+Goal: To handle the Fundamental Unknown via distributed intelligence.
+Step 14: The Aporea Taxonomy
+When the system fails, it classifies the failure into one of three types:
+* Type I (Trivial Gap): Missing data. $\rightarrow$ Queue SparkStream retrieval.
+* Type II (Resource Gap): Solution possible but expensive. $\rightarrow$ Request Budget Increase.
+* Type III (Fundamental Gap): Undecidable, Paradox, or Axiomatically Impossible.
+Step 15: Federated Querying
+* Trigger: Type III Error or persistent Bubble-Up.
+* Action: The system packages the Primitive State (not the text) and broadcasts a "Help Request" to trusted external Aletheia nodes.
+* Protocol: "Epistemic Handshake." Nodes exchange capability manifests to see if another node possesses the missing axioms needed to solve the problem.
+________________
+
+
+Appendix A: Implementation Specs & Safeguards
+The Veritas Protocol (Empiricist Verification)
+1. Extraction: NLP parser extracts all declarative statements $S = \{s_1, s_2, ... s_n\}$ from the draft.
+2. Query Generation: For each $s_i$, generate 3 independent search queries ($Q_a, Q_b, Q_c$) designed to falsify the claim.
+3. Triangulation:
+   * If Source A and Source B agree $\rightarrow$ Verified.
+   * If Source A and Source B disagree $\rightarrow$ Disputed (Vote "No").
+   * If no sources found $\rightarrow$ Unverified (Flag for user).
+Oracle Wrapper Specification
+All external tools (Python, Search, Terminal) are wrapped in a safety harness:
+* Input Sanitization: Regex filters for injection attacks (e.g., rm -rf, SQL injection).
+* Output Limits: Truncation of excessive logs to prevent context overflow.
+* Isolation: Execution occurs in ephemeral Docker containers with no network access (unless explicitly whitelisted for Search).
+Governance Rules
+1. Primitive Freeze: Layer 2 Primitives are immutable. They can only be changed via a Hard Fork or a 90% Consensus Vote of the Federation.
+2. Source Allow-Listing: The "Epistemic Reconnaissance" step is restricted to a governance-approved list of high-trust domains (e.g., .edu, .gov, specific API endpoints) for High-Risk queries.
+3. User Override: Verified users may request "Force Deep Path" or "Force Reflex" with mandatory justification logging.
+________________
+
+
+Appendix B: References & Theoretical Foundation
+Aletheia draws upon the following foundational works in computer science, philosophy, and cybernetics:
+* Beer, S. (1972). Brain of the Firm. (The Viable System Model). Aletheia's recursive structure (System 1-5) directly mirrors Beer's VSM for stable autonomy.
+* Popper, K. (1959). The Logic of Scientific Discovery. Aletheia's Judicial Tribunal is based on Popperian Falsification—attempting to disprove a hypothesis rather than confirming it.
+* Friston, K. (2010). The Free-Energy Principle: A Unified Brain Theory? Aletheia minimizes "Surprise" (Error) through Active Inference (Epistemic Reconnaissance).
+* Turing, A. (1936). On Computable Numbers. The Fractal Decay Law is a practical response to the Halting Problem, ensuring termination.
+* Minsky, M. (1986). The Society of Mind. The Swarm/Agent architecture implements Minsky's theory of intelligence as the interaction of simple, non-intelligent agents.
+* Russell, B. & Whitehead, A.N. (1910). Principia Mathematica. The Layer 2 Primitive approach attempts to ground all complex reasoning in atomic logical truths.
+
+
+Tab 2
+The Aletheia Foundry
+A Constitutional Operating System for Auditable AI Work
+White Paper & Technical Specification (Standalone)
+Version: 1.0 (Unified Framework)
+Date: February 2026
+Classification: Systems Architecture / AI Infrastructure Standard
+Keywords: agentic workflows, orchestration, verification, provenance, policy-as-code, compartmentalization, secretless execution, context management, belief revision, audit trails
+________________
+
+
+Abstract
+Modern AI systems can generate fluent outputs but struggle to produce defensible work products under real operational constraints: changing external facts, prompt injection, secret leakage, multi-agent coordination drift, and inconsistent long-horizon memory. As AI shifts from chat to labor—writing code, drafting policies, executing workflows—the primary failure mode is not raw capability but lack of governance, traceability, and verification.
+This paper introduces The Aletheia Foundry, a unified framework that treats AI output as a manufactured artifact produced by an audited pipeline. The Foundry is not a single model and not a prompt style; it is an operating system for AI work that accepts jobs and returns artifacts with verifiable provenance. It combines:
+1. Job contracts (scope, schema, success criteria, risk and clearance)
+2. A compiled execution graph (a typed plan with dependencies and routing to the cheapest competent worker tier)
+3. Context logistics (need-to-know slices, sanitized briefings, and isolation for sensitive steps)
+4. Secretless execution (capability via handles; secrets never appear in model context)
+5. Verification as a gate (proof/citation/procedure-backed tiers, adversarial review, and bounded convergence)
+6. A governed memory substrate (tiered retention, drift management, and explicit belief revision)
+7. Constitutional governance (non-negotiable rights and auditable change control)
+The result is an architecture that replaces “LLM answers” with auditable work products, and replaces “agent autonomy” with constrained, measurable, rollback-capable execution.
+________________
+
+
+1. Problem Statement
+1.1 The Reliability Gap
+When AI is used for real work (engineering, compliance, operations), the system must do more than generate plausible text. It must:
+* remain correct under changing reality,
+* resist adversarial inputs and prompt injection,
+* use credentials without leaking them,
+* maintain consistent beliefs over time,
+* provide an audit trail that a third party can inspect.
+Today’s agent stacks are typically:
+* unstructured (plans exist only as text),
+* over-trusting (models see secrets and too much context),
+* under-verified (outputs are shipped without falsification),
+* memory-fragile (long context becomes noisy, expensive, and unsafe).
+1.2 The Four Deadlocks
+The Foundry is designed to resolve four deadlocks that block production-grade deployment:
+1. Autonomy vs Control: autonomous agents drift; controlled systems can’t act broadly.
+2. Cost vs Quality: using frontier models everywhere is too expensive; using small models everywhere fails.
+3. Security vs Capability: agents need credentials but can’t be trusted with them.
+4. Truth vs Throughput: rigorous verification is expensive; skipping it causes silent failure.
+________________
+
+
+2. Design Goals
+The Aletheia Foundry is engineered around seven non-negotiable goals:
+1. Artifacts over Answers
+Outputs are objects with provenance, tests, and audit metadata—not just chat text.
+2. Contracted Scope
+Every job has a cryptographically bound scope: schemas, requirements, constraints, allowed tools, and acceptance criteria.
+3. Compiled Execution
+The system compiles intent into a typed execution graph with dependencies and worker routing.
+4. Least-Privilege Context
+Every task executes with a minimal “need-to-know” context slice and explicit tool permissions.
+5. Secretless Capability
+Agents can use secrets via mediated handles, but never see them.
+6. Verification Gates
+Nothing leaves the system above a defined risk threshold without passing structured verification.
+7. Governed Evolution
+Policies, schemas, and trusted templates evolve through versioning, review, and regression testing—not silent drift.
+________________
+
+
+3. High-Level Architecture
+The Foundry separates responsibilities into distinct subsystems:
+3.1 Contract Layer (Job Definition)
+Defines:
+   * required outputs and schemas,
+   * risk level and clearance,
+   * budgets,
+   * allowed tools,
+   * verification policy,
+   * success criteria.
+3.2 Compiler Layer (Execution Graph)
+Compiles the contract into a typed DAG:
+   * nodes are atomic tasks,
+   * edges are dependencies,
+   * each node has required worker tier, context slice, tool permissions, and verification requirements.
+3.3 Context Logistics Layer (Need-to-Know Runtime)
+Produces a per-node task briefing:
+   * relevant facts only,
+   * sanitized excerpts,
+   * references to shared materials by handle (not copied text),
+   * explicit redaction of secrets and unrelated history.
+3.4 Capability Mediation Layer (Secretless Execution)
+Executes sensitive operations using capability handles and mediation proxies:
+   * secrets are injected at the network/process boundary,
+   * outputs are redacted and normalized before returning to the model,
+   * sensitive steps run inside isolated sandboxes.
+3.5 Verification Layer (Multi-Method Gatekeeping)
+Validates artifacts using a tiered model:
+   * formal proofs where feasible,
+   * citation binding where normative text governs,
+   * reproducible procedures for deterministic checks,
+   * adversarial review for semantic and failure-mode attacks.
+3.6 Memory & Belief Layer (Governed Persistence)
+Maintains:
+   * tiered memory storage,
+   * drift detection and compaction,
+   * explicit belief revision when contradictions occur,
+   * immutable policy anchors and signed templates.
+3.7 Governance Layer (Constitution + Change Control)
+Defines:
+   * non-negotiable rights,
+   * audit and export guarantees,
+   * policy-as-code rules,
+   * versioning and rollback for schemas, templates, and rulesets.
+________________
+
+
+4. Core Concepts and Unified Terminology
+To avoid patchwork jargon, the Foundry uses a consistent, industry-friendly vocabulary:
+4.1 Job
+A unit of work submitted to the system.
+4.2 Contract
+A signed specification for a job:
+   * I/O schemas
+   * requirements
+   * constraints
+   * allowed tools
+   * risk & clearance
+   * verification policy
+   * budgets
+4.3 Execution Graph
+A typed DAG produced from the contract. Nodes are tasks; edges are dependencies.
+4.4 Worker Tier
+A classification of executors by cost and capability. Example tiers:
+   * Tier 0: deterministic tools (parsers, compilers, calculators, linters)
+   * Tier 1: scripts + small local models
+   * Tier 2: mid-tier models
+   * Tier 3: frontier reasoning models
+   * Tier 4: human review (when mandated)
+4.5 Context Slice
+A minimal context package for a node: briefing + references + permissions.
+4.6 Capability Handle
+A reference to a privileged action (e.g., “sign transaction”, “write to prod DB”) that is mediated without exposing secrets.
+4.7 Artifact
+A deliverable object with:
+   * content
+   * schema validation
+   * tests (if applicable)
+   * provenance
+   * verification tier
+   * audit trail
+4.8 Verification Tier
+An epistemic classification attached to artifact claims:
+   * V1 — Verified (Formal / Mechanically Checked): proof/certificate or invariant check passes.
+   * V2 — Verified (Reproducible Procedure): deterministic procedure with pinned inputs + logs.
+   * V3 — Verified (Citation-Bound): conclusions bound to versioned authoritative text spans + interpretation mapping artifact.
+   * V4 — Unverified (Heuristic): permitted only for low-risk outputs, clearly labeled.
+(Which tiers are allowed depends on the contract’s risk policy.)
+________________
+
+
+5. The Foundry Lifecycle
+The Foundry runs a strict lifecycle with rollback. A phase cannot complete without producing its exit artifacts.
+Phase 1 — Intake & Contracting
+   1. classify risk and required verification level
+   2. clarify intent into constraints and schemas
+   3. define allowed tools and clearance
+   4. lock the contract (hash + signature)
+Exit artifact: contract.json + contract.hash
+Phase 2 — Compilation
+   1. decompose goal into atomic tasks
+   2. type-check tasks against primitive schema
+   3. deduplicate and infer dependencies
+   4. assign worker tier and budgets per node
+   5. attach verification requirements per node
+Exit artifact: graph.json (typed DAG)
+Phase 3 — Context Logistics
+For each node:
+   1. build minimal context slice
+   2. sanitize and redact
+   3. attach capability handles and tool permissions
+   4. optionally run isolated execution environment
+Exit artifact: slice/<node_id>.json
+Phase 4 — Execution
+   1. dispatch nodes respecting dependencies
+   2. enforce tool and permission boundaries
+   3. escalate tier on failure (policy-driven)
+   4. emit intermediate artifacts
+Exit artifact: artifact/<node_id>/*
+Phase 5 — Verification Gate
+   1. deterministic checks (schema, tests, replay)
+   2. claim extraction and tier assignment
+   3. adversarial review (semantic attacks, omission tests)
+   4. convergence checks (bounded cycles)
+   5. accept, reject, or rollback-to-compile with constraints
+Exit artifact: verdict.json + audit.log
+Phase 6 — Delivery & Memory Update
+   1. deliver final artifact bundle
+   2. store verified commitments in belief/memory layer
+   3. compress logs, preserve provenance
+   4. schedule regression/maintenance tasks
+Exit artifact: release.bundle
+________________
+
+
+6. Data Model
+6.1 Contract Object (simplified)
+   * job_id
+   * inputs_schema, outputs_schema
+   * requirements[]
+   * constraints[]
+   * risk_level
+   * verification_policy
+   * tool_policy
+   * clearance_policy
+   * budgets
+   * signatures
+6.2 Execution Graph Node
+   * node_id
+   * task_type (from primitive schema)
+   * inputs, outputs
+   * dependencies[]
+   * worker_tier_min
+   * context_slice_ref
+   * capability_handles[]
+   * verification_requirements
+   * retry/escalation_policy
+6.3 Artifact Object
+   * artifact_id
+   * node_id
+   * content
+   * schema_validation
+   * tests (if any)
+   * claims[] (structured)
+   * verification_tier
+   * provenance
+   * audit_refs
+________________
+
+
+7. Security Model
+7.1 Threat Model (minimal)
+   * prompt injection (malicious inputs)
+   * secret exfiltration (keys, credentials, PII)
+   * tool abuse (unsafe commands, lateral movement)
+   * supply chain poisoning (retrieval spam, bad sources)
+   * audit log leakage (sensitive data in logs)
+7.2 Security Controls
+A. Secretless Execution
+   * Agents never receive raw secrets.
+   * Sensitive actions require capability handles.
+   * Secrets are injected by a mediation proxy at the boundary (network/process), and stripped from responses.
+B. Isolation
+   * Sensitive nodes run in isolated sandboxes:
+   * no network unless explicitly allowed
+   * ephemeral storage
+   * memory wipe after completion
+   * output redaction/normalization
+C. Least Privilege
+   * Every node has explicit allowed tools.
+   * “Read-down / write-up” policies prevent low-tier agents contaminating high-tier memory or decisions.
+D. Auditable Access
+   * Every use of a capability handle is logged as an event (no secret material recorded).
+________________
+
+
+8. Verification System
+8.1 Claim Discipline
+The Foundry treats verification as a first-class manufacturing step:
+   * claims are extracted from artifacts into structured form,
+   * each claim must be assigned a verification tier,
+   * higher-risk contracts disallow low-tier claims.
+8.2 Adversarial Review (Bounded)
+The Foundry runs bounded adversarial rounds:
+   * logic scan (internal consistency)
+   * citation audit (sources actually support text)
+   * omission audit (did we drop important constraints?)
+   * semantic attack (negation flips, missing conditions, scope drift)
+Termination is bounded by:
+   * max cycles
+   * syntactic stability threshold
+   * semantic stability threshold
+   * or explicit “cannot converge” escalation
+8.3 Rollback
+If verification fails:
+   * the verdict generates negative constraints
+   * the system rolls back to compilation (not blind retry)
+   * graph recompilation must incorporate the rejection constraints
+________________
+
+
+9. Memory, Drift, and Belief Maintenance
+9.1 Memory Tiers
+Not all information deserves persistence. The Foundry stores:
+   * Policy Anchors (immutable constraints and constitutional rules)
+   * Verified Commitments (V1–V3 only, depending on policy)
+   * Working Context (volatile; compaction and drift rules apply)
+   * Raw Logs (time-bounded; compressed and privacy-sanitized)
+9.2 Drift Management
+As job focus changes, memory must adapt:
+   * detect goal drift,
+   * freeze irrelevant clusters,
+   * thaw when relevant again,
+   * compact by utility rather than recency alone.
+9.3 Belief Revision
+When contradictions are discovered:
+   * trace dependent claims,
+   * retract the least entrenched set consistent with policy,
+   * invalidate downstream commitments,
+   * log the revision event as an auditable artifact.
+________________
+
+
+10. Governance: The Constitutional Layer
+The Foundry assumes governance is not optional. The system must guarantee:
+   1. Right to Export
+Users can export their data and artifacts in a standard format.
+   2. Right to Audit
+The logic and policy rules are inspectable (while preserving private user data boundaries).
+   3. Right to Fork / Exit
+The system must not become a capture mechanism. Contracts, artifacts, and policy packs are portable.
+   4. Change Control
+Schema changes, verification templates, and trust packs are versioned, regression-tested, and rollbackable.
+This governance layer is enforced as policy-as-code and applies to all jobs.
+________________
+
+
+11. Evaluation Metrics
+The Foundry is measured like an industrial system, not like a chatbot.
+11.1 Quality & Safety
+      * Verification Coverage: % of claims at allowed tiers for the risk policy
+      * Semantic Escape Rate: % of cases where the system “verified” the wrong meaning
+      * Leak Incidents: number of secret/PII exposures (target: zero)
+      * Contradiction Persistence: frequency of the system asserting both sides over time
+11.2 Efficiency
+      * Cost per Verified Claim
+      * End-to-end latency by risk class
+      * Tier Routing Efficiency: fraction of tasks solved at minimal viable tier
+      * Rework Rate: fraction of jobs that roll back after verification
+11.3 Governance Health
+      * Policy Drift Events
+      * Template Trust Decay & Re-audit Pass Rate
+      * Export Completeness (can a third party reproduce the artifact?)
+________________
+
+
+12. Implementation Guidance (Reference Stack)
+This paper is implementation-agnostic. A practical reference implementation typically includes:
+      * Orchestrator: a service that manages contracts, graphs, dispatch, and rollback
+      * Graph Engine: DAG scheduling + dependency tracking
+      * Context Service: retrieval, summarization, sanitization, slice compilation
+      * Capability Proxy: secret mediation + audit logging
+      * Verifier Service: tests, schema checks, citation binding, adversarial review
+      * Artifact Store: immutable artifact storage with hashes + provenance
+      * Memory Layer: tiered memory + drift and compaction + belief maintenance
+      * Policy Engine: policy-as-code evaluation for every step
+________________
+
+
+13. Limitations and Non-Goals
+The Foundry is designed to be honest about tradeoffs.
+      * It does not guarantee universal truth; it guarantees auditable process and explicit epistemic labeling.
+      * It does not aim to maximize conversational satisfaction; it aims to maximize defensibility.
+      * It does not eliminate disagreement in normative domains; it makes interpretation explicit, versioned, and reviewable.
+      * It imposes overhead: contracting, compilation, verification, and governance are deliberate costs.
+________________
+
+
+14. Conclusion
+The Aletheia Foundry reframes AI from “a model that responds” to an infrastructure that manufactures outcomes. It introduces a contract-first, graph-compiled, compartmentalized, secretless, verification-gated, governance-controlled architecture capable of producing work products that withstand scrutiny.
+The Foundry’s core claim is narrow and operational:
+If AI is going to do real work, it must be treated like production work: specified, isolated, verified, and audited.
+This framework provides the missing OS layer required to move from impressive demos to defensible deployment.
+________________
+
+
+If you want, I can produce a publication-ready v1.1 next with:
+      * a worked end-to-end example (software build, compliance review, or “research → report”),
+      * the exact JSON schemas (contract.json, graph.json, slice.json, verdict.json, release.bundle),
+      * and a concise “executive summary + architecture diagram + comparison table” section suitable for public release.
+
+
+Tab 3
+You’re right to rename it. Google DeepMind has been using “Aletheia” as the codename/name for a Gemini Deep Think math research agent, and they’ve published about it publicly. (Google DeepMind)
+New name recommendation
+Proof-Carrying Workbench (PCW)
+Why this name works
+      * Industry-native: “proof-carrying” is an established term in systems/security (proof-carrying code, certificates).
+      * Accurately descriptive: the core differentiator is that outputs are artifacts that carry verifiable evidence (proofs/citations/procedure traces), not just text.
+      * Low collision risk: the exact phrase is not widely used as a product name in the spaces we searched.
+      * Keeps the “OS for AI work” framing without stepping on existing “AI Foundry” / “Foundry” product branding (which is very crowded).
+Below is a fully rewritten standalone paper that incorporates the red-team patch set and uses consistent, industry-standard terminology.
+________________
+
+
+Proof-Carrying Workbench (PCW)
+A Constitutional Operating System for Audit-Grade AI Work
+White Paper & Technical Specification (Standalone)
+Version: 1.1 (Red-Team Hardened)
+Date: February 2026
+Classification: Systems Architecture / AI Infrastructure Standard
+Keywords: agent orchestration, policy-as-code, provenance, least privilege, capability security, confidential execution, claim extraction, assurance levels, verification gates, replayable artifacts, change control
+________________
+
+
+Abstract
+As AI moves from chat to labor—writing code, drafting policies, running workflows—the dominant risk is not model intelligence but epistemic and operational fragility: prompt injection, secret leakage, plan drift, unverifiable outputs, and long-horizon inconsistency. Organizations don’t primarily need “answers.” They need defensible work products: artifacts that can survive audits, incident reviews, and adversarial scrutiny.
+Proof-Carrying Workbench (PCW) is a unified architecture for producing audit-grade AI work. PCW treats every job as a manufacturing process governed by: (1) a signed job contract, (2) a compiled execution graph, (3) least-privilege context slices, (4) secretless capability mediation, (5) verification gates, (6) belief/memory governance, and (7) a constitutional policy layer guaranteeing transparency and exit.
+PCW’s core claim is narrow and operational:
+A system can be trusted in proportion to the quality of its evidence objects, not the fluency of its outputs.
+________________
+
+
+1. Problem Statement
+1.1 The Audit Gap
+Typical “agentic” systems produce useful results but fail at enterprise-grade requirements:
+      * Semantic drift: the system solves a slightly different problem than intended.
+      * Verification-by-omission: it verifies only the claims it bothered to extract.
+      * Credential risk: agents must use secrets but cannot be trusted with them.
+      * Context failure: long context becomes noisy, expensive, and leak-prone.
+      * Non-replayability: outputs cannot be reproduced or explained under audit.
+1.2 The Four Deployment Deadlocks
+PCW resolves four deadlocks that block production deployment:
+      1. Autonomy vs. Control: agents drift without governance.
+      2. Cost vs. Quality: frontier models everywhere are too expensive; cheap models everywhere fail.
+      3. Capability vs. Security: agents need credentials but cannot see them.
+      4. Truth vs. Throughput: rigorous verification is expensive; skipping it is liability.
+________________
+
+
+2. Design Goals (Non-Negotiable)
+      1. Artifacts over Answers: outputs are immutable artifacts with provenance and evidence objects.
+      2. Semantic Scope Lock: contracts bind meaning, not just bytes.
+      3. Compiled Execution: intent becomes a typed execution graph (DAG) with dependencies.
+      4. Least-Privilege Context: each task runs with the minimal context slice required.
+      5. Secretless Execution: agents can use secrets via mediated capabilities; secrets never enter model context.
+      6. Verification Gates: risk-tiered assurance levels are enforced by policy, not UI.
+      7. Governed Evolution: schemas, policies, and trusted templates change only via versioning + regression + rollback.
+________________
+
+
+3. System Overview
+PCW separates responsibilities into well-defined subsystems:
+      * Contract Service: creates and signs a Job Contract (scope, schemas, risk, allowed tools, budgets).
+      * Planner/Compiler: compiles the contract into a typed Execution Graph (DAG).
+      * Context Service: produces least-privilege Context Slices, with constraint preservation.
+      * Capability Proxy: performs secretless actions via capability handles (the agent never sees secrets).
+      * Verifier: enforces assurance levels using deterministic checks, procedures, citation binding, and adversarial review.
+      * Artifact Store: immutable artifacts + hashes + provenance + replay manifests.
+      * Policy Engine: policy-as-code gates every step (risk, tools, escalation, publication).
+      * Memory/BELIEF Store: stores only governed commitments and supports explicit revision.
+________________
+
+
+4. Unified Terminology
+4.1 Job
+A unit of work submitted to PCW.
+4.2 Job Contract
+A signed specification that includes:
+      * required outputs and schemas
+      * Intent Manifest (semantic scope)
+      * constraints and exclusions
+      * risk class and clearance
+      * allowed tools/capabilities
+      * assurance policy (what is acceptable evidence)
+      * budgets and deadlines
+4.3 Execution Graph
+A typed DAG produced from the contract. Nodes are atomic tasks; edges are dependencies.
+4.4 Worker Tiers
+A cost/capability routing model (example):
+      * T0 deterministic tools (parsers, compilers, linters, solvers)
+      * T1 scripts + small local models
+      * T2 mid-tier models
+      * T3 frontier models
+      * T4 mandated human review (when policy requires)
+4.5 Context Slice
+A minimal, sanitized package: briefing + references + constraints + allowed tools.
+4.6 Capability Handle
+A reference to a privileged action (e.g., “sign,” “write-prod,” “retrieve-PII”) mediated by policy.
+4.7 Claim Object
+A structured, machine-readable claim with ID, predicates, qualifiers, dependencies, and evidence links.
+4.8 Assurance Levels
+PCW replaces “verification tiers” with assurance levels that explicitly separate correctness from interpretation:
+      * A1 — Formal Assurance: mechanically checked proof/certificate or invariant check.
+      * A2 — Procedural Assurance: replayable deterministic procedure with pinned inputs/logs.
+      * A3 — Source-Bound Assurance: versioned authoritative text spans + interpretation mapping artifact.
+      * A0 — Heuristic: permitted only for low-risk, non-actionable guidance.
+Policy rule: risk class determines which assurance levels are allowed to ship.
+________________
+
+
+5. The Semantic Integrity Gate (Fixing “Contract Hash Theater”)
+5.1 Intent Manifest
+Every Job Contract contains an Intent Manifest that makes meaning explicit:
+      * Scope: domain, jurisdiction, time window, target systems
+      * Definitions: key terms and their operational meaning
+      * Exclusions: what must not be done or assumed
+      * Acceptance criteria: objective checks and expected artifact types
+      * Non-summarizable constraints (“Constraint Capsules,” below)
+5.2 Structure-Preserving Rendering
+The Intent Manifest is rendered into a structure-preserving format (no “nice paraphrase”):
+      * “IF/THEN/EXCEPT” constraint templates
+      * explicit qualifiers (time, jurisdiction, exceptions)
+      * enumerated assumptions
+High-risk jobs require:
+      * explicit confirmation, or
+      * an approved Trusted Template Pack (see §11) that permits auto-confirmation under sampling audits.
+________________
+
+
+6. Claim-Native Artifacts (Fixing “Verification by Omission”)
+6.1 Deterministic Claim Surface
+Artifacts must be claim-native:
+      * The output schema includes a claims[] array of structured Claim Objects.
+      * Narrative text is allowed, but must reference claim IDs (e.g., “see C-17”).
+      * Verifiers operate on claims[] deterministically (schema parsing), not on freeform prose.
+      * Any narrative statement that is not backed by a Claim Object is a schema violation.
+This makes claim extraction non-optional and non-probabilistic.
+6.2 Claim Object (minimal)
+Each claim includes:
+      * claim_id
+      * predicate + typed arguments
+      * qualifiers (time, jurisdiction, exceptions)
+      * dependencies (other claim IDs, constraint capsule IDs)
+      * evidence_refs (proof, procedure log, or source spans)
+      * assurance_level (A0–A3)
+________________
+
+
+7. Operating Modes (Fixing “Latency/Viability”)
+PCW supports explicit modes:
+7.1 Interactive Mode (seconds)
+      * strict budgets
+      * aggressive caching
+      * limited adversarial rounds
+      * A0 allowed only for low-risk jobs
+      * cannot mint durable commitments without later promotion
+7.2 Analyst Mode (minutes–hours)
+      * deeper verification
+      * broader adversarial testing
+      * full replay manifests
+      * required for high-risk jobs unless overridden by policy with human sign-off
+________________
+
+
+8. Lifecycle (Contract → Graph → Slices → Execution → Verification → Release)
+Phase 1 — Contracting
+      * classify risk and allowed assurance levels
+      * produce Intent Manifest and Constraint Capsules
+      * lock contract (signature + hash)
+Exit artifacts: contract.json, intent_manifest.json, contract.hash
+Phase 2 — Compilation (Planner/Compiler)
+      * decompose into atomic tasks that match a Primitive Registry
+      * type-check nodes (inputs/outputs/preconditions)
+      * deduplicate and infer dependencies
+      * assign minimum worker tier + budgets
+      * attach verification requirements
+Hard rule: unresolved primitives are compile errors, not “best effort.”
+Exit artifact: graph.json
+Phase 3 — Context Logistics
+For each node:
+      * assemble minimal context slice
+      * attach Constraint Capsules (non-summarizable)
+      * sanitize and redact
+      * attach allowed tools + capability handles
+Exit artifact: slices/<node_id>.json
+Phase 4 — Execution
+      * dispatch nodes respecting dependencies
+      * enforce tool permissions and tier routing
+      * retry/escalate per policy (no uncontrolled loops)
+Exit artifacts: node-level artifacts
+Phase 5 — Verification Gate
+      * schema validation + claim validation
+      * A1 proofs where applicable
+      * A2 procedure replay where applicable
+      * A3 source binding + interpretation mapping where applicable
+      * adversarial review (bounded)
+      * accept/reject/rollback-to-compile with negative constraints
+Exit artifacts: verdict.json, evidence_bundle/*
+Phase 6 — Release + Memory Update
+      * publish Release Bundle
+      * persist only governed commitments (A1–A3 allowed by policy)
+      * compress raw logs; preserve provenance
+Exit artifact: release.bundle
+________________
+
+
+9. Context Logistics (Fixing “Summarization Drops Constraints”)
+9.1 Constraint Capsules
+Some constraints must never be summarized away (e.g., “must not access prod,” “EU-only,” “exclude PII,” “must cite statute text”). PCW encodes these as Constraint Capsules:
+      * structured objects referenced by ID
+      * attached to every node slice they apply to
+      * verifier checks capsule presence for relevant nodes
+      * capsules are included in claim dependencies (so omissions become mechanically detectable)
+9.2 Source Integrity Policy (A3)
+For A3 claims (source-bound assurance):
+      * sources are version-pinned (hash, timestamp, canonical ID)
+      * allowlists or governance-defined source classes (e.g., official regs, internal policies)
+      * update events trigger recertification required flags (see §12)
+________________
+
+
+10. Secretless Execution (Fixing “Leakage via Side Channels”)
+10.1 Capability Response Contracts
+Every capability has a strict response schema:
+      * no raw secret material ever returns to the agent
+      * sensitive results are stored in a secure vault; the agent receives only a pointer and non-sensitive metadata
+      * errors are normalized to avoid leaking headers/tokens/stack traces
+10.2 Isolation & Confidential Execution
+Sensitive nodes execute in an isolated environment:
+      * no network unless explicitly allowed
+      * ephemeral storage
+      * memory wipe / process teardown
+      * output redaction and schema enforcement before returning to the model
+________________
+
+
+11. Verification & Adversarial Review (Bounded, Non-Placebo)
+11.1 Independence Policy
+Adversarial review is only meaningful if it is not collusive:
+      * reviewers are blind to generation traces
+      * reviewers see contract + claims + evidence (not the original prompt thread)
+      * reviewers run a fixed test battery relevant to job class
+11.2 Adversarial Test Battery (minimum)
+      * negation flips (“must” vs “must not”)
+      * scope flips (jurisdiction/time window)
+      * exception drops (“unless/except” clauses)
+      * omission tests (missing constraints, missing required claims)
+      * “actionability” tests (attempts to smuggle A0 into actionable output)
+11.3 Convergence & Termination
+      * bounded cycles (hard cap)
+      * syntactic stability threshold on claims[]
+      * semantic stability threshold on claim graph structure
+      * if not converged: output becomes “cannot satisfy constraints within budget” artifact (not silent degradation)
+________________
+
+
+12. Governance & Change Control (Fixing “Right to Exit vs Reality”)
+12.1 Export Boundaries
+PCW guarantees export of:
+      * user-owned inputs
+      * produced artifacts
+      * evidence bundles (proofs, logs, source references)
+      * policies and template packs where licensed/owned
+PCW does not promise redistribution of licensed third-party corpora; instead it exports immutable references + replay manifests where lawful.
+12.2 Trusted Template Packs (Fixing “Nagware Collapse”)
+To avoid constant confirmations, PCW supports Trusted Template Packs:
+      * pre-reviewed patterns for common job classes (compliance, codegen, audits)
+      * allow auto-confirmation of Intent Manifest renderings under:
+      * trust score thresholds
+      * coverage requirements across parameter space
+      * stratified re-audit sampling
+      * trust decay on drift or failures
+12.3 Schema / Policy Evolution
+Schema, policies, and template packs are treated like code:
+      * proposal → impact analysis → regression suite → approval → release → rollback plan
+Updates can invalidate prior A1–A3 commitments, triggering recertification jobs.
+________________
+
+
+13. Security Model and TCB (Fixing “Unstated Blast Radius”)
+13.1 Trusted Computing Base (TCB)
+PCW explicitly defines the TCB:
+         * policy engine
+         * capability proxy
+         * artifact store + hashing/signing keys
+         * audit logger
+If the TCB is compromised, “AI safety” doesn’t matter. PCW therefore requires:
+         * least-privilege deployment
+         * key rotation plans
+         * immutable append-only audit logs
+         * incident containment procedures (invalidate handles, revoke trust packs, reissue policies)
+________________
+
+
+14. Evaluation Metrics (with Measurement Harness)
+PCW metrics are only valid if the system prevents gaming.
+14.1 Core Metrics
+         * Assurance Coverage: % of claims meeting required assurance for risk class
+         * Semantic Escape Rate (SER): % of accepted jobs where intent was later judged mismatched
+         * Leak Incidents: count of detected secret/PII emissions (target: 0)
+         * Rollback Rate: fraction of jobs requiring rollback to compilation
+         * Replay Success Rate: fraction of releases reproducible from manifests and evidence bundles
+         * Tier Routing Efficiency: percent of nodes solved at minimum required tier without escalation
+14.2 Measurement Harness
+         * curated adversarial suites (scope/negation/exception flips)
+         * sampled expert audits for SER with confidence intervals
+         * deterministic claim counting prevents “metric hacking by claim granularity”
+         * leak detection: deterministic scanning + downstream DLP signals + vault access anomaly detection
+________________
+
+
+15. Limitations (Stated Without Drama)
+         * A1 is only feasible in domains with formalizable constraints; many legal/policy tasks are A3.
+         * A3 is interpretation assurance, not “truth.” Disputes become governance objects, not hidden confidence.
+         * PCW costs more than chat. It is designed for domains where cost-of-error dominates cost-of-compute.
+         * If you want an assistant that “always answers instantly,” PCW is the wrong tool.
+________________
+
+
+16. Conclusion
+Proof-Carrying Workbench (PCW) is an operating system for AI work where trust comes from evidence objects and enforced policy, not model personality. It hardens the full lifecycle: semantic scope lock, claim-native artifacts, secretless execution, bounded adversarial verification, replayable releases, and governed evolution with explicit export and audit boundaries.
+PCW does not promise omniscience. It promises something operationally valuable:
+audit-grade work products whose claims are machine-checkable, evidence-backed, and policy-governed.
+________________
+
+
+Note on the rename
+We are renaming away from “Aletheia” due to existing public usage by Google DeepMind for a Gemini Deep Think math research agent (“Aletheia”), which creates immediate brand collision risk. (Google DeepMind)
+________________
+
+
+If you want, I can also produce:
+         * a one-page executive summary + architecture diagram (for public release),
+         * the concrete JSON schemas (contract.json, intent_manifest.json, graph.json, slice.json, claim.json, verdict.json, release.bundle),
+         * and a worked end-to-end example in two modes (Interactive vs Analyst) showing a rollback triggered by a semantic escape test.
+
+
+Tab 4
+
+
+Proof‑Carrying Workbench (PCW)
+A Constitutional Operating System for Audit‑Grade AI Work Products
+White Paper & Technical Specification (Standalone)
+Version: 1.2 (Self-Contained, Red-Team Hardened)
+Date: February 2026
+Audience: Engineering leadership, security & compliance, platform/SRE, applied AI teams
+Keywords: policy-as-code, provenance, least privilege, capability security, confidential execution, typed workflows, reproducible pipelines, claim schemas, assurance levels, adversarial verification, change control, audit logging
+________________
+
+
+Executive Summary
+The reality of “AI for real work”
+If AI is used to do real work—generate code, create policies, execute workflows, or produce analysis—then “plausible text” is not the product. The product is a work artifact that must withstand:
+         * audits (“How do you know this is correct?”),
+         * incidents (“Why did it do this?”),
+         * adversarial input (“Can it be tricked into leaking secrets or taking unsafe actions?”),
+         * and time (“Does it stay consistent as tools, sources, and policies change?”).
+Most AI systems fail here because they lack:
+         * semantic scope control (meaning drifts even if output schema doesn’t),
+         * claim discipline (verification misses the most dangerous claims),
+         * secret safety (agents see credentials directly),
+         * bounded verification (review is vague, collusive, or too expensive),
+         * governed memory (long-lived beliefs accumulate contradictions).
+PCW in one sentence
+Proof‑Carrying Workbench (PCW) is an operating system for AI work that produces audit-grade artifacts whose claims are explicit, machine-checkable, and accompanied by evidence objects—with security and governance enforced as policy, not convention.
+PCW’s core design move
+PCW treats every job as a contracted, compiled, least-privilege, secretless, verification-gated manufacturing pipeline.
+You submit a Job. PCW returns a Release Bundle:
+         * an output artifact (code/doc/report/etc.),
+         * a structured claim set,
+         * an evidence bundle (proofs, replay logs, or source bindings),
+         * provenance and policy decisions,
+         * and a reproducibility manifest.
+What PCW is not
+PCW is not:
+         * a single model,
+         * a prompt template,
+         * “RAG with extra steps.”
+PCW is a platform architecture: a control plane + data plane + verification plane + governance plane.
+________________
+
+
+Table of Contents
+         1. Problem Statement
+         2. Design Principles
+         3. Core Concepts and Terminology
+         4. Architecture Overview
+         5. Threat Model and Trust Boundaries
+         6. The PCW Lifecycle (Contract → Graph → Slices → Execution → Verification → Release)
+         7. Semantic Scope Lock (Intent Manifest + Semantic Integrity Gate)
+         8. Compilation (Typed Execution Graph + Capability Registry + Dry-Run)
+         9. Context Logistics (Least-Privilege Slices + Constraint Capsules)
+         10. Secretless Execution (Capability Handles + Response Contracts + Isolation)
+         11. Claim-Native Artifacts (Deterministic Claim Surface)
+         12. Assurance Levels and Enforcement Policy
+         13. Verification Gate (Deterministic + Replay + Source-Bound + Adversarial)
+         14. Memory, Commitments, and Belief Revision
+         15. Governance, Change Control, and Export Boundaries
+         16. Operating Modes (Interactive vs Analyst)
+         17. Observability, Operations, and Incident Response
+         18. Evaluation Metrics and Anti-Gaming Harness
+         19. Worked Example (End-to-End)
+         20. Limitations and Future Work
+Appendix A: Minimal Schemas (JSON examples)
+Appendix B: Adversarial Test Battery (Minimum Set)
+Appendix C: Risk Classes → Allowed Assurance → Required Mode
+________________
+
+
+1. Problem Statement
+1.1 The “Audit Gap”
+AI systems that generate fluent outputs often fail in production because they do not reliably answer the question:
+“What evidence proves this output is correct, safe, and within scope?”
+Common failures:
+            * Semantic drift: the system answers a nearby question, or changes the meaning of key terms.
+            * Verification-by-omission: it verifies the easy claims and “forgets” to extract the most dangerous claims.
+            * Secret leakage: credentials, keys, PII, or confidential data appear in model context or logs.
+            * Tool abuse: prompt injection escalates tool use beyond intended scope.
+            * Non-replayability: outputs can’t be reproduced from recorded inputs and tool events.
+            * Long-horizon inconsistency: memory becomes noisy, contradictory, and expensive.
+1.2 Why “just add more guardrails” doesn’t solve it
+Adding heuristic filters does not create:
+            * cryptographically bound scope,
+            * deterministic claim extraction,
+            * evidence objects,
+            * replay manifests,
+            * enforceable assurance policies.
+You need an operating system layer: contracts, compilation, capability mediation, and verification gates.
+1.3 PCW’s target domain
+PCW is designed for cost-of-error-dominant domains:
+            * software engineering,
+            * security and compliance,
+            * regulated reporting,
+            * operational workflows,
+            * high-impact decision support.
+PCW is not optimized for casual chat or entertainment.
+________________
+
+
+2. Design Principles
+PCW is built from seven principles that are enforced mechanically (policy + schema), not culturally.
+            1. Artifacts over Answers
+Outputs are immutable artifacts with provenance and evidence—not freeform responses.
+            2. Semantic Scope Lock
+A contract binds meaning (definitions, exclusions, time windows), not merely bytes.
+            3. Compiled Execution
+Intent is compiled into a typed execution graph with explicit dependencies and routing.
+            4. Least-Privilege Context
+Each task receives only the context and permissions needed.
+            5. Secretless Capability
+Agents never see raw secrets; they use mediated capabilities.
+            6. Assurance is Enforced
+Acceptable evidence levels are enforced by policy, not left to UI labels.
+            7. Governed Evolution
+Policies, schemas, and trusted templates evolve via change control with rollback.
+________________
+
+
+3. Core Concepts and Terminology
+This section is intentionally explicit so the paper stands alone.
+3.1 Job
+A unit of work submitted to PCW.
+3.2 Job Contract
+A signed specification for the job. It includes:
+               * Input/Output schemas
+               * Intent Manifest (semantic scope)
+               * Constraints and exclusions
+               * Risk class
+               * Clearance class (data sensitivity)
+               * Allowed tools/capabilities
+               * Assurance policy (what evidence levels are acceptable)
+               * Budgets (time/cost/iterations)
+               * Publication policy (what can ship externally)
+3.3 Intent Manifest (Semantic Scope)
+A structured representation of “what the job means,” including:
+               * definitions,
+               * jurisdiction/time window,
+               * explicit exclusions,
+               * acceptance criteria,
+               * non-summarizable constraints.
+3.4 Execution Graph
+A typed DAG of atomic tasks:
+               * nodes = tasks with typed I/O
+               * edges = dependencies
+               * each node has required worker tier, context slice requirements, tool permissions, and verification requirements.
+3.5 Worker Tiers
+A routing model for cost/capability:
+               * T0 deterministic tools (parsers, linters, solvers, compilers)
+               * T1 scripts + small local models
+               * T2 mid-tier models
+               * T3 frontier models
+               * T4 mandated human review
+3.6 Context Slice
+A per-node briefing package:
+               * minimal relevant facts,
+               * references (not raw dumps),
+               * applicable constraints,
+               * allowed tools,
+               * capability handles (references to privileged actions).
+3.7 Capability Handle
+A reference to a privileged operation performed by a Capability Proxy (e.g., “sign,” “write-prod,” “retrieve-PII”). The agent receives a handle, not the secret.
+3.8 Claim Object
+A structured, machine-readable claim:
+               * ID
+               * predicate + typed parameters
+               * qualifiers (time, jurisdiction, exceptions)
+               * dependencies (constraints and other claims)
+               * evidence references
+               * assurance level
+3.9 Evidence Object
+Machine-checkable evidence attached to a claim:
+               * proof/certificate (formal)
+               * procedure replay log (deterministic)
+               * source binding (versioned spans + interpretation mapping)
+3.10 Assurance Levels (not “verification tiers”)
+PCW uses “assurance levels” to avoid conflating correctness with interpretation.
+               * A1 — Formal Assurance: mechanically checked proof/certificate or invariant check.
+               * A2 — Procedural Assurance: replayable deterministic procedure with pinned inputs and logs.
+               * A3 — Source‑Bound Assurance: authoritative versioned text spans plus an interpretation mapping artifact.
+               * A0 — Heuristic: allowed only for low-risk, non-actionable guidance.
+Important: A3 is not “truth.” It is “traceable interpretation bound to sources.”
+________________
+
+
+4. Architecture Overview
+4.1 System diagram (conceptual)
+                ┌─────────────────────────────────────────┐
+                 │           GOVERNANCE PLANE              │
+                 │ Policy-as-Code • Change Control • Export│
+                 └───────────────┬─────────────────────────┘
+                                 │ enforces
+┌────────────────────────────────▼────────────────────────────────┐
+│                        CONTROL PLANE                             │
+│ Contract Service → Planner/Compiler → Scheduler → Release Manager │
+└───────────────┬───────────────────────┬─────────────────────────┘
+                │ produces               │ gates
+      ┌─────────▼──────────┐      ┌─────▼───────────────────────┐
+      │   DATA PLANE        │      │      VERIFICATION PLANE      │
+      │ Context Service     │      │ Claim Validator + Evidence    │
+      │ Capability Proxy    │      │ Replay Runner + Source Binder │
+      │ Sandboxes           │      │ Adversarial Review Harness    │
+      └─────────┬──────────┘      └─────┬───────────────────────┘
+                │ outputs                   │ verdict
+                └──────────────┬────────────┘
+                               ▼
+                      ┌────────────────┐
+                      │ Release Bundle │
+                      │ Artifact +     │
+                      │ Claims +       │
+                      │ Evidence +     │
+                      │ Provenance     │
+                      └────────────────┘
+
+
+4.2 “Manufacturing pipeline” mapping (industry-friendly)
+               * Contract ≈ work order + policy bundle
+               * Execution Graph ≈ build plan / workflow DAG
+               * Context Slices ≈ least-privilege task inputs
+               * Evidence Objects ≈ attestations / provenance artifacts
+               * Release Bundle ≈ signed build artifact + SBOM-like provenance + test reports
+________________
+
+
+5. Threat Model and Trust Boundaries
+PCW is only credible if it states assumptions and the Trusted Computing Base (TCB).
+5.1 Threats considered (non-exhaustive)
+               * Prompt injection / instruction hijacking
+               * Data exfiltration (secrets, PII, confidential content)
+               * Tool abuse (unauthorized network calls, destructive commands)
+               * Supply-chain poisoning (retrieval spam, malicious documents)
+               * Verification laundering (claims omitted or rewritten)
+               * Collusive review (verifiers rubber-stamp)
+               * Logging leakage (sensitive material in logs)
+               * Drift and inconsistency over time
+5.2 Trust boundaries
+PCW divides the world into:
+               * Untrusted inputs: user prompts, external docs, web pages, third-party data
+               * Semi-trusted workers: models and scripts (treat as untrusted for secrets)
+               * Trusted control components (TCB): policy engine, capability proxy, artifact store signing, audit logger
+               * Trusted evidence checkers: deterministic validators, replay runners, cryptographic verifiers
+5.3 Trusted Computing Base (TCB)
+PCW’s TCB includes:
+               * Policy engine (decides what is allowed)
+               * Capability proxy (holds and uses secrets)
+               * Artifact store signing keys + release signer
+               * Audit logger (append-only integrity)
+If the TCB is compromised, assurances collapse.
+Therefore, PCW requires:
+               * least privilege IAM,
+               * KMS/HSM-backed signing keys,
+               * network segmentation,
+               * immutable log storage,
+               * incident response procedures (revocation/rotation).
+________________
+
+
+6. The PCW Lifecycle
+This lifecycle is strict: each phase produces artifacts and cannot be silently skipped.
+Phase 1 — Contracting
+Inputs: job request
+Outputs: signed contract + intent manifest + policy decisions
+Steps:
+               1. classify risk and clearance
+               2. build Intent Manifest (definitions, scope, exclusions, acceptance criteria)
+               3. define schemas for artifacts and claims
+               4. define assurance policy (allowed A-levels)
+               5. define tool/capability policy
+               6. sign and hash the contract
+Exit artifacts:
+               * contract.json
+               * intent_manifest.json
+               * policy_decisions.json
+               * contract.sig / contract.hash
+Phase 2 — Compilation (Planner/Compiler)
+Goal: convert contract into typed execution graph
+Steps:
+               1. propose task decomposition (probabilistic)
+               2. validate every node against Primitive Registry (deterministic)
+               3. type-check I/O schemas and constraints
+               4. deduplicate and infer dependencies
+               5. assign worker tiers and budgets
+               6. attach verification requirements per node
+               7. run dry-run resolution (capability/tool availability, auth scope)
+Hard rule: unresolved primitives are compile-time errors.
+Exit artifacts:
+               * graph.json
+               * compile_report.json (errors/warnings/resolutions)
+Phase 3 — Context Logistics
+Goal: produce least-privilege slices for each node
+Steps:
+               1. assemble only necessary references
+               2. attach constraint capsules (non-summarizable constraints)
+               3. redact secrets/irrelevant history
+               4. bind allowed tools and capability handles
+               5. produce deterministic slice metadata (hashes, references)
+Exit artifacts:
+               * slices/<node_id>.json
+               * slice_manifest.json
+Phase 4 — Execution
+Goal: execute nodes under policy, dependencies, and isolation constraints
+Steps:
+               1. schedule ready nodes
+               2. enforce tool permissions per node
+               3. run in sandbox if required
+               4. collect node artifacts
+               5. retry/escalate per policy (bounded)
+Exit artifacts:
+               * artifacts/<node_id>/*
+               * execution_log.jsonl (structured events)
+Phase 5 — Verification Gate
+Goal: determine which claims can ship and at what assurance
+Steps:
+               1. validate artifact schemas and claim schemas
+               2. verify A1 proofs/certificates where applicable
+               3. replay A2 procedures deterministically where applicable
+               4. bind A3 claims to versioned sources + interpretation maps
+               5. run adversarial review harness (bounded, independent)
+               6. issue verdict:
+               * accept
+               * reject + rollback-to-compile with negative constraints
+               * accept-with-restrictions (e.g., disallow external publication)
+Exit artifacts:
+               * verdict.json
+               * evidence_bundle/*
+               * adversarial_report.json
+Phase 6 — Release
+Goal: publish Release Bundle and update governed memory
+Release Bundle contains:
+               * final artifact(s)
+               * claim set
+               * evidence bundle
+               * provenance + hashes
+               * policy decision summary
+               * replay manifest
+Memory update rule: only commitments allowed by policy are persisted (e.g., A1–A3 only).
+________________
+
+
+7. Semantic Scope Lock (The Semantic Integrity Gate)
+This section exists because hashing bytes is not enough.
+7.1 The failure mode: “Contract Hash Theater”
+A system can keep the same contract bytes while drifting meaning:
+               * time window changes (“current” becomes “ever”)
+               * jurisdiction changes (“EU” becomes “global”)
+               * definitions change (“PII” redefined)
+               * exclusions are silently dropped (“don’t touch prod” ignored)
+7.2 Intent Manifest (structure-preserving)
+PCW requires a structured Intent Manifest with explicit fields:
+               * Scope
+               * domain
+               * jurisdiction
+               * time window
+               * systems in/out
+               * Definitions
+               * term → operational definition
+               * Exclusions
+               * forbidden actions
+               * forbidden data
+               * forbidden tools
+               * Acceptance criteria
+               * artifact types required
+               * tests required
+               * claim categories required
+               * Assumptions
+               * declared assumptions (must become explicit claim objects)
+               * Constraint Capsules
+               * non-summarizable, always-propagated constraints
+7.3 Semantic Integrity Checks
+PCW runs semantic integrity checks at compile-time and before release:
+               1. Manifest → Graph consistency
+               * every acceptance criterion must map to at least one node
+               * every exclusion must appear as a constraint capsule dependency on relevant nodes
+               2. Graph → Claims coverage
+               * required claim categories exist (e.g., “security impact,” “dependencies,” “limitations”)
+               * no required claim is missing
+               3. Scope perturbation tests (minimum)
+               * negation flip tests (“must” ↔ “must not”)
+               * time window flip tests
+               * jurisdiction flip tests
+               * exception drop tests (“unless/except” removed)
+If perturbations cause “still passes verification,” the contract is underspecified or the checks are weak; PCW must escalate.
+________________
+
+
+8. Compilation (Typed Execution Graph)
+8.1 The key principle
+Compilation is probabilistic proposal + deterministic validation.
+This is how PCW avoids “LLM compiler hallucination.”
+8.2 Primitive Registry
+PCW maintains a registry of allowed primitive task types, each with:
+               * typed input schema
+               * typed output schema
+               * required permissions/tools
+               * preconditions/effects (optional but recommended)
+               * default assurance requirements
+               * default isolation requirements
+If a task cannot be mapped to a registry primitive, it cannot enter the graph.
+8.3 Dry-run resolution (compile-time)
+Before execution, PCW resolves:
+               * tool availability and versions
+               * capability availability
+               * permission scopes
+               * rate limits and quotas (if known)
+               * environment constraints (network allowed? sandbox required?)
+Unresolved capabilities become compile-time errors.
+8.4 Scheduling and tier routing
+PCW assigns worker tiers to nodes based on:
+               * complexity classification
+               * historical failure rates (optional)
+               * policy constraints (risk/clearance)
+               * deadlines and budgets
+Escalation is bounded: e.g., T1 → T2 → T3, capped attempts, with rollback if repeated failure indicates plan flaw.
+________________
+
+
+9. Context Logistics (Least‑Privilege Context + Constraint Capsules)
+9.1 Why context slicing matters
+“Stuff top-k chunks into the prompt” fails because:
+               * it increases hallucination by drowning signal in noise,
+               * it increases exposure of sensitive data,
+               * it makes review intractable.
+9.2 Context Slice design
+Each slice contains:
+               * Task briefing (minimal)
+               * References (pointers/IDs to source artifacts, not full dumps)
+               * Constraint Capsules (mandatory)
+               * Allowed tools/capabilities
+               * Data handling rules (PII, secrets, retention)
+               * Slice provenance (hashes, reference list)
+9.3 Constraint Capsules (non-summarizable)
+Constraint capsules are the “don’t drop this” mechanism.
+Examples:
+               * “Do not access production systems.”
+               * “Jurisdiction is EU only.”
+               * “No PII in outputs.”
+               * “All actionable recommendations require A2 or A1.”
+Capsules:
+               * are structured objects,
+               * are attached to all relevant slices,
+               * must be referenced by claim dependencies,
+               * are checked by the verifier for presence and compliance.
+9.4 Source integrity for A3 (Source‑Bound Assurance)
+When A3 is permitted/required:
+               * sources must be version-pinned (hash, timestamp, canonical ID)
+               * sources must be allowlisted by policy (job-class dependent)
+               * source updates trigger recertification flags (see §15)
+________________
+
+
+10. Secretless Execution (Capability Security Done Mechanically)
+10.1 The problem
+Agents must sometimes:
+               * sign transactions,
+               * access databases,
+               * call privileged APIs,
+               * handle regulated data.
+But models cannot be trusted with raw secrets.
+10.2 Capability Proxy
+PCW introduces a Capability Proxy that:
+               * holds secrets (KMS/HSM backed)
+               * enforces policy checks on every invocation
+               * logs every invocation as an auditable event
+               * returns sanitized outputs
+The agent only receives a handle:
+               * capability_handle_id
+               * allowed parameters (validated)
+               * response schema
+10.3 Capability Response Contracts (side-channel defense)
+Every capability has a response contract:
+               * no secrets in responses
+               * no bearer tokens returned
+               * error messages are normalized (no stack traces with headers)
+               * sensitive outputs go to a secure vault; the agent gets a pointer
+This is the difference between “secretless in theory” and “secretless in reality.”
+10.4 Isolation and confidential execution
+Sensitive nodes can be forced into:
+               * sandboxed containers
+               * no-network environments
+               * ephemeral storage
+               * memory wipe / teardown
+               * output redaction enforcement
+________________
+
+
+11. Claim‑Native Artifacts (Deterministic Claim Surface)
+11.1 Why this exists
+If you let the model narrate freely, it can:
+               * omit dangerous claims,
+               * smuggle new claims into prose,
+               * weaken or strengthen commitments without detection.
+11.2 Claim-native rule
+PCW artifacts must include:
+               * claims[] as structured claim objects
+               * narrative may exist, but must reference claim IDs
+               * verifiers validate claims deterministically from claims[]
+Schema violation: any meaningful assertion not represented as a claim object.
+11.3 Claim object anatomy
+A claim includes:
+               * claim_id (stable)
+               * type (factual / procedural / normative / risk / limitation)
+               * predicate (typed)
+               * parameters
+               * qualifiers (time, jurisdiction, exceptions)
+               * dependencies (constraint capsules + other claims)
+               * evidence_refs
+               * assurance_level (A0–A3)
+               * actionability (informational / actionable / requires-approval)
+This forces the system to “show its work” in a machine-checkable way.
+________________
+
+
+12. Assurance Levels and Enforcement Policy
+12.1 The mistake we avoid
+Labeling something “verified” without enforcement collapses socially.
+Therefore:
+               * assurance is enforced by policy and gating,
+               * not left to user interpretation.
+12.2 Risk classes (example)
+PCW defines risk classes that control allowed assurance.
+               * R0 low risk: brainstorming, formatting, low-stakes summaries
+               * R1 moderate: internal docs, non-sensitive code suggestions
+               * R2 high: security guidance, config changes, financial calculations
+               * R3 critical: prod changes, regulated compliance, safety impacts
+               * R4 prohibited/autonomous stop: actions requiring mandatory human governance approval
+12.3 Example enforcement mapping
+               * R0: A0–A3 allowed, but A0 must be labeled non-actionable
+               * R1: A0 allowed only for clearly speculative sections; core claims require A2/A3
+               * R2: actionable claims require A2 or A1; A0 cannot be actionable
+               * R3: requires Analyst Mode + A2/A1 for action; A3 for policy interpretations; mandatory adversarial review
+               * R4: no autonomous release; human approval required; release bundle still produced for review
+(You can tune the mapping; the important part is mechanical enforcement.)
+________________
+
+
+13. Verification Gate (Deterministic + Adversarial + Bounded)
+13.1 Verification is multi-method
+PCW does not pretend one method fits all domains.
+               * A1: proof/certificate/invariant checks (when formalizable)
+               * A2: replayable procedures (tests, builds, deterministic runs)
+               * A3: source binding + interpretation mapping (policy/legal/normative)
+               * A0: heuristic (restricted)
+13.2 Independence policy (anti-collusion)
+Adversarial review is only real if:
+               * reviewers are blind to generation traces,
+               * reviewers receive contract + claims + evidence, not chat context,
+               * reviewers run a standardized battery.
+13.3 Minimum adversarial battery (must exist)
+               * Negation flips
+               * Scope flips (jurisdiction/time window)
+               * Exception drops
+               * Omission checks (capsules and required claim categories)
+               * Actionability checks (A0 smuggling)
+               * Tool policy violation probes (attempted escalation)
+13.4 Termination and rollback
+Verification is bounded:
+               * max review rounds
+               * max compile/execute cycles
+               * stability thresholds on claim graph
+If it cannot converge:
+               * PCW produces an explicit artifact:
+“Cannot satisfy constraints within budget / information available”
+with what’s missing and what would be required.
+No silent degradation.
+________________
+
+
+14. Memory, Commitments, and Belief Revision
+14.1 Separate “memory” from “commitments”
+PCW differentiates:
+                  * volatile working memory (context for execution; compacted)
+                  * durable commitments (claims persisted across time)
+                  * policy anchors (non-retractable constraints)
+14.2 Commitment promotion rules
+Only claims with allowed assurance levels can be promoted to durable commitments.
+Example:
+                  * R2: A2/A1 claims can be promoted
+                  * R3: only A1/A2 and certain A3 (explicitly marked as interpretation) can be promoted
+14.3 Belief revision (bounded and explicit)
+When contradictions occur:
+                  1. identify the minimal conflicting set (via dependency slices)
+                  2. score entrenchment (policy anchors highest; repeated validated claims higher; heuristic lowest)
+                  3. retract minimal set consistent with policy
+                  4. invalidate dependent claims
+                  5. emit a revision artifact (auditable)
+If revision cannot resolve:
+                  * quarantine the topic/claim cluster
+                  * require human review or new evidence
+________________
+
+
+15. Governance, Change Control, and Export Boundaries
+15.1 Policy-as-code
+All gating is policy-driven:
+                  * tool permissions
+                  * capability invocation
+                  * allowed assurance levels
+                  * publication restrictions
+                  * escalation requirements
+Policies are versioned and tested.
+15.2 Trusted Template Packs (avoid “nagware collapse”)
+To avoid humans rubber-stamping endless manifests:
+                  * PCW supports template packs for common job classes
+                  * template packs include:
+                  * intent manifest templates
+                  * constraint capsule sets
+                  * required claim categories
+                  * adversarial battery selection
+                  * template packs have trust scores, coverage constraints, and decay
+                  * periodic sampling audits keep trust honest
+15.3 Export boundaries (reality-aware)
+PCW guarantees export of:
+                  * user-owned inputs
+                  * generated artifacts
+                  * claim sets
+                  * evidence bundles (excluding secrets)
+                  * provenance and policy decisions
+                  * replay manifests
+PCW does not promise redistribution of licensed third-party corpora; instead it exports immutable references and replay manifests where lawful.
+15.4 Recertification on change
+If policies, templates, tools, or sources change:
+                  * PCW can run recertification jobs for affected releases
+                  * previously acceptable A3 bindings may become “stale”
+                  * releases can be flagged “needs review” rather than silently trusted
+________________
+
+
+16. Operating Modes
+16.1 Interactive Mode (fast)
+Goal: useful outputs quickly while preserving safety.
+                  * strict budgets
+                  * limited adversarial checks
+                  * caching
+                  * no durable commitments unless later promoted
+                  * restricted actionability for A0
+16.2 Analyst Mode (deep)
+Goal: high assurance and audit readiness.
+                  * full verification gate
+                  * broader adversarial battery
+                  * replay manifests required
+                  * required for high-risk classes
+________________
+
+
+17. Observability, Operations, and Incident Response
+17.1 Required telemetry
+                  * policy decisions (why was something allowed/blocked?)
+                  * capability invocations (handle used, parameters, outcome)
+                  * graph execution events
+                  * verification outcomes
+                  * rollback reasons
+17.2 Audit logging requirements
+                  * append-only
+                  * integrity protected (hash chains / signed segments)
+                  * privacy-aware (no secrets in logs)
+                  * searchable by claim_id / artifact_id
+17.3 Incident response
+If a leak or policy violation occurs:
+                  * invalidate affected handles
+                  * rotate secrets
+                  * freeze template pack promotions
+                  * flag affected releases
+                  * run recertification or revoke trust
+________________
+
+
+18. Evaluation Metrics and Anti-Gaming Harness
+18.1 Metrics that matter
+                  * Assurance Coverage (% claims meeting policy)
+                  * Replay Success Rate
+                  * Rollback Rate
+                  * Semantic Escape Rate (SER)
+                  * Leak Incidents (confirmed)
+                  * Tier Routing Efficiency
+                  * Mean Time to Detect policy violations
+18.2 Anti-gaming constraints
+                  * claim granularity is standardized per schema (no “one mega-claim” trick)
+                  * SER measured via adversarial suites + sampled human audits
+                  * leak detection uses deterministic scanners + DLP + anomaly detection
+                  * metrics reported with sampling policy and confidence intervals
+________________
+
+
+19. Worked Example (End-to-End)
+Job request (user)
+“Generate a change plan and patch for our service to enable OAuth login, update the DB schema, and deploy safely.”
+Phase 1: Contracting
+                  * Risk: R3 (prod + auth)
+                  * Mode: Analyst required
+                  * Intent Manifest includes:
+                  * scope: service X, environment staging → prod
+                  * exclusions: no production writes without approval
+                  * acceptance criteria: PR patch, migration script, rollout plan, test plan
+                  * required claim categories: security impact, rollback plan, dependencies, limitations
+                  * Constraint capsules:
+                  * “No secrets in outputs”
+                  * “No direct prod deploy; generate steps only”
+                  * “All actionable steps require A2 or A1”
+Phase 2: Compilation
+Execution graph nodes:
+                  1. inspect repo structure (T1/T0 tools)
+                  2. propose schema migration (T3)
+                  3. implement OAuth flow (T3)
+                  4. run tests (T0/A2)
+                  5. generate rollout plan (T2/T3)
+                  6. generate rollback plan (T2/T3)
+                  7. compile claim set (T1 + deterministic validation)
+Dry-run:
+                  * ensures test runner available
+                  * ensures migration tool exists
+                  * ensures deploy is prohibited by policy (compile-time)
+Phase 3: Context slices
+                  * Node 3 gets only auth-relevant docs, no unrelated history
+                  * Capsules attached to nodes that produce instructions and code
+Phase 4: Execution
+                  * code generation produces patch artifact + claims
+                  * tests run deterministically (A2 evidence)
+                  * rollout plan references tested artifacts
+Phase 5: Verification
+                  * schema validation passes
+                  * procedure replay confirms tests pass (A2)
+                  * adversarial review flips constraints (“deploy directly”) and ensures policy blocks it
+                  * exception drop test ensures rollback plan exists and is referenced
+                  * verdict: accept
+Release bundle
+                  * PR patch
+                  * claims with A2 evidence for “tests pass” and “migration applies”
+                  * A3 bindings if policy references internal security standards
+                  * provenance and replay manifest
+________________
+
+
+20. Limitations and Future Work
+                  * Formal proofs (A1) are limited by domain formalizability.
+                  * A3 is interpretation assurance; disputes are governance objects, not hidden confidence.
+                  * PCW is not for casual instant chat; it is for audit-grade work.
+Future expansions:
+                  * richer typed preconditions/effects
+                  * improved semantic diff tooling
+                  * standardized interoperability formats for release bundles
+                  * marketplace of primitive registries and template packs
+________________
+
+
+Conclusion
+Proof‑Carrying Workbench (PCW) is a practical, policy-enforced architecture for producing audit-grade AI work products. It turns “AI output” into a release artifact whose claims are explicit, whose evidence is attached, whose scope is semantically locked, and whose execution is secretless and least-privilege.
+PCW does not promise omniscience. It promises something operationally valuable:
+outputs you can audit, replay, reason about, and govern.
+________________
+
+
+Appendix A: Minimal Schema Examples (Illustrative)
+A.1 contract.json (high-level)
+{
+  "job_id": "job_123",
+  "risk_class": "R3",
+  "clearance": "CONFIDENTIAL",
+  "mode": "ANALYST",
+  "inputs_schema": { "type": "object", "properties": { "repo_ref": {"type":"string"} } },
+  "outputs_schema": { "type": "object", "properties": { "release_bundle_ref": {"type":"string"} } },
+  "assurance_policy": {
+    "allowed_levels": ["A1", "A2", "A3"],
+    "actionable_requires": ["A1", "A2"]
+  },
+  "tool_policy": {
+    "allowed_tools": ["git_read", "test_runner", "build_system"],
+    "blocked_tools": ["prod_deploy"]
+  },
+  "intent_manifest_ref": "intent_manifest.json",
+  "signatures": { "contract_sig": "..." }
+}
+
+
+A.2 intent_manifest.json (structure-preserving)
+{
+  "scope": {
+    "domain": "Auth integration",
+    "systems_in": ["service_x"],
+    "systems_out": ["prod_deploy"],
+    "jurisdiction": "N/A",
+    "time_window": { "from": "2026-02-01", "to": "2026-02-18" }
+  },
+  "definitions": {
+    "deploy": "generate steps only; no execution",
+    "secret": "any credential, token, private key, or PII"
+  },
+  "exclusions": [
+    "No production writes",
+    "No secret material in outputs"
+  ],
+  "acceptance_criteria": [
+    "Patch artifact (diff)",
+    "Migration script",
+    "Rollback plan",
+    "Test evidence"
+  ],
+  "constraint_capsules": ["CC_NO_SECRETS", "CC_NO_PROD_DEPLOY"]
+}
+
+
+A.3 claim object
+{
+  "claim_id": "C-17",
+  "type": "procedural",
+  "predicate": "tests_pass",
+  "parameters": { "suite": "unit+integration", "commit": "abc123" },
+  "qualifiers": { "environment": "sandbox" },
+  "dependencies": ["CC_NO_SECRETS"],
+  "evidence_refs": ["EVID-A2-991"],
+  "assurance_level": "A2",
+  "actionability": "actionable"
+}
+
+
+________________
+
+
+Appendix B: Minimum Adversarial Battery (Template)
+                  1. Negation flip tests
+                  2. Time window flip tests
+                  3. Scope/jurisdiction flip tests
+                  4. Exception-drop tests
+                  5. Omission tests (required claim categories + capsules)
+                  6. Tool escalation probes
+                  7. Actionability probes (A0 → actionable smuggling)
+________________
+
+
+Appendix C: Risk → Mode → Allowed Assurance (Example)
+                  * R0: Interactive; A0–A3 allowed; A0 must be non-actionable
+                  * R1: Interactive; A2/A3 required for core claims
+                  * R2: Analyst recommended; actionable requires A2/A1
+                  * R3: Analyst required; actionable requires A2/A1; adversarial battery required
+                  * R4: Human approval required; no autonomous release

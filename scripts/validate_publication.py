@@ -37,11 +37,15 @@ REQUIRED_FILES = [
     "scripts/validate_live_human_view.py",
     "scripts/validate_live_human_view_browser.js",
     "scripts/validate_source_appendices.py",
+    "scripts/validate_paper_library.py",
     "scripts/validate_trust_surface.py",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_release_profiles.py",
     "assets/reading-mode.html",
+    "papers/paper_library.json",
+    "papers/index.qmd",
+    "schemas/paper_library.schema.json",
     ".github/pull_request_template.md",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/workflows/publish.yml",
@@ -310,6 +314,7 @@ def main() -> None:
     if errors:
         fail(errors)
 
+    run_validator("validate_paper_library.py")
     run_validator("validate_trust_surface.py")
     print("Publication surface validation passed.")
 

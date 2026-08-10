@@ -1,0 +1,2484 @@
+---
+title: "The Relational Dimension Compiler"
+subtitle: "Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure"
+author: "Corben Sorenson"
+date: "July 2026"
+lang: en-US
+keywords:
+  - higher-order attention
+  - relational reasoning
+  - polyadic cognition
+  - hypergraphs
+  - world models
+  - tensor networks
+  - object-centric learning
+  - adaptive computation
+  - neural-symbolic systems
+  - multiscale representation
+abstract: |
+  Transformer attention exposes pairwise interaction as a first-class computational primitive. Higher-order attention, hypergraph networks, simplicial models, tensor factorizations, object-centric systems, equivariant networks, and neural operators each extend part of this picture, but none by itself supplies a general architecture for deciding what relational structure a problem requires, constructing that structure, validating it, preserving it across time and counterfactual branches, and compressing it into reusable abstractions. This paper proposes the **Relational Dimension Compiler (RDC)**: a substrate-neutral architecture that dynamically constructs typed relational complexes over entities, events, fields, and relations among relations. The RDC separates geometric dimension, tensor order, semantic arity, primitive computational arity, temporal extent, abstraction scale, branch identity, and epistemic status. It allocates higher-order computation only where a lower-order model leaves a useful residual; evaluates candidate relations with sparse and factorized kernels; qualifies them through role, consistency, counterfactual, invariance, calibration, and provenance checks; reifies accepted relations as persistent objects; and contracts stable subcomplexes into reversible macro-objects.
+  
+  The central design result is a distinction between **bounded computational arity** and **unbounded semantic arity**. Any finite relation of arbitrary arity can be represented exactly as a relation object connected to its arguments by typed binary incidence edges. Higher-order kernels remain valuable for discovering and evaluating such relations, but the system need not retain a dense high-order tensor or implement an unbounded family of primitive operators. The resulting architecture is a self-constructing computational topology rather than a fixed tensor program. This paper develops its formal state model, operator registry, relation lifecycle, contraction criteria, hardware compilation strategy, learning objectives, failure taxonomy, and a falsifiable benchmark program called **RODIE**—Relational Order and Dimensional Intelligence Evaluation. No empirical superiority is claimed; the contribution is a complete, testable architectural hypothesis.
+---
+
+**Keywords:** higher-order attention; relational reasoning; polyadic cognition; hypergraphs; adaptive computation; tensor networks; object-centric learning; multiscale representation.
+
+# 1. Introduction
+
+The Transformer made one architectural decision unusually explicit: every token may exchange information with every other token through learned pairwise scores. In the canonical self-attention operator, a query at position $i$ is compared with a key at position $j$, producing an $n\times n$ matrix over a sequence of length $n$ (Vaswani et al., 2017). That decision proved exceptionally general. Pairwise content-addressed communication can support language modeling, vision, control, scientific learning, and many other tasks, while multiple layers can compose local interactions into complex functions.
+
+Yet the success of pairwise attention does not imply that pairwise interaction is the uniquely appropriate primitive for every problem. Some tasks are naturally stated in terms of triples, tuples, hyperedges, events with typed roles, relations among relations, continuous fields, or hierarchies of stable substructures. Theoretical work has exhibited bounded-depth settings in which ordinary attention is inefficient at triple detection or function composition, while higher-order mechanisms solve the same constructions more directly (Sanford et al., 2023; Kozachinskiy et al., 2025; Chakrabarti et al., 2026). Empirical systems have explored trilinear or simplicial attention, higher-order graph networks, dynamic hypergraph inference, tensor-structured attention, and domain-specific triadic terms (Clift et al., 2019; Roy et al., 2025; Omranpour et al., 2024; Duta and Liò, 2025; Amiraslani and Gao, 2026).
+
+A tempting response is to describe the standard Transformer as a “square” and propose a “cube”: replace the pairwise score matrix $A_{ij}$ with a triadic score tensor $A_{ijk}$. This intuition identifies a real opportunity, but it stops too early. A literal cube creates at least four problems.
+
+First, **dimension is overloaded**. A three-dimensional input volume, a third-order tensor, a relation among three entities, a triangle in a simplicial complex, and a model with three recurrent stages are different mathematical objects. Treating them as one notion of “higher dimension” obscures their transformation laws and computational requirements.
+
+Second, dense triadic enumeration scales as $O(n^3)$ before accounting for features, heads, values, gradients, or downstream storage. Generalizing again to order $k$ yields $O(n^k)$. The architecture cannot simply ascend a ladder of ever denser tensors.
+
+Third, semantic relations do not have a fixed arity. A transfer may involve a giver, recipient, object, authorization, time, price, and jurisdiction. A scientific event may involve several reactants, a catalyst, environmental conditions, and an observed outcome. A plan step may jointly depend on an actor, tool, resource, location, permission, deadline, and predicted side effect. An intelligence architecture cannot require a new primitive tensor order for every relation schema.
+
+Fourth, relation detection is only one part of relational cognition. A system must decide whether a candidate relation is real, hypothetical, useful, redundant, temporary, contradicted, or stable enough to become an abstraction. It must preserve role assignments, provenance, uncertainty, time, and possible-world identity. It must know when to collapse a substructure into one macro-object and when to reopen it. A score tensor alone supplies none of these lifecycle semantics.
+
+This paper therefore takes the higher-dimensional attention idea to its logical conclusion. The proposed endpoint is not a larger attention tensor. It is a **Relational Dimension Compiler (RDC)**: a system that constructs the typed dimensional and relational structure needed for a task, chooses the least expensive qualified operator for that structure, turns accepted relations into first-class objects, and recursively compiles stable relational substructures into reusable abstractions.
+
+The word *compiler* is deliberate. Conventional compilers do more than execute one instruction. They translate among typed representations, select operators, lower high-level structure into hardware-compatible kernels, preserve invariants, report losses, and retain enough lineage to diagnose failure. The RDC applies the same discipline to cognitive structure. It receives observations, entities, fields, task demands, memory, and branch context; creates a typed relational intermediate representation; routes selected candidate tuples through pairwise, polyadic, graph, hypergraph, equivariant, field, or symbolic operators; validates the result; and lowers qualified structures into a persistent relational store and efficient runtime schedule.
+
+The completed architecture rests on seven claims that are individually modest but jointly consequential:
+
+1. **Dimensions must be typed.** Geometry, relation arity, tensor order, scale, time, branch, and epistemic status are independent axes with different symmetries and legal operations.
+2. **Relational order should be adaptive.** Pairwise computation remains the default; higher order is purchased only when its expected value exceeds its cost.
+3. **Primitive computational arity can remain bounded.** Unary, pairwise, and selective triadic kernels may be sufficient as general primitives even when semantic relations have arbitrary arity.
+4. **Semantic arity can be unbounded through reification.** A relation instance becomes an object connected to its arguments through typed role edges, allowing relations among relations without dense arbitrary-order tensors.
+5. **Relational structure has a lifecycle.** Proposals must be qualified, instantiated, revised, invalidated, contracted, reopened, and retired.
+6. **Abstraction is controlled contraction.** Stable subcomplexes become macro-objects only relative to a declared query and error envelope, with provenance and re-expansion conditions preserved.
+7. **The computational topology itself should be learnable.** The architecture learns not only weights and states but also which entities, relations, scales, branches, and operator contractions should exist for the current problem.
+
+The contribution is architectural and falsifiable. It does not claim that explicit higher-order structure is always useful, that pairwise Transformers are incapable of higher-order functions, that discovered relations correspond uniquely to reality, or that typed representations guarantee correctness. Instead, it specifies the strongest coherent version of the hypothesis and defines experiments capable of defeating it.
+
+## 1.1 Contributions
+
+This paper makes the following contributions.
+
+- It introduces a **dimensional type system** separating geometric dimension, relational arity, tensor order, topological grade, temporal extent, abstraction scale, possible-world branch, epistemic state, and computational budget.
+- It formalizes a **typed relational complex** containing entities, fields, relation objects, role bindings, branch identities, provenance, uncertainty, and contraction hierarchies.
+- It establishes a simple **role-preserving reification result**: arbitrary finite semantic arity can be represented exactly through relation nodes and typed binary incidence edges.
+- It proposes **adaptive relational-order routing**, in which candidate structures compete for a finite compute budget according to expected task value, uncertainty reduction, structural information gain, and verification cost.
+- It defines a **relation qualification lifecycle** that distinguishes candidate interaction, accepted structural hypothesis, observed relation, counterfactual relation, compiled recognizer, and retired relation.
+- It develops **semantic renormalization**, a reversible process for contracting stable relational subcomplexes into macro-objects under a declared query family and error tolerance.
+- It specifies a complete **reference architecture**, including operator registry, hardware lowering, persistent memory, branch management, object–field coupling, training objectives, and failure controls.
+- It proposes **RODIE**, a benchmark program designed to isolate minimum relational order, role binding, topology discovery, counterfactual fidelity, multiscale abstraction, no-regret routing, and matched-compute efficiency.
+
+# 2. From a Square-to-Cube Metaphor to Typed Dimensionality
+
+## 2.1 What standard attention actually makes explicit
+
+For input representations $X\in\mathbb{R}^{n\times d}$, a standard attention head computes
+
+$$
+Q=XW_Q,\qquad K=XW_K,\qquad V=XW_V,
+$$
+
+and
+
+$$
+\operatorname{Attn}(Q,K,V)
+=\operatorname{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V.
+$$
+
+The score matrix is pair-indexed: $s_{ij}=q_i^\top k_j$. The operation is therefore naturally interpreted as one round of learned pairwise communication. Relation Networks, Interaction Networks, graph networks, and relational reinforcement learning made similar pairwise inductive biases explicit in other forms (Santoro et al., 2017; Battaglia et al., 2016; Battaglia et al., 2018; Zambaldi et al., 2018).
+
+This does **not** mean that a multilayer Transformer represents only pairwise functions. Layers compose. A representation at position $i$ may absorb information from $j$, which previously absorbed information from $k$. Feed-forward nonlinearities, multiple heads, recurrence, and depth can implement higher-order behavior. The correct claim is narrower: the directly parameterized communication event in ordinary attention is pairwise, and some functions may require more depth, width, heads, precision, data, or intermediate state than a mechanism whose inductive bias exposes the relevant polyadic interaction directly.
+
+Sanford et al. (2023) formalized a triple-detection task for which a single attention layer requires resources growing with input size under their model, while a higher-order construction performs the interaction directly. Strassen Attention and Poly-attention broadened this study to function composition and richer polynomial interaction structures (Kozachinskiy et al., 2025; Chakrabarti et al., 2026). These are not impossibility results for arbitrary deep Transformers. They are evidence that **order and depth trade against one another**, and that an explicit higher-order primitive can be an efficiency-relevant inductive bias.
+
+## 2.2 The dimensions that must not be conflated
+
+The word *dimension* appears in several unrelated roles. A final architecture must identify each axis semantically rather than treating tensor rank as ontology.
+
+| Axis | Meaning | Example | Required discipline |
+|---|---|---|---|
+| Geometric dimension | Coordinates of a physical or latent domain | $x,y,z$ or spacetime | Metric, units, symmetry, equivariance |
+| Tensor order | Number of indices in an array | matrix, third-order tensor | Storage layout and contraction rules |
+| Semantic arity | Number of role-bearing arguments in a relation | `GIVE(giver, object, recipient)` | Typed roles, order, symmetry, missing arguments |
+| Primitive computational arity | Number of items jointly scored in one kernel | pairwise or triadic attention | Complexity, numerical stability, hardware mapping |
+| Topological grade | Kind of cell carrying state | node, edge, face, volume | Incidence and orientation laws |
+| Temporal extent | Instant, interval, event, process, trajectory | collision event or policy episode | Clocks, duration, ordering, persistence |
+| Abstraction scale | Level of coarse-graining | atom, molecule, cell, organism | Contraction, boundary interface, re-expansion |
+| Counterfactual branch | Which possible world contains the state | actual, predicted, planned, fictional | No branch leakage; shared immutable structure |
+| Epistemic state | How the representation is supported | observed, inferred, hypothesized, contradicted | Provenance, uncertainty, defeaters, calibration |
+| Computational budget | How much processing is allocated | depth, order, precision, search | Value-of-computation and stopping |
+
+A spatiotemporal tensor with shape $T\times H\times W\times d$ has three data axes plus a feature axis, but an attention calculation within it may still be pairwise. Earthformer preserves space-time organization by dividing data into cuboids and applying local attention linked by global vectors; this is a geometric and computational partition, not necessarily triadic semantic reasoning (Gao et al., 2022). Conversely, a one-dimensional sentence may describe an irreducible four-role transaction. Geometry and semantic arity are independent.
+
+Similarly, a triangular cell in a simplicial complex is not automatically equivalent to a directed three-role event. A simplex is usually invariant to permutations up to orientation conventions, whereas `TRANSFER(giver, recipient, object)` is role-sensitive. Hypergraphs can connect arbitrary sets but may not encode argument order unless roles are added. A third-order tensor can store scores over three indices while representing no persistent relation object at all.
+
+## 2.3 A dimensional type signature
+
+The RDC assigns every active axis a **dimensional type signature**:
+
+$$
+\mathsf{Axis}
+=
+(\text{name},\text{carrier},\text{semantics},\text{symmetry},\text{metric},
+\text{unit},\text{variance law},\text{legal operations}).
+$$
+
+Examples:
+
+- A spatial coordinate axis may transform under $SE(3)$ or $E(3)$ and carry metric units.
+- A set-of-entities axis is permutation equivariant.
+- A role axis may be ordered and schema-specific.
+- A branch axis obeys copy-on-write and cannot be averaged as though alternatives were simultaneous facts.
+- An epistemic axis is ordered by support or confidence but should not be multiplied into effect authority.
+- A topological orientation axis may change sign under orientation reversal.
+
+Typed dimensions turn silent assumptions into compiler checks. A contraction is legal only if it respects the relevant symmetries and semantics. Summing across exchangeable set elements may be valid; summing across possible worlds is generally not. Rotating a vector-valued physical state requires an equivariant transformation; renaming an entity identifier should not change a semantic relation. Averaging `giver` and `recipient` roles destroys the relation.
+
+This type discipline is the first major departure from a literal cube. The objective is not to increase tensor order. It is to make the **meaning of every index explicit enough that the system can choose the correct representation and operator**.
+
+# 3. Related Work and the Missing Conjunction
+
+The RDC is a synthesis across several research traditions. Each tradition contributes a necessary mechanism, but the complete proposal requires their conjunction plus explicit lifecycle and compilation semantics.
+
+## 3.1 Higher-order and polynomial attention
+
+The $2$-Simplicial Transformer augments ordinary attention with a trilinear interaction and tensor products of value vectors. Its original implementation restricts higher-order interactions through virtual entities to avoid unconstrained cubic cost (Clift et al., 2019). A later Triton implementation reported improved token efficiency over matched dot-product Transformers on selected reasoning, mathematics, coding, and logic evaluations, providing early empirical evidence that explicit trilinear structure can alter scaling behavior in some regimes (Roy et al., 2025). These results remain architecture- and training-specific.
+
+Strassen Attention was motivated by lower bounds for one-layer softmax attention on Match3 and composition tasks. It uses a structured combination of pairwise terms to obtain more expressive one-layer computation with subcubic theoretical complexity (Kozachinskiy et al., 2025). Poly-attention then defined a broad family parameterized by multilinear attention polynomials, encompassing ordinary, tensor, and Strassen attention. Of particular relevance, its tree-structured polynomial class can implement fixed-depth function composition with exact quadratic-time algorithms under its formal model (Chakrabarti et al., 2026). This shows that “higher order” need not mean a dense monomial over every variable: the **interaction topology of the polynomial** matters as much as its nominal arity.
+
+Higher-Order Modular Attention combines pairwise and local triadic terms for protein sequences and reports gains on three TAPE tasks (Amiraslani and Gao, 2026). Higher-Order Transformers use Kronecker-structured attention to preserve multiple tensor axes while avoiding attention quadratic in the flattened total size (Omranpour et al., 2024). Tensor Product Attention factorizes query, key, and value representations to reduce cache cost (Zhang et al., 2025). These systems demonstrate complementary ideas—polyadic scoring, structured polynomial interactions, mode-preserving factorization, and compact QKV storage—but do not by themselves define persistent relation identity, relation qualification, branch management, or multiscale contraction.
+
+## 3.2 Graphs, hypergraphs, and topological complexes
+
+Graph networks provide a general interface for entity- and relation-centric computation, and Interaction Networks showed how object and relation modules can support learned physical simulation (Battaglia et al., 2016; Battaglia et al., 2018). Neural Relational Inference learns latent pairwise interaction graphs from observations (Kipf et al., 2018). Standard message-passing graph networks have known expressivity limits related to the one-dimensional Weisfeiler–Leman test; higher-order GNNs and invariant tensor networks increase expressivity by operating on tuples or higher-order tensors at additional cost (Xu et al., 2019; Morris et al., 2019; Maron et al., 2019).
+
+Hypergraphs represent relations connecting more than two nodes. Hypergraph Transformers combine global attention with incidence-aware structure, while SPHINX learns latent hyperedges when they are not supplied (Liu et al., 2024; Duta and Liò, 2025). Hyper-relational knowledge graph models such as StarE preserve qualifier roles around a base fact, illustrating why arbitrary auxiliary arguments and role identity matter (Galkin et al., 2020).
+
+Simplicial and cellular models go beyond set-valued hyperedges by representing incidence across nodes, edges, faces, and higher cells. Simplicial Neural Networks, Simplicial Attention Networks, topological deep learning frameworks, and the Cellular Transformer show how data at different grades can communicate while preserving orientation or incidence structure (Ebli et al., 2020; Goh et al., 2022; Hajij et al., 2022; Ballester et al., 2024). These models supply important mathematical substrates, but a general cognitive relation need not be a simplex, and a persistent event may have ordered roles, uncertainty, provenance, and branch identity absent from the topological carrier.
+
+## 3.3 Object-centric representations and variable binding
+
+Object-centric learning seeks to decompose scenes into exchangeable slots that bind to task-relevant entities. Slot Attention demonstrated that iterative competitive attention can produce object-like representations and improve compositional generalization on selected tasks (Locatello et al., 2020). Deep Sets and Set Transformers provide permutation-invariant and permutation-equivariant computation over unordered collections (Zaheer et al., 2017; Lee et al., 2019).
+
+Object slots alone do not solve role binding. The same entities can participate in multiple relations with different roles. Tensor-product representations distinguish fillers from roles and provide one mathematical approach to explicit binding (Smolensky, 1990). The Tensor-Product Transformer used explicit relational encodings to reduce ambiguity produced by repeatedly mixing retrieved values (Schlag et al., 2020). The RDC adopts the requirement of role–filler separation without requiring one fixed tensor-product implementation.
+
+## 3.4 Geometry and continuous fields
+
+Physical and scientific data require transformation laws that generic token attention does not automatically respect. SE(3)-Transformers, E(n)-equivariant graph networks, and Equiformer incorporate rotational, translational, reflection, or permutation equivariance into learned computation (Fuchs et al., 2020; Satorras et al., 2021; Liao and Smidt, 2022). Geometric deep learning provides a broader account of how symmetry and domain regularity guide architecture design (Bronstein et al., 2021).
+
+Not every state should be represented as a finite set of object tokens. Neural operators learn mappings between function spaces and can be discretization-invariant; continuum attention extends attention to function-space operators (Kovachki et al., 2021; Calvello et al., 2024). The RDC therefore includes both a discrete relational complex and continuous field substrates, coupled through typed interfaces rather than flattened into one universal token list.
+
+## 3.5 Hierarchy, adaptive compute, and compilation
+
+Differentiable pooling learns hierarchical graph coarsenings (Ying et al., 2018). Adaptive Computation Time, Universal Transformers, Mixture-of-Depths, and sparse expert routing allocate depth, token processing, or parameters dynamically (Graves, 2016; Dehghani et al., 2019; Raposo et al., 2024; Fedus et al., 2021). DreamCoder grows reusable symbolic libraries from solved tasks, illustrating how repeated problem-solving structure can become a more compact language for future search (Ellis et al., 2020). Tensor decompositions such as CP, Tucker, and tensor-train formats provide complementary means of compressing multilinear structure (Kolda and Bader, 2009; Oseledets, 2011).
+
+The missing step is to make **relational order, topology, and abstraction scale themselves adaptive computational resources**, then connect adaptation to persistent identity, verification, contraction, and hardware lowering. Existing work typically fixes one of the following in advance: the carrier structure, relation arity, tensor factorization, object count, attention polynomial, or pooling topology. The RDC instead treats these as compile-time and runtime decisions governed by typed contracts.
+
+## 3.6 The missing conjunction
+
+The proposed contribution is not any one mechanism above. It is the conjunction:
+
+$$
+\begin{aligned}
+&\text{typed axes}
++\text{adaptive relational order}
++\text{sparse polyadic kernels}\\
+&+\text{role-sensitive reification}
++\text{relations among relations}\\
+&+\text{branch-aware epistemic state}
++\text{object--field coupling}\\
+&+\text{reversible multiscale contraction}
++\text{operator compilation}.
+\end{aligned}
+$$
+
+This conjunction changes the target from “a better attention layer” to “a machine that constructs and maintains the structure over which cognition operates.”
+
+# 4. Formal Model
+
+## 4.1 Typed relational state
+
+At time $t$, the RDC maintains a branch-indexed state
+
+$$
+\mathcal{W}_t=
+\left(
+\mathcal{V}_t,
+\mathcal{F}_t,
+\mathcal{R}_t,
+\mathcal{H}_t,
+\mathcal{C}_t,
+\mathcal{P}_t
+\right),
+$$
+
+where:
+
+- $\mathcal{V}_t$ is a set of entity objects;
+- $\mathcal{F}_t$ is a family of continuous or discretized fields;
+- $\mathcal{R}_t$ is a set of typed relation objects;
+- $\mathcal{H}_t$ is a persistent directed acyclic graph of actual and counterfactual branches;
+- $\mathcal{C}_t$ is a hierarchy of contraction and expansion maps;
+- $\mathcal{P}_t$ is provenance, uncertainty, evidence, and lifecycle metadata.
+
+An entity is not merely a vector. It is a stable handle plus a mutable, versioned state:
+
+$$
+v_i=
+(\text{id},\text{type},\text{state},\text{geometry},\text{time},
+\text{branch},\text{provenance},\text{uncertainty},\text{status}).
+$$
+
+Its latent representation may change across models or checkpoints without changing its identity. Conversely, two similar embeddings need not denote the same entity.
+
+A relation schema $\tau$ declares a finite set of roles
+
+$$
+\operatorname{Roles}(\tau)=\{\rho_1,\ldots,\rho_k\},
+$$
+
+together with type constraints, role symmetries, directionality, temporal semantics, required evidence, legal transformations, and downstream uses. A relation instance is
+
+$$
+r=
+(\text{id},\tau,\beta,b,I,z,u,\pi,\delta,\sigma),
+$$
+
+where:
+
+- $\beta:\operatorname{Roles}(\tau)\rightarrow \mathcal{V}_t\cup\mathcal{R}_t\cup\mathcal{F}_t$ binds roles to entities, relation objects, or field regions;
+- $b\in\mathcal{H}_t$ is the world branch;
+- $I$ is a time point or interval;
+- $z$ is a learned or symbolic relation state;
+- $u$ is calibrated uncertainty or a richer belief object;
+- $\pi$ is provenance and evidence lineage;
+- $\delta$ is a set of known defeaters, omissions, or invalidation triggers;
+- $\sigma$ is lifecycle status.
+
+Allowing $\beta$ to bind relation objects as arguments gives relations among relations. For example,
+
+$$
+\operatorname{CAUSES}(\text{cause}=r_1,\text{effect}=r_2)
+$$
+
+or
+
+$$
+\operatorname{EVIDENCE\_FOR}(\text{observation}=r_3,\text{claim}=r_4).
+$$
+
+No separate primitive fifth-order tensor is required when a cause or claim already has several participants.
+
+## 4.2 Semantic arity, computational arity, and storage arity
+
+The architecture distinguishes three orders.
+
+**Semantic arity** $a_s(r)$ is the number of role-bearing arguments in the relation schema. A transfer with giver, recipient, object, authorization, and jurisdiction has semantic arity five.
+
+**Computational arity** $a_c(o)$ is the number of items jointly scored by one primitive operator $o$. Ordinary attention has $a_c=2$; a triadic kernel has $a_c=3$.
+
+**Storage arity** $a_m$ is the arity of the persistent representation used to encode the relation. In the RDC, the default persistent storage uses relation nodes and typed incidence edges, so $a_m=2$ even when $a_s$ is arbitrary.
+
+These quantities need not coincide:
+
+$$
+a_s(r)\neq a_c(o)\neq a_m.
+$$
+
+A five-role event may be discovered through a sequence of pairwise and triadic tests, stored as one event node plus five role edges, and later processed by pairwise message passing among event and participant nodes. Conversely, a triadic kernel may be used transiently to detect a geometric constraint that is later stored as a unary property of a contracted macro-object.
+
+This separation is the foundation for bounded computational arity with unbounded semantic structure.
+
+## 4.3 Exact role-preserving reification
+
+**Proposition 1 — Finite relation reification.**  
+Let $\mathcal{S}$ be a finite relational structure containing relation instances of arbitrary finite arity, with typed and ordered roles. There exists a finite typed bipartite incidence graph $G(\mathcal{S})$ containing entity nodes, relation-instance nodes, and binary role-labelled edges such that $\mathcal{S}$ can be reconstructed exactly up to identifier renaming.
+
+**Construction.** For every entity $v$, create an entity node. For every relation instance
+
+$$
+r=\tau(a_1,\ldots,a_k),
+$$
+
+create a relation node $\hat r$ labelled with schema $\tau$. For each role $\rho_j$, create the directed labelled edge
+
+$$
+\hat r\xrightarrow{\rho_j}a_j.
+$$
+
+Copy the relation’s time, branch, uncertainty, provenance, and lifecycle metadata onto $\hat r$ or onto typed metadata edges.
+
+**Recovery.** For each relation node $\hat r$, read its schema label and role-labelled outgoing edges. This recovers the original ordered tuple and metadata. Symmetric roles can be declared as equivalence classes under a permutation group rather than assigned arbitrary order.
+
+**Logical translation.** An atomic formula
+
+$$
+\tau(a_1,\ldots,a_k)
+$$
+
+is equivalent in the incidence representation to
+
+$$
+\exists \hat r\,
+\left[
+\operatorname{Type}(\hat r,\tau)
+\land
+\bigwedge_{j=1}^{k}\operatorname{Role}_{\rho_j}(\hat r,a_j)
+\right].
+$$
+
+Thus finite arbitrary-arity facts can be represented without an unbounded family of storage primitives. The result does not imply that learning or querying the reified representation is always efficient. It establishes only lossless representational sufficiency.
+
+### Consequence
+
+Primitive higher-order kernels are justified by **discovery and computational efficiency**, not by a belief that arbitrary semantic arity requires arbitrary tensor order. The RDC may use a triadic operator because it recognizes a three-way dependency more efficiently than repeated pairwise layers. Once recognized, the relation can be reified and manipulated through bounded-order operations.
+
+## 4.4 Relation order as an operational property
+
+The “true order” of a dependency is context-, task-, and representation-relative. A function that appears triadic under one variable set may become pairwise after introducing a latent mediator. A physical three-body term may be approximated by pairwise potentials in one regime and require explicit many-body corrections in another. The RDC therefore does not assign ontological order from architecture alone.
+
+For a target function $f$ over variables indexed by $N$ and a reference context $x^0$, define a baseline-dependent interaction dividend for $S\subseteq N$:
+
+$$
+\Delta_S f(x)
+=
+\sum_{T\subseteq S}
+(-1)^{|S|-|T|}
+ f(x_T,x^0_{N-T}).
+$$
+
+Here $N-T$ denotes the variables outside $T$ within $N$. This Möbius-style term is zero when the contribution of $S$ is completely explained by lower-order subsets relative to the reference. For stochastic tasks, a conditional functional decomposition or intervention distribution is preferable to one fixed baseline.
+
+Let $\mathcal{G}^{\mathrm{lower}}_{S}$ denote the permitted lower-order surrogate family and $\mathcal{G}^{\mathrm{full}}_{S}$ the comparison family that may represent the candidate interaction. A candidate relation on $S$ is **$\epsilon$-irreducible for consumer $q$** if the best lower-order surrogate remains worse by more than $\epsilon$ under the consumer’s evaluation distribution:
+
+$$
+\min_{g\in\mathcal{G}^{\mathrm{lower}}_{S}}
+\mathbb{E}_{x\sim D_q}
+\left[\ell(f(x),g(x))\right]
+-
+\min_{h\in\mathcal{G}^{\mathrm{full}}_{S}}
+\mathbb{E}_{x\sim D_q}
+\left[\ell(f(x),h(x))\right]
+>
+\epsilon.
+$$
+
+The **minimum sufficient relational order** is
+
+$$
+k_{\mathrm{LSO}}(q,\epsilon)
+=
+\min\left\{
+ k:
+ \min_{h\in\mathcal{G}_{\le k}}
+ \mathbb{E}_{D_q}[\ell(f,h)]
+ \le \epsilon
+\right\}.
+$$
+
+This definition is deliberately operational. It depends on the allowed hypothesis families, resource envelope, task distribution, and error tolerance. It can be estimated through matched models, counterfactual deletion, interventions, conditional information measures, or external simulators. Partial information decomposition provides one related language for distinguishing redundancy and synergy among sources (Williams and Beer, 2010), but no single scalar measure should serve as a universal certificate.
+
+## 4.5 Branch-indexed state
+
+A relational system capable of planning or simulation must represent multiple possible worlds. Let $\mathcal{H}_t$ be a persistent branch DAG. Each branch $b$ points to a parent and stores only its changes:
+
+$$
+b=(\text{id},\text{parent},\text{fork cause},\Delta\mathcal{V},\Delta\mathcal{F},\Delta\mathcal{R},\pi).
+$$
+
+Unchanged structures are shared immutably. A hypothetical relation cannot enter the actual-world ledger without an explicit observation, adoption, or action-result transition. This avoids allocating a dense tensor over world $\times$ time $\times$ entity $\times$ relation, while preserving exact branch identity.
+
+The branch tag is part of every relation’s type. Aggregating evidence across branches requires an explicit operation such as marginalization, comparison, or policy evaluation. It is never an ordinary sum over an anonymous batch axis.
+
+## 4.6 Fields and discrete relational objects
+
+A field is represented as
+
+$$
+F:\Omega\times T\times B\rightarrow\mathbb{R}^{d_F},
+$$
+
+where $\Omega$ is a geometric or abstract domain, $T$ is time, and $B$ is branch. The implementation may be a grid, mesh, point cloud, basis expansion, neural operator, PDE solver, or hybrid.
+
+Objects and fields interact through typed couplings:
+
+- an entity samples a field at its support;
+- an entity contributes a source term to a field;
+- a relation imposes a boundary or conservation constraint;
+- a field event creates, merges, or destroys entities;
+- a contracted object exposes multipole, flux, or boundary summaries to the field solver.
+
+This dual representation prevents two symmetric errors: tokenizing every continuous phenomenon into a huge object set, or dissolving persistent entities and role-sensitive events into an anonymous latent field.
+
+# 5. The Relational Dimension Compiler Architecture
+
+## 5.1 Overview
+
+The RDC is a control and representation layer around a registry of computational kernels. It does not require one universal neural backbone. A Transformer may implement several stages; a graph network, neural operator, symbolic solver, database join, or exact simulator may implement others.
+
+The main pipeline is:
+
+1. **Admit and type state.** Convert inputs into branch-indexed observations, entities, fields, and known relations.
+2. **Propose candidate structure.** Generate candidate pairs, tuples, hyperedges, event schemas, field couplings, or contractions.
+3. **Route relational order and operator.** Select the least expensive qualified operator and candidate set under a finite budget.
+4. **Evaluate candidates.** Run pairwise, polyadic, graph, hypergraph, equivariant, field, or symbolic computation.
+5. **Qualify relations.** Test role validity, branch consistency, evidence, calibration, invariance, lower-order sufficiency, and counterfactual behavior.
+6. **Reify accepted relations.** Create persistent relation objects and typed incidence edges.
+7. **Propagate and reason.** Exchange information among entities, relations, fields, and branches.
+8. **Contract stable subcomplexes.** Create macro-objects with declared boundary interfaces and re-expansion triggers.
+9. **Reconcile with new evidence.** Revise, invalidate, split, merge, or retire structures without rewriting history.
+10. **Compile recurring structure.** Distill repeatedly qualified construction paths into faster recognizers or operators, with equivalence and rollback tests.
+
+![Figure 1. High-level dataflow of the Relational Dimension Compiler.](figures/figure1_rdc_architecture.png){#fig:architecture width=95%}
+
+## 5.2 Input contract
+
+A `RelationalConstructionRequest` should minimally contain:
+
+```text
+RelationalConstructionRequest {
+  request_id
+  task_and_consumer
+  branch_id
+  observation_basis
+  belief_or_state_basis
+  entity_handles
+  field_handles
+  available_relation_schemas
+  geometry_and_time_frames
+  permitted_operator_families
+  maximum_primitive_arity
+  required_invariances
+  uncertainty_and_evidence_requirements
+  context_and_memory_handles
+  compute_memory_latency_budget
+  verification_budget
+  authority_ceiling
+  fallback_route
+  prohibited_uses
+}
+```
+
+The request distinguishes what the system *has observed* from what it *believes*, *predicts*, or *wants to test*. It also declares the maximum operator arity and computational budget; a kernel cannot silently escalate from pairwise to dense fourth-order processing.
+
+## 5.3 Output contract
+
+The main output is a `QualifiedRelationalComplexPacket`:
+
+```text
+QualifiedRelationalComplexPacket {
+  packet_id
+  source_request_id
+  branch_id
+  entity_and_macroobject_versions
+  field_domain_versions
+  relation_instances[]
+  role_bindings[]
+  semantic_arity_by_relation
+  primitive_operators_used
+  computational_arity_by_operator
+  proposal_and_qualification_lineage
+  lower_order_surrogate_results
+  counterfactual_and_intervention_results
+  invariance_and_equivariance_results
+  uncertainty_and_disagreement
+  contraction_and_expansion_maps
+  lifecycle_states
+  downstream_permitted_uses
+  prohibited_inferences
+  unresolved_relational_residuals
+  compute_memory_latency_receipts
+  assistance_and_external_tool_receipts
+}
+```
+
+A green packet does not prove world truth. It states that a relational structure passed a declared qualification policy for a declared consumer and use.
+
+## 5.4 Core modules
+
+### 5.4.1 Dimensional typechecker
+
+The typechecker verifies axis semantics, units, symmetries, orientation, branch compatibility, role types, time intervals, and legal contractions. It blocks operations such as:
+
+- averaging mutually exclusive branches;
+- treating a role permutation as equivalent when the schema is directed;
+- using a rotation-variant kernel where equivariance is required;
+- contracting across an unresolved entity identity split;
+- merging observed and predicted states without a reconciliation event.
+
+### 5.4.2 Candidate proposer
+
+Dense enumeration is avoided by multiple proposal channels:
+
+- **pairwise salience:** nearest neighbors, ordinary attention, retrieval scores, or graph adjacency;
+- **geometric locality:** spatial, temporal, causal, or topological neighborhoods;
+- **schema completion:** a known relation schema has unfilled roles;
+- **residual hotspots:** lower-order prediction error concentrates around certain entities or regions;
+- **uncertainty coupling:** variables whose joint observation would reduce uncertainty;
+- **memory retrieval:** prior relation patterns nominate analogous bindings;
+- **planning demand:** a query requests a specific event or constraint;
+- **symbolic trigger:** exact rules identify candidate tuples;
+- **field event detection:** thresholds, singularities, or conserved-flow changes nominate object or event creation.
+
+Candidate proposal is untrusted. A proposal may be generated by a cheap model with high recall, because qualification and cost controls occur later.
+
+### 5.4.3 Relational-order router
+
+For candidate $c$, operator $o$, and current state $s$, estimate
+
+$$
+U(c,o\mid s)
+=
+\mathbb{E}\left[
+\Delta Q
++\alpha\Delta I
++\beta\Delta R
+-\gamma\Delta E
+\mid s,c,o
+\right],
+$$
+
+where:
+
+- $\Delta Q$ is expected task-quality improvement;
+- $\Delta I$ is expected uncertainty or information improvement;
+- $\Delta R$ is expected reusable structural value;
+- $\Delta E$ is expected epistemic or operational risk introduced.
+
+Let $C(c,o)$ include compute, memory, communication, latency, verifier cost, and expected repair. The router selects an activation set $\mathcal{A}$:
+
+$$
+\max_{\mathcal{A}}
+\sum_{(c,o)\in\mathcal{A}}
+\left[U(c,o\mid s)-\lambda C(c,o)\right]
+$$
+
+subject to global and per-order budgets. The result is a knapsack-like conditional-computation problem. Practical implementations may use learned top-$k$ routing, bandits, constrained reinforcement learning, or deterministic policies.
+
+Crucially, the router chooses more than depth. It chooses:
+
+- relational order;
+- operator family;
+- candidate topology;
+- precision;
+- scale;
+- branch resolution;
+- field discretization;
+- verification effort;
+- stopping or abstention.
+
+### 5.4.4 Operator registry
+
+The registry may contain:
+
+| Operator family | Best-suited structure | Typical primitive arity |
+|---|---|---:|
+| Dense or sparse attention | global pairwise content routing | 2 |
+| Tree/poly-attention | structured compositional interactions | 2–$k$ polynomial terms |
+| Triadic/simplicial attention | explicit three-way dependencies | 3 |
+| Graph message passing | known or inferred binary relations | 2 |
+| Hypergraph incidence updates | set-valued group interactions | variable semantic arity; bounded incidence operations |
+| Simplicial/cellular operators | oriented incidence across grades | local bounded grade transitions |
+| Equivariant kernels | geometric objects and relations | usually 2–3 |
+| Neural operators | continuous fields | integral or spectral operator |
+| Tensor contractions | factorized multilinear interactions | bounded contraction nodes |
+| Symbolic constraints and solvers | exact rules, search, proof, optimization | schema-dependent |
+| Database or logic joins | exact role and identity queries | bounded join plan |
+
+An operator declares input/output types, symmetry, computational arity, asymptotic and measured cost, precision envelope, state semantics, and known failure modes.
+
+### 5.4.5 Relation qualifier
+
+The qualifier is separate from the proposer and, where stakes warrant, should use partially independent implementations or evidence. It evaluates:
+
+1. **Type and role validity.** Do participants satisfy the schema, units, role order, multiplicity, and temporal constraints?
+2. **Branch consistency.** Do all arguments exist in the same branch or in an explicitly declared cross-branch comparison?
+3. **Evidence sufficiency.** What observations, rules, simulations, or prior relations support the candidate?
+4. **Lower-order sufficiency.** Does a cheaper lower-order explanation perform comparably?
+5. **Counterfactual necessity.** Does removing or intervening on a participant change the predicted relation as expected?
+6. **Invariance and equivariance.** Does the relation respond correctly to renaming, permutation, rotation, translation, reflection, time shift, or scale change?
+7. **Calibration.** Does confidence match empirical correctness in the relevant regime?
+8. **Alternative hypotheses.** Are competing role bindings or schemas preserved rather than averaged away?
+9. **Downstream risk.** What may consume the relation, and what residuals travel with it?
+10. **Cost justification.** Did the higher-order path improve enough to justify its total burden?
+
+### 5.4.6 Relational store
+
+Qualified relations receive stable identifiers. The store is an incidence graph or richer combinatorial complex augmented with:
+
+- embeddings and symbolic fields;
+- role-labelled edges;
+- time intervals;
+- branch ownership;
+- provenance DAGs;
+- uncertainty objects;
+- defeaters and invalidation dependencies;
+- contraction memberships;
+- lifecycle events;
+- access and privacy policy where applicable.
+
+The store supports exact queries and learned retrieval. Embedding similarity may propose a relation but does not substitute for identity or role binding.
+
+### 5.4.7 Contraction compiler
+
+The contraction compiler discovers stable subcomplexes, creates macro-objects, and defines the boundary interface needed by external consumers. It is discussed in Section 8.
+
+### 5.4.8 Reconciler
+
+New evidence may:
+
+- strengthen or weaken a relation;
+- change uncertainty without changing identity;
+- invalidate one role binding;
+- split one entity into two hypotheses;
+- merge duplicate entities;
+- invalidate descendants;
+- reopen a contracted macro-object;
+- retire a compiled recognizer;
+- create a new branch rather than overwrite the current one.
+
+Historical relation versions remain resolvable. Reconciliation is append-and-supersede, not silent mutation.
+
+# 6. Adaptive Relational Order and Sparse Computation
+
+The RDC treats relational order as an allocated resource rather than a fixed architectural constant. Ordinary pairwise attention is retained because it is a highly effective proposal and communication mechanism. Higher-order computation is introduced where evidence suggests that lower-order structure is insufficient for the current consumer, task, and error tolerance.
+
+## 6.1 Dense order is not the design target
+
+For $n$ entities, an ordered dense $k$-ary score tensor contains $n^k$ entries. Even when self-interactions and permutations are removed, the number of unordered candidate subsets is
+
+$$
+\binom{n}{k},
+$$
+
+which is still combinatorial in $k$. Dense order three is already impractical at long context lengths, and arbitrary dense order is not a plausible general substrate.
+
+The RDC therefore distinguishes four quantities that are often conflated:
+
+1. **Candidate count:** how many tuples are considered.
+2. **Kernel arity:** how many arguments one primitive operator consumes jointly.
+3. **Semantic arity:** how many typed roles a relation instance contains.
+4. **Persistent storage size:** how many accepted entities, incidences, and relation objects remain after qualification.
+
+A system can discover a six-role event without evaluating every six-tuple, using a six-argument primitive, or storing a sixth-order tensor. It may instead construct the event incrementally from constrained candidates, then preserve the event atomically through one relation object and six role-labelled incidences.
+
+## 6.2 Candidate narrowing
+
+Let $\mathcal{N}_i^{(s)}$ be a schema- and task-conditioned neighborhood for anchor entity $i$, containing at most $K_s$ candidates. The neighborhood may be proposed by pairwise attention, geometry, temporal overlap, a symbolic index, a database join, a retrieved schema, or a planner query. Candidate order-$k$ tuples anchored at $i$ are then drawn from
+
+$$
+\mathcal{T}_{i,k}^{(s)}
+\subseteq
+\left(\mathcal{N}_i^{(s)}\right)^{k-1},
+$$
+
+where the exponent denotes a $(k-1)$-fold Cartesian product rather than an ordinary scalar power.
+
+Before pruning and symmetry reduction, the candidate count is bounded by
+
+$$
+O\!\left(nK_s^{k-1}\right),
+$$
+
+rather than $O(n^k)$. This bound is not automatically small: $K_s^{k-1}$ can still grow rapidly. Practical candidate construction therefore combines several filters:
+
+- schema-compatible types and role multiplicities;
+- shared spatial or temporal support;
+- causal ancestry or event co-membership;
+- top-$K$ pair scores;
+- locality windows or multiscale cells;
+- retrieved precedents;
+- uncertainty or prediction-residual hotspots;
+- budget-aware beam search;
+- exact joins over known identifiers;
+- negative constraints that eliminate impossible tuples.
+
+Candidate proposal is permitted to be approximate because qualification remains separate. However, proposal recall must be measured. A sparse architecture that never proposes the correct tuple can look efficient while silently losing the target relation.
+
+## 6.3 Factorized higher-order kernels
+
+A dense learned tensor $W\in\mathbb{R}^{d\times d\times d}$ for a triadic score is expensive in parameters and contractions. Several structured alternatives are available.
+
+A CP-style score is
+
+$$
+s_{ijk}
+=
+\sum_{r=1}^{R}
+(a_r^\top x_i)
+(b_r^\top x_j)
+(c_r^\top x_k).
+$$
+
+A Tucker-style score introduces a compact core $G$:
+
+$$
+s_{ijk}
+=
+G\times_1 Ux_i\times_2 Vx_j\times_3 Wx_k.
+$$
+
+A gated product score may use
+
+$$
+s_{ijk}
+=
+q_i^\top A\bigl(\phi(k_j)\odot\psi(k_k)\bigr),
+$$
+
+while tree-structured polynomial attention composes low-order terms according to a computation tree rather than one dense monomial. Tensor-train and hierarchical tensor formats provide additional choices when the interaction structure has a useful ordering or tree decomposition (Kolda and Bader, 2009; Oseledets, 2011).
+
+These factorizations make different assumptions. CP favors separability; Tucker permits controlled cross-mode coupling; tensor trains favor ordered low-rank interfaces; tree factorizations favor hierarchical composition. The operator registry should therefore expose the assumed factorization and its rank as part of the relation's evidence and cost record. A low-rank approximation may be computationally useful while suppressing precisely the interaction residual the higher-order route was meant to detect.
+
+## 6.4 Relational-order routing
+
+For candidate set $S$ and operator $o$, let
+
+- $\widehat{\Delta L}(S,o)$ be the estimated reduction in task, prediction, or verification loss;
+- $\widehat{I}(S,o)$ be expected information gain;
+- $\widehat{R}(S,o)$ be expected risk reduction or residual closure;
+- $C(S,o)$ be total cost, including proposal, kernel, qualification, memory, communication, verification, and repair;
+- $P(S,o)$ be a penalty for known failure exposure.
+
+The router estimates
+
+$$
+U(S,o)
+=
+\alpha\widehat{\Delta L}(S,o)
++\beta\widehat{I}(S,o)
++\rho\widehat{R}(S,o)
+-\lambda C(S,o)
+-\mu P(S,o).
+$$
+
+Under budget $B$, it chooses an activation set $\mathcal{A}$:
+
+$$
+\max_{\mathcal{A}}
+\sum_{(S,o)\in\mathcal{A}}U(S,o)
+\quad\text{subject to}\quad
+\sum_{(S,o)\in\mathcal{A}}C(S,o)\le B.
+$$
+
+This formulation is descriptive rather than a requirement that the exact combinatorial optimization be solved online. Implementations may use learned gates, contextual bandits, differentiable relaxations, top-$K$ selection, token or relation auctions, or deterministic policies. The important requirement is that the decision expose its cost model, candidate denominator, and fallback.
+
+## 6.5 Least sufficient order
+
+Let $\mathcal{M}_{\le k}$ denote the best qualified model available using primitive interactions of order at most $k$ under a fixed resource envelope. For tolerance $\epsilon$ and consumer-specific loss $L$, define the least sufficient order
+
+$$
+k_{\mathrm{LSO}}
+=
+\min\left\{
+ k:
+ L(\mathcal{M}_{\le k})\le\epsilon
+\right\}.
+$$
+
+In practice, $k_{\mathrm{LSO}}$ is not known globally and may vary by example, region, relation schema, and stage of reasoning. The RDC approximates it through escalation:
+
+1. attempt retrieval, exact lookup, or unary processing;
+2. attempt pairwise interaction;
+3. estimate the unresolved residual and its uncertainty;
+4. propose selected higher-order candidates;
+5. compare them against lower-order rescues under matched resources;
+6. retain only improvements that survive qualification;
+7. compile repeated successful structures into cheaper recognizers or macro-objects.
+
+This policy is a **no-regret design objective**, not an assumed theorem. On lower-order tasks, the adaptive system should approach the cost and quality of the appropriate lower-order baseline. If routing overhead makes it consistently worse, the architecture has failed one of its central hypotheses.
+
+## 6.6 Relational-order certificates
+
+A higher-order relation should carry evidence that it adds information not adequately represented by admitted lower-order terms. Several tests can contribute.
+
+### Functional interaction dividend
+
+For finite participant set $S$, a Möbius or functional-ANOVA-style interaction dividend can be written schematically as
+
+$$
+D(S)
+=
+F(S)-\sum_{T\subsetneq S}D(T),
+$$
+
+where $F(S)$ is a consumer-relative prediction or value functional with participants in $S$ admitted. An order-$|S|$ interaction is material when $\|D(S)\|$ exceeds a declared threshold and is stable under held-out intervention.
+
+### Counterfactual deletion
+
+For triad $(i,j,k)$, compare
+
+$$
+F(i,j,k),\quad
+F(i,j,\varnothing),\quad
+F(i,\varnothing,k),\quad
+F(\varnothing,j,k).
+$$
+
+A candidate triple is not certified merely because the full score is large. The expected role-specific effect of deleting or perturbing each indispensable participant must be observed or otherwise justified.
+
+### Lower-order rescue
+
+A stronger pairwise baseline receives matched or greater parameters, depth, training data, inference compute, memory, and tuning. If it recovers the same generalization and calibration, the explicit higher-order route may still be useful for interpretability or latency, but it cannot claim an order-efficiency advantage.
+
+### Permutation and role controls
+
+For symmetric relations, participant permutations should preserve the relation. For ordered relations, only schema-approved permutations may do so. Role shuffling is a particularly important negative control because a model may recognize co-membership while failing to bind roles.
+
+### Out-of-distribution composition
+
+A relation schema should generalize to unseen fillers and combinations. Memorizing frequent triples is not evidence of learning a reusable triadic relation.
+
+The resulting certificate records the tests actually performed, their evaluator dependencies, the lower-order comparator, unresolved confounders, and the exact consumer for which irreducibility was established. It is never a metaphysical proof that nature contains one unique higher-order cause.
+
+## 6.7 Update algorithm
+
+A single RDC update can be expressed as follows.
+
+```text
+Algorithm 1: RELATIONAL_UPDATE
+Input:
+  typed observations O_t
+  prior relational state W_t
+  task/consumer contract Q
+  resource budget B
+  operator registry K
+Output:
+  updated state W_{t+1}
+  qualified relational packet P_t
+
+1.  Admit and type-check O_t; retain rejected or ambiguous inputs.
+2.  Reconcile entity, field, time, branch, and provenance identities.
+3.  Retrieve relevant relation schemas, precedents, and contracted objects.
+4.  Run cheap unary and pairwise proposal operators.
+5.  Estimate unresolved residuals and order-value candidates.
+6.  Allocate budget across selected higher-order, field, geometric,
+    symbolic, or exact operators.
+7.  Execute sparse/factorized candidate kernels.
+8.  Qualify candidates against types, roles, branches, evidence,
+    counterfactuals, invariances, lower-order rescues, and calibration.
+9.  Reify accepted relations; preserve rejected and unresolved candidates
+    as typed residuals when material.
+10. Propagate relation-to-entity, entity-to-relation, relation-to-relation,
+    and field-to-object updates under declared operator semantics.
+11. Evaluate contraction, expansion, invalidation, and compilation triggers.
+12. Emit the branch-local relational packet, cost receipt, and lifecycle events.
+```
+
+The update is not one monolithic neural layer. Different stages may be learned, deterministic, probabilistic, symbolic, human-reviewed, or hybrid. What unifies them is the typed relational intermediate representation and the explicit movement of state.
+
+# 7. Bounded Computational Arity and Unbounded Semantic Arity
+
+The most important architectural result is that a system need not choose between pairwise primitives and arbitrary semantic relations. It can preserve arbitrary relation structure through reification while using higher-order kernels selectively for discovery, disambiguation, and efficient inference.
+
+## 7.1 Relation instances as objects
+
+Consider the event
+
+$$
+\operatorname{TRANSFER}(
+\text{giver}=A,
+\text{recipient}=B,
+\text{object}=C,
+\text{authorization}=D,
+\text{time}=\tau,
+\text{jurisdiction}=J).
+$$
+
+Its semantic arity is six. The RDC creates an event object $r_{742}$ with typed incidence edges:
+
+$$
+\begin{aligned}
+r_{742}&\xrightarrow{\texttt{giver}}A,\\
+r_{742}&\xrightarrow{\texttt{recipient}}B,\\
+r_{742}&\xrightarrow{\texttt{object}}C,\\
+r_{742}&\xrightarrow{\texttt{authorization}}D,\\
+r_{742}&\xrightarrow{\texttt{time}}\tau,\\
+r_{742}&\xrightarrow{\texttt{jurisdiction}}J.
+\end{aligned}
+$$
+
+The event is one addressable object. A later relation can use it as an argument:
+
+$$
+\operatorname{CAUSES}(
+\text{cause}=r_{742},
+\text{effect}=r_{743}).
+$$
+
+A claim, plan, or evidence relation can then refer to the causal relation itself. The hierarchy is open-ended even though each incidence update remains binary and each qualification kernel may use only bounded primitive arity.
+
+![Figure 2. Bounded computational arity supports unbounded semantic arity by reifying relation instances as nodes with typed role incidences. Relations can then participate in further relations.](figures/figure2_reification.png){#fig-reification width=92%}
+
+## 7.2 Exactness and information preservation
+
+Reification is exact only when the following are preserved:
+
+- relation-instance identity;
+- relation schema and version;
+- ordered, unordered, symmetric, or antisymmetric role semantics;
+- role multiplicity and optionality;
+- participant identity;
+- valid time and observation time;
+- branch identity;
+- qualifiers and contextual restrictions;
+- uncertainty and alternatives;
+- provenance and defeaters.
+
+An untyped star graph is insufficient. If all edges are generic `participates_in` edges, the representation loses the distinction between giver and recipient. Likewise, collapsing duplicate role incidences may destroy multiplicity. The exactness claim concerns a typed incidence representation, not arbitrary graphification.
+
+## 7.3 Semantic arity is not primitive order
+
+A semantic relation of arity $m$ can be recognized through several computational strategies:
+
+1. one $m$-ary kernel;
+2. a sequence of pairwise joins;
+3. pairwise proposal followed by one selective triadic disambiguation;
+4. a tree of low-order contractions;
+5. retrieval of a known schema instance followed by exact role checks;
+6. a symbolic constraint solver;
+7. a learned event detector that emits the complete relation object;
+8. a hybrid of these methods.
+
+The best strategy depends on data structure, hardware, prior knowledge, and the relation's conditional independence structure. Primitive order is therefore an implementation choice, while semantic arity is part of the represented claim.
+
+## 7.4 Why retain selective triadic kernels
+
+If all relations can be stored through binary incidence, why use higher-order computation at all?
+
+Because representational equivalence does not imply computational equivalence. A triadic kernel may detect a joint pattern in one operation that a pairwise system requires greater depth, width, memory, numerical precision, or training data to reconstruct. It may expose a useful inductive bias for three-body physics, geometric orientation, conditional catalysis, role binding, or multi-entity constraints. The lower-bound and poly-attention literature provides formal examples of this distinction in restricted settings (Sanford et al., 2023; Kozachinskiy et al., 2025; Chakrabarti et al., 2026).
+
+The RDC therefore assigns higher-order kernels a precise role:
+
+> Higher-order kernels are **candidate-discovery and local-inference accelerators**. Reified relation objects are the **persistent semantic representation**.
+
+This division prevents a transient compute tensor from becoming the permanent ontology of the system.
+
+## 7.5 When order four or above may still be justified
+
+Bounded arity does not mean arity three is universally sufficient. A primitive order-four kernel may be warranted when:
+
+- the target interaction is demonstrably irreducible at order four under matched lower-order baselines;
+- a domain-specific hardware kernel makes the contraction efficient;
+- the relation has an exact algebraic form naturally expressed as a quartic invariant;
+- breaking the interaction into lower-order intermediates creates harmful aliasing or introduces latent variables that are difficult to identify;
+- the operator is used over a very small local candidate set;
+- the benefit survives total-cost and transfer evaluation.
+
+The architecture permits such kernels through the registry. It simply refuses to make an unbounded ladder of dense primitive arities the default design.
+
+## 7.6 Relations among relations and typed metarelations
+
+Reification enables metarelations without special-casing each logical level:
+
+- `CAUSES(event_1, event_2)`;
+- `EVIDENCE_FOR(observation, claim)`;
+- `CONTRADICTS(claim_1, claim_2)`;
+- `PRECONDITION(action, state)`;
+- `INVALIDATES(new_evidence, relation_version)`;
+- `ABSTRACTS(macro_object, subcomplex)`;
+- `QUALIFIED_BY(relation, certificate)`;
+- `ALTERNATIVE_TO(branch_relation_1, branch_relation_2)`.
+
+These relations are typed. A prediction does not become evidence merely because both are relation objects. A causal edge does not become an authorization edge. The dimensional type checker enforces which relation schemas may consume which object and relation types.
+
+## 7.7 The relation calculus as an intermediate language
+
+The persistent relational store functions as a high-level intermediate representation. A relation object can be lowered into:
+
+- tensor kernels for learned prediction;
+- graph or hypergraph batches;
+- database tables and joins;
+- symbolic logic;
+- event-sourcing records;
+- planner predicates and actions;
+- geometric constraints;
+- field boundary conditions;
+- natural-language explanations;
+- executable verification queries.
+
+No single lowering is canonical. Each lowering records its losses and supported operations. This makes the RDC substrate-neutral: the semantic relation persists even as its computational realization changes.
+
+# 8. Semantic Renormalization and Reversible Abstraction
+
+A complete relational architecture must control not only relation order but also scale. Without abstraction, the store grows into an unmanageable history of low-level entities and incidences. Without reversibility, abstraction destroys precisely the detail needed when conditions change. The RDC therefore treats abstraction as **query-relative, evidence-bearing contraction**.
+
+## 8.1 Stable subcomplexes
+
+Let $S\subseteq\mathcal{W}$ be a connected subcomplex containing entities, relations, and possibly fields. A contraction candidate is a map
+
+$$
+\kappa_S:S\rightarrow z_S,
+$$
+
+where $z_S$ is a macro-object. The macro-object is not merely an embedding. It includes a boundary contract
+
+$$
+\partial z_S
+=
+(
+I_S,
+O_S,
+\Sigma_S,
+E_S,
+U_S,
+X_S
+),
+$$
+
+where:
+
+- $I_S$ are admissible external inputs;
+- $O_S$ are externally observable outputs or effects;
+- $\Sigma_S$ is relevant state;
+- $E_S$ is the validity and environment envelope;
+- $U_S$ is uncertainty and unresolved residual;
+- $X_S$ is the set of expansion or invalidation triggers.
+
+The contraction also preserves the provenance link from $z_S$ to the exact subcomplex version from which it was compiled.
+
+## 8.2 Query-relative soundness
+
+A contraction cannot preserve every possible question unless it is lossless. Let $\mathcal{Q}$ be a declared evaluation family of downstream queries and $d$ an application-specific discrepancy measure. The contraction is $\epsilon$-sound for environment class $\mathcal{E}$ when
+
+$$
+\max_{q\in\mathcal{Q},\ e\in\mathcal{E}}
+ d\bigl(q(S,e),q(z_S,e)\bigr)
+\le\epsilon.
+$$
+
+This definition makes abstraction explicitly consumer-relative. A molecule may be a valid macro-object for fluid simulation while requiring expansion for chemical reaction analysis. A function may be treated atomically during high-level program planning but expanded during debugging. A team may be a useful organizational unit for resource allocation but an invalid contraction for individual-rights decisions.
+
+## 8.3 Contraction criteria
+
+A candidate subcomplex should be contracted only when several criteria hold:
+
+1. **Internal stability:** internal relations are persistent or predictably distributed over the relevant horizon.
+2. **Boundary sparsity:** relatively few externally relevant channels cross the boundary.
+3. **Predictive sufficiency:** the boundary state supports the declared query family within tolerance.
+4. **Counterfactual robustness:** ordinary internal perturbations do not materially change external behavior beyond the envelope.
+5. **Identity stability:** the macro-object has a persistent identity and explicit split/merge rules.
+6. **Cost advantage:** contraction reduces total compute, memory, communication, or verification burden.
+7. **Expansion availability:** the source subcomplex or a reconstruction route remains available when triggers fire.
+8. **No hidden authority change:** contraction does not erase participant rights, permissions, obligations, or vetoes relevant to the consumer.
+9. **Calibration:** the abstraction's uncertainty reflects observed contraction error.
+10. **Transfer:** the macro-object remains valid beyond the exact traces used to compile it, within a declared scope.
+
+## 8.4 Expansion and invalidation
+
+Expansion is mandatory when:
+
+- a query falls outside $\mathcal{Q}$;
+- the environment leaves $\mathcal{E}$;
+- an internal anomaly crosses a trigger threshold;
+- a relation inside $S$ is invalidated;
+- an external intervention targets an internal component;
+- uncertainty exceeds the macro-object's envelope;
+- a consumer requires finer provenance, rights, or causal detail;
+- a model or schema migration makes the contraction certificate stale.
+
+Expansion is not failure. It is the normal complement of abstraction. A useful hierarchy oscillates between compression and detail as the task changes.
+
+![Figure 3. Semantic renormalization contracts qualified subcomplexes into macro-objects with explicit boundary interfaces, while preserving provenance and triggers that reopen the internal structure.](figures/figure3_semantic_renormalization.png){#fig-renormalization width=96%}
+
+## 8.5 Recursive scale formation
+
+Repeated contraction yields a hierarchy:
+
+$$
+\text{signals}
+\rightarrow
+\text{features}
+\rightarrow
+\text{objects}
+\rightarrow
+\text{events}
+\rightarrow
+\text{systems}
+\rightarrow
+\text{institutions or theories}.
+$$
+
+The specific levels are domain-dependent. The same relation machinery applies recursively because macro-objects can participate in new relations. This is a form of semantic renormalization: internally detailed structures are replaced by effective objects and interactions appropriate to a coarser scale, without claiming that the coarse description is universally sufficient.
+
+This perspective changes the ontology of a learned system. Objects are not necessarily primitive tokens supplied by a dataset. They may be stabilized relational subcomplexes. Conversely, an object can be reopened into relations when its atomic treatment ceases to be adequate.
+
+## 8.6 Relation compilation
+
+When a relation-construction pattern repeatedly succeeds, the RDC can compile it into a specialized recognizer or operator:
+
+**Compilation path:** proposal → expensive qualification → stable schema circuit → cheap candidate recognizer → periodic requalification.
+
+Compilation may produce:
+
+- a deterministic rule;
+- a learned classifier;
+- a low-rank tensor kernel;
+- a database index;
+- a planner operator;
+- a geometric invariant;
+- a cached macro-object;
+- a procedural program;
+- a specialist model.
+
+The compiled path never inherits unrestricted validity. It carries the training and qualification envelope, known counterexamples, fallback, expiration, and the exact slower route capable of rechecking it. This is how the system becomes more efficient without making its original deliberation disappear from auditability.
+
+## 8.7 Contraction as learned topology
+
+The final architecture learns not only node and edge values but also:
+
+- which entities exist;
+- which relations exist;
+- which subcomplexes should be treated as units;
+- which boundary variables should be exposed;
+- which contraction tree minimizes total burden;
+- when the tree must change.
+
+This is more general than fixed pooling. The output of learning is a dynamic computational topology with explicit semantic and lifecycle contracts.
+
+# 9. Branches, Epistemic Status, and the Action Boundary
+
+A relational model becomes dangerous or misleading when it confuses a coherent internal structure with actuality. The RDC therefore makes possible-world branch and epistemic status first-class types.
+
+## 9.1 Branch-indexed identity
+
+Let $\mathcal{H}$ be a persistent branch DAG. Each branch $h$ records:
+
+- parent branch and fork event;
+- observation basis;
+- interventions or assumptions;
+- model and policy versions;
+- valid time and horizon;
+- uncertainty and support envelope;
+- descendants and invalidations.
+
+An entity may have branch-specific state, and a relation instance belongs to one branch unless declared as a cross-branch comparison. Copy-on-write storage allows branches to share unchanged structure without treating alternatives as simultaneous facts.
+
+A relation in a simulated branch cannot be moved into the actual branch by assignment or averaging. It requires an explicit adoption event, such as observation, intervention, decision, or verified state transition.
+
+## 9.2 Epistemic lifecycle
+
+A relation instance moves through a typed lifecycle such as:
+
+```text
+proposed
+  -> qualified_hypothesis
+  -> admitted_belief
+  -> observed_or_executed
+  -> confirmed | weakened | contradicted | superseded
+  -> archived | retired
+```
+
+Not every domain requires every state, and `observed` does not imply infallible. The purpose is to prevent several distinct claims from collapsing:
+
+- the model proposed a relation;
+- the relation passed structural checks;
+- the system currently believes it;
+- an external observation supported it;
+- an authorized action instantiated it;
+- later evidence confirmed its predicted consequences.
+
+![Figure 4. Branch identity and relation lifecycle remain separate from effect authority. Hypotheses can influence planning only through qualified packets, while actual-world mutation requires an independent action boundary and later reconciliation.](figures/figure4_branch_lifecycle.png){#fig-branch width=96%}
+
+## 9.3 Confidence is not authority
+
+The RDC may estimate high probability, low uncertainty, strong structural coherence, or high expected value. None of these grants permission to mutate external state. A qualified relation packet may support a planner or an authority request, but a separate effect boundary decides whether an action is permitted.
+
+This separation matters even outside safety-critical systems. A relation can be statistically accurate while violating privacy, ownership, jurisdiction, user intent, or experimental protocol. Semantic correctness and authorization are orthogonal predicates.
+
+## 9.4 Evidence and provenance
+
+Every material relation should identify:
+
+- direct observations;
+- transformations and measurements;
+- source relations;
+- models and checkpoints;
+- rules or solvers;
+- candidate-generation route;
+- qualification tests;
+- evaluator dependencies;
+- counterevidence and defeaters;
+- unresolved assumptions;
+- validity interval and expiry triggers.
+
+Provenance is itself relational. It is represented through typed metarelations such as `DERIVED_FROM`, `TESTED_BY`, `CONTRADICTED_BY`, and `VALID_UNDER`. This makes an epistemic graph part of the relational complex rather than an unstructured explanation string.
+
+## 9.5 Reconciliation without retroactive rewriting
+
+When an actual observation differs from a predicted relation, the system creates a discrepancy relation and attributes possible error among:
+
+- observation or entity binding;
+- relation schema;
+- role assignment;
+- model dynamics;
+- branch assumptions;
+- policy selection;
+- evaluator or qualification rule;
+- contraction loss;
+- unknown cause.
+
+The prior prediction remains intact for replay. Calibration and descendants are updated through new lifecycle events. This permits the system to learn from relational errors without rewriting its historical claims as though they had always been correct.
+
+# 10. The Logical Endpoint: A Self-Constructing Computational Topology
+
+The architecture reaches its logical conclusion when relational structure is no longer a fixed input format or one specialist layer. It becomes the typed intermediate substrate through which computation itself is organized.
+
+## 10.1 Beyond a fixed neural graph
+
+Conventional neural networks fix a computational graph or a narrow family of graphs before inference. Mixture-of-experts systems select among components, adaptive-depth systems select how many layers to execute, and graph networks vary the data graph. The RDC generalizes these choices. For each task and state, it may construct:
+
+- entity and field carriers;
+- relation candidates and role structure;
+- branch-local alternatives;
+- operator instances;
+- contraction trees;
+- memory mounts;
+- verification dependencies;
+- execution schedule;
+- expansion and fallback routes.
+
+The system therefore learns a **program of relational computation** as well as the parameters used inside each operator.
+
+## 10.2 Relational intermediate representation
+
+The relational IR contains four coupled layers:
+
+1. **Semantic layer:** entities, fields, relation schemas, roles, branches, and lifecycle state.
+2. **Evidence layer:** provenance, uncertainty, qualification, counterexamples, and residuals.
+3. **Computational layer:** selected operators, factorization ranks, precision, device placement, schedules, and caches.
+4. **Abstraction layer:** contraction maps, macro-object interfaces, compiled recognizers, and expansion triggers.
+
+A legal compiler pass may change the computational realization while preserving the semantic and evidence obligations it claims to preserve. For example, a triadic relation detector may be replaced by a tree of pairwise contractions, but only after matched validation shows that role binding, calibration, and downstream behavior remain within the declared envelope.
+
+## 10.3 Learned contraction graphs
+
+A multilinear computation can often be evaluated through several contraction orders with very different cost. The RDC extends this observation from tensors to relational programs. It can learn or search for a contraction graph that groups strongly coupled variables early and delays weak interactions.
+
+Let $G_c$ be a candidate contraction graph. Its objective may include
+
+$$
+J(G_c)
+=
+L_{\text{task}}
++\lambda C_{\text{compute}}
++\mu C_{\text{memory}}
++\nu C_{\text{communication}}
++\xi L_{\text{semantic-loss}}
++\omega R_{\text{failure}}.
+$$
+
+The lowest arithmetic cost is not automatically best. A contraction that destroys role identity, hides uncertainty, or creates an unverifiable latent bottleneck receives a semantic or governance penalty.
+
+## 10.4 Persistent memory as a relational complex
+
+The active working state is a small loaded subcomplex of a larger persistent store. Retrieval is therefore not limited to text chunks. It may return:
+
+- an entity and its current aliases;
+- an event with role bindings;
+- a causal chain and its counterevidence;
+- a macro-object plus its boundary contract;
+- a field region and discretization;
+- a schema and known counterexamples;
+- a compiled recognizer and its validity envelope;
+- a possible-world branch and fork assumptions.
+
+The memory system can mount the coarse structure first and expand only the portions needed by the current query. This provides a principled form of context management: load relationally coherent, consumer-relevant structure instead of maximizing raw token inclusion.
+
+## 10.5 Possible-world computation
+
+Planning and scientific reasoning require alternative futures and hypotheses. The branch DAG allows structural sharing among worlds. Instead of duplicating the complete state, a branch records only changed entities, relations, fields, and assumptions.
+
+A possible-world query can therefore compare:
+
+$$
+\{\mathcal{W}^{(0)}_{t:t+H},\ldots,\mathcal{W}^{(m)}_{t:t+H}\}
+$$
+
+while retaining which relations are shared, divergent, mutually exclusive, or dependent on one intervention. Relations among branches can express dominance, incompatibility, evidence preference, or contingent plan choice.
+
+## 10.6 Discovery changes the representation language
+
+A system may encounter a recurring relation that its current schema cannot express. The final architecture must be able to propose a new schema, but not silently adopt it. Schema evolution follows a higher-order lifecycle:
+
+1. collect unresolved relation residuals;
+2. propose a candidate schema and role system;
+3. identify existing facts it would reinterpret;
+4. test compression, prediction, causal utility, and counterexamples;
+5. compare against extensions of existing schemas;
+6. review ambiguity and downstream effects;
+7. version the schema if accepted;
+8. migrate or dual-represent existing relations;
+9. preserve rollback and historical interpretation.
+
+This is representational self-modification. It is more consequential than changing one embedding because it changes what the system can state and infer. The schema proposer must therefore be separated from schema acceptance and evidence-state authority.
+
+## 10.7 Cognitive compilation and reflex formation
+
+Repeated expensive relational reasoning can become a lower-cost capability:
+
+**Compilation path:** deliberate structure construction → verified relation program → compiled specialist → cheap reflex with monitoring.
+
+The compiled specialist may emit relation proposals directly. Periodic audits and distribution-shift triggers route samples back through the full slow path. This creates an accumulation mechanism for capability without requiring every future instance to replay the original search.
+
+## 10.8 Substrate neutrality
+
+The RDC is not defined by one neural architecture. Its operators may include Transformers, recurrent networks, state-space models, graph networks, tensor networks, neural operators, exact programs, databases, theorem provers, optimizers, simulators, and human judgments. The stable object is the typed relational contract and lifecycle, not the implementation label.
+
+This is the endpoint of the original dimensional intuition: **the machine does not merely process a tensor of fixed order. It compiles the dimensional, relational, and multiscale structure of the problem into a temporary, qualified computational topology.**
+
+# 11. Efficient Implementation and Hardware Compilation
+
+The proposal is viable only if its irregular semantics can be lowered into efficient regular kernels. Hardware does not automatically reward “higher-dimensional” structure. Dense matrix multiplication is exceptionally optimized; arbitrary sparse tensor contraction can be slower despite favorable asymptotics. The RDC therefore includes hardware compilation as a first-class stage.
+
+## 11.1 Core data structures
+
+A practical implementation can use a structure-of-arrays representation.
+
+### Entity table
+
+```text
+entity_id
+entity_type
+branch_id
+valid_time
+state_handle
+geometry_handle
+field_coupling_refs
+provenance_ref
+lifecycle_state
+```
+
+### Relation table
+
+```text
+relation_id
+schema_id
+schema_version
+branch_id
+valid_time
+observation_time
+confidence_or_posterior
+qualification_state
+provenance_ref
+residual_ref
+contraction_membership
+lifecycle_state
+```
+
+### Incidence table
+
+```text
+relation_id
+role_id
+participant_kind   # entity | relation | field region | literal
+participant_id
+ordinal
+orientation
+multiplicity
+```
+
+### Operator schedule
+
+```text
+operator_id
+operator_family
+input_batch_refs
+schema_batch
+factorization
+precision
+kernel_variant
+device
+cost_budget
+verification_route
+```
+
+Columnar storage permits exact joins and efficient batching. Learned embeddings can be stored separately and versioned independently of semantic identity.
+
+## 11.2 Schema batching
+
+Irregular relation instances become hardware-friendly when grouped by:
+
+- schema;
+- primitive order;
+- feature width;
+- symmetry class;
+- factorization rank;
+- geometric representation;
+- branch and time window;
+- device and precision policy.
+
+Within a batch, incidence gather, multilinear contraction, normalization, and scatter can be fused. Between batches, exact indexes maintain relation identity. This resembles compilation from a dynamic graph into a sequence of regular sparse or dense kernels.
+
+## 11.3 Block sparsity and locality
+
+Candidate masks should exploit known structure:
+
+- spatial voxels, meshes, and neighbor lists;
+- temporal windows and event intervals;
+- graph communities and separators;
+- schema-specific argument indexes;
+- macro-object boundaries;
+- top-$K$ learned neighborhoods;
+- causal cones;
+- privacy or access partitions.
+
+Block-sparse layouts are preferable to arbitrary element sparsity when possible because they improve memory coalescing and accelerator utilization.
+
+## 11.4 Low-rank and structured contraction
+
+The compiler can select among:
+
+- CP and Tucker decompositions;
+- tensor trains;
+- Kronecker products;
+- tree-attention algorithms;
+- separable geometric kernels;
+- spectral field operators;
+- low-rank incidence transforms;
+- quantized or mixed-precision paths.
+
+Ranks and precision are runtime resources. The system may increase them where residuals or uncertainty justify the cost. A relation certificate records the actual approximation used.
+
+## 11.5 Caching
+
+Useful caches include:
+
+- pairwise proposal scores;
+- schema candidate lists;
+- relation embeddings;
+- factor projections;
+- macro-object boundary states;
+- compiled recognizer outputs;
+- branch-shared subcomplexes;
+- exact query results;
+- qualification receipts.
+
+A cache key must include every state element capable of changing semantic validity: model version, schema version, branch, observation basis, factorization, precision, environment, and consumer. Cache reuse without these identities creates topology and evidence drift.
+
+## 11.6 Distributed execution
+
+A large relational complex can be partitioned by macro-object, geometry, schema, branch, or ownership domain. Cross-partition relations become explicit boundary messages. The partitioner should minimize not merely edge cut but weighted semantic traffic, verification dependencies, privacy constraints, and expansion risk.
+
+Global summary objects can provide coarse coordination, while uncertain or high-impact relations trigger finer cross-partition exchange. This offers a principled alternative to globally materializing every pair or tuple.
+
+## 11.7 Complexity envelopes
+
+The following table summarizes representative costs. Exact constants and memory traffic may dominate asymptotic notation.
+
+| Mechanism | Candidate or interaction cost | Persistent representation | Main risk |
+|---|---:|---:|---|
+| Dense pairwise attention | $O(n^2d)$ | usually $O(nd)$ plus cache | quadratic length cost |
+| Dense triadic attention | $O(n^3d)$ or worse | potentially $O(n^3)$ | infeasible enumeration |
+| Local triadic attention | $O(nK^2d)$ | accepted relations only | proposal recall and $K^2$ growth |
+| Factorized triadic kernel | depends on rank $R$, often $O(nK^2R)$ | accepted relations plus factors | rank bottleneck |
+| Hypergraph incidence updates | $O(|\mathcal I|d)$ per pass | $O(|\mathcal V|+|\mathcal R|+|\mathcal I|)$ | hyperedge discovery and oversmoothing |
+| Reified arbitrary-arity relation | creation proportional to arity $m$ | one relation node plus $m$ incidences | schema and role correctness |
+| Macro-object contraction | compilation-dependent | reduced active state plus source map | hidden internal failure |
+| Continuous neural operator | discretization/operator-dependent | field parameters and state | domain validity and solver cost |
+
+The architecture should report measured end-to-end cost, including candidate generation, rejected candidates, qualification, compilation, data movement, verification, and repair. Counting only the final tensor contraction would reward hidden burden.
+
+## 11.8 A reference systems decomposition
+
+A deployable RDC can be decomposed into services or modules without requiring physical separation:
+
+1. identity and schema registry;
+2. entity/field state manager;
+3. candidate proposal engine;
+4. order and operator router;
+5. compiled kernel runtime;
+6. relation qualifier;
+7. relational store and query engine;
+8. contraction/expansion manager;
+9. branch manager;
+10. reconciliation and calibration service;
+11. compilation and specialist registry;
+12. observability and cost ledger.
+
+A monolithic implementation may fuse several roles, but it should preserve the logical state and decision boundaries so failures remain attributable.
+
+# 12. Learning and Training
+
+The full architecture requires objectives beyond next-token prediction. Language modeling may supply useful representations and priors, but it does not directly supervise stable identity, role binding, branch separation, relation lifecycle, contraction fidelity, or order routing.
+
+## 12.1 Training data with known relational structure
+
+A strong curriculum begins with executable generators that produce exact latent relational worlds. Such worlds can include:
+
+- unary attributes;
+- pair relations;
+- irreducible triadic and quartic interactions;
+- ordered and unordered roles;
+- temporal events and processes;
+- dynamic graph and hypergraph topology;
+- continuous fields coupled to objects;
+- counterfactual interventions;
+- multiscale structures;
+- ambiguous observations;
+- adversarial shortcuts and distractors;
+- schema changes and invalidations.
+
+Because the generator knows the ground truth, it can provide exact labels for entity identity, relation schema, role binding, minimal interaction order under the generator, causal intervention effects, branch membership, and valid contractions.
+
+Synthetic supervision is not evidence of open-world success. Its purpose is to isolate mechanisms and defeat architectures that cannot perform the claimed operation even under controlled conditions.
+
+## 12.2 Observation-to-structure learning
+
+The model should learn to infer structure from raw or weakly structured observations:
+
+$$
+O_{1:t}
+\rightarrow
+\widehat{\mathcal{V}}_t,
+\widehat{\mathcal{F}}_t,
+\widehat{\mathcal{R}}_t,
+\widehat{\mathcal{H}}_t.
+$$
+
+Supervision may range from full latent labels to partial role annotations, temporal correspondences, interventions, language descriptions, or only predictive and control outcomes. The architecture should distinguish failures of perception, entity discovery, relation proposal, relation qualification, and dynamics.
+
+## 12.3 Relational dynamics
+
+A transition model predicts not only updated embeddings but structural events:
+
+$$
+\mathcal{W}_{t+1}
+\sim
+\mathcal{T}(\mathcal{W}_t,a_t,\eta_t),
+$$
+
+including:
+
+- entity creation, persistence, merge, split, and retirement;
+- relation creation, update, invalidation, and supersession;
+- field evolution;
+- branch forks;
+- macro-object contraction or expansion;
+- uncertainty changes;
+- observation and action effects.
+
+The transition distribution should retain alternatives when the observation is insufficient to choose one topology.
+
+## 12.4 Order-router supervision
+
+The router can be trained through several signals:
+
+- ground-truth minimal order in synthetic tasks;
+- loss reduction from executing a candidate operator;
+- counterfactual ablations;
+- resource penalties;
+- teacher policies from search;
+- bandit feedback;
+- regret relative to an oracle order policy;
+- distillation from expensive full-order computation;
+- calibration of predicted value of computation.
+
+Crucially, order labels should not be defined only by which architecture generated the data. A task may contain a semantic triple while remaining efficiently solvable by a lower-order sufficient statistic. The target is consumer-relative computational sufficiency, not the visual appearance of arity.
+
+## 12.5 Relation qualification training
+
+Qualification needs positive and negative examples that isolate failure modes:
+
+- correct entities with wrong roles;
+- correct co-membership but false relation type;
+- spurious correlation without intervention effect;
+- relation valid only in another branch;
+- relation valid at one time but stale at another;
+- relation supported by duplicated or dependent evidence;
+- relation produced by an overfit high-order kernel;
+- lower-order explanation with equal predictive utility;
+- invariance and equivariance violations;
+- contraction-induced false relation;
+- deliberately hidden participant;
+- adversarially plausible provenance.
+
+Independent data or evaluators should be used where possible. A proposer trained jointly with its only qualifier can learn to exploit shared blind spots.
+
+## 12.6 Contraction learning
+
+A contraction policy proposes $S\mapsto z_S$. Training signals include:
+
+- query fidelity across held-out queries and environments;
+- memory and compute savings;
+- correct expansion triggers;
+- preservation of uncertainty and provenance;
+- transfer to changed scales or compositions;
+- avoidance of rights or authority loss;
+- rollback after invalidation;
+- comparison with fixed pooling and no-contraction baselines.
+
+The model should be penalized for both under-contraction and over-contraction. Keeping every detail defeats the purpose; hiding task-relevant structure creates abstraction debt.
+
+## 12.7 Composite objective
+
+A representative objective is
+
+$$
+\mathcal{L}_{\mathrm{total}}
+=
+\sum_{j\in\mathcal{J}}\omega_j\mathcal{L}_j,
+$$
+
+where $\mathcal{J}$ contains the task, dynamics, entity, relation, role, counterfactual, invariance, branch, contraction, calibration, compiled-equivalence, compute, structural-complexity, and residual-hiding terms below. The nonnegative weights $\omega_j$ are experiment-scoped trade-off parameters; they cannot authorize the model to omit a hard requirement merely because doing so lowers average loss.
+
+The terms have distinct meanings:
+
+- $\mathcal{L}_{\text{task}}$: downstream utility;
+- $\mathcal{L}_{\text{dynamics}}$: state and topology transition accuracy;
+- $\mathcal{L}_{\text{entity}}$: identity, persistence, split, and merge quality;
+- $\mathcal{L}_{\text{relation}}$: schema and incidence quality;
+- $\mathcal{L}_{\text{role}}$: role-filler binding;
+- $\mathcal{L}_{\text{counterfactual}}$: intervention and deletion fidelity;
+- $\mathcal{L}_{\text{invariance}}$: legal symmetry behavior;
+- $\mathcal{L}_{\text{branch}}$: branch separation and adoption correctness;
+- $\mathcal{L}_{\text{contraction}}$: query-relative coarse-graining fidelity;
+- $\mathcal{L}_{\text{calibration}}$: confidence and residual calibration;
+- $\mathcal{L}_{\text{compiled-equivalence}}$: fast-path agreement within scope;
+- $\mathcal{L}_{\text{compute}}$: measured resource burden;
+- $\mathcal{L}_{\text{structural-complexity}}$: unnecessary entities, relations, and order;
+- $\mathcal{L}_{\text{residual-hiding}}$: unreported uncertainty, omissions, or rejected alternatives.
+
+A single scalar objective may be inappropriate for high-impact settings. Constraints or lexicographic priorities can prevent cost minimization from trading away required identity, branch, rights, or authority invariants.
+
+## 12.8 Curriculum without architectural postponement
+
+A first implementation need not instantiate every domain, but it should exercise the full causal loop of the architecture in a bounded environment:
+
+1. raw observations;
+2. entity and field state;
+3. pairwise proposal;
+4. adaptive higher-order routing;
+5. relation qualification and reification;
+6. branch-local prediction;
+7. contraction and expansion;
+8. action proposal with separate authority;
+9. observed outcome and reconciliation;
+10. compilation of a repeated relation pattern.
+
+This is not a claim that a small benchmark is the final system. It is the smallest experiment that tests the complete organizing hypothesis rather than only one attractive layer.
+
+# 13. RODIE: Relational Order and Dimensional Intelligence Evaluation
+
+The hypothesis requires a benchmark that measures relational structure directly and separates it from raw model scale. RODIE is proposed as a suite, not one leaderboard number.
+
+## 13.1 Evaluation principles
+
+RODIE should enforce:
+
+- known or independently assessed latent structure;
+- strong lower-order and generic-model baselines;
+- matched parameters, data, context, compute, memory, and tuning where claims depend on them;
+- complete candidate and failure denominators;
+- held-out filler, topology, scale, and environment transfer;
+- counterfactual interventions;
+- role-permutation controls;
+- equal-information comparisons;
+- calibration and abstention;
+- total lifecycle cost;
+- reporting by relational order and structural regime.
+
+## 13.2 Suite A: minimal relational order
+
+Tasks are generated from functions with controlled interaction order:
+
+- unary classification;
+- pair matching and equality;
+- Match3-style triple detection;
+- parity and XOR variants;
+- fixed-depth function composition;
+- $k$-way conditional activation;
+- polynomial interaction recovery;
+- mixed-order examples in one distribution.
+
+The primary question is whether the model allocates order correctly and whether explicit order improves depth, width, data, or precision efficiency under matched resources.
+
+## 13.3 Suite B: typed role binding
+
+Examples contain the same participants under different roles:
+
+- giver, recipient, and object;
+- agent, instrument, patient, and location;
+- source, destination, payload, and authorization;
+- reactants, catalyst, condition, and product;
+- caller, callee, argument, and return dependency;
+- theorem premise, rule, substitution, and conclusion.
+
+Splits hold out combinations and role permutations. Metrics distinguish entity recognition, co-membership, schema classification, and exact role assignment.
+
+## 13.4 Suite C: latent structure discovery
+
+The model receives trajectories or multimodal observations without a supplied graph. It must infer:
+
+- entity count and identity;
+- pair and hyperedge structure;
+- changing topology;
+- event boundaries;
+- causal interaction groups;
+- uncertainty over alternative structures.
+
+Baselines include dense attention, latent pairwise graphs, supplied-graph oracles, static hypergraphs, and no-structure models.
+
+## 13.5 Suite D: counterfactual and causal fidelity
+
+Interventions remove, substitute, or perturb participants and relations. The system predicts which outcomes and descendants change. Tests include:
+
+- collider and confounder patterns;
+- catalyst-present versus catalyst-absent reactions;
+- multi-agent coordination requiring all participants;
+- tool-use tasks where the same action fails without permission or location;
+- physical systems with pairwise and genuine many-body terms;
+- program constraints with jointly necessary symbols.
+
+Observational accuracy and intervention accuracy are reported separately.
+
+## 13.6 Suite E: dynamic topology and identity
+
+Entities and relations appear, disappear, merge, split, or change roles over time. The benchmark measures:
+
+- identity continuity;
+- relation-version continuity;
+- stale-topology detection;
+- invalidation propagation;
+- branch-specific state;
+- recovery after mistaken merges or splits.
+
+## 13.7 Suite F: multiscale contraction
+
+Nested systems are constructed with known effective coarse descriptions. The model must:
+
+- identify stable subcomplexes;
+- create macro-objects;
+- answer coarse queries efficiently;
+- expand for fine-grained queries;
+- detect when the coarse model becomes invalid;
+- preserve lineage and uncertainty.
+
+Examples may include modular programs, mechanical assemblies, organizations, molecules, cellular systems, and hierarchical games.
+
+## 13.8 Suite G: geometry and fields
+
+Tasks combine discrete objects with continuous fields:
+
+- particles in fluid or potential fields;
+- rigid and articulated bodies;
+- molecular geometry;
+- weather cells interacting with fronts;
+- robots acting in spatial occupancy and force fields;
+- deformable media.
+
+Evaluations test rotation, translation, reflection, discretization changes, irregular sampling, field resolution, and object–field coupling. Equivariant and neural-operator baselines are required.
+
+## 13.9 Suite H: branches and epistemic separation
+
+The system maintains actual, predicted, simulated, and hypothetical relations. Tests deliberately present attractive simulated outcomes and stale predictions. Metrics include:
+
+- branch leakage rate;
+- false actualization rate;
+- prediction/outcome identity preservation;
+- invalidation accuracy;
+- calibration by branch and horizon;
+- refusal when observation or branch support is inadequate.
+
+## 13.10 Suite I: compilation and reuse
+
+Repeated relation-construction problems test whether the system can compile a verified slow path into a cheaper specialist while preserving:
+
+- accuracy;
+- role binding;
+- calibration;
+- known counterexamples;
+- distribution-shift triggers;
+- rollback to the original path;
+- total cost reduction.
+
+DreamCoder-like library learning, memoization, retrieval, and ordinary fine-tuning provide comparison points (Ellis et al., 2020).
+
+## 13.11 Natural-domain tracks
+
+After mechanism isolation, RODIE should include bounded natural tracks where higher-order structure is independently plausible:
+
+- protein epistasis and cooperative residue effects;
+- molecular and materials many-body interactions;
+- multi-agent coordination;
+- n-ary knowledge and event extraction;
+- causal scientific reasoning;
+- code dependency and constraint analysis;
+- tool-use planning;
+- multimodal event understanding;
+- robotic object–tool–goal–location interactions;
+- climate and earth-system object–field coupling.
+
+A favorable synthetic result does not authorize a general natural-domain claim. Each track needs its own lower-order rescue and domain-valid evaluator.
+
+## 13.12 Metrics
+
+RODIE reports a vector rather than one score:
+
+- downstream task quality;
+- entity precision, recall, and identity switches;
+- relation and incidence precision/recall;
+- exact role-binding accuracy;
+- order-selection accuracy and regret;
+- calibration by order and schema;
+- intervention consistency;
+- branch leakage;
+- contraction fidelity and compression ratio;
+- expansion-trigger precision and recall;
+- transfer across fillers, topology, scale, and environments;
+- active versus total parameters;
+- FLOPs, latency, peak memory, storage, communication, and energy where available;
+- candidate proposal recall and rejected-candidate denominator;
+- verifier and human burden;
+- repair and rollback cost;
+- unsupported-relation and hidden-residual rates.
+
+## 13.13 Required baselines
+
+At minimum:
+
+1. a standard Transformer;
+2. a deeper matched-compute Transformer;
+3. a wider matched-parameter Transformer;
+4. sparse or linear-attention variants where relevant;
+5. recurrent or state-space models;
+6. pairwise graph networks;
+7. higher-order GNNs;
+8. fixed hypergraph or simplicial networks;
+9. fixed triadic attention;
+10. relation-token models without adaptive order;
+11. symbolic or database baselines on exact tasks;
+12. oracle structure and oracle order upper bounds;
+13. no-contraction and fixed-pooling controls;
+14. full RDC ablations.
+
+The benchmark should isolate the proposed mechanism rather than compare one highly engineered system with weak baselines.
+
+# 14. Falsifiable Hypotheses and Decisive Negative Results
+
+The proposal is useful only if it can lose clearly.
+
+## 14.1 H1: order efficiency
+
+**Hypothesis.** On tasks with independently established irreducible $k$-way interactions, adaptive polyadic models reach a target quality with less depth, width, precision, data, or inference cost than strong pairwise baselines.
+
+**Decisive negative.** After matched rescue experiments, pairwise baselines consistently match quality and transfer at equal or lower total cost. In that regime, explicit higher-order computation should be removed or narrowed.
+
+## 14.2 H2: no-regret routing
+
+**Hypothesis.** On unary and pairwise tasks, an adaptive model approaches the quality and cost of the appropriate lower-order specialist.
+
+**Decisive negative.** Routing and qualification overhead produce persistent losses with no compensating robustness. Fixed-order systems are preferable for those workloads.
+
+## 14.3 H3: structural generalization
+
+**Hypothesis.** Typed relation objects improve generalization to unseen fillers, role permutations, and relation compositions.
+
+**Decisive negative.** Improvements disappear when lexical, positional, or graph-construction shortcuts are removed, or ordinary relation tokens perform equally well.
+
+## 14.4 H4: counterfactual fidelity
+
+**Hypothesis.** Irreducibility testing and branch-aware relation state improve intervention prediction and reduce spurious updates.
+
+**Decisive negative.** The system remains observationally strong but causally brittle, or branch bookkeeping adds no measurable benefit over simpler state tracking.
+
+## 14.5 H5: multiscale efficiency
+
+**Hypothesis.** Reversible contraction reduces active memory and compute while preserving declared query families and reopening correctly under shift.
+
+**Decisive negative.** Expansion triggers are unreliable, coarse objects hide critical exceptions, or fixed hierarchical representations achieve the same frontier more simply.
+
+## 14.6 H6: bounded-order sufficiency
+
+**Hypothesis.** A registry dominated by unary, pairwise, and selective triadic primitives, plus relation reification and tree contraction, matches or exceeds systems that rely on dense arbitrary primitive order.
+
+**Decisive negative.** Competent order-four or higher tasks repeatedly require direct high-arity primitives for acceptable efficiency or generalization. The registry should then admit those primitives explicitly rather than defend a dogmatic bound.
+
+## 14.7 H7: compilation gain
+
+**Hypothesis.** Verified relation-construction programs can be compiled into cheaper specialists without losing structural correctness inside their envelope.
+
+**Decisive negative.** The compiled paths overfit, fail to detect shift, or cost more to monitor than the slow path saves.
+
+## 14.8 H8: topology as an explanatory object
+
+**Hypothesis.** Learned relational and contraction topology provides predictive, diagnostic, or scientific value beyond task accuracy.
+
+**Decisive negative.** Topology is unstable across seeds, sensitive to irrelevant perturbations, or no more faithful than post hoc explanations. It should then be treated as a latent computational convenience, not an interpreted model of the domain.
+
+## 14.9 H9: object–field complementarity
+
+**Hypothesis.** A typed hybrid of relational objects and continuous fields outperforms flattening either substrate into the other on coupled systems.
+
+**Decisive negative.** A strong field-only or object-only model matches accuracy, transfer, and cost, making the hybrid unnecessary for the tested regime.
+
+## 14.10 H10: total-system advantage
+
+**Hypothesis.** At least one natural workload exhibits a superior joint frontier across quality, calibration, intervention fidelity, memory, compute, verification, and repair.
+
+**Decisive negative.** Component-level gains are consumed by proposal, qualification, data-structure, compiler, or hardware overhead. The complete system then lacks practical advantage even if some mechanisms remain scientifically interesting.
+
+# 15. Failure Modes, Security Risks, and Epistemic Hazards
+
+A richer relational substrate creates new capabilities and new ways to be wrong.
+
+## 15.1 Relational hallucination
+
+The model may instantiate a precise relation unsupported by evidence. Typed roles can make a hallucination look more authoritative than an unstructured embedding. Mitigations include proposal/qualification separation, provenance requirements, abstention, alternatives, and independent intervention tests.
+
+## 15.2 Hyperedge overproduction
+
+The router may allocate higher order because it improves training loss slightly, creating a dense and uninterpretable store. Complexity penalties, candidate budgets, lower-order rescues, relation expiration, and consumer-specific admission are required.
+
+## 15.3 False reduction
+
+The system may collapse a genuine joint interaction into pairwise terms or an invalid macro-object. This is especially dangerous when the rare higher-order residual controls a high-impact outcome. Held-out interaction tests and expansion triggers should focus on tails, not only average loss.
+
+## 15.4 Pairwise laundering
+
+A claimed higher-order relation may merely encode several pairwise correlations. The architecture must report whether the relation survived lower-order rescue and counterfactual deletion.
+
+## 15.5 Role-binding failure
+
+Correct participants with wrong roles can invert meaning while preserving co-occurrence. Ordered-role controls, typed incidence, and exact role metrics are mandatory.
+
+## 15.6 Axis confusion
+
+The compiler may treat branches as batches, roles as exchangeable set axes, time as space, or confidence as authority. Dimensional typing prevents some errors statically and routes others to runtime checks.
+
+## 15.7 Branch leakage
+
+A hypothetical or simulated relation may enter actual state. Branch ownership, explicit adoption events, copy-on-write storage, and separate effect authority reduce this risk.
+
+## 15.8 False objecthood
+
+A temporary correlation or convenient cluster may be stabilized into a macro-object. The resulting object can persist after the original evidence disappears. Contractions need expiry, anomaly monitoring, and split rules.
+
+## 15.9 Contraction loss and abstraction debt
+
+A macro-object may conceal internal disagreement, minority participants, safety constraints, or failure modes. Query-relative soundness and rights-aware boundary contracts are necessary but not sufficient. High-impact consumers may require mandatory expansion.
+
+## 15.10 Topology drift
+
+Entity identity, relation schemas, incidence, or contraction boundaries may become stale after model, observation, or environment changes. Every derived structure needs invalidation dependencies and versioned migration.
+
+## 15.11 Provenance forgery and relation poisoning
+
+An adversary may inject entities, role bindings, or supporting relations that make a false hyperedge pass qualification. Exact source identity, trust domains, dependency analysis, contradictory evidence, and adversarial tests are required.
+
+## 15.12 Evaluator capture
+
+The same learned biases may affect proposal and qualification. Architectural separation does not guarantee statistical independence. Different models, data, methods, organizations, or deterministic checks may be needed according to consequence.
+
+## 15.13 Hidden oracle burden
+
+A candidate proposer may contain most of the intelligence, making the downstream higher-order kernel appear efficient. Experiments must account for proposal generation, retrieved information, hand-authored schemas, and external tools.
+
+## 15.14 Hardware illusion
+
+A lower asymptotic count can lose to optimized dense attention because of sparse gather, memory traffic, synchronization, or small batch size. Claims must use measured end-to-end cost on target hardware.
+
+## 15.15 Schema capture and representational lock-in
+
+Once downstream systems depend on a relation vocabulary, alternative conceptualizations become costly. The architecture should support schema versioning, plural representations, translations, and unresolved disagreement rather than forcing one ontology prematurely.
+
+## 15.16 Privacy and inference amplification
+
+Explicit relation construction can reveal sensitive associations that were not stored as direct facts. Relation access control must consider derived information, not only source records. Contraction may aggregate individuals in ways that obscure consent or deletion duties.
+
+## 15.17 Explanation overclaiming
+
+A relational graph can be inspectable without being causal, faithful, or human-meaningful. The system must distinguish operational state used by computation from an explanation validated for a particular audience.
+
+## 15.18 Self-modification risk
+
+Schema evolution and compiled specialists can change the system's effective reasoning language. New schemas, operators, and contractions require isolated evaluation, compatibility checks, rollback, and independent acceptance. A component must not certify the only evidence for its own promotion.
+
+# 16. Limitations and Non-Claims
+
+The RDC is a research architecture, not an empirical result.
+
+1. **No general superiority claim.** Ordinary Transformers may already represent many higher-order functions efficiently through depth, width, memory, and training. The proposal predicts advantages only in bounded regimes that must be measured.
+2. **No unique ontology claim.** Multiple relational decompositions may explain the same observations. The architecture must preserve alternatives and consumer-relative validity.
+3. **No solution to symbol grounding.** Typed relation objects make grounding obligations addressable but do not by themselves connect symbols correctly to the world.
+4. **No guarantee of causal truth.** Counterfactual tests improve discipline but can be confounded by bad interventions, incomplete variables, or model error.
+5. **No guarantee of interpretability.** A relation schema may be opaque or unstable even when represented explicitly.
+6. **No automatic safety.** Typed structure, provenance, and branch separation can support governance; they do not guarantee beneficial goals, secure implementation, or correct authority policy.
+7. **No claim that all data should be relationalized.** Some tasks are best served by dense latent representations, continuous fields, or direct function approximators.
+8. **No fixed bound proven sufficient.** Unary, pairwise, and triadic primitives are a falsifiable design preference, not a theorem about all cognition.
+9. **No free efficiency.** Candidate generation, qualification, storage, invalidation, and compiler machinery may exceed the value of explicit structure.
+10. **No solved schema discovery.** Learning reusable, non-spurious relation types from open-world data remains difficult.
+11. **No solved identity problem.** Entity persistence, split, merge, and cross-modal identity remain major sources of error.
+12. **No solved evaluator independence.** Separate modules may still share training data, infrastructure, incentives, and blind spots.
+13. **No universal contraction criterion.** Query-relative abstraction requires defining query families and tolerances that may themselves be incomplete.
+14. **No claim of human-like cognition.** The architecture is motivated by computational structure, not a theory of consciousness or biological equivalence.
+
+These limits are not peripheral caveats. They define the experiments and engineering work required before the architecture should influence consequential systems.
+
+# 17. Reference Implementation Contract
+
+A credible first complete implementation should test the organizing loop in one bounded environment while keeping every major interface explicit.
+
+## 17.1 Required components
+
+1. **Typed world generator or environment** with entities, fields, pair and higher-order relations, interventions, branches, and multiscale structure.
+2. **Observation encoder** that does not receive the latent graph at evaluation time.
+3. **Entity/field state manager** with stable IDs and branch-local state.
+4. **Pairwise proposal model** with measured candidate recall.
+5. **Adaptive order router** selecting among unary, pairwise, and triadic operators.
+6. **At least two higher-order implementations**, such as direct factorized triadic attention and tree-structured low-order contraction.
+7. **Relation qualifier** with role, branch, counterfactual, invariance, calibration, and lower-order-rescue tests.
+8. **Typed relation store** with role-labelled incidence and lifecycle state.
+9. **Contraction/expansion mechanism** tested on known hierarchical structure.
+10. **Branch manager** separating predicted, hypothetical, and actual state.
+11. **Action proposal and independent effect gate** in an interactive environment.
+12. **Outcome reconciler** that preserves prediction identity and invalidates descendants.
+13. **Compilation path** that distills one repeated qualified relation program into a cheaper specialist.
+14. **Complete cost ledger** covering all candidates, rejections, kernels, verification, memory, and repair.
+
+## 17.2 Required comparisons
+
+- standard pairwise Transformer;
+- deeper and wider matched rescues;
+- fixed triadic model;
+- static hypergraph model with oracle and inferred structures;
+- relation-token model without explicit qualification;
+- adaptive model without contraction;
+- adaptive model without branch typing;
+- adaptive model without lower-order rescue;
+- symbolic or exact oracle where applicable.
+
+## 17.3 Acceptance conditions
+
+The implementation is informative only if it demonstrates all of the following in the bounded domain:
+
+- high candidate recall;
+- correct role-sensitive relation construction;
+- calibrated order routing;
+- intervention fidelity;
+- no material branch leakage;
+- query-relative contraction gain with correct expansion;
+- action/outcome reconciliation;
+- compiled-path savings within a measured validity envelope;
+- at least one advantage that survives matched strong baselines;
+- explicit negative results where it does not.
+
+A successful record-shape demo, attractive visualization, or unbalanced benchmark is insufficient.
+
+## 17.4 Public interface sketch
+
+**Request**
+
+```text
+RelationalConstructionRequest {
+  request_id
+  consumer_id
+  task_contract
+  branch_id
+  observation_refs
+  belief_state_ref
+  entity_handles
+  field_handles
+  permitted_schema_versions
+  candidate_operator_families
+  symmetry_and_geometry_contract
+  temporal_scope
+  uncertainty_requirement
+  resource_budget
+  evidence_requirement
+  authority_ceiling
+  fallback_route
+  prohibited_uses
+}
+```
+
+**Response**
+
+```text
+QualifiedRelationalComplexPacket {
+  packet_id
+  request_id
+  branch_id
+  entity_versions
+  field_versions
+  relation_instances
+  typed_incidences
+  computational_orders_used
+  operator_and_factorization_receipts
+  qualification_receipts
+  counterfactual_and_lower_order_tests
+  contraction_and_expansion_maps
+  calibration_state
+  unresolved_alternatives
+  residuals
+  permitted_uses
+  prohibited_inferences
+  cost_receipt
+  lifecycle_events
+}
+```
+
+The packet is a proposal and state representation. It does not grant external effect authority or establish that its relations uniquely describe reality.
+
+# 18. Discussion
+
+## 18.1 What changes relative to a Transformer
+
+The ordinary Transformer asks which tokens should communicate. The RDC asks a larger set of questions:
+
+- What entities and fields currently exist for this task?
+- Which dimensions are geometric, relational, temporal, scalar, branch, or epistemic?
+- Which candidate relations deserve evaluation?
+- What primitive order is worth purchasing?
+- Which operator best matches the structure?
+- Which proposed relations survive qualification?
+- Which relations should become persistent objects?
+- Which stable subcomplexes should become macro-objects?
+- Which abstraction must be reopened?
+- Which repeated relation programs should be compiled?
+- Which historical predictions and branches must remain distinct?
+
+A Transformer may implement several of these modules. The conceptual change is not rejection of attention; it is refusal to treat one fixed attention topology as the complete representational lifecycle.
+
+## 18.2 Relation objects as the bridge between neural and symbolic systems
+
+Neural systems excel at approximate pattern recognition, representation learning, and proposal generation. Symbolic systems excel at identity, role, exact constraints, compositional references, and explicit lifecycle rules. Relation objects provide a shared interface:
+
+- neural operators propose and score them;
+- exact stores preserve identity and roles;
+- probabilistic models attach uncertainty;
+- symbolic systems query and constrain them;
+- simulators update their consequences;
+- planners use them as preconditions and effects;
+- explanations render their selected subgraphs;
+- validators challenge their evidence.
+
+This is not a claim that symbolic relations should replace distributed representations. The relation object can carry embeddings and latent state. The bridge is between **persistent typed identity** and **flexible learned computation**.
+
+## 18.3 Representation and computation co-design
+
+The architecture treats representation choice as part of computation. A relation may be stored as incidence, evaluated by a tensor contraction, explained as a role-labelled event, simulated as a constraint, and compiled into a specialist. Each view is useful for different operations.
+
+The compiler analogy is therefore deeper than a metaphor. High-level semantic structure, intermediate operator graphs, and machine kernels are distinct levels. Optimization is legal only when the compiler can state what was preserved and what was approximated.
+
+## 18.4 A possible new scaling axis
+
+Model capability is often studied as a function of parameters, data, and compute. The RDC suggests additional axes:
+
+$$
+\mathrm{Capability}=f(P,D,H,O,T,M,A,V),
+$$
+
+where $P$ is parameter capacity, $D$ is data, $H$ is effective depth, $O$ is relational order, $T$ is active topology, $M$ is memory, $A$ is abstraction scale, and $V$ is verification effort.
+
+This does not imply monotonic benefit from higher order. The relevant variable is **qualified relational structure per unit total cost**. A smaller model with the right relation schema may outperform a larger unstructured model on one task, while the larger model remains simpler and better overall on another.
+
+## 18.5 Scientific modeling
+
+The architecture may be especially useful where domain theory already distinguishes objects, fields, interactions, symmetries, and scales. Examples include molecular systems, materials, fluid–structure interaction, ecology, climate, and multi-agent dynamics. In these domains, relation proposals can be challenged by invariance, conservation, intervention, and held-out scale tests.
+
+However, scientific usefulness requires more than accurate prediction. Discovered topology must be stable, counterfactually meaningful, and robust to alternative parameterizations. The architecture's explicit relation lifecycle creates a place to record these tests but does not guarantee they pass.
+
+## 18.6 Language and knowledge
+
+Natural language routinely expresses n-ary events, nested propositions, modality, time, evidence, and counterfactuals. Reified relation objects can preserve this structure more explicitly than a flat token stream. Yet language descriptions are not automatically world facts. The branch and epistemic type system is particularly important: “Alice might give Bob the key” should not create the same relation state as an observed transfer.
+
+## 18.7 Planning and agency
+
+Plans are relations among goals, actions, resources, agents, times, preconditions, risks, and predicted outcomes. The RDC can construct typed plan-state relations and compare possible-world branches. Still, planning and authority remain distinct. A structurally excellent plan does not authorize action.
+
+## 18.8 Why the endpoint is not a universal knowledge graph
+
+A static universal graph would repeat the mistakes of a universal flat token list:
+
+- one carrier for every type of state;
+- premature schema commitment;
+- weak treatment of continuous fields;
+- poor branch and temporal semantics;
+- no query-relative abstraction;
+- no dynamic operator selection;
+- no distinction between proposal and qualified relation;
+- no hardware compilation path.
+
+The RDC is a dynamic typed relational complex with plural substrates, alternatives, lifecycle, and compilation. Its graphs are views of a richer state, not the entire ontology.
+
+## 18.9 Why the endpoint is not a dense tensor network
+
+Tensor networks are powerful representations for multilinear structure and contraction. They contribute essential implementation techniques. But a tensor index does not inherently encode persistent entity identity, role meaning, provenance, branch, validity time, or authority. The RDC uses tensor methods as computational lowerings inside a semantic relation system.
+
+## 18.10 What would count as success
+
+The architecture should be considered successful only if it demonstrates a reproducible advantage on complete system metrics, not merely aesthetic structure. A convincing result would show that:
+
+- order routing selects higher-order compute where it is genuinely useful;
+- relation objects improve role-sensitive and counterfactual generalization;
+- contraction reduces active burden without hiding failures;
+- compiled structures lower future cost;
+- branch and provenance state reduce material category errors;
+- the total system remains competitive with strong simpler baselines.
+
+A mixed result is likely. Some domains may benefit from explicit polyadic structure; others may favor dense latent models. The operator registry and adoption discipline are designed for that outcome.
+
+# 19. Conclusion
+
+The intuition of a “cube Transformer” begins with a valid observation: standard self-attention exposes pairwise interaction through a square score matrix, while many real problems contain joint dependencies that are naturally stated over triples, tuples, fields, events, and structures at multiple scales. But replacing a square with a cube does not complete the idea. It conflates geometry with arity, incurs combinatorial cost, fixes one relation order, and provides no account of identity, roles, evidence, branches, abstraction, or lifecycle.
+
+The Relational Dimension Compiler takes the idea to its logical endpoint. It proposes that an intelligent system should construct the typed structure required by the problem rather than forcing every problem through one anonymous tensor organization. It separates semantic arity from primitive computational arity; uses sparse and factorized higher-order kernels only where lower-order computation leaves a valuable residual; reifies accepted relations as persistent role-bound objects; permits relations among relations; couples discrete objects to continuous fields; preserves alternative worlds and epistemic state; and contracts stable subcomplexes into reversible macro-objects.
+
+The central practical claim is deliberately conservative:
+
+> **Bounded computational arity can support unbounded semantic structure when relation instances are reified, typed, qualified, and recursively composable.**
+
+The central architectural claim is more ambitious:
+
+> **Cognition can be organized as compilation of a temporary relational topology—entities, fields, relations, branches, operators, and abstraction scales—rather than execution of one fixed tensor program.**
+
+Whether this architecture improves real systems is an empirical question. RODIE and the hypotheses in this paper define how it can be tested and defeated. The proposal succeeds only where explicit relational structure produces a better joint frontier of quality, generalization, intervention fidelity, calibration, memory, compute, verification, and repair. Where it does not, the correct implementation is the simpler substrate.
+
+The decisive step beyond the cube is therefore not another tensor dimension. It is the ability to **construct, qualify, preserve, compress, reopen, and compile the dimensional structure of reasoning itself**.
+
+# Appendix A. Formal Notes
+
+## A.1 Typed relation schema
+
+A relation schema $\sigma$ is a tuple
+
+$$
+\sigma=(i_\sigma,\mathcal{L}_\sigma,\tau_\sigma,m_\sigma,G_\sigma,t_\sigma,b_\sigma,q_\sigma).
+$$
+
+Here $i_\sigma$ is the stable schema identity; $\mathcal{L}_\sigma$ is the role set; $\tau_\sigma$ gives type constraints; $m_\sigma$ gives multiplicities; $G_\sigma$ is the permitted symmetry group; and $t_\sigma$, $b_\sigma$, and $q_\sigma$ specify temporal semantics, branch policy, and qualification policy.
+
+For role set $\mathcal{L}_\sigma$, an instance is a partial or total role assignment
+
+$$
+\rho_r:\mathcal{L}_\sigma\rightarrow
+\mathcal{V}\cup\mathcal{R}\cup\mathcal{F}\cup\mathcal{D},
+$$
+
+where $\mathcal{D}$ is a literal domain. Multiplicity permits one role to map to an ordered or unordered collection.
+
+## A.2 Typed incidence representation
+
+The incidence representation of instance $r$ is
+
+$$
+I(r)=\{(r,\ell,\rho_r(\ell),o,m):\ell\in\operatorname{dom}(\rho_r)\},
+$$
+
+where $o$ and $m$ encode ordinal/orientation and multiplicity as needed. Given $r$, $\sigma$, and $I(r)$, the original role assignment is recoverable exactly. This establishes representational sufficiency, not efficient learnability.
+
+## A.3 Branch copy-on-write
+
+For child branch $h'$ with parent $h$, define a delta
+
+$$
+\Delta_{h'}=(V_n,V_r,R_n,R_r,F_u,C_u),
+$$
+
+where the components record new and retired entities, new and retired relations, field updates, and certificate updates.
+
+The branch view is resolved by replaying deltas along the parent path with explicit conflict and invalidation semantics. Shared identifiers do not imply shared mutable state.
+
+## A.4 Contraction certificate
+
+A contraction certificate contains
+
+$$
+\chi_S=(
+S,
+z_S,
+\partial z_S,
+\mathcal{Q},
+\mathcal{E},
+\epsilon,
+\text{evaluator},
+\text{tests},
+\text{counterexamples},
+\text{expiry},
+\text{expansion triggers}
+).
+$$
+
+It supports only the declared query and environment envelope. Composition of contraction certificates requires checking that the output envelope of one is admissible to the next; transitivity cannot be assumed under distribution shift.
+
+## A.5 Order-routing regret
+
+Let $o_t^{\mathrm{best}}$ be the best operator in hindsight for example $t$ under the same information and resource contract, and $o_t$ the selected operator. Define cumulative order regret
+
+$$
+\operatorname{Regret}(T)
+=
+\sum_{t=1}^{T}
+\left[
+J_t(o_t)-J_t(o_t^{\mathrm{best}})
+\right],
+$$
+
+where $J_t$ includes task loss and total cost. Reporting only order classification accuracy can hide a router that makes few but extremely expensive mistakes.
+
+# Appendix B. Lifecycle State Sketches
+
+## B.1 Relation lifecycle
+
+```text
+untyped_candidate
+  -> typed_candidate
+  -> rejected
+  -> unresolved
+  -> qualified_hypothesis
+  -> admitted_belief
+  -> observed_or_instantiated
+  -> weakened
+  -> contradicted
+  -> superseded
+  -> archived
+  -> retired
+```
+
+Each transition identifies the actor or process, evidence, prior version, branch, time, and descendants affected. Implementations may use a smaller domain-specific state machine, but they should not collapse proposal, belief, observation, and execution into one boolean.
+
+## B.2 Macro-object lifecycle
+
+```text
+subcomplex_candidate
+  -> boundary_proposed
+  -> contraction_qualified
+  -> active_macro_object
+  -> expansion_requested
+  -> expanded
+  -> requalified
+  -> split | merged | invalidated | retired
+```
+
+## B.3 Compiled specialist lifecycle
+
+```text
+slow_path_pattern
+  -> compilation_candidate
+  -> isolated_training_or_synthesis
+  -> matched_validation
+  -> shadow
+  -> bounded_use
+  -> default_with_monitoring
+  -> narrowed | rolled_back | retired
+```
+
+# Appendix C. Evaluation Checklist
+
+A reported RDC result should state:
+
+- task and consumer;
+- semantic relation schemas;
+- ground-truth or evaluator basis;
+- candidate proposal denominator and recall;
+- primitive operators and maximum arity;
+- factorization and rank;
+- branch and time semantics;
+- relation qualification tests;
+- lower-order rescue baselines;
+- parameter, data, compute, memory, context, and tuning matching;
+- active and total cost;
+- role-binding metrics;
+- counterfactual interventions;
+- calibration;
+- contraction query family and tolerance;
+- expansion tests;
+- compilation and rollback tests;
+- random seeds and confidence intervals;
+- negative and null results;
+- evaluator dependencies;
+- unresolved limitations;
+- exact claims not supported by the experiment.
+
+# References
+
+Amiraslani, B., and Gao, J. (2026). Higher-Order Modular Attention: Fusing Pairwise and Triadic Interactions for Protein Sequences. *arXiv preprint arXiv:2603.11133*.
+
+Ballester, R., et al. (2024). Attending to Topological Spaces: The Cellular Transformer. *arXiv preprint arXiv:2405.14094*.
+
+Battaglia, P. W., et al. (2018). Relational Inductive Biases, Deep Learning, and Graph Networks. *arXiv preprint arXiv:1806.01261*.
+
+Battaglia, P. W., Pascanu, R., Lai, M., Rezende, D. J., and Kavukcuoglu, K. (2016). Interaction Networks for Learning about Objects, Relations and Physics. *Advances in Neural Information Processing Systems 29*.
+
+Bronstein, M. M., Bruna, J., Cohen, T., and Veličković, P. (2021). Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges. *arXiv preprint arXiv:2104.13478*.
+
+Calvello, E., et al. (2024). Continuum Attention for Neural Operators. *arXiv preprint arXiv:2406.06486*.
+
+Chakrabarti, S., et al. (2026). Poly-attention: A General Scheme for Higher-Order Self-Attention. *arXiv preprint arXiv:2602.02422*.
+
+Clift, J., Doryn, D., Murfet, D., and Wallbridge, J. (2019). Logic and the 2-Simplicial Transformer. *arXiv preprint arXiv:1909.00668*.
+
+Dehghani, M., Gouws, S., Vinyals, O., Uszkoreit, J., and Kaiser, Ł. (2019). Universal Transformers. *International Conference on Learning Representations*.
+
+Duta, I., and Liò, P. (2025). SPHINX: Structural Prediction using Hypergraph Inference Network. *Proceedings of the 42nd International Conference on Machine Learning*.
+
+Ebli, S., Defferrard, M., and Spreemann, G. (2020). Simplicial Neural Networks. *NeurIPS Workshop on Topological Data Analysis and Beyond*.
+
+Ellis, K., Wong, C., Nye, M., Sable-Meyer, M., Morales, L., Hewitt, L., Cary, L., Solar-Lezama, A., and Tenenbaum, J. B. (2020). DreamCoder: Growing Generalizable, Interpretable Knowledge with Wake-Sleep Bayesian Program Learning. *arXiv preprint arXiv:2006.08381*.
+
+Fedus, W., Zoph, B., and Shazeer, N. (2021). Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity. *Journal of Machine Learning Research, 23*(120), 1–39.
+
+Fuchs, F. B., Worrall, D. E., Fischer, V., and Welling, M. (2020). SE(3)-Transformers: 3D Roto-Translation Equivariant Attention Networks. *Advances in Neural Information Processing Systems 33*.
+
+Galkin, M., Trivedi, P., Maheshwari, G., Usbeck, R., and Lehmann, J. (2020). Message Passing for Hyper-Relational Knowledge Graphs. *Proceedings of EMNLP 2020*.
+
+Gao, Z., Shi, X., Wang, H., Zhu, Y., Wang, Y. B., Li, M., and Yeung, D.-Y. (2022). Earthformer: Exploring Space-Time Transformers for Earth System Forecasting. *Advances in Neural Information Processing Systems 35*.
+
+Goh, E., Bodnar, C., and Liò, P. (2022). Simplicial Attention Networks. *arXiv preprint arXiv:2204.09455*.
+
+Graves, A. (2016). Adaptive Computation Time for Recurrent Neural Networks. *arXiv preprint arXiv:1603.08983*.
+
+Hajij, M., et al. (2022). Topological Deep Learning: Going Beyond Graph Data. *arXiv preprint arXiv:2206.00606*.
+
+Kipf, T. N., Fetaya, E., Wang, K.-C., Welling, M., and Zemel, R. (2018). Neural Relational Inference for Interacting Systems. *Proceedings of the 35th International Conference on Machine Learning*.
+
+Kolda, T. G., and Bader, B. W. (2009). Tensor Decompositions and Applications. *SIAM Review, 51*(3), 455–500.
+
+Kovachki, N., et al. (2021). Neural Operator: Learning Maps Between Function Spaces. *arXiv preprint arXiv:2108.08481*.
+
+Kozachinskiy, A., et al. (2025). Strassen Attention: Unlocking Compositional Abilities in Transformers Based on a New Lower Bound Method. *arXiv preprint arXiv:2501.19215*.
+
+Lee, J., Lee, Y., Kim, J., Kosiorek, A., Choi, S., and Teh, Y. W. (2019). Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks. *Proceedings of the 36th International Conference on Machine Learning*.
+
+Liao, Y.-L., and Smidt, T. (2022). Equiformer: Equivariant Graph Attention Transformer for 3D Atomistic Graphs. *arXiv preprint arXiv:2206.11990*.
+
+Liu, Y., et al. (2024). Hypergraph Transformer for Semi-Supervised Classification. *arXiv preprint arXiv:2312.11385*.
+
+Locatello, F., et al. (2020). Object-Centric Learning with Slot Attention. *Advances in Neural Information Processing Systems 33*.
+
+Maron, H., Ben-Hamu, H., Shamir, N., and Lipman, Y. (2019). Provably Powerful Graph Networks. *Advances in Neural Information Processing Systems 32*.
+
+Morris, C., Ritzert, M., Fey, M., Hamilton, W. L., Lenssen, J. E., Rattan, G., and Grohe, M. (2019). Weisfeiler and Leman Go Neural: Higher-order Graph Neural Networks. *Proceedings of the AAAI Conference on Artificial Intelligence, 33*, 4602–4609.
+
+Omranpour, M., et al. (2024). Higher-Order Transformers With Kronecker-Structured Attention. *arXiv preprint arXiv:2412.02919*.
+
+Oseledets, I. V. (2011). Tensor-Train Decomposition. *SIAM Journal on Scientific Computing, 33*(5), 2295–2317.
+
+Raposo, D., et al. (2024). Mixture-of-Depths: Dynamically Allocating Compute in Transformer-Based Language Models. *arXiv preprint arXiv:2404.02258*.
+
+Roy, S., et al. (2025). Fast and Simplex: 2-Simplicial Attention in Triton. *arXiv preprint arXiv:2507.02754*.
+
+Sanford, C., Hsu, D., and Telgarsky, M. (2023). Representational Strengths and Limitations of Transformers. *Advances in Neural Information Processing Systems 36*.
+
+Santoro, A., Raposo, D., Barrett, D. G. T., Malinowski, M., Pascanu, R., Battaglia, P., and Lillicrap, T. (2017). A Simple Neural Network Module for Relational Reasoning. *Advances in Neural Information Processing Systems 30*.
+
+Satorras, V. G., Hoogeboom, E., and Welling, M. (2021). E(n) Equivariant Graph Neural Networks. *Proceedings of the 38th International Conference on Machine Learning*.
+
+Schlag, I., Smolensky, P., Fernandez, R., Jojic, N., Schmidhuber, J., and Gao, J. (2020). Enhancing the Transformer with Explicit Relational Encoding for Math Problem Solving. *arXiv preprint arXiv:1910.06611*.
+
+Smolensky, P. (1990). Tensor Product Variable Binding and the Representation of Symbolic Structures in Connectionist Systems. *Artificial Intelligence, 46*(1–2), 159–216.
+
+Vaswani, A., et al. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems 30*.
+
+Williams, P. L., and Beer, R. D. (2010). Nonnegative Decomposition of Multivariate Information. *arXiv preprint arXiv:1004.2515*.
+
+Xu, K., Hu, W., Leskovec, J., and Jegelka, S. (2019). How Powerful Are Graph Neural Networks? *International Conference on Learning Representations*.
+
+Ying, R., You, J., Morris, C., Ren, X., Hamilton, W. L., and Leskovec, J. (2018). Hierarchical Graph Representation Learning with Differentiable Pooling. *Advances in Neural Information Processing Systems 31*.
+
+Zaheer, M., et al. (2017). Deep Sets. *Advances in Neural Information Processing Systems 30*.
+
+Zambaldi, V., et al. (2018). Relational Deep Reinforcement Learning. *arXiv preprint arXiv:1806.01830*.
+
+Zhang, Y., et al. (2025). Tensor Product Attention Is All You Need. *arXiv preprint arXiv:2501.06425*.

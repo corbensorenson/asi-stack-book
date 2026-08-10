@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter
+from functools import cache
 from pathlib import Path
 
 from sync_chapter_source_crosswalks import synchronize_chapter_source_crosswalks
@@ -27,6 +28,7 @@ CONNECTOR_READINESS = ROOT / "sources" / "connector_readiness.json"
 CACHE_MANIFEST = ROOT / "sources" / "cache" / "cache_manifest.json"
 PROOF_TRIAGE = ROOT / "proofs" / "proof_triage.json"
 PER_CHAPTER_EVIDENCE_PLAN = ROOT / "docs" / "per_chapter_evidence_plan.md"
+PAPER_LIBRARY = ROOT / "papers" / "paper_library.json"
 
 
 GLOSSARY = [
@@ -119,6 +121,20 @@ def read_structure() -> dict:
     if not isinstance(structure, dict):
         raise TypeError("book_structure.json must contain an object")
     return structure
+
+
+@cache
+def read_paper_library() -> dict[str, dict]:
+    if not PAPER_LIBRARY.exists():
+        return {}
+    data = read_json(PAPER_LIBRARY)
+    if not isinstance(data, dict) or not isinstance(data.get("records"), list):
+        raise TypeError("papers/paper_library.json must contain an object with a records array")
+    return {
+        str(record["source_id"]): record
+        for record in data["records"]
+        if isinstance(record, dict) and record.get("source_id")
+    }
 
 
 def inventory_by_id(records: list[dict]) -> dict[str, dict]:
@@ -471,6 +487,10 @@ def source_status(record: dict, connector_records: dict[str, dict], cache_record
     cache_status = str(cache_records.get(source_id, {}).get("status", ""))
     url = str(record.get("url", ""))
 
+    if source_id in read_paper_library():
+        if has_note:
+            return "source note available; exact source published in the live-book paper library"
+        return "exact source published in the live-book paper library; source note pending"
     if has_note and connector:
         return "source note available; connector-readable; raw text not published"
     if has_note:
@@ -488,6 +508,10 @@ def source_status(record: dict, connector_records: dict[str, dict], cache_record
 
 def bibliography_status(record: dict, connector_records: dict[str, dict], cache_records: dict[str, dict]) -> str:
     status = source_status(record, connector_records, cache_records)
+    if str(record.get("id", "")) in read_paper_library():
+        if status.startswith("source note available"):
+            return "source note available; exact author manuscript readable in the live-book paper library"
+        return f"{status}; exact author manuscript readable in the live-book paper library"
     if record.get("citation_label") and record.get("arxiv_id"):
         if status.startswith("source note available"):
             return "source note available; citation metadata recorded from primary arXiv record"
@@ -503,6 +527,9 @@ def is_external_literature(record: dict) -> bool:
 
 def public_source_ref(record: dict, label: str = "source") -> str:
     """Render public links while keeping local project locators non-clickable."""
+    source_id = str(record.get("id", ""))
+    if source_id in read_paper_library():
+        return f"[{label}](../papers/{qmd_escape(source_id)}.html)"
     url = str(record.get("url", ""))
     if url.startswith("local-project:"):
         return "local project reference (not publicly linked)"
@@ -602,15 +629,19 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
     connector_records = read_connector_records()
     cache_records = read_cache_records()
     rows = []
+    paper_library = read_paper_library()
     for record in records:
         if is_external_literature(record):
             continue
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
         status = bibliography_status(record, connector_records, cache_records)
+        title = qmd_escape(record.get("title", ""))
+        if record.get("id") in paper_library:
+            title = f"[{title}](../papers/{qmd_escape(record['id'])}.html)"
         rows.append(
             "| `{id}` | {title} | `{priority}` | `{layer}` | {source_ref} | {current_targets} | {status} |".format(
                 id=qmd_escape(record.get("id", "")),
-                title=qmd_escape(record.get("title", "")),
+                title=title,
                 priority=qmd_escape(record.get("priority", "")),
                 layer=qmd_escape(record.get("layer", "")),
                 source_ref=public_source_ref(record),
@@ -623,6 +654,8 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
 This appendix is generated from `sources/source_inventory.json` and current chapter assignments in `book_structure.json`.
 
 This is an independent top-level appendix for Corben's own papers, Corben-supplied source material, recovered project history, and local project references. It is not a combined "sources used" appendix, and it is not split into internal Corben/external parts. It contains only material on the Corben/local-project side of the corpus: Corben-authored papers, Corben-supplied source material, local-project source routes, recovered architecture notes, implementation references, variants, and public-safe source records that are not marked as third-party external literature.
+
+Corben's exact published manuscripts are readable inside the live book through [Corben Papers and Architecture Sources](../papers/index.html). Paper titles and `paper` links in the table open those HTML reader pages. The library preserves original wording and provenance separately from the book's later synthesis.
 
 It is not a claim that every source has been ingested, summarized, citation-normalized, or independently verified. Source-derived claims should not be promoted until the relevant source has a source note and Appendix C has been updated.
 

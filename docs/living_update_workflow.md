@@ -138,6 +138,33 @@ quarto render --to html
 
 Do not mark claims as source-derived or test-backed until the source has actually been ingested, mapped to the claim, passage-reviewed or accepted through an evidence transition, and any claimed test has actually run.
 
+### Publish a Corben paper in the live library
+
+Publishing an author manuscript is a separate decision from mining it. Add the
+source ID to `papers/paper_library.json` only after explicit publication
+authority, exact source custody, a SHA-256 receipt, and a source note exist.
+Then run:
+
+```bash
+python3 scripts/sync_paper_library.py
+python3 scripts/sync_scaffold.py
+python3 scripts/validate_paper_library.py
+quarto render --to html
+quarto render papers --to html
+python3 scripts/validate_paper_library.py --site _site
+```
+
+The second Quarto command builds the unnumbered sibling site at
+`_site/papers/`. Keeping it outside the main Quarto book prevents author
+manuscripts from becoming Chapters 86 onward or changing the canonical
+85-chapter count. Each reader page must retain the exact source download,
+digest, source-note boundary, current chapter lineage, and rights statement.
+The rendered-site check rejects broken local links, altered exact-source bytes,
+source-format `.qmd` leaks, missing Appendix G routes, and accidental numbering
+of manuscripts as Chapters 86 onward.
+Publishing an original manuscript does not validate its claims or move a book
+support state.
+
 ## Bring in Conversation-Mined Context
 
 1. Move the raw packet under `sources/inbox/` so it remains local-only unless explicitly approved for publication.

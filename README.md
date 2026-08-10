@@ -14,6 +14,7 @@ This repository contains the canonical Quarto manuscript, its dynamic structure,
 | Narrative book | A human-oriented route through the architecture. | [Narrative route](https://corbensorenson.github.io/asi-stack-book/products/narrative-book/) |
 | Architecture reference | Interfaces, invariants, protocols, tests, proofs, and implementation horizons. | [Architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Claims, support states, sources, tests, proofs, releases, and residuals. | [Evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
+| Original paper library | Corben's digest-bound papers and architecture sources, with links to the chapters they informed. | [Read the original papers](https://corbensorenson.github.io/asi-stack-book/papers/) |
 
 Projection boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md).
 
@@ -39,7 +40,7 @@ _Current canonical metrics (generated from machine records): **85 manifest chapt
 
 The inventory has 483 public-safe records; 85/85 chapters are externally positioned with 0 explicit external-baseline exceptions. External positioning is not exhaustive literature synthesis. All 85 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 85 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 63 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and no chapter-core promotion.
 
-[Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which records external literature; [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) reports current per-chapter coverage. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. No independent external review is claimed; see [the review ledger](docs/external_review_status.md).
+[Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which records external literature. The [Corben paper library](papers/index.qmd) publishes 47 exact, digest-bound original manuscripts as HTML reading pages and links each one to its current chapter assignments; publication exposes lineage but does not validate or promote the papers' claims. [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) reports current per-chapter coverage. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. No independent external review is claimed; see [the review ledger](docs/external_review_status.md).
 
 Contribution-level prior-art positioning is recorded in
 [docs/defended_contribution_prior_art_positioning.md](docs/defended_contribution_prior_art_positioning.md)
@@ -70,6 +71,7 @@ The compact public contract is checked by [`scripts/validate_trust_surface.py`](
 | Draft chapters or plan proofs | [`docs/book_outline.md`](docs/book_outline.md) |
 | Execute current work | [`docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) and its [machine status](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json) |
 | Audit claims and evidence | [Appendix C](appendices/C_claim_evidence_matrix.qmd) and [`proofs/proof_manifest.json`](proofs/proof_manifest.json) |
+| Read Corben's original papers | [`papers/index.qmd`](papers/index.qmd) and the paper links in Appendix G |
 | Understand repository ownership | [`docs/repository_map.md`](docs/repository_map.md) |
 | Ingest or update the book | [`docs/living_update_workflow.md`](docs/living_update_workflow.md) |
 
@@ -84,6 +86,7 @@ python3 scripts/sync_scaffold.py
 python3 scripts/sync_proof_manifest.py
 python3 scripts/validate_book.py
 quarto render --to html
+quarto render papers --to html
 ```
 
 `book_structure.json` is the only ordering authority. Add, move, merge, or remove chapters there, then regenerate the scaffold; chapter numbering and navigation update automatically. Do not hand-edit `_quarto.yml`.
