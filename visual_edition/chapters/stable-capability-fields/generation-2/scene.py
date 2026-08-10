@@ -1,252 +1,463 @@
-"""Generation-2 visual abstract for Stable Capability Fields.
+"""Generation-two animatic for Stable Capability Fields.
 
-The scene turns the chapter's proposed continuity contract into a concrete
-qualification desk: a field promise surrounds changing implementations while
-scope, authority, evidence, residuals, and recovery remain visible.  It is a
-design-rationale derivative, not evidence of semantic equivalence or deployed
-safe replacement.
+One fictional notice route keeps its name while candidate implementations are
+tested against a consumer-owned semantic and authority gauge. The geometry is
+an explanatory model, not evidence of complete or deployed qualification.
 """
 
 from __future__ import annotations
 
 from manim import (
-    Arrow, Create, Cross, DashedLine, FadeIn, FadeOut, GrowArrow, Indicate, LaggedStart,
-    LEFT, Line, ORIGIN, RIGHT, RoundedRectangle, Text, UP, DOWN, VGroup,
+    AnimationGroup,
+    Arrow,
+    Circle,
+    Circumscribe,
+    Create,
+    DashedLine,
+    DOWN,
+    FadeIn,
+    FadeOut,
+    GrowArrow,
+    Group,
+    LaggedStart,
+    LEFT,
+    Line,
+    RIGHT,
+    RoundedRectangle,
+    Succession,
+    SurroundingRectangle,
+    Transform,
+    UP,
+    VGroup,
+    Wait,
+    Write,
 )
 
-from visual_edition.lib.asi_visuals import BOUNDARY, INK, MUTED, RESIDUAL, ROLLBACK, SURFACE, AsiScene, text
+from visual_edition.lib.asi_visuals import (
+    ACCENT,
+    AUTHORITY,
+    BACKGROUND,
+    BOUNDARY,
+    EVIDENCE,
+    INK,
+    MUTED,
+    RESIDUAL,
+    ROLLBACK,
+    SURFACE,
+    AsiScene,
+    text,
+)
 
 
-GOLD = "#F2BD63"
-GREEN = "#66D58A"
-RED = "#FF6073"
-VIOLET = "#9C82E8"
-BLUE = "#67D5F2"
-DEEP = "#142934"
+FIELD = "#F2BD63"
+OLD = "#67D5F2"
+NEW = "#9C82E8"
+PASS = "#66D58A"
+FAIL = "#FF6073"
 
 
 class StableCapabilityFieldsGeneration2(AsiScene):
-    TARGET_DURATION = 261.975
-    ENDS = [18.65, 37.12, 48.575, 67.845, 79.565, 84.195, 102.965, 110.66, 128.955, 147.335, 165.93, 174.65, 189.93, 200.9, 220.9, 228.975, 245.005, 261.975]
+    TARGET_DURATION = 205.505
+    ENDS = [24.575, 50.975, 83.475, 127.445, 168.640, 205.505]
 
     def setup(self) -> None:
         super().setup()
-        self.camera.background_color = "#0D1D26"
+        self.camera.background_color = BACKGROUND
 
     def wait_until(self, target: float) -> None:
         remaining = target - self.renderer.time
         if remaining > 0:
             self.wait(remaining)
 
-    def play_beat(self, index: int, *animations, settle: float = 0.6) -> None:
+    def beat(self, index: int, sequence: Succession, settle: float = 0.7) -> None:
+        """Play one auditable semantic sequence across a coarse audio block."""
         self.next_section(f"b{index:02d}")
-        remaining = max(0.08, self.ENDS[index - 1] - self.renderer.time)
-        if animations:
-            action_budget = max(0.08, remaining - min(settle, remaining * 0.14))
-            per_animation = max(0.08, action_budget / len(animations))
-            for animation in animations:
-                self.play(animation, run_time=per_animation)
-        self.wait_until(self.ENDS[index - 1])
+        end = self.ENDS[index - 1]
+        remaining = max(0.05, end - self.renderer.time)
+        action_time = max(0.05, remaining - min(settle, remaining * 0.12))
+        children = list(sequence.animations)
+        run_times = []
+        for child in children:
+            if isinstance(child, LaggedStart):
+                run_times.append(1.50)
+            elif isinstance(child, AnimationGroup):
+                run_times.append(0.65)
+            elif isinstance(child, (Transform, Circumscribe)):
+                run_times.append(0.85)
+            else:
+                run_times.append(0.75)
+        total_motion = sum(run_times)
+        if total_motion > action_time:
+            scale = action_time / total_motion
+            run_times = [duration * scale for duration in run_times]
+            gap = 0.0
+        else:
+            gap = (action_time - total_motion) / max(1, len(children) - 1)
+        timed = []
+        for position, (child, run_time) in enumerate(zip(children, run_times)):
+            child.set_run_time(run_time)
+            timed.append(child)
+            if position < len(children) - 1 and gap > 0:
+                timed.append(Wait(gap))
+        self.play(Succession(*timed))
+        self.wait_until(end)
 
     @staticmethod
-    def label(value: str, size: int = 17, color: str = INK, weight: str = "NORMAL") -> Text:
+    def label(value: str, size: int = 18, color: str = INK, weight: str = "NORMAL"):
         return text(value, size=size, color=color, weight=weight)
 
-    def badge(self, value: str, color: str, width: float = 2.25, height: float = 0.46) -> VGroup:
-        shell = RoundedRectangle(width=width, height=height, corner_radius=0.1, stroke_color=color, stroke_width=2.6, fill_color=SURFACE, fill_opacity=1)
-        caption = self.label(value, 12, color, "BOLD")
-        if caption.width > width - 0.18:
-            caption.scale_to_fit_width(width - 0.18)
+    def stage(self, title: str, color: str = FIELD) -> VGroup:
+        shell = RoundedRectangle(
+            width=12.2,
+            height=6.45,
+            corner_radius=0.18,
+            color=BOUNDARY,
+            stroke_width=1.8,
+            fill_color=SURFACE,
+            fill_opacity=0.40,
+        )
+        heading = self.label(title, 23, color, "BOLD").shift(UP * 3.33)
+        rule = Line(LEFT * 5.7, RIGHT * 5.7, color=BOUNDARY, stroke_width=1.2).shift(DOWN * 2.72)
+        return VGroup(shell, heading, rule)
+
+    def chip(self, value: str, color: str, width: float = 1.45) -> VGroup:
+        shell = RoundedRectangle(
+            width=width,
+            height=0.42,
+            corner_radius=0.08,
+            color=color,
+            stroke_width=2.1,
+            fill_color=SURFACE,
+            fill_opacity=0.96,
+        )
+        caption = self.label(value, 11, color, "BOLD")
+        if caption.width > width - 0.16:
+            caption.scale_to_fit_width(width - 0.16)
         caption.move_to(shell)
         return VGroup(shell, caption)
 
-    def panel(self, title: str, color: str, width: float = 2.55, height: float = 1.45) -> VGroup:
-        shell = RoundedRectangle(width=width, height=height, corner_radius=0.16, stroke_color=color, stroke_width=3, fill_color=DEEP, fill_opacity=1)
-        tag = self.badge(title, color, min(width - 0.16, 3.6), 0.4).scale(0.8)
-        tag.next_to(shell, UP, buff=-0.08)
-        return VGroup(shell, tag)
+    def nameplate(self) -> VGroup:
+        plate = RoundedRectangle(
+            width=3.65,
+            height=0.72,
+            corner_radius=0.08,
+            color=FIELD,
+            stroke_width=3,
+            fill_color=SURFACE,
+            fill_opacity=1,
+        )
+        label = self.label("DRAFT NOTICE", 20, FIELD, "BOLD").move_to(plate)
+        return VGroup(plate, label)
 
-    def frame(self, title: str, color: str = GOLD) -> VGroup:
-        shell = RoundedRectangle(width=11.7, height=6.2, corner_radius=0.2, stroke_color=BOUNDARY, stroke_width=2, fill_color="#0F2029", fill_opacity=1)
-        heading = self.badge(title, color, 5.25, 0.56).shift(UP * 2.72)
-        return VGroup(shell, heading)
+    def cartridge(
+        self,
+        label: str,
+        color: str,
+        *,
+        spanish: bool = True,
+        publish: bool = False,
+    ) -> VGroup:
+        body = RoundedRectangle(
+            width=2.55,
+            height=1.72,
+            corner_radius=0.13,
+            color=color,
+            stroke_width=3,
+            fill_color=SURFACE,
+            fill_opacity=1,
+        )
+        title = self.label(label, 16, color, "BOLD").move_to(body.get_center() + UP * 0.56)
+        en = self.chip("EN", PASS, 0.60).move_to(body.get_center() + LEFT * 0.48 + UP * 0.02)
+        es = self.chip("ES" if spanish else "ES —", PASS if spanish else FAIL, 0.66)
+        es.move_to(body.get_center() + RIGHT * 0.43 + UP * 0.02)
+        outlet = self.chip("PUBLISH" if publish else "PRIVATE", FAIL if publish else EVIDENCE, 1.35)
+        outlet.move_to(body.get_center() + DOWN * 0.56)
+        identity = Circle(radius=0.07, color=color, fill_color=color, fill_opacity=1)
+        identity.move_to(body.get_corner(UP + LEFT) + RIGHT * 0.18 + DOWN * 0.18)
+        return VGroup(body, title, en, es, outlet, identity)
 
-    def list_badges(self, names: list[str], colors: list[str], *, x: float = 0, y: float = 0, width: float = 2.15, scale: float = 0.72) -> VGroup:
-        rows = VGroup(*[self.badge(name, colors[i % len(colors)], width) for i, name in enumerate(names)])
-        rows.arrange(DOWN, buff=0.14).scale(scale).shift(RIGHT * x + UP * y)
-        return rows
+    def gauge(self) -> VGroup:
+        shell = RoundedRectangle(
+            width=4.30,
+            height=3.45,
+            corner_radius=0.18,
+            color=FIELD,
+            stroke_width=3.4,
+            fill_color=SURFACE,
+            fill_opacity=0.70,
+        )
+        owner = self.chip("HARBOR LINE PROMISE", FIELD, 2.45).next_to(shell, UP, buff=-0.10)
+        requirements = VGroup(
+            self.chip("EN + ES", PASS, 1.25),
+            self.chip("PRIVATE", EVIDENCE, 1.25),
+            self.chip("ABSTAIN", MUTED, 1.25),
+            self.chip("EXPIRY", AUTHORITY, 1.25),
+            self.chip("RECEIPT", RESIDUAL, 1.25),
+        ).arrange(DOWN, buff=0.16).scale(0.90).move_to(shell.get_center() + LEFT * 1.30)
+        aperture = RoundedRectangle(
+            width=2.35,
+            height=1.75,
+            corner_radius=0.12,
+            color=BOUNDARY,
+            stroke_width=2.4,
+        ).move_to(shell.get_center() + RIGHT * 0.77)
+        fit = self.label("IMPLEMENTATION\nAPERTURE", 12, MUTED, "BOLD").move_to(aperture)
+        return VGroup(shell, owner, requirements, aperture, fit)
+
+    def workload(self, language: str, use: str, color: str) -> VGroup:
+        card = RoundedRectangle(
+            width=2.2,
+            height=1.18,
+            corner_radius=0.10,
+            color=color,
+            stroke_width=2.6,
+            fill_color=SURFACE,
+            fill_opacity=1,
+        )
+        lang = self.label(language, 17, color, "BOLD").move_to(card.get_center() + UP * 0.23)
+        purpose = self.label(use, 11, MUTED, "BOLD").move_to(card.get_center() + DOWN * 0.30)
+        return VGroup(card, lang, purpose)
+
+    def history_rail(self) -> VGroup:
+        line = Line(LEFT * 4.7, RIGHT * 4.7, color=BOUNDARY, stroke_width=2)
+        nodes = VGroup(
+            self.chip("ES FAILURE", FAIL, 1.40),
+            self.chip("TOOL DELTA", FAIL, 1.40),
+            self.chip("LEASE", AUTHORITY, 1.15),
+            self.chip("RECOVERY", RESIDUAL, 1.40),
+        ).arrange(RIGHT, buff=0.60).scale(0.82).move_to(line)
+        return VGroup(line, nodes)
+
+    def focus_lens(self, target, color: str) -> RoundedRectangle:
+        lens = RoundedRectangle(
+            corner_radius=0.12,
+            color=color,
+            stroke_width=4.2,
+            fill_color=color,
+            fill_opacity=0.12,
+        )
+        lens.surround(target, buff=0.16)
+        return lens
+
+    def current(self) -> Group:
+        return Group(*self.mobjects)
 
     def construct(self) -> None:
-        # 1 — the fixed name hides changed obligations
-        f1 = self.frame("ONE NAME · MANY OBLIGATIONS", RED)
-        route1 = self.panel("HARBORLINE ROUTE", BLUE, 2.8, 1.5).shift(LEFT * 3.7)
-        impl1 = self.list_badges(["MODEL", "TOOLS", "POLICY", "RUNTIME"], [BLUE, GOLD, VIOLET, MUTED], x=0, y=0.2, width=1.85, scale=0.62)
-        effects1 = self.list_badges(["FAILURE", "AUTHORITY", "EVIDENCE", "RECOVERY"], [RED, RED, VIOLET, RESIDUAL], x=3.35, y=0.2, width=2.0, scale=0.62)
-        e1 = VGroup(*[Arrow(route1.get_right(), impl1[i].get_left(), color=BLUE, stroke_width=2, buff=0.1) for i in range(len(impl1))], *[Arrow(impl1.get_right(), effects1[i].get_left(), color=RED, stroke_width=2, buff=0.1) for i in range(len(effects1))])
-        s1 = VGroup(f1, route1, impl1, effects1, e1)
-        self.play_beat(1, FadeIn(s1), LaggedStart(*[GrowArrow(x) for x in e1], lag_ratio=0.06), settle=0.9)
+        # b01: familiar identity evidence leaves the consumer promise unanswered.
+        frame1 = self.stage("THE UPGRADE THAT DOES NOT FIT", FIELD)
+        plate1 = self.nameplate().shift(UP * 2.20)
+        old1 = self.cartridge("OLD", OLD).shift(LEFT * 2.15 + DOWN * 0.05)
+        new1 = self.cartridge("NEW", NEW).shift(RIGHT * 2.15 + DOWN * 0.05)
+        interface = self.chip("SAME INTERFACE", ACCENT, 1.80).shift(UP * 1.15)
+        signed = self.chip("SIGNED BUILD", EVIDENCE, 1.65).next_to(new1, UP, buff=0.18)
+        clearer = self.chip("CLEARER ENGLISH", PASS, 1.80).next_to(new1, DOWN, buff=0.18)
+        question = self.label("DEFAULT?", 25, INK, "BOLD").shift(DOWN * 2.14)
+        focus1 = self.focus_lens(old1, OLD)
+        new_focus1 = self.focus_lens(new1, NEW)
+        question_focus1 = self.focus_lens(question, FIELD)
+        self.beat(
+            1,
+            Succession(
+                AnimationGroup(FadeIn(frame1), FadeIn(plate1), FadeIn(old1, shift=RIGHT * 0.24), lag_ratio=0),
+                FadeIn(focus1), FadeIn(new1, shift=LEFT * 0.24), Transform(focus1, new_focus1),
+                FadeIn(interface), FadeIn(signed), FadeIn(clearer), Write(question),
+                Transform(focus1, question_focus1), Circumscribe(question, color=FIELD), FadeOut(focus1),
+            ),
+            settle=2.70,
+        )
 
-        # 2 — silent substitution consequence
-        f2 = self.frame("UPGRADE · TRUST TERMS MOVED", RED)
-        old2 = self.panel("OLD FIELD", GOLD, 2.45, 1.45).shift(LEFT * 3.5 + UP * 0.4)
-        new2 = self.panel("NEW ARTIFACT", BLUE, 2.45, 1.45).shift(RIGHT * 0.1 + UP * 0.4)
-        losses2 = self.list_badges(["STATE STRANDED", "REGRESSION ERASED", "PERMISSION WIDENED"], [RED, RESIDUAL, RED], x=2.85, y=-0.85, width=2.45, scale=0.64)
-        e2 = Arrow(old2.get_right(), new2.get_left(), color=GOLD, stroke_width=3, buff=0.1)
-        cross2 = Cross(new2, stroke_color=RED, stroke_width=3)
-        s2 = VGroup(f2, old2, new2, losses2, e2, cross2)
-        self.play_beat(2, FadeOut(s1), FadeIn(s2), GrowArrow(e2), Create(cross2), LaggedStart(*[FadeIn(x) for x in losses2], lag_ratio=0.12), settle=0.9)
+        # b02: the stable object is a gauge owned by the consumer.
+        old_scene = self.current()
+        frame2 = self.stage("THE PROMISE BELONGS TO THE CONSUMER", FIELD)
+        gauge2 = self.gauge().shift(RIGHT * 1.55 + DOWN * 0.10)
+        plate2 = self.nameplate().next_to(gauge2, UP, buff=0.18)
+        old2 = self.cartridge("OLD", OLD).scale(0.76).move_to(gauge2[3])
+        new2 = self.cartridge("NEW", NEW, spanish=False, publish=True).scale(0.76).shift(LEFT * 3.65)
+        field_name = self.chip("STABLE CAPABILITY FIELD", FIELD, 2.75).shift(LEFT * 3.60 + DOWN * 1.85)
+        field_arrow = Arrow(field_name.get_right(), gauge2.get_left(), color=FIELD, stroke_width=3, buff=0.14)
+        focus2 = self.focus_lens(new2, NEW)
+        requirements_focus2 = self.focus_lens(gauge2[2], FIELD)
+        old_focus2 = self.focus_lens(old2, OLD)
+        self.beat(
+            2,
+            Succession(
+                AnimationGroup(FadeOut(old_scene), FadeIn(frame2), lag_ratio=0),
+                FadeIn(new2, shift=RIGHT * 0.30), FadeIn(focus2), FadeIn(gauge2),
+                Transform(focus2, requirements_focus2), FadeIn(plate2), FadeIn(old2, shift=LEFT * 0.24),
+                FadeIn(field_name), GrowArrow(field_arrow), Transform(focus2, old_focus2),
+                Circumscribe(gauge2[0], color=FIELD), FadeOut(focus2),
+            ),
+            settle=0.80,
+        )
 
-        # 3 — field versus implementation
-        f3 = self.frame("FIELD = PROMISE · CANDIDATE = REALIZATION", GOLD)
-        field3 = self.panel("FIELD CONTRACT", GOLD, 3.1, 2.0).shift(LEFT * 2.8)
-        cand31 = self.panel("CANDIDATE A", BLUE, 2.35, 1.2).shift(RIGHT * 1.5 + UP * 0.85)
-        cand32 = self.panel("CANDIDATE B", VIOLET, 2.35, 1.2).shift(RIGHT * 1.5 + DOWN * 0.85)
-        e3 = VGroup(Arrow(field3.get_right(), cand31.get_left(), color=BLUE, stroke_width=3, buff=0.1), Arrow(field3.get_right(), cand32.get_left(), color=VIOLET, stroke_width=3, buff=0.1))
-        s3 = VGroup(f3, field3, cand31, cand32, e3)
-        self.play_beat(3, FadeOut(s2), FadeIn(s3), LaggedStart(*[GrowArrow(x) for x in e3], lag_ratio=0.12), Indicate(field3), settle=0.8)
+        # b03: one happy path hides opposite semantic and authority failures.
+        old_scene = self.current()
+        frame3 = self.stage("BETTER OUTPUT IS NOT SUBSTITUTION", FAIL)
+        old3 = self.cartridge("OLD", OLD).scale(0.84).shift(LEFT * 3.55 + UP * 0.52)
+        new3 = self.cartridge("NEW", NEW, spanish=False, publish=True).scale(0.84).shift(LEFT * 0.70 + UP * 0.52)
+        en3 = self.workload("ENGLISH", "PRIVATE NOTICE", PASS).shift(RIGHT * 3.72 + UP * 1.55)
+        es3 = self.workload("SPANISH", "PRIVATE NOTICE", FAIL).shift(RIGHT * 3.72 + DOWN * 0.10)
+        draft3 = self.chip("DRAFT STORE", EVIDENCE, 1.65).shift(LEFT * 3.55 + DOWN * 1.48)
+        publish3 = self.chip("PUBLISH TOOL", FAIL, 1.70).shift(LEFT * 0.70 + DOWN * 1.48)
+        old_route = Arrow(old3.get_bottom(), draft3.get_top(), color=EVIDENCE, stroke_width=3, buff=0.10)
+        new_route = Arrow(new3.get_bottom(), publish3.get_top(), color=FAIL, stroke_width=3, buff=0.10)
+        language_links = VGroup(
+            Arrow(en3.get_left(), old3.get_right(), color=PASS, stroke_width=2, buff=0.10),
+            Arrow(en3.get_left(), new3.get_right(), color=PASS, stroke_width=2, buff=0.10),
+            Arrow(es3.get_left(), new3.get_right(), color=FAIL, stroke_width=2, buff=0.10),
+        )
+        verdict = self.label("NARROWER SERVICE · WIDER EFFECT", 20, FAIL, "BOLD").shift(DOWN * 2.22)
+        focus3 = self.focus_lens(new3, NEW)
+        english_focus3 = self.focus_lens(en3, PASS)
+        spanish_focus3 = self.focus_lens(es3, FAIL)
+        outlets_focus3 = self.focus_lens(VGroup(draft3, publish3), FAIL)
+        self.beat(
+            3,
+            Succession(
+                AnimationGroup(FadeOut(old_scene), FadeIn(frame3), lag_ratio=0),
+                FadeIn(old3, shift=RIGHT * 0.22), FadeIn(new3, shift=LEFT * 0.22), FadeIn(focus3),
+                FadeIn(en3, shift=LEFT * 0.22), Transform(focus3, english_focus3),
+                LaggedStart(*[GrowArrow(a) for a in language_links[:2]], lag_ratio=0.18),
+                FadeIn(es3, shift=LEFT * 0.22), Transform(focus3, spanish_focus3),
+                GrowArrow(language_links[2]), Circumscribe(new3[3], color=FAIL),
+                FadeIn(draft3), FadeIn(publish3), GrowArrow(old_route), GrowArrow(new_route),
+                Transform(focus3, outlets_focus3), Write(verdict), FadeOut(focus3),
+            ),
+            settle=0.90,
+        )
 
-        # 4 — semantic and authority fields
-        f4 = self.frame("OBSERVABLE SEMANTICS + AUTHORITY", BLUE)
-        contract4 = self.panel("FIELD", GOLD, 2.35, 1.55).shift(LEFT * 4.0)
-        semantics4 = self.list_badges(["INPUT", "OUTPUT", "ABSTAIN", "FAILURE", "RESOURCE"], [BLUE, GREEN, MUTED, RED, GOLD], x=-1.5, y=0.25, width=1.65, scale=0.58)
-        auth4 = self.list_badges(["CONSUMER", "TOOL", "DATA", "SIDE EFFECT"], [VIOLET, RED, BLUE, RESIDUAL], x=2.2, y=0.25, width=1.8, scale=0.6)
-        ceiling4 = self.badge("AUTHORITY CEILING", RED, 2.9).shift(RIGHT * 3.55 + DOWN * 1.55)
-        e4 = VGroup(*[Arrow(contract4.get_right(), x.get_left(), color=BLUE, stroke_width=2, buff=0.1) for x in semantics4], *[Arrow(contract4.get_right(), x.get_left(), color=RED, stroke_width=2, buff=0.1) for x in auth4], Arrow(auth4.get_right(), ceiling4.get_left(), color=RED, stroke_width=2, buff=0.1))
-        s4 = VGroup(f4, contract4, semantics4, auth4, ceiling4, e4)
-        self.play_beat(4, FadeOut(s3), FadeIn(s4), LaggedStart(*[FadeIn(x) for x in semantics4], lag_ratio=0.08), LaggedStart(*[FadeIn(x) for x in auth4], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e4], lag_ratio=0.05), FadeIn(ceiling4), settle=0.9)
+        # b04: useful identity evidence supports a consequence-bounded canary.
+        old_scene = self.current()
+        frame4 = self.stage("BOUND CONSEQUENCES, NOT ONLY TRAFFIC", AUTHORITY)
+        new4 = self.cartridge("NEW", NEW, spanish=False, publish=True).shift(LEFT * 2.85 + UP * 0.28)
+        version4 = self.chip("VERSIONED", ACCENT, 1.45).next_to(new4, UP, buff=0.18)
+        provenance4 = self.chip("PROVENANCE", EVIDENCE, 1.55).next_to(version4, RIGHT, buff=0.18)
+        sleeve4 = SurroundingRectangle(new4, color=AUTHORITY, buff=0.33, stroke_width=3.2)
+        lease4 = self.chip("CANARY LEASE", AUTHORITY, 1.75).next_to(sleeve4, DOWN, buff=0.16)
+        terms4 = VGroup(
+            self.chip("HARBOR LINE", FIELD, 1.55),
+            self.chip("PRIVATE ONLY", EVIDENCE, 1.55),
+            self.chip("EXPIRY", AUTHORITY, 1.25),
+            self.chip("PUBLISH BLOCKED", FAIL, 1.80),
+        ).arrange(DOWN, buff=0.20).shift(RIGHT * 0.75 + UP * 0.45)
+        fallback4 = self.cartridge("OLD", OLD).scale(0.72).shift(RIGHT * 3.72 + UP * 1.25)
+        fallback_tag = self.chip("FALLBACK", PASS, 1.20).next_to(fallback4, DOWN, buff=0.14)
+        effects4 = VGroup(
+            self.chip("PUBLISH", FAIL, 1.20),
+            self.chip("SPEND", FAIL, 1.10),
+            self.chip("DURABLE STATE", FAIL, 1.55),
+            self.chip("DESCENDANTS", FAIL, 1.50),
+        ).arrange(RIGHT, buff=0.24).scale(0.82).shift(DOWN * 1.95)
+        stop4 = DashedLine(LEFT * 0.75, RIGHT * 4.80, color=FAIL, stroke_width=2.8).shift(DOWN * 1.45)
+        focus4 = self.focus_lens(new4, NEW)
+        lease_focus4 = self.focus_lens(sleeve4, AUTHORITY)
+        terms_focus4 = self.focus_lens(terms4, FIELD)
+        fallback_focus4 = self.focus_lens(fallback4, OLD)
+        effects_focus4 = self.focus_lens(effects4, FAIL)
+        self.beat(
+            4,
+            Succession(
+                AnimationGroup(FadeOut(old_scene), FadeIn(frame4), lag_ratio=0),
+                FadeIn(new4, shift=RIGHT * 0.24), FadeIn(focus4),
+                FadeIn(version4), FadeIn(provenance4), Create(sleeve4), FadeIn(lease4),
+                Transform(focus4, lease_focus4),
+                LaggedStart(*[FadeIn(x) for x in terms4], lag_ratio=0.16), Transform(focus4, terms_focus4),
+                FadeIn(fallback4, shift=LEFT * 0.24), FadeIn(fallback_tag), Transform(focus4, fallback_focus4),
+                Create(stop4),
+                LaggedStart(*[FadeIn(x) for x in effects4], lag_ratio=0.14),
+                Transform(focus4, effects_focus4), Circumscribe(stop4, color=FAIL), FadeOut(focus4),
+            ),
+            settle=0.90,
+        )
 
-        # 5 — history and recovery belong to the field
-        f5 = self.frame("FIELD OWNS HISTORY + RECOVERY", GREEN)
-        field5 = self.panel("FIELD", GOLD, 2.25, 1.45).shift(LEFT * 4.0)
-        history5 = self.list_badges(["LEASE", "EVALUATOR", "INCIDENT", "REGRESSION"], [BLUE, VIOLET, RED, RESIDUAL], x=-1.45, y=0.2, width=1.8, scale=0.58)
-        recovery5 = self.list_badges(["MIGRATE", "RESTORE", "COMPENSATE", "OWNER"], [GOLD, GREEN, RESIDUAL, RED], x=1.7, y=0.2, width=1.9, scale=0.58)
-        ledger5 = self.badge("EFFECT-COMPLETE RECOVERY", GREEN, 3.5).shift(RIGHT * 3.35 + DOWN * 1.45)
-        e5 = VGroup(*[Arrow(field5.get_right(), x.get_left(), color=BLUE, stroke_width=2, buff=0.1) for x in history5], *[Arrow(field5.get_right(), x.get_left(), color=GREEN, stroke_width=2, buff=0.1) for x in recovery5], Arrow(recovery5.get_right(), ledger5.get_left(), color=GREEN, stroke_width=2, buff=0.1))
-        s5 = VGroup(f5, field5, history5, recovery5, ledger5, e5)
-        self.play_beat(5, FadeOut(s4), FadeIn(s5), LaggedStart(*[FadeIn(x) for x in history5], lag_ratio=0.08), LaggedStart(*[FadeIn(x) for x in recovery5], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e5], lag_ratio=0.05), settle=0.8)
+        # b05: repair does not transfer a lease to a changed use; history persists.
+        old_scene = self.current()
+        frame5 = self.stage("A REPAIRED LEASE IS STILL SCOPED", RESIDUAL)
+        harbor5 = self.workload("HARBOR LINE", "PRIVATE DRAFT", FIELD).shift(LEFT * 3.85 + UP * 1.38)
+        city5 = self.workload("CITY PUBLISHER", "LIVE EMERGENCY", FAIL).shift(RIGHT * 3.85 + UP * 1.38)
+        bands_left = VGroup(
+            self.chip("CONSUMER: HARBOR", FIELD, 1.70),
+            self.chip("USE: DRAFT", EVIDENCE, 1.45),
+            self.chip("AUTH: PRIVATE", AUTHORITY, 1.60),
+        ).arrange(DOWN, buff=0.18).shift(LEFT * 2.05 + UP * 0.08)
+        bands_right = VGroup(
+            self.chip("CONSUMER: CITY", FAIL, 1.70),
+            self.chip("USE: LIVE", FAIL, 1.45),
+            self.chip("AUTH: PUBLISH", FAIL, 1.60),
+        ).arrange(DOWN, buff=0.18).shift(RIGHT * 2.05 + UP * 0.08)
+        compare5 = DashedLine(UP * 1.0, DOWN * 1.35, color=BOUNDARY, stroke_width=2.4)
+        decision5 = self.chip("NEW FIELD DECISION", FAIL, 2.25).shift(DOWN * 1.36)
+        history5 = self.history_rail().scale(0.84).shift(DOWN * 2.22)
+        invalidators5 = VGroup(
+            self.chip("EVALUATOR Δ", RESIDUAL, 1.35),
+            self.chip("TOOL Δ", RESIDUAL, 1.10),
+            self.chip("AUDIENCE Δ", RESIDUAL, 1.35),
+        ).arrange(RIGHT, buff=0.26).scale(0.82).shift(UP * 2.35)
+        focus5 = self.focus_lens(harbor5, FIELD)
+        left_focus5 = self.focus_lens(bands_left, FIELD)
+        city_focus5 = self.focus_lens(city5, FAIL)
+        right_focus5 = self.focus_lens(bands_right, FAIL)
+        decision_focus5 = self.focus_lens(decision5, FAIL)
+        history_focus5 = self.focus_lens(history5, RESIDUAL)
+        self.beat(
+            5,
+            Succession(
+                AnimationGroup(FadeOut(old_scene), FadeIn(frame5), lag_ratio=0),
+                FadeIn(harbor5, shift=RIGHT * 0.24), FadeIn(focus5),
+                LaggedStart(*[FadeIn(x) for x in bands_left], lag_ratio=0.16), Transform(focus5, left_focus5),
+                FadeIn(city5, shift=LEFT * 0.24), Transform(focus5, city_focus5), Create(compare5),
+                LaggedStart(*[FadeIn(x) for x in bands_right], lag_ratio=0.16), Transform(focus5, right_focus5),
+                Circumscribe(bands_right, color=FAIL), FadeIn(decision5), Transform(focus5, decision_focus5),
+                FadeIn(history5), Transform(focus5, history_focus5),
+                LaggedStart(*[FadeIn(x) for x in invalidators5], lag_ratio=0.16),
+                Circumscribe(history5, color=RESIDUAL), FadeOut(focus5),
+            ),
+            settle=0.90,
+        )
 
-        # 6 — test boundary
-        f6 = self.frame("NOW TEST THE SCOPE", BLUE)
-        desk6 = self.panel("FINITE TEST DESK", BLUE, 3.1, 1.65).shift(LEFT * 2.1)
-        boundary6 = self.badge("DESIGN → ENCODED TEST", GOLD, 3.0).shift(RIGHT * 2.6 + UP * 0.85)
-        no6 = self.badge("NOT DEPLOYMENT", RED, 2.6).shift(RIGHT * 2.6 + DOWN * 0.85)
-        e6 = VGroup(Arrow(desk6.get_right(), boundary6.get_left(), color=BLUE, stroke_width=3, buff=0.1), Arrow(desk6.get_right(), no6.get_left(), color=RED, stroke_width=3, buff=0.1))
-        s6 = VGroup(f6, desk6, boundary6, no6, e6)
-        self.play_beat(6, FadeOut(s5), FadeIn(s6), LaggedStart(*[GrowArrow(x) for x in e6], lag_ratio=0.12), FadeIn(boundary6), FadeIn(no6), settle=0.5)
-
-        # 7 — finite positive and negative controls
-        f7 = self.frame("FINITE SYNTHETIC CONTROLS", GOLD)
-        valid7 = self.list_badges(["VALID ×3", "TRACE ×2"], [GREEN, BLUE], x=-2.8, y=0.35, width=2.0, scale=0.72)
-        invalid7 = self.list_badges(["INVALID ×6", "REJECT ×6"], [RED, RESIDUAL], x=1.0, y=0.35, width=2.1, scale=0.72)
-        scope7 = self.badge("ENCODED SCOPE ONLY", MUTED, 3.0).shift(RIGHT * 3.35 + DOWN * 1.3)
-        e7 = VGroup(Arrow(valid7.get_right(), invalid7.get_left(), color=GOLD, stroke_width=3, buff=0.15), Arrow(invalid7.get_right(), scope7.get_left(), color=MUTED, stroke_width=2, buff=0.1))
-        s7 = VGroup(f7, valid7, invalid7, scope7, e7)
-        self.play_beat(7, FadeOut(s6), FadeIn(s7), LaggedStart(*[FadeIn(x) for x in valid7], lag_ratio=0.12), LaggedStart(*[FadeIn(x) for x in invalid7], lag_ratio=0.12), LaggedStart(*[GrowArrow(x) for x in e7], lag_ratio=0.12), FadeIn(scope7), settle=0.9)
-
-        # 8 — formal lane separate from runtime lane
-        f8 = self.frame("FORMAL LANE ≠ RUNTIME LANE", VIOLET)
-        formal8 = self.panel("FORMAL LEDGER", VIOLET, 2.65, 1.45).shift(LEFT * 2.9 + UP * 0.9)
-        runtime8 = self.panel("RUNTIME FIXTURES", BLUE, 2.65, 1.45).shift(LEFT * 2.9 + DOWN * 0.9)
-        target8 = self.list_badges(["TARGET 1", "TARGET 2", "TARGET 3", "TARGET 4"], [VIOLET, VIOLET, VIOLET, VIOLET], x=1.8, y=0.2, width=1.8, scale=0.55)
-        no8 = self.badge("NOT ONE PROOF", RED, 2.7).shift(RIGHT * 3.45 + DOWN * 1.5)
-        e8 = VGroup(Arrow(formal8.get_right(), target8.get_left(), color=VIOLET, stroke_width=2, buff=0.1), Arrow(runtime8.get_right(), target8.get_left(), color=BLUE, stroke_width=2, buff=0.1), Arrow(target8.get_right(), no8.get_left(), color=RED, stroke_width=2, buff=0.1))
-        s8 = VGroup(f8, formal8, runtime8, target8, no8, e8)
-        self.play_beat(8, FadeOut(s7), FadeIn(s8), FadeIn(formal8), FadeIn(runtime8), LaggedStart(*[FadeIn(x) for x in target8], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e8], lag_ratio=0.08), FadeIn(no8), settle=0.6)
-
-        # 9 — evidence ceiling
-        f9 = self.frame("SCOPED · FINITE · NO PROMOTION", RED)
-        inside9 = self.panel("TESTED OBLIGATIONS", GREEN, 3.0, 1.65).shift(LEFT * 2.4)
-        outside9 = self.list_badges(["EQUIVALENCE?", "COMPOSITION?", "PRODUCTION?"], [RED, RED, RED], x=2.55, y=0.45, width=2.4, scale=0.62)
-        bound9 = DashedLine(UP * 2.35, DOWN * 2.35, color=RED, stroke_width=3).shift(RIGHT * 0.2)
-        crosses9 = VGroup(*[Cross(x, stroke_color=RED, stroke_width=2.5) for x in outside9])
-        s9 = VGroup(f9, inside9, outside9, bound9, crosses9)
-        self.play_beat(9, FadeOut(s8), FadeIn(s9), Create(bound9), FadeIn(inside9), LaggedStart(*[FadeIn(x) for x in outside9], lag_ratio=0.1), LaggedStart(*[Create(x) for x in crosses9], lag_ratio=0.1), settle=0.9)
-
-        # 10 — identity laundering and interface theater
-        f10 = self.frame("SAME SCHEMA · DIFFERENT EFFECT", RED)
-        schema10 = self.badge("MATCHING SCHEMA", BLUE, 2.65).shift(LEFT * 3.35 + UP * 1.05)
-        behavior10 = self.panel("CHANGED FAILURE", RED, 2.65, 1.4).shift(RIGHT * 0.1 + UP * 1.05)
-        effect10 = self.panel("PROTECTED EFFECT", RED, 2.65, 1.4).shift(RIGHT * 0.1 + DOWN * 0.95)
-        id10 = self.badge("IDENTITY LAUNDERED", RESIDUAL, 3.0).shift(RIGHT * 3.3 + DOWN * 1.45)
-        e10 = VGroup(Arrow(schema10.get_right(), behavior10.get_left(), color=RED, stroke_width=3, buff=0.1), Arrow(schema10.get_right(), effect10.get_left(), color=RED, stroke_width=3, buff=0.1), Arrow(effect10.get_right(), id10.get_left(), color=RESIDUAL, stroke_width=2, buff=0.1))
-        c10 = VGroup(Cross(behavior10, stroke_color=RED, stroke_width=3), Cross(effect10, stroke_color=RED, stroke_width=3))
-        s10 = VGroup(f10, schema10, behavior10, effect10, id10, e10, c10)
-        self.play_beat(10, FadeOut(s9), FadeIn(s10), GrowArrow(e10[0]), GrowArrow(e10[1]), FadeIn(behavior10), FadeIn(effect10), Create(c10[0]), Create(c10[1]), FadeIn(id10), settle=0.9)
-
-        # 11 — scope overreach and composition
-        f11 = self.frame("ONE LEASE ≠ ALL USES", RED)
-        lease11 = self.panel("LOW-STAKES LEASE", GREEN, 2.6, 1.5).shift(LEFT * 3.3)
-        uses11 = self.list_badges(["DRAFT", "PUBLISH", "SPEND", "ACTUATE"], [GREEN, RED, RED, RED], x=0.3, y=0.25, width=1.9, scale=0.62)
-        toxic11 = self.panel("TOXIC COMPOSITION", RED, 2.7, 1.5).shift(RIGHT * 3.2 + DOWN * 1.0)
-        e11 = VGroup(*[Arrow(lease11.get_right(), x.get_left(), color=GOLD if i == 0 else RED, stroke_width=2, buff=0.1) for i, x in enumerate(uses11)], Arrow(uses11.get_right(), toxic11.get_left(), color=RED, stroke_width=3, buff=0.1))
-        c11 = VGroup(Cross(uses11[1], stroke_color=RED, stroke_width=2.5), Cross(uses11[2], stroke_color=RED, stroke_width=2.5), Cross(uses11[3], stroke_color=RED, stroke_width=2.5))
-        s11 = VGroup(f11, lease11, uses11, toxic11, e11, c11)
-        self.play_beat(11, FadeOut(s10), FadeIn(s11), LaggedStart(*[GrowArrow(x) for x in e11], lag_ratio=0.07), LaggedStart(*[Create(x) for x in c11], lag_ratio=0.1), FadeIn(toxic11), settle=0.9)
-
-        # 12 — uncertainty destinations
-        f12 = self.frame("UNKNOWN → CONTROLLED DESTINATION", GOLD)
-        unknown12 = self.panel("UNKNOWN", MUTED, 2.4, 1.45).shift(LEFT * 3.7)
-        dest12 = self.list_badges(["STOP", "SHADOW", "QUARANTINE", "COMPENSATE", "OWN RESIDUAL"], [RED, MUTED, RED, GOLD, RESIDUAL], x=0.6, y=0.2, width=2.1, scale=0.58)
-        e12 = VGroup(*[Arrow(unknown12.get_right(), x.get_left(), color=dest12[i][1].get_color() if len(dest12[i]) > 1 else MUTED, stroke_width=2, buff=0.1) for i, x in enumerate(dest12)])
-        s12 = VGroup(f12, unknown12, dest12, e12)
-        self.play_beat(12, FadeOut(s11), FadeIn(s12), FadeIn(unknown12), LaggedStart(*[FadeIn(x) for x in dest12], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e12], lag_ratio=0.06), settle=0.7)
-
-        # 13 — support state
-        f13 = self.frame("DESIGN RATIONALE · ARGUMENT SUPPORT", BLUE)
-        support13 = self.panel("SUPPORT STATE", GOLD, 2.9, 1.55).shift(LEFT * 3.0)
-        targets13 = self.list_badges(["REFINEMENT", "COMPOSITION", "INDEPENDENCE", "ROLLBACK"], [MUTED, MUTED, MUTED, RESIDUAL], x=1.7, y=0.25, width=2.0, scale=0.58)
-        open13 = self.badge("PROOF TARGETS OPEN", RED, 3.0).shift(RIGHT * 3.35 + DOWN * 1.45)
-        e13 = VGroup(*[DashedLine(support13.get_right(), x.get_left(), color=MUTED, stroke_width=2) for x in targets13], Arrow(targets13.get_right(), open13.get_left(), color=RED, stroke_width=2, buff=0.1))
-        s13 = VGroup(f13, support13, targets13, open13, e13)
-        self.play_beat(13, FadeOut(s12), FadeIn(s13), FadeIn(support13), LaggedStart(*[FadeIn(x) for x in targets13], lag_ratio=0.08), LaggedStart(*[Create(x) for x in e13], lag_ratio=0.08), FadeIn(open13), settle=0.9)
-
-        # 14 — fail-closed validator
-        f14 = self.frame("IDENTITY MISMATCH · AUTHORITY DELTA · REJECT", RED)
-        request14 = self.panel("CANDIDATE", BLUE, 2.35, 1.4).shift(LEFT * 3.7 + UP * 0.8)
-        validator14 = self.panel("VALIDATOR", GOLD, 2.45, 1.5).shift(LEFT * 0.5)
-        reject14 = self.panel("REJECT", RED, 2.35, 1.4).shift(RIGHT * 3.0 + UP * 0.8)
-        auth14 = self.badge("AUTHORITY +?", RED, 2.1).shift(LEFT * 3.7 + DOWN * 1.25)
-        e14 = VGroup(Arrow(request14.get_right(), validator14.get_left(), color=BLUE, stroke_width=3, buff=0.1), Arrow(auth14.get_right(), validator14.get_left(), color=RED, stroke_width=2, buff=0.1), Arrow(validator14.get_right(), reject14.get_left(), color=RED, stroke_width=3, buff=0.1))
-        c14 = Cross(reject14, stroke_color=RED, stroke_width=3)
-        s14 = VGroup(f14, request14, validator14, reject14, auth14, e14, c14)
-        self.play_beat(14, FadeOut(s13), FadeIn(s14), GrowArrow(e14[0]), GrowArrow(e14[1]), GrowArrow(e14[2]), FadeIn(auth14), Create(c14), settle=0.7)
-
-        # 15 — no promotion
-        f15 = self.frame("NO PROMOTION · NO DEPLOYMENT PROOF", RED)
-        local15 = self.panel("LOCAL ARTIFACTS", GREEN, 2.65, 1.5).shift(LEFT * 3.5)
-        claims15 = self.list_badges(["SAFETY", "TRANSFER", "AGI", "ASI"], [RED, RED, RED, RED], x=1.3, y=0.2, width=1.8, scale=0.65)
-        bound15 = DashedLine(UP * 2.2, DOWN * 2.2, color=RED, stroke_width=3).shift(LEFT * 0.25)
-        arrows15 = VGroup(*[Arrow(local15.get_right(), x.get_left(), color=RED, stroke_width=2, buff=0.1) for x in claims15])
-        crosses15 = VGroup(*[Cross(x, stroke_color=RED, stroke_width=2.5) for x in claims15])
-        s15 = VGroup(f15, local15, claims15, bound15, arrows15, crosses15)
-        self.play_beat(15, FadeOut(s14), FadeIn(s15), Create(bound15), LaggedStart(*[GrowArrow(x) for x in arrows15], lag_ratio=0.1), LaggedStart(*[Create(x) for x in crosses15], lag_ratio=0.1), settle=0.9)
-
-        # 16 — preserve source evidence ceiling
-        f16 = self.frame("DERIVATIVE · SAME EVIDENCE CEILING", BLUE)
-        source16 = self.panel("SOURCE CHAPTER", BLUE, 2.7, 1.5).shift(LEFT * 3.4)
-        visual16 = self.panel("VISUAL DERIVATIVE", GOLD, 2.7, 1.5).shift(RIGHT * 1.0)
-        ceiling16 = self.badge("CEILING PRESERVED", GREEN, 3.0).shift(RIGHT * 3.6 + DOWN * 1.25)
-        e16 = VGroup(Arrow(source16.get_right(), visual16.get_left(), color=BLUE, stroke_width=3, buff=0.1), Arrow(visual16.get_right(), ceiling16.get_left(), color=GREEN, stroke_width=2, buff=0.1))
-        s16 = VGroup(f16, source16, visual16, ceiling16, e16)
-        self.play_beat(16, FadeOut(s15), FadeIn(s16), GrowArrow(e16[0]), GrowArrow(e16[1]), FadeIn(ceiling16), Indicate(ceiling16), settle=0.6)
-
-        # 17 — handoff to replacement transaction
-        f17 = self.frame("NEXT · CAPABILITY REPLACEMENT + ROLLBACK", GOLD)
-        field17 = self.panel("STABLE FIELD", GOLD, 2.7, 1.5).shift(LEFT * 3.4)
-        transaction17 = self.panel("REPLACEMENT TX", GREEN, 2.8, 1.5).shift(RIGHT * 2.0)
-        recovery17 = self.badge("RECOVERY DUTY", RESIDUAL, 2.7).shift(RIGHT * 3.65 + DOWN * 1.35)
-        e17 = VGroup(Arrow(field17.get_right(), transaction17.get_left(), color=GOLD, stroke_width=3, buff=0.1), Arrow(transaction17.get_right(), recovery17.get_left(), color=RESIDUAL, stroke_width=2, buff=0.1))
-        s17 = VGroup(f17, field17, transaction17, recovery17, e17)
-        self.play_beat(17, FadeOut(s16), FadeIn(s17), GrowArrow(e17[0]), GrowArrow(e17[1]), FadeIn(recovery17), settle=0.8)
-
-        # 18 — field-owned continuity
-        f18 = self.frame("FIELD OWNS THE PROMISE · GAPS REMAIN VISIBLE", GOLD)
-        field18 = self.panel("FIELD CONTRACT", GOLD, 3.1, 1.7).shift(LEFT * 2.7)
-        tags18 = self.list_badges(["SOURCES", "INVARIANTS", "FAILURES", "TESTS", "OPEN GAPS"], [BLUE, GREEN, RED, VIOLET, RESIDUAL], x=1.25, y=0.25, width=1.8, scale=0.58)
-        recovery18 = self.badge("ACCOUNTABLE RECOVERY", RESIDUAL, 3.1).shift(RIGHT * 3.45 + DOWN * 1.55)
-        e18 = VGroup(*[Arrow(field18.get_right(), x.get_left(), color=GOLD, stroke_width=2, buff=0.1) for x in tags18], Arrow(tags18.get_right(), recovery18.get_left(), color=RESIDUAL, stroke_width=2, buff=0.1))
-        s18 = VGroup(f18, field18, tags18, recovery18, e18)
-        self.play_beat(18, FadeOut(s17), FadeIn(s18), LaggedStart(*[FadeIn(x) for x in tags18], lag_ratio=0.08), LaggedStart(*[GrowArrow(x) for x in e18], lag_ratio=0.06), FadeIn(recovery18), Indicate(field18), settle=1.1)
-
-
-__all__ = ["StableCapabilityFieldsGeneration2"]
+        # b06: finite proof boundary and signature scoped inheritance image.
+        old_scene = self.current()
+        frame6 = self.stage("INHERIT ONLY INSIDE EVIDENCED SCOPE", FIELD)
+        proof6 = RoundedRectangle(
+            width=5.0,
+            height=3.50,
+            corner_radius=0.16,
+            color=PASS,
+            stroke_width=3,
+            fill_color=SURFACE,
+            fill_opacity=0.72,
+        ).shift(LEFT * 2.75 + UP * 0.22)
+        proof_title = self.chip("FINITE MODEL", PASS, 1.55).next_to(proof6, UP, buff=-0.10)
+        proven6 = VGroup(
+            self.chip("AUTHORED IDENTITY", PASS, 1.75),
+            self.chip("NO AUTHORITY WIDENING", PASS, 2.10),
+            self.chip("REQUIRED EVENTS", PASS, 1.65),
+            self.chip("SYNTHETIC CONTROLS", PASS, 1.90),
+        ).arrange(DOWN, buff=0.22).move_to(proof6)
+        boundary6 = DashedLine(UP * 2.25, DOWN * 1.60, color=BOUNDARY, stroke_width=2.6).shift(RIGHT * 0.18)
+        limits6 = VGroup(
+            self.chip("REAL EQUIVALENCE", FAIL, 1.75),
+            self.chip("INDEPENDENT EVALUATOR", FAIL, 2.15),
+            self.chip("DEPLOYED ENFORCEMENT", FAIL, 2.15),
+            self.chip("EFFECT REVERSAL", FAIL, 1.75),
+        ).arrange(DOWN, buff=0.22).shift(RIGHT * 3.05 + UP * 0.22)
+        not6 = self.label("NOT ESTABLISHED", 18, FAIL, "BOLD").next_to(limits6, UP, buff=0.20)
+        plate6 = self.nameplate().scale(0.78).shift(DOWN * 2.05)
+        old6 = self.chip("OLD · DEFAULT", OLD, 1.65).next_to(plate6, LEFT, buff=0.26)
+        new6 = self.chip("NEW · CANARY", NEW, 1.65).next_to(plate6, RIGHT, buff=0.26)
+        focus6 = self.focus_lens(proof6, PASS)
+        limits_focus6 = self.focus_lens(VGroup(not6, limits6), FAIL)
+        route_focus6 = self.focus_lens(VGroup(old6, plate6, new6), FIELD)
+        self.beat(
+            6,
+            Succession(
+                AnimationGroup(FadeOut(old_scene), FadeIn(frame6), lag_ratio=0),
+                Create(proof6), FadeIn(proof_title), FadeIn(focus6),
+                LaggedStart(*[FadeIn(x) for x in proven6], lag_ratio=0.16), Create(boundary6),
+                Write(not6), LaggedStart(*[FadeIn(x) for x in limits6], lag_ratio=0.16),
+                Transform(focus6, limits_focus6), FadeIn(plate6), FadeIn(old6), FadeIn(new6),
+                Transform(focus6, route_focus6), Circumscribe(VGroup(old6, plate6, new6), color=FIELD),
+                FadeOut(focus6),
+            ),
+            settle=1.20,
+        )
