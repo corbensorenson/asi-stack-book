@@ -323,12 +323,17 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         # b08: matched case, one changed fact.
         self.beat(
             8,
-            ReplacementTransform(self.ribbon, grant_ribbon),
-            ReplacementTransform(expired_key, fresh_key),
-            FadeOut(crack),
-            FadeOut(denial),
-            FadeOut(not_complete),
-            FadeOut(failed_time),
+            Succession(
+                AnimationGroup(
+                    FadeOut(self.ribbon),
+                    FadeOut(expired_key),
+                    FadeOut(crack),
+                    FadeOut(denial),
+                    FadeOut(not_complete),
+                    FadeOut(failed_time),
+                ),
+                AnimationGroup(FadeIn(grant_ribbon), FadeIn(fresh_key)),
+            ),
             settle=0.55,
         )
         self.ribbon = grant_ribbon
@@ -663,16 +668,19 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         # b20: a boundary earns its place by owning an inspectable question.
         self.beat(
             20,
-            LaggedStart(
-                *[
-                    AnimationGroup(FadeIn(question), Circumscribe(owner, color=color))
-                    for question, owner, color in zip(
-                        questions,
-                        ownership,
-                        (ACCENT, AUTHORITY, EVIDENCE),
-                    )
-                ],
-                lag_ratio=0.3,
+            Succession(
+                FadeOut(stack_links),
+                LaggedStart(
+                    *[
+                        AnimationGroup(FadeIn(question), Circumscribe(owner, color=color))
+                        for question, owner, color in zip(
+                            questions,
+                            ownership,
+                            (ACCENT, AUTHORITY, EVIDENCE),
+                        )
+                    ],
+                    lag_ratio=0.3,
+                ),
             ),
             settle=1.2,
         )
@@ -711,7 +719,6 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
                     FadeOut(model_core),
                     FadeOut(cost),
                     FadeOut(questions),
-                    FadeOut(stack_links),
                     FadeOut(ownership),
                     FadeOut(servers),
                     FadeOut(production),

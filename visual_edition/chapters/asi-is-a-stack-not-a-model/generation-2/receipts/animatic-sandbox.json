@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.manim_sandbox_policy_receipt.v1",
-  "created_at_utc": "2026-08-10T00:48:36Z",
+  "created_at_utc": "2026-08-10T01:13:54Z",
   "chapter_id": "asi-is-a-stack-not-a-model",
   "profile": "draft",
   "isolation_mode": "macos_sandbox_exec",
@@ -14,7 +14,7 @@
   },
   "scene": {
     "path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/scene.py",
-    "sha256": "cee7e87770131cd265c994a9f6375f898529708a12266403c6c25c6c9e9514cf"
+    "sha256": "ce732ad1acde45d5a0d2563eea4dbebb197d264f620ec3c00cf8d52ab6b11e1b"
   },
   "treatment": {
     "path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/treatment.json",
@@ -90,7 +90,7 @@
   "source_preflight": {
     "verdict": "pass",
     "finding_count": 0,
-    "scene_sha256": "cee7e87770131cd265c994a9f6375f898529708a12266403c6c25c6c9e9514cf",
+    "scene_sha256": "ce732ad1acde45d5a0d2563eea4dbebb197d264f620ec3c00cf8d52ab6b11e1b",
     "auditor": {
       "path": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py",
       "sha256": "f2508e1dc096c633d904121a6d05025b8b04548172e8e39bf34cdb1236dbbfcb"
@@ -127,7 +127,7 @@
         "AsiIsAStackNotAModelGeneration2"
       ],
       "exit_code": 0,
-      "wall_seconds": 25.534
+      "wall_seconds": 24.859
     },
     {
       "phase": "audio_mux",
@@ -161,21 +161,21 @@
         "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/asi-is-a-stack-not-a-model/draft/.asi-is-a-stack-not-a-model-animatic.draft.pending.mp4"
       ],
       "exit_code": 0,
-      "wall_seconds": 3.824
+      "wall_seconds": 3.902
     }
   ],
   "outputs": [
     {
       "role": "visual_track",
       "path": "build/visual_edition/isolated-renders/asi-is-a-stack-not-a-model/draft/media/videos/scene/480p15/asi-is-a-stack-not-a-model-visual.mp4",
-      "sha256": "7fb1ee03f2cb2743fb442e3f505fce3f4a262b1a99ae56ca526bdfda1d4500ad",
-      "size_bytes": 1854909
+      "sha256": "3bbd40b0d9a1aa53530a95767f5ddf81b19748392bf9626b2ed8b033a309bf82",
+      "size_bytes": 1843347
     },
     {
       "role": "muxed_master",
       "path": "build/visual_edition/isolated-renders/asi-is-a-stack-not-a-model/draft/asi-is-a-stack-not-a-model-animatic.mp4",
-      "sha256": "be83f087592eabe627b24a362962961521589a4ed51dffa82f721b1ca9a56423",
-      "size_bytes": 4626514
+      "sha256": "9890bc4ebffc68a33a89347c983072884c02464a004383893c9b0127e38bad7d",
+      "size_bytes": 4613862
     }
   ],
   "support_state_effect": "none",
