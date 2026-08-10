@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 85 |
+| Manifest chapter core claims | 86 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 63 |
+| Accepted explicit no-promotion decisions | 64 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -85,6 +85,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no deployed whole-stack trace kernel; no cross-layer runtime replay; finite fixtures cannot prove observation truth, causal completeness, or service enforcement |
 | `inter-stack-protocols-identity-and-economic-exchange.core` | Inter-Stack Protocols, Identity, and Economic Exchange | `argument_only` | no local protocol endpoint, peer discovery, resolver, credential issuer or verifier, delegated-authority service, payment connector, settlement, dispute, or cross-stack dispatch; no peer-trust, task-truth, authorization, privacy, payment, legal, fairness, or effect-safety evaluation; finite theorems do not establish identity binding, credential validity, authorization correctness, payment settlement, economic fairness, peer trustworthiness, task or artifact truth, safety, or generality |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |
+| `learning-compute-topology-and-adaptive-process-architecture.core` | Learning–Compute Topology and Adaptive Process Architecture | `argument_only` | no independent mechanization or implementation agreement; no real neural, symbolic, evolutionary, federated, multi-agent, embodied, or continual-learning outcome run; author-lineage propositions, package tests, manual matrices, and toy diagrams cannot promote empirical or safety support |
 | `learning-theory-generalization-and-scaling-science.core` | Learning Theory, Generalization, and Scaling Science | `argument_only` | no accepted chapter-core empirical result; no independent reproduction or transfer result; prose, source synthesis, schemas, and planned tests do not promote support |
 | `mathematical-and-search-substrates.core` | Mathematical and Search Substrates | `argument_only` | no substrate benchmark; no baseline comparison; no measured adoption benefit |
 | `military-ai-autonomous-weapons-and-strategic-stability.core` | Military AI, Autonomous Weapons, and Strategic Stability | `argument_only` | no operational or safe-simulation chapter-core result; no independent reproduction or strategic transfer; prose and source synthesis authorize neither weapons nor release |
