@@ -281,6 +281,17 @@ Read the current narration toolchain before timing work. If its aligner remains
 unqualified, stop the governed progression at animatic; never relabel block
 timing or raw ASR timestamps as forced alignment.
 
+For a block-timed animatic, raw ASR segment boundaries may locate provisional
+playback windows only. Record them as diagnostic cue hints outside the governed
+beat times; do not use them for captions, claim phrase precision, or change the
+timing state. A performance block longer than 20 seconds that contains more than
+one denial, collision, transfer test, comparison, or proof boundary must use
+separate scene-internal cue windows checked against the mux. Do not stretch one
+`LaggedStart`, `Succession`, or generic scheduler across the whole block and
+infer that source order synchronized the events. If ASR segmentation and heard
+phrasing disagree, the heard phrase controls the draft repair and the mismatch
+remains open until qualified alignment.
+
 Use `mode: change` when an object or relation changes. Use `mode: hold` only
 when before and after states match, the purpose is explicit, and no term or
 relationship is introduced. A brief post-motion settle can be shorter than the
@@ -307,6 +318,14 @@ codecs, external assets, licenses, random seeds, resolution, frame rate, and
 audio tools. Do not assume ManimGL examples are API-compatible with ManimCE.
 Use `Scene.next_section()` at semantic boundaries and render low-resolution
 sections during iteration.
+
+Mechanical diagnostics are search tools, not optimization objectives. After a
+warning-driven revision, compare the new normal-speed playback and sampled
+transition frames with the prior artifact. Revert a revision that reduces a
+freeze or black-frame count by introducing distorted interpolation, duplicated
+objects, premature answers, off-canvas geometry, or motion without explanatory
+work. Keep the warning open and advance timing evidence instead of repeatedly
+tuning motion to the detector.
 
 ```bash
 python3 scripts/validate_manim_toolchain.py --probe-runtime

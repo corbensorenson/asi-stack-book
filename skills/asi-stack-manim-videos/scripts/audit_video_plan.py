@@ -1207,7 +1207,10 @@ def audit(
             errors.append(f"{label}: {beat_duration:.2f}s beat exceeds 12s without a recorded viewing purpose")
         if beat_duration > 20:
             warnings.append(
-                f"{label}: {beat_duration:.2f}s is an unusually long semantic beat; inspect full-speed attention and learner control"
+                f"{label}: {beat_duration:.2f}s is an unusually long semantic beat; "
+                "use mux-checked scene-internal cue windows for multiple pivotal events "
+                "instead of whole-block interpolation, then inspect full-speed attention "
+                "and learner control"
             )
 
         spoken = beat.get("narration")

@@ -79,6 +79,14 @@ animatic. Final beat and caption timing requires a qualified aligner plus a
 bound manual anchor review. Never create apparent word precision by evenly
 distributing a block duration.
 
+Whisper segment timestamps may help an editor find a phrase during a
+block-timed animatic, but they remain diagnostic localization. Keep those cue
+hints out of governed beat boundaries and captions, check each consequential
+event by listening to the mux, and preserve any disagreement for alignment
+review. When one synthesis block exceeds 20 seconds and owns several semantic
+events, create provisional scene-internal cue windows around the heard phrases;
+whole-block interpolation is not synchronization.
+
 Qualifying an aligner requires a tracked adapter and receipt schema, not a
 toolchain label edited by hand. Bind the implementation, version, acoustic
 model, lexicon, language, exact transcript and audio, settings, runner digest,

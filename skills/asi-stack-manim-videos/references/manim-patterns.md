@@ -89,6 +89,10 @@ do not copy ManimGL or CC BY-NC-SA implementation code into this project.
   seeing a denial, collision, state transition, comparison, or proof boundary
   at a particular phrase. Verify the event time in the mux, not from source
   order or nominal animation duration.
+- Under `block_timed` custody, ASR segment boundaries may help locate those cue
+  windows for an animatic, but they are diagnostic hints rather than word-level
+  timing. Keep them out of captions and governed beat boundaries, listen for the
+  phrase in the mux, and require qualified alignment before lock.
 - Keep lag ratios large enough for the viewer to perceive order and small
   enough that the final objects coexist for comparison.
 - Use linear rate functions for quantities intended to represent uniform time
@@ -128,6 +132,10 @@ front-loaded construction, collapsed transform, unreadable cue, or unjustified
 hold directly. Do not add ambient loops, arbitrary camera motion, or moving
 decoration merely to silence the detector; a remaining warning stays open for
 playback review when the heuristic and the viewed mechanism disagree.
+Compare each warning-driven revision with the prior artifact. If the count
+improves while interpolation deforms text, duplicates geometry, reveals an
+answer early, or sends content outside the frame, revert the revision and move
+to better timing evidence. Detector score is never the acceptance objective.
 
 Consult the pinned ManimCE documentation when an API is uncertain. Do not
 guess from ManimGL examples. Code-level and rendered-visual checks are
