@@ -67,8 +67,7 @@ class StableCapabilityFieldsGeneration2(AsiScene):
             self.wait(remaining)
 
     def cue(self, target: float, *animations, run_time: float = 0.72) -> None:
-        """Play a provisional visual cue localized by mux-checked ASR."""
-        # These draft times locate phrases; they are not governed forced alignment.
+        """Play a visual cue at a qualified exact-text phrase boundary."""
         self.wait_until(target)
         if animations:
             self.play(AnimationGroup(*animations, lag_ratio=0), run_time=run_time)
@@ -228,17 +227,17 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         new_focus1 = self.focus_lens(new1, NEW)
         question_focus1 = self.focus_lens(question, FIELD)
         self.cue(0.000, FadeIn(frame1), FadeIn(plate1), FadeIn(old1, shift=RIGHT * 0.24))
-        self.cue(1.200, FadeIn(interface), FadeIn(signed))
-        self.cue(5.000, FadeIn(new1, shift=LEFT * 0.24), FadeIn(clearer), FadeIn(focus1))
-        self.cue(9.000, Transform(focus1, new_focus1), Write(question))
-        self.cue(14.000, Transform(focus1, question_focus1), Circumscribe(question, color=FIELD))
-        self.cue(18.000, Circumscribe(VGroup(plate1, signed), color=EVIDENCE))
+        self.cue(1.620, FadeIn(interface), FadeIn(signed))
+        self.cue(5.540, FadeIn(new1, shift=LEFT * 0.24), FadeIn(clearer), FadeIn(focus1))
+        self.cue(9.480, Transform(focus1, new_focus1), Write(question))
+        self.cue(14.600, Transform(focus1, question_focus1), Circumscribe(question, color=FIELD))
+        self.cue(18.620, Circumscribe(VGroup(plate1, signed), color=EVIDENCE))
         self.cue(22.600, FadeOut(focus1), run_time=0.55)
 
         # b02: the stable object is a gauge owned by the consumer.
         self.next_section("b02")
         old_scene = self.current()
-        self.cue(23.400, FadeOut(old_scene), run_time=0.45)
+        self.cue(24.100, FadeOut(old_scene), run_time=0.475)
         frame2 = self.stage("THE PROMISE BELONGS TO THE CONSUMER", FIELD)
         gauge2 = self.gauge().shift(RIGHT * 1.55 + DOWN * 0.10)
         plate2 = self.nameplate().next_to(gauge2, UP, buff=0.18)
@@ -249,18 +248,18 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         focus2 = self.focus_lens(new2, NEW)
         requirements_focus2 = self.focus_lens(gauge2[2], FIELD)
         old_focus2 = self.focus_lens(old2, OLD)
-        self.cue(24.000, FadeIn(frame2), FadeIn(gauge2[0]), FadeIn(gauge2[3:]))
-        self.cue(27.000, FadeIn(gauge2[2]), FadeIn(new2, shift=RIGHT * 0.30), FadeIn(focus2))
-        self.cue(32.000, Transform(focus2, requirements_focus2))
-        self.cue(35.000, FadeIn(gauge2[1]), FadeIn(plate2))
-        self.cue(38.000, FadeIn(field_name), GrowArrow(field_arrow), FadeIn(old2, shift=LEFT * 0.24))
-        self.cue(44.000, Transform(focus2, old_focus2), Circumscribe(gauge2[0], color=FIELD))
+        self.cue(24.575, FadeIn(frame2), FadeIn(gauge2[0]), FadeIn(gauge2[3:]), run_time=0.60)
+        self.cue(27.520, FadeIn(gauge2[2]), FadeIn(new2, shift=RIGHT * 0.30), FadeIn(focus2))
+        self.cue(32.200, Transform(focus2, requirements_focus2))
+        self.cue(35.020, FadeIn(gauge2[1]), FadeIn(plate2))
+        self.cue(38.480, FadeIn(field_name), GrowArrow(field_arrow), FadeIn(old2, shift=LEFT * 0.24))
+        self.cue(44.180, Transform(focus2, old_focus2), Circumscribe(gauge2[0], color=FIELD))
         self.cue(49.800, FadeOut(focus2), run_time=0.55)
 
         # b03: one happy path hides opposite semantic and authority failures.
         self.next_section("b03")
         old_scene = self.current()
-        self.cue(50.400, FadeOut(old_scene), run_time=0.45)
+        self.cue(50.500, FadeOut(old_scene), run_time=0.475)
         frame3 = self.stage("BETTER OUTPUT IS NOT SUBSTITUTION", FAIL)
         old3 = self.cartridge("OLD", OLD).scale(0.84).shift(LEFT * 3.55 + UP * 0.52)
         new3 = self.cartridge("NEW", NEW, spanish=False, publish=True).scale(0.84).shift(LEFT * 0.70 + UP * 0.52)
@@ -280,22 +279,23 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         english_focus3 = self.focus_lens(en3, PASS)
         spanish_focus3 = self.focus_lens(es3, FAIL)
         outlets_focus3 = self.focus_lens(VGroup(draft3, publish3), FAIL)
-        self.cue(51.000, FadeIn(frame3), FadeIn(old3, shift=RIGHT * 0.22),
-                 FadeIn(new3, shift=LEFT * 0.22), FadeIn(en3, shift=LEFT * 0.22), FadeIn(focus3))
-        self.cue(53.000, Transform(focus3, english_focus3),
+        self.cue(50.975, FadeIn(frame3), FadeIn(old3, shift=RIGHT * 0.22),
+                 FadeIn(new3, shift=LEFT * 0.22), FadeIn(en3, shift=LEFT * 0.22), FadeIn(focus3),
+                 run_time=0.60)
+        self.cue(53.020, Transform(focus3, english_focus3),
                  LaggedStart(*[GrowArrow(a) for a in language_links[:2]], lag_ratio=0.18))
-        self.cue(57.000, FadeIn(es3, shift=LEFT * 0.22))
+        self.cue(57.720, FadeIn(es3, shift=LEFT * 0.22))
         self.cue(64.000, Transform(focus3, spanish_focus3), GrowArrow(language_links[2]),
                  Circumscribe(new3[3], color=FAIL))
-        self.cue(68.000, FadeIn(draft3), FadeIn(publish3), GrowArrow(old_route), GrowArrow(new_route))
-        self.cue(73.000, Transform(focus3, outlets_focus3))
-        self.cue(78.000, Write(verdict), Circumscribe(VGroup(draft3, publish3), color=FAIL))
+        self.cue(68.340, FadeIn(draft3), FadeIn(publish3), GrowArrow(old_route), GrowArrow(new_route))
+        self.cue(73.100, Transform(focus3, outlets_focus3))
+        self.cue(78.060, Write(verdict), Circumscribe(VGroup(draft3, publish3), color=FAIL))
         self.cue(81.600, FadeOut(focus3), run_time=0.45)
 
         # b04: useful identity evidence supports a consequence-bounded canary.
         self.next_section("b04")
         old_scene = self.current()
-        self.cue(82.350, FadeOut(old_scene), run_time=0.45)
+        self.cue(83.000, FadeOut(old_scene), run_time=0.475)
         frame4 = self.stage("BOUND CONSEQUENCES, NOT ONLY TRAFFIC", AUTHORITY)
         new4 = self.cartridge("NEW", NEW, spanish=False, publish=True).shift(LEFT * 2.85 + UP * 0.28)
         version4 = self.chip("VERSIONED", ACCENT, 1.45).next_to(new4, UP, buff=0.18)
@@ -322,22 +322,22 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         terms_focus4 = self.focus_lens(terms4, FIELD)
         fallback_focus4 = self.focus_lens(fallback4, OLD)
         effects_focus4 = self.focus_lens(effects4, FAIL)
-        self.cue(83.000, FadeIn(frame4), FadeIn(new4, shift=RIGHT * 0.24),
-                 FadeIn(version4), FadeIn(provenance4), FadeIn(focus4))
-        self.cue(89.000, Circumscribe(VGroup(version4, provenance4), color=EVIDENCE))
-        self.cue(96.000, Create(sleeve4), FadeIn(lease4), Transform(focus4, lease_focus4))
-        self.cue(101.000, FadeIn(terms4[0]), FadeIn(terms4[1]), Transform(focus4, terms_focus4))
-        self.cue(105.000, FadeIn(terms4[2]), FadeIn(terms4[3]), FadeIn(fallback4, shift=LEFT * 0.24),
+        self.cue(83.475, FadeIn(frame4), FadeIn(new4, shift=RIGHT * 0.24),
+                 FadeIn(version4), FadeIn(provenance4), FadeIn(focus4), run_time=0.60)
+        self.cue(89.780, Circumscribe(VGroup(version4, provenance4), color=EVIDENCE))
+        self.cue(96.740, Create(sleeve4), FadeIn(lease4), Transform(focus4, lease_focus4))
+        self.cue(101.220, FadeIn(terms4[0]), FadeIn(terms4[1]), Transform(focus4, terms_focus4))
+        self.cue(105.460, FadeIn(terms4[2]), FadeIn(terms4[3]), FadeIn(fallback4, shift=LEFT * 0.24),
                  FadeIn(fallback_tag), Transform(focus4, fallback_focus4))
-        self.cue(112.000, Create(stop4))
-        self.cue(116.000, LaggedStart(*[FadeIn(x) for x in effects4], lag_ratio=0.14))
-        self.cue(123.000, Transform(focus4, effects_focus4), Circumscribe(stop4, color=FAIL))
+        self.cue(113.020, Create(stop4))
+        self.cue(116.480, LaggedStart(*[FadeIn(x) for x in effects4], lag_ratio=0.14))
+        self.cue(123.660, Transform(focus4, effects_focus4), Circumscribe(stop4, color=FAIL))
         self.cue(125.800, FadeOut(focus4), run_time=0.45)
 
         # b05: repair does not transfer a lease to a changed use; history persists.
         self.next_section("b05")
         old_scene = self.current()
-        self.cue(126.400, FadeOut(old_scene), run_time=0.45)
+        self.cue(126.970, FadeOut(old_scene), run_time=0.475)
         frame5 = self.stage("A REPAIRED LEASE IS STILL SCOPED", RESIDUAL)
         harbor5 = self.workload("HARBOR LINE", "PRIVATE DRAFT", FIELD).shift(LEFT * 3.85 + UP * 1.38)
         city5 = self.workload("CITY PUBLISHER", "LIVE EMERGENCY", FAIL).shift(RIGHT * 3.85 + UP * 1.38)
@@ -364,22 +364,23 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         city_focus5 = self.focus_lens(city5, FAIL)
         right_focus5 = self.focus_lens(bands_right, FAIL)
         decision_focus5 = self.focus_lens(decision5, FAIL)
-        self.cue(127.000, FadeIn(frame5), FadeIn(harbor5, shift=RIGHT * 0.24),
-                 LaggedStart(*[FadeIn(x) for x in bands_left], lag_ratio=0.16), FadeIn(focus5))
-        self.cue(132.000, FadeIn(city5, shift=LEFT * 0.24), Transform(focus5, city_focus5))
-        self.cue(136.000, Create(compare5), Transform(focus5, left_focus5))
-        self.cue(142.000, LaggedStart(*[FadeIn(x) for x in bands_right], lag_ratio=0.16),
+        self.cue(127.445, FadeIn(frame5), FadeIn(harbor5, shift=RIGHT * 0.24),
+                 LaggedStart(*[FadeIn(x) for x in bands_left], lag_ratio=0.16), FadeIn(focus5),
+                 run_time=0.60)
+        self.cue(132.580, FadeIn(city5, shift=LEFT * 0.24), Transform(focus5, city_focus5))
+        self.cue(137.200, Create(compare5), Transform(focus5, left_focus5))
+        self.cue(142.660, LaggedStart(*[FadeIn(x) for x in bands_right], lag_ratio=0.16),
                  Transform(focus5, right_focus5), Circumscribe(bands_right, color=FAIL))
-        self.cue(146.000, FadeIn(decision5), Transform(focus5, decision_focus5))
-        self.cue(150.000, LaggedStart(*[FadeIn(x) for x in invalidators5], lag_ratio=0.16))
-        self.cue(156.000, FadeIn(history5), FadeOut(focus5), Circumscribe(history5, color=RESIDUAL))
-        self.cue(161.000, Circumscribe(history5, color=RESIDUAL))
-        self.cue(165.000, Circumscribe(VGroup(decision5, history5), color=RESIDUAL))
+        self.cue(147.100, FadeIn(decision5), Transform(focus5, decision_focus5))
+        self.cue(150.740, LaggedStart(*[FadeIn(x) for x in invalidators5], lag_ratio=0.16))
+        self.cue(157.100, FadeIn(history5), FadeOut(focus5), Circumscribe(history5, color=RESIDUAL))
+        self.cue(161.320, Circumscribe(history5, color=RESIDUAL))
+        self.cue(165.600, Circumscribe(VGroup(decision5, history5), color=RESIDUAL))
 
         # b06: finite proof boundary and signature scoped inheritance image.
         self.next_section("b06")
         old_scene = self.current()
-        self.cue(167.250, FadeOut(old_scene), run_time=0.45)
+        self.cue(168.165, FadeOut(old_scene), run_time=0.475)
         frame6 = self.stage("INHERIT ONLY INSIDE EVIDENCED SCOPE", FIELD)
         proof6 = RoundedRectangle(
             width=5.0,
@@ -411,12 +412,13 @@ class StableCapabilityFieldsGeneration2(AsiScene):
         focus6 = self.focus_lens(proof6, PASS)
         limits_focus6 = self.focus_lens(VGroup(not6, limits6), FAIL)
         route_focus6 = self.focus_lens(VGroup(old6, plate6, new6), FIELD)
-        self.cue(168.000, FadeIn(frame6), Create(proof6), FadeIn(proof_title), FadeIn(focus6))
-        self.cue(170.000, LaggedStart(*[FadeIn(x) for x in proven6[:3]], lag_ratio=0.16))
-        self.cue(178.000, FadeIn(proven6[3]), Create(boundary6))
-        self.cue(183.000, Write(not6), LaggedStart(*[FadeIn(x) for x in limits6], lag_ratio=0.16))
-        self.cue(191.000, Transform(focus6, limits_focus6))
-        self.cue(195.000, FadeIn(plate6), FadeIn(old6), FadeIn(new6), Transform(focus6, route_focus6))
-        self.cue(199.000, Circumscribe(VGroup(old6, plate6, new6), color=FIELD))
-        self.cue(204.300, FadeOut(focus6), run_time=0.50)
+        self.cue(168.640, FadeIn(frame6), Create(proof6), FadeIn(proof_title), FadeIn(focus6),
+                 run_time=0.60)
+        self.cue(170.600, LaggedStart(*[FadeIn(x) for x in proven6[:3]], lag_ratio=0.16))
+        self.cue(178.140, FadeIn(proven6[3]), Create(boundary6))
+        self.cue(183.220, Write(not6), LaggedStart(*[FadeIn(x) for x in limits6], lag_ratio=0.16))
+        self.cue(192.100, Transform(focus6, limits_focus6))
+        self.cue(195.380, FadeIn(plate6), FadeIn(old6), FadeIn(new6), Transform(focus6, route_focus6))
+        self.cue(199.980, Circumscribe(VGroup(old6, plate6, new6), color=FIELD))
+        self.cue(204.900, FadeOut(focus6), run_time=0.40)
         self.wait_until(self.TARGET_DURATION)

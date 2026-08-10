@@ -9,16 +9,20 @@
   "narration_sha256": "78a3638b2de175ec9140fc4cc3dc331ae762a426f8aaed896d11e10dc3ee97a7",
   "target_duration_seconds": 205.505,
   "timing": {
-    "state": "block_timed",
-    "source": "synthesis_receipt",
-    "receipt_path": "build/visual_edition/audio/stable-capability-fields-narration-master.receipt.json",
-    "receipt_sha256": "ff814085ece463b2496d43877770ddf959f1f40fc10ce6c605fc1438288bc000",
+    "state": "forced_aligned",
+    "source": "forced_alignment_receipt",
+    "receipt_path": "visual_edition/chapters/stable-capability-fields/generation-2/receipts/alignment.json",
+    "receipt_sha256": "e0893a47ed6068f540eab4b3fd21d989709f61f3fc0ae32bedea1b105b62e226",
     "narration_receipt_path": "build/visual_edition/audio/stable-capability-fields-narration-master.receipt.json",
     "narration_receipt_sha256": "ff814085ece463b2496d43877770ddf959f1f40fc10ce6c605fc1438288bc000",
     "narration_verification_report_path": "build/visual_edition/audio/stable-capability-fields-narration-master.validation.json",
     "narration_verification_report_sha256": "212fe8da720a3dfa1172532d2c6177ae03212aa2d74db1f98afca0d4ede5658e",
-    "aligner_id": null, "manual_anchor_review_path": null, "manual_anchor_review_sha256": null,
-    "manual_anchor_reviewer_id": null, "manual_anchor_count": null, "manual_anchor_failures": null
+    "aligner_id": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1",
+    "manual_anchor_review_path": "visual_edition/chapters/stable-capability-fields/generation-2/receipts/alignment-review.json",
+    "manual_anchor_review_sha256": "a57491f00dea49f366169d287f194d4d152ad3a2998896fc646ffbe9cadfb493",
+    "manual_anchor_reviewer_id": "codex-gpt5-auditory-review",
+    "manual_anchor_count": 6,
+    "manual_anchor_failures": 0
   },
   "beats": [
     {

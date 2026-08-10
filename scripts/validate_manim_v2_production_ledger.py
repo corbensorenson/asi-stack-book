@@ -39,7 +39,7 @@ ALL_VIEWING_PASSES = (
     "normal_speed", "muted", "audio_only", "captions_on", "phone",
     "large_screen", "headphones", "speakers", "random_frames",
 )
-EXPECTED_REJECTING_CONTROL_COUNT = 96
+EXPECTED_REJECTING_CONTROL_COUNT = 101
 
 
 def digest(path: Path) -> str:
@@ -163,6 +163,156 @@ def current_file_binding(path_value: str) -> dict:
         path_value,
         digest(path) if path is not None and path.is_file() else None,
     )
+
+
+def alignment_toolchain_errors(
+    narration_toolchain: dict,
+    receipt_schema: dict,
+) -> list[str]:
+    alignment = narration_toolchain.get("alignment", {})
+    if alignment.get("qualification_state") != "qualified":
+        return []
+
+    errors: list[str] = []
+    for path_key, digest_key, label in (
+        ("aligner_script", "aligner_script_sha256", "alignment script"),
+        ("requirements_lock", "requirements_lock_sha256", "alignment requirements lock"),
+    ):
+        path = safe_repo_path(alignment.get(path_key, ""))
+        if path is None or not path.is_file():
+            errors.append(f"qualified {label} is missing")
+        elif digest(path) != alignment.get(digest_key):
+            errors.append(f"qualified {label} identity drift")
+
+    pilot_rows = alignment.get("pilot_receipts", [])
+    pilot_paths: set[str] = set()
+    pilot_chapters: set[str] = set()
+    receipts: list[dict] = []
+    for index, row in enumerate(pilot_rows):
+        if not isinstance(row, dict):
+            errors.append(f"alignment pilot {index} is not an object")
+            continue
+        chapter_id = row.get("chapter_id")
+        path_value = row.get("path")
+        if chapter_id in pilot_chapters:
+            errors.append(f"alignment pilot chapter is duplicated: {chapter_id}")
+        if path_value in pilot_paths:
+            errors.append(f"alignment pilot receipt is duplicated: {path_value}")
+        if isinstance(chapter_id, str):
+            pilot_chapters.add(chapter_id)
+        if isinstance(path_value, str):
+            pilot_paths.add(path_value)
+        path = safe_repo_path(path_value or "")
+        if path is None or not path.is_file():
+            errors.append(f"alignment pilot receipt is missing: {path_value}")
+            continue
+        if digest(path) != row.get("sha256"):
+            errors.append(f"alignment pilot receipt identity drift: {path_value}")
+            continue
+        try:
+            receipt = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as exc:
+            errors.append(f"alignment pilot receipt is unreadable: {path_value}: {exc}")
+            continue
+        schema_errors = list(Draft202012Validator(receipt_schema).iter_errors(receipt))
+        errors.extend(
+            f"alignment-pilot-schema:{path_value}:{'.'.join(map(str, error.path))}: {error.message}"
+            for error in schema_errors
+        )
+        if receipt.get("chapter_id") != chapter_id:
+            errors.append(f"alignment pilot chapter identity drift: {path_value}")
+        if receipt.get("verdict") != "pass" or row.get("verdict") != "pass":
+            errors.append(f"qualified alignment pilot does not pass: {path_value}")
+        if receipt.get("aligner", {}).get("aligner_id") != alignment.get("accepted_aligner_id"):
+            errors.append(f"alignment pilot aligner identity drift: {path_value}")
+        checks = receipt.get("checks", {})
+        required_checks = (
+            "exact_normalized_transcript", "nonempty_alignment",
+            "monotonic_word_starts", "nonoverlapping_words",
+            "instant_word_fraction_within_phrase_scope", "edge_coverage_passed",
+            "all_sync_anchors_unique_and_positive",
+            "all_generation_joins_within_tolerance",
+        )
+        if any(checks.get(name) is not True for name in required_checks):
+            errors.append(f"qualified alignment pilot has a failed required check: {path_value}")
+        if receipt.get("anchor_errors"):
+            errors.append(f"qualified alignment pilot retains anchor errors: {path_value}")
+        receipts.append(receipt)
+
+    summary = alignment.get("pilot_summary", {})
+    expected_summary = {
+        "chapter_count": len(receipts),
+        "normalized_term_count": sum(
+            receipt.get("checks", {}).get("expected_term_count", 0) for receipt in receipts
+        ),
+        "sync_anchor_count": sum(
+            receipt.get("checks", {}).get("sync_anchor_count", 0) for receipt in receipts
+        ),
+        "generation_join_count": sum(
+            receipt.get("checks", {}).get("generation_join_count", 0) for receipt in receipts
+        ),
+        "failure_count": sum(receipt.get("verdict") != "pass" for receipt in receipts),
+        "maximum_instant_word_fraction": max(
+            (receipt.get("checks", {}).get("instant_word_fraction", 1.0) for receipt in receipts),
+            default=1.0,
+        ),
+    }
+    if summary != expected_summary:
+        errors.append("qualified alignment pilot summary does not match its receipt derivation")
+    return errors
+
+
+def alignment_toolchain_negative_control_failures() -> tuple[list[str], int]:
+    toolchain = json.loads(
+        (ROOT / "visual_edition/narration_toolchain.json").read_text(encoding="utf-8")
+    )
+    receipt_schema = json.loads(
+        (ROOT / "schemas/manim_alignment_receipt.schema.json").read_text(encoding="utf-8")
+    )
+    baseline = alignment_toolchain_errors(toolchain, receipt_schema)
+    if baseline:
+        return ["valid alignment toolchain fixture failed: " + "; ".join(baseline)], 5
+
+    controls = (
+        (
+            "aligner script identity",
+            lambda row: row["alignment"].__setitem__("aligner_script_sha256", "0" * 64),
+            "alignment script identity drift",
+        ),
+        (
+            "pilot receipt identity",
+            lambda row: row["alignment"]["pilot_receipts"][0].__setitem__("sha256", "0" * 64),
+            "pilot receipt identity drift",
+        ),
+        (
+            "duplicate pilot chapter",
+            lambda row: row["alignment"]["pilot_receipts"][1].__setitem__(
+                "chapter_id", row["alignment"]["pilot_receipts"][0]["chapter_id"]
+            ),
+            "pilot chapter is duplicated",
+        ),
+        (
+            "pilot verdict laundering",
+            lambda row: row["alignment"]["pilot_receipts"][0].__setitem__("verdict", "fail"),
+            "qualified alignment pilot does not pass",
+        ),
+        (
+            "pilot summary drift",
+            lambda row: row["alignment"]["pilot_summary"].__setitem__(
+                "normalized_term_count",
+                row["alignment"]["pilot_summary"]["normalized_term_count"] + 1,
+            ),
+            "pilot summary does not match",
+        ),
+    )
+    failures: list[str] = []
+    for label, mutate, expected in controls:
+        candidate = copy.deepcopy(toolchain)
+        mutate(candidate)
+        errors = alignment_toolchain_errors(candidate, receipt_schema)
+        if not any(expected in error for error in errors):
+            failures.append(f"alignment toolchain negative control did not trigger: {label}")
+    return failures, len(controls)
 
 
 def tracked_identity_errors(target: dict, path_field: str, digest_field: str, label: str) -> list[str]:
@@ -1454,9 +1604,19 @@ def semantic_errors(value: dict) -> list[str]:
     review_schema = json.loads((ROOT / "schemas/manim_experience_review.schema.json").read_text(encoding="utf-8"))
     receipt_schema = json.loads((ROOT / "schemas/manim_render_receipt.schema.json").read_text(encoding="utf-8"))
     sandbox_schema = json.loads((ROOT / "schemas/manim_sandbox_policy_receipt.schema.json").read_text(encoding="utf-8"))
+    alignment_receipt_schema = json.loads(
+        (ROOT / "schemas/manim_alignment_receipt.schema.json").read_text(encoding="utf-8")
+    )
+    alignment_review_schema = json.loads(
+        (ROOT / "schemas/manim_alignment_review.schema.json").read_text(encoding="utf-8")
+    )
     narration_toolchain = json.loads((ROOT / "visual_edition/narration_toolchain.json").read_text(encoding="utf-8"))
     alignment_qualified = narration_toolchain.get("alignment", {}).get("qualification_state") == "qualified"
+    errors.extend(alignment_toolchain_errors(narration_toolchain, alignment_receipt_schema))
     beat_auditor = load_beat_auditor()
+    alignment_tool = load_skill_script(
+        "align_visual_narration.py", "asi_stack_manim_alignment_tool"
+    )
     scene_auditor = load_skill_script(
         "audit_scene_source.py", "asi_stack_manim_scene_source_auditor"
     )
@@ -1649,6 +1809,27 @@ def semantic_errors(value: dict) -> list[str]:
                 if timing.get("state") == "forced_aligned":
                     if not alignment_qualified:
                         errors.append(f"{chapter_id}: forced-aligned plan uses an unqualified alignment toolchain")
+                    alignment_value = None
+                    if receipt_path is not None and receipt_path.is_file():
+                        try:
+                            alignment_value = json.loads(receipt_path.read_text(encoding="utf-8"))
+                        except (json.JSONDecodeError, OSError) as exc:
+                            errors.append(f"{chapter_id}: alignment receipt is unreadable: {exc}")
+                    if isinstance(alignment_value, dict):
+                        errors.extend(
+                            f"{chapter_id}:alignment-schema:{'.'.join(map(str, error.path))}: {error.message}"
+                            for error in Draft202012Validator(alignment_receipt_schema).iter_errors(alignment_value)
+                        )
+                        if alignment_value.get("verdict") != "pass":
+                            errors.append(f"{chapter_id}: forced-aligned plan binds a failing alignment receipt")
+                        if alignment_value.get("chapter_id") != chapter_id:
+                            errors.append(f"{chapter_id}: alignment receipt chapter identity drift")
+                        if alignment_value.get("aligner", {}).get("aligner_id") != timing.get("aligner_id"):
+                            errors.append(f"{chapter_id}: alignment receipt aligner identity drift")
+                        if alignment_value.get("inputs", {}).get("narration_sha256") != plan.get("narration_sha256"):
+                            errors.append(f"{chapter_id}: alignment receipt narration identity drift")
+                        if alignment_value.get("inputs", {}).get("beat_contract_sha256") != alignment_tool.beat_contract_sha256(plan):
+                            errors.append(f"{chapter_id}: alignment receipt semantic beat-contract drift")
                     anchor_path = safe_repo_path(timing.get("manual_anchor_review_path", ""))
                     if (
                         anchor_path is None
@@ -1656,6 +1837,25 @@ def semantic_errors(value: dict) -> list[str]:
                         or digest(anchor_path) != timing.get("manual_anchor_review_sha256")
                     ):
                         errors.append(f"{chapter_id}: manual anchor review is missing or has identity drift")
+                    elif isinstance(alignment_value, dict):
+                        try:
+                            anchor_value = json.loads(anchor_path.read_text(encoding="utf-8"))
+                        except (json.JSONDecodeError, OSError) as exc:
+                            errors.append(f"{chapter_id}: manual anchor review is unreadable: {exc}")
+                        else:
+                            errors.extend(
+                                f"{chapter_id}:alignment-review-schema:{'.'.join(map(str, error.path))}: {error.message}"
+                                for error in Draft202012Validator(alignment_review_schema).iter_errors(anchor_value)
+                            )
+                            if anchor_value.get("chapter_id") != chapter_id:
+                                errors.append(f"{chapter_id}: manual anchor review chapter identity drift")
+                            if anchor_value.get("alignment_receipt", {}).get("sha256") != digest(receipt_path):
+                                errors.append(f"{chapter_id}: manual anchor review alignment identity drift")
+                            summary = anchor_value.get("summary", {})
+                            if summary.get("reviewed_anchor_count") != timing.get("manual_anchor_count"):
+                                errors.append(f"{chapter_id}: manual anchor review count drift")
+                            if summary.get("failure_count") != timing.get("manual_anchor_failures"):
+                                errors.append(f"{chapter_id}: manual anchor review failure-count drift")
         if gates.get("picture_and_sound_lock") == "pass":
             if not alignment_qualified:
                 errors.append(f"{chapter_id}: picture-and-sound lock passes before forced alignment is qualified")
@@ -2741,6 +2941,7 @@ def negative_control_failures(value: dict) -> tuple[list[str], int]:
         narration_custody_negative_control_failures,
         render_receipt_negative_control_failures,
         sandbox_receipt_negative_control_failures,
+        alignment_toolchain_negative_control_failures,
     ):
         check_failures, check_count = check()
         failures.extend(check_failures)

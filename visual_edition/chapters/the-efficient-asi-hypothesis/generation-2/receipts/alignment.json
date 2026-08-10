@@ -1,0 +1,354 @@
+{
+  "schema_version": "asi_stack.manim_alignment_receipt.v1",
+  "created_at_utc": "2026-08-10T10:17:33Z",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "aligner": {
+    "aligner_id": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1",
+    "stable_ts_version": "2.19.1",
+    "mlx_whisper_version": "0.4.3",
+    "mlx_whisper_commit": "796f5b53cab69a3d48a44233ce21aae889e94a08",
+    "python_version": "3.12.5",
+    "method": "exact-transcript-constrained cross-attention dynamic-time-warping phrase alignment",
+    "compatibility_alias": "mlx_whisper.audio.N_FRAMES_MLX = mlx_whisper.audio.N_FRAMES",
+    "options": {
+      "language": "en",
+      "original_split": true,
+      "terminal_transcript_whitespace": "stripped"
+    },
+    "requirements_lock_path": "visual_edition/alignment_requirements.lock.txt",
+    "requirements_lock_sha256": "b287c08dc70d678cc81d738226d48740815f359cfb3852b5fca16c9455b4c483"
+  },
+  "model": {
+    "path": "build/visual_edition/models/whisper-small.en-mlx",
+    "config_sha256": "40028e43687458e79ba89cc16bf14184c5414a5cbc00fd511f8f78d138647afd",
+    "weights_sha256": "1bb29b030aca711a035f7a084a0eefac6251ecc2bdd356fa748858fbad082f5a"
+  },
+  "inputs": {
+    "audio_path": "build/visual_edition/audio/the-efficient-asi-hypothesis-narration-master.wav",
+    "audio_sha256": "de9a4b28e5d1bc46892ff25bf0382626df63039e8de7e517aa935e1e8ef86221",
+    "narration_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/narration.txt",
+    "narration_sha256": "b617d774b803232bc4e2c64f3112bff21e041a94560cd665ae1827ccaa35f2a4",
+    "beat_plan_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/beat_plan.json",
+    "beat_contract_sha256": "7bd8381c511e46ed1771ae092ecf5ff68d09d3a9c6d800254bd400035f77b31a",
+    "narration_receipt_path": "build/visual_edition/audio/the-efficient-asi-hypothesis-narration-master.receipt.json",
+    "narration_receipt_sha256": "24f9150509ac1f10bad62f65cd69038cdfa0ac207faa22e95bd875fabca7280b",
+    "narration_verification_path": "build/visual_edition/audio/the-efficient-asi-hypothesis-narration-master.validation.json",
+    "narration_verification_sha256": "d0afbfa51c720c886d78ad6ffb59b768ff449b815c266fdd26cd90b572918143"
+  },
+  "raw_alignment": {
+    "path": "build/visual_edition/audio/the-efficient-asi-hypothesis-alignment.json",
+    "sha256": "4dce6869b47c9fd002ae1931b1965f8beedf5b10c9c8a18b8d5d3ce7edb5c8bf",
+    "tracked": false
+  },
+  "verdict": "pass",
+  "checks": {
+    "exact_normalized_transcript": true,
+    "aligned_term_count": 442,
+    "expected_term_count": 442,
+    "nonempty_alignment": true,
+    "monotonic_word_starts": true,
+    "nonoverlapping_words": true,
+    "instant_word_count": 9,
+    "instant_word_fraction": 0.02069,
+    "instant_word_fraction_within_phrase_scope": true,
+    "beginning_gap_seconds": 0.52,
+    "ending_gap_seconds": 0.6,
+    "edge_coverage_passed": true,
+    "sync_anchor_count": 14,
+    "expected_sync_anchor_count": 14,
+    "all_sync_anchors_unique_and_positive": true,
+    "generation_join_count": 12,
+    "all_generation_joins_within_tolerance": true
+  },
+  "anchors": [
+    {
+      "beat_id": "b01",
+      "phrase": "Which route is efficient",
+      "start_seconds": 10.16,
+      "end_seconds": 11.04,
+      "duration_seconds": 0.88,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b02",
+      "phrase": "acceptance test",
+      "start_seconds": 23.06,
+      "end_seconds": 24.0,
+      "duration_seconds": 0.94,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b03",
+      "phrase": "passes the test",
+      "start_seconds": 30.82,
+      "end_seconds": 31.66,
+      "duration_seconds": 0.84,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b04",
+      "phrase": "total is wrong",
+      "start_seconds": 39.54,
+      "end_seconds": 40.36,
+      "duration_seconds": 0.82,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b05",
+      "phrase": "twelve-unit route",
+      "start_seconds": 46.82,
+      "end_seconds": 47.3,
+      "duration_seconds": 0.48,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b06",
+      "phrase": "whole contract",
+      "start_seconds": 63.06,
+      "end_seconds": 63.7,
+      "duration_seconds": 0.64,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b07",
+      "phrase": "learn this boundary",
+      "start_seconds": 67.96,
+      "end_seconds": 68.78,
+      "duration_seconds": 0.82,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b08",
+      "phrase": "stays on the bill",
+      "start_seconds": 80.58,
+      "end_seconds": 81.44,
+      "duration_seconds": 0.86,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b09",
+      "phrase": "route expires",
+      "start_seconds": 99.9,
+      "end_seconds": 100.58,
+      "duration_seconds": 0.68,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b10",
+      "phrase": "privacy risk rises sharply",
+      "start_seconds": 106.94,
+      "end_seconds": 108.5,
+      "duration_seconds": 1.56,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b11",
+      "phrase": "No single answer follows",
+      "start_seconds": 114.42,
+      "end_seconds": 115.5,
+      "duration_seconds": 1.08,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b12",
+      "phrase": "matched access",
+      "start_seconds": 138.78,
+      "end_seconds": 139.58,
+      "duration_seconds": 0.8,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b13",
+      "phrase": "Lean proves a narrower result here",
+      "start_seconds": 145.84,
+      "end_seconds": 147.64,
+      "duration_seconds": 1.8,
+      "instant_word_count": 1
+    },
+    {
+      "beat_id": "b14",
+      "phrase": "saving is real",
+      "start_seconds": 167.22,
+      "end_seconds": 167.9,
+      "duration_seconds": 0.68,
+      "instant_word_count": 0
+    }
+  ],
+  "anchor_errors": [],
+  "instant_words": [
+    {
+      "word": "Four",
+      "start_seconds": 0.52,
+      "end_seconds": 0.52
+    },
+    {
+      "word": "Price",
+      "start_seconds": 14.56,
+      "end_seconds": 14.56
+    },
+    {
+      "word": "Efficiency",
+      "start_seconds": 22.06,
+      "end_seconds": 22.06
+    },
+    {
+      "word": "Now",
+      "start_seconds": 35.16,
+      "end_seconds": 35.16
+    },
+    {
+      "word": "Repair",
+      "start_seconds": 41.22,
+      "end_seconds": 41.22
+    },
+    {
+      "word": "A",
+      "start_seconds": 67.44,
+      "end_seconds": 67.44
+    },
+    {
+      "word": "A",
+      "start_seconds": 134.02,
+      "end_seconds": 134.02
+    },
+    {
+      "word": "Lean",
+      "start_seconds": 145.84,
+      "end_seconds": 145.84
+    },
+    {
+      "word": "The",
+      "start_seconds": 165.14,
+      "end_seconds": 165.14
+    }
+  ],
+  "generation_joins": [
+    {
+      "segment_index": 1,
+      "expected_start_seconds": 0.0,
+      "expected_generated_end_seconds": 13.6,
+      "observed_first_word_start_seconds": 0.52,
+      "observed_last_word_end_seconds": 13.08,
+      "start_drift_seconds": 0.52,
+      "end_drift_seconds": 0.52,
+      "passed": true
+    },
+    {
+      "segment_index": 2,
+      "expected_start_seconds": 14.08,
+      "expected_generated_end_seconds": 25.705,
+      "observed_first_word_start_seconds": 14.56,
+      "observed_last_word_end_seconds": 25.1,
+      "start_drift_seconds": 0.48,
+      "end_drift_seconds": 0.605,
+      "passed": true
+    },
+    {
+      "segment_index": 3,
+      "expected_start_seconds": 26.185,
+      "expected_generated_end_seconds": 44.585,
+      "observed_first_word_start_seconds": 26.52,
+      "observed_last_word_end_seconds": 44.02,
+      "start_drift_seconds": 0.335,
+      "end_drift_seconds": 0.565,
+      "passed": true
+    },
+    {
+      "segment_index": 4,
+      "expected_start_seconds": 44.805,
+      "expected_generated_end_seconds": 53.73,
+      "observed_first_word_start_seconds": 45.1,
+      "observed_last_word_end_seconds": 53.06,
+      "start_drift_seconds": 0.295,
+      "end_drift_seconds": 0.67,
+      "passed": true
+    },
+    {
+      "segment_index": 5,
+      "expected_start_seconds": 54.21,
+      "expected_generated_end_seconds": 71.66,
+      "observed_first_word_start_seconds": 54.52,
+      "observed_last_word_end_seconds": 70.86,
+      "start_drift_seconds": 0.31,
+      "end_drift_seconds": 0.8,
+      "passed": true
+    },
+    {
+      "segment_index": 6,
+      "expected_start_seconds": 71.88,
+      "expected_generated_end_seconds": 88.83,
+      "observed_first_word_start_seconds": 72.16,
+      "observed_last_word_end_seconds": 88.26,
+      "start_drift_seconds": 0.28,
+      "end_drift_seconds": 0.57,
+      "passed": true
+    },
+    {
+      "segment_index": 7,
+      "expected_start_seconds": 89.31,
+      "expected_generated_end_seconds": 102.41,
+      "observed_first_word_start_seconds": 89.76,
+      "observed_last_word_end_seconds": 101.86,
+      "start_drift_seconds": 0.45,
+      "end_drift_seconds": 0.55,
+      "passed": true
+    },
+    {
+      "segment_index": 8,
+      "expected_start_seconds": 102.89,
+      "expected_generated_end_seconds": 121.515,
+      "observed_first_word_start_seconds": 103.28,
+      "observed_last_word_end_seconds": 120.96,
+      "start_drift_seconds": 0.39,
+      "end_drift_seconds": 0.555,
+      "passed": true
+    },
+    {
+      "segment_index": 9,
+      "expected_start_seconds": 121.735,
+      "expected_generated_end_seconds": 133.185,
+      "observed_first_word_start_seconds": 122.1,
+      "observed_last_word_end_seconds": 132.62,
+      "start_drift_seconds": 0.365,
+      "end_drift_seconds": 0.565,
+      "passed": true
+    },
+    {
+      "segment_index": 10,
+      "expected_start_seconds": 133.665,
+      "expected_generated_end_seconds": 148.14,
+      "observed_first_word_start_seconds": 134.02,
+      "observed_last_word_end_seconds": 147.64,
+      "start_drift_seconds": 0.355,
+      "end_drift_seconds": 0.5,
+      "passed": true
+    },
+    {
+      "segment_index": 11,
+      "expected_start_seconds": 148.36,
+      "expected_generated_end_seconds": 164.56,
+      "observed_first_word_start_seconds": 148.66,
+      "observed_last_word_end_seconds": 163.92,
+      "start_drift_seconds": 0.3,
+      "end_drift_seconds": 0.64,
+      "passed": true
+    },
+    {
+      "segment_index": 12,
+      "expected_start_seconds": 164.78,
+      "expected_generated_end_seconds": 174.48,
+      "observed_first_word_start_seconds": 165.14,
+      "observed_last_word_end_seconds": 173.88,
+      "start_drift_seconds": 0.36,
+      "end_drift_seconds": 0.6,
+      "passed": true
+    }
+  ],
+  "qualified_scope": "phrase anchors, caption lines, and generation-block joins only",
+  "single_word_cue_policy": "instantaneous word boundaries are not qualified; use a reviewed phrase span",
+  "forced_phoneme_alignment_claimed": false,
+  "manual_review_required": true,
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "This receipt checks one synthetic narration against exact text and declared phrase anchors. It does not establish phoneme timing, listener comprehension, teaching quality, chapter truth, or publication authority."
+}

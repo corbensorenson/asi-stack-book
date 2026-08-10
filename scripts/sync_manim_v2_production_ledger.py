@@ -29,6 +29,7 @@ SKILL_COMPONENT_GATES = {
     "skills/asi-stack-manim-videos/references/manim-patterns.md": "animatic",
     "skills/asi-stack-manim-videos/references/experience-review.md": "animatic",
     "skills/asi-stack-manim-videos/scripts/audit_video_plan.py": "treatment",
+    "skills/asi-stack-manim-videos/scripts/align_visual_narration.py": "beat_plan",
     "skills/asi-stack-manim-videos/scripts/audit_scene_source.py": "animatic",
     "skills/asi-stack-manim-videos/scripts/render_scene_isolated.py": "animatic",
     "skills/asi-stack-manim-videos/scripts/build_final_render_receipt.py": "picture_and_sound_lock",
@@ -140,6 +141,8 @@ def preserved_state() -> tuple[dict[str, dict], dict[str, object]]:
             "authoring_component_sha256",
             "treatment_schema_sha256",
             "beat_plan_schema_sha256",
+            "alignment_receipt_schema_sha256",
+            "alignment_review_schema_sha256",
             "experience_review_schema_sha256",
             "review_context_schema_sha256",
             "av_diagnostics_schema_sha256",
@@ -349,6 +352,8 @@ def build() -> dict:
     authoring_component_sha256 = skill_component_digests()
     treatment_schema_sha256 = digest("schemas/manim_treatment.schema.json")
     beat_plan_schema_sha256 = digest("schemas/manim_beat_plan.schema.json")
+    alignment_receipt_schema_sha256 = digest("schemas/manim_alignment_receipt.schema.json")
+    alignment_review_schema_sha256 = digest("schemas/manim_alignment_review.schema.json")
     experience_review_schema_sha256 = digest("schemas/manim_experience_review.schema.json")
     review_context_schema_sha256 = digest("schemas/manim_review_context_manifest.schema.json")
     av_diagnostics_schema_sha256 = digest("schemas/manim_av_diagnostics.schema.json")
@@ -378,6 +383,8 @@ def build() -> dict:
         ("authoring_standard_sha256", authoring_standard_sha256, "treatment"),
         ("treatment_schema_sha256", treatment_schema_sha256, "treatment"),
         ("beat_plan_schema_sha256", beat_plan_schema_sha256, "beat_plan"),
+        ("alignment_receipt_schema_sha256", alignment_receipt_schema_sha256, "beat_plan"),
+        ("alignment_review_schema_sha256", alignment_review_schema_sha256, "beat_plan"),
         ("experience_review_schema_sha256", experience_review_schema_sha256, "animatic"),
         ("review_context_schema_sha256", review_context_schema_sha256, "animatic"),
         ("av_diagnostics_schema_sha256", av_diagnostics_schema_sha256, "picture_and_sound_lock"),
@@ -538,6 +545,10 @@ def build() -> dict:
         "treatment_schema_sha256": treatment_schema_sha256,
         "beat_plan_schema_path": "schemas/manim_beat_plan.schema.json",
         "beat_plan_schema_sha256": beat_plan_schema_sha256,
+        "alignment_receipt_schema_path": "schemas/manim_alignment_receipt.schema.json",
+        "alignment_receipt_schema_sha256": alignment_receipt_schema_sha256,
+        "alignment_review_schema_path": "schemas/manim_alignment_review.schema.json",
+        "alignment_review_schema_sha256": alignment_review_schema_sha256,
         "experience_review_schema_path": "schemas/manim_experience_review.schema.json",
         "experience_review_schema_sha256": experience_review_schema_sha256,
         "review_context_schema_path": "schemas/manim_review_context_manifest.schema.json",

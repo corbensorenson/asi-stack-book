@@ -66,12 +66,13 @@ license, and disclosure policy in the tracked toolchain. Candidate systems such
 as Kokoro, Qwen3-TTS, Chatterbox, Fish Audio, or a hosted service must pass the
 same audition; this document does not pre-approve any of them.
 
-After final synthesis, use forced alignment for word or phrase timestamps.
+After final synthesis, use forced alignment for phrase or caption timestamps.
 Whisper transcription is useful for content verification but is not by itself
-a precise synchronization contract. Prefer a pinned WhisperX, Montreal Forced
-Aligner, stable-ts, or equivalent route whose language, model, and failure
-behavior are recorded. Manually inspect anchors around names, symbols, pauses,
-and regenerated joins.
+a synchronization contract. The accepted ASI Stack route uses stable-ts
+2.19.1 exact-text alignment with a commit-pinned MLX Whisper backend and the
+tracked `align_visual_narration.py` adapter. WhisperX and Montreal Forced
+Aligner remain alternatives, not simultaneously qualified production routes.
+Manually inspect anchors around names, symbols, pauses, and regenerated joins.
 
 Keep three states distinct. Editorial timing is a planning estimate.
 Synthesis-block durations are exact only at block boundaries and may time an
@@ -88,24 +89,25 @@ events, create provisional scene-internal cue windows around the heard phrases;
 whole-block interpolation is not synchronization.
 
 Qualifying an aligner requires a tracked adapter and receipt schema, not a
-toolchain label edited by hand. Bind the implementation, version, acoustic
-model, lexicon, language, exact transcript and audio, settings, runner digest,
-and output digest. Freeze a human-reviewed fixture that covers ordinary prose,
-coined terms, acronyms, numbers, pauses, questions, and regenerated joins.
-Predeclare the scoring method before running candidates. At 30 fps, require at
-least 95% of reviewed cue-onset anchors within two frames of the gold anchor;
-permit no consequential name, symbol, pause, join, beat boundary, or question
-anchor beyond four frames after recorded manual correction. Require monotonic
-complete token custody, exact paragraph order, stable repeated output, and no
-beat crossing. Reject corrupted audio, transcript, model, lexicon, runner,
-settings, non-monotonic timestamps, missing tokens, duplicated tokens, and
-out-of-range boundaries in negative controls. Preserve corrections as a bound
-manual review; never silently edit the VTT and retain the old alignment receipt.
+toolchain label edited by hand. Bind the implementation, version, model,
+language, exact transcript and audio, settings, requirements lock, raw-output
+digest, and compact receipt. The accepted phrase-scoped route must preserve the
+exact normalized transcript, monotonic non-overlapping words, complete beat
+anchors, bounded audio edges, and bounded generation joins across at least four
+diverse chapter pilots. It permits at most 2.5% zero-duration words because
+those boundaries are expressly ineligible for cues. Manually review at least
+twelve representative phrase windows across the pilots, then review every
+consequential anchor again per chapter. Reject missing, duplicated, reversed,
+overlapping, clipped, or nonunique required phrases. Preserve corrections as a
+new bound review; never silently edit the VTT and retain the old alignment
+receipt.
 
-The two-frame cue-onset target follows Netflix's published 30 fps timing
-allowance; the 95% qualification rule and four-frame corrected-anchor ceiling
-are this project's explicit operational criteria, not universal learning or
-accessibility guarantees.
+This qualification is phrase-scoped, not phoneme-scoped. A future route that
+claims frame-accurate isolated-word or phoneme timing must earn a separate gold
+fixture and error distribution. At 30 fps, use the two-frame onset target as a
+caption diagnostic and manually correct consequential cues that visibly or
+audibly miss it; do not retroactively describe the current pilot as having
+measured a gold-anchor error it did not measure.
 
 Use the repository's pinned route rather than relying on script defaults:
 
@@ -121,10 +123,20 @@ build/visual_edition/tts_venv/bin/python scripts/validate_visual_narration.py \
   --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
   --asr build/visual_edition/audio/<chapter>-narration-master.json \
   --report build/visual_edition/audio/<chapter>-narration-master.validation.json
+build/visual_edition/alignment_venv/bin/python \
+  skills/asi-stack-manim-videos/scripts/align_visual_narration.py \
+  --audio build/visual_edition/audio/<chapter>-narration-master.wav \
+  --narration visual_edition/chapters/<chapter>/generation-2/narration.txt \
+  --beat-plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --narration-receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --narration-verification build/visual_edition/audio/<chapter>-narration-master.validation.json \
+  --output build/visual_edition/audio/<chapter>-alignment.json \
+  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/alignment.json
 ```
 
-The transcription runner invokes the validator; the explicit command replays
-the same digest-bound check without retranscribing. It is not a forced aligner.
+The transcription runner invokes the validator; the explicit validation command
+replays the same digest-bound check without retranscribing. It is not a forced
+aligner. The alignment command is the separate governed phrase-timing route.
 The ASR validator treats duration ranges as diagnostics. A short explanation
 does not fail merely for being short; never pad narration to satisfy a clock.
 The synthesis receipt can seed block-timed animatic captions, but it cannot
@@ -281,5 +293,7 @@ the waveform symptom.
 - [Qwen3-TTS reference implementation](https://github.com/QwenLM/Qwen3-TTS)
 - [WhisperX paper and implementation](https://github.com/m-bain/whisperX)
 - [Montreal Forced Aligner documentation](https://montreal-forced-aligner.readthedocs.io/)
+- [stable-ts exact-text alignment](https://github.com/jianfch/stable-ts)
+- [MLX Whisper reference implementation](https://github.com/ml-explore/mlx-examples/tree/main/whisper)
 - [Manim Voiceover documentation](https://voiceover.manim.community/en/stable/)
 - [Apple reduced-motion evaluation criteria](https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria)

@@ -1,0 +1,315 @@
+{
+  "schema_version": "asi_stack.manim_alignment_receipt.v1",
+  "created_at_utc": "2026-08-10T10:17:56Z",
+  "chapter_id": "stable-capability-fields",
+  "aligner": {
+    "aligner_id": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1",
+    "stable_ts_version": "2.19.1",
+    "mlx_whisper_version": "0.4.3",
+    "mlx_whisper_commit": "796f5b53cab69a3d48a44233ce21aae889e94a08",
+    "python_version": "3.12.5",
+    "method": "exact-transcript-constrained cross-attention dynamic-time-warping phrase alignment",
+    "compatibility_alias": "mlx_whisper.audio.N_FRAMES_MLX = mlx_whisper.audio.N_FRAMES",
+    "options": {
+      "language": "en",
+      "original_split": true,
+      "terminal_transcript_whitespace": "stripped"
+    },
+    "requirements_lock_path": "visual_edition/alignment_requirements.lock.txt",
+    "requirements_lock_sha256": "b287c08dc70d678cc81d738226d48740815f359cfb3852b5fca16c9455b4c483"
+  },
+  "model": {
+    "path": "build/visual_edition/models/whisper-small.en-mlx",
+    "config_sha256": "40028e43687458e79ba89cc16bf14184c5414a5cbc00fd511f8f78d138647afd",
+    "weights_sha256": "1bb29b030aca711a035f7a084a0eefac6251ecc2bdd356fa748858fbad082f5a"
+  },
+  "inputs": {
+    "audio_path": "build/visual_edition/audio/stable-capability-fields-narration-master.wav",
+    "audio_sha256": "c9e7a7436142e1d627606ba24dbe387db1a8f9a4b44cfd0975805ffce5bbb073",
+    "narration_path": "visual_edition/chapters/stable-capability-fields/generation-2/narration.txt",
+    "narration_sha256": "78a3638b2de175ec9140fc4cc3dc331ae762a426f8aaed896d11e10dc3ee97a7",
+    "beat_plan_path": "visual_edition/chapters/stable-capability-fields/generation-2/beat_plan.json",
+    "beat_contract_sha256": "2550292d7cb8aa3ef7b25058d808caa9e79d84e2ec979fa4662e0a3b0b869037",
+    "narration_receipt_path": "build/visual_edition/audio/stable-capability-fields-narration-master.receipt.json",
+    "narration_receipt_sha256": "ff814085ece463b2496d43877770ddf959f1f40fc10ce6c605fc1438288bc000",
+    "narration_verification_path": "build/visual_edition/audio/stable-capability-fields-narration-master.validation.json",
+    "narration_verification_sha256": "212fe8da720a3dfa1172532d2c6177ae03212aa2d74db1f98afca0d4ede5658e"
+  },
+  "raw_alignment": {
+    "path": "build/visual_edition/audio/stable-capability-fields-alignment.json",
+    "sha256": "b403afdaf9d6eab98ac6d5cdfea057fcf746836e00eec9cb81fdf13075b390b3",
+    "tracked": false
+  },
+  "verdict": "pass",
+  "checks": {
+    "exact_normalized_transcript": true,
+    "aligned_term_count": 499,
+    "expected_term_count": 499,
+    "nonempty_alignment": true,
+    "monotonic_word_starts": true,
+    "nonoverlapping_words": true,
+    "instant_word_count": 8,
+    "instant_word_fraction": 0.016129,
+    "instant_word_fraction_within_phrase_scope": true,
+    "beginning_gap_seconds": 0.52,
+    "ending_gap_seconds": 0.625,
+    "edge_coverage_passed": true,
+    "sync_anchor_count": 6,
+    "expected_sync_anchor_count": 6,
+    "all_sync_anchors_unique_and_positive": true,
+    "generation_join_count": 15,
+    "all_generation_joins_within_tolerance": true
+  },
+  "anchors": [
+    {
+      "beat_id": "b01",
+      "phrase": "should it inherit the Draft Notice service",
+      "start_seconds": 9.48,
+      "end_seconds": 11.34,
+      "duration_seconds": 1.86,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b02",
+      "phrase": "The gauge belongs to Harbor Line",
+      "start_seconds": 35.02,
+      "end_seconds": 36.7,
+      "duration_seconds": 1.68,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b03",
+      "phrase": "Those failures point in opposite directions",
+      "start_seconds": 73.1,
+      "end_seconds": 75.12,
+      "duration_seconds": 2.02,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b04",
+      "phrase": "bounded by consequence, not just traffic",
+      "start_seconds": 113.02,
+      "end_seconds": 115.36,
+      "duration_seconds": 2.34,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b05",
+      "phrase": "Does Harbor Line's lease transfer",
+      "start_seconds": 137.2,
+      "end_seconds": 138.72,
+      "duration_seconds": 1.52,
+      "instant_word_count": 0
+    },
+    {
+      "beat_id": "b06",
+      "phrase": "a disciplined boundary, not a certificate of sameness",
+      "start_seconds": 192.1,
+      "end_seconds": 194.76,
+      "duration_seconds": 2.66,
+      "instant_word_count": 0
+    }
+  ],
+  "anchor_errors": [],
+  "instant_words": [
+    {
+      "word": "Same",
+      "start_seconds": 0.52,
+      "end_seconds": 0.52
+    },
+    {
+      "word": "Signed",
+      "start_seconds": 3.16,
+      "end_seconds": 3.16
+    },
+    {
+      "word": "Harbor",
+      "start_seconds": 5.54,
+      "end_seconds": 5.54
+    },
+    {
+      "word": "blocks",
+      "start_seconds": 31.1,
+      "end_seconds": 31.1
+    },
+    {
+      "word": "A",
+      "start_seconds": 83.86,
+      "end_seconds": 83.86
+    },
+    {
+      "word": "Suppose",
+      "start_seconds": 128.02,
+      "end_seconds": 128.02
+    },
+    {
+      "word": "consequence,",
+      "start_seconds": 145.14,
+      "end_seconds": 145.14
+    },
+    {
+      "word": "A",
+      "start_seconds": 169.02,
+      "end_seconds": 169.02
+    }
+  ],
+  "generation_joins": [
+    {
+      "segment_index": 1,
+      "expected_start_seconds": 0.0,
+      "expected_generated_end_seconds": 18.05,
+      "observed_first_word_start_seconds": 0.52,
+      "observed_last_word_end_seconds": 17.54,
+      "start_drift_seconds": 0.52,
+      "end_drift_seconds": 0.51,
+      "passed": true
+    },
+    {
+      "segment_index": 2,
+      "expected_start_seconds": 18.27,
+      "expected_generated_end_seconds": 24.095,
+      "observed_first_word_start_seconds": 18.62,
+      "observed_last_word_end_seconds": 23.44,
+      "start_drift_seconds": 0.35,
+      "end_drift_seconds": 0.655,
+      "passed": true
+    },
+    {
+      "segment_index": 3,
+      "expected_start_seconds": 24.575,
+      "expected_generated_end_seconds": 43.675,
+      "observed_first_word_start_seconds": 25.0,
+      "observed_last_word_end_seconds": 43.06,
+      "start_drift_seconds": 0.425,
+      "end_drift_seconds": 0.615,
+      "passed": true
+    },
+    {
+      "segment_index": 4,
+      "expected_start_seconds": 43.895,
+      "expected_generated_end_seconds": 50.495,
+      "observed_first_word_start_seconds": 44.18,
+      "observed_last_word_end_seconds": 49.92,
+      "start_drift_seconds": 0.285,
+      "end_drift_seconds": 0.575,
+      "passed": true
+    },
+    {
+      "segment_index": 5,
+      "expected_start_seconds": 50.975,
+      "expected_generated_end_seconds": 67.85,
+      "observed_first_word_start_seconds": 51.36,
+      "observed_last_word_end_seconds": 67.2,
+      "start_drift_seconds": 0.385,
+      "end_drift_seconds": 0.65,
+      "passed": true
+    },
+    {
+      "segment_index": 6,
+      "expected_start_seconds": 68.07,
+      "expected_generated_end_seconds": 82.995,
+      "observed_first_word_start_seconds": 68.34,
+      "observed_last_word_end_seconds": 82.46,
+      "start_drift_seconds": 0.27,
+      "end_drift_seconds": 0.535,
+      "passed": true
+    },
+    {
+      "segment_index": 7,
+      "expected_start_seconds": 83.475,
+      "expected_generated_end_seconds": 100.725,
+      "observed_first_word_start_seconds": 83.86,
+      "observed_last_word_end_seconds": 99.94,
+      "start_drift_seconds": 0.385,
+      "end_drift_seconds": 0.785,
+      "passed": true
+    },
+    {
+      "segment_index": 8,
+      "expected_start_seconds": 100.945,
+      "expected_generated_end_seconds": 115.945,
+      "observed_first_word_start_seconds": 101.22,
+      "observed_last_word_end_seconds": 115.36,
+      "start_drift_seconds": 0.275,
+      "end_drift_seconds": 0.585,
+      "passed": true
+    },
+    {
+      "segment_index": 9,
+      "expected_start_seconds": 116.165,
+      "expected_generated_end_seconds": 126.965,
+      "observed_first_word_start_seconds": 116.48,
+      "observed_last_word_end_seconds": 126.36,
+      "start_drift_seconds": 0.315,
+      "end_drift_seconds": 0.605,
+      "passed": true
+    },
+    {
+      "segment_index": 10,
+      "expected_start_seconds": 127.445,
+      "expected_generated_end_seconds": 142.145,
+      "observed_first_word_start_seconds": 128.02,
+      "observed_last_word_end_seconds": 141.6,
+      "start_drift_seconds": 0.575,
+      "end_drift_seconds": 0.545,
+      "passed": true
+    },
+    {
+      "segment_index": 11,
+      "expected_start_seconds": 142.365,
+      "expected_generated_end_seconds": 160.715,
+      "observed_first_word_start_seconds": 142.66,
+      "observed_last_word_end_seconds": 160.16,
+      "start_drift_seconds": 0.295,
+      "end_drift_seconds": 0.555,
+      "passed": true
+    },
+    {
+      "segment_index": 12,
+      "expected_start_seconds": 160.935,
+      "expected_generated_end_seconds": 168.16,
+      "observed_first_word_start_seconds": 161.32,
+      "observed_last_word_end_seconds": 167.6,
+      "start_drift_seconds": 0.385,
+      "end_drift_seconds": 0.56,
+      "passed": true
+    },
+    {
+      "segment_index": 13,
+      "expected_start_seconds": 168.64,
+      "expected_generated_end_seconds": 182.74,
+      "observed_first_word_start_seconds": 169.02,
+      "observed_last_word_end_seconds": 181.78,
+      "start_drift_seconds": 0.38,
+      "end_drift_seconds": 0.96,
+      "passed": true
+    },
+    {
+      "segment_index": 14,
+      "expected_start_seconds": 182.96,
+      "expected_generated_end_seconds": 199.485,
+      "observed_first_word_start_seconds": 183.22,
+      "observed_last_word_end_seconds": 198.84,
+      "start_drift_seconds": 0.26,
+      "end_drift_seconds": 0.645,
+      "passed": true
+    },
+    {
+      "segment_index": 15,
+      "expected_start_seconds": 199.705,
+      "expected_generated_end_seconds": 205.505,
+      "observed_first_word_start_seconds": 199.98,
+      "observed_last_word_end_seconds": 204.88,
+      "start_drift_seconds": 0.275,
+      "end_drift_seconds": 0.625,
+      "passed": true
+    }
+  ],
+  "qualified_scope": "phrase anchors, caption lines, and generation-block joins only",
+  "single_word_cue_policy": "instantaneous word boundaries are not qualified; use a reviewed phrase span",
+  "forced_phoneme_alignment_claimed": false,
+  "manual_review_required": true,
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "This receipt checks one synthetic narration against exact text and declared phrase anchors. It does not establish phoneme timing, listener comprehension, teaching quality, chapter truth, or publication authority."
+}

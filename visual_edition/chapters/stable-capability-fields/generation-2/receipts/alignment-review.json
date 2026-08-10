@@ -1,0 +1,107 @@
+{
+  "schema_version": "asi_stack.manim_alignment_review.v1",
+  "reviewed_at_utc": "2026-08-10T10:18:39Z",
+  "chapter_id": "stable-capability-fields",
+  "reviewer": {
+    "reviewer_id": "codex-gpt5-auditory-review",
+    "review_mode": "full-speed auditory phrase-window review"
+  },
+  "audio": {
+    "path": "build/visual_edition/audio/stable-capability-fields-narration-master.wav",
+    "sha256": "c9e7a7436142e1d627606ba24dbe387db1a8f9a4b44cfd0975805ffce5bbb073"
+  },
+  "alignment_receipt": {
+    "path": "visual_edition/chapters/stable-capability-fields/generation-2/receipts/alignment.json",
+    "sha256": "e0893a47ed6068f540eab4b3fd21d989709f61f3fc0ae32bedea1b105b62e226"
+  },
+  "method": "Each required sync phrase was played at full speed with 0.5 seconds of pre-roll and post-roll. Review checked spoken content, onset enclosure, offset enclosure, clipping, and separation from adjacent narration.",
+  "anchors": [
+    {
+      "beat_id": "b01",
+      "phrase": "should it inherit the Draft Notice service",
+      "start_seconds": 9.48,
+      "end_seconds": 11.34,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    },
+    {
+      "beat_id": "b02",
+      "phrase": "The gauge belongs to Harbor Line",
+      "start_seconds": 35.02,
+      "end_seconds": 36.7,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    },
+    {
+      "beat_id": "b03",
+      "phrase": "Those failures point in opposite directions",
+      "start_seconds": 73.1,
+      "end_seconds": 75.12,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    },
+    {
+      "beat_id": "b04",
+      "phrase": "bounded by consequence, not just traffic",
+      "start_seconds": 113.02,
+      "end_seconds": 115.36,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    },
+    {
+      "beat_id": "b05",
+      "phrase": "Does Harbor Line's lease transfer",
+      "start_seconds": 137.2,
+      "end_seconds": 138.72,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    },
+    {
+      "beat_id": "b06",
+      "phrase": "a disciplined boundary, not a certificate of sameness",
+      "start_seconds": 192.1,
+      "end_seconds": 194.76,
+      "pre_roll_seconds": 0.5,
+      "post_roll_seconds": 0.5,
+      "content_match": true,
+      "onset_enclosed": true,
+      "offset_enclosed": true,
+      "clipped": false,
+      "verdict": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed_anchor_count": 6,
+    "failure_count": 0,
+    "verdict": "pass"
+  },
+  "independent_human_review_claimed": false,
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "limitations": "This is an AI auditory review of six required phrase windows, not an independent human listening study, phoneme-level annotation, comprehension result, or publication decision."
+}

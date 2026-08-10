@@ -150,7 +150,17 @@
         "animatic_timing_source",
         "picture_and_sound_lock_requirement",
         "candidate_methods",
-        "admission_test"
+        "admission_test",
+        "qualified_scope",
+        "accepted_aligner_id",
+        "aligner_script",
+        "aligner_script_sha256",
+        "requirements_lock",
+        "requirements_lock_sha256",
+        "pilot_receipts",
+        "pilot_summary",
+        "manual_review",
+        "residual_policy"
       ],
       "properties": {
         "qualification_state": {
@@ -164,7 +174,62 @@
           "uniqueItems": true,
           "items": {"type": "string", "minLength": 3}
         },
-        "admission_test": {"type": "string", "minLength": 60}
+        "admission_test": {"type": "string", "minLength": 60},
+        "qualified_scope": {"const": "phrase anchors, caption lines, and generation-block joins only"},
+        "accepted_aligner_id": {"const": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1"},
+        "aligner_script": {"const": "skills/asi-stack-manim-videos/scripts/align_visual_narration.py"},
+        "aligner_script_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "requirements_lock": {"const": "visual_edition/alignment_requirements.lock.txt"},
+        "requirements_lock_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pilot_receipts": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": ["chapter_id", "path", "sha256", "verdict"],
+            "properties": {
+              "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/receipts/alignment\\.json$"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "verdict": {"const": "pass"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "pilot_summary": {
+          "type": "object",
+          "required": [
+            "chapter_count", "normalized_term_count", "sync_anchor_count",
+            "generation_join_count", "failure_count", "maximum_instant_word_fraction"
+          ],
+          "properties": {
+            "chapter_count": {"type": "integer", "minimum": 4},
+            "normalized_term_count": {"type": "integer", "minimum": 1000},
+            "sync_anchor_count": {"type": "integer", "minimum": 20},
+            "generation_join_count": {"type": "integer", "minimum": 20},
+            "failure_count": {"const": 0},
+            "maximum_instant_word_fraction": {"type": "number", "minimum": 0, "maximum": 0.025}
+          },
+          "additionalProperties": false
+        },
+        "manual_review": {
+          "type": "object",
+          "required": [
+            "reviewer_id", "review_mode", "reviewed_chapter_count",
+            "reviewed_anchor_count", "failure_count", "independent_human_review_claimed"
+          ],
+          "properties": {
+            "reviewer_id": {"type": "string", "minLength": 6},
+            "review_mode": {"const": "full-speed auditory phrase-window review"},
+            "reviewed_chapter_count": {"type": "integer", "minimum": 4},
+            "reviewed_anchor_count": {"type": "integer", "minimum": 12},
+            "failure_count": {"const": 0},
+            "independent_human_review_claimed": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "residual_policy": {"type": "string", "minLength": 100}
       },
       "additionalProperties": false
     },

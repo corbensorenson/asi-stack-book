@@ -63,15 +63,64 @@
     ]
   },
   "alignment": {
-    "qualification_state": "not_yet_qualified",
+    "qualification_state": "qualified",
     "animatic_timing_source": "Exact synthesis-block durations recorded in the narration receipt.",
-    "picture_and_sound_lock_requirement": "A version-pinned word- or phrase-alignment route must pass difficult-term, pause, and regenerated-join checks before picture-and-sound lock.",
+    "picture_and_sound_lock_requirement": "Every picture-and-sound lock must bind a passing exact-text phrase-alignment receipt and a distinct zero-failure manual anchor review for that exact narration and beat plan.",
     "candidate_methods": [
+      "stable-ts exact-text MLX phrase alignment",
       "WhisperX",
-      "Montreal Forced Aligner",
-      "stable-ts"
+      "Montreal Forced Aligner"
     ],
-    "admission_test": "Compare candidate timestamps against manually marked anchors in a representative ASI Stack excerpt, record versions and failure cases, and reject any route that silently drops or misplaces a required anchor."
+    "admission_test": "Require exact normalized transcript coverage, monotonic non-overlapping words, bounded beginning, ending, and generation-join drift, unique positive-duration beat anchors, four diverse chapter pilots, and full-speed auditory review; reject any dropped, duplicated, clipped, or misplaced required phrase.",
+    "qualified_scope": "phrase anchors, caption lines, and generation-block joins only",
+    "accepted_aligner_id": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1",
+    "aligner_script": "skills/asi-stack-manim-videos/scripts/align_visual_narration.py",
+    "aligner_script_sha256": "f0f98267a12e22d1f6e0d4a41a6e64163ebcc6d3516e6d645d84a1ea85e30711",
+    "requirements_lock": "visual_edition/alignment_requirements.lock.txt",
+    "requirements_lock_sha256": "b287c08dc70d678cc81d738226d48740815f359cfb3852b5fca16c9455b4c483",
+    "pilot_receipts": [
+      {
+        "chapter_id": "asi-is-a-stack-not-a-model",
+        "path": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/receipts/alignment.json",
+        "sha256": "97a9d8c4e419a112bf3e2960ed4e1e4cd0d20bf2c27eb01319e49df408464958",
+        "verdict": "pass"
+      },
+      {
+        "chapter_id": "the-efficient-asi-hypothesis",
+        "path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/receipts/alignment.json",
+        "sha256": "d1325ce61891b3647f8b0a06ae096b6a5d08ec273f0e109cfee7dde772395f3a",
+        "verdict": "pass"
+      },
+      {
+        "chapter_id": "system-boundaries-and-authority",
+        "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/receipts/alignment.json",
+        "sha256": "d2d327b315550cc8afb68efa245dd1f4d08742980268ed825a4758ef3d1c71df",
+        "verdict": "pass"
+      },
+      {
+        "chapter_id": "stable-capability-fields",
+        "path": "visual_edition/chapters/stable-capability-fields/generation-2/receipts/alignment.json",
+        "sha256": "e0893a47ed6068f540eab4b3fd21d989709f61f3fc0ae32bedea1b105b62e226",
+        "verdict": "pass"
+      }
+    ],
+    "pilot_summary": {
+      "chapter_count": 4,
+      "normalized_term_count": 1789,
+      "sync_anchor_count": 55,
+      "generation_join_count": 53,
+      "failure_count": 0,
+      "maximum_instant_word_fraction": 0.022613
+    },
+    "manual_review": {
+      "reviewer_id": "codex-gpt5-auditory-review",
+      "review_mode": "full-speed auditory phrase-window review",
+      "reviewed_chapter_count": 4,
+      "reviewed_anchor_count": 15,
+      "failure_count": 0,
+      "independent_human_review_claimed": false
+    },
+    "residual_policy": "The qualified route is phrase-scoped, not phoneme-scoped. Any instantaneous single-word timestamp is ineligible as a cue boundary; every production cue must use a positive-duration reviewed phrase span, and every chapter still requires a distinct manual anchor review before picture-and-sound lock."
   },
   "tracked_inputs": {
     "requirements_lock": "visual_edition/narration_requirements.lock.txt",

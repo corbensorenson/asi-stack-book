@@ -38,6 +38,11 @@ generation-one files merely to make counts symmetrical.
   gate.
 - `schemas/manim_beat_plan.schema.json`: exact treatment and narration bindings,
   timing state, macro/performance ownership, and per-beat visual argument.
+- `schemas/manim_alignment_receipt.schema.json`: exact-text phrase-alignment
+  inputs, pinned aligner/model identity, raw-output custody, anchor coverage,
+  generation joins, residual instantaneous words, and pass/fail evidence.
+- `schemas/manim_alignment_review.schema.json`: exact audio/receipt custody and
+  full-speed auditory review of consequential phrase windows.
 - `schemas/manim_experience_review.schema.json`: exact artifact bindings,
   reviewer context, sample manifest, raw learning checks, viewing passes,
   timestamped dimensions, defects, and verdict.
@@ -88,6 +93,8 @@ visual_edition/chapters/<chapter-id>/generation-2/
   av_diagnostics.json
   render_receipt.json
   receipts/
+    alignment.json
+    alignment-review.json
     animatic-sample-manifest.json
     final-sample-manifest.json
     caption-overlay.png
@@ -187,6 +194,16 @@ estimated, but the production ledger cannot pass its beat-plan gate until at
 least `block_timed`, and cannot pass lock until `forced_aligned` under a
 qualified toolchain.
 
+The qualified route is exact-text stable-ts 2.19.1 with the pinned MLX Whisper
+backend. It qualifies multiword phrase anchors, caption-line boundaries, and
+generation joins only. Run it through
+`skills/asi-stack-manim-videos/scripts/align_visual_narration.py` using
+`build/visual_edition/alignment_venv/bin/python`; the environment is locked by
+`visual_edition/alignment_requirements.lock.txt`. Keep raw alignment JSON in
+ignored build custody and track the compact receipt. A passing receipt does not
+replace the per-chapter auditory `alignment-review.json`, and neither artifact
+claims phoneme precision. Zero-duration single words cannot own scene cues.
+
 Each beat must map to one treatment macro move and its performance block. Macro
 moves appear once, contiguously, and in story order. `source_refs` must stay
 inside the treatment's claim/source set. `introduced_terms` must stay inside
@@ -247,7 +264,8 @@ generalization.
    graphical replay; run that comparison on the pinned macOS host.
 10. Create the bound animatic sample set, inspect full-speed playback in every
     required mode, and pass animatic review.
-11. Qualify forced alignment, manually review anchors, and update the plan.
+11. Run the qualified exact-text aligner, manually review every consequential
+    phrase anchor, bind both receipts, and update the plan to `forced_aligned`.
 12. Finish scene, narration, captions, transcript, camera, easing, voice, and
     mix to candidate quality.
 13. Render and mux the pinned release profile through the tracked runner, sync

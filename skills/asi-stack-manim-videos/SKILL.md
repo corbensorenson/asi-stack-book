@@ -277,9 +277,35 @@ object state, composition, motion, text, and timing state.
 - `forced_aligned`: version-pinned alignment plus bound manual anchor review;
   required for picture-and-sound lock.
 
-Read the current narration toolchain before timing work. If its aligner remains
-unqualified, stop the governed progression at animatic; never relabel block
-timing or raw ASR timestamps as forced alignment.
+Read the current narration toolchain before timing work. The accepted route is
+exact-text, phrase-scoped stable-ts alignment through pinned MLX Whisper. It
+qualifies unique positive-duration phrase anchors, caption-line boundaries,
+and generation-block joins; it does not qualify phoneme timing or isolated
+instantaneous word boundaries. Never relabel block timing or raw ASR
+timestamps as forced alignment.
+
+Run the tracked adapter with the pinned alignment environment. The raw
+alignment remains under ignored build custody; the compact receipt is tracked.
+The adapter must exit nonzero on transcript, ordering, overlap, edge, anchor,
+instant-word-fraction, or generation-join failure.
+
+```bash
+build/visual_edition/alignment_venv/bin/python \
+  skills/asi-stack-manim-videos/scripts/align_visual_narration.py \
+  --audio build/visual_edition/audio/<chapter>-narration-master.wav \
+  --narration visual_edition/chapters/<chapter>/generation-2/narration.txt \
+  --beat-plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --narration-receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --narration-verification build/visual_edition/audio/<chapter>-narration-master.validation.json \
+  --output build/visual_edition/audio/<chapter>-alignment.json \
+  --receipt visual_edition/chapters/<chapter>/generation-2/receipts/alignment.json
+```
+
+Listen to every consequential phrase anchor in context and bind a distinct
+zero-failure `alignment-review.json` to the exact audio and receipt before
+using `forced_aligned`. Never cue a semantic event from a zero-duration word;
+use a reviewed multiword phrase span. Regeneration invalidates the receipt and
+review even when the written text is unchanged.
 
 For a block-timed animatic, raw ASR segment boundaries may locate provisional
 playback windows only. Record them as diagnostic cue hints outside the governed

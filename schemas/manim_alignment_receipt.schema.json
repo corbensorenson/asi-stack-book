@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.com/asi-stack/schemas/manim_alignment_receipt.schema.json",
+  "title": "ASI Stack Manim narration alignment receipt",
+  "type": "object",
+  "required": [
+    "schema_version", "created_at_utc", "chapter_id", "aligner", "model",
+    "inputs", "raw_alignment", "verdict", "checks", "anchors",
+    "anchor_errors", "instant_words", "generation_joins", "qualified_scope",
+    "single_word_cue_policy", "forced_phoneme_alignment_claimed",
+    "manual_review_required", "support_state_effect", "publication_effect", "non_claim"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.manim_alignment_receipt.v1"},
+    "created_at_utc": {"type": "string", "format": "date-time"},
+    "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "aligner": {
+      "type": "object",
+      "required": [
+        "aligner_id", "stable_ts_version", "mlx_whisper_version",
+        "mlx_whisper_commit", "python_version", "method", "compatibility_alias",
+        "options", "requirements_lock_path", "requirements_lock_sha256"
+      ],
+      "properties": {
+        "aligner_id": {"const": "stable-ts-2.19.1-mlx-whisper-exact-text-phrase-v1"},
+        "stable_ts_version": {"const": "2.19.1"},
+        "mlx_whisper_version": {"const": "0.4.3"},
+        "mlx_whisper_commit": {"const": "796f5b53cab69a3d48a44233ce21aae889e94a08"},
+        "python_version": {"type": "string", "pattern": "^3\\.12\\."},
+        "method": {"type": "string", "minLength": 40},
+        "compatibility_alias": {"type": "string", "minLength": 30},
+        "options": {
+          "type": "object",
+          "required": ["language", "original_split", "terminal_transcript_whitespace"],
+          "properties": {
+            "language": {"const": "en"},
+            "original_split": {"const": true},
+            "terminal_transcript_whitespace": {"const": "stripped"}
+          },
+          "additionalProperties": false
+        },
+        "requirements_lock_path": {"const": "visual_edition/alignment_requirements.lock.txt"},
+        "requirements_lock_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "model": {
+      "type": "object",
+      "required": ["path", "config_sha256", "weights_sha256"],
+      "properties": {
+        "path": {"const": "build/visual_edition/models/whisper-small.en-mlx"},
+        "config_sha256": {"$ref": "#/$defs/sha256"},
+        "weights_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "audio_path", "audio_sha256", "narration_path", "narration_sha256",
+        "beat_plan_path", "beat_contract_sha256", "narration_receipt_path",
+        "narration_receipt_sha256", "narration_verification_path",
+        "narration_verification_sha256"
+      ],
+      "properties": {
+        "audio_path": {"type": "string", "pattern": "^build/visual_edition/audio/.+\\.wav$"},
+        "audio_sha256": {"$ref": "#/$defs/sha256"},
+        "narration_path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/narration\\.txt$"},
+        "narration_sha256": {"$ref": "#/$defs/sha256"},
+        "beat_plan_path": {"type": "string", "pattern": "^visual_edition/chapters/.+/generation-2/beat_plan\\.json$"},
+        "beat_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "narration_receipt_path": {"type": "string", "pattern": "^build/visual_edition/audio/.+\\.receipt\\.json$"},
+        "narration_receipt_sha256": {"$ref": "#/$defs/sha256"},
+        "narration_verification_path": {"type": "string", "pattern": "^build/visual_edition/audio/.+\\.validation\\.json$"},
+        "narration_verification_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "raw_alignment": {
+      "type": "object",
+      "required": ["path", "sha256", "tracked"],
+      "properties": {
+        "path": {"type": "string", "pattern": "^build/visual_edition/audio/.+-alignment\\.json$"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "tracked": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "verdict": {"enum": ["pass", "fail"]},
+    "checks": {
+      "type": "object",
+      "required": [
+        "exact_normalized_transcript", "aligned_term_count", "expected_term_count",
+        "nonempty_alignment", "monotonic_word_starts", "nonoverlapping_words",
+        "instant_word_count", "instant_word_fraction",
+        "instant_word_fraction_within_phrase_scope", "beginning_gap_seconds",
+        "ending_gap_seconds", "edge_coverage_passed", "sync_anchor_count",
+        "expected_sync_anchor_count", "all_sync_anchors_unique_and_positive",
+        "generation_join_count", "all_generation_joins_within_tolerance"
+      ],
+      "properties": {
+        "exact_normalized_transcript": {"type": "boolean"},
+        "aligned_term_count": {"type": "integer", "minimum": 0},
+        "expected_term_count": {"type": "integer", "minimum": 1},
+        "nonempty_alignment": {"type": "boolean"},
+        "monotonic_word_starts": {"type": "boolean"},
+        "nonoverlapping_words": {"type": "boolean"},
+        "instant_word_count": {"type": "integer", "minimum": 0},
+        "instant_word_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "instant_word_fraction_within_phrase_scope": {"type": "boolean"},
+        "beginning_gap_seconds": {"type": "number", "minimum": 0},
+        "ending_gap_seconds": {"type": "number", "minimum": 0},
+        "edge_coverage_passed": {"type": "boolean"},
+        "sync_anchor_count": {"type": "integer", "minimum": 0},
+        "expected_sync_anchor_count": {"type": "integer", "minimum": 1},
+        "all_sync_anchors_unique_and_positive": {"type": "boolean"},
+        "generation_join_count": {"type": "integer", "minimum": 1},
+        "all_generation_joins_within_tolerance": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "anchors": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/anchor"}
+    },
+    "anchor_errors": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 3}
+    },
+    "instant_words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word", "start_seconds", "end_seconds"],
+        "properties": {
+          "word": {"type": "string", "minLength": 1},
+          "start_seconds": {"type": "number", "minimum": 0},
+          "end_seconds": {"type": "number", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "generation_joins": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "segment_index", "expected_start_seconds", "expected_generated_end_seconds",
+          "observed_first_word_start_seconds", "observed_last_word_end_seconds",
+          "start_drift_seconds", "end_drift_seconds", "passed"
+        ],
+        "properties": {
+          "segment_index": {"type": "integer", "minimum": 1},
+          "expected_start_seconds": {"type": "number", "minimum": 0},
+          "expected_generated_end_seconds": {"type": "number", "minimum": 0},
+          "observed_first_word_start_seconds": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "observed_last_word_end_seconds": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "start_drift_seconds": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "end_drift_seconds": {
+            "type": ["number", "null"],
+            "minimum": 0
+          },
+          "passed": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "qualified_scope": {"const": "phrase anchors, caption lines, and generation-block joins only"},
+    "single_word_cue_policy": {"type": "string", "minLength": 50},
+    "forced_phoneme_alignment_claimed": {"const": false},
+    "manual_review_required": {"const": true},
+    "support_state_effect": {"const": "none"},
+    "publication_effect": {"const": "none"},
+    "non_claim": {"type": "string", "minLength": 100}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "anchor": {
+      "type": "object",
+      "required": [
+        "beat_id", "phrase", "start_seconds", "end_seconds",
+        "duration_seconds", "instant_word_count"
+      ],
+      "properties": {
+        "beat_id": {"type": "string", "pattern": "^b[0-9]{2}$"},
+        "phrase": {"type": "string", "minLength": 3},
+        "start_seconds": {"type": "number", "minimum": 0},
+        "end_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "instant_word_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  }
+}
