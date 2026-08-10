@@ -39,7 +39,7 @@ ALL_VIEWING_PASSES = (
     "normal_speed", "muted", "audio_only", "captions_on", "phone",
     "large_screen", "headphones", "speakers", "random_frames",
 )
-EXPECTED_REJECTING_CONTROL_COUNT = 101
+EXPECTED_REJECTING_CONTROL_COUNT = 106
 
 
 def digest(path: Path) -> str:
@@ -312,6 +312,126 @@ def alignment_toolchain_negative_control_failures() -> tuple[list[str], int]:
         errors = alignment_toolchain_errors(candidate, receipt_schema)
         if not any(expected in error for error in errors):
             failures.append(f"alignment toolchain negative control did not trigger: {label}")
+    return failures, len(controls)
+
+
+def alignment_review_errors(
+    review: dict,
+    receipt: dict,
+    timing: dict,
+    chapter_id: str,
+    receipt_sha256: str,
+) -> list[str]:
+    errors: list[str] = []
+    if review.get("chapter_id") != chapter_id:
+        errors.append("manual anchor review chapter identity drift")
+    if review.get("reviewer", {}).get("reviewer_id") != timing.get("manual_anchor_reviewer_id"):
+        errors.append("manual anchor review reviewer identity drift")
+
+    inputs = receipt.get("inputs", {})
+    if review.get("audio") != {
+        "path": inputs.get("audio_path"),
+        "sha256": inputs.get("audio_sha256"),
+    }:
+        errors.append("manual anchor review audio identity drift")
+    if review.get("alignment_receipt") != {
+        "path": timing.get("receipt_path"),
+        "sha256": receipt_sha256,
+    }:
+        errors.append("manual anchor review alignment receipt identity drift")
+
+    expected_anchors = [
+        {
+            "beat_id": row.get("beat_id"),
+            "phrase": row.get("phrase"),
+            "start_seconds": row.get("start_seconds"),
+            "end_seconds": row.get("end_seconds"),
+        }
+        for row in receipt.get("anchors", [])
+    ]
+    observed_anchors = [
+        {
+            "beat_id": row.get("beat_id"),
+            "phrase": row.get("phrase"),
+            "start_seconds": row.get("start_seconds"),
+            "end_seconds": row.get("end_seconds"),
+        }
+        for row in review.get("anchors", [])
+        if isinstance(row, dict)
+    ]
+    if observed_anchors != expected_anchors:
+        errors.append("manual anchor review does not cover the exact aligned phrase inventory")
+
+    summary = review.get("summary", {})
+    observed_failures = sum(
+        row.get("verdict") != "pass"
+        for row in review.get("anchors", [])
+        if isinstance(row, dict)
+    )
+    if summary.get("reviewed_anchor_count") != len(observed_anchors):
+        errors.append("manual anchor review summary count drift")
+    if summary.get("failure_count") != observed_failures:
+        errors.append("manual anchor review summary failure-count drift")
+    if timing.get("manual_anchor_count") != len(observed_anchors):
+        errors.append("manual anchor review timing count drift")
+    if timing.get("manual_anchor_failures") != observed_failures:
+        errors.append("manual anchor review timing failure-count drift")
+    return errors
+
+
+def alignment_review_negative_control_failures() -> tuple[list[str], int]:
+    base = ROOT / "visual_edition/chapters/stable-capability-fields/generation-2"
+    receipt_path = base / "receipts/alignment.json"
+    review_path = base / "receipts/alignment-review.json"
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    review = json.loads(review_path.read_text(encoding="utf-8"))
+    plan = json.loads((base / "beat_plan.json").read_text(encoding="utf-8"))
+    timing = plan["timing"]
+    receipt_sha256 = digest(receipt_path)
+    baseline = alignment_review_errors(
+        review, receipt, timing, "stable-capability-fields", receipt_sha256
+    )
+    if baseline:
+        return ["valid alignment review fixture failed: " + "; ".join(baseline)], 5
+
+    controls = (
+        (
+            "phrase inventory",
+            lambda row: row["anchors"][0].__setitem__("phrase", "wrong phrase"),
+            "exact aligned phrase inventory",
+        ),
+        (
+            "audio identity",
+            lambda row: row["audio"].__setitem__("sha256", "0" * 64),
+            "audio identity drift",
+        ),
+        (
+            "reviewer identity",
+            lambda row: row["reviewer"].__setitem__("reviewer_id", "wrong-reviewer"),
+            "reviewer identity drift",
+        ),
+        (
+            "receipt path identity",
+            lambda row: row["alignment_receipt"].__setitem__("path", "wrong/path.json"),
+            "alignment receipt identity drift",
+        ),
+        (
+            "summary count",
+            lambda row: row["summary"].__setitem__(
+                "reviewed_anchor_count", row["summary"]["reviewed_anchor_count"] + 1
+            ),
+            "summary count drift",
+        ),
+    )
+    failures: list[str] = []
+    for label, mutate, expected in controls:
+        candidate = copy.deepcopy(review)
+        mutate(candidate)
+        errors = alignment_review_errors(
+            candidate, receipt, timing, "stable-capability-fields", receipt_sha256
+        )
+        if not any(expected in error for error in errors):
+            failures.append(f"alignment review negative control did not trigger: {label}")
     return failures, len(controls)
 
 
@@ -1847,15 +1967,16 @@ def semantic_errors(value: dict) -> list[str]:
                                 f"{chapter_id}:alignment-review-schema:{'.'.join(map(str, error.path))}: {error.message}"
                                 for error in Draft202012Validator(alignment_review_schema).iter_errors(anchor_value)
                             )
-                            if anchor_value.get("chapter_id") != chapter_id:
-                                errors.append(f"{chapter_id}: manual anchor review chapter identity drift")
-                            if anchor_value.get("alignment_receipt", {}).get("sha256") != digest(receipt_path):
-                                errors.append(f"{chapter_id}: manual anchor review alignment identity drift")
-                            summary = anchor_value.get("summary", {})
-                            if summary.get("reviewed_anchor_count") != timing.get("manual_anchor_count"):
-                                errors.append(f"{chapter_id}: manual anchor review count drift")
-                            if summary.get("failure_count") != timing.get("manual_anchor_failures"):
-                                errors.append(f"{chapter_id}: manual anchor review failure-count drift")
+                            errors.extend(
+                                f"{chapter_id}: {error}"
+                                for error in alignment_review_errors(
+                                    anchor_value,
+                                    alignment_value,
+                                    timing,
+                                    chapter_id,
+                                    digest(receipt_path),
+                                )
+                            )
         if gates.get("picture_and_sound_lock") == "pass":
             if not alignment_qualified:
                 errors.append(f"{chapter_id}: picture-and-sound lock passes before forced alignment is qualified")
@@ -2942,6 +3063,7 @@ def negative_control_failures(value: dict) -> tuple[list[str], int]:
         render_receipt_negative_control_failures,
         sandbox_receipt_negative_control_failures,
         alignment_toolchain_negative_control_failures,
+        alignment_review_negative_control_failures,
     ):
         check_failures, check_count = check()
         failures.extend(check_failures)
