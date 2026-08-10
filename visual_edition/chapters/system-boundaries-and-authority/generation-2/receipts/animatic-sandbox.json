@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.manim_sandbox_policy_receipt.v1",
-  "created_at_utc": "2026-08-10T06:53:31Z",
+  "created_at_utc": "2026-08-10T08:38:11Z",
   "chapter_id": "system-boundaries-and-authority",
   "profile": "draft",
   "isolation_mode": "macos_sandbox_exec",
@@ -14,15 +14,15 @@
   },
   "scene": {
     "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/scene.py",
-    "sha256": "01dc1e82c73096ceb0ede357e1daefc4b350ff8b8fc10618f7d837dbd415f8ce"
+    "sha256": "055cd9db123df0eb119bb57c5a681737daebd05ee8d7e9bcc38cec32988cde22"
   },
   "treatment": {
     "path": "visual_edition/chapters/system-boundaries-and-authority/generation-2/treatment.json",
-    "sha256": "e9d501e4a105adf94e7932c52815e377b2176e596fae467dcdd7d5c2e4528e9f"
+    "sha256": "f71c232a6186430b616517e874b3d8cb05592153c2eab86608602fd21159c0b8"
   },
   "audio_master": {
     "path": "build/visual_edition/audio/system-boundaries-and-authority-narration-master.wav",
-    "sha256": "83fd0075c5836da698e823e2d98cd86f9f8787c21d240d5e681b90a78b4424cf"
+    "sha256": "25aedb4fa0238f1ce79c5f186bfcb9bdcba2531d2751ed628f539bd8f6d774aa"
   },
   "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
   "media_tools": {
@@ -90,7 +90,7 @@
   "source_preflight": {
     "verdict": "pass",
     "finding_count": 0,
-    "scene_sha256": "01dc1e82c73096ceb0ede357e1daefc4b350ff8b8fc10618f7d837dbd415f8ce",
+    "scene_sha256": "055cd9db123df0eb119bb57c5a681737daebd05ee8d7e9bcc38cec32988cde22",
     "auditor": {
       "path": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py",
       "sha256": "909cf7b01ee61c5f2e9dea20e7d11f62467fa2acdbdc0a1018f61c57a5ed9ed7"
@@ -127,7 +127,7 @@
         "SystemBoundariesAuthorityGeneration2"
       ],
       "exit_code": 0,
-      "wall_seconds": 105.774
+      "wall_seconds": 50.196
     },
     {
       "phase": "audio_mux",
@@ -161,21 +161,21 @@
         "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/.system-boundaries-and-authority-animatic.draft.pending.mp4"
       ],
       "exit_code": 0,
-      "wall_seconds": 13.398
+      "wall_seconds": 4.143
     }
   ],
   "outputs": [
     {
       "role": "visual_track",
       "path": "build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/media/videos/scene/480p15/system-boundaries-and-authority-visual.mp4",
-      "sha256": "ef6f581fc0e47992caa4e28f18cae783c1ef1bb842159e73fdccecede37c2e3e",
-      "size_bytes": 1817138
+      "sha256": "ac47c10c1462fa5b6927079a624686cf926187cab5a7d175477cdfea85c338e9",
+      "size_bytes": 1813616
     },
     {
       "role": "muxed_master",
       "path": "build/visual_edition/isolated-renders/system-boundaries-and-authority/draft/system-boundaries-and-authority-animatic.mp4",
-      "sha256": "e731eff5b323565fb37a3521bd1124af3ee1d9d1262a991a0526ac07f4c3686f",
-      "size_bytes": 5112921
+      "sha256": "19b0413dc84540ab72b894f38fd65e37e3941269205f216c34e1fdeeb2ab9400",
+      "size_bytes": 5134417
     }
   ],
   "support_state_effect": "none",

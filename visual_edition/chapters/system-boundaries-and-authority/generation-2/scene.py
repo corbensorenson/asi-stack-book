@@ -58,22 +58,22 @@ from visual_edition.lib.asi_visuals import (
 
 
 class SystemBoundariesAuthorityGeneration2(AsiScene):
-    TARGET_DURATION = 176.790
+    TARGET_DURATION = 176.210
     ENDS = [
-        11.155,
-        21.085,
-        34.740,
-        46.970,
-        60.575,
-        76.205,
-        90.385,
-        102.040,
-        113.395,
-        125.475,
-        135.205,
-        148.035,
-        160.890,
-        176.790,
+        12.981,
+        23.425,
+        36.822,
+        48.373,
+        62.320,
+        77.950,
+        91.657,
+        103.400,
+        114.117,
+        126.250,
+        135.422,
+        145.834,
+        160.341,
+        176.210,
     ]
 
     def wait_until(self, target: float) -> None:
@@ -336,7 +336,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
                 Indicate(gate, color=ROLLBACK, scale_factor=1.06),
                 Indicate(bank, color=INK, scale_factor=1.04),
             ),
-            settle=0.70,
+            settle=2.71,
         )
 
         # b02: CAN and MAY become separate questions in the same workbench.
@@ -741,6 +741,10 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
                 FadeIn(proof_focus),
                 *[Transform(proof_focus, focus) for focus in outside_focuses],
                 FadeOut(proof_focus),
+            ),
+            LaggedStart(
+                *[Circumscribe(socket, color=RESIDUAL) for socket in outside],
+                lag_ratio=0.25,
             ),
             settle=0.92,
         )

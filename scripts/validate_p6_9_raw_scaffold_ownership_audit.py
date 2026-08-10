@@ -42,8 +42,8 @@ def errors(value: dict[str, Any]) -> list[str]:
     if value.get("state") != "terminal_complete":
         out.append("audit is not terminal")
     if (
-        binding.get("raw_repeated_12_gram_count") != 1053
-        or binding.get("raw_maximum_chapter_spread") != 67
+        binding.get("raw_repeated_12_gram_count") != 1259
+        or binding.get("raw_maximum_chapter_spread") != 69
         or binding.get("reader_facing_repeated_12_gram_count") != 0
         or binding.get("reader_facing_maximum_chapter_spread") != 0
     ):
@@ -65,8 +65,8 @@ def errors(value: dict[str, Any]) -> list[str]:
         if row.get("chapter_ids_sha256") != expected_ids:
             out.append("widest-block chapter-set fingerprint drifted")
         if (
-            row.get("chapter_spread") != 67
-            or len(chapter_ids) != 67
+            row.get("chapter_spread") != 69
+            or len(chapter_ids) != 69
             or row.get("word_tokens") != 12
         ):
             out.append("widest-block scope drifted")

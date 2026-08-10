@@ -1,27 +1,19 @@
-A model writes a flawless instruction: refund two hundred forty dollars to account forty-seven. Account, amount, and command all check out. Should the bank execute it?
-
+A model writes a flawless instruction: refund two hundred forty dollars to account forty-seven. Account, amount, and command all check out. Should the bank execute it? Hold your answer against the valid command.
 Not yet. Correctness shows capability. Authority asks a different question: may this requester cause this operation on this target, here and now?
 
 Wrap the instruction in an authority envelope. It binds the requester to one effect, one target, a limit, and a deadline. It caps the amount and demands receipts. Model confidence cannot fill a missing field.
-
 The model begins with a read grant for account forty-seven. It can inspect the record and calculate the refund. But the read key does not fit the refund socket. Knowing how is not permission.
-
 At the effect boundary, the instruction stops. The gate issues a denial receipt naming the operation mismatch. This is not a broken workflow. It is a successful refusal that another process can inspect.
 
 An authorized approver can issue a narrower grant: user twelve may refund account forty-seven, up to two hundred forty dollars, once, before two-oh-five. The grant also requires an effect receipt and an independent observation.
 
 Now every field lines up. The envelope crosses the boundary, and the adapter attempts the exact refund. Its effect receipt records what ran. A separate observer checks that the account changed by the authorized amount.
-
 Keep those records separate. The instruction says what was requested. The effect receipt says what the adapter reports doing. The observation says what another path could see afterward.
 
 Now replay the byte-identical instruction. Nothing in the command has degraded, but the one-shot grant has been consumed. This time, the envelope reaches a closed gate.
-
 Moving the clock past expiry must close it too. So must revocation before dispatch. Capability did not shrink in either case. Because authority state changed, the outcome must change.
 
 That is the can-may delta. A stronger model may expand what the system can do. It still cannot raise the caller's ceiling or revive a dead grant.
-
 Locally, Lean proves a bounded version of this rule. Every accepted effect in its authored finite system stays within the caller's ceiling and carries the modeled grant, dispatch, and effect custody.
-
 That theorem does not establish deployed authorization. Real identities can be forged, wrappers can be bypassed, revocation can race execution, and an observer can miss an external effect.
-
 Return to the refund. It proceeds only while the active grant binds this user to this refund, this account, this amount, and this moment. Receipts remain mandatory. A capable system knows how. A governed system can show why it acted, or why it refused.
