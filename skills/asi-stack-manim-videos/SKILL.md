@@ -254,6 +254,17 @@ The transcriber invokes that validator automatically; the explicit command is
 the reproducible replay. Both must pass on current digests. Neither establishes
 word timing, naturalness, or listener preference.
 
+When verification fails, follow the localization and regeneration procedure in
+[audio-and-accessibility.md](references/audio-and-accessibility.md); never weaken
+the WER, beginning, ending, or omission thresholds. A passing rerun closes
+content custody only; acoustic audition remains required.
+
+```bash
+python3 skills/asi-stack-manim-videos/scripts/diagnose_narration_asr.py \
+  --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --asr build/visual_edition/audio/<chapter>-narration-master.json
+```
+
 Create `beat_plan.json` by splitting the exact narration at semantic and audio
 anchors. Each beat binds its treatment macro move, performance block, source
 references, claim role, visual inference, evidence boundary, attention target,

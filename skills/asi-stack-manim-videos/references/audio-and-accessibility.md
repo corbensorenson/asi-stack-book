@@ -122,6 +122,21 @@ does not fail merely for being short; never pad narration to satisfy a clock.
 The synthesis receipt can seed block-timed animatic captions, but it cannot
 produce a final forced-aligned caption track.
 
+Treat an ASR failure as a localization task, not a reason to relax the gate.
+Compare the exact expected and recognized tokens, then distinguish a clipped or
+mispronounced performance from recognizer ambiguity. Rewrite nonessential
+chapter-local wording when a fictional name, homophone, or segmentation choice
+is needlessly ambiguous in speech. Reserve the shared pronunciation lexicon for
+stable series-wide terms that have been auditioned in context; a lexicon edit
+invalidates every affected master and must not be used to rescue one chapter at
+the expense of the corpus. Regenerate the complete thought block, rerun ASR and
+signal validation, and still listen to the result. Zero content error is strong
+custody evidence, not proof of natural cadence or correct emphasis.
+
+Use `diagnose_narration_asr.py` to print the exact raw and content-normalized
+edit blocks. It is read-only and diagnostic: it neither changes the canonical
+normalization contract nor passes the content gate.
+
 ## Mix for comprehension
 
 Treat speech as the primary signal. Pin a project loudness target and use it
