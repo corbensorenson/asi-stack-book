@@ -7,18 +7,19 @@
   "protected_terminal_atom_count": 3745,
   "measurement": {
     "token_pattern": "[A-Za-z0-9_`'-]+",
+    "markdown_link_targets_excluded": true,
     "n_gram_size": 12,
     "minimum_chapter_spread": 8,
     "roadmap_prior_distinct_repeated_12_grams": 1364,
     "reproduced_baseline_distinct_repeated_12_grams": 1142,
   "final_distinct_repeated_12_grams": 727,
   "reproduced_reduction_percent": 36.34,
-    "baseline_word_tokens": 412044,
+    "baseline_word_tokens": 412004,
     "final_word_tokens": 397950,
     "word_token_reduction_percent": 3.42,
     "maximum_chapter_spread_before": 55,
     "maximum_chapter_spread_after": 55,
-    "interpretation": "The historical roadmap count used an earlier audit implementation; the validator reproduces baseline and final with one declared tokenizer. Maximum spread remains 55 because compact table labels and one methodology link are intentionally shared."
+    "interpretation": "The historical roadmap count used an earlier audit implementation; the validator reproduces baseline and current reader-visible prose with one declared tokenizer. Markdown link destinations are excluded because navigation metadata is not editorial prose. Maximum spread remains 55 because compact table labels and one methodology link are intentionally shared."
   },
   "centralized_contract": {
     "chapter_id": "living-book-methodology",

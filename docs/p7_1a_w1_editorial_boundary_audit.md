@@ -15,9 +15,15 @@ pinned in the P7 lineage record; the live projections have a separate digest
 and rejecting validator.
 
 Using one declared 12-gram tokenizer against commit `941858574` and the current
-55-chapter set, repeated 12-grams appearing in at least eight chapters fell
-from 1,142 to 728 (36.25%). Word tokens now total 396,944 versus the 412,044
-baseline (3.66% lower).
+55-chapter set, repeated 12-grams appearing in at least eight chapters are 958
+against a 1,142 baseline, a 16.11% reduction. The tokenizer measures
+reader-visible prose and excludes Markdown link destinations: publishing the
+same paper route in several source crosswalks is navigation metadata, not a
+repeated sentence or claim. The reproduced baseline contains 412,004 visible
+word tokens. Later substantive chapter growth is allowed; the live gate keeps
+the 15% repetition-reduction floor rather than pretending the current chapters
+reproduce the terminal W1 bytes.
+
 The roadmap's older frozen count was 1,364; that number is retained as
 historical provenance rather than silently presented as reproducible under the
 current tokenizer. Maximum spread remains 55 because compact table field names

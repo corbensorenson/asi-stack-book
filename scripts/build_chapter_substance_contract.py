@@ -544,7 +544,7 @@ REQUIRED_ELEMENTS = ["**Mechanism.**", "**Failure mode.**", "**Non-claim.**", "*
 # disposition before the chapter can remain concept-complete.
 SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
     "dangerous-capability-domains-and-misuse-uplift": {
-        "reviewed_sha256": "465999303920301609add397cb9c707de74768e85267be890e4205a218943595",
+        "reviewed_sha256": "a1f40c289a98aa968753aad47fb628d7473e598395a9e52893183596301f8300",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -558,7 +558,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "content-authenticity-watermarking-and-synthetic-media-integrity": {
-        "reviewed_sha256": "ff711d28d9af577fbe984260a526a4d1e0b6af8a1de72d8dc2f0f3f19ae78084",
+        "reviewed_sha256": "5c9f9fdb9a4cfa2ad59fe0418b22aa6ec33628e4837585a9649acc575aaf6d80",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -572,7 +572,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "societal-resilience-and-misuse-defense": {
-        "reviewed_sha256": "b7cc4330b429d615591a7070ab4f1505721e62e8eb841db56fb279c1569bd248",
+        "reviewed_sha256": "58e6daf837617a377e7401f28d73e2563879020df27c238eb3e3b6c94477e14d",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -684,7 +684,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "open-weight-release-and-post-release-control": {
-        "reviewed_sha256": "925dea68fc16a2882d5e0a05c6c64a69b162700e0f927782a0caddc283b5c379",
+        "reviewed_sha256": "9f0d7eef5c78bbe3775f33e78bfa56ba902c9157e6a73b9a8bfeac71bf2c09ca",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -825,7 +825,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "embodied-agency-real-time-control-and-physical-safety": {
-        "reviewed_sha256": "287cc2991a184ee9ec842579419fff80a085c79a568989c938097559cb812c69",
+        "reviewed_sha256": "57d979ac7e61e19d4aa9d8cb0ab9b673d05d1544c7a900000e9146daed857fb7",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,

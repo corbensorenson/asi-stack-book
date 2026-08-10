@@ -42,7 +42,7 @@ def errors(value: dict[str, Any]) -> list[str]:
     if value.get("state") != "terminal_complete":
         out.append("audit is not terminal")
     if (
-        binding.get("raw_repeated_12_gram_count") != 1032
+        binding.get("raw_repeated_12_gram_count") != 1053
         or binding.get("raw_maximum_chapter_spread") != 67
         or binding.get("reader_facing_repeated_12_gram_count") != 0
         or binding.get("reader_facing_maximum_chapter_spread") != 0

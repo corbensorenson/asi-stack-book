@@ -29,7 +29,11 @@ def repeated_metric(chapter_ids: list[str], getter: Callable[[str], str]) -> tup
     locations: dict[str, set[str]] = defaultdict(set)
     token_count = 0
     for chapter_id in chapter_ids:
-        words = TOKEN_RE.findall(getter(chapter_id))
+        # Measure reader-visible prose, not Markdown destination metadata. A
+        # paper URL repeated across source crosswalks is useful navigation but
+        # is not a repeated sentence, claim, or editorial template.
+        visible_text = re.sub(r"\]\([^\n)]*\)", "]", getter(chapter_id))
+        words = TOKEN_RE.findall(visible_text)
         token_count += len(words)
         for index in range(len(words) - 11):
             locations[" ".join(words[index:index + 12])].add(chapter_id)
