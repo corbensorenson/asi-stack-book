@@ -34,7 +34,14 @@ def load_validator(root: Path) -> ModuleType:
     if spec is None or spec.loader is None:
         raise ValueError("could not load the canonical narration validator")
     module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    try:
+        spec.loader.exec_module(module)
+    except ModuleNotFoundError as exc:
+        raise SystemExit(
+            "the canonical narration validator dependency "
+            f"{exc.name!r} is unavailable; run this diagnostic with "
+            "build/visual_edition/tts_venv/bin/python"
+        ) from exc
     return module
 
 

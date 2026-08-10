@@ -218,9 +218,13 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             fill_color=BACKGROUND,
             fill_opacity=0.20,
         )
-        state_tag = self.state_chip(state, color, 1.42).move_to(shell.get_top() + DOWN * 0.24)
+        state_tag = self.state_chip(
+            state, color, 1.62, font_size=14, height=0.50
+        ).move_to(shell.get_top() + DOWN * 0.27)
         use_label = "1 USE" if uses == "1" else f"{uses} USES"
-        use_tag = self.state_chip(use_label, color, 1.10).move_to(shell.get_bottom() + UP * 0.25)
+        use_tag = self.state_chip(
+            use_label, color, 1.22, font_size=13, height=0.48
+        ).move_to(shell.get_bottom() + UP * 0.27)
         return VGroup(shell, state_tag, use_tag)
 
     def field(self, name: str, color: str = AUTHORITY) -> VGroup:
@@ -617,20 +621,24 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
 
         # b10: lifecycle changes close MAY while CAN remains stable.
         old = self.transients()
-        command = self.ticket(compact=True).scale(0.48).shift(LEFT * 5.62 + UP * 2.48)
-        can_line = Line(LEFT * 5.82 + DOWN * 0.75, RIGHT * 5.82 + DOWN * 0.75, color=ACCENT, stroke_width=5)
-        can_tag = self.state_chip("CAN UNCHANGED", ACCENT, 1.92).shift(LEFT * 4.62 + DOWN * 0.75)
+        command = self.ticket(compact=True).scale(0.52).shift(LEFT * 5.42 + UP * 2.42)
+        command_label = self.state_chip(
+            "IDENTICAL COMMAND", ACCENT, 2.08, font_size=13, height=0.54
+        ).next_to(command, RIGHT, buff=0.18)
+        can_line = Line(LEFT * 5.82 + DOWN * 1.34, RIGHT * 5.82 + DOWN * 1.34, color=ACCENT, stroke_width=5)
+        can_tag = self.state_chip(
+            "CAN UNCHANGED", ACCENT, 2.16, font_size=14, height=0.56
+        ).shift(LEFT * 4.48 + DOWN * 1.34)
         state_names = [
-            ("CONSUMED", "0", "0 USES", -3.55),
-            ("EXPIRED", "1", "AFTER 2:05", 0.0),
-            ("REVOKED", "1", "BEFORE SEND", 3.55),
+            ("CONSUMED", "0", "NO USE REMAINS", -3.80),
+            ("EXPIRED", "1", "CLOCK > 2:05", 0.0),
+            ("REVOKED", "1", "BEFORE DISPATCH", 3.80),
         ]
         states = VGroup(*[
             VGroup(
-                self.sleeve(state=name, uses=uses, color=ROLLBACK).scale(0.52).move_to(RIGHT * (x - 0.62) + UP * 0.78),
-                self.bank_gate(color=ROLLBACK).scale(0.46).move_to(RIGHT * (x + 1.00) + UP * 0.78),
-                self.label(detail, 10, MUTED, "BOLD").move_to(RIGHT * x + DOWN * 0.45),
-                self.ticket(compact=True).scale(0.38).move_to(RIGHT * (x - 0.62) + UP * 0.78),
+                self.sleeve(state=name, uses=uses, color=ROLLBACK).scale(0.70).move_to(RIGHT * (x - 0.48) + UP * 0.78),
+                self.bank_gate(color=ROLLBACK).scale(0.60).move_to(RIGHT * (x + 1.08) + UP * 0.78),
+                self.label(detail, 14, MUTED, "BOLD").move_to(RIGHT * x + DOWN * 0.47),
             )
             for name, uses, detail, x in state_names
         ])
@@ -638,6 +646,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             10,
             FadeOut(old),
             FadeIn(command),
+            FadeIn(command_label),
             Create(can_line),
             FadeIn(can_tag),
             LaggedStart(*[FadeIn(state, shift=DOWN * 0.12) for state in states], lag_ratio=0.24),

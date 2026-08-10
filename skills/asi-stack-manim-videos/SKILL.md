@@ -260,7 +260,8 @@ the WER, beginning, ending, or omission thresholds. A passing rerun closes
 content custody only; acoustic audition remains required.
 
 ```bash
-python3 skills/asi-stack-manim-videos/scripts/diagnose_narration_asr.py \
+build/visual_edition/tts_venv/bin/python \
+  skills/asi-stack-manim-videos/scripts/diagnose_narration_asr.py \
   --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
   --asr build/visual_edition/audio/<chapter>-narration-master.json
 ```

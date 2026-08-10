@@ -136,7 +136,16 @@ custody evidence, not proof of natural cadence or correct emphasis.
 Use `diagnose_narration_asr.py` to print the exact raw and content-normalized
 edit blocks with exact input, validator, and diagnostic digests. It is read-only
 and diagnostic: it neither changes the canonical normalization contract nor
-passes the content gate.
+passes the content gate. Invoke it with the pinned TTS/ASR interpreter because
+it imports the canonical signal validator rather than copying that validator's
+normalization rules:
+
+```bash
+build/visual_edition/tts_venv/bin/python \
+  skills/asi-stack-manim-videos/scripts/diagnose_narration_asr.py \
+  --receipt build/visual_edition/audio/<chapter>-narration-master.receipt.json \
+  --asr build/visual_edition/audio/<chapter>-narration-master.json
+```
 
 ## Mix for comprehension
 
