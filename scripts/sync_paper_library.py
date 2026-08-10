@@ -53,6 +53,26 @@ def html_path(qmd_path: str) -> str:
     return str(Path(qmd_path).with_suffix(".html"))
 
 
+def resolved_asset_root(record: dict) -> Path | None:
+    """Resolve local canonical assets with a tracked-public fallback.
+
+    Raw author packages are deliberately not tracked.  The paper library does
+    track exact publication copies of referenced assets, so fresh checkouts
+    must be able to reproduce and validate the same reader page without the
+    author's private/local source tree.
+    """
+    asset_root_value = record.get("canonical_asset_root")
+    if not asset_root_value:
+        return None
+    canonical_asset_root = ROOT / str(asset_root_value)
+    if canonical_asset_root.is_dir():
+        return canonical_asset_root
+    public_asset_root = ROOT / "papers" / "assets" / str(record["source_id"])
+    if public_asset_root.is_dir():
+        return public_asset_root
+    return canonical_asset_root
+
+
 def flatten_chapters(structure: dict) -> list[dict]:
     return [
         chapter
@@ -157,8 +177,7 @@ def render_body(
 
 def expected_page(record: dict, inventory_record: dict, structure: dict, exact_bytes: bytes) -> str:
     source_copy = ROOT / record["published_source"]
-    asset_root_value = record.get("canonical_asset_root")
-    canonical_asset_root = ROOT / asset_root_value if asset_root_value else None
+    canonical_asset_root = resolved_asset_root(record)
     body, missing_images, stripped_front_matter = render_body(
         exact_bytes,
         source_copy.parent,
@@ -442,8 +461,9 @@ def synchronize(check: bool) -> list[str]:
         asset_root_value = record.get("canonical_asset_root")
         expected_assets: set[Path] = set()
         if asset_root_value:
-            asset_root = ROOT / str(asset_root_value)
-            if not asset_root.is_dir():
+            public_asset_root = ROOT / "papers" / "assets" / source_id
+            asset_root = resolved_asset_root(record)
+            if asset_root is None or not asset_root.is_dir():
                 errors.append(f"{source_id}: canonical asset root is missing: {asset_root_value}")
                 continue
             text = canonical_bytes.decode("utf-8-sig", errors="replace")
@@ -466,7 +486,6 @@ def synchronize(check: bool) -> list[str]:
                     published_asset.parent.mkdir(parents=True, exist_ok=True)
                     if not published_asset.exists() or published_asset.read_bytes() != candidate.read_bytes():
                         shutil.copyfile(candidate, published_asset)
-            public_asset_root = ROOT / "papers" / "assets" / source_id
             actual_assets = {path for path in public_asset_root.rglob("*") if path.is_file()} if public_asset_root.exists() else set()
             for stale in sorted(actual_assets - expected_assets):
                 if check:
