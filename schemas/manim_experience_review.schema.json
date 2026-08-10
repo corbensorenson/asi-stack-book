@@ -51,6 +51,37 @@
         "causal_relevance": {"type": "string", "minLength": 20}
       },
       "additionalProperties": false
+    },
+    "phone_review": {
+      "type": "object",
+      "required": [
+        "method",
+        "complete_playback",
+        "viewport_css_width_px",
+        "zoom_used",
+        "physical_device",
+        "device_description",
+        "captions_enabled",
+        "audio_enabled"
+      ],
+      "properties": {
+        "method": {"enum": ["browser_viewport", "physical_device"]},
+        "complete_playback": {"const": true},
+        "viewport_css_width_px": {"type": "integer", "minimum": 240, "maximum": 480},
+        "zoom_used": {"const": false},
+        "physical_device": {"type": "boolean"},
+        "device_description": {"type": "string", "minLength": 8},
+        "captions_enabled": {"type": "boolean"},
+        "audio_enabled": {"const": true}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"method": {"const": "physical_device"}}},
+          "then": {"properties": {"physical_device": {"const": true}}},
+          "else": {"properties": {"physical_device": {"const": false}}}
+        }
+      ],
+      "additionalProperties": false
     }
   },
   "type": "object",
@@ -66,6 +97,7 @@
     "frame_sampling",
     "learning_check",
     "viewing_passes",
+    "phone_review",
     "dimensions",
     "open_defects",
     "verdict",
@@ -73,7 +105,7 @@
     "non_claim"
   ],
   "properties": {
-    "schema_version": {"const": "asi_stack.manim_experience_review.v3"},
+    "schema_version": {"const": "asi_stack.manim_experience_review.v4"},
     "chapter_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
     "generation": {"type": "integer", "minimum": 1},
     "pass": {
@@ -288,6 +320,7 @@
       },
       "additionalProperties": false
     },
+    "phone_review": {"$ref": "#/$defs/phone_review"},
     "dimensions": {
       "type": "object",
       "required": [
@@ -363,6 +396,12 @@
                 }
               }
             }
+          },
+          "phone_review": {
+            "properties": {
+              "viewport_css_width_px": {"maximum": 360},
+              "captions_enabled": {"const": false}
+            }
           }
         }
       },
@@ -374,6 +413,13 @@
               "transcript": {"$ref": "#/$defs/artifact_binding"},
               "render_receipt": {"$ref": "#/$defs/artifact_binding"},
               "av_diagnostics": {"$ref": "#/$defs/artifact_binding"}
+            }
+          },
+          "phone_review": {
+            "properties": {
+              "method": {"const": "physical_device"},
+              "physical_device": {"const": true},
+              "captions_enabled": {"const": true}
             }
           }
         }

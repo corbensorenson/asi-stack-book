@@ -259,8 +259,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             FadeOut(self.rails),
             FadeOut(self.invoice_page),
             FadeIn(parser),
-            FadeIn(familiar),
-            MoveAlongPath(familiar, parser_path),
+            Succession(FadeIn(familiar), MoveAlongPath(familiar, parser_path)),
             TransformFromCopy(parser, accepted),
             GrowArrow(parser_pass_arrow),
             Indicate(self.stencil, color=EVIDENCE),
@@ -313,9 +312,8 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             Write(equals),
             GrowFromCenter(twelve),
             GrowFromCenter(nine),
-            Create(balance),
+            Succession(Create(balance), balance.animate.rotate(-0.10)),
             Create(pivot),
-            balance.animate.rotate(-0.10),
         )
 
         # b06: authorization, contract, and complete cost are separate selector gates.
@@ -334,10 +332,12 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
         self.beat(
             6,
             FadeOut(arithmetic),
-            FadeIn(route_token),
+            Succession(
+                FadeIn(route_token),
+                *[route_token.animate.move_to(gate.get_center()) for gate in gates],
+            ),
             LaggedStart(*[FadeIn(gate, shift=UP * 0.16) for gate in gates], lag_ratio=0.20),
             LaggedStart(*[GrowArrow(connector) for connector in connectors], lag_ratio=0.22),
-            Succession(*[route_token.animate.move_to(gate.get_center()) for gate in gates]),
             Write(eligible),
             settle=0.70,
         )
@@ -496,8 +496,10 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             FadeIn(workload),
             LaggedStart(*[Create(lane) for lane in lanes], lag_ratio=0.10),
             FadeIn(policy_names),
-            LaggedStart(*[TransformFromCopy(workload, copy) for copy in copies], lag_ratio=0.10),
-            LaggedStart(*[copy.animate.move_to(lane.get_end()) for copy, lane in zip(copies, lanes)], lag_ratio=0.10),
+            Succession(
+                LaggedStart(*[TransformFromCopy(workload, copy) for copy in copies], lag_ratio=0.10),
+                LaggedStart(*[copy.animate.move_to(lane.get_end()) for copy, lane in zip(copies, lanes)], lag_ratio=0.10),
+            ),
             LaggedStart(*[FadeIn(outcome) for outcome in outcomes], lag_ratio=0.10),
             settle=0.66,
         )

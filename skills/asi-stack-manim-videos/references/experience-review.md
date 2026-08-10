@@ -61,12 +61,26 @@ Bind the draft sandbox receipt and its exact narration-bearing animatic mux.
 The silent visual track is an intermediate and cannot be reviewed as an
 animatic. Captions, transcript, thumbnail, A/V diagnostic, and final render
 receipt do not exist at this gate and must be null rather than fabricated.
+Run the auditor's ephemeral `--animatic-preflight` on the canonical mux to
+locate freezes, black intervals, silence, loudness, peak, stream, and duration
+risks before playback. Its stdout is a repair aid, not the governed final A/V
+artifact and not evidence that animatic review passed. It reports a scoped
+`mechanical_result`, never the governed diagnostic's `validation_state`.
 
 Pass normal-speed, muted, audio-only, phone, and random-frame review. Mark
 captions-on as not applicable because final captions do not yet exist. Confirm
 promise, story, persistent world, focal hierarchy, continuity, rhythm, local
 evidence boundary, and payoff. Rewrite freely. Do not polish weak geometry or
 transitions instead of repairing the model.
+
+For the animatic phone pass, play the complete candidate at a recorded
+phone-equivalent viewport no wider than 360 CSS pixels without zoom. Every
+label that carries a unique identity, state, comparison, limit, or causal step
+must remain readable when it matters. Consolidate fields or enlarge the active
+relation when narration would otherwise have to rescue microtext. Record the
+viewport and playback method; inspecting desktop frames or a scaled-up contact
+sheet is not a phone pass.
+The recorded method and physical-device flag must agree.
 
 ## Gate 2: picture and sound lock
 
@@ -161,6 +175,11 @@ All modes are required at lock and source-aware release. The cold proxy must at
 least pass normal-speed, captions-on, phone, and random-frame modes. A pass
 record may mark a mode not applicable only when the gate contract does not
 require it and the note gives a concrete reason.
+
+At picture-and-sound lock and release, the phone pass uses an ordinary physical
+phone for complete playback, including captions and sound. A desktop viewport
+is a useful preflight but does not establish physical-device legibility,
+caption clearance, thermal or playback behavior, or speaker intelligibility.
 
 ## Score anchors
 

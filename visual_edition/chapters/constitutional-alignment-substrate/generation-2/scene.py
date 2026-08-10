@@ -13,7 +13,7 @@ from manim import (
     AnimationGroup, Arrow, Brace, Circle, Create, Cross, DashedLine, Dot,
     DOWN, FadeIn, FadeOut, GrowArrow, GrowFromCenter, Indicate, LaggedStart,
     LEFT, Line, MoveAlongPath, ORIGIN, PI, Rectangle, ReplacementTransform,
-    RIGHT, RoundedRectangle, Text, Transform, TransformFromCopy, UP, VGroup,
+    RIGHT, RoundedRectangle, Succession, Text, Transform, TransformFromCopy, UP, VGroup,
     Write,
 )
 
@@ -180,7 +180,13 @@ class ConstitutionalAlignmentGeneration2(AsiScene):
         self.next_section("b01")
         self.play(FadeIn(left1, shift=DOWN * 0.25), FadeIn(record1, shift=DOWN * 0.25), run_time=1.5)
         self.play(Create(bridge1), FadeIn(lina1), run_time=1.7)
-        self.play(FadeIn(token1), MoveAlongPath(token1, Line(token1.get_center(), LEFT * 1.3 + DOWN * 0.45)), run_time=2.2)
+        self.play(
+            Succession(
+                FadeIn(token1),
+                MoveAlongPath(token1, Line(token1.get_center(), LEFT * 1.3 + DOWN * 0.45)),
+            ),
+            run_time=2.2,
+        )
         self.play(LaggedStart(*[FadeIn(h, shift=UP * 0.25) for h in handles1], lag_ratio=0.12), run_time=1.4)
         self.play(LaggedStart(*[FadeOut(h, shift=DOWN * 0.2) for h in handles1], lag_ratio=0.12), run_time=1.4)
         self.play(FadeIn(title1), Indicate(token1, color=RED, scale_factor=1.04), run_time=1.2)

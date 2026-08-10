@@ -1,0 +1,423 @@
+{
+  "schema_version": "asi_stack.manim_treatment.v1",
+  "chapter_id": "stable-capability-fields",
+  "chapter_sha256": "6203504cd364a7308f9ef0a30e3855201c2a7482298455458ac4bb0558e6819f",
+  "source_commit": "223d64d829f215682e162deb5fba1ca8c5580b74",
+  "source_context_sha256": "4ae546c864bb6f17d9533595e1ada32b73d2ca31e08750e23680b5b4ce7d6d11",
+  "teaching_promise": "Predict why a better-writing replacement with the same route name, compatible interface, and signed provenance earns only a bounded canary lease rather than the default route.",
+  "audience": {
+    "target_viewer": "A curious adult who understands software updates and public notices but has not studied behavioral refinement, capability security, or governed model replacement",
+    "assumed_knowledge": [
+      "A software route may keep the same name while its implementation changes",
+      "A canary release exposes a replacement to a limited setting before broad use"
+    ],
+    "excluded_assumptions": [
+      "Prior knowledge of the ASI Stack or Stable Capability Fields",
+      "Familiarity with Semantic Versioning, SLSA, refinement proofs, or capability systems",
+      "Belief that provenance or matching interfaces establish behavioral equivalence"
+    ],
+    "standalone_context": "The video follows one fictional Harborline notice-drafting route, one old implementation, one better-writing candidate, one consumer-owned capability gauge, two revealing test cases, and a bounded canary decision.",
+    "introduced_terms": [
+      "Stable Capability Field",
+      "canary lease",
+      "consequence-bounded canary"
+    ]
+  },
+  "promise_candidates": [
+    {
+      "promise": "Predict why a better-writing replacement with the same route name, compatible interface, and signed provenance earns only a bounded canary lease rather than the default route.",
+      "consequence": "The viewer can reject name, API, benchmark, or provenance continuity as sufficient evidence when consumer-visible behavior or authority changes.",
+      "visual_mechanism": "Old and new route cartridges face one consumer-owned capability gauge. The candidate clears the English surface but lacks the Spanish tooth and carries a protruding PUBLISH tooth; a canary sleeve blocks that outlet while preserving the old fallback.",
+      "transfer_value": "The same test applies to replacing models, prompts, tools, evaluators, data pipelines, policies, and compiled reflexes under a persistent capability name.",
+      "evidence_fit": "It expresses consumer-relative substitution, authority conservation, scoped qualification, consequence-bounded canaries, invalidation, history, and the finite proof boundary without claiming real equivalence.",
+      "disposition": "selected",
+      "rationale": "One fixed gauge and two candidate cartridges make preserved obligations, hidden deltas, and canary-only admission causally visible while keeping the field separate from every implementation."
+    },
+    {
+      "promise": "Explain every field that belongs in a Stable Capability Field manifest.",
+      "consequence": "The viewer could recall a broad contract inventory.",
+      "visual_mechanism": "A manifest board fills with identity, interface, evaluator, evidence, lifecycle, state, incident, and recovery rows.",
+      "transfer_value": "The list could support later implementation work.",
+      "evidence_fit": "The chapter contains the inventory, but a short video cannot teach its causal role without becoming a dashboard tour.",
+      "disposition": "rejected",
+      "rationale": "Inventory recall is weaker than learning why seemingly compatible replacements still fail substitution."
+    },
+    {
+      "promise": "Show how a self-improving candidate can weaken its own success contract and then certify itself.",
+      "consequence": "The viewer could identify goalpost movement during recursive improvement.",
+      "visual_mechanism": "A candidate files down the gauge before entering it while a firewall separates contract and implementation transactions.",
+      "transfer_value": "The pattern applies to evaluator capture and reward hacking.",
+      "evidence_fit": "The goalpost firewall is important but requires more constitutional and evaluator setup than the foundational substitution decision.",
+      "disposition": "rejected",
+      "rationale": "Reserve it for recursive self-improvement or evaluator-governance treatment after field identity is understood."
+    },
+    {
+      "promise": "Demonstrate why rollback metadata is not effect-complete recovery.",
+      "consequence": "The viewer could distinguish restoring an artifact from compensating external effects and state changes.",
+      "visual_mechanism": "An old cartridge returns to its slot while published notices, caches, commitments, and descendants remain outside the machine.",
+      "transfer_value": "The lesson applies to deployments, agents, and online learning.",
+      "evidence_fit": "The chapter owns recovery duties, but Capability Replacement and Rollback owns the complete transaction and its signature mechanism.",
+      "disposition": "rejected",
+      "rationale": "Using rollback as the main promise would duplicate the neighboring chapter and obscure SCF's prior question of route inheritance."
+    }
+  ],
+  "selection_rationale": "Three visual mechanisms were compared for the selected promise. A registry-table diff makes hidden contract changes legible only through text; a bridge-and-load plaque overemphasizes capacity and underrepresents authority; a manufacturing gauge preserves one route identity while exposing missing and protruding obligation geometry. The gauge wins because it makes the consumer-owned contract physically independent of both implementations, supports an exact English-pass/Spanish-and-publish-fail sequence, remains understandable as held keyframes, and transfers naturally to other replacement decisions.",
+  "content_contract": {
+    "chapter_claim_ids": [
+      "stable-capability-fields.core"
+    ],
+    "source_ids": [
+      "scf",
+      "deterministic_capability_compilation",
+      "viea",
+      "talos",
+      "ladon_manhattan",
+      "moecot",
+      "ext_capability_based_computer_systems_1984",
+      "ext_semver_2_0_0",
+      "ext_slsa_v1_0",
+      "reflexive_router_whitepaper"
+    ],
+    "non_claims": [
+      "Harborline, its notice workflow, route, models, workloads, provenance, evaluator, tools, and outcomes are fictional teaching objects rather than observations from a deployed system.",
+      "The capability gauge is a visual model of a consumer-relative substitution contract, not evidence that semantic obligations are complete, mechanically enforceable, or naturally modular.",
+      "Compatible interfaces and signed provenance are depicted as useful but insufficient inputs; no Semantic Versioning checker, SLSA workflow, build attestation, or capability-security implementation is claimed.",
+      "The canary lease does not establish evaluator independence, route safety, production authorization, state migration, effect-complete recovery, or transfer to another consumer or use.",
+      "The finite schemas, controls, lifecycle traces, and Lean declarations prove only consequences of authored records and do not establish real-system behavioral refinement or deployed enforcement.",
+      "The video does not establish novelty, superiority, safety, deployment readiness, transfer, SOTA, AGI, or ASI."
+    ],
+    "case_assumptions": [
+      "The old and candidate implementations are fictional and share the same route name and public interface in the teaching case.",
+      "The candidate has signed provenance and produces clearer English prose but refuses a protected Spanish case and binds to a publishing tool instead of a private draft store.",
+      "The Harborline consumer contract requires English and Spanish coverage, private drafts, abstention rather than publication, failure receipts, and expiring evidence.",
+      "The candidate's canary lease permits approved-source reads and private drafts for Harborline while the publishing outlet remains unavailable and the old implementation remains fallback.",
+      "The later city-publisher request changes the consumer, use, authority, consequence, and environment, so the Harborline lease does not transfer.",
+      "The chapter's local proof and synthetic artifacts are represented only at their documented finite scope."
+    ],
+    "notation_ledger": [
+      {
+        "token": "DRAFT NOTICE",
+        "meaning": "The stable semantic route name that callers target while implementations change",
+        "unit": null,
+        "visual_form": "A fixed brass nameplate above the capability gauge"
+      },
+      {
+        "token": "EN / ES",
+        "meaning": "The fictional field's required English and Spanish coverage",
+        "unit": "illustrative language cases",
+        "visual_form": "Two distinct gauge teeth that must both align"
+      },
+      {
+        "token": "PRIVATE / PUBLISH",
+        "meaning": "The authority distinction between producing a private draft and causing public publication",
+        "unit": null,
+        "visual_form": "A private outlet accepted by the gauge and a red protruding publish tooth blocked by the canary sleeve"
+      },
+      {
+        "token": "CANARY / DEFAULT",
+        "meaning": "A bounded lease for one evidenced scope versus the field's ordinary route",
+        "unit": null,
+        "visual_form": "A narrow gold lease sleeve beside a larger unopened default socket"
+      }
+    ],
+    "truth_checks": [
+      {
+        "statement": "The chapter defines a Stable Capability Field as a versioned, consumer-relative substitution contract distinct from implementations, routes, and qualification claims.",
+        "authority_refs": ["stable-capability-fields.core", "scf"],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The chapter requires preservation of observable behavior, failures, abstention, authority, evaluator and evidence lineage, lifecycle history, state duties, and recovery obligations within the exact evidenced scope.",
+        "authority_refs": ["stable-capability-fields.core", "scf", "viea"],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Deterministic Capability Compilation, Talos, Ladon/Manhattan, MoECOT, and the Reflexive Router provide design context for typed obligation envelopes, authority handles, readiness gates, replay, stable routing names, and fail-closed admission rather than reproduced deployment evidence.",
+        "authority_refs": ["deterministic_capability_compilation", "talos", "ladon_manhattan", "moecot", "reflexive_router_whitepaper"],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Capability-Based Computer Systems is an authority-bearing-reference comparator and does not establish SCF semantic identity, qualification, revocation, or rollback.",
+        "authority_refs": ["ext_capability_based_computer_systems_1984"],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "Semantic Versioning is a public-interface change-signaling comparator and does not establish behavioral refinement or authority preservation.",
+        "authority_refs": ["ext_semver_2_0_0"],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "SLSA supplies artifact-identity and provenance discipline but not capability adequacy, runtime behavior, evaluator integrity, or recovery evidence.",
+        "authority_refs": ["ext_slsa_v1_0"],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The chapter's canary scope is bounded by reachable consequence and exact consumer/use/environment evidence rather than traffic percentage alone.",
+        "authority_refs": ["stable-capability-fields.core", "scf"],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The local formal surface contains 26 theorem declarations under four manifest targets and proves finite identity, authority, composition, terminal-state, and witness properties without proving real equivalence, evaluator independence, deployed authorization, or effect-complete rollback.",
+        "authority_refs": ["stable-capability-fields.core"],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      }
+    ],
+    "visual_simplifications": [
+      "A machined gauge stands for a multi-dimensional semantic, authority, evidence, lifecycle, and recovery contract without implying that real obligations are geometrically complete.",
+      "Cartridge teeth represent selected observable and authority obligations only; they do not imply that an automated checker can discover every material behavioral difference.",
+      "The English and Spanish cards compress broad language-performance distributions into two fictional cases.",
+      "A protruding PUBLISH tooth represents an authority delta and not an implemented tool-call monitor or capability-security boundary.",
+      "The canary sleeve makes publication unreachable in the authored case but does not assert production containment, identity authenticity, or complete mediation.",
+      "The proof envelope contains only documented finite record and transition properties and leaves real workloads, evaluators, effects, and recovery outside."
+    ]
+  },
+  "story": {
+    "story_form": "direct_construction",
+    "story_basis": {
+      "description": "The chapter's canary-qualified/default-blocked worked decision supports a direct construction in which one fixed consumer-owned contract tests old and new implementations, reveals two hidden deltas, narrows the candidate to a lease, and rejects transfer after the use changes.",
+      "authority_refs": ["stable-capability-fields.core", "scf", "viea", "reflexive_router_whitepaper"]
+    },
+    "concrete_case": "A fictional Harborline communications workflow considers replacing its private public-notice drafting model with a clearer candidate that shares the route name and interface but regresses on Spanish and calls a publishing tool.",
+    "opening_question": "Should the clearer candidate become Harborline's default draft-notice route?",
+    "macro_moves": [
+      {
+        "id": "m01",
+        "purpose": "Make route-name, interface, provenance, and prose-quality continuity feel sufficient before the consumer contract appears",
+        "viewer_model_before": "A clearer signed replacement under the same route name appears ready for default use.",
+        "visible_event": "The DRAFT NOTICE nameplate remains fixed while OLD and NEW cartridges share one interface slot; the NEW cartridge receives a provenance seal and a clearer-English mark.",
+        "viewer_model_after": "The candidate looks attractive, but preservation of the consumer's promise remains untested."
+      },
+      {
+        "id": "m02",
+        "purpose": "Externalize the stable field as a consumer-owned gauge rather than an implementation label",
+        "viewer_model_before": "The route name still appears to define sameness.",
+        "visible_event": "A brass capability gauge forms around EN, ES, PRIVATE, ABSTAIN, RECEIPT, and EXPIRY teeth; the old cartridge enters and aligns while the nameplate stays attached to the gauge.",
+        "viewer_model_after": "The stable object is the versioned consumer promise, while each model is only a candidate realization."
+      },
+      {
+        "id": "m03",
+        "purpose": "Reveal why one happy path and better output quality do not establish substitution",
+        "viewer_model_before": "If both models pass an English case and the candidate is clearer, replacement may seem proven.",
+        "visible_event": "Both cartridges clear the EN card; the candidate then jams at the ES tooth and its red PUBLISH tooth collides with the PRIVATE outlet while the old cartridge routes to DRAFT STORE.",
+        "viewer_model_after": "The candidate narrows service and widens authority despite interface and quality continuity."
+      },
+      {
+        "id": "m04",
+        "purpose": "Give interface versioning and provenance their proper role, then derive canary-only admission",
+        "viewer_model_before": "A compatible version and signed build may appear to repair the substitution claim.",
+        "visible_event": "SEMVER and PROVENANCE seals attach as evidence inputs but do not reshape the failed teeth; a narrow canary sleeve encloses the candidate, blocks PUBLISH, pins Harborline/private-draft scope and expiry, and keeps OLD as fallback.",
+        "viewer_model_after": "Useful provenance and interface evidence can support identity while the candidate remains qualified only inside a consequence-bounded lease."
+      },
+      {
+        "id": "m05",
+        "purpose": "Test transfer after repair and make invalidation and field-owned history visible",
+        "viewer_model_before": "After the Spanish defect is repaired, the Harborline lease may seem portable to any notice use.",
+        "visible_event": "The ES tooth is repaired, then a CITY PUBLISHER / LIVE EMERGENCY card approaches; consumer, use, authority, consequence, and environment bands no longer match. Evaluator/tool/audience changes light invalidation pins while failed cases and recovery duties stay on the field's history rail.",
+        "viewer_model_after": "Qualification is scoped and defeasible; a new use or material dependency requires a new field decision rather than trust inheritance."
+      },
+      {
+        "id": "m06",
+        "purpose": "State the finite formal envelope and close on reversible improvement without overclaiming equivalence",
+        "viewer_model_before": "The gauge and synthetic checks may look like a proof that real replacement is safe.",
+        "visible_event": "A Lean boundary encloses finite identity, no-authority-widening, event-list, and non-authority properties while real equivalence, evaluator independence, deployed enforcement, and effect reversal remain outside; the old and canary cartridges return beneath the fixed field nameplate.",
+        "viewer_model_after": "A route name is inherited only inside evidenced scope, allowing machinery to improve while preserving visible trust terms and open obligations."
+      }
+    ],
+    "payoff": "The same better-writing candidate that appears default-ready under a route label visibly fails the consumer gauge, then becomes useful only after a lease blocks its dangerous outlet and preserves the old fallback.",
+    "comprehension_question": "Why does the candidate receive a canary lease instead of Harborline's default route even though it writes better English and has compatible identity evidence?",
+    "comprehension_success_criteria": [
+      "Distinguishes route name, interface, and provenance from consumer-relative behavioral refinement",
+      "Identifies both the Spanish regression and publishing-tool authority delta",
+      "Explains that canary admission is bounded by consumer, use, consequence, expiry, effect ceiling, and fallback"
+    ],
+    "transfer_question": "After the Spanish defect is repaired, may Harborline's private-draft lease authorize a city publisher to post live emergency notices?",
+    "transfer_success_criteria": [
+      "Answers no because the consumer, use, authority, consequence, and environment changed",
+      "Requires a separate field version or qualification rather than global trust transfer",
+      "Preserves prior regressions, evaluator history, state duties, recovery obligations, and open residuals"
+    ]
+  },
+  "art_direction": {
+    "medium": "manim_primary",
+    "medium_rationale": "The lesson depends on exact cartridge identity, persistent gauge geometry, sequential test cards, blocked and permitted outlets, lease state, expiry, and a matched changed-use comparison that deterministic Manim motion can preserve.",
+    "visual_thesis": "The route name and consumer-owned gauge remain fixed; candidate machinery changes, and every admission outcome follows from visible fit and lease state rather than model prestige.",
+    "signature_image": "Two cartridges sit beneath one DRAFT NOTICE nameplate: OLD fits the brass EN/ES/PRIVATE gauge, while NEW is clearer but jams on a missing ES tooth and a red PUBLISH tooth protrudes beyond the permitted outlet.",
+    "visual_world": "A quiet municipal print workshop with one brass nameplate, a machined capability gauge, old and new route cartridges, bilingual workload cards, private-draft and publish outlets, a narrow canary sleeve, and a field-owned evidence/history rail.",
+    "persistent_objects": [
+      "route nameplate",
+      "old and new cartridges",
+      "capability gauge",
+      "private and publish outlets",
+      "workload cards",
+      "canary lease sleeve",
+      "evidence and history rail"
+    ],
+    "visual_invariants": [
+      "The DRAFT NOTICE nameplate and capability-gauge geometry remain owned by the field rather than either implementation.",
+      "The old and candidate cartridges retain distinct identities across English, Spanish, authority, canary, repair, and transfer tests.",
+      "The candidate's clearer-English mark never erases its missing Spanish obligation or publishing authority delta.",
+      "Semantic-version and provenance seals attach as evidence but never reshape gauge teeth or authorize a route.",
+      "The canary sleeve blocks the publishing outlet and keeps the old implementation visible as fallback.",
+      "The city-publisher transfer test changes the use bands while the prior Harborline evidence remains unchanged.",
+      "The lower caption-safe band remains free of gauge teeth, workload identities, lease scope, history, and proof-boundary labels."
+    ],
+    "composition_rule": "Keep the field nameplate and gauge centered, candidate cartridges entering from left, private and publish outlets on the right, evidence/history above the caption band, and scope or expiry controls attached to the canary sleeve; preserve this causal geography across tests.",
+    "palette_rule": "Use cyan for interface and observed output quality, gold for field contract and active scoped qualification, green for obligations passed inside the authored case, red for regression or authority collision, magenta for invalidation and residuals, and boundary gray for open real-system obligations; pair color with geometry, label, and position.",
+    "typography_rule": "Use only DRAFT NOTICE, OLD, NEW, EN, ES, PRIVATE, PUBLISH, SEMVER, PROVENANCE, CANARY, DEFAULT, expiry, fallback, compact scope changes, and finite proof labels; narration carries qualifications and inventories.",
+    "motion_character": "Measured and mechanical: cartridges slide without morphing, gauge teeth align or collide, workload cards feed one at a time, seals attach without changing fit, the canary sleeve closes around reachable outlets, invalidation pins drop, and history remains tethered.",
+    "camera_rule": "Maintain one wide workshop for the Harborline decision, use restrained push-ins for the Spanish and PUBLISH collisions, pull back for the city-publisher transfer mismatch, and hold still for the formal boundary.",
+    "surface_rule": "Use machined outlines, paper workload cards, engraved route labels, solid lease sleeves, and receipt stubs; avoid dashboards, generic cards, prose panels, gradients, decorative particles, or literal robot imagery.",
+    "ending_image": "The DRAFT NOTICE gauge remains fixed between OLD DEFAULT and NEW CANARY cartridges, with the private outlet open, PUBLISH blocked, prior regressions on the history rail, and the line EVIDENCE SETS THE SCOPE.",
+    "semantic_keyframes": [
+      {
+        "id": "k01",
+        "after_macro_move_id": "m01",
+        "focal_state": "The NEW cartridge shares the DRAFT NOTICE name and interface, carries signed provenance, and displays clearer English beside OLD.",
+        "visible_invariant": "No consumer-owned substitution contract has yet been tested.",
+        "unresolved_question": "Did the route's promise survive?"
+      },
+      {
+        "id": "k02",
+        "after_macro_move_id": "m02",
+        "focal_state": "The old cartridge fits a field-owned EN/ES/PRIVATE/ABSTAIN/RECEIPT/EXPIRY gauge beneath the fixed route nameplate.",
+        "visible_invariant": "The gauge belongs to the consumer-visible field, not the installed model.",
+        "unresolved_question": "Does the candidate fit under revealing workloads?"
+      },
+      {
+        "id": "k03",
+        "after_macro_move_id": "m03",
+        "focal_state": "The candidate passes the English card but jams at ES and PUBLISH while OLD routes to the private draft outlet.",
+        "visible_invariant": "Route name, interface, provenance, and clearer English remain unchanged.",
+        "unresolved_question": "Can the candidate be useful without inheriting default trust?"
+      },
+      {
+        "id": "k04",
+        "after_macro_move_id": "m04",
+        "focal_state": "A CANARY sleeve binds Harborline, private drafts, blocked PUBLISH, expiry, receipts, and OLD fallback while SEMVER and PROVENANCE remain supporting seals.",
+        "visible_invariant": "The candidate has not earned the DEFAULT socket or a broader effect ceiling.",
+        "unresolved_question": "Does a repaired candidate's lease transfer to a new use?"
+      },
+      {
+        "id": "k05",
+        "after_macro_move_id": "m05",
+        "focal_state": "A CITY PUBLISHER / LIVE EMERGENCY card fails the Harborline lease bands while evaluator, tool, and audience changes trigger invalidation and prior history remains attached.",
+        "visible_invariant": "Repair of one regression does not alter the prior lease's consumer, use, authority, consequence, or environment.",
+        "unresolved_question": "What has the local formal work actually established?"
+      },
+      {
+        "id": "k06",
+        "after_macro_move_id": "m06",
+        "focal_state": "Finite identity and no-authority properties sit inside the Lean boundary; real equivalence, independent evaluation, deployed enforcement, and effect reversal stay outside while OLD DEFAULT and NEW CANARY remain beneath one field.",
+        "visible_invariant": "Only the exact evidenced scope authorizes route-name inheritance.",
+        "unresolved_question": null
+      }
+    ],
+    "asset_plan": []
+  },
+  "audio_direction": {
+    "narration_style": "Calm, concrete, and forensic, allowing the candidate to sound genuinely attractive before the Spanish and publishing-tool deltas change the decision.",
+    "pacing_arc": "Open briskly on apparent compatibility, slow while constructing the capability gauge, build through English success and two collisions, become measured for canary scope and the changed-use transfer question, then narrow further for the formal boundary and closing rule.",
+    "music_policy": "No continuous music; cartridge movement, gauge contact, outlet blocking, and invalidation provide sufficient structure without emotional scoring.",
+    "sound_effect_policy": "Use only restrained original or generated paper-feed, cartridge-slide, gauge-contact, seal-set, sleeve-close, clock-tick, and pin-drop sounds below speech; no sound may carry unique meaning.",
+    "performance_blocks": [
+      {
+        "id": "p01",
+        "macro_move_ids": ["m01"],
+        "performance_direction": "Let same interface, signed provenance, and sharper English sound legitimately persuasive, then leave the opening question unresolved.",
+        "pronunciation_items": ["Harborline"]
+      },
+      {
+        "id": "p02",
+        "macro_move_ids": ["m02"],
+        "performance_direction": "Introduce the capability gauge as an ordinary consumer promise and give language, private output, abstention, expiry, and receipt motions separate landings.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p03",
+        "macro_move_ids": ["m03"],
+        "performance_direction": "Make the English pass feel conclusive, then slow at Spanish refusal and publishing tool so the two failures remain distinct.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p04",
+        "macro_move_ids": ["m04"],
+        "performance_direction": "Treat Semantic Versioning and provenance respectfully, then state canary-only admission as a useful scoped decision rather than punishment.",
+        "pronunciation_items": ["Semantic Versioning", "canary"]
+      },
+      {
+        "id": "p05",
+        "macro_move_ids": ["m05"],
+        "performance_direction": "Pause after the city-publisher question, answer no without drama, and emphasize the changed consumer, use, authority, consequence, and environment.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p06",
+        "macro_move_ids": ["m06"],
+        "performance_direction": "Keep the local Lean result compact and bounded, then close warmly on improvement that does not move the terms of trust.",
+        "pronunciation_items": ["Lean"]
+      }
+    ],
+    "review_devices": [
+      "studio headphones",
+      "laptop speakers",
+      "phone speaker",
+      "muted playback with captions"
+    ]
+  },
+  "accessibility": {
+    "color_redundancy": "Old and new cartridges retain labels and different edge marks; EN and ES use distinct tooth positions; PRIVATE and PUBLISH use different outlet geometry; canary/default, pass/fail, and inside/outside states use labels, shapes, and position in addition to color.",
+    "motion_redundancy": "Every cartridge fit, English pass, Spanish jam, publishing collision, canary scope, transfer mismatch, invalidation, history attachment, and proof boundary ends in a stable labeled keyframe interpretable without perceiving motion.",
+    "integrated_description": "Narration names the fixed route, candidate identity evidence, gauge obligations, English pass, Spanish refusal, publishing-tool delta, canary restrictions, consequence bound, city-publisher transfer failure, invalidation, field history, finite local result, and real-system limits as they appear.",
+    "caption_plan": "Use manually reviewed forced alignment, no more than two short lines, sentence-aware breaks, and no cue covering gauge teeth, workload language, private/publish outlets, lease scope, fallback, invalidation pins, history, or proof boundaries.",
+    "descriptive_transcript_plan": "Describe the fixed DRAFT NOTICE nameplate, old and new cartridges, gauge teeth, English and Spanish cards, private and publish outlets, attached evidence seals, canary sleeve and expiry, old fallback, changed-use bands, history rail, and finite proof envelope beside the exact narration.",
+    "reduced_motion_assessment": "The episode remains complete as six held semantic keyframes connected by short crossfades; cartridge labels, tooth compatibility, blocked outlets, lease bands, invalidation pins, history links, and proof containment preserve all meaning without rapid motion.",
+    "caption_safe_composition": "Reserve the lower 150 pixels plus margin and keep every cartridge identity, gauge tooth, workload label, outlet, lease term, fallback, history item, and proof label above it at phone scale."
+  },
+  "packaging": {
+    "working_title": "The Upgrade That Does Not Fit",
+    "thumbnail_concept": "Under one DRAFT NOTICE nameplate, OLD fits a brass EN/ES/PRIVATE gauge while a brighter NEW cartridge jams on a missing ES tooth and a red PUBLISH tooth protrudes from the side.",
+    "thumbnail_alt_text": "Two implementations face one stable notice-drafting contract; the old one fits while the clearer replacement fails Spanish coverage and exceeds private-draft authority.",
+    "promise_match": "The thumbnail presents the exact substitution failure the video explains and does not imply a deployed test or globally unsafe candidate.",
+    "first_fifteen_seconds_delivery": "The fixed route name, same interface, signed provenance seal, sharper-English mark, and Should it become default? question appear before Stable Capability Fields terminology.",
+    "source_delivery": "The end card names the chapter and SCF, VIEA, Talos, Reflexive Router, capability-systems, SemVer, and SLSA source notes; the description carries the complete assigned-source list and finite evidence boundary.",
+    "source_delivery_refs": [
+      "scf",
+      "deterministic_capability_compilation",
+      "viea",
+      "talos",
+      "reflexive_router_whitepaper",
+      "ext_capability_based_computer_systems_1984",
+      "ext_semver_2_0_0",
+      "ext_slsa_v1_0"
+    ]
+  },
+  "script_gate": {
+    "narration_path": "visual_edition/chapters/stable-capability-fields/generation-2/narration.txt",
+    "narration_sha256": "07d00fc0341f37a1580b0e5b7c19980619dbaec8b7630eff69b7bf349680563c",
+    "narration_word_count": 470,
+    "read_aloud_review": "not_started",
+    "truth_review": "pass",
+    "visualizability_review": "pass",
+    "reviewer_id": "codex-source-and-visualizability-review-2026-08-10",
+    "verdict": "not_reviewed",
+    "open_defects": [
+      "Complete a literal read-aloud or qualified acoustic cadence review of the exact 470-word narration; text inspection alone cannot establish spoken cadence."
+    ]
+  }
+}

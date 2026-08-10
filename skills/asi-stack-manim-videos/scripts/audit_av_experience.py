@@ -4,6 +4,8 @@
 The report deliberately does not issue an aesthetic verdict. It detects
 conditions that deserve playback review: freezes, black intervals, silence,
 loudness outliers, true-peak overs, missing streams, and plan-duration drift.
+Final-master mode writes the schema-governed diagnostic. Animatic-preflight
+mode is canonical-path constrained, stdout-only, and cannot pass a review gate.
 """
 
 from __future__ import annotations
@@ -51,6 +53,7 @@ def discover_repository_root() -> Path:
 ROOT = discover_repository_root()
 TOOLCHAIN = ROOT / "visual_edition/toolchain.json"
 FINAL_ROOT = (ROOT / "build/visual_edition/generation-2/final").resolve()
+ANIMATIC_ROOT = (ROOT / "build/visual_edition/isolated-renders").resolve()
 
 
 def run(command: list[str]) -> str:
@@ -311,6 +314,19 @@ def self_test() -> None:
     failures = negative_control_failures()
     if failures:
         raise AssertionError("; ".join(failures))
+    preflight = as_animatic_preflight(
+        {
+            "schema_version": "asi_stack.av_experience_diagnostics.v1",
+            "validation_state": "pass",
+            "interpretation": "Mechanical diagnostics only.",
+        }
+    )
+    if (
+        "validation_state" in preflight
+        or preflight.get("mechanical_result") != "pass"
+        or preflight.get("review_gate_effect") != "none"
+    ):
+        raise AssertionError("animatic preflight authority boundary failed")
     print("Self-test passed.")
 
 
@@ -444,6 +460,20 @@ def audit(path: Path, plan: Path | None, target_lufs: float | None, tolerance: f
     return report, warnings, errors
 
 
+def as_animatic_preflight(report: dict) -> dict:
+    """Relabel a mechanical result so it cannot resemble a review verdict."""
+    value = copy.deepcopy(report)
+    value["schema_version"] = "asi_stack.av_experience_preflight.v1"
+    value["mechanical_result"] = value.pop("validation_state")
+    value["diagnostic_scope"] = "ephemeral_animatic_preflight"
+    value["review_gate_effect"] = "none"
+    value["interpretation"] = (
+        "Ephemeral mechanical animatic preflight only; this is not the governed final "
+        "A/V diagnostic and cannot pass an experience-review gate."
+    )
+    return value
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("video", type=Path, nargs="?")
@@ -451,6 +481,11 @@ def main() -> None:
     parser.add_argument("--target-lufs", type=float)
     parser.add_argument("--lufs-tolerance", type=float, default=1.5)
     parser.add_argument("--json-out", type=Path)
+    parser.add_argument(
+        "--animatic-preflight",
+        action="store_true",
+        help="inspect the canonical ignored-build animatic without creating a governed A/V artifact",
+    )
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
@@ -458,27 +493,41 @@ def main() -> None:
         return
     if args.video is None:
         parser.error("video is required unless --self-test is used")
-    if args.plan is None or args.json_out is None or args.target_lufs is None:
+    if args.plan is None or args.target_lufs is None or (
+        args.json_out is None and not args.animatic_preflight
+    ):
         parser.error(
-            "--plan, --json-out, and --target-lufs are required for a governed diagnostic"
+            "--plan and --target-lufs are required; governed final diagnostics also require --json-out"
         )
+    if args.animatic_preflight and args.json_out is not None:
+        parser.error("--animatic-preflight is ephemeral and must not write --json-out")
     video = args.video.resolve()
     plan = args.plan.resolve()
-    output = args.json_out.resolve()
+    output = args.json_out.resolve() if args.json_out is not None else None
     if not video.is_file():
         raise SystemExit(f"video does not exist: {args.video}")
-    try:
-        video.relative_to(FINAL_ROOT)
-    except ValueError as exc:
-        raise SystemExit(
-            "video must be a canonical generation-two final master"
-        ) from exc
-    chapter_id = video.stem
+    if args.animatic_preflight:
+        chapter_id = video.stem.removesuffix("-animatic")
+        expected_video = (
+            ANIMATIC_ROOT / chapter_id / "draft" / f"{chapter_id}-animatic.mp4"
+        ).resolve()
+        if video != expected_video:
+            raise SystemExit("video must be the canonical isolated draft animatic")
+    else:
+        try:
+            video.relative_to(FINAL_ROOT)
+        except ValueError as exc:
+            raise SystemExit(
+                "video must be a canonical generation-two final master"
+            ) from exc
+        chapter_id = video.stem
     expected_plan = (
         ROOT / f"visual_edition/chapters/{chapter_id}/generation-2/beat_plan.json"
     ).resolve()
     expected_output = expected_plan.with_name("av_diagnostics.json")
-    if plan != expected_plan or output != expected_output:
+    if plan != expected_plan or (
+        not args.animatic_preflight and output != expected_output
+    ):
         raise SystemExit(
             "A/V plan or report path does not match the master chapter identity"
         )
@@ -503,23 +552,27 @@ def main() -> None:
         )
     except (OSError, ValueError, json.JSONDecodeError, RuntimeError) as exc:
         raise SystemExit(f"Unable to audit video: {exc}") from exc
-    schema = json.loads((ROOT / SCHEMA_PATH).read_text(encoding="utf-8"))
-    schema_errors = sorted(
-        Draft202012Validator(schema).iter_errors(report),
-        key=lambda error: tuple(map(str, error.path)),
-    )
-    if schema_errors:
-        detail = "; ".join(
-            f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
-            for error in schema_errors
+    if args.animatic_preflight:
+        report = as_animatic_preflight(report)
+    else:
+        schema = json.loads((ROOT / SCHEMA_PATH).read_text(encoding="utf-8"))
+        schema_errors = sorted(
+            Draft202012Validator(schema).iter_errors(report),
+            key=lambda error: tuple(map(str, error.path)),
         )
-        raise SystemExit(f"A/V diagnostics failed schema validation: {detail}")
+        if schema_errors:
+            detail = "; ".join(
+                f"{'.'.join(map(str, error.path)) or '<root>'}: {error.message}"
+                for error in schema_errors
+            )
+            raise SystemExit(f"A/V diagnostics failed schema validation: {detail}")
     rendered = json.dumps(report, indent=2)
     print(rendered)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output_temp = output.with_suffix(".tmp.json")
-    output_temp.write_text(rendered + "\n", encoding="utf-8")
-    output_temp.replace(output)
+    if output is not None:
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output_temp = output.with_suffix(".tmp.json")
+        output_temp.write_text(rendered + "\n", encoding="utf-8")
+        output_temp.replace(output)
     for warning in warnings:
         print(f"WARNING: {warning}")
     if errors:

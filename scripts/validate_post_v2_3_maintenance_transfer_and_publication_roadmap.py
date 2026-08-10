@@ -1352,7 +1352,7 @@ def errors(data: dict) -> list[str]:
         or ratchet.get("treatment_schema_path") != "schemas/manim_treatment.schema.json"
         or ratchet.get("beat_plan_schema_version") != "asi_stack.manim_beat_plan.v4"
         or ratchet.get("beat_plan_schema_path") != "schemas/manim_beat_plan.schema.json"
-        or ratchet.get("experience_review_schema_version") != "asi_stack.manim_experience_review.v3"
+        or ratchet.get("experience_review_schema_version") != "asi_stack.manim_experience_review.v4"
         or ratchet.get("experience_review_schema_path") != "schemas/manim_experience_review.schema.json"
         or ratchet.get("review_context_schema_path") != "schemas/manim_review_context_manifest.schema.json"
         or ratchet.get("render_receipt_schema_path") != "schemas/manim_render_receipt.schema.json"
@@ -1379,7 +1379,7 @@ def errors(data: dict) -> list[str]:
         or ratchet.get("isolated_render_live_policy_controls_pass") is not True
         or ratchet.get("isolated_render_real_manim_and_ffmpeg_smoke_pass") is not True
         or ratchet.get("isolated_render_negative_control_count") != 9
-        or ratchet.get("production_validator_rejecting_control_count") != 91
+        or ratchet.get("production_validator_rejecting_control_count") != 96
         or ratchet.get("local_scene_helper_import_contract") != "visual_edition.lib.asi_visuals_only"
         or ratchet.get("legacy_generation_one_explicit_opt_in_required") is not True
         or ratchet.get("minimum_score_each_scored_dimension") != 4
@@ -2699,7 +2699,7 @@ def main() -> None:
     mutate("Manim cold-proxy review bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_independent_proxy_required", False))
     mutate("Manim proxy learning laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("cold_proxy_is_human_learning_evidence", True))
     mutate("Manim isolated-render bypass", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("isolated_render_execution_required", False))
-    mutate("Manim sandbox-control laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("production_validator_rejecting_control_count", 90))
+    mutate("Manim sandbox-control laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("production_validator_rejecting_control_count", 95))
     mutate("Manim legacy-lane silent reactivation", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("legacy_generation_one_explicit_opt_in_required", False))
     mutate("Manim external-human blocker", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("external_human_prepublication_gate_required", True))
     mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))

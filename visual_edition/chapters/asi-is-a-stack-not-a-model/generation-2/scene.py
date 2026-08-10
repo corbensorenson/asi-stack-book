@@ -528,11 +528,13 @@ class AsiIsAStackNotAModelGeneration2(AsiScene):
         # b16: a tested self-improvement still stops at external approval.
         self.beat(
             16,
-            TransformFromCopy(self.command, update),
+            Succession(
+                TransformFromCopy(self.command, update),
+                update.animate.move_to(approval.get_left() + LEFT * 0.62),
+            ),
             FadeIn(update_check),
             GrowArrow(update_path),
             FadeIn(approval),
-            update.animate.move_to(approval.get_left() + LEFT * 0.62),
             settle=0.55,
         )
 

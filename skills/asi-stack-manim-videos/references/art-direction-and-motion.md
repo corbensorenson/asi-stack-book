@@ -127,6 +127,11 @@ illustrated asset, not a source.
   mass across the frame without making every composition symmetrical.
 - Check title-safe and caption-safe regions and inspect the result at phone
   size. A technically 1080p label can still be functionally unreadable.
+- Treat a label as consequential when it carries identity, state, quantity,
+  scope, contrast, or causal order that no other visible cue supplies. Such a
+  label must survive the recorded phone-scale pass without zoom; combine
+  related fields, enlarge the active relation, or redesign the representation
+  instead of depending on narration to decode microtext.
 
 ## Choreograph attention
 
@@ -138,6 +143,9 @@ the eye reaches an object just before its spoken meaning arrives.
   same spatial direction as the causal or logical flow.
 - Give the most important transformation more time, distance, or contrast than
   its supporting motions.
+- Reserve a named onset and resolution window for the decisive transformation.
+  The source-code order of animations does not establish that the viewer sees
+  the event at the corresponding spoken phrase; inspect the rendered mux.
 - Avoid unrelated simultaneous movement. Background motion must not compete
   with the current teaching target.
 - Let the frame settle after a dense transformation. A brief post-motion settle

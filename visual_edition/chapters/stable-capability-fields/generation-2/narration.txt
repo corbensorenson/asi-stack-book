@@ -1,31 +1,11 @@
-Harborline has a route called "draft public notice." The team replaces its model and keeps the route name. Did the capability stay the same?
+Harborline's communications team uses an AI route called Draft Notice. A replacement plugs into the same interface, comes from a signed build, and writes sharper English. Should the team make it the default? Not yet. A stable name says where requests go. A signed build says where an artifact came from. Neither shows that the team's promise survived the replacement.
 
-The new model writes better prose, but it refuses more Spanish requests and calls a different publishing tool. A stable label has concealed a changed contract.
+Build that promise into a capability gauge. It checks English and Spanish, keeps drafts private, blocks publication, expires old evidence, and leaves a receipt. The gauge belongs to Harborline, not to either model. This versioned promise is a Stable Capability Field. The old model fits. Its machinery may change, but a replacement inherits the route only where the required teeth still align.
 
-Names are useful for routing. They are not evidence of substitutability.
+Start with an English notice. Both models produce an acceptable private draft, and the replacement is clearer. On this one case, the upgrade looks obvious. Now send the Spanish case that once exposed a regression. The replacement refuses it. Then inspect its tool binding. The old model writes to the draft store. The replacement calls the publishing tool. Those failures point in opposite directions. One narrows who the route serves. The other widens what it may cause. Better prose does not cancel either change.
 
-Turn the route into a Stable Capability Field. The field describes what a consumer may expect, including valid inputs and observable outputs. It also defines how the route can fail or abstain.
+A version label can signal an interface change. A signed build can bind the artifact to a history. Both matter, but neither proves that behavior, authority, and recovery stayed inside Harborline's promise. So the replacement receives a canary lease, not the default route. It may read approved sources and create private drafts for Harborline. A gate outside the model blocks publication. The lease expires, and the old model remains ready as fallback. The canary is bounded by consequence, not just traffic. One percent is not small when one call can publish, spend money, change durable state, or create descendants. The lease limits reachable effects as well as exposure.
 
-Now bind one consumer: the Harborline communications workflow. The field promises a private draft, not publication. Its authority ceiling cannot rise when the implementation changes.
+Suppose the Spanish failure is repaired and every private-draft check now passes. A city publisher asks to use the same route for live emergency notices. Does Harborline's lease transfer? No. The user, purpose, authority, consequence, and environment changed. That request needs its own field version and qualification. A new evaluator, tool, dependency, incident, or audience can also reopen an old decision. The field keeps each failed case beside the promise it tested. State and recovery duties follow the replacement into later reviews. Occupying the same slot erases nothing.
 
-Qualification tests the old and new routes on the same versioned workload. The tests include the language case that exposed the regression.
-
-Suppose both routes return the same English draft. Is that enough to replace the old implementation?
-
-No. Matching one happy path says little about the failure behavior or the unmeasured consumers.
-
-The candidate enters a bounded canary. It can read the approved source and produce a private artifact. It cannot call the publishing tool.
-
-The Spanish regression appears. The field records which obligation failed and which consumers are affected. The candidate does not inherit the old route's qualification merely because it occupies the same slot.
-
-Now imagine the new model improves after repair. Replacement still needs state and recovery planning. Cached decisions may depend on the prior implementation. External effects may need compensation rather than rollback.
-
-The field therefore carries an expiry and invalidation triggers. A changed tool or evaluator can reopen qualification. So can a new audience.
-
-Composition needs care too. Two individually qualified fields may fail when joined. The output of one can violate the precondition of the next.
-
-The contract keeps that boundary visible. It names which composition was tested instead of granting a portable badge.
-
-Finite schemas and transition models can reject mismatched identity or unauthorized widening. They cannot prove that two real systems are equivalent in deployment.
-
-A stable route does not freeze one model forever. It preserves a consumer-visible promise while implementations change, and refuses replacement when the evidence no longer supports that promise.
+The book's schemas, synthetic controls, lifecycle traces, and Lean proofs establish finite consequences of an authored model. They can reject selected identity mismatches and authority widening. They cannot prove real-world equivalence, independent evaluation, deployed enforcement, or reversal of external effects. A Stable Capability Field lets the machinery improve without silently moving the terms of trust. The replacement inherits the route only inside the scope its evidence actually supports.

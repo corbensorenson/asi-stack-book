@@ -140,7 +140,9 @@ python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
 
 Review shared phrases, concentrated sentence stems, tiny performance blocks,
 and stacked limitation language in context. A warning asks for judgment; it is
-not permission to replace clear recurring terminology with synonyms.
+not permission to replace clear recurring terminology with synonyms. Record
+the comparison and disposition for the current draft; an unresolved pattern
+that survives noun substitution is a material script defect.
 
 ## Sentence craft
 

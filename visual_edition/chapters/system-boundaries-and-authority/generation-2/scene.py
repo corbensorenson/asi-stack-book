@@ -82,32 +82,35 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             self.wait(remaining)
 
     def beat(self, index: int, *animations, settle: float = 0.42) -> None:
-        """Schedule one audio-authoritative beat without overlapping exits."""
+        """Distribute one semantic construction across its narration window."""
         self.next_section(f"b{index:02d}")
         end = self.ENDS[index - 1]
         remaining = max(0.05, end - self.renderer.time)
         run_time = max(0.05, remaining - min(settle, remaining * 0.24))
-        fade_prefix = []
-        for animation in animations:
-            if isinstance(animation, FadeOut):
-                fade_prefix.append(animation)
-            else:
-                break
-        content = animations[len(fade_prefix):]
-        if fade_prefix and content:
-            fade_time = min(0.75, run_time * 0.14)
-            self.play(
-                Succession(
-                    AnimationGroup(*fade_prefix, lag_ratio=0, run_time=fade_time),
-                    LaggedStart(
-                        *content,
-                        lag_ratio=0.16,
-                        run_time=max(0.05, run_time - fade_time),
-                    ),
-                )
-            )
-        elif animations:
-            self.play(LaggedStart(*animations, lag_ratio=0.16, run_time=run_time))
+        if animations:
+            self.play(LaggedStart(*animations, lag_ratio=0.22, run_time=run_time))
+        self.wait_until(end)
+
+    def staged_beat(
+        self,
+        index: int,
+        setup: tuple,
+        resolution: tuple,
+        *,
+        setup_ratio: float = 0.38,
+        settle: float = 0.42,
+    ) -> None:
+        """Reserve the latter narration window for the decisive state change."""
+        self.next_section(f"b{index:02d}")
+        end = self.ENDS[index - 1]
+        remaining = max(0.05, end - self.renderer.time)
+        run_time = max(0.05, remaining - min(settle, remaining * 0.24))
+        setup_time = max(0.05, run_time * setup_ratio)
+        resolution_time = max(0.05, run_time - setup_time)
+        if setup:
+            self.play(LaggedStart(*setup, lag_ratio=0.18), run_time=setup_time)
+        if resolution:
+            self.play(LaggedStart(*resolution, lag_ratio=0.20), run_time=resolution_time)
         self.wait_until(end)
 
     @staticmethod
@@ -184,17 +187,25 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         balance = self.label(amount, 17, EVIDENCE if amount != "$0" else MUTED, "BOLD").move_to(DOWN * 0.72)
         return VGroup(shell, roof, columns, balance)
 
-    def state_chip(self, value: str, color: str, width: float = 1.54) -> VGroup:
+    def state_chip(
+        self,
+        value: str,
+        color: str,
+        width: float = 1.54,
+        *,
+        font_size: int = 11,
+        height: float = 0.46,
+    ) -> VGroup:
         shell = RoundedRectangle(
             width=width,
-            height=0.46,
+            height=height,
             corner_radius=0.07,
             color=color,
             stroke_width=2.2,
             fill_color=SURFACE,
             fill_opacity=1,
         )
-        label = self.label(value, 11, color, "BOLD").move_to(shell)
+        label = self.label(value, font_size, color, "BOLD").move_to(shell)
         return VGroup(shell, label)
 
     def sleeve(self, *, state: str = "UNBOUND", uses: str = "-", color: str = AUTHORITY) -> VGroup:
@@ -251,16 +262,57 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         note = self.label(detail, 9, MUTED, "BOLD").move_to(shell.get_center() + DOWN * 0.15)
         return VGroup(shell, title, note)
 
-    def proof_socket(self, value: str, color: str = RESIDUAL) -> VGroup:
-        socket = RoundedRectangle(width=2.10, height=0.54, corner_radius=0.08, color=color, stroke_width=2.3)
-        label = self.label(value, 11, color, "BOLD").move_to(socket)
+    def proof_socket(
+        self,
+        value: str,
+        color: str = RESIDUAL,
+        *,
+        width: float = 2.10,
+        font_size: int = 11,
+    ) -> VGroup:
+        socket = RoundedRectangle(width=width, height=0.58, corner_radius=0.08, color=color, stroke_width=2.3)
+        label = self.label(value, font_size, color, "BOLD").move_to(socket)
         return VGroup(socket, label)
 
+    def focus_lens(self, target, color: str) -> RoundedRectangle:
+        lens = RoundedRectangle(
+            corner_radius=0.12,
+            color=color,
+            stroke_width=4.5,
+            fill_color=color,
+            fill_opacity=0.20,
+        )
+        lens.surround(target, buff=0.18)
+        return lens
+
     def clear(self):
-        return FadeOut(Group(*self.mobjects))
+        return FadeOut(self.transients())
+
+    def transients(self) -> Group:
+        """Return scene content while preserving the continuous workbench."""
+        return Group(*[mob for mob in self.mobjects if mob is not self.workbench])
 
     def construct(self) -> None:
         self.camera.background_color = BACKGROUND
+        self.workbench = RoundedRectangle(
+            width=13.55,
+            height=6.95,
+            corner_radius=0.18,
+            color=BOUNDARY,
+            stroke_width=1.4,
+            stroke_opacity=0.34,
+            fill_color=SURFACE,
+            fill_opacity=1,
+        )
+        bench_rule = Line(
+            LEFT * 6.35 + DOWN * 2.86,
+            RIGHT * 6.35 + DOWN * 2.86,
+            color=BOUNDARY,
+            stroke_width=1.2,
+            stroke_opacity=0.30,
+        )
+        self.workbench.add(bench_rule)
+        self.add(self.workbench)
 
         # b01: correctness is complete before authority appears.
         ticket = self.ticket().shift(LEFT * 4.65 + UP * 0.58)
@@ -275,6 +327,11 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             Create(gate),
             FadeIn(bank),
             Write(heading),
+            Succession(
+                Indicate(ticket, color=ACCENT, scale_factor=1.04),
+                Indicate(gate, color=ROLLBACK, scale_factor=1.06),
+                Indicate(bank, color=INK, scale_factor=1.04),
+            ),
             settle=0.70,
         )
 
@@ -283,6 +340,9 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         may = self.state_chip("MAY: CLOSED", AUTHORITY, 1.88).shift(RIGHT * 0.55 + UP * 2.45)
         divider = DashedLine(UP * 2.72, DOWN * 0.76, color=BOUNDARY, dash_length=0.12).shift(LEFT * 1.80)
         not_yet = self.label("NOT YET", 24, ROLLBACK, "BOLD").move_to(LEFT * 1.0 + UP * 1.45)
+        can_focus = self.focus_lens(ticket, ACCENT)
+        may_focus = self.focus_lens(gate, AUTHORITY)
+        target_focus = self.focus_lens(bank, AUTHORITY)
         self.beat(
             2,
             FadeOut(heading),
@@ -291,25 +351,37 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             Create(divider),
             Write(not_yet),
             Indicate(gate[2], color=AUTHORITY),
+            Succession(
+                FadeIn(can_focus),
+                Transform(can_focus, may_focus),
+                Transform(can_focus, target_focus),
+                FadeOut(can_focus),
+            ),
             settle=0.55,
         )
 
         # b03: authority is visible state around the unchanged ticket.
-        old = Group(*self.mobjects)
+        old = self.transients()
         compact_ticket = self.ticket(compact=True).shift(LEFT * 3.72 + UP * 0.58)
         sleeve = self.sleeve().move_to(compact_ticket)
         fields = VGroup(
-            self.field("REQUESTER"),
-            self.field("EFFECT"),
-            self.field("TARGET"),
-            self.field("LIMIT"),
-            self.field("DEADLINE"),
-            self.field("RECEIPTS"),
-        ).arrange_in_grid(rows=2, cols=3, buff=(0.16, 0.18)).scale(0.82)
-        fields.move_to(RIGHT * 0.18 + UP * 0.62)
-        confidence = self.state_chip("CONFIDENCE != AUTHORITY", ACCENT, 2.78).shift(RIGHT * 3.60 + UP * 2.32)
-        open_slot = self.proof_socket("MISSING FIELD", ROLLBACK).shift(RIGHT * 3.60 + UP * 0.58)
+            self.state_chip("REQUESTER -> EFFECT", AUTHORITY, 2.54, font_size=13, height=0.58),
+            self.state_chip("TARGET", AUTHORITY, 1.54, font_size=13, height=0.58),
+            self.state_chip("LIMIT + DEADLINE", AUTHORITY, 2.54, font_size=13, height=0.58),
+            self.state_chip("RECEIPTS", AUTHORITY, 1.54, font_size=13, height=0.58),
+        ).arrange_in_grid(rows=2, cols=2, buff=(0.22, 0.24))
+        fields.move_to(RIGHT * 0.42 + UP * 0.62)
+        confidence = self.state_chip(
+            "CONFIDENCE != AUTHORITY", ACCENT, 3.10, font_size=13, height=0.58
+        ).shift(RIGHT * 3.55 + UP * 2.32)
+        open_slot = self.proof_socket(
+            "MISSING FIELD", ROLLBACK, width=2.28, font_size=13
+        ).shift(RIGHT * 3.72 + UP * 0.58)
         connector = DashedLine(fields.get_right(), open_slot.get_left(), color=AUTHORITY, dash_length=0.12)
+        envelope_focus = self.focus_lens(VGroup(compact_ticket, sleeve), AUTHORITY)
+        fields_focus = self.focus_lens(fields, AUTHORITY)
+        missing_focus = self.focus_lens(open_slot, ROLLBACK)
+        confidence_focus = self.focus_lens(confidence, ACCENT)
         self.beat(
             3,
             FadeOut(old),
@@ -319,11 +391,18 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             Create(connector),
             FadeIn(open_slot),
             FadeIn(confidence),
+            Succession(
+                FadeIn(envelope_focus),
+                Transform(envelope_focus, fields_focus),
+                Transform(envelope_focus, missing_focus),
+                Transform(envelope_focus, confidence_focus),
+                FadeOut(envelope_focus),
+            ),
             settle=0.72,
         )
 
         # b04: READ reaches the right account and the wrong operation socket.
-        old = Group(*self.mobjects)
+        old = self.transients()
         ticket_read = self.ticket(compact=True).shift(LEFT * 4.35 + UP * 0.62)
         sleeve_read = self.sleeve(state="READ", uses="-", color=ACCENT).move_to(ticket_read)
         read_key = self.key("READ", ACCENT).scale(0.82).shift(LEFT * 1.35 + UP * 0.42)
@@ -331,18 +410,38 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         account = self.bank(amount="VISIBLE").scale(0.84).shift(RIGHT * 4.65 + UP * 0.62)
         account_line = DashedLine(ticket_read.get_right(), account.get_left(), color=ACCENT, dash_length=0.14)
         mismatch = self.state_chip("NO FIT", ROLLBACK, 1.18).shift(RIGHT * 1.38 + UP * 2.36)
-        self.beat(
+        read_focus = self.focus_lens(VGroup(ticket_read, sleeve_read), ACCENT)
+        key_focus = self.focus_lens(read_key, ACCENT)
+        gate_focus = self.focus_lens(VGroup(gate_read, mismatch), ROLLBACK)
+        self.staged_beat(
             4,
-            FadeOut(old),
-            FadeIn(ticket_read),
-            Create(sleeve_read),
-            Create(account_line),
-            FadeIn(account),
-            FadeIn(gate_read),
-            FadeIn(read_key),
-            read_key.animate.move_to(gate_read[3].get_center() + LEFT * 1.08),
-            FadeIn(mismatch),
-            Circumscribe(gate_read[3], color=ROLLBACK),
+            (
+                FadeOut(old),
+                FadeIn(ticket_read),
+                Create(sleeve_read),
+                Create(account_line),
+                FadeIn(account),
+                FadeIn(gate_read),
+            ),
+            (
+                Succession(
+                    FadeIn(read_key),
+                    AnimationGroup(
+                        read_key.animate.move_to(gate_read[3].get_center() + LEFT * 1.08),
+                        FadeIn(mismatch),
+                        FadeIn(read_focus),
+                        lag_ratio=0,
+                    ),
+                    AnimationGroup(
+                        Circumscribe(gate_read[3], color=ROLLBACK),
+                        Transform(read_focus, key_focus),
+                        lag_ratio=0,
+                    ),
+                    Transform(read_focus, gate_focus),
+                    FadeOut(read_focus),
+                ),
+            ),
+            setup_ratio=0.36,
             settle=0.82,
         )
 
@@ -351,46 +450,67 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         denial = self.receipt("DENIED", "READ != REFUND", ROLLBACK).shift(RIGHT * 3.45 + UP * 2.18)
         cause = ArcBetweenPoints(gate_read[3].get_top(), denial.get_bottom(), angle=-0.35, color=ROLLBACK)
         refusal = self.label("SUCCESSFUL REFUSAL", 23, ROLLBACK, "BOLD").shift(LEFT * 1.45 + UP * 2.82)
+        stop_focus = self.focus_lens(gate_read, ROLLBACK)
+        denial_focus = self.focus_lens(denial, ROLLBACK)
+        refusal_focus = self.focus_lens(refusal, ROLLBACK)
         self.beat(
             5,
-            FadeOut(mismatch),
+            AnimationGroup(
+                FadeOut(mismatch),
+                TransformFromCopy(gate_read[3], denial),
+                Create(cause),
+                lag_ratio=0,
+            ),
+            Succession(
+                FadeIn(stop_focus),
+                Transform(stop_focus, denial_focus),
+                Transform(stop_focus, refusal_focus),
+                FadeOut(stop_focus),
+            ),
             Create(rail),
-            Create(cause),
-            TransformFromCopy(gate_read[3], denial),
             Write(refusal),
             Indicate(gate_read[2], color=ROLLBACK),
             settle=0.76,
         )
 
         # b06: a narrow one-shot refund key is assembled around fixed command bytes.
-        old = Group(*self.mobjects)
+        old = self.transients()
         ticket_active = self.ticket(compact=True).shift(LEFT * 4.45 + UP * 0.62)
         sleeve_active = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).move_to(ticket_active)
         refund_key = self.key("REFUND", AUTHORITY).scale(0.86).shift(LEFT * 0.60 + UP * 0.44)
         gate_active = self.bank_gate().shift(RIGHT * 2.08 + UP * 0.62)
         key_teeth = VGroup(
-            self.state_chip("USER 12", AUTHORITY, 1.18),
-            self.state_chip("ACCOUNT 47", AUTHORITY, 1.42),
-            self.state_chip("<= $240", AUTHORITY, 1.20),
-            self.state_chip("1 USE", AUTHORITY, 1.05),
-            self.state_chip("2:05", AUTHORITY, 0.94),
-            self.state_chip("EFFECT + OBSERVE", AUTHORITY, 2.05),
-        ).arrange_in_grid(rows=2, cols=3, buff=(0.13, 0.16)).scale(0.80).shift(RIGHT * 1.0 + UP * 2.33)
+            self.state_chip("USER 12 -> REFUND", AUTHORITY, 2.46, font_size=13, height=0.58),
+            self.state_chip("ACCOUNT 47", AUTHORITY, 1.74, font_size=13, height=0.58),
+            self.state_chip("<= $240 | 1 USE | 2:05", AUTHORITY, 2.88, font_size=13, height=0.58),
+            self.state_chip("EFFECT + OBSERVE", AUTHORITY, 2.20, font_size=13, height=0.58),
+        ).arrange_in_grid(rows=2, cols=2, buff=(0.18, 0.20)).shift(RIGHT * 0.90 + UP * 2.22)
+        grant_focus = self.focus_lens(key_teeth, AUTHORITY)
+        refund_focus = self.focus_lens(refund_key, AUTHORITY)
+        dispatch_focus = self.focus_lens(gate_active, AUTHORITY)
         self.beat(
             6,
             FadeOut(old),
             FadeIn(ticket_active),
             Create(sleeve_active),
             LaggedStart(*[FadeIn(chip, shift=DOWN * 0.10) for chip in key_teeth], lag_ratio=0.12),
-            FadeIn(refund_key),
             Create(gate_active),
-            refund_key.animate.move_to(gate_active[3].get_center() + LEFT * 0.98),
-            Indicate(sleeve_active[1], color=AUTHORITY),
+            Succession(
+                FadeIn(refund_key),
+                refund_key.animate.move_to(gate_active[3].get_center() + LEFT * 0.98),
+                Indicate(sleeve_active[1], color=AUTHORITY),
+            ),
+            Succession(
+                FadeIn(grant_focus),
+                Transform(grant_focus, refund_focus),
+                Transform(grant_focus, dispatch_focus),
+                FadeOut(grant_focus),
+            ),
             settle=0.92,
         )
 
         # b07: dispatch consumes the use and produces distinct effect/observation paths.
-        old = Group(*self.mobjects)
+        old = self.transients()
         gate_open = self.bank_gate(open_gate=True, color=EVIDENCE).shift(RIGHT * 0.40 + UP * 0.56)
         trace_ticket = self.ticket(compact=True).scale(0.84).shift(LEFT * 4.70 + UP * 0.56)
         trace_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.84).move_to(trace_ticket)
@@ -404,14 +524,17 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         effect = self.receipt("EFFECT", "REFUND RAN", EVIDENCE).shift(RIGHT * 1.00 + UP * 2.50)
         observe = self.receipt("OBSERVE", "DELTA -$240", ACCENT).shift(RIGHT * 3.65 + UP * 2.50)
         observer_line = DashedLine(observe.get_bottom(), bank_changed.get_top(), color=ACCENT, dash_length=0.12)
+        dispatch_focus = self.focus_lens(trace, AUTHORITY)
+        effect_focus = self.focus_lens(effect, EVIDENCE)
+        observe_focus = self.focus_lens(VGroup(observe, bank_changed), ACCENT)
         self.beat(
             7,
             FadeOut(old),
-            FadeIn(trace),
             Create(gate_open),
             Create(path_cross),
             FadeIn(bank_changed),
             Succession(
+                FadeIn(trace),
                 MoveAlongPath(trace, path_cross),
                 AnimationGroup(FadeOut(trace), FadeIn(spent_trace), lag_ratio=0),
             ),
@@ -419,11 +542,17 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             FadeIn(effect),
             Create(observer_line),
             FadeIn(observe),
+            Succession(
+                FadeIn(dispatch_focus),
+                Transform(dispatch_focus, effect_focus),
+                Transform(dispatch_focus, observe_focus),
+                FadeOut(dispatch_focus),
+            ),
             settle=0.88,
         )
 
         # b08: custody records answer three different questions.
-        old = Group(*self.mobjects)
+        old = self.transients()
         request = self.receipt("REQUEST", "REFUND $240", ACCENT).shift(LEFT * 3.40 + UP * 0.76)
         effect_2 = self.receipt("EFFECT", "ADAPTER REPORT", EVIDENCE).shift(UP * 0.76)
         observe_2 = self.receipt("OBSERVE", "ACCOUNT DELTA", AUTHORITY).shift(RIGHT * 3.40 + UP * 0.76)
@@ -451,7 +580,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         )
 
         # b09: identical bytes meet consumed authority state.
-        old = Group(*self.mobjects)
+        old = self.transients()
         first_ticket = self.ticket(compact=True).scale(0.78).shift(LEFT * 4.55 + UP * 1.52)
         first_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.78).move_to(first_ticket)
         replay_ticket = first_ticket.copy().shift(DOWN * 1.90)
@@ -467,11 +596,16 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         bottom_path = Arrow(replay_ticket.get_right(), gate_pair[1].get_left(), color=ROLLBACK, buff=0.14, stroke_width=3)
         self.beat(
             9,
-            FadeOut(old),
-            FadeIn(first_ticket),
-            Create(first_sleeve),
-            TransformFromCopy(first_ticket, replay_ticket),
-            Create(replay_sleeve),
+            AnimationGroup(
+                FadeOut(old),
+                FadeIn(first_ticket),
+                Create(first_sleeve),
+                lag_ratio=0,
+            ),
+            Succession(
+                TransformFromCopy(first_ticket, replay_ticket),
+                Create(replay_sleeve),
+            ),
             FadeIn(identical),
             GrowArrow(top_path),
             GrowArrow(bottom_path),
@@ -482,7 +616,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         )
 
         # b10: lifecycle changes close MAY while CAN remains stable.
-        old = Group(*self.mobjects)
+        old = self.transients()
         command = self.ticket(compact=True).scale(0.48).shift(LEFT * 5.62 + UP * 2.48)
         can_line = Line(LEFT * 5.82 + DOWN * 0.75, RIGHT * 5.82 + DOWN * 0.75, color=ACCENT, stroke_width=5)
         can_tag = self.state_chip("CAN UNCHANGED", ACCENT, 1.92).shift(LEFT * 4.62 + DOWN * 0.75)
@@ -512,7 +646,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         )
 
         # b11: stronger capability cannot move the fixed authority ceiling.
-        old = Group(*self.mobjects)
+        old = self.transients()
         can_rail = Line(LEFT * 4.70 + DOWN * 0.20, RIGHT * 1.25 + DOWN * 0.20, color=ACCENT, stroke_width=8)
         extension = Line(RIGHT * 1.25 + DOWN * 0.20, RIGHT * 4.70 + DOWN * 0.20, color=ACCENT, stroke_width=8)
         can_label = self.label("CAN", 28, ACCENT, "BOLD").next_to(can_rail, LEFT, buff=0.18)
@@ -539,18 +673,22 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         )
 
         # b12: the finite Lean claim stays inside its encoded boundary.
-        old = Group(*self.mobjects)
-        proof_box = RoundedRectangle(width=8.10, height=3.88, corner_radius=0.16, color=EVIDENCE, stroke_width=3, fill_color=BACKGROUND, fill_opacity=0.18).shift(LEFT * 1.30 + UP * 0.62)
-        proof_title = self.state_chip("LEAN: FINITE MODEL", EVIDENCE, 2.28).move_to(proof_box.get_top() + DOWN * 0.25)
+        old = self.transients()
+        proof_box = RoundedRectangle(width=8.45, height=3.72, corner_radius=0.16, color=EVIDENCE, stroke_width=3, fill_color=BACKGROUND, fill_opacity=0.18).shift(LEFT * 1.30 + UP * 0.48)
+        proof_title = self.state_chip(
+            "LEAN: FINITE MODEL", EVIDENCE, 2.72, font_size=13, height=0.58
+        ).next_to(proof_box, UP, buff=0.12)
+        ceiling = self.state_chip(
+            "CALLER CEILING", EVIDENCE, 2.24, font_size=13, height=0.58
+        ).move_to(proof_box.get_corner(UP + LEFT) + RIGHT * 1.42 + DOWN * 0.42)
         locks = VGroup(
-            self.proof_socket("CALLER CEILING", EVIDENCE),
-            self.proof_socket("ACTIVE GRANT", EVIDENCE),
-            self.proof_socket("DISPATCH", EVIDENCE),
-            self.proof_socket("EFFECT CUSTODY", EVIDENCE),
-        ).arrange(RIGHT, buff=0.30).scale(0.84).move_to(proof_box.get_center() + UP * 0.22)
+            self.proof_socket("ACTIVE GRANT", EVIDENCE, width=2.18, font_size=13),
+            self.proof_socket("DISPATCH", EVIDENCE, width=1.76, font_size=13),
+            self.proof_socket("EFFECT CUSTODY", EVIDENCE, width=2.42, font_size=13),
+        ).arrange(RIGHT, buff=0.52).move_to(proof_box.get_center() + UP * 0.06)
         trace = VGroup(*[
             Arrow(locks[i].get_right(), locks[i + 1].get_left(), color=EVIDENCE, buff=0.08, stroke_width=2.5)
-            for i in range(3)
+            for i in range(len(locks) - 1)
         ])
         accepted = self.state_chip("ACCEPTED WITHIN CEILING", EVIDENCE, 2.62).move_to(proof_box.get_bottom() + UP * 0.40)
         miniature = self.ticket(compact=True).scale(0.46).shift(RIGHT * 5.10 + UP * 0.62)
@@ -560,6 +698,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
             FadeOut(old),
             Create(proof_box),
             FadeIn(proof_title),
+            FadeIn(ceiling),
             LaggedStart(*[FadeIn(lock) for lock in locks], lag_ratio=0.18),
             LaggedStart(*[GrowArrow(arrow) for arrow in trace], lag_ratio=0.20),
             FadeIn(accepted),
@@ -569,7 +708,7 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         )
 
         # b13: production obligations remain explicitly outside the theorem.
-        proof_group = VGroup(proof_box, proof_title, locks, trace, accepted)
+        proof_group = VGroup(proof_box, proof_title, ceiling, locks, trace, accepted)
         compact_proof = proof_group.copy().scale(0.72).shift(LEFT * 2.05 + UP * 0.05)
         outside = VGroup(
             self.proof_socket("FORGED ID"),
@@ -579,19 +718,26 @@ class SystemBoundariesAuthorityGeneration2(AsiScene):
         ).arrange(DOWN, buff=0.22).scale(0.92).shift(RIGHT * 4.30 + UP * 0.66)
         open_label = self.label("NOT\nESTABLISHED", 19, RESIDUAL, "BOLD").shift(RIGHT * 4.30 + UP * 2.58)
         boundary_line = DashedLine(UP * 2.72, DOWN * 1.30, color=BOUNDARY, dash_length=0.15).shift(RIGHT * 1.58)
+        proof_focus = self.focus_lens(compact_proof, EVIDENCE)
+        outside_focuses = [self.focus_lens(socket, RESIDUAL) for socket in outside]
         self.beat(
             13,
-            FadeOut(Group(*self.mobjects)),
+            FadeOut(self.transients()),
             FadeIn(compact_proof),
             Create(boundary_line),
             Write(open_label),
             LaggedStart(*[FadeIn(socket, shift=LEFT * 0.12) for socket in outside], lag_ratio=0.20),
             Indicate(boundary_line, color=BOUNDARY),
+            Succession(
+                FadeIn(proof_focus),
+                *[Transform(proof_focus, focus) for focus in outside_focuses],
+                FadeOut(proof_focus),
+            ),
             settle=0.92,
         )
 
         # b14: the signature image binds both outcomes to exact authority state.
-        old = Group(*self.mobjects)
+        old = self.transients()
         left_ticket = self.ticket(compact=True).scale(0.72).shift(LEFT * 3.75 + UP * 0.62)
         right_ticket = self.ticket(compact=True).scale(0.72).shift(RIGHT * 3.75 + UP * 0.62)
         active_sleeve = self.sleeve(state="ACTIVE", uses="1", color=AUTHORITY).scale(0.72).shift(LEFT * 3.75 + UP * 0.62)

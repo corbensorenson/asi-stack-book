@@ -35,7 +35,7 @@ def discover_repository_root() -> Path:
 
 
 ROOT = discover_repository_root()
-NEGATIVE_CONTROL_COUNT = 10
+NEGATIVE_CONTROL_COUNT = 11
 ALLOWED_IMPORT_ROOTS = {
     "__future__",
     "collections",
@@ -116,6 +116,34 @@ ASSET_CONSTRUCTORS = {
 }
 LATEX_CONSTRUCTORS = {"MathTex", "SingleStringMathTex", "Tex", "TexTemplate"}
 FORBIDDEN_ACCESSIBILITY_EFFECTS = {"Flash", "ShowPassingFlash"}
+PARALLEL_ANIMATION_CALLS = {
+    "AnimationGroup",
+    "LaggedStart",
+    "LaggedStartMap",
+    "beat",
+    "play",
+}
+ENTRANCE_ANIMATIONS = {
+    "AddTextLetterByLetter",
+    "Create",
+    "DrawBorderThenFill",
+    "FadeIn",
+    "GrowArrow",
+    "GrowFromCenter",
+    "GrowFromEdge",
+    "GrowFromPoint",
+    "SpinInFromNothing",
+    "Write",
+}
+TRANSFORM_ANIMATIONS = {
+    "ApplyMethod",
+    "FadeTransform",
+    "FadeTransformPieces",
+    "MoveAlongPath",
+    "ReplacementTransform",
+    "Transform",
+}
+DERIVED_ENTRANCE_ANIMATIONS = {"TransformFromCopy"}
 
 
 def digest(path: Path) -> str:
@@ -136,6 +164,57 @@ def dotted_name(node: ast.AST) -> str | None:
 
 def literal_int(node: ast.AST | None) -> bool:
     return isinstance(node, ast.Constant) and isinstance(node.value, int) and not isinstance(node.value, bool)
+
+
+def expression_key(node: ast.AST | None) -> str | None:
+    """Return a stable source-level identity for an animation target."""
+    if isinstance(node, (ast.Name, ast.Attribute, ast.Subscript)):
+        return ast.dump(node, annotate_fields=False, include_attributes=False)
+    return None
+
+
+def animated_object(node: ast.AST) -> ast.AST | None:
+    """Find the object that owns an ``.animate`` builder chain."""
+    cursor = node
+    while isinstance(cursor, (ast.Call, ast.Attribute)):
+        if isinstance(cursor, ast.Call):
+            cursor = cursor.func
+            continue
+        if cursor.attr == "animate":
+            return cursor.value
+        cursor = cursor.value
+    return None
+
+
+def animation_events(node: ast.AST) -> tuple[set[str], set[str]]:
+    """Collect entrance and decisive-transform targets beneath one sibling."""
+    entrances: set[str] = set()
+    transforms: set[str] = set()
+    for child in ast.walk(node):
+        if not isinstance(child, ast.Call):
+            continue
+        name = dotted_name(child.func)
+        terminal = name.rsplit(".", 1)[-1] if name else None
+        if terminal in ENTRANCE_ANIMATIONS and child.args:
+            target = expression_key(child.args[0])
+            if target:
+                entrances.add(target)
+        if terminal in DERIVED_ENTRANCE_ANIMATIONS and len(child.args) >= 2:
+            target = expression_key(child.args[1])
+            if target:
+                entrances.add(target)
+        if terminal in TRANSFORM_ANIMATIONS and child.args:
+            target_node = child.args[0]
+            if terminal == "ApplyMethod" and isinstance(target_node, ast.Attribute):
+                target_node = target_node.value
+            target = expression_key(target_node)
+            if target:
+                transforms.add(target)
+        animate_target = animated_object(child.func)
+        target = expression_key(animate_target)
+        if target:
+            transforms.add(target)
+    return entrances, transforms
 
 
 @dataclass(frozen=True)
@@ -280,6 +359,24 @@ class SceneSourceAuditor(ast.NodeVisitor):
                 node,
                 f"{terminal} is blocked until a qualified flash-threshold audit exists",
             )
+        if terminal in PARALLEL_ANIMATION_CALLS:
+            sibling_events = [animation_events(argument) for argument in node.args]
+            for left_index, (left_entrances, left_transforms) in enumerate(sibling_events):
+                for right_entrances, right_transforms in sibling_events[left_index + 1:]:
+                    overlap = (left_entrances & right_transforms) | (
+                        left_transforms & right_entrances
+                    )
+                    if overlap:
+                        self.add(
+                            "overlapping-entrance-transform",
+                            node,
+                            "the same object enters and decisively transforms in parallel; "
+                            "serialize those actions with Succession or separate timed plays",
+                        )
+                        break
+                else:
+                    continue
+                break
         self.generic_visit(node)
 
     def finish(self) -> None:
@@ -421,6 +518,7 @@ def audit_scene(
 def self_test() -> list[str]:
     failures: list[str] = []
     safe = """from manim import Scene, Circle\nfrom math import sin\nclass Demo(Scene):\n    def construct(self):\n        self.add(Circle().shift(sin(0)))\n"""
+    serial_animation = """from manim import Scene, Circle, FadeIn, Succession\nclass Demo(Scene):\n    def construct(self):\n        dot = Circle()\n        self.play(Succession(FadeIn(dot), dot.animate.shift(1)))\n"""
     mutations = {
         "unsafe import": ("import subprocess\n" + safe, "unsafe-import"),
         "wildcard import": (safe.replace("Scene, Circle", "*"), "wildcard-import"),
@@ -441,6 +539,13 @@ def self_test() -> list[str]:
             safe.replace("Circle().shift(sin(0))", "Flash(ORIGIN)"),
             "unqualified-flash-effect",
         ),
+        "overlapping entrance and transform": (
+            serial_animation.replace(
+                "self.play(Succession(FadeIn(dot), dot.animate.shift(1)))",
+                "self.play(FadeIn(dot), dot.animate.shift(1))",
+            ),
+            "overlapping-entrance-transform",
+        ),
     }
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
@@ -449,6 +554,9 @@ def self_test() -> list[str]:
         report = audit_scene(scene, root=root)
         if report["verdict"] != "pass":
             failures.append("known-safe scene did not pass")
+        scene.write_text(serial_animation, encoding="utf-8")
+        if audit_scene(scene, root=root)["verdict"] != "pass":
+            failures.append("serialized entrance and transform did not pass")
         scene.write_text(safe.replace("self.add", "self.run()\n        self.add"), encoding="utf-8")
         if audit_scene(scene, root=root)["verdict"] != "pass":
             failures.append("semantic method named run_visual_step caused a false positive")

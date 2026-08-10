@@ -79,6 +79,16 @@ do not copy ManimGL or CC BY-NC-SA implementation code into this project.
 - Use `AnimationGroup` for simultaneous changes that express one relation.
 - Use `LaggedStart` or `LaggedStartMap` when order within a group matters.
 - Use `Succession` for explicit stages.
+- Never place an object's entrance and its decisive transform in overlapping
+  siblings of the same `play`, `AnimationGroup`, or `LaggedStart`. For example,
+  `FadeIn(key)` beside `key.animate.move_to(socket)` can render the key at the
+  destination before the viewer sees the attempted insertion. Put both in one
+  `Succession`, or use separate audio-timed `play` calls.
+- A beat-wide stagger is not a synchronization plan for a pivotal event. Split
+  setup and resolution into explicit cue windows when the narration depends on
+  seeing a denial, collision, state transition, comparison, or proof boundary
+  at a particular phrase. Verify the event time in the mux, not from source
+  order or nominal animation duration.
 - Keep lag ratios large enough for the viewer to perceive order and small
   enough that the final objects coexist for comparison.
 - Use linear rate functions for quantities intended to represent uniform time
@@ -111,6 +121,13 @@ Use a bounded loop:
 4. compare the frames with the planned attention target and object state;
 5. play the section at speed with narration; and
 6. localize the next repair to the responsible operation or beat.
+
+When a freeze or low-difference diagnostic fires, inspect frames on both sides
+of the interval and locate the spoken claim before editing. Repair a
+front-loaded construction, collapsed transform, unreadable cue, or unjustified
+hold directly. Do not add ambient loops, arbitrary camera motion, or moving
+decoration merely to silence the detector; a remaining warning stays open for
+playback review when the heuristic and the viewed mechanism disagree.
 
 Consult the pinned ManimCE documentation when an API is uncertain. Do not
 guess from ManimGL examples. Code-level and rendered-visual checks are

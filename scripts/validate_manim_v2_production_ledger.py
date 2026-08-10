@@ -39,7 +39,7 @@ ALL_VIEWING_PASSES = (
     "normal_speed", "muted", "audio_only", "captions_on", "phone",
     "large_screen", "headphones", "speakers", "random_frames",
 )
-EXPECTED_REJECTING_CONTROL_COUNT = 91
+EXPECTED_REJECTING_CONTROL_COUNT = 96
 
 
 def digest(path: Path) -> str:
@@ -1302,6 +1302,29 @@ def review_contract_errors(
             errors.append(
                 "animatic captions-on viewing must remain not_applicable before captions exist"
             )
+    phone = review.get("phone_review", {})
+    if not isinstance(phone, dict):
+        phone = {}
+    if phone.get("complete_playback") is not True:
+        errors.append(f"{pass_name} phone review did not cover the complete candidate")
+    if phone.get("zoom_used") is not False:
+        errors.append(f"{pass_name} phone review used zoom")
+    if phone.get("audio_enabled") is not True:
+        errors.append(f"{pass_name} phone review did not include audio")
+    method_is_physical = phone.get("method") == "physical_device"
+    if phone.get("physical_device") is not method_is_physical:
+        errors.append(f"{pass_name} phone review method and physical-device flag disagree")
+    width = phone.get("viewport_css_width_px")
+    if pass_name == "animatic":
+        if not isinstance(width, int) or isinstance(width, bool) or width > 360:
+            errors.append("animatic phone viewport exceeds 360 CSS pixels")
+        if phone.get("captions_enabled") is not False:
+            errors.append("animatic phone review claims captions before captions exist")
+    else:
+        if phone.get("method") != "physical_device" or phone.get("physical_device") is not True:
+            errors.append(f"{pass_name} requires complete playback on a physical phone")
+        if phone.get("captions_enabled") is not True:
+            errors.append(f"{pass_name} physical-phone review did not include captions")
 
     dimensions = review.get("dimensions", {})
     if not isinstance(dimensions, dict):
@@ -1880,7 +1903,7 @@ def synthetic_review(pass_name: str) -> tuple[dict, dict, dict]:
         ],
     }[pass_name]
     review = {
-        "schema_version": "asi_stack.manim_experience_review.v3",
+        "schema_version": "asi_stack.manim_experience_review.v4",
         "chapter_id": "fixture",
         "generation": 2,
         "pass": pass_name,
@@ -1922,6 +1945,20 @@ def synthetic_review(pass_name: str) -> tuple[dict, dict, dict]:
             "proxy_limit": "An AI proxy diagnoses the artifact but is not evidence of human learning."
         },
         "viewing_passes": viewing,
+        "phone_review": {
+            "method": "browser_viewport" if pass_name == "animatic" else "physical_device",
+            "complete_playback": True,
+            "viewport_css_width_px": 360 if pass_name == "animatic" else 390,
+            "zoom_used": False,
+            "physical_device": pass_name != "animatic",
+            "device_description": (
+                "360px browser viewport preflight"
+                if pass_name == "animatic"
+                else "fixture physical phone"
+            ),
+            "captions_enabled": pass_name != "animatic",
+            "audio_enabled": True,
+        },
         "dimensions": dimensions,
         "open_defects": [], "verdict": "pass", "support_state_effect": "none",
         "non_claim": "This review diagnoses one derivative and does not prove learning or chapter truth."
@@ -1941,6 +1978,9 @@ def review_negative_control_failures() -> tuple[list[str], int]:
     controls = []
     base, bindings, treatment = synthetic_review("independent_release_candidate")
     controls.append(("failed viewing pass", lambda r: r["viewing_passes"]["phone"].update(result="fail"), "required viewing pass phone"))
+    controls.append(("desktop substituted for phone", lambda r: r["phone_review"].update(method="browser_viewport", physical_device=False), "physical phone"))
+    controls.append(("phone captions omitted", lambda r: r["phone_review"].update(captions_enabled=False), "did not include captions"))
+    controls.append(("phone custody contradiction", lambda r: r["phone_review"].update(method="browser_viewport"), "flag disagree"))
     controls.append(("cold context leak", lambda r: r["review_context"]["allowed_materials"].append("answer_key"), "context leaks"))
     controls.append(("artifact digest drift", lambda r: r["artifact_bindings"]["narration"].update(sha256="0" * 64), "does not bind"))
     controls.append(("fake sample coverage", lambda r: r["frame_sampling"].update(sampled_beat_count=5), "does not cover every beat"))
@@ -2015,7 +2055,15 @@ def review_negative_control_failures() -> tuple[list[str], int]:
     )
     if not any("must not manufacture" in error for error in source_errors):
         failures.append("review negative control did not trigger: non-cold learning claim")
-    return failures, len(controls) + 4
+    animatic, animatic_bindings, animatic_treatment = synthetic_review("animatic")
+    animatic["phone_review"]["viewport_css_width_px"] = 420
+    animatic_errors = review_contract_errors(
+        animatic, "animatic", animatic_bindings, 6,
+        animatic_treatment, check_files=False,
+    )
+    if not any("exceeds 360 CSS pixels" in error for error in animatic_errors):
+        failures.append("review negative control did not trigger: wide animatic phone viewport")
+    return failures, len(controls) + 5
 
 
 def narration_custody_negative_control_failures() -> tuple[list[str], int]:

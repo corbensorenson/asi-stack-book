@@ -199,9 +199,12 @@ python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
 ```
 
 The corpus diagnostics locate possible cadence and language reuse; they do not
-reward arbitrary variation. Neither command approves truth, voice, or
-visualizability. Record all three manual reviews in the treatment, bind the
-exact narration digest, and then run Gate 0:
+reward arbitrary variation. Compare every trigger that affects the draft and
+record its disposition in the treatment review or as an open defect. A warning
+does not auto-fail a script, but unresolved noun-swappable templating blocks
+Gate 0. Neither command approves truth, voice, or visualizability. Record all
+three manual reviews in the treatment, bind the exact narration digest, and
+then run Gate 0:
 
 ```bash
 python3 skills/asi-stack-manim-videos/scripts/audit_video_plan.py \
@@ -329,6 +332,10 @@ python3 skills/asi-stack-manim-videos/scripts/render_scene_isolated.py \
   --audio-master build/visual_edition/audio/<chapter>-narration-master.wav \
   --profile draft \
   --receipt visual_edition/chapters/<chapter>/generation-2/receipts/animatic-sandbox.json
+python3 skills/asi-stack-manim-videos/scripts/audit_av_experience.py \
+  build/visual_edition/isolated-renders/<chapter>/draft/<chapter>-animatic.mp4 \
+  --plan visual_edition/chapters/<chapter>/generation-2/beat_plan.json \
+  --target-lufs -16 --animatic-preflight
 python3 skills/asi-stack-manim-videos/scripts/sample_video_beats.py \
   build/visual_edition/isolated-renders/<chapter>/draft/<chapter>-animatic.mp4 \
   visual_edition/chapters/<chapter>/generation-2/beat_plan.json \

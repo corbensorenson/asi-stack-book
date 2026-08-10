@@ -358,7 +358,7 @@ remain closed while other work proceeds.
 | Existing-book depth recovery — terminal historical packet with current-manifest admission | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter R21 packet remains immutable history. Current chapter growth is manifest-driven but requires the full admission and debt-reconciliation path; current atom custody is 85/85, while the new work-surfaces owner remains one visible diagnostic concept-contract item rather than rewriting the historical receipt. | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff remains terminal. New owners must gain exact atom or bounded formal-target custody at birth and cannot inherit completion from the historical packet. |
 | Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
 | Independent human narrative — active book packet | `P7.1-independent-22-unit-human-narrative` | Generated current-manifest status truth and the 22-unit claim/conclusion crosswalk are current; reference-only contracts remain in the reference | Maintain a 120,000–180,000-word human source organized by the 22-unit spine, one continuing repository-change trace, chapter-specific objections, and readable transitions. Preserve major conclusions and claim identity without reproducing every local status block. Defer the primer until this manuscript is stable. |
-| Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical, but 75 are stale and only nine local renders match the current chapter digests; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 85 chapters. Twenty-four case-first narrations have been rewritten: 21 remain narration drafts, while the opening, Efficient ASI, and System Boundaries pilots have source-bound treatments, exact scripts, verified audio, and block-timed v4 beat plans. Their local animatics and sampled-frame receipts are diagnostic only; no animatic review gate or downstream publication state is closed. Treatment-free v2 plans and their downstream artifacts remain historical. The current ledger therefore reports 61 planned, 21 narration drafts, three beat-planned pilots, zero animatic-passed, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
+| Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical and stale; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 86 chapters. Twenty-four case-first narrations have been rewritten: 20 remain narration drafts, while four targets have treatment, narration, and beat-plan files but no current script or animatic gate pass after source and authoring-standard invalidation. Their local animatics and sampled-frame receipts are diagnostic only; no downstream publication state is closed. Treatment-free v2 plans and their downstream artifacts remain historical. The current ledger therefore reports 62 planned, 20 narration drafts, four file-level beat-planned targets, zero animatic-passed, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
 | Formal slot — C6 rationalization then connected composition active | `P4.1-cross-owner-composition-and-proof-rationalization` | The original C6 residual estate is reduced under exact dependency and consumer custody; new work requires the seven-field family admission rule plus maximum inference | Finish dependency-safe retire/generalize work, then implement the eight global invariants and ten distributed-fault cases in one explicitly bounded connected-owner model. Rebuild the overlay and ledger after every tranche, with no support or release movement. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
@@ -4595,11 +4595,11 @@ treatment/review schemas, a v4 beat-plan schema,
 pinned toolchains, and manifest-derived production ledger now form one
 fail-closed generation-two system. This v3 checkpoint supersedes earlier v2
 procedural language in this subsection wherever the two conflict. The ledger
-derives 85 targets in canonical order. Twenty-four narration drafts have been
-rewritten; the opening, Efficient ASI, and System Boundaries chapters have
-since advanced
-through source-bound treatments, exact scripts, and block-timed beat plans,
-leaving 21 narration drafts and 61 planned targets. Their exact chapter and
+derives 86 targets in canonical order. Twenty-four narrations have been
+rewritten. The opening, Efficient ASI, System Boundaries, and Stable Capability
+Fields targets have treatment, narration, and beat-plan files, but current
+source and authoring-standard changes leave every script and animatic gate
+reopened; 20 remain narration drafts and 62 remain planned. Their exact chapter and
 source context, claims, non-claims, truth checks, semantic keyframes,
 accessibility plans, and read-aloud and visualizability verdicts are bound in
 their treatments. The Efficient ASI pilot now teaches one causal reversal: a
@@ -4616,15 +4616,18 @@ governed runner and have sampled-frame receipts, but none has the required
 audiovisual, phone,
 muted-motion, or cold-audience review needed to pass the animatic gate. Earlier
 treatment-free plans and all downstream artifacts remain history. Current
-state is therefore 21 `narration_draft`, one script-passed target, three
-`beat_planned` pilots, zero animatic-passed, and zero accepted or published.
+state is therefore 20 `narration_draft`, zero script-passed targets, four
+file-level `beat_planned` targets, zero animatic-passed, and zero accepted or
+published.
 
 The hardening pass binds every gate to exact scene, caption, transcript,
 thumbnail, toolchain, visual-grammar, primitive-library, receipt, and review
-context identities. All 24 existing generation-two scenes pass a static
-allowlist preflight after removing five direct-run entrypoints and one dynamic
-import; local imports are now limited to the separately digest-bound and
-graphically tested `visual_edition.lib.asi_visuals` helper. Accepted rendering
+context identities. All 24 existing generation-two scenes pass the expanded
+static preflight after serializing seven entrance-and-transform overlaps across
+four draft scenes. The preflight also retains the earlier removal of five
+direct-run entrypoints and one dynamic import; local imports are limited to the
+separately digest-bound and graphically
+tested `visual_edition.lib.asi_visuals` helper. Accepted rendering
 uses a tracked macOS Seatbelt runner that constructs both Manim and FFmpeg
 commands, narrows repository reads, denies network access, strips inherited
 credentials, confines writes to `build/visual_edition`, enforces resource
@@ -4643,7 +4646,14 @@ command. Release now requires
 separate fresh-session source-aware and cold-proxy reviews, with frozen context
 and prompt manifests and raw responses preserved before assessment. An AI
 proxy remains artifact diagnosis rather than human-learning evidence. The
-ledger validator rejects 91 representative identity, source, geometry,
+v4 experience-review contract binds complete phone playback, viewport width,
+zoom state, audio/caption state, and whether a physical device was used;
+lock and release reviews cannot substitute a desktop viewport for a phone.
+The same auditor now has a canonical, stdout-only animatic preflight that can
+surface freeze, black-frame, silence, loudness, peak, stream, and duration
+risks without fabricating the final A/V artifact or advancing a review gate.
+The
+ledger validator rejects 96 representative identity, source, geometry,
 sandbox, narration-custody, final-receipt, media-metadata, timing, review, sampling, and
 publication mutations.
 
