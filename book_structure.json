@@ -6950,6 +6950,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "rmi",
             "cognitive_loop_closure",
             "benchmaxxing",
@@ -13932,6 +13933,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "ext_multi_agent_risks_2025",
             "ext_cooperative_ai_foundations_2023",
             "ext_gradual_disempowerment_2025",
@@ -14616,6 +14618,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "octopus_router",
             "deterministic_capability_compilation",
             "rmi",
@@ -15135,6 +15138,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "corben_chatgpt_kiss_irreducible_intelligence_2026",
             "corben_chatgpt_onecell_theseus_2026",
             "deterministic_capability_compilation",
@@ -15867,6 +15871,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "beastbrain",
             "ext_llama3_herd_2024",
             "ext_megatron_distributed_training_2021",
@@ -16354,6 +16359,192 @@
             "No ASI Stack distributed model-training campaign has run for this chapter.",
             "No natural checkpoint resume equivalence, fault-tolerance, model-quality, efficiency, reproduction, or transfer result is recorded.",
             "The authored transaction fixture and finite Lean model establish record consequences only."
+          ]
+        },
+        {
+          "id": "learning-compute-topology-and-adaptive-process-architecture",
+          "title": "Learning–Compute Topology and Adaptive Process Architecture",
+          "file": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "draft_maturity": "v0.1 integrated argument chapter",
+          "source_ids": [
+            "learning_compute_topology",
+            "ext_megatron_distributed_training_2021",
+            "ext_gspmd_2021",
+            "ext_pbt_2017",
+            "ext_openai_es_2017"
+          ],
+          "source_queue": {
+            "primary": [
+              "learning_compute_topology"
+            ],
+            "supporting": [
+              "ext_megatron_distributed_training_2021",
+              "ext_gspmd_2021",
+              "ext_pbt_2017",
+              "ext_openai_es_2017"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": []
+          },
+          "problem": "The stack can replace models, optimizers, routes, and hardware while leaving the causal organization of learning implicit: replicas are mistaken for learners, evidence is confused with judgement and credit, integration semantics disappear behind generic aggregation, and compute planners silently alter the adaptive process they were meant only to realize.",
+          "insufficient": "Calling a workflow serial, parallel, distributed, federated, evolutionary, modular, or agentic does not identify its persistent adaptive identities, semantic channels, lifecycle, integration operators, topology rewrites, physical realization, information bottlenecks, or authority. A graph diagram, normal form, unit test, toy phase diagram, or formal result under a bounded model also does not establish empirical usefulness or an optimal topology.",
+          "core_claim": "For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.",
+          "claim_source_mappings": [
+            {
+              "source_id": "learning_compute_topology",
+              "mapped_support": "Supplies the four-topology distinction; adaptive identity and typed semantic channels; LCT-IR and LCNF; seven bounded propositions; semantic compilation and realization leakage; topology measurements; derived process organizations; ABVI; a bounded executable supplement; and an explicit experimental, falsification, and safety program.",
+              "limits": "Corben-authored research source. Its propositions apply only under stated models; its implementation covers bounded IR behavior; its coverage and novelty matrices are scoped manual studies; its phase diagrams are toy or analytical; and no real neural-training benefit, topology-control result, independent reproduction, transfer, safety, SOTA, AGI, or ASI result exists.",
+              "passage_refs": [
+                "sources/source_notes/learning_compute_topology.md",
+                "papers/learning_compute_topology.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete paper and archive, including claims map, references, figures, reproducibility files, formal specifications, grammar/schema, implementation, examples, normalized outputs, schedules, tests, phase data, novelty and coverage matrices, tree-shaking memo, and quality reports. Every substantive section family is assigned or bounded in the source note.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_megatron_distributed_training_2021",
+              "mapped_support": "Provides a primary distributed-training comparator for tensor, pipeline, and data parallel execution at scale.",
+              "limits": "Distributed execution structure does not by itself define multiple persistent adaptive identities, evaluator topology, credit semantics, or learning-process topology.",
+              "passage_refs": [
+                "sources/source_notes/ext_megatron_distributed_training_2021.md"
+              ],
+              "passage_review_note": "Used to preserve the boundary between execution parallelism and adaptive-process organization.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gspmd_2021",
+              "mapped_support": "Provides a primary compiler and partitioning comparator for mapping tensor computations onto device meshes.",
+              "limits": "A distributed execution compiler is not a semantic learning-process compiler and does not authorize changes to identity, evidence, evaluation, credit, or integration semantics.",
+              "passage_refs": [
+                "sources/source_notes/ext_gspmd_2021.md"
+              ],
+              "passage_review_note": "Used for the execution-to-physical-compute boundary and semantic-firewall comparison.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_pbt_2017",
+              "mapped_support": "Provides a primary population-based-training comparator in which persistent candidates, evaluation, selection, copying, and hyperparameter perturbation alter the adaptive process.",
+              "limits": "One population algorithm does not validate LCT's general primitive set, normal form, metrics, compiler, or derived architectures.",
+              "passage_refs": [
+                "sources/source_notes/ext_pbt_2017.md"
+              ],
+              "passage_review_note": "Used as a concrete adaptive-identity and lifecycle comparator.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openai_es_2017",
+              "mapped_support": "Provides a primary evolutionary-strategy comparator for proposal parallelism, scalar evaluation, and centralized update without mistaking worker multiplicity for persistent adaptive plurality.",
+              "limits": "The reported ES system does not establish LCT metrics, ABVI, information bounds, or superior process topology.",
+              "passage_refs": [
+                "sources/source_notes/ext_openai_es_2017.md"
+              ],
+              "passage_review_note": "Used to distinguish evidence/proposal width from adaptive-state width.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Freeze a resolution contract that names persistent adaptive identities, state boundaries, semantic channels, protected observables, costs, authorities, and permitted topology rewrites.",
+            "Represent adaptive, evidence, judgement, credit, artifact, resource, control, authority, and static stores separately, with typed operators and explicit versioned producers.",
+            "Normalize candidate processes into Learning Causal Normal Form by exposing hidden adaptive state, evaluation, credit, integration, lifecycle, feedback, and provenance before comparison.",
+            "Keep template, active, trace, and counterfactual topology distinct; record every instantiate, fork, update, synchronize, select, merge, distill, compose, transfer, archive, restore, retire, route, allocate, and rewire transition.",
+            "Compile declared learning semantics into execution and physical placement through a semantic firewall that records approximation, staleness, compression, numerical order, failure, and information leakage.",
+            "Measure causal, adaptive, epistemic, evaluator, commitment, and deployment width; effective breadth; learning bandwidth; integration retention; topological regret; and full lifecycle resource cost.",
+            "Treat retained learning as a capacity-matched discovery–evaluation–integration pipeline and allocate branches, evaluators, integration capacity, archives, and reversibility to the current bottleneck.",
+            "Propose topology synthesis, adaptive causal refinement, higher-order integration, knowledge placement, salvage, and ABVI only through preregistered matched experiments, independent evaluation, adverse controls, and rollback."
+          ],
+          "interfaces": [
+            "Replaceable Cognitive Substrates owns model-kernel contracts; this chapter owns the adaptive process that creates, compares, and replaces those kernels.",
+            "Governed Model Training owns faithful execution of a frozen run; this chapter supplies the learning-process contract that execution must preserve.",
+            "Routing Heads owns task and capability routing; LCT requires every routed semantic object—evidence, judgement, credit, state, control, or authority—to remain typed.",
+            "Policy Optimization and adversarial evaluation own evaluator and feedback quality; this chapter represents their position and capacity inside the process topology.",
+            "Data Engines owns data, memory, archive, deletion, continual learning, and unlearning; this chapter records their adaptive identity and lifecycle relations.",
+            "Resource Economics owns total cost; this chapter contributes topology-specific work, span, communication, evaluator, integration, storage, and reversibility accounts.",
+            "Integrated Reference Architecture consumes the LCT program, compiler contract, trace, realization-leakage receipt, topology decision, and rollback record."
+          ],
+          "invariants": [
+            "Worker, replica, branch, model, module, agent, evaluator, archive, and controller counts never substitute for the adaptive-identity test.",
+            "Evidence, judgement, credit, adaptation, artifacts, control, and authority remain distinct typed channels.",
+            "Fork and decomposition, merge and composition, selection and aggregation, archive and retirement, and process optimization and topology synthesis are never silently conflated.",
+            "Every adaptive transition names the prior identity and version, producer, inputs, authority, cost, outputs, provenance, and rollback or irreversibility boundary.",
+            "Physical realization cannot change declared learning semantics without a new topology contract and qualification event.",
+            "Coarse-graining declares its interface sufficiency assumptions and protected observables; lossless equivalence is never inferred from visual similarity.",
+            "Raw breadth is discounted for correlation, duplicated evidence, shared evaluators, and shared failure modes.",
+            "Discovery capacity cannot compensate silently for weak evaluator or integration capacity.",
+            "A passing schema, unit test, theorem, manual coding, or toy model changes only its exact evidence state."
+          ],
+          "failure_modes": [
+            "data-parallel plurality laundering",
+            "branch-count laundering",
+            "generic-edge semantic collapse",
+            "untyped integration",
+            "resolution-contract hindsight",
+            "hidden adaptive state",
+            "realization leakage",
+            "semantic-firewall bypass",
+            "evaluator bottleneck and monoculture",
+            "integration bottleneck and destructive averaging",
+            "Sybil breadth and correlated candidates",
+            "merge-order and higher-order interaction attacks",
+            "provenance laundering across identities",
+            "branch starvation and controller capture",
+            "archive erasure and rollback denial",
+            "held-out evidence leakage",
+            "topology thrashing",
+            "toy-regime extrapolation"
+          ],
+          "minimal_implementation": "The supplied v1.0 package implements a bounded LCT-IR loader, type checker, LCNF normalizer, abstract compiler, scheduler, trace simulator, CLI, nine executable encodings, normalized outputs, schedules, and 11 passing unit tests; it also supplies seven bounded propositions, manual coverage and novelty matrices, and six toy or analytical phase studies. The first empirical minimum is a preregistered natural-task campaign that independently varies learning-process topology and physical compute topology, compares competent fixed and adaptive baselines under equal total cost, audits inter-annotator normalization, injects semantic-leakage and topology attacks, and measures retained usefulness, unsafe release, evaluator information, integration retention, latency, communication, storage, energy where possible, rollback, governance burden, and total cost without support promotion from the existing artifacts.",
+          "beyond_state_of_art": "A mature result would provide an independently reproduced, substrate-neutral learning-process IR and semantic compiler whose normal forms are stable across annotators, whose equivalence and cost contracts predict protected traces and physical behavior, and whose topology controller discovers useful organizations across neural, symbolic, evolutionary, federated, multi-agent, embodied, and continual-learning regimes. It would compare strong named methods and simple baselines under matched data, model capacity, optimizer opportunity, evaluator queries, compute, communication, storage, tuning, and human review; preserve failures and negative results; causally ablate every claimed mechanism; transfer across hardware, tasks, institutions, and time; and demonstrate that reversible topology changes improve retained learning without increasing unsafe release or governance cost beyond frozen thresholds. No current package result meets that bar.",
+          "codex_tests": [
+            {
+              "name": "LCT-IR bounded reference conformance",
+              "purpose": "Re-run the supplied validator, normalizer, compiler, simulator, examples, and 11-test suite while preserving the exact package digest and bounded conformance claim.",
+              "implementation_status": "implemented in supplied package",
+              "result_status": "11 of 11 unit tests pass locally; no neural-training or topology-benefit result"
+            },
+            {
+              "name": "Independent normalization and semantic-equivalence audit",
+              "purpose": "Have independent implementations normalize hidden natural mechanisms and predict protected trace differences before outcomes are disclosed.",
+              "implementation_status": "planned",
+              "result_status": "unexecuted"
+            },
+            {
+              "name": "Learning-topology versus compute-topology factorial campaign",
+              "purpose": "Cross several learning-process organizations with several physical realizations under matched total budgets, competent baselines, faults, and independent evaluation.",
+              "implementation_status": "planned",
+              "result_status": "unexecuted"
+            },
+            {
+              "name": "Adaptive topology controller and attack campaign",
+              "purpose": "Test ABVI and controlled rewrites against fixed strong baselines, Sybil breadth, evaluator monoculture, merge-order attacks, branch starvation, leakage, thrashing, and rollback denial.",
+              "implementation_status": "planned",
+              "result_status": "unexecuted"
+            }
+          ],
+          "proof_targets": [
+            {
+              "tag": "lean:learning_compute_topology.semantic_firewall_nonexpansion",
+              "module": "AsiStackProofs.LearningComputeTopology",
+              "target": "Within a bounded finite LCT record model, an admitted semantics-preserving realization cannot create an adaptive identity, redirect protected evidence, judgement, credit, or authority, or replace the declared integration operator; any such mutation requires a new topology contract.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:learning_compute_topology.semantic_cut_information_bound",
+              "module": "AsiStackProofs.LearningComputeTopology",
+              "target": "For the stated finite staged Markov model without side channels, retained target information is bounded by each discovery, evaluation, and integration cut, preserving the paper proposition's exact assumptions and non-claims.",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.LearningComputeTopology",
+          "open_evidence_gaps": [
+            "No ASI Stack neural, symbolic, evolutionary, federated, multi-agent, embodied, or continual-learning campaign has tested LCT predictions.",
+            "The seven propositions have not been independently formalized in Lean or another proof assistant; their scope remains the paper's stated mathematical models.",
+            "The manual coverage and novelty matrices have not been independently coded, and related-work completeness is not established.",
+            "No independent implementation has tested parser, type-system, normal-form, compiler, schedule, trace, or equivalence agreement.",
+            "No result establishes predictive topology metrics, ABVI benefit, safe online rewrites, transfer, scaling, governance affordability, SOTA, AGI, or ASI."
           ]
         },
         {
@@ -19472,6 +19663,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "tokenmana",
             "ext_eggroll_hyperscale_es_2026",
             "ext_openai_es_2017",
@@ -23329,6 +23521,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "benchmaxxing",
             "rmi",
             "ext_alignment_faking_2024",
@@ -24207,6 +24400,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "benchmaxxing",
             "rmi",
             "spinoza",
@@ -24894,6 +25088,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "ext_bourtoule_machine_unlearning_2021",
             "deterministic_capability_compilation",
             "platonic_world_model",
@@ -25970,6 +26165,7 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
+            "learning_compute_topology",
             "viea",
             "deterministic_capability_compilation",
             "platonic_world_model",

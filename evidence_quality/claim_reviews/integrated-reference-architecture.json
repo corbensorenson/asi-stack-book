@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 105,
+    "prose_candidates_adjudicated": 106,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The capsule-to-packet-to-update return path and its three non-transfers are mapped to existing cross-layer authority, evidence, readiness, and trace obligations. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The new learning-process plane is bounded to an owner-preserving semantic contract between training policy and execution infrastructure; it does not collapse model, learning, execution, or physical topology or claim an integrated runtime result. The hardware-parallelism and schedule-success substitutions are mapped to the chapter's existing owner, join, state, effect, evidence, and integration obligations. The prior Regret Engine return path remains bounded. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -138,6 +138,11 @@
     }
   },
   "prose_candidate_dispositions": {
+    "integrated-reference-architecture.prose.5a1092879ef6": {
+      "state": "duplicate_of_atom",
+      "rationale": "Preventing hardware parallelism from standing in for learning plurality and schedule success from standing in for semantic preservation is an application of the architecture's owner-preserving integration core.",
+      "target_atom_id": "integrated-reference-architecture.core"
+    },
     "integrated-reference-architecture.prose.eb5a16e581a5": {
       "state": "duplicate_of_atom",
       "rationale": "Restates the joined-trace obligation to preserve route-changing residuals.",

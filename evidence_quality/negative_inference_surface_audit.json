@@ -2,8 +2,8 @@
   "schema_version": "asi_stack.negative_inference_surface_audit.v1",
   "recorded_date": "2026-07-17",
   "scope": {
-    "surface_count": 105,
-    "chapter_count": 85,
+    "surface_count": 106,
+    "chapter_count": 86,
     "public_and_derivative_surface_count": 20,
     "historical_transition_files_mutated": 0,
     "historical_roadmaps_treated_as_current_prose": false
@@ -36,7 +36,7 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "24fde831efaec534c0d0fb192b8001f66f34b368cf8484bced75c3b089b64d1b",
+      "sha256": "8b5086049c1ddb8fafd0de0b633f466e76f89cee3470dcbfb1c153ba156ab52b",
       "bytes": 9406,
       "term_counts": {
         "refuted": 0,
@@ -46,8 +46,8 @@
     },
     {
       "path": "appendices/A_source_matrix.qmd",
-      "sha256": "d5786c04eabb471be803ebb6d71728761e2221c48aebea41697ed284af74d0c4",
-      "bytes": 427426,
+      "sha256": "23b2b26fa8fa89fb97ea98f77e37cc54f9b7981c84784a16b49b61f0cc99d71a",
+      "bytes": 431497,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -56,8 +56,8 @@
     },
     {
       "path": "appendices/C_claim_evidence_matrix.qmd",
-      "sha256": "d951e3919679af757b47f7ba7eb5ad2f7cc2a3fa44ed9a9cc77db9eeefceac3c",
-      "bytes": 574598,
+      "sha256": "b1541705589e58f746268fd94202fbe1b92f188f6961e7ece80b5e5dafba7540",
+      "bytes": 579168,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -66,8 +66,8 @@
     },
     {
       "path": "appendices/K_implementation_horizons.qmd",
-      "sha256": "6e49d4e2bf449b7b24cd6aa6bd05fdafcce10a1231708d8172bf4bd180832903",
-      "bytes": 169623,
+      "sha256": "f01a03ec0326df15c0f875f9be53411742b85a6a2b8bceee28b1e2a73506735a",
+      "bytes": 171633,
       "term_counts": {
         "refuted": 25,
         "no_change": 0,
@@ -76,8 +76,8 @@
     },
     {
       "path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
-      "sha256": "0a26025d5da40c6a370183262b0f42beb0cdc0899da58b3e271e2796bc6177b2",
-      "bytes": 49954,
+      "sha256": "c14cb52f64b9567d9cd8879eb28bafebdb4d87ad0c3c17c4824ea311404422e5",
+      "bytes": 53142,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -86,8 +86,8 @@
     },
     {
       "path": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
-      "sha256": "bc2cef928407a23fe817a29ed94fba99d65408fd66a28d3880932983f5593d5e",
-      "bytes": 41347,
+      "sha256": "0e62dcdd6538d66405c552842f8ff8fd18f6d52f00b6c5c8566ab330aac1b8c8",
+      "bytes": 41452,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -96,8 +96,8 @@
     },
     {
       "path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
-      "sha256": "06e71e0cbef01619ed2beda88e790eafae7db7b8f6c59d93cd514f8946db92e8",
-      "bytes": 37989,
+      "sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa",
+      "bytes": 38069,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -106,8 +106,8 @@
     },
     {
       "path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-      "sha256": "9b5812728d69ce6b390e0de73e5f44602bf4cc6e661850a9deeba294493d8bae",
-      "bytes": 67092,
+      "sha256": "0d20b9ac58913a138f613011103816b4d8f8842cb2e98f2a41710c8ad6ebc021",
+      "bytes": 67141,
       "term_counts": {
         "refuted": 2,
         "no_change": 0,
@@ -116,8 +116,8 @@
     },
     {
       "path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
-      "sha256": "8d3288ed415b50a334b32e97f0d8ed8312c210eb4f0461bec4a95a7f10886b5c",
-      "bytes": 37692,
+      "sha256": "504b6c86404e6b4ca367803fd1c1b35d3589caa0db56e57a20a8013c12aed12f",
+      "bytes": 37847,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -126,8 +126,8 @@
     },
     {
       "path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "sha256": "d52c75b9e435239e4589a81c5c6e6b6af8bb4548cd8b38b3e277aa3192407565",
-      "bytes": 113743,
+      "sha256": "00b05c60fa6d549f8dd4775af0d6b171b29596eda3392ceea3006c064e971cd0",
+      "bytes": 114026,
       "term_counts": {
         "refuted": 0,
         "no_change": 7,
@@ -136,8 +136,8 @@
     },
     {
       "path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
-      "sha256": "aed464ac7e256a8035757e4e8779a6418c91fd3e637b01aa422f9e5ab658bdee",
-      "bytes": 65447,
+      "sha256": "d8e2040f7702501aa65bdd35e89b32dfc58d84b8cd189115abad42ad5c241e90",
+      "bytes": 65817,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -146,8 +146,8 @@
     },
     {
       "path": "chapters/asi-is-a-stack-not-a-model.qmd",
-      "sha256": "98ec4a959aceceddd6b242ede9fed1049c46b62559ca8a8b135d5687429175bb",
-      "bytes": 53366,
+      "sha256": "aaba98d8cf997c873fad1bbe2a7f87df54a58b0aa178f0a487c3c16ddd769609",
+      "bytes": 53101,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -156,8 +156,8 @@
     },
     {
       "path": "chapters/autonomous-replication-proliferation-and-containment.qmd",
-      "sha256": "e17ab66bd54402e0568c9597f8d71e32676609f338a9d3ef3570453f25d8dcab",
-      "bytes": 39346,
+      "sha256": "9b2a9148f7f49cf322e4d36292c45da4a8660c7fac5615636f2af466ebbd9aef",
+      "bytes": 39311,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -166,8 +166,8 @@
     },
     {
       "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "sha256": "1d761ed986ac7507c1452d0fee6c3af74a9a432aec2475664f17809f63adfe2b",
-      "bytes": 106005,
+      "sha256": "fa1786152b08652c7a81504781b591d5b4ad27c80285a254a67e6c1b59bbbccc",
+      "bytes": 106735,
       "term_counts": {
         "refuted": 0,
         "no_change": 1,
@@ -176,8 +176,8 @@
     },
     {
       "path": "chapters/capability-replacement-and-rollback.qmd",
-      "sha256": "9f80db32c7d3554b12e79912b98e431f7c5583b7845d69fd1d0e632eee4d76b2",
-      "bytes": 62666,
+      "sha256": "9d307b9a44b8442d1f895f2b483a8bcf9341c960c8dcabb694d671179f72a59b",
+      "bytes": 62680,
       "term_counts": {
         "refuted": 1,
         "no_change": 2,
@@ -186,8 +186,8 @@
     },
     {
       "path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
-      "sha256": "5b38272893b422e0f283a233e8644f53c41753b5c8e36aec15a94effc09576ef",
-      "bytes": 48071,
+      "sha256": "0997c12f83c6da4d661542ccf9c39da56e963f90c2fd63d2679b2b064d4979e1",
+      "bytes": 48136,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -196,8 +196,8 @@
     },
     {
       "path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-      "sha256": "4b773e65bc88d2f2fc87c874f76995d838d8bd8e3b1029fc9c522db5ee897714",
-      "bytes": 61103,
+      "sha256": "606b56f2320d3eb600f82bd899862bda739148440eadaca01d833d064a6e9f64",
+      "bytes": 60855,
       "term_counts": {
         "refuted": 1,
         "no_change": 2,
@@ -206,8 +206,8 @@
     },
     {
       "path": "chapters/claim-ledgers-and-belief-revision.qmd",
-      "sha256": "6fbf6221764b9e82df0464ed3a7668178a6e2baea6a03c9d9c0452d893e274b0",
-      "bytes": 69581,
+      "sha256": "d8fcf0912c2b2f6611c70ec496f3c9ccfe0d688df4e2e940cf312e47a733b536",
+      "bytes": 69643,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -216,8 +216,8 @@
     },
     {
       "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "sha256": "d6a5624ba8d11a4ceb00cf2340b4db943773f74d437cc62f028b5babb2b1003e",
-      "bytes": 87011,
+      "sha256": "8aab365c6a7ff928a082774e4ce0e251d9756963ef122c426a74046ea918e652",
+      "bytes": 87076,
       "term_counts": {
         "refuted": 2,
         "no_change": 1,
@@ -226,8 +226,8 @@
     },
     {
       "path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-      "sha256": "e61c136b6b30f5be647d6b786e0e71ef38fa518b9bd997f0508c12aa5567b8c1",
-      "bytes": 70500,
+      "sha256": "a1c1c145eff27d82f32b696933ffdc17b3c6565fbe068c0e6f4e78707d542d54",
+      "bytes": 69964,
       "term_counts": {
         "refuted": 0,
         "no_change": 13,
@@ -246,8 +246,8 @@
     },
     {
       "path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
-      "sha256": "7d11e126b6cbbc384a1b77c8e4ed0c9a6d2bdd1f8660bb73992bedba08013248",
-      "bytes": 111959,
+      "sha256": "16b39b937d9b8571f922998ee979a99b9f2a8cc0faaa5468dc030381fa40941a",
+      "bytes": 112267,
       "term_counts": {
         "refuted": 3,
         "no_change": 3,
@@ -256,8 +256,8 @@
     },
     {
       "path": "chapters/confidential-and-verifiable-ai-computation.qmd",
-      "sha256": "8c5690b11ea5e7ea1057581c2887a4860dcdf206fc5016f04d3f8f71a6b4f07b",
-      "bytes": 39121,
+      "sha256": "1653b4a37e7abd1dde400a03541ff8abdf2baf88ecbbe0522190b36064e233af",
+      "bytes": 39143,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -286,8 +286,8 @@
     },
     {
       "path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-      "sha256": "088177d795686c32e7ca099a1e99a719e1a6e1b68ed62a3f25987a7868d9190d",
-      "bytes": 71030,
+      "sha256": "4a2b4d6aed3807c937932b9238d07fc1ab53779b9cbdab2c21b3633e30f45f33",
+      "bytes": 71286,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -306,8 +306,8 @@
     },
     {
       "path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-      "sha256": "9a60262f002903f713344e3a50a5878ae6f1d57a15e8376be9f6bc09ffe672bd",
-      "bytes": 78962,
+      "sha256": "36fe5ad5da7f41c9b294d60c7cce532651e33a078c70fa9a9bfc3ec1c804ceea",
+      "bytes": 82388,
       "term_counts": {
         "refuted": 1,
         "no_change": 5,
@@ -316,8 +316,8 @@
     },
     {
       "path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-      "sha256": "582e2ab5d654b3637ca386e8424105f4ab9662305311ef1467a5c704d6476852",
-      "bytes": 49853,
+      "sha256": "b2e7499bf72801dee8118b4d493a164ab85be3f0435fd2e4badc5c4848bfdfef",
+      "bytes": 49956,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -326,8 +326,8 @@
     },
     {
       "path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
-      "sha256": "57d979ac7e61e19d4aa9d8cb0ab9b673d05d1544c7a900000e9146daed857fb7",
-      "bytes": 44679,
+      "sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
+      "bytes": 44688,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -336,8 +336,8 @@
     },
     {
       "path": "chapters/evidence-states-and-claim-discipline.qmd",
-      "sha256": "019303243ef9545f23667a8e2b8ee3d899b5b5abf1c0ec5a2d3ed983155da2a0",
-      "bytes": 61716,
+      "sha256": "0ca8212b655b488763d57c0436f17783e94e2601f1149b479ef306b1b818938b",
+      "bytes": 61448,
       "term_counts": {
         "refuted": 5,
         "no_change": 2,
@@ -346,8 +346,8 @@
     },
     {
       "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "sha256": "72f5c49b52f83e6ae69939b80560f752fe47086f16800768d683f1230bab70a9",
-      "bytes": 69538,
+      "sha256": "67eae553cd29c293fe7f14bf63464818d24840e6061cd168922d854ca536d434",
+      "bytes": 69560,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -356,8 +356,8 @@
     },
     {
       "path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
-      "sha256": "15d5fcd55bc11f4f83603a8945dbb39e4ff1859d49be20a72a3f985a0be685d7",
-      "bytes": 62328,
+      "sha256": "ea8ab0f86102b9374955a80e349c811c38e0cefb2610ad081427a9c118b37c36",
+      "bytes": 62055,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -366,8 +366,8 @@
     },
     {
       "path": "chapters/fast-generation-architectures.qmd",
-      "sha256": "b39b05dbe051a2db240f8d59927ecad52e3044fdee2d574d3e6d2f2a62ec5be9",
-      "bytes": 102728,
+      "sha256": "49e4dc1988388addf979df970435d5dda17bfa23fc3dfa6d143e3c837761aaa8",
+      "bytes": 103634,
       "term_counts": {
         "refuted": 0,
         "no_change": 4,
@@ -376,8 +376,8 @@
     },
     {
       "path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-      "sha256": "f772e44714b0e6673f02438793979538c384d70c63186f36803d4ee62efaae58",
-      "bytes": 57034,
+      "sha256": "dd801b6787e65e9cf25ff475ae00642ee8b19cb4c4e7793786c541828d00115c",
+      "bytes": 57024,
       "term_counts": {
         "refuted": 0,
         "no_change": 4,
@@ -386,8 +386,8 @@
     },
     {
       "path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-      "sha256": "87bf49f903e982141d929886d98c1bba3dcbf5ba195d52c4e151b7bb9e4e4910",
-      "bytes": 80452,
+      "sha256": "8367ff24ca2e0261e0944ea399af50215ff4c51a029cae895fe3e6ec9a7c89d0",
+      "bytes": 84280,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -396,8 +396,8 @@
     },
     {
       "path": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
-      "sha256": "068ea125b700a38573623aa61967f087a61ba7a40c4bc5236cbc7fdcf65c2432",
-      "bytes": 35982,
+      "sha256": "478b1d78f5e2cce72274f3197ea4016299a3dec2d4f339f09a70d95d2e4a645c",
+      "bytes": 36091,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -406,8 +406,8 @@
     },
     {
       "path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-      "sha256": "e8cb2648102f45cb924552c84b6ba447e2134f80f999edcede810c24cf5472d4",
-      "bytes": 83777,
+      "sha256": "44835a787df433f27cc2cc77177a7599ad3690f41899f541644a3de84bf6f659",
+      "bytes": 83764,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -416,8 +416,8 @@
     },
     {
       "path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "sha256": "a4e7deda9593601932cd0b2fef6952d9466ef889b6260286d6ec7731d3ecb587",
-      "bytes": 74201,
+      "sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
+      "bytes": 74468,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -426,8 +426,8 @@
     },
     {
       "path": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
-      "sha256": "a0d72b3497da6a70c8843cedd524a3e0cd14b6fdf70de2adccde026638d960b4",
-      "bytes": 39096,
+      "sha256": "b7d6ba04b43d0be2fca04b992113adc0c89fb75595545dead5f3e8d7abfd13c2",
+      "bytes": 39228,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -436,8 +436,8 @@
     },
     {
       "path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
-      "sha256": "801c90997ca662d3cd1e47467cf2fbac001f1009e61f916f4351a5c02a22fb42",
-      "bytes": 52411,
+      "sha256": "8f394fd1da82c532df3ef0973a0bc5d9117512c64a548d452149b6d677b62560",
+      "bytes": 52570,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -446,8 +446,8 @@
     },
     {
       "path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
-      "sha256": "5d071dbb3ed80a669a048e9cac8a7549bbb6ded5e5a4383b72678bbff1ead134",
-      "bytes": 38168,
+      "sha256": "1355424fe29ea1a1b74ba4c826d555a99cde312176bdc8735e79f26f7a9ff329",
+      "bytes": 38196,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -456,8 +456,8 @@
     },
     {
       "path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-      "sha256": "fbf30c0f6ef9edc7f2875bcbcbb76552db001cc98774ea425f33b5fb839724d6",
-      "bytes": 65726,
+      "sha256": "fdd5cbce8687110ceae0e002c1efb00181441d5f67af84678d12abf6c5922072",
+      "bytes": 65807,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -466,8 +466,8 @@
     },
     {
       "path": "chapters/human-intent-as-a-formal-input.qmd",
-      "sha256": "6d1bbc0e19b5b68967a8325bdbb8419a64cf585f3f9e69ab0a7994c4827ea12f",
-      "bytes": 56433,
+      "sha256": "934bb5b8a7dd720bc6e6e9d72876bd41e4c27414da43bbff3fe12a363ca2ea5d",
+      "bytes": 56429,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -476,8 +476,8 @@
     },
     {
       "path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
-      "sha256": "90bec5af2e6969696968a4c10ea86fe5c175ff19cfd9dfc04556c5a298937d5e",
-      "bytes": 52435,
+      "sha256": "be7ae6bca44d1690a682866fec530d95ea1f09e5ee63637c05d598a64dae2fe3",
+      "bytes": 52510,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -486,8 +486,8 @@
     },
     {
       "path": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
-      "sha256": "f4b36e4ebefc710dd85c69cb58710a408199e883903e5d084d8ffa85f59eb5cb",
-      "bytes": 43747,
+      "sha256": "6b95d3cca305c312790d465cc18ef2c6e5860fc3b23a8c7ee6e5f8c2a1683912",
+      "bytes": 44040,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -496,8 +496,8 @@
     },
     {
       "path": "chapters/integrated-reference-architecture.qmd",
-      "sha256": "6669f0f89d9ed09cbccd4fd96f19056f6e3ef82661734fce24fd4f38f12abf1b",
-      "bytes": 121257,
+      "sha256": "15dbdb73274ce985bd0ac2fd134ec92d061a905bc6bc258180e20477a7610b00",
+      "bytes": 124327,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -506,8 +506,8 @@
     },
     {
       "path": "chapters/intent-to-execution-contracts.qmd",
-      "sha256": "d5264d2d043fda2fa2904eeacf0145514e60213234f68ae4a73dda667b643ca8",
-      "bytes": 64977,
+      "sha256": "e88dbb57e9f6efbc7efdb8e55eaf3bca8e2066ea18b1262f503673e0853f1182",
+      "bytes": 65228,
       "term_counts": {
         "refuted": 1,
         "no_change": 6,
@@ -516,8 +516,8 @@
     },
     {
       "path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
-      "sha256": "86da3c1dcf87de156ef3583885cb23ef00f81749d2826b8e116eceae2a625c3d",
-      "bytes": 55125,
+      "sha256": "864ea88b60de7f5c629af4398ff9902375dd1cc090ac253dc09a60685f7b3903",
+      "bytes": 55200,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -526,8 +526,8 @@
     },
     {
       "path": "chapters/labor-os-and-typed-jobs.qmd",
-      "sha256": "30b9540e8a5a3f92f3d57d1521ae9f46a1636ec1cff565193100af627cc64afa",
-      "bytes": 59467,
+      "sha256": "874efccd1b8bea980314f301ce1c2e021177e85cfdc57ccc394e6e285811f72c",
+      "bytes": 59486,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -535,9 +535,19 @@
       }
     },
     {
+      "path": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
+      "sha256": "c31f2ab657848e811cfe887b806fd46779d2c822383683909a4393764a8d23d6",
+      "bytes": 44919,
+      "term_counts": {
+        "refuted": 0,
+        "no_change": 0,
+        "blocked_after_full_attempt": 0
+      }
+    },
+    {
       "path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-      "sha256": "f9a5df92d7615bf7b29f80bb1d597f5a02a4acafd923e362924ef20ff4e479ba",
-      "bytes": 42442,
+      "sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2",
+      "bytes": 42831,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -546,8 +556,8 @@
     },
     {
       "path": "chapters/living-book-methodology.qmd",
-      "sha256": "e3c7ac089842e87243b4757ab9fe5b971a0bbeec7c30006e7fe25dee26e86b53",
-      "bytes": 55926,
+      "sha256": "08000f6acbeaf0285d3f65a74a030d2c237e035777f26c7e63fb0a951fd720b3",
+      "bytes": 56046,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -556,8 +566,8 @@
     },
     {
       "path": "chapters/mathematical-and-search-substrates.qmd",
-      "sha256": "5f6db978795df8ca17934a2e20f5dfdd729ea2e0f40279799ad4236d6ba1501f",
-      "bytes": 62494,
+      "sha256": "7d7e581f698309eb761016082d09ccef2a69d1e10a88726a9ec142f0aff9886f",
+      "bytes": 62489,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -566,8 +576,8 @@
     },
     {
       "path": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
-      "sha256": "8f79514e6b579739bc2f9eb67ee8bc52c6baeeb6960dfba14c73a360e4caba2c",
-      "bytes": 42561,
+      "sha256": "4a45b1947228490b124ff22d18979f2b6f3bddc5bbf91c39292e71d7e97eec77",
+      "bytes": 42628,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -576,8 +586,8 @@
     },
     {
       "path": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
-      "sha256": "ae60ca2b745cc396b9b5f6ea6e4a4d6917858ccb8c2f34a1242bde4834a8b8a2",
-      "bytes": 78373,
+      "sha256": "83b6c8f3d634e06c6c01fdac4005dcf610ebbe1900265a3db8593fcd1684f5c4",
+      "bytes": 78746,
       "term_counts": {
         "refuted": 2,
         "no_change": 0,
@@ -596,8 +606,8 @@
     },
     {
       "path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-      "sha256": "3fb9b6fe5ac453b214e5d92ffd40e238a8dc8e26a9ecf81b57e746132d806144",
-      "bytes": 45646,
+      "sha256": "60799c3850d51d0d9e0e03f5108934d04f3e4cf8b9ebb9efd5ce08c377bd51a1",
+      "bytes": 49083,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -606,8 +616,8 @@
     },
     {
       "path": "chapters/open-ended-improvement-engines.qmd",
-      "sha256": "bb5af23ad6aaae5e6183f24a48835adf1078f8815152755fa0b18cc5a734c65a",
-      "bytes": 50771,
+      "sha256": "dbdb50c7efd3bcfe2f90deacfd7b57e9d79d99dca1159867b4acdd70d8a631a7",
+      "bytes": 54286,
       "term_counts": {
         "refuted": 0,
         "no_change": 3,
@@ -616,8 +626,8 @@
     },
     {
       "path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
-      "sha256": "aa6aa88bc9003089c2f9b387be3e045defea54b4e5902e644519652f2277f2cb",
-      "bytes": 61084,
+      "sha256": "88b33fe78d25a95f4977971b3f514b7d027b428b532c384ed9c6513ba5188fbb",
+      "bytes": 61630,
       "term_counts": {
         "refuted": 4,
         "no_change": 1,
@@ -636,8 +646,8 @@
     },
     {
       "path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-      "sha256": "9bdb0d968085218bfb0b07050e3473fe4436d10776d8364a266d4dc51e42a50e",
-      "bytes": 41223,
+      "sha256": "c067b3a4897285280a1e6c9a1efec1f609f5ee5cb3c499f2dba342caa55e2fa7",
+      "bytes": 41214,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -646,8 +656,8 @@
     },
     {
       "path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-      "sha256": "f4de68c18641631c25653424d78bffcd750ad29e95b4b8e3e29721e6ae35c85b",
-      "bytes": 80840,
+      "sha256": "81bc86e40145b73a6693d3efc3c85028cbc5c48711e9f756acc2b9d5828d04b0",
+      "bytes": 81468,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -656,8 +666,8 @@
     },
     {
       "path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-      "sha256": "05f99f2d00bd68447aae3b06aef9d84888c401d31537859dcd6cb6d9314c5a01",
-      "bytes": 41382,
+      "sha256": "6c71909679f4bd354fb27a4a5c7cfe0898586a04339c02829b4b3a0215042183",
+      "bytes": 41589,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -666,8 +676,8 @@
     },
     {
       "path": "chapters/planning-as-a-control-layer.qmd",
-      "sha256": "ddadd6fb6af3b1ed10d86a0a7aacf55fa09e7d0ca9cba604be2d82f7ffacc77d",
-      "bytes": 64731,
+      "sha256": "23932e39744f0ee46df350689d73a6cd05659762dc0b2734751076464dd874f1",
+      "bytes": 64621,
       "term_counts": {
         "refuted": 0,
         "no_change": 2,
@@ -676,8 +686,8 @@
     },
     {
       "path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-      "sha256": "8f4918d5d317d28879c284635e5bc29242c41041611b57bb9d4b7d8e4297ee8f",
-      "bytes": 77279,
+      "sha256": "ab4d4670d65c8f1544a9e2ac4e669a3ddc02f997fcc8963f7c3b68c26c7db155",
+      "bytes": 80630,
       "term_counts": {
         "refuted": 1,
         "no_change": 2,
@@ -686,8 +696,8 @@
     },
     {
       "path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
-      "sha256": "d9de08185dd0d59932a95e6b89ee475b0ff526fd1eb9cb91633094fa8c6f7044",
-      "bytes": 45368,
+      "sha256": "d120f2c3e5bd73d8764d8f7c1209f58ccfce068277a6bd23115bc96caff01896",
+      "bytes": 45517,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -696,8 +706,8 @@
     },
     {
       "path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "sha256": "be395f57acfb428b3e2262fe4e3750e57530ac5b252d5cfe9c1ab0b9bdb05c3c",
-      "bytes": 79092,
+      "sha256": "936afc8a187e87a0b05c57df037b53b0e846d44ea198421e937205c3ec64e7a9",
+      "bytes": 78992,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -706,8 +716,8 @@
     },
     {
       "path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
-      "sha256": "b1441fd03c5ec1e5c9866b1a2f385d59298a5678faa1ca3c48364dae6c96dd16",
-      "bytes": 86552,
+      "sha256": "80598edd38a2624ff0248da1d62e180f9e8c67812fe69cb774eb886e0b1c2ed6",
+      "bytes": 86378,
       "term_counts": {
         "refuted": 1,
         "no_change": 3,
@@ -716,8 +726,8 @@
     },
     {
       "path": "chapters/prototype-roadmap.qmd",
-      "sha256": "714018e87f62bebc3ebf76543c04164b60a814207b37186508ccb5a6e3428dfa",
-      "bytes": 49487,
+      "sha256": "2d34fb27ac8b10d5a7a4f5776d109ed727b43bd4fc8fc708fee1383f252f0b1b",
+      "bytes": 49827,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -726,8 +736,8 @@
     },
     {
       "path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-      "sha256": "1a4db870c06b9dd4b57b3737ed892ceef32ac4116d8be63d91ebaf6dcc446b7e",
-      "bytes": 74989,
+      "sha256": "22f5c57d90fdc3228e8e54580e19dd2e3d1546c4e905239021bbdbd45767606f",
+      "bytes": 74965,
       "term_counts": {
         "refuted": 0,
         "no_change": 2,
@@ -736,8 +746,8 @@
     },
     {
       "path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "sha256": "ad08c41b50f5aa236788852a4ff2d19de21b9825f79d02baea89c61a104d7e2e",
-      "bytes": 79546,
+      "sha256": "c81b565481b2ecbddc28e55b25989ff358744f968a9f3544170ac6ba3286af9d",
+      "bytes": 79641,
       "term_counts": {
         "refuted": 0,
         "no_change": 2,
@@ -746,8 +756,8 @@
     },
     {
       "path": "chapters/recursive-self-improvement-boundaries.qmd",
-      "sha256": "66aebd1b5120a1ca5194dfb2185ff9751d623ef8a653c4a7c7c7664c708d1858",
-      "bytes": 54646,
+      "sha256": "c7e7d83584b070e9dab824cddd50f917458c9c3920363ae03c27ae13674df3f7",
+      "bytes": 54752,
       "term_counts": {
         "refuted": 1,
         "no_change": 4,
@@ -756,8 +766,8 @@
     },
     {
       "path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
-      "sha256": "0783a7d0bd4891d6270a19d1ad67b44211fb3c062d946c201a470ccb85ca0759",
-      "bytes": 42721,
+      "sha256": "ffda01625266430342533eb67ccde822d71a3717f62a04a571bf0c86b13bbd46",
+      "bytes": 42677,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -766,8 +776,8 @@
     },
     {
       "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-      "sha256": "80d7d2cbc16ff050c1266f414156b692555a74f5ea75ab6baaacf28bcaee1be0",
-      "bytes": 98855,
+      "sha256": "d25ec2f016f6a475d51003975a62178247a6bbb0ef172d73e843974a3cfb2bba",
+      "bytes": 103115,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -776,8 +786,8 @@
     },
     {
       "path": "chapters/resource-economics-and-token-budgets.qmd",
-      "sha256": "a62d80b9b0cd4c7b2077edfa7033c69deef5044b2431ea4bcff52c4d3e7aa021",
-      "bytes": 138171,
+      "sha256": "ea192a94dbc09cb3004477dfe3c7870abb10bbb8c8b9a3d53747f76333873596",
+      "bytes": 142053,
       "term_counts": {
         "refuted": 0,
         "no_change": 3,
@@ -786,8 +796,8 @@
     },
     {
       "path": "chapters/routing-heads-and-specialist-cores.qmd",
-      "sha256": "ff6c86dd30b5ab6c211eb869a7b1654f036a1ccd42d88c276959e8752ca6c958",
-      "bytes": 93265,
+      "sha256": "41f31774c24739887ea9e2cf53ee51d14bf386b133cf80f48c8c40a002691abb",
+      "bytes": 96160,
       "term_counts": {
         "refuted": 2,
         "no_change": 4,
@@ -796,8 +806,8 @@
     },
     {
       "path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-      "sha256": "4e69613a1e0feb446ab992f80bb378a503d55e642301cf527304f400b2302b08",
-      "bytes": 99986,
+      "sha256": "2e0e1c5781d7e5051f8ace36168f68ebc7628aa4c51d2c14c6a9e4ddc3653c3f",
+      "bytes": 100577,
       "term_counts": {
         "refuted": 0,
         "no_change": 5,
@@ -806,8 +816,8 @@
     },
     {
       "path": "chapters/safety-cases-and-structured-assurance.qmd",
-      "sha256": "fb3f28a3d5b85b8d58a254a028eadfecfac197f9798790a72f04c2d9dad14189",
-      "bytes": 44369,
+      "sha256": "ca80519a5d7aa8ec9eb269ddd4fab233cea73a1122de86292805a4403b430ef4",
+      "bytes": 44363,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -816,8 +826,8 @@
     },
     {
       "path": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
-      "sha256": "1b8155f6bf7683ee6f5a513623a1a6e9c9d6245a3f55f84d79c51ff20e75f9bf",
-      "bytes": 56461,
+      "sha256": "f192114a2cf33693d7dae106de46cc3cba980ecc05b150c0558ad53c05712c43",
+      "bytes": 56525,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -826,8 +836,8 @@
     },
     {
       "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-      "sha256": "3621fa84ade92b0c18773d636d133b51cfdde887d841f2d8d8a5d77ef2b17dfb",
-      "bytes": 36656,
+      "sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
+      "bytes": 36630,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -836,8 +846,8 @@
     },
     {
       "path": "chapters/security-kernel-and-digital-scifs.qmd",
-      "sha256": "c3e1f88a869169b0a551b29264e0c06b934fc10afd7f54369ec27a64037d0112",
-      "bytes": 69237,
+      "sha256": "88282b535571a75ecee114ef0cbe197f9592fe039683c4ce6a8cee3903acee1e",
+      "bytes": 69689,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -856,8 +866,8 @@
     },
     {
       "path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
-      "sha256": "46f7e93f4dfd4ff72ab58ac3f6e81ff528be6af381c8e1ae0d559f30f4acb720",
-      "bytes": 70700,
+      "sha256": "25af101ae162480312d0e0fa9dd125ad3293b6b5c49aa1f5d5053bacc6709706",
+      "bytes": 70978,
       "term_counts": {
         "refuted": 3,
         "no_change": 1,
@@ -866,8 +876,8 @@
     },
     {
       "path": "chapters/stable-capability-fields.qmd",
-      "sha256": "e8534e9a8efe8d88cbd50196d0ad3ddbcd392e19fd2b6ccf247a7f267f738245",
-      "bytes": 57425,
+      "sha256": "6203504cd364a7308f9ef0a30e3855201c2a7482298455458ac4bb0558e6819f",
+      "bytes": 56860,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -876,8 +886,8 @@
     },
     {
       "path": "chapters/system-boundaries-and-authority.qmd",
-      "sha256": "2810ea7b079a9da1270a9556ec1e3ce91764170f94884c14b4557f7c86e37347",
-      "bytes": 53200,
+      "sha256": "960534b46d6bc28182d182fbb23d75ae9d2cb8b9a602c982150105db411e42db",
+      "bytes": 52995,
       "term_counts": {
         "refuted": 0,
         "no_change": 1,
@@ -886,8 +896,8 @@
     },
     {
       "path": "chapters/the-efficient-asi-hypothesis.qmd",
-      "sha256": "c6ce4a73e5832dabbe3b8db6edeee7d3a58bfcb467916006c2feefa481c4641f",
-      "bytes": 57583,
+      "sha256": "a88e113b7f6db52dc7d0ecf4ec6137170e6039e7052921c1536ee4d9e499bb29",
+      "bytes": 57702,
       "term_counts": {
         "refuted": 0,
         "no_change": 1,
@@ -896,8 +906,8 @@
     },
     {
       "path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-      "sha256": "249446c0e287af21a8dff354b353e3df2409e12306997e02e9d1c377b33c0f23",
-      "bytes": 62133,
+      "sha256": "9a1e744ce115fb2b3df77ddc918d734ded6ecbf1830b66f93525a74dd926139d",
+      "bytes": 62145,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -906,8 +916,8 @@
     },
     {
       "path": "chapters/virtual-context-abi.qmd",
-      "sha256": "0cd43fc63de3b3101b96cdc273ac2ef0b9e36a657fb2717d314f1bc5c1af38da",
-      "bytes": 80478,
+      "sha256": "c888b27a744d4f817459c90aee94452f9c4b5079713e5c758656c3283bab59e4",
+      "bytes": 81116,
       "term_counts": {
         "refuted": 1,
         "no_change": 1,
@@ -916,8 +926,8 @@
     },
     {
       "path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-      "sha256": "c1e9a3e198eb34e2667d685bb11a043f83297d62c5d0e5c71a56a04ae4095041",
-      "bytes": 57526,
+      "sha256": "fb2f15f741ba28dd4f1de69f2df13cd2705038bff0fd0b40afcaace71aee2f3b",
+      "bytes": 57864,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -936,8 +946,8 @@
     },
     {
       "path": "docs/book_outline.md",
-      "sha256": "2b13e081a25ec13c554a4917c4de22c3ffd2969995b49b7eadb1c62e5dd2ad84",
-      "bytes": 990227,
+      "sha256": "549ca491c2b1e38e12e329915fa4790a0f811988b1bc15c50dad3c55b99005e7",
+      "bytes": 996311,
       "term_counts": {
         "refuted": 6,
         "no_change": 35,
@@ -966,7 +976,7 @@
     },
     {
       "path": "docs/contribution_novelty_ledger.md",
-      "sha256": "4aeab8a88ea8b5d8fe0c2e1ce627c11975a88d417b3e227c6c235ea5bf214ccd",
+      "sha256": "90d711ea952a0e870458363793c774e7916bdb8701ff21ca046c76de4ea8a46b",
       "bytes": 11073,
       "term_counts": {
         "refuted": 1,
@@ -986,7 +996,7 @@
     },
     {
       "path": "docs/non_core_evidence_ledger.md",
-      "sha256": "5c0f69638c9e72732fbfa99e43c4bebf22eed510e77fcee633ab308ad4d40692",
+      "sha256": "a81a894577d0371d2c789f2dc7ab3249adeadfde3f1f13e53f25c89ea6e4f329",
       "bytes": 70340,
       "term_counts": {
         "refuted": 6,
@@ -996,8 +1006,8 @@
     },
     {
       "path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-      "sha256": "5c943055b60433c189bf559f599336d8b6b0f057e17424bfa0bf10da68675858",
-      "bytes": 341487,
+      "sha256": "943c4f5b03327da397ba40c435de5908f4682f1d880775bc5419db0da0a1ba32",
+      "bytes": 345726,
       "term_counts": {
         "refuted": 5,
         "no_change": 1,
@@ -1006,7 +1016,7 @@
     },
     {
       "path": "docs/public_status_contract.md",
-      "sha256": "749eef2394ad029d72203b01aa258b4b313dcd5a6d1135a8b67c42220caa1f44",
+      "sha256": "0ece577b0df0084c96e30d83a7c3e5d55c3553894040346d855da656a9e6ef9d",
       "bytes": 8554,
       "term_counts": {
         "refuted": 0,
@@ -1016,8 +1026,8 @@
     },
     {
       "path": "docs/publication_readiness.md",
-      "sha256": "e5b837166fceac66d2aa76425324aa730923c0afd32120abb169a531ddcc713d",
-      "bytes": 36758,
+      "sha256": "303b2a186fe4a92eb52f2043b34e29d3f84b3259e3c8b2cddc53dfdaaeb162f8",
+      "bytes": 36599,
       "term_counts": {
         "refuted": 1,
         "no_change": 3,
@@ -1056,7 +1066,7 @@
     },
     {
       "path": "index.qmd",
-      "sha256": "3e223059178cd88ba9e08aafdbf50459b52840538aed480b6092c90b6f207a90",
+      "sha256": "70a5f6b13535224b45db6c24520f09570ccf31d68237c06e1c36ec8598b4d109",
       "bytes": 19135,
       "term_counts": {
         "refuted": 1,

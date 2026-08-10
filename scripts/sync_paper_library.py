@@ -82,7 +82,13 @@ def strip_front_matter(text: str) -> tuple[str, bool]:
     return text[match.end():], True
 
 
-def render_body(exact_bytes: bytes, source_dir: Path) -> tuple[str, int, bool]:
+def render_body(
+    exact_bytes: bytes,
+    source_dir: Path,
+    *,
+    canonical_asset_root: Path | None = None,
+    public_asset_prefix: str | None = None,
+) -> tuple[str, int, bool]:
     text = exact_bytes.decode("utf-8-sig").replace("\r\n", "\n").replace("\r", "\n")
     text, stripped_front_matter = strip_front_matter(text)
     text = text.replace("\\newpage", "<!-- page break in original manuscript -->")
@@ -97,8 +103,22 @@ def render_body(exact_bytes: bytes, source_dir: Path) -> tuple[str, int, bool]:
     def image_replacement(match: re.Match[str]) -> str:
         nonlocal missing_images
         alt, target = match.group(1).strip(), match.group(2).strip()
-        target_path = source_dir / target
-        if target.startswith(("http://", "https://", "data:")) or target_path.exists():
+        if target.startswith(("http://", "https://", "data:")):
+            return match.group(0)
+        relative = Path(target)
+        if relative.is_absolute() or ".." in relative.parts:
+            missing_images += 1
+            caption = alt or "Figure"
+            return (
+                "\n\n::: {.callout-warning title=\"Unsafe figure path withheld\"}\n"
+                f"**{caption}**  \nThe original manuscript references `{target}` outside its publication root. "
+                "The reference is preserved in the exact source but is not copied into the public site.\n:::\n\n"
+            )
+        target_path = (canonical_asset_root or source_dir) / relative
+        if target_path.is_file():
+            if canonical_asset_root is not None and public_asset_prefix:
+                rewritten = f"{public_asset_prefix}/{relative.as_posix()}"
+                return match.group(0).replace(f"]({target}", f"]({rewritten}", 1)
             return match.group(0)
         missing_images += 1
         caption = alt or "Figure"
@@ -137,7 +157,14 @@ def render_body(exact_bytes: bytes, source_dir: Path) -> tuple[str, int, bool]:
 
 def expected_page(record: dict, inventory_record: dict, structure: dict, exact_bytes: bytes) -> str:
     source_copy = ROOT / record["published_source"]
-    body, missing_images, stripped_front_matter = render_body(exact_bytes, source_copy.parent)
+    asset_root_value = record.get("canonical_asset_root")
+    canonical_asset_root = ROOT / asset_root_value if asset_root_value else None
+    body, missing_images, stripped_front_matter = render_body(
+        exact_bytes,
+        source_copy.parent,
+        canonical_asset_root=canonical_asset_root,
+        public_asset_prefix=f"assets/{record['source_id']}" if canonical_asset_root else None,
+    )
     chapter_refs = chapter_links(record["source_id"], structure, from_paper=True)
     chapter_text = ", ".join(chapter_refs) if chapter_refs else "No current chapter assignment."
     date = inventory_record.get("published") or inventory_record.get("updated") or "Date not normalized"
@@ -157,6 +184,8 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
             f"{missing_images} referenced figure asset{'s were' if missing_images != 1 else ' was'} absent from the supplied source package and "
             f"{'are' if missing_images != 1 else 'is'} marked in place."
         )
+    if canonical_asset_root and not missing_images:
+        presentation_notes.append("Supplied local figure assets are copied byte-for-byte and their relative paths are rewritten into this reader page.")
     presentation = " ".join(presentation_notes)
     status_note = record.get(
         "status_note",
@@ -270,6 +299,7 @@ def expected_quarto_config(records: list[dict]) -> str:
             "  output-dir: ../_site/papers",
             "  resources:",
             '    - "source/*"',
+            '    - "assets/**"',
             "  render:",
             *[f"    - {path}" for path in render],
             "",
@@ -350,6 +380,11 @@ def validate_manifest(
             value = str(derived.get(key, ""))
             if value.startswith("/") or ".." in Path(value).parts:
                 errors.append(f"{source_id or index}: unsafe {key} path {value!r}")
+        asset_root = derived.get("canonical_asset_root")
+        if asset_root:
+            value = str(asset_root)
+            if not value.startswith("sources/raw/") or value.startswith("/") or ".." in Path(value).parts:
+                errors.append(f"{source_id or index}: unsafe canonical_asset_root path {value!r}")
         if not re.fullmatch(r"[0-9a-f]{64}", str(derived.get("sha256", ""))):
             errors.append(f"{source_id}: sha256 must be lowercase hexadecimal")
         if not isinstance(derived.get("bytes"), int) or derived.get("bytes", 0) <= 0:
@@ -403,6 +438,41 @@ def synchronize(check: bool) -> list[str]:
         if not source_note.exists():
             errors.append(f"{source_id}: source note is missing: {record['source_note']}")
             continue
+
+        asset_root_value = record.get("canonical_asset_root")
+        expected_assets: set[Path] = set()
+        if asset_root_value:
+            asset_root = ROOT / str(asset_root_value)
+            if not asset_root.is_dir():
+                errors.append(f"{source_id}: canonical asset root is missing: {asset_root_value}")
+                continue
+            text = canonical_bytes.decode("utf-8-sig", errors="replace")
+            for match in IMAGE_RE.finditer(text):
+                target = match.group(2).strip()
+                if target.startswith(("http://", "https://", "data:")):
+                    continue
+                relative = Path(target)
+                if relative.is_absolute() or ".." in relative.parts:
+                    continue
+                candidate = asset_root / relative
+                if not candidate.is_file():
+                    continue
+                published_asset = ROOT / "papers" / "assets" / source_id / relative
+                expected_assets.add(published_asset)
+                if check:
+                    if not published_asset.is_file() or published_asset.read_bytes() != candidate.read_bytes():
+                        errors.append(f"{source_id}: published figure asset is missing or stale: {relative.as_posix()}")
+                else:
+                    published_asset.parent.mkdir(parents=True, exist_ok=True)
+                    if not published_asset.exists() or published_asset.read_bytes() != candidate.read_bytes():
+                        shutil.copyfile(candidate, published_asset)
+            public_asset_root = ROOT / "papers" / "assets" / source_id
+            actual_assets = {path for path in public_asset_root.rglob("*") if path.is_file()} if public_asset_root.exists() else set()
+            for stale in sorted(actual_assets - expected_assets):
+                if check:
+                    errors.append(f"{source_id}: stale published figure asset: {stale.relative_to(public_asset_root)}")
+                else:
+                    stale.unlink()
 
         expected = expected_page(record, inventory[source_id], structure, canonical_bytes)
         if check:

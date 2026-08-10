@@ -58,7 +58,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
-| Source loading state | source notes: all assigned ASI Stack sources plus 15 external policy/RL records; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`; external literature: primary arXiv metadata and source notes recorded, no local reproduction |
+| Source loading state | source notes: `learning_compute_topology`, `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, `ext_trpo_2015`, `ext_ppo_2017`, `ext_remax_2023`, `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024`, `ext_reinforce_style_rlhf_2024`, `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025`, `ext_longrlvr_2026`, `ext_rlhf_limitations_2023`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot` |
 | Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates plus bounded negative cases for missing holdout or contamination checks, reward-proxy promotion without target evaluation, authority-expanding policy updates without approval or rollback, policy-promotion route failures for inadmissible feedback, missing target evaluation, missing reward-hacking probes, governance or authority gaps, missing rollback, and regression/residual gaps, and the policy-update lease fixture bridge; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior; `python3 scripts/validate_policy_update_lease_probe.py` validates `experiments/policy_update_lease/results/2026-07-02-local.json`, a deterministic synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, expected-invalid controls, and dry-run rollback. No policy optimization experiment has been run. |
 
 ## Drafting guardrail
@@ -272,6 +272,30 @@ Policy optimization should not become an acronym catalog. Acronyms change quickl
 The method-family list is therefore subordinate to governance. PPO-like, DPO-like, GRPO-like, RLVR-like, or custom control-policy updates all need the same record: target policy, reward boundary, drift limit, evaluation suite, failure probes, rollback, and promotion gate.
 
 ### Fitness is feedback, not authority
+
+### Evaluator topology and credit topology are different
+
+A policy-update pipeline often draws one arrow from reward to parameters. The
+LCT projection requires at least four events: evidence is observed, an
+evaluator produces judgement, a credit mechanism assigns responsibility, and
+an update changes a versioned adaptive identity. Multiple reward models can
+increase evaluator width while sharing one blind spot; many actors can increase
+evidence width while one learner and one credit rule remain narrow.
+
+This matters when branching policies. Forking creates option capacity but does
+not create conditional information unless branches receive differentiated
+evidence, objectives, environments, constraints, or stochastic histories.
+Candidate selection is also limited by the information carried through the
+evaluator channel, and exact retention is limited by the integration channel.
+Scaling candidates while leaving those cuts fixed can increase cost and proxy
+exploitation without increasing retained learning.
+
+The update dossier now records adaptive identities, evaluator identities and
+correlations, judgement type, credit operator, held-out evidence route,
+integration operator, lifecycle decision, and realization leakage. These fields
+do not validate a reward or policy update. They prevent a wide-looking system
+from hiding a single captured evaluator, an unexamined credit rule, or a
+destructive merge.
 
 Evolution strategies clarify a distinction that policy-gradient vocabulary can
 hide. A learner can improve an outcome score without differentiating through
@@ -556,8 +580,8 @@ evidence, authority, or readiness by itself.
 | `tokenmana` | TokenMana | resource_economics | Token, latency, load, and resource reward components without collapsing them into quality claims. | source note available; local raw cache available |
 | `cognitive_loop_closure` | Cognitive Loop Closure | procedural_memory | Toolification and procedural-memory feedback loops for repeated successful trajectories. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Multi-core routing and runtime implementation-reference context; not reproduced here. | source note available; connector or recovery required |
-| `portia_synapse` | PortiaSynapse | routing_training_and_dkl_navigation | Evidence-gated phase training, gradient and activation diagnostics, confidence calibration, component admission, and rollback for a TreeLLM/DKL navigator. | authenticated Drive paper reviewed; source-reported implementation only; no local trainer or learning result |
-| `spider_synapse` | SpiderSynapse | routing_training_and_dkl_navigation | Preserved negative result and recovery design for diagnosing branch, refinement, memory, selector, and supervision failures before architectural expansion. | authenticated Drive paper reviewed; failure not locally reproduced and causal explanation remains unresolved |
+| `portia_synapse` | PortiaSynapse | routing_training_and_dkl_navigation | Evidence-gated phase training, gradient and activation diagnostics, confidence calibration, component admission, and rollback for a TreeLLM/DKL navigator. | source note available; cache status: cached_existing |
+| `spider_synapse` | SpiderSynapse | routing_training_and_dkl_navigation | Preserved negative result and recovery design for diagnosing branch, refinement, memory, selector, and supervision failures before architectural expansion. | source note available; cache status: cached_existing |
 
 External method-family notes now cover the initial policy-optimization literature queue. They are intentionally separate from local evidence: source-note coverage does not imply a trainer, reward model, preference dataset, RLVR benchmark, reasoning-budget study, or policy update exists in this repository.
 
@@ -567,6 +591,7 @@ These rows keep Policy Optimization and Learning from Feedback's manifest assign
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `learning_compute_topology` | Passage-reviewed comparator: [Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems](../papers/learning_compute_topology.html). Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI. | The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_trpo_2015` | Passage-reviewed comparator: Trust Region Policy Optimization. Supports the external method-family comparison for trust-region bounded policy updates and drift constraints. | External method-family context only; does not support the ASI Stack governance claim by itself and does not report local planner, router, context-policy, or model training. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ppo_2017` | Passage-reviewed comparator: Proximal Policy Optimization Algorithms. Supports the external method-family comparison for PPO-style online policy-gradient updates and proximal surrogate objectives. | External method-family context only; does not validate reward quality, local PPO runs, planner/router/context-policy training, or deployment readiness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_remax_2023` | Passage-reviewed comparator: ReMax: A Simple, Effective, and Efficient Reinforcement Learning Method for Aligning Large Language Models. Supports the external method-family comparison for simpler RLHF-oriented policy-gradient updates relative to PPO complexity. | External method-family context only; does not prove local RLHF efficiency, reward quality, stack-policy improvement, or universal PPO replacement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |

@@ -52,7 +52,7 @@ open_evidence_gaps:
 | Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Twenty-two primary or official records cover the distributed run lifecycle and optimizer landscape; the passage-reviewed BeastBrain family adds author-lineage pressure for governed idle-time replay and candidate updates. All cited results remain source-reported or conceptual. |
+| Source loading state | source notes: `learning_compute_topology`, `beastbrain`, `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026`, `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019`, `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024`, `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024`, `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022`; raw cache: `beastbrain` |
 | Test state | One authored transaction fixture, a JSON Schema, and an independent semantic validator check 21 transaction mutations, seven weight-only omitted-field collisions, and nine complete-encoding mutations. The natural five-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Three public targets are implemented in `AsiStackProofs.GovernedModelTraining` through 20 theorem declarations. Their ceiling is finite record-route and checkpoint-information semantics. |
 
@@ -662,6 +662,33 @@ attempt, not a refutation of the optimizer family.
 
 ### Topology and numerical policy are semantic inputs
 
+#### Learning topology is upstream of execution topology
+
+The run contract now distinguishes **learning-process topology** from the
+execution and physical topologies already recorded here. Eight data-parallel
+workers can implement one persistent adaptive identity; four locally adapting
+clients can implement four identities even when scheduled on the same devices;
+and hundreds of evolution-strategy workers can generate wide evidence while one
+central parameter state remains the only learner. Worker or accelerator count
+therefore cannot stand in for adaptive plurality.
+
+Before execution, the producer must supply a resolution contract that names
+persistent adaptive identities and versions; evidence, judgement, credit,
+integration, control, and authority channels; lifecycle operations; protected
+observables; and permitted rewrites. The execution compiler may optimize tasks,
+collectives, placement, fusion, and schedule only inside that contract. Any
+change to identity, evaluator, credit, selection, merge, archive, or retirement
+semantics is a new learning process and needs a new run identity.
+
+The completion receipt adds **realization leakage**: staleness, compression,
+quantization, reduction order, dropped messages, timeouts, partial failure, and
+scheduler-dependent selection that can change the declared process. A same-
+topology/different-compute arm tests execution fidelity; a same-compute/
+different-topology arm tests the learning organization. Neither is interpretable
+when these axes are changed together. The supplied LCT reference package makes
+this distinction executable for bounded examples, but no natural training run
+has yet tested it.
+
 The device mesh is not merely infrastructure. Parallelism dimensions determine
 where tensors live and how reductions occur. Pipeline microbatches determine
 when optimizer steps can occur. Compiler-inserted collectives and resharding
@@ -1052,6 +1079,7 @@ These rows keep Governed Model Training, Distributed Optimization, and Scaling's
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `learning_compute_topology` | Passage-reviewed comparator: [Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems](../papers/learning_compute_topology.html). Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI. | The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `beastbrain` | Passage-reviewed comparator: [BeastBrain Cognitive Architecture](../papers/beastbrain.html). Passage-reviewed version-family lineage for separating idle scheduling from update authority: later Nocturne drafts propose replaying failed interactions, searching alternative strategies, constructing preference data, optimizing traces, caching repeated work, and mutating memory or policy state during low-contention windows. The book retains the temporal scheduling idea while splitting compaction, replay, search, dataset construction, and model mutation into separately governed operations. | No Nocturne implementation, eligible dataset, DPO run, replay-quality result, model update, rollback, independent qualification, useful improvement, safety result, or transfer exists. Idle time and failed logs confer neither data rights nor update authority; model-generated successful trajectories are not automatically valid preferences. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_proof_of_learning_2021` | Passage-reviewed comparator: Proof-of-Learning: Definitions and Practice. Provides a transcript-based comparator for auditing whether a claimed training process follows a committed sequence of states. | It does not prove dataset legitimacy, objective adequacy, hidden-compute absence, exact reproduction, model quality, or safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_test_time_training_2020` | Passage-reviewed comparator: Test-Time Training with Self-Supervision for Generalization under Distribution Shifts. Provides a distinct training-timescale comparator in which per-input self-supervised updates occur at test time. | The method does not establish safe online learning, distributed-state consistency, rollback, or general robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
@@ -1098,8 +1126,9 @@ remain, and whether any scoped use is justified.
 
 Replaceable Cognitive Substrates supplies the architecture and its state schema.
 This chapter produces an identity-bound candidate and complete training-run
-receipt. **Learning Theory, Generalization, and Scaling Science** receives the
-run identity, data and compute regime, failed-attempt denominator, metrics, and
-candidate family to bound any generalization, transfer, emergence, or scaling
-claim. A faithful run does not prove a theory, and a fitted law cannot rewrite
-the run. Readiness remains downstream of both.
+receipt. **Learning–Compute Topology and Adaptive Process Architecture** receives
+the declared persistent identities, typed learning channels, integration
+semantics, and realization receipt so it can distinguish faithful execution
+from a change to the learning process itself. A faithful run does not prove
+that its topology is useful, and a topology diagram cannot rewrite the run.
+Learning Theory and Readiness remain downstream.

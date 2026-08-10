@@ -196,6 +196,16 @@
     {
       "source_id": "viea",
       "document_class": "architecture_whitepaper"
+    },
+    {
+      "source_id": "learning_compute_topology",
+      "document_class": "research_paper",
+      "canonical_source": "sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.md",
+      "canonical_asset_root": "sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper",
+      "source_note": "sources/source_notes/learning_compute_topology.md",
+      "sha256": "4fd869f01f4c0782e6e2f1d657b6c84e87ced82e652126aae395123a04fac712",
+      "bytes": 129274,
+      "status_note": "Version 1.0 author research paper with a bundled reference implementation and reproducibility package. Its formal results are bounded to the stated models; its implementation checks finite IR behavior; its diagrams are toy or analytical; and its proposed architectures, empirical predictions, safety claims, scaling claims, and novelty claims remain unvalidated until independently tested."
     }
   ]
 }

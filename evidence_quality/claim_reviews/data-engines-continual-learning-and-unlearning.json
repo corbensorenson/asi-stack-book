@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/data-engines-continual-learning-and-unlearning.qmd",
     "structured_atoms_reviewed": 86,
-    "prose_candidates_adjudicated": 79,
+    "prose_candidates_adjudicated": 81,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Regret-aware replay strata, competence preservation, eligibility, retirement, and custody are bounded by existing partition, purpose, transfer, deletion, and lifecycle atoms. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. Adaptive lineage, reversible integration, commitment annealing, knowledge placement, salvage, retirement, privacy, influence, and storage-erasure distinctions are bounded by the chapter's existing provenance, full-state, lifecycle, checkpoint-authority, deletion-axis, descendant, rollback, and custody atoms. The prior Regret Engine material remains bounded. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -140,6 +140,16 @@
     }
   },
   "prose_candidate_dispositions": {
+    "data-engines-continual-learning-and-unlearning.prose.532108bcfae9": {
+      "state": "duplicate_of_atom",
+      "rationale": "Naming adaptive identity, evidence, judgement, credit, and descendant inheritance in the custody graph specializes the existing transformation-and-descendant lineage invariant.",
+      "target_atom_id": "data-engines-continual-learning-and-unlearning.invariant.003"
+    },
+    "data-engines-continual-learning-and-unlearning.prose.1c548e7a9e54": {
+      "state": "duplicate_of_atom",
+      "rationale": "Annealing commitment only after compatibility, retention, rights, privacy, deletion, and rollback checks is an application of the chapter's existing Data-and-Descendant Custody Lease.",
+      "target_atom_id": "data-engines-continual-learning-and-unlearning.core"
+    },
     "data-engines-continual-learning-and-unlearning.prose.d626a4168ea6": {
       "state": "duplicate_of_atom",
       "rationale": "The unlearning nonclaim directly restates the chapter's separate behavioral, causal-influence, privacy, legal, storage, backup, and descendant claim axes.",

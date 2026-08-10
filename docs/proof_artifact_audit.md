@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 333 |
-| Manifest status counts | {"implemented": 330, "planned": 3} |
-| Triage class counts | {"formal-invariant": 333} |
+| Proof targets audited | 335 |
+| Manifest status counts | {"implemented": 330, "planned": 5} |
+| Triage class counts | {"formal-invariant": 335} |
 | Lean modules referenced | 95 |
-| Chapters with proof targets | 85 |
+| Chapters with proof targets | 86 |
 | Validation errors | 0 |
 | Warnings | 0 |
 | ProofEnvelope theorem declarations | 28 |
@@ -198,6 +198,7 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
 | `inter-stack-protocols-identity-and-economic-exchange` | 9 | 9 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
+| `learning-compute-topology-and-adaptive-process-architecture` | 2 | 0 | 0 | 0 |
 | `learning-theory-generalization-and-scaling-science` | 1 | 1 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
@@ -437,6 +438,8 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `lean:governed_training.run_admission_invariants` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.resume_and_handoff_separation` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:governed_training.checkpoint_information_boundary` | `governed-model-training-distributed-optimization-and-scaling` | `AsiStackProofs.GovernedModelTraining` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:learning_compute_topology.semantic_firewall_nonexpansion` | `learning-compute-topology-and-adaptive-process-architecture` | `AsiStackProofs.LearningComputeTopology` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:learning_compute_topology.semantic_cut_information_bound` | `learning-compute-topology-and-adaptive-process-architecture` | `AsiStackProofs.LearningComputeTopology` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:learning-theory-generalization-and-scaling-science.admission_boundary` | `learning-theory-generalization-and-scaling-science` | `AsiStackProofs.LearningTheoryForecastReview` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.operational_invariant` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:readiness.gates.failure_blocks_promotion` | `readiness-gates-residual-escrow-and-quarantine` | `AsiStackProofs.ReadinessRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

@@ -50,6 +50,7 @@ were not reproduced here.
 ## Book Chapters Supported
 
 - `governed-model-training-distributed-optimization-and-scaling`
+- `learning-compute-topology-and-adaptive-process-architecture`
 - Boundary context: `replaceable-cognitive-substrates-beyond-transformer-monoculture`
   and `resource-economics-and-token-budgets`
 

@@ -43,6 +43,7 @@ These are source-reported results, not local evidence.
 ## Book Chapters Supported
 
 - `governed-model-training-distributed-optimization-and-scaling`
+- `learning-compute-topology-and-adaptive-process-architecture`
 - Boundary context: `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
 ## Claims To Add Or Update

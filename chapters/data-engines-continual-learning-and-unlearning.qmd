@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Primary source records | 11 assigned, 11 passage-reviewed mappings, including SISA, model-collapse and accumulation work, Theseus, W3C PROV-O, Croissant, MUSE, OpenUnlearning, the benchmark critique, QCSA, and V-JEPA 2 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
+| Source loading state | source notes: `learning_compute_topology`, `ext_bourtoule_machine_unlearning_2021`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024`, `theseus_synthetic_data_curation`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine` |
 | Test state | The receipt probe validates four intake routes. P3 and M7 preserve their bounded update/unlearning results and failures. The first P5 slice restores nine prospectively frozen classes and removes one cohort from five declared local storage surfaces. The second mutates actual model/Adam learning state, rejects weights-only recovery, and restores nine classes after a crash. Neither tests deletion, forgetting, influence, privacy, rights, or external erasure; the core remains `argument`. |
 
 ## Drafting guardrail
@@ -304,6 +304,31 @@ checkpoint path rerun, retrieval cache unverified" without pretending that a
 single verb, *unlearn*, settled the matter.
 
 ### Atlas epochs and identity-safe migration
+
+### Adaptive lineage, reversible integration, and knowledge placement
+
+Continual learning changes more than weights. Learned memory, optimizer state,
+curriculum, evaluator, archive, router, and topology-controller state can each
+be a persistent adaptive identity. The custody graph must name which identity
+changed, which evidence and judgement reached it, which credit signal caused
+the change, and which descendants inherited the result.
+
+Learning–Compute Topology adds a reversible integration ladder. When confidence
+is low or future option value is high, keep a capability in an archive,
+ensemble, or separately governed module. Distillation or parameter merge is a
+more committed step because it can erase lineage and make influence difficult
+to remove. Commitment should anneal only after compatibility, retention,
+rights, privacy, deletion, and rollback checks. “Keep every branch” is not a
+solution: storage, attack surface, consent, retention limits, and unlearning
+cost remain part of the decision.
+
+Knowledge placement is therefore an explicit action. A discovery may belong in
+central weights, a specialist, retrieval memory, procedure, tool, evaluator,
+test, or archive depending on reuse, precision, latency, conflict, provenance,
+and erasure obligations. Before retirement, salvage can preserve a validated
+counterexample or procedure without copying an entire unsafe lineage. Behavioral
+cohort removal, causal influence reduction, privacy protection, and physical
+storage erasure remain different claims across every placement.
 
 QCSA separates three update timescales. Task-local resolution, questioning, and
 routing are fast and ephemeral; resolver and codebook learning is medium-term
@@ -850,6 +875,7 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 
 | Source | Intake role | Boundary |
 |---|---|---|
+| `learning_compute_topology` | Passage-reviewed comparator: [Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems](../papers/learning_compute_topology.html). Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI. | The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: [Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents](../papers/deterministic_capability_compilation.html). Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `platonic_world_model` | Metadata-first comparator: [The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence](../papers/platonic_world_model.html). Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |

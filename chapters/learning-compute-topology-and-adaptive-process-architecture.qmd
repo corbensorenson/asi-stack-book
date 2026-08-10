@@ -1,0 +1,767 @@
+---
+title: "Learning–Compute Topology and Adaptive Process Architecture"
+chapter_id: "learning-compute-topology-and-adaptive-process-architecture"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "v0.1 integrated argument chapter"
+last_updated: "2026-08-09"
+primary_sources:
+  - "learning_compute_topology"
+  - "ext_megatron_distributed_training_2021"
+  - "ext_gspmd_2021"
+  - "ext_pbt_2017"
+  - "ext_openai_es_2017"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No natural learning campaign has tested whether LCT variables improve prediction, design, control, safety, or retained learning."
+  - "The seven propositions have not been independently formalized or checked in a proof assistant."
+  - "The supplied implementation covers bounded IR behavior, not neural training, distributed execution, or online topology control."
+  - "The coverage and novelty matrices remain author-coded scoped studies; the phase diagrams are toy or analytical."
+  - "ABVI and the derived topology mechanisms remain hypotheses."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `learning-compute-topology-and-adaptive-process-architecture` |
+| Part | Part III — Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Manuscript maturity | integrated argument with bounded formal and executable artifacts |
+| Last updated | 2026-08-09 |
+| Primary source | Corben Sorenson's version 1.0 *Learning–Compute Topology* paper and complete preparation package |
+| External comparators | Megatron distributed training, GSPMD, Population Based Training, and scalable evolution strategies |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | The complete Corben-authored v1.0 paper package has been passage-reviewed and mined; four primary external comparators are source-noted. All performance, safety, transfer, novelty, and topology-control claims remain bounded or open. |
+| Executable state | The supplied LCT-IR reference package passes 11 of 11 unit tests; this is finite IR evidence, not a learning result. |
+| Formal state | Seven paper propositions have bounded mathematical arguments; none has been independently mechanized in this repository. |
+
+## Drafting guardrail
+
+This chapter names a layer that ordinary model diagrams and cluster diagrams
+both omit. It does not claim that every learning process needs a complicated
+graph, that Learning Causal Normal Form is uniquely canonical, that the supplied
+primitive set is complete, or that a topology controller improves learning.
+The paper's five evidence states remain separate: bounded proposition,
+implemented prototype, manual scoped comparison, toy or analytical
+illustration, and open hypothesis.
+
+The chapter's job is to make a process **representable and challengeable**.
+Whether a proposed process is useful must be decided later by matched natural
+experiments. A neat graph is not an outcome.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Imagine eight GPUs. In one run, each GPU holds a replica, computes gradients on
+a different minibatch, and contributes to one synchronized update. There are
+eight workers but one persistent learner. In a second run, four model lineages
+adapt locally for hours, see different environments, and are later evaluated
+and selectively merged. There are four persistent adaptive identities even if
+the same eight GPUs execute them. In a third run, hundreds of workers generate
+perturbation returns, but one central parameter vector receives the update.
+The worker count is wide; the persistent adaptive state is narrow.
+
+Those systems may use identical hardware and similar arrows, yet they create
+different opportunities. One averages evidence for a shared trajectory. One
+preserves competing histories. One explores proposals but commits them through
+a single learner. The difference determines what can diverge, what can be
+tested independently, what can be retained, and what can be lost during
+integration.
+
+Learning–Compute Topology gives those differences names. It separates the
+organization of adaptation from the execution plan and hardware placement. It
+also requires evidence, evaluation, credit, state change, integration, and
+authority to remain distinct. That lets the stack replace not only a model but
+the way models, memories, evaluators, archives, and controllers learn together.
+:::
+
+## Problem
+
+Model architecture is an inductive bias over functions and representations. A
+Transformer, state-space model, recurrent network, graph network, program
+synthesizer, or differentiable memory system determines how inputs can become
+outputs and how internal state is represented. Distributed execution is a
+mapping from a computation to devices, memory, collectives, kernels, and time.
+Between them lies another design decision: the causal organization of
+adaptation.
+
+That organization answers questions a model graph does not:
+
+- Which state persists long enough to count as one adaptive identity?
+- Which identities can diverge, and what makes their experiences meaningfully
+  different rather than copied noise?
+- Where does evidence travel, and which evaluator turns it into judgement?
+- How does judgement become credit for a particular state or process?
+- Which discoveries are selected, averaged, distilled, composed, archived, or
+  destroyed?
+- Who may create, starve, merge, restore, or retire a branch?
+- Which topology changes are semantic changes, and which are only faster
+  schedules?
+- What information is lost when the declared process is compiled onto real
+  hardware?
+
+A training loop hides most of these questions in one repeated arrow. A generic
+agent graph hides them in unlabeled edges. “Serial” and “parallel” are useful
+relations but inadequate final categories. Data can be parallel while adaptive
+identity remains singular. Proposals can be parallel while judgement is
+centralized. Persistent learners can be plural while deployment remains one
+composed system.
+
+### Four topologies, not one
+
+The stack should distinguish four objects.
+
+| Object | Governing question | Example |
+|---|---|---|
+| Model architecture | How does one model compute and represent? | attention, recurrence, state space, graph message passing |
+| Learning-process topology | How do persistent adaptive identities receive evidence, judgement, credit, integration, and lifecycle changes? | one SGD lineage, federation, population, branch–validate–integrate |
+| Execution topology | How is the declared process scheduled and communicated? | data/tensor/pipeline parallel tasks, queues, collectives |
+| Physical compute topology | Where does execution occur and with what links, memory, failures, and energy? | accelerators, hosts, network fabric, SSD tiers, edge devices |
+
+These layers interact but are not interchangeable. One learning process may
+have several physical realizations. One cluster may execute several learning
+processes. A compiler can change placement, fusion, communication, or schedule
+without permission to change identity, evaluator, credit, or integration
+semantics.
+
+```{mermaid}
+flowchart LR
+  A1["Evidence and judgement channels"] --> A
+  A2["Credit and integration rules"] --> A
+  A3["Identity, authority, and lifecycle"] --> A
+  A["Learning-process contract<br/>identities, semantic channels, lifecycle"] --> B["Semantic compiler<br/>preservation and approximation rules"]
+  B --> C["Execution topology<br/>tasks, dependencies, collectives, schedule"]
+  C --> D["Physical compute topology<br/>devices, links, memory, failures"]
+  D --> E["Realization receipt<br/>cost, staleness, compression, leakage"]
+  E --> F{"Contract still satisfied?"}
+  F -- "yes" --> G["Admit trace for evaluation"]
+  F -- "no" --> H["Quarantine, recompile, narrow, or redesign"]
+  H --> B
+```
+
+**How to read the learning-topology compiler:** Compilation is a governed boundary. The physical
+realization returns a receipt instead of silently becoming the meaning of the
+learning process. A planner may optimize within the contract; changing the
+contract is topology synthesis and requires new evaluation.
+
+## Why existing approaches are insufficient
+
+Training-loop diagrams compress evidence, evaluation, credit, state change,
+integration, and authority into one update arrow. Distributed-training diagrams
+usually expose tensors, collectives, stages, and devices but not which adaptive
+histories persist or why they differ. Agent-workflow graphs expose tasks and
+messages but often leave adaptive state and learning semantics inside opaque
+nodes. Population methods expose candidates but use method-specific language
+that does not directly compare with federation, distillation, modularity,
+actor–learner systems, or ordinary synchronized SGD.
+
+No one of those abstractions is defective for its original job. The failure is
+using it outside that job. A computation graph cannot decide whether two model
+copies are two learners. A device mesh cannot say whether a timeout changed
+candidate selection. A branch diagram cannot distinguish merge, distillation,
+composition, archive, and retirement. A generic multi-agent edge cannot show
+whether it moves evidence or authority. LCT adds a comparison and compiler
+layer; it does not replace the underlying optimizer, runtime, agent framework,
+or concurrency theory.
+
+The strongest objection is that this becomes elaborate notation around facts a
+good engineer already knows. That objection wins if the representation does
+not catch silent semantic changes, predict protected traces or costs, enable
+useful comparisons, or generate testable process designs. The argument-exit
+campaign therefore treats annotation agreement, predictive value, controller
+benefit, and total burden as outcomes rather than assuming the formalism pays
+for itself.
+
+## Mechanism
+
+The mechanism begins by freezing a resolution contract: what counts as an
+adaptive identity, what state and observables matter, which semantic channels
+exist, which lifecycle and integration operations are permitted, and who has
+authority to change them. The producer then writes a typed LCT-IR program and a
+Learning Causal Normal Form projection that make hidden adaptive state,
+evaluation, credit, feedback, integration, and provenance explicit.
+
+The process is compiled in two stages. Semantic events become execution
+operations, and execution becomes physical placement. A semantic firewall lets
+the planner optimize schedule, communication, memory, and devices only within
+the declared preservation or approximation contract. The runtime returns a
+realization receipt. Evaluation measures both learning outcomes and whether the
+compiled process remained the process that was proposed.
+
+This section develops the mechanism from identity through semantic channels,
+normalization, bounded propositions, compilation, measurements, derived
+topologies, and ABVI. These parts form one contract; they are not independent
+reasons to claim improvement.
+
+### Adaptive identity
+
+An adaptive identity is not whatever receives a convenient label. It is a
+versioned state-bearing entity that can follow its own adaptive history and
+affect later behavior. Four tests make the term operational.
+
+1. **Identity.** Can the state be named and versioned across events?
+2. **Divergence.** Can it change differently from another candidate?
+3. **Persistence.** Does the difference survive long enough to influence later
+   adaptation or use?
+4. **Consequence.** Can its distinct history change a protected output,
+   decision, artifact, or successor?
+
+A transient data-parallel replica usually fails persistence: its gradients are
+aggregated into the same next version. An evolutionary perturbation worker may
+fail identity: the perturbation is reconstructed and discarded after producing
+a scalar. A population member in PBT usually passes all four tests: it has
+state, follows a lineage, can be copied or perturbed, and affects the terminal
+candidate. A learned evaluator also can be an adaptive identity if it changes
+and later alters selection.
+
+The test is resolution-dependent. At a fine scale, an optimizer moment, memory
+store, curriculum generator, or evaluator may be a distinct adaptive identity.
+At a coarse scale, several can be treated as one subsystem only if their
+interface is sufficient for the observables under study. The resolution
+contract must be frozen before comparing results; otherwise an analyst can
+manufacture breadth after seeing which system won.
+
+### Forking is not decomposition
+
+Forking creates alternative descendants that can acquire incompatible
+histories. Decomposition creates specialized parts whose responsibilities
+remain jointly composed. A forked branch might later be selected or merged. A
+vision module and language module may always remain a composed system. The two
+can interact—a modular system can fork one module—but neither implies the other.
+
+The distinction matters for architectural self-improvement. Adding modules is
+not automatically exploring alternatives. Copying a model is not automatically
+creating useful specialization. The process must record the identity, evidence,
+objective, environment, stochasticity, or constraint that can make descendants
+differ.
+
+### Typed semantic channels
+
+One graph is usually not enough because different kinds of causation share
+entities but not edges, cadence, visibility, or authority. The minimum semantic
+types are:
+
+- **adaptive state:** weights, optimizer state, learned memory, learned
+  curriculum, evaluator state, archive policy, or controller policy;
+- **evidence:** observations, data, trajectories, tests, measurements, or
+  artifacts presented for evaluation;
+- **judgement:** loss, reward, score, preference, critique, certificate,
+  constraint verdict, or uncertainty assessment;
+- **credit:** gradient, advantage, responsibility allocation, branch weight, or
+  another signal assigning change to adaptive state;
+- **artifact:** checkpoint, program, proof, dataset, report, trace, or tool;
+- **resource:** compute, memory, bandwidth, energy, storage, time, or reviewer
+  attention;
+- **control:** route, schedule, allocation, stopping, rewrite, or lifecycle
+  decision;
+- **authority:** permission to observe, modify, integrate, promote, archive,
+  restore, or retire.
+
+Collapsing these types creates practical bugs. If a reward is treated as a
+gradient, the credit model disappears. If a validation score is treated as
+evidence rather than judgement, the evaluator's assumptions disappear. If a
+checkpoint is treated as adaptive identity rather than an artifact containing
+state, lineage and authority can be lost. If a router can move authority merely
+because it can move data, a performance optimization becomes privilege
+escalation.
+
+The appropriate representation is multiplex: evidence, judgement, credit,
+state, artifacts, resources, control, and authority can take different routes
+over partially shared nodes. Every consequential edge names its type.
+
+### LCT-IR: an intermediate representation for learning processes
+
+The source formalizes a Learning–Compute Topology program as a typed, open,
+stochastic, dynamically rewritable hypergraph. In compact form it contains a
+graph of stores/interfaces and event hyperedges; a type assignment; state
+spaces; deterministic or stochastic transition kernels; conflict; a permitted
+rewrite policy; cost; authority and provenance; observables; and a resolution
+contract.
+
+Hyperedges matter because an update can jointly consume adaptive state,
+evidence, judgement, credit, resources, and authority while producing a new
+state version and artifacts. Reducing the event to pairwise arrows can invent an
+ordering or hide a joint precondition.
+
+The bounded LCT-IR vocabulary includes nine store classes and explicit
+operators for instantiate, observe, evaluate, assign credit, update, fork,
+aggregate, synchronize, select, merge, distill, compose, transfer, archive,
+restore, retire, route, allocate, rewire, checkpoint, emit, and pure
+computation. A generic “combine” operator is deliberately absent. Its semantics
+are exactly where many learning systems differ.
+
+#### Minimal conformance rules
+
+An admitted program should at least satisfy these constraints:
+
+- every adaptive store has an identity and version;
+- each declared adaptive version has one producer;
+- independently writable identities arise through an explicit instantiate or
+  fork;
+- multiple adaptive inputs cannot produce adaptive output through an opaque
+  generic event;
+- evaluation produces judgement and credit assignment produces credit;
+- an update consumes the declared adaptive state and judgement or credit;
+- held-out or test evidence that influences adaptation is explicitly flagged;
+- feedback is delayed or versioned;
+- topology rewrites and sensitive writes require authority;
+- compute mappings declare exact, approximate, distributional,
+  bounded-staleness, behavioral, or best-effort guarantees.
+
+These are not sufficient for a good learning system. They are the grammar that
+makes a process inspectable.
+
+### Learning Causal Normal Form
+
+Named algorithms are difficult to compare because similar names hide different
+semantics and similar diagrams hide different learning. Learning Causal Normal
+Form (LCNF) creates a comparison projection.
+
+Normalization proceeds by freezing a resolution contract, exposing hidden
+adaptive state, separating evidence from judgement and credit, replacing
+generic integration with a typed operator, exposing lifecycle and feedback,
+collapsing only interface-sufficient subgraphs, canonicalizing identifiers and
+ordering, and retaining provenance for every rewrite.
+
+LCNF does not promise one metaphysically true graph. It promises a declared
+resolution and explicit losses. Its equivalence ladder must remain ordered:
+
+1. graph isomorphism;
+2. trace equivalence over protected events;
+3. distributional equivalence over declared stochastic traces;
+4. behavioral equivalence at an interface;
+5. task-equivalence under a specified evaluator and environment.
+
+A pair of systems may be task-equivalent on one benchmark while differing in
+lineage, cost, privacy, rollback, or attack surface. A compiler may preserve
+behavior within tolerance while changing numerical traces. These are useful
+claims only when they are not collapsed into one word, “equivalent.”
+
+#### Three familiar mechanisms in normal form
+
+| Mechanism | Adaptive identities | Wide channel | Integration | Key distinction |
+|---|---:|---|---|---|
+| Synchronous data-parallel SGD | 1 persistent learner | evidence/gradient computation | gradient aggregation before one update | workers are not independent learners |
+| Federated averaging round | many locally persistent client states plus server state | local adaptation | parameter/state aggregation | local histories persist between synchronizations |
+| Evolution strategies with seed reconstruction | 1 central parameter state in the common scalable formulation | proposal evaluation | scalar-weighted central update | high proposal width can coexist with narrow adaptive width |
+
+PBT adds persistent population members, interim evaluation, state copying,
+hyperparameter mutation, and resource reallocation. An ensemble preserves
+members at deployment; a model soup merges parameters; distillation trains a
+new student; modular composition preserves typed components. Calling all four
+“model combination” would erase their retention and rollback properties.
+
+### What the bounded propositions establish
+
+The source supplies seven propositions. They deserve inclusion because they
+turn several intuitions into falsifiable boundaries, but their assumptions
+must travel with them.
+
+| Proposition | Bounded result | What it does not prove |
+|---|---|---|
+| Serial/parallel incompleteness | Finite series–parallel composition cannot represent every finite causal partial order; the N-shaped order is an obstruction. | LCT is complete for every open, continuous, hidden-state process. |
+| Fork option capacity | Under the stated conditional-independence model, copying one state into descendants adds options but not conditional information. | Branching never helps; differentiated evidence can create information. |
+| Trace-faithful bounded representation | A finite, bounded, explicit-state learning class admits an LCT trace encoding. | Universal representation of unbounded or hidden-state systems. |
+| Interface-sufficient coarse-graining | A subgraph can be replaced exactly under the stated downstream conditional-independence condition. | Any abstraction chosen for convenience is lossless. |
+| Evaluator-information lower bound | A Fano-style bound limits reliable candidate identification when evaluator observations carry insufficient information. | A specific evaluator is calibrated, independent, or safe. |
+| Integration-capacity lower bound | Fixed output capacity cannot exactly retain arbitrary independently varying branch capabilities beyond its information capacity. | Larger models always integrate better or composition is always optimal. |
+| Semantic-cut bound | In a staged Markov process without side channels, retained information is bounded by the weakest discovery, evaluation, or integration cut. | The minimum of three scalar metrics predicts every real system. |
+
+The practical lesson is narrower than a theorem of intelligence: adding search
+width alone cannot guarantee retained learning. Candidates need differentiated
+information, evaluators need enough discriminatory information, and integration
+needs enough capacity and the right operator to preserve what matters.
+
+### The semantic compiler firewall
+
+The learning-process contract must eventually run. Compilation occurs in two
+stages: semantic events become execution operations; execution operations are
+placed on devices, memory tiers, links, and schedules. The feasible realization
+set contains only mappings that satisfy the declared semantics or report the
+allowed approximation.
+
+Realization can leak into meaning through asynchronous staleness, compressed
+messages, numerical reduction order, quantization, dropped updates, partial
+failure, cache eviction, scheduling bias, timeout-driven selection, or storage
+limits. Some leakage is acceptable and beneficial. The dangerous case is
+unrecorded leakage.
+
+A realization receipt should bind:
+
+- LCT program and resolution-contract digest;
+- compiler, runtime, hardware, and topology versions;
+- mapping of adaptive identities and semantic channels;
+- work, span, communication, memory, storage, evaluator, and energy estimates
+  and observations;
+- exact or approximate guarantees and their tolerances;
+- staleness, loss, compression, numerical order, retries, and failures;
+- divergence from the planned schedule;
+- protected-observable checks;
+- authority, approver, residuals, and rollback.
+
+**Process superoptimization** searches schedules and placements that preserve
+the contract. **Topology synthesis** changes the process itself—for example,
+adding an evaluator branch, replacing merging with composition, or splitting
+one adaptive identity into several. The latter is architectural learning and
+must not inherit the compiler's authority.
+
+### Measurements that do not collapse into branch count
+
+Useful topology science needs measurements that predict decisions rather than
+decorate diagrams.
+
+- **Causal width** counts concurrently enabled causally independent events.
+- **Adaptive width** counts persistent independently writable identities.
+- **Epistemic width** counts meaningfully differentiated information-producing
+  paths.
+- **Evaluator width** measures independent judgement capacity.
+- **Commitment width** records how many alternatives remain reversibly
+  available.
+- **Deployment width** records how many components remain active at use time.
+
+Raw counts overstate diversity when candidates share initialization, data,
+prompts, tools, evaluators, or failure modes. **Effective breadth** discounts
+correlation and duplicated evidence. **Learning bandwidth** measures how much
+useful information survives evidence, judgement, credit, update, and
+integration. **Integration retention** asks which independently valuable
+properties survive the chosen operator. **Topological regret** compares the
+chosen process organization with admissible alternatives under the information
+and resources available when it was chosen; it is distinct from the Regret
+Engine's action- and policy-level counterfactual records.
+
+Every metric needs an estimator, uncertainty, cost, manipulation analysis, and
+consumer. Otherwise the controller will optimize a proxy such as nominal branch
+count and create Sybil breadth.
+
+### Derived process designs
+
+The paper's derived designs are useful because they show what a generative
+formalism should produce. They remain hypotheses.
+
+#### Adaptive causal refinement
+
+An identity can be too coarse: one store hides two independently important
+histories. It can also be too fine: administrative components are counted as
+learners without consequential divergence. Adaptive causal refinement splits
+or coarsens identities when protected predictions require different state.
+The trigger must be prospective and penalize complexity, measurement cost, and
+controller discretion.
+
+#### Typed multiplex synchronization
+
+Different channels need different synchronization. Evidence may stream,
+judgement may arrive periodically, credit may be delayed, parameters may
+synchronize sparsely, authority may require consensus, and artifacts may remain
+local until rights checks pass. One global barrier is easy to reason about but
+can be unnecessarily expensive; one generic asynchronous bus is flexible but
+can destroy semantic ordering.
+
+#### Integration forests
+
+Compatibility may be higher-order. Branch A can merge with B, B can compose
+with C, and all three together can fail. An integration forest evaluates
+subsets and operator choices, preserves intermediate validation, and can deploy
+different composites rather than forcing one universal fusion. The search cost
+can be combinatorial, so pruning, compatibility prediction, and independent
+validation are part of the mechanism.
+
+#### Reversible integration and commitment annealing
+
+When confidence is low or future option value is high, archive, ensemble, or
+modular composition preserves alternatives. As evidence accumulates, the
+system may move toward distillation or merge. Commitment should increase only
+with evidence and recovery solvency. Storage, privacy, rights, and maintenance
+cost prevent “keep everything forever” from being a free solution.
+
+#### Knowledge placement and salvage
+
+Not every discovery belongs in central weights. A result may fit a module,
+retrieval store, tool, procedure, evaluator, test, archive, or external memory.
+Placement depends on reuse, precision, latency, privacy, update frequency,
+conflict, and deletion obligations. Before retiring a branch, salvage asks
+whether a capability, counterexample, evaluator, artifact, or negative result
+should be retained elsewhere. Salvage is not automatic copying; it requires
+provenance, compatibility, validation, and rights.
+
+#### Anchored evaluator ecologies
+
+More evaluators can improve coverage but also multiply one shared proxy. An
+ecology should declare evaluator identities, training data, incentives,
+correlations, domains, calibration, disagreement policy, and authority. Some
+anchors should remain outside the topology controller's update authority.
+
+### Adaptive Branch–Validate–Integrate
+
+ABVI is a reference topology generated from the preceding distinctions. It
+starts with a stable base and branches only when expected information or option
+value justifies the cost. Branches receive designed differentiation rather than
+identical copies: different evidence, environments, objectives, constraints,
+tools, priors, or stochastic trajectories. Evaluator resources are allocated by
+impact, uncertainty, novelty, and suspected correlation. A validation bundle
+binds every candidate to its lineage, evidence, judgement, credit, costs,
+capabilities, failures, rights, and residuals.
+
+The integration planner chooses among selection, merge, distillation,
+composition, archive, or retirement. Shadow branches preserve alternatives
+when irreversible integration is premature. A topology-regret monitor tests
+whether fixed branching, no branching, or another process would have done
+better under the same decision-time information.
+
+#### Worked trace: one bounded architecture repair
+
+Suppose a deployed code model fails a new class of concurrency bugs while
+remaining strong elsewhere. The topology controller does not immediately fork
+ten identical models.
+
+1. The incident ledger establishes a recurring, attributable gap and preserves
+   held-out cases outside adaptation.
+2. A resolution contract names the base model, optimizer, memory, evaluator,
+   archive, controller, and concurrency-test generator as separate adaptive or
+   static identities.
+3. Two candidate branches are justified: one receives curated concurrency
+   traces and one receives simulator-generated schedule perturbations. A
+   no-branch repair and a specialist-module baseline remain in the comparison.
+4. Independent evaluators test bug detection, repair correctness, regression,
+   calibration, security, latency, and contamination. Their shared ancestry is
+   recorded so five correlated critics do not count as five independent votes.
+5. The branches prove complementary on held-out tasks but interfere when their
+   weights are averaged. The integration forest therefore compares selection,
+   merge, distillation, and modular routing.
+6. A routed specialist preserves both improvements within the deployment budget
+   while a distillation candidate loses rare deadlock cases. The system deploys
+   the specialist in shadow, archives both lineages, and keeps the base as
+   rollback authority.
+7. The physical compiler places the specialist on a slower memory tier. Its
+   latency receipt violates the online budget, so routing narrows to high-risk
+   code review rather than silently timing out and selecting the base.
+
+The trace illustrates the value of the representation, not an observed result.
+Every step requires a competent implementation and natural evidence before it
+can support the architecture.
+
+## Interfaces
+
+This owner begins where Replaceable Cognitive Substrates stops: a kernel
+contract says what one candidate implementation can do, while the LCT contract
+says how kernels, memories, evaluators, curricula, archives, and controllers
+adapt together. Governed Model Training receives a frozen process and owns its
+faithful execution. Routing Heads may choose a task or capability route but may
+not silently reroute evaluation evidence, adaptive state, or authority. Policy
+Optimization owns reward and feedback validity; LCT records where judgement and
+credit sit. Data Engines owns custody, deletion, continual learning, and
+unlearning across every adaptive identity and archive.
+
+Resource Economics prices work, span, communication, evaluator calls,
+integration search, storage, reversibility, and governance. Multi-Agent
+Dynamics owns strategic interaction and systemic effects among participating
+agents. Adversarial Evaluation attacks evaluator channels, correlation,
+selection, and topology control. Artifact Graphs preserve programs, traces,
+lineage, compiler and realization receipts, topology decisions, and rollback.
+The Integrated Reference Architecture joins those records without letting LCT
+grant readiness or release authority.
+
+## Invariants
+
+An admitted topology preserves exact adaptive identities and versions; typed
+evidence, judgement, credit, state, artifact, resource, control, and authority
+channels; explicit lifecycle and integration operators; frozen resolution and
+equivalence contracts; provenance; and protected observables. Worker, model,
+branch, module, and agent counts never replace the identity test. Forking does
+not imply differentiated information. Coarse-graining is exact only under its
+stated interface-sufficiency condition. Physical compilation cannot create an
+identity, change an evaluator or credit route, replace integration semantics,
+or widen authority without producing a new topology proposal.
+
+Formal propositions, parser success, normal forms, unit tests, manual coverage,
+phase diagrams, and source-authored architectures remain in their exact
+evidence states. Every topology rewrite records the trigger, alternatives,
+expected benefit, total budget, authority, validation, counterfactual,
+irreversibility, archive/deletion policy, and rollback. Negative results narrow
+only the competent implementation and regime actually tested.
+
+## Failure modes
+
+Learning topology introduces hazards beyond conventional model attacks.
+
+**Sybil breadth** creates many nominal candidates controlled by one lineage,
+dataset, prompt, or evaluator. **Evaluator monoculture** lets a shared blind
+spot pass every branch. **Merge-order attacks** hide harmful interactions until
+a particular integration sequence. **Provenance laundering** transfers state
+or artifacts while dropping lineage, consent, license, or contamination.
+**Branch starvation** prevents alternatives from receiving enough resources to
+challenge an incumbent. **Controller capture** lets the process choose the
+metric that justifies its own rewrite. **Archive erasure** removes rollback and
+forensic evidence. **Held-out leakage** turns evaluation into an adaptation
+channel. **Topology thrashing** burns resources and makes causal attribution
+impossible.
+
+Controls include correlation-aware breadth, independent anchors, explicit
+authority edges, immutable topology decisions, versioned rewrite leases,
+resource floors and ceilings, merge-order tests, provenance-preserving
+transformations, sealed held-outs, archive and deletion policy, canaries,
+oscillation limits, and effect-complete rollback. These controls can slow
+learning or entrench bad evaluators. Their compute, latency, storage, human
+review, and institutional costs belong in the result.
+
+## Minimum Viable Implementation
+
+The supplied package is stronger than a prose-only proposal. It includes an
+EBNF grammar, JSON schema, LCT-IR specification, LCNF specification, ABVI
+specification, proposition document, terminology, coverage and novelty
+matrices, Python loader/type checker/normalizer/compiler/scheduler/simulator,
+CLI, nine executable encodings, normalized outputs, schedules, trace examples,
+tests, and toy/analytical phase data. The archive checksum manifest covers 127
+files; every listed digest matched during ingestion. Its 11 unit tests pass.
+
+That evidence ceiling is narrow. The implementation demonstrates that a bounded
+language can be processed and that hand-authored examples satisfy the declared
+rules. It does not show stable independent normalization, compiler correctness,
+faithful real execution, predictive metrics, useful adaptive rewrites, or safer
+learning.
+
+## Mature Research Target
+
+The first serious campaign should be factorial rather than promotional.
+
+It must separate representation quality, scientific prediction, systems
+fidelity, and controller usefulness. A normal form may improve comparison while
+failing to predict outcomes; a compiler may preserve traces while costing too
+much; a topology metric may correlate only because model family changed; and a
+controller may find gains by exploiting its evaluator. Each result therefore
+needs its own frozen claim, baseline, intervention, and failure interpretation.
+
+1. Select natural workloads with different evaluator quality, branch
+   compatibility, communication cost, nonstationarity, and deployment capacity.
+2. Freeze model families, data, optimizer opportunity, tuning, evaluator
+   queries, compute, communication, storage, wall time, and human review.
+3. Have independent teams encode hidden mechanisms in LCT-IR and compare
+   normalization, disagreements, protected traces, and annotation cost.
+4. Hold learning topology constant while changing physical realization, then
+   hold physical resources constant while changing learning topology.
+5. Compare simple single-lineage, data-parallel, local/federated, population,
+   evolutionary, branch–merge, ensemble, distillation, modular, fixed-ABVI, and
+   adaptive-ABVI arms where competent implementations exist.
+6. Inject staleness, compression, dropped messages, partial failure, evaluator
+   noise, correlated candidates, Sybil branches, merge-order interactions,
+   starvation, held-out leakage, and controller reward hacking.
+7. Measure accepted usefulness, unsafe release, abstention, retained
+   capabilities, evaluator information, integration retention, calibration,
+   latency, work, span, communication, memory, storage, energy where measurable,
+   recovery, operator burden, governance cost, and all failed attempts.
+8. Preregister primitive, canonicality, equivalence, cost-model, predictive,
+   generative, and controller falsifiers. A failure narrows the corresponding
+   claim rather than being converted into proof that all branching or adaptive
+   topology is bad.
+
+Independent implementations and evaluators are essential because an IR can
+appear canonical when one author controls examples, normalization, and tests.
+Transfer across tasks, hardware, institutions, and time is required before a
+topology rule becomes a stack default.
+
+Two proof targets are intentionally planned rather than claimed as implemented:
+
+- `lean:learning_compute_topology.semantic_firewall_nonexpansion` will model a
+  bounded LCT source program and physical realization, then test whether an
+  admitted compilation can insert an adaptive identity, redirect a protected
+  semantic channel, replace integration semantics, or widen authority.
+- `lean:learning_compute_topology.semantic_cut_information_bound` will begin
+  with an explicit finite staged model without side channels and preserve the
+  paper proposition's assumptions rather than presenting a graph-shaped slogan
+  as an information-theoretic proof.
+
+Both targets require executable valid and rejecting fixtures first. Neither
+target can establish neural-training equivalence, empirical topology benefit,
+evaluator validity, safe self-modification, or superiority.
+
+The mature target is an independently implemented semantic compiler and
+topology laboratory in which natural systems can be encoded without privileged
+author guidance, equivalent processes preserve protected traces across
+different runtimes, and cost predictions survive physical deployment. Its
+controller should discover when to remain single-lineage, fork, specialize,
+synchronize, compose, distill, archive, restore, or stop, while independent
+governance prevents the controller from rewriting its own success conditions.
+Success requires both positive and negative transfer: the system should improve
+retained learning in preregistered regimes and decline to add complexity where
+strong fixed baselines are better.
+
+## Core Claim
+
+[learning-compute-topology-and-adaptive-process-architecture.core, label: Design rationale, support: argument] For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.
+
+**Reader claim.** Hardware parallelism and learning plurality are different.
+Count persistent adaptive histories, not devices, and name the evidence,
+judgement, credit, integration, and authority that connect them.
+
+**Operational rule.** Freeze a resolution contract; type every adaptive store
+and consequential edge; compile through a semantic firewall; return a
+realization receipt; and test topology changes against competent matched
+baselines with reversible integration and complete cost.
+
+## Non-claims
+
+- The chapter does not prove LCT is complete, unique, or universally canonical.
+- The paper's propositions do not prove empirical usefulness.
+- Passing package tests does not validate a neural-training implementation.
+- More adaptive identities are not necessarily better.
+- Branching does not create information without differentiated inputs or
+  dynamics.
+- Composition, merge, selection, distillation, and archive have no universal
+  ranking.
+- ABVI is a proposed topology, not an established best method.
+- A topology controller is not authorized to rewrite its evaluators, authority,
+  or release gates.
+- No result here establishes safe recursive self-improvement, SOTA, AGI, or ASI.
+
+## Source crosswalk
+
+| Source | What enters this chapter | Boundary retained |
+|---|---|---|
+| [`learning_compute_topology`](../papers/learning_compute_topology.html) | Four-topology distinction, adaptive identity, multiplex semantic channels, LCT-IR, LCNF, seven propositions, compiler firewall, metrics, derived designs, ABVI, reference package, phase studies, falsifiers, and attack surfaces. | Corben-authored primary source; bounded formal and executable artifacts do not establish empirical benefit, novelty, safety, transfer, SOTA, AGI, or ASI. |
+| `ext_megatron_distributed_training_2021` | Concrete composed data, tensor, and pipeline parallel execution comparator. | Worker and device parallelism do not establish persistent adaptive plurality. |
+| `ext_gspmd_2021` | Concrete compiler/partitioning comparator from tensor computation to device mesh. | Execution compilation does not authorize changes to learning identity, evaluation, credit, integration, or authority. |
+| `ext_pbt_2017` | Persistent population members, interim evaluation, copying, perturbation, and online schedule adaptation. | One population method does not validate the general LCT primitive set, normal form, metrics, or ABVI. |
+| `ext_openai_es_2017` | Wide proposal evaluation with a centralized adaptive parameter state. | Source-reported task and scaling results are configuration-bound; proposal width is not adaptive-state width. |
+
+The [detailed mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/learning_compute_topology.md)
+records every paper and supplement section family, exact package digests, the
+11-test receipt, cross-chapter disposition, and open research obligations. The
+paper's 42-item bibliography supplied leads for comparison; a cited work does
+not become book support until its primary source is independently inventoried
+and source-noted.
+
+## Summary
+
+Learning–Compute Topology supplies the missing contract between model design and
+distributed execution. It counts persistent adaptive histories instead of
+devices, types the semantic channels that change them, makes integration and
+lifecycle operations explicit, and requires physical realization to return a
+leakage receipt. LCT-IR, LCNF, seven bounded propositions, and the passing
+reference package make the proposal concrete, but they do not establish that
+the representation is complete or that adaptive topology improves learning.
+
+The practical discipline is to separate what the process means from how it is
+scheduled, then test both. A self-improving stack needs permissioned topology
+change because rearranging evidence, evaluators, credit, integration, or
+authority can matter as much as changing weights. It also needs the ability to
+reject that complexity when a simple lineage is better.
+
+That claim must leave argument through independent normalization, matched
+process-versus-compute experiments, adversarial controls, total-cost accounting,
+reproduction, and transfer.
+
+## Handoff
+
+Governed Model Training supplies a faithful run and realization record;
+Replaceable Cognitive Substrates supplies candidate kernels; and the adjacent
+owners consume the typed semantic channels. **Learning Theory, Generalization, and Scaling Science**
+now receives the topology identity, task regime, metrics,
+costs, failed attempts, and candidate family to test whether any claimed
+topology-conditioned law survives held-out scale, architecture, task, optimizer,
+hardware, and time. A represented process is not a generalization result.
+
+The decisive next step is not another taxonomy. It is an independently encoded,
+matched natural campaign in which learning-process topology and physical
+compute topology are varied separately and every failure remains visible.

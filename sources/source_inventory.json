@@ -8313,5 +8313,52 @@
     "published": "2026-08-04",
     "updated": "2026-08-04",
     "citation_label": "Sorenson (2026), The Regret Engine"
+  },
+  {
+    "id": "ext_pbt_2017",
+    "title": "Population Based Training of Neural Networks",
+    "priority": "external_literature",
+    "layer": "population_based_adaptive_training",
+    "chapter_targets": [
+      "learning-compute-topology-and-adaptive-process-architecture",
+      "governed-model-training-distributed-optimization-and-scaling",
+      "open-ended-improvement-engines"
+    ],
+    "url": "https://arxiv.org/abs/1711.09846",
+    "notes": "Primary Population Based Training source for asynchronous joint optimization of a population's model parameters and hyperparameter schedules through evaluation, exploitation, and exploration. Source-reported reinforcement-learning, translation, and GAN results remain task- and implementation-bound and do not validate LCT, universal topology adaptation, safety, or superior total lifecycle cost.",
+    "source_type": "arxiv",
+    "arxiv_id": "1711.09846",
+    "published": "2017-11-27",
+    "updated": "2026-08-09",
+    "citation_label": "Jaderberg et al. (2017), Population Based Training of Neural Networks",
+    "doi": "10.48550/arXiv.1711.09846"
+  },
+  {
+    "id": "learning_compute_topology",
+    "title": "Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems",
+    "priority": "must_use",
+    "layer": "adaptive_process_architecture_and_learning_topology",
+    "chapter_targets": [
+      "learning-compute-topology-and-adaptive-process-architecture",
+      "governed-model-training-distributed-optimization-and-scaling",
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "routing-heads-and-specialist-cores",
+      "policy-optimization-and-learning-from-feedback",
+      "data-engines-continual-learning-and-unlearning",
+      "open-ended-improvement-engines",
+      "resource-economics-and-token-budgets",
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.md@sha256:4fd869f01f4c0782e6e2f1d657b6c84e87ced82e652126aae395123a04fac712",
+    "notes": "Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI.",
+    "source_type": "author_research_paper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof.",
+    "published": "2026-08-09",
+    "updated": "2026-08-09",
+    "citation_label": "Sorenson (2026), Learning–Compute Topology"
   }
 ]

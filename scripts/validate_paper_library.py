@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from sync_paper_library import MANIFEST, RECEIPTS, load_json, synchronize
+from sync_paper_library import MANIFEST, RECEIPTS, STRUCTURE, load_json, synchronize
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,10 +46,18 @@ def rendered_errors(site: Path) -> list[str]:
     if 'papers/index.html' not in landing_text and 'href="papers/"' not in landing_text:
         errors.append("rendered landing page does not link the paper library")
 
+    structure = load_json(STRUCTURE)
+    canonical_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+    ) if isinstance(structure, dict) else 0
     numeric_chapters = [int(value) for value in CHAPTER_NUMBER_RE.findall(landing_text)]
-    if not numeric_chapters or max(numeric_chapters) != 85:
+    if not numeric_chapters or max(numeric_chapters) != canonical_chapter_count:
         maximum = max(numeric_chapters) if numeric_chapters else "none"
-        errors.append(f"rendered living-book navigation must end at canonical chapter 85, found {maximum}")
+        errors.append(
+            f"rendered living-book navigation must end at canonical chapter {canonical_chapter_count}, found {maximum}"
+        )
 
     html_pages = [index]
     for record in records:

@@ -28,7 +28,7 @@ open_evidence_gaps:
 | Primary source records | `ext_nist_privacy_enhancing_cryptography_2026`, `ext_zkllm_2024`, `ext_ietf_rats_architecture_2023` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Assigned primary sources have bounded source notes; no source result is reproduced locally. |
+| Source loading state | source notes: `ext_nist_privacy_enhancing_cryptography_2026`, `ext_zkllm_2024`, `ext_ietf_rats_architecture_2023` |
 | Test state | The 31-declaration `AsiStackProofs.ProtectedComputationReview` model and independent 48-axis consumer pass locally; this mechanizes only the bounded protected-execution dossier, not cryptographic security, hardware trust, privacy, authorization, or acceptable deployment cost. |
 
 ## Drafting guardrail

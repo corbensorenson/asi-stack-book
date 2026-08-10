@@ -39,7 +39,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
-| Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
+| Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `precision_contract`, `ext_reluplex_2017`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
 | Test state | Proof manifest sync, local Lean build, protocol fixtures, depth and adequacy audits, and the formal semantic-depth record pass locally. The proof-artifact audit independently recompiles the exact 28-declaration `AsiStackProofs.ProofEnvelope` surface, executes a ten-event authority-lease trace, checks eleven composition splits, rejects 33 route cases, exercises expiry and a thin-summary collision, and rejects 19 complete-transport mutations; no artifact truth, arbitrary theorem adequacy, implementation refinement, support movement, or deployed enforcement is established. |
 
 ## Drafting guardrail
@@ -682,9 +682,9 @@ or support-state movement.
 | `circle_ai_contract_suite` | Circle Calculus AI Contract Suite | proof_carrying_ai_contracts | Theorem-linked AI contract families with explicit non-claims. | source note available |
 | `rope_position_certifier` | Proof-Carrying RoPE Position Distinguishability | proof_carrying_position_contract | Exact/discretized RoPE position receipt boundaries and non-claims. | source note available |
 | `proof_carrying_circular_computation` | Proof-Carrying Circular Computation | proof_carrying_compute_substrate | Certified cyclic address/rewrite track with benchmark boundary. | source note available |
-| `cca_project` | Constructive Cognitive Architecture | local historical-project lineage | Abstraction maps, typed calculus boundaries, by-construction properties, and the difference between contract structure and broader semantics. | public-safe source note available; project not replayed |
-| `moecot_manifest_project` | MoECOT Manifest compiler-era project | local historical-project lineage | Pass/reproducer/legality artifacts, internal-contract breadth, and the boundary between executable models and external behavior. | public-safe source note available; project not replayed |
-| `corbens_best_model_possible_project` | Corben's Best Model Possible | local historical-project lineage | Negative cases for vacuous checks, playback/live-replay confusion, absent current builds, and missing implementation binding. | public-safe source note available; project not replayed |
+| `cca_project` | Constructive Cognitive Architecture | local historical-project lineage | Abstraction maps, typed calculus boundaries, by-construction properties, and the difference between contract structure and broader semantics. | source note available |
+| `moecot_manifest_project` | MoECOT Manifest compiler-era project | local historical-project lineage | Pass/reproducer/legality artifacts, internal-contract breadth, and the boundary between executable models and external behavior. | source note available |
+| `corbens_best_model_possible_project` | Corben's Best Model Possible | local historical-project lineage | Negative cases for vacuous checks, playback/live-replay confusion, absent current builds, and missing implementation binding. | source note available |
 
 ### Manifest source assignment reconciliation
 

@@ -37,6 +37,7 @@ simulation, synchronization, or energy cost.
 ## Book Chapters Supported
 
 - `governed-model-training-distributed-optimization-and-scaling`
+- `learning-compute-topology-and-adaptive-process-architecture`
 - `policy-optimization-and-learning-from-feedback`
 - `resource-economics-and-token-budgets`
 

@@ -387,7 +387,7 @@ def main() -> None:
         roles = role_map.get("roles", {})
         expected_role_counts = {
             "thesis-bearing": 11,
-            "load-bearing-reference": 55,
+            "load-bearing-reference": 56,
             "implementation-case": 7,
             "speculative-research": 12,
         }
@@ -421,7 +421,7 @@ def main() -> None:
         }.items():
             for role_label, expected_count in (
                 ("Thesis-bearing", 11),
-                ("Load-bearing reference", 55),
+                ("Load-bearing reference", 56),
                 ("Implementation case", 7),
                 ("Speculative research", 12),
             ):

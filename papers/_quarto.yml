@@ -4,6 +4,7 @@ project:
   output-dir: ../_site/papers
   resources:
     - "source/*"
+    - "assets/**"
   render:
     - index.qmd
     - deterministic_capability_compilation.qmd
@@ -53,6 +54,7 @@ project:
     - bugbrain.qmd
     - software_magic_grimoire.qmd
     - viea.qmd
+    - learning_compute_topology.qmd
 
 lang: en-US
 
@@ -119,6 +121,7 @@ website:
           - bugbrain.qmd
           - software_magic_grimoire.qmd
           - viea.qmd
+          - learning_compute_topology.qmd
 
 format:
   html:

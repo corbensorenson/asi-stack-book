@@ -37,7 +37,7 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | Nine primary or official records cover privacy-risk governance, one jurisdiction's principles and rights, a semantic vocabulary, DP-SGD, purpose restriction, extraction, label-only membership inference, DP evaluation, and empirical auditing. All reported results remain source-reported. |
+| Source loading state | source notes: `ext_nist_privacy_framework_2020`, `ext_eu_gdpr_2016`, `ext_w3c_dpv_2024`, `ext_abadi_dpsgd_2016`, `ext_algospec_purpose_limitation_2024`, `ext_carlini_training_data_extraction_2021`, `ext_choquette_choo_label_only_mia_2021`, `ext_nist_differential_privacy_2025`, `ext_mahloujifar_fdp_audit_2025`, `theseus_synthetic_data_curation`, `ext_nist_privacy_enhancing_cryptography_2026`, `ext_who_neurotechnology_landscape_2025` |
 | Test state | One authored lifecycle transaction, JSON Schema, semantic validator, and rejecting mutations are implemented. The natural six-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Two public targets are implemented in `AsiStackProofs.PrivacyInformationFlow`. Their ceiling is finite authored record-route semantics. |
 

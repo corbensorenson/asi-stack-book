@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 85 |
+| Manifest chapter core claims | 86 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 63 |
+| Accepted no-promotion dispositions | 64 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 85 |
+| Core claims remaining at `argument` | 86 |
 
 ## Dispositions
 
@@ -74,6 +74,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A bounded heterogeneous-kernel substitution and mixed-kernel route reproduce and transfer without authority widening, exact-state loss, hidden assistance, unsafe release, or dominated lifecycle cost; otherwise narrow or refute the relevant atoms. |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | RDC improves natural and synthetic role-sensitive tasks over competent lower-order rescues under matched compute and memory, preserves calibration and lifecycle integrity, and reproduces independently; no irreducibility, universal arity, general-intelligence, or SOTA claim. |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Across multiple seeds and representative model scales, a governed run preserves declared semantics and state under fault and resume, selects without qualification leakage, beats strong distributed-training and checkpoint baselines on joint time-to-quality, recovery correctness, useful throughput, and governance cost, and reproduces independently without granting release authority. |
+| `learning-compute-topology-and-adaptive-process-architecture.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Independent encoders agree within a frozen equivalence tolerance; the semantic compiler predicts protected trace and cost differences; topology metrics add held-out predictive value beyond model, task, optimizer, and hardware variables; and a governed adaptive topology improves retained useful learning over competent matched fixed baselines without exceeding preregistered unsafe-release, rollback, latency, storage, and governance-cost ceilings across reproduction and transfer. |
 | `learning-theory-generalization-and-scaling-science.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Frozen curve families and explanatory lenses predict held-out scale/task points with calibrated intervals and survive metric-artifact and regime-break tests; no universal scaling law. |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/readiness_residual_no_change.json` | Promotion blocked on expired evidence or uncustodied residuals. |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Lease fixture proves bounded compute delegation and revocation. |

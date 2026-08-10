@@ -4983,17 +4983,82 @@ unlisted but are not linked because their chapters changed after upload and
 their bound digests are stale. This is a preview-only projection and changes
 neither support, claim, release, nor public-current state.
 
+## Learning–Compute Topology successor lane
+
+The 2026-08-09 intake of *Learning–Compute Topology: Formalizing the Causal
+Organization of Adaptive Systems* closes the manuscript-placement question: the
+concept is broad and load-bearing enough to own a chapter in Part III, while
+ten existing owners carry its cross-stack consequences. The source archive,
+paper-library edition with thirteen figures, detailed source note, 86th
+chapter, source mappings, reader projection, claim adjudication, and two planned
+formal targets are present. That is conceptual and provenance completion, not
+an empirical result.
+
+The remaining LCT program is ordered as follows:
+
+1. **Independent representation and conformance.** Freeze a public LCT-IR
+   corpus containing ordinary, ambiguous, invalid, and adversarial process
+   descriptions. Have an implementation independent of the source package
+   encode and normalize them. Report agreement, disagreement, annotation cost,
+   hidden assumptions, rejected graphs, and noncanonical alternatives.
+2. **Semantic compiler firewall.** Define protected observables and typed
+   source-to-realization refinement. Exercise identity insertion, identity
+   collapse, evidence and evaluator rerouting, credit drift, integration
+   substitution, authority widening, hidden state carriage, staleness,
+   compression, dropped work, reordered updates, and side channels. A passing
+   schedule is not semantic preservation.
+3. **Formalize only bounded claims.** Implement
+   `lean:learning_compute_topology.semantic_firewall_nonexpansion` after the
+   executable contract is stable. Treat
+   `lean:learning_compute_topology.semantic_cut_information_bound` as a finite
+   staged, no-side-channel theorem first; preserve the paper's information-
+   theoretic assumptions and do not convert graph vocabulary into proof.
+4. **Separate topology from resources.** Run a factorial campaign that holds
+   learning topology fixed while physical realization changes, then holds
+   resources fixed while learning topology changes. Match model, data,
+   optimizer opportunity, evaluator queries, accelerator and CPU time, memory,
+   storage, network, wall time, tuning, failures, and human work.
+5. **Test strong process families.** Compare competent single-lineage,
+   distributed-gradient, local/federated, population-based, evolutionary,
+   branch–merge, ensemble, distillation, modular, fixed-ABVI, and adaptive-ABVI
+   arms only where the implementation and evaluator pass prospective
+   competence gates. Population Based Training is the nearest adaptive-
+   schedule comparator, not evidence for the LCT proposal.
+6. **Measure the whole learning process.** Keep discovery, evaluation,
+   integration, retained capability, unsafe release, abstention, calibration,
+   evaluator information, learning bandwidth, integration retention,
+   topological regret, latency, work, span, communication, memory, storage,
+   energy where measurable, recovery, operator burden, governance cost, and
+   every failed branch visible together.
+7. **Attack topology governance.** Test Sybil breadth, evaluator monoculture,
+   merge-order attacks, provenance laundering, branch starvation, controller
+   capture, archive erasure, held-out leakage, topology thrashing, deletion and
+   privacy conflicts, and rollback that restores weights while leaving
+   descendants or external effects changed.
+8. **Admit only scoped outcomes.** A normal-form agreement result, compiler
+   trace, toy phase diagram, formal cut bound, or successful controller run
+   stays on its own claim axis. Broader process-architecture guidance requires
+   natural workloads, matched strong baselines, causal ablations, independent
+   implementation, reproduction, and materially different transfer settings.
+
+This lane does not authorize a second LCT chapter. Add one only if later work
+finds a genuinely independent owner that cannot be integrated into Learning–
+Compute Topology, Governed Model Training, Policy Optimization, Data Engines,
+Routing, Resource Economics, Open-Ended Improvement, Adversarial Evaluation,
+Replaceable Substrates, Multi-Agent Dynamics, or the Integrated Reference
+Architecture without collapsing their boundaries.
+
 ## Milestones
 
 | Milestone | State | Completion condition |
 |---|---|---|
-| M0 — Truth and identity control | in progress | Preserve the historical clean `main` checkpoint at `cef11abd5fca0a421087b3123c1defb31f2b4e6d` and its build/deploy receipts without mislabeling it as the current tree. Generate current 84-chapter status from canonical owners, reject repeated-field drift, expose claim-kind maturity without cross-kind promotion, and keep exact current `main`/public custody through every later evidence checkpoint. |
+| M0 — Truth and identity control | in progress | Preserve the historical clean `main` checkpoint at `cef11abd5fca0a421087b3123c1defb31f2b4e6d` and its build/deploy receipts without mislabeling it as the current tree. Generate current 86-chapter status from canonical owners, reject repeated-field drift, expose claim-kind maturity without cross-kind promotion, and keep exact current `main`/public custody through every later evidence checkpoint. |
 | M1 — Negative-result rehabilitation | completed | All 90 accepted negative/no-change transitions are classified (1 N0, 15 N1, 74 N2, zero N3–N5), and the frozen 75-surface snapshot including the then-live 55 chapters preserves the resulting ceilings. |
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth and composition | in progress | Preserve the terminal six-cluster local audit, complete dependency-safe theorem-family rationalization, and close one explicitly bounded connected-owner model over the eight global invariants and ten distributed faults. Every family has a real consumer and seven-field admission record; no aggregate theorem count or finite authored record grants empirical, operational, institutional, or whole-system support. |
 | M5 — Effect-complete reference | in progress | Two bounded local slices and one outcome-aware natural publication happy path are retained at their exact scopes. The frozen five-arm campaign now has a terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates. It ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
-| M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 85 owners and exact atom or formal-target custody for all 85; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, and work-surface manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
+| M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 86 owners and exact claim or formal-target custody for all 86; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, work-surface, and learning-topology manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Independent narrative and derivative disposition | in progress | Preserve `reader-2026-07-18` and the current 84-chapter virtual derivative as immutable historical receipts. Complete an independently maintained 22-unit, 120,000-180,000-word human manuscript with conclusion/claim crosswalk and editorial review; defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains a separately owned derivative lane with its existing captions, transcripts, hosting, and authority gates; it cannot substitute for or block narrative completion. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 

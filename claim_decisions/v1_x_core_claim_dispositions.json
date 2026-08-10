@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-24",
-  "scope_boundary": "Standing per-chapter disposition record for the 85 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 86 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 85,
+    "manifest_chapter_core_claims": 86,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 63,
+    "accepted_no_promotion_dispositions": 64,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 85
+    "chapter_core_claims_remaining_at_argument": 86
   },
   "dispositions": [
     {
@@ -2256,7 +2256,7 @@
         "does not treat nominal agent count, aggregate reward, or simulated stability as effective diversity or social evidence",
         "does not forecast society or establish institutional legitimacy, readiness, safe deployment, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 7 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Positive-controlled population sandbox plus network, game-theoretic, institutional, and longitudinal human-influence measurements",
       "formal_or_prototype_work": "Implement identity/copy/owner graphs, effective-diversity estimates, incentive and information interventions, collusion and coalition controls, cascade and common-mode faults, entry/exit, displaced-externality receipts, and the planned pairwise-validity non-promotion invariant.",
@@ -2381,7 +2381,7 @@
         "does not prove OneCell, KAN, Mamba, recurrent, memory-augmented, continuous-time, or hybrid architecture quality",
         "does not prove governed architectural self-improvement, safety, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 52 assigned sources; 42 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 53 assigned sources; 42 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Source-reviewed Cognitive Kernel ABI contract, architecture taxonomy, 15-atom claim addendum, and one planned formal target",
       "formal_or_prototype_work": "Implement three heterogeneous kernels and an independent malicious-kernel checker; prove/refine proposal-effect, authority, checkpoint, revocation, fallback, and lineage invariants; run matched equal-active-parameter and equal-total-lifecycle-cost tournaments plus the frozen-core ratchet.",
@@ -2460,12 +2460,50 @@
         "does not prove that a completed job, falling loss, high utilization, checkpoint file, successful load, or selected candidate is qualified",
         "does not prove safety, support, readiness, release, transfer, SOTA, AGI, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 32 assigned sources; 31 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 33 assigned sources; 31 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Source-reviewed distributed-training packet, exact training-run transaction fixture, formal admission invariants, and prospective five-arm fault campaign",
       "formal_or_prototype_work": "Implement the frozen campaign with strong manual-composition, compiler-planned, sharded, and checkpoint-strategy comparators; exercise thirteen fault families, twelve competence gates, complete attempted-run denominators, full-state capture, exact and bounded-equivalence resume, validation-only checkpoint-family selection, hidden qualification, and independent reproduction.",
       "human_reader_focus": "Explain training as a governed transaction whose result is a qualified candidate, not as loss curves, accelerator utilization, or checkpoint files that silently become evidence or authority.",
       "what_would_move_this": "Across multiple seeds and representative model scales, a governed run preserves declared semantics and state under fault and resume, selects without qualification leakage, beats strong distributed-training and checkpoint baselines on joint time-to-quality, recovery correctness, useful throughput, and governance cost, and reproduces independently without granting release authority.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "learning-compute-topology-and-adaptive-process-architecture.core",
+      "chapter_id": "learning-compute-topology-and-adaptive-process-architecture",
+      "chapter_title": "Learning\u2013Compute Topology and Adaptive Process Architecture",
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_file": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "independent LCT-IR and LCNF implementations with hidden-mechanism normalization agreement and protected-trace equivalence tests",
+        "matched factorial natural campaign separating learning-process topology from physical compute topology under complete resource and failure accounting",
+        "competent fixed and adaptive baselines, adversarial topology controls, independent evaluation, reproduction, transfer, and an accepted scope-bounded evidence transition"
+      ],
+      "blockers": [
+        "no independent mechanization or implementation agreement",
+        "no real neural, symbolic, evolutionary, federated, multi-agent, embodied, or continual-learning outcome run",
+        "author-lineage propositions, package tests, manual matrices, and toy diagrams cannot promote empirical or safety support"
+      ],
+      "promotion_burden": "The complete Corben-authored package supplies seven bounded propositions, a typed IR and normal form, 11 passing unit tests, scoped comparison matrices, and toy or analytical phase studies, but no independent formalization, natural learning campaign, topology-metric prediction, semantic-compiler deployment, adaptive-controller benefit, reproduction, transfer, safety, or total-cost result has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not establish a complete or uniquely canonical learning-process formalism, a useful topology metric, ABVI benefit, or safe topology control",
+        "does not establish superiority, readiness, deployment, transfer, SOTA, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 5 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Complete digest-bound LCT paper package, seven bounded propositions, typed IR and normal-form specifications, 11 passing package tests, scoped comparison matrices, toy/analytical phase data, and an unexecuted natural campaign",
+      "formal_or_prototype_work": "Independently implement and normalize hidden natural mechanisms; cross learning-process and physical-compute topologies under equal total budgets; compare competent fixed, population, evolutionary, federated, modular, and ABVI baselines; inject semantic-leakage, evaluator, integration, Sybil, controller, archive, and rollback failures; and preserve every attempt, cost, disagreement, and negative result.",
+      "human_reader_focus": "Teach the difference between model, learning-process, execution, and physical topology through persistent adaptive identities, typed semantic channels, an end-to-end compiler receipt, and one concrete branch\u2013validate\u2013integrate trace without presenting the formalism as an empirical result.",
+      "what_would_move_this": "Independent encoders agree within a frozen equivalence tolerance; the semantic compiler predicts protected trace and cost differences; topology metrics add held-out predictive value beyond model, task, optimizer, and hardware variables; and a governed adaptive topology improves retained useful learning over competent matched fixed baselines without exceeding preregistered unsafe-release, rollback, latency, storage, and governance-cost ceilings across reproduction and transfer.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -3321,7 +3359,7 @@
         "does not prove resistance to sandbagging or reward hacking",
         "does not prove evaluator correctness or safety"
       ],
-      "current_evidence_summary": "Source notes available for all 10 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 11 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Five comparator families plus eight owned routes and an eight-case/five-mutation integrity bridge",
       "formal_or_prototype_work": "Run the frozen benign cross-context campaign with visible/hidden monitor, update/no-update, elicitation, independent/correlated scorer, held-out, residual, and replay controls.",
@@ -3640,7 +3678,7 @@
         "does not prove cross-layer safety or open-world joinability",
         "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Source notes available for all 37 assigned sources; 32 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 38 assigned sources; 32 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "End-to-end Theseus report plus architecture trace",
       "formal_or_prototype_work": "Build a public-safe thin vertical slice through several layers.",

@@ -354,6 +354,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Training-run transaction contract | implemented | authored_record_only_no_training_effect |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Natural distributed fault campaign | planned | prospectively_frozen_unexecuted |
 | `governed-model-training-distributed-optimization-and-scaling` | Governed Model Training, Distributed Optimization, and Scaling | Independent run replay | planned | blocked_by_valid_campaign |
+| `learning-compute-topology-and-adaptive-process-architecture` | Learning–Compute Topology and Adaptive Process Architecture | LCT-IR bounded reference conformance | implemented in supplied package | 11 of 11 unit tests pass locally; no neural-training or topology-benefit result |
+| `learning-compute-topology-and-adaptive-process-architecture` | Learning–Compute Topology and Adaptive Process Architecture | Independent normalization and semantic-equivalence audit | planned | unexecuted |
+| `learning-compute-topology-and-adaptive-process-architecture` | Learning–Compute Topology and Adaptive Process Architecture | Learning-topology versus compute-topology factorial campaign | planned | unexecuted |
+| `learning-compute-topology-and-adaptive-process-architecture` | Learning–Compute Topology and Adaptive Process Architecture | Adaptive topology controller and attack campaign | planned | unexecuted |
 | `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Contract completeness mutation test | planned | not run |
 | `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Adjacent-owner boundary substitution test | planned | not run |
 | `learning-theory-generalization-and-scaling-science` | Learning Theory, Generalization, and Scaling Science | Mechanism-specific failure-family test | planned | not run |
@@ -711,18 +715,18 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 333 |
+| Proof targets covered by triage | 335 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 330 |
-| planned | 3 |
+| planned | 5 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 330 |
-| planned | formal-invariant | lean-candidate | 3 |
+| planned | formal-invariant | lean-candidate | 5 |

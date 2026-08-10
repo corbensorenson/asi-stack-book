@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Assigned source records | `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023`, `ext_adas_2024`, `ext_darwin_godel_machine_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All eight assigned source notes are reviewed and mapped. POET, FunSearch, Voyager, ADAS, and Darwin Gödel Machine remain source-setting comparators; RMI, Cognitive Loop Closure, and Benchmaxxing remain conceptual architecture sources. No source system has been reproduced. |
+| Source loading state | source notes: `learning_compute_topology`, `rmi`, `cognitive_loop_closure`, `benchmaxxing`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`; raw cache: `rmi`, `cognitive_loop_closure`, `benchmaxxing` |
 | Test state | `python3 scripts/validate_open_ended_improvement_campaign.py` recomputes seven finite Boolean routes, checks seven Lean theorem names and the fixture digest, and rejects ten mutations. Post-v2 and post-v2.1 supply fixed stopped update campaigns. No generated task distribution, candidate search, evolving archive, independent evaluator behavior, stop effect, natural workload, or open-ended result exists. |
 
 ## Drafting guardrail
@@ -191,6 +191,34 @@ hazardous payload, natural workload, independent replication, or transfer
 campaign has run.
 
 ## Mechanism
+
+### Open-endedness includes process morphology
+
+An improvement engine can search artifacts, policies, environments, modules,
+or model architectures while keeping the organization of learning fixed.
+Learning–Compute Topology adds a distinct search object: **process morphology**.
+The controller may propose when identities split or coarsen, how evidence and
+evaluators are allocated, which integration operators act on which subsets,
+where knowledge is retained, and how commitment becomes more or less
+reversible.
+
+This is not permission for unrestricted reflexive rewiring. Semantics-
+preserving process superoptimization changes schedule or placement inside a
+frozen contract. Topology synthesis changes identity, judgement, credit,
+integration, lifecycle, or authority and therefore creates a new campaign
+candidate. The proposal must carry a counterfactual, resource envelope,
+protected observables, independent evaluation, rewrite lease, archive policy,
+rollback, and stopping rule.
+
+The strongest generated candidate in the source is Adaptive Branch–Validate–
+Integrate: branch only when uncertainty or option value justifies it; design
+differentiated evidence rather than copies; allocate evaluator capacity by
+impact and uncertainty; select merge, distillation, composition, archive, or
+retirement by compatibility; and retain shadow branches when irreversible
+integration is premature. Its value is a falsifiable topology, not a result.
+The engine should abandon it if competent fixed baselines match its retained
+learning at lower total cost or if controller attacks, thrashing, and evaluator
+capture cannot be bounded.
 
 Before outcomes exist, freeze the consumer, purpose, legitimate objective,
 allowed claim, representation, campaign controller, task and candidate
@@ -668,6 +696,15 @@ effective stop and quarantine behavior.
 | `ext_voyager_2023` | Voyager: An Open-Ended Embodied Agent with Large Language Models | Comparator for curriculum, skill-library, feedback, execution-error, and self-verification mechanisms in Minecraft; not evidence of independent evaluation or local learning. |
 | `ext_darwin_godel_machine_2025`, `ext_adas_2024` | Current empirical self-improvement and architecture-search comparators | Compare branching archives, code-defined candidates, benchmark selection, and transfer claims without treating source-reported gains as safe general improvement or local evidence. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Open-Ended Improvement Engines's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `learning_compute_topology` | Passage-reviewed comparator: [Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems](../papers/learning_compute_topology.html). Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI. | The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2 stopped campaign result
 
 The update-causality program supplies a real but deliberately closed campaign:

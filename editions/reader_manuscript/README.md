@@ -2,7 +2,7 @@
 
 This directory preserves tracked human-reader derivative snapshots. The
 canonical current reader path is generated from the live manifest with
-`scripts/build_reader_edition.py`; it currently derives all 85 chapters, then
+`scripts/build_reader_edition.py`; it currently derives all 86 chapters, then
 applies the tracked semantic overlays. No tracked historical directory is a
 current-spine authority.
 

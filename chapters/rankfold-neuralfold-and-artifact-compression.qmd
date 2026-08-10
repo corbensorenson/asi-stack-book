@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
-| Source loading state | exact passage-reviewed mappings exist for all six assigned sources; local lineage sources remain design context and RAPTOR remains a bounded external comparator, not local performance evidence. |
+| Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`, `ext_raptor_2024`, `precision_contract`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
 | Test state | The exact fixture, RAW0 replay, NEURAL0 metadata import, and two no-change decisions remain valid. `AsiStackProofs.ArtifactCompressionRefinement` now supplies 27 theorems over eight reachable stages and 53 routes, exact-use and failed-probe fallback witnesses, arbitrary-run identity/non-authority/receipt/fallback invariants, trace composition, closure absorption, and an independent consumer rejecting 143/143 mutations. Two legacy countermodels remain and seventeen projections or flat route consequences are retired. NeuralFold compression reproduction, deployed fallback execution, corpus benchmarking, and downstream utility remain unrun. |
 
 ## Drafting guardrail
@@ -798,7 +798,7 @@ This finite model does not prove decoder or codec correctness, NeuralFold reprod
 | `bbvca_v9` | BBVCA_v9_final_public_release | compression_representation | Prefer v9. Generate-verify-repair compression from seeded local laws, bounded search, two-phase rate discipline. | source note available; local raw cache available |
 | `cgs` | Compact Generative Systems | compression_representation | Smallest adequate structure that can generate/govern target without hiding residual complexity. | source note available; local raw cache available |
 | `bugbrain` | BugBrain | edge_efficiency_lineage | Edge/resource-aware implementation context. | source note available; local raw cache available |
-| `ext_raptor_2024` | RAPTOR | hierarchical_retrieval_and_abstraction | Multi-level recursive-summary comparator for artifact compression, source bindings, omissions, and loss boundaries. | source note available; no local fidelity or RankFold/NeuralFold result |
+| `ext_raptor_2024` | RAPTOR | hierarchical_retrieval_and_abstraction | Multi-level recursive-summary comparator for artifact compression, source bindings, omissions, and loss boundaries. | source note available |
 
 The crosswalk keeps the implementation hypothesis bounded. `rankfold_neuralfold` supplies the mature artifact-archive framing, `rankfold_compressor` preserves low-rank/tensor lineage, `bbvca_v9` supplies reconstruction and rate-accounting discipline, `cgs` supplies residual honesty, and `bugbrain` keeps edge-resource constraints visible. None of them should be used to report ratios until a decoder and benchmark harness exist.
 

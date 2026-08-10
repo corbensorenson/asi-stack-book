@@ -377,7 +377,7 @@
             "phase1_audit_path",
             "narrative_spine_path",
             "narrative_unit_crosswalk_path",
-            "all_85_idea_placement_gate_state",
+            "all_86_idea_placement_gate_state",
             "phase2_proof_execution_allowed",
             "c6_current_semantic_overlay",
             "review_path",
@@ -413,10 +413,10 @@
               "const": "current_only_for_named_consumers_after_phase1_exit"
             },
             "concept_first_exit_gate": {
-              "const": "all_85_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+              "const": "all_86_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
             },
             "concept_first_exit_gate_state": {
-              "const": "passed_85_responsibilities_63_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
+              "const": "passed_86_responsibilities_64_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
             },
             "concept_first_idea_audit": {
               "type": "object",
@@ -519,8 +519,8 @@
             "narrative_unit_crosswalk_path": {
               "const": "products/narrative_unit_crosswalk.json"
             },
-            "all_85_idea_placement_gate_state": {
-              "const": "passed_exact_85_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+            "all_86_idea_placement_gate_state": {
+              "const": "passed_exact_86_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
             },
             "phase2_proof_execution_allowed": {
               "const": true
@@ -626,7 +626,7 @@
               "const": "evidence_quality/current_chapter_role_map.json"
             },
             "reference_chapter_count": {
-              "const": 85
+              "const": 86
             },
             "narrative_unit_target": {
               "const": 22
@@ -1429,11 +1429,11 @@
     "activation_truth": {
       "const": {
         "latest_public_living_book_release": "v2.3.0",
-        "live_working_chapter_count": 85,
+        "live_working_chapter_count": 86,
         "activation_registry_atom_count": 3730,
         "post_activation_addendum_atom_count": 15,
         "total_structured_atom_count": 3745,
-        "chapter_core_argument_count": 85,
+        "chapter_core_argument_count": 86,
         "chapter_core_promotion_count": 0,
         "activation_registry_non_argument_atom_count": 2,
         "blocked_after_full_attempt_atom_count": 3698,
@@ -1451,8 +1451,8 @@
         "competence_qualified_natural_non_authored_empirical_transition_count": 0,
         "external_reproduction_count": 0,
         "sota_supported_count": 0,
-        "proof_target_count": 333,
-        "lean_module_count": 130,
+        "proof_target_count": 335,
+        "lean_module_count": 132,
         "theorem_declaration_count": 3153,
         "derived_or_decomposed_theorem_count": 1978,
         "direct_or_projection_theorem_count": 447,

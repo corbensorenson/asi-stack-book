@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.narrative_unit_crosswalk.v0",
   "status": "phase_1_idea_placement_route",
-  "canonical_chapter_count": 85,
+  "canonical_chapter_count": 86,
   "narrative_unit_count": 22,
   "assignment_rule": "Every canonical chapter belongs to exactly one reader-facing narrative unit. The representative chapter carries the unit orientation; every other chapter remains a canonical reference owner and is routed, not merged or demoted.",
   "units": [
@@ -189,6 +189,7 @@
       "representative_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
       "chapter_ids": [
         "governed-model-training-distributed-optimization-and-scaling",
+        "learning-compute-topology-and-adaptive-process-architecture",
         "learning-theory-generalization-and-scaling-science",
         "policy-optimization-and-learning-from-feedback",
         "data-engines-continual-learning-and-unlearning",

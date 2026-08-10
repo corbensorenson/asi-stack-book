@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Primary source records | `ext_mcp_protocol_2025_11_25`, `ext_a2a_protocol_1_0_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4`, `talos`, `vcm_public`, `tokenmana`, `ext_owasp_agentic_top_10_2026`, `qcsa_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | All ten assigned sources are passage-reviewed at bounded scope. The standards define comparators; OWASP supplies threat categories; Talos, VCM, TokenMana, and QCSA supply adjacent design or bounded-result context. No protocol, identity, credential, settlement, or peer workflow ran. |
+| Source loading state | source notes: `ext_mcp_protocol_2025_11_25`, `platonic_world_model`, `ext_a2a_protocol_1_0_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4`, `talos`, `vcm_public`, `tokenmana`, `ext_owasp_agentic_top_10_2026`, `qcsa_whitepaper`, `ext_openclaw_agent_runtime_2026`; raw cache: `talos`, `vcm_public`, `tokenmana` |
 | Test state | Nine retained finite routes plus sixteen transaction-lifecycle results are implemented in Lean and bound to an independent nine-record/eleven-mutation fixture consumer plus a six-event/ten-rejection lifecycle consumer. No peer, message, credential, payment, settlement, or effect was exercised. |
 
 ## Drafting guardrail

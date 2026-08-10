@@ -24,6 +24,7 @@
             ]
           },
           "canonical_source": {"type": "string", "pattern": "^sources/raw/"},
+          "canonical_asset_root": {"type": "string", "pattern": "^sources/raw/"},
           "source_note": {"type": "string", "pattern": "^sources/source_notes/[a-z0-9_]+\\.md$"},
           "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
           "bytes": {"type": "integer", "minimum": 1},

@@ -8,7 +8,7 @@ full-coverage admission, and 22-unit three-projection reconciliation.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
-The manifest now contains **85 chapters**, which is the sole current chapter
+The manifest now contains **86 chapters**, which is the sole current chapter
 count. The 2026-08-08 work-surface intake added one Part II owner for the
 transition from answer and suggestion through task, project, role, team,
 organization, and network; earlier 84-chapter audit and narrative-product
@@ -159,7 +159,7 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 ### Current reader-role classification
 
 P7.1a-W2 assigns every chapter in its historical 60-chapter scope one primary
-reader role. The current 85-entry projection is
+reader role. The current 86-entry projection is
 `evidence_quality/current_chapter_role_map.json`; the frozen W2 machine record
 remains `evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis
 and navigation only. They do
@@ -193,7 +193,7 @@ publication status.
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`, plus
   `relational-dimension-compilation-and-polyadic-cognition`.
-- **Load-bearing reference (55):** every remaining manifest chapter, including
+- **Load-bearing reference (56):** every remaining manifest chapter, including
   `governed-model-training-distributed-optimization-and-scaling` and
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
@@ -295,7 +295,7 @@ natural evaluation, reproduction, and transfer remain open.
 
 ## Full-Coverage Admission Overlay — 2026-07-25
 
-The current manifest contains **85 chapters**. The full audit in
+The current manifest contains **86 chapters**. The full audit in
 `docs/full_coverage_gap_audit_2026_07_25.md` admitted four distinct owners:
 
 | Chapter | Exclusive job |
@@ -2697,6 +2697,8 @@ Source loading queue:
 | Current empirical comparators | `ext_darwin_godel_machine_2025`, `ext_adas_2024` | Compare branching archives, empirical candidate selection, and code-defined agent search. Treat reported gains as source-scoped results, not local reproduction, general improvement, or autonomous promotion authority. |
 | Connector or recovery required | `moecot` | Use only as implementation-reference context unless public-safe artifacts are imported or reproduced. |
 
+
+| Manifest assignment reconciliation | `learning_compute_topology` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Adaptive search can generate and select tasks, candidates,
@@ -4650,7 +4652,7 @@ Source loading queue:
 | Decision-theory comparator | `ext_functional_decision_theory_2017` | Compare CDT, EDT, and FDT recommendations as contested policy designs; do not declare one universally rational or deployable. |
 
 
-| Manifest assignment reconciliation | `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `coherence_exchange` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate protocol validity, individual competence, bilateral cooperation,
@@ -4795,7 +4797,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -4901,7 +4903,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why a stable stack must abstract architecture without pretending that
@@ -5075,7 +5077,7 @@ Source loading queue:
 | Orthogonalized matrix updates | `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026` | Explain momentum plus approximate matrix orthogonalization, matrix eligibility, fallback optimizers, weight decay, update scaling, approximation precision, communication, and one theoretical spectral-norm interpretation. Do not collapse ideal and implemented Muon or infer universal superiority. |
 
 
-| Manifest assignment reconciliation | `beastbrain`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `beastbrain`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Explain why code, data, weights, and loss do not fully identify a stateful
@@ -5173,6 +5175,57 @@ source results, or support any model-quality, efficiency, fault-tolerance,
 support, readiness, release, transfer, SOTA, AGI, or ASI claim.
 
 <!-- NO-DEFERRAL-OUTLINE-ENTRY:learning-theory-generalization-and-scaling-science:BEGIN -->
+### Learning–Compute Topology and Adaptive Process Architecture
+
+Stable ID: `learning-compute-topology-and-adaptive-process-architecture`
+
+Chapter job: Own the causal organization of adaptation between model architecture and distributed execution: persistent adaptive identities; typed evidence, judgement, credit, state, artifact, resource, control, and authority channels; integration and lifecycle semantics; topology rewrites; semantic compilation; realization leakage; and topology-specific measurement, experimentation, and governance.
+
+Core claim: For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `learning_compute_topology` | Read the complete paper and package; preserve bounded proposition, implementation, manual comparison, toy/analytical, and hypothesis states separately. |
+| Supporting comparators | `ext_megatron_distributed_training_2021`, `ext_gspmd_2021`, `ext_pbt_2017`, `ext_openai_es_2017` | Use to distinguish execution parallelism, compilation, persistent population identity, and proposal width without importing source results as local evidence. |
+
+Draft arc:
+
+- Separate model, learning-process, execution, and physical-compute topology.
+- Define adaptive identity through identity, divergence, persistence, and consequence tests; distinguish fork from decomposition.
+- Type adaptive state, evidence, judgement, credit, artifacts, resources, control, and authority in a multiplex open hypergraph.
+- Introduce LCT-IR, LCNF, the equivalence ladder, coarse-graining contracts, seven bounded propositions, and the semantic compiler firewall.
+- Measure effective breadth, learning bandwidth, integration retention, topological regret, semantic cuts, complete lifecycle resources, and realization leakage.
+- Derive adaptive causal refinement, typed synchronization, integration forests, reversible integration, knowledge placement, salvage, evaluator ecologies, and ABVI as hypotheses.
+- Close with the exact package receipt, 11 passing bounded tests, attack surfaces, non-claims, and a matched natural argument-exit campaign.
+
+Primary invariants:
+
+- Worker or branch count never substitutes for persistent adaptive identity.
+- Evidence, judgement, credit, adaptation, artifacts, control, and authority remain distinct typed channels.
+- Fork/decomposition, merge/composition, archive/retirement, and process optimization/topology synthesis remain distinct.
+- Physical realization cannot change declared learning semantics without a new contract and qualification event.
+- Coarse-graining, equivalence, formal results, executable tests, manual comparisons, and toy diagrams retain exact scopes and non-claims.
+
+Failure modes to cover:
+
+- Data-parallel and branch-count laundering; hidden adaptive state; generic-edge semantic collapse; untyped integration; resolution hindsight; realization leakage; evaluator and integration bottlenecks; Sybil breadth; evaluator monoculture; merge-order attacks; provenance laundering; controller capture; archive erasure; held-out leakage; topology thrashing; and toy-regime extrapolation.
+
+Draft deliverables:
+
+- One complete reader chapter with a four-topology worked example, adaptive-identity test, typed LCT-IR/LCNF explanation, proposition scope table, semantic compiler receipt, topology metrics, ABVI trace, security section, and falsification campaign.
+- Public exact-source paper page with all 13 supplied figures and a detailed source note covering every paper and supplement section family.
+- Targeted non-duplicative upgrades to training, substrates, routing, open-ended improvement, policy learning, continual learning, resource economics, multi-agent dynamics, adversarial evaluation, and the integrated architecture.
+- No empirical usefulness, independent formalization, transfer, safety, SOTA, AGI, or ASI result.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:learning_compute_topology.semantic_firewall_nonexpansion` | `AsiStackProofs.LearningComputeTopology` | Within a bounded finite LCT record model, an admitted semantics-preserving realization cannot create an adaptive identity, redirect protected evidence, judgement, credit, or authority, or replace the declared integration operator; any such mutation requires a new topology contract. | planned |
+| `lean:learning_compute_topology.semantic_cut_information_bound` | `AsiStackProofs.LearningComputeTopology` | For the stated finite staged Markov model without side channels, retained target information is bounded by each discovery, evaluation, and integration cut, preserving the paper proposition's exact assumptions and non-claims. | planned |
+
 ### Learning Theory, Generalization, and Scaling Science
 
 Stable ID: `learning-theory-generalization-and-scaling-science`
@@ -5789,7 +5842,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -6349,7 +6402,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 333 proof targets, 131 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 335 proof targets, 132 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6771,7 +6824,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `ext_faithfulness_information_flow_2026`, `ext_monitorbench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `ext_faithfulness_information_flow_2026`, `ext_monitorbench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: an observed outcome changes meaning with its consumer, elicitation,
@@ -7091,7 +7144,7 @@ Source loading queue:
 | Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
 
-| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
@@ -7208,7 +7261,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -7600,7 +7653,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler`, `regret_engine` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
@@ -7913,7 +7966,7 @@ Draft arc:
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
 - Mechanism: Treat chapter and part numbers as generated presentation data over stable manifest IDs; derive contiguous ordinals from current manifest order so insertion, removal, movement, or merge requires no stored-number rewrite and cannot change evidence identity.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
-- Mechanism: Compress the 85-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
+- Mechanism: Compress the 86-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
 - Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
@@ -7962,7 +8015,7 @@ and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
 That historical working manifest contained 59 entries; the current manifest
-contains 85. White-Box Evidence is terminally
+contains 86. White-Box Evidence is terminally
 integrated as an argument-level reader chapter with its packet, formal route,
 resource-isolated claim-bearing protocol, source crosswalk, and non-claim
 boundary complete; its empirical campaign remains deliberately unexecuted and

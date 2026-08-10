@@ -81,6 +81,7 @@ GROUPS = {
         "routing-heads-and-specialist-cores", "replaceable-cognitive-substrates-beyond-transformer-monoculture",
         "relational-dimension-compilation-and-polyadic-cognition",
         "governed-model-training-distributed-optimization-and-scaling",
+        "learning-compute-topology-and-adaptive-process-architecture",
         "readiness-gates-residual-escrow-and-quarantine",
         "personal-compute-hives-and-federated-edge-intelligence",
         "artifact-steward-agents-and-living-project-governance",

@@ -12,8 +12,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 333 |
-| Lean modules scanned | 131 |
+| Proof targets in manifest | 335 |
+| Lean modules scanned | 132 |
 | Theorem declarations classified | 3153 |
 | Direct/projection-style theorem declarations | 447 |
 | Derived/decomposed theorem declarations | 1978 |
@@ -117,6 +117,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 2 | 9 | 0 | 9 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 9 | 25 | 0 | 15 | 10 | manual review |
 | `lean/AsiStackProofs/LearnedObjectiveIntegrity.lean` | inner-alignment-mesa-optimization-and-learned-objective-integrity | 2 | 34 | 7 | 23 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/LearningComputeTopology.lean` | learning-compute-topology-and-adaptive-process-architecture | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LearningTheoryForecastReview.lean` | learning-theory-generalization-and-scaling-science | 1 | 38 | 17 | 16 | 5 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 39 | 2 | 33 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MilitaryInteractionReview.lean` | military-ai-autonomous-weapons-and-strategic-stability | 1 | 24 | 1 | 19 | 4 | mixed: preserve limitation prose and prioritize projection replacements |

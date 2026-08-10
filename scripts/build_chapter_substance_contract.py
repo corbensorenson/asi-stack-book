@@ -586,7 +586,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "scientific-discovery-and-experimental-governance": {
-        "reviewed_sha256": "3621fa84ade92b0c18773d636d133b51cfdde887d841f2d8d8a5d77ef2b17dfb",
+        "reviewed_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -600,7 +600,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "governed-objective-formation-value-learning-and-goal-integrity": {
-        "reviewed_sha256": "068ea125b700a38573623aa61967f087a61ba7a40c4bc5236cbc7fdcf65c2432",
+        "reviewed_sha256": "478b1d78f5e2cce72274f3197ea4016299a3dec2d4f339f09a70d95d2e4a645c",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -614,7 +614,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "durable-semantic-memory-and-knowledge-lattices": {
-        "reviewed_sha256": "582e2ab5d654b3637ca386e8424105f4ab9662305311ef1467a5c704d6476852",
+        "reviewed_sha256": "b2e7499bf72801dee8118b4d493a164ab85be3f0435fd2e4badc5c4848bfdfef",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -628,7 +628,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "ai-deployment-transition-distribution-and-human-agency": {
-        "reviewed_sha256": "06e71e0cbef01619ed2beda88e790eafae7db7b8f6c59d93cd514f8946db92e8",
+        "reviewed_sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -642,7 +642,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "autonomous-replication-proliferation-and-containment": {
-        "reviewed_sha256": "e17ab66bd54402e0568c9597f8d71e32676609f338a9d3ef3570453f25d8dcab",
+        "reviewed_sha256": "9b2a9148f7f49cf322e4d36292c45da4a8660c7fac5615636f2af466ebbd9aef",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -656,7 +656,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-communication-persuasion-and-epistemic-security": {
-        "reviewed_sha256": "a0d72b3497da6a70c8843cedd524a3e0cd14b6fdf70de2adccde026638d960b4",
+        "reviewed_sha256": "b7d6ba04b43d0be2fca04b992113adc0c89fb75595545dead5f3e8d7abfd13c2",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -670,7 +670,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "adversarial-machine-learning-and-model-attack-surface": {
-        "reviewed_sha256": "bc2cef928407a23fe817a29ed94fba99d65408fd66a28d3880932983f5593d5e",
+        "reviewed_sha256": "0e62dcdd6538d66405c552842f8ff8fd18f6d52f00b6c5c8566ab330aac1b8c8",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -698,7 +698,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "physical-compute-infrastructure-energy-and-environmental-constraints": {
-        "reviewed_sha256": "05f99f2d00bd68447aae3b06aef9d84888c401d31537859dcd6cb6d9314c5a01",
+        "reviewed_sha256": "6c71909679f4bd354fb27a4a5c7cfe0898586a04339c02829b4b3a0215042183",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -712,7 +712,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "institutions-international-coordination-and-public-legitimacy": {
-        "reviewed_sha256": "f4b36e4ebefc710dd85c69cb58710a408199e883903e5d084d8ffa85f59eb5cb",
+        "reviewed_sha256": "6b95d3cca305c312790d465cc18ef2c6e5860fc3b23a8c7ee6e5f8c2a1683912",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -726,7 +726,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk": {
-        "reviewed_sha256": "3fb9b6fe5ac453b214e5d92ffd40e238a8dc8e26a9ecf81b57e746132d806144",
+        "reviewed_sha256": "60799c3850d51d0d9e0e03f5108934d04f3e4cf8b9ebb9efd5ce08c377bd51a1",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -740,7 +740,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "military-ai-autonomous-weapons-and-strategic-stability": {
-        "reviewed_sha256": "8f79514e6b579739bc2f9eb67ee8bc52c6baeeb6960dfba14c73a360e4caba2c",
+        "reviewed_sha256": "4a45b1947228490b124ff22d18979f2b6f3bddc5bbf91c39292e71d7e97eec77",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -754,7 +754,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "perception-sensor-fusion-and-observation-trust": {
-        "reviewed_sha256": "9bdb0d968085218bfb0b07050e3473fe4436d10776d8364a266d4dc51e42a50e",
+        "reviewed_sha256": "c067b3a4897285280a1e6c9a1efec1f609f5ee5cb3c499f2dba342caa55e2fa7",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -768,7 +768,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": {
-        "reviewed_sha256": "5d071dbb3ed80a669a048e9cac8a7549bbb6ded5e5a4383b72678bbff1ead134",
+        "reviewed_sha256": "1355424fe29ea1a1b74ba4c826d555a99cde312176bdc8735e79f26f7a9ff329",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -782,7 +782,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "relational-dimension-compilation-and-polyadic-cognition": {
-        "reviewed_sha256": "0783a7d0bd4891d6270a19d1ad67b44211fb3c062d946c201a470ccb85ca0759",
+        "reviewed_sha256": "ffda01625266430342533eb67ccde822d71a3717f62a04a571bf0c86b13bbd46",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -796,7 +796,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "learning-theory-generalization-and-scaling-science": {
-        "reviewed_sha256": "f9a5df92d7615bf7b29f80bb1d597f5a02a4acafd923e362924ef20ff4e479ba",
+        "reviewed_sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -811,7 +811,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "confidential-and-verifiable-ai-computation": {
-        "reviewed_sha256": "8c5690b11ea5e7ea1057581c2887a4860dcdf206fc5016f04d3f8f71a6b4f07b",
+        "reviewed_sha256": "1653b4a37e7abd1dde400a03541ff8abdf2baf88ecbbe0522190b36064e233af",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -825,7 +825,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "embodied-agency-real-time-control-and-physical-safety": {
-        "reviewed_sha256": "57d979ac7e61e19d4aa9d8cb0ab9b673d05d1544c7a900000e9146daed857fb7",
+        "reviewed_sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -839,7 +839,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "inner-alignment-mesa-optimization-and-learned-objective-integrity": {
-        "reviewed_sha256": "90bec5af2e6969696968a4c10ea86fe5c175ff19cfd9dfc04556c5a298937d5e",
+        "reviewed_sha256": "be7ae6bca44d1690a682866fec530d95ea1f09e5ee63637c05d598a64dae2fe3",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -853,7 +853,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-organizations-delegation-and-accountability": {
-        "reviewed_sha256": "801c90997ca662d3cd1e47467cf2fbac001f1009e61f916f4351a5c02a22fb42",
+        "reviewed_sha256": "8f394fd1da82c532df3ef0973a0bc5d9117512c64a548d452149b6d677b62560",
         "reviewed_date": "2026-08-09",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
