@@ -12,6 +12,7 @@
     "status",
     "current_priority",
     "execution_readiness",
+    "object_level_yield_amendment",
     "quality_uplift_program",
     "round_16_evidence_first_amendment",
     "post_round_18_depth_and_coverage_amendment",
@@ -44,7 +45,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v25"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v26"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -53,7 +54,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-08-03"
+      "const": "2026-08-10"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -62,7 +63,7 @@
       "const": "active"
     },
     "current_priority": {
-      "const": "P4.1"
+      "const": "P5-U1"
     },
     "execution_readiness": {
       "type": "object",
@@ -75,6 +76,7 @@
         "blocked_lane_consumes_work_in_progress",
         "protected_outcome_inspection_allowed",
         "structural_admission_freeze",
+        "immediate_object_level_packet",
         "immediate_empirical_packet",
         "immediate_book_packet",
         "immediate_formal_packet",
@@ -89,13 +91,13 @@
       ],
       "properties": {
         "state": {
-          "const": "p4_1_composition_and_p7_1_narrative_active_p2_resource_blocked_p7_3_separately_owned"
+          "const": "p5_u1_utility_and_p7_1_narrative_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned"
         },
         "headline_priority": {
-          "const": "P4.1"
+          "const": "P5-U1"
         },
         "headline_priority_state": {
-          "const": "proof_rationalization_then_cross_owner_composition"
+          "const": "minimal_useful_governed_vertical_slice"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -109,6 +111,9 @@
         "structural_admission_freeze": {
           "const": false
         },
+        "immediate_object_level_packet": {
+          "const": "P5-U1-minimal-useful-governed-vertical-slice"
+        },
         "immediate_empirical_packet": {
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
@@ -116,7 +121,7 @@
           "const": "P7.1-independent-22-unit-human-narrative"
         },
         "immediate_formal_packet": {
-          "const": "P4.1-cross-owner-composition-and-proof-rationalization"
+          "const": "P4.1-consumer-gated-cross-owner-composition"
         },
         "structural_resume_requires": {
           "const": [
@@ -176,6 +181,108 @@
             "run_registered_validation_render_and_browser_gates",
             "commit_and_push_clean_main"
           ]
+        },
+        "support_state_effect": {
+          "const": "none"
+        },
+        "release_effect": {
+          "const": "none"
+        }
+      }
+    },
+    "object_level_yield_amendment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "state",
+        "review_url",
+        "accepted_critiques",
+        "rejected_quality_gates",
+        "headline_packet",
+        "concurrent_book_packet",
+        "formal_packet_state",
+        "governance_rent_fields",
+        "defended_contribution_count",
+        "contribution_exit_ladder_count",
+        "promotion_quota",
+        "reference_chapter_count",
+        "new_chapter_authorized",
+        "fifteen_minute_route_required",
+        "task_recipe_count",
+        "external_human_prepublication_required",
+        "support_state_effect",
+        "release_effect"
+      ],
+      "properties": {
+        "id": {
+          "const": "2026-08-10-object-level-yield-scope-compression-practical-utility"
+        },
+        "state": {
+          "const": "active"
+        },
+        "review_url": {
+          "const": "https://x.com/i/grok/share/efaecbfc739e442a9325900fcfa59d15"
+        },
+        "accepted_critiques": {
+          "const": [
+            "governance_process_theater_risk",
+            "zero_promotions_as_stagnation_diagnostic_not_quota",
+            "formal_and_empirical_progress_trails_scaffold",
+            "eighty_six_chapter_scope_and_anthology_risk",
+            "missing_immediately_useful_end_to_end_stack",
+            "novelty_positioned_more_than_demonstrated",
+            "dense_process_language_hides_practical_value"
+          ]
+        },
+        "rejected_quality_gates": {
+          "const": [
+            "github_popularity",
+            "external_human_prepublication_review"
+          ]
+        },
+        "headline_packet": {
+          "const": "P5-U1-minimal-useful-governed-vertical-slice"
+        },
+        "concurrent_book_packet": {
+          "const": "P7.1-independent-22-unit-human-narrative"
+        },
+        "formal_packet_state": {
+          "const": "consumer_gated"
+        },
+        "governance_rent_fields": {
+          "const": [
+            "object_level_consumer",
+            "prevented_or_detected_failure",
+            "operator_cost",
+            "simpler_existing_owner",
+            "refresh_trigger",
+            "retirement_condition"
+          ]
+        },
+        "defended_contribution_count": {
+          "const": 3
+        },
+        "contribution_exit_ladder_count": {
+          "const": 3
+        },
+        "promotion_quota": {
+          "const": false
+        },
+        "reference_chapter_count": {
+          "const": 86
+        },
+        "new_chapter_authorized": {
+          "const": false
+        },
+        "fifteen_minute_route_required": {
+          "const": true
+        },
+        "task_recipe_count": {
+          "const": 3
+        },
+        "external_human_prepublication_required": {
+          "const": false
         },
         "support_state_effect": {
           "const": "none"

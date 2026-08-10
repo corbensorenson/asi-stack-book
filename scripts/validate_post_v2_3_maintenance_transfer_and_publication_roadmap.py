@@ -1193,22 +1193,26 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if execution_readiness.get("state") != "p4_1_composition_and_p7_1_narrative_active_p2_resource_blocked_p7_3_separately_owned":
-        out.append("execution board does not preserve active composition/narrative work, the P2 resource block, and separate P7.3 ownership")
-    if execution_readiness.get("headline_priority") != "P4.1" or execution_readiness.get("headline_priority_state") != "proof_rationalization_then_cross_owner_composition":
-        out.append("execution board obscures the active proof-rationalization and composition priority")
+    if status.get("current_priority") != "P5-U1":
+        out.append("roadmap status does not expose P5-U1 as the current object-level priority")
+    if execution_readiness.get("state") != "p5_u1_utility_and_p7_1_narrative_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
+        out.append("execution board does not preserve active utility/narrative work, consumer-gated P4.1, the P2 resource block, and separate P7.3 ownership")
+    if execution_readiness.get("headline_priority") != "P5-U1" or execution_readiness.get("headline_priority_state") != "minimal_useful_governed_vertical_slice":
+        out.append("execution board obscures the active minimal useful governed vertical slice")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
     if execution_readiness.get("structural_admission_freeze") is not False:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
+    if execution_readiness.get("immediate_object_level_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
+        out.append("execution board does not activate the minimal useful governed vertical slice")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
-        out.append("execution board does not make P2-R3 the operative empirical headline")
+        out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
     if execution_readiness.get("immediate_book_packet") != "P7.1-independent-22-unit-human-narrative":
         out.append("execution board does not activate the independent 22-unit human narrative")
-    if execution_readiness.get("immediate_formal_packet") != "P4.1-cross-owner-composition-and-proof-rationalization":
-        out.append("execution board does not activate the bounded P4.1 composition amendment")
+    if execution_readiness.get("immediate_formal_packet") != "P4.1-consumer-gated-cross-owner-composition":
+        out.append("execution board does not keep P4.1 composition consumer-gated")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
         out.append("execution board permits a structural candidate during the freeze")
     expected_resume_gates = [
@@ -1221,6 +1225,20 @@ def errors(data: dict) -> list[str]:
     ]
     if execution_readiness.get("structural_resume_requires") != expected_resume_gates:
         out.append("execution board structural-resume gate set drifted")
+
+    yield_amendment = status.get("object_level_yield_amendment", {})
+    if yield_amendment.get("headline_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
+        out.append("object-level yield amendment lost its headline packet")
+    if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
+        out.append("object-level yield amendment confuses exit ladders with promotion quotas")
+    if yield_amendment.get("reference_chapter_count") != 86 or yield_amendment.get("new_chapter_authorized") is not False:
+        out.append("scope-compression amendment changed reference truth or silently authorized a chapter")
+    if yield_amendment.get("fifteen_minute_route_required") is not True or yield_amendment.get("task_recipe_count") != 3:
+        out.append("practical-entry requirements drifted")
+    if yield_amendment.get("external_human_prepublication_required") is not False:
+        out.append("object-level yield amendment introduced an external-human prepublication blocker")
+    if yield_amendment.get("support_state_effect") != "none" or yield_amendment.get("release_effect") != "none":
+        out.append("object-level yield amendment moved support or release state")
 
     manim = status.get("manim_visual_edition", {})
     expected_pilots = [
@@ -2705,7 +2723,11 @@ def main() -> None:
     mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))
     mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
     mutate("Manim roadmap section deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("### P7.3 — Governed Manim visual edition", "### Removed visual edition", 1)))
-    mutate("P4 next packet rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
+    mutate("P5-U1 headline rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_object_level_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
+    mutate("P4 consumer gate bypass", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4.1-cross-owner-composition-and-proof-rationalization"))
+    mutate("promotion quota laundering", lambda c: c["status"]["object_level_yield_amendment"].__setitem__("promotion_quota", True))
+    mutate("external-human prepublication blocker", lambda c: c["status"]["object_level_yield_amendment"].__setitem__("external_human_prepublication_required", True))
+    mutate("practical route deletion", lambda c: c["status"]["object_level_yield_amendment"].__setitem__("fifteen_minute_route_required", False))
     mutate("first-tranche terminal count rollback", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("completed_reader_chapter_count", 1))
     mutate("T1/T2/T3 terminal identity deletion", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("terminal_reader_chapter_ids", []))
     mutate("P4 C5 status reopening", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"][4].__setitem__("state", "strengthen"))
@@ -2719,12 +2741,12 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, active P4.1/M4; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, active P5-U1/M5 with P4.1/M4 consumer-gated; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
         "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
-        "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only dependency-safe proof rationalization and bounded connected-owner composition; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the then-current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the historical 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, a current-manifest ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
+        "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only for a named object-level consumer; the 2026-08-10 amendment activates a minimal useful governed vertical slice, three contribution exit ladders without promotion quotas, governance-rent tests, scope compression, a fifteen-minute utility route, and three task recipes without an external-human prepublication gate; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the then-current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the historical 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, a current-manifest ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )
 
