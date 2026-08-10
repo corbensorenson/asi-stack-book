@@ -230,10 +230,17 @@
       },
       {
         "id": "m06",
-        "purpose": "Test transfer and preserve the evidence boundary",
+        "purpose": "Test transfer under changed noncompute costs",
         "viewer_model_before": "The 12-versus-9 comparison may look like a universal answer.",
         "visible_event": "Human review cost shrinks while a privacy barrier rises; the selector recomputes without declaring a winner, then the invoice world resolves into one causal bill containing compute, verification, risk, delay, human effort, and recovery.",
-        "viewer_model_after": "The route changes with the complete contract, and the video defines what a fair experiment must measure without claiming that experiment is complete."
+        "viewer_model_after": "The route changes with the complete contract, and no model tier is universally efficient."
+      },
+      {
+        "id": "m07",
+        "purpose": "Define the empirical and formal evidence boundary",
+        "viewer_model_before": "Complete-cost reasoning is visible, but the viewer may still mistake the example for a measured general result.",
+        "visible_event": "Matched policy lanes remain outcome-empty, then an argument boundary separates the finite eligible minimum from complete search, cost truth, and measured results before the payment chain closes.",
+        "viewer_model_after": "The viewer can state what the finite proof establishes, what a fair experiment must measure, and when a saving may be called real."
       }
     ],
     "payoff": "The one-unit token never changes; the attached causal bill reveals why its route total becomes twelve and why efficiency belongs to the complete contract rather than the visible model meter.",
@@ -335,6 +342,13 @@
         "after_macro_move_id": "m06",
         "focal_state": "No universal route is highlighted; one complete causal bill retains compute, verification, risk, delay, human effort, and recovery.",
         "visible_invariant": "The winner depends on the fixed contract and complete observed burden.",
+        "unresolved_question": "Which claims are formal here, and which still require a matched experiment?"
+      },
+      {
+        "id": "k07",
+        "after_macro_move_id": "m07",
+        "focal_state": "Matched policy lanes and the argument boundary resolve into a complete paid-cost test.",
+        "visible_invariant": "Finite selection, cost truth, workload completeness, and measured efficiency remain different claims.",
         "unresolved_question": null
       }
     ],
@@ -351,7 +365,7 @@
         "macro_move_ids": [
           "m01"
         ],
-        "performance_direction": "List the four routes with increasing weight, then leave a short pause after Which route is efficient?",
+        "performance_direction": "List the four routes with increasing weight, ask which is efficient, then give the viewer time to choose from the visible fares.",
         "pronunciation_items": []
       },
       {
@@ -393,7 +407,15 @@
         "macro_move_ids": [
           "m06"
         ],
-        "performance_direction": "Ask the changed-case question slowly, decline a universal answer, then close with the experiment boundary and practical test in a calm downward cadence.",
+        "performance_direction": "Ask the changed-case question slowly, hold both changed facts for an answer, then decline a universal route and assemble the complete bill.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p07",
+        "macro_move_ids": [
+          "m07"
+        ],
+        "performance_direction": "Separate the fair experiment from the finite Lean result, then close with the practical test in a calm downward cadence.",
         "pronunciation_items": []
       }
     ],
@@ -415,12 +437,12 @@
   },
   "script_gate": {
     "narration_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/narration.txt",
-    "narration_sha256": "322bd169d0c43210cc0bb0daec48a5e1d63e57a3d737e2fe6b823b5f48d5bdc3",
-    "narration_word_count": 420,
+    "narration_sha256": "b617d774b803232bc4e2c64f3112bff21e041a94560cd665ae1827ccaa35f2a4",
+    "narration_word_count": 435,
     "read_aloud_review": "pass",
     "truth_review": "pass",
     "visualizability_review": "pass",
-    "reviewer_id": "codex-author-script-gate-2026-08-09",
+    "reviewer_id": "codex-author-script-gate-2026-08-10",
     "verdict": "pass",
     "open_defects": []
   }

@@ -4597,9 +4597,11 @@ fail-closed generation-two system. This v3 checkpoint supersedes earlier v2
 procedural language in this subsection wherever the two conflict. The ledger
 derives 86 targets in canonical order. Twenty-four narrations have been
 rewritten. The opening, Efficient ASI, System Boundaries, and Stable Capability
-Fields targets have treatment, narration, and beat-plan files, but current
-source and authoring-standard changes leave every script and animatic gate
-reopened; 20 remain narration drafts and 62 remain planned. Their exact chapter and
+Fields targets have treatment, narration, and beat-plan files. The opening and
+Efficient ASI targets now pass their current treatment, script, and beat-plan
+gates; System Boundaries and Stable Capability Fields remain reopened under
+their current identities, and every animatic gate remains unstarted. Twenty
+targets remain narration drafts and 62 remain planned. Their exact chapter and
 source context, claims, non-claims, truth checks, semantic keyframes,
 accessibility plans, and read-aloud and visualizability verdicts are bound in
 their treatments. The Efficient ASI pilot now teaches one causal reversal: a
@@ -4611,12 +4613,12 @@ efficiency open. The System Boundaries pilot holds one correct refund command
 fixed while READ fails at a REFUND aperture, a bounded one-shot grant admits
 one dispatch, and the byte-identical replay stops after consumption; its Lean
 boundary remains finite and leaves identity, mediation, revocation races, and
-observation completeness open. All three local animatics render under the
+observation completeness open. The current local animatics render under the
 governed runner and have sampled-frame receipts, but none has the required
 audiovisual, phone,
 muted-motion, or cold-audience review needed to pass the animatic gate. Earlier
 treatment-free plans and all downstream artifacts remain history. Current
-state is therefore 20 `narration_draft`, zero script-passed targets, four
+state is therefore 20 `narration_draft`, two script-passed targets, four
 file-level `beat_planned` targets, zero animatic-passed, and zero accepted or
 published.
 

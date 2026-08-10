@@ -56,22 +56,22 @@ from visual_edition.lib.asi_visuals import (
 
 
 class EfficientAsiHypothesisGeneration2(AsiScene):
-    TARGET_DURATION = 172.540
+    TARGET_DURATION = 174.480
     ENDS = [
-        11.980,
-        24.085,
-        33.290,
-        43.470,
-        52.875,
-        66.805,
-        79.285,
-        89.115,
-        102.695,
-        111.975,
-        131.205,
-        143.535,
-        162.840,
-        172.540,
+        14.080,
+        26.185,
+        34.947,
+        44.805,
+        54.210,
+        64.349,
+        78.564,
+        89.310,
+        102.890,
+        114.280,
+        133.665,
+        145.569,
+        164.780,
+        174.480,
     ]
 
     def wait_until(self, target: float) -> None:
@@ -83,7 +83,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
         self.next_section(f"b{index:02d}")
         end = self.ENDS[index - 1]
         remaining = max(0.05, end - self.renderer.time)
-        run_time = max(0.05, remaining - min(settle, remaining * 0.24))
+        run_time = min(6.5, max(0.05, remaining - min(settle, remaining * 0.24)))
         fade_prefix = []
         for animation in animations:
             if isinstance(animation, FadeOut):
@@ -92,19 +92,20 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
                 break
         content = animations[len(fade_prefix):]
         if fade_prefix and content:
-            fade_time = min(0.8, run_time * 0.16)
+            fade_time = min(1.5, run_time * 0.28)
             self.play(
-                Succession(
+                AnimationGroup(
                     AnimationGroup(*fade_prefix, lag_ratio=0, run_time=fade_time),
                     LaggedStart(
                         *content,
-                        lag_ratio=0.16,
-                        run_time=max(0.05, run_time - fade_time),
+                        lag_ratio=0.10,
+                        run_time=run_time,
                     ),
+                    lag_ratio=0,
                 )
             )
         elif animations:
-            self.play(LaggedStart(*animations, lag_ratio=0.16, run_time=run_time))
+            self.play(LaggedStart(*animations, lag_ratio=0.12, run_time=run_time))
         self.wait_until(end)
 
     @staticmethod
@@ -223,7 +224,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             LaggedStart(*[GrowFromCenter(dot) for dot in route_dots], lag_ratio=0.10),
             LaggedStart(*[GrowFromCenter(fare) for fare in self.fares], lag_ratio=0.10),
             Write(self.question),
-            settle=0.55,
+            settle=3.03,
         )
 
         # b02: the acceptance stencil, rather than the menu, owns the comparison.
@@ -439,6 +440,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             LaggedStart(FadeIn(cheap_review), FadeIn(privacy), FadeIn(compute), lag_ratio=0.18),
             Succession(Create(risk_bar), risk_bar.animate.scale(1.75)),
             Write(changed_question),
+            settle=3.06,
         )
 
         # b11: every material burden joins the same causal bill.
@@ -506,7 +508,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
 
         # b13: the argument specifies the experiment but leaves result sockets empty.
         boundary_box = RoundedRectangle(width=10.80, height=5.18, corner_radius=0.14, color=BOUNDARY, stroke_width=3)
-        boundary_label = self.label("ARGUMENT BOUNDARY", 16, BOUNDARY, "BOLD").next_to(boundary_box, UP, buff=0.12)
+        boundary_label = self.label("PROOF BOUNDARY", 16, BOUNDARY, "BOLD").next_to(boundary_box, UP, buff=0.12)
         known = VGroup(
             self.label("FINITE LIST", 17, EVIDENCE, "BOLD"),
             self.label("ELIGIBLE MINIMUM", 17, EVIDENCE, "BOLD"),
@@ -555,7 +557,7 @@ class EfficientAsiHypothesisGeneration2(AsiScene):
             LaggedStart(*[FadeIn(term, shift=UP * 0.12) for term in final_terms], lag_ratio=0.12),
             LaggedStart(*[GrowArrow(arrow) for arrow in final_arrows], lag_ratio=0.12),
             Write(paid),
-            TransformFromCopy(VGroup(final_terms, final_arrows), saving),
+            FadeIn(saving, shift=UP * 0.18),
             Circumscribe(saving, color=EVIDENCE),
             settle=0.64,
         )
