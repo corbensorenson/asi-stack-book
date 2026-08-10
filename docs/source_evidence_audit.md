@@ -12,11 +12,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 |---|---:|
 | Chapters audited | 86 |
 | Assigned source/chapter pairs | 1298 |
-| Exact claim-source mappings | 1088 |
-| Unmapped assigned pairs | 210 |
+| Exact claim-source mappings | 1090 |
+| Unmapped assigned pairs | 208 |
 | Source notes present for assigned pairs | 1298 |
 | Source notes listing assigned chapter | 1298 |
-| Passage-reviewed mappings recorded | 1019 |
+| Passage-reviewed mappings recorded | 1021 |
 | Support-state counts | {"argument": 86} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -96,7 +96,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `fast-generation-architectures` | 44 | 21 | 44 | 44 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 7 | 6 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `resource-economics-and-token-budgets` | 46 | 20 | 46 | 46 | 20 | argument | passage review required before source-derived promotion |
+| `resource-economics-and-token-budgets` | 46 | 21 | 46 | 46 | 21 | argument | passage review required before source-derived promotion |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 8 | 3 | 8 | 8 | 1 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -114,7 +114,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `data-engines-continual-learning-and-unlearning` | 17 | 13 | 17 | 17 | 13 | argument | passage review required before source-derived promotion |
 | `scientific-discovery-and-experimental-governance` | 2 | 1 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 24 | 23 | 24 | 24 | 23 | argument | passage review required before source-derived promotion |
-| `integrated-reference-architecture` | 38 | 32 | 38 | 38 | 32 | argument | passage review required before source-derived promotion |
+| `integrated-reference-architecture` | 38 | 33 | 38 | 38 | 33 | argument | passage review required before source-derived promotion |
 | `project-theseus-as-report-first-implementation-reference` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `prototype-roadmap` | 32 | 30 | 32 | 32 | 30 | argument | passage review required before source-derived promotion |
 | `living-book-methodology` | 16 | 16 | 16 | 16 | 16 | argument | eligible for support review |
@@ -1527,7 +1527,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_mooncake_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_cacheblend_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_azure_llm_semantic_cache_2026` | unmapped | note present | chapter listed | not passage-reviewed |
-| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `precision_contract` | mapped | note present | chapter listed | passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `tokenmana` | unmapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_iea_energy_and_ai_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_lbnl_data_center_energy_2024` | mapped | note present | chapter listed | not passage-reviewed |
@@ -1754,7 +1754,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_github_sponsors_docs` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_agentic_workflow_injection_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `ext_dao_delegation_fairness_2025` | mapped | note present | chapter listed | passage-reviewed |
-| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `learning_compute_topology` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |

@@ -20334,6 +20334,17 @@
               "passage_review_state": "reviewed"
             },
             {
+              "source_id": "precision_contract",
+              "mapped_support": "Turns compression and mixed-precision choices into a resource-allocation problem over complete executable packages. For Resource Economics, the paper requires separate accounting for stored and moved bits, decoder and routing work, fallback, repair, verification, certificate generation, monitoring, retained-reference cost, latency, energy, and peak memory under a protected-behavior contract.",
+              "limits": "The functional-rate formulation is conditional on a declared contract, decoder, code family, and system boundary. No compiler run, useful compression result, physical-cost advantage, certificate qualification, or production transfer has been demonstrated.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/precision_contract.md",
+                "sources/raw/corben_papers/precision_contract/precision_contract.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper for the Resource Economics chapter's complete-description, physical-cost, assurance-cost, routing, fallback, residual, and certificate accounting interfaces."
+            },
+            {
               "source_id": "relational_dimension_compiler",
               "mapped_support": "Adds candidate proposal, rejected tuples, sparse gather, factorization, kernel execution, state, communication, qualification, verification, contraction, expansion, repair, and compiler work to relational-compute accounting.",
               "limits": "The paper provides asymptotic envelopes and required cost categories, not measured costs, resource advantage, queue behavior, hardware utilization, or economic optimality.",
@@ -26672,14 +26683,25 @@
               "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
             },
             {
+              "source_id": "learning_compute_topology",
+              "mapped_support": "Makes the integrated reference trace represent learning as a typed, multi-view process graph rather than a single opaque training step. This chapter uses the paper's LCT-IR relations and template, active, realized, and counterfactual views to locate where evidence, judgement, credit, state, artifacts, controls, and authority cross stack layers.",
+              "limits": "This is a synthesis mapping, not a claim that Learning–Compute Topology is canonical or complete. The paper's finite propositions and bounded supplement do not demonstrate neural-training benefit, causal identification, scalable compilation, safe self-rewrite, or superiority to simpler process records.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/learning_compute_topology.md",
+                "sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.md"
+              ],
+              "passage_review_note": "Reviewed the complete paper and executable preparation package for the integrated architecture's cross-layer process-graph, compiler, authority, counterfactual, and evidence-boundary interfaces."
+            },
+            {
               "source_id": "relational_dimension_compiler",
-              "mapped_support": "Adds a joined relational-complex state across semantic entities/relations/fields, evidence and lifecycle metadata, selected computational operators, branch identity, and abstraction maps, with explicit interfaces to routing, world models, memory, effects, and reconciliation.",
-              "limits": "The RDC lifecycle has not been implemented, joined to the current reference trace, or shown to preserve semantics, improve utility, reduce cost, or govern effects.",
+              "mapped_support": "Connects the reference trace's typed artifacts, branches, qualifiers, contractions, and abstraction maps into a joined relational state. In this chapter, the mapping makes explicit which semantic relations must survive routing, memory, execution, evidence review, and reconciliation rather than leaving those joins implicit between layers.",
+              "limits": "The Relational Dimension Compiler lifecycle has not been implemented inside the reference trace or shown to preserve semantic relations across real layer transitions. This mapping does not establish utility, cost, governance, or scaling advantages over simpler typed graph records.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
-              "passage_review_note": "Reviewed the complete paper for its end-to-end request, relational packet, branch, qualifier, contraction, compiler, effect-boundary, reconciliation, and subsystem-owner joins."
+              "passage_review_note": "Reviewed the complete paper for the integrated architecture's end-to-end request, relational packet, branch, qualifier, contraction, compiler, effect-boundary, reconciliation, and subsystem-owner joins."
             }
           ],
           "mechanism": [
