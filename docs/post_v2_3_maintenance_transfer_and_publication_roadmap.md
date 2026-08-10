@@ -4596,14 +4596,22 @@ pinned toolchains, and manifest-derived production ledger now form one
 fail-closed generation-two system. This v3 checkpoint supersedes earlier v2
 procedural language in this subsection wherever the two conflict. The ledger
 derives 85 targets in canonical order. Twenty-four narration drafts have been
-rewritten to 364–436 words; the opening chapter has since advanced through a
-source-bound treatment and script gate, leaving 23 narration drafts and 61
-planned targets. Its exact chapter and source context, claims, non-claims,
-truth checks, semantic keyframes, accessibility plan, and read-aloud and
-visualizability verdict are bound in the treatment. Earlier treatment-free
-plans and all downstream artifacts remain history. Current state is therefore
-23 `narration_draft`, one script-passed and `beat_planned` pilot, zero
-animatic-passed, and zero accepted or published.
+rewritten; the opening chapter and Efficient ASI chapter have since advanced
+through source-bound treatments, exact scripts, and block-timed beat plans,
+leaving 22 narration drafts and 61 planned targets. Their exact chapter and
+source context, claims, non-claims, truth checks, semantic keyframes,
+accessibility plans, and read-aloud and visualizability verdicts are bound in
+their treatments. The Efficient ASI pilot now teaches one causal reversal: a
+visible one-unit parser route accumulates eight repair and three review units,
+then loses to the verified nine-unit route. Its formal boundary names the local
+Lean selector's minimum over authored eligible candidates and declared
+seven-class totals while leaving complete search, input truth, and measured
+efficiency open. Both local animatics render under the governed runner and have
+sampled-frame receipts, but neither has the required audiovisual, phone,
+muted-motion, or cold-audience review needed to pass the animatic gate. Earlier
+treatment-free plans and all downstream artifacts remain history. Current
+state is therefore 22 `narration_draft`, one script-passed target, two
+`beat_planned` pilots, zero animatic-passed, and zero accepted or published.
 
 The hardening pass binds every gate to exact scene, caption, transcript,
 thumbnail, toolchain, visual-grammar, primitive-library, receipt, and review

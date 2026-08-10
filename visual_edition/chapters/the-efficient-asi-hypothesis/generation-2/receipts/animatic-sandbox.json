@@ -1,0 +1,184 @@
+{
+  "schema_version": "asi_stack.manim_sandbox_policy_receipt.v1",
+  "created_at_utc": "2026-08-10T02:07:40Z",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "profile": "draft",
+  "isolation_mode": "macos_sandbox_exec",
+  "runner": {
+    "path": "skills/asi-stack-manim-videos/scripts/render_scene_isolated.py",
+    "sha256": "e2095058a0d74b378af9ec37514b07f898c86b5442d6481a8590e1af27062321"
+  },
+  "policy": {
+    "path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/receipts/animatic-sandbox.sb",
+    "sha256": "2a6d3da48acb33095b1aafeb0ca9a7cd10fc8ee8ae37d18d548f348eb6165f58"
+  },
+  "scene": {
+    "path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/scene.py",
+    "sha256": "2312f5e35a307f4eb5fa977ce12760100552511663cd9cfadbb8d08db31b51a8"
+  },
+  "treatment": {
+    "path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/treatment.json",
+    "sha256": "0725040531bad19da9a7fe90c256f3731acfadfaa93a0f0c253a26275077bc13"
+  },
+  "audio_master": {
+    "path": "build/visual_edition/audio/the-efficient-asi-hypothesis-narration-master.wav",
+    "sha256": "0a3e878445cab9ddbae2be3e27ded79f714c889c996a43cbe23a7274d9524a65"
+  },
+  "toolchain_id": "manimce-0.20.1-macos-arm64-python-3.12.5",
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    },
+    "ffprobe": {
+      "path": "/opt/homebrew/bin/ffprobe",
+      "version": "8.0.1",
+      "sha256": "6057aa35c4dc2686b5368680c36fe39df2ea82e8adca509d2b04994c65280642"
+    }
+  },
+  "network_access": false,
+  "credential_environment_inherited": false,
+  "repository_writable_roots": [
+    "build/visual_edition"
+  ],
+  "filesystem_read_scope": {
+    "global_metadata_lookup": true,
+    "unlisted_repository_content_access": false,
+    "repository_content_mode": "explicit_inputs_plus_build",
+    "system_content_roots": [
+      "/System",
+      "/Library/ColorSync",
+      "/Library/Fonts",
+      "/Library/Frameworks",
+      "/usr",
+      "/bin",
+      "/sbin",
+      "/opt/homebrew"
+    ],
+    "rationale": "The macOS Python launcher and native dependencies require the listed system content roots plus global metadata; unlisted repository file contents remain denied."
+  },
+  "resource_limits": {
+    "wall_seconds": 1800,
+    "cpu_seconds": 1800,
+    "max_file_size_bytes": 4294967296,
+    "max_open_files": 256,
+    "max_processes": 256,
+    "max_resident_memory_bytes": null,
+    "memory_limit_status": "not_enforced_macos",
+    "core_dump_bytes": 0
+  },
+  "policy_self_test": {
+    "allowed_write": "pass",
+    "credentials_stripped": "pass",
+    "denied_read": "pass",
+    "denied_write": "pass",
+    "hardlink_escape_denied": "pass",
+    "network_denied": "pass",
+    "symlink_escape_denied": "pass",
+    "symlink_read_escape_denied": "pass",
+    "unlisted_exec_denied": "pass"
+  },
+  "resource_limit_self_test": {
+    "core_dump_bytes": "pass",
+    "cpu_seconds": "pass",
+    "max_file_size_bytes": "pass",
+    "max_open_files": "pass",
+    "max_processes": "pass",
+    "memory_bound": "not_enforced_macos"
+  },
+  "source_preflight": {
+    "verdict": "pass",
+    "finding_count": 0,
+    "scene_sha256": "2312f5e35a307f4eb5fa977ce12760100552511663cd9cfadbb8d08db31b51a8",
+    "auditor": {
+      "path": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py",
+      "sha256": "f2508e1dc096c633d904121a6d05025b8b04548172e8e39bf34cdb1236dbbfcb"
+    }
+  },
+  "render_steps": [
+    {
+      "phase": "scene_render",
+      "command_argv": [
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/venv/bin/python",
+        "-m",
+        "manim",
+        "render",
+        "--config_file",
+        "/Users/corbensorenson/Documents/AI_book/visual_edition/manim.cfg",
+        "--renderer",
+        "cairo",
+        "--format",
+        "mp4",
+        "--resolution",
+        "854,480",
+        "--fps",
+        "15",
+        "--seed",
+        "0",
+        "--disable_caching",
+        "--progress_bar",
+        "none",
+        "--media_dir",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/media",
+        "--output_file",
+        "the-efficient-asi-hypothesis-visual.mp4",
+        "/Users/corbensorenson/Documents/AI_book/visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/scene.py",
+        "EfficientAsiHypothesisGeneration2"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 70.373
+    },
+    {
+      "phase": "audio_mux",
+      "command_argv": [
+        "/opt/homebrew/bin/ffmpeg",
+        "-hide_banner",
+        "-nostdin",
+        "-y",
+        "-i",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/media/videos/scene/480p15/the-efficient-asi-hypothesis-visual.mp4",
+        "-i",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/audio/the-efficient-asi-hypothesis-narration-master.wav",
+        "-map",
+        "0:v:0",
+        "-map",
+        "1:a:0",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "-r",
+        "15",
+        "-c:a",
+        "aac",
+        "-ar",
+        "48000",
+        "-b:a",
+        "192k",
+        "-movflags",
+        "+faststart",
+        "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/.the-efficient-asi-hypothesis-animatic.draft.pending.mp4"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.639
+    }
+  ],
+  "outputs": [
+    {
+      "role": "visual_track",
+      "path": "build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/media/videos/scene/480p15/the-efficient-asi-hypothesis-visual.mp4",
+      "sha256": "f706b2d36a018913ccede266c0809bcd80d75f9f839f50021deab958d4c8627b",
+      "size_bytes": 1442115
+    },
+    {
+      "role": "muxed_master",
+      "path": "build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/the-efficient-asi-hypothesis-animatic.mp4",
+      "sha256": "3f76453778308ff695a8a7cf41ede3efa0ab9f1fbe4764c34423f4d444c7fd32",
+      "size_bytes": 4660807
+    }
+  ],
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "This receipt records one constrained execution and does not prove scene safety, teaching effectiveness, chapter truth, or publication authority."
+}

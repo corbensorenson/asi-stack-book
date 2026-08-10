@@ -1,0 +1,579 @@
+{
+  "schema_version": "asi_stack.manim_frame_sample_manifest.v1",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "sample_set": "animatic",
+  "sampler": {
+    "path": "skills/asi-stack-manim-videos/scripts/sample_video_beats.py",
+    "sha256": "bd2b0d104030fb1f56dd388d9d90b791acca0a5d1e4f44c18ea875f23b14b5aa"
+  },
+  "media_tools": {
+    "ffmpeg": {
+      "path": "/opt/homebrew/bin/ffmpeg",
+      "version": "8.0.1",
+      "sha256": "dfe6df9286909cc6a6bfbe867c8461fe79f732ce5ed996991ea2d43054b39b5e"
+    }
+  },
+  "video_path": "build/visual_edition/isolated-renders/the-efficient-asi-hypothesis/draft/the-efficient-asi-hypothesis-animatic.mp4",
+  "video_sha256": "3f76453778308ff695a8a7cf41ede3efa0ab9f1fbe4764c34423f4d444c7fd32",
+  "beat_plan_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/beat_plan.json",
+  "beat_plan_sha256": "c0043e72d1f049cd3e66034766619688c7120f5879c6fed21b9f93db3865c6d1",
+  "expected_beat_count": 14,
+  "sampled_beat_count": 14,
+  "samples_per_beat": 5,
+  "beats": [
+    {
+      "beat_id": "b01",
+      "start_seconds": 0.0,
+      "end_seconds": 11.98,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 0.15,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/001_b01_start.png",
+          "sha256": "edaa6573d4a0240ce7add76c3044e0a5db5dc0d25b0c9a4e85485ec452932898"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 2.995,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/001_b01_quarter.png",
+          "sha256": "355a446ac41601568d6946736022a411de1cfac8489b01c49969b09a7265dad3"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 5.99,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/001_b01_middle.png",
+          "sha256": "79d370ba28996a65f21c08bdc1a47dbf17c1a185dc7ac79f61f7075b4301c310"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 8.985,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/001_b01_three-quarter.png",
+          "sha256": "5cb0df5bcb12e843bd9f736d2821055b9c9d4bfc31c46971f7fe52da33b2362f"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 11.83,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/001_b01_end.png",
+          "sha256": "41f50c0828dc4066c6326d4dc199d5c9366b0490fb538d3c3560003b1b7c881f"
+        }
+      ]
+    },
+    {
+      "beat_id": "b02",
+      "start_seconds": 11.98,
+      "end_seconds": 24.085,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 12.13,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/002_b02_start.png",
+          "sha256": "2c77c4690f04ed35fdbb65444243ff05476752787e5e9a3864ec119ffb0c2e9c"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 15.006,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/002_b02_quarter.png",
+          "sha256": "c7dcc541151316ebaf6762156df11297bf64acc86f9f57585e2d1ae75259e091"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 18.032,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/002_b02_middle.png",
+          "sha256": "8666dc7a9971b32613c2c6db4d7bbe16d6e447507559183fa881c37620aec1e0"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 21.059,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/002_b02_three-quarter.png",
+          "sha256": "5a7dc9acde34433eeb92bdeff46ad4a84877e99c8f32b6fbb1937f609a961dfe"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 23.935,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/002_b02_end.png",
+          "sha256": "10222f56c920522b5f3b62b96a3f19637a5f7f0ada05fbb8bbf003087f959205"
+        }
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "start_seconds": 24.085,
+      "end_seconds": 33.29,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 24.235,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/003_b03_start.png",
+          "sha256": "20dd34c0ceabc0a25e81f9a2cef5af1af7614897bed2dbe30be522dc2655c02e"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 26.386,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/003_b03_quarter.png",
+          "sha256": "0c81d728464f7ebdfb2b7cb180cf2d251dd2bbb3149ead2f1b7fa5e30174a64d"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 28.688,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/003_b03_middle.png",
+          "sha256": "54e4faff8f8091f0593b079ef3c90a805dfbbf7499ce93af2d7fb483f2452637"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 30.989,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/003_b03_three-quarter.png",
+          "sha256": "77afd91ca491b4bc60079268cd84eba892757fd67c2691bad1fa51f06f36eab4"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 33.14,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/003_b03_end.png",
+          "sha256": "6a0d96bb6abebcef6bfab63ef4b026c74b2c303cbd206821979516dba2a3bc1d"
+        }
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "start_seconds": 33.29,
+      "end_seconds": 43.47,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 33.44,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/004_b04_start.png",
+          "sha256": "593fd3123e24883489127aa6c67c062552c5f3691cff2fd652c21ded6ca81a48"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 35.835,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/004_b04_quarter.png",
+          "sha256": "99973cdbdf15ea1401df1c9dc1c0256e64db0e68b4f12a6080cd3712160a125f"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 38.38,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/004_b04_middle.png",
+          "sha256": "754d56304f60107d6dde523f05b1bd602ed8ad7d770bc998b0ea45c517c26eeb"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 40.925,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/004_b04_three-quarter.png",
+          "sha256": "61982e7ee64ce73bf9308223bd0dc101731cb23d4d5255419d27244d3aeab385"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 43.32,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/004_b04_end.png",
+          "sha256": "51747e1d1ee43d4a430299790a9dfdf1064e5d1b65a35f64ae954e5b80908dfb"
+        }
+      ]
+    },
+    {
+      "beat_id": "b05",
+      "start_seconds": 43.47,
+      "end_seconds": 52.875,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 43.62,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/005_b05_start.png",
+          "sha256": "8cd98dea8fd053b4916147d24217df1ddd6f805f5d01e442abe758bc6e36aa51"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 45.821,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/005_b05_quarter.png",
+          "sha256": "b232a339a274e9d5a5c40bdadc08ae7d2b36ce1fa2491f97cd31cce15d7c48f4"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 48.172,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/005_b05_middle.png",
+          "sha256": "bf8b089f828ff2a520fb76ddcf7b1fdae5de5911785926b30e5e5aec16eeb017"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 50.524,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/005_b05_three-quarter.png",
+          "sha256": "245fa6c80023ad0236b14d88d41221d3eafca9175279eafa29808f5cca35a936"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 52.725,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/005_b05_end.png",
+          "sha256": "e54d7576ab9b547dd2295b685faaa86bb455906e4cb70fc28f6b55631b79a4fd"
+        }
+      ]
+    },
+    {
+      "beat_id": "b06",
+      "start_seconds": 52.875,
+      "end_seconds": 66.805,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 53.025,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/006_b06_start.png",
+          "sha256": "802147a2673277a0944c55ef98060f750e7c9f4f7ffd376ab218ae1e5359cddc"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 56.358,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/006_b06_quarter.png",
+          "sha256": "2ae459228a921edebcbe156da1342779bf34821ffac9e6dd094f1fde37935d4a"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 59.84,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/006_b06_middle.png",
+          "sha256": "4ec8ea99001ec57a7da9b465b09689b30b0a1b9b510166ab3f55cc6c05eeb58b"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 63.323,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/006_b06_three-quarter.png",
+          "sha256": "1430f4f1de23d24199f99b16dc4d62d216c317f649782f76fbc6c95b1984895e"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 66.655,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/006_b06_end.png",
+          "sha256": "d99d3d3d8633d6bc905519cd905675e5411c9b1609ec6c55021a00f78d61fb3f"
+        }
+      ]
+    },
+    {
+      "beat_id": "b07",
+      "start_seconds": 66.805,
+      "end_seconds": 79.285,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 66.955,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/007_b07_start.png",
+          "sha256": "9cd48766d5c19a444db69e58ce965000f4e9ab9cce3c511c73c75a943d57d9e4"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 69.925,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/007_b07_quarter.png",
+          "sha256": "23da2ad4649fecaa69feadb7aca1b29b75d1b5b6978f5f4935cc7702d4a2f31e"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 73.045,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/007_b07_middle.png",
+          "sha256": "f6e658ec94fd6ec341c6ab33275ada9a9ba5376f8a54cd0a448c9c47b8f750cb"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 76.165,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/007_b07_three-quarter.png",
+          "sha256": "5d64efc38ffed6fe7b0c98c88c1d0f87fdb641c0823f81c57347a9ca2fb0e33a"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 79.135,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/007_b07_end.png",
+          "sha256": "ca4508aeba979c740cd00ee9ac050a92585c4fd6821bdd7b5997d2c1341042c5"
+        }
+      ]
+    },
+    {
+      "beat_id": "b08",
+      "start_seconds": 79.285,
+      "end_seconds": 89.115,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 79.435,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/008_b08_start.png",
+          "sha256": "aad3151494acf5970e7588a116a7db44953d9673628a17c462165f0fbfdef51d"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 81.742,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/008_b08_quarter.png",
+          "sha256": "fe092583aafd7098404376c653eedbfc5715cc081cb7f94c58fa21dd5f3f9022"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 84.2,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/008_b08_middle.png",
+          "sha256": "b965b081efb752ea54795a3f2255d2e4e59e58a4058f7bc406e6ced66d65ee86"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 86.657,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/008_b08_three-quarter.png",
+          "sha256": "0e2eb9921b04cb4990b96f8d791d5d93e67a0c927d45fd11c21990e670cd900b"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 88.965,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/008_b08_end.png",
+          "sha256": "46207edf752f78990c4d5491a8f1fa760824558d3d4f22110052e3fe782f65f6"
+        }
+      ]
+    },
+    {
+      "beat_id": "b09",
+      "start_seconds": 89.115,
+      "end_seconds": 102.695,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 89.265,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/009_b09_start.png",
+          "sha256": "30a51d1721528429e48707be3bc032655a9b82ddf0536bcbc60c13410f9ccfc7"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 92.51,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/009_b09_quarter.png",
+          "sha256": "15f82a2db17b566cca621b64187107380567d5cf7c7c94124095314f102dfc1d"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 95.905,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/009_b09_middle.png",
+          "sha256": "df73f342be72e78e91b420ed9436f21a4b1cfe9e4bf3e34ed7319d4d1997bae1"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 99.3,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/009_b09_three-quarter.png",
+          "sha256": "4ac3b3f37dc8146f16a787072ffa806d16c7103d89cbb9e4c3f3a76f669cab37"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 102.545,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/009_b09_end.png",
+          "sha256": "1d6010f89ef1fdf5a1c6d5de2091a154567e56cdbf3a76e21e79212192e57e18"
+        }
+      ]
+    },
+    {
+      "beat_id": "b10",
+      "start_seconds": 102.695,
+      "end_seconds": 111.975,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 102.845,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/010_b10_start.png",
+          "sha256": "a3740ad51ec79c4bb44f1b57729fe4ce24a1095c441456d1716226b8b169bf24"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 105.015,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/010_b10_quarter.png",
+          "sha256": "c34d3fde9010713ab1c1bd293fe017b194c3391b0c01d6c7687498b4663fb101"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 107.335,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/010_b10_middle.png",
+          "sha256": "7ec071b264dc1f63c954531d9e1fc43ed3546338f2c5b85182c4c0ad645016aa"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 109.655,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/010_b10_three-quarter.png",
+          "sha256": "fc25b5efac85d79b3627b6bf962c128e178d4c46b11e16b407f27f416577ee1a"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 111.825,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/010_b10_end.png",
+          "sha256": "d49cc021e9c1f91061152ea999d03a798035e7836dfd1f24db668ee03b26934f"
+        }
+      ]
+    },
+    {
+      "beat_id": "b11",
+      "start_seconds": 111.975,
+      "end_seconds": 131.205,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 112.125,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/011_b11_start.png",
+          "sha256": "e5ab2ecf4ba37ce43cc30c0c365d2166d41d63fe93fecaddf04ee4b88e915695"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 116.782,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/011_b11_quarter.png",
+          "sha256": "823c02dec5dbeaee6ebf887fbedbbb1a96eb28a85fe178715017ea7fb91c62dd"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 121.59,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/011_b11_middle.png",
+          "sha256": "30b71e3ed64c42216a50aba2da3d4a8486c2ca298abeefa35d528abd7cc60b6b"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 126.398,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/011_b11_three-quarter.png",
+          "sha256": "17d34539f07a1cdadfb7aea184496bfb1c7e966fb93ca7b6f03066c7d5d64dce"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 131.055,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/011_b11_end.png",
+          "sha256": "88d8522e30d93fb1283a5073b84d919c688e73728f11e6c5b48c6f58945f2a3a"
+        }
+      ]
+    },
+    {
+      "beat_id": "b12",
+      "start_seconds": 131.205,
+      "end_seconds": 143.535,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 131.355,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/012_b12_start.png",
+          "sha256": "039956b69027b09b05debdfe22d8768ad56291355143a5d2a0fc81f3da78e457"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 134.288,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/012_b12_quarter.png",
+          "sha256": "dd81270109fed55d62c747babf7163e32721e9ec5ad99865d319a14a8f5d2a05"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 137.37,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/012_b12_middle.png",
+          "sha256": "858d14b891fc7c7b82d7b15de5052e5b7c21cc8494fe813da548f0314f9d39d5"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 140.452,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/012_b12_three-quarter.png",
+          "sha256": "e29ec69257e6523f3ee553b462b90c034f36c36016973ace90f217199bba20c1"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 143.385,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/012_b12_end.png",
+          "sha256": "f63bb429208576c8eaffec0283c7901966445e6e97ef7b6a1a4af6520c04b1c7"
+        }
+      ]
+    },
+    {
+      "beat_id": "b13",
+      "start_seconds": 143.535,
+      "end_seconds": 162.84,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 143.685,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/013_b13_start.png",
+          "sha256": "fc7c8b1250be97e5f9852cba3c5114608e1b8fdac9ee12bf65a8ae706059364a"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 148.361,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/013_b13_quarter.png",
+          "sha256": "6d47c2075a370e37427f86d221759624f6e70e2ce70c4e2a389d3af93085f5e7"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 153.188,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/013_b13_middle.png",
+          "sha256": "074d0bab548b1b2aed18600cc18284bb481456e05c349098a69d57b6ce77dcea"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 158.014,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/013_b13_three-quarter.png",
+          "sha256": "234c481a448a791087a6122d83216b7d8351bc2175d76d3d09108b1f8a5045d4"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 162.69,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/013_b13_end.png",
+          "sha256": "aebe3dc240d03fce3d2955f6dbf364338c0e857d0529274efc05dc0cf5f90de7"
+        }
+      ]
+    },
+    {
+      "beat_id": "b14",
+      "start_seconds": 162.84,
+      "end_seconds": 172.54,
+      "samples": [
+        {
+          "position": "start",
+          "timestamp_seconds": 162.99,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/014_b14_start.png",
+          "sha256": "946cf4df0fe4d50c301fb97c436d8fae9311d07fc3ba2cbf2ee40d86c2d39afe"
+        },
+        {
+          "position": "quarter",
+          "timestamp_seconds": 165.265,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/014_b14_quarter.png",
+          "sha256": "2232e0254614bb5f544c7aa33ba45c91ea6b9b10c525457fd444f1e591501b80"
+        },
+        {
+          "position": "middle",
+          "timestamp_seconds": 167.69,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/014_b14_middle.png",
+          "sha256": "5032d2b4dfea18fa1bf662c37dd624d092a8d8da3f4b1649ec84ff65922dde4b"
+        },
+        {
+          "position": "three-quarter",
+          "timestamp_seconds": 170.115,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/014_b14_three-quarter.png",
+          "sha256": "ca82e6bf1e504859a9c984469aee23c136a04b73916d9aac1d25f60ab30b0522"
+        },
+        {
+          "position": "end",
+          "timestamp_seconds": 172.39,
+          "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/014_b14_end.png",
+          "sha256": "3c275dd0a15765b2898681d5899eb40cc87717d45578fe6cb7f308e1b301b5e3"
+        }
+      ]
+    }
+  ],
+  "targeted_transition_samples": [
+    {
+      "beat_id": "b04",
+      "timestamp_seconds": 38.4,
+      "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/targeted_001_b04_38.400.png",
+      "sha256": "754d56304f60107d6dde523f05b1bd602ed8ad7d770bc998b0ea45c517c26eeb"
+    },
+    {
+      "beat_id": "b05",
+      "timestamp_seconds": 48.2,
+      "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/targeted_002_b05_48.200.png",
+      "sha256": "bf8b089f828ff2a520fb76ddcf7b1fdae5de5911785926b30e5e5aec16eeb017"
+    },
+    {
+      "beat_id": "b09",
+      "timestamp_seconds": 98.2,
+      "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/targeted_003_b09_98.200.png",
+      "sha256": "168bf5a91dbf7d273a40c24ff0646380c5e1b0d57877dbf3de9f4c00abacc340"
+    },
+    {
+      "beat_id": "b11",
+      "timestamp_seconds": 122.5,
+      "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/targeted_004_b11_122.500.png",
+      "sha256": "a5ca6d771ddce8881e38f84ceb2c192f8f0af0b24e377c527a8e9a69c4ebea4b"
+    },
+    {
+      "beat_id": "b13",
+      "timestamp_seconds": 152.5,
+      "path": "build/visual_edition/review-samples/the-efficient-asi-hypothesis/animatic/targeted_005_b13_152.500.png",
+      "sha256": "e7f3709c43bf302801b6cbc2c21c2c2f1913516e76228a81d823a0848c443f78"
+    }
+  ],
+  "interpretation": "Frame samples diagnose composition and interpolation; full-speed motion and sound review remain required.",
+  "support_state_effect": "none",
+  "publication_effect": "none",
+  "non_claim": "These deterministic frame samples support visual review only; they do not establish motion quality, synchronization, human learning, or chapter truth."
+}

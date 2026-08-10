@@ -1,0 +1,427 @@
+{
+  "schema_version": "asi_stack.manim_treatment.v1",
+  "chapter_id": "the-efficient-asi-hypothesis",
+  "chapter_sha256": "c6ce4a73e5832dabbe3b8db6edeee7d3a58bfcb467916006c2feefa481c4641f",
+  "source_context_sha256": "5ce041eff232459c6c4e03039b66d6ee8131b55c5ebdee689a839129c050b5a7",
+  "source_commit": "183f9f8c3d292c8d0fcb656fc9198314a4ac042d",
+  "audience": {
+    "target_viewer": "A curious adult who understands that different AI routes can have different prices but has not studied routing or lifecycle-cost accounting",
+    "assumed_knowledge": [
+      "An invoice contains fields such as vendor, total, and tax",
+      "A task may be sent to a parser, model, or person"
+    ],
+    "excluded_assumptions": [
+      "Prior knowledge of the ASI Stack",
+      "Familiarity with mixture-of-experts systems, model cascades, or formal optimization",
+      "Belief that fewer model calls necessarily means lower total cost"
+    ],
+    "standalone_context": "The video defines efficiency through one hypothetical invoice and introduces every route, cost, and acceptance condition in the scene.",
+    "introduced_terms": [
+      "acceptance test",
+      "causal bill",
+      "authorized route"
+    ]
+  },
+  "promise_candidates": [
+    {
+      "promise": "Predict when a one-unit AI route is more expensive than a nine-unit route after its full causal bill is counted.",
+      "consequence": "The viewer can reject a cheap-looking route that moves verification, repair, review, or failure cost outside the visible meter.",
+      "visual_mechanism": "One invoice preserves identity while a one-unit parser ticket unfolds an attached eight-unit repair and three-unit review bill; a balance then reverses from 1 versus 9 to 12 versus 9.",
+      "transfer_value": "The same accounting test applies to model routing, compression, cached procedures, human review, and other apparent efficiency gains.",
+      "evidence_fit": "Directly expresses the chapter's complete-cost condition and hidden-cost failure without implying that the repository measured a routing advantage.",
+      "disposition": "selected",
+      "rationale": "It gives the chapter one memorable quantitative reversal, an observable decision rule, and a changed-case transfer while staying inside argument support."
+    },
+    {
+      "promise": "Explain how scaling curves and capability thresholds should be forecast without mistaking a scoring artifact for emergence.",
+      "consequence": "The viewer could distinguish smooth loss trends from operational threshold crossings.",
+      "visual_mechanism": "A smooth capability surface passes through several scoring functions that produce either gradual or abrupt-looking traces.",
+      "transfer_value": "The test applies to capability forecasting and deployment thresholds.",
+      "evidence_fit": "The chapter treats this carefully, but it is a separate forecasting lesson and does not explain the core allocation hypothesis.",
+      "disposition": "rejected",
+      "rationale": "Combining scaling measurement with route economics would create two unrelated visual grammars and weaken both promises."
+    },
+    {
+      "promise": "Show how repeated verified work can become a reusable procedure whose savings compound until its assumptions expire.",
+      "consequence": "The viewer could distinguish durable capability from a stale cache.",
+      "visual_mechanism": "Repeated invoices stamp a versioned parser artifact, then a format change fractures its assumption seal and reopens verification.",
+      "transfer_value": "The mechanism applies to tools, memories, regressions, specialists, and compressed artifacts.",
+      "evidence_fit": "The chapter supports this temporal mechanism, but making it primary would hide the complete-cost comparison that determines whether compilation helped.",
+      "disposition": "rejected",
+      "rationale": "Retain artifact expiry as a consequence after the route reversal rather than promote it to a second thesis."
+    },
+    {
+      "promise": "Compare sparse experts, LLM cascades, learned routers, prompt compression, and speculative generation as efficiency strategies.",
+      "consequence": "The viewer could recognize several modern conditional-computation families.",
+      "visual_mechanism": "A map of named systems places each family on compute, context, generation, or review cost axes.",
+      "transfer_value": "The map would orient a technical audience to adjacent literature.",
+      "evidence_fit": "The source notes provide comparator vocabulary, not a reproduced cross-family benchmark or common denominator.",
+      "disposition": "rejected",
+      "rationale": "A literature inventory would become static, date-sensitive, and unable to earn the chapter's causal accounting rule."
+    }
+  ],
+  "teaching_promise": "Predict when a one-unit AI route is more expensive than a nine-unit route after its full causal bill is counted.",
+  "selection_rationale": "The one-to-twelve reversal is consequential, visually testable, transferable beyond invoices, and honest about the chapter's argument-level evidence ceiling.",
+  "content_contract": {
+    "chapter_claim_ids": [
+      "the-efficient-asi-hypothesis.core"
+    ],
+    "source_ids": [
+      "viea",
+      "rmi",
+      "cgs",
+      "aletheia",
+      "precision_contract",
+      "moecot"
+    ],
+    "non_claims": [
+      "The invoice routes and unit costs are illustrative, not observed prices or benchmark results.",
+      "The video does not establish that adaptive routing beats always-maximal, always-cheapest, or monolithic-with-tools baselines.",
+      "A finite minimum over the depicted candidate set is not a complete search or a proof that declared costs and quality are true.",
+      "A route that passes the depicted acceptance test is not thereby safe, optimal, deployable, or generally transferable.",
+      "The video does not establish measured efficiency, model quality, compression utility, SOTA, AGI, or ASI."
+    ],
+    "case_assumptions": [
+      "The invoice contract protects vendor, total, tax, and privacy handling.",
+      "The familiar invoice is correctly handled by the one-unit versioned parser in the first comparison.",
+      "The damaged tax digit causes the parser to return a wrong total in the second comparison.",
+      "Eight repair units and three review units are attached to the parser-caused failure, making its illustrative total twelve.",
+      "The nine-unit stronger route includes the checks required for this bounded comparison.",
+      "The changed case treats privacy risk as a route constraint rather than a precisely measured scalar cost."
+    ],
+    "notation_ledger": [
+      {
+        "token": "1 / 4 / 9",
+        "meaning": "Illustrative visible route costs for parser, specialist, and frontier routes",
+        "unit": "abstract contract-cost units",
+        "visual_form": "Numbered metal fare tokens fixed beside distinct route rails"
+      },
+      {
+        "token": "+8 / +3",
+        "meaning": "Repair and review burdens caused by the failed parser route",
+        "unit": "abstract contract-cost units",
+        "visual_form": "Red and magenta bill segments physically attached to the parser ticket"
+      },
+      {
+        "token": "12 > 9",
+        "meaning": "The complete parser-route bill exceeds the stronger route's bounded bill in the damaged case",
+        "unit": "abstract contract-cost units",
+        "visual_form": "A balance beam tips from the unfolded twelve-unit bill toward the nine-unit route"
+      },
+      {
+        "token": "seal",
+        "meaning": "A current task predicate, authority, and assumption version required before price comparison",
+        "unit": null,
+        "visual_form": "A keyed acceptance seal with field, privacy, and version marks"
+      }
+    ],
+    "truth_checks": [
+      {
+        "statement": "The chapter defines the efficient route conditionally as the lowest-cost authorized route in a declared candidate set that satisfies a fixed quality predicate and preserves residual and fallback obligations.",
+        "authority_refs": [
+          "the-efficient-asi-hypothesis.core"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "VIEA treats route budgets, fallback behavior, human review, residual capture, and tool maintenance as lifecycle costs rather than free side effects.",
+        "authority_refs": [
+          "viea"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "RMI treats repeated verified trajectories as possible reusable tools while retaining failed work as residual pressure and requiring regression preservation.",
+        "authority_refs": [
+          "rmi"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "MoECOT contributes compact specialist-lane, readiness, promotion-blocker, residual, and replay vocabulary, but its runtime and benchmark artifacts are not imported or reproduced here.",
+        "authority_refs": [
+          "moecot"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The Precision Contract counts protected behavior, complete executable description, routing, verification, fallback, and physical resource terms rather than treating visible representation size as the objective.",
+        "authority_refs": [
+          "precision_contract"
+        ],
+        "method": "source_note",
+        "result": "pass",
+        "resolution": null
+      },
+      {
+        "statement": "The chapter's local formal selector proves only minimum eligible complete cost over authored finite candidates; route-search completeness, cost truth, quality calibration, and measured efficiency remain open.",
+        "authority_refs": [
+          "the-efficient-asi-hypothesis.core"
+        ],
+        "method": "chapter_text",
+        "result": "pass",
+        "resolution": null
+      }
+    ],
+    "visual_simplifications": [
+      "One invoice page stands for one task contract while retaining the same identity across every candidate route.",
+      "Cost units are dimensionless accounting tokens, not dollars, tokens, seconds, or empirical measurements.",
+      "The damaged tax digit is a hypothetical causal failure, not a claim about a deployed parser or OCR system.",
+      "A physical bill ribbon attributes downstream burdens to the originating route without asserting that every real causal cost is directly observable.",
+      "Three machine rails and one human station simplify a larger route economy and do not establish candidate-set completeness.",
+      "The acceptance seal represents the depicted contract fields only and does not imply broad correctness or safety."
+    ]
+  },
+  "story": {
+    "story_form": "comparison",
+    "story_basis": {
+      "description": "The chapter's illustrative invoice failure makes a cheap visible route become more expensive after repair and review are attributed to it.",
+      "authority_refs": [
+        "the-efficient-asi-hypothesis.core",
+        "viea",
+        "rmi"
+      ]
+    },
+    "concrete_case": "The same supplier invoice can travel through a one-unit parser, a four-unit specialist, a nine-unit frontier route, or human review.",
+    "opening_question": "Which route is efficient?",
+    "macro_moves": [
+      {
+        "id": "m01",
+        "purpose": "Make sticker price feel like the obvious answer",
+        "viewer_model_before": "The cheapest listed route appears to be the efficient route.",
+        "visible_event": "One invoice enters a sorting table with four stable rails priced 1, 4, 9, and MORE; the one-unit parser rail lights first.",
+        "viewer_model_after": "The viewer predicts the parser while seeing that no acceptance condition has yet been applied."
+      },
+      {
+        "id": "m02",
+        "purpose": "Put eligibility before cost",
+        "viewer_model_before": "Route choice appears to be a price comparison.",
+        "visible_event": "Vendor, total, tax, and privacy seals fold into one acceptance stencil that moves upstream of all four price tokens.",
+        "viewer_model_after": "A route must preserve the same contract before its cost is comparable."
+      },
+      {
+        "id": "m03",
+        "purpose": "Produce the memorable hidden-cost reversal",
+        "viewer_model_before": "The one-unit parser has passed once and still looks dominant.",
+        "visible_event": "A torn tax digit falls from the second invoice; the parser keeps its 1 token while attached +8 REPAIR and +3 REVIEW segments unroll until a balance reads 12 versus 9 and tips.",
+        "viewer_model_after": "The cheapest visible route can be more expensive after its caused burdens are counted."
+      },
+      {
+        "id": "m04",
+        "purpose": "Turn the reversal into a governed selection rule",
+        "viewer_model_before": "The lesson may seem to be that the stronger route always wins.",
+        "visible_event": "Authority and predicate gates exclude ineligible rails before a complete-cost ruler selects the least costly surviving route; the failed parser bill remains attached as a residual.",
+        "viewer_model_after": "The chosen route is the least costly authorized route that satisfies the whole contract, not a fixed model tier."
+      },
+      {
+        "id": "m05",
+        "purpose": "Show how verified reuse can compound without becoming timeless",
+        "viewer_model_before": "Every invoice appears to require a fresh route decision and fresh work.",
+        "visible_event": "Repeated verified invoices stamp TEMPLATE v3 into a reusable parser gear; a changed layout then breaks its version seal and diverts the next invoice back to verification.",
+        "viewer_model_after": "Reuse can save work only while its assumptions remain current and its revalidation cost stays on the bill."
+      },
+      {
+        "id": "m06",
+        "purpose": "Test transfer and preserve the evidence boundary",
+        "viewer_model_before": "The 12-versus-9 comparison may look like a universal answer.",
+        "visible_event": "Human review cost shrinks while a privacy barrier rises; the selector recomputes without declaring a winner, then the invoice world resolves into one causal bill containing compute, verification, risk, delay, human effort, and recovery.",
+        "viewer_model_after": "The route changes with the complete contract, and the video defines what a fair experiment must measure without claiming that experiment is complete."
+      }
+    ],
+    "payoff": "The one-unit token never changes; the attached causal bill reveals why its route total becomes twelve and why efficiency belongs to the complete contract rather than the visible model meter.",
+    "comprehension_question": "Why did the one-unit parser become more expensive than the nine-unit route in the damaged-invoice case?",
+    "comprehension_success_criteria": [
+      "Adds the parser's one unit to the eight-unit repair and three-unit review burden",
+      "Attributes those burdens to the failed parser route rather than treating them as free external work",
+      "States that route price alone is not the complete efficiency denominator"
+    ],
+    "transfer_question": "If human review becomes cheap but privacy risk rises, which route should win?",
+    "transfer_success_criteria": [
+      "Declines to name a universal winner without the changed contract and measurements",
+      "Requires privacy or authority eligibility before comparing total cost",
+      "Includes verification, delay, human effort, failure, or recovery in the resulting bill"
+    ]
+  },
+  "packaging": {
+    "working_title": "When One Costs Twelve",
+    "thumbnail_concept": "A torn invoice connects to a small 1 token whose attached +8 and +3 bill segments outweigh a separate 9 token on a mechanical balance.",
+    "thumbnail_alt_text": "A one-unit invoice route unfolds eight repair units and three review units, tipping a balance against a nine-unit route.",
+    "promise_match": "The thumbnail contains the exact arithmetic reversal the video explains and does not imply a measured benchmark.",
+    "first_fifteen_seconds_delivery": "The invoice, four routes, 1/4/9/MORE prices, and Which route is efficient? appear before any architecture term.",
+    "source_delivery": "The end card names the chapter and the VIEA, RMI, MoECOT, and Precision Contract source notes; the description carries the complete assigned-source list and evidence boundary.",
+    "source_delivery_refs": [
+      "viea",
+      "rmi",
+      "moecot",
+      "precision_contract"
+    ]
+  },
+  "art_direction": {
+    "medium": "manim_primary",
+    "medium_rationale": "The teaching mechanism depends on persistent invoice identity, route eligibility, additive causal cost, balance reversal, and versioned reuse that Manim can construct and transform precisely.",
+    "visual_thesis": "Sticker prices remain fixed while the causal bill physically grows around one failed route and reverses the comparison.",
+    "signature_image": "A one-unit parser token trails attached +8 REPAIR and +3 REVIEW segments while a balance tips under the equation 12 > 9.",
+    "visual_world": "A compact invoice-routing workshop built around one sorting table, four parallel rails, one acceptance stencil, and a mechanical causal-bill spool rather than dashboard cards.",
+    "persistent_objects": [
+      "invoice page",
+      "acceptance stencil",
+      "four route rails",
+      "route fare tokens",
+      "causal bill ribbon",
+      "selector balance",
+      "versioned parser artifact"
+    ],
+    "visual_invariants": [
+      "The same invoice identity remains visible across candidate routes and changed cases.",
+      "The parser's visible fare remains one even when its attached total bill grows to twelve.",
+      "Predicate and authority eligibility occur before cost comparison.",
+      "Repair, review, retry, and residual segments never detach from the route that caused them.",
+      "The nine-unit route is not presented as a universal winner after the damaged case.",
+      "The lower caption-safe band remains free of essential arithmetic and route state."
+    ],
+    "composition_rule": "Keep the invoice at left, route rails through the middle, and the bill/balance at right; preserve a stable left-to-right causal path and reserve the lower caption band.",
+    "palette_rule": "Use copper for candidate computation, cyan for contract checks, gold for authority, green for accepted work, red for repair, and magenta for review/residual burden, always paired with labels and shapes.",
+    "typography_rule": "Use only route names, short contract fields, cost tokens, and the equations 1+8+3=12 and 12>9; narration owns all qualifications.",
+    "motion_character": "Tactile and causal: invoices slide, seals stamp, bill segments unroll from their origin, weights tip, and stale artifacts fracture without flashing or elastic decoration.",
+    "camera_rule": "Hold one wide routing workshop through the comparison, use one measured push-in for the torn digit and bill reversal, and pull back for the changed-case denominator.",
+    "surface_rule": "Use crisp paper, metal tokens, rails, stamps, and a balance with restrained technical texture; avoid dashboards, floating prose cards, gradients, and decorative particles.",
+    "ending_image": "The original invoice sits beside one complete causal bill labeled COMPUTE, VERIFY, RISK, DELAY, HUMAN, and RECOVER beneath the question DID THE SAVING SURVIVE?",
+    "semantic_keyframes": [
+      {
+        "id": "k01",
+        "after_macro_move_id": "m01",
+        "focal_state": "One invoice waits before four route rails priced 1, 4, 9, and MORE while the parser rail glows.",
+        "visible_invariant": "No route has yet passed a shared acceptance test.",
+        "unresolved_question": "Is the smallest fare the efficient route?"
+      },
+      {
+        "id": "k02",
+        "after_macro_move_id": "m02",
+        "focal_state": "Vendor, total, tax, and privacy marks form one stencil upstream of every fare token.",
+        "visible_invariant": "Every candidate is judged against the same protected contract.",
+        "unresolved_question": "What happens when a cheap route appears to answer but violates one field?"
+      },
+      {
+        "id": "k03",
+        "after_macro_move_id": "m03",
+        "focal_state": "A torn tax digit hangs beside the parser while its 1 token carries +8 and +3 bill segments and the balance reads 12 > 9.",
+        "visible_invariant": "The parser fare remains one; only previously hidden caused burdens have become visible.",
+        "unresolved_question": "Does the reversal mean the strongest route should always win?"
+      },
+      {
+        "id": "k04",
+        "after_macro_move_id": "m04",
+        "focal_state": "Authority and predicate gates precede a complete-cost ruler, with the failed parser bill retained on a residual siding.",
+        "visible_invariant": "Only eligible routes enter the cost comparison and no failed attempt disappears.",
+        "unresolved_question": "Can future invoices become cheaper without forgetting why?"
+      },
+      {
+        "id": "k05",
+        "after_macro_move_id": "m05",
+        "focal_state": "TEMPLATE v3 serves repeated familiar invoices until a changed layout fractures its assumption seal and reopens verification.",
+        "visible_invariant": "Reuse remains versioned, conditional, and attached to maintenance cost.",
+        "unresolved_question": "Will the same selector choose correctly when human and privacy costs change?"
+      },
+      {
+        "id": "k06",
+        "after_macro_move_id": "m06",
+        "focal_state": "No universal route is highlighted; one complete causal bill retains compute, verification, risk, delay, human effort, and recovery.",
+        "visible_invariant": "The winner depends on the fixed contract and complete observed burden.",
+        "unresolved_question": null
+      }
+    ],
+    "asset_plan": []
+  },
+  "audio_direction": {
+    "narration_style": "Conversational and exact, with the arithmetic delivered plainly and the changed-case question given genuine thinking room.",
+    "pacing_arc": "Open quickly on the menu, slow for the acceptance stencil, accelerate through the parser's apparent win, pause as 1 becomes 12, then broaden into reuse, transfer, and evidence limits.",
+    "music_policy": "No continuous music; the cost reversal and physical bill provide sufficient tension without emotional scoring.",
+    "sound_effect_policy": "Use only restrained original or generated paper-slide, seal, bill-unroll, and balance-settle sounds below speech; no effect may carry unique meaning.",
+    "performance_blocks": [
+      {
+        "id": "p01",
+        "macro_move_ids": [
+          "m01"
+        ],
+        "performance_direction": "List the four routes with increasing weight, then leave a short pause after Which route is efficient?",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p02",
+        "macro_move_ids": [
+          "m02"
+        ],
+        "performance_direction": "Contrast Price alone with acceptance test and give privacy equal weight to the invoice fields.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p03",
+        "macro_move_ids": [
+          "m03"
+        ],
+        "performance_direction": "Let the familiar success feel credible, then slow through one plus eight plus three and land firmly on twelve versus nine.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p04",
+        "macro_move_ids": [
+          "m04"
+        ],
+        "performance_direction": "State the selection rule without slogan cadence and stress whole contract rather than least costly.",
+        "pronunciation_items": [
+          "Efficient ASI"
+        ]
+      },
+      {
+        "id": "p05",
+        "macro_move_ids": [
+          "m05"
+        ],
+        "performance_direction": "Treat reuse as a conditional gain; make the artifact expiry sound like normal accounting rather than catastrophe.",
+        "pronunciation_items": []
+      },
+      {
+        "id": "p06",
+        "macro_move_ids": [
+          "m06"
+        ],
+        "performance_direction": "Ask the changed-case question slowly, decline a universal answer, then close with the experiment boundary and practical test in a calm downward cadence.",
+        "pronunciation_items": []
+      }
+    ],
+    "review_devices": [
+      "studio headphones",
+      "laptop speakers",
+      "phone speaker",
+      "muted playback with captions"
+    ]
+  },
+  "accessibility": {
+    "color_redundancy": "Every route, gate, and cost class has a distinct label, shape, rail position, and motion path in addition to color.",
+    "motion_redundancy": "Every route choice, failed digit, added burden, balance reversal, and expiry ends in a persistent labeled state that remains legible without perceiving motion.",
+    "integrated_description": "Narration names the four routes, protected invoice fields, damaged tax digit, one/eight/three arithmetic, route reversal, residual bill, artifact expiry, and changed privacy case as they appear.",
+    "caption_plan": "Use manually reviewed forced alignment, no more than two short lines, sentence-aware breaks, and no cue covering the route fares, arithmetic, or balance.",
+    "descriptive_transcript_plan": "Describe the persistent invoice identity, eligibility stencil, route rails, causal-bill attachment, balance reversal, residual siding, versioned parser, and final denominator beside the exact narration.",
+    "reduced_motion_assessment": "The explanation remains complete as six held semantic keyframes connected by short crossfades; no flashing, rapid camera travel, or motion-only distinction is planned.",
+    "caption_safe_composition": "Reserve the lower 150 pixels plus margin and keep all essential route labels, arithmetic, contract seals, and balance states above that boundary at phone scale."
+  },
+  "script_gate": {
+    "narration_path": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/narration.txt",
+    "narration_sha256": "322bd169d0c43210cc0bb0daec48a5e1d63e57a3d737e2fe6b823b5f48d5bdc3",
+    "narration_word_count": 420,
+    "read_aloud_review": "pass",
+    "truth_review": "pass",
+    "visualizability_review": "pass",
+    "reviewer_id": "codex-author-script-gate-2026-08-09",
+    "verdict": "pass",
+    "open_defects": []
+  }
+}
