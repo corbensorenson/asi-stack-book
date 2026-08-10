@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.manim_sandbox_policy_receipt.v1",
-  "created_at_utc": "2026-08-10T09:18:42Z",
+  "created_at_utc": "2026-08-10T09:52:34Z",
   "chapter_id": "stable-capability-fields",
   "profile": "draft",
   "isolation_mode": "macos_sandbox_exec",
@@ -14,7 +14,7 @@
   },
   "scene": {
     "path": "visual_edition/chapters/stable-capability-fields/generation-2/scene.py",
-    "sha256": "c9a1a34a6bdf718ab650218de907d361ba56239deeb9fa22b89d06a4c67c66a4"
+    "sha256": "d6ef0c59e1b7532183d3b6333ab2b1c43e57f7f3504c8085ba9fcbad9043f3d8"
   },
   "treatment": {
     "path": "visual_edition/chapters/stable-capability-fields/generation-2/treatment.json",
@@ -90,7 +90,7 @@
   "source_preflight": {
     "verdict": "pass",
     "finding_count": 0,
-    "scene_sha256": "c9a1a34a6bdf718ab650218de907d361ba56239deeb9fa22b89d06a4c67c66a4",
+    "scene_sha256": "d6ef0c59e1b7532183d3b6333ab2b1c43e57f7f3504c8085ba9fcbad9043f3d8",
     "auditor": {
       "path": "skills/asi-stack-manim-videos/scripts/audit_scene_source.py",
       "sha256": "909cf7b01ee61c5f2e9dea20e7d11f62467fa2acdbdc0a1018f61c57a5ed9ed7"
@@ -127,7 +127,7 @@
         "StableCapabilityFieldsGeneration2"
       ],
       "exit_code": 0,
-      "wall_seconds": 69.947
+      "wall_seconds": 12.749
     },
     {
       "phase": "audio_mux",
@@ -161,21 +161,21 @@
         "/Users/corbensorenson/Documents/AI_book/build/visual_edition/isolated-renders/stable-capability-fields/draft/.stable-capability-fields-animatic.draft.pending.mp4"
       ],
       "exit_code": 0,
-      "wall_seconds": 3.721
+      "wall_seconds": 3.815
     }
   ],
   "outputs": [
     {
       "role": "visual_track",
       "path": "build/visual_edition/isolated-renders/stable-capability-fields/draft/media/videos/scene/480p15/stable-capability-fields-visual.mp4",
-      "sha256": "05a9b19699739f3f40998bab9285892da603652af6ab8693c5e01869b95f3de5",
-      "size_bytes": 1227823
+      "sha256": "cf1c372ec1695a1802c1e3a373da97b150903be8cc3a39433c8d3d0662000f45",
+      "size_bytes": 2061119
     },
     {
       "role": "muxed_master",
       "path": "build/visual_edition/isolated-renders/stable-capability-fields/draft/stable-capability-fields-animatic.mp4",
-      "sha256": "01116a25a4ffbe700e641bf660e70f0e96a80b862c264dfdae501c2d3d2f69eb",
-      "size_bytes": 5262109
+      "sha256": "46dc0da8cf26289b24be57c30545249dcc287a6d1f0c0f330275be913027f0d4",
+      "size_bytes": 5447396
     }
   ],
   "support_state_effect": "none",
