@@ -39,13 +39,16 @@ def errors(value: dict[str, Any]) -> list[str]:
     summary = value.get("summary", {})
     binding = value.get("w3_binding", {})
     records = value.get("widest_block_records", [])
+    w3_measurements = load(W3).get("measurements", {})
+    raw_current = w3_measurements.get("raw_complete_qmd", {}).get("current", {})
+    editorial_current = w3_measurements.get("editorial_narrative", {}).get("current", {})
     if value.get("state") != "terminal_complete":
         out.append("audit is not terminal")
     if (
-        binding.get("raw_repeated_12_gram_count") != 1281
-        or binding.get("raw_maximum_chapter_spread") != 69
-        or binding.get("reader_facing_repeated_12_gram_count") != 0
-        or binding.get("reader_facing_maximum_chapter_spread") != 0
+        binding.get("raw_repeated_12_gram_count") != raw_current.get("distinct_repeated_12_grams")
+        or binding.get("raw_maximum_chapter_spread") != raw_current.get("maximum_chapter_spread")
+        or binding.get("reader_facing_repeated_12_gram_count") != editorial_current.get("distinct_repeated_12_grams")
+        or binding.get("reader_facing_maximum_chapter_spread") != editorial_current.get("maximum_chapter_spread")
     ):
         out.append("W3 raw/editorial binding drifted")
     if binding.get("sha256") != hashlib.sha256(W3.read_bytes()).hexdigest():
