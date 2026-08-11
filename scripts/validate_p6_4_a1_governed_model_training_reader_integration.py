@@ -65,7 +65,9 @@ def errors(data: dict) -> list[str]:
         current_roles.get("manifest_chapter_count") != len(ids)
         or len(current_assignments) != len(ids)
         or set(current_assignments) != set(ids)
-        or current_role_summary.get("load_bearing_reference_count") != 56
+        or current_role_summary.get("total_count") != len(ids)
+        or current_role_summary.get("unassigned_count") != 0
+        or current_role_summary.get("duplicate_assignment_count") != 0
         or CHAPTER_ID not in current_roles.get("roles", {}).get("load-bearing-reference", [])
     ):
         out.append("A1 current role-map projection drifted")
