@@ -176,6 +176,7 @@
                     ],
                     "properties": {
                       "source_id": { "type": "string", "minLength": 1 },
+                      "crosswalk_display_title": { "type": "string", "minLength": 1 },
                       "mapped_support": { "type": "string", "minLength": 1 },
                       "limits": { "type": "string", "minLength": 1 },
                       "passage_refs": {
