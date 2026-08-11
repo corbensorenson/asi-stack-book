@@ -12,8 +12,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 335 |
-| Lean modules scanned | 132 |
+| Proof targets in manifest | 340 |
+| Lean modules scanned | 133 |
 | Theorem declarations classified | 3153 |
 | Direct/projection-style theorem declarations | 447 |
 | Derived/decomposed theorem declarations | 1978 |
@@ -52,6 +52,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 
 | Lean module | Chapters | Proof targets | Theorems | Direct/projection | Derived/decomposed | Unknown/mixed | Suggested treatment |
 |---|---|---:|---:|---:|---:|---:|---|
+| `lean/AsiStackProofs/AdjudicatedPersistence.lean` | adjudicated-persistence-and-the-adaptive-commit-boundary | 5 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AdversarialEvaluation.lean` | unmapped | 0 | 8 | 0 | 8 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/AdversarialEvaluationRefinement.lean` | adversarial-evaluation-sandbagging-and-training-time-deception | 8 | 12 | 8 | 3 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/AdversarialModelSecurity.lean` | adversarial-machine-learning-and-model-attack-surface | 1 | 28 | 13 | 11 | 4 | mixed: preserve limitation prose and prioritize projection replacements |

@@ -1388,7 +1388,7 @@
       "integrated-reference-architecture"
     ],
     "url": "https://docs.google.com/document/d/1PVLtICJVZm36c6M2y9JkuMZF9nfu_6pyR1SXqFzknME",
-    "notes": "Corben-authored 70,000-word evolving architecture notebook spanning early blueprints through versions 1.0–6.1. The complete family audit preserves whole-system/homeostatic design, versioned hardware-profile qualification, physical memory-tier and residency accounting, distinct memory forms, governed consolidation and retention, substrate-neutral routing, contract-first planning and implementation, dependency-aware parallelism, opaque secret handles, multimodal perception, distributed service and artifact interfaces, and maintenance-learning windows. It rejects master-label maturity, repeated-version double counting, infinite-context/zero-copy/power/performance projections, geometric-truth and ignorance theorems, scalar routing/retention authority, unsafe forced self-evolution, test-suite sufficiency, tribunal consensus, software-SCIF guarantees, SSD-erasure assumptions, censorship-resistance, and autonomous update claims.",
+    "notes": "Corben-authored 70,000-word evolving architecture notebook spanning early blueprints through versions 1.0\u20136.1. The complete family audit preserves whole-system/homeostatic design, versioned hardware-profile qualification, physical memory-tier and residency accounting, distinct memory forms, governed consolidation and retention, substrate-neutral routing, contract-first planning and implementation, dependency-aware parallelism, opaque secret handles, multimodal perception, distributed service and artifact interfaces, and maintenance-learning windows. It rejects master-label maturity, repeated-version double counting, infinite-context/zero-copy/power/performance projections, geometric-truth and ignorance theorems, scalar routing/retention authority, unsafe forced self-evolution, test-suite sufficiency, tribunal consensus, software-SCIF guarantees, SSD-erasure assumptions, censorship-resistance, and autonomous update claims.",
     "source_type": "author_architecture_family",
     "passage_review_state": "reviewed",
     "source_crosswalk_review_state": "reviewed",
@@ -1533,7 +1533,7 @@
       "08"
     ],
     "url": "https://docs.google.com/document/d/1UjGadqJ3ZiqfLgbac0APtV_OLnlSZAkIW0o0r37YdBo",
-    "notes": "Full composite-document audit completed 2026-07-31 across the public grimoire, 1,645-entry lexicon, pocket edition, stacked-spells addendum, and prompt pack. Retains bounded instruction fields, layered identity, typed handoffs, guards, evidence loops, scoped recursion, recovery, and workflow versioning; rejects vocabulary, role prompts, Gödel numbers, coil geometry, templates, and authored examples as evidence of meaning, authority, performance, or safety."
+    "notes": "Full composite-document audit completed 2026-07-31 across the public grimoire, 1,645-entry lexicon, pocket edition, stacked-spells addendum, and prompt pack. Retains bounded instruction fields, layered identity, typed handoffs, guards, evidence loops, scoped recursion, recovery, and workflow versioning; rejects vocabulary, role prompts, G\u00f6del numbers, coil geometry, templates, and authored examples as evidence of meaning, authority, performance, or safety."
   },
   {
     "id": "road_to_agi",
@@ -4852,6 +4852,7 @@
       "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
+      "adjudicated-persistence-and-the-adaptive-commit-boundary",
       "open-research-agenda-and-bibliography-plan"
     ],
     "url": "https://doi.org/10.1109/SP40001.2021.00019",
@@ -8044,7 +8045,7 @@
   },
   {
     "id": "orcp_moecot",
-    "title": "ORCP–MoECOT: A Governed Oscillating Rail Cascade Codec",
+    "title": "ORCP\u2013MoECOT: A Governed Oscillating Rail Cascade Codec",
     "priority": "supporting",
     "layer": "deterministic_compression",
     "chapter_targets": [
@@ -8058,7 +8059,7 @@
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "No inspected codec implementation, independent decoder, round-trip artifact, corpus result, runtime measurement, compression advantage, or production claim.",
     "updated": "2026-07-31",
-    "citation_label": "Sorenson (2026), ORCP–MoECOT"
+    "citation_label": "Sorenson (2026), ORCP\u2013MoECOT"
   },
   {
     "id": "ext_elizaos_agent_runtime_2026",
@@ -8335,7 +8336,7 @@
   },
   {
     "id": "learning_compute_topology",
-    "title": "Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems",
+    "title": "Learning\u2013Compute Topology: Formalizing the Causal Organization of Adaptive Systems",
     "priority": "must_use",
     "layer": "adaptive_process_architecture_and_learning_topology",
     "chapter_targets": [
@@ -8352,14 +8353,14 @@
       "integrated-reference-architecture"
     ],
     "url": "local-source:sources/raw/corben_papers/learning_compute_topology/package_v1_0/paper/Learning_Compute_Topology.md@sha256:4fd869f01f4c0782e6e2f1d657b6c84e87ced82e652126aae395123a04fac712",
-    "notes": "Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI.",
+    "notes": "Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch\u2013Validate\u2013Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI.",
     "source_type": "author_research_paper",
     "passage_review_state": "reviewed",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof.",
     "published": "2026-08-09",
     "updated": "2026-08-09",
-    "citation_label": "Sorenson (2026), Learning–Compute Topology"
+    "citation_label": "Sorenson (2026), Learning\u2013Compute Topology"
   },
   {
     "id": "assurance_shift_learning",
@@ -8390,5 +8391,38 @@
     "published": "2026-08-11",
     "updated": "2026-08-11",
     "citation_label": "Sorenson (2026), When Success Stops Teaching"
+  },
+  {
+    "id": "adjudicated_persistence",
+    "title": "Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems",
+    "priority": "must_use",
+    "layer": "governed_cross_surface_persistence_and_adaptive_commit_boundary",
+    "chapter_targets": [
+      "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "evidence-states-and-claim-discipline",
+      "stable-capability-fields",
+      "recursive-self-improvement-boundaries",
+      "cognitive-compilation-and-semantic-ir",
+      "durable-semantic-memory-and-knowledge-lattices",
+      "artifact-graphs-audit-logs-and-replay",
+      "human-ai-organizations-delegation-and-accountability",
+      "procedural-memory-and-cognitive-loop-closure",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "governed-operations-incident-command-and-graceful-degradation",
+      "policy-optimization-and-learning-from-feedback",
+      "data-engines-continual-learning-and-unlearning",
+      "resource-economics-and-token-budgets",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/corben_papers/adjudicated_persistence/package_v1_0/Adjudicated_Persistence_Corben_Sorenson_v1.0.md@sha256:95db428f8c948cf7caa8e39633176a0d3673433e6fd0b2f015f822e2f5e4e889",
+    "notes": "Corben-authored August 2026 conceptual systems paper and experimental specification for governing how experience becomes durable causal influence. It contributes the Adaptive Commit Boundary; six-object separation of experience, lesson, disposition, realization, qualification, and authority; learning eligibility; Cross-Surface Adaptation Assignment; multidimensional commitment profiles; Evidence-Commitment Matching; Minimum Sufficient Persistence; guarded compilation and deoptimization; transactional promotion and material-change invalidation; counterfactual observability and deliberation reserve; adaptation debt; non-self-ratifying meta-compilation; bounded propositions and conjectures; and the proposed LocusBench benchmark. No implementation, LocusBench result, validated placement advantage, independently checked proof, safety result, resource advantage, novelty result, support transition, SOTA, AGI, or ASI is inferred.",
+    "source_type": "author_research_paper",
+    "passage_review_state": "reviewed",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The complete manuscript and supplied package were reviewed. Its propositions, conjectures, algorithms, architecture, and benchmark remain conceptual or bounded as labeled. Results cited by the paper are not inherited as book evidence and require their own source-note review.",
+    "published": "2026-08-11",
+    "updated": "2026-08-11",
+    "citation_label": "Sorenson (2026), Adjudicated Persistence"
   }
 ]

@@ -552,6 +552,20 @@ Current evidence does not establish that endpoint. Memory-lattice support remain
 
 Planned formalization route: `lean:durable-semantic-memory-and-knowledge-lattices.admission_boundary` covers only the finite admission record for durable semantic memory and knowledge lattices; it cannot establish whether durable semantic memory and knowledge lattices works safely or transfers.
 
+## Memory as a Persistence Locus
+
+A memory write is a durable behavioral intervention, not clerical storage. The
+Adaptive Commit Boundary treats memory as one candidate locus among several and
+requires the write to retain its lesson identity, evidence, scope, commitment
+profile, authority, qualification conditions, expiry, monitor, and descendant
+links. A fact that belongs in a dated memory may not belong in weights; a
+procedural defect may require a test or tool rather than another retrieval.
+
+Deletion must follow descendants and reliance. Removing one source node does
+not erase summaries, compiled context, cached routes, tools, or institutional
+decisions derived from it. Anything that cannot be removed, deoptimized,
+compensated, or requalified remains an explicit residual.
+
 ## Source crosswalk
 
 | Source ID | Title | Bounded use |
@@ -572,6 +586,7 @@ These rows keep Durable Semantic Memory and Knowledge Lattices's manifest assign
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_hermes_agent_2026` | Passage-reviewed comparator: Hermes Agent: Learning, Memory, Tools, and Security Architecture. Supplies a current implementation comparator that separates bounded always-present MEMORY/USER snapshots, on-demand FTS5 session search, and longer load-on-demand procedural skills, while scanning admitted prompt memory for injection and exfiltration patterns. | Official software and documentation review only; no memory fact, search result, poisoning control, session isolation, learning behavior, cost, utility, or deployment result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Treats memory as one consequential persistence locus whose writes require evidence, authority, qualification, expiry, and descendant-aware revocation. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

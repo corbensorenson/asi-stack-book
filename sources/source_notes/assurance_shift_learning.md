@@ -129,6 +129,7 @@ the manuscript.
 | `evidence-states-and-claim-discipline` | The Qualified Competence Envelope as a bounded evidence claim rather than competence truth. | Sections 4.4, 7.5, 15.2 | Does not move a claim's support state. |
 | `artifact-graphs-audit-logs-and-replay` | Bundle lineage, append-only lifecycle, supersession, repair descendants, and replay provenance. | Sections 4.7, 6.2, 6.8, 8, Appendix A | Record shape does not establish receipt faithfulness. |
 | `resource-economics-and-token-budgets` | Assurance-share and equal-total-cost accounting, including evaluator, probe, repair, governance, and recovery cost. | Sections 7.6, 10.13, 11.8, 12.10 | No measured optimum or net lifecycle saving. |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Supplies competence-relative evidence, protected positives, recovery obligations, and qualification boundaries for deciding whether an observed lesson may persist and how strongly. | Sections 4.4-4.9, 6.4-6.8, 7.3-7.6, 12.1-12.4 | Does not identify an optimal persistence locus or establish that any durable update is beneficial. |
 
 ## Chapter Decision
 

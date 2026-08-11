@@ -383,6 +383,7 @@ memory or fine-tuning route delivers equal useful outcomes at lower total cost.
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `living-book-methodology` (Living Book Methodology)
+- `adjudicated-persistence-and-the-adaptive-commit-boundary` (Adjudicated Persistence and the Adaptive Commit Boundary)
 
 ## Claims To Add Or Update
 

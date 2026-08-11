@@ -3,9 +3,9 @@
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "fcb2a7f46109356d955ba4e8d6b78c1c5067d75278ef1c71b11af78ae0ab1f32",
+  "book_structure_sha256": "45ea5f4008cf8600a6cbd4526be8983c219a443236ced206780c03f8bb1817b8",
   "visual_manifest_path": "visual_edition/manifest.json",
-  "visual_manifest_sha256": "eaee1de6b06bad6fbe10648db65d2eecf3f2617ea4da01561bfd7ffe0318150b",
+  "visual_manifest_sha256": "56d26b8839ca381c08624b6b26bc2001562a26fe94b2317bc8e2ae970c91e952",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
   "authoring_standard_sha256": "6fe7393d89d4cd67a86dfda60b8c6fb4e068c7b9255188c2724414bfde6838f1",
   "authoring_bundle_sha256": "4ef3a7b138ba5d634bad6e2286b71fa483547d4e523bfd81d0aa456069caa5d1",
@@ -63,7 +63,7 @@
   "primitive_regression_manifest_path": "visual_edition/primitive_regression_manifest.json",
   "primitive_regression_manifest_sha256": "2c0ff7b806bbc22db49d38f256d7ea805392821f2789b560b9e1913359c6167c",
   "primitive_regression_bundle_sha256": "e84b4080037182d7026e8916ed23d94d70183e4dd0819093129f7b7a8ec19385",
-  "canonical_chapter_count": 86,
+  "canonical_chapter_count": 87,
   "target_generation": 2,
   "cohorts": {
     "owner_reviewed_remediation": [
@@ -149,6 +149,7 @@
       "safety-cases-and-structured-assurance",
       "content-authenticity-watermarking-and-synthetic-media-integrity",
       "governed-operations-incident-command-and-graceful-degradation",
+      "adjudicated-persistence-and-the-adaptive-commit-boundary",
       "policy-optimization-and-learning-from-feedback",
       "data-engines-continual-learning-and-unlearning",
       "scientific-discovery-and-experimental-governance",
@@ -193,10 +194,10 @@
     "primitive_graphical_regression_required": true
   },
   "counts": {
-    "planned": 62,
+    "planned": 63,
     "narration_draft": 20,
     "treated": 0,
-    "script_passed": 3,
+    "script_passed": 0,
     "beat_planned": 4,
     "animatic_passed": 0,
     "picture_and_sound_lock_passed": 0,
@@ -215,7 +216,7 @@
       "title": "ASI Is a Stack, Not a Model",
       "chapter_path": "chapters/asi-is-a-stack-not-a-model.qmd",
       "chapter_sha256": "aaba98d8cf997c873fad1bbe2a7f87df54a58b0aa178f0a487c3c16ddd769609",
-      "source_context_sha256": "eb4fac4b383187fbc1e1c3035aa92bf24474446448d19a7d813cdac9020000b1",
+      "source_context_sha256": "2e2c0def834511cd50ff4a9d59c03eb06da7c561e594a437551d0a3ac1996b39",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -257,9 +258,9 @@
           "independent_release_candidate": "visual_edition/chapters/asi-is-a-stack-not-a-model/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "treatment": "pass",
-          "script": "pass",
-          "beat_plan": "pass",
+          "treatment": "revise",
+          "script": "revise",
+          "beat_plan": "revise",
           "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
@@ -279,7 +280,7 @@
       "title": "The Efficient ASI Hypothesis",
       "chapter_path": "chapters/the-efficient-asi-hypothesis.qmd",
       "chapter_sha256": "a88e113b7f6db52dc7d0ecf4ec6137170e6039e7052921c1536ee4d9e499bb29",
-      "source_context_sha256": "5ce041eff232459c6c4e03039b66d6ee8131b55c5ebdee689a839129c050b5a7",
+      "source_context_sha256": "fc73505c54b0fb1f386d074e47a7ee0fe0457602b2b6f765703a3cc3aba70328",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -321,9 +322,9 @@
           "independent_release_candidate": "visual_edition/chapters/the-efficient-asi-hypothesis/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "treatment": "pass",
-          "script": "pass",
-          "beat_plan": "pass",
+          "treatment": "revise",
+          "script": "revise",
+          "beat_plan": "revise",
           "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
@@ -343,7 +344,7 @@
       "title": "System Boundaries and Authority",
       "chapter_path": "chapters/system-boundaries-and-authority.qmd",
       "chapter_sha256": "960534b46d6bc28182d182fbb23d75ae9d2cb8b9a602c982150105db411e42db",
-      "source_context_sha256": "3ccdc9c910cc1d75b72291d044773ee59791ad2a8c8c32e8675267128b4d139e",
+      "source_context_sha256": "4d6e809c75d90380ece97f3cea604a40f1e4a3a28b3a9c4db23168d931ae1151",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -385,9 +386,9 @@
           "independent_release_candidate": "visual_edition/chapters/system-boundaries-and-authority/generation-2/reviews/independent_release_candidate.json"
         },
         "gates": {
-          "treatment": "pass",
-          "script": "pass",
-          "beat_plan": "pass",
+          "treatment": "revise",
+          "script": "revise",
+          "beat_plan": "revise",
           "animatic": "not_started",
           "picture_and_sound_lock": "not_started",
           "release_candidate": "not_started",
@@ -407,7 +408,7 @@
       "title": "Failure Modes of Ungoverned Intelligence",
       "chapter_path": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
       "chapter_sha256": "ea8ab0f86102b9374955a80e349c811c38e0cefb2610ad081427a9c118b37c36",
-      "source_context_sha256": "dee33947c8b7e128a6d053377d920c0b58276d405ad446c90496db491b3e0719",
+      "source_context_sha256": "734c7d5e2a0df5879c4425f33a4c2084030a5118dd9d8b47c3cd8a7fc5ed42ce",
       "cohort": "owner_reviewed_remediation",
       "predecessor": {
         "local_generation": 1,
@@ -598,8 +599,8 @@
       "chapter_id": "evidence-states-and-claim-discipline",
       "title": "Evidence States and Claim Discipline",
       "chapter_path": "chapters/evidence-states-and-claim-discipline.qmd",
-      "chapter_sha256": "a6cc14bc00ef092f051aa936c2383cd99dd7860e5c26dfd15f8da0972ee6d0a7",
-      "source_context_sha256": "e8275ae27874d24f9bbedaf3d61063d0aaeb6907d684e8ddf09761895bc38fd7",
+      "chapter_sha256": "aedf63b628a7278bdb5a22a2f77f89f6218615eccf969104db3d69bc80ddca1f",
+      "source_context_sha256": "139e775c2770795a9c9fcd6f645b3701186b95b5e9e9008a598490ca01f2488b",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -727,7 +728,7 @@
       "title": "Human Intent as a Formal Input",
       "chapter_path": "chapters/human-intent-as-a-formal-input.qmd",
       "chapter_sha256": "934bb5b8a7dd720bc6e6e9d72876bd41e4c27414da43bbff3fe12a363ca2ea5d",
-      "source_context_sha256": "243393d6af3d5a5af45a8ad4aacd27959da4976b540f3452785e63674b71ad22",
+      "source_context_sha256": "267ed9bd04b3901deadc5244ab265ca65d10ccade7327ed532a2023a6692f4c6",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -791,7 +792,7 @@
       "title": "Human Factors and Meaningful Control in Oversight",
       "chapter_path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
       "chapter_sha256": "fdd5cbce8687110ceae0e002c1efb00181441d5f67af84678d12abf6c5922072",
-      "source_context_sha256": "8e10317e90e5c3dfe6fd21605365bb011f0096f816781562de48d2a8c09467ef",
+      "source_context_sha256": "f18df8dcde59cc8234c0bdffca868a0bd8a2eefb7b136c0504a2101c647d84cf",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -855,7 +856,7 @@
       "title": "Human-AI Communication, Persuasion, and Epistemic Security",
       "chapter_path": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
       "chapter_sha256": "b7d6ba04b43d0be2fca04b992113adc0c89fb75595545dead5f3e8d7abfd13c2",
-      "source_context_sha256": "8e43e94d185cd6976b80e94437c06a2193032e74907530a6ee7f8c8de9511f21",
+      "source_context_sha256": "60383ee76fd9aff4f86b00e80580f5f523c7ba7f78f8e5588ecfd9db044d9419",
       "cohort": "withdrawn_predecessor_previews",
       "predecessor": {
         "local_generation": 1,
@@ -1045,7 +1046,7 @@
       "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
       "chapter_path": "chapters/moral-uncertainty-and-value-conflict.qmd",
       "chapter_sha256": "99f4eea7140589ec4be777c82b1192799412f36939e835511e85ec52d5ca5a78",
-      "source_context_sha256": "a55ca347da8caff982ca56e967cd1edf3ad1c4a971c9abde598d27b3c4486d9e",
+      "source_context_sha256": "3a1d9c75c65dcc0fa1edbd39456309f420a81350fd8af1b979eb256bc68dec60",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1231,7 +1232,7 @@
       "title": "Societal Resilience and Misuse Defense",
       "chapter_path": "chapters/societal-resilience-and-misuse-defense.qmd",
       "chapter_sha256": "58e6daf837617a377e7401f28d73e2563879020df27c238eb3e3b6c94477e14d",
-      "source_context_sha256": "22716663e8b0ba5fab887854e5250eb0560fb7c893a1427142c0e4b1a10490b5",
+      "source_context_sha256": "67b831d9fdb050671306a7f41b1016fa112904e6c94492242c9b0fe40265bae5",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1292,8 +1293,8 @@
       "chapter_id": "stable-capability-fields",
       "title": "Stable Capability Fields",
       "chapter_path": "chapters/stable-capability-fields.qmd",
-      "chapter_sha256": "45562264993c7f6daab9e893596e1605ddba0692c2f8879102345993094a27ec",
-      "source_context_sha256": "c4d112864ba41df07bad891c6051d76bbc278512940ac6571acef859602456a7",
+      "chapter_sha256": "a51431769bc98f3d448f3f5a01d0325328c4fa013ab7d094d11be3c084d2892b",
+      "source_context_sha256": "e82944c352c0fc9a1a9086f85603466e18887d0e9e710ef60821f239701c7dfc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1355,7 +1356,7 @@
       "title": "Capability Replacement and Rollback",
       "chapter_path": "chapters/capability-replacement-and-rollback.qmd",
       "chapter_sha256": "9d307b9a44b8442d1f895f2b483a8bcf9341c960c8dcabb694d671179f72a59b",
-      "source_context_sha256": "4fb5fd7855964f460b2a8c7dedb8e471248acbeb8176f766b1b7133ece5d2878",
+      "source_context_sha256": "02e90ed35893de68f58053f68ccadc84a521c20e88234d1cee5d8ae300b073d5",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1417,7 +1418,7 @@
       "title": "Security Kernel and Digital SCIFs",
       "chapter_path": "chapters/security-kernel-and-digital-scifs.qmd",
       "chapter_sha256": "88282b535571a75ecee114ef0cbe197f9592fe039683c4ce6a8cee3903acee1e",
-      "source_context_sha256": "219f183e1e955b68e58f06ac299d2de5c177c27ffd2695f1da129c66cc3a1494",
+      "source_context_sha256": "1e17c564622504cb76df654926d85061d7fddbf4dd7e18ccd2be0c8633eb39d7",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1479,7 +1480,7 @@
       "title": "Adversarial Machine Learning and the Model Attack Surface",
       "chapter_path": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
       "chapter_sha256": "0e62dcdd6538d66405c552842f8ff8fd18f6d52f00b6c5c8566ab330aac1b8c8",
-      "source_context_sha256": "e3f3510a6e997e790900ff1901a27a9324a9aa5c92211a00e96c698eccd6c805",
+      "source_context_sha256": "798fab5f24965ec96de7b6fc248a10bc3658c73593f0231ea75bdfeb48379aa3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1789,7 +1790,7 @@
       "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
       "chapter_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
       "chapter_sha256": "0d20b9ac58913a138f613011103816b4d8f8842cb2e98f2a41710c8ad6ebc021",
-      "source_context_sha256": "0cbdcc13a32563b971ceae2b6257f3d68b6d73624c02cf53a9801eacb8c5d079",
+      "source_context_sha256": "e9190a6faeee7c564a988e5357221e2f9a369d60d342440947f804e2629ca0a4",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1850,8 +1851,8 @@
       "chapter_id": "recursive-self-improvement-boundaries",
       "title": "Recursive Self-Improvement Boundaries",
       "chapter_path": "chapters/recursive-self-improvement-boundaries.qmd",
-      "chapter_sha256": "c7e7d83584b070e9dab824cddd50f917458c9c3920363ae03c27ae13674df3f7",
-      "source_context_sha256": "f58f1d5cb404fc6b6bf8cb8853be0635e2b9bd7b2db71f564826ea3450b64fdd",
+      "chapter_sha256": "daf5a6d8480beba8bdec3aa342d508a0ab5be4363cb099308d8f9378758eb437",
+      "source_context_sha256": "e909f5d916418a301e8ce6846ff93b39d7a495106df4a72cb48699fb3d58e025",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1913,7 +1914,7 @@
       "title": "Open-Ended Improvement Engines",
       "chapter_path": "chapters/open-ended-improvement-engines.qmd",
       "chapter_sha256": "dbdb50c7efd3bcfe2f90deacfd7b57e9d79d99dca1159867b4acdd70d8a631a7",
-      "source_context_sha256": "3174a26974122b1a44e9efa1556a51b212837028430949f2608c2d08577c98a8",
+      "source_context_sha256": "241a80d816aea7c4154de9249281a4a2ccd7414a1c19c22d3dcd0338eb6baa91",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -1975,7 +1976,7 @@
       "title": "Autonomous Replication, Proliferation, and Containment",
       "chapter_path": "chapters/autonomous-replication-proliferation-and-containment.qmd",
       "chapter_sha256": "9b2a9148f7f49cf322e4d36292c45da4a8660c7fac5615636f2af466ebbd9aef",
-      "source_context_sha256": "c430439e8bf283543abc3fad76330534026b97343888058a4c73aedc12af7e73",
+      "source_context_sha256": "5fc1a4f2cb6f9627001bc1d5a9648d5ea7bd15a519c7b9f743ef8c36c4f31a07",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2037,7 +2038,7 @@
       "title": "Command Contracts: From Intent to Executable Work",
       "chapter_path": "chapters/intent-to-execution-contracts.qmd",
       "chapter_sha256": "e88dbb57e9f6efbc7efdb8e55eaf3bca8e2066ea18b1262f503673e0853f1182",
-      "source_context_sha256": "18cb1ccc9d01591cfd7d729fc6c97bebfd2a82d96be0c31367797fb70c2790a8",
+      "source_context_sha256": "a678528ee2c6c90c4ed5e14dbfda437777fea13d6668e73d19fc16702a6e4ddc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2099,7 +2100,7 @@
       "title": "Perception, Sensor Fusion, and Observation Trust",
       "chapter_path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
       "chapter_sha256": "c067b3a4897285280a1e6c9a1efec1f609f5ee5cb3c499f2dba342caa55e2fa7",
-      "source_context_sha256": "1db9e4d2c3938e090c57ccf6c8b1e7e528b817b51cd1ad9df151398693b4a31d",
+      "source_context_sha256": "3bf3b9fe80e1be42c27bb47672c009c7e7a1397251b649762eb3fad0cc548527",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2161,7 +2162,7 @@
       "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "chapter_path": "chapters/planning-as-a-control-layer.qmd",
       "chapter_sha256": "23932e39744f0ee46df350689d73a6cd05659762dc0b2734751076464dd874f1",
-      "source_context_sha256": "7c899c27c8c1b7f006162ee2b66c3d2fc121af0b54e3916c58ff58227c6c2b13",
+      "source_context_sha256": "f3d81c20f899439730727b5df32a04b45efdde90e84d9530daab24e7ee389be6",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2223,7 +2224,7 @@
       "title": "Governed World Models and Reality Grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
       "chapter_sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
-      "source_context_sha256": "81448c13bc0506891e77558ef35549c7bab69a2a22a3ab86c2cdbb38c7cee647",
+      "source_context_sha256": "cb77c61183c312d3089bd8972c6f5e8ae6c3d3135fd0324c8ff87c78c0419efb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2284,8 +2285,8 @@
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "title": "Cognitive Compilation and Semantic IR",
       "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "8aab365c6a7ff928a082774e4ce0e251d9756963ef122c426a74046ea918e652",
-      "source_context_sha256": "4ebae6ec14fc2285330b1450d678bf8c2323cb912e793ca86873b0f455418980",
+      "chapter_sha256": "e3cffafac2c92bce886bb2b3b72ba52cea3a923b3202169b530d2fa615703baf",
+      "source_context_sha256": "19f1b91504a38cf62fb8485811df95aeead51041dad6027741b873ff8b4f56c3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2347,7 +2348,7 @@
       "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
       "chapter_path": "chapters/virtual-context-abi.qmd",
       "chapter_sha256": "c888b27a744d4f817459c90aee94452f9c4b5079713e5c758656c3283bab59e4",
-      "source_context_sha256": "5de42f7d3f3e255ff650748b931b0566f7e591048f8cd146d637edf0ef69f423",
+      "source_context_sha256": "59a21956042421b7cbeb06919d8b71e5412250030643c615d8808c2ade594ebc",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2408,8 +2409,8 @@
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "title": "Durable Semantic Memory and Knowledge Lattices",
       "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-      "chapter_sha256": "b2e7499bf72801dee8118b4d493a164ab85be3f0435fd2e4badc5c4848bfdfef",
-      "source_context_sha256": "02c6c44ad43d537c89e04639bff2289b7dd8ff538cda3e62f1fab36b8dca4fc2",
+      "chapter_sha256": "71de05e06d969252ed16cecf7eee4022ba11f6bdedfea73d12ce8ae5956618ad",
+      "source_context_sha256": "26d3214a6a88db41709ed03f6e0d54e6cccaf874c100f6dad16ea22c46fa8deb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2471,7 +2472,7 @@
       "title": "Context Transactions, Snapshots, Mounts, and Taint",
       "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "chapter_sha256": "4a2b4d6aed3807c937932b9238d07fc1ab53779b9cbdab2c21b3633e30f45f33",
-      "source_context_sha256": "97d7b3fbb16f763e28ebf019cd1eb8964919c1d8ce895f358b8c6b5e817c51bf",
+      "source_context_sha256": "4359672c7891b770a330000a37a9957b5f8e4b941bcc8ba5cc032b445c187bf9",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2595,7 +2596,7 @@
       "title": "Claim Ledgers and Belief Revision",
       "chapter_path": "chapters/claim-ledgers-and-belief-revision.qmd",
       "chapter_sha256": "d8fcf0912c2b2f6611c70ec496f3c9ccfe0d688df4e2e940cf312e47a733b536",
-      "source_context_sha256": "a3327030fc3021f27e82dbcc860053cd7dc671c7535b11cbda9999632b55fb85",
+      "source_context_sha256": "2ff59b589cc4964eb5b9ee203d67816831cccc7778c1647408d0af10a3a5db0c",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2657,7 +2658,7 @@
       "title": "Proof-Carrying Claims and Adversarial Review",
       "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "chapter_sha256": "25af101ae162480312d0e0fa9dd125ad3293b6b5c49aa1f5d5053bacc6709706",
-      "source_context_sha256": "4e7581c301910d5b841a30b3dee9ff484f6c95c69f00eb05b5d22dc411f83a7c",
+      "source_context_sha256": "1443963effa536a9d23c35ff7d6305fc08506fdec80e6c9bd8dfc01fedad0012",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2719,7 +2720,7 @@
       "title": "Labor OS and Typed Jobs",
       "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
       "chapter_sha256": "874efccd1b8bea980314f301ce1c2e021177e85cfdc57ccc394e6e285811f72c",
-      "source_context_sha256": "aa7bcb5f91d6a0b33d6108213bf6d92ccabf468e4a11e616419307eb2ffce0c9",
+      "source_context_sha256": "25f9c55791bf46a2fac9b71c4129c226d5ae5079bbd23e90a1c0d643e0b7cd65",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -2833,8 +2834,8 @@
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
       "title": "Human-AI Organizations, Delegation, and Accountability",
       "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
-      "chapter_sha256": "8f394fd1da82c532df3ef0973a0bc5d9117512c64a548d452149b6d677b62560",
-      "source_context_sha256": "3366aa3553d8eddb1ef87ff95a7f8296738e77b4bcd8eefd0af1a11be368260f",
+      "chapter_sha256": "6ee9b2644e21e4e2b869b5aa529fa894bec5dbd3ae8d14867f8f9d624954e52f",
+      "source_context_sha256": "7b339912614a3b57fc276f867d6620a0b7f68c865bb99e994cec52f599213680",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3019,8 +3020,8 @@
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "title": "Artifact Graphs, Audit Logs, and Replay",
       "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-      "chapter_sha256": "91c8426a96df8ce2f1a071bfc40163ff10fca1689a58581545039f842951e731",
-      "source_context_sha256": "e341d2500087d93f10fcf16da8343fc62825408f79f28bcf9f65c316e5b2ece3",
+      "chapter_sha256": "3caa100ab3bf4e1476ee403a1655d1d9bcb3d19e6bcf695237a05a0d7f4a1536",
+      "source_context_sha256": "78386630b05860262b601a826728b67a595b7f38844f552e89c0ce5003116608",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3082,7 +3083,7 @@
       "title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "chapter_sha256": "2e0e1c5781d7e5051f8ace36168f68ebc7628aa4c51d2c14c6a9e4ddc3653c3f",
-      "source_context_sha256": "bf8c2f5814c9858d39ee9040b2081d3d357fc6cfc8bec5e25d1514b188604508",
+      "source_context_sha256": "ccedd5943c428dc19cd45ffdef39d4aacc49e168543df050cdcdcd55f2dde508",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3144,7 +3145,7 @@
       "title": "Embodied Agency, Real-Time Control, and Physical Safety",
       "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
       "chapter_sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
-      "source_context_sha256": "adfcdf1e7a6ccc6a2dcd15897f034a50e9807082d1da7a2b094ed18e79a65681",
+      "source_context_sha256": "3870a66c14e1169ab50f982420e56481c18dab24e525616ab65880ece852180f",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3206,7 +3207,7 @@
       "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
       "chapter_sha256": "864ea88b60de7f5c629af4398ff9902375dd1cc090ac253dc09a60685f7b3903",
-      "source_context_sha256": "8512b9d7efdd805f7955d300145c6168439428cc89c3bcd71a3a804f7e41f7f5",
+      "source_context_sha256": "370659ab0f9d62dc51465025a04dda5b1c85266ef323b2e369b2dd070a222de9",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3329,8 +3330,8 @@
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "title": "Procedural Memory and Cognitive Loop Closure",
       "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "chapter_sha256": "d1b30c3c3446ba1501dcf6df3181b8576d6e1ff4d81ec951e3a22a7dd8082ccb",
-      "source_context_sha256": "b4033b59134578704459b3137cdad8a16bfb89f7a11640e6eae8c0038b0e6d7a",
+      "chapter_sha256": "9e3f8031cebce53e19f803341ec6739a5529e46785393f71d3aa1e92faf0e2d5",
+      "source_context_sha256": "64e83e7c776137271c9afe5e8caa59aa985745b948d443ad0d2fc505ac5f1c7b",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3392,7 +3393,7 @@
       "title": "Routing Heads and Specialist Cores",
       "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
       "chapter_sha256": "41f31774c24739887ea9e2cf53ee51d14bf386b133cf80f48c8c40a002691abb",
-      "source_context_sha256": "3998a47702263454030d7a6fcf26d41db6645c19639fedd7614c4e7d4c31279d",
+      "source_context_sha256": "660dfb73787ecc79e9e5e91edc5ef9810a36a4f649e6953b1d76b25fe9860617",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3454,7 +3455,7 @@
       "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
       "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
       "chapter_sha256": "d25ec2f016f6a475d51003975a62178247a6bbb0ef172d73e843974a3cfb2bba",
-      "source_context_sha256": "b75ff51e0ba23adc026615aaf8ac2674b23ffee3189a12197246331198da687b",
+      "source_context_sha256": "15906e578842a1f3d171065a48731e3351e3fa0ad0e986f0321807e423aeb3dd",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3640,7 +3641,7 @@
       "title": "Learning–Compute Topology and Adaptive Process Architecture",
       "chapter_path": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
       "chapter_sha256": "138d09fb34862d7d7cc735e6a3ce40aaa158a6dccff9b6dd48e87aac973bbf0b",
-      "source_context_sha256": "d3c5683f285cafb5ead17d16dd6425a0d88ed628a853c9fa9ab1a9e886cc60c2",
+      "source_context_sha256": "e8b001fe00b84611e650494a1387e6635ac6daf5d7e5dd292dfe7d089bf01818",
       "cohort": "not_yet_uploaded",
       "predecessor": null,
       "target": {
@@ -3754,8 +3755,8 @@
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "title": "Readiness Gates, Residual Escrow, and Quarantine",
       "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-      "chapter_sha256": "0f0a38a8b6e20191472556dd6fdcb32f2604a1309d7a230909ead82a0dd7cc7f",
-      "source_context_sha256": "3c05f6d29bbf96ac2538eca4e29da00f9cfcb6ef243e599ac15c9eacbe52d5f9",
+      "chapter_sha256": "252314141515a2ed7a9009644e1ae817eda4d62e36227023d9d236cc8ca0ed49",
+      "source_context_sha256": "97293bbeb668dad5723bea174085909236995bb76986c1df6ed0a322f4824d08",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3817,7 +3818,7 @@
       "title": "Personal Compute Hives and Federated Edge Intelligence",
       "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
       "chapter_sha256": "81bc86e40145b73a6693d3efc3c85028cbc5c48711e9f756acc2b9d5828d04b0",
-      "source_context_sha256": "601601e815edbeafe334bc76e3105d12b855d5832381caa4505aea3eb809283f",
+      "source_context_sha256": "206f310f8b785d642dd321405623905db0638ff8d6052d2acf350b1a24fb73d0",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3879,7 +3880,7 @@
       "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
       "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
       "chapter_sha256": "16b39b937d9b8571f922998ee979a99b9f2a8cc0faaa5468dc030381fa40941a",
-      "source_context_sha256": "f426c1be8579811e40c06405cf4fb6dbe6f2d221fbc40ab2ab0201425f047bd3",
+      "source_context_sha256": "94d18e1187da0ca88e7cc9abbc3e365634af32e391255302e264444e5f0bb5ed",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -3941,7 +3942,7 @@
       "title": "Fast Generation Architectures",
       "chapter_path": "chapters/fast-generation-architectures.qmd",
       "chapter_sha256": "49e4dc1988388addf979df970435d5dda17bfa23fc3dfa6d143e3c837761aaa8",
-      "source_context_sha256": "3de710fd33ed844c410d52b389065d4de73e5a6ad480019076546a3eb0f2738d",
+      "source_context_sha256": "c5c0bc6b0acff2cc68bbfd8cd81922271a5d205d38eb871f0e3fd45bee418228",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4126,8 +4127,8 @@
       "chapter_id": "resource-economics-and-token-budgets",
       "title": "Resource Economics and Token Budgets",
       "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
-      "chapter_sha256": "c98c93a11737babc13e12c090da1301f46cf74be996b9aa7037b5b13203f6d09",
-      "source_context_sha256": "09bf65c668ccbf1ab999acb561be86d2ba8b0bf6b493838545610cfd6bf0349d",
+      "chapter_sha256": "d03cf1100e8fdaea1359df72b47908aefda6603041ad723af2d2f52e8eaa459e",
+      "source_context_sha256": "4074d07e54b0268fccfd6e237321e46cd9bbc5a696e449b7e769ce32dbd0d39d",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4499,7 +4500,7 @@
       "title": "Executable Specifications and Lean Proof Envelope",
       "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
       "chapter_sha256": "7051ac509680bdff17804d64f448da198f24f65a523f2fead9e30f0b130acbe6",
-      "source_context_sha256": "1a32134a93ebab54661c69110dd956e7f0c2d95a5c7e8ae935ea848128fe750a",
+      "source_context_sha256": "a93a30b330655857a4519cec2a316c8d237b8c2c65afbb705825f190cb007786",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4560,8 +4561,8 @@
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "chapter_sha256": "964a9ecb472b6193c23f0efbbfc8a027ea0df44e4fb3d579ad49dcc69c4a4520",
-      "source_context_sha256": "e5445592a88f46f3a0a01fa0a8d27c6f4ddc3333460912c3813857f27b0388a7",
+      "chapter_sha256": "f0c142408e33d677e13438f12c7256cb38d5a8631f52e20f71a3bd116ef1ccfa",
+      "source_context_sha256": "7bad4ffb908224c5f56345d4e1cb530062ba8eb621b898d030de43cb8cd774a3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4623,7 +4624,7 @@
       "title": "White-Box Evidence, Interpretability, and Activation Governance",
       "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
       "chapter_sha256": "fb2f15f741ba28dd4f1de69f2df13cd2705038bff0fd0b40afcaace71aee2f3b",
-      "source_context_sha256": "b74c3d6791aba3cdaf1785a3aae8d328e3c3fabf5205b40253722c37b7118c63",
+      "source_context_sha256": "27765ec77e3b37245ae46cbe326c5e3ccb4e76a50a642bfefc3e23837bd9ff02",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4747,7 +4748,7 @@
       "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
       "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
       "chapter_sha256": "4e6f40f89ebaf82581bb6135356d9b32eb9e37484e97475a9774e7198ab1f5ce",
-      "source_context_sha256": "43ed92ca6d3581b93cb4712d2625dd3b309171629f61ea660586657156617445",
+      "source_context_sha256": "098b0f7d7d0102e7f4e0af8b4ccca72f7f31d32cea2813ef1f59a3f9541b86b3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4871,7 +4872,7 @@
       "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
       "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
       "chapter_sha256": "5c9f9fdb9a4cfa2ad59fe0418b22aa6ec33628e4837585a9649acc575aaf6d80",
-      "source_context_sha256": "7464942391d1f66c4b7a39be1415648e29dcf3b136e5d3d198cb6b7b605c56d7",
+      "source_context_sha256": "4cca4513b5ccbbc216022e5a490d0ffe264ffb8deaf6492741498def22622b9c",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4932,8 +4933,8 @@
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "title": "Governed Operations, Incident Command, and Graceful Degradation",
       "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-      "chapter_sha256": "aeee6c415761d5c3028fcae1fd8a7e55cb57af5a1ea2ee56f7b66adc96dc4b86",
-      "source_context_sha256": "628c03e327a5eb8e143bd76e4b0da1cca0e7fd7cee3c1d11e1eb54174764233f",
+      "chapter_sha256": "3cb68633ddf32ea5693bce7db585bfe887755b428d9813593b7c0ade8e9b90df",
+      "source_context_sha256": "b7b0d8f5935246facc4a0143667852fb728006651c2be73c4f743b7c00789890",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -4991,11 +4992,64 @@
     },
     {
       "position": 78,
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
+      "chapter_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
+      "chapter_sha256": "3db4dcf1070215e41b295c507526ee40bfb9fe34e93fa743a4435548fa098920",
+      "source_context_sha256": "262fa004c5d6cccc372eaf0822e1728cff1e8e1db8090bd43bd3ab7ae76bf1a2",
+      "cohort": "not_yet_uploaded",
+      "predecessor": null,
+      "target": {
+        "generation": 2,
+        "stage": "planned",
+        "treatment_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/treatment.json",
+        "treatment_sha256": null,
+        "beat_plan_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/beat_plan.json",
+        "beat_plan_sha256": null,
+        "scene_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/scene.py",
+        "scene_sha256": null,
+        "narration_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/narration.txt",
+        "narration_sha256": null,
+        "caption_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/captions.vtt",
+        "caption_sha256": null,
+        "transcript_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/transcript.md",
+        "transcript_sha256": null,
+        "thumbnail_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/thumbnail.svg",
+        "thumbnail_sha256": null,
+        "master_path": "build/visual_edition/generation-2/final/adjudicated-persistence-and-the-adaptive-commit-boundary.mp4",
+        "master_sha256": null,
+        "render_receipt_path": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/render_receipt.json",
+        "render_receipt_sha256": null,
+        "experience_review_paths": {
+          "animatic": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/reviews/animatic.json",
+          "picture_and_sound_lock": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/reviews/picture_and_sound_lock.json",
+          "release_candidate": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/reviews/release_candidate.json",
+          "independent_release_candidate": "visual_edition/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary/generation-2/reviews/independent_release_candidate.json"
+        },
+        "gates": {
+          "treatment": "not_started",
+          "script": "not_started",
+          "beat_plan": "not_started",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
+          "release_candidate": "not_started",
+          "independent_release_candidate": "not_started",
+          "technical": "not_started",
+          "claim_fidelity": "not_started",
+          "accepted": "not_started"
+        },
+        "youtube_state": "not_ready",
+        "youtube_video_id": null,
+        "quarto_embed_state": "absent"
+      }
+    },
+    {
+      "position": 79,
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "title": "Policy Optimization and Learning from Feedback",
       "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-      "chapter_sha256": "3cadb339956eebc922dc509a9b143a162fda28722081715ef918e2bd26d0afa6",
-      "source_context_sha256": "c88930b55954c681d6ff00bc315ab2e41472e7f2fad0423134a2b2243655e1cd",
+      "chapter_sha256": "e64b9b32c83dbc9131d5cfbf1a4db429f7605cd5b6d2cb759feeccbe5584f5a6",
+      "source_context_sha256": "c9427bd1b82cbb09897a9f18e3dc077059e34ce1ca043d4965f6c69f09b46135",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5052,12 +5106,12 @@
       }
     },
     {
-      "position": 79,
+      "position": 80,
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "title": "Data Engines, Continual Learning, and Unlearning",
       "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-      "chapter_sha256": "43eeaab5043b2e6daf5469e7f5a7bccc7085e3825ab59b2e752512036a2acd49",
-      "source_context_sha256": "2fd4a75218fc5cd3d90f7525ed3b9eea5e82cd5041fadc1f4f75498690eb6be7",
+      "chapter_sha256": "040469c8bcf6dd17c7829db601ba2058bf1163e4667a9bc6d737194f2cfa69fa",
+      "source_context_sha256": "691cbb96ede3094d10cdf92d4073097b6c2f221a986fbaf3a15a23a34ce3fcca",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5114,7 +5168,7 @@
       }
     },
     {
-      "position": 80,
+      "position": 81,
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "title": "Scientific Discovery and Experimental Governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
@@ -5176,12 +5230,12 @@
       }
     },
     {
-      "position": 81,
+      "position": 82,
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "chapter_sha256": "d8e2040f7702501aa65bdd35e89b32dfc58d84b8cd189115abad42ad5c241e90",
-      "source_context_sha256": "649a59f8d7526af3b44b1fda95efed5051869d03f15577dc27def1ff86e17ca2",
+      "source_context_sha256": "e9f1dd20237e98624ba7979a8750d565de6dbcb3b218252a020803346965ed0a",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5238,12 +5292,12 @@
       }
     },
     {
-      "position": 82,
+      "position": 83,
       "chapter_id": "integrated-reference-architecture",
       "title": "Integrated Reference Architecture",
       "chapter_path": "chapters/integrated-reference-architecture.qmd",
-      "chapter_sha256": "34fbc4956dc0024b0fd46ec938b1ae5c574b1c6bfbb808805836bee41b1fd2f4",
-      "source_context_sha256": "7381fcb41d1701958b2a02ca9d2e2d15f22e9f4238f99097b9f50b96b5f186c6",
+      "chapter_sha256": "20ee2862ac6dba8df3f889e624cd70a13de13a89e6fdb1e82073390d4a86d78f",
+      "source_context_sha256": "cbf1a2bbcf88547d2d81fc23f8003b8e8ae669ea96b40a62d8de8eaa123fa81b",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5300,12 +5354,12 @@
       }
     },
     {
-      "position": 83,
+      "position": 84,
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "title": "Project Theseus as Report-First Implementation Reference",
       "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "chapter_sha256": "80598edd38a2624ff0248da1d62e180f9e8c67812fe69cb774eb886e0b1c2ed6",
-      "source_context_sha256": "6385899c022cbc675b893561657c95bcdd067fd13b100ab52511fdc5a8870c7b",
+      "source_context_sha256": "d519c30844a8b7aff8bbcc754688ecbec7776752811c0d1905d83f570c7f7c2c",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5362,12 +5416,12 @@
       }
     },
     {
-      "position": 84,
+      "position": 85,
       "chapter_id": "prototype-roadmap",
       "title": "Prototype Roadmap",
       "chapter_path": "chapters/prototype-roadmap.qmd",
       "chapter_sha256": "2d34fb27ac8b10d5a7a4f5776d109ed727b43bd4fc8fc708fee1383f252f0b1b",
-      "source_context_sha256": "dfcaeecb9f8774b18cb9fa1610dbaceea33a21317f1ce700a3fd0b8cfacfa85c",
+      "source_context_sha256": "77e3a20302d0bb04f7f7181ba8c7390f01d29fd4ee543761bc5485c230a3d494",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5424,12 +5478,12 @@
       }
     },
     {
-      "position": 85,
+      "position": 86,
       "chapter_id": "living-book-methodology",
       "title": "Living Book Methodology",
       "chapter_path": "chapters/living-book-methodology.qmd",
       "chapter_sha256": "08000f6acbeaf0285d3f65a74a030d2c237e035777f26c7e63fb0a951fd720b3",
-      "source_context_sha256": "bea611c353a85ecdf25ea9dc97f31110e8d12370602602b1074d3955d91676d6",
+      "source_context_sha256": "7a0dcf66388726951a305fb272f687cdfaa5cd94195ae2fc93b9072b65bf4b65",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,
@@ -5486,12 +5540,12 @@
       }
     },
     {
-      "position": 86,
+      "position": 87,
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "title": "Open Research Agenda and Bibliography Plan",
       "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
       "chapter_sha256": "88b33fe78d25a95f4977971b3f514b7d027b428b532c384ed9c6513ba5188fbb",
-      "source_context_sha256": "773b7dff23b91a03f048ef79a6169d905b16ae58af387b77ba7c671cafa70a22",
+      "source_context_sha256": "3f62725da9978af7b68940533628f385b5b36b5a291fa1a129138df5a886b128",
       "cohort": "not_yet_uploaded",
       "predecessor": {
         "local_generation": 1,

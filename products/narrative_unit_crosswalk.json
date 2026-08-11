@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.narrative_unit_crosswalk.v0",
   "status": "phase_1_idea_placement_route",
-  "canonical_chapter_count": 86,
+  "canonical_chapter_count": 87,
   "narrative_unit_count": 22,
   "assignment_rule": "Every canonical chapter belongs to exactly one reader-facing narrative unit. The representative chapter carries the unit orientation; every other chapter remains a canonical reference owner and is routed, not merged or demoted.",
   "units": [
@@ -10,14 +10,18 @@
       "unit_id": "unit-01-stack-thesis",
       "label": "Stack thesis",
       "representative_chapter_id": "asi-is-a-stack-not-a-model",
-      "chapter_ids": ["asi-is-a-stack-not-a-model"]
+      "chapter_ids": [
+        "asi-is-a-stack-not-a-model"
+      ]
     },
     {
       "order": 2,
       "unit_id": "unit-02-efficient-asi",
       "label": "Efficient-ASI hypothesis",
       "representative_chapter_id": "the-efficient-asi-hypothesis",
-      "chapter_ids": ["the-efficient-asi-hypothesis"]
+      "chapter_ids": [
+        "the-efficient-asi-hypothesis"
+      ]
     },
     {
       "order": 3,
@@ -68,21 +72,29 @@
       "unit_id": "unit-06-capability-fields-and-replacement",
       "label": "Stable Capability Fields and replacement",
       "representative_chapter_id": "stable-capability-fields",
-      "chapter_ids": ["stable-capability-fields", "capability-replacement-and-rollback"]
+      "chapter_ids": [
+        "stable-capability-fields",
+        "capability-replacement-and-rollback"
+      ]
     },
     {
       "order": 7,
       "unit_id": "unit-07-intent-and-command",
       "label": "Intent and command contracts",
       "representative_chapter_id": "intent-to-execution-contracts",
-      "chapter_ids": ["human-intent-as-a-formal-input", "intent-to-execution-contracts"]
+      "chapter_ids": [
+        "human-intent-as-a-formal-input",
+        "intent-to-execution-contracts"
+      ]
     },
     {
       "order": 8,
       "unit_id": "unit-08-planning",
       "label": "Planning as a control layer",
       "representative_chapter_id": "planning-as-a-control-layer",
-      "chapter_ids": ["planning-as-a-control-layer"]
+      "chapter_ids": [
+        "planning-as-a-control-layer"
+      ]
     },
     {
       "order": 9,
@@ -111,7 +123,10 @@
       "unit_id": "unit-11-context-abi",
       "label": "Virtual Context ABI and context transactions",
       "representative_chapter_id": "virtual-context-abi",
-      "chapter_ids": ["virtual-context-abi", "context-transactions-snapshots-mounts-and-taint"]
+      "chapter_ids": [
+        "virtual-context-abi",
+        "context-transactions-snapshots-mounts-and-taint"
+      ]
     },
     {
       "order": 12,
@@ -128,7 +143,9 @@
       "unit_id": "unit-13-verification-bandwidth",
       "label": "Verification bandwidth and context adequacy",
       "representative_chapter_id": "verification-bandwidth-and-context-adequacy",
-      "chapter_ids": ["verification-bandwidth-and-context-adequacy"]
+      "chapter_ids": [
+        "verification-bandwidth-and-context-adequacy"
+      ]
     },
     {
       "order": 14,
@@ -191,6 +208,7 @@
         "governed-model-training-distributed-optimization-and-scaling",
         "learning-compute-topology-and-adaptive-process-architecture",
         "learning-theory-generalization-and-scaling-science",
+        "adjudicated-persistence-and-the-adaptive-commit-boundary",
         "policy-optimization-and-learning-from-feedback",
         "data-engines-continual-learning-and-unlearning",
         "scientific-discovery-and-experimental-governance"
@@ -245,7 +263,10 @@
       "unit_id": "unit-22-living-book-and-agenda",
       "label": "Living Book methodology and open challenge agenda",
       "representative_chapter_id": "living-book-methodology",
-      "chapter_ids": ["living-book-methodology", "open-research-agenda-and-bibliography-plan"]
+      "chapter_ids": [
+        "living-book-methodology",
+        "open-research-agenda-and-bibliography-plan"
+      ]
     }
   ],
   "non_claims": [

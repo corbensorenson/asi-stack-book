@@ -8,7 +8,7 @@ full-coverage admission, and 22-unit three-projection reconciliation.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
-The manifest now contains **86 chapters**, which is the sole current chapter
+The manifest now contains **87 chapters**, which is the sole current chapter
 count. The 2026-08-08 work-surface intake added one Part II owner for the
 transition from answer and suggestion through task, project, role, team,
 organization, and network; earlier 84-chapter audit and narrative-product
@@ -159,7 +159,7 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 ### Current reader-role classification
 
 P7.1a-W2 assigns every chapter in its historical 60-chapter scope one primary
-reader role. The current 86-entry projection is
+reader role. The current 87-entry projection is
 `evidence_quality/current_chapter_role_map.json`; the frozen W2 machine record
 remains `evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis
 and navigation only. They do
@@ -193,7 +193,7 @@ publication status.
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`, plus
   `relational-dimension-compilation-and-polyadic-cognition`.
-- **Load-bearing reference (56):** every remaining manifest chapter, including
+- **Load-bearing reference (57):** every remaining manifest chapter, including
   `governed-model-training-distributed-optimization-and-scaling` and
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
@@ -295,7 +295,7 @@ natural evaluation, reproduction, and transfer remain open.
 
 ## Full-Coverage Admission Overlay — 2026-07-25
 
-The current manifest contains **86 chapters**. The full audit in
+The current manifest contains **87 chapters**. The full audit in
 `docs/full_coverage_gap_audit_2026_07_25.md` admitted four distinct owners:
 
 | Chapter | Exclusive job |
@@ -839,7 +839,7 @@ Source loading queue:
 | Historical-project lineage | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use the six public-safe source notes as one related local implementation lineage for the evidence cell, causal capability chain, trainable-state manifest, response-causality receipt, honest missingness, verification independence, and ownership/capability separation. Do not count repeated mechanisms as independent confirmation or publish raw private project material. |
 
 
-| Manifest assignment reconciliation | `ext_unlearning_benchmarks_weak_2024`, `ext_embedded_agency_2019`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_unlearning_benchmarks_weak_2024`, `ext_embedded_agency_2019`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A living technical book needs a versioned claim lifecycle that separates what an assertion says from what evidence currently supports it and preserves why each state change was accepted.
@@ -1843,7 +1843,7 @@ Source loading queue:
 | External literature variants | `ext_capability_based_computer_systems_1984`, `ext_semver_2_0_0`, `ext_slsa_v1_0` | Use as capability-authority, versioned-interface, and artifact-provenance comparators; do not treat them as deployed SCF enforcement or support-state promotion. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `reflexive_router_whitepaper`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `reflexive_router_whitepaper`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: nominal upgrades can preserve names, APIs, and average scores while changing failures, abstentions, side effects, authority, privacy, resources, consumers, state, dependencies, or recovery.
@@ -2610,7 +2610,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `capability_ratchet_whitepaper`, `attd`, `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `capability_ratchet_whitepaper`, `attd`, `ext_embedded_agency_2019`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A system participating in its own proposal, implementation, or evaluation can shape the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which admission is judged.
@@ -3250,7 +3250,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler`, `relational_dimension_compiler` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
@@ -3420,7 +3420,7 @@ Source loading queue:
 | Supporting | `vcm_public` | Use the passage-reviewed VCM lineage for semantic-page lifecycle, decision-time observability, anti-starvation, contradiction/rejection memory, invalidation, and deletion closure. Keep its synthetic control-plane result and packet-format non-result at their exact source-reported boundaries. |
 
 
-| Manifest assignment reconciliation | `qcsa_whitepaper`, `treellm`, `portia_synapse`, `ext_hermes_agent_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `qcsa_whitepaper`, `treellm`, `portia_synapse`, `ext_hermes_agent_2026`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
@@ -3986,7 +3986,7 @@ Source loading queue:
 | Team interaction | `ext_constructive_interdependence_human_ai_2026` | Use to distinguish task reward from whether team members actually enable one another; reported Overcooked findings are not a general cooperation result. |
 
 
-| Manifest assignment reconciliation | `talos`, `ext_human_ai_team_meta_analysis_2024`, `ext_human_ai_feedback_loops_2025`, `ext_eu_ai_civil_liability_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `talos`, `ext_human_ai_team_meta_analysis_2024`, `ext_human_ai_feedback_loops_2025`, `ext_eu_ai_civil_liability_2025`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Separate recommendation, decision, approval, execution, veto, audit,
@@ -4176,7 +4176,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026`, `regret_engine`, `ext_openclaw_agent_runtime_2026`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026`, `regret_engine`, `ext_openclaw_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
@@ -4708,7 +4708,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `capability_ratchet_whitepaper`, `regret_engine`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `capability_ratchet_whitepaper`, `regret_engine`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
@@ -5308,7 +5308,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `rgs`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026`, `regret_engine`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `rgs`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `ext_swe_rebench_v2_2026`, `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Every routable or replaceable capability needs a current consumer- and use-specific decision about shadow, canary, ordinary, diagnostic, quarantined, superseded, or retired operation and downstream residual ownership.
@@ -5845,7 +5845,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
-| Manifest assignment reconciliation | `learning_compute_topology`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -6496,7 +6496,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -7028,7 +7028,7 @@ Source loading queue:
 | Variants | `deterministic_capability_compilation`, `platonic_world_model` | Use for release identity, revocation, state lineage, and model/reality residuals; neither reverses external effects. |
 
 
-| Manifest assignment reconciliation | `regret_engine`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a pre-deployment case can be overtaken by drift, dependency failure,
@@ -7056,8 +7056,9 @@ Draft arc:
 - Mechanism: separate reaction, adaptation, and constitutional clocks; measure recovery regret without erasing the initiating event, responsibility, external effects, uncertainty, or faster-clock authority limits.
 - Interfaces: Safety Cases and Readiness supply obligations, Runtime supplies
   telemetry and effect records, Human Factors supplies the operator envelope,
-  Policy Optimization and Update Governance receive bounded residuals, and
-  release authority remains separate from incident command.
+  the Adaptive Commit Boundary receives bounded incident lessons and residuals
+  before any persistence locus is selected, and release authority remains
+  separate from incident command.
 
 Primary invariants:
 
@@ -7128,6 +7129,121 @@ Lean proof targets:
 | `lean:operations.recovery_requires_complete_state` | `AsiStackProofs.GovernedOperations` | Normal-service recovery is rejected when any required internal-state component, external-effect disposition, acceptance check, or emergency-authority expiry is missing. | implemented |
 | `lean:operations.incident_lifecycle_refines_static_contracts` | `AsiStackProofs.GovernedOperationsRefinement` | A reachable eight-stage incident lifecycle preserves exact state on rejection, refines the existing degradation and recovery predicates at accepted boundaries, expires emergency authority before restoration, and re-enters incident control on modeled recurrence without assigning support or external authority. | implemented |
 
+### Adjudicated Persistence and the Adaptive Commit Boundary
+
+Stable ID: `adjudicated-persistence-and-the-adaptive-commit-boundary`
+
+Chapter job: Own the prior cross-surface decision that determines whether an
+eligible lesson may become durable causal influence, which persistence locus or
+portfolio should carry it, and which evidence, authority, qualification,
+monitoring, invalidation, deoptimization, descendant, and revocation obligations
+follow.
+
+Core claim: Every transition from experience to durable causal influence should cross an Adaptive Commit Boundary as an authority-bearing adaptation transaction that keeps the experience record, lesson hypothesis, persistence disposition, concrete realization, qualification lease, and authority grant distinct; selects the least-commitment admissible locus portfolio under evidence, authority, observability, recovery, cost, and descendant obligations; and preserves denial, uncertainty, deoptimization, invalidation, and revocation paths.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `adjudicated_persistence` | Read the complete version 1.0 paper and source note for the Adaptive Commit Boundary, six-object separation, Cross-Surface Adaptation Assignment, commitment profiles, Evidence-Commitment Matching, Minimum Sufficient Persistence, guarded compilation, qualification leases, adaptation debt, non-self-ratifying meta-compilation, and LocusBench. Preserve its conceptual and bounded result labels. |
+| Supporting | `assurance_shift_learning`, `regret_engine` | Use for learning eligibility, boundary evidence, evaluator-first repair, counterfactual residuals, causal alternatives, and fast-versus-slow adaptation; neither authorizes or validates a persistence placement. |
+| Realization lineage | `cognitive_loop_closure`, `deterministic_capability_compilation` | Use for procedure/tool realization, compilation receipts, fallback, revocation, and rollback; compilation remains downstream of placement and separate from qualification. |
+| State and authority lineage | `platonic_world_model`, `viea`, `talos` | Use for explicit state, residuals, typed commands, roles, bounded execution authority, audit, and escalation; architecture lineage does not prove placement quality or safety. |
+| External comparator | `ext_bourtoule_machine_unlearning_2021` | Use the source-noted SISA design for one bounded deletion-path comparison: training-time structure can narrow retraining while verified removal and downstream artifacts remain separate obligations. It does not validate cross-surface placement, complete descendant erasure, privacy, or the Adaptive Commit Boundary. |
+
+Draft arc:
+
+- Open with matched near-miss outcomes caused by a stale memory and a defective
+  tool mapping: equal visible outcome, unequal cause, unequal proper persistence.
+- Establish persistence as a cross-surface problem spanning active context,
+  memory, procedures, tools, semantic structures, orchestration, parameters,
+  evaluators, environments, and institutions.
+- Show why outcome, causal attribution, implementation access, and successful
+  construction do not determine placement, authority, or qualification.
+- Keep six records distinct: experience, lesson, disposition, realization,
+  qualification lease, and authority grant.
+- Represent each candidate portfolio through scope, binding, persistence,
+  coupling, authority, irreversibility, and descendant reach.
+- Apply Evidence-Commitment Matching and Minimum Sufficient Persistence without
+  reducing rights, legitimacy, or recovery to one scalar objective.
+- Preserve `ADMIT`, `DENY`, and `UNKNOWN`; route uncertainty to a slow path or
+  guarded temporary realization rather than implicit approval.
+- Realize admitted portfolios transactionally and qualify the exact artifacts
+  afterward; invalidate leases on material evidence, implementation,
+  dependency, environment, authority, threat, or time change.
+- Preserve counterfactual observability, deliberation reserve, guarded
+  deoptimization, descendant-aware revocation, and explicit residual custody.
+- Account for persistence carrying cost and adaptation debt across validation,
+  monitoring, maintenance, rollback, human burden, rigidity, and retirement.
+- Govern changes to the placement compiler through independent-enough evidence,
+  evaluation, and promotion authority.
+- Close with the software-maintenance Tier-1 LocusBench implementation and the
+  distributed beyond-state persistence control plane, labeling both accurately.
+
+Primary invariants:
+
+- Experience, lesson, disposition, realization, qualification, and authority
+  remain separately identifiable and independently challengeable.
+- No durable actor update occurs without explicit learning eligibility,
+  admissible evidence lineage, and a recorded persistence disposition.
+- A commitment-dominating candidate cannot receive a weaker evidence or
+  authority obligation merely because it is easier to implement.
+- `UNKNOWN` remains distinct from `ADMIT` and `DENY` and retains a reachable
+  slow path.
+- Realization does not imply qualification; qualification does not imply
+  deployment, support movement, or expanded authority.
+- Material change invalidates affected leases and requires a new decision.
+- Every accepted realization has a monitor, expiry or review condition,
+  rollback or deoptimization path, and descendant disposition.
+- The placement compiler cannot solely author, evaluate, and authorize changes
+  to its own objective, vocabulary, estimator, rules, or reach.
+- Revocation retains unresolved descendants, external effects, and
+  institutional reliance as owned residuals.
+- Formal record properties do not establish empirical placement quality,
+  observability, recovery, safety, or optimality.
+
+Failure modes to cover:
+
+- One-event overlearning; premature locus selection; memory, tool, weight, or
+  policy laundering; evidence-commitment mismatch; unknown-to-admit collapse;
+  realization/qualification collapse; hidden cross-locus coupling; authority
+  inherited from write access; stale leases; guard bypass; lost deliberation
+  reserve; descendant escape; adaptation debt; self-ratifying meta-compilation;
+  and institutional persistence without legitimacy, contestability, or remedy.
+
+Draft deliverables:
+
+- A human reading path centered on two matched outcomes with different defects
+  and different proper persistence loci.
+- An Adaptive Commit Boundary lifecycle diagram and a table comparing the
+  characteristic benefits and risks of major persistence surfaces.
+- A complete six-object transaction, commitment-profile vocabulary,
+  Evidence-Commitment Matching rule, Minimum Sufficient Persistence rule,
+  guarded compilation path, qualification lease, descendant closure, and
+  meta-compilation boundary.
+- Exact source mappings in the chapter and all relevant owner chapters without
+  moving the core beyond `argument`.
+- A planned sandboxed software-maintenance reference with exact snapshots,
+  matched defect/outcome collisions, context/memory/procedure/tool/route/policy
+  candidates, strong outcome-only and fixed-locus baselines, held-out defects,
+  complete cost/failure denominators, deoptimization, and descendant revocation.
+- A planned LocusBench campaign measuring held-out task quality, placement
+  regret, recovery, useful throughput, latency, compute, human burden, carrying
+  cost, guard bypass, stale leases, and escaped descendants.
+- Explicit non-claims: no implementation, benchmark result, placement
+  advantage, checked proof, safety, resource advantage, novelty result, support
+  transition, SOTA, AGI, or ASI follows from source custody or chapter drafting.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:persistence.outcome_only_placement_nonidentifiability` | `AsiStackProofs.AdjudicatedPersistence` | Two experiences with the same observed outcome but different latent defects can require different admissible persistence loci, so outcome alone cannot identify a correct placement rule. | planned |
+| `lean:persistence.commitment_dominance_evidence_monotonicity` | `AsiStackProofs.AdjudicatedPersistence` | If one finite commitment profile dominates another on every governed dimension, admission of the stronger profile cannot require a weaker evidence class under a monotone policy. | planned |
+| `lean:persistence.transaction_requires_distinct_qualification_authority` | `AsiStackProofs.AdjudicatedPersistence` | A realized artifact lacking either qualification or authority cannot reach the finite admitted-use state. | planned |
+| `lean:persistence.meta_compiler_non_self_ratification` | `AsiStackProofs.AdjudicatedPersistence` | A placement-compiler change is rejected when the candidate controls its own sole evidence, evaluation, and promotion authority. | planned |
+| `lean:persistence.descendant_invalidation_residual_closure` | `AsiStackProofs.AdjudicatedPersistence` | Revoking an ancestor realization reaches every modeled descendant through removal, deoptimization, compensation, or an explicit residual disposition. | planned |
+
 ### Policy Optimization and Learning from Feedback
 
 Stable ID: `policy-optimization-and-learning-from-feedback`
@@ -7147,7 +7263,7 @@ Source loading queue:
 | Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
 
-| Manifest assignment reconciliation | `learning_compute_topology`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
@@ -7264,7 +7380,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -7656,7 +7772,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler`, `regret_engine`, `assurance_shift_learning` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `platonic_world_model`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_embedded_agency_2019`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `relational_dimension_compiler`, `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
@@ -7969,7 +8085,7 @@ Draft arc:
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
 - Mechanism: Treat chapter and part numbers as generated presentation data over stable manifest IDs; derive contiguous ordinals from current manifest order so insertion, removal, movement, or merge requires no stored-number rewrite and cannot change evidence identity.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
-- Mechanism: Compress the 86-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
+- Mechanism: Compress the 87-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
 - Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
@@ -8018,7 +8134,7 @@ and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
 That historical working manifest contained 59 entries; the current manifest
-contains 86. White-Box Evidence is terminally
+contains 87. White-Box Evidence is terminally
 integrated as an argument-level reader chapter with its packet, formal route,
 resource-isolated claim-bearing protocol, source crosswalk, and non-claim
 boundary complete; its empirical campaign remains deliberately unexecuted and

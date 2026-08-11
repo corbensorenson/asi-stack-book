@@ -82,6 +82,7 @@ GROUPS = {
         "relational-dimension-compilation-and-polyadic-cognition",
         "governed-model-training-distributed-optimization-and-scaling",
         "learning-compute-topology-and-adaptive-process-architecture",
+        "adjudicated-persistence-and-the-adaptive-commit-boundary",
         "readiness-gates-residual-escrow-and-quarantine",
         "personal-compute-hives-and-federated-edge-intelligence",
         "artifact-steward-agents-and-living-project-governance",

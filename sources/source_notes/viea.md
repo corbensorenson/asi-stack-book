@@ -246,6 +246,7 @@ transactional integration, and a fast-policy/slow-learning split.
 - Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap
+- `adjudicated-persistence-and-the-adaptive-commit-boundary` (Adjudicated Persistence and the Adaptive Commit Boundary)
 - Living Book Methodology
 - `human-factors-and-meaningful-control-in-oversight`
 - `governed-operations-incident-command-and-graceful-degradation`

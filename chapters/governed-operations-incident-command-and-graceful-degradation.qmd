@@ -1118,6 +1118,7 @@ These rows keep Governed Operations, Incident Command, and Graceful Degradation'
 |---|---|---|
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds fast containment versus slow consolidation, recovery effectiveness as a coequal metric, and a prohibition on direct incident-to-gradient transitions. | No deployed detection, containment, recovery, consolidation, or recurrence result was observed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Adds a governed incident-learning handoff that preserves fast containment while adjudicating whether and where lessons may become durable changes. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Evidence and non-claims
@@ -1193,10 +1194,11 @@ observable hypotheses, expiring command authority, containment, degraded or
 fallback service, effect-aware recovery, disclosure, residuals, and—when
 recovery cannot be earned—decommissioning.
 
-Policy Optimization and Learning from Feedback receives only bounded incident
-residuals and change proposals with their exact evidence, failed controls,
-affected identities, costs, uncertainty, privacy limits, and non-claims. It
-must decide through a separate governed update lease whether any model, policy,
-prompt, router, monitor, evaluator, or training process should change.
+Adjudicated Persistence and the Adaptive Commit Boundary receives only bounded
+incident residuals and lesson hypotheses with their exact evidence, failed
+controls, affected identities, costs, uncertainty, privacy limits, and
+non-claims. It decides whether the experience is learning-eligible, whether any
+durable change is admissible, and which persistence surfaces may carry it.
 Emergency authority expires at this boundary; an urgent incident lesson is
-never permanent update authority by implication.
+never permanent update authority by implication. A policy or parameter route,
+when selected, proceeds next through the separate Governed Policy Update Lease.

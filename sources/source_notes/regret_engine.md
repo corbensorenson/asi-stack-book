@@ -182,6 +182,7 @@ through this authored source.
 | `governed-operations-incident-command-and-graceful-degradation` | Recovery regret, reaction/adaptation/constitutional clocks, evidence preservation, recovery non-erasure, and incident-to-learning handoff. | Sections 6.8, 15, 18.10, 20 | No deployed incident, containment, or recovery result. |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Luck-versus-quality, paralysis, delayed-harm, coding-agent, continual-stream, tampering, multi-agent, and identifiability experiments with ablations and acceptance criteria. | Sections 21-23 | Proposed experiment program only; cited baselines remain unresolved until bibliography recovery. |
 | `integrated-reference-architecture` | Four-plane service composition and the capsule-to-ledger-to-broker cross-layer join. | Sections 14, 17, 19 | No end-to-end Regret Engine or ASI Stack integration exists. |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Treats a Regret Packet as a persistence candidate whose root cause, confidence, affected scope, reversibility, and retirement conditions must be adjudicated before memory, procedure, policy, or substrate change. | Sections 10-18, 20 | Counterfactual regret does not establish placement correctness, causal attribution, or learning benefit. |
 
 ## Chapter Decision
 

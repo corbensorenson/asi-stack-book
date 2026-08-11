@@ -48,6 +48,7 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "confidential-and-verifiable-ai-computation",
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
     "relational-dimension-compilation-and-polyadic-cognition",
+    "adjudicated-persistence-and-the-adaptive-commit-boundary",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {

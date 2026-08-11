@@ -614,8 +614,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "durable-semantic-memory-and-knowledge-lattices": {
-        "reviewed_sha256": "b2e7499bf72801dee8118b4d493a164ab85be3f0435fd2e4badc5c4848bfdfef",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "71de05e06d969252ed16cecf7eee4022ba11f6bdedfea73d12ce8ae5956618ad",
+        "reviewed_date": "2026-08-11",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -624,6 +624,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the chapter preserves ontology and rights lineage, actual-use receipts, poisoning residuals, restart and descendant repair, distinct forgetting claims, adjacent authority, and argument-only support",
             "the added Durable Semantic Memory Review is bounded to authored finite records, exact mutation repair, non-identifiability, and a Project Theseus handoff; it expressly does not establish semantic truth, useful retrieval, complete memory, behavioral forgetting, deployment, transfer, or external effect",
             "the new two-object ontology-migration scene faithfully binds the authored dossier's exact and lossy cases to consumer invalidation without claiming truth or retrieval utility",
+            "the added persistence-locus section correctly treats a memory write as one candidate durable intervention, preserves evidence, authority, qualification, expiry, descendant, deletion, and residual boundaries, and does not elevate the Adjudicated Persistence paper above conceptual author lineage",
         ],
         "support_state_effect": "none",
     },
@@ -853,8 +854,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-organizations-delegation-and-accountability": {
-        "reviewed_sha256": "8f394fd1da82c532df3ef0973a0bc5d9117512c64a548d452149b6d677b62560",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "6ee9b2644e21e4e2b869b5aa529fa894bec5dbd3ae8d14867f8f9d624954e52f",
+        "reviewed_date": "2026-08-11",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -863,6 +864,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the chapter preserves affected nonusers, practical intervention, workload and accessibility, strongest-component baselines, attrition, evidence access, legal non-claims, unowned-residual closure blocks, and argument-only support",
             "the retained five-stage Lean review and twenty-field mutation consumer establish only finite authored-record reachability and refusal; the added ten-stage delegation-to-remedy lifecycle and 156-mutation consumer establish only authored identity custody, ordering, receipts, non-authority, and closure, while explicit prose preserves field-truth, reviewer-competence, real human-control, remedy-effectiveness, lawful-accountability, organizational-outcome, support, and external-effect nonclaims",
             "the two-hop delegation scene correctly lowers ceilings, aligns current delegate and accountable owner, separates reviewers and custodians, and retains prior owners in residual custody without claiming real or legal accountability",
+            "the added institutional-persistence section correctly distinguishes technical write access from legitimate authority and retains affected-party standing, labor, privacy, contestability, remedy, retirement, and adaptation-debt boundaries without claiming organizational efficacy",
         ],
         "support_state_effect": "none",
     },

@@ -22,9 +22,9 @@ MAINTENANCE_STATUS = ROOT / "roadmap_records" / "post_v2_3_maintenance_transfer_
 STRUCTURE = ROOT / "book_structure.json"
 
 HISTORICAL_PROOF_TARGET_COUNT = 298
-CURRENT_PROOF_TARGET_COUNT = 335
+CURRENT_PROOF_TARGET_COUNT = 340
 CURRENT_IMPLEMENTED_TARGET_COUNT = 330
-CURRENT_PLANNED_TARGET_COUNT = 5
+CURRENT_PLANNED_TARGET_COUNT = 10
 CURRENT_RATIONALIZATION_PLANNED_TARGET_COUNT = 0
 HISTORICAL_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 73,
@@ -37,7 +37,7 @@ HISTORICAL_EXPECTED_CLASSES = {
 CURRENT_EXPECTED_CLASSES = {
     "adequate finite-record invariant": 272,
     "useful but too narrow": 40,
-    "needs executable tests first": 8,
+    "needs executable tests first": 13,
     "needs empirical or baseline tests first": 15,
 }
 FIRST_TRANCHE_ADMITTED_CHAPTERS = {

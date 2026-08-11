@@ -869,6 +869,21 @@ model, or safe robot policy.
 
 | `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
+## Cross-Surface Persistence and Unlearning
+
+Data admission, replay retention, labels, memory writes, and parameter updates
+are different persistence surfaces. Adjudicated persistence asks which of them
+should carry an eligible lesson before a continual-learning pipeline commits
+to one. A stale fact may need a dated memory and freshness guard; a repeated
+behavioral defect may justify a data repair or bounded update; an evaluator
+failure may require neither.
+
+Unlearning inherits the same cross-surface obligation. Deleting records from a
+dataset does not remove derived weights, memories, tools, summaries, caches,
+routes, or downstream reliance. The adaptation transaction must preserve a
+descendant graph and route every affected realization through removal,
+deoptimization, compensation, requalification, or explicit residual custody.
+
 ## Source crosswalk
 
 | Source | Role in the argument | Boundary |
@@ -897,6 +912,7 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Shows that data order and difficulty schedules can be part of the learning mechanism rather than incidental loader state. | The source does not establish a universal curriculum, safe continual learning, or transfer to current foundation-model pipelines. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds informative-exception strata, learner-relative negative half-life, natural/probe distribution separation, protected positives, and repair-aware replay custody. | Inhibition, replay retirement, and retained negative knowledge do not establish parameter unlearning, deletion, privacy, or forgetting. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Frames datasets, replay buffers, labels, weights, memories, and deletion obligations as distinct persistence surfaces with different descendant and unlearning costs. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result

@@ -42,6 +42,9 @@ GLOSSARY = [
     ("Readiness gate", "An evidence and regression checkpoint that must pass before a module or field can be promoted."),
     ("Residual escrow", "A visible backlog of unresolved failures, uncertainty, or residual complexity left by a route, compression, or benchmark result."),
     ("Benchmark ratchet", "A process that uses tests, regressions, hidden checks, and residuals to move capability claims without erasing failure cases."),
+    ("Adaptive Commit Boundary", "The governed transition at which an eligible lesson may become durable causal influence through an explicitly chosen persistence locus, qualification lease, authority grant, and revocation path."),
+    ("Adjudicated persistence", "A discipline that keeps experience, lesson, persistence disposition, realization, qualification, and authority distinct while selecting and governing durable adaptations across multiple surfaces."),
+    ("Minimum Sufficient Persistence", "The least-commitment admissible persistence portfolio that can meet a declared behavioral and reliability requirement under current evidence, authority, observability, recovery, cost, and descendant constraints."),
     ("Training Run Transaction", "A prospectively frozen, identity-bound record joining architecture, data order, objective, optimizer, numerical and topology policy, execution failures, full checkpoint state, resume evidence, checkpoint-family selection, and independent qualification handoff."),
     ("Resume equivalence class", "The prospectively declared strength of a checkpoint-continuation claim: bitwise, operation-order-bounded, or statistical, each with its own comparison and inference ceiling."),
 ]

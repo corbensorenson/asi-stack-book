@@ -1811,6 +1811,34 @@
         "sources/source_notes/learning_compute_topology.md",
         "appendices/C_claim_evidence_matrix.qmd#learning-compute-topology-and-adaptive-process-architecture.core"
       ]
+    },
+    {
+      "claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "chapter_title": "Adjudicated Persistence and the Adaptive Commit Boundary",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The complete Corben-authored package supplies a formal vocabulary, bounded propositions and conjectures, an architecture, algorithms, and the LocusBench proposal, but no Adaptive Commit Boundary implementation, placement compiler, guarded realization, decompiler, benchmark run, independently checked proof, natural-workload result, reproduction, transfer, safety, or total-cost result has been accepted.",
+      "required_evidence": [
+        "finite mechanization of the six-object transaction, commitment ordering, non-self-ratification, and descendant-closure boundaries",
+        "prospectively frozen Tier-1 LocusBench implementation with matched-outcome/different-defect cases and competent outcome-only and fixed-locus baselines",
+        "complete useful-outcome, placement-regret, recovery, latency, compute, human-burden, carrying-cost, guard-bypass, stale-lease, descendant, reproduction, and transfer accounting plus an accepted scope-bounded transition"
+      ],
+      "blockers": [
+        "no running cross-surface adjudicator, qualifier, deoptimizer, or descendant-revocation system",
+        "no empirical evidence that the proposed placement discipline improves outcomes or recovery over simpler baselines",
+        "author-lineage propositions, architecture, benchmark design, and source synthesis cannot promote support"
+      ],
+      "non_claims": [
+        "does not establish universal placement correctness, Minimum Sufficient Persistence optimality, complete reversibility, or descendant erasure",
+        "does not establish safety, resource advantage, readiness, deployment, transfer, SOTA, AGI, or ASI"
+      ],
+      "refs": [
+        "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
+        "sources/source_notes/adjudicated_persistence.md",
+        "appendices/C_claim_evidence_matrix.qmd#adjudicated-persistence-and-the-adaptive-commit-boundary.core"
+      ]
     }
   ]
 }

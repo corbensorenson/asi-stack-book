@@ -571,6 +571,11 @@ No result is recorded here unless a test has actually been implemented and run.
 | `governed-operations-incident-command-and-graceful-degradation` | Governed Operations, Incident Command, and Graceful Degradation | Effect-complete rollback mutation suite | planned | not_run |
 | `governed-operations-incident-command-and-graceful-degradation` | Governed Operations, Incident Command, and Graceful Degradation | Incident command game-day matrix | planned | not_run |
 | `governed-operations-incident-command-and-graceful-degradation` | Governed Operations, Incident Command, and Graceful Degradation | Graceful-degradation dominance test | planned | not_run |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Adjudicated Persistence and the Adaptive Commit Boundary | Adaptive transaction mutation suite | planned | not_run |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Adjudicated Persistence and the Adaptive Commit Boundary | LocusBench Tier-1 matched-collision suite | planned | not_run |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Adjudicated Persistence and the Adaptive Commit Boundary | Descendant invalidation and residual-closure test | planned | not_run |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Adjudicated Persistence and the Adaptive Commit Boundary | Deliberation-reserve and deoptimization test | planned | not_run |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | Adjudicated Persistence and the Adaptive Commit Boundary | Meta-compiler independence test | planned | not_run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | DPO/offline preference baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | PPO online RL baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | GRPO/RLOO toy math reward test | planned | not run |
@@ -715,18 +720,19 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 335 |
+| Proof targets covered by triage | 340 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 330 |
-| planned | 5 |
+| planned | 10 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 330 |
-| planned | formal-invariant | lean-candidate | 5 |
+| planned | formal-invariant | lean-candidate | 9 |
+| planned | process-contract | policy-model-first | 1 |

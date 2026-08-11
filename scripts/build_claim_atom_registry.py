@@ -50,6 +50,7 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "confidential-and-verifiable-ai-computation",
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
     "relational-dimension-compilation-and-polyadic-cognition",
+    "adjudicated-persistence-and-the-adaptive-commit-boundary",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {
@@ -84,6 +85,28 @@ POST_ACTIVATION_PROSE_SECTION_HEADINGS: dict[str, set[str]] = {
     },
     "benchmark-ratchets-and-anti-goodhart-evidence": {
         "The language-by-task denominator",
+        "LocusBench and Placement Regret",
+    },
+    "recursive-self-improvement-boundaries": {
+        "Non-Self-Ratifying Meta-Compilation",
+    },
+    "cognitive-compilation-and-semantic-ir": {
+        "Placement Before Compilation",
+    },
+    "durable-semantic-memory-and-knowledge-lattices": {
+        "Memory as a Persistence Locus",
+    },
+    "procedural-memory-and-cognitive-loop-closure": {
+        "From Repetition to Adjudicated Procedure",
+    },
+    "readiness-gates-residual-escrow-and-quarantine": {
+        "Realization-Relative Qualification",
+    },
+    "data-engines-continual-learning-and-unlearning": {
+        "Cross-Surface Persistence and Unlearning",
+    },
+    "resource-economics-and-token-budgets": {
+        "Persistence Carrying Cost and Adaptation Debt",
     },
 }
 

@@ -29,7 +29,7 @@ python3 scripts/build_reader_edition.py \
 ```
 
 The generated orientation is derivative editorial navigation. It adds no
-evidence and changes no support state. The other 64 chapters remain visible in
+evidence and changes no support state. The other 65 chapters remain visible in
 the architecture reference and are not rejected or deleted. The candidate is
 not a reviewed reader release; here, "reviewed" means that the final artifact
 gates have not yet been run, not that external-human review is required.
@@ -38,7 +38,7 @@ gates still apply. No external-human review is a prepublication requirement.
 
 `products/narrative_unit_crosswalk.json` assigns every canonical chapter to
 exactly one unit. The generated product page now expands each unit into its
-specialist reference-owner list and gives every one of the 62 owners a direct
+specialist reference-owner list and gives every one of the 65 owners a direct
 Human-view chapter link. Each route also states the owner's canonical distinct
 responsibility, claim identity, claim label, and current support ceiling. This
 changes routing, not ownership: representative
@@ -79,7 +79,7 @@ work.
 
 ## Architecture reference specification
 
-The generated architecture route is a complete 86-chapter lookup index in
+The generated architecture route is a complete 87-chapter lookup index in
 canonical manifest order. Every row carries the canonical chapter and
 core-claim identity, distinct responsibility, claim label, support ceiling,
 and assignment to one of the three defended contributions. Protocol schemas,

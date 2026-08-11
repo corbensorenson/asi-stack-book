@@ -335,6 +335,7 @@ across domains, models, organizations, adversaries, and time.
 - `fast-generation-architectures`
 - `security-kernel-and-digital-scifs`
 - `virtual-context-abi`
+- `adjudicated-persistence-and-the-adaptive-commit-boundary`
 - `context-transactions-snapshots-mounts-and-taint`
 - `procedural-memory-and-cognitive-loop-closure`
 - `data-engines-continual-learning-and-unlearning`

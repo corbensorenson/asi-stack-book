@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 86 |
+| Manifest chapter core claims | 87 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 64 |
+| Accepted no-promotion dispositions | 65 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 86 |
+| Core claims remaining at `argument` | 87 |
 
 ## Dispositions
 
@@ -96,6 +96,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `safety-cases-and-structured-assurance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed scoped case-compilation workload with support, stale dependency, unresolved-defeater, missing-acceptance, missing-residual, and affected-release controls; no local threat model, safety case, safety, readiness, authority, or deployment claim. |
 | `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Independent cross-platform tests improve provenance continuity, calibrated detection, comprehension, and remedy under realistic edits without unacceptable privacy, accessibility, or false-attribution harm; no universal authenticity or truth oracle claim. |
 | `governed-operations-incident-command-and-graceful-degradation.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Adversarial compound and detector-degrading game days detect partial rollback across model, optimizer, scheduler, RNG, cache, memory, data, credentials, replicas, descendants, and external effects; recovery beats strong SRE baselines on bounded harm and useful throughput, reproduces independently, and does not retain widened authority. |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A prospectively frozen LocusBench campaign beats outcome-only and fixed-locus baselines on held-out placement and recovery without unacceptable useful-throughput, latency, compute, human-burden, carrying-cost, guard-bypass, stale-lease, or descendant-escape results; finite Lean checks establish only encoded transaction properties, and no safety or universal placement claim follows. |
 | `policy-optimization-and-learning-from-feedback.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A feedback-driven policy update improves held-out utility without reward laundering or hidden forgetting and survives independent evaluation, canary, rollback, and residual review. |
 | `data-engines-continual-learning-and-unlearning.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A real governed data pipeline traces deletion and retained utility through every affected descendant and storage surface with contamination, privacy, rollback, and independent verification. |
 | `scientific-discovery-and-experimental-governance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Injected null and known effects are distinguished with complete attempts and independent replication; no general autonomous-science or cross-domain discovery claim. |

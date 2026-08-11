@@ -14,7 +14,10 @@
         "docs/release_editions_plan.md",
         "docs/reader_continuity_audit.md"
       ],
-      "source_layers": ["reader_spine", "companion_material"],
+      "source_layers": [
+        "reader_spine",
+        "companion_material"
+      ],
       "navigation_contract": "Part and chapter progression, three-projection unit orientations, direct Human-view routes plus distinct responsibilities and support ceilings for every specialist reference owner, Human Reading Path bridges, summaries, handoffs, glossary, and selected source appendices.",
       "density_contract": "Open each unit with a plain-language thesis, normative engineering rule, and bounded machine contract; show each specialist owner's distinct responsibility, claim identity, label, and support ceiling without absorbing its claim; hide live status, test, proof-hook, source-crosswalk, and repeated support boilerplate while retaining meaning-changing uncertainty and evidence boundaries.",
       "release_profile": "reader_release",
@@ -33,11 +36,15 @@
         "appendices/D_protocol_schemas.html",
         "appendices/K_implementation_horizons.html"
       ],
-      "source_layers": ["reader_spine", "live_research_scaffold", "machine_contracts"],
+      "source_layers": [
+        "reader_spine",
+        "live_research_scaffold",
+        "machine_contracts"
+      ],
       "navigation_contract": "Layer and interface lookup through the AI/research view, integrated reference trace, protocol schemas, implementation horizons, and glossary.",
       "density_contract": "Retain mechanisms, interfaces, invariants, failure modes, formal hooks, test plans, schemas, and implementation horizons; route evidence totals to the registry instead of repeating them as architecture prose.",
       "release_profile": "research_release",
-      "current_status": "generated_86_chapter_reference_index_available_but_not_a_deployed_system_or_approved_release",
+      "current_status": "generated_87_chapter_reference_index_available_but_not_a_deployed_system_or_approved_release",
       "review_gate": "Interface consistency, schema/examples, trace coverage, proof-scope review, implementation-horizon review, and a research release record.",
       "forbidden_inference": "A complete reference record does not establish deployed enforcement or system quality."
     },
@@ -54,7 +61,11 @@
         "appendices/E_codex_test_specs.html",
         "docs/v1_0_candidate_status.md"
       ],
-      "source_layers": ["evidence_matrices", "machine_contracts", "release_derivatives"],
+      "source_layers": [
+        "evidence_matrices",
+        "machine_contracts",
+        "release_derivatives"
+      ],
       "navigation_contract": "Canonical status first, then claim/evidence matrix, source ownership appendices, test/proof ledgers, release records, changelog, and residual-specific reports.",
       "density_contract": "Prefer structured records, exact IDs, digests, commands, support-state effects, negative controls, and non-claims over narrative repetition.",
       "release_profile": "live_book",

@@ -1076,6 +1076,21 @@ These Lean hooks are implemented as finite-record predicates and negative-case t
 
 Across the two folded modules, fifty-eight theorem declarations are present: forty-five in `ResourceEconomics` and thirteen in `SimulationFidelity`. Their current value is finite gate, negative-case, fixture, and public-record alignment. The semantic audit must retain only declarations with a named claim consumer, classify direct predicate/projection consequences separately from derived negatives and authored fixture-summary bridges, and replace any assumption-restating or unconsumed count proof with stronger transition, trace, conservation, liveness, countermodel, or runtime-refinement semantics. None of the current declarations proves scheduler optimality, real load stability, welfare, serving quality, simulator adequacy, physical feasibility, or transfer.
 
+## Persistence Carrying Cost and Adaptation Debt
+
+The cost of adaptation continues after the update. Durable memories, tools,
+policies, evaluators, model deltas, and institutional routines consume storage,
+validation, monitoring, security review, dependency maintenance, rollback
+capacity, human attention, and eventual retirement work. They can also narrow
+future search by making one representation or procedure the default.
+
+The Adaptive Commit Boundary makes those carrying costs part of locus choice.
+Adaptation debt is the accumulated burden of commitments whose current benefit,
+evidence, ownership, or reversibility no longer justifies their maintenance.
+This chapter owns the measurement and opportunity-cost model; the boundary
+requires the estimate to remain visible rather than letting short-term task
+gain erase lifecycle cost.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -1137,6 +1152,7 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 | `ext_azure_llm_semantic_cache_2026` | Metadata-first comparator: Azure API Management LLM semantic cache lookup policy. Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `precision_contract` | Passage-reviewed comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Turns compression and mixed-precision choices into a resource-allocation problem over complete executable packages. For Resource Economics, the paper requires separate accounting for stored and moved bits, decoder and routing work, fallback, repair, verification, certificate generation, monitoring, retained-reference cost, latency, energy, and peak memory under a protected-behavior contract. | The functional-rate formulation is conditional on a declared contract, decoder, code family, and system boundary. No compiler run, useful compression result, physical-cost advantage, certificate qualification, or production transfer has been demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds assurance-share and equal-total-cost accounting across ordinary learning, evaluators, probes, adjudication, repair, governance, monitoring, and recovery. | No optimal allocation, amortization rate, or net lifecycle saving was measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Adds persistence carrying cost and adaptation debt across storage, validation, monitoring, rollback, human review, rigidity, and descendant maintenance. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 measured governance cost

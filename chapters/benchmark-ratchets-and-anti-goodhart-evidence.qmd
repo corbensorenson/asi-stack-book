@@ -945,6 +945,22 @@ future formal work must constrain real lifecycle and inheritance semantics,
 selection-lineage conservation, information exposure, revocation, and
 implementation refinement; empirical obligations stay empirical.
 
+## LocusBench and Placement Regret
+
+The proposed LocusBench program tests a failure ordinary task benchmarks miss:
+two episodes can have the same visible outcome while requiring different
+durable repairs. Its first tier should seed matched software-maintenance cases
+whose latent defects belong in different persistence loci, then compare a
+cross-surface adjudicator with outcome-only, fixed-locus, human-rule, and
+simpler routing baselines.
+
+The denominator must include every proposed portfolio, denial, unknown route,
+repair, retry, guard, stale lease, rollback, escaped descendant, and governance
+cost. Measures should include held-out task quality, placement regret,
+recovery, useful throughput, latency, compute, human burden, and lifecycle
+carrying cost. LocusBench is presently a benchmark proposal, not a reported
+result or support transition.
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -1000,6 +1016,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_elizaos_agent_runtime_2026` | Passage-reviewed comparator: elizaOS Agent Runtime and Scenario Runner. Supplies a current implementation comparator for deterministic and live runtime scenarios, per-turn and final assertions, trajectory export, and an explicit separation between in-process diagnostics and externally observed provider qualification. | Official software and documentation review only; no scenario, model, provider, observer signature, trajectory, benchmark, cost, failure, or qualification result was executed or reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds selection-gap diagnosis, the benchmark-saturation versus capability-maturity distinction, and SaturationShiftBench as an equal-total-cost falsification program with attack injections and ablations. | The benchmark is proposed only; no condition, crossover, endpoint, or superiority result has been executed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Contributes LocusBench: matched outcomes with different latent defects, per-locus and cross-locus baselines, placement regret, and whole-lifecycle commitment costs. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

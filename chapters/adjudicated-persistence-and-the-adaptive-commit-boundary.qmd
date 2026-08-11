@@ -1,0 +1,661 @@
+---
+title: "Adjudicated Persistence and the Adaptive Commit Boundary"
+chapter_id: "adjudicated-persistence-and-the-adaptive-commit-boundary"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.3 source-complete integrated argument chapter"
+last_updated: "2026-08-11"
+primary_sources:
+  - "adjudicated_persistence"
+  - "assurance_shift_learning"
+  - "regret_engine"
+  - "cognitive_loop_closure"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
+  - "viea"
+  - "talos"
+  - "ext_bourtoule_machine_unlearning_2021"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No Adaptive Commit Boundary implementation, placement compiler, guarded realization, decompiler, or LocusBench campaign has been run."
+  - "No local result establishes placement quality, commitment estimates, carrying-cost accuracy, observability, recovery efficacy, useful-throughput benefit, safety, or transfer."
+  - "The paper's bounded propositions have not been independently formalized or checked in the book's Lean envelope."
+  - "Recent external references cited by the paper require independent full-paper source notes before their results can support book claims."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `adjudicated-persistence-and-the-adaptive-commit-boundary` |
+| Part | Part IV - Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Manuscript maturity | source-complete integrated argument |
+| Last updated | 2026-08-11 |
+| Primary source | Corben Sorenson's version 1.0 *Adjudicated Persistence* paper and complete package |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | The complete paper package has been passage-reviewed and mined. Its external citations have not been inherited as evidence. |
+| Test state | Five proof targets and five experimental suites are planned; none has been implemented or run. |
+
+## Drafting guardrail
+
+This chapter proposes a control boundary. It does not report that an Adaptive
+Commit Boundary, placement compiler, qualification service, decompiler, or
+LocusBench implementation exists. The source paper supplies a formal
+vocabulary, bounded propositions and conjectures, architecture, algorithms,
+and benchmark design. Those are useful specifications, not empirical results.
+
+The chapter also does not claim that every experience should become a lesson,
+that every lesson should persist, or that a central controller can identify a
+globally optimal storage location. Its narrower claim is that durable
+adaptation is consequential enough to require an explicit, challengeable
+decision whose evidence, authority, realization, qualification, monitoring,
+and revocation remain visible.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Imagine two support agents making the same mistake during separate tax-account
+sessions. Each applies an old tax
+rule, catches the error before sending the answer, and eventually produces the
+correct result. Their visible outcomes are identical: a near miss followed by
+a successful correction.
+
+The first agent failed because its memory contained a stale jurisdictional
+fact. The right repair may be a dated knowledge update plus a freshness rule.
+The second agent had the correct facts but called a tool with the wrong field
+mapping. Its repair may be a test, a typed wrapper, and a blocked tool version.
+Updating both agents' weights would be broad and hard to inspect. Writing the
+same memory to both would leave the tool defect untouched. Turning every near
+miss into an organizational policy would bury people under process.
+
+The hard question is therefore not simply, "What did the system learn?" It is,
+"What durable thing, if any, should now change?" A lesson can live in a prompt,
+memory, test, tool, router, model parameter, evaluator, environment, workflow,
+or institutional rule. Each location has different reach, cost, authority,
+reversibility, and failure modes.
+
+The Adaptive Commit Boundary is the checkpoint before that choice becomes
+causal. It preserves the event, states the proposed lesson, compares possible
+places to realize it, asks whether the evidence is strong enough for the
+commitment, and records how the change will be tested and undone. The goal is
+not maximal persistence. It is the smallest durable intervention that can do
+the job without hiding uncertainty or making recovery impossible.
+:::
+
+## Problem
+
+An adaptive system changes because experience reaches into its future. That
+reach may be obvious, as in fine-tuning a model, or quiet, as in writing a
+memory, generating a reusable tool, changing a router, retaining a benchmark,
+editing an evaluator, or teaching an organization a new routine. All of these
+actions can alter later behavior. They are persistence decisions even when no
+gradient is computed.
+
+The surfaces are not interchangeable.
+
+| Persistence surface | Typical strength | Characteristic benefit | Characteristic risk |
+|---|---|---|---|
+| Active context | local and short-lived | cheap, inspectable experiment | disappears or contaminates the current task |
+| Durable memory | retrievable and revisable | explicit knowledge with provenance | stale or overgeneralized retrieval |
+| Procedure or tool | repeatable and binding | deterministic reuse and testing | brittle automation or authority laundering |
+| Semantic model | shared conceptual structure | consistent interpretation across tasks | ontology lock-in and hidden coupling |
+| Orchestration or routing | cross-component behavior | system-level coordination | widespread effects from a local mistake |
+| Parametric update | broad latent influence | compact generalization | opaque scope, forgetting, and difficult rollback |
+| Evaluator or benchmark | changes what is rewarded | durable selection pressure | Goodhart pressure and self-confirmation |
+| Environment or institution | changes available action | robust external constraint | legitimacy, rights, and reversal burdens |
+
+The same lesson may need one surface, several surfaces, or none. A temporary
+context guard can be enough while evidence is weak. A high-consequence defect
+may require a test, tool repair, monitor, and institutional review together.
+A successful incident response may produce useful observations but no stable
+causal account, making durable change premature.
+
+Without an explicit boundary, implementation convenience decides. The module
+that notices a problem writes to the state it can reach. A memory subsystem
+writes memory. A trainer updates weights. A coding agent creates a test or
+tool. A manager creates a policy. This is not neutral. Access to a persistence
+surface becomes implicit authority to shape future behavior.
+
+## Why Existing Adaptation Pipelines Are Insufficient
+
+Most learning pipelines answer a downstream question: how to update a chosen
+object. Reinforcement learning changes a policy. Continual learning changes a
+model or replay distribution. Memory systems change retrieval state.
+Compilers turn a specification into an artifact. Cognitive loop closure turns
+repeated work into procedures and tools. Organizational learning changes
+routines and responsibilities.
+
+Each can be the right mechanism after placement has been decided. None alone
+answers the prior cross-surface question.
+
+Three substitutions are especially dangerous.
+
+First, **outcome is not placement**. The same observed success or failure can
+arise from different latent defects, and the same latent defect can admit
+different repairs under different authority and recovery constraints. The tax
+example above is a simple collision: equal outcome, unequal cause, unequal
+proper persistence.
+
+Second, **causal attribution is not authorization**. Even a well-supported
+cause does not determine who may alter weights, memory, tools, evaluators, or
+institutional rules. Nor does it show that the alteration has passed the tests
+required for use.
+
+Third, **construction is not qualification**. A system can successfully write
+a memory, compile a tool, or train a checkpoint that is unfit for its intended
+scope. Treating artifact existence as readiness collapses engineering and
+governance into a single irreversible step.
+
+## Core Claim
+
+[adjudicated-persistence-and-the-adaptive-commit-boundary.core, label: Design rationale, support: argument] Every transition from experience to durable causal influence should cross an Adaptive Commit Boundary as an authority-bearing adaptation transaction that keeps the experience record, lesson hypothesis, persistence disposition, concrete realization, qualification lease, and authority grant distinct; selects the least-commitment admissible locus portfolio under evidence, authority, observability, recovery, cost, and descendant obligations; and preserves denial, uncertainty, deoptimization, invalidation, and revocation paths.
+
+This claim adds a layer between learning signals and update mechanisms. It does
+not replace either. Regret, incidents, evaluations, and human feedback can
+propose lessons. Memory, training, compilation, and institutional processes can
+realize them. Readiness and operations can qualify and monitor them. The
+Adaptive Commit Boundary owns the decision that joins those stages without
+allowing one stage to impersonate another.
+
+## Six Objects That Must Not Collapse
+
+The transaction uses six records.
+
+1. **Experience record.** What happened, under which state and authority, with
+   what provenance, outcome, uncertainty, affected parties, and alternatives.
+2. **Lesson hypothesis.** A falsifiable statement about what should differ in
+   future behavior and why. It is not yet a storage instruction.
+3. **Persistence disposition.** `ADMIT`, `DENY`, or `UNKNOWN`, plus a selected
+   locus portfolio, commitment profile, evidence obligations, and residuals.
+4. **Realization.** The exact memory, procedure, tool, route, model delta,
+   evaluator change, environmental constraint, or institutional artifact.
+5. **Qualification lease.** The scope, tests, monitor conditions, expiry,
+   invalidators, and evidence under which that realization may be relied upon.
+6. **Authority grant.** Who may create, activate, broaden, suspend, revoke, or
+   replace the realization and under what contestability and remedy rules.
+
+These objects may reference one another, but they cannot share identity. A
+lesson can be sound while one realization is defective. A realization can be
+technically correct but unauthorized. A qualified tool can later become stale
+when its dependency changes. An authorized experiment can remain unqualified
+for production. Separate records make these states expressible.
+
+```{mermaid}
+flowchart LR
+  E["Experience record<br/>provenance, context, outcome"] --> L{"Learning eligible?"}
+  L -- "no" --> R["Retain evidence or close with reason"]
+  L -- "unknown" --> S["Slow path and additional evidence"]
+  L -- "yes" --> H["Lesson hypothesis<br/>future behavior, cause, uncertainty"]
+  H --> P["Candidate locus portfolios<br/>memory, tool, policy, weights, institution"]
+  P --> C["Commitment profiles<br/>scope, binding, persistence, coupling, authority, reversibility, descendants"]
+  C --> A{"Evidence and authority sufficient?"}
+  A -- "deny" --> D["Deny with residuals"]
+  A -- "unknown" --> S
+  A -- "admit" --> T["Transactional realization"]
+  T --> Q{"Independent qualification"}
+  Q -- "fail" --> X["Rollback or deoptimize"]
+  Q -- "pass" --> U["Scoped use under lease"]
+  U --> M["Monitor material change and descendants"]
+  M -->|"expiry, contradiction, drift"| X
+```
+
+**How to read the boundary:** Evidence moves forward only through typed
+decisions. Failure and uncertainty do not disappear; they route to denial,
+additional inquiry, rollback, or residual custody. The final use state remains
+leased rather than becoming timeless truth.
+
+## A Worked Two-Case Transaction
+
+Return to the tax near misses. The purpose of the example is not to claim that
+the boundary can already diagnose either case. It is to show which distinctions
+an implementation must preserve before a diagnosis can justify durable change.
+
+In **Case A**, the agent's durable memory says that a filing threshold is
+`$10,000`. The rule changed on a known effective date, but the retrieval packet
+does not carry temporal validity and therefore presents the old value as
+current. The agent initially uses it, then a fresh authoritative lookup causes
+the answer to be corrected. In **Case B**, the agent retrieves the current
+threshold correctly. A tool adapter maps `gross_amount` into a field that
+expects `taxable_amount`, producing the same erroneous intermediate answer and
+the same final correction after manual inspection.
+
+An outcome-only record makes the cases look equivalent:
+
+| Field | Case A | Case B |
+|---|---|---|
+| Initial answer | wrong | wrong |
+| Error caught before external effect | yes | yes |
+| Final answer | correct | correct |
+| Operator-visible consequence | delay and rework | delay and rework |
+
+The complete experience records do not. Case A names the retrieved semantic
+object, its source, original and effective dates, memory snapshot, query,
+consumer, conflicting observation, and correction path. Case B names the tool
+schema, adapter version, argument binding, execution trace, output, reviewer,
+and corrected mapping. The lesson hypotheses are correspondingly different:
+
+- **A:** a time-sensitive rule must not be admitted into decision context
+  without a freshness comparison against its effective interval;
+- **B:** this adapter must not execute unless source and destination field
+  semantics match the reviewed tool contract.
+
+The candidate portfolios expose the placement decision. For Case A, candidates
+include a transient reminder, a versioned memory correction, a retrieval-time
+freshness guard, a semantic-model migration, or some combination. A broad
+parameter update is a possible candidate only if the system can state what it
+would solve that those narrower interventions cannot. For Case B, candidates
+include a prompt warning, a regression test, a typed adapter repair, a tool
+version quarantine, or a routing rule that forces review. Writing a memory that
+merely says "be careful with tax fields" is cheap but does not bind the failing
+interface.
+
+Suppose the adjudicator selects a versioned memory correction plus freshness
+guard for A, and a typed wrapper plus regression test for B. Each disposition
+records why rejected alternatives were insufficient or overcommitting. The A
+transaction binds the exact memory object and retrieval policy, while the B
+transaction binds the tool schema, adapter, test, and quarantined predecessor.
+Neither transaction is complete merely because its files were written.
+
+Qualification then checks different obligations. The memory repair must
+retrieve the current rule under the relevant jurisdiction and date, preserve
+the historical rule where it remains valid, deny or escalate an undated query,
+and invalidate derived summaries that presented the old value as timeless.
+The tool repair must reject the old argument binding, accept reviewed valid
+bindings, preserve unrelated calls, expose the invoked schema version, and
+keep the predecessor unavailable except through an explicit recovery route.
+
+The two leases also have different invalidators. A new rule, source withdrawal,
+jurisdiction change, or failed freshness lookup can invalidate A. A tool-schema
+change, adapter change, failed regression, or newly discovered affected call
+can invalidate B. If a downstream procedure copied the old threshold or a
+generated tool embedded the bad field mapping, revoking only the immediate
+artifact is incomplete. Those descendants must be repaired, deoptimized,
+compensated, requalified, or recorded as unresolved residuals.
+
+This example illustrates the chapter's information requirement. The boundary
+does not need omniscience before it can refuse a bad shortcut. It needs enough
+identity, provenance, causal alternatives, authority, and lifecycle state to
+distinguish materially different candidates. When that information is absent,
+`UNKNOWN` is the correct disposition. The system may preserve the incident,
+run bounded probes, or install a temporary guard, but it may not relabel
+uncertainty as permission for a durable broad update.
+
+## Cross-Surface Adaptation Assignment
+
+The central decision can be stated as a constrained assignment problem. Given
+a lesson hypothesis, the system proposes candidate portfolios across available
+persistence surfaces. It estimates whether each portfolio can achieve the
+declared behavioral requirement and records the obligations created by doing
+so.
+
+A portfolio is not judged only by expected task quality. It also carries a
+**commitment profile**:
+
+- **scope:** which users, tasks, systems, environments, and times it can affect;
+- **binding strength:** advisory, default, mandatory, or physically enforced;
+- **persistence:** transient, leased, durable, or inherited by descendants;
+- **coupling:** how many components and assumptions must change together;
+- **authority:** which powers are needed to create and use it;
+- **irreversibility:** how completely prior state and external effects can be
+  restored; and
+- **descendant reach:** which derived artifacts, behaviors, and institutions
+  can inherit it.
+
+The profile is multidimensional because a single scalar hides tradeoffs. A
+memory entry may be long-lived but easy to delete. A short-lived tool execution
+may have irreversible external effects. An institutional policy may contain no
+code yet shape thousands of decisions. A parameter update may be compact in
+bytes while broad in behavioral scope.
+
+### Evidence-Commitment Matching
+
+Stronger commitments need stronger evidence. This is not a claim that one
+universal numerical formula can price every adaptation. It is a monotonic
+governance rule: if candidate A is at least as broad, binding, persistent,
+coupled, authority-bearing, irreversible, and descendant-reaching as candidate
+B, A cannot receive a weaker evidence obligation merely because A is familiar
+or easy to deploy.
+
+Evidence obligations can include independent causal review, affected-party
+input, stronger holdouts, adversarial tests, longer monitoring, formal
+invariants, rollback exercises, or higher approval authority. Rights and
+legitimacy constraints are not reducible to performance confidence.
+
+### Minimum Sufficient Persistence
+
+The preferred portfolio is the least-commitment admissible one that can meet
+the declared behavior and reliability requirement. This **Minimum Sufficient
+Persistence** rule resists a common bias: making every discovered improvement
+as general and automatic as possible.
+
+Minimal does not mean weak. A narrow memory patch that cannot prevent a
+high-consequence recurring tool error is insufficient. Conversely, broad
+fine-tuning is not justified when a typed wrapper and test can address the
+failure more transparently. Portfolio selection is conditional on current
+evidence and can change as that evidence changes.
+
+## Transactional Realization and Qualification
+
+An admitted disposition compiles into one or more locus-specific artifacts.
+The transaction binds the exact experience and lesson identities, compiler and
+policy versions, target loci, pre-state, proposed delta, authority, tests,
+monitor, rollback, expiry, descendants, and residuals. Partial success is not
+silently committed. A multi-surface repair that updates a tool but fails to
+install its monitor either rolls back or records a narrower explicitly
+re-adjudicated result.
+
+Qualification follows realization. It asks whether the concrete artifact is
+fit for a named use under current conditions. Its lease can be invalidated by
+new evidence, environment change, dependency drift, implementation change,
+authority change, threat-model change, or expiry. Requalification is a new
+decision, not a timestamp edit.
+
+This distinction matters for learned updates. A trained checkpoint is a
+realization. A successful loss curve is part of its construction record. The
+checkpoint is not qualified until target evaluations, retained-capability
+tests, reward-hacking probes, authority checks, rollback state, and monitor
+conditions pass. The same logic applies to memory and institutional policy,
+even when their tests differ.
+
+## Guarded Compilation, Deoptimization, and Deliberation Reserve
+
+Some adaptations should begin as guards around a slower trusted path. A
+compiled tool can handle familiar cases while novelty, contradiction, low
+confidence, lease expiry, or missing authority routes back to deliberation.
+This makes `UNKNOWN` operational rather than rhetorical.
+
+The slower path must remain reachable and sufficiently maintained. Otherwise
+optimization destroys the system's ability to discover that the optimization
+is wrong. The chapter calls this retained capacity **deliberation reserve**.
+Its records include rejected alternatives, counterfactual branches, source
+evidence, and enough executable or human procedure to re-examine the lesson.
+
+Deoptimization reverses compilation without pretending that time ran backward.
+It can disable a tool, unmount a memory, restore a route, quarantine a
+checkpoint, or suspend a policy while preserving the event, downstream use,
+and external effects. If a descendant cannot be removed, compensated, or
+requalified, it remains an owned residual.
+
+## Carrying Cost and Adaptation Debt
+
+Persistence creates a continuing obligation. Storage is often the smallest
+part. Durable artifacts need validation, monitoring, security review,
+dependency maintenance, requalification, rollback capacity, human attention,
+and eventual retirement. They can also narrow future search by making one
+interpretation or procedure feel canonical.
+
+**Adaptation debt** is the accumulated burden of commitments whose current
+benefit, evidence, ownership, or reversibility no longer justifies their
+maintenance. The concept is intentionally broader than technical debt. A
+high-performing rule can still be debt if no one can explain its scope, test
+its invalidators, or remove its descendants. Resource Economics owns the
+measurement of those costs; the commit boundary requires them to be visible in
+the choice.
+
+## Governing the Governor
+
+A placement compiler may eventually learn which surfaces work well. That
+creates a reflexive risk. If the compiler can generate its own evidence, judge
+its own evaluator, authorize its own update, and broaden its own reach, the
+boundary becomes a ceremonial wrapper around self-ratification.
+
+Meta-compilation therefore requires independent-enough evidence, evaluation,
+and promotion authority. The exact separation may vary by consequence and
+institution, but no candidate should control all three. Changes to the
+compiler's objective, locus vocabulary, commitment estimator, admissibility
+rule, or exception path are constitutional changes to the adaptation system,
+not ordinary placement decisions.
+
+## Review, Appeal, and Supersession
+
+Persistence decisions can affect users who never observed the triggering
+experience. A routing rule may change which specialist serves them; a memory
+entry may alter later recommendations; an institutional procedure may shift
+work or liability. The transaction therefore records affected scope and the
+route by which a disposition can be challenged. The required standing and
+review process depend on the locus and consequence. A code-owner review may be
+enough for a reversible internal test, while a policy affecting employment,
+privacy, or access requires the relevant institutional and affected-party
+process.
+
+Appeal does not edit history. It appends a competing interpretation, evidence,
+and requested disposition. An upheld appeal can suspend use, narrow scope,
+replace the realization, demand requalification, or revoke the commitment.
+Rejected appeals remain attached to the decision because later evidence may
+make their objection material. This preserves dissent without pretending that
+all interpretations are equally supported.
+
+Supersession is similarly explicit. A new realization does not silently erase
+the old one or inherit its lease. It names the predecessor, states what changed,
+replays the applicable evidence and authority obligations, and identifies
+which descendants migrate. Historical reconstruction remains possible, but
+current consumers receive only a specifically qualified version.
+
+## Ownership Boundaries
+
+The chapter coordinates existing owners without replacing them.
+
+- Evidence States decides what a claim is supported by; the commit boundary
+  cannot promote evidence by choosing a locus.
+- Regret, incident response, evaluation, and Assurance-Shift Learning can emit
+  eligible lesson candidates; they do not directly authorize updates.
+- Memory, Cognitive Compilation, Policy Optimization, Data Engines, and
+  organizational governance realize accepted dispositions in their own media.
+- Artifact Graphs preserves lineage and descendants.
+- Readiness qualifies realizations for use, and Governed Operations monitors
+  them after admission.
+- Resource Economics accounts for carrying cost and opportunity cost.
+- Human and institutional governance retains legitimacy, rights, appeal, and
+  remedy authority where people are affected.
+
+This division is what makes the new layer useful. It closes a missing decision
+without creating a universal adaptation department.
+
+## Failure Modes
+
+The characteristic failures are structural:
+
+- **one-event overlearning:** a salient incident becomes a broad rule before
+  recurrence, alternatives, or affected contexts are understood;
+- **premature locus selection:** a subsystem chooses the surface it owns before
+  comparing alternatives;
+- **commitment laundering:** a memory write, checkpoint, tool, or policy is
+  described as "learning" to avoid its evidence and authority obligations;
+- **unknown-to-admit collapse:** missing evidence is treated as permission;
+- **qualification collapse:** successful construction is treated as fitness
+  for use;
+- **hidden descendants:** derived artifacts or institutional reliance survive
+  apparent rollback;
+- **observability loss:** compression removes the traces needed to diagnose a
+  bad adaptation;
+- **adaptation debt:** accumulated rules and artifacts consume capacity and
+  constrain future learning without active justification;
+- **self-ratifying compilation:** the placement mechanism approves changes that
+  expand its own power; and
+- **institutional persistence without legitimacy:** technically effective
+  rules affect people without contestability, remedy, or rightful authority.
+
+## Strongest Alternatives and Objections
+
+The first alternative is to let each subsystem govern its own updates. That is
+often simpler and may be sufficient in a small, single-owner system. The
+objection becomes decisive when a lesson can plausibly belong in more than one
+surface or when its realization creates cross-owner descendants. Local update
+quality does not answer whether another locus would have been narrower, more
+observable, or easier to revoke. LocusBench must therefore include competent
+fixed-locus policies; if they match the boundary at lower total cost, the
+cross-surface compiler has not earned its complexity.
+
+The second alternative is to centralize all durable state in an explicit
+memory or knowledge graph and keep the model fixed. This improves visibility,
+but not every behavior is reducible to retrieval. Tool contracts, evaluator
+definitions, routing policies, motor skills, and institutional authorities
+have different semantics and failure modes. The chapter does not assume that
+all surfaces are always needed. It requires the proposal set to include the
+simpler memory-only design and to justify every additional locus.
+
+The third objection is epistemic: reliable causal attribution and
+cross-surface comparison may be infeasible in open systems. The chapter accepts
+that possibility. `UNKNOWN`, temporary guards, bounded probes, and retained
+deliberation are first-class outcomes. The architecture is useful only if it
+can abstain without converting every ambiguity into permanent process. An
+implementation that routinely produces elaborate packets but cannot improve
+placement, recovery, or refusal decisions should be retired.
+
+The fourth objection is political. A technical boundary cannot determine
+legitimate institutional authority, affected-party standing, or acceptable
+tradeoffs. Correct. The control plane can preserve identities, evidence,
+obligations, and enforcement hooks; it cannot manufacture legitimacy. Its role
+is to prevent a technical write path from silently substituting for the human
+or legal decision and to make unresolved authority block the relevant commit.
+
+The final objection is reflexive overhead. Monitoring every descendant and
+maintaining deoptimization paths may cost more than the adaptation is worth.
+That is why carrying cost belongs in admission and why Minimum Sufficient
+Persistence permits denial. The boundary is not justified by the number of
+records it creates. It is justified only when those records prevent or expose
+material placement, authority, qualification, or recovery failures at an
+acceptable whole-lifecycle cost.
+
+## Minimum Viable Implementation
+
+The first implementation should be a sandboxed software-maintenance system,
+not a self-modifying foundation model. Exact repository snapshots provide
+experience records. Seeded defects create matched outcomes caused by different
+latent failures. Candidate realizations include a temporary context patch,
+memory entry, procedural checklist, generated test, typed tool wrapper, routing
+rule, and bounded policy change.
+
+Before results are visible, the campaign freezes:
+
+- lesson-eligibility and causal-review rules;
+- candidate locus portfolios and commitment-profile fields;
+- `ADMIT`, `DENY`, and `UNKNOWN` policies;
+- strong fixed-locus and outcome-only baselines;
+- held-out defect families and placement-regret measures;
+- mutation, stale-lease, guard-bypass, and descendant-escape tests;
+- useful task quality, latency, compute, human burden, and carrying-cost
+  denominators; and
+- rollback, deoptimization, and residual-closure acceptance rules.
+
+This is the first tier of the proposed **LocusBench** program. A useful result
+would show not merely that the compiler chooses different loci, but that its
+choices improve held-out outcomes or recovery relative to simpler baselines
+without unacceptable governance cost. Null and negative results remain
+valuable: they can show that the boundary adds overhead without better
+placement, that commitment estimates are unstable, or that a simpler fixed
+policy is sufficient.
+
+## Mature Research Target
+
+The mature target is a distributed persistence control plane spanning model
+parameters, memory, tools, orchestration, evaluators, environments,
+multi-agent populations, and institutions. It would estimate whole-lifecycle
+carrying cost and adaptation debt; preserve rights and authority constraints;
+select portfolios under uncertainty; maintain deliberation reserve; re-expand
+compiled structures when conditions change; and audit descendants and
+external reliance across organizations.
+
+Its placement policy could itself improve, but only inside the non-self-
+ratifying loop above. Strong evidence would require prospective natural
+workloads, matched per-locus and cross-locus baselines, adversarial
+manipulation, complete attempt and cost denominators, independent evaluators,
+independent reproduction, and heterogeneous transfer. No current artifact in
+this repository meets that bar.
+
+## Formal and Experimental Plan
+
+| Target | Purpose | Current state |
+|---|---|---|
+| `lean:persistence.outcome_only_placement_nonidentifiability` | Show in a finite model that equal observed outcomes can correspond to different admissible persistence loci. | planned; not implemented |
+| `lean:persistence.commitment_dominance_evidence_monotonicity` | Preserve the rule that a commitment-dominating candidate cannot receive a weaker evidence class under a monotone policy. | planned; not implemented |
+| `lean:persistence.transaction_requires_distinct_qualification_authority` | Reject realized artifacts that lack either qualification or authority. | planned; not implemented |
+| `lean:persistence.meta_compiler_non_self_ratification` | Reject a compiler change when the candidate controls its sole evidence, evaluation, and promotion authority. | planned; not implemented |
+| `lean:persistence.descendant_invalidation_residual_closure` | Require every modeled descendant to be removed, deoptimized, compensated, or retained as an explicit residual. | planned; not implemented |
+| Adaptive transaction mutation suite | Mutate identity, provenance, disposition, locus, commitment, qualification, authority, expiry, rollback, descendants, and residuals. | planned; not run |
+| LocusBench Tier-1 matched-collision suite | Compare cross-surface assignment with outcome-only and fixed-locus baselines. | planned; not run |
+| Deliberation-reserve and deoptimization test | Check that novelty and invalidation can still reach a maintained slower path. | planned; not run |
+
+Finite Lean results would prove only consequences of the encoded predicates.
+They would not prove that the inventory is complete, that a lesson is true,
+that a placement improves behavior, that a monitor detects real drift, or that
+revocation reverses external effects.
+
+## Source crosswalk
+
+| Source | Contribution | Boundary |
+|---|---|---|
+| [`adjudicated_persistence`](../papers/adjudicated_persistence.html) | Primary source for the Adaptive Commit Boundary, six-object separation, Cross-Surface Adaptation Assignment, commitment profiles, Evidence-Commitment Matching, Minimum Sufficient Persistence, guarded compilation, qualification leases, adaptation debt, non-self-ratifying meta-compilation, and LocusBench. | Conceptual author paper and experimental specification; no implementation, benchmark result, checked proof, safety result, or support transition. |
+| [`assurance_shift_learning`](../papers/assurance_shift_learning.html) | Learning eligibility, boundary evidence, evaluator-first repair, least-invasive repair, and fast-versus-slow adaptation distinctions. | No implemented allocator, natural campaign, or empirical placement result. |
+| [`regret_engine`](../papers/regret_engine.html) | Typed experience residuals, causal alternatives, and learning-eligibility signals. | A regret packet can propose a lesson but cannot establish placement, qualification, authority, or support. |
+| [`cognitive_loop_closure`](../papers/cognitive_loop_closure.html) | Repeated cognition becoming verified procedures and tools as one persistence family. | Procedural compilation is one candidate locus, not evidence that a lesson belongs there. |
+| [`deterministic_capability_compilation`](../papers/deterministic_capability_compilation.html) | Immutable input identity, compilation receipts, artifact lineage, fallback, revocation, and rollback concepts. | Deterministic compilation does not establish lesson validity, placement quality, qualification, or authority. |
+| [`platonic_world_model`](../papers/platonic_world_model.html) | Explicit state, model-versus-reality residuals, semantic versions, and counterfactual distinctions. | World-model framing does not identify the correct locus or validate causal attribution. |
+| [`viea`](../papers/viea.html) | Typed commands, roles, verification, failure behavior, and escalation for adaptation transactions. | Command structure alone does not validate persistence decisions or outcomes. |
+| [`talos`](../papers/talos.html) | Bounded execution authority, audit, intervention, and policy-controlled realization interfaces. | Architecture lineage does not establish placement, qualification, revocation efficacy, or deployed safety. |
+| `ext_bourtoule_machine_unlearning_2021` | External comparator for training-time sharding, isolation, slicing, aggregation, and bounded retraining paths after deletion requests. | Source-reported SISA results do not validate cross-surface placement, verified removal, complete descendant erasure, privacy, organizational revocation, or the Adaptive Commit Boundary. |
+
+The source package includes 42 references, including recent work. This intake
+does not import those references as independent support. Each external result
+must receive its own source note and chapter-specific mapping before it can
+move a claim.
+
+## Current Evidence and Non-Claims
+
+The complete manuscript, DOCX, README, five figures, and package manifest were
+reviewed. All eight package hashes match. This establishes source custody and
+supports faithful exposition of the author's framework.
+
+It does **not** establish that:
+
+- the Adaptive Commit Boundary or LocusBench exists as running software;
+- cross-surface assignment outperforms fixed-locus, human, or simpler rules;
+- commitment profiles are complete, measurable, or comparable across every
+  technical and institutional surface;
+- Minimum Sufficient Persistence is globally optimal;
+- guarded compilation preserves enough deliberation reserve in natural use;
+- descendant-aware revocation is complete or externally effective;
+- meta-compilation is safe, aligned, legitimate, or manipulation-resistant;
+- the architecture improves useful throughput or lowers total adaptation cost;
+  or
+- the book has proved safety, SOTA performance, AGI, or ASI.
+
+The chapter remains at `argument` until an accepted evidence transition says
+otherwise.
+
+## Summary
+
+Adaptive systems do more than update weights. They turn experience into
+memories, tools, procedures, routes, evaluators, environments, and institutions.
+The placement decision determines how far a lesson reaches, how strongly it
+binds, who may invoke it, what it costs to maintain, and whether it can be
+undone.
+
+The Adaptive Commit Boundary makes that decision explicit. It separates the
+event from the lesson, the lesson from the persistence disposition, the
+disposition from the realization, the realization from qualification, and
+qualification from authority. It prefers the least-commitment admissible
+portfolio, preserves uncertainty and a slower path, and requires invalidation,
+deoptimization, descendant closure, and independent governance of the
+placement mechanism itself.
+
+The architecture is currently a disciplined proposal. Its next honest step is
+a small prospective LocusBench implementation with strong simple baselines,
+complete denominators, and negative-result retention.
+
+## Handoff
+
+Governed Operations supplies incidents, residuals, recovery evidence, and
+bounded learning proposals after emergency authority has expired. This chapter
+decides whether such an experience is eligible to become durable influence and
+which persistence surfaces may carry it.
+
+Policy Optimization and Learning from Feedback receives only dispositions that
+select a policy or parametric locus, with their evidence boundary, commitment
+profile, authority ceiling, qualification obligations, monitor conditions,
+rollback state, descendants, expiry, and non-claims intact. A reward signal or
+eligible lesson is not permission to train, and a trained checkpoint is not a
+qualified policy.

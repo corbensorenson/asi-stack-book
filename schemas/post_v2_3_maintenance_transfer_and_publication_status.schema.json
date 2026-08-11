@@ -119,7 +119,7 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "const": "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration"
+          "const": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration"
         },
         "immediate_formal_packet": {
           "const": "P4.1-consumer-gated-cross-owner-composition"
@@ -246,7 +246,7 @@
           "const": "P5-U1-minimal-useful-governed-vertical-slice"
         },
         "concurrent_book_packet": {
-          "const": "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration"
+          "const": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration"
         },
         "formal_packet_state": {
           "const": "consumer_gated"
@@ -271,7 +271,7 @@
           "const": false
         },
         "reference_chapter_count": {
-          "const": 86
+          "const": 87
         },
         "new_chapter_authorized": {
           "const": false
@@ -298,9 +298,9 @@
         "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
         "state": "active_metadata_first_public_cutover_pending",
         "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
-        "current_reference_chapter_count": 86,
-        "target_main_book_chapter_count": 55,
-        "target_primary_architecture_chapter_count": 53,
+        "current_reference_chapter_count": 87,
+        "target_main_book_chapter_count": 56,
+        "target_primary_architecture_chapter_count": 54,
         "target_implementation_method_chapter_count": 2,
         "target_merge_count": 18,
         "target_profile_count": 7,
@@ -580,7 +580,7 @@
             "phase1_audit_path",
             "narrative_spine_path",
             "narrative_unit_crosswalk_path",
-            "all_86_idea_placement_gate_state",
+            "all_87_idea_placement_gate_state",
             "phase2_proof_execution_allowed",
             "c6_current_semantic_overlay",
             "review_path",
@@ -616,10 +616,10 @@
               "const": "current_only_for_named_consumers_after_phase1_exit"
             },
             "concept_first_exit_gate": {
-              "const": "all_86_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+              "const": "all_87_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
             },
             "concept_first_exit_gate_state": {
-              "const": "passed_86_responsibilities_64_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
+              "const": "passed_87_responsibilities_65_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
             },
             "concept_first_idea_audit": {
               "type": "object",
@@ -722,8 +722,8 @@
             "narrative_unit_crosswalk_path": {
               "const": "products/narrative_unit_crosswalk.json"
             },
-            "all_86_idea_placement_gate_state": {
-              "const": "passed_exact_86_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+            "all_87_idea_placement_gate_state": {
+              "const": "passed_exact_87_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
             },
             "phase2_proof_execution_allowed": {
               "const": true
@@ -829,7 +829,7 @@
               "const": "evidence_quality/current_chapter_role_map.json"
             },
             "reference_chapter_count": {
-              "const": 86
+              "const": 87
             },
             "narrative_unit_target": {
               "const": 22
@@ -1632,11 +1632,11 @@
     "activation_truth": {
       "const": {
         "latest_public_living_book_release": "v2.3.0",
-        "live_working_chapter_count": 86,
+        "live_working_chapter_count": 87,
         "activation_registry_atom_count": 3730,
         "post_activation_addendum_atom_count": 15,
         "total_structured_atom_count": 3745,
-        "chapter_core_argument_count": 86,
+        "chapter_core_argument_count": 87,
         "chapter_core_promotion_count": 0,
         "activation_registry_non_argument_atom_count": 2,
         "blocked_after_full_attempt_atom_count": 3698,
@@ -1654,8 +1654,8 @@
         "competence_qualified_natural_non_authored_empirical_transition_count": 0,
         "external_reproduction_count": 0,
         "sota_supported_count": 0,
-        "proof_target_count": 335,
-        "lean_module_count": 132,
+        "proof_target_count": 340,
+        "lean_module_count": 133,
         "theorem_declaration_count": 3153,
         "derived_or_decomposed_theorem_count": 1978,
         "direct_or_projection_theorem_count": 447,
@@ -2706,7 +2706,7 @@
         "id": "P7.3-governed-manim-visual-edition",
         "state": "active_generation_2_production_with_private_generation_1_predecessors_preserved",
         "execution_role": "active_owner_directed_book_packet_p2_scientific_headline_unchanged",
-        "canonical_chapter_count": 86,
+        "canonical_chapter_count": 87,
         "normal_visual_abstract_duration_seconds": {
           "minimum": 150,
           "maximum": 270
@@ -2792,10 +2792,10 @@
           "primitive_regression_public_factory_count": 9,
           "legacy_generation_one_explicit_opt_in_required": true,
           "generation_2_counts": {
-            "planned": 62,
+            "planned": 63,
             "narration_draft": 20,
             "treated": 0,
-            "script_passed": 3,
+            "script_passed": 0,
             "beat_planned": 4,
             "animatic_passed": 0,
             "picture_and_sound_lock_passed": 0,
@@ -2893,7 +2893,7 @@
           "authenticated_dashboard_access_verified": true,
           "canonical_playlist_required": true,
           "canonical_playlist_id": null,
-          "youtube_video_count_target": 86,
+          "youtube_video_count_target": 87,
           "quarto_embed_only_after_published_current": true,
           "action_time_authority_required": true,
           "external_publication_authorized_now": false

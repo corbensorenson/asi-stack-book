@@ -148,7 +148,7 @@ EXPECTED_CONCEPT_ANCHORS = [
     ("C1", "C1-theorem-runtime-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A theorem is not runtime enforcement"),
     ("C1", "C1-proposal-ratification-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A proposal is not ratification"),
     ("C2", "C2-twenty-two-unit-spine", "products/narrative_product_spine.json", "A twenty-two-unit thesis-to-method route through the canonical manifest"),
-    ("C2", "C2-all-eighty-six-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 86'),
+    ("C2", "C2-all-eighty-seven-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 87'),
     ("C2", "C2-nonabsorption-prose", "chapters/living-book-methodology.qmd", "Narrative compression without claim absorption"),
     ("C3", "C3-calculus-owner", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "Governed Transition Calculus"),
     ("C3", "C3-authority-projection", "chapters/system-boundaries-and-authority.qmd", "authority-specific projection of the shared Governed Transition Calculus"),
@@ -1213,7 +1213,7 @@ def errors(data: dict) -> list[str]:
         out.append("execution board does not activate the minimal useful governed vertical slice")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
-    if execution_readiness.get("immediate_book_packet") != "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration":
+    if execution_readiness.get("immediate_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
         out.append("execution board does not activate the metadata-first editorial migration and independent 26-unit narrative")
     if execution_readiness.get("immediate_formal_packet") != "P4.1-consumer-gated-cross-owner-composition":
         out.append("execution board does not keep P4.1 composition consumer-gated")
@@ -1233,11 +1233,11 @@ def errors(data: dict) -> list[str]:
     yield_amendment = status.get("object_level_yield_amendment", {})
     if yield_amendment.get("headline_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
         out.append("object-level yield amendment lost its headline packet")
-    if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-86-identity-55-reference-26-unit-editorial-migration":
+    if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
         out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
         out.append("object-level yield amendment confuses exit ladders with promotion quotas")
-    if yield_amendment.get("reference_chapter_count") != 86 or yield_amendment.get("new_chapter_authorized") is not False:
+    if yield_amendment.get("reference_chapter_count") != len(manifest_ids) or yield_amendment.get("new_chapter_authorized") is not False:
         out.append("scope-compression amendment changed reference truth or silently authorized a chapter")
     if yield_amendment.get("fifteen_minute_route_required") is not True or yield_amendment.get("task_recipe_count") != 3:
         out.append("practical-entry requirements drifted")
@@ -1354,7 +1354,7 @@ def errors(data: dict) -> list[str]:
         "retire standalone peer status, not the research",
         "P7.1-EM",
         "Local delta beyond the governed-cognition pattern",
-        "53+2/18/7/5/1",
+        "54+2/18/7/5/1",
         "26 narrative units",
     ]
     roadmap_casefold = " ".join(data["roadmap"].split()).casefold()
@@ -1811,13 +1811,13 @@ def errors(data: dict) -> list[str]:
         != "phase2_proof_rationalization_then_natural_flagship"
         or convergence.get("proof_work_priority")
         != "current_only_for_named_consumers_after_phase1_exit"
-        or convergence.get("concept_first_exit_gate") != "all_86_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
+        or convergence.get("concept_first_exit_gate") != "all_87_distinct_responsibilities_reader_visible_and_roadmap_only_idea_audit_reconciled"
         or convergence.get("concept_first_exit_gate_state")
-        != "passed_86_responsibilities_64_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
+        != "passed_87_responsibilities_65_specialist_routes_26_c1_c8_anchors_zero_roadmap_only_remainder"
         or convergence.get("phase1_audit_path") != "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md"
         or convergence.get("narrative_spine_path") != "products/narrative_product_spine.json"
         or convergence.get("narrative_unit_crosswalk_path") != "products/narrative_unit_crosswalk.json"
-        or convergence.get("all_86_idea_placement_gate_state") != "passed_exact_86_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
+        or convergence.get("all_87_idea_placement_gate_state") != "passed_exact_87_coverage_22_unit_meaning_render_browser_and_accessibility_preparation"
         or convergence.get("phase2_proof_execution_allowed") is not True
         or convergence.get("reference_chapter_count") != len(manifest_chapters)
         or convergence.get("narrative_unit_target") != 22
@@ -2033,7 +2033,7 @@ def errors(data: dict) -> list[str]:
         or len(role_assignments) != len(manifest_chapters)
         or any(count != 1 for count in role_counts.values())
         or role_summary.get("thesis_bearing_count") != 11
-        or role_summary.get("load_bearing_reference_count") != 56
+        or role_summary.get("load_bearing_reference_count") != 57
         or role_summary.get("implementation_case_count") != 7
         or role_summary.get("speculative_research_count") != 12
         or role_summary.get("total_count") != len(manifest_chapters)
@@ -2375,12 +2375,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (335, 132, 3153, 1978, 447, 728)
+    expected_proof = (340, 133, 3153, 1978, 447, 728)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 335:
+    if data["proof_manifest"].get("proof_target_count") != 340:
         out.append("proof manifest target count disagrees with the current implemented and planned targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 330, "planned": 5}:
+    if data["proof_manifest"].get("status_counts") != {"implemented": 330, "planned": 10}:
         out.append("proof target lifecycle counts drifted")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})

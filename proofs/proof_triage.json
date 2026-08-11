@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-08-01",
+  "updated": "2026-08-11",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -3359,7 +3359,57 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Start with a finite cut-capacity combinatorial surrogate whose assumptions are explicit, prove monotonicity and the bottleneck inequality for that model, and retain the paper's information-theoretic statement as a separately scoped mathematical target. Executable fixtures must first demonstrate that channel capacities, hidden side channels, and state carried across time are represented rather than assumed away."
+    },
+    {
+      "tag": "lean:persistence.outcome_only_placement_nonidentifiability",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "module": "AsiStackProofs.AdjudicatedPersistence",
+      "formal_target": "Two experiences with the same observed outcome but different latent defects can require different admissible persistence loci, so outcome alone cannot identify a correct placement rule.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Construct a finite pair with equal outcome projections and distinct defect witnesses whose admissible-locus sets are disjoint. The result would prove only non-identifiability from the encoded outcome projection, not that a practical system can recover the latent defect or choose the correct locus."
+    },
+    {
+      "tag": "lean:persistence.commitment_dominance_evidence_monotonicity",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "module": "AsiStackProofs.AdjudicatedPersistence",
+      "formal_target": "If one finite commitment profile dominates another on every governed dimension, admission of the stronger profile cannot require a weaker evidence class under a monotone policy.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Define finite product-order commitment profiles and a monotone evidence-obligation function, then prove order preservation. The assumptions must remain explicit because the theorem cannot establish that the dimensions are complete, measurable, commensurable, or legitimate."
+    },
+    {
+      "tag": "lean:persistence.transaction_requires_distinct_qualification_authority",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "module": "AsiStackProofs.AdjudicatedPersistence",
+      "formal_target": "A realized artifact lacking either qualification or authority cannot reach the finite admitted-use state.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model the six transaction objects with separate identities and a pure admission transition. Prove that artifact realization alone is insufficient and add rejecting cases for missing, stale, mismatched, or expired qualification and authority records."
+    },
+    {
+      "tag": "lean:persistence.meta_compiler_non_self_ratification",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "module": "AsiStackProofs.AdjudicatedPersistence",
+      "formal_target": "A placement-compiler change is rejected when the candidate controls its own sole evidence, evaluation, and promotion authority.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Define finite principal and control relations for proposal, evidence, evaluation, and promotion, then reject the all-self-controlled case while permitting explicitly independent bounded witnesses. The model cannot establish real institutional independence, collusion resistance, legitimacy, or safety."
+    },
+    {
+      "tag": "lean:persistence.descendant_invalidation_residual_closure",
+      "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "module": "AsiStackProofs.AdjudicatedPersistence",
+      "formal_target": "Revoking an ancestor realization reaches every modeled descendant through removal, deoptimization, compensation, or an explicit residual disposition.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Use a finite acyclic descendant graph and require a total terminal disposition over the ancestor's reachable closure. Prove coverage for the modeled graph while retaining inventory completeness, external effects, and real erasure as trusted empirical obligations."
     }
   ],
-  "record_count": 335
+  "record_count": 340
 }

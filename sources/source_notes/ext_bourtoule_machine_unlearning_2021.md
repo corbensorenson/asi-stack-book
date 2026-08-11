@@ -62,6 +62,8 @@ so a deletion can restart only the affected constituent-model path.
   Anti-Goodhart Evidence)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and
   Bibliography Plan)
+- `adjudicated-persistence-and-the-adaptive-commit-boundary` (Adjudicated
+  Persistence and the Adaptive Commit Boundary)
 
 ## Claims To Add Or Update
 
